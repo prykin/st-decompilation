@@ -1,0 +1,2 @@
+thunk_FUN_00496cc0:
+00402CE8  E9 D3 3F 09 00            JMP 0x00496cc0

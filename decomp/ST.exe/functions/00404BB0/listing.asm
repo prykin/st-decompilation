@@ -1,0 +1,2 @@
+thunk_FUN_0048df40:
+00404BB0  E9 8B 93 08 00            JMP 0x0048df40

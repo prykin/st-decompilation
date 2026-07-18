@@ -1,0 +1,2 @@
+thunk_FUN_005fd750:
+00405970  E9 DB 7D 1F 00            JMP 0x005fd750

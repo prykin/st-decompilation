@@ -1,0 +1,2 @@
+thunk_FUN_00571cd0:
+004057EF  E9 DC C4 16 00            JMP 0x00571cd0

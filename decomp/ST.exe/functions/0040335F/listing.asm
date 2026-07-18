@@ -1,0 +1,2 @@
+thunk_FUN_005f1e40:
+0040335F  E9 DC EA 1E 00            JMP 0x005f1e40

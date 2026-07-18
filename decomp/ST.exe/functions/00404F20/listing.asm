@@ -1,0 +1,2 @@
+thunk_FUN_004b8c00:
+00404F20  E9 DB 3C 0B 00            JMP 0x004b8c00

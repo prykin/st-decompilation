@@ -1,0 +1,2 @@
+thunk_FUN_006736b0:
+00405ADD  E9 CE DB 26 00            JMP 0x006736b0

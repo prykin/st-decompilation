@@ -1,0 +1,2 @@
+thunk_FUN_0060a4b0:
+00404A02  E9 A9 5A 20 00            JMP 0x0060a4b0

@@ -1,0 +1,2 @@
+thunk_FUN_004c7460:
+00405A2E  E9 2D 1A 0C 00            JMP 0x004c7460

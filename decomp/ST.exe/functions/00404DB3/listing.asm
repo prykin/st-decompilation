@@ -1,0 +1,2 @@
+thunk_FUN_00682cf0:
+00404DB3  E9 38 DF 27 00            JMP 0x00682cf0

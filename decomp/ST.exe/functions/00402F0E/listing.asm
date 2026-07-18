@@ -1,0 +1,2 @@
+thunk_FUN_004b7710:
+00402F0E  E9 FD 47 0B 00            JMP 0x004b7710

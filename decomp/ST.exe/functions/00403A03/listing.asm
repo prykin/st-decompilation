@@ -1,0 +1,2 @@
+thunk_FUN_004dd460:
+00403A03  E9 58 9A 0D 00            JMP 0x004dd460

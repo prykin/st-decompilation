@@ -1,0 +1,2 @@
+thunk_FUN_0065cb00:
+00403BF2  E9 09 8F 25 00            JMP 0x0065cb00

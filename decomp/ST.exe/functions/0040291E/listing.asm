@@ -1,0 +1,2 @@
+thunk_FUN_004b71c0:
+0040291E  E9 9D 48 0B 00            JMP 0x004b71c0

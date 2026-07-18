@@ -1,0 +1,2 @@
+thunk_FUN_005f5a90:
+0040323D  E9 4E 28 1F 00            JMP 0x005f5a90

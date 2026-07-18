@@ -1,0 +1,2 @@
+thunk_FUN_005fd940:
+004035A8  E9 93 A3 1F 00            JMP 0x005fd940

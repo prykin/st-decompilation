@@ -1,0 +1,2 @@
+thunk_FUN_004ea870:
+00405B5F  E9 0C 4D 0E 00            JMP 0x004ea870

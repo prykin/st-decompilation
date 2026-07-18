@@ -1,0 +1,5 @@
+[
+  {"address":"10001000","type":"Info","category":"PE Header","comment":"IMAGE_DIRECTORY_ENTRY_EXPORT"},
+  {"address":"10004000","type":"Info","category":"PE Header","comment":"IMAGE_DIRECTORY_ENTRY_RESOURCE"},
+  {"address":"1006A000","type":"Info","category":"PE Header","comment":"IMAGE_DIRECTORY_ENTRY_BASERELOC"}
+]

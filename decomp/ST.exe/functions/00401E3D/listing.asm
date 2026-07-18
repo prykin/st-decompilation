@@ -1,0 +1,2 @@
+thunk_FUN_004167a0:
+00401E3D  E9 4E 4D 0C 00            JMP 0x004c6b90

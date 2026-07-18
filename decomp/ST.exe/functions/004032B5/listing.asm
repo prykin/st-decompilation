@@ -1,0 +1,2 @@
+thunk_FUN_004cf430:
+004032B5  E9 76 C1 0C 00            JMP 0x004cf430

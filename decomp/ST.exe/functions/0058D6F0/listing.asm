@@ -1,0 +1,6 @@
+FUN_0058d6f0:
+0058D6F0  33 C0                     XOR EAX,EAX
+0058D6F2  A3 18 17 81 00            MOV [0x00811718],EAX
+0058D6F7  A3 20 17 81 00            MOV [0x00811720],EAX
+0058D6FC  B8 01 00 00 00            MOV EAX,0x1
+0058D701  C3                        RET

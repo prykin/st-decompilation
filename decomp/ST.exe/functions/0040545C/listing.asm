@@ -1,0 +1,2 @@
+thunk_FUN_004dc240:
+0040545C  E9 DF 6D 0D 00            JMP 0x004dc240

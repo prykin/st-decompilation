@@ -1,0 +1,2 @@
+thunk_FUN_0060a9d0:
+004012FD  E9 CE 96 20 00            JMP 0x0060a9d0

@@ -1,0 +1,2 @@
+thunk_FUN_006a23a0:
+00402AB3  E9 E8 F8 29 00            JMP 0x006a23a0

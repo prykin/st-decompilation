@@ -1,0 +1,12 @@
+FUN_006a0070:
+006A0070  56                        PUSH ESI
+006A0071  8B F1                     MOV ESI,ECX
+006A0073  E8 C3 10 D6 FF            CALL 0x0040113b
+006A0078  8D 8E 03 1C 00 00         LEA ECX,[ESI + 0x1c03]
+006A007E  E8 BC 16 D6 FF            CALL 0x0040173f
+006A0083  8D 8E EF 1B 00 00         LEA ECX,[ESI + 0x1bef]
+006A0089  E8 13 3C D6 FF            CALL 0x00403ca1
+006A008E  8D 8E 4E 02 00 00         LEA ECX,[ESI + 0x24e]
+006A0094  E8 EA 36 D6 FF            CALL 0x00403783
+006A0099  5E                        POP ESI
+006A009A  C3                        RET

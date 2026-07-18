@@ -1,0 +1,2 @@
+thunk_FUN_004cd450:
+00405B1E  E9 2D 79 0C 00            JMP 0x004cd450

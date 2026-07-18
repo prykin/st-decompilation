@@ -1,0 +1,2 @@
+thunk_FUN_0045ff30:
+0040397C  E9 AF C5 05 00            JMP 0x0045ff30

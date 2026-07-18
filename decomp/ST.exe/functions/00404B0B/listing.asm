@@ -1,0 +1,2 @@
+thunk_FUN_00606fd0:
+00404B0B  E9 C0 24 20 00            JMP 0x00606fd0

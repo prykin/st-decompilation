@@ -1,0 +1,2 @@
+thunk_FUN_00681ca0:
+004049F3  E9 A8 D2 27 00            JMP 0x00681ca0

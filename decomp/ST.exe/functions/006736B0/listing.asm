@@ -1,0 +1,7 @@
+FUN_006736b0:
+006736B0  A1 24 2D 7D 00            MOV EAX,[0x007d2d24]
+006736B5  C7 05 14 19 81 00 01 00 00 00  MOV dword ptr [0x00811914],0x1
+006736BF  24 EF                     AND AL,0xef
+006736C1  C7 05 58 75 85 00 00 00 00 00  MOV dword ptr [0x00857558],0x0
+006736CB  A3 24 2D 7D 00            MOV [0x007d2d24],EAX
+006736D0  C3                        RET

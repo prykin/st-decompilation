@@ -1,0 +1,2 @@
+thunk_FUN_004df950:
+00402167  E9 E4 D7 0D 00            JMP 0x004df950

@@ -1,0 +1,2 @@
+thunk_FUN_006902b0:
+00403CDD  E9 CE C5 28 00            JMP 0x006902b0

@@ -1,0 +1,2 @@
+thunk_FUN_004de000:
+00402239  E9 C2 BD 0D 00            JMP 0x004de000

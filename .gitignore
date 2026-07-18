@@ -1,0 +1,25 @@
+# Original game binaries and other redistributable inputs.
+/bin/
+
+# macOS metadata.
+.DS_Store
+**/.DS_Store
+
+# Ghidra project locks (created while a project is open).
+*.lock
+*.lock~
+
+# Ghidra session/recovery artifacts. The corresponding .dat files and the
+# ~*.db directories are part of the actual project database and stay tracked.
+*.bak
+*.tmp
+*.temp
+*.ps
+
+# Local CodeBrowser/project UI state; analysis and annotations live in idata.
+**/*.rep/projectState
+
+# Common editor/patch leftovers.
+*~
+*.swp
+*.swo

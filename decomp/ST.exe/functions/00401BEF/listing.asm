@@ -1,0 +1,2 @@
+thunk_FUN_0049b4c0:
+00401BEF  E9 CC 98 09 00            JMP 0x0049b4c0

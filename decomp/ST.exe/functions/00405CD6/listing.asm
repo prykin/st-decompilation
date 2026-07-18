@@ -1,0 +1,2 @@
+thunk_FUN_005da610:
+00405CD6  E9 35 49 1D 00            JMP 0x005da610

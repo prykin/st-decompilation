@@ -1,0 +1,2 @@
+thunk_FUN_005fe360:
+00402978  E9 E3 B9 1F 00            JMP 0x005fe360

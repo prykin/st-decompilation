@@ -1,0 +1,2 @@
+thunk_FUN_00682fe0:
+00404B06  E9 D5 E4 27 00            JMP 0x00682fe0

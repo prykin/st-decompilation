@@ -1,0 +1,2 @@
+thunk_FUN_0048d7c0:
+00401DA2  E9 19 BA 08 00            JMP 0x0048d7c0

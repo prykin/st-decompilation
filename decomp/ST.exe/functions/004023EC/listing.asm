@@ -1,0 +1,2 @@
+thunk_FUN_006192e0:
+004023EC  E9 EF 6E 21 00            JMP 0x006192e0

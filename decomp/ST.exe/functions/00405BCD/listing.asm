@@ -1,0 +1,2 @@
+thunk_FUN_006686c0:
+00405BCD  E9 EE 2A 26 00            JMP 0x006686c0

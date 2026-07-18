@@ -1,0 +1,2 @@
+thunk_FUN_0052af90:
+0040222F  E9 5C 8D 12 00            JMP 0x0052af90

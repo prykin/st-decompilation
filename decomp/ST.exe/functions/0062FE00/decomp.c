@@ -1,0 +1,44 @@
+
+void __fastcall FUN_0062fe00(void *param_1)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  int *piVar5;
+  
+  iVar4 = 0;
+  piVar5 = (int *)((int)param_1 + 0x1e5);
+  do {
+    if (*piVar5 != 0) {
+      if (*(int *)(*piVar5 + 0x10) == 0) {
+        puVar1 = (undefined4 *)FUN_0072e530(0x40);
+        if (puVar1 == (undefined4 *)0x0) {
+          uVar2 = 0;
+        }
+        else {
+          uVar2 = thunk_FUN_004ab810(puVar1);
+        }
+        *(undefined4 *)(*piVar5 + 0x10) = uVar2;
+      }
+      iVar3 = thunk_FUN_0062f080(param_1,iVar4,*(undefined4 *)(*piVar5 + 0xc),
+                                 *(undefined4 *)(*piVar5 + 4));
+      if (iVar3 == 0) {
+        if (*(int *)((int)param_1 + 0x1e1) == 1) {
+          thunk_FUN_0062f900(param_1);
+        }
+        else {
+          thunk_FUN_0062f6c0(param_1,iVar4);
+        }
+      }
+      else {
+        thunk_FUN_0062f0d0(param_1,iVar4);
+      }
+    }
+    iVar4 = iVar4 + 1;
+    piVar5 = piVar5 + 1;
+  } while (iVar4 < 5);
+  return;
+}
+

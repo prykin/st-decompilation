@@ -1,0 +1,19 @@
+FUN_006d51a0:
+006D51A0  56                        PUSH ESI
+006D51A1  8B F1                     MOV ESI,ECX
+006D51A3  8D 8E 94 02 00 00         LEA ECX,[ESI + 0x294]
+006D51A9  C7 06 78 DB 79 00         MOV dword ptr [ESI],0x79db78
+006D51AF  C7 46 0C 3C DB 79 00      MOV dword ptr [ESI + 0xc],0x79db3c
+006D51B6  C7 46 10 28 DB 79 00      MOV dword ptr [ESI + 0x10],0x79db28
+006D51BD  C7 86 C8 00 00 00 04 DB 79 00  MOV dword ptr [ESI + 0xc8],0x79db04
+006D51C7  C7 86 CC 00 00 00 F0 DA 79 00  MOV dword ptr [ESI + 0xcc],0x79daf0
+006D51D1  C7 46 78 00 00 00 00      MOV dword ptr [ESI + 0x78],0x0
+006D51D8  E8 D3 0B 00 00            CALL 0x006d5db0
+006D51DD  8D 8E 40 02 00 00         LEA ECX,[ESI + 0x240]
+006D51E3  E8 2E 67 07 00            CALL 0x0074b916
+006D51E8  8D 8E 50 01 00 00         LEA ECX,[ESI + 0x150]
+006D51EE  E8 D2 33 07 00            CALL 0x007485c5
+006D51F3  8B CE                     MOV ECX,ESI
+006D51F5  E8 47 5A 07 00            CALL 0x0074ac41
+006D51FA  5E                        POP ESI
+006D51FB  C3                        RET

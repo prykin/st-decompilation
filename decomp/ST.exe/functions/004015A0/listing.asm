@@ -1,0 +1,2 @@
+thunk_FUN_005411a0:
+004015A0  E9 FB FB 13 00            JMP 0x005411a0

@@ -1,0 +1,2 @@
+thunk_FUN_005925a0:
+00404CE1  E9 BA D8 18 00            JMP 0x005925a0

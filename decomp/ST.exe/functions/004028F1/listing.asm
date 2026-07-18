@@ -1,0 +1,2 @@
+thunk_FUN_004cc880:
+004028F1  E9 8A 9F 0C 00            JMP 0x004cc880

@@ -1,0 +1,2 @@
+thunk_FUN_004b9a40:
+00402D92  E9 A9 6C 0B 00            JMP 0x004b9a40

@@ -1,0 +1,2 @@
+thunk_FUN_005f66b0:
+00401B04  E9 A7 4B 1F 00            JMP 0x005f66b0

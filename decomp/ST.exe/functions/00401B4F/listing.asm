@@ -1,0 +1,2 @@
+thunk_FUN_004cc220:
+00401B4F  E9 CC A6 0C 00            JMP 0x004cc220

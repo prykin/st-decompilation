@@ -1,0 +1,2 @@
+thunk_FUN_004dd740:
+00401C7B  E9 C0 BA 0D 00            JMP 0x004dd740

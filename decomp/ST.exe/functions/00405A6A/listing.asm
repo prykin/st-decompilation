@@ -1,0 +1,2 @@
+thunk_FUN_004c84c0:
+00405A6A  E9 51 2A 0C 00            JMP 0x004c84c0

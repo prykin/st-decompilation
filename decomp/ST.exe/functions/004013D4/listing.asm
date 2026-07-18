@@ -1,0 +1,2 @@
+thunk_FUN_0062b4a0:
+004013D4  E9 C7 A0 22 00            JMP 0x0062b4a0

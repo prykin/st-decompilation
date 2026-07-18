@@ -1,0 +1,2 @@
+thunk_FUN_0060cb60:
+0040576D  E9 EE 73 20 00            JMP 0x0060cb60

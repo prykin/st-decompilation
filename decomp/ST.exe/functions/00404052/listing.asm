@@ -1,0 +1,2 @@
+thunk_FUN_00601db0:
+00404052  E9 59 DD 1F 00            JMP 0x00601db0

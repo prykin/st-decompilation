@@ -1,0 +1,2 @@
+thunk_FUN_00417ee0:
+00405DC1  E9 1A 21 01 00            JMP 0x00417ee0

@@ -1,0 +1,2 @@
+thunk_FUN_0064e6c0:
+004020EF  E9 CC C5 24 00            JMP 0x0064e6c0

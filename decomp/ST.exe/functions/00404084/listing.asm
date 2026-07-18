@@ -1,0 +1,2 @@
+thunk_FUN_005ae950:
+00404084  E9 C7 A8 1A 00            JMP 0x005ae950

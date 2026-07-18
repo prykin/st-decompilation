@@ -1,0 +1,2 @@
+thunk_FUN_0041c5a0:
+0040464C  E9 4F 7F 01 00            JMP 0x0041c5a0

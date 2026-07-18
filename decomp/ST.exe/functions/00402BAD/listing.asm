@@ -1,0 +1,2 @@
+thunk_FUN_0061dd40:
+00402BAD  E9 8E B1 21 00            JMP 0x0061dd40

@@ -1,0 +1,2 @@
+thunk_FUN_006027f0:
+00403DC8  E9 23 EA 1F 00            JMP 0x006027f0

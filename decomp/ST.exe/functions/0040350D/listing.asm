@@ -1,0 +1,2 @@
+thunk_FUN_004c5e60:
+0040350D  E9 4E 29 0C 00            JMP 0x004c5e60

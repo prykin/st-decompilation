@@ -1,0 +1,2 @@
+thunk_FUN_004ce670:
+0040476E  E9 FD 9E 0C 00            JMP 0x004ce670

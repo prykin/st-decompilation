@@ -1,0 +1,2 @@
+thunk_FUN_0069c790:
+00405BEB  E9 A0 6B 29 00            JMP 0x0069c790

@@ -1,0 +1,2 @@
+thunk_FUN_004b7f90:
+00401311  E9 7A 6C 0B 00            JMP 0x004b7f90

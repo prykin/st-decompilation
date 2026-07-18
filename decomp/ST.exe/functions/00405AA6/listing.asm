@@ -1,0 +1,2 @@
+thunk_FUN_004ac610:
+00405AA6  E9 65 6B 0A 00            JMP 0x004ac610

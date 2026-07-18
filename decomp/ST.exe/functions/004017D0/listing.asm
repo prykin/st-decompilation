@@ -1,0 +1,2 @@
+thunk_FUN_005d00b0:
+004017D0  E9 DB E8 1C 00            JMP 0x005d00b0

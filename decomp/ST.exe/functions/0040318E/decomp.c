@@ -1,0 +1,16 @@
+
+undefined4 __thiscall
+thunk_FUN_0062f080(void *this,int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  
+  iVar1 = *(int *)((int)this + param_1 * 4 + 0x1e5);
+  if (((iVar1 != 0) && (*(void **)(iVar1 + 0x10) != (void *)0x0)) &&
+     (iVar1 = thunk_FUN_0062f3b0(*(void **)(iVar1 + 0x10),(int *)(iVar1 + 0x14),param_2,param_3),
+     iVar1 == 0)) {
+    return 1;
+  }
+  return 0;
+}
+

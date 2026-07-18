@@ -1,0 +1,2 @@
+thunk_FUN_004d78e0:
+004028F6  E9 E5 4F 0D 00            JMP 0x004d78e0

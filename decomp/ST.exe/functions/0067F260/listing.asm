@@ -1,0 +1,16 @@
+FUN_0067f260:
+0067F260  A1 1C 8A 84 00            MOV EAX,[0x00848a1c]
+0067F265  85 C0                     TEST EAX,EAX
+0067F267  74 06                     JZ 0x0067f26f
+0067F269  50                        PUSH EAX
+0067F26A  E8 01 63 03 00            CALL 0x006b5570
+LAB_0067f26f:
+0067F26F  A1 18 8A 84 00            MOV EAX,[0x00848a18]
+0067F274  C7 05 1C 8A 84 00 00 00 00 00  MOV dword ptr [0x00848a1c],0x0
+0067F27E  85 C0                     TEST EAX,EAX
+0067F280  74 06                     JZ 0x0067f288
+0067F282  50                        PUSH EAX
+0067F283  E8 E8 62 03 00            CALL 0x006b5570
+LAB_0067f288:
+0067F288  C7 05 18 8A 84 00 00 00 00 00  MOV dword ptr [0x00848a18],0x0
+0067F292  C3                        RET

@@ -1,0 +1,157 @@
+
+void __cdecl thunk_FUN_005da310(int param_1,undefined *param_2,BYTE param_3)
+
+{
+  char cVar1;
+  int iVar2;
+  uint uVar3;
+  uint uVar4;
+  char *pcVar5;
+  LOGFONTA *pLVar6;
+  char *pcVar7;
+  CHAR *pCVar8;
+  LOGFONTA LStack_a4;
+  byte abStack_68 [88];
+  byte abStack_10 [12];
+  
+  pLVar6 = &LStack_a4;
+  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
+    pLVar6->lfHeight = 0;
+    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  }
+  LStack_a4.lfCharSet = param_3;
+  uVar3 = 0xffffffff;
+  pcVar5 = s_Verdana_007c1bc4;
+  do {
+    pcVar7 = pcVar5;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    pcVar7 = pcVar5 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar7;
+  } while (cVar1 != '\0');
+  uVar3 = ~uVar3;
+  LStack_a4.lfHeight = -0xc;
+  LStack_a4.lfWidth = 0;
+  LStack_a4.lfEscapement = 0;
+  LStack_a4.lfOrientation = 0;
+  LStack_a4.lfWeight = 400;
+  LStack_a4.lfItalic = '\0';
+  LStack_a4.lfUnderline = '\0';
+  LStack_a4.lfStrikeOut = '\0';
+  LStack_a4.lfOutPrecision = '\x03';
+  LStack_a4.lfClipPrecision = '\x02';
+  LStack_a4.lfQuality = '\x01';
+  LStack_a4.lfPitchAndFamily = '\"';
+  abStack_10[0] = 0;
+  pcVar5 = pcVar7 + -uVar3;
+  pCVar8 = LStack_a4.lfFaceName;
+  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
+    pcVar5 = pcVar5 + 4;
+    pCVar8 = pCVar8 + 4;
+  }
+  abStack_10[1] = 0x14;
+  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+    *pCVar8 = *pcVar5;
+    pcVar5 = pcVar5 + 1;
+    pCVar8 = pCVar8 + 1;
+  }
+  abStack_10[2] = 0x16;
+  abStack_10[3] = 0xc;
+  abStack_10[4] = 0xe;
+  abStack_10[5] = 0xd;
+  abStack_10[6] = 0xfe;
+  abStack_10[7] = 0xf;
+  abStack_10[8] = 0xfe;
+  abStack_68[0] = 0x20;
+  abStack_68[1] = 0x21;
+  abStack_68[2] = 0x22;
+  abStack_68[3] = 0x23;
+  abStack_68[4] = 0x25;
+  abStack_68[5] = 0x26;
+  abStack_68[6] = 0x27;
+  abStack_68[7] = 0x28;
+  abStack_68[8] = 0x29;
+  abStack_68[9] = 0x2c;
+  abStack_68[10] = 0x2d;
+  abStack_68[0xb] = 0x2e;
+  abStack_68[0xc] = 0x2f;
+  abStack_68[0xd] = 0x30;
+  abStack_68[0xe] = 0x31;
+  abStack_68[0xf] = 0x32;
+  abStack_68[0x10] = 0x33;
+  abStack_68[0x11] = 0x34;
+  abStack_68[0x12] = 0x35;
+  abStack_68[0x13] = 0x36;
+  abStack_68[0x14] = 0x37;
+  abStack_68[0x15] = 0x38;
+  abStack_68[0x16] = 0x39;
+  abStack_68[0x17] = 0x3a;
+  abStack_68[0x18] = 0x3d;
+  abStack_68[0x19] = 0x3e;
+  abStack_68[0x1a] = 0x3f;
+  abStack_68[0x1b] = 0x41;
+  abStack_68[0x1c] = 0x42;
+  abStack_68[0x1d] = 0x43;
+  abStack_68[0x1e] = 0x44;
+  abStack_68[0x1f] = 0x45;
+  abStack_68[0x20] = 0xd;
+  abStack_68[0x42] = 0xd;
+  abStack_68[0x21] = 10;
+  abStack_68[0x43] = 10;
+  abStack_68[0x22] = 0x46;
+  abStack_68[0x23] = 0x47;
+  abStack_68[0x24] = 0x48;
+  abStack_68[0x25] = 0x49;
+  abStack_68[0x26] = 0x4a;
+  abStack_68[0x27] = 0x4b;
+  abStack_68[0x28] = 0x4c;
+  abStack_68[0x29] = 0x4d;
+  abStack_68[0x2a] = 0x4e;
+  abStack_68[0x2b] = 0x4f;
+  abStack_68[0x2c] = 0x50;
+  abStack_68[0x2d] = 0x51;
+  abStack_68[0x2e] = 0x52;
+  abStack_68[0x2f] = 0x53;
+  abStack_68[0x30] = 0x54;
+  abStack_68[0x31] = 0x55;
+  abStack_68[0x32] = 0x56;
+  abStack_68[0x33] = 0x57;
+  abStack_68[0x34] = 0x58;
+  abStack_68[0x35] = 0x59;
+  abStack_68[0x36] = 0x5a;
+  abStack_68[0x37] = 0x5c;
+  abStack_68[0x38] = 0x5f;
+  abStack_68[0x39] = 0x61;
+  abStack_68[0x3a] = 0x62;
+  abStack_68[0x3b] = 99;
+  abStack_68[0x3c] = 100;
+  abStack_68[0x3d] = 0x65;
+  abStack_68[0x3e] = 0x66;
+  abStack_68[0x3f] = 0x67;
+  abStack_68[0x40] = 0x68;
+  abStack_68[0x41] = 0x69;
+  abStack_68[0x44] = 0x6a;
+  abStack_68[0x45] = 0x6b;
+  abStack_68[0x46] = 0x6c;
+  abStack_68[0x47] = 0x6d;
+  abStack_68[0x48] = 0x6e;
+  abStack_68[0x49] = 0x6f;
+  abStack_68[0x4a] = 0x70;
+  abStack_68[0x4b] = 0x71;
+  abStack_68[0x4c] = 0x72;
+  abStack_68[0x4d] = 0x73;
+  abStack_68[0x4e] = 0x74;
+  abStack_68[0x4f] = 0x75;
+  abStack_68[0x50] = 0x76;
+  abStack_68[0x51] = 0x77;
+  abStack_68[0x52] = 0x78;
+  abStack_68[0x53] = 0x79;
+  abStack_68[0x54] = 0x7a;
+  abStack_68[0x55] = 0x7c;
+  abStack_68[0x56] = 0x7e;
+  FUN_0070d1f0(0x19d,&LStack_a4,(uint *)0x0,abStack_68,param_1,abStack_10,4,2,1,0,0x20011c,param_2);
+  return;
+}
+

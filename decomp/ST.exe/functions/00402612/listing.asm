@@ -1,0 +1,2 @@
+thunk_FUN_0057d5f0:
+00402612  E9 D9 AF 17 00            JMP 0x0057d5f0

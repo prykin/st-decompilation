@@ -1,0 +1,2 @@
+thunk_FUN_006099a0:
+00401CC1  E9 DA 7C 20 00            JMP 0x006099a0

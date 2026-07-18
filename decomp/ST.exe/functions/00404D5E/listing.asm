@@ -1,0 +1,2 @@
+thunk_FUN_006a24e0:
+00404D5E  E9 7D D7 29 00            JMP 0x006a24e0

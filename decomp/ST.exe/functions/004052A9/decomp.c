@@ -1,0 +1,40 @@
+
+void thunk_FUN_0042a9f0(char param_1)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  
+  thunk_FUN_0042d4f0(param_1,0,0,0);
+  thunk_FUN_0042d4f0(param_1,1,0,0);
+  iVar1 = (int)param_1;
+  _param_1 = 5;
+  puVar2 = (undefined4 *)((int)&DAT_007f4f8d + iVar1 * 0xa62);
+  do {
+    if ((byte *)*puVar2 != (byte *)0x0) {
+      FUN_006ae110((byte *)*puVar2);
+      *puVar2 = 0;
+    }
+    *(undefined4 *)((int)puVar2 + -10) = 0;
+    if ((byte *)puVar2[0x14] != (byte *)0x0) {
+      FUN_006ae110((byte *)puVar2[0x14]);
+      puVar2[0x14] = 0;
+    }
+    *(undefined4 *)((int)puVar2 + 0x46) = 0;
+    puVar2 = puVar2 + 4;
+    _param_1 = _param_1 + -1;
+  } while (_param_1 != 0);
+  puVar2 = (undefined4 *)((int)&DAT_007f5031 + iVar1 * 0xa62);
+  iVar1 = 10;
+  do {
+    if ((byte *)*puVar2 != (byte *)0x0) {
+      FUN_006ae110((byte *)*puVar2);
+      *puVar2 = 0;
+    }
+    *(undefined4 *)((int)puVar2 + -10) = 0;
+    puVar2 = puVar2 + 4;
+    iVar1 = iVar1 + -1;
+  } while (iVar1 != 0);
+  return;
+}
+

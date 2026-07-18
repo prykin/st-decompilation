@@ -1,0 +1,2 @@
+thunk_FUN_004ab050:
+0040581C  E9 2F 58 0A 00            JMP 0x004ab050

@@ -1,0 +1,2 @@
+thunk_FUN_0067dc20:
+004015EB  E9 30 C6 27 00            JMP 0x0067dc20

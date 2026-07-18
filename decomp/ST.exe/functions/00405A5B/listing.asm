@@ -1,0 +1,2 @@
+thunk_FUN_00681ef0:
+00405A5B  E9 90 C4 27 00            JMP 0x00681ef0

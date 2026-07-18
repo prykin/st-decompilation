@@ -1,0 +1,2 @@
+thunk_FUN_00410dc0:
+004041E7  E9 D4 CB 00 00            JMP 0x00410dc0

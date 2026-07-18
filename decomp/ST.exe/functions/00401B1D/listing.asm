@@ -1,0 +1,2 @@
+thunk_FUN_005717e0:
+00401B1D  E9 BE FC 16 00            JMP 0x005717e0

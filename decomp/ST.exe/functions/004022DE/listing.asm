@@ -1,0 +1,2 @@
+thunk_FUN_005ec740:
+004022DE  E9 5D A4 1E 00            JMP 0x005ec740

@@ -1,0 +1,8 @@
+[
+  {"name":"Headers","start":"10000000","end":"10000FFF","size":4096,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".rdata","start":"10001000","end":"10001FFF","size":4096,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".data","start":"10002000","end":"10003FFF","size":8192,"read":true,"write":true,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".rsrc","start":"10004000","end":"10069FFF","size":417792,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".reloc","start":"1006A000","end":"1006AFFF","size":4096,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":"tdb","start":"FFDFF000","end":"FFDFFFFF","size":4096,"read":true,"write":true,"execute":false,"initialized":true,"volatile":false,"source":""}
+]

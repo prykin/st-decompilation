@@ -1,0 +1,2 @@
+thunk_FUN_004eb010:
+00401FC8  E9 43 90 0E 00            JMP 0x004eb010

@@ -1,0 +1,2 @@
+thunk_FUN_00495ff0:
+00404EC1  E9 2A 11 09 00            JMP 0x00495ff0

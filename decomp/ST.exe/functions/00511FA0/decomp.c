@@ -1,0 +1,80 @@
+
+undefined4 __thiscall FUN_00511fa0(void *this,char param_1)
+
+{
+  code *pcVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  void *unaff_ESI;
+  undefined4 local_48 [16];
+  void *local_8;
+  
+  uVar4 = DAT_00858df8;
+  if (*(char *)((int)this + 0x1a0) == param_1) {
+    return 0;
+  }
+  DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
+  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  if (iVar2 == 0) {
+    *(char *)((int)local_8 + 0x1a0) = param_1;
+    if (param_1 != '\0') {
+      if (DAT_008016e8 != (void *)0x0) {
+        thunk_FUN_0053f650(DAT_008016e8,'\0');
+      }
+      if (DAT_0080167c != (void *)0x0) {
+        thunk_FUN_0053f650(DAT_0080167c,'\0');
+      }
+      if (DAT_00801684 != (void *)0x0) {
+        thunk_FUN_0053f650(DAT_00801684,'\0');
+      }
+      if (DAT_00801698 != (int *)0x0) {
+        (**(code **)(*DAT_00801698 + 0x1c))(0);
+      }
+      if (DAT_00802a44 != (void *)0x0) {
+        thunk_FUN_00552160(DAT_00802a44,'\0','\0');
+      }
+      if (DAT_00801678 != (int *)0x0) {
+        (**(code **)(*DAT_00801678 + 0x1c))(0);
+      }
+      if (DAT_008016ec != (int *)0x0) {
+        (**(code **)(*DAT_008016ec + 0x1c))(0);
+      }
+      if (DAT_00802a48 != (int *)0x0) {
+        (**(code **)(*DAT_00802a48 + 0x1c))(0);
+      }
+      if (DAT_00801680 != (void *)0x0) {
+        thunk_FUN_0053f650(DAT_00801680,'\0');
+      }
+      if (DAT_0080168c != (int *)0x0) {
+        (**(code **)(*DAT_0080168c + 0x1c))(0);
+      }
+      if (DAT_008016e4 != (void *)0x0) {
+        thunk_FUN_0053a820(DAT_008016e4,'\0');
+      }
+      if (DAT_008016dc != 0) {
+        thunk_FUN_0052f7e0();
+      }
+      thunk_FUN_00511df0(1);
+      DAT_00858df8 = (undefined1 *)uVar4;
+      return 1;
+    }
+    if ((DAT_00801688 != (void *)0x0) && (*(short *)((int)DAT_00801688 + 0x23f) == 1)) {
+      thunk_FUN_004fa400(DAT_00801688,1);
+    }
+    thunk_FUN_00511df0(0);
+    DAT_00858df8 = (undefined1 *)uVar4;
+    return 1;
+  }
+  DAT_00858df8 = (undefined1 *)uVar4;
+  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x12e,0,iVar2,&DAT_007a4ccc);
+  if (iVar3 != 0) {
+    pcVar1 = (code *)swi(3);
+    uVar4 = (*pcVar1)();
+    return uVar4;
+  }
+  FUN_006a5e40(iVar2,0,0x7c383c,0x12e);
+  return 1;
+}
+

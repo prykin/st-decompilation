@@ -1,0 +1,2 @@
+thunk_FUN_004cc330:
+00404E53  E9 D8 74 0C 00            JMP 0x004cc330

@@ -1,0 +1,2 @@
+thunk_FUN_005f0a30:
+0040233D  E9 EE E6 1E 00            JMP 0x005f0a30

@@ -1,0 +1,2 @@
+thunk_FUN_005b6730:
+00404BF1  E9 3A 1B 1B 00            JMP 0x005b6730

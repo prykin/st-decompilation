@@ -1,0 +1,2 @@
+thunk_FUN_005ff150:
+0040305D  E9 EE C0 1F 00            JMP 0x005ff150

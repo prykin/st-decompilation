@@ -1,0 +1,14 @@
+
+void __fastcall thunk_FUN_00627390(int param_1)
+
+{
+  if ((*(int *)(param_1 + 0x2ae) == 0) || (*(int *)(param_1 + 0x2ae) == 1)) {
+    *(undefined4 *)(param_1 + 0x2ae) = 2;
+    *(int *)(param_1 + 0x30f) =
+         ((int)(*(int *)(&DAT_007d02a4 + (uint)*(byte *)(param_1 + 0x2ad) * 4) +
+               (*(int *)(&DAT_007d02a4 + (uint)*(byte *)(param_1 + 0x2ad) * 4) >> 0x1f & 3U)) >> 2)
+         + *(int *)(DAT_00802a38 + 0xe4);
+  }
+  return;
+}
+

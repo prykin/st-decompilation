@@ -1,0 +1,86 @@
+
+void FUN_006b94e0(int param_1,undefined4 param_2,int param_3,int param_4,int param_5,int param_6,
+                 int param_7,int param_8)
+
+{
+  undefined4 *puVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  int iVar5;
+  undefined4 uVar6;
+  int iVar7;
+  int iVar8;
+  
+  iVar8 = *(int *)(param_8 + 0x18 + param_3 * 0x1c);
+  puVar1 = (undefined4 *)(param_8 + param_3 * 0x1c);
+  if (iVar8 < 1) {
+    iVar8 = 1;
+  }
+  if (param_6 < 0) {
+    param_4 = param_4 + 1 + param_6;
+    param_6 = -param_6;
+  }
+  if (param_7 < 0) {
+    param_5 = param_5 + 1 + param_7;
+    param_7 = -param_7;
+  }
+  iVar2 = param_4 + -1 + param_6;
+  uVar4 = *(undefined4 *)(param_1 + 0x498);
+  iVar3 = param_5 + -1 + param_7;
+  iVar5 = *(int *)(param_1 + 0x4a0);
+  uVar6 = *(undefined4 *)(param_1 + 0x4a4);
+  FUN_006bbb00(param_1,0xd);
+  FUN_006c6450(param_1,puVar1[1]);
+  FUN_006c6410(param_1,puVar1[2]);
+  param_3 = 0;
+  if (0 < iVar8) {
+    param_8 = param_5;
+    do {
+      iVar7 = FUN_006c53b0(param_1,param_4,param_8,iVar2 - iVar8,param_8,*puVar1);
+      if (iVar7 != 0) goto LAB_006b96ba;
+      param_3 = param_3 + 1;
+      param_8 = param_8 + 1;
+    } while (param_3 < iVar8);
+  }
+  FUN_006c6410(param_1,puVar1[3]);
+  param_3 = 0;
+  if (0 < iVar8) {
+    param_8 = iVar2;
+    do {
+      iVar7 = FUN_006c53b0(param_1,param_8,param_5,param_8,iVar3 - iVar8,*puVar1);
+      if (iVar7 != 0) goto LAB_006b96ba;
+      param_3 = param_3 + 1;
+      param_8 = param_8 + -1;
+    } while (param_3 < iVar8);
+  }
+  FUN_006c6410(param_1,puVar1[4]);
+  param_3 = 0;
+  param_8 = iVar3;
+  if (0 < iVar8) {
+    do {
+      iVar7 = FUN_006c53b0(param_1,iVar2,param_8,iVar8 + param_4,param_8,*puVar1);
+      if (iVar7 != 0) goto LAB_006b96ba;
+      param_3 = param_3 + 1;
+      param_8 = param_8 + -1;
+    } while (param_3 < iVar8);
+  }
+  FUN_006c6410(param_1,puVar1[5]);
+  param_3 = 0;
+  if (0 < iVar8) {
+    iVar2 = iVar8 + param_5;
+    param_5 = param_4;
+    do {
+      iVar7 = FUN_006c53b0(param_1,param_5,iVar3,param_5,iVar2,*puVar1);
+      if (iVar7 != 0) break;
+      param_3 = param_3 + 1;
+      param_5 = param_5 + 1;
+    } while (param_3 < iVar8);
+  }
+LAB_006b96ba:
+  FUN_006bbb00(param_1,uVar4);
+  FUN_006c6410(param_1,iVar5);
+  FUN_006c6450(param_1,uVar6);
+  return;
+}
+

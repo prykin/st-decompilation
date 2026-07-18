@@ -1,0 +1,2 @@
+thunk_FUN_0047bf70:
+00405B2D  E9 3E 64 07 00            JMP 0x0047bf70

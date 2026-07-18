@@ -1,0 +1,2 @@
+thunk_FUN_004c2e20:
+00404FCF  E9 4C DE 0B 00            JMP 0x004c2e20

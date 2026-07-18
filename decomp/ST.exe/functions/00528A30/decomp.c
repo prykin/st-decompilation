@@ -1,0 +1,365 @@
+
+undefined4 __cdecl FUN_00528a30(undefined1 param_1,char param_2)
+
+{
+  switch(param_1) {
+  case 1:
+    return 0x5c94;
+  case 2:
+    return 0x5c95;
+  case 3:
+    return 0x5c97;
+  case 4:
+  case 0x81:
+    break;
+  case 5:
+  case 0x82:
+    if (param_2 == '\x01') {
+      return 0x5c9b;
+    }
+    if (param_2 == '\x02') {
+      return 0x5c9c;
+    }
+    return 0x5c9d;
+  case 6:
+  case 0x83:
+    if (param_2 == '\x01') {
+      return 0x5c9e;
+    }
+    if (param_2 == '\x02') {
+      return 0x5c9f;
+    }
+    if (param_2 == '\x03') {
+      return 0x5ca0;
+    }
+    return 0x5ca1;
+  case 7:
+    return 0x5ca2;
+  case 8:
+    return 0x5ca3;
+  case 9:
+    return 0x5ca4;
+  case 10:
+    return 0x5ca5;
+  case 0xb:
+    return 0x5ca6;
+  case 0xc:
+    return 0x5ca7;
+  case 0xd:
+    return 0x5ca8;
+  case 0xe:
+    return 0x5ca9;
+  case 0xf:
+    return 0x5caa;
+  case 0x10:
+    return 0x5cab;
+  case 0x11:
+    return 0x5cac;
+  case 0x12:
+    return 0x5cad;
+  case 0x13:
+    return 0x5cae;
+  case 0x14:
+    return 0x5caf;
+  case 0x15:
+    return 0x5cb0;
+  case 0x16:
+    return 0x5cb1;
+  case 0x17:
+    return 0x5cb2;
+  case 0x18:
+    return 0x5cb3;
+  case 0x19:
+    return 0x5cb4;
+  case 0x1a:
+    return 0x5cb5;
+  case 0x1b:
+    return 0x5cb7;
+  case 0x1c:
+    return 0x5cb8;
+  case 0x1d:
+    return 0x5cb9;
+  case 0x1e:
+    return 0x5cba;
+  case 0x1f:
+    return 0x5cbd;
+  case 0x20:
+    return 0x5cbb;
+  case 0x21:
+    return 0x5cbc;
+  case 0x22:
+    return 0x5cbe;
+  case 0x23:
+    return 0x5cbf;
+  case 0x24:
+    return 0x5cc0;
+  case 0x25:
+    return 0x5cc1;
+  case 0x26:
+    return 0x5cc2;
+  case 0x27:
+    return 0x5cc3;
+  case 0x28:
+    return 0x5cc4;
+  case 0x29:
+    return 0x5cc5;
+  case 0x2a:
+    return 0x5cc6;
+  case 0x2b:
+    return 0x5cc7;
+  case 0x2c:
+    return 0x5cc8;
+  case 0x2d:
+    return 0x5cc9;
+  case 0x2e:
+    return 0x5cca;
+  case 0x2f:
+    return 0x5ccb;
+  case 0x30:
+    return 0x5ccc;
+  case 0x31:
+    return 0x5ccd;
+  case 0x32:
+    return 0x5cb6;
+  case 0x33:
+    return 0x5cce;
+  case 0x34:
+    return 0x5d2b;
+  case 0x35:
+    return 0x5d2f;
+  case 0x36:
+    return 0x5ccf;
+  case 0x37:
+    return 0x5cd0;
+  case 0x38:
+    return 0x5cd1;
+  case 0x39:
+    return 0x5cd2;
+  case 0x3a:
+    return 0x5cd3;
+  case 0x3b:
+    return 0x5cd4;
+  case 0x3c:
+    return 0x5cd5;
+  case 0x3d:
+    return 0x5cd6;
+  case 0x3e:
+    return 0x5cd7;
+  case 0x3f:
+    return 0x5cd9;
+  case 0x40:
+    return 0x5cda;
+  case 0x41:
+    return 0x5cdb;
+  case 0x42:
+    return 0x5cdc;
+  case 0x43:
+    return 0x5cdd;
+  case 0x44:
+    return 0x5cde;
+  case 0x45:
+    return 0x5cdf;
+  case 0x46:
+    return 0x5ce0;
+  case 0x47:
+    return 0x5ce1;
+  case 0x48:
+    return 0x5ce2;
+  case 0x49:
+    return 0x5ce3;
+  case 0x4a:
+    return 0x5ce4;
+  case 0x4b:
+    return 0x5ce5;
+  case 0x4c:
+    return 0x5ce6;
+  case 0x4d:
+    return 0x5ce7;
+  case 0x4e:
+    if (param_2 == '\x01') {
+      return 0x5ce8;
+    }
+    if (param_2 == '\x02') {
+      return 0x5ce9;
+    }
+    return 0x5cea;
+  case 0x4f:
+    return 0x5ceb;
+  case 0x50:
+    return 0x5cec;
+  case 0x51:
+    return 0x5ced;
+  case 0x52:
+    return 0x5cee;
+  case 0x53:
+    return 0x5cef;
+  case 0x54:
+    return 0x5cf0;
+  case 0x55:
+    return 0x5cf1;
+  case 0x56:
+    return 0x5cf2;
+  case 0x57:
+    return 0x5cf3;
+  case 0x58:
+    return 0x5cf4;
+  case 0x59:
+    return 0x5cf5;
+  case 0x5a:
+    return 0x5cf6;
+  case 0x5b:
+    return 0x5cf7;
+  case 0x5c:
+    return 0x5cf8;
+  case 0x5d:
+    return 0x5cf9;
+  case 0x5e:
+    return 0x5cfa;
+  case 0x5f:
+    return 0x5cfb;
+  case 0x60:
+    return 0x5cfc;
+  case 0x61:
+    return 0x5cfe;
+  case 0x62:
+    return 0x5cff;
+  case 99:
+    return 0x5d00;
+  case 100:
+    return 0x5d43;
+  case 0x65:
+    if (param_2 == '\x01') {
+      return 0x5d04;
+    }
+    if (param_2 == '\x02') {
+      return 0x5d05;
+    }
+    return 0x5d06;
+  case 0x66:
+    return 0x5d07;
+  case 0x67:
+    if (param_2 == '\x01') {
+      return 0x5d08;
+    }
+    if (param_2 == '\x02') {
+      return 0x5d09;
+    }
+    return 0x5d0a;
+  case 0x68:
+    return 0x5d0b;
+  case 0x69:
+    return 0x5d0d;
+  case 0x6a:
+    return 0x5d0e;
+  case 0x6b:
+    return 0x5d0f;
+  case 0x6c:
+    return 0x5d10;
+  case 0x6d:
+    if (param_2 == '\x01') {
+      return 0x5d11;
+    }
+    if (param_2 == '\x02') {
+      return 0x5d12;
+    }
+    return 0x5d13;
+  case 0x6e:
+    return 0x5d14;
+  case 0x6f:
+    return 0x5d15;
+  case 0x70:
+    return 0x5d16;
+  case 0x71:
+    return 0x5d17;
+  case 0x72:
+    return 0x5d18;
+  case 0x73:
+    return 0x5d19;
+  case 0x74:
+    return 0x5d1a;
+  case 0x75:
+    return 0x5d1b;
+  case 0x76:
+    return 0x5d1c;
+  case 0x77:
+    return 0x5d1d;
+  case 0x78:
+    return 0x5d1e;
+  case 0x79:
+    return 0x5d1f;
+  case 0x7a:
+    if (param_2 == '\x01') {
+      return 0x5d20;
+    }
+    return 0x5d21;
+  case 0x7b:
+    return 0x5d22;
+  case 0x7c:
+    return 0x5d23;
+  case 0x7d:
+    if (param_2 == '\x01') {
+      return 0x5d24;
+    }
+    return 0x5d25;
+  case 0x7e:
+    return 0x5d26;
+  case 0x7f:
+    return 0x5c96;
+  case 0x80:
+    return 0x5d29;
+  case 0x84:
+    return 0x5d2a;
+  case 0x85:
+    return 0x5d2c;
+  case 0x86:
+    return 0x5d2d;
+  case 0x87:
+    return 0x5d2e;
+  case 0x88:
+    return 0x5d30;
+  case 0x89:
+    return 0x5d31;
+  case 0x8a:
+    return 0x5d32;
+  case 0x8b:
+    return 0x5d33;
+  case 0x8c:
+    return 0x5d34;
+  case 0x8d:
+    return 0x5d35;
+  case 0x8e:
+    return 0x5d36;
+  case 0x8f:
+    return 0x5d37;
+  default:
+    return 0x2711;
+  case 0x91:
+    return 0x5d39;
+  case 0x92:
+    return 0x5d3a;
+  case 0x93:
+    return 0x5d3b;
+  case 0x94:
+    return 0x5d3c;
+  case 0x95:
+    return 0x5d3d;
+  case 0x96:
+    return 0x5d3e;
+  case 0x97:
+    return 0x5d3f;
+  case 0x98:
+    return 0x5d40;
+  case 0x99:
+    return 0x5d41;
+  case 0x9a:
+    return 0x5d42;
+  }
+  if (param_2 == '\x01') {
+    return 0x5c98;
+  }
+  if (param_2 == '\x02') {
+    return 0x5c99;
+  }
+  return 0x5c9a;
+}
+

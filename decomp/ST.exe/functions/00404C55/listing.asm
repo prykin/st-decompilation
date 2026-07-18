@@ -1,0 +1,2 @@
+thunk_FUN_0043fc50:
+00404C55  E9 F6 AF 03 00            JMP 0x0043fc50

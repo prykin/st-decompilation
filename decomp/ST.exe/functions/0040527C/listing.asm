@@ -1,0 +1,2 @@
+thunk_FUN_005f95b0:
+0040527C  E9 2F 43 1F 00            JMP 0x005f95b0

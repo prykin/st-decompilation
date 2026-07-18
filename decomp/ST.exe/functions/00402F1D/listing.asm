@@ -1,0 +1,2 @@
+thunk_FUN_00680c20:
+00402F1D  E9 FE DC 27 00            JMP 0x00680c20

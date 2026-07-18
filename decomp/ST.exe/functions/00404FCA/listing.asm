@@ -1,0 +1,2 @@
+thunk_FUN_005da940:
+00404FCA  E9 71 59 1D 00            JMP 0x005da940

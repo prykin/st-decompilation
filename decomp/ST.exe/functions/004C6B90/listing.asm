@@ -1,0 +1,2 @@
+thunk_FUN_004167a0:
+004C6B90  E9 BD ED F3 FF            JMP 0x00405952

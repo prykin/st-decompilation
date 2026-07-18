@@ -1,0 +1,2 @@
+thunk_FUN_004e6f00:
+004017BC  E9 3F 57 0E 00            JMP 0x004e6f00

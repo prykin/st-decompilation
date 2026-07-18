@@ -1,0 +1,2 @@
+thunk_FUN_005da130:
+004034EF  E9 3C 6C 1D 00            JMP 0x005da130

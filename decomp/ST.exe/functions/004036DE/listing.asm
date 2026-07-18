@@ -1,0 +1,2 @@
+thunk_FUN_0049ed40:
+004036DE  E9 5D B6 09 00            JMP 0x0049ed40

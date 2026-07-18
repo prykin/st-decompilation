@@ -1,0 +1,2 @@
+thunk_FUN_0062f0d0:
+004047BE  E9 0D A9 22 00            JMP 0x0062f0d0
