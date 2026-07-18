@@ -1,0 +1,2 @@
+thunk_FUN_006a0c90:
+0040204F  E9 3C EC 29 00            JMP 0x006a0c90

@@ -1,0 +1,2 @@
+thunk_FUN_00604fc0:
+00402C3E  E9 7D 23 20 00            JMP 0x00604fc0

@@ -1,0 +1,2 @@
+thunk_FUN_0041d100:
+00401F3C  E9 BF B1 01 00            JMP 0x0041d100

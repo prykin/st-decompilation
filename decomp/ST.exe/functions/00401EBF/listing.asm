@@ -1,0 +1,2 @@
+thunk_FUN_0065cd10:
+00401EBF  E9 4C AE 25 00            JMP 0x0065cd10

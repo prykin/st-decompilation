@@ -1,0 +1,2 @@
+thunk_FUN_004e8d40:
+00405281  E9 BA 3A 0E 00            JMP 0x004e8d40

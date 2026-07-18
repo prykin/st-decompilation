@@ -1,0 +1,2 @@
+thunk_FUN_0060ec00:
+0040463D  E9 BE A5 20 00            JMP 0x0060ec00

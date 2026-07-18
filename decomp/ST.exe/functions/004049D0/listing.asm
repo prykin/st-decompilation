@@ -1,0 +1,2 @@
+thunk_FUN_005fb030:
+004049D0  E9 5B 66 1F 00            JMP 0x005fb030

@@ -1,0 +1,2 @@
+thunk_FUN_004c96e0:
+00404A11  E9 CA 4C 0C 00            JMP 0x004c96e0

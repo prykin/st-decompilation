@@ -1,0 +1,2 @@
+thunk_FUN_006a00b0:
+0040113B  E9 70 EF 29 00            JMP 0x006a00b0

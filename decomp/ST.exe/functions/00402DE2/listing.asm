@@ -1,0 +1,2 @@
+thunk_FUN_006a55d0:
+00402DE2  E9 E9 27 2A 00            JMP 0x006a55d0

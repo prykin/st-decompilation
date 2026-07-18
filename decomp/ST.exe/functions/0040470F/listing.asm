@@ -1,0 +1,2 @@
+thunk_FUN_006042d0:
+0040470F  E9 BC FB 1F 00            JMP 0x006042d0

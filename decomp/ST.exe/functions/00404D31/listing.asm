@@ -1,0 +1,2 @@
+thunk_FUN_0067b2e0:
+00404D31  E9 AA 65 27 00            JMP 0x0067b2e0

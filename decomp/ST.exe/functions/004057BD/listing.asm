@@ -1,0 +1,2 @@
+thunk_FUN_00504b80:
+004057BD  E9 BE F3 0F 00            JMP 0x00504b80

@@ -1,0 +1,2 @@
+thunk_FUN_00672af0:
+00403B98  E9 53 EF 26 00            JMP 0x00672af0

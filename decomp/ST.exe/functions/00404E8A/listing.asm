@@ -1,0 +1,2 @@
+thunk_FUN_0041dd00:
+00404E8A  E9 71 8E 01 00            JMP 0x0041dd00

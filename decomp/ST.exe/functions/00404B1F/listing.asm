@@ -1,0 +1,2 @@
+thunk_FUN_0067f740:
+00404B1F  E9 1C AC 27 00            JMP 0x0067f740

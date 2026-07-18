@@ -1,0 +1,2 @@
+thunk_FUN_00682fb0:
+004018AC  E9 FF 16 28 00            JMP 0x00682fb0

@@ -1,0 +1,2 @@
+thunk_FUN_005d1380:
+00405B7D  E9 FE B7 1C 00            JMP 0x005d1380

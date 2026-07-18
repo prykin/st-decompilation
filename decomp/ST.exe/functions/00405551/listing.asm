@@ -1,0 +1,2 @@
+thunk_FUN_004e6d00:
+00405551  E9 AA 17 0E 00            JMP 0x004e6d00

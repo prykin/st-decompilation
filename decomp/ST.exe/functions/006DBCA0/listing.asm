@@ -1,0 +1,13 @@
+FUN_006dbca0:
+006DBCA0  8B C1                     MOV EAX,ECX
+006DBCA2  33 C9                     XOR ECX,ECX
+006DBCA4  89 88 14 01 00 00         MOV dword ptr [EAX + 0x114],ECX
+006DBCAA  89 88 1C 01 00 00         MOV dword ptr [EAX + 0x11c],ECX
+006DBCB0  B9 01 00 00 00            MOV ECX,0x1
+006DBCB5  C7 80 2C 01 00 00 00 00 00 A0  MOV dword ptr [EAX + 0x12c],0xa0000000
+006DBCBF  C7 80 30 01 00 00 99 99 F1 3F  MOV dword ptr [EAX + 0x130],0x3ff19999
+006DBCC9  C7 80 18 01 00 00 00 00 59 40  MOV dword ptr [EAX + 0x118],0x40590000
+006DBCD3  C7 80 20 01 00 00 00 00 79 40  MOV dword ptr [EAX + 0x120],0x40790000
+006DBCDD  89 88 A0 02 00 00         MOV dword ptr [EAX + 0x2a0],ECX
+006DBCE3  89 88 A4 02 00 00         MOV dword ptr [EAX + 0x2a4],ECX
+006DBCE9  C3                        RET

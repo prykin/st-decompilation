@@ -1,0 +1,2 @@
+thunk_FUN_005f91e0:
+00405AFB  E9 E0 36 1F 00            JMP 0x005f91e0

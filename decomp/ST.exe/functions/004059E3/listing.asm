@@ -1,0 +1,2 @@
+thunk_FUN_004e03e0:
+004059E3  E9 F8 A9 0D 00            JMP 0x004e03e0

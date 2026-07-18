@@ -1,0 +1,88 @@
+
+void __thiscall thunk_FUN_006948e0(void *this,int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  *(undefined4 *)((int)this + 0x570f) = 1;
+  *(int *)((int)this + 0x5713) = param_1 + 1;
+  *(int *)((int)this + 0x5717) = param_1;
+  *(undefined4 *)((int)this + 0x571b) = 0;
+  *(undefined4 *)((int)this + 0x571f) = 0;
+  *(undefined4 *)((int)this + 0x5723) = 0;
+  *(undefined4 *)((int)this + 0x5727) = 0;
+  *(undefined4 *)((int)this + 0x572b) = 0;
+  *(undefined4 *)((int)this + 0x572f) = 0xffffffff;
+  iVar1 = param_1 + -1;
+  *(int *)((int)this + 0x5733) = param_1;
+  *(int *)((int)this + 0x5737) = iVar1;
+  *(undefined4 *)((int)this + 0x573b) = 0;
+  *(undefined4 *)((int)this + 0x573f) = 0;
+  *(undefined4 *)((int)this + 0x5743) = 0;
+  *(undefined4 *)((int)this + 0x5747) = 0;
+  *(undefined4 *)((int)this + 0x574b) = 0;
+  *(undefined4 *)((int)this + 0x574f) = 0xffffffff;
+  iVar4 = -1 - param_1;
+  iVar3 = -param_1;
+  *(int *)((int)this + 0x5753) = iVar4;
+  *(int *)((int)this + 0x5757) = iVar3;
+  *(undefined4 *)((int)this + 0x575b) = 0;
+  *(undefined4 *)((int)this + 0x575f) = 0;
+  *(undefined4 *)((int)this + 0x5763) = 0;
+  *(undefined4 *)((int)this + 0x5767) = 0;
+  *(undefined4 *)((int)this + 0x576b) = 0;
+  iVar2 = 1 - param_1;
+  *(int *)((int)this + 0x576f) = iVar3;
+  *(int *)((int)this + 0x5773) = iVar2;
+  *(int *)((int)this + 0x57b3) = iVar4;
+  *(undefined4 *)((int)this + 0x5777) = 1;
+  *(undefined4 *)((int)this + 0x577b) = 0;
+  *(undefined4 *)((int)this + 0x577f) = 0;
+  *(undefined4 *)((int)this + 0x5783) = 0;
+  *(undefined4 *)((int)this + 0x5787) = 0;
+  *(undefined4 *)((int)this + 0x578b) = 0;
+  *(undefined4 *)((int)this + 0x578f) = 0xffffffff;
+  *(undefined4 *)((int)this + 0x5793) = 1;
+  *(int *)((int)this + 0x57b7) = iVar3;
+  *(int *)((int)this + 0x5797) = param_1 + 1;
+  *(int *)((int)this + 0x579b) = param_1;
+  *(int *)((int)this + 0x579f) = iVar1;
+  *(int *)((int)this + 0x57bf) = iVar1;
+  *(undefined4 *)((int)this + 0x57a3) = 0;
+  *(int *)((int)this + 0x57db) = iVar2;
+  *(int *)((int)this + 0x57f3) = iVar2;
+  *(undefined4 *)((int)this + 0x57a7) = 0;
+  *(undefined4 *)((int)this + 0x57ab) = 0;
+  *(undefined4 *)((int)this + 0x57af) = 0xffffffff;
+  *(int *)((int)this + 0x57bb) = param_1;
+  *(undefined4 *)((int)this + 0x57c3) = 0;
+  *(undefined4 *)((int)this + 0x57c7) = 0;
+  *(undefined4 *)((int)this + 0x57cb) = 0;
+  *(undefined4 *)((int)this + 0x57cf) = 0xffffffff;
+  *(int *)((int)this + 0x57d3) = iVar4;
+  *(int *)((int)this + 0x57d7) = iVar3;
+  *(undefined4 *)((int)this + 0x57df) = 1;
+  *(undefined4 *)((int)this + 0x57e3) = 0;
+  *(undefined4 *)((int)this + 0x57e7) = 0;
+  *(undefined4 *)((int)this + 0x57eb) = 0;
+  *(int *)((int)this + 0x57ef) = iVar3;
+  *(undefined4 *)((int)this + 0x57f7) = 1;
+  *(int *)((int)this + 0x57fb) = param_1 + 1;
+  *(int *)((int)this + 0x57ff) = param_1;
+  *(undefined4 *)((int)this + 0x5803) = 0;
+  *(undefined4 *)((int)this + 0x5807) = 0;
+  *(undefined4 *)((int)this + 0x580b) = 0;
+  *(int *)((int)this + 0x5813) = iVar4;
+  *(int *)((int)this + 0x5827) = param_1;
+  *(int *)((int)this + 0x5817) = iVar3;
+  *(int *)((int)this + 0x5823) = param_1 + 1;
+  *(undefined4 *)((int)this + 0x580f) = 0xffffffff;
+  *(int *)((int)this + 0x581b) = iVar2;
+  *(undefined4 *)((int)this + 0x581f) = 1;
+  *(int *)((int)this + 0x582b) = iVar1;
+  return;
+}
+

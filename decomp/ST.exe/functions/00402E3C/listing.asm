@@ -1,0 +1,2 @@
+thunk_FUN_00681fe0:
+00402E3C  E9 9F F1 27 00            JMP 0x00681fe0

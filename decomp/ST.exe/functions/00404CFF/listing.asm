@@ -1,0 +1,2 @@
+thunk_FUN_0047fe10:
+00404CFF  E9 0C B1 07 00            JMP 0x0047fe10

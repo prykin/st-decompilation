@@ -1,0 +1,78 @@
+
+undefined4 __thiscall
+FUN_0056a2a0(void *this,uint *param_1,char *param_2,int param_3,undefined4 *param_4)
+
+{
+  uint uVar1;
+  void *pvVar2;
+  int iVar3;
+  uint *puVar4;
+  DWORD DVar5;
+  undefined4 uVar6;
+  undefined4 unaff_ESI;
+  void *unaff_EDI;
+  undefined4 local_4c;
+  undefined4 local_48 [16];
+  void *local_8;
+  
+  if (((*(int *)((int)this + 0xf8b) != 0) && (param_2 != (char *)0x0)) && (param_1 != (uint *)0x0))
+  {
+    local_4c = DAT_00858df8;
+    DAT_00858df8 = &local_4c;
+    local_8 = this;
+    iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+    if (iVar3 == 0) {
+      if ((*(uint *)(*(int *)(*param_1 + 4) + 8) & 0x100000) == 0) {
+        puVar4 = (uint *)FUN_00719d00(param_1,param_2,0,0);
+      }
+      else {
+        puVar4 = (uint *)FUN_006f1b70(2,param_2,0);
+      }
+      pvVar2 = local_8;
+      if (puVar4 != (uint *)0x0) {
+        if (param_3 < 1) {
+          iVar3 = *(int *)((int)local_8 + 0xe07);
+          uVar1 = *param_1;
+          if (iVar3 < 0) {
+            if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
+              uVar6 = FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,0,1);
+              *(undefined4 *)((int)pvVar2 + 0xe07) = uVar6;
+            }
+            else {
+              iVar3 = FUN_006c2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,0,1);
+              *(int *)((int)pvVar2 + 0xe07) = iVar3;
+            }
+          }
+          else if ((*(uint *)(*(int *)(uVar1 + 4) + 8) & 0x100000) == 0) {
+            FUN_006c1390(puVar4,0,0x48,DAT_0080730a,0,iVar3,iVar3);
+          }
+          else {
+            FUN_006c2530(uVar1,(DWORD)puVar4,0,0x48,DAT_0080730a,0,iVar3,iVar3);
+          }
+        }
+        else {
+          *(int *)((int)local_8 + 0xdfb) = param_3;
+          *(undefined4 *)((int)local_8 + 0xe03) = *(undefined4 *)((int)local_8 + 0xe07);
+          if ((*(uint *)(*(int *)(*param_1 + 4) + 8) & 0x100000) == 0) {
+            iVar3 = FUN_006c1390(puVar4,0,0,DAT_0080730a,0,0,1);
+          }
+          else {
+            iVar3 = FUN_006c2530(*param_1,(DWORD)puVar4,0,0,DAT_0080730a,0,0,1);
+          }
+          *(int *)((int)pvVar2 + 0xe07) = iVar3;
+          DVar5 = timeGetTime();
+          *(DWORD *)((int)pvVar2 + 0xdff) = DVar5;
+        }
+        if (param_4 != (undefined4 *)0x0) {
+          uVar6 = FUN_006c23f0((short *)puVar4);
+          *param_4 = uVar6;
+        }
+      }
+      DAT_00858df8 = (undefined4 *)local_4c;
+      return 0;
+    }
+    DAT_00858df8 = (undefined4 *)local_4c;
+  }
+  return 0xffffffff;
+}
+

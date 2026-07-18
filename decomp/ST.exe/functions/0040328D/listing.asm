@@ -1,0 +1,2 @@
+thunk_FUN_00681f70:
+0040328D  E9 DE EC 27 00            JMP 0x00681f70

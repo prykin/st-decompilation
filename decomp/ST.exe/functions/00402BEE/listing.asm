@@ -1,0 +1,2 @@
+thunk_FUN_0068e140:
+00402BEE  E9 4D B5 28 00            JMP 0x0068e140

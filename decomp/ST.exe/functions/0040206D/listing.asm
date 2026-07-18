@@ -1,0 +1,2 @@
+thunk_FUN_004ff380:
+0040206D  E9 0E D3 0F 00            JMP 0x004ff380

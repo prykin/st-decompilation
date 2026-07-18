@@ -1,0 +1,2 @@
+thunk_FUN_00607ee0:
+004052EF  E9 EC 2B 20 00            JMP 0x00607ee0

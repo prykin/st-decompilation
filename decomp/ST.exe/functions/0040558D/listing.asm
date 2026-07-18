@@ -1,0 +1,2 @@
+thunk_FUN_004c5f30:
+0040558D  E9 9E 09 0C 00            JMP 0x004c5f30

@@ -1,0 +1,29 @@
+# Original game binaries and other redistributable inputs.
+/bin/
+
+# Expanded Ghidra working project. The verified packed checkpoint under
+# ghidra/ is the portable Git/LFS representation.
+/proj/
+
+# macOS metadata.
+.DS_Store
+**/.DS_Store
+
+# Ghidra project locks (created while a project is open).
+*.lock
+*.lock~
+
+# Ghidra session/recovery artifacts. The expanded database itself is covered by
+# the local /proj/ rule above; these patterns also protect nonstandard projects.
+*.bak
+*.tmp
+*.temp
+*.ps
+
+# Local CodeBrowser/project UI state; analysis and annotations live in idata.
+**/*.rep/projectState
+
+# Common editor/patch leftovers.
+*~
+*.swp
+*.swo

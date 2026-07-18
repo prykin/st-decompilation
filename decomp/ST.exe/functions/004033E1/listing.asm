@@ -1,0 +1,2 @@
+thunk_FUN_0061e4f0:
+004033E1  E9 0A B1 21 00            JMP 0x0061e4f0

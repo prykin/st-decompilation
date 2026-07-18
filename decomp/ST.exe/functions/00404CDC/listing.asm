@@ -1,0 +1,2 @@
+thunk_FUN_005ec370:
+00404CDC  E9 8F 76 1E 00            JMP 0x005ec370

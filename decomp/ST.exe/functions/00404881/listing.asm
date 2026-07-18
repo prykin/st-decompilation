@@ -1,0 +1,2 @@
+thunk_FUN_005c0b00:
+00404881  E9 7A C2 1B 00            JMP 0x005c0b00

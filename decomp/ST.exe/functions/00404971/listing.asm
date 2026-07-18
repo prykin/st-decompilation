@@ -1,0 +1,2 @@
+thunk_FUN_004e95c0:
+00404971  E9 4A 4C 0E 00            JMP 0x004e95c0

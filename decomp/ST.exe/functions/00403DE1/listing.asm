@@ -1,0 +1,2 @@
+thunk_FUN_004e2340:
+00403DE1  E9 5A E5 0D 00            JMP 0x004e2340

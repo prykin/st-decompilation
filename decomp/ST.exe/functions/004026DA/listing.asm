@@ -1,0 +1,2 @@
+thunk_FUN_005f0d00:
+004026DA  E9 21 E6 1E 00            JMP 0x005f0d00

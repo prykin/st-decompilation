@@ -1,0 +1,2 @@
+thunk_FUN_005a3540:
+004015BE  E9 7D 1F 1A 00            JMP 0x005a3540

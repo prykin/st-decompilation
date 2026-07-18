@@ -1,0 +1,2 @@
+thunk_FUN_004ce770:
+004032D8  E9 93 B4 0C 00            JMP 0x004ce770

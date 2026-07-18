@@ -1,0 +1,2 @@
+thunk_FUN_004c91a0:
+0040142E  E9 6D 7D 0C 00            JMP 0x004c91a0

@@ -1,0 +1,2 @@
+thunk_FUN_004c61e0:
+004032A1  E9 3A 2F 0C 00            JMP 0x004c61e0

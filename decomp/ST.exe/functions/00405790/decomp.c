@@ -1,0 +1,110 @@
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __thiscall
+thunk_FUN_00636260(void *this,uint param_1,int param_2,int param_3,int param_4,int param_5,
+                  int param_6,int param_7)
+
+{
+  int iVar1;
+  uint *puVar2;
+  uint uVar3;
+  int *piVar4;
+  undefined4 *puVar5;
+  uint uVar6;
+  longlong lVar7;
+  undefined4 auStack_50 [13];
+  undefined4 uStack_1c;
+  undefined4 uStack_18;
+  undefined4 uStack_14;
+  undefined4 uStack_10;
+  float fStack_c;
+  void *pvStack_8;
+  
+  *(uint *)((int)this + 0xc) = param_1;
+  *(int *)((int)this + 0x10) = param_2;
+  *(int *)((int)this + 0x14) = param_3;
+  *(int *)((int)this + 0x18) = param_4;
+  *(int *)((int)this + 0x1c) = param_4;
+  *(undefined4 *)((int)this + 0x30) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  pvStack_8 = this;
+  iVar1 = thunk_FUN_00636fc0((int)this);
+  *(int *)((int)this + 0x28) = iVar1;
+  *(int *)((int)this + 4) = param_7;
+  if (param_7 != 0) {
+    if (param_7 == 1) {
+      *(undefined4 *)((int)this + 0x20) = 0x11;
+      goto LAB_006362c5;
+    }
+    if (param_7 != 2) goto LAB_006362c5;
+  }
+  *(undefined4 *)((int)this + 0x20) = 0x16;
+LAB_006362c5:
+  puVar2 = FUN_006ae290((uint *)0x0,param_5 * param_6,0x32,10);
+  *(uint **)((int)this + 0x2c) = puVar2;
+  if ((puVar2 != (uint *)0x0) && (0 < param_4)) {
+    *(int *)this = param_5;
+    *(int *)((int)this + 8) = param_6;
+    puVar5 = auStack_50;
+    for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
+    }
+    *(undefined2 *)puVar5 = 0;
+    FUN_006ae140(puVar2,param_5 * param_6 - 1,auStack_50);
+    param_1 = 0;
+    fStack_c = _DAT_0079c5a4 / (float)param_5;
+    if (0 < param_5) {
+      do {
+        fcos((float10)(int)param_1 * (float10)fStack_c);
+        fsin((float10)(int)param_1 * (float10)fStack_c);
+        lVar7 = __ftol();
+        uStack_18 = (undefined4)lVar7;
+        lVar7 = __ftol();
+        uStack_1c = (undefined4)lVar7;
+        lVar7 = __ftol();
+        uStack_10 = (undefined4)lVar7;
+        lVar7 = __ftol();
+        uStack_14 = (undefined4)lVar7;
+        if (0 < param_6) {
+          param_4 = param_6;
+          uVar6 = param_1;
+          do {
+            iVar1 = *(int *)((int)this + 0x2c);
+            if (uVar6 < *(uint *)(iVar1 + 0xc)) {
+              piVar4 = (int *)(*(int *)(iVar1 + 8) * uVar6 + *(int *)(iVar1 + 0x1c));
+            }
+            else {
+              piVar4 = (int *)0x0;
+            }
+            *piVar4 = param_7;
+            if (*(int *)((int)pvStack_8 + 0x28) == 0) {
+              piVar4[1] = -1;
+            }
+            else {
+              uVar3 = thunk_FUN_006364b0(*(int *)((int)pvStack_8 + 4));
+              piVar4[1] = uVar3;
+            }
+            *(undefined4 *)((int)piVar4 + 0x12) = uStack_14;
+            *(undefined4 *)((int)piVar4 + 0xe) = uStack_10;
+            *(undefined4 *)((int)piVar4 + 0x26) = uStack_18;
+            *(int *)((int)piVar4 + 0x22) = param_6;
+            *(int *)((int)piVar4 + 0x16) = param_3;
+            uVar6 = uVar6 + param_5;
+            param_4 = param_4 + -1;
+            piVar4[2] = 0;
+            *(undefined1 *)((int)piVar4 + 0xd) = 0;
+            *(undefined4 *)((int)piVar4 + 0x1a) = 0;
+            *(undefined4 *)((int)piVar4 + 0x1e) = 0;
+            *(undefined4 *)((int)piVar4 + 0x2a) = uStack_1c;
+            *(undefined4 *)((int)piVar4 + 0x2e) = 0;
+            this = pvStack_8;
+          } while (param_4 != 0);
+        }
+        param_1 = param_1 + 1;
+      } while ((int)param_1 < param_5);
+    }
+  }
+  return 0;
+}
+

@@ -1,0 +1,2 @@
+thunk_FUN_005f19a0:
+0040355D  E9 3E E4 1E 00            JMP 0x005f19a0

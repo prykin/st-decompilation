@@ -1,0 +1,2 @@
+thunk_FUN_00648ab0:
+004012AD  E9 FE 77 24 00            JMP 0x00648ab0

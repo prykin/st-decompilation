@@ -1,0 +1,2 @@
+thunk_FUN_004e27e0:
+00403CBA  E9 21 EB 0D 00            JMP 0x004e27e0

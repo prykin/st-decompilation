@@ -1,0 +1,2 @@
+thunk_FUN_004e1d70:
+00405EC0  E9 AB BE 0D 00            JMP 0x004e1d70

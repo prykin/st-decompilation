@@ -1,0 +1,55 @@
+
+undefined4 __thiscall thunk_FUN_0068f8f0(void *this,short param_1)
+
+{
+  short sVar1;
+  int iVar2;
+  uint uVar3;
+  uint *puVar4;
+  bool bVar5;
+  uint auStack_38 [2];
+  char cStack_30;
+  
+  if (param_1 == 1) {
+    if (*(short *)((int)this + 0x39) != 3) {
+      return 1;
+    }
+    if ((DAT_007fa174 != 0) &&
+       (sVar1 = thunk_FUN_0043e640(*(char *)((int)this + 0x24),0x62,0,-1), sVar1 != 0)) {
+      return 1;
+    }
+  }
+  else {
+    iVar2 = *(int *)((int)this + 0xa5);
+    uVar3 = 0;
+    if (0 < *(int *)(iVar2 + 0xc)) {
+      bVar5 = *(int *)(iVar2 + 0xc) != 0;
+      do {
+        if (bVar5) {
+          iVar2 = *(int *)(iVar2 + 8) * uVar3 + *(int *)(iVar2 + 0x1c);
+        }
+        else {
+          iVar2 = 0;
+        }
+        if ((*(int *)(iVar2 + 4) != 0) && (*(short *)(*(int *)(iVar2 + 4) + 0x7b) == -0x8000)) {
+          puVar4 = auStack_38;
+          for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
+            *puVar4 = 0;
+            puVar4 = puVar4 + 1;
+          }
+          auStack_38[1] = *(undefined4 *)((int)this + 300);
+          auStack_38[0] = 0x75;
+          thunk_FUN_00662240(auStack_38);
+          if ('\0' < cStack_30) {
+            return 1;
+          }
+        }
+        iVar2 = *(int *)((int)this + 0xa5);
+        uVar3 = uVar3 + 1;
+        bVar5 = uVar3 < *(uint *)(iVar2 + 0xc);
+      } while ((int)uVar3 < (int)*(uint *)(iVar2 + 0xc));
+    }
+  }
+  return 0;
+}
+

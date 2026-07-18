@@ -1,0 +1,12 @@
+
+undefined *
+FUN_00692390(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined *puVar1;
+  
+  puVar1 = thunk_FUN_00691650(s_CONTUR_007d59cc,param_4);
+  wsprintfA(&DAT_00853b6c,s__s_u_u_u_007d59c0,puVar1,param_1,param_2,param_3);
+  return &DAT_00853b6c;
+}
+

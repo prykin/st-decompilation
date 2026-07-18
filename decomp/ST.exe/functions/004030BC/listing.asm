@@ -1,0 +1,2 @@
+thunk_FUN_004ac040:
+004030BC  E9 7F 8F 0A 00            JMP 0x004ac040

@@ -1,0 +1,2 @@
+thunk_FUN_004ac910:
+004042AF  E9 5C 86 0A 00            JMP 0x004ac910

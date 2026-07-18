@@ -1,0 +1,2 @@
+thunk_FUN_004a9990:
+00404DC7  E9 C4 4B 0A 00            JMP 0x004a9990

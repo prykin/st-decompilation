@@ -1,0 +1,2 @@
+thunk_FUN_004ec400:
+00405C2C  E9 CF 67 0E 00            JMP 0x004ec400

@@ -1,0 +1,17 @@
+
+void __thiscall FUN_0062f0d0(void *this,int param_1)
+
+{
+  int iVar1;
+  void *this_00;
+  
+  iVar1 = *(int *)((int)this + param_1 * 4 + 0x1e5);
+  if ((iVar1 != 0) && (this_00 = *(void **)(iVar1 + 0x10), this_00 != (void *)0x0)) {
+    thunk_FUN_004ac610(this_00,'\x0e');
+    thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    *(undefined1 *)(*(int *)((int)this + param_1 * 4 + 0x1e5) + 0x3d) = 1;
+    FUN_006ea3e0(DAT_00807598,*(uint *)((int)this_00 + 0x18),-1);
+  }
+  return;
+}
+

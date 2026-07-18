@@ -1,0 +1,153 @@
+
+void __cdecl thunk_FUN_004f4c70(int param_1,undefined *param_2,BYTE param_3)
+
+{
+  char cVar1;
+  int iVar2;
+  uint uVar3;
+  uint uVar4;
+  char *pcVar5;
+  LOGFONTA *pLVar6;
+  char *pcVar7;
+  CHAR *pCVar8;
+  LOGFONTA LStack_a0;
+  byte abStack_64 [88];
+  byte abStack_c [8];
+  
+  pLVar6 = &LStack_a0;
+  for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
+    pLVar6->lfHeight = 0;
+    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+  }
+  LStack_a0.lfCharSet = param_3;
+  uVar3 = 0xffffffff;
+  pcVar5 = s_System_007c1bd0;
+  do {
+    pcVar7 = pcVar5;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    pcVar7 = pcVar5 + 1;
+    cVar1 = *pcVar5;
+    pcVar5 = pcVar7;
+  } while (cVar1 != '\0');
+  uVar3 = ~uVar3;
+  LStack_a0.lfHeight = -0xd;
+  LStack_a0.lfWidth = 0;
+  LStack_a0.lfEscapement = 0;
+  LStack_a0.lfOrientation = 0;
+  LStack_a0.lfWeight = 700;
+  LStack_a0.lfItalic = '\0';
+  LStack_a0.lfUnderline = '\0';
+  LStack_a0.lfStrikeOut = '\0';
+  LStack_a0.lfOutPrecision = '\x01';
+  LStack_a0.lfClipPrecision = '\x02';
+  LStack_a0.lfQuality = '\x01';
+  LStack_a0.lfPitchAndFamily = '\"';
+  abStack_c[0] = 0xff;
+  pcVar5 = pcVar7 + -uVar3;
+  pCVar8 = LStack_a0.lfFaceName;
+  for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
+    pcVar5 = pcVar5 + 4;
+    pCVar8 = pCVar8 + 4;
+  }
+  abStack_c[1] = 0;
+  for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+    *pCVar8 = *pcVar5;
+    pcVar5 = pcVar5 + 1;
+    pCVar8 = pCVar8 + 1;
+  }
+  abStack_c[2] = 0xac;
+  abStack_c[3] = 0xad;
+  abStack_c[4] = 0xae;
+  abStack_64[0] = 0x20;
+  abStack_64[1] = 0x21;
+  abStack_64[2] = 0x22;
+  abStack_64[3] = 0x23;
+  abStack_64[4] = 0x25;
+  abStack_64[5] = 0x26;
+  abStack_64[6] = 0x27;
+  abStack_64[7] = 0x28;
+  abStack_64[8] = 0x29;
+  abStack_64[9] = 0x2c;
+  abStack_64[10] = 0x2d;
+  abStack_64[0xb] = 0x2e;
+  abStack_64[0xc] = 0x2f;
+  abStack_64[0xd] = 0x30;
+  abStack_64[0xe] = 0x31;
+  abStack_64[0xf] = 0x32;
+  abStack_64[0x10] = 0x33;
+  abStack_64[0x11] = 0x34;
+  abStack_64[0x12] = 0x35;
+  abStack_64[0x13] = 0x36;
+  abStack_64[0x14] = 0x37;
+  abStack_64[0x15] = 0x38;
+  abStack_64[0x16] = 0x39;
+  abStack_64[0x17] = 0x3a;
+  abStack_64[0x18] = 0x3d;
+  abStack_64[0x19] = 0x3e;
+  abStack_64[0x1a] = 0x3f;
+  abStack_64[0x1b] = 0x41;
+  abStack_64[0x1c] = 0x42;
+  abStack_64[0x1d] = 0x43;
+  abStack_64[0x1e] = 0x44;
+  abStack_64[0x1f] = 0x45;
+  abStack_64[0x20] = 0xd;
+  abStack_64[0x21] = 10;
+  abStack_64[0x22] = 0x46;
+  abStack_64[0x23] = 0x47;
+  abStack_64[0x24] = 0x48;
+  abStack_64[0x42] = 0xd;
+  abStack_64[0x43] = 10;
+  abStack_64[0x25] = 0x49;
+  abStack_64[0x26] = 0x4a;
+  abStack_64[0x27] = 0x4b;
+  abStack_64[0x28] = 0x4c;
+  abStack_64[0x29] = 0x4d;
+  abStack_64[0x2a] = 0x4e;
+  abStack_64[0x2b] = 0x4f;
+  abStack_64[0x2c] = 0x50;
+  abStack_64[0x2d] = 0x51;
+  abStack_64[0x2e] = 0x52;
+  abStack_64[0x2f] = 0x53;
+  abStack_64[0x30] = 0x54;
+  abStack_64[0x31] = 0x55;
+  abStack_64[0x32] = 0x56;
+  abStack_64[0x33] = 0x57;
+  abStack_64[0x34] = 0x58;
+  abStack_64[0x35] = 0x59;
+  abStack_64[0x36] = 0x5a;
+  abStack_64[0x37] = 0x5c;
+  abStack_64[0x38] = 0x5f;
+  abStack_64[0x39] = 0x61;
+  abStack_64[0x3a] = 0x62;
+  abStack_64[0x3b] = 99;
+  abStack_64[0x3c] = 100;
+  abStack_64[0x3d] = 0x65;
+  abStack_64[0x3e] = 0x66;
+  abStack_64[0x3f] = 0x67;
+  abStack_64[0x40] = 0x68;
+  abStack_64[0x41] = 0x69;
+  abStack_64[0x44] = 0x6a;
+  abStack_64[0x45] = 0x6b;
+  abStack_64[0x46] = 0x6c;
+  abStack_64[0x47] = 0x6d;
+  abStack_64[0x48] = 0x6e;
+  abStack_64[0x49] = 0x6f;
+  abStack_64[0x4a] = 0x70;
+  abStack_64[0x4b] = 0x71;
+  abStack_64[0x4c] = 0x72;
+  abStack_64[0x4d] = 0x73;
+  abStack_64[0x4e] = 0x74;
+  abStack_64[0x4f] = 0x75;
+  abStack_64[0x50] = 0x76;
+  abStack_64[0x51] = 0x77;
+  abStack_64[0x52] = 0x78;
+  abStack_64[0x53] = 0x79;
+  abStack_64[0x54] = 0x7a;
+  abStack_64[0x55] = 0x7c;
+  abStack_64[0x56] = 0x7e;
+  FUN_0070d1f0(0x19d,&LStack_a0,(uint *)0x0,abStack_64,param_1,abStack_c,1,4,1,1,0x20081c,param_2);
+  return;
+}
+

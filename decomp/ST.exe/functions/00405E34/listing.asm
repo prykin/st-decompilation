@@ -1,0 +1,2 @@
+thunk_FUN_004e9c00:
+00405E34  E9 C7 3D 0E 00            JMP 0x004e9c00

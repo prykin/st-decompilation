@@ -1,0 +1,2 @@
+thunk_FUN_004dd700:
+004044DF  E9 1C 92 0D 00            JMP 0x004dd700

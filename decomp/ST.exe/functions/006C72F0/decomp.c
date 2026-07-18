@@ -1,0 +1,66 @@
+
+void FUN_006c72f0(int *param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 *puVar4;
+  int iVar5;
+  uint uVar6;
+  undefined4 local_70;
+  undefined4 local_6c [16];
+  int local_2c;
+  int local_28;
+  int local_24;
+  int local_20;
+  undefined1 *local_1c;
+  void *local_14;
+  undefined1 *puStack_10;
+  undefined *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &DAT_0079da08;
+  puStack_10 = &LAB_0072d964;
+  local_14 = ExceptionList;
+  local_1c = &stack0xffffff7c;
+  local_20 = *(int *)((int)param_1 + 0x62) + *param_1;
+  iVar5 = *(int *)((int)param_1 + 0x6a);
+  iVar3 = *(int *)(*(int *)((int)param_1 + 0x3a) + 4);
+  if (iVar3 < iVar5 + local_20) {
+    iVar5 = iVar3 - local_20;
+  }
+  local_24 = *(int *)((int)param_1 + 0x66) + param_1[1];
+  iVar3 = *(int *)((int)param_1 + 0x6e);
+  uVar1 = *(uint *)(*(int *)((int)param_1 + 0x3a) + 8);
+  uVar6 = (int)uVar1 >> 0x1f;
+  iVar2 = (uVar1 ^ uVar6) - uVar6;
+  if (iVar2 < iVar3 + local_24) {
+    iVar3 = iVar2 - local_24;
+  }
+  ExceptionList = &local_14;
+  local_2c = iVar3;
+  local_28 = iVar5;
+  FUN_006ab060((undefined4 *)((int)param_1 + 0x72));
+  if ((iVar5 == *(int *)((int)param_1 + 0x6a)) && (iVar3 == *(int *)((int)param_1 + 0x6e))) {
+    local_70 = DAT_00858df8;
+    DAT_00858df8 = &local_70;
+    iVar5 = __setjmp3(local_6c,2,FUN_0072da21,local_8);
+    local_1c = &stack0xffffff7c;
+    if (iVar5 == 0) {
+      local_8 = 0;
+      puVar4 = FUN_006b55f0((undefined4 *)0x0,0,0,0,*(int *)((int)param_1 + 0x3a),
+                            *(int *)((int)param_1 + 0x3e),local_20,local_24,local_28,local_2c);
+      *(undefined4 **)((int)param_1 + 0x72) = puVar4;
+      DAT_00858df8 = (undefined4 *)local_70;
+      ExceptionList = local_14;
+      return;
+    }
+    DAT_00858df8 = (undefined4 *)local_70;
+    *(undefined4 *)((int)param_1 + 0x72) = 0;
+  }
+  ExceptionList = local_14;
+  return;
+}
+

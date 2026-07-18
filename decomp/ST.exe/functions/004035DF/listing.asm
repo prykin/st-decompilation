@@ -1,0 +1,2 @@
+thunk_FUN_004c7260:
+004035DF  E9 7C 3C 0C 00            JMP 0x004c7260

@@ -1,0 +1,2 @@
+thunk_FUN_005b68b0:
+004042D2  E9 D9 25 1B 00            JMP 0x005b68b0

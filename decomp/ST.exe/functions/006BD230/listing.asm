@@ -1,0 +1,10 @@
+FUN_006bd230:
+006BD230  C7 05 28 4F 85 00 00 00 00 00  MOV dword ptr [0x00854f28],0x0
+LAB_006bd23a:
+006BD23A  C7 05 6C 4F 85 00 00 00 00 00  MOV dword ptr [0x00854f6c],0x0
+006BD244  E8 A7 F6 FF FF            CALL 0x006bc8f0
+006BD249  E8 C2 FA FF FF            CALL 0x006bcd10
+006BD24E  A1 6C 4F 85 00            MOV EAX,[0x00854f6c]
+006BD253  85 C0                     TEST EAX,EAX
+006BD255  75 E3                     JNZ 0x006bd23a
+006BD257  C3                        RET

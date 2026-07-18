@@ -1,0 +1,2 @@
+thunk_FUN_00678fc0:
+004044BC  E9 FF 4A 27 00            JMP 0x00678fc0

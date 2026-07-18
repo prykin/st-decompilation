@@ -1,0 +1,10 @@
+FUN_0075415c:
+0075415C  D1 E6                     SHL ESI,0x1
+0075415E  0F B7 9C 35 D0 81 00 00   MOVZX EBX,word ptr [EBP + ESI*0x1 + 0x81d0]
+00754166  81 FB 00 40 00 00         CMP EBX,0x4000
+0075416C  74 14                     JZ 0x00754182
+0075416E  66 C7 84 1D CE 21 00 00 00 40  MOV word ptr [EBP + EBX*0x1 + 0x21ce],0x4000
+00754178  66 C7 84 35 D0 81 00 00 00 40  MOV word ptr [EBP + ESI*0x1 + 0x81d0],0x4000
+LAB_00754182:
+00754182  D1 EE                     SHR ESI,0x1
+00754184  C3                        RET

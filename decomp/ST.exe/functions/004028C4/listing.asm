@@ -1,0 +1,2 @@
+thunk_FUN_0061f8b0:
+004028C4  E9 E7 CF 21 00            JMP 0x0061f8b0

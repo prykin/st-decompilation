@@ -1,0 +1,2 @@
+thunk_FUN_004e5f20:
+00401D66  E9 B5 41 0E 00            JMP 0x004e5f20

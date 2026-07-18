@@ -1,0 +1,2 @@
+thunk_FUN_004e1e30:
+0040320B  E9 20 EC 0D 00            JMP 0x004e1e30

@@ -1,0 +1,2 @@
+thunk_FUN_004ff110:
+00401C44  E9 C7 D4 0F 00            JMP 0x004ff110

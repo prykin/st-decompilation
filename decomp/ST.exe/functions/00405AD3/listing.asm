@@ -1,0 +1,2 @@
+thunk_FUN_004ec900:
+00405AD3  E9 28 6E 0E 00            JMP 0x004ec900

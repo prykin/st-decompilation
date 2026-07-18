@@ -1,0 +1,2 @@
+thunk_FUN_004d7b10:
+00405DFD  E9 0E 1D 0D 00            JMP 0x004d7b10

@@ -1,0 +1,2 @@
+thunk_FUN_004c34a0:
+004035A3  E9 F8 FE 0B 00            JMP 0x004c34a0

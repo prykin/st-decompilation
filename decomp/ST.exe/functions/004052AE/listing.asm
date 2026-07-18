@@ -1,0 +1,2 @@
+thunk_FUN_00690fc0:
+004052AE  E9 0D BD 28 00            JMP 0x00690fc0

@@ -1,0 +1,2 @@
+thunk_FUN_004d9c80:
+00405BA5  E9 D6 40 0D 00            JMP 0x004d9c80

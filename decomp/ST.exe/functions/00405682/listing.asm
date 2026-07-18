@@ -1,0 +1,2 @@
+thunk_FUN_004e20d0:
+00405682  E9 49 CA 0D 00            JMP 0x004e20d0

@@ -1,0 +1,2 @@
+thunk_FUN_004e4480:
+00405AAB  E9 D0 E9 0D 00            JMP 0x004e4480

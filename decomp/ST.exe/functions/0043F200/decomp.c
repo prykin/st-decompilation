@@ -1,0 +1,75 @@
+
+uint * FUN_0043f200(char param_1,byte *param_2)
+
+{
+  byte bVar1;
+  int *piVar2;
+  code *pcVar3;
+  int iVar4;
+  byte *pbVar5;
+  int iVar6;
+  uint *puVar7;
+  undefined4 unaff_ESI;
+  byte *pbVar8;
+  void *unaff_EDI;
+  bool bVar9;
+  undefined4 local_64;
+  undefined4 local_60 [16];
+  byte local_20 [16];
+  int local_10;
+  uint *local_c;
+  int local_8;
+  
+  local_10 = *(int *)((int)&DAT_007f4e29 + param_1 * 0xa62);
+  local_8 = *(int *)(local_10 + 0xc);
+  local_64 = DAT_00858df8;
+  DAT_00858df8 = &local_64;
+  iVar4 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  if (iVar4 != 0) {
+    DAT_00858df8 = (undefined4 *)local_64;
+    iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2075,0,iVar4,&DAT_007a4ccc);
+    if (iVar6 != 0) {
+      pcVar3 = (code *)swi(3);
+      puVar7 = (uint *)(*pcVar3)();
+      return puVar7;
+    }
+    FUN_006a5e40(iVar4,0,0x7a6004,0x2076);
+    return (uint *)0x0;
+  }
+  local_c = FUN_006ae290((uint *)0x0,0,2,1);
+  iVar4 = 0;
+  if (0 < local_8) {
+    do {
+      piVar2 = *(int **)(*(int *)(local_10 + 0x1c) + iVar4 * 4);
+      if (piVar2 != (int *)0x0) {
+        (**(code **)(*piVar2 + 0x74))(local_20);
+        pbVar8 = local_20;
+        pbVar5 = param_2;
+        do {
+          bVar1 = *pbVar5;
+          bVar9 = bVar1 < *pbVar8;
+          if (bVar1 != *pbVar8) {
+LAB_0043f2ad:
+            iVar6 = (1 - (uint)bVar9) - (uint)(bVar9 != 0);
+            goto LAB_0043f2b2;
+          }
+          if (bVar1 == 0) break;
+          bVar1 = pbVar5[1];
+          bVar9 = bVar1 < pbVar8[1];
+          if (bVar1 != pbVar8[1]) goto LAB_0043f2ad;
+          pbVar5 = pbVar5 + 2;
+          pbVar8 = pbVar8 + 2;
+        } while (bVar1 != 0);
+        iVar6 = 0;
+LAB_0043f2b2:
+        if (iVar6 == 0) {
+          FUN_006ae1c0(local_c,(undefined4 *)((int)piVar2 + 0x32));
+        }
+      }
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < local_8);
+  }
+  DAT_00858df8 = (undefined4 *)local_64;
+  return local_c;
+}
+

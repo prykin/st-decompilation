@@ -1,0 +1,2 @@
+thunk_FUN_0061fe80:
+004058A8  E9 D3 A5 21 00            JMP 0x0061fe80

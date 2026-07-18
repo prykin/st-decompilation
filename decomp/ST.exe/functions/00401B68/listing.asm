@@ -1,0 +1,2 @@
+thunk_FUN_005fd830:
+00401B68  E9 C3 BC 1F 00            JMP 0x005fd830

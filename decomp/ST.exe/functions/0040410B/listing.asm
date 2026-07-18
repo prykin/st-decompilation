@@ -1,0 +1,2 @@
+thunk_FUN_00674fb0:
+0040410B  E9 A0 0E 27 00            JMP 0x00674fb0

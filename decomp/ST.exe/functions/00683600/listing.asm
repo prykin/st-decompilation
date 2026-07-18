@@ -1,0 +1,20 @@
+FUN_00683600:
+00683600  83 3D 18 2D 7D 00 1D      CMP dword ptr [0x007d2d18],0x1d
+00683607  75 05                     JNZ 0x0068360e
+00683609  E8 5B EE D7 FF            CALL 0x00402469
+LAB_0068360e:
+0068360E  E8 D2 12 D8 FF            CALL 0x004048e5
+00683613  83 3D 18 2D 7D 00 13      CMP dword ptr [0x007d2d18],0x13
+0068361A  75 24                     JNZ 0x00683640
+0068361C  6A 13                     PUSH 0x13
+0068361E  E8 9A 1C D8 FF            CALL 0x004052bd
+00683623  E8 FE 17 D8 FF            CALL 0x00404e26
+00683628  6A 0F                     PUSH 0xf
+0068362A  E8 8E 1C D8 FF            CALL 0x004052bd
+0068362F  E8 F2 17 D8 FF            CALL 0x00404e26
+00683634  6A 03                     PUSH 0x3
+00683636  6A 13                     PUSH 0x13
+00683638  E8 30 26 D8 FF            CALL 0x00405c6d
+0068363D  83 C4 10                  ADD ESP,0x10
+LAB_00683640:
+00683640  C3                        RET

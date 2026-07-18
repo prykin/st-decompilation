@@ -1,0 +1,2 @@
+thunk_FUN_004c3480:
+004048CC  E9 AF EB 0B 00            JMP 0x004c3480

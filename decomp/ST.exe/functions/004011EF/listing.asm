@@ -1,0 +1,2 @@
+thunk_FUN_004cc370:
+004011EF  E9 7C B1 0C 00            JMP 0x004cc370

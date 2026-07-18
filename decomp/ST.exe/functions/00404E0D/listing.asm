@@ -1,0 +1,2 @@
+thunk_FUN_005f5e30:
+00404E0D  E9 1E 10 1F 00            JMP 0x005f5e30

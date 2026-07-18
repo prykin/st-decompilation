@@ -1,0 +1,2 @@
+thunk_FUN_004dc260:
+00404E80  E9 DB 73 0D 00            JMP 0x004dc260

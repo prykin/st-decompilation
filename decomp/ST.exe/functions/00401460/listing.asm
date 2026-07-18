@@ -1,0 +1,2 @@
+thunk_FUN_005fb600:
+00401460  E9 9B A1 1F 00            JMP 0x005fb600

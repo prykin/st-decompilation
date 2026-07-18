@@ -1,0 +1,2 @@
+thunk_FUN_005f1380:
+004016A9  E9 D2 FC 1E 00            JMP 0x005f1380

@@ -1,0 +1,2 @@
+thunk_FUN_0060ca20:
+00402DC4  E9 57 9C 20 00            JMP 0x0060ca20

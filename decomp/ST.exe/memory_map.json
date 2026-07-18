@@ -1,0 +1,11 @@
+[
+  {"name":"Headers","start":"00400000","end":"00400FFF","size":4096,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".text","start":"00401000","end":"0078FFFF","size":3731456,"read":true,"write":false,"execute":true,"initialized":true,"volatile":false,"source":""},
+  {"name":".rdata","start":"00790000","end":"007A3FFF","size":81920,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".data","start":"007A4000","end":"0085A5F7","size":747000,"read":true,"write":true,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".idata","start":"0085B000","end":"0085DFFF","size":12288,"read":true,"write":true,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":"Shared","start":"0085E000","end":"0085EFFF","size":4096,"read":true,"write":true,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".rsrc","start":"0085F000","end":"0085FFFF","size":4096,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":".reloc","start":"00860000","end":"00888FFF","size":167936,"read":true,"write":false,"execute":false,"initialized":true,"volatile":false,"source":""},
+  {"name":"tdb","start":"FFDFF000","end":"FFDFFFFF","size":4096,"read":true,"write":true,"execute":false,"initialized":true,"volatile":false,"source":""}
+]

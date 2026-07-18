@@ -1,0 +1,2 @@
+thunk_FUN_0067a0c0:
+004049DA  E9 E1 56 27 00            JMP 0x0067a0c0

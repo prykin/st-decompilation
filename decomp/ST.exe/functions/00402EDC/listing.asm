@@ -1,0 +1,2 @@
+thunk_FUN_0045ff10:
+00402EDC  E9 2F D0 05 00            JMP 0x0045ff10

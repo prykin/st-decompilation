@@ -1,0 +1,2 @@
+thunk_FUN_004ea460:
+004058E4  E9 77 4B 0E 00            JMP 0x004ea460

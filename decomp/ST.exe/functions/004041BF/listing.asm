@@ -1,0 +1,2 @@
+thunk_FUN_0065dc00:
+004041BF  E9 3C 9A 25 00            JMP 0x0065dc00

@@ -1,0 +1,2 @@
+thunk_FUN_0060ef40:
+00402A54  E9 E7 C4 20 00            JMP 0x0060ef40

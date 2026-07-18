@@ -1,0 +1,2 @@
+thunk_FUN_0067d0a0:
+004043D6  E9 C5 8C 27 00            JMP 0x0067d0a0

@@ -1,0 +1,2 @@
+thunk_FUN_005f0310:
+004043D1  E9 3A BF 1E 00            JMP 0x005f0310

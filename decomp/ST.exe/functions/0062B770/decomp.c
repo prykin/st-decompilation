@@ -1,0 +1,45 @@
+
+void __cdecl
+FUN_0062b770(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5
+            ,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  undefined4 local_44 [5];
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  undefined4 local_20;
+  undefined4 local_1c;
+  undefined4 local_18;
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
+  undefined4 local_8;
+  
+  puVar2 = local_44;
+  for (iVar1 = 0x10; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *puVar2 = 0;
+    puVar2 = puVar2 + 1;
+  }
+  local_28 = param_1;
+  local_24 = param_2;
+  local_20 = param_3;
+  local_1c = param_4;
+  local_18 = *(undefined4 *)(param_5 + 0x18);
+  local_14 = *(undefined4 *)(param_5 + 0x24);
+  local_10 = param_6;
+  local_8 = param_8;
+  local_44[0] = 0xd2;
+  local_44[1] = 0xff;
+  local_44[2] = 0;
+  local_44[3] = 0;
+  local_2c = 0;
+  local_30 = 0;
+  local_c = param_7;
+  (**(code **)(*DAT_00802a38 + 8))(0x124,0,0,local_44,0);
+  return;
+}
+

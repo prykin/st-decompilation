@@ -1,0 +1,2 @@
+thunk_FUN_005f5d10:
+00404C46  E9 C5 10 1F 00            JMP 0x005f5d10

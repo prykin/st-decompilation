@@ -1,0 +1,27 @@
+
+undefined4 __thiscall FUN_0068fc70(void *this,uint *param_1,short param_2)
+
+{
+  int iVar1;
+  uint uVar2;
+  bool bVar3;
+  
+  uVar2 = 0;
+  iVar1 = *(int *)((int)this + 0xa5);
+  if (0 < *(int *)(iVar1 + 0xc)) {
+    bVar3 = *(int *)(iVar1 + 0xc) != 0;
+    do {
+      if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
+          && (iVar1 = *(int *)(iVar1 + 4), iVar1 != 0)) &&
+         ((uint)*(ushort *)(iVar1 + 0x7d) == (int)param_2)) {
+        thunk_FUN_00662240(param_1);
+      }
+      iVar1 = *(int *)((int)this + 0xa5);
+      uVar2 = uVar2 + 1;
+      bVar3 = uVar2 < *(uint *)(iVar1 + 0xc);
+    } while ((int)uVar2 < (int)*(uint *)(iVar1 + 0xc));
+    return 0;
+  }
+  return 0;
+}
+

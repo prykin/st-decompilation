@@ -1,0 +1,2 @@
+thunk_FUN_004b7b20:
+0040573B  E9 E0 23 0B 00            JMP 0x004b7b20
