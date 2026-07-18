@@ -1,4 +1,4 @@
-FUN_005c4930:
+SettMapTy::DoneSettMap:
 005C4930  55                        PUSH EBP
 005C4931  8B EC                     MOV EBP,ESP
 005C4933  83 EC 48                  SUB ESP,0x48

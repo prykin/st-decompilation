@@ -1,5 +1,9 @@
 
-int FUN_005f94c0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_coll3.cpp
+   STColl3C::CreateAddSpr */
+
+int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
 
 {
   code *pcVar1;
@@ -11,11 +15,12 @@ int FUN_005f94c0(void)
   undefined4 local_50;
   undefined4 local_4c [16];
   int local_c;
-  int local_8;
+  STColl3C *local_8;
   
   local_c = 0;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_8 = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar3 = (undefined4 *)FUN_006aac70(0x6c);

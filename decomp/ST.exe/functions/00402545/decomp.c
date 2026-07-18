@@ -1,5 +1,4 @@
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
@@ -16,7 +15,7 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
   short sVar9;
   int iVar10;
   uint uVar11;
-  char ****ppppcVar12;
+  AiFltClassTy *pAVar12;
   int iVar13;
   byte *pbVar14;
   byte *pbVar15;
@@ -30,7 +29,7 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
   char *pcVar21;
   uint uVar22;
   undefined4 unaff_ESI;
-  char ****ppppcVar23;
+  AiFltClassTy **ppAVar23;
   void *unaff_EDI;
   undefined4 *puVar24;
   undefined8 uVar25;
@@ -113,7 +112,7 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
   short sStack_56;
   short sStack_54;
   short sStack_52;
-  char ****appppcStack_50 [8];
+  AiFltClassTy *apAStack_50 [8];
   undefined4 uStack_30;
   undefined4 uStack_2c;
   undefined4 uStack_28;
@@ -124,7 +123,7 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
   uint *puStack_14;
   undefined4 uStack_10;
   char *pcStack_c;
-  char ****ppppcStack_8;
+  AiFltClassTy *pAStack_8;
   
   puStack_14 = (uint *)0x0;
   uStack_260 = DAT_00858df8;
@@ -157,9 +156,9 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
   iVar10 = (int)*(short *)(param_1 + param_2 * 5 + 1);
   if (iVar10 < 0x7f7) {
     if (iVar10 == 0x7f6) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -167,8 +166,8 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
           piStack_64[0x21] = -1;
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-      } while ((int)ppppcStack_8 < 0xf);
+        pAStack_8 = pAStack_8 + 5;
+      } while ((int)pAStack_8 < 0xf);
       if ((param_1[0xf] != '\x06') && (param_1[0xf] != '\x03')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -179,9 +178,9 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
       }
       pcStack_c = (char *)0x4;
       if (4 < param_2) {
-        ppppcStack_8 = (char ****)0x14;
+        pAStack_8 = (AiFltClassTy *)0x14;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -190,11 +189,11 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -204,8 +203,8 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       DAT_00811980 = 0;
       if (0 < iVar10) {
         uStack_10 = param_1 + 0x2d;
@@ -216,7 +215,7 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
         uStack_30 = param_1 + 0x14;
         uStack_28 = param_1 + 0xf;
         pcStack_c = param_1 + 10;
-        ppppcVar12 = (char ****)appppcStack_50;
+        ppAVar23 = apAStack_50;
         do {
           uVar28 = 0;
           puVar26 = &LAB_00405628;
@@ -235,9 +234,9 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
           uVar18 = (**(code **)*piStack_64)(uStack_30,uVar18);
           uVar18 = (**(code **)(*piStack_64 + 8))(uStack_28,uVar18);
           sVar6 = (**(code **)*piStack_64)(pcStack_c,uVar18);
-          thunk_FUN_00677be0(*(short *)ppppcVar12,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
+          thunk_FUN_00677be0(*(short *)ppAVar23,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
                              puVar26,uVar28);
-          ppppcVar12 = ppppcVar12 + 1;
+          ppAVar23 = ppAVar23 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -247,9 +246,9 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
       if (iVar10 == 0x7e6) {
         pcStack_c = (char *)0x0;
         if (0 < param_2) {
-          ppppcStack_8 = (char ****)0x0;
+          pAStack_8 = (AiFltClassTy *)0x0;
           do {
-            if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+            if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
               pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
               if (pcVar21 != (char *)0x0) {
                 _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -258,14 +257,14 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
               FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
             }
             pcStack_c = (char *)((int)pcStack_c + 1);
-            ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+            pAStack_8 = pAStack_8 + 5;
           } while ((int)pcStack_c < param_2);
         }
-        ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
+        pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
         pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 5);
         iVar10 = (**(code **)(*piStack_64 + 0x18))();
-        if ((((iVar10 == 8) && ((ppppcStack_8 == (char ****)0x9 || (pcStack_c == (char *)0x9)))) ||
-            (ppppcStack_8 == (char ****)0xff)) || (pcStack_c == (char *)0xff)) {
+        if ((((iVar10 == 8) && ((pAStack_8 == (AiFltClassTy *)0x9 || (pcStack_c == (char *)0x9))))
+            || (pAStack_8 == (AiFltClassTy *)0xff)) || (pcStack_c == (char *)0xff)) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -273,7 +272,7 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
           piStack_64[0x21] = -1;
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
-        iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+        iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
         if (iVar10 != 1) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
@@ -282,8 +281,8 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
           piStack_64[0x21] = -1;
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
-        ppppcStack_8 = appppcStack_50[0];
-        iVar10 = thunk_FUN_00668f50(piStack_64,pcStack_c,0,(uint *)appppcStack_50);
+        pAStack_8 = apAStack_50[0];
+        iVar10 = thunk_FUN_00668f50(piStack_64,pcStack_c,0,(uint *)apAStack_50);
         if (iVar10 != 1) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
@@ -294,17 +293,17 @@ uint * thunk_FUN_0066acc0(char *param_1,int param_2,int *param_3)
         }
         puStack_14 = FUN_006aac10(4);
         if (DAT_00808a8f != '\0') {
-          *puStack_14 = (uint)((&DAT_008087ea)[((uint)ppppcStack_8 & 0xff) * 0x51] !=
-                              (&DAT_008087ea)[((uint)appppcStack_50[0] & 0xff) * 0x51]);
+          *puStack_14 = (uint)((&DAT_008087ea)[((uint)pAStack_8 & 0xff) * 0x51] !=
+                              (&DAT_008087ea)[((uint)apAStack_50[0] & 0xff) * 0x51]);
           goto LAB_00670431;
         }
-        if ((char)appppcStack_50[0] == (char)ppppcStack_8) {
+        if ((char)apAStack_50[0] == (char)pAStack_8) {
 LAB_0066bdcc:
           iVar10 = 0;
         }
         else {
-          uVar11 = (uint)appppcStack_50[0] & 0xff;
-          uVar22 = (uint)ppppcStack_8 & 0xff;
+          uVar11 = (uint)apAStack_50[0] & 0xff;
+          uVar22 = (uint)pAStack_8 & 0xff;
           cVar2 = *(char *)((int)&DAT_00808a4f + uVar11 * 8 + uVar22);
           if ((cVar2 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar22 * 8 + uVar11) == '\0')) {
             iVar10 = -2;
@@ -418,8 +417,8 @@ LAB_0066bdcc:
                     uStack_10 = uStack_10 + 5;
                   } while ((int)pcStack_c < param_2);
                 }
-                ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-                if (((int)ppppcStack_8 < 0) || (3 < (int)ppppcStack_8)) {
+                pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+                if (((int)pAStack_8 < 0) || (3 < (int)pAStack_8)) {
                   pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
                   if (pcVar21 != (char *)0x0) {
                     _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -427,7 +426,7 @@ LAB_0066bdcc:
                   piStack_64[0x21] = -1;
                   FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
                 }
-                ppppcVar12 = (char ****)(**(code **)(*piStack_64 + 0x28))(ppppcStack_8);
+                pAVar12 = (AiFltClassTy *)(**(code **)(*piStack_64 + 0x28))(pAStack_8);
                 goto LAB_0066d630;
               }
               goto switchD_0066b69d_caseD_7d8;
@@ -448,8 +447,8 @@ LAB_0066bdcc:
                 uStack_10 = uStack_10 + 5;
               } while ((int)pcStack_c < param_2);
             }
-            ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-            if (((int)ppppcStack_8 < 0) || (0x20 < (int)ppppcStack_8)) {
+            pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+            if (((int)pAStack_8 < 0) || (0x20 < (int)pAStack_8)) {
               pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
               if (pcVar21 != (char *)0x0) {
                 _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -458,7 +457,7 @@ LAB_0066bdcc:
               FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
             }
             puStack_14 = FUN_006aac10(4);
-            uVar11 = (**(code **)(*piStack_64 + 0x24))(ppppcStack_8);
+            uVar11 = (**(code **)(*piStack_64 + 0x24))(pAStack_8);
             *puStack_14 = uVar11;
           }
           goto LAB_00670431;
@@ -480,8 +479,8 @@ LAB_0066bdcc:
               uStack_10 = uStack_10 + 5;
             } while ((int)pcStack_c < param_2);
           }
-          ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-          if (((int)ppppcStack_8 < 0) || (0xff < (int)ppppcStack_8)) {
+          pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+          if (((int)pAStack_8 < 0) || (0xff < (int)pAStack_8)) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -490,7 +489,7 @@ LAB_0066bdcc:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           puStack_14 = FUN_006aac10(4);
-          *puStack_14 = (&DAT_0080e43b)[(int)ppppcStack_8];
+          *puStack_14 = (&DAT_0080e43b)[(int)pAStack_8];
           goto LAB_00670431;
         }
         if (iVar10 < 0x7d1) {
@@ -511,10 +510,10 @@ LAB_0066bdcc:
                 uStack_10 = uStack_10 + 5;
               } while ((int)pcStack_c < param_2);
             }
-            ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
+            pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
             uStack_10 = (char *)(**(code **)*piStack_64)(param_1 + 5);
             pcStack_c = (char *)0x0;
-            if ((ppppcStack_8 == (char ****)0x9) &&
+            if ((pAStack_8 == (AiFltClassTy *)0x9) &&
                (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
               iVar10 = (**(code **)(*piStack_64 + 0x2c))(uStack_10);
               pcStack_c = (char *)(uint)(iVar10 == 0);
@@ -522,13 +521,13 @@ LAB_0066bdcc:
               *puStack_14 = (uint)pcStack_c;
             }
             else {
-              iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+              iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
               if (iVar10 == 1) {
                 if (DAT_007fa174 == 0) {
                   iVar10 = 0;
                 }
                 else {
-                  iVar10 = thunk_FUN_004357f0((char)appppcStack_50[0]);
+                  iVar10 = thunk_FUN_004357f0((char)apAStack_50[0]);
                 }
                 if (iVar10 != 0) {
                   iVar10 = (**(code **)(*(int *)(iVar10 + 0x1c) + 0x2c))(uStack_10);
@@ -537,12 +536,12 @@ LAB_0066bdcc:
                   *puStack_14 = (uint)pcStack_c;
                   goto LAB_00670431;
                 }
-                ppppcStack_8 = appppcStack_50[0];
+                pAStack_8 = apAStack_50[0];
                 pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (pcVar21 != (char *)0x0) {
                   _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
                 }
-                piStack_64[0x21] = (int)ppppcStack_8;
+                piStack_64[0x21] = (int)pAStack_8;
               }
               else {
                 pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -607,7 +606,7 @@ switchD_0066b69d_caseD_7d8:
             uStack_10 = uStack_10 + 5;
           } while ((int)pcStack_c < param_2);
         }
-        ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
+        pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
         uStack_10 = (char *)(**(code **)*piStack_64)(param_1 + 5);
         if (((int)uStack_10 < 0) || (0xff < (int)uStack_10)) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -618,14 +617,14 @@ switchD_0066b69d_caseD_7d8:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)0x0;
-        if ((ppppcStack_8 == (char ****)0x9) &&
+        if ((pAStack_8 == (AiFltClassTy *)0x9) &&
            (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
           pcStack_c = (char *)(**(code **)(*piStack_64 + 0x1c))(uStack_10);
           puStack_14 = FUN_006aac10(4);
           *puStack_14 = (uint)pcStack_c;
           goto LAB_00670431;
         }
-        iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+        iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
         if (iVar10 != 1) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           goto joined_r0x0066b1d2;
@@ -634,7 +633,7 @@ switchD_0066b69d_caseD_7d8:
           iVar10 = 0;
         }
         else {
-          iVar10 = thunk_FUN_004357f0((char)appppcStack_50[0]);
+          iVar10 = thunk_FUN_004357f0((char)apAStack_50[0]);
         }
         if (iVar10 != 0) {
           pcStack_c = (char *)(**(code **)(*(int *)(iVar10 + 0x1c) + 0x1c))(uStack_10);
@@ -642,13 +641,13 @@ switchD_0066b69d_caseD_7d8:
           *puStack_14 = (uint)pcStack_c;
           goto LAB_00670431;
         }
-        ppppcStack_8 = appppcStack_50[0];
+        pAStack_8 = apAStack_50[0];
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
         }
 LAB_0066b1ad:
-        piStack_64[0x21] = (int)ppppcStack_8;
+        piStack_64[0x21] = (int)pAStack_8;
 LAB_0066b1fb:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         puStack_14 = FUN_006aac10(4);
@@ -691,22 +690,22 @@ LAB_0066b1fb:
               uStack_10 = uStack_10 + 5;
             } while ((int)pcStack_c < param_2);
           }
-          ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
+          pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
           pcStack_c = (char *)0x0;
-          if ((ppppcStack_8 == (char ****)0x9) &&
+          if ((pAStack_8 == (AiFltClassTy *)0x9) &&
              (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
             pcStack_c = (char *)(**(code **)(*piStack_64 + 0x14))();
             puStack_14 = FUN_006aac10(4);
             *puStack_14 = (uint)pcStack_c;
             break;
           }
-          iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+          iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
           if (iVar10 == 1) {
             if (DAT_007fa174 == 0) {
               iVar10 = 0;
             }
             else {
-              iVar10 = thunk_FUN_004357f0((char)appppcStack_50[0]);
+              iVar10 = thunk_FUN_004357f0((char)apAStack_50[0]);
             }
             if (iVar10 != 0) {
               pcStack_c = (char *)(**(code **)(*(int *)(iVar10 + 0x1c) + 0x14))();
@@ -714,7 +713,7 @@ LAB_0066b1fb:
               *puStack_14 = (uint)pcStack_c;
               break;
             }
-            ppppcStack_8 = appppcStack_50[0];
+            pAStack_8 = apAStack_50[0];
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -756,7 +755,7 @@ joined_r0x0066b1d2:
             piStack_64[0x21] = -1;
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
-          iVar10 = thunk_FUN_00668f50(piStack_64,pcStack_c,0,(uint *)appppcStack_50);
+          iVar10 = thunk_FUN_00668f50(piStack_64,pcStack_c,0,(uint *)apAStack_50);
           if (iVar10 != 1) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
@@ -766,13 +765,13 @@ joined_r0x0066b1d2:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           cStack_1d = '\0';
-          ppppcStack_8 = (char ****)0x0;
+          pAStack_8 = (AiFltClassTy *)0x0;
           if (DAT_00801688 != (void *)0x0) {
-            thunk_FUN_004f91a0(DAT_00801688,(byte)appppcStack_50[0],&cStack_1d,(int *)&ppppcStack_8)
+            thunk_FUN_004f91a0(DAT_00801688,(byte)apAStack_50[0]._0_1_,&cStack_1d,(int *)&pAStack_8)
             ;
           }
           puStack_14 = FUN_006aac10(4);
-          *puStack_14 = ~-(uint)(cStack_1d != '\x01') & (uint)ppppcStack_8;
+          *puStack_14 = ~-(uint)(cStack_1d != '\x01') & (uint)pAStack_8;
           break;
         case 0x7e4:
           puStack_14 = FUN_006aac10(4);
@@ -786,10 +785,9 @@ joined_r0x0066b1d2:
         case 0x7e5:
           pcStack_c = (char *)0x0;
           if (0 < param_2) {
-            ppppcStack_8 = (char ****)0x0;
+            pAStack_8 = (AiFltClassTy *)0x0;
             do {
-              if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01'))
-              {
+              if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
                 pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
                 if (pcVar21 != (char *)0x0) {
                   _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -798,13 +796,13 @@ joined_r0x0066b1d2:
                 FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
               }
               pcStack_c = (char *)((int)pcStack_c + 1);
-              ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+              pAStack_8 = pAStack_8 + 5;
             } while ((int)pcStack_c < param_2);
           }
-          ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-          if (((ppppcStack_8 == (char ****)0x9) &&
+          pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+          if (((pAStack_8 == (AiFltClassTy *)0x9) &&
               (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-             (ppppcStack_8 == (char ****)0xff)) {
+             (pAStack_8 == (AiFltClassTy *)0xff)) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -812,7 +810,7 @@ joined_r0x0066b1d2:
             piStack_64[0x21] = -1;
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
-          iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+          iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
           if (iVar10 != 1) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
@@ -823,7 +821,7 @@ joined_r0x0066b1d2:
           }
           puStack_14 = FUN_006aac10(4);
           if (DAT_00808a8f != '\0') {
-            *puStack_14 = (uint)(byte)(&DAT_008087ea)[(int)appppcStack_50[0] * 0x51];
+            *puStack_14 = (uint)(byte)(&DAT_008087ea)[(int)apAStack_50[0] * 0x51];
             break;
           }
           goto LAB_0066bb5e;
@@ -835,9 +833,9 @@ joined_r0x0066b1d2:
     case 0x7e7:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -846,7 +844,7 @@ joined_r0x0066b1d2:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = (char *)((int)pcStack_c + 1);
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
       pcStack_c = (char *)(**(code **)*piStack_64)(param_1);
@@ -878,9 +876,9 @@ LAB_0066bb5e:
     case 0x7e8:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -889,7 +887,7 @@ LAB_0066bb5e:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = (char *)((int)pcStack_c + 1);
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
       uVar11 = (**(code **)*piStack_64)(param_1);
@@ -919,9 +917,9 @@ LAB_0066bff3:
     case 0x7ea:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -930,13 +928,13 @@ LAB_0066bff3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = (char *)((int)pcStack_c + 1);
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if (((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if (((pAStack_8 == (AiFltClassTy *)0x9) &&
           (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-         (ppppcStack_8 == (char ****)0xff)) {
+         (pAStack_8 == (AiFltClassTy *)0xff)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -944,7 +942,7 @@ LAB_0066bff3:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
       if (iVar10 != 1) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -954,7 +952,7 @@ LAB_0066bff3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puStack_14 = FUN_006aac10(4);
-      *puStack_14 = (uint)*(byte *)(appppcStack_50[0] + 0x202654);
+      *puStack_14 = (uint)(byte)apAStack_50[0][0x809950];
       break;
     case 0x7eb:
       puStack_14 = FUN_006aac10(4);
@@ -963,9 +961,9 @@ LAB_0066bff3:
     case 0x7ec:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -974,13 +972,13 @@ LAB_0066bff3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = (char *)((int)pcStack_c + 1);
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if (((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if (((pAStack_8 == (AiFltClassTy *)0x9) &&
           (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-         (ppppcStack_8 == (char ****)0xff)) {
+         (pAStack_8 == (AiFltClassTy *)0xff)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -988,7 +986,7 @@ LAB_0066bff3:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
       if (iVar10 != 1) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -998,7 +996,7 @@ LAB_0066bff3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puStack_14 = FUN_006aac10(4);
-      *puStack_14 = (uint)(byte)(&DAT_008087e8)[(int)appppcStack_50[0] * 0x51];
+      *puStack_14 = (uint)(byte)(&DAT_008087e8)[(int)apAStack_50[0] * 0x51];
       break;
     case 0x7ed:
       puStack_14 = FUN_006aac10(4);
@@ -1007,9 +1005,9 @@ LAB_0066bff3:
     case 0x7ee:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1018,11 +1016,11 @@ LAB_0066bff3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1032,8 +1030,8 @@ LAB_0066bff3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       DAT_00811980 = 0;
       if (0 < iVar10) {
         uStack_10 = param_1 + 0x2d;
@@ -1044,7 +1042,7 @@ LAB_0066bff3:
         uStack_30 = param_1 + 0x14;
         uStack_28 = param_1 + 0xf;
         pcStack_c = param_1 + 10;
-        ppppcVar12 = (char ****)appppcStack_50;
+        ppAVar23 = apAStack_50;
         do {
           puVar27 = (undefined *)0x0;
           uVar28 = 0;
@@ -1066,9 +1064,9 @@ LAB_0066bff3:
           uVar18 = (**(code **)*piStack_64)(uStack_30,uVar18);
           uVar18 = (**(code **)*piStack_64)(uStack_28,uVar18);
           uVar11 = (**(code **)*piStack_64)(pcStack_c,0x3fffffff,0,uVar18);
-          thunk_FUN_00676d80(*ppppcVar12,uVar11,(uint)pcVar21,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,
+          thunk_FUN_00676d80(*ppAVar23,uVar11,(uint)pcVar21,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,
                              sVar3,sVar9,puVar26,uVar28,puVar27);
-          ppppcVar12 = ppppcVar12 + 1;
+          ppAVar23 = ppAVar23 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -1076,9 +1074,9 @@ LAB_0066bff3:
     case 0x7ef:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1087,11 +1085,11 @@ LAB_0066bff3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1101,8 +1099,8 @@ LAB_0066bff3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       DAT_00811980 = 0;
       if (0 < iVar10) {
         uStack_10 = param_1 + 0x2d;
@@ -1113,7 +1111,7 @@ LAB_0066bff3:
         uStack_30 = param_1 + 0x14;
         uStack_28 = param_1 + 0xf;
         pcStack_c = param_1 + 10;
-        ppppcVar12 = (char ****)appppcStack_50;
+        ppAVar23 = apAStack_50;
         do {
           puVar27 = (undefined *)0x0;
           uVar28 = 0;
@@ -1134,17 +1132,17 @@ LAB_0066bff3:
           uVar18 = (**(code **)*piStack_64)(uStack_30,uVar18);
           uVar18 = (**(code **)*piStack_64)(uStack_28,uVar18);
           uVar11 = (**(code **)*piStack_64)(pcStack_c,0,uVar18);
-          thunk_FUN_00676d80(*ppppcVar12,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
+          thunk_FUN_00676d80(*ppAVar23,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
                              puVar26,uVar28,puVar27);
-          ppppcVar12 = ppppcVar12 + 1;
+          ppAVar23 = ppAVar23 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
       goto LAB_0066df5e;
     case 0x7f0:
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1152,8 +1150,8 @@ LAB_0066bff3:
           piStack_64[0x21] = -1;
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-      } while ((int)ppppcStack_8 < 10);
+        pAStack_8 = pAStack_8 + 5;
+      } while ((int)pAStack_8 < 10);
       if ((param_1[10] != '\x06') && (param_1[10] != '\x03')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1164,9 +1162,9 @@ LAB_0066bff3:
       }
       pcStack_c = (char *)0x3;
       if (3 < param_2) {
-        ppppcStack_8 = (char ****)0xf;
+        pAStack_8 = (AiFltClassTy *)0xf;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1175,11 +1173,11 @@ LAB_0066bff3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1189,8 +1187,8 @@ LAB_0066bff3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       DAT_00811980 = 0;
       if (0 < iVar10) {
         uStack_10 = param_1 + 0x2d;
@@ -1201,7 +1199,7 @@ LAB_0066bff3:
         uStack_30 = param_1 + 0x14;
         uStack_28 = param_1 + 0xf;
         pcStack_c = param_1 + 10;
-        ppppcVar12 = (char ****)appppcStack_50;
+        ppAVar23 = apAStack_50;
         do {
           puVar27 = (undefined *)0x0;
           uVar28 = 0;
@@ -1222,9 +1220,9 @@ LAB_0066bff3:
           uVar18 = (**(code **)*piStack_64)(uStack_30,uVar18);
           uVar18 = (**(code **)*piStack_64)(uStack_28,uVar18);
           pbVar15 = (byte *)(**(code **)(*piStack_64 + 8))(pcStack_c,uVar18);
-          thunk_FUN_00676d80(*ppppcVar12,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
+          thunk_FUN_00676d80(*ppAVar23,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
                              sVar9,puVar26,uVar28,puVar27);
-          ppppcVar12 = ppppcVar12 + 1;
+          ppAVar23 = ppAVar23 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
@@ -1235,9 +1233,9 @@ LAB_0066df5e:
     case 0x7f1:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1246,11 +1244,11 @@ LAB_0066df5e:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1260,15 +1258,15 @@ LAB_0066df5e:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      pcVar21 = (char *)thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      pcVar21 = (char *)thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       uStack_10 = (char *)0x0;
       if (0 < (int)pcVar21) {
         pcStack_c = param_1 + 10;
-        ppppcStack_8 = (char ****)appppcStack_50;
+        pAStack_8 = (AiFltClassTy *)apAStack_50;
         do {
           uStack_18 = pcVar21;
-          puVar16 = (undefined4 *)thunk_FUN_0043e420(auStack_4f0,*(char *)ppppcStack_8);
+          puVar16 = (undefined4 *)thunk_FUN_0043e420(auStack_4f0,(char)*pAStack_8);
           pcVar21 = pcStack_c;
           puVar24 = auStack_19c;
           for (iVar10 = 0x4e; iVar10 != 0; iVar10 = iVar10 + -1) {
@@ -1336,7 +1334,7 @@ LAB_0066cacb:
 switchD_0066c9e5_caseD_3:
             iVar10 = iVar10 + 1;
           } while (iVar10 < 0x20);
-          ppppcStack_8 = ppppcStack_8 + 1;
+          pAStack_8 = pAStack_8 + 4;
           pcVar21 = uStack_18 + -1;
           uStack_18 = pcVar21;
         } while (pcVar21 != (char *)0x0);
@@ -1347,9 +1345,9 @@ switchD_0066c9e5_caseD_3:
     case 0x7f2:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1358,11 +1356,11 @@ switchD_0066c9e5_caseD_3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1372,15 +1370,15 @@ switchD_0066c9e5_caseD_3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      pcVar21 = (char *)thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      pcVar21 = (char *)thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       uStack_10 = (char *)0x0;
       if (0 < (int)pcVar21) {
         pcStack_c = param_1 + 10;
-        ppppcStack_8 = (char ****)appppcStack_50;
+        pAStack_8 = (AiFltClassTy *)apAStack_50;
         do {
           uStack_18 = pcVar21;
-          puVar16 = (undefined4 *)thunk_FUN_0043e420(auStack_3b8,*(char *)ppppcStack_8);
+          puVar16 = (undefined4 *)thunk_FUN_0043e420(auStack_3b8,(char)*pAStack_8);
           pcVar21 = pcStack_c;
           puVar24 = auStack_19c;
           for (iVar10 = 0x4e; iVar10 != 0; iVar10 = iVar10 + -1) {
@@ -1448,7 +1446,7 @@ LAB_0066cd48:
 switchD_0066cc62_caseD_3:
             iVar10 = iVar10 + 1;
           } while (iVar10 < 0x20);
-          ppppcStack_8 = ppppcStack_8 + 1;
+          pAStack_8 = pAStack_8 + 4;
           pcVar21 = uStack_18 + -1;
           uStack_18 = pcVar21;
         } while (pcVar21 != (char *)0x0);
@@ -1459,9 +1457,9 @@ switchD_0066cc62_caseD_3:
     case 0x7f3:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1470,11 +1468,11 @@ switchD_0066cc62_caseD_3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1484,15 +1482,15 @@ switchD_0066cc62_caseD_3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      pcVar21 = (char *)thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      pcVar21 = (char *)thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       uStack_10 = (char *)0x0;
       if (0 < (int)pcVar21) {
         pcStack_c = param_1 + 10;
-        ppppcStack_8 = (char ****)appppcStack_50;
+        pAStack_8 = (AiFltClassTy *)apAStack_50;
         do {
           uStack_18 = pcVar21;
-          puVar16 = (undefined4 *)thunk_FUN_0043e420(auStack_628,*(char *)ppppcStack_8);
+          puVar16 = (undefined4 *)thunk_FUN_0043e420(auStack_628,(char)*pAStack_8);
           pcVar21 = pcStack_c;
           puVar24 = auStack_19c;
           for (iVar10 = 0x4e; iVar10 != 0; iVar10 = iVar10 + -1) {
@@ -1560,7 +1558,7 @@ LAB_0066cfc8:
 switchD_0066cedf_caseD_3:
             iVar10 = iVar10 + 1;
           } while (iVar10 < 0x20);
-          ppppcStack_8 = ppppcStack_8 + 1;
+          pAStack_8 = pAStack_8 + 4;
           pcVar21 = uStack_18 + -1;
           uStack_18 = pcVar21;
         } while (pcVar21 != (char *)0x0);
@@ -1571,9 +1569,9 @@ switchD_0066cedf_caseD_3:
     case 0x7f4:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1582,11 +1580,11 @@ switchD_0066cedf_caseD_3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = pcStack_c + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-      if ((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+      if ((pAStack_8 == (AiFltClassTy *)0x9) &&
          (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
@@ -1596,29 +1594,29 @@ switchD_0066cedf_caseD_3:
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
       puVar19 = (uint *)(param_1 + 5);
-      uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-      ppppcVar12 = (char ****)thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+      uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+      pAVar12 = (AiFltClassTy *)thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
       pcVar21 = (char *)0x0;
-      if (0 < (int)ppppcVar12) {
+      if (0 < (int)pAVar12) {
         pcStack_c = param_1 + 10;
-        ppppcVar23 = (char ****)appppcStack_50;
-        ppppcStack_8 = ppppcVar12;
+        ppAVar23 = apAStack_50;
+        pAStack_8 = pAVar12;
         do {
           uVar18 = (**(code **)*piStack_64)(pcStack_c);
-          iVar10 = thunk_FUN_00677700((int)*ppppcVar23,uVar18);
+          iVar10 = thunk_FUN_00677700((int)*ppAVar23,uVar18);
           pcVar21 = pcVar21 + iVar10;
-          ppppcVar23 = ppppcVar23 + 1;
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + -1);
-        } while (ppppcStack_8 != (char ****)0x0);
-        ppppcStack_8 = (char ****)0x0;
+          ppAVar23 = ppAVar23 + 1;
+          pAStack_8 = pAStack_8 + -1;
+        } while (pAStack_8 != (AiFltClassTy *)0x0);
+        pAStack_8 = (AiFltClassTy *)0x0;
       }
       goto LAB_00670425;
     case 0x7f5:
       pcStack_c = (char *)0x0;
       if (0 < param_2) {
-        ppppcStack_8 = (char ****)0x0;
+        pAStack_8 = (AiFltClassTy *)0x0;
         do {
-          if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+          if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
             pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
             if (pcVar21 != (char *)0x0) {
               _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1627,7 +1625,7 @@ switchD_0066cedf_caseD_3:
             FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
           }
           pcStack_c = (char *)((int)pcStack_c + 1);
-          ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+          pAStack_8 = pAStack_8 + 5;
         } while ((int)pcStack_c < param_2);
       }
       puStack_14 = FUN_006aac10(4);
@@ -1651,9 +1649,9 @@ switchD_0066cedf_caseD_3:
   sVar3 = (short)param_1;
   switch(iVar10) {
   case 0x7f7:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1661,8 +1659,8 @@ switchD_0066cedf_caseD_3:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 0xf);
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 0xf);
     if ((param_1[0xf] != '\x06') && (param_1[0xf] != '\x03')) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -1673,9 +1671,9 @@ switchD_0066cedf_caseD_3:
     }
     pcStack_c = (char *)0x4;
     if (4 < param_2) {
-      ppppcStack_8 = (char ****)0x14;
+      pAStack_8 = (AiFltClassTy *)0x14;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1684,11 +1682,11 @@ switchD_0066cedf_caseD_3:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = pcStack_c + 1;
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if ((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if ((pAStack_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -1698,8 +1696,8 @@ switchD_0066cedf_caseD_3:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     puVar19 = (uint *)(param_1 + 5);
-    uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+    uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
     DAT_00811980 = 0;
     if (0 < iVar10) {
       uStack_10 = param_1 + 0x2d;
@@ -1710,7 +1708,7 @@ switchD_0066cedf_caseD_3:
       uStack_30 = param_1 + 0x14;
       uStack_28 = param_1 + 0xf;
       pcStack_c = param_1 + 10;
-      ppppcVar12 = (char ****)appppcStack_50;
+      ppAVar23 = apAStack_50;
       do {
         uVar28 = 0;
         puVar26 = &LAB_004050fb;
@@ -1729,9 +1727,9 @@ switchD_0066cedf_caseD_3:
         uVar18 = (**(code **)*piStack_64)(uStack_30,uVar18);
         uVar18 = (**(code **)(*piStack_64 + 8))(uStack_28,uVar18);
         sVar6 = (**(code **)*piStack_64)(pcStack_c,uVar18);
-        thunk_FUN_00677be0(*(short *)ppppcVar12,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
+        thunk_FUN_00677be0(*(short *)ppAVar23,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
                            puVar26,uVar28);
-        ppppcVar12 = ppppcVar12 + 1;
+        ppAVar23 = ppAVar23 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
     }
@@ -1755,9 +1753,9 @@ switchD_0066cedf_caseD_3:
     }
     pcStack_c = (char *)0x2;
     if (2 < param_2) {
-      ppppcStack_8 = (char ****)0xa;
+      pAStack_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1766,7 +1764,7 @@ switchD_0066cedf_caseD_3:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     DAT_00811980 = 0;
@@ -1803,9 +1801,9 @@ switchD_0066cedf_caseD_3:
     }
     pcStack_c = (char *)0x2;
     if (2 < param_2) {
-      ppppcStack_8 = (char ****)0xa;
+      pAStack_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1814,7 +1812,7 @@ switchD_0066cedf_caseD_3:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     DAT_00811980 = 0;
@@ -1834,9 +1832,9 @@ switchD_0066cedf_caseD_3:
     thunk_FUN_006785a0(pbVar15,cVar2,sVar9,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar21,uVar18);
     goto LAB_0066dced;
   case 0x7fa:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1844,8 +1842,8 @@ switchD_0066cedf_caseD_3:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 0x14);
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 0x14);
     if ((param_1[0x14] != '\x06') && (param_1[0x14] != '\x03')) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -1856,9 +1854,9 @@ switchD_0066cedf_caseD_3:
     }
     pcStack_c = (char *)0x5;
     if (5 < param_2) {
-      ppppcStack_8 = (char ****)0x19;
+      pAStack_8 = (AiFltClassTy *)0x19;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1867,11 +1865,11 @@ switchD_0066cedf_caseD_3:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = pcStack_c + 1;
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if ((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if ((pAStack_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -1881,11 +1879,11 @@ switchD_0066cedf_caseD_3:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     puVar19 = (uint *)(param_1 + 5);
-    uVar11 = (**(code **)*piStack_64)(puVar19,appppcStack_50);
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,uVar11,puVar19);
+    uVar11 = (**(code **)*piStack_64)(puVar19,apAStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,uVar11,puVar19);
     DAT_00811980 = 0;
     if (0 < iVar10) {
-      ppppcStack_8 = (char ****)(param_1 + 0x32);
+      pAStack_8 = (AiFltClassTy *)(param_1 + 0x32);
       uStack_10 = param_1 + 0x2d;
       uStack_18 = param_1 + 0x28;
       uStack_2c = (byte *)(param_1 + 0x23);
@@ -1894,13 +1892,13 @@ switchD_0066cedf_caseD_3:
       uStack_30 = param_1 + 0x14;
       uStack_28 = param_1 + 0xf;
       pcStack_c = param_1 + 10;
-      ppppcVar12 = (char ****)appppcStack_50;
+      ppAVar23 = apAStack_50;
       do {
         uVar28 = 0;
         puVar26 = &LAB_004027a7;
-        ppppcVar23 = ppppcStack_8;
+        pAVar12 = pAStack_8;
         sVar3 = (**(code **)*piStack_64)();
-        sVar7 = (short)ppppcVar23;
+        sVar7 = (short)pAVar12;
         pcVar21 = uStack_10;
         sVar4 = (**(code **)*piStack_64)();
         sVar9 = (short)pcVar21;
@@ -1914,9 +1912,9 @@ switchD_0066cedf_caseD_3:
         uVar18 = (**(code **)(*piStack_64 + 8))(uStack_30,uVar18);
         uVar18 = (**(code **)*piStack_64)(uStack_28,uVar18);
         sVar6 = (**(code **)*piStack_64)(pcStack_c,uVar18);
-        thunk_FUN_00678240((int)*ppppcVar12,sVar6,cVar2,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
+        thunk_FUN_00678240((int)*ppAVar23,sVar6,cVar2,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
                            puVar26,uVar28);
-        ppppcVar12 = ppppcVar12 + 1;
+        ppAVar23 = ppAVar23 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
     }
@@ -1924,9 +1922,9 @@ switchD_0066cedf_caseD_3:
   case 0x7fb:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1935,7 +1933,7 @@ switchD_0066cedf_caseD_3:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     DAT_00811980 = 0;
@@ -1957,9 +1955,9 @@ LAB_0066dced:
   case 0x7fc:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -1968,15 +1966,15 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     pcStack_c = (char *)0xffffffff;
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
     uStack_10 = (char *)(**(code **)*piStack_64)(param_1 + 5);
     iVar10 = (**(code **)*piStack_64)(param_1 + 10);
-    switch(ppppcStack_8) {
-    case (char ****)0xdc:
+    switch(pAStack_8) {
+    case (AiFltClassTy *)0xdc:
       if (((int)uStack_10 < 0x32) || (0x73 < (int)uStack_10)) {
         bVar1 = false;
       }
@@ -2000,7 +1998,7 @@ LAB_0066dced:
         }
       }
       break;
-    case (char ****)0xdd:
+    case (AiFltClassTy *)0xdd:
       if (((int)uStack_10 < 0x32) || (0x73 < (int)uStack_10)) {
         bVar1 = false;
       }
@@ -2024,7 +2022,7 @@ LAB_0066dced:
         }
       }
       break;
-    case (char ****)0xde:
+    case (AiFltClassTy *)0xde:
       if (((int)uStack_10 < 0x32) || (0x73 < (int)uStack_10)) {
         bVar1 = false;
       }
@@ -2051,7 +2049,7 @@ LAB_0066dced:
     default:
       pcStack_c = (char *)0x0;
       break;
-    case (char ****)0xe2:
+    case (AiFltClassTy *)0xe2:
       if (((int)uStack_10 < 0x32) || (0x73 < (int)uStack_10)) {
         bVar1 = false;
       }
@@ -2107,9 +2105,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x2;
     if (2 < param_2) {
-      ppppcStack_8 = (char ****)0xa;
+      pAStack_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2118,11 +2116,11 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if ((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if ((pAStack_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2132,7 +2130,7 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uStack_10 = (char *)0x0;
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 == 1) {
       puVar27 = (undefined *)0x0;
       uVar18 = 0;
@@ -2145,18 +2143,18 @@ LAB_0066dced:
       sVar3 = 0;
       cVar2 = -1;
       pbVar15 = (byte *)(**(code **)(*piStack_64 + 8))(param_1 + 5);
-      iVar10 = thunk_FUN_00676d80(appppcStack_50[0],0,0x3fffffff,pbVar15,cVar2,sVar3,sVar4,sVar5,
-                                  sVar6,sVar8,sVar9,puVar26,uVar18,puVar27);
+      iVar10 = thunk_FUN_00676d80(apAStack_50[0],0,0x3fffffff,pbVar15,cVar2,sVar3,sVar4,sVar5,sVar6,
+                                  sVar8,sVar9,puVar26,uVar18,puVar27);
       if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
         uStack_10 = (char *)0x1;
         iVar10 = (**(code **)*piStack_64)(param_1 + 10);
-        ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1 + 0xf);
+        pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1 + 0xf);
         pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 0x14);
         iVar13 = (**(code **)*piStack_64)(param_1 + 0x19);
-        if ((-1 < iVar10) || ((-1 < (int)ppppcStack_8 || (-1 < (int)pcStack_c)))) {
+        if ((-1 < iVar10) || ((-1 < (int)pAStack_8 || (-1 < (int)pcStack_c)))) {
           thunk_FUN_004162b0(DAT_00811984,&sStack_5a,&sStack_52,&sStack_58);
           (**(code **)(*piStack_64 + 0x20))(iVar10,(int)sStack_5a);
-          (**(code **)(*piStack_64 + 0x20))(ppppcStack_8,(int)sStack_52);
+          (**(code **)(*piStack_64 + 0x20))(pAStack_8,(int)sStack_52);
           (**(code **)(*piStack_64 + 0x20))(pcStack_c,(int)sStack_58);
         }
         if (-1 < iVar13) {
@@ -2198,9 +2196,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x2;
     if (2 < param_2) {
-      ppppcStack_8 = (char ****)0xa;
+      pAStack_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2209,11 +2207,11 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if ((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if ((pAStack_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2223,7 +2221,7 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uStack_10 = (char *)0x0;
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 == 1) {
       uVar18 = 0;
       puVar26 = &LAB_00402ca2;
@@ -2234,18 +2232,18 @@ LAB_0066dced:
       sVar4 = 0;
       sVar3 = 0;
       pbVar15 = (byte *)(**(code **)(*piStack_64 + 8))(param_1 + 5);
-      iVar10 = thunk_FUN_00677be0((short)appppcStack_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,
+      iVar10 = thunk_FUN_00677be0((short)apAStack_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,
                                   sVar9,puVar26,uVar18);
       if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
         uStack_10 = (char *)0x1;
         iVar10 = (**(code **)*piStack_64)(param_1 + 10);
-        ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1 + 0xf);
+        pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1 + 0xf);
         pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 0x14);
         iVar13 = (**(code **)*piStack_64)(param_1 + 0x19);
-        if ((-1 < iVar10) || ((-1 < (int)ppppcStack_8 || (-1 < (int)pcStack_c)))) {
+        if ((-1 < iVar10) || ((-1 < (int)pAStack_8 || (-1 < (int)pcStack_c)))) {
           thunk_FUN_004162f0(DAT_00811984,&sStack_5c,&sStack_56,&sStack_54);
           (**(code **)(*piStack_64 + 0x20))(iVar10,(int)sStack_5c);
-          (**(code **)(*piStack_64 + 0x20))(ppppcStack_8,(int)sStack_56);
+          (**(code **)(*piStack_64 + 0x20))(pAStack_8,(int)sStack_56);
           (**(code **)(*piStack_64 + 0x20))(pcStack_c,(int)sStack_54);
         }
         if (-1 < iVar13) {
@@ -2279,9 +2277,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x1;
     if (1 < param_2) {
-      ppppcStack_8 = (char ****)0x5;
+      pAStack_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2290,7 +2288,7 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     uVar18 = 0;
@@ -2309,13 +2307,13 @@ LAB_0066dced:
     if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
       uStack_10 = (char *)0x1;
       iVar10 = (**(code **)*piStack_64)(param_1 + 5,uVar18);
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1 + 10);
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1 + 10);
       pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 0xf);
       iVar13 = (**(code **)*piStack_64)(param_1 + 0x14);
-      if ((-1 < iVar10) || ((-1 < (int)ppppcStack_8 || (-1 < (int)pcStack_c)))) {
+      if ((-1 < iVar10) || ((-1 < (int)pAStack_8 || (-1 < (int)pcStack_c)))) {
         thunk_FUN_004162f0(DAT_00811984,&sStack_60,&sStack_5e,(undefined2 *)((int)&uStack_28 + 2));
         (**(code **)(*piStack_64 + 0x20))(iVar10,(int)sStack_60);
-        (**(code **)(*piStack_64 + 0x20))(ppppcStack_8,(int)sStack_5e);
+        (**(code **)(*piStack_64 + 0x20))(pAStack_8,(int)sStack_5e);
         (**(code **)(*piStack_64 + 0x20))(pcStack_c,(int)uStack_28._2_2_);
       }
       if (-1 < iVar13) {
@@ -2337,9 +2335,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x1;
     if (1 < param_2) {
-      ppppcStack_8 = (char ****)0x5;
+      pAStack_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2348,7 +2346,7 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     uVar18 = 0;
@@ -2368,14 +2366,14 @@ LAB_0066dced:
     if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
       uStack_10 = (char *)0x1;
       iVar10 = (**(code **)*piStack_64)(param_1 + 5,uVar18);
-      ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1 + 10);
+      pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1 + 10);
       pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 0xf);
       iVar13 = (**(code **)*piStack_64)(param_1 + 0x14);
-      if ((-1 < iVar10) || ((-1 < (int)ppppcStack_8 || (-1 < (int)pcStack_c)))) {
+      if ((-1 < iVar10) || ((-1 < (int)pAStack_8 || (-1 < (int)pcStack_c)))) {
         thunk_FUN_004162b0(DAT_00811984,(undefined2 *)((int)&uStack_30 + 2),
                            (undefined2 *)((int)&uStack_24 + 2),(undefined2 *)((int)&uStack_1c + 2));
         (**(code **)(*piStack_64 + 0x20))(iVar10,(int)uStack_30._2_2_);
-        (**(code **)(*piStack_64 + 0x20))(ppppcStack_8,(int)uStack_24._2_2_);
+        (**(code **)(*piStack_64 + 0x20))(pAStack_8,(int)uStack_24._2_2_);
         (**(code **)(*piStack_64 + 0x20))(pcStack_c,(int)uStack_1c._2_2_);
       }
       if (-1 < iVar13) {
@@ -2405,9 +2403,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x2;
     if (2 < param_2) {
-      ppppcStack_8 = (char ****)0xa;
+      pAStack_8 = (AiFltClassTy *)0xa;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2416,11 +2414,11 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if ((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if ((pAStack_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2430,7 +2428,7 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uStack_1c = (byte *)0x0;
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 == 1) {
       uVar18 = 0;
       puVar26 = &LAB_0040446c;
@@ -2441,20 +2439,20 @@ LAB_0066dced:
       sVar4 = 0;
       sVar3 = 0;
       pbVar15 = (byte *)(**(code **)(*piStack_64 + 8))(param_1 + 5);
-      iVar10 = thunk_FUN_00678240((int)appppcStack_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,
+      iVar10 = thunk_FUN_00678240((int)apAStack_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,
                                   sVar9,puVar26,uVar18);
       if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
         uStack_1c = (byte *)0x1;
         iVar10 = (**(code **)*piStack_64)(param_1 + 10);
-        ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1 + 0xf);
+        pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1 + 0xf);
         pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 0x14);
         iVar13 = (**(code **)*piStack_64)(param_1 + 0x19);
-        if ((-1 < iVar10) || ((-1 < (int)ppppcStack_8 || (-1 < (int)pcStack_c)))) {
+        if ((-1 < iVar10) || ((-1 < (int)pAStack_8 || (-1 < (int)pcStack_c)))) {
           thunk_FUN_004162b0(DAT_00811984,(undefined2 *)((int)&uStack_2c + 2),
                              (undefined2 *)((int)&uStack_18 + 2),(undefined2 *)((int)&uStack_10 + 2)
                             );
           (**(code **)(*piStack_64 + 0x20))(iVar10,(int)uStack_2c._2_2_);
-          (**(code **)(*piStack_64 + 0x20))(ppppcStack_8,(int)uStack_18._2_2_);
+          (**(code **)(*piStack_64 + 0x20))(pAStack_8,(int)uStack_18._2_2_);
           (**(code **)(*piStack_64 + 0x20))(pcStack_c,(int)uStack_10._2_2_);
         }
         if (-1 < iVar13) {
@@ -2481,9 +2479,9 @@ LAB_0066dced:
   case 0x817:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2492,7 +2490,7 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     pcStack_c = (char *)(**(code **)*piStack_64)(param_1);
@@ -2504,20 +2502,20 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    ppppcStack_8 = (char ****)0x0;
-    iVar10 = thunk_FUN_00668f50(piStack_64,pcStack_c,0,(uint *)appppcStack_50);
+    pAStack_8 = (AiFltClassTy *)0x0;
+    iVar10 = thunk_FUN_00668f50(piStack_64,pcStack_c,0,(uint *)apAStack_50);
     if (iVar10 == 1) {
       if (*(short *)(param_1 + param_2 * 5 + 1) == 0x816) {
-        thunk_FUN_004e6f00((int)appppcStack_50[0]);
+        thunk_FUN_004e6f00((int)apAStack_50[0]);
       }
       else if (*(short *)(param_1 + param_2 * 5 + 1) != 0x817) {
         puStack_14 = FUN_006aac10(4);
-        *puStack_14 = (uint)ppppcStack_8;
+        *puStack_14 = (uint)pAStack_8;
         break;
       }
-      ppppcStack_8 = (char ****)thunk_FUN_004e6fe0((int)appppcStack_50[0]);
+      pAStack_8 = (AiFltClassTy *)thunk_FUN_004e6fe0((int)apAStack_50[0]);
       puStack_14 = FUN_006aac10(4);
-      *puStack_14 = (uint)ppppcStack_8;
+      *puStack_14 = (uint)pAStack_8;
     }
     else {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2527,15 +2525,15 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       puStack_14 = FUN_006aac10(4);
-      *puStack_14 = (uint)ppppcStack_8;
+      *puStack_14 = (uint)pAStack_8;
     }
     break;
   case 0x818:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2544,11 +2542,11 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((int)ppppcStack_8 < 0) || (0x9a < (int)ppppcStack_8)) {
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((int)pAStack_8 < 0) || (0x9a < (int)pAStack_8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2557,16 +2555,16 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     puStack_14 = FUN_006aac10(4);
-    *puStack_14 = (uint)*(byte *)((int)&DAT_00798fd8 + (int)ppppcStack_8);
+    *puStack_14 = (uint)(byte)*(AiFltClassTy *)((int)&DAT_00798fd8 + (int)pAStack_8);
     break;
   case 0x819:
   case 0x81b:
   case 0x81c:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2575,12 +2573,12 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     uStack_10 = (char *)(**(code **)*piStack_64)(param_1);
     pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 5);
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1 + 10);
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1 + 10);
     if (((int)pcStack_c < 0) || (0x9a < (int)pcStack_c)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2598,29 +2596,29 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uStack_18 = (char *)0x0;
-    iVar10 = thunk_FUN_00668f50(piStack_64,uStack_10,0,(uint *)appppcStack_50);
-    ppppcVar12 = ppppcStack_8;
+    iVar10 = thunk_FUN_00668f50(piStack_64,uStack_10,0,(uint *)apAStack_50);
+    pAVar12 = pAStack_8;
     pcVar21 = pcStack_c;
     if (iVar10 == 1) {
       sVar3 = *(short *)(param_1 + param_2 * 5 + 1);
       if (sVar3 == 0x819) {
-        iVar10 = thunk_FUN_004e60d0((int)appppcStack_50[0],(int)pcStack_c);
-        bVar1 = (int)ppppcStack_8 <= iVar10;
+        iVar10 = thunk_FUN_004e60d0((int)apAStack_50[0],(int)pcStack_c);
+        bVar1 = (int)pAStack_8 <= iVar10;
         puStack_14 = FUN_006aac10(4);
         *puStack_14 = (uint)bVar1;
         break;
       }
       if (sVar3 == 0x81b) {
-        iVar10 = thunk_FUN_004e5990((int)appppcStack_50[0],(uint)pcStack_c,(int)ppppcStack_8);
+        iVar10 = thunk_FUN_004e5990((int)apAStack_50[0],(uint)pcStack_c,(int)pAStack_8);
         puStack_14 = FUN_006aac10(4);
         *puStack_14 = (uint)(iVar10 != 0);
         break;
       }
       if (sVar3 == 0x81c) {
-        iVar10 = thunk_FUN_004e5cc0((int)appppcStack_50[0],(uint)pcStack_c,(int)ppppcStack_8);
+        iVar10 = thunk_FUN_004e5cc0((int)apAStack_50[0],(uint)pcStack_c,(int)pAStack_8);
         if ((iVar10 == 0) &&
-           (iVar10 = thunk_FUN_004e7f20((int)appppcStack_50[0],(int)pcVar21,(int)ppppcVar12),
-           iVar10 == 0)) {
+           (iVar10 = thunk_FUN_004e7f20((int)apAStack_50[0],(int)pcVar21,(int)pAVar12), iVar10 == 0)
+           ) {
           puStack_14 = FUN_006aac10(4);
           *puStack_14 = 0;
         }
@@ -2646,9 +2644,9 @@ LAB_0066dced:
   case 0x81a:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2657,10 +2655,10 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
     pcStack_c = (char *)(**(code **)*piStack_64)(param_1 + 5);
     if (((int)pcStack_c < 0) || (0x9a < (int)pcStack_c)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
@@ -2670,7 +2668,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    if ((ppppcStack_8 == (char ****)0x9) &&
+    if ((pAStack_8 == (AiFltClassTy *)0x9) &&
        (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2680,9 +2678,9 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uStack_10 = (char *)0x0;
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 == 1) {
-      bVar1 = thunk_FUN_004e5f90((int)appppcStack_50[0],(uint)pcStack_c);
+      bVar1 = thunk_FUN_004e5f90((int)apAStack_50[0],(uint)pcStack_c);
       puStack_14 = FUN_006aac10(4);
       *puStack_14 = (uint)(CONCAT31(extraout_var,bVar1) != 0);
     }
@@ -2701,9 +2699,9 @@ LAB_0066dced:
   case 0x81d:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2712,12 +2710,12 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
     pcStack_c = (char *)(**(code **)*piStack_64)(param_1);
     iVar10 = (**(code **)*piStack_64)(param_1 + 5);
-    ppppcStack_8 = (char ****)(iVar10 + -1);
+    pAStack_8 = (AiFltClassTy *)(iVar10 + -1);
     if (((int)pcStack_c < 0) || (0x9a < (int)pcStack_c)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2726,7 +2724,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    if (((int)ppppcStack_8 < 0) || (3 < (int)pcStack_c)) {
+    if (((int)pAStack_8 < 0) || (3 < (int)pcStack_c)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2735,7 +2733,7 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     puStack_14 = FUN_006aac10(4);
-    *puStack_14 = *(uint *)(&DAT_007e481c + (int)(ppppcStack_8 + (int)pcStack_c) * 4);
+    *puStack_14 = *(uint *)(&DAT_007e481c + (int)(pAStack_8 + (int)pcStack_c * 4) * 4);
     break;
   case 0x82a:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
@@ -2748,9 +2746,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x1;
     if (1 < param_2) {
-      ppppcStack_8 = (char ****)0x5;
+      pAStack_8 = (AiFltClassTy *)0x5;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x06') && (param_1[(int)ppppcStack_8] != '\x03')) {
+        if ((param_1[(int)pAStack_8] != '\x06') && (param_1[(int)pAStack_8] != '\x03')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2759,13 +2757,13 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2773,7 +2771,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2785,7 +2783,7 @@ LAB_0066dced:
     uVar18 = (**(code **)(*piStack_64 + 8))(param_1 + 10);
     pbVar14 = (byte *)(param_1 + 5);
     pbVar15 = (byte *)(**(code **)(*piStack_64 + 8))(pbVar14,uVar18);
-    iVar10 = thunk_FUN_0066ab60((byte)appppcStack_50[0],pbVar15,pbVar14);
+    iVar10 = thunk_FUN_0066ab60((char)apAStack_50[0]._0_1_,pbVar15,pbVar14);
     puStack_14 = FUN_006aac10(4);
     if (iVar10 == 0) {
       *puStack_14 = 0xffffffff;
@@ -2795,9 +2793,9 @@ LAB_0066dced:
     }
     break;
   case 0x82b:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2805,12 +2803,12 @@ LAB_0066dced:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 0x14);
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 0x14);
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2818,7 +2816,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2829,22 +2827,22 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0xffffffff;
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    this = (void *)thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
-    ppppcVar12 = appppcStack_50[0];
+    this = (void *)thunk_FUN_0066ac80(apAStack_50[0],uVar11);
+    pAVar12 = apAStack_50[0];
     pcVar21 = pcStack_c;
     if (this != (void *)0x0) {
       cVar2 = (char)param_1 + '\x0f';
       uVar18 = (**(code **)*piStack_64)();
       iVar10 = (**(code **)*piStack_64)(param_1 + 10,uVar18);
       pcVar21 = (char *)thunk_FUN_0065da50(this,iVar10,cVar2);
-      ppppcVar12 = appppcStack_50[0];
+      pAVar12 = apAStack_50[0];
       pcStack_c = pcVar21;
     }
     goto joined_r0x006703e6;
   case 0x82c:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2852,12 +2850,12 @@ LAB_0066dced:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 0x14);
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 0x14);
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2865,7 +2863,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2876,8 +2874,8 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0xffffffff;
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    iVar10 = thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
-    ppppcVar12 = appppcStack_50[0];
+    iVar10 = thunk_FUN_0066ac80(apAStack_50[0],uVar11);
+    pAVar12 = apAStack_50[0];
     pcVar21 = pcStack_c;
     if (iVar10 != 0) {
       cVar2 = (char)param_1 + '\x0f';
@@ -2885,14 +2883,14 @@ LAB_0066dced:
       uVar25 = (**(code **)*piStack_64)(param_1 + 10,uVar18);
       pcVar21 = (char *)thunk_FUN_0065dc00(iVar10,(int)((ulonglong)uVar25 >> 0x20),(uint)uVar25,
                                            cVar2);
-      ppppcVar12 = appppcStack_50[0];
+      pAVar12 = apAStack_50[0];
       pcStack_c = pcVar21;
     }
     goto joined_r0x006703e6;
   case 0x82d:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2900,12 +2898,12 @@ LAB_0066dced:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 10);
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 10);
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2913,7 +2911,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2923,16 +2921,16 @@ LAB_0066dced:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    iVar10 = thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
+    iVar10 = thunk_FUN_0066ac80(apAStack_50[0],uVar11);
     pcVar21 = (char *)0xffffffff;
     if (iVar10 != 0) {
       pcVar21 = *(char **)(iVar10 + 0xeb);
     }
     goto LAB_0066fbc1;
   case 0x82e:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2940,8 +2938,8 @@ LAB_0066dced:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 0x19);
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 0x19);
     if ((param_1[0x19] != '\x06') && (param_1[0x19] != '\x03')) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2952,9 +2950,9 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0x6;
     if (6 < param_2) {
-      ppppcStack_8 = (char ****)0x1e;
+      pAStack_8 = (AiFltClassTy *)0x1e;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2963,13 +2961,13 @@ LAB_0066dced:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -2977,7 +2975,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -2988,8 +2986,8 @@ LAB_0066dced:
     }
     pcStack_c = (char *)0xffffffff;
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    iVar10 = thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
-    ppppcVar12 = appppcStack_50[0];
+    iVar10 = thunk_FUN_0066ac80(apAStack_50[0],uVar11);
+    pAVar12 = apAStack_50[0];
     pcVar21 = pcStack_c;
     if (iVar10 != 0) {
       sVar4 = sVar3 + 0x37;
@@ -3010,14 +3008,14 @@ LAB_0066dced:
       pcVar21 = (char *)thunk_FUN_0065dd30(iVar10,(int)((ulonglong)uVar25 >> 0x20),(uint)uVar25,
                                            (uint)pcVar21,cVar2,pbVar15,sVar9,sVar3,sVar8,sVar5,sVar6
                                            ,sVar4);
-      ppppcVar12 = appppcStack_50[0];
+      pAVar12 = apAStack_50[0];
       pcStack_c = pcVar21;
     }
     goto joined_r0x006703e6;
   case 0x82f:
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     do {
-      if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+      if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
         pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
         if (pcVar21 != (char *)0x0) {
           _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3025,8 +3023,8 @@ LAB_0066dced:
         piStack_64[0x21] = -1;
         FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
       }
-      ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
-    } while ((int)ppppcStack_8 < 0x23);
+      pAStack_8 = pAStack_8 + 5;
+    } while ((int)pAStack_8 < 0x23);
     if ((param_1[0x23] != '\x06') && (param_1[0x23] != '\x03')) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -3035,10 +3033,10 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3046,7 +3044,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -3055,7 +3053,7 @@ LAB_0066dced:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     puVar19 = (uint *)(**(code **)*piStack_64)(param_1 + 0xf,auStack_280);
     pcVar21 = param_1 + 10;
     pcVar20 = (char *)(**(code **)*piStack_64)();
@@ -3066,12 +3064,12 @@ LAB_0066dced:
         uVar18 = *puVar16;
         puVar16 = puVar16 + 1;
         iVar10 = iVar10 + -1;
-        ppppcStack_8 = (char ****)((uint)ppppcStack_8 | 1 << ((byte)uVar18 & 0x1f));
+        pAStack_8 = (AiFltClassTy *)((uint)pAStack_8 | 1 << ((byte)uVar18 & 0x1f));
       } while (iVar10 != 0);
     }
     pcStack_c = (char *)0xffffffff;
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    iVar10 = thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
+    iVar10 = thunk_FUN_0066ac80(apAStack_50[0],uVar11);
     pcVar21 = pcStack_c;
     if (iVar10 != 0) {
       pbVar15 = (byte *)(param_1 + 0x23);
@@ -3080,24 +3078,23 @@ LAB_0066dced:
       uVar18 = (**(code **)*piStack_64)();
       uVar18 = (**(code **)*piStack_64)(param_1 + 0x19,uVar18);
       uVar25 = (**(code **)*piStack_64)(param_1 + 0x14,uVar18);
-      pcVar21 = (char *)thunk_FUN_0065e070(iVar10,(int)((ulonglong)uVar25 >> 0x20),
-                                           (uint)ppppcStack_8,(uint)uVar25,(uint)pcVar21,cVar2,
-                                           pbVar15);
+      pcVar21 = (char *)thunk_FUN_0065e070(iVar10,(int)((ulonglong)uVar25 >> 0x20),(uint)pAStack_8,
+                                           (uint)uVar25,(uint)pcVar21,cVar2,pbVar15);
       pcStack_c = pcVar21;
     }
 LAB_0066fbc1:
     if ((int)pcVar21 < 0) {
       _strncpy((char *)(piStack_64 + 1),&DAT_008016a0,0x7f);
-      piStack_64[0x21] = (int)appppcStack_50[0];
+      piStack_64[0x21] = (int)apAStack_50[0];
       goto LAB_0067041b;
     }
     goto LAB_00670425;
   case 0x830:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3106,13 +3103,13 @@ LAB_0066fbc1:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = pcStack_c + 1;
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3120,7 +3117,7 @@ LAB_0066fbc1:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -3130,10 +3127,10 @@ LAB_0066fbc1:
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    ppppcStack_8 = (char ****)thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
-    ppppcVar12 = appppcStack_50[0];
+    pAStack_8 = (AiFltClassTy *)thunk_FUN_0066ac80(apAStack_50[0],uVar11);
+    pAVar12 = apAStack_50[0];
     pcVar21 = (char *)0xffffffff;
-    if (ppppcStack_8 != (char ****)0x0) {
+    if (pAStack_8 != (AiFltClassTy *)0x0) {
       puVar16 = &uStack_21c;
       for (iVar10 = 0x12; iVar10 != 0; iVar10 = iVar10 + -1) {
         *puVar16 = 0;
@@ -3152,17 +3149,17 @@ LAB_0066fbc1:
       uStack_210 = 0xffff;
       uStack_1de = 1;
       auStack_1d0[0] = 0x68;
-      thunk_FUN_00662240(auStack_1d0);
-      ppppcVar12 = appppcStack_50[0];
+      AiFltClassTy::GetAiMess(pAStack_8,auStack_1d0);
+      pAVar12 = apAStack_50[0];
       pcVar21 = (char *)(uint)('\0' < cStack_1c8);
     }
     goto joined_r0x006703e6;
   case 0x831:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3171,13 +3168,13 @@ LAB_0066fbc1:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = (char *)((int)pcStack_c + 1);
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3185,7 +3182,7 @@ LAB_0066fbc1:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -3196,8 +3193,8 @@ LAB_0066fbc1:
     }
     pcStack_c = (char *)0xffffffff;
     uVar11 = (**(code **)*piStack_64)(param_1 + 5);
-    iVar10 = thunk_FUN_0066ac80(appppcStack_50[0],uVar11);
-    ppppcVar12 = appppcStack_50[0];
+    iVar10 = thunk_FUN_0066ac80(apAStack_50[0],uVar11);
+    pAVar12 = apAStack_50[0];
     pcVar21 = pcStack_c;
     if (iVar10 != 0) {
       uVar18 = (**(code **)*piStack_64)(param_1 + 0x19);
@@ -3207,13 +3204,13 @@ LAB_0066fbc1:
       uVar25 = (**(code **)*piStack_64)(param_1 + 10,uVar28);
       pcVar21 = (char *)thunk_FUN_0065e450(iVar10,(int)((ulonglong)uVar25 >> 0x20),(uint)uVar25,
                                            pcVar21,uVar18);
-      ppppcVar12 = appppcStack_50[0];
+      pAVar12 = apAStack_50[0];
       pcStack_c = pcVar21;
     }
 joined_r0x006703e6:
     if ((int)pcVar21 < 0) {
       _strncpy((char *)(piStack_64 + 1),&DAT_008016a0,0x7f);
-      piStack_64[0x21] = (int)ppppcVar12;
+      piStack_64[0x21] = (int)pAVar12;
 LAB_0067041b:
       FUN_006a5e40(-0xaa,DAT_007ed77c,0x7d2a24,0x79);
     }
@@ -3224,9 +3221,9 @@ LAB_00670425:
   case 0x848:
     pcStack_c = (char *)0x0;
     if (0 < param_2) {
-      ppppcStack_8 = (char ****)0x0;
+      pAStack_8 = (AiFltClassTy *)0x0;
       do {
-        if ((param_1[(int)ppppcStack_8] != '\x04') && (param_1[(int)ppppcStack_8] != '\x01')) {
+        if ((param_1[(int)pAStack_8] != '\x04') && (param_1[(int)pAStack_8] != '\x01')) {
           pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
           if (pcVar21 != (char *)0x0) {
             _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3235,13 +3232,13 @@ LAB_00670425:
           FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
         }
         pcStack_c = pcStack_c + 1;
-        ppppcStack_8 = (char ****)((int)ppppcStack_8 + 5);
+        pAStack_8 = pAStack_8 + 5;
       } while ((int)pcStack_c < param_2);
     }
-    ppppcStack_8 = (char ****)(**(code **)*piStack_64)(param_1);
-    if (((ppppcStack_8 == (char ****)0x9) &&
+    pAStack_8 = (AiFltClassTy *)(**(code **)*piStack_64)(param_1);
+    if (((pAStack_8 == (AiFltClassTy *)0x9) &&
         (iVar10 = (**(code **)(*piStack_64 + 0x18))(), iVar10 == 8)) ||
-       (ppppcStack_8 == (char ****)0xff)) {
+       (pAStack_8 == (AiFltClassTy *)0xff)) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
@@ -3249,7 +3246,7 @@ LAB_00670425:
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
     }
-    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)ppppcStack_8,0,(uint *)appppcStack_50);
+    iVar10 = thunk_FUN_00668f50(piStack_64,(char *)pAStack_8,0,(uint *)apAStack_50);
     if (iVar10 != 1) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
@@ -3260,30 +3257,30 @@ LAB_00670425:
     }
     iVar10 = 0;
     uStack_10 = (char *)(uint)DAT_00808aaf;
-    ppppcStack_8 = (char ****)0x0;
+    pAStack_8 = (AiFltClassTy *)0x0;
     if (uStack_10 != (char *)0x0) {
       pcStack_c = &DAT_00808af5;
       do {
-        if (((char ****)(uint)(byte)pcStack_c[-1] == appppcStack_50[0]) && (*pcStack_c != '\0')) {
-          ppppcStack_8 = (char ****)(&DAT_00808ab0 + iVar10 * 0x27);
+        if (((AiFltClassTy *)(uint)(byte)pcStack_c[-1] == apAStack_50[0]) && (*pcStack_c != '\0')) {
+          pAStack_8 = (AiFltClassTy *)(&DAT_00808ab0 + iVar10 * 0x27);
           break;
         }
         iVar10 = iVar10 + 1;
         pcStack_c = pcStack_c + 0x9c;
       } while (iVar10 < (int)uStack_10);
     }
-    ppppcVar12 = ppppcStack_8;
-    if (ppppcStack_8 == (char ****)0x0) {
+    pAVar12 = pAStack_8;
+    if (pAStack_8 == (AiFltClassTy *)0x0) {
       pcVar21 = thunk_FUN_00674af0((int)*(short *)(param_1 + param_2 * 5 + 1));
       if (pcVar21 != (char *)0x0) {
         _strncpy((char *)(piStack_64 + 1),pcVar21,0x7f);
       }
       piStack_64[0x21] = -1;
       FUN_006a5e40(-0x78,DAT_007ed77c,0x7d2a24,0x79);
-      ppppcVar12 = ppppcStack_8;
+      pAVar12 = pAStack_8;
     }
 LAB_0066d630:
-    puVar19 = (uint *)FUN_006c49b0((char *)ppppcVar12);
+    puVar19 = (uint *)FUN_006c49b0((char *)pAVar12);
     if (param_3 == (int *)0x0) {
       DAT_00858df8 = (undefined4 *)uStack_260;
       return puVar19;

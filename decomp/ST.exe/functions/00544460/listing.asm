@@ -1,4 +1,4 @@
-FUN_00544460:
+CursorClassTy::DelSysAcc:
 00544460  55                        PUSH EBP
 00544461  8B EC                     MOV EBP,ESP
 00544463  81 EC B4 00 00 00         SUB ESP,0xb4

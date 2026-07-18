@@ -6,6 +6,7 @@ undefined4 __thiscall thunk_FUN_004a7e30(void *this,int param_1)
   byte bVar2;
   int *piVar3;
   uint uVar4;
+  int unaff_EDI;
   int iVar5;
   undefined4 uStack_14;
   int iStack_e;
@@ -75,7 +76,7 @@ undefined4 __thiscall thunk_FUN_004a7e30(void *this,int param_1)
     iStack_e = iStack_a * 0xc9;
   }
   *(int *)((int)this + 0x23a) = (iStack_e / (int)uVar4) / 3;
-  thunk_FUN_004a80a0((int)this);
+  STGroupBoatC::SetPatrolCmdToBoat(this,unaff_EDI);
   return 0;
 }
 

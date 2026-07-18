@@ -1,9 +1,9 @@
 
-undefined4 __thiscall thunk_FUN_0049a940(void *this,int param_1)
+undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  STGroupBoatC *pSVar2;
   int iVar3;
   void *this_00;
   int iVar4;
@@ -12,39 +12,38 @@ undefined4 __thiscall thunk_FUN_0049a940(void *this,int param_1)
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar7;
+  STGroupBoatC *pSVar7;
   uint uVar8;
   undefined4 uStack_58;
   undefined4 auStack_54 [16];
-  void *pvStack_14;
+  STGroupBoatC *pSStack_14;
   uint uStack_10;
   uint uStack_c;
   undefined4 uStack_8;
   
-  uStack_10 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
+  uStack_10 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   uStack_58 = DAT_00858df8;
   DAT_00858df8 = &uStack_58;
-  pvStack_14 = this;
+  pSStack_14 = this;
   iVar3 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
-  pvVar2 = pvStack_14;
+  pSVar2 = pSStack_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar7 = (undefined4 *)((int)pvStack_14 + 0x89);
+      pSVar7 = pSStack_14 + 0x89;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
+        *(undefined4 *)pSVar7 = 0;
+        pSVar7 = pSVar7 + 4;
       }
       uVar8 = 0;
-      *(undefined4 *)((int)pvStack_14 + 0x65) = 0;
+      *(undefined4 *)(pSStack_14 + 0x65) = 0;
       uStack_8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
       if (uStack_10 != 0) {
         uVar6 = 0;
         do {
-          FUN_006acc70(*(int *)((int)pvVar2 + 0x29),uVar6,&uStack_c);
+          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&uStack_c);
           if ((short)uStack_c != -1) {
             this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                          *(undefined1 *)((int)pvVar2 + 0x24)),
-                                                 uStack_c,1);
+                                                          pSVar2[0x24]),uStack_c,1);
             if (this_00 == (void *)0x0) {
               FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x65e);
             }

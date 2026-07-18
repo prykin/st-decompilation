@@ -16,7 +16,7 @@ void __fastcall FUN_005fb170(int *param_1)
   case 10:
   case 0xb:
   case 0xc:
-    thunk_FUN_005f6af0(0);
+    STColl3C::LoadImagSpr((STColl3C *)param_1,0);
     thunk_FUN_005fa070(param_1);
     *(undefined4 *)((int)param_1 + 0x2dd) = 0xd;
   }

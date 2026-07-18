@@ -1,4 +1,4 @@
-FUN_00550250:
+STPlaySystemC::SendMail:
 00550250  55                        PUSH EBP
 00550251  8B EC                     MOV EBP,ESP
 00550253  83 EC 4C                  SUB ESP,0x4c

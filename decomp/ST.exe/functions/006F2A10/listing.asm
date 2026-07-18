@@ -1,4 +1,4 @@
-FUN_006f2a10:
+cMf32::RecKeyGetPrev:
 006F2A10  55                        PUSH EBP
 006F2A11  8B EC                     MOV EBP,ESP
 006F2A13  83 EC 48                  SUB ESP,0x48

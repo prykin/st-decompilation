@@ -1,4 +1,4 @@
-FUN_0058d7c0:
+STSharkC::GetMessage:
 0058D7C0  55                        PUSH EBP
 0058D7C1  8B EC                     MOV EBP,ESP
 0058D7C3  83 EC 7C                  SUB ESP,0x7c

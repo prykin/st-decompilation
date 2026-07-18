@@ -1,5 +1,9 @@
 
-void FUN_005c1610(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\rpt_obj.cpp
+   MReportTy::PaintTab */
+
+void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
 
 {
   int iVar1;
@@ -33,13 +37,14 @@ void FUN_005c1610(int param_1)
   int local_14;
   int local_10;
   uint local_c;
-  int local_8;
+  MReportTy *local_8;
   
   local_44 = *(uint **)(param_1 + 0x14);
   local_40 = local_44[4] - 0x46;
   local_48 = local_44[3] - 0x1a;
   local_8c = DAT_00858df8;
   DAT_00858df8 = &local_8c;
+  local_8 = this;
   iVar5 = __setjmp3(local_88,0,unaff_EDI,unaff_ESI);
   puVar4 = local_44;
   if (iVar5 != 0) {
@@ -153,7 +158,7 @@ LAB_005c1806:
     }
   }
   FUN_006b48e0(DAT_0080759c,puVar4[3],puVar4[4],*(int *)(local_8 + 0x73),0,iVar5,iVar7,puVar4[5],
-               puVar4[6],local_8 + 0xa3,0x4c,0x10000ff);
+               puVar4[6],(int)(local_8 + 0xa3),0x4c,0x10000ff);
   DAT_00858df8 = (undefined4 *)local_8c;
   return;
 }

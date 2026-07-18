@@ -1,4 +1,4 @@
-FUN_00504e60:
+CPanelTy::PaintIDSObj:
 00504E60  55                        PUSH EBP
 00504E61  8B EC                     MOV EBP,ESP
 00504E63  83 EC 48                  SUB ESP,0x48

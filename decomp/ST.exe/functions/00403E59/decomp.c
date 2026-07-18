@@ -3,7 +3,7 @@ undefined4 * __thiscall thunk_FUN_005f66f0(void *this,uint *param_1)
 
 {
   uint uVar1;
-  void *pvVar2;
+  STAllPlayersC *pSVar2;
   undefined4 *puVar3;
   undefined4 *puVar4;
   undefined4 *puVar5;
@@ -14,13 +14,14 @@ undefined4 * __thiscall thunk_FUN_005f66f0(void *this,uint *param_1)
   uint *puVar10;
   uint *puStack_1c;
   undefined4 *puStack_18;
-  void *pvStack_14;
+  STAllPlayersC *pSStack_14;
   uint uStack_10;
   uint uStack_c;
   uint uStack_8;
   
-  pvStack_14 = this;
+  pSStack_14 = this;
   puVar3 = (undefined4 *)FUN_006aac70(0xc2);
+  pSVar2 = pSStack_14;
   if (this == (void *)0x0) {
     puVar9 = (undefined4 *)0x0;
   }
@@ -35,8 +36,8 @@ undefined4 * __thiscall thunk_FUN_005f66f0(void *this,uint *param_1)
   }
   *(undefined2 *)puVar4 = *(undefined2 *)puVar9;
   puVar3[3] = 2;
-  puStack_18 = thunk_FUN_004ad790(&uStack_c);
-  puStack_1c = thunk_FUN_004210e0((int *)&uStack_10);
+  puStack_18 = STT3DSprC::SaveSpr((STT3DSprC *)(pSStack_14 + 0x1d5),&uStack_c);
+  puStack_1c = STAllPlayersC::SaveGObjData(pSVar2,(int *)&uStack_10);
   uStack_8 = uStack_10 + 0xca + uStack_c;
   puVar4 = (undefined4 *)FUN_006acf50(puVar3,uStack_8);
   *(uint *)((int)puVar4 + 0xc2) = uStack_c;
@@ -66,8 +67,8 @@ undefined4 * __thiscall thunk_FUN_005f66f0(void *this,uint *param_1)
     puVar8 = (uint *)((int)puVar8 + 1);
   }
   FUN_006ab060(&puStack_1c);
-  pvVar2 = pvStack_14;
-  iVar6 = *(int *)((int)pvStack_14 + 0x2e6);
+  pSVar2 = pSStack_14;
+  iVar6 = *(int *)(pSStack_14 + 0x2e6);
   if (iVar6 != 0) {
     if (*(int *)(iVar6 + 0x58) == 0) {
       uVar7 = 0;
@@ -79,7 +80,7 @@ undefined4 * __thiscall thunk_FUN_005f66f0(void *this,uint *param_1)
     uStack_8 = uVar1;
     puVar5 = (undefined4 *)FUN_006acf50(puVar4,uVar1);
     puVar3 = (undefined4 *)((uVar1 - uVar7) + -0x6c + (int)puVar5);
-    puVar9 = *(undefined4 **)((int)pvVar2 + 0x2e6);
+    puVar9 = *(undefined4 **)(pSVar2 + 0x2e6);
     puVar4 = puVar3;
     for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar4 = *puVar9;
@@ -87,7 +88,7 @@ undefined4 * __thiscall thunk_FUN_005f66f0(void *this,uint *param_1)
       puVar4 = puVar4 + 1;
     }
     if (uVar7 != 0) {
-      puVar9 = *(undefined4 **)(*(int *)((int)pvStack_14 + 0x2e6) + 0x58);
+      puVar9 = *(undefined4 **)(*(int *)(pSStack_14 + 0x2e6) + 0x58);
       puVar3 = puVar3 + 0x1b;
       for (uVar7 = uVar7 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
         *puVar3 = *puVar9;

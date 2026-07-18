@@ -1,4 +1,4 @@
-FUN_005d8160:
+SIDTy::PaintSID:
 005D8160  55                        PUSH EBP
 005D8161  8B EC                     MOV EBP,ESP
 005D8163  83 EC 44                  SUB ESP,0x44

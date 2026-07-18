@@ -1,4 +1,4 @@
-FUN_0054e950:
+STPlaySystemC::AddToRep:
 0054E950  55                        PUSH EBP
 0054E951  8B EC                     MOV EBP,ESP
 0054E953  83 EC 4C                  SUB ESP,0x4c

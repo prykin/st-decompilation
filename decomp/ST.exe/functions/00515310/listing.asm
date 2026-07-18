@@ -1,4 +1,4 @@
-FUN_00515310:
+HelpPanelTy::DrawTitle:
 00515310  55                        PUSH EBP
 00515311  8B EC                     MOV EBP,ESP
 00515313  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_0050c620:
+CPanelTy::Update4PanelSI:
 0050C620  55                        PUSH EBP
 0050C621  8B EC                     MOV EBP,ESP
 0050C623  81 EC 3C 01 00 00         SUB ESP,0x13c

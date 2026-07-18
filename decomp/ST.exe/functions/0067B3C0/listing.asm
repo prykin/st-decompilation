@@ -1,4 +1,4 @@
-FUN_0067b3c0:
+AiPlrClassTy::SetTech:
 0067B3C0  55                        PUSH EBP
 0067B3C1  8B EC                     MOV EBP,ESP
 0067B3C3  83 EC 5C                  SUB ESP,0x5c

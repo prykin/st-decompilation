@@ -1,16 +1,20 @@
 
-void __thiscall FUN_00500520(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\cpanel1.cpp
+   CPanelTy::PaintDeep */
+
+void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  CPanelTy *pCVar2;
   char cVar3;
   int iVar4;
   byte *pbVar5;
   uint uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  char *pcVar7;
+  CPanelTy *pCVar7;
   undefined4 *puVar8;
   int iVar9;
   int iVar10;
@@ -20,18 +24,18 @@ void __thiscall FUN_00500520(void *this,int param_1)
   int local_28;
   int local_24;
   int local_20;
-  void *local_1c;
+  CPanelTy *local_1c;
   int local_18;
   int local_14;
   int local_10;
-  char *local_c;
+  CPanelTy *local_c;
   uint local_8;
   
   if (param_1 == 0) {
-    local_c = (char *)((int)this + 0xc51);
+    local_c = this + 0xc51;
   }
   else {
-    local_c = (char *)((int)this + 0xb63);
+    local_c = this + 0xb63;
   }
   if (param_1 == 0) {
     cVar3 = (DAT_0080874e != '\x03') + '\x05';
@@ -40,19 +44,19 @@ void __thiscall FUN_00500520(void *this,int param_1)
     cVar3 = (DAT_0080874e == '\x03') + '\x02';
   }
   local_8 = CONCAT31(local_8._1_3_,cVar3);
-  if (*local_c != '\0') {
+  if (*local_c != (CPanelTy)0x0) {
     local_70 = DAT_00858df8;
     DAT_00858df8 = &local_70;
     local_1c = this;
     iVar4 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
-    pvVar2 = local_1c;
+    pCVar2 = local_1c;
     if (iVar4 == 0) {
       local_2c = -0x16 - (int)local_c;
       local_20 = -0x25 - (int)local_c;
       local_24 = -0x11 - (int)local_c;
       local_28 = -0x2a - (int)local_c;
       local_14 = 6;
-      pcVar7 = local_c + 0x2a;
+      pCVar7 = local_c + 0x2a;
       iVar4 = 0xb;
       local_10 = 0x37;
       local_18 = 5;
@@ -61,41 +65,41 @@ void __thiscall FUN_00500520(void *this,int param_1)
           iVar10 = iVar4;
           if (param_1 != 0) {
             iVar9 = local_20;
-            if (*pcVar7 != '\0') {
+            if (*pCVar7 != (CPanelTy)0x0) {
               iVar9 = local_28;
             }
-            pbVar5 = (byte *)FUN_0070b3a0(*(int *)((int)pvVar2 + 0x2a2),(int)(pcVar7 + iVar9));
+            pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pCVar2 + 0x2a2),(int)(pCVar7 + iVar9));
             cVar3 = '\x06';
             iVar9 = local_10;
             goto LAB_00500689;
           }
           iVar9 = local_24;
-          if (*pcVar7 == '\0') {
+          if (*pCVar7 == (CPanelTy)0x0) {
             iVar9 = local_2c;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)((int)pvVar2 + 0x2a2),(int)(pcVar7 + iVar9));
+          pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pCVar2 + 0x2a2),(int)(pCVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          puVar8 = *(undefined4 **)((int)pvVar2 + (local_8 & 0xff) * 4 + 0x180);
+          puVar8 = *(undefined4 **)(pCVar2 + (local_8 & 0xff) * 4 + 0x180);
         }
         else {
-          if (*pcVar7 == '\0') {
+          if (*pCVar7 == (CPanelTy)0x0) {
             uVar6 = 2;
           }
           else {
-            uVar6 = -(uint)(local_c[2] != '\x01') & 3;
+            uVar6 = -(uint)(local_c[2] != (CPanelTy)0x1) & 3;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)((int)pvVar2 + 0x2a2),uVar6);
+          pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pCVar2 + 0x2a2),uVar6);
           cVar3 = '\x01';
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          puVar8 = *(undefined4 **)((int)pvVar2 + (local_8 & 0xff) * 4 + 0x180);
+          puVar8 = *(undefined4 **)(pCVar2 + (local_8 & 0xff) * 4 + 0x180);
         }
         thunk_FUN_00540760(puVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;
         iVar4 = iVar4 + 0xb;
-        pcVar7 = pcVar7 + 1;
+        pCVar7 = pCVar7 + 1;
         local_14 = local_14 + 0x1d;
         local_18 = local_18 + -1;
         if (local_18 == 0) {

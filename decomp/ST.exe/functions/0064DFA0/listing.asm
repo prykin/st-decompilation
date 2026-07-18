@@ -1,4 +1,4 @@
-FUN_0064dfa0:
+AiEventClassTy::_CreateMine:
 0064DFA0  55                        PUSH EBP
 0064DFA1  8B EC                     MOV EBP,ESP
 0064DFA3  83 EC 68                  SUB ESP,0x68

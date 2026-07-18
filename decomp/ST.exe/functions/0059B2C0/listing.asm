@@ -1,4 +1,4 @@
-FUN_0059b2c0:
+FSGSTy::PaintLadder:
 0059B2C0  55                        PUSH EBP
 0059B2C1  8B EC                     MOV EBP,ESP
 0059B2C3  81 EC 88 00 00 00         SUB ESP,0x88

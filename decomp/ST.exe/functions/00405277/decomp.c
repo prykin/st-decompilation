@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_006a0960(void)
+undefined4 __thiscall CGenerate::_saveObj(CGenerate *this)
 
 {
   code *pcVar1;

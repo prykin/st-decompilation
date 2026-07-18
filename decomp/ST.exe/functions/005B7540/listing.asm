@@ -1,4 +1,4 @@
-FUN_005b7540:
+MMsgTy::NoneMMsg:
 005B7540  55                        PUSH EBP
 005B7541  8B EC                     MOV EBP,ESP
 005B7543  81 EC B8 00 00 00         SUB ESP,0xb8

@@ -1,4 +1,4 @@
-FUN_005770d0:
+GameSystemC::DoneSystem:
 005770D0  55                        PUSH EBP
 005770D1  8B EC                     MOV EBP,ESP
 005770D3  83 EC 48                  SUB ESP,0x48

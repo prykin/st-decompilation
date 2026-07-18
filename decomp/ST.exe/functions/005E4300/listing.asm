@@ -1,4 +1,4 @@
-FUN_005e4300:
+MTaskTy::PaintBut:
 005E4300  55                        PUSH EBP
 005E4301  8B EC                     MOV EBP,ESP
 005E4303  83 EC 58                  SUB ESP,0x58

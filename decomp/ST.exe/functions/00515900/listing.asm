@@ -1,4 +1,4 @@
-FUN_00515900:
+HelpPanelTy::DrawWeapon:
 00515900  55                        PUSH EBP
 00515901  8B EC                     MOV EBP,ESP
 00515903  83 EC 68                  SUB ESP,0x68

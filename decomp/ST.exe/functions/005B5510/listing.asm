@@ -1,4 +1,4 @@
-FUN_005b5510:
+MMObjTy::CreateSprBut:
 005B5510  55                        PUSH EBP
 005B5511  8B EC                     MOV EBP,ESP
 005B5513  81 EC C8 01 00 00         SUB ESP,0x1c8

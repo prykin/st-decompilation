@@ -1,4 +1,4 @@
-FUN_004a8920:
+OpticClassC::GetMessage:
 004A8920  55                        PUSH EBP
 004A8921  8B EC                     MOV EBP,ESP
 004A8923  83 EC 68                  SUB ESP,0x68

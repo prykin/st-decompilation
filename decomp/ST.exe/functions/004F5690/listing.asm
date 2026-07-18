@@ -1,4 +1,4 @@
-FUN_004f5690:
+CPanelTy::InitCPanel:
 004F5690  55                        PUSH EBP
 004F5691  8B EC                     MOV EBP,ESP
 004F5693  83 EC 74                  SUB ESP,0x74

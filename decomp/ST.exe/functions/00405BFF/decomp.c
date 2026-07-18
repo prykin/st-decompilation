@@ -1,16 +1,17 @@
 
-void thunk_FUN_00557c90(void)
+void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
 
 {
   undefined4 uVar1;
   code *pcVar2;
   void *pvVar3;
+  VisibleClassTy *this_00;
   int iVar4;
   LPSTR pCVar5;
   undefined4 *puVar6;
-  undefined4 *puVar7;
-  undefined1 *puVar8;
-  undefined4 *puVar9;
+  undefined1 *puVar7;
+  VisibleClassTy *pVVar8;
+  VisibleClassTy *pVVar9;
   undefined4 unaff_ESI;
   int iVar10;
   uint uVar11;
@@ -20,7 +21,7 @@ void thunk_FUN_00557c90(void)
   byte bVar14;
   undefined4 uStack_54;
   undefined4 auStack_50 [16];
-  void *pvStack_10;
+  VisibleClassTy *pVStack_10;
   int iStack_c;
   short *psStack_8;
   
@@ -28,7 +29,9 @@ void thunk_FUN_00557c90(void)
   psStack_8 = (short *)0x0;
   uStack_54 = DAT_00858df8;
   DAT_00858df8 = &uStack_54;
+  pVStack_10 = this;
   iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  this_00 = pVStack_10;
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_54;
     iVar10 = FUN_006ad4d0(s_E____titans_grig_visible_cpp_007c92cc,0xaa,0,iVar4,&DAT_007a4ccc);
@@ -41,9 +44,9 @@ void thunk_FUN_00557c90(void)
     (*pcVar2)();
     return;
   }
-  DAT_00802a50 = -(uint)(*(int *)((int)pvStack_10 + 0x114) != 0) & 0x403765;
-  if (*(int *)((int)pvStack_10 + 0x114) != 0) {
-    puVar9 = (undefined4 *)((int)pvStack_10 + 0x1d8);
+  DAT_00802a50 = -(uint)(*(int *)(pVStack_10 + 0x114) != 0) & 0x403765;
+  if (*(int *)(pVStack_10 + 0x114) != 0) {
+    pVVar9 = pVStack_10 + 0x1d8;
     do {
       iVar4 = 1;
       bVar14 = 0;
@@ -51,15 +54,15 @@ void thunk_FUN_00557c90(void)
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar10);
       psStack_8 = FUN_0070b430(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
       (&DAT_007c9290)[iVar10] = (int)*(short *)((int)psStack_8 + 9);
-      puVar7 = puVar9 + -0x30;
+      pVVar8 = pVVar9 + -0xc0;
       (&DAT_007c929c)[iVar10] = (int)*(short *)((int)psStack_8 + 0xb);
       puVar6 = (undefined4 *)((int)psStack_8 + 0x11);
       iStack_c = 0x10;
       do {
         uVar1 = *puVar6;
         puVar6 = puVar6 + 1;
-        *puVar7 = uVar1;
-        puVar7 = puVar7 + 1;
+        *(undefined4 *)pVVar8 = uVar1;
+        pVVar8 = pVVar8 + 4;
         iStack_c = iStack_c + -1;
       } while (iStack_c != 0);
       FUN_0070b600((int *)&psStack_8);
@@ -68,78 +71,72 @@ void thunk_FUN_00557c90(void)
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar10);
       psStack_8 = FUN_0070b430(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
-      puVar7 = (undefined4 *)((int)psStack_8 + 0x11);
+      puVar6 = (undefined4 *)((int)psStack_8 + 0x11);
       iVar4 = 0x10;
       do {
-        uVar1 = *puVar7;
-        puVar7 = puVar7 + 1;
-        *puVar9 = uVar1;
-        puVar9 = puVar9 + 1;
+        uVar1 = *puVar6;
+        puVar6 = puVar6 + 1;
+        *(undefined4 *)pVVar9 = uVar1;
+        pVVar9 = pVVar9 + 4;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
       FUN_0070b600((int *)&psStack_8);
       iVar10 = iVar10 + 1;
     } while (iVar10 < 3);
-    FUN_007176f0(DAT_00807598,(undefined4 *)((int)pvStack_10 + 0x3c),
-                 *(int *)((int)pvStack_10 + 0x28),*(int *)((int)pvStack_10 + 0x2c),
-                 (int)pvStack_10 + 0x118,*(int *)((int)pvStack_10 + 0x4c),
-                 *(undefined4 *)((int)pvStack_10 + 0x30),*(undefined4 *)((int)pvStack_10 + 0x34),
-                 (int)pvStack_10 + 0x1d8,3,0x10,&DAT_007c9290,&DAT_007c929c);
-    iVar4 = *(int *)((int)pvStack_10 + 0x110);
+    FUN_007176f0(DAT_00807598,(undefined4 *)(this_00 + 0x3c),*(int *)(this_00 + 0x28),
+                 *(int *)(this_00 + 0x2c),(int)(this_00 + 0x118),*(int *)(this_00 + 0x4c),
+                 *(undefined4 *)(this_00 + 0x30),*(undefined4 *)(this_00 + 0x34),
+                 (int)(this_00 + 0x1d8),3,0x10,&DAT_007c9290,&DAT_007c929c);
+    iVar4 = *(int *)(this_00 + 0x110);
     uVar11 = 0;
     if (0 < *(int *)(iVar4 + 0xc)) {
       bVar12 = *(int *)(iVar4 + 0xc) != 0;
       do {
         if (bVar12) {
-          puVar8 = (undefined1 *)(*(int *)(iVar4 + 8) * uVar11 + *(int *)(iVar4 + 0x1c));
+          puVar7 = (undefined1 *)(*(int *)(iVar4 + 8) * uVar11 + *(int *)(iVar4 + 0x1c));
         }
         else {
-          puVar8 = (undefined1 *)0x0;
+          puVar7 = (undefined1 *)0x0;
         }
-        switch(*puVar8) {
+        switch(*puVar7) {
         case 0:
-          thunk_FUN_00558dc0(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             (undefined *)(int)(char)puVar8[6],(uint)(byte)puVar8[1],
-                             (undefined *)(uint)(byte)puVar8[7],*(int *)(puVar8 + 8),0x4001);
+          thunk_FUN_00558dc0(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),
+                             (undefined *)(int)(char)puVar7[6],(uint)(byte)puVar7[1],
+                             (undefined *)(uint)(byte)puVar7[7],*(int *)(puVar7 + 8),0x4001);
           break;
         case 1:
-          thunk_FUN_005594a0(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(undefined *)(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),2);
+          thunk_FUN_005594a0(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),
+                             puVar7[6],(undefined *)(uint)(byte)puVar7[1],(uint)(byte)puVar7[7],
+                             *(undefined4 *)(puVar7 + 8),2);
           break;
         case 2:
-          thunk_FUN_005597a0(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),4);
+          SetZoneDes(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
+                     (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),4);
           break;
         case 3:
-          thunk_FUN_00559b30(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),8);
+          SetZoneAst(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
+                     (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),8);
           break;
         case 4:
-          thunk_FUN_00559ec0(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),0x10);
+          SetZoneTsh(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
+                     (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),0x10);
           break;
         case 5:
-          thunk_FUN_0055a270(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),0x20);
+          SetZoneMin1(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
+                      (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),0x20);
           break;
         case 6:
-          thunk_FUN_0055a620(pvStack_10,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
-                             puVar8[6],(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
-                             *(undefined4 *)(puVar8 + 8),0x40);
+          SetZoneMin2(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
+                      (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),0x40);
         }
-        iVar4 = *(int *)((int)pvStack_10 + 0x110);
+        iVar4 = *(int *)(this_00 + 0x110);
         uVar11 = uVar11 + 1;
         bVar12 = uVar11 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar11 < (int)*(uint *)(iVar4 + 0xc));
     }
     pvVar3 = DAT_00807598;
-    if (*(int *)((int)pvStack_10 + 0x114) != 0) {
-      if (*(int *)((int)pvStack_10 + 0xf8) != 0) {
+    if (*(int *)(this_00 + 0x114) != 0) {
+      if (*(int *)(this_00 + 0xf8) != 0) {
         *(undefined4 *)((int)DAT_00807598 + 0x466) = 1;
         *(undefined4 *)((int)pvVar3 + 0x2d8) = 1;
         DAT_00858df8 = (undefined4 *)uStack_54;
@@ -148,7 +145,7 @@ void thunk_FUN_00557c90(void)
       goto LAB_00557fbb;
     }
   }
-  *(undefined4 *)((int)pvStack_10 + 0xf8) = 0;
+  *(undefined4 *)(this_00 + 0xf8) = 0;
 LAB_00557fbb:
   pvVar3 = DAT_00807598;
   *(undefined4 *)((int)DAT_00807598 + 0x466) = 0;

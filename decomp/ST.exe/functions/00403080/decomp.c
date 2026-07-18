@@ -22,7 +22,7 @@ undefined4 __thiscall thunk_FUN_0068e730(void *this,int param_1)
   }
   puVar3[1] = 0;
   *puVar3 = 0;
-  thunk_FUN_0068fb30(*(short *)(param_1 + 0x7d));
+  AiTactClassTy::BackFromRepair(this,*(short *)(param_1 + 0x7d));
   thunk_FUN_0065d590(param_1);
   return 0;
 }

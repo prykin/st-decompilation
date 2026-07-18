@@ -1,4 +1,4 @@
-FUN_00559ec0:
+VisibleClassTy::SetZoneTsh:
 00559EC0  55                        PUSH EBP
 00559EC1  8B EC                     MOV EBP,ESP
 00559EC3  83 EC 5C                  SUB ESP,0x5c

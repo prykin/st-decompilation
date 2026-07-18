@@ -1,8 +1,9 @@
 
-uint thunk_FUN_005047c0(int param_1)
+uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
 
 {
   code *pcVar1;
+  CPanelTy *this_00;
   int iVar2;
   byte *pbVar3;
   uint uVar4;
@@ -14,25 +15,27 @@ uint thunk_FUN_005047c0(int param_1)
   undefined4 uStack_54;
   undefined4 auStack_50 [16];
   uint uStack_10;
-  int iStack_c;
+  CPanelTy *pCStack_c;
   uint uStack_8;
   
   uStack_54 = DAT_00858df8;
   DAT_00858df8 = &uStack_54;
+  pCStack_c = this;
   iVar2 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  this_00 = pCStack_c;
   if (iVar2 == 0) {
-    thunk_FUN_004f1d90(*(int *)(iStack_c + 0x194),param_1 + 0x39,0x65,
-                       (uint)*(byte *)(iStack_c + 0xc33),0x2714);
-    thunk_FUN_004f2130(*(int *)(iStack_c + 0x194),param_1 + 0x39,0x70,*(ushort *)(iStack_c + 0xc1c),
-                       0xffff,3,0);
+    PaintDamageXY(pCStack_c,*(int *)(pCStack_c + 0x194),param_1 + 0x39,0x65,
+                  (uint)(byte)pCStack_c[0xc33],0x2714);
+    PaintCostsXY(this_00,*(int *)(this_00 + 0x194),param_1 + 0x39,0x70,*(ushort *)(this_00 + 0xc1c),
+                 0xffff,3,0);
     uStack_8 = uStack_8 & 0xffffff00;
-    uStack_10 = ((uint)*(byte *)(iStack_c + 0xc33) * 0x28) / 100;
-    uVar4 = (uint)*(byte *)(iStack_c + 0xc33) * -0x33333328;
+    uStack_10 = ((uint)(byte)this_00[0xc33] * 0x28) / 100;
+    uVar4 = (uint)(byte)this_00[0xc33] * -0x33333328;
     if (uStack_10 != 0) {
       uVar7 = 0;
       do {
-        pbVar3 = (byte *)FUN_0070b3a0(*(int *)(iStack_c + 0x2b6),3);
-        thunk_FUN_00540760(*(undefined4 **)(iStack_c + 0x194),param_1 + 0xb + uVar7 * 4,0x5c,'\x01',
+        pbVar3 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2b6),3);
+        thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),param_1 + 0xb + uVar7 * 4,0x5c,'\x01',
                            pbVar3);
         bVar5 = (byte)uStack_8 + 1;
         uStack_8 = CONCAT31(uStack_8._1_3_,bVar5);
@@ -44,8 +47,8 @@ uint thunk_FUN_005047c0(int param_1)
       iVar2 = param_1 + 0xb + (uStack_8 & 0xff) * 4;
       iVar6 = 0x28 - (uStack_8 & 0xff);
       do {
-        pbVar3 = (byte *)FUN_0070b3a0(*(int *)(iStack_c + 0x2b6),0);
-        uVar4 = thunk_FUN_00540760(*(undefined4 **)(iStack_c + 0x194),iVar2,0x5c,'\x01',pbVar3);
+        pbVar3 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2b6),0);
+        uVar4 = thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),iVar2,0x5c,'\x01',pbVar3);
         iVar2 = iVar2 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);

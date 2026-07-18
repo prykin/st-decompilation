@@ -1,5 +1,6 @@
 
-undefined4 thunk_FUN_0044a440(uint param_1,uint param_2)
+undefined4 __thiscall
+STAllPlayersC::UnRegisterDeposit(STAllPlayersC *this,uint param_1,uint param_2)
 
 {
   code *pcVar1;
@@ -12,12 +13,14 @@ undefined4 thunk_FUN_0044a440(uint param_1,uint param_2)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 uStack_50;
-  undefined4 auStack_4c [17];
+  undefined4 auStack_4c [16];
+  STAllPlayersC *pSStack_c;
   undefined4 uStack_8;
   
   uStack_8 = 0;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pSStack_c = this;
   iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     uVar3 = thunk_FUN_0042b620(0xffffffff,param_1,4);

@@ -1,5 +1,9 @@
 
-undefined4 FUN_006451b0(undefined4 param_1,uint *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_torp.cpp
+   STTorpC::SetDangerous */
+
+undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -11,10 +15,11 @@ undefined4 FUN_006451b0(undefined4 param_1,uint *param_2)
   undefined4 local_50 [16];
   undefined4 local_10;
   undefined4 local_c;
-  int local_8;
+  STTorpC *local_8;
   
   uVar5 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffac;
+  local_8 = this;
   iVar2 = __setjmp3(local_50,0,unaff_ESI,uVar5);
   if (iVar2 == 0) {
     if (*param_2 == 0xffffffff) {

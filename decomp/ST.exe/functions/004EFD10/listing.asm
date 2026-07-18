@@ -1,4 +1,4 @@
-FUN_004efd10:
+BldLabPanelTy::Update:
 004EFD10  55                        PUSH EBP
 004EFD11  8B EC                     MOV EBP,ESP
 004EFD13  83 EC 4C                  SUB ESP,0x4c

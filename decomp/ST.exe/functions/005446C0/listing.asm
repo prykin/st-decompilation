@@ -1,4 +1,4 @@
-FUN_005446c0:
+CursorClassTy::AddOpticAcc:
 005446C0  55                        PUSH EBP
 005446C1  8B EC                     MOV EBP,ESP
 005446C3  81 EC B4 00 00 00         SUB ESP,0xb4

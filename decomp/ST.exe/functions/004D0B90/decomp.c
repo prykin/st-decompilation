@@ -11,14 +11,14 @@ int FUN_004d0b90(int param_1)
   byte *pbVar6;
   int iVar7;
   void *unaff_EDI;
-  undefined4 *puVar8;
+  STSprGameObjC *pSVar8;
   byte *pbVar9;
   undefined4 local_50;
   undefined4 local_4c [16];
-  int local_c;
+  STSprGameObjC *local_c;
   byte *local_8;
   
-  puVar8 = (undefined4 *)0x0;
+  pSVar8 = (STSprGameObjC *)0x0;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
   iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
@@ -33,21 +33,21 @@ int FUN_004d0b90(int param_1)
     FUN_006a5e40(iVar3,0,0x7bf39c,0x342);
     return iVar3;
   }
-  thunk_FUN_0041e530(param_1);
+  STSprGameObjC::GetMessage(local_c,param_1);
   iVar3 = *(int *)(param_1 + 0x10);
   if (iVar3 == 2) {
     DAT_00800bcc = local_c;
     *(undefined4 *)(local_c + 0x20) = 0x3ea;
     *(undefined4 *)(local_c + 0x28) = 2;
     local_8 = *(byte **)(param_1 + 0x14);
-    if (local_c != 0) {
-      puVar8 = (undefined4 *)(local_c + 0x231);
+    if (local_c != (STSprGameObjC *)0x0) {
+      pSVar8 = local_c + 0x231;
     }
     pbVar6 = local_8;
     for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar8 = *(undefined4 *)pbVar6;
+      *(undefined4 *)pSVar8 = *(undefined4 *)pbVar6;
       pbVar6 = pbVar6 + 4;
-      puVar8 = puVar8 + 1;
+      pSVar8 = pSVar8 + 4;
     }
     if (*(int *)(local_c + 0x23d) == 2) {
       if (*(int *)(local_c + 0x249) != 0) {
@@ -72,8 +72,9 @@ int FUN_004d0b90(int param_1)
           iVar7 = 0;
           do {
             psVar1 = (short *)(*(int *)(local_c + 0x24d) + iVar7);
-            iVar4 = thunk_FUN_00495ec0(*psVar1,*(short *)(*(int *)(local_c + 0x24d) + 4 + iVar7),
-                                       psVar1[4],0,local_c);
+            iVar4 = DumpClassC::WritePtr
+                              (*psVar1,*(short *)(*(int *)(local_c + 0x24d) + 4 + iVar7),psVar1[4],0
+                               ,(int)local_c);
             if (iVar4 != 0) {
               FUN_006a5e40(iVar4,DAT_007ed77c,0x7bf39c,0x326);
             }
@@ -85,8 +86,8 @@ int FUN_004d0b90(int param_1)
     }
   }
   else if (iVar3 == 3) {
-    DAT_00800bcc = 0;
-    thunk_FUN_004ad310(local_c + 0x1d5);
+    DAT_00800bcc = (STSprGameObjC *)0x0;
+    thunk_FUN_004ad310((int)(local_c + 0x1d5));
     if (*(int *)(local_c + 0x24d) != 0) {
       FUN_006ab060((undefined4 *)(local_c + 0x24d));
       DAT_00858df8 = (undefined4 *)local_50;
@@ -95,16 +96,16 @@ int FUN_004d0b90(int param_1)
   }
   else if (iVar3 == 0x10f) {
     local_8 = (byte *)FUN_006aac70(*(int *)(local_c + 0x245) * 0xc + 0x1c);
-    if (local_c == 0) {
-      puVar8 = (undefined4 *)0x0;
+    if (local_c == (STSprGameObjC *)0x0) {
+      pSVar8 = (STSprGameObjC *)0x0;
     }
     else {
-      puVar8 = (undefined4 *)(local_c + 0x231);
+      pSVar8 = local_c + 0x231;
     }
     pbVar6 = local_8;
     for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pbVar6 = *puVar8;
-      puVar8 = puVar8 + 1;
+      *(undefined4 *)pbVar6 = *(undefined4 *)pSVar8;
+      pSVar8 = pSVar8 + 4;
       pbVar6 = pbVar6 + 4;
     }
     local_8[0xc] = 2;
@@ -125,8 +126,9 @@ int FUN_004d0b90(int param_1)
         pbVar9 = pbVar9 + 1;
       }
     }
-    thunk_FUN_0054d430(DAT_00802a38,*(undefined4 *)(local_c + 0x18),local_8,
-                       *(int *)(local_c + 0x245) * 0xc + 0x1c);
+    STPlaySystemC::SaveObjData
+              (DAT_00802a38,*(undefined4 *)(local_c + 0x18),local_8,
+               *(int *)(local_c + 0x245) * 0xc + 0x1c);
     FUN_006ab060(&local_8);
     DAT_00858df8 = (undefined4 *)local_50;
     return 0;

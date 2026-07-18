@@ -1,4 +1,4 @@
-FUN_005859a0:
+STLBombC::GetMessage:
 005859A0  55                        PUSH EBP
 005859A1  8B EC                     MOV EBP,ESP
 005859A3  83 EC 7C                  SUB ESP,0x7c

@@ -1,5 +1,9 @@
 
-void FUN_004a67a0(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_grpb.cpp
+   STGroupBoatC::RestoreGrpBData */
+
+void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *param_1)
 
 {
   code *pcVar1;
@@ -13,14 +17,16 @@ void FUN_004a67a0(undefined4 *param_1)
   undefined4 unaff_ESI;
   undefined4 *puVar9;
   void *unaff_EDI;
+  STGroupBoatC *pSVar10;
   undefined4 local_50;
   undefined4 local_4c [16];
   undefined4 *local_c;
-  int local_8;
+  STGroupBoatC *local_8;
   
   local_c = param_1;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_8 = this;
   iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   puVar2 = local_c;
   if (iVar3 != 0) {
@@ -45,18 +51,18 @@ void FUN_004a67a0(undefined4 *param_1)
   *(undefined4 *)(local_8 + 0x61) = local_c[10];
   *(undefined4 *)(local_8 + 0x65) = local_c[0xb];
   puVar9 = local_c + 0xc;
-  puVar4 = (undefined4 *)(local_8 + 0x69);
+  pSVar10 = local_8 + 0x69;
   for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar9;
+    *(undefined4 *)pSVar10 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar4 = puVar4 + 1;
+    pSVar10 = pSVar10 + 4;
   }
   puVar9 = local_c + 0x14;
-  puVar4 = (undefined4 *)(local_8 + 0x89);
+  pSVar10 = local_8 + 0x89;
   for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar9;
+    *(undefined4 *)pSVar10 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar4 = puVar4 + 1;
+    pSVar10 = pSVar10 + 4;
   }
   *(undefined4 *)(local_8 + 0xdd) = local_c[0x29];
   *(undefined4 *)(local_8 + 0xe1) = local_c[0x2a];
@@ -86,17 +92,17 @@ void FUN_004a67a0(undefined4 *param_1)
   *(undefined2 *)(local_8 + 0x133) = *(undefined2 *)((int)local_c + 0x106);
   *(undefined2 *)(local_8 + 0x135) = *(undefined2 *)(local_c + 0x42);
   puVar9 = (undefined4 *)((int)local_c + 0x10a);
-  puVar4 = (undefined4 *)(local_8 + 0x137);
+  pSVar10 = local_8 + 0x137;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar9;
+    *(undefined4 *)pSVar10 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar4 = puVar4 + 1;
+    pSVar10 = pSVar10 + 4;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar9;
-  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar9 + 2);
+  *(undefined2 *)pSVar10 = *(undefined2 *)puVar9;
+  pSVar10[2] = *(STGroupBoatC *)((int)puVar9 + 2);
   *(undefined4 *)(local_8 + 0x156) = *(undefined4 *)((int)local_c + 0x129);
   *(undefined2 *)(local_8 + 0x15a) = *(undefined2 *)((int)local_c + 0x12d);
-  *(undefined1 *)(local_8 + 0x1c9) = *(undefined1 *)(local_c + 0x69);
+  local_8[0x1c9] = *(STGroupBoatC *)(local_c + 0x69);
   *(undefined4 *)(local_8 + 0x15c) = *(undefined4 *)((int)local_c + 0x12f);
   *(undefined4 *)(local_8 + 0x164) = *(undefined4 *)((int)local_c + 0x13b);
   *(undefined2 *)(local_8 + 0x16c) = *(undefined2 *)((int)local_c + 0x147);
@@ -116,7 +122,7 @@ void FUN_004a67a0(undefined4 *param_1)
   *(undefined2 *)(local_8 + 400) = *(undefined2 *)((int)local_c + 0x16b);
   *(undefined4 *)(local_8 + 0x192) = *(undefined4 *)((int)local_c + 0x16d);
   *(undefined2 *)(local_8 + 0x196) = *(undefined2 *)((int)local_c + 0x171);
-  *(undefined1 *)(local_8 + 0x198) = *(undefined1 *)((int)local_c + 0x173);
+  local_8[0x198] = *(STGroupBoatC *)((int)local_c + 0x173);
   *(undefined4 *)(local_8 + 0x199) = local_c[0x5d];
   *(undefined4 *)(local_8 + 0x19d) = local_c[0x5e];
   *(undefined2 *)(local_8 + 0x1a1) = *(undefined2 *)(local_c + 0x5f);
@@ -132,11 +138,11 @@ void FUN_004a67a0(undefined4 *param_1)
   *(undefined2 *)(local_8 + 0x1c3) = *(undefined2 *)((int)local_c + 0x19e);
   *(undefined4 *)(local_8 + 0x1c5) = local_c[0x68];
   puVar9 = (undefined4 *)((int)local_c + 0x1d5);
-  puVar4 = (undefined4 *)(local_8 + 0x1e2);
+  pSVar10 = local_8 + 0x1e2;
   for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar9;
+    *(undefined4 *)pSVar10 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar4 = puVar4 + 1;
+    pSVar10 = pSVar10 + 4;
   }
   *(undefined4 *)(local_8 + 0x212) = *(undefined4 *)((int)local_c + 0x205);
   *(undefined4 *)(local_8 + 0x216) = *(undefined4 *)((int)local_c + 0x209);
@@ -164,14 +170,14 @@ void FUN_004a67a0(undefined4 *param_1)
   *(undefined2 *)(local_8 + 0x272) = *(undefined2 *)((int)local_c + 0x27d);
   *(undefined2 *)(local_8 + 0x274) = *(undefined2 *)((int)local_c + 0x27f);
   puVar9 = (undefined4 *)((int)local_c + 0x281);
-  puVar4 = (undefined4 *)(local_8 + 0x276);
+  pSVar10 = local_8 + 0x276;
   for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar4 = *puVar9;
+    *(undefined4 *)pSVar10 = *puVar9;
     puVar9 = puVar9 + 1;
-    puVar4 = puVar4 + 1;
+    pSVar10 = pSVar10 + 4;
   }
-  *(undefined2 *)puVar4 = *(undefined2 *)puVar9;
-  *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar9 + 2);
+  *(undefined2 *)pSVar10 = *(undefined2 *)puVar9;
+  pSVar10[2] = *(STGroupBoatC *)((int)puVar9 + 2);
   *(undefined4 *)(local_8 + 0x295) = local_c[0xa8];
   *(undefined2 *)(local_8 + 0x299) = *(undefined2 *)(local_c + 0xa9);
   *(undefined4 *)(local_8 + 0x29b) = *(undefined4 *)((int)local_c + 0x2a6);
@@ -188,7 +194,7 @@ void FUN_004a67a0(undefined4 *param_1)
   *(undefined4 *)(local_8 + 0x2c3) = *(undefined4 *)((int)local_c + 0x2d2);
   *(undefined4 *)(local_8 + 0x2c7) = *(undefined4 *)((int)local_c + 0x2d6);
   *(undefined2 *)(local_8 + 0x2cb) = *(undefined2 *)((int)local_c + 0x2da);
-  *(undefined1 *)(local_8 + 0x2cd) = *(undefined1 *)(local_c + 0xb7);
+  local_8[0x2cd] = *(STGroupBoatC *)(local_c + 0xb7);
   *(undefined4 *)(local_8 + 0x2ce) = *(undefined4 *)((int)local_c + 0x2dd);
   *(undefined4 *)(local_8 + 0x2d2) = *(undefined4 *)((int)local_c + 0x2e1);
   *(undefined2 *)(local_8 + 0x2d6) = *(undefined2 *)((int)local_c + 0x2e5);

@@ -1,72 +1,75 @@
 
-void thunk_FUN_005941d0(void)
+void __thiscall ComboTy::DoneCombo(ComboTy *this)
 
 {
-  undefined4 *puVar1;
+  ComboTy *pCVar1;
   code *pcVar2;
+  ComboTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar5;
+  ComboTy *pCVar5;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  ComboTy *pCStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pCStack_8 = this;
   iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  this_00 = pCStack_8;
   if (iVar3 == 0) {
-    if (*(uint *)((int)pvStack_8 + 0x10c) != 0) {
-      FUN_006e56b0(*(void **)((int)pvStack_8 + 0xc),*(uint *)((int)pvStack_8 + 0x10c));
+    if (*(uint *)(pCStack_8 + 0x10c) != 0) {
+      FUN_006e56b0(*(void **)(pCStack_8 + 0xc),*(uint *)(pCStack_8 + 0x10c));
     }
-    puVar1 = (undefined4 *)((int)pvStack_8 + 0x18);
-    *(undefined4 *)((int)pvStack_8 + 0x10c) = 0;
-    puVar5 = puVar1;
+    pCVar1 = this_00 + 0x18;
+    *(undefined4 *)(this_00 + 0x10c) = 0;
+    pCVar5 = pCVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pCVar5 = 0;
+      pCVar5 = pCVar5 + 4;
     }
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x11;
-    *(int *)((int)pvStack_8 + 0x2c) = (int)pvStack_8 + 0x38;
-    FUN_006e6000(pvStack_8,3,1,puVar1);
-    puVar5 = puVar1;
+    *(undefined4 *)(this_00 + 0x28) = 0x11;
+    *(ComboTy **)(this_00 + 0x2c) = this_00 + 0x38;
+    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
+    pCVar5 = pCVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pCVar5 = 0;
+      pCVar5 = pCVar5 + 4;
     }
-    *(undefined4 *)((int)pvStack_8 + 0x2c) = *(undefined4 *)((int)pvStack_8 + 8);
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x14;
-    FUN_006e6000(pvStack_8,3,1,puVar1);
-    puVar5 = puVar1;
+    *(undefined4 *)(this_00 + 0x2c) = *(undefined4 *)(this_00 + 8);
+    *(undefined4 *)(this_00 + 0x28) = 0x14;
+    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
+    pCVar5 = pCVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pCVar5 = 0;
+      pCVar5 = pCVar5 + 4;
     }
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x19;
-    FUN_006e6000(pvStack_8,3,1,puVar1);
-    puVar5 = puVar1;
+    *(undefined4 *)(this_00 + 0x28) = 0x19;
+    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
+    pCVar5 = pCVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pCVar5 = 0;
+      pCVar5 = pCVar5 + 4;
     }
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x1b;
-    FUN_006e6000(pvStack_8,3,1,puVar1);
-    if (*(uint *)((int)pvStack_8 + 0x108) != 0xffffffff) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)((int)pvStack_8 + 0x108));
+    *(undefined4 *)(this_00 + 0x28) = 0x1b;
+    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
+    if (*(uint *)(this_00 + 0x108) != 0xffffffff) {
+      FUN_006b3bb0(DAT_008075a8,*(uint *)(this_00 + 0x108));
     }
-    *(undefined4 *)((int)pvStack_8 + 0x108) = 0xffffffff;
-    if (*(int *)((int)pvStack_8 + 0xfc) != 0) {
-      FUN_006ab060((undefined4 *)((int)pvStack_8 + 0xfc));
+    *(undefined4 *)(this_00 + 0x108) = 0xffffffff;
+    if (*(int *)(this_00 + 0xfc) != 0) {
+      FUN_006ab060((undefined4 *)(this_00 + 0xfc));
     }
-    if (*(int *)((int)pvStack_8 + 0x100) != 0) {
-      FUN_006ab060((undefined4 *)((int)pvStack_8 + 0x100));
+    if (*(int *)(this_00 + 0x100) != 0) {
+      FUN_006ab060((undefined4 *)(this_00 + 0x100));
     }
-    if (*(int *)((int)pvStack_8 + 0x104) != 0) {
-      FUN_006ab060((undefined4 *)((int)pvStack_8 + 0x104));
+    if (*(int *)(this_00 + 0x104) != 0) {
+      FUN_006ab060((undefined4 *)(this_00 + 0x104));
     }
-    if (*(int *)((int)pvStack_8 + 0x98) != 0) {
-      FUN_006e3b50((undefined4 *)((int)pvStack_8 + 0x88));
+    if (*(int *)(this_00 + 0x98) != 0) {
+      FUN_006e3b50((undefined4 *)(this_00 + 0x88));
     }
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;

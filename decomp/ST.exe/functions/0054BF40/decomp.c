@@ -1,8 +1,14 @@
 
-undefined4 FUN_0054bf40(ushort param_1,undefined4 param_2,undefined4 param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\to_cursor.cpp
+   CursorClassTy::SetGCType */
+
+undefined4 __thiscall
+CursorClassTy::SetGCType(CursorClassTy *this,ushort param_1,undefined4 param_2,undefined4 param_3)
 
 {
   code *pcVar1;
+  CursorClassTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
@@ -12,7 +18,7 @@ undefined4 FUN_0054bf40(ushort param_1,undefined4 param_2,undefined4 param_3)
   BITMAPINFO *pBVar7;
   uint uVar8;
   undefined4 local_54 [16];
-  void *local_14;
+  CursorClassTy *local_14;
   undefined4 local_10;
   BITMAPINFO *local_c;
   uint local_8;
@@ -20,7 +26,9 @@ undefined4 FUN_0054bf40(ushort param_1,undefined4 param_2,undefined4 param_3)
   uVar4 = DAT_00858df8;
   local_10 = 1;
   DAT_00858df8 = &stack0xffffffa8;
+  local_14 = this;
   iVar2 = __setjmp3(local_54,0,unaff_ESI,uVar4);
+  this_00 = local_14;
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined1 *)uVar4;
     iVar3 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8ee,0,iVar2,&DAT_007a4ccc);
@@ -32,35 +40,35 @@ undefined4 FUN_0054bf40(ushort param_1,undefined4 param_2,undefined4 param_3)
     FUN_006a5e40(iVar2,0,0x7c7d60,0x8f0);
     return local_10;
   }
-  if (*(ushort *)((int)local_14 + 0x494) == param_1) {
+  if (*(ushort *)(local_14 + 0x494) == param_1) {
 switchD_0054bfbc_caseD_20:
     DAT_00858df8 = (undefined1 *)uVar4;
     return local_10;
   }
-  *(ushort *)((int)local_14 + 0x494) = param_1;
-  *(undefined4 *)((int)local_14 + 0xc5) = param_2;
-  *(undefined4 *)((int)local_14 + 0xc9) = param_3;
+  *(ushort *)(local_14 + 0x494) = param_1;
+  *(undefined4 *)(local_14 + 0xc5) = param_2;
+  *(undefined4 *)(local_14 + 0xc9) = param_3;
   switch((uint)param_1) {
   case 0:
-    switch(*(char *)((int)local_14 + 0x493)) {
-    case '\x01':
+    switch(local_14[0x493]) {
+    case (CursorClassTy)0x1:
       pcVar5 = s_CUR_MENU_007c7dd4;
       break;
     default:
       pcVar5 = s_CUR_ARROW_007c8200;
       break;
-    case '\x03':
+    case (CursorClassTy)0x3:
       pcVar5 = s_CUR_TASK_007c8228;
       break;
-    case '\x04':
+    case (CursorClassTy)0x4:
       pcVar5 = s_CUR_REPORT_007c8218;
       break;
-    case '\x05':
+    case (CursorClassTy)0x5:
       pcVar5 = s_CUR_CLOCK_007c820c;
     }
     iVar3 = -1;
     iVar2 = -1;
-    if (*(char *)((int)local_14 + 0x493) == '\x05') {
+    if (local_14[0x493] == (CursorClassTy)0x5) {
       uVar8 = 0x12;
       pBVar7 = (BITMAPINFO *)0xd;
       uVar6 = 1000;
@@ -300,8 +308,8 @@ switchD_0054bfbc_caseD_20:
     pBVar7 = (BITMAPINFO *)0x24;
     pcVar5 = s_CUR_SLD_007c8190;
 LAB_0054c06f:
-    thunk_FUN_00543ad0(1,pcVar5,0x32,pBVar7,uVar8,iVar2,iVar3);
-    thunk_FUN_00543c90(local_14,*(int *)((int)local_14 + 0xc5),*(int *)((int)local_14 + 0xc9));
+    SetImages(local_14,1,pcVar5,0x32,pBVar7,uVar8,iVar2,iVar3);
+    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
     DAT_00858df8 = (undefined1 *)uVar4;
     return 0;
   case 0x39:
@@ -312,8 +320,8 @@ LAB_0054c06f:
     uVar6 = 0x32;
     pcVar5 = s_CUR_SRD_007c8184;
 LAB_0054c01c:
-    thunk_FUN_00543ad0(1,pcVar5,uVar6,pBVar7,uVar8,iVar2,iVar3);
-    thunk_FUN_00543c90(local_14,*(int *)((int)local_14 + 0xc5),*(int *)((int)local_14 + 0xc9));
+    SetImages(local_14,1,pcVar5,uVar6,pBVar7,uVar8,iVar2,iVar3);
+    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
     DAT_00858df8 = (undefined1 *)uVar4;
     return 0;
   case 0x3c:
@@ -366,13 +374,13 @@ switchD_0054c0ac_default:
     uVar8 = local_8;
     break;
   case 0x46:
-    thunk_FUN_00543ad0(1,s_CUR_HYPER_007c8030,0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
-    thunk_FUN_00543c90(local_14,*(int *)((int)local_14 + 0xc5),*(int *)((int)local_14 + 0xc9));
+    SetImages(local_14,1,s_CUR_HYPER_007c8030,0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
+    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
     DAT_00858df8 = (undefined1 *)uVar4;
     return 0;
   case 0x47:
-    thunk_FUN_00543ad0(1,s_CUR_HELPNO_007c8020,0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
-    thunk_FUN_00543c90(local_14,*(int *)((int)local_14 + 0xc5),*(int *)((int)local_14 + 0xc9));
+    SetImages(local_14,1,s_CUR_HELPNO_007c8020,0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
+    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
     DAT_00858df8 = (undefined1 *)uVar4;
     return 0;
   case 0x48:
@@ -382,8 +390,8 @@ switchD_0054c0ac_default:
     pBVar7 = (BITMAPINFO *)0x20;
     uVar8 = 0x12;
   }
-  thunk_FUN_00543ad0(1,pcVar5,0x32,pBVar7,uVar8,iVar2,iVar3);
-  thunk_FUN_00543c90(local_14,*(int *)((int)local_14 + 0xc5),*(int *)((int)local_14 + 0xc9));
+  SetImages(local_14,1,pcVar5,0x32,pBVar7,uVar8,iVar2,iVar3);
+  DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
   DAT_00858df8 = (undefined1 *)uVar4;
   return 0;
 }

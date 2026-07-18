@@ -1,4 +1,4 @@
-FUN_00647ef0:
+AiBossClassTy::PrepareToSave:
 00647EF0  55                        PUSH EBP
 00647EF1  8B EC                     MOV EBP,ESP
 00647EF3  83 EC 54                  SUB ESP,0x54

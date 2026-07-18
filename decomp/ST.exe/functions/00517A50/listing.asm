@@ -1,4 +1,4 @@
-FUN_00517a50:
+HelpPanelTy::RCProc:
 00517A50  55                        PUSH EBP
 00517A51  8B EC                     MOV EBP,ESP
 00517A53  83 EC 7C                  SUB ESP,0x7c

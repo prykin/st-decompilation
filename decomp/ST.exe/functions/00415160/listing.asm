@@ -1,4 +1,4 @@
-FUN_00415160:
+STGroupBoatC::Way3DGrpDistribTgt:
 00415160  55                        PUSH EBP
 00415161  8B EC                     MOV EBP,ESP
 00415163  83 EC 4C                  SUB ESP,0x4c

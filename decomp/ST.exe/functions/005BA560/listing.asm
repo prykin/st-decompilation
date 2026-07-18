@@ -1,4 +1,4 @@
-FUN_005ba560:
+PrividerTy::DonePrivider:
 005BA560  55                        PUSH EBP
 005BA561  8B EC                     MOV EBP,ESP
 005BA563  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_0041af40:
+STGameObjC::GetMessage:
 0041AF40  55                        PUSH EBP
 0041AF41  8B EC                     MOV EBP,ESP
 0041AF43  83 EC 54                  SUB ESP,0x54

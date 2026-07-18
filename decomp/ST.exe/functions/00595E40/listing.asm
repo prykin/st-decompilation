@@ -1,4 +1,4 @@
-FUN_00595e40:
+FSGSTy::InitFSGS:
 00595E40  55                        PUSH EBP
 00595E41  8B EC                     MOV EBP,ESP
 00595E43  81 EC 4C 04 00 00         SUB ESP,0x44c

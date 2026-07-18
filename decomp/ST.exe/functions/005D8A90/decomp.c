@@ -1,52 +1,59 @@
 
-void FUN_005d8a90(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\sid_obj.cpp
+   SIDTy::DeleteCtrls */
+
+void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  SIDTy *pSVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  uint *puVar4;
+  SIDTy *pSVar5;
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  SIDTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
-    iVar2 = 4;
-    puVar4 = (uint *)(local_8 + 0x1af1);
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pSVar2 = local_8;
+  if (iVar3 == 0) {
+    iVar3 = 4;
+    pSVar5 = local_8 + 0x1af1;
     do {
-      if (*puVar4 != 0) {
-        FUN_006e56b0(*(void **)(local_8 + 0xc),*puVar4);
+      if (*(uint *)pSVar5 != 0) {
+        FUN_006e56b0(*(void **)(pSVar2 + 0xc),*(uint *)pSVar5);
       }
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
-    FUN_006b3af0(DAT_008075a8,*(uint *)(local_8 + 0x1cb4));
-    if (*(uint *)(local_8 + 0x1b05) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(local_8 + 0x1b49),*(uint *)(local_8 + 0x1b05));
+      *(uint *)pSVar5 = 0;
+      pSVar5 = pSVar5 + 4;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    FUN_006b3af0(DAT_008075a8,*(uint *)(pSVar2 + 0x1cb4));
+    if (*(uint *)(pSVar2 + 0x1b05) != 0xffffffff) {
+      FUN_006b3af0(*(int **)(pSVar2 + 0x1b49),*(uint *)(pSVar2 + 0x1b05));
     }
-    if (*(uint *)(local_8 + 0x1b96) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(local_8 + 0x1bda),*(uint *)(local_8 + 0x1b96));
+    if (*(uint *)(pSVar2 + 0x1b96) != 0xffffffff) {
+      FUN_006b3af0(*(int **)(pSVar2 + 0x1bda),*(uint *)(pSVar2 + 0x1b96));
     }
-    if (*(uint *)(local_8 + 0x1c27) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(local_8 + 0x1c6b),*(uint *)(local_8 + 0x1c27));
+    if (*(uint *)(pSVar2 + 0x1c27) != 0xffffffff) {
+      FUN_006b3af0(*(int **)(pSVar2 + 0x1c6b),*(uint *)(pSVar2 + 0x1c27));
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x110,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x110,0,iVar3,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7cd5c4,0x110);
+  FUN_006a5e40(iVar3,0,0x7cd5c4,0x110);
   return;
 }
 

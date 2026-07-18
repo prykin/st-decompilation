@@ -1,5 +1,9 @@
 
-void __thiscall FUN_005cff40(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::DeletePlayer */
+
+void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
 
 {
   uint uVar1;
@@ -13,16 +17,16 @@ void __thiscall FUN_005cff40(void *this,int param_1)
   bool bVar7;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  SettMapMTy *local_8;
   
-  if (*(int *)((int)this + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     local_8 = this;
     iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
-      iVar3 = *(int *)((int)local_8 + 0x1f84);
+      iVar3 = *(int *)(local_8 + 0x1f84);
       uVar1 = *(uint *)(iVar3 + 0xc);
       if (0 < (int)uVar1) {
         bVar7 = uVar1 != 0;

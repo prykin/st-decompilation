@@ -1,4 +1,4 @@
-FUN_0059c9f0:
+FSGSTy::NewIDCtrls:
 0059C9F0  55                        PUSH EBP
 0059C9F1  8B EC                     MOV EBP,ESP
 0059C9F3  81 EC D4 08 00 00         SUB ESP,0x8d4

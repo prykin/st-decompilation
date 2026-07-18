@@ -1,4 +1,4 @@
-FUN_00568c50:
+SoundClassTy::CheckFader:
 00568C50  55                        PUSH EBP
 00568C51  8B EC                     MOV EBP,ESP
 00568C53  83 EC 4C                  SUB ESP,0x4c

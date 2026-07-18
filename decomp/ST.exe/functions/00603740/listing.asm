@@ -1,4 +1,4 @@
-FUN_00603740:
+STExplosion::GetMessage:
 00603740  55                        PUSH EBP
 00603741  8B EC                     MOV EBP,ESP
 00603743  83 EC 50                  SUB ESP,0x50

@@ -1,4 +1,4 @@
-FUN_005baac0:
+PrividerTy::SetMode:
 005BAAC0  55                        PUSH EBP
 005BAAC1  8B EC                     MOV EBP,ESP
 005BAAC3  81 EC 60 02 00 00         SUB ESP,0x260

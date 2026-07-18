@@ -6,6 +6,7 @@ undefined4 FUN_006939f0(void)
   undefined4 unaff_ESI;
   undefined4 *puVar2;
   void *unaff_EDI;
+  cMf32 *in_stack_00000004;
   undefined4 local_54;
   undefined4 local_50 [16];
   undefined4 *local_10;
@@ -30,7 +31,7 @@ undefined4 FUN_006939f0(void)
   else {
     DAT_00858df8 = (undefined4 *)local_54;
     local_c = 0;
-    FUN_006f20e0((uint *)&local_8);
+    cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }
   if (local_8 != (undefined4 *)0x0) {
     puVar2 = local_8;
@@ -40,7 +41,7 @@ undefined4 FUN_006939f0(void)
       local_10 = local_10 + 1;
     }
     *(undefined1 *)local_10 = *(undefined1 *)puVar2;
-    FUN_006f20e0((uint *)&local_8);
+    cMf32::RecMemFree(in_stack_00000004,(uint *)&local_8);
   }
   return local_c;
 }

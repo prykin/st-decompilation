@@ -7,11 +7,11 @@ void __thiscall FUN_0041cff0(void *this,int param_1)
   int iVar1;
   
   *(int *)((int)this + 0x109) = param_1;
-  if (DAT_00802a88 != (void *)0x0) {
-    thunk_FUN_005597a0(DAT_00802a88,(int)*(short *)((int)this + 0x5b),
-                       (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
-                       *(uint *)((int)this + 0x24),param_1,*(undefined4 *)((int)this + 0x18),
-                       0xffffffff);
+  if (DAT_00802a88 != (VisibleClassTy *)0x0) {
+    VisibleClassTy::SetZoneDes
+              (DAT_00802a88,(int)*(short *)((int)this + 0x5b),(int)*(short *)((int)this + 0x5d),
+               (char)*(undefined2 *)((int)this + 0x5f),*(uint *)((int)this + 0x24),param_1,
+               *(undefined4 *)((int)this + 0x18),0xffffffff);
   }
   iVar1 = (**(code **)(*(int *)this + 8))();
   if ((iVar1 == 1) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d)) {

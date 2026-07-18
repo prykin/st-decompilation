@@ -172,7 +172,9 @@ switchD_0066104e_caseD_9:
           }
           local_66 = (short)uVar4;
           _strncpy(local_4f,(char *)((int)param_1 + 0x15),0xe);
-          iVar5 = thunk_FUN_0068eb30(&local_6c,*(short *)((int)this + 0x7f));
+          iVar5 = AiTactClassTy::PrepareToSave
+                            (*(AiTactClassTy **)((int)this + 0x284),&local_6c,
+                             *(short *)((int)this + 0x7f));
           iVar2 = DAT_007fa174;
           if (iVar5 == 0) {
             param_1[9] = local_64;

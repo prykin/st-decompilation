@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void thunk_FUN_004a9540(int param_1)
+void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
 
 {
   double dVar1;
@@ -13,7 +13,8 @@ void thunk_FUN_004a9540(int param_1)
   uint uVar5;
   float10 fVar6;
   undefined4 uStack_5c;
-  undefined4 auStack_58 [17];
+  undefined4 auStack_58 [16];
+  OpticClassC *pOStack_18;
   int iStack_14;
   float fStack_10;
   float fStack_c;
@@ -21,6 +22,7 @@ void thunk_FUN_004a9540(int param_1)
   
   uStack_5c = DAT_00858df8;
   DAT_00858df8 = &uStack_5c;
+  pOStack_18 = this;
   iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_5c;

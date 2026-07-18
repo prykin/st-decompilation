@@ -1,4 +1,4 @@
-FUN_005afd00:
+ChooseMapTy::PrepFiles:
 005AFD00  55                        PUSH EBP
 005AFD01  8B EC                     MOV EBP,ESP
 005AFD03  81 EC 6C 03 00 00         SUB ESP,0x36c

@@ -1,7 +1,13 @@
 
-undefined4
-FUN_005c0980(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\rpt_obj.cpp
+   MReportTy::CreateBut */
+
+undefined4 __thiscall
+MReportTy::CreateBut
+          (MReportTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,
+          undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,
+          undefined4 param_8)
 
 {
   code *pcVar1;
@@ -22,10 +28,11 @@ FUN_005c0980(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_164;
   undefined4 local_50;
   undefined4 local_4c [16];
-  int local_c;
+  MReportTy *local_c;
   undefined4 local_8;
   
   puVar5 = local_1cc;
+  local_c = this;
   for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar5 = 0;
     puVar5 = puVar5 + 1;

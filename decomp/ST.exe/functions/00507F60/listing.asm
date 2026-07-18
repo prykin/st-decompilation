@@ -1,4 +1,4 @@
-FUN_00507f60:
+CPanelTy::Update4PanelWB:
 00507F60  55                        PUSH EBP
 00507F61  8B EC                     MOV EBP,ESP
 00507F63  81 EC 00 01 00 00         SUB ESP,0x100

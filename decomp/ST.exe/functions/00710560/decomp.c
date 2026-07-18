@@ -64,11 +64,11 @@ void __cdecl FUN_00710560(uint *param_1)
           do {
             puVar4 = puVar4 + 1;
             if (*puVar4 != 0) {
-              if (*puVar2 == 0) {
+              if ((cMf32 *)*puVar2 == (cMf32 *)0x0) {
                 FUN_006ab060(puVar4);
               }
               else {
-                FUN_006f20e0(puVar4);
+                cMf32::RecMemFree((cMf32 *)*puVar2,puVar4);
               }
             }
             iVar5 = iVar5 + 1;
@@ -76,11 +76,11 @@ void __cdecl FUN_00710560(uint *param_1)
         }
         puVar4 = (uint *)((int)puVar2 + 0x9a);
         if (*puVar4 != 0) {
-          if (*puVar2 == 0) {
+          if ((cMf32 *)*puVar2 == (cMf32 *)0x0) {
             FUN_006ab060(puVar4);
           }
           else {
-            FUN_006f20e0(puVar4);
+            cMf32::RecMemFree((cMf32 *)*puVar2,puVar4);
           }
         }
         if ((*(undefined4 **)((int)puVar2 + 0x72) != (undefined4 *)0x0) &&

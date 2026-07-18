@@ -1,4 +1,4 @@
-FUN_00499b80:
+STGroupBoatC::MakePVec:
 00499B80  55                        PUSH EBP
 00499B81  8B EC                     MOV EBP,ESP
 00499B83  83 EC 54                  SUB ESP,0x54

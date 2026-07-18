@@ -1,4 +1,4 @@
-FUN_0053ac00:
+PlayPanelTy::PaintPlayPanel:
 0053AC00  55                        PUSH EBP
 0053AC01  8B EC                     MOV EBP,ESP
 0053AC03  83 EC 54                  SUB ESP,0x54

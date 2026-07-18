@@ -1,6 +1,12 @@
 
-void FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undefined4 *param_4,
-                 uint param_5,undefined4 *param_6,uint param_7)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\tplaysys.cpp
+   STPlaySystemC::SetCtrlCmd */
+
+void __thiscall
+STPlaySystemC::SetCtrlCmd
+          (STPlaySystemC *this,undefined1 param_1,undefined4 param_2,char param_3,
+          undefined4 *param_4,uint param_5,undefined4 *param_6,uint param_7)
 
 {
   code *pcVar1;
@@ -17,7 +23,7 @@ void FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undefined4 
   undefined4 local_50 [16];
   int local_10;
   uint local_c;
-  int local_8;
+  STPlaySystemC *local_8;
   
   if ((int)param_5 < 0) {
     param_5 = 0;
@@ -70,6 +76,7 @@ void FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undefined4 
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
   local_c = param_5;
+  local_8 = this;
   iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
   uVar7 = local_c;
   if (iVar3 == 0) {
@@ -119,7 +126,7 @@ void FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undefined4 
       }
       if (bVar2) {
         FUN_006b9910((undefined4 *)(local_8 + 0x39),puVar4);
-        thunk_FUN_0054ec20(local_8);
+        PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_54;
         return;
       }

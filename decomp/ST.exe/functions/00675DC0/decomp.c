@@ -8,7 +8,8 @@ void __cdecl FUN_00675dc0(uint param_1,int param_2)
   uint uVar4;
   uint uVar5;
   
-  if (((DAT_007fa174 != 0) && (param_2 != 0)) && (iVar3 = *(int *)(param_2 + 0xc), iVar3 != 0)) {
+  if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (param_2 != 0)) &&
+     (iVar3 = *(int *)(param_2 + 0xc), iVar3 != 0)) {
     uVar5 = 0;
     if (iVar3 != 0) {
       uVar4 = 0;
@@ -29,7 +30,7 @@ LAB_00675dfe:
         uVar4 = uVar5 & 0xffff;
       } while (uVar4 < *(uint *)(param_2 + 0xc));
     }
-    thunk_FUN_0042b7d0(param_1,0,param_2,(undefined2 *)0x0);
+    STAllPlayersC::AddObjsToGroup(DAT_007fa174,param_1,0,param_2,(undefined2 *)0x0);
   }
   return;
 }

@@ -1,4 +1,4 @@
-FUN_0054be70:
+CPanelTy::OutProc:
 0054BE70  55                        PUSH EBP
 0054BE71  8B EC                     MOV EBP,ESP
 0054BE73  83 EC 44                  SUB ESP,0x44

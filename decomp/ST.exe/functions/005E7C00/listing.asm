@@ -1,4 +1,4 @@
-FUN_005e7c00:
+WaitTy::AddStr:
 005E7C00  55                        PUSH EBP
 005E7C01  8B EC                     MOV EBP,ESP
 005E7C03  83 EC 50                  SUB ESP,0x50

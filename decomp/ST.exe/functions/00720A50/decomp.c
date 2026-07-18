@@ -109,8 +109,9 @@ int __fastcall FUN_00720a50(int *param_1)
           iVar11 = local_10;
         }
         else {
-          pcVar5 = FUN_00713200((char *)0x0,(uint *)(local_c + piVar7[0x52]),(uint *)0x0,piVar7[0xb]
-                                ,(undefined4 *)0x0);
+          pcVar5 = ccFntTy::GetFittingStr
+                             ((ccFntTy *)piVar7[0x85],(char *)0x0,(uint *)(local_c + piVar7[0x52]),
+                              (uint *)0x0,piVar7[0xb],(undefined4 *)0x0);
           local_8[iVar11] = (int)pcVar5;
         }
         if ((*(byte *)(piVar7 + 8) & 0x20) != 0) {

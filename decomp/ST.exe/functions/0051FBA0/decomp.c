@@ -1,8 +1,13 @@
 
-undefined4 FUN_0051fba0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\helpstr.cpp
+   HelpStringTy::GetMessage */
+
+undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
 
 {
   code *pcVar1;
+  HelpStringTy *this_00;
   int iVar2;
   undefined4 *puVar3;
   uint uVar4;
@@ -11,32 +16,35 @@ undefined4 FUN_0051fba0(int param_1)
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  HelpStringTy *pHVar8;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  HelpStringTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar2 == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {
     case 0:
       if ((*(int *)(local_8 + 0x12e) != 0) &&
          (iVar2 = FUN_006e51b0(*(int *)(local_8 + 0x10)),
-         *(uint *)(local_8 + 0x126) <= (uint)(iVar2 - *(int *)(local_8 + 0x122)))) {
-        puVar3 = (undefined4 *)(local_8 + 0x18);
+         *(uint *)(this_00 + 0x126) <= (uint)(iVar2 - *(int *)(this_00 + 0x122)))) {
+        pHVar8 = this_00 + 0x18;
         for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
-          *puVar3 = 0;
-          puVar3 = puVar3 + 1;
+          *(undefined4 *)pHVar8 = 0;
+          pHVar8 = pHVar8 + 4;
         }
-        thunk_FUN_0051f8f0();
-        *(undefined1 *)(local_8 + 0x11c) = 0;
-        *(undefined4 *)(local_8 + 0x12e) = 0;
+        OutStr(this_00);
+        this_00[0x11c] = (HelpStringTy)0x0;
+        *(undefined4 *)(this_00 + 0x12e) = 0;
       }
       break;
     case 2:
       puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x30));
-      *(undefined4 **)(local_8 + 0x11e) = puVar3;
+      *(undefined4 **)(this_00 + 0x11e) = puVar3;
       puVar3[0x16] = 0;
       puVar3[0x17] = 0;
       puVar3 = (undefined4 *)(DAT_0080679c + 0x28);
@@ -44,7 +52,7 @@ undefined4 FUN_0051fba0(int param_1)
       uVar4 = FUN_006b4fe0(DAT_0080679c);
       iVar2 = FUN_006b50c0((DAT_00806730 - ((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e))
                            + -0x87,0x12,(uint)*(ushort *)(DAT_0080679c + 0xe),uVar4,puVar3,iVar2);
-      *(int *)(local_8 + 0x12a) = iVar2;
+      *(int *)(this_00 + 0x12a) = iVar2;
       uVar4 = *(uint *)(iVar2 + 0x14);
       if (uVar4 == 0) {
         uVar4 = ((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -59,20 +67,20 @@ undefined4 FUN_0051fba0(int param_1)
         *(undefined1 *)puVar3 = 0;
         puVar3 = (undefined4 *)((int)puVar3 + 1);
       }
-      DAT_00801694 = local_8;
+      DAT_00801694 = this_00;
       break;
     case 3:
-      DAT_00801694 = 0;
+      DAT_00801694 = (HelpStringTy *)0x0;
       if (*(uint **)(local_8 + 0x11e) != (uint *)0x0) {
         FUN_00710560(*(uint **)(local_8 + 0x11e));
-        *(undefined4 *)(local_8 + 0x11e) = 0;
+        *(undefined4 *)(this_00 + 0x11e) = 0;
       }
-      if (*(int *)(local_8 + 0x12a) != 0) {
-        FUN_006ab060((undefined4 *)(local_8 + 0x12a));
+      if (*(int *)(this_00 + 0x12a) != 0) {
+        FUN_006ab060((undefined4 *)(this_00 + 0x12a));
       }
       break;
     case 5:
-      thunk_FUN_0051f8f0();
+      OutStr(local_8);
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     uVar5 = FUN_006e5fd0();

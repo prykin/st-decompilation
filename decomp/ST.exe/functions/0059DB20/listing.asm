@@ -1,4 +1,4 @@
-FUN_0059db20:
+FSGSTy::ChatCtrls:
 0059DB20  55                        PUSH EBP
 0059DB21  8B EC                     MOV EBP,ESP
 0059DB23  B8 50 16 00 00            MOV EAX,0x1650

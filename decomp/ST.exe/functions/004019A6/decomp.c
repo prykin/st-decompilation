@@ -1,5 +1,5 @@
 
-void thunk_FUN_00440990(undefined4 param_1,int *param_2,uint param_3)
+void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
 
 {
   int iVar1;

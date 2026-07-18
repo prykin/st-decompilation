@@ -1,2 +1,2 @@
-thunk_FUN_0068dc80:
+AiTactClassTy::InitData:
 004037C9  E9 B2 A4 28 00            JMP 0x0068dc80

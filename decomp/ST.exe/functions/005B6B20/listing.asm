@@ -1,4 +1,4 @@
-FUN_005b6b20:
+MMsgTy::InitMMsg:
 005B6B20  55                        PUSH EBP
 005B6B21  8B EC                     MOV EBP,ESP
 005B6B23  83 EC 48                  SUB ESP,0x48

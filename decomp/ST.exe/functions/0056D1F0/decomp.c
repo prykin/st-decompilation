@@ -1,5 +1,9 @@
 
-undefined4 __fastcall FUN_0056d1f0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\tapp.cpp
+   STAppC::CommonFunction */
+
+undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
 
 {
   code *pcVar1;
@@ -8,14 +12,14 @@ undefined4 __fastcall FUN_0056d1f0(int param_1)
   undefined4 uVar4;
   void *unaff_ESI;
   undefined4 local_48 [16];
-  int local_8;
+  STAppC *local_8;
   
   uVar4 = DAT_00858df8;
-  if (*(int *)(param_1 + 0x4efa) != 0) {
+  if (*(int *)(this + 0x4efa) != 0) {
     return 0;
   }
   DAT_00858df8 = &stack0xffffffb4;
-  local_8 = param_1;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
     if (DAT_0080674c == 0) {

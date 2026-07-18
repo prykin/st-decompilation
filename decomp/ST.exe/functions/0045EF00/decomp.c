@@ -7,8 +7,9 @@ void __thiscall FUN_0045ef00(void *this,int param_1,undefined4 *param_2)
   undefined4 *puVar3;
   
   if ((param_1 != 0x21) && (param_1 != 5)) {
-    thunk_FUN_00446520(CONCAT31((int3)((uint)this >> 8),*(undefined1 *)((int)this + 0x24)),
-                       *(short *)((int)this + 0x32),1);
+    STAllPlayersC::DeleteGuardBoat
+              (DAT_007fa174,CONCAT31((int3)((uint)this >> 8),*(undefined1 *)((int)this + 0x24)),
+               *(short *)((int)this + 0x32),1);
   }
   *(undefined4 *)((int)this + 0x2c4) = 1;
   switch(param_1) {

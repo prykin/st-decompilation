@@ -15,8 +15,8 @@ void __thiscall thunk_FUN_0041dd00(void *this,int param_1)
   }
   *(int *)((int)this + 0x21d) = param_1;
   if (param_1 != 1) {
-    thunk_FUN_004abb30(0);
-    thunk_FUN_004abb30(0xf);
+    STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0);
+    STT3DSprC::UnLoadSequence((STT3DSprC *)((int)this + 0x1d5),0xf);
     if (((0 < *(int *)((int)this + 0x105)) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d))
        && ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0xb ||
            ((iVar3 = (**(code **)(*(int *)this + 0x2c))(), iVar3 == 0x23 ||

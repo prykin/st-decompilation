@@ -1,4 +1,4 @@
-FUN_00712e60:
+ccFntTy::VisLineSarr:
 00712E60  55                        PUSH EBP
 00712E61  8B EC                     MOV EBP,ESP
 00712E63  83 EC 54                  SUB ESP,0x54

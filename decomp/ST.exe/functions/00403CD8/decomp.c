@@ -1,5 +1,6 @@
 
-undefined4 thunk_FUN_0044a2c0(ushort param_1,void *param_2)
+undefined4 __thiscall
+STAllPlayersC::RegisterDeposit(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
   code *pcVar1;

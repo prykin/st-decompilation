@@ -1,5 +1,5 @@
 
-void thunk_FUN_005e5d50(void)
+void __thiscall MTestTy::PaintMTest(MTestTy *this)
 
 {
   code *pcVar1;
@@ -8,14 +8,15 @@ void thunk_FUN_005e5d50(void)
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  MTestTy *pMStack_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  pMStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(iStack_8 + 0x5d));
+    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(pMStack_8 + 0x5d));
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

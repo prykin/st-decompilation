@@ -1,7 +1,8 @@
 
-void __cdecl
-thunk_FUN_00540890(int param_1,int param_2,int param_3,int param_4,int param_5,uint *param_6,
-                  uint param_7,uint param_8,void *param_9,undefined4 param_10)
+void __thiscall
+StartServTy::WrTextDDX
+          (StartServTy *this,int param_1,int param_2,int param_3,int param_4,int param_5,
+          uint *param_6,uint param_7,uint param_8,void *param_9,undefined4 param_10)
 
 {
   code *pcVar1;
@@ -27,17 +28,17 @@ thunk_FUN_00540890(int param_1,int param_2,int param_3,int param_4,int param_5,u
       param_5 = iVar2 + (((int)param_8 < 1) - 1 & param_8);
     }
     if (param_1 == 0) {
-      pBStack_c = (BITMAPINFO *)FUN_00710ba0(0,0,0,0,iStack_8,param_5,1);
+      pBStack_c = (BITMAPINFO *)ccFntTy::CreateSurf(param_9,0,0,0,0,iStack_8,param_5,1);
     }
     else {
       pBStack_c = (BITMAPINFO *)
                   FUN_006b55f0((undefined4 *)0x0,0,0,0,param_1,0,param_2,param_3,iStack_8,param_5);
-      FUN_00710a90((int)pBStack_c,0,0,0,0,0);
+      ccFntTy::SetSurf(param_9,(int)pBStack_c,0,0,0,0,0);
     }
-    FUN_00711b70(param_6,param_7,param_8,param_10,-1,-1);
+    ccFntTy::WrTxt(param_9,param_6,param_7,param_8,param_10,-1,-1);
     FUN_006b5f80(DAT_008075a8,param_2,param_3,iStack_8,param_5);
     thunk_FUN_005404f0(param_2,param_3,'\x01',pBStack_c,-(uint)(param_1 != 0));
-    FUN_00710f00();
+    ccFntTy::EraseSufr(param_9);
     DAT_00858df8 = (undefined4 *)uStack_50;
     return;
   }
@@ -48,7 +49,7 @@ thunk_FUN_00540890(int param_1,int param_2,int param_3,int param_4,int param_5,u
     (*pcVar1)();
     return;
   }
-  FUN_00710f00();
+  ccFntTy::EraseSufr(param_9);
   return;
 }
 

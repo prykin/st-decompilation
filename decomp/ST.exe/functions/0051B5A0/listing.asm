@@ -1,4 +1,4 @@
-FUN_0051b5a0:
+HelpPanelTy::ArmProc:
 0051B5A0  55                        PUSH EBP
 0051B5A1  8B EC                     MOV EBP,ESP
 0051B5A3  81 EC A0 00 00 00         SUB ESP,0xa0

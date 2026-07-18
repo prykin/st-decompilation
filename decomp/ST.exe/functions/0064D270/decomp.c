@@ -1,7 +1,13 @@
 
-int FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 param_5,
-                undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,undefined4 param_10
-                ,int param_11,int param_12)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_event.cpp
+   AiEventClassTy::__CreateObjPl */
+
+int __thiscall
+AiEventClassTy::__CreateObjPl
+          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,
+          undefined4 param_5,undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,
+          undefined4 param_10,int param_11,int param_12)
 
 {
   code *pcVar1;
@@ -33,7 +39,7 @@ int FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 p
   char local_6e [15];
   undefined4 local_5f;
   undefined4 local_5b;
-  int local_38;
+  AiEventClassTy *local_38;
   short local_34 [2];
   undefined4 local_30;
   int local_2c;
@@ -50,6 +56,7 @@ int FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 p
   local_14 = -1;
   local_e8 = DAT_00858df8;
   DAT_00858df8 = &local_e8;
+  local_38 = this;
   iVar3 = __setjmp3(local_e4,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_e8;
@@ -69,7 +76,7 @@ int FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 p
     bVar2 = true;
   }
   uVar5 = param_7;
-  if ((bVar2) && (DAT_007fa174 != 0)) {
+  if ((bVar2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
     if (((short)param_3 < 0) || (((short)param_4 < 0 || ((short)param_5 < 0)))) {
       uVar5 = param_1 & 0xffff;
       local_28[0] = 7;
@@ -156,7 +163,7 @@ int FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 p
         local_76 = 0;
       }
       local_5b = 1;
-      thunk_FUN_004455c0(local_a4);
+      STAllPlayersC::CreateBoat(DAT_007fa174,local_a4);
       local_14 = 0;
     }
   }
@@ -166,7 +173,7 @@ int FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 p
   else {
     bVar2 = true;
   }
-  if ((bVar2) && (DAT_007fa174 != 0)) {
+  if ((bVar2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
     local_8 = (int)(short)param_3;
     local_c = (int)(short)param_4;
     local_10 = (int)(short)param_5;

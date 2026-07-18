@@ -1,4 +1,4 @@
-FUN_00551ec0:
+TradePanelTy::PaintIndicators:
 00551EC0  55                        PUSH EBP
 00551EC1  8B EC                     MOV EBP,ESP
 00551EC3  83 EC 50                  SUB ESP,0x50

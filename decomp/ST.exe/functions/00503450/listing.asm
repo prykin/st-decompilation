@@ -1,4 +1,4 @@
-FUN_00503450:
+CPanelTy::SetControlBoatSI:
 00503450  55                        PUSH EBP
 00503451  8B EC                     MOV EBP,ESP
 00503453  81 EC 24 0C 00 00         SUB ESP,0xc24

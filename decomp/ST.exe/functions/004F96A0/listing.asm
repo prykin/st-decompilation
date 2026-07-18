@@ -1,4 +1,4 @@
-FUN_004f96a0:
+CPanelTy::PlayBrief:
 004F96A0  55                        PUSH EBP
 004F96A1  8B EC                     MOV EBP,ESP
 004F96A3  83 EC 50                  SUB ESP,0x50

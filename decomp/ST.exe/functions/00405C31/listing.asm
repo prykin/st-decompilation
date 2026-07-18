@@ -1,2 +1,2 @@
-thunk_FUN_00514330:
+HelpPanelTy::BwdBut:
 00405C31  E9 FA E6 10 00            JMP 0x00514330

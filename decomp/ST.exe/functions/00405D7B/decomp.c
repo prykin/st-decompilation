@@ -1,47 +1,51 @@
 
-undefined4 thunk_FUN_00497cd0(int param_1,int param_2,int param_3,int param_4)
+undefined4 __thiscall
+STGroupBoatC::InitWay(STGroupBoatC *this,int param_1,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
-  int iVar2;
-  uint uVar3;
-  int iVar4;
-  undefined4 uVar5;
+  STGroupBoatC *pSVar2;
+  int iVar3;
+  uint uVar4;
+  int iVar5;
+  undefined4 uVar6;
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
-  uint uVar6;
+  uint uVar7;
   void *unaff_EDI;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  void *pvStack_c;
+  STGroupBoatC *pSStack_c;
   uint uStack_8;
   
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
-  iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
-    uVar6 = 0;
+  pSStack_c = this;
+  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  pSVar2 = pSStack_c;
+  if (iVar3 == 0) {
+    uVar7 = 0;
     if (*(int *)(param_1 + 0xc) != 0) {
       do {
-        FUN_006acc70(param_1,uVar6,&uStack_8);
-        uVar3 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                            *(undefined1 *)((int)pvStack_c + 0x24)),uStack_8,1);
-        *(undefined4 *)(uVar3 + 0xfd) = 0;
-        uVar6 = uVar6 + 1;
-      } while (uVar6 < *(uint *)(param_1 + 0xc));
+        FUN_006acc70(param_1,uVar7,&uStack_8);
+        uVar4 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),uStack_8,1
+                                  );
+        *(undefined4 *)(uVar4 + 0xfd) = 0;
+        uVar7 = uVar7 + 1;
+      } while (uVar7 < *(uint *)(param_1 + 0xc));
     }
-    thunk_FUN_00415160(pvStack_c,param_1,param_2,param_3,param_4);
+    Way3DGrpDistribTgt(pSVar2,param_1,param_2,param_3,param_4);
     DAT_00858df8 = (undefined4 *)uStack_50;
     return 0;
   }
   DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e,0,iVar2,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e,0,iVar3,&DAT_007a4ccc);
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    uVar6 = (*pcVar1)();
+    return uVar6;
   }
-  FUN_006a5e40(iVar2,0,0x7abe3c,0x6f);
+  FUN_006a5e40(iVar3,0,0x7abe3c,0x6f);
   return 0xffffffff;
 }
 

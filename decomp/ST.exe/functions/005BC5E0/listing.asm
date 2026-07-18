@@ -1,4 +1,4 @@
-FUN_005bc5e0:
+PrividerTy::GetMessage:
 005BC5E0  55                        PUSH EBP
 005BC5E1  8B EC                     MOV EBP,ESP
 005BC5E3  81 EC 88 00 00 00         SUB ESP,0x88

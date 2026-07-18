@@ -1,4 +1,4 @@
-FUN_005cdb20:
+SettMapMTy::AddPlList:
 005CDB20  55                        PUSH EBP
 005CDB21  8B EC                     MOV EBP,ESP
 005CDB23  81 EC 60 01 00 00         SUB ESP,0x160

@@ -1,4 +1,4 @@
-FUN_0042bea0:
+STAllPlayersC::AddObjToTmp2:
 0042BEA0  55                        PUSH EBP
 0042BEA1  8B EC                     MOV EBP,ESP
 0042BEA3  83 EC 54                  SUB ESP,0x54

@@ -1,2 +1,2 @@
-thunk_FUN_0064d890:
+AiEventClassTy::_CreateRCCont:
 00401B27  E9 64 BD 24 00            JMP 0x0064d890

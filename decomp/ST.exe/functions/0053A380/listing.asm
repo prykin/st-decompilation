@@ -1,4 +1,4 @@
-FUN_0053a380:
+PlayPanelTy::DonePlayPanel:
 0053A380  55                        PUSH EBP
 0053A381  8B EC                     MOV EBP,ESP
 0053A383  83 EC 4C                  SUB ESP,0x4c

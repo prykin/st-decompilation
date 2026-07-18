@@ -1,4 +1,4 @@
-FUN_004f9ed0:
+CPanelTy::SwitchCPanel:
 004F9ED0  55                        PUSH EBP
 004F9ED1  8B EC                     MOV EBP,ESP
 004F9ED3  83 EC 50                  SUB ESP,0x50

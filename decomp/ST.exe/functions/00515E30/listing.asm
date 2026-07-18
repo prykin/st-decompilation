@@ -1,4 +1,4 @@
-FUN_00515e30:
+HelpPanelTy::AddLinks:
 00515E30  55                        PUSH EBP
 00515E31  8B EC                     MOV EBP,ESP
 00515E33  81 EC 84 00 00 00         SUB ESP,0x84

@@ -1,4 +1,4 @@
-FUN_0050fd60:
+FrmPanelTy::InitFrmPanel:
 0050FD60  55                        PUSH EBP
 0050FD61  8B EC                     MOV EBP,ESP
 0050FD63  83 EC 48                  SUB ESP,0x48

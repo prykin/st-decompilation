@@ -1,4 +1,4 @@
-FUN_005b6f10:
+MMsgTy::DoneMMsg:
 005B6F10  55                        PUSH EBP
 005B6F11  8B EC                     MOV EBP,ESP
 005B6F13  83 EC 48                  SUB ESP,0x48

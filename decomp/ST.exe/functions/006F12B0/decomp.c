@@ -1,5 +1,9 @@
 
-void FUN_006f12b0(undefined4 param_1,undefined4 param_2)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::ToBeg */
+
+void __thiscall cMf32::ToBeg(cMf32 *this,undefined4 param_1,undefined4 param_2)
 
 {
   code *pcVar1;
@@ -8,13 +12,14 @@ void FUN_006f12b0(undefined4 param_1,undefined4 param_2)
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  undefined4 *local_8;
+  cMf32 *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
-    FUN_00750f20(*(int *)*local_8,param_1,param_2);
+    FUN_00750f20(**(int **)local_8,param_1,param_2);
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

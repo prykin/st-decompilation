@@ -1,4 +1,4 @@
-FUN_0053afb0:
+PlayPanelTy::GetMessage:
 0053AFB0  55                        PUSH EBP
 0053AFB1  8B EC                     MOV EBP,ESP
 0053AFB3  83 EC 60                  SUB ESP,0x60

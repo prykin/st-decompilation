@@ -1,4 +1,4 @@
-FUN_00518c20:
+HelpPanelTy::SubProc:
 00518C20  55                        PUSH EBP
 00518C21  8B EC                     MOV EBP,ESP
 00518C23  81 EC A0 00 00 00         SUB ESP,0xa0

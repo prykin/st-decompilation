@@ -1,4 +1,4 @@
-FUN_0048cc80:
+STBoatC::_AddDefenceShots:
 0048CC80  55                        PUSH EBP
 0048CC81  8B EC                     MOV EBP,ESP
 0048CC83  83 EC 60                  SUB ESP,0x60

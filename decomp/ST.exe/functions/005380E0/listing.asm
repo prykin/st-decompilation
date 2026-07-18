@@ -1,4 +1,4 @@
-FUN_005380e0:
+OptPanelTy::UpdateObjectives:
 005380E0  55                        PUSH EBP
 005380E1  8B EC                     MOV EBP,ESP
 005380E3  83 EC 48                  SUB ESP,0x48

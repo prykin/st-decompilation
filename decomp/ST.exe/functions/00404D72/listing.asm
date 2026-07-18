@@ -1,2 +1,2 @@
-thunk_FUN_005de050:
+StartSystemTy::PaintBinDesc:
 00404D72  E9 D9 92 1D 00            JMP 0x005de050

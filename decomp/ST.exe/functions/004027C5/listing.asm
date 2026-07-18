@@ -1,2 +1,2 @@
-thunk_FUN_004461b0:
+STAllPlayersC::_DeleteGuardBoat:
 004027C5  E9 E6 39 04 00            JMP 0x004461b0

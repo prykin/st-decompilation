@@ -1,5 +1,5 @@
 
-void __cdecl FUN_00709a10(undefined4 param_1,undefined1 param_2,uint *param_3)
+void __cdecl FUN_00709a10(undefined4 *param_1,undefined1 param_2,uint *param_3)
 
 {
   switch(param_2) {
@@ -13,7 +13,7 @@ void __cdecl FUN_00709a10(undefined4 param_1,undefined1 param_2,uint *param_3)
   case 0x12:
   case 0x16:
   case 0x1c:
-    FUN_006f20e0(param_3);
+    cMf32::RecMemFree((cMf32 *)*param_1,param_3);
     return;
   case 7:
     FUN_00725e30((int *)param_3);

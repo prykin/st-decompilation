@@ -1,5 +1,9 @@
 
-undefined4 FUN_00533470(byte *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\optpanel.cpp
+   OptPanelTy::CheckFiles */
+
+undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
 
 {
   byte bVar1;
@@ -16,12 +20,13 @@ undefined4 FUN_00533470(byte *param_1)
   bool bVar10;
   undefined4 local_54;
   undefined4 local_50 [17];
-  int local_c;
+  OptPanelTy *local_c;
   undefined4 local_8;
   
   local_8 = 0;
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
+  local_c = this;
   iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)local_54;

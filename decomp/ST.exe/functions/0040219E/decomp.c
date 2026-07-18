@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_00430620(short param_1,int param_2)
+undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_1,int param_2)
 
 {
   code *pcVar1;

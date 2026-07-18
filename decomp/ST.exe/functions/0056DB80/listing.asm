@@ -1,4 +1,4 @@
-FUN_0056db80:
+STAppC::StartGame:
 0056DB80  55                        PUSH EBP
 0056DB81  8B EC                     MOV EBP,ESP
 0056DB83  81 EC 24 03 00 00         SUB ESP,0x324

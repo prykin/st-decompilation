@@ -1,8 +1,9 @@
 
-void thunk_FUN_005baac0(char param_1,char param_2)
+void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
 
 {
   code *pcVar1;
+  PrividerTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -37,36 +38,37 @@ void thunk_FUN_005baac0(char param_1,char param_2)
   undefined4 auStack_68 [7];
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  PrividerTy *pPStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pPStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = &uStack_264;
-    for (iVar2 = 0x7e; iVar2 != 0; iVar2 = iVar2 + -1) {
+    for (iVar2 = 0x7e; this_00 = pPStack_8, iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
     *(undefined2 *)puVar4 = 0;
-    *(char *)((int)pvStack_8 + 0x1a5f) = param_1;
+    this_00[0x1a5f] = (PrividerTy)param_1;
     *(undefined1 *)((int)puVar4 + 2) = 0;
     if (param_1 == '\x01') {
       uStack_1a1 = 0x2340;
-      if ((*(char *)((int)pvStack_8 + 0x65) != '\x05') ||
-         (uStack_19d = 0, *(char *)((int)pvStack_8 + 0x1a72) != '\0')) {
+      if ((this_00[0x65] != (PrividerTy)0x5) || (uStack_19d = 0, this_00[0x1a72] != (PrividerTy)0x0)
+         ) {
         uStack_19d = 1;
       }
-      uStack_194 = *(undefined4 *)((int)pvStack_8 + 8);
+      uStack_194 = *(undefined4 *)(this_00 + 8);
       uStack_190 = 2;
       uStack_18c = 0x6943;
     }
     uStack_17a = 0x24bc;
-    if ((*(char *)((int)pvStack_8 + 0x65) != '\x05') ||
-       (uStack_176 = 0, *(char *)((int)pvStack_8 + 0x1a72) != '\0')) {
+    if ((this_00[0x65] != (PrividerTy)0x5) || (uStack_176 = 0, this_00[0x1a72] != (PrividerTy)0x0))
+    {
       uStack_176 = 1;
     }
-    uStack_230 = *(undefined4 *)((int)pvStack_8 + 8);
+    uStack_230 = *(undefined4 *)(this_00 + 8);
     uStack_169 = 2;
     uStack_165 = 0x6952;
     if (param_1 == '\x01') {
@@ -91,7 +93,7 @@ void thunk_FUN_005baac0(char param_1,char param_2)
     }
     uStack_205 = 2;
     uStack_22c = 2;
-    iVar2 = *(int *)((int)pvStack_8 + 0x1a5b);
+    iVar2 = *(int *)(this_00 + 0x1a5b);
     uStack_209 = uStack_230;
     uStack_16d = uStack_230;
     if (*(int *)(iVar2 + 0x2e6) != 0) {
@@ -101,16 +103,16 @@ void thunk_FUN_005baac0(char param_1,char param_2)
         puVar4 = puVar4 + 1;
       }
       *(undefined2 *)puVar4 = 0xffff;
-      thunk_FUN_005b87d0(*(void **)(iVar2 + 0x2e6),0,(int)&uStack_264,0,0);
-      thunk_FUN_005b9010(*(void **)(*(int *)((int)pvStack_8 + 0x1a5b) + 0x2e6),(int)auStack_68);
+      MMsgTy::SetPanel(*(MMsgTy **)(iVar2 + 0x2e6),0,(int)&uStack_264,0,0);
+      MMsgTy::StatePanel(*(MMsgTy **)(*(int *)(this_00 + 0x1a5b) + 0x2e6),(int)auStack_68);
     }
-    thunk_FUN_005ba8b0(param_2);
-    *(undefined1 *)((int)pvStack_8 + 0x65) = 3;
+    PaintPrivider(this_00,param_2);
+    this_00[0x65] = (PrividerTy)0x3;
     thunk_FUN_00568bc0(&DAT_00807658,0);
     if ((DAT_00807300._1_1_ & 8) != 0) {
       thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
     }
-    thunk_FUN_005b6730(pvStack_8,0xb,'\0',-1);
+    thunk_FUN_005b6730(this_00,0xb,'\0',-1);
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;
   }

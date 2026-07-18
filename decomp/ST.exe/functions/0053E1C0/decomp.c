@@ -1,7 +1,11 @@
 
-undefined4
-FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_5,uint param_6,int param_7
-            ,int param_8,undefined4 param_9,undefined4 param_10)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\specpan.cpp
+   UPanelTy::CreateTab */
+
+undefined4 __thiscall
+UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4,uint param_5,
+                   uint param_6,int param_7,int param_8,undefined4 param_9,undefined4 param_10)
 
 {
   code *pcVar1;
@@ -30,12 +34,13 @@ FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_5,uint
   undefined4 local_18;
   int local_14;
   uint local_10;
-  int local_c;
+  UPanelTy *local_c;
   undefined4 local_8;
   
   local_8 = 0;
   local_b0 = DAT_00858df8;
   DAT_00858df8 = &local_b0;
+  local_c = this;
   iVar3 = __setjmp3(local_ac,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     puVar7 = local_6c;

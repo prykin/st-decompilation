@@ -1,4 +1,4 @@
-FUN_005007a0:
+CPanelTy::SetNewDeep:
 005007A0  55                        PUSH EBP
 005007A1  8B EC                     MOV EBP,ESP
 005007A3  83 EC 54                  SUB ESP,0x54

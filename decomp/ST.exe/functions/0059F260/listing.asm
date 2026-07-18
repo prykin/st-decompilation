@@ -1,4 +1,4 @@
-FUN_0059f260:
+FSGSTy::LadderCtrls:
 0059F260  55                        PUSH EBP
 0059F261  8B EC                     MOV EBP,ESP
 0059F263  81 EC DC 08 00 00         SUB ESP,0x8dc

@@ -1,4 +1,4 @@
-FUN_005b7210:
+MMsgTy::ShowSprites:
 005B7210  55                        PUSH EBP
 005B7211  8B EC                     MOV EBP,ESP
 005B7213  83 EC 48                  SUB ESP,0x48

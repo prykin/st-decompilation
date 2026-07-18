@@ -2,7 +2,7 @@
 undefined4 FUN_006029c0(void)
 
 {
-  void *this;
+  STT3DSprC *this;
   short sVar1;
   int iVar2;
   byte *pbVar3;
@@ -25,26 +25,26 @@ undefined4 FUN_006029c0(void)
     else {
       pbVar3 = (&PTR_s_Dest1_0_007cebec)[*(int *)(local_c + 0x372)];
     }
-    this = (void *)(local_c + 0x1d5);
-    iVar2 = thunk_FUN_004ab880(0xe,DAT_00806774,pbVar3,0x1d);
+    this = (STT3DSprC *)(local_c + 0x1d5);
+    iVar2 = STT3DSprC::LoadSequence(this,0xe,DAT_00806774,pbVar3,0x1d);
     if (iVar2 == 0) {
       thunk_FUN_004ac610(this,'\x0e');
       thunk_FUN_004abe40(this,'\x0e',*(undefined4 *)(local_c + 0x387));
-      thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow(this,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
       thunk_FUN_004acef0(this,DAT_008073cc);
       *(undefined1 *)(local_c + 0x37a) = 1;
       if (-1 < *(int *)(local_c + 0x249)) {
-        iVar2 = thunk_FUN_004ab880(0xc,DAT_00806774,
-                                   (&PTR_s_dest0s0_007cec3c)
-                                   [*(int *)(local_c + 0x249) + *(int *)(local_c + 0x372) * 8],0x1d)
-        ;
+        iVar2 = STT3DSprC::LoadSequence
+                          (this,0xc,DAT_00806774,
+                           (&PTR_s_dest0s0_007cec3c)
+                           [*(int *)(local_c + 0x249) + *(int *)(local_c + 0x372) * 8],0x1d);
         if (iVar2 != 0) {
           return local_8;
         }
         thunk_FUN_004abe40(this,'\f',*(undefined4 *)(local_c + 0x38f));
         thunk_FUN_004ac610(this,'\f');
-        thunk_FUN_004ac040('\f');
-        thunk_FUN_004ac1a0(0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::ShowCurFase(this,'\f');
+        STT3DSprC::StartShow(this,0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
         FUN_006e9ef0(*(void **)(local_c + 0x211),*(uint *)(local_c + 0x1ed),0xc,1,0,0,30000);
       }
       *(undefined4 *)(local_c + 0x36e) = 2;

@@ -1,4 +1,4 @@
-FUN_00516300:
+HelpPanelTy::MObjProc:
 00516300  55                        PUSH EBP
 00516301  8B EC                     MOV EBP,ESP
 00516303  83 EC 48                  SUB ESP,0x48

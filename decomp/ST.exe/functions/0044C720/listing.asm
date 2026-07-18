@@ -1,4 +1,4 @@
-FUN_0044c720:
+STAllPlayersC::GetScrObjList:
 0044C720  55                        PUSH EBP
 0044C721  8B EC                     MOV EBP,ESP
 0044C723  83 EC 64                  SUB ESP,0x64

@@ -1,5 +1,9 @@
 
-void __thiscall FUN_005205e0(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\infocen.cpp
+   InfocPanelTy::ShiftControls */
+
+void __thiscall InfocPanelTy::ShiftControls(InfocPanelTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -10,23 +14,23 @@ void __thiscall FUN_005205e0(void *this,int param_1)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  InfocPanelTy *local_8;
   
-  if (param_1 != *(int *)((int)this + 0x5c)) {
+  if (param_1 != *(int *)(this + 0x5c)) {
     local_8 = this;
-    thunk_FUN_0053ea50(this,param_1);
-    sVar2 = (short)*(undefined4 *)((int)this + 0x174);
-    *(undefined4 *)((int)this + 0x28) = 0x24;
+    SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
+    sVar2 = (short)*(undefined4 *)(this + 0x174);
+    *(undefined4 *)(this + 0x28) = 0x24;
     if (param_1 != 0) {
       sVar2 = -sVar2;
     }
-    *(short *)((int)this + 0x2e) = sVar2;
+    *(short *)(this + 0x2e) = sVar2;
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
-      if (*(int *)((int)local_8 + 0x3d0) != 0) {
-        FUN_006e6080(local_8,2,*(int *)((int)local_8 + 0x3d0),(undefined4 *)((int)local_8 + 0x18));
+      if (*(int *)(local_8 + 0x3d0) != 0) {
+        FUN_006e6080(local_8,2,*(int *)(local_8 + 0x3d0),(undefined4 *)(local_8 + 0x18));
       }
       DAT_00858df8 = (undefined4 *)local_4c;
       return;

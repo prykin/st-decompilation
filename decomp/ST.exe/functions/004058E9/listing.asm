@@ -1,2 +1,2 @@
-thunk_FUN_0052e5e0:
+OptPanelTy::InitOptPanel:
 004058E9  E9 F2 8C 12 00            JMP 0x0052e5e0

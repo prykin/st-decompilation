@@ -1,4 +1,4 @@
-FUN_00510e30:
+HelpPanelTy::InitHelpPanel:
 00510E30  55                        PUSH EBP
 00510E31  8B EC                     MOV EBP,ESP
 00510E33  83 EC 68                  SUB ESP,0x68

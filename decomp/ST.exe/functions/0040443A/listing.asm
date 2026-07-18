@@ -1,2 +1,2 @@
-thunk_FUN_00532a80:
+OptPanelTy::PrepMissObj:
 0040443A  E9 41 E6 12 00            JMP 0x00532a80

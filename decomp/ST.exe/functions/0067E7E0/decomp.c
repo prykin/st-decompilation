@@ -96,8 +96,8 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
     pcVar5 = pcVar5 + 1;
     pcVar14 = pcVar14 + 1;
   }
-  FUN_006f12b0(FUN_006f2d10,local_33c);
-  pcVar5 = (char *)FUN_006f2790();
+  cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,local_33c);
+  pcVar5 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   do {
     if (pcVar5 == (char *)0x0) {
       if (local_10 != (uint *)0x0) {
@@ -287,9 +287,9 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
       if (bVar4) {
         FUN_006ae1c0(local_8,(undefined4 *)local_138);
       }
-      FUN_006f20e0((uint *)&local_c);
+      cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
     }
-    pcVar5 = (char *)FUN_006f2790();
+    pcVar5 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   } while( true );
 }
 

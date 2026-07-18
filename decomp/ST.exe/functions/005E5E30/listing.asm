@@ -1,4 +1,4 @@
-FUN_005e5e30:
+MTestTy::NoneMTest:
 005E5E30  55                        PUSH EBP
 005E5E31  8B EC                     MOV EBP,ESP
 005E5E33  83 EC 48                  SUB ESP,0x48

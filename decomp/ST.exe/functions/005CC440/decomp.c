@@ -1,5 +1,9 @@
 
-void FUN_005cc440(char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::CreateCtrls */
+
+void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
 
 {
   int *piVar1;
@@ -9,6 +13,7 @@ void FUN_005cc440(char param_1)
   int iVar5;
   undefined4 unaff_ESI;
   int iVar6;
+  SettMapMTy *this_00;
   void *unaff_EDI;
   undefined4 local_a80 [6];
   undefined4 local_a68;
@@ -33,9 +38,10 @@ void FUN_005cc440(char param_1)
   undefined4 local_28;
   undefined4 *local_18;
   undefined4 local_14;
-  int local_8;
+  SettMapMTy *local_8;
   
   puVar3 = local_a80;
+  local_8 = this;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
@@ -53,6 +59,7 @@ void FUN_005cc440(char param_1)
   local_a4 = DAT_00858df8;
   DAT_00858df8 = &local_a4;
   iVar4 = __setjmp3(local_a0,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar4 == 0) {
     if (param_1 == '\0') {
       iVar4 = 1;
@@ -66,6 +73,7 @@ void FUN_005cc440(char param_1)
         puVar3[5] = 0x16;
         puVar3[2] = iVar5;
         puVar3[3] = 0x1db;
+        this_00 = local_8;
         iVar4 = iVar4 + 1;
         iVar5 = iVar5 + 0x7d;
         puVar3 = puVar3 + 0x1c;
@@ -81,11 +89,11 @@ void FUN_005cc440(char param_1)
       local_28 = 0x6327;
       local_30 = local_50;
       (**(code **)(**(int **)(local_8 + 0xc) + 8))(5,local_8 + 0x21fc,0,local_60,0);
-      FUN_006b3430(DAT_008075a8,*(uint *)(local_8 + 0x2200));
+      FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x2200));
     }
     else {
-      if (*(char *)(local_8 + 0x21e6) != '\0') {
-        thunk_FUN_005de270();
+      if (local_8[0x21e6] != (SettMapMTy)0x0) {
+        StartSystemTy::CreateChatView(DAT_0081176c);
         puVar3 = local_a80;
         for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
           *puVar3 = 0;
@@ -100,7 +108,7 @@ void FUN_005cc440(char param_1)
         local_a68 = *(undefined4 *)(*(int *)(DAT_0081176c + 0x682) + 8);
         local_a64 = 0x104;
         local_a60 = *(undefined4 *)(DAT_0081176c + 0x686);
-        piVar1 = *(int **)(local_8 + 0xc);
+        piVar1 = *(int **)(this_00 + 0xc);
         local_21c = 0x100;
         local_a34 = piVar1[5];
         local_a2c = 0xc0a0;
@@ -121,9 +129,9 @@ void FUN_005cc440(char param_1)
       }
       FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
     }
-    thunk_FUN_005c6030(param_1);
+    SettMapTy::CreateCtrls((SettMapTy *)this_00,param_1);
     if (param_1 == '\0') {
-      thunk_FUN_00540dc0(1,*(undefined4 *)(local_8 + 8),2,0xc0a1,2,0x1c,0,0,0,0,0,0);
+      thunk_FUN_00540dc0(1,*(undefined4 *)(this_00 + 8),2,0xc0a1,2,0x1c,0,0,0,0,0,0);
     }
     DAT_00858df8 = (undefined4 *)local_a4;
     return;

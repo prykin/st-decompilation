@@ -1,2 +1,2 @@
-thunk_FUN_005b9010:
+MMsgTy::StatePanel:
 00404B51  E9 BA 44 1B 00            JMP 0x005b9010

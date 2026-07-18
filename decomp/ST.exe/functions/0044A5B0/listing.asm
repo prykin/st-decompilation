@@ -1,4 +1,4 @@
-FUN_0044a5b0:
+STAllPlayersC::RegisterContainer:
 0044A5B0  55                        PUSH EBP
 0044A5B1  8B EC                     MOV EBP,ESP
 0044A5B3  83 EC 48                  SUB ESP,0x48

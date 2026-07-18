@@ -1,8 +1,13 @@
 
-void FUN_004f0b60(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\bldobj.cpp
+   BldObjPanelTy::Update */
+
+void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
 
 {
   code *pcVar1;
+  BldObjPanelTy *this_00;
   int iVar2;
   uint uVar3;
   int iVar4;
@@ -10,29 +15,29 @@ void FUN_004f0b60(void)
   void *unaff_ESI;
   undefined4 uVar6;
   undefined4 local_48 [16];
-  void *local_8;
+  BldObjPanelTy *local_8;
   
   uVar6 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar6);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    thunk_FUN_0043beb0(DAT_007fa174,8,(int *)((int)local_8 + 0x27e));
-    iVar2 = *(int *)((int)local_8 + (uint)*(byte *)((int)local_8 + 0x279) * 4 + 0x27e);
-    if (iVar2 == 0) {
+    thunk_FUN_0043beb0(DAT_007fa174,8,(int *)(local_8 + 0x27e));
+    if (*(int *)(this_00 + (uint)(byte)this_00[0x279] * 4 + 0x27e) == 0) {
       uVar5 = 0;
     }
     else {
-      uVar5 = *(uint *)(iVar2 + 0xc);
+      uVar5 = *(uint *)(*(int *)(this_00 + (uint)(byte)this_00[0x279] * 4 + 0x27e) + 0xc);
     }
-    iVar2 = *(int *)((int)local_8 + (uint)*(byte *)((int)local_8 + 0x278) * 4 + 0x27e);
-    if (iVar2 == 0) {
+    if (*(int *)(this_00 + (uint)(byte)this_00[0x278] * 4 + 0x27e) == 0) {
       uVar3 = 0;
     }
     else {
-      uVar3 = *(uint *)(iVar2 + 0xc);
+      uVar3 = *(uint *)(*(int *)(this_00 + (uint)(byte)this_00[0x278] * 4 + 0x27e) + 0xc);
     }
-    thunk_FUN_0053f510(local_8,uVar3,uVar5);
-    thunk_FUN_004f0c80(local_8);
+    thunk_FUN_0053f510(this_00,uVar3,uVar5);
+    thunk_FUN_004f0c80(this_00);
     DAT_00858df8 = (undefined1 *)uVar6;
     return;
   }

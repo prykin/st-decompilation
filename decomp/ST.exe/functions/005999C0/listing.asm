@@ -1,4 +1,4 @@
-FUN_005999c0:
+FSGSTy::PrepBkgMess:
 005999C0  55                        PUSH EBP
 005999C1  8B EC                     MOV EBP,ESP
 005999C3  83 EC 50                  SUB ESP,0x50

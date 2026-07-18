@@ -1,4 +1,4 @@
-FUN_00540890:
+StartServTy::WrTextDDX:
 00540890  55                        PUSH EBP
 00540891  8B EC                     MOV EBP,ESP
 00540893  83 EC 4C                  SUB ESP,0x4c

@@ -1,5 +1,7 @@
 
-undefined4 thunk_FUN_00515900(int param_1,int *param_2,int param_3,int param_4,uint param_5)
+undefined4 __thiscall
+HelpPanelTy::DrawWeapon
+          (HelpPanelTy *this,int param_1,int *param_2,int param_3,int param_4,uint param_5)
 
 {
   code *pcVar1;
@@ -23,11 +25,12 @@ undefined4 thunk_FUN_00515900(int param_1,int *param_2,int param_3,int param_4,u
   int iStack_17;
   uint uStack_13;
   undefined4 uStack_c;
-  int iStack_8;
+  HelpPanelTy *pHStack_8;
   
   uStack_c = 0;
   puStack_6c = DAT_00858df8;
   DAT_00858df8 = &puStack_6c;
+  pHStack_8 = this;
   iVar2 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = puStack_6c;
@@ -43,7 +46,7 @@ undefined4 thunk_FUN_00515900(int param_1,int *param_2,int param_3,int param_4,u
   if (param_3 != 0) {
     uVar8 = (undefined2)param_3;
     uVar3 = thunk_FUN_005259b0(uVar8,0,'\x01');
-    pbVar4 = (byte *)FUN_0070b3a0(*(int *)(iStack_8 + 0x244),uVar3);
+    pbVar4 = (byte *)FUN_0070b3a0(*(int *)(pHStack_8 + 0x244),uVar3);
     if (pbVar4 != (byte *)0x0) {
       if (*(int *)(pbVar4 + 8) + -0xf < 1) {
         iVar2 = 0;
@@ -53,7 +56,8 @@ undefined4 thunk_FUN_00515900(int param_1,int *param_2,int param_3,int param_4,u
       }
       iVar7 = *param_2;
       *param_2 = iVar7 + iVar2;
-      FUN_00710a90(*(int *)(iStack_8 + 0x218),0,param_1,iVar7 + iVar2,0x19c - param_1,0xf);
+      ccFntTy::SetSurf(*(ccFntTy **)(pHStack_8 + 0x1e0),*(int *)(pHStack_8 + 0x218),0,param_1,
+                       iVar7 + iVar2,0x19c - param_1,0xf);
       if (param_4 == 0) {
         pHVar9 = DAT_00807618;
         UVar5 = thunk_FUN_00524fe0(uVar8);
@@ -66,8 +70,9 @@ undefined4 thunk_FUN_00515900(int param_1,int *param_2,int param_3,int param_4,u
         uVar6 = FUN_006b0140(UVar5,pHVar9);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___d__007c3bc0,uVar6,param_4);
       }
-      FUN_007119c0(&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
-      thunk_FUN_00540760(*(undefined4 **)(iStack_8 + 0x218),(param_1 - *(int *)(pbVar4 + 4)) + -5,
+      ccFntTy::WrStr(*(ccFntTy **)(pHStack_8 + 0x1e0),&DAT_0080f33a,1,-1,
+                     (DAT_0080874e != '\x03') - 1 & 5);
+      thunk_FUN_00540760(*(undefined4 **)(pHStack_8 + 0x218),(param_1 - *(int *)(pbVar4 + 4)) + -5,
                          (0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2,'\x06',pbVar4);
       iStack_28 = (param_1 - *(int *)(pbVar4 + 4)) + -5;
       uStack_20 = *(undefined4 *)(pbVar4 + 4);
@@ -76,7 +81,7 @@ undefined4 thunk_FUN_00515900(int param_1,int *param_2,int param_3,int param_4,u
       iStack_17 = param_3;
       uStack_13 = param_5 & 0xff;
       uStack_18 = 4;
-      FUN_006ae1c0(*(uint **)(iStack_8 + 0x1d7),&iStack_28);
+      FUN_006ae1c0(*(uint **)(pHStack_8 + 0x1d7),&iStack_28);
       iVar2 = *(int *)(pbVar4 + 8);
       if (iVar2 < 0x10) {
         iVar2 = 0xf;

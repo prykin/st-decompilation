@@ -1,4 +1,4 @@
-FUN_00645420:
+STTorpC::SaveTorpData:
 00645420  55                        PUSH EBP
 00645421  8B EC                     MOV EBP,ESP
 00645423  83 EC 68                  SUB ESP,0x68

@@ -1,6 +1,12 @@
 
-int FUN_0064db00(short param_1,short param_2,int param_3,int param_4,undefined4 param_5,
-                char *param_6,char *param_7,undefined4 param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_event.cpp
+   AiEventClassTy::_CreateArt */
+
+int __thiscall
+AiEventClassTy::_CreateArt
+          (AiEventClassTy *this,short param_1,short param_2,int param_3,int param_4,
+          undefined4 param_5,char *param_6,char *param_7,undefined4 param_8)
 
 {
   code *pcVar1;

@@ -1,9 +1,16 @@
 
-int FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,
-                undefined4 param_7,undefined4 param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\specpan.cpp
+   ProdPanelTy::CreateSlider */
+
+int __thiscall
+ProdPanelTy::CreateSlider
+          (ProdPanelTy *this,int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
+          int param_6,undefined4 param_7,undefined4 param_8)
 
 {
   code *pcVar1;
+  ProdPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
@@ -50,14 +57,16 @@ int FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined4 para
   undefined4 local_64;
   undefined4 local_54;
   undefined4 local_50 [16];
-  void *local_10;
+  ProdPanelTy *local_10;
   ushort *local_c;
   int local_8;
   
   local_8 = 0;
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
+  local_10 = this;
   iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  this_00 = local_10;
   if (iVar2 == 0) {
     piVar7 = local_42c;
     for (iVar2 = 0xf6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -65,7 +74,7 @@ int FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined4 para
       piVar7 = piVar7 + 1;
     }
     local_6c = param_7;
-    local_84 = *(undefined4 *)((int)local_10 + 8);
+    local_84 = *(undefined4 *)(this_00 + 8);
     local_68 = param_8;
     local_42c[0] = param_6;
     local_80 = 2;
@@ -88,17 +97,17 @@ int FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined4 para
     local_c = FUN_006f1ce0(1,pCVar3,piVar7,iVar8);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
-    FUN_006f20e0((uint *)&local_c);
-    iVar2 = *(int *)((int)local_10 + 0x3c);
-    iVar8 = *(int *)((int)local_10 + 0x5c);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+    iVar2 = *(int *)(this_00 + 0x3c);
+    iVar8 = *(int *)(this_00 + 0x5c);
     local_42c[4] = iVar2 + param_3;
     iVar4 = DAT_00806734;
     if (iVar8 != 0) {
-      iVar4 = *(int *)((int)local_10 + 0x44);
+      iVar4 = *(int *)(this_00 + 0x44);
     }
     local_3c0 = 2;
     local_42c[5] = iVar4 + param_4;
-    local_3c4 = *(undefined4 *)((int)local_10 + 8);
+    local_3c4 = *(undefined4 *)(this_00 + 8);
     local_38c = 0;
     local_380 = 0x101;
     local_3a4 = 0x101;
@@ -126,19 +135,19 @@ int FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined4 para
     local_2a4[2] = iVar2 + param_1;
     local_2a4[3] = DAT_00806734;
     if (iVar8 != 0) {
-      local_2a4[3] = *(int *)((int)local_10 + 0x44);
+      local_2a4[3] = *(int *)(this_00 + 0x44);
     }
     local_2a4[3] = local_2a4[3] + param_2;
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
-    (**(code **)(**(int **)((int)local_10 + 0xc) + 8))(4,&local_8,0,local_42c,0);
-    if ((*(int *)((int)local_10 + 0x5c) == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(4,&local_8,0,local_42c,0);
+    if ((*(int *)(this_00 + 0x5c) == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }
-    *(undefined4 *)((int)local_10 + 0x28) = uVar6;
+    *(undefined4 *)(this_00 + 0x28) = uVar6;
     if (local_8 != 0) {
-      FUN_006e6080(local_10,0x80000002,local_8,(undefined4 *)((int)local_10 + 0x18));
+      FUN_006e6080(this_00,0x80000002,local_8,(undefined4 *)(this_00 + 0x18));
     }
     DAT_00858df8 = (undefined4 *)local_54;
     return local_8;

@@ -1,4 +1,4 @@
-FUN_0056adc0:
+STAppC::InitApp:
 0056ADC0  55                        PUSH EBP
 0056ADC1  8B EC                     MOV EBP,ESP
 0056ADC3  81 EC 5C 05 00 00         SUB ESP,0x55c

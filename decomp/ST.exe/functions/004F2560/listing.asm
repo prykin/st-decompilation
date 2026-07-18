@@ -1,4 +1,4 @@
-FUN_004f2560:
+CPanelTy::PaintWeap:
 004F2560  55                        PUSH EBP
 004F2561  8B EC                     MOV EBP,ESP
 004F2563  83 EC 78                  SUB ESP,0x78

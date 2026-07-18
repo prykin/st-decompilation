@@ -1,4 +1,4 @@
-FUN_005bc050:
+PrividerTy::DeleteCtrls:
 005BC050  55                        PUSH EBP
 005BC051  8B EC                     MOV EBP,ESP
 005BC053  83 EC 4C                  SUB ESP,0x4c

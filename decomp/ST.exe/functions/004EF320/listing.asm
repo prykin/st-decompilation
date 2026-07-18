@@ -1,4 +1,4 @@
-FUN_004ef320:
+BldBoatPanelTy::PaintBldBut:
 004EF320  55                        PUSH EBP
 004EF321  8B EC                     MOV EBP,ESP
 004EF323  83 EC 5C                  SUB ESP,0x5c

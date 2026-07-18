@@ -1,4 +1,4 @@
-FUN_006a01d0:
+CGenerate::CreateMap:
 006A01D0  55                        PUSH EBP
 006A01D1  8B EC                     MOV EBP,ESP
 006A01D3  83 EC 60                  SUB ESP,0x60

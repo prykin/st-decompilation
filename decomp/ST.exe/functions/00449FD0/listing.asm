@@ -1,4 +1,4 @@
-FUN_00449fd0:
+STAllPlayersC::RegisterMine:
 00449FD0  55                        PUSH EBP
 00449FD1  8B EC                     MOV EBP,ESP
 00449FD3  83 EC 48                  SUB ESP,0x48

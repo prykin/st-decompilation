@@ -1,4 +1,4 @@
-FUN_005bf860:
+MReportTy::NoneMReport:
 005BF860  55                        PUSH EBP
 005BF861  8B EC                     MOV EBP,ESP
 005BF863  83 EC 4C                  SUB ESP,0x4c

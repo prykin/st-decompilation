@@ -151,8 +151,9 @@ int __thiscall thunk_FUN_004758e0(void *this,undefined4 *param_1)
         thunk_FUN_00495ff0(*(short *)((int)this + 0x5b),*(short *)((int)this + 0x5d),
                            *(short *)((int)this + 0x5f),0,(int)this);
         (**(code **)(*piStack_c + 0xb8))();
-        thunk_FUN_00495ec0(*(short *)((int)this + 0x5d0),*(short *)((int)this + 0x5d2),
-                           *(short *)((int)this + 0x5d4),0,(int)this);
+        DumpClassC::WritePtr
+                  (*(short *)((int)this + 0x5d0),*(short *)((int)this + 0x5d2),
+                   *(short *)((int)this + 0x5d4),0,(int)this);
         thunk_FUN_0041c3f0(this,*(undefined **)((int)this + 0x70a));
         *(undefined4 *)((int)this + 0x7ca) = 0;
         *(undefined4 *)((int)this + 0x7c6) = 0;

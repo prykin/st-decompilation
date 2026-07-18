@@ -1,4 +1,4 @@
-FUN_0054d2f0:
+STPlaySystemC::Save:
 0054D2F0  55                        PUSH EBP
 0054D2F1  8B EC                     MOV EBP,ESP
 0054D2F3  83 EC 70                  SUB ESP,0x70

@@ -1,2 +1,2 @@
-thunk_FUN_005097e0:
+CPanelTy::SetControlObj:
 00402D83  E9 58 6A 10 00            JMP 0x005097e0

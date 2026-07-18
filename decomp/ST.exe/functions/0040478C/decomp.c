@@ -1,5 +1,5 @@
 
-int __thiscall thunk_FUN_00645020(void *this,int param_1,uint *param_2)
+int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -12,14 +12,14 @@ int __thiscall thunk_FUN_00645020(void *this,int param_1,uint *param_2)
   undefined4 auStack_58 [16];
   int iStack_18;
   int iStack_14;
-  void *pvStack_10;
+  STTorpC *pSStack_10;
   int iStack_c;
   int iStack_8;
   
-  iStack_c = *(int *)(*(int *)((int)this + 0x241) + 0xc);
+  iStack_c = *(int *)(*(int *)(this + 0x241) + 0xc);
   uStack_5c = DAT_00858df8;
   DAT_00858df8 = &uStack_5c;
-  pvStack_10 = this;
+  pSStack_10 = this;
   iVar2 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
   iVar3 = iStack_c;
   if (iVar2 == 0) {
@@ -30,8 +30,7 @@ int __thiscall thunk_FUN_00645020(void *this,int param_1,uint *param_2)
     iStack_8 = 0;
     *param_2 = 0xffffffff;
     if (0 < iVar3) {
-      while (FUN_006acc70(*(int *)((int)pvStack_10 + 0x241),uVar4,&iStack_18), iStack_18 != param_1)
-      {
+      while (FUN_006acc70(*(int *)(pSStack_10 + 0x241),uVar4,&iStack_18), iStack_18 != param_1) {
         uVar4 = uVar4 + 1;
         if (iVar3 <= (int)uVar4) {
           DAT_00858df8 = (undefined4 *)uStack_5c;

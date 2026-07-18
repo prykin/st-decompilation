@@ -51,7 +51,8 @@ int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
                   iVar15 = 5;
                   do {
                     if (*(int *)(*(int *)(iVar12 + iVar10) + iVar15) != 0) {
-                      FUN_006f20e0((uint *)(*(int *)(iVar12 + iVar10) + iVar15));
+                      cMf32::RecMemFree((cMf32 *)*piVar9,
+                                        (uint *)(*(int *)(iVar12 + iVar10) + iVar15));
                       piVar9 = local_8;
                     }
                     iVar10 = piVar9[3];

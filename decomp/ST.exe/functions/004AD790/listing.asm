@@ -1,4 +1,4 @@
-FUN_004ad790:
+STT3DSprC::SaveSpr:
 004AD790  55                        PUSH EBP
 004AD791  8B EC                     MOV EBP,ESP
 004AD793  83 EC 5C                  SUB ESP,0x5c

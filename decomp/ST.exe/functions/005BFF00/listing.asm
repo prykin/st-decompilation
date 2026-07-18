@@ -1,4 +1,4 @@
-FUN_005bff00:
+MReportTy::PaintObjScore:
 005BFF00  55                        PUSH EBP
 005BFF01  8B EC                     MOV EBP,ESP
 005BFF03  83 EC 4C                  SUB ESP,0x4c

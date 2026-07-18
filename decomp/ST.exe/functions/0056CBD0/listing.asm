@@ -1,4 +1,4 @@
-FUN_0056cbd0:
+STAppC::MainWindowProc:
 0056CBD0  55                        PUSH EBP
 0056CBD1  8B EC                     MOV EBP,ESP
 0056CBD3  81 EC C8 00 00 00         SUB ESP,0xc8

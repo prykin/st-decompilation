@@ -1,4 +1,4 @@
-FUN_0071b520:
+InputClassTy::Done:
 0071B520  55                        PUSH EBP
 0071B521  8B EC                     MOV EBP,ESP
 0071B523  83 EC 48                  SUB ESP,0x48

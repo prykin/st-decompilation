@@ -1,4 +1,4 @@
-FUN_0044a150:
+STAllPlayersC::UnRegisterMine:
 0044A150  55                        PUSH EBP
 0044A151  8B EC                     MOV EBP,ESP
 0044A153  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_0064db00:
+AiEventClassTy::_CreateArt:
 0064DB00  55                        PUSH EBP
 0064DB01  8B EC                     MOV EBP,ESP
 0064DB03  83 EC 64                  SUB ESP,0x64

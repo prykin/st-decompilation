@@ -204,7 +204,7 @@ joined_r0x005ed4b7:
       goto joined_r0x005ed4b7;
     }
   }
-  iVar7 = thunk_FUN_00495ec0(sVar5,sVar9,sVar1 + sVar4,0,(int)this);
+  iVar7 = DumpClassC::WritePtr(sVar5,sVar9,sVar1 + sVar4,0,(int)this);
   if (iVar7 == 0) {
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
     *(undefined2 *)((int)this + 0x254) = *(undefined2 *)((int)this + 0x242);

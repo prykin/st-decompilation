@@ -1,5 +1,10 @@
 
-undefined4 FUN_00449ce0(ushort param_1,void *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::RegisterArtefact */
+
+undefined4 __thiscall
+STAllPlayersC::RegisterArtefact(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
   code *pcVar1;

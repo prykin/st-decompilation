@@ -1,4 +1,4 @@
-FUN_00590170:
+MAdvTy::InitMAdv:
 00590170  55                        PUSH EBP
 00590171  8B EC                     MOV EBP,ESP
 00590173  83 EC 48                  SUB ESP,0x48

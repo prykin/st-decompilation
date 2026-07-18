@@ -1,4 +1,4 @@
-FUN_005cff40:
+SettMapMTy::DeletePlayer:
 005CFF40  55                        PUSH EBP
 005CFF41  8B EC                     MOV EBP,ESP
 005CFF43  83 EC 48                  SUB ESP,0x48

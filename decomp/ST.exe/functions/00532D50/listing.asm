@@ -1,4 +1,4 @@
-FUN_00532d50:
+OptPanelTy::PrepFiles:
 00532D50  55                        PUSH EBP
 00532D51  8B EC                     MOV EBP,ESP
 00532D53  81 EC F8 03 00 00         SUB ESP,0x3f8

@@ -1,4 +1,4 @@
-FUN_005ea680:
+WaitTy::GetMessage:
 005EA680  55                        PUSH EBP
 005EA681  8B EC                     MOV EBP,ESP
 005EA683  81 EC A0 04 00 00         SUB ESP,0x4a0

@@ -1,34 +1,33 @@
 
-void __thiscall thunk_FUN_0048cea0(void *this,int param_1)
+void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  STBoatC *pSVar2;
   int iVar3;
   int *this_00;
   int iVar4;
-  int iVar5;
-  uint uVar6;
+  uint uVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint *puVar7;
+  uint *puVar6;
   undefined4 uStack_68;
   undefined4 auStack_64 [16];
   uint uStack_24;
   uint uStack_20;
   int iStack_1a;
   uint uStack_14;
-  void *pvStack_10;
+  STBoatC *pSStack_10;
   short sStack_a;
   short sStack_8;
   short sStack_6;
   
-  uStack_14 = (int)*(short *)((int)this + 0x816) * (int)*(short *)((int)this + 0x816) * 0x9dd1;
+  uStack_14 = (int)*(short *)(this + 0x816) * (int)*(short *)(this + 0x816) * 0x9dd1;
   uStack_68 = DAT_00858df8;
   DAT_00858df8 = &uStack_68;
-  pvStack_10 = this;
+  pSStack_10 = this;
   iVar3 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
-  pvVar2 = pvStack_10;
+  pSVar2 = pSStack_10;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_68;
     iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc);
@@ -40,14 +39,14 @@ void __thiscall thunk_FUN_0048cea0(void *this,int param_1)
     FUN_006a5e40(iVar3,0,0x7a9d3c,0x4bb5);
     return;
   }
-  iVar3 = *(int *)((int)pvStack_10 + 0x47b);
-  if ((iVar3 != 0) && (uVar6 = 0, 0 < *(int *)(iVar3 + 0xc))) {
+  iVar3 = *(int *)(pSStack_10 + 0x47b);
+  if ((iVar3 != 0) && (uVar5 = 0, 0 < *(int *)(iVar3 + 0xc))) {
     do {
-      FUN_006acc70(iVar3,uVar6,&uStack_24);
+      FUN_006acc70(iVar3,uVar5,&uStack_24);
       if ((short)uStack_20 != -1) {
         iStack_1a = iStack_1a - param_1;
         if (iStack_1a < 1) {
-          puVar7 = *(uint **)((int)pvVar2 + 0x47b);
+          puVar6 = *(uint **)(pSVar2 + 0x47b);
           uStack_20 = CONCAT22(uStack_20._2_2_,0xffff);
         }
         else {
@@ -57,30 +56,33 @@ void __thiscall thunk_FUN_0048cea0(void *this,int param_1)
             if (iVar3 == 1) {
               iVar3 = (**(code **)(*this_00 + 0xf0))();
               if (iVar3 == 1) {
-                iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)((int)pvVar2 + 0x24));
+                iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)(pSVar2 + 0x24));
                 if (iVar3 == 1) {
                   thunk_FUN_00416270(this_00,&sStack_a,&sStack_8,&sStack_6);
-                  iVar3 = (int)*(short *)((int)pvVar2 + 0x41) - (int)sStack_a;
-                  iVar4 = (int)*(short *)((int)pvVar2 + 0x43) - (int)sStack_8;
-                  iVar5 = (int)*(short *)((int)pvVar2 + 0x45) - (int)sStack_6;
-                  if (uStack_14 < (uint)(iVar4 * iVar4 + iVar3 * iVar3 + iVar5 * iVar5)) {
+                  if (uStack_14 <
+                      (uint)(((int)*(short *)(pSVar2 + 0x43) - (int)sStack_8) *
+                             ((int)*(short *)(pSVar2 + 0x43) - (int)sStack_8) +
+                             ((int)*(short *)(pSVar2 + 0x41) - (int)sStack_a) *
+                             ((int)*(short *)(pSVar2 + 0x41) - (int)sStack_a) +
+                            ((int)*(short *)(pSVar2 + 0x45) - (int)sStack_6) *
+                            ((int)*(short *)(pSVar2 + 0x45) - (int)sStack_6))) {
                     uStack_20 = CONCAT22(uStack_20._2_2_,0xffff);
                   }
-                  puVar7 = *(uint **)((int)pvVar2 + 0x47b);
+                  puVar6 = *(uint **)(pSVar2 + 0x47b);
                   goto LAB_0048d016;
                 }
               }
             }
           }
-          puVar7 = *(uint **)((int)pvVar2 + 0x47b);
+          puVar6 = *(uint **)(pSVar2 + 0x47b);
           uStack_20 = CONCAT22(uStack_20._2_2_,0xffff);
         }
 LAB_0048d016:
-        FUN_006ae140(puVar7,uVar6,&uStack_24);
+        FUN_006ae140(puVar6,uVar5,&uStack_24);
       }
-      iVar3 = *(int *)((int)pvVar2 + 0x47b);
-      uVar6 = uVar6 + 1;
-    } while ((int)uVar6 < *(int *)(iVar3 + 0xc));
+      iVar3 = *(int *)(pSVar2 + 0x47b);
+      uVar5 = uVar5 + 1;
+    } while ((int)uVar5 < *(int *)(iVar3 + 0xc));
   }
   DAT_00858df8 = (undefined4 *)uStack_68;
   return;

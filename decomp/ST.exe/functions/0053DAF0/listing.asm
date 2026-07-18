@@ -1,4 +1,4 @@
-FUN_0053daf0:
+UPanelTy::PaintIBut:
 0053DAF0  55                        PUSH EBP
 0053DAF1  8B EC                     MOV EBP,ESP
 0053DAF3  83 EC 54                  SUB ESP,0x54

@@ -1,4 +1,4 @@
-FUN_0053ca80:
+ResearchPanelTy::GetMessage:
 0053CA80  55                        PUSH EBP
 0053CA81  8B EC                     MOV EBP,ESP
 0053CA83  83 EC 54                  SUB ESP,0x54

@@ -26,8 +26,8 @@ int __thiscall thunk_FUN_00622990(void *this,uint *param_1)
   }
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   puStack_10[3] = 2;
-  puStack_14 = thunk_FUN_004ad790(&uStack_8);
-  puStack_18 = thunk_FUN_004210e0((int *)&uStack_c);
+  puStack_14 = STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),&uStack_8);
+  puStack_18 = STAllPlayersC::SaveGObjData(this,(int *)&uStack_c);
   uVar1 = uStack_c + 0x111 + uStack_8;
   puStack_10 = (undefined4 *)FUN_006acf50(puStack_10,uVar1);
   *(uint *)((int)puStack_10 + 0x109) = uStack_8;

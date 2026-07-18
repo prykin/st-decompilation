@@ -1,4 +1,4 @@
-FUN_00715c60:
+SpriteClassTy::SetImagesReg:
 00715C60  55                        PUSH EBP
 00715C61  8B EC                     MOV EBP,ESP
 00715C63  83 EC 48                  SUB ESP,0x48

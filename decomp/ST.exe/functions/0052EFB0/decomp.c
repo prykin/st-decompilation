@@ -1,11 +1,16 @@
 
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\optpanel.cpp
+   OptPanelTy::PaintDblBut */
+
 void __thiscall
-FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_4,undefined *param_5
-            ,int param_6)
+OptPanelTy::PaintDblBut
+          (OptPanelTy *this,int param_1,char *param_2,UINT param_3,undefined *param_4,
+          undefined *param_5,int param_6)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  OptPanelTy *pOVar2;
   int iVar3;
   undefined4 uVar4;
   LPSTR pCVar5;
@@ -18,7 +23,7 @@ FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_
   int iVar10;
   undefined4 local_60;
   undefined4 local_5c [16];
-  void *local_1c;
+  OptPanelTy *local_1c;
   int local_18;
   int local_14;
   int *local_10;
@@ -34,13 +39,13 @@ FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_
   else {
     local_18 = *(int *)(local_c + 0xc);
   }
-  local_18 = local_18 - *(int *)((int)this + 0x3c);
-  if (*(int *)((int)this + 0x5c) == 0) {
+  local_18 = local_18 - *(int *)(this + 0x3c);
+  if (*(int *)(this + 0x5c) == 0) {
     if (param_6 == 0) {
-      local_14 = *(int *)((int)this + 0x48) + local_10[1];
+      local_14 = *(int *)(this + 0x48) + local_10[1];
     }
     else {
-      local_14 = *(int *)((int)this + 0x48) + *(int *)(local_c + 0x10);
+      local_14 = *(int *)(this + 0x48) + *(int *)(local_c + 0x10);
     }
   }
   else {
@@ -50,7 +55,7 @@ FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_
     else {
       local_14 = *(int *)(local_c + 0x10);
     }
-    local_14 = local_14 - *(int *)((int)this + 0x44);
+    local_14 = local_14 - *(int *)(this + 0x44);
   }
   if ((param_4 != (undefined *)0x0) && (param_5 != (undefined *)0x0)) {
     local_60 = DAT_00858df8;
@@ -61,10 +66,10 @@ FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_
       local_8 = FUN_006f1ce0(1,param_2,(int *)0x0,1);
       iVar8 = local_14;
       iVar3 = local_18;
-      pvVar2 = local_1c;
-      thunk_FUN_00540760(*(undefined4 **)((int)local_1c + 0x68),local_18,local_14,'\x01',
-                         (byte *)local_8);
-      FUN_006f20e0((uint *)&local_8);
+      pOVar2 = local_1c;
+      thunk_FUN_00540760(*(undefined4 **)(local_1c + 0x68),local_18,local_14,'\x01',(byte *)local_8)
+      ;
+      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = (int *)0x0;
       uVar4 = (*(code *)param_4)(param_1);
@@ -78,10 +83,10 @@ FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_
       else {
         iVar7 = *(int *)(local_c + 0x18);
       }
-      thunk_FUN_00540760(*(undefined4 **)((int)pvVar2 + 0x68),iVar3 + 5,
+      thunk_FUN_00540760(*(undefined4 **)(pOVar2 + 0x68),iVar3 + 5,
                          (iVar7 - *(int *)(local_8 + 4)) / 2 + 1 + iVar8,'\x01',(byte *)local_8);
       iVar3 = *(int *)(local_8 + 2);
-      FUN_006f20e0((uint *)&local_8);
+      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (param_6 == 0) {
         iVar7 = local_10[3];
         iVar10 = local_10[2];
@@ -90,17 +95,17 @@ FUN_0052efb0(void *this,int param_1,char *param_2,UINT param_3,undefined *param_
         iVar7 = *(int *)(local_c + 0x18);
         iVar10 = *(int *)(local_c + 0x14);
       }
-      FUN_00710a90(*(int *)((int)pvVar2 + 0x68),0,iVar3 + 10 + local_18,iVar8,(iVar10 - iVar3) + -10
-                   ,iVar7);
+      ccFntTy::SetSurf(*(ccFntTy **)(pOVar2 + 0x180),*(int *)(pOVar2 + 0x68),0,iVar3 + 10 + local_18
+                       ,iVar8,(iVar10 - iVar3) + -10,iVar7);
       iVar10 = -1;
       iVar7 = -1;
       uVar4 = (*(code *)param_5)(param_1);
       iVar8 = -1;
       iVar3 = 0;
       puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
-      FUN_00711b70(puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
-      FUN_006b3640(DAT_008075a8,*(uint *)((int)pvVar2 + 0x60),0xffffffff,
-                   *(uint *)((int)pvVar2 + 0x3c),*(uint *)((int)pvVar2 + 0x44));
+      ccFntTy::WrTxt(*(ccFntTy **)(pOVar2 + 0x180),puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
+      FUN_006b3640(DAT_008075a8,*(uint *)(pOVar2 + 0x60),0xffffffff,*(uint *)(pOVar2 + 0x3c),
+                   *(uint *)(pOVar2 + 0x44));
       DAT_00858df8 = (undefined4 *)local_60;
       return;
     }

@@ -1,4 +1,4 @@
-FUN_006f12b0:
+cMf32::ToBeg:
 006F12B0  55                        PUSH EBP
 006F12B1  8B EC                     MOV EBP,ESP
 006F12B3  83 EC 48                  SUB ESP,0x48

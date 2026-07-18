@@ -1,4 +1,4 @@
-FUN_0052e500:
+OptPanelTy::PreInitOptPanel:
 0052E500  55                        PUSH EBP
 0052E501  8B EC                     MOV EBP,ESP
 0052E503  83 EC 48                  SUB ESP,0x48

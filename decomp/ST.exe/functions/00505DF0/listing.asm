@@ -1,4 +1,4 @@
-FUN_00505df0:
+CPanelTy::PaintBioSonar:
 00505DF0  55                        PUSH EBP
 00505DF1  8B EC                     MOV EBP,ESP
 00505DF3  83 EC 4C                  SUB ESP,0x4c

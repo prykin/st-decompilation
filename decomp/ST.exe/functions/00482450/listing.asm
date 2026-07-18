@@ -1,4 +1,4 @@
-FUN_00482450:
+STBoatC::GetExplosionInfo:
 00482450  55                        PUSH EBP
 00482451  8B EC                     MOV EBP,ESP
 00482453  83 EC 7C                  SUB ESP,0x7c

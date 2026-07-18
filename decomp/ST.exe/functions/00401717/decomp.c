@@ -1,12 +1,12 @@
 
 undefined4 __thiscall
-thunk_FUN_005b87d0(void *this,UINT param_1,int param_2,int param_3,UINT param_4)
+MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
 
 {
   int *piVar1;
   code *pcVar2;
-  void *this_00;
-  byte bVar3;
+  MMObjTy *this_00;
+  MMObjTy MVar3;
   int iVar4;
   undefined4 uVar5;
   undefined4 uVar6;
@@ -17,7 +17,7 @@ thunk_FUN_005b87d0(void *this,UINT param_1,int param_2,int param_3,UINT param_4)
   undefined4 unaff_ESI;
   UINT *pUVar11;
   void *unaff_EDI;
-  UINT *pUVar12;
+  MMObjTy *pMVar12;
   int *piVar13;
   int iVar14;
   int iVar15;
@@ -30,29 +30,29 @@ thunk_FUN_005b87d0(void *this,UINT param_1,int param_2,int param_3,UINT param_4)
   undefined4 *puStack_78;
   undefined4 auStack_74 [16];
   int aiStack_34 [8];
-  void *pvStack_14;
+  MMObjTy *pMStack_14;
   UINT *pUStack_10;
   uint uStack_c;
   uint uStack_8;
   
   uStack_c = uStack_c & 0xffffff00;
-  if ((*(char *)((int)this + 0x65) == '\x02') && (*(char *)((int)this + 0x1ca9) == '\0')) {
+  if ((this[0x65] == (MMsgTy)0x2) && (this[0x1ca9] == (MMsgTy)0x0)) {
     puStack_78 = DAT_00858df8;
     DAT_00858df8 = &puStack_78;
-    pvStack_14 = this;
+    pMStack_14 = (MMObjTy *)this;
     iVar4 = __setjmp3(auStack_74,0,unaff_EDI,unaff_ESI);
-    this_00 = pvStack_14;
+    this_00 = pMStack_14;
     if (iVar4 == 0) {
-      thunk_FUN_005b6480();
-      thunk_FUN_005b8c70(this_00,0,0,1);
+      MMObjTy::CloseButtons(pMStack_14);
+      HidePanel((MMsgTy *)this_00,0,0,1);
       if (param_1 == 0) {
-        *(undefined4 *)((int)this_00 + 0x1cd0) = 0;
+        *(undefined4 *)(this_00 + 0x1cd0) = 0;
       }
       else {
-        *(UINT *)((int)this_00 + 0x1cd0) = param_1;
+        *(UINT *)(this_00 + 0x1cd0) = param_1;
         if (param_3 == 0) {
           uVar6 = 0xffffffff;
-          uStack_8 = *(uint *)((int)this_00 + 0x1d88);
+          uStack_8 = *(uint *)(this_00 + 0x1d88);
           uVar5 = 7;
           iVar18 = -1;
           iVar15 = -1;
@@ -62,35 +62,39 @@ thunk_FUN_005b87d0(void *this,UINT param_1,int param_2,int param_3,UINT param_4)
           iVar9 = 0x39;
           iVar4 = 0x158;
           puVar8 = (uint *)FUN_006b0140(param_1,DAT_00807618);
-          puVar7 = FUN_00713480(puVar8,iVar4,iVar9,uVar10,uVar16,iVar14,iVar15,iVar18);
+          puVar7 = ccFntTy::CreateTypeSSpr
+                             (*(ccFntTy **)(DAT_0081176c + 0x30),puVar8,iVar4,iVar9,uVar10,uVar16,
+                              iVar14,iVar15,iVar18);
           (**(code **)(uStack_8 + 8))(puVar7,uVar5,uVar6);
-          *(undefined4 *)((int)this_00 + 0x1d90) = 0;
+          *(undefined4 *)(this_00 + 0x1d90) = 0;
         }
         else {
           uVar5 = FUN_006b0140(param_4,DAT_00807618);
           uVar6 = FUN_006b0140(param_1,DAT_00807618);
           wsprintfA((LPSTR)auStack_478,s__s___s__li__007ccca4,uVar6,uVar5,param_3);
-          iVar4 = *(int *)((int)this_00 + 0x1d88);
+          iVar4 = *(int *)(this_00 + 0x1d88);
           uVar6 = 0xffffffff;
           uVar5 = 7;
-          puVar7 = FUN_00713480(auStack_478,0x158,0x39,0xfffffffe,0xffffffff,1,-1,-1);
+          puVar7 = ccFntTy::CreateTypeSSpr
+                             (*(ccFntTy **)(DAT_0081176c + 0x30),auStack_478,0x158,0x39,0xfffffffe,
+                              0xffffffff,1,-1,-1);
           (**(code **)(iVar4 + 8))(puVar7,uVar5,uVar6);
-          *(undefined4 *)((int)this_00 + 0x1d90) = 0;
+          *(undefined4 *)(this_00 + 0x1d90) = 0;
         }
       }
       uStack_8 = uStack_8 & 0xffffff00;
-      if (*(char *)((int)this_00 + 0x9a) != '\0') {
+      if (this_00[0x9a] != (MMObjTy)0x0) {
         do {
           uVar10 = uStack_8 & 0xff;
           pUStack_10 = (UINT *)(uVar10 * 0x27 + param_2);
           if (*pUStack_10 == 0) {
-            puVar7 = (undefined4 *)(uVar10 * 0x1fb + 0xbc + (int)this_00);
+            pMVar12 = this_00 + uVar10 * 0x1fb + 0xbc;
             for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *puVar7 = 0;
-              puVar7 = puVar7 + 1;
+              *(undefined4 *)pMVar12 = 0;
+              pMVar12 = pMVar12 + 4;
             }
-            *(undefined2 *)puVar7 = 0;
-            *(undefined1 *)((int)puVar7 + 2) = 0;
+            *(undefined2 *)pMVar12 = 0;
+            pMVar12[2] = (MMObjTy)0x0;
           }
           else {
             uVar6 = 0xffffffff;
@@ -102,70 +106,72 @@ thunk_FUN_005b87d0(void *this,UINT param_1,int param_2,int param_3,UINT param_4)
             uVar16 = 0xfffffffe;
             iVar15 = 0x1e;
             iVar14 = 0x7d;
-            iVar4 = *(int *)((int)this_00 + uVar10 * 0x1fb + 0x174);
+            iVar4 = *(int *)(this_00 + uVar10 * 0x1fb + 0x174);
             iVar9 = uVar10 * 0x1fb;
             puVar8 = (uint *)FUN_006b0140(*pUStack_10,DAT_00807618);
-            puVar7 = FUN_00713480(puVar8,iVar14,iVar15,uVar16,uVar17,iVar18,iVar19,iVar20);
+            puVar7 = ccFntTy::CreateTypeSSpr
+                               (*(ccFntTy **)(DAT_0081176c + 0x30),puVar8,iVar14,iVar15,uVar16,
+                                uVar17,iVar18,iVar19,iVar20);
             (**(code **)(iVar4 + 8))(puVar7,uVar5,uVar6);
-            pUVar12 = (UINT *)((int)this_00 + iVar9 + 0xbc);
-            if ((*pUStack_10 == *(UINT *)((int)this_00 + iVar9 + 0xbc)) &&
-               ((char)pUStack_10[1] == '\0')) {
-              *(int *)((int)this_00 + iVar9 + 0x17c) = *(int *)((int)this_00 + iVar9 + 0x180) + -3;
+            if ((*pUStack_10 == *(UINT *)(this_00 + iVar9 + 0xbc)) && ((char)pUStack_10[1] == '\0'))
+            {
+              *(int *)(this_00 + iVar9 + 0x17c) = *(int *)(this_00 + iVar9 + 0x180) + -3;
               pUVar11 = pUStack_10;
+              pMVar12 = this_00 + iVar9 + 0xbc;
               for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *pUVar12 = *pUVar11;
+                *(UINT *)pMVar12 = *pUVar11;
                 pUVar11 = pUVar11 + 1;
-                pUVar12 = pUVar12 + 1;
+                pMVar12 = pMVar12 + 4;
               }
-              *(short *)pUVar12 = (short)*pUVar11;
-              *(undefined1 *)((int)pUVar12 + 2) = *(undefined1 *)((int)pUVar11 + 2);
+              *(short *)pMVar12 = (short)*pUVar11;
+              pMVar12[2] = *(MMObjTy *)((int)pUVar11 + 2);
             }
             else {
-              *(undefined4 *)((int)this_00 + iVar9 + 0x17c) = 0;
+              *(undefined4 *)(this_00 + iVar9 + 0x17c) = 0;
               pUVar11 = pUStack_10;
+              pMVar12 = this_00 + iVar9 + 0xbc;
               for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
-                *pUVar12 = *pUVar11;
+                *(UINT *)pMVar12 = *pUVar11;
                 pUVar11 = pUVar11 + 1;
-                pUVar12 = pUVar12 + 1;
+                pMVar12 = pMVar12 + 4;
               }
-              *(short *)pUVar12 = (short)*pUVar11;
-              *(undefined1 *)((int)pUVar12 + 2) = *(undefined1 *)((int)pUVar11 + 2);
+              *(short *)pMVar12 = (short)*pUVar11;
+              pMVar12[2] = *(MMObjTy *)((int)pUVar11 + 2);
             }
           }
-          bVar3 = (char)uStack_8 + 1;
-          uStack_8 = CONCAT31(uStack_8._1_3_,bVar3);
-        } while (bVar3 < *(byte *)((int)this_00 + 0x9a));
+          MVar3 = (MMObjTy)((char)uStack_8 + 1);
+          uStack_8 = CONCAT31(uStack_8._1_3_,MVar3);
+        } while ((byte)MVar3 < (byte)this_00[0x9a]);
       }
-      bVar3 = 0;
+      MVar3 = (MMObjTy)0x0;
       uStack_8 = uStack_8 & 0xffffff00;
-      if (*(char *)((int)this_00 + 0x9a) != '\0') {
+      if (this_00[0x9a] != (MMObjTy)0x0) {
         do {
           uVar10 = uStack_8 & 0xff;
-          *(undefined4 *)((int)this_00 + uVar10 * 0x1fb + 0x127) =
-               *(undefined4 *)((int)this_00 + 0x61);
-          *(uint *)((int)this_00 + uVar10 * 0x1fb + 0x123) = ((uStack_c & 0xff) + 1) * 100;
-          if (*(int *)((int)this_00 + uVar10 * 0x1fb + 0xbc) != 0) {
+          *(undefined4 *)(this_00 + uVar10 * 0x1fb + 0x127) = *(undefined4 *)(this_00 + 0x61);
+          *(uint *)(this_00 + uVar10 * 0x1fb + 0x123) = ((uStack_c & 0xff) + 1) * 100;
+          if (*(int *)(this_00 + uVar10 * 0x1fb + 0xbc) != 0) {
             uStack_c = CONCAT31(uStack_c._1_3_,(char)uStack_c + '\x01');
           }
-          bVar3 = bVar3 + 1;
-          uStack_8 = CONCAT31(uStack_8._1_3_,bVar3);
-        } while (bVar3 < *(byte *)((int)this_00 + 0x9a));
+          MVar3 = (MMObjTy)((char)MVar3 + 1);
+          uStack_8 = CONCAT31(uStack_8._1_3_,MVar3);
+        } while ((byte)MVar3 < (byte)this_00[0x9a]);
       }
-      puVar7 = (undefined4 *)((int)this_00 + 0x1c82);
+      pMVar12 = this_00 + 0x1c82;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar7 = 0;
-        puVar7 = puVar7 + 1;
+        *(undefined4 *)pMVar12 = 0;
+        pMVar12 = pMVar12 + 4;
       }
-      *(undefined2 *)puVar7 = 0;
-      *(undefined4 *)((int)this_00 + 0x1c9c) = 0x1010101;
-      *(undefined4 *)((int)this_00 + 0x1ca0) = 0x1010101;
-      *(undefined4 *)((int)this_00 + 0x1ca4) = 0x1010101;
-      *(undefined1 *)((int)this_00 + 0x1ca8) = 1;
-      *(undefined1 *)((int)this_00 + 0x65) = 3;
+      *(undefined2 *)pMVar12 = 0;
+      *(undefined4 *)(this_00 + 0x1c9c) = 0x1010101;
+      *(undefined4 *)(this_00 + 0x1ca0) = 0x1010101;
+      *(undefined4 *)(this_00 + 0x1ca4) = 0x1010101;
+      this_00[0x1ca8] = (MMObjTy)0x1;
+      this_00[0x65] = (MMObjTy)0x3;
       thunk_FUN_005b6730(this_00,5,'\0',-1);
-      iVar4 = *(int *)((int)this_00 + 0x1cab);
+      iVar4 = *(int *)(this_00 + 0x1cab);
       if (iVar4 != 0) {
-        piVar1 = *(int **)((int)this_00 + 0xc);
+        piVar1 = *(int **)(this_00 + 0xc);
         piVar13 = aiStack_34;
         for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
           *piVar13 = 0;

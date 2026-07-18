@@ -1,4 +1,4 @@
-FUN_005dcc10:
+StartSystemTy::InitSystem:
 005DCC10  55                        PUSH EBP
 005DCC11  8B EC                     MOV EBP,ESP
 005DCC13  81 EC 8C 00 00 00         SUB ESP,0x8c

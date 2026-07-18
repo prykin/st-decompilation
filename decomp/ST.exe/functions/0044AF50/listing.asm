@@ -1,4 +1,4 @@
-FUN_0044af50:
+STAllPlayersC::PushTV:
 0044AF50  55                        PUSH EBP
 0044AF51  8B EC                     MOV EBP,ESP
 0044AF53  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

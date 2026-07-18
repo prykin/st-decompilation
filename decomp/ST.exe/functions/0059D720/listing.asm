@@ -1,4 +1,4 @@
-FUN_0059d720:
+FSGSTy::InfoCtrls:
 0059D720  55                        PUSH EBP
 0059D721  8B EC                     MOV EBP,ESP
 0059D723  81 EC D8 08 00 00         SUB ESP,0x8d8

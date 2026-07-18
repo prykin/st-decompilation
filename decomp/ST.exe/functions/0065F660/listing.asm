@@ -1,4 +1,4 @@
-FUN_0065f660:
+AiFltClassTy::AppendPoint:
 0065F660  55                        PUSH EBP
 0065F661  8B EC                     MOV EBP,ESP
 0065F663  83 EC 60                  SUB ESP,0x60

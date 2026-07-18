@@ -1,4 +1,4 @@
-FUN_005325b0:
+OptPanelTy::PrepAsses:
 005325B0  55                        PUSH EBP
 005325B1  8B EC                     MOV EBP,ESP
 005325B3  81 EC 28 01 00 00         SUB ESP,0x128

@@ -1,4 +1,4 @@
-FUN_00580b60:
+STFieldC::CreateField:
 00580B60  55                        PUSH EBP
 00580B61  8B EC                     MOV EBP,ESP
 00580B63  83 EC 4C                  SUB ESP,0x4c

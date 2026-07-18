@@ -1,4 +1,4 @@
-FUN_0052eb50:
+OptPanelTy::CreateSlider:
 0052EB50  55                        PUSH EBP
 0052EB51  8B EC                     MOV EBP,ESP
 0052EB53  81 EC 28 04 00 00         SUB ESP,0x428

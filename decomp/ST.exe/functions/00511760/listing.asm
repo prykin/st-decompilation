@@ -1,4 +1,4 @@
-FUN_00511760:
+HelpPanelTy::DoneHelpPanel:
 00511760  55                        PUSH EBP
 00511761  8B EC                     MOV EBP,ESP
 00511763  83 EC 4C                  SUB ESP,0x4c

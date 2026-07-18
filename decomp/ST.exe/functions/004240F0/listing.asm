@@ -1,4 +1,4 @@
-FUN_004240f0:
+STGroupC::SaveGrpData:
 004240F0  55                        PUSH EBP
 004240F1  8B EC                     MOV EBP,ESP
 004240F3  83 EC 58                  SUB ESP,0x58

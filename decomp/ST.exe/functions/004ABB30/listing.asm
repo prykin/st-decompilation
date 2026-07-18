@@ -1,4 +1,4 @@
-FUN_004abb30:
+STT3DSprC::UnLoadSequence:
 004ABB30  55                        PUSH EBP
 004ABB31  8B EC                     MOV EBP,ESP
 004ABB33  83 EC 48                  SUB ESP,0x48

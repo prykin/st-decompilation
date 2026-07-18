@@ -1,4 +1,4 @@
-FUN_00713080:
+ccFntTy::_SarrToTxt:
 00713080  55                        PUSH EBP
 00713081  8B EC                     MOV EBP,ESP
 00713083  83 EC 50                  SUB ESP,0x50

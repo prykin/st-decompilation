@@ -1,4 +1,4 @@
-FUN_004a3430:
+STGroupBoatC::DistributeMD:
 004A3430  55                        PUSH EBP
 004A3431  8B EC                     MOV EBP,ESP
 004A3433  81 EC AC 00 00 00         SUB ESP,0xac

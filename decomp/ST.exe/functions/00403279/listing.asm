@@ -1,2 +1,2 @@
-thunk_FUN_0062d910:
+STManRub3C::AddNewDock:
 00403279  E9 92 A6 22 00            JMP 0x0062d910

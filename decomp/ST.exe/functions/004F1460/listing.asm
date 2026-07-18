@@ -1,4 +1,4 @@
-FUN_004f1460:
+CPanelTy::OutProc:
 004F1460  55                        PUSH EBP
 004F1461  8B EC                     MOV EBP,ESP
 004F1463  83 EC 44                  SUB ESP,0x44

@@ -1,4 +1,4 @@
-FUN_0059a910:
+FSGSTy::PaintInfo:
 0059A910  55                        PUSH EBP
 0059A911  8B EC                     MOV EBP,ESP
 0059A913  83 EC 48                  SUB ESP,0x48

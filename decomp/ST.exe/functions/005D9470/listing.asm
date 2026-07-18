@@ -1,4 +1,4 @@
-FUN_005d9470:
+SIDTy::GetMessage:
 005D9470  55                        PUSH EBP
 005D9471  8B EC                     MOV EBP,ESP
 005D9473  83 EC 60                  SUB ESP,0x60

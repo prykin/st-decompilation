@@ -1,13 +1,20 @@
 
-uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param_5,int param_6)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::FormSarr */
+
+uint * __thiscall
+ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_4,uint param_5,
+                 int param_6)
 
 {
   uint uVar1;
   code *pcVar2;
+  ccFntTy *this_00;
   int iVar3;
   uint *puVar4;
   int iVar5;
-  char *pcVar6;
+  ccFntTy *pcVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_80;
@@ -16,7 +23,7 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
   undefined4 local_38;
   uint *local_30;
   undefined4 local_2c;
-  void *local_24;
+  ccFntTy *local_24;
   int local_20;
   int local_1c;
   int local_18;
@@ -43,6 +50,7 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
       }
       local_80 = DAT_00858df8;
       DAT_00858df8 = &local_80;
+      local_24 = this;
       iVar3 = __setjmp3(local_7c,0,unaff_EDI,unaff_ESI);
       if (iVar3 == 0) {
         local_10 = FUN_006b54f0((uint *)0x0,param_5,*(uint *)(param_1 + 0x10));
@@ -54,6 +62,7 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
         if (iVar3 != 0) {
           FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x77b);
         }
+        this_00 = local_24;
         iVar3 = 0;
         local_20 = param_4 + param_5;
         local_18 = param_4;
@@ -67,16 +76,16 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
               iVar5 = 0;
             }
             if (iVar5 != 0) {
-              if (*(int *)((int)local_24 + 0x7e) == 0) {
-                pcVar6 = (char *)0x0;
+              if (*(int *)(this_00 + 0x7e) == 0) {
+                pcVar6 = (ccFntTy *)0x0;
               }
               else {
-                pcVar6 = (char *)((int)local_24 + 0x9e);
+                pcVar6 = this_00 + 0x9e;
               }
-              puVar4 = (uint *)FUN_00714fb0(&local_3c,iVar5,param_2,pcVar6);
+              puVar4 = (uint *)FUN_00714fb0(&local_3c,iVar5,param_2,(char *)pcVar6);
               while (puVar4 != (uint *)0x0) {
-                iVar5 = FUN_00711110(local_24,puVar4);
-                if (param_3 < *(int *)((int)local_24 + 0x58) + iVar5 + iVar3) {
+                iVar5 = FUN_00711110(this_00,puVar4);
+                if (param_3 < *(int *)(this_00 + 0x58) + iVar5 + iVar3) {
                   if ((char)*local_30 != '\0') {
                     if (local_14 == 0) {
                       FUN_006b60b0((char *)local_30,(char *)local_30);
@@ -87,7 +96,8 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
                     else {
                       local_c = local_30;
                       do {
-                        local_8 = FUN_00713200((char *)0x0,local_c,(uint *)0x0,param_3,&local_c);
+                        local_8 = GetFittingStr(this_00,(char *)0x0,local_c,(uint *)0x0,param_3,
+                                                &local_c);
                         FUN_006b5aa0((int)local_10,local_8);
                         if (local_8 != (char *)0x0) {
                           FUN_006ab060(&local_8);
@@ -102,14 +112,14 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
                 if (iVar3 != 0) {
                   FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x795);
                 }
-                iVar3 = FUN_00711110(local_24,local_30);
-                if (*(int *)((int)local_24 + 0x7e) == 0) {
-                  pcVar6 = (char *)0x0;
+                iVar3 = FUN_00711110(this_00,local_30);
+                if (*(int *)(this_00 + 0x7e) == 0) {
+                  pcVar6 = (ccFntTy *)0x0;
                 }
                 else {
-                  pcVar6 = (char *)((int)local_24 + 0x9e);
+                  pcVar6 = this_00 + 0x9e;
                 }
-                puVar4 = (uint *)FUN_00714fb0(&local_3c,0,param_2,pcVar6);
+                puVar4 = (uint *)FUN_00714fb0(&local_3c,0,param_2,(char *)pcVar6);
               }
               if ((local_18 < local_20 + -1) &&
                  (iVar5 = FUN_007121a0(param_1,local_18 + 1,local_1c), iVar5 != 0)) {
@@ -121,7 +131,7 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
                    (iVar3 = FUN_00714f70(&local_30,(char *)param_2), iVar3 != 0)) {
                   FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x79d);
                 }
-                iVar3 = FUN_00711110(local_24,local_30);
+                iVar3 = FUN_00711110(this_00,local_30);
                 if (param_3 < iVar3) {
                   iVar3 = FUN_00714dc0(&local_30,local_3c);
                   if (iVar3 != 0) {
@@ -138,7 +148,8 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
                     else {
                       local_c = local_30;
                       do {
-                        local_8 = FUN_00713200((char *)0x0,local_c,(uint *)0x0,param_3,&local_c);
+                        local_8 = GetFittingStr(this_00,(char *)0x0,local_c,(uint *)0x0,param_3,
+                                                &local_c);
                         FUN_006b5aa0((int)puVar4,local_8);
                         if (local_8 != (char *)0x0) {
                           FUN_006ab060(&local_8);
@@ -167,7 +178,7 @@ uint * FUN_007121f0(int param_1,uint *param_2,int param_3,int param_4,uint param
           else {
             local_c = local_30;
             do {
-              local_8 = FUN_00713200((char *)0x0,local_c,(uint *)0x0,param_3,&local_c);
+              local_8 = GetFittingStr(this_00,(char *)0x0,local_c,(uint *)0x0,param_3,&local_c);
               FUN_006b5aa0((int)puVar4,local_8);
               if (local_8 != (char *)0x0) {
                 FUN_006ab060(&local_8);

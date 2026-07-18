@@ -1,4 +1,4 @@
-FUN_00501190:
+CPanelTy::PaintBCapacity:
 00501190  55                        PUSH EBP
 00501191  8B EC                     MOV EBP,ESP
 00501193  83 EC 54                  SUB ESP,0x54

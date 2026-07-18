@@ -1,4 +1,4 @@
-FUN_005d8a90:
+SIDTy::DeleteCtrls:
 005D8A90  55                        PUSH EBP
 005D8A91  8B EC                     MOV EBP,ESP
 005D8A93  83 EC 48                  SUB ESP,0x48

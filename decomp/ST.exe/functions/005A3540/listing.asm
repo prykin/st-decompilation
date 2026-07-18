@@ -1,4 +1,4 @@
-FUN_005a3540:
+FSGSTy::SetGameList:
 005A3540  55                        PUSH EBP
 005A3541  8B EC                     MOV EBP,ESP
 005A3543  81 EC B8 02 00 00         SUB ESP,0x2b8

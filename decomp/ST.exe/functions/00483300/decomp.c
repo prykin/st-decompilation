@@ -85,12 +85,14 @@ LAB_00483342:
           sVar9 = (short)local_10 + local_28;
           sVar10 = (short)local_14 - uStack_26;
           if (*(int *)((int)param_1 + 0x736) == 0) {
-            iVar3 = thunk_FUN_0041f9b0(sVar8,sVar1,(short)local_1c,sVar9,sVar10,(short)local_8,
-                                       *(int *)((int)param_1 + 0x79a),(int *)0x0,0);
+            iVar3 = STSprGameObjC::CheckRay
+                              ((STSprGameObjC *)param_1,sVar8,sVar1,(short)local_1c,sVar9,sVar10,
+                               (short)local_8,*(int *)((int)param_1 + 0x79a),(int *)0x0,0);
           }
           else {
-            iVar3 = thunk_FUN_0041f9b0(sVar8,sVar1,(short)local_1c,sVar9,sVar10,(short)local_8,
-                                       *(int *)((int)param_1 + 0x79a),(int *)0x0,1);
+            iVar3 = STSprGameObjC::CheckRay
+                              ((STSprGameObjC *)param_1,sVar8,sVar1,(short)local_1c,sVar9,sVar10,
+                               (short)local_8,*(int *)((int)param_1 + 0x79a),(int *)0x0,1);
           }
           if (iVar3 == 0) {
             return 8;

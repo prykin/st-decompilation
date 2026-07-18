@@ -1,4 +1,4 @@
-FUN_00710ba0:
+ccFntTy::CreateSurf:
 00710BA0  55                        PUSH EBP
 00710BA1  8B EC                     MOV EBP,ESP
 00710BA3  83 EC 54                  SUB ESP,0x54

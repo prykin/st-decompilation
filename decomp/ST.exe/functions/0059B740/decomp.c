@@ -1,24 +1,31 @@
 
-void FUN_0059b740(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\fsgs_obj.cpp
+   FSGSTy::CloseButtons */
+
+void __thiscall FSGSTy::CloseButtons(FSGSTy *this)
 
 {
   code *pcVar1;
+  MMObjTy *this_00;
   int iVar2;
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  void *local_8;
+  MMObjTy *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = (MMObjTy *)this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    thunk_FUN_005b6480();
-    thunk_FUN_005b6730(local_8,0xc,'\x01',-1);
-    thunk_FUN_0059f670();
-    *(undefined1 *)((int)local_8 + 0x65) = 4;
-    *(undefined1 *)((int)local_8 + 0x1a5f) = 0;
+    MMObjTy::CloseButtons(local_8);
+    thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
+    DeleteCtrls((FSGSTy *)this_00);
+    this_00[0x65] = (MMObjTy)0x4;
+    this_00[0x1a5f] = (MMObjTy)0x0;
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

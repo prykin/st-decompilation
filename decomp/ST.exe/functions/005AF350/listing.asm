@@ -1,4 +1,4 @@
-FUN_005af350:
+ChooseMapTy::DeleteCtrls:
 005AF350  55                        PUSH EBP
 005AF351  8B EC                     MOV EBP,ESP
 005AF353  83 EC 4C                  SUB ESP,0x4c

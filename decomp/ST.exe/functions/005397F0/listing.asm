@@ -1,4 +1,4 @@
-FUN_005397f0:
+PausePanelTy::GetMessage:
 005397F0  55                        PUSH EBP
 005397F1  8B EC                     MOV EBP,ESP
 005397F3  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_005206f0:
+InfocPanelTy::Update:
 005206F0  55                        PUSH EBP
 005206F1  8B EC                     MOV EBP,ESP
 005206F3  81 EC 84 01 00 00         SUB ESP,0x184

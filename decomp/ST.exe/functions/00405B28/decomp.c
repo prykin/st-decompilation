@@ -1,5 +1,5 @@
 
-void __cdecl thunk_FUN_005544e0(uint *param_1)
+void __thiscall cLoadingTy::delete(cLoadingTy *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -14,7 +14,7 @@ void __cdecl thunk_FUN_005544e0(uint *param_1)
   iVar2 = __setjmp3(auStack_44,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
     if (param_1 != (uint *)0x0) {
-      FUN_006f20e0(param_1);
+      cMf32::RecMemFree(DAT_00806780,param_1);
       if ((uint *)param_1[2] != (uint *)0x0) {
         FUN_00710560((uint *)param_1[2]);
       }

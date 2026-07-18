@@ -1,5 +1,9 @@
 
-void FUN_00440990(undefined4 param_1,int *param_2,uint param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::_ChangeDock */
+
+void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
 
 {
   int iVar1;

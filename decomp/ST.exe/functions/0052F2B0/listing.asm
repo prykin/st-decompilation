@@ -1,4 +1,4 @@
-FUN_0052f2b0:
+OptPanelTy::SwitchOptPanel:
 0052F2B0  55                        PUSH EBP
 0052F2B1  8B EC                     MOV EBP,ESP
 0052F2B3  83 EC 58                  SUB ESP,0x58

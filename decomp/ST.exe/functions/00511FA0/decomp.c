@@ -1,33 +1,39 @@
 
-undefined4 __thiscall FUN_00511fa0(void *this,char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\helppan.cpp
+   HelpPanelTy::SetPanel */
+
+undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
 
 {
   code *pcVar1;
+  HelpPanelTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
   void *unaff_ESI;
   undefined4 local_48 [16];
-  void *local_8;
+  HelpPanelTy *local_8;
   
   uVar4 = DAT_00858df8;
-  if (*(char *)((int)this + 0x1a0) == param_1) {
+  if (this[0x1a0] == (HelpPanelTy)param_1) {
     return 0;
   }
   DAT_00858df8 = &stack0xffffffb4;
   local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    *(char *)((int)local_8 + 0x1a0) = param_1;
+    local_8[0x1a0] = (HelpPanelTy)param_1;
     if (param_1 != '\0') {
-      if (DAT_008016e8 != (void *)0x0) {
-        thunk_FUN_0053f650(DAT_008016e8,'\0');
+      if (DAT_008016e8 != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(DAT_008016e8,'\0');
       }
-      if (DAT_0080167c != (void *)0x0) {
-        thunk_FUN_0053f650(DAT_0080167c,'\0');
+      if (DAT_0080167c != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(DAT_0080167c,'\0');
       }
-      if (DAT_00801684 != (void *)0x0) {
-        thunk_FUN_0053f650(DAT_00801684,'\0');
+      if (DAT_00801684 != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(DAT_00801684,'\0');
       }
       if (DAT_00801698 != (int *)0x0) {
         (**(code **)(*DAT_00801698 + 0x1c))(0);
@@ -44,26 +50,26 @@ undefined4 __thiscall FUN_00511fa0(void *this,char param_1)
       if (DAT_00802a48 != (int *)0x0) {
         (**(code **)(*DAT_00802a48 + 0x1c))(0);
       }
-      if (DAT_00801680 != (void *)0x0) {
-        thunk_FUN_0053f650(DAT_00801680,'\0');
+      if (DAT_00801680 != (ProdPanelTy *)0x0) {
+        ProdPanelTy::SetPanel(DAT_00801680,'\0');
       }
       if (DAT_0080168c != (int *)0x0) {
         (**(code **)(*DAT_0080168c + 0x1c))(0);
       }
-      if (DAT_008016e4 != (void *)0x0) {
-        thunk_FUN_0053a820(DAT_008016e4,'\0');
+      if (DAT_008016e4 != (PlayPanelTy *)0x0) {
+        PlayPanelTy::SetPanel(DAT_008016e4,'\0');
       }
-      if (DAT_008016dc != 0) {
-        thunk_FUN_0052f7e0();
+      if (DAT_008016dc != (OptPanelTy *)0x0) {
+        OptPanelTy::SwitchOptPanelOff(DAT_008016dc);
       }
-      thunk_FUN_00511df0(1);
+      SwitchOptPanel(this_00,1);
       DAT_00858df8 = (undefined1 *)uVar4;
       return 1;
     }
-    if ((DAT_00801688 != (void *)0x0) && (*(short *)((int)DAT_00801688 + 0x23f) == 1)) {
-      thunk_FUN_004fa400(DAT_00801688,1);
+    if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)(DAT_00801688 + 0x23f) == 1)) {
+      CPanelTy::ShiftControls(DAT_00801688,1);
     }
-    thunk_FUN_00511df0(0);
+    SwitchOptPanel(this_00,0);
     DAT_00858df8 = (undefined1 *)uVar4;
     return 1;
   }

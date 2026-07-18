@@ -1,5 +1,5 @@
 
-void thunk_FUN_0068f660(int param_1)
+void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
 
 {
   uint uVar1;
@@ -8,6 +8,7 @@ void thunk_FUN_0068f660(int param_1)
   int iVar4;
   undefined2 *puVar5;
   int *piVar6;
+  AiFltClassTy *this_00;
   int iVar7;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
@@ -19,10 +20,11 @@ void thunk_FUN_0068f660(int param_1)
   undefined8 uVar9;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  AiTactClassTy *pAStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pAStack_8 = this;
   iVar4 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if ((param_1 != 0) && (uVar1 = *(uint *)(param_1 + 0xc), uVar8 = extraout_EDX, uVar1 != 0)) {
@@ -37,8 +39,7 @@ void thunk_FUN_0068f660(int param_1)
           piVar6 = (int *)0x0;
         }
         else {
-          piVar6 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar8 >> 8),
-                                                      *(undefined1 *)((int)pvStack_8 + 0x24)),
+          piVar6 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar8 >> 8),pAStack_8[0x24]),
                                              CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),1);
           uVar8 = extraout_EDX_00;
         }
@@ -52,9 +53,9 @@ void thunk_FUN_0068f660(int param_1)
             bVar3 = true;
           }
           if ((bVar3) &&
-             (iVar4 = thunk_FUN_0068e290(pvStack_8,(short)piVar6[0x207]), uVar8 = extraout_EDX_01,
-             iVar4 != 0)) {
-            thunk_FUN_0065d760(piVar6,0);
+             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(pAStack_8,(short)piVar6[0x207]),
+             uVar8 = extraout_EDX_01, this_00 != (AiFltClassTy *)0x0)) {
+            AiFltClassTy::_AddObjFlt(this_00,piVar6,0);
             FUN_006b0c70(param_1,uVar1);
             uVar8 = extraout_EDX_02;
           }

@@ -1,4 +1,4 @@
-FUN_004f80a0:
+CPanelTy::PaintTV:
 004F80A0  55                        PUSH EBP
 004F80A1  8B EC                     MOV EBP,ESP
 004F80A3  83 EC 70                  SUB ESP,0x70

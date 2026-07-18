@@ -4,6 +4,7 @@ uint * __cdecl thunk_FUN_00676170(undefined4 param_1)
 {
   code *pcVar1;
   int iVar2;
+  STGroupC *this;
   uint *puVar3;
   int iVar4;
   void *unaff_ESI;
@@ -27,13 +28,13 @@ uint * __cdecl thunk_FUN_00676170(undefined4 param_1)
     return (uint *)0x0;
   }
   if (DAT_007fa174 == 0) {
-    iVar2 = 0;
+    this = (STGroupC *)0x0;
   }
   else {
-    iVar2 = thunk_FUN_0042b760(param_1,0);
+    this = (STGroupC *)thunk_FUN_0042b760(param_1,0);
   }
-  if (iVar2 != 0) {
-    puVar3 = thunk_FUN_004233e0(iVar2);
+  if (this != (STGroupC *)0x0) {
+    puVar3 = STGroupC::GetGroupContent(this,(int)unaff_ESI);
     DAT_00858df8 = (undefined1 *)uVar5;
     return puVar3;
   }

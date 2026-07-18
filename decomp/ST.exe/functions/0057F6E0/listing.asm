@@ -1,4 +1,4 @@
-FUN_0057f6e0:
+STDcResourcC::CreateRes:
 0057F6E0  55                        PUSH EBP
 0057F6E1  8B EC                     MOV EBP,ESP
 0057F6E3  83 EC 58                  SUB ESP,0x58

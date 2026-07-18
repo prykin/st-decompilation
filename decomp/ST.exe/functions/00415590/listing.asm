@@ -1,4 +1,4 @@
-FUN_00415590:
+STGroupBoatC::Way3DGrpGetDistrPoint:
 00415590  55                        PUSH EBP
 00415591  8B EC                     MOV EBP,ESP
 00415593  83 EC 54                  SUB ESP,0x54

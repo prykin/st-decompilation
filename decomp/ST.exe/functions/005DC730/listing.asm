@@ -1,4 +1,4 @@
-FUN_005dc730:
+StartSystemTy::SetObjectives:
 005DC730  55                        PUSH EBP
 005DC731  8B EC                     MOV EBP,ESP
 005DC733  83 EC 6C                  SUB ESP,0x6c

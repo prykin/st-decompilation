@@ -2,6 +2,7 @@
 undefined4 __fastcall thunk_FUN_004e04a0(int param_1)
 
 {
+  STT3DSprC *this;
   int iVar1;
   int iVar2;
   int iVar3;
@@ -19,7 +20,7 @@ undefined4 __fastcall thunk_FUN_004e04a0(int param_1)
     switch(*(undefined4 *)(param_1 + 0x4e8)) {
     case 0:
 switchD_004e04e5_caseD_0:
-      thunk_FUN_004ac410(0xb);
+      STT3DSprC::StopShow((STT3DSprC *)(param_1 + 0x1d5),0xb);
       break;
     case 1:
       if (iVar1 == 0x5e) {
@@ -87,7 +88,8 @@ LAB_004e05d3:
   if (*(int *)(param_1 + 0x4e8) == 0) {
     return 0;
   }
-  iVar1 = thunk_FUN_004ab880(0xb,DAT_0080678c,pbStack_8,0x1d);
+  this = (STT3DSprC *)(param_1 + 0x1d5);
+  iVar1 = STT3DSprC::LoadSequence(this,0xb,DAT_0080678c,pbStack_8,0x1d);
   if (iVar1 != 0) {
     FUN_006a5e40(iVar1,DAT_007ed77c,0x7bf910,0xc3);
   }
@@ -114,9 +116,9 @@ LAB_004e05d3:
   iVar3 = 0;
   iVar2 = iVar2 + -1;
 LAB_004e068c:
-  thunk_FUN_004abce0((void *)(param_1 + 0x1d5),0xb,iVar3,iVar2,'\0');
-  thunk_FUN_004abe40((void *)(param_1 + 0x1d5),'\v',iVar3);
-  thunk_FUN_004ac1a0(0xb,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  thunk_FUN_004abce0(this,0xb,iVar3,iVar2,'\0');
+  thunk_FUN_004abe40(this,'\v',iVar3);
+  STT3DSprC::StartShow(this,0xb,*(undefined4 *)(DAT_00802a38 + 0xe4));
   return 0;
 }
 

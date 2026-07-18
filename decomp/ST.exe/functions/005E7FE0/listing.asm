@@ -1,4 +1,4 @@
-FUN_005e7fe0:
+WaitTy::ShowDescription:
 005E7FE0  55                        PUSH EBP
 005E7FE1  8B EC                     MOV EBP,ESP
 005E7FE3  81 EC A4 01 00 00         SUB ESP,0x1a4

@@ -1,4 +1,4 @@
-FUN_00513a40:
+HelpPanelTy::IndexBut:
 00513A40  55                        PUSH EBP
 00513A41  8B EC                     MOV EBP,ESP
 00513A43  83 EC 48                  SUB ESP,0x48

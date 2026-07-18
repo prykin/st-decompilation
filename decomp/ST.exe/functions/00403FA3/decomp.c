@@ -18,18 +18,18 @@ void thunk_FUN_00542d80(void)
   if (iVar2 == 0) {
     this = (void *)FUN_0072e530(0x34);
     if (this == (void *)0x0) {
-      DAT_00802a28 = (int *)0x0;
+      DAT_00802a28 = (InterSystemC *)0x0;
     }
     else {
-      DAT_00802a28 = thunk_FUN_00542440(this,DAT_00806728);
+      DAT_00802a28 = (InterSystemC *)thunk_FUN_00542440(this,DAT_00806728);
     }
-    DAT_00802a28[8] = 0;
-    (**(code **)*DAT_00802a28)();
-    FUN_006e4960(DAT_0081163c,DAT_00802a28,0);
-    thunk_FUN_005424a0();
+    *(int *)(DAT_00802a28 + 0x20) = 0;
+    (*(code *)**(undefined4 **)DAT_00802a28)();
+    FUN_006e4960(DAT_0081163c,(int *)DAT_00802a28,0);
+    InterSystemC::CreateInterfObjects(DAT_00802a28);
     uStack_14 = 5;
-    (**(code **)(*DAT_00802a28 + 0x20))(auStack_24);
-    DAT_00802a28[8] = 1;
+    (**(code **)(*(int *)DAT_00802a28 + 0x20))(auStack_24);
+    *(int *)(DAT_00802a28 + 0x20) = 1;
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

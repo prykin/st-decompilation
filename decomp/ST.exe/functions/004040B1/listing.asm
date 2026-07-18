@@ -1,2 +1,2 @@
-thunk_FUN_0051ff50:
+InfocPanelTy::InitInfocPanel:
 004040B1  E9 9A BE 11 00            JMP 0x0051ff50

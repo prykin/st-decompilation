@@ -1,4 +1,4 @@
-FUN_006a0740:
+CGenerate::SaveMap:
 006A0740  55                        PUSH EBP
 006A0741  8B EC                     MOV EBP,ESP
 006A0743  83 EC 50                  SUB ESP,0x50

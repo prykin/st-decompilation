@@ -1,5 +1,9 @@
 
-void __thiscall FUN_005396e0(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\pause.cpp
+   PausePanelTy::ShiftControls */
+
+void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -8,31 +12,31 @@ void __thiscall FUN_005396e0(void *this,int param_1)
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar5;
+  PausePanelTy *pPVar5;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  PausePanelTy *local_8;
   
-  if (param_1 != *(int *)((int)this + 0x5c)) {
-    *(int *)((int)this + 0x5c) = param_1;
-    puVar5 = (undefined4 *)((int)this + 0x18);
+  if (param_1 != *(int *)(this + 0x5c)) {
+    *(int *)(this + 0x5c) = param_1;
+    pPVar5 = this + 0x18;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pPVar5 = 0;
+      pPVar5 = pPVar5 + 4;
     }
-    sVar2 = (short)*(undefined4 *)((int)this + 0x174);
-    *(undefined4 *)((int)this + 0x28) = 0x24;
+    sVar2 = (short)*(undefined4 *)(this + 0x174);
+    *(undefined4 *)(this + 0x28) = 0x24;
     if (param_1 != 0) {
       sVar2 = -sVar2;
     }
-    *(short *)((int)this + 0x2c) = sVar2;
+    *(short *)(this + 0x2c) = sVar2;
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     local_8 = this;
     iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
-      if (*(int *)((int)local_8 + 0x184) != 0) {
-        FUN_006e6080(local_8,2,*(int *)((int)local_8 + 0x184),(undefined4 *)((int)local_8 + 0x18));
+      if (*(int *)(local_8 + 0x184) != 0) {
+        FUN_006e6080(local_8,2,*(int *)(local_8 + 0x184),(undefined4 *)(local_8 + 0x18));
       }
       DAT_00858df8 = (undefined4 *)local_4c;
       return;

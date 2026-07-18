@@ -1,4 +1,4 @@
-FUN_005d7a50:
+SIDTy::InitSID:
 005D7A50  55                        PUSH EBP
 005D7A51  8B EC                     MOV EBP,ESP
 005D7A53  83 EC 48                  SUB ESP,0x48

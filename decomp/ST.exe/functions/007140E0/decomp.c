@@ -3,6 +3,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
 
 {
   char cVar1;
+  ccFntTy *this_00;
   bool bVar2;
   char *pcVar3;
   uint *puVar4;
@@ -27,38 +28,38 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   local_c = 0;
   local_10 = 0;
   local_5 = 0;
-  if ((((*(char **)((int)this + 0x58) == (char *)0x0) || (*(int *)this == 0)) ||
+  if ((((*(char **)((int)this + 0x58) == (char *)0x0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
       (*(int *)((int)this + 8) <= *(int *)((int)this + 4))) ||
      (**(char **)((int)this + 0x58) == '\0')) {
     return 0;
   }
-  FUN_007108b0(local_6c);
+  ccFntTy::Save(*(ccFntTy **)this,local_6c);
   FUN_007109f0(*(void **)this,(undefined4 *)((int)this + 0x10));
-  iVar9 = *(int *)this;
+  this_00 = *(ccFntTy **)this;
   if (&stack0x00000000 != &DAT_0000000c) {
-    local_c = *(int *)(iVar9 + 0x72);
+    local_c = *(int *)(this_00 + 0x72);
   }
   if (&stack0x00000000 != (undefined1 *)0x10) {
-    iVar8 = *(int *)(iVar9 + 0x76);
+    iVar8 = *(int *)(this_00 + 0x76);
     local_10 = iVar8;
   }
-  if (*(int *)(iVar9 + 0x7a) == 0) {
+  if (*(int *)(this_00 + 0x7a) == 0) {
     iVar8 = *(int *)((int)this + 8) + -3;
     if (iVar8 <= *(int *)((int)this + 4)) {
       if (param_1 != 0) {
         if (*(int *)((int)this + 4) == iVar8) {
-          FUN_00711b70(*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,-1);
+          ccFntTy::WrTxt(this_00,*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -2) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x98);
-          FUN_00711b70(*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x98),-1,-1);
+          ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x98),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -1) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x9c);
-          FUN_00711b70(*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x9c),-1,-1);
+          ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x58),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x9c),-1,-1);
         }
         *(undefined4 *)(*(int *)this + 0x82) = 0xffffffff;
       }
@@ -71,7 +72,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     }
     bVar2 = false;
     local_18 = 0;
-    iVar8 = FUN_0070cd90((char *)(iVar9 + 0x9e),
+    iVar8 = FUN_0070cd90((char *)(this_00 + 0x9e),
                          (uint *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)));
     if (iVar8 == 0) {
       iVar8 = *(int *)((int)this + 0xc) + 1;
@@ -243,31 +244,31 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         FUN_006b4170(local_c,iVar8,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
                      (char)*(undefined4 *)((int)this + 0xa0));
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -3) {
-          FUN_00711b70(*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,-1);
+          ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -2) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x98);
-          FUN_00711b70(*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x98),-1,-1);
+          ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x98),-1,-1);
         }
         if (*(int *)((int)this + 4) == *(int *)((int)this + 8) + -1) {
           *(undefined4 *)(*(int *)this + 0x82) = *(undefined4 *)((int)this + 0x9c);
-          FUN_00711b70(*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x9c),-1,-1);
+          ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x90),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x9c),-1,-1);
         }
         *(undefined4 *)(*(int *)this + 0x82) = 0xffffffff;
       }
       goto LAB_00714acb;
     }
-    if ((*(int *)(iVar9 + 0x5c) < 0) && (*(int *)((int)this + 0x74) < -4)) {
+    if ((*(int *)(this_00 + 0x5c) < 0) && (*(int *)((int)this + 0x74) < -4)) {
       param_2 = '\x01';
     }
     if (-1 < *(int *)((int)this + 0x7c)) {
-      if (*(int *)(iVar9 + 0xa0) != 0) {
-        FUN_00710790(iVar9);
+      if (*(int *)(this_00 + 0xa0) != 0) {
+        FUN_00710790((int)this_00);
       }
-      iVar9 = *(int *)(*(int *)this + 0x5c) + *(int *)(iVar9 + 0x8a) + *(int *)((int)this + 0xa4);
+      iVar9 = *(int *)(*(int *)this + 0x5c) + *(int *)(this_00 + 0x8a) + *(int *)((int)this + 0xa4);
       iVar8 = *(int *)((int)this + 0x7c) + 1;
       *(undefined4 *)((int)this + 0x7c) = 0xffffffff;
       *(int *)((int)this + 0x80) = iVar8;
@@ -307,8 +308,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
           else {
             iVar8 = -1;
           }
-          FUN_00711b70(*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
-                       *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,iVar8);
+          ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
+                         *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),-1,iVar8);
         }
       }
     }
@@ -495,8 +496,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     if (param_2 == '\x01') {
       FUN_006b4170(local_c,local_10,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
                    (char)*(undefined4 *)((int)this + 0xa0));
-      FUN_00711b70(*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
-                   *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),iVar8,local_14);
+      ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
+                     *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),iVar8,local_14);
       goto LAB_00714acb;
     }
     if (local_18 != 0) {
@@ -511,7 +512,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
     iVar7 = *(int *)((int)this + 0xa4);
     iVar9 = local_14;
   }
-  FUN_00711b70(*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),iVar7,uVar13,iVar8,iVar9);
+  ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),iVar7,
+                 uVar13,iVar8,iVar9);
 LAB_00714acb:
   *(int *)((int)this + 0xc) = *(int *)((int)this + 0xc) + 1;
   *(int *)((int)this + 4) = *(int *)((int)this + 4) + 1;

@@ -1,2 +1,2 @@
-thunk_FUN_005dd470:
+StartSystemTy::ChatMessage:
 00402937  E9 34 AB 1D 00            JMP 0x005dd470

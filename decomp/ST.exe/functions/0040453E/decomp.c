@@ -38,7 +38,7 @@ int __thiscall thunk_FUN_00605b60(void *this,uint param_1,uint param_2,int *para
   undefined4 uStack_1c;
   uint uStack_18;
   uint uStack_14;
-  int iStack_10;
+  undefined4 *puStack_10;
   uint uStack_c;
   int iStack_8;
   
@@ -59,7 +59,7 @@ int __thiscall thunk_FUN_00605b60(void *this,uint param_1,uint param_2,int *para
   *(uint *)((int)this + 0x1c) = uVar4;
   piVar8 = (int *)((uVar4 >> 0x10) % (iStack_30 - 1U) + 2);
   piStack_28 = piVar8;
-  piVar2 = (int *)thunk_FUN_006041a0((int)piVar8);
+  piVar2 = (int *)STExplosionC::CreateGroupPart(this,(int)piVar8);
   *(int **)((int)this + 0x269) = piVar2;
   if (piVar2 == piVar8) {
     if (0 < (int)piVar8) {
@@ -82,7 +82,7 @@ int __thiscall thunk_FUN_00605b60(void *this,uint param_1,uint param_2,int *para
     iStack_8 = 0;
     if (0 < (int)piVar8) {
       param_3 = aiStack_ec;
-      iStack_10 = (int)this + 0x219;
+      puStack_10 = (undefined4 *)((int)this + 0x219);
       do {
         iVar6 = iStack_8;
         puVar9 = auStack_78;
@@ -133,7 +133,7 @@ int __thiscall thunk_FUN_00605b60(void *this,uint param_1,uint param_2,int *para
             iStack_48 = FUN_006c8290(this_00,(int)((uVar1 - uStack_18) * 10000) / (int)this_00);
           }
         }
-        iVar6 = iStack_10;
+        puVar9 = puStack_10;
         uVar4 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)((int)this + 0x1c) = uVar4;
         iStack_4c = iStack_4c + (-0x46 - (uVar4 >> 0x10) % 0x29);
@@ -181,10 +181,10 @@ int __thiscall thunk_FUN_00605b60(void *this,uint param_1,uint param_2,int *para
         puStack_88 = auStack_78;
         uStack_54 = uVar1;
         uStack_50 = uVar5;
-        thunk_FUN_00627eb0((int)auStack_9c);
+        STParticleC::GetMessage((STParticleC *)*puStack_10,(int)auStack_9c);
         param_3 = param_3 + 1;
         iStack_8 = iStack_8 + 1;
-        iStack_10 = iVar6 + 4;
+        puStack_10 = puVar9 + 1;
         piVar8 = piStack_28;
       } while (iStack_8 < (int)piStack_28);
     }

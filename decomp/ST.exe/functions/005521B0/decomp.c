@@ -1,8 +1,13 @@
 
-void FUN_005521b0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\tradecen.cpp
+   TradePanelTy::Update */
+
+void __thiscall TradePanelTy::Update(TradePanelTy *this)
 
 {
   code *pcVar1;
+  TradePanelTy *this_00;
   int iVar2;
   int iVar3;
   void *unaff_ESI;
@@ -12,19 +17,21 @@ void FUN_005521b0(void)
   undefined4 local_14;
   undefined4 local_10;
   undefined4 local_c;
-  void *local_8;
+  TradePanelTy *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffa4;
+  local_8 = this;
   iVar2 = __setjmp3(local_58,0,unaff_ESI,uVar4);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    local_18 = *(int *)((int)local_8 + 0x1ab);
-    local_14 = *(undefined4 *)((int)local_8 + 0x1af);
-    local_10 = *(undefined4 *)((int)local_8 + 0x1b3);
-    local_c = *(undefined4 *)((int)local_8 + 0x1b7);
-    thunk_FUN_0043beb0(DAT_007fa174,10,(int *)((int)local_8 + 0x1ab));
-    thunk_FUN_00551b10(local_8);
-    thunk_FUN_00551ba0();
+    local_18 = *(int *)(local_8 + 0x1ab);
+    local_14 = *(undefined4 *)(local_8 + 0x1af);
+    local_10 = *(undefined4 *)(local_8 + 0x1b3);
+    local_c = *(undefined4 *)(local_8 + 0x1b7);
+    thunk_FUN_0043beb0(DAT_007fa174,10,(int *)(local_8 + 0x1ab));
+    thunk_FUN_00551b10(this_00);
+    PaintPanel(this_00);
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

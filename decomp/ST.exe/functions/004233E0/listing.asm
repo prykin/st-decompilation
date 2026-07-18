@@ -1,4 +1,4 @@
-FUN_004233e0:
+STGroupC::GetGroupContent:
 004233E0  55                        PUSH EBP
 004233E1  8B EC                     MOV EBP,ESP
 004233E3  83 EC 58                  SUB ESP,0x58

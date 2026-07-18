@@ -1,9 +1,13 @@
 
-void __thiscall FUN_004edf30(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\behpanel.cpp
+   BehPanelTy::ShiftControls */
+
+void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
 
 {
   code *pcVar1;
-  void *this_00;
+  BehPanelTy *this_00;
   short sVar2;
   int iVar3;
   int iVar4;
@@ -11,33 +15,33 @@ void __thiscall FUN_004edf30(void *this,int param_1)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  BehPanelTy *local_8;
   
-  if (param_1 != *(int *)((int)this + 0x5c)) {
+  if (param_1 != *(int *)(this + 0x5c)) {
     local_8 = this;
-    thunk_FUN_0053ea50(this,param_1);
-    sVar2 = (short)*(undefined4 *)((int)this + 0x174);
-    *(undefined4 *)((int)this + 0x28) = 0x24;
+    SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
+    sVar2 = (short)*(undefined4 *)(this + 0x174);
+    *(undefined4 *)(this + 0x28) = 0x24;
     if (param_1 != 0) {
       sVar2 = -sVar2;
     }
-    *(short *)((int)this + 0x2e) = sVar2;
+    *(short *)(this + 0x2e) = sVar2;
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar3 == 0) {
-      if (*(int *)((int)local_8 + 0x1be) != 0) {
-        FUN_006e6080(local_8,2,*(int *)((int)local_8 + 0x1be),(undefined4 *)((int)local_8 + 0x18));
+      if (*(int *)(local_8 + 0x1be) != 0) {
+        FUN_006e6080(local_8,2,*(int *)(local_8 + 0x1be),(undefined4 *)(local_8 + 0x18));
       }
-      if (*(int *)((int)this_00 + 0x1c2) != 0) {
-        FUN_006e6080(this_00,2,*(int *)((int)this_00 + 0x1c2),(undefined4 *)((int)this_00 + 0x18));
+      if (*(int *)(this_00 + 0x1c2) != 0) {
+        FUN_006e6080(this_00,2,*(int *)(this_00 + 0x1c2),(undefined4 *)(this_00 + 0x18));
       }
-      if (*(int *)((int)this_00 + 0x1c6) != 0) {
-        FUN_006e6080(this_00,2,*(int *)((int)this_00 + 0x1c6),(undefined4 *)((int)this_00 + 0x18));
+      if (*(int *)(this_00 + 0x1c6) != 0) {
+        FUN_006e6080(this_00,2,*(int *)(this_00 + 0x1c6),(undefined4 *)(this_00 + 0x18));
       }
-      if (*(int *)((int)this_00 + 0x1ca) != 0) {
-        FUN_006e6080(this_00,2,*(int *)((int)this_00 + 0x1ca),(undefined4 *)((int)this_00 + 0x18));
+      if (*(int *)(this_00 + 0x1ca) != 0) {
+        FUN_006e6080(this_00,2,*(int *)(this_00 + 0x1ca),(undefined4 *)(this_00 + 0x18));
       }
       DAT_00858df8 = (undefined4 *)local_4c;
       return;

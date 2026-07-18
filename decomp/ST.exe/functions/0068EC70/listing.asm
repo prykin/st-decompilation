@@ -1,4 +1,4 @@
-FUN_0068ec70:
+AiTactClassTy::ExecClaim:
 0068EC70  55                        PUSH EBP
 0068EC71  8B EC                     MOV EBP,ESP
 0068EC73  81 EC 84 00 00 00         SUB ESP,0x84

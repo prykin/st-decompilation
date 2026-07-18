@@ -1,6 +1,12 @@
 
-void FUN_005ab1d0(int *param_1,int param_2,undefined4 param_3,int param_4,int param_5,DWORD param_6,
-                 DWORD param_7,int param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\load_obj.cpp
+   ChooseMapTy::OutListProc */
+
+void __thiscall
+ChooseMapTy::OutListProc
+          (ChooseMapTy *this,int *param_1,int param_2,undefined4 param_3,int param_4,int param_5,
+          DWORD param_6,DWORD param_7,int param_8)
 
 {
   code *pcVar1;

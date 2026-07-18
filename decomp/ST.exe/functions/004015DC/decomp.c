@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_0044a8a0(ushort param_1,void *param_2)
+undefined4 __thiscall STAllPlayersC::RegisterBlot(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
   code *pcVar1;

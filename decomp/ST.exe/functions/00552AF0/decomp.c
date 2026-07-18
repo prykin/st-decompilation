@@ -1,5 +1,9 @@
 
-void __thiscall FUN_00552af0(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\upginfo.cpp
+   UpgPanelTy::ShiftControls */
+
+void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -11,14 +15,14 @@ void __thiscall FUN_00552af0(void *this,int param_1)
   void *unaff_EDI;
   undefined4 local_44 [16];
   
-  if (param_1 != *(int *)((int)this + 0x5c)) {
-    thunk_FUN_0053ea50(this,param_1);
-    sVar3 = (short)*(undefined4 *)((int)this + 0x174);
-    *(undefined4 *)((int)this + 0x28) = 0x24;
+  if (param_1 != *(int *)(this + 0x5c)) {
+    SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
+    sVar3 = (short)*(undefined4 *)(this + 0x174);
+    *(undefined4 *)(this + 0x28) = 0x24;
     if (param_1 != 0) {
       sVar3 = -sVar3;
     }
-    *(short *)((int)this + 0x2e) = sVar3;
+    *(short *)(this + 0x2e) = sVar3;
     uVar2 = DAT_00858df8;
     iVar4 = __setjmp3(local_44,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {

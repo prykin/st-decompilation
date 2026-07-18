@@ -1,4 +1,4 @@
-FUN_00554f20:
+cLoadingTy::SetProcess:
 00554F20  55                        PUSH EBP
 00554F21  8B EC                     MOV EBP,ESP
 00554F23  83 EC 48                  SUB ESP,0x48

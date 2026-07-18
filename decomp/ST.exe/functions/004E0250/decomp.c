@@ -46,8 +46,9 @@ switchD_004e02b5_caseD_3a:
       }
     }
     else {
-      thunk_FUN_00440860(1,*(int **)(param_1 + 0x24),
-                         CONCAT22(extraout_var,*(undefined2 *)(param_1 + 0x32)));
+      STAllPlayersC::_ChangeMD
+                (DAT_007fa174,1,*(int **)(param_1 + 0x24),
+                 CONCAT22(extraout_var,*(undefined2 *)(param_1 + 0x32)));
     }
   }
   return;

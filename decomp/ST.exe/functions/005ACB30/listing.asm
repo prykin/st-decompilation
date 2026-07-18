@@ -1,4 +1,4 @@
-FUN_005acb30:
+ChooseMapTy::DoneChooseMap:
 005ACB30  55                        PUSH EBP
 005ACB31  8B EC                     MOV EBP,ESP
 005ACB33  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_00576e10:
+GameSystemC::CreateSystemObjects:
 00576E10  55                        PUSH EBP
 00576E11  8B EC                     MOV EBP,ESP
 00576E13  83 EC 48                  SUB ESP,0x48

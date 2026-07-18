@@ -1,71 +1,75 @@
 
-int thunk_FUN_00679470(void)
+int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
 
 {
   uint uVar1;
   code *pcVar2;
-  int iVar3;
-  int *piVar4;
-  int iVar5;
+  AiPlrClassTy *pAVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  int iVar6;
   undefined4 unaff_ESI;
+  AiTactClassTy *this_00;
   void *unaff_EDI;
-  uint *puVar6;
+  uint *puVar7;
   undefined4 uStack_80;
   undefined4 auStack_7c [16];
   uint auStack_3c [13];
-  int iStack_8;
+  AiPlrClassTy *pAStack_8;
   
   uStack_80 = DAT_00858df8;
   DAT_00858df8 = &uStack_80;
-  iVar3 = __setjmp3(auStack_7c,0,unaff_EDI,unaff_ESI);
-  if (iVar3 != 0) {
+  pAStack_8 = this;
+  iVar4 = __setjmp3(auStack_7c,0,unaff_EDI,unaff_ESI);
+  pAVar3 = pAStack_8;
+  if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_80;
-    iVar5 = FUN_006ad4d0(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x10e,0,iVar3,&DAT_007a4ccc);
-    if (iVar5 != 0) {
+    iVar6 = FUN_006ad4d0(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x10e,0,iVar4,&DAT_007a4ccc);
+    if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
-      iVar3 = (*pcVar2)();
-      return iVar3;
+      iVar4 = (*pcVar2)();
+      return iVar4;
     }
-    FUN_006a5e40(iVar3,0,0x7d2e4c,0x10f);
-    return iVar3;
+    FUN_006a5e40(iVar4,0,0x7d2e4c,0x10f);
+    return iVar4;
   }
-  if (*(int *)(iStack_8 + 0x695) == 0) {
+  if (*(int *)(pAStack_8 + 0x695) == 0) {
     FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2e4c,0xfd);
   }
-  puVar6 = auStack_3c;
-  for (iVar3 = 0xd; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+  puVar7 = auStack_3c;
+  for (iVar4 = 0xd; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *puVar7 = 0;
+    puVar7 = puVar7 + 1;
   }
   auStack_3c[0] = 0x71;
-  uVar1 = *(uint *)(*(int *)(iStack_8 + 0x695) + 0xc);
+  uVar1 = *(uint *)(*(int *)(pAVar3 + 0x695) + 0xc);
   do {
     uVar1 = uVar1 - 1;
     if ((int)uVar1 < 0) {
       DAT_00858df8 = (undefined4 *)uStack_80;
       return 0;
     }
-    iVar3 = *(int *)(iStack_8 + 0x695);
-    if (((iVar3 == 0) || ((int)uVar1 < 0)) || ((int)*(uint *)(iVar3 + 0xc) <= (int)uVar1)) {
+    iVar4 = *(int *)(pAVar3 + 0x695);
+    if (((iVar4 == 0) || ((int)uVar1 < 0)) || ((int)*(uint *)(iVar4 + 0xc) <= (int)uVar1)) {
 LAB_00679519:
-      iVar3 = 0;
+      this_00 = (AiTactClassTy *)0x0;
     }
     else {
-      if (uVar1 < *(uint *)(iVar3 + 0xc)) {
-        piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
+      if (uVar1 < *(uint *)(iVar4 + 0xc)) {
+        puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar1 + *(int *)(iVar4 + 0x1c));
       }
       else {
-        piVar4 = (int *)0x0;
+        puVar5 = (undefined4 *)0x0;
       }
-      if (piVar4[1] == 0) goto LAB_00679519;
-      iVar3 = *piVar4;
+      if (puVar5[1] == 0) goto LAB_00679519;
+      this_00 = (AiTactClassTy *)*puVar5;
     }
-    if (iVar3 != 0) {
+    if (this_00 != (AiTactClassTy *)0x0) {
       if (&stack0x00000000 != (undefined1 *)0x3c) {
-        thunk_FUN_0068fd00(auStack_3c);
+        AiTactClassTy::GetAiMess(this_00,auStack_3c);
       }
-      thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(iVar3 + 8));
-      FUN_006b0c70(*(int *)(iStack_8 + 0x695),uVar1);
+      thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(this_00 + 8));
+      FUN_006b0c70(*(int *)(pAVar3 + 0x695),uVar1);
     }
   } while( true );
 }

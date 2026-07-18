@@ -1,4 +1,4 @@
-FUN_00510370:
+FrmPanelTy::ShiftControls:
 00510370  55                        PUSH EBP
 00510371  8B EC                     MOV EBP,ESP
 00510373  83 EC 48                  SUB ESP,0x48

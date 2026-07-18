@@ -1,5 +1,5 @@
 
-void thunk_FUN_005cfe50(int param_1)
+void __thiscall SettMapMTy::SendDesc(SettMapMTy *this,int param_1)
 
 {
   code *pcVar1;

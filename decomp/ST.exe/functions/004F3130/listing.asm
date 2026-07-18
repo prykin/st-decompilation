@@ -1,4 +1,4 @@
-FUN_004f3130:
+CPanelTy::CreateBut:
 004F3130  55                        PUSH EBP
 004F3131  8B EC                     MOV EBP,ESP
 004F3133  81 EC CC 01 00 00         SUB ESP,0x1cc

@@ -1,5 +1,9 @@
 
-undefined4 FUN_00430620(short param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::IsTorpLive */
+
+undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_1,int param_2)
 
 {
   code *pcVar1;

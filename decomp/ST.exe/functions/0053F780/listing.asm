@@ -1,4 +1,4 @@
-FUN_0053f780:
+ProdPanelTy::ShiftControls:
 0053F780  55                        PUSH EBP
 0053F781  8B EC                     MOV EBP,ESP
 0053F783  83 EC 48                  SUB ESP,0x48

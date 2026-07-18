@@ -1,4 +1,4 @@
-FUN_00623170:
+STMineSetC::LoadImagMineSet:
 00623170  55                        PUSH EBP
 00623171  8B EC                     MOV EBP,ESP
 00623173  83 EC 4C                  SUB ESP,0x4c

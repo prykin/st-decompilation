@@ -1,4 +1,4 @@
-FUN_0056d370:
+STAppC::OpenGameDBs:
 0056D370  55                        PUSH EBP
 0056D371  8B EC                     MOV EBP,ESP
 0056D373  83 EC 48                  SUB ESP,0x48

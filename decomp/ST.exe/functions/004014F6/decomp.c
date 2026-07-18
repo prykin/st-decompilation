@@ -60,7 +60,7 @@ void __fastcall thunk_FUN_00664760(int param_1)
     asStack_e[1] = 0;
     asStack_e[4] = 5;
     thunk_FUN_006756d0(&sStack_10,asStack_e,asStack_e + 2,asStack_e + 3);
-    thunk_FUN_0065f1d0(&sStack_10);
+    AiFltClassTy::AppendZone((AiFltClassTy *)param_1,&sStack_10);
   }
   if ((*(char *)(param_1 + 0x122) == '\x01') && (*(int *)(*(int *)(param_1 + 0x223) + 0xc) == 0)) {
     iVar3 = *(int *)(param_1 + 0x22f);
@@ -74,7 +74,7 @@ void __fastcall thunk_FUN_00664760(int param_1)
         else {
           psVar2 = (short *)0x0;
         }
-        thunk_FUN_0065f660(psVar2,5);
+        AiFltClassTy::AppendPoint((AiFltClassTy *)param_1,psVar2,5);
         iVar3 = *(int *)(param_1 + 0x22f);
         uVar4 = uVar4 + 1;
         bVar5 = uVar4 < *(uint *)(iVar3 + 0xc);

@@ -1,4 +1,4 @@
-FUN_0054d640:
+STPlaySystemC::Life:
 0054D640  55                        PUSH EBP
 0054D641  8B EC                     MOV EBP,ESP
 0054D643  81 EC A4 00 00 00         SUB ESP,0xa4

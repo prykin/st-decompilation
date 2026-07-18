@@ -1,4 +1,4 @@
-FUN_005bfd30:
+MReportTy::PaintMainScore:
 005BFD30  55                        PUSH EBP
 005BFD31  8B EC                     MOV EBP,ESP
 005BFD33  83 EC 50                  SUB ESP,0x50

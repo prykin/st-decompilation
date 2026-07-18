@@ -1,4 +1,4 @@
-FUN_005dc050:
+StartSystemTy::LoadMapData:
 005DC050  55                        PUSH EBP
 005DC051  8B EC                     MOV EBP,ESP
 005DC053  81 EC 98 00 00 00         SUB ESP,0x98

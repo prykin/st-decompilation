@@ -1,4 +1,4 @@
-FUN_005e79b0:
+WaitTy::PaintWait:
 005E79B0  55                        PUSH EBP
 005E79B1  8B EC                     MOV EBP,ESP
 005E79B3  83 EC 48                  SUB ESP,0x48

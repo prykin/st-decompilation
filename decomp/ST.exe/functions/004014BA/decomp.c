@@ -128,9 +128,10 @@ LAB_00482fa9:
           sVar8 = *(short *)((int)piStack_8 + 0x43) - sVar9;
           uStack_1c = CONCAT22(sVar9,sVar8);
           asStack_c[0] = *(short *)((int)piStack_8 + 0x45);
-          iVar5 = thunk_FUN_0041f9b0((short)uVar2 + sVar1,sVar11,(short)uStack_24,sVar3,sVar8,
-                                     *(short *)((int)piStack_8 + 0x45),
-                                     *(int *)((int)param_1 + 0x79a),(int *)&piStack_14,0);
+          iVar5 = STSprGameObjC::CheckRay
+                            ((STSprGameObjC *)param_1,(short)uVar2 + sVar1,sVar11,(short)uStack_24,
+                             sVar3,sVar8,*(short *)((int)piStack_8 + 0x45),
+                             *(int *)((int)param_1 + 0x79a),(int *)&piStack_14,0);
           if (iVar5 == 0) {
             return -(piStack_8 != piStack_14) & 8;
           }

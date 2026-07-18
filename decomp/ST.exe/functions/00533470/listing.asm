@@ -1,4 +1,4 @@
-FUN_00533470:
+OptPanelTy::CheckFiles:
 00533470  55                        PUSH EBP
 00533471  8B EC                     MOV EBP,ESP
 00533473  83 EC 50                  SUB ESP,0x50

@@ -1,6 +1,12 @@
 
-void FUN_005df640(int *param_1,int param_2,undefined4 param_3,int param_4,int param_5,
-                 undefined4 param_6,undefined4 param_7,int param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\task_obj.cpp
+   MTaskTy::OutGlassTxtProc */
+
+void __thiscall
+MTaskTy::OutGlassTxtProc
+          (MTaskTy *this,int *param_1,int param_2,undefined4 param_3,int param_4,int param_5,
+          undefined4 param_6,undefined4 param_7,int param_8)
 
 {
   uint uVar1;

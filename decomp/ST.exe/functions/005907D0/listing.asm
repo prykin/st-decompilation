@@ -1,4 +1,4 @@
-FUN_005907d0:
+MAdvTy::NoneMAdv:
 005907D0  55                        PUSH EBP
 005907D1  8B EC                     MOV EBP,ESP
 005907D3  83 EC 44                  SUB ESP,0x44

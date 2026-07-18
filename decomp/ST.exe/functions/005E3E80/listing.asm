@@ -1,4 +1,4 @@
-FUN_005e3e80:
+MTaskTy::CreateTextSSpr:
 005E3E80  55                        PUSH EBP
 005E3E81  8B EC                     MOV EBP,ESP
 005E3E83  83 EC 58                  SUB ESP,0x58

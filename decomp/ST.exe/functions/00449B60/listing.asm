@@ -1,4 +1,4 @@
-FUN_00449b60:
+STAllPlayersC::DestroyObjectMsg:
 00449B60  55                        PUSH EBP
 00449B61  8B EC                     MOV EBP,ESP
 00449B63  83 EC 3C                  SUB ESP,0x3c

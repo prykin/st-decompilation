@@ -1,4 +1,4 @@
-FUN_005512f0:
+TradePanelTy::DoneTradePanel:
 005512F0  55                        PUSH EBP
 005512F1  8B EC                     MOV EBP,ESP
 005512F3  83 EC 48                  SUB ESP,0x48

@@ -1,5 +1,9 @@
 
-uint FUN_004455c0(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::CreateBoat */
+
+uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_1)
 
 {
   code *pcVar1;
@@ -23,12 +27,14 @@ uint FUN_004455c0(undefined4 *param_1)
   undefined4 local_58;
   undefined4 local_54 [16];
   undefined4 local_14;
+  STAllPlayersC *local_10;
   int local_c;
-  void *local_8;
+  STGroupC *local_8;
   
   local_14 = 0xffffffff;
   local_58 = DAT_00858df8;
   DAT_00858df8 = &local_58;
+  local_10 = this;
   iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_58;
@@ -86,14 +92,14 @@ uint FUN_004455c0(undefined4 *param_1)
   if (param_1[5] == -1) {
     param_1[5] = param_1[1];
   }
-  local_8 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar6 >> 8),
-                                                *(undefined1 *)(param_1 + 1)),
-                                       CONCAT22(uVar5,*(undefined2 *)(param_1 + 9)));
-  if (local_8 == (void *)0x0) {
+  local_8 = (STGroupC *)
+            thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(param_1 + 1)),
+                               CONCAT22(uVar5,*(undefined2 *)(param_1 + 9)));
+  if (local_8 == (STGroupC *)0x0) {
     uVar3 = thunk_FUN_00435850(CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)(param_1 + 1)
                                        ),0,(int *)&local_8);
     *(short *)(param_1 + 9) = (short)uVar3;
-    if (local_8 == (void *)0x0) {
+    if (local_8 == (STGroupC *)0x0) {
       FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x27d8);
     }
   }
@@ -102,8 +108,8 @@ uint FUN_004455c0(undefined4 *param_1)
   if (local_c == 0) {
     iVar2 = FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x27db);
   }
-  uVar3 = thunk_FUN_00423850(local_8,CONCAT22((short)((uint)iVar2 >> 0x10),
-                                              *(undefined2 *)(local_c + 0x32)),0);
+  uVar3 = STGroupC::AddObj(local_8,CONCAT22((short)((uint)iVar2 >> 0x10),
+                                            *(undefined2 *)(local_c + 0x32)),0);
   DAT_00858df8 = (undefined4 *)local_58;
   return CONCAT22((short)(uVar3 >> 0x10),*(undefined2 *)(local_c + 0x32));
 }

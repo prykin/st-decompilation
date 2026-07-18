@@ -1,4 +1,4 @@
-FUN_00539b90:
+PlayPanelTy::InitPlayPanel:
 00539B90  55                        PUSH EBP
 00539B91  8B EC                     MOV EBP,ESP
 00539B93  81 EC B4 06 00 00         SUB ESP,0x6b4

@@ -1,5 +1,9 @@
 
-void FUN_00441ce0(char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::_MakeMDPairs */
+
+void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;
@@ -23,7 +27,8 @@ void FUN_00441ce0(char param_1)
   uint local_6c;
   int local_68;
   uint local_64;
-  int local_60 [5];
+  int local_60 [4];
+  STAllPlayersC *local_50;
   undefined1 local_4c [4];
   short local_48;
   short local_46;
@@ -52,6 +57,7 @@ void FUN_00441ce0(char param_1)
   local_80[3] = 0x5e;
   local_e8 = DAT_00858df8;
   DAT_00858df8 = &local_e8;
+  local_50 = this;
   iVar3 = __setjmp3(local_e4,0,unaff_EDI,unaff_ESI);
   uVar6 = local_24;
   if (iVar3 != 0) {

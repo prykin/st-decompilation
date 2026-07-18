@@ -1,4 +1,4 @@
-FUN_006618e0:
+AiFltClassTy::GoToRepair:
 006618E0  55                        PUSH EBP
 006618E1  8B EC                     MOV EBP,ESP
 006618E3  83 EC 64                  SUB ESP,0x64

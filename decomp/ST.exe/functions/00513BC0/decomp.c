@@ -1,9 +1,14 @@
 
-void FUN_00513bc0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\helppan.cpp
+   HelpPanelTy::PrevBut */
+
+void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
 
 {
   void *pvVar1;
   code *pcVar2;
+  HelpPanelTy *this_00;
   int iVar3;
   int *piVar4;
   int iVar5;
@@ -13,11 +18,13 @@ void FUN_00513bc0(void)
   undefined4 local_50;
   undefined4 local_4c [16];
   uint local_c;
-  void *local_8;
+  HelpPanelTy *local_8;
   
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_8 = this;
   iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_50;
     iVar5 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9,0,iVar3,&DAT_007a4ccc);
@@ -29,8 +36,8 @@ void FUN_00513bc0(void)
     (*pcVar2)();
     return;
   }
-  iVar5 = *(int *)((int)local_8 + 0x1b7);
-  iVar3 = *(int *)((int)local_8 + 0x1b3);
+  iVar5 = *(int *)(local_8 + 0x1b7);
+  iVar3 = *(int *)(local_8 + 0x1b3);
   if (iVar5 == 0) {
     iVar5 = *(int *)(iVar3 + 0xc);
     if (iVar5 == 0) {
@@ -63,81 +70,81 @@ void FUN_00513bc0(void)
     }
     local_c = uVar6;
     if ((char)piVar4[2] != '\0') {
-      *(uint *)((int)local_8 + 0x1b7) = uVar6;
-      *(undefined1 *)((int)local_8 + 0x1a1) = 0;
-      *(undefined4 *)((int)local_8 + 0x1a7) = 0;
-      *(undefined4 *)((int)local_8 + 0x1a3) = 0;
+      *(uint *)(local_8 + 0x1b7) = uVar6;
+      local_8[0x1a1] = (HelpPanelTy)0x0;
+      *(undefined4 *)(local_8 + 0x1a7) = 0;
+      *(undefined4 *)(local_8 + 0x1a3) = 0;
       uVar6 = *(uint *)((int)piVar4 + 0xd);
       pvVar1 = *(void **)((int)piVar4 + 9);
       switch((char)piVar4[2]) {
       case '\x01':
-        thunk_FUN_00517a50(local_8,(int)pvVar1,uVar6,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        RCProc(local_8,(int)pvVar1,uVar6,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\x02':
-        thunk_FUN_0051a100((int)pvVar1,uVar6,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        ObjProc(local_8,(int)pvVar1,uVar6,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\x03':
-        thunk_FUN_00518c20((int)pvVar1,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        SubProc(local_8,(int)pvVar1,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\x04':
-        thunk_FUN_0051b5a0(local_8,(int)pvVar1,uVar6,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        ArmProc(local_8,(int)pvVar1,uVar6,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\x05':
-        thunk_FUN_00516a40(local_8,(uint)pvVar1,(byte)uVar6,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        TechProc(local_8,(uint)pvVar1,(byte)uVar6,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\x06':
-        thunk_FUN_00516480((uint)pvVar1,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        TTreeProc(local_8,(uint)pvVar1,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\a':
-        thunk_FUN_00516300();
-        thunk_FUN_005134b0((int)local_8);
+        MObjProc(local_8);
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\b':
-        thunk_FUN_0051d540(pvVar1,uVar6,'\0');
+        TipProc(local_8,pvVar1,uVar6,'\0');
         break;
       case '\n':
-        thunk_FUN_00513a40();
-        thunk_FUN_005134b0((int)local_8);
+        IndexBut(local_8);
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\v':
-        thunk_FUN_0051c980(local_8,(int)pvVar1,uVar6,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        SpecProc(local_8,(int)pvVar1,uVar6,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       case '\f':
-        thunk_FUN_0051d360((int)pvVar1,'\0');
-        thunk_FUN_005134b0((int)local_8);
+        NatProc(local_8,(int)pvVar1,'\0');
+        PutToSHlp(this_00,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)local_50;
         return;
       }
-      thunk_FUN_005134b0((int)local_8);
+      PutToSHlp(this_00,(int)unaff_EDI);
       DAT_00858df8 = (undefined4 *)local_50;
       return;
     }
     iVar5 = *(uint *)(iVar3 + 0xc) - iVar5;
     if (*(char *)((int)piVar4 + 0x12) != '\0') {
-      *(uint *)((int)local_8 + 0x1b7) = uVar6;
+      *(uint *)(local_8 + 0x1b7) = uVar6;
       goto LAB_00513e3e;
     }
   }
-  thunk_FUN_00513030(piVar4,uVar6);
-  *(int *)((int)local_8 + 0x1b7) = *(int *)(*(int *)((int)local_8 + 0x1b3) + 0xc) - iVar5;
+  ChangeTree(local_8,piVar4,uVar6);
+  *(int *)(this_00 + 0x1b7) = *(int *)(*(int *)(this_00 + 0x1b3) + 0xc) - iVar5;
 LAB_00513e3e:
-  thunk_FUN_00513bc0();
+  PrevBut(this_00);
   DAT_00858df8 = (undefined4 *)local_50;
   return;
 }

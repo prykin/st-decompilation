@@ -76,7 +76,7 @@ void __thiscall thunk_FUN_004fa870(void *this,byte param_1)
   else {
     switch(param_1) {
     case 1:
-      thunk_FUN_004ff380();
+      CPanelTy::Update1Panel(this);
       return;
     case 2:
       thunk_FUN_00502330();
@@ -85,11 +85,11 @@ void __thiscall thunk_FUN_004fa870(void *this,byte param_1)
       thunk_FUN_005097b0();
       return;
     case 5:
-      thunk_FUN_004ffe90();
+      CPanelTy::Update5Panel(this);
       return;
     case 0xe:
     case 0xf:
-      thunk_FUN_00504210((uint)(byte)(param_1 - 0xe));
+      CPanelTy::UpdateStackPanel(this,(uint)(byte)(param_1 - 0xe));
     }
   }
   return;

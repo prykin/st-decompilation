@@ -1,4 +1,4 @@
-FUN_00715ab0:
+SpriteClassTy::CloseSprite:
 00715AB0  55                        PUSH EBP
 00715AB1  8B EC                     MOV EBP,ESP
 00715AB3  83 EC 48                  SUB ESP,0x48

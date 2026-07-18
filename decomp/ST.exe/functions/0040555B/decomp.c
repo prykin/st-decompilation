@@ -1,5 +1,5 @@
 
-void thunk_FUN_005e10a0(uint *param_1)
+void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
 
 {
   code *pcVar1;

@@ -1,4 +1,4 @@
-FUN_00497cd0:
+STGroupBoatC::InitWay:
 00497CD0  55                        PUSH EBP
 00497CD1  8B EC                     MOV EBP,ESP
 00497CD3  83 EC 4C                  SUB ESP,0x4c

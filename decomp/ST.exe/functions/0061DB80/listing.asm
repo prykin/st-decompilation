@@ -1,4 +1,4 @@
-FUN_0061db80:
+STLightC::LoadNextLight:
 0061DB80  55                        PUSH EBP
 0061DB81  8B EC                     MOV EBP,ESP
 0061DB83  83 EC 4C                  SUB ESP,0x4c

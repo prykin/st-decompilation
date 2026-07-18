@@ -1,2 +1,2 @@
-thunk_FUN_00540890:
+StartServTy::WrTextDDX:
 00404C2D  E9 5E BC 13 00            JMP 0x00540890

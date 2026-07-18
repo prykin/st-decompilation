@@ -1,5 +1,5 @@
 
-void __thiscall thunk_FUN_005cfcd0(void *this,int param_1,undefined4 param_2)
+void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 param_2)
 
 {
   uint uVar1;
@@ -12,16 +12,16 @@ void __thiscall thunk_FUN_005cfcd0(void *this,int param_1,undefined4 param_2)
   bool bVar6;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  SettMapMTy *pSStack_8;
   
-  if (*(int *)((int)this + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
-    pvStack_8 = this;
+    pSStack_8 = this;
     iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar5 = 0;
-      iVar3 = *(int *)((int)pvStack_8 + 0x1f84);
+      iVar3 = *(int *)(pSStack_8 + 0x1f84);
       uVar1 = *(uint *)(iVar3 + 0xc);
       if (0 < (int)uVar1) {
         bVar6 = uVar1 != 0;
@@ -42,11 +42,11 @@ void __thiscall thunk_FUN_005cfcd0(void *this,int param_1,undefined4 param_2)
           }
         }
         *(undefined4 *)(iVar4 + 0x4b) = param_2;
-        iVar3 = (uVar5 - *(int *)((int)pvStack_8 + 0x1f88)) * 0x20;
-        if (*(int *)(iVar3 + 0x1fa4 + (int)pvStack_8) != 0) {
-          *(undefined4 *)((int)pvStack_8 + 0x2d) = 5;
-          FUN_006e6080(pvStack_8,2,*(undefined4 *)(iVar3 + 0x1fa4 + (int)pvStack_8),
-                       (undefined4 *)((int)pvStack_8 + 0x1d));
+        iVar3 = (uVar5 - *(int *)(pSStack_8 + 0x1f88)) * 0x20;
+        if (*(int *)(pSStack_8 + iVar3 + 0x1fa4) != 0) {
+          *(undefined4 *)(pSStack_8 + 0x2d) = 5;
+          FUN_006e6080(pSStack_8,2,*(undefined4 *)(pSStack_8 + iVar3 + 0x1fa4),
+                       (undefined4 *)(pSStack_8 + 0x1d));
         }
       }
       DAT_00858df8 = (undefined4 *)uStack_4c;

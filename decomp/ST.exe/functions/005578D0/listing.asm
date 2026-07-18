@@ -1,4 +1,4 @@
-FUN_005578d0:
+VisibleClassTy::InitData:
 005578D0  55                        PUSH EBP
 005578D1  8B EC                     MOV EBP,ESP
 005578D3  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_005149b0:
+HelpPanelTy::LinkAct:
 005149B0  55                        PUSH EBP
 005149B1  8B EC                     MOV EBP,ESP
 005149B3  83 EC 50                  SUB ESP,0x50

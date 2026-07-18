@@ -1,4 +1,4 @@
-FUN_007121f0:
+ccFntTy::FormSarr:
 007121F0  55                        PUSH EBP
 007121F1  8B EC                     MOV EBP,ESP
 007121F3  83 EC 7C                  SUB ESP,0x7c

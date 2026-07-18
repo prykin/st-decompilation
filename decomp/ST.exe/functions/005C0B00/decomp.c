@@ -1,6 +1,10 @@
 
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\rpt_obj.cpp
+   MReportTy::PaintBut */
+
 void __thiscall
-FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,uint *param_5)
+MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char param_4,uint *param_5)
 
 {
   short sVar1;
@@ -23,7 +27,7 @@ FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,uint *
   int local_14;
   char local_10;
   undefined3 uStack_f;
-  void *local_c;
+  MReportTy *local_c;
   undefined4 *local_8;
   
   if (*(short *)(param_1 + 0x14) == 3) {
@@ -35,10 +39,10 @@ FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,uint *
   local_20 = *(int **)(param_1 + 0x18);
   _local_10 = CONCAT31(uStack_f,cVar8);
   if (param_4 == '\0') {
-    local_14 = *(int *)((int)this + 0x77);
+    local_14 = *(int *)(this + 0x77);
   }
   else {
-    local_14 = *(int *)((int)this + 0x7b);
+    local_14 = *(int *)(this + 0x7b);
   }
   local_1c = *(byte **)(local_14 + 8);
   local_8 = *(undefined4 **)(local_14 + 4);
@@ -71,7 +75,7 @@ FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,uint *
         param_5 = (uint *)FUN_006b0140(param_2,DAT_00807618);
       }
       local_18 = param_5;
-      FUN_00710a90(iVar7,0,0,0,0,0);
+      ccFntTy::SetSurf(*(ccFntTy **)(local_c + 0x83),iVar7,0,0,0,0,0);
       sVar1 = *(short *)(param_1 + 0x14);
       if ((sVar1 == 1) || (sVar1 == 2)) {
         iVar5 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
@@ -82,14 +86,14 @@ FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,uint *
       else {
         iVar5 = 4;
       }
-      FUN_007119c0(local_18,-1,-1,iVar5);
+      ccFntTy::WrStr(*(ccFntTy **)(local_c + 0x83),local_18,-1,-1,iVar5);
     }
     piVar3 = local_20;
     FUN_006b5f80(DAT_008075a8,*local_20,local_20[1],(int)local_8,(int)pbVar4);
     thunk_FUN_00540620(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)local_8,pbVar4,'\x01',
-                       *(BITMAPINFO **)((int)local_c + 0x5d));
+                       *(BITMAPINFO **)(local_c + 0x5d));
     FUN_006b48e0(DAT_0080759c,*piVar3,piVar3[1],iVar7,0,0,0,(uint)local_8,(int)pbVar4,
-                 (int)local_c + 0xa3,0x4c,0x10000ff);
+                 (int)(local_c + 0xa3),0x4c,0x10000ff);
     DAT_00858df8 = (undefined4 *)local_64;
     return;
   }

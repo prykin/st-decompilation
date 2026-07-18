@@ -115,7 +115,7 @@ int __fastcall thunk_FUN_00619c70(void *param_1)
       return 1;
     case 3:
       *(int *)((int)param_1 + 0xa7) = iStack_c;
-      iVar10 = thunk_FUN_006195e0(2);
+      iVar10 = STJumpMineC::LoadImagJMine(param_1,2);
       if (iVar10 != 0) {
         *(undefined4 *)((int)param_1 + 0x93) = 5;
         *(undefined4 *)((int)param_1 + 0xaf) = 0x19;
@@ -485,7 +485,7 @@ LAB_0061a4fd:
       *(int *)((int)param_1 + 0xa7) = iStack_c;
       *(int *)((int)param_1 + 0x9f) = iVar10;
       *(int *)((int)param_1 + 0xa3) = iStack_8;
-      iVar10 = thunk_FUN_006195e0(2);
+      iVar10 = STJumpMineC::LoadImagJMine(param_1,2);
       *(uint *)((int)param_1 + 0x93) = 6 - (uint)(iVar10 != 0);
       break;
     case 4:

@@ -1,4 +1,4 @@
-FUN_0042cde0:
+STAllPlayersC::PushTV:
 0042CDE0  55                        PUSH EBP
 0042CDE1  8B EC                     MOV EBP,ESP
 0042CDE3  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

@@ -1,4 +1,4 @@
-FUN_004a4240:
+STGroupBoatC::ChangeMDNotify:
 004A4240  55                        PUSH EBP
 004A4241  8B EC                     MOV EBP,ESP
 004A4243  83 EC 74                  SUB ESP,0x74

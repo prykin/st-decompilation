@@ -1,4 +1,4 @@
-FUN_005c87c0:
+SettMapTy::PaintSC:
 005C87C0  55                        PUSH EBP
 005C87C1  8B EC                     MOV EBP,ESP
 005C87C3  83 EC 48                  SUB ESP,0x48

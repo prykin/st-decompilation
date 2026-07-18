@@ -1,4 +1,4 @@
-FUN_00647dc0:
+AiBossClassTy::InitData:
 00647DC0  55                        PUSH EBP
 00647DC1  8B EC                     MOV EBP,ESP
 00647DC3  83 EC 48                  SUB ESP,0x48

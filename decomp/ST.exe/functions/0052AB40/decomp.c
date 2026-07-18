@@ -42,8 +42,8 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
   DAT_00858df8 = &local_68;
   iVar7 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
   if (iVar7 == 0) {
-    if (DAT_00802a58 != (void *)0x0) {
-      thunk_FUN_00554f20(DAT_00802a58,0,(uint *)s_Preparing_mini_map____007c6f28,900);
+    if (DAT_00802a58 != (cLoadingTy *)0x0) {
+      cLoadingTy::SetProcess(DAT_00802a58,0,(uint *)s_Preparing_mini_map____007c6f28,900);
     }
     puVar8 = FUN_006b04d0(0x4f2);
     if (puVar8 == (undefined4 *)0x0) {
@@ -90,8 +90,8 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
     local_c = param_2;
     do {
       uVar9 = local_1c;
-      if (DAT_00802a58 != (void *)0x0) {
-        thunk_FUN_00555040(DAT_00802a58,1,local_14,(char *)0x0);
+      if (DAT_00802a58 != (cLoadingTy *)0x0) {
+        cLoadingTy::SetState(DAT_00802a58,1,local_14,(char *)0x0);
       }
       local_14 = local_14 + 1;
       local_18 = (int)*param_1;
@@ -157,8 +157,8 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
     } while (iVar11 != 0);
     FUN_006a5e40(iVar7,DAT_007ed77c,0x7c6f00,0x42);
   }
-  if (DAT_00802a58 != (void *)0x0) {
-    thunk_FUN_00555040(DAT_00802a58,2,0,(char *)0x0);
+  if (DAT_00802a58 != (cLoadingTy *)0x0) {
+    cLoadingTy::SetState(DAT_00802a58,2,0,(char *)0x0);
   }
   return;
 }

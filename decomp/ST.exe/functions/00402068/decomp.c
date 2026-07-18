@@ -1,11 +1,12 @@
 
-void __thiscall thunk_FUN_005d0bb0(void *this,uint param_1,uint param_2,uint param_3)
+void __thiscall
+SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint param_3)
 
 {
   byte bVar1;
   char cVar2;
   code *pcVar3;
-  int *piVar4;
+  SettMapMTy *pSVar4;
   int iVar5;
   char *pcVar6;
   undefined4 uVar7;
@@ -20,17 +21,17 @@ void __thiscall thunk_FUN_005d0bb0(void *this,uint param_1,uint param_2,uint par
   undefined4 auStack_50 [16];
   byte bStack_10;
   undefined3 uStack_f;
-  int *piStack_c;
+  SettMapMTy *pSStack_c;
   uint uStack_8;
   
-  if ((*(int *)((int)this + 0x1f84) != 0) && (DAT_00808a8f == param_2)) {
+  if ((*(int *)(this + 0x1f84) != 0) && (DAT_00808a8f == param_2)) {
     uStack_54 = DAT_00858df8;
     DAT_00858df8 = &uStack_54;
-    piStack_c = this;
+    pSStack_c = this;
     iVar5 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
-    piVar4 = piStack_c;
+    pSVar4 = pSStack_c;
     if (iVar5 == 0) {
-      iVar5 = piStack_c[0x7e1];
+      iVar5 = *(int *)(pSStack_c + 0x1f84);
       if (param_1 < *(uint *)(iVar5 + 0xc)) {
         iVar5 = *(int *)(iVar5 + 8) * param_1 + *(int *)(iVar5 + 0x1c);
       }
@@ -41,7 +42,7 @@ void __thiscall thunk_FUN_005d0bb0(void *this,uint param_1,uint param_2,uint par
         if (param_2 != 0) {
           uVar11 = param_1 + 1;
           *(byte *)(iVar5 + 0x4a) = (byte)param_3;
-          iVar5 = piStack_c[0x7e1];
+          iVar5 = *(int *)(pSStack_c + 0x1f84);
           bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
           if ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc)) {
             do {
@@ -53,13 +54,13 @@ void __thiscall thunk_FUN_005d0bb0(void *this,uint param_1,uint param_2,uint par
               }
               if ((pcVar6 == (char *)0x0) || (*pcVar6 != '\0')) break;
               pcVar6[0x4a] = (byte)param_3;
-              iVar5 = piStack_c[0x7e1];
+              iVar5 = *(int *)(pSStack_c + 0x1f84);
               uVar11 = uVar11 + 1;
               bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
             } while ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc));
           }
-          (**(code **)(*piStack_c + 0x2c))();
-          *(int *)((int)piVar4 + 0x2121) = *(int *)((int)piVar4 + 0x2121) + 1;
+          (**(code **)(*(int *)pSStack_c + 0x2c))();
+          *(int *)(pSVar4 + 0x2121) = *(int *)(pSVar4 + 0x2121) + 1;
           DAT_00858df8 = (undefined4 *)uStack_54;
           return;
         }
@@ -115,7 +116,7 @@ void __thiscall thunk_FUN_005d0bb0(void *this,uint param_1,uint param_2,uint par
             else {
               thunk_FUN_0056a960(&DAT_00807620,param_3,bVar1);
             }
-            (**(code **)(*piVar4 + 0x2c))();
+            (**(code **)(*(int *)pSVar4 + 0x2c))();
             DAT_00808aab = DAT_00808aab + 1;
           }
         }

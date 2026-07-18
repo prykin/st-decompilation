@@ -1,4 +1,4 @@
-FUN_0064d270:
+AiEventClassTy::__CreateObjPl:
 0064D270  55                        PUSH EBP
 0064D271  8B EC                     MOV EBP,ESP
 0064D273  81 EC E4 00 00 00         SUB ESP,0xe4

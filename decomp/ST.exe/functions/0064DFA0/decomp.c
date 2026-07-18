@@ -1,6 +1,12 @@
 
-int FUN_0064dfa0(ushort param_1,short param_2,int param_3,int param_4,undefined4 param_5,
-                ushort param_6,char *param_7,undefined4 param_8,undefined4 param_9)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_event.cpp
+   AiEventClassTy::_CreateMine */
+
+int __thiscall
+AiEventClassTy::_CreateMine
+          (AiEventClassTy *this,ushort param_1,short param_2,int param_3,int param_4,
+          undefined4 param_5,ushort param_6,char *param_7,undefined4 param_8,undefined4 param_9)
 
 {
   code *pcVar1;

@@ -1,2 +1,2 @@
-thunk_FUN_00520b50:
+InfocPanelTy::PaintInfocObj:
 00403DD7  E9 74 CD 11 00            JMP 0x00520b50

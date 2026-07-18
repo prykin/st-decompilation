@@ -1,8 +1,14 @@
 
-void FUN_00543990(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\to_cursor.cpp
+   CursorClassTy::ReInitCursorSpr */
+
+void __thiscall CursorClassTy::ReInitCursorSpr(CursorClassTy *this,int param_1)
 
 {
+  SpriteClassTy *this_00;
   code *pcVar1;
+  CursorClassTy *this_01;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -11,13 +17,16 @@ void FUN_00543990(int param_1)
   undefined4 *puVar5;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  CursorClassTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  this_01 = local_8;
   if (iVar2 == 0) {
-    FUN_00715ab0();
+    this_00 = (SpriteClassTy *)(local_8 + 0x18);
+    SpriteClassTy::CloseSprite(this_00);
     if (param_1 != 7) {
       iVar2 = 0x21;
       cVar4 = -0x7f;
@@ -28,11 +37,11 @@ void FUN_00543990(int param_1)
       cVar4 = '\a';
       puVar5 = (undefined4 *)0x0;
     }
-    FUN_007158a0(DAT_008075a8,0,cVar4,puVar5,iVar2,(uint)(param_1 != 7));
-    *(undefined2 *)(local_8 + 0x494) = 0x58;
-    thunk_FUN_0054bf40(0,*(undefined4 *)(local_8 + 0x34),*(undefined4 *)(local_8 + 0x38));
-    if (*(uint *)(local_8 + 0x1c) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(local_8 + 0x60),*(uint *)(local_8 + 0x1c));
+    SpriteClassTy::InitSprite(this_00,DAT_008075a8,0,cVar4,puVar5,iVar2,(uint)(param_1 != 7));
+    *(undefined2 *)(this_01 + 0x494) = 0x58;
+    SetGCType(this_01,0,*(undefined4 *)(this_01 + 0x34),*(undefined4 *)(this_01 + 0x38));
+    if (*(uint *)(this_01 + 0x1c) != 0xffffffff) {
+      FUN_006b3af0(*(int **)(this_01 + 0x60),*(uint *)(this_01 + 0x1c));
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;

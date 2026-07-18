@@ -1,4 +1,4 @@
-FUN_005aa6a0:
+HoloTy::OutHoloProc:
 005AA6A0  55                        PUSH EBP
 005AA6A1  8B EC                     MOV EBP,ESP
 005AA6A3  83 EC 4C                  SUB ESP,0x4c

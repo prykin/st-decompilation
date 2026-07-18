@@ -1,6 +1,12 @@
 
-void FUN_0042ab00(char param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,
-                 int *param_7)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetGObjFromZone */
+
+void __thiscall
+STAllPlayersC::GetGObjFromZone
+          (STAllPlayersC *this,char param_1,int param_2,int param_3,int param_4,int param_5,
+          int *param_6,int *param_7)
 
 {
   code *pcVar1;
@@ -8,15 +14,17 @@ void FUN_0042ab00(char param_1,int param_2,int param_3,int param_4,int param_5,i
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
-  undefined4 local_48 [17];
+  undefined4 local_48 [16];
+  STAllPlayersC *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
-    thunk_FUN_0042abe0(param_1,param_2,param_3,param_4,param_5,param_6,(int *)0x0,(int *)0x0,param_7
-                       ,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0
-                       ,(int *)0x0);
+    GetGObjFromZone2(local_8,param_1,param_2,param_3,param_4,param_5,param_6,(int *)0x0,(int *)0x0,
+                     param_7,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,
+                     (int *)0x0,(int *)0x0);
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

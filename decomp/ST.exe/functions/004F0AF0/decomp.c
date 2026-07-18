@@ -5,7 +5,7 @@ void __thiscall FUN_004f0af0(void *this,int param_1)
   short sVar1;
   
   if (param_1 != *(int *)((int)this + 0x5c)) {
-    thunk_FUN_0053f780(this,param_1);
+    ProdPanelTy::ShiftControls(this,param_1);
     sVar1 = (short)*(undefined4 *)((int)this + 0x174);
     *(undefined4 *)((int)this + 0x28) = 0x24;
     if (param_1 != 0) {

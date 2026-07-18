@@ -1,5 +1,5 @@
 
-short * __cdecl FUN_00725f50(undefined4 param_1,char *param_2,uint param_3,byte param_4,int param_5)
+short * __cdecl FUN_00725f50(cMf32 *param_1,char *param_2,uint param_3,byte param_4,int param_5)
 
 {
   code *pcVar1;
@@ -67,7 +67,7 @@ short * __cdecl FUN_00725f50(undefined4 param_1,char *param_2,uint param_3,byte 
     iVar4 = FUN_00726550(param_1,param_2,1);
     local_1c = 1;
     local_8[3] = (short)iVar4;
-    *(undefined4 *)(local_8 + 4) = param_1;
+    *(cMf32 **)(local_8 + 4) = param_1;
     local_20 = 0;
     if (0 < iVar7) {
       local_18 = 0;
@@ -109,17 +109,17 @@ short * __cdecl FUN_00725f50(undefined4 param_1,char *param_2,uint param_3,byte 
       local_2c = 0;
     }
     *local_8 = (short)local_20;
-    FUN_006f20e0((uint *)&local_c);
+    cMf32::RecMemFree(param_1,(uint *)&local_c);
     DAT_00858df8 = (undefined4 *)local_78;
     return local_8;
   }
   DAT_00858df8 = (undefined4 *)local_78;
-  FUN_006f20e0((uint *)&local_c);
+  cMf32::RecMemFree(param_1,(uint *)&local_c);
   if (local_8 != (short *)0x0) {
     if (0 < (int)local_8[1] * (int)*local_8) {
       iVar4 = 0;
       do {
-        FUN_006f20e0((uint *)(iVar4 + 0x12 + (int)local_8));
+        cMf32::RecMemFree(param_1,(uint *)(iVar4 + 0x12 + (int)local_8));
         iVar7 = iVar7 + 1;
         iVar4 = iVar4 + 10;
         iVar2 = local_34;

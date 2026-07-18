@@ -1,30 +1,37 @@
 
-void FUN_005e9830(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\wait_obj.cpp
+   WaitTy::CloseButtons */
+
+void __thiscall WaitTy::CloseButtons(WaitTy *this)
 
 {
   code *pcVar1;
+  MMObjTy *this_00;
   int iVar2;
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  void *local_8;
+  MMObjTy *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = (MMObjTy *)this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    thunk_FUN_005b6480();
-    if (*(int *)((int)local_8 + 0x1a64) == 0) {
+    MMObjTy::CloseButtons(local_8);
+    if (*(int *)(this_00 + 0x1a64) == 0) {
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         FUN_006b34d0(*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),0xfffffffe,
                      *(uint *)(DAT_0081176c + 0x314),*(uint *)(DAT_0081176c + 0x318));
       }
       FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
     }
-    *(undefined1 *)((int)local_8 + 0x65) = 4;
-    thunk_FUN_005b6730(local_8,0xc,'\x01',-1);
-    thunk_FUN_005e9d70();
+    this_00[0x65] = (MMObjTy)0x4;
+    thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
+    DeleteCtrls((WaitTy *)this_00);
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

@@ -11,16 +11,16 @@ undefined4 thunk_FUN_00609b90(int param_1)
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  STFieldC *pSStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
   iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    if ((*(int *)((int)pvStack_8 + 0x234) != 0) &&
-       (iVar2 = *(int *)(*(int *)((int)pvStack_8 + 0x234) + 0xc), uVar5 = 0, 0 < iVar2)) {
+    if ((*(int *)(pSStack_8 + 0x234) != 0) &&
+       (iVar2 = *(int *)(*(int *)(pSStack_8 + 0x234) + 0xc), uVar5 = 0, 0 < iVar2)) {
       do {
-        iVar3 = *(int *)((int)pvStack_8 + 0x234);
+        iVar3 = *(int *)(pSStack_8 + 0x234);
         if (uVar5 < *(uint *)(iVar3 + 0xc)) {
           iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
         }
@@ -28,11 +28,11 @@ undefined4 thunk_FUN_00609b90(int param_1)
           iVar3 = 0;
         }
         if (iVar3 != 0) {
-          if ((*(int *)((int)pvStack_8 + 0x1f5) == 0x4d) && (param_1 != 0)) {
+          if ((*(int *)(pSStack_8 + 0x1f5) == 0x4d) && (param_1 != 0)) {
             *(undefined4 *)(iVar3 + 4) = 0;
           }
           if (*(int *)(iVar3 + 0x3c) < 0) {
-            thunk_FUN_00609d60(pvStack_8,uVar5);
+            STFieldC::LoadImagSpr(pSStack_8,uVar5);
           }
         }
         uVar5 = uVar5 + 1;

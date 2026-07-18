@@ -1,5 +1,10 @@
 
-undefined4 FUN_004461b0(uint param_1,short param_2,int param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::_DeleteGuardBoat */
+
+undefined4 __thiscall
+STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,int param_3)
 
 {
   code *pcVar1;
@@ -17,6 +22,7 @@ undefined4 FUN_004461b0(uint param_1,short param_2,int param_3)
   byte *local_28;
   byte *local_24;
   byte *local_20;
+  STAllPlayersC *local_1c;
   undefined4 local_18;
   undefined4 local_14;
   int local_10;
@@ -27,6 +33,7 @@ undefined4 FUN_004461b0(uint param_1,short param_2,int param_3)
   local_6c = DAT_00858df8;
   local_10 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
   DAT_00858df8 = &local_6c;
+  local_1c = this;
   iVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
   iVar4 = local_10;
   if (iVar2 != 0) {
@@ -127,7 +134,7 @@ undefined4 FUN_004461b0(uint param_1,short param_2,int param_3)
     }
   }
   if (local_8 == 0) {
-    thunk_FUN_00446910((char)param_1);
+    DeletePGPairs(local_1c,(char)param_1);
   }
   DAT_00858df8 = (undefined4 *)local_6c;
   return local_18;

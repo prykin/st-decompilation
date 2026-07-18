@@ -1,4 +1,4 @@
-FUN_005b2970:
+MainMenuTy::InitMainMenu:
 005B2970  55                        PUSH EBP
 005B2971  8B EC                     MOV EBP,ESP
 005B2973  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_005cd430:
+SettMapMTy::PrepPlList:
 005CD430  55                        PUSH EBP
 005CD431  8B EC                     MOV EBP,ESP
 005CD433  81 EC B4 00 00 00         SUB ESP,0xb4

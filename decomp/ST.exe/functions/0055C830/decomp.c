@@ -12,6 +12,7 @@ FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param
   uint uVar7;
   uint uVar8;
   byte *pbVar9;
+  void *unaff_EDI;
   byte *pbVar10;
   bool bVar11;
   CHAR local_688 [512];
@@ -29,13 +30,13 @@ FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param
     switch(param_1) {
     case 1:
     case 2:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         _strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         FUN_0072ee80(param_5,(byte *)s__4s_d_d_d_d_007c94d0);
         local_f = param_2;
         local_b = param_3;
-        thunk_FUN_005a2380(DAT_0081174c,(undefined4 *)local_34);
+        FSGSTy::AddPlayer(DAT_0081174c,(undefined4 *)local_34);
         uVar7 = 0xffffffff;
         pbVar10 = pbVar9;
         do {
@@ -48,16 +49,16 @@ FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param
           uVar5 = FUN_006b0140(0x259a,DAT_00807618);
           wsprintfA(local_688,s__s__s_007c411c,pbVar9,uVar5);
 LAB_0055cf74:
-          thunk_FUN_005a1f00(1,&DAT_008016a0,local_688,5);
+          FSGSTy::AddMessage(DAT_0081174c,1,&DAT_008016a0,local_688,5);
           return;
         }
       }
       break;
     case 3:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         _strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
-        thunk_FUN_005a26c0(DAT_0081174c,local_34);
+        FSGSTy::DelPlayer(DAT_0081174c,local_34);
         uVar7 = 0xffffffff;
         pbVar10 = pbVar9;
         do {
@@ -100,12 +101,12 @@ LAB_0055cf74:
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081174c != (undefined4 *)0x0) {
-          thunk_FUN_005a1f00(9,param_2,param_5,0);
+        if (DAT_0081174c != (FSGSTy *)0x0) {
+          FSGSTy::AddMessage(DAT_0081174c,9,param_2,param_5,0);
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081176c != 0) {
+        if (DAT_0081176c != (StartSystemTy *)0x0) {
           pcVar4 = local_488;
           for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
             pcVar4[0] = '\0';
@@ -119,7 +120,7 @@ LAB_0055cf74:
           local_449 = 0;
           _strncpy(local_448,param_5,0x410);
           local_345 = 0;
-          thunk_FUN_005dd850((int)local_488);
+          StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         }
         FUN_006ab060(&param_2);
         return;
@@ -150,8 +151,9 @@ LAB_0055c9c5:
         *(undefined1 *)((int)this + 0x3b) = 0;
         *(char *)((int)this + 0x2b) = (*(char *)((int)this + 0x2b) == '\a') + '\a';
       }
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
-        thunk_FUN_005a1f00(CONCAT31((int3)((uint)param_5 >> 8),*(undefined1 *)((int)this + 0x2b)),
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(DAT_0081174c,
+                           CONCAT31((int3)((uint)param_5 >> 8),*(undefined1 *)((int)this + 0x2b)),
                            param_4,param_5,5);
         return;
       }
@@ -183,12 +185,12 @@ LAB_0055c9c5:
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081174c != (undefined4 *)0x0) {
-          thunk_FUN_005a1f00(4,param_2,param_5,5);
+        if (DAT_0081174c != (FSGSTy *)0x0) {
+          FSGSTy::AddMessage(DAT_0081174c,4,param_2,param_5,5);
           FUN_006ab060(&param_2);
           return;
         }
-        if (DAT_0081176c != 0) {
+        if (DAT_0081176c != (StartSystemTy *)0x0) {
           pcVar4 = local_488;
           for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
             pcVar4[0] = '\0';
@@ -202,35 +204,35 @@ LAB_0055c9c5:
           local_449 = 0;
           _strncpy(local_448,param_5,0x410);
           local_345 = 0;
-          thunk_FUN_005dd850((int)local_488);
+          StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         }
         FUN_006ab060(&param_2);
         return;
       }
       break;
     case 7:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
-        thunk_FUN_005a1f00(1,&DAT_008016a0,param_5,5);
-        thunk_FUN_005a2d70(DAT_0081174c);
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(DAT_0081174c,1,&DAT_008016a0,param_5,5);
+        FSGSTy::JoinChannel(DAT_0081174c,unaff_EDI);
         return;
       }
       break;
     case 9:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         _strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         local_f = param_2;
         local_b = param_3;
-        thunk_FUN_005a2a60(DAT_0081174c,local_34);
+        FSGSTy::ChangePlayer(DAT_0081174c,local_34);
         return;
       }
       break;
     case 0xd:
     case 0xf:
-      if (DAT_0081174c != (undefined4 *)0x0) {
+      if (DAT_0081174c != (FSGSTy *)0x0) {
         *(undefined4 *)((int)this + 0x1b) = 0x6156;
         *(int *)((int)this + 0x1f) = param_1;
-        (**(code **)*DAT_0081174c)((int)this + 0xb);
+        (*(code *)**(undefined4 **)DAT_0081174c)((int)this + 0xb);
       }
       break;
     case 0x10:
@@ -238,11 +240,11 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
-      if (DAT_0081174c != (undefined4 *)0x0) {
-        thunk_FUN_005a1f00(6,param_4,param_5,5);
+      if (DAT_0081174c != (FSGSTy *)0x0) {
+        FSGSTy::AddMessage(DAT_0081174c,6,param_4,param_5,5);
         return;
       }
-      if (DAT_0081176c != 0) {
+      if (DAT_0081176c != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar4[0] = '\0';
@@ -256,7 +258,7 @@ LAB_0055c9c5:
         local_449 = 0;
         _strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        thunk_FUN_005dd850((int)local_488);
+        StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         return;
       }
       break;
@@ -265,11 +267,11 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
       }
-      if (DAT_0081174c != (undefined4 *)0x0) {
-        thunk_FUN_005a1f00(2,param_4,param_5,5);
+      if (DAT_0081174c != (FSGSTy *)0x0) {
+        FSGSTy::AddMessage(DAT_0081174c,2,param_4,param_5,5);
         return;
       }
-      if (DAT_0081176c != 0) {
+      if (DAT_0081176c != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar4[0] = '\0';
@@ -283,7 +285,7 @@ LAB_0055c9c5:
         local_449 = 0;
         _strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        thunk_FUN_005dd850((int)local_488);
+        StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         return;
       }
       break;
@@ -292,11 +294,11 @@ LAB_0055c9c5:
         thunk_FUN_0055bdd0((char *)0x0,param_5);
         return;
       }
-      if (DAT_0081174c != (undefined4 *)0x0) {
-        thunk_FUN_005a1f00(3,&DAT_008016a0,param_5,5);
+      if (DAT_0081174c != (FSGSTy *)0x0) {
+        FSGSTy::AddMessage(DAT_0081174c,3,&DAT_008016a0,param_5,5);
         return;
       }
-      if (DAT_0081176c != 0) {
+      if (DAT_0081176c != (StartSystemTy *)0x0) {
         pcVar4 = local_488;
         for (iVar6 = 0x114; iVar6 != 0; iVar6 = iVar6 + -1) {
           pcVar4[0] = '\0';
@@ -331,19 +333,19 @@ LAB_0055c9c5:
         }
         _strncpy(local_448,param_5,0x410);
         local_345 = 0;
-        thunk_FUN_005dd850((int)local_488);
+        StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         return;
       }
       break;
     case 0x17:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
-        thunk_FUN_005a1f00(7,param_4,param_5,5);
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(DAT_0081174c,7,param_4,param_5,5);
         return;
       }
       break;
     case 0xff:
-      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (undefined4 *)0x0)) {
-        thunk_FUN_005a1f00(4,param_4,param_5,5);
+      if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
+        FSGSTy::AddMessage(DAT_0081174c,4,param_4,param_5,5);
         return;
       }
     }

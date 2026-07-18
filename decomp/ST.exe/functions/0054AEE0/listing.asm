@@ -1,4 +1,4 @@
-FUN_0054aee0:
+CursorClassTy::GCGameState:
 0054AEE0  55                        PUSH EBP
 0054AEE1  8B EC                     MOV EBP,ESP
 0054AEE3  81 EC F4 00 00 00         SUB ESP,0xf4

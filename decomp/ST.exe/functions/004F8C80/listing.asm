@@ -1,4 +1,4 @@
-FUN_004f8c80:
+CPanelTy::PaintSMap:
 004F8C80  55                        PUSH EBP
 004F8C81  8B EC                     MOV EBP,ESP
 004F8C83  83 EC 4C                  SUB ESP,0x4c

@@ -10,7 +10,7 @@ void __thiscall thunk_FUN_00630260(void *this,int param_1,int param_2)
   int iStack_10;
   undefined4 uStack_c;
   
-  if (DAT_008117a4 != (void *)0x0) {
+  if (DAT_008117a4 != (STManRub3C *)0x0) {
     puVar1 = *(undefined4 **)((int)this + param_1 * 4 + 0x1e5);
     if ((puVar1 != (undefined4 *)0x0) && ((puVar1[1] == 3 || (puVar1[1] == 6)))) {
       piVar3 = aiStack_24;
@@ -26,7 +26,7 @@ void __thiscall thunk_FUN_00630260(void *this,int param_1,int param_2)
       iStack_10 = param_1;
       uStack_c = puVar1[2];
       if (param_2 != 0) {
-        thunk_FUN_0062cf90(aiStack_24);
+        STManRub3C::AddNewRub3(DAT_008117a4,aiStack_24);
         return;
       }
       thunk_FUN_0062d230(DAT_008117a4,aiStack_24);

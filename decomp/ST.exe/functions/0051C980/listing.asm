@@ -1,4 +1,4 @@
-FUN_0051c980:
+HelpPanelTy::SpecProc:
 0051C980  55                        PUSH EBP
 0051C981  8B EC                     MOV EBP,ESP
 0051C983  83 EC 70                  SUB ESP,0x70

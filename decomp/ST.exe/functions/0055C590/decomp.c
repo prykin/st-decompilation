@@ -7,7 +7,7 @@ void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
   HANDLE hFile;
   BOOL BVar3;
   
-  if (DAT_0081174c == 0) {
+  if (DAT_0081174c == (FSGSTy *)0x0) {
     return;
   }
   if (param_2 != (LPCVOID)0x0) {
@@ -26,14 +26,14 @@ void FUN_0055c590(undefined4 param_1,LPCVOID param_2,LPCVOID param_3)
       }
       CloseHandle(hFile);
       if (!bVar1) {
-        thunk_FUN_005a1160();
+        FSGSTy::CheckUpdate(DAT_0081174c);
         return;
       }
     }
-    thunk_FUN_005a0ff0();
+    FSGSTy::DoLogon(DAT_0081174c);
     return;
   }
-  thunk_FUN_005a0ff0();
+  FSGSTy::DoLogon(DAT_0081174c);
   return;
 }
 

@@ -1,4 +1,4 @@
-FUN_0053ea50:
+SpecPanelTy::ShiftControls:
 0053EA50  55                        PUSH EBP
 0053EA51  8B EC                     MOV EBP,ESP
 0053EA53  83 EC 48                  SUB ESP,0x48

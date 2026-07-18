@@ -1,5 +1,6 @@
 
-undefined4 thunk_FUN_0042efd0(char param_1,uint param_2,int param_3)
+undefined4 __thiscall
+STAllPlayersC::RegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int param_3)
 
 {
   code *pcVar1;

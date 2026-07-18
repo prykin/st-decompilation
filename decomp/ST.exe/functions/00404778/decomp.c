@@ -43,6 +43,7 @@ void __fastcall thunk_FUN_00664960(void *param_1)
   undefined4 extraout_EDX_03;
   undefined4 extraout_EDX_04;
   undefined2 extraout_var_16;
+  int unaff_ESI;
   int iVar16;
   uint *puVar17;
   uint *puVar18;
@@ -1400,8 +1401,8 @@ LAB_006655ba:
         auStack_9c[2] = 2;
         auStack_9c[1] = uVar13;
         puStack_90 = thunk_FUN_0065da10((int)param_1,uVar13);
-        if (*(int *)((int)param_1 + 0x284) != 0) {
-          thunk_FUN_0068fd00(auStack_9c);
+        if (*(AiTactClassTy **)((int)param_1 + 0x284) != (AiTactClassTy *)0x0) {
+          AiTactClassTy::GetAiMess(*(AiTactClassTy **)((int)param_1 + 0x284),auStack_9c);
         }
         FUN_006ae110((byte *)puStack_90);
       }
@@ -1598,7 +1599,7 @@ LAB_0066705a:
 switchD_00665095_caseD_1:
   if (((*(int *)((int)param_1 + 0x284) != 0) && (*(char *)((int)param_1 + 0x176) != '\0')) &&
      ((*(uint *)((int)param_1 + 0xeb) & *(uint *)((int)param_1 + 0x17b)) != 0)) {
-    thunk_FUN_006618e0((int)param_1);
+    AiFltClassTy::GoToRepair(param_1,unaff_ESI);
   }
   return;
 }

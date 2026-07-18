@@ -12,7 +12,7 @@ void __cdecl FUN_0071a4b0(int *param_1)
       *(undefined4 *)(iVar1 + 4) = 0;
       iVar1 = FUN_006b1190(*(int *)(*param_1 + 5),local_208);
       while (-1 < iVar1) {
-        FUN_006f20e0(&local_8);
+        cMf32::RecMemFree(*(cMf32 **)(*param_1 + 1),&local_8);
         iVar1 = FUN_006b1190(*(int *)(*param_1 + 5),local_208);
       }
       FUN_006ae110(*(byte **)(*param_1 + 5));

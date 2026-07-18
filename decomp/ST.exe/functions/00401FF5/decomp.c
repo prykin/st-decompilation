@@ -33,7 +33,7 @@ undefined4 thunk_FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 pa
   iVar2 = __setjmp3(auStack_5c,2,FUN_0072da21,0);
   if (iVar2 == 0) {
     puStack_1c = &stack0xffffff8c;
-    iVar2 = thunk_FUN_0056adc0(param_1,param_2,param_3,param_4);
+    iVar2 = STAppC::InitApp((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);
     if (iVar2 != 1) {
       ExceptionList = pvStack_14;
       return 0;

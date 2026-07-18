@@ -1,4 +1,4 @@
-FUN_005b3430:
+MainMenuTy::NoneMainMenu:
 005B3430  55                        PUSH EBP
 005B3431  8B EC                     MOV EBP,ESP
 005B3433  83 EC 50                  SUB ESP,0x50

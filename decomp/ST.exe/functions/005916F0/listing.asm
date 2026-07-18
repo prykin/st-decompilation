@@ -1,4 +1,4 @@
-FUN_005916f0:
+CampaignTy::DoneCampaign:
 005916F0  55                        PUSH EBP
 005916F1  8B EC                     MOV EBP,ESP
 005916F3  83 EC 48                  SUB ESP,0x48

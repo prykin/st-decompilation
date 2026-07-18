@@ -1,4 +1,4 @@
-FUN_005e5d50:
+MTestTy::PaintMTest:
 005E5D50  55                        PUSH EBP
 005E5D51  8B EC                     MOV EBP,ESP
 005E5D53  83 EC 48                  SUB ESP,0x48

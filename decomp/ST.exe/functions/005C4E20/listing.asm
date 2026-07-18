@@ -1,4 +1,4 @@
-FUN_005c4e20:
+SettMapTy::PaintSettMap:
 005C4E20  55                        PUSH EBP
 005C4E21  8B EC                     MOV EBP,ESP
 005C4E23  83 EC 48                  SUB ESP,0x48

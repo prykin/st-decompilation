@@ -1,4 +1,4 @@
-FUN_00543c90:
+CursorClassTy::DrawSprite:
 00543C90  55                        PUSH EBP
 00543C91  8B EC                     MOV EBP,ESP
 00543C93  83 EC 50                  SUB ESP,0x50

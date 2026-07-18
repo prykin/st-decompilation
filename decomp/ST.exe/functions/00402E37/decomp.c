@@ -1,9 +1,10 @@
 
-int __thiscall thunk_FUN_0067b3c0(void *this,int param_1,int param_2,int param_3,undefined1 param_4)
+int __thiscall
+AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,undefined1 param_4)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  AiPlrClassTy *pAVar2;
   int iVar3;
   int iVar4;
   void *unaff_ESI;
@@ -18,9 +19,9 @@ int __thiscall thunk_FUN_0067b3c0(void *this,int param_1,int param_2,int param_3
   int iStack_14;
   int iStack_10;
   undefined2 uStack_c;
-  void *pvStack_8;
+  AiPlrClassTy *pAStack_8;
   
-  pvStack_8 = this;
+  pAStack_8 = this;
   iVar3 = thunk_FUN_0067b2e0(this,param_1,param_2);
   uVar5 = DAT_00858df8;
   if (0 < iVar3) {
@@ -28,7 +29,7 @@ int __thiscall thunk_FUN_0067b3c0(void *this,int param_1,int param_2,int param_3
   }
   DAT_00858df8 = &stack0xffffffa0;
   iVar3 = __setjmp3(auStack_5c,0,unaff_ESI,uVar5);
-  pvVar2 = pvStack_8;
+  pAVar2 = pAStack_8;
   if (iVar3 == 0) {
     uStack_1c = param_4;
     uStack_1b = (undefined2)param_1;
@@ -42,8 +43,8 @@ int __thiscall thunk_FUN_0067b3c0(void *this,int param_1,int param_2,int param_3
     }
     iStack_14 = iVar3;
     iStack_10 = iVar3;
-    FUN_006ae1c0(*(uint **)((int)pvStack_8 + 0x6a1),(undefined4 *)&uStack_1c);
-    thunk_FUN_00676c40(*(int *)((int)pvVar2 + 0x6a1),&LAB_004029b9);
+    FUN_006ae1c0(*(uint **)(pAStack_8 + 0x6a1),(undefined4 *)&uStack_1c);
+    thunk_FUN_00676c40(*(int *)(pAVar2 + 0x6a1),&LAB_004029b9);
     DAT_00858df8 = (undefined1 *)uVar5;
     return 0;
   }

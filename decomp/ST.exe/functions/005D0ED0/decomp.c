@@ -1,11 +1,16 @@
 
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::ChangePlayerList */
+
 void __thiscall
-FUN_005d0ed0(void *this,int param_1,uint param_2,int param_3,char param_4,char *param_5)
+SettMapMTy::ChangePlayerList
+          (SettMapMTy *this,int param_1,uint param_2,int param_3,char param_4,char *param_5)
 
 {
   char cVar1;
   code *pcVar2;
-  int *piVar3;
+  SettMapMTy *pSVar3;
   int iVar4;
   int iVar5;
   uint uVar6;
@@ -17,16 +22,16 @@ FUN_005d0ed0(void *this,int param_1,uint param_2,int param_3,char param_4,char *
   char *pcVar10;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int *local_8;
+  SettMapMTy *local_8;
   
-  if (*(int *)((int)this + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     local_8 = this;
     iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-    piVar3 = local_8;
+    pSVar3 = local_8;
     if (iVar4 == 0) {
-      iVar4 = local_8[0x7e1];
+      iVar4 = *(int *)(local_8 + 0x1f84);
       if (param_2 < *(uint *)(iVar4 + 0xc)) {
         iVar4 = *(int *)(iVar4 + 8) * param_2 + *(int *)(iVar4 + 0x1c);
       }
@@ -35,9 +40,9 @@ FUN_005d0ed0(void *this,int param_1,uint param_2,int param_3,char param_4,char *
       }
       if (iVar4 != 0) {
         if ((param_3 == 2) || (param_3 == 3)) {
-          thunk_FUN_005cff40(local_8,param_1);
+          DeletePlayer(local_8,param_1);
         }
-        iVar4 = piVar3[0x7e1];
+        iVar4 = *(int *)(pSVar3 + 0x1f84);
         if (param_2 < *(uint *)(iVar4 + 0xc)) {
           pcVar8 = (char *)(*(int *)(iVar4 + 8) * param_2 + *(int *)(iVar4 + 0x1c));
         }
@@ -81,7 +86,7 @@ FUN_005d0ed0(void *this,int param_1,uint param_2,int param_3,char param_4,char *
           }
           pcVar8[2] = -1;
         }
-        piVar3 = local_8;
+        pSVar3 = local_8;
         if (pcVar8[2] == -1) {
           pcVar8[0x4f] = '\0';
         }
@@ -91,14 +96,13 @@ FUN_005d0ed0(void *this,int param_1,uint param_2,int param_3,char param_4,char *
         if ((*pcVar8 != '\0') && (pcVar8[4] != '\x02')) {
           pcVar8[1] = '\x01';
         }
-        thunk_FUN_005d0150(local_8);
-        if ((*(char *)((int)piVar3 + 0x1e26) != '\f') && (*(char *)((int)piVar3 + 0x1e26) != '\x10')
-           ) {
-          thunk_FUN_005d1380((int)piVar3);
+        CheckPlList(local_8,unaff_EDI);
+        if ((pSVar3[0x1e26] != (SettMapMTy)0xc) && (pSVar3[0x1e26] != (SettMapMTy)0x10)) {
+          thunk_FUN_005d1380((int)pSVar3);
         }
-        (**(code **)(*piVar3 + 0x2c))();
-        thunk_FUN_005c87c0();
-        *(int *)((int)piVar3 + 0x2121) = *(int *)((int)piVar3 + 0x2121) + 1;
+        (**(code **)(*(int *)pSVar3 + 0x2c))();
+        SettMapTy::PaintSC((SettMapTy *)pSVar3);
+        *(int *)(pSVar3 + 0x2121) = *(int *)(pSVar3 + 0x2121) + 1;
       }
       DAT_00858df8 = (undefined4 *)local_4c;
       return;

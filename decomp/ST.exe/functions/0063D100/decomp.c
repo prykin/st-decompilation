@@ -41,14 +41,14 @@ void __thiscall FUN_0063d100(void *this,undefined4 *param_1)
   local_20[4] = 0;
   local_20[5] = 0x10;
   local_20[6] = 0;
-  thunk_FUN_004adba0(local_20,piVar4);
+  STT3DSprC::RestoreSpr((STT3DSprC *)((int)this + 0x1d5),local_20,piVar4);
   thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                      *(undefined2 *)((int)this + 0x26e));
   FUN_006ab060(local_20);
   if (-1 < *(int *)((int)this + 0x33a)) {
     *(undefined4 *)((int)this + 0x33a) = 0xffffffff;
     *(undefined4 *)((int)this + 0x353) = 0xffffffff;
-    iVar2 = thunk_FUN_0063def0((uint)(*(int *)((int)this + 0x34b) != 0));
+    iVar2 = STTmMineC::LoadImagNuclear(this,(uint)(*(int *)((int)this + 0x34b) != 0));
     if (iVar2 == 0) {
       thunk_FUN_0063d410((int)this);
       thunk_FUN_0063ddb0(this,1);

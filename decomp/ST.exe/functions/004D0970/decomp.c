@@ -14,7 +14,7 @@ FUN_004d0970(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   *(undefined4 *)(*(int *)((int)this + 0x24d) + *(int *)((int)this + 0x245) * 0xc) = param_1;
   *(undefined4 *)(*(int *)((int)this + 0x24d) + 4 + *(int *)((int)this + 0x245) * 0xc) = param_2;
   *(undefined4 *)(*(int *)((int)this + 0x24d) + 8 + *(int *)((int)this + 0x245) * 0xc) = param_3;
-  iVar1 = thunk_FUN_00495ec0((short)param_1,(short)param_2,(short)param_3,0,(int)this);
+  iVar1 = DumpClassC::WritePtr((short)param_1,(short)param_2,(short)param_3,0,(int)this);
   if (iVar1 != 0) {
     FUN_006a5e40(iVar1,DAT_007ed77c,0x7bf39c,0x2f9);
   }

@@ -1,4 +1,4 @@
-FUN_0059a320:
+FSGSTy::PaintLogPsw:
 0059A320  55                        PUSH EBP
 0059A321  8B EC                     MOV EBP,ESP
 0059A323  83 EC 48                  SUB ESP,0x48

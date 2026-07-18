@@ -1,8 +1,9 @@
 
-void thunk_FUN_0050fd60(void)
+void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
 
 {
   code *pcVar1;
+  SpecPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;
   undefined4 unaff_ESI;
@@ -20,11 +21,13 @@ void thunk_FUN_0050fd60(void)
   undefined4 uVar14;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int *piStack_8;
+  SpecPanelTy *pSStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pSStack_8 = (SpecPanelTy *)this;
   iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  this_00 = pSStack_8;
   if (iVar2 == 0) {
     uVar13 = 0x77;
     uVar11 = 0xc9;
@@ -33,11 +36,11 @@ void thunk_FUN_0050fd60(void)
     iVar2 = 0xc6;
     uVar7 = 2;
     uVar6 = 0x31;
-    DAT_0080168c = piStack_8;
+    DAT_0080168c = pSStack_8;
     pCVar3 = thunk_FUN_00571240(s_BKG_FORMATIONW_007c2a58,0);
-    thunk_FUN_0053e3f0(pCVar3,uVar6,uVar7,iVar2,iVar8,UVar9,uVar11,uVar13);
+    SpecPanelTy::InitPanel(this_00,pCVar3,uVar6,uVar7,iVar2,iVar8,UVar9,uVar11,uVar13);
     uVar14 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar12 = 0;
     uVar10 = 0x2774;
     uVar13 = 0;
@@ -48,138 +51,138 @@ void thunk_FUN_0050fd60(void)
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x19,0,1,1,pCVar3,uVar6,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14);
     uVar5 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 0;
     uVar12 = 0x2775;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xc0b0;
     uVar7 = 0xc0a0;
-    *(undefined4 *)((int)piStack_8 + 0x1b3) = uVar6;
+    *(undefined4 *)(this_00 + 0x1b3) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBENDUP_007c2a3c,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x60,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 0;
     uVar12 = 0x2779;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xc0b1;
     uVar7 = 0xc0a1;
-    *(undefined4 *)((int)piStack_8 + 0x1b7) = uVar6;
+    *(undefined4 *)(this_00 + 0x1b7) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FHOLD_007c2a30,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x95,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 0;
     uVar12 = 0x277a;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xc0b2;
     uVar7 = 0xc0a2;
-    *(undefined4 *)((int)piStack_8 + 0x1bb) = uVar6;
+    *(undefined4 *)(this_00 + 0x1bb) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FLOCK_007c2a24,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xca,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 0;
     uVar12 = 0x2777;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xc0b3;
     uVar7 = 0xc0a3;
-    *(undefined4 *)((int)piStack_8 + 0x1bf) = uVar6;
+    *(undefined4 *)(this_00 + 0x1bf) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FWALL_007c2a18,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar5 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 0;
     uVar12 = 0x2776;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xc0b4;
     uVar7 = 0xc0a4;
-    *(undefined4 *)((int)piStack_8 + 0x1c3) = uVar6;
+    *(undefined4 *)(this_00 + 0x1c3) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBENDDN_007c2a08,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x60,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 1;
     uVar12 = 0;
     uVar10 = 0x2778;
     uVar13 = 0;
     uVar11 = 2;
     uVar7 = 0xc0b5;
-    *(undefined4 *)((int)piStack_8 + 0x1c7) = uVar6;
+    *(undefined4 *)(this_00 + 0x1c7) = uVar6;
     uVar6 = 0xc0a5;
     pCVar3 = thunk_FUN_00571240(s_BUT_FSQUARE_007c29f8,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x95,0x31,0,1,1,pCVar3,uVar6,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14);
     uVar5 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     uVar14 = 0;
     uVar12 = 0x277b;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xc0b6;
     uVar7 = 0xc0a6;
-    *(undefined4 *)((int)piStack_8 + 0x1cb) = uVar6;
+    *(undefined4 *)(this_00 + 0x1cb) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBREAK_007c29e8,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xca,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
     uVar14 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     pcVar4 = s_MSK_FRLFT_007c29dc;
     uVar12 = 0x277c;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xb109;
     uVar7 = 0xb108;
-    *(undefined4 *)((int)piStack_8 + 0x1cf) = uVar6;
+    *(undefined4 *)(this_00 + 0x1cf) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FINC_007c29d0,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     uVar14 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     pcVar4 = s_MSK_FRRT_007c29c4;
     uVar12 = 0x277d;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xb10b;
     uVar7 = 0xb10a;
-    *(undefined4 *)((int)piStack_8 + 0x1d3) = uVar6;
+    *(undefined4 *)(this_00 + 0x1d3) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FDEC_007c29b8,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x4d,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     uVar14 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     pcVar4 = s_MSK_FRLFT_007c29dc;
     uVar12 = 0x277e;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xb10d;
     uVar7 = 0xb10c;
-    *(undefined4 *)((int)piStack_8 + 0x1d7) = uVar6;
+    *(undefined4 *)(this_00 + 0x1d7) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FRLFT_007c29ac,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xaa,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     uVar14 = 1;
-    iVar2 = *piStack_8;
+    iVar2 = *(int *)this_00;
     pcVar4 = s_MSK_FRRT_007c29c4;
     uVar12 = 0x277f;
     uVar10 = 0;
     uVar13 = 2;
     uVar11 = 0xb10f;
     uVar7 = 0xb10e;
-    *(undefined4 *)((int)piStack_8 + 0x1db) = uVar6;
+    *(undefined4 *)(this_00 + 0x1db) = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FRRT_007c29a0,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xcc,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
-    *(undefined4 *)((int)piStack_8 + 0x1df) = uVar6;
+    *(undefined4 *)(this_00 + 0x1df) = uVar6;
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;
   }

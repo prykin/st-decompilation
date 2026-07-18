@@ -1,4 +1,4 @@
-FUN_004f1d90:
+CPanelTy::PaintDamageXY:
 004F1D90  55                        PUSH EBP
 004F1D91  8B EC                     MOV EBP,ESP
 004F1D93  83 EC 48                  SUB ESP,0x48

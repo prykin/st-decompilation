@@ -77,7 +77,7 @@ LAB_0048a37f:
     local_1c = 1;
     switch(param_1) {
     case 0:
-      thunk_FUN_0048cea0(this,0);
+      STBoatC::_CheckDefenceShots(this,0);
       puVar3 = thunk_FUN_0043f7b0(*(byte *)((int)this + 0x24),this,
                                   (int)*(short *)((int)this + 0x475),
                                   (int)*(short *)((int)this + 0x477),2,(int *)0x6,6,2,
@@ -155,15 +155,15 @@ LAB_0048a37f:
                       sVar13 = (short)local_14 + local_40;
                       sVar14 = (short)local_10 - uStack_3e;
                       if (*(int *)((int)this + 0x736) == 0) {
-                        iVar6 = thunk_FUN_0041f9b0(sVar12,sVar11,(short)local_28,sVar13,sVar14,
-                                                   (short)local_c,*(int *)((int)this + 0x79a),
-                                                   (int *)0x0,0);
+                        iVar6 = STSprGameObjC::CheckRay
+                                          (this,sVar12,sVar11,(short)local_28,sVar13,sVar14,
+                                           (short)local_c,*(int *)((int)this + 0x79a),(int *)0x0,0);
                         iVar9 = local_38;
                       }
                       else {
-                        iVar6 = thunk_FUN_0041f9b0(sVar12,sVar11,(short)local_28,sVar13,sVar14,
-                                                   (short)local_c,*(int *)((int)this + 0x79a),
-                                                   (int *)0x0,1);
+                        iVar6 = STSprGameObjC::CheckRay
+                                          (this,sVar12,sVar11,(short)local_28,sVar13,sVar14,
+                                           (short)local_c,*(int *)((int)this + 0x79a),(int *)0x0,1);
                         iVar9 = local_38;
                       }
                       local_38 = iVar9;
@@ -219,7 +219,7 @@ LAB_00489eb0:
     case 1:
     case 2:
     case 3:
-      thunk_FUN_0048cea0(this,0);
+      STBoatC::_CheckDefenceShots(this,0);
       if (*(int *)((int)this + 0x736) == 0) {
         puVar3 = thunk_FUN_0043f7b0(*(byte *)((int)this + 0x24),this,
                                     (int)*(short *)((int)this + 0x475),
@@ -277,15 +277,15 @@ LAB_00489eb0:
                     sVar13 = (short)local_14 + local_40;
                     sVar14 = (short)local_10 - uStack_3e;
                     if (*(int *)((int)this + 0x736) == 0) {
-                      iVar6 = thunk_FUN_0041f9b0(sVar12,sVar11,(short)local_28,sVar13,sVar14,
-                                                 (short)local_c,*(int *)((int)this + 0x79a),
-                                                 (int *)0x0,0);
+                      iVar6 = STSprGameObjC::CheckRay
+                                        (this,sVar12,sVar11,(short)local_28,sVar13,sVar14,
+                                         (short)local_c,*(int *)((int)this + 0x79a),(int *)0x0,0);
                       iVar9 = local_38;
                     }
                     else {
-                      iVar6 = thunk_FUN_0041f9b0(sVar12,sVar11,(short)local_28,sVar13,sVar14,
-                                                 (short)local_c,*(int *)((int)this + 0x79a),
-                                                 (int *)0x0,1);
+                      iVar6 = STSprGameObjC::CheckRay
+                                        (this,sVar12,sVar11,(short)local_28,sVar13,sVar14,
+                                         (short)local_c,*(int *)((int)this + 0x79a),(int *)0x0,1);
                       iVar9 = local_38;
                     }
                     local_38 = iVar9;

@@ -118,7 +118,7 @@ void __fastcall FUN_0051da70(int *param_1)
         do {
           if ((*puVar11 & 1 << ((byte)uVar10 & 0x1f)) == 0) {
             if ((char)local_8 == '\0') {
-              thunk_FUN_0051d540((void *)(uint)bVar1,local_c,'\0');
+              HelpPanelTy::TipProc((HelpPanelTy *)param_1,(void *)(uint)bVar1,local_c,'\0');
               (**(code **)(*param_1 + 0x18))(1);
               return;
             }

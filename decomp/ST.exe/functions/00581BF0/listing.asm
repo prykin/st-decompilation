@@ -1,4 +1,4 @@
-FUN_00581bf0:
+STJellyManC::GetMessage:
 00581BF0  55                        PUSH EBP
 00581BF1  8B EC                     MOV EBP,ESP
 00581BF3  83 EC 50                  SUB ESP,0x50

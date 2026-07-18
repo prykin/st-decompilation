@@ -41,9 +41,9 @@ void __thiscall thunk_FUN_0052bda0(void *this,char param_1,int param_2)
       *(undefined1 *)puVar4 = uVar1;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    FUN_00710a90(*(int *)((int)this + 0x7e),0,0,0,*(int *)((int)this + 0x60),
-                 *(int *)((int)this + 100));
-    FUN_007119c0(auStack_c,-1,-1,(uint)bVar3);
+    ccFntTy::SetSurf(*(ccFntTy **)((int)this + 0x6e),*(int *)((int)this + 0x7e),0,0,0,
+                     *(int *)((int)this + 0x60),*(int *)((int)this + 100));
+    ccFntTy::WrStr(*(ccFntTy **)((int)this + 0x6e),auStack_c,-1,-1,(uint)bVar3);
     thunk_FUN_0052bbe0((int)this);
   }
   return;

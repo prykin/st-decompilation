@@ -39,7 +39,7 @@ FUN_0061c910(void *this,int param_1,int param_2,int param_3,int param_4,int para
         *(undefined4 *)((int)this + 0x3c) = local_8;
         *(int *)((int)this + 0x9f) = (int)param_2._2_2_;
         *(int *)((int)this + 0xa7) = param_8._2_2_ + 0x28;
-        iVar2 = thunk_FUN_006195e0(2);
+        iVar2 = STJumpMineC::LoadImagJMine(this,2);
         return 6 - (uint)(iVar2 != 0);
       }
     }

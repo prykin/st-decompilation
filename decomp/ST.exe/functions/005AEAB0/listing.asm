@@ -1,4 +1,4 @@
-FUN_005aeab0:
+ChooseMapTy::CreateCtrls:
 005AEAB0  55                        PUSH EBP
 005AEAB1  8B EC                     MOV EBP,ESP
 005AEAB3  81 EC E0 0F 00 00         SUB ESP,0xfe0

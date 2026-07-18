@@ -1,4 +1,4 @@
-FUN_00554660:
+cLoadingTy::ShowScr:
 00554660  55                        PUSH EBP
 00554661  8B EC                     MOV EBP,ESP
 00554663  81 EC 48 04 00 00         SUB ESP,0x448

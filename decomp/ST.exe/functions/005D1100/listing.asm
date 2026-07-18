@@ -1,4 +1,4 @@
-FUN_005d1100:
+SettMapMTy::AddPlayerList:
 005D1100  55                        PUSH EBP
 005D1101  8B EC                     MOV EBP,ESP
 005D1103  83 EC 48                  SUB ESP,0x48

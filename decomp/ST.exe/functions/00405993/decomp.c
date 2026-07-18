@@ -9,6 +9,7 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
   void *pvVar3;
   int iVar4;
   undefined4 *puVar5;
+  STT3DSprC *this;
   uint uVar6;
   int iVar7;
   undefined4 unaff_ESI;
@@ -44,16 +45,16 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
   if (*(int *)(iStack_10 + 0x252) == 0) {
     puVar5 = (undefined4 *)FUN_0072e530(0x40);
     if (puVar5 == (undefined4 *)0x0) {
-      iVar4 = 0;
+      this = (STT3DSprC *)0x0;
     }
     else {
-      iVar4 = thunk_FUN_004ab810(puVar5);
+      this = (STT3DSprC *)thunk_FUN_004ab810(puVar5);
     }
-    *(int *)(iStack_10 + 0x252) = iVar4;
-    if (iVar4 == 0) {
+    *(STT3DSprC **)(iStack_10 + 0x252) = this;
+    if (this == (STT3DSprC *)0x0) {
       return 0xffffffff;
     }
-    iVar4 = thunk_FUN_004ad1f0(DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar4 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar4 != 0) {
       FUN_006a5e40(-1,DAT_007ed77c,0x7d0018,0x509);
       return 0xffff;
@@ -61,19 +62,26 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
   }
   if (param_1 == 0) {
     if (param_2 != 0) goto LAB_0061364b;
-    iVar4 = thunk_FUN_004ab880(0xd,DAT_00806774,(byte *)s_exptem_007cf8cc,0x1d);
+    iVar4 = STT3DSprC::LoadSequence
+                      (*(STT3DSprC **)(iStack_10 + 0x252),0xd,DAT_00806774,(byte *)s_exptem_007cf8cc
+                       ,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }
-    iVar4 = thunk_FUN_004ab880(0xf,DAT_00806764,(byte *)s_bulb_n5_007cf8c4,0x1d);
+    iVar4 = STT3DSprC::LoadSequence
+                      (*(STT3DSprC **)(iStack_10 + 0x252),0xf,DAT_00806764,
+                       (byte *)s_bulb_n5_007cf8c4,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }
-    iVar4 = thunk_FUN_004ab880(0xe,DAT_00806774,(byte *)s_expmask2_007cf8d4,0x1d);
+    iVar4 = STT3DSprC::LoadSequence
+                      (*(STT3DSprC **)(iStack_10 + 0x252),0xe,DAT_00806774,
+                       (byte *)s_expmask2_007cf8d4,0x1d);
     if (iVar4 != 0) {
       return 0xffff;
     }
-    thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow
+              (*(STT3DSprC **)(iStack_10 + 0x252),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
     uVar12 = 0x53;
     uVar10 = 0x5a;
     iVar4 = 1;
@@ -81,7 +89,8 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
     uVar6 = thunk_FUN_004ad650(*(int *)(iStack_10 + 0x252));
     FUN_006ea4e0(DAT_00807598,uVar6,iVar4,uVar10,uVar12);
     thunk_FUN_004ac700(*(void **)(iStack_10 + 0x252),'\x0f');
-    thunk_FUN_004ac1a0(0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow
+              (*(STT3DSprC **)(iStack_10 + 0x252),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
     iVar4 = (int)*(short *)(DAT_00806724 + 0x2c);
     uVar11 = 0;
     uVar6 = thunk_FUN_004ad650(*(int *)(iStack_10 + 0x252));
@@ -90,7 +99,7 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
     thunk_FUN_004acf20(*(void **)(iStack_10 + 0x252),DAT_008032b8,0x10);
     *(undefined4 *)(iStack_10 + 0x237) = 0;
     thunk_FUN_004abe40(*(void **)(iStack_10 + 0x252),'\r',0);
-    thunk_FUN_004ac040('\r');
+    STT3DSprC::ShowCurFase(*(STT3DSprC **)(iStack_10 + 0x252),'\r');
     thunk_FUN_004acfe0(*(void **)(iStack_10 + 0x252),'\x0e');
     thunk_FUN_004ad3c0(*(void **)(iStack_10 + 0x252),
                        (float)*(int *)(iStack_10 + 0x22b) * _DAT_007904f8 * _DAT_007904f0,
@@ -101,7 +110,9 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
   else {
     iVar4 = *(int *)(iStack_10 + 0x1f7);
     if (iVar4 == 0) {
-      iVar4 = thunk_FUN_004ab880(0xd,DAT_00806774,(byte *)s_den_bmb_007cf8b4,0x1d);
+      iVar4 = STT3DSprC::LoadSequence
+                        (*(STT3DSprC **)(iStack_10 + 0x252),0xd,DAT_00806774,
+                         (byte *)s_den_bmb_007cf8b4,0x1d);
       if (iVar4 != 0) {
         return 0xffff;
       }
@@ -114,7 +125,8 @@ undefined4 thunk_FUN_006132f0(int param_1,int param_2)
         if (iVar4 != 2) goto LAB_00613424;
         pcVar9 = s_den_bmb_007cf8b4;
       }
-      iVar4 = thunk_FUN_004ab880(0xd,DAT_00806774,(byte *)pcVar9,0x1d);
+      iVar4 = STT3DSprC::LoadSequence
+                        (*(STT3DSprC **)(iStack_10 + 0x252),0xd,DAT_00806774,(byte *)pcVar9,0x1d);
       if (iVar4 != 0) {
         return 0xffff;
       }
@@ -126,7 +138,8 @@ LAB_00613424:
                        (float)*(int *)(iStack_10 + 0x22f) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)(iStack_10 + 0x233) * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
-    thunk_FUN_004ac1a0(0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow
+              (*(STT3DSprC **)(iStack_10 + 0x252),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
     *(undefined1 *)(iStack_10 + 0x250) = 1;
   }
   uStack_8 = 1;

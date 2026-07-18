@@ -1,4 +1,4 @@
-FUN_004900e0:
+STBoatC::RestoreBoatData:
 004900E0  55                        PUSH EBP
 004900E1  8B EC                     MOV EBP,ESP
 004900E3  83 EC 50                  SUB ESP,0x50

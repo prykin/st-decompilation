@@ -1,4 +1,4 @@
-FUN_005b5690:
+MMObjTy::PaintSprBut:
 005B5690  55                        PUSH EBP
 005B5691  8B EC                     MOV EBP,ESP
 005B5693  83 EC 48                  SUB ESP,0x48

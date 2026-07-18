@@ -1,4 +1,4 @@
-FUN_00539490:
+PausePanelTy::DonePausePanel:
 00539490  55                        PUSH EBP
 00539491  8B EC                     MOV EBP,ESP
 00539493  83 EC 48                  SUB ESP,0x48

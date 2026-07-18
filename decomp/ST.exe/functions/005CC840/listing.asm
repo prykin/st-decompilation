@@ -1,4 +1,4 @@
-FUN_005cc840:
+SettMapMTy::DeleteCtrls:
 005CC840  55                        PUSH EBP
 005CC841  8B EC                     MOV EBP,ESP
 005CC843  83 EC 48                  SUB ESP,0x48

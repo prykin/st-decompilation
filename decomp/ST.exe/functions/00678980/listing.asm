@@ -1,4 +1,4 @@
-FUN_00678980:
+AiPlrClassTy::InitData:
 00678980  55                        PUSH EBP
 00678981  8B EC                     MOV EBP,ESP
 00678983  83 EC 4C                  SUB ESP,0x4c

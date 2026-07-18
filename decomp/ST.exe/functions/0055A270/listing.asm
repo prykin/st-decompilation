@@ -1,4 +1,4 @@
-FUN_0055a270:
+VisibleClassTy::SetZoneMin1:
 0055A270  55                        PUSH EBP
 0055A271  8B EC                     MOV EBP,ESP
 0055A273  83 EC 5C                  SUB ESP,0x5c

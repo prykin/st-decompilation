@@ -1,2 +1,2 @@
-thunk_FUN_00505df0:
+CPanelTy::PaintBioSonar:
 00403B16  E9 D5 22 10 00            JMP 0x00505df0

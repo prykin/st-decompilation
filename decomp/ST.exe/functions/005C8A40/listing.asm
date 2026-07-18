@@ -1,4 +1,4 @@
-FUN_005c8a40:
+SettMapTy::GetMessage:
 005C8A40  55                        PUSH EBP
 005C8A41  8B EC                     MOV EBP,ESP
 005C8A43  81 EC D8 00 00 00         SUB ESP,0xd8

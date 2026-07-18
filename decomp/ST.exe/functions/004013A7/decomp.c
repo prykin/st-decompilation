@@ -1,12 +1,13 @@
 
-void __thiscall thunk_FUN_005d1100(void *this,int param_1,uint param_2,int param_3,char *param_4)
+void __thiscall
+SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,char *param_4)
 
 {
   byte bVar1;
   uint uVar2;
   code *pcVar3;
   bool bVar4;
-  void *this_00;
+  SettMapMTy *this_00;
   int iVar5;
   int iVar6;
   char *pcVar7;
@@ -15,16 +16,16 @@ void __thiscall thunk_FUN_005d1100(void *this,int param_1,uint param_2,int param
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  SettMapMTy *pSStack_8;
   
-  if (*(int *)((int)this + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
-    pvStack_8 = this;
+    pSStack_8 = this;
     iVar5 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-    this_00 = pvStack_8;
+    this_00 = pSStack_8;
     if (iVar5 == 0) {
-      iVar5 = *(int *)((int)pvStack_8 + 0x1f84);
+      iVar5 = *(int *)(pSStack_8 + 0x1f84);
       if (param_2 < *(uint *)(iVar5 + 0xc)) {
         iVar5 = *(int *)(iVar5 + 8) * param_2 + *(int *)(iVar5 + 0x1c);
       }
@@ -40,13 +41,13 @@ void __thiscall thunk_FUN_005d1100(void *this,int param_1,uint param_2,int param
         else {
           if ((bVar1 < 2) || (3 < bVar1)) goto LAB_005d11ad;
           param_2 = param_2 + 1;
-          thunk_FUN_005d00b0(pvStack_8,iVar5,param_2);
+          thunk_FUN_005d00b0(pSStack_8,iVar5,param_2);
         }
-        thunk_FUN_005d0ed0(this_00,param_1,param_2,param_3,'\0',param_4);
+        ChangePlayerList(this_00,param_1,param_2,param_3,'\0',param_4);
       }
 LAB_005d11ad:
-      if ((DAT_0080877e != '\0') && (*(char *)((int)this_00 + 0x1e26) == '\f')) {
-        iVar5 = *(int *)((int)this_00 + 0x1f84);
+      if ((DAT_0080877e != '\0') && (this_00[0x1e26] == (SettMapMTy)0xc)) {
+        iVar5 = *(int *)(this_00 + 0x1f84);
         uVar8 = 0;
         bVar4 = true;
         uVar2 = *(uint *)(iVar5 + 0xc);
@@ -86,7 +87,7 @@ LAB_005d1245:
           if (DAT_008067a0 == '\0') {
             pcVar7 = (char *)&DAT_00807ddd;
           }
-          thunk_FUN_005d1100(pvStack_8,DAT_0080877f,uVar8,(DAT_0080874f != '\0') + 2,pcVar7);
+          AddPlayerList(pSStack_8,DAT_0080877f,uVar8,(DAT_0080874f != '\0') + 2,pcVar7);
         }
       }
       DAT_00858df8 = (undefined4 *)uStack_4c;

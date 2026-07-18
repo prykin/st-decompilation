@@ -1,4 +1,4 @@
-FUN_00449e60:
+STAllPlayersC::UnRegisterArtefact:
 00449E60  55                        PUSH EBP
 00449E61  8B EC                     MOV EBP,ESP
 00449E63  83 EC 4C                  SUB ESP,0x4c

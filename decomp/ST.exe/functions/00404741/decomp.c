@@ -1,8 +1,9 @@
 
-void thunk_FUN_0068f7e0(void)
+void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
 
 {
   code *pcVar1;
+  AiTactClassTy *this_00;
   int iVar2;
   uint *puVar3;
   int iVar4;
@@ -10,18 +11,20 @@ void thunk_FUN_0068f7e0(void)
   void *unaff_EDI;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  int iStack_c;
+  AiTactClassTy *pAStack_c;
   uint *puStack_8;
   
   puStack_8 = (uint *)0x0;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pAStack_c = this;
   iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  this_00 = pAStack_c;
   if (iVar2 == 0) {
-    puVar3 = thunk_FUN_00676170(*(undefined4 *)(iStack_c + 0x24));
+    puVar3 = thunk_FUN_00676170(*(undefined4 *)(pAStack_c + 0x24));
     puStack_8 = puVar3;
-    thunk_FUN_0068f020((int)puVar3);
-    thunk_FUN_0068f360((int)puVar3);
+    GiveObjByClaim(this_00,(int)puVar3);
+    GiveObjByFltType(this_00,(int)puVar3);
     if (puVar3 != (uint *)0x0) {
       FUN_006ae110((byte *)puVar3);
     }

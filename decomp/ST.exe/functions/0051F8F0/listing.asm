@@ -1,4 +1,4 @@
-FUN_0051f8f0:
+HelpStringTy::OutStr:
 0051F8F0  55                        PUSH EBP
 0051F8F1  8B EC                     MOV EBP,ESP
 0051F8F3  83 EC 48                  SUB ESP,0x48

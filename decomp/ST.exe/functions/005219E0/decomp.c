@@ -1,59 +1,66 @@
 
-void FUN_005219e0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\intercom.cpp
+   IntercomPanelTy::InitIntercomPanel */
+
+void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
-  undefined4 *puVar3;
-  LPSTR pCVar4;
-  ushort *puVar5;
-  uint uVar6;
-  undefined4 uVar7;
-  uint *puVar8;
-  int iVar9;
+  IntercomPanelTy *pIVar2;
+  int iVar3;
+  undefined4 *puVar4;
+  LPSTR pCVar5;
+  ushort *puVar6;
+  uint uVar7;
+  undefined4 uVar8;
+  uint *puVar9;
+  int iVar10;
   void *unaff_ESI;
-  int *piVar10;
-  ushort *puVar11;
-  undefined4 uVar12;
+  int *piVar11;
+  ushort *puVar12;
+  undefined4 uVar13;
   undefined4 local_48 [16];
-  int local_8;
+  IntercomPanelTy *local_8;
   
-  uVar12 = DAT_00858df8;
+  uVar13 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar12);
-  if (iVar2 == 0) {
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_ESI,uVar13);
+  pIVar2 = local_8;
+  if (iVar3 == 0) {
     DAT_0080169c = local_8;
-    puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x30));
-    *(undefined4 **)(local_8 + 0x180) = puVar3;
-    puVar3[0x16] = 0;
-    puVar3[0x17] = 0;
-    iVar2 = 1;
-    piVar10 = (int *)0x0;
-    pCVar4 = thunk_FUN_00571240(s_BKG_EDITCHAT_007c40a0,0);
-    puVar5 = FUN_006f1ce0(1,pCVar4,piVar10,iVar2);
-    puVar11 = puVar5 + 0x14;
-    iVar2 = 1;
-    *(ushort **)(local_8 + 0x184) = puVar5;
-    uVar6 = FUN_006b4fe0((int)puVar5);
-    uVar7 = FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
-                         (uint)*(ushort *)(*(int *)(local_8 + 0x184) + 0xe),uVar6,
-                         (undefined4 *)puVar11,iVar2);
-    *(undefined4 *)(local_8 + 0x19c) = uVar7;
-    thunk_FUN_00540760(*(undefined4 **)(local_8 + 0x68),0,0,'\x01',*(byte **)(local_8 + 0x184));
-    puVar8 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)(local_8 + 0x198) = puVar8;
-    FUN_006b6020((int)puVar8,0,&DAT_008016a0);
-    DAT_00858df8 = (undefined1 *)uVar12;
+    puVar4 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x30));
+    *(undefined4 **)(pIVar2 + 0x180) = puVar4;
+    puVar4[0x16] = 0;
+    puVar4[0x17] = 0;
+    iVar3 = 1;
+    piVar11 = (int *)0x0;
+    pCVar5 = thunk_FUN_00571240(s_BKG_EDITCHAT_007c40a0,0);
+    puVar6 = FUN_006f1ce0(1,pCVar5,piVar11,iVar3);
+    puVar12 = puVar6 + 0x14;
+    iVar3 = 1;
+    *(ushort **)(pIVar2 + 0x184) = puVar6;
+    uVar7 = FUN_006b4fe0((int)puVar6);
+    uVar8 = FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
+                         (uint)*(ushort *)(*(int *)(pIVar2 + 0x184) + 0xe),uVar7,
+                         (undefined4 *)puVar12,iVar3);
+    *(undefined4 *)(pIVar2 + 0x19c) = uVar8;
+    thunk_FUN_00540760(*(undefined4 **)(pIVar2 + 0x68),0,0,'\x01',*(byte **)(pIVar2 + 0x184));
+    puVar9 = FUN_006b54f0((uint *)0x0,1,1);
+    *(uint **)(pIVar2 + 0x198) = puVar9;
+    FUN_006b6020((int)puVar9,0,&DAT_008016a0);
+    DAT_00858df8 = (undefined1 *)uVar13;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar12;
-  iVar9 = FUN_006ad4d0(s_E____titans_Andrey_intercom_cpp_007c401c,0x34,0,iVar2,&DAT_007a4ccc);
-  if (iVar9 != 0) {
+  DAT_00858df8 = (undefined1 *)uVar13;
+  iVar10 = FUN_006ad4d0(s_E____titans_Andrey_intercom_cpp_007c401c,0x34,0,iVar3,&DAT_007a4ccc);
+  if (iVar10 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c401c,0x34);
+  FUN_006a5e40(iVar3,0,0x7c401c,0x34);
   return;
 }
 

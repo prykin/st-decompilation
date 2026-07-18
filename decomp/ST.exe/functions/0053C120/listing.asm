@@ -1,4 +1,4 @@
-FUN_0053c120:
+ResearchPanelTy::InitResearchPanel:
 0053C120  55                        PUSH EBP
 0053C121  8B EC                     MOV EBP,ESP
 0053C123  81 EC F8 01 00 00         SUB ESP,0x1f8

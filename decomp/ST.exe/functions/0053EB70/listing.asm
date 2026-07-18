@@ -1,4 +1,4 @@
-FUN_0053eb70:
+SpecPanelTy::GetMessage:
 0053EB70  55                        PUSH EBP
 0053EB71  8B EC                     MOV EBP,ESP
 0053EB73  83 EC 48                  SUB ESP,0x48

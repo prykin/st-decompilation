@@ -1,4 +1,4 @@
-FUN_00440600:
+STAllPlayersC::GetNInTmp:
 00440600  55                        PUSH EBP
 00440601  8B EC                     MOV EBP,ESP
 00440603  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

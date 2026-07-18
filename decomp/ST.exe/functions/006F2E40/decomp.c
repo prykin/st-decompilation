@@ -1,6 +1,6 @@
 
 int __cdecl
-FUN_006f2e40(undefined4 param_1,char *param_2,undefined *param_3,undefined4 param_4,byte param_5)
+FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,byte param_5)
 
 {
   char cVar1;
@@ -64,8 +64,8 @@ FUN_006f2e40(undefined4 param_1,char *param_2,undefined *param_3,undefined4 para
     pcVar4 = pcVar4 + 1;
     pcVar9 = pcVar9 + 1;
   }
-  FUN_006f12b0(FUN_006f2d10,&local_250);
-  pcVar4 = (char *)FUN_006f2790();
+  cMf32::ToBeg(param_1,FUN_006f2d10,&local_250);
+  pcVar4 = (char *)cMf32::RecNameGetNext(param_1);
   while (pcVar4 != (char *)0x0) {
     puVar5 = FUN_006f2d90(param_1,pcVar4,param_5,1);
     iVar3 = FUN_006f2600(0xc,pcVar4,(undefined1 *)0x0,1);
@@ -74,7 +74,7 @@ FUN_006f2e40(undefined4 param_1,char *param_2,undefined *param_3,undefined4 para
       FUN_006a5e40(iVar3,DAT_007ed77c,0x7efd3c,0x3f);
     }
     local_8 = local_8 + 1;
-    pcVar4 = (char *)FUN_006f2790();
+    pcVar4 = (char *)cMf32::RecNameGetNext(param_1);
   }
   DAT_00858df8 = (undefined4 *)local_4c;
   return local_8;

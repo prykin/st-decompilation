@@ -1,4 +1,4 @@
-FUN_0065d2a0:
+AiFltClassTy::InitData:
 0065D2A0  55                        PUSH EBP
 0065D2A1  8B EC                     MOV EBP,ESP
 0065D2A3  83 EC 4C                  SUB ESP,0x4c

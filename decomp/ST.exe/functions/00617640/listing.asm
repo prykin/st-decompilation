@@ -1,4 +1,4 @@
-FUN_00617640:
+JumpManagC::GetMessage:
 00617640  55                        PUSH EBP
 00617641  8B EC                     MOV EBP,ESP
 00617643  83 EC 50                  SUB ESP,0x50

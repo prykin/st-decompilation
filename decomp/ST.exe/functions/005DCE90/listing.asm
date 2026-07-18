@@ -1,4 +1,4 @@
-FUN_005dce90:
+StartSystemTy::GetMessage:
 005DCE90  55                        PUSH EBP
 005DCE91  8B EC                     MOV EBP,ESP
 005DCE93  81 EC 88 00 00 00         SUB ESP,0x88

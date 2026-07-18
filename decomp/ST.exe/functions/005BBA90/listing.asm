@@ -1,4 +1,4 @@
-FUN_005bba90:
+PrividerTy::CreateCtrls:
 005BBA90  55                        PUSH EBP
 005BBA91  8B EC                     MOV EBP,ESP
 005BBA93  81 EC CC 0D 00 00         SUB ESP,0xdcc

@@ -1,24 +1,29 @@
 
-void __fastcall FUN_005770d0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\tsystem.cpp
+   GameSystemC::DoneSystem */
+
+void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
 
 {
   code *pcVar1;
   int *piVar2;
-  int iVar3;
+  GameSystemC *pGVar3;
   int iVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  GameSystemC *local_8;
   
-  *(undefined1 *)(param_1 + 0x430) = 0;
+  this[0x430] = (GameSystemC)0x0;
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  local_8 = param_1;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  iVar4 = local_8;
-  if (iVar3 == 0) {
+  local_8 = this;
+  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pGVar3 = local_8;
+  if (iVar4 == 0) {
     if (*(int *)(local_8 + 0x431) != 0) {
       FUN_00725680((int *)(local_8 + 0x431));
     }
@@ -41,19 +46,19 @@ void __fastcall FUN_005770d0(int param_1)
     if (DAT_00806750 != 0) {
       thunk_FUN_0042a780(&DAT_00806750);
     }
-    FUN_006e52d0(iVar4);
+    FUN_006e52d0((int)pGVar3);
     ShowCursor(1);
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar4 = FUN_006ad4d0(s_E____titans_tsystem_cpp_007cab5c,0xa7,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  iVar5 = FUN_006ad4d0(s_E____titans_tsystem_cpp_007cab5c,0xa7,0,iVar4,&DAT_007a4ccc);
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cab5c,0xa7);
+  FUN_006a5e40(iVar4,0,0x7cab5c,0xa7);
   return;
 }
 

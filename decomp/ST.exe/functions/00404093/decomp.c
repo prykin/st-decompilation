@@ -25,7 +25,7 @@ undefined4 __thiscall thunk_FUN_00627400(void *this,undefined4 param_1)
                   ((uint)*(byte *)((int)this + 0x8e) +
                   ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar2 + (int)sVar1) * 2
                   ) * 4) == 0)))) &&
-       (iVar4 = thunk_FUN_00495ec0(sVar1,sVar2,sVar3,(uint)*(byte *)((int)this + 0x8e),(int)this),
+       (iVar4 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,(uint)*(byte *)((int)this + 0x8e),(int)this),
        iVar4 == 0)) {
       *(char *)((int)this + 0x314) = *(char *)((int)this + 0x314) + '\x01';
       return param_1;

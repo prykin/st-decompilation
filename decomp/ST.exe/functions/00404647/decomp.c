@@ -11,6 +11,7 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
   undefined2 extraout_var;
   uint uVar7;
   uint uVar8;
+  STAllPlayersC *in_ECX;
   undefined2 extraout_var_00;
   undefined2 extraout_var_01;
   undefined4 extraout_ECX;
@@ -75,7 +76,7 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
               thunk_FUN_00435060();
               return;
             }
-            thunk_FUN_0044af50(cVar11,0);
+            STAllPlayersC::PushTV(cVar11,0);
             uVar6 = thunk_FUN_0042d4f0(cVar11,0,1,0);
             uVar7 = CONCAT22(extraout_var_13,*(undefined2 *)((int)piVar2 + 0x32));
             uVar8 = CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]);
@@ -99,7 +100,7 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
             return;
           }
           if (iVar3 < 0) {
-            thunk_FUN_0044af50(cVar11,0);
+            STAllPlayersC::PushTV(cVar11,0);
             thunk_FUN_0042d4f0(cVar11,0,1,0);
             uVar7 = CONCAT22(extraout_var,*(undefined2 *)((int)piVar2 + 0x32));
             uVar8 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)piVar2[9]);
@@ -166,7 +167,7 @@ LAB_004345b4:
                                      CONCAT22(extraout_var_12,*(undefined2 *)((int)piVar2 + 0x32)));
           if (-1 < iVar3) goto LAB_004345b4;
         }
-        thunk_FUN_0044af50(cVar11,0);
+        STAllPlayersC::PushTV(cVar11,0);
         uVar6 = extraout_EDX;
         uVar9 = extraout_var_01;
       }
@@ -174,7 +175,7 @@ LAB_004345b4:
       uVar8 = CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]);
       iVar3 = piVar2[8];
 LAB_0043440e:
-      thunk_FUN_0042bea0(cVar11,0,0,iVar3,uVar8,uVar7);
+      STAllPlayersC::AddObjToTmp2(in_ECX,cVar11,0,0,iVar3,uVar8,uVar7);
       thunk_FUN_00435060();
       return;
     }
@@ -238,12 +239,12 @@ LAB_00434c44:
           goto LAB_00434cb8;
         }
 LAB_00434c88:
-        iVar5 = thunk_FUN_0044af50(cVar11,1);
+        iVar5 = STAllPlayersC::PushTV(cVar11,1);
         uVar6 = extraout_ECX_01;
 LAB_00434c92:
-        thunk_FUN_0042bb30(cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
-                           CONCAT22((short)((uint)iVar5 >> 0x10),*(undefined2 *)((int)piVar2 + 0x32)
-                                   ));
+        STAllPlayersC::AddObjToTmp
+                  (in_ECX,cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
+                   CONCAT22((short)((uint)iVar5 >> 0x10),*(undefined2 *)((int)piVar2 + 0x32)));
       }
       *(undefined4 *)((int)&DAT_007f4fd3 + iVar3) = 0x19a;
       puVar4 = param_1;
@@ -273,10 +274,11 @@ LAB_00434c92:
           goto LAB_00434cb8;
         }
         if (-1 < iVar5) goto LAB_00434cb8;
-        thunk_FUN_0044af50(cVar11,1);
+        STAllPlayersC::PushTV(cVar11,1);
         param_1 = puVar4;
         if (*(int *)((int)&DAT_007f4fe7 + iVar3) != piVar2[9]) goto LAB_00434b39;
-        thunk_FUN_0044b280(cVar11,1,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0);
+        STAllPlayersC::CalibrateTmp
+                  (in_ECX,cVar11,1,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0);
         thunk_FUN_0042d190(CONCAT31((int3)((uint)extraout_EDX_03 >> 8),(char)piVar2[9]),0x19a,
                            (int)pbStack_8,0,0);
         FUN_006ae110(pbStack_8);
@@ -302,15 +304,16 @@ LAB_00434ae2:
           thunk_FUN_0044b030(cVar11,1,iVar5);
           goto LAB_00434cb8;
         }
-        thunk_FUN_0044af50(cVar11,1);
+        STAllPlayersC::PushTV(cVar11,1);
         param_1 = puVar4;
 LAB_00434b39:
         thunk_FUN_0042d4f0(cVar11,1,1,0);
         uVar6 = extraout_EDX_05;
         uVar9 = extraout_var_07;
       }
-      thunk_FUN_0042bb30(cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
-                         CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+      STAllPlayersC::AddObjToTmp
+                (in_ECX,cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
+                 CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
       *(undefined4 *)((int)&DAT_007f4fd3 + iVar3) = 0x19a;
       puVar4 = param_1;
     }
@@ -332,14 +335,15 @@ LAB_00434cb8:
               if (*(int *)((int)&DAT_007f4f87 + iVar3) != (int)(char)piVar2[9]) {
                 return;
               }
-              iVar3 = thunk_FUN_0042cde0(param_1,0,0,cVar11,*(short *)((int)piVar2 + 0x32));
+              iVar3 = STAllPlayersC::PushTV(param_1,0,0,cVar11,*(short *)((int)piVar2 + 0x32));
               if (iVar3 == 1) {
                 thunk_FUN_0042c300(param_1,0,0,(uint)param_1,(uint)*(ushort *)((int)piVar2 + 0x32));
                 thunk_FUN_00435060();
                 return;
               }
-              thunk_FUN_0042bb30(cVar11,0,0,(uint)param_1,
-                                 CONCAT22(extraout_var_00,*(undefined2 *)((int)piVar2 + 0x32)));
+              STAllPlayersC::AddObjToTmp
+                        (in_ECX,cVar11,0,0,(uint)param_1,
+                         CONCAT22(extraout_var_00,*(undefined2 *)((int)piVar2 + 0x32)));
               thunk_FUN_00435060();
               return;
             }
@@ -348,11 +352,12 @@ LAB_00434cb8:
             iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
             if (iVar5 < 1) {
               if (iVar5 < 0) {
-                thunk_FUN_0044af50(cVar11,0);
+                STAllPlayersC::PushTV(cVar11,0);
                 param_1 = puVar4;
                 if (*(int *)((int)&DAT_007f4f97 + iVar3) != piVar2[9]) goto LAB_0043414f;
-                uVar6 = thunk_FUN_0044b280(cVar11,0,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0
-                                          );
+                uVar6 = STAllPlayersC::CalibrateTmp
+                                  (in_ECX,cVar11,0,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0)
+                ;
                 thunk_FUN_0042d190(CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),0x3c,
                                    (int)pbStack_8,0,0);
                 iVar5 = FUN_006ae110(pbStack_8);
@@ -382,7 +387,7 @@ LAB_00434cb8:
             FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
             iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
             if (iVar5 < 1) {
-              thunk_FUN_0044af50(cVar11,0);
+              STAllPlayersC::PushTV(cVar11,0);
               param_1 = puVar4;
 LAB_0043414f:
               iVar5 = thunk_FUN_0042d4f0(cVar11,0,1,0);
@@ -446,11 +451,12 @@ LAB_0043429d:
           goto LAB_00434cb8;
         }
 LAB_0043404a:
-        iVar5 = thunk_FUN_0044af50(cVar11,0);
+        iVar5 = STAllPlayersC::PushTV(cVar11,0);
         uVar9 = extraout_var_08;
 LAB_0043415b:
-        thunk_FUN_0042bb30(cVar11,0,0,CONCAT31((int3)((uint)iVar5 >> 8),(char)piVar2[9]),
-                           CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+        STAllPlayersC::AddObjToTmp
+                  (in_ECX,cVar11,0,0,CONCAT31((int3)((uint)iVar5 >> 8),(char)piVar2[9]),
+                   CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
       }
       *(undefined4 *)((int)&DAT_007f4f83 + iVar3) = 0x3c;
       puVar4 = param_1;
@@ -525,12 +531,13 @@ LAB_00434cbd:
         return;
       }
     }
-    thunk_FUN_0044af50(cVar11,1);
+    STAllPlayersC::PushTV(cVar11,1);
     iVar3 = thunk_FUN_0042d4f0(cVar11,1,1,0);
     uVar9 = extraout_var_15;
 LAB_00434768:
-    thunk_FUN_0042bea0(cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)iVar3 >> 8),(char)piVar2[9]),
-                       CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+    STAllPlayersC::AddObjToTmp2
+              (in_ECX,cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)iVar3 >> 8),(char)piVar2[9]),
+               CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
     thunk_FUN_00435060();
     return;
   }
@@ -582,12 +589,13 @@ LAB_00434895:
       return;
     }
   }
-  thunk_FUN_0044af50(cVar11,1);
+  STAllPlayersC::PushTV(cVar11,1);
   uVar6 = extraout_EDX_02;
   uVar9 = extraout_var_05;
 LAB_004348d7:
-  thunk_FUN_0042bea0(cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
-                     CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+  STAllPlayersC::AddObjToTmp2
+            (in_ECX,cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
+             CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
   thunk_FUN_00435060();
   return;
 }

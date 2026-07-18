@@ -1,4 +1,4 @@
-FUN_00430960:
+STAllPlayersC::UnRegisterTorpedo:
 00430960  55                        PUSH EBP
 00430961  8B EC                     MOV EBP,ESP
 00430963  83 EC 48                  SUB ESP,0x48

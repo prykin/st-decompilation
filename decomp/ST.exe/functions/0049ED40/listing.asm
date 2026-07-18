@@ -1,4 +1,4 @@
-FUN_0049ed40:
+STGroupBoatC::DCBomb:
 0049ED40  55                        PUSH EBP
 0049ED41  8B EC                     MOV EBP,ESP
 0049ED43  83 EC 74                  SUB ESP,0x74

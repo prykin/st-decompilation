@@ -1,4 +1,4 @@
-FUN_005db4f0:
+StartSystemTy::LoadGraph:
 005DB4F0  55                        PUSH EBP
 005DB4F1  8B EC                     MOV EBP,ESP
 005DB4F3  83 EC 4C                  SUB ESP,0x4c

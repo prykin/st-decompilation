@@ -10,6 +10,7 @@ void thunk_FUN_0054a9b0(float param_1,float param_2,float param_3)
   int iVar4;
   uint uVar5;
   undefined4 *puVar6;
+  SpriteClassTy *this;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   int iVar7;
@@ -109,24 +110,24 @@ void thunk_FUN_0054a9b0(float param_1,float param_2,float param_3)
     }
   }
   if (0 < (int)uVar5) {
-    if (*(int *)(iStack_c + 0x4eb) != 0) {
-      FUN_00715ab0();
+    if (*(SpriteClassTy **)(iStack_c + 0x4eb) != (SpriteClassTy *)0x0) {
+      SpriteClassTy::CloseSprite(*(SpriteClassTy **)(iStack_c + 0x4eb));
       FUN_0072e2b0(*(undefined4 **)(iStack_c + 0x4eb));
       *(undefined4 *)(iStack_c + 0x4eb) = 0;
     }
     puVar6 = (undefined4 *)FUN_0072e530(0x91);
     if (puVar6 == (undefined4 *)0x0) {
-      iVar4 = 0;
+      this = (SpriteClassTy *)0x0;
     }
     else {
-      iVar4 = FUN_00715820(puVar6);
+      this = (SpriteClassTy *)FUN_00715820(puVar6);
     }
-    *(int *)(iStack_c + 0x4eb) = iVar4;
-    if (iVar4 == 0) {
+    *(SpriteClassTy **)(iStack_c + 0x4eb) = this;
+    if (this == (SpriteClassTy *)0x0) {
       DAT_00858df8 = (undefined4 *)uStack_58;
       return;
     }
-    FUN_007158a0(DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
+    SpriteClassTy::InitSprite(this,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
     (**(code **)(**(int **)(iStack_c + 0x4eb) + 4))
               (DAT_00806784,7,0,s_CUR_CONFIRM2D_007c7fb4,0xffffffff);
     *(undefined4 *)(*(int *)(iStack_c + 0x4eb) + 0x40) = 0x19;

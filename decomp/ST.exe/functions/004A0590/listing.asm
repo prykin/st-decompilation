@@ -1,4 +1,4 @@
-FUN_004a0590:
+STGroupBoatC::Scout:
 004A0590  55                        PUSH EBP
 004A0591  8B EC                     MOV EBP,ESP
 004A0593  83 EC 7C                  SUB ESP,0x7c

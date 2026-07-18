@@ -1,5 +1,9 @@
 
-int __thiscall FUN_00645020(void *this,int param_1,uint *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_torp.cpp
+   STTorpC::IsDangerous */
+
+int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -12,11 +16,11 @@ int __thiscall FUN_00645020(void *this,int param_1,uint *param_2)
   undefined4 local_58 [16];
   int local_18;
   int local_14;
-  void *local_10;
+  STTorpC *local_10;
   int local_c;
   int local_8;
   
-  local_c = *(int *)(*(int *)((int)this + 0x241) + 0xc);
+  local_c = *(int *)(*(int *)(this + 0x241) + 0xc);
   local_5c = DAT_00858df8;
   DAT_00858df8 = &local_5c;
   local_10 = this;
@@ -30,7 +34,7 @@ int __thiscall FUN_00645020(void *this,int param_1,uint *param_2)
     local_8 = 0;
     *param_2 = 0xffffffff;
     if (0 < iVar3) {
-      while (FUN_006acc70(*(int *)((int)local_10 + 0x241),uVar4,&local_18), local_18 != param_1) {
+      while (FUN_006acc70(*(int *)(local_10 + 0x241),uVar4,&local_18), local_18 != param_1) {
         uVar4 = uVar4 + 1;
         if (iVar3 <= (int)uVar4) {
           DAT_00858df8 = (undefined4 *)local_5c;

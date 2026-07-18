@@ -1,6 +1,6 @@
 
 void __thiscall
-FUN_00691690(void *this,undefined4 param_1,undefined4 param_2,int param_3,undefined *param_4)
+FUN_00691690(void *this,cMf32 *param_1,undefined4 param_2,int param_3,undefined *param_4)
 
 {
   short *psVar1;
@@ -52,7 +52,7 @@ FUN_00691690(void *this,undefined4 param_1,undefined4 param_2,int param_3,undefi
       puVar8 = puVar8 + 2;
       puVar3 = puVar3 + 1;
     }
-    FUN_006f20e0((uint *)&local_38);
+    cMf32::RecMemFree(param_1,(uint *)&local_38);
   }
   local_30 = FUN_006f2d90(param_1,s_CLR_COVER_007d59ac,0,0);
   if (local_30 != (ushort *)0x0) {
@@ -64,7 +64,7 @@ FUN_00691690(void *this,undefined4 param_1,undefined4 param_2,int param_3,undefi
       *puVar3 = uVar13;
       puVar3 = puVar3 + 2;
     } while ((int)puVar3 < 0x7d595c);
-    FUN_006f20e0((uint *)&local_30);
+    cMf32::RecMemFree(param_1,(uint *)&local_30);
   }
   local_20 = 0;
   do {

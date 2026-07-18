@@ -1,4 +1,4 @@
-FUN_005d0850:
+SettMapMTy::ChangePlayerColor:
 005D0850  55                        PUSH EBP
 005D0851  8B EC                     MOV EBP,ESP
 005D0853  83 EC 48                  SUB ESP,0x48

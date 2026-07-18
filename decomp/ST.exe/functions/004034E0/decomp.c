@@ -84,7 +84,7 @@ void __fastcall thunk_FUN_00660d40(int param_1)
               else {
                 sVar2 = 0;
               }
-              thunk_FUN_0068eb30(&uStack_5c,sVar2);
+              AiTactClassTy::PrepareToSave(*(AiTactClassTy **)(iVar3 + 0x284),&uStack_5c,sVar2);
               uVar4 = uStack_c;
               param_1 = iStack_8;
             }

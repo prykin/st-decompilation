@@ -1,4 +1,4 @@
-FUN_005424a0:
+InterSystemC::CreateInterfObjects:
 005424A0  55                        PUSH EBP
 005424A1  8B EC                     MOV EBP,ESP
 005424A3  81 EC C4 01 00 00         SUB ESP,0x1c4

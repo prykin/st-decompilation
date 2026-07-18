@@ -1,4 +1,4 @@
-FUN_005f6af0:
+STColl3C::LoadImagSpr:
 005F6AF0  55                        PUSH EBP
 005F6AF1  8B EC                     MOV EBP,ESP
 005F6AF3  83 EC 4C                  SUB ESP,0x4c

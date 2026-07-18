@@ -1,4 +1,4 @@
-FUN_00532a80:
+OptPanelTy::PrepMissObj:
 00532A80  55                        PUSH EBP
 00532A81  8B EC                     MOV EBP,ESP
 00532A83  83 EC 48                  SUB ESP,0x48

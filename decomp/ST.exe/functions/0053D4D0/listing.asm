@@ -1,4 +1,4 @@
-FUN_0053d4d0:
+SAMPanelTy::GetMessage:
 0053D4D0  55                        PUSH EBP
 0053D4D1  8B EC                     MOV EBP,ESP
 0053D4D3  83 EC 50                  SUB ESP,0x50

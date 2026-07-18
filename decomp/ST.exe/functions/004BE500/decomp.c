@@ -1,9 +1,13 @@
 
-void __thiscall FUN_004be500(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Artem\TLO_bcomm.cpp
+   TLOBaseTy::SetActivity */
+
+void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
 
 {
   code *pcVar1;
-  int *piVar2;
+  TLOBaseTy *pTVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -11,7 +15,7 @@ void __thiscall FUN_004be500(void *this,int param_1)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int *local_8;
+  TLOBaseTy *local_8;
   
   local_8 = this;
   if ((param_1 != 0) && (iVar3 = (**(code **)(*(int *)this + 0xf8))(), iVar3 == 0)) {
@@ -20,22 +24,22 @@ void __thiscall FUN_004be500(void *this,int param_1)
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
   iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  piVar2 = local_8;
+  pTVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = *(int *)((int)local_8 + 0x21d);
+    iVar3 = *(int *)(local_8 + 0x21d);
     thunk_FUN_0041dd00(local_8,param_1);
-    if ((((*(int *)((int)piVar2 + 0x21d) != 0) && (iVar3 == 0)) &&
-        (uVar4 = thunk_FUN_004406c0(*(char *)((int)piVar2 + 0x23d)),
-        *(int *)(&DAT_00795c00 + ((uVar4 & 0xff) + *(int *)((int)piVar2 + 0x235) * 3) * 4) != 0)) &&
-       (piVar2[9] == (uint)*(byte *)(piVar2[4] + 0x112d))) {
-      iVar3 = *piVar2;
-      uVar4 = thunk_FUN_004406c0(*(char *)((int)piVar2 + 0x23d));
+    if ((((*(int *)(pTVar2 + 0x21d) != 0) && (iVar3 == 0)) &&
+        (uVar4 = thunk_FUN_004406c0((char)pTVar2[0x23d]),
+        *(int *)(&DAT_00795c00 + ((uVar4 & 0xff) + *(int *)(pTVar2 + 0x235) * 3) * 4) != 0)) &&
+       (*(uint *)(pTVar2 + 0x24) == (uint)*(byte *)(*(int *)(pTVar2 + 0x10) + 0x112d))) {
+      iVar3 = *(int *)pTVar2;
+      uVar4 = thunk_FUN_004406c0((char)pTVar2[0x23d]);
       (**(code **)(iVar3 + 0x90))
                 (4,*(undefined4 *)
-                    (&DAT_00795c00 + ((uVar4 & 0xff) + *(int *)((int)piVar2 + 0x235) * 3) * 4));
+                    (&DAT_00795c00 + ((uVar4 & 0xff) + *(int *)(pTVar2 + 0x235) * 3) * 4));
     }
-    if (*(int *)(&DAT_00794d94 + *(int *)((int)piVar2 + 0x235) * 4) != 0) {
-      thunk_FUN_004c2f70((int)piVar2);
+    if (*(int *)(&DAT_00794d94 + *(int *)(pTVar2 + 0x235) * 4) != 0) {
+      thunk_FUN_004c2f70((int)pTVar2);
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;

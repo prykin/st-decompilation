@@ -1,4 +1,4 @@
-FUN_00422210:
+STAllPlayersC::RestoreGObjData:
 00422210  55                        PUSH EBP
 00422211  8B EC                     MOV EBP,ESP
 00422213  83 EC 50                  SUB ESP,0x50

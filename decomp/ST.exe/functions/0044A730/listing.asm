@@ -1,4 +1,4 @@
-FUN_0044a730:
+STAllPlayersC::UnRegisterContainer:
 0044A730  55                        PUSH EBP
 0044A731  8B EC                     MOV EBP,ESP
 0044A733  83 EC 4C                  SUB ESP,0x4c

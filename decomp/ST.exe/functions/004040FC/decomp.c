@@ -17,7 +17,7 @@ void __fastcall thunk_FUN_0054a8d0(void *param_1)
       FUN_006b34d0(*(uint **)((int)param_1 + 0x60),*(uint *)((int)param_1 + 0x1c),0xfffffffe,
                    *(uint *)((int)param_1 + 0x34),*(uint *)((int)param_1 + 0x38));
     }
-    thunk_FUN_00543c90(param_1,*(int *)((int)param_1 + 0xc5),*(int *)((int)param_1 + 0xc9));
+    CursorClassTy::DrawSprite(param_1,*(int *)((int)param_1 + 0xc5),*(int *)((int)param_1 + 0xc9));
     *(undefined1 *)((int)param_1 + 0xde) = 0;
   }
   *(undefined4 *)((int)param_1 + 0x4a2) = 0;

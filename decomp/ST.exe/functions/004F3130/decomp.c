@@ -1,18 +1,24 @@
 
-undefined4
-FUN_004f3130(byte param_1,undefined4 param_2,int param_3,int param_4,int param_5,byte param_6,
-            int param_7,undefined4 param_8,undefined4 param_9,short param_10,undefined2 param_11,
-            int param_12,char *param_13,int param_14,undefined4 param_15,undefined4 param_16)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\cp_sup.cpp
+   CPanelTy::CreateBut */
+
+undefined4 __thiscall
+CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,int param_4,
+                   int param_5,byte param_6,int param_7,undefined4 param_8,undefined4 param_9,
+                   short param_10,undefined2 param_11,int param_12,char *param_13,int param_14,
+                   undefined4 param_15,undefined4 param_16)
 
 {
   code *pcVar1;
   uint uVar2;
-  int iVar3;
+  CPanelTy *pCVar3;
   int iVar4;
-  undefined4 uVar5;
+  int iVar5;
+  undefined4 uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar6;
+  int *piVar7;
   undefined4 *local_1d0;
   undefined4 local_1cc [16];
   int local_18c [4];
@@ -47,7 +53,7 @@ FUN_004f3130(byte param_1,undefined4 param_2,int param_3,int param_4,int param_5
   int local_64;
   undefined4 local_60;
   undefined4 local_5c;
-  int local_10;
+  CPanelTy *local_10;
   undefined4 local_c;
   ushort *local_8;
   
@@ -55,18 +61,20 @@ FUN_004f3130(byte param_1,undefined4 param_2,int param_3,int param_4,int param_5
   local_c = 0;
   local_1d0 = DAT_00858df8;
   DAT_00858df8 = &local_1d0;
-  iVar3 = __setjmp3(local_1cc,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
-    piVar6 = local_18c;
-    for (iVar3 = 0x5f; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar6 = 0;
-      piVar6 = piVar6 + 1;
+  local_10 = this;
+  iVar4 = __setjmp3(local_1cc,0,unaff_EDI,unaff_ESI);
+  pCVar3 = local_10;
+  if (iVar4 == 0) {
+    piVar7 = local_18c;
+    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *piVar7 = 0;
+      piVar7 = piVar7 + 1;
     }
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (param_7 != 0) {
-      wsprintfA((LPSTR)(local_10 + 0x1e1),&DAT_007c181c,param_7);
-      local_8 = FUN_006f1ce0(param_6,(LPSTR)(local_10 + 0x1e1),(int *)0x0,1);
+      wsprintfA((LPSTR)(pCVar3 + 0x1e1),&DAT_007c181c,param_7);
+      local_8 = FUN_006f1ce0(param_6,(char *)(pCVar3 + 0x1e1),(int *)0x0,1);
     }
     if (param_6 == 1) {
       local_17c = *(int *)(local_8 + 2);
@@ -81,27 +89,27 @@ FUN_004f3130(byte param_1,undefined4 param_2,int param_3,int param_4,int param_5
       }
     }
     if (param_4 < 0) {
-      param_4 = (*(int *)(local_10 + 0x68 + (uint)param_1 * 4) - local_17c) / 2;
+      param_4 = (*(int *)(pCVar3 + (uint)param_1 * 4 + 0x68) - local_17c) / 2;
     }
     uVar2 = (uint)param_1;
-    local_18c[2] = *(int *)(local_10 + 0x3c + uVar2 * 4) + param_4;
-    iVar3 = *(int *)(local_10 + 0x130);
+    local_18c[2] = *(int *)(pCVar3 + uVar2 * 4 + 0x3c) + param_4;
+    iVar4 = *(int *)(pCVar3 + 0x130);
     switch(uVar2) {
     case 0:
     case 1:
     case 2:
     case 3:
-      iVar3 = *(int *)(local_10 + 0x134);
+      iVar4 = *(int *)(pCVar3 + 0x134);
       break;
     case 5:
     case 6:
     case 7:
     case 8:
-      iVar3 = *(int *)(local_10 + 0x138);
+      iVar4 = *(int *)(pCVar3 + 0x138);
     }
-    if (iVar3 == 0) {
+    if (iVar4 == 0) {
       if ((param_1 == 1) || (param_1 == 7)) {
-        local_18c[3] = *(int *)(local_10 + 0xc0);
+        local_18c[3] = *(int *)(pCVar3 + 0xc0);
       }
       else {
         local_18c[3] = 0;
@@ -109,13 +117,13 @@ FUN_004f3130(byte param_1,undefined4 param_2,int param_3,int param_4,int param_5
       local_18c[3] = local_18c[3] + DAT_00806734;
     }
     else {
-      local_18c[3] = *(int *)(local_10 + 0x94 + uVar2 * 4);
+      local_18c[3] = *(int *)(pCVar3 + uVar2 * 4 + 0x94);
     }
     local_18c[3] = local_18c[3] + param_5;
     if (local_8 != (ushort *)0x0) {
-      FUN_006f20e0((uint *)&local_8);
+      cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
     }
-    local_16c = *(undefined4 *)(local_10 + 8);
+    local_16c = *(undefined4 *)(pCVar3 + 8);
     local_124 = param_9;
     local_164 = param_8;
     local_168 = 2;
@@ -150,18 +158,18 @@ FUN_004f3130(byte param_1,undefined4 param_2,int param_3,int param_4,int param_5
       local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
       local_64 = FUN_0070a6f0(DAT_00806790,0x12,param_13,1);
     }
-    (**(code **)(**(int **)(local_10 + 0xc) + 8))(2,&local_c,0,local_18c,0);
+    (**(code **)(**(int **)(pCVar3 + 0xc) + 8))(2,&local_c,0,local_18c,0);
     DAT_00858df8 = local_1d0;
     return local_c;
   }
   DAT_00858df8 = local_1d0;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1b3,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  iVar5 = FUN_006ad4d0(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1b3,0,iVar4,&DAT_007a4ccc);
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    uVar6 = (*pcVar1)();
+    return uVar6;
   }
-  FUN_006a5e40(iVar3,0,0x7c1a4c,0x1b3);
+  FUN_006a5e40(iVar4,0,0x7c1a4c,0x1b3);
   return 0;
 }
 

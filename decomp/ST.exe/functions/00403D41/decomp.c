@@ -2,7 +2,8 @@
 void __fastcall thunk_FUN_0058bd90(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
+  void *this_00;
   bool bVar1;
   int iVar2;
   uint uVar3;
@@ -79,14 +80,14 @@ void __fastcall thunk_FUN_0058bd90(int *param_1)
   case 2:
     goto switchD_0058bec9_caseD_2;
   case 4:
-    this = (void *)((int)param_1 + 0x1d5);
-    iStack_8 = thunk_FUN_004ac910(this,'\x0e');
+    this_00 = (void *)((int)param_1 + 0x1d5);
+    iStack_8 = thunk_FUN_004ac910(this_00,'\x0e');
     iStack_8 = iStack_8 + 1;
     if (iStack_8 < 0x23) {
-      thunk_FUN_004abe40(this,'\x0e',iStack_8);
+      thunk_FUN_004abe40(this_00,'\x0e',iStack_8);
     }
     else {
-      thunk_FUN_004abe40(this,'\x0e',0x18);
+      thunk_FUN_004abe40(this_00,'\x0e',0x18);
       *(undefined4 *)((int)param_1 + 0x231) = 2;
     }
     if (iStack_8 == 0x20) {
@@ -219,16 +220,17 @@ LAB_0058c38c:
     }
   }
   else {
+    this = (STT3DSprC *)((int)param_1 + 0x1d5);
     *(undefined4 *)((int)param_1 + 0x231) = 5;
-    thunk_FUN_004ac410(0xe);
-    thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
-    thunk_FUN_004ab880(8,DAT_00806774,(byte *)s_explsna_007cbaac,0x1d);
-    thunk_FUN_004ac1a0(8,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StopShow(this,0xe);
+    thunk_FUN_004ad5e0((int)this);
+    STT3DSprC::LoadSequence(this,8,DAT_00806774,(byte *)s_explsna_007cbaac,0x1d);
+    STT3DSprC::StartShow(this,8,*(undefined4 *)(DAT_00802a38 + 0xe4));
     *(short *)((int)param_1 + 0x45) = *(short *)((int)param_1 + 0x45) + 0x12;
     *(undefined4 *)((int)param_1 + 0x231) = 6;
   }
 switchD_0058bec9_caseD_1:
-  thunk_FUN_004ac040('\x0e');
+  STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e');
   (**(code **)(*param_1 + 0xd8))();
   return;
 }

@@ -1,4 +1,4 @@
-FUN_005123a0:
+HelpPanelTy::CreateList:
 005123A0  55                        PUSH EBP
 005123A1  8B EC                     MOV EBP,ESP
 005123A3  81 EC 1C 05 00 00         SUB ESP,0x51c

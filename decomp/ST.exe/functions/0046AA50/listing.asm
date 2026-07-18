@@ -1,4 +1,4 @@
-FUN_0046aa50:
+STBoatC::BackLoadRC:
 0046AA50  55                        PUSH EBP
 0046AA51  8B EC                     MOV EBP,ESP
 0046AA53  51                        PUSH ECX

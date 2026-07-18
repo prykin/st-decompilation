@@ -1,4 +1,4 @@
-FUN_0049d230:
+STGroupBoatC::GrpUnLoadRC:
 0049D230  55                        PUSH EBP
 0049D231  8B EC                     MOV EBP,ESP
 0049D233  83 EC 78                  SUB ESP,0x78

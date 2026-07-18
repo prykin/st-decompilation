@@ -1,4 +1,4 @@
-FUN_00430470:
+STAllPlayersC::RegisterTorpedo:
 00430470  55                        PUSH EBP
 00430471  8B EC                     MOV EBP,ESP
 00430473  83 EC 48                  SUB ESP,0x48

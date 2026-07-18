@@ -1,2 +1,2 @@
-thunk_FUN_00423520:
+STGroupC::GetTOBJQty:
 00403828  E9 F3 FC 01 00            JMP 0x00423520

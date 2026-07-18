@@ -1,4 +1,4 @@
-FUN_0051d360:
+HelpPanelTy::NatProc:
 0051D360  55                        PUSH EBP
 0051D361  8B EC                     MOV EBP,ESP
 0051D363  83 EC 4C                  SUB ESP,0x4c

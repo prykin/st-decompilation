@@ -1,4 +1,4 @@
-FUN_005dd850:
+StartSystemTy::AddToChat:
 005DD850  55                        PUSH EBP
 005DD851  8B EC                     MOV EBP,ESP
 005DD853  83 EC 74                  SUB ESP,0x74

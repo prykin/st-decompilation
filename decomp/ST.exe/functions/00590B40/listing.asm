@@ -1,4 +1,4 @@
-FUN_00590b40:
+CampaignTy::InitCampaign:
 00590B40  55                        PUSH EBP
 00590B41  8B EC                     MOV EBP,ESP
 00590B43  81 EC 68 02 00 00         SUB ESP,0x268

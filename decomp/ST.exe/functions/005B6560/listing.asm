@@ -1,4 +1,4 @@
-FUN_005b6560:
+MMMObjTy::PaintSlBut:
 005B6560  55                        PUSH EBP
 005B6561  8B EC                     MOV EBP,ESP
 005B6563  83 EC 48                  SUB ESP,0x48

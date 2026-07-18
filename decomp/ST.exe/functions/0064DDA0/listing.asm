@@ -1,4 +1,4 @@
-FUN_0064dda0:
+AiEventClassTy::_CreateDest:
 0064DDA0  55                        PUSH EBP
 0064DDA1  8B EC                     MOV EBP,ESP
 0064DDA3  83 EC 4C                  SUB ESP,0x4c

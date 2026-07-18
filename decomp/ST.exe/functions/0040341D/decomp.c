@@ -1,6 +1,8 @@
 
-int thunk_FUN_0064dda0(short param_1,short param_2,short param_3,short param_4,short param_5,
-                      char *param_6,char *param_7,undefined4 param_8)
+int __thiscall
+AiEventClassTy::_CreateDest
+          (AiEventClassTy *this,short param_1,short param_2,short param_3,short param_4,
+          short param_5,char *param_6,char *param_7,undefined4 param_8)
 
 {
   code *pcVar1;

@@ -1,4 +1,4 @@
-FUN_00597120:
+FSGSTy::NoneFSGS:
 00597120  55                        PUSH EBP
 00597121  8B EC                     MOV EBP,ESP
 00597123  81 EC A4 00 00 00         SUB ESP,0xa4

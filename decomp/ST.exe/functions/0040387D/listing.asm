@@ -1,2 +1,2 @@
-thunk_FUN_00449b60:
+STAllPlayersC::DestroyObjectMsg:
 0040387D  E9 DE 62 04 00            JMP 0x00449b60

@@ -1,4 +1,4 @@
-FUN_00551460:
+TradePanelTy::SetModeControls:
 00551460  55                        PUSH EBP
 00551461  8B EC                     MOV EBP,ESP
 00551463  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_00662240:
+AiFltClassTy::GetAiMess:
 00662240  55                        PUSH EBP
 00662241  8B EC                     MOV EBP,ESP
 00662243  83 EC 70                  SUB ESP,0x70

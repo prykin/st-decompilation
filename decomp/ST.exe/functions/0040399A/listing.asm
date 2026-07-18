@@ -1,2 +1,2 @@
-thunk_FUN_00476120:
+STBoatC::BackUnLoadObj:
 0040399A  E9 81 27 07 00            JMP 0x00476120

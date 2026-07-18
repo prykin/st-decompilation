@@ -1,4 +1,4 @@
-FUN_00515650:
+HelpPanelTy::DrawObj:
 00515650  55                        PUSH EBP
 00515651  8B EC                     MOV EBP,ESP
 00515653  83 EC 54                  SUB ESP,0x54

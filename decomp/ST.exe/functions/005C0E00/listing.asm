@@ -1,4 +1,4 @@
-FUN_005c0e00:
+MReportTy::SetCtrl:
 005C0E00  55                        PUSH EBP
 005C0E01  8B EC                     MOV EBP,ESP
 005C0E03  81 EC 94 00 00 00         SUB ESP,0x94

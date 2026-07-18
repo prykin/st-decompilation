@@ -1,4 +1,4 @@
-FUN_004a80a0:
+STGroupBoatC::SetPatrolCmdToBoat:
 004A80A0  55                        PUSH EBP
 004A80A1  8B EC                     MOV EBP,ESP
 004A80A3  83 EC 30                  SUB ESP,0x30

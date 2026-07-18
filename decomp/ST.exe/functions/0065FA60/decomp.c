@@ -31,12 +31,12 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
       if (*(void **)(local_14 + 0x284) != (void *)0x0) {
         local_10 = thunk_FUN_0068e4f0(*(void **)(local_14 + 0x284),param_1);
       }
-      if ((local_10 == (uint *)0x0) && (DAT_007fa174 != 0)) {
-        local_10 = thunk_FUN_0043e780(*(char *)(local_14 + 0x24),param_1,0,-1);
+      if ((local_10 == (uint *)0x0) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
+        local_10 = STAllPlayersC::GetTOBJList(DAT_007fa174,*(char *)(local_14 + 0x24),param_1,0,-1);
       }
     }
-    else if ((param_2 == 2) && (DAT_007fa174 != 0)) {
-      local_10 = thunk_FUN_0043e780(*(char *)(local_14 + 0x24),param_1,0,-1);
+    else if ((param_2 == 2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
+      local_10 = STAllPlayersC::GetTOBJList(DAT_007fa174,*(char *)(local_14 + 0x24),param_1,0,-1);
     }
   }
   puVar4 = local_10;

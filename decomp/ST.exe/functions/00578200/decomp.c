@@ -1,5 +1,9 @@
 
-undefined4 FUN_00578200(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\tsystem.cpp
+   DebugSystemC::CreateSystemObjects */
+
+undefined4 __thiscall DebugSystemC::CreateSystemObjects(DebugSystemC *this)
 
 {
   code *pcVar1;
@@ -8,13 +12,14 @@ undefined4 FUN_00578200(void)
   undefined4 uVar4;
   void *unaff_ESI;
   undefined4 local_48 [16];
-  int *local_8;
+  DebugSystemC *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
-    (**(code **)(*local_8 + 0xc))(0x8100,&DAT_007fb228,0,0);
+    (**(code **)(*(int *)local_8 + 0xc))(0x8100,&DAT_007fb228,0,0);
     DAT_00858df8 = (undefined1 *)uVar4;
     return 0;
   }

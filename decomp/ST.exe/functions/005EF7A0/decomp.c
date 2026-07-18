@@ -17,7 +17,7 @@ void __thiscall FUN_005ef7a0(void *this,short param_1,short param_2,short param_
           (*(int *)(DAT_007fb248 +
                    ((int)DAT_007fb246 * (int)param_3 + (int)DAT_007fb240 * (int)param_2 +
                    (int)param_1) * 8) != 0)))))) ||
-       (iVar6 = thunk_FUN_00495ec0(param_1,param_2,param_3,0,(int)this), iVar6 != 0))
+       (iVar6 = DumpClassC::WritePtr(param_1,param_2,param_3,0,(int)this), iVar6 != 0))
     goto LAB_005ef8d0;
     *(char *)((int)this + 0x252) = *(char *)((int)this + 0x252) + '\x01';
   }

@@ -1,5 +1,5 @@
 
-uint * thunk_FUN_0043e4e0(char param_1)
+uint * STAllPlayersC::GetObjsList(char param_1)
 
 {
   int *piVar1;

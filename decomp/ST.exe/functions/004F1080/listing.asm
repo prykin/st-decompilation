@@ -1,4 +1,4 @@
-FUN_004f1080:
+BldObjPanelTy::GetMessage:
 004F1080  55                        PUSH EBP
 004F1081  8B EC                     MOV EBP,ESP
 004F1083  83 EC 48                  SUB ESP,0x48

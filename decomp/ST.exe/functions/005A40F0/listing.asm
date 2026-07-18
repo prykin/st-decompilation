@@ -1,4 +1,4 @@
-FUN_005a40f0:
+FSGSTy::SetLadder:
 005A40F0  55                        PUSH EBP
 005A40F1  8B EC                     MOV EBP,ESP
 005A40F3  83 EC 68                  SUB ESP,0x68

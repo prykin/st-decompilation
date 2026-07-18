@@ -1,6 +1,6 @@
 
 void __thiscall
-FUN_005a39a0(void *this,undefined4 param_1,byte *param_2,uint param_3,byte *param_4,int param_5,
+FUN_005a39a0(void *this,ccFntTy *param_1,byte *param_2,uint param_3,byte *param_4,int param_5,
             int param_6,int param_7,int param_8)
 
 {
@@ -59,8 +59,8 @@ FUN_005a39a0(void *this,undefined4 param_1,byte *param_2,uint param_3,byte *para
   }
 LAB_005a3a15:
   FUN_006b4170(*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8,0xff);
-  FUN_00710a90(*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8);
-  FUN_007119c0(local_10,-1,-1,0);
+  ccFntTy::SetSurf(param_1,*(int *)((int)this + 0x1ac0),0,param_5,param_6,param_7,param_8);
+  ccFntTy::WrStr(param_1,local_10,-1,-1,0);
   return;
 }
 

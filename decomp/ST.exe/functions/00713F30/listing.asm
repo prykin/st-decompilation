@@ -1,4 +1,4 @@
-FUN_00713f30:
+cTypingTy::TypingInitSarr:
 00713F30  55                        PUSH EBP
 00713F31  8B EC                     MOV EBP,ESP
 00713F33  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_00716480:
+SpriteClassTy::SetImagesPtr:
 00716480  55                        PUSH EBP
 00716481  8B EC                     MOV EBP,ESP
 00716483  83 EC 48                  SUB ESP,0x48

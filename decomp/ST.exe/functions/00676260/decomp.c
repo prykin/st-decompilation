@@ -5,6 +5,7 @@ int __cdecl FUN_00676260(uint param_1,int param_2)
   code *pcVar1;
   uint *puVar2;
   int iVar3;
+  STGroupC *this;
   ushort *puVar4;
   int *piVar5;
   int iVar6;
@@ -25,13 +26,13 @@ int __cdecl FUN_00676260(uint param_1,int param_2)
   iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (DAT_007fa174 == 0) {
-      iVar3 = 0;
+      this = (STGroupC *)0x0;
     }
     else {
-      iVar3 = thunk_FUN_0042b760(param_1,0);
+      this = (STGroupC *)thunk_FUN_0042b760(param_1,0);
     }
-    if (iVar3 != 0) {
-      local_c = thunk_FUN_004233e0(iVar3);
+    if (this != (STGroupC *)0x0) {
+      local_c = STGroupC::GetGroupContent(this,(int)unaff_EDI);
     }
     puVar2 = local_c;
     if (local_c[3] != 0) {

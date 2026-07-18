@@ -1,4 +1,4 @@
-FUN_006f1220:
+cMf32::Flush:
 006F1220  55                        PUSH EBP
 006F1221  8B EC                     MOV EBP,ESP
 006F1223  83 EC 48                  SUB ESP,0x48

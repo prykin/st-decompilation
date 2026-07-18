@@ -1,9 +1,10 @@
 
-void thunk_FUN_00514f10(void)
+void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
 
 {
-  undefined4 *puVar1;
+  HelpPanelTy *pHVar1;
   code *pcVar2;
+  HelpPanelTy *this_00;
   int iVar3;
   uint *puVar4;
   char *pcVar5;
@@ -12,11 +13,13 @@ void thunk_FUN_00514f10(void)
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  HelpPanelTy *pHStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pHStack_8 = this;
   iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  this_00 = pHStack_8;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_4c;
     iVar6 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x39b,0,iVar3,&DAT_007a4ccc);
@@ -28,11 +31,11 @@ void thunk_FUN_00514f10(void)
     FUN_006a5e40(iVar3,0,0x7c383c,0x39b);
     return;
   }
-  if (*(byte **)((int)pvStack_8 + 0x1d3) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)((int)pvStack_8 + 0x1d3));
+  if (*(byte **)(pHStack_8 + 0x1d3) != (byte *)0x0) {
+    FUN_006b5570(*(byte **)(pHStack_8 + 0x1d3));
   }
   puVar4 = FUN_006b54f0((uint *)0x0,10,10);
-  *(uint **)((int)pvStack_8 + 0x1d3) = puVar4;
+  *(uint **)(this_00 + 0x1d3) = puVar4;
   iVar3 = 0;
   if (0 < *(int *)(DAT_0080c4cb + 8)) {
     if (*(int *)(DAT_0080c4cb + 8) < 1) {
@@ -42,38 +45,40 @@ void thunk_FUN_00514f10(void)
     do {
       pcVar5 = *(char **)(*(int *)(DAT_0080c4cb + 0x14) + iVar3 * 4);
 LAB_00514f85:
-      thunk_FUN_005411a0(*(int *)((int)pvStack_8 + 0x1d3),pcVar5,&DAT_007c3b60);
+      thunk_FUN_005411a0(*(int *)(this_00 + 0x1d3),pcVar5,&DAT_007c3b60);
       iVar3 = iVar3 + 1;
     } while (iVar3 < *(int *)(DAT_0080c4cb + 8));
   }
-  puVar4 = FUN_007126e0(*(int *)((int)pvStack_8 + 0x1d3),(uint *)s________________007c21d8,
-                        (uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
-  if (*(byte **)((int)pvStack_8 + 0x1d3) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)((int)pvStack_8 + 0x1d3));
+  puVar4 = ccFntTy::FormIndentSarr
+                     (*(ccFntTy **)(this_00 + 0x1e4),*(int *)(this_00 + 0x1d3),
+                      (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,0x19c,0,0xffffffff,
+                      (char *)0x0,1);
+  if (*(byte **)(this_00 + 0x1d3) != (byte *)0x0) {
+    FUN_006b5570(*(byte **)(this_00 + 0x1d3));
   }
-  *(uint **)((int)pvStack_8 + 0x1d3) = puVar4;
+  *(uint **)(this_00 + 0x1d3) = puVar4;
   if (puVar4 == (uint *)0x0) {
     puVar4 = FUN_006b54f0((uint *)0x0,10,10);
-    *(uint **)((int)pvStack_8 + 0x1d3) = puVar4;
+    *(uint **)(this_00 + 0x1d3) = puVar4;
     FUN_006b5aa0((int)puVar4,&DAT_007c3b5c);
   }
-  puVar4 = *(uint **)((int)pvStack_8 + 0x1d3);
+  puVar4 = *(uint **)(this_00 + 0x1d3);
   if (puVar4[2] != 0) {
-    FUN_007129d0(puVar4,puVar4);
+    ccFntTy::SepColorStrInSarr(*(ccFntTy **)(this_00 + 0x1e4),puVar4,puVar4);
   }
-  if ((*(char *)((int)pvStack_8 + 0x1a1) == '\a') && (*(int *)((int)pvStack_8 + 0x19c) != 0)) {
-    puVar1 = (undefined4 *)((int)pvStack_8 + 0x18);
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x28;
-    *(undefined2 *)((int)pvStack_8 + 0x2c) = 1;
-    *(undefined2 *)((int)pvStack_8 + 0x2e) = *(undefined2 *)(*(int *)((int)pvStack_8 + 0x1d3) + 8);
-    FUN_006e6080(pvStack_8,2,*(int *)((int)pvStack_8 + 0x19c),puVar1);
-    *(undefined2 *)((int)pvStack_8 + 0x2e) = 0;
-    *(undefined2 *)((int)pvStack_8 + 0x2c) = 0;
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x22;
-    FUN_006e6080(pvStack_8,2,*(undefined4 *)((int)pvStack_8 + 0x19c),puVar1);
-    *(undefined4 *)((int)pvStack_8 + 0x28) = 0x20;
-    *(undefined4 *)((int)pvStack_8 + 0x2c) = 1;
-    FUN_006e6080(pvStack_8,2,*(undefined4 *)((int)pvStack_8 + 0x19c),puVar1);
+  if ((this_00[0x1a1] == (HelpPanelTy)0x7) && (*(int *)(this_00 + 0x19c) != 0)) {
+    pHVar1 = this_00 + 0x18;
+    *(undefined4 *)(this_00 + 0x28) = 0x28;
+    *(undefined2 *)(this_00 + 0x2c) = 1;
+    *(undefined2 *)(this_00 + 0x2e) = *(undefined2 *)(*(int *)(this_00 + 0x1d3) + 8);
+    FUN_006e6080(this_00,2,*(int *)(this_00 + 0x19c),(undefined4 *)pHVar1);
+    *(undefined2 *)(this_00 + 0x2e) = 0;
+    *(undefined2 *)(this_00 + 0x2c) = 0;
+    *(undefined4 *)(this_00 + 0x28) = 0x22;
+    FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x19c),(undefined4 *)pHVar1);
+    *(undefined4 *)(this_00 + 0x28) = 0x20;
+    *(undefined4 *)(this_00 + 0x2c) = 1;
+    FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x19c),(undefined4 *)pHVar1);
   }
   DAT_00858df8 = (undefined4 *)uStack_4c;
   return;

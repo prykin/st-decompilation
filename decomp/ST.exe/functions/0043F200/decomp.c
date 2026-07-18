@@ -1,5 +1,9 @@
 
-uint * FUN_0043f200(char param_1,byte *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetTOBJList */
+
+uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,byte *param_2)
 
 {
   byte bVar1;

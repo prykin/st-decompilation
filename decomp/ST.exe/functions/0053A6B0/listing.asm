@@ -1,4 +1,4 @@
-FUN_0053a6b0:
+PlayPanelTy::SwitchOptPanel:
 0053A6B0  55                        PUSH EBP
 0053A6B1  8B EC                     MOV EBP,ESP
 0053A6B3  83 EC 48                  SUB ESP,0x48

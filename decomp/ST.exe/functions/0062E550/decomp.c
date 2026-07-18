@@ -13,7 +13,7 @@ uint __thiscall FUN_0062e550(void *this,int param_1,int param_2,int param_3)
     uVar2 = 0xffffffff;
   }
   else {
-    uVar2 = thunk_FUN_0062dd80(param_1,param_2,param_3,uVar1);
+    uVar2 = STManRub3C::AddNewColl3(this,param_1,param_2,param_3,uVar1);
     if (-1 < (int)uVar2) {
       iVar3 = *(int *)((int)this + param_1 * 4 + 0x50);
       if (uVar1 < *(uint *)(iVar3 + 0xc)) {

@@ -1,4 +1,4 @@
-FUN_004fe370:
+CPanelTy::PaintName:
 004FE370  55                        PUSH EBP
 004FE371  8B EC                     MOV EBP,ESP
 004FE373  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_005e1330:
+MTaskTy::PlayScript:
 005E1330  55                        PUSH EBP
 005E1331  8B EC                     MOV EBP,ESP
 005E1333  B8 64 12 00 00            MOV EAX,0x1264

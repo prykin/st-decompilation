@@ -1,5 +1,6 @@
 
-void __thiscall thunk_FUN_005a2c10(void *this,undefined4 param_1,int param_2,undefined4 param_3)
+void __thiscall
+FSGSTy::ChangePlayerPing(FSGSTy *this,undefined4 param_1,int param_2,undefined4 param_3)
 
 {
   uint uVar1;
@@ -11,17 +12,17 @@ void __thiscall thunk_FUN_005a2c10(void *this,undefined4 param_1,int param_2,und
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  FSGSTy *pFStack_8;
   
-  if (((*(char *)((int)this + 0x1a5f) == '\x06') && (*(char *)((int)this + 0x1a60) == '\0')) &&
-     (*(int *)((int)this + 0x1ea6) != 0)) {
+  if (((this[0x1a5f] == (FSGSTy)0x6) && (this[0x1a60] == (FSGSTy)0x0)) &&
+     (*(int *)(this + 0x1ea6) != 0)) {
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
-    pvStack_8 = this;
+    pFStack_8 = this;
     iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar5 = 0;
-      iVar3 = *(int *)((int)pvStack_8 + 0x1ea6);
+      iVar3 = *(int *)(pFStack_8 + 0x1ea6);
       uVar1 = *(uint *)(iVar3 + 0xc);
       if (uVar1 != 0) {
         if (uVar1 == 0) {
@@ -38,9 +39,9 @@ LAB_005a2c91:
           uVar5 = uVar5 + 1;
         } while (uVar5 < uVar1);
       }
-      *(undefined4 *)((int)pvStack_8 + 0x2d) = 5;
-      FUN_006e6080(pvStack_8,2,*(undefined4 *)((int)pvStack_8 + 0x1b20),
-                   (undefined4 *)((int)pvStack_8 + 0x1d));
+      *(undefined4 *)(pFStack_8 + 0x2d) = 5;
+      FUN_006e6080(pFStack_8,2,*(undefined4 *)(pFStack_8 + 0x1b20),(undefined4 *)(pFStack_8 + 0x1d))
+      ;
       DAT_00858df8 = (undefined4 *)uStack_4c;
       return;
     }

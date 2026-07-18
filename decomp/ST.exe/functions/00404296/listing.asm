@@ -1,2 +1,2 @@
-thunk_FUN_0053a380:
+PlayPanelTy::DonePlayPanel:
 00404296  E9 E5 60 13 00            JMP 0x0053a380

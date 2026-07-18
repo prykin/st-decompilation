@@ -1,4 +1,4 @@
-FUN_0056d1f0:
+STAppC::CommonFunction:
 0056D1F0  55                        PUSH EBP
 0056D1F1  8B EC                     MOV EBP,ESP
 0056D1F3  83 EC 48                  SUB ESP,0x48

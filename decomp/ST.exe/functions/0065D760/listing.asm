@@ -1,4 +1,4 @@
-FUN_0065d760:
+AiFltClassTy::_AddObjFlt:
 0065D760  55                        PUSH EBP
 0065D761  8B EC                     MOV EBP,ESP
 0065D763  83 EC 48                  SUB ESP,0x48

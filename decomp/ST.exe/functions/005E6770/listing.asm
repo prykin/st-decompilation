@@ -1,4 +1,4 @@
-FUN_005e6770:
+WaitTy::InitWait:
 005E6770  55                        PUSH EBP
 005E6771  8B EC                     MOV EBP,ESP
 005E6773  81 EC 64 06 00 00         SUB ESP,0x664

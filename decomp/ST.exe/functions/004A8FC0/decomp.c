@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_optic.cpp
+   OpticClassC::InitOptic */
 
-void FUN_004a8fc0(void)
+void __thiscall OpticClassC::InitOptic(OpticClassC *this)
 
 {
   double dVar1;
@@ -18,12 +21,14 @@ void FUN_004a8fc0(void)
   undefined4 local_5c;
   undefined4 local_58 [16];
   float local_18;
-  float local_14 [2];
+  float local_14;
+  OpticClassC *local_10;
   ushort *local_c;
   float local_8;
   
   local_5c = DAT_00858df8;
   DAT_00858df8 = &local_5c;
+  local_10 = this;
   iVar3 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_5c;
@@ -36,7 +41,7 @@ void FUN_004a8fc0(void)
     (*pcVar2)();
     return;
   }
-  if (DAT_00806754 != 0) {
+  if (DAT_00806754 != (cMf32 *)0x0) {
     local_c = FUN_006f2d90(DAT_00806754,s_opticsave_007ac5d4,0,0);
   }
   if (local_c == (ushort *)0x0) {
@@ -84,7 +89,7 @@ void FUN_004a8fc0(void)
                  SUB84((double)(_DAT_0080742c * _DAT_00790784),0),
                  (int)((ulonglong)(double)(_DAT_0080742c * _DAT_00790784) >> 0x20),
                  0x4024000000000000,0x4023ee97865e3540,(int)lVar9);
-    FUN_006dd530(DAT_00807598,&local_18,local_14,&local_8);
+    FUN_006dd530(DAT_00807598,&local_18,&local_14,&local_8);
     FUN_006dd790(DAT_00807598,
                  ((local_8 - _DAT_0079077c) * (float)_DAT_00790770 - _DAT_0080742c * _DAT_00790784)
                  - _DAT_0080742c * _DAT_0079070c);
@@ -131,7 +136,7 @@ void FUN_004a8fc0(void)
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  FUN_006f20e0((uint *)&local_c);
+  cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
   DAT_00858df8 = (undefined4 *)local_5c;
   return;
 }

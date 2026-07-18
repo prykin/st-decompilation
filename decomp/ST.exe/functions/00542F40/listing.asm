@@ -1,4 +1,4 @@
-FUN_00542f40:
+InterSystemC::GetMessage:
 00542F40  55                        PUSH EBP
 00542F41  8B EC                     MOV EBP,ESP
 00542F43  83 EC 4C                  SUB ESP,0x4c

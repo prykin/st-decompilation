@@ -1,6 +1,11 @@
 
-void FUN_0054be70(uint param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
-                 undefined4 param_6,undefined4 param_7,BITMAPINFO *param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\to_cursor.cpp
+   CPanelTy::OutProc */
+
+void __thiscall
+CPanelTy::OutProc(CPanelTy *this,uint param_1,undefined4 param_2,undefined4 param_3,int param_4,
+                 int param_5,undefined4 param_6,undefined4 param_7,BITMAPINFO *param_8)
 
 {
   code *pcVar1;

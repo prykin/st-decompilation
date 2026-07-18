@@ -1,4 +1,4 @@
-FUN_00543fa0:
+CursorClassTy::CursDrawInit:
 00543FA0  55                        PUSH EBP
 00543FA1  8B EC                     MOV EBP,ESP
 00543FA3  83 EC 48                  SUB ESP,0x48

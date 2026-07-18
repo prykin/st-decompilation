@@ -1,4 +1,4 @@
-FUN_004fe4f0:
+CPanelTy::PaintLife:
 004FE4F0  55                        PUSH EBP
 004FE4F1  8B EC                     MOV EBP,ESP
 004FE4F3  83 EC 58                  SUB ESP,0x58

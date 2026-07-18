@@ -1,4 +1,4 @@
-FUN_004314e0:
+STAllPlayersC::FramePick:
 004314E0  55                        PUSH EBP
 004314E1  8B EC                     MOV EBP,ESP
 004314E3  81 EC 90 00 00 00         SUB ESP,0x90

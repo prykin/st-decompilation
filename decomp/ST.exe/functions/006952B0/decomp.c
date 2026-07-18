@@ -53,7 +53,7 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
     puVar6 = puVar6 + 1;
   }
   *(undefined2 *)puVar6 = *(undefined2 *)pbVar5;
-  iVar4 = thunk_FUN_006a01d0();
+  iVar4 = CGenerate::CreateMap(this);
   thunk_FUN_0069ff90((int)this);
   if (iVar4 != 0) {
     local_10 = 1;
@@ -97,8 +97,9 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       if ((*(int *)((int)this + 8) == 0) && (*(int *)((int)this + 0xc) == 0)) {
         thunk_FUN_006a0150((int)this);
       }
-      thunk_FUN_00695a60(**(int **)((int)this + 8) + -2,(*(int **)((int)this + 8))[1] + -2,local_34,
-                         local_30,local_38,0);
+      CGenerate::CteateField
+                (this,**(int **)((int)this + 8) + -2,(*(int **)((int)this + 8))[1] + -2,local_34,
+                 local_30,local_38,0);
       thunk_FUN_0069ff90((int)this);
       thunk_FUN_00696790((int)this);
       thunk_FUN_0069ff90((int)this);
@@ -115,8 +116,9 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       thunk_FUN_0069ff90((int)this);
       thunk_FUN_00695eb0(this);
       thunk_FUN_0069ff90((int)this);
-      thunk_FUN_00695a60(**(int **)((int)this + 8),(*(int **)((int)this + 8))[1],local_34,local_30,
-                         local_38,1);
+      CGenerate::CteateField
+                (this,**(int **)((int)this + 8),(*(int **)((int)this + 8))[1],local_34,local_30,
+                 local_38,1);
       thunk_FUN_0069ff90((int)this);
       thunk_FUN_00697390(this);
       thunk_FUN_0069ff90((int)this);
@@ -184,7 +186,7 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       iVar4 = **(int **)((int)this + 8);
       iVar1 = (*(int **)((int)this + 8))[1];
       thunk_FUN_0069f160(this,iVar4 * 2,iVar1 * 2,local_34,(iVar4 * iVar1 * 4) / 100);
-      local_40 = thunk_FUN_006a0740();
+      local_40 = CGenerate::SaveMap(this);
       thunk_FUN_0069ff90((int)this);
       if (DAT_00853dd4 != (undefined4 *)0x0) {
         FUN_006ab060(&DAT_00853dd4);

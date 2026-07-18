@@ -1,4 +1,4 @@
-FUN_0043eed0:
+STAllPlayersC::GetTOBJListFromDArr:
 0043EED0  55                        PUSH EBP
 0043EED1  8B EC                     MOV EBP,ESP
 0043EED3  83 EC 58                  SUB ESP,0x58

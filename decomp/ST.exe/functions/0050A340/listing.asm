@@ -1,4 +1,4 @@
-FUN_0050a340:
+CPanelTy::PaintCtrlObjSI:
 0050A340  55                        PUSH EBP
 0050A341  8B EC                     MOV EBP,ESP
 0050A343  83 EC 60                  SUB ESP,0x60

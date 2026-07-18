@@ -1,4 +1,4 @@
-FUN_0059f670:
+FSGSTy::DeleteCtrls:
 0059F670  55                        PUSH EBP
 0059F671  8B EC                     MOV EBP,ESP
 0059F673  83 EC 48                  SUB ESP,0x48

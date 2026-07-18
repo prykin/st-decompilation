@@ -1,5 +1,5 @@
 
-void thunk_FUN_00446aa0(char param_1)
+void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;

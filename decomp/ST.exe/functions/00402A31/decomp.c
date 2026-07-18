@@ -1,5 +1,5 @@
 
-int thunk_FUN_00415160(void *param_1,int param_2,int param_3,int param_4,int param_5)
+int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   short sVar1;

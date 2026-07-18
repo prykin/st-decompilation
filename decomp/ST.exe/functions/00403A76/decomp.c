@@ -6,6 +6,10 @@ void __thiscall thunk_FUN_0056f250(void *this,char param_1,byte param_2,char *pa
   void *pvVar2;
   int iVar3;
   uint uVar4;
+  cMf32 *extraout_ECX;
+  cMf32 *extraout_ECX_00;
+  cMf32 *extraout_ECX_01;
+  cMf32 *this_00;
   uint uVar5;
   undefined4 unaff_ESI;
   byte *pbVar6;
@@ -88,8 +92,9 @@ LAB_0056f325:
     DAT_00858df8 = &ppuStack_a4;
     iVar3 = __setjmp3(auStack_a0,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
-      if ((param_1 == '\0') || (param_1 == '\x03')) {
+      if ((param_1 == '\0') || (this_00 = extraout_ECX, param_1 == '\x03')) {
         puStack_14 = FUN_006f0ec0(0x345,abStack_1a8,1,0,0);
+        this_00 = extraout_ECX_00;
       }
       puVar7 = puStack_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
@@ -97,7 +102,7 @@ LAB_0056f325:
         pvVar2 = pvStack_10;
         FUN_0071adb0(*(byte **)((int)pvStack_10 + 0x7d12),*(uint *)((int)pvStack_10 + 0x7d16),
                      (int)puVar7,PTR_s_TEXTURE_0079b07c,'\x01');
-        thunk_FUN_0054d2f0(DAT_00802a38,puVar7);
+        STPlaySystemC::Save(DAT_00802a38,puVar7);
         FUN_006f13f0(0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,(undefined4 *)0x0,
                      '\0',(uint *)0x0);
         FUN_006f13f0(0,PTR_s_DESCRIPTOR_0079b080,(byte *)((int)pvVar2 + 0x1196),0x1999,
@@ -159,8 +164,9 @@ LAB_0056f325:
         }
         FUN_006f13f0(0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&uStack_8,4,(undefined4 *)0x0,'\0',
                      (uint *)0x0);
+        this_00 = extraout_ECX_01;
       }
-      FUN_006f1170(puVar7);
+      cMf32::delete(this_00,puVar7);
       DAT_00858df8 = ppuStack_a4;
       return;
     }
@@ -280,8 +286,8 @@ LAB_0056f325:
       pbVar11 = pbVar11 + 1;
     }
     DeleteFileA((LPCSTR)pbVar6);
-    if (DAT_008016dc != 0) {
-      thunk_FUN_00533a10('\f',0);
+    if (DAT_008016dc != (OptPanelTy *)0x0) {
+      OptPanelTy::Notification(DAT_008016dc,'\f',0);
     }
   }
   return;

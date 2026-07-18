@@ -1,4 +1,4 @@
-FUN_00583270:
+STJellyGunC::GetMessage:
 00583270  55                        PUSH EBP
 00583271  8B EC                     MOV EBP,ESP
 00583273  81 EC 9C 00 00 00         SUB ESP,0x9c

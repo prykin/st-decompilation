@@ -11,7 +11,7 @@ void __fastcall FUN_00619a20(int param_1)
   int local_8;
   
   if (*(int *)(param_1 + 0x97) < 0) {
-    thunk_FUN_006195e0(*(int *)(param_1 + 0x8f));
+    STJumpMineC::LoadImagJMine((STJumpMineC *)param_1,*(int *)(param_1 + 0x8f));
   }
   pvVar1 = DAT_00802a88;
   if (DAT_00802a88 == (void *)0x0) {

@@ -1,4 +1,4 @@
-FUN_00440990:
+STAllPlayersC::_ChangeDock:
 00440990  55                        PUSH EBP
 00440991  8B EC                     MOV EBP,ESP
 00440993  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

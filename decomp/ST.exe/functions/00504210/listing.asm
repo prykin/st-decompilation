@@ -1,4 +1,4 @@
-FUN_00504210:
+CPanelTy::UpdateStackPanel:
 00504210  55                        PUSH EBP
 00504211  8B EC                     MOV EBP,ESP
 00504213  81 EC A8 00 00 00         SUB ESP,0xa8

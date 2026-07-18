@@ -1,36 +1,37 @@
 
-void __thiscall thunk_FUN_00554f20(void *this,undefined4 param_1,uint *param_2,int param_3)
+void __thiscall
+cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int param_3)
 
 {
   code *pcVar1;
-  void *this_00;
+  cLoadingTy *this_00;
   int iVar2;
   DWORD DVar3;
   int iVar4;
   void *unaff_ESI;
   undefined4 uVar5;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  cLoadingTy *pcStack_8;
   
-  pvStack_8 = this;
+  pcStack_8 = this;
   thunk_FUN_00555570((int)this);
   uVar5 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
-  this_00 = pvStack_8;
+  this_00 = pcStack_8;
   if (iVar2 == 0) {
-    if (-1 < *(int *)((int)pvStack_8 + 0x3c)) {
-      thunk_FUN_00555040(pvStack_8,2,0,(char *)0x0);
+    if (-1 < *(int *)(pcStack_8 + 0x3c)) {
+      SetState(pcStack_8,2,0,(char *)0x0);
     }
-    *(undefined4 *)((int)this_00 + 0x3c) = param_1;
+    *(undefined4 *)(this_00 + 0x3c) = param_1;
     DVar3 = timeGetTime();
-    *(DWORD *)((int)this_00 + 0x44) = DVar3;
-    *(int *)((int)this_00 + 0x40) = param_3;
+    *(DWORD *)(this_00 + 0x44) = DVar3;
+    *(int *)(this_00 + 0x40) = param_3;
     if (param_3 == 0) {
-      *(undefined4 *)((int)this_00 + 0x40) = 1;
+      *(undefined4 *)(this_00 + 0x40) = 1;
     }
-    *(undefined4 *)((int)this_00 + 0x50) = 0xffffffff;
-    thunk_FUN_00554c80(this_00,param_2);
+    *(undefined4 *)(this_00 + 0x50) = 0xffffffff;
+    DrawLineCR(this_00,param_2);
     DAT_00858df8 = (undefined1 *)uVar5;
     return;
   }

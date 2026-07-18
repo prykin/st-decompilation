@@ -1,4 +1,4 @@
-FUN_00511df0:
+HelpPanelTy::SwitchOptPanel:
 00511DF0  55                        PUSH EBP
 00511DF1  8B EC                     MOV EBP,ESP
 00511DF3  83 EC 48                  SUB ESP,0x48

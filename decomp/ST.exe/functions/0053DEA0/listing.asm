@@ -1,4 +1,4 @@
-FUN_0053dea0:
+UPanelTy::CreateBut:
 0053DEA0  55                        PUSH EBP
 0053DEA1  8B EC                     MOV EBP,ESP
 0053DEA3  81 EC CC 01 00 00         SUB ESP,0x1cc

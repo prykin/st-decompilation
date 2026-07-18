@@ -1,4 +1,4 @@
-FUN_004be500:
+TLOBaseTy::SetActivity:
 004BE500  55                        PUSH EBP
 004BE501  8B EC                     MOV EBP,ESP
 004BE503  83 EC 48                  SUB ESP,0x48

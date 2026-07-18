@@ -1,4 +1,4 @@
-FUN_004ee350:
+BehPanelTy::PaintBBut:
 004EE350  55                        PUSH EBP
 004EE351  8B EC                     MOV EBP,ESP
 004EE353  83 EC 54                  SUB ESP,0x54

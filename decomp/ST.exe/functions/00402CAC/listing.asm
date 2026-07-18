@@ -1,2 +1,2 @@
-thunk_FUN_0051c980:
+HelpPanelTy::SpecProc:
 00402CAC  E9 CF 9C 11 00            JMP 0x0051c980

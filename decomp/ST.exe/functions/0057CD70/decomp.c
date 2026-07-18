@@ -2,7 +2,7 @@
 void __fastcall FUN_0057cd70(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
   code *pcVar1;
   bool bVar2;
   int iVar3;
@@ -14,7 +14,7 @@ void __fastcall FUN_0057cd70(int *param_1)
   int local_8;
   
   iVar3 = thunk_FUN_0041c710((int)param_1);
-  this = (void *)((int)param_1 + 0x1d5);
+  this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar3 == 0) {
     iVar3 = 0;
     uVar4 = thunk_FUN_004ad650((int)this);
@@ -105,7 +105,7 @@ void __fastcall FUN_0057cd70(int *param_1)
     iVar3 = thunk_FUN_004acd30(this,'\b');
     iVar5 = thunk_FUN_004ac910(this,'\b');
     if (iVar5 == iVar3 + -1) {
-      thunk_FUN_004ac410(8);
+      STT3DSprC::StopShow(this,8);
       thunk_FUN_0057bf20(param_1);
       *(undefined4 *)((int)param_1 + 0x23b) = 3;
       return;
@@ -135,25 +135,25 @@ LAB_0057cfe0:
     iVar3 = uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 6;
 LAB_0057d24b:
     thunk_FUN_004abe40(this,'\x0e',iVar3);
-    thunk_FUN_004abf00('\x0e',local_8);
+    STT3DSprC::SetCurShad(this,'\x0e',local_8);
     break;
   case 0xea:
     iVar3 = (0x18 - (int)(short)param_1[0x1b] / 0xf) % 0x18;
     thunk_FUN_004abe40(this,'\x0e',
                        (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0xf +
                        *(uint *)(DAT_00802a38 + 0xe4) % 0xf);
-    thunk_FUN_004abf00('\x0e',iVar3 / 3);
+    STT3DSprC::SetCurShad(this,'\x0e',iVar3 / 3);
     break;
   case 0xeb:
     iVar3 = (0x18 - (int)(short)param_1[0x1b] / 0xf) % 0x18;
     uVar4 = *(uint *)(DAT_00802a38 + 0xe4) % 0x14;
     thunk_FUN_004abe40(this,'\x0e',uVar4 + (((iVar3 + (4 - DAT_008073fc) * 6) % 0x18) / 3) * 0x14);
-    thunk_FUN_004abf00('\x0e',uVar4 + (iVar3 / 3) * 0x14);
+    STT3DSprC::SetCurShad(this,'\x0e',uVar4 + (iVar3 / 3) * 0x14);
     break;
   default:
     goto switchD_0057cff4_default;
   }
-  thunk_FUN_004ac040('\x0e');
+  STT3DSprC::ShowCurFase(this,'\x0e');
 switchD_0057cff4_default:
   *(int *)((int)param_1 + 0x23f) = *(int *)((int)param_1 + 0x23f) + 1;
   (**(code **)(*param_1 + 0xd8))();

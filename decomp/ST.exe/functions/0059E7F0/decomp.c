@@ -1,8 +1,13 @@
 
-void FUN_0059e7f0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\fsgs_obj.cpp
+   FSGSTy::NewGameCtrls */
+
+void __thiscall FSGSTy::NewGameCtrls(FSGSTy *this)
 
 {
   code *pcVar1;
+  FSGSTy *this_00;
   uint *puVar2;
   undefined4 uVar3;
   int iVar4;
@@ -25,9 +30,10 @@ void FUN_0059e7f0(void)
   undefined4 local_60;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  FSGSTy *local_8;
   
   puVar6 = local_8d8;
+  local_8 = this;
   for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
@@ -37,19 +43,20 @@ void FUN_0059e7f0(void)
   iVar5 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar5 == 0) {
     puVar2 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)local_8 + 0x1ae8) = puVar2;
+    this_00 = local_8;
+    *(uint **)(local_8 + 0x1ae8) = puVar2;
     FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
     puVar2 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)local_8 + 0x1aec) = puVar2;
+    *(uint **)(this_00 + 0x1aec) = puVar2;
     FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar6 = local_8d8;
     for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar6 = 0;
       puVar6 = puVar6 + 1;
     }
-    local_8d8[2] = *(undefined4 *)((int)local_8 + 0x1a73);
-    local_8d8[8] = *(undefined4 *)((int)local_8 + 0x1ae8);
-    local_8ac = *(undefined4 *)((int)local_8 + 8);
+    local_8d8[2] = *(undefined4 *)(this_00 + 0x1a73);
+    local_8d8[8] = *(undefined4 *)(this_00 + 0x1ae8);
+    local_8ac = *(undefined4 *)(this_00 + 8);
     local_848 = 2;
     local_64 = 2;
     local_8a8 = 2;
@@ -68,21 +75,21 @@ void FUN_0059e7f0(void)
     local_88c = local_8ac;
     local_84c = local_8ac;
     local_68 = local_8ac;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(6,(int)local_8 + 0x1ac4,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)((int)local_8 + 0x1aec);
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,(MMObjTy *)(this_00 + 0x1ac4),0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)(this_00 + 0x1aec);
     local_8d8[4] = 0x13d;
     local_8d8[5] = 0xaa;
     local_8d8[6] = 0x14;
     local_8d8[7] = 0x10;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(6,(int)local_8 + 0x1ac8,0,local_8d8,0);
-    *(undefined4 *)((int)local_8 + 0x1ec2) = 0x100;
-    *(undefined4 *)((int)local_8 + 0x1ec6) = 0xffffffff;
-    *(undefined4 *)((int)local_8 + 0x1eca) = 0;
-    uVar3 = thunk_FUN_005b5510(1,1,0xcd,0x16f,0x186,0x19,0x6904,0x698b);
-    *(undefined4 *)((int)local_8 + 0x1eb6) = uVar3;
-    *(undefined4 *)((int)local_8 + 0x2d) = 0x61;
-    *(undefined4 *)((int)local_8 + 0x35) = 0;
-    FUN_006e6080(local_8,0xf,0,(undefined4 *)((int)local_8 + 0x1d));
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,(MMObjTy *)(this_00 + 0x1ac8),0,local_8d8,0);
+    *(undefined4 *)(this_00 + 0x1ec2) = 0x100;
+    *(undefined4 *)(this_00 + 0x1ec6) = 0xffffffff;
+    *(undefined4 *)(this_00 + 0x1eca) = 0;
+    uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0xcd,0x16f,0x186,0x19,0x6904,0x698b);
+    *(undefined4 *)(this_00 + 0x1eb6) = uVar3;
+    *(undefined4 *)(this_00 + 0x2d) = 0x61;
+    *(undefined4 *)(this_00 + 0x35) = 0;
+    FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }

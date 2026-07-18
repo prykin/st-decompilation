@@ -1,4 +1,4 @@
-FUN_0059a640:
+FSGSTy::PaintGameNew:
 0059A640  55                        PUSH EBP
 0059A641  8B EC                     MOV EBP,ESP
 0059A643  83 EC 48                  SUB ESP,0x48

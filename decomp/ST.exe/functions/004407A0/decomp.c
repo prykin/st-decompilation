@@ -11,7 +11,7 @@ void FUN_004407a0(int param_1,undefined4 param_2,undefined4 param_3)
     do {
       FUN_006acc70(iVar1,uVar3,&param_1);
       if (param_1 != 0) {
-        thunk_FUN_004999c0((char)param_2,(short)param_3);
+        STGroupBoatC::ReMakePVecAndTgtListExt((STGroupBoatC *)param_1,(char)param_2,(short)param_3);
       }
       uVar3 = uVar3 + 1;
     } while ((int)uVar3 < iVar2);

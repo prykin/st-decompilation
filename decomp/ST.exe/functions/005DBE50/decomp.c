@@ -1,6 +1,12 @@
 
-void FUN_005dbe50(int *param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
-                 DWORD param_6,DWORD param_7,BITMAPINFO *param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\startsys.cpp
+   StartSystemTy::OutBmpProc */
+
+void __thiscall
+StartSystemTy::OutBmpProc
+          (StartSystemTy *this,int *param_1,undefined4 param_2,undefined4 param_3,int param_4,
+          int param_5,DWORD param_6,DWORD param_7,BITMAPINFO *param_8)
 
 {
   code *pcVar1;

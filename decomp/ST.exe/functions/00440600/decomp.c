@@ -1,5 +1,9 @@
 
-uint FUN_00440600(int param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetNInTmp */
+
+uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
 
 {
   code *pcVar1;

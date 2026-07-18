@@ -1,4 +1,4 @@
-FUN_005b3d60:
+MainMenuTy::SetMode:
 005B3D60  55                        PUSH EBP
 005B3D61  8B EC                     MOV EBP,ESP
 005B3D63  81 EC 48 02 00 00         SUB ESP,0x248

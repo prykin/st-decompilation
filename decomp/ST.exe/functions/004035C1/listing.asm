@@ -1,2 +1,2 @@
-thunk_FUN_00632a00:
+STTeamLissagC::InitVisibelSystem:
 004035C1  E9 3A F4 22 00            JMP 0x00632a00

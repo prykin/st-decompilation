@@ -1,4 +1,4 @@
-FUN_0064d000:
+AiEventClassTy::PrepareToSave:
 0064D000  55                        PUSH EBP
 0064D001  8B EC                     MOV EBP,ESP
 0064D003  83 EC 48                  SUB ESP,0x48

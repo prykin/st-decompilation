@@ -1,4 +1,4 @@
-FUN_00497e00:
+STGroupBoatC::GetMessage:
 00497E00  55                        PUSH EBP
 00497E01  8B EC                     MOV EBP,ESP
 00497E03  81 EC 80 00 00 00         SUB ESP,0x80

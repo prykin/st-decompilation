@@ -1,4 +1,4 @@
-FUN_0065f1d0:
+AiFltClassTy::AppendZone:
 0065F1D0  55                        PUSH EBP
 0065F1D1  8B EC                     MOV EBP,ESP
 0065F1D3  83 EC 70                  SUB ESP,0x70

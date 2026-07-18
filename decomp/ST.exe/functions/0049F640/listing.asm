@@ -1,4 +1,4 @@
-FUN_0049f640:
+STGroupBoatC::Recharge:
 0049F640  55                        PUSH EBP
 0049F641  8B EC                     MOV EBP,ESP
 0049F643  83 EC 64                  SUB ESP,0x64

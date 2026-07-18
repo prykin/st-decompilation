@@ -20,8 +20,7 @@ undefined4 __fastcall thunk_FUN_004d2fd0(int param_1)
   uint uStack_4d;
   int iStack_49;
   uint auStack_45 [6];
-  byte *apbStack_2c [4];
-  int iStack_1c;
+  byte *apbStack_2c [5];
   int iStack_18;
   byte *pbStack_14;
   byte *pbStack_10;
@@ -58,25 +57,25 @@ undefined4 __fastcall thunk_FUN_004d2fd0(int param_1)
     puVar1 = puVar1 + 1;
     puVar7 = puVar7 + 1;
   }
-  apbStack_2c[3] = (byte *)thunk_FUN_004210e0((int *)&uStack_5d);
+  apbStack_2c[3] = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&uStack_5d);
   iStack_59 = 0x14f;
-  pbStack_10 = (byte *)thunk_FUN_004ad790(&uStack_55);
+  pbStack_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&uStack_55);
   iStack_51 = uStack_5d + iStack_59;
-  pbStack_14 = (byte *)thunk_FUN_004ad790(&uStack_4d);
+  pbStack_14 = (byte *)STT3DSprC::SaveSpr(*(STT3DSprC **)(param_1 + 0x35c),&uStack_4d);
   iStack_49 = uStack_55 + iStack_51;
   iVar2 = 0;
   uStack_c = uStack_4d + iStack_49;
   iStack_18 = 0;
   if (*(int *)(param_1 + 0x370) == 0) {
-    iStack_1c = param_1 + 0x350;
+    apbStack_2c[4] = (byte *)(param_1 + 0x350);
     do {
-      puVar1 = thunk_FUN_004ad790((uint *)((int)auStack_45 + iVar2));
+      puVar1 = STT3DSprC::SaveSpr(*(STT3DSprC **)apbStack_2c[4],(uint *)((int)auStack_45 + iVar2));
       *(undefined4 **)((int)apbStack_2c + iVar2) = puVar1;
       *(uint *)((int)auStack_45 + iVar2 + 0xc) = uStack_c;
       uVar3 = *(uint *)((int)auStack_45 + iVar2);
       iVar2 = iVar2 + 4;
       uStack_c = uStack_c + uVar3;
-      iStack_1c = iStack_1c + 4;
+      apbStack_2c[4] = (byte *)((int)apbStack_2c[4] + 4);
       iStack_18 = iStack_18 + uVar3;
     } while (iVar2 < 0xc);
   }
@@ -146,7 +145,7 @@ undefined4 __fastcall thunk_FUN_004d2fd0(int param_1)
       }
     } while (iVar2 < 0xc);
   }
-  thunk_FUN_0054d430(DAT_00802a38,*(undefined4 *)(param_1 + 0x18),pbStack_8,uStack_c);
+  STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(param_1 + 0x18),pbStack_8,uStack_c);
   FUN_006ab060(&pbStack_8);
   FUN_006ab060(apbStack_2c + 3);
   FUN_006ab060(&pbStack_10);

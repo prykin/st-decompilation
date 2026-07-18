@@ -2,6 +2,7 @@
 int thunk_FUN_004b80d0(int param_1,int param_2)
 
 {
+  STT3DSprC *this;
   short sVar1;
   code *pcVar2;
   bool bVar3;
@@ -238,9 +239,10 @@ int thunk_FUN_004b80d0(int param_1,int param_2)
       }
       thunk_FUN_004e9c20(piStack_c);
       thunk_FUN_004dc150(piStack_c);
-      thunk_FUN_004ac410(0xf);
-      thunk_FUN_004ac410(0);
-      thunk_FUN_004ac410(1);
+      this = (STT3DSprC *)((int)piStack_c + 0x1d5);
+      STT3DSprC::StopShow(this,0xf);
+      STT3DSprC::StopShow(this,0);
+      STT3DSprC::StopShow(this,1);
     default:
       if (*(int *)(&DAT_00792778 + *(int *)((int)piStack_c + 0x235) * 4) != 0) {
         *(undefined4 *)((int)piStack_c + 0x275) = 0;

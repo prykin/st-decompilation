@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void thunk_FUN_004a8fc0(void)
+void __thiscall OpticClassC::InitOptic(OpticClassC *this)
 
 {
   double dVar1;
@@ -18,12 +18,14 @@ void thunk_FUN_004a8fc0(void)
   undefined4 uStack_5c;
   undefined4 auStack_58 [16];
   float fStack_18;
-  float afStack_14 [2];
+  float fStack_14;
+  OpticClassC *pOStack_10;
   ushort *puStack_c;
   float fStack_8;
   
   uStack_5c = DAT_00858df8;
   DAT_00858df8 = &uStack_5c;
+  pOStack_10 = this;
   iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_5c;
@@ -36,7 +38,7 @@ void thunk_FUN_004a8fc0(void)
     (*pcVar2)();
     return;
   }
-  if (DAT_00806754 != 0) {
+  if (DAT_00806754 != (cMf32 *)0x0) {
     puStack_c = FUN_006f2d90(DAT_00806754,s_opticsave_007ac5d4,0,0);
   }
   if (puStack_c == (ushort *)0x0) {
@@ -84,7 +86,7 @@ void thunk_FUN_004a8fc0(void)
                  SUB84((double)(_DAT_0080742c * _DAT_00790784),0),
                  (int)((ulonglong)(double)(_DAT_0080742c * _DAT_00790784) >> 0x20),
                  0x4024000000000000,0x4023ee97865e3540,(int)lVar9);
-    FUN_006dd530(DAT_00807598,&fStack_18,afStack_14,&fStack_8);
+    FUN_006dd530(DAT_00807598,&fStack_18,&fStack_14,&fStack_8);
     FUN_006dd790(DAT_00807598,
                  ((fStack_8 - _DAT_0079077c) * (float)_DAT_00790770 - _DAT_0080742c * _DAT_00790784)
                  - _DAT_0080742c * _DAT_0079070c);
@@ -131,7 +133,7 @@ void thunk_FUN_004a8fc0(void)
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  FUN_006f20e0((uint *)&puStack_c);
+  cMf32::RecMemFree(DAT_00806754,(uint *)&puStack_c);
   DAT_00858df8 = (undefined4 *)uStack_5c;
   return;
 }

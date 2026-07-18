@@ -1,4 +1,4 @@
-FUN_006406d0:
+STTorpC::GetMessage:
 006406D0  55                        PUSH EBP
 006406D1  8B EC                     MOV EBP,ESP
 006406D3  81 EC 88 02 00 00         SUB ESP,0x288

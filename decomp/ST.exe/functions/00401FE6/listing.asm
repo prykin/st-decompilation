@@ -1,2 +1,2 @@
-thunk_FUN_0052d980:
+PopUpTy::ChangeState:
 00401FE6  E9 95 B9 12 00            JMP 0x0052d980

@@ -1,4 +1,4 @@
-FUN_0053e760:
+SpecPanelTy::SwitchPanel:
 0053E760  55                        PUSH EBP
 0053E761  8B EC                     MOV EBP,ESP
 0053E763  83 EC 48                  SUB ESP,0x48

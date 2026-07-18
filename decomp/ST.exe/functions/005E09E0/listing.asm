@@ -1,4 +1,4 @@
-FUN_005e09e0:
+MTaskTy::PaintMTask:
 005E09E0  55                        PUSH EBP
 005E09E1  8B EC                     MOV EBP,ESP
 005E09E3  83 EC 48                  SUB ESP,0x48

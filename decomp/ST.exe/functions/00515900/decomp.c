@@ -1,5 +1,11 @@
 
-undefined4 FUN_00515900(int param_1,int *param_2,int param_3,int param_4,uint param_5)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\helppan.cpp
+   HelpPanelTy::DrawWeapon */
+
+undefined4 __thiscall
+HelpPanelTy::DrawWeapon
+          (HelpPanelTy *this,int param_1,int *param_2,int param_3,int param_4,uint param_5)
 
 {
   code *pcVar1;
@@ -23,11 +29,12 @@ undefined4 FUN_00515900(int param_1,int *param_2,int param_3,int param_4,uint pa
   int local_17;
   uint local_13;
   undefined4 local_c;
-  int local_8;
+  HelpPanelTy *local_8;
   
   local_c = 0;
   local_6c = DAT_00858df8;
   DAT_00858df8 = &local_6c;
+  local_8 = this;
   iVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = local_6c;
@@ -53,7 +60,8 @@ undefined4 FUN_00515900(int param_1,int *param_2,int param_3,int param_4,uint pa
       }
       iVar7 = *param_2;
       *param_2 = iVar7 + iVar2;
-      FUN_00710a90(*(int *)(local_8 + 0x218),0,param_1,iVar7 + iVar2,0x19c - param_1,0xf);
+      ccFntTy::SetSurf(*(ccFntTy **)(local_8 + 0x1e0),*(int *)(local_8 + 0x218),0,param_1,
+                       iVar7 + iVar2,0x19c - param_1,0xf);
       if (param_4 == 0) {
         pHVar9 = DAT_00807618;
         UVar5 = thunk_FUN_00524fe0(uVar8);
@@ -66,7 +74,8 @@ undefined4 FUN_00515900(int param_1,int *param_2,int param_3,int param_4,uint pa
         uVar6 = FUN_006b0140(UVar5,pHVar9);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___d__007c3bc0,uVar6,param_4);
       }
-      FUN_007119c0(&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5);
+      ccFntTy::WrStr(*(ccFntTy **)(local_8 + 0x1e0),&DAT_0080f33a,1,-1,
+                     (DAT_0080874e != '\x03') - 1 & 5);
       thunk_FUN_00540760(*(undefined4 **)(local_8 + 0x218),(param_1 - *(int *)(pbVar4 + 4)) + -5,
                          (0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2,'\x06',pbVar4);
       local_28 = (param_1 - *(int *)(pbVar4 + 4)) + -5;

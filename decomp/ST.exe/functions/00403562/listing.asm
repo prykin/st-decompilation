@@ -1,2 +1,2 @@
-thunk_FUN_0056d580:
+STAppC::CloseGameDBs:
 00403562  E9 19 A0 16 00            JMP 0x0056d580

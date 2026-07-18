@@ -1,5 +1,7 @@
 
-undefined4 thunk_FUN_0042bb30(char param_1,int param_2,int param_3,uint param_4,uint param_5)
+undefined4 __thiscall
+STAllPlayersC::AddObjToTmp
+          (STAllPlayersC *this,char param_1,int param_2,int param_3,uint param_4,uint param_5)
 
 {
   code *pcVar1;
@@ -17,11 +19,13 @@ undefined4 thunk_FUN_0042bb30(char param_1,int param_2,int param_3,uint param_4,
   undefined4 uStack_18;
   uint uStack_14;
   int iStack_10;
+  STAllPlayersC *pSStack_c;
   short sStack_6;
   
   uStack_18 = 0;
   uStack_5c = DAT_00858df8;
   DAT_00858df8 = &uStack_5c;
+  pSStack_c = this;
   iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_5c;

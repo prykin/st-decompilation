@@ -1,5 +1,5 @@
 
-void thunk_FUN_005dadf0(void)
+void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 
 {
   code *pcVar1;
@@ -12,17 +12,18 @@ void thunk_FUN_005dadf0(void)
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  StartSystemTy *pSStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pSStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (DAT_0080c4fa != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4fa);
     }
     DAT_0080c4fa = FUN_006b54f0((uint *)0x0,100,0x14);
-    iVar2 = *(int *)(iStack_8 + 0x67e);
+    iVar2 = *(int *)(pSStack_8 + 0x67e);
     if (iVar2 != 0) {
       uVar6 = *(uint *)(iVar2 + 0x14);
       if (uVar6 == 0) {

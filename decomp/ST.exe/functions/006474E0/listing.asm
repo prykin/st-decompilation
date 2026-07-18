@@ -1,4 +1,4 @@
-FUN_006474e0:
+STVolcanoC::LoadImagVolcano:
 006474E0  55                        PUSH EBP
 006474E1  8B EC                     MOV EBP,ESP
 006474E3  83 EC 58                  SUB ESP,0x58

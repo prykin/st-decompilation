@@ -1,4 +1,4 @@
-FUN_007158a0:
+SpriteClassTy::InitSprite:
 007158A0  55                        PUSH EBP
 007158A1  8B EC                     MOV EBP,ESP
 007158A3  83 EC 48                  SUB ESP,0x48

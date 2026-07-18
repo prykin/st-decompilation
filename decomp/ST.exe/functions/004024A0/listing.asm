@@ -1,2 +1,2 @@
-thunk_FUN_005441a0:
+CursorClassTy::AddSysAcc:
 004024A0  E9 FB 1C 14 00            JMP 0x005441a0

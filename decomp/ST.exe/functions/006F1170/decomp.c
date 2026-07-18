@@ -1,5 +1,9 @@
 
-void __cdecl FUN_006f1170(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::delete */
+
+void __thiscall cMf32::delete(cMf32 *this,undefined4 *param_1)
 
 {
   code *pcVar1;

@@ -1,4 +1,4 @@
-FUN_005bb910:
+PrividerTy::CloseButtons:
 005BB910  55                        PUSH EBP
 005BB911  8B EC                     MOV EBP,ESP
 005BB913  83 EC 48                  SUB ESP,0x48

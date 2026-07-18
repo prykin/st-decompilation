@@ -1,4 +1,4 @@
-FUN_00548c40:
+CursorClassTy::TakeCmdToRun:
 00548C40  55                        PUSH EBP
 00548C41  8B EC                     MOV EBP,ESP
 00548C43  81 EC C4 02 00 00         SUB ESP,0x2c4

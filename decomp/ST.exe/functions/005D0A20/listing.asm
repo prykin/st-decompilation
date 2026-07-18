@@ -1,4 +1,4 @@
-FUN_005d0a20:
+SettMapMTy::ChangePlayerState:
 005D0A20  55                        PUSH EBP
 005D0A21  8B EC                     MOV EBP,ESP
 005D0A23  83 EC 48                  SUB ESP,0x48

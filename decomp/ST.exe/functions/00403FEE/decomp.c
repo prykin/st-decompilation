@@ -36,10 +36,10 @@ void __thiscall thunk_FUN_00501d00(void *this,int *param_1,int *param_2)
   } while (iVar7 != 0);
   if (cVar3 != cStack_5) {
     if (DAT_0080874e != '\x03') {
-      thunk_FUN_00502360();
+      CPanelTy::SetControlBoat(this);
       return;
     }
-    thunk_FUN_00503450();
+    CPanelTy::SetControlBoatSI(this);
     return;
   }
   iVar7 = 3;

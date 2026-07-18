@@ -1,4 +1,4 @@
-FUN_0059c700:
+FSGSTy::LoginCtrls:
 0059C700  55                        PUSH EBP
 0059C701  8B EC                     MOV EBP,ESP
 0059C703  81 EC D4 08 00 00         SUB ESP,0x8d4

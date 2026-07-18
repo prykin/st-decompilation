@@ -1,4 +1,4 @@
-FUN_00430620:
+STAllPlayersC::IsTorpLive:
 00430620  55                        PUSH EBP
 00430621  8B EC                     MOV EBP,ESP
 00430623  83 EC 4C                  SUB ESP,0x4c

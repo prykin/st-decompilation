@@ -1,5 +1,9 @@
 
-void FUN_005e10a0(uint *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\task_obj.cpp
+   MTaskTy::TTaskItemClose */
+
+void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
 
 {
   code *pcVar1;

@@ -1,4 +1,4 @@
-FUN_005b7340:
+MMsgTy::PaintMMsg:
 005B7340  55                        PUSH EBP
 005B7341  8B EC                     MOV EBP,ESP
 005B7343  83 EC 48                  SUB ESP,0x48

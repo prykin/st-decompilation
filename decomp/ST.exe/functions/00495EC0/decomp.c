@@ -1,5 +1,9 @@
 
-undefined4 FUN_00495ec0(short param_1,short param_2,short param_3,uint param_4,int param_5)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_dump.cpp
+   DumpClassC::WritePtr */
+
+undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint param_4,int param_5)
 
 {
   int *piVar1;

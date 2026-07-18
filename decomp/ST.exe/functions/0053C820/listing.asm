@@ -1,4 +1,4 @@
-FUN_0053c820:
+ResearchPanelTy::PaintUpdBut:
 0053C820  55                        PUSH EBP
 0053C821  8B EC                     MOV EBP,ESP
 0053C823  83 EC 58                  SUB ESP,0x58

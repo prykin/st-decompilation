@@ -1,30 +1,33 @@
 
-void thunk_FUN_00501ff0(void)
+void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
 
 {
-  int *piVar1;
+  CPanelTy *pCVar1;
   uint uVar2;
   code *pcVar3;
+  CPanelTy *this_00;
   int iVar4;
   int iVar5;
   undefined4 unaff_ESI;
-  int *piVar6;
+  CPanelTy *pCVar6;
   void *unaff_EDI;
   int *piVar7;
   undefined4 uStack_a8;
   undefined4 auStack_a4 [16];
   int iStack_64;
-  char cStack_60;
-  char cStack_5f;
-  char cStack_48;
-  char cStack_47;
-  char cStack_46;
-  char cStack_30;
-  void *pvStack_8;
+  CPanelTy CStack_60;
+  CPanelTy CStack_5f;
+  CPanelTy CStack_48;
+  CPanelTy CStack_47;
+  CPanelTy CStack_46;
+  CPanelTy CStack_30;
+  CPanelTy *pCStack_8;
   
   uStack_a8 = DAT_00858df8;
   DAT_00858df8 = &uStack_a8;
+  pCStack_8 = this;
   iVar4 = __setjmp3(auStack_a4,0,unaff_EDI,unaff_ESI);
+  this_00 = pCStack_8;
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_a8;
     iVar5 = FUN_006ad4d0(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x13e,0,iVar4,&DAT_007a4ccc);
@@ -36,81 +39,79 @@ void thunk_FUN_00501ff0(void)
     (*pcVar3)();
     return;
   }
-  piVar1 = (int *)((int)pvStack_8 + 0xb99);
-  piVar6 = piVar1;
+  pCVar1 = pCStack_8 + 0xb99;
+  pCVar6 = pCVar1;
   piVar7 = &iStack_64;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *piVar7 = *piVar6;
-    piVar6 = piVar6 + 1;
+    *piVar7 = *(int *)pCVar6;
+    pCVar6 = pCVar6 + 4;
     piVar7 = piVar7 + 1;
   }
-  piVar6 = piVar1;
+  pCVar6 = pCVar1;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *piVar6 = 0;
-    piVar6 = piVar6 + 1;
+    *(int *)pCVar6 = 0;
+    pCVar6 = pCVar6 + 4;
   }
-  thunk_FUN_0043beb0(DAT_007fa174,2,piVar1);
-  if (cStack_5f != *(char *)((int)pvStack_8 + 0xb9e)) {
+  thunk_FUN_0043beb0(DAT_007fa174,2,(int *)pCVar1);
+  if (CStack_5f != this_00[0xb9e]) {
 LAB_00502155:
-    thunk_FUN_00501590();
-    thunk_FUN_00502360();
-    thunk_FUN_00501a10((int)pvStack_8);
+    PaintCtrlBoat(this_00);
+    SetControlBoat(this_00);
+    thunk_FUN_00501a10((int)this_00);
     DAT_00858df8 = (undefined4 *)uStack_a8;
     return;
   }
-  switch(*(char *)((int)pvStack_8 + 0xb9e)) {
-  case '\x01':
-    if ((iStack_64 != *(int *)((int)pvStack_8 + 0xb99)) ||
-       (cStack_60 != *(char *)((int)pvStack_8 + 0xb9d))) goto LAB_00502155;
-    thunk_FUN_00501d00(pvStack_8,(int *)((int)pvStack_8 + 0xb99),&iStack_64);
-    switch(*(int *)((int)pvStack_8 + 0xb99)) {
+  switch(this_00[0xb9e]) {
+  case (CPanelTy)0x1:
+    if ((iStack_64 != *(int *)(this_00 + 0xb99)) || (CStack_60 != this_00[0xb9d]))
+    goto LAB_00502155;
+    thunk_FUN_00501d00(this_00,(int *)(this_00 + 0xb99),&iStack_64);
+    switch(*(int *)(this_00 + 0xb99)) {
     case 8:
     case 0x14:
-      if (((*(char *)((int)pvStack_8 + 0xbb6) == cStack_47) &&
-          (*(char *)((int)pvStack_8 + 0xbb5) == cStack_48)) &&
-         (*(char *)((int)pvStack_8 + 2999) == cStack_46)) {
+      if (((this_00[0xbb6] == CStack_47) && (this_00[0xbb5] == CStack_48)) &&
+         (this_00[2999] == CStack_46)) {
         DAT_00858df8 = (undefined4 *)uStack_a8;
         return;
       }
-      thunk_FUN_00501190();
-      uVar2 = *(uint *)((int)pvStack_8 + 0x154);
+      PaintBCapacity(this_00);
+      uVar2 = *(uint *)(this_00 + 0x154);
       break;
     default:
       goto switchD_0050207d_default;
     case 0x16:
     case 0x17:
     case 0x25:
-      if (*(char *)((int)pvStack_8 + 0xbcd) == cStack_30) {
+      if (this_00[0xbcd] == CStack_30) {
         DAT_00858df8 = (undefined4 *)uStack_a8;
         return;
       }
-      thunk_FUN_00501000();
-      uVar2 = *(uint *)((int)pvStack_8 + 0x154);
+      PaintBEnergy(this_00);
+      uVar2 = *(uint *)(this_00 + 0x154);
     }
     break;
-  case '\x02':
-  case '\x03':
-    if (iStack_64 == *(int *)((int)pvStack_8 + 0xb99)) {
-      thunk_FUN_00501d00(pvStack_8,(int *)((int)pvStack_8 + 0xb99),&iStack_64);
+  case (CPanelTy)0x2:
+  case (CPanelTy)0x3:
+    if (iStack_64 == *(int *)(this_00 + 0xb99)) {
+      thunk_FUN_00501d00(this_00,(int *)(this_00 + 0xb99),&iStack_64);
       DAT_00858df8 = (undefined4 *)uStack_a8;
       return;
     }
     goto LAB_00502155;
-  case '\x04':
-    if (iStack_64 != *(int *)((int)pvStack_8 + 0xb99)) goto LAB_00502155;
-    if (*(int *)((int)pvStack_8 + 0xb99) != 0xaf) {
+  case (CPanelTy)0x4:
+    if (iStack_64 != *(int *)(this_00 + 0xb99)) goto LAB_00502155;
+    if (*(int *)(this_00 + 0xb99) != 0xaf) {
       DAT_00858df8 = (undefined4 *)uStack_a8;
       return;
     }
-    thunk_FUN_00501000();
-    uVar2 = *(uint *)((int)pvStack_8 + 0x154);
+    PaintBEnergy(this_00);
+    uVar2 = *(uint *)(this_00 + 0x154);
     break;
   default:
     goto switchD_0050207d_default;
   }
   if (-1 < (int)uVar2) {
-    FUN_006b3640(DAT_008075a8,uVar2,0xffffffff,*(uint *)((int)pvStack_8 + 0x48),
-                 *(uint *)((int)pvStack_8 + 0xa0));
+    FUN_006b3640(DAT_008075a8,uVar2,0xffffffff,*(uint *)(this_00 + 0x48),*(uint *)(this_00 + 0xa0));
   }
 switchD_0050207d_default:
   DAT_00858df8 = (undefined4 *)uStack_a8;

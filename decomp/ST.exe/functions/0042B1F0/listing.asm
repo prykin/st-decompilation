@@ -1,4 +1,4 @@
-FUN_0042b1f0:
+STAllPlayersC::GetGObjFromBox:
 0042B1F0  55                        PUSH EBP
 0042B1F1  8B EC                     MOV EBP,ESP
 0042B1F3  83 EC 6C                  SUB ESP,0x6c

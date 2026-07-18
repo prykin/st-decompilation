@@ -1,5 +1,10 @@
 
-uint * FUN_00440aa0(uint param_1,int param_2,int param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::_AssignDocks */
+
+uint * __thiscall
+STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,int param_2,int param_3)
 
 {
   code *pcVar1;
@@ -45,6 +50,7 @@ uint * FUN_00440aa0(uint param_1,int param_2,int param_3)
   undefined2 local_4a;
   uint local_48;
   uint *local_44;
+  STAllPlayersC *local_40;
   short local_3c;
   undefined4 uStack_3a;
   undefined2 local_34;
@@ -66,6 +72,7 @@ uint * FUN_00440aa0(uint param_1,int param_2,int param_3)
   local_c8 = DAT_00858df8;
   local_80 = *(int *)((int)&DAT_007f4e24 + (char)param_1 * 0xa62 + 1);
   DAT_00858df8 = &local_c8;
+  local_40 = this;
   iVar3 = __setjmp3(local_c4,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_c8;

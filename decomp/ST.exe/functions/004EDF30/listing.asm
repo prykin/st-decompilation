@@ -1,4 +1,4 @@
-FUN_004edf30:
+BehPanelTy::ShiftControls:
 004EDF30  55                        PUSH EBP
 004EDF31  8B EC                     MOV EBP,ESP
 004EDF33  83 EC 48                  SUB ESP,0x48

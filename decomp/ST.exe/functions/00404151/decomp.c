@@ -5,15 +5,15 @@ void __fastcall thunk_FUN_005f9e40(int param_1)
 
 {
   undefined4 *puVar1;
-  void *this;
+  STT3DSprC *this;
   int iVar2;
   
   puVar1 = *(undefined4 **)(param_1 + 0x2e6);
   if (puVar1 != (undefined4 *)0x0) {
-    this = (void *)*puVar1;
-    if (this != (void *)0x0) {
+    this = (STT3DSprC *)*puVar1;
+    if (this != (STT3DSprC *)0x0) {
       thunk_FUN_004abe40(this,'\x0e',puVar1[8]);
-      thunk_FUN_004ac040('\x0e');
+      STT3DSprC::ShowCurFase(this,'\x0e');
       iVar2 = *(int *)(param_1 + 0x2e6);
       thunk_FUN_004ad3c0(this,(float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,
                          (float)*(int *)(iVar2 + 0x18) * _DAT_007904f8 * _DAT_007904f0,

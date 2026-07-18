@@ -1,5 +1,5 @@
 
-void thunk_FUN_00552a30(void)
+void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
 
 {
   code *pcVar1;
@@ -9,14 +9,15 @@ void thunk_FUN_00552a30(void)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  UpgPanelTy *pUStack_8;
   
   uVar2 = DAT_00858df8;
+  pUStack_8 = this;
   iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    *(undefined4 *)(iStack_8 + 0x3f3) = 0;
-    *(undefined4 *)(iStack_8 + 0x3ef) = 0;
-    *(undefined4 *)(iStack_8 + 0x3eb) = 0;
+    *(undefined4 *)(pUStack_8 + 0x3f3) = 0;
+    *(undefined4 *)(pUStack_8 + 0x3ef) = 0;
+    *(undefined4 *)(pUStack_8 + 0x3eb) = 0;
     DAT_00802a48 = 0;
     DAT_00858df8 = uVar2;
     return;

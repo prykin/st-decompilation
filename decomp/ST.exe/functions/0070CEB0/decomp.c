@@ -183,13 +183,13 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
       puVar3 = local_c;
       if (0 < **(short **)((int)local_c + 0x9a)) {
         do {
-          FUN_006f20e0(puVar3 + 1);
+          cMf32::RecMemFree(param_2,puVar3 + 1);
           iVar13 = iVar13 + 1;
           iVar4 = local_18;
           puVar3 = puVar3 + 1;
         } while (iVar13 < *(short *)*puVar1);
       }
-      FUN_006f20e0(puVar1);
+      cMf32::RecMemFree(param_2,puVar1);
       FUN_006a5e90(local_c);
     }
     FUN_006a5e40(iVar4,0,0x7f0190,0xe4);

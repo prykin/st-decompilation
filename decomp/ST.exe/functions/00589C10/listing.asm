@@ -1,4 +1,4 @@
-FUN_00589c10:
+STOctopusC::GetMessage:
 00589C10  55                        PUSH EBP
 00589C11  8B EC                     MOV EBP,ESP
 00589C13  81 EC 84 00 00 00         SUB ESP,0x84

@@ -1,4 +1,4 @@
-FUN_004fe960:
+CPanelTy::PaintInfoBoat:
 004FE960  55                        PUSH EBP
 004FE961  8B EC                     MOV EBP,ESP
 004FE963  83 EC 4C                  SUB ESP,0x4c

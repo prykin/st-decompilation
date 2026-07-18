@@ -1,4 +1,4 @@
-FUN_005eaf10:
+STArtiafactC::GetMessage:
 005EAF10  55                        PUSH EBP
 005EAF11  8B EC                     MOV EBP,ESP
 005EAF13  83 EC 5C                  SUB ESP,0x5c

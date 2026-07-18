@@ -1,5 +1,9 @@
 
-void FUN_00446aa0(char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::OptimizeGuardBoats */
+
+void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;

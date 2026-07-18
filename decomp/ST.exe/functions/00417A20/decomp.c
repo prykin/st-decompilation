@@ -24,9 +24,10 @@ undefined4 __thiscall FUN_00417a20(void *this,short param_1,short param_2,short 
     *(short *)((int)this + 0x43) = param_2 * 0xc9 + 100;
     *(short *)((int)this + 0x45) = param_3 * 200 + 100;
     if (param_4 == 1) {
-      uVar1 = thunk_FUN_00495ec0(param_1,param_2,param_3,
-                                 CONCAT31((int3)((uint)*(undefined4 *)((int)this + 0x18) >> 8),
-                                          *(undefined1 *)((int)this + 0x8e)),(int)this);
+      uVar1 = DumpClassC::WritePtr
+                        (param_1,param_2,param_3,
+                         CONCAT31((int3)((uint)*(undefined4 *)((int)this + 0x18) >> 8),
+                                  *(undefined1 *)((int)this + 0x8e)),(int)this);
       return uVar1;
     }
   }
@@ -55,29 +56,32 @@ undefined4 __thiscall FUN_00417a20(void *this,short param_1,short param_2,short 
     *(short *)((int)this + 0x43) = param_2 * 0xc9 + 100;
     *(short *)((int)this + 0x45) = param_3 * 200 + 100;
     if (param_4 == 1) {
-      iVar2 = thunk_FUN_00495ec0(param_1,param_2,param_3,
-                                 CONCAT31((int3)((uint)*(undefined4 *)((int)this + 0x18) >> 8),
-                                          *(undefined1 *)((int)this + 0x8e)),(int)this);
+      iVar2 = DumpClassC::WritePtr
+                        (param_1,param_2,param_3,
+                         CONCAT31((int3)((uint)*(undefined4 *)((int)this + 0x18) >> 8),
+                                  *(undefined1 *)((int)this + 0x8e)),(int)this);
       if (iVar2 != 0) {
         return 0xffffffff;
       }
-      iVar2 = thunk_FUN_00495ec0(*(short *)((int)this + 0x47) + 1,*(short *)((int)this + 0x49),
-                                 *(short *)((int)this + 0x4b),
-                                 CONCAT31((int3)((uint)extraout_ECX_00 >> 8),
-                                          *(undefined1 *)((int)this + 0x8e)),(int)this);
+      iVar2 = DumpClassC::WritePtr
+                        (*(short *)((int)this + 0x47) + 1,*(short *)((int)this + 0x49),
+                         *(short *)((int)this + 0x4b),
+                         CONCAT31((int3)((uint)extraout_ECX_00 >> 8),
+                                  *(undefined1 *)((int)this + 0x8e)),(int)this);
       if (iVar2 != 0) {
         return 0xffffffff;
       }
-      iVar2 = thunk_FUN_00495ec0(*(short *)((int)this + 0x47),*(short *)((int)this + 0x49) + 1,
-                                 *(short *)((int)this + 0x4b),(uint)*(byte *)((int)this + 0x8e),
-                                 (int)this);
+      iVar2 = DumpClassC::WritePtr
+                        (*(short *)((int)this + 0x47),*(short *)((int)this + 0x49) + 1,
+                         *(short *)((int)this + 0x4b),(uint)*(byte *)((int)this + 0x8e),(int)this);
       if (iVar2 != 0) {
         return 0xffffffff;
       }
-      uVar1 = thunk_FUN_00495ec0(*(short *)((int)this + 0x47) + 1,*(short *)((int)this + 0x49) + 1,
-                                 *(short *)((int)this + 0x4b),
-                                 CONCAT31((int3)((uint)extraout_EDX_00 >> 8),
-                                          *(undefined1 *)((int)this + 0x8e)),(int)this);
+      uVar1 = DumpClassC::WritePtr
+                        (*(short *)((int)this + 0x47) + 1,*(short *)((int)this + 0x49) + 1,
+                         *(short *)((int)this + 0x4b),
+                         CONCAT31((int3)((uint)extraout_EDX_00 >> 8),
+                                  *(undefined1 *)((int)this + 0x8e)),(int)this);
       return uVar1;
     }
   }

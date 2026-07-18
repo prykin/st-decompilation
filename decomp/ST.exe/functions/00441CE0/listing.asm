@@ -1,4 +1,4 @@
-FUN_00441ce0:
+STAllPlayersC::_MakeMDPairs:
 00441CE0  55                        PUSH EBP
 00441CE1  8B EC                     MOV EBP,ESP
 00441CE3  81 EC E4 00 00 00         SUB ESP,0xe4

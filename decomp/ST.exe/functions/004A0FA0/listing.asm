@@ -1,4 +1,4 @@
-FUN_004a0fa0:
+STGroupBoatC::RechargeNewCmd:
 004A0FA0  55                        PUSH EBP
 004A0FA1  8B EC                     MOV EBP,ESP
 004A0FA3  81 EC 98 01 00 00         SUB ESP,0x198

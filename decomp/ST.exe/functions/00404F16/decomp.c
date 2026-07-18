@@ -1,24 +1,24 @@
 
-void __thiscall thunk_FUN_00533880(void *this,char param_1)
+void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
 
 {
   code *pcVar1;
-  void *this_00;
+  OptPanelTy *this_00;
   int iVar2;
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  OptPanelTy *pOStack_8;
   
   uVar4 = DAT_00858df8;
-  if (*(short *)((int)this + 0x172) != 2) {
+  if (*(short *)(this + 0x172) != 2) {
     return;
   }
   DAT_00858df8 = &stack0xffffffb4;
-  pvStack_8 = this;
+  pOStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar4);
-  this_00 = pvStack_8;
+  this_00 = pOStack_8;
   if (iVar2 == 0) {
     if (param_1 == '\x04') {
       if (DAT_008067a0 == '\0') {
@@ -28,24 +28,24 @@ void __thiscall thunk_FUN_00533880(void *this,char param_1)
         iVar2 = 0x3e96 - (uint)((uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)(DAT_00802a38 + 0x34)
                                       ) < 6000);
       }
-      *(int *)((int)pvStack_8 + 0x1a5) = iVar2;
+      *(int *)(pOStack_8 + 0x1a5) = iVar2;
     }
     else if (param_1 == '\x05') {
-      *(undefined4 *)((int)pvStack_8 + 0x1a5) = 0x3e85;
+      *(undefined4 *)(pOStack_8 + 0x1a5) = 0x3e85;
     }
     else {
       if (param_1 != '\a') {
         DAT_00858df8 = (undefined1 *)uVar4;
         return;
       }
-      *(undefined4 *)((int)pvStack_8 + 0x1a5) = 0x4272;
+      *(undefined4 *)(pOStack_8 + 0x1a5) = 0x4272;
     }
-    *(char *)((int)pvStack_8 + 0x1ab) = param_1;
-    *(uint *)((int)pvStack_8 + 0x1a0) = (uint)(param_1 != '\a');
-    *(undefined1 *)((int)pvStack_8 + 0x1a9) = 0;
-    *(undefined1 *)((int)pvStack_8 + 0x1a4) = 5;
-    thunk_FUN_0052fb00();
-    thunk_FUN_0052f2b0(this_00,-1);
+    pOStack_8[0x1ab] = (OptPanelTy)param_1;
+    *(uint *)(pOStack_8 + 0x1a0) = (uint)(param_1 != '\a');
+    pOStack_8[0x1a9] = (OptPanelTy)0x0;
+    pOStack_8[0x1a4] = (OptPanelTy)0x5;
+    SetOptControls(pOStack_8);
+    SwitchOptPanel(this_00,-1);
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

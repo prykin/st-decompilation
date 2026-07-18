@@ -1,4 +1,4 @@
-FUN_005b0ba0:
+ChooseMapTy::GetMessage:
 005B0BA0  55                        PUSH EBP
 005B0BA1  8B EC                     MOV EBP,ESP
 005B0BA3  81 EC DC 06 00 00         SUB ESP,0x6dc

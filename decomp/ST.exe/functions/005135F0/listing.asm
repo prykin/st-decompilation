@@ -1,4 +1,4 @@
-FUN_005135f0:
+HelpPanelTy::HomeBut:
 005135F0  55                        PUSH EBP
 005135F1  8B EC                     MOV EBP,ESP
 005135F3  83 EC 60                  SUB ESP,0x60

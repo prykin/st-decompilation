@@ -1,4 +1,4 @@
-FUN_0048fac0:
+STBoatC::SaveBoatData:
 0048FAC0  55                        PUSH EBP
 0048FAC1  8B EC                     MOV EBP,ESP
 0048FAC3  83 EC 64                  SUB ESP,0x64

@@ -1,5 +1,9 @@
 
-int FUN_006e6330(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   SystemWithNamedObjClassTy::SendMessage */
+
+int __thiscall SystemWithNamedObjClassTy::SendMessage(SystemWithNamedObjClassTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -8,11 +12,12 @@ int FUN_006e6330(int param_1)
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_4c [16];
-  void *local_c;
+  SystemWithNamedObjClassTy *local_c;
   undefined4 *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb0;
+  local_c = this;
   iVar2 = __setjmp3(local_4c,0,unaff_ESI,uVar4);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined1 *)uVar4;

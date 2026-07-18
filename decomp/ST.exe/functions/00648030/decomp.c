@@ -17,7 +17,7 @@ undefined4 FUN_00648030(int param_1)
   char *pcVar11;
   undefined4 local_54;
   undefined4 local_50 [16];
-  int local_10;
+  AiBossClassTy *local_10;
   byte *local_c;
   uint local_8;
   
@@ -36,34 +36,34 @@ undefined4 FUN_00648030(int param_1)
     uVar5 = (*pcVar1)();
     return uVar5;
   }
-  uVar6 = *(uint *)((int)DAT_00802a38 + 0xe4);
+  uVar6 = *(uint *)(DAT_00802a38 + 0xe4);
   *(uint *)(local_10 + 0x658) = uVar6;
   uVar7 = *(uint *)(param_1 + 0x10);
   if (uVar7 < 0x110) {
     if (uVar7 == 0x10f) {
       local_8 = 0;
-      local_c = (byte *)thunk_FUN_00647ef0(&local_8);
-      thunk_FUN_0054d550(DAT_00802a38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
+      local_c = (byte *)AiBossClassTy::PrepareToSave(local_10,&local_8);
+      STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
       if (local_c != (byte *)0x0) {
         FUN_006ab060(&local_c);
       }
     }
     else if (uVar7 == 0) {
-      thunk_FUN_00652810((void *)(local_10 + 0x1c),param_1);
+      thunk_FUN_00652810(local_10 + 0x1c,param_1);
     }
     else if (uVar7 == 2) {
       puVar3 = *(undefined4 **)(param_1 + 0x14);
       if (puVar3 == (undefined4 *)0x0) {
         FUN_006a5e40(-6,DAT_007ed77c,0x7d2750,0x61);
       }
-      thunk_FUN_00647dc0(puVar3);
+      AiBossClassTy::InitData(local_10,puVar3);
       DAT_008117bc = local_10;
       thunk_FUN_0064a450();
     }
     else if (uVar7 == 3) {
       thunk_FUN_0064a580();
-      thunk_FUN_00647ed0(local_10);
-      DAT_008117bc = 0;
+      thunk_FUN_00647ed0((int)local_10);
+      DAT_008117bc = (AiBossClassTy *)0x0;
     }
   }
   else if (uVar7 < 0x5ded) {
@@ -72,7 +72,7 @@ undefined4 FUN_00648030(int param_1)
         if (uVar6 < *(int *)(local_10 + 0x629) + 5U) goto LAB_00648291;
         *(uint *)(local_10 + 0x629) = uVar6;
       }
-      thunk_FUN_00652810((void *)(local_10 + 0x1c),param_1);
+      thunk_FUN_00652810(local_10 + 0x1c,param_1);
       if (DAT_007fa174 != 0) {
         cVar9 = '\0';
         pcVar8 = &DAT_008087e9;
@@ -89,11 +89,11 @@ undefined4 FUN_00648030(int param_1)
   }
   else if (uVar7 == 0x7106) {
     thunk_FUN_00676930((uint)DAT_0080874d);
-    if (DAT_00802a38 == (void *)0x0) {
+    if (DAT_00802a38 == (STPlaySystemC *)0x0) {
       DAT_0080c83a = 0;
     }
     else {
-      DAT_0080c83a = *(uint *)((int)DAT_00802a38 + 0xe4) / 0x19;
+      DAT_0080c83a = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
     }
     puVar3 = &DAT_008087b6;
     puVar10 = &DAT_0080c967;

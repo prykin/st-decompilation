@@ -1,4 +1,4 @@
-FUN_005f10d0:
+STManBasisC::GetMessage:
 005F10D0  55                        PUSH EBP
 005F10D1  8B EC                     MOV EBP,ESP
 005F10D3  83 EC 54                  SUB ESP,0x54

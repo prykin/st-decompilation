@@ -1,4 +1,4 @@
-FUN_004ed630:
+BehPanelTy::InitBehPanel:
 004ED630  55                        PUSH EBP
 004ED631  8B EC                     MOV EBP,ESP
 004ED633  81 EC 90 09 00 00         SUB ESP,0x990

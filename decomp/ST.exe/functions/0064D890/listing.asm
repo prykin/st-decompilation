@@ -1,4 +1,4 @@
-FUN_0064d890:
+AiEventClassTy::_CreateRCCont:
 0064D890  55                        PUSH EBP
 0064D891  8B EC                     MOV EBP,ESP
 0064D893  83 EC 68                  SUB ESP,0x68

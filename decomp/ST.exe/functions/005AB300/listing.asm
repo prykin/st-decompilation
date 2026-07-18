@@ -1,4 +1,4 @@
-FUN_005ab300:
+ChooseMapTy::InitChooseMap:
 005AB300  55                        PUSH EBP
 005AB301  8B EC                     MOV EBP,ESP
 005AB303  81 EC 68 08 00 00         SUB ESP,0x868

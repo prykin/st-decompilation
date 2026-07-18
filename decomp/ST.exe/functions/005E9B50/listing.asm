@@ -1,4 +1,4 @@
-FUN_005e9b50:
+WaitTy::CreateCtrls:
 005E9B50  55                        PUSH EBP
 005E9B51  8B EC                     MOV EBP,ESP
 005E9B53  81 EC D4 08 00 00         SUB ESP,0x8d4

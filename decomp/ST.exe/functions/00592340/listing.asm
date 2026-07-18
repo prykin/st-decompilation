@@ -1,4 +1,4 @@
-FUN_00592340:
+CampaignTy::LightPalette:
 00592340  55                        PUSH EBP
 00592341  8B EC                     MOV EBP,ESP
 00592343  83 EC 48                  SUB ESP,0x48

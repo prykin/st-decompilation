@@ -1,4 +1,4 @@
-FUN_005c0b00:
+MReportTy::PaintBut:
 005C0B00  55                        PUSH EBP
 005C0B01  8B EC                     MOV EBP,ESP
 005C0B03  83 EC 60                  SUB ESP,0x60

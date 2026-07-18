@@ -1,53 +1,56 @@
 
-void thunk_FUN_00510250(void)
+void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  FrmPanelTy *pFVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  uint *puVar4;
+  FrmPanelTy *pFVar5;
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  FrmPanelTy *pFStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
-  iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
-    iVar2 = 8;
-    puVar4 = (uint *)(iStack_8 + 0x1b3);
+  pFStack_8 = this;
+  iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  pFVar2 = pFStack_8;
+  if (iVar3 == 0) {
+    iVar3 = 8;
+    pFVar5 = pFStack_8 + 0x1b3;
     do {
-      if (*puVar4 != 0) {
-        FUN_006e56b0(*(void **)(iStack_8 + 0xc),*puVar4);
-        *puVar4 = 0;
+      if (*(uint *)pFVar5 != 0) {
+        FUN_006e56b0(*(void **)(pFVar2 + 0xc),*(uint *)pFVar5);
+        *(uint *)pFVar5 = 0;
       }
-      puVar4 = puVar4 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
-    puVar4 = (uint *)(iStack_8 + 0x1d3);
-    iVar2 = 4;
+      pFVar5 = pFVar5 + 4;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    pFVar5 = pFVar2 + 0x1d3;
+    iVar3 = 4;
     do {
-      if (*puVar4 != 0) {
-        FUN_006e56b0(*(void **)(iStack_8 + 0xc),*puVar4);
-        *puVar4 = 0;
+      if (*(uint *)pFVar5 != 0) {
+        FUN_006e56b0(*(void **)(pFVar2 + 0xc),*(uint *)pFVar5);
+        *(uint *)pFVar5 = 0;
       }
-      puVar4 = puVar4 + 1;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      pFVar5 = pFVar5 + 4;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
     DAT_0080168c = 0;
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x4f,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x4f,0,iVar3,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c2958,0x4f);
+  FUN_006a5e40(iVar3,0,0x7c2958,0x4f);
   return;
 }
 

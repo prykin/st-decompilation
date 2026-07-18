@@ -1,4 +1,4 @@
-FUN_0062f3b0:
+STRubbishC::LoadImagSpr:
 0062F3B0  55                        PUSH EBP
 0062F3B1  8B EC                     MOV EBP,ESP
 0062F3B3  83 EC 58                  SUB ESP,0x58

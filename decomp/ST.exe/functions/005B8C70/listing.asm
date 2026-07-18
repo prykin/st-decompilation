@@ -1,4 +1,4 @@
-FUN_005b8c70:
+MMsgTy::HidePanel:
 005B8C70  55                        PUSH EBP
 005B8C71  8B EC                     MOV EBP,ESP
 005B8C73  83 EC 6C                  SUB ESP,0x6c

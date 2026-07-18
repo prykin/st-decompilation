@@ -1,4 +1,4 @@
-FUN_004fb060:
+CPanelTy::GetMessage:
 004FB060  55                        PUSH EBP
 004FB061  8B EC                     MOV EBP,ESP
 004FB063  81 EC CC 00 00 00         SUB ESP,0xcc

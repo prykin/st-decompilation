@@ -1,4 +1,4 @@
-FUN_004f2130:
+CPanelTy::PaintCostsXY:
 004F2130  55                        PUSH EBP
 004F2131  8B EC                     MOV EBP,ESP
 004F2133  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_005047c0:
+CPanelTy::PaintPerRes:
 005047C0  55                        PUSH EBP
 005047C1  8B EC                     MOV EBP,ESP
 005047C3  83 EC 50                  SUB ESP,0x50

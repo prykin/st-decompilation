@@ -93,9 +93,10 @@ LAB_004c6899:
         iStack_28 = 0;
         goto LAB_004c6899;
       }
-      iVar8 = thunk_FUN_004ab880(0,DAT_0080678c,
-                                 (&PTR_s_tlo_bldmark_si_007ad25c)
-                                 [*(byte *)(*(int *)((int)this + 0x10) + 0x112e)],0x1d);
+      iVar8 = STT3DSprC::LoadSequence
+                        (*(STT3DSprC **)((int)this + 0x2c),0,DAT_0080678c,
+                         (&PTR_s_tlo_bldmark_si_007ad25c)
+                         [*(byte *)(*(int *)((int)this + 0x10) + 0x112e)],0x1d);
       if (iVar8 != 0) {
         FUN_006a5e40(iVar8,DAT_007ed77c,0x7ad2f4,0x82);
       }
@@ -119,15 +120,15 @@ LAB_004c6899:
       thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,iVar8,iVar8,'\0');
       thunk_FUN_004abe40(*(void **)((int)this + 0x2c),'\0',iVar8);
       uVar6 = FUN_006e51b0(*(int *)((int)this + 0x10));
-      thunk_FUN_004ac1a0(0,uVar6);
+      STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,uVar6);
       iVar8 = iStack_10;
     }
   }
   else if (*(int *)((int)this + 0x24) == 0) {
-    iVar5 = thunk_FUN_004ab880(0,DAT_0080678c,
-                               *(byte **)(&DAT_007ad250 +
-                                         (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112e) * 4),
-                               0x1d);
+    iVar5 = STT3DSprC::LoadSequence
+                      (*(STT3DSprC **)((int)this + 0x2c),0,DAT_0080678c,
+                       *(byte **)(&DAT_007ad250 +
+                                 (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112e) * 4),0x1d);
     if (iVar5 != 0) {
       FUN_006a5e40(iVar5,DAT_007ed77c,0x7ad2f4,0x77);
     }
@@ -137,7 +138,7 @@ LAB_004c6899:
     thunk_FUN_004abe40(*(void **)((int)this + 0x2c),'\0',
                        *(undefined4 *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
     uVar6 = FUN_006e51b0(*(int *)((int)this + 0x10));
-    thunk_FUN_004ac1a0(0,uVar6);
+    STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,uVar6);
   }
   thunk_FUN_004ad460(*(void **)((int)this + 0x2c),0);
   if (*(int *)(&DAT_00791d68 + *(int *)((int)this + 0x1c) * 4) == 0) {

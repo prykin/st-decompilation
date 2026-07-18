@@ -1,4 +1,4 @@
-FUN_004f3cf0:
+CPanelTy::PaintTxtBut:
 004F3CF0  55                        PUSH EBP
 004F3CF1  8B EC                     MOV EBP,ESP
 004F3CF3  83 EC 58                  SUB ESP,0x58

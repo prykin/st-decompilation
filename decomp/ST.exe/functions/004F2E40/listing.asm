@@ -1,4 +1,4 @@
-FUN_004f2e40:
+CPanelTy::SetButStruct:
 004F2E40  55                        PUSH EBP
 004F2E41  8B EC                     MOV EBP,ESP
 004F2E43  83 EC 4C                  SUB ESP,0x4c

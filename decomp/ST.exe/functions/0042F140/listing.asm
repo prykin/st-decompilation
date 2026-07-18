@@ -1,4 +1,4 @@
-FUN_0042f140:
+STAllPlayersC::UnRegisterGroup:
 0042F140  55                        PUSH EBP
 0042F141  8B EC                     MOV EBP,ESP
 0042F143  83 EC 4C                  SUB ESP,0x4c

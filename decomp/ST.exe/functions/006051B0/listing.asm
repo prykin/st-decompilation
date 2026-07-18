@@ -1,4 +1,4 @@
-FUN_006051b0:
+STExplosionC::LoadImagSpr:
 006051B0  55                        PUSH EBP
 006051B1  8B EC                     MOV EBP,ESP
 006051B3  83 EC 64                  SUB ESP,0x64

@@ -1,8 +1,13 @@
 
-void FUN_005123a0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\helppan.cpp
+   HelpPanelTy::CreateList */
+
+void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
 
 {
   code *pcVar1;
+  HelpPanelTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -59,9 +64,10 @@ void FUN_005123a0(void)
   undefined4 local_5c;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  HelpPanelTy *local_8;
   
   piVar4 = local_520;
+  local_8 = this;
   for (iVar2 = 0x135; iVar2 != 0; iVar2 = iVar2 + -1) {
     *piVar4 = 0;
     piVar4 = piVar4 + 1;
@@ -69,34 +75,35 @@ void FUN_005123a0(void)
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    if (*(uint *)((int)local_8 + 0x19c) != 0) {
-      FUN_006e56b0(*(void **)((int)local_8 + 0xc),*(uint *)((int)local_8 + 0x19c));
+    if (*(uint *)(local_8 + 0x19c) != 0) {
+      FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x19c));
     }
-    FUN_006b55f0(*(undefined4 **)((int)local_8 + 0x68),0,0x21,0x16,*(int *)((int)local_8 + 0x1dc),0,
-                 0x21,0x16,0x19c,0x118);
+    FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
+                 0x19c,0x118);
     local_520[0] = 0;
-    local_520[2] = *(int *)((int)local_8 + 0x3c) + 0x21;
-    if (*(int *)((int)local_8 + 0x5c) == 0) {
-      local_520[3] = -*(int *)((int)local_8 + 0x48);
+    local_520[2] = *(int *)(this_00 + 0x3c) + 0x21;
+    if (*(int *)(this_00 + 0x5c) == 0) {
+      local_520[3] = -*(int *)(this_00 + 0x48);
     }
     else {
-      local_520[3] = *(int *)((int)local_8 + 0x44);
+      local_520[3] = *(int *)(this_00 + 0x44);
     }
     local_520[3] = local_520[3] + 0x16;
     local_510 = 0x19c;
     local_50c = 0x118;
-    if (*(char *)((int)local_8 + 0x1a1) == '\0') {
-      iVar2 = *(int *)((int)local_8 + 0x1b3);
+    if (this_00[0x1a1] == (HelpPanelTy)0x0) {
+      iVar2 = *(int *)(this_00 + 0x1b3);
     }
     else {
-      iVar2 = *(int *)((int)local_8 + 0x1bb);
+      iVar2 = *(int *)(this_00 + 0x1bb);
     }
     local_508 = *(undefined4 *)(iVar2 + 0xc);
     local_504 = 0;
-    local_4f8 = *(undefined4 *)((int)local_8 + 8);
+    local_4f8 = *(undefined4 *)(this_00 + 8);
     local_3f0[0] = 0;
-    local_3f0[2] = *(int *)((int)local_8 + 0x3c) + 0x1c3;
+    local_3f0[2] = *(int *)(this_00 + 0x3c) + 0x1c3;
     local_4f4 = 2;
     local_4f0 = 0x8160;
     local_4d4 = 2;
@@ -109,11 +116,11 @@ void FUN_005123a0(void)
     local_3f0[1] = 2;
     local_2e8 = 1;
     local_2e4 = 1;
-    if (*(int *)((int)local_8 + 0x5c) == 0) {
-      local_3f0[3] = -*(int *)((int)local_8 + 0x48);
+    if (*(int *)(this_00 + 0x5c) == 0) {
+      local_3f0[3] = -*(int *)(this_00 + 0x48);
     }
     else {
-      local_3f0[3] = *(int *)((int)local_8 + 0x44);
+      local_3f0[3] = *(int *)(this_00 + 0x44);
     }
     local_3f0[3] = local_3f0[3] + 0x16;
     local_3e0 = 0x11;
@@ -123,8 +130,8 @@ void FUN_005123a0(void)
     local_498 = local_4f8;
     local_2cc = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
     local_2c8 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
-    local_390 = *(undefined4 *)((int)local_8 + 8);
-    iVar2 = *(int *)((int)local_8 + 0x5c);
+    local_390 = *(undefined4 *)(this_00 + 8);
+    iVar2 = *(int *)(this_00 + 0x5c);
     local_38c = 2;
     local_274 = 2;
     local_2e0 = 500;
@@ -138,26 +145,26 @@ void FUN_005123a0(void)
       piVar5 = piVar5 + 1;
     }
     if (iVar2 == 0) {
-      local_270[3] = -*(int *)((int)local_8 + 0x48);
+      local_270[3] = -*(int *)(this_00 + 0x48);
     }
     else {
-      local_270[3] = *(int *)((int)local_8 + 0x44);
+      local_270[3] = *(int *)(this_00 + 0x44);
     }
     local_270[3] = local_270[3] + 0x109;
     local_14c = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
     local_148 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
-    local_e4 = *(int *)((int)local_8 + 0x3c) + 0x1c3;
+    local_e4 = *(int *)(this_00 + 0x3c) + 0x1c3;
     local_208 = 0x8165;
     local_f4 = 3;
     local_f0 = 1;
     local_e8 = 0;
-    if (*(int *)((int)local_8 + 0x5c) == 0) {
-      local_e0 = -*(int *)((int)local_8 + 0x48);
+    if (*(int *)(this_00 + 0x5c) == 0) {
+      local_e0 = -*(int *)(this_00 + 0x48);
     }
     else {
-      local_e0 = *(int *)((int)local_8 + 0x44);
+      local_e0 = *(int *)(this_00 + 0x44);
     }
-    local_a0 = *(undefined4 *)((int)local_8 + 8);
+    local_a0 = *(undefined4 *)(this_00 + 8);
     local_e0 = local_e0 + 0x3d;
     local_dc = 0x11;
     local_d8 = 0xc9;
@@ -166,13 +173,12 @@ void FUN_005123a0(void)
     local_98 = 0x8166;
     local_60 = 1;
     local_5c = 1;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(7,(int *)((int)local_8 + 0x19c),0,local_520,0)
-    ;
-    iVar2 = *(int *)((int)local_8 + 0x19c);
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(7,this_00 + 0x19c,0,local_520,0);
+    iVar2 = *(int *)(this_00 + 0x19c);
     if (iVar2 != 0) {
-      *(undefined4 *)((int)local_8 + 0x28) = 0x20;
-      *(undefined4 *)((int)local_8 + 0x2c) = 1;
-      FUN_006e6080(local_8,2,iVar2,(undefined4 *)((int)local_8 + 0x18));
+      *(undefined4 *)(this_00 + 0x28) = 0x20;
+      *(undefined4 *)(this_00 + 0x2c) = 1;
+      FUN_006e6080(this_00,2,iVar2,(undefined4 *)(this_00 + 0x18));
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;

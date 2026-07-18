@@ -1,5 +1,5 @@
 
-int thunk_FUN_00692920(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
+int thunk_FUN_00692920(cMf32 *param_1,undefined4 *param_2,undefined4 *param_3,int param_4,
                       int param_5)
 
 {
@@ -71,7 +71,7 @@ int thunk_FUN_00692920(undefined4 param_1,undefined4 *param_2,undefined4 *param_
         param_4 = (int)param_2;
       } while (param_5 != 0);
     }
-    FUN_006f20e0((uint *)&puStack_10);
+    cMf32::RecMemFree(param_1,(uint *)&puStack_10);
   }
   return iVar2;
 }

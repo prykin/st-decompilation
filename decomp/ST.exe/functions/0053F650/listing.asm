@@ -1,4 +1,4 @@
-FUN_0053f650:
+ProdPanelTy::SetPanel:
 0053F650  55                        PUSH EBP
 0053F651  8B EC                     MOV EBP,ESP
 0053F653  83 EC 48                  SUB ESP,0x48

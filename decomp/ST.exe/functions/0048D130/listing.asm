@@ -1,4 +1,4 @@
-FUN_0048d130:
+STBoatC::SetNewMD:
 0048D130  55                        PUSH EBP
 0048D131  8B EC                     MOV EBP,ESP
 0048D133  53                        PUSH EBX

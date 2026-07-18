@@ -1,10 +1,14 @@
 
-void __fastcall FUN_004efd10(void *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\bldlab.cpp
+   BldLabPanelTy::Update */
+
+void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
 
 {
-  int *piVar1;
+  BldLabPanelTy *pBVar1;
   code *pcVar2;
-  void *this;
+  BldLabPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
@@ -12,20 +16,20 @@ void __fastcall FUN_004efd10(void *param_1)
   undefined4 local_50;
   undefined4 local_4c [16];
   uint local_c;
-  void *local_8;
+  BldLabPanelTy *local_8;
   
-  if (*(int *)((int)param_1 + 0x27a) != 0) {
-    local_c = *(uint *)(*(int *)((int)param_1 + 0x27a) + 0xc);
+  if (*(int *)(this + 0x27a) != 0) {
+    local_c = *(uint *)(*(int *)(this + 0x27a) + 0xc);
     local_50 = DAT_00858df8;
     DAT_00858df8 = &local_50;
-    local_8 = param_1;
+    local_8 = this;
     iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
-    this = local_8;
+    this_00 = local_8;
     if (iVar3 == 0) {
-      piVar1 = (int *)((int)local_8 + 0x27a);
-      thunk_FUN_0043beb0(DAT_007fa174,0xc,piVar1);
-      thunk_FUN_0053f510(this,*(uint *)(*piVar1 + 0xc),local_c);
-      thunk_FUN_004efe20(this);
+      pBVar1 = local_8 + 0x27a;
+      thunk_FUN_0043beb0(DAT_007fa174,0xc,(int *)pBVar1);
+      thunk_FUN_0053f510(this_00,*(uint *)(*(int *)pBVar1 + 0xc),local_c);
+      thunk_FUN_004efe20(this_00);
       DAT_00858df8 = (undefined4 *)local_50;
       return;
     }

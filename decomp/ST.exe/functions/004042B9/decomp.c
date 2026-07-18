@@ -10,6 +10,7 @@ undefined4 __thiscall thunk_FUN_00572920(void *this,byte param_1)
   uint uVar4;
   int iVar5;
   undefined4 *puVar6;
+  cMf32 *this_00;
   byte *pbVar7;
   undefined *puVar8;
   byte abStack_158 [260];
@@ -53,7 +54,7 @@ undefined4 __thiscall thunk_FUN_00572920(void *this,byte param_1)
                      (undefined4 *)0x0,'\0',(uint *)0x0);
         FUN_006f13f0(0xc,PTR_s_LASTPSW_0079b0ec,(byte *)((int)pvVar1 + 0x805),9,(undefined4 *)0x0,
                      '\0',(uint *)0x0);
-        FUN_006f1170(puVar6);
+        cMf32::delete(this_00,puVar6);
       }
       DAT_00858df8 = puStack_54;
     }

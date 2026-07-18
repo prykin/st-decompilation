@@ -1,4 +1,4 @@
-FUN_0053fcd0:
+ProdPanelTy::PaintTab:
 0053FCD0  55                        PUSH EBP
 0053FCD1  8B EC                     MOV EBP,ESP
 0053FCD3  83 EC 54                  SUB ESP,0x54

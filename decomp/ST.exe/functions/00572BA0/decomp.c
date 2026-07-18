@@ -4,6 +4,7 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
 {
   int iVar1;
   undefined4 *puVar2;
+  cMf32 *this;
   byte *pbVar3;
   char *pcVar4;
   byte local_154 [260];
@@ -33,7 +34,7 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
                    ,'\0',(uint *)0x0);
       FUN_006f13f0(0xc,PTR_s_MOUKEYS_PLAYER_0079b0e4,(byte *)(iVar1 + 0xc1e),0x78,(undefined4 *)0x0,
                    '\0',(uint *)0x0);
-      FUN_006f1170(puVar2);
+      cMf32::delete(this,puVar2);
     }
     DAT_00858df8 = local_50;
     return local_8;

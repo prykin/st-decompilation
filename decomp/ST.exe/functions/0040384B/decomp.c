@@ -2,7 +2,7 @@
 undefined4 __thiscall thunk_FUN_004ca7b0(void *this,uint param_1,int param_2)
 
 {
-  void *this_00;
+  STT3DSprC *this_00;
   int iVar1;
   uint uVar2;
   int iVar3;
@@ -16,7 +16,7 @@ undefined4 __thiscall thunk_FUN_004ca7b0(void *this,uint param_1,int param_2)
   
   uVar7 = param_1;
   iStack_c = 0;
-  this_00 = (void *)((int)this + 0x1d5);
+  this_00 = (STT3DSprC *)((int)this + 0x1d5);
   bVar5 = (byte)param_1;
   iVar1 = thunk_FUN_004acd30(this_00,bVar5);
   if (iVar1 == 0) {
@@ -28,7 +28,7 @@ undefined4 __thiscall thunk_FUN_004ca7b0(void *this,uint param_1,int param_2)
   uVar2 = thunk_FUN_004ab050();
   thunk_FUN_004cafc0(this,uVar7,uVar2,puVar4,puVar6);
   if (((int)param_1 < 0) || ((int)uStack_10 < 0)) {
-    thunk_FUN_004ac410(bVar5);
+    STT3DSprC::StopShow(this_00,bVar5);
     return 0;
   }
   if (*(int *)((int)this + 0x255) == 0) goto LAB_004ca835;
@@ -128,7 +128,7 @@ LAB_004ca835:
   uVar7 = 0;
 LAB_004caaa4:
   thunk_FUN_004abe40(this_00,bVar5,uVar7);
-  thunk_FUN_004ac1a0(bVar5,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  STT3DSprC::StartShow(this_00,bVar5,*(undefined4 *)(DAT_00802a38 + 0xe4));
   return 0;
 }
 

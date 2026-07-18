@@ -1,4 +1,4 @@
-FUN_0068dc80:
+AiTactClassTy::InitData:
 0068DC80  55                        PUSH EBP
 0068DC81  8B EC                     MOV EBP,ESP
 0068DC83  83 EC 60                  SUB ESP,0x60

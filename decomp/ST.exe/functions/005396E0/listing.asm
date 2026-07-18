@@ -1,4 +1,4 @@
-FUN_005396e0:
+PausePanelTy::ShiftControls:
 005396E0  55                        PUSH EBP
 005396E1  8B EC                     MOV EBP,ESP
 005396E3  83 EC 48                  SUB ESP,0x48

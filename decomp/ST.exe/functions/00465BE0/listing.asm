@@ -1,4 +1,4 @@
-FUN_00465be0:
+STBoatC::BackPatrol:
 00465BE0  55                        PUSH EBP
 00465BE1  8B EC                     MOV EBP,ESP
 00465BE3  8B 81 97 04 00 00         MOV EAX,dword ptr [ECX + 0x497]

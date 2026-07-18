@@ -1,4 +1,4 @@
-FUN_00424360:
+STGroupC::RestoreGrpData:
 00424360  55                        PUSH EBP
 00424361  8B EC                     MOV EBP,ESP
 00424363  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_004a4f10:
+STGroupBoatC::SaveGrpBData:
 004A4F10  55                        PUSH EBP
 004A4F11  8B EC                     MOV EBP,ESP
 004A4F13  83 EC 58                  SUB ESP,0x58

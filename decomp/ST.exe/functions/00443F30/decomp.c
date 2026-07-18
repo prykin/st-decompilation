@@ -1,5 +1,9 @@
 
-undefined4 * FUN_00443f30(int *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::SaveAllPlData */
+
+undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
 
 {
   code *pcVar1;
@@ -17,7 +21,7 @@ undefined4 * FUN_00443f30(int *param_1)
   uint uVar11;
   undefined4 local_88;
   undefined4 local_84 [16];
-  int local_44;
+  STAllPlayersC *local_44;
   uint *local_40;
   uint *local_3c;
   uint *local_38;
@@ -37,6 +41,7 @@ undefined4 * FUN_00443f30(int *param_1)
   local_34 = 4;
   local_88 = DAT_00858df8;
   DAT_00858df8 = &local_88;
+  local_44 = this;
   iVar2 = __setjmp3(local_84,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     iVar2 = 0x5590;

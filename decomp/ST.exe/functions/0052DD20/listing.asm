@@ -1,4 +1,4 @@
-FUN_0052dd20:
+PopUpTy::GetMessage:
 0052DD20  55                        PUSH EBP
 0052DD21  8B EC                     MOV EBP,ESP
 0052DD23  83 EC 58                  SUB ESP,0x58

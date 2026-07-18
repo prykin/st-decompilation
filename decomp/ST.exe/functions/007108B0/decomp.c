@@ -1,5 +1,9 @@
 
-undefined4 * FUN_007108b0(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::Save */
+
+undefined4 * __thiscall ccFntTy::Save(ccFntTy *this,undefined4 *param_1)
 
 {
   code *pcVar1;
@@ -10,10 +14,11 @@ undefined4 * FUN_007108b0(undefined4 *param_1)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  ccFntTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_1 == (undefined4 *)0x0) {

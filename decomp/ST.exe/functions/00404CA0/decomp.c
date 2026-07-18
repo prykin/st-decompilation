@@ -68,7 +68,7 @@ thunk_FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,ui
   *(uint *)((int)this + 0x1c) = uVar3;
   iVar6 = (uVar3 >> 0x10) % (iStack_78 + 1U) + 9;
   iStack_c = iVar6;
-  iVar2 = thunk_FUN_006041a0(iVar6);
+  iVar2 = STExplosionC::CreateGroupPart(this,iVar6);
   *(int *)((int)this + 0x269) = iVar2;
   if (iVar2 != iVar6) {
     return -1;
@@ -366,7 +366,8 @@ switchD_00606490_default:
         iStack_48 = param_3 + 0x5a;
       }
       puStack_9c = auStack_70;
-      thunk_FUN_00627eb0((int)auStack_b0);
+      STParticleC::GetMessage
+                (*(STParticleC **)((int)this + (int)param_5 * 4 + 0x219),(int)auStack_b0);
       param_5 = (uint *)((int)param_5 + 1);
     } while ((int)param_5 < iStack_c);
   }

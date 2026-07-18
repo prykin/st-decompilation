@@ -1,4 +1,4 @@
-FUN_006461e0:
+STVolcanoC::GetMessage:
 006461E0  55                        PUSH EBP
 006461E1  8B EC                     MOV EBP,ESP
 006461E3  83 EC 50                  SUB ESP,0x50

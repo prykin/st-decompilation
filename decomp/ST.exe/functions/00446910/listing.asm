@@ -1,4 +1,4 @@
-FUN_00446910:
+STAllPlayersC::DeletePGPairs:
 00446910  55                        PUSH EBP
 00446911  8B EC                     MOV EBP,ESP
 00446913  83 EC 54                  SUB ESP,0x54

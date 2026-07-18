@@ -1,4 +1,4 @@
-FUN_007108b0:
+ccFntTy::Save:
 007108B0  55                        PUSH EBP
 007108B1  8B EC                     MOV EBP,ESP
 007108B3  83 EC 48                  SUB ESP,0x48

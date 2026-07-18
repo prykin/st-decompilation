@@ -13,7 +13,7 @@ int __thiscall thunk_FUN_004805b0(void *this,int *param_1)
     return 0;
   }
   if (iVar1 == 2) {
-    iVar1 = thunk_FUN_00476120(this);
+    iVar1 = STBoatC::BackUnLoadObj(this,param_1);
     return iVar1;
   }
   return 2;

@@ -1,4 +1,4 @@
-FUN_005d9250:
+SIDTy::PaintExplanation:
 005D9250  55                        PUSH EBP
 005D9251  8B EC                     MOV EBP,ESP
 005D9253  83 EC 48                  SUB ESP,0x48

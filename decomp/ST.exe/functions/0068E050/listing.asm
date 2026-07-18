@@ -1,4 +1,4 @@
-FUN_0068e050:
+AiTactClassTy::PrepareToSave:
 0068E050  55                        PUSH EBP
 0068E051  8B EC                     MOV EBP,ESP
 0068E053  83 EC 48                  SUB ESP,0x48

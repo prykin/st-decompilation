@@ -1,4 +1,4 @@
-FUN_005d8bf0:
+SIDTy::PrepFiles:
 005D8BF0  55                        PUSH EBP
 005D8BF1  8B EC                     MOV EBP,ESP
 005D8BF3  81 EC 18 02 00 00         SUB ESP,0x218

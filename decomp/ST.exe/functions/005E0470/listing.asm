@@ -1,4 +1,4 @@
-FUN_005e0470:
+MTaskTy::DoneMTask:
 005E0470  55                        PUSH EBP
 005E0471  8B EC                     MOV EBP,ESP
 005E0473  83 EC 48                  SUB ESP,0x48

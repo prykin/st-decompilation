@@ -1,4 +1,4 @@
-FUN_005381b0:
+PanelTy::InitPanel:
 005381B0  55                        PUSH EBP
 005381B1  8B EC                     MOV EBP,ESP
 005381B3  83 EC 48                  SUB ESP,0x48

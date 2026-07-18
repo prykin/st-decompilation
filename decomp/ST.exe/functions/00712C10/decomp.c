@@ -1,8 +1,14 @@
 
-char * FUN_00712c10(char *param_1,uint *param_2,uint *param_3,int param_4,int param_5)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::FormText */
+
+char * __thiscall
+ccFntTy::FormText(ccFntTy *this,char *param_1,uint *param_2,uint *param_3,int param_4,int param_5)
 
 {
   code *pcVar1;
+  ccFntTy *this_00;
   int iVar2;
   uint *puVar3;
   uint *puVar4;
@@ -11,7 +17,8 @@ char * FUN_00712c10(char *param_1,uint *param_2,uint *param_3,int param_4,int pa
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_58;
-  undefined4 local_54 [17];
+  undefined4 local_54 [16];
+  ccFntTy *local_14;
   uint *local_10;
   uint *local_c;
   char *local_8;
@@ -21,16 +28,18 @@ char * FUN_00712c10(char *param_1,uint *param_2,uint *param_3,int param_4,int pa
   local_8 = (char *)0x0;
   local_58 = DAT_00858df8;
   DAT_00858df8 = &local_58;
+  local_14 = this;
   iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  this_00 = local_14;
   if (iVar2 == 0) {
-    puVar3 = FUN_00712f80(param_2);
+    puVar3 = _TxtToSarr(local_14,param_2);
     if (puVar3 != (uint *)0x0) {
       local_c = puVar3;
-      puVar4 = FUN_007121f0((int)puVar3,param_3,param_4,0,0xffffffff,param_5);
+      puVar4 = FormSarr(this_00,(int)puVar3,param_3,param_4,0,0xffffffff,param_5);
       local_10 = puVar4;
       FUN_006b5570((byte *)puVar3);
       local_c = (uint *)0x0;
-      local_8 = FUN_00713080(param_1,(int)puVar4);
+      local_8 = _SarrToTxt(this_00,param_1,(int)puVar4);
       if (puVar4 != (uint *)0x0) {
         FUN_006b5570((byte *)puVar4);
       }

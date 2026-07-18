@@ -1,4 +1,4 @@
-FUN_005b7ef0:
+MMsgTy::SetMessage:
 005B7EF0  55                        PUSH EBP
 005B7EF1  8B EC                     MOV EBP,ESP
 005B7EF3  81 EC 74 04 00 00         SUB ESP,0x474

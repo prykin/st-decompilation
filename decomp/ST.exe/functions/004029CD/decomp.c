@@ -1,5 +1,5 @@
 
-void thunk_FUN_005d8160(void)
+void __thiscall SIDTy::PaintSID(SIDTy *this)
 
 {
   code *pcVar1;

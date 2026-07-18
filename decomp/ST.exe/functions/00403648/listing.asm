@@ -1,2 +1,2 @@
-thunk_FUN_004fe960:
+CPanelTy::PaintInfoBoat:
 00403648  E9 13 B3 0F 00            JMP 0x004fe960

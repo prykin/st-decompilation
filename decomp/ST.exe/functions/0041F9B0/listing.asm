@@ -1,4 +1,4 @@
-FUN_0041f9b0:
+STSprGameObjC::CheckRay:
 0041F9B0  55                        PUSH EBP
 0041F9B1  8B EC                     MOV EBP,ESP
 0041F9B3  81 EC A8 00 00 00         SUB ESP,0xa8

@@ -1,7 +1,12 @@
 
-undefined4
-FUN_005b5510(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-            undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\mmenuobj.cpp
+   MMObjTy::CreateSprBut */
+
+undefined4 __thiscall
+MMObjTy::CreateSprBut
+          (MMObjTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
+          ,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
 
 {
   code *pcVar1;
@@ -22,12 +27,13 @@ FUN_005b5510(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
   undefined4 local_164;
   undefined4 local_50;
   undefined4 local_4c [16];
-  int local_c;
+  MMObjTy *local_c;
   undefined4 local_8;
   
   local_8 = 0;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_c = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar5 = local_1cc;

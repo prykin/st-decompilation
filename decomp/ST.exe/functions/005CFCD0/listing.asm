@@ -1,4 +1,4 @@
-FUN_005cfcd0:
+SettMapMTy::UpdatePing:
 005CFCD0  55                        PUSH EBP
 005CFCD1  8B EC                     MOV EBP,ESP
 005CFCD3  83 EC 48                  SUB ESP,0x48

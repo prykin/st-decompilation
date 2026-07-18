@@ -1,4 +1,4 @@
-FUN_00514330:
+HelpPanelTy::BwdBut:
 00514330  55                        PUSH EBP
 00514331  8B EC                     MOV EBP,ESP
 00514333  83 EC 48                  SUB ESP,0x48

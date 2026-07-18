@@ -1,9 +1,14 @@
 
-void FUN_005e0ac0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\task_obj.cpp
+   MTaskTy::NoneMTask */
+
+void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
 
 {
   undefined4 uVar1;
   code *pcVar2;
+  MTaskTy *this_00;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -11,16 +16,19 @@ void FUN_005e0ac0(void)
   uint uVar7;
   undefined4 unaff_ESI;
   uint *puVar8;
+  SpriteClassTy *this_01;
   void *unaff_EDI;
   uint uVar9;
   undefined4 local_50;
   undefined4 local_4c [16];
-  void *local_c;
+  MTaskTy *local_c;
   uint local_8;
   
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_c = this;
   iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  this_00 = local_c;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_50;
     iVar5 = FUN_006ad4d0(s_E____titans_Start_task_obj_cpp_007cd994,0x19c,0,iVar3,&DAT_007a4ccc);
@@ -32,10 +40,10 @@ void FUN_005e0ac0(void)
     (*pcVar2)();
     return;
   }
-  if ((*(char *)((int)local_c + 0x6d) == '\x03') || (*(char *)((int)local_c + 0x6d) == '\x05')) {
-    thunk_FUN_005e1330();
+  if ((local_c[0x6d] == (MTaskTy)0x3) || (local_c[0x6d] == (MTaskTy)0x5)) {
+    PlayScript(local_c);
   }
-  iVar3 = *(int *)((int)local_c + 0x647);
+  iVar3 = *(int *)(this_00 + 0x647);
   if (iVar3 != 0) {
     uVar7 = 0;
     if (*(int *)(iVar3 + 0xc) != 0) {
@@ -48,10 +56,9 @@ void FUN_005e0ac0(void)
 LAB_005e0b38:
         if (((-1 < (int)*puVar8) && (*(int *)((int)puVar8 + 0x3a) != 0)) &&
            (*(int *)((int)puVar8 + 0x31) != 0)) {
-          if ((puVar8[7] - 3 < puVar8[4]) &&
-             (puVar8[10] < *(int *)((int)local_c + 0x69) - puVar8[9])) {
+          if ((puVar8[7] - 3 < puVar8[4]) && (puVar8[10] < *(int *)(this_00 + 0x69) - puVar8[9])) {
             if (puVar8[4] < puVar8[7]) {
-              thunk_FUN_005e11d0(puVar8[1],*(char *)((int)puVar8 + 0x35),(char)puVar8[0xe]);
+              PrepareTSurf(this_00,puVar8[1],*(char *)((int)puVar8 + 0x35),(char)puVar8[0xe]);
               FUN_00714b30(*(void **)((int)puVar8 + 0x31),puVar8[4] - 1);
               iVar3 = FUN_007140e0(*(void **)((int)puVar8 + 0x31),1,'\0');
               if (iVar3 != 0) {
@@ -59,14 +66,14 @@ LAB_005e0b38:
               }
               FUN_006b35d0(DAT_008075a8,*puVar8);
               puVar8[4] = puVar8[4] + 1;
-              puVar8[9] = *(uint *)((int)local_c + 0x69);
+              puVar8[9] = *(uint *)(this_00 + 0x69);
             }
             else {
-              thunk_FUN_005e10a0(puVar8);
+              TTaskItemClose(this_00,puVar8);
             }
           }
           if (puVar8[4] < puVar8[7] - 3) {
-            thunk_FUN_005e11d0(puVar8[1],*(char *)((int)puVar8 + 0x35),(char)puVar8[0xe]);
+            PrepareTSurf(this_00,puVar8[1],*(char *)((int)puVar8 + 0x35),(char)puVar8[0xe]);
             iVar3 = FUN_007140e0(*(void **)((int)puVar8 + 0x31),1,'\0');
             if (iVar3 != 0) {
               FUN_006b5440(puVar8[1],0,puVar8[5],puVar8[6],iVar3,0,0xff);
@@ -75,16 +82,16 @@ LAB_005e0b38:
             uVar6 = puVar8[4];
             puVar8[4] = uVar6 + 1;
             if (((char)puVar8[0xc] != '\0') && ((uVar6 + 1) % 3 != 0)) {
-              thunk_FUN_005b6730(local_c,0x1e,'\x01',-1);
+              thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             }
           }
         }
-        iVar3 = *(int *)((int)local_c + 0x647);
+        iVar3 = *(int *)(this_00 + 0x647);
         uVar7 = uVar7 + 1;
       } while (uVar7 < *(uint *)(iVar3 + 0xc));
     }
   }
-  iVar3 = *(int *)((int)local_c + 0x64f);
+  iVar3 = *(int *)(this_00 + 0x64f);
   if (iVar3 != 0) {
     uVar7 = 0;
     if (*(int *)(iVar3 + 0xc) != 0) {
@@ -96,125 +103,126 @@ LAB_005e0b38:
         puVar8 = (uint *)(*(int *)(iVar3 + 8) * uVar7 + *(int *)(iVar3 + 0x1c));
 LAB_005e0ca3:
         if (((-1 < (int)*puVar8) && (puVar8[4] != 0)) &&
-           (puVar8[10] < *(int *)((int)local_c + 0x69) - puVar8[9])) {
+           (puVar8[10] < *(int *)(this_00 + 0x69) - puVar8[9])) {
           uVar6 = puVar8[4] + 1;
           puVar8[4] = uVar6;
-          puVar8[9] = *(uint *)((int)local_c + 0x69);
+          puVar8[9] = *(uint *)(this_00 + 0x69);
           if (uVar6 < 3) {
             FUN_006b35d0(DAT_008075a8,*puVar8);
           }
           else {
-            thunk_FUN_005e10a0(puVar8);
+            TTaskItemClose(this_00,puVar8);
           }
         }
-        iVar3 = *(int *)((int)local_c + 0x64f);
+        iVar3 = *(int *)(this_00 + 0x64f);
         uVar7 = uVar7 + 1;
       } while (uVar7 < *(uint *)(iVar3 + 0xc));
     }
   }
-  iVar3 = *(int *)((int)local_c + 0x64b);
+  iVar3 = *(int *)(this_00 + 0x64b);
   if (iVar3 != 0) {
     local_8 = 0;
     if (*(int *)(iVar3 + 0xc) != 0) {
       if (*(int *)(iVar3 + 0xc) == 0) {
-        iVar3 = 0;
+        this_01 = (SpriteClassTy *)0x0;
         goto LAB_005e0d20;
       }
       do {
-        iVar3 = *(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c);
+        this_01 = (SpriteClassTy *)(*(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c));
 LAB_005e0d20:
         uVar6 = local_8;
-        uVar7 = *(uint *)(iVar3 + 4);
+        uVar7 = *(uint *)(this_01 + 4);
         if (uVar7 != 0xffffffff) {
-          switch(*(undefined1 *)(iVar3 + 0x91)) {
-          case 1:
-            if (*(uint *)(iVar3 + 0x40) <=
-                (uint)(*(int *)((int)local_c + 0x69) - *(int *)(iVar3 + 0x44))) {
-              uVar4 = *(int *)(iVar3 + 8) + 1;
-              *(uint *)(iVar3 + 8) = uVar4;
-              *(undefined4 *)(iVar3 + 0x44) = *(undefined4 *)((int)local_c + 0x69);
-              if (uVar4 == *(uint *)(iVar3 + 0xc)) {
-                FUN_00715ab0();
+          switch(this_01[0x91]) {
+          case (SpriteClassTy)0x1:
+            if (*(uint *)(this_01 + 0x40) <=
+                (uint)(*(int *)(this_00 + 0x69) - *(int *)(this_01 + 0x44))) {
+              uVar4 = *(int *)(this_01 + 8) + 1;
+              *(uint *)(this_01 + 8) = uVar4;
+              *(undefined4 *)(this_01 + 0x44) = *(undefined4 *)(this_00 + 0x69);
+              if (uVar4 == *(uint *)(this_01 + 0xc)) {
+                SpriteClassTy::CloseSprite(this_01);
               }
               else {
-                FUN_006b3730(*(uint **)(iVar3 + 0x48),uVar7,uVar4,*(uint *)(iVar3 + 0x1c),
-                             *(uint *)(iVar3 + 0x20));
+                FUN_006b3730(*(uint **)(this_01 + 0x48),uVar7,uVar4,*(uint *)(this_01 + 0x1c),
+                             *(uint *)(this_01 + 0x20));
               }
             }
             break;
-          case 2:
-            if (*(uint *)(iVar3 + 0x40) <=
-                (uint)(*(int *)((int)local_c + 0x69) - *(int *)(iVar3 + 0x44))) {
-              iVar5 = *(int *)(iVar3 + 8) + 1;
-              *(int *)(iVar3 + 8) = iVar5;
-              if (iVar5 == *(int *)(iVar3 + 0xc)) {
-                *(undefined4 *)(iVar3 + 8) = 0;
+          case (SpriteClassTy)0x2:
+            if (*(uint *)(this_01 + 0x40) <=
+                (uint)(*(int *)(this_00 + 0x69) - *(int *)(this_01 + 0x44))) {
+              iVar3 = *(int *)(this_01 + 8);
+              *(int *)(this_01 + 8) = iVar3 + 1;
+              if (iVar3 + 1 == *(int *)(this_01 + 0xc)) {
+                *(undefined4 *)(this_01 + 8) = 0;
               }
-              *(undefined4 *)(iVar3 + 0x44) = *(undefined4 *)((int)local_c + 0x69);
-              FUN_006b3730(*(uint **)(iVar3 + 0x48),uVar7,*(uint *)(iVar3 + 8),
-                           *(uint *)(iVar3 + 0x1c),*(uint *)(iVar3 + 0x20));
+              *(undefined4 *)(this_01 + 0x44) = *(undefined4 *)(this_00 + 0x69);
+              FUN_006b3730(*(uint **)(this_01 + 0x48),uVar7,*(uint *)(this_01 + 8),
+                           *(uint *)(this_01 + 0x1c),*(uint *)(this_01 + 0x20));
             }
             break;
-          case 3:
-            iVar5 = *(int *)(iVar3 + 0x92);
-            if (iVar5 != *(int *)(iVar3 + 0x96)) {
-              *(undefined4 *)(iVar3 + 0x1c) = *(undefined4 *)(*(int *)(iVar3 + 0x9a) + iVar5 * 8);
-              *(undefined4 *)(iVar3 + 0x20) =
-                   *(undefined4 *)(*(int *)(iVar3 + 0x9a) + iVar5 * 8 + 4);
-              *(int *)(iVar3 + 0x92) = iVar5 + 1;
-              if (*(uint *)(iVar3 + 0x40) <=
-                  (uint)(*(int *)((int)local_c + 0x69) - *(int *)(iVar3 + 0x44))) {
-                iVar5 = *(int *)(iVar3 + 8) + 1;
-                *(int *)(iVar3 + 8) = iVar5;
-                if (iVar5 == *(int *)(iVar3 + 0xc)) {
-                  *(undefined4 *)(iVar3 + 8) = 0;
+          case (SpriteClassTy)0x3:
+            iVar3 = *(int *)(this_01 + 0x92);
+            if (iVar3 != *(int *)(this_01 + 0x96)) {
+              *(undefined4 *)(this_01 + 0x1c) =
+                   *(undefined4 *)(*(int *)(this_01 + 0x9a) + iVar3 * 8);
+              *(undefined4 *)(this_01 + 0x20) =
+                   *(undefined4 *)(*(int *)(this_01 + 0x9a) + iVar3 * 8 + 4);
+              *(int *)(this_01 + 0x92) = iVar3 + 1;
+              if (*(uint *)(this_01 + 0x40) <=
+                  (uint)(*(int *)(this_00 + 0x69) - *(int *)(this_01 + 0x44))) {
+                iVar3 = *(int *)(this_01 + 8);
+                *(int *)(this_01 + 8) = iVar3 + 1;
+                if (iVar3 + 1 == *(int *)(this_01 + 0xc)) {
+                  *(undefined4 *)(this_01 + 8) = 0;
                 }
-                *(undefined4 *)(iVar3 + 0x44) = *(undefined4 *)((int)local_c + 0x69);
+                *(undefined4 *)(this_01 + 0x44) = *(undefined4 *)(this_00 + 0x69);
               }
-              uVar6 = *(uint *)(iVar3 + 0x20);
-              uVar4 = *(uint *)(iVar3 + 0x1c);
-              uVar9 = *(uint *)(iVar3 + 8);
-              puVar8 = *(uint **)(iVar3 + 0x48);
+              uVar6 = *(uint *)(this_01 + 0x20);
+              uVar4 = *(uint *)(this_01 + 0x1c);
+              uVar9 = *(uint *)(this_01 + 8);
+              puVar8 = *(uint **)(this_01 + 0x48);
               goto LAB_005e0edd;
             }
-            FUN_00715ab0();
-            if (*(int *)(iVar3 + 0x9a) != 0) {
-              FUN_006ab060((undefined4 *)(iVar3 + 0x9a));
+            SpriteClassTy::CloseSprite(this_01);
+            if (*(int *)(this_01 + 0x9a) != 0) {
+              FUN_006ab060((undefined4 *)(this_01 + 0x9a));
             }
             break;
-          case 4:
-            iVar5 = *(int *)(iVar3 + 0x92);
-            *(undefined4 *)(iVar3 + 0x1c) = *(undefined4 *)(*(int *)(iVar3 + 0x9a) + iVar5 * 8);
-            uVar1 = *(undefined4 *)(*(int *)(iVar3 + 0x9a) + iVar5 * 8 + 4);
-            *(int *)(iVar3 + 0x92) = iVar5 + 1;
-            *(undefined4 *)(iVar3 + 0x20) = uVar1;
-            if (iVar5 + 1 == *(int *)(iVar3 + 0x96)) {
-              *(undefined4 *)(iVar3 + 0x92) = 0;
+          case (SpriteClassTy)0x4:
+            iVar3 = *(int *)(this_01 + 0x92);
+            *(undefined4 *)(this_01 + 0x1c) = *(undefined4 *)(*(int *)(this_01 + 0x9a) + iVar3 * 8);
+            uVar1 = *(undefined4 *)(*(int *)(this_01 + 0x9a) + iVar3 * 8 + 4);
+            *(int *)(this_01 + 0x92) = iVar3 + 1;
+            *(undefined4 *)(this_01 + 0x20) = uVar1;
+            if (iVar3 + 1 == *(int *)(this_01 + 0x96)) {
+              *(undefined4 *)(this_01 + 0x92) = 0;
             }
-            if (*(uint *)(iVar3 + 0x40) <=
-                (uint)(*(int *)((int)local_c + 0x69) - *(int *)(iVar3 + 0x44))) {
-              iVar5 = *(int *)(iVar3 + 8) + 1;
-              *(int *)(iVar3 + 8) = iVar5;
-              if (iVar5 == *(int *)(iVar3 + 0xc)) {
-                *(undefined4 *)(iVar3 + 8) = 0;
+            if (*(uint *)(this_01 + 0x40) <=
+                (uint)(*(int *)(this_00 + 0x69) - *(int *)(this_01 + 0x44))) {
+              iVar3 = *(int *)(this_01 + 8);
+              *(int *)(this_01 + 8) = iVar3 + 1;
+              if (iVar3 + 1 == *(int *)(this_01 + 0xc)) {
+                *(undefined4 *)(this_01 + 8) = 0;
               }
-              *(undefined4 *)(iVar3 + 0x44) = *(undefined4 *)((int)local_c + 0x69);
+              *(undefined4 *)(this_01 + 0x44) = *(undefined4 *)(this_00 + 0x69);
             }
-            uVar6 = *(uint *)(iVar3 + 0x20);
-            uVar4 = *(uint *)(iVar3 + 0x1c);
-            uVar9 = *(uint *)(iVar3 + 8);
-            puVar8 = *(uint **)(iVar3 + 0x48);
+            uVar6 = *(uint *)(this_01 + 0x20);
+            uVar4 = *(uint *)(this_01 + 0x1c);
+            uVar9 = *(uint *)(this_01 + 8);
+            puVar8 = *(uint **)(this_01 + 0x48);
 LAB_005e0edd:
             FUN_006b3730(puVar8,uVar7,uVar9,uVar4,uVar6);
             uVar6 = local_8;
           }
         }
-        iVar3 = *(int *)((int)local_c + 0x64b);
+        iVar3 = *(int *)(this_00 + 0x64b);
         local_8 = uVar6 + 1;
       } while (local_8 < *(uint *)(iVar3 + 0xc));
     }
   }
-  *(int *)((int)local_c + 0x69) = *(int *)((int)local_c + 0x69) + 1;
+  *(int *)(this_00 + 0x69) = *(int *)(this_00 + 0x69) + 1;
   DAT_00858df8 = (undefined4 *)local_50;
   return;
 }

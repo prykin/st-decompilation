@@ -1,13 +1,15 @@
 
-uint thunk_FUN_0062dd80(int param_1,int param_2,int param_3,int param_4)
+uint __thiscall
+STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
-  int iVar2;
-  uint *puVar3;
-  int *piVar4;
-  uint uVar5;
-  int iVar6;
+  STManRub3C *pSVar2;
+  int iVar3;
+  uint *puVar4;
+  int *piVar5;
+  uint uVar6;
+  int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 uStack_60;
@@ -16,59 +18,60 @@ uint thunk_FUN_0062dd80(int param_1,int param_2,int param_3,int param_4)
   int iStack_18;
   int iStack_14;
   uint uStack_10;
-  int iStack_c;
+  STManRub3C *pSStack_c;
   int iStack_8;
   
   uStack_10 = 0xffffffff;
   iStack_8 = 0;
   uStack_60 = DAT_00858df8;
   DAT_00858df8 = &uStack_60;
-  iVar2 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
-  if (iVar2 != 0) {
+  pSStack_c = this;
+  iVar3 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+  pSVar2 = pSStack_c;
+  if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_60;
-    iVar6 = FUN_006ad4d0(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x24d,0,iVar2,&DAT_007a4ccc);
-    if (iVar6 != 0) {
+    iVar7 = FUN_006ad4d0(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x24d,0,iVar3,&DAT_007a4ccc);
+    if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      uVar6 = (*pcVar1)();
+      return uVar6;
     }
-    FUN_006a5e40(iVar2,0,0x7d13ec,0x24f);
+    FUN_006a5e40(iVar3,0,0x7d13ec,0x24f);
     return 0xffff;
   }
-  iVar2 = *(int *)(iStack_c + 0x70 + param_1 * 4);
-  if (iVar2 == 0) {
-    puVar3 = FUN_006ae290((uint *)0x0,10,0xc,10);
-    *(uint **)(iStack_c + 0x70 + param_1 * 4) = puVar3;
+  if (*(int *)(pSStack_c + param_1 * 4 + 0x70) == 0) {
+    puVar4 = FUN_006ae290((uint *)0x0,10,0xc,10);
+    *(uint **)(pSVar2 + param_1 * 4 + 0x70) = puVar4;
   }
   else {
-    iVar2 = *(int *)(iVar2 + 0xc);
-    uVar5 = 0;
-    if (0 < iVar2) {
+    iVar3 = *(int *)(*(int *)(pSStack_c + param_1 * 4 + 0x70) + 0xc);
+    uVar6 = 0;
+    if (0 < iVar3) {
       do {
-        iVar6 = *(int *)(iStack_c + 0x70 + param_1 * 4);
-        if (uVar5 < *(uint *)(iVar6 + 0xc)) {
-          piVar4 = (int *)(*(int *)(iVar6 + 8) * uVar5 + *(int *)(iVar6 + 0x1c));
+        iVar7 = *(int *)(pSStack_c + param_1 * 4 + 0x70);
+        if (uVar6 < *(uint *)(iVar7 + 0xc)) {
+          piVar5 = (int *)(*(int *)(iVar7 + 8) * uVar6 + *(int *)(iVar7 + 0x1c));
         }
         else {
-          piVar4 = (int *)0x0;
+          piVar5 = (int *)0x0;
         }
-        if ((piVar4 != (int *)0x0) && (*piVar4 == param_2)) {
+        if ((piVar5 != (int *)0x0) && (*piVar5 == param_2)) {
           iStack_8 = 1;
-          piVar4[1] = param_3;
-          piVar4[2] = param_4;
+          piVar5[1] = param_3;
+          piVar5[2] = param_4;
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < iVar2);
+        uVar6 = uVar6 + 1;
+      } while ((int)uVar6 < iVar3);
     }
   }
-  puVar3 = *(uint **)(iStack_c + 0x70 + param_1 * 4);
-  if ((puVar3 != (uint *)0x0) && (iStack_8 == 0)) {
+  puVar4 = *(uint **)(pSVar2 + param_1 * 4 + 0x70);
+  if ((puVar4 != (uint *)0x0) && (iStack_8 == 0)) {
     iStack_1c = param_2;
     iStack_18 = param_3;
     iStack_14 = param_4;
-    uVar5 = FUN_006ae1c0(puVar3,&iStack_1c);
+    uVar6 = FUN_006ae1c0(puVar4,&iStack_1c);
     DAT_00858df8 = (undefined4 *)uStack_60;
-    return uVar5;
+    return uVar6;
   }
   DAT_00858df8 = (undefined4 *)uStack_60;
   return uStack_10;

@@ -30,8 +30,8 @@ void __cdecl FUN_00675fe0(uint param_1)
     FUN_006a5e40(iVar3,0,0x7d2d58,0x119);
     return;
   }
-  if (DAT_007fa174 != 0) {
-    puVar4 = thunk_FUN_0043e4e0((char)param_1);
+  if (DAT_007fa174 != (STAllPlayersC *)0x0) {
+    puVar4 = STAllPlayersC::GetObjsList((char)param_1);
     if (puVar4 != (uint *)0x0) {
       uVar1 = puVar4[3];
       if (uVar1 != 0) {
@@ -59,7 +59,7 @@ LAB_00676053:
             uVar8 = uVar9 & 0xffff;
           } while (uVar8 < puVar4[3]);
         }
-        thunk_FUN_0042b7d0(param_1,0,(int)puVar4,(undefined2 *)0x0);
+        STAllPlayersC::AddObjsToGroup(DAT_007fa174,param_1,0,(int)puVar4,(undefined2 *)0x0);
       }
       if (puVar4 != (uint *)0x0) {
         FUN_006ae110((byte *)puVar4);

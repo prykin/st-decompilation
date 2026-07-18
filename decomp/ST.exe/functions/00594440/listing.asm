@@ -1,4 +1,4 @@
-FUN_00594440:
+ComboTy::GetMessage:
 00594440  55                        PUSH EBP
 00594441  8B EC                     MOV EBP,ESP
 00594443  83 EC 4C                  SUB ESP,0x4c

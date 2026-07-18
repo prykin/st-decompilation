@@ -1,5 +1,9 @@
 
-void FUN_0056d740(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\tapp.cpp
+   STAppC::ChangeResolution */
+
+void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
 
 {
   int *piVar1;
@@ -20,7 +24,7 @@ void FUN_0056d740(int param_1)
   undefined4 local_68;
   undefined4 local_58;
   undefined4 local_54 [16];
-  int local_14;
+  STAppC *local_14;
   int local_10;
   uint local_c;
   int local_8;
@@ -31,6 +35,7 @@ void FUN_0056d740(int param_1)
      ((param_1 != 2 || (DAT_00806730 != 0x500)))) {
     local_58 = DAT_00858df8;
     DAT_00858df8 = (undefined4 **)&local_58;
+    local_14 = this;
     iVar4 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b13e0(DAT_008075a8);

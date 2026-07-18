@@ -1,2 +1,2 @@
-thunk_FUN_006051b0:
+STExplosionC::LoadImagSpr:
 00405BDC  E9 CF F5 1F 00            JMP 0x006051b0

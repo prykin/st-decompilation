@@ -1,4 +1,4 @@
-FUN_006f20e0:
+cMf32::RecMemFree:
 006F20E0  55                        PUSH EBP
 006F20E1  8B EC                     MOV EBP,ESP
 006F20E3  83 EC 48                  SUB ESP,0x48

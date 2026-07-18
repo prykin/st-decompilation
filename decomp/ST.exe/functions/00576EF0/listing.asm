@@ -1,4 +1,4 @@
-FUN_00576ef0:
+GameSystemC::InitSystem:
 00576EF0  55                        PUSH EBP
 00576EF1  8B EC                     MOV EBP,ESP
 00576EF3  81 EC 8C 00 00 00         SUB ESP,0x8c

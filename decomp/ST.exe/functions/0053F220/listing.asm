@@ -1,4 +1,4 @@
-FUN_0053f220:
+ProdPanelTy::DoneProdPanel:
 0053F220  55                        PUSH EBP
 0053F221  8B EC                     MOV EBP,ESP
 0053F223  83 EC 48                  SUB ESP,0x48

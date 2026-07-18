@@ -1,4 +1,4 @@
-FUN_00511ab0:
+HelpPanelTy::CheckBkView:
 00511AB0  55                        PUSH EBP
 00511AB1  8B EC                     MOV EBP,ESP
 00511AB3  83 EC 4C                  SUB ESP,0x4c

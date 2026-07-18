@@ -1,4 +1,4 @@
-FUN_0051ff50:
+InfocPanelTy::InitInfocPanel:
 0051FF50  55                        PUSH EBP
 0051FF51  8B EC                     MOV EBP,ESP
 0051FF53  81 EC 2C 04 00 00         SUB ESP,0x42c

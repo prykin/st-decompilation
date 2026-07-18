@@ -1,4 +1,4 @@
-FUN_00593040:
+CampaignTy::GetMessage:
 00593040  55                        PUSH EBP
 00593041  8B EC                     MOV EBP,ESP
 00593043  83 EC 50                  SUB ESP,0x50

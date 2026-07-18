@@ -1,4 +1,4 @@
-FUN_0054eee0:
+STPlaySystemC::SetCtrlCmd:
 0054EEE0  55                        PUSH EBP
 0054EEE1  8B EC                     MOV EBP,ESP
 0054EEE3  83 EC 50                  SUB ESP,0x50

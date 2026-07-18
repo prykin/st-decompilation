@@ -1,4 +1,4 @@
-FUN_004f0210:
+BldLabPanelTy::GetMessage:
 004F0210  55                        PUSH EBP
 004F0211  8B EC                     MOV EBP,ESP
 004F0213  83 EC 48                  SUB ESP,0x48

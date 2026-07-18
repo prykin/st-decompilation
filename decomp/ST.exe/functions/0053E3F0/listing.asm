@@ -1,4 +1,4 @@
-FUN_0053e3f0:
+SpecPanelTy::InitPanel:
 0053E3F0  55                        PUSH EBP
 0053E3F1  8B EC                     MOV EBP,ESP
 0053E3F3  83 EC 48                  SUB ESP,0x48

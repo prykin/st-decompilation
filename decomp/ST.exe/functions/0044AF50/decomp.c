@@ -1,5 +1,9 @@
 
-void FUN_0044af50(char param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::PushTV */
+
+void STAllPlayersC::PushTV(char param_1,int param_2)
 
 {
   code *pcVar1;

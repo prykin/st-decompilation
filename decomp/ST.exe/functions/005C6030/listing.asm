@@ -1,4 +1,4 @@
-FUN_005c6030:
+SettMapTy::CreateCtrls:
 005C6030  55                        PUSH EBP
 005C6031  8B EC                     MOV EBP,ESP
 005C6033  81 EC F0 0E 00 00         SUB ESP,0xef0

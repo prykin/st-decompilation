@@ -1,11 +1,15 @@
 
-void __thiscall FUN_005007a0(void *this,byte param_1,undefined1 param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\cpanel1.cpp
+   CPanelTy::SetNewDeep */
+
+void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,CPanelTy param_2)
 
 {
-  char cVar1;
+  CPanelTy CVar1;
   code *pcVar2;
   bool bVar3;
-  void *pvVar4;
+  CPanelTy *pCVar4;
   int iVar5;
   byte *pbVar6;
   uint uVar7;
@@ -19,9 +23,9 @@ void __thiscall FUN_005007a0(void *this,byte param_1,undefined1 param_2)
   undefined4 local_54 [16];
   byte local_14;
   undefined3 uStack_13;
-  void *local_10;
+  CPanelTy *local_10;
   undefined4 *local_c;
-  undefined1 local_5;
+  CPanelTy local_5;
   
   if (DAT_00808784 == 0) {
     if (((DAT_00808788 == 0) && (DAT_0080878c == 0)) && (DAT_00808790 == 0)) {
@@ -32,28 +36,28 @@ void __thiscall FUN_005007a0(void *this,byte param_1,undefined1 param_2)
     }
     if (!bVar3) {
       if (param_1 == 0) {
-        if (*(char *)((int)this + 0xb80) == '\0') {
+        if (this[0xb80] == (CPanelTy)0x0) {
           return;
         }
-        if (*(char *)((int)this + 0xb63) == '\0') {
+        if (this[0xb63] == (CPanelTy)0x0) {
           return;
         }
-        if (*(char *)((int)this + 0xb63) == '\x03') {
+        if (this[0xb63] == (CPanelTy)0x3) {
           return;
         }
       }
       else {
-        if (*(char *)((int)this + 0xc6e) == '\0') {
+        if (this[0xc6e] == (CPanelTy)0x0) {
           return;
         }
-        cVar1 = *(char *)((int)this + 0xc51);
-        if (cVar1 == '\0') {
+        CVar1 = this[0xc51];
+        if (CVar1 == (CPanelTy)0x0) {
           return;
         }
-        if (cVar1 == '\x03') {
+        if (CVar1 == (CPanelTy)0x3) {
           return;
         }
-        if (cVar1 == '\x04') {
+        if (CVar1 == (CPanelTy)0x4) {
           return;
         }
       }
@@ -61,34 +65,34 @@ void __thiscall FUN_005007a0(void *this,byte param_1,undefined1 param_2)
       DAT_00858df8 = &local_58;
       local_10 = this;
       iVar5 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
-      pvVar4 = local_10;
+      pCVar4 = local_10;
       if (iVar5 == 0) {
         puVar11 = (undefined4 *)(uint)param_1;
-        bVar10 = *(byte *)((int)(puVar11 + 0xaa) + (int)local_10);
+        CVar1 = *(CPanelTy *)((int)(puVar11 + 0xaa) + (int)local_10);
         local_c = puVar11;
-        if (bVar10 != 0xff) {
+        if (CVar1 != (CPanelTy)0xff) {
           if (DAT_0080874e == '\x03') {
             if (param_1 == 0) {
-              uVar7 = (uint)*(byte *)((int)local_10 + 0x2a8);
-              if (*(char *)(uVar7 + 0xb8d + (int)local_10) == '\0') {
+              uVar7 = (uint)(byte)local_10[0x2a8];
+              if (local_10[uVar7 + 0xb8d] == (CPanelTy)0x0) {
                 uVar7 = uVar7 + 5;
               }
-              uVar9 = (uint)*(byte *)((int)local_10 + 0x2a8);
-              pbVar6 = (byte *)FUN_0070b3a0(*(int *)((int)local_10 + 0x2a2),uVar7);
+              uVar9 = (uint)(byte)local_10[0x2a8];
+              pbVar6 = (byte *)FUN_0070b3a0(*(int *)(local_10 + 0x2a2),uVar7);
               iVar5 = (5 - uVar9) * 0xb;
-              puVar11 = *(undefined4 **)((int)pvVar4 + 0x18c);
+              puVar11 = *(undefined4 **)(pCVar4 + 0x18c);
             }
             else {
-              uVar7 = (uint)bVar10;
-              if (*(char *)(uVar7 + 0xc7b + (int)local_10) == '\0') {
+              uVar7 = (uint)(byte)CVar1;
+              if (local_10[uVar7 + 0xc7b] == (CPanelTy)0x0) {
                 iVar5 = uVar7 + 0x14;
               }
               else {
                 iVar5 = uVar7 + 0x19;
               }
-              uVar9 = (uint)*(byte *)((int)(puVar11 + 0xaa) + (int)local_10);
-              pbVar6 = (byte *)FUN_0070b3a0(*(int *)((int)local_10 + 0x2a2),iVar5);
-              puVar11 = *(undefined4 **)((int)pvVar4 + 0x194);
+              uVar9 = (uint)(byte)*(CPanelTy *)((int)(puVar11 + 0xaa) + (int)local_10);
+              pbVar6 = (byte *)FUN_0070b3a0(*(int *)(local_10 + 0x2a2),iVar5);
+              puVar11 = *(undefined4 **)(pCVar4 + 0x194);
               iVar5 = uVar9 * 0xb + 0x87;
             }
             thunk_FUN_00540760(puVar11,iVar5,uVar9 * 0xb + 0xb,'\x06',pbVar6);
@@ -96,44 +100,44 @@ void __thiscall FUN_005007a0(void *this,byte param_1,undefined1 param_2)
             _local_14 = CONCAT31(uStack_13,bVar10);
             puVar11 = local_c;
             if (bVar10 < 0xb) {
-              uVar9 = (uint)bVar10;
-              uVar7 = *(uint *)((int)pvVar4 + uVar9 * 4 + 0x148);
-              if (-1 < (int)uVar7) {
-                FUN_006b3640(DAT_008075a8,uVar7,0xffffffff,*(uint *)((int)pvVar4 + uVar9 * 4 + 0x3c)
-                             ,*(uint *)((int)pvVar4 + uVar9 * 4 + 0x94));
+              uVar7 = (uint)bVar10;
+              if (-1 < (int)*(uint *)(pCVar4 + uVar7 * 4 + 0x148)) {
+                FUN_006b3640(DAT_008075a8,*(uint *)(pCVar4 + uVar7 * 4 + 0x148),0xffffffff,
+                             *(uint *)(pCVar4 + uVar7 * 4 + 0x3c),
+                             *(uint *)(pCVar4 + uVar7 * 4 + 0x94));
                 puVar11 = local_c;
               }
             }
           }
           else {
             if (param_1 == 0) {
-              cVar1 = *(char *)(*(byte *)((int)local_10 + 0x2a8) + 0xb8d + (int)local_10);
-              local_c = *(undefined4 **)((int)local_10 + 0x188);
+              CVar1 = local_10[(byte)local_10[0x2a8] + 0xb8d];
+              local_c = *(undefined4 **)(local_10 + 0x188);
             }
             else {
-              cVar1 = *(char *)(bVar10 + 0xc7b + (int)local_10);
-              local_c = *(undefined4 **)((int)local_10 + 0x198);
+              CVar1 = local_10[(byte)CVar1 + 0xc7b];
+              local_c = *(undefined4 **)(local_10 + 0x198);
             }
-            pbVar6 = (byte *)FUN_0070b3a0(*(int *)((int)local_10 + 0x2a2),
-                                          (-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
+            pbVar6 = (byte *)FUN_0070b3a0(*(int *)(local_10 + 0x2a2),
+                                          (-(uint)(CVar1 != (CPanelTy)0x0) & 0xfffffffe) + 2);
             thunk_FUN_00540760(local_c,7,
-                               (uint)*(byte *)((int)(puVar11 + 0xaa) + (int)pvVar4) * 0x1d + 6,
-                               '\x01',pbVar6);
+                               (uint)(byte)*(CPanelTy *)((int)(puVar11 + 0xaa) + (int)pCVar4) * 0x1d
+                               + 6,'\x01',pbVar6);
             bVar10 = (-(param_1 != 0) & 4U) + 2;
             _local_14 = CONCAT31(uStack_13,bVar10);
             if (bVar10 < 0xb) {
-              uVar9 = (uint)bVar10;
-              uVar7 = *(uint *)((int)pvVar4 + uVar9 * 4 + 0x148);
-              if (-1 < (int)uVar7) {
-                FUN_006b3640(DAT_008075a8,uVar7,0xffffffff,*(uint *)((int)pvVar4 + uVar9 * 4 + 0x3c)
-                             ,*(uint *)((int)pvVar4 + uVar9 * 4 + 0x94));
+              uVar7 = (uint)bVar10;
+              if (-1 < (int)*(uint *)(pCVar4 + uVar7 * 4 + 0x148)) {
+                FUN_006b3640(DAT_008075a8,*(uint *)(pCVar4 + uVar7 * 4 + 0x148),0xffffffff,
+                             *(uint *)(pCVar4 + uVar7 * 4 + 0x3c),
+                             *(uint *)(pCVar4 + uVar7 * 4 + 0x94));
               }
             }
           }
         }
-        *(undefined1 *)((int)puVar11 + 0x2a6U + (int)pvVar4) = 0;
-        *(undefined1 *)((int)(puVar11 + 0xaa) + (int)pvVar4) = param_2;
-        *(undefined4 *)((int)pvVar4 + (int)puVar11 * 4 + 0x2aa) = 0;
+        pCVar4[(int)puVar11 + 0x2a6] = (CPanelTy)0x0;
+        *(CPanelTy *)((int)(puVar11 + 0xaa) + (int)pCVar4) = param_2;
+        *(undefined4 *)(pCVar4 + (int)puVar11 * 4 + 0x2aa) = 0;
         thunk_FUN_005252c0(0xb4);
         local_5 = param_2;
         thunk_FUN_0054edf0((undefined4 *)0x15,(undefined4 *)&local_5,0,0xffffffff);

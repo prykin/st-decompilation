@@ -1,4 +1,4 @@
-FUN_005cbd00:
+SettMapMTy::InitSettMap:
 005CBD00  55                        PUSH EBP
 005CBD01  8B EC                     MOV EBP,ESP
 005CBD03  83 EC 4C                  SUB ESP,0x4c

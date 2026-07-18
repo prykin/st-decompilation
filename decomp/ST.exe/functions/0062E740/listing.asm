@@ -1,4 +1,4 @@
-FUN_0062e740:
+STRubbishC::GetMessage:
 0062E740  55                        PUSH EBP
 0062E741  8B EC                     MOV EBP,ESP
 0062E743  83 EC 54                  SUB ESP,0x54

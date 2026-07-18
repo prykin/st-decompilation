@@ -1,4 +1,4 @@
-FUN_005d5560:
+SettMapSTy::GetMessage:
 005D5560  55                        PUSH EBP
 005D5561  8B EC                     MOV EBP,ESP
 005D5563  81 EC 60 01 00 00         SUB ESP,0x160

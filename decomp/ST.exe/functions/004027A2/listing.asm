@@ -1,2 +1,2 @@
-thunk_FUN_0049f900:
+STGroupBoatC::Teleport:
 004027A2  E9 59 D1 09 00            JMP 0x0049f900

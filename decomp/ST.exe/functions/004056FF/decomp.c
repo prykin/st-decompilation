@@ -1,5 +1,5 @@
 
-void thunk_FUN_00438e30(int param_1)
+void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
 
 {
   int *piVar1;

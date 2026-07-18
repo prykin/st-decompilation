@@ -1,5 +1,5 @@
 
-void thunk_FUN_00446910(char param_1)
+void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;

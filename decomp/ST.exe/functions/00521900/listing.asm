@@ -1,4 +1,4 @@
-FUN_00521900:
+IntercomPanelTy::PreInitIntercomPanel:
 00521900  55                        PUSH EBP
 00521901  8B EC                     MOV EBP,ESP
 00521903  83 EC 48                  SUB ESP,0x48

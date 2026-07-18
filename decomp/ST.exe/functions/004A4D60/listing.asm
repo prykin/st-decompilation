@@ -1,4 +1,4 @@
-FUN_004a4d60:
+STGroupBoatC::ChangeMDNotify:
 004A4D60  55                        PUSH EBP
 004A4D61  8B EC                     MOV EBP,ESP
 004A4D63  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_005a1630:
+FSGSTy::Finished:
 005A1630  55                        PUSH EBP
 005A1631  8B EC                     MOV EBP,ESP
 005A1633  83 EC 68                  SUB ESP,0x68

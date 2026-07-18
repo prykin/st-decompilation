@@ -1,55 +1,61 @@
 
-void FUN_005b9170(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\mmsg_obj.cpp
+   MMsgTy::CloseSprBut */
+
+void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
 
 {
   code *pcVar1;
+  MMObjTy *this_00;
   int iVar2;
   uint uVar3;
   int iVar4;
-  byte bVar5;
-  byte bVar6;
+  MMObjTy MVar5;
+  MMObjTy MVar6;
   undefined4 unaff_EBX;
   void *unaff_ESI;
   undefined4 local_54;
   undefined4 local_50 [16];
-  void *local_10;
+  MMObjTy *local_10;
   uint local_c;
   uint local_8;
   
-  bVar6 = 0;
+  MVar6 = (MMObjTy)0x0;
   local_c = local_c & 0xffffff00;
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
+  local_10 = (MMObjTy *)this;
   iVar2 = __setjmp3(local_50,0,unaff_ESI,unaff_EBX);
+  this_00 = local_10;
   if (iVar2 == 0) {
-    thunk_FUN_005b6480();
-    bVar5 = 0;
+    MMObjTy::CloseButtons(local_10);
+    MVar5 = (MMObjTy)0x0;
     local_8 = local_8 & 0xffffff00;
-    if (*(char *)((int)local_10 + 0x9a) != '\0') {
+    if (this_00[0x9a] != (MMObjTy)0x0) {
       do {
         uVar3 = local_8 & 0xff;
-        *(undefined4 *)((int)local_10 + uVar3 * 0x1fb + 0x127) =
-             *(undefined4 *)((int)local_10 + 0x61);
-        *(uint *)((int)local_10 + uVar3 * 0x1fb + 0x123) = ((local_c & 0xff) + 1) * 100;
-        if (*(int *)((int)local_10 + uVar3 * 0x1fb + 0xbc) != 0) {
+        *(undefined4 *)(this_00 + uVar3 * 0x1fb + 0x127) = *(undefined4 *)(this_00 + 0x61);
+        *(uint *)(this_00 + uVar3 * 0x1fb + 0x123) = ((local_c & 0xff) + 1) * 100;
+        if (*(int *)(this_00 + uVar3 * 0x1fb + 0xbc) != 0) {
           local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
         }
-        bVar5 = bVar5 + 1;
-        local_8 = CONCAT31(local_8._1_3_,bVar5);
-      } while (bVar5 < *(byte *)((int)local_10 + 0x9a));
+        MVar5 = (MMObjTy)((char)MVar5 + 1);
+        local_8 = CONCAT31(local_8._1_3_,MVar5);
+      } while ((byte)MVar5 < (byte)this_00[0x9a]);
     }
     local_8 = local_8 & 0xffffff00;
-    if (*(char *)((int)local_10 + 0x9a) != '\0') {
+    if (this_00[0x9a] != (MMObjTy)0x0) {
       do {
-        uVar3 = *(uint *)((int)local_10 + (local_8 & 0xff) * 0x1fb + 0x178);
-        if (uVar3 != 0xffffffff) {
-          FUN_006b3af0(*(int **)((int)local_10 + (local_8 & 0xff) * 0x1fb + 0x1bc),uVar3);
+        if (*(uint *)(this_00 + (local_8 & 0xff) * 0x1fb + 0x178) != 0xffffffff) {
+          FUN_006b3af0(*(int **)(this_00 + (local_8 & 0xff) * 0x1fb + 0x1bc),
+                       *(uint *)(this_00 + (local_8 & 0xff) * 0x1fb + 0x178));
         }
-        bVar6 = bVar6 + 1;
-        local_8 = CONCAT31(local_8._1_3_,bVar6);
-      } while (bVar6 < *(byte *)((int)local_10 + 0x9a));
+        MVar6 = (MMObjTy)((char)MVar6 + 1);
+        local_8 = CONCAT31(local_8._1_3_,MVar6);
+      } while ((byte)MVar6 < (byte)this_00[0x9a]);
     }
-    thunk_FUN_005b8c70(local_10,1,1,1);
+    HidePanel((MMsgTy *)this_00,1,1,1);
     DAT_00858df8 = (undefined4 *)local_54;
     return;
   }

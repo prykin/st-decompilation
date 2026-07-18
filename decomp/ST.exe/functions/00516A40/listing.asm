@@ -1,4 +1,4 @@
-FUN_00516a40:
+HelpPanelTy::TechProc:
 00516A40  55                        PUSH EBP
 00516A41  8B EC                     MOV EBP,ESP
 00516A43  81 EC 84 00 00 00         SUB ESP,0x84

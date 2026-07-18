@@ -1,4 +1,4 @@
-FUN_00423ec0:
+STGroupC::GetMessage:
 00423EC0  55                        PUSH EBP
 00423EC1  8B EC                     MOV EBP,ESP
 00423EC3  83 EC 4C                  SUB ESP,0x4c

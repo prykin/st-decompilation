@@ -1,5 +1,12 @@
 
-undefined4 FUN_0042e210(int param_1,uint param_2,uint param_3,int *param_4,int param_5,int param_6)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::RegisterObject */
+
+undefined4 __thiscall
+STAllPlayersC::RegisterObject
+          (STAllPlayersC *this,int param_1,uint param_2,uint param_3,int *param_4,int param_5,
+          int param_6)
 
 {
   code *pcVar1;
@@ -31,9 +38,10 @@ undefined4 FUN_0042e210(int param_1,uint param_2,uint param_3,int *param_4,int p
   uint *local_24;
   uint local_20;
   uint *local_1c;
+  STAllPlayersC *local_18;
   uint local_14;
   undefined1 local_10 [4];
-  void *local_c;
+  STGroupC *local_c;
   short local_6;
   
   iVar6 = (char)param_1 * 0xa62;
@@ -42,6 +50,7 @@ undefined4 FUN_0042e210(int param_1,uint param_2,uint param_3,int *param_4,int p
   local_24 = *(uint **)((int)&DAT_007f5107 + iVar6);
   local_94 = DAT_00858df8;
   DAT_00858df8 = &local_94;
+  local_18 = this;
   iVar6 = __setjmp3(local_90,0,unaff_EDI,unaff_ESI);
   if (iVar6 != 0) {
     DAT_00858df8 = (undefined4 *)local_94;
@@ -328,7 +337,7 @@ LAB_0042eb3e:
     if (uVar12 != 0) {
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
         FUN_006acc70((int)local_1c,uVar2,&local_c);
-        if (local_c == (void *)0x0) {
+        if (local_c == (STGroupC *)0x0) {
           uVar12 = uVar2;
           local_14 = uVar2;
         }
@@ -346,7 +355,7 @@ LAB_0042eb3e:
   }
   else {
     if ((((short)param_2 != -1) && (iVar6 == 0)) &&
-       (local_c = (void *)thunk_FUN_0042b760(param_1,param_2), local_c == (void *)0x0)) {
+       (local_c = (STGroupC *)thunk_FUN_0042b760(param_1,param_2), local_c == (STGroupC *)0x0)) {
       param_2 = 0xfffe;
     }
     uVar12 = local_14;
@@ -359,7 +368,7 @@ LAB_0042ebe7:
     if (sVar10 != -1) goto LAB_0042ebf6;
   }
   else if (sVar10 != -1) {
-    local_c = (void *)thunk_FUN_0042b760(param_1,param_2);
+    local_c = (STGroupC *)thunk_FUN_0042b760(param_1,param_2);
     uVar12 = param_2 & 0xffff;
     local_14 = uVar12;
     goto LAB_0042ebe7;
@@ -369,7 +378,7 @@ LAB_0042ebe7:
 LAB_0042ebf6:
   thunk_FUN_00419c30(param_4,uVar11);
   if (((iVar6 == 0) || (param_6 == 1)) && (sVar10 != -1)) {
-    thunk_FUN_00423850(local_c,local_20,(uint)(sVar10 != -2));
+    STGroupC::AddObj(local_c,local_20,(uint)(sVar10 != -2));
   }
   iVar6 = (**(code **)(*param_4 + 0x2c))();
   if (iVar6 == 0x1d) {

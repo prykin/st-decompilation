@@ -1,4 +1,4 @@
-FUN_004effe0:
+BldLabPanelTy::PaintUpdBut:
 004EFFE0  55                        PUSH EBP
 004EFFE1  8B EC                     MOV EBP,ESP
 004EFFE3  83 EC 58                  SUB ESP,0x58

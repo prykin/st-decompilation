@@ -1,4 +1,4 @@
-FUN_0052efb0:
+OptPanelTy::PaintDblBut:
 0052EFB0  55                        PUSH EBP
 0052EFB1  8B EC                     MOV EBP,ESP
 0052EFB3  83 EC 5C                  SUB ESP,0x5c

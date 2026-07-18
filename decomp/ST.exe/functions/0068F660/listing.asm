@@ -1,4 +1,4 @@
-FUN_0068f660:
+AiTactClassTy::GiveObjByGrpNum:
 0068F660  55                        PUSH EBP
 0068F661  8B EC                     MOV EBP,ESP
 0068F663  83 EC 48                  SUB ESP,0x48

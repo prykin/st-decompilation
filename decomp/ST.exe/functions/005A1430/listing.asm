@@ -1,4 +1,4 @@
-FUN_005a1430:
+FSGSTy::Download:
 005A1430  55                        PUSH EBP
 005A1431  8B EC                     MOV EBP,ESP
 005A1433  83 EC 48                  SUB ESP,0x48

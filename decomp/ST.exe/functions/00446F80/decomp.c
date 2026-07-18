@@ -1,5 +1,9 @@
 
-void FUN_00446f80(uint param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::DistributeGuardBoats */
+
+void __thiscall STAllPlayersC::DistributeGuardBoats(STAllPlayersC *this,uint param_1)
 
 {
   code *pcVar1;
@@ -31,7 +35,7 @@ void FUN_00446f80(uint param_1)
   int local_78;
   int local_74;
   uint *local_70;
-  void *local_6c;
+  STAllPlayersC *local_6c;
   undefined2 local_66;
   uint *local_64;
   uint *local_60;
@@ -69,6 +73,7 @@ void FUN_00446f80(uint param_1)
   if (local_60 != (uint *)0x0) {
     local_e4 = DAT_00858df8;
     DAT_00858df8 = &local_e4;
+    local_6c = this;
     iVar3 = __setjmp3(local_e0,0,unaff_EDI,unaff_ESI);
     puVar4 = local_48;
     if (iVar3 == 0) {

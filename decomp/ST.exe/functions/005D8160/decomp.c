@@ -1,5 +1,9 @@
 
-void FUN_005d8160(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\sid_obj.cpp
+   SIDTy::PaintSID */
+
+void __thiscall SIDTy::PaintSID(SIDTy *this)
 
 {
   code *pcVar1;

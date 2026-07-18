@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_005ab0a0(void)
+undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
 
 {
   uint uVar1;
@@ -9,12 +9,13 @@ undefined4 thunk_FUN_005ab0a0(void)
   undefined4 uVar5;
   void *unaff_ESI;
   undefined4 auStack_4c [16];
-  int iStack_c;
+  HoloTy *pHStack_c;
   undefined4 uStack_8;
   
   uVar5 = DAT_00858df8;
   uStack_8 = 0;
   DAT_00858df8 = &stack0xffffffb0;
+  pHStack_c = this;
   iVar3 = __setjmp3(auStack_4c,0,unaff_ESI,uVar5);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined1 *)uVar5;
@@ -27,18 +28,18 @@ undefined4 thunk_FUN_005ab0a0(void)
     FUN_006a5e40(iVar3,0,0x7cc674,0xc1);
     return uStack_8;
   }
-  uVar1 = *(uint *)(iStack_c + 3);
+  uVar1 = *(uint *)(pHStack_c + 3);
   if (-1 < (int)uVar1) {
-    iVar3 = *(int *)(iStack_c + 0x17);
-    if (*(char *)(iStack_c + 2) == '\0') {
-      if (iVar3 < *(int *)(iStack_c + 0x13) + -2) {
-        *(int *)(iStack_c + 0x17) = iVar3 + 1;
+    iVar3 = *(int *)(pHStack_c + 0x17);
+    if (pHStack_c[2] == (HoloTy)0x0) {
+      if (iVar3 < *(int *)(pHStack_c + 0x13) + -2) {
+        *(int *)(pHStack_c + 0x17) = iVar3 + 1;
         uStack_8 = 1;
         FUN_006b35d0(DAT_008075a8,uVar1);
       }
     }
     else if (0 < iVar3) {
-      *(int *)(iStack_c + 0x17) = iVar3 + -1;
+      *(int *)(pHStack_c + 0x17) = iVar3 + -1;
       uStack_8 = 1;
       FUN_006b35d0(DAT_008075a8,uVar1);
       DAT_00858df8 = (undefined1 *)uVar5;

@@ -1,5 +1,5 @@
 
-undefined4 __thiscall thunk_FUN_005384a0(void *this,int param_1)
+undefined4 __thiscall PanelTy::GetMessage(PanelTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -10,25 +10,25 @@ undefined4 __thiscall thunk_FUN_005384a0(void *this,int param_1)
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  PanelTy *pPStack_8;
   
-  pvStack_8 = this;
-  uVar2 = FUN_006e51b0(*(int *)((int)this + 0x10));
-  *(undefined4 *)((int)this + 0x38) = uVar2;
+  pPStack_8 = this;
+  uVar2 = FUN_006e51b0(*(int *)(this + 0x10));
+  *(undefined4 *)(this + 0x38) = uVar2;
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
   iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iVar3 = *(int *)(param_1 + 0x10);
     if (iVar3 == 2) {
-      thunk_FUN_005381b0();
+      InitPanel(pPStack_8);
     }
     else if (iVar3 == 3) {
-      thunk_FUN_00538390();
+      DonePanel(pPStack_8);
     }
     else if (iVar3 == 5) {
-      FUN_006b3640(DAT_008075a8,*(uint *)((int)pvStack_8 + 0x60),0xffffffff,
-                   *(uint *)((int)pvStack_8 + 0x3c),*(uint *)((int)pvStack_8 + 0x44));
+      FUN_006b3640(DAT_008075a8,*(uint *)(pPStack_8 + 0x60),0xffffffff,*(uint *)(pPStack_8 + 0x3c),
+                   *(uint *)(pPStack_8 + 0x44));
     }
     DAT_00858df8 = (undefined4 *)uStack_4c;
     uVar2 = FUN_006e5fd0();

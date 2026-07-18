@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_004abce0(void *this,byte param_1,int param_2,int param
             pbVar2 = (byte *)(iVar6 + 0xf);
             *pbVar2 = *pbVar2 | 2;
           }
-          thunk_FUN_004ac410(param_1);
+          STT3DSprC::StopShow(this,param_1);
           iVar6 = iVar7 + *(int *)((int)this + 0x20);
           if ((*(byte *)(iVar7 + 0xe + *(int *)((int)this + 0x20)) & 2) == 0) {
             *(int *)(iVar6 + 0x10) = param_2;

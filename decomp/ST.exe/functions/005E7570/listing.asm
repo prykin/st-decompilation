@@ -1,4 +1,4 @@
-FUN_005e7570:
+WaitTy::DoneWait:
 005E7570  55                        PUSH EBP
 005E7571  8B EC                     MOV EBP,ESP
 005E7573  83 EC 48                  SUB ESP,0x48

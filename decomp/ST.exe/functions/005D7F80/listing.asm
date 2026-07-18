@@ -1,4 +1,4 @@
-FUN_005d7f80:
+SIDTy::DoneSID:
 005D7F80  55                        PUSH EBP
 005D7F81  8B EC                     MOV EBP,ESP
 005D7F83  83 EC 48                  SUB ESP,0x48

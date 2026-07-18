@@ -1,4 +1,4 @@
-FUN_00543ad0:
+CursorClassTy::SetImages:
 00543AD0  55                        PUSH EBP
 00543AD1  8B EC                     MOV EBP,ESP
 00543AD3  83 EC 48                  SUB ESP,0x48

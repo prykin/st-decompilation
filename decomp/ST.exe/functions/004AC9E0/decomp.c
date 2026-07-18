@@ -68,7 +68,7 @@ LAB_004aca23:
         iVar3 = *(int *)((int)this + 0x20) + iVar5;
         if (*(int *)(iVar3 + 0x18) == *(int *)(iVar3 + 0x14)) {
           if (*(char *)(iVar3 + 0xd) == '\x02') {
-            thunk_FUN_004ac410((byte)local_28);
+            STT3DSprC::StopShow(this,(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
             goto LAB_004aca23;

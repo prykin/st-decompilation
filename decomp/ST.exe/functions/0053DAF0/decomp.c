@@ -1,9 +1,13 @@
 
-void __thiscall FUN_0053daf0(void *this,int param_1,char *param_2,UINT param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\specpan.cpp
+   UPanelTy::PaintIBut */
+
+void __thiscall UPanelTy::PaintIBut(UPanelTy *this,int param_1,char *param_2,UINT param_3)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  UPanelTy *pUVar2;
   undefined4 *puVar3;
   undefined4 uVar4;
   byte *pbVar5;
@@ -20,23 +24,23 @@ void __thiscall FUN_0053daf0(void *this,int param_1,char *param_2,UINT param_3)
   undefined4 local_58;
   undefined4 local_54 [16];
   int *local_14;
-  void *local_10;
+  UPanelTy *local_10;
   int local_c;
   int local_8;
   
   local_14 = *(int **)(param_1 + 0x18);
-  local_c = *local_14 - *(int *)((int)this + 0x3c);
-  if (*(int *)((int)this + 0x5c) == 0) {
-    local_8 = *(int *)((int)this + 0x48) + local_14[1];
+  local_c = *local_14 - *(int *)(this + 0x3c);
+  if (*(int *)(this + 0x5c) == 0) {
+    local_8 = *(int *)(this + 0x48) + local_14[1];
   }
   else {
-    local_8 = local_14[1] - *(int *)((int)this + 0x44);
+    local_8 = local_14[1] - *(int *)(this + 0x44);
   }
   local_58 = DAT_00858df8;
   DAT_00858df8 = &local_58;
   local_10 = this;
   puVar3 = (undefined4 *)__setjmp3(local_54,0,unaff_EDI,unaff_ESI);
-  pvVar2 = local_10;
+  pUVar2 = local_10;
   if (puVar3 == (undefined4 *)0x0) {
     iVar10 = 1;
     uVar8 = 0xffffffff;
@@ -47,15 +51,16 @@ void __thiscall FUN_0053daf0(void *this,int param_1,char *param_2,UINT param_3)
     pbVar5 = (byte *)FUN_006f2c00(param_2,1,uVar4);
     puVar6 = FUN_00709af0(DAT_00806794,1,pbVar5,uVar8,bVar9,iVar10,(int)puVar11,puVar13);
     iVar10 = local_8;
-    thunk_FUN_00540760(*(undefined4 **)((int)pvVar2 + 0x68),local_c,local_8,'\x01',(byte *)puVar6);
-    FUN_00710a90(*(int *)((int)pvVar2 + 0x68),0,local_c,iVar10,local_14[2],local_14[3]);
+    thunk_FUN_00540760(*(undefined4 **)(pUVar2 + 0x68),local_c,local_8,'\x01',(byte *)puVar6);
+    ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)(pUVar2 + 0x68),0,local_c,iVar10,
+                     local_14[2],local_14[3]);
     uVar4 = thunk_FUN_00529fe0(param_1);
     iVar12 = -1;
     iVar10 = -2;
     puVar7 = (uint *)FUN_006b0140(param_3,DAT_00807618);
-    FUN_007119c0(puVar7,iVar10,iVar12,uVar4);
-    FUN_006b3640(DAT_008075a8,*(uint *)((int)pvVar2 + 0x60),0xffffffff,*(uint *)((int)pvVar2 + 0x3c)
-                 ,*(uint *)((int)pvVar2 + 0x44));
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar7,iVar10,iVar12,uVar4);
+    FUN_006b3640(DAT_008075a8,*(uint *)(pUVar2 + 0x60),0xffffffff,*(uint *)(pUVar2 + 0x3c),
+                 *(uint *)(pUVar2 + 0x44));
     DAT_00858df8 = (undefined4 *)local_58;
     return;
   }

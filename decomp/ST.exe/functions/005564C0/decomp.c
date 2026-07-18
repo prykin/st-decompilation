@@ -32,7 +32,7 @@ undefined4 FUN_005564c0(int param_1)
     FUN_006a5e40(iVar3,0,0x7c9104,0x152);
     return 0xffff;
   }
-  *(undefined4 *)(local_14 + 0x20) = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
+  *(undefined4 *)(local_14 + 0x20) = *(undefined4 *)(DAT_00802a38 + 0xe4);
   FUN_006e5fd0();
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {
@@ -49,7 +49,7 @@ undefined4 FUN_005564c0(int param_1)
     }
     if (uVar1 == 2) {
       local_8 = (ushort *)0x0;
-      if (DAT_00806754 != 0) {
+      if (DAT_00806754 != (cMf32 *)0x0) {
         local_8 = FUN_006f2d90(DAT_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
@@ -61,8 +61,8 @@ undefined4 FUN_005564c0(int param_1)
         thunk_FUN_00556170((int)local_8);
       }
       thunk_FUN_00555720();
-      if ((DAT_00806754 != 0) && (local_8 != (ushort *)0x0)) {
-        FUN_006f20e0((uint *)&local_8);
+      if ((DAT_00806754 != (cMf32 *)0x0) && (local_8 != (ushort *)0x0)) {
+        cMf32::RecMemFree(DAT_00806754,(uint *)&local_8);
         DAT_00858df8 = (undefined4 *)local_58;
         return 0;
       }
@@ -71,7 +71,7 @@ undefined4 FUN_005564c0(int param_1)
   else if (uVar1 == 0x10f) {
     local_c = 0;
     local_10 = (byte *)thunk_FUN_00555fe0(&local_c);
-    thunk_FUN_0054d550(DAT_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
+    STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != (byte *)0x0) {
       FUN_006ab060(&local_10);
     }

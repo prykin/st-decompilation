@@ -1,4 +1,4 @@
-FUN_005c5b60:
+SettMapTy::CloseButtons:
 005C5B60  55                        PUSH EBP
 005C5B61  8B EC                     MOV EBP,ESP
 005C5B63  83 EC 48                  SUB ESP,0x48

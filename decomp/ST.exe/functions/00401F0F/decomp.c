@@ -9,8 +9,9 @@ undefined4 __fastcall thunk_FUN_004ec0f0(int param_1)
   undefined4 uVar3;
   uint uVar4;
   
-  iVar1 = thunk_FUN_004ab880(0xe,DAT_00806774,
-                             *(byte **)(&DAT_007cde6c + *(int *)(param_1 + 0x50c) * 4),0x1d);
+  iVar1 = STT3DSprC::LoadSequence
+                    (*(STT3DSprC **)(param_1 + 0x5ff),0xe,DAT_00806774,
+                     *(byte **)(&DAT_007cde6c + *(int *)(param_1 + 0x50c) * 4),0x1d);
   if (iVar1 != 0) {
     FUN_006a5e40(iVar1,DAT_007ed77c,0x7c1648,0x126);
   }
@@ -41,7 +42,7 @@ undefined4 __fastcall thunk_FUN_004ec0f0(int param_1)
   thunk_FUN_004ad460(*(void **)(param_1 + 0x5ff),1);
   thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,iVar1,iVar1,'\0');
   thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\x0e',iVar1);
-  thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
   return 0;
 }
 

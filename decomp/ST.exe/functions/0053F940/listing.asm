@@ -1,4 +1,4 @@
-FUN_0053f940:
+ProdPanelTy::CreateSlider:
 0053F940  55                        PUSH EBP
 0053F941  8B EC                     MOV EBP,ESP
 0053F943  81 EC 28 04 00 00         SUB ESP,0x428

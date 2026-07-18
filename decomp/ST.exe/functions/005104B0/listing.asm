@@ -1,4 +1,4 @@
-FUN_005104b0:
+FrmPanelTy::Update:
 005104B0  55                        PUSH EBP
 005104B1  8B EC                     MOV EBP,ESP
 005104B3  83 EC 50                  SUB ESP,0x50

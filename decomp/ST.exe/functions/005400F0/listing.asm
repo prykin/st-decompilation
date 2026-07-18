@@ -1,4 +1,4 @@
-FUN_005400f0:
+ProdPanelTy::GetMessage:
 005400F0  55                        PUSH EBP
 005400F1  8B EC                     MOV EBP,ESP
 005400F3  83 EC 48                  SUB ESP,0x48

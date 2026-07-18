@@ -1,4 +1,4 @@
-FUN_0051fba0:
+HelpStringTy::GetMessage:
 0051FBA0  55                        PUSH EBP
 0051FBA1  8B EC                     MOV EBP,ESP
 0051FBA3  83 EC 48                  SUB ESP,0x48

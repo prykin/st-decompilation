@@ -1,4 +1,4 @@
-FUN_004a0040:
+STGroupBoatC::GrpDismant:
 004A0040  55                        PUSH EBP
 004A0041  8B EC                     MOV EBP,ESP
 004A0043  83 EC 74                  SUB ESP,0x74

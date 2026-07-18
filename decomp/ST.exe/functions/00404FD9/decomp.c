@@ -1,58 +1,56 @@
 
-void __thiscall thunk_FUN_00511c70(void *this,int param_1)
+void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
 
 {
   code *pcVar1;
-  void *this_00;
   short sVar2;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar5;
-  undefined4 *puVar6;
+  HelpPanelTy *pHVar5;
+  HelpPanelTy *pHVar6;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  HelpPanelTy *pHStack_8;
   
-  if (param_1 != *(int *)((int)this + 0x5c)) {
-    *(int *)((int)this + 0x5c) = param_1;
-    puVar6 = (undefined4 *)((int)this + 0x18);
+  if (param_1 != *(int *)(this + 0x5c)) {
+    *(int *)(this + 0x5c) = param_1;
+    pHVar6 = this + 0x18;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
+      *(undefined4 *)pHVar6 = 0;
+      pHVar6 = pHVar6 + 4;
     }
-    sVar2 = (short)*(undefined4 *)((int)this + 0x174);
-    *(undefined4 *)((int)this + 0x28) = 0x24;
+    sVar2 = (short)*(undefined4 *)(this + 0x174);
+    *(undefined4 *)(this + 0x28) = 0x24;
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    *(short *)((int)this + 0x2e) = sVar2;
+    *(short *)(this + 0x2e) = sVar2;
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
-    pvStack_8 = this;
+    pHStack_8 = this;
     iVar4 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-    this_00 = pvStack_8;
+    pHVar6 = pHStack_8;
     if (iVar4 == 0) {
-      if (*(int *)((int)pvStack_8 + 0x17c) != 0) {
-        FUN_006e6080(pvStack_8,2,*(int *)((int)pvStack_8 + 0x17c),
-                     (undefined4 *)((int)pvStack_8 + 0x18));
+      if (*(int *)(pHStack_8 + 0x17c) != 0) {
+        FUN_006e6080(pHStack_8,2,*(int *)(pHStack_8 + 0x17c),(undefined4 *)(pHStack_8 + 0x18));
       }
-      piVar5 = (int *)((int)this_00 + 0x180);
+      pHVar5 = pHVar6 + 0x180;
       iVar4 = 7;
       do {
-        if (*piVar5 != 0) {
-          FUN_006e6080(this_00,2,*piVar5,(undefined4 *)((int)this_00 + 0x18));
+        if (*(int *)pHVar5 != 0) {
+          FUN_006e6080(pHVar6,2,*(int *)pHVar5,(undefined4 *)(pHVar6 + 0x18));
         }
-        piVar5 = piVar5 + 1;
+        pHVar5 = pHVar5 + 4;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
-      if (*(int *)((int)this_00 + 0x19c) != 0) {
-        FUN_006e6080(this_00,2,*(int *)((int)this_00 + 0x19c),(undefined4 *)((int)this_00 + 0x18));
-        puVar6 = (undefined4 *)((int)this_00 + 0x18);
+      if (*(int *)(pHVar6 + 0x19c) != 0) {
+        FUN_006e6080(pHVar6,2,*(int *)(pHVar6 + 0x19c),(undefined4 *)(pHVar6 + 0x18));
+        pHVar6 = pHVar6 + 0x18;
         for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-          *puVar6 = 0;
-          puVar6 = puVar6 + 1;
+          *(undefined4 *)pHVar6 = 0;
+          pHVar6 = pHVar6 + 4;
         }
       }
       DAT_00858df8 = (undefined4 *)uStack_4c;

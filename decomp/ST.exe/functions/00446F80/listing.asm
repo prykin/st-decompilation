@@ -1,4 +1,4 @@
-FUN_00446f80:
+STAllPlayersC::DistributeGuardBoats:
 00446F80  55                        PUSH EBP
 00446F81  8B EC                     MOV EBP,ESP
 00446F83  81 EC E0 00 00 00         SUB ESP,0xe0

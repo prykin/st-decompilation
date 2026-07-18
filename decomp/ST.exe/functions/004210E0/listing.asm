@@ -1,4 +1,4 @@
-FUN_004210e0:
+STAllPlayersC::SaveGObjData:
 004210E0  55                        PUSH EBP
 004210E1  8B EC                     MOV EBP,ESP
 004210E3  83 EC 68                  SUB ESP,0x68

@@ -912,8 +912,9 @@ LAB_0046744c:
         }
         iVar6 = (**(code **)(*piVar14 + 0x88))(&local_8);
         if (iVar6 == 0) {
-          thunk_FUN_00440860(0,(int *)param_1[9],
-                             CONCAT22(extraout_var_19,*(undefined2 *)((int)piVar14 + 0x32)));
+          STAllPlayersC::_ChangeMD
+                    (DAT_007fa174,0,(int *)param_1[9],
+                     CONCAT22(extraout_var_19,*(undefined2 *)((int)piVar14 + 0x32)));
           iVar6 = (**(code **)(*param_1 + 0xd8))();
           return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
         }

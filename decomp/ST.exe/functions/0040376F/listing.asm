@@ -1,2 +1,2 @@
-thunk_FUN_00543ad0:
+CursorClassTy::SetImages:
 0040376F  E9 5C 03 14 00            JMP 0x00543ad0

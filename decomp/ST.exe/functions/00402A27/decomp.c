@@ -1,5 +1,5 @@
 
-int thunk_FUN_0065f1d0(short *param_1)
+int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
 
 {
   int iVar1;
@@ -20,7 +20,7 @@ int thunk_FUN_0065f1d0(short *param_1)
   uint *puStack_28;
   uint uStack_24;
   int iStack_20;
-  int iStack_1c;
+  AiFltClassTy *pAStack_1c;
   int iStack_18;
   int iStack_14;
   int iStack_10;
@@ -30,6 +30,7 @@ int thunk_FUN_0065f1d0(short *param_1)
   iStack_18 = 1;
   uStack_74 = DAT_00858df8;
   DAT_00858df8 = &uStack_74;
+  pAStack_1c = this;
   iVar5 = __setjmp3(auStack_70,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_74;
@@ -43,7 +44,7 @@ int thunk_FUN_0065f1d0(short *param_1)
     return iVar5;
   }
   uStack_c = 0;
-  puStack_28 = *(uint **)(iStack_1c + 0x22f);
+  puStack_28 = *(uint **)(pAStack_1c + 0x22f);
   uStack_24 = puStack_28[3];
   if (0 < (int)uStack_24) {
     sVar2 = param_1[1];
@@ -92,7 +93,7 @@ LAB_0065f468:
         FUN_006ae140(puStack_28,uStack_c,(undefined4 *)param_1);
         goto LAB_0065f468;
       }
-      if ((int)*(short *)(iStack_1c + 0x170) <= (int)uStack_c) {
+      if ((int)*(short *)(pAStack_1c + 0x170) <= (int)uStack_c) {
         iVar6 = iStack_10 / 2 + iVar5;
         if ((((iVar6 < iVar7) || (psVar9[3] + iVar7 <= iVar6)) ||
             (iVar6 = iStack_14 / 2 + iStack_8, iVar6 < iVar8)) || (psVar9[4] + iVar8 <= iVar6)) {
@@ -142,7 +143,7 @@ LAB_0065f3c9:
     } while ((int)uStack_c < (int)uStack_24);
   }
   if (iStack_18 != 0) {
-    FUN_006ae1c0(*(uint **)(iStack_1c + 0x22f),(undefined4 *)param_1);
+    FUN_006ae1c0(*(uint **)(pAStack_1c + 0x22f),(undefined4 *)param_1);
   }
   DAT_00858df8 = (undefined4 *)uStack_74;
   return 0;

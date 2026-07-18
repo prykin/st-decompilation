@@ -1,4 +1,4 @@
-FUN_004f0b60:
+BldObjPanelTy::Update:
 004F0B60  55                        PUSH EBP
 004F0B61  8B EC                     MOV EBP,ESP
 004F0B63  83 EC 48                  SUB ESP,0x48

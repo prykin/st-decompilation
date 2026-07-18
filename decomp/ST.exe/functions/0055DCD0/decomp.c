@@ -1,7 +1,6 @@
 
 void __cdecl
-FUN_0055dcd0(undefined4 *param_1,int *param_2,undefined4 param_3,char *param_4,int param_5,
-            int param_6)
+FUN_0055dcd0(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int param_5,int param_6)
 
 {
   code *pcVar1;
@@ -22,7 +21,7 @@ FUN_0055dcd0(undefined4 *param_1,int *param_2,undefined4 param_3,char *param_4,i
     local_8 = FUN_006f1ce0(1,param_4,(int *)0x0,1);
     FUN_006bc360((int)local_8,(undefined4 *)&stack0xfffffbb4,(int *)0x0);
     FUN_00719080(param_1,(undefined4 *)&stack0xfffffbb4,0,0x100,param_5,param_6);
-    FUN_006f20e0((uint *)&local_8);
+    cMf32::RecMemFree(param_3,(uint *)&local_8);
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }

@@ -1,2 +1,2 @@
-thunk_FUN_00679470:
+AiPlrClassTy::CloseAllTact:
 00402090  E9 DB 73 27 00            JMP 0x00679470

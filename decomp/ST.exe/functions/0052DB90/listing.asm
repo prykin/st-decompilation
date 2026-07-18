@@ -1,4 +1,4 @@
-FUN_0052db90:
+PopUpTy::Clear:
 0052DB90  55                        PUSH EBP
 0052DB91  8B EC                     MOV EBP,ESP
 0052DB93  83 EC 48                  SUB ESP,0x48

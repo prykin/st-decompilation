@@ -1,4 +1,4 @@
-FUN_005bd4b0:
+MReportTy::OutTGlProc:
 005BD4B0  55                        PUSH EBP
 005BD4B1  8B EC                     MOV EBP,ESP
 005BD4B3  83 EC 4C                  SUB ESP,0x4c

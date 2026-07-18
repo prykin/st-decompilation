@@ -1,9 +1,12 @@
 
-int thunk_FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
-                      int param_6,undefined4 param_7,undefined4 param_8)
+int __thiscall
+ProdPanelTy::CreateSlider
+          (ProdPanelTy *this,int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
+          int param_6,undefined4 param_7,undefined4 param_8)
 
 {
   code *pcVar1;
+  ProdPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;
   int iVar4;
@@ -50,14 +53,16 @@ int thunk_FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined
   undefined4 uStack_64;
   undefined4 uStack_54;
   undefined4 auStack_50 [16];
-  void *pvStack_10;
+  ProdPanelTy *pPStack_10;
   ushort *puStack_c;
   int iStack_8;
   
   iStack_8 = 0;
   uStack_54 = DAT_00858df8;
   DAT_00858df8 = &uStack_54;
+  pPStack_10 = this;
   iVar2 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  this_00 = pPStack_10;
   if (iVar2 == 0) {
     piVar7 = aiStack_42c;
     for (iVar2 = 0xf6; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -65,7 +70,7 @@ int thunk_FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined
       piVar7 = piVar7 + 1;
     }
     uStack_6c = param_7;
-    uStack_84 = *(undefined4 *)((int)pvStack_10 + 8);
+    uStack_84 = *(undefined4 *)(this_00 + 8);
     uStack_68 = param_8;
     aiStack_42c[0] = param_6;
     uStack_80 = 2;
@@ -88,17 +93,17 @@ int thunk_FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined
     puStack_c = FUN_006f1ce0(1,pCVar3,piVar7,iVar8);
     uStack_414 = *(undefined4 *)(puStack_c + 2);
     uStack_410 = *(undefined4 *)(puStack_c + 4);
-    FUN_006f20e0((uint *)&puStack_c);
-    iVar2 = *(int *)((int)pvStack_10 + 0x3c);
-    iVar8 = *(int *)((int)pvStack_10 + 0x5c);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_c);
+    iVar2 = *(int *)(this_00 + 0x3c);
+    iVar8 = *(int *)(this_00 + 0x5c);
     aiStack_42c[4] = iVar2 + param_3;
     iVar4 = DAT_00806734;
     if (iVar8 != 0) {
-      iVar4 = *(int *)((int)pvStack_10 + 0x44);
+      iVar4 = *(int *)(this_00 + 0x44);
     }
     uStack_3c0 = 2;
     aiStack_42c[5] = iVar4 + param_4;
-    uStack_3c4 = *(undefined4 *)((int)pvStack_10 + 8);
+    uStack_3c4 = *(undefined4 *)(this_00 + 8);
     uStack_38c = 0;
     uStack_380 = 0x101;
     uStack_3a4 = 0x101;
@@ -126,19 +131,19 @@ int thunk_FUN_0053f940(int param_1,int param_2,int param_3,int param_4,undefined
     aiStack_2a4[2] = iVar2 + param_1;
     aiStack_2a4[3] = DAT_00806734;
     if (iVar8 != 0) {
-      aiStack_2a4[3] = *(int *)((int)pvStack_10 + 0x44);
+      aiStack_2a4[3] = *(int *)(this_00 + 0x44);
     }
     aiStack_2a4[3] = aiStack_2a4[3] + param_2;
     uStack_23c = 0xc006;
     uStack_1f0 = 0x272f;
     uStack_214 = 0x272f;
-    (**(code **)(**(int **)((int)pvStack_10 + 0xc) + 8))(4,&iStack_8,0,aiStack_42c,0);
-    if ((*(int *)((int)pvStack_10 + 0x5c) == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(4,&iStack_8,0,aiStack_42c,0);
+    if ((*(int *)(this_00 + 0x5c) == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }
-    *(undefined4 *)((int)pvStack_10 + 0x28) = uVar6;
+    *(undefined4 *)(this_00 + 0x28) = uVar6;
     if (iStack_8 != 0) {
-      FUN_006e6080(pvStack_10,0x80000002,iStack_8,(undefined4 *)((int)pvStack_10 + 0x18));
+      FUN_006e6080(this_00,0x80000002,iStack_8,(undefined4 *)(this_00 + 0x18));
     }
     DAT_00858df8 = (undefined4 *)uStack_54;
     return iStack_8;

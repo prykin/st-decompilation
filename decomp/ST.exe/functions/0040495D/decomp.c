@@ -1,5 +1,5 @@
 
-void __thiscall thunk_FUN_005cff40(void *this,int param_1)
+void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
 
 {
   uint uVar1;
@@ -13,16 +13,16 @@ void __thiscall thunk_FUN_005cff40(void *this,int param_1)
   bool bVar7;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  SettMapMTy *pSStack_8;
   
-  if (*(int *)((int)this + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
-    pvStack_8 = this;
+    pSStack_8 = this;
     iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
-      iVar3 = *(int *)((int)pvStack_8 + 0x1f84);
+      iVar3 = *(int *)(pSStack_8 + 0x1f84);
       uVar1 = *(uint *)(iVar3 + 0xc);
       if (0 < (int)uVar1) {
         bVar7 = uVar1 != 0;

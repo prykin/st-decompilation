@@ -1,4 +1,4 @@
-FUN_005a3ab0:
+FSGSTy::SetInfo:
 005A3AB0  55                        PUSH EBP
 005A3AB1  8B EC                     MOV EBP,ESP
 005A3AB3  81 EC 84 00 00 00         SUB ESP,0x84

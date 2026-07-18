@@ -16,6 +16,7 @@ void __fastcall thunk_FUN_00572510(void *param_1)
   byte *pbVar7;
   uint uVar8;
   uint uVar9;
+  cMf32 *this_00;
   undefined4 *puVar10;
   char *pcVar11;
   int iVar12;
@@ -149,7 +150,7 @@ LAB_005727f1:
             DAT_00807300._0_1_ = '\x01';
           }
           thunk_FUN_00573240();
-          FUN_006f1170(puVar5);
+          cMf32::delete(this_00,puVar5);
         }
         DAT_00858df8 = puStack_58;
         pvStack_10 = this;
