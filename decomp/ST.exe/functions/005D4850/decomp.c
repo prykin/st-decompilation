@@ -1,47 +1,52 @@
 
-void FUN_005d4850(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::RunGame */
+
+void __thiscall SettMapMTy::RunGame(SettMapMTy *this)
 
 {
-  void *this;
   code *pcVar1;
-  int iVar2;
+  SettMapMTy *pSVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_EBX;
   void *unaff_ESI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int *local_8;
+  SettMapMTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,unaff_EBX);
-  if (iVar2 == 0) {
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_ESI,unaff_EBX);
+  if (iVar3 == 0) {
     if (DAT_0080877e != '\0') {
       FUN_006b7070(DAT_00811764);
     }
+    pSVar2 = local_8;
     thunk_FUN_005b6350(local_8,0x6948,0,0);
-    *(undefined1 *)((int)local_8 + 0x21e6) = 1;
-    *(undefined1 *)((int)local_8 + 0x21e5) = 1;
-    *(undefined1 *)(local_8 + 0x879) = 1;
-    *(undefined1 *)((int)local_8 + 0x21e7) = 1;
-    *(undefined1 *)((int)local_8 + 0x21e2) = 1;
-    *(undefined1 *)((int)local_8 + 0x21e1) = 1;
-    (**(code **)(*local_8 + 8))();
-    this = *(void **)(*(int *)((int)local_8 + 0x1a5b) + 0x2e6);
-    if (this != (void *)0x0) {
-      thunk_FUN_005b8c70(this,1,0,1);
+    pSVar2[0x21e6] = (SettMapMTy)0x1;
+    pSVar2[0x21e5] = (SettMapMTy)0x1;
+    pSVar2[0x21e4] = (SettMapMTy)0x1;
+    pSVar2[0x21e7] = (SettMapMTy)0x1;
+    pSVar2[0x21e2] = (SettMapMTy)0x1;
+    pSVar2[0x21e1] = (SettMapMTy)0x1;
+    (**(code **)(*(int *)pSVar2 + 8))();
+    if (*(MMsgTy **)(*(int *)(pSVar2 + 0x1a5b) + 0x2e6) != (MMsgTy *)0x0) {
+      MMsgTy::HidePanel(*(MMsgTy **)(*(int *)(pSVar2 + 0x1a5b) + 0x2e6),1,0,1);
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x998,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x998,0,iVar3,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7cd258,0x998);
+  FUN_006a5e40(iVar3,0,0x7cd258,0x998);
   return;
 }
 

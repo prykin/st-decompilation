@@ -1,2 +1,2 @@
-thunk_FUN_00594d40:
+FSGSTy::OutTRGlProc:
 004035E9  E9 52 17 19 00            JMP 0x00594d40

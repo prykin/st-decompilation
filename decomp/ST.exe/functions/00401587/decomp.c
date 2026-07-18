@@ -1,5 +1,5 @@
 
-void thunk_FUN_005380e0(void)
+void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
 
 {
   code *pcVar1;
@@ -7,13 +7,15 @@ void thunk_FUN_005380e0(void)
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
-  undefined4 auStack_48 [17];
+  undefined4 auStack_48 [16];
+  OptPanelTy *pOStack_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  pOStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
-    thunk_FUN_00532a80();
+    PrepMissObj(pOStack_8);
     if (DAT_00801690 != (void *)0x0) {
       thunk_FUN_00515180(DAT_00801690,'\a');
     }

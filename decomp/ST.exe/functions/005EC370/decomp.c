@@ -34,8 +34,8 @@ int __thiscall FUN_005ec370(void *this,uint *param_1)
   }
   *(undefined1 *)puVar8 = *(undefined1 *)puVar6;
   local_10[3] = 2;
-  local_14 = thunk_FUN_004ad790(&local_8);
-  local_18 = thunk_FUN_004210e0((int *)&local_c);
+  local_14 = STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),&local_8);
+  local_18 = STAllPlayersC::SaveGObjData(this,(int *)&local_c);
   uVar1 = local_c + 0x24e + local_8;
   local_10 = (undefined4 *)FUN_006acf50(local_10,uVar1);
   *(uint *)((int)local_10 + 0x246) = local_8;

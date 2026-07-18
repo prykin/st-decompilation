@@ -1,4 +1,4 @@
-FUN_004f7800:
+CPanelTy::DoneCPanel:
 004F7800  55                        PUSH EBP
 004F7801  8B EC                     MOV EBP,ESP
 004F7803  83 EC 4C                  SUB ESP,0x4c

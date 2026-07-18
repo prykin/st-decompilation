@@ -1,4 +1,4 @@
-FUN_005df530:
+MTaskTy::OutGlassBmpProc:
 005DF530  55                        PUSH EBP
 005DF531  8B EC                     MOV EBP,ESP
 005DF533  83 EC 48                  SUB ESP,0x48

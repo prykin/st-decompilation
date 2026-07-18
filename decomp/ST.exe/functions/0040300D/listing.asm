@@ -1,2 +1,2 @@
-thunk_FUN_00538690:
+PanelTy::CreateBut:
 0040300D  E9 7E 56 13 00            JMP 0x00538690

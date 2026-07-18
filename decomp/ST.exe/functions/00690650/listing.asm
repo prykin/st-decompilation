@@ -1,4 +1,4 @@
-FUN_00690650:
+AiTactClassTy::HelpOrganize:
 00690650  55                        PUSH EBP
 00690651  8B EC                     MOV EBP,ESP
 00690653  81 EC 94 00 00 00         SUB ESP,0x94

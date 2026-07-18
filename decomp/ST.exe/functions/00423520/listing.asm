@@ -1,4 +1,4 @@
-FUN_00423520:
+STGroupC::GetTOBJQty:
 00423520  55                        PUSH EBP
 00423521  8B EC                     MOV EBP,ESP
 00423523  83 EC 54                  SUB ESP,0x54

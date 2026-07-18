@@ -1,4 +1,4 @@
-FUN_0067c180:
+AiPlrClassTy::Offensive:
 0067C180  55                        PUSH EBP
 0067C181  8B EC                     MOV EBP,ESP
 0067C183  83 EC 7C                  SUB ESP,0x7c

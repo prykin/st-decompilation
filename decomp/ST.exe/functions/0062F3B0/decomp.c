@@ -1,11 +1,16 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_Rubb.cpp
+   STRubbishC::LoadImagSpr */
 
-undefined4 FUN_0062f3b0(void *param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+undefined4 __thiscall
+STRubbishC::LoadImagSpr
+          (STRubbishC *this,void *param_1,int *param_2,undefined4 param_3,undefined4 param_4)
 
 {
   code *pcVar1;
-  void *this;
+  STT3DSprC *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
@@ -14,7 +19,7 @@ undefined4 FUN_0062f3b0(void *param_1,int *param_2,undefined4 param_3,undefined4
   undefined4 ***local_5c;
   undefined4 local_58 [16];
   undefined4 local_18;
-  void *local_14;
+  STT3DSprC *local_14;
   int local_10;
   int local_c;
   undefined **local_8;
@@ -58,18 +63,18 @@ LAB_0062f450:
   local_5c = DAT_00858df8;
   DAT_00858df8 = &local_5c;
   iVar2 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
-  this = local_14;
+  this_00 = local_14;
   if (iVar2 == 0) {
-    iVar2 = thunk_FUN_004ad1f0(DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       FUN_006a5e40(-1,DAT_007ed77c,0x7d1798,0x17b);
       return 0xffff;
     }
-    iVar2 = thunk_FUN_004ab880(0xe,DAT_00806774,local_8[*param_2],0x1d);
+    iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,local_8[*param_2],0x1d);
     if (iVar2 == 0) {
-      thunk_FUN_004abe40(this,'\x0e',param_2[6]);
-      thunk_FUN_004ad380(this,local_10 / 2,local_c / 2 - 0xe);
-      thunk_FUN_004ad3c0(this,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
+      thunk_FUN_004abe40(this_00,'\x0e',param_2[6]);
+      thunk_FUN_004ad380(this_00,local_10 / 2,local_c / 2 - 0xe);
+      thunk_FUN_004ad3c0(this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[5] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       DAT_00858df8 = (undefined4 ****)local_5c;

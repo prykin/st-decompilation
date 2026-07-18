@@ -1,4 +1,4 @@
-FUN_00679470:
+AiPlrClassTy::CloseAllTact:
 00679470  55                        PUSH EBP
 00679471  8B EC                     MOV EBP,ESP
 00679473  83 EC 7C                  SUB ESP,0x7c

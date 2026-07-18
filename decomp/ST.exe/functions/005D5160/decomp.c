@@ -1,5 +1,9 @@
 
-void __fastcall FUN_005d5160(int *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settsobj.cpp
+   SettMapSTy::PrepPlList */
+
+void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
 
 {
   char cVar1;
@@ -17,8 +21,8 @@ void __fastcall FUN_005d5160(int *param_1)
   byte *pbVar12;
   void *unaff_EDI;
   char *pcVar13;
-  int *piVar14;
-  bool bVar15;
+  SettMapSTy *this_00;
+  bool bVar14;
   undefined4 local_b8;
   undefined4 local_b4 [16];
   undefined1 local_74;
@@ -39,14 +43,14 @@ void __fastcall FUN_005d5160(int *param_1)
   byte *local_14;
   int local_10;
   char *local_c;
-  int *local_8;
+  SettMapSTy *local_8;
   
-  *(undefined1 *)(param_1 + 0x847) = DAT_008087c4._2_1_;
+  this[0x211c] = DAT_008087c4._2_1_;
   local_b8 = DAT_00858df8;
   DAT_00858df8 = &local_b8;
-  local_8 = param_1;
+  local_8 = this;
   iVar4 = __setjmp3(local_b4,0,unaff_EDI,unaff_ESI);
-  piVar14 = local_8;
+  this_00 = local_8;
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)local_b8;
     iVar7 = FUN_006ad4d0(s_E____titans_Start_settsobj_cpp_007cd544,0x86,0,iVar4,&DAT_007a4ccc);
@@ -58,19 +62,19 @@ void __fastcall FUN_005d5160(int *param_1)
     (*pcVar3)();
     return;
   }
-  if (*(char *)((int)local_8 + 0x1e26) == '\x02') {
-    local_10 = *(int *)((int)local_8 + 7999);
+  if (local_8[0x1e26] == (SettMapSTy)0x2) {
+    local_10 = *(int *)(local_8 + 7999);
   }
   else {
-    local_10 = *(int *)((int)local_8 + 0x1f43);
+    local_10 = *(int *)(local_8 + 0x1f43);
   }
-  iVar4 = local_8[0x7e1];
+  iVar4 = *(int *)(local_8 + 0x1f84);
   if (iVar4 != 0) {
     uVar10 = 0;
     if (0 < *(int *)(iVar4 + 0xc)) {
-      bVar15 = *(int *)(iVar4 + 0xc) != 0;
+      bVar14 = *(int *)(iVar4 + 0xc) != 0;
       do {
-        if (bVar15) {
+        if (bVar14) {
           iVar4 = *(int *)(iVar4 + 8) * uVar10 + *(int *)(iVar4 + 0x1c);
         }
         else {
@@ -79,15 +83,15 @@ void __fastcall FUN_005d5160(int *param_1)
         if ((iVar4 != 0) && (*(byte **)(iVar4 + 0x50) != (byte *)0x0)) {
           FUN_006ae110(*(byte **)(iVar4 + 0x50));
         }
-        iVar4 = piVar14[0x7e1];
+        iVar4 = *(int *)(this_00 + 0x1f84);
         uVar10 = uVar10 + 1;
-        bVar15 = uVar10 < *(uint *)(iVar4 + 0xc);
+        bVar14 = uVar10 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar10 < (int)*(uint *)(iVar4 + 0xc));
     }
-    FUN_006ae110((byte *)piVar14[0x7e1]);
+    FUN_006ae110(*(byte **)(this_00 + 0x1f84));
   }
   puVar5 = FUN_006ae290((uint *)0x0,8,0x60,8);
-  piVar14[0x7e1] = (int)puVar5;
+  *(uint **)(this_00 + 0x1f84) = puVar5;
   local_c = &DAT_008087e8;
   do {
     pcVar9 = local_c;
@@ -102,7 +106,7 @@ void __fastcall FUN_005d5160(int *param_1)
         cStack_71 = *local_c;
       }
       local_72 = cVar1;
-      if (*(char *)((int)piVar14 + 0x1e26) == '\x02') {
+      if (this_00[0x1e26] == (SettMapSTy)0x2) {
         local_24 = thunk_FUN_0067e0e0(local_10,CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,
                                       0xffffffff);
       }
@@ -140,7 +144,7 @@ void __fastcall FUN_005d5160(int *param_1)
       else {
         uStack_70 = 4;
         uStack_6f = 0;
-        if (*(char *)((int)local_8 + 0x1e26) == '\x02') {
+        if (local_8[0x1e26] == (SettMapSTy)0x2) {
           uVar8 = 0;
           uVar10 = local_24[3];
           if (0 < (int)uVar10) {
@@ -156,15 +160,15 @@ void __fastcall FUN_005d5160(int *param_1)
               pbVar12 = local_14;
               do {
                 bVar2 = *pbVar6;
-                bVar15 = bVar2 < *pbVar12;
+                bVar14 = bVar2 < *pbVar12;
                 if (bVar2 != *pbVar12) {
 LAB_005d534b:
-                  iVar4 = (1 - (uint)bVar15) - (uint)(bVar15 != 0);
+                  iVar4 = (1 - (uint)bVar14) - (uint)(bVar14 != 0);
                   goto LAB_005d5350;
                 }
                 if (bVar2 == 0) break;
                 bVar2 = pbVar6[1];
-                bVar15 = bVar2 < pbVar12[1];
+                bVar14 = bVar2 < pbVar12[1];
                 if (bVar2 != pbVar12[1]) goto LAB_005d534b;
                 pbVar6 = pbVar6 + 2;
                 pbVar12 = pbVar12 + 2;
@@ -188,18 +192,18 @@ LAB_005d5350:
       local_18 = *(undefined4 *)(pcVar9 + 0xb);
       local_29 = 0;
       local_25 = 1;
-      FUN_006ae1c0((uint *)local_8[0x7e1],(undefined4 *)&local_74);
-      piVar14 = local_8;
+      FUN_006ae1c0(*(uint **)(local_8 + 0x1f84),(undefined4 *)&local_74);
+      this_00 = local_8;
     }
     local_c = pcVar9 + 0x51;
   } while ((int)local_c < 0x808a70);
-  iVar4 = piVar14[0x7e1];
+  iVar4 = *(int *)(this_00 + 0x1f84);
   uVar8 = 0;
   uVar10 = *(uint *)(iVar4 + 0xc);
   if (0 < (int)uVar10) {
-    bVar15 = uVar10 != 0;
+    bVar14 = uVar10 != 0;
     do {
-      if (bVar15) {
+      if (bVar14) {
         iVar7 = *(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c);
       }
       else {
@@ -214,7 +218,7 @@ LAB_005d5350:
         goto code_r0x005d540b;
       }
       uVar8 = uVar8 + 1;
-      bVar15 = uVar8 < uVar10;
+      bVar14 = uVar8 < uVar10;
     } while ((int)uVar8 < (int)uVar10);
   }
   goto LAB_005d5426;
@@ -236,14 +240,14 @@ code_r0x005d540b:
     pcVar9 = pcVar9 + 4;
     pcVar11 = pcVar11 + 4;
   }
-  for (uVar10 = uVar10 & 3; piVar14 = local_8, uVar10 != 0; uVar10 = uVar10 - 1) {
+  for (uVar10 = uVar10 & 3; this_00 = local_8, uVar10 != 0; uVar10 = uVar10 - 1) {
     *pcVar11 = *pcVar9;
     pcVar9 = pcVar9 + 1;
     pcVar11 = pcVar11 + 1;
   }
 LAB_005d5426:
-  thunk_FUN_005c87c0();
-  (**(code **)(*piVar14 + 0x20))();
+  SettMapTy::PaintSC((SettMapTy *)this_00);
+  (**(code **)(*(int *)this_00 + 0x20))();
   DAT_00858df8 = (undefined4 *)local_b8;
   return;
 }

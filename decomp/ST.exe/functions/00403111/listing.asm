@@ -1,2 +1,2 @@
-thunk_FUN_00510e30:
+HelpPanelTy::InitHelpPanel:
 00403111  E9 1A DD 10 00            JMP 0x00510e30

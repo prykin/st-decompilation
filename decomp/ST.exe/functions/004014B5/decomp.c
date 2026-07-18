@@ -172,12 +172,13 @@ thunk_FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *
                        ((uint)*(byte *)((int)this + 0x8e) +
                        ((int)sVar3 * (int)DAT_007fb240 + (int)DAT_007fb246 * (int)sVar13 +
                        (int)sVar2) * 2) * 4) == 0)) &&
-             (iVar6 = thunk_FUN_00495ec0(sVar2,sVar3,sVar13,(uint)*(byte *)((int)this + 0x8e),
-                                         (int)this), iVar6 == 0)) {
+             (iVar6 = DumpClassC::WritePtr
+                                (sVar2,sVar3,sVar13,(uint)*(byte *)((int)this + 0x8e),(int)this),
+             iVar6 == 0)) {
             bVar1 = *(byte *)((int)this + 0x2ad);
             *(char *)((int)this + 0x314) = *(char *)((int)this + 0x314) + '\x01';
             if (bVar1 < 3) {
-              if (DAT_00802a88 != (void *)0x0) {
+              if (DAT_00802a88 != (VisibleClassTy *)0x0) {
                 thunk_FUN_00559110(DAT_00802a88,(int)*(short *)((int)this + 0x47),
                                    (undefined *)(int)*(short *)((int)this + 0x49),
                                    (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
@@ -191,7 +192,7 @@ thunk_FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *
                                    *(int *)((int)this + 0x18),0xffffffff);
               }
             }
-            else if ((bVar1 == 3) && (DAT_00802a88 != (void *)0x0)) {
+            else if ((bVar1 == 3) && (DAT_00802a88 != (VisibleClassTy *)0x0)) {
               thunk_FUN_00559110(DAT_00802a88,(int)*(short *)((int)this + 0x47),
                                  (undefined *)(int)*(short *)((int)this + 0x49),
                                  (int)*(short *)((int)this + 0x4b),*(uint *)((int)this + 0x24),
@@ -208,11 +209,11 @@ thunk_FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *
                                  *(undefined **)
                                   (&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
                                  *(int *)((int)this + 0x18),0xffffffff);
-              thunk_FUN_00559b30(DAT_00802a88,(int)*(short *)((int)this + 0x47),
-                                 (int)*(short *)((int)this + 0x49),(char)puVar12,
-                                 *(uint *)((int)this + 0x24),
-                                 *(int *)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
-                                 *(undefined4 *)((int)this + 0x18),0xffffffff);
+              VisibleClassTy::SetZoneAst
+                        (DAT_00802a88,(int)*(short *)((int)this + 0x47),
+                         (int)*(short *)((int)this + 0x49),(char)puVar12,*(uint *)((int)this + 0x24)
+                         ,*(int *)(&DAT_007d02b4 + (uint)*(byte *)((int)this + 0x2ad) * 4),
+                         *(undefined4 *)((int)this + 0x18),0xffffffff);
             }
             *(short *)((int)this + 0x4b) = sVar13;
             goto LAB_00625067;

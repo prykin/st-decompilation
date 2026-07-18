@@ -1,2 +1,2 @@
-thunk_FUN_005a1920:
+FSGSTy::SetBanner:
 00402108  E9 13 F8 19 00            JMP 0x005a1920

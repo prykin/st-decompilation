@@ -1,9 +1,14 @@
 
-undefined4 FUN_005f6af0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_coll3.cpp
+   STColl3C::LoadImagSpr */
+
+undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
 
 {
-  void *this;
+  STT3DSprC *this_00;
   code *pcVar1;
+  STColl3C *this_01;
   int iVar2;
   undefined4 uVar3;
   int iVar4;
@@ -12,53 +17,57 @@ undefined4 FUN_005f6af0(int param_1)
   undefined4 **local_50;
   undefined4 local_4c [16];
   undefined4 local_c;
-  int *local_8;
+  STColl3C *local_8;
   
   local_c = 0;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_8 = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  this_01 = local_8;
   if (iVar2 == 0) {
-    this = (void *)((int)local_8 + 0x1d5);
+    this_00 = (STT3DSprC *)(local_8 + 0x1d5);
     if (param_1 == 0) {
-      thunk_FUN_004ab880(8,DAT_00806774,
-                         (byte *)(s_Expb12_007ce718 + *(int *)((int)local_8 + 0x2cd) * 0x39),0x1d);
-      thunk_FUN_004ab880(9,DAT_00806764,
-                         (byte *)(s_expl_bbt0_007ce723 + *(int *)((int)local_8 + 0x2cd) * 0x39),0x1d
-                        );
-      thunk_FUN_004ab880(10,DAT_00806774,
-                         (byte *)(s_expmask3_007ce72e + *(int *)((int)local_8 + 0x2cd) * 0x39),0x1d)
-      ;
-      thunk_FUN_004ac700(this,'\n');
-      thunk_FUN_004ac1a0(10,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      thunk_FUN_004acf20(this,DAT_008032b8,0x10);
-      thunk_FUN_004ac1a0(8,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      thunk_FUN_004acfe0(this,'\n');
-      uVar3 = thunk_FUN_004ad650((int)this);
-      *(undefined4 *)((int)local_8 + 0x2b7) = uVar3;
+      STT3DSprC::LoadSequence
+                (this_00,8,DAT_00806774,
+                 (byte *)(s_Expb12_007ce718 + *(int *)(local_8 + 0x2cd) * 0x39),0x1d);
+      STT3DSprC::LoadSequence
+                (this_00,9,DAT_00806764,
+                 (byte *)(s_expl_bbt0_007ce723 + *(int *)(this_01 + 0x2cd) * 0x39),0x1d);
+      STT3DSprC::LoadSequence
+                (this_00,10,DAT_00806774,
+                 (byte *)(s_expmask3_007ce72e + *(int *)(this_01 + 0x2cd) * 0x39),0x1d);
+      thunk_FUN_004ac700(this_00,'\n');
+      STT3DSprC::StartShow(this_00,10,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
+      STT3DSprC::StartShow(this_00,8,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      thunk_FUN_004acfe0(this_00,'\n');
+      uVar3 = thunk_FUN_004ad650((int)this_00);
+      *(undefined4 *)(this_01 + 0x2b7) = uVar3;
       DAT_00858df8 = (undefined4 ***)local_50;
       return local_c;
     }
-    iVar2 = thunk_FUN_004ab880(0xe,DAT_00806774,(byte *)s_coll3_007ce6d8,0x1d);
+    iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,(byte *)s_coll3_007ce6d8,0x1d);
     if (iVar2 == 0) {
-      thunk_FUN_004ad380(this,DAT_007ce78c,DAT_007ce790);
-      thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      thunk_FUN_00417e70(local_8,0x18);
-      iVar2 = thunk_FUN_004ab880(0xc,DAT_00806774,
-                                 (&PTR_s_col3l0_007ce6e0)[*(int *)((int)local_8 + 0x235)],0x1d);
+      thunk_FUN_004ad380(this_00,DAT_007ce78c,DAT_007ce790);
+      STT3DSprC::StartShow(this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      thunk_FUN_00417e70(this_01,0x18);
+      iVar2 = STT3DSprC::LoadSequence
+                        (this_00,0xc,DAT_00806774,
+                         (&PTR_s_col3l0_007ce6e0)[*(int *)(this_01 + 0x235)],0x1d);
       if (iVar2 != 0) {
         return local_c;
       }
-      thunk_FUN_004ac610(this,'\f');
-      thunk_FUN_004ac1a0(0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      thunk_FUN_005fa0b0((int)local_8);
-      uVar3 = thunk_FUN_004ad650((int)this);
-      *(undefined4 *)((int)local_8 + 0x2b7) = uVar3;
-      thunk_FUN_004ad430((int)this);
-      if (*(char *)((int)local_8 + 699) != '\0') {
-        thunk_FUN_0041c5a0(local_8);
+      thunk_FUN_004ac610(this_00,'\f');
+      STT3DSprC::StartShow(this_00,0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      thunk_FUN_005fa0b0((int)this_01);
+      uVar3 = thunk_FUN_004ad650((int)this_00);
+      *(undefined4 *)(this_01 + 0x2b7) = uVar3;
+      thunk_FUN_004ad430((int)this_00);
+      if (this_01[699] != (STColl3C)0x0) {
+        thunk_FUN_0041c5a0((int *)this_01);
       }
-      *(undefined1 *)((int)local_8 + 699) = 0;
+      this_01[699] = (STColl3C)0x0;
       DAT_00858df8 = (undefined4 ***)local_50;
       return local_c;
     }

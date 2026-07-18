@@ -1,4 +1,4 @@
-FUN_00710d80:
+ccFntTy::GetSurfAsSpr:
 00710D80  55                        PUSH EBP
 00710D81  8B EC                     MOV EBP,ESP
 00710D83  83 EC 54                  SUB ESP,0x54

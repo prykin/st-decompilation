@@ -1,4 +1,4 @@
-FUN_0049ea00:
+STGroupBoatC::SetMine:
 0049EA00  55                        PUSH EBP
 0049EA01  8B EC                     MOV EBP,ESP
 0049EA03  83 EC 68                  SUB ESP,0x68

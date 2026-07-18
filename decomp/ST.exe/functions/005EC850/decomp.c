@@ -31,7 +31,7 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   local_24[4] = 0;
   local_24[5] = 0x10;
   local_24[6] = 0;
-  thunk_FUN_004adba0(local_24,param_1 + 1);
+  STT3DSprC::RestoreSpr((STT3DSprC *)((int)this + 0x1d5),local_24,param_1 + 1);
   uVar3 = thunk_FUN_004ad650((int)this + 0x1d5);
   *(undefined4 *)((int)this + 0x2d6) = uVar3;
   FUN_006ab060(local_24);
@@ -47,7 +47,7 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   }
   piVar6 = (int *)((int)(param_1 + 1) + iVar1);
   iVar1 = *piVar6;
-  thunk_FUN_00422210(piVar6 + 1);
+  STAllPlayersC::RestoreGObjData(this,piVar6 + 1);
   return iVar1 + local_24[7];
 }
 

@@ -1,4 +1,4 @@
-FUN_00522e80:
+IntercomPanelTy::GetMessage:
 00522E80  55                        PUSH EBP
 00522E81  8B EC                     MOV EBP,ESP
 00522E83  81 EC D8 08 00 00         SUB ESP,0x8d8

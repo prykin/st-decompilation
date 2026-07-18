@@ -1,7 +1,7 @@
 
-undefined4
-thunk_FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_5,uint param_6,
-                  int param_7,int param_8,undefined4 param_9,undefined4 param_10)
+undefined4 __thiscall
+UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int param_4,uint param_5,
+                   uint param_6,int param_7,int param_8,undefined4 param_9,undefined4 param_10)
 
 {
   code *pcVar1;
@@ -30,12 +30,13 @@ thunk_FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_
   undefined4 uStack_18;
   int iStack_14;
   uint uStack_10;
-  int iStack_c;
+  UPanelTy *pUStack_c;
   undefined4 uStack_8;
   
   uStack_8 = 0;
   uStack_b0 = DAT_00858df8;
   DAT_00858df8 = &uStack_b0;
+  pUStack_c = this;
   iVar3 = __setjmp3(auStack_ac,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     puVar7 = auStack_6c;
@@ -50,21 +51,21 @@ thunk_FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_
     }
     bVar2 = 0;
     if (param_1 != 0) {
-      iStack_14 = *(int *)(iStack_c + 0x5c);
+      iStack_14 = *(int *)(pUStack_c + 0x5c);
       iVar3 = 0;
       uStack_10 = 1;
       puVar6 = auStack_510 + 1;
-      uVar8 = *(int *)(iStack_c + 0x3c) + param_3;
+      uVar8 = *(int *)(pUStack_c + 0x3c) + param_3;
       do {
         puVar6[-1] = uStack_10;
         iVar5 = iStack_14;
         *puVar6 = (uint)(bVar2 == param_2);
         puVar6[2] = uVar8;
         if (iVar5 == 0) {
-          iVar5 = -*(int *)(iStack_c + 0x48);
+          iVar5 = -*(int *)(pUStack_c + 0x48);
         }
         else {
-          iVar5 = *(int *)(iStack_c + 0x44);
+          iVar5 = *(int *)(pUStack_c + 0x44);
         }
         puVar6[3] = iVar5 + iVar3 + param_4;
         puVar6[4] = param_5;
@@ -77,7 +78,7 @@ thunk_FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_
       } while (bVar2 < param_1);
     }
     puStack_24 = auStack_510;
-    uStack_5c = *(undefined4 *)(iStack_c + 8);
+    uStack_5c = *(undefined4 *)(pUStack_c + 8);
     iStack_20 = param_2 + 1;
     uStack_34 = param_10;
     uStack_58 = 2;
@@ -88,7 +89,7 @@ thunk_FUN_0053e1c0(byte param_1,byte param_2,int param_3,int param_4,uint param_
     uStack_1c = 1;
     uStack_18 = 1;
     uStack_3c = uStack_5c;
-    (**(code **)(**(int **)(iStack_c + 0xc) + 8))(5,&uStack_8,0,auStack_6c,0);
+    (**(code **)(**(int **)(pUStack_c + 0xc) + 8))(5,&uStack_8,0,auStack_6c,0);
     DAT_00858df8 = (undefined4 *)uStack_b0;
     return uStack_8;
   }

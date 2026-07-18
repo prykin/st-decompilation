@@ -1,4 +1,4 @@
-FUN_0042d980:
+STAllPlayersC::GetActiveCenter:
 0042D980  55                        PUSH EBP
 0042D981  8B EC                     MOV EBP,ESP
 0042D983  83 EC 20                  SUB ESP,0x20

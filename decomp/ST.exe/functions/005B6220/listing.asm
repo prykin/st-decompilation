@@ -1,4 +1,4 @@
-FUN_005b6220:
+MMObjTy::DoneMMObj:
 005B6220  55                        PUSH EBP
 005B6221  8B EC                     MOV EBP,ESP
 005B6223  83 EC 48                  SUB ESP,0x48

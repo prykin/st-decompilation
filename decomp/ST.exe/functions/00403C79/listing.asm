@@ -1,2 +1,2 @@
-thunk_FUN_004354e0:
+STAllPlayersC::ReplaceObject:
 00403C79  E9 62 18 03 00            JMP 0x004354e0

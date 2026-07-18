@@ -32,7 +32,7 @@ LAB_0051490d:
             if (*(char *)((int)piVar3 + 0x12) != '\0') {
               return;
             }
-            thunk_FUN_00513030(piVar3,uVar4);
+            HelpPanelTy::ChangeTree(this,piVar3,uVar4);
             return;
           }
           uVar4 = uVar4 + 1;

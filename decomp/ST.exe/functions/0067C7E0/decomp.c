@@ -8,6 +8,7 @@ undefined4 FUN_0067c7e0(int param_1)
   byte *pbVar4;
   LPSTR pCVar5;
   int *piVar6;
+  AiFltClassTy *this;
   int iVar7;
   undefined4 uVar8;
   uint uVar9;
@@ -28,10 +29,10 @@ undefined4 FUN_0067c7e0(int param_1)
   byte *local_60;
   undefined4 local_38 [5];
   undefined4 local_24;
-  int local_20;
+  AiPlrClassTy *local_20;
   byte *local_18;
   uint local_14;
-  void *local_10;
+  AiPlrClassTy *local_10;
   int local_c;
   byte *local_8;
   
@@ -50,22 +51,22 @@ undefined4 FUN_0067c7e0(int param_1)
     FUN_006a5e40(iVar3,0,0x7d2e4c,0x656);
     return 0xffff;
   }
-  *(undefined4 *)((int)local_10 + 0x6fe) = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
+  *(undefined4 *)(local_10 + 0x6fe) = *(undefined4 *)(DAT_00802a38 + 0xe4);
   uVar9 = *(uint *)(param_1 + 0x10);
   if (uVar9 < 0x5d98) {
     if (uVar9 == 0x5d97) {
-      thunk_FUN_00679470();
+      AiPlrClassTy::CloseAllTact(local_10);
     }
     else if (uVar9 < 0x110) {
       if (uVar9 == 0x10f) {
         local_14 = 0;
-        pbVar4 = (byte *)thunk_FUN_00678be0(&local_14);
+        pbVar4 = (byte *)AiPlrClassTy::PrepareToSave(local_10,&local_14);
         bVar16 = 0xc;
         uVar9 = local_14;
         local_18 = pbVar4;
-        pCVar5 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)((int)local_10 + 0x5d7));
-        thunk_FUN_0054d550(DAT_00802a38,pCVar5,pbVar4,uVar9,bVar16);
-        pCVar5 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)((int)local_10 + 0x5d7));
+        pCVar5 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)(local_10 + 0x5d7));
+        STPlaySystemC::SaveObjData(DAT_00802a38,pCVar5,pbVar4,uVar9,bVar16);
+        pCVar5 = FUN_006f2c00(PTR_s_AIPLAYER_0079d6d0,2,*(undefined4 *)(local_10 + 0x5d7));
         uVar9 = 0xffffffff;
         do {
           pcVar11 = pCVar5;
@@ -77,7 +78,7 @@ undefined4 FUN_0067c7e0(int param_1)
         } while (cVar1 != '\0');
         uVar9 = ~uVar9;
         pcVar11 = pcVar11 + -uVar9;
-        pcVar13 = &DAT_008087c8 + *(int *)((int)local_10 + 0x5d7) * 0x51;
+        pcVar13 = &DAT_008087c8 + *(int *)(local_10 + 0x5d7) * 0x51;
         for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
           *(undefined4 *)pcVar13 = *(undefined4 *)pcVar11;
           pcVar11 = pcVar11 + 4;
@@ -93,7 +94,7 @@ undefined4 FUN_0067c7e0(int param_1)
         }
       }
       else if (uVar9 == 0) {
-        if ((&DAT_00809950)[*(int *)((int)local_10 + 0x5d7)] == '\0') {
+        if ((&DAT_00809950)[*(int *)(local_10 + 0x5d7)] == '\0') {
           if (DAT_008117bc != (undefined4 *)0x0) {
             puVar12 = local_38;
             for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -101,36 +102,36 @@ undefined4 FUN_0067c7e0(int param_1)
               puVar12 = puVar12 + 1;
             }
             local_38[4] = 0x5deb;
-            local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)((int)local_10 + 0x5d7));
-            if (local_10 == (void *)0x0) {
-              local_20 = 0;
+            local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)(local_10 + 0x5d7));
+            if (local_10 == (AiPlrClassTy *)0x0) {
+              local_20 = (AiPlrClassTy *)0x0;
             }
             else {
-              local_20 = (int)local_10 + 0x1c;
+              local_20 = local_10 + 0x1c;
             }
             (**(code **)*DAT_008117bc)(local_38);
           }
-          thunk_FUN_00652810((void *)((int)local_10 + 0x1c),param_1);
-          if (*(int *)((int)local_10 + 0x658) == 0) {
-            *(undefined4 *)((int)local_10 + 0x658) = 1;
+          thunk_FUN_00652810(local_10 + 0x1c,param_1);
+          if (*(int *)(local_10 + 0x658) == 0) {
+            *(undefined4 *)(local_10 + 0x658) = 1;
             thunk_FUN_0067a2d0(local_10);
           }
           else {
             thunk_FUN_0067a390(local_10);
-            thunk_FUN_0067b520(local_10);
-            thunk_FUN_0067c180(local_10);
+            AiPlrClassTy::ExecTech(local_10,unaff_EDI);
+            AiPlrClassTy::Offensive(local_10,unaff_EDI);
           }
         }
         else {
-          thunk_FUN_00679470();
+          AiPlrClassTy::CloseAllTact(local_10);
           puVar12 = local_38;
           for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
             *puVar12 = 0;
             puVar12 = puVar12 + 1;
           }
-          local_38[2] = *(undefined4 *)(*(int *)((int)local_10 + 0xc) + 0x14);
+          local_38[2] = *(undefined4 *)(*(int *)(local_10 + 0xc) + 0x14);
           local_38[3] = 0;
-          local_24 = *(undefined4 *)((int)local_10 + 8);
+          local_24 = *(undefined4 *)(local_10 + 8);
           local_38[4] = 10;
           FUN_006e5810(local_38);
         }
@@ -140,9 +141,9 @@ undefined4 FUN_0067c7e0(int param_1)
         if (puVar12 == (undefined4 *)0x0) {
           FUN_006a5e40(-6,DAT_007ed77c,0x7d2e4c,0x586);
         }
-        thunk_FUN_00678980(puVar12);
+        AiPlrClassTy::InitData(local_10,puVar12);
         if (DAT_007fa174 != 0) {
-          thunk_FUN_004357b0(*(char *)((int)local_10 + 0x5d7),local_10);
+          thunk_FUN_004357b0((char)local_10[0x5d7],local_10);
         }
         if (puVar12[3] == 0) {
           thunk_FUN_00678fc0((int)local_10);
@@ -157,24 +158,24 @@ undefined4 FUN_0067c7e0(int param_1)
             puVar12 = puVar12 + 1;
           }
           local_38[4] = 0x5dec;
-          local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)((int)local_10 + 0x5d7));
-          if (local_10 == (void *)0x0) {
-            local_20 = 0;
+          local_24 = CONCAT22(local_24._2_2_,*(undefined2 *)(local_10 + 0x5d7));
+          if (local_10 == (AiPlrClassTy *)0x0) {
+            local_20 = (AiPlrClassTy *)0x0;
           }
           else {
-            local_20 = (int)local_10 + 0x1c;
+            local_20 = local_10 + 0x1c;
           }
           (**(code **)*DAT_008117bc)(local_38);
         }
         thunk_FUN_0064a580();
         if (DAT_007fa174 != 0) {
-          thunk_FUN_004357b0(*(char *)((int)local_10 + 0x5d7),0);
+          thunk_FUN_004357b0((char)local_10[0x5d7],0);
         }
         thunk_FUN_00678ba0((int)local_10);
       }
     }
     else if (uVar9 == 0x111) {
-      iVar3 = *(int *)((int)local_10 + 0x695);
+      iVar3 = *(int *)(local_10 + 0x695);
       uVar9 = 0;
       if (0 < *(int *)(iVar3 + 0xc)) {
         bVar15 = *(int *)(iVar3 + 0xc) != 0;
@@ -196,7 +197,7 @@ undefined4 FUN_0067c7e0(int param_1)
               piVar6[1] = 0;
             }
           }
-          iVar3 = *(int *)((int)local_10 + 0x695);
+          iVar3 = *(int *)(local_10 + 0x695);
           uVar9 = uVar9 + 1;
           bVar15 = uVar9 < *(uint *)(iVar3 + 0xc);
         } while ((int)uVar9 < (int)*(uint *)(iVar3 + 0xc));
@@ -207,7 +208,7 @@ undefined4 FUN_0067c7e0(int param_1)
         piVar6 = (int *)0x0;
       }
       else {
-        piVar6 = (int *)thunk_FUN_0042b620(CONCAT31(0x5d,*(undefined1 *)((int)local_10 + 0x5d7)),
+        piVar6 = (int *)thunk_FUN_0042b620(CONCAT31(0x5d,local_10[0x5d7]),
                                            CONCAT22(extraout_var,*(undefined2 *)(param_1 + 0x16)),1)
         ;
       }
@@ -219,8 +220,10 @@ undefined4 FUN_0067c7e0(int param_1)
         else {
           bVar15 = true;
         }
-        if ((bVar15) && (iVar3 = thunk_FUN_00679e70(local_10,(short)piVar6[0x207]), iVar3 != 0)) {
-          thunk_FUN_0065d760(piVar6,0);
+        if ((bVar15) &&
+           (this = (AiFltClassTy *)thunk_FUN_00679e70(local_10,(short)piVar6[0x207]),
+           this != (AiFltClassTy *)0x0)) {
+          AiFltClassTy::_AddObjFlt(this,piVar6,0);
         }
       }
     }
@@ -229,7 +232,7 @@ undefined4 FUN_0067c7e0(int param_1)
     switch(uVar9) {
     case 0x5d98:
       if (*(short *)(param_1 + 0x14) == 0) {
-        thunk_FUN_00675dc0(*(uint *)((int)local_10 + 0x5d7),*(int *)(param_1 + 0x18));
+        thunk_FUN_00675dc0(*(uint *)(local_10 + 0x5d7),*(int *)(param_1 + 0x18));
       }
       else {
         local_8 = (byte *)0x0;
@@ -241,7 +244,7 @@ undefined4 FUN_0067c7e0(int param_1)
             *puVar14 = 0;
             puVar14 = puVar14 + 1;
           }
-          local_6c[1] = *(undefined4 *)((int)local_10 + 0x6fe);
+          local_6c[1] = *(uint *)(local_10 + 0x6fe);
           local_6c[0] = 0x72;
           local_6c[2] = 0;
           local_60 = pbVar4;
@@ -282,12 +285,12 @@ undefined4 FUN_0067c7e0(int param_1)
     case 0x5dea:
     case 0x5deb:
     case 0x5dec:
-      thunk_FUN_00652810((void *)((int)local_10 + 0x1c),param_1);
+      thunk_FUN_00652810(local_10 + 0x1c,param_1);
       break;
     case 0x5dd5:
-      thunk_FUN_00652810((void *)((int)local_10 + 0x1c),param_1);
-      if (*(int *)((int)local_10 + 0x645) + 10U <= *(uint *)((int)local_10 + 0x6fe)) {
-        *(uint *)((int)local_10 + 0x645) = *(uint *)((int)local_10 + 0x6fe);
+      thunk_FUN_00652810(local_10 + 0x1c,param_1);
+      if (*(int *)(local_10 + 0x645) + 10U <= *(uint *)(local_10 + 0x6fe)) {
+        *(uint *)(local_10 + 0x645) = *(uint *)(local_10 + 0x6fe);
         thunk_FUN_006799b0(local_10,CONCAT22(extraout_var_00,*(undefined2 *)(param_1 + 0x18)));
         thunk_FUN_0067a1b0(local_10,param_1);
       }

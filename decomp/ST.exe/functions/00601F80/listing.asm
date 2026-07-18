@@ -1,4 +1,4 @@
-FUN_00601f80:
+STDestC::GetMessage:
 00601F80  55                        PUSH EBP
 00601F81  8B EC                     MOV EBP,ESP
 00601F83  83 EC 50                  SUB ESP,0x50

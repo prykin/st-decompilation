@@ -1,4 +1,4 @@
-FUN_005df7c0:
+MTaskTy::OutGlassATxtProc:
 005DF7C0  55                        PUSH EBP
 005DF7C1  8B EC                     MOV EBP,ESP
 005DF7C3  83 EC 48                  SUB ESP,0x48

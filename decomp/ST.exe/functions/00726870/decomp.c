@@ -11,7 +11,8 @@ void __cdecl FUN_00726870(int *param_1)
       iVar2 = 0;
       if (0 < *piVar1) {
         do {
-          FUN_006f20e0((uint *)(*(int *)((int)piVar1 + 0x11) + iVar2 * 4));
+          cMf32::RecMemFree(*(cMf32 **)((int)piVar1 + 5),
+                            (uint *)(*(int *)((int)piVar1 + 0x11) + iVar2 * 4));
           piVar1 = (int *)*param_1;
           iVar2 = iVar2 + 1;
         } while (iVar2 < *piVar1);

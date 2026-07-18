@@ -39,16 +39,16 @@ int __thiscall thunk_FUN_0062fa80(void *this,int param_1)
          (*(int *)(DAT_007fb248 + 4 +
                   ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 + (int)sVar1) * 8
                   ) == 0)))) &&
-       (iVar7 = thunk_FUN_00495ec0((short)*(undefined4 *)((int)this + 0x1d5),
-                                   (short)*(undefined4 *)((int)this + 0x1d9),
-                                   (short)*(undefined4 *)((int)this + 0x1dd),1,(int)this),
-       iVar7 == 0)) {
+       (iVar7 = DumpClassC::WritePtr
+                          ((short)*(undefined4 *)((int)this + 0x1d5),
+                           (short)*(undefined4 *)((int)this + 0x1d9),
+                           (short)*(undefined4 *)((int)this + 0x1dd),1,(int)this), iVar7 == 0)) {
       piVar8 = (int *)(param_1 + 0x24);
       *(undefined4 *)((int)this + 0x1e1) = *(undefined4 *)(param_1 + 0x20);
       *(undefined1 *)((int)this + 0x1f9) = *(undefined1 *)(param_1 + 0x38);
       param_1 = 5;
       do {
-        if ((*piVar8 != 0) && (iVar7 = thunk_FUN_0062ed90(), -1 < iVar7)) {
+        if ((*piVar8 != 0) && (iVar7 = STRubbishC::RubbishCreatePart(this), -1 < iVar7)) {
           iStack_c = iStack_c + 1;
         }
         piVar8 = piVar8 + 1;

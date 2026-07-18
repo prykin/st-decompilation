@@ -1,5 +1,5 @@
 
-void thunk_FUN_005d4990(int param_1,uint *param_2)
+void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -12,15 +12,16 @@ void thunk_FUN_005d4990(int param_1,uint *param_2)
   undefined4 *puVar6;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  SettMapMTy *pSStack_8;
   
   if ((param_1 != 0) && (param_2 != (uint *)0x0)) {
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
+    pSStack_8 = this;
     iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
-        uVar5 = *(uint *)(*(int *)(iStack_8 + 0x1a5b) + 0x6a6);
+        uVar5 = *(uint *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);
         puVar6 = *(undefined4 **)(param_1 + 8);
         for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
           *puVar6 = 0;
@@ -37,7 +38,7 @@ void thunk_FUN_005d4990(int param_1,uint *param_2)
         if (uVar5 != 0) {
           do {
             param_2 = param_2 + 1;
-            if (*param_2 < *(uint *)(*(int *)(iStack_8 + 0x1a5b) + 0x6a6)) {
+            if (*param_2 < *(uint *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6)) {
               *(undefined1 *)(*param_2 + iVar2) = 1;
             }
             uVar4 = uVar4 + 1;
@@ -46,7 +47,7 @@ void thunk_FUN_005d4990(int param_1,uint *param_2)
         DAT_00858df8 = (undefined4 *)uStack_4c;
         return;
       }
-      uVar5 = *(uint *)(*(int *)(iStack_8 + 0x1a5b) + 0x6a6);
+      uVar5 = *(uint *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);
       puVar6 = *(undefined4 **)(param_1 + 8);
       for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar6 = 0x1010101;
@@ -56,7 +57,7 @@ void thunk_FUN_005d4990(int param_1,uint *param_2)
         *(undefined1 *)puVar6 = 1;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      *(undefined4 *)(param_1 + 4) = *(undefined4 *)(*(int *)(iStack_8 + 0x1a5b) + 0x6a6);
+      *(undefined4 *)(param_1 + 4) = *(undefined4 *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);
       DAT_00858df8 = (undefined4 *)uStack_4c;
       return;
     }

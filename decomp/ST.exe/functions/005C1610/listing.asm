@@ -1,4 +1,4 @@
-FUN_005c1610:
+MReportTy::PaintTab:
 005C1610  55                        PUSH EBP
 005C1611  8B EC                     MOV EBP,ESP
 005C1613  81 EC 88 00 00 00         SUB ESP,0x88

@@ -59,17 +59,17 @@ int * __cdecl FUN_00726630(int param_1,char *param_2,byte param_3,int param_4)
     iVar3 = FUN_0070a7b0(param_1,(byte)*local_c,(char *)((int)local_c + 1),1);
     *(int *)((int)local_8 + 0xd) = iVar3;
     DAT_00858df8 = (undefined4 *)local_5c;
-    FUN_006f20e0((uint *)&local_c);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
     return local_8;
   }
   DAT_00858df8 = (undefined4 *)local_5c;
-  FUN_006f20e0((uint *)&local_c);
+  cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
   if (local_8 != (int *)0x0) {
     if (*(int *)((int)local_8 + 0x11) != 0) {
       iVar7 = 0;
       if (0 < *local_8) {
         do {
-          FUN_006f20e0((uint *)(*(int *)((int)local_8 + 0x11) + iVar7 * 4));
+          cMf32::RecMemFree((cMf32 *)param_1,(uint *)(*(int *)((int)local_8 + 0x11) + iVar7 * 4));
           iVar7 = iVar7 + 1;
         } while (iVar7 < *local_8);
       }

@@ -1,5 +1,9 @@
 
-int FUN_00415160(void *param_1,int param_2,int param_3,int param_4,int param_5)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\Grpway3d.cpp
+   STGroupBoatC::Way3DGrpDistribTgt */
+
+int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   short sVar1;

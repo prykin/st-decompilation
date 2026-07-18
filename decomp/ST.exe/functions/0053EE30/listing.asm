@@ -1,4 +1,4 @@
-FUN_0053ee30:
+ProdPanelTy::PreInitProdPanel:
 0053EE30  55                        PUSH EBP
 0053EE31  8B EC                     MOV EBP,ESP
 0053EE33  83 EC 48                  SUB ESP,0x48

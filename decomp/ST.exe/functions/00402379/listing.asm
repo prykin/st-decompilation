@@ -1,2 +1,2 @@
-thunk_FUN_0067c180:
+AiPlrClassTy::Offensive:
 00402379  E9 02 9E 27 00            JMP 0x0067c180

@@ -1,5 +1,11 @@
 
-int __thiscall FUN_0054d550(void *this,char *param_1,byte *param_2,uint param_3,byte param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\tplaysys.cpp
+   STPlaySystemC::SaveObjData */
+
+int __thiscall
+STPlaySystemC::SaveObjData
+          (STPlaySystemC *this,char *param_1,byte *param_2,uint param_3,byte param_4)
 
 {
   code *pcVar1;
@@ -8,10 +14,10 @@ int __thiscall FUN_0054d550(void *this,char *param_1,byte *param_2,uint param_3,
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  void *local_8;
+  STPlaySystemC *local_8;
   
   uVar4 = DAT_00858df8;
-  if (*(int *)((int)this + 0x24) == 0) {
+  if (*(int *)(this + 0x24) == 0) {
     return -4;
   }
   DAT_00858df8 = &stack0xffffffb4;

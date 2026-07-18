@@ -1,4 +1,4 @@
-FUN_006452a0:
+STTorpC::ClearDangerous:
 006452A0  55                        PUSH EBP
 006452A1  8B EC                     MOV EBP,ESP
 006452A3  83 EC 50                  SUB ESP,0x50

@@ -1,5 +1,5 @@
 
-void thunk_FUN_0056d740(int param_1)
+void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
 
 {
   int *piVar1;
@@ -20,7 +20,7 @@ void thunk_FUN_0056d740(int param_1)
   undefined4 uStack_68;
   undefined4 uStack_58;
   undefined4 auStack_54 [16];
-  int iStack_14;
+  STAppC *pSStack_14;
   int iStack_10;
   uint uStack_c;
   int iStack_8;
@@ -31,6 +31,7 @@ void thunk_FUN_0056d740(int param_1)
      ((param_1 != 2 || (DAT_00806730 != 0x500)))) {
     uStack_58 = DAT_00858df8;
     DAT_00858df8 = (undefined4 **)&uStack_58;
+    pSStack_14 = this;
     iVar4 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b13e0(DAT_008075a8);
@@ -51,7 +52,7 @@ void thunk_FUN_0056d740(int param_1)
         }
         iVar4 = 0;
         iStack_10 = 0;
-        piVar2 = *(int **)(iStack_14 + 0x115a);
+        piVar2 = *(int **)(pSStack_14 + 0x115a);
         piVar1 = piVar2 + 1;
         if (0 < *piVar1) {
           do {

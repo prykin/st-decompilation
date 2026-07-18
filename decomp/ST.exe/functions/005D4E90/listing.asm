@@ -1,4 +1,4 @@
-FUN_005d4e90:
+SettMapSTy::SetListCtrls:
 005D4E90  55                        PUSH EBP
 005D4E91  8B EC                     MOV EBP,ESP
 005D4E93  83 EC 54                  SUB ESP,0x54

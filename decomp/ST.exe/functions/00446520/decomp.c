@@ -1,8 +1,14 @@
 
-void FUN_00446520(uint param_1,short param_2,int param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::DeleteGuardBoat */
+
+void __thiscall
+STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,int param_3)
 
 {
   code *pcVar1;
+  STAllPlayersC *this_00;
   int iVar2;
   void *pvVar3;
   int iVar4;
@@ -17,6 +23,7 @@ void FUN_00446520(uint param_1,short param_2,int param_3)
   byte *local_20;
   byte *local_1c;
   int local_18;
+  STAllPlayersC *local_14;
   undefined4 local_10;
   int local_c;
   uint local_8;
@@ -24,6 +31,7 @@ void FUN_00446520(uint param_1,short param_2,int param_3)
   local_68 = DAT_00858df8;
   local_18 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
   DAT_00858df8 = &local_68;
+  local_14 = this;
   iVar2 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
   iVar4 = local_18;
   if (iVar2 != 0) {
@@ -78,7 +86,7 @@ void FUN_00446520(uint param_1,short param_2,int param_3)
       } while ((int)uVar5 < local_c);
     }
     if (local_c == 0) {
-      thunk_FUN_00446910((char)param_1);
+      DeletePGPairs(local_14,(char)param_1);
       DAT_00858df8 = (undefined4 *)local_68;
       return;
     }
@@ -135,13 +143,14 @@ void FUN_00446520(uint param_1,short param_2,int param_3)
       } while ((int)uVar5 < local_c);
     }
     if (local_c == 0) {
-      thunk_FUN_00446910((char)param_1);
+      DeletePGPairs(local_14,(char)param_1);
       DAT_00858df8 = (undefined4 *)local_68;
       return;
     }
   }
-  thunk_FUN_00446aa0((char)param_1);
-  thunk_FUN_00446f80(param_1);
+  this_00 = local_14;
+  OptimizeGuardBoats(local_14,(char)param_1);
+  DistributeGuardBoats(this_00,param_1);
   DAT_00858df8 = (undefined4 *)local_68;
   return;
 }

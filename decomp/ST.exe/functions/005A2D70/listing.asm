@@ -1,4 +1,4 @@
-FUN_005a2d70:
+FSGSTy::JoinChannel:
 005A2D70  55                        PUSH EBP
 005A2D71  8B EC                     MOV EBP,ESP
 005A2D73  83 EC 78                  SUB ESP,0x78

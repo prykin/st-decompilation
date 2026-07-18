@@ -1,4 +1,4 @@
-FUN_0049dfa0:
+STGroupBoatC::GrpLoadObj:
 0049DFA0  55                        PUSH EBP
 0049DFA1  8B EC                     MOV EBP,ESP
 0049DFA3  81 EC 80 00 00 00         SUB ESP,0x80

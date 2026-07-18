@@ -1,4 +1,4 @@
-FUN_005adf10:
+ChooseMapTy::CloseButtons:
 005ADF10  55                        PUSH EBP
 005ADF11  8B EC                     MOV EBP,ESP
 005ADF13  83 EC 48                  SUB ESP,0x48

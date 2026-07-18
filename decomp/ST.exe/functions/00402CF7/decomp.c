@@ -43,28 +43,28 @@ int thunk_FUN_004cabb0(int param_1)
     if (*(int *)((int)pvStack_8 + 0x5ac) == 0x4e) {
       thunk_FUN_004ca7b0(pvStack_8,7,param_1);
       if (*(int *)((int)pvStack_8 + 0x4d0) == 1) {
-        thunk_FUN_004ac660((void *)((int)pvStack_8 + 0x1d5),'\a');
+        thunk_FUN_004ac660((STT3DSprC *)((int)pvStack_8 + 0x1d5),'\a');
       }
       else {
-        thunk_FUN_004ac410(7);
+        STT3DSprC::StopShow((STT3DSprC *)((int)pvStack_8 + 0x1d5),7);
       }
     }
     if (*(int *)((int)pvStack_8 + 0x5ac) == 0x72) {
       thunk_FUN_004ca7b0(pvStack_8,7,param_1);
       if (*(int *)((int)pvStack_8 + 0x4d0) == 1) {
-        thunk_FUN_004ac660((void *)((int)pvStack_8 + 0x1d5),'\a');
+        thunk_FUN_004ac660((STT3DSprC *)((int)pvStack_8 + 0x1d5),'\a');
       }
       else {
-        thunk_FUN_004ac410(7);
+        STT3DSprC::StopShow((STT3DSprC *)((int)pvStack_8 + 0x1d5),7);
       }
     }
     if (*(int *)((int)pvStack_8 + 0x5ac) == 0x70) {
       thunk_FUN_004ca7b0(pvStack_8,7,param_1);
       if (*(int *)((int)pvStack_8 + 0x4d0) == 1) {
-        thunk_FUN_004ac660((void *)((int)pvStack_8 + 0x1d5),'\a');
+        thunk_FUN_004ac660((STT3DSprC *)((int)pvStack_8 + 0x1d5),'\a');
       }
       else {
-        thunk_FUN_004ac410(7);
+        STT3DSprC::StopShow((STT3DSprC *)((int)pvStack_8 + 0x1d5),7);
       }
     }
   }

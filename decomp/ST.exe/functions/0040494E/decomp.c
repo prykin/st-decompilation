@@ -1,5 +1,5 @@
 
-int thunk_FUN_00440860(int param_1,int *param_2,uint param_3)
+int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *param_2,uint param_3)
 
 {
   int iVar1;
@@ -23,7 +23,7 @@ int thunk_FUN_00440860(int param_1,int *param_2,uint param_3)
     FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x21d1);
   }
   if (param_1 == 1) {
-    iVar5 = thunk_FUN_00442300((uint)piVar4,uVar7);
+    iVar5 = _AddMDPairs(this,(uint)piVar4,uVar7);
   }
   else {
     iVar5 = thunk_FUN_00442b40(piVar4,uVar7);

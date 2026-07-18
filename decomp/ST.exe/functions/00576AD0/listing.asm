@@ -1,4 +1,4 @@
-FUN_00576ad0:
+BaseSystemC::CreateSystemObjects:
 00576AD0  55                        PUSH EBP
 00576AD1  8B EC                     MOV EBP,ESP
 00576AD3  83 EC 4C                  SUB ESP,0x4c

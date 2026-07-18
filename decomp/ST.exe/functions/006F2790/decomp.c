@@ -1,45 +1,53 @@
 
-undefined4 * FUN_006f2790(void)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::RecNameGetNext */
+
+undefined4 * __thiscall cMf32::RecNameGetNext(cMf32 *this)
 
 {
   code *pcVar1;
-  int iVar2;
-  DWORD DVar3;
-  int iVar4;
-  undefined4 *puVar5;
+  cMf32 *pcVar2;
+  int iVar3;
+  DWORD DVar4;
+  int iVar5;
+  undefined4 *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  cMf32 *pcVar7;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  undefined4 *local_8;
+  cMf32 *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar2 != 0) {
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pcVar2 = local_8;
+  if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_4c;
-    iVar4 = FUN_006ad4d0(s_E__Ourlib_Mf32int_cpp_007efaa4,0x302,0,iVar2,&DAT_007a4ccc);
-    if (iVar4 != 0) {
+    iVar5 = FUN_006ad4d0(s_E__Ourlib_Mf32int_cpp_007efaa4,0x302,0,iVar3,&DAT_007a4ccc);
+    if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
-      puVar5 = (undefined4 *)(*pcVar1)();
-      return puVar5;
+      puVar6 = (undefined4 *)(*pcVar1)();
+      return puVar6;
     }
-    FUN_006a5e40(iVar2,0,0x7efaa4,0x304);
+    FUN_006a5e40(iVar3,0,0x7efaa4,0x304);
     return (undefined4 *)0x0;
   }
-  puVar5 = local_8 + 6;
-  for (iVar2 = 0x86; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  pcVar7 = local_8 + 0x18;
+  for (iVar3 = 0x86; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *(undefined4 *)pcVar7 = 0;
+    pcVar7 = pcVar7 + 4;
   }
-  *(undefined1 *)puVar5 = 0;
-  DVar3 = FUN_00751ba0((int *)*local_8,local_8 + 6,(undefined4 *)0x0,0);
-  if (DVar3 == 0xfffffffc) {
+  *pcVar7 = (cMf32)0x0;
+  DVar4 = FUN_00751ba0(*(int **)local_8,(undefined4 *)(local_8 + 0x18),(undefined4 *)0x0,0);
+  if (DVar4 == 0xfffffffc) {
     DAT_00858df8 = (undefined4 *)local_4c;
     return (undefined4 *)0x0;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  *(undefined1 *)(*(short *)((int)local_8 + 0x2e) + 0x30 + (int)local_8) = 0;
-  return local_8 + 0xc;
+  pcVar2[*(short *)(pcVar2 + 0x2e) + 0x30] = (cMf32)0x0;
+  return (undefined4 *)(pcVar2 + 0x30);
 }
 

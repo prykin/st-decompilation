@@ -1,4 +1,4 @@
-FUN_0053cef0:
+SAMPanelTy::InitSAMPanel:
 0053CEF0  55                        PUSH EBP
 0053CEF1  8B EC                     MOV EBP,ESP
 0053CEF3  83 EC 58                  SUB ESP,0x58

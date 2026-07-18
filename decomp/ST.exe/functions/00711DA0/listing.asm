@@ -1,4 +1,4 @@
-FUN_00711da0:
+ccFntTy::WrArr:
 00711DA0  55                        PUSH EBP
 00711DA1  8B EC                     MOV EBP,ESP
 00711DA3  83 EC 58                  SUB ESP,0x58

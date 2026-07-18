@@ -1,4 +1,4 @@
-FUN_0053d3b0:
+SAMPanelTy::Update:
 0053D3B0  55                        PUSH EBP
 0053D3B1  8B EC                     MOV EBP,ESP
 0053D3B3  83 EC 50                  SUB ESP,0x50

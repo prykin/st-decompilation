@@ -1,5 +1,9 @@
 
-void FUN_00438e30(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::SaveTmp */
+
+void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
 
 {
   int *piVar1;

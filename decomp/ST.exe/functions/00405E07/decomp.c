@@ -55,7 +55,7 @@ void __fastcall thunk_FUN_0053a540(void *param_1)
     bVar2 = bVar2 + 1;
     piVar6 = piVar6 + 1;
   } while (bVar2 < 8);
-  thunk_FUN_0053ac00();
+  PlayPanelTy::PaintPlayPanel(param_1);
   return;
 }
 

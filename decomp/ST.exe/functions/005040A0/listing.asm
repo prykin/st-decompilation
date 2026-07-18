@@ -1,4 +1,4 @@
-FUN_005040a0:
+CPanelTy::PaintMap:
 005040A0  55                        PUSH EBP
 005040A1  8B EC                     MOV EBP,ESP
 005040A3  83 EC 48                  SUB ESP,0x48

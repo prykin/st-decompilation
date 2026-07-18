@@ -1,2 +1,2 @@
-thunk_FUN_0051a100:
+HelpPanelTy::ObjProc:
 00403747  E9 B4 69 11 00            JMP 0x0051a100

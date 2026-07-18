@@ -1,4 +1,4 @@
-FUN_00512830:
+HelpPanelTy::CreateSlider:
 00512830  55                        PUSH EBP
 00512831  8B EC                     MOV EBP,ESP
 00512833  81 EC 20 04 00 00         SUB ESP,0x420

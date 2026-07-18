@@ -1,4 +1,4 @@
-FUN_005cc2d0:
+SettMapMTy::DoneSettMap:
 005CC2D0  55                        PUSH EBP
 005CC2D1  8B EC                     MOV EBP,ESP
 005CC2D3  83 EC 48                  SUB ESP,0x48

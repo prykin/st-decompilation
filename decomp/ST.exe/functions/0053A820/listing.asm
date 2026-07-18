@@ -1,4 +1,4 @@
-FUN_0053a820:
+PlayPanelTy::SetPanel:
 0053A820  55                        PUSH EBP
 0053A821  8B EC                     MOV EBP,ESP
 0053A823  83 EC 48                  SUB ESP,0x48

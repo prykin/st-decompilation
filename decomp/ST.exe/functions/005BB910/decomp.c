@@ -1,23 +1,30 @@
 
-void FUN_005bb910(char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\prov_obj.cpp
+   PrividerTy::CloseButtons */
+
+void __thiscall PrividerTy::CloseButtons(PrividerTy *this,char param_1)
 
 {
   code *pcVar1;
+  MMObjTy *this_00;
   int iVar2;
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  void *local_8;
+  MMObjTy *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = (MMObjTy *)this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  this_00 = local_8;
   if (iVar2 == 0) {
-    thunk_FUN_005b6480();
-    thunk_FUN_005bc050(param_1);
-    *(undefined1 *)((int)local_8 + 0x65) = 4;
-    thunk_FUN_005b6730(local_8,0xc,'\x01',-1);
+    MMObjTy::CloseButtons(local_8);
+    DeleteCtrls((PrividerTy *)this_00,param_1);
+    this_00[0x65] = (MMObjTy)0x4;
+    thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     DAT_00858df8 = (undefined1 *)uVar4;
     return;
   }

@@ -1,8 +1,13 @@
 
-void FUN_0059cee0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\fsgs_obj.cpp
+   FSGSTy::PswCtrls */
+
+void __thiscall FSGSTy::PswCtrls(FSGSTy *this)
 
 {
   code *pcVar1;
+  FSGSTy *this_00;
   uint *puVar2;
   int iVar3;
   int iVar4;
@@ -21,9 +26,10 @@ void FUN_0059cee0(void)
   undefined4 local_60;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  FSGSTy *local_8;
   
   puVar5 = local_8d8;
+  local_8 = this;
   for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar5 = 0;
     puVar5 = puVar5 + 1;
@@ -33,25 +39,26 @@ void FUN_0059cee0(void)
   iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     puVar2 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)local_8 + 0x1ae8) = puVar2;
+    this_00 = local_8;
+    *(uint **)(local_8 + 0x1ae8) = puVar2;
     FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
     puVar2 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)local_8 + 0x1aec) = puVar2;
+    *(uint **)(this_00 + 0x1aec) = puVar2;
     FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar2 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)local_8 + 0x1af0) = puVar2;
+    *(uint **)(this_00 + 0x1af0) = puVar2;
     FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar2 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)local_8 + 0x1af4) = puVar2;
+    *(uint **)(this_00 + 0x1af4) = puVar2;
     FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar5 = local_8d8;
     for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    local_8d8[2] = *(undefined4 *)((int)local_8 + 0x1a73);
-    local_8d8[8] = *(undefined4 *)((int)local_8 + 0x1ae8);
-    local_8ac = *(undefined4 *)((int)local_8 + 8);
+    local_8d8[2] = *(undefined4 *)(this_00 + 0x1a73);
+    local_8d8[8] = *(undefined4 *)(this_00 + 0x1ae8);
+    local_8ac = *(undefined4 *)(this_00 + 8);
     local_64 = 2;
     local_8a8 = 2;
     local_888 = 2;
@@ -67,23 +74,23 @@ void FUN_0059cee0(void)
     local_60 = 0x6955;
     local_88c = local_8ac;
     local_68 = local_8ac;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(6,(int)local_8 + 0x1ac4,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)((int)local_8 + 0x1aec);
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ac4,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)(this_00 + 0x1aec);
     local_8d8[1] = 0xa9;
     local_8d8[4] = 0x11f;
     local_8d8[5] = 0xaa;
     local_8d8[6] = 0x14;
     local_8d8[7] = 0x10;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(6,(int)local_8 + 0x1ac8,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)((int)local_8 + 0x1af4);
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ac8,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)(this_00 + 0x1af4);
     local_8d8[4] = 0x147;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(6,(int)local_8 + 0x1ad4,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)((int)local_8 + 0x1af0);
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ad4,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)(this_00 + 0x1af0);
     local_8d8[4] = 0x16f;
-    (**(code **)(**(int **)((int)local_8 + 0xc) + 8))(6,(int)local_8 + 0x1acc,0,local_8d8,0);
-    *(undefined4 *)((int)local_8 + 0x2d) = 0x61;
-    *(undefined4 *)((int)local_8 + 0x35) = 0;
-    FUN_006e6080(local_8,0xf,0,(undefined4 *)((int)local_8 + 0x1d));
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1acc,0,local_8d8,0);
+    *(undefined4 *)(this_00 + 0x2d) = 0x61;
+    *(undefined4 *)(this_00 + 0x35) = 0;
+    FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }

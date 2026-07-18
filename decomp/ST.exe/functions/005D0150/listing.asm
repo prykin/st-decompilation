@@ -1,4 +1,4 @@
-FUN_005d0150:
+SettMapMTy::CheckPlList:
 005D0150  55                        PUSH EBP
 005D0151  8B EC                     MOV EBP,ESP
 005D0153  83 EC 58                  SUB ESP,0x58

@@ -1,4 +1,4 @@
-FUN_00627eb0:
+STParticleC::GetMessage:
 00627EB0  55                        PUSH EBP
 00627EB1  8B EC                     MOV EBP,ESP
 00627EB3  83 EC 78                  SUB ESP,0x78

@@ -1,4 +1,4 @@
-FUN_005e5fb0:
+MTestTy::GetMessage:
 005E5FB0  55                        PUSH EBP
 005E5FB1  8B EC                     MOV EBP,ESP
 005E5FB3  83 EC 4C                  SUB ESP,0x4c

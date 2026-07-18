@@ -1,4 +1,4 @@
-FUN_0046c980:
+STBoatC::BackBuild:
 0046C980  55                        PUSH EBP
 0046C981  8B EC                     MOV EBP,ESP
 0046C983  51                        PUSH ECX

@@ -1,5 +1,10 @@
 
-LRESULT FUN_0056cbd0(HWND param_1,uint param_2,uint param_3,uint param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\tapp.cpp
+   STAppC::MainWindowProc */
+
+LRESULT __thiscall
+STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint param_4)
 
 {
   code *pcVar1;

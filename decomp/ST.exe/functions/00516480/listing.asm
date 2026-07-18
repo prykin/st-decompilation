@@ -1,4 +1,4 @@
-FUN_00516480:
+HelpPanelTy::TTreeProc:
 00516480  55                        PUSH EBP
 00516481  8B EC                     MOV EBP,ESP
 00516483  83 EC 54                  SUB ESP,0x54

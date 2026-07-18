@@ -1,5 +1,9 @@
 
-void FUN_005d4990(int param_1,uint *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::PrepareAFT */
+
+void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -12,11 +16,12 @@ void FUN_005d4990(int param_1,uint *param_2)
   undefined4 *puVar6;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  SettMapMTy *local_8;
   
   if ((param_1 != 0) && (param_2 != (uint *)0x0)) {
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
+    local_8 = this;
     iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {

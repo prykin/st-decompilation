@@ -1,4 +1,4 @@
-FUN_0061d190:
+STLightC::GetMessage:
 0061D190  55                        PUSH EBP
 0061D191  8B EC                     MOV EBP,ESP
 0061D193  83 EC 5C                  SUB ESP,0x5c

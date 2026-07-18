@@ -18,7 +18,7 @@ undefined4 __fastcall thunk_FUN_0065ef70(int param_1)
   undefined3 uStack_b;
   int iStack_8;
   
-  if (DAT_007fa174 != 0) {
+  if (DAT_007fa174 != (STAllPlayersC *)0x0) {
     iVar5 = *(int *)(param_1 + 0x22f);
     uStack_1c = 0;
     if (0 < *(int *)(iVar5 + 0xc)) {
@@ -75,8 +75,9 @@ LAB_0065f095:
             if (bVar9) {
               iStack_10 = 0;
               iStack_14 = 0;
-              thunk_FUN_0042b1f0(bVar6,*psVar7,psVar7[1],psVar7[2],psVar7[3],psVar7[4],psVar7[5],
-                                 (int *)0x0,(int *)0x0,&iStack_10,&iStack_14);
+              STAllPlayersC::GetGObjFromBox
+                        (DAT_007fa174,bVar6,*psVar7,psVar7[1],psVar7[2],psVar7[3],psVar7[4],
+                         psVar7[5],(int *)0x0,(int *)0x0,&iStack_10,&iStack_14);
               if ((0 < iStack_10) || (0 < iStack_14)) {
                 *(undefined4 *)(iStack_8 + 0x195) = *(undefined4 *)psVar7;
                 *(undefined4 *)(iStack_8 + 0x199) = *(undefined4 *)(psVar7 + 2);

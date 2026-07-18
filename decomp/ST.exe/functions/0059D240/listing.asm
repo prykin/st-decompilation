@@ -1,4 +1,4 @@
-FUN_0059d240:
+FSGSTy::LicCtrls:
 0059D240  55                        PUSH EBP
 0059D241  8B EC                     MOV EBP,ESP
 0059D243  81 EC C0 08 00 00         SUB ESP,0x8c0

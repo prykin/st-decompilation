@@ -1,4 +1,4 @@
-FUN_004455c0:
+STAllPlayersC::CreateBoat:
 004455C0  55                        PUSH EBP
 004455C1  8B EC                     MOV EBP,ESP
 004455C3  83 EC 54                  SUB ESP,0x54

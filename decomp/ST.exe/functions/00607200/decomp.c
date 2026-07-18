@@ -35,7 +35,7 @@ int __thiscall FUN_00607200(void *this,int param_1,int param_2,int param_3,undef
   uint local_2c;
   byte local_27;
   int local_26;
-  int local_20;
+  undefined4 *local_20;
   int local_1c;
   uint *local_18;
   int local_14;
@@ -50,7 +50,7 @@ int __thiscall FUN_00607200(void *this,int param_1,int param_2,int param_3,undef
   *(uint *)((int)this + 0x1c) = uVar1;
   iVar6 = (uVar1 >> 0x10) % (local_6c + 1U) + 9;
   local_c = iVar6;
-  iVar2 = thunk_FUN_006041a0(iVar6);
+  iVar2 = STExplosionC::CreateGroupPart(this,iVar6);
   *(int *)((int)this + 0x269) = iVar2;
   if (iVar2 != iVar6) {
     return -1;
@@ -179,7 +179,7 @@ LAB_006074c8:
   local_8 = 0;
   if (0 < local_c) {
     local_18 = local_10c;
-    local_20 = (int)this + 0x219;
+    local_20 = (undefined4 *)((int)this + 0x219);
     do {
       iVar2 = local_8;
       puVar8 = local_68;
@@ -246,7 +246,7 @@ LAB_006074c8:
         local_3c = (uVar4 >> 0x10) % 0x1f;
         iVar2 = 0x82;
       }
-      iVar6 = local_20;
+      puVar8 = local_20;
       local_44 = uVar1 + param_2;
       local_48 = uVar5 + param_1;
       local_3c = iVar2 - local_3c;
@@ -303,10 +303,10 @@ LAB_006074c8:
         }
       }
       local_a8 = local_68;
-      thunk_FUN_00627eb0((int)local_bc);
+      STParticleC::GetMessage((STParticleC *)*local_20,(int)local_bc);
       local_8 = local_8 + 1;
       local_18 = local_18 + 1;
-      local_20 = iVar6 + 4;
+      local_20 = puVar8 + 1;
     } while (local_8 < local_c);
   }
   return local_c;

@@ -1,4 +1,4 @@
-FUN_005939e0:
+ComboTy::OutBmpProc:
 005939E0  55                        PUSH EBP
 005939E1  8B EC                     MOV EBP,ESP
 005939E3  83 EC 48                  SUB ESP,0x48

@@ -1,5 +1,6 @@
 
-undefined4 thunk_FUN_004461b0(uint param_1,short param_2,int param_3)
+undefined4 __thiscall
+STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,int param_3)
 
 {
   code *pcVar1;
@@ -17,6 +18,7 @@ undefined4 thunk_FUN_004461b0(uint param_1,short param_2,int param_3)
   byte *pbStack_28;
   byte *pbStack_24;
   byte *pbStack_20;
+  STAllPlayersC *pSStack_1c;
   undefined4 uStack_18;
   undefined4 uStack_14;
   int iStack_10;
@@ -27,6 +29,7 @@ undefined4 thunk_FUN_004461b0(uint param_1,short param_2,int param_3)
   uStack_6c = DAT_00858df8;
   iStack_10 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
   DAT_00858df8 = &uStack_6c;
+  pSStack_1c = this;
   iVar2 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
   iVar4 = iStack_10;
   if (iVar2 != 0) {
@@ -127,7 +130,7 @@ undefined4 thunk_FUN_004461b0(uint param_1,short param_2,int param_3)
     }
   }
   if (iStack_8 == 0) {
-    thunk_FUN_00446910((char)param_1);
+    DeletePGPairs(pSStack_1c,(char)param_1);
   }
   DAT_00858df8 = (undefined4 *)uStack_6c;
   return uStack_18;

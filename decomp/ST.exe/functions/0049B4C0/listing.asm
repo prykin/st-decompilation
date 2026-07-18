@@ -1,4 +1,4 @@
-FUN_0049b4c0:
+STGroupBoatC::GrpGoToDeep:
 0049B4C0  55                        PUSH EBP
 0049B4C1  8B EC                     MOV EBP,ESP
 0049B4C3  83 EC 68                  SUB ESP,0x68

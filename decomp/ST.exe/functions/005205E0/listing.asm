@@ -1,4 +1,4 @@
-FUN_005205e0:
+InfocPanelTy::ShiftControls:
 005205E0  55                        PUSH EBP
 005205E1  8B EC                     MOV EBP,ESP
 005205E3  83 EC 48                  SUB ESP,0x48

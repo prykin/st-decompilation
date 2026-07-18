@@ -1,4 +1,4 @@
-FUN_004a67a0:
+STGroupBoatC::RestoreGrpBData:
 004A67A0  55                        PUSH EBP
 004A67A1  8B EC                     MOV EBP,ESP
 004A67A3  83 EC 4C                  SUB ESP,0x4c

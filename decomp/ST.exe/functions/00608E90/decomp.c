@@ -13,7 +13,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
   byte *local_c;
   uint local_8;
   
-  iVar2 = thunk_FUN_0041af40(param_1);
+  iVar2 = STGameObjC::GetMessage(this,param_1);
   if (iVar2 == 0xffff) {
     return 0xffff;
   }
@@ -24,7 +24,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
       if (local_c == (byte *)0x0) {
         return 0;
       }
-      thunk_FUN_0054d430(DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
+      STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_c,local_8);
       FUN_006ab060(&local_c);
       return 0;
     }
@@ -81,7 +81,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
       return 0;
     }
     if (*(int *)((int)this + 0x248) == 1) {
-      if (*(uint *)((int)this + 0x250) <= *(uint *)((int)DAT_00802a38 + 0xe4)) {
+      if (*(uint *)((int)this + 0x250) <= *(uint *)(DAT_00802a38 + 0xe4)) {
         if ((*(int *)((int)this + 0x20d) == 5) && (iVar2 = thunk_FUN_0060cef0(this), iVar2 == 0)) {
           thunk_FUN_006099a0(this);
         }
@@ -113,7 +113,7 @@ undefined4 __thiscall FUN_00608e90(void *this,int param_1)
         iVar2 = thunk_FUN_0060d070(this);
         if ((0 < iVar2) && (iVar2 == 2)) {
           thunk_FUN_0060d220((int)this);
-          iVar2 = *(int *)((int)DAT_00802a38 + 0xe4);
+          iVar2 = *(int *)(DAT_00802a38 + 0xe4);
           *(undefined4 *)((int)this + 0x248) = 1;
           *(int *)((int)this + 0x250) = iVar2 + 200;
         }
@@ -300,7 +300,7 @@ joined_r0x0060929e:
 LAB_006092a0:
     thunk_FUN_006099a0(this);
   }
-  uVar3 = thunk_FUN_006099e0(*(uint *)((int)this + 0x219));
+  uVar3 = STFieldC::CreateField(this,*(uint *)((int)this + 0x219));
   if ((int)uVar3 < 1) {
     return 0xffff;
   }

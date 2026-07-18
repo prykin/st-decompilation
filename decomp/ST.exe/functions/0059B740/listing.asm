@@ -1,4 +1,4 @@
-FUN_0059b740:
+FSGSTy::CloseButtons:
 0059B740  55                        PUSH EBP
 0059B741  8B EC                     MOV EBP,ESP
 0059B743  83 EC 48                  SUB ESP,0x48

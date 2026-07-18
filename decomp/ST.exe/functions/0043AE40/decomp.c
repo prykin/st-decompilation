@@ -1,5 +1,10 @@
 
-void FUN_0043ae40(uint param_1,int param_2,int param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::SetActivePanel */
+
+void __thiscall
+STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int param_3)
 
 {
   int *piVar1;

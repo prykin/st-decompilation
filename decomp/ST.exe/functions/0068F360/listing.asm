@@ -1,4 +1,4 @@
-FUN_0068f360:
+AiTactClassTy::GiveObjByFltType:
 0068F360  55                        PUSH EBP
 0068F361  8B EC                     MOV EBP,ESP
 0068F363  83 EC 58                  SUB ESP,0x58

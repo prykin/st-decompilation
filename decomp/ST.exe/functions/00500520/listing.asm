@@ -1,4 +1,4 @@
-FUN_00500520:
+CPanelTy::PaintDeep:
 00500520  55                        PUSH EBP
 00500521  8B EC                     MOV EBP,ESP
 00500523  83 EC 6C                  SUB ESP,0x6c

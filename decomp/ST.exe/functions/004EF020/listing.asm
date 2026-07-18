@@ -1,4 +1,4 @@
-FUN_004ef020:
+BldBoatPanelTy::Update:
 004EF020  55                        PUSH EBP
 004EF021  8B EC                     MOV EBP,ESP
 004EF023  83 EC 48                  SUB ESP,0x48

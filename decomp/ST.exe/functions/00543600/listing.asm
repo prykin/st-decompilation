@@ -1,4 +1,4 @@
-FUN_00543600:
+CursorClassTy::InitCursor:
 00543600  55                        PUSH EBP
 00543601  8B EC                     MOV EBP,ESP
 00543603  83 EC 4C                  SUB ESP,0x4c

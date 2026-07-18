@@ -1,4 +1,4 @@
-FUN_00502fc0:
+CPanelTy::Update2PanelSI:
 00502FC0  55                        PUSH EBP
 00502FC1  8B EC                     MOV EBP,ESP
 00502FC3  81 EC A8 00 00 00         SUB ESP,0xa8

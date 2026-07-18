@@ -1,4 +1,4 @@
-FUN_004f0e60:
+BldObjPanelTy::PaintBldBut:
 004F0E60  55                        PUSH EBP
 004F0E61  8B EC                     MOV EBP,ESP
 004F0E63  83 EC 58                  SUB ESP,0x58

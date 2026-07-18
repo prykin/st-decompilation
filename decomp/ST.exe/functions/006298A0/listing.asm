@@ -1,4 +1,4 @@
-FUN_006298a0:
+STParticleC::InitVisibelDeton:
 006298A0  55                        PUSH EBP
 006298A1  8B EC                     MOV EBP,ESP
 006298A3  83 EC 5C                  SUB ESP,0x5c

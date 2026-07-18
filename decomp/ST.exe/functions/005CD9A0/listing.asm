@@ -1,4 +1,4 @@
-FUN_005cd9a0:
+SettMapMTy::ChgPlList:
 005CD9A0  55                        PUSH EBP
 005CD9A1  8B EC                     MOV EBP,ESP
 005CD9A3  81 EC 58 01 00 00         SUB ESP,0x158

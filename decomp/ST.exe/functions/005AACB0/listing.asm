@@ -1,4 +1,4 @@
-FUN_005aacb0:
+HoloTy::Init:
 005AACB0  55                        PUSH EBP
 005AACB1  8B EC                     MOV EBP,ESP
 005AACB3  83 EC 54                  SUB ESP,0x54

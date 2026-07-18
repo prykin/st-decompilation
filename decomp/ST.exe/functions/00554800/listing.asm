@@ -1,4 +1,4 @@
-FUN_00554800:
+cLoadingTy::InitParam:
 00554800  55                        PUSH EBP
 00554801  8B EC                     MOV EBP,ESP
 00554803  83 EC 48                  SUB ESP,0x48

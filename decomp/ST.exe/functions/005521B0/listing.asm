@@ -1,4 +1,4 @@
-FUN_005521b0:
+TradePanelTy::Update:
 005521B0  55                        PUSH EBP
 005521B1  8B EC                     MOV EBP,ESP
 005521B3  83 EC 58                  SUB ESP,0x58

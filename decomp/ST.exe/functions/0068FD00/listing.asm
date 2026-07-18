@@ -1,4 +1,4 @@
-FUN_0068fd00:
+AiTactClassTy::GetAiMess:
 0068FD00  55                        PUSH EBP
 0068FD01  8B EC                     MOV EBP,ESP
 0068FD03  83 EC 7C                  SUB ESP,0x7c

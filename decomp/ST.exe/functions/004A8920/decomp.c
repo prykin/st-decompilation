@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_optic.cpp
+   OpticClassC::GetMessage */
 
-undefined4 FUN_004a8920(int param_1)
+undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
 
 {
   code *pcVar1;
@@ -16,9 +19,11 @@ undefined4 FUN_004a8920(int param_1)
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
+  OpticClassC *local_8;
   
   local_6c = DAT_00858df8;
   DAT_00858df8 = &local_6c;
+  local_8 = this;
   iVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_6c;
@@ -37,7 +42,7 @@ undefined4 FUN_004a8920(int param_1)
     if (uVar3 != 0x104) {
       if (uVar3 < 4) {
         if (uVar3 == 3) {
-          thunk_FUN_00544800();
+          CursorClassTy::DelOpticAcc(DAT_00802a30);
           DAT_00858df8 = (undefined4 *)local_6c;
           return 0;
         }
@@ -78,8 +83,8 @@ undefined4 FUN_004a8920(int param_1)
           DAT_00858df8 = (undefined4 *)local_6c;
           return 0;
         }
-        thunk_FUN_004a8fc0();
-        thunk_FUN_005446c0();
+        InitOptic(DAT_007fb2a0);
+        CursorClassTy::AddOpticAcc(DAT_00802a30);
         goto LAB_004a8b47;
       }
       if (uVar3 == 0x100) {
@@ -105,7 +110,7 @@ undefined4 FUN_004a8920(int param_1)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
-    (**(code **)(*DAT_00802a38 + 0x18))();
+    (**(code **)(*(int *)DAT_00802a38 + 0x18))();
 LAB_004a8b47:
     uVar3 = DAT_0080743c & 0xff;
   }
@@ -139,7 +144,7 @@ LAB_004a8b47:
     default:
       goto switchD_004a8b81_caseD_108;
     case 0x10f:
-      thunk_FUN_0054d550(DAT_00802a38,s_opticsave_007ac5d4,(byte *)&DAT_008073d0,399,0xc);
+      STPlaySystemC::SaveObjData(DAT_00802a38,s_opticsave_007ac5d4,(byte *)&DAT_008073d0,399,0xc);
       DAT_00858df8 = (undefined4 *)local_6c;
       return 0;
     }
@@ -150,7 +155,7 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar4;
-    (**(code **)(*DAT_00802a38 + 0x18))();
+    (**(code **)(*(int *)DAT_00802a38 + 0x18))();
 LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }

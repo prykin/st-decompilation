@@ -1,4 +1,4 @@
-FUN_005cdf60:
+SettMapMTy::SendPlList:
 005CDF60  55                        PUSH EBP
 005CDF61  8B EC                     MOV EBP,ESP
 005CDF63  83 EC 4C                  SUB ESP,0x4c

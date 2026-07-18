@@ -1,41 +1,44 @@
 
-undefined4 * thunk_FUN_00678be0(uint *param_1)
+undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
   int iVar2;
   int iVar3;
   undefined4 *puVar4;
+  AiPlrClassTy *pAVar5;
   void *unaff_ESI;
-  undefined4 uVar5;
+  undefined4 uVar6;
   undefined4 auStack_54 [16];
-  int iStack_14;
+  AiPlrClassTy *pAStack_14;
   uint uStack_10;
   undefined4 *puStack_c;
   undefined4 *puStack_8;
   
-  uVar5 = DAT_00858df8;
+  uVar6 = DAT_00858df8;
   puStack_c = (undefined4 *)0x0;
   puStack_8 = (undefined4 *)0x0;
   DAT_00858df8 = &stack0xffffffa8;
-  iVar2 = __setjmp3(auStack_54,0,unaff_ESI,uVar5);
+  pAStack_14 = this;
+  iVar2 = __setjmp3(auStack_54,0,unaff_ESI,uVar6);
+  pAVar5 = pAStack_14;
   if (iVar2 == 0) {
-    puStack_8 = thunk_FUN_0064d000(&uStack_10);
-    if (iStack_14 == 0) {
-      puVar4 = (undefined4 *)0x0;
+    puStack_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)(pAStack_14 + 0x1c),&uStack_10);
+    if (pAVar5 == (AiPlrClassTy *)0x0) {
+      pAVar5 = (AiPlrClassTy *)0x0;
     }
     else {
-      puVar4 = (undefined4 *)(iStack_14 + 0x5d3);
+      pAVar5 = pAVar5 + 0x5d3;
     }
-    puStack_c = thunk_FUN_0067d3b0(puVar4,puStack_8,uStack_10,param_1);
+    puStack_c = thunk_FUN_0067d3b0((undefined4 *)pAVar5,puStack_8,uStack_10,param_1);
     puStack_c[3] = 1;
     if (puStack_8 != (undefined4 *)0x0) {
       FUN_006ab060(&puStack_8);
     }
-    DAT_00858df8 = (undefined1 *)uVar5;
+    DAT_00858df8 = (undefined1 *)uVar6;
     return puStack_c;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
+  DAT_00858df8 = (undefined1 *)uVar6;
   if (puStack_8 != (undefined4 *)0x0) {
     FUN_006ab060(&puStack_8);
   }

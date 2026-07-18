@@ -1,4 +1,4 @@
-FUN_0052edf0:
+OptPanelTy::PaintVolume:
 0052EDF0  55                        PUSH EBP
 0052EDF1  8B EC                     MOV EBP,ESP
 0052EDF3  83 EC 58                  SUB ESP,0x58

@@ -1,4 +1,4 @@
-FUN_005fb640:
+STContainerC::GetMessage:
 005FB640  55                        PUSH EBP
 005FB641  8B EC                     MOV EBP,ESP
 005FB643  83 EC 5C                  SUB ESP,0x5c

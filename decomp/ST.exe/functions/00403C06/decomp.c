@@ -4,7 +4,7 @@
 undefined4 __fastcall thunk_FUN_004e3910(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
   bool bVar1;
   short sVar2;
   short sVar3;
@@ -180,14 +180,14 @@ undefined4 __fastcall thunk_FUN_004e3910(int *param_1)
               }
               iVar10 = thunk_FUN_00590010(iStack_20,iStack_1c,iStack_18,iVar10,iVar9,iVar4,iVar6,0,
                                           param_1[9]);
-              this = (void *)((int)param_1 + 0x1d5);
+              this = (STT3DSprC *)((int)param_1 + 0x1d5);
               param_1[iStack_c + 0x134] = *(int *)(iVar10 + 0x18);
               cVar11 = '\0';
               iVar10 = thunk_FUN_004acd30(this,'\v');
               thunk_FUN_004abce0(this,0xb,0,iVar10,cVar11);
               thunk_FUN_004abe40(this,'\v',0);
               thunk_FUN_004ac700(this,'\v');
-              thunk_FUN_004ac1a0(0xb,*(undefined4 *)((int)DAT_00802a38 + 0xe4));
+              STT3DSprC::StartShow(this,0xb,*(undefined4 *)((int)DAT_00802a38 + 0xe4));
               (**(code **)(*param_1 + 0x90))(3,0x25d);
             }
             FUN_006ae110((byte *)puStack_8);

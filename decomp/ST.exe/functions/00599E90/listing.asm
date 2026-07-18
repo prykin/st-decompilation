@@ -1,4 +1,4 @@
-FUN_00599e90:
+FSGSTy::PaintLogNew:
 00599E90  55                        PUSH EBP
 00599E91  8B EC                     MOV EBP,ESP
 00599E93  83 EC 48                  SUB ESP,0x48

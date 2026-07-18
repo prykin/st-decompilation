@@ -1,4 +1,4 @@
-FUN_005d0bb0:
+SettMapMTy::ChangePlayerTeam:
 005D0BB0  55                        PUSH EBP
 005D0BB1  8B EC                     MOV EBP,ESP
 005D0BB3  83 EC 50                  SUB ESP,0x50

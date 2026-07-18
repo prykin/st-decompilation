@@ -1,5 +1,9 @@
 
-void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\grig\loading.cpp
+   cLoadingTy::SetState */
+
+void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint param_2,char *param_3)
 
 {
   char cVar1;
@@ -12,7 +16,7 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
   uint uVar8;
   uint uVar9;
   undefined4 unaff_ESI;
-  void *pvVar10;
+  cLoadingTy *pcVar10;
   uint *puVar11;
   void *unaff_EDI;
   uint *puVar12;
@@ -21,17 +25,17 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
   undefined4 local_50;
   undefined4 local_4c [16];
   uint local_c;
-  void *local_8;
+  cLoadingTy *local_8;
   
   local_8 = this;
   thunk_FUN_00555570((int)this);
-  if (*(int *)((int)this + 0x3c) < -1) {
+  if (*(int *)(this + 0x3c) < -1) {
     return;
   }
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
   iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
-  pvVar10 = local_8;
+  pcVar10 = local_8;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_50;
     iVar6 = FUN_006ad4d0(s_E____titans_grig_loading_cpp_007c8f0c,0x14a,0,iVar3,&DAT_007a4ccc);
@@ -101,7 +105,7 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
       pcVar5 = pcVar5 + 1;
       pcVar13 = pcVar13 + 1;
     }
-    thunk_FUN_00554ad0(local_8,local_450);
+    DrawLine(local_8,local_450);
     DAT_00858df8 = (undefined4 *)local_50;
     return;
   case 1:
@@ -156,22 +160,22 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
       pcVar5 = pcVar5 + 4;
       pcVar13 = pcVar13 + 4;
     }
-    for (uVar8 = uVar8 & 3; pvVar10 = local_8, uVar8 != 0; uVar8 = uVar8 - 1) {
+    for (uVar8 = uVar8 & 3; pcVar10 = local_8, uVar8 != 0; uVar8 = uVar8 - 1) {
       *pcVar13 = *pcVar5;
       pcVar5 = pcVar5 + 1;
       pcVar13 = pcVar13 + 1;
     }
-    if (*(int *)((int)local_8 + 0x3c) == 0) {
-      uVar8 = *(uint *)((int)local_8 + 0x40);
+    if (*(int *)(local_8 + 0x3c) == 0) {
+      uVar8 = *(uint *)(local_8 + 0x40);
       if (uVar8 < param_2) {
         param_2 = uVar8;
       }
     }
     else {
       DVar4 = timeGetTime();
-      uVar8 = *(uint *)((int)pvVar10 + 0x40);
-      param_2 = DVar4 - *(int *)((int)pvVar10 + 0x44);
-      if (uVar8 < param_2) {
+      uVar8 = *(uint *)(pcVar10 + 0x40);
+      param_2 = DVar4 - *(int *)(pcVar10 + 0x44);
+      if (uVar8 < DVar4 - *(int *)(pcVar10 + 0x44)) {
         param_2 = uVar8;
       }
     }
@@ -179,7 +183,7 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
       param_2 = 1;
     }
     uVar8 = (param_2 * 100) / uVar8;
-    if (uVar8 != *(uint *)((int)pvVar10 + 0x50)) {
+    if (uVar8 != *(uint *)(pcVar10 + 0x50)) {
       if (0 < (int)uVar8) {
         local_c = uVar8;
         do {
@@ -218,22 +222,22 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
             pcVar13 = pcVar13 + 1;
           }
           local_c = uVar7;
-          pvVar10 = local_8;
+          pcVar10 = local_8;
         } while (uVar7 != 0);
       }
-      thunk_FUN_00554ad0(pvVar10,local_450);
-      *(uint *)((int)pvVar10 + 0x50) = uVar8;
+      DrawLine(pcVar10,local_450);
+      *(uint *)(pcVar10 + 0x50) = uVar8;
       DAT_00858df8 = (undefined4 *)local_50;
       return;
     }
-    if (*(code **)((int)pvVar10 + 0x58) != (code *)0x0) {
-      (**(code **)((int)pvVar10 + 0x58))(*(undefined4 *)((int)pvVar10 + 0x54));
+    if (*(code **)(pcVar10 + 0x58) != (code *)0x0) {
+      (**(code **)(pcVar10 + 0x58))(*(undefined4 *)(pcVar10 + 0x54));
       DAT_00858df8 = (undefined4 *)local_50;
       return;
     }
     break;
   case 2:
-    *(undefined4 *)((int)local_8 + 0x3c) = 0xffffffff;
+    *(undefined4 *)(local_8 + 0x3c) = 0xffffffff;
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -292,7 +296,7 @@ void __thiscall FUN_00555040(void *this,undefined4 param_1,uint param_2,char *pa
     }
     goto joined_r0x00555393;
   case 3:
-    *(undefined4 *)((int)local_8 + 0x3c) = 0xffffffff;
+    *(undefined4 *)(local_8 + 0x3c) = 0xffffffff;
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -384,12 +388,12 @@ joined_r0x00555393:
         pcVar13 = pcVar13 + 1;
       }
     }
-    thunk_FUN_00554c80(pvVar10,local_450);
+    DrawLineCR(pcVar10,local_450);
     DAT_00858df8 = (undefined4 *)local_50;
     return;
   default:
-    if (*(code **)((int)local_8 + 0x58) != (code *)0x0) {
-      (**(code **)((int)local_8 + 0x58))(*(undefined4 *)((int)local_8 + 0x54));
+    if (*(code **)(local_8 + 0x58) != (code *)0x0) {
+      (**(code **)(local_8 + 0x58))(*(undefined4 *)(local_8 + 0x54));
     }
   }
   DAT_00858df8 = (undefined4 *)local_50;

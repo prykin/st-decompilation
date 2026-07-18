@@ -1,4 +1,4 @@
-FUN_005b9010:
+MMsgTy::StatePanel:
 005B9010  55                        PUSH EBP
 005B9011  8B EC                     MOV EBP,ESP
 005B9013  83 EC 4C                  SUB ESP,0x4c

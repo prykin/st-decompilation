@@ -1,4 +1,4 @@
-FUN_00521490:
+InfocPanelTy::GetMessage:
 00521490  55                        PUSH EBP
 00521491  8B EC                     MOV EBP,ESP
 00521493  83 EC 54                  SUB ESP,0x54

@@ -1,2 +1,2 @@
-thunk_FUN_005a2380:
+FSGSTy::AddPlayer:
 00404269  E9 12 E1 19 00            JMP 0x005a2380

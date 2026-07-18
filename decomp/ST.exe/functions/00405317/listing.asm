@@ -1,2 +1,2 @@
-thunk_FUN_005b3430:
+MainMenuTy::NoneMainMenu:
 00405317  E9 14 E1 1A 00            JMP 0x005b3430

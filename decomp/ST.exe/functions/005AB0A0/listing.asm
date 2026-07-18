@@ -1,4 +1,4 @@
-FUN_005ab0a0:
+HoloTy::NextFas:
 005AB0A0  55                        PUSH EBP
 005AB0A1  8B EC                     MOV EBP,ESP
 005AB0A3  83 EC 4C                  SUB ESP,0x4c

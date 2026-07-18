@@ -1,5 +1,9 @@
 
-undefined4 FUN_005ab0a0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\hologram.cpp
+   HoloTy::NextFas */
+
+undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
 
 {
   uint uVar1;
@@ -9,12 +13,13 @@ undefined4 FUN_005ab0a0(void)
   undefined4 uVar5;
   void *unaff_ESI;
   undefined4 local_4c [16];
-  int local_c;
+  HoloTy *local_c;
   undefined4 local_8;
   
   uVar5 = DAT_00858df8;
   local_8 = 0;
   DAT_00858df8 = &stack0xffffffb0;
+  local_c = this;
   iVar3 = __setjmp3(local_4c,0,unaff_ESI,uVar5);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined1 *)uVar5;
@@ -30,7 +35,7 @@ undefined4 FUN_005ab0a0(void)
   uVar1 = *(uint *)(local_c + 3);
   if (-1 < (int)uVar1) {
     iVar3 = *(int *)(local_c + 0x17);
-    if (*(char *)(local_c + 2) == '\0') {
+    if (local_c[2] == (HoloTy)0x0) {
       if (iVar3 < *(int *)(local_c + 0x13) + -2) {
         *(int *)(local_c + 0x17) = iVar3 + 1;
         local_8 = 1;

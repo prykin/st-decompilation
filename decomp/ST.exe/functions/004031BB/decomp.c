@@ -34,7 +34,7 @@ int __thiscall thunk_FUN_00604ee0(void *this,int *param_1)
         iVar2 = *piVar4;
         iStack_8 = iStack_8 + 4 + iVar2;
         piStack_18 = piVar4 + 1;
-        thunk_FUN_00627eb0((int)auStack_2c);
+        STParticleC::GetMessage((STParticleC *)*piVar3,(int)auStack_2c);
         piVar4 = (int *)((int)(piVar4 + 1) + iVar2);
         iVar2 = iStack_8;
         this = pvStack_c;

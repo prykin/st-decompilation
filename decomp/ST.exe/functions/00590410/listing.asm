@@ -1,4 +1,4 @@
-FUN_00590410:
+MAdvTy::DoneMAdv:
 00590410  55                        PUSH EBP
 00590411  8B EC                     MOV EBP,ESP
 00590413  83 EC 48                  SUB ESP,0x48

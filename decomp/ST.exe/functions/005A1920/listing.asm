@@ -1,4 +1,4 @@
-FUN_005a1920:
+FSGSTy::SetBanner:
 005A1920  55                        PUSH EBP
 005A1921  8B EC                     MOV EBP,ESP
 005A1923  81 EC DC 08 00 00         SUB ESP,0x8dc

@@ -1,9 +1,14 @@
 
-undefined4 FUN_005107c0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\frmpanel.cpp
+   FrmPanelTy::GetMessage */
+
+undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,int param_1)
 
 {
   uint uVar1;
   code *pcVar2;
+  SpecPanelTy *this_00;
   int iVar3;
   LPSTR pCVar4;
   int iVar5;
@@ -20,11 +25,13 @@ undefined4 FUN_005107c0(int param_1)
   undefined4 local_14;
   undefined4 local_10;
   undefined2 local_c;
-  int *local_8;
+  SpecPanelTy *local_8;
   
   local_60 = DAT_00858df8;
   DAT_00858df8 = &local_60;
+  local_8 = (SpecPanelTy *)this;
   iVar3 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_60;
     iVar5 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0,0,iVar3,&DAT_007a4ccc);
@@ -36,7 +43,7 @@ undefined4 FUN_005107c0(int param_1)
     uVar6 = (*pcVar2)();
     return uVar6;
   }
-  thunk_FUN_0053eb70(param_1);
+  SpecPanelTy::GetMessage(local_8,param_1);
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 0xc0a6) {
     if (uVar1 < 0xc09f) {
@@ -45,7 +52,7 @@ undefined4 FUN_005107c0(int param_1)
           if (uVar1 < 0xb109) {
             if (uVar1 != 0xb108) {
               if (uVar1 == 2) {
-                thunk_FUN_0050fd60();
+                InitFrmPanel((FrmPanelTy *)this_00);
                 DAT_00858df8 = (undefined4 *)local_60;
                 return 0;
               }
@@ -53,14 +60,14 @@ undefined4 FUN_005107c0(int param_1)
                 DAT_00858df8 = (undefined4 *)local_60;
                 return 0;
               }
-              thunk_FUN_00510250();
+              DoneFrmPanel((FrmPanelTy *)this_00);
               DAT_00858df8 = (undefined4 *)local_60;
               return 0;
             }
           }
           else {
             if (uVar1 == 0xb109) {
-              iVar3 = *local_8;
+              iVar3 = *(int *)this_00;
               pcVar7 = s_BUT_FINC_007c29d0;
               goto LAB_00510902;
             }
@@ -95,7 +102,7 @@ switchD_005108d5_caseD_b10c:
           DAT_00858df8 = (undefined4 *)local_60;
           return 0;
         }
-        iVar3 = *local_8;
+        iVar3 = *(int *)this_00;
         pcVar7 = s_BUT_FDEC_007c29b8;
       }
       else {
@@ -104,11 +111,11 @@ switchD_005108d5_caseD_b10c:
         case 0xb10e:
           goto switchD_005108d5_caseD_b10c;
         case 0xb10d:
-          iVar3 = *local_8;
+          iVar3 = *(int *)this_00;
           pcVar7 = s_BUT_FRLFT_007c29ac;
           break;
         case 0xb10f:
-          iVar3 = *local_8;
+          iVar3 = *(int *)this_00;
           pcVar7 = s_BUT_FRRT_007c29a0;
           break;
         default:
@@ -151,7 +158,7 @@ LAB_00510902:
     }
     thunk_FUN_0054b630(DAT_00802a30,0x4e,uVar6);
 switchD_00510930_default:
-    (**(code **)(*local_8 + 0x1c))(0);
+    (**(code **)(*(int *)this_00 + 0x1c))(0);
     thunk_FUN_005252c0(0xae);
     DAT_00858df8 = (undefined4 *)local_60;
     return 0;
@@ -186,7 +193,7 @@ switchD_00510930_default:
     pcVar7 = s_BUT_FBREAK_007c29e8;
   }
   pCVar4 = thunk_FUN_00571240(pcVar7,0);
-  thunk_FUN_005105e0(local_8,param_1,pCVar4);
+  PaintBut((FrmPanelTy *)this_00,param_1,pCVar4);
 switchD_005108d5_default:
   DAT_00858df8 = (undefined4 *)local_60;
   return 0;

@@ -1,4 +1,4 @@
-FUN_0052d370:
+PopUpTy::AddStr:
 0052D370  55                        PUSH EBP
 0052D371  8B EC                     MOV EBP,ESP
 0052D373  83 EC 54                  SUB ESP,0x54

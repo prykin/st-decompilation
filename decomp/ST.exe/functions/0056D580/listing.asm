@@ -1,4 +1,4 @@
-FUN_0056d580:
+STAppC::CloseGameDBs:
 0056D580  55                        PUSH EBP
 0056D581  8B EC                     MOV EBP,ESP
 0056D583  83 EC 44                  SUB ESP,0x44

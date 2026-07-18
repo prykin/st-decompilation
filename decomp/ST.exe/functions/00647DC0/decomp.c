@@ -1,42 +1,49 @@
 
-int FUN_00647dc0(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_boss.cpp
+   AiBossClassTy::InitData */
+
+int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
 
 {
   code *pcVar1;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
-  undefined4 *puVar4;
+  AiBossClassTy *pAVar4;
   void *unaff_EDI;
-  undefined4 *puVar5;
+  AiBossClassTy *pAVar5;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  AiBossClassTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    if (local_8 == 0) {
-      puVar5 = (undefined4 *)0x0;
+    if (local_8 == (AiBossClassTy *)0x0) {
+      pAVar5 = (AiBossClassTy *)0x0;
     }
     else {
-      puVar5 = (undefined4 *)(local_8 + 0x5d3);
+      pAVar5 = local_8 + 0x5d3;
     }
-    puVar4 = param_1;
+    pAVar4 = (AiBossClassTy *)param_1;
     for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + 1;
-      puVar5 = puVar5 + 1;
+      *(undefined4 *)pAVar5 = *(undefined4 *)pAVar4;
+      pAVar4 = pAVar4 + 4;
+      pAVar5 = pAVar5 + 4;
     }
-    *(undefined1 *)puVar5 = *(undefined1 *)puVar4;
-    *(undefined1 *)(local_8 + 0x5d8) = 1;
-    thunk_FUN_0064cd80((int *)(*(int *)(local_8 + 0x619) + 0x84 + (int)param_1));
+    *pAVar5 = *pAVar4;
+    local_8[0x5d8] = (AiBossClassTy)0x1;
+    AiEventClassTy::InitData
+              ((AiEventClassTy *)(local_8 + 0x1c),
+               (int *)(*(int *)(local_8 + 0x619) + 0x84 + (int)param_1));
     DAT_00858df8 = (undefined4 *)local_4c;
     return 0;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  thunk_FUN_00647ed0(local_8);
+  thunk_FUN_00647ed0((int)local_8);
   iVar3 = FUN_006ad4d0(s_E____titans_ai_ai_boss_cpp_007d2750,0x29,0,iVar2,&DAT_007a4ccc);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);

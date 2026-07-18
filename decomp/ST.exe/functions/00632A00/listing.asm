@@ -1,4 +1,4 @@
-FUN_00632a00:
+STTeamLissagC::InitVisibelSystem:
 00632A00  55                        PUSH EBP
 00632A01  8B EC                     MOV EBP,ESP
 00632A03  83 EC 64                  SUB ESP,0x64

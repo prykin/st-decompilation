@@ -1,9 +1,13 @@
 
-void __thiscall FUN_00482a00(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_boat.cpp
+   STBoatC::ChangeActivity */
+
+void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  int *this_00;
+  STBoatC *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -11,17 +15,17 @@ void __thiscall FUN_00482a00(void *this,int param_1)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int *local_8;
+  STBoatC *local_8;
   
-  if (*(int *)((int)this + 0x455) != 1) {
+  if (*(int *)(this + 0x455) != 1) {
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     local_8 = this;
     iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar2 == 0) {
-      if ((param_1 == 1) && (local_8[9] == (uint)DAT_0080874d)) {
-        switch(*(undefined4 *)((int)local_8 + 0x6f7)) {
+      if ((param_1 == 1) && (*(uint *)(local_8 + 0x24) == (uint)DAT_0080874d)) {
+        switch(*(undefined4 *)(local_8 + 0x6f7)) {
         case 1:
           uVar4 = 0xc9;
           break;
@@ -147,7 +151,7 @@ void __thiscall FUN_00482a00(void *this,int param_1)
         }
         iVar2 = thunk_FUN_00493cd0((int)local_8);
         if (iVar2 == 0) {
-          (**(code **)(*this_00 + 0x90))(4,uVar4);
+          (**(code **)(*(int *)this_00 + 0x90))(4,uVar4);
         }
       }
       thunk_FUN_0041dd00(this_00,param_1);

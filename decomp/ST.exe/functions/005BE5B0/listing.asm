@@ -1,4 +1,4 @@
-FUN_005be5b0:
+MReportTy::PaintMReport:
 005BE5B0  55                        PUSH EBP
 005BE5B1  8B EC                     MOV EBP,ESP
 005BE5B3  81 EC 94 08 00 00         SUB ESP,0x894

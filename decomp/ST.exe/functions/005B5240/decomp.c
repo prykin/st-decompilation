@@ -1,9 +1,14 @@
 
-void FUN_005b5240(undefined4 *param_1,undefined4 param_2,int param_3,int param_4,int param_5,
-                 int param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,
-                 undefined4 param_10,uint param_11,int param_12,int param_13,int param_14,
-                 undefined4 param_15,undefined4 param_16,undefined4 param_17,UINT param_18,
-                 int param_19,int param_20,int param_21,int param_22,int param_23,int param_24)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\mmenuobj.cpp
+   MMObjTy::InitSprBut */
+
+void __thiscall
+MMObjTy::InitSprBut(MMObjTy *this,undefined4 *param_1,undefined4 param_2,int param_3,int param_4,
+                   int param_5,int param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,
+                   undefined4 param_10,uint param_11,int param_12,int param_13,int param_14,
+                   undefined4 param_15,undefined4 param_16,undefined4 param_17,UINT param_18,
+                   int param_19,int param_20,int param_21,int param_22,int param_23,int param_24)
 
 {
   code *pcVar1;
@@ -35,8 +40,9 @@ void FUN_005b5240(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
     *param_1 = param_7;
     param_1[1] = param_8;
     param_1[3] = param_10;
-    FUN_007158a0(DAT_008075a8,param_11,'\a',(undefined4 *)0x0,0,0);
-    (**(code **)(param_1[0x12] + 4))(DAT_00806784,7,0,param_2,0xffffffff);
+    SpriteClassTy::InitSprite
+              ((SpriteClassTy *)(param_1 + 0x12),DAT_008075a8,param_11,'\a',(undefined4 *)0x0,0,0);
+    (**(code **)(*(int *)(param_1 + 0x12) + 4))(DAT_00806784,7,0,param_2,0xffffffff);
     param_1[0x19] = param_3;
     param_1[0x1a] = param_4;
     param_1[0x14] = 0;
@@ -53,13 +59,17 @@ void FUN_005b5240(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
       *(undefined1 *)((int)param_1 + 0x47) = 1;
       param_1[7] = param_16;
       *(undefined4 *)((int)param_1 + 0x1aa) = param_17;
-      FUN_007158a0(DAT_008075a8,param_11 - 1,'\a',(undefined4 *)0x0,0,0);
+      SpriteClassTy::InitSprite
+                ((SpriteClassTy *)((int)param_1 + 0x16a),DAT_008075a8,param_11 - 1,'\a',
+                 (undefined4 *)0x0,0,0);
       (**(code **)(*(int *)((int)param_1 + 0x16a) + 4))(DAT_00806784,7,0,param_12,0xffffffff);
       *(int *)((int)param_1 + 0x186) = param_3 + param_13;
       *(undefined4 *)((int)param_1 + 0x172) = 0;
       *(int *)((int)param_1 + 0x18a) = param_4 + param_14;
     }
-    FUN_007158a0(DAT_008075a8,param_11 - 2,'\a',(undefined4 *)0x0,0,0);
+    SpriteClassTy::InitSprite
+              ((SpriteClassTy *)((int)param_1 + 0xd9),DAT_008075a8,param_11 - 2,'\a',
+               (undefined4 *)0x0,0,0);
     *(int *)((int)param_1 + 0xf5) = param_3 + param_5;
     *(int *)((int)param_1 + 0xf9) = param_4 + param_6;
     if ((param_18 != 0) && (param_19 != 0)) {
@@ -69,7 +79,9 @@ void FUN_005b5240(undefined4 *param_1,undefined4 param_2,int param_3,int param_4
       uVar7 = 0xffffffff;
       uVar6 = 0xfffffffe;
       puVar3 = (uint *)FUN_006b0140(param_18,DAT_00807618);
-      puVar4 = FUN_00713480(puVar3,param_20,param_21,uVar6,uVar7,param_22,param_23,param_24);
+      puVar4 = ccFntTy::CreateTypeSSpr
+                         ((ccFntTy *)param_19,puVar3,param_20,param_21,uVar6,uVar7,param_22,param_23
+                          ,param_24);
       (**(code **)(iVar2 + 8))(puVar4,uVar8,uVar9);
     }
     *(undefined4 *)((int)param_1 + 0xe1) = 0;

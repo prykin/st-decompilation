@@ -1,6 +1,8 @@
 
-void thunk_FUN_005b67a0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
-                       int param_6,int param_7,undefined4 *param_8)
+void __thiscall
+MMMObjTy::OutRGlProc
+          (MMMObjTy *this,int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
+          int param_6,int param_7,undefined4 *param_8)
 
 {
   code *pcVar1;

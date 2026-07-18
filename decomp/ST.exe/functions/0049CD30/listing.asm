@@ -1,4 +1,4 @@
-FUN_0049cd30:
+STGroupBoatC::GrpBuild:
 0049CD30  55                        PUSH EBP
 0049CD31  8B EC                     MOV EBP,ESP
 0049CD33  81 EC 88 00 00 00         SUB ESP,0x88

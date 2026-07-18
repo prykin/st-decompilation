@@ -1,4 +1,4 @@
-FUN_0053d1a0:
+SAMPanelTy::DoneSAMPanel:
 0053D1A0  55                        PUSH EBP
 0053D1A1  8B EC                     MOV EBP,ESP
 0053D1A3  83 EC 48                  SUB ESP,0x48

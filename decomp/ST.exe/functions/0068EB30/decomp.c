@@ -1,48 +1,55 @@
 
-int FUN_0068eb30(undefined4 *param_1,short param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_tact.cpp
+   AiTactClassTy::PrepareToSave */
+
+int __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,undefined4 *param_1,short param_2)
 
 {
   short sVar1;
   code *pcVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
+  AiTactClassTy *pAVar3;
+  int iVar4;
+  uint uVar5;
+  int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  AiTactClassTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
+  local_8 = this;
+  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pAVar3 = local_8;
+  if (iVar4 == 0) {
     param_1[0xb] = 0;
     if (*(short *)(param_1 + 3) == -1) {
-      uVar4 = 0xffffffff;
+      uVar5 = 0xffffffff;
     }
     else {
-      uVar4 = thunk_FUN_0068e220(local_8,*(short *)(param_1 + 3));
+      uVar5 = thunk_FUN_0068e220(local_8,*(short *)(param_1 + 3));
     }
-    param_1[0xc] = uVar4;
-    sVar1 = *(short *)((int)local_8 + 0x7c);
+    param_1[0xc] = uVar5;
+    sVar1 = *(short *)(pAVar3 + 0x7c);
     param_1[0xd] = 0xffffffff;
     *(short *)((int)param_1 + 6) =
          *(short *)((int)param_1 + 6) + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
-    *(undefined4 *)((int)param_1 + 0x3a) = *(undefined4 *)((int)local_8 + 300);
-    FUN_006ae1c0(*(uint **)((int)local_8 + 0xbd),param_1);
-    thunk_FUN_00676c40(*(int *)((int)local_8 + 0xbd),&LAB_0040242d);
+    *(undefined4 *)((int)param_1 + 0x3a) = *(undefined4 *)(pAVar3 + 300);
+    FUN_006ae1c0(*(uint **)(pAVar3 + 0xbd),param_1);
+    thunk_FUN_00676c40(*(int *)(pAVar3 + 0xbd),&LAB_0040242d);
     DAT_00858df8 = (undefined4 *)local_4c;
     return 0;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1a2,0,iVar3,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  iVar6 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1a2,0,iVar4,&DAT_007a4ccc);
+  if (iVar6 != 0) {
     pcVar2 = (code *)swi(3);
-    iVar3 = (*pcVar2)();
-    return iVar3;
+    iVar4 = (*pcVar2)();
+    return iVar4;
   }
-  FUN_006a5e40(iVar3,0,0x7d56e0,0x1a3);
-  return iVar3;
+  FUN_006a5e40(iVar4,0,0x7d56e0,0x1a3);
+  return iVar4;
 }
 

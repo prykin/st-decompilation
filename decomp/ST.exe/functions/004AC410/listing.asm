@@ -1,4 +1,4 @@
-FUN_004ac410:
+STT3DSprC::StopShow:
 004AC410  55                        PUSH EBP
 004AC411  8B EC                     MOV EBP,ESP
 004AC413  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_0057bf60:
+STFishC::GetMessage:
 0057BF60  55                        PUSH EBP
 0057BF61  8B EC                     MOV EBP,ESP
 0057BF63  83 EC 7C                  SUB ESP,0x7c

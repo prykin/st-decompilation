@@ -1,8 +1,9 @@
 
-void thunk_FUN_005441a0(void)
+void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
 
 {
   code *pcVar1;
+  CursorClassTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -17,7 +18,7 @@ void thunk_FUN_005441a0(void)
   undefined4 uStack_40;
   undefined4 uStack_3c;
   undefined4 uStack_38;
-  void *pvStack_28;
+  CursorClassTy *pCStack_28;
   undefined4 auStack_24 [4];
   undefined4 uStack_14;
   undefined4 *puStack_10;
@@ -25,29 +26,31 @@ void thunk_FUN_005441a0(void)
   
   uStack_b8 = DAT_00858df8;
   DAT_00858df8 = &uStack_b8;
+  pCStack_28 = this;
   iVar2 = __setjmp3(auStack_b4,0,unaff_EDI,unaff_ESI);
+  this_00 = pCStack_28;
   if (iVar2 == 0) {
     puVar4 = auStack_24;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    puStack_10 = *(undefined4 **)((int)pvStack_28 + 8);
+    puStack_10 = *(undefined4 **)(pCStack_28 + 8);
     uStack_c = (-(uint)(DAT_0080734c != '\0') & 2) + 1;
     uStack_14 = 0x13;
-    FUN_006e6000(pvStack_28,3,1,auStack_24);
+    FUN_006e6000(pCStack_28,3,1,auStack_24);
     uStack_14 = 0x15;
-    FUN_006e6000(pvStack_28,3,1,auStack_24);
-    *(uint *)((int)pvStack_28 + 0xc5) = uStack_c & 0xffff;
-    *(uint *)((int)pvStack_28 + 0x34) = uStack_c & 0xffff;
-    *(uint *)((int)pvStack_28 + 0xc9) = uStack_c >> 0x10;
-    *(uint *)((int)pvStack_28 + 0x38) = uStack_c >> 0x10;
+    FUN_006e6000(this_00,3,1,auStack_24);
+    *(uint *)(this_00 + 0xc5) = uStack_c & 0xffff;
+    *(uint *)(this_00 + 0x34) = uStack_c & 0xffff;
+    *(uint *)(this_00 + 0xc9) = uStack_c >> 0x10;
+    *(uint *)(this_00 + 0x38) = uStack_c >> 0x10;
     puVar4 = auStack_74;
     for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    uStack_60 = *(undefined4 *)((int)pvStack_28 + 8);
+    uStack_60 = *(undefined4 *)(this_00 + 8);
     puStack_10 = auStack_74;
     auStack_74[0] = 8;
     uStack_5c = 2;
@@ -57,35 +60,35 @@ void thunk_FUN_005441a0(void)
     uStack_58 = 0xa110;
     uStack_38 = 0xa111;
     uStack_40 = uStack_60;
-    FUN_006e6000(pvStack_28,3,1,auStack_24);
+    FUN_006e6000(this_00,3,1,auStack_24);
     auStack_74[1] = 0x1000000;
     uStack_58 = 0xa112;
     uStack_38 = 0xa113;
-    FUN_006e6000(pvStack_28,3,1,auStack_24);
+    FUN_006e6000(this_00,3,1,auStack_24);
     auStack_74[1] = 0x40000000;
     uStack_58 = 0xa114;
     uStack_38 = 0xa115;
-    FUN_006e6000(pvStack_28,3,1,auStack_24);
+    FUN_006e6000(this_00,3,1,auStack_24);
     uStack_38 = 0xa133;
     iVar2 = 4;
     do {
-      thunk_FUN_005440c0(pvStack_28,iVar2,auStack_24,(int)auStack_74);
+      thunk_FUN_005440c0(this_00,iVar2,auStack_24,(int)auStack_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 8);
     uStack_38 = 0;
     iVar2 = 8;
     do {
-      thunk_FUN_005440c0(pvStack_28,iVar2,auStack_24,(int)auStack_74);
+      thunk_FUN_005440c0(this_00,iVar2,auStack_24,(int)auStack_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0x50);
     iVar2 = 0;
     do {
-      thunk_FUN_00544150(pvStack_28,iVar2,auStack_24,(int)auStack_74);
+      thunk_FUN_00544150(this_00,iVar2,auStack_24,(int)auStack_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 10);
     iVar2 = 0;
     do {
-      thunk_FUN_00544100(pvStack_28,iVar2,auStack_24,(int)auStack_74);
+      thunk_FUN_00544100(this_00,iVar2,auStack_24,(int)auStack_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0x1e);
     DAT_00858df8 = (undefined4 *)uStack_b8;

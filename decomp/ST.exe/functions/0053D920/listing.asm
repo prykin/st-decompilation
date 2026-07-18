@@ -1,4 +1,4 @@
-FUN_0053d920:
+UPanelTy::PaintTxtBut:
 0053D920  55                        PUSH EBP
 0053D921  8B EC                     MOV EBP,ESP
 0053D923  83 EC 58                  SUB ESP,0x58

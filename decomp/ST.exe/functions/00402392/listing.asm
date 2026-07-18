@@ -1,2 +1,2 @@
-thunk_FUN_0059c700:
+FSGSTy::LoginCtrls:
 00402392  E9 69 A3 19 00            JMP 0x0059c700

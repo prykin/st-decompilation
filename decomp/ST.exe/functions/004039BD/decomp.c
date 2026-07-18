@@ -1,8 +1,9 @@
 
-void thunk_FUN_005446c0(void)
+void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
 
 {
   code *pcVar1;
+  CursorClassTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -17,10 +18,11 @@ void thunk_FUN_005446c0(void)
   undefined4 auStack_28 [4];
   undefined4 uStack_18;
   undefined4 *puStack_14;
-  void *pvStack_8;
+  CursorClassTy *pCStack_8;
   
   uStack_b8 = DAT_00858df8;
   DAT_00858df8 = &uStack_b8;
+  pCStack_8 = this;
   iVar2 = __setjmp3(auStack_b4,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = auStack_28;
@@ -29,20 +31,20 @@ void thunk_FUN_005446c0(void)
       puVar4 = puVar4 + 1;
     }
     puVar4 = auStack_74;
-    for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
+    for (iVar2 = 0x13; this_00 = pCStack_8, iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
     puStack_14 = auStack_74;
     auStack_74[0] = 8;
     uStack_5c = 2;
-    uStack_60 = *(undefined4 *)((int)pvStack_8 + 8);
+    uStack_60 = *(undefined4 *)(pCStack_8 + 8);
     uStack_18 = 0x10;
     puVar4 = &DAT_00808136;
     do {
       auStack_74[1] = puVar4[-0x50];
       uStack_58 = *puVar4;
-      FUN_006e6000(pvStack_8,3,1,auStack_28);
+      FUN_006e6000(this_00,3,1,auStack_28);
       puVar4 = puVar4 + 1;
     } while ((int)puVar4 < 0x808146);
     DAT_00858df8 = (undefined4 *)uStack_b8;

@@ -1,74 +1,81 @@
 
-void FUN_005c87c0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\sett_obj.cpp
+   SettMapTy::PaintSC */
+
+void __thiscall SettMapTy::PaintSC(SettMapTy *this)
 
 {
   code *pcVar1;
-  undefined1 uVar2;
-  int iVar3;
+  SettMapTy *pSVar2;
+  undefined1 uVar3;
   int iVar4;
-  char *pcVar5;
+  int iVar5;
+  char *pcVar6;
   undefined4 unaff_ESI;
-  uint uVar6;
+  uint uVar7;
   void *unaff_EDI;
-  bool bVar7;
+  bool bVar8;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  SettMapTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
+  local_8 = this;
+  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  if (iVar4 == 0) {
     if ((DAT_008087b6 != 0) && (*(int *)(DAT_0081176c + 0x2f4) != 0)) {
       FUN_006e83f0(*(int *)(DAT_0081176c + 0x2f0),0x14,0x14,0x8b,(uint)DAT_008087c2);
       FUN_006b5440(*(int *)(DAT_0081176c + 0x2f0),0,0x14,0x14,*(int *)(DAT_0081176c + 0x2f4),0,0);
+      pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
-         ((iVar3 = *(int *)(local_8 + 0x1f84), iVar3 != 0 && (0 < *(int *)(iVar3 + 0xc))))) {
-        bVar7 = *(int *)(iVar3 + 0xc) != 0;
-        uVar6 = 0;
+         ((iVar4 = *(int *)(local_8 + 0x1f84), iVar4 != 0 && (0 < *(int *)(iVar4 + 0xc))))) {
+        bVar8 = *(int *)(iVar4 + 0xc) != 0;
+        uVar7 = 0;
         do {
-          if (bVar7) {
-            pcVar5 = (char *)(*(int *)(iVar3 + 8) * uVar6 + *(int *)(iVar3 + 0x1c));
+          if (bVar8) {
+            pcVar6 = (char *)(*(int *)(iVar4 + 8) * uVar7 + *(int *)(iVar4 + 0x1c));
           }
           else {
-            pcVar5 = (char *)0x0;
+            pcVar6 = (char *)0x0;
           }
-          if ((((pcVar5 != (char *)0x0) && (*pcVar5 != '\0')) && (pcVar5[4] != '\0')) &&
-             (pcVar5[2] != -1)) {
-            switch(pcVar5[2]) {
+          if ((((pcVar6 != (char *)0x0) && (*pcVar6 != '\0')) && (pcVar6[4] != '\0')) &&
+             (pcVar6[2] != -1)) {
+            switch(pcVar6[2]) {
             case '\0':
-              uVar2 = 0xfc;
+              uVar3 = 0xfc;
               break;
             case '\x01':
-              uVar2 = 0xfa;
+              uVar3 = 0xfa;
               break;
             case '\x02':
-              uVar2 = 0xfb;
+              uVar3 = 0xfb;
               break;
             case '\x03':
-              uVar2 = 0xf9;
+              uVar3 = 0xf9;
               break;
             case '\x04':
-              uVar2 = 0xfd;
+              uVar3 = 0xfd;
               break;
             case '\x05':
-              uVar2 = 0xfe;
+              uVar3 = 0xfe;
               break;
             case '\x06':
-              uVar2 = 0xf3;
+              uVar3 = 0xf3;
               break;
             case '\a':
-              uVar2 = 7;
+              uVar3 = 7;
               break;
             default:
-              uVar2 = 0xff;
+              uVar3 = 0xff;
             }
-            FUN_006e8460(*(undefined4 *)(pcVar5 + 0x54),*(undefined4 *)(pcVar5 + 0x58),4,uVar2);
+            FUN_006e8460(*(undefined4 *)(pcVar6 + 0x54),*(undefined4 *)(pcVar6 + 0x58),4,uVar3);
           }
-          iVar3 = *(int *)(local_8 + 0x1f84);
-          uVar6 = uVar6 + 1;
-          bVar7 = uVar6 < *(uint *)(iVar3 + 0xc);
-        } while ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc));
+          iVar4 = *(int *)(pSVar2 + 0x1f84);
+          uVar7 = uVar7 + 1;
+          bVar8 = uVar7 < *(uint *)(iVar4 + 0xc);
+        } while ((int)uVar7 < (int)*(uint *)(iVar4 + 0xc));
       }
       if (-1 < (int)*(uint *)(DAT_0081176c + 0x2ec)) {
         FUN_006b35d0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
@@ -78,9 +85,9 @@ void FUN_005c87c0(void)
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar4 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 == 0) {
-    FUN_006a5e40(iVar3,0,0x7cd0e8,0x4ac);
+  iVar5 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x4ac,0,iVar4,&DAT_007a4ccc);
+  if (iVar5 == 0) {
+    FUN_006a5e40(iVar4,0,0x7cd0e8,0x4ac);
     return;
   }
   pcVar1 = (code *)swi(3);

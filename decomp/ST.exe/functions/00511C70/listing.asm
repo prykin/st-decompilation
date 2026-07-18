@@ -1,4 +1,4 @@
-FUN_00511c70:
+HelpPanelTy::ShiftControls:
 00511C70  55                        PUSH EBP
 00511C71  8B EC                     MOV EBP,ESP
 00511C73  83 EC 48                  SUB ESP,0x48

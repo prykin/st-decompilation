@@ -1,4 +1,4 @@
-FUN_005385c0:
+UPanelTy::OutProc:
 005385C0  55                        PUSH EBP
 005385C1  8B EC                     MOV EBP,ESP
 005385C3  83 EC 44                  SUB ESP,0x44

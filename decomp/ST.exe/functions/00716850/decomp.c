@@ -195,13 +195,13 @@ int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,i
       FUN_006ab060((undefined4 *)((int)piVar10 + 0x29));
     }
     DAT_00858df8 = (undefined4 *)local_68;
-    FUN_006f20e0((uint *)&local_10);
-    FUN_006f20e0((uint *)&local_c);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_10);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
     return local_8;
   }
   DAT_00858df8 = (undefined4 *)local_68;
-  FUN_006f20e0((uint *)&local_10);
-  FUN_006f20e0((uint *)&local_c);
+  cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_10);
+  cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
   FUN_00716db0((int *)&local_8);
   if ((param_5 != 0) || (iVar4 != -4)) {
     iVar9 = FUN_006ad4d0(s_E__Ourlib_mftspr_cpp_007f0504,0x9a,0,iVar4,&DAT_007a4ccc);

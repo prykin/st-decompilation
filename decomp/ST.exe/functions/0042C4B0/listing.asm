@@ -1,4 +1,4 @@
-FUN_0042c4b0:
+STAllPlayersC::DelObjsFromTmp:
 0042C4B0  55                        PUSH EBP
 0042C4B1  8B EC                     MOV EBP,ESP
 0042C4B3  83 EC 50                  SUB ESP,0x50

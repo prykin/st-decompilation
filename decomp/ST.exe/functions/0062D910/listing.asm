@@ -1,4 +1,4 @@
-FUN_0062d910:
+STManRub3C::AddNewDock:
 0062D910  55                        PUSH EBP
 0062D911  8B EC                     MOV EBP,ESP
 0062D913  83 EC 78                  SUB ESP,0x78

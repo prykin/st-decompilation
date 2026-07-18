@@ -1,7 +1,8 @@
 
-undefined4
-thunk_FUN_005b5510(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-                  undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+undefined4 __thiscall
+MMObjTy::CreateSprBut
+          (MMObjTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
+          ,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8)
 
 {
   code *pcVar1;
@@ -22,12 +23,13 @@ thunk_FUN_005b5510(undefined4 param_1,undefined4 param_2,undefined4 param_3,unde
   undefined4 uStack_164;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  int iStack_c;
+  MMObjTy *pMStack_c;
   undefined4 uStack_8;
   
   uStack_8 = 0;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pMStack_c = this;
   iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar5 = auStack_1cc;
@@ -40,14 +42,14 @@ thunk_FUN_005b5510(undefined4 param_1,undefined4 param_2,undefined4 param_3,unde
     uStack_1bc = param_5;
     auStack_1cc[2] = param_3;
     auStack_1cc[3] = param_4;
-    uStack_1ac = *(undefined4 *)(iStack_c + 8);
+    uStack_1ac = *(undefined4 *)(pMStack_c + 8);
     uStack_1a4 = param_7;
     uStack_1b8 = param_6;
     uStack_1a8 = 2;
     uStack_168 = 2;
     uStack_164 = param_8;
     uStack_16c = uStack_1ac;
-    (**(code **)(**(int **)(iStack_c + 0xc) + 8))(2,&uStack_8,0,auStack_1cc,0);
+    (**(code **)(**(int **)(pMStack_c + 0xc) + 8))(2,&uStack_8,0,auStack_1cc,0);
     DAT_00858df8 = (undefined4 *)uStack_50;
     return uStack_8;
   }

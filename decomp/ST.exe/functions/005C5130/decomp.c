@@ -1,76 +1,79 @@
 
-int __fastcall FUN_005c5130(int *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\sett_obj.cpp
+   SettMapTy::NoneSettMap */
+
+int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
 
 {
-  char cVar1;
-  byte bVar2;
-  code *pcVar3;
-  int *piVar4;
-  DWORD DVar5;
-  int iVar6;
-  int iVar7;
+  SettMapTy SVar1;
+  code *pcVar2;
+  SettMapTy *this_00;
+  DWORD DVar3;
+  int iVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint *puVar8;
+  SettMapTy *pSVar6;
   undefined4 *local_50;
   undefined4 local_4c [16];
-  int *local_c;
+  SettMapTy *local_c;
   int local_8;
   
   local_8 = 1;
-  local_c = param_1;
-  DVar5 = timeGetTime();
-  *(DWORD *)((int)param_1 + 0x61) = DVar5;
+  local_c = this;
+  DVar3 = timeGetTime();
+  *(DWORD *)(this + 0x61) = DVar3;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
-  iVar6 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
-  piVar4 = local_c;
-  if (iVar6 != 0) {
+  iVar4 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  this_00 = local_c;
+  if (iVar4 != 0) {
     DAT_00858df8 = local_50;
-    iVar7 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243,0,iVar6,&DAT_007a4ccc);
-    if (iVar7 == 0) {
-      FUN_006a5e40(iVar6,0,0x7cd0e8,0x243);
+    iVar5 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243,0,iVar4,&DAT_007a4ccc);
+    if (iVar5 == 0) {
+      FUN_006a5e40(iVar4,0,0x7cd0e8,0x243);
       return 0;
     }
-    pcVar3 = (code *)swi(3);
-    iVar6 = (*pcVar3)();
-    return iVar6;
+    pcVar2 = (code *)swi(3);
+    iVar4 = (*pcVar2)();
+    return iVar4;
   }
-  cVar1 = *(char *)((int)local_c + 0x65);
-  if (cVar1 == '\x01') {
+  SVar1 = local_c[0x65];
+  if (SVar1 == (SettMapTy)0x1) {
     if (DAT_008067a0 != '\0') {
       CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
     }
   }
-  else if (cVar1 == '\x03') {
-    if (((*(char *)((int)local_c + 0x21e1) != '\0') && (local_c[0x87a] != 0)) &&
-       (iVar6 = thunk_FUN_005ab0a0(), iVar6 != 0)) {
+  else if (SVar1 == (SettMapTy)0x3) {
+    if (((local_c[0x21e1] != (SettMapTy)0x0) && (*(HoloTy **)(local_c + 0x21e8) != (HoloTy *)0x0))
+       && (iVar4 = HoloTy::NextFas(*(HoloTy **)(local_c + 0x21e8)), iVar4 != 0)) {
       local_8 = 0;
     }
-    if (((*(char *)((int)piVar4 + 0x21e5) != '\0') && (piVar4[0x87d] != 0)) &&
-       (iVar6 = thunk_FUN_005ab0a0(), iVar6 != 0)) {
+    if (((this_00[0x21e5] != (SettMapTy)0x0) && (*(HoloTy **)(this_00 + 0x21f4) != (HoloTy *)0x0))
+       && (iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f4)), iVar4 != 0)) {
       local_8 = 0;
     }
-    cVar1 = *(char *)((int)piVar4 + 0x1e26);
-    if (((cVar1 != '\x06') && (cVar1 != '\a')) &&
-       ((cVar1 != '\x0e' &&
-        (((*(char *)((int)piVar4 + 0x21e2) != '\0' && (piVar4[0x87b] != 0)) &&
-         (iVar6 = thunk_FUN_005ab0a0(), iVar6 != 0)))))) {
+    SVar1 = this_00[0x1e26];
+    if (((SVar1 != (SettMapTy)0x6) && (SVar1 != (SettMapTy)0x7)) &&
+       ((SVar1 != (SettMapTy)0xe &&
+        (((this_00[0x21e2] != (SettMapTy)0x0 && (*(HoloTy **)(this_00 + 0x21ec) != (HoloTy *)0x0))
+         && (iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21ec)), iVar4 != 0)))))) {
       local_8 = 0;
     }
-    cVar1 = *(char *)((int)piVar4 + 0x1e26);
-    if ((((cVar1 == '\x06') || (cVar1 == '\a')) || (cVar1 == '\x0e')) &&
-       (((*(char *)((int)piVar4 + 0x21e3) != '\0' && (piVar4[0x87c] != 0)) &&
-        (iVar6 = thunk_FUN_005ab0a0(), iVar6 != 0)))) {
+    SVar1 = this_00[0x1e26];
+    if ((((SVar1 == (SettMapTy)0x6) || (SVar1 == (SettMapTy)0x7)) || (SVar1 == (SettMapTy)0xe)) &&
+       (((this_00[0x21e3] != (SettMapTy)0x0 && (*(HoloTy **)(this_00 + 0x21f0) != (HoloTy *)0x0)) &&
+        (iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f0)), iVar4 != 0)))) {
       local_8 = 0;
     }
-    cVar1 = *(char *)((int)piVar4 + 0x1e26);
-    if (((((cVar1 != '\x06') && (cVar1 != '\x01')) && (cVar1 != '\x02')) &&
-        ((*(char *)((int)piVar4 + 0x21e6) != '\0' && (piVar4[0x87e] != 0)))) &&
-       (iVar6 = thunk_FUN_005ab0a0(), iVar6 != 0)) {
+    SVar1 = this_00[0x1e26];
+    if (((((SVar1 != (SettMapTy)0x6) && (SVar1 != (SettMapTy)0x1)) && (SVar1 != (SettMapTy)0x2)) &&
+        ((this_00[0x21e6] != (SettMapTy)0x0 && (*(HoloTy **)(this_00 + 0x21f8) != (HoloTy *)0x0))))
+       && (iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f8)), iVar4 != 0)) {
       local_8 = 0;
     }
-    if (((char)piVar4[0x879] != '\0') &&
+    if ((this_00[0x21e4] != (SettMapTy)0x0) &&
        (*(int *)(DAT_0081176c + 0x300) < *(int *)(DAT_0081176c + 0x304) + -1)) {
       *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + 1;
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
@@ -85,56 +88,57 @@ int __fastcall FUN_005c5130(int *param_1)
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (piVar4[0x87c] != 0) {
-        thunk_FUN_005aafb0();
-        FUN_0072e2b0((undefined4 *)piVar4[0x87c]);
-        piVar4[0x87c] = 0;
+      if (*(HoloTy **)(this_00 + 0x21f0) != (HoloTy *)0x0) {
+        HoloTy::Done(*(HoloTy **)(this_00 + 0x21f0));
+        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21f0));
+        *(undefined4 *)(this_00 + 0x21f0) = 0;
       }
-      cVar1 = *(char *)((int)piVar4 + 0x1e26);
-      if ((((cVar1 == '\x06') || (cVar1 == '\a')) || (cVar1 == '\x0e')) &&
-         (*(char *)((int)piVar4 + 0x21e3) != '\0')) {
-        FUN_006b3430(DAT_008075a8,piVar4[0x7e0]);
+      SVar1 = this_00[0x1e26];
+      if ((((SVar1 == (SettMapTy)0x6) || (SVar1 == (SettMapTy)0x7)) || (SVar1 == (SettMapTy)0xe)) &&
+         (this_00[0x21e3] != (SettMapTy)0x0)) {
+        FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1f80));
       }
-      if (piVar4[0x87a] != 0) {
-        thunk_FUN_005aafb0();
-        FUN_0072e2b0((undefined4 *)piVar4[0x87a]);
-        piVar4[0x87a] = 0;
+      if (*(HoloTy **)(this_00 + 0x21e8) != (HoloTy *)0x0) {
+        HoloTy::Done(*(HoloTy **)(this_00 + 0x21e8));
+        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21e8));
+        *(undefined4 *)(this_00 + 0x21e8) = 0;
       }
-      if (*(char *)((int)piVar4 + 0x21e1) != '\0') {
-        if (*(uint *)((int)piVar4 + 0x1c6f) != 0xffffffff) {
-          FUN_006b34d0(*(uint **)((int)piVar4 + 0x1cb3),*(uint *)((int)piVar4 + 0x1c6f),0xfffffffe,
-                       *(uint *)((int)piVar4 + 0x1c87),*(uint *)((int)piVar4 + 0x1c8b));
+      if (this_00[0x21e1] != (SettMapTy)0x0) {
+        if (*(uint *)(this_00 + 0x1c6f) != 0xffffffff) {
+          FUN_006b34d0(*(uint **)(this_00 + 0x1cb3),*(uint *)(this_00 + 0x1c6f),0xfffffffe,
+                       *(uint *)(this_00 + 0x1c87),*(uint *)(this_00 + 0x1c8b));
         }
-        if (piVar4[0x740] != 0xffffffff) {
-          FUN_006b34d0((uint *)piVar4[0x751],piVar4[0x740],0xfffffffe,piVar4[0x746],piVar4[0x747]);
+        if (*(uint *)(this_00 + 0x1d00) != 0xffffffff) {
+          FUN_006b34d0(*(uint **)(this_00 + 0x1d44),*(uint *)(this_00 + 0x1d00),0xfffffffe,
+                       *(uint *)(this_00 + 0x1d18),*(uint *)(this_00 + 0x1d1c));
         }
-        if (*(uint *)((int)piVar4 + 0x1d91) != 0xffffffff) {
-          FUN_006b34d0(*(uint **)((int)piVar4 + 0x1dd5),*(uint *)((int)piVar4 + 0x1d91),0xfffffffe,
-                       *(uint *)((int)piVar4 + 0x1da9),*(uint *)((int)piVar4 + 0x1dad));
+        if (*(uint *)(this_00 + 0x1d91) != 0xffffffff) {
+          FUN_006b34d0(*(uint **)(this_00 + 0x1dd5),*(uint *)(this_00 + 0x1d91),0xfffffffe,
+                       *(uint *)(this_00 + 0x1da9),*(uint *)(this_00 + 0x1dad));
         }
-        puVar8 = (uint *)(piVar4 + 0x833);
-        iVar6 = 10;
+        pSVar6 = this_00 + 0x20cc;
+        iVar4 = 10;
         do {
-          FUN_006b3430(DAT_008075a8,*puVar8);
-          puVar8 = puVar8 + 1;
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
+          FUN_006b3430(DAT_008075a8,*(uint *)pSVar6);
+          pSVar6 = pSVar6 + 4;
+          iVar4 = iVar4 + -1;
+        } while (iVar4 != 0);
       }
-      if (piVar4[0x87d] != 0) {
-        thunk_FUN_005aafb0();
-        FUN_0072e2b0((undefined4 *)piVar4[0x87d]);
-        piVar4[0x87d] = 0;
+      if (*(HoloTy **)(this_00 + 0x21f4) != (HoloTy *)0x0) {
+        HoloTy::Done(*(HoloTy **)(this_00 + 0x21f4));
+        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21f4));
+        *(undefined4 *)(this_00 + 0x21f4) = 0;
       }
-      if (*(char *)((int)piVar4 + 0x21e5) != '\0') {
-        FUN_006b3430(DAT_008075a8,*(uint *)((int)piVar4 + 0x1e22));
+      if (this_00[0x21e5] != (SettMapTy)0x0) {
+        FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1e22));
       }
-      if (piVar4[0x87b] != 0) {
-        thunk_FUN_005aafb0();
-        FUN_0072e2b0((undefined4 *)piVar4[0x87b]);
-        piVar4[0x87b] = 0;
+      if (*(HoloTy **)(this_00 + 0x21ec) != (HoloTy *)0x0) {
+        HoloTy::Done(*(HoloTy **)(this_00 + 0x21ec));
+        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21ec));
+        *(undefined4 *)(this_00 + 0x21ec) = 0;
       }
-      cVar1 = *(char *)((int)piVar4 + 0x1e26);
-      if (((cVar1 != '\x06') && (cVar1 != '\a')) && (cVar1 != '\x0e')) {
+      SVar1 = this_00[0x1e26];
+      if (((SVar1 != (SettMapTy)0x6) && (SVar1 != (SettMapTy)0x7)) && (SVar1 != (SettMapTy)0xe)) {
         if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
           FUN_006b34d0(*(uint **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391),0xfffffffe,
                        *(uint *)(DAT_0081176c + 0x3a9),*(uint *)(DAT_0081176c + 0x3ad));
@@ -149,18 +153,18 @@ int __fastcall FUN_005c5130(int *param_1)
         }
         FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
       }
-      if ((char)piVar4[0x879] != '\0') {
+      if (this_00[0x21e4] != (SettMapTy)0x0) {
         FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
         if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
           FUN_006b3af0(*(int **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc));
         }
       }
-      if (piVar4[0x87e] != 0) {
-        thunk_FUN_005aafb0();
-        FUN_0072e2b0((undefined4 *)piVar4[0x87e]);
-        piVar4[0x87e] = 0;
+      if (*(HoloTy **)(this_00 + 0x21f8) != (HoloTy *)0x0) {
+        HoloTy::Done(*(HoloTy **)(this_00 + 0x21f8));
+        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21f8));
+        *(undefined4 *)(this_00 + 0x21f8) = 0;
       }
-      if (*(char *)((int)piVar4 + 0x21e6) != '\0') {
+      if (this_00[0x21e6] != (SettMapTy)0x0) {
         if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
           FUN_006b34d0(*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe,
                        *(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
@@ -172,23 +176,23 @@ int __fastcall FUN_005c5130(int *param_1)
         FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
         FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
       }
-      *(undefined1 *)((int)piVar4 + 0x65) = 1;
-      (**(code **)(*piVar4 + 0x18))(0);
-      cVar1 = *(char *)((int)piVar4 + 0x1e26);
-      if (((cVar1 == '\x06') || (cVar1 == '\a')) || (cVar1 == '\x0e')) {
+      this_00[0x65] = (SettMapTy)0x1;
+      (**(code **)(*(int *)this_00 + 0x18))(0);
+      SVar1 = this_00[0x1e26];
+      if (((SVar1 == (SettMapTy)0x6) || (SVar1 == (SettMapTy)0x7)) || (SVar1 == (SettMapTy)0xe)) {
         thunk_FUN_005c8200();
       }
-      thunk_FUN_005c4e20('\0');
+      PaintSettMap(this_00,'\0');
       DAT_00858df8 = local_50;
       return local_8;
     }
   }
   else {
-    if (cVar1 != '\x04') {
+    if (SVar1 != (SettMapTy)0x4) {
       DAT_00858df8 = local_50;
       return 0;
     }
-    if (((char)local_c[0x879] != '\0') && (0 < *(int *)(DAT_0081176c + 0x300))) {
+    if ((local_c[0x21e4] != (SettMapTy)0x0) && (0 < *(int *)(DAT_0081176c + 0x300))) {
       *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + -1;
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         FUN_006b3730(*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),
@@ -197,61 +201,61 @@ int __fastcall FUN_005c5130(int *param_1)
       }
       local_8 = 0;
     }
-    if ((*(char *)((int)piVar4 + 0x21e1) != '\0') && (piVar4[0x87a] != 0)) {
-      iVar6 = thunk_FUN_005ab0a0();
-      if (iVar6 == 0) {
-        if (-1 < (int)*(uint *)(piVar4[0x87a] + 3)) {
-          FUN_006b3af0(DAT_008075a8,*(uint *)(piVar4[0x87a] + 3));
+    if ((this_00[0x21e1] != (SettMapTy)0x0) && (*(HoloTy **)(this_00 + 0x21e8) != (HoloTy *)0x0)) {
+      iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21e8));
+      if (iVar4 == 0) {
+        if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x21e8) + 3)) {
+          FUN_006b3af0(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21e8) + 3));
         }
       }
       else {
         local_8 = 0;
       }
     }
-    if ((*(char *)((int)piVar4 + 0x21e5) != '\0') && (piVar4[0x87d] != 0)) {
-      iVar6 = thunk_FUN_005ab0a0();
-      if (iVar6 == 0) {
-        if (-1 < (int)*(uint *)(piVar4[0x87d] + 3)) {
-          FUN_006b3af0(DAT_008075a8,*(uint *)(piVar4[0x87d] + 3));
+    if ((this_00[0x21e5] != (SettMapTy)0x0) && (*(HoloTy **)(this_00 + 0x21f4) != (HoloTy *)0x0)) {
+      iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f4));
+      if (iVar4 == 0) {
+        if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x21f4) + 3)) {
+          FUN_006b3af0(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21f4) + 3));
         }
       }
       else {
         local_8 = 0;
       }
     }
-    cVar1 = *(char *)((int)piVar4 + 0x1e26);
-    if ((((cVar1 != '\x06') && (cVar1 != '\a')) && (cVar1 != '\x0e')) &&
-       ((*(char *)((int)piVar4 + 0x21e2) != '\0' && (piVar4[0x87b] != 0)))) {
-      iVar6 = thunk_FUN_005ab0a0();
-      if (iVar6 == 0) {
-        if (-1 < (int)*(uint *)(piVar4[0x87b] + 3)) {
-          FUN_006b3af0(DAT_008075a8,*(uint *)(piVar4[0x87b] + 3));
+    SVar1 = this_00[0x1e26];
+    if ((((SVar1 != (SettMapTy)0x6) && (SVar1 != (SettMapTy)0x7)) && (SVar1 != (SettMapTy)0xe)) &&
+       ((this_00[0x21e2] != (SettMapTy)0x0 && (*(HoloTy **)(this_00 + 0x21ec) != (HoloTy *)0x0)))) {
+      iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21ec));
+      if (iVar4 == 0) {
+        if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x21ec) + 3)) {
+          FUN_006b3af0(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21ec) + 3));
         }
       }
       else {
         local_8 = 0;
       }
     }
-    cVar1 = *(char *)((int)piVar4 + 0x1e26);
-    if ((((cVar1 == '\x06') || (cVar1 == '\a')) || (cVar1 == '\x0e')) &&
-       ((*(char *)((int)piVar4 + 0x21e3) != '\0' && (piVar4[0x87c] != 0)))) {
-      iVar6 = thunk_FUN_005ab0a0();
-      if (iVar6 == 0) {
-        if (-1 < (int)*(uint *)(piVar4[0x87c] + 3)) {
-          FUN_006b3af0(DAT_008075a8,*(uint *)(piVar4[0x87c] + 3));
+    SVar1 = this_00[0x1e26];
+    if ((((SVar1 == (SettMapTy)0x6) || (SVar1 == (SettMapTy)0x7)) || (SVar1 == (SettMapTy)0xe)) &&
+       ((this_00[0x21e3] != (SettMapTy)0x0 && (*(HoloTy **)(this_00 + 0x21f0) != (HoloTy *)0x0)))) {
+      iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f0));
+      if (iVar4 == 0) {
+        if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x21f0) + 3)) {
+          FUN_006b3af0(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21f0) + 3));
         }
       }
       else {
         local_8 = 0;
       }
     }
-    cVar1 = *(char *)((int)piVar4 + 0x1e26);
-    if ((((cVar1 != '\x06') && (cVar1 != '\x01')) && (cVar1 != '\x02')) &&
-       ((*(char *)((int)piVar4 + 0x21e6) != '\0' && (piVar4[0x87e] != 0)))) {
-      iVar6 = thunk_FUN_005ab0a0();
-      if (iVar6 == 0) {
-        if (-1 < (int)*(uint *)(piVar4[0x87e] + 3)) {
-          FUN_006b3af0(DAT_008075a8,*(uint *)(piVar4[0x87e] + 3));
+    SVar1 = this_00[0x1e26];
+    if ((((SVar1 != (SettMapTy)0x6) && (SVar1 != (SettMapTy)0x1)) && (SVar1 != (SettMapTy)0x2)) &&
+       ((this_00[0x21e6] != (SettMapTy)0x0 && (*(HoloTy **)(this_00 + 0x21f8) != (HoloTy *)0x0)))) {
+      iVar4 = HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f8));
+      if (iVar4 == 0) {
+        if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x21f8) + 3)) {
+          FUN_006b3af0(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21f8) + 3));
         }
       }
       else {
@@ -263,10 +267,11 @@ int __fastcall FUN_005c5130(int *param_1)
       local_8 = 0;
     }
     if (local_8 != 0) {
-      bVar2 = *(byte *)((int)piVar4 + 0x1a5a);
-      *(undefined1 *)((int)piVar4 + 0x65) = 2;
-      if ((bVar2 != 0xff) && (*(int *)((int)piVar4 + (uint)bVar2 * 0x1fb + 0xd1) != 0)) {
-        FUN_006e3b50((undefined4 *)((int)piVar4 + (uint)bVar2 * 0x1fb + 0xc1));
+      SVar1 = this_00[0x1a5a];
+      this_00[0x65] = (SettMapTy)0x2;
+      if ((SVar1 != (SettMapTy)0xff) && (*(int *)(this_00 + (uint)(byte)SVar1 * 0x1fb + 0xd1) != 0))
+      {
+        FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)SVar1 * 0x1fb + 0xc1));
         DAT_00858df8 = local_50;
         return local_8;
       }

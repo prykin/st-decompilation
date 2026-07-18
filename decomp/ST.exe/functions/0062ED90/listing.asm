@@ -1,4 +1,4 @@
-FUN_0062ed90:
+STRubbishC::RubbishCreatePart:
 0062ED90  55                        PUSH EBP
 0062ED91  8B EC                     MOV EBP,ESP
 0062ED93  83 EC 4C                  SUB ESP,0x4c

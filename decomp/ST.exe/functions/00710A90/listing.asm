@@ -1,4 +1,4 @@
-FUN_00710a90:
+ccFntTy::SetSurf:
 00710A90  55                        PUSH EBP
 00710A91  8B EC                     MOV EBP,ESP
 00710A93  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_00566c20:
+SoundManagerTy::GetMessage:
 00566C20  55                        PUSH EBP
 00566C21  8B EC                     MOV EBP,ESP
 00566C23  83 EC 48                  SUB ESP,0x48

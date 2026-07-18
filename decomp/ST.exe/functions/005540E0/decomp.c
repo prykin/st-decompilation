@@ -1,9 +1,14 @@
 
-uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\grig\loading.cpp
+   cLoadingTy::new */
+
+uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint param_3)
 
 {
   char cVar1;
   code *pcVar2;
+  cMf32 *this_00;
   int iVar3;
   LPSTR pCVar4;
   uint uVar5;
@@ -36,7 +41,7 @@ uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
     iVar7 = FUN_006ad4d0(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc);
     if (iVar7 == 0) {
       if (local_8 != (uint *)0x0) {
-        FUN_006f20e0(local_8);
+        cMf32::RecMemFree(DAT_00806780,local_8);
         if ((uint *)local_8[2] != (uint *)0x0) {
           FUN_00710560((uint *)local_8[2]);
           local_8[2] = 0;
@@ -51,6 +56,7 @@ uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
     return puVar8;
   }
   local_8 = FUN_006aac10(param_1);
+  this_00 = DAT_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
     uVar5 = 0xffffffff;
@@ -77,12 +83,12 @@ uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
       pcVar11 = pcVar11 + 1;
       pcVar10 = pcVar10 + 1;
     }
-    FUN_006f12b0(FUN_006f2d10,&local_65c);
-    puVar6 = FUN_006f2790();
+    cMf32::ToBeg(DAT_00806780,FUN_006f2d10,&local_65c);
+    puVar6 = cMf32::RecNameGetNext(this_00);
     uVar5 = local_c;
     while (puVar6 != (undefined4 *)0x0) {
       local_c = uVar5 + 1;
-      puVar6 = FUN_006f2790();
+      puVar6 = cMf32::RecNameGetNext(this_00);
       uVar5 = local_c;
     }
     local_c = uVar5;
@@ -121,11 +127,11 @@ uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
         pcVar11 = pcVar11 + 1;
         pcVar10 = pcVar10 + 1;
       }
-      FUN_006f12b0(FUN_006f2d10,&local_254);
-      puVar6 = FUN_006f2790();
+      cMf32::ToBeg(DAT_00806780,FUN_006f2d10,&local_254);
+      puVar6 = cMf32::RecNameGetNext(this_00);
       while (puVar6 != (undefined4 *)0x0) {
         local_c = local_c + 1;
-        puVar6 = FUN_006f2790();
+        puVar6 = cMf32::RecNameGetNext(this_00);
       }
       iVar3 = 1;
       bVar12 = 0;
@@ -163,11 +169,11 @@ uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
         pcVar11 = pcVar11 + 1;
         pcVar10 = pcVar10 + 1;
       }
-      FUN_006f12b0(FUN_006f2d10,&local_458);
-      puVar6 = FUN_006f2790();
+      cMf32::ToBeg(DAT_00806780,FUN_006f2d10,&local_458);
+      puVar6 = cMf32::RecNameGetNext(this_00);
       while (puVar6 != (undefined4 *)0x0) {
         local_c = local_c + 1;
-        puVar6 = FUN_006f2790();
+        puVar6 = cMf32::RecNameGetNext(this_00);
       }
       iVar3 = 1;
       bVar12 = 0;
@@ -182,7 +188,7 @@ uint * __cdecl FUN_005540e0(uint param_1,int param_2,uint param_3)
 LAB_00554324:
   uVar5 = thunk_FUN_00553e20(*local_8,(undefined *)0x0,DAT_00807dd9);
   local_8[2] = uVar5;
-  puVar6 = FUN_00710ba0(*local_8,0,0,0,0,0,1);
+  puVar6 = ccFntTy::CreateSurf((ccFntTy *)local_8[2],*local_8,0,0,0,0,0,1);
   local_8[1] = (uint)puVar6;
   if (param_2 != 0) {
     uVar5 = thunk_FUN_00555600(param_2);

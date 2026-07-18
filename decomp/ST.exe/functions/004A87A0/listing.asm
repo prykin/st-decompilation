@@ -1,4 +1,4 @@
-FUN_004a87a0:
+STGroupBoatC::IsAgAtt:
 004A87A0  55                        PUSH EBP
 004A87A1  8B EC                     MOV EBP,ESP
 004A87A3  83 EC 08                  SUB ESP,0x8

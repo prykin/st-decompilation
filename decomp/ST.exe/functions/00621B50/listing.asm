@@ -1,4 +1,4 @@
-FUN_00621b50:
+STMineSetC::GetMessage:
 00621B50  55                        PUSH EBP
 00621B51  8B EC                     MOV EBP,ESP
 00621B53  83 EC 5C                  SUB ESP,0x5c

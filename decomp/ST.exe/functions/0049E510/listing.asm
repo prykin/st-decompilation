@@ -1,4 +1,4 @@
-FUN_0049e510:
+STGroupBoatC::GrpUnLoadObj:
 0049E510  55                        PUSH EBP
 0049E511  8B EC                     MOV EBP,ESP
 0049E513  83 EC 74                  SUB ESP,0x74

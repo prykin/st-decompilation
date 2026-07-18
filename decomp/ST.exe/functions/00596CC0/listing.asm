@@ -1,4 +1,4 @@
-FUN_00596cc0:
+FSGSTy::PaintFSGS:
 00596CC0  55                        PUSH EBP
 00596CC1  8B EC                     MOV EBP,ESP
 00596CC3  83 EC 4C                  SUB ESP,0x4c

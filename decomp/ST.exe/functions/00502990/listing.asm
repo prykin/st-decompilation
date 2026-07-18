@@ -1,4 +1,4 @@
-FUN_00502990:
+CPanelTy::PaintCtrlBoatSI:
 00502990  55                        PUSH EBP
 00502991  8B EC                     MOV EBP,ESP
 00502993  83 EC 4C                  SUB ESP,0x4c

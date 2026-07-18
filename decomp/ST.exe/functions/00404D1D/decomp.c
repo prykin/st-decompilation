@@ -8,6 +8,7 @@ void __thiscall thunk_FUN_00514bc0(void *this,int param_1,int param_2)
   void *pvVar4;
   bool bVar5;
   int iVar6;
+  int unaff_EDI;
   uint uStack_c;
   
   bVar5 = false;
@@ -81,41 +82,41 @@ LAB_00514d04:
     pvVar4 = *(void **)(iVar6 + 9);
     switch(cVar1) {
     case '\x01':
-      thunk_FUN_00517a50(this,(int)pvVar4,uVar3,'\0');
+      HelpPanelTy::RCProc(this,(int)pvVar4,uVar3,'\0');
       break;
     case '\x02':
-      thunk_FUN_0051a100((int)pvVar4,uVar3,'\0');
+      HelpPanelTy::ObjProc(this,(int)pvVar4,uVar3,'\0');
       break;
     case '\x03':
-      thunk_FUN_00518c20((int)pvVar4,'\0');
+      HelpPanelTy::SubProc(this,(int)pvVar4,'\0');
       break;
     case '\x04':
-      thunk_FUN_0051b5a0(this,(int)pvVar4,uVar3,'\0');
+      HelpPanelTy::ArmProc(this,(int)pvVar4,uVar3,'\0');
       break;
     case '\x05':
-      thunk_FUN_00516a40(this,(uint)pvVar4,(byte)uVar3,'\0');
+      HelpPanelTy::TechProc(this,(uint)pvVar4,(byte)uVar3,'\0');
       break;
     case '\x06':
-      thunk_FUN_00516480((uint)pvVar4,'\0');
+      HelpPanelTy::TTreeProc(this,(uint)pvVar4,'\0');
       break;
     case '\a':
-      thunk_FUN_00516300();
+      HelpPanelTy::MObjProc(this);
       break;
     case '\b':
-      thunk_FUN_0051d540(pvVar4,uVar3,'\0');
+      HelpPanelTy::TipProc(this,pvVar4,uVar3,'\0');
       break;
     case '\n':
-      thunk_FUN_00513a40();
+      HelpPanelTy::IndexBut(this);
       break;
     case '\v':
-      thunk_FUN_0051c980(this,(int)pvVar4,uVar3,'\0');
+      HelpPanelTy::SpecProc(this,(int)pvVar4,uVar3,'\0');
       break;
     case '\f':
-      thunk_FUN_0051d360((int)pvVar4,'\0');
+      HelpPanelTy::NatProc(this,(int)pvVar4,'\0');
     }
     iVar6 = *(int *)((int)this + 0x1c7) + uStack_c * 0x11;
-    thunk_FUN_005149b0(*(int *)(iVar6 + 9),*(int *)(iVar6 + 0xd));
-    thunk_FUN_005134b0((int)this);
+    HelpPanelTy::LinkAct(this,*(int *)(iVar6 + 9),*(int *)(iVar6 + 0xd));
+    HelpPanelTy::PutToSHlp(this,unaff_EDI);
     uStack_c = *(uint *)sizeHelp_exref;
     (**(code **)(*(int *)this + 0x18))(1);
   }

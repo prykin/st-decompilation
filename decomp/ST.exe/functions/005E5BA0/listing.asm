@@ -1,4 +1,4 @@
-FUN_005e5ba0:
+MTestTy::DoneMTest:
 005E5BA0  55                        PUSH EBP
 005E5BA1  8B EC                     MOV EBP,ESP
 005E5BA3  83 EC 48                  SUB ESP,0x48

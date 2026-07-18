@@ -1,4 +1,4 @@
-FUN_0052f900:
+OptPanelTy::ShiftControls:
 0052F900  55                        PUSH EBP
 0052F901  8B EC                     MOV EBP,ESP
 0052F903  83 EC 48                  SUB ESP,0x48

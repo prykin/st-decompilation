@@ -1,4 +1,4 @@
-FUN_005bae00:
+PrividerTy::NonePrivider:
 005BAE00  55                        PUSH EBP
 005BAE01  8B EC                     MOV EBP,ESP
 005BAE03  81 EC C4 00 00 00         SUB ESP,0xc4

@@ -1,4 +1,4 @@
-FUN_0053e1c0:
+UPanelTy::CreateTab:
 0053E1C0  55                        PUSH EBP
 0053E1C1  8B EC                     MOV EBP,ESP
 0053E1C3  81 EC 0C 05 00 00         SUB ESP,0x50c

@@ -1,6 +1,8 @@
 
-undefined4
-thunk_FUN_00449b60(undefined4 *param_1,uint param_2,undefined4 param_3,undefined4 param_4)
+undefined4 __thiscall
+STAllPlayersC::DestroyObjectMsg
+          (STAllPlayersC *this,undefined4 *param_1,uint param_2,undefined4 param_3,
+          undefined4 param_4)
 
 {
   code *pcVar1;

@@ -1,5 +1,9 @@
 
-int FUN_006041a0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_Expl.cpp
+   STExplosionC::CreateGroupPart */
+
+int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
 
 {
   code *pcVar1;
@@ -7,27 +11,30 @@ int FUN_006041a0(int param_1)
   undefined4 *puVar3;
   undefined4 unaff_ESI;
   int iVar4;
+  STExplosionC *pSVar5;
   void *unaff_EDI;
-  int *piVar5;
+  STExplosionC *pSVar6;
   undefined4 local_50;
   undefined4 local_4c [16];
-  int local_c;
+  STExplosionC *local_c;
   int local_8;
   
   iVar4 = 0;
   local_8 = 0;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_c = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  pSVar5 = local_c;
   if (iVar2 == 0) {
     if (0 < param_1) {
-      piVar5 = (int *)(local_c + 0x219);
+      pSVar6 = local_c + 0x219;
       do {
         puVar3 = thunk_FUN_00629010();
-        *piVar5 = (int)puVar3;
-        *(int *)((int)puVar3 + 0xce) = local_c;
-        iVar2 = *piVar5;
-        piVar5 = piVar5 + 1;
+        *(undefined4 **)pSVar6 = puVar3;
+        *(STExplosionC **)((int)puVar3 + 0xce) = pSVar5;
+        iVar2 = *(int *)pSVar6;
+        pSVar6 = pSVar6 + 4;
         *(int *)(iVar2 + 0xd2) = iVar4;
         local_8 = local_8 + 1;
         iVar4 = iVar4 + 1;
@@ -38,11 +45,11 @@ int FUN_006041a0(int param_1)
   }
   DAT_00858df8 = (undefined4 *)local_50;
   if (0 < local_8) {
-    puVar3 = (undefined4 *)(local_c + 0x219);
+    pSVar5 = local_c + 0x219;
     iVar4 = local_8;
     do {
-      FUN_0072e2b0((undefined4 *)*puVar3);
-      puVar3 = puVar3 + 1;
+      FUN_0072e2b0(*(undefined4 **)pSVar5);
+      pSVar5 = pSVar5 + 4;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }

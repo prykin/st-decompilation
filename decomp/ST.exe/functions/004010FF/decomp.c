@@ -1,6 +1,8 @@
 
-ushort * thunk_FUN_0044c720(int param_1,int param_2,int param_3,int param_4,int param_5,int *param_6
-                           )
+ushort * __thiscall
+STAllPlayersC::GetScrObjList
+          (STAllPlayersC *this,int param_1,int param_2,int param_3,int param_4,int param_5,
+          int *param_6)
 
 {
   byte bVar1;

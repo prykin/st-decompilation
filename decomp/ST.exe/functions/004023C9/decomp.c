@@ -2,6 +2,7 @@
 int __thiscall thunk_FUN_0063c510(void *this,int param_1)
 
 {
+  STT3DSprC *this_00;
   short sVar1;
   void *pvVar2;
   int iVar3;
@@ -34,10 +35,11 @@ int __thiscall thunk_FUN_0063c510(void *this,int param_1)
   iVar4 = thunk_FUN_0063cb30((int)this);
   if (iVar4 == 3) {
     if ((*(char *)((int)this + 0x29e) == '\x04') || (*(char *)((int)this + 0x29e) == '\x01')) {
-      thunk_FUN_004abce0((void *)((int)this + 0x1d5),0xd,0,0x13,'\0');
-      thunk_FUN_004ac1a0(0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      this_00 = (STT3DSprC *)((int)this + 0x1d5);
+      thunk_FUN_004abce0(this_00,0xd,0,0x13,'\0');
+      STT3DSprC::StartShow(this_00,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
       *(undefined1 *)((int)this + 0x29f) = 1;
-      thunk_FUN_004ac6b0((void *)((int)this + 0x1d5),'\r');
+      thunk_FUN_004ac6b0(this_00,'\r');
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
       (**(code **)(*(int *)this + 0xd8))();

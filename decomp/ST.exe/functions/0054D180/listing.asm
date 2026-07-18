@@ -1,4 +1,4 @@
-FUN_0054d180:
+STPlaySystemC::DoneSystem:
 0054D180  55                        PUSH EBP
 0054D181  8B EC                     MOV EBP,ESP
 0054D183  83 EC 48                  SUB ESP,0x48

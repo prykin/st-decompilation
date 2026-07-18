@@ -1,2 +1,2 @@
-thunk_FUN_006a0740:
+CGenerate::SaveMap:
 00404417  E9 24 C3 29 00            JMP 0x006a0740

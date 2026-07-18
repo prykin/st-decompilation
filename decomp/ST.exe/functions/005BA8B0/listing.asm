@@ -1,4 +1,4 @@
-FUN_005ba8b0:
+PrividerTy::PaintPrivider:
 005BA8B0  55                        PUSH EBP
 005BA8B1  8B EC                     MOV EBP,ESP
 005BA8B3  83 EC 48                  SUB ESP,0x48

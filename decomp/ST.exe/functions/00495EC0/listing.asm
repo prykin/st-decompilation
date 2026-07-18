@@ -1,4 +1,4 @@
-FUN_00495ec0:
+DumpClassC::WritePtr:
 00495EC0  55                        PUSH EBP
 00495EC1  8B EC                     MOV EBP,ESP
 00495EC3  66 8B 15 40 B2 7F 00      MOV DX,word ptr [0x007fb240]

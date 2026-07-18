@@ -1,4 +1,4 @@
-FUN_00712c10:
+ccFntTy::FormText:
 00712C10  55                        PUSH EBP
 00712C11  8B EC                     MOV EBP,ESP
 00712C13  83 EC 54                  SUB ESP,0x54

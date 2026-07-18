@@ -1,4 +1,4 @@
-FUN_00554ad0:
+cLoadingTy::DrawLine:
 00554AD0  55                        PUSH EBP
 00554AD1  8B EC                     MOV EBP,ESP
 00554AD3  83 EC 48                  SUB ESP,0x48

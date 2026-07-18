@@ -1,4 +1,4 @@
-FUN_00575cb0:
+STAlgaC::GetMessage:
 00575CB0  55                        PUSH EBP
 00575CB1  8B EC                     MOV EBP,ESP
 00575CB3  81 EC E4 00 00 00         SUB ESP,0xe4

@@ -1,4 +1,4 @@
-FUN_00513fa0:
+HelpPanelTy::NextBut:
 00513FA0  55                        PUSH EBP
 00513FA1  8B EC                     MOV EBP,ESP
 00513FA3  83 EC 48                  SUB ESP,0x48

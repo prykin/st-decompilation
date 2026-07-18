@@ -1,5 +1,11 @@
 
-uint * FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int param_5)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::_AssignMDPairs */
+
+uint * __thiscall
+STAllPlayersC::_AssignMDPairs
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   code *pcVar1;
@@ -42,6 +48,7 @@ uint * FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int param_5
   short local_a2;
   int local_94;
   int local_90;
+  STAllPlayersC *local_8c;
   uint local_88;
   int local_84;
   short local_80;
@@ -71,7 +78,7 @@ uint * FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int param_5
   uint local_28;
   uint local_24;
   uint *local_20;
-  int *local_1c;
+  STGroupC *local_1c;
   short local_18;
   short local_16;
   short local_14;
@@ -89,6 +96,7 @@ uint * FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int param_5
   local_4c = (uint *)0x0;
   local_114 = DAT_00858df8;
   DAT_00858df8 = &local_114;
+  local_8c = this;
   iVar4 = __setjmp3(local_110,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)local_114;
@@ -230,8 +238,9 @@ LAB_00442f1f:
     do {
       uVar9 = local_24;
       FUN_006acc70(iVar4,local_24,&local_1c);
-      if ((local_1c != (int *)0x0) && (iVar6 = (**(code **)(*local_1c + 0xc))(), iVar6 == 8)) {
-        local_48 = thunk_FUN_004233e0((int)local_1c);
+      if ((local_1c != (STGroupC *)0x0) &&
+         (iVar6 = (**(code **)(*(int *)local_1c + 0xc))(), iVar6 == 8)) {
+        local_48 = STGroupC::GetGroupContent(local_1c,(int)unaff_EDI);
         local_b8 = local_48[3];
         if ((local_b8 != 0) && (local_44 = 0, 0 < (int)local_b8)) {
 LAB_0044326c:

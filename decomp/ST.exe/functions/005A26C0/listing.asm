@@ -1,4 +1,4 @@
-FUN_005a26c0:
+FSGSTy::DelPlayer:
 005A26C0  55                        PUSH EBP
 005A26C1  8B EC                     MOV EBP,ESP
 005A26C3  81 EC 80 00 00 00         SUB ESP,0x80

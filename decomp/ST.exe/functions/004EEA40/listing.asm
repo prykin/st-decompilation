@@ -1,4 +1,4 @@
-FUN_004eea40:
+BldBoatPanelTy::InitBldBoatPanel:
 004EEA40  55                        PUSH EBP
 004EEA41  8B EC                     MOV EBP,ESP
 004EEA43  81 EC E4 02 00 00         SUB ESP,0x2e4

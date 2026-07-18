@@ -1,5 +1,11 @@
 
-undefined4 FUN_0042d980(undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetActiveCenter */
+
+undefined4 __thiscall
+STAllPlayersC::GetActiveCenter
+          (STAllPlayersC *this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
 
 {
   int iVar1;

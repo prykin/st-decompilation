@@ -6,9 +6,12 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
   byte bVar2;
   uint uVar3;
   int iVar4;
+  STGroupC *this;
   int *piVar5;
   int iVar6;
   int iVar7;
+  STAllPlayersC *in_ECX;
+  int unaff_EDI;
   uint uVar8;
   char cVar9;
   uint uStack_14;
@@ -40,8 +43,9 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
     }
     break;
   case 1:
-    thunk_FUN_0042ab00(bVar2,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&puStack_8,
-                       (int *)0x0);
+    STAllPlayersC::GetGObjFromZone
+              (in_ECX,bVar2,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&puStack_8,
+               (int *)0x0);
     param_3 = 0;
     param_2 = puStack_8[3];
     if (0 < (int)param_2) {
@@ -139,12 +143,13 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
     piVar5 = (int *)FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
     if (((piVar5 != (int *)0x0) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
       FUN_006ae110((byte *)puStack_8);
-      thunk_FUN_0042ab00(bVar2,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&pbStack_c
-                         ,(int *)0x0);
+      STAllPlayersC::GetGObjFromZone
+                (in_ECX,bVar2,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&pbStack_c,
+                 (int *)0x0);
       cVar9 = -1;
       iVar7 = 0;
       iVar6 = (**(code **)(*piVar5 + 0x2c))();
-      puStack_8 = thunk_FUN_0043eed0(uVar3,(int)pbStack_c,iVar6,iVar7,cVar9);
+      puStack_8 = STAllPlayersC::GetTOBJListFromDArr(in_ECX,uVar3,(int)pbStack_c,iVar6,iVar7,cVar9);
       FUN_006ae110(pbStack_c);
       param_3 = 0;
       param_2 = puStack_8[3];
@@ -169,10 +174,12 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
     iVar6 = FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
     if ((((iVar6 != 0) && (*(uint *)(iVar6 + 0x24) == uVar3)) && (*(int *)(iVar6 + 0x20) == 0x14))
        && ((*(short *)(iVar6 + 0x30) != -1 &&
-           (iVar6 = thunk_FUN_0042b760(uVar3,CONCAT22((short)((uint)iVar6 >> 0x10),
-                                                      *(short *)(iVar6 + 0x30))), iVar6 != 0)))) {
+           (this = (STGroupC *)
+                   thunk_FUN_0042b760(uVar3,CONCAT22((short)((uint)iVar6 >> 0x10),
+                                                     *(short *)(iVar6 + 0x30))),
+           this != (STGroupC *)0x0)))) {
       FUN_006ae110((byte *)puStack_8);
-      puStack_8 = thunk_FUN_004233e0(iVar6);
+      puStack_8 = STGroupC::GetGroupContent(this,unaff_EDI);
       param_2 = puStack_8[3];
       uVar8 = 0;
       if (0 < (int)param_2) {
@@ -213,9 +220,10 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
           goto LAB_0044bd53;
         }
         if (-1 < iVar7) goto LAB_0044bd53;
-        thunk_FUN_0044af50(bVar2,0);
+        STAllPlayersC::PushTV(bVar2,0);
         if (*(uint *)((int)&DAT_007f4f97 + iVar6) == uVar3) {
-          thunk_FUN_0044b280(bVar2,0,1,puStack_8,(int *)&pbStack_10,(int *)0x0,(int *)0x0);
+          STAllPlayersC::CalibrateTmp
+                    (in_ECX,bVar2,0,1,puStack_8,(int *)&pbStack_10,(int *)0x0,(int *)0x0);
           thunk_FUN_0042d190(uVar3,0x3c,(int)pbStack_10,0,0);
           FUN_006ae110(pbStack_10);
         }
@@ -238,7 +246,7 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
           thunk_FUN_0044b030(bVar2,0,iVar7);
           goto LAB_0044bd53;
         }
-        thunk_FUN_0044af50(bVar2,0);
+        STAllPlayersC::PushTV(bVar2,0);
         thunk_FUN_0042d4f0(bVar2,0,1,0);
       }
       goto LAB_0044bd3d;
@@ -273,7 +281,7 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
         thunk_FUN_0044b030(bVar2,0,iVar7);
         goto LAB_0044bd53;
       }
-      thunk_FUN_0044af50(bVar2,0);
+      STAllPlayersC::PushTV(bVar2,0);
     }
     else {
       if (iVar7 != 0x1ae) {
@@ -290,10 +298,10 @@ void thunk_FUN_0044b5f0(undefined4 param_1,uint param_2,uint param_3)
         thunk_FUN_0044b030(bVar2,0,iVar7);
         goto LAB_0044bd53;
       }
-      thunk_FUN_0044af50(bVar2,0);
+      STAllPlayersC::PushTV(bVar2,0);
     }
 LAB_0044bd3d:
-    thunk_FUN_0042c1c0(uVar3,0,0,(int)puStack_8);
+    STAllPlayersC::AddObjsToTmp(in_ECX,uVar3,0,0,(int)puStack_8);
   }
 LAB_0044bd49:
   *(undefined4 *)((int)&DAT_007f4f83 + iVar6) = 0x3c;

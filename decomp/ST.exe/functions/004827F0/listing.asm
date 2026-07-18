@@ -1,4 +1,4 @@
-FUN_004827f0:
+STBoatC::ExpIsOver:
 004827F0  55                        PUSH EBP
 004827F1  8B EC                     MOV EBP,ESP
 004827F3  83 EC 58                  SUB ESP,0x58

@@ -1,5 +1,5 @@
 
-undefined4 __fastcall thunk_FUN_004a87a0(int param_1)
+undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this,int param_1)
 
 {
   uint uVar1;
@@ -12,14 +12,13 @@ undefined4 __fastcall thunk_FUN_004a87a0(int param_1)
   uint uStack_8;
   
   uVar6 = 0;
-  uVar1 = *(uint *)(*(int *)(param_1 + 0x29) + 0xc);
+  uVar1 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   if (uVar1 != 0) {
     uVar5 = 0;
     do {
-      FUN_006acc70(*(int *)(param_1 + 0x29),uVar5,&uStack_8);
+      FUN_006acc70(*(int *)(this + 0x29),uVar5,&uStack_8);
       if ((short)uStack_8 != -1) {
-        uVar5 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                            *(undefined1 *)(param_1 + 0x24)),uStack_8,1);
+        uVar5 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),this[0x24]),uStack_8,1);
         if (uVar5 == 0) {
           iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1758,0,0,&DAT_007a4ccc);
           if (iVar3 != 0) {

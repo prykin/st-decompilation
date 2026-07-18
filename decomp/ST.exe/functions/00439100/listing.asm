@@ -1,4 +1,4 @@
-FUN_00439100:
+STAllPlayersC::RestoreTmp:
 00439100  55                        PUSH EBP
 00439101  8B EC                     MOV EBP,ESP
 00439103  83 EC 6C                  SUB ESP,0x6c

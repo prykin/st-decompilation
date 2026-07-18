@@ -25,8 +25,9 @@ void __thiscall thunk_FUN_004fae90(void *this,uint param_1,uint param_2)
       if (iVar3 != 0) {
         iStack_10 = iStack_8;
         uStack_14 = param_1;
-        iVar3 = thunk_FUN_0042d980((undefined2 *)0x0,(undefined2 *)0x0,
-                                   (undefined2 *)((int)&param_2 + 2));
+        iVar3 = STAllPlayersC::GetActiveCenter
+                          (DAT_007fa174,(undefined2 *)0x0,(undefined2 *)0x0,
+                           (undefined2 *)((int)&param_2 + 2));
         if (-1 < iVar3) {
           iStack_c = (int)param_2._2_2_;
           if (iStack_c < 0) {

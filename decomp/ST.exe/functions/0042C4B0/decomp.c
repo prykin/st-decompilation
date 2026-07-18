@@ -1,5 +1,11 @@
 
-undefined4 FUN_0042c4b0(undefined4 param_1,uint param_2,int param_3,int param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::DelObjsFromTmp */
+
+undefined4 __thiscall
+STAllPlayersC::DelObjsFromTmp
+          (STAllPlayersC *this,undefined4 param_1,uint param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
@@ -12,10 +18,12 @@ undefined4 FUN_0042c4b0(undefined4 param_1,uint param_2,int param_3,int param_4)
   undefined4 local_54;
   undefined4 local_50 [16];
   int local_10;
+  STAllPlayersC *local_c;
   uint local_8;
   
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
+  local_c = this;
   iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_4 == 0) {

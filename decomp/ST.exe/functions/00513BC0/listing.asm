@@ -1,4 +1,4 @@
-FUN_00513bc0:
+HelpPanelTy::PrevBut:
 00513BC0  55                        PUSH EBP
 00513BC1  8B EC                     MOV EBP,ESP
 00513BC3  83 EC 4C                  SUB ESP,0x4c

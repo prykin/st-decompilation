@@ -1,4 +1,4 @@
-FUN_0042efd0:
+STAllPlayersC::RegisterGroup:
 0042EFD0  55                        PUSH EBP
 0042EFD1  8B EC                     MOV EBP,ESP
 0042EFD3  83 EC 4C                  SUB ESP,0x4c

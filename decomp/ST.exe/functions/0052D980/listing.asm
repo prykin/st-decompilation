@@ -1,4 +1,4 @@
-FUN_0052d980:
+PopUpTy::ChangeState:
 0052D980  55                        PUSH EBP
 0052D981  8B EC                     MOV EBP,ESP
 0052D983  83 EC 58                  SUB ESP,0x58

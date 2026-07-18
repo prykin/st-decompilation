@@ -1,2 +1,2 @@
-thunk_FUN_004714d0:
+STBoatC::BackToDok:
 004058BC  E9 0F BC 06 00            JMP 0x004714d0

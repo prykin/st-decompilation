@@ -1,4 +1,4 @@
-FUN_005a2c10:
+FSGSTy::ChangePlayerPing:
 005A2C10  55                        PUSH EBP
 005A2C11  8B EC                     MOV EBP,ESP
 005A2C13  83 EC 48                  SUB ESP,0x48

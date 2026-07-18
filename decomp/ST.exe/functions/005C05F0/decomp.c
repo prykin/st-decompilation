@@ -34,13 +34,13 @@ void __fastcall FUN_005c05f0(int param_1)
     }
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-  if (*(int *)(param_1 + 0x453) != 0) {
-    thunk_FUN_005aafb0();
+  if (*(HoloTy **)(param_1 + 0x453) != (HoloTy *)0x0) {
+    HoloTy::Done(*(HoloTy **)(param_1 + 0x453));
     FUN_0072e2b0(*(undefined4 **)(param_1 + 0x453));
     *(undefined4 *)(param_1 + 0x453) = 0;
   }
-  if (*(int *)(param_1 + 0x457) != 0) {
-    thunk_FUN_005aafb0();
+  if (*(HoloTy **)(param_1 + 0x457) != (HoloTy *)0x0) {
+    HoloTy::Done(*(HoloTy **)(param_1 + 0x457));
     FUN_0072e2b0(*(undefined4 **)(param_1 + 0x457));
     *(undefined4 *)(param_1 + 0x457) = 0;
   }
@@ -71,7 +71,7 @@ void __fastcall FUN_005c05f0(int param_1)
     uVar5 = 0x10;
     iVar4 = 1;
     iVar2 = FUN_006bf9f0(DAT_008075a8,0x47,0x46,0x2bd,0x15e);
-    uVar5 = thunk_FUN_005aacb0(2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,uVar7);
+    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x453),2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,uVar7);
     if (uVar5 != 0) {
       iVar2 = *(int *)(param_1 + 0x453);
       *(undefined1 *)(iVar2 + 2) = 0;
@@ -80,9 +80,9 @@ void __fastcall FUN_005c05f0(int param_1)
       if (-1 < (int)uVar5) {
         FUN_006b3430(DAT_008075a8,uVar5);
       }
-      thunk_FUN_005ab0a0();
+      HoloTy::NextFas(*(HoloTy **)(param_1 + 0x453));
     }
-    thunk_FUN_005ab0a0();
+    HoloTy::NextFas(*(HoloTy **)(param_1 + 0x453));
   }
   puVar1 = (undefined1 *)FUN_0072e530(0x33);
   if (puVar1 == (undefined1 *)0x0) {
@@ -111,7 +111,7 @@ void __fastcall FUN_005c05f0(int param_1)
     uVar5 = 0x10;
     iVar4 = 1;
     iVar2 = FUN_006bf9f0(DAT_008075a8,0x1a,10,0x2e9,0x32);
-    uVar5 = thunk_FUN_005aacb0(3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7);
+    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x457),3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7);
     if (uVar5 != 0) {
       iVar2 = *(int *)(param_1 + 0x457);
       *(undefined1 *)(iVar2 + 2) = 0;
@@ -120,9 +120,9 @@ void __fastcall FUN_005c05f0(int param_1)
       if (-1 < (int)uVar5) {
         FUN_006b3430(DAT_008075a8,uVar5);
       }
-      thunk_FUN_005ab0a0();
+      HoloTy::NextFas(*(HoloTy **)(param_1 + 0x457));
     }
-    thunk_FUN_005ab0a0();
+    HoloTy::NextFas(*(HoloTy **)(param_1 + 0x457));
   }
   thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(param_1 + 0x5d));
   if (DAT_00802a30 != 0) {

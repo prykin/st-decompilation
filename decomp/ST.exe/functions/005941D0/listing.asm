@@ -1,4 +1,4 @@
-FUN_005941d0:
+ComboTy::DoneCombo:
 005941D0  55                        PUSH EBP
 005941D1  8B EC                     MOV EBP,ESP
 005941D3  83 EC 48                  SUB ESP,0x48

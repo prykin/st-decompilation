@@ -1,77 +1,92 @@
 
-void FUN_00590580(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\adv_obj.cpp
+   MAdvTy::PaintMAdv */
+
+void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
-  uint *puVar3;
+  MAdvTy *pMVar2;
+  int iVar3;
+  uint *puVar4;
+  StartServTy *this_00;
+  StartServTy *this_01;
+  StartServTy *extraout_ECX;
+  StartServTy *this_02;
+  StartServTy *extraout_ECX_00;
+  StartServTy *this_03;
   void *unaff_ESI;
-  int iVar4;
   int iVar5;
   int iVar6;
-  uint uVar7;
+  int iVar7;
   uint uVar8;
-  void *pvVar9;
-  undefined4 uVar10;
+  uint uVar9;
+  void *pvVar10;
   undefined4 uVar11;
+  undefined4 uVar12;
   undefined4 local_48 [16];
-  int local_8;
+  MAdvTy *local_8;
   
-  uVar11 = DAT_00858df8;
+  uVar12 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar11);
-  if (iVar2 == 0) {
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_ESI,uVar12);
+  if (iVar3 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
+    pMVar2 = local_8;
     thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(local_8 + 0x5e));
-    pvVar9 = *(void **)(DAT_0081176c + 0x30);
-    uVar10 = 1;
-    uVar8 = 0xffffffff;
-    if (*(char *)(local_8 + 0x5d) == '\0') {
-      uVar7 = 0xfffffffe;
-      puVar3 = (uint *)FUN_006b0140(0x25e4,DAT_00807618);
-      thunk_FUN_00540890(0,0,0x1b8,800,0x14,puVar3,uVar7,uVar8,pvVar9,uVar10);
-      pvVar9 = *(void **)(DAT_0081176c + 0x30);
-      uVar10 = 1;
-      uVar7 = 0xffffffff;
+    pvVar10 = *(void **)(DAT_0081176c + 0x30);
+    uVar11 = 1;
+    uVar9 = 0xffffffff;
+    if (pMVar2[0x5d] == (MAdvTy)0x0) {
+      uVar8 = 0xfffffffe;
+      puVar4 = (uint *)FUN_006b0140(0x25e4,DAT_00807618);
+      StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pvVar10,uVar11);
+      pvVar10 = *(void **)(DAT_0081176c + 0x30);
+      uVar11 = 1;
       uVar8 = 0xffffffff;
-      puVar3 = (uint *)FUN_006b0140(0x25e8,DAT_00807618);
-      iVar6 = 0x8c;
-      iVar5 = 800;
-      iVar4 = 0x1cc;
-      iVar2 = 0;
+      uVar9 = 0xffffffff;
+      puVar4 = (uint *)FUN_006b0140(0x25e8,DAT_00807618);
+      iVar7 = 0x8c;
+      iVar6 = 800;
+      iVar5 = 0x1cc;
+      iVar3 = 0;
+      this_03 = extraout_ECX_00;
     }
     else {
-      uVar7 = 0xffffffff;
-      puVar3 = (uint *)FUN_006b0140(0x25e5,DAT_00807618);
-      thunk_FUN_00540890(0,10,10,0x30c,0x32,puVar3,uVar7,uVar8,pvVar9,uVar10);
-      pvVar9 = *(void **)(DAT_0081176c + 0x30);
-      uVar10 = 1;
-      uVar7 = 0xffffffff;
-      uVar8 = 0;
-      puVar3 = (uint *)FUN_006b0140(0x25e6,DAT_00807618);
-      thunk_FUN_00540890(0,0x10e,0x3c,0x20d,0xfa,puVar3,uVar8,uVar7,pvVar9,uVar10);
-      pvVar9 = *(void **)(DAT_0081176c + 0x30);
-      uVar10 = 1;
-      uVar7 = 0xffffffff;
-      uVar8 = 0;
-      puVar3 = (uint *)FUN_006b0140(0x25e7,DAT_00807618);
-      iVar6 = 0xe6;
-      iVar5 = 0x302;
-      iVar4 = 0x172;
-      iVar2 = 0x14;
+      uVar8 = 0xffffffff;
+      puVar4 = (uint *)FUN_006b0140(0x25e5,DAT_00807618);
+      StartServTy::WrTextDDX(this_00,0,10,10,0x30c,0x32,puVar4,uVar8,uVar9,pvVar10,uVar11);
+      pvVar10 = *(void **)(DAT_0081176c + 0x30);
+      uVar11 = 1;
+      uVar8 = 0xffffffff;
+      uVar9 = 0;
+      puVar4 = (uint *)FUN_006b0140(0x25e6,DAT_00807618);
+      StartServTy::WrTextDDX(this_01,0,0x10e,0x3c,0x20d,0xfa,puVar4,uVar9,uVar8,pvVar10,uVar11);
+      pvVar10 = *(void **)(DAT_0081176c + 0x30);
+      uVar11 = 1;
+      uVar8 = 0xffffffff;
+      uVar9 = 0;
+      puVar4 = (uint *)FUN_006b0140(0x25e7,DAT_00807618);
+      iVar7 = 0xe6;
+      iVar6 = 0x302;
+      iVar5 = 0x172;
+      iVar3 = 0x14;
+      this_03 = extraout_ECX;
     }
-    thunk_FUN_00540890(0,iVar2,iVar4,iVar5,iVar6,puVar3,uVar8,uVar7,pvVar9,uVar10);
-    DAT_00858df8 = (undefined1 *)uVar11;
+    StartServTy::WrTextDDX(this_03,0,iVar3,iVar5,iVar6,iVar7,puVar4,uVar9,uVar8,pvVar10,uVar11);
+    DAT_00858df8 = (undefined1 *)uVar12;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar11;
-  iVar4 = FUN_006ad4d0(s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d,0,iVar2,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  DAT_00858df8 = (undefined1 *)uVar12;
+  iVar5 = FUN_006ad4d0(s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d,0,iVar3,&DAT_007a4ccc);
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7cbc24,0x4d);
+  FUN_006a5e40(iVar3,0,0x7cbc24,0x4d);
   return;
 }
 

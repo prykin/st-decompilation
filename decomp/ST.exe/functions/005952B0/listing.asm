@@ -1,4 +1,4 @@
-FUN_005952b0:
+FSGSTy::OutSGlProc:
 005952B0  55                        PUSH EBP
 005952B1  8B EC                     MOV EBP,ESP
 005952B3  83 EC 4C                  SUB ESP,0x4c

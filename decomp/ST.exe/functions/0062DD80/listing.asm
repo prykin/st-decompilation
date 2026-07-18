@@ -1,4 +1,4 @@
-FUN_0062dd80:
+STManRub3C::AddNewColl3:
 0062DD80  55                        PUSH EBP
 0062DD81  8B EC                     MOV EBP,ESP
 0062DD83  83 EC 5C                  SUB ESP,0x5c

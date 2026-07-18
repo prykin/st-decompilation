@@ -1,4 +1,4 @@
-FUN_00482a00:
+STBoatC::ChangeActivity:
 00482A00  55                        PUSH EBP
 00482A01  8B EC                     MOV EBP,ESP
 00482A03  83 EC 48                  SUB ESP,0x48

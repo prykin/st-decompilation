@@ -63,7 +63,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     puVar6 = puVar6 + 1;
   }
   local_6c = 2;
-  iVar2 = thunk_FUN_006041a0(iVar5);
+  iVar2 = STExplosionC::CreateGroupPart(this,iVar5);
   if (iVar2 == iVar5) {
     if (0 < local_8) {
       puVar3 = local_cc;
@@ -90,6 +90,7 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
     iVar5 = 0;
     if (0 < iVar2) {
       param_2 = local_cc;
+      param_3 = (int)this + 0x219;
       do {
         puVar6 = local_5c;
         for (iVar4 = 0x11; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -125,9 +126,10 @@ FUN_00608b50(void *this,uint param_1,uint *param_2,uint param_3,undefined4 param
         local_28 = (uVar1 >> 0x10 & 3) + 9;
         local_68 = local_5c;
         local_1a = iVar5;
-        thunk_FUN_00627eb0((int)local_7c);
+        STParticleC::GetMessage(*(STParticleC **)param_3,(int)local_7c);
         iVar5 = iVar5 + 1;
         param_2 = param_2 + 1;
+        param_3 = param_3 + 4;
       } while (iVar5 < iVar2);
     }
     return iVar2;

@@ -1,4 +1,4 @@
-FUN_0059c520:
+FSGSTy::CreateCtrls:
 0059C520  55                        PUSH EBP
 0059C521  8B EC                     MOV EBP,ESP
 0059C523  83 EC 48                  SUB ESP,0x48

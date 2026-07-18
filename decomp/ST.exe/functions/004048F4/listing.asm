@@ -1,2 +1,2 @@
-thunk_FUN_00551ec0:
+TradePanelTy::PaintIndicators:
 004048F4  E9 C7 D5 14 00            JMP 0x00551ec0

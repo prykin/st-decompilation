@@ -1,5 +1,9 @@
 
-uint * FUN_00712f80(uint *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::_TxtToSarr */
+
+uint * __thiscall ccFntTy::_TxtToSarr(ccFntTy *this,uint *param_1)
 
 {
   char cVar1;

@@ -1,5 +1,6 @@
 
-void thunk_FUN_005b5a30(int param_1,int *param_2,int param_3,byte param_4,uint param_5)
+void __thiscall
+MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte param_4,uint param_5)
 
 {
   code *pcVar1;

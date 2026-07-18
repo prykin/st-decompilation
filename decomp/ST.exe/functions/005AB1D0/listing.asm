@@ -1,4 +1,4 @@
-FUN_005ab1d0:
+ChooseMapTy::OutListProc:
 005AB1D0  55                        PUSH EBP
 005AB1D1  8B EC                     MOV EBP,ESP
 005AB1D3  83 EC 4C                  SUB ESP,0x4c

@@ -3,8 +3,9 @@ undefined4 FUN_00571c90(int param_1)
 
 {
   int iVar1;
+  STSprGameObjC *in_ECX;
   
-  iVar1 = thunk_FUN_0041e530(param_1);
+  iVar1 = STSprGameObjC::GetMessage(in_ECX,param_1);
   if (iVar1 == 0xffff) {
     return 0xffff;
   }

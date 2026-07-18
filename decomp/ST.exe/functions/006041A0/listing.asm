@@ -1,4 +1,4 @@
-FUN_006041a0:
+STExplosionC::CreateGroupPart:
 006041A0  55                        PUSH EBP
 006041A1  8B EC                     MOV EBP,ESP
 006041A3  83 EC 4C                  SUB ESP,0x4c

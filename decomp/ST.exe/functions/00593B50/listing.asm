@@ -1,4 +1,4 @@
-FUN_00593b50:
+ComboTy::InitCombo:
 00593B50  55                        PUSH EBP
 00593B51  8B EC                     MOV EBP,ESP
 00593B53  81 EC 24 05 00 00         SUB ESP,0x524

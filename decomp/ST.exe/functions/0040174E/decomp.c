@@ -1,9 +1,9 @@
 
-void __fastcall thunk_FUN_00550250(void *param_1)
+void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
 
 {
   code *pcVar1;
-  void *this;
+  STPlaySystemC *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -11,29 +11,28 @@ void __fastcall thunk_FUN_00550250(void *param_1)
   void *unaff_EDI;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  void *pvStack_c;
+  STPlaySystemC *pSStack_c;
   uint uStack_8;
   
-  if ((*(int *)((int)param_1 + 0x3d) != 0) && (*(short *)(*(int *)((int)param_1 + 0x3d) + 5) != 0))
-  {
+  if ((*(int *)(this + 0x3d) != 0) && (*(short *)(*(int *)(this + 0x3d) + 5) != 0)) {
     uStack_50 = DAT_00858df8;
     DAT_00858df8 = &uStack_50;
-    pvStack_c = param_1;
+    pSStack_c = this;
     iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
-    this = pvStack_c;
+    this_00 = pSStack_c;
     if (iVar2 == 0) {
       uStack_8 = 0;
-      puVar4 = (undefined1 *)(*(int *)((int)pvStack_c + 0x3d) + 7);
-      if (*(short *)(*(int *)((int)pvStack_c + 0x3d) + 5) != 0) {
+      puVar4 = (undefined1 *)(*(int *)(pSStack_c + 0x3d) + 7);
+      if (*(short *)(*(int *)(pSStack_c + 0x3d) + 5) != 0) {
         do {
           iVar2 = *(int *)(puVar4 + 0x13);
           iVar3 = *(int *)(puVar4 + 0xf);
-          thunk_FUN_005501d0(this,puVar4);
+          thunk_FUN_005501d0(this_00,puVar4);
           uStack_8 = uStack_8 + 1;
           puVar4 = puVar4 + iVar2 + iVar3 + 0x1b;
-        } while (uStack_8 < *(ushort *)(*(int *)((int)this + 0x3d) + 5));
+        } while (uStack_8 < *(ushort *)(*(int *)(this_00 + 0x3d) + 5));
       }
-      *(undefined2 *)(*(int *)((int)this + 0x3d) + 5) = 0;
+      *(undefined2 *)(*(int *)(this_00 + 0x3d) + 5) = 0;
       DAT_00858df8 = (undefined4 *)uStack_50;
       return;
     }

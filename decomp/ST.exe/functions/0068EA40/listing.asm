@@ -1,4 +1,4 @@
-FUN_0068ea40:
+AiTactClassTy::ClaimRestore:
 0068EA40  55                        PUSH EBP
 0068EA41  8B EC                     MOV EBP,ESP
 0068EA43  83 EC 48                  SUB ESP,0x48

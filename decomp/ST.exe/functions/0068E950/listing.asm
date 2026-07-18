@@ -1,4 +1,4 @@
-FUN_0068e950:
+AiTactClassTy::ClaimSave:
 0068E950  55                        PUSH EBP
 0068E951  8B EC                     MOV EBP,ESP
 0068E953  83 EC 4C                  SUB ESP,0x4c

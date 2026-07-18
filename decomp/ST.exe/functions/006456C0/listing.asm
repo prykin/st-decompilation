@@ -1,4 +1,4 @@
-FUN_006456c0:
+STTorpC::RestoreTorpData:
 006456C0  55                        PUSH EBP
 006456C1  8B EC                     MOV EBP,ESP
 006456C3  83 EC 4C                  SUB ESP,0x4c

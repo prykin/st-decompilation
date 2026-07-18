@@ -1,6 +1,8 @@
 
-void thunk_FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undefined4 *param_4,
-                       uint param_5,undefined4 *param_6,uint param_7)
+void __thiscall
+STPlaySystemC::SetCtrlCmd
+          (STPlaySystemC *this,undefined1 param_1,undefined4 param_2,char param_3,
+          undefined4 *param_4,uint param_5,undefined4 *param_6,uint param_7)
 
 {
   code *pcVar1;
@@ -17,7 +19,7 @@ void thunk_FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undef
   undefined4 auStack_50 [16];
   int iStack_10;
   uint uStack_c;
-  int iStack_8;
+  STPlaySystemC *pSStack_8;
   
   if ((int)param_5 < 0) {
     param_5 = 0;
@@ -70,13 +72,14 @@ void thunk_FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undef
   uStack_54 = DAT_00858df8;
   DAT_00858df8 = &uStack_54;
   uStack_c = param_5;
+  pSStack_8 = this;
   iVar3 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
   uVar7 = uStack_c;
   if (iVar3 == 0) {
     iVar3 = uStack_c + param_7;
     iStack_10 = iVar3;
     puVar4 = FUN_006aac10(iVar3 + 0x1b);
-    puVar4[1] = *(undefined4 *)(iStack_8 + 0xe4);
+    puVar4[1] = *(undefined4 *)(pSStack_8 + 0xe4);
     *(undefined1 *)(puVar4 + 2) = param_1;
     *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)(DAT_00802a30 + 0x4ae);
     *(undefined4 *)((int)puVar4 + 10) = param_2;
@@ -118,13 +121,13 @@ void thunk_FUN_0054eee0(undefined1 param_1,undefined4 param_2,char param_3,undef
         bVar2 = false;
       }
       if (bVar2) {
-        FUN_006b9910((undefined4 *)(iStack_8 + 0x39),puVar4);
-        thunk_FUN_0054ec20(iStack_8);
+        FUN_006b9910((undefined4 *)(pSStack_8 + 0x39),puVar4);
+        PlaySystemTy::SendClientMail((PlaySystemTy *)pSStack_8,(int)unaff_EDI);
         DAT_00858df8 = (undefined4 *)uStack_54;
         return;
       }
     }
-    FUN_006b9910((undefined4 *)(iStack_8 + 0x39),puVar4);
+    FUN_006b9910((undefined4 *)(pSStack_8 + 0x39),puVar4);
     DAT_00858df8 = (undefined4 *)uStack_54;
     return;
   }

@@ -1,4 +1,4 @@
-FUN_0058c760:
+STSatC::GetMessage:
 0058C760  55                        PUSH EBP
 0058C761  8B EC                     MOV EBP,ESP
 0058C763  83 EC 7C                  SUB ESP,0x7c

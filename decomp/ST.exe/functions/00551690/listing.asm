@@ -1,4 +1,4 @@
-FUN_00551690:
+TradePanelTy::ShiftControls:
 00551690  55                        PUSH EBP
 00551691  8B EC                     MOV EBP,ESP
 00551693  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_005b2f90:
+MainMenuTy::DoneMainMenu:
 005B2F90  55                        PUSH EBP
 005B2F91  8B EC                     MOV EBP,ESP
 005B2F93  83 EC 48                  SUB ESP,0x48

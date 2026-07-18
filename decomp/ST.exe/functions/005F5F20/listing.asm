@@ -1,4 +1,4 @@
-FUN_005f5f20:
+STColl3C::GetMessage:
 005F5F20  55                        PUSH EBP
 005F5F21  8B EC                     MOV EBP,ESP
 005F5F23  83 EC 5C                  SUB ESP,0x5c

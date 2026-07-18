@@ -1,4 +1,4 @@
-FUN_005a1f00:
+FSGSTy::AddMessage:
 005A1F00  55                        PUSH EBP
 005A1F01  8B EC                     MOV EBP,ESP
 005A1F03  83 EC 58                  SUB ESP,0x58

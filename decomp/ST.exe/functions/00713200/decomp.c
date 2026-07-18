@@ -1,10 +1,17 @@
 
-char * FUN_00713200(char *param_1,uint *param_2,uint *param_3,int param_4,undefined4 *param_5)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::GetFittingStr */
+
+char * __thiscall
+ccFntTy::GetFittingStr
+          (ccFntTy *this,char *param_1,uint *param_2,uint *param_3,int param_4,undefined4 *param_5)
 
 {
   char cVar1;
   code *pcVar2;
   uint uVar3;
+  ccFntTy *this_00;
   uint *puVar4;
   int iVar5;
   int iVar6;
@@ -17,7 +24,7 @@ char * FUN_00713200(char *param_1,uint *param_2,uint *param_3,int param_4,undefi
   char *pcVar11;
   undefined4 local_60;
   undefined4 local_5c [16];
-  void *local_1c;
+  ccFntTy *local_1c;
   int local_18;
   int local_14;
   uint *local_10;
@@ -31,6 +38,7 @@ char * FUN_00713200(char *param_1,uint *param_2,uint *param_3,int param_4,undefi
   local_14 = 0;
   local_60 = DAT_00858df8;
   DAT_00858df8 = &local_60;
+  local_1c = this;
   iVar5 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     DAT_00858df8 = (undefined4 *)local_60;
@@ -52,10 +60,11 @@ char * FUN_00713200(char *param_1,uint *param_2,uint *param_3,int param_4,undefi
   if ((param_2 == (uint *)0x0) || (param_4 < 1)) {
     FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x912);
   }
+  this_00 = local_1c;
   iVar5 = FUN_00711110(local_1c,param_2);
   if (param_4 < iVar5) {
     if (param_3 != (uint *)0x0) {
-      local_18 = FUN_00711110(local_1c,param_3);
+      local_18 = FUN_00711110(this_00,param_3);
     }
     if (param_4 < local_18) {
       FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x91d);
@@ -65,15 +74,15 @@ char * FUN_00713200(char *param_1,uint *param_2,uint *param_3,int param_4,undefi
     local_10 = param_2;
     while (cVar1 != '\0') {
       if (local_14 == 0) {
-        iVar5 = FUN_0070cd90((char *)((int)local_1c + 0x9e),puVar10);
-        if ((iVar5 == 0) && (*(int *)((int)local_1c + 0x7e) != 0)) {
+        iVar5 = FUN_0070cd90((char *)(this_00 + 0x9e),puVar10);
+        if ((iVar5 == 0) && (*(int *)(this_00 + 0x7e) != 0)) {
           local_14 = 1;
         }
         puVar4 = puVar10;
         if (puVar10 != local_10) {
           uVar8 = *puVar10;
           *(undefined1 *)puVar10 = 0;
-          iVar5 = FUN_00711110(local_1c,param_2);
+          iVar5 = FUN_00711110(this_00,param_2);
           *(char *)puVar10 = (char)uVar8;
           if (param_4 < iVar5 + local_18) break;
         }

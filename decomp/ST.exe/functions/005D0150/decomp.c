@@ -1,10 +1,14 @@
 
-void __fastcall FUN_005d0150(void *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::CheckPlList */
+
+void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
 
 {
   code *pcVar1;
   bool bVar2;
-  void *pvVar3;
+  SettMapMTy *pSVar3;
   char cVar4;
   char cVar5;
   int iVar6;
@@ -21,22 +25,22 @@ void __fastcall FUN_005d0150(void *param_1)
   int local_18;
   uint local_14;
   uint local_10;
-  void *local_c;
+  SettMapMTy *local_c;
   char local_6;
   char local_5;
   
-  if (*(int *)((int)param_1 + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     local_5c = DAT_00858df8;
     DAT_00858df8 = &local_5c;
-    local_c = param_1;
+    local_c = this;
     iVar6 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
-    pvVar3 = local_c;
+    pSVar3 = local_c;
     if (iVar6 == 0) {
       cVar5 = '\0';
       local_6 = '\0';
       cVar4 = cVar5;
       if (DAT_00808aaa == '\0') {
-        iVar6 = *(int *)((int)local_c + 0x1f84);
+        iVar6 = *(int *)(local_c + 0x1f84);
         cVar4 = local_6;
         if (*(int *)(iVar6 + 0xc) != 0) {
           uVar10 = 0;
@@ -52,10 +56,10 @@ LAB_005d01c2:
               if (*(byte **)(iVar6 + 0x50) != (byte *)0x0) {
                 FUN_006ae110(*(byte **)(iVar6 + 0x50));
               }
-              FUN_006b0c70(*(int *)((int)pvVar3 + 0x1f84),uVar10);
+              FUN_006b0c70(*(int *)(pSVar3 + 0x1f84),uVar10);
               uVar10 = uVar10 - 1;
             }
-            iVar6 = *(int *)((int)pvVar3 + 0x1f84);
+            iVar6 = *(int *)(pSVar3 + 0x1f84);
             uVar10 = uVar10 + 1;
             cVar4 = local_6;
           } while (uVar10 < *(uint *)(iVar6 + 0xc));
@@ -63,7 +67,7 @@ LAB_005d01c2:
       }
       do {
         local_6 = cVar4;
-        iVar6 = *(int *)((int)pvVar3 + 0x1f84);
+        iVar6 = *(int *)(pSVar3 + 0x1f84);
         bVar2 = false;
         uVar11 = 0;
         local_5 = '\0';
@@ -83,13 +87,13 @@ LAB_005d021c:
                   if (*(byte **)(pcVar7 + 0x50) != (byte *)0x0) {
                     FUN_006ae110(*(byte **)(pcVar7 + 0x50));
                   }
-                  FUN_006b0c70(*(int *)((int)pvVar3 + 0x1f84),uVar11);
+                  FUN_006b0c70(*(int *)(pSVar3 + 0x1f84),uVar11);
                   bVar2 = true;
                   goto LAB_005d0277;
                 }
               }
-              else if (((pcVar7[4] == '\x02') && (*(char *)((int)pvVar3 + 0x1e26) != '\f')) &&
-                      (*(char *)((int)pvVar3 + 0x1e26) != '\x10')) {
+              else if (((pcVar7[4] == '\x02') && (pSVar3[0x1e26] != (SettMapMTy)0xc)) &&
+                      (pSVar3[0x1e26] != (SettMapMTy)0x10)) {
                 local_6 = '\0';
               }
               else {
@@ -104,8 +108,7 @@ LAB_005d024d:
 LAB_005d0277:
         cVar4 = local_6;
       } while (bVar2);
-      if ((*(char *)((int)pvVar3 + 0x1e26) == '\f') || (*(char *)((int)pvVar3 + 0x1e26) == '\x10'))
-      {
+      if ((pSVar3[0x1e26] == (SettMapMTy)0xc) || (pSVar3[0x1e26] == (SettMapMTy)0x10)) {
         bVar2 = false;
       }
       else {
@@ -115,7 +118,7 @@ LAB_005d0277:
         do {
           uVar11 = 1;
           local_5 = '\0';
-          iVar6 = *(int *)((int)local_c + 0x1f84);
+          iVar6 = *(int *)(local_c + 0x1f84);
           uVar10 = *(uint *)(iVar6 + 0xc);
           if (1 < uVar10) {
             if (uVar10 < 2) {
@@ -143,9 +146,8 @@ LAB_005d02c3:
           }
         } while (local_5 != '\0');
       }
-      if ((*(char *)((int)local_c + 0x1e26) != '\f') && (*(char *)((int)local_c + 0x1e26) != '\x10')
-         ) {
-        iVar6 = *(int *)((int)local_c + 0x1f84);
+      if ((local_c[0x1e26] != (SettMapMTy)0xc) && (local_c[0x1e26] != (SettMapMTy)0x10)) {
+        iVar6 = *(int *)(local_c + 0x1f84);
         uVar10 = *(uint *)(iVar6 + 0xc);
         if (uVar10 != 0) {
           if (uVar10 - 1 < uVar10) {
@@ -163,7 +165,7 @@ LAB_005d02c3:
       do {
         uVar11 = 1;
         local_5 = '\0';
-        iVar6 = *(int *)((int)local_c + 0x1f84);
+        iVar6 = *(int *)(local_c + 0x1f84);
         uVar10 = *(uint *)(iVar6 + 0xc);
         if (1 < uVar10) {
           if (uVar10 < 2) {
@@ -184,7 +186,7 @@ LAB_005d0391:
               if (*(byte **)(pcVar8 + 0x50) != (byte *)0x0) {
                 FUN_006ae110(*(byte **)(pcVar8 + 0x50));
               }
-              FUN_006b0c70(*(int *)((int)local_c + 0x1f84),uVar11 - 1);
+              FUN_006b0c70(*(int *)(local_c + 0x1f84),uVar11 - 1);
               local_5 = '\x01';
               break;
             }
@@ -194,7 +196,7 @@ LAB_005d0391:
       } while (local_5 != '\0');
       local_5 = '\0';
       local_10 = 0;
-      local_18 = *(int *)((int)local_c + 0x1f84);
+      local_18 = *(int *)(local_c + 0x1f84);
       uVar10 = *(uint *)(local_18 + 0xc);
       if (uVar10 != 0) {
         do {
@@ -227,14 +229,14 @@ LAB_005d045a:
                 }
                 pcVar7[1] = '\0';
                 *pcVar7 = '\x01';
-                FUN_006b0c70(*(int *)((int)local_c + 0x1f84),local_14);
+                FUN_006b0c70(*(int *)(local_c + 0x1f84),local_14);
                 local_5 = '\x01';
               }
             }
 LAB_005d048e:
             if ((local_5 == '\0') && (local_6 != '\0')) {
               while( true ) {
-                iVar6 = *(int *)((int)local_c + 0x1f84);
+                iVar6 = *(int *)(local_c + 0x1f84);
                 uVar10 = local_10 + 1;
                 if (uVar10 < *(uint *)(iVar6 + 0xc)) {
                   pcVar7 = (char *)(*(int *)(iVar6 + 8) * uVar10 + *(int *)(iVar6 + 0x1c));
@@ -246,12 +248,12 @@ LAB_005d048e:
                 if (*(byte **)(pcVar7 + 0x50) != (byte *)0x0) {
                   FUN_006ae110(*(byte **)(pcVar7 + 0x50));
                 }
-                FUN_006b0c70(*(int *)((int)local_c + 0x1f84),uVar10);
+                FUN_006b0c70(*(int *)(local_c + 0x1f84),uVar10);
               }
             }
           }
           local_10 = local_10 + 1;
-          local_18 = *(int *)((int)local_c + 0x1f84);
+          local_18 = *(int *)(local_c + 0x1f84);
           uVar10 = *(uint *)(local_18 + 0xc);
         } while (local_10 < uVar10);
       }

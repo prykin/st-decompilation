@@ -1,4 +1,4 @@
-FUN_0067b520:
+AiPlrClassTy::ExecTech:
 0067B520  55                        PUSH EBP
 0067B521  8B EC                     MOV EBP,ESP
 0067B523  81 EC C4 00 00 00         SUB ESP,0xc4

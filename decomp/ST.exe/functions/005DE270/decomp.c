@@ -1,16 +1,21 @@
 
-void FUN_005de270(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\startsys.cpp
+   StartSystemTy::CreateChatView */
+
+void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  StartSystemTy *pSVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   undefined4 unaff_ESI;
-  int *piVar5;
+  int *piVar6;
   void *unaff_EDI;
-  undefined4 *puVar6;
-  int *piVar7;
+  undefined4 *puVar7;
+  int *piVar8;
   undefined4 local_8c4 [5];
   int local_8b0;
   undefined4 local_8ac;
@@ -38,33 +43,35 @@ void FUN_005de270(void)
   undefined4 local_620;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int *local_8;
+  StartSystemTy *local_8;
   
-  puVar6 = local_8c4;
-  for (iVar3 = 0x21e; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+  puVar7 = local_8c4;
+  local_8 = this;
+  for (iVar4 = 0x21e; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *puVar7 = 0;
+    puVar7 = puVar7 + 1;
   }
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
+  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pSVar2 = local_8;
+  if (iVar4 == 0) {
     local_8c4[0] = 0;
     local_8c4[1] = 2;
-    iVar3 = local_8[0xd];
+    iVar4 = *(int *)(local_8 + 0x34);
     local_8a4 = 0xcd;
     local_8a0 = 499;
     local_8c4[2] = 1;
     local_8c4[3] = 0;
-    local_8c4[4] = *(undefined4 *)(*(int *)((int)local_8 + 0x67e) + 4);
-    if (*(int *)(iVar3 + 0xa0) != 0) {
-      FUN_00710790(iVar3);
+    local_8c4[4] = *(undefined4 *)(*(int *)(local_8 + 0x67e) + 4);
+    if (*(int *)(iVar4 + 0xa0) != 0) {
+      FUN_00710790(iVar4);
     }
-    local_8b0 = *(int *)(iVar3 + 0x8a);
+    local_8b0 = *(int *)(iVar4 + 0x8a);
     local_8a8 = (undefined4)(0x49 / (longlong)local_8b0);
-    local_808[2] = *(undefined4 *)((int)local_8 + 0x609);
-    local_808[3] = *(undefined4 *)((int)local_8 + 0x60d);
-    local_7f8 = *(undefined4 *)((int)local_8 + 0x611);
+    local_808[2] = *(undefined4 *)(pSVar2 + 0x609);
+    local_808[3] = *(undefined4 *)(pSVar2 + 0x60d);
+    local_7f8 = *(undefined4 *)(pSVar2 + 0x611);
     local_888 = 0;
     local_810 = 0;
     local_80c = 2;
@@ -75,46 +82,47 @@ void FUN_005de270(void)
     local_8ac = 1;
     local_884 = 0x633f;
     local_814 = 4;
-    local_7f4 = *(undefined4 *)((int)local_8 + 0x615);
-    iVar3 = local_8[0x160];
+    local_7f4 = *(undefined4 *)(pSVar2 + 0x615);
+    iVar4 = *(int *)(pSVar2 + 0x580);
     local_6f8 = 500;
     local_6f4 = 0x32;
     local_7a0 = 0x6341;
-    local_88c = local_8[5];
+    local_88c = *(int *)(pSVar2 + 0x14);
     local_7a8 = local_88c;
-    iVar2 = local_8[0x15e];
-    piVar5 = local_808;
-    piVar7 = local_688;
-    for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *piVar7 = *piVar5;
-      piVar5 = piVar5 + 1;
-      piVar7 = piVar7 + 1;
+    iVar3 = *(int *)(pSVar2 + 0x578);
+    piVar6 = local_808;
+    piVar8 = local_688;
+    for (iVar5 = 0x5f; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *piVar8 = *piVar6;
+      piVar6 = piVar6 + 1;
+      piVar8 = piVar8 + 1;
     }
-    local_688[3] = local_8[0x15f];
-    local_674 = local_8[0x161];
+    local_688[3] = *(int *)(pSVar2 + 0x57c);
+    local_674 = *(int *)(pSVar2 + 0x584);
     local_620 = 0x6340;
-    local_688[2] = iVar2;
-    local_678 = iVar3;
-    (**(code **)(*local_8 + 8))(8,local_8 + 0x154,0,local_8c4,0);
-    FUN_006b3430(DAT_008075a8,local_8[0x156]);
-    if (local_8[0x158] != 0xffffffff) {
-      FUN_006b34d0((uint *)local_8[0x169],local_8[0x158],0xfffffffe,local_8[0x15e],local_8[0x15f]);
+    local_688[2] = iVar3;
+    local_678 = iVar4;
+    (**(code **)(*(int *)pSVar2 + 8))(8,pSVar2 + 0x550,0,local_8c4,0);
+    FUN_006b3430(DAT_008075a8,*(uint *)(pSVar2 + 0x558));
+    if (*(uint *)(pSVar2 + 0x560) != 0xffffffff) {
+      FUN_006b34d0(*(uint **)(pSVar2 + 0x5a4),*(uint *)(pSVar2 + 0x560),0xfffffffe,
+                   *(uint *)(pSVar2 + 0x578),*(uint *)(pSVar2 + 0x57c));
     }
-    if (*(uint *)((int)local_8 + 0x5f1) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)((int)local_8 + 0x635),*(uint *)((int)local_8 + 0x5f1),0xfffffffe,
-                   *(uint *)((int)local_8 + 0x609),*(uint *)((int)local_8 + 0x60d));
+    if (*(uint *)(pSVar2 + 0x5f1) != 0xffffffff) {
+      FUN_006b34d0(*(uint **)(pSVar2 + 0x635),*(uint *)(pSVar2 + 0x5f1),0xfffffffe,
+                   *(uint *)(pSVar2 + 0x609),*(uint *)(pSVar2 + 0x60d));
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar2 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0x3f9,0,iVar3,&DAT_007a4ccc);
-  if (iVar2 != 0) {
+  iVar3 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0x3f9,0,iVar4,&DAT_007a4ccc);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cd718,0x3f9);
+  FUN_006a5e40(iVar4,0,0x7cd718,0x3f9);
   return;
 }
 

@@ -1,5 +1,7 @@
 
-undefined4 thunk_FUN_0042f2b0(uint param_1,uint param_2,uint param_3,int *param_4,int param_5)
+undefined4 __thiscall
+STAllPlayersC::UnRegisterObject
+          (STAllPlayersC *this,uint param_1,uint param_2,uint param_3,int *param_4,int param_5)
 
 {
   code *pcVar1;
@@ -18,6 +20,7 @@ undefined4 thunk_FUN_0042f2b0(uint param_1,uint param_2,uint param_3,int *param_
   uint uStack_24;
   uint *puStack_20;
   uint *puStack_1c;
+  STAllPlayersC *pSStack_18;
   uint *puStack_14;
   int *piStack_10;
   undefined4 uStack_c;
@@ -30,6 +33,7 @@ undefined4 thunk_FUN_0042f2b0(uint param_1,uint param_2,uint param_3,int *param_
   puStack_20 = *(uint **)((int)&DAT_007f5107 + iVar4);
   uStack_68 = DAT_00858df8;
   DAT_00858df8 = &uStack_68;
+  pSStack_18 = this;
   iVar4 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_68;

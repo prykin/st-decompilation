@@ -1,4 +1,4 @@
-FUN_0051ddd0:
+HelpPanelTy::GetMessage:
 0051DDD0  55                        PUSH EBP
 0051DDD1  8B EC                     MOV EBP,ESP
 0051DDD3  81 EC 80 00 00 00         SUB ESP,0x80

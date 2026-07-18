@@ -1,5 +1,9 @@
 
-void FUN_00446910(char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::DeletePGPairs */
+
+void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;

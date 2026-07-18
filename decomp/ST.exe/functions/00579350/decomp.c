@@ -2,7 +2,7 @@
 void __fastcall FUN_00579350(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
   bool bVar1;
   int iVar2;
   uint uVar3;
@@ -42,7 +42,7 @@ void __fastcall FUN_00579350(int *param_1)
   *(short *)((int)param_1 + 0x4b) = sVar6;
   *(short *)((int)param_1 + 0x5f) = sVar6;
   iVar2 = thunk_FUN_0041c710((int)param_1);
-  this = (void *)((int)param_1 + 0x1d5);
+  this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar2 == 0) {
     iVar2 = 0;
     uVar3 = thunk_FUN_004ad650((int)this);
@@ -139,9 +139,9 @@ LAB_005795a9:
   }
   iVar2 = (((0x18 - (int)(uVar3 * 0x2d) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) % 0x18) / 3;
   thunk_FUN_004abe40(this,'\r',iVar2);
-  thunk_FUN_004ac040('\r');
+  STT3DSprC::ShowCurFase(this,'\r');
   thunk_FUN_004abe40(this,'\x0e',*(int *)((int)param_1 + 0x231) + iVar2 * 6);
-  thunk_FUN_004ac040('\x0e');
+  STT3DSprC::ShowCurFase(this,'\x0e');
   *(int *)((int)param_1 + 0x23d) = *(int *)((int)param_1 + 0x23d) + 1;
   (**(code **)(*param_1 + 0xd8))();
   return;

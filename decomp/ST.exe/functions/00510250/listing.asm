@@ -1,4 +1,4 @@
-FUN_00510250:
+FrmPanelTy::DoneFrmPanel:
 00510250  55                        PUSH EBP
 00510251  8B EC                     MOV EBP,ESP
 00510253  83 EC 48                  SUB ESP,0x48

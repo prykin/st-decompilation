@@ -1,4 +1,4 @@
-FUN_00499de0:
+STGroupBoatC::DistributeTargets:
 00499DE0  55                        PUSH EBP
 00499DE1  8B EC                     MOV EBP,ESP
 00499DE3  81 EC A0 00 00 00         SUB ESP,0xa0

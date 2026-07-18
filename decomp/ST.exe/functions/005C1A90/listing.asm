@@ -1,4 +1,4 @@
-FUN_005c1a90:
+MReportTy::GetMessage:
 005C1A90  55                        PUSH EBP
 005C1A91  8B EC                     MOV EBP,ESP
 005C1A93  83 EC 58                  SUB ESP,0x58

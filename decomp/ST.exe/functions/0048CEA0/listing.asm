@@ -1,4 +1,4 @@
-FUN_0048cea0:
+STBoatC::_CheckDefenceShots:
 0048CEA0  55                        PUSH EBP
 0048CEA1  8B EC                     MOV EBP,ESP
 0048CEA3  83 EC 64                  SUB ESP,0x64

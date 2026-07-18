@@ -1,5 +1,6 @@
 
-undefined4 thunk_FUN_0044a150(uint param_1,uint param_2,uint param_3)
+undefined4 __thiscall
+STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,uint param_3)
 
 {
   code *pcVar1;
@@ -12,12 +13,14 @@ undefined4 thunk_FUN_0044a150(uint param_1,uint param_2,uint param_3)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 uStack_50;
-  undefined4 auStack_4c [17];
+  undefined4 auStack_4c [16];
+  STAllPlayersC *pSStack_c;
   undefined4 uStack_8;
   
   uStack_8 = 0;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pSStack_c = this;
   iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     uVar3 = thunk_FUN_0042b620(param_1,param_2,3);

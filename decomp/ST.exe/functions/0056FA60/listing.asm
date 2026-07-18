@@ -1,4 +1,4 @@
-FUN_0056fa60:
+STAppC::GetMessage:
 0056FA60  55                        PUSH EBP
 0056FA61  8B EC                     MOV EBP,ESP
 0056FA63  81 EC A0 09 00 00         SUB ESP,0x9a0

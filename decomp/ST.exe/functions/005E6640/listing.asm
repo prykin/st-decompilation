@@ -1,4 +1,4 @@
-FUN_005e6640:
+ChooseMapTy::OutListProc:
 005E6640  55                        PUSH EBP
 005E6641  8B EC                     MOV EBP,ESP
 005E6643  83 EC 4C                  SUB ESP,0x4c

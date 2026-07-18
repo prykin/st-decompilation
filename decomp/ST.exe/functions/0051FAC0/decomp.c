@@ -44,7 +44,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
       uVar2 = FUN_006e51b0(*(int *)((int)this + 0x10));
       *(undefined4 *)((int)this + 0x122) = uVar2;
       *(undefined4 *)((int)this + 0x12e) = 1;
-      thunk_FUN_0051f8f0();
+      HelpStringTy::OutStr(this);
       return;
     }
     puVar8 = (undefined4 *)((int)this + 0x18);
@@ -53,7 +53,7 @@ void __thiscall FUN_0051fac0(void *this,char *param_1,byte param_2,char param_3,
       puVar8 = puVar8 + 1;
     }
     *(undefined4 *)((int)this + 0x12e) = 0;
-    thunk_FUN_0051f8f0();
+    HelpStringTy::OutStr(this);
   }
   return;
 }

@@ -1,9 +1,13 @@
 
-undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_grpb.cpp
+   STGroupBoatC::DCBomb */
+
+undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  STGroupBoatC *pSVar2;
   uint *puVar3;
   int iVar4;
   void *pvVar5;
@@ -14,7 +18,7 @@ undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar10;
+  STGroupBoatC *pSVar10;
   uint uVar11;
   undefined4 local_78;
   undefined4 local_74 [16];
@@ -22,7 +26,7 @@ undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
   undefined2 local_30;
   undefined2 local_2e;
   undefined2 local_2c;
-  void *local_28;
+  STGroupBoatC *local_28;
   undefined4 local_24;
   uint local_20;
   undefined4 local_1c;
@@ -32,7 +36,7 @@ undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
   uint *local_c;
   uint local_8;
   
-  local_10 = *(int *)(*(int *)((int)this + 0x29) + 0xc);
+  local_10 = *(int *)(*(int *)(this + 0x29) + 0xc);
   local_c = (uint *)0x0;
   local_14 = (uint *)0x0;
   local_24 = 2;
@@ -41,31 +45,30 @@ undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
   DAT_00858df8 = &local_78;
   local_28 = this;
   iVar4 = __setjmp3(local_74,0,unaff_EDI,unaff_ESI);
-  pvVar2 = local_28;
+  pSVar2 = local_28;
   if (iVar4 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar10 = (undefined4 *)((int)local_28 + 0x89);
+      pSVar10 = local_28 + 0x89;
       for (iVar4 = 0x15; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar10 = 0;
-        puVar10 = puVar10 + 1;
+        *(undefined4 *)pSVar10 = 0;
+        pSVar10 = pSVar10 + 4;
       }
-      *(undefined4 *)((int)local_28 + 0x65) = 0;
+      *(undefined4 *)(local_28 + 0x65) = 0;
       local_20 = 0;
-      *(undefined4 *)((int)local_28 + 0x2bd) = *(undefined4 *)((int)local_28 + 0x18c);
-      *(undefined2 *)((int)local_28 + 0x2c1) = *(undefined2 *)((int)local_28 + 400);
-      local_30 = *(undefined2 *)((int)local_28 + 0x2bd);
+      *(undefined4 *)(local_28 + 0x2bd) = *(undefined4 *)(local_28 + 0x18c);
+      *(undefined2 *)(local_28 + 0x2c1) = *(undefined2 *)(local_28 + 400);
+      local_30 = *(undefined2 *)(local_28 + 0x2bd);
       local_34 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-      local_2c = *(undefined2 *)((int)local_28 + 0x2c1);
-      local_2e = *(undefined2 *)((int)local_28 + 0x2bf);
+      local_2c = *(undefined2 *)(local_28 + 0x2c1);
+      local_2e = *(undefined2 *)(local_28 + 0x2bf);
       puVar6 = local_14;
       local_1c = local_34;
       if (0 < local_10) {
         do {
-          FUN_006acc70(*(int *)((int)pvVar2 + 0x29),local_20,&local_8);
+          FUN_006acc70(*(int *)(pSVar2 + 0x29),local_20,&local_8);
           if ((short)local_8 != -1) {
             pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                         *(undefined1 *)((int)pvVar2 + 0x24)),
-                                                local_8,1);
+                                                         pSVar2[0x24]),local_8,1);
             if (pvVar5 == (void *)0x0) {
               FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0xb6b);
             }
@@ -94,8 +97,8 @@ undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
         } while ((int)local_20 < local_10);
       }
       puVar3 = local_c;
-      thunk_FUN_00445a40(CONCAT31((int3)((uint)local_10 >> 8),*(undefined1 *)((int)pvVar2 + 0x24)),
-                         puVar6,local_c);
+      STAllPlayersC::RegisterPGPair
+                (DAT_007fa174,CONCAT31((int3)((uint)local_10 >> 8),pSVar2[0x24]),puVar6,local_c);
       if (puVar6 != (uint *)0x0) {
         FUN_006ae110((byte *)puVar6);
       }
@@ -108,11 +111,10 @@ undefined4 __thiscall FUN_0049ed40(void *this,int param_1)
     if (*(uint *)(DAT_00802a38 + 0xe4) % 0x1e == 10) {
       if (0 < local_10) {
         do {
-          FUN_006acc70(*(int *)((int)pvVar2 + 0x29),uVar11,&local_8);
+          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar11,&local_8);
           if ((short)local_8 != -1) {
-            pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31((int3)(local_8 >> 8),
-                                                         *(undefined1 *)((int)pvVar2 + 0x24)),
-                                                local_8,1);
+            pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31((int3)(local_8 >> 8),pSVar2[0x24]),local_8,
+                                                1);
             if (pvVar5 == (void *)0x0) {
               FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0xb8b);
             }

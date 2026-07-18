@@ -1,4 +1,4 @@
-FUN_005204d0:
+InfocPanelTy::DoneInfocPanel:
 005204D0  55                        PUSH EBP
 005204D1  8B EC                     MOV EBP,ESP
 005204D3  83 EC 48                  SUB ESP,0x48

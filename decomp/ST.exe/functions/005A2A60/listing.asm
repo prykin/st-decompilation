@@ -1,4 +1,4 @@
-FUN_005a2a60:
+FSGSTy::ChangePlayer:
 005A2A60  55                        PUSH EBP
 005A2A61  8B EC                     MOV EBP,ESP
 005A2A63  83 EC 50                  SUB ESP,0x50

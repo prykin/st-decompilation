@@ -1,5 +1,9 @@
 
-void FUN_005dadf0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\startsys.cpp
+   StartSystemTy::InitChat */
+
+void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
 
 {
   code *pcVar1;
@@ -12,10 +16,11 @@ void FUN_005dadf0(void)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  StartSystemTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (DAT_0080c4fa != (uint *)0x0) {

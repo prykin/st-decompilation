@@ -1,4 +1,4 @@
-FUN_00514f10:
+HelpPanelTy::PrepMissObj:
 00514F10  55                        PUSH EBP
 00514F11  8B EC                     MOV EBP,ESP
 00514F13  83 EC 48                  SUB ESP,0x48

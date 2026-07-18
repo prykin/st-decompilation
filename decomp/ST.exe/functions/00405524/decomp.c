@@ -7,11 +7,12 @@ void thunk_FUN_005c8200(void)
   undefined4 *puVar3;
   ushort *puVar4;
   DWORD DVar5;
+  cMf32 *this;
   uint uVar6;
   uint uVar7;
   undefined4 unaff_ESI;
   byte *pbVar8;
-  int *piVar9;
+  SettMapTy *pSVar9;
   void *unaff_EDI;
   undefined4 *puVar10;
   byte *pbVar11;
@@ -24,8 +25,8 @@ void thunk_FUN_005c8200(void)
   undefined4 uStack_28;
   undefined4 uStack_18;
   undefined4 uStack_14;
-  int *piStack_c;
-  undefined4 *puStack_8;
+  SettMapTy *pSStack_c;
+  SettMapTy *pSStack_8;
   
   puStack_7c = DAT_00858df8;
   DAT_00858df8 = &puStack_7c;
@@ -34,24 +35,24 @@ void thunk_FUN_005c8200(void)
     DAT_00858df8 = puStack_7c;
     if (DAT_0080877e != '\0') {
       DVar5 = timeGetTime();
-      *(DWORD *)((int)piStack_c + 0x1f53) = DVar5;
+      *(DWORD *)(pSStack_c + 0x1f53) = DVar5;
       thunk_FUN_005c7800();
       return;
     }
-    (**(code **)(*piStack_c + 0x28))();
+    (**(code **)(*(int *)pSStack_c + 0x28))();
     return;
   }
-  if (*(undefined4 **)((int)piStack_c + 7999) != (undefined4 *)0x0) {
-    FUN_006f1170(*(undefined4 **)((int)piStack_c + 7999));
+  if (*(undefined4 **)(pSStack_c + 7999) != (undefined4 *)0x0) {
+    cMf32::delete(this,*(undefined4 **)(pSStack_c + 7999));
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   puVar3 = FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
-  *(undefined4 **)((int)piStack_c + 7999) = puVar3;
+  *(undefined4 **)(pSStack_c + 7999) = puVar3;
   if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
     FUN_006ab060((undefined4 *)(DAT_0081176c + 0x2f4));
   }
-  puVar4 = FUN_0070a5a0(*(undefined4 *)((int)piStack_c + 7999),0xc,PTR_s_SMALL_MAP_0079c114,2,0);
+  puVar4 = FUN_0070a5a0(*(undefined4 *)(pSStack_c + 7999),0xc,PTR_s_SMALL_MAP_0079c114,2,0);
   *(ushort **)(DAT_0081176c + 0x2f4) = puVar4;
   if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
     FUN_006c7f90(*(int *)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
@@ -64,17 +65,17 @@ void thunk_FUN_005c8200(void)
     puVar3 = puVar3 + 1;
     puVar10 = puVar10 + 1;
   }
-  puStack_8 = &DAT_008087b6;
-  puVar4 = FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079c110,(int *)&puStack_8,0);
+  pSStack_8 = (SettMapTy *)&DAT_008087b6;
+  puVar4 = FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079c110,(int *)&pSStack_8,0);
   if (puVar4 == (ushort *)0x0) {
     FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x45a);
   }
   if (DAT_0080877e == '\0') {
-    *(undefined4 *)((int)piStack_c + 0x2121) = 0xffffffff;
+    *(undefined4 *)(pSStack_c + 0x2121) = 0xffffffff;
     DAT_00808aab = 0xffffffff;
   }
   else {
-    *(undefined4 *)((int)piStack_c + 0x2121) = 0;
+    *(undefined4 *)(pSStack_c + 0x2121) = 0;
     DAT_00808aab = 0;
     DAT_00808aa8 = DAT_0080734b;
   }
@@ -90,14 +91,14 @@ void thunk_FUN_005c8200(void)
   if (DAT_0080c4c7 != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4c7);
   }
-  DAT_0080c4c7 = FUN_0071aa10(*(int *)((int)piStack_c + 7999),PTR_s_DESCRIPTION_0079c108,0);
+  DAT_0080c4c7 = FUN_0071aa10(*(int *)(pSStack_c + 7999),PTR_s_DESCRIPTION_0079c108,0);
   if (DAT_0080c4c7 == (uint *)0x0) {
     DAT_0080c4c7 = FUN_006b54f0((uint *)0x0,10,10);
   }
   if (DAT_0080c4cb != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4cb);
   }
-  DAT_0080c4cb = FUN_0071aa10(*(int *)((int)piStack_c + 7999),PTR_s_OBJECTIVES_0079c10c,0);
+  DAT_0080c4cb = FUN_0071aa10(*(int *)(pSStack_c + 7999),PTR_s_OBJECTIVES_0079c10c,0);
   if (DAT_0080c4cb == (uint *)0x0) {
     DAT_0080c4cb = FUN_006b54f0((uint *)0x0,10,10);
   }
@@ -106,8 +107,8 @@ void thunk_FUN_005c8200(void)
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  puStack_8 = &DAT_0080c3c3;
-  puVar4 = FUN_006f1ce0(0xc,PTR_s_TITLE_MISSION_0079c104,(int *)&puStack_8,0);
+  pSStack_8 = (SettMapTy *)&DAT_0080c3c3;
+  puVar4 = FUN_006f1ce0(0xc,PTR_s_TITLE_MISSION_0079c104,(int *)&pSStack_8,0);
   if ((puVar4 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
     FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,abStack_218,(byte *)0x0);
     uVar6 = 0xffffffff;
@@ -134,35 +135,34 @@ void thunk_FUN_005c8200(void)
       pbVar11 = pbVar11 + 1;
     }
   }
-  puStack_8 = &DAT_00853de0;
-  puVar4 = FUN_006f1ce0(0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&puStack_8,0);
+  pSStack_8 = (SettMapTy *)&DAT_00853de0;
+  puVar4 = FUN_006f1ce0(0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&pSStack_8,0);
   if (puVar4 == (ushort *)0x0) {
     FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x475);
   }
-  puStack_8 = (undefined4 *)((int)piStack_c + 0x1f53);
-  puVar4 = FUN_006f1ce0(0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&puStack_8,0);
+  pSStack_8 = pSStack_c + 0x1f53;
+  puVar4 = FUN_006f1ce0(0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&pSStack_8,0);
   if (puVar4 == (ushort *)0x0) {
     FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x477);
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
-  *(undefined4 *)((int)piStack_c + 0x1f47) = 1;
+  *(undefined4 *)(pSStack_c + 0x1f47) = 1;
   if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (DAT_00811764 != 0)) {
-    FUN_006b6160((char *)((int)piStack_c + 0x1a5f),DAT_00811764 + 0x18);
-    *(undefined1 *)((int)piStack_c + 0x1a7f) = 1;
-    *(undefined1 *)(piStack_c + 0x6a0) = DAT_008087c4._2_1_;
-    *(char *)((int)piStack_c + 0x1a81) = (char)(DAT_008087c2 >> 1);
+    FUN_006b6160((char *)(pSStack_c + 0x1a5f),DAT_00811764 + 0x18);
+    pSStack_c[0x1a7f] = (SettMapTy)0x1;
+    pSStack_c[0x1a80] = DAT_008087c4._2_1_;
+    pSStack_c[0x1a81] = SUB21(DAT_008087c2 >> 1,0);
     wsprintfA((LPSTR)&uStack_18,&DAT_007cc584,DAT_0080995c);
-    *(undefined4 *)((int)piStack_c + 0x1a82) = uStack_18;
-    *(undefined4 *)((int)piStack_c + 0x1a86) = uStack_14;
-    _strncpy((char *)((int)piStack_c + 0x1a8a),(char *)&DAT_0080c3c3,0x1d5);
-    *(undefined1 *)((int)piStack_c + 0x1c5e) = 0;
-    CFsgsConnection::UpdateGame
-              ((CFsgsConnection *)&DAT_00802a90,4,(char *)((int)piStack_c + 0x1a5f));
+    *(undefined4 *)(pSStack_c + 0x1a82) = uStack_18;
+    *(undefined4 *)(pSStack_c + 0x1a86) = uStack_14;
+    _strncpy((char *)(pSStack_c + 0x1a8a),(char *)&DAT_0080c3c3,0x1d5);
+    pSStack_c[0x1c5e] = (SettMapTy)0x0;
+    CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,(char *)(pSStack_c + 0x1a5f));
   }
-  (**(code **)(*piStack_c + 0x28))();
-  thunk_FUN_005c4e20('\0');
-  piVar9 = piStack_c + 0x7d8;
+  (**(code **)(*(int *)pSStack_c + 0x28))();
+  SettMapTy::PaintSettMap(pSStack_c,'\0');
+  pSVar9 = pSStack_c + 0x1f60;
   puVar3 = auStack_38;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;
@@ -171,10 +171,10 @@ void thunk_FUN_005c8200(void)
   uStack_28 = 5;
   iVar2 = 7;
   do {
-    if (*piVar9 != 0) {
-      FUN_006e6080(piStack_c,2,*piVar9,auStack_38);
+    if (*(int *)pSVar9 != 0) {
+      FUN_006e6080(pSStack_c,2,*(int *)pSVar9,auStack_38);
     }
-    piVar9 = piVar9 + 1;
+    pSVar9 = pSVar9 + 4;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   DAT_00858df8 = puStack_7c;

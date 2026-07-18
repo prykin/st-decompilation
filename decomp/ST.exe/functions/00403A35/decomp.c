@@ -1,5 +1,7 @@
 
-uint * thunk_FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int param_5)
+uint * __thiscall
+STAllPlayersC::_AssignMDPairs
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,int param_4,int param_5)
 
 {
   code *pcVar1;
@@ -42,6 +44,7 @@ uint * thunk_FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int p
   short sStack_a2;
   int iStack_94;
   int iStack_90;
+  STAllPlayersC *pSStack_8c;
   uint uStack_88;
   int iStack_84;
   short sStack_80;
@@ -71,7 +74,7 @@ uint * thunk_FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int p
   uint uStack_28;
   uint uStack_24;
   uint *puStack_20;
-  int *piStack_1c;
+  STGroupC *pSStack_1c;
   short sStack_18;
   short sStack_16;
   short sStack_14;
@@ -89,6 +92,7 @@ uint * thunk_FUN_00442e50(uint param_1,int param_2,int param_3,int param_4,int p
   puStack_4c = (uint *)0x0;
   uStack_114 = DAT_00858df8;
   DAT_00858df8 = &uStack_114;
+  pSStack_8c = this;
   iVar4 = __setjmp3(auStack_110,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_114;
@@ -229,9 +233,10 @@ LAB_00442f1f:
   if (0 < (int)uVar10) {
     do {
       uVar9 = uStack_24;
-      FUN_006acc70(iVar4,uStack_24,&piStack_1c);
-      if ((piStack_1c != (int *)0x0) && (iVar6 = (**(code **)(*piStack_1c + 0xc))(), iVar6 == 8)) {
-        puStack_48 = thunk_FUN_004233e0((int)piStack_1c);
+      FUN_006acc70(iVar4,uStack_24,&pSStack_1c);
+      if ((pSStack_1c != (STGroupC *)0x0) &&
+         (iVar6 = (**(code **)(*(int *)pSStack_1c + 0xc))(), iVar6 == 8)) {
+        puStack_48 = STGroupC::GetGroupContent(pSStack_1c,(int)unaff_EDI);
         uStack_b8 = puStack_48[3];
         if ((uStack_b8 != 0) && (uStack_44 = 0, 0 < (int)uStack_b8)) {
 LAB_0044326c:

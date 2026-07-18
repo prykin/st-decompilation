@@ -1,4 +1,4 @@
-FUN_005b9170:
+MMsgTy::CloseSprBut:
 005B9170  55                        PUSH EBP
 005B9171  8B EC                     MOV EBP,ESP
 005B9173  83 EC 50                  SUB ESP,0x50

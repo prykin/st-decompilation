@@ -1,6 +1,8 @@
 
-int thunk_FUN_0064d890(uint param_1,short param_2,int param_3,int param_4,undefined4 param_5,
-                      undefined4 param_6,char *param_7,int param_8)
+int __thiscall
+AiEventClassTy::_CreateRCCont
+          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,
+          undefined4 param_5,undefined4 param_6,char *param_7,int param_8)
 
 {
   code *pcVar1;

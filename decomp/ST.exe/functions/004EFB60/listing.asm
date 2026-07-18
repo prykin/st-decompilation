@@ -1,4 +1,4 @@
-FUN_004efb60:
+BldLabPanelTy::InitBldLabPanel:
 004EFB60  55                        PUSH EBP
 004EFB61  8B EC                     MOV EBP,ESP
 004EFB63  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_004a8fc0:
+OpticClassC::InitOptic:
 004A8FC0  55                        PUSH EBP
 004A8FC1  8B EC                     MOV EBP,ESP
 004A8FC3  83 EC 58                  SUB ESP,0x58

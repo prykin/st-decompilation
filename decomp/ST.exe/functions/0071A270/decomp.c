@@ -33,12 +33,12 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
     iVar6 = FUN_006ad4d0(s_E__Ourlib_mfwav_cpp_007f0800,0xf5,0,iVar3,&DAT_007a4ccc);
     if (iVar6 == 0) {
       if (local_8 != (byte *)0x0) {
-        FUN_006f20e0((uint *)&local_54);
+        cMf32::RecMemFree(*(cMf32 **)(local_8 + 1),(uint *)&local_54);
         if (*(int *)(local_8 + 5) != 0) {
           *(undefined4 *)(*(int *)(local_8 + 5) + 4) = 0;
           iVar6 = FUN_006b1190(*(int *)(local_8 + 5),(undefined4 *)local_254);
           while (-1 < iVar6) {
-            FUN_006f20e0((uint *)&local_54);
+            cMf32::RecMemFree(*(cMf32 **)(local_8 + 1),(uint *)&local_54);
             iVar6 = FUN_006b1190(*(int *)(local_8 + 5),(undefined4 *)local_254);
           }
           FUN_006ae110(*(byte **)(local_8 + 5));
@@ -88,8 +88,8 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
     pcVar5 = pcVar5 + 1;
     pcVar10 = pcVar10 + 1;
   }
-  FUN_006f12b0(FUN_006f2d10,&local_458);
-  pcVar5 = (char *)FUN_006f2790();
+  cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,&local_458);
+  pcVar5 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   if (pcVar5 != (char *)0x0) {
     local_a = (ushort)param_3;
     do {
@@ -122,7 +122,7 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
         FUN_006ae1c0(*(uint **)(local_8 + 5),(undefined4 *)local_254);
         local_54 = (ushort *)0x0;
       }
-      pcVar5 = (char *)FUN_006f2790();
+      pcVar5 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
     } while (pcVar5 != (char *)0x0);
   }
   if (*(int *)(*(byte **)(local_8 + 5) + 0xc) == 0) {

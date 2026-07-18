@@ -1,4 +1,4 @@
-FUN_004ee4d0:
+BehPanelTy::GetMessage:
 004EE4D0  55                        PUSH EBP
 004EE4D1  8B EC                     MOV EBP,ESP
 004EE4D3  83 EC 6C                  SUB ESP,0x6c

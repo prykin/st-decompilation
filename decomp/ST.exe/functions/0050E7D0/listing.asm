@@ -1,4 +1,4 @@
-FUN_0050e7d0:
+CPanelTy::SetControlObjSI:
 0050E7D0  55                        PUSH EBP
 0050E7D1  8B EC                     MOV EBP,ESP
 0050E7D3  81 EC 48 08 00 00         SUB ESP,0x848

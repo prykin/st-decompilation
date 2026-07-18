@@ -1,4 +1,4 @@
-FUN_00533a10:
+OptPanelTy::Notification:
 00533A10  55                        PUSH EBP
 00533A11  8B EC                     MOV EBP,ESP
 00533A13  83 EC 48                  SUB ESP,0x48

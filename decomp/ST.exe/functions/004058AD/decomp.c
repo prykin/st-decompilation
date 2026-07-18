@@ -1,5 +1,5 @@
 
-undefined4 * thunk_FUN_00443f30(int *param_1)
+undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *param_1)
 
 {
   code *pcVar1;
@@ -17,7 +17,7 @@ undefined4 * thunk_FUN_00443f30(int *param_1)
   uint uVar11;
   undefined4 uStack_88;
   undefined4 auStack_84 [16];
-  int iStack_44;
+  STAllPlayersC *pSStack_44;
   uint *puStack_40;
   uint *puStack_3c;
   uint *puStack_38;
@@ -37,6 +37,7 @@ undefined4 * thunk_FUN_00443f30(int *param_1)
   iStack_34 = 4;
   uStack_88 = DAT_00858df8;
   DAT_00858df8 = &uStack_88;
+  pSStack_44 = this;
   iVar2 = __setjmp3(auStack_84,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     iVar2 = 0x5590;
@@ -134,7 +135,7 @@ undefined4 * thunk_FUN_00443f30(int *param_1)
     iStack_28 = iVar2 + DAT_007fb246;
     puVar3 = (undefined4 *)FUN_006aac70(iStack_28);
     puVar4 = puVar3 + 2;
-    *puVar3 = *(undefined4 *)(iStack_44 + 0x1c);
+    *puVar3 = *(undefined4 *)(pSStack_44 + 0x1c);
     piVar8 = &DAT_007f4e29;
     do {
       puStack_10 = (uint *)0x5;

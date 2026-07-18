@@ -15,11 +15,11 @@ undefined4 __thiscall FUN_00714b30(void *this,int param_1)
   iVar5 = 0;
   local_8 = 0;
   local_c = 0;
-  if (((*(int *)((int)this + 0x58) == 0) || (*(int *)this == 0)) ||
+  if (((*(int *)((int)this + 0x58) == 0) || (*(ccFntTy **)this == (ccFntTy *)0x0)) ||
      (*(int *)((int)this + 8) <= param_1)) {
     return 0xffffffcc;
   }
-  FUN_007108b0(local_54);
+  ccFntTy::Save(*(ccFntTy **)this,local_54);
   FUN_007109f0(*(void **)this,(undefined4 *)((int)this + 0x10));
   *(undefined4 *)((int)this + 0x90) = *(undefined4 *)((int)this + 0x58);
   *(undefined4 *)((int)this + 0x8c) = *(undefined4 *)((int)this + 0x58);

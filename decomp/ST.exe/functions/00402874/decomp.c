@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_00533470(byte *param_1)
+undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
 
 {
   byte bVar1;
@@ -16,12 +16,13 @@ undefined4 thunk_FUN_00533470(byte *param_1)
   bool bVar10;
   undefined4 uStack_54;
   undefined4 auStack_50 [17];
-  int iStack_c;
+  OptPanelTy *pOStack_c;
   undefined4 uStack_8;
   
   uStack_8 = 0;
   uStack_54 = DAT_00858df8;
   DAT_00858df8 = &uStack_54;
+  pOStack_c = this;
   iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_54;
@@ -35,7 +36,7 @@ undefined4 thunk_FUN_00533470(byte *param_1)
     return 0;
   }
   uVar9 = 0;
-  uVar2 = *(uint *)(*(int *)(iStack_c + 0x1e9) + 8);
+  uVar2 = *(uint *)(*(int *)(pOStack_c + 0x1e9) + 8);
   if (uVar2 == 0) {
     DAT_00858df8 = (undefined4 *)uStack_54;
     return uStack_8;
@@ -43,7 +44,7 @@ undefined4 thunk_FUN_00533470(byte *param_1)
   do {
     pbVar8 = param_1;
     if ((int)uVar9 < (int)uVar2) {
-      pbVar5 = *(byte **)(*(int *)(*(int *)(iStack_c + 0x1e9) + 0x14) + uVar9 * 4);
+      pbVar5 = *(byte **)(*(int *)(*(int *)(pOStack_c + 0x1e9) + 0x14) + uVar9 * 4);
     }
     else {
       pbVar5 = (byte *)0x0;

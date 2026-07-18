@@ -1,4 +1,4 @@
-FUN_004f2350:
+CPanelTy::PaintCostsXYSI:
 004F2350  55                        PUSH EBP
 004F2351  8B EC                     MOV EBP,ESP
 004F2353  83 EC 48                  SUB ESP,0x48

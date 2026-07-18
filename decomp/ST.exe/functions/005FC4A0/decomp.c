@@ -58,7 +58,7 @@ undefined4 __fastcall FUN_005fc4a0(void *param_1)
         ((sVar2 < 0 || ((DAT_007fb242 <= sVar2 || (sVar3 < 0)))))) || (DAT_007fb244 <= sVar3)) ||
       (*(int *)(DAT_007fb248 +
                ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar2 + (int)sVar9) * 8)
-       == 0)) && (iVar7 = thunk_FUN_00495ec0(sVar9,sVar2,sVar3,0,(int)param_1), iVar7 == 0)) {
+       == 0)) && (iVar7 = DumpClassC::WritePtr(sVar9,sVar2,sVar3,0,(int)param_1), iVar7 == 0)) {
     *(char *)((int)param_1 + 0x252) = *(char *)((int)param_1 + 0x252) + '\x01';
     bVar5 = true;
   }

@@ -1,4 +1,4 @@
-FUN_005de050:
+StartSystemTy::PaintBinDesc:
 005DE050  55                        PUSH EBP
 005DE051  8B EC                     MOV EBP,ESP
 005DE053  83 EC 50                  SUB ESP,0x50

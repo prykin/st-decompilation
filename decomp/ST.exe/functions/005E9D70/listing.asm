@@ -1,4 +1,4 @@
-FUN_005e9d70:
+WaitTy::DeleteCtrls:
 005E9D70  55                        PUSH EBP
 005E9D71  8B EC                     MOV EBP,ESP
 005E9D73  83 EC 4C                  SUB ESP,0x4c

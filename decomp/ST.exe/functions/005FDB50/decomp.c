@@ -6,7 +6,7 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
 {
   char cVar1;
   short sVar2;
-  void *this_00;
+  STT3DSprC *this_00;
   void *pvVar3;
   uint uVar4;
   int iVar5;
@@ -37,16 +37,16 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
     do {
       iVar5 = *(int *)(iVar8 + 0x39 + *(int *)((int)this + 0x233));
       if ((((iVar5 != 4) && (iVar5 != 5)) &&
-          (this_00 = *(void **)(iVar8 + *(int *)((int)this + 0x233) + 0x42), this_00 != (void *)0x0)
-          ) && (-1 < param_2 || iVar5 != 2)) {
+          (this_00 = *(STT3DSprC **)(iVar8 + *(int *)((int)this + 0x233) + 0x42),
+          this_00 != (STT3DSprC *)0x0)) && (-1 < param_2 || iVar5 != 2)) {
         local_8 = iVar8;
         if ((iVar5 == 1) || (iVar5 == 2)) {
-          iVar5 = thunk_FUN_004ad1f0(DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+          iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
             FUN_006a5e40(-1,DAT_007ed77c,0x7cebc8,0x13d);
             return 0xffff;
           }
-          iVar5 = thunk_FUN_004ab880(0xd,DAT_00806774,(byte *)s_adcbo_007ce924,0x1d);
+          iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,(byte *)s_adcbo_007ce924,0x1d);
           if (iVar5 != 0) {
             return 0xffff;
           }
@@ -57,7 +57,7 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
                              (float)(int)*(short *)(iVar5 + 8) * _DAT_007904f8 * _DAT_007904f0,
                              (float)(int)*(short *)(iVar8 + 10 + *(int *)((int)this + 0x233)) *
                              _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-          thunk_FUN_004ac1a0(0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+          STT3DSprC::StartShow(this_00,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
           *(undefined1 *)(iVar8 + 0x41 + *(int *)((int)this + 0x233)) = 1;
           pvVar3 = DAT_00802a88;
           if (DAT_00802a88 != (void *)0x0) {
@@ -114,10 +114,10 @@ joined_r0x005fe09b:
           }
         }
         else if (iVar5 == 3) {
-          if (this_00 == (void *)0x0) {
+          if (this_00 == (STT3DSprC *)0x0) {
             return 0;
           }
-          thunk_FUN_004ac410(0xd);
+          STT3DSprC::StopShow(this_00,0xd);
           thunk_FUN_004ad5e0((int)this_00);
           if (param_1 == 0) {
             thunk_FUN_004ad310((int)this_00);
@@ -125,23 +125,26 @@ joined_r0x005fe09b:
           else {
             uVar4 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
             *(uint *)((int)this + 0x1c) = uVar4;
-            iVar5 = thunk_FUN_004ab880(0xd,DAT_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
-                                       0x1d);
+            iVar5 = STT3DSprC::LoadSequence
+                              (this_00,0xd,DAT_00806774,(&PTR_s_Expb24_007ce934)[uVar4 >> 0x10 & 1],
+                               0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = thunk_FUN_004ab880(0xf,DAT_00806764,(byte *)s_bulb_n3_007ce92c,0x1d);
+            iVar5 = STT3DSprC::LoadSequence
+                              (this_00,0xf,DAT_00806764,(byte *)s_bulb_n3_007ce92c,0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            iVar5 = thunk_FUN_004ab880(0xe,DAT_00806774,(byte *)s_expmask2_007ce93c,0x1d);
+            iVar5 = STT3DSprC::LoadSequence
+                              (this_00,0xe,DAT_00806774,(byte *)s_expmask2_007ce93c,0x1d);
             if (iVar5 != 0) {
               return 0xffff;
             }
-            thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+            STT3DSprC::StartShow(this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
             *(undefined1 *)(iVar8 + 0x28 + *(int *)((int)this + 0x233)) = 1;
             thunk_FUN_004ac700(this_00,'\x0f');
-            thunk_FUN_004ac1a0(0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+            STT3DSprC::StartShow(this_00,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
             thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
             thunk_FUN_004acfe0(this_00,'\x0e');
             iVar5 = iVar8 + *(int *)((int)this + 0x233);

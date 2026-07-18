@@ -53,11 +53,11 @@ short * __cdecl FUN_007171c0(int param_1,char *param_2,byte param_3,int param_4)
       } while (iVar2 < *local_8);
     }
     DAT_00858df8 = (undefined4 *)local_5c;
-    FUN_006f20e0((uint *)&local_c);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
     return local_8;
   }
   DAT_00858df8 = (undefined4 *)local_5c;
-  FUN_006f20e0((uint *)&local_c);
+  cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
   FUN_00726bd0((int *)&local_8);
   if ((param_4 != 0) || (iVar2 != -4)) {
     iVar5 = FUN_006ad4d0(s_E__Ourlib_mftspr_cpp_007f0504,0x149,0,iVar2,&DAT_007a4ccc);

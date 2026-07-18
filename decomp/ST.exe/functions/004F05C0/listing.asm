@@ -1,4 +1,4 @@
-FUN_004f05c0:
+BldObjPanelTy::InitBldObjPanel:
 004F05C0  55                        PUSH EBP
 004F05C1  8B EC                     MOV EBP,ESP
 004F05C3  81 EC 54 03 00 00         SUB ESP,0x354

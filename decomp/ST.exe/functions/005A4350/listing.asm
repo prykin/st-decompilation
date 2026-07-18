@@ -1,4 +1,4 @@
-FUN_005a4350:
+FSGSTy::GetMessage:
 005A4350  55                        PUSH EBP
 005A4351  8B EC                     MOV EBP,ESP
 005A4353  81 EC B4 06 00 00         SUB ESP,0x6b4

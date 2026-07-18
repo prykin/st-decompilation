@@ -1,5 +1,9 @@
 
-uint * __fastcall FUN_004233e0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\tc_grp.cpp
+   STGroupC::GetGroupContent */
+
+uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
 
 {
   code *pcVar1;
@@ -16,17 +20,17 @@ uint * __fastcall FUN_004233e0(int param_1)
   undefined4 local_58 [16];
   uint local_18;
   uint local_14;
-  int local_10;
+  STGroupC *local_10;
   uint *local_c;
   short local_6;
   
-  local_18 = *(uint *)(*(int *)(param_1 + 0x29) + 0xc);
+  local_18 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   uVar7 = 0;
   local_c = (uint *)0x0;
   local_14 = 0;
   local_5c = DAT_00858df8;
   DAT_00858df8 = &local_5c;
-  local_10 = param_1;
+  local_10 = this;
   iVar3 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     local_c = FUN_006ae290((uint *)0x0,(uint)*(ushort *)(local_10 + 0x27),2,1);

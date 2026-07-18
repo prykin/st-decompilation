@@ -1,2 +1,2 @@
-thunk_FUN_006451b0:
+STTorpC::SetDangerous:
 0040368E  E9 1D 1B 24 00            JMP 0x006451b0

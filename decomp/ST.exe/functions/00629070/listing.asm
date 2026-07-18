@@ -1,4 +1,4 @@
-FUN_00629070:
+STParticleC::InitVisibelFlight:
 00629070  55                        PUSH EBP
 00629071  8B EC                     MOV EBP,ESP
 00629073  83 EC 6C                  SUB ESP,0x6c

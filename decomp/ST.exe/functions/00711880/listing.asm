@@ -1,4 +1,4 @@
-FUN_00711880:
+ccFntTy::WrChXY:
 00711880  55                        PUSH EBP
 00711881  8B EC                     MOV EBP,ESP
 00711883  83 EC 48                  SUB ESP,0x48

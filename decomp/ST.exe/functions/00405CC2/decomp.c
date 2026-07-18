@@ -1,5 +1,5 @@
 
-void thunk_FUN_00441ce0(char param_1)
+void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
 
 {
   code *pcVar1;
@@ -23,7 +23,8 @@ void thunk_FUN_00441ce0(char param_1)
   uint uStack_6c;
   int iStack_68;
   uint uStack_64;
-  int aiStack_60 [5];
+  int aiStack_60 [4];
+  STAllPlayersC *pSStack_50;
   undefined1 auStack_4c [4];
   short sStack_48;
   short sStack_46;
@@ -52,6 +53,7 @@ void thunk_FUN_00441ce0(char param_1)
   aiStack_80[3] = 0x5e;
   uStack_e8 = DAT_00858df8;
   DAT_00858df8 = &uStack_e8;
+  pSStack_50 = this;
   iVar3 = __setjmp3(auStack_e4,0,unaff_EDI,unaff_ESI);
   uVar6 = uStack_24;
   if (iVar3 != 0) {

@@ -1,4 +1,4 @@
-FUN_004461b0:
+STAllPlayersC::_DeleteGuardBoat:
 004461B0  55                        PUSH EBP
 004461B1  8B EC                     MOV EBP,ESP
 004461B3  83 EC 68                  SUB ESP,0x68

@@ -1,4 +1,4 @@
-FUN_004ac040:
+STT3DSprC::ShowCurFase:
 004AC040  55                        PUSH EBP
 004AC041  8B EC                     MOV EBP,ESP
 004AC043  83 EC 48                  SUB ESP,0x48

@@ -1,2 +1,2 @@
-thunk_FUN_005907d0:
+MAdvTy::NoneMAdv:
 004058D5  E9 F6 AE 18 00            JMP 0x005907d0

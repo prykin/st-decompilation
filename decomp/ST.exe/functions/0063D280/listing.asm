@@ -1,4 +1,4 @@
-FUN_0063d280:
+STTmMineC::CreatePart:
 0063D280  55                        PUSH EBP
 0063D281  8B EC                     MOV EBP,ESP
 0063D283  81 EC 88 00 00 00         SUB ESP,0x88

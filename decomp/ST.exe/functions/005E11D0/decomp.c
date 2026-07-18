@@ -1,5 +1,9 @@
 
-void FUN_005e11d0(int param_1,char param_2,char param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\task_obj.cpp
+   MTaskTy::PrepareTSurf */
+
+void __thiscall MTaskTy::PrepareTSurf(MTaskTy *this,int param_1,char param_2,char param_3)
 
 {
   code *pcVar1;

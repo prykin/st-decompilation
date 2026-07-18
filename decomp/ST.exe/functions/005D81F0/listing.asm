@@ -1,4 +1,4 @@
-FUN_005d81f0:
+SIDTy::NoneSID:
 005D81F0  55                        PUSH EBP
 005D81F1  8B EC                     MOV EBP,ESP
 005D81F3  83 EC 4C                  SUB ESP,0x4c

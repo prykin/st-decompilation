@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\tintersys.cpp
+   InterSystemC::GetMessage */
 
-undefined4 FUN_00542f40(int param_1)
+undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
 
 {
   code *pcVar1;
@@ -22,10 +25,12 @@ undefined4 FUN_00542f40(int param_1)
   undefined4 *puVar14;
   undefined4 local_50;
   undefined4 local_4c [16];
-  BITMAPINFO *local_c [2];
+  BITMAPINFO *local_c;
+  InterSystemC *local_8;
   
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_8 = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_50;
@@ -66,9 +71,9 @@ undefined4 FUN_00542f40(int param_1)
           iVar2 = 1;
           pCVar4 = thunk_FUN_00571240(s_PANEL_BKGND_007c7cc8,0);
           pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar3);
-          local_c[0] = (BITMAPINFO *)FUN_006f1ce0(1,pCVar4,piVar11,iVar13);
-          thunk_FUN_005403c0(0,0,'\x01',local_c[0]);
-          FUN_006f20e0((uint *)local_c);
+          local_c = (BITMAPINFO *)FUN_006f1ce0(1,pCVar4,piVar11,iVar13);
+          thunk_FUN_005403c0(0,0,'\x01',local_c);
+          cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
           DAT_00858df8 = (undefined4 *)local_50;
           return 0;
         }
@@ -79,11 +84,11 @@ undefined4 FUN_00542f40(int param_1)
         if (DAT_00802a30 != (void *)0x0) {
           thunk_FUN_0054b540(DAT_00802a30);
         }
-        if (DAT_008016dc == (void *)0x0) {
+        if (DAT_008016dc == (OptPanelTy *)0x0) {
           DAT_00858df8 = (undefined4 *)local_50;
           return 0;
         }
-        thunk_FUN_0052f2b0(DAT_008016dc,'\x01');
+        OptPanelTy::SwitchOptPanel(DAT_008016dc,'\x01');
         DAT_00858df8 = (undefined4 *)local_50;
         return 0;
       }
@@ -93,11 +98,11 @@ undefined4 FUN_00542f40(int param_1)
         if (DAT_00802a30 != (void *)0x0) {
           thunk_FUN_0054b540(DAT_00802a30);
         }
-        if (DAT_008016e4 == (void *)0x0) {
+        if (DAT_008016e4 == (PlayPanelTy *)0x0) {
           DAT_00858df8 = (undefined4 *)local_50;
           return 0;
         }
-        thunk_FUN_0053a820(DAT_008016e4,'\x01');
+        PlayPanelTy::SetPanel(DAT_008016e4,'\x01');
         DAT_00858df8 = (undefined4 *)local_50;
         return 0;
       }
@@ -151,8 +156,8 @@ LAB_00543291:
       if (DAT_00802a30 != (void *)0x0) {
         thunk_FUN_0054b540(DAT_00802a30);
       }
-      if (DAT_008016dc != (void *)0x0) {
-        thunk_FUN_0052f2b0(DAT_008016dc,'\x0e');
+      if (DAT_008016dc != (OptPanelTy *)0x0) {
+        OptPanelTy::SwitchOptPanel(DAT_008016dc,'\x0e');
         DAT_00858df8 = (undefined4 *)local_50;
         return 0;
       }

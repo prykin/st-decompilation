@@ -1,4 +1,4 @@
-FUN_00552a30:
+UpgPanelTy::DoneUpgPanel:
 00552A30  55                        PUSH EBP
 00552A31  8B EC                     MOV EBP,ESP
 00552A33  83 EC 48                  SUB ESP,0x48

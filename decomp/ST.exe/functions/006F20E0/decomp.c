@@ -1,5 +1,9 @@
 
-void FUN_006f20e0(uint *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::RecMemFree */
+
+void __thiscall cMf32::RecMemFree(cMf32 *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -8,10 +12,11 @@ void FUN_006f20e0(uint *param_1)
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  undefined4 *local_8;
+  cMf32 *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined1 *)uVar4;
@@ -25,7 +30,7 @@ void FUN_006f20e0(uint *param_1)
     return;
   }
   if (*param_1 != 0) {
-    iVar2 = FUN_00751b10((int *)*local_8,*param_1);
+    iVar2 = FUN_00751b10(*(int **)local_8,*param_1);
     if (iVar2 == 0) {
       FUN_006ab060(param_1);
       DAT_00858df8 = (undefined1 *)uVar4;

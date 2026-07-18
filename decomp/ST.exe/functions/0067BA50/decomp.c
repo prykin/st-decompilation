@@ -22,7 +22,7 @@ undefined4 __cdecl FUN_0067ba50(int param_1,uint *param_2)
   }
   local_48[0] = 0x66;
   local_48[1] = 0xffffffff;
-  thunk_FUN_00662240(local_48);
+  AiFltClassTy::GetAiMess((AiFltClassTy *)param_1,local_48);
   if (('\0' < local_40) && (param_2 != (uint *)0x0)) {
     local_10 = local_3d;
     _local_14 = CONCAT22(local_3f,*(undefined2 *)(param_1 + 0x7d));

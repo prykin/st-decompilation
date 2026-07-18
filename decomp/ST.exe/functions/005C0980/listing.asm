@@ -1,4 +1,4 @@
-FUN_005c0980:
+MReportTy::CreateBut:
 005C0980  55                        PUSH EBP
 005C0981  8B EC                     MOV EBP,ESP
 005C0983  81 EC C8 01 00 00         SUB ESP,0x1c8

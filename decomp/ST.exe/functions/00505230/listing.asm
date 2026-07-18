@@ -1,4 +1,4 @@
-FUN_00505230:
+CPanelTy::PaintMunition:
 00505230  55                        PUSH EBP
 00505231  8B EC                     MOV EBP,ESP
 00505233  83 EC 6C                  SUB ESP,0x6c

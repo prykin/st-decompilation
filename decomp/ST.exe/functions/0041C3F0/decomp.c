@@ -6,7 +6,7 @@ void __thiscall FUN_0041c3f0(void *this,undefined *param_1)
   undefined4 uVar2;
   
   if (((-1 < (int)param_1) &&
-      (*(undefined **)((int)this + 0x101) = param_1, DAT_00802a88 != (void *)0x0)) &&
+      (*(undefined **)((int)this + 0x101) = param_1, DAT_00802a88 != (VisibleClassTy *)0x0)) &&
      ((*(byte *)((int)this + 0x1d1) & 1) == 0)) {
     thunk_FUN_00558dc0(DAT_00802a88,(int)*(short *)((int)this + 0x5b),
                        (int)*(short *)((int)this + 0x5d),
@@ -35,10 +35,10 @@ void __thiscall FUN_0041c3f0(void *this,undefined *param_1)
     case 0xb:
     case 0x23:
       *(int *)((int)this + 0x10d) = *(int *)((int)this + 0x101);
-      thunk_FUN_00559b30(DAT_00802a88,(int)*(short *)((int)this + 0x5b),
-                         (int)*(short *)((int)this + 0x5d),(char)*(undefined2 *)((int)this + 0x5f),
-                         *(uint *)((int)this + 0x24),*(int *)((int)this + 0x101),
-                         *(undefined4 *)((int)this + 0x18),0xffffffff);
+      VisibleClassTy::SetZoneAst
+                (DAT_00802a88,(int)*(short *)((int)this + 0x5b),(int)*(short *)((int)this + 0x5d),
+                 (char)*(undefined2 *)((int)this + 0x5f),*(uint *)((int)this + 0x24),
+                 *(int *)((int)this + 0x101),*(undefined4 *)((int)this + 0x18),0xffffffff);
       return;
     }
   }

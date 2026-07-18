@@ -1,4 +1,4 @@
-FUN_0044aa20:
+STAllPlayersC::UnRegisterBlot:
 0044AA20  55                        PUSH EBP
 0044AA21  8B EC                     MOV EBP,ESP
 0044AA23  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_005e9830:
+WaitTy::CloseButtons:
 005E9830  55                        PUSH EBP
 005E9831  8B EC                     MOV EBP,ESP
 005E9833  83 EC 48                  SUB ESP,0x48

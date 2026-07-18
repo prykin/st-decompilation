@@ -1,4 +1,4 @@
-FUN_005522a0:
+TradePanelTy::GetMessage:
 005522A0  55                        PUSH EBP
 005522A1  8B EC                     MOV EBP,ESP
 005522A3  83 EC 64                  SUB ESP,0x64

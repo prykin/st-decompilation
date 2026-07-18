@@ -1,4 +1,4 @@
-FUN_0056c750:
+STAppC::DoneApp:
 0056C750  55                        PUSH EBP
 0056C751  8B EC                     MOV EBP,ESP
 0056C753  81 EC 90 00 00 00         SUB ESP,0x90

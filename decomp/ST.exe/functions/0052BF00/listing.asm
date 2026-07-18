@@ -1,4 +1,4 @@
-FUN_0052bf00:
+MoneyTy::GetMessage:
 0052BF00  55                        PUSH EBP
 0052BF01  8B EC                     MOV EBP,ESP
 0052BF03  81 EC B8 00 00 00         SUB ESP,0xb8

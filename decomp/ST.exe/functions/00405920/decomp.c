@@ -1,5 +1,5 @@
 
-void thunk_FUN_0044af50(char param_1,int param_2)
+void STAllPlayersC::PushTV(char param_1,int param_2)
 
 {
   code *pcVar1;

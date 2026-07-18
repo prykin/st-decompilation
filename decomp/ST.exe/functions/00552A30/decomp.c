@@ -1,5 +1,9 @@
 
-void FUN_00552a30(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\upginfo.cpp
+   UpgPanelTy::DoneUpgPanel */
+
+void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
 
 {
   code *pcVar1;
@@ -9,9 +13,10 @@ void FUN_00552a30(void)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_48 [16];
-  int local_8;
+  UpgPanelTy *local_8;
   
   uVar2 = DAT_00858df8;
+  local_8 = this;
   iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     *(undefined4 *)(local_8 + 0x3f3) = 0;

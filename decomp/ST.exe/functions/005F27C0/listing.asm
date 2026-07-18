@@ -1,4 +1,4 @@
-FUN_005f27c0:
+STBHEShellC::GetMessage:
 005F27C0  55                        PUSH EBP
 005F27C1  8B EC                     MOV EBP,ESP
 005F27C3  83 EC 68                  SUB ESP,0x68

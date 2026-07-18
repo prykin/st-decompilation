@@ -1,4 +1,4 @@
-FUN_005dac80:
+StartSystemTy::GetIP:
 005DAC80  55                        PUSH EBP
 005DAC81  8B EC                     MOV EBP,ESP
 005DAC83  81 EC D8 03 00 00         SUB ESP,0x3d8

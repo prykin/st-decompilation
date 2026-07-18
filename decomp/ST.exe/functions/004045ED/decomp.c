@@ -177,7 +177,7 @@ LAB_00428e95:
       do {
         piVar13 = (int *)*piStack_28;
         if (piVar13 != (int *)0x0) {
-          if (DAT_00802a58 != (void *)0x0) {
+          if (DAT_00802a58 != (cLoadingTy *)0x0) {
             uStack_a4 = uStack_a4 + 1;
             uVar11 = uStack_a4 & 0x8000000f;
             bVar16 = uVar11 == 0;
@@ -185,9 +185,9 @@ LAB_00428e95:
               bVar16 = (uVar11 - 1 | 0xfffffff0) == 0xffffffff;
             }
             if (bVar16) {
-              thunk_FUN_00555040(DAT_00802a58,1,
-                                 (int)(uStack_a4 + ((int)uStack_a4 >> 0x1f & 0xfU)) >> 4,(char *)0x0
-                                );
+              cLoadingTy::SetState
+                        (DAT_00802a58,1,(int)(uStack_a4 + ((int)uStack_a4 >> 0x1f & 0xfU)) >> 4,
+                         (char *)0x0);
             }
           }
           uVar11 = 0;
@@ -280,7 +280,7 @@ LAB_00429475:
         iVar12 = *piStack_48;
         iStack_10 = iVar12;
         if (iVar12 != 0) {
-          if (DAT_00802a58 != (void *)0x0) {
+          if (DAT_00802a58 != (cLoadingTy *)0x0) {
             uStack_a4 = uStack_a4 + 1;
             uVar11 = uStack_a4 & 0x8000000f;
             bVar16 = uVar11 == 0;
@@ -288,9 +288,9 @@ LAB_00429475:
               bVar16 = (uVar11 - 1 | 0xfffffff0) == 0xffffffff;
             }
             if (bVar16) {
-              thunk_FUN_00555040(DAT_00802a58,1,
-                                 (int)(uStack_a4 + ((int)uStack_a4 >> 0x1f & 0xfU)) >> 4,(char *)0x0
-                                );
+              cLoadingTy::SetState
+                        (DAT_00802a58,1,(int)(uStack_a4 + ((int)uStack_a4 >> 0x1f & 0xfU)) >> 4,
+                         (char *)0x0);
             }
           }
           if (*(uint *)(iVar12 + 0x18) < puStack_44[3]) {

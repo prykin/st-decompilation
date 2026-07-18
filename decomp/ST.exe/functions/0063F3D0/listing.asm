@@ -1,4 +1,4 @@
-FUN_0063f3d0:
+STTmMineC::LoadImagVacuum:
 0063F3D0  55                        PUSH EBP
 0063F3D1  8B EC                     MOV EBP,ESP
 0063F3D3  83 EC 50                  SUB ESP,0x50

@@ -1,4 +1,4 @@
-FUN_0054f1d0:
+STPlaySystemC::PrepareMail:
 0054F1D0  55                        PUSH EBP
 0054F1D1  8B EC                     MOV EBP,ESP
 0054F1D3  81 EC 78 01 00 00         SUB ESP,0x178

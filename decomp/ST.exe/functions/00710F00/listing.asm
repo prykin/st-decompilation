@@ -1,4 +1,4 @@
-FUN_00710f00:
+ccFntTy::EraseSufr:
 00710F00  55                        PUSH EBP
 00710F01  8B EC                     MOV EBP,ESP
 00710F03  83 EC 48                  SUB ESP,0x48

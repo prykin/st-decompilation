@@ -1,4 +1,4 @@
-FUN_0049fbf0:
+STGroupBoatC::Bring:
 0049FBF0  55                        PUSH EBP
 0049FBF1  8B EC                     MOV EBP,ESP
 0049FBF3  83 EC 6C                  SUB ESP,0x6c

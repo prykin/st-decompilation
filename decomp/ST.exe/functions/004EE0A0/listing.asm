@@ -1,4 +1,4 @@
-FUN_004ee0a0:
+BehPanelTy::Update:
 004EE0A0  55                        PUSH EBP
 004EE0A1  8B EC                     MOV EBP,ESP
 004EE0A3  83 EC 68                  SUB ESP,0x68

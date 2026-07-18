@@ -1,4 +1,4 @@
-FUN_0059e7f0:
+FSGSTy::NewGameCtrls:
 0059E7F0  55                        PUSH EBP
 0059E7F1  8B EC                     MOV EBP,ESP
 0059E7F3  81 EC D4 08 00 00         SUB ESP,0x8d4

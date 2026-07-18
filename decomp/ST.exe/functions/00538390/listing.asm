@@ -1,4 +1,4 @@
-FUN_00538390:
+PanelTy::DonePanel:
 00538390  55                        PUSH EBP
 00538391  8B EC                     MOV EBP,ESP
 00538393  83 EC 48                  SUB ESP,0x48

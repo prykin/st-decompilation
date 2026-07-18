@@ -1,9 +1,9 @@
 
-void __thiscall thunk_FUN_005d06c0(void *this,uint param_1,char param_2)
+void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char param_2)
 
 {
   code *pcVar1;
-  int *piVar2;
+  SettMapMTy *pSVar2;
   int iVar3;
   char *pcVar4;
   int iVar5;
@@ -13,16 +13,16 @@ void __thiscall thunk_FUN_005d06c0(void *this,uint param_1,char param_2)
   bool bVar7;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int *piStack_8;
+  SettMapMTy *pSStack_8;
   
-  if (*(int *)((int)this + 0x1f84) != 0) {
+  if (*(int *)(this + 0x1f84) != 0) {
     uStack_4c = DAT_00858df8;
     DAT_00858df8 = &uStack_4c;
-    piStack_8 = this;
+    pSStack_8 = this;
     iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-    piVar2 = piStack_8;
+    pSVar2 = pSStack_8;
     if (iVar3 == 0) {
-      iVar3 = piStack_8[0x7e1];
+      iVar3 = *(int *)(pSStack_8 + 0x1f84);
       if (param_1 < *(uint *)(iVar3 + 0xc)) {
         pcVar4 = (char *)(*(int *)(iVar3 + 8) * param_1 + *(int *)(iVar3 + 0x1c));
       }
@@ -34,7 +34,7 @@ void __thiscall thunk_FUN_005d06c0(void *this,uint param_1,char param_2)
         if ((pcVar4[4] == '\x02') && (*(int *)(pcVar4 + 6) == DAT_0080877f)) {
           DAT_0080874e = param_2;
         }
-        iVar3 = piStack_8[0x7e1];
+        iVar3 = *(int *)(pSStack_8 + 0x1f84);
         uVar6 = param_1 + 1;
         bVar7 = uVar6 < *(uint *)(iVar3 + 0xc);
         if ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc)) {
@@ -50,13 +50,13 @@ void __thiscall thunk_FUN_005d06c0(void *this,uint param_1,char param_2)
             if (*(int *)(pcVar4 + 6) == DAT_0080877f) {
               DAT_0080874e = param_2;
             }
-            iVar3 = piStack_8[0x7e1];
+            iVar3 = *(int *)(pSStack_8 + 0x1f84);
             uVar6 = uVar6 + 1;
             bVar7 = uVar6 < *(uint *)(iVar3 + 0xc);
           } while ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc));
         }
-        (**(code **)(*piStack_8 + 0x2c))();
-        *(int *)((int)piVar2 + 0x2121) = *(int *)((int)piVar2 + 0x2121) + 1;
+        (**(code **)(*(int *)pSStack_8 + 0x2c))();
+        *(int *)(pSVar2 + 0x2121) = *(int *)(pSVar2 + 0x2121) + 1;
       }
       DAT_00858df8 = (undefined4 *)uStack_4c;
       return;

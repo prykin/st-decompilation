@@ -1,5 +1,5 @@
 
-uint thunk_FUN_00440600(int param_1,int param_2)
+uint STAllPlayersC::GetNInTmp(int param_1,int param_2)
 
 {
   code *pcVar1;

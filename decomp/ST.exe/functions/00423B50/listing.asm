@@ -1,4 +1,4 @@
-FUN_00423b50:
+STGroupC::AddObjs:
 00423B50  55                        PUSH EBP
 00423B51  8B EC                     MOV EBP,ESP
 00423B53  83 EC 50                  SUB ESP,0x50

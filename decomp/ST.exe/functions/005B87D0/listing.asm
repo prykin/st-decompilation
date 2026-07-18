@@ -1,4 +1,4 @@
-FUN_005b87d0:
+MMsgTy::SetPanel:
 005B87D0  55                        PUSH EBP
 005B87D1  8B EC                     MOV EBP,ESP
 005B87D3  81 EC 74 04 00 00         SUB ESP,0x474

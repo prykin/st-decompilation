@@ -1,4 +1,4 @@
-FUN_00571400:
+STAppC::ReadCmdPlay:
 00571400  55                        PUSH EBP
 00571401  8B EC                     MOV EBP,ESP
 00571403  83 EC 6C                  SUB ESP,0x6c

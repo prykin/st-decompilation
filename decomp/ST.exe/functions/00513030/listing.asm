@@ -1,4 +1,4 @@
-FUN_00513030:
+HelpPanelTy::ChangeTree:
 00513030  55                        PUSH EBP
 00513031  8B EC                     MOV EBP,ESP
 00513033  81 EC CC 00 00 00         SUB ESP,0xcc

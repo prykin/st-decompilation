@@ -1,4 +1,4 @@
-FUN_005a0ff0:
+FSGSTy::DoLogon:
 005A0FF0  55                        PUSH EBP
 005A0FF1  8B EC                     MOV EBP,ESP
 005A0FF3  83 EC 58                  SUB ESP,0x58

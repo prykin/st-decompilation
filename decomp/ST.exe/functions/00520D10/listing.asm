@@ -1,4 +1,4 @@
-FUN_00520d10:
+InfocPanelTy::PaintInfoc:
 00520D10  55                        PUSH EBP
 00520D11  8B EC                     MOV EBP,ESP
 00520D13  83 EC 4C                  SUB ESP,0x4c

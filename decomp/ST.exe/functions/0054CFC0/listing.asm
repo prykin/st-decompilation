@@ -1,4 +1,4 @@
-FUN_0054cfc0:
+STPlaySystemC::InitSystem:
 0054CFC0  55                        PUSH EBP
 0054CFC1  8B EC                     MOV EBP,ESP
 0054CFC3  83 EC 50                  SUB ESP,0x50

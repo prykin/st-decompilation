@@ -1,4 +1,4 @@
-FUN_007129d0:
+ccFntTy::SepColorStrInSarr:
 007129D0  55                        PUSH EBP
 007129D1  8B EC                     MOV EBP,ESP
 007129D3  83 EC 64                  SUB ESP,0x64

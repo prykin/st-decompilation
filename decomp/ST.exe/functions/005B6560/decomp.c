@@ -1,5 +1,9 @@
 
-void FUN_005b6560(int param_1,int param_2,uint param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\mmenuobj.cpp
+   MMMObjTy::PaintSlBut */
+
+void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint param_3)
 
 {
   code *pcVar1;
@@ -9,10 +13,11 @@ void FUN_005b6560(int param_1,int param_2,uint param_3)
   uint uVar4;
   undefined4 uVar5;
   undefined4 local_48 [16];
-  void *local_8;
+  MMMObjTy *local_8;
   
   uVar5 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar5);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined1 *)uVar5;

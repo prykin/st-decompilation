@@ -1,4 +1,4 @@
-FUN_005b9730:
+PrividerTy::OutListProc:
 005B9730  55                        PUSH EBP
 005B9731  8B EC                     MOV EBP,ESP
 005B9733  83 EC 4C                  SUB ESP,0x4c

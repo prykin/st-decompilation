@@ -1,2 +1,2 @@
-thunk_FUN_00423660:
+STGroupC::GetTOBJList:
 00403D46  E9 15 F9 01 00            JMP 0x00423660

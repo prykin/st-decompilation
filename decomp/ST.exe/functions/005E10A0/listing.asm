@@ -1,4 +1,4 @@
-FUN_005e10a0:
+MTaskTy::TTaskItemClose:
 005E10A0  55                        PUSH EBP
 005E10A1  8B EC                     MOV EBP,ESP
 005E10A3  83 EC 44                  SUB ESP,0x44

@@ -1,4 +1,4 @@
-FUN_00599be0:
+FSGSTy::PaintLogLogin:
 00599BE0  55                        PUSH EBP
 00599BE1  8B EC                     MOV EBP,ESP
 00599BE3  83 EC 48                  SUB ESP,0x48

@@ -1,2 +1,2 @@
-thunk_FUN_005400f0:
+ProdPanelTy::GetMessage:
 004059D4  E9 17 A7 13 00            JMP 0x005400f0

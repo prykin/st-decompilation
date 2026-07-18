@@ -1,4 +1,4 @@
-FUN_00592470:
+CampaignTy::CloseButtons:
 00592470  55                        PUSH EBP
 00592471  8B EC                     MOV EBP,ESP
 00592473  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_0068fb30:
+AiTactClassTy::BackFromRepair:
 0068FB30  55                        PUSH EBP
 0068FB31  8B EC                     MOV EBP,ESP
 0068FB33  83 EC 7C                  SUB ESP,0x7c

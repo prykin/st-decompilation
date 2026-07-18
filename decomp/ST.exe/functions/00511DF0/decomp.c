@@ -1,20 +1,27 @@
 
-void FUN_00511df0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\helppan.cpp
+   HelpPanelTy::SwitchOptPanel */
+
+void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
 
 {
   short sVar1;
   code *pcVar2;
+  HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  HelpPanelTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_4c;
     iVar4 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x10f,0,iVar3,&DAT_007a4ccc);
@@ -26,22 +33,22 @@ void FUN_00511df0(int param_1)
     (*pcVar2)();
     return;
   }
-  sVar1 = *(short *)((int)local_8 + 0x172);
+  sVar1 = *(short *)(local_8 + 0x172);
   if (sVar1 == 1) {
     if (param_1 != 0) {
       DAT_00858df8 = (undefined4 *)local_4c;
       return;
     }
-    if (*(int *)((int)local_8 + 0x178) != 0) {
-      *(undefined4 *)((int)local_8 + 0x28) = 0x4202;
-      *(undefined2 *)((int)local_8 + 0x2c) = 0;
-      *(undefined2 *)((int)local_8 + 0x2e) = 2;
-      *(int *)((int)local_8 + 0x30) = *(int *)((int)local_8 + 0x178);
+    if (*(int *)(local_8 + 0x178) != 0) {
+      *(undefined4 *)(local_8 + 0x28) = 0x4202;
+      *(undefined2 *)(local_8 + 0x2c) = 0;
+      *(undefined2 *)(local_8 + 0x2e) = 2;
+      *(int *)(local_8 + 0x30) = *(int *)(local_8 + 0x178);
       if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)((int)local_8 + 0x18);
+        (**(code **)*DAT_00802a30)(local_8 + 0x18);
       }
     }
-    thunk_FUN_00511c70(local_8,0);
+    ShiftControls(this_00,0);
   }
   else {
     if (sVar1 == 2) {
@@ -49,13 +56,13 @@ void FUN_00511df0(int param_1)
         DAT_00858df8 = (undefined4 *)local_4c;
         return;
       }
-      *(undefined2 *)((int)local_8 + 0x172) = 3;
+      *(undefined2 *)(local_8 + 0x172) = 3;
       thunk_FUN_005252c0(0xaf);
-      if (DAT_00801688 == (void *)0x0) {
+      if (DAT_00801688 == (CPanelTy *)0x0) {
         DAT_00858df8 = (undefined4 *)local_4c;
         return;
       }
-      thunk_FUN_004fa400(DAT_00801688,0);
+      CPanelTy::ShiftControls(DAT_00801688,0);
       DAT_00858df8 = (undefined4 *)local_4c;
       return;
     }
@@ -65,7 +72,7 @@ void FUN_00511df0(int param_1)
     }
   }
   if (param_1 == 0) {
-    *(undefined2 *)((int)local_8 + 0x172) = 4;
+    *(undefined2 *)(this_00 + 0x172) = 4;
     thunk_FUN_005252c0(0xb0);
   }
   DAT_00858df8 = (undefined4 *)local_4c;

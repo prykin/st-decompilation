@@ -1,4 +1,4 @@
-FUN_00544800:
+CursorClassTy::DelOpticAcc:
 00544800  55                        PUSH EBP
 00544801  8B EC                     MOV EBP,ESP
 00544803  81 EC B4 00 00 00         SUB ESP,0xb4

@@ -111,8 +111,8 @@ undefined4 __fastcall FUN_00622ba0(void *param_1)
                    2) * 4) != 0)))) {
         return 0;
       }
-      iVar3 = thunk_FUN_00495ec0(sVar4,sVar5,sVar6,(uint)*(byte *)((int)param_1 + 0x8e),(int)param_1
-                                );
+      iVar3 = DumpClassC::WritePtr
+                        (sVar4,sVar5,sVar6,(uint)*(byte *)((int)param_1 + 0x8e),(int)param_1);
       if (iVar3 != 0) {
         return 0;
       }

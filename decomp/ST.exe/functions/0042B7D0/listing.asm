@@ -1,4 +1,4 @@
-FUN_0042b7d0:
+STAllPlayersC::AddObjsToGroup:
 0042B7D0  55                        PUSH EBP
 0042B7D1  8B EC                     MOV EBP,ESP
 0042B7D3  81 EC 8C 00 00 00         SUB ESP,0x8c

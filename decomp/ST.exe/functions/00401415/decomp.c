@@ -1,5 +1,6 @@
 
-uint * thunk_FUN_0043e780(char param_1,int param_2,int param_3,char param_4)
+uint * __thiscall
+STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,int param_2,int param_3,char param_4)
 
 {
   int *piVar1;

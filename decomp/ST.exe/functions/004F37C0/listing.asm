@@ -1,4 +1,4 @@
-FUN_004f37c0:
+CPanelTy::PaintBBut:
 004F37C0  55                        PUSH EBP
 004F37C1  8B EC                     MOV EBP,ESP
 004F37C3  83 EC 50                  SUB ESP,0x50

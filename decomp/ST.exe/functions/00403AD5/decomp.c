@@ -1,61 +1,64 @@
 
-void thunk_FUN_005cdf60(int param_1)
+void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
 
 {
   code *pcVar1;
-  int iVar2;
+  SettMapMTy *pSVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  uint uVar4;
   uint uVar5;
-  undefined4 *puVar6;
-  void *unaff_EDI;
+  uint uVar6;
   undefined4 *puVar7;
+  void *unaff_EDI;
+  undefined4 *puVar8;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
   uint uStack_c;
-  int iStack_8;
+  SettMapMTy *pSStack_8;
   
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
-  iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
-    uVar4 = *(int *)(*(int *)(iStack_8 + 0x1f84) + 0xc) * 0x60;
-    uVar5 = uVar4 + 9;
-    uStack_c = uVar5;
-    if (*(uint *)(iStack_8 + 0x222a) < uVar5) {
-      iVar2 = FUN_006acf50(*(undefined4 **)(iStack_8 + 0x2226),uVar5);
-      *(int *)(iStack_8 + 0x2226) = iVar2;
-      *(uint *)(iStack_8 + 0x222a) = uVar5;
+  pSStack_8 = this;
+  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  pSVar2 = pSStack_8;
+  if (iVar3 == 0) {
+    uVar5 = *(int *)(*(int *)(pSStack_8 + 0x1f84) + 0xc) * 0x60;
+    uVar6 = uVar5 + 9;
+    uStack_c = uVar6;
+    if (*(uint *)(pSStack_8 + 0x222a) < uVar6) {
+      iVar3 = FUN_006acf50(*(undefined4 **)(pSStack_8 + 0x2226),uVar6);
+      *(int *)(pSVar2 + 0x2226) = iVar3;
+      *(uint *)(pSVar2 + 0x222a) = uVar6;
     }
-    puVar7 = *(undefined4 **)(iStack_8 + 0x2226);
-    *puVar7 = *(undefined4 *)(iStack_8 + 0x2121);
-    puVar7[1] = DAT_00808aab;
-    *(undefined1 *)(puVar7 + 2) = *(undefined1 *)(iStack_8 + 0x1e26);
-    puVar6 = *(undefined4 **)(*(int *)(iStack_8 + 0x1f84) + 0x1c);
-    puVar7 = (undefined4 *)((int)puVar7 + 9);
-    for (uVar4 = uVar4 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-      *puVar7 = *puVar6;
-      puVar6 = puVar6 + 1;
+    puVar8 = *(undefined4 **)(pSVar2 + 0x2226);
+    *puVar8 = *(undefined4 *)(pSVar2 + 0x2121);
+    puVar8[1] = DAT_00808aab;
+    *(SettMapMTy *)(puVar8 + 2) = pSVar2[0x1e26];
+    puVar7 = *(undefined4 **)(*(int *)(pSVar2 + 0x1f84) + 0x1c);
+    puVar8 = (undefined4 *)((int)puVar8 + 9);
+    for (uVar5 = uVar5 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar8 = *puVar7;
       puVar7 = puVar7 + 1;
+      puVar8 = puVar8 + 1;
     }
-    for (iVar2 = 0; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined1 *)puVar7 = *(undefined1 *)puVar6;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+    for (iVar3 = 0; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *(undefined1 *)puVar8 = *(undefined1 *)puVar7;
       puVar7 = (undefined4 *)((int)puVar7 + 1);
+      puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    FUN_00715360(DAT_00811764,param_1,'\"',*(char **)(iStack_8 + 0x2226),uStack_c,1,0xffffffff);
+    FUN_00715360(DAT_00811764,param_1,'\"',*(char **)(pSVar2 + 0x2226),uStack_c,1,0xffffffff);
     DAT_00858df8 = (undefined4 *)uStack_50;
     return;
   }
   DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x230,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x230,0,iVar3,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7cd258,0x230);
+  FUN_006a5e40(iVar3,0,0x7cd258,0x230);
   return;
 }
 

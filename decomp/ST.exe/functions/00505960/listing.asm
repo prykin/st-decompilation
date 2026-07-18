@@ -1,4 +1,4 @@
-FUN_00505960:
+CPanelTy::PaintArsenal:
 00505960  55                        PUSH EBP
 00505961  8B EC                     MOV EBP,ESP
 00505963  83 EC 6C                  SUB ESP,0x6c

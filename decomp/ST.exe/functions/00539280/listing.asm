@@ -1,4 +1,4 @@
-FUN_00539280:
+PausePanelTy::InitPausePanel:
 00539280  55                        PUSH EBP
 00539281  8B EC                     MOV EBP,ESP
 00539283  83 EC 48                  SUB ESP,0x48

@@ -25,7 +25,9 @@ undefined4 __fastcall thunk_FUN_004d0310(int param_1)
   }
   iVar6 = 0;
   iStack_8 = 0;
-  iVar3 = thunk_FUN_004ab880(0xe,DAT_0080677c,&DAT_007a9342 + *(int *)(param_1 + 0x369) * 6,0x1d);
+  iVar3 = STT3DSprC::LoadSequence
+                    (*(STT3DSprC **)(param_1 + 0x5ff),0xe,DAT_0080677c,
+                     &DAT_007a9342 + *(int *)(param_1 + 0x369) * 6,0x1d);
   if (iVar3 != 0) {
     FUN_006a5e40(iVar3,DAT_007ed77c,0x7bf39c,0x298);
   }
@@ -34,7 +36,8 @@ undefined4 __fastcall thunk_FUN_004d0310(int param_1)
     iVar3 = *(int *)(param_1 + 0x24);
   }
   wsprintfA((LPSTR)abStack_48,s__s_1i_007ac908,&DAT_007a9342 + *(int *)(param_1 + 0x369) * 6,iVar3);
-  iVar3 = thunk_FUN_004ab880(0xc,DAT_0080677c,abStack_48,0x1d);
+  iVar3 = STT3DSprC::LoadSequence(*(STT3DSprC **)(param_1 + 0x5ff),0xc,DAT_0080677c,abStack_48,0x1d)
+  ;
   if (iVar3 != 0) {
     FUN_006a5e40(iVar3,DAT_007ed77c,0x7bf39c,0x29a);
   }
@@ -48,10 +51,10 @@ undefined4 __fastcall thunk_FUN_004d0310(int param_1)
     pbVar8 = pbVar8 + 1;
   } while (bVar1 != 0);
   if (iVar3 == -2) {
-    thunk_FUN_004ac410(0xd);
+    STT3DSprC::StopShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd);
   }
   else {
-    iVar3 = thunk_FUN_004ab880(0xd,DAT_0080677c,pbVar7,0x1d);
+    iVar3 = STT3DSprC::LoadSequence(*(STT3DSprC **)(param_1 + 0x5ff),0xd,DAT_0080677c,pbVar7,0x1d);
     if (iVar3 != 0) {
       return 0xffff;
     }
@@ -83,8 +86,8 @@ undefined4 __fastcall thunk_FUN_004d0310(int param_1)
   thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xc,iVar6,iVar6,'\0');
   thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\x0e',iVar6);
   thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\f',iVar6);
-  thunk_FUN_004ac1a0(0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
-  thunk_FUN_004ac1a0(0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
   iVar6 = iStack_8;
   iVar3 = -1;
   pcVar9 = (char *)((int)&DAT_007a9440 + *(int *)(param_1 + 0x369) * 6 + 2);
@@ -97,7 +100,7 @@ undefined4 __fastcall thunk_FUN_004d0310(int param_1)
   if (iVar3 != -2) {
     thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xd,iStack_8,iStack_8,'\0');
     thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\r',iVar6);
-    thunk_FUN_004ac1a0(0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
   }
   return 0;
 }

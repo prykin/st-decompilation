@@ -1,5 +1,5 @@
 
-void thunk_FUN_005c1610(int param_1)
+void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
 
 {
   int iVar1;
@@ -33,13 +33,14 @@ void thunk_FUN_005c1610(int param_1)
   int iStack_14;
   int iStack_10;
   uint uStack_c;
-  int iStack_8;
+  MReportTy *pMStack_8;
   
   puStack_44 = *(uint **)(param_1 + 0x14);
   iStack_40 = puStack_44[4] - 0x46;
   iStack_48 = puStack_44[3] - 0x1a;
   uStack_8c = DAT_00858df8;
   DAT_00858df8 = &uStack_8c;
+  pMStack_8 = this;
   iVar5 = __setjmp3(auStack_88,0,unaff_EDI,unaff_ESI);
   puVar4 = puStack_44;
   if (iVar5 != 0) {
@@ -56,7 +57,7 @@ void thunk_FUN_005c1610(int param_1)
   FUN_006b5f80(DAT_008075a8,puStack_44[3],puStack_44[4],puStack_44[5],puStack_44[6]);
   iVar7 = iStack_40;
   iVar5 = iStack_48;
-  FUN_006b4170(*(int *)(iStack_8 + 0x73),0,iStack_48,iStack_40,puVar4[5],puVar4[6],0xff);
+  FUN_006b4170(*(int *)(pMStack_8 + 0x73),0,iStack_48,iStack_40,puVar4[5],puVar4[6],0xff);
   uVar2 = puVar4[1];
   if (uVar2 == 0) {
     iStack_3c = iVar5 + 5;
@@ -71,8 +72,8 @@ void thunk_FUN_005c1610(int param_1)
     iStack_10 = (puVar4[6] - 3) + iVar7;
     iStack_1c = iStack_34;
     iStack_14 = iStack_3c;
-    FUN_006c7ea0(*(undefined4 *)(iStack_8 + 0x73),0,&iStack_3c,6,0x4c);
-    FUN_006c7f10(*(int *)(iStack_8 + 0x73),0,&iStack_3c,6,0x18);
+    FUN_006c7ea0(*(undefined4 *)(pMStack_8 + 0x73),0,&iStack_3c,6,0x4c);
+    FUN_006c7f10(*(int *)(pMStack_8 + 0x73),0,&iStack_3c,6,0x18);
     iVar6 = iVar5 + -1 + puVar4[5];
 LAB_005c17e9:
     bVar11 = 0x18;
@@ -97,14 +98,14 @@ LAB_005c17e9:
     iStack_18 = (puVar4[6] - 1) + iVar7;
     iStack_10 = (puVar4[6] - 3) + iVar7;
     iStack_1c = iStack_34;
-    FUN_006c7ea0(*(undefined4 *)(iStack_8 + 0x73),0,&iStack_3c,6,0x4c);
-    FUN_006c7f10(*(int *)(iStack_8 + 0x73),0,&iStack_3c,6,0x18);
+    FUN_006c7ea0(*(undefined4 *)(pMStack_8 + 0x73),0,&iStack_3c,6,0x4c);
+    FUN_006c7f10(*(int *)(pMStack_8 + 0x73),0,&iStack_3c,6,0x18);
     bVar11 = 0x4c;
     iVar6 = iVar5 + -1 + puVar4[5];
     iVar1 = puVar4[6] - 2;
     iVar10 = iVar7 + 1;
   }
-  FUN_006b5b10(*(int *)(iStack_8 + 0x73),0,iVar6,iVar10,iVar6,iVar1 + iVar7,bVar11,0xd);
+  FUN_006b5b10(*(int *)(pMStack_8 + 0x73),0,iVar6,iVar10,iVar6,iVar1 + iVar7,bVar11,0xd);
 LAB_005c1806:
   if (puVar4[1] < 2) {
     uVar2 = *puVar4;
@@ -146,14 +147,14 @@ LAB_005c1806:
       default:
         uVar8 = 0xff;
       }
-      FUN_006b4170(*(int *)(iStack_8 + 0x73),0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,
-                   iVar7 + 0xb,0x1a,0xd,uVar8);
-      FUN_006b5ee0(*(int *)(iStack_8 + 0x73),0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,
-                   iVar7 + 0xb,0x1a,0xd,0,0xd);
+      FUN_006b4170(*(int *)(pMStack_8 + 0x73),0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5
+                   ,iVar7 + 0xb,0x1a,0xd,uVar8);
+      FUN_006b5ee0(*(int *)(pMStack_8 + 0x73),0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5
+                   ,iVar7 + 0xb,0x1a,0xd,0,0xd);
     }
   }
-  FUN_006b48e0(DAT_0080759c,puVar4[3],puVar4[4],*(int *)(iStack_8 + 0x73),0,iVar5,iVar7,puVar4[5],
-               puVar4[6],iStack_8 + 0xa3,0x4c,0x10000ff);
+  FUN_006b48e0(DAT_0080759c,puVar4[3],puVar4[4],*(int *)(pMStack_8 + 0x73),0,iVar5,iVar7,puVar4[5],
+               puVar4[6],(int)(pMStack_8 + 0xa3),0x4c,0x10000ff);
   DAT_00858df8 = (undefined4 *)uStack_8c;
   return;
 }

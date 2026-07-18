@@ -1,4 +1,4 @@
-FUN_00590580:
+MAdvTy::PaintMAdv:
 00590580  55                        PUSH EBP
 00590581  8B EC                     MOV EBP,ESP
 00590583  83 EC 48                  SUB ESP,0x48

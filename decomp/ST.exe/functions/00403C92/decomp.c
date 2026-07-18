@@ -120,7 +120,7 @@ thunk_FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int pa
       *(undefined4 *)((int)this + 0x15) = param_5[0x12];
     }
     thunk_FUN_00632e30(this);
-    thunk_FUN_00632a00();
+    STTeamLissagC::InitVisibelSystem(this);
     uVar2 = 1;
     if (*(char *)((int)this + 4) == '\0') {
       uVar4 = 0;

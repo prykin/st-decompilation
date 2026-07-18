@@ -1,4 +1,4 @@
-FUN_00645020:
+STTorpC::IsDangerous:
 00645020  55                        PUSH EBP
 00645021  8B EC                     MOV EBP,ESP
 00645023  83 EC 58                  SUB ESP,0x58

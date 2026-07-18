@@ -1,6 +1,8 @@
 
-undefined4
-thunk_FUN_0042e210(int param_1,uint param_2,uint param_3,int *param_4,int param_5,int param_6)
+undefined4 __thiscall
+STAllPlayersC::RegisterObject
+          (STAllPlayersC *this,int param_1,uint param_2,uint param_3,int *param_4,int param_5,
+          int param_6)
 
 {
   code *pcVar1;
@@ -32,9 +34,10 @@ thunk_FUN_0042e210(int param_1,uint param_2,uint param_3,int *param_4,int param_
   uint *puStack_24;
   uint uStack_20;
   uint *puStack_1c;
+  STAllPlayersC *pSStack_18;
   uint uStack_14;
   undefined1 auStack_10 [4];
-  void *pvStack_c;
+  STGroupC *pSStack_c;
   short sStack_6;
   
   iVar6 = (char)param_1 * 0xa62;
@@ -43,6 +46,7 @@ thunk_FUN_0042e210(int param_1,uint param_2,uint param_3,int *param_4,int param_
   puStack_24 = *(uint **)((int)&DAT_007f5107 + iVar6);
   uStack_94 = DAT_00858df8;
   DAT_00858df8 = &uStack_94;
+  pSStack_18 = this;
   iVar6 = __setjmp3(auStack_90,0,unaff_EDI,unaff_ESI);
   if (iVar6 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_94;
@@ -328,8 +332,8 @@ LAB_0042eb3e:
     uVar2 = uVar12;
     if (uVar12 != 0) {
       while (uVar2 = uVar2 - 1, -1 < (int)uVar2) {
-        FUN_006acc70((int)puStack_1c,uVar2,&pvStack_c);
-        if (pvStack_c == (void *)0x0) {
+        FUN_006acc70((int)puStack_1c,uVar2,&pSStack_c);
+        if (pSStack_c == (STGroupC *)0x0) {
           uVar12 = uVar2;
           uStack_14 = uVar2;
         }
@@ -341,13 +345,14 @@ LAB_0042eb3e:
     uStack_30 = 0;
     uStack_44 = 1;
     uStack_3c = uVar12;
-    (**(code **)(*DAT_00802a38 + 8))(0x10ff,auStack_10,&pvStack_c,auStack_50,0);
-    FUN_006ae140(puStack_1c,uVar12,&pvStack_c);
+    (**(code **)(*DAT_00802a38 + 8))(0x10ff,auStack_10,&pSStack_c,auStack_50,0);
+    FUN_006ae140(puStack_1c,uVar12,&pSStack_c);
     iVar6 = param_5;
   }
   else {
     if ((((short)param_2 != -1) && (iVar6 == 0)) &&
-       (pvStack_c = (void *)thunk_FUN_0042b760(param_1,param_2), pvStack_c == (void *)0x0)) {
+       (pSStack_c = (STGroupC *)thunk_FUN_0042b760(param_1,param_2), pSStack_c == (STGroupC *)0x0))
+    {
       param_2 = 0xfffe;
     }
     uVar12 = uStack_14;
@@ -360,7 +365,7 @@ LAB_0042ebe7:
     if (sVar10 != -1) goto LAB_0042ebf6;
   }
   else if (sVar10 != -1) {
-    pvStack_c = (void *)thunk_FUN_0042b760(param_1,param_2);
+    pSStack_c = (STGroupC *)thunk_FUN_0042b760(param_1,param_2);
     uVar12 = param_2 & 0xffff;
     uStack_14 = uVar12;
     goto LAB_0042ebe7;
@@ -370,7 +375,7 @@ LAB_0042ebe7:
 LAB_0042ebf6:
   thunk_FUN_00419c30(param_4,uVar11);
   if (((iVar6 == 0) || (param_6 == 1)) && (sVar10 != -1)) {
-    thunk_FUN_00423850(pvStack_c,uStack_20,(uint)(sVar10 != -2));
+    STGroupC::AddObj(pSStack_c,uStack_20,(uint)(sVar10 != -2));
   }
   iVar6 = (**(code **)(*param_4 + 0x2c))();
   if (iVar6 == 0x1d) {

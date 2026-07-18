@@ -7,7 +7,7 @@ void __fastcall thunk_FUN_005db2a0(int param_1)
   
   thunk_FUN_0055db70();
   if (*(int *)(param_1 + 0x2c) != 0) {
-    FUN_006f20e0((uint *)(param_1 + 0x2c));
+    cMf32::RecMemFree(DAT_00806780,(uint *)(param_1 + 0x2c));
   }
   if (*(uint **)(param_1 + 0x30) != (uint *)0x0) {
     FUN_00710560(*(uint **)(param_1 + 0x30));
@@ -24,9 +24,9 @@ void __fastcall thunk_FUN_005db2a0(int param_1)
     piVar2 = piVar2 + 1;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);
-  FUN_00715ab0();
-  FUN_00715ab0();
-  FUN_00715ab0();
+  SpriteClassTy::CloseSprite((SpriteClassTy *)(param_1 + 0x38d));
+  SpriteClassTy::CloseSprite((SpriteClassTy *)(param_1 + 0x41e));
+  SpriteClassTy::CloseSprite((SpriteClassTy *)(param_1 + 0x4af));
   if (-1 < (int)*(uint *)(param_1 + 0x2ec)) {
     FUN_006b3bb0(DAT_008075a8,*(uint *)(param_1 + 0x2ec));
     *(undefined4 *)(param_1 + 0x2ec) = 0xffffffff;
@@ -37,7 +37,7 @@ void __fastcall thunk_FUN_005db2a0(int param_1)
   if (*(int *)(param_1 + 0x2f4) != 0) {
     FUN_006ab060((undefined4 *)(param_1 + 0x2f4));
   }
-  FUN_00715ab0();
+  SpriteClassTy::CloseSprite((SpriteClassTy *)(param_1 + 0x2f8));
   if (*(byte **)(param_1 + 0x548) != (byte *)0x0) {
     FUN_006b5570(*(byte **)(param_1 + 0x548));
   }
@@ -52,8 +52,8 @@ void __fastcall thunk_FUN_005db2a0(int param_1)
   if (*(int *)(param_1 + 0x67e) != 0) {
     FUN_006ab060((undefined4 *)(param_1 + 0x67e));
   }
-  FUN_00715ab0();
-  FUN_00715ab0();
+  SpriteClassTy::CloseSprite((SpriteClassTy *)(param_1 + 0x55c));
+  SpriteClassTy::CloseSprite((SpriteClassTy *)(param_1 + 0x5ed));
   if (-1 < (int)*(uint *)(param_1 + 0x558)) {
     FUN_006b3bb0(DAT_008075a8,*(uint *)(param_1 + 0x558));
     *(undefined4 *)(param_1 + 0x558) = 0xffffffff;

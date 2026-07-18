@@ -1,8 +1,13 @@
 
-undefined4 FUN_005522a0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\tradecen.cpp
+   TradePanelTy::GetMessage */
+
+undefined4 __thiscall TradePanelTy::GetMessage(TradePanelTy *this,int param_1)
 
 {
-  undefined2 uVar1;
+  SpecPanelTy SVar1;
+  SpecPanelTy *this_00;
   char cVar2;
   int iVar3;
   LPSTR pCVar4;
@@ -33,12 +38,14 @@ undefined4 FUN_005522a0(int param_1)
   uint uStack_15;
   undefined1 uStack_11;
   undefined1 uStack_10;
-  int *local_c;
+  SpecPanelTy *local_c;
   int local_8;
   
   local_68 = DAT_00858df8;
   DAT_00858df8 = &local_68;
+  local_c = (SpecPanelTy *)this;
   iVar3 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  this_00 = local_c;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_68;
     iVar8 = FUN_006ad4d0(s_E____titans_Andrey_tradecen_cpp_007c8624,0x175,0,iVar3,&DAT_007a4ccc);
@@ -50,11 +57,11 @@ undefined4 FUN_005522a0(int param_1)
     uVar7 = (*pcVar13)();
     return uVar7;
   }
-  thunk_FUN_0053eb70(param_1);
+  SpecPanelTy::GetMessage(local_c,param_1);
   uVar9 = *(uint *)(param_1 + 0x10);
   if (uVar9 < 0xb203) {
     if (uVar9 == 0xb202) {
-      iVar3 = *local_c;
+      iVar3 = *(int *)this_00;
       iVar8 = 0x2754;
 LAB_00552481:
       uVar16 = 1;
@@ -67,32 +74,32 @@ LAB_00552481:
     if (uVar9 < 0xb200) {
       if (uVar9 == 0xb1ff) {
         uStack_11 = 0;
-        local_18 = (*(char *)((int)local_c + 0x1bb) == '\0') + '\x01';
+        local_18 = (this_00[0x1bb] == (SpecPanelTy)0x0) + '\x01';
         uStack_10 = 0;
-        bVar11 = *(byte *)(local_c + 0x74);
-        sStack_17 = (bVar11 != 0) + 0xdd;
-        uStack_15 = (uint)*(ushort *)((int)local_c + (uint)bVar11 * 2 + 0x1bc);
-        if (*(char *)((int)local_c + 0x1bb) == '\0') {
-          uVar1 = *(undefined2 *)((int)local_c + (uint)bVar11 * 8 + 0x1ad);
-          uStack_11 = (undefined1)uVar1;
-          uStack_10 = (undefined1)((ushort)uVar1 >> 8);
+        SVar1 = this_00[0x1d0];
+        sStack_17 = (SVar1 != (SpecPanelTy)0x0) + 0xdd;
+        uStack_15 = (uint)*(ushort *)(this_00 + (uint)(byte)SVar1 * 2 + 0x1bc);
+        if (this_00[0x1bb] == (SpecPanelTy)0x0) {
+          uStack_11 = (undefined1)*(undefined2 *)(this_00 + (uint)(byte)SVar1 * 8 + 0x1ad);
+          uStack_10 = (undefined1)
+                      ((ushort)*(undefined2 *)(this_00 + (uint)(byte)SVar1 * 8 + 0x1ad) >> 8);
         }
         thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_18,0,0xffffffff);
-        if (*(char *)((int)local_c + 0x1bb) != '\0') {
-          local_c[10] = 0xbfff;
-          (**(code **)*local_c)(local_c + 6);
+        if (this_00[0x1bb] != (SpecPanelTy)0x0) {
+          *(undefined4 *)(this_00 + 0x28) = 0xbfff;
+          (*(code *)**(undefined4 **)this_00)(this_00 + 0x18);
           DAT_00858df8 = (undefined4 *)local_68;
           return 0;
         }
       }
       else {
         if (uVar9 == 2) {
-          thunk_FUN_00550db0();
+          InitTradePanel((TradePanelTy *)this_00);
           DAT_00858df8 = (undefined4 *)local_68;
           return 0;
         }
         if (uVar9 == 3) {
-          thunk_FUN_005512f0();
+          DoneTradePanel((TradePanelTy *)this_00);
           DAT_00858df8 = (undefined4 *)local_68;
           return 0;
         }
@@ -100,18 +107,18 @@ LAB_00552481:
     }
     else {
       if (uVar9 == 0xb200) {
-        iVar3 = *local_c;
-        iVar8 = (-(uint)(*(char *)((int)local_c + 0x1bb) != '\0') & 0xfffffffe) + 0x2753;
+        iVar3 = *(int *)this_00;
+        iVar8 = (-(uint)(this_00[0x1bb] != (SpecPanelTy)0x0) & 0xfffffffe) + 0x2753;
         goto LAB_00552481;
       }
       if (uVar9 == 0xb201) {
-        bVar11 = *(byte *)(local_c + 0x74);
-        sStack_23 = (bVar11 != 0) + 0xdd;
+        SVar1 = this_00[0x1d0];
+        sStack_23 = (SVar1 != (SpecPanelTy)0x0) + 0xdd;
         local_24 = 3;
-        uStack_21 = (uint)*(ushort *)((int)local_c + (uint)bVar11 * 2 + 0x1bc);
-        uVar1 = *(undefined2 *)((int)local_c + (uint)bVar11 * 8 + 0x1b1);
-        uStack_1d = (undefined1)uVar1;
-        uStack_1c = (undefined1)((ushort)uVar1 >> 8);
+        uStack_21 = (uint)*(ushort *)(this_00 + (uint)(byte)SVar1 * 2 + 0x1bc);
+        uStack_1d = (undefined1)*(undefined2 *)(this_00 + (uint)(byte)SVar1 * 8 + 0x1b1);
+        uStack_1c = (undefined1)
+                    ((ushort)*(undefined2 *)(this_00 + (uint)(byte)SVar1 * 8 + 0x1b1) >> 8);
         thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_24,0,0xffffffff);
         DAT_00858df8 = (undefined4 *)local_68;
         return 0;
@@ -120,25 +127,25 @@ LAB_00552481:
   }
   else if (uVar9 < 0xb20d) {
     if (uVar9 == 0xb20c) {
-      *(undefined2 *)((int)local_c + (uint)*(byte *)(local_c + 0x74) * 2 + 0x1bc) =
+      *(undefined2 *)(this_00 + (uint)(byte)this_00[0x1d0] * 2 + 0x1bc) =
            *(undefined2 *)(param_1 + 0x14);
-      thunk_FUN_00551ec0();
-      thunk_FUN_00551800(local_c);
+      PaintIndicators((TradePanelTy *)this_00);
+      thunk_FUN_00551800(this_00);
       DAT_00858df8 = (undefined4 *)local_68;
       return 0;
     }
     if (uVar9 == 0xb20a) {
-      *(char *)(local_c + 0x74) = **(char **)(param_1 + 0x14) + -1;
-      thunk_FUN_00551b10(local_c);
-      thunk_FUN_00551ba0();
+      this_00[0x1d0] = (SpecPanelTy)(**(char **)(param_1 + 0x14) + -1);
+      thunk_FUN_00551b10(this_00);
+      PaintPanel((TradePanelTy *)this_00);
       DAT_00858df8 = (undefined4 *)local_68;
       return 0;
     }
     if (uVar9 == 0xb20b) {
-      local_8 = *(int *)(*(int *)(param_1 + 0x14) + 0xc) - local_c[0xf];
+      local_8 = *(int *)(*(int *)(param_1 + 0x14) + 0xc) - *(int *)(this_00 + 0x3c);
       iVar3 = DAT_00806734;
-      if (local_c[0x17] != 0) {
-        iVar3 = local_c[0x11];
+      if (*(int *)(this_00 + 0x5c) != 0) {
+        iVar3 = *(int *)(this_00 + 0x44);
       }
       puVar15 = (undefined4 *)0x0;
       iVar14 = 0;
@@ -152,7 +159,7 @@ LAB_00552481:
       pCVar4 = thunk_FUN_00571240(s_BUT_RCTTYPE_007c87a8,0);
       pbVar5 = (byte *)FUN_006f2c00(pCVar4,iVar8,uVar7);
       puVar6 = FUN_00709af0(DAT_00806794,1,pbVar5,uVar9,bVar11,iVar12,iVar14,puVar15);
-      thunk_FUN_00540760((undefined4 *)local_c[0x1a],local_8,iVar3,'\x01',(byte *)puVar6);
+      thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_8,iVar3,'\x01',(byte *)puVar6);
       if (*(int *)(*(int *)(param_1 + 0x14) + 4) == 3) {
         puVar15 = (undefined4 *)0x0;
         iVar12 = 0;
@@ -161,16 +168,17 @@ LAB_00552481:
         uVar9 = 0xffffffff;
         pbVar5 = (byte *)thunk_FUN_00571240(s_BUT_RCTFTYPE_007c8798,0);
         puVar6 = FUN_00709af0(DAT_00806794,6,pbVar5,uVar9,bVar11,iVar8,iVar12,puVar15);
-        thunk_FUN_00540760((undefined4 *)local_c[0x1a],local_8,iVar3,'\x06',(byte *)puVar6);
+        thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_8,iVar3,'\x06',(byte *)puVar6);
       }
-      FUN_006b3640(DAT_008075a8,local_c[0x18],0xffffffff,local_c[0xf],local_c[0x11]);
+      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                   *(uint *)(this_00 + 0x44));
       DAT_00858df8 = (undefined4 *)local_68;
       return 0;
     }
   }
   else {
     if (uVar9 == 0xc005) {
-      iVar3 = *local_c;
+      iVar3 = *(int *)this_00;
       pcVar10 = s_BUT_TBUP_007c22d8;
     }
     else {
@@ -178,7 +186,7 @@ LAB_00552481:
         DAT_00858df8 = (undefined4 *)local_68;
         return 0;
       }
-      iVar3 = *local_c;
+      iVar3 = *(int *)this_00;
       pcVar10 = s_BUT_TBDN_007c22f4;
     }
     uVar16 = 1;

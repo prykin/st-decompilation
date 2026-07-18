@@ -1,44 +1,48 @@
 
-void thunk_FUN_00513a40(void)
+void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
 
 {
-  char cVar1;
+  HelpPanelTy HVar1;
   code *pcVar2;
+  HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_EBX;
   void *unaff_ESI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  HelpPanelTy *pHStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
+  pHStack_8 = this;
   iVar3 = __setjmp3(auStack_48,0,unaff_ESI,unaff_EBX);
+  this_00 = pHStack_8;
   if (iVar3 == 0) {
-    cVar1 = *(char *)(iStack_8 + 0x1a1);
-    if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
-      *(char *)(iStack_8 + 0x1a2) = cVar1;
-      *(undefined4 *)(iStack_8 + 0x1ab) = *(undefined4 *)(iStack_8 + 0x1a3);
+    HVar1 = pHStack_8[0x1a1];
+    if (((HVar1 == (HelpPanelTy)0x0) || (HVar1 == (HelpPanelTy)0x6)) || (HVar1 == (HelpPanelTy)0xa))
+    {
+      pHStack_8[0x1a2] = HVar1;
+      *(undefined4 *)(pHStack_8 + 0x1ab) = *(undefined4 *)(pHStack_8 + 0x1a3);
     }
     else {
-      *(undefined1 *)(iStack_8 + 0x1a2) = 0;
-      *(undefined4 *)(iStack_8 + 0x1ab) = 0;
+      pHStack_8[0x1a2] = (HelpPanelTy)0x0;
+      *(undefined4 *)(pHStack_8 + 0x1ab) = 0;
     }
-    *(undefined1 *)(iStack_8 + 0x1a1) = 10;
-    *(undefined4 *)(iStack_8 + 0x1a3) = 0;
-    FUN_006b55f0(*(undefined4 **)(iStack_8 + 0x68),0,0x21,0x16,*(int *)(iStack_8 + 0x1dc),0,0x21,
+    pHStack_8[0x1a1] = (HelpPanelTy)0xa;
+    *(undefined4 *)(pHStack_8 + 0x1a3) = 0;
+    FUN_006b55f0(*(undefined4 **)(pHStack_8 + 0x68),0,0x21,0x16,*(int *)(pHStack_8 + 0x1dc),0,0x21,
                  0x16,0x1b8,0x118);
-    if (*(int *)(iStack_8 + 0x178) != 0) {
-      *(undefined4 *)(iStack_8 + 0x28) = 0x4202;
-      *(undefined2 *)(iStack_8 + 0x2c) = 0;
-      *(undefined2 *)(iStack_8 + 0x2e) = 2;
-      *(int *)(iStack_8 + 0x30) = *(int *)(iStack_8 + 0x178);
+    if (*(int *)(this_00 + 0x178) != 0) {
+      *(undefined4 *)(this_00 + 0x28) = 0x4202;
+      *(undefined2 *)(this_00 + 0x2c) = 0;
+      *(undefined2 *)(this_00 + 0x2e) = 2;
+      *(int *)(this_00 + 0x30) = *(int *)(this_00 + 0x178);
       if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)(iStack_8 + 0x18);
+        (**(code **)*DAT_00802a30)(this_00 + 0x18);
       }
     }
-    thunk_FUN_005123a0();
+    CreateList(this_00);
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;
   }

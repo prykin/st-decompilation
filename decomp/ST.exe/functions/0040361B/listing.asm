@@ -1,2 +1,2 @@
-thunk_FUN_005b5510:
+MMObjTy::CreateSprBut:
 0040361B  E9 F0 1E 1B 00            JMP 0x005b5510

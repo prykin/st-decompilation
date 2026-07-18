@@ -1,4 +1,4 @@
-FUN_005b5a30:
+MMObjTy::PaintButDib:
 005B5A30  55                        PUSH EBP
 005B5A31  8B EC                     MOV EBP,ESP
 005B5A33  81 EC 90 00 00 00         SUB ESP,0x90

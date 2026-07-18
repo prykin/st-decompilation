@@ -16,7 +16,7 @@ void __fastcall FUN_005efcd0(void *param_1)
       ((DAT_007fb244 <= sVar3 ||
        (*(int *)(DAT_007fb248 +
                 ((int)DAT_007fb246 * (int)sVar3 + (int)DAT_007fb240 * (int)sVar2 + (int)sVar1) * 8)
-        == 0)))) && (iVar4 = thunk_FUN_00495ec0(sVar1,sVar2,sVar3,0,(int)param_1), iVar4 == 0)) {
+        == 0)))) && (iVar4 = DumpClassC::WritePtr(sVar1,sVar2,sVar3,0,(int)param_1), iVar4 == 0)) {
     *(char *)((int)param_1 + 0x252) = *(char *)((int)param_1 + 0x252) + '\x01';
     thunk_FUN_005f06e0((int)param_1);
     sVar1 = *(short *)((int)param_1 + 0x47);

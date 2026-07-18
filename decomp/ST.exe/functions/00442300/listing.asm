@@ -1,4 +1,4 @@
-FUN_00442300:
+STAllPlayersC::_AddMDPairs:
 00442300  55                        PUSH EBP
 00442301  8B EC                     MOV EBP,ESP
 00442303  81 EC D0 00 00 00         SUB ESP,0xd0

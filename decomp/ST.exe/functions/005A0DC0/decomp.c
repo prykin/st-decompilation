@@ -1,10 +1,14 @@
 
-void __thiscall FUN_005a0dc0(void *this,int param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\fsgs_obj.cpp
+   FSGSTy::ConnectProc */
+
+void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
 
 {
   char cVar1;
   code *pcVar2;
-  void *pvVar3;
+  FSGSTy *pFVar3;
   int iVar4;
   undefined4 *puVar5;
   undefined4 uVar6;
@@ -17,17 +21,17 @@ void __thiscall FUN_005a0dc0(void *this,int param_1,int param_2)
   char *pcVar11;
   undefined4 *local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  FSGSTy *local_8;
   
-  if (((*(char *)((int)this + 0x1a5f) == '\x01') && (*(int *)((int)this + 0x1ac0) != 0)) &&
-     (-1 < *(int *)((int)this + 0x1abc))) {
+  if (((this[0x1a5f] == (FSGSTy)0x1) && (*(int *)(this + 0x1ac0) != 0)) &&
+     (-1 < *(int *)(this + 0x1abc))) {
     local_4c = DAT_00858df8;
     DAT_00858df8 = &local_4c;
     local_8 = this;
     iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-    pvVar3 = local_8;
+    pFVar3 = local_8;
     if (iVar4 == 0) {
-      iVar4 = *(int *)((int)local_8 + 0x1ac0);
+      iVar4 = *(int *)(local_8 + 0x1ac0);
       uVar10 = *(uint *)(iVar4 + 0x14);
       if (uVar10 == 0) {
         uVar10 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -42,7 +46,8 @@ void __thiscall FUN_005a0dc0(void *this,int param_1,int param_2)
         *(undefined1 *)puVar5 = 0xff;
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      FUN_00710a90(*(int *)((int)pvVar3 + 0x1ac0),0,0,0x16,0x1b8,0xf0);
+      ccFntTy::SetSurf(*(ccFntTy **)(pFVar3 + 0x1a73),*(int *)(pFVar3 + 0x1ac0),0,0,0x16,0x1b8,0xf0)
+      ;
       if (param_1 < param_2) {
         iVar4 = (param_1 * 100) / param_2;
         uVar6 = FUN_006b0140(0x2571,DAT_00807618);
@@ -73,8 +78,8 @@ void __thiscall FUN_005a0dc0(void *this,int param_1,int param_2)
           pcVar11 = pcVar11 + 1;
         }
       }
-      FUN_00711b70(&DAT_0080f33a,-1,-1,2,-1,-1);
-      FUN_006b35d0(DAT_008075a8,*(uint *)((int)pvVar3 + 0x1abc));
+      ccFntTy::WrTxt(*(ccFntTy **)(pFVar3 + 0x1a73),&DAT_0080f33a,-1,-1,2,-1,-1);
+      FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar3 + 0x1abc));
       DAT_00858df8 = local_4c;
       return;
     }

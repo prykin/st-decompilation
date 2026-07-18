@@ -1,4 +1,4 @@
-FUN_0044b280:
+STAllPlayersC::CalibrateTmp:
 0044B280  55                        PUSH EBP
 0044B281  8B EC                     MOV EBP,ESP
 0044B283  83 EC 58                  SUB ESP,0x58

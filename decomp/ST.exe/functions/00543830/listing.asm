@@ -1,4 +1,4 @@
-FUN_00543830:
+CursorClassTy::DoneCursor:
 00543830  55                        PUSH EBP
 00543831  8B EC                     MOV EBP,ESP
 00543833  83 EC 48                  SUB ESP,0x48

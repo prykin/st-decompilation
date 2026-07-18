@@ -1,4 +1,4 @@
-FUN_0053c500:
+ResearchPanelTy::Update:
 0053C500  55                        PUSH EBP
 0053C501  8B EC                     MOV EBP,ESP
 0053C503  83 EC 48                  SUB ESP,0x48

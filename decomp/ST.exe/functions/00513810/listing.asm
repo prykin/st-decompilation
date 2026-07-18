@@ -1,4 +1,4 @@
-FUN_00513810:
+HelpPanelTy::BackBut:
 00513810  55                        PUSH EBP
 00513811  8B EC                     MOV EBP,ESP
 00513813  83 EC 4C                  SUB ESP,0x4c

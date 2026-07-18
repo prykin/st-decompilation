@@ -1,5 +1,9 @@
 
-int FUN_0065f1d0(short *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_flt.cpp
+   AiFltClassTy::AppendZone */
+
+int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
 
 {
   int iVar1;
@@ -20,7 +24,7 @@ int FUN_0065f1d0(short *param_1)
   uint *local_28;
   uint local_24;
   int local_20;
-  int local_1c;
+  AiFltClassTy *local_1c;
   int local_18;
   int local_14;
   int local_10;
@@ -30,6 +34,7 @@ int FUN_0065f1d0(short *param_1)
   local_18 = 1;
   local_74 = DAT_00858df8;
   DAT_00858df8 = &local_74;
+  local_1c = this;
   iVar5 = __setjmp3(local_70,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     DAT_00858df8 = (undefined4 *)local_74;

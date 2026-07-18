@@ -1,4 +1,4 @@
-FUN_0059cee0:
+FSGSTy::PswCtrls:
 0059CEE0  55                        PUSH EBP
 0059CEE1  8B EC                     MOV EBP,ESP
 0059CEE3  81 EC D4 08 00 00         SUB ESP,0x8d4

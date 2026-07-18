@@ -1,4 +1,4 @@
-FUN_00591bf0:
+CampaignTy::NoneCampaign:
 00591BF0  55                        PUSH EBP
 00591BF1  8B EC                     MOV EBP,ESP
 00591BF3  81 EC 80 02 00 00         SUB ESP,0x280

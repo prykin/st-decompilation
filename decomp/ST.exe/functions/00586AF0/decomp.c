@@ -4,7 +4,7 @@
 void __fastcall FUN_00586af0(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
   byte bVar1;
   byte bVar2;
   char cVar3;
@@ -80,7 +80,7 @@ void __fastcall FUN_00586af0(int *param_1)
   *(short *)((int)param_1 + 0x4b) = sVar15;
   *(short *)((int)param_1 + 0x5f) = sVar15;
   iVar7 = thunk_FUN_0041c710((int)param_1);
-  this = (void *)((int)param_1 + 0x1d5);
+  this = (STT3DSprC *)((int)param_1 + 0x1d5);
   if (iVar7 == 0) {
     iVar7 = 0;
     uVar8 = thunk_FUN_004ad650((int)this);
@@ -519,7 +519,7 @@ LAB_005882a0:
     }
     else {
       *(undefined4 *)((int)param_1 + 0x231) = 2;
-      thunk_FUN_004ac410(0xe);
+      STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
       thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
       thunk_FUN_00589870(param_1,(int)*(short *)((int)param_1 + 0x41),
                          (int)*(short *)((int)param_1 + 0x43),0x45c);
@@ -889,7 +889,7 @@ LAB_00587648:
     }
     if (4000 < (uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)param_1 + 599))) {
       *(undefined4 *)((int)param_1 + 0x231) = 2;
-      thunk_FUN_004ac410(0xe);
+      STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
       thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
       *(undefined4 *)((int)param_1 + 0x26f) = 0xff;
       iVar7 = thunk_FUN_00589740(param_1);
@@ -935,23 +935,23 @@ LAB_00587761:
     }
     if ((*(char *)((int)param_1 + 0x275) != '\0') &&
        (piVar10 == (int *)(uint)*(byte *)((int)param_1 + 0x276))) {
-      thunk_FUN_004ac1a0(9,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow(this,9,*(undefined4 *)(DAT_00802a38 + 0xe4));
       thunk_FUN_004ad0e0(this,9);
     }
     iVar7 = thunk_FUN_004acd30(this,'\b');
     if (piVar10 == (int *)(iVar7 + -1)) {
-      thunk_FUN_004ac410(8);
+      STT3DSprC::StopShow(this,8);
     }
     iVar7 = thunk_FUN_004acd30(this,'\n');
     if (piVar10 == (int *)(iVar7 + -1)) {
-      thunk_FUN_004ac410(10);
+      STT3DSprC::StopShow(this,10);
     }
     if (*(char *)((int)param_1 + 0x275) != '\0') {
       iVar7 = thunk_FUN_004acd30(this,'\t');
       iVar9 = thunk_FUN_004ac910(this,'\t');
       piVar10 = local_44;
       if (iVar9 == iVar7 + -1) {
-        thunk_FUN_004ac410(9);
+        STT3DSprC::StopShow(this,9);
         *(undefined1 *)((int)param_1 + 0x275) = 0;
         piVar10 = local_44;
       }
@@ -1016,7 +1016,7 @@ LAB_00588350:
          (uVar8 = thunk_FUN_00497030(iVar7,iVar9,param_1[9],1,DAT_007e660c), -1 < (int)uVar8)) {
         thunk_FUN_00637ae0((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43)
                            ,(int)*(short *)((int)param_1 + 0x45));
-        thunk_FUN_004ac410(0xe);
+        STT3DSprC::StopShow((STT3DSprC *)((int)param_1 + 0x1d5),0xe);
         thunk_FUN_004ad5e0((int)param_1 + 0x1d5);
         *(undefined4 *)((int)param_1 + 0x231) = 2;
         *(undefined4 *)((int)param_1 + 0x26f) = 0xff;

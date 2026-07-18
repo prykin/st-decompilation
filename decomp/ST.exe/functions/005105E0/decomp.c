@@ -1,9 +1,13 @@
 
-void __thiscall FUN_005105e0(void *this,int param_1,char *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\frmpanel.cpp
+   FrmPanelTy::PaintBut */
+
+void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  FrmPanelTy *pFVar2;
   int iVar3;
   LPSTR pCVar4;
   int iVar5;
@@ -12,7 +16,7 @@ void __thiscall FUN_005105e0(void *this,int param_1,char *param_2)
   undefined4 uVar7;
   undefined4 local_58 [16];
   int local_18;
-  void *local_14;
+  FrmPanelTy *local_14;
   int local_10;
   ushort *local_c;
   uint local_8;
@@ -20,18 +24,18 @@ void __thiscall FUN_005105e0(void *this,int param_1,char *param_2)
   uVar7 = DAT_00858df8;
   local_c = (ushort *)0x0;
   piVar6 = *(int **)(param_1 + 0x18);
-  local_18 = *piVar6 - *(int *)((int)this + 0x3c);
-  if (*(int *)((int)this + 0x5c) == 0) {
+  local_18 = *piVar6 - *(int *)(this + 0x3c);
+  if (*(int *)(this + 0x5c) == 0) {
     local_10 = piVar6[1] - DAT_00806734;
   }
   else {
-    local_10 = piVar6[1] - *(int *)((int)this + 0x44);
+    local_10 = piVar6[1] - *(int *)(this + 0x44);
   }
   local_8 = 0;
   DAT_00858df8 = &stack0xffffffa4;
   local_14 = this;
   iVar3 = __setjmp3(local_58,0,unaff_ESI,uVar7);
-  pvVar2 = local_14;
+  pFVar2 = local_14;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined1 *)uVar7;
     iVar5 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x8f,0,iVar3,&DAT_007a4ccc);
@@ -48,7 +52,7 @@ void __thiscall FUN_005105e0(void *this,int param_1,char *param_2)
     local_8 = 0;
     break;
   case 1:
-    local_8 = (uint)(*(char *)(*(int *)(param_1 + 0x10) + -0xbf04 + (int)local_14) != '\0');
+    local_8 = (uint)(local_14[*(int *)(param_1 + 0x10) + -0xbf04] != (FrmPanelTy)0x0);
     break;
   case 2:
   case 3:
@@ -58,10 +62,10 @@ void __thiscall FUN_005105e0(void *this,int param_1,char *param_2)
   piVar6 = (int *)0x0;
   pCVar4 = FUN_006f2c00(param_2,1,local_8);
   local_c = FUN_006f1ce0(1,pCVar4,piVar6,iVar3);
-  thunk_FUN_00540760(*(undefined4 **)((int)pvVar2 + 0x68),local_18,local_10,'\x01',(byte *)local_c);
-  FUN_006f20e0((uint *)&local_c);
-  FUN_006b3640(DAT_008075a8,*(uint *)((int)pvVar2 + 0x60),0xffffffff,*(uint *)((int)pvVar2 + 0x3c),
-               *(uint *)((int)pvVar2 + 0x44));
+  thunk_FUN_00540760(*(undefined4 **)(pFVar2 + 0x68),local_18,local_10,'\x01',(byte *)local_c);
+  cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
+  FUN_006b3640(DAT_008075a8,*(uint *)(pFVar2 + 0x60),0xffffffff,*(uint *)(pFVar2 + 0x3c),
+               *(uint *)(pFVar2 + 0x44));
   DAT_00858df8 = (undefined1 *)uVar7;
   return;
 }

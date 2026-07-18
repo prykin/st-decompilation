@@ -1,4 +1,4 @@
-FUN_004eddf0:
+BehPanelTy::DoneBehPanel:
 004EDDF0  55                        PUSH EBP
 004EDDF1  8B EC                     MOV EBP,ESP
 004EDDF3  83 EC 48                  SUB ESP,0x48

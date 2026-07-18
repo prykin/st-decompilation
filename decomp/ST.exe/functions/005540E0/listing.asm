@@ -1,4 +1,4 @@
-FUN_005540e0:
+cLoadingTy::new:
 005540E0  55                        PUSH EBP
 005540E1  8B EC                     MOV EBP,ESP
 005540E3  81 EC 58 06 00 00         SUB ESP,0x658

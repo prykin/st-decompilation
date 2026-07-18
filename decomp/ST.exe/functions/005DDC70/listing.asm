@@ -1,4 +1,4 @@
-FUN_005ddc70:
+StartSystemTy::CreateBinDesc:
 005DDC70  55                        PUSH EBP
 005DDC71  8B EC                     MOV EBP,ESP
 005DDC73  81 EC C0 08 00 00         SUB ESP,0x8c0

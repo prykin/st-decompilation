@@ -1,5 +1,8 @@
 
-void thunk_FUN_005cd9a0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void __thiscall
+SettMapMTy::ChgPlList
+          (SettMapMTy *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,
+          undefined4 param_4)
 
 {
   char cVar1;

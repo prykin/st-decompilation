@@ -1,5 +1,10 @@
 
-undefined4 FUN_0042efd0(char param_1,uint param_2,int param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::RegisterGroup */
+
+undefined4 __thiscall
+STAllPlayersC::RegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int param_3)
 
 {
   code *pcVar1;

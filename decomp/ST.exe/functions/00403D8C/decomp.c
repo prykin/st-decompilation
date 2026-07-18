@@ -1,5 +1,5 @@
 
-int thunk_FUN_006041a0(int param_1)
+int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
 
 {
   code *pcVar1;
@@ -7,27 +7,30 @@ int thunk_FUN_006041a0(int param_1)
   undefined4 *puVar3;
   undefined4 unaff_ESI;
   int iVar4;
+  STExplosionC *pSVar5;
   void *unaff_EDI;
-  int *piVar5;
+  STExplosionC *pSVar6;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  int iStack_c;
+  STExplosionC *pSStack_c;
   int iStack_8;
   
   iVar4 = 0;
   iStack_8 = 0;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pSStack_c = this;
   iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  pSVar5 = pSStack_c;
   if (iVar2 == 0) {
     if (0 < param_1) {
-      piVar5 = (int *)(iStack_c + 0x219);
+      pSVar6 = pSStack_c + 0x219;
       do {
         puVar3 = thunk_FUN_00629010();
-        *piVar5 = (int)puVar3;
-        *(int *)((int)puVar3 + 0xce) = iStack_c;
-        iVar2 = *piVar5;
-        piVar5 = piVar5 + 1;
+        *(undefined4 **)pSVar6 = puVar3;
+        *(STExplosionC **)((int)puVar3 + 0xce) = pSVar5;
+        iVar2 = *(int *)pSVar6;
+        pSVar6 = pSVar6 + 4;
         *(int *)(iVar2 + 0xd2) = iVar4;
         iStack_8 = iStack_8 + 1;
         iVar4 = iVar4 + 1;
@@ -38,11 +41,11 @@ int thunk_FUN_006041a0(int param_1)
   }
   DAT_00858df8 = (undefined4 *)uStack_50;
   if (0 < iStack_8) {
-    puVar3 = (undefined4 *)(iStack_c + 0x219);
+    pSVar5 = pSStack_c + 0x219;
     iVar4 = iStack_8;
     do {
-      FUN_0072e2b0((undefined4 *)*puVar3);
-      puVar3 = puVar3 + 1;
+      FUN_0072e2b0(*(undefined4 **)pSVar5);
+      pSVar5 = pSVar5 + 4;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }

@@ -1,6 +1,6 @@
 
 void __thiscall
-thunk_FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,uint *param_5)
+MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char param_4,uint *param_5)
 
 {
   short sVar1;
@@ -23,7 +23,7 @@ thunk_FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,
   int iStack_14;
   char cStack_10;
   undefined3 uStack_f;
-  void *pvStack_c;
+  MReportTy *pMStack_c;
   undefined4 *puStack_8;
   
   if (*(short *)(param_1 + 0x14) == 3) {
@@ -35,16 +35,16 @@ thunk_FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,
   piStack_20 = *(int **)(param_1 + 0x18);
   _cStack_10 = CONCAT31(uStack_f,cVar8);
   if (param_4 == '\0') {
-    iStack_14 = *(int *)((int)this + 0x77);
+    iStack_14 = *(int *)(this + 0x77);
   }
   else {
-    iStack_14 = *(int *)((int)this + 0x7b);
+    iStack_14 = *(int *)(this + 0x7b);
   }
   pbStack_1c = *(byte **)(iStack_14 + 8);
   puStack_8 = *(undefined4 **)(iStack_14 + 4);
   uStack_64 = DAT_00858df8;
   DAT_00858df8 = &uStack_64;
-  pvStack_c = this;
+  pMStack_c = this;
   iVar5 = __setjmp3(auStack_60,0,unaff_EDI,unaff_ESI);
   iVar7 = iStack_14;
   if (iVar5 == 0) {
@@ -71,7 +71,7 @@ thunk_FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,
         param_5 = (uint *)FUN_006b0140(param_2,DAT_00807618);
       }
       puStack_18 = param_5;
-      FUN_00710a90(iVar7,0,0,0,0,0);
+      ccFntTy::SetSurf(*(ccFntTy **)(pMStack_c + 0x83),iVar7,0,0,0,0,0);
       sVar1 = *(short *)(param_1 + 0x14);
       if ((sVar1 == 1) || (sVar1 == 2)) {
         iVar5 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
@@ -82,14 +82,14 @@ thunk_FUN_005c0b00(void *this,int param_1,UINT param_2,int param_3,char param_4,
       else {
         iVar5 = 4;
       }
-      FUN_007119c0(puStack_18,-1,-1,iVar5);
+      ccFntTy::WrStr(*(ccFntTy **)(pMStack_c + 0x83),puStack_18,-1,-1,iVar5);
     }
     piVar3 = piStack_20;
     FUN_006b5f80(DAT_008075a8,*piStack_20,piStack_20[1],(int)puStack_8,(int)pbVar4);
     thunk_FUN_00540620(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)puStack_8,pbVar4,'\x01',
-                       *(BITMAPINFO **)((int)pvStack_c + 0x5d));
+                       *(BITMAPINFO **)(pMStack_c + 0x5d));
     FUN_006b48e0(DAT_0080759c,*piVar3,piVar3[1],iVar7,0,0,0,(uint)puStack_8,(int)pbVar4,
-                 (int)pvStack_c + 0xa3,0x4c,0x10000ff);
+                 (int)(pMStack_c + 0xa3),0x4c,0x10000ff);
     DAT_00858df8 = (undefined4 *)uStack_64;
     return;
   }

@@ -1,4 +1,4 @@
-FUN_00533880:
+OptPanelTy::Question:
 00533880  55                        PUSH EBP
 00533881  8B EC                     MOV EBP,ESP
 00533883  83 EC 48                  SUB ESP,0x48

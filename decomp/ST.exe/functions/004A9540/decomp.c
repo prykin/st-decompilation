@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_optic.cpp
+   OpticClassC::ReInitOptic */
 
-void FUN_004a9540(int param_1)
+void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
 
 {
   double dVar1;
@@ -13,7 +16,8 @@ void FUN_004a9540(int param_1)
   uint uVar5;
   float10 fVar6;
   undefined4 local_5c;
-  undefined4 local_58 [17];
+  undefined4 local_58 [16];
+  OpticClassC *local_18;
   int local_14;
   float local_10;
   float local_c;
@@ -21,6 +25,7 @@ void FUN_004a9540(int param_1)
   
   local_5c = DAT_00858df8;
   DAT_00858df8 = &local_5c;
+  local_18 = this;
   iVar3 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_5c;

@@ -1,4 +1,4 @@
-FUN_0043e780:
+STAllPlayersC::GetTOBJList:
 0043E780  55                        PUSH EBP
 0043E781  8B EC                     MOV EBP,ESP
 0043E783  83 EC 54                  SUB ESP,0x54

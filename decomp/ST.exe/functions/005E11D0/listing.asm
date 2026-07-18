@@ -1,4 +1,4 @@
-FUN_005e11d0:
+MTaskTy::PrepareTSurf:
 005E11D0  55                        PUSH EBP
 005E11D1  8B EC                     MOV EBP,ESP
 005E11D3  83 EC 44                  SUB ESP,0x44

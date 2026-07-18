@@ -1,4 +1,4 @@
-FUN_005e0ac0:
+MTaskTy::NoneMTask:
 005E0AC0  55                        PUSH EBP
 005E0AC1  8B EC                     MOV EBP,ESP
 005E0AC3  83 EC 4C                  SUB ESP,0x4c

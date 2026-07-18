@@ -1,5 +1,6 @@
 
-undefined4 thunk_FUN_00430960(short param_1,int param_2)
+undefined4 __thiscall
+STAllPlayersC::UnRegisterTorpedo(STAllPlayersC *this,short param_1,int param_2)
 
 {
   code *pcVar1;

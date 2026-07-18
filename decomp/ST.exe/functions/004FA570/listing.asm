@@ -1,4 +1,4 @@
-FUN_004fa570:
+CPanelTy::ShiftControls:
 004FA570  55                        PUSH EBP
 004FA571  8B EC                     MOV EBP,ESP
 004FA573  83 EC 4C                  SUB ESP,0x4c

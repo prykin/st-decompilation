@@ -1,4 +1,4 @@
-FUN_006f2860:
+cMf32::RecKeyGetNext:
 006F2860  55                        PUSH EBP
 006F2861  8B EC                     MOV EBP,ESP
 006F2863  83 EC 48                  SUB ESP,0x48

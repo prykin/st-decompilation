@@ -1,2 +1,2 @@
-thunk_FUN_0053e640:
+SpecPanelTy::DonePanel:
 004033F5  E9 46 B2 13 00            JMP 0x0053e640

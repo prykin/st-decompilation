@@ -1,4 +1,4 @@
-FUN_0049db40:
+STGroupBoatC::GrpGuard:
 0049DB40  55                        PUSH EBP
 0049DB41  8B EC                     MOV EBP,ESP
 0049DB43  83 EC 74                  SUB ESP,0x74

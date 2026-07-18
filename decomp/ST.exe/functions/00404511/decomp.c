@@ -1,42 +1,46 @@
 
-undefined4 * thunk_FUN_0068e050(uint *param_1)
+undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
-  int iVar2;
-  undefined4 *puVar3;
-  int iVar4;
+  AiTactClassTy *pAVar2;
+  int iVar3;
+  AiTactClassTy *pAVar4;
+  undefined4 *puVar5;
+  int iVar6;
   void *unaff_ESI;
-  undefined4 uVar5;
+  undefined4 uVar7;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  AiTactClassTy *pAStack_8;
   
-  uVar5 = DAT_00858df8;
+  uVar7 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
-  if (iVar2 == 0) {
-    if (iStack_8 == 0) {
-      puVar3 = (undefined4 *)0x0;
+  pAStack_8 = this;
+  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,uVar7);
+  pAVar2 = pAStack_8;
+  if (iVar3 == 0) {
+    if (pAStack_8 == (AiTactClassTy *)0x0) {
+      pAVar4 = (AiTactClassTy *)0x0;
     }
     else {
-      puVar3 = (undefined4 *)(iStack_8 + 0x20);
+      pAVar4 = pAStack_8 + 0x20;
     }
-    puVar3 = thunk_FUN_00691190(puVar3,param_1);
-    *puVar3 = 0x38e;
-    puVar3[3] = 1;
-    *(undefined4 *)((int)puVar3 + 0x5e) = *(undefined4 *)(iStack_8 + 0x1c);
-    *(undefined2 *)((int)puVar3 + 0x105) = 0;
-    DAT_00858df8 = (undefined1 *)uVar5;
-    return puVar3;
+    puVar5 = thunk_FUN_00691190((undefined4 *)pAVar4,param_1);
+    *puVar5 = 0x38e;
+    puVar5[3] = 1;
+    *(undefined4 *)((int)puVar5 + 0x5e) = *(undefined4 *)(pAVar2 + 0x1c);
+    *(undefined2 *)((int)puVar5 + 0x105) = 0;
+    DAT_00858df8 = (undefined1 *)uVar7;
+    return puVar5;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
-  iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x81,0,iVar2,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  DAT_00858df8 = (undefined1 *)uVar7;
+  iVar6 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x81,0,iVar3,&DAT_007a4ccc);
+  if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
-    puVar3 = (undefined4 *)(*pcVar1)();
-    return puVar3;
+    puVar5 = (undefined4 *)(*pcVar1)();
+    return puVar5;
   }
-  FUN_006a5e40(iVar2,0,0x7d56e0,0x82);
+  FUN_006a5e40(iVar3,0,0x7d56e0,0x82);
   return (undefined4 *)0x0;
 }
 

@@ -1,2 +1,2 @@
-thunk_FUN_005d0a20:
+SettMapMTy::ChangePlayerState:
 00405407  E9 14 B6 1C 00            JMP 0x005d0a20

@@ -1,5 +1,9 @@
 
-uint * FUN_0043e4e0(char param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetObjsList */
+
+uint * STAllPlayersC::GetObjsList(char param_1)
 
 {
   int *piVar1;

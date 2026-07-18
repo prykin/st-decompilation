@@ -1,4 +1,4 @@
-FUN_00423850:
+STGroupC::AddObj:
 00423850  55                        PUSH EBP
 00423851  8B EC                     MOV EBP,ESP
 00423853  83 EC 7C                  SUB ESP,0x7c

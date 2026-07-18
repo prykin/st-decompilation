@@ -1,4 +1,4 @@
-FUN_004adba0:
+STT3DSprC::RestoreSpr:
 004ADBA0  55                        PUSH EBP
 004ADBA1  8B EC                     MOV EBP,ESP
 004ADBA3  83 EC 64                  SUB ESP,0x64

@@ -1,4 +1,4 @@
-FUN_00430a90:
+STAllPlayersC::GetMessage:
 00430A90  55                        PUSH EBP
 00430A91  8B EC                     MOV EBP,ESP
 00430A93  83 EC 68                  SUB ESP,0x68

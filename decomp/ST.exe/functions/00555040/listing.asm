@@ -1,4 +1,4 @@
-FUN_00555040:
+cLoadingTy::SetState:
 00555040  55                        PUSH EBP
 00555041  8B EC                     MOV EBP,ESP
 00555043  81 EC 4C 04 00 00         SUB ESP,0x44c

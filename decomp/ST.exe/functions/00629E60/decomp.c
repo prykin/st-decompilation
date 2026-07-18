@@ -15,14 +15,14 @@ int __thiscall FUN_00629e60(void *this,int param_1)
     switch(*(undefined4 *)((int)this + 0xc2)) {
     case 1:
     case 2:
-      iVar2 = thunk_FUN_00629070(this,1);
+      iVar2 = STParticleC::InitVisibelFlight(this,1);
       break;
     case 3:
     case 4:
       if (*(int *)((int)this + 0xeb) != 0) {
         thunk_FUN_00629f20((int)this);
       }
-      iVar2 = thunk_FUN_006298a0(1);
+      iVar2 = STParticleC::InitVisibelDeton(this,1);
       break;
     default:
       goto switchD_00629e96_default;

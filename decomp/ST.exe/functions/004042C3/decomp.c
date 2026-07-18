@@ -2,15 +2,17 @@
 void __fastcall thunk_FUN_00624000(int param_1)
 
 {
+  STT3DSprC *this;
   char cVar1;
   ushort *puVar2;
   
-  thunk_FUN_004ac410(0xe);
+  this = (STT3DSprC *)(param_1 + 0x1d5);
+  STT3DSprC::StopShow(this,0xe);
   if (*(char *)(param_1 + 0x352) != '\0') {
-    thunk_FUN_004ac410(0xc);
+    STT3DSprC::StopShow(this,0xc);
     cVar1 = *(char *)(param_1 + 0x2ad);
     if (((cVar1 == '\0') || (cVar1 == '\x01')) || (cVar1 == '\x02')) {
-      thunk_FUN_004ac410(0xc);
+      STT3DSprC::StopShow(this,0xc);
     }
   }
   puVar2 = FUN_00709af0(DAT_00806774,0x1d,(&PTR_s_expdeep_007d0354)[*(byte *)(param_1 + 0x2ad)],

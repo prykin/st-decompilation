@@ -1,4 +1,4 @@
-FUN_004fe6c0:
+CPanelTy::PaintEnergy:
 004FE6C0  55                        PUSH EBP
 004FE6C1  8B EC                     MOV EBP,ESP
 004FE6C3  83 EC 50                  SUB ESP,0x50

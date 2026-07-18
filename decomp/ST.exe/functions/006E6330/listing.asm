@@ -1,4 +1,4 @@
-FUN_006e6330:
+SystemWithNamedObjClassTy::SendMessage:
 006E6330  55                        PUSH EBP
 006E6331  8B EC                     MOV EBP,ESP
 006E6333  83 EC 4C                  SUB ESP,0x4c

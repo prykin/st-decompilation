@@ -1,14 +1,19 @@
 
-void FUN_005e9b50(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\wait_obj.cpp
+   WaitTy::CreateCtrls */
+
+void __thiscall WaitTy::CreateCtrls(WaitTy *this)
 
 {
   int *piVar1;
   code *pcVar2;
-  int iVar3;
+  WaitTy *pWVar3;
   int iVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar5;
+  undefined4 *puVar6;
   undefined4 local_8d8 [6];
   undefined4 local_8c0;
   undefined4 local_8bc;
@@ -22,24 +27,26 @@ void FUN_005e9b50(void)
   undefined4 local_74;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  WaitTy *local_8;
   
-  puVar5 = local_8d8;
-  for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+  puVar6 = local_8d8;
+  local_8 = this;
+  for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar4 == 0) {
+  iVar5 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pWVar3 = local_8;
+  if (iVar5 == 0) {
     if (*(int *)(local_8 + 0x1a64) == 0) {
-      thunk_FUN_005ddc70();
-      thunk_FUN_005de270();
-      puVar5 = local_8d8;
-      for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
+      StartSystemTy::CreateBinDesc(DAT_0081176c);
+      StartSystemTy::CreateChatView(DAT_0081176c);
+      puVar6 = local_8d8;
+      for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
+        *puVar6 = 0;
+        puVar6 = puVar6 + 1;
       }
       local_8d8[0] = 1;
       local_8d8[1] = 9;
@@ -50,7 +57,7 @@ void FUN_005e9b50(void)
       local_8c0 = *(undefined4 *)(*(int *)(DAT_0081176c + 0x682) + 8);
       local_8bc = 0x104;
       local_8b8 = *(undefined4 *)(DAT_0081176c + 0x686);
-      piVar1 = *(int **)(local_8 + 0xc);
+      piVar1 = *(int **)(pWVar3 + 0xc);
       local_74 = 0x100;
       local_88c = piVar1[5];
       local_888 = 0;
@@ -65,13 +72,13 @@ void FUN_005e9b50(void)
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303,0,iVar4,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303,0,iVar5,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7cdd5c,0x303);
+  FUN_006a5e40(iVar5,0,0x7cdd5c,0x303);
   return;
 }
 

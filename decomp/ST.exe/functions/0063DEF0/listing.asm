@@ -1,4 +1,4 @@
-FUN_0063def0:
+STTmMineC::LoadImagNuclear:
 0063DEF0  55                        PUSH EBP
 0063DEF1  8B EC                     MOV EBP,ESP
 0063DEF3  83 EC 50                  SUB ESP,0x50

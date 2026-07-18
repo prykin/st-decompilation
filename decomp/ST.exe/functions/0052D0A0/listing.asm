@@ -1,4 +1,4 @@
-FUN_0052d0a0:
+PopUpTy::OutProc:
 0052D0A0  55                        PUSH EBP
 0052D0A1  8B EC                     MOV EBP,ESP
 0052D0A3  83 EC 50                  SUB ESP,0x50

@@ -1,4 +1,4 @@
-FUN_0044a440:
+STAllPlayersC::UnRegisterDeposit:
 0044A440  55                        PUSH EBP
 0044A441  8B EC                     MOV EBP,ESP
 0044A443  83 EC 4C                  SUB ESP,0x4c

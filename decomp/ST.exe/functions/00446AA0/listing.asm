@@ -1,4 +1,4 @@
-FUN_00446aa0:
+STAllPlayersC::OptimizeGuardBoats:
 00446AA0  55                        PUSH EBP
 00446AA1  8B EC                     MOV EBP,ESP
 00446AA3  81 EC 8C 00 00 00         SUB ESP,0x8c

@@ -1,9 +1,14 @@
 
-int __thiscall FUN_0067b3c0(void *this,int param_1,int param_2,int param_3,undefined1 param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_plr.cpp
+   AiPlrClassTy::SetTech */
+
+int __thiscall
+AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,undefined1 param_4)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  AiPlrClassTy *pAVar2;
   int iVar3;
   int iVar4;
   void *unaff_ESI;
@@ -18,7 +23,7 @@ int __thiscall FUN_0067b3c0(void *this,int param_1,int param_2,int param_3,undef
   int local_14;
   int local_10;
   undefined2 local_c;
-  void *local_8;
+  AiPlrClassTy *local_8;
   
   local_8 = this;
   iVar3 = thunk_FUN_0067b2e0(this,param_1,param_2);
@@ -28,7 +33,7 @@ int __thiscall FUN_0067b3c0(void *this,int param_1,int param_2,int param_3,undef
   }
   DAT_00858df8 = &stack0xffffffa0;
   iVar3 = __setjmp3(local_5c,0,unaff_ESI,uVar5);
-  pvVar2 = local_8;
+  pAVar2 = local_8;
   if (iVar3 == 0) {
     local_1c = param_4;
     uStack_1b = (undefined2)param_1;
@@ -42,8 +47,8 @@ int __thiscall FUN_0067b3c0(void *this,int param_1,int param_2,int param_3,undef
     }
     local_14 = iVar3;
     local_10 = iVar3;
-    FUN_006ae1c0(*(uint **)((int)local_8 + 0x6a1),(undefined4 *)&local_1c);
-    thunk_FUN_00676c40(*(int *)((int)pvVar2 + 0x6a1),&LAB_004029b9);
+    FUN_006ae1c0(*(uint **)(local_8 + 0x6a1),(undefined4 *)&local_1c);
+    thunk_FUN_00676c40(*(int *)(pAVar2 + 0x6a1),&LAB_004029b9);
     DAT_00858df8 = (undefined1 *)uVar5;
     return 0;
   }

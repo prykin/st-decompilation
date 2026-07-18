@@ -1,4 +1,4 @@
-FUN_0061f660:
+SndUnderAttMenegC::GetMessage:
 0061F660  55                        PUSH EBP
 0061F661  8B EC                     MOV EBP,ESP
 0061F663  83 EC 4C                  SUB ESP,0x4c

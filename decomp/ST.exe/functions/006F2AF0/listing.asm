@@ -1,4 +1,4 @@
-FUN_006f2af0:
+cMf32::KeyRecGet:
 006F2AF0  55                        PUSH EBP
 006F2AF1  8B EC                     MOV EBP,ESP
 006F2AF3  83 EC 48                  SUB ESP,0x48

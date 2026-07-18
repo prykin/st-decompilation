@@ -1,4 +1,4 @@
-FUN_004f42a0:
+CPanelTy::PaintTab:
 004F42A0  55                        PUSH EBP
 004F42A1  8B EC                     MOV EBP,ESP
 004F42A3  83 EC 54                  SUB ESP,0x54

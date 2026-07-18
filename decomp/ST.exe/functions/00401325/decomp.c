@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_00495ec0(short param_1,short param_2,short param_3,uint param_4,int param_5)
+undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint param_4,int param_5)
 
 {
   int *piVar1;

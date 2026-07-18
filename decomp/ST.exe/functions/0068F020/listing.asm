@@ -1,4 +1,4 @@
-FUN_0068f020:
+AiTactClassTy::GiveObjByClaim:
 0068F020  55                        PUSH EBP
 0068F021  8B EC                     MOV EBP,ESP
 0068F023  83 EC 4C                  SUB ESP,0x4c

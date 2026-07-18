@@ -1,4 +1,4 @@
-FUN_00543990:
+CursorClassTy::ReInitCursorSpr:
 00543990  55                        PUSH EBP
 00543991  8B EC                     MOV EBP,ESP
 00543993  83 EC 48                  SUB ESP,0x48

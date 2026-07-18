@@ -1,10 +1,16 @@
 
-undefined4 FUN_006f1910(undefined1 param_1,char *param_2,char *param_3,int param_4)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::RecRen */
+
+undefined4 __thiscall
+cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int param_4)
 
 {
   char cVar1;
   ushort uVar2;
   code *pcVar3;
+  cMf32 *this_00;
   int iVar4;
   DWORD DVar5;
   undefined4 *puVar6;
@@ -19,7 +25,7 @@ undefined4 FUN_006f1910(undefined1 param_1,char *param_2,char *param_3,int param
   ushort *puVar13;
   undefined4 local_58;
   undefined4 local_54 [16];
-  undefined4 *local_14;
+  cMf32 *local_14;
   undefined4 *local_10;
   ushort *local_c;
   ushort *local_8;
@@ -29,6 +35,7 @@ undefined4 FUN_006f1910(undefined1 param_1,char *param_2,char *param_3,int param
   local_c = (ushort *)0x0;
   local_58 = DAT_00858df8;
   DAT_00858df8 = &local_58;
+  local_14 = this;
   iVar4 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)local_58;
@@ -61,6 +68,7 @@ undefined4 FUN_006f1910(undefined1 param_1,char *param_2,char *param_3,int param
     pcVar12 = pcVar12 + 1;
   } while (cVar1 != '\0');
   local_8 = (ushort *)FUN_006aac10(~uVar9 + 0x17);
+  this_00 = local_14;
   *(undefined1 *)local_8 = param_1;
   iVar4 = -1;
   pcVar12 = param_2;
@@ -83,11 +91,11 @@ undefined4 FUN_006f1910(undefined1 param_1,char *param_2,char *param_3,int param
     param_2 = param_2 + 1;
     puVar13 = (ushort *)((int)puVar13 + 1);
   }
-  DVar5 = FUN_00751980((int *)*local_14,local_8,(undefined4 *)0x0,0);
+  DVar5 = FUN_00751980(*(int **)local_14,local_8,(undefined4 *)0x0,0);
   if (DVar5 == 0xfffffffc) {
     FUN_006a5e40(-4,DAT_007ed77c,0x7efaa4,0x163);
   }
-  puVar6 = (undefined4 *)FUN_006f1cb0(local_14,DVar5);
+  puVar6 = (undefined4 *)FUN_006f1cb0(this_00,DVar5);
   local_10 = FUN_006aac10(*(uint *)((int)local_8 + 1));
   uVar9 = *(uint *)((int)local_8 + 1);
   puVar11 = local_10;
@@ -138,11 +146,11 @@ undefined4 FUN_006f1910(undefined1 param_1,char *param_2,char *param_3,int param
   *(undefined4 *)(local_c + 5) = *(undefined4 *)(local_8 + 5);
   *(undefined4 *)(local_c + 7) = *(undefined4 *)(local_8 + 7);
   *(undefined4 *)(local_c + 9) = *(undefined4 *)(local_8 + 9);
-  FUN_00751100((uint *)*local_14,local_8);
+  FUN_00751100(*(uint **)this_00,local_8);
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }
-  FUN_00751050((uint *)*local_14,local_c,local_10,*(uint *)((int)local_c + 1));
+  FUN_00751050(*(uint **)this_00,local_c,local_10,*(uint *)((int)local_c + 1));
   if (local_c != (ushort *)0x0) {
     FUN_006ab060(&local_c);
   }

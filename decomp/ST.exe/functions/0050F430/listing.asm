@@ -1,4 +1,4 @@
-FUN_0050f430:
+CPanelTy::SetCmdObj:
 0050F430  55                        PUSH EBP
 0050F431  8B EC                     MOV EBP,ESP
 0050F433  81 EC 98 01 00 00         SUB ESP,0x198

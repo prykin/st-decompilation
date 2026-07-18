@@ -1,5 +1,6 @@
 
-void thunk_FUN_0043ae40(uint param_1,int param_2,int param_3)
+void __thiscall
+STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int param_3)
 
 {
   int *piVar1;

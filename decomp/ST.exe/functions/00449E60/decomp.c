@@ -1,5 +1,10 @@
 
-undefined4 FUN_00449e60(uint param_1,uint param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::UnRegisterArtefact */
+
+undefined4 __thiscall
+STAllPlayersC::UnRegisterArtefact(STAllPlayersC *this,uint param_1,uint param_2)
 
 {
   code *pcVar1;
@@ -12,12 +17,14 @@ undefined4 FUN_00449e60(uint param_1,uint param_2)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 local_50;
-  undefined4 local_4c [17];
+  undefined4 local_4c [16];
+  STAllPlayersC *local_c;
   undefined4 local_8;
   
   local_8 = 0;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_c = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     uVar3 = thunk_FUN_0042b620(0xffffffff,param_1,2);

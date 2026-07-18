@@ -1,4 +1,4 @@
-FUN_00515c00:
+HelpPanelTy::DrawDescription:
 00515C00  55                        PUSH EBP
 00515C01  8B EC                     MOV EBP,ESP
 00515C03  83 EC 48                  SUB ESP,0x48

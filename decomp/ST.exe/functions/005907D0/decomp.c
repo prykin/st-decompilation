@@ -1,5 +1,9 @@
 
-void FUN_005907d0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\adv_obj.cpp
+   MAdvTy::NoneMAdv */
+
+void __thiscall MAdvTy::NoneMAdv(MAdvTy *this)
 
 {
   code *pcVar1;

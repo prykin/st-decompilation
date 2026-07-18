@@ -1,4 +1,4 @@
-FUN_00578630:
+STCrabC::GetMessage:
 00578630  55                        PUSH EBP
 00578631  8B EC                     MOV EBP,ESP
 00578633  83 EC 7C                  SUB ESP,0x7c

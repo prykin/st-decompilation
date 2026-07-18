@@ -1,6 +1,11 @@
 
-uint * FUN_00415590(void *param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6
-                   ,int param_7,int param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\Grpway3d.cpp
+   STGroupBoatC::Way3DGrpGetDistrPoint */
+
+uint * STGroupBoatC::Way3DGrpGetDistrPoint
+                 (void *param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,
+                 int param_7,int param_8)
 
 {
   code *pcVar1;

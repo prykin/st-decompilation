@@ -2,6 +2,7 @@
 undefined4 __thiscall thunk_FUN_0068f8f0(void *this,short param_1)
 
 {
+  AiFltClassTy *this_00;
   short sVar1;
   int iVar2;
   uint uVar3;
@@ -31,7 +32,8 @@ undefined4 __thiscall thunk_FUN_0068f8f0(void *this,short param_1)
         else {
           iVar2 = 0;
         }
-        if ((*(int *)(iVar2 + 4) != 0) && (*(short *)(*(int *)(iVar2 + 4) + 0x7b) == -0x8000)) {
+        this_00 = *(AiFltClassTy **)(iVar2 + 4);
+        if ((this_00 != (AiFltClassTy *)0x0) && (*(short *)(this_00 + 0x7b) == -0x8000)) {
           puVar4 = auStack_38;
           for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
             *puVar4 = 0;
@@ -39,7 +41,7 @@ undefined4 __thiscall thunk_FUN_0068f8f0(void *this,short param_1)
           }
           auStack_38[1] = *(undefined4 *)((int)this + 300);
           auStack_38[0] = 0x75;
-          thunk_FUN_00662240(auStack_38);
+          AiFltClassTy::GetAiMess(this_00,auStack_38);
           if ('\0' < cStack_30) {
             return 1;
           }

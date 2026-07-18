@@ -1,42 +1,47 @@
 
-void FUN_00592470(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\camp_obj.cpp
+   CampaignTy::CloseButtons */
+
+void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
 
 {
   code *pcVar1;
   int iVar2;
   DWORD DVar3;
   undefined4 unaff_ESI;
-  int *piVar4;
-  void *this;
+  MMObjTy *pMVar4;
+  MMObjTy *this_00;
   void *unaff_EDI;
   int iVar5;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  MMObjTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = (MMObjTy *)this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  this = local_8;
+  this_00 = local_8;
   if (iVar2 == 0) {
-    thunk_FUN_005b6480();
+    MMObjTy::CloseButtons(local_8);
     iVar2 = 0;
-    if (*(char *)((int)this + 0x9a) != '\0') {
+    if (this_00[0x9a] != (MMObjTy)0x0) {
       iVar5 = 0x96;
-      piVar4 = (int *)((int)this + 0x123);
+      pMVar4 = this_00 + 0x123;
       do {
         DVar3 = timeGetTime();
-        piVar4[1] = DVar3;
-        *piVar4 = iVar5;
-        *(undefined1 *)(piVar4 + -0x1a) = 1;
+        *(DWORD *)(pMVar4 + 4) = DVar3;
+        *(int *)pMVar4 = iVar5;
+        pMVar4[-0x68] = (MMObjTy)0x1;
         iVar2 = iVar2 + 1;
         iVar5 = iVar5 + 0x96;
-        piVar4 = (int *)((int)piVar4 + 0x1fb);
-        this = local_8;
-      } while (iVar2 < (int)(uint)*(byte *)((int)local_8 + 0x9a));
+        pMVar4 = pMVar4 + 0x1fb;
+        this_00 = local_8;
+      } while (iVar2 < (int)(uint)(byte)local_8[0x9a]);
     }
-    *(undefined1 *)((int)this + 0x65) = 4;
-    thunk_FUN_005b6730(this,2,'\x01',-1);
+    this_00[0x65] = (MMObjTy)0x4;
+    thunk_FUN_005b6730(this_00,2,'\x01',-1);
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }

@@ -1,4 +1,4 @@
-FUN_0042e210:
+STAllPlayersC::RegisterObject:
 0042E210  55                        PUSH EBP
 0042E211  8B EC                     MOV EBP,ESP
 0042E213  81 EC 90 00 00 00         SUB ESP,0x90

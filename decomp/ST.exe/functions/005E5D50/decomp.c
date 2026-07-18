@@ -1,5 +1,9 @@
 
-void FUN_005e5d50(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\test_obj.cpp
+   MTestTy::PaintMTest */
+
+void __thiscall MTestTy::PaintMTest(MTestTy *this)
 
 {
   code *pcVar1;
@@ -8,10 +12,11 @@ void FUN_005e5d50(void)
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  int local_8;
+  MTestTy *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);

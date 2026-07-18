@@ -1,71 +1,71 @@
 
-void __fastcall thunk_FUN_00513810(void *param_1)
+void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
 
 {
-  char cVar1;
+  HelpPanelTy HVar1;
   code *pcVar2;
-  void *this;
+  HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar5;
+  HelpPanelTy *pHVar5;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  void *pvStack_c;
+  HelpPanelTy *pHStack_c;
   undefined4 uStack_8;
   
-  if (*(char *)((int)param_1 + 0x1a1) != *(char *)((int)param_1 + 0x1a2)) {
+  if (this[0x1a1] != this[0x1a2]) {
     uStack_50 = DAT_00858df8;
     DAT_00858df8 = &uStack_50;
-    pvStack_c = param_1;
+    pHStack_c = this;
     iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
-    this = pvStack_c;
+    this_00 = pHStack_c;
     if (iVar3 == 0) {
-      if (*(int *)((int)pvStack_c + 0x178) != 0) {
-        *(undefined4 *)((int)pvStack_c + 0x28) = 0x4202;
-        *(undefined2 *)((int)pvStack_c + 0x2c) = 0;
-        *(undefined2 *)((int)pvStack_c + 0x2e) = 2;
-        *(int *)((int)pvStack_c + 0x30) = *(int *)((int)pvStack_c + 0x178);
+      if (*(int *)(pHStack_c + 0x178) != 0) {
+        *(undefined4 *)(pHStack_c + 0x28) = 0x4202;
+        *(undefined2 *)(pHStack_c + 0x2c) = 0;
+        *(undefined2 *)(pHStack_c + 0x2e) = 2;
+        *(int *)(pHStack_c + 0x30) = *(int *)(pHStack_c + 0x178);
         if (DAT_00802a30 != (undefined4 *)0x0) {
-          (**(code **)*DAT_00802a30)((int)pvStack_c + 0x18);
+          (**(code **)*DAT_00802a30)(pHStack_c + 0x18);
         }
       }
-      cVar1 = *(char *)((int)this + 0x1a2);
-      if (cVar1 != '\0') {
-        if (cVar1 == '\x06') {
-          thunk_FUN_00516480(*(uint *)((int)this + 0x1ab),'\0');
-          thunk_FUN_005134b0((int)this);
+      HVar1 = this_00[0x1a2];
+      if (HVar1 != (HelpPanelTy)0x0) {
+        if (HVar1 == (HelpPanelTy)0x6) {
+          TTreeProc(this_00,*(uint *)(this_00 + 0x1ab),'\0');
+          PutToSHlp(this_00,(int)unaff_EDI);
           DAT_00858df8 = (undefined4 *)uStack_50;
           return;
         }
-        if (cVar1 != '\n') {
+        if (HVar1 != (HelpPanelTy)0xa) {
           DAT_00858df8 = (undefined4 *)uStack_50;
           return;
         }
       }
-      *(char *)((int)this + 0x1a1) = cVar1;
-      *(undefined4 *)((int)this + 0x1a3) = uStack_8;
-      FUN_006b55f0(*(undefined4 **)((int)this + 0x68),0,0x21,0x16,*(int *)((int)this + 0x1dc),0,0x21
-                   ,0x16,0x1b8,0x118);
-      thunk_FUN_005123a0();
-      if (*(char *)((int)this + 0x1a2) == '\0') {
-        uStack_8 = *(undefined4 *)((int)this + 0x1b7);
+      this_00[0x1a1] = HVar1;
+      *(undefined4 *)(this_00 + 0x1a3) = uStack_8;
+      FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,
+                   0x16,0x1b8,0x118);
+      CreateList(this_00);
+      if (this_00[0x1a2] == (HelpPanelTy)0x0) {
+        uStack_8 = *(undefined4 *)(this_00 + 0x1b7);
       }
       else {
-        uStack_8 = *(undefined4 *)((int)this + 0x1bf);
+        uStack_8 = *(undefined4 *)(this_00 + 0x1bf);
       }
-      if (*(int *)((int)this + 0x19c) != 0) {
-        puVar5 = (undefined4 *)((int)this + 0x18);
+      if (*(int *)(this_00 + 0x19c) != 0) {
+        pHVar5 = this_00 + 0x18;
         for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *puVar5 = 0;
-          puVar5 = puVar5 + 1;
+          *(undefined4 *)pHVar5 = 0;
+          pHVar5 = pHVar5 + 4;
         }
-        *(undefined4 *)((int)this + 0x28) = 0x22;
-        *(short *)((int)this + 0x2c) = (short)uStack_8;
-        *(undefined2 *)((int)this + 0x30) = 1;
-        *(undefined2 *)((int)this + 0x32) = 1;
-        FUN_006e6080(this,2,*(undefined4 *)((int)this + 0x19c),(undefined4 *)((int)this + 0x18));
+        *(undefined4 *)(this_00 + 0x28) = 0x22;
+        *(short *)(this_00 + 0x2c) = (short)uStack_8;
+        *(undefined2 *)(this_00 + 0x30) = 1;
+        *(undefined2 *)(this_00 + 0x32) = 1;
+        FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x19c),(undefined4 *)(this_00 + 0x18));
       }
       DAT_00858df8 = (undefined4 *)uStack_50;
       return;

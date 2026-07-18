@@ -1,2 +1,2 @@
-thunk_FUN_005a2a60:
+FSGSTy::ChangePlayer:
 00404A75  E9 E6 DF 19 00            JMP 0x005a2a60

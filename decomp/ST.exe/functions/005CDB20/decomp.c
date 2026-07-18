@@ -1,5 +1,9 @@
 
-void FUN_005cdb20(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\settmobj.cpp
+   SettMapMTy::AddPlList */
+
+void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -16,12 +20,13 @@ void FUN_005cdb20(int param_1)
   char local_154 [260];
   undefined4 local_50;
   undefined4 local_4c [16];
-  int local_c;
+  SettMapMTy *local_c;
   int local_8;
   
   local_8 = 1;
   local_50 = DAT_00858df8;
   DAT_00858df8 = &local_50;
+  local_c = this;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_50;
@@ -35,7 +40,7 @@ void FUN_005cdb20(int param_1)
     return;
   }
   if (param_1 == 0) {
-    if (*(char *)(local_c + 0x2244) != '\0') {
+    if (local_c[0x2244] != (SettMapMTy)0x0) {
       iVar2 = *(int *)(local_c + 0x1f84);
       cVar6 = '\0';
       uVar4 = 0;
@@ -106,7 +111,7 @@ LAB_005cdd57:
         FUN_006b6500((int)DAT_00811764,1);
         FUN_00715360(DAT_00811764,1,'(',(char *)local_164,0x114,1,0xffffffff);
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
-        *(undefined1 *)(local_c + 0x2244) = 0;
+        local_c[0x2244] = (SettMapMTy)0x0;
       }
     }
   }

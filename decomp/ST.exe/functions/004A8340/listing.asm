@@ -1,4 +1,4 @@
-FUN_004a8340:
+STGroupBoatC::GetDepotForAttack:
 004A8340  55                        PUSH EBP
 004A8341  8B EC                     MOV EBP,ESP
 004A8343  83 EC 64                  SUB ESP,0x64

@@ -1,4 +1,4 @@
-FUN_00521b90:
+IntercomPanelTy::DoneIntercomPanel:
 00521B90  55                        PUSH EBP
 00521B91  8B EC                     MOV EBP,ESP
 00521B93  83 EC 48                  SUB ESP,0x48

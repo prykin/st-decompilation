@@ -1,4 +1,4 @@
-FUN_00423660:
+STGroupC::GetTOBJList:
 00423660  55                        PUSH EBP
 00423661  8B EC                     MOV EBP,ESP
 00423663  83 EC 54                  SUB ESP,0x54

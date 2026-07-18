@@ -1,2 +1,2 @@
-thunk_FUN_005d81f0:
+SIDTy::NoneSID:
 00403D64  E9 87 44 1D 00            JMP 0x005d81f0

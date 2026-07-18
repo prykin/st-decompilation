@@ -1,11 +1,15 @@
 
-undefined4 FUN_00430a90(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetMessage */
+
+undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
 
 {
   undefined1 uVar1;
   uint *puVar2;
   code *pcVar3;
-  void *this;
+  STAllPlayersC *this_00;
   int iVar4;
   undefined1 *puVar5;
   uint *puVar6;
@@ -28,15 +32,16 @@ undefined4 FUN_00430a90(int param_1)
   uint local_1c;
   int local_18;
   char *local_14;
-  void *local_10;
+  STAllPlayersC *local_10;
   ushort *local_c;
   int local_8;
   
   local_c = (ushort *)0x0;
   local_6c = DAT_00858df8;
   DAT_00858df8 = &local_6c;
+  local_10 = this;
   iVar4 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
-  this = local_10;
+  this_00 = local_10;
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)local_6c;
     iVar7 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa05,0,iVar4,&DAT_007a4ccc);
@@ -228,19 +233,19 @@ undefined4 FUN_00430a90(int param_1)
       local_14 = &DAT_008087e9;
       piVar14 = &DAT_007f582a;
       do {
-        if (0x18 < (uint)(*(int *)((int)DAT_00802a38 + 0xe4) - *piVar14)) {
-          thunk_FUN_00446aa0((char)uVar11);
-          thunk_FUN_00446f80(uVar11);
+        if (0x18 < (uint)(*(int *)(DAT_00802a38 + 0xe4) - *piVar14)) {
+          OptimizeGuardBoats(this_00,(char)uVar11);
+          DistributeGuardBoats(this_00,uVar11);
         }
         if ((*local_14 != -1) &&
-           (thunk_FUN_004eb150(this,uVar11), *(uint *)((int)DAT_00802a38 + 0xe4) % 10 == 0)) {
+           (thunk_FUN_004eb150(this_00,uVar11), *(uint *)(DAT_00802a38 + 0xe4) % 10 == 0)) {
           thunk_FUN_004d78e0((char)uVar11);
         }
         piVar14 = (int *)((int)piVar14 + 0xa62);
         uVar11 = uVar11 + 1;
         local_14 = local_14 + 0x51;
       } while ((int)piVar14 < 0x7fab3a);
-      thunk_FUN_004da9c0(this);
+      thunk_FUN_004da9c0(this_00);
       thunk_FUN_004d8360();
       DAT_00858df8 = (undefined4 *)local_6c;
       return 0;
@@ -261,7 +266,7 @@ undefined4 FUN_00430a90(int param_1)
       DAT_007fa164 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa130 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa134 = 0;
-      if (DAT_00806754 != 0) {
+      if (DAT_00806754 != (cMf32 *)0x0) {
         local_c = FUN_006f2d90(DAT_00806754,s_allplsave_007a67d8,0,0);
       }
       if (local_c == (ushort *)0x0) {
@@ -315,22 +320,22 @@ undefined4 FUN_00430a90(int param_1)
         puVar13 = (undefined4 *)((int)puVar13 + 0xa62);
         cVar15 = cVar15 + '\x01';
       } while ((int)puVar13 < 0x7fa135);
-      thunk_FUN_00444e70(this,(undefined4 *)local_c);
-      FUN_006f20e0((uint *)&local_c);
+      thunk_FUN_00444e70(this_00,(undefined4 *)local_c);
+      cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
       DAT_00858df8 = (undefined4 *)local_6c;
       return 0;
     }
   }
   else if (uVar11 == 0x10f) {
-    local_c = (ushort *)thunk_FUN_00443f30((int *)&local_1c);
-    thunk_FUN_0054d550(DAT_00802a38,s_allplsave_007a67d8,(byte *)local_c,local_1c,0xc);
+    local_c = (ushort *)SaveAllPlData(this_00,(int *)&local_1c);
+    STPlaySystemC::SaveObjData(DAT_00802a38,s_allplsave_007a67d8,(byte *)local_c,local_1c,0xc);
     FUN_006ab060(&local_c);
   }
   else if (uVar11 == 0x111) {
-    if (DAT_00806754 == 0) {
+    if (DAT_00806754 == (cMf32 *)0x0) {
       iVar4 = 0;
       do {
-        thunk_FUN_00441ce0((char)iVar4);
+        _MakeMDPairs(this_00,(char)iVar4);
         iVar4 = iVar4 + 1;
       } while (iVar4 < 8);
     }
@@ -339,15 +344,15 @@ undefined4 FUN_00430a90(int param_1)
       if (local_c == (ushort *)0x0) {
         iVar4 = 0;
         do {
-          thunk_FUN_00441ce0((char)iVar4);
+          _MakeMDPairs(this_00,(char)iVar4);
           iVar4 = iVar4 + 1;
         } while (iVar4 < 8);
       }
       else {
-        FUN_006f20e0((uint *)&local_c);
+        cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
       }
     }
-    thunk_FUN_004d8b70(*(char *)(*(int *)((int)this + 0x10) + 0x112d));
+    thunk_FUN_004d8b70(*(char *)(*(int *)(this_00 + 0x10) + 0x112d));
     iVar4 = 0;
     do {
       thunk_FUN_004b7750(iVar4);

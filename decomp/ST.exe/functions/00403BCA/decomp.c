@@ -1,6 +1,7 @@
 
-uint * thunk_FUN_00415590(void *param_1,int param_2,int param_3,int param_4,undefined4 param_5,
-                         int param_6,int param_7,int param_8)
+uint * STGroupBoatC::Way3DGrpGetDistrPoint
+                 (void *param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,
+                 int param_7,int param_8)
 
 {
   code *pcVar1;

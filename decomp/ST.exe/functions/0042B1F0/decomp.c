@@ -1,6 +1,12 @@
 
-void FUN_0042b1f0(char param_1,short param_2,short param_3,short param_4,short param_5,short param_6
-                 ,short param_7,int *param_8,int *param_9,int *param_10,int *param_11)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetGObjFromBox */
+
+void __thiscall
+STAllPlayersC::GetGObjFromBox
+          (STAllPlayersC *this,char param_1,short param_2,short param_3,short param_4,short param_5,
+          short param_6,short param_7,int *param_8,int *param_9,int *param_10,int *param_11)
 
 {
   int *piVar1;

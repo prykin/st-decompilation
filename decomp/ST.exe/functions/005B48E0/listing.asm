@@ -1,4 +1,4 @@
-FUN_005b48e0:
+MainMenuTy::AnimationMainMenu:
 005B48E0  55                        PUSH EBP
 005B48E1  8B EC                     MOV EBP,ESP
 005B48E3  83 EC 50                  SUB ESP,0x50

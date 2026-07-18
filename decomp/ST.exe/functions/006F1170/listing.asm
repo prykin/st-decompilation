@@ -1,4 +1,4 @@
-FUN_006f1170:
+cMf32::delete:
 006F1170  55                        PUSH EBP
 006F1171  8B EC                     MOV EBP,ESP
 006F1173  83 EC 44                  SUB ESP,0x44

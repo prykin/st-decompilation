@@ -1,5 +1,11 @@
 
-void FUN_004354e0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::ReplaceObject */
+
+void __thiscall
+STAllPlayersC::ReplaceObject
+          (STAllPlayersC *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   uint *puVar1;

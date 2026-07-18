@@ -2,7 +2,7 @@
 void __fastcall thunk_FUN_005f6f60(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
   short sVar1;
   undefined1 uVar2;
   bool bVar3;
@@ -40,7 +40,7 @@ void __fastcall thunk_FUN_005f6f60(int *param_1)
           uVar6 = thunk_FUN_005f6ad0();
           *(char *)((int)param_1 + 0x2b6) = (char)uVar6;
           if ((char)uVar6 != '\0') {
-            thunk_FUN_005f6af0(1);
+            STColl3C::LoadImagSpr((STColl3C *)param_1,1);
           }
           *(undefined1 *)((int)param_1 + 699) = 1;
           *(undefined1 *)((int)param_1 + 0x29d) = 1;
@@ -288,7 +288,7 @@ LAB_005f79aa:
       iVar5 = thunk_FUN_005f88d0(param_1,*(int *)((int)param_1 + 0x289),1,(int *)&puStack_24,
                                  &uStack_2c,&uStack_28);
       if (iVar5 != 0) {
-        iVar5 = thunk_FUN_005f94c0();
+        iVar5 = STColl3C::CreateAddSpr((STColl3C *)param_1);
         if (iVar5 < 1) {
           return;
         }
@@ -590,20 +590,20 @@ LAB_005f76d2:
     }
     break;
   case 0xd:
-    this = (void *)((int)param_1 + 0x1d5);
+    this = (STT3DSprC *)((int)param_1 + 0x1d5);
     iVar5 = thunk_FUN_004ac910(this,'\b');
     if (iVar5 == 1) {
       if (*(char *)((int)param_1 + 699) != '\0') {
         thunk_FUN_0041c5a0(param_1);
         thunk_FUN_0041d590((int)param_1);
       }
-      thunk_FUN_004ac410(0xf);
+      STT3DSprC::StopShow(this,0xf);
     }
     if (iVar5 == *(int *)(&DAT_007ce73d + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
       thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
                          *(short *)((int)param_1 + 0x5f),0,(int)param_1);
-      thunk_FUN_004ac410(0xe);
-      thunk_FUN_004ac410(0xc);
+      STT3DSprC::StopShow(this,0xe);
+      STT3DSprC::StopShow(this,0xc);
       uVar11 = 0xffffffff;
       uVar6 = thunk_FUN_004ad650((int)this);
       thunk_FUN_0062b770((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43),
@@ -614,10 +614,10 @@ LAB_005f76d2:
       thunk_FUN_004ad5e0((int)this);
     }
     if (iVar5 == *(int *)(&DAT_007ce745 + *(int *)((int)param_1 + 0x2cd) * 0x39)) {
-      thunk_FUN_004ac1a0(9,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow(this,9,*(undefined4 *)(DAT_00802a38 + 0xe4));
     }
     if (iVar5 == *(int *)(&DAT_007ce739 + *(int *)((int)param_1 + 0x2cd) * 0x39) + -1) {
-      thunk_FUN_004ac410(8);
+      STT3DSprC::StopShow(this,8);
     }
     iVar5 = thunk_FUN_004ac910(this,'\t');
     if (iVar5 == *(int *)(&DAT_007ce749 + *(int *)((int)param_1 + 0x2cd) * 0x39)) {

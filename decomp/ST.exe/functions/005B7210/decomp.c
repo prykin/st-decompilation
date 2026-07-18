@@ -1,47 +1,55 @@
 
-void FUN_005b7210(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\mmsg_obj.cpp
+   MMsgTy::ShowSprites */
+
+void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  MMsgTy *pMVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  uint *puVar4;
+  MMsgTy *pMVar5;
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  int local_8;
+  MMsgTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  pMVar2 = local_8;
+  if (iVar3 == 0) {
     if (*(uint *)(local_8 + 0x1cfb) != 0xffffffff) {
       FUN_006b34d0(*(uint **)(local_8 + 0x1d3f),*(uint *)(local_8 + 0x1cfb),0xfffffffe,
                    *(uint *)(local_8 + 0x1d13),*(uint *)(local_8 + 0x1d17));
     }
-    iVar2 = 0;
-    if (*(char *)(local_8 + 0x9a) != '\0') {
-      puVar4 = (uint *)(local_8 + 0xe7);
+    iVar3 = 0;
+    if (pMVar2[0x9a] != (MMsgTy)0x0) {
+      pMVar5 = pMVar2 + 0xe7;
       do {
-        if (*puVar4 != 0xffffffff) {
-          FUN_006b34d0((uint *)puVar4[0x11],*puVar4,0xfffffffe,puVar4[6],puVar4[7]);
+        if (*(uint *)pMVar5 != 0xffffffff) {
+          FUN_006b34d0(*(uint **)(pMVar5 + 0x44),*(uint *)pMVar5,0xfffffffe,*(uint *)(pMVar5 + 0x18)
+                       ,*(uint *)(pMVar5 + 0x1c));
         }
-        iVar2 = iVar2 + 1;
-        puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar2 < (int)(uint)*(byte *)(local_8 + 0x9a));
+        iVar3 = iVar3 + 1;
+        pMVar5 = pMVar5 + 0x1fb;
+      } while (iVar3 < (int)(uint)(byte)pMVar2[0x9a]);
     }
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x4b,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x4b,0,iVar3,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7ccb74,0x4b);
+  FUN_006a5e40(iVar3,0,0x7ccb74,0x4b);
   return;
 }
 

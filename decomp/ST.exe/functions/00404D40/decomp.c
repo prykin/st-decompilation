@@ -1,5 +1,8 @@
 
-void thunk_FUN_004314e0(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
+void __thiscall
+STAllPlayersC::FramePick
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,int param_4,int param_5,
+          int param_6)
 
 {
   code *pcVar1;
@@ -114,10 +117,10 @@ void thunk_FUN_004314e0(uint param_1,int param_2,int param_3,int param_4,int par
     return;
   }
   cVar7 = (char)param_1;
-  thunk_FUN_0042abe0(cVar7,param_2,param_3,param_4,param_5,(int *)&puStack_10,(int *)&puStack_18,
-                     (int *)&puStack_3c,(int *)&puStack_14,(int *)&puStack_1c,(int *)&puStack_40,
-                     (int *)&puStack_34,(int *)&puStack_2c,(int *)&puStack_20,(int *)&puStack_28,
-                     (int *)&puStack_30,(int *)&puStack_38);
+  GetGObjFromZone2(this,cVar7,param_2,param_3,param_4,param_5,(int *)&puStack_10,(int *)&puStack_18,
+                   (int *)&puStack_3c,(int *)&puStack_14,(int *)&puStack_1c,(int *)&puStack_40,
+                   (int *)&puStack_34,(int *)&puStack_2c,(int *)&puStack_20,(int *)&puStack_28,
+                   (int *)&puStack_30,(int *)&puStack_38);
   if (puStack_10[3] != 0) {
     iVar2 = cVar7 * 0xa62;
     if (*(int *)((int)&DAT_007f5023 + iVar2) == 0) {
@@ -133,11 +136,11 @@ LAB_004318b5:
       else if (iVar5 == 0x3c) {
         if (param_6 == 1) {
           if (*(int *)((int)&DAT_007f4f87 + iVar2) == (int)cVar7) {
-            thunk_FUN_0044b280(cVar7,0,0,puStack_10,(int *)0x0,(int *)&pbStack_44,(int *)&pbStack_48
-                              );
+            CalibrateTmp(this,cVar7,0,0,puStack_10,(int *)0x0,(int *)&pbStack_44,(int *)&pbStack_48)
+            ;
             thunk_FUN_0042d190(param_1,0x3c,(int)pbStack_44,0,0);
-            thunk_FUN_0042c4b0(param_1,0,0,(int)pbStack_44);
-            thunk_FUN_0042c1c0(param_1,0,0,(int)pbStack_48);
+            DelObjsFromTmp(this,param_1,0,0,(int)pbStack_44);
+            AddObjsToTmp(this,param_1,0,0,(int)pbStack_48);
             FUN_006ae110(pbStack_44);
             FUN_006ae110(pbStack_48);
           }
@@ -146,9 +149,9 @@ LAB_004318b5:
           iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,cVar7,puStack_10,0);
           if (iVar5 < 1) {
             if (iVar5 < 0) {
-              thunk_FUN_0044af50(cVar7,0);
+              PushTV(cVar7,0);
               if (*(int *)((int)&DAT_007f4f97 + iVar2) == (int)cVar7) {
-                thunk_FUN_0044b280(cVar7,0,1,puStack_10,(int *)&pbStack_24,(int *)0x0,(int *)0x0);
+                CalibrateTmp(this,cVar7,0,1,puStack_10,(int *)&pbStack_24,(int *)0x0,(int *)0x0);
                 thunk_FUN_0042d190(param_1,0x3c,(int)pbStack_24,0,0);
                 FUN_006ae110(pbStack_24);
               }
@@ -167,7 +170,7 @@ LAB_004318b5:
         if (param_6 != 1) {
           iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,cVar7,puStack_10,0);
           if (iVar5 < 1) {
-            thunk_FUN_0044af50(cVar7,0);
+            PushTV(cVar7,0);
             thunk_FUN_0042d4f0(cVar7,0,1,0);
             goto LAB_004318a9;
           }
@@ -192,9 +195,9 @@ LAB_004318b5:
         if (iVar5 == 0x3c) {
           iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,cVar7,puStack_10,0);
           if (iVar5 < 0) {
-            thunk_FUN_0044af50(cVar7,0);
+            PushTV(cVar7,0);
 LAB_004318a9:
-            thunk_FUN_0042c1c0(param_1,0,0,(int)puStack_10);
+            AddObjsToTmp(this,param_1,0,0,(int)puStack_10);
             goto LAB_004318b5;
           }
           thunk_FUN_0044b030(cVar7,0,iVar5);
@@ -202,7 +205,7 @@ LAB_004318a9:
         else if (iVar5 == 0x1ae) {
           iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,cVar7,puStack_10,0);
           if (iVar5 < 1) {
-            thunk_FUN_0044af50(cVar7,0);
+            PushTV(cVar7,0);
             goto LAB_004318a9;
           }
           thunk_FUN_0044b030(cVar7,0,iVar5);
@@ -246,9 +249,8 @@ LAB_004318a9:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 1) {
 LAB_00431a49:
-          thunk_FUN_0042bea0(cVar7,0,0,*(int *)(uVar3 + 0x20),
-                             CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24)),
-                             uStack_8);
+          AddObjToTmp2(this,cVar7,0,0,*(int *)(uVar3 + 0x20),
+                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24)),uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,0,iVar2);
@@ -259,7 +261,7 @@ LAB_00431a49:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 1) {
 LAB_00431c38:
-          thunk_FUN_0044af50(cVar7,0);
+          PushTV(cVar7,0);
           iVar2 = thunk_FUN_0042d4f0(cVar7,0,1,0);
           goto LAB_00431a49;
         }
@@ -299,7 +301,7 @@ LAB_00431c38:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 1) {
 LAB_00431a3f:
-          iVar2 = thunk_FUN_0044af50(cVar7,0);
+          iVar2 = PushTV(cVar7,0);
           goto LAB_00431a49;
         }
         thunk_FUN_0044b030(cVar7,0,iVar2);
@@ -370,13 +372,13 @@ LAB_00431e9e:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 0) {
 LAB_00431ec7:
-          thunk_FUN_0044af50(cVar7,1);
+          PushTV(cVar7,1);
           uVar6 = extraout_ECX_00;
 LAB_00431ed1:
           uVar4 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar3 + 0x24));
           iVar2 = *(int *)(uVar3 + 0x20);
 LAB_00431edd:
-          thunk_FUN_0042bea0(cVar7,1,0,iVar2,uVar4,uStack_8);
+          AddObjToTmp2(this,cVar7,1,0,iVar2,uVar4,uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,1,iVar2);
@@ -400,7 +402,7 @@ LAB_00431e77:
                                      (uint *)0x0,uStack_8);
           if (iVar2 < 1) {
 LAB_00431da2:
-            thunk_FUN_0044af50(cVar7,1);
+            PushTV(cVar7,1);
             thunk_FUN_0042d4f0(cVar7,1,1,0);
             uVar6 = extraout_EDX_00;
 LAB_00431dba:
@@ -493,12 +495,12 @@ LAB_004321ca:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 0) {
 LAB_004321f3:
-          iVar2 = thunk_FUN_0044af50(cVar7,1);
+          iVar2 = PushTV(cVar7,1);
 LAB_004321fd:
           uVar4 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24));
           iVar2 = *(int *)(uVar3 + 0x20);
 LAB_00432209:
-          thunk_FUN_0042bea0(cVar7,1,0,iVar2,uVar4,uStack_8);
+          AddObjToTmp2(this,cVar7,1,0,iVar2,uVar4,uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,1,iVar2);
@@ -522,7 +524,7 @@ LAB_004321a3:
                                      (uint *)0x0,uStack_8);
           if (iVar2 < 1) {
 LAB_004320ce:
-            thunk_FUN_0044af50(cVar7,1);
+            PushTV(cVar7,1);
             thunk_FUN_0042d4f0(cVar7,1,1,0);
             uVar6 = extraout_ECX_02;
 LAB_004320e6:
@@ -594,9 +596,9 @@ LAB_0043206e:
             thunk_FUN_0044b030(cVar7,1,iVar5);
             goto LAB_00432582;
           }
-          thunk_FUN_0044af50(cVar7,1);
+          PushTV(cVar7,1);
 LAB_0043256b:
-          thunk_FUN_0042bb30(cVar7,1,0,param_1,uStack_8);
+          AddObjToTmp(this,cVar7,1,0,param_1,uStack_8);
         }
         else {
           if (iVar5 != 0) {
@@ -614,7 +616,7 @@ LAB_00432578:
 LAB_00432536:
         iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,cVar7,puStack_14,0);
         if (iVar5 < 1) {
-          thunk_FUN_0044af50(cVar7,1);
+          PushTV(cVar7,1);
           goto LAB_0043256b;
         }
         thunk_FUN_0044b030(cVar7,1,iVar5);
@@ -636,9 +638,9 @@ LAB_0043250f:
           iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,cVar7,puStack_14,0);
           if (iVar5 < 1) {
             if (iVar5 < 0) {
-              thunk_FUN_0044af50(cVar7,1);
+              PushTV(cVar7,1);
               if (*(int *)((int)&DAT_007f4fe7 + iVar2) == (int)cVar7) {
-                thunk_FUN_0044b280(cVar7,1,1,puStack_14,(int *)&pbStack_24,(int *)0x0,(int *)0x0);
+                CalibrateTmp(this,cVar7,1,1,puStack_14,(int *)&pbStack_24,(int *)0x0,(int *)0x0);
                 thunk_FUN_0042d190(param_1,0x19a,(int)pbStack_24,0,0);
                 FUN_006ae110(pbStack_24);
               }
@@ -676,7 +678,7 @@ LAB_004323dc:
 LAB_0043240a:
         iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,cVar7,puStack_14,0);
         if (iVar5 < 1) {
-          thunk_FUN_0044af50(cVar7,1);
+          PushTV(cVar7,1);
           thunk_FUN_0042d4f0(cVar7,1,1,0);
           goto LAB_0043256b;
         }
@@ -735,13 +737,13 @@ LAB_00432862:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 0) {
 LAB_0043288b:
-          thunk_FUN_0044af50(cVar7,1);
+          PushTV(cVar7,1);
           uVar6 = extraout_ECX_04;
 LAB_00432895:
           uVar4 = CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(uVar3 + 0x24));
           iVar2 = *(int *)(uVar3 + 0x20);
 LAB_004328a1:
-          thunk_FUN_0042bea0(cVar7,1,0,iVar2,uVar4,uStack_8);
+          AddObjToTmp2(this,cVar7,1,0,iVar2,uVar4,uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,1,iVar2);
@@ -765,7 +767,7 @@ LAB_0043283b:
                                      (uint *)0x0,uStack_8);
           if (iVar2 < 1) {
 LAB_00432766:
-            thunk_FUN_0044af50(cVar7,1);
+            PushTV(cVar7,1);
             thunk_FUN_0042d4f0(cVar7,1,1,0);
             uVar6 = extraout_EDX_02;
 LAB_0043277e:
@@ -858,12 +860,12 @@ LAB_00432b8e:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 0) {
 LAB_00432bb7:
-          iVar2 = thunk_FUN_0044af50(cVar7,1);
+          iVar2 = PushTV(cVar7,1);
 LAB_00432bc1:
           uVar4 = CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24));
           iVar2 = *(int *)(uVar3 + 0x20);
 LAB_00432bcd:
-          thunk_FUN_0042bea0(cVar7,1,0,iVar2,uVar4,uStack_8);
+          AddObjToTmp2(this,cVar7,1,0,iVar2,uVar4,uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,1,iVar2);
@@ -887,7 +889,7 @@ LAB_00432b67:
                                      (uint *)0x0,uStack_8);
           if (iVar2 < 1) {
 LAB_00432a92:
-            thunk_FUN_0044af50(cVar7,1);
+            PushTV(cVar7,1);
             thunk_FUN_0042d4f0(cVar7,1,1,0);
             uVar6 = extraout_ECX_06;
 LAB_00432aaa:
@@ -958,7 +960,7 @@ LAB_00432e7f:
         iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)uStack_c,puStack_18,0);
         if (iVar5 < 1) {
 LAB_00432eae:
-          thunk_FUN_0042bb30(cVar7,0,0,uStack_c,uStack_8);
+          AddObjToTmp(this,cVar7,0,0,uStack_c,uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,0,iVar5);
@@ -969,7 +971,7 @@ LAB_00432eae:
         iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)uStack_c,puStack_18,0);
         if (iVar5 < 1) {
           if (iVar5 < 0) {
-            thunk_FUN_0044af50(cVar7,0);
+            PushTV(cVar7,0);
             thunk_FUN_0042d4f0(cVar7,0,1,0);
             goto LAB_00432eae;
           }
@@ -981,7 +983,7 @@ LAB_00432eae:
       else if (iVar5 == 0x1ae) {
         iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)uStack_c,puStack_18,0);
         if (iVar5 < 1) {
-          thunk_FUN_0044af50(cVar7,0);
+          PushTV(cVar7,0);
           thunk_FUN_0042d4f0(cVar7,0,1,0);
           goto LAB_00432eae;
         }
@@ -1004,7 +1006,7 @@ LAB_00432eae:
       if (iVar5 == 0x3c) {
         iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)uStack_c,puStack_18,0);
         if (iVar5 < 0) {
-          thunk_FUN_0044af50(cVar7,0);
+          PushTV(cVar7,0);
           goto LAB_00432eae;
         }
         thunk_FUN_0044b030(cVar7,0,iVar5);
@@ -1012,7 +1014,7 @@ LAB_00432eae:
       else if (iVar5 == 0x1ae) {
         iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)uStack_c,puStack_18,0);
         if (iVar5 < 1) {
-          thunk_FUN_0044af50(cVar7,0);
+          PushTV(cVar7,0);
           goto LAB_00432eae;
         }
         thunk_FUN_0044b030(cVar7,0,iVar5);
@@ -1055,9 +1057,8 @@ LAB_00432eae:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 1) {
 LAB_00433050:
-          thunk_FUN_0042bea0(cVar7,0,0,*(int *)(uVar3 + 0x20),
-                             CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24)),
-                             uStack_8);
+          AddObjToTmp2(this,cVar7,0,0,*(int *)(uVar3 + 0x20),
+                       CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24)),uStack_8);
         }
         else {
           thunk_FUN_0044b030(cVar7,0,iVar2);
@@ -1068,7 +1069,7 @@ LAB_00433050:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 1) {
 LAB_0043322b:
-          thunk_FUN_0044af50(cVar7,0);
+          PushTV(cVar7,0);
           iVar2 = thunk_FUN_0042d4f0(cVar7,0,1,0);
           goto LAB_00433050;
         }
@@ -1108,7 +1109,7 @@ LAB_0043322b:
                                    (uint *)0x0,uStack_8);
         if (iVar2 < 1) {
 LAB_00433046:
-          iVar2 = thunk_FUN_0044af50(cVar7,0);
+          iVar2 = PushTV(cVar7,0);
           goto LAB_00433050;
         }
         thunk_FUN_0044b030(cVar7,0,iVar2);
@@ -1172,7 +1173,7 @@ LAB_00433046:
           goto LAB_004334f5;
         }
         if (-1 < iVar5) goto LAB_004334f5;
-        thunk_FUN_0044af50(cVar7,1);
+        PushTV(cVar7,1);
         thunk_FUN_0042d4f0(cVar7,1,1,0);
         goto LAB_004334df;
       }
@@ -1186,7 +1187,7 @@ LAB_00433363:
         thunk_FUN_0044b030(cVar7,1,iVar5);
         goto LAB_004334f5;
       }
-      thunk_FUN_0044af50(cVar7,1);
+      PushTV(cVar7,1);
       thunk_FUN_0042d4f0(cVar7,1,1,0);
       goto LAB_004334df;
     }
@@ -1208,7 +1209,7 @@ LAB_00433363:
         thunk_FUN_0044b030(cVar7,1,iVar5);
         goto LAB_004334f5;
       }
-      thunk_FUN_0044af50(cVar7,1);
+      PushTV(cVar7,1);
       goto LAB_004334df;
     }
     if (iVar5 != 0) {
@@ -1237,9 +1238,9 @@ LAB_004334a3:
       thunk_FUN_0044b030(cVar7,1,iVar5);
       goto LAB_004334f5;
     }
-    thunk_FUN_0044af50(cVar7,1);
+    PushTV(cVar7,1);
 LAB_004334df:
-    thunk_FUN_0042bb30(cVar7,1,0,uStack_c,uStack_8);
+    AddObjToTmp(this,cVar7,1,0,uStack_c,uStack_8);
   }
   *(undefined4 *)((int)&DAT_007f4fd3 + iVar2) = 0x19a;
 LAB_004334f5:

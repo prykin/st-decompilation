@@ -1,4 +1,4 @@
-FUN_0042f2b0:
+STAllPlayersC::UnRegisterObject:
 0042F2B0  55                        PUSH EBP
 0042F2B1  8B EC                     MOV EBP,ESP
 0042F2B3  83 EC 64                  SUB ESP,0x64

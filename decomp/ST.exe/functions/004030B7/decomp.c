@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_00449fd0(ushort param_1,void *param_2)
+undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
   code *pcVar1;

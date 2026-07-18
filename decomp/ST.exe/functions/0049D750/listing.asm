@@ -1,4 +1,4 @@
-FUN_0049d750:
+STGroupBoatC::GrpRepare:
 0049D750  55                        PUSH EBP
 0049D751  8B EC                     MOV EBP,ESP
 0049D753  83 EC 54                  SUB ESP,0x54

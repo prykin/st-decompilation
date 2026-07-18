@@ -1,4 +1,4 @@
-FUN_005395b0:
+PausePanelTy::SwitchPausePanel:
 005395B0  55                        PUSH EBP
 005395B1  8B EC                     MOV EBP,ESP
 005395B3  83 EC 48                  SUB ESP,0x48

@@ -1,5 +1,5 @@
 
-void thunk_FUN_005cdb20(int param_1)
+void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -16,12 +16,13 @@ void thunk_FUN_005cdb20(int param_1)
   char acStack_154 [260];
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  int iStack_c;
+  SettMapMTy *pSStack_c;
   int iStack_8;
   
   iStack_8 = 1;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pSStack_c = this;
   iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_50;
@@ -35,8 +36,8 @@ void thunk_FUN_005cdb20(int param_1)
     return;
   }
   if (param_1 == 0) {
-    if (*(char *)(iStack_c + 0x2244) != '\0') {
-      iVar2 = *(int *)(iStack_c + 0x1f84);
+    if (pSStack_c[0x2244] != (SettMapMTy)0x0) {
+      iVar2 = *(int *)(pSStack_c + 0x1f84);
       cVar6 = '\0';
       uVar4 = 0;
       uVar5 = *(uint *)(iVar2 + 0xc);
@@ -106,13 +107,13 @@ LAB_005cdd57:
         FUN_006b6500((int)DAT_00811764,1);
         FUN_00715360(DAT_00811764,1,'(',(char *)auStack_164,0x114,1,0xffffffff);
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
-        *(undefined1 *)(iStack_c + 0x2244) = 0;
+        pSStack_c[0x2244] = (SettMapMTy)0x0;
       }
     }
   }
   else {
     uVar4 = 0;
-    iVar2 = *(int *)(iStack_c + 0x1f84);
+    iVar2 = *(int *)(pSStack_c + 0x1f84);
     uVar5 = *(uint *)(iVar2 + 0xc);
     if (uVar5 != 0) {
       if (uVar5 == 0) {

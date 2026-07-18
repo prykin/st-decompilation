@@ -1,4 +1,4 @@
-FUN_004a9540:
+OpticClassC::ReInitOptic:
 004A9540  55                        PUSH EBP
 004A9541  8B EC                     MOV EBP,ESP
 004A9543  83 EC 58                  SUB ESP,0x58

@@ -1,4 +1,4 @@
-FUN_004354e0:
+STAllPlayersC::ReplaceObject:
 004354E0  55                        PUSH EBP
 004354E1  8B EC                     MOV EBP,ESP
 004354E3  83 EC 60                  SUB ESP,0x60

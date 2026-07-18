@@ -1,4 +1,4 @@
-FUN_005b9860:
+MMMObjTy::OutLstProc:
 005B9860  55                        PUSH EBP
 005B9861  8B EC                     MOV EBP,ESP
 005B9863  83 EC 48                  SUB ESP,0x48

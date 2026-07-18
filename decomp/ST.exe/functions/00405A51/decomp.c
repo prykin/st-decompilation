@@ -1,5 +1,5 @@
 
-void thunk_FUN_005e11d0(int param_1,char param_2,char param_3)
+void __thiscall MTaskTy::PrepareTSurf(MTaskTy *this,int param_1,char param_2,char param_3)
 
 {
   code *pcVar1;

@@ -1,5 +1,9 @@
 
-void FUN_005380e0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\optpanel.cpp
+   OptPanelTy::UpdateObjectives */
+
+void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
 
 {
   code *pcVar1;
@@ -7,13 +11,15 @@ void FUN_005380e0(void)
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
-  undefined4 local_48 [17];
+  undefined4 local_48 [16];
+  OptPanelTy *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
-    thunk_FUN_00532a80();
+    PrepMissObj(local_8);
     if (DAT_00801690 != (void *)0x0) {
       thunk_FUN_00515180(DAT_00801690,'\a');
     }

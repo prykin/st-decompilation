@@ -1,4 +1,4 @@
-FUN_006a0960:
+CGenerate::_saveObj:
 006A0960  55                        PUSH EBP
 006A0961  8B EC                     MOV EBP,ESP
 006A0963  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_00618c00:
+STJumpMineC::GetMessage:
 00618C00  55                        PUSH EBP
 00618C01  8B EC                     MOV EBP,ESP
 00618C03  83 EC 54                  SUB ESP,0x54

@@ -1,4 +1,4 @@
-FUN_0051a100:
+HelpPanelTy::ObjProc:
 0051A100  55                        PUSH EBP
 0051A101  8B EC                     MOV EBP,ESP
 0051A103  81 EC 9C 00 00 00         SUB ESP,0x9c

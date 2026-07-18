@@ -1,4 +1,4 @@
-FUN_005a2ff0:
+FSGSTy::SetChannelList:
 005A2FF0  55                        PUSH EBP
 005A2FF1  8B EC                     MOV EBP,ESP
 005A2FF3  83 EC 4C                  SUB ESP,0x4c

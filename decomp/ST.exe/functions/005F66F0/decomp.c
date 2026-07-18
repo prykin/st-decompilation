@@ -3,7 +3,7 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
 
 {
   uint uVar1;
-  void *pvVar2;
+  STAllPlayersC *pSVar2;
   undefined4 *puVar3;
   undefined4 *puVar4;
   undefined4 *puVar5;
@@ -14,13 +14,14 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
   uint *puVar10;
   uint *local_1c;
   undefined4 *local_18;
-  void *local_14;
+  STAllPlayersC *local_14;
   uint local_10;
   uint local_c;
   uint local_8;
   
   local_14 = this;
   puVar3 = (undefined4 *)FUN_006aac70(0xc2);
+  pSVar2 = local_14;
   if (this == (void *)0x0) {
     puVar9 = (undefined4 *)0x0;
   }
@@ -35,8 +36,8 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
   }
   *(undefined2 *)puVar4 = *(undefined2 *)puVar9;
   puVar3[3] = 2;
-  local_18 = thunk_FUN_004ad790(&local_c);
-  local_1c = thunk_FUN_004210e0((int *)&local_10);
+  local_18 = STT3DSprC::SaveSpr((STT3DSprC *)(local_14 + 0x1d5),&local_c);
+  local_1c = STAllPlayersC::SaveGObjData(pSVar2,(int *)&local_10);
   local_8 = local_10 + 0xca + local_c;
   puVar4 = (undefined4 *)FUN_006acf50(puVar3,local_8);
   *(uint *)((int)puVar4 + 0xc2) = local_c;
@@ -66,8 +67,8 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
     puVar8 = (uint *)((int)puVar8 + 1);
   }
   FUN_006ab060(&local_1c);
-  pvVar2 = local_14;
-  iVar6 = *(int *)((int)local_14 + 0x2e6);
+  pSVar2 = local_14;
+  iVar6 = *(int *)(local_14 + 0x2e6);
   if (iVar6 != 0) {
     if (*(int *)(iVar6 + 0x58) == 0) {
       uVar7 = 0;
@@ -79,7 +80,7 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
     local_8 = uVar1;
     puVar5 = (undefined4 *)FUN_006acf50(puVar4,uVar1);
     puVar3 = (undefined4 *)((uVar1 - uVar7) + -0x6c + (int)puVar5);
-    puVar9 = *(undefined4 **)((int)pvVar2 + 0x2e6);
+    puVar9 = *(undefined4 **)(pSVar2 + 0x2e6);
     puVar4 = puVar3;
     for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar4 = *puVar9;
@@ -87,7 +88,7 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
       puVar4 = puVar4 + 1;
     }
     if (uVar7 != 0) {
-      puVar9 = *(undefined4 **)(*(int *)((int)local_14 + 0x2e6) + 0x58);
+      puVar9 = *(undefined4 **)(*(int *)(local_14 + 0x2e6) + 0x58);
       puVar3 = puVar3 + 0x1b;
       for (uVar7 = uVar7 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
         *puVar3 = *puVar9;

@@ -1,4 +1,4 @@
-FUN_005544e0:
+cLoadingTy::delete:
 005544E0  55                        PUSH EBP
 005544E1  8B EC                     MOV EBP,ESP
 005544E3  83 EC 44                  SUB ESP,0x44

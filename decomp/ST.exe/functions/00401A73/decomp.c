@@ -1,35 +1,37 @@
 
-undefined4 __thiscall thunk_FUN_0053f650(void *this,char param_1)
+undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
 
 {
   code *pcVar1;
+  ProdPanelTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
   void *unaff_ESI;
   undefined4 auStack_48 [16];
-  int *piStack_8;
+  ProdPanelTy *pPStack_8;
   
   uVar4 = DAT_00858df8;
-  if (*(char *)((int)this + 0x194) == param_1) {
+  if (this[0x194] == (ProdPanelTy)param_1) {
     return 0;
   }
   DAT_00858df8 = &stack0xffffffb4;
-  piStack_8 = this;
+  pPStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar4);
+  this_00 = pPStack_8;
   if (iVar2 == 0) {
-    *(char *)(piStack_8 + 0x65) = param_1;
+    pPStack_8[0x194] = (ProdPanelTy)param_1;
     if (param_1 == '\0') {
-      if ((DAT_00801688 != (void *)0x0) && (*(short *)((int)DAT_00801688 + 0x23f) == 1)) {
-        thunk_FUN_004fa570(DAT_00801688,*(int *)((int)piStack_8 + 0x195),1);
+      if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)(DAT_00801688 + 0x23f) == 1)) {
+        CPanelTy::ShiftControls(DAT_00801688,*(int *)(pPStack_8 + 0x195),1);
       }
       iVar2 = 0;
     }
     else {
-      (**(code **)(*piStack_8 + 0x1c))();
+      (**(code **)(*(int *)pPStack_8 + 0x1c))();
       iVar2 = 1;
     }
-    thunk_FUN_0053f3a0(iVar2);
+    SwitchPanel(this_00,iVar2);
     DAT_00858df8 = (undefined1 *)uVar4;
     return 1;
   }

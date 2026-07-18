@@ -1,5 +1,5 @@
 
-void thunk_FUN_005b6560(int param_1,int param_2,uint param_3)
+void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint param_3)
 
 {
   code *pcVar1;
@@ -9,10 +9,11 @@ void thunk_FUN_005b6560(int param_1,int param_2,uint param_3)
   uint uVar4;
   undefined4 uVar5;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  MMMObjTy *pMStack_8;
   
   uVar5 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  pMStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined1 *)uVar5;
@@ -55,7 +56,7 @@ switchD_005b65a4_default:
     }
     uVar4 = 9;
   }
-  thunk_FUN_005b6730(pvStack_8,uVar4,'\x01',-1);
+  thunk_FUN_005b6730(pMStack_8,uVar4,'\x01',-1);
   DAT_00858df8 = (undefined1 *)uVar5;
   return;
 }

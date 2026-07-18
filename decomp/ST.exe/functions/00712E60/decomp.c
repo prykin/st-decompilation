@@ -1,8 +1,13 @@
 
-int FUN_00712e60(int param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::VisLineSarr */
+
+int __thiscall ccFntTy::VisLineSarr(ccFntTy *this,int param_1,int param_2)
 
 {
   code *pcVar1;
+  ccFntTy *this_00;
   int iVar2;
   uint *puVar3;
   int iVar4;
@@ -10,7 +15,7 @@ int FUN_00712e60(int param_1,int param_2)
   void *unaff_EDI;
   undefined4 local_58;
   undefined4 local_54 [16];
-  void *local_14;
+  ccFntTy *local_14;
   int local_10;
   int local_c;
   int local_8;
@@ -24,7 +29,9 @@ int FUN_00712e60(int param_1,int param_2)
   if (param_2 < local_10) {
     local_58 = DAT_00858df8;
     DAT_00858df8 = &local_58;
+    local_14 = this;
     iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+    this_00 = local_14;
     if (iVar2 != 0) {
       DAT_00858df8 = (undefined4 *)local_58;
       iVar4 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x8b3,0,iVar2,&DAT_007a4ccc);
@@ -48,12 +55,12 @@ int FUN_00712e60(int param_1,int param_2)
         else {
           puVar3 = (uint *)0x0;
         }
-        local_8 = FUN_007111c0(local_14,puVar3);
+        local_8 = FUN_007111c0(this_00,puVar3);
         local_8 = iVar2 + local_8;
         if (0 < param_2) {
-          local_8 = local_8 + *(int *)((int)local_14 + 0x5c);
+          local_8 = local_8 + *(int *)(this_00 + 0x5c);
         }
-        if (*(int *)((int)local_14 + 0x6c) < local_8) {
+        if (*(int *)(this_00 + 0x6c) < local_8) {
           DAT_00858df8 = (undefined4 *)local_58;
           return local_c;
         }

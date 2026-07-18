@@ -1,4 +1,4 @@
-FUN_006f2940:
+cMf32::RecNameGetPrev:
 006F2940  55                        PUSH EBP
 006F2941  8B EC                     MOV EBP,ESP
 006F2943  83 EC 48                  SUB ESP,0x48

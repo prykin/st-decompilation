@@ -1,6 +1,8 @@
 
-void thunk_FUN_0044b280(char param_1,int param_2,int param_3,uint *param_4,int *param_5,int *param_6
-                       ,int *param_7)
+void __thiscall
+STAllPlayersC::CalibrateTmp
+          (STAllPlayersC *this,char param_1,int param_2,int param_3,uint *param_4,int *param_5,
+          int *param_6,int *param_7)
 
 {
   code *pcVar1;

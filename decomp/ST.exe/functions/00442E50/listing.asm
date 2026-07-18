@@ -1,4 +1,4 @@
-FUN_00442e50:
+STAllPlayersC::_AssignMDPairs:
 00442E50  55                        PUSH EBP
 00442E51  8B EC                     MOV EBP,ESP
 00442E53  81 EC 98 01 00 00         SUB ESP,0x198

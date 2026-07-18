@@ -1,4 +1,4 @@
-FUN_0049c210:
+STGroupBoatC::GrpLoadRC:
 0049C210  55                        PUSH EBP
 0049C211  8B EC                     MOV EBP,ESP
 0049C213  81 EC FC 00 00 00         SUB ESP,0xfc

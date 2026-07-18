@@ -1,2 +1,2 @@
-thunk_FUN_005597a0:
+VisibleClassTy::SetZoneDes:
 004020E0  E9 BB 76 15 00            JMP 0x005597a0

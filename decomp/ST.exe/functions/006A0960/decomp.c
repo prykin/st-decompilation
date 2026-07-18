@@ -1,5 +1,9 @@
 
-undefined4 FUN_006a0960(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Maps\generate.cpp
+   CGenerate::_saveObj */
+
+undefined4 __thiscall CGenerate::_saveObj(CGenerate *this)
 
 {
   code *pcVar1;

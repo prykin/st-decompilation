@@ -6,7 +6,7 @@ undefined4 FUN_005dab70(int param_1,undefined4 param_2)
   void *unaff_ESI;
   undefined4 uVar2;
   undefined4 local_48 [16];
-  int local_8;
+  StartSystemTy *local_8;
   
   uVar2 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
@@ -24,7 +24,7 @@ undefined4 FUN_005dab70(int param_1,undefined4 param_2)
         FUN_006b6750(DAT_00811764,0,param_2,0x20);
       }
       DAT_0080877f = DAT_00811764[0xe];
-      thunk_FUN_005dac80();
+      StartSystemTy::GetIP(local_8);
     }
     DAT_00858df8 = (undefined1 *)uVar2;
     return 0;

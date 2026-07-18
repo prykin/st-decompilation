@@ -1,4 +1,4 @@
-FUN_006e5580:
+SystemClassTy::CreateObject:
 006E5580  55                        PUSH EBP
 006E5581  8B EC                     MOV EBP,ESP
 006E5583  83 EC 68                  SUB ESP,0x68

@@ -1,4 +1,4 @@
-FUN_00503bb0:
+CPanelTy::SetCmdBoat:
 00503BB0  55                        PUSH EBP
 00503BB1  8B EC                     MOV EBP,ESP
 00503BB3  81 EC 98 00 00 00         SUB ESP,0x98

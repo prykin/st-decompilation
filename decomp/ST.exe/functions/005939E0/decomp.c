@@ -1,6 +1,11 @@
 
-void FUN_005939e0(uint param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
-                 undefined4 param_6,undefined4 param_7,int param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\combo.cpp
+   ComboTy::OutBmpProc */
+
+void __thiscall
+ComboTy::OutBmpProc(ComboTy *this,uint param_1,undefined4 param_2,undefined4 param_3,int param_4,
+                   int param_5,undefined4 param_6,undefined4 param_7,int param_8)
 
 {
   code *pcVar1;

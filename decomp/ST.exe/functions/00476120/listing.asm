@@ -1,4 +1,4 @@
-FUN_00476120:
+STBoatC::BackUnLoadObj:
 00476120  8B 81 D6 05 00 00         MOV EAX,dword ptr [ECX + 0x5d6]
 00476126  85 C0                     TEST EAX,EAX
 00476128  74 4D                     JZ 0x00476177

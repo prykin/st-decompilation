@@ -1,4 +1,4 @@
-FUN_005e58d0:
+MTestTy::InitMTest:
 005E58D0  55                        PUSH EBP
 005E58D1  8B EC                     MOV EBP,ESP
 005E58D3  81 EC 48 04 00 00         SUB ESP,0x448

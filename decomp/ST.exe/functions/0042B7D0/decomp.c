@@ -1,5 +1,11 @@
 
-undefined4 FUN_0042b7d0(int param_1,ushort param_2,int param_3,undefined2 *param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::AddObjsToGroup */
+
+undefined4 __thiscall
+STAllPlayersC::AddObjsToGroup
+          (STAllPlayersC *this,int param_1,ushort param_2,int param_3,undefined2 *param_4)
 
 {
   code *pcVar1;
@@ -27,8 +33,8 @@ undefined4 FUN_0042b7d0(int param_1,ushort param_2,int param_3,undefined2 *param
   undefined1 local_1c [4];
   uint local_18;
   uint *local_14;
-  int *local_10;
-  int *local_c;
+  STGroupC *local_10;
+  STGroupC *local_c;
   undefined1 local_5;
   
   iVar4 = *(int *)(param_3 + 0xc);
@@ -51,11 +57,11 @@ undefined4 FUN_0042b7d0(int param_1,ushort param_2,int param_3,undefined2 *param
   if (0 < (int)uVar7) {
     do {
       FUN_006acc70((int)local_14,uVar8,&local_c);
-      if (local_c != (int *)0x0) {
+      if (local_c != (STGroupC *)0x0) {
         iVar4 = thunk_FUN_00423d80(local_c,param_3);
         if (iVar4 == 1) {
           local_5 = 0;
-          (**(code **)(*local_c + 8))(0x65,&local_5);
+          (**(code **)(*(int *)local_c + 8))(0x65,&local_5);
         }
         if (uVar8 == param_2) {
           local_20 = 1;
@@ -74,7 +80,7 @@ undefined4 FUN_0042b7d0(int param_1,ushort param_2,int param_3,undefined2 *param
     if ((param_2 == 0xfffe) || (local_20 == 0)) {
       while (uVar7 = uVar7 - 1, -1 < (int)uVar7) {
         FUN_006acc70((int)puVar2,uVar7,&local_c);
-        if (local_c == (int *)0x0) {
+        if (local_c == (STGroupC *)0x0) {
           uVar8 = uVar7;
         }
       }
@@ -86,18 +92,18 @@ undefined4 FUN_0042b7d0(int param_1,ushort param_2,int param_3,undefined2 *param
       local_38 = uVar8 & 0xffff;
       (**(code **)(*DAT_00802a38 + 8))(0x10ff,local_1c,&local_10,local_4c,0);
       FUN_006ae140(puVar2,uVar8 & 0xffff,&local_10);
-      thunk_FUN_00423b50(param_3,0);
+      STGroupC::AddObjs(local_10,param_3,0);
       local_5 = 2;
-      (**(code **)(*local_10 + 8))(0x65,&local_5);
+      (**(code **)(*(int *)local_10 + 8))(0x65,&local_5);
       if (param_4 != (undefined2 *)0x0) {
         *param_4 = (short)uVar8;
       }
     }
     else {
       FUN_006acc70((int)local_14,(uint)param_2,&local_c);
-      thunk_FUN_00423b50(param_3,1);
+      STGroupC::AddObjs(local_c,param_3,1);
       local_5 = 1;
-      (**(code **)(*local_c + 8))(0x65,&local_5);
+      (**(code **)(*(int *)local_c + 8))(0x65,&local_5);
     }
     uVar7 = puVar2[3];
     uVar8 = 0;
@@ -105,10 +111,10 @@ undefined4 FUN_0042b7d0(int param_1,ushort param_2,int param_3,undefined2 *param
     if (0 < (int)uVar7) {
       do {
         FUN_006acc70((int)puVar2,uVar8,&local_c);
-        if (((local_c != (int *)0x0) && (*(short *)((int)local_c + 0x27) == 0)) &&
+        if (((local_c != (STGroupC *)0x0) && (*(short *)(local_c + 0x27) == 0)) &&
            (iVar4 = thunk_FUN_004233a0((int)local_c), iVar4 == 0)) {
-          thunk_FUN_0054cf70(DAT_00802a38,local_c[2]);
-          local_c = (int *)0x0;
+          thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_c + 8));
+          local_c = (STGroupC *)0x0;
           FUN_006ae140(puVar2,uVar8,&local_c);
         }
         uVar8 = uVar8 + 1;

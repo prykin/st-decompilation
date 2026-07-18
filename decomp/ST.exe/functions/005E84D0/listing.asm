@@ -1,4 +1,4 @@
-FUN_005e84d0:
+WaitTy::NoneWait:
 005E84D0  55                        PUSH EBP
 005E84D1  8B EC                     MOV EBP,ESP
 005E84D3  81 EC 10 01 00 00         SUB ESP,0x110

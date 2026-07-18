@@ -1,4 +1,4 @@
-FUN_005134b0:
+HelpPanelTy::PutToSHlp:
 005134B0  55                        PUSH EBP
 005134B1  8B EC                     MOV EBP,ESP
 005134B3  83 EC 54                  SUB ESP,0x54

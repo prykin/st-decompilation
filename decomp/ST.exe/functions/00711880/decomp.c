@@ -1,8 +1,13 @@
 
-int FUN_00711880(byte *param_1,int param_2,int param_3,uint param_4)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::WrChXY */
+
+int __thiscall ccFntTy::WrChXY(ccFntTy *this,byte *param_1,int param_2,int param_3,uint param_4)
 
 {
   code *pcVar1;
+  ccFntTy *this_00;
   int iVar2;
   uint uVar3;
   int iVar4;
@@ -10,36 +15,37 @@ int FUN_00711880(byte *param_1,int param_2,int param_3,uint param_4)
   void *unaff_EDI;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  ccFntTy *local_8;
   
   if (param_1 == (byte *)0x0) {
     return 0;
   }
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar2 == 0) {
     if (param_2 < 0) {
       if (param_2 == -3) {
         uVar3 = FUN_00710fb0(local_8,param_1);
-        param_2 = *(int *)((int)local_8 + 0x68) -
-                  (int)*(short *)(*(int *)((int)local_8 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10);
+        param_2 = *(int *)(this_00 + 0x68) -
+                  (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10);
       }
       else {
         uVar3 = FUN_00710fb0(local_8,param_1);
-        param_2 = (*(int *)((int)local_8 + 0x68) -
-                  (int)*(short *)(*(int *)((int)local_8 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10)) / 2
-        ;
+        param_2 = (*(int *)(this_00 + 0x68) -
+                  (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10)) / 2;
       }
     }
     if (param_3 < 0) {
-      uVar3 = FUN_00710fb0(local_8,param_1);
-      param_3 = (*(int *)((int)local_8 + 0x6c) -
-                (int)*(short *)(*(int *)((int)local_8 + 0x9a) + 0x6c + (uVar3 & 0xffff) * 10)) / 2;
+      uVar3 = FUN_00710fb0(this_00,param_1);
+      param_3 = (*(int *)(this_00 + 0x6c) -
+                (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6c + (uVar3 & 0xffff) * 10)) / 2;
     }
-    *(int *)((int)local_8 + 0x54) = param_3;
-    *(int *)((int)local_8 + 0x50) = param_2;
-    FUN_007116f0(param_1,param_4);
+    *(int *)(this_00 + 0x54) = param_3;
+    *(int *)(this_00 + 0x50) = param_2;
+    WrCh(this_00,param_1,param_4);
     DAT_00858df8 = (undefined4 *)local_4c;
     return 0;
   }

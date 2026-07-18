@@ -1,4 +1,4 @@
-FUN_00440aa0:
+STAllPlayersC::_AssignDocks:
 00440AA0  55                        PUSH EBP
 00440AA1  8B EC                     MOV EBP,ESP
 00440AA3  81 EC 2C 01 00 00         SUB ESP,0x12c

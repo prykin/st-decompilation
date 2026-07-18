@@ -1,4 +1,4 @@
-FUN_00591940:
+CampaignTy::PaintCampaign:
 00591940  55                        PUSH EBP
 00591941  8B EC                     MOV EBP,ESP
 00591943  83 EC 48                  SUB ESP,0x48

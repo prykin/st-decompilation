@@ -1,5 +1,9 @@
 
-undefined4 FUN_00617640(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_jbomb_m.Cpp
+   JumpManagC::GetMessage */
+
+undefined4 __thiscall JumpManagC::GetMessage(JumpManagC *this,int param_1)
 
 {
   code *pcVar1;
@@ -9,16 +13,18 @@ undefined4 FUN_00617640(int param_1)
   undefined4 unaff_ESI;
   undefined4 *puVar5;
   void *unaff_EDI;
-  undefined4 *puVar6;
+  JumpManagC *pJVar6;
   undefined4 local_54;
   undefined4 local_50 [16];
   byte *local_10;
   uint local_c;
-  void *local_8;
+  JumpManagC *local_8;
   
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
+  local_8 = this;
   iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  pJVar6 = local_8;
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_54;
     iVar3 = FUN_006ad4d0(s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x4b,0,iVar2,&DAT_007a4ccc);
@@ -34,39 +40,39 @@ undefined4 FUN_00617640(int param_1)
   if (iVar2 == 2) {
     puVar5 = *(undefined4 **)(param_1 + 0x14);
     if (puVar5[3] != 2) {
-      puVar6 = (undefined4 *)((int)local_8 + 0x1c);
+      pJVar6 = local_8 + 0x1c;
       for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar6 = *puVar5;
+        *(undefined4 *)pJVar6 = *puVar5;
         puVar5 = puVar5 + 1;
-        puVar6 = puVar6 + 1;
+        pJVar6 = pJVar6 + 4;
       }
-      *(undefined2 *)puVar6 = *(undefined2 *)puVar5;
+      *(undefined2 *)pJVar6 = *(undefined2 *)puVar5;
       DAT_00858df8 = (undefined4 *)local_54;
       return 0;
     }
     thunk_FUN_00618170(local_8,puVar5);
-    thunk_FUN_006179d0((int)local_8);
+    thunk_FUN_006179d0((int)pJVar6);
   }
   else if (iVar2 == 3) {
     thunk_FUN_00618ad0((int)local_8);
-    if (*(byte **)((int)local_8 + 0x5e) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)((int)local_8 + 0x5e));
-      *(undefined4 *)((int)local_8 + 0x5e) = 0;
+    if (*(byte **)(pJVar6 + 0x5e) != (byte *)0x0) {
+      FUN_006ae110(*(byte **)(pJVar6 + 0x5e));
+      *(undefined4 *)(pJVar6 + 0x5e) = 0;
     }
-    if (*(byte **)((int)local_8 + 0x62) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)((int)local_8 + 0x62));
-      *(undefined4 *)((int)local_8 + 0x62) = 0;
+    if (*(byte **)(pJVar6 + 0x62) != (byte *)0x0) {
+      FUN_006ae110(*(byte **)(pJVar6 + 0x62));
+      *(undefined4 *)(pJVar6 + 0x62) = 0;
     }
-    if (*(byte **)((int)local_8 + 0x66) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)((int)local_8 + 0x66));
-      *(undefined4 *)((int)local_8 + 0x66) = 0;
+    if (*(byte **)(pJVar6 + 0x66) != (byte *)0x0) {
+      FUN_006ae110(*(byte **)(pJVar6 + 0x66));
+      *(undefined4 *)(pJVar6 + 0x66) = 0;
       DAT_00858df8 = (undefined4 *)local_54;
       return 0;
     }
   }
   else if (iVar2 == 0x10f) {
     local_10 = (byte *)thunk_FUN_00617fb0(local_8,(int *)&local_c);
-    thunk_FUN_0054d430(DAT_00802a38,*(undefined4 *)((int)local_8 + 0x18),local_10,local_c);
+    STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(pJVar6 + 0x18),local_10,local_c);
     FUN_006ab060(&local_10);
     DAT_00858df8 = (undefined4 *)local_54;
     return 0;

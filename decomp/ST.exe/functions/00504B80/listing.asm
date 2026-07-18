@@ -1,4 +1,4 @@
-FUN_00504b80:
+CPanelTy::PaintNameRes:
 00504B80  55                        PUSH EBP
 00504B81  8B EC                     MOV EBP,ESP
 00504B83  83 EC 48                  SUB ESP,0x48

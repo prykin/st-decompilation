@@ -1,7 +1,12 @@
 
-undefined4 *
-FUN_005e3e80(uint *param_1,int param_2,int param_3,uint param_4,uint param_5,void *param_6,
-            int param_7,int param_8,int param_9)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\task_obj.cpp
+   MTaskTy::CreateTextSSpr */
+
+undefined4 * __thiscall
+MTaskTy::CreateTextSSpr
+          (MTaskTy *this,uint *param_1,int param_2,int param_3,uint param_4,uint param_5,
+          void *param_6,int param_7,int param_8,int param_9)
 
 {
   code *pcVar1;
@@ -60,16 +65,16 @@ FUN_005e3e80(uint *param_1,int param_2,int param_3,uint param_4,uint param_5,voi
     *(undefined2 *)((int)local_8 + 0x23) = 3;
     *(undefined2 *)((int)local_8 + 0x29) = (undefined2)local_18;
     *(short *)((int)local_8 + 0x2b) = (short)iVar3;
-    puVar5 = FUN_00710ba0(0,0,0,0,(int)*(short *)((int)local_8 + 0x29),
-                          (int)*(short *)((int)local_8 + 0x2b),1);
-    FUN_00710a90((int)puVar5,0,0,0,0,0);
-    FUN_00711b70(param_1,local_10,uVar2,param_7,-1,-1);
+    puVar5 = ccFntTy::CreateSurf(param_6,0,0,0,0,(int)*(short *)((int)local_8 + 0x29),
+                                 (int)*(short *)((int)local_8 + 0x2b),1);
+    ccFntTy::SetSurf(param_6,(int)puVar5,0,0,0,0,0);
+    ccFntTy::WrTxt(param_6,param_1,local_10,uVar2,param_7,-1,-1);
     FUN_006b4b20((int *)((int)local_8 + 0x2d),(uint)puVar5,0,0);
-    FUN_00711b70(param_1,local_10,uVar2,param_8,-1,-1);
+    ccFntTy::WrTxt(param_6,param_1,local_10,uVar2,param_8,-1,-1);
     FUN_006b4b20((int *)((int)local_8 + 0x31),(uint)puVar5,0,0);
-    FUN_00711b70(param_1,local_10,uVar2,param_9,-1,-1);
+    ccFntTy::WrTxt(param_6,param_1,local_10,uVar2,param_9,-1,-1);
     FUN_006b4b20((int *)((int)local_8 + 0x35),(uint)puVar5,0,0);
-    FUN_00710f00();
+    ccFntTy::EraseSufr(param_6);
     DAT_00858df8 = (undefined4 *)local_5c;
     return local_8;
   }
@@ -77,7 +82,7 @@ FUN_005e3e80(uint *param_1,int param_2,int param_3,uint param_4,uint param_5,voi
   iVar4 = FUN_006ad4d0(s_E____titans_Start_task_obj_cpp_007cd994,0x485,0,iVar3,&DAT_007a4ccc);
   if (iVar4 == 0) {
     if (param_6 != (void *)0x0) {
-      FUN_00710f00();
+      ccFntTy::EraseSufr(param_6);
     }
     FUN_00725e30((int *)&local_8);
     FUN_006a5e40(iVar3,0,0x7cd994,0x488);

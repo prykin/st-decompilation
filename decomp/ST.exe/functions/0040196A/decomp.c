@@ -1,8 +1,9 @@
 
-void thunk_FUN_0059eb00(void)
+void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
 
 {
   code *pcVar1;
+  FSGSTy *this_00;
   uint uVar2;
   undefined4 uVar3;
   LPBITMAPINFO ptVar4;
@@ -71,9 +72,10 @@ void thunk_FUN_0059eb00(void)
   undefined4 uStack_50;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  FSGSTy *pFStack_8;
   
   puVar8 = auStack_dac;
+  pFStack_8 = this;
   for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
     *puVar8 = 0;
     puVar8 = puVar8 + 1;
@@ -86,33 +88,34 @@ void thunk_FUN_0059eb00(void)
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
   iVar7 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  this_00 = pFStack_8;
   if (iVar7 == 0) {
-    if (*(int *)((int)pvStack_8 + 0x1e8e) != 0) {
-      FUN_006ab060((undefined4 *)((int)pvStack_8 + 0x1e8e));
+    if (*(int *)(pFStack_8 + 0x1e8e) != 0) {
+      FUN_006ab060((undefined4 *)(pFStack_8 + 0x1e8e));
     }
-    if (*(int *)((int)pvStack_8 + 0x1e92) != 0) {
-      FUN_006ab060((undefined4 *)((int)pvStack_8 + 0x1e92));
+    if (*(int *)(this_00 + 0x1e92) != 0) {
+      FUN_006ab060((undefined4 *)(this_00 + 0x1e92));
     }
     iVar7 = 1;
-    puVar8 = (undefined4 *)(*(int *)((int)pvStack_8 + 0x5d) + 0x28);
-    uVar2 = FUN_006b4fe0(*(int *)((int)pvStack_8 + 0x5d));
-    uVar3 = FUN_006b50c0(0x174,0x175,(uint)*(ushort *)(*(int *)((int)pvStack_8 + 0x5d) + 0xe),uVar2,
-                         puVar8,iVar7);
-    *(undefined4 *)((int)pvStack_8 + 0x1e8e) = uVar3;
+    puVar8 = (undefined4 *)(*(int *)(this_00 + 0x5d) + 0x28);
+    uVar2 = FUN_006b4fe0(*(int *)(this_00 + 0x5d));
+    uVar3 = FUN_006b50c0(0x174,0x175,(uint)*(ushort *)(*(int *)(this_00 + 0x5d) + 0xe),uVar2,puVar8,
+                         iVar7);
+    *(undefined4 *)(this_00 + 0x1e8e) = uVar3;
     ptVar4 = FUN_006c4880(DAT_0080759c,0x199,0x5e,0x174,0x175,8);
-    *(undefined4 *)((int)pvStack_8 + 0x1e92) = ptVar4;
+    *(LPBITMAPINFO *)(this_00 + 0x1e92) = ptVar4;
     ptVar4 = FUN_006c4880(DAT_0080759c,0x13,0x5e,0x174,0x175,8);
-    *(LPBITMAPINFO *)((int)pvStack_8 + 0x1e9a) = ptVar4;
+    *(LPBITMAPINFO *)(this_00 + 0x1e9a) = ptVar4;
     puVar5 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)pvStack_8 + 0x1ae8) = puVar5;
+    *(uint **)(this_00 + 0x1ae8) = puVar5;
     FUN_006b5aa0((int)puVar5,&DAT_008016a0);
     puVar5 = FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)((int)pvStack_8 + 0x1aec) = puVar5;
+    *(uint **)(this_00 + 0x1aec) = puVar5;
     FUN_006b5aa0((int)puVar5,&DAT_008016a0);
     puVar5 = FUN_006ae290((uint *)0x0,0x14,0x25c,10);
-    *(uint **)((int)pvStack_8 + 0x1ebe) = puVar5;
-    aiStack_520[4] = 0x15b - *(int *)((int)pvStack_8 + 0x1cff);
-    uStack_4f8 = *(undefined4 *)((int)pvStack_8 + 8);
+    *(uint **)(this_00 + 0x1ebe) = puVar5;
+    aiStack_520[4] = 0x15b - *(int *)(this_00 + 0x1cff);
+    uStack_4f8 = *(undefined4 *)(this_00 + 8);
     aiStack_520[0] = 0;
     aiStack_520[2] = 0x14;
     aiStack_520[3] = 100;
@@ -131,10 +134,10 @@ void thunk_FUN_0059eb00(void)
       uStack_50 = 1;
     }
     auStack_3f0[0] = 0;
-    auStack_3f0[2] = *(undefined4 *)((int)pvStack_8 + 0x1cf7);
-    iStack_3e0 = *(int *)((int)pvStack_8 + 0x1cff);
-    auStack_3f0[3] = *(undefined4 *)((int)pvStack_8 + 0x1cfb);
-    uStack_3dc = *(undefined4 *)((int)pvStack_8 + 0x1d03);
+    auStack_3f0[2] = *(undefined4 *)(this_00 + 0x1cf7);
+    iStack_3e0 = *(int *)(this_00 + 0x1cff);
+    auStack_3f0[3] = *(undefined4 *)(this_00 + 0x1cfb);
+    uStack_3dc = *(undefined4 *)(this_00 + 0x1d03);
     uStack_3f4 = 2;
     auStack_3f0[1] = 2;
     uStack_2e0 = 500;
@@ -150,13 +153,13 @@ void thunk_FUN_0059eb00(void)
       puVar8 = puVar8 + 1;
       puVar10 = puVar10 + 1;
     }
-    auStack_270[2] = *(undefined4 *)((int)pvStack_8 + 0x1d88);
-    auStack_270[3] = *(undefined4 *)((int)pvStack_8 + 0x1d8c);
-    uStack_260 = *(undefined4 *)((int)pvStack_8 + 0x1d90);
-    uStack_25c = *(undefined4 *)((int)pvStack_8 + 0x1d94);
-    uStack_e4 = *(undefined4 *)((int)pvStack_8 + 0x1e19);
-    uStack_e0 = *(undefined4 *)((int)pvStack_8 + 0x1e1d);
-    uStack_dc = *(undefined4 *)((int)pvStack_8 + 0x1e21);
+    auStack_270[2] = *(undefined4 *)(this_00 + 0x1d88);
+    auStack_270[3] = *(undefined4 *)(this_00 + 0x1d8c);
+    uStack_260 = *(undefined4 *)(this_00 + 0x1d90);
+    uStack_25c = *(undefined4 *)(this_00 + 0x1d94);
+    uStack_e4 = *(undefined4 *)(this_00 + 0x1e19);
+    uStack_e0 = *(undefined4 *)(this_00 + 0x1e1d);
+    uStack_dc = *(undefined4 *)(this_00 + 0x1e21);
     uStack_208 = 0x8165;
     uStack_f4 = 3;
     uStack_f0 = 1;
@@ -169,27 +172,27 @@ void thunk_FUN_0059eb00(void)
     uStack_4b8 = uStack_4f8;
     uStack_498 = uStack_4f8;
     uStack_a0 = uStack_4f8;
-    (**(code **)(**(int **)((int)pvStack_8 + 0xc) + 8))(7,(int)pvStack_8 + 0x1b20,0,aiStack_520,0);
-    if (*(uint *)((int)pvStack_8 + 0x1cdf) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)((int)pvStack_8 + 0x1d23),*(uint *)((int)pvStack_8 + 0x1cdf),0xfffffffe
-                   ,*(uint *)((int)pvStack_8 + 0x1cf7),*(uint *)((int)pvStack_8 + 0x1cfb));
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(7,(MMObjTy *)(this_00 + 0x1b20),0,aiStack_520,0);
+    if (*(uint *)(this_00 + 0x1cdf) != 0xffffffff) {
+      FUN_006b34d0(*(uint **)(this_00 + 0x1d23),*(uint *)(this_00 + 0x1cdf),0xfffffffe,
+                   *(uint *)(this_00 + 0x1cf7),*(uint *)(this_00 + 0x1cfb));
     }
-    if (*(uint *)((int)pvStack_8 + 0x1d70) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)((int)pvStack_8 + 0x1db4),*(uint *)((int)pvStack_8 + 0x1d70),0xfffffffe
-                   ,*(uint *)((int)pvStack_8 + 0x1d88),*(uint *)((int)pvStack_8 + 0x1d8c));
+    if (*(uint *)(this_00 + 0x1d70) != 0xffffffff) {
+      FUN_006b34d0(*(uint **)(this_00 + 0x1db4),*(uint *)(this_00 + 0x1d70),0xfffffffe,
+                   *(uint *)(this_00 + 0x1d88),*(uint *)(this_00 + 0x1d8c));
     }
-    if (*(uint *)((int)pvStack_8 + 0x1e01) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)((int)pvStack_8 + 0x1e45),*(uint *)((int)pvStack_8 + 0x1e01),0xfffffffe
-                   ,*(uint *)((int)pvStack_8 + 0x1e19),*(uint *)((int)pvStack_8 + 0x1e1d));
+    if (*(uint *)(this_00 + 0x1e01) != 0xffffffff) {
+      FUN_006b34d0(*(uint **)(this_00 + 0x1e45),*(uint *)(this_00 + 0x1e01),0xfffffffe,
+                   *(uint *)(this_00 + 0x1e19),*(uint *)(this_00 + 0x1e1d));
     }
-    auStack_dac[8] = *(undefined4 *)((int)pvStack_8 + 0x1ae8);
+    auStack_dac[8] = *(undefined4 *)(this_00 + 0x1ae8);
     puVar8 = auStack_dac;
     for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
     }
-    auStack_dac[2] = *(undefined4 *)((int)pvStack_8 + 0x1a73);
-    uStack_d80 = *(undefined4 *)((int)pvStack_8 + 8);
+    auStack_dac[2] = *(undefined4 *)(this_00 + 0x1a73);
+    uStack_d80 = *(undefined4 *)(this_00 + 8);
     auStack_dac[0] = 1;
     auStack_dac[1] = 0x99;
     auStack_dac[3] = 0x1a8;
@@ -208,24 +211,24 @@ void thunk_FUN_0059eb00(void)
     uStack_d60 = uStack_d80;
     uStack_d20 = uStack_d80;
     uStack_53c = uStack_d80;
-    (**(code **)(**(int **)((int)pvStack_8 + 0xc) + 8))(6,(int)pvStack_8 + 0x1ac4,0,auStack_dac,0);
-    auStack_dac[8] = *(undefined4 *)((int)pvStack_8 + 0x1aec);
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,(MMObjTy *)(this_00 + 0x1ac4),0,auStack_dac,0);
+    auStack_dac[8] = *(undefined4 *)(this_00 + 0x1aec);
     auStack_dac[1] = 0x89;
     auStack_dac[4] = 0x154;
     auStack_dac[7] = 0x10;
-    (**(code **)(**(int **)((int)pvStack_8 + 0xc) + 8))(6,(int)pvStack_8 + 0x1ac8,0,auStack_dac,0);
-    *(undefined4 *)((int)pvStack_8 + 0x1ec2) = 0;
-    *(undefined4 *)((int)pvStack_8 + 0x1ec6) = 0xffffffff;
-    *(undefined4 *)((int)pvStack_8 + 0x1eca) = 0;
-    uVar3 = thunk_FUN_005b5510(1,1,0x230,0x17a,0xd3,0x19,0x6904,0x6989);
-    *(undefined4 *)((int)pvStack_8 + 0x1eb6) = uVar3;
-    uVar3 = thunk_FUN_005b5510(1,0,0x1a3,0x196,0x160,0x19,0x6905,0x698a);
-    *(undefined4 *)((int)pvStack_8 + 0x1eba) = uVar3;
-    uVar3 = thunk_FUN_005b5510(1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
-    *(undefined4 *)((int)pvStack_8 + 0x1b24) = uVar3;
-    *(undefined4 *)((int)pvStack_8 + 0x2d) = 0x61;
-    *(undefined4 *)((int)pvStack_8 + 0x35) = 0;
-    FUN_006e6080(pvStack_8,0xf,0,(undefined4 *)((int)pvStack_8 + 0x1d));
+    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,(MMObjTy *)(this_00 + 0x1ac8),0,auStack_dac,0);
+    *(undefined4 *)(this_00 + 0x1ec2) = 0;
+    *(undefined4 *)(this_00 + 0x1ec6) = 0xffffffff;
+    *(undefined4 *)(this_00 + 0x1eca) = 0;
+    uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x230,0x17a,0xd3,0x19,0x6904,0x6989);
+    *(undefined4 *)(this_00 + 0x1eb6) = uVar3;
+    uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,0,0x1a3,0x196,0x160,0x19,0x6905,0x698a);
+    *(undefined4 *)(this_00 + 0x1eba) = uVar3;
+    uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1fd,0x1b5,0xab,0x19,0x6903,0x698d);
+    *(undefined4 *)(this_00 + 0x1b24) = uVar3;
+    *(undefined4 *)(this_00 + 0x2d) = 0x61;
+    *(undefined4 *)(this_00 + 0x35) = 0;
+    FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;
   }

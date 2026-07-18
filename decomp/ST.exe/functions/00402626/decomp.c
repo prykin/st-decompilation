@@ -1,10 +1,10 @@
 
-void __fastcall thunk_FUN_0059d720(void *param_1)
+void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
 
 {
   byte bVar1;
   code *pcVar2;
-  void *this;
+  FSGSTy *this_00;
   byte *pbVar3;
   uint *puVar4;
   int iVar5;
@@ -26,14 +26,14 @@ void __fastcall thunk_FUN_0059d720(void *param_1)
   undefined4 uStack_64;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  void *pvStack_c;
+  FSGSTy *pFStack_c;
   int iStack_8;
   
-  pbVar3 = *(byte **)((int)param_1 + 0x1b0c);
+  pbVar3 = *(byte **)(this + 0x1b0c);
   if (pbVar3 != (byte *)0x0) {
     pbVar7 = &DAT_00807e1d;
     puVar8 = auStack_8dc;
-    pvStack_c = param_1;
+    pFStack_c = this;
     for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
@@ -60,17 +60,17 @@ LAB_0059d780:
     iVar6 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
     if (iVar6 == 0) {
       puVar4 = FUN_006b54f0((uint *)0x0,1,1);
-      this = pvStack_c;
-      *(uint **)((int)pvStack_c + 0x1af8) = puVar4;
+      this_00 = pFStack_c;
+      *(uint **)(pFStack_c + 0x1af8) = puVar4;
       FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar4 = FUN_006b54f0((uint *)0x0,1,1);
-      *(uint **)((int)this + 0x1afc) = puVar4;
+      *(uint **)(this_00 + 0x1afc) = puVar4;
       FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar4 = FUN_006b54f0((uint *)0x0,1,1);
-      *(uint **)((int)this + 0x1b00) = puVar4;
+      *(uint **)(this_00 + 0x1b00) = puVar4;
       FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar4 = FUN_006b54f0((uint *)0x0,1,1);
-      *(uint **)((int)this + 0x1b04) = puVar4;
+      *(uint **)(this_00 + 0x1b04) = puVar4;
       FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar8 = auStack_8dc;
       for (iVar6 = 0x223; iVar5 = iStack_8, iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -82,9 +82,9 @@ LAB_0059d780:
       if (iStack_8 != 0) {
         auStack_8dc[1] = 0x99;
       }
-      auStack_8dc[2] = *(undefined4 *)((int)this + 0x1a73);
-      auStack_8dc[8] = *(undefined4 *)((int)this + 0x1af8);
-      uStack_8b0 = *(undefined4 *)((int)this + 8);
+      auStack_8dc[2] = *(undefined4 *)(this_00 + 0x1a73);
+      auStack_8dc[8] = *(undefined4 *)(this_00 + 0x1af8);
+      uStack_8b0 = *(undefined4 *)(this_00 + 8);
       uStack_68 = 2;
       uStack_8ac = 2;
       uStack_88c = 2;
@@ -98,27 +98,27 @@ LAB_0059d780:
       uStack_64 = 0x6955;
       uStack_890 = uStack_8b0;
       uStack_6c = uStack_8b0;
-      (**(code **)(**(int **)((int)this + 0xc) + 8))(6,(int)this + 0x1ad8,0,auStack_8dc,0);
-      auStack_8dc[8] = *(undefined4 *)((int)this + 0x1afc);
+      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ad8,0,auStack_8dc,0);
+      auStack_8dc[8] = *(undefined4 *)(this_00 + 0x1afc);
       auStack_8dc[3] = 0x15e;
-      (**(code **)(**(int **)((int)this + 0xc) + 8))(6,(int)this + 0x1adc,0,auStack_8dc,0);
-      auStack_8dc[8] = *(undefined4 *)((int)this + 0x1b00);
+      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1adc,0,auStack_8dc,0);
+      auStack_8dc[8] = *(undefined4 *)(this_00 + 0x1b00);
       auStack_8dc[3] = 0x1ea;
-      (**(code **)(**(int **)((int)this + 0xc) + 8))(6,(int)this + 0x1ae0,0,auStack_8dc,0);
+      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ae0,0,auStack_8dc,0);
       auStack_8dc[1] = 200;
       if (iVar5 != 0) {
         auStack_8dc[1] = 0xcc;
       }
-      auStack_8dc[8] = *(undefined4 *)((int)this + 0x1b04);
+      auStack_8dc[8] = *(undefined4 *)(this_00 + 0x1b04);
       auStack_8dc[3] = 0xd2;
       auStack_8dc[4] = 0xdd;
       auStack_8dc[5] = 0x17c;
       auStack_8dc[6] = 0x4b;
       uStack_888 = 0x6981;
-      (**(code **)(**(int **)((int)this + 0xc) + 8))(6,(int)this + 0x1ae4,0,auStack_8dc,0);
-      *(undefined4 *)((int)this + 0x2d) = 0x61;
-      *(undefined4 *)((int)this + 0x35) = 0;
-      FUN_006e6080(this,0xf,0,(undefined4 *)((int)this + 0x1d));
+      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ae4,0,auStack_8dc,0);
+      *(undefined4 *)(this_00 + 0x2d) = 0x61;
+      *(undefined4 *)(this_00 + 0x35) = 0;
+      FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
       DAT_00858df8 = (undefined4 *)uStack_50;
       return;
     }

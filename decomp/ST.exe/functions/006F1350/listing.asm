@@ -1,4 +1,4 @@
-FUN_006f1350:
+cMf32::ToEnd:
 006F1350  55                        PUSH EBP
 006F1351  8B EC                     MOV EBP,ESP
 006F1353  83 EC 48                  SUB ESP,0x48

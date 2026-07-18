@@ -1,4 +1,4 @@
-FUN_0054bf40:
+CursorClassTy::SetGCType:
 0054BF40  55                        PUSH EBP
 0054BF41  8B EC                     MOV EBP,ESP
 0054BF43  83 EC 54                  SUB ESP,0x54

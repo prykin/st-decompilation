@@ -45,16 +45,16 @@ int __thiscall FUN_004603b0(void *this,void *param_1)
         FUN_006acc70(DAT_007fa130,uVar9,&param_1);
         if (param_1 != (void *)0x0) {
           iVar6 = iVar6 + -1;
-          iVar3 = thunk_FUN_00645020(param_1,*(int *)((int)this + 0x18),&local_8);
+          iVar3 = STTorpC::IsDangerous(param_1,*(int *)((int)this + 0x18),&local_8);
           if (iVar3 != 2) {
             if (iVar3 == 0) {
               iVar3 = thunk_FUN_004838e0(this,(int)param_1);
               if (iVar3 == 1) {
-                thunk_FUN_006451b0(*(undefined4 *)((int)this + 0x18),&local_8);
+                STTorpC::SetDangerous(param_1,*(undefined4 *)((int)this + 0x18),&local_8);
 LAB_004604c9:
                 iVar3 = thunk_FUN_00483e30(this,(int)param_1);
                 if (iVar3 == 1) {
-                  thunk_FUN_006452a0(*(int *)((int)this + 0x18),local_8);
+                  STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
                   *(void **)((int)this + 0x46b) = param_1;
                   *(undefined2 *)((int)this + 0x46f) = *(undefined2 *)((int)param_1 + 0x26e);
                   uVar4 = *(undefined4 *)((int)param_1 + 0x18);
@@ -126,7 +126,7 @@ LAB_00460581:
                 }
               }
               else {
-                thunk_FUN_006452a0(*(int *)((int)this + 0x18),local_8);
+                STTorpC::ClearDangerous(param_1,*(int *)((int)this + 0x18),local_8);
               }
             }
             else if (iVar3 == 1) goto LAB_004604c9;

@@ -1,4 +1,4 @@
-FUN_00552bc0:
+UpgPanelTy::Update:
 00552BC0  55                        PUSH EBP
 00552BC1  8B EC                     MOV EBP,ESP
 00552BC3  81 EC 94 02 00 00         SUB ESP,0x294

@@ -1,4 +1,4 @@
-FUN_0063e160:
+STTmMineC::LoadImagSpr:
 0063E160  55                        PUSH EBP
 0063E161  8B EC                     MOV EBP,ESP
 0063E163  83 EC 54                  SUB ESP,0x54

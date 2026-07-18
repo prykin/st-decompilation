@@ -1,4 +1,4 @@
-FUN_005dfa30:
+MTaskTy::InitMTask:
 005DFA30  55                        PUSH EBP
 005DFA31  8B EC                     MOV EBP,ESP
 005DFA33  81 EC A4 05 00 00         SUB ESP,0x5a4

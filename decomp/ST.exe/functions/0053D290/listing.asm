@@ -1,4 +1,4 @@
-FUN_0053d290:
+SAMPanelTy::ShiftControls:
 0053D290  55                        PUSH EBP
 0053D291  8B EC                     MOV EBP,ESP
 0053D293  83 EC 48                  SUB ESP,0x48

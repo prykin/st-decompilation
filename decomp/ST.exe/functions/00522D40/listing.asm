@@ -1,4 +1,4 @@
-FUN_00522d40:
+IntercomPanelTy::SwitchIntercomPanel:
 00522D40  55                        PUSH EBP
 00522D41  8B EC                     MOV EBP,ESP
 00522D43  83 EC 48                  SUB ESP,0x48

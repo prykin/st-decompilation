@@ -1,4 +1,4 @@
-FUN_00552af0:
+UpgPanelTy::ShiftControls:
 00552AF0  55                        PUSH EBP
 00552AF1  8B EC                     MOV EBP,ESP
 00552AF3  83 EC 44                  SUB ESP,0x44

@@ -1,4 +1,4 @@
-FUN_004247b0:
+STGroupC::SetAVPar:
 004247B0  55                        PUSH EBP
 004247B1  8B EC                     MOV EBP,ESP
 004247B3  51                        PUSH ECX

@@ -1,2 +1,2 @@
-thunk_FUN_004a9540:
+OpticClassC::ReInitOptic:
 00402081  E9 BA 74 0A 00            JMP 0x004a9540

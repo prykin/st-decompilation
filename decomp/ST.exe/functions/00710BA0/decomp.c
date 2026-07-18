@@ -1,9 +1,15 @@
 
-undefined4 *
-FUN_00710ba0(int param_1,uint param_2,int param_3,int param_4,int param_5,int param_6,int param_7)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::CreateSurf */
+
+undefined4 * __thiscall
+ccFntTy::CreateSurf(ccFntTy *this,int param_1,uint param_2,int param_3,int param_4,int param_5,
+                   int param_6,int param_7)
 
 {
   code *pcVar1;
+  ccFntTy *this_00;
   int iVar2;
   uint uVar3;
   undefined4 *puVar4;
@@ -13,14 +19,16 @@ FUN_00710ba0(int param_1,uint param_2,int param_3,int param_4,int param_5,int pa
   void *unaff_EDI;
   undefined4 local_58;
   undefined4 local_54 [16];
-  int local_14;
+  ccFntTy *local_14;
   uint local_10;
   int local_c;
   int local_8;
   
   local_58 = DAT_00858df8;
   DAT_00858df8 = &local_58;
+  local_14 = this;
   iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  this_00 = local_14;
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_58;
     iVar6 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x4ab,0,iVar2,&DAT_007a4ccc);
@@ -35,9 +43,9 @@ FUN_00710ba0(int param_1,uint param_2,int param_3,int param_4,int param_5,int pa
   if (param_1 == 0) {
     if (((*(int *)(local_14 + 0xa0) != 0) && (*(int *)(local_14 + 0xa8) != 0)) &&
        (*(int *)(local_14 + 0xac) != *(int *)(*(int *)(local_14 + 0xa8) + 0xac))) {
-      FUN_00710790(local_14);
+      FUN_00710790((int)local_14);
     }
-    param_1 = *(int *)(local_14 + 4);
+    param_1 = *(int *)(this_00 + 4);
   }
   else if (param_2 != 0) goto LAB_00710c1d;
   param_2 = FUN_006b4fa0(param_1);
@@ -80,17 +88,17 @@ LAB_00710c1d:
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
   }
-  FUN_00710f00();
-  *(undefined4 **)(local_14 + 0x72) = puVar4;
+  EraseSufr(this_00);
+  *(undefined4 **)(this_00 + 0x72) = puVar4;
   iVar2 = FUN_006b4fa0((int)puVar4);
-  *(int *)(local_14 + 0x76) = iVar2;
-  *(int *)(local_14 + 0x68) = local_8;
-  *(undefined4 *)(local_14 + 0x7a) = 1;
-  *(undefined4 *)(local_14 + 0x60) = 0;
-  *(undefined4 *)(local_14 + 100) = 0;
-  *(int *)(local_14 + 0x6c) = local_c;
-  *(undefined4 *)(local_14 + 0x50) = 0;
-  *(undefined4 *)(local_14 + 0x54) = 0;
+  *(int *)(this_00 + 0x76) = iVar2;
+  *(int *)(this_00 + 0x68) = local_8;
+  *(undefined4 *)(this_00 + 0x7a) = 1;
+  *(undefined4 *)(this_00 + 0x60) = 0;
+  *(undefined4 *)(this_00 + 100) = 0;
+  *(int *)(this_00 + 0x6c) = local_c;
+  *(undefined4 *)(this_00 + 0x50) = 0;
+  *(undefined4 *)(this_00 + 0x54) = 0;
   DAT_00858df8 = (undefined4 *)local_58;
   return puVar4;
 }

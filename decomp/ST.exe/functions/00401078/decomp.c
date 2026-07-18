@@ -1,5 +1,7 @@
 
-int __thiscall thunk_FUN_0054d550(void *this,char *param_1,byte *param_2,uint param_3,byte param_4)
+int __thiscall
+STPlaySystemC::SaveObjData
+          (STPlaySystemC *this,char *param_1,byte *param_2,uint param_3,byte param_4)
 
 {
   code *pcVar1;
@@ -8,14 +10,14 @@ int __thiscall thunk_FUN_0054d550(void *this,char *param_1,byte *param_2,uint pa
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  STPlaySystemC *pSStack_8;
   
   uVar4 = DAT_00858df8;
-  if (*(int *)((int)this + 0x24) == 0) {
+  if (*(int *)(this + 0x24) == 0) {
     return -4;
   }
   DAT_00858df8 = &stack0xffffffb4;
-  pvStack_8 = this;
+  pSStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
     FUN_006f13f0(param_4,param_1,param_2,param_3,(undefined4 *)0x0,'\x02',(uint *)0x0);

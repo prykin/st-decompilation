@@ -470,8 +470,9 @@ LAB_0047405d:
         thunk_FUN_0041c5a0(this);
         thunk_FUN_00495ff0(*(short *)((int)this + 0x5b),*(short *)((int)this + 0x5d),
                            *(short *)((int)this + 0x5f),0,(int)this);
-        thunk_FUN_00495ec0(*(short *)((int)this + 0x588),*(short *)((int)this + 0x58a),
-                           *(short *)((int)this + 0x58c),0,(int)this);
+        DumpClassC::WritePtr
+                  (*(short *)((int)this + 0x588),*(short *)((int)this + 0x58a),
+                   *(short *)((int)this + 0x58c),0,(int)this);
         thunk_FUN_0041c3f0(this,*(undefined **)((int)this + 0x70a));
         iVar9 = (**(code **)(*(int *)this + 0xd8))();
         return -(uint)(iVar9 != 0);

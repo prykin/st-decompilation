@@ -1,4 +1,4 @@
-FUN_004ff110:
+CPanelTy::SwitchTV:
 004FF110  55                        PUSH EBP
 004FF111  8B EC                     MOV EBP,ESP
 004FF113  83 EC 54                  SUB ESP,0x54

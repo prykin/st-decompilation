@@ -1,4 +1,4 @@
-FUN_005ad390:
+ChooseMapTy::NoneChooseMap:
 005AD390  55                        PUSH EBP
 005AD391  8B EC                     MOV EBP,ESP
 005AD393  81 EC AC 00 00 00         SUB ESP,0xac

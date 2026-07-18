@@ -1,5 +1,10 @@
 
-undefined4 FUN_0044a5b0(ushort param_1,void *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::RegisterContainer */
+
+undefined4 __thiscall
+STAllPlayersC::RegisterContainer(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
   code *pcVar1;

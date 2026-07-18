@@ -1,5 +1,6 @@
 
-uint * thunk_FUN_00440aa0(uint param_1,int param_2,int param_3)
+uint * __thiscall
+STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,int param_2,int param_3)
 
 {
   code *pcVar1;
@@ -45,6 +46,7 @@ uint * thunk_FUN_00440aa0(uint param_1,int param_2,int param_3)
   undefined2 uStack_4a;
   uint uStack_48;
   uint *puStack_44;
+  STAllPlayersC *pSStack_40;
   short sStack_3c;
   undefined4 uStack_3a;
   undefined2 uStack_34;
@@ -66,6 +68,7 @@ uint * thunk_FUN_00440aa0(uint param_1,int param_2,int param_3)
   uStack_c8 = DAT_00858df8;
   iStack_80 = *(int *)((int)&DAT_007f4e24 + (char)param_1 * 0xa62 + 1);
   DAT_00858df8 = &uStack_c8;
+  pSStack_40 = this;
   iVar3 = __setjmp3(auStack_c4,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_c8;

@@ -28,7 +28,7 @@ void __thiscall FUN_0065d940(void *this,int param_1,int param_2)
                                            CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),1);
         pvVar3 = extraout_ECX;
         if (piVar2 != (int *)0x0) {
-          thunk_FUN_0065d760(piVar2,param_2);
+          AiFltClassTy::_AddObjFlt(this,piVar2,param_2);
           pvVar3 = extraout_ECX_00;
         }
         uVar4 = uVar4 + 1;

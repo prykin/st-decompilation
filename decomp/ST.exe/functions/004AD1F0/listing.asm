@@ -1,4 +1,4 @@
-FUN_004ad1f0:
+STT3DSprC::Init:
 004AD1F0  55                        PUSH EBP
 004AD1F1  8B EC                     MOV EBP,ESP
 004AD1F3  83 EC 48                  SUB ESP,0x48

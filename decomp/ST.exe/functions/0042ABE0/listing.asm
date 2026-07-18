@@ -1,4 +1,4 @@
-FUN_0042abe0:
+STAllPlayersC::GetGObjFromZone2:
 0042ABE0  55                        PUSH EBP
 0042ABE1  8B EC                     MOV EBP,ESP
 0042ABE3  83 EC 50                  SUB ESP,0x50

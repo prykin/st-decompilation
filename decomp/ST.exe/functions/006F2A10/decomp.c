@@ -1,5 +1,9 @@
 
-undefined4 * FUN_006f2a10(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::RecKeyGetPrev */
+
+undefined4 * __thiscall cMf32::RecKeyGetPrev(cMf32 *this,undefined4 *param_1)
 
 {
   code *pcVar1;
@@ -9,12 +13,14 @@ undefined4 * FUN_006f2a10(undefined4 *param_1)
   undefined4 *puVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
+  cMf32 *pcVar6;
   undefined4 local_4c;
   undefined4 local_48 [16];
-  undefined4 *local_8;
+  cMf32 *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)local_4c;
@@ -28,21 +34,21 @@ undefined4 * FUN_006f2a10(undefined4 *param_1)
     return (undefined4 *)0x0;
   }
   if (param_1 == (undefined4 *)0x0) {
-    param_1 = local_8 + 6;
+    param_1 = (undefined4 *)(local_8 + 0x18);
   }
-  puVar5 = param_1;
+  pcVar6 = (cMf32 *)param_1;
   for (iVar2 = 0x86; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+    *(undefined4 *)pcVar6 = 0;
+    pcVar6 = pcVar6 + 4;
   }
-  *(undefined1 *)puVar5 = 0;
-  DVar3 = FUN_00751bf0((int *)*local_8,param_1,(undefined4 *)0x0,0);
+  *pcVar6 = (cMf32)0x0;
+  DVar3 = FUN_00751bf0(*(int **)local_8,param_1,(undefined4 *)0x0,0);
   if (DVar3 == 0xfffffffc) {
     DAT_00858df8 = (undefined4 *)local_4c;
     return (undefined4 *)0x0;
   }
   DAT_00858df8 = (undefined4 *)local_4c;
-  *(undefined1 *)(*(short *)((int)param_1 + 0x16) + 0x18 + (int)param_1) = 0;
-  return param_1;
+  *(cMf32 *)((int)param_1 + *(short *)((int)param_1 + 0x16) + 0x18) = (cMf32)0x0;
+  return (undefined4 *)(cMf32 *)param_1;
 }
 

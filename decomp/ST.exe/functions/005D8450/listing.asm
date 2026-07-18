@@ -1,4 +1,4 @@
-FUN_005d8450:
+SIDTy::CreateCtrls:
 005D8450  55                        PUSH EBP
 005D8451  8B EC                     MOV EBP,ESP
 005D8453  81 EC AC 0D 00 00         SUB ESP,0xdac

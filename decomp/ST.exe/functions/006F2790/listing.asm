@@ -1,4 +1,4 @@
-FUN_006f2790:
+cMf32::RecNameGetNext:
 006F2790  55                        PUSH EBP
 006F2791  8B EC                     MOV EBP,ESP
 006F2793  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_005ae050:
+ChooseMapTy::ShowDescription:
 005AE050  55                        PUSH EBP
 005AE051  8B EC                     MOV EBP,ESP
 005AE053  81 EC FC 00 00 00         SUB ESP,0xfc

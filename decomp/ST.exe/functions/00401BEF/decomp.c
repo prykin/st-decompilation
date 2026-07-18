@@ -1,9 +1,9 @@
 
-undefined4 __thiscall thunk_FUN_0049b4c0(void *this,int param_1)
+undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  STGroupBoatC *pSVar2;
   int iVar3;
   void *this_00;
   int iVar4;
@@ -13,7 +13,7 @@ undefined4 __thiscall thunk_FUN_0049b4c0(void *this,int param_1)
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar7;
+  STGroupBoatC *pSVar7;
   uint uVar8;
   undefined4 uStack_6c;
   undefined4 auStack_68 [16];
@@ -21,7 +21,7 @@ undefined4 __thiscall thunk_FUN_0049b4c0(void *this,int param_1)
   undefined2 uStack_24;
   undefined2 uStack_22;
   undefined2 uStack_20;
-  void *pvStack_1c;
+  STGroupBoatC *pSStack_1c;
   uint uStack_18;
   uint uStack_14;
   undefined4 uStack_10;
@@ -29,12 +29,12 @@ undefined4 __thiscall thunk_FUN_0049b4c0(void *this,int param_1)
   short sStack_8;
   short sStack_6;
   
-  uStack_18 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
+  uStack_18 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   uStack_6c = DAT_00858df8;
   DAT_00858df8 = &uStack_6c;
-  pvStack_1c = this;
+  pSStack_1c = this;
   iVar3 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
-  pvVar2 = pvStack_1c;
+  pSVar2 = pSStack_1c;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_6c;
     iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x73c,0,iVar3,&DAT_007a4ccc);
@@ -47,28 +47,26 @@ undefined4 __thiscall thunk_FUN_0049b4c0(void *this,int param_1)
     return uVar5;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
-    puVar7 = (undefined4 *)((int)pvStack_1c + 0x89);
+    pSVar7 = pSStack_1c + 0x89;
     for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+      *(undefined4 *)pSVar7 = 0;
+      pSVar7 = pSVar7 + 4;
     }
     uVar8 = 0;
-    *(undefined4 *)((int)pvStack_1c + 0x222) = *(undefined4 *)((int)pvStack_1c + 0xff);
-    *(undefined4 *)((int)pvStack_1c + 0x65) = 0;
+    *(undefined4 *)(pSStack_1c + 0x222) = *(undefined4 *)(pSStack_1c + 0xff);
+    *(undefined4 *)(pSStack_1c + 0x65) = 0;
     if (uStack_18 != 0) {
       uVar6 = 0;
       do {
-        FUN_006acc70(*(int *)((int)pvVar2 + 0x29),uVar6,&uStack_14);
+        FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&uStack_14);
         if ((short)uStack_14 != -1) {
-          this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                        *(undefined1 *)((int)pvVar2 + 0x24)),
-                                               uStack_14,1);
+          this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]
+                                                       ),uStack_14,1);
           if (this_00 == (void *)0x0) {
             FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x720);
           }
           thunk_FUN_004162b0(this_00,&sStack_8,&sStack_6,&uStack_a);
-          thunk_FUN_00481520(this_00,(int)sStack_8,(int)sStack_6,
-                             *(undefined4 *)((int)pvVar2 + 0x222));
+          thunk_FUN_00481520(this_00,(int)sStack_8,(int)sStack_6,*(undefined4 *)(pSVar2 + 0x222));
           uStack_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           uStack_24 = 0xffff;
           uStack_22 = 0xffff;
@@ -90,10 +88,10 @@ undefined4 __thiscall thunk_FUN_0049b4c0(void *this,int param_1)
       uVar5 = 0;
       if (uStack_18 != 0) {
         do {
-          FUN_006acc70(*(int *)((int)pvVar2 + 0x29),uVar8,&uStack_14);
+          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar8,&uStack_14);
           if ((short)uStack_14 != -1) {
-            uVar8 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                *(undefined1 *)((int)pvVar2 + 0x24)),uStack_14,1);
+            uVar8 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
+                                       uStack_14,1);
             if (uVar8 == 0) {
               FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x732);
             }

@@ -1,4 +1,4 @@
-FUN_0053aa50:
+PlayPanelTy::ShiftControls:
 0053AA50  55                        PUSH EBP
 0053AA51  8B EC                     MOV EBP,ESP
 0053AA53  83 EC 50                  SUB ESP,0x50

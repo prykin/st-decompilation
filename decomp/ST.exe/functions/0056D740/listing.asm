@@ -1,4 +1,4 @@
-FUN_0056d740:
+STAppC::ChangeResolution:
 0056D740  55                        PUSH EBP
 0056D741  8B EC                     MOV EBP,ESP
 0056D743  81 EC B8 04 00 00         SUB ESP,0x4b8

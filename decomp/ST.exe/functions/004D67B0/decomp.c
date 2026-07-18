@@ -1,5 +1,9 @@
 
-void __thiscall FUN_004d67b0(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Artem\TLO_embryo.cpp
+   TLOBaseTy::SetActivity */
+
+void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -8,7 +12,7 @@ void __thiscall FUN_004d67b0(void *this,int param_1)
   void *unaff_ESI;
   undefined4 uVar4;
   undefined4 local_48 [16];
-  void *local_8;
+  TLOBaseTy *local_8;
   
   local_8 = this;
   iVar2 = (**(code **)(*(int *)this + 0xf8))();

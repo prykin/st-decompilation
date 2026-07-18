@@ -1,8 +1,13 @@
 
-void FUN_005baac0(char param_1,char param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\prov_obj.cpp
+   PrividerTy::SetMode */
+
+void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
 
 {
   code *pcVar1;
+  PrividerTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -37,36 +42,36 @@ void FUN_005baac0(char param_1,char param_2)
   undefined4 local_68 [7];
   undefined4 local_4c;
   undefined4 local_48 [16];
-  void *local_8;
+  PrividerTy *local_8;
   
   local_4c = DAT_00858df8;
   DAT_00858df8 = &local_4c;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = &local_264;
-    for (iVar2 = 0x7e; iVar2 != 0; iVar2 = iVar2 + -1) {
+    for (iVar2 = 0x7e; this_00 = local_8, iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
     *(undefined2 *)puVar4 = 0;
-    *(char *)((int)local_8 + 0x1a5f) = param_1;
+    this_00[0x1a5f] = (PrividerTy)param_1;
     *(undefined1 *)((int)puVar4 + 2) = 0;
     if (param_1 == '\x01') {
       local_1a1 = 0x2340;
-      if ((*(char *)((int)local_8 + 0x65) != '\x05') ||
-         (local_19d = 0, *(char *)((int)local_8 + 0x1a72) != '\0')) {
+      if ((this_00[0x65] != (PrividerTy)0x5) || (local_19d = 0, this_00[0x1a72] != (PrividerTy)0x0))
+      {
         local_19d = 1;
       }
-      local_194 = *(undefined4 *)((int)local_8 + 8);
+      local_194 = *(undefined4 *)(this_00 + 8);
       local_190 = 2;
       local_18c = 0x6943;
     }
     local_17a = 0x24bc;
-    if ((*(char *)((int)local_8 + 0x65) != '\x05') ||
-       (local_176 = 0, *(char *)((int)local_8 + 0x1a72) != '\0')) {
+    if ((this_00[0x65] != (PrividerTy)0x5) || (local_176 = 0, this_00[0x1a72] != (PrividerTy)0x0)) {
       local_176 = 1;
     }
-    local_230 = *(undefined4 *)((int)local_8 + 8);
+    local_230 = *(undefined4 *)(this_00 + 8);
     local_169 = 2;
     local_165 = 0x6952;
     if (param_1 == '\x01') {
@@ -91,7 +96,7 @@ void FUN_005baac0(char param_1,char param_2)
     }
     local_205 = 2;
     local_22c = 2;
-    iVar2 = *(int *)((int)local_8 + 0x1a5b);
+    iVar2 = *(int *)(this_00 + 0x1a5b);
     local_209 = local_230;
     local_16d = local_230;
     if (*(int *)(iVar2 + 0x2e6) != 0) {
@@ -101,16 +106,16 @@ void FUN_005baac0(char param_1,char param_2)
         puVar4 = puVar4 + 1;
       }
       *(undefined2 *)puVar4 = 0xffff;
-      thunk_FUN_005b87d0(*(void **)(iVar2 + 0x2e6),0,(int)&local_264,0,0);
-      thunk_FUN_005b9010(*(void **)(*(int *)((int)local_8 + 0x1a5b) + 0x2e6),(int)local_68);
+      MMsgTy::SetPanel(*(MMsgTy **)(iVar2 + 0x2e6),0,(int)&local_264,0,0);
+      MMsgTy::StatePanel(*(MMsgTy **)(*(int *)(this_00 + 0x1a5b) + 0x2e6),(int)local_68);
     }
-    thunk_FUN_005ba8b0(param_2);
-    *(undefined1 *)((int)local_8 + 0x65) = 3;
+    PaintPrivider(this_00,param_2);
+    this_00[0x65] = (PrividerTy)0x3;
     thunk_FUN_00568bc0(&DAT_00807658,0);
     if ((DAT_00807300._1_1_ & 8) != 0) {
       thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
     }
-    thunk_FUN_005b6730(local_8,0xb,'\0',-1);
+    thunk_FUN_005b6730(this_00,0xb,'\0',-1);
     DAT_00858df8 = (undefined4 *)local_4c;
     return;
   }

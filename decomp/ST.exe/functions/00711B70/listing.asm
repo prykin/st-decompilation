@@ -1,4 +1,4 @@
-FUN_00711b70:
+ccFntTy::WrTxt:
 00711B70  55                        PUSH EBP
 00711B71  8B EC                     MOV EBP,ESP
 00711B73  83 EC 60                  SUB ESP,0x60

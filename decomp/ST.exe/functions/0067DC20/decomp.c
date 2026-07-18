@@ -79,8 +79,8 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
     pcVar3 = pcVar3 + 1;
     pcVar10 = pcVar10 + 1;
   }
-  FUN_006f12b0(FUN_006f2d10,local_2ec);
-  pcVar3 = (char *)FUN_006f2790();
+  cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,local_2ec);
+  pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   while (pcVar3 != (char *)0x0) {
     local_8 = FUN_006f2d90(param_1,pcVar3,0,1);
     uVar7 = *(uint *)(local_8 + 0x85);
@@ -107,9 +107,9 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
         local_58 = uVar7;
         FUN_006ae1c0(local_c,(undefined4 *)local_e8);
       }
-      FUN_006f20e0((uint *)&local_8);
+      cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_8);
     }
-    pcVar3 = (char *)FUN_006f2790();
+    pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   }
   DAT_00858df8 = (undefined4 *)local_50;
   return local_c;

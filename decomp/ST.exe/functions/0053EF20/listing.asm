@@ -1,4 +1,4 @@
-FUN_0053ef20:
+ProdPanelTy::InitProdPanel:
 0053EF20  55                        PUSH EBP
 0053EF21  8B EC                     MOV EBP,ESP
 0053EF23  83 EC 54                  SUB ESP,0x54

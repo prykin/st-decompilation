@@ -1,4 +1,4 @@
-FUN_00713200:
+ccFntTy::GetFittingStr:
 00713200  55                        PUSH EBP
 00713201  8B EC                     MOV EBP,ESP
 00713203  83 EC 5C                  SUB ESP,0x5c

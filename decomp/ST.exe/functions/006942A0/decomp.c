@@ -8,6 +8,7 @@ int FUN_006942a0(void)
   undefined4 *puVar3;
   void *unaff_EDI;
   undefined4 *puVar4;
+  cMf32 *in_stack_00000004;
   undefined4 local_54;
   undefined4 local_50 [16];
   int local_10;
@@ -43,7 +44,7 @@ int FUN_006942a0(void)
     *(undefined1 *)(local_10 + 0x10) = *(undefined1 *)(local_c + 0x10);
   }
   if (local_c != 0) {
-    FUN_006f20e0(&local_c);
+    cMf32::RecMemFree(in_stack_00000004,&local_c);
   }
   return iVar1;
 }

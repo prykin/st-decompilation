@@ -39,10 +39,11 @@ void __fastcall FUN_00491720(int *param_1,undefined4 param_2)
   param_1[0x170] = 0;
   *(undefined4 *)((int)param_1 + 0x7c2) = 0;
   *(undefined4 *)((int)param_1 + 0x5a6) = 0;
-  uVar4 = thunk_FUN_00495ec0(*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
-                             *(short *)((int)param_1 + 0x5f),
-                             CONCAT31((int3)((uint)param_2 >> 8),
-                                      *(undefined1 *)((int)param_1 + 0x8e)),(int)param_1);
+  uVar4 = DumpClassC::WritePtr
+                    (*(short *)((int)param_1 + 0x5b),*(short *)((int)param_1 + 0x5d),
+                     *(short *)((int)param_1 + 0x5f),
+                     CONCAT31((int3)((uint)param_2 >> 8),*(undefined1 *)((int)param_1 + 0x8e)),
+                     (int)param_1);
   iVar3 = thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),(char)param_1[9]),
                              CONCAT22((short)((uint)uVar4 >> 0x10),(short)param_1[0xc]));
   uVar5 = thunk_FUN_00424790(iVar3);

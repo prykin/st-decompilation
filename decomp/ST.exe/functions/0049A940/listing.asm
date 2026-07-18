@@ -1,4 +1,4 @@
-FUN_0049a940:
+STGroupBoatC::GrpMove:
 0049A940  55                        PUSH EBP
 0049A941  8B EC                     MOV EBP,ESP
 0049A943  83 EC 54                  SUB ESP,0x54

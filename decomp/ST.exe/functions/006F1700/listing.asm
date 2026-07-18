@@ -1,4 +1,4 @@
-FUN_006f1700:
+cMf32::RecPutNoname:
 006F1700  55                        PUSH EBP
 006F1701  8B EC                     MOV EBP,ESP
 006F1703  83 EC 48                  SUB ESP,0x48

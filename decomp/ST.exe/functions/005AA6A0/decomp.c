@@ -1,5 +1,9 @@
 
-void FUN_005aa6a0(uint param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\hologram.cpp
+   HoloTy::OutHoloProc */
+
+void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
 
 {
   char cVar1;

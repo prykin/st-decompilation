@@ -1,4 +1,4 @@
-FUN_005be310:
+MReportTy::DoneMReport:
 005BE310  55                        PUSH EBP
 005BE311  8B EC                     MOV EBP,ESP
 005BE313  83 EC 48                  SUB ESP,0x48

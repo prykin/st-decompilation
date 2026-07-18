@@ -1,8 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 *
-thunk_FUN_005aa880(uint *param_1,uint param_2,int param_3,int param_4,uint param_5,uint param_6)
+undefined4 * __thiscall
+HoloTy::CalcHologram
+          (HoloTy *this,uint *param_1,uint param_2,int param_3,int param_4,uint param_5,uint param_6
+          )
 
 {
   code *pcVar1;

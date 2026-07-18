@@ -1,4 +1,4 @@
-FUN_0062cf90:
+STManRub3C::AddNewRub3:
 0062CF90  55                        PUSH EBP
 0062CF91  8B EC                     MOV EBP,ESP
 0062CF93  83 EC 70                  SUB ESP,0x70

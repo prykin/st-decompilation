@@ -1,4 +1,4 @@
-FUN_004fee10:
+CPanelTy::PaintInfoObj:
 004FEE10  55                        PUSH EBP
 004FEE11  8B EC                     MOV EBP,ESP
 004FEE13  83 EC 48                  SUB ESP,0x48

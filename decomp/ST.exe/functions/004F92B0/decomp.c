@@ -19,8 +19,9 @@ void FUN_004f92b0(int *param_1,undefined4 param_2)
   DAT_00858df8 = &local_50;
   iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    puVar3 = FUN_007126e0(*param_1,(uint *)s________________007c21d8,(uint *)&DAT_007c21ec,
-                          *(int *)(local_c + 0x104),0,0xffffffff,(char *)0x0,1);
+    puVar3 = ccFntTy::FormIndentSarr
+                       (*(ccFntTy **)(local_c + 0x1d0),*param_1,(uint *)s________________007c21d8,
+                        (uint *)&DAT_007c21ec,*(int *)(local_c + 0x104),0,0xffffffff,(char *)0x0,1);
     if ((byte *)*param_1 != (byte *)0x0) {
       FUN_006b5570((byte *)*param_1);
     }
@@ -46,7 +47,7 @@ void FUN_004f92b0(int *param_1,undefined4 param_2)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    FUN_00711f70(*param_1,0,-1,0,0,0);
+    ccFntTy::WrSarr(*(ccFntTy **)(local_c + 0x1d0),*param_1,0,-1,0,0,0);
     FUN_006b5570((byte *)*param_1);
     *(undefined4 *)(local_c + 0x243) = *(undefined4 *)(local_c + 0x9a0);
     *(undefined4 *)(local_c + 0x247) = param_2;

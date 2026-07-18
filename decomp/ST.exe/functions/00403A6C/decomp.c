@@ -84,13 +84,13 @@ void __fastcall thunk_FUN_005c0230(void *param_1)
   *(undefined4 *)((int)param_1 + 0x31) = *(undefined4 *)((int)param_1 + 8);
   FUN_006e6000(param_1,3,1,(undefined4 *)((int)param_1 + 0x1d));
   if (*(char *)((int)param_1 + 0x66) == '\x01') {
-    uVar1 = thunk_FUN_005c0980(1,1,0x2d,0x226,0x91,0x28,0x6201,0x6213);
+    uVar1 = MReportTy::CreateBut(param_1,1,1,0x2d,0x226,0x91,0x28,0x6201,0x6213);
     *(undefined4 *)((int)param_1 + 0x93) = uVar1;
-    uVar1 = thunk_FUN_005c0980(1,1,0x1e,0x1bd,300,0x1e,0x6202,0x6214);
+    uVar1 = MReportTy::CreateBut(param_1,1,1,0x1e,0x1bd,300,0x1e,0x6202,0x6214);
     *(undefined4 *)((int)param_1 + 0x97) = uVar1;
   }
   else {
-    uVar1 = thunk_FUN_005c0980(1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
+    uVar1 = MReportTy::CreateBut(param_1,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
     *(undefined4 *)((int)param_1 + 0x8f) = uVar1;
   }
   bVar3 = 0;
@@ -120,7 +120,7 @@ void __fastcall thunk_FUN_005c0230(void *param_1)
   uStack_24 = 0xb209;
   uStack_2c = uStack_4c;
   (**(code **)(**(int **)((int)param_1 + 0xc) + 8))(5,(int)param_1 + 0x9f,0,auStack_5c,0);
-  thunk_FUN_005c0e00();
+  MReportTy::SetCtrl(param_1);
   return;
 }
 

@@ -1,4 +1,4 @@
-FUN_005926e0:
+CampaignTy::AnimationCampaign:
 005926E0  55                        PUSH EBP
 005926E1  8B EC                     MOV EBP,ESP
 005926E3  83 EC 64                  SUB ESP,0x64

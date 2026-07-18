@@ -1,4 +1,4 @@
-FUN_0054ec20:
+PlaySystemTy::SendClientMail:
 0054EC20  55                        PUSH EBP
 0054EC21  8B EC                     MOV EBP,ESP
 0054EC23  83 EC 54                  SUB ESP,0x54

@@ -1,9 +1,10 @@
 
-void thunk_FUN_0051d360(int param_1,char param_2)
+void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
 
 {
-  char cVar1;
+  HelpPanelTy HVar1;
   code *pcVar2;
+  HelpPanelTy *this_00;
   int iVar3;
   UINT UVar4;
   int iVar5;
@@ -11,45 +12,48 @@ void thunk_FUN_0051d360(int param_1,char param_2)
   void *unaff_EDI;
   undefined4 uStack_50;
   undefined4 auStack_4c [16];
-  void *pvStack_c;
+  HelpPanelTy *pHStack_c;
   int iStack_8;
   
   iStack_8 = 0;
   uStack_50 = DAT_00858df8;
   DAT_00858df8 = &uStack_50;
+  pHStack_c = this;
   iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  this_00 = pHStack_c;
   if (iVar3 == 0) {
     if (param_2 == '\0') {
-      cVar1 = *(char *)((int)pvStack_c + 0x1a1);
-      if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
-        *(char *)((int)pvStack_c + 0x1a2) = cVar1;
-        *(undefined4 *)((int)pvStack_c + 0x1ab) = *(undefined4 *)((int)pvStack_c + 0x1a3);
+      HVar1 = pHStack_c[0x1a1];
+      if (((HVar1 == (HelpPanelTy)0x0) || (HVar1 == (HelpPanelTy)0x6)) ||
+         (HVar1 == (HelpPanelTy)0xa)) {
+        pHStack_c[0x1a2] = HVar1;
+        *(undefined4 *)(pHStack_c + 0x1ab) = *(undefined4 *)(pHStack_c + 0x1a3);
       }
       else {
-        *(undefined1 *)((int)pvStack_c + 0x1a2) = 0;
-        *(undefined4 *)((int)pvStack_c + 0x1ab) = 0;
+        pHStack_c[0x1a2] = (HelpPanelTy)0x0;
+        *(undefined4 *)(pHStack_c + 0x1ab) = 0;
       }
-      *(undefined1 *)((int)pvStack_c + 0x1a1) = 0xc;
-      *(int *)((int)pvStack_c + 0x1a3) = param_1;
-      *(undefined4 *)((int)pvStack_c + 0x1a7) = 0;
-      *(undefined2 *)((int)pvStack_c + 0x1af) = 0x23;
-      *(undefined2 *)((int)pvStack_c + 0x1b1) = 5;
-      if (*(int *)((int)pvStack_c + 0x178) != 0) {
-        *(undefined4 *)((int)pvStack_c + 0x28) = 0x4202;
-        *(undefined2 *)((int)pvStack_c + 0x2c) = 0;
-        *(undefined2 *)((int)pvStack_c + 0x2e) = 2;
-        *(int *)((int)pvStack_c + 0x30) = *(int *)((int)pvStack_c + 0x178);
+      pHStack_c[0x1a1] = (HelpPanelTy)0xc;
+      *(int *)(pHStack_c + 0x1a3) = param_1;
+      *(undefined4 *)(pHStack_c + 0x1a7) = 0;
+      *(undefined2 *)(pHStack_c + 0x1af) = 0x23;
+      *(undefined2 *)(pHStack_c + 0x1b1) = 5;
+      if (*(int *)(pHStack_c + 0x178) != 0) {
+        *(undefined4 *)(pHStack_c + 0x28) = 0x4202;
+        *(undefined2 *)(pHStack_c + 0x2c) = 0;
+        *(undefined2 *)(pHStack_c + 0x2e) = 2;
+        *(int *)(pHStack_c + 0x30) = *(int *)(pHStack_c + 0x178);
         if (DAT_00802a30 != (undefined4 *)0x0) {
-          (**(code **)*DAT_00802a30)((int)pvStack_c + 0x18);
+          (**(code **)*DAT_00802a30)(pHStack_c + 0x18);
         }
       }
     }
     UVar4 = thunk_FUN_00523410(param_1,'\0',0);
-    thunk_FUN_00515310(0x55f9,0,UVar4);
-    thunk_FUN_00515650(&iStack_8,param_1,0,0);
+    DrawTitle(this_00,0x55f9,0,UVar4);
+    DrawObj(this_00,&iStack_8,param_1,0,0);
     UVar4 = thunk_FUN_00523410(param_1,'\0',2);
-    thunk_FUN_00515c00(&iStack_8,UVar4);
-    thunk_FUN_00515e30(pvStack_c,&iStack_8,'\f',param_1,0);
+    DrawDescription(this_00,&iStack_8,UVar4);
+    AddLinks(this_00,&iStack_8,'\f',param_1,0);
     DAT_00858df8 = (undefined4 *)uStack_50;
     return;
   }

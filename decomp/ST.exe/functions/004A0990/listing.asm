@@ -1,4 +1,4 @@
-FUN_004a0990:
+STGroupBoatC::GrpRepSub:
 004A0990  55                        PUSH EBP
 004A0991  8B EC                     MOV EBP,ESP
 004A0993  81 EC 80 00 00 00         SUB ESP,0x80

@@ -1,4 +1,4 @@
-FUN_005a2380:
+FSGSTy::AddPlayer:
 005A2380  55                        PUSH EBP
 005A2381  8B EC                     MOV EBP,ESP
 005A2383  81 EC AC 00 00 00         SUB ESP,0xac

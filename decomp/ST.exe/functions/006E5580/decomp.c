@@ -1,5 +1,12 @@
 
-int FUN_006e5580(int param_1,undefined4 *param_2,int *param_3,undefined4 param_4,undefined4 param_5)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   SystemClassTy::CreateObject */
+
+int __thiscall
+SystemClassTy::CreateObject
+          (SystemClassTy *this,int param_1,undefined4 *param_2,int *param_3,undefined4 param_4,
+          undefined4 param_5)
 
 {
   code *pcVar1;
@@ -14,9 +21,11 @@ int FUN_006e5580(int param_1,undefined4 *param_2,int *param_3,undefined4 param_4
   undefined4 local_28 [4];
   undefined4 local_18;
   undefined4 local_14;
+  SystemClassTy *local_8;
   
   local_6c = DAT_00858df8;
   DAT_00858df8 = &local_6c;
+  local_8 = this;
   iVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar3 = (undefined4 *)FUN_006e54b0(param_1,param_2,param_3,param_5);

@@ -1,4 +1,4 @@
-FUN_00597e70:
+FSGSTy::SetState:
 00597E70  55                        PUSH EBP
 00597E71  8B EC                     MOV EBP,ESP
 00597E73  81 EC 6C 02 00 00         SUB ESP,0x26c

@@ -1,2 +1,2 @@
-thunk_FUN_004455c0:
+STAllPlayersC::CreateBoat:
 00404B97  E9 24 0A 04 00            JMP 0x004455c0

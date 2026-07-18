@@ -1,4 +1,4 @@
-FUN_004714d0:
+STBoatC::BackToDok:
 004714D0  55                        PUSH EBP
 004714D1  8B EC                     MOV EBP,ESP
 004714D3  51                        PUSH ECX

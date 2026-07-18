@@ -1,4 +1,4 @@
-FUN_005a1160:
+FSGSTy::CheckUpdate:
 005A1160  55                        PUSH EBP
 005A1161  8B EC                     MOV EBP,ESP
 005A1163  81 EC 8C 00 00 00         SUB ESP,0x8c

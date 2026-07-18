@@ -2,11 +2,13 @@
 void FUN_005097b0(void)
 
 {
+  CPanelTy *in_ECX;
+  
   if (DAT_0080874e == '\x03') {
-    thunk_FUN_0050c620();
+    CPanelTy::Update4PanelSI(in_ECX);
     return;
   }
-  thunk_FUN_00507f60();
+  CPanelTy::Update4PanelWB(in_ECX);
   return;
 }
 

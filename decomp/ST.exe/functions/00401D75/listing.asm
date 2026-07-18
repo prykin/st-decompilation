@@ -1,2 +1,2 @@
-thunk_FUN_0059d240:
+FSGSTy::LicCtrls:
 00401D75  E9 C6 B4 19 00            JMP 0x0059d240

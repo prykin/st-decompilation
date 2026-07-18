@@ -1,4 +1,4 @@
-FUN_0043ae40:
+STAllPlayersC::SetActivePanel:
 0043AE40  55                        PUSH EBP
 0043AE41  8B EC                     MOV EBP,ESP
 0043AE43  83 EC 0C                  SUB ESP,0xc

@@ -1,4 +1,4 @@
-FUN_005b4bb0:
+MainMenuTy::GetMessage:
 005B4BB0  55                        PUSH EBP
 005B4BB1  8B EC                     MOV EBP,ESP
 005B4BB3  81 EC 88 00 00 00         SUB ESP,0x88

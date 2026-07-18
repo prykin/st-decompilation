@@ -1,4 +1,4 @@
-FUN_005441a0:
+CursorClassTy::AddSysAcc:
 005441A0  55                        PUSH EBP
 005441A1  8B EC                     MOV EBP,ESP
 005441A3  81 EC B4 00 00 00         SUB ESP,0xb4

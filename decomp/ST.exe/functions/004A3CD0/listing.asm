@@ -1,4 +1,4 @@
-FUN_004a3cd0:
+STGroupBoatC::DistributeDock:
 004A3CD0  55                        PUSH EBP
 004A3CD1  8B EC                     MOV EBP,ESP
 004A3CD3  81 EC 84 00 00 00         SUB ESP,0x84

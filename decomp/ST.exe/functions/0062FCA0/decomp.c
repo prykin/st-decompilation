@@ -8,7 +8,7 @@ int __thiscall FUN_0062fca0(void *this,int param_1)
   int iVar4;
   undefined4 *puVar5;
   
-  iVar3 = thunk_FUN_0062ed90();
+  iVar3 = STRubbishC::RubbishCreatePart(this);
   iVar4 = *(int *)((int)this + 0x1e1);
   if (iVar3 < 0) {
     if (iVar4 == 0) {

@@ -1,7 +1,9 @@
 
-int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefined4 param_5,
-                      undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,
-                      undefined4 param_10,int param_11,int param_12)
+int __thiscall
+AiEventClassTy::__CreateObjPl
+          (AiEventClassTy *this,uint param_1,short param_2,int param_3,int param_4,
+          undefined4 param_5,undefined4 param_6,uint param_7,char *param_8,undefined4 param_9,
+          undefined4 param_10,int param_11,int param_12)
 
 {
   code *pcVar1;
@@ -33,7 +35,7 @@ int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefi
   char acStack_6e [15];
   undefined4 uStack_5f;
   undefined4 uStack_5b;
-  int iStack_38;
+  AiEventClassTy *pAStack_38;
   short asStack_34 [2];
   undefined4 uStack_30;
   int iStack_2c;
@@ -50,6 +52,7 @@ int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefi
   iStack_14 = -1;
   uStack_e8 = DAT_00858df8;
   DAT_00858df8 = &uStack_e8;
+  pAStack_38 = this;
   iVar3 = __setjmp3(auStack_e4,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_e8;
@@ -69,7 +72,7 @@ int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefi
     bVar2 = true;
   }
   uVar5 = param_7;
-  if ((bVar2) && (DAT_007fa174 != 0)) {
+  if ((bVar2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
     if (((short)param_3 < 0) || (((short)param_4 < 0 || ((short)param_5 < 0)))) {
       uVar5 = param_1 & 0xffff;
       asStack_28[0] = 7;
@@ -81,12 +84,12 @@ int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefi
       uStack_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
                            *(short *)((int)&DAT_008087ef + uVar5 * 0x51) + -3);
       thunk_FUN_006756d0((short *)&uStack_20,(short *)&uStack_30,asStack_28,asStack_1c);
-      *(int *)(iStack_38 + 0x88) = *(int *)(iStack_38 + 0x88) * 0x41c64e6d + 0x3039;
-      uStack_18 = *(int *)(iStack_38 + 0x88) * 0x41c64e6d + 0x3039;
-      *(uint *)(iStack_38 + 0x88) = uStack_18;
+      *(int *)(pAStack_38 + 0x88) = *(int *)(pAStack_38 + 0x88) * 0x41c64e6d + 0x3039;
+      uStack_18 = *(int *)(pAStack_38 + 0x88) * 0x41c64e6d + 0x3039;
+      *(uint *)(pAStack_38 + 0x88) = uStack_18;
       iVar3 = thunk_FUN_00675b10((uStack_18 >> 0x10) % (uint)(int)asStack_28[0] +
                                  (int)(short)uStack_20,
-                                 (*(uint *)(iStack_38 + 0x88) >> 0x10) % (uint)(int)asStack_1c[0] +
+                                 (*(uint *)(pAStack_38 + 0x88) >> 0x10) % (uint)(int)asStack_1c[0] +
                                  (int)(short)uStack_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }
@@ -157,7 +160,7 @@ int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefi
         iStack_76 = 0;
       }
       uStack_5b = 1;
-      thunk_FUN_004455c0(auStack_a4);
+      STAllPlayersC::CreateBoat(DAT_007fa174,auStack_a4);
       iStack_14 = 0;
     }
   }
@@ -167,7 +170,7 @@ int thunk_FUN_0064d270(uint param_1,short param_2,int param_3,int param_4,undefi
   else {
     bVar2 = true;
   }
-  if ((bVar2) && (DAT_007fa174 != 0)) {
+  if ((bVar2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
     iStack_8 = (int)(short)param_3;
     iStack_c = (int)(short)param_4;
     iStack_10 = (int)(short)param_5;

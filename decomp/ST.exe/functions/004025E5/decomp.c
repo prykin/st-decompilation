@@ -1,11 +1,13 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-undefined4 thunk_FUN_0062f3b0(void *param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+undefined4 __thiscall
+STRubbishC::LoadImagSpr
+          (STRubbishC *this,void *param_1,int *param_2,undefined4 param_3,undefined4 param_4)
 
 {
   code *pcVar1;
-  void *this;
+  STT3DSprC *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
@@ -14,7 +16,7 @@ undefined4 thunk_FUN_0062f3b0(void *param_1,int *param_2,undefined4 param_3,unde
   undefined4 ***pppuStack_5c;
   undefined4 auStack_58 [16];
   undefined4 uStack_18;
-  void *pvStack_14;
+  STT3DSprC *pSStack_14;
   int iStack_10;
   int iStack_c;
   undefined **ppuStack_8;
@@ -51,25 +53,25 @@ LAB_0062f450:
     iStack_10 = *(int *)(&DAT_007d1580 + *param_2 * 8);
     iStack_c = *(int *)(&DAT_007d1584 + *param_2 * 8);
   }
-  pvStack_14 = param_1;
+  pSStack_14 = param_1;
   if (param_1 == (void *)0x0) {
     return 0xffffffff;
   }
   pppuStack_5c = DAT_00858df8;
   DAT_00858df8 = &pppuStack_5c;
   iVar2 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
-  this = pvStack_14;
+  this_00 = pSStack_14;
   if (iVar2 == 0) {
-    iVar2 = thunk_FUN_004ad1f0(DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    iVar2 = STT3DSprC::Init(pSStack_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
       FUN_006a5e40(-1,DAT_007ed77c,0x7d1798,0x17b);
       return 0xffff;
     }
-    iVar2 = thunk_FUN_004ab880(0xe,DAT_00806774,ppuStack_8[*param_2],0x1d);
+    iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,ppuStack_8[*param_2],0x1d);
     if (iVar2 == 0) {
-      thunk_FUN_004abe40(this,'\x0e',param_2[6]);
-      thunk_FUN_004ad380(this,iStack_10 / 2,iStack_c / 2 - 0xe);
-      thunk_FUN_004ad3c0(this,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
+      thunk_FUN_004abe40(this_00,'\x0e',param_2[6]);
+      thunk_FUN_004ad380(this_00,iStack_10 / 2,iStack_c / 2 - 0xe);
+      thunk_FUN_004ad3c0(this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[5] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       DAT_00858df8 = (undefined4 ****)pppuStack_5c;

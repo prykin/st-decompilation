@@ -131,15 +131,17 @@ thunk_FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *p
                     sVar4 = (short)uStack_14 + (short)*puVar8;
                     sStack_56 = (short)uStack_18 - sStack_56;
                     if (*(int *)((int)this + 0x736) == 0) {
-                      iVar9 = thunk_FUN_0041f9b0((short)iStack_28,sVar3,(short)iStack_24,sVar4,
-                                                 sStack_56,(short)param_1,
-                                                 *(int *)((int)this + 0x79a),(int *)&pvStack_1c,0);
+                      iVar9 = STSprGameObjC::CheckRay
+                                        (this,(short)iStack_28,sVar3,(short)iStack_24,sVar4,
+                                         sStack_56,(short)param_1,*(int *)((int)this + 0x79a),
+                                         (int *)&pvStack_1c,0);
                       if ((iVar9 == 0) && (pvStack_1c != pvStack_10)) break;
                     }
                     else {
-                      iVar9 = thunk_FUN_0041f9b0((short)iStack_28,sVar3,(short)iStack_24,sVar4,
-                                                 sStack_56,(short)param_1,
-                                                 *(int *)((int)this + 0x79a),(int *)&pvStack_1c,1);
+                      iVar9 = STSprGameObjC::CheckRay
+                                        (this,(short)iStack_28,sVar3,(short)iStack_24,sVar4,
+                                         sStack_56,(short)param_1,*(int *)((int)this + 0x79a),
+                                         (int *)&pvStack_1c,1);
                       if ((iVar9 == 0) && (pvStack_1c != pvStack_10)) break;
                     }
                     iStack_2c = iStack_2c + 1;

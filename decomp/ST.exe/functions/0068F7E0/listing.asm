@@ -1,4 +1,4 @@
-FUN_0068f7e0:
+AiTactClassTy::InitDistrObj:
 0068F7E0  55                        PUSH EBP
 0068F7E1  8B EC                     MOV EBP,ESP
 0068F7E3  83 EC 4C                  SUB ESP,0x4c

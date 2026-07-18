@@ -1,4 +1,4 @@
-FUN_00540a60:
+StartServTy::WrSarrDDX:
 00540A60  55                        PUSH EBP
 00540A61  8B EC                     MOV EBP,ESP
 00540A63  83 EC 4C                  SUB ESP,0x4c

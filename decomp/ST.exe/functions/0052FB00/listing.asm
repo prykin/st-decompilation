@@ -1,4 +1,4 @@
-FUN_0052fb00:
+OptPanelTy::SetOptControls:
 0052FB00  55                        PUSH EBP
 0052FB01  8B EC                     MOV EBP,ESP
 0052FB03  B8 44 1C 00 00            MOV EAX,0x1c44

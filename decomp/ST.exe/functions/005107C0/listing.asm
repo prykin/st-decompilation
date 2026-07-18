@@ -1,4 +1,4 @@
-FUN_005107c0:
+FrmPanelTy::GetMessage:
 005107C0  55                        PUSH EBP
 005107C1  8B EC                     MOV EBP,ESP
 005107C3  83 EC 5C                  SUB ESP,0x5c

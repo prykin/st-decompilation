@@ -1,4 +1,4 @@
-FUN_005d1400:
+SettMapMTy::GetMessage:
 005D1400  55                        PUSH EBP
 005D1401  8B EC                     MOV EBP,ESP
 005D1403  81 EC 7C 06 00 00         SUB ESP,0x67c

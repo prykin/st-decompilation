@@ -1,4 +1,4 @@
-FUN_00538690:
+PanelTy::CreateBut:
 00538690  55                        PUSH EBP
 00538691  8B EC                     MOV EBP,ESP
 00538693  81 EC CC 01 00 00         SUB ESP,0x1cc

@@ -1,4 +1,4 @@
-FUN_004ffe90:
+CPanelTy::Update5Panel:
 004FFE90  55                        PUSH EBP
 004FFE91  8B EC                     MOV EBP,ESP
 004FFE93  81 EC 84 00 00 00         SUB ESP,0x84

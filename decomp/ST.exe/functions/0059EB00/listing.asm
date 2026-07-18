@@ -1,4 +1,4 @@
-FUN_0059eb00:
+FSGSTy::JoinGameCtrls:
 0059EB00  55                        PUSH EBP
 0059EB01  8B EC                     MOV EBP,ESP
 0059EB03  81 EC A8 0D 00 00         SUB ESP,0xda8

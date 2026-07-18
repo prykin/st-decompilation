@@ -1,4 +1,4 @@
-FUN_00552e40:
+UpgPanelTy::GetMessage:
 00552E40  55                        PUSH EBP
 00552E41  8B EC                     MOV EBP,ESP
 00552E43  83 EC 48                  SUB ESP,0x48

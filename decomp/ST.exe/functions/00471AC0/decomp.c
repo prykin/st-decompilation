@@ -53,7 +53,7 @@ int __thiscall FUN_00471ac0(void *this,int param_1)
   undefined2 local_30;
   int local_2c [2];
   uint local_24;
-  void *local_20;
+  STTorpC *local_20;
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -455,7 +455,7 @@ switchD_0047251b_caseD_2:
     if ((iVar8 != 0) && (uVar9 = 0, iVar10 = DAT_007fa134, iVar8 != 0)) {
       while (0 < iVar10) {
         FUN_006acc70(DAT_007fa130,uVar9,&local_20);
-        if (local_20 != (void *)0x0) {
+        if (local_20 != (STTorpC *)0x0) {
           iVar10 = iVar10 + -1;
           thunk_FUN_004162b0(local_20,(undefined2 *)((int)&local_10 + 2),&local_c,&local_a);
           local_2c[0] = FUN_006aadd0((int)*(short *)((int)this + 0x47),
@@ -463,19 +463,19 @@ switchD_0047251b_caseD_2:
                                      (int)*(short *)((int)this + 0x4b),(int)local_10._2_2_,
                                      (int)local_c,(int)local_a);
           if ((local_2c[0] <= *(int *)((int)this + 0x80c) / 0xc9 + 1) &&
-             (iVar8 = thunk_FUN_00645020(local_20,*(int *)((int)this + 0x18),&local_24), iVar8 != 2)
-             ) {
+             (iVar8 = STTorpC::IsDangerous(local_20,*(int *)((int)this + 0x18),&local_24),
+             iVar8 != 2)) {
             if (iVar8 == 0) {
               iVar8 = thunk_FUN_004838e0(this,(int)local_20);
               if (iVar8 == 1) {
-                thunk_FUN_006451b0(*(undefined4 *)((int)this + 0x18),&local_24);
+                STTorpC::SetDangerous(local_20,*(undefined4 *)((int)this + 0x18),&local_24);
 LAB_00471cbd:
                 iVar8 = thunk_FUN_00483e30(this,(int)local_20);
                 if (iVar8 == 1) {
-                  thunk_FUN_006452a0(*(int *)((int)this + 0x18),local_24);
-                  *(void **)((int)this + 0x46b) = local_20;
-                  *(undefined2 *)((int)this + 0x46f) = *(undefined2 *)((int)local_20 + 0x26e);
-                  uVar4 = *(undefined4 *)((int)local_20 + 0x18);
+                  STTorpC::ClearDangerous(local_20,*(int *)((int)this + 0x18),local_24);
+                  *(STTorpC **)((int)this + 0x46b) = local_20;
+                  *(undefined2 *)((int)this + 0x46f) = *(undefined2 *)(local_20 + 0x26e);
+                  uVar4 = *(undefined4 *)(local_20 + 0x18);
                   *(undefined4 *)((int)this + 0x471) = uVar4;
                   sVar3 = *(short *)((int)this + 0x4b);
                   uVar4 = CONCAT22((short)((uint)uVar4 >> 0x10),sVar3);
@@ -562,7 +562,7 @@ LAB_00471ec9:
                 }
               }
               else {
-                thunk_FUN_006452a0(*(int *)((int)this + 0x18),local_24);
+                STTorpC::ClearDangerous(local_20,*(int *)((int)this + 0x18),local_24);
               }
             }
             else if (iVar8 == 1) goto LAB_00471cbd;

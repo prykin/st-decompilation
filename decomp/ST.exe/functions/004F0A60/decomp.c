@@ -10,7 +10,7 @@ void __fastcall FUN_004f0a60(int param_1)
   }
   *(undefined4 *)(param_1 + 0x292) = 0;
   if (*(int *)(param_1 + 0x27a) != 0) {
-    FUN_006f20e0((uint *)(param_1 + 0x27a));
+    cMf32::RecMemFree(DAT_00806790,(uint *)(param_1 + 0x27a));
   }
   puVar1 = (undefined4 *)(param_1 + 0x27e);
   iVar2 = 5;

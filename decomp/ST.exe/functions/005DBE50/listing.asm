@@ -1,4 +1,4 @@
-FUN_005dbe50:
+StartSystemTy::OutBmpProc:
 005DBE50  55                        PUSH EBP
 005DBE51  8B EC                     MOV EBP,ESP
 005DBE53  83 EC 44                  SUB ESP,0x44

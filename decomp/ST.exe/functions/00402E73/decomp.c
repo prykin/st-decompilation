@@ -35,7 +35,7 @@ int __thiscall thunk_FUN_00607200(void *this,int param_1,int param_2,int param_3
   uint uStack_2c;
   byte bStack_27;
   int iStack_26;
-  int iStack_20;
+  undefined4 *puStack_20;
   int iStack_1c;
   uint *puStack_18;
   int iStack_14;
@@ -50,7 +50,7 @@ int __thiscall thunk_FUN_00607200(void *this,int param_1,int param_2,int param_3
   *(uint *)((int)this + 0x1c) = uVar1;
   iVar6 = (uVar1 >> 0x10) % (iStack_6c + 1U) + 9;
   iStack_c = iVar6;
-  iVar2 = thunk_FUN_006041a0(iVar6);
+  iVar2 = STExplosionC::CreateGroupPart(this,iVar6);
   *(int *)((int)this + 0x269) = iVar2;
   if (iVar2 != iVar6) {
     return -1;
@@ -179,7 +179,7 @@ LAB_006074c8:
   iStack_8 = 0;
   if (0 < iStack_c) {
     puStack_18 = auStack_10c;
-    iStack_20 = (int)this + 0x219;
+    puStack_20 = (undefined4 *)((int)this + 0x219);
     do {
       iVar2 = iStack_8;
       puVar8 = auStack_68;
@@ -246,7 +246,7 @@ LAB_006074c8:
         uStack_3c = (uVar4 >> 0x10) % 0x1f;
         iVar2 = 0x82;
       }
-      iVar6 = iStack_20;
+      puVar8 = puStack_20;
       iStack_44 = uVar1 + param_2;
       iStack_48 = uVar5 + param_1;
       uStack_3c = iVar2 - uStack_3c;
@@ -303,10 +303,10 @@ LAB_006074c8:
         }
       }
       puStack_a8 = auStack_68;
-      thunk_FUN_00627eb0((int)auStack_bc);
+      STParticleC::GetMessage((STParticleC *)*puStack_20,(int)auStack_bc);
       iStack_8 = iStack_8 + 1;
       puStack_18 = puStack_18 + 1;
-      iStack_20 = iVar6 + 4;
+      puStack_20 = puVar8 + 1;
     } while (iStack_8 < iStack_c);
   }
   return iStack_c;

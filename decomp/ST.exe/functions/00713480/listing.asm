@@ -1,4 +1,4 @@
-FUN_00713480:
+ccFntTy::CreateTypeSSpr:
 00713480  55                        PUSH EBP
 00713481  8B EC                     MOV EBP,ESP
 00713483  81 EC E0 00 00 00         SUB ESP,0xe0

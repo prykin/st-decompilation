@@ -1,4 +1,4 @@
-FUN_006f1910:
+cMf32::RecRen:
 006F1910  55                        PUSH EBP
 006F1911  8B EC                     MOV EBP,ESP
 006F1913  83 EC 54                  SUB ESP,0x54

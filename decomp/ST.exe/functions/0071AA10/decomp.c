@@ -28,7 +28,7 @@ uint * __cdecl FUN_0071aa10(int param_1,char *param_2,int param_3)
       return puVar4;
     }
     if (local_8 != (uint *)0x0) {
-      FUN_006f20e0((uint *)&local_8);
+      cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_8);
     }
     if (local_c != (uint *)0x0) {
       FUN_006b5570((byte *)local_c);
@@ -47,7 +47,7 @@ uint * __cdecl FUN_0071aa10(int param_1,char *param_2,int param_3)
   puVar4 = FUN_006c8680((uint *)0x0,local_8);
   if (local_8 != (uint *)0x0) {
     local_c = puVar4;
-    FUN_006f20e0((uint *)&local_8);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_8);
   }
   DAT_00858df8 = (undefined4 *)local_50;
   return puVar4;

@@ -1,4 +1,4 @@
-FUN_005044b0:
+CPanelTy::PaintMineInf:
 005044B0  55                        PUSH EBP
 005044B1  8B EC                     MOV EBP,ESP
 005044B3  83 EC 50                  SUB ESP,0x50

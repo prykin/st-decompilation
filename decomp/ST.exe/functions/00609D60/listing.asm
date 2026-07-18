@@ -1,4 +1,4 @@
-FUN_00609d60:
+STFieldC::LoadImagSpr:
 00609D60  55                        PUSH EBP
 00609D61  8B EC                     MOV EBP,ESP
 00609D63  83 EC 50                  SUB ESP,0x50

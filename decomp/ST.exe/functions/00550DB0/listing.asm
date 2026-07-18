@@ -1,4 +1,4 @@
-FUN_00550db0:
+TradePanelTy::InitTradePanel:
 00550DB0  55                        PUSH EBP
 00550DB1  8B EC                     MOV EBP,ESP
 00550DB3  81 EC DC 05 00 00         SUB ESP,0x5dc

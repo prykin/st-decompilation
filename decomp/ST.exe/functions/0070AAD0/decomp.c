@@ -1,5 +1,5 @@
 
-undefined4 * __cdecl FUN_0070aad0(undefined4 param_1,char *param_2,int param_3)
+undefined4 * __cdecl FUN_0070aad0(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;
@@ -32,7 +32,7 @@ undefined4 * __cdecl FUN_0070aad0(undefined4 param_1,char *param_2,int param_3)
     if (local_10 != (undefined4 *)0x0) {
       FUN_006c6fc0(local_10);
     }
-    FUN_006f20e0(&local_c);
+    cMf32::RecMemFree(param_1,&local_c);
     if (local_8 != (undefined4 *)0x0) {
       FUN_006ab060(&local_8);
     }
@@ -50,7 +50,7 @@ undefined4 * __cdecl FUN_0070aad0(undefined4 param_1,char *param_2,int param_3)
   if (piVar3 != (int *)0x0) {
     FUN_006c6fc0(piVar3);
   }
-  FUN_006f20e0(&local_c);
+  cMf32::RecMemFree(param_1,&local_c);
   DAT_00858df8 = (undefined4 *)local_54;
   return local_8;
 }

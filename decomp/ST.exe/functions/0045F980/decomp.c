@@ -47,10 +47,11 @@ undefined4 __fastcall FUN_0045f980(int *param_1)
                                CONCAT31((int3)((uint)uVar3 >> 8),
                                         *(undefined1 *)((int)param_1 + 0x8e)),(int)param_1);
     if ((iVar2 == 0) &&
-       (iVar2 = thunk_FUN_00495ec0((short)local_8,(short)local_c,(short)local_10,
-                                   CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                            *(undefined1 *)((int)param_1 + 0x8e)),(int)param_1),
-       iVar2 == 0)) {
+       (iVar2 = DumpClassC::WritePtr
+                          ((short)local_8,(short)local_c,(short)local_10,
+                           CONCAT31((int3)((uint)extraout_EDX >> 8),
+                                    *(undefined1 *)((int)param_1 + 0x8e)),(int)param_1), iVar2 == 0)
+       ) {
       thunk_FUN_0041c3f0(param_1,*(undefined **)((int)param_1 + 0x70a));
       thunk_FUN_004168b0((int)param_1);
       return 0;

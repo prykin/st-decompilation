@@ -1,4 +1,4 @@
-FUN_00533d10:
+OptPanelTy::GetMessage:
 00533D10  55                        PUSH EBP
 00533D11  8B EC                     MOV EBP,ESP
 00533D13  81 EC 64 02 00 00         SUB ESP,0x264

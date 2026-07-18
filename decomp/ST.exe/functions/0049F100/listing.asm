@@ -1,4 +1,4 @@
-FUN_0049f100:
+STGroupBoatC::Capture:
 0049F100  55                        PUSH EBP
 0049F101  8B EC                     MOV EBP,ESP
 0049F103  81 EC 98 00 00 00         SUB ESP,0x98

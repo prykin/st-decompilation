@@ -1,4 +1,4 @@
-FUN_00449ce0:
+STAllPlayersC::RegisterArtefact:
 00449CE0  55                        PUSH EBP
 00449CE1  8B EC                     MOV EBP,ESP
 00449CE3  83 EC 48                  SUB ESP,0x48

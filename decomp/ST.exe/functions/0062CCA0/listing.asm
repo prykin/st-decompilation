@@ -1,4 +1,4 @@
-FUN_0062cca0:
+STManRub3C::GetMessage:
 0062CCA0  55                        PUSH EBP
 0062CCA1  8B EC                     MOV EBP,ESP
 0062CCA3  83 EC 54                  SUB ESP,0x54

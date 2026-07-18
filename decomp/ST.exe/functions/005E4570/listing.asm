@@ -1,4 +1,4 @@
-FUN_005e4570:
+MTaskTy::GetMessage:
 005E4570  55                        PUSH EBP
 005E4571  8B EC                     MOV EBP,ESP
 005E4573  83 EC 64                  SUB ESP,0x64

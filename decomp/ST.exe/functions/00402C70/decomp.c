@@ -1,9 +1,9 @@
 
-void __thiscall thunk_FUN_005a1430(void *this,undefined4 param_1,undefined4 param_2)
+void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 param_2)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  FSGSTy *pFVar2;
   int iVar3;
   undefined4 *puVar4;
   undefined4 uVar5;
@@ -15,17 +15,17 @@ void __thiscall thunk_FUN_005a1430(void *this,undefined4 param_1,undefined4 para
   void *unaff_EDI;
   undefined4 *puStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  FSGSTy *pFStack_8;
   
-  if (((*(char *)((int)this + 0x1a5f) == '\x01') && (*(int *)((int)this + 0x1ac0) != 0)) &&
-     (-1 < *(int *)((int)this + 0x1abc))) {
+  if (((this[0x1a5f] == (FSGSTy)0x1) && (*(int *)(this + 0x1ac0) != 0)) &&
+     (-1 < *(int *)(this + 0x1abc))) {
     puStack_4c = DAT_00858df8;
     DAT_00858df8 = &puStack_4c;
-    pvStack_8 = this;
+    pFStack_8 = this;
     iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-    pvVar2 = pvStack_8;
+    pFVar2 = pFStack_8;
     if (iVar3 == 0) {
-      iVar3 = *(int *)((int)pvStack_8 + 0x1ac0);
+      iVar3 = *(int *)(pFStack_8 + 0x1ac0);
       uVar9 = *(uint *)(iVar3 + 0x14);
       if (uVar9 == 0) {
         uVar9 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -40,12 +40,13 @@ void __thiscall thunk_FUN_005a1430(void *this,undefined4 param_1,undefined4 para
         *(undefined1 *)puVar4 = 0xff;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      FUN_00710a90(*(int *)((int)pvVar2 + 0x1ac0),0,0,0x16,0x1b8,0xf0);
+      ccFntTy::SetSurf(*(ccFntTy **)(pFVar2 + 0x1a73),*(int *)(pFVar2 + 0x1ac0),0,0,0x16,0x1b8,0xf0)
+      ;
       uVar5 = FUN_006b0140(0x25bb,DAT_00807618);
       uVar6 = FUN_006b0140(0x25ba,DAT_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_____d__s__007cc434,uVar6,param_1,param_2,uVar5);
-      FUN_00711b70(&DAT_0080f33a,-2,-1,2,-1,-1);
-      FUN_006b35d0(DAT_008075a8,*(uint *)((int)pvVar2 + 0x1abc));
+      ccFntTy::WrTxt(*(ccFntTy **)(pFVar2 + 0x1a73),&DAT_0080f33a,-2,-1,2,-1,-1);
+      FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
       DAT_00858df8 = puStack_4c;
       return;
     }

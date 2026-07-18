@@ -1,4 +1,4 @@
-FUN_006451b0:
+STTorpC::SetDangerous:
 006451B0  55                        PUSH EBP
 006451B1  8B EC                     MOV EBP,ESP
 006451B3  83 EC 50                  SUB ESP,0x50

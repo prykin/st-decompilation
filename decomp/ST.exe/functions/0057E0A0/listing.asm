@@ -1,4 +1,4 @@
-FUN_0057e0a0:
+STDcResourcC::GetMessage:
 0057E0A0  55                        PUSH EBP
 0057E0A1  8B EC                     MOV EBP,ESP
 0057E0A3  83 EC 64                  SUB ESP,0x64

@@ -1,4 +1,4 @@
-FUN_005de270:
+StartSystemTy::CreateChatView:
 005DE270  55                        PUSH EBP
 005DE271  8B EC                     MOV EBP,ESP
 005DE273  81 EC C0 08 00 00         SUB ESP,0x8c0

@@ -1,4 +1,4 @@
-FUN_005b3c30:
+MainMenuTy::CloseButtons:
 005B3C30  55                        PUSH EBP
 005B3C31  8B EC                     MOV EBP,ESP
 005B3C33  83 EC 48                  SUB ESP,0x48

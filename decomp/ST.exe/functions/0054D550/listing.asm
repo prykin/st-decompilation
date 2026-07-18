@@ -1,4 +1,4 @@
-FUN_0054d550:
+STPlaySystemC::SaveObjData:
 0054D550  55                        PUSH EBP
 0054D551  8B EC                     MOV EBP,ESP
 0054D553  83 EC 48                  SUB ESP,0x48

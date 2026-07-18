@@ -1,4 +1,4 @@
-FUN_005b3160:
+MainMenuTy::PaintMainMenu:
 005B3160  55                        PUSH EBP
 005B3161  8B EC                     MOV EBP,ESP
 005B3163  83 EC 48                  SUB ESP,0x48

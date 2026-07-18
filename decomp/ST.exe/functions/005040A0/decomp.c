@@ -1,47 +1,54 @@
 
-void FUN_005040a0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\cpanel3.cpp
+   CPanelTy::PaintMap */
+
+void __thiscall CPanelTy::PaintMap(CPanelTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
-  uint *puVar3;
+  CPanelTy *pCVar2;
+  int iVar3;
+  uint *puVar4;
   void *unaff_ESI;
-  int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
-  undefined4 uVar8;
+  int iVar8;
+  undefined4 uVar9;
   undefined4 local_48 [16];
-  int local_8;
+  CPanelTy *local_8;
   
-  uVar8 = DAT_00858df8;
+  uVar9 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar8);
-  if (iVar2 == 0) {
+  local_8 = this;
+  iVar3 = __setjmp3(local_48,0,unaff_ESI,uVar9);
+  pCVar2 = local_8;
+  if (iVar3 == 0) {
     thunk_FUN_00540760(*(undefined4 **)(local_8 + 400),0,0,'\x01',*(byte **)(local_8 + 0x994));
-    FUN_00710a90(*(int *)(local_8 + 400),0,5,6,0x2a,10);
+    ccFntTy::SetSurf(*(ccFntTy **)(pCVar2 + 0x1b8),*(int *)(pCVar2 + 400),0,5,6,0x2a,10);
+    iVar8 = -1;
     iVar7 = -1;
+    iVar3 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
     iVar6 = -1;
-    iVar2 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
-    iVar5 = -1;
-    iVar4 = -2;
-    puVar3 = (uint *)FUN_006b0140(0x2712,DAT_00807618);
-    FUN_00711b70(puVar3,iVar4,iVar5,iVar2,iVar6,iVar7);
-    if (-1 < (int)*(uint *)(local_8 + 0x158)) {
-      FUN_006b3640(DAT_008075a8,*(uint *)(local_8 + 0x158),0xffffffff,*(uint *)(local_8 + 0x4c),
-                   *(uint *)(local_8 + 0xa4));
+    iVar5 = -2;
+    puVar4 = (uint *)FUN_006b0140(0x2712,DAT_00807618);
+    ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),puVar4,iVar5,iVar6,iVar3,iVar7,iVar8);
+    if (-1 < (int)*(uint *)(pCVar2 + 0x158)) {
+      FUN_006b3640(DAT_008075a8,*(uint *)(pCVar2 + 0x158),0xffffffff,*(uint *)(pCVar2 + 0x4c),
+                   *(uint *)(pCVar2 + 0xa4));
     }
-    DAT_00858df8 = (undefined1 *)uVar8;
+    DAT_00858df8 = (undefined1 *)uVar9;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar8;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x13,0,iVar2,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  DAT_00858df8 = (undefined1 *)uVar9;
+  iVar5 = FUN_006ad4d0(s_E____titans_Andrey_cpanel3_cpp_007c26a0,0x13,0,iVar3,&DAT_007a4ccc);
+  if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c26a0,0x13);
+  FUN_006a5e40(iVar3,0,0x7c26a0,0x13);
   return;
 }
 

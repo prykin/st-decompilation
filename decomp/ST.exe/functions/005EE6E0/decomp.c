@@ -3,7 +3,7 @@ undefined4 __fastcall FUN_005ee6e0(int *param_1)
 
 {
   uint uVar1;
-  void *this;
+  STT3DSprC *this;
   bool bVar2;
   undefined3 extraout_var;
   int iVar3;
@@ -165,12 +165,12 @@ LAB_005eeddf:
       if (*(int *)((int)param_1 + 0x2d2) < 0) goto LAB_005eeddf;
     }
     else {
-      this = (void *)((int)param_1 + 0x1d5);
+      this = (STT3DSprC *)((int)param_1 + 0x1d5);
       iVar3 = thunk_FUN_004ac910(this,'\b');
       if (iVar3 == 1) {
-        thunk_FUN_004ac410(0xf);
-        thunk_FUN_004ac410(0);
-        thunk_FUN_004ac410(1);
+        STT3DSprC::StopShow(this,0xf);
+        STT3DSprC::StopShow(this,0);
+        STT3DSprC::StopShow(this,1);
       }
       if (iVar3 == *(int *)(&DAT_007cdf52 + (uint)*(byte *)((int)param_1 + 0x2df) * 0x32)) {
         iVar4 = thunk_FUN_00495ff0(*(short *)((int)param_1 + 0x242),(short)param_1[0x91],
@@ -178,7 +178,7 @@ LAB_005eeddf:
         if (iVar4 == 0) {
           *(char *)((int)param_1 + 0x252) = *(char *)((int)param_1 + 0x252) + -1;
         }
-        thunk_FUN_004ac410(0xe);
+        STT3DSprC::StopShow(this,0xe);
         if ((*(char *)((int)param_1 + 0x315) == '\x04') ||
            (*(char *)((int)param_1 + 0x315) == '\x02')) {
           uVar6 = 0xffffffff;
@@ -190,17 +190,22 @@ LAB_005eeddf:
                              (int)(short)param_1[0x1b],uVar5,uVar6);
         }
         if (*(int *)((int)param_1 + 0x231) == 0xfd) {
-          if (DAT_007fa174 != 0) {
+          if (DAT_007fa174 != (STAllPlayersC *)0x0) {
             thunk_FUN_005f0d00((int)param_1);
-            iVar4 = thunk_FUN_00449e60(CONCAT22(extraout_var_01,*(undefined2 *)((int)param_1 + 0x32)
-                                               ),(uint)param_1);
+            iVar4 = STAllPlayersC::UnRegisterArtefact
+                              (DAT_007fa174,
+                               CONCAT22(extraout_var_01,*(undefined2 *)((int)param_1 + 0x32)),
+                               (uint)param_1);
             goto joined_r0x005eed0b;
           }
         }
-        else if ((*(int *)((int)param_1 + 0x231) == 0xfe) && (DAT_007fa174 != 0)) {
+        else if ((*(int *)((int)param_1 + 0x231) == 0xfe) && (DAT_007fa174 != (STAllPlayersC *)0x0))
+        {
           thunk_FUN_005f0d90((int)param_1);
-          iVar4 = thunk_FUN_0044a730(CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x32)),
-                                     (uint)param_1);
+          iVar4 = STAllPlayersC::UnRegisterContainer
+                            (DAT_007fa174,
+                             CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x32)),
+                             (uint)param_1);
 joined_r0x005eed0b:
           if (iVar4 != 0) {
             *(undefined4 *)((int)param_1 + 0x23a) = 6;
@@ -214,12 +219,12 @@ joined_r0x005eed0b:
         thunk_FUN_004ad5e0((int)this);
       }
       if (iVar3 == *(int *)(&DAT_007cdf5a + (uint)*(byte *)((int)param_1 + 0x2df) * 0x32)) {
-        thunk_FUN_004ac1a0(9,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(this,9,*(undefined4 *)(DAT_00802a38 + 0xe4));
       }
       iVar4 = (uint)*(byte *)((int)param_1 + 0x2df) * 0x32;
       if ((*(int *)(&DAT_007cdf5a + iVar4) < iVar3) &&
          (iVar3 == *(int *)(&DAT_007cdf4e + iVar4) + -1)) {
-        thunk_FUN_004ac410(8);
+        STT3DSprC::StopShow(this,8);
       }
       iVar3 = thunk_FUN_004ac910(this,'\t');
       if (iVar3 == *(int *)(&DAT_007cdf5e + (uint)*(byte *)((int)param_1 + 0x2df) * 0x32))

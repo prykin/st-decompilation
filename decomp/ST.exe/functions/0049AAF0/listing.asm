@@ -1,4 +1,4 @@
-FUN_0049aaf0:
+STGroupBoatC::GrpAttack:
 0049AAF0  55                        PUSH EBP
 0049AAF1  8B EC                     MOV EBP,ESP
 0049AAF3  83 EC 6C                  SUB ESP,0x6c

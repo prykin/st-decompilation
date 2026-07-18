@@ -1,4 +1,4 @@
-FUN_0043e4e0:
+STAllPlayersC::GetObjsList:
 0043E4E0  55                        PUSH EBP
 0043E4E1  8B EC                     MOV EBP,ESP
 0043E4E3  83 EC 54                  SUB ESP,0x54

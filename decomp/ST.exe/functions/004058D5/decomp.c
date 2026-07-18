@@ -1,5 +1,5 @@
 
-void thunk_FUN_005907d0(void)
+void __thiscall MAdvTy::NoneMAdv(MAdvTy *this)
 
 {
   code *pcVar1;

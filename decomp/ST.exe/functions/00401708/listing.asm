@@ -1,2 +1,2 @@
-thunk_FUN_0048d130:
+STBoatC::SetNewMD:
 00401708  E9 23 BA 08 00            JMP 0x0048d130

@@ -1,8 +1,13 @@
 
-undefined4 FUN_00423b50(int param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\tc_grp.cpp
+   STGroupC::AddObjs */
+
+undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,int param_1,int param_2)
 
 {
   code *pcVar1;
+  STGroupC *this_00;
   uint uVar2;
   int iVar3;
   int iVar4;
@@ -13,15 +18,17 @@ undefined4 FUN_00423b50(int param_1,int param_2)
   void *unaff_EDI;
   undefined4 local_54;
   undefined4 local_50 [16];
-  void *local_10;
+  STGroupC *local_10;
   uint local_c;
   uint local_8;
   
   local_c = *(uint *)(param_1 + 0xc);
   local_54 = DAT_00858df8;
   DAT_00858df8 = &local_54;
+  local_10 = this;
   iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
   uVar2 = local_c;
+  this_00 = local_10;
   if (iVar3 != 0) {
     DAT_00858df8 = (undefined4 *)local_54;
     iVar4 = FUN_006ad4d0(s_E____titans_wlad_tc_grp_cpp_007a50a4,0xf8,0,iVar3,&DAT_007a4ccc);
@@ -41,7 +48,7 @@ undefined4 FUN_00423b50(int param_1,int param_2)
     uVar6 = 0;
     do {
       FUN_006acc70(param_1,uVar6,&local_8);
-      thunk_FUN_00423850(local_10,local_8,param_2);
+      AddObj(this_00,local_8,param_2);
       uVar7 = uVar7 + 1;
       uVar6 = uVar7 & 0xffff;
     } while (uVar6 < uVar2);

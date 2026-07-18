@@ -1,2 +1,2 @@
-thunk_FUN_00594b90:
+FSGSTy::OutChSlProc:
 004023B0  E9 DB 27 19 00            JMP 0x00594b90

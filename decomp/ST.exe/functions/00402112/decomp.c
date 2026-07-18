@@ -41,16 +41,16 @@ short * __cdecl thunk_FUN_0042a290(int param_1,char *param_2)
   if (iVar3 == 0) {
     psVar4 = FUN_006ef640(param_1,param_2,DAT_00806760,DAT_00806760,&LAB_00403dff);
     psStack_1c = psVar4;
-    if (DAT_00802a58 != (void *)0x0) {
+    if (DAT_00802a58 != (cLoadingTy *)0x0) {
       iVar3 = DAT_007f4e00;
       pCVar5 = (LPCSTR)FUN_006b0140(0x2685,DAT_00807618);
       wsprintfA(aCStack_f4,pCVar5,iVar3);
-      thunk_FUN_00555040(DAT_00802a58,2,0,aCStack_f4);
-      if (DAT_00802a58 != (void *)0x0) {
+      cLoadingTy::SetState(DAT_00802a58,2,0,aCStack_f4);
+      if (DAT_00802a58 != (cLoadingTy *)0x0) {
         iVar3 = DAT_007f4e00 / 2;
         puVar6 = (uint *)FUN_006b0140(0x268c,DAT_00807618);
-        thunk_FUN_00554f20(DAT_00802a58,0,puVar6,iVar3);
-        thunk_FUN_00555040(DAT_00802a58,0,0,(char *)0x0);
+        cLoadingTy::SetProcess(DAT_00802a58,0,puVar6,iVar3);
+        cLoadingTy::SetState(DAT_00802a58,0,0,(char *)0x0);
       }
     }
     psVar11 = psVar4 + 7;
@@ -161,8 +161,8 @@ short * __cdecl thunk_FUN_0042a290(int param_1,char *param_2)
     FUN_006ae110((byte *)puStack_c);
     thunk_FUN_00428e50(psVar4);
     thunk_FUN_005751f0(psVar4);
-    if (DAT_00802a58 != (void *)0x0) {
-      thunk_FUN_00555040(DAT_00802a58,2,0,(char *)0x0);
+    if (DAT_00802a58 != (cLoadingTy *)0x0) {
+      cLoadingTy::SetState(DAT_00802a58,2,0,(char *)0x0);
     }
     DAT_00858df8 = puStack_74;
     return psVar4;

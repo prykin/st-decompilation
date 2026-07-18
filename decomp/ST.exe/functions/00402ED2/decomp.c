@@ -1,47 +1,47 @@
 
-undefined4 __thiscall thunk_FUN_004fa400(void *this,int param_1)
+undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
 
 {
   code *pcVar1;
-  void *this_00;
+  CPanelTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar5;
+  CPanelTy *pCVar5;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  void *pvStack_8;
+  CPanelTy *pCStack_8;
   
-  if (param_1 == *(int *)((int)this + 0x130)) {
+  if (param_1 == *(int *)(this + 0x130)) {
     return 0;
   }
-  *(int *)((int)this + 0x130) = param_1;
+  *(int *)(this + 0x130) = param_1;
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
-  pvStack_8 = this;
+  pCStack_8 = this;
   iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-  this_00 = pvStack_8;
+  this_00 = pCStack_8;
   if (iVar2 == 0) {
-    thunk_FUN_004fa570(pvStack_8,1,param_1);
-    thunk_FUN_004fa570(this_00,0,param_1);
-    piVar5 = (int *)((int)this_00 + 0x9a4);
+    ShiftControls(pCStack_8,1,param_1);
+    ShiftControls(this_00,0,param_1);
+    pCVar5 = this_00 + 0x9a4;
     iVar2 = 7;
     do {
-      if (*piVar5 != 0) {
-        FUN_006e6080(this_00,2,*piVar5,(undefined4 *)((int)this_00 + 0x18));
+      if (*(int *)pCVar5 != 0) {
+        FUN_006e6080(this_00,2,*(int *)pCVar5,(undefined4 *)(this_00 + 0x18));
       }
-      piVar5 = piVar5 + 1;
+      pCVar5 = pCVar5 + 4;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
-    piVar5 = (int *)((int)this_00 + 0x9c0);
+    pCVar5 = this_00 + 0x9c0;
     iVar2 = 2;
     do {
-      if (*piVar5 != 0) {
-        FUN_006e6080(this_00,2,*piVar5,(undefined4 *)((int)this_00 + 0x18));
+      if (*(int *)pCVar5 != 0) {
+        FUN_006e6080(this_00,2,*(int *)pCVar5,(undefined4 *)(this_00 + 0x18));
       }
-      piVar5 = piVar5 + 1;
+      pCVar5 = pCVar5 + 4;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
     DAT_00858df8 = (undefined4 *)uStack_4c;

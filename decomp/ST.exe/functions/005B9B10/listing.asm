@@ -1,4 +1,4 @@
-FUN_005b9b10:
+PrividerTy::InitPrivider:
 005B9B10  55                        PUSH EBP
 005B9B11  8B EC                     MOV EBP,ESP
 005B9B13  81 EC 50 04 00 00         SUB ESP,0x450

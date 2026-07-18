@@ -1,4 +1,4 @@
-FUN_005dd470:
+StartSystemTy::ChatMessage:
 005DD470  55                        PUSH EBP
 005DD471  8B EC                     MOV EBP,ESP
 005DD473  83 EC 70                  SUB ESP,0x70

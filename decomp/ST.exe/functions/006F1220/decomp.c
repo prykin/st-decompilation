@@ -1,5 +1,9 @@
 
-int FUN_006f1220(void)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::Flush */
+
+int __thiscall cMf32::Flush(cMf32 *this)
 
 {
   code *pcVar1;
@@ -7,10 +11,12 @@ int FUN_006f1220(void)
   int iVar3;
   void *unaff_ESI;
   undefined4 uVar4;
-  undefined4 local_48 [17];
+  undefined4 local_48 [16];
+  cMf32 *local_8;
   
   uVar4 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffb4;
+  local_8 = this;
   iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
   if (iVar2 == 0) {
     iVar2 = FUN_00750f10();

@@ -1,4 +1,4 @@
-FUN_00538fc0:
+PanelTy::PaintLBut:
 00538FC0  55                        PUSH EBP
 00538FC1  8B EC                     MOV EBP,ESP
 00538FC3  83 EC 54                  SUB ESP,0x54

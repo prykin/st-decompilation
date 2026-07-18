@@ -1,4 +1,4 @@
-FUN_005bd7a0:
+MReportTy::InitMReport:
 005BD7A0  55                        PUSH EBP
 005BD7A1  8B EC                     MOV EBP,ESP
 005BD7A3  81 EC A0 06 00 00         SUB ESP,0x6a0

@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_006451b0(undefined4 param_1,uint *param_2)
+undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uint *param_2)
 
 {
   code *pcVar1;
@@ -11,16 +11,17 @@ undefined4 thunk_FUN_006451b0(undefined4 param_1,uint *param_2)
   undefined4 auStack_50 [16];
   undefined4 uStack_10;
   undefined4 uStack_c;
-  int iStack_8;
+  STTorpC *pSStack_8;
   
   uVar5 = DAT_00858df8;
   DAT_00858df8 = &stack0xffffffac;
+  pSStack_8 = this;
   iVar2 = __setjmp3(auStack_50,0,unaff_ESI,uVar5);
   if (iVar2 == 0) {
     if (*param_2 == 0xffffffff) {
       uStack_10 = param_1;
       uStack_c = 1;
-      uVar3 = FUN_006ae1c0(*(uint **)(iStack_8 + 0x241),&uStack_10);
+      uVar3 = FUN_006ae1c0(*(uint **)(pSStack_8 + 0x241),&uStack_10);
       *param_2 = uVar3;
     }
     DAT_00858df8 = (undefined1 *)uVar5;

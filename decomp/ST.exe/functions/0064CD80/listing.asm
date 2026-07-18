@@ -1,4 +1,4 @@
-FUN_0064cd80:
+AiEventClassTy::InitData:
 0064CD80  55                        PUSH EBP
 0064CD81  8B EC                     MOV EBP,ESP
 0064CD83  83 EC 48                  SUB ESP,0x48

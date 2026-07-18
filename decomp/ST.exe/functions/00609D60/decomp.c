@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_field.cpp
+   STFieldC::LoadImagSpr */
 
-undefined4 __thiscall FUN_00609d60(void *this,uint param_1)
+undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
 
 {
   uint uVar1;
@@ -21,7 +24,7 @@ undefined4 __thiscall FUN_00609d60(void *this,uint param_1)
   uint *local_c;
   uint local_8;
   
-  iVar4 = *(int *)((int)this + 0x234);
+  iVar4 = *(int *)(this + 0x234);
   local_10 = 0;
   if (iVar4 == 0) {
     return 0;

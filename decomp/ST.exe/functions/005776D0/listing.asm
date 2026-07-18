@@ -1,4 +1,4 @@
-FUN_005776d0:
+GameSystemC::GetMessage:
 005776D0  55                        PUSH EBP
 005776D1  8B EC                     MOV EBP,ESP
 005776D3  B8 8C 1D 00 00            MOV EAX,0x1d8c

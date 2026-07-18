@@ -1,12 +1,20 @@
 
-void FUN_005952b0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,int param_5,
-                 int param_6,int param_7,int param_8)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Start\fsgs_obj.cpp
+   FSGSTy::OutSGlProc */
+
+void __thiscall
+FSGSTy::OutSGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,undefined4 param_3,int param_4,
+                  int param_5,int param_6,int param_7,int param_8)
 
 {
   code *pcVar1;
   int iVar2;
   uint *puVar3;
   int iVar4;
+  StartServTy *this_00;
+  StartServTy *this_01;
+  StartServTy *this_02;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar5;
@@ -23,15 +31,17 @@ void FUN_005952b0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,
     DAT_00858df8 = &local_50;
     iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
-      thunk_FUN_005b67a0(param_1,param_2,param_3,param_4,param_5,param_6,param_7,
-                         (undefined4 *)(DAT_0081176c + 0x140));
+      MMMObjTy::OutRGlProc
+                (param_2,param_1,param_2,param_3,param_4,param_5,param_6,param_7,
+                 (undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
       iVar2 = param_4 + 10;
       pvVar7 = *(void **)(DAT_0081176c + 0x34);
       uVar6 = 0xffffffff;
       uVar5 = 0;
       puVar3 = (uint *)FUN_006b0140(0x256f,DAT_00807618);
-      thunk_FUN_00540890(0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8);
+      StartServTy::WrTextDDX
+                (this_00,0,iVar2,param_5 + 10,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8);
       FUN_006c6850(param_1,iVar2,param_5 + 0x1e,param_6 + -0x14,0x8e,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
@@ -39,8 +49,9 @@ void FUN_005952b0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,
       uVar6 = 0xffffffff;
       uVar5 = 0;
       puVar3 = (uint *)FUN_006b0140(0x256b,DAT_00807618);
-      thunk_FUN_00540890(0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8
-                        );
+      StartServTy::WrTextDDX
+                (this_01,0,iVar2,param_5 + 0xb4,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8
+                );
       FUN_006c6850(param_1,iVar2,param_5 + 200,param_6 + -0x14,0x19,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
@@ -48,8 +59,9 @@ void FUN_005952b0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,
       uVar6 = 0xffffffff;
       uVar5 = 0;
       puVar3 = (uint *)FUN_006b0140(0x256c,DAT_00807618);
-      thunk_FUN_00540890(0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8
-                        );
+      StartServTy::WrTextDDX
+                (this_02,0,iVar2,param_5 + 0xe1,param_6 + -0x14,0x14,puVar3,uVar5,uVar6,pvVar7,uVar8
+                );
       FUN_006c6850(param_1,iVar2,param_5 + 0xf5,param_6 + -0x14,0x19,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       uVar8 = 2;
@@ -59,8 +71,9 @@ void FUN_005952b0(int param_1,undefined4 param_2,undefined4 param_3,int param_4,
       uVar6 = 0xffffffff;
       uVar5 = 0;
       puVar3 = (uint *)FUN_006b0140(0x256d,DAT_00807618);
-      thunk_FUN_00540890(0,iVar2,param_5 + 0x11a,(int)(local_8 + -10),0x14,puVar3,uVar5,uVar6,pvVar7
-                         ,uVar8);
+      StartServTy::WrTextDDX
+                ((StartServTy *)(param_5 + 0x11a),0,iVar2,param_5 + 0x11a,(int)(local_8 + -10),0x14,
+                 puVar3,uVar5,uVar6,pvVar7,uVar8);
       FUN_006c6470(param_1,(int)local_8 + param_4 + -0x14,param_5 + 0x11c,local_8 + 10,0x19,4,
                    *(undefined4 *)(DAT_0081176c + 0x140));
       FUN_006c6470(param_1,(int)local_8 + param_4 + -0x12,param_5 + 0x11e,local_8 + 9,0x15,4,

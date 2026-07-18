@@ -53,7 +53,7 @@ int __thiscall thunk_FUN_004608b0(void *this,int param_1)
   undefined2 uStack_30;
   int aiStack_2c [2];
   uint uStack_24;
-  void *pvStack_20;
+  STTorpC *pSStack_20;
   undefined4 uStack_1c;
   undefined4 uStack_18;
   undefined4 uStack_14;
@@ -453,28 +453,28 @@ switchD_0046166b_caseD_2:
     if ((iVar9 != 0) && (uVar10 = 0, iVar11 = DAT_007fa134, iVar9 != 0)) {
       do {
         if (iVar11 < 1) break;
-        FUN_006acc70(DAT_007fa130,uVar10,&pvStack_20);
-        if (pvStack_20 != (void *)0x0) {
+        FUN_006acc70(DAT_007fa130,uVar10,&pSStack_20);
+        if (pSStack_20 != (STTorpC *)0x0) {
           iVar11 = iVar11 + -1;
-          thunk_FUN_004162b0(pvStack_20,(undefined2 *)((int)&uStack_10 + 2),&sStack_c,&sStack_a);
+          thunk_FUN_004162b0(pSStack_20,(undefined2 *)((int)&uStack_10 + 2),&sStack_c,&sStack_a);
           aiStack_2c[0] =
                FUN_006aadd0((int)*(short *)((int)this + 0x47),(int)*(short *)((int)this + 0x49),
                             (int)*(short *)((int)this + 0x4b),(int)uStack_10._2_2_,(int)sStack_c,
                             (int)sStack_a);
           if ((aiStack_2c[0] <= *(int *)((int)this + 0x80c) / 0xc9 + 1) &&
-             (iVar9 = thunk_FUN_00645020(pvStack_20,*(int *)((int)this + 0x18),&uStack_24),
+             (iVar9 = STTorpC::IsDangerous(pSStack_20,*(int *)((int)this + 0x18),&uStack_24),
              iVar9 != 2)) {
             if (iVar9 == 0) {
-              iVar9 = thunk_FUN_004838e0(this,(int)pvStack_20);
+              iVar9 = thunk_FUN_004838e0(this,(int)pSStack_20);
               if (iVar9 == 1) {
-                thunk_FUN_006451b0(*(undefined4 *)((int)this + 0x18),&uStack_24);
+                STTorpC::SetDangerous(pSStack_20,*(undefined4 *)((int)this + 0x18),&uStack_24);
 LAB_00460adb:
-                iVar9 = thunk_FUN_00483e30(this,(int)pvStack_20);
+                iVar9 = thunk_FUN_00483e30(this,(int)pSStack_20);
                 if (iVar9 == 1) {
-                  thunk_FUN_006452a0(*(int *)((int)this + 0x18),uStack_24);
-                  *(void **)((int)this + 0x46b) = pvStack_20;
-                  *(undefined2 *)((int)this + 0x46f) = *(undefined2 *)((int)pvStack_20 + 0x26e);
-                  uVar1 = *(undefined4 *)((int)pvStack_20 + 0x18);
+                  STTorpC::ClearDangerous(pSStack_20,*(int *)((int)this + 0x18),uStack_24);
+                  *(STTorpC **)((int)this + 0x46b) = pSStack_20;
+                  *(undefined2 *)((int)this + 0x46f) = *(undefined2 *)(pSStack_20 + 0x26e);
+                  uVar1 = *(undefined4 *)(pSStack_20 + 0x18);
                   *(undefined4 *)((int)this + 0x471) = uVar1;
                   if (*(short *)((int)this + 0x4b) == 0) {
                     *(undefined2 *)((int)this + 0x469) = 1;
@@ -588,7 +588,7 @@ LAB_00460d94:
                 }
               }
               else {
-                thunk_FUN_006452a0(*(int *)((int)this + 0x18),uStack_24);
+                STTorpC::ClearDangerous(pSStack_20,*(int *)((int)this + 0x18),uStack_24);
               }
             }
             else if (iVar9 == 1) goto LAB_00460adb;

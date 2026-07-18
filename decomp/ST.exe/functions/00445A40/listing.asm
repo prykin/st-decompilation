@@ -1,4 +1,4 @@
-FUN_00445a40:
+STAllPlayersC::RegisterPGPair:
 00445A40  55                        PUSH EBP
 00445A41  8B EC                     MOV EBP,ESP
 00445A43  81 EC 84 00 00 00         SUB ESP,0x84

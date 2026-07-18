@@ -1,5 +1,7 @@
 
-void thunk_FUN_004354e0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void __thiscall
+STAllPlayersC::ReplaceObject
+          (STAllPlayersC *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   uint *puVar1;

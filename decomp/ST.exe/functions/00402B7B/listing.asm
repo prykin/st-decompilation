@@ -1,2 +1,2 @@
-thunk_FUN_00440600:
+STAllPlayersC::GetNInTmp:
 00402B7B  E9 80 DA 03 00            JMP 0x00440600

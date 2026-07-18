@@ -1,4 +1,4 @@
-FUN_00511fa0:
+HelpPanelTy::SetPanel:
 00511FA0  55                        PUSH EBP
 00511FA1  8B EC                     MOV EBP,ESP
 00511FA3  83 EC 48                  SUB ESP,0x48

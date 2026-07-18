@@ -1,4 +1,4 @@
-FUN_004ac1a0:
+STT3DSprC::StartShow:
 004AC1A0  55                        PUSH EBP
 004AC1A1  8B EC                     MOV EBP,ESP
 004AC1A3  83 EC 4C                  SUB ESP,0x4c

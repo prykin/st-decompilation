@@ -360,7 +360,7 @@ joined_r0x0049bc58:
   }
   puVar6 = puStack_30;
   FUN_006acc70(*(int *)((int)this + 0x22a),*(uint *)((int)this + 0x232),(undefined4 *)&sStack_54);
-  thunk_FUN_00497cd0((int)puVar6,(int)sStack_54,(int)sStack_52,(int)sStack_50);
+  STGroupBoatC::InitWay(this,(int)puVar6,(int)sStack_54,(int)sStack_52,(int)sStack_50);
   FUN_006ae110((byte *)puVar6);
   return 2;
 }

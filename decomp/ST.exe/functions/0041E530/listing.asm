@@ -1,4 +1,4 @@
-FUN_0041e530:
+STSprGameObjC::GetMessage:
 0041E530  55                        PUSH EBP
 0041E531  8B EC                     MOV EBP,ESP
 0041E533  83 EC 50                  SUB ESP,0x50

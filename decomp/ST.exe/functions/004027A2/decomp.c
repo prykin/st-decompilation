@@ -1,9 +1,9 @@
 
-undefined4 __thiscall thunk_FUN_0049f900(void *this,int param_1)
+undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  void *pvVar2;
+  STGroupBoatC *pSVar2;
   int iVar3;
   void *pvVar4;
   uint uVar5;
@@ -13,7 +13,7 @@ undefined4 __thiscall thunk_FUN_0049f900(void *this,int param_1)
   uint uVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar9;
+  STGroupBoatC *pSVar9;
   undefined4 uStack_6c;
   undefined4 auStack_68 [16];
   undefined4 uStack_28;
@@ -24,46 +24,45 @@ undefined4 __thiscall thunk_FUN_0049f900(void *this,int param_1)
   undefined2 uStack_1a;
   undefined2 uStack_18;
   undefined2 uStack_16;
-  void *pvStack_14;
+  STGroupBoatC *pSStack_14;
   undefined4 uStack_10;
   uint uStack_c;
   uint uStack_8;
   
-  uStack_8 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
+  uStack_8 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   uVar8 = 0;
   uStack_10 = 2;
   uStack_6c = DAT_00858df8;
   DAT_00858df8 = &uStack_6c;
-  pvStack_14 = this;
+  pSStack_14 = this;
   iVar3 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
-  pvVar2 = pvStack_14;
+  pSVar2 = pSStack_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      puVar9 = (undefined4 *)((int)pvStack_14 + 0x89);
+      pSVar9 = pSStack_14 + 0x89;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
+        *(undefined4 *)pSVar9 = 0;
+        pSVar9 = pSVar9 + 4;
       }
-      *(undefined4 *)((int)pvStack_14 + 0x65) = 0;
-      *(undefined4 *)((int)pvStack_14 + 0x2d8) = *(undefined4 *)((int)pvStack_14 + 0x1a3);
-      *(undefined4 *)((int)pvStack_14 + 0x2dc) = *(undefined4 *)((int)pvStack_14 + 0x1a7);
-      *(undefined4 *)((int)pvStack_14 + 0x2e0) = *(undefined4 *)((int)pvStack_14 + 0x1ab);
-      *(undefined4 *)((int)pvStack_14 + 0x2e4) = *(undefined4 *)((int)pvStack_14 + 0x1af);
-      uStack_24 = *(undefined4 *)((int)pvStack_14 + 0x2d8);
+      *(undefined4 *)(pSStack_14 + 0x65) = 0;
+      *(undefined4 *)(pSStack_14 + 0x2d8) = *(undefined4 *)(pSStack_14 + 0x1a3);
+      *(undefined4 *)(pSStack_14 + 0x2dc) = *(undefined4 *)(pSStack_14 + 0x1a7);
+      *(undefined4 *)(pSStack_14 + 0x2e0) = *(undefined4 *)(pSStack_14 + 0x1ab);
+      *(undefined4 *)(pSStack_14 + 0x2e4) = *(undefined4 *)(pSStack_14 + 0x1af);
+      uStack_24 = *(undefined4 *)(pSStack_14 + 0x2d8);
       uStack_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-      uStack_20 = *(undefined2 *)((int)pvStack_14 + 0x2dc);
-      uStack_1c = *(undefined2 *)((int)pvStack_14 + 0x2e0);
-      uStack_16 = *(undefined2 *)((int)pvStack_14 + 0x2e6);
-      uStack_1e = *(undefined2 *)((int)pvStack_14 + 0x2de);
-      uStack_1a = *(undefined2 *)((int)pvStack_14 + 0x2e2);
-      uStack_18 = *(undefined2 *)((int)pvStack_14 + 0x2e4);
+      uStack_20 = *(undefined2 *)(pSStack_14 + 0x2dc);
+      uStack_1c = *(undefined2 *)(pSStack_14 + 0x2e0);
+      uStack_16 = *(undefined2 *)(pSStack_14 + 0x2e6);
+      uStack_1e = *(undefined2 *)(pSStack_14 + 0x2de);
+      uStack_1a = *(undefined2 *)(pSStack_14 + 0x2e2);
+      uStack_18 = *(undefined2 *)(pSStack_14 + 0x2e4);
       if (0 < (int)uStack_8) {
         do {
-          FUN_006acc70(*(int *)((int)pvVar2 + 0x29),uVar8,&uStack_c);
+          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar8,&uStack_c);
           if ((short)uStack_c != -1) {
             pvVar4 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                         *(undefined1 *)((int)pvVar2 + 0x24)),
-                                                uStack_c,1);
+                                                         pSVar2[0x24]),uStack_c,1);
             if (pvVar4 == (void *)0x0) {
               FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0xc46);
             }
@@ -77,10 +76,9 @@ undefined4 __thiscall thunk_FUN_0049f900(void *this,int param_1)
       uVar8 = 0;
       if (0 < (int)uStack_8) {
         do {
-          FUN_006acc70(*(int *)((int)pvVar2 + 0x29),uVar8,&uStack_c);
+          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar8,&uStack_c);
           if ((short)uStack_c != -1) {
-            pvVar4 = (void *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                         *(undefined1 *)((int)pvVar2 + 0x24)),
+            pvVar4 = (void *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),pSVar2[0x24]),
                                                 uStack_c,1);
             if (pvVar4 == (void *)0x0) {
               FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0xc51);

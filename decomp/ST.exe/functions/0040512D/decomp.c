@@ -1,5 +1,7 @@
 
-undefined4 thunk_FUN_0042d980(undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
+undefined4 __thiscall
+STAllPlayersC::GetActiveCenter
+          (STAllPlayersC *this,undefined2 *param_1,undefined2 *param_2,undefined2 *param_3)
 
 {
   int iVar1;

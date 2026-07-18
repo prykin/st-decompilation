@@ -14,7 +14,7 @@ undefined4 __fastcall thunk_FUN_00580dc0(void *param_1)
                              (short)*(undefined4 *)((int)param_1 + 0x249),
                              *(int *)((int)param_1 + 0x24d),*(int *)((int)param_1 + 0x255));
   if (iVar5 != 0) {
-    iVar5 = thunk_FUN_0044a2c0(0xffff,param_1);
+    iVar5 = STAllPlayersC::RegisterDeposit(DAT_007fa174,0xffff,param_1);
     if (iVar5 != 0) {
       thunk_FUN_00580380(param_1);
       return 0;

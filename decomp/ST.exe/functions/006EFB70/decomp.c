@@ -28,7 +28,7 @@ void __cdecl FUN_006efb70(int *param_1)
       }
       iVar2 = 0;
       do {
-        FUN_006f20e0((uint *)(iVar2 + 0x40d + *param_1));
+        cMf32::RecMemFree(*(cMf32 **)(*param_1 + 5),(uint *)(iVar2 + 0x40d + *param_1));
         iVar2 = iVar2 + 4;
       } while (iVar2 < 0x40);
       FUN_006ab060(param_1);

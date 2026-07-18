@@ -1,8 +1,10 @@
 
-void thunk_FUN_00446520(uint param_1,short param_2,int param_3)
+void __thiscall
+STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,int param_3)
 
 {
   code *pcVar1;
+  STAllPlayersC *this_00;
   int iVar2;
   void *pvVar3;
   int iVar4;
@@ -17,6 +19,7 @@ void thunk_FUN_00446520(uint param_1,short param_2,int param_3)
   byte *pbStack_20;
   byte *pbStack_1c;
   int iStack_18;
+  STAllPlayersC *pSStack_14;
   undefined4 uStack_10;
   int iStack_c;
   uint uStack_8;
@@ -24,6 +27,7 @@ void thunk_FUN_00446520(uint param_1,short param_2,int param_3)
   uStack_68 = DAT_00858df8;
   iStack_18 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
   DAT_00858df8 = &uStack_68;
+  pSStack_14 = this;
   iVar2 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
   iVar4 = iStack_18;
   if (iVar2 != 0) {
@@ -78,7 +82,7 @@ void thunk_FUN_00446520(uint param_1,short param_2,int param_3)
       } while ((int)uVar5 < iStack_c);
     }
     if (iStack_c == 0) {
-      thunk_FUN_00446910((char)param_1);
+      DeletePGPairs(pSStack_14,(char)param_1);
       DAT_00858df8 = (undefined4 *)uStack_68;
       return;
     }
@@ -135,13 +139,14 @@ void thunk_FUN_00446520(uint param_1,short param_2,int param_3)
       } while ((int)uVar5 < iStack_c);
     }
     if (iStack_c == 0) {
-      thunk_FUN_00446910((char)param_1);
+      DeletePGPairs(pSStack_14,(char)param_1);
       DAT_00858df8 = (undefined4 *)uStack_68;
       return;
     }
   }
-  thunk_FUN_00446aa0((char)param_1);
-  thunk_FUN_00446f80(param_1);
+  this_00 = pSStack_14;
+  OptimizeGuardBoats(pSStack_14,(char)param_1);
+  DistributeGuardBoats(this_00,param_1);
   DAT_00858df8 = (undefined4 *)uStack_68;
   return;
 }

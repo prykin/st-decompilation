@@ -1,4 +1,4 @@
-FUN_005449b0:
+CursorClassTy::GetMessage:
 005449B0  55                        PUSH EBP
 005449B1  8B EC                     MOV EBP,ESP
 005449B3  81 EC 20 05 00 00         SUB ESP,0x520

@@ -1,4 +1,4 @@
-FUN_00440860:
+STAllPlayersC::_ChangeMD:
 00440860  55                        PUSH EBP
 00440861  8B EC                     MOV EBP,ESP
 00440863  51                        PUSH ECX

@@ -10,7 +10,7 @@ void __thiscall FUN_00630260(void *this,int param_1,int param_2)
   int local_10;
   undefined4 local_c;
   
-  if (DAT_008117a4 != (void *)0x0) {
+  if (DAT_008117a4 != (STManRub3C *)0x0) {
     puVar1 = *(undefined4 **)((int)this + param_1 * 4 + 0x1e5);
     if ((puVar1 != (undefined4 *)0x0) && ((puVar1[1] == 3 || (puVar1[1] == 6)))) {
       piVar3 = local_24;
@@ -26,7 +26,7 @@ void __thiscall FUN_00630260(void *this,int param_1,int param_2)
       local_10 = param_1;
       local_c = puVar1[2];
       if (param_2 != 0) {
-        thunk_FUN_0062cf90(local_24);
+        STManRub3C::AddNewRub3(DAT_008117a4,local_24);
         return;
       }
       thunk_FUN_0062d230(DAT_008117a4,local_24);

@@ -2,7 +2,7 @@
 void __fastcall FUN_00420340(int *param_1)
 
 {
-  void *this;
+  STT3DSprC *this;
   char cVar1;
   code *pcVar2;
   byte bVar3;
@@ -456,32 +456,32 @@ LAB_00420678:
       pbVar9 = pbVar9 + 1;
       pbVar12 = pbVar12 + 1;
     }
-    this = (void *)((int)param_1 + 0x1d5);
-    iVar6 = thunk_FUN_004ab880(0xf,DAT_00806774,local_24,0x1d);
+    this = (STT3DSprC *)((int)param_1 + 0x1d5);
+    iVar6 = STT3DSprC::LoadSequence(this,0xf,DAT_00806774,local_24,0x1d);
     if (iVar6 != 0) {
       FUN_006a5e40(-0x5001fff8,DAT_007ed77c,0x7a4e0c,0xc4a);
     }
-    iVar6 = thunk_FUN_004ab880(0,DAT_00806774,local_24,0x1d);
+    iVar6 = STT3DSprC::LoadSequence(this,0,DAT_00806774,local_24,0x1d);
     if (iVar6 != 0) {
       FUN_006a5e40(-0x5001fff8,DAT_007ed77c,0x7a4e0c,0xc4b);
     }
     FUN_006ea5e0(*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),0xf,0);
     FUN_006ea5e0(*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),0,0);
     if (DAT_0080732c != 1) {
-      thunk_FUN_004ac410(0xf);
-      thunk_FUN_004ac410(0);
+      STT3DSprC::StopShow(this,0xf);
+      STT3DSprC::StopShow(this,0);
       thunk_FUN_004abce0(this,0,0,0,'\0');
       thunk_FUN_004abce0(this,0xf,0x14,0x14,'\0');
-      thunk_FUN_004ac1a0(0,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      thunk_FUN_004ac1a0(0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow(this,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow(this,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
       return;
     }
     thunk_FUN_004abce0(this,0,0,0x13,'\0');
     thunk_FUN_004abce0(this,0xf,0x14,0x27,'\0');
     thunk_FUN_004acd60(this,'\0',*(uint *)(DAT_00802a38 + 0xe4) & 1);
     thunk_FUN_004acd60(this,'\x0f',*(uint *)(DAT_00802a38 + 0xe4) & 1);
-    thunk_FUN_004ac1a0(0,*(undefined4 *)(DAT_00802a38 + 0xe4));
-    thunk_FUN_004ac1a0(0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(this,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow(this,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
     return;
   }
   uVar4 = (**(code **)(*param_1 + 0x2c))();

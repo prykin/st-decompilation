@@ -1,2 +1,2 @@
-thunk_FUN_005956c0:
+FSGSTy::OutLadProc:
 00401032  E9 89 46 19 00            JMP 0x005956c0

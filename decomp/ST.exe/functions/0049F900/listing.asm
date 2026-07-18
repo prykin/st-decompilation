@@ -1,4 +1,4 @@
-FUN_0049f900:
+STGroupBoatC::Teleport:
 0049F900  55                        PUSH EBP
 0049F901  8B EC                     MOV EBP,ESP
 0049F903  83 EC 68                  SUB ESP,0x68

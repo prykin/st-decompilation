@@ -1,4 +1,4 @@
-FUN_005384a0:
+PanelTy::GetMessage:
 005384A0  55                        PUSH EBP
 005384A1  8B EC                     MOV EBP,ESP
 005384A3  83 EC 48                  SUB ESP,0x48

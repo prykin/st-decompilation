@@ -2,6 +2,7 @@
 void __thiscall FUN_00690230(void *this,uint *param_1)
 
 {
+  AiFltClassTy *this_00;
   int iVar1;
   uint uVar2;
   bool bVar3;
@@ -12,8 +13,8 @@ void __thiscall FUN_00690230(void *this,uint *param_1)
     bVar3 = *(int *)(iVar1 + 0xc) != 0;
     do {
       if (((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0)) &&
-         (*(int *)(iVar1 + 4) != 0)) {
-        thunk_FUN_00662240(param_1);
+         (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != (AiFltClassTy *)0x0)) {
+        AiFltClassTy::GetAiMess(this_00,param_1);
       }
       iVar1 = *(int *)((int)this + 0xa5);
       uVar2 = uVar2 + 1;

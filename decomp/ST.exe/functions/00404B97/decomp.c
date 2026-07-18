@@ -1,5 +1,5 @@
 
-uint thunk_FUN_004455c0(undefined4 *param_1)
+uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_1)
 
 {
   code *pcVar1;
@@ -23,12 +23,14 @@ uint thunk_FUN_004455c0(undefined4 *param_1)
   undefined4 uStack_58;
   undefined4 auStack_54 [16];
   undefined4 uStack_14;
+  STAllPlayersC *pSStack_10;
   int iStack_c;
-  void *pvStack_8;
+  STGroupC *pSStack_8;
   
   uStack_14 = 0xffffffff;
   uStack_58 = DAT_00858df8;
   DAT_00858df8 = &uStack_58;
+  pSStack_10 = this;
   iVar2 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_58;
@@ -86,14 +88,14 @@ uint thunk_FUN_004455c0(undefined4 *param_1)
   if (param_1[5] == -1) {
     param_1[5] = param_1[1];
   }
-  pvStack_8 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar6 >> 8),
-                                                  *(undefined1 *)(param_1 + 1)),
-                                         CONCAT22(uVar5,*(undefined2 *)(param_1 + 9)));
-  if (pvStack_8 == (void *)0x0) {
+  pSStack_8 = (STGroupC *)
+              thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar6 >> 8),*(undefined1 *)(param_1 + 1)),
+                                 CONCAT22(uVar5,*(undefined2 *)(param_1 + 9)));
+  if (pSStack_8 == (STGroupC *)0x0) {
     uVar3 = thunk_FUN_00435850(CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)(param_1 + 1)
-                                       ),0,(int *)&pvStack_8);
+                                       ),0,(int *)&pSStack_8);
     *(short *)(param_1 + 9) = (short)uVar3;
-    if (pvStack_8 == (void *)0x0) {
+    if (pSStack_8 == (STGroupC *)0x0) {
       FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x27d8);
     }
   }
@@ -102,9 +104,9 @@ uint thunk_FUN_004455c0(undefined4 *param_1)
   if (iStack_c == 0) {
     iVar2 = FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x27db);
   }
-  uVar3 = thunk_FUN_00423850(pvStack_8,
-                             CONCAT22((short)((uint)iVar2 >> 0x10),*(undefined2 *)(iStack_c + 0x32))
-                             ,0);
+  uVar3 = STGroupC::AddObj(pSStack_8,
+                           CONCAT22((short)((uint)iVar2 >> 0x10),*(undefined2 *)(iStack_c + 0x32)),0
+                          );
   DAT_00858df8 = (undefined4 *)uStack_58;
   return CONCAT22((short)(uVar3 >> 0x10),*(undefined2 *)(iStack_c + 0x32));
 }

@@ -1,4 +1,4 @@
-FUN_0044a2c0:
+STAllPlayersC::RegisterDeposit:
 0044A2C0  55                        PUSH EBP
 0044A2C1  8B EC                     MOV EBP,ESP
 0044A2C3  83 EC 48                  SUB ESP,0x48

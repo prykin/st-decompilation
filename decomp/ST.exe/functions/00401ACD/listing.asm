@@ -1,2 +1,2 @@
-thunk_FUN_005123a0:
+HelpPanelTy::CreateList:
 00401ACD  E9 CE 08 11 00            JMP 0x005123a0

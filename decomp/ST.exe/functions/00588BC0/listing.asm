@@ -1,4 +1,4 @@
-FUN_00588bc0:
+STMBombC::GetMessage:
 00588BC0  55                        PUSH EBP
 00588BC1  8B EC                     MOV EBP,ESP
 00588BC3  81 EC 88 00 00 00         SUB ESP,0x88

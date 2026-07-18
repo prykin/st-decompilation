@@ -49,15 +49,15 @@ undefined4 * __cdecl FUN_00716fd0(int param_1,char *param_2,byte param_3,int par
       } while (iVar2 < *(short *)((int)local_8 + 0x23));
     }
     DAT_00858df8 = (undefined4 *)local_5c;
-    FUN_006f20e0((uint *)&local_c);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
     return local_8;
   }
   DAT_00858df8 = (undefined4 *)local_5c;
-  FUN_006f20e0((uint *)&local_c);
+  cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);
   if (local_8 != (undefined4 *)0x0) {
     if (0 < *(short *)((int)local_8 + 0x23)) {
       do {
-        FUN_006f20e0((uint *)((int)local_8 + iVar5 * 4 + 0x2d));
+        cMf32::RecMemFree((cMf32 *)param_1,(uint *)((int)local_8 + iVar5 * 4 + 0x2d));
         iVar5 = iVar5 + 1;
       } while (iVar5 < *(short *)((int)local_8 + 0x23));
     }

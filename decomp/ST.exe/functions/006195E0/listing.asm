@@ -1,4 +1,4 @@
-FUN_006195e0:
+STJumpMineC::LoadImagJMine:
 006195E0  55                        PUSH EBP
 006195E1  8B EC                     MOV EBP,ESP
 006195E3  83 EC 48                  SUB ESP,0x48

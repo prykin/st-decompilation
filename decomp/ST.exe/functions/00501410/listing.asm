@@ -1,4 +1,4 @@
-FUN_00501410:
+CPanelTy::PaintBRLife:
 00501410  55                        PUSH EBP
 00501411  8B EC                     MOV EBP,ESP
 00501413  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_005d4850:
+SettMapMTy::RunGame:
 005D4850  55                        PUSH EBP
 005D4851  8B EC                     MOV EBP,ESP
 005D4853  83 EC 48                  SUB ESP,0x48

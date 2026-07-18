@@ -71,7 +71,7 @@ void __fastcall FUN_006057c0(void *param_1)
       piVar1 = (int *)((int)param_1 + 0x282);
       if (iVar5 < (int)(&DAT_007cee44)[*(int *)((int)param_1 + 0x282)]) {
         thunk_FUN_004abe40(*(void **)((int)param_1 + 0x2af),'\r',iVar5);
-        thunk_FUN_004ac040('\r');
+        STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x2af),'\r');
         thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x2af),
                            (float)*(int *)((int)param_1 + 0x28a) * _DAT_007904f8 * _DAT_007904f0,
                            (float)*(int *)((int)param_1 + 0x28e) * _DAT_007904f8 * _DAT_007904f0,
@@ -79,26 +79,26 @@ void __fastcall FUN_006057c0(void *param_1)
                            _DAT_007904fc);
       }
       else if (iVar5 == (&DAT_007cee44)[*(int *)((int)param_1 + 0x282)]) {
-        thunk_FUN_004ac410(0xd);
+        STT3DSprC::StopShow(*(STT3DSprC **)((int)param_1 + 0x2af),0xd);
       }
       iVar5 = *(int *)((int)param_1 + 0x296) + 1;
       *(int *)((int)param_1 + 0x296) = iVar5;
       if (*(int *)(&DAT_007cedf4 + *piVar1 * 4) <= iVar5) {
         if ((iVar5 == *(int *)(&DAT_007cedf4 + *piVar1 * 4)) &&
-           (iVar5 = thunk_FUN_006051b0(param_1,piVar1,0,'\x01'), iVar5 == 0)) {
+           (iVar5 = STExplosionC::LoadImagSpr(param_1,piVar1,0,'\x01'), iVar5 == 0)) {
           *(undefined1 *)((int)param_1 + 0x29e) = 1;
         }
         if (*(char *)((int)param_1 + 0x29e) != '\0') {
           thunk_FUN_004abe40(*(void **)((int)param_1 + 0x2af),'\x0f',
                              *(undefined4 *)((int)param_1 + 0x29f));
-          thunk_FUN_004ac040('\x0f');
+          STT3DSprC::ShowCurFase(*(STT3DSprC **)((int)param_1 + 0x2af),'\x0f');
           if ((*(byte *)(DAT_00802a38 + 0xe4) & 1) != 0) {
             *(int *)((int)param_1 + 0x29f) = *(int *)((int)param_1 + 0x29f) + 1;
           }
           if (*(int *)((int)param_1 + 0x2a3) <= *(int *)((int)param_1 + 0x29f)) {
             *(undefined4 *)((int)param_1 + 0x29f) = 0;
             *(undefined1 *)((int)param_1 + 0x29e) = 0;
-            thunk_FUN_004ac410(0xf);
+            STT3DSprC::StopShow(*(STT3DSprC **)((int)param_1 + 0x2af),0xf);
           }
         }
       }

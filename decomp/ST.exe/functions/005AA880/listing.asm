@@ -1,4 +1,4 @@
-FUN_005aa880:
+HoloTy::CalcHologram:
 005AA880  55                        PUSH EBP
 005AA881  8B EC                     MOV EBP,ESP
 005AA883  83 EC 74                  SUB ESP,0x74

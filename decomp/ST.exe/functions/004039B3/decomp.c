@@ -12,7 +12,7 @@ undefined4 __thiscall thunk_FUN_005fada0(void *this,int param_1,uint param_2,int
   
   uVar3 = 0;
   if (*(int *)((int)this + 0x2e6) == 0) {
-    thunk_FUN_005f94c0();
+    STColl3C::CreateAddSpr(this);
   }
   else {
     thunk_FUN_005f9f70((int)this);

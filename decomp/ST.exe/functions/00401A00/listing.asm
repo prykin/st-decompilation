@@ -1,2 +1,2 @@
-thunk_FUN_004a0590:
+STGroupBoatC::Scout:
 00401A00  E9 8B EB 09 00            JMP 0x004a0590

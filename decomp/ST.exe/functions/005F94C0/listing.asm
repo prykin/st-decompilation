@@ -1,4 +1,4 @@
-FUN_005f94c0:
+STColl3C::CreateAddSpr:
 005F94C0  55                        PUSH EBP
 005F94C1  8B EC                     MOV EBP,ESP
 005F94C3  83 EC 4C                  SUB ESP,0x4c

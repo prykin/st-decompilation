@@ -1,5 +1,5 @@
 
-int __cdecl FUN_00716e60(undefined4 param_1,char *param_2,char param_3,int param_4)
+int __cdecl FUN_00716e60(cMf32 *param_1,char *param_2,char param_3,int param_4)
 
 {
   code *pcVar1;
@@ -27,7 +27,7 @@ int __cdecl FUN_00716e60(undefined4 param_1,char *param_2,char param_3,int param
       if (puVar3 == (undefined4 *)0x0) {
         FUN_006a5e40(-4,DAT_007ed77c,0x7f0504,0xd3);
       }
-      FUN_006f20e0((uint *)&local_8);
+      cMf32::RecMemFree(param_1,(uint *)&local_8);
       DAT_00858df8 = (undefined4 *)local_58;
       return (int)local_a;
     }

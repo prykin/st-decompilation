@@ -1,4 +1,4 @@
-FUN_00578200:
+DebugSystemC::CreateSystemObjects:
 00578200  55                        PUSH EBP
 00578201  8B EC                     MOV EBP,ESP
 00578203  83 EC 48                  SUB ESP,0x48

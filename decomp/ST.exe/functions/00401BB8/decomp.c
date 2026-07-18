@@ -1,64 +1,65 @@
 
-void thunk_FUN_005b7340(void)
+void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  MMsgTy *pMVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
-  uint *puVar4;
+  MMsgTy *pMVar5;
   void *unaff_EDI;
   undefined4 uStack_4c;
   undefined4 auStack_48 [16];
-  int iStack_8;
+  MMsgTy *pMStack_8;
   
   uStack_4c = DAT_00858df8;
   DAT_00858df8 = &uStack_4c;
-  iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
-    if (*(uint *)(iStack_8 + 0x1cfb) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(iStack_8 + 0x1d3f),*(uint *)(iStack_8 + 0x1cfb),
-                   *(uint *)(iStack_8 + 0x1cff),*(uint *)(iStack_8 + 0x1d13),
-                   *(uint *)(iStack_8 + 0x1d17));
+  pMStack_8 = this;
+  iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  pMVar2 = pMStack_8;
+  if (iVar3 == 0) {
+    if (*(uint *)(pMStack_8 + 0x1cfb) != 0xffffffff) {
+      FUN_006b3730(*(uint **)(pMStack_8 + 0x1d3f),*(uint *)(pMStack_8 + 0x1cfb),
+                   *(uint *)(pMStack_8 + 0x1cff),*(uint *)(pMStack_8 + 0x1d13),
+                   *(uint *)(pMStack_8 + 0x1d17));
     }
-    if (*(uint *)(iStack_8 + 0x1d8c) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(iStack_8 + 0x1dd0),*(uint *)(iStack_8 + 0x1d8c),
-                   *(uint *)(iStack_8 + 0x1d90),*(uint *)(iStack_8 + 0x1da4),
-                   *(uint *)(iStack_8 + 0x1da8));
+    if (*(uint *)(pMVar2 + 0x1d8c) != 0xffffffff) {
+      FUN_006b3730(*(uint **)(pMVar2 + 0x1dd0),*(uint *)(pMVar2 + 0x1d8c),*(uint *)(pMVar2 + 0x1d90)
+                   ,*(uint *)(pMVar2 + 0x1da4),*(uint *)(pMVar2 + 0x1da8));
     }
-    iVar2 = 0;
-    if (*(char *)(iStack_8 + 0x9a) != '\0') {
-      puVar4 = (uint *)(iStack_8 + 0xff);
+    iVar3 = 0;
+    if (pMVar2[0x9a] != (MMsgTy)0x0) {
+      pMVar5 = pMVar2 + 0xff;
       do {
-        if (puVar4[-6] != 0xffffffff) {
-          FUN_006b3730((uint *)puVar4[0xb],puVar4[-6],puVar4[-5],*puVar4,puVar4[1]);
+        if (*(uint *)(pMVar5 + -0x18) != 0xffffffff) {
+          FUN_006b3730(*(uint **)(pMVar5 + 0x2c),*(uint *)(pMVar5 + -0x18),*(uint *)(pMVar5 + -0x14)
+                       ,*(uint *)pMVar5,*(uint *)(pMVar5 + 4));
         }
-        if (*(uint *)((int)puVar4 + 0x79) != 0xffffffff) {
-          FUN_006b3730(*(uint **)((int)puVar4 + 0xbd),*(uint *)((int)puVar4 + 0x79),
-                       *(uint *)((int)puVar4 + 0x7d),*(uint *)((int)puVar4 + 0x91),
-                       *(uint *)((int)puVar4 + 0x95));
+        if (*(uint *)(pMVar5 + 0x79) != 0xffffffff) {
+          FUN_006b3730(*(uint **)(pMVar5 + 0xbd),*(uint *)(pMVar5 + 0x79),*(uint *)(pMVar5 + 0x7d),
+                       *(uint *)(pMVar5 + 0x91),*(uint *)(pMVar5 + 0x95));
         }
-        if ((*(char *)((int)puVar4 + -0x1d) != '\0') &&
-           (*(uint *)((int)puVar4 + 0x10a) != 0xffffffff)) {
-          FUN_006b3730(*(uint **)((int)puVar4 + 0x14e),*(uint *)((int)puVar4 + 0x10a),
-                       *(uint *)((int)puVar4 + 0x10e),*(uint *)((int)puVar4 + 0x122),
-                       *(uint *)((int)puVar4 + 0x126));
+        if ((pMVar5[-0x1d] != (MMsgTy)0x0) && (*(uint *)(pMVar5 + 0x10a) != 0xffffffff)) {
+          FUN_006b3730(*(uint **)(pMVar5 + 0x14e),*(uint *)(pMVar5 + 0x10a),
+                       *(uint *)(pMVar5 + 0x10e),*(uint *)(pMVar5 + 0x122),*(uint *)(pMVar5 + 0x126)
+                      );
         }
-        iVar2 = iVar2 + 1;
-        puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar2 < (int)(uint)*(byte *)(iStack_8 + 0x9a));
+        iVar3 = iVar3 + 1;
+        pMVar5 = pMVar5 + 0x1fb;
+      } while (iVar3 < (int)(uint)(byte)pMVar2[0x9a]);
     }
     DAT_00858df8 = (undefined4 *)uStack_4c;
     return;
   }
   DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x59,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar4 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x59,0,iVar3,&DAT_007a4ccc);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7ccb74,0x59);
+  FUN_006a5e40(iVar3,0,0x7ccb74,0x59);
   return;
 }
 

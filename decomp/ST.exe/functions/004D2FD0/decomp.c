@@ -20,8 +20,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
   uint local_4d;
   int local_49;
   uint local_45 [6];
-  byte *local_2c [4];
-  int local_1c;
+  byte *local_2c [5];
   int local_18;
   byte *local_14;
   byte *local_10;
@@ -58,25 +57,25 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     puVar1 = puVar1 + 1;
     puVar7 = puVar7 + 1;
   }
-  local_2c[3] = (byte *)thunk_FUN_004210e0((int *)&local_5d);
+  local_2c[3] = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)param_1,(int *)&local_5d);
   local_59 = 0x14f;
-  local_10 = (byte *)thunk_FUN_004ad790(&local_55);
+  local_10 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(param_1 + 0x1d5),&local_55);
   local_51 = local_5d + local_59;
-  local_14 = (byte *)thunk_FUN_004ad790(&local_4d);
+  local_14 = (byte *)STT3DSprC::SaveSpr(*(STT3DSprC **)(param_1 + 0x35c),&local_4d);
   local_49 = local_55 + local_51;
   iVar2 = 0;
   local_c = local_4d + local_49;
   local_18 = 0;
   if (*(int *)(param_1 + 0x370) == 0) {
-    local_1c = param_1 + 0x350;
+    local_2c[4] = (byte *)(param_1 + 0x350);
     do {
-      puVar1 = thunk_FUN_004ad790((uint *)((int)local_45 + iVar2));
+      puVar1 = STT3DSprC::SaveSpr(*(STT3DSprC **)local_2c[4],(uint *)((int)local_45 + iVar2));
       *(undefined4 **)((int)local_2c + iVar2) = puVar1;
       *(uint *)((int)local_45 + iVar2 + 0xc) = local_c;
       uVar3 = *(uint *)((int)local_45 + iVar2);
       iVar2 = iVar2 + 4;
       local_c = local_c + uVar3;
-      local_1c = local_1c + 4;
+      local_2c[4] = (byte *)((int)local_2c[4] + 4);
       local_18 = local_18 + uVar3;
     } while (iVar2 < 0xc);
   }
@@ -146,7 +145,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
       }
     } while (iVar2 < 0xc);
   }
-  thunk_FUN_0054d430(DAT_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
+  STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(param_1 + 0x18),local_8,local_c);
   FUN_006ab060(&local_8);
   FUN_006ab060(local_2c + 3);
   FUN_006ab060(&local_10);

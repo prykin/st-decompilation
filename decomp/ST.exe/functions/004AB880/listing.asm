@@ -1,4 +1,4 @@
-FUN_004ab880:
+STT3DSprC::LoadSequence:
 004AB880  55                        PUSH EBP
 004AB881  8B EC                     MOV EBP,ESP
 004AB883  83 EC 54                  SUB ESP,0x54

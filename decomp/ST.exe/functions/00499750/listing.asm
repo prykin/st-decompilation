@@ -1,4 +1,4 @@
-FUN_00499750:
+STGroupBoatC::ReMakePVecAndTgtList:
 00499750  55                        PUSH EBP
 00499751  8B EC                     MOV EBP,ESP
 00499753  83 EC 54                  SUB ESP,0x54

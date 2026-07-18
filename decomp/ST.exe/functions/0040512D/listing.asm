@@ -1,2 +1,2 @@
-thunk_FUN_0042d980:
+STAllPlayersC::GetActiveCenter:
 0040512D  E9 4E 88 02 00            JMP 0x0042d980

@@ -1,5 +1,11 @@
 
-uint * FUN_0043eed0(uint param_1,int param_2,int param_3,int param_4,char param_5)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetTOBJListFromDArr */
+
+uint * __thiscall
+STAllPlayersC::GetTOBJListFromDArr
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,int param_4,char param_5)
 
 {
   short sVar1;
@@ -13,7 +19,8 @@ uint * FUN_0043eed0(uint param_1,int param_2,int param_3,int param_4,char param_
   void *unaff_EDI;
   undefined4 local_5c;
   undefined4 local_58 [16];
-  undefined1 local_18 [8];
+  undefined1 local_18 [4];
+  STAllPlayersC *local_14;
   int local_10;
   uint *local_c;
   uint local_8;
@@ -21,6 +28,7 @@ uint * FUN_0043eed0(uint param_1,int param_2,int param_3,int param_4,char param_
   local_10 = *(int *)(param_2 + 0xc);
   local_5c = DAT_00858df8;
   DAT_00858df8 = &local_5c;
+  local_14 = this;
   iVar4 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)local_5c;

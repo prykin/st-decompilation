@@ -1,5 +1,9 @@
 
-undefined4 FUN_0044a8a0(ushort param_1,void *param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::RegisterBlot */
+
+undefined4 __thiscall STAllPlayersC::RegisterBlot(STAllPlayersC *this,ushort param_1,void *param_2)
 
 {
   code *pcVar1;

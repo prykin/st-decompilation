@@ -7,7 +7,7 @@ void __fastcall FUN_004ad310(int param_1)
   iVar1 = 0;
   if (0 < *(int *)(param_1 + 0x14)) {
     do {
-      thunk_FUN_004abb30((byte)iVar1);
+      STT3DSprC::UnLoadSequence((STT3DSprC *)param_1,(byte)iVar1);
       iVar1 = iVar1 + 1;
     } while (iVar1 < *(int *)(param_1 + 0x14));
   }

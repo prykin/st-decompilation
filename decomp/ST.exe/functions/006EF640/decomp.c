@@ -114,7 +114,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
         iVar5 = iVar5 + 9;
       } while (local_18 < local_20);
     }
-    FUN_006f20e0((uint *)&local_14);
+    cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_14);
     DAT_00858df8 = (undefined4 *)local_64;
     return local_10;
   }
@@ -125,7 +125,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
     psVar9 = (short *)(*pcVar4)();
     return psVar9;
   }
-  FUN_006f20e0((uint *)&local_14);
+  cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_14);
   FUN_006efb70((int *)&local_10);
   FUN_006a5e40(iVar5,0,0x7eef88,0xbf);
   return (short *)0x0;

@@ -1,5 +1,7 @@
 
-uint * thunk_FUN_0043eed0(uint param_1,int param_2,int param_3,int param_4,char param_5)
+uint * __thiscall
+STAllPlayersC::GetTOBJListFromDArr
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,int param_4,char param_5)
 
 {
   short sVar1;
@@ -13,7 +15,8 @@ uint * thunk_FUN_0043eed0(uint param_1,int param_2,int param_3,int param_4,char 
   void *unaff_EDI;
   undefined4 uStack_5c;
   undefined4 auStack_58 [16];
-  undefined1 auStack_18 [8];
+  undefined1 auStack_18 [4];
+  STAllPlayersC *pSStack_14;
   int iStack_10;
   uint *puStack_c;
   uint uStack_8;
@@ -21,6 +24,7 @@ uint * thunk_FUN_0043eed0(uint param_1,int param_2,int param_3,int param_4,char 
   iStack_10 = *(int *)(param_2 + 0xc);
   uStack_5c = DAT_00858df8;
   DAT_00858df8 = &uStack_5c;
+  pSStack_14 = this;
   iVar4 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     DAT_00858df8 = (undefined4 *)uStack_5c;

@@ -1,4 +1,4 @@
-FUN_004abf00:
+STT3DSprC::SetCurShad:
 004ABF00  55                        PUSH EBP
 004ABF01  8B EC                     MOV EBP,ESP
 004ABF03  83 EC 48                  SUB ESP,0x48

@@ -1,4 +1,4 @@
-FUN_0051d540:
+HelpPanelTy::TipProc:
 0051D540  55                        PUSH EBP
 0051D541  8B EC                     MOV EBP,ESP
 0051D543  83 EC 74                  SUB ESP,0x74
