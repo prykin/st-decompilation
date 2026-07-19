@@ -20,8 +20,7 @@ int FUN_00750990(byte *param_1,undefined4 *param_2)
   byte local_35c [256];
   char local_25c [260];
   byte local_158 [260];
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   undefined4 *local_10;
   undefined4 *local_c;
   byte local_8 [4];
@@ -94,17 +93,17 @@ int FUN_00750990(byte *param_1,undefined4 *param_2)
     return -10;
   }
   local_c = (undefined4 *)0x0;
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     FUN_007532a0(local_10);
     if (local_c != (undefined4 *)0x0) {
       FUN_007532a0(local_c);
     }
     FID_conflict__remove(local_25c);
-    FUN_006a5e40(iVar4,0,0x7f2acc,0xbb);
+    RaiseInternalException(iVar4,0,s_E__DKW_DB_C_btcompac_c_007f2acc,0xbb);
     return iVar4;
   }
   __makepath(local_25c,(char *)local_8,(char *)local_55c,(char *)local_45c,&DAT_007f2ae4);
@@ -116,7 +115,7 @@ int FUN_00750990(byte *param_1,undefined4 *param_2)
   FUN_007532a0(puVar5);
   FID_conflict__remove((char *)local_158);
   FUN_00761960(local_25c,(LPCSTR)local_158);
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

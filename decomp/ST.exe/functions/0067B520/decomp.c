@@ -37,8 +37,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   bool bVar10;
   int local_c8 [7];
   int local_ac [7];
-  undefined4 local_90;
-  undefined4 local_8c [16];
+  InternalExceptionFrame local_90;
   uint local_4c [2];
   char local_44;
   undefined1 local_43;
@@ -54,10 +53,10 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
      ((*(int *)(this + 0x66e) == 0 ||
       ((uint)(*(int *)(this + 0x672) + *(int *)(this + 0x66e)) <= *(uint *)(this + 0x6fe))))) {
     *(undefined4 *)(this + 0x672) = *(undefined4 *)(this + 0x6fe);
-    local_90 = DAT_00858df8;
-    DAT_00858df8 = &local_90;
+    local_90.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_90;
     local_18 = this;
-    iVar4 = __setjmp3(local_8c,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_18;
     if (iVar4 == 0) {
       local_10 = 0;
@@ -214,7 +213,7 @@ LAB_0067b724:
         iVar4 = 0;
         do {
           if (*(int *)((int)local_c8 + iVar4) == 0) {
-            DAT_00858df8 = (undefined4 *)local_90;
+            g_currentExceptionFrame = local_90.previous;
             return;
           }
           SetTech(this_00,*(int *)((int)local_c8 + iVar4),*(int *)((int)local_ac + iVar4),
@@ -222,17 +221,18 @@ LAB_0067b724:
           iVar4 = iVar4 + 4;
         } while (iVar4 < 0x1c);
       }
-      DAT_00858df8 = (undefined4 *)local_90;
+      g_currentExceptionFrame = local_90.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_90;
-    iVar8 = FUN_006ad4d0(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x40d,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_90.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x40d,0,iVar4,&DAT_007a4ccc,
+                               s_AiPlrClassTy__ExecTech_007d2f10);
     if (iVar8 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7d2e4c,0x40e);
+    RaiseInternalException(iVar4,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x40e);
   }
   return;
 }

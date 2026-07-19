@@ -31,8 +31,7 @@ void __thiscall ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy param_1
   char acStack_46c [32];
   undefined1 uStack_44c;
   undefined4 auStack_26c [7];
-  undefined4 *puStack_250;
-  undefined4 auStack_24c [16];
+  InternalExceptionFrame IStack_250;
   undefined4 uStack_20c;
   undefined4 uStack_1ff;
   undefined4 uStack_1fb;
@@ -58,20 +57,21 @@ void __thiscall ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy param_1
   uint uStack_c;
   uint uStack_8;
   
-  puStack_250 = DAT_00858df8;
-  DAT_00858df8 = &puStack_250;
+  IStack_250.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_250;
   pCStack_10 = this;
-  iVar4 = __setjmp3(auStack_24c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_250.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pCStack_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = puStack_250;
-    iVar18 = FUN_006ad4d0(s_E____titans_Start_load_obj_cpp_007cc728,0x15a,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_250.previous;
+    iVar18 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x15a,0,iVar4,
+                                &DAT_007a4ccc,s_ChooseMapTy__InitChooseMap_007cc770);
     if (iVar18 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cc728,0x15a);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x15a);
     return;
   }
   pCStack_10[0x1a5f] = param_1;
@@ -851,12 +851,12 @@ switchD_005ab66b_caseD_6:
         uStack_44c = 0;
         CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,acStack_46c);
       }
-      thunk_FUN_00568bc0(&DAT_00807658,0);
+      thunk_FUN_00568bc0(&g_sound,0);
       if ((DAT_00807300._1_1_ & 8) != 0) {
-        thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
+        thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
       }
       thunk_FUN_005b6730(this_01,0xb,'\0',-1);
-      DAT_00858df8 = puStack_250;
+      g_currentExceptionFrame = IStack_250.previous;
       return;
     }
   }

@@ -10,11 +10,11 @@ int FUN_006b85d0(uint *param_1,uint param_2,BITMAPINFO *param_3,uint param_4,int
   uint *puVar5;
   undefined4 *puVar6;
   BITMAPINFO *pBVar7;
-  int iVar8;
+  int exceptionCode;
   
   pBVar7 = param_3;
   puVar5 = param_1;
-  iVar8 = 0;
+  exceptionCode = 0;
   if ((*(uint *)(*param_1 + 8) & 0x4000000) != 0) {
     EnterCriticalSection((LPCRITICAL_SECTION)(*param_1 + 0x4f0));
   }
@@ -33,14 +33,14 @@ int FUN_006b85d0(uint *param_1,uint param_2,BITMAPINFO *param_3,uint param_4,int
   if ((param_4 & 0x8000000) == 0) {
     if ((param_4 & 0x40000000) == 0) {
       if ((param_4 & 0xc0000000) == 0) {
-        iVar8 = -0x34;
+        exceptionCode = -0x34;
         goto LAB_006b87fb;
       }
       param_6 = pBVar7;
       puVar6 = FUN_006b04d0(param_2 * 4);
       puVar5[0xe] = (uint)puVar6;
       if (puVar6 == (undefined4 *)0x0) {
-        iVar8 = -2;
+        exceptionCode = -2;
         goto LAB_006b87fb;
       }
       param_7 = 0;
@@ -49,16 +49,18 @@ int FUN_006b85d0(uint *param_1,uint param_2,BITMAPINFO *param_3,uint param_4,int
           DVar2 = (param_6->bmiHeader).biSize;
           pBVar7 = *(BITMAPINFO **)(DVar2 + 4);
           puVar4 = *(uint **)(DVar2 + 8);
-          iVar8 = FUN_006bb6c0(*puVar5,(undefined4 *)(puVar5[0xe] + param_7 * 4),pBVar7,puVar4,
-                               param_5,0);
-          if (iVar8 != 0) {
+          exceptionCode =
+               FUN_006bb6c0(*puVar5,(undefined4 *)(puVar5[0xe] + param_7 * 4),pBVar7,puVar4,param_5,
+                            0);
+          if (exceptionCode != 0) {
             *(undefined4 *)(puVar5[0xe] + param_7 * 4) = 0;
             goto LAB_006b87fb;
           }
-          iVar8 = FUN_006d0cc0(*puVar5,*(int **)(puVar5[0xe] + param_7 * 4),
-                               (BITMAPINFO *)(param_6->bmiHeader).biSize,
-                               (uint *)(param_6->bmiHeader).biWidth);
-          if (iVar8 != 0) goto LAB_006b87fb;
+          exceptionCode =
+               FUN_006d0cc0(*puVar5,*(int **)(puVar5[0xe] + param_7 * 4),
+                            (BITMAPINFO *)(param_6->bmiHeader).biSize,
+                            (uint *)(param_6->bmiHeader).biWidth);
+          if (exceptionCode != 0) goto LAB_006b87fb;
           if ((int)param_3 < (int)pBVar7) {
             param_3 = pBVar7;
           }
@@ -74,13 +76,13 @@ int FUN_006b85d0(uint *param_1,uint param_2,BITMAPINFO *param_3,uint param_4,int
     else {
       param_1 = (uint *)(pBVar7->bmiHeader).biHeight;
       param_3 = (BITMAPINFO *)(pBVar7->bmiHeader).biWidth;
-      iVar8 = FUN_006bb6c0(*puVar5,puVar5 + 0xe,param_3,param_1,param_5,0);
-      if (iVar8 != 0) {
+      exceptionCode = FUN_006bb6c0(*puVar5,puVar5 + 0xe,param_3,param_1,param_5,0);
+      if (exceptionCode != 0) {
         puVar5[0xe] = 0;
         goto LAB_006b87fb;
       }
-      iVar8 = FUN_006d0cc0(*puVar5,(int *)puVar5[0xe],pBVar7,(uint *)0x0);
-      if (iVar8 != 0) goto LAB_006b87fb;
+      exceptionCode = FUN_006d0cc0(*puVar5,(int *)puVar5[0xe],pBVar7,(uint *)0x0);
+      if (exceptionCode != 0) goto LAB_006b87fb;
       puVar5[0xc] = (uint)param_3;
       puVar5[1] = puVar5[1] | 0x20000000;
       puVar5[0xd] = (int)param_1 / (int)param_2;
@@ -105,18 +107,18 @@ int FUN_006b85d0(uint *param_1,uint param_2,BITMAPINFO *param_3,uint param_4,int
       } while (param_2 != 0);
     }
   }
-  iVar8 = FUN_006bb6c0(*puVar5,puVar5 + 0xf,param_3,param_1,-1,0);
-  if (iVar8 != 0) {
+  exceptionCode = FUN_006bb6c0(*puVar5,puVar5 + 0xf,param_3,param_1,-1,0);
+  if (exceptionCode != 0) {
     puVar5[0xf] = 0;
   }
 LAB_006b87fb:
   if ((*(uint *)(*puVar5 + 8) & 0x4000000) != 0) {
     LeaveCriticalSection((LPCRITICAL_SECTION)(*puVar5 + 0x4f0));
   }
-  if (iVar8 == 0) {
+  if (exceptionCode == 0) {
     return 0;
   }
-  FUN_006a5e40(iVar8,DAT_007ed77c,0x7edc18,0x95);
-  return iVar8;
+  RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_DDX_C_ddcurs_c_007edc18,0x95);
+  return exceptionCode;
 }
 

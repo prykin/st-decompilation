@@ -14,7 +14,7 @@ undefined4 * FUN_007593e0(int *param_1,int param_2,uint param_3)
     param_3 = param_3 + (8 - (param_3 & 7));
   }
   if ((param_2 < 0) || (1 < param_2)) {
-    FUN_006a5e40(0xc,DAT_007ed77c,0x7f2dc8,0x164);
+    RaiseInternalException(0xc,DAT_007ed77c,s_E__DKW_JPG_C_jmemmgr_c_007f2dc8,0x164);
   }
   puVar3 = (undefined4 *)FUN_00760320(param_1,param_3 + 0xc);
   if (puVar3 == (undefined4 *)0x0) {

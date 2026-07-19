@@ -27,8 +27,7 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   int iVar16;
   undefined4 uVar17;
   undefined4 uVar18;
-  undefined4 local_bc;
-  undefined4 local_b8 [16];
+  InternalExceptionFrame local_bc;
   int local_78 [8];
   int local_58 [8];
   int local_38 [8];
@@ -39,20 +38,21 @@ void __thiscall MMsgTy::NoneMMsg(MMsgTy *this)
   MMObjTy *local_8;
   
   local_c = 1;
-  local_bc = DAT_00858df8;
-  DAT_00858df8 = &local_bc;
+  local_bc.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_bc;
   local_18 = (MMObjTy *)this;
-  iVar4 = __setjmp3(local_b8,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_bc;
-    iVar8 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0xe4,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_bc.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0xe4,0,iVar4,&DAT_007a4ccc,
+                               s_MMsgTy__NoneMMsg_007ccc78);
     if (iVar8 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7ccb74,0xe4);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0xe4);
     return;
   }
   MVar1 = local_18[0x65];
@@ -173,7 +173,7 @@ LAB_005b7ad9:
         local_58[3] = 2;
         local_58[4] = 0x693f;
         (**(code **)(*piVar11 + 0x18))(local_58);
-        DAT_00858df8 = (undefined4 *)local_bc;
+        g_currentExceptionFrame = local_bc.previous;
         return;
       }
     }
@@ -227,7 +227,7 @@ LAB_005b7655:
           this_00[0x65] = (MMObjTy)0x3;
           thunk_FUN_005b6730(this_00,5,'\0',-1);
           this_00[0x1caa] = (MMObjTy)0x0;
-          DAT_00858df8 = (undefined4 *)local_bc;
+          g_currentExceptionFrame = local_bc.previous;
           return;
         }
         MVar1 = this_00[0x1a5a];
@@ -304,7 +304,7 @@ LAB_005b7655:
           this_00[0x1a5f] = (MMObjTy)0x0;
         }
         this_00[0x1ca9] = (MMObjTy)0x0;
-        DAT_00858df8 = (undefined4 *)local_bc;
+        g_currentExceptionFrame = local_bc.previous;
         return;
       }
       iVar4 = *(int *)(this_00 + 0x1cab);
@@ -322,12 +322,12 @@ LAB_005b7655:
       MVar1 = this_00[0x1a5a];
       if ((MVar1 != (MMObjTy)0xff) && (*(int *)(this_00 + (uint)(byte)MVar1 * 0x1fb + 0xd1) != 0)) {
         FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)MVar1 * 0x1fb + 0xc1));
-        DAT_00858df8 = (undefined4 *)local_bc;
+        g_currentExceptionFrame = local_bc.previous;
         return;
       }
     }
   }
-  DAT_00858df8 = (undefined4 *)local_bc;
+  g_currentExceptionFrame = local_bc.previous;
   return;
 }
 

@@ -21,8 +21,7 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
   void *unaff_EDI;
   short *psVar15;
   int iVar16;
-  undefined4 local_9c;
-  undefined4 local_98 [16];
+  InternalExceptionFrame local_9c;
   int *local_58;
   short *local_54;
   short *local_50;
@@ -51,12 +50,12 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
      (param_3 == *(short *)((int)this + 0x4b))) {
     return 1;
   }
-  local_9c = DAT_00858df8;
-  DAT_00858df8 = &local_9c;
-  iVar4 = __setjmp3(local_98,0,unaff_EDI,unaff_ESI);
+  local_9c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_9c;
+  iVar4 = __setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_58;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_9c;
+    g_currentExceptionFrame = local_9c.previous;
     return 0xffffffff;
   }
   local_2c = (short *)(int)param_1;
@@ -278,7 +277,7 @@ LAB_004183b8:
   }
   FUN_006ab060(&local_14);
 LAB_0041862b:
-  DAT_00858df8 = (undefined4 *)local_9c;
+  g_currentExceptionFrame = local_9c.previous;
   iVar4 = *(int *)((int)this_00 + 0x97);
   if (iVar4 == 0) {
     return 2;
@@ -290,8 +289,8 @@ LAB_0041862b:
   uVar5 = (int)sVar3 - (int)*(short *)((int)this_00 + 0x41);
   iVar16 = CONCAT22((short)((uint)psVar15 >> 0x10),*(short *)(iVar4 + 10) * 0xc9) + 100;
   uVar11 = (int)uVar5 >> 0x1f;
-  local_c = (short *)(CONCAT22((short)((uint)local_9c >> 0x10),*(short *)(iVar4 + 0xc) * 200) + 100)
-  ;
+  local_c = (short *)(CONCAT22((short)((uint)local_9c.previous >> 0x10),
+                               *(short *)(iVar4 + 0xc) * 200) + 100);
   local_54 = (short *)((uVar5 ^ uVar11) - uVar11);
   local_15 = 0;
   sVar10 = (short)iVar16;

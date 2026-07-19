@@ -18,23 +18,23 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
   STT3DSprC *pSVar9;
   void *unaff_EDI;
   bool bVar10;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   STGameObjC *local_10;
   STGameObjC local_c;
   undefined3 uStack_b;
   STGameObjC local_5;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar5 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_10;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xa91,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xa91,0,iVar5,&DAT_007a4ccc,
+                               s_STSprGameObjC__GetMessage_007a4f2c);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar5,0,0x7a4e0c,0xa92);
+      RaiseInternalException(iVar5,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xa92);
       return 0xffff;
     }
     pcVar3 = (code *)swi(3);
@@ -47,16 +47,16 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     if (0x4403 < uVar2) {
       if (uVar2 == 0x4404) {
         thunk_FUN_0041f970((int)pSVar4);
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (uVar2 != 0x440f) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (DAT_0080732c != 0) {
         if (*(int *)(pSVar4 + 0x21d) != 1) {
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         pSVar9 = (STT3DSprC *)(pSVar4 + 0x1d5);
@@ -68,11 +68,11 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
         thunk_FUN_004acd60(pSVar9,'\x0f',*(uint *)(DAT_00802a38 + 0xe4) & 1);
         STT3DSprC::StartShow(pSVar9,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
         STT3DSprC::StartShow(pSVar9,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (*(int *)(pSVar4 + 0x21d) != 1) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       pSVar9 = (STT3DSprC *)(pSVar4 + 0x1d5);
@@ -82,65 +82,65 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
       thunk_FUN_004abce0(pSVar9,0xf,0x14,0x14,'\0');
       STT3DSprC::StartShow(pSVar9,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
       STT3DSprC::StartShow(pSVar9,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar2 == 0x4403) {
       thunk_FUN_0041f630((int *)pSVar4);
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar2 == 0x11f) {
       if ((*(int *)(pSVar4 + 0x20) != 0x14) && (*(int *)(pSVar4 + 0x20) != 1000)) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       thunk_FUN_004ad4a0(pSVar4 + 0x1d5,DAT_00806774,(byte *)s_simmsk_007a4f4c);
       thunk_FUN_004ad4f0((int)(pSVar4 + 0x1d5));
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar2 != 0x120) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if ((*(int *)(pSVar4 + 0x20) != 0x14) && (*(int *)(pSVar4 + 0x20) != 1000)) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     thunk_FUN_004ad510((int)(pSVar4 + 0x1d5));
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar2 == 0x113) {
     if ((*(int *)(pSVar4 + 0x20) != 0x14) && (*(int *)(pSVar4 + 0x20) != 1000)) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     (*(code *)**(undefined4 **)(pSVar4 + 0x1d5))();
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (0x109 < uVar2) {
     if (uVar2 == 0x110) {
       if (DAT_008033f0 == (void *)0x0) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       thunk_FUN_00566bd0(DAT_008033f0,(int)pSVar4);
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar2 != 0x112) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if ((*(int *)(pSVar4 + 0x20) != 0x14) && (*(int *)(pSVar4 + 0x20) != 1000)) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     thunk_FUN_004ad5e0((int)(pSVar4 + 0x1d5));
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar2 == 0x109) {
@@ -148,7 +148,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
       thunk_FUN_00420340((int *)pSVar4);
     }
     thunk_FUN_00420ae0((int *)pSVar4);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar2 != 0) {
@@ -168,28 +168,28 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
           iVar5 = STT3DSprC::Init((STT3DSprC *)(pSVar4 + 0x1d5),DAT_008073cc,0x78,0x56,(uint)pSVar4,
                                   0xf0,0xbe,0x11);
           if (iVar5 != 0) {
-            FUN_006a5e40(-1,DAT_007ed77c,0x7a4e0c,0x9d2);
+            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d2);
           }
           FUN_006e9210(*(void **)(pSVar4 + 0x211),*(uint *)(pSVar4 + 0x1ed));
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        FUN_006a5e40(-1,DAT_007ed77c,0x7a4e0c,0x9d4);
-        DAT_00858df8 = (undefined4 *)local_54;
+        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d4);
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       iVar5 = STT3DSprC::Init((STT3DSprC *)(pSVar4 + 0x1d5),DAT_008073cc,0x5a,0x45,(uint)pSVar4,0xb4
                               ,0x8c,0x11);
       if (iVar5 == 0) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      FUN_006a5e40(-1,DAT_007ed77c,0x7a4e0c,0x9d1);
-      DAT_00858df8 = (undefined4 *)local_54;
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x9d1);
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar2 != 3) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     thunk_FUN_0041f970((int)pSVar4);
@@ -204,11 +204,11 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
         FUN_006ab060((undefined4 *)(pSVar4 + 0x1b1));
         FUN_006ab060((undefined4 *)(pSVar4 + 0x1c5));
         FUN_006ab060((undefined4 *)(pSVar4 + 0x1c9));
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (iVar5 != 1000) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (*(byte **)(pSVar4 + 0x135) != (byte *)0x0) {
@@ -275,7 +275,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
       FUN_006ab060((undefined4 *)(pSVar4 + 0x1a9));
       FUN_006ab060((undefined4 *)(pSVar4 + 0x1b5));
       FUN_006ab060((undefined4 *)(pSVar4 + 0x1b9));
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (*(byte **)(pSVar4 + 0x171) != (byte *)0x0) {
@@ -324,7 +324,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     FUN_006ab060((undefined4 *)(pSVar4 + 0x1b1));
     FUN_006ab060((undefined4 *)(pSVar4 + 0x1bd));
     FUN_006ab060((undefined4 *)(pSVar4 + 0x1c1));
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   iVar5 = *(int *)(pSVar4 + 0x20);
@@ -336,23 +336,23 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     thunk_FUN_0041f3b0((int *)pSVar4);
   }
   if (*(uint *)(DAT_00802a38 + 0xe4) % 0xc != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (7 < *(uint *)(pSVar4 + 0x24)) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[*(uint *)(pSVar4 + 0x24) * 0x51])) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (7 < (byte)DAT_0080874d) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[(uint)(byte)DAT_0080874d * 0x51])) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   local_5 = pSVar4[0x24];
@@ -420,23 +420,23 @@ LAB_0041ec79:
   }
   if (!bVar10) {
     if (*(int *)(pSVar4 + 0x22d) != 0) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     *(undefined4 *)(pSVar4 + 0x22d) = 1;
     FUN_006e97c0(*(void **)(pSVar4 + 0x211),*(uint *)(pSVar4 + 0x1ed),DAT_008032c0);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
 LAB_0041eccc:
   _local_c = CONCAT31(uStack_b,local_5);
   if (*(int *)(pSVar4 + 0x22d) == 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   *(undefined4 *)(pSVar4 + 0x22d) = 0;
   FUN_006e97c0(*(void **)(pSVar4 + 0x211),*(uint *)(pSVar4 + 0x1ed),0);
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

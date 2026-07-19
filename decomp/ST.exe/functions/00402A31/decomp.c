@@ -14,8 +14,7 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
   void *unaff_EDI;
   uint uVar9;
   undefined8 uVar10;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   int iStack_c;
   int iStack_8;
   
@@ -47,9 +46,9 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
     }
     goto LAB_00415472;
   }
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
-  iVar8 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar8 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar8 == 0) {
     uVar10 = thunk_FUN_00413af0(param_1,param_2,param_3,param_4,param_5);
     uVar7 = (undefined4)((ulonglong)uVar10 >> 0x20);
@@ -105,7 +104,7 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
           }
           iVar8 = iVar8 + 1;
         } while (iVar8 < DAT_007f4cf8);
-        DAT_00858df8 = (undefined4 *)uStack_50;
+        g_currentExceptionFrame = IStack_50.previous;
         iVar8 = iStack_c;
         goto LAB_00415467;
       }
@@ -132,13 +131,14 @@ int STGroupBoatC::Way3DGrpDistribTgt(void *param_1,int param_2,int param_3,int p
         uVar9 = uVar9 + 1;
       } while ((int)uVar9 < (int)(uint)*(ushort *)((int)param_1 + 0x27));
     }
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     iVar8 = iStack_c;
   }
   else {
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     iStack_c = iVar8;
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe66,0,iVar8,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe66,0,iVar8,&DAT_007a4ccc,
+                               s_STGroupBoatC__Way3DGrpDistribTgt_007a4cd0);
     if (iVar6 != 0) {
       pcVar3 = (code *)swi(3);
       iVar8 = (*pcVar3)();
@@ -151,7 +151,7 @@ LAB_00415472:
   if (iVar8 == 0) {
     return 0;
   }
-  FUN_006a5e40(iVar8,DAT_007ed77c,0x7a4ca8,0xe6d);
+  RaiseInternalException(iVar8,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xe6d);
   return iVar8;
 }
 

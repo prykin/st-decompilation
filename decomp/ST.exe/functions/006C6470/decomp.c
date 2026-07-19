@@ -58,7 +58,7 @@ int FUN_006c6470(int param_1,int param_2,int param_3,undefined4 *param_4,int par
         LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x4f0));
       }
       if (local_20 != 0) {
-        FUN_006a5e40(local_20,DAT_007ed77c,0x7edf8c,0x2d);
+        RaiseInternalException(local_20,DAT_007ed77c,s_E__DKW_DDX_C_ddrrect_c_007edf8c,0x2d);
         ExceptionList = local_14;
         return local_20;
       }

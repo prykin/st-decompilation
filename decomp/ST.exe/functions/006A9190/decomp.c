@@ -382,7 +382,7 @@ LAB_006a9970:
         iVar22 = FUN_006ab090((int)param_13,iVar14,iVar14,iVar14,(int)param_14,(int)param_14,
                               (int)param_14,-1,-1,-1);
         if (iVar22 != 0) {
-          FUN_006a5e40(-2,DAT_007ed77c,0x7ed730,0x116);
+          RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_WAY_C__chkway3_cpp_007ed730,0x116);
           return (short *)0x0;
         }
         if ((((int)param_14 < (int)(((uint)psVar6 ^ uVar19) - uVar19)) ||

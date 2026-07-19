@@ -49,7 +49,7 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
       pcVar8 = pcVar8 + 1;
     }
   }
-  iVar3 = FUN_006ad4d0(param_1,param_2,0,param_3,&DAT_007a4ccc);
+  iVar3 = ReportDebugMessage(param_1,param_2,0,param_3,&DAT_007a4ccc,local_204);
   if (iVar3 == 0) {
     return param_3;
   }

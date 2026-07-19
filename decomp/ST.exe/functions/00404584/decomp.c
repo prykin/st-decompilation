@@ -19,14 +19,13 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
   undefined4 uVar12;
   undefined4 uVar13;
   undefined4 uVar14;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   SpecPanelTy *pSStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pSStack_8 = (SpecPanelTy *)this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_8;
   if (iVar2 == 0) {
     uVar13 = 0x77;
@@ -183,17 +182,18 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xcc,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
     *(undefined4 *)(this_00 + 0x1df) = uVar6;
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar8 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x43,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_4c.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x43,0,iVar2,&DAT_007a4ccc,
+                             s_FrmPanelTy__InitFrmPanel_007c2980);
   if (iVar8 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c2958,0x43);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x43);
   return;
 }
 

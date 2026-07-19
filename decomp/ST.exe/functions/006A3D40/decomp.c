@@ -108,8 +108,8 @@ int * __cdecl FUN_006a3d40(uint param_1,uint param_2,char *param_3,int param_4)
       }
     }
     else if (param_3 == (char *)0x0) {
-      iVar4 = FUN_006ad4d0(s_E____titans_Crt__Dbgheap_c_007ec1d0,0x19c,0,0,
-                           (byte *)s_Invalid_allocation_size___u_byte_007ec1f0);
+      iVar4 = ReportDebugMessage(s_E____titans_Crt__Dbgheap_c_007ec1d0,0x19c,0,0,
+                                 s_Invalid_allocation_size___u_byte_007ec1f0,param_1);
       if (iVar4 != 0) {
         pcVar1 = (code *)swi(3);
         piVar5 = (int *)(*pcVar1)();
@@ -117,7 +117,8 @@ int * __cdecl FUN_006a3d40(uint param_1,uint param_2,char *param_3,int param_4)
       }
     }
     else {
-      iVar4 = FUN_006ad4d0(param_3,param_4,0,0,(byte *)s_Invalid_allocation_size___u_byte_007ec1f0);
+      iVar4 = ReportDebugMessage(param_3,param_4,0,0,s_Invalid_allocation_size___u_byte_007ec1f0,
+                                 param_1);
       if (iVar4 != 0) {
         pcVar1 = (code *)swi(3);
         piVar5 = (int *)(*pcVar1)();

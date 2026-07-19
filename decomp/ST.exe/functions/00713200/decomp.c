@@ -22,8 +22,7 @@ ccFntTy::GetFittingStr
   uint *puVar10;
   void *unaff_EDI;
   char *pcVar11;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   ccFntTy *local_1c;
   int local_18;
   int local_14;
@@ -36,13 +35,14 @@ ccFntTy::GetFittingStr
   local_c = (char *)0x0;
   local_10 = (uint *)0x0;
   local_14 = 0;
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
   local_1c = this;
-  iVar5 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x93f,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar6 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x93f,0,iVar5,&DAT_007a4ccc,
+                               s_ccFntTy__GetFittingStr_007f038c);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       pcVar7 = (char *)(*pcVar2)();
@@ -54,11 +54,11 @@ ccFntTy::GetFittingStr
     if ((local_c != (char *)0x0) && (local_c != param_1)) {
       FUN_006ab060(&local_c);
     }
-    FUN_006a5e40(iVar5,0,0x7f0190,0x944);
+    RaiseInternalException(iVar5,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x944);
     return (char *)0x0;
   }
   if ((param_2 == (uint *)0x0) || (param_4 < 1)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x912);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x912);
   }
   this_00 = local_1c;
   iVar5 = FUN_00711110(local_1c,param_2);
@@ -67,7 +67,7 @@ ccFntTy::GetFittingStr
       local_18 = FUN_00711110(this_00,param_3);
     }
     if (param_4 < local_18) {
-      FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x91d);
+      RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x91d);
     }
     cVar1 = (char)*param_2;
     puVar10 = param_2;
@@ -217,7 +217,7 @@ ccFntTy::GetFittingStr
       pcVar11 = pcVar11 + 1;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_60;
+  g_currentExceptionFrame = local_60.previous;
   if (param_5 != (undefined4 *)0x0) {
     *param_5 = local_10;
   }

@@ -12,7 +12,7 @@ int FUN_006c8d80(int *param_1,char *param_2,int param_3)
     if ((*(byte *)(param_1 + 3) & 0x20) == 0) {
       return -1;
     }
-    FUN_006a5e40(-0xc,DAT_007ed77c,0x7ee15c,0xe);
+    RaiseInternalException(-0xc,DAT_007ed77c,s_E__DKW_FIO_C_frdslnch_c_007ee15c,0xe);
     return -0xc;
   }
   uVar3 = 0xffffffff;

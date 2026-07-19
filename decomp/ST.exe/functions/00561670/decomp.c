@@ -236,7 +236,7 @@ LAB_00561bff:
   if (local_2c == 0) {
     return puVar5;
   }
-  FUN_006a5e40(local_2c,DAT_007ed77c,0x7c96b0,600);
+  RaiseInternalException(local_2c,DAT_007ed77c,s_E____titans_scoreai_cpp_007c96b0,600);
   return (undefined4 *)0x0;
 }
 

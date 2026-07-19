@@ -75,7 +75,7 @@ int FUN_006b82e0(int param_1,int param_2,int param_3,byte *param_4,int param_5,i
   }
 LAB_006b847e:
   if ((local_20 != -0x7789ff60) && (local_20 != -0x7789fe52)) {
-    FUN_006a5e40(local_20,DAT_007ed77c,0x7edc00,0x40);
+    RaiseInternalException(local_20,DAT_007ed77c,s_E__DKW_DDX_C_ddputspi_c_007edc00,0x40);
     ExceptionList = local_14;
     return local_20;
   }

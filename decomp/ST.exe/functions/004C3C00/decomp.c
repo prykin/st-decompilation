@@ -20,8 +20,7 @@ int FUN_004c3c00(int param_1,int param_2)
   STSprGameObjC *pSVar14;
   int iVar15;
   bool bVar16;
-  undefined4 local_b8;
-  undefined4 local_b4 [16];
+  InternalExceptionFrame local_b8;
   undefined4 local_74 [2];
   int local_6c;
   short local_68;
@@ -56,14 +55,15 @@ int FUN_004c3c00(int param_1,int param_2)
   
   local_8 = (STSprGameObjC *)0x0;
   local_20 = (STSprGameObjC *)0x0;
-  local_b8 = DAT_00858df8;
-  DAT_00858df8 = &local_b8;
-  iVar7 = __setjmp3(local_b4,0,unaff_EDI,unaff_ESI);
+  local_b8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_b8;
+  iVar7 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
-    DAT_00858df8 = (undefined4 *)local_b8;
-    iVar15 = FUN_006ad4d0(s_E____titans_Artem_TLO_bfire_cpp_007ac910,0x126,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_b8.previous;
+    iVar15 = ReportDebugMessage(s_E____titans_Artem_TLO_bfire_cpp_007ac910,0x126,0,iVar7,
+                                &DAT_007a4ccc,s_TLOBaseTy__fireFindCheckTarget_e_007ac958);
     if (iVar15 == 0) {
-      FUN_006a5e40(iVar7,0,0x7ac910,0x127);
+      RaiseInternalException(iVar7,0,s_E____titans_Artem_TLO_bfire_cpp_007ac910,0x127);
       return iVar7;
     }
     pcVar4 = (code *)swi(3);
@@ -329,7 +329,7 @@ LAB_004c42b5:
       *(undefined4 *)(pSVar14 + 0x26d) = 0;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_b8;
+  g_currentExceptionFrame = local_b8.previous;
   return 0;
 }
 

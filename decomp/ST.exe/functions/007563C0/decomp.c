@@ -30,7 +30,7 @@ int FUN_007563c0(int param_1)
     iVar1 = (*(code *)**(undefined4 **)(param_1 + 0x1a2))(param_1);
     return iVar1;
   default:
-    FUN_006a5e40(0x12,DAT_007ed77c,0x7f2d38,0x14e);
+    RaiseInternalException(0x12,DAT_007ed77c,s_E__DKW_JPG_C_jdapimin_c_007f2d38,0x14e);
   }
   return iVar1;
 }

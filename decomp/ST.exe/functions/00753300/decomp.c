@@ -21,8 +21,7 @@ FUN_00753300(byte *param_1,undefined4 *param_2,undefined2 param_3,int param_4,un
   byte local_354 [256];
   byte local_254 [256];
   byte local_154 [260];
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   byte local_c [4];
   undefined4 *local_8;
   
@@ -93,16 +92,16 @@ FUN_00753300(byte *param_1,undefined4 *param_2,undefined2 param_3,int param_4,un
       pbVar11 = pbVar11 + 1;
     }
   }
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     if ((undefined4 *)*local_8 != (undefined4 *)0x0) {
       FUN_007532a0((undefined4 *)*local_8);
     }
     FUN_006ab060(&local_8);
-    FUN_006a5e40(iVar3,0,0x7f2c08,0x48);
+    RaiseInternalException(iVar3,0,s_E__DKW_DB_C__dbfinit_c_007f2c08,0x48);
     return (undefined4 *)0x0;
   }
   if (param_4 == 1) {
@@ -192,18 +191,18 @@ LAB_0075346c:
   else {
     if (param_4 != 2) {
       if (param_4 != 3) {
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return local_8;
       }
       puVar5 = FUN_007531e0((undefined4 *)0x0,(LPCSTR)local_154,0x100000);
       local_8[1] = puVar5;
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return local_8;
     }
     puVar5 = FUN_007530f0((undefined4 *)0x0,(LPCSTR)local_154,0x100000,0x100000);
   }
   local_8[1] = puVar5;
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
 

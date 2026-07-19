@@ -27,8 +27,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
   char acStack_c8 [32];
   uint uStack_a8;
   undefined4 uStack_a4;
-  undefined4 *puStack_a0;
-  undefined4 auStack_9c [16];
+  InternalExceptionFrame IStack_a0;
   byte abStack_5c [64];
   int iStack_1c;
   int iStack_18;
@@ -45,12 +44,13 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
   *(undefined1 *)puVar12 = 0;
   puStack_8 = (uint *)0x0;
   puStack_10 = (uint *)0x0;
-  puStack_a0 = DAT_00858df8;
-  DAT_00858df8 = &puStack_a0;
-  iVar7 = __setjmp3(auStack_9c,0,unaff_EDI,unaff_ESI);
+  IStack_a0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_a0;
+  iVar7 = __setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
-    DAT_00858df8 = puStack_a0;
-    iVar10 = FUN_006ad4d0(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_a0.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar7,&DAT_007a4ccc,
+                                s_CreateArbList_007d30e0);
     if (iVar10 == 0) {
       if (puStack_8 != (uint *)0x0) {
         FUN_006ae110((byte *)puStack_8);
@@ -58,7 +58,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
       if (puStack_10 != (uint *)0x0) {
         FUN_006ae110((byte *)puStack_10);
       }
-      FUN_006a5e40(iVar7,0,0x7d2fa4,0x248);
+      RaiseInternalException(iVar7,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x248);
       return (uint *)0x0;
     }
     pcVar3 = (code *)swi(3);
@@ -66,7 +66,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
     return puVar6;
   }
   if (param_1 == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2fa4,0x216);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x216);
   }
   puStack_8 = FUN_006ae290((uint *)0x0,5,0x98,5);
   if (param_2 != 0) {
@@ -103,7 +103,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
       if (puStack_10 != (uint *)0x0) {
         FUN_006ae110((byte *)puStack_10);
       }
-      DAT_00858df8 = puStack_a0;
+      g_currentExceptionFrame = IStack_a0.previous;
       return puStack_8;
     }
     puStack_c = FUN_006f2d90(param_1,pcVar5,0,1);

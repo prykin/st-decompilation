@@ -12,21 +12,20 @@ char * __cdecl FUN_00725c60(cMf32 *param_1,char *param_2,byte param_3,int param_
   ushort *puVar7;
   void *unaff_EDI;
   byte bVar8;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   ushort *local_c;
   char *local_8;
   
   iVar6 = 0;
   local_c = (ushort *)0x0;
   local_8 = (char *)0x0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     local_c = FUN_006f1ce0(7,param_2,(int *)0x0,param_4);
     if (local_c == (ushort *)0x0) {
-      FUN_006a5e40(-4,DAT_007ed77c,0x7f0c8c,0x1c);
+      RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mfspr_cpp_007f0c8c,0x1c);
     }
     local_8 = (char *)FUN_006aac10(*(short *)((int)local_c + 0x23) * 4 + 0x31);
     puVar7 = local_c;
@@ -51,7 +50,7 @@ char * __cdecl FUN_00725c60(cMf32 *param_1,char *param_2,byte param_3,int param_
         uVar4 = FUN_0070aa50(param_1,pCVar3,bVar8,iVar6);
         *(undefined4 *)(local_8 + iVar2 * 4 + 0x2d) = uVar4;
         if (*(int *)(local_8 + iVar2 * 4 + 0x2d) == 0) {
-          FUN_006a5e40(-4,DAT_007ed77c,0x7f0c8c,0x27);
+          RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mfspr_cpp_007f0c8c,0x27);
         }
         if (iVar2 == 0) {
           *(undefined2 *)(local_8 + 0x29) = *(undefined2 *)(*(int *)(local_8 + 0x2d) + 4);
@@ -60,11 +59,11 @@ char * __cdecl FUN_00725c60(cMf32 *param_1,char *param_2,byte param_3,int param_
         iVar2 = iVar2 + 1;
       } while (iVar2 < *(short *)(local_8 + 0x23));
     }
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     cMf32::RecMemFree(param_1,(uint *)&local_c);
     return local_8;
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   cMf32::RecMemFree(param_1,(uint *)&local_c);
   if (local_8 != (char *)0x0) {
     if (0 < *(short *)(local_8 + 0x23)) {
@@ -76,13 +75,14 @@ char * __cdecl FUN_00725c60(cMf32 *param_1,char *param_2,byte param_3,int param_
     FUN_006ab060(&local_8);
   }
   if ((param_4 != 0) || (iVar2 != -4)) {
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_mfspr_cpp_007f0c8c,0x3e,0,iVar2,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E__Ourlib_mfspr_cpp_007f0c8c,0x3e,0,iVar2,&DAT_007a4ccc,
+                               s_mfSSprLoad_007f0c80);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       pcVar5 = (char *)(*pcVar1)();
       return pcVar5;
     }
-    FUN_006a5e40(iVar2,0,0x7f0c8c,0x40);
+    RaiseInternalException(iVar2,0,s_E__Ourlib_mfspr_cpp_007f0c8c,0x40);
   }
   return (char *)0x0;
 }

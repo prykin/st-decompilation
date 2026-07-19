@@ -21,14 +21,13 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   void *unaff_EDI;
   AiEventClassTy *pAVar12;
   bool bVar13;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   AiEventClassTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8 == (AiEventClassTy *)0x0) {
@@ -116,18 +115,19 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
         bVar13 = uVar10 < *(uint *)(iVar3 + 0xc);
       } while ((int)uVar10 < (int)*(uint *)(iVar3 + 0xc));
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   FUN_00402e14((int)local_8);
-  iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_event_cpp_007d2a34,0x50,0,iVar3,&DAT_007a4ccc);
+  iVar7 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x50,0,iVar3,&DAT_007a4ccc,
+                             s_AiEventClassTy__InitData_007d2a58);
   if (iVar7 != 0) {
     pcVar1 = (code *)swi(3);
     iVar3 = (*pcVar1)();
     return iVar3;
   }
-  FUN_006a5e40(iVar3,0,0x7d2a34,0x51);
+  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x51);
   return iVar3;
 }
 

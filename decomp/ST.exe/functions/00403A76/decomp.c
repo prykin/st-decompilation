@@ -23,10 +23,8 @@ void __thiscall thunk_FUN_0056f250(void *this,char param_1,byte param_2,char *pa
   char cVar13;
   uint *puVar14;
   byte abStack_1a8 [260];
-  undefined4 **ppuStack_a4;
-  undefined4 auStack_a0 [16];
-  undefined4 **ppuStack_60;
-  undefined4 auStack_5c [16];
+  InternalExceptionFrame IStack_a4;
+  InternalExceptionFrame IStack_60;
   byte bStack_1c;
   undefined1 uStack_1b;
   undefined1 uStack_1a;
@@ -88,9 +86,9 @@ LAB_0056f325:
     else if (cVar13 == '\x03') {
       uStack_8 = uStack_8 | 0x500;
     }
-    ppuStack_a4 = DAT_00858df8;
-    DAT_00858df8 = &ppuStack_a4;
-    iVar3 = __setjmp3(auStack_a0,0,unaff_EDI,unaff_ESI);
+    IStack_a4.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_a4;
+    iVar3 = __setjmp3(IStack_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if ((param_1 == '\0') || (this_00 = extraout_ECX, param_1 == '\x03')) {
         puStack_14 = FUN_006f0ec0(0x345,abStack_1a8,1,0,0);
@@ -109,16 +107,16 @@ LAB_0056f325:
                      (undefined4 *)0x0,'\0',(uint *)0x0);
         FUN_006f13f0(0xc,PTR_s_TITLE_MISSION_0079b070,(byte *)((int)pvVar2 + 0x4da3),0x104,
                      (undefined4 *)0x0,'\0',(uint *)0x0);
-        ppuStack_60 = DAT_00858df8;
-        DAT_00858df8 = &ppuStack_60;
-        iVar3 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+        IStack_60.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &IStack_60;
+        iVar3 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
         pvVar2 = pvStack_10;
         puVar7 = puStack_14;
         if ((iVar3 == 0) && (*(uint **)((int)pvStack_10 + 0x4ea7) != (uint *)0x0)) {
           FUN_0071ab30(*(uint **)((int)pvStack_10 + 0x4ea7),(int)puStack_14,
                        PTR_s_DESCRIPTION_0079b074,'\x01');
         }
-        DAT_00858df8 = ppuStack_60;
+        g_currentExceptionFrame = IStack_60.previous;
         if (*(uint **)((int)pvVar2 + 0x4eab) != (uint *)0x0) {
           FUN_0071ab30(*(uint **)((int)pvVar2 + 0x4eab),(int)puVar7,PTR_s_OBJECTIVES_0079b078,'\x01'
                       );
@@ -167,10 +165,10 @@ LAB_0056f325:
         this_00 = extraout_ECX_01;
       }
       cMf32::delete(this_00,puVar7);
-      DAT_00858df8 = ppuStack_a4;
+      g_currentExceptionFrame = IStack_a4.previous;
       return;
     }
-    DAT_00858df8 = ppuStack_a4;
+    g_currentExceptionFrame = IStack_a4.previous;
     pbVar6 = (byte *)((int)pvStack_10 + 0x7d1a);
     uVar4 = 0xffffffff;
     pbVar8 = abStack_1a8;

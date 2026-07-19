@@ -7,13 +7,12 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   BldObjPanelTy *pBVar3;
   int iVar4;
   uint uVar5;
-  int iVar6;
-  byte *pbVar7;
-  int iVar8;
+  int errorCode;
+  byte *pbVar6;
+  int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   int iStack_18;
   BldObjPanelTy *pBStack_14;
   int iStack_10;
@@ -29,12 +28,12 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
     iStack_10 = piVar1[1] - *(int *)(this + 0x44);
   }
   uVar5 = *(int *)(this + 0x199) + -0xc0af + *(int *)(param_1 + 0x10);
-  iVar8 = *(int *)(this + (uint)(byte)this[0x278] * 4 + 0x27e);
-  if ((iVar8 == 0) || (*(uint *)(iVar8 + 0xc) <= uVar5)) {
+  iVar7 = *(int *)(this + (uint)(byte)this[0x278] * 4 + 0x27e);
+  if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar5)) {
     puStack_8 = (undefined4 *)0x0;
   }
   else {
-    puStack_8 = (undefined4 *)(*(int *)(iVar8 + 8) * uVar5 + *(int *)(iVar8 + 0x1c));
+    puStack_8 = (undefined4 *)(*(int *)(iVar7 + 8) * uVar5 + *(int *)(iVar7 + 0x1c));
   }
   pBStack_14 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (puStack_8 == (undefined4 *)0x0)) {
@@ -42,40 +41,41 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   }
   else {
     if (*(char *)(puStack_8 + 2) == '\0') {
-      iVar8 = *(int *)(this + 0x18c);
+      iVar7 = *(int *)(this + 0x18c);
     }
     else {
-      iVar8 = *(int *)(this + 0x188);
+      iVar7 = *(int *)(this + 0x188);
     }
     uVar5 = thunk_FUN_00526ba0(*puStack_8,*(char *)((int)puStack_8 + 9));
-    pbStack_c = (byte *)FUN_0070b3a0(iVar8,uVar5);
+    pbStack_c = (byte *)FUN_0070b3a0(iVar7,uVar5);
   }
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
-  iVar6 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
+  errorCode = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar4 = iStack_10;
   pBVar3 = pBStack_14;
-  iVar8 = iStack_18;
-  if (iVar6 == 0) {
+  iVar7 = iStack_18;
+  if (errorCode == 0) {
     thunk_FUN_00540760(*(undefined4 **)(pBStack_14 + 0x68),iStack_18,iStack_10,'\x01',pbStack_c);
     if ((*(short *)(param_1 + 0x14) == 3) && (puStack_8 != (undefined4 *)0x0)) {
-      pbVar7 = (byte *)FUN_0070b3a0(*(int *)(pBVar3 + 400),
+      pbVar6 = (byte *)FUN_0070b3a0(*(int *)(pBVar3 + 400),
                                     9 - (uint)(*(char *)(puStack_8 + 2) != '\0'));
-      thunk_FUN_00540760(*(undefined4 **)(pBVar3 + 0x68),iVar8,iVar4,'\x06',pbVar7);
+      thunk_FUN_00540760(*(undefined4 **)(pBVar3 + 0x68),iVar7,iVar4,'\x06',pbVar6);
     }
     FUN_006b3640(DAT_008075a8,*(uint *)(pBVar3 + 0x60),0xffffffff,*(uint *)(pBVar3 + 0x3c),
                  *(uint *)(pBVar3 + 0x44));
-    DAT_00858df8 = (undefined4 *)uStack_5c;
+    g_currentExceptionFrame = IStack_5c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_5c;
-  iVar8 = FUN_006ad4d0(s_E____titans_Andrey_bldobj_cpp_007c1984,0x92,0,iVar6,&DAT_007a4ccc);
-  if (iVar8 != 0) {
+  g_currentExceptionFrame = IStack_5c.previous;
+  iVar7 = ReportDebugMessage(s_E____titans_Andrey_bldobj_cpp_007c1984,0x92,0,errorCode,&DAT_007a4ccc
+                             ,s_BldObjPanelTy__PaintBldBut_007c1a0c);
+  if (iVar7 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar6,0,0x7c1984,0x92);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_bldobj_cpp_007c1984,0x92);
   return;
 }
 

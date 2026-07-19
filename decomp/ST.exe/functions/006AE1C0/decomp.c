@@ -9,7 +9,7 @@ uint FUN_006ae1c0(uint *param_1,undefined4 *param_2)
   if (param_1[4] <= param_1[3]) {
     uVar1 = FUN_006ae230(param_1);
     if (uVar1 != 0) {
-      FUN_006a5e40(uVar1,DAT_007ed77c,0x7eda2c,0xe);
+      RaiseInternalException(uVar1,DAT_007ed77c,s_E__DKW_TBL_C_darrappe_c_007eda2c,0xe);
       return uVar1;
     }
   }

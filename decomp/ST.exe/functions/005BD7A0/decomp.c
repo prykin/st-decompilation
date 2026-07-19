@@ -33,29 +33,28 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   char cVar19;
   undefined4 local_6a4 [256];
   undefined1 local_2a4 [516];
-  undefined4 **local_a0;
-  undefined4 local_9c [16];
-  undefined4 **local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_a0;
+  InternalExceptionFrame local_5c;
   MReportTy *local_18;
   cMf32 *local_14;
   uint local_10;
   MReportTy *local_c;
   uint local_8;
   
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar4 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = local_5c;
-    iVar18 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0xc6,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_5c.previous;
+    iVar18 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0xc6,0,iVar4,&DAT_007a4ccc,
+                                s_MReportTy__InitMReport_007ccf24);
     if (iVar18 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7ccec8,0xc6);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0xc6);
     return;
   }
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -159,15 +158,15 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
     puVar8 = &DAT_0080f33a;
     wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079c0d4,
               &DAT_00807ddd,PTR_s_PL_LOG_0079c0d8);
-    local_a0 = DAT_00858df8;
-    DAT_00858df8 = &local_a0;
-    iVar4 = __setjmp3(local_9c,0,puVar8,pcVar17);
+    local_a0.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_a0;
+    iVar4 = __setjmp3(local_a0.jumpBuffer,0,puVar8,pcVar17);
     if (iVar4 == 0) {
       local_14 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
     }
     pcVar3 = local_14;
     pMVar14 = local_18;
-    DAT_00858df8 = local_a0;
+    g_currentExceptionFrame = local_a0.previous;
     if (local_14 != (cMf32 *)0x0) {
       puVar8 = (undefined4 *)local_2a4;
       for (iVar4 = 0x80; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -380,11 +379,11 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
     this_00[0xd2] = (CursorClassTy)0x0;
     *(undefined4 *)(this_00 + 0x4df) = 0xffffffff;
   }
-  thunk_FUN_00568bc0(&DAT_00807658,0);
+  thunk_FUN_00568bc0(&g_sound,0);
   if ((DAT_00807300._1_1_ & 8) != 0) {
-    thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
+    thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
   }
-  DAT_00858df8 = local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   return;
 }
 

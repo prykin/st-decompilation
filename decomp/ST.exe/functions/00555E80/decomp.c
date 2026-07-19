@@ -8,13 +8,12 @@ void FUN_00555e80(void)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar4;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   int local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     iVar2 = *(int *)(*(int *)(local_8 + 0x24) + 0xc);
     if (iVar2 == 0) {
@@ -52,17 +51,18 @@ void FUN_00555e80(void)
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < *(int *)(*(int *)(local_8 + 0x24) + 0xc));
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_grig_traks_cpp_007c9104,200,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,200,0,iVar2,&DAT_007a4ccc,
+                             s_TraksClassTy__TraksExec_error_007c9184);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c9104,0xc9);
+  RaiseInternalException(iVar2,0,s_E____titans_grig_traks_cpp_007c9104,0xc9);
   return;
 }
 

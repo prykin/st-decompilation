@@ -6,7 +6,7 @@ void __thiscall FUN_00621780(void *this,uint param_1)
   int iVar2;
   undefined1 *puVar3;
   uint uVar4;
-  int local_10 [3];
+  SoundPosition local_10;
   
   iVar2 = *(int *)((int)this + 0x10a);
   if ((param_1 < *(uint *)(iVar2 + 0xc)) &&
@@ -131,10 +131,11 @@ void __thiscall FUN_00621780(void *this,uint param_1)
     default:
       goto switchD_006217ba_default;
     }
-    local_10[2] = 0;
-    local_10[0] = -1;
-    local_10[1] = 0xffffffff;
-    thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,iVar2,local_10,0);
+    local_10.unknown = 0;
+    local_10.x = -1;
+    local_10.y = -1;
+    SoundClassTy::PlaySound_thunk
+              ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar2,&local_10,0);
     *puVar3 = 1;
     *(undefined4 *)(puVar3 + 1) = *(undefined4 *)(DAT_00802a38 + 0xe4);
     *(undefined4 *)((int)this + 0x106) = *(undefined4 *)(DAT_00802a38 + 0xe4);

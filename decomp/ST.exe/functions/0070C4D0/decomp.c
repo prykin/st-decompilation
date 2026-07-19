@@ -13,8 +13,7 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   int iVar6;
   int iVar7;
   CHAR local_45c [1024];
-  undefined4 *local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
   uint local_10;
@@ -26,11 +25,11 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   local_c = param_6 >> 8 & 0xff;
   local_10 = param_6 & 0xff;
   local_8 = (undefined4 *)0x0;
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  iVar2 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  iVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     if (local_8 != (undefined4 *)0x0) {
       FUN_006ab060(&local_8);
     }
@@ -45,7 +44,7 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   if (local_8 == (undefined4 *)0x0) {
     wsprintfA(local_45c,s_img___d__d__d__d___lx__d__ly__d__007f0118,param_2,param_3,param_4,param_5,
               *(undefined4 *)(param_1 + 4),*(undefined4 *)(param_1 + 8),param_6);
-    iVar2 = FUN_006ad4d0(s_E__Ourlib_Mfimg_cpp_007effe0,0x4a7,0,-1,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E__Ourlib_Mfimg_cpp_007effe0,0x4a7,0,-1,&DAT_007a4ccc,local_45c);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       puVar4 = (undefined4 *)(*pcVar1)();
@@ -71,10 +70,10 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
                             (local_8[1] * local_18) / local_14,(local_8[2] * local_c) / local_10),
      local_8 != (undefined4 *)0x0)) {
     FUN_006ab060(&local_8);
-    DAT_00858df8 = local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     return puVar4;
   }
-  DAT_00858df8 = local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   return puVar4;
 }
 

@@ -13,8 +13,7 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,int param_2,byte param_3,char *pa
   int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   CPanelTy *pCStack_14;
   int iStack_10;
   int iStack_c;
@@ -58,10 +57,10 @@ LAB_004f4318:
   iStack_c = iStack_c - DAT_00806734;
 LAB_004f4331:
   if (param_6 != (undefined *)0x0) {
-    uStack_58 = DAT_00858df8;
-    DAT_00858df8 = &uStack_58;
+    IStack_58.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_58;
     pCStack_14 = this;
-    iVar4 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       uVar5 = (*(code *)param_6)(param_2);
       pCVar6 = FUN_006f2c00(param_4,2,uVar5);
@@ -81,17 +80,18 @@ LAB_004f4331:
         FUN_006b3640(DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
                      *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
       }
-      DAT_00858df8 = (undefined4 *)uStack_58;
+      g_currentExceptionFrame = IStack_58.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_58;
-    iVar7 = FUN_006ad4d0(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x256,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_58.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x256,0,iVar4,&DAT_007a4ccc,
+                               s_CPanelTy__PaintTab_007c1b9c);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7c1a4c,0x256);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x256);
   }
   return;
 }

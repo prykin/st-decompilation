@@ -84,7 +84,8 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
             goto LAB_0043440e;
           }
           if (iVar3 != 0x1ae) {
-            iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1003,0,0,&DAT_007a4ccc);
+            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1003,0,0,
+                                       &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a715c);
             if (iVar3 == 0) {
               return;
             }
@@ -126,7 +127,8 @@ LAB_004345b4:
       }
       else {
         if (*(int *)((int)&DAT_007f5023 + iVar3) != 1) {
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x102e,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x102e,0,0,
+                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a71dc);
           if (iVar3 == 0) {
             return;
           }
@@ -155,7 +157,8 @@ LAB_004345b4:
         }
         else {
           if (iVar5 != 0x1ae) {
-            iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x102a,0,0,&DAT_007a4ccc);
+            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x102a,0,0,
+                                       &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a719c);
             if (iVar3 == 0) {
               return;
             }
@@ -221,7 +224,8 @@ LAB_004349ac:
       else {
         if ((iVar5 != 0x1a4) && (iVar5 != 0x1b8)) {
 LAB_00434c12:
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xfd1,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xfd1,0,0,
+                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7018);
           if (iVar3 == 0) {
             return;
           }
@@ -251,7 +255,8 @@ LAB_00434c92:
     }
     else {
       if (*(int *)((int)&DAT_007f5023 + iVar3) != 1) {
-        iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xfd5,0,0,&DAT_007a4ccc);
+        iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xfd5,0,0,&DAT_007a4ccc,
+                                   s_STAllPlayersC__PointPick_GAMETYP_007a7094);
         if (iVar3 == 0) {
           return;
         }
@@ -288,7 +293,8 @@ LAB_00434c92:
       else {
         if ((iVar5 != 0x1a4) && (iVar5 != 0x1b8)) {
 LAB_00434ab0:
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf9a,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf9a,0,0,
+                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7054);
           if (iVar3 == 0) {
             return;
           }
@@ -371,8 +377,8 @@ LAB_00434cb8:
           }
           else {
             if (iVar5 != 0x1ae) {
-              iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf1e,0,0,&DAT_007a4ccc)
-              ;
+              iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf1e,0,0,
+                                         &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7228);
               if (iVar3 == 0) {
                 return;
               }
@@ -409,7 +415,8 @@ LAB_0043429d:
       }
       else {
         if (*(int *)((int)&DAT_007f5023 + iVar3) != 1) {
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf56,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf56,0,0,
+                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a72a0);
           if (iVar3 == 0) {
             return;
           }
@@ -434,7 +441,8 @@ LAB_0043429d:
           goto LAB_00434cb8;
         }
         if (iVar5 != 0x1ae) {
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf52,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf52,0,0,
+                                     &DAT_007a4ccc,s_STAllPlayersC__PointPick_GAMETYP_007a7264);
           if (iVar3 == 0) {
             return;
           }
@@ -473,7 +481,8 @@ LAB_004345cf:
   iVar3 = cVar11 * 0xa62;
   if (*(int *)((int)&DAT_007f5023 + iVar3) != 0) {
     if (*(int *)((int)&DAT_007f5023 + iVar3) != 1) {
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1090,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1090,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__PointPick_GAMETYP_007a71dc);
       if (iVar3 == 0) {
         return;
       }
@@ -509,7 +518,8 @@ LAB_004345cf:
     else {
       if ((iVar3 != 0x1a4) && (iVar3 != 0x1b8)) {
 LAB_004346e3:
-        iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1062,0,0,&DAT_007a4ccc);
+        iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1062,0,0,&DAT_007a4ccc
+                                   ,s_STAllPlayersC__PointPick_GAMETYP_007a711c);
         if (iVar3 == 0) {
           return;
         }
@@ -572,7 +582,8 @@ LAB_00434768:
   else {
     if ((iVar3 != 0x1a4) && (iVar3 != 0x1b8)) {
 LAB_00434863:
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x108c,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x108c,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__PointPick_GAMETYP_007a70dc);
       if (iVar3 == 0) {
         return;
       }

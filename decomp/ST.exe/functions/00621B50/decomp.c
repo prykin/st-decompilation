@@ -21,8 +21,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   undefined4 *puVar11;
   void *unaff_EDI;
   STMineSetC *pSVar12;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
   uint local_14;
@@ -35,15 +34,16 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   if (iVar7 == 0xffff) {
     return 0xffff;
   }
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
-  iVar7 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
+  iVar7 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar7 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
-    iVar10 = FUN_006ad4d0(s_E____titans_nick_to_mine_set_cpp_007d06b0,0x174,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_nick_to_mine_set_cpp_007d06b0,0x174,0,iVar7,
+                                &DAT_007a4ccc,s_STMineSetC__GetMessage_007d06d8);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar7,0,0x7d06b0,0x176);
+      RaiseInternalException(iVar7,0,s_E____titans_nick_to_mine_set_cpp_007d06b0,0x176);
       return 0xffff;
     }
     pcVar5 = (code *)swi(3);
@@ -53,76 +53,76 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   uVar9 = *(uint *)(param_1 + 0x10);
   if (0x110 < uVar9) {
     if (0x128 < uVar9) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     if (uVar9 == 0x128) {
       thunk_FUN_004ad430((int)(local_8 + 0x1d5));
       thunk_FUN_00622670(this_00);
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     if (uVar9 != 0x112) {
       if (uVar9 != 0x113) {
-        DAT_00858df8 = (undefined4 *)local_60;
+        g_currentExceptionFrame = local_60.previous;
         return 0;
       }
       if (*(int *)(local_8 + 0x2ba) < 0) {
-        DAT_00858df8 = (undefined4 *)local_60;
+        g_currentExceptionFrame = local_60.previous;
         return 0;
       }
       if (*(int *)(local_8 + 0x2ae) != 1) {
-        DAT_00858df8 = (undefined4 *)local_60;
+        g_currentExceptionFrame = local_60.previous;
         return 0;
       }
       (*(code *)**(undefined4 **)(local_8 + 0x1d5))();
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     if (*(int *)(local_8 + 0x2ba) < 0) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     if (*(int *)(local_8 + 0x2ae) != 1) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     thunk_FUN_004ad5e0((int)(local_8 + 0x1d5));
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (uVar9 == 0x110) {
     thunk_FUN_00627390((int)local_8);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (3 < uVar9) {
     if (uVar9 == 0x108) {
       uVar8 = thunk_FUN_004ab050();
       thunk_FUN_00626b50(local_8,uVar8);
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     if (uVar9 != 0x10f) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     local_10 = (byte *)thunk_FUN_00622990(local_8,&local_c);
     STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_10,local_c);
     FUN_006ab060(&local_10);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (uVar9 == 3) {
     thunk_FUN_00622880((int *)local_8);
     if (*(int *)(this_00 + 0x363) == 0) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     thunk_FUN_006366d0(*(int *)(this_00 + 0x363));
     FUN_0072e2b0(*(undefined4 **)(this_00 + 0x363));
     *(undefined4 *)(this_00 + 0x363) = 0;
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (uVar9 == 0) {
@@ -201,15 +201,15 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       *(undefined4 *)(this_00 + 0x363) = 0;
     }
     if (this_00[0x359] == (STMineSetC)0x0) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     thunk_FUN_00627170(this_00);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   if (uVar9 != 2) {
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   iVar7 = *(int *)(param_1 + 0x14);
@@ -259,11 +259,11 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     *(undefined4 *)(this_00 + 0x363) = 0;
     iVar7 = STAllPlayersC::RegisterMine(DAT_007fa174,*(ushort *)(this_00 + 0x32),this_00);
     if (iVar7 == 0) {
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     thunk_FUN_00622670(this_00);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   puVar11 = *(undefined4 **)(param_1 + 0x14);
@@ -286,7 +286,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   iVar7 = thunk_FUN_00622ba0(local_8);
   if (iVar7 == 0) {
     thunk_FUN_00622670(this_00);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   bVar6 = false;
@@ -317,11 +317,11 @@ LAB_00621d24:
       thunk_FUN_00622670(this_00);
     }
     thunk_FUN_00627700((int)this_00);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   thunk_FUN_00622670(this_00);
-  DAT_00858df8 = (undefined4 *)local_60;
+  g_currentExceptionFrame = local_60.previous;
   return 0;
 }
 

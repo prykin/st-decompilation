@@ -8,19 +8,18 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
 {
   code *pcVar1;
   FSGSTy *pFVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     CFsgsConnection::StopBanners((CFsgsConnection *)&DAT_00802a90);
     pFVar2 = local_8;
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
@@ -140,17 +139,18 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       *(undefined4 *)(*(int *)(*(int *)(pFVar2 + 0x1a5b) + 0x2e6) + 0x1cab) = 0;
     }
     DAT_0081174c = 0;
-    DAT_00858df8 = local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = local_4c;
-  iVar4 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x197,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x197,0,errorCode,
+                             &DAT_007a4ccc,s_FSGSTy__DoneFSGS_007cc0a8);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cbf70,0x197);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x197);
   return;
 }
 

@@ -15,8 +15,7 @@ FUN_006785a0(byte *param_1,char param_2,short param_3,short param_4,short param_
   byte *pbVar7;
   void *unaff_EDI;
   bool bVar8;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   byte local_28 [16];
   int local_18;
   int local_14;
@@ -30,26 +29,27 @@ FUN_006785a0(byte *param_1,char param_2,short param_3,short param_4,short param_
   if ((param_2 < '\0') || (local_5 = param_2, '\a' < param_2)) {
     local_5 = -1;
   }
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
-  iVar3 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
+  iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
-    iVar6 = FUN_006ad4d0(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x470,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_6c.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x470,0,iVar3,&DAT_007a4ccc,
+                               s__EnumDest_007d2e40);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       iVar3 = (*pcVar2)();
       return iVar3;
     }
-    FUN_006a5e40(iVar3,0,0x7d2d58,0x471);
+    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x471);
     return iVar3;
   }
   if (DAT_007fa164 == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2d58,0x459);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x459);
   }
   local_10 = *(int *)(DAT_007fa164 + 0xc) - 1;
   if ((int)local_10 < 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return local_18;
   }
   do {
@@ -103,14 +103,14 @@ LAB_00678692:
         }
         if (((iVar3 != 0) && (param_9 != (undefined *)0x0)) &&
            (iVar3 = (*(code *)param_9)(0,local_10,this,param_10), iVar3 != 0)) {
-          DAT_00858df8 = (undefined4 *)local_6c;
+          g_currentExceptionFrame = local_6c.previous;
           return -1;
         }
       }
     }
     local_10 = local_10 - 1;
     if ((int)local_10 < 0) {
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return local_18;
     }
   } while( true );

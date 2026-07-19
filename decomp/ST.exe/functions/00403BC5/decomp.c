@@ -36,14 +36,13 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   undefined4 uStack_142;
   undefined4 uStack_13e;
   undefined4 auStack_68 [7];
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   PrividerTy *pPStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pPStack_8 = this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = &uStack_264;
     for (iVar2 = 0x7e; this_00 = pPStack_8, iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -108,22 +107,23 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     }
     PaintPrivider(this_00,param_2);
     this_00[0x65] = (PrividerTy)0x3;
-    thunk_FUN_00568bc0(&DAT_00807658,0);
+    thunk_FUN_00568bc0(&g_sound,0);
     if ((DAT_00807300._1_1_ & 8) != 0) {
-      thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
+      thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
     }
     thunk_FUN_005b6730(this_00,0xb,'\0',-1);
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_4c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e,0,iVar2,&DAT_007a4ccc,
+                             s_PrividerTy__SetMode_007cce00);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7ccd28,0x11e);
+  RaiseInternalException(iVar2,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e);
   return;
 }
 

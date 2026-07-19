@@ -138,7 +138,8 @@ void __fastcall thunk_FUN_004a7490(int param_1)
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < *(int *)(iVar7 + 0xc));
       }
-      iVar7 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x15ed,0,0,&DAT_007a4ccc);
+      iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x15ed,0,0,&DAT_007a4ccc,
+                                 s_STGroupBoatC__ReMakePatrolPoints_007ac450);
       if (iVar7 != 0) {
         pcVar2 = (code *)swi(3);
         (*pcVar2)();
@@ -193,7 +194,8 @@ LAB_004a77bb:
         *(undefined4 *)(param_1 + 0x232) = 0;
       }
       if ((*(int *)(param_1 + 0x232) == -1) &&
-         (iVar7 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x160e,0,0,&DAT_007a4ccc),
+         (iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x160e,0,0,
+                                     &DAT_007a4ccc,s_STGroupBoatC__ReMakePatrolPoints_007ac418),
          iVar7 != 0)) {
         pcVar2 = (code *)swi(3);
         (*pcVar2)();

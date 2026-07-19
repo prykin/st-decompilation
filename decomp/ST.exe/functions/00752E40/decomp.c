@@ -111,7 +111,7 @@ LAB_00752fe6:
   if (param_1 == (int *)0x0) {
     FUN_006a5e90(piVar2);
   }
-  FUN_006a5e40(-5,DAT_007ed77c,0x7f2bd8,0x5d);
+  RaiseInternalException(-5,DAT_007ed77c,s_E__DKW_SND_C_wav2pcm_cpp_007f2bd8,0x5d);
   return (int *)0x0;
 }
 

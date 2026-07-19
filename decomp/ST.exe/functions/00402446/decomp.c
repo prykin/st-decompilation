@@ -13,16 +13,15 @@ CGenerate::CteateField
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   undefined4 uStack_c;
   CGenerate *pCStack_8;
   
   uStack_c = 0;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pCStack_8 = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_8;
   if (iVar3 == 0) {
     iVar3 = param_1 * param_2;
@@ -39,21 +38,22 @@ CGenerate::CteateField
     *(int *)(pCVar2 + 0x584f) = iVar3;
     puVar4 = FUN_006ae290((uint *)0x0,10,0x1d,10);
     *(uint **)(pCVar2 + 0x5853) = puVar4;
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     if (((*(int *)(pCVar2 + 0x584b) == 0) || (*(int *)(pCVar2 + 0x584f) == 0)) ||
        (uVar5 = 1, *(int *)(pCVar2 + 0x5853) == 0)) {
       return uStack_c;
     }
   }
   else {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_Maps_gen_map_cpp_007d85fc,0x330,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Maps_gen_map_cpp_007d85fc,0x330,0,iVar3,&DAT_007a4ccc,
+                               s_CGenerate__CteateField_007d8620);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       uVar5 = (*pcVar1)();
       return uVar5;
     }
-    FUN_006a5e40(iVar3,0,0x7d85fc,0x332);
+    RaiseInternalException(iVar3,0,s_E____titans_Maps_gen_map_cpp_007d85fc,0x332);
     uVar5 = 0xffff;
   }
   return uVar5;

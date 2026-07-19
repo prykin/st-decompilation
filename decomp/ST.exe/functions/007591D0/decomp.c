@@ -12,7 +12,7 @@ void FUN_007591d0(undefined4 *param_1)
   puVar2 = (undefined4 *)FUN_007602e0(param_1,0x50);
   if (puVar2 == (undefined4 *)0x0) {
     FUN_007603a0();
-    FUN_006a5e40(0x35,DAT_007ed77c,0x7f2dc8,0x427);
+    RaiseInternalException(0x35,DAT_007ed77c,s_E__DKW_JPG_C_jmemmgr_c_007f2dc8,0x427);
   }
   *puVar2 = FUN_00759290;
   puVar2[1] = FUN_007593e0;

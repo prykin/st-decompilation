@@ -16,8 +16,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar9;
-  undefined4 uStack_68;
-  undefined4 auStack_64 [16];
+  InternalExceptionFrame IStack_68;
   undefined4 uStack_24;
   int iStack_20;
   int iStack_1c;
@@ -31,16 +30,17 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   pbStack_10 = (&PTR_s_expl_bm0_007ced98)[iStack_c];
   pbStack_8 = (&PTR_s_expl_bt0_007ced70)[iStack_c];
   uStack_24 = 0;
-  uStack_68 = DAT_00858df8;
-  DAT_00858df8 = &uStack_68;
+  IStack_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_68;
   pSStack_18 = this;
-  iVar5 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = pSStack_18;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_68;
-    iVar8 = FUN_006ad4d0(s_E____titans_nick_to_Expl_cpp_007cf630,0x38c,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_68.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x38c,0,iVar5,&DAT_007a4ccc,
+                               s_STExplosionC__LoadImagSpr_007cf6b0);
     if (iVar8 == 0) {
-      FUN_006a5e40(iVar5,0,0x7cf630,0x38e);
+      RaiseInternalException(iVar5,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x38e);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);
@@ -59,7 +59,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x2af),0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
     uVar6 = thunk_FUN_004acd30(*(void **)(pSVar4 + 0x2af),'\x0f');
     *(undefined4 *)(pSVar4 + 0x2a3) = uVar6;
-    DAT_00858df8 = (undefined4 *)uStack_68;
+    g_currentExceptionFrame = IStack_68.previous;
     return uStack_24;
   }
   if (*(int *)(pSStack_18 + 0x2af) == 0) {
@@ -76,7 +76,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     iVar5 = STT3DSprC::Init(*(STT3DSprC **)(pSVar4 + 0x2af),DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11)
     ;
     if (iVar5 != 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cf630,0x36a);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_Expl_cpp_007cf630,0x36a);
       return 0xffff;
     }
   }
@@ -84,7 +84,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     iVar5 = STT3DSprC::Init(*(STT3DSprC **)(pSVar4 + 0x2af),DAT_008073cc,0x78,0x56,0,0xf0,0xbe,0x11)
     ;
     if (iVar5 != 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cf630,0x370);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_Expl_cpp_007cf630,0x370);
       return 0xffff;
     }
     FUN_006e9210(DAT_00807598,*(uint *)(*(int *)(pSVar4 + 0x2af) + 0x18));
@@ -163,10 +163,10 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         thunk_FUN_004ad430(*(int *)(pSVar4 + 0x2af));
         *(undefined4 *)(pSVar4 + 0x286) = 0;
       }
-      DAT_00858df8 = (undefined4 *)uStack_68;
+      g_currentExceptionFrame = IStack_68.previous;
       return uStack_24;
     }
-    DAT_00858df8 = (undefined4 *)uStack_68;
+    g_currentExceptionFrame = IStack_68.previous;
     return uStack_24;
   }
   return 0xffff;

@@ -34,7 +34,7 @@ undefined4 FUN_00758fa0(int param_1)
   iVar4 = iVar4 + -1;
   pbVar6 = puVar5 + 1;
   if (CONCAT11(uVar1,*puVar5) != 4) {
-    FUN_006a5e40(9,DAT_007ed77c,0x7f2db0,0x25e);
+    RaiseInternalException(9,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x25e);
   }
   if (iVar4 == 0) {
     iVar4 = (*(code *)puVar3[3])(param_1);

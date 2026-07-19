@@ -85,7 +85,8 @@ uint thunk_FUN_0042dfe0(undefined4 *param_1,uint *param_2)
     }
   }
   else {
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x58f,0,0,&DAT_007a4ccc);
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x58f,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__PrepareToCmd_inva_007a6550);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       uVar5 = (*pcVar2)();

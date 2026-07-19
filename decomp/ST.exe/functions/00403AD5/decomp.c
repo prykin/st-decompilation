@@ -12,15 +12,14 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
   undefined4 *puVar7;
   void *unaff_EDI;
   undefined4 *puVar8;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   uint uStack_c;
   SettMapMTy *pSStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pSStack_8 = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar3 == 0) {
     uVar5 = *(int *)(*(int *)(pSStack_8 + 0x1f84) + 0xc) * 0x60;
@@ -48,17 +47,18 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
     FUN_00715360(DAT_00811764,param_1,'\"',*(char **)(pSVar2 + 0x2226),uStack_c,1,0xffffffff);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar4 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x230,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x230,0,iVar3,&DAT_007a4ccc,
+                             s_SettMapMTy__SendPlList_007cd364);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cd258,0x230);
+  RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x230);
   return;
 }
 

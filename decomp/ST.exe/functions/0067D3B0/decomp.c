@@ -20,8 +20,7 @@ undefined4 * __cdecl FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int pa
   undefined4 *puVar14;
   uint *puVar15;
   bool bVar16;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   int *local_18;
   uint local_14;
   int local_10;
@@ -32,9 +31,9 @@ undefined4 * __cdecl FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int pa
   local_8 = (undefined4 *)0x0;
   local_10 = 0;
   local_c = (undefined4 *)0x0;
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  piVar3 = (int *)__setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  piVar3 = (int *)__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   local_18 = piVar3;
   if (piVar3 == (int *)0x0) {
     local_10 = param_3;
@@ -201,10 +200,10 @@ undefined4 * __cdecl FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int pa
       FUN_006ab060(&local_c);
       puVar4 = local_8;
     }
-    DAT_00858df8 = (undefined4 *)local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     return puVar4;
   }
-  DAT_00858df8 = (undefined4 *)local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   if (((*(char *)(param_1 + 6) == '\x02') && (iVar7 = *(int *)((int)param_1 + 0xc2), iVar7 != 0)) &&
      ((iVar9 = *(int *)(iVar7 + 0xc), iVar9 != 0 && (local_c != (undefined4 *)0x0)))) {
     if (0 < iVar9) {
@@ -235,9 +234,10 @@ undefined4 * __cdecl FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int pa
   if (local_8 != (undefined4 *)0x0) {
     FUN_006ab060(&local_8);
   }
-  iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xda,0,(int)piVar3,&DAT_007a4ccc);
+  iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xda,0,(int)piVar3,&DAT_007a4ccc
+                             ,s_PlrDataPack_007d2fc8);
   if (iVar7 == 0) {
-    FUN_006a5e40((int)piVar3,0,0x7d2fa4,0xdb);
+    RaiseInternalException((int)piVar3,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xdb);
     return (undefined4 *)0x0;
   }
   pcVar2 = (code *)swi(3);

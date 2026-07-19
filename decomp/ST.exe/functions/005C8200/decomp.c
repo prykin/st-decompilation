@@ -19,8 +19,7 @@ void FUN_005c8200(void)
   byte local_218 [336];
   undefined4 local_c8 [17];
   undefined4 local_84;
-  undefined4 *local_7c;
-  undefined4 local_78 [16];
+  InternalExceptionFrame local_7c;
   undefined4 local_38 [4];
   undefined4 local_28;
   undefined4 local_18;
@@ -28,11 +27,11 @@ void FUN_005c8200(void)
   SettMapTy *local_c;
   SettMapTy *local_8;
   
-  local_7c = DAT_00858df8;
-  DAT_00858df8 = &local_7c;
-  iVar2 = __setjmp3(local_78,0,unaff_EDI,unaff_ESI);
+  local_7c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_7c;
+  iVar2 = __setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = local_7c;
+    g_currentExceptionFrame = local_7c.previous;
     if (DAT_0080877e != '\0') {
       DVar5 = timeGetTime();
       *(DWORD *)(local_c + 0x1f53) = DVar5;
@@ -68,7 +67,7 @@ void FUN_005c8200(void)
   local_8 = (SettMapTy *)&DAT_008087b6;
   puVar4 = FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x45a);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x45a);
   }
   if (DAT_0080877e == '\0') {
     *(undefined4 *)(local_c + 0x2121) = 0xffffffff;
@@ -138,12 +137,12 @@ void FUN_005c8200(void)
   local_8 = (SettMapTy *)&DAT_00853de0;
   puVar4 = FUN_006f1ce0(0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x475);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x475);
   }
   local_8 = local_c + 0x1f53;
   puVar4 = FUN_006f1ce0(0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x477);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x477);
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
@@ -177,7 +176,7 @@ void FUN_005c8200(void)
     pSVar9 = pSVar9 + 4;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  DAT_00858df8 = local_7c;
+  g_currentExceptionFrame = local_7c.previous;
   return;
 }
 

@@ -97,7 +97,7 @@ undefined4 FUN_00758bc0(undefined4 *param_1)
     } while (local_10 < 0x11);
     local_c = local_c + -0x11;
     if ((0x100 < local_14) || (local_c < local_14)) {
-      FUN_006a5e40(0x1c,DAT_007ed77c,0x7f2db0,0x209);
+      RaiseInternalException(0x1c,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x209);
     }
     local_10 = 0;
     iVar6 = local_14;
@@ -132,7 +132,7 @@ undefined4 FUN_00758bc0(undefined4 *param_1)
     }
     piVar10 = param_1 + iVar4;
     if (((int)uVar7 < 0) || (3 < (int)uVar7)) {
-      FUN_006a5e40(0x1d,DAT_007ed77c,0x7f2db0,0x218);
+      RaiseInternalException(0x1d,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x218);
     }
     if (*piVar10 == 0) {
       iVar4 = FUN_00759e50(param_1);

@@ -21,8 +21,7 @@ undefined4 __thiscall thunk_FUN_00418030(void *this,short param_1,short param_2,
   void *unaff_EDI;
   short *psVar15;
   int iVar16;
-  undefined4 uStack_9c;
-  undefined4 auStack_98 [16];
+  InternalExceptionFrame IStack_9c;
   int *piStack_58;
   short *psStack_54;
   short *psStack_50;
@@ -51,12 +50,12 @@ undefined4 __thiscall thunk_FUN_00418030(void *this,short param_1,short param_2,
      (param_3 == *(short *)((int)this + 0x4b))) {
     return 1;
   }
-  uStack_9c = DAT_00858df8;
-  DAT_00858df8 = &uStack_9c;
-  iVar4 = __setjmp3(auStack_98,0,unaff_EDI,unaff_ESI);
+  IStack_9c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_9c;
+  iVar4 = __setjmp3(IStack_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = piStack_58;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_9c;
+    g_currentExceptionFrame = IStack_9c.previous;
     return 0xffffffff;
   }
   psStack_2c = (short *)(int)param_1;
@@ -281,7 +280,7 @@ LAB_004183b8:
   }
   FUN_006ab060(&psStack_14);
 LAB_0041862b:
-  DAT_00858df8 = (undefined4 *)uStack_9c;
+  g_currentExceptionFrame = IStack_9c.previous;
   iVar4 = *(int *)((int)this_00 + 0x97);
   if (iVar4 == 0) {
     return 2;
@@ -293,8 +292,8 @@ LAB_0041862b:
   uVar5 = (int)sVar3 - (int)*(short *)((int)this_00 + 0x41);
   iVar16 = CONCAT22((short)((uint)psVar15 >> 0x10),*(short *)(iVar4 + 10) * 0xc9) + 100;
   uVar11 = (int)uVar5 >> 0x1f;
-  psStack_c = (short *)(CONCAT22((short)((uint)uStack_9c >> 0x10),*(short *)(iVar4 + 0xc) * 200) +
-                       100);
+  psStack_c = (short *)(CONCAT22((short)((uint)IStack_9c.previous >> 0x10),
+                                 *(short *)(iVar4 + 0xc) * 200) + 100);
   psStack_54 = (short *)((uVar5 ^ uVar11) - uVar11);
   uStack_15 = 0;
   sVar10 = (short)iVar16;

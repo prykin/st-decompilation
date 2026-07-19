@@ -17,10 +17,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   void *unaff_EDI;
   byte *pbVar10;
   byte abStack_1a8 [260];
-  undefined4 **ppuStack_a4;
-  undefined4 auStack_a0 [16];
-  undefined4 **ppuStack_60;
-  undefined4 auStack_5c [16];
+  InternalExceptionFrame IStack_a4;
+  InternalExceptionFrame IStack_60;
   WaitTy WStack_1c;
   undefined4 uStack_1b;
   undefined4 *puStack_10;
@@ -28,15 +26,16 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   WaitTy *pWStack_8;
   
   iStack_c = 0;
-  ppuStack_60 = DAT_00858df8;
-  DAT_00858df8 = &ppuStack_60;
+  IStack_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_60;
   pWStack_8 = this;
-  iVar4 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = ppuStack_60;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_60.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e,0,iVar4,&DAT_007a4ccc
+                               ,s_WaitTy__ShowDescription_007cddd8);
     if (iVar9 == 0) {
-      FUN_006a5e40(iVar4,0,0x7cdd5c,0x15e);
+      RaiseInternalException(iVar4,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -67,15 +66,15 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     uStack_1b = *(undefined4 *)(this_01 + 0x1a8f);
     iVar4 = FUN_00725910((char *)&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,&WStack_1c,0);
     if (iVar4 == -0x70) {
-      ppuStack_a4 = DAT_00858df8;
-      DAT_00858df8 = &ppuStack_a4;
-      iVar4 = __setjmp3(auStack_a0,0,unaff_EDI,unaff_ESI);
+      IStack_a4.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_a4;
+      iVar4 = __setjmp3(IStack_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
         puStack_10 = FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
       }
       this_01 = pWStack_8;
       puVar3 = puStack_10;
-      DAT_00858df8 = ppuStack_a4;
+      g_currentExceptionFrame = IStack_a4.previous;
       if (puStack_10 != (undefined4 *)0x0) {
         StartSystemTy::LoadMapData
                   (DAT_0081176c,(int)puStack_10,(pWStack_8[0x1a93] != (WaitTy)0x2) + '\x04');
@@ -119,7 +118,7 @@ LAB_005e829d:
   if (-1 < (int)*(uint *)(DAT_0081176c + 0x540)) {
     FUN_006b35d0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
   }
-  DAT_00858df8 = ppuStack_60;
+  g_currentExceptionFrame = IStack_60.previous;
   return;
 }
 

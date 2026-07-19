@@ -3,28 +3,29 @@ uint * __cdecl FUN_00676170(undefined4 param_1)
 
 {
   code *pcVar1;
-  int iVar2;
+  int errorCode;
   STGroupC *this;
-  uint *puVar3;
-  int iVar4;
+  uint *puVar2;
+  int iVar3;
   void *unaff_ESI;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
   uint *local_8;
   
-  uVar5 = DAT_00858df8;
+  pIVar4 = g_currentExceptionFrame;
   local_8 = (uint *)0x0;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar5);
-  if (iVar2 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar5;
-    iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x125,0,iVar2,&DAT_007a4ccc);
-    if (iVar4 != 0) {
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  if (errorCode != 0) {
+    g_currentExceptionFrame = pIVar4;
+    iVar3 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x125,0,errorCode,&DAT_007a4ccc
+                               ,s__GetStaffGrpExch_007d2da0);
+    if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
-      puVar3 = (uint *)(*pcVar1)();
-      return puVar3;
+      puVar2 = (uint *)(*pcVar1)();
+      return puVar2;
     }
-    FUN_006a5e40(iVar2,0,0x7d2d58,0x126);
+    RaiseInternalException(errorCode,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x126);
     return (uint *)0x0;
   }
   if (DAT_007fa174 == 0) {
@@ -34,11 +35,11 @@ uint * __cdecl FUN_00676170(undefined4 param_1)
     this = (STGroupC *)thunk_FUN_0042b760(param_1,0);
   }
   if (this != (STGroupC *)0x0) {
-    puVar3 = STGroupC::GetGroupContent(this,(int)unaff_ESI);
-    DAT_00858df8 = (undefined1 *)uVar5;
-    return puVar3;
+    puVar2 = STGroupC::GetGroupContent(this,(int)unaff_ESI);
+    g_currentExceptionFrame = pIVar4;
+    return puVar2;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
+  g_currentExceptionFrame = pIVar4;
   return local_8;
 }
 

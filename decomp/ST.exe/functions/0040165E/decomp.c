@@ -12,16 +12,15 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar8;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   FSGSTy *pFStack_10;
   int iStack_c;
   int iStack_8;
   
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pFStack_10 = this;
-  iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar3 = pFStack_10;
   if (iVar4 == 0) {
     pFVar1 = pFStack_10 + 0x1ac0;
@@ -56,13 +55,14 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
                  (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
     FUN_006b3af0(DAT_008075a8,*(uint *)(pFVar3 + 0x1abc));
     pFVar3[0x1abb] = (FSGSTy)param_1;
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_54;
-  iVar7 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_54.previous;
+  iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8,0,iVar4,&DAT_007a4ccc,
+                             s_FSGSTy__PrepBkgMess_007cc1cc);
   if (iVar7 == 0) {
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x3a8);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8);
     return;
   }
   pcVar2 = (code *)swi(3);

@@ -3,14 +3,16 @@ int FUN_006c2d90(int *param_1)
 
 {
   int iVar1;
+  int extraout_EAX;
+  int extraout_EAX_00;
   int iVar2;
   void *lpBits;
   int iVar3;
   BOOL BVar4;
+  int extraout_EAX_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_ac;
-  undefined4 local_a8 [16];
+  InternalExceptionFrame local_ac;
   tagMSG local_68;
   int local_4c;
   int local_48;
@@ -37,12 +39,12 @@ int FUN_006c2d90(int *param_1)
   DAT_008568c8 = 0;
   DAT_008568cc = 0;
   if (((param_1 == (int *)0x0) || (*param_1 == 0)) || ((param_1[2] & 0x40000000U) == 0)) {
-    iVar2 = FUN_006a5e40(-0x34,DAT_007ed77c,0x7ede64,0x113);
-    return iVar2;
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x113);
+    return extraout_EAX_01;
   }
   if (*(int *)(param_1[1] + 0x20) < 9) {
-    iVar2 = FUN_006a5e40(-0x30,DAT_007ed77c,0x7ede64,0x114);
-    return iVar2;
+    RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x114);
+    return extraout_EAX;
   }
   FUN_006c3340((int)param_1);
   local_4c = param_1[7];
@@ -93,8 +95,8 @@ int FUN_006c2d90(int *param_1)
     }
     else {
       if (iVar3 != 0x20) {
-        iVar2 = FUN_006a5e40(-0x30,DAT_007ed77c,0x7ede64,0x14d);
-        return iVar2;
+        RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x14d);
+        return extraout_EAX_00;
       }
       if (*(int *)(iVar2 + 0x4c4) == 0xff0000) {
         param_1[0xc] = 3;
@@ -116,9 +118,9 @@ int FUN_006c2d90(int *param_1)
     local_24 = param_1[5];
     local_20 = param_1[6];
   }
-  local_ac = DAT_00858df8;
-  DAT_00858df8 = &local_ac;
-  iVar2 = __setjmp3(local_a8,0,unaff_EDI,unaff_ESI);
+  local_ac.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_ac;
+  iVar2 = __setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar3 = iVar2;
   if (iVar2 == 0) {
     DAT_008568c8 = SetWindowLongA(*(HWND *)(param_1[1] + 4),-4,0x6c3480);
@@ -128,7 +130,7 @@ int FUN_006c2d90(int *param_1)
       param_1[0xc] = iVar3;
       iVar2 = local_c;
       if (iVar3 == -1) {
-        FUN_006a5e40(-0x34,DAT_007ed77c,0x7ede64,0x192);
+        RaiseInternalException(-0x34,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x192);
         iVar2 = local_c;
       }
       do {
@@ -152,7 +154,7 @@ int FUN_006c2d90(int *param_1)
         iVar2 = FUN_006bb8b0(param_1[1]);
         local_c = iVar2;
         if (iVar2 != 0) {
-          FUN_006a5e40(iVar2,DAT_007ed77c,0x7ede64,0x1a9);
+          RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x1a9);
         }
         iVar3 = param_1[1];
         _BinkCopyToBuffer_28
@@ -196,7 +198,7 @@ int FUN_006c2d90(int *param_1)
       iVar2 = FUN_006ce770(param_1[1],&local_30);
       local_c = iVar2;
       if (iVar2 != 0) {
-        FUN_006a5e40(iVar2,DAT_007ed77c,0x7ede64,0x180);
+        RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x180);
       }
       StretchDIBits(local_30,local_1c,local_14,local_24,local_20,local_4c,local_48,local_40,local_18
                     ,lpBits,local_8,0,0xcc0020);
@@ -210,13 +212,13 @@ int FUN_006c2d90(int *param_1)
   }
 LAB_006c32cd:
   local_c = iVar3;
-  DAT_00858df8 = (undefined4 *)local_ac;
+  g_currentExceptionFrame = local_ac.previous;
   if (DAT_008568c8 != 0) {
     SetWindowLongA(*(HWND *)(param_1[1] + 4),-4,DAT_008568c8);
   }
   FUN_006ab060(&local_8);
   if (iVar2 != 0) {
-    FUN_006a5e40(iVar2,DAT_007ed77c,0x7ede64,0x1bf);
+    RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DV_C_dkbvideo_cpp_007ede64,0x1bf);
     return iVar2;
   }
   return 0;

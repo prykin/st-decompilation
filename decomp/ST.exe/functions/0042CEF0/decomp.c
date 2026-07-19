@@ -49,7 +49,8 @@ void FUN_0042cef0(int param_1,char param_2,short param_3)
       } while( true );
     }
 LAB_0042cf42:
-    iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3bb,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3bb,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__DelObjFromSaveTmp_007a6328);
     if (iVar2 == 0) {
       return;
     }

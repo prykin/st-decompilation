@@ -24,7 +24,8 @@ int thunk_FUN_0044ab90(undefined4 param_1,uint param_2,int param_3,char param_4,
   }
   else {
     if (param_2 != 1) {
-      iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2fde,0,0,&DAT_007a4ccc);
+      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2fde,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__CheckTmps_invalid_007a88bc);
       if (iVar2 == 0) {
         return -1;
       }
@@ -147,7 +148,8 @@ LAB_0044ae50:
   }
   else if (param_3 == 0x172) goto LAB_0044ae50;
 LAB_0044ae21:
-  iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3019,0,0,&DAT_007a4ccc);
+  iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3019,0,0,&DAT_007a4ccc,
+                             s_STAllPlayersC__CheckTmps_invalid_007a888c);
   if (iVar2 == 0) {
     return -1;
   }

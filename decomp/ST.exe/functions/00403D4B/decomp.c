@@ -16,16 +16,15 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
   undefined4 uVar10;
   undefined4 uVar11;
   undefined4 uVar12;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   TradePanelTy *pTStack_8;
   
   if (this[0x1bb] != (TradePanelTy)param_1) {
     this[0x1bb] = (TradePanelTy)param_1;
-    uStack_4c = DAT_00858df8;
-    DAT_00858df8 = &uStack_4c;
+    IStack_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_4c;
     pTStack_8 = this;
-    iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+    iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pTVar2 = pTStack_8;
     if (iVar3 == 0) {
       FUN_006b55f0(*(undefined4 **)(pTStack_8 + 0x68),0,0xa6,0x31,*(int *)(pTStack_8 + 0x185),0,0xa6
@@ -70,17 +69,18 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
         *(int *)(pTVar2 + 0x1c8) = iVar3;
       }
       thunk_FUN_00551b10(pTVar2);
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
-    iVar5 = FUN_006ad4d0(s_E____titans_Andrey_tradecen_cpp_007c8624,0x81,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x81,0,iVar3,&DAT_007a4ccc
+                               ,s_TradePanelTy__SetModeControls_007c86b8);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7c8624,0x81);
+    RaiseInternalException(iVar3,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x81);
   }
   return;
 }

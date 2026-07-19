@@ -12,7 +12,8 @@ void FUN_0042d6b0(char param_1)
   }
   else {
     if (iVar2 != 1) {
-      iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x470,0,0,&DAT_007a4ccc);
+      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x470,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__RemoveActiveTV_wr_007a645c);
       if (iVar2 == 0) {
         return;
       }

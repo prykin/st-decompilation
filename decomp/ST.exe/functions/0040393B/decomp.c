@@ -10,15 +10,14 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar6;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   SettMapMTy *pSStack_8;
   
   if ((param_1 != 0) && (param_2 != (uint *)0x0)) {
-    uStack_4c = DAT_00858df8;
-    DAT_00858df8 = &uStack_4c;
+    IStack_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_4c;
     pSStack_8 = this;
-    iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+    iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
         uVar5 = *(uint *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);
@@ -44,7 +43,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
             uVar4 = uVar4 + 1;
           } while (uVar4 < *(uint *)(param_1 + 4));
         }
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       }
       uVar5 = *(uint *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);
@@ -58,17 +57,18 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
       *(undefined4 *)(param_1 + 4) = *(undefined4 *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
-    iVar3 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x9af,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x9af,0,iVar2,&DAT_007a4ccc
+                               ,s_SettMapMTy__PrepareAFT_007cd528);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7cd258,0x9af);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0x9af);
   }
   return;
 }

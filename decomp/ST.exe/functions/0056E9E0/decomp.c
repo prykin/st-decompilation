@@ -16,8 +16,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
   byte *pbVar10;
   byte *pbVar11;
   byte local_160 [260];
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   void *local_18;
   byte *local_14;
   undefined4 local_10;
@@ -29,13 +28,13 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
     *(undefined1 *)((int)this + 0x1163) = 1;
     *(undefined4 *)((int)this + 0x7d0e) = 1;
   }
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar3 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pvVar2 = local_18;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     return 0;
   }
   local_c = (byte *)((int)local_18 + 0x76f6);
@@ -96,7 +95,7 @@ undefined4 __thiscall FUN_0056e9e0(void *this,int param_1)
     }
   }
   cMf32::delete(local_8,(undefined4 *)local_8);
-  DAT_00858df8 = (undefined4 *)local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   return local_10;
 }
 

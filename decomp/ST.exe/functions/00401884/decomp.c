@@ -14,7 +14,8 @@ STAllPlayersC::PushTV(undefined4 param_1,int param_2,int param_3,char param_4,sh
   }
   else {
     if (param_2 != 1) {
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x36a,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x36a,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__PushTV_007a630c);
       if (iVar3 == 0) {
         return 0;
       }

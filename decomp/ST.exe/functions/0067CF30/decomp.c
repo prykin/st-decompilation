@@ -2,23 +2,23 @@
 undefined4 * __cdecl FUN_0067cf30(char *param_1,undefined2 param_2,char *param_3,undefined4 param_4)
 
 {
-  int iVar1;
-  uint *puVar2;
-  undefined4 *puVar3;
+  int exceptionCode;
+  uint *puVar1;
+  undefined4 *puVar2;
   void *unaff_ESI;
   char *_Source;
-  undefined4 uVar4;
+  InternalExceptionFrame *pIVar3;
   undefined4 local_48 [16];
   undefined4 *local_8;
   
-  uVar4 = DAT_00858df8;
+  pIVar3 = g_currentExceptionFrame;
   local_8 = (undefined4 *)0x0;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar1 = __setjmp3(local_48,0,unaff_ESI,uVar4);
-  if (iVar1 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar4;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  exceptionCode = __setjmp3(local_48,0,unaff_ESI,pIVar3);
+  if (exceptionCode != 0) {
+    g_currentExceptionFrame = pIVar3;
     thunk_FUN_0067d160((int *)&local_8);
-    FUN_006a5e40(iVar1,0,0x7d2fa4,0x28);
+    RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x28);
     return (undefined4 *)0x0;
   }
   local_8 = FUN_006aac10(299);
@@ -33,12 +33,12 @@ undefined4 * __cdecl FUN_0067cf30(char *param_1,undefined2 param_2,char *param_3
   _strncpy((char *)((int)local_8 + 0x5b),_Source,0xb);
   *(undefined2 *)((int)local_8 + 0x19) = param_2;
   *(undefined4 *)((int)local_8 + 0x6d) = 0xff;
-  puVar2 = FUN_006ae290((uint *)0x0,5,0x10,5);
-  *(uint **)((int)local_8 + 0xc2) = puVar2;
-  puVar3 = thunk_FUN_0065c9e0(param_1);
-  *(undefined4 **)((int)local_8 + 0x106) = puVar3;
+  puVar1 = FUN_006ae290((uint *)0x0,5,0x10,5);
+  *(uint **)((int)local_8 + 0xc2) = puVar1;
+  puVar2 = thunk_FUN_0065c9e0(param_1);
+  *(undefined4 **)((int)local_8 + 0x106) = puVar2;
   *(undefined4 *)((int)local_8 + 0x10a) = param_4;
-  DAT_00858df8 = (undefined1 *)uVar4;
+  g_currentExceptionFrame = pIVar3;
   return local_8;
 }
 

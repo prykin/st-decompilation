@@ -76,7 +76,7 @@ LAB_006c28eb:
     }
     if (DVar8 != 0xfffffffc) {
       LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
-      FUN_006a5e40(DVar8,DAT_007ed77c,0x7ede48,0xfa);
+      RaiseInternalException(DVar8,DAT_007ed77c,s_E__DKW_SND_C_dssnddb_cpp_007ede48,0xfa);
       return -1;
     }
   }

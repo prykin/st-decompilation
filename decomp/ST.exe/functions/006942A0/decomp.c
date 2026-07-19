@@ -9,17 +9,16 @@ int FUN_006942a0(void)
   void *unaff_EDI;
   undefined4 *puVar4;
   cMf32 *in_stack_00000004;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   int local_10;
   uint local_c;
   int local_8;
   
   local_c = 0;
   local_8 = 1;
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar1 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar1 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079d770,(int *)&local_c,0x1999);
   }
@@ -27,7 +26,7 @@ int FUN_006942a0(void)
     local_8 = 0;
   }
   iVar1 = local_8;
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   if (local_8 != 0) {
     puVar3 = (undefined4 *)(local_10 + 0x11);
     for (iVar2 = 0xa2; iVar2 != 0; iVar2 = iVar2 + -1) {

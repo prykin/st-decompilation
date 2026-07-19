@@ -11,15 +11,14 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar7;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   SettMapMTy *pSStack_8;
   
   if (*(int *)(this + 0x1f84) != 0) {
-    uStack_4c = DAT_00858df8;
-    DAT_00858df8 = &uStack_4c;
+    IStack_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_4c;
     pSStack_8 = this;
-    iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+    iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
       iVar3 = *(int *)(pSStack_8 + 0x1f84);
@@ -39,7 +38,7 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
           uVar6 = uVar6 + 1;
           bVar7 = uVar6 < uVar1;
           if ((int)uVar1 <= (int)uVar6) {
-            DAT_00858df8 = (undefined4 *)uStack_4c;
+            g_currentExceptionFrame = IStack_4c.previous;
             return;
           }
         }
@@ -53,17 +52,18 @@ void __thiscall SettMapMTy::DeletePlayer(SettMapMTy *this,int param_1)
           thunk_FUN_0056a840(&DAT_00807620,pcVar4[2]);
         }
       }
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
-    iVar5 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x4dc,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x4dc,0,iVar3,&DAT_007a4ccc
+                               ,s_SettMapMTy__DeletePlayer_007cd3d4);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cd258,0x4dc);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x4dc);
   }
   return;
 }

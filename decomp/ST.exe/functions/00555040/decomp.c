@@ -22,8 +22,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
   uint *puVar12;
   char *pcVar13;
   uint local_450 [256];
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint local_c;
   cLoadingTy *local_8;
   
@@ -32,15 +31,16 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
   if (*(int *)(this + 0x3c) < -1) {
     return;
   }
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pcVar10 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_grig_loading_cpp_007c8f0c,0x14a,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x14a,0,iVar3,&DAT_007a4ccc,
+                               s_cLoadingTy__SetState_007c8fd0);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c8f0c,0x14b);
+      RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x14b);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -106,7 +106,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
       pcVar13 = pcVar13 + 1;
     }
     DrawLine(local_8,local_450);
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return;
   case 1:
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
@@ -227,12 +227,12 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
       }
       DrawLine(pcVar10,local_450);
       *(uint *)(pcVar10 + 0x50) = uVar8;
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
     if (*(code **)(pcVar10 + 0x58) != (code *)0x0) {
       (**(code **)(pcVar10 + 0x58))(*(undefined4 *)(pcVar10 + 0x54));
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
     break;
@@ -389,14 +389,14 @@ joined_r0x00555393:
       }
     }
     DrawLineCR(pcVar10,local_450);
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return;
   default:
     if (*(code **)(local_8 + 0x58) != (code *)0x0) {
       (**(code **)(local_8 + 0x58))(*(undefined4 *)(local_8 + 0x54));
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return;
 }
 

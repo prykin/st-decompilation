@@ -11,8 +11,7 @@ undefined4 FUN_007244b0(int *param_1)
   void *unaff_EDI;
   undefined4 *puVar6;
   int *piVar7;
-  undefined4 local_74;
-  undefined4 local_70 [16];
+  InternalExceptionFrame local_74;
   int local_30 [5];
   uint local_1c;
   undefined4 local_18;
@@ -21,25 +20,26 @@ undefined4 FUN_007244b0(int *param_1)
   undefined4 *local_8;
   
   local_c = 0;
-  local_74 = DAT_00858df8;
-  DAT_00858df8 = &local_74;
-  iVar2 = __setjmp3(local_70,0,unaff_EDI,unaff_ESI);
+  local_74.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_74;
+  iVar2 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_74;
-    iVar2 = FUN_006ad4d0(s_E__Ourlib__sslider_cpp_007f0bc0,0x11f,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_74.previous;
+    iVar2 = ReportDebugMessage(s_E__Ourlib__sslider_cpp_007f0bc0,0x11f,0,iVar2,&DAT_007a4ccc,
+                               s_SliderClassTy__GetMessage_Error___007f0bd8);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    FUN_006a5e40(0xffff,0,0x7f0bc0,0x120);
+    RaiseInternalException(0xffff,0,s_E__Ourlib__sslider_cpp_007f0bc0,0x120);
     return 0xffff;
   }
   switch(param_1[4]) {
   case 2:
     local_10 = (undefined4 *)param_1[5];
     if (local_10 == (undefined4 *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return 0xffff;
     }
     local_8[6] = *local_10;
@@ -68,7 +68,7 @@ undefined4 FUN_007244b0(int *param_1)
       }
       iVar2 = (**(code **)(*(int *)local_8[3] + 8))(local_10[0x61],local_8 + 7,0,local_10 + 0x62,0);
       if (iVar2 != 0) {
-        DAT_00858df8 = (undefined4 *)local_74;
+        g_currentExceptionFrame = local_74.previous;
         return 0xffff;
       }
     }
@@ -83,7 +83,7 @@ undefined4 FUN_007244b0(int *param_1)
       }
       iVar2 = (**(code **)(*(int *)local_8[3] + 8))(local_10[1],local_8 + 8,0,local_10 + 2,0);
       if (iVar2 != 0) {
-        DAT_00858df8 = (undefined4 *)local_74;
+        g_currentExceptionFrame = local_74.previous;
         return 0xffff;
       }
     }
@@ -95,7 +95,7 @@ undefined4 FUN_007244b0(int *param_1)
       puVar5[0xd0] = 0x2c;
       iVar2 = (**(code **)(*(int *)local_8[3] + 8))(puVar5[0xc1],local_8 + 9,0,puVar5 + 0xc2,0);
       if (iVar2 != 0) {
-        DAT_00858df8 = (undefined4 *)local_74;
+        g_currentExceptionFrame = local_74.previous;
         return 0xffff;
       }
     }
@@ -108,10 +108,10 @@ undefined4 FUN_007244b0(int *param_1)
       local_30[3] = 2;
       local_30[4] = 8;
       (**(code **)*local_8)(local_30);
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 3:
     if (local_8[7] != 0) {
@@ -129,7 +129,7 @@ undefined4 FUN_007244b0(int *param_1)
       local_30[3] = 2;
       local_30[4] = 9;
       uVar4 = (**(code **)*local_8)(local_30);
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return uVar4;
     }
     break;
@@ -152,13 +152,13 @@ undefined4 FUN_007244b0(int *param_1)
     }
     if (local_8[9] != 0) {
       FUN_006e6080(local_8,2,local_8[9],local_30);
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     break;
   case 8:
     if (local_8[0x14] == 0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     piVar7 = local_30;
@@ -182,7 +182,7 @@ undefined4 FUN_007244b0(int *param_1)
       local_30[4] = 0x14;
       local_18 = 2;
       FUN_006e6000(local_8,3,1,local_30);
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     break;
@@ -202,14 +202,14 @@ undefined4 FUN_007244b0(int *param_1)
       }
       if ((local_8[6] & 0xffffff) != 0) {
         FUN_00724360(local_8);
-        DAT_00858df8 = (undefined4 *)local_74;
+        g_currentExceptionFrame = local_74.previous;
         return local_c;
       }
     }
     break;
   case 0x21:
     param_1[5] = local_8[6];
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 0x22:
     iVar2 = param_1[5];
@@ -222,11 +222,11 @@ undefined4 FUN_007244b0(int *param_1)
       local_c = FUN_006e6060(local_8,local_30);
     }
     FUN_00724360(local_8);
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 0x26:
     param_1[5] = local_8[0x13];
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 0x28:
     iVar2 = param_1[5];
@@ -246,7 +246,7 @@ undefined4 FUN_007244b0(int *param_1)
       FUN_006e6080(local_8,0x80000002,iVar2,local_30);
     }
     FUN_00724360(local_8);
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 0x2b:
     *(undefined2 *)(param_1 + 5) = 0;
@@ -257,20 +257,20 @@ undefined4 FUN_007244b0(int *param_1)
       FUN_006e6060(local_8,local_30);
       if ((short)local_1c != 0) {
         *(undefined2 *)(param_1 + 5) = 1;
-        DAT_00858df8 = (undefined4 *)local_74;
+        g_currentExceptionFrame = local_74.previous;
         return local_c;
       }
     }
     local_30[2] = local_8[8];
     if ((local_30[2] != 0) && (FUN_006e6060(local_8,local_30), (short)local_1c != 0)) {
       *(undefined2 *)(param_1 + 5) = 1;
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     local_30[2] = local_8[9];
     if ((local_30[2] != 0) && (FUN_006e6060(local_8,local_30), (short)local_1c != 0)) {
       *(undefined2 *)(param_1 + 5) = 1;
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     break;
@@ -282,24 +282,24 @@ undefined4 FUN_007244b0(int *param_1)
     goto LAB_00724bab;
   case 0x55:
     local_8[0x15] = 1;
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 0x56:
     local_8[0x15] = 0;
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     return local_c;
   case 0x67:
     if (local_8[0x14] == 0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     if (local_8[0x15] == 0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
   case 0x2f:
     if ((int)local_8[0x13] < 1) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     iVar3 = FUN_00724330(local_8,(uint)*(ushort *)(param_1 + 6));
@@ -318,16 +318,16 @@ undefined4 FUN_007244b0(int *param_1)
     goto LAB_00724bab;
   case 0x68:
     if (local_8[0x14] == 0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     if (local_8[0x15] == 0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
   case 0x30:
     if (local_8[0x12] + -1 <= (int)local_8[0x13]) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return local_c;
     }
     iVar3 = FUN_00724330(local_8,(uint)*(ushort *)(param_1 + 6));
@@ -347,11 +347,11 @@ LAB_00724bab:
     iVar2 = FUN_006e6020(local_8,local_8 + 10);
 LAB_00724bb2:
     if (iVar2 != 0) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return 0xffff;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_74;
+  g_currentExceptionFrame = local_74.previous;
   return local_c;
 }
 

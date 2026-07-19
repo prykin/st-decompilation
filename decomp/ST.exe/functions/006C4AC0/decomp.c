@@ -50,7 +50,7 @@ int FUN_006c4ac0(int *param_1)
     ExceptionList = &local_14;
     iVar7 = FUN_006bb8b0(iVar7);
     if (iVar7 != 0) {
-      FUN_006a5e40(iVar7,DAT_007ed77c,0x7edf40,0x1e);
+      RaiseInternalException(iVar7,DAT_007ed77c,s_E__DKW_FLC_C_flcdrawf_cpp_007edf40,0x1e);
       ExceptionList = local_14;
       return iVar7;
     }

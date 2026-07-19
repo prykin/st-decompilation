@@ -8,13 +8,14 @@ undefined4 __cdecl FUN_0070a370(int param_1)
   int iVar4;
   undefined4 uVar5;
   void *unaff_ESI;
+  InternalExceptionFrame *pIVar6;
   undefined4 local_74 [16];
   undefined4 local_34 [10];
   uint local_b;
   
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffff88;
-  iVar2 = __setjmp3(local_74,0,unaff_ESI,uVar5);
+  pIVar6 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff88;
+  iVar2 = __setjmp3(local_74,0,unaff_ESI,pIVar6);
   if (iVar2 == 0) {
     if (param_1 != 0) {
       if (*(int *)(param_1 + 4) != 0) {
@@ -32,13 +33,14 @@ undefined4 __cdecl FUN_0070a370(int param_1)
       puVar3 = FUN_006ae290((uint *)0x0,0x14,0x2d,0x14);
       *(uint **)(param_1 + 4) = puVar3;
     }
-    DAT_00858df8 = (undefined1 *)uVar5;
+    g_currentExceptionFrame = pIVar6;
     return 1;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
-  iVar4 = FUN_006ad4d0(s_E__Ourlib_mfrload_cpp_007eff5c,0x18d,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = pIVar6;
+  iVar4 = ReportDebugMessage(s_E__Ourlib_mfrload_cpp_007eff5c,0x18d,0,iVar2,&DAT_007a4ccc,
+                             s_mfRLoadRefreshAll_007effbc);
   if (iVar4 == 0) {
-    FUN_006a5e40(iVar2,0,0x7eff5c,399);
+    RaiseInternalException(iVar2,0,s_E__Ourlib_mfrload_cpp_007eff5c,399);
     return 0;
   }
   pcVar1 = (code *)swi(3);

@@ -19,8 +19,7 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
   void *unaff_EDI;
   int iVar10;
   byte bVar11;
-  undefined4 local_8c;
-  undefined4 local_88 [16];
+  InternalExceptionFrame local_8c;
   int local_48;
   uint *local_44;
   int local_40;
@@ -42,16 +41,17 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
   local_44 = *(uint **)(param_1 + 0x14);
   local_40 = local_44[4] - 0x46;
   local_48 = local_44[3] - 0x1a;
-  local_8c = DAT_00858df8;
-  DAT_00858df8 = &local_8c;
+  local_8c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_8c;
   local_8 = this;
-  iVar5 = __setjmp3(local_88,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar4 = local_44;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_8c;
-    iVar7 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_8c.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369,0,iVar5,&DAT_007a4ccc,
+                               s_MReportTy__PaintTab_007cd084);
     if (iVar7 == 0) {
-      FUN_006a5e40(iVar5,0,0x7ccec8,0x369);
+      RaiseInternalException(iVar5,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x369);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -159,7 +159,7 @@ LAB_005c1806:
   }
   FUN_006b48e0(DAT_0080759c,puVar4[3],puVar4[4],*(int *)(local_8 + 0x73),0,iVar5,iVar7,puVar4[5],
                puVar4[6],(int)(local_8 + 0xa3),0x4c,0x10000ff);
-  DAT_00858df8 = (undefined4 *)local_8c;
+  g_currentExceptionFrame = local_8c.previous;
   return;
 }
 

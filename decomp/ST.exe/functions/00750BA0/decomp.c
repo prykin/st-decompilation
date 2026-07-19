@@ -203,7 +203,7 @@ LAB_00750eab:
 LAB_00750ecd:
   local_30 = uVar7;
   if (local_30 != 0) {
-    FUN_006a5e40(local_30,DAT_007ed77c,0x7f2acc,0x8f);
+    RaiseInternalException(local_30,DAT_007ed77c,s_E__DKW_DB_C_btcompac_c_007f2acc,0x8f);
   }
   ExceptionList = local_14;
   return;

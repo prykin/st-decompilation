@@ -40,8 +40,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   int aiStack_8e4 [22];
   undefined4 auStack_88c [7];
   undefined4 auStack_870 [497];
-  undefined4 local_ac;
-  undefined4 local_a8 [16];
+  InternalExceptionFrame local_ac;
   undefined4 local_68 [4];
   undefined4 local_58;
   undefined4 local_54;
@@ -68,15 +67,16 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
     *piVar10 = 0;
     piVar10 = piVar10 + 1;
   }
-  local_ac = DAT_00858df8;
-  DAT_00858df8 = &local_ac;
-  iVar8 = __setjmp3(local_a8,0,unaff_EDI,unaff_ESI);
+  local_ac.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_ac;
+  iVar8 = __setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar8 != 0) {
-    DAT_00858df8 = (undefined4 *)local_ac;
-    iVar19 = FUN_006ad4d0(s_E____titans_Andrey_behpanel_cpp_007c1694,0x68,0,iVar8,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_ac.previous;
+    iVar19 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0x68,0,iVar8,
+                                &DAT_007a4ccc,s_BehPanelTy__InitBehPanel_007c16bc);
     if (iVar19 == 0) {
-      FUN_006a5e40(iVar8,0,0x7c1694,0x68);
+      RaiseInternalException(iVar8,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0x68);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -295,7 +295,7 @@ LAB_004eda47:
                           (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar3,uVar16,uVar22,uVar24,
                           uVar12,uVar15,uVar17,uVar11);
       *(undefined4 *)(this_00 + 0x1ca) = uVar14;
-      DAT_00858df8 = (undefined4 *)local_ac;
+      g_currentExceptionFrame = local_ac.previous;
       return;
     }
   } while( true );

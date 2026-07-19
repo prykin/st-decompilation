@@ -870,8 +870,9 @@ LAB_00437e03:
             }
             else {
               if (iStack_e8 != 0xde) {
-                iVar20 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x14ca,0,0,
-                                      &DAT_007a4ccc);
+                iVar20 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x14ca,0,0,
+                                            &DAT_007a4ccc,
+                                            s_STAllPlayersC__CmdToPlsObj__CMDT_007a73e0);
                 if (iVar20 != 0) {
                   pcVar10 = (code *)swi(3);
                   (*pcVar10)();
@@ -1046,7 +1047,8 @@ LAB_00437cb5:
     case 4:
       break;
     default:
-      iVar20 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1427,0,0,&DAT_007a4ccc);
+      iVar20 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1427,0,0,&DAT_007a4ccc,
+                                  s_STAllPlayersC__CmdToPlsObj_CMDTY_007a742c);
       if (iVar20 != 0) {
         pcVar10 = (code *)swi(3);
         (*pcVar10)();

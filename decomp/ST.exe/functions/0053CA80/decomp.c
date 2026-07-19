@@ -16,8 +16,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
   undefined4 unaff_ESI;
   void *unaff_EDI;
   ProdPanelTy *pPVar7;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   uint local_14;
   undefined1 local_10;
   undefined2 uStack_f;
@@ -26,20 +25,21 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
   undefined1 local_a;
   ProdPanelTy *local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_8 = (ProdPanelTy *)this;
-  iVar3 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar5 = FUN_006ad4d0(s_E____titans_Andrey_research_cpp_007c76c8,200,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_research_cpp_007c76c8,200,0,iVar3,&DAT_007a4ccc,
+                               s_ResearchPanelTy__GetMessage_007c7774);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       uVar6 = (*pcVar2)();
       return uVar6;
     }
-    FUN_006a5e40(iVar3,0,0x7c76c8,200);
+    RaiseInternalException(iVar3,0,s_E____titans_Andrey_research_cpp_007c76c8,200);
     return 0xffff;
   }
   iVar3 = 2;
@@ -52,7 +52,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
     if (uVar1 < 0xc09f) {
       if (uVar1 == 2) {
         InitResearchPanel((ResearchPanelTy *)this_00);
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       if (uVar1 == 3) {
@@ -70,7 +70,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
         }
         *(undefined4 *)(this_00 + 0x282) = 0;
         DAT_008016e8 = 0;
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       if (uVar1 == 0xb207) {
@@ -78,7 +78,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
         this_00[0x278] = (ProdPanelTy)(**(char **)(param_1 + 0x14) + -1);
         thunk_FUN_005252c0(0xae);
         (**(code **)(*(int *)this_00 + 0x1c))();
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
@@ -103,7 +103,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
         thunk_FUN_0054edf0((undefined4 *)0x1e,&local_14,0,0xffffffff);
         ProdPanelTy::SetPanel(this_00,'\0');
         thunk_FUN_005252c0(0xae);
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
@@ -114,7 +114,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
       *(undefined4 *)(this_00 + 0x199) = *(undefined4 *)(param_1 + 0x14);
       thunk_FUN_0053c620(this_00);
       thunk_FUN_005252c0(0xae);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     case 0xc0af:
     case 0xc0b0:
@@ -122,13 +122,13 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
     case 0xc0b2:
     case 0xc0b3:
       PaintUpdBut((ResearchPanelTy *)this_00,param_1);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     case 0xc0b4:
       ProdPanelTy::PaintTab(this_00,param_1,thunk_FUN_0052a7b0);
     }
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 

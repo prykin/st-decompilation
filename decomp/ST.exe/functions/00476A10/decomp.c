@@ -30,7 +30,8 @@ int __thiscall FUN_00476a10(void *this,int param_1)
     }
     iVar5 = thunk_FUN_0045ff50(this,2);
     if (iVar5 == -1) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3184,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3184,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__DCBomb__DCBOMB_MOVE_err_007ab10c);
       if (iVar5 == 0) {
         return 0xffff;
       }

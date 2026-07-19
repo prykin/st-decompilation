@@ -12,10 +12,10 @@ void FUN_0075f740(int *param_1)
   puVar1[0x11] = 0;
   puVar1[0xd] = 0;
   if (4 < param_1[0x1c]) {
-    FUN_006a5e40(0x36,DAT_007ed77c,0x7f2ea0,0x34a);
+    RaiseInternalException(0x36,DAT_007ed77c,s_E__DKW_JPG_C_jquant1_c_007f2ea0,0x34a);
   }
   if (0x100 < param_1[0x16]) {
-    FUN_006a5e40(0x38,DAT_007ed77c,0x7f2ea0,0x34d);
+    RaiseInternalException(0x38,DAT_007ed77c,s_E__DKW_JPG_C_jquant1_c_007f2ea0,0x34d);
   }
   FUN_0075f7d0(param_1);
   FUN_0075fa00(param_1);

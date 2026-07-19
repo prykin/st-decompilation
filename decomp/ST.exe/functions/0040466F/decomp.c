@@ -4,19 +4,19 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
 {
   code *pcVar1;
   PausePanelTy *pPVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   void *unaff_ESI;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar4;
   undefined4 auStack_48 [16];
   PausePanelTy *pPStack_8;
   
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar4 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pPStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
+  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pPVar2 = pPStack_8;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     if (*(uint *)(pPStack_8 + 0x184) != 0) {
       FUN_006e56b0(*(void **)(pPStack_8 + 0xc),*(uint *)(pPStack_8 + 0x184));
     }
@@ -29,17 +29,18 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
     if (*(int *)(pPVar2 + 0x180) != 0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)(pPVar2 + 0x180));
     }
-    DAT_00858df8 = (undefined1 *)uVar5;
+    g_currentExceptionFrame = pIVar4;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_pause_cpp_007c7490,0x3b,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = pIVar4;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x3b,0,errorCode,&DAT_007a4ccc,
+                             s_PausePanelTy__DonePausePanel_007c74e4);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c7490,0x3b);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_pause_cpp_007c7490,0x3b);
   return;
 }
 

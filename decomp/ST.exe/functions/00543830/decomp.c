@@ -8,20 +8,19 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
 {
   code *pcVar1;
   CursorClassTy *pCVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   CursorClassTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_8;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     if (-1 < (int)*(uint *)(local_8 + 0x4d6)) {
       FUN_006b3bb0(DAT_008075a8,*(uint *)(local_8 + 0x4d6));
     }
@@ -42,17 +41,18 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     *(undefined4 *)(pCVar2 + 0xad) = 0;
     SpriteClassTy::CloseSprite((SpriteClassTy *)(pCVar2 + 0x18));
     DAT_00802a30 = 0;
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x7d,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x7d,0,errorCode,
+                             &DAT_007a4ccc,s_CursorClassTy__DoneCursor_007c7de0);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c7d60,0x7e);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x7e);
   return;
 }
 

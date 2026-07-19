@@ -17,23 +17,23 @@ ccFntTy::CreateSurf(ccFntTy *this,int param_1,uint param_2,int param_3,int param
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   ccFntTy *local_14;
   uint local_10;
   int local_c;
   int local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x4ab,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar6 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x4ab,0,iVar2,&DAT_007a4ccc,
+                               s_ccFntTy__CreateSurf_007f0238);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar2,0,0x7f0190,0x4ad);
+      RaiseInternalException(iVar2,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x4ad);
       return (undefined4 *)0x0;
     }
     pcVar1 = (code *)swi(3);
@@ -67,7 +67,7 @@ LAB_00710c1d:
   puVar4 = (undefined4 *)
            FUN_006b50c0(local_8,local_c,(uint)*(ushort *)(param_1 + 0xe),uVar3,puVar4,iVar2);
   if (puVar4 == (undefined4 *)0x0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x49d);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x49d);
   }
   if (param_7 == 0) {
     FUN_006b55f0(puVar4,0,0,0,param_1,local_10,param_3,param_4,local_8,local_c);
@@ -99,7 +99,7 @@ LAB_00710c1d:
   *(int *)(this_00 + 0x6c) = local_c;
   *(undefined4 *)(this_00 + 0x50) = 0;
   *(undefined4 *)(this_00 + 0x54) = 0;
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return puVar4;
 }
 

@@ -46,7 +46,7 @@ DWORD FUN_006c4230(LPCSTR param_1,LPCVOID param_2,LPCVOID param_3)
 LAB_006c4312:
   CloseHandle(hFile);
   if (DVar3 != 0) {
-    FUN_006a5e40(DVar3,DAT_007ed77c,0x7ededc,0x2e);
+    RaiseInternalException(DVar3,DAT_007ed77c,s_E__DKW_WGR_C_dibsave_c_007ededc,0x2e);
     return DVar3;
   }
   return 0;

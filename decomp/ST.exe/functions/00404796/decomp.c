@@ -62,7 +62,8 @@ void __fastcall thunk_FUN_0048a670(void *param_1)
     *(undefined4 *)((int)param_1 + 0x219) = 0xaa;
     break;
   default:
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x46b8,0,0,&DAT_007a4ccc);
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x46b8,0,0,&DAT_007a4ccc,
+                               s_STBoatC___SetSpeedFireLife_unkno_007ab9a8);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();

@@ -14,14 +14,13 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
   void *unaff_EDI;
   char acStack_3dc [512];
   WSADATA WStack_1dc;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   StartSystemTy *pSStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pSStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar3 == 0) {
     if (*(byte **)(pSStack_8 + 0x696) != (byte *)0x0) {
@@ -47,17 +46,18 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
       }
       WSACleanup();
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar8 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0xce,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_4c.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0xce,0,iVar3,&DAT_007a4ccc,
+                             s_StartSystemTy__GetIP_007cd740);
   if (iVar8 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cd718,0xce);
+  RaiseInternalException(iVar3,0,s_E____titans_Start_startsys_cpp_007cd718,0xce);
   return;
 }
 

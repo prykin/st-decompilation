@@ -32,7 +32,7 @@ void thunk_FUN_00682850(void)
       thunk_FUN_006827a0();
     }
     else if (DAT_007d2d18 != 0x39) {
-      FUN_006a5e40(-0x71,DAT_007ed77c,0x7d5604,0x1d0);
+      RaiseInternalException(-0x71,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x1d0);
     }
   }
   pfVar1 = pfVar5;

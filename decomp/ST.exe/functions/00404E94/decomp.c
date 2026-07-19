@@ -15,25 +15,25 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
   uint uVar8;
   char cVar9;
   uint uVar10;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   SettMapTy *pSStack_10;
   int iStack_c;
   int iStack_8;
   
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pSStack_10 = this;
-  iVar3 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_54;
-    iVar7 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x3a4,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_54.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x3a4,0,iVar3,&DAT_007a4ccc
+                               ,s_SettMapTy__DeleteCtrls_007cd208);
     if (iVar7 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cd0e8,0x3a4);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x3a4);
     return;
   }
   if (DAT_00802a30 != 0) {
@@ -331,11 +331,11 @@ void __thiscall SettMapTy::DeleteCtrls(SettMapTy *this)
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b34d0(*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
                    *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
-      DAT_00858df8 = (undefined4 *)uStack_54;
+      g_currentExceptionFrame = IStack_54.previous;
       return;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return;
 }
 

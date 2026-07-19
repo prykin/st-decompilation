@@ -15,7 +15,8 @@ FUN_00581ac0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
                                ,(uint)*(ushort *)((int)this + 0x205),0xffff);
     return uVar3;
   }
-  iVar2 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0xda,0,0,&DAT_007a4ccc);
+  iVar2 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0xda,0,0,&DAT_007a4ccc,
+                             s_STJellyManC__Error_Max_jellies_r_007cb318);
   if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();

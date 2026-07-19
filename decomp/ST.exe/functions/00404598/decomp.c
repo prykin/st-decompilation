@@ -17,8 +17,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   void *unaff_EDI;
   uint *puVar11;
   bool bVar12;
-  undefined4 uStack_88;
-  undefined4 auStack_84 [16];
+  InternalExceptionFrame IStack_88;
   uint auStack_44 [2];
   char cStack_3c;
   char cStack_3b;
@@ -33,10 +32,10 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   if ((*(int *)(this + 0x91) == 0) ||
      ((uint)(*(int *)(this + 0x95) + *(int *)(this + 0x91)) <= *(uint *)(this + 300))) {
     *(undefined4 *)(this + 0x95) = *(undefined4 *)(this + 300);
-    uStack_88 = DAT_00858df8;
-    DAT_00858df8 = &uStack_88;
+    IStack_88.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_88;
     pAStack_10 = this;
-    iVar8 = __setjmp3(auStack_84,0,unaff_EDI,unaff_ESI);
+    iVar8 = __setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pAVar6 = pAStack_10;
     if (iVar8 == 0) {
       uStack_8 = 0;
@@ -178,17 +177,18 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
           bVar12 = uStack_8 < *(uint *)(iVar8 + 0xc);
         } while ((int)uStack_8 < (int)*(uint *)(iVar8 + 0xc));
       }
-      DAT_00858df8 = (undefined4 *)uStack_88;
+      g_currentExceptionFrame = IStack_88.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_88;
-    iVar9 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1ff,0,iVar8,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_88.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x1ff,0,iVar8,&DAT_007a4ccc,
+                               s_AiTactClassTy__ExecClaim_007d5798);
     if (iVar9 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar8,0,0x7d56e0,0x200);
+    RaiseInternalException(iVar8,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x200);
   }
   return;
 }

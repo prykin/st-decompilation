@@ -15,8 +15,7 @@ undefined4 FUN_006b7920(undefined4 *param_1,DWORD_PTR param_2)
   tagMIXERCONTROLA *ptVar9;
   tagMIXERLINEA local_254;
   tagMIXERLINEA local_1ac;
-  undefined4 local_104;
-  undefined4 local_100 [16];
+  InternalExceptionFrame local_104;
   tagMIXERCONTROLA local_c0;
   int local_2c;
   uint local_28;
@@ -24,32 +23,32 @@ undefined4 FUN_006b7920(undefined4 *param_1,DWORD_PTR param_2)
   tagMIXERLINECONTROLSA local_20;
   LPMIXERCAPSA local_8;
   
-  local_104 = DAT_00858df8;
-  DAT_00858df8 = &local_104;
-  iVar2 = __setjmp3(local_100,0,unaff_EDI,unaff_ESI);
+  local_104.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_104;
+  iVar2 = __setjmp3(local_104.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_104;
+    g_currentExceptionFrame = local_104.previous;
     if (*(HMIXER *)(local_8 + 1) != (HMIXER)0x0) {
       mixerClose(*(HMIXER *)(local_8 + 1));
     }
     if (local_8 != (LPMIXERCAPSA)0x0) {
       FUN_006ab060(&local_8);
     }
-    FUN_006a5e40(iVar2,0,0x7edbe8,0x94);
+    RaiseInternalException(iVar2,0,s_E__DKW_SND_C_mixer_cpp_007edbe8,0x94);
     return 0xffffffff;
   }
   local_8 = (LPMIXERCAPSA)FUN_006aac10(0x98);
   UVar3 = mixerGetNumDevs();
   if (UVar3 == 0) {
-    FUN_006a5e40(-4,DAT_007ed77c,0x7edbe8,0x1e);
+    RaiseInternalException(-4,DAT_007ed77c,s_E__DKW_SND_C_mixer_cpp_007edbe8,0x1e);
   }
   MVar4 = mixerGetDevCapsA(local_8[1].vDriverVersion,local_8,0x30);
   if (MVar4 != 0) {
-    FUN_006a5e40(MVar4,DAT_007ed77c,0x7edbe8,0x21);
+    RaiseInternalException(MVar4,DAT_007ed77c,s_E__DKW_SND_C_mixer_cpp_007edbe8,0x21);
   }
   MVar4 = mixerOpen((LPHMIXER)(local_8 + 1),local_8[1].vDriverVersion,param_2,0,0x10000);
   if (MVar4 != 0) {
-    FUN_006a5e40(MVar4,DAT_007ed77c,0x7edbe8,0x25);
+    RaiseInternalException(MVar4,DAT_007ed77c,s_E__DKW_SND_C_mixer_cpp_007edbe8,0x25);
   }
   uVar6 = 0;
   local_28 = 0;
@@ -69,7 +68,7 @@ undefined4 FUN_006b7920(undefined4 *param_1,DWORD_PTR param_2)
             (uVar6 = uVar6 + 1, local_28 = uVar6, uVar6 < local_8->cDestinations));
   }
   if (uVar6 == local_8->cDestinations) {
-    FUN_006a5e40(-4,DAT_007ed77c,0x7edbe8,0x30);
+    RaiseInternalException(-4,DAT_007ed77c,s_E__DKW_SND_C_mixer_cpp_007edbe8,0x30);
   }
   ptVar1 = local_8;
   ptVar8 = &local_20;
@@ -132,7 +131,7 @@ undefined4 FUN_006b7920(undefined4 *param_1,DWORD_PTR param_2)
       local_1ac.dwSource = uVar6;
       MVar4 = mixerGetLineInfoA(*(HMIXEROBJ *)(local_8 + 1),&local_1ac,1);
       if (MVar4 != 0) {
-        FUN_006a5e40(MVar4,DAT_007ed77c,0x7edbe8,0x5a);
+        RaiseInternalException(MVar4,DAT_007ed77c,s_E__DKW_SND_C_mixer_cpp_007edbe8,0x5a);
       }
       if ((local_1ac.fdwLine & 0x8000) == 0) {
         iVar2 = -1;
@@ -208,7 +207,7 @@ undefined4 FUN_006b7920(undefined4 *param_1,DWORD_PTR param_2)
       local_24 = local_24 + 1;
     } while (local_24 < local_254.cConnections);
   }
-  DAT_00858df8 = (undefined4 *)local_104;
+  g_currentExceptionFrame = local_104.previous;
   *param_1 = local_8;
   return 0;
 }

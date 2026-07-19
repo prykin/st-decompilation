@@ -9,7 +9,7 @@ int FUN_006b7510(int *param_1,int param_2,int *param_3,int param_4,int param_5)
   
   iVar4 = FUN_006b7190(param_1);
   if (iVar4 != 0) {
-    FUN_006a5e40(iVar4,DAT_007ed77c,0x7edbc4,0x45f);
+    RaiseInternalException(iVar4,DAT_007ed77c,s_E__DKW_DDX_C_dplay2_cpp_007edbc4,0x45f);
     return iVar4;
   }
   if (0x7f < param_2) {

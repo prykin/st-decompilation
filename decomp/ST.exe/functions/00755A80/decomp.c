@@ -12,8 +12,7 @@ int FUN_00755a80(int param_1,uint param_2)
   undefined4 unaff_ESI;
   int iVar8;
   void *unaff_EDI;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   int local_1c;
   uint local_18;
   int local_14;
@@ -50,18 +49,18 @@ LAB_00755b8f:
       local_14 = (int)puVar3 - iVar5;
       local_1c = uVar7 - param_2;
       local_18 = puVar6[1];
-      local_60 = DAT_00858df8;
-      DAT_00858df8 = &local_60;
+      local_60.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_60;
       local_8 = iVar8;
-      iVar5 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+      iVar5 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
       iVar8 = local_8;
       iVar4 = local_10;
       if (iVar5 != 0) {
-        DAT_00858df8 = (undefined4 *)local_60;
+        g_currentExceptionFrame = local_60.previous;
         goto LAB_00755b8f;
       }
       FUN_006d4860(local_10,local_8 + param_2,&local_1c,8);
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       puVar6 = (uint *)(*(int *)(iVar4 + 0x34) + iVar8);
       piVar1 = (int *)(*(int *)(iVar4 + 0x34) + 4 + local_14);
       *piVar1 = *piVar1 + param_2;
@@ -76,7 +75,7 @@ LAB_00755b8f:
 LAB_00755b92:
   iVar5 = local_8;
   if (local_c != 0) {
-    FUN_006a5e40(local_c,DAT_007ed77c,0x7f2d20,0x60);
+    RaiseInternalException(local_c,DAT_007ed77c,s_E__DKW_FMM_C_fmemallo_c_007f2d20,0x60);
   }
   return iVar5;
 }

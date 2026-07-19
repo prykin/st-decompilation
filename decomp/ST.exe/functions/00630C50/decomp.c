@@ -14,8 +14,7 @@ ushort * FUN_00630c50(undefined4 param_1,int param_2,int param_3,int param_4,int
   uint uVar6;
   uint uVar7;
   uint uVar8;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   int local_14;
   int local_10;
   ushort *local_c;
@@ -36,11 +35,11 @@ ushort * FUN_00630c50(undefined4 param_1,int param_2,int param_3,int param_4,int
       local_8 = &PTR_s_ruin_40_007d1834;
     }
   }
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
   puVar3 = FUN_00709af0(DAT_00806774,0x1d,local_8[*(int *)(local_10 + 0x40)],0xffffffff,0,1,0,
@@ -64,7 +63,7 @@ ushort * FUN_00630c50(undefined4 param_1,int param_2,int param_3,int param_4,int
                              (float)*(int *)(local_10 + 0x5c) * _DAT_007904f8 * _DAT_007904f0 +
                              _DAT_0079d1a0,0);
     }
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
   puVar1 = (uint *)(local_10 + 0x61);
@@ -100,7 +99,7 @@ ushort * FUN_00630c50(undefined4 param_1,int param_2,int param_3,int param_4,int
   if (param_4 != 0) {
     FUN_006eaaa0(DAT_00807598,*puVar1,0);
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return puVar3;
 }
 

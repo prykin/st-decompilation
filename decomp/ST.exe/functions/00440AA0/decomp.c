@@ -29,8 +29,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,int param_2,int par
   short local_fa;
   short local_f8;
   int local_d0;
-  undefined4 local_c8;
-  undefined4 local_c4 [16];
+  InternalExceptionFrame local_c8;
   int local_84;
   int local_80;
   int *local_7c;
@@ -69,21 +68,22 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,int param_2,int par
   uint local_8;
   
   local_70 = (uint *)0x0;
-  local_c8 = DAT_00858df8;
+  local_c8.previous = g_currentExceptionFrame;
   local_80 = *(int *)((int)&DAT_007f4e24 + (char)param_1 * 0xa62 + 1);
-  DAT_00858df8 = &local_c8;
+  g_currentExceptionFrame = &local_c8;
   local_40 = this;
-  iVar3 = __setjmp3(local_c4,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_c8;
+    g_currentExceptionFrame = local_c8.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar8 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x234b,0,iVar3,&DAT_007a4ccc);
+      iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x234b,0,iVar3,
+                                 &DAT_007a4ccc,s_STAllPlayersC___AssignDocks_007a8040);
       if (iVar8 != 0) {
         pcVar1 = (code *)swi(3);
         puVar5 = (uint *)(*pcVar1)();
         return puVar5;
       }
-      FUN_006a5e40(iVar3,0,0x7a6004,0x234c);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x234c);
     }
     return local_70;
   }
@@ -91,10 +91,12 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,int param_2,int par
       (uVar13 = *(uint *)(param_2 + 0xc), local_20 = uVar13, uVar13 == 0)) ||
      (local_48 = *(uint *)(param_3 + 0xc), local_48 == 0)) {
     uVar13 = local_20;
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x2215);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2215)
+    ;
   }
   if ((local_80 == 0) || (local_84 = *(int *)(local_80 + 0xc), local_84 == 0)) {
-    FUN_006a5e40(-0x5001fff8,DAT_007ed77c,0x7a6004,0x2216);
+    RaiseInternalException(-0x5001fff8,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2216)
+    ;
   }
   uVar12 = 0;
   if (0 < (int)uVar13) {
@@ -116,7 +118,8 @@ LAB_00440bab:
     } while ((int)uVar12 < (int)uVar13);
   }
   if (uVar13 == 0) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x221e);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x221e)
+    ;
   }
   uVar12 = 0;
   if (0 < (int)local_48) {
@@ -137,7 +140,8 @@ LAB_00440c19:
     } while ((int)uVar12 < (int)local_48);
   }
   if (local_48 == 0) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x2225);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2225)
+    ;
   }
   puVar5 = FUN_006ae290((uint *)0x0,uVar13,0xc,1);
   uVar12 = 0;
@@ -167,14 +171,17 @@ LAB_00440c19:
             if ((short)local_28 != -1) {
               pvVar6 = (void *)thunk_FUN_0042b620(param_1,local_28,1);
               if (pvVar6 == (void *)0x0) {
-                iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2239,0,0,
-                                     &DAT_007a4ccc);
+                iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2239,0,0,
+                                           &DAT_007a4ccc,s_STAllPlayersC___AssignDocks_inva_007a8064
+                                          );
                 if (iVar3 != 0) {
                   pcVar1 = (code *)swi(3);
                   puVar5 = (uint *)(*pcVar1)();
                   return puVar5;
                 }
-                FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x223a);
+                RaiseInternalException
+                          (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x223a)
+                ;
               }
               if ((*(int *)((int)pvVar6 + 0x20) == 0x14) &&
                  (iVar3 = thunk_FUN_0045ff10((int)pvVar6), iVar3 == 4)) {
@@ -600,7 +607,7 @@ LAB_00440c19:
     } while ((int)uVar12 < (int)uVar13);
   }
   FUN_006ae110((byte *)puVar5);
-  DAT_00858df8 = (undefined4 *)local_c8;
+  g_currentExceptionFrame = local_c8.previous;
   return local_70;
 }
 

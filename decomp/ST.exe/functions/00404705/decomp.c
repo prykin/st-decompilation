@@ -5,36 +5,36 @@ thunk_FUN_006775e0(undefined4 param_1,uint param_2,uint param_3,byte *param_4,ch
                   short param_11,int param_12)
 
 {
-  int iVar1;
-  uint *puVar2;
-  undefined *puVar3;
+  int exceptionCode;
+  uint *puVar1;
+  undefined *puVar2;
   void *unaff_ESI;
-  undefined4 uVar4;
+  InternalExceptionFrame *pIVar3;
   undefined4 auStack_48 [16];
   uint *puStack_8;
   
-  uVar4 = DAT_00858df8;
+  pIVar3 = g_currentExceptionFrame;
   puStack_8 = (uint *)0x0;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar1 = __setjmp3(auStack_48,0,unaff_ESI,uVar4);
-  if (iVar1 == 0) {
-    puVar2 = FUN_006ae290((uint *)0x0,10,2,10);
-    puVar3 = &LAB_00401852;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  exceptionCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar3);
+  if (exceptionCode == 0) {
+    puVar1 = FUN_006ae290((uint *)0x0,10,2,10);
+    puVar2 = &LAB_00401852;
     if (param_12 == 0) {
-      puVar3 = &LAB_00403490;
+      puVar2 = &LAB_00403490;
     }
-    puStack_8 = puVar2;
+    puStack_8 = puVar1;
     thunk_FUN_00676d80(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,
-                       param_10,param_11,puVar3,puVar2,(undefined *)0x0);
-    DAT_00858df8 = (undefined1 *)uVar4;
-    return puVar2;
+                       param_10,param_11,puVar2,puVar1,(undefined *)0x0);
+    g_currentExceptionFrame = pIVar3;
+    return puVar1;
   }
-  DAT_00858df8 = (undefined1 *)uVar4;
+  g_currentExceptionFrame = pIVar3;
   if (puStack_8 != (uint *)0x0) {
     FUN_006ae110((byte *)puStack_8);
   }
   puStack_8 = (uint *)0x0;
-  FUN_006a5e40(iVar1,0,0x7d2d58,0x308);
+  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x308);
   return (uint *)0x0;
 }
 

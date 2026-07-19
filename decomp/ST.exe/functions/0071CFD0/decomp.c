@@ -19,8 +19,7 @@ int FUN_0071cfd0(int *param_1)
   int *piVar8;
   void *unaff_EDI;
   int *piVar9;
-  undefined4 local_74;
-  undefined4 local_70 [16];
+  InternalExceptionFrame local_74;
   undefined4 local_30 [4];
   undefined4 local_20;
   int *local_1c;
@@ -30,18 +29,19 @@ int FUN_0071cfd0(int *param_1)
   int local_8;
   
   local_8 = 0;
-  local_74 = DAT_00858df8;
-  DAT_00858df8 = &local_74;
-  iVar4 = __setjmp3(local_70,0,unaff_EDI,unaff_ESI);
+  local_74.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_74;
+  iVar4 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_74;
-    iVar4 = FUN_006ad4d0(s_E__Ourlib__sbutton_cpp_007f0a30,0x1aa,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_74.previous;
+    iVar4 = ReportDebugMessage(s_E__Ourlib__sbutton_cpp_007f0a30,0x1aa,0,iVar4,&DAT_007a4ccc,
+                               s_ButtonClassTy__GetMessage_Error___007f0a0c);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       iVar4 = (*pcVar2)();
       return iVar4;
     }
-    FUN_006a5e40(0xffff,0,0x7f0a30,0x1ab);
+    RaiseInternalException(0xffff,0,s_E__Ourlib__sbutton_cpp_007f0a30,0x1ab);
     return 0xffff;
   }
   switch(param_1[4]) {
@@ -160,7 +160,7 @@ int FUN_0071cfd0(int *param_1)
     goto LAB_0071d51b;
   case 6:
     if ((local_10[0x4b] != 0) && ((*(byte *)(param_1 + 6) & 1) == 0)) {
-      DAT_00858df8 = (undefined4 *)local_74;
+      g_currentExceptionFrame = local_74.previous;
       return 0;
     }
     break;
@@ -189,7 +189,7 @@ int FUN_0071cfd0(int *param_1)
         if (local_10[0x4b] != 0) {
           local_10[7] = local_10[7] & 0x8fffffff;
           (**(code **)(*local_10 + 4))();
-          DAT_00858df8 = (undefined4 *)local_74;
+          g_currentExceptionFrame = local_74.previous;
           return 0;
         }
       }
@@ -625,14 +625,14 @@ switchD_0071d549_caseD_2c:
   }
 switchD_0071d549_caseD_1:
   if (local_8 != 0) {
-    FUN_006a5e40(local_8,DAT_007ed77c,0x7f0a30,0x1a6);
+    RaiseInternalException(local_8,DAT_007ed77c,s_E__Ourlib__sbutton_cpp_007f0a30,0x1a6);
   }
   iVar4 = FUN_0072b780(param_1);
   if (iVar4 != 0) {
     local_8 = iVar4;
-    FUN_006a5e40(iVar4,DAT_007ed77c,0x7f0a30,0x1a8);
+    RaiseInternalException(iVar4,DAT_007ed77c,s_E__Ourlib__sbutton_cpp_007f0a30,0x1a8);
   }
-  DAT_00858df8 = (undefined4 *)local_74;
+  g_currentExceptionFrame = local_74.previous;
   return iVar4;
 }
 

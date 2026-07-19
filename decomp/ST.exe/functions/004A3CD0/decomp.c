@@ -26,8 +26,7 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar11;
-  undefined4 local_88;
-  undefined4 local_84 [16];
+  InternalExceptionFrame local_88;
   undefined4 local_44;
   undefined2 local_40;
   undefined2 local_3e;
@@ -51,13 +50,14 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
   local_20 = (uint *)0x0;
   local_c = (uint *)0x0;
   local_28 = (uint *)0x0;
-  local_88 = DAT_00858df8;
-  DAT_00858df8 = &local_88;
+  local_88.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_88;
   local_2c = this;
-  iVar3 = __setjmp3(local_84,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if ((param_3 == 0) || (local_24 = *(uint *)(param_3 + 0xc), local_24 == 0)) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x1189);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1189);
     }
     uVar11 = local_24;
     local_20 = FUN_006ae290((uint *)0x0,0,2,1);
@@ -70,13 +70,15 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
           piVar4 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),
                                              local_8,1);
           if (piVar4 == (int *)0x0) {
-            iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1191,0,0,&DAT_007a4ccc);
+            iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1191,0,0,
+                                       &DAT_007a4ccc,s_STGroupBoatC__DistributeDock_NUL_007ac2e0);
             if (iVar3 != 0) {
               pcVar1 = (code *)swi(3);
               (*pcVar1)();
               return;
             }
-            FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x1192);
+            RaiseInternalException
+                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1192);
           }
           iVar3 = (**(code **)(*piVar4 + 0x2c))();
           puVar7 = local_c;
@@ -102,11 +104,13 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)uVar10);
       }
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x11a3);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11a3);
       puVar7 = extraout_EDX_00;
     }
     if ((param_2 == 0) || (*(int *)(param_2 + 0xc) == 0)) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x11a6);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11a6);
       puVar7 = extraout_EDX_01;
     }
     puVar7 = STAllPlayersC::_AssignDocks
@@ -114,7 +118,8 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
                         (int)local_20);
     local_28 = puVar7;
     if (puVar7 == (uint *)0x0) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x11a9);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11a9);
     }
     uVar10 = 0;
     local_44 = *(undefined4 *)(DAT_00802a38 + 0xe4);
@@ -172,10 +177,10 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
     if (puVar7 != (uint *)0x0) {
       FUN_006ae110((byte *)puVar7);
     }
-    DAT_00858df8 = (undefined4 *)local_88;
+    g_currentExceptionFrame = local_88.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_88;
+  g_currentExceptionFrame = local_88.previous;
   if (iVar3 == -0x5001fff7) {
     if (local_20 != (uint *)0x0) {
       FUN_006ae110((byte *)local_20);
@@ -189,13 +194,14 @@ void __thiscall STGroupBoatC::DistributeDock(STGroupBoatC *this,int param_1,int 
     }
   }
   else {
-    iVar9 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11d8,0,iVar3,&DAT_007a4ccc);
+    iVar9 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11d8,0,iVar3,&DAT_007a4ccc,
+                               s_STGroupBoatC__DistributeDock_007ac2bc);
     if (iVar9 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7abe3c,0x11d9);
+    RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11d9);
   }
   return;
 }

@@ -16,24 +16,24 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
   undefined4 unaff_ESI;
   PopUpTy *pPVar8;
   void *unaff_EDI;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   PopUpTy *local_18;
   int local_14;
   int local_10;
   uint local_c;
   PopUpTy local_5;
   
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar3 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_18;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_5c;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x95,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_5c.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0x95,0,iVar3,&DAT_007a4ccc,
+                               s_PopUpTy__ChangeState_007c7010);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c6f84,0x95);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0x95);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -82,7 +82,7 @@ LAB_0052da81:
     pPVar8 = pPVar8 + 4;
     local_c = local_c + 0x13;
     if (0xe < (byte)local_5) {
-      DAT_00858df8 = (undefined4 *)local_5c;
+      g_currentExceptionFrame = local_5c.previous;
       return;
     }
   } while( true );

@@ -18,26 +18,26 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   undefined4 uVar12;
   int iVar13;
   int iVar14;
-  undefined4 *puStack_90;
-  undefined4 auStack_8c [16];
+  InternalExceptionFrame IStack_90;
   undefined4 auStack_4c [8];
   undefined4 auStack_2c [8];
   FSGSTy *pFStack_c;
   int iStack_8;
   
-  puStack_90 = DAT_00858df8;
-  DAT_00858df8 = &puStack_90;
+  IStack_90.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_90;
   pFStack_c = this;
-  iVar4 = __setjmp3(auStack_8c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = puStack_90;
-    iVar11 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_90.previous;
+    iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935,0,iVar4,
+                                &DAT_007a4ccc,s_FSGSTy__CheckUpdate_007cc408);
     if (iVar11 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x935);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935);
     return;
   }
   wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_UPDATES__0079c020,
@@ -46,7 +46,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   pFVar3 = pFStack_c;
   if (pcVar5 == (char *)0x0) {
     DoLogon(pFStack_c);
-    DAT_00858df8 = puStack_90;
+    g_currentExceptionFrame = IStack_90.previous;
     return;
   }
   uVar8 = 0xffffffff;
@@ -114,11 +114,11 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   if (*(MMsgTy **)(*(int *)(pFVar3 + 0x1a5b) + 0x2e6) != (MMsgTy *)0x0) {
     MMsgTy::SetMessage(*(MMsgTy **)(*(int *)(pFVar3 + 0x1a5b) + 0x2e6),0x25b7,'\x01',auStack_2c,
                        auStack_4c,(undefined4 *)0x0,iStack_8,0x25b8);
-    DAT_00858df8 = puStack_90;
+    g_currentExceptionFrame = IStack_90.previous;
     return;
   }
   (*(code *)**(undefined4 **)pFVar3)(auStack_2c);
-  DAT_00858df8 = puStack_90;
+  g_currentExceptionFrame = IStack_90.previous;
   return;
 }
 

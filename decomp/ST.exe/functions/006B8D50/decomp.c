@@ -14,7 +14,7 @@ int FUN_006b8d50(int *param_1,int param_2,int param_3,int param_4,int param_5)
          (((param_2 == 0 && (param_3 == 0)) && ((param_4 == 0 && (param_5 == 0)))))) {
         iVar1 = FUN_006b8e30(param_1);
         if (iVar1 != 0) {
-          FUN_006a5e40(iVar1,DAT_007ed77c,0x7edc18,0x15e);
+          RaiseInternalException(iVar1,DAT_007ed77c,s_E__DKW_DDX_C_ddcurs_c_007edc18,0x15e);
           return iVar1;
         }
         param_1[1] = param_1[1] & 0xffffefffU | 0x2000;

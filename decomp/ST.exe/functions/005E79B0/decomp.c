@@ -8,9 +8,9 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
 {
   code *pcVar1;
   WaitTy *pWVar2;
-  int iVar3;
-  uint *puVar4;
-  int iVar5;
+  int errorCode;
+  uint *puVar3;
+  int iVar4;
   ChatGlassTy *extraout_ECX;
   ChatGlassTy *extraout_ECX_00;
   ChatGlassTy *extraout_ECX_01;
@@ -18,19 +18,18 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   StartServTy *this_01;
   undefined4 unaff_EBX;
   void *unaff_ESI;
+  uint uVar5;
   uint uVar6;
-  uint uVar7;
-  void *pvVar8;
-  undefined4 uVar9;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  void *pvVar7;
+  undefined4 uVar8;
+  InternalExceptionFrame local_4c;
   WaitTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,unaff_EBX);
-  if (iVar3 == 0) {
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  if (errorCode == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pWVar2 = local_8;
     thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(local_8 + 0x5d));
@@ -55,23 +54,24 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
                 (this_00,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,
                  (undefined4 *)(*(int *)(pWVar2 + 0x1a5b) + 0x140));
     }
-    uVar9 = 0;
-    pvVar8 = *(void **)(DAT_0081176c + 0x30);
-    uVar7 = 0xffffffff;
-    uVar6 = 0xfffffffe;
-    puVar4 = (uint *)FUN_006b0140(0x26ae,DAT_00807618);
-    StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar4,uVar6,uVar7,pvVar8,uVar9);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    uVar8 = 0;
+    pvVar7 = *(void **)(DAT_0081176c + 0x30);
+    uVar6 = 0xffffffff;
+    uVar5 = 0xfffffffe;
+    puVar3 = (uint *)FUN_006b0140(0x26ae,DAT_00807618);
+    StartServTy::WrTextDDX(this_01,0,0xe9,0x14,0x14c,0x18,puVar3,uVar5,uVar6,pvVar7,uVar8);
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xeb,0,iVar3,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xeb,0,errorCode,
+                             &DAT_007a4ccc,s_WaitTy__PaintWait_007cddac);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cdd5c,0xeb);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0xeb);
   return;
 }
 

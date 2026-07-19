@@ -40,8 +40,7 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   undefined4 local_f0;
   undefined4 local_e0 [4];
   undefined4 local_d0;
-  undefined4 *local_c0;
-  undefined4 local_bc [16];
+  InternalExceptionFrame local_c0;
   CPanelTy *local_7c;
   int local_78;
   CPanelTy local_74;
@@ -72,16 +71,17 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   uint local_c;
   uint local_8;
   
-  local_c0 = DAT_00858df8;
-  DAT_00858df8 = &local_c0;
+  local_c0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_c0;
   local_7c = this;
-  iVar4 = __setjmp3(local_bc,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_7c;
   if (iVar4 != 0) {
-    DAT_00858df8 = local_c0;
-    iVar10 = FUN_006ad4d0(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x8ae,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_c0.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x8ae,0,iVar4,
+                                &DAT_007a4ccc,s_CPanelTy__Update4PanelSI_007c2900);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar4,0,0x7c2700,0x8ae);
+      RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x8ae);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -108,7 +108,7 @@ LAB_0050e007:
     PaintCtrlObjSI(this_00);
     SetControlObjSI(this_00,'\x01');
     thunk_FUN_00506040((int)this_00);
-    DAT_00858df8 = local_c0;
+    g_currentExceptionFrame = local_c0.previous;
     return;
   }
   if ((this_00[0xbfb] == (CPanelTy)0x2) && (CVar1 == (CPanelTy)0x1)) {
@@ -229,16 +229,16 @@ LAB_0050e007:
       thunk_FUN_00506040((int)this_00);
     }
     if (*(int *)(this_00 + 0xc4d) == local_20) {
-      DAT_00858df8 = local_c0;
+      g_currentExceptionFrame = local_c0.previous;
       return;
     }
     PaintIDSObj(this_00);
-    DAT_00858df8 = local_c0;
+    g_currentExceptionFrame = local_c0.previous;
     return;
   }
   if (CVar1 != (CPanelTy)0x1) {
     if (CVar1 != (CPanelTy)0x4) {
-      DAT_00858df8 = local_c0;
+      g_currentExceptionFrame = local_c0.previous;
       return;
     }
     if (local_78 == *(int *)(this_00 + 0xbf5)) {
@@ -250,7 +250,7 @@ LAB_0050e007:
       case 0xfe:
         goto switchD_0050c9ae_caseD_dd;
       default:
-        DAT_00858df8 = local_c0;
+        g_currentExceptionFrame = local_c0.previous;
         return;
       }
     }
@@ -992,17 +992,17 @@ LAB_0050dfdc:
     }
   }
   if (*(int *)(this_00 + 0xc4d) == local_20) {
-    DAT_00858df8 = local_c0;
+    g_currentExceptionFrame = local_c0.previous;
     return;
   }
   PaintIDSObj(this_00);
-  DAT_00858df8 = local_c0;
+  g_currentExceptionFrame = local_c0.previous;
   return;
 switchD_0050c9ae_caseD_dd:
   PaintCtrlObjSI(this_00);
   iVar4 = *(int *)(this_00 + 0x302);
   if (iVar4 == 0) {
-    DAT_00858df8 = local_c0;
+    g_currentExceptionFrame = local_c0.previous;
     return;
   }
   puVar17 = local_140;
@@ -1012,7 +1012,7 @@ switchD_0050c9ae_caseD_dd:
   }
   local_130 = 5;
   FUN_006e6080(this_00,2,iVar4,local_140);
-  DAT_00858df8 = local_c0;
+  g_currentExceptionFrame = local_c0.previous;
   return;
 }
 

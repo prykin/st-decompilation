@@ -1,4 +1,4 @@
-FUN_006ad4d0:
+ReportDebugMessage:
 006AD4D0  55                        PUSH EBP
 006AD4D1  8B EC                     MOV EBP,ESP
 006AD4D3  81 EC 48 07 00 00         SUB ESP,0x748

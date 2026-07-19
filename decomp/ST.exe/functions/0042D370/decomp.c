@@ -66,7 +66,8 @@ LAB_0042d44c:
     goto LAB_0042d44c;
   }
 LAB_0042d41b:
-  iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x43d,0,0,&DAT_007a4ccc);
+  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x43d,0,0,&DAT_007a4ccc,
+                             s_STAllPlayersC__SetActivityToObjs_007a63a4);
   if (iVar4 == 0) {
     return;
   }

@@ -23,24 +23,24 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
   int iVar12;
   int iVar13;
   undefined4 *puVar14;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   BITMAPINFO *local_c;
   InterSystemC *local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar13 = FUN_006ad4d0(s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f,0,iVar2,
+                                &DAT_007a4ccc,s_InterSystemC__GetMessage_007c7c70);
     if (iVar13 != 0) {
       pcVar1 = (code *)swi(3);
       uVar5 = (*pcVar1)();
       return uVar5;
     }
-    FUN_006a5e40(iVar2,0,0x7c7be8,0x11f);
+    RaiseInternalException(iVar2,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f);
     return 0xffff;
   }
   FUN_006e5f00(param_1);
@@ -51,18 +51,18 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
         thunk_FUN_0054b540(DAT_00802a30);
       }
       if (DAT_00801690 == (int *)0x0) {
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       (**(code **)(*DAT_00801690 + 0x18))(1);
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
     if (uVar3 < 0xb901) {
       if (uVar3 != 0xb900) {
         if (uVar3 == 5) {
           if (DAT_00802a58 != 0) {
-            DAT_00858df8 = (undefined4 *)local_50;
+            g_currentExceptionFrame = local_50.previous;
             return 0;
           }
           iVar13 = 1;
@@ -74,22 +74,22 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
           local_c = (BITMAPINFO *)FUN_006f1ce0(1,pCVar4,piVar11,iVar13);
           thunk_FUN_005403c0(0,0,'\x01',local_c);
           cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
-          DAT_00858df8 = (undefined4 *)local_50;
+          g_currentExceptionFrame = local_50.previous;
           return 0;
         }
         if (uVar3 != 0xb8ff) {
-          DAT_00858df8 = (undefined4 *)local_50;
+          g_currentExceptionFrame = local_50.previous;
           return 0;
         }
         if (DAT_00802a30 != (void *)0x0) {
           thunk_FUN_0054b540(DAT_00802a30);
         }
         if (DAT_008016dc == (OptPanelTy *)0x0) {
-          DAT_00858df8 = (undefined4 *)local_50;
+          g_currentExceptionFrame = local_50.previous;
           return 0;
         }
         OptPanelTy::SwitchOptPanel(DAT_008016dc,'\x01');
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
     }
@@ -99,21 +99,21 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
           thunk_FUN_0054b540(DAT_00802a30);
         }
         if (DAT_008016e4 == (PlayPanelTy *)0x0) {
-          DAT_00858df8 = (undefined4 *)local_50;
+          g_currentExceptionFrame = local_50.previous;
           return 0;
         }
         PlayPanelTy::SetPanel(DAT_008016e4,'\x01');
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       if (uVar3 != 0xb902) {
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
     }
 switchD_00543107_caseD_b904:
     if (DAT_00802a58 != 0) {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
     piVar11 = *(int **)(param_1 + 0x18);
@@ -158,7 +158,7 @@ LAB_00543291:
       }
       if (DAT_008016dc != (OptPanelTy *)0x0) {
         OptPanelTy::SwitchOptPanel(DAT_008016dc,'\x0e');
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       break;
@@ -167,13 +167,13 @@ LAB_00543291:
         thunk_FUN_0054b540(DAT_00802a30);
         *(undefined1 *)((int)DAT_00802a30 + 0x4de) = 1;
         thunk_FUN_005252c0(0xae);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       break;
     case 0xb908:
       if (DAT_00802a58 != 0) {
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       piVar11 = *(int **)(param_1 + 0x18);
@@ -194,7 +194,7 @@ LAB_00543291:
       goto LAB_00543291;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

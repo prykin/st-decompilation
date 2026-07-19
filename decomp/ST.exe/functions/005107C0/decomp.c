@@ -18,8 +18,7 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,int param_1)
   char *pcVar7;
   undefined1 *puVar8;
   undefined4 uVar9;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -27,16 +26,17 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,int param_1)
   undefined2 local_c;
   SpecPanelTy *local_8;
   
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
   local_8 = (SpecPanelTy *)this;
-  iVar3 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
-    iVar5 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0,0,iVar3,&DAT_007a4ccc
+                               ,s_FrmPanelTy__GetMessage_007c2ae0);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c2958,0xe0);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0xe0);
       return 0xffff;
     }
     pcVar2 = (code *)swi(3);
@@ -53,15 +53,15 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,int param_1)
             if (uVar1 != 0xb108) {
               if (uVar1 == 2) {
                 InitFrmPanel((FrmPanelTy *)this_00);
-                DAT_00858df8 = (undefined4 *)local_60;
+                g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
               if (uVar1 != 3) {
-                DAT_00858df8 = (undefined4 *)local_60;
+                g_currentExceptionFrame = local_60.previous;
                 return 0;
               }
               DoneFrmPanel((FrmPanelTy *)this_00);
-              DAT_00858df8 = (undefined4 *)local_60;
+              g_currentExceptionFrame = local_60.previous;
               return 0;
             }
           }
@@ -72,7 +72,7 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,int param_1)
               goto LAB_00510902;
             }
             if (uVar1 != 0xb10a) {
-              DAT_00858df8 = (undefined4 *)local_60;
+              g_currentExceptionFrame = local_60.previous;
               return 0;
             }
           }
@@ -99,7 +99,7 @@ switchD_005108d5_caseD_b10c:
           }
           thunk_FUN_0054edf0((undefined4 *)0x18,&local_1c,0,0xffffffff);
           thunk_FUN_005252c0(0xae);
-          DAT_00858df8 = (undefined4 *)local_60;
+          g_currentExceptionFrame = local_60.previous;
           return 0;
         }
         iVar3 = *(int *)this_00;
@@ -128,7 +128,7 @@ LAB_00510902:
       puVar8 = &LAB_004030fd;
       pCVar4 = thunk_FUN_00571240(pcVar7,0);
       (**(code **)(iVar3 + 8))(param_1,6,pCVar4,puVar8,uVar6,uVar9);
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return 0;
     }
     switch(uVar1) {
@@ -160,7 +160,7 @@ LAB_00510902:
 switchD_00510930_default:
     (**(code **)(*(int *)this_00 + 0x1c))(0);
     thunk_FUN_005252c0(0xae);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   switch(uVar1) {
@@ -195,7 +195,7 @@ switchD_00510930_default:
   pCVar4 = thunk_FUN_00571240(pcVar7,0);
   PaintBut((FrmPanelTy *)this_00,param_1,pCVar4);
 switchD_005108d5_default:
-  DAT_00858df8 = (undefined4 *)local_60;
+  g_currentExceptionFrame = local_60.previous;
   return 0;
 }
 

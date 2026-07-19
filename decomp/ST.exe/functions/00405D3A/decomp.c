@@ -20,7 +20,8 @@ undefined4 __cdecl thunk_FUN_0057b350(int *param_1,int param_2,int *param_3)
   
   piVar5 = param_1;
   if ((param_2 < 0x1a) || (0x23 < param_2)) {
-    iVar7 = FUN_006ad4d0(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x156,0,0,&DAT_007a4ccc);
+    iVar7 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x156,0,0,&DAT_007a4ccc,
+                               s_ConusExplosion_Wrong_number_of_t_007caf80);
     if (iVar7 != 0) {
       pcVar4 = (code *)swi(3);
       uVar8 = (*pcVar4)();
@@ -116,7 +117,8 @@ undefined4 __cdecl thunk_FUN_0057b350(int *param_1,int param_2,int *param_3)
         }
       } while( true );
     }
-    iVar7 = FUN_006ad4d0(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x15d,0,0,&DAT_007a4ccc);
+    iVar7 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x15d,0,0,&DAT_007a4ccc,
+                               s_SphereExplosion_Bad_parameters_007cafc8);
     if (iVar7 != 0) {
       pcVar4 = (code *)swi(3);
       uVar8 = (*pcVar4)();

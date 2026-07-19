@@ -3,19 +3,19 @@ uint FUN_00752d50(int param_1,uint param_2,char *param_3)
 
 {
   undefined4 *puVar1;
-  uint uVar2;
-  char *pcVar3;
+  uint exceptionCode;
+  char *pcVar2;
   
   while ((*(uint *)(param_1 + 0xc) <= param_2 ||
          (*(uint *)(param_1 + 0xc) <= *(uint *)(param_1 + 8)))) {
-    uVar2 = FUN_006b5480(param_1);
-    if (uVar2 != 0) {
-      FUN_006a5e40(uVar2,DAT_007ed77c,0x7f2bc0,0xf);
-      return uVar2;
+    exceptionCode = FUN_006b5480(param_1);
+    if (exceptionCode != 0) {
+      RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_TBL_C_sarrinss_c_007f2bc0,0xf);
+      return exceptionCode;
     }
   }
-  pcVar3 = (char *)0x0;
-  if ((param_3 != (char *)0x0) && (pcVar3 = FUN_006c49b0(param_3), pcVar3 == (char *)0x0)) {
+  pcVar2 = (char *)0x0;
+  if ((param_3 != (char *)0x0) && (pcVar2 = FUN_006c49b0(param_3), pcVar2 == (char *)0x0)) {
     return 0xfffffffe;
   }
   if (param_2 < *(uint *)(param_1 + 8)) {
@@ -24,14 +24,14 @@ uint FUN_00752d50(int param_1,uint param_2,char *param_3)
     *(int *)(param_1 + 8) = *(int *)(param_1 + 8) + 1;
     if (param_2 < *(uint *)(param_1 + 4)) {
       *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) + 1;
-      *(char **)(*(int *)(param_1 + 0x14) + param_2 * 4) = pcVar3;
+      *(char **)(*(int *)(param_1 + 0x14) + param_2 * 4) = pcVar2;
       return param_2;
     }
   }
   else {
     *(uint *)(param_1 + 8) = param_2 + 1;
   }
-  *(char **)(*(int *)(param_1 + 0x14) + param_2 * 4) = pcVar3;
+  *(char **)(*(int *)(param_1 + 0x14) + param_2 * 4) = pcVar2;
   return param_2;
 }
 

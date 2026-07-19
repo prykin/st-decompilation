@@ -16,8 +16,7 @@ FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_
   uint *puVar7;
   bool bVar8;
   uint local_100 [19];
-  undefined4 local_b4;
-  undefined4 local_b0 [16];
+  InternalExceptionFrame local_b4;
   int local_70 [5];
   uint *local_5c;
   uint local_50 [5];
@@ -32,14 +31,15 @@ FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_
   undefined4 local_10;
   undefined4 local_c;
   
-  local_b4 = DAT_00858df8;
-  DAT_00858df8 = &local_b4;
-  iVar2 = __setjmp3(local_b0,0,unaff_EDI,unaff_ESI);
+  local_b4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_b4;
+  iVar2 = __setjmp3(local_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_b4;
-    iVar4 = FUN_006ad4d0(s_E____titans_Andrey_support_cpp_007c7b2c,0xe7,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_b4.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0xe7,0,iVar2,&DAT_007a4ccc,
+                               s_SetAccelerator_007c7bbc);
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar2,0,0x7c7b2c,0xe7);
+      RaiseInternalException(iVar2,0,s_E____titans_Andrey_support_cpp_007c7b2c,0xe7);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -79,7 +79,7 @@ FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_
       DAT_008026f0 = FUN_006ae290((uint *)0x0,10,0x4c,10);
     }
     FUN_006ae1c0(DAT_008026f0,local_50);
-    DAT_00858df8 = (undefined4 *)local_b4;
+    g_currentExceptionFrame = local_b4.previous;
     return;
   }
   if (DAT_008026f0 != (uint *)0x0) {
@@ -101,23 +101,23 @@ FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_
         if (bVar8) {
           FUN_006b0c70((int)DAT_008026f0,uVar3);
           if (DAT_008026f0[3] != 0) {
-            DAT_00858df8 = (undefined4 *)local_b4;
+            g_currentExceptionFrame = local_b4.previous;
             return;
           }
           FUN_006ae110((byte *)DAT_008026f0);
           DAT_008026f0 = (uint *)0x0;
-          DAT_00858df8 = (undefined4 *)local_b4;
+          g_currentExceptionFrame = local_b4.previous;
           return;
         }
         uVar3 = FUN_006b1190((int)DAT_008026f0,local_100);
         if ((int)uVar3 < 0) {
-          DAT_00858df8 = (undefined4 *)local_b4;
+          g_currentExceptionFrame = local_b4.previous;
           return;
         }
       } while( true );
     }
   }
-  DAT_00858df8 = (undefined4 *)local_b4;
+  g_currentExceptionFrame = local_b4.previous;
   return;
 }
 

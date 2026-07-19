@@ -12,27 +12,27 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
   int iVar5;
   uint uVar6;
   int iVar7;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   MReportTy *pMStack_c;
   int iStack_8;
   
   iVar5 = 0;
   iStack_8 = 1;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pMStack_c = this;
-  iVar4 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pMStack_c;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar5 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1f9,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1f9,0,iVar4,&DAT_007a4ccc,
+                               s_MReportTy__NoneMReport_007ccfc8);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7ccec8,0x1f9);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1f9);
     return;
   }
   MVar1 = pMStack_c[0x65];
@@ -100,7 +100,7 @@ LAB_005bfb27:
         iVar4 = *(int *)(this_00 + 0x73);
         FUN_006b48e0(DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
                      (int)(this_00 + 0xa3),0x4c,0x10000ff);
-        DAT_00858df8 = (undefined4 *)uStack_50;
+        g_currentExceptionFrame = IStack_50.previous;
         return;
       }
       this_00[0x68] = (MReportTy)0x0;
@@ -132,7 +132,7 @@ LAB_005bfb27:
       }
       this_00[0x65] = (MReportTy)0x1;
       thunk_FUN_005c0230(this_00);
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return;
     }
   }
@@ -162,11 +162,11 @@ LAB_005bfb27:
     if (iStack_8 != 0) {
       this_00[0x65] = (MReportTy)0x2;
       thunk_FUN_005b66e0(this_00);
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return;
 }
 

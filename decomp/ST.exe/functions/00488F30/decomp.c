@@ -35,7 +35,8 @@ LAB_00489086:
       goto LAB_00489086;
     }
     if (uVar3 != 3) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x44ca,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x44ca,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__GetInfo16_invalid_civ_007ab94c);
       if (iVar5 == 0) {
         return;
       }

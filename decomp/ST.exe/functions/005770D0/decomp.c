@@ -9,21 +9,20 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   code *pcVar1;
   int *piVar2;
   GameSystemC *pGVar3;
+  int errorCode;
   int iVar4;
-  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   GameSystemC *local_8;
   
   this[0x430] = (GameSystemC)0x0;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pGVar3 = local_8;
-  if (iVar4 == 0) {
+  if (errorCode == 0) {
     if (*(int *)(local_8 + 0x431) != 0) {
       FUN_00725680((int *)(local_8 + 0x431));
     }
@@ -48,17 +47,18 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
     }
     FUN_006e52d0((int)pGVar3);
     ShowCursor(1);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_tsystem_cpp_007cab5c,0xa7,0,iVar4,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0xa7,0,errorCode,&DAT_007a4ccc,
+                             s_GameSystemC__DoneSystem_007cac18);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7cab5c,0xa7);
+  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0xa7);
   return;
 }
 

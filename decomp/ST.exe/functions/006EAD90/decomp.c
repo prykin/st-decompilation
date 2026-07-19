@@ -90,7 +90,7 @@ FUN_006ead90(void *this,int param_1,int param_2,int param_3,int param_4,undefine
   if (local_24 == 0) {
     return 0;
   }
-  FUN_006a5e40(local_24,DAT_007ed77c,0x7eef4c,0x6ef);
+  RaiseInternalException(local_24,DAT_007ed77c,s_E__ourlib_St3dspr_cpp_007eef4c,0x6ef);
   return local_24;
 }
 

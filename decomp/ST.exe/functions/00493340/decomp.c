@@ -27,13 +27,15 @@ undefined4 __fastcall FUN_00493340(int param_1)
         if ((short)local_14 != -1) {
           FUN_006acc70(iVar4,local_14 & 0xffff,&local_10);
           if (local_10 == (void *)0x0) {
-            iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5221,0,0,&DAT_007a4ccc);
+            iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5221,0,0,
+                                       &DAT_007a4ccc,s_STBoatC__CheckForReplenisher_NUL_007abbf4);
             if (iVar5 != 0) {
               pcVar3 = (code *)swi(3);
               uVar6 = (*pcVar3)();
               return uVar6;
             }
-            FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a9d3c,0x5222);
+            RaiseInternalException
+                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5222);
           }
           thunk_FUN_004162b0(local_10,&local_a,&local_8,&local_6);
           iVar5 = FUN_006aadd0((int)*(short *)(param_1 + 0x47),(int)*(short *)(param_1 + 0x49),

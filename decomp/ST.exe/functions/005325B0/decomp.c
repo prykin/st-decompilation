@@ -30,10 +30,8 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   bool bVar16;
   char local_12c [108];
   undefined4 local_c0;
-  undefined4 **local_94;
-  undefined4 local_90 [16];
-  undefined4 **local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_94;
+  InternalExceptionFrame local_50;
   uint local_c;
   OptPanelTy *local_8;
   
@@ -41,30 +39,31 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   *(undefined4 *)(this + 0x2c) = 0;
   local_8 = this;
   FUN_006e6080(this,2,*(undefined4 *)(this + 0x1b5),(undefined4 *)(this + 0x18));
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar5 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar5 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pOVar12 = local_8;
   if (iVar5 != 0) {
-    DAT_00858df8 = local_50;
-    iVar9 = FUN_006ad4d0(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad,0,iVar5,
+                               &DAT_007a4ccc,s_OptPanelTy__PrepAsses_007c727c);
     if (iVar9 != 0) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c70a0,0x3ad);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad);
     return;
   }
   if (*(byte **)(local_8 + 0x2fd) != (byte *)0x0) {
     FUN_006ae110(*(byte **)(local_8 + 0x2fd));
   }
   *(undefined4 *)(pOVar12 + 0x2fd) = 0;
-  local_94 = DAT_00858df8;
-  DAT_00858df8 = &local_94;
-  iVar5 = __setjmp3(local_90,0,unaff_EDI,unaff_ESI);
+  local_94.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_94;
+  iVar5 = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = local_94;
+    g_currentExceptionFrame = local_94.previous;
     puVar7 = FUN_006ae290((uint *)0x0,1,0x98,1);
     *(uint **)(local_8 + 0x2fd) = puVar7;
     pOVar12 = local_8;
@@ -116,7 +115,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   *(uint **)(pOVar12 + 0x2fd) = puVar7;
 switchD_005326e6_caseD_9:
   cMf32::delete(this_00,puVar6);
-  DAT_00858df8 = local_94;
+  g_currentExceptionFrame = local_94.previous;
 LAB_00532758:
   if ((&stack0x00000000 != (undefined1 *)0x12c) &&
      (iVar5 = FUN_006b0140(0x2711,DAT_00807618), iVar5 != 0)) {
@@ -196,13 +195,13 @@ LAB_00532883:
         iVar5 = *(int *)(pOVar12 + 0x2fd);
         local_c = local_c + 1;
         if (*(uint *)(iVar5 + 0xc) <= local_c) {
-          DAT_00858df8 = local_50;
+          g_currentExceptionFrame = local_50.previous;
           return;
         }
       } while( true );
     }
   }
-  DAT_00858df8 = local_50;
+  g_currentExceptionFrame = local_50.previous;
   return;
 }
 

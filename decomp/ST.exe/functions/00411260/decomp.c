@@ -323,7 +323,7 @@ LAB_00411975:
       return 0;
     }
     if (iVar3 != -4) {
-      FUN_006a5e40(iVar3,DAT_007ed77c,0x7a4ca8,0xb6e);
+      RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xb6e);
       ExceptionList = local_14;
       return iVar3;
     }

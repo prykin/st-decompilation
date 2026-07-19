@@ -221,7 +221,7 @@ LAB_006c8bc4:
     local_30 = -local_30;
   }
   if (local_14 != 0) {
-    FUN_006a5e40(local_14,DAT_007ed77c,0x7ee144,0xf0);
+    RaiseInternalException(local_14,DAT_007ed77c,&DAT_007ee144,0xf0);
   }
   return (float10)local_30;
 }

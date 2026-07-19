@@ -18,8 +18,7 @@ void __fastcall thunk_FUN_005de670(int param_1)
   byte abStack_374 [260];
   char acStack_270 [260];
   byte abStack_16c [260];
-  undefined4 uStack_68;
-  undefined4 auStack_64 [16];
+  InternalExceptionFrame IStack_68;
   byte *pbStack_24;
   LPVOID pvStack_20;
   int iStack_1c;
@@ -40,11 +39,11 @@ void __fastcall thunk_FUN_005de670(int param_1)
   if (*(int *)(param_1 + 0x69a) != 0) {
     FUN_006ab060((int *)(param_1 + 0x69a));
   }
-  uStack_68 = DAT_00858df8;
-  DAT_00858df8 = &uStack_68;
-  iVar2 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
+  IStack_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_68;
+  iVar2 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_68;
+    g_currentExceptionFrame = IStack_68.previous;
     if (pvStack_14 != (HANDLE)0xffffffff) {
       CloseHandle(pvStack_14);
     }
@@ -74,50 +73,50 @@ void __fastcall thunk_FUN_005de670(int param_1)
   pvVar3 = CreateFileA(acStack_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   pvStack_14 = pvVar3;
   if (pvVar3 == (HANDLE)0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x413);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x413);
   }
   DVar4 = SetFilePointer(pvVar3,0,(PLONG)0x0,2);
   iVar2 = iStack_1c;
   *(DWORD *)(iStack_1c + 0x6ae) = DVar4;
   if (DVar4 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x415);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x415);
   }
   __makepath(acStack_270,(char *)abStack_478,(char *)abStack_374,(char *)abStack_16c,
              PTR_DAT_0079c1c4);
   hFile = CreateFileA(acStack_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   pvStack_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x41a);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41a);
   }
   DVar4 = SetFilePointer(hFile,0,(PLONG)0x0,2);
   *(DWORD *)(iVar2 + 0x6b2) = DVar4;
   if (DVar4 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x41c);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
   pvStack_c = (LPVOID)FUN_006aac70(*(int *)(iVar2 + 0x6ae) + uStack_18 + *(int *)(iVar2 + 0x6b2));
   if (pvStack_c == (LPVOID)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x41e);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
   }
   lpBuffer = (LPVOID)(*(int *)(iVar2 + 0x6ae) + (int)pvStack_c);
   pbStack_24 = (byte *)((int)lpBuffer + *(int *)(iVar2 + 0x6b2));
   pvStack_20 = pvStack_c;
   DStack_8 = SetFilePointer(pvVar3,0,(PLONG)0x0,0);
   if (DStack_8 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x421);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x421);
   }
   BVar5 = ReadFile(pvVar3,pvStack_20,*(DWORD *)(iVar2 + 0x6ae),&DStack_8,(LPOVERLAPPED)0x0);
   if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != DStack_8)) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x422);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x422);
   }
   CloseHandle(pvVar3);
   pvVar3 = pvStack_10;
   DStack_8 = SetFilePointer(pvStack_10,0,(PLONG)0x0,0);
   if (DStack_8 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x425);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x425);
   }
   BVar5 = ReadFile(pvVar3,lpBuffer,*(DWORD *)(iVar2 + 0x6b2),&DStack_8,(LPOVERLAPPED)0x0);
   if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != DStack_8)) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x426);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x426);
   }
   CloseHandle(pvVar3);
   uVar6 = 0xffffffff;
@@ -152,7 +151,7 @@ void __fastcall thunk_FUN_005de670(int param_1)
   }
   *(uint *)(iVar2 + 0x6a6) =
        (uint)(uVar6 % *(uint *)(iVar2 + 0x6a2) != 0) + uVar6 / *(uint *)(iVar2 + 0x6a2);
-  DAT_00858df8 = (undefined4 *)uStack_68;
+  g_currentExceptionFrame = IStack_68.previous;
   return;
 }
 

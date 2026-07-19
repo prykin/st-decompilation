@@ -15,15 +15,14 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
   char *pcVar5;
   void *unaff_EDI;
   bool bVar6;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   SettMapTy *local_8;
   
   if (*(int *)(this + 0x1f84) != 0) {
-    local_4c = DAT_00858df8;
-    DAT_00858df8 = &local_4c;
+    local_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_4c;
     local_8 = (SettMapTy *)this;
-    iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+    iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar2 == 0) {
       iVar2 = *(int *)(local_8 + 0x1f84);
@@ -66,17 +65,18 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
         SettMapTy::PaintSC(this_00);
         *(int *)(this_00 + 0x2121) = *(int *)(this_00 + 0x2121) + 1;
       }
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar3 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x598,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x598,0,iVar2,&DAT_007a4ccc
+                               ,s_SettMapMTy__ChangePlayerColor_007cd434);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7cd258,0x598);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0x598);
   }
   return;
 }

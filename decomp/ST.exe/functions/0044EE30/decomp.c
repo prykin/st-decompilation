@@ -19,18 +19,19 @@ undefined4 FUN_0044ee30(int param_1)
   uint uVar13;
   undefined2 extraout_var;
   void *pvVar14;
-  uint *puVar15;
-  int *piVar16;
-  undefined4 *puVar17;
-  undefined4 uVar18;
-  undefined2 uVar19;
+  uint extraout_EAX;
+  uint uVar15;
+  uint *puVar16;
+  int *piVar17;
+  undefined4 *puVar18;
+  undefined4 uVar19;
+  undefined2 uVar20;
   undefined2 extraout_var_00;
   undefined2 extraout_var_01;
   undefined2 extraout_var_02;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
   undefined2 extraout_var_03;
-  uint uVar20;
   undefined4 extraout_ECX_01;
   undefined4 extraout_ECX_02;
   undefined4 extraout_ECX_03;
@@ -40,18 +41,19 @@ undefined4 FUN_0044ee30(int param_1)
   uint extraout_EDX;
   undefined2 extraout_var_04;
   undefined2 extraout_var_05;
-  undefined2 uVar23;
+  undefined2 uVar24;
   undefined2 extraout_var_06;
   undefined2 extraout_var_07;
   undefined4 extraout_EDX_00;
   byte *pbVar22;
   undefined2 extraout_var_08;
   undefined2 extraout_var_09;
-  undefined4 extraout_EDX_01;
+  uint extraout_EDX_01;
+  uint uVar23;
   undefined4 extraout_EDX_02;
   undefined4 extraout_EDX_03;
   undefined4 extraout_EDX_04;
-  uint extraout_EDX_05;
+  undefined4 extraout_EDX_05;
   uint extraout_EDX_06;
   uint extraout_EDX_07;
   uint extraout_EDX_08;
@@ -66,7 +68,7 @@ undefined4 FUN_0044ee30(int param_1)
   uint extraout_EDX_17;
   uint extraout_EDX_18;
   uint extraout_EDX_19;
-  undefined4 extraout_EDX_20;
+  uint extraout_EDX_20;
   undefined4 extraout_EDX_21;
   undefined4 extraout_EDX_22;
   undefined4 extraout_EDX_23;
@@ -85,22 +87,22 @@ undefined4 FUN_0044ee30(int param_1)
   undefined4 extraout_EDX_36;
   undefined4 extraout_EDX_37;
   undefined4 extraout_EDX_38;
+  undefined4 extraout_EDX_39;
   undefined2 extraout_var_10;
   undefined4 unaff_ESI;
-  int iVar24;
-  byte *pbVar25;
+  int iVar25;
+  byte *pbVar26;
   void *unaff_EDI;
-  char *pcVar26;
   char *pcVar27;
-  byte *pbVar28;
-  STSprGameObjC *pSVar29;
-  longlong lVar30;
-  undefined8 uVar31;
-  short sVar32;
+  char *pcVar28;
+  byte *pbVar29;
+  STSprGameObjC *pSVar30;
+  longlong lVar31;
+  undefined8 uVar32;
+  short sVar33;
   CHAR local_284;
   undefined4 local_283 [63];
-  undefined4 *local_184;
-  undefined4 local_180 [16];
+  InternalExceptionFrame local_184;
   int local_140 [7];
   int local_124 [7];
   int local_108;
@@ -156,30 +158,31 @@ undefined4 FUN_0044ee30(int param_1)
   uint local_c;
   uint local_8;
   
-  iVar24 = 0;
+  iVar25 = 0;
   local_8 = 0;
   local_d4 = 0;
-  local_184 = DAT_00858df8;
-  DAT_00858df8 = &local_184;
-  iVar10 = __setjmp3(local_180,0,unaff_EDI,unaff_ESI);
+  local_184.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_184;
+  iVar10 = __setjmp3(local_184.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar10 != 0) {
-    DAT_00858df8 = local_184;
+    g_currentExceptionFrame = local_184.previous;
     if (iVar10 == -0x5001fff7) {
       return 0;
     }
     local_284 = '\0';
-    puVar17 = local_283;
-    for (iVar24 = 0x3f; iVar24 != 0; iVar24 = iVar24 + -1) {
-      *puVar17 = 0;
-      puVar17 = puVar17 + 1;
+    puVar18 = local_283;
+    for (iVar25 = 0x3f; iVar25 != 0; iVar25 = iVar25 + -1) {
+      *puVar18 = 0;
+      puVar18 = puVar18 + 1;
     }
-    *(undefined2 *)puVar17 = 0;
+    *(undefined2 *)puVar18 = 0;
     wsprintfA(&local_284,s_STBoatC__GetMessage___Name__d_Pl_007a9eac,
               *(undefined4 *)(local_ec + 0x18),*(undefined4 *)(local_ec + 0x24),
               (uint)*(ushort *)(local_ec + 0x32),(uint)*(ushort *)(local_ec + 0x30));
-    iVar24 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1380,0,iVar10,&DAT_007a4ccc);
-    if (iVar24 == 0) {
-      FUN_006a5e40(iVar10,0,0x7a9d3c,0x1381);
+    iVar25 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1380,0,iVar10,
+                                &DAT_007a4ccc,&local_284);
+    if (iVar25 == 0) {
+      RaiseInternalException(iVar10,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1381);
       return 0xffff;
     }
     pcVar9 = (code *)swi(3);
@@ -195,81 +198,83 @@ undefined4 FUN_0044ee30(int param_1)
           if (*(int *)(local_ec + 0x6f7) != 0x23) {
             *(undefined4 *)(local_ec + 0x736) = *(undefined4 *)(*(int *)(param_1 + 0x14) + 4);
             if (*(int *)(local_ec + 0x45d) == 3) {
-              DAT_00858df8 = local_184;
+              g_currentExceptionFrame = local_184.previous;
               return 0;
             }
             local_54 = *(undefined4 *)(DAT_00802a38 + 0xe4);
             thunk_FUN_0045ef00(local_ec,3,&local_54);
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           if (*(int *)(local_ec + 0x722) != 0x14) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           if (*(int *)(local_ec + 0x72e) != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x72e) = 1;
           (**(code **)(*(int *)local_ec + 0x90))(3,0x16c);
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (uVar13 != 0x122) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        piVar16 = *(int **)(param_1 + 0x14);
-        if (*piVar16 != *(int *)(local_ec + 0x24)) {
-          DAT_00858df8 = local_184;
+        piVar17 = *(int **)(param_1 + 0x14);
+        if (*piVar17 != *(int *)(local_ec + 0x24)) {
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        *(int *)(local_ec + 0x782) = piVar16[1];
-        *(int *)(local_ec + 0x786) = piVar16[2];
-        DAT_00858df8 = local_184;
+        *(int *)(local_ec + 0x782) = piVar17[1];
+        *(int *)(local_ec + 0x786) = piVar17[2];
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      piVar16 = *(int **)(param_1 + 0x14);
-      local_1c = piVar16;
+      piVar17 = *(int **)(param_1 + 0x14);
+      local_1c = piVar17;
       if (DAT_008117bc != (int *)0x0) {
-        if (piVar16 != (int *)0x0) {
+        if (piVar17 != (int *)0x0) {
           local_8c = 0x5dd5;
           local_88 = (int *)CONCAT22(*(undefined2 *)(local_ec + 0x32),
                                      *(undefined2 *)(local_ec + 0x24));
-          local_84 = CONCAT22((short)piVar16[3],(short)piVar16[2]);
+          local_84 = CONCAT22((short)piVar17[3],(short)piVar17[2]);
           (**(code **)*DAT_008117bc)(local_9c);
         }
-        if (((DAT_008117bc != (int *)0x0) && (piVar16 != (int *)0x0)) && (*piVar16 != 10000)) {
+        if (((DAT_008117bc != (int *)0x0) && (piVar17 != (int *)0x0)) && (*piVar17 != 10000)) {
           local_8c = 0x5dd1;
           local_88 = (int *)CONCAT22(*(undefined2 *)(local_ec + 0x32),
                                      *(undefined2 *)(local_ec + 0x24));
-          local_84 = CONCAT22((short)piVar16[3],(short)piVar16[2]);
+          local_84 = CONCAT22((short)piVar17[3],(short)piVar17[2]);
           (**(code **)*DAT_008117bc)(local_9c);
         }
       }
       if (*(int *)(local_ec + 0x7ca) != 0) {
         iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x7ca),(int *)&local_4c);
         if (iVar10 == -4) {
-          iVar10 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x12f7,0,0,&DAT_007a4ccc);
+          iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x12f7,0,0,
+                                      &DAT_007a4ccc,s_STBoatC__GetMessage_MESS_HITKILL_007a9ef8);
           if (iVar10 != 0) {
             pcVar9 = (code *)swi(3);
             uVar12 = (*pcVar9)();
             return uVar12;
           }
-          FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x12f8);
+          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x12f8)
+          ;
         }
-        piVar16 = local_1c;
+        piVar17 = local_1c;
         piVar21 = local_140;
         for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *piVar21 = *piVar16;
-          piVar16 = piVar16 + 1;
+          *piVar21 = *piVar17;
+          piVar17 = piVar17 + 1;
           piVar21 = piVar21 + 1;
         }
         local_8c = 0x128;
         local_88 = local_140;
         (**(code **)*local_4c)(local_9c);
-        piVar16 = local_1c;
+        piVar17 = local_1c;
       }
       if (((*(int *)(local_ec + 0x45d) == 0x14) ||
           (uVar13 = thunk_FUN_0045f400(local_ec,0x14), uVar13 != 0)) &&
@@ -280,17 +285,17 @@ undefined4 FUN_0044ee30(int param_1)
       *(undefined4 *)(local_ec + 0x455) = 1;
       thunk_FUN_0048d930((int)local_ec);
       thunk_FUN_0048dba0((int)local_ec);
-      sVar32 = *(short *)(local_ec + 0x66f);
+      sVar33 = *(short *)(local_ec + 0x66f);
       sVar6 = *(short *)(local_ec + 0x673);
       sVar7 = *(short *)(local_ec + 0x671);
-      if (((sVar32 < 0) || (piVar16 = local_1c, DAT_007fb240 <= sVar32)) ||
+      if (((sVar33 < 0) || (piVar17 = local_1c, DAT_007fb240 <= sVar33)) ||
          ((sVar7 < 0 || (((DAT_007fb242 <= sVar7 || (sVar6 < 0)) || (DAT_007fb244 <= sVar6)))))) {
         pvVar14 = (void *)0x0;
       }
       else {
         pvVar14 = *(void **)(DAT_007fb248 +
                             ((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar7 +
-                            (int)sVar32) * 8);
+                            (int)sVar33) * 8);
       }
       if (((pvVar14 != (void *)0x0) && (*(int *)((int)pvVar14 + 0x18) == *(int *)(local_ec + 0x679))
           ) && ((*(int *)(local_ec + 0x675) == 99 && (*(int *)((int)pvVar14 + 0x20) == 1000)))) {
@@ -307,17 +312,17 @@ undefined4 FUN_0044ee30(int param_1)
       thunk_FUN_004924a0(local_ec);
       thunk_FUN_00492fc0((int)local_ec);
       thunk_FUN_00493bc0((int)local_ec);
-      sVar32 = *(short *)(local_ec + 0x6a9);
+      sVar33 = *(short *)(local_ec + 0x6a9);
       sVar6 = *(short *)(local_ec + 0x6ad);
       sVar7 = *(short *)(local_ec + 0x6ab);
-      if (((sVar32 < 0) || (piVar16 = local_1c, DAT_007fb240 <= sVar32)) ||
+      if (((sVar33 < 0) || (piVar17 = local_1c, DAT_007fb240 <= sVar33)) ||
          ((sVar7 < 0 || (((DAT_007fb242 <= sVar7 || (sVar6 < 0)) || (DAT_007fb244 <= sVar6)))))) {
         local_24 = (void *)0x0;
       }
       else {
         local_24 = *(void **)(DAT_007fb248 +
                              ((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar7 +
-                             (int)sVar32) * 8);
+                             (int)sVar33) * 8);
       }
       if (((local_24 == (void *)0x0) ||
           (*(int *)((int)local_24 + 0x18) != *(int *)(local_ec + 0x6af))) ||
@@ -337,13 +342,13 @@ undefined4 FUN_0044ee30(int param_1)
       FUN_006e6780(*(void **)(local_ec + 0x211),
                    CONCAT22(CONCAT11(2,(char)((uint)*(undefined4 *)(local_ec + 0x18) >> 0x10)),
                             *(undefined2 *)(local_ec + 0x18)));
-      *(int *)(local_ec + 0x826) = piVar16[2];
+      *(int *)(local_ec + 0x826) = piVar17[2];
       iVar10 = (**(code **)(*(int *)local_ec + 0x2c))();
       thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX_05 >> 8),local_ec[0x24]),iVar10);
       if (*(uint *)(local_ec + 0x24) == (uint)*(byte *)(*(int *)(local_ec + 0x10) + 0x112d)) {
         thunk_FUN_004d8b70((char)*(uint *)(local_ec + 0x24));
       }
-      if (piVar16[6] != 2) {
+      if (piVar17[6] != 2) {
         pSVar1 = (STT3DSprC *)(local_ec + 0x1d5);
         STT3DSprC::StopShow(pSVar1,0xf);
         STT3DSprC::StopShow(pSVar1,0);
@@ -356,10 +361,10 @@ undefined4 FUN_0044ee30(int param_1)
         piVar21 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar12 >> 8),local_ec[0x24]),
                                             CONCAT22(extraout_var_10,
                                                      *(undefined2 *)(local_ec + 0x30)));
-        piVar16 = local_1c;
+        piVar17 = local_1c;
         if (piVar21 != (int *)0x0) {
           (**(code **)(*piVar21 + 8))(0x6a,local_ec + 0x32);
-          piVar16 = local_1c;
+          piVar17 = local_1c;
         }
       }
       if (*(int **)(local_ec + 0x465) != (int *)0x0) {
@@ -367,62 +372,62 @@ undefined4 FUN_0044ee30(int param_1)
         FUN_0072e2b0(*(undefined4 **)(local_ec + 0x465));
         *(undefined4 *)(local_ec + 0x465) = 0;
       }
-      if (((piVar16[1] == 0xa8) || (piVar16[6] == 0)) || (piVar16[6] == 4)) {
-        uVar18 = 0xffffffff;
+      if (((piVar17[1] == 0xa8) || (piVar17[6] == 0)) || (piVar17[6] == 4)) {
+        uVar19 = 0xffffffff;
         uVar12 = thunk_FUN_004ad650((int)(local_ec + 0x1d5));
         thunk_FUN_0062b770((int)*(short *)(local_ec + 0x41),(int)*(short *)(local_ec + 0x43),
                            (int)*(short *)(local_ec + 0x45),*(undefined4 *)(local_ec + 0x6f7),
-                           (int)local_ec,(int)*(short *)(local_ec + 0x6c),uVar12,uVar18);
+                           (int)local_ec,(int)*(short *)(local_ec + 0x6c),uVar12,uVar19);
       }
-      if (piVar16[6] == 3) {
+      if (piVar17[6] == 3) {
         thunk_FUN_006377b0(*(uint *)(local_ec + 0x1ed),0,(int)*(short *)(local_ec + 0x41),
                            (int)*(short *)(local_ec + 0x43),(int)*(short *)(local_ec + 0x45),0x12);
       }
-      if (piVar16[6] == 2) {
+      if (piVar17[6] == 2) {
         *(undefined4 *)(local_ec + 0x2c0) = 1;
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       goto LAB_0045ad7b;
     }
     if (uVar13 != 0x129) {
       if (uVar13 != 0x4405) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       thunk_FUN_0041c3f0(local_ec,*(undefined **)(local_ec + 0x70a));
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (*(int *)(local_ec + 0x45d) != 0x14) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (*(int *)(local_ec + 0x5c0) != 3) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (*(int *)(local_ec + 0x7c2) == 0) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if ((*(int *)(local_ec + 0x5a6) == 0) &&
        (iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x5a2),(int *)(local_ec + 0x5a6)),
        iVar10 == -4)) {
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1372);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1372);
     }
     local_9d = local_ec[99];
     SVar4 = local_ec[0x61];
     SVar5 = local_ec[0x62];
-    puVar17 = (undefined4 *)(*(int *)(local_ec + 0x5a6) + 0x34);
-    pSVar29 = local_ec + 0x34;
+    puVar18 = (undefined4 *)(*(int *)(local_ec + 0x5a6) + 0x34);
+    pSVar30 = local_ec + 0x34;
     for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *(undefined4 *)pSVar29 = *puVar17;
-      puVar17 = puVar17 + 1;
-      pSVar29 = pSVar29 + 4;
+      *(undefined4 *)pSVar30 = *puVar18;
+      puVar18 = puVar18 + 1;
+      pSVar30 = pSVar30 + 4;
     }
-    *(undefined2 *)pSVar29 = *(undefined2 *)puVar17;
-    pSVar29[2] = *(STSprGameObjC *)((int)puVar17 + 2);
+    *(undefined2 *)pSVar30 = *(undefined2 *)puVar18;
+    pSVar30[2] = *(STSprGameObjC *)((int)puVar18 + 2);
     *(undefined4 *)(local_ec + 0x76) = 0;
     *(undefined2 *)(local_ec + 0x6e) = 0x2f;
     local_ec[0x61] = SVar4;
@@ -430,10 +435,10 @@ undefined4 FUN_0044ee30(int param_1)
     local_ec[99] = local_9d;
     iVar10 = (**(code **)(*(int *)local_ec + 0xd8))();
     if (iVar10 == 0) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    uVar12 = 0x1377;
+    iVar10 = 0x1377;
     goto LAB_0045aee3;
   }
   if (uVar13 == 0x111) goto LAB_00450268;
@@ -445,42 +450,42 @@ undefined4 FUN_0044ee30(int param_1)
       local_7c = (void *)(local_2c + local_34 + local_38);
       local_20 = (byte *)FUN_006aac70((int)local_7c);
       pbVar22 = local_40;
-      pbVar28 = local_20;
+      pbVar29 = local_20;
       for (uVar13 = local_34 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *(undefined4 *)pbVar28 = *(undefined4 *)pbVar22;
+        *(undefined4 *)pbVar29 = *(undefined4 *)pbVar22;
         pbVar22 = pbVar22 + 4;
-        pbVar28 = pbVar28 + 4;
+        pbVar29 = pbVar29 + 4;
       }
       for (uVar13 = local_34 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *pbVar28 = *pbVar22;
+        *pbVar29 = *pbVar22;
         pbVar22 = pbVar22 + 1;
-        pbVar28 = pbVar28 + 1;
+        pbVar29 = pbVar29 + 1;
       }
       pbVar22 = local_3c;
-      pbVar28 = local_20 + local_34;
+      pbVar29 = local_20 + local_34;
       for (uVar13 = local_2c >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *(undefined4 *)pbVar28 = *(undefined4 *)pbVar22;
+        *(undefined4 *)pbVar29 = *(undefined4 *)pbVar22;
         pbVar22 = pbVar22 + 4;
-        pbVar28 = pbVar28 + 4;
+        pbVar29 = pbVar29 + 4;
       }
       for (uVar13 = local_2c & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *pbVar28 = *pbVar22;
+        *pbVar29 = *pbVar22;
         pbVar22 = pbVar22 + 1;
-        pbVar28 = pbVar28 + 1;
+        pbVar29 = pbVar29 + 1;
       }
       *(uint *)(local_20 + 0x5fe) = local_34;
       *(uint *)(local_20 + 0x602) = local_2c;
       pbVar22 = local_44;
-      pbVar28 = local_20 + local_34 + local_2c;
+      pbVar29 = local_20 + local_34 + local_2c;
       for (uVar13 = local_38 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *(undefined4 *)pbVar28 = *(undefined4 *)pbVar22;
+        *(undefined4 *)pbVar29 = *(undefined4 *)pbVar22;
         pbVar22 = pbVar22 + 4;
-        pbVar28 = pbVar28 + 4;
+        pbVar29 = pbVar29 + 4;
       }
       for (uVar13 = local_38 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-        *pbVar28 = *pbVar22;
+        *pbVar29 = *pbVar22;
         pbVar22 = pbVar22 + 1;
-        pbVar28 = pbVar28 + 1;
+        pbVar29 = pbVar29 + 1;
       }
       *(uint *)(local_20 + 0x5f6) = local_34 + local_2c;
       *(uint *)(local_20 + 0x5fa) = local_38;
@@ -490,18 +495,18 @@ undefined4 FUN_0044ee30(int param_1)
       FUN_006ab060(&local_3c);
       FUN_006ab060(&local_40);
       FUN_006ab060(&local_20);
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (uVar13 != 0x110) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    piVar16 = *(int **)(param_1 + 0x14);
+    piVar17 = *(int **)(param_1 + 0x14);
     local_c = 0;
-    local_7c = (void *)*piVar16;
+    local_7c = (void *)*piVar17;
     if (*(int *)(local_ec + 0x742) == 1) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if ((*(int *)(local_ec + 0x45d) == 8) && (*(int *)(local_ec + 0x6e7) != 2)) {
@@ -509,10 +514,10 @@ undefined4 FUN_0044ee30(int param_1)
     }
     iVar10 = *(int *)(local_ec + 0x786);
     if ((0 < iVar10) && (iVar10 < 0x65)) {
-      *piVar16 = *piVar16 - (iVar10 * *piVar16) / 100;
+      *piVar17 = *piVar17 - (iVar10 * *piVar17) / 100;
     }
-    iVar10 = piVar16[1];
-    local_1c = piVar16;
+    iVar10 = piVar17[1];
+    local_1c = piVar17;
     if (iVar10 == 0x65) goto LAB_00459f59;
     if (iVar10 != 0x42) {
       switch(iVar10) {
@@ -535,67 +540,67 @@ undefined4 FUN_0044ee30(int param_1)
         local_c = thunk_FUN_004e60d0(*(int *)(local_ec + 0x24),0x67);
         iVar10 = 0;
         if (local_c == 1) {
-          iVar10 = *piVar16;
-          iVar24 = (iVar10 * 9) / 10 + (iVar10 * 9 >> 0x1f);
+          iVar10 = *piVar17;
+          iVar25 = (iVar10 * 9) / 10 + (iVar10 * 9 >> 0x1f);
 LAB_00459e30:
-          iVar10 = iVar10 - (iVar24 - (iVar24 >> 0x1f));
+          iVar10 = iVar10 - (iVar25 - (iVar25 >> 0x1f));
         }
         else {
           if (local_c == 2) {
-            iVar10 = *piVar16;
-            iVar24 = (iVar10 * 0x11) / 0x14 + (iVar10 * 0x11 >> 0x1f);
+            iVar10 = *piVar17;
+            iVar25 = (iVar10 * 0x11) / 0x14 + (iVar10 * 0x11 >> 0x1f);
             goto LAB_00459e30;
           }
           if (local_c == 3) {
-            iVar10 = *piVar16;
-            iVar24 = (iVar10 * 4) / 5 + (iVar10 * 4 >> 0x1f);
+            iVar10 = *piVar17;
+            iVar25 = (iVar10 * 4) / 5 + (iVar10 * 4 >> 0x1f);
             goto LAB_00459e30;
           }
         }
-        *piVar16 = *piVar16 - iVar10;
+        *piVar17 = *piVar17 - iVar10;
       }
       uVar13 = thunk_FUN_004406c0((char)local_ec[0x24]);
       uVar13 = uVar13 & 0xff;
       if (uVar13 == 1) {
         iVar10 = *(int *)(local_ec + 0x24);
-        iVar24 = 4;
+        iVar25 = 4;
 LAB_00459e71:
-        local_c = thunk_FUN_004e60d0(iVar10,iVar24);
+        local_c = thunk_FUN_004e60d0(iVar10,iVar25);
       }
       else {
         if (uVar13 == 2) {
           iVar10 = *(int *)(local_ec + 0x24);
-          iVar24 = 0x81;
+          iVar25 = 0x81;
           goto LAB_00459e71;
         }
         if (uVar13 == 3) {
           iVar10 = *(int *)(local_ec + 0x24);
-          iVar24 = 0x65;
+          iVar25 = 0x65;
           goto LAB_00459e71;
         }
       }
       iVar10 = 0;
       if (local_c == 1) {
-        iVar10 = *piVar16;
-        iVar24 = iVar10 * 8;
+        iVar10 = *piVar17;
+        iVar25 = iVar10 * 8;
 LAB_00459eaa:
-        iVar10 = iVar10 - iVar24 / 10;
+        iVar10 = iVar10 - iVar25 / 10;
       }
       else {
         if (local_c == 2) {
-          iVar10 = *piVar16;
-          iVar24 = iVar10 * 6;
+          iVar10 = *piVar17;
+          iVar25 = iVar10 * 6;
           goto LAB_00459eaa;
         }
         if (local_c == 3) {
-          iVar10 = *piVar16;
-          iVar24 = iVar10 * 4;
+          iVar10 = *piVar17;
+          iVar25 = iVar10 * 4;
           goto LAB_00459eaa;
         }
       }
-      *piVar16 = *piVar16 - iVar10;
-      if (piVar16[1] == 0x9a) {
-        iVar10 = piVar16[2];
+      *piVar17 = *piVar17 - iVar10;
+      if (piVar17[1] == 0x9a) {
+        iVar10 = piVar17[2];
         *(int *)(local_ec + 0x772) = iVar10;
         if ((*(int *)(local_ec + 0x776) < 2) &&
            (iVar10 = thunk_FUN_004e60d0(iVar10,0x93), 0 < iVar10)) {
@@ -609,81 +614,81 @@ LAB_00459eaa:
           (**(code **)(*(int *)local_ec + 200))(0);
         }
       }
-      if ((piVar16[1] == 0xad) || (piVar16[1] == 0xa1)) {
+      if ((piVar17[1] == 0xad) || (piVar17[1] == 0xa1)) {
         if (*(int *)(local_ec + 0x6f7) == 9) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (*(int *)(local_ec + 0x6f7) == 0x15) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        thunk_FUN_00495010(local_ec,piVar16[4]);
+        thunk_FUN_00495010(local_ec,piVar17[4]);
       }
       goto LAB_00459f59;
     }
     if (*(int *)(local_ec + 0x6f7) == 9) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (*(int *)(local_ec + 0x6f7) == 0x15) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     uVar13 = thunk_FUN_004406c0((char)local_ec[0x24]);
     uVar13 = uVar13 & 0xff;
     if (uVar13 == 1) {
       iVar10 = *(int *)(local_ec + 0x24);
-      iVar24 = 0x2d;
+      iVar25 = 0x2d;
 LAB_00459d8b:
-      local_c = thunk_FUN_004e60d0(iVar10,iVar24);
+      local_c = thunk_FUN_004e60d0(iVar10,iVar25);
     }
     else {
       if (uVar13 == 2) {
         iVar10 = *(int *)(local_ec + 0x24);
-        iVar24 = 0x2d;
+        iVar25 = 0x2d;
         goto LAB_00459d8b;
       }
       if (uVar13 == 3) {
         iVar10 = *(int *)(local_ec + 0x24);
-        iVar24 = 0x6a;
+        iVar25 = 0x6a;
         goto LAB_00459d8b;
       }
     }
     iVar10 = 0;
     if (local_c == 1) {
-      iVar10 = *piVar16 - (*piVar16 * 9) / 10;
+      iVar10 = *piVar17 - (*piVar17 * 9) / 10;
     }
-    *piVar16 = *piVar16 - iVar10;
+    *piVar17 = *piVar17 - iVar10;
 LAB_00459f59:
-    if (200 < (int)local_7c - *piVar16) {
-      *piVar16 = (int)local_7c + -200;
+    if (200 < (int)local_7c - *piVar17) {
+      *piVar17 = (int)local_7c + -200;
     }
     if (*(int *)(local_ec + 0x716) < 1) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    *(int *)(local_ec + 0x716) = *(int *)(local_ec + 0x716) - *piVar16;
+    *(int *)(local_ec + 0x716) = *(int *)(local_ec + 0x716) - *piVar17;
     pvVar14 = DAT_00811798;
-    if ((((DAT_00811798 != (void *)0x0) && (piVar16[2] != 0xff)) &&
+    if ((((DAT_00811798 != (void *)0x0) && (piVar17[2] != 0xff)) &&
         (pvVar14 = (void *)thunk_FUN_0041c710((int)local_ec), pvVar14 != (void *)0x0)) &&
-       (piVar16[5] == 0)) {
+       (piVar17[5] == 0)) {
       pvVar14 = (void *)thunk_FUN_0061f8b0(DAT_00811798,(int)*(short *)(local_ec + 0x5b),
                                            (int)*(short *)(local_ec + 0x5d),
                                            *(uint *)(local_ec + 0x24));
     }
-    if ((DAT_008117bc != (int *)0x0) && (piVar16 != (int *)0x0)) {
+    if ((DAT_008117bc != (int *)0x0) && (piVar17 != (int *)0x0)) {
       local_8c = 0x5dd5;
       local_88 = (int *)CONCAT22(*(undefined2 *)(local_ec + 0x32),*(undefined2 *)(local_ec + 0x24));
-      local_84 = CONCAT22((short)piVar16[3],(short)piVar16[2]);
+      local_84 = CONCAT22((short)piVar17[3],(short)piVar17[2]);
       pvVar14 = (void *)(**(code **)*DAT_008117bc)(local_9c);
     }
     if (*(int *)(local_ec + 0x716) < 1) {
-      if (((DAT_008117bc != (int *)0x0) && (piVar16 != (int *)0x0)) && (*piVar16 != 10000)) {
+      if (((DAT_008117bc != (int *)0x0) && (piVar17 != (int *)0x0)) && (*piVar17 != 10000)) {
         local_8c = 0x5dd1;
         local_88 = (int *)CONCAT22(*(undefined2 *)(local_ec + 0x32),*(undefined2 *)(local_ec + 0x24)
                                   );
-        local_84 = CONCAT22((short)piVar16[3],(short)piVar16[2]);
+        local_84 = CONCAT22((short)piVar17[3],(short)piVar17[2]);
         (**(code **)*DAT_008117bc)(local_9c);
       }
       *(undefined4 *)(local_ec + 0x2c0) = 1;
@@ -814,19 +819,19 @@ LAB_00459f59:
       (**(code **)(*(int *)local_ec + 0x90))(2,uVar12);
       thunk_FUN_0048d930((int)local_ec);
       thunk_FUN_0048dba0((int)local_ec);
-      sVar32 = *(short *)(local_ec + 0x671);
+      sVar33 = *(short *)(local_ec + 0x671);
       sVar6 = *(short *)(local_ec + 0x673);
-      local_7c = (void *)CONCAT22(local_7c._2_2_,sVar32);
+      local_7c = (void *)CONCAT22(local_7c._2_2_,sVar33);
       sVar7 = *(short *)(local_ec + 0x66f);
-      if (((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar32 < 0)) ||
-          ((DAT_007fb242 <= sVar32 || (sVar6 < 0)))) || (DAT_007fb244 <= sVar6)) {
+      if (((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar33 < 0)) ||
+          ((DAT_007fb242 <= sVar33 || (sVar6 < 0)))) || (DAT_007fb244 <= sVar6)) {
         pvVar14 = (void *)0x0;
       }
       else {
         pvVar14 = *(void **)(DAT_007fb248 +
-                            ((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar32 +
+                            ((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar33 +
                             (int)sVar7) * 8);
-        piVar16 = local_1c;
+        piVar17 = local_1c;
       }
       if (((pvVar14 != (void *)0x0) && (*(int *)((int)pvVar14 + 0x18) == *(int *)(local_ec + 0x679))
           ) && ((*(int *)(local_ec + 0x675) == 99 && (*(int *)((int)pvVar14 + 0x20) == 1000)))) {
@@ -843,42 +848,44 @@ LAB_00459f59:
       if (*(int *)(local_ec + 0x7ca) != 0) {
         iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x7ca),(int *)&local_58);
         if (iVar10 == -4) {
-          iVar10 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1296,0,0,&DAT_007a4ccc);
+          iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1296,0,0,
+                                      &DAT_007a4ccc,s_STBoatC__GetMessage_MESS_TORPHIT_007a9f3c);
           if (iVar10 != 0) {
             pcVar9 = (code *)swi(3);
             uVar12 = (*pcVar9)();
             return uVar12;
           }
-          FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1297);
+          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1297)
+          ;
         }
-        piVar16 = local_1c;
+        piVar17 = local_1c;
         piVar21 = local_124;
         for (iVar10 = 7; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *piVar21 = *piVar16;
-          piVar16 = piVar16 + 1;
+          *piVar21 = *piVar17;
+          piVar17 = piVar17 + 1;
           piVar21 = piVar21 + 1;
         }
         local_124[0] = 0x1716b;
         local_8c = 0x110;
         local_88 = local_124;
         (**(code **)*local_58)(local_9c);
-        piVar16 = local_1c;
+        piVar17 = local_1c;
       }
       thunk_FUN_004924a0(local_ec);
       thunk_FUN_00492fc0((int)local_ec);
       thunk_FUN_00493bc0((int)local_ec);
-      sVar32 = *(short *)(local_ec + 0x6a9);
-      local_7c = (void *)CONCAT22(extraout_var_00,sVar32);
+      sVar33 = *(short *)(local_ec + 0x6a9);
+      local_7c = (void *)CONCAT22(extraout_var_00,sVar33);
       sVar6 = *(short *)(local_ec + 0x6ad);
       sVar7 = *(short *)(local_ec + 0x6ab);
-      if ((((sVar32 < 0) || (DAT_007fb240 <= sVar32)) || (sVar7 < 0)) ||
+      if ((((sVar33 < 0) || (DAT_007fb240 <= sVar33)) || (sVar7 < 0)) ||
          (((DAT_007fb242 <= sVar7 || (sVar6 < 0)) || (DAT_007fb244 <= sVar6)))) {
         local_28 = (void *)0x0;
       }
       else {
         local_28 = *(void **)(DAT_007fb248 +
                              ((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar7 +
-                             (int)sVar32) * 8);
+                             (int)sVar33) * 8);
       }
       if (((local_28 == (void *)0x0) ||
           (*(int *)((int)local_28 + 0x18) != *(int *)(local_ec + 0x6af))) ||
@@ -898,25 +905,25 @@ LAB_00459f59:
       FUN_006e6780(*(void **)(local_ec + 0x211),
                    CONCAT22(CONCAT11(2,(char)((uint)*(undefined4 *)(local_ec + 0x18) >> 0x10)),
                             *(undefined2 *)(local_ec + 0x18)));
-      *(int *)(local_ec + 0x826) = piVar16[2];
-      DAT_00858df8 = local_184;
+      *(int *)(local_ec + 0x826) = piVar17[2];
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     piVar21 = DAT_008117bc;
     if ((*(int *)(local_ec + 0x45d) == 4) && (*(int *)(local_ec + 0x580) == 5)) {
-      sVar32 = *(short *)(local_ec + 0x554);
-      local_7c = (void *)CONCAT22((short)((uint)pvVar14 >> 0x10),sVar32);
+      sVar33 = *(short *)(local_ec + 0x554);
+      local_7c = (void *)CONCAT22((short)((uint)pvVar14 >> 0x10),sVar33);
       sVar6 = *(short *)(local_ec + 0x558);
       sVar7 = *(short *)(local_ec + 0x556);
-      if ((sVar32 < 0) ||
-         ((((DAT_007fb240 <= sVar32 || (sVar7 < 0)) || (DAT_007fb242 <= sVar7)) ||
+      if ((sVar33 < 0) ||
+         ((((DAT_007fb240 <= sVar33 || (sVar7 < 0)) || (DAT_007fb242 <= sVar7)) ||
           ((sVar6 < 0 || (DAT_007fb244 <= sVar6)))))) {
         piVar21 = (int *)0x0;
         pvVar14 = local_7c;
       }
       else {
         pvVar14 = (void *)((int)DAT_007fb246 * (int)sVar6 + (int)DAT_007fb240 * (int)sVar7 +
-                          (int)sVar32);
+                          (int)sVar33);
         piVar21 = *(int **)(DAT_007fb248 + (int)pvVar14 * 8);
       }
       local_10 = piVar21;
@@ -924,43 +931,43 @@ LAB_00459f59:
          (pvVar14 = (void *)piVar21[6], pvVar14 == *(void **)(local_ec + 0x55a))) {
         thunk_FUN_004e2200(piVar21,*(int *)(local_ec + 0x568),*(int *)(local_ec + 0x18),
                            *(undefined4 *)(local_ec + 0x716));
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
     }
-    if (piVar16[2] == 0xff) {
-      DAT_00858df8 = local_184;
+    if (piVar17[2] == 0xff) {
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    local_10 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)piVar21 >> 8),(char)piVar16[2]),
-                                         CONCAT22((short)((uint)pvVar14 >> 0x10),(short)piVar16[3]),
+    local_10 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)piVar21 >> 8),(char)piVar17[2]),
+                                         CONCAT22((short)((uint)pvVar14 >> 0x10),(short)piVar17[3]),
                                          1);
     if (local_10 == (int *)0x0) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (*(int *)(local_ec + 0x45d) != 3) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     thunk_FUN_004162f0(local_10,&local_16,&local_14,&local_12);
     uVar13 = (int)*(short *)(local_ec + 0x47) - (int)local_16 >> 0x1f;
     if (6 < (int)(((int)*(short *)(local_ec + 0x47) - (int)local_16 ^ uVar13) - uVar13)) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     uVar13 = (int)*(short *)(local_ec + 0x49) - (int)local_14 >> 0x1f;
     if (6 < (int)(((int)*(short *)(local_ec + 0x49) - (int)local_14 ^ uVar13) - uVar13)) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     uVar13 = (int)*(short *)(local_ec + 0x4b) - (int)local_12 >> 0x1f;
     if (2 < (int)(((int)*(short *)(local_ec + 0x4b) - (int)local_12 ^ uVar13) - uVar13)) {
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    STBoatC::_AddDefenceShots((STBoatC *)local_ec,(char)piVar16[2],(short)piVar16[3],*piVar16);
-    DAT_00858df8 = local_184;
+    STBoatC::_AddDefenceShots((STBoatC *)local_ec,(char)piVar17[2],(short)piVar17[3],*piVar17);
+    g_currentExceptionFrame = local_184.previous;
     return 0;
   }
   if (uVar13 == 3) {
@@ -992,87 +999,88 @@ LAB_00459f59:
       FUN_0072e2b0(*(undefined4 **)(local_ec + 0x465));
       *(undefined4 *)(local_ec + 0x465) = 0;
     }
-    lVar30 = FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a9d3c,0x37a);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x37a);
+    uVar15 = extraout_EAX;
+    uVar23 = extraout_EDX_01;
 LAB_0045048a:
-    if (((local_ec[0x4d] == (STSprGameObjC)0x1) && (local_ec[0x5a] == (STSprGameObjC)0x1)) &&
-       (uVar13 = *(uint *)(DAT_00802a38 + 0xe4) % 0x32,
-       lVar30 = CONCAT44(uVar13,*(uint *)(DAT_00802a38 + 0xe4) / 0x32), uVar13 == 7)) {
-      local_78 = (int)*(short *)(local_ec + 0x43) % 0xc9;
-      iVar10 = (int)*(short *)(local_ec + 0x45) / 200;
-      iVar24 = (int)*(short *)(local_ec + 0x45) % 200;
-      lVar30 = CONCAT44(iVar24,iVar10);
-      if ((((0x46 < (int)*(short *)(local_ec + 0x41) % 0xc9) &&
-           (lVar30 = CONCAT44(iVar24,iVar10), (int)*(short *)(local_ec + 0x41) % 0xc9 < 0x82)) &&
-          ((lVar30 = CONCAT44(iVar24,local_78), 0x46 < (int)local_78 &&
-           ((lVar30 = CONCAT44(iVar24,local_78), (int)local_78 < 0x82 &&
-            (lVar30 = CONCAT44(iVar24,local_78), 0x47 < iVar24)))))) &&
-         (lVar30 = CONCAT44(iVar24,local_78), iVar24 < 0x81)) {
-        local_ec[0x5a] = (STSprGameObjC)0x0;
-        local_ec[0x4d] = (STSprGameObjC)0x0;
-        lVar30 = CONCAT44(iVar24,local_78);
+    if ((local_ec[0x4d] == (STSprGameObjC)0x1) && (local_ec[0x5a] == (STSprGameObjC)0x1)) {
+      uVar23 = *(uint *)(DAT_00802a38 + 0xe4) % 0x32;
+      uVar15 = *(uint *)(DAT_00802a38 + 0xe4) / 0x32;
+      if (uVar23 == 7) {
+        local_78 = (int)*(short *)(local_ec + 0x43) % 0xc9;
+        uVar15 = (int)*(short *)(local_ec + 0x45) / 200;
+        uVar23 = (int)*(short *)(local_ec + 0x45) % 200;
+        if ((((0x46 < (int)*(short *)(local_ec + 0x41) % 0xc9) &&
+             ((int)*(short *)(local_ec + 0x41) % 0xc9 < 0x82)) &&
+            (uVar15 = local_78, 0x46 < (int)local_78)) &&
+           ((((int)local_78 < 0x82 && (0x47 < (int)uVar23)) && ((int)uVar23 < 0x81)))) {
+          local_ec[0x5a] = (STSprGameObjC)0x0;
+          local_ec[0x4d] = (STSprGameObjC)0x0;
+        }
       }
     }
+    lVar31 = CONCAT44(uVar23,uVar15);
     if (((*(int *)(local_ec + 0x7ee) == 1) &&
-        (lVar30 = (**(code **)(*(int *)local_ec + 0x7c))(), (int)lVar30 < 0x1a)) ||
+        (lVar31 = (**(code **)(*(int *)local_ec + 0x7c))(), (int)lVar31 < 0x1a)) ||
        (((*(int *)(local_ec + 0x7ee) == 2 &&
-         (lVar30 = (**(code **)(*(int *)local_ec + 0x7c))(), (int)lVar30 < 0x33)) ||
+         (lVar31 = (**(code **)(*(int *)local_ec + 0x7c))(), (int)lVar31 < 0x33)) ||
         ((*(int *)(local_ec + 0x7ee) == 3 &&
-         (lVar30 = (**(code **)(*(int *)local_ec + 0x7c))(), (int)lVar30 < 0x4c)))))) {
-      iVar24 = thunk_FUN_004e8030(*(int *)(local_ec + 0x6f7));
+         (lVar31 = (**(code **)(*(int *)local_ec + 0x7c))(), (int)lVar31 < 0x4c)))))) {
+      iVar25 = thunk_FUN_004e8030(*(int *)(local_ec + 0x6f7));
       iVar10 = *(int *)(local_ec + 0x45d);
-      lVar30 = CONCAT44(extraout_EDX_01,iVar10);
-      if (iVar24 == 3) {
+      lVar31 = CONCAT44(extraout_EDX_02,iVar10);
+      if (iVar25 == 3) {
         if (iVar10 != 0x16) {
           uVar13 = thunk_FUN_0045f400(local_ec,0x16);
-          lVar30 = CONCAT44(extraout_EDX_03,uVar13);
+          lVar31 = CONCAT44(extraout_EDX_04,uVar13);
           if ((uVar13 == 0) &&
-             (lVar30 = (ulonglong)(uint)((char)local_ec[0x24] * 0xa62) << 0x20,
+             (lVar31 = (ulonglong)(uint)((char)local_ec[0x24] * 0xa62) << 0x20,
              *(short *)(&DAT_007f4f7f + (char)local_ec[0x24] * 0xa62) != 0)) {
-            puVar15 = FUN_006ae290((uint *)0x0,1,2,1);
-            FUN_006ae1c0(puVar15,(undefined4 *)(local_ec + 0x32));
+            puVar16 = FUN_006ae290((uint *)0x0,1,2,1);
+            FUN_006ae1c0(puVar16,(undefined4 *)(local_ec + 0x32));
             STAllPlayersC::AddObjsToGroup
-                      (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX_04 >> 8),local_ec[0x24]),
-                       0xfffe,(int)puVar15,(undefined2 *)&local_60);
-            FUN_006ae110((byte *)puVar15);
-            piVar16 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX_02 >> 8),
+                      (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX_05 >> 8),local_ec[0x24]),
+                       0xfffe,(int)puVar16,(undefined2 *)&local_60);
+            FUN_006ae110((byte *)puVar16);
+            piVar17 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX_02 >> 8),
                                                          local_ec[0x24]),local_60);
-            puVar17 = local_b4;
+            puVar18 = local_b4;
             local_b4[0] = 1;
-            iVar10 = *piVar16;
+            iVar10 = *piVar17;
             uVar12 = 0x11;
             goto LAB_00450695;
           }
         }
       }
       else {
-        lVar30 = CONCAT44(extraout_EDX_01,iVar10);
+        lVar31 = CONCAT44(extraout_EDX_02,iVar10);
         if (iVar10 != 4) {
           uVar13 = thunk_FUN_0045f400(local_ec,4);
-          lVar30 = CONCAT44(extraout_EDX_02,uVar13);
+          lVar31 = CONCAT44(extraout_EDX_03,uVar13);
           if ((uVar13 == 0) &&
-             (lVar30 = CONCAT44(extraout_EDX_02,uVar13),
+             (lVar31 = CONCAT44(extraout_EDX_03,uVar13),
              *(short *)(&DAT_007f4f7b + (char)local_ec[0x24] * 0xa62) != 0)) {
-            puVar15 = FUN_006ae290((uint *)0x0,1,2,1);
-            FUN_006ae1c0(puVar15,(undefined4 *)(local_ec + 0x32));
+            puVar16 = FUN_006ae290((uint *)0x0,1,2,1);
+            FUN_006ae1c0(puVar16,(undefined4 *)(local_ec + 0x32));
             STAllPlayersC::AddObjsToGroup
                       (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX_01 >> 8),local_ec[0x24]),
-                       0xfffe,(int)puVar15,(undefined2 *)&local_50);
-            uVar12 = FUN_006ae110((byte *)puVar15);
-            piVar16 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar12 >> 8),local_ec[0x24]),
+                       0xfffe,(int)puVar16,(undefined2 *)&local_50);
+            uVar12 = FUN_006ae110((byte *)puVar16);
+            piVar17 = (int *)thunk_FUN_0042b760(CONCAT31((int3)((uint)uVar12 >> 8),local_ec[0x24]),
                                                 local_50);
-            puVar17 = &local_a8;
+            puVar18 = &local_a8;
             local_a8 = 1;
             local_a4 = 0;
-            iVar10 = *piVar16;
+            iVar10 = *piVar17;
             uVar12 = 4;
 LAB_00450695:
-            lVar30 = (**(code **)(iVar10 + 8))(uVar12,puVar17);
+            lVar31 = (**(code **)(iVar10 + 8))(uVar12,puVar18);
           }
         }
       }
     }
-    local_1c = (int *)thunk_FUN_0042b760(CONCAT31((int3)((ulonglong)lVar30 >> 8),local_ec[0x24]),
-                                         CONCAT22((short)((ulonglong)lVar30 >> 0x30),
+    local_1c = (int *)thunk_FUN_0042b760(CONCAT31((int3)((ulonglong)lVar31 >> 8),local_ec[0x24]),
+                                         CONCAT22((short)((ulonglong)lVar31 >> 0x30),
                                                   *(undefined2 *)(local_ec + 0x30)));
     uVar13 = *(int *)(local_ec + 0x7aa) + 1;
     *(uint *)(local_ec + 0x7aa) = uVar13;
@@ -1094,7 +1102,7 @@ LAB_00450695:
         iVar10 = thunk_FUN_004de410(*(void **)(local_ec + 0x24),*(int *)(local_ec + 0x79a),
                                     *(int *)(local_ec + 0x79e));
         *(int *)(local_ec + 0x7a2) = iVar10;
-        uVar13 = extraout_EDX_06;
+        uVar13 = extraout_EDX_07;
       }
       break;
     case 0xf:
@@ -1121,7 +1129,7 @@ LAB_00450695:
         }
       }
       iVar10 = thunk_FUN_004e60d0(*(int *)(local_ec + 0x24),0x3a);
-      uVar13 = extraout_EDX_05;
+      uVar13 = extraout_EDX_06;
       if (0 < iVar10) {
         *(int *)(local_ec + 0x7aa) = *(int *)(local_ec + 0x7aa) + 1;
       }
@@ -1131,7 +1139,7 @@ LAB_00450695:
       iVar10 = thunk_FUN_004de410(*(void **)(local_ec + 0x24),*(int *)(local_ec + 0x7b6),
                                   *(int *)(local_ec + 0x7ba));
       *(int *)(local_ec + 0x7be) = iVar10;
-      uVar13 = extraout_EDX_07;
+      uVar13 = extraout_EDX_08;
     }
     iVar10 = *(int *)(local_ec + 0x6f7);
     if ((((iVar10 == 0x24) || (iVar10 == 0x1b)) || (iVar10 == 0x1d)) &&
@@ -1151,7 +1159,7 @@ LAB_00450695:
            iVar10 + -1 == 0)) {
           *(undefined4 *)(local_ec + 0x72e) = 0;
           (**(code **)(*(int *)local_ec + 0x90))(3,0x16d);
-          uVar13 = extraout_EDX_08;
+          uVar13 = extraout_EDX_09;
         }
       }
       else if ((*(int *)(local_ec + 0x722) < 0x14) &&
@@ -1170,10 +1178,10 @@ LAB_00450695:
           (**(code **)(*(int *)local_ec + 0x90))(3,0x16d);
         }
         thunk_FUN_004945c0(local_ec);
-        uVar13 = extraout_EDX_09;
+        uVar13 = extraout_EDX_10;
       }
       else if ((iVar10 == 0x16) &&
-              (iVar10 = thunk_FUN_004e60d0(*(int *)(local_ec + 0x24),0x92), uVar13 = extraout_EDX_10
+              (iVar10 = thunk_FUN_004e60d0(*(int *)(local_ec + 0x24),0x92), uVar13 = extraout_EDX_11
               , 0 < iVar10)) {
         iVar10 = *(int *)(local_ec + 0x726);
         if (iVar10 < 0x28) {
@@ -1207,7 +1215,7 @@ joined_r0x00450a10:
         pSVar1 = (STT3DSprC *)(local_ec + 0x1d5);
         iVar10 = STT3DSprC::LoadSequence(pSVar1,0xb,DAT_00806774,(byte *)s_forcef0_007aa008,0x1d);
         if (iVar10 != 0) {
-          FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x41b);
+          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x41b);
         }
         thunk_FUN_004ad670(pSVar1,'\x0e');
         thunk_FUN_004ad150(pSVar1,'\v');
@@ -1220,7 +1228,7 @@ joined_r0x00450a10:
         local_f4 = 1;
         local_8c = 0x110;
         (*(code *)**(undefined4 **)local_ec)(local_9c);
-        uVar13 = extraout_EDX_11;
+        uVar13 = extraout_EDX_12;
       }
       *(int *)(local_ec + 0x76e) = *(int *)(local_ec + 0x76e) + 1;
     }
@@ -1231,19 +1239,19 @@ joined_r0x00450a10:
     }
     if (0 < *(int *)(local_ec + 0x73a)) {
       if (*(void **)(local_ec + 0x465) == (void *)0x0) {
-        puVar17 = thunk_FUN_00631fd0();
-        *(undefined4 **)(local_ec + 0x465) = puVar17;
-        uVar13 = extraout_EDX_13;
-        if (puVar17 != (undefined4 *)0x0) {
-          thunk_FUN_006324c0(puVar17,0,*(undefined4 *)(local_ec + 0x6f7));
-          uVar13 = extraout_EDX_14;
+        puVar18 = thunk_FUN_00631fd0();
+        *(undefined4 **)(local_ec + 0x465) = puVar18;
+        uVar13 = extraout_EDX_14;
+        if (puVar18 != (undefined4 *)0x0) {
+          thunk_FUN_006324c0(puVar18,0,*(undefined4 *)(local_ec + 0x6f7));
+          uVar13 = extraout_EDX_15;
         }
       }
       else {
         thunk_FUN_00636060(*(void **)(local_ec + 0x465),(int)*(short *)(local_ec + 0x41),
                            (int)*(short *)(local_ec + 0x43),(int)*(short *)(local_ec + 0x45),
                            (int)*(short *)(local_ec + 0x6c),100);
-        uVar13 = extraout_EDX_12;
+        uVar13 = extraout_EDX_13;
       }
       if (*(int *)(local_ec + 0x45d) == 3) {
         *(int *)(local_ec + 0x73a) = *(int *)(local_ec + 0x73a) + -1;
@@ -1253,7 +1261,7 @@ joined_r0x00450a10:
           if ((*(int *)(local_ec + 0x5a6) == 0) &&
              (iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x5a2),
                                     (int *)(local_ec + 0x5a6)), iVar10 == -4)) {
-            FUN_006a5e40(-4,DAT_007ed77c,0x7a9d3c,0x43c);
+            RaiseInternalException(-4,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x43c);
           }
           uVar13 = *(uint *)(*(int *)(local_ec + 0x5a6) + 0x24);
           if (uVar13 != *(uint *)(local_ec + 0x24)) goto LAB_00450c1e;
@@ -1266,22 +1274,22 @@ LAB_00450c1e:
           thunk_FUN_00635fd0(*(int **)(local_ec + 0x465));
           FUN_0072e2b0(*(undefined4 **)(local_ec + 0x465));
           *(undefined4 *)(local_ec + 0x465) = 0;
-          uVar13 = extraout_EDX_15;
+          uVar13 = extraout_EDX_16;
         }
         if (*(int *)(local_ec + 0x45d) != 3) {
           local_5c = *(undefined4 *)(DAT_00802a38 + 0xe4);
           thunk_FUN_0045ef00(local_ec,3,&local_5c);
-          uVar13 = extraout_EDX_16;
+          uVar13 = extraout_EDX_17;
         }
       }
     }
     if (((*(int *)(local_ec + 0x70e) == 0) &&
         (uVar13 = *(uint *)(DAT_00802a38 + 0xe4) % 3, uVar13 == 0)) &&
-       (iVar10 = thunk_FUN_004e60d0(*(int *)(local_ec + 0x24),10), uVar13 = extraout_EDX_17,
+       (iVar10 = thunk_FUN_004e60d0(*(int *)(local_ec + 0x24),10), uVar13 = extraout_EDX_18,
        0 < iVar10)) {
       thunk_FUN_0041c6e0(local_ec,*(undefined **)(local_ec + 0x70a));
       *(undefined4 *)(local_ec + 0x70e) = 1;
-      uVar13 = extraout_EDX_18;
+      uVar13 = extraout_EDX_19;
     }
     if (*(int *)(local_ec + 0x2c0) == 1) {
       *(undefined4 *)(local_ec + 0x2c0) = 0;
@@ -1291,9 +1299,10 @@ LAB_00450c1e:
            (iVar10 = STT3DSprC::LoadSequence
                                ((STT3DSprC *)(local_ec + 0x1d5),8,DAT_00806774,
                                 (byte *)s_expdstrw_007a9f80,0x1d), iVar10 != 0)) {
-          uVar12 = 0x45d;
+          iVar10 = 0x45d;
 LAB_00450e28:
-          FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,uVar12);
+          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar10)
+          ;
         }
       }
       else if (*(int *)(local_ec + 0x6f7) == 0x15) {
@@ -1301,7 +1310,7 @@ LAB_00450e28:
                            ((STT3DSprC *)(local_ec + 0x1d5),8,DAT_00806774,
                             (byte *)s_expdstrw_007a9f80,0x1d);
         if (iVar10 != 0) {
-          uVar12 = 0x462;
+          iVar10 = 0x462;
           goto LAB_00450e28;
         }
       }
@@ -1333,10 +1342,10 @@ LAB_00450e28:
       uVar13 = (uint)*(byte *)(*(int *)(local_ec + 0x10) + 0x112d);
       if (*(uint *)(local_ec + 0x24) == uVar13) {
         thunk_FUN_004d8b70((char)*(uint *)(local_ec + 0x24));
-        uVar13 = extraout_EDX_19;
+        uVar13 = extraout_EDX_20;
       }
     }
-    uVar31 = CONCAT44(uVar13,local_8);
+    uVar32 = CONCAT44(uVar13,local_8);
     if (*(int *)(local_ec + 0x455) == 1) {
       (**(code **)(*(int *)local_ec + 0xd8))();
       pSVar1 = (STT3DSprC *)(local_ec + 0x1d5);
@@ -1354,23 +1363,23 @@ LAB_00450e28:
         STT3DSprC::StopShow(pSVar1,0xb);
         if (*(int *)(local_ec + 0x6f7) == 0x21) {
           uVar13 = local_c;
-          uVar18 = thunk_FUN_004ad650((int)pSVar1);
+          uVar19 = thunk_FUN_004ad650((int)pSVar1);
           uVar12 = *(undefined4 *)(local_ec + 0x6f7);
           sVar8 = *(short *)(local_ec + 0x6c);
           sVar7 = *(short *)(local_ec + 0x45);
           sVar6 = *(short *)(local_ec + 0x43);
-          sVar32 = *(short *)(local_ec + 0x41);
+          sVar33 = *(short *)(local_ec + 0x41);
         }
         else {
           uVar13 = 0xffffffff;
-          uVar18 = thunk_FUN_004ad650((int)pSVar1);
+          uVar19 = thunk_FUN_004ad650((int)pSVar1);
           sVar8 = *(short *)(local_ec + 0x6c);
           sVar7 = *(short *)(local_ec + 0x45);
           uVar12 = *(undefined4 *)(local_ec + 0x6f7);
           sVar6 = *(short *)(local_ec + 0x43);
-          sVar32 = *(short *)(local_ec + 0x41);
+          sVar33 = *(short *)(local_ec + 0x41);
         }
-        thunk_FUN_0062b770((int)sVar32,(int)sVar6,(int)sVar7,uVar12,(int)local_ec,(int)sVar8,uVar18,
+        thunk_FUN_0062b770((int)sVar33,(int)sVar6,(int)sVar7,uVar12,(int)local_ec,(int)sVar8,uVar19,
                            uVar13);
         if (*(int **)(local_ec + 0x465) != (int *)0x0) {
           thunk_FUN_00635fd0(*(int **)(local_ec + 0x465));
@@ -1404,7 +1413,7 @@ LAB_00450e28:
       }
       if ((*(int *)(local_ec + 0x6f7) == 9) || (*(int *)(local_ec + 0x6f7) == 0x15)) {
         if (local_c != 0x27) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         local_8c = 10;
@@ -1412,12 +1421,12 @@ LAB_00450e28:
         local_94 = *(undefined4 *)(DAT_00802a38 + 0x14);
         local_88 = *(int **)(local_ec + 8);
         FUN_006e5810(local_9c);
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       iVar10 = thunk_FUN_004ac910(pSVar1,'\t');
       if (iVar10 != 0x14) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
 LAB_0045ad7b:
@@ -1426,127 +1435,127 @@ LAB_0045ad7b:
       local_94 = *(undefined4 *)(DAT_00802a38 + 0x14);
       local_88 = *(int **)(local_ec + 8);
       FUN_006e5810(local_9c);
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
     if (*(int *)(local_ec + 0x459) != 0) {
       switch(*(int *)(local_ec + 0x459)) {
       case 0x65:
         iVar10 = thunk_FUN_00460360((int *)local_ec);
-        uVar31 = CONCAT44(extraout_EDX_20,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_21,iVar10);
         break;
       case 0x66:
         iVar10 = thunk_FUN_004653b0((int *)local_ec,uVar13,2);
-        uVar31 = CONCAT44(extraout_EDX_22,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_23,iVar10);
         break;
       case 0x67:
         iVar10 = thunk_FUN_004620f0((int *)local_ec);
-        uVar31 = CONCAT44(extraout_EDX_21,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_22,iVar10);
         break;
       case 0x68:
         iVar10 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x2,unaff_EDI,unaff_ESI);
-        uVar31 = CONCAT44(extraout_EDX_27,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_28,iVar10);
         break;
       case 0x69:
-        uVar31 = thunk_FUN_004732d0((int *)local_ec);
+        uVar32 = thunk_FUN_004732d0((int *)local_ec);
         break;
       case 0x6a:
         iVar10 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x2);
-        uVar31 = CONCAT44(extraout_EDX_23,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_24,iVar10);
         break;
       case 0x6b:
-        uVar31 = thunk_FUN_004769f0((int *)local_ec);
+        uVar32 = thunk_FUN_004769f0((int *)local_ec);
         break;
       case 0x6c:
-        uVar31 = thunk_FUN_004803b0((int *)local_ec);
+        uVar32 = thunk_FUN_004803b0((int *)local_ec);
         break;
       case 0x6d:
         iVar10 = thunk_FUN_00478030(local_ec,2);
-        uVar31 = CONCAT44(extraout_EDX_31,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_32,iVar10);
         break;
       case 0x6e:
-        uVar31 = thunk_FUN_00476cc0((int *)local_ec);
+        uVar32 = thunk_FUN_00476cc0((int *)local_ec);
         break;
       case 0x6f:
         iVar10 = thunk_FUN_0047da50((int *)local_ec);
-        uVar31 = CONCAT44(extraout_EDX_34,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_35,iVar10);
         break;
       case 0x70:
         iVar10 = STBoatC::BackLoadRC((STBoatC *)local_ec,2);
-        uVar31 = CONCAT44(extraout_EDX_24,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_25,iVar10);
         break;
       case 0x71:
         iVar10 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,2);
-        uVar31 = CONCAT44(extraout_EDX_26,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_27,iVar10);
         break;
       case 0x72:
         iVar10 = thunk_FUN_004805b0(local_ec,(int *)0x2);
-        uVar31 = CONCAT44(extraout_EDX_36,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_37,iVar10);
         break;
       case 0x73:
         iVar10 = thunk_FUN_00474810(local_ec,(int *)0x2);
-        uVar31 = CONCAT44(extraout_EDX_28,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_29,iVar10);
         break;
       case 0x74:
         iVar10 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x2);
-        uVar31 = CONCAT44(extraout_EDX_30,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_31,iVar10);
         break;
       case 0x75:
         iVar10 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x2,unaff_EDI,unaff_ESI);
-        uVar31 = CONCAT44(extraout_EDX_25,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_26,iVar10);
         break;
       case 0x76:
         iVar10 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x2);
-        uVar31 = CONCAT44(extraout_EDX_35,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_36,iVar10);
         break;
       case 0x77:
-        uVar31 = thunk_FUN_0046d400((int *)local_ec,uVar13);
+        uVar32 = thunk_FUN_0046d400((int *)local_ec,uVar13);
         break;
       case 0x78:
         iVar10 = thunk_FUN_00475530((int *)local_ec);
-        uVar31 = CONCAT44(extraout_EDX_29,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_30,iVar10);
         break;
       case 0x79:
         iVar10 = thunk_FUN_0047bf70((int *)local_ec);
-        uVar31 = CONCAT44(extraout_EDX_32,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_33,iVar10);
         break;
       case 0x7a:
-        uVar31 = thunk_FUN_004795e0((int *)local_ec);
+        uVar32 = thunk_FUN_004795e0((int *)local_ec);
         break;
       case 0x7b:
         iVar10 = thunk_FUN_0047cf20((int *)local_ec);
-        uVar31 = CONCAT44(extraout_EDX_33,iVar10);
+        uVar32 = CONCAT44(extraout_EDX_34,iVar10);
         break;
       default:
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x4cb);
-        uVar31 = CONCAT44(extraout_EDX_37,local_8);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4cb);
+        uVar32 = CONCAT44(extraout_EDX_38,local_8);
       }
-      local_8 = (uint)uVar31;
+      local_8 = (uint)uVar32;
       uVar13 = local_8;
       if (local_8 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x4cd);
-        uVar31 = CONCAT44(extraout_EDX_38,local_8);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4cd);
+        uVar32 = CONCAT44(extraout_EDX_39,local_8);
       }
       if (uVar13 == 0) {
         *(undefined4 *)(local_ec + 0x459) = 0;
       }
       if (*(int *)(local_ec + 0x459) != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
     }
-    uVar13 = (uint)((ulonglong)uVar31 >> 0x20);
-    local_8 = (uint)uVar31;
+    uVar13 = (uint)((ulonglong)uVar32 >> 0x20);
+    local_8 = (uint)uVar32;
     if (*(int *)(local_ec + 0x2c4) == 1) {
       uVar13 = 0;
       if (0 < *(int *)(local_ec + 0x73a)) {
         local_c = (uint)(*(int *)(local_ec + 0x2d4) == 1);
         local_78 = (uint)(*(int *)(local_ec + 0x314) == 1);
         local_7c = (void *)(uint)(*(int *)(local_ec + 0x2f4) == 1);
-        pSVar29 = local_ec + 0x2cc;
+        pSVar30 = local_ec + 0x2cc;
         for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *(undefined4 *)pSVar29 = 0;
-          pSVar29 = pSVar29 + 4;
+          *(undefined4 *)pSVar30 = 0;
+          pSVar30 = pSVar30 + 4;
         }
         *(undefined4 *)(local_ec + 0x2c4) = 0;
         if (local_c == 1) {
@@ -1563,22 +1572,22 @@ LAB_0045ad7b:
         }
       }
       if (*(int *)(local_ec + 0x314) == 1) {
-        pSVar29 = local_ec + 0x2cc;
+        pSVar30 = local_ec + 0x2cc;
         for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *(undefined4 *)pSVar29 = 0;
-          pSVar29 = pSVar29 + 4;
+          *(undefined4 *)pSVar30 = 0;
+          pSVar30 = pSVar30 + 4;
         }
         *(undefined4 *)(local_ec + 0x314) = 1;
         uVar13 = *(uint *)(local_ec + 0x3c4);
       }
       if ((*(int *)(local_ec + 0x45d) == 0x14) && (*(int *)(local_ec + 0x5c0) == 3)) {
-        pSVar29 = local_ec + 0x2cc;
+        pSVar30 = local_ec + 0x2cc;
         for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
-          *(undefined4 *)pSVar29 = 0;
-          pSVar29 = pSVar29 + 4;
+          *(undefined4 *)pSVar30 = 0;
+          pSVar30 = pSVar30 + 4;
         }
         *(undefined4 *)(local_ec + 0x2c4) = 0;
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       if ((*(int *)(local_ec + 0x2cc) == 1) && (uVar13 < *(uint *)(local_ec + 0x328))) {
@@ -1719,19 +1728,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_00462180(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x532);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x532);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x536;
+          iVar10 = 0x536;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -1741,7 +1751,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x53e;
+          iVar10 = 0x53e;
           local_8 = uVar13;
           break;
         case 2:
@@ -1749,7 +1759,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x549;
+          iVar10 = 0x549;
           local_8 = uVar13;
           break;
         case 3:
@@ -1757,7 +1767,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x544;
+          iVar10 = 0x544;
           local_8 = uVar13;
           break;
         case 4:
@@ -1765,7 +1775,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x567;
+          iVar10 = 0x567;
           local_8 = uVar13;
           break;
         case 5:
@@ -1773,7 +1783,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x56c;
+          iVar10 = 0x56c;
           local_8 = uVar13;
           break;
         case 6:
@@ -1781,7 +1791,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x54e;
+          iVar10 = 0x54e;
           local_8 = uVar13;
           break;
         case 7:
@@ -1789,7 +1799,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x580;
+          iVar10 = 0x580;
           local_8 = uVar13;
           break;
         case 8:
@@ -1797,7 +1807,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5a8;
+          iVar10 = 0x5a8;
           local_8 = uVar13;
           break;
         case 9:
@@ -1805,7 +1815,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x58a;
+          iVar10 = 0x58a;
           local_8 = uVar13;
           break;
         case 10:
@@ -1813,7 +1823,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x585;
+          iVar10 = 0x585;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -1821,7 +1831,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x59e;
+          iVar10 = 0x59e;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -1829,7 +1839,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x553;
+          iVar10 = 0x553;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -1837,7 +1847,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x562;
+          iVar10 = 0x562;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -1845,7 +1855,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5ad;
+          iVar10 = 0x5ad;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -1853,7 +1863,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x571;
+          iVar10 = 0x571;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -1861,7 +1871,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x57b;
+          iVar10 = 0x57b;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -1869,7 +1879,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x558;
+          iVar10 = 0x558;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -1877,7 +1887,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5a3;
+          iVar10 = 0x5a3;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -1885,7 +1895,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x55d;
+          iVar10 = 0x55d;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -1893,7 +1903,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x576;
+          iVar10 = 0x576;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -1901,7 +1911,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x594;
+          iVar10 = 0x594;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -1909,7 +1919,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x58f;
+          iVar10 = 0x58f;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -1917,11 +1927,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x599;
+          iVar10 = 0x599;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -1930,10 +1940,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 0xc;
           iVar10 = thunk_FUN_00465c60((int *)local_ec,uVar13,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x5b9;
+          iVar10 = 0x5b9;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -1943,7 +1953,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5c0;
+          iVar10 = 0x5c0;
           local_8 = uVar13;
           break;
         case 2:
@@ -1951,7 +1961,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5cb;
+          iVar10 = 0x5cb;
           local_8 = uVar13;
           break;
         case 3:
@@ -1959,7 +1969,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5c6;
+          iVar10 = 0x5c6;
           local_8 = uVar13;
           break;
         case 4:
@@ -1967,7 +1977,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5e9;
+          iVar10 = 0x5e9;
           local_8 = uVar13;
           break;
         case 5:
@@ -1975,7 +1985,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5ee;
+          iVar10 = 0x5ee;
           local_8 = uVar13;
           break;
         case 6:
@@ -1983,7 +1993,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5d0;
+          iVar10 = 0x5d0;
           local_8 = uVar13;
           break;
         case 7:
@@ -1991,7 +2001,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x602;
+          iVar10 = 0x602;
           local_8 = uVar13;
           break;
         case 8:
@@ -1999,7 +2009,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x62a;
+          iVar10 = 0x62a;
           local_8 = uVar13;
           break;
         case 9:
@@ -2007,7 +2017,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x60c;
+          iVar10 = 0x60c;
           local_8 = uVar13;
           break;
         case 10:
@@ -2015,7 +2025,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x607;
+          iVar10 = 0x607;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -2023,7 +2033,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x620;
+          iVar10 = 0x620;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -2031,7 +2041,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5d5;
+          iVar10 = 0x5d5;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -2039,7 +2049,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5e4;
+          iVar10 = 0x5e4;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -2047,7 +2057,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x62f;
+          iVar10 = 0x62f;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -2055,7 +2065,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5f3;
+          iVar10 = 0x5f3;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -2063,7 +2073,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5fd;
+          iVar10 = 0x5fd;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -2071,7 +2081,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5da;
+          iVar10 = 0x5da;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -2079,7 +2089,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x625;
+          iVar10 = 0x625;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -2087,7 +2097,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5df;
+          iVar10 = 0x5df;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -2095,7 +2105,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x5f8;
+          iVar10 = 0x5f8;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -2103,7 +2113,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x616;
+          iVar10 = 0x616;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -2111,7 +2121,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x611;
+          iVar10 = 0x611;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -2119,11 +2129,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x61b;
+          iVar10 = 0x61b;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -2133,19 +2143,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_004602e0(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x63b);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x63b);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x63f;
+          iVar10 = 0x63f;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -2155,7 +2166,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x647;
+          iVar10 = 0x647;
           local_8 = uVar13;
           break;
         case 2:
@@ -2163,7 +2174,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x652;
+          iVar10 = 0x652;
           local_8 = uVar13;
           break;
         case 3:
@@ -2171,7 +2182,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x64d;
+          iVar10 = 0x64d;
           local_8 = uVar13;
           break;
         case 4:
@@ -2179,7 +2190,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x670;
+          iVar10 = 0x670;
           local_8 = uVar13;
           break;
         case 5:
@@ -2187,7 +2198,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x675;
+          iVar10 = 0x675;
           local_8 = uVar13;
           break;
         case 6:
@@ -2195,7 +2206,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x657;
+          iVar10 = 0x657;
           local_8 = uVar13;
           break;
         case 7:
@@ -2203,7 +2214,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x689;
+          iVar10 = 0x689;
           local_8 = uVar13;
           break;
         case 8:
@@ -2211,7 +2222,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6b1;
+          iVar10 = 0x6b1;
           local_8 = uVar13;
           break;
         case 9:
@@ -2219,7 +2230,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x693;
+          iVar10 = 0x693;
           local_8 = uVar13;
           break;
         case 10:
@@ -2227,7 +2238,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x68e;
+          iVar10 = 0x68e;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -2235,7 +2246,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6a7;
+          iVar10 = 0x6a7;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -2243,7 +2254,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x65c;
+          iVar10 = 0x65c;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -2251,7 +2262,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x66b;
+          iVar10 = 0x66b;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -2259,7 +2270,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6b6;
+          iVar10 = 0x6b6;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -2267,7 +2278,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x67a;
+          iVar10 = 0x67a;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -2275,7 +2286,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x684;
+          iVar10 = 0x684;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -2283,7 +2294,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x661;
+          iVar10 = 0x661;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -2291,7 +2302,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6ac;
+          iVar10 = 0x6ac;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -2299,7 +2310,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x666;
+          iVar10 = 0x666;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -2307,7 +2318,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x67f;
+          iVar10 = 0x67f;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -2315,7 +2326,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x69d;
+          iVar10 = 0x69d;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -2323,7 +2334,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x698;
+          iVar10 = 0x698;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -2331,11 +2342,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6a2;
+          iVar10 = 0x6a2;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -2344,10 +2355,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 6;
           iVar10 = thunk_FUN_004658d0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x6c2;
+          iVar10 = 0x6c2;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -2357,7 +2368,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6c9;
+          iVar10 = 0x6c9;
           local_8 = uVar13;
           break;
         case 2:
@@ -2365,7 +2376,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6d4;
+          iVar10 = 0x6d4;
           local_8 = uVar13;
           break;
         case 3:
@@ -2373,7 +2384,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6cf;
+          iVar10 = 0x6cf;
           local_8 = uVar13;
           break;
         case 4:
@@ -2381,7 +2392,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6f2;
+          iVar10 = 0x6f2;
           local_8 = uVar13;
           break;
         case 5:
@@ -2389,7 +2400,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6f7;
+          iVar10 = 0x6f7;
           local_8 = uVar13;
           break;
         case 6:
@@ -2397,7 +2408,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6d9;
+          iVar10 = 0x6d9;
           local_8 = uVar13;
           break;
         case 7:
@@ -2405,7 +2416,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x70b;
+          iVar10 = 0x70b;
           local_8 = uVar13;
           break;
         case 8:
@@ -2413,7 +2424,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x733;
+          iVar10 = 0x733;
           local_8 = uVar13;
           break;
         case 9:
@@ -2421,7 +2432,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x715;
+          iVar10 = 0x715;
           local_8 = uVar13;
           break;
         case 10:
@@ -2429,7 +2440,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x710;
+          iVar10 = 0x710;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -2437,7 +2448,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x729;
+          iVar10 = 0x729;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -2445,7 +2456,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6de;
+          iVar10 = 0x6de;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -2453,7 +2464,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6ed;
+          iVar10 = 0x6ed;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -2461,7 +2472,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x738;
+          iVar10 = 0x738;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -2469,7 +2480,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6fc;
+          iVar10 = 0x6fc;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -2477,7 +2488,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x706;
+          iVar10 = 0x706;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -2485,7 +2496,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6e3;
+          iVar10 = 0x6e3;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -2493,7 +2504,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x72e;
+          iVar10 = 0x72e;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -2501,7 +2512,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x6e8;
+          iVar10 = 0x6e8;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -2509,7 +2520,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x701;
+          iVar10 = 0x701;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -2517,7 +2528,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x71f;
+          iVar10 = 0x71f;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -2525,7 +2536,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x71a;
+          iVar10 = 0x71a;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -2533,11 +2544,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x724;
+          iVar10 = 0x724;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -2547,19 +2558,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_0046b100(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x744);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x744);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x748;
+          iVar10 = 0x748;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -2569,7 +2581,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x750;
+          iVar10 = 0x750;
           local_8 = uVar13;
           break;
         case 2:
@@ -2577,7 +2589,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x75b;
+          iVar10 = 0x75b;
           local_8 = uVar13;
           break;
         case 3:
@@ -2585,7 +2597,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x756;
+          iVar10 = 0x756;
           local_8 = uVar13;
           break;
         case 4:
@@ -2593,7 +2605,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x779;
+          iVar10 = 0x779;
           local_8 = uVar13;
           break;
         case 5:
@@ -2601,7 +2613,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x77e;
+          iVar10 = 0x77e;
           local_8 = uVar13;
           break;
         case 6:
@@ -2609,7 +2621,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x760;
+          iVar10 = 0x760;
           local_8 = uVar13;
           break;
         case 7:
@@ -2617,7 +2629,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x792;
+          iVar10 = 0x792;
           local_8 = uVar13;
           break;
         case 8:
@@ -2625,7 +2637,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7ba;
+          iVar10 = 0x7ba;
           local_8 = uVar13;
           break;
         case 9:
@@ -2633,7 +2645,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x79c;
+          iVar10 = 0x79c;
           local_8 = uVar13;
           break;
         case 10:
@@ -2641,7 +2653,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x797;
+          iVar10 = 0x797;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -2649,7 +2661,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7b0;
+          iVar10 = 0x7b0;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -2657,7 +2669,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x765;
+          iVar10 = 0x765;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -2665,7 +2677,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x774;
+          iVar10 = 0x774;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -2673,7 +2685,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7bf;
+          iVar10 = 0x7bf;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -2681,7 +2693,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x783;
+          iVar10 = 0x783;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -2689,7 +2701,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x78d;
+          iVar10 = 0x78d;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -2697,7 +2709,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x76a;
+          iVar10 = 0x76a;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -2705,7 +2717,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7b5;
+          iVar10 = 0x7b5;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -2713,7 +2725,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x76f;
+          iVar10 = 0x76f;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -2721,7 +2733,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x788;
+          iVar10 = 0x788;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -2729,7 +2741,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7a6;
+          iVar10 = 0x7a6;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -2737,7 +2749,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7a1;
+          iVar10 = 0x7a1;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -2745,11 +2757,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7ab;
+          iVar10 = 0x7ab;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -2758,10 +2770,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 0xd;
           iVar10 = thunk_FUN_0046d450(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x7cb;
+          iVar10 = 0x7cb;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -2771,7 +2783,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7d2;
+          iVar10 = 0x7d2;
           local_8 = uVar13;
           break;
         case 2:
@@ -2779,7 +2791,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7dc;
+          iVar10 = 0x7dc;
           local_8 = uVar13;
           break;
         case 3:
@@ -2787,7 +2799,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7d7;
+          iVar10 = 0x7d7;
           local_8 = uVar13;
           break;
         case 4:
@@ -2795,7 +2807,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7fa;
+          iVar10 = 0x7fa;
           local_8 = uVar13;
           break;
         case 5:
@@ -2803,7 +2815,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7ff;
+          iVar10 = 0x7ff;
           local_8 = uVar13;
           break;
         case 6:
@@ -2811,7 +2823,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7e1;
+          iVar10 = 0x7e1;
           local_8 = uVar13;
           break;
         case 7:
@@ -2819,7 +2831,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x813;
+          iVar10 = 0x813;
           local_8 = uVar13;
           break;
         case 8:
@@ -2827,7 +2839,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x83b;
+          iVar10 = 0x83b;
           local_8 = uVar13;
           break;
         case 9:
@@ -2835,7 +2847,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x81d;
+          iVar10 = 0x81d;
           local_8 = uVar13;
           break;
         case 10:
@@ -2843,7 +2855,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x818;
+          iVar10 = 0x818;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -2851,7 +2863,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x831;
+          iVar10 = 0x831;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -2859,7 +2871,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7e6;
+          iVar10 = 0x7e6;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -2867,7 +2879,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7f5;
+          iVar10 = 0x7f5;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -2875,7 +2887,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x840;
+          iVar10 = 0x840;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -2883,7 +2895,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x804;
+          iVar10 = 0x804;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -2891,7 +2903,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x80e;
+          iVar10 = 0x80e;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -2899,7 +2911,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7eb;
+          iVar10 = 0x7eb;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -2907,7 +2919,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x836;
+          iVar10 = 0x836;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -2915,7 +2927,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x7f0;
+          iVar10 = 0x7f0;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -2923,7 +2935,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x809;
+          iVar10 = 0x809;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -2931,7 +2943,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x827;
+          iVar10 = 0x827;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -2939,7 +2951,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x822;
+          iVar10 = 0x822;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -2947,11 +2959,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x82c;
+          iVar10 = 0x82c;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -2960,10 +2972,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 4;
           iVar10 = thunk_FUN_0046f5c0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x84c;
+          iVar10 = 0x84c;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -2973,7 +2985,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x853;
+          iVar10 = 0x853;
           local_8 = uVar13;
           break;
         case 2:
@@ -2981,7 +2993,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x85d;
+          iVar10 = 0x85d;
           local_8 = uVar13;
           break;
         case 3:
@@ -2989,7 +3001,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x858;
+          iVar10 = 0x858;
           local_8 = uVar13;
           break;
         case 4:
@@ -2997,7 +3009,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x87b;
+          iVar10 = 0x87b;
           local_8 = uVar13;
           break;
         case 5:
@@ -3005,7 +3017,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x880;
+          iVar10 = 0x880;
           local_8 = uVar13;
           break;
         case 6:
@@ -3013,7 +3025,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x862;
+          iVar10 = 0x862;
           local_8 = uVar13;
           break;
         case 7:
@@ -3021,7 +3033,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x894;
+          iVar10 = 0x894;
           local_8 = uVar13;
           break;
         case 8:
@@ -3029,7 +3041,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8bc;
+          iVar10 = 0x8bc;
           local_8 = uVar13;
           break;
         case 9:
@@ -3037,7 +3049,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x89e;
+          iVar10 = 0x89e;
           local_8 = uVar13;
           break;
         case 10:
@@ -3045,7 +3057,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x899;
+          iVar10 = 0x899;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -3053,7 +3065,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8b2;
+          iVar10 = 0x8b2;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -3061,7 +3073,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x867;
+          iVar10 = 0x867;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -3069,7 +3081,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x876;
+          iVar10 = 0x876;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -3077,7 +3089,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8c1;
+          iVar10 = 0x8c1;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -3085,7 +3097,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x885;
+          iVar10 = 0x885;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -3093,7 +3105,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x88f;
+          iVar10 = 0x88f;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -3101,7 +3113,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x86c;
+          iVar10 = 0x86c;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -3109,7 +3121,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8b7;
+          iVar10 = 0x8b7;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -3117,7 +3129,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x871;
+          iVar10 = 0x871;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -3125,7 +3137,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x88a;
+          iVar10 = 0x88a;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -3133,7 +3145,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8a8;
+          iVar10 = 0x8a8;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -3141,7 +3153,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8a3;
+          iVar10 = 0x8a3;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -3149,11 +3161,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8ad;
+          iVar10 = 0x8ad;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -3162,10 +3174,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 5;
           iVar10 = thunk_FUN_00471ac0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x8cd;
+          iVar10 = 0x8cd;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -3175,7 +3187,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8d4;
+          iVar10 = 0x8d4;
           local_8 = uVar13;
           break;
         case 2:
@@ -3183,7 +3195,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8de;
+          iVar10 = 0x8de;
           local_8 = uVar13;
           break;
         case 3:
@@ -3191,7 +3203,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8d9;
+          iVar10 = 0x8d9;
           local_8 = uVar13;
           break;
         case 4:
@@ -3199,7 +3211,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8fc;
+          iVar10 = 0x8fc;
           local_8 = uVar13;
           break;
         case 5:
@@ -3207,7 +3219,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x901;
+          iVar10 = 0x901;
           local_8 = uVar13;
           break;
         case 6:
@@ -3215,7 +3227,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8e3;
+          iVar10 = 0x8e3;
           local_8 = uVar13;
           break;
         case 7:
@@ -3223,7 +3235,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x915;
+          iVar10 = 0x915;
           local_8 = uVar13;
           break;
         case 8:
@@ -3231,7 +3243,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x93d;
+          iVar10 = 0x93d;
           local_8 = uVar13;
           break;
         case 9:
@@ -3239,7 +3251,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x91f;
+          iVar10 = 0x91f;
           local_8 = uVar13;
           break;
         case 10:
@@ -3247,7 +3259,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x91a;
+          iVar10 = 0x91a;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -3255,7 +3267,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x933;
+          iVar10 = 0x933;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -3263,7 +3275,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8e8;
+          iVar10 = 0x8e8;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -3271,7 +3283,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8f7;
+          iVar10 = 0x8f7;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -3279,7 +3291,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x942;
+          iVar10 = 0x942;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -3287,7 +3299,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x906;
+          iVar10 = 0x906;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -3295,7 +3307,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x910;
+          iVar10 = 0x910;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -3303,7 +3315,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8ed;
+          iVar10 = 0x8ed;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -3311,7 +3323,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x938;
+          iVar10 = 0x938;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -3319,7 +3331,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x8f2;
+          iVar10 = 0x8f2;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -3327,7 +3339,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x90b;
+          iVar10 = 0x90b;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -3335,7 +3347,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x929;
+          iVar10 = 0x929;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -3343,7 +3355,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x924;
+          iVar10 = 0x924;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -3351,11 +3363,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x92e;
+          iVar10 = 0x92e;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -3364,10 +3376,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 0xf;
           iVar10 = thunk_FUN_004732f0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x94e;
+          iVar10 = 0x94e;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -3377,7 +3389,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x955;
+          iVar10 = 0x955;
           local_8 = uVar13;
           break;
         case 2:
@@ -3385,7 +3397,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x95f;
+          iVar10 = 0x95f;
           local_8 = uVar13;
           break;
         case 3:
@@ -3393,7 +3405,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x95a;
+          iVar10 = 0x95a;
           local_8 = uVar13;
           break;
         case 4:
@@ -3401,7 +3413,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x97d;
+          iVar10 = 0x97d;
           local_8 = uVar13;
           break;
         case 5:
@@ -3409,7 +3421,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x982;
+          iVar10 = 0x982;
           local_8 = uVar13;
           break;
         case 6:
@@ -3417,7 +3429,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x964;
+          iVar10 = 0x964;
           local_8 = uVar13;
           break;
         case 7:
@@ -3425,7 +3437,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x996;
+          iVar10 = 0x996;
           local_8 = uVar13;
           break;
         case 8:
@@ -3433,7 +3445,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9be;
+          iVar10 = 0x9be;
           local_8 = uVar13;
           break;
         case 9:
@@ -3441,7 +3453,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9a0;
+          iVar10 = 0x9a0;
           local_8 = uVar13;
           break;
         case 10:
@@ -3449,7 +3461,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x99b;
+          iVar10 = 0x99b;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -3457,7 +3469,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9b4;
+          iVar10 = 0x9b4;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -3465,7 +3477,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x969;
+          iVar10 = 0x969;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -3473,7 +3485,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x978;
+          iVar10 = 0x978;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -3481,7 +3493,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9c3;
+          iVar10 = 0x9c3;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -3489,7 +3501,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x987;
+          iVar10 = 0x987;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -3497,7 +3509,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x991;
+          iVar10 = 0x991;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -3505,7 +3517,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x96e;
+          iVar10 = 0x96e;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -3513,7 +3525,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9b9;
+          iVar10 = 0x9b9;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -3521,7 +3533,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x973;
+          iVar10 = 0x973;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -3529,7 +3541,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x98c;
+          iVar10 = 0x98c;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -3537,7 +3549,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9aa;
+          iVar10 = 0x9aa;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -3545,7 +3557,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9a5;
+          iVar10 = 0x9a5;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -3553,11 +3565,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9af;
+          iVar10 = 0x9af;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -3566,10 +3578,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 0x14;
           iVar10 = thunk_FUN_004749c0(local_ec,(void *)0x0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x9cf;
+          iVar10 = 0x9cf;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -3579,7 +3591,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9d6;
+          iVar10 = 0x9d6;
           local_8 = uVar13;
           break;
         case 2:
@@ -3587,7 +3599,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9e0;
+          iVar10 = 0x9e0;
           local_8 = uVar13;
           break;
         case 3:
@@ -3595,7 +3607,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9db;
+          iVar10 = 0x9db;
           local_8 = uVar13;
           break;
         case 4:
@@ -3603,7 +3615,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9fe;
+          iVar10 = 0x9fe;
           local_8 = uVar13;
           break;
         case 5:
@@ -3611,7 +3623,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa03;
+          iVar10 = 0xa03;
           local_8 = uVar13;
           break;
         case 6:
@@ -3619,7 +3631,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9e5;
+          iVar10 = 0x9e5;
           local_8 = uVar13;
           break;
         case 7:
@@ -3627,7 +3639,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa17;
+          iVar10 = 0xa17;
           local_8 = uVar13;
           break;
         case 8:
@@ -3635,7 +3647,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa3f;
+          iVar10 = 0xa3f;
           local_8 = uVar13;
           break;
         case 9:
@@ -3643,7 +3655,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa21;
+          iVar10 = 0xa21;
           local_8 = uVar13;
           break;
         case 10:
@@ -3651,7 +3663,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa1c;
+          iVar10 = 0xa1c;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -3659,7 +3671,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa35;
+          iVar10 = 0xa35;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -3667,7 +3679,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9ea;
+          iVar10 = 0x9ea;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -3675,7 +3687,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9f9;
+          iVar10 = 0x9f9;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -3683,7 +3695,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa44;
+          iVar10 = 0xa44;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -3691,7 +3703,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa08;
+          iVar10 = 0xa08;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -3699,7 +3711,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa12;
+          iVar10 = 0xa12;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -3707,7 +3719,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9ef;
+          iVar10 = 0x9ef;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -3715,7 +3727,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa3a;
+          iVar10 = 0xa3a;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -3723,7 +3735,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x9f4;
+          iVar10 = 0x9f4;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -3731,7 +3743,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa0d;
+          iVar10 = 0xa0d;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -3739,7 +3751,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa2b;
+          iVar10 = 0xa2b;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -3747,7 +3759,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa26;
+          iVar10 = 0xa26;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -3755,11 +3767,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa30;
+          iVar10 = 0xa30;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -3768,10 +3780,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 0x10;
           iVar10 = thunk_FUN_004758e0(local_ec,(undefined4 *)0x0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xa50;
+          iVar10 = 0xa50;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -3781,7 +3793,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa57;
+          iVar10 = 0xa57;
           local_8 = uVar13;
           break;
         case 2:
@@ -3789,7 +3801,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa61;
+          iVar10 = 0xa61;
           local_8 = uVar13;
           break;
         case 3:
@@ -3797,7 +3809,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa5c;
+          iVar10 = 0xa5c;
           local_8 = uVar13;
           break;
         case 4:
@@ -3805,7 +3817,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa7f;
+          iVar10 = 0xa7f;
           local_8 = uVar13;
           break;
         case 5:
@@ -3813,7 +3825,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa84;
+          iVar10 = 0xa84;
           local_8 = uVar13;
           break;
         case 6:
@@ -3821,7 +3833,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa66;
+          iVar10 = 0xa66;
           local_8 = uVar13;
           break;
         case 7:
@@ -3829,7 +3841,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa98;
+          iVar10 = 0xa98;
           local_8 = uVar13;
           break;
         case 8:
@@ -3837,7 +3849,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xac0;
+          iVar10 = 0xac0;
           local_8 = uVar13;
           break;
         case 9:
@@ -3845,7 +3857,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xaa2;
+          iVar10 = 0xaa2;
           local_8 = uVar13;
           break;
         case 10:
@@ -3853,7 +3865,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa9d;
+          iVar10 = 0xa9d;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -3861,7 +3873,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xab6;
+          iVar10 = 0xab6;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -3869,7 +3881,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa6b;
+          iVar10 = 0xa6b;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -3877,7 +3889,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa7a;
+          iVar10 = 0xa7a;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -3885,7 +3897,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xac5;
+          iVar10 = 0xac5;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -3893,7 +3905,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa89;
+          iVar10 = 0xa89;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -3901,7 +3913,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa93;
+          iVar10 = 0xa93;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -3909,7 +3921,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa70;
+          iVar10 = 0xa70;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -3917,7 +3929,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xabb;
+          iVar10 = 0xabb;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -3925,7 +3937,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa75;
+          iVar10 = 0xa75;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -3933,7 +3945,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xa8e;
+          iVar10 = 0xa8e;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -3941,7 +3953,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xaac;
+          iVar10 = 0xaac;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -3949,7 +3961,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xaa7;
+          iVar10 = 0xaa7;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -3957,11 +3969,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xab1;
+          iVar10 = 0xab1;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -3971,19 +3983,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_004761b0((int *)local_ec,uVar13,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xad1);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xad1);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xad5;
+          iVar10 = 0xad5;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -3993,7 +4006,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xadd;
+          iVar10 = 0xadd;
           local_8 = uVar13;
           break;
         case 2:
@@ -4001,7 +4014,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xae8;
+          iVar10 = 0xae8;
           local_8 = uVar13;
           break;
         case 3:
@@ -4009,7 +4022,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xae3;
+          iVar10 = 0xae3;
           local_8 = uVar13;
           break;
         case 4:
@@ -4017,7 +4030,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb06;
+          iVar10 = 0xb06;
           local_8 = uVar13;
           break;
         case 5:
@@ -4025,7 +4038,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb0b;
+          iVar10 = 0xb0b;
           local_8 = uVar13;
           break;
         case 6:
@@ -4033,7 +4046,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xaed;
+          iVar10 = 0xaed;
           local_8 = uVar13;
           break;
         case 7:
@@ -4041,7 +4054,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb1f;
+          iVar10 = 0xb1f;
           local_8 = uVar13;
           break;
         case 8:
@@ -4049,7 +4062,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb47;
+          iVar10 = 0xb47;
           local_8 = uVar13;
           break;
         case 9:
@@ -4057,7 +4070,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb29;
+          iVar10 = 0xb29;
           local_8 = uVar13;
           break;
         case 10:
@@ -4065,7 +4078,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb24;
+          iVar10 = 0xb24;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -4073,7 +4086,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb3d;
+          iVar10 = 0xb3d;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -4081,7 +4094,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xaf2;
+          iVar10 = 0xaf2;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -4089,7 +4102,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb01;
+          iVar10 = 0xb01;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -4097,7 +4110,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb4c;
+          iVar10 = 0xb4c;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -4105,7 +4118,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb10;
+          iVar10 = 0xb10;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -4113,7 +4126,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb1a;
+          iVar10 = 0xb1a;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -4121,7 +4134,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xaf7;
+          iVar10 = 0xaf7;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -4129,7 +4142,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb42;
+          iVar10 = 0xb42;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -4137,7 +4150,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xafc;
+          iVar10 = 0xafc;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -4145,7 +4158,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb15;
+          iVar10 = 0xb15;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -4153,7 +4166,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb33;
+          iVar10 = 0xb33;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -4161,7 +4174,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb2e;
+          iVar10 = 0xb2e;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -4169,11 +4182,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb38;
+          iVar10 = 0xb38;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -4183,19 +4196,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_00476a10(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xb58);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xb58);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xb5c;
+          iVar10 = 0xb5c;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -4205,7 +4219,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb64;
+          iVar10 = 0xb64;
           local_8 = uVar13;
           break;
         case 2:
@@ -4213,7 +4227,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb6f;
+          iVar10 = 0xb6f;
           local_8 = uVar13;
           break;
         case 3:
@@ -4221,7 +4235,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb6a;
+          iVar10 = 0xb6a;
           local_8 = uVar13;
           break;
         case 4:
@@ -4229,7 +4243,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb8d;
+          iVar10 = 0xb8d;
           local_8 = uVar13;
           break;
         case 5:
@@ -4237,7 +4251,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb92;
+          iVar10 = 0xb92;
           local_8 = uVar13;
           break;
         case 6:
@@ -4245,7 +4259,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb74;
+          iVar10 = 0xb74;
           local_8 = uVar13;
           break;
         case 7:
@@ -4253,7 +4267,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xba6;
+          iVar10 = 0xba6;
           local_8 = uVar13;
           break;
         case 8:
@@ -4261,7 +4275,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbce;
+          iVar10 = 0xbce;
           local_8 = uVar13;
           break;
         case 9:
@@ -4269,7 +4283,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbb0;
+          iVar10 = 0xbb0;
           local_8 = uVar13;
           break;
         case 10:
@@ -4277,7 +4291,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbab;
+          iVar10 = 0xbab;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -4285,7 +4299,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbc4;
+          iVar10 = 0xbc4;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -4293,7 +4307,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb79;
+          iVar10 = 0xb79;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -4301,7 +4315,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb88;
+          iVar10 = 0xb88;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -4309,7 +4323,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbd3;
+          iVar10 = 0xbd3;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -4317,7 +4331,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb97;
+          iVar10 = 0xb97;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -4325,7 +4339,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xba1;
+          iVar10 = 0xba1;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -4333,7 +4347,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb7e;
+          iVar10 = 0xb7e;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -4341,7 +4355,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbc9;
+          iVar10 = 0xbc9;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -4349,7 +4363,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb83;
+          iVar10 = 0xb83;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -4357,7 +4371,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xb9c;
+          iVar10 = 0xb9c;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -4365,7 +4379,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbba;
+          iVar10 = 0xbba;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -4373,7 +4387,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbb5;
+          iVar10 = 0xbb5;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -4381,11 +4395,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbbf;
+          iVar10 = 0xbbf;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -4395,19 +4409,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_00476ce0(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xbdf);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xbdf);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xbe3;
+          iVar10 = 0xbe3;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -4417,7 +4432,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbeb;
+          iVar10 = 0xbeb;
           local_8 = uVar13;
           break;
         case 2:
@@ -4425,7 +4440,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbf6;
+          iVar10 = 0xbf6;
           local_8 = uVar13;
           break;
         case 3:
@@ -4433,7 +4448,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbf1;
+          iVar10 = 0xbf1;
           local_8 = uVar13;
           break;
         case 4:
@@ -4441,7 +4456,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc14;
+          iVar10 = 0xc14;
           local_8 = uVar13;
           break;
         case 5:
@@ -4449,7 +4464,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc19;
+          iVar10 = 0xc19;
           local_8 = uVar13;
           break;
         case 6:
@@ -4457,7 +4472,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xbfb;
+          iVar10 = 0xbfb;
           local_8 = uVar13;
           break;
         case 7:
@@ -4465,7 +4480,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc2d;
+          iVar10 = 0xc2d;
           local_8 = uVar13;
           break;
         case 8:
@@ -4473,7 +4488,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc55;
+          iVar10 = 0xc55;
           local_8 = uVar13;
           break;
         case 9:
@@ -4481,7 +4496,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc37;
+          iVar10 = 0xc37;
           local_8 = uVar13;
           break;
         case 10:
@@ -4489,7 +4504,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc32;
+          iVar10 = 0xc32;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -4497,7 +4512,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc4b;
+          iVar10 = 0xc4b;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -4505,7 +4520,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc00;
+          iVar10 = 0xc00;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -4513,7 +4528,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc0f;
+          iVar10 = 0xc0f;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -4521,7 +4536,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc5a;
+          iVar10 = 0xc5a;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -4529,7 +4544,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc1e;
+          iVar10 = 0xc1e;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -4537,7 +4552,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc28;
+          iVar10 = 0xc28;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -4545,7 +4560,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc05;
+          iVar10 = 0xc05;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -4553,7 +4568,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc50;
+          iVar10 = 0xc50;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -4561,7 +4576,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc0a;
+          iVar10 = 0xc0a;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -4569,7 +4584,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc23;
+          iVar10 = 0xc23;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -4577,7 +4592,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc41;
+          iVar10 = 0xc41;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -4585,7 +4600,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc3c;
+          iVar10 = 0xc3c;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -4593,11 +4608,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc46;
+          iVar10 = 0xc46;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -4607,19 +4622,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_00478640(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xc66);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xc66);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xc6a;
+          iVar10 = 0xc6a;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -4629,7 +4645,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc72;
+          iVar10 = 0xc72;
           local_8 = uVar13;
           break;
         case 2:
@@ -4637,7 +4653,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc7d;
+          iVar10 = 0xc7d;
           local_8 = uVar13;
           break;
         case 3:
@@ -4645,7 +4661,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc78;
+          iVar10 = 0xc78;
           local_8 = uVar13;
           break;
         case 4:
@@ -4653,7 +4669,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc9b;
+          iVar10 = 0xc9b;
           local_8 = uVar13;
           break;
         case 5:
@@ -4661,7 +4677,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xca0;
+          iVar10 = 0xca0;
           local_8 = uVar13;
           break;
         case 6:
@@ -4669,7 +4685,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc82;
+          iVar10 = 0xc82;
           local_8 = uVar13;
           break;
         case 7:
@@ -4677,7 +4693,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcb4;
+          iVar10 = 0xcb4;
           local_8 = uVar13;
           break;
         case 8:
@@ -4685,7 +4701,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcdc;
+          iVar10 = 0xcdc;
           local_8 = uVar13;
           break;
         case 9:
@@ -4693,7 +4709,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcbe;
+          iVar10 = 0xcbe;
           local_8 = uVar13;
           break;
         case 10:
@@ -4701,7 +4717,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcb9;
+          iVar10 = 0xcb9;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -4709,7 +4725,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcd2;
+          iVar10 = 0xcd2;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -4717,7 +4733,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc87;
+          iVar10 = 0xc87;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -4725,7 +4741,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc96;
+          iVar10 = 0xc96;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -4733,7 +4749,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xce1;
+          iVar10 = 0xce1;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -4741,7 +4757,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xca5;
+          iVar10 = 0xca5;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -4749,7 +4765,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcaf;
+          iVar10 = 0xcaf;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -4757,7 +4773,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc8c;
+          iVar10 = 0xc8c;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -4765,7 +4781,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcd7;
+          iVar10 = 0xcd7;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -4773,7 +4789,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xc91;
+          iVar10 = 0xc91;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -4781,7 +4797,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcaa;
+          iVar10 = 0xcaa;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -4789,7 +4805,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcc8;
+          iVar10 = 0xcc8;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -4797,7 +4813,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcc3;
+          iVar10 = 0xcc3;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -4805,11 +4821,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xccd;
+          iVar10 = 0xccd;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -4819,19 +4835,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_00479600(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xced);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xced);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xcf1;
+          iVar10 = 0xcf1;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -4841,7 +4858,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcf9;
+          iVar10 = 0xcf9;
           local_8 = uVar13;
           break;
         case 2:
@@ -4849,7 +4866,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd04;
+          iVar10 = 0xd04;
           local_8 = uVar13;
           break;
         case 3:
@@ -4857,7 +4874,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xcff;
+          iVar10 = 0xcff;
           local_8 = uVar13;
           break;
         case 4:
@@ -4865,7 +4882,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd22;
+          iVar10 = 0xd22;
           local_8 = uVar13;
           break;
         case 5:
@@ -4873,7 +4890,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd27;
+          iVar10 = 0xd27;
           local_8 = uVar13;
           break;
         case 6:
@@ -4881,7 +4898,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd09;
+          iVar10 = 0xd09;
           local_8 = uVar13;
           break;
         case 7:
@@ -4889,7 +4906,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd3b;
+          iVar10 = 0xd3b;
           local_8 = uVar13;
           break;
         case 8:
@@ -4897,7 +4914,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd63;
+          iVar10 = 0xd63;
           local_8 = uVar13;
           break;
         case 9:
@@ -4905,7 +4922,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd45;
+          iVar10 = 0xd45;
           local_8 = uVar13;
           break;
         case 10:
@@ -4913,7 +4930,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd40;
+          iVar10 = 0xd40;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -4921,7 +4938,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd59;
+          iVar10 = 0xd59;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -4929,7 +4946,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd0e;
+          iVar10 = 0xd0e;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -4937,7 +4954,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd1d;
+          iVar10 = 0xd1d;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -4945,7 +4962,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd68;
+          iVar10 = 0xd68;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -4953,7 +4970,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd2c;
+          iVar10 = 0xd2c;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -4961,7 +4978,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd36;
+          iVar10 = 0xd36;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -4969,7 +4986,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd13;
+          iVar10 = 0xd13;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -4977,7 +4994,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd5e;
+          iVar10 = 0xd5e;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -4985,7 +5002,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd18;
+          iVar10 = 0xd18;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -4993,7 +5010,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd31;
+          iVar10 = 0xd31;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -5001,7 +5018,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd4f;
+          iVar10 = 0xd4f;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -5009,7 +5026,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd4a;
+          iVar10 = 0xd4a;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -5017,11 +5034,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd54;
+          iVar10 = 0xd54;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -5031,19 +5048,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_0047c050(local_ec,(int *)0x0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xd74);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xd74);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xd78;
+          iVar10 = 0xd78;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -5053,7 +5071,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd80;
+          iVar10 = 0xd80;
           local_8 = uVar13;
           break;
         case 2:
@@ -5061,7 +5079,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd8b;
+          iVar10 = 0xd8b;
           local_8 = uVar13;
           break;
         case 3:
@@ -5069,7 +5087,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd86;
+          iVar10 = 0xd86;
           local_8 = uVar13;
           break;
         case 4:
@@ -5077,7 +5095,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xda9;
+          iVar10 = 0xda9;
           local_8 = uVar13;
           break;
         case 5:
@@ -5085,7 +5103,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdae;
+          iVar10 = 0xdae;
           local_8 = uVar13;
           break;
         case 6:
@@ -5093,7 +5111,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd90;
+          iVar10 = 0xd90;
           local_8 = uVar13;
           break;
         case 7:
@@ -5101,7 +5119,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdc2;
+          iVar10 = 0xdc2;
           local_8 = uVar13;
           break;
         case 8:
@@ -5109,7 +5127,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdea;
+          iVar10 = 0xdea;
           local_8 = uVar13;
           break;
         case 9:
@@ -5117,7 +5135,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdcc;
+          iVar10 = 0xdcc;
           local_8 = uVar13;
           break;
         case 10:
@@ -5125,7 +5143,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdc7;
+          iVar10 = 0xdc7;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -5133,7 +5151,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xde0;
+          iVar10 = 0xde0;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -5141,7 +5159,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd95;
+          iVar10 = 0xd95;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -5149,7 +5167,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xda4;
+          iVar10 = 0xda4;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -5157,7 +5175,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdef;
+          iVar10 = 0xdef;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -5165,7 +5183,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdb3;
+          iVar10 = 0xdb3;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -5173,7 +5191,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdbd;
+          iVar10 = 0xdbd;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -5181,7 +5199,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd9a;
+          iVar10 = 0xd9a;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -5189,7 +5207,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xde5;
+          iVar10 = 0xde5;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -5197,7 +5215,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xd9f;
+          iVar10 = 0xd9f;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -5205,7 +5223,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdb8;
+          iVar10 = 0xdb8;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -5213,7 +5231,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdd6;
+          iVar10 = 0xdd6;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -5221,7 +5239,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xdd1;
+          iVar10 = 0xdd1;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -5229,11 +5247,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xddb;
+          iVar10 = 0xddb;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -5243,19 +5261,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_0047d080(local_ec,(undefined4 *)0x0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xdfb);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xdfb);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xdff;
+          iVar10 = 0xdff;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -5265,7 +5284,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe07;
+          iVar10 = 0xe07;
           local_8 = uVar13;
           break;
         case 2:
@@ -5273,7 +5292,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe12;
+          iVar10 = 0xe12;
           local_8 = uVar13;
           break;
         case 3:
@@ -5281,7 +5300,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe0d;
+          iVar10 = 0xe0d;
           local_8 = uVar13;
           break;
         case 4:
@@ -5289,7 +5308,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe30;
+          iVar10 = 0xe30;
           local_8 = uVar13;
           break;
         case 5:
@@ -5297,7 +5316,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe35;
+          iVar10 = 0xe35;
           local_8 = uVar13;
           break;
         case 6:
@@ -5305,7 +5324,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe17;
+          iVar10 = 0xe17;
           local_8 = uVar13;
           break;
         case 7:
@@ -5313,7 +5332,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe49;
+          iVar10 = 0xe49;
           local_8 = uVar13;
           break;
         case 8:
@@ -5321,7 +5340,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe71;
+          iVar10 = 0xe71;
           local_8 = uVar13;
           break;
         case 9:
@@ -5329,7 +5348,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe53;
+          iVar10 = 0xe53;
           local_8 = uVar13;
           break;
         case 10:
@@ -5337,7 +5356,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe4e;
+          iVar10 = 0xe4e;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -5345,7 +5364,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe67;
+          iVar10 = 0xe67;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -5353,7 +5372,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe1c;
+          iVar10 = 0xe1c;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -5361,7 +5380,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe2b;
+          iVar10 = 0xe2b;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -5369,7 +5388,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe76;
+          iVar10 = 0xe76;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -5377,7 +5396,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe3a;
+          iVar10 = 0xe3a;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -5385,7 +5404,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe44;
+          iVar10 = 0xe44;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -5393,7 +5412,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe21;
+          iVar10 = 0xe21;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -5401,7 +5420,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe6c;
+          iVar10 = 0xe6c;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -5409,7 +5428,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe26;
+          iVar10 = 0xe26;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -5417,7 +5436,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe3f;
+          iVar10 = 0xe3f;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -5425,7 +5444,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe5d;
+          iVar10 = 0xe5d;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -5433,7 +5452,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe58;
+          iVar10 = 0xe58;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -5441,11 +5460,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe62;
+          iVar10 = 0xe62;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -5455,19 +5474,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_0047df00((int *)local_ec,uVar13,(int *)0x0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xe82);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xe82);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xe86;
+          iVar10 = 0xe86;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -5477,7 +5497,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe8e;
+          iVar10 = 0xe8e;
           local_8 = uVar13;
           break;
         case 2:
@@ -5485,7 +5505,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe99;
+          iVar10 = 0xe99;
           local_8 = uVar13;
           break;
         case 3:
@@ -5493,7 +5513,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe94;
+          iVar10 = 0xe94;
           local_8 = uVar13;
           break;
         case 4:
@@ -5501,7 +5521,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xeb7;
+          iVar10 = 0xeb7;
           local_8 = uVar13;
           break;
         case 5:
@@ -5509,7 +5529,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xebc;
+          iVar10 = 0xebc;
           local_8 = uVar13;
           break;
         case 6:
@@ -5517,7 +5537,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xe9e;
+          iVar10 = 0xe9e;
           local_8 = uVar13;
           break;
         case 7:
@@ -5525,7 +5545,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xed0;
+          iVar10 = 0xed0;
           local_8 = uVar13;
           break;
         case 8:
@@ -5533,7 +5553,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xef8;
+          iVar10 = 0xef8;
           local_8 = uVar13;
           break;
         case 9:
@@ -5541,7 +5561,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xeda;
+          iVar10 = 0xeda;
           local_8 = uVar13;
           break;
         case 10:
@@ -5549,7 +5569,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xed5;
+          iVar10 = 0xed5;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -5557,7 +5577,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xeee;
+          iVar10 = 0xeee;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -5565,7 +5585,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xea3;
+          iVar10 = 0xea3;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -5573,7 +5593,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xeb2;
+          iVar10 = 0xeb2;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -5581,7 +5601,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xefd;
+          iVar10 = 0xefd;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -5589,7 +5609,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xec1;
+          iVar10 = 0xec1;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -5597,7 +5617,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xecb;
+          iVar10 = 0xecb;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -5605,7 +5625,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xea8;
+          iVar10 = 0xea8;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -5613,7 +5633,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xef3;
+          iVar10 = 0xef3;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -5621,7 +5641,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xead;
+          iVar10 = 0xead;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -5629,7 +5649,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xec6;
+          iVar10 = 0xec6;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -5637,7 +5657,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xee4;
+          iVar10 = 0xee4;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -5645,7 +5665,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xedf;
+          iVar10 = 0xedf;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -5653,11 +5673,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xee9;
+          iVar10 = 0xee9;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -5667,19 +5687,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_0047fe10(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xf09);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xf09);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xf0d;
+          iVar10 = 0xf0d;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -5689,7 +5710,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf15;
+          iVar10 = 0xf15;
           local_8 = uVar13;
           break;
         case 2:
@@ -5697,7 +5718,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf20;
+          iVar10 = 0xf20;
           local_8 = uVar13;
           break;
         case 3:
@@ -5705,7 +5726,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf1b;
+          iVar10 = 0xf1b;
           local_8 = uVar13;
           break;
         case 4:
@@ -5713,7 +5734,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf3e;
+          iVar10 = 0xf3e;
           local_8 = uVar13;
           break;
         case 5:
@@ -5721,7 +5742,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf43;
+          iVar10 = 0xf43;
           local_8 = uVar13;
           break;
         case 6:
@@ -5729,7 +5750,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf25;
+          iVar10 = 0xf25;
           local_8 = uVar13;
           break;
         case 7:
@@ -5737,7 +5758,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf57;
+          iVar10 = 0xf57;
           local_8 = uVar13;
           break;
         case 8:
@@ -5745,7 +5766,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf7f;
+          iVar10 = 0xf7f;
           local_8 = uVar13;
           break;
         case 9:
@@ -5753,7 +5774,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf61;
+          iVar10 = 0xf61;
           local_8 = uVar13;
           break;
         case 10:
@@ -5761,7 +5782,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf5c;
+          iVar10 = 0xf5c;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -5769,7 +5790,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf75;
+          iVar10 = 0xf75;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -5777,7 +5798,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf2a;
+          iVar10 = 0xf2a;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -5785,7 +5806,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf39;
+          iVar10 = 0xf39;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -5793,7 +5814,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf84;
+          iVar10 = 0xf84;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -5801,7 +5822,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf48;
+          iVar10 = 0xf48;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -5809,7 +5830,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf52;
+          iVar10 = 0xf52;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -5817,7 +5838,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf2f;
+          iVar10 = 0xf2f;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -5825,7 +5846,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf7a;
+          iVar10 = 0xf7a;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -5833,7 +5854,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf34;
+          iVar10 = 0xf34;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -5841,7 +5862,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf4d;
+          iVar10 = 0xf4d;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -5849,7 +5870,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf6b;
+          iVar10 = 0xf6b;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -5857,7 +5878,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf66;
+          iVar10 = 0xf66;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -5865,11 +5886,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf70;
+          iVar10 = 0xf70;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -5879,19 +5900,20 @@ LAB_0045ad7b:
           iVar10 = thunk_FUN_004803d0(local_ec,0);
           local_8 = iVar10;
           if (iVar10 == -1) {
-            FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0xf90);
+            RaiseInternalException
+                      (0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0xf90);
           }
           if (iVar10 != 0) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0xf94;
+          iVar10 = 0xf94;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -5901,7 +5923,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xf9c;
+          iVar10 = 0xf9c;
           local_8 = uVar13;
           break;
         case 2:
@@ -5909,7 +5931,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfa7;
+          iVar10 = 0xfa7;
           local_8 = uVar13;
           break;
         case 3:
@@ -5917,7 +5939,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfa2;
+          iVar10 = 0xfa2;
           local_8 = uVar13;
           break;
         case 4:
@@ -5925,7 +5947,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfc5;
+          iVar10 = 0xfc5;
           local_8 = uVar13;
           break;
         case 5:
@@ -5933,7 +5955,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfca;
+          iVar10 = 0xfca;
           local_8 = uVar13;
           break;
         case 6:
@@ -5941,7 +5963,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfac;
+          iVar10 = 0xfac;
           local_8 = uVar13;
           break;
         case 7:
@@ -5949,7 +5971,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfde;
+          iVar10 = 0xfde;
           local_8 = uVar13;
           break;
         case 8:
@@ -5957,7 +5979,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1006;
+          iVar10 = 0x1006;
           local_8 = uVar13;
           break;
         case 9:
@@ -5965,7 +5987,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfe8;
+          iVar10 = 0xfe8;
           local_8 = uVar13;
           break;
         case 10:
@@ -5973,7 +5995,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfe3;
+          iVar10 = 0xfe3;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -5981,7 +6003,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xffc;
+          iVar10 = 0xffc;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -5989,7 +6011,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfb1;
+          iVar10 = 0xfb1;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -5997,7 +6019,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfc0;
+          iVar10 = 0xfc0;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -6005,7 +6027,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x100b;
+          iVar10 = 0x100b;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -6013,7 +6035,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfcf;
+          iVar10 = 0xfcf;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -6021,7 +6043,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfd9;
+          iVar10 = 0xfd9;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -6029,7 +6051,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfb6;
+          iVar10 = 0xfb6;
           local_8 = uVar13;
           break;
         case 0x12:
@@ -6037,7 +6059,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x76;
           uVar13 = thunk_FUN_0047fad0((int *)local_ec,uVar13,(void *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1001;
+          iVar10 = 0x1001;
           local_8 = uVar13;
           break;
         case 0x13:
@@ -6045,7 +6067,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfbb;
+          iVar10 = 0xfbb;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -6053,7 +6075,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfd4;
+          iVar10 = 0xfd4;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -6061,7 +6083,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xff2;
+          iVar10 = 0xff2;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -6069,7 +6091,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xfed;
+          iVar10 = 0xfed;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -6077,11 +6099,11 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0xff7;
+          iVar10 = 0xff7;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
       }
@@ -6091,10 +6113,10 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x45d) = 3;
           iVar10 = thunk_FUN_004608b0(local_ec,0);
           if (iVar10 != -1) {
-            DAT_00858df8 = local_184;
+            g_currentExceptionFrame = local_184.previous;
             return 0;
           }
-          uVar12 = 0x1017;
+          iVar10 = 0x1017;
           local_8 = 0xffffffff;
           goto LAB_0045aee3;
         }
@@ -6104,7 +6126,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x65;
           uVar13 = thunk_FUN_00460360((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x101e;
+          iVar10 = 0x101e;
           local_8 = uVar13;
           break;
         case 2:
@@ -6112,7 +6134,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x66;
           uVar13 = thunk_FUN_004653b0((int *)local_ec,uVar13,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1028;
+          iVar10 = 0x1028;
           local_8 = uVar13;
           break;
         case 3:
@@ -6120,7 +6142,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x67;
           uVar13 = thunk_FUN_004620f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1023;
+          iVar10 = 0x1023;
           local_8 = uVar13;
           break;
         case 4:
@@ -6128,7 +6150,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x68;
           uVar13 = STBoatC::BackToDok((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1046;
+          iVar10 = 0x1046;
           local_8 = uVar13;
           break;
         case 5:
@@ -6136,7 +6158,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x69;
           uVar13 = thunk_FUN_004732d0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x104b;
+          iVar10 = 0x104b;
           local_8 = uVar13;
           break;
         case 6:
@@ -6144,7 +6166,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6a;
           uVar13 = STBoatC::BackPatrol((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x102d;
+          iVar10 = 0x102d;
           local_8 = uVar13;
           break;
         case 7:
@@ -6152,7 +6174,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6b;
           uVar13 = thunk_FUN_004769f0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x105f;
+          iVar10 = 0x105f;
           local_8 = uVar13;
           break;
         case 8:
@@ -6160,7 +6182,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6c;
           uVar13 = thunk_FUN_004803b0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1082;
+          iVar10 = 0x1082;
           local_8 = uVar13;
           break;
         case 9:
@@ -6168,7 +6190,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6d;
           uVar13 = thunk_FUN_00478030(local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1069;
+          iVar10 = 0x1069;
           local_8 = uVar13;
           break;
         case 10:
@@ -6176,7 +6198,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6e;
           uVar13 = thunk_FUN_00476cc0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1064;
+          iVar10 = 0x1064;
           local_8 = uVar13;
           break;
         case 0xb:
@@ -6184,7 +6206,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x6f;
           uVar13 = thunk_FUN_0047da50((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x107d;
+          iVar10 = 0x107d;
           local_8 = uVar13;
           break;
         case 0xc:
@@ -6192,7 +6214,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x70;
           uVar13 = STBoatC::BackLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1032;
+          iVar10 = 0x1032;
           local_8 = uVar13;
           break;
         case 0xd:
@@ -6200,7 +6222,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x71;
           uVar13 = STBoatC::BackUnLoadRC((STBoatC *)local_ec,0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1041;
+          iVar10 = 0x1041;
           local_8 = uVar13;
           break;
         case 0xe:
@@ -6208,7 +6230,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x72;
           uVar13 = thunk_FUN_004805b0(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1087;
+          iVar10 = 0x1087;
           local_8 = uVar13;
           break;
         case 0xf:
@@ -6216,7 +6238,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x73;
           uVar13 = thunk_FUN_00474810(local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1050;
+          iVar10 = 0x1050;
           local_8 = uVar13;
           break;
         case 0x10:
@@ -6224,7 +6246,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x74;
           uVar13 = STBoatC::BackUnLoadObj((STBoatC *)local_ec,(int *)0x0);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x105a;
+          iVar10 = 0x105a;
           local_8 = uVar13;
           break;
         case 0x11:
@@ -6232,18 +6254,18 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x75;
           uVar13 = STBoatC::BackBuild((STBoatC *)local_ec,(int *)0x0,unaff_EDI,unaff_ESI);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1037;
+          iVar10 = 0x1037;
           local_8 = uVar13;
           break;
         default:
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         case 0x13:
           *(undefined4 *)(local_ec + 0x45d) = 0;
           *(undefined4 *)(local_ec + 0x459) = 0x77;
           uVar13 = thunk_FUN_0046d400((int *)local_ec,uVar13);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x103c;
+          iVar10 = 0x103c;
           local_8 = uVar13;
           break;
         case 0x14:
@@ -6251,7 +6273,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x78;
           uVar13 = thunk_FUN_00475530((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1055;
+          iVar10 = 0x1055;
           local_8 = uVar13;
           break;
         case 0x15:
@@ -6259,7 +6281,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x79;
           uVar13 = thunk_FUN_0047bf70((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1073;
+          iVar10 = 0x1073;
           local_8 = uVar13;
           break;
         case 0x16:
@@ -6267,7 +6289,7 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7a;
           uVar13 = thunk_FUN_004795e0((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x106e;
+          iVar10 = 0x106e;
           local_8 = uVar13;
           break;
         case 0x17:
@@ -6275,19 +6297,19 @@ LAB_0045ad7b:
           *(undefined4 *)(local_ec + 0x459) = 0x7b;
           uVar13 = thunk_FUN_0047cf20((int *)local_ec);
           if (uVar13 != -1) goto LAB_00458c5b;
-          uVar12 = 0x1078;
+          iVar10 = 0x1078;
           local_8 = uVar13;
         }
       }
       uVar13 = local_8;
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,uVar12);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar10);
 LAB_00458c5b:
       if (uVar13 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x459) = 0;
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
 LAB_0045910d:
@@ -6296,21 +6318,21 @@ LAB_0045910d:
       iVar10 = thunk_FUN_004602e0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1094);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1094);
       }
       if (iVar10 == 0) {
         *(undefined4 *)(local_ec + 0x45d) = 3;
         iVar10 = thunk_FUN_004608b0(local_ec,0);
         if (iVar10 != -1) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        uVar12 = 0x1099;
+        iVar10 = 0x1099;
         local_8 = 0xffffffff;
       }
       else {
         if (iVar10 != 3) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (((*(int *)(local_ec + 0xb3) == 0) &&
@@ -6320,22 +6342,22 @@ LAB_0045910d:
                      (int)((*(int *)(local_ec + 0xbf) - (int)*(short *)(local_ec + 0x5d) ^ uVar13) -
                           uVar13) < 2)) {
           uVar13 = *(int *)(local_ec + 0xc3) - (int)*(short *)(local_ec + 0x5f);
-          uVar20 = (int)uVar13 >> 0x1f;
-          iVar10 = (uVar13 ^ uVar20) - uVar20;
+          uVar15 = (int)uVar13 >> 0x1f;
+          iVar10 = (uVar13 ^ uVar15) - uVar15;
           if ((iVar10 < 2) &&
-             (uVar19 = (undefined2)((uint)iVar10 >> 0x10),
+             (uVar20 = (undefined2)((uint)iVar10 >> 0x10),
              iVar10 = (**(code **)(*(int *)local_ec + 0x18))
-                                (CONCAT22(uVar19,*(undefined2 *)(local_ec + 0xbb)),
+                                (CONCAT22(uVar20,*(undefined2 *)(local_ec + 0xbb)),
                                  CONCAT22(*(short *)(local_ec + 0x5f) >> 0xf,
                                           *(undefined2 *)(local_ec + 0xbf)),
-                                 CONCAT22(uVar19,*(undefined2 *)(local_ec + 0xc3))), iVar10 == 0)) {
+                                 CONCAT22(uVar20,*(undefined2 *)(local_ec + 0xc3))), iVar10 == 0)) {
             *(undefined4 *)(local_ec + 0x45d) = 3;
             iVar10 = thunk_FUN_004608b0(local_ec,0);
             if (iVar10 != -1) {
-              DAT_00858df8 = local_184;
+              g_currentExceptionFrame = local_184.previous;
               return 0;
             }
-            uVar12 = 0x10ad;
+            iVar10 = 0x10ad;
             local_8 = 0xffffffff;
             break;
           }
@@ -6345,16 +6367,16 @@ LAB_0045910d:
           uVar13 = *(int *)(local_ec + 0x1c) * 0x41c64e6d + 0x3039;
           *(uint *)(local_ec + 0x1c) = uVar13;
           *(short *)(local_ec + 0xf8) = (short)((ulonglong)(uVar13 >> 0x10) % 0x1f) + 0x1e;
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         *(undefined4 *)(local_ec + 0x45d) = 3;
         iVar10 = thunk_FUN_004608b0(local_ec,0);
         if (iVar10 != -1) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        uVar12 = 0x10b3;
+        iVar10 = 0x10b3;
         local_8 = 0xffffffff;
       }
       break;
@@ -6362,7 +6384,7 @@ LAB_0045910d:
       iVar10 = thunk_FUN_00462180(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x10be);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x10be);
       }
       if (iVar10 != 0) {
         if (iVar10 == 3) {
@@ -6370,25 +6392,25 @@ LAB_0045910d:
           iVar10 = *(int *)(local_ec + 0x1c) * 0x41c64e6d + 0x3039;
           *(int *)(local_ec + 0x1c) = iVar10;
           *(ushort *)(local_ec + 0xf8) = ((ushort)((uint)iVar10 >> 0x10) & 0xf) + 0xf;
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (iVar10 == 4) {
           (**(code **)(*local_1c + 8))(0x66,local_ec + 0x32);
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (iVar10 == 6) {
           (**(code **)(*local_1c + 8))(0x68,local_ec + 0x32);
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         if (iVar10 != 7) {
-          DAT_00858df8 = local_184;
+          g_currentExceptionFrame = local_184.previous;
           return 0;
         }
         (**(code **)(*local_1c + 8))(0x69,local_ec + 0x32);
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       local_46 = *(undefined2 *)(local_ec + 0x7f2);
@@ -6399,430 +6421,431 @@ LAB_0045910d:
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x10c8;
+      iVar10 = 0x10c8;
       local_8 = 0xffffffff;
       break;
     case 3:
       iVar10 = thunk_FUN_004608b0(local_ec,2);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x10bb;
+      iVar10 = 0x10bb;
       local_8 = 0xffffffff;
       break;
     case 4:
       iVar10 = thunk_FUN_0046f5c0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x111a);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x111a);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      puVar17 = (undefined4 *)thunk_FUN_004357f0((char)local_ec[0x24]);
-      if (puVar17 != (undefined4 *)0x0) {
+      puVar18 = (undefined4 *)thunk_FUN_004357f0((char)local_ec[0x24]);
+      if (puVar18 != (undefined4 *)0x0) {
         local_8c = 0x5d94;
         local_88 = (int *)CONCAT22(*(undefined2 *)(local_ec + 0x32),*(undefined2 *)(local_ec + 0x24)
                                   );
         local_84 = *(undefined4 *)(local_ec + 0x18);
-        (**(code **)*puVar17)(local_9c);
+        (**(code **)*puVar18)(local_9c);
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1127;
+      iVar10 = 0x1127;
       local_8 = 0xffffffff;
       break;
     case 5:
       iVar10 = thunk_FUN_00471ac0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x112c);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x112c);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1131;
+      iVar10 = 0x1131;
       local_8 = 0xffffffff;
       break;
     case 6:
       iVar10 = thunk_FUN_004658d0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x10e8);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x10e8);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x10ed;
+      iVar10 = 0x10ed;
       local_8 = 0xffffffff;
       break;
     case 7:
       iVar10 = thunk_FUN_004761b0((int *)local_ec,uVar13,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1154);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1154);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1159;
+      iVar10 = 0x1159;
       local_8 = 0xffffffff;
       break;
     case 8:
       iVar10 = thunk_FUN_0047fe10(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x11ac);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x11ac);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x11b1;
+      iVar10 = 0x11b1;
       local_8 = 0xffffffff;
       break;
     case 9:
       iVar10 = thunk_FUN_00476ce0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1168);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1168);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x116d;
+      iVar10 = 0x116d;
       local_8 = 0xffffffff;
       break;
     case 10:
       iVar10 = thunk_FUN_00476a10(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x115e);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x115e);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1163;
+      iVar10 = 0x1163;
       local_8 = 0xffffffff;
       break;
     case 0xb:
       iVar10 = thunk_FUN_0047d080(local_ec,(undefined4 *)0x2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1198);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1198);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x119d;
+      iVar10 = 0x119d;
       local_8 = 0xffffffff;
       break;
     case 0xc:
       iVar10 = thunk_FUN_00465c60((int *)local_ec,uVar13,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x10f2);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x10f2);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x10f7;
+      iVar10 = 0x10f7;
       local_8 = 0xffffffff;
       break;
     case 0xd:
       iVar10 = thunk_FUN_0046d450(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1110);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1110);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1115;
+      iVar10 = 0x1115;
       local_8 = 0xffffffff;
       break;
     case 0xe:
       iVar10 = thunk_FUN_004803d0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x11b6);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x11b6);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x11bb;
+      iVar10 = 0x11bb;
       local_8 = 0xffffffff;
       break;
     case 0xf:
       iVar10 = thunk_FUN_004732f0(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1136);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1136);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x113b;
+      iVar10 = 0x113b;
       local_8 = 0xffffffff;
       break;
     case 0x10:
       iVar10 = thunk_FUN_004758e0(local_ec,(undefined4 *)0x2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x114a);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x114a);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x114f;
+      iVar10 = 0x114f;
       local_8 = 0xffffffff;
       break;
     case 0x11:
       iVar10 = thunk_FUN_0046b100(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x10fc);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x10fc);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1101;
+      iVar10 = 0x1101;
       local_8 = 0xffffffff;
       break;
     case 0x12:
       iVar10 = thunk_FUN_0047df00((int *)local_ec,uVar13,(int *)0x2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x11a2);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x11a2);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x11a7;
+      iVar10 = 0x11a7;
       local_8 = 0xffffffff;
       break;
     case 0x13:
       uVar13 = thunk_FUN_0046cf20((int *)local_ec,uVar13);
       local_8 = uVar13;
       if (uVar13 == 0xffffffff) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1106);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1106);
       }
       if (uVar13 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x110b;
+      iVar10 = 0x110b;
       local_8 = 0xffffffff;
       break;
     case 0x14:
       iVar10 = thunk_FUN_004749c0(local_ec,(void *)0x2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1140);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1140);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1145;
+      iVar10 = 0x1145;
       local_8 = 0xffffffff;
       break;
     case 0x15:
       iVar10 = thunk_FUN_00479600(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1184);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1184);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1189;
+      iVar10 = 0x1189;
       local_8 = 0xffffffff;
       break;
     case 0x16:
       iVar10 = thunk_FUN_00478640(local_ec,2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x1172);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1172);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      puVar17 = (undefined4 *)thunk_FUN_004357f0((char)local_ec[0x24]);
-      if (puVar17 != (undefined4 *)0x0) {
+      puVar18 = (undefined4 *)thunk_FUN_004357f0((char)local_ec[0x24]);
+      if (puVar18 != (undefined4 *)0x0) {
         local_8c = 0x5d94;
         local_88 = (int *)CONCAT22(*(undefined2 *)(local_ec + 0x32),*(undefined2 *)(local_ec + 0x24)
                                   );
         local_84 = *(undefined4 *)(local_ec + 0x18);
-        (**(code **)*puVar17)(local_9c);
+        (**(code **)*puVar18)(local_9c);
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x117f;
+      iVar10 = 0x117f;
       local_8 = 0xffffffff;
       break;
     case 0x17:
       iVar10 = thunk_FUN_0047c050(local_ec,(int *)0x2);
       local_8 = iVar10;
       if (iVar10 == -1) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x118e);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x118e);
       }
       if (iVar10 != 0) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
       *(undefined4 *)(local_ec + 0x45d) = 3;
       iVar10 = thunk_FUN_004608b0(local_ec,0);
       if (iVar10 != -1) {
-        DAT_00858df8 = local_184;
+        g_currentExceptionFrame = local_184.previous;
         return 0;
       }
-      uVar12 = 0x1193;
+      iVar10 = 0x1193;
       local_8 = 0xffffffff;
       break;
     default:
-      DAT_00858df8 = local_184;
+      g_currentExceptionFrame = local_184.previous;
       return 0;
     }
 LAB_0045aee3:
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,uVar12);
-    DAT_00858df8 = local_184;
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar10);
+    g_currentExceptionFrame = local_184.previous;
     return 0;
   }
-  lVar30 = (ulonglong)extraout_EDX << 0x20;
+  uVar15 = 0;
+  uVar23 = extraout_EDX;
   if (uVar13 == 0) goto LAB_0045048a;
   if (uVar13 != 2) {
-    DAT_00858df8 = local_184;
+    g_currentExceptionFrame = local_184.previous;
     return 0;
   }
   local_1c = *(int **)(param_1 + 0x14);
@@ -6873,11 +6896,11 @@ LAB_0045aee3:
     case 0x23:
       *(undefined4 *)(local_ec + 0x722) = 0x14;
     }
-    sVar32 = *(short *)(iVar10 + 0x1c);
-    local_c = CONCAT22((short)((uint)(*(int *)(local_ec + 0x6f7) + -0x16) >> 0x10),sVar32);
+    sVar33 = *(short *)(iVar10 + 0x1c);
+    local_c = CONCAT22((short)((uint)(*(int *)(local_ec + 0x6f7) + -0x16) >> 0x10),sVar33);
     sVar6 = *(short *)(iVar10 + 0x20);
     sVar7 = *(short *)(iVar10 + 0x1e);
-    if (((sVar32 < 0) || (DAT_007fb240 <= sVar32)) ||
+    if (((sVar33 < 0) || (DAT_007fb240 <= sVar33)) ||
        ((sVar7 < 0 || (((DAT_007fb242 <= sVar7 || (sVar6 < 0)) || (DAT_007fb244 <= sVar6)))))) {
       local_10 = (int *)0x0;
     }
@@ -6885,18 +6908,19 @@ LAB_0045aee3:
       local_10 = *(int **)(DAT_007fb248 +
                           ((uint)(byte)local_ec[0x8e] +
                           ((int)sVar6 * (int)DAT_007fb246 + (int)sVar7 * (int)DAT_007fb240 +
-                          (int)sVar32) * 2) * 4);
+                          (int)sVar33) * 2) * 4);
     }
     if (local_10 != (int *)0x0) {
       iVar11 = (**(code **)(*local_10 + 0x114))(*(undefined4 *)(local_ec + 0x6f7));
       if (iVar11 == 0) {
-        iVar11 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x197,0,0,&DAT_007a4ccc);
+        iVar11 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x197,0,0,&DAT_007a4ccc,
+                                    s_STBoatC__GetMessage_MESS_ID_CREA_007aa02c);
         if (iVar11 != 0) {
           pcVar9 = (code *)swi(3);
           uVar12 = (*pcVar9)();
           return uVar12;
         }
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x198);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x198);
       }
       (**(code **)(*local_10 + 0x118))(*(undefined4 *)(local_ec + 0x18));
       iVar11 = *(int *)(local_ec + 0x6f7);
@@ -6960,28 +6984,28 @@ LAB_0045aee3:
       local_ec[0x4d] = *(STSprGameObjC *)((int)local_10 + 0x4d);
     }
     if ((*(int *)(local_ec + 0x6f7) == 9) || (*(int *)(local_ec + 0x6f7) == 0x15)) {
-      sVar32 = 8;
+      sVar33 = 8;
     }
     else {
-      sVar32 = 0x18;
+      sVar33 = 0x18;
     }
-    thunk_FUN_00417e70(local_ec,sVar32);
+    thunk_FUN_00417e70(local_ec,sVar33);
     if (local_10 == (int *)0x0) {
       iVar11 = *(int *)(local_ec + 0x1c) * 0x41c64e6d + 0x3039;
       *(int *)(local_ec + 0x1c) = iVar11;
       thunk_FUN_00417ee0(local_ec,((ushort)((uint)iVar11 >> 0x10) & 7) * 0x2d);
-      uVar19 = extraout_var_02;
-      uVar23 = extraout_var_05;
+      uVar20 = extraout_var_02;
+      uVar24 = extraout_var_05;
     }
     else {
       *(short *)(local_ec + 0x6c) = (short)local_10[0x1b];
-      uVar19 = extraout_var_01;
-      uVar23 = extraout_var_04;
+      uVar20 = extraout_var_01;
+      uVar24 = extraout_var_04;
     }
     STAllPlayersC::RegisterObject
               (DAT_007fa174,CONCAT31((int3)((uint)*(int *)(iVar10 + 0x49) >> 8),local_ec[0x24]),
-               CONCAT22(uVar23,*(undefined2 *)(iVar10 + 0x24)),
-               CONCAT22(uVar19,*(undefined2 *)(iVar10 + 0x22)),(int *)local_ec,1,
+               CONCAT22(uVar24,*(undefined2 *)(iVar10 + 0x24)),
+               CONCAT22(uVar20,*(undefined2 *)(iVar10 + 0x22)),(int *)local_ec,1,
                *(int *)(iVar10 + 0x49));
     *(undefined4 *)(local_ec + 0x487) = 0xffffffff;
     *(undefined4 *)(local_ec + 0x48b) = 0xffff;
@@ -7073,20 +7097,20 @@ LAB_0045aee3:
     *(undefined2 *)(local_ec + 0x41) = *(undefined2 *)(iVar10 + 0x22);
     *(undefined2 *)(local_ec + 0x49) = *(undefined2 *)(iVar10 + 0x1e);
     *(undefined2 *)(local_ec + 0x43) = *(undefined2 *)(iVar10 + 0x24);
-    uVar19 = *(undefined2 *)(iVar10 + 0x20);
-    *(undefined2 *)(local_ec + 0x4b) = uVar19;
+    uVar20 = *(undefined2 *)(iVar10 + 0x20);
+    *(undefined2 *)(local_ec + 0x4b) = uVar20;
     *(undefined2 *)(local_ec + 0x45) = *(undefined2 *)(iVar10 + 0x26);
     DumpClassC::WritePtr
               (*(short *)(local_ec + 0x47),*(short *)(local_ec + 0x49),*(short *)(local_ec + 0x4b),
-               CONCAT31((int3)(CONCAT22(extraout_var_06,uVar19) >> 8),local_ec[0x8e]),(int)local_ec)
+               CONCAT31((int3)(CONCAT22(extraout_var_06,uVar20) >> 8),local_ec[0x8e]),(int)local_ec)
     ;
     if ((*(int *)(local_ec + 0x6f7) == 9) || (*(int *)(local_ec + 0x6f7) == 0x15)) {
-      sVar32 = 8;
+      sVar33 = 8;
     }
     else {
-      sVar32 = 0x18;
+      sVar33 = 0x18;
     }
-    thunk_FUN_00417e70(local_ec,sVar32);
+    thunk_FUN_00417e70(local_ec,sVar33);
     uVar12 = thunk_FUN_00417ee0(local_ec,0x5a);
     uVar12 = STAllPlayersC::RegisterObject
                        (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),local_ec[0x24]),
@@ -7100,11 +7124,11 @@ LAB_0045aee3:
     *(undefined2 *)(local_ec + 0x518) = *(undefined2 *)(iVar10 + 0x24);
     *(undefined2 *)(local_ec + 0x51a) = *(undefined2 *)(iVar10 + 0x26);
     *(undefined2 *)(local_ec + 0x51c) = *(undefined2 *)(iVar10 + 0x2c);
-    uVar19 = *(undefined2 *)(iVar10 + 0x2e);
-    *(undefined2 *)(local_ec + 0x51e) = uVar19;
+    uVar20 = *(undefined2 *)(iVar10 + 0x2e);
+    *(undefined2 *)(local_ec + 0x51e) = uVar20;
     *(undefined2 *)(local_ec + 0x520) = *(undefined2 *)(iVar10 + 0x30);
     local_10 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(CONCAT22((short)((uint)uVar12 >> 0x10),
-                                                                  uVar19) >> 8),local_ec[0x24]),
+                                                                  uVar20) >> 8),local_ec[0x24]),
                                          CONCAT22(extraout_var_07,*(undefined2 *)(iVar10 + 0x28)),1)
     ;
     if (local_10 == (int *)0x0) {
@@ -7279,9 +7303,9 @@ LAB_0045aee3:
     iVar10 = *(int *)(param_1 + 0x14);
     local_d0 = (undefined4 *)FUN_006aac70(0x44);
     do {
-      *(int **)(iVar24 + (int)local_d0) = DAT_0080677c;
-      iVar24 = iVar24 + 4;
-    } while (iVar24 < 0x44);
+      *(int **)(iVar25 + (int)local_d0) = DAT_0080677c;
+      iVar25 = iVar25 + 4;
+    } while (iVar25 < 0x44);
     local_d0[2] = DAT_00806774;
     local_d0[1] = DAT_00806774;
     *local_d0 = DAT_00806774;
@@ -7314,386 +7338,386 @@ LAB_0045aee3:
                  ,0,(int)local_ec);
     }
     thunk_FUN_0048a910((int)local_ec);
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a9d3c,0x2a6);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2a6);
   }
   local_74[0] = 0;
   local_e8[0] = 0;
   switch(*(undefined4 *)(local_ec + 0x6f7)) {
   case 1:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e8c;
+    pcVar27 = &DAT_007a9e8c;
     break;
   case 2:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e84;
+    pcVar27 = &DAT_007a9e84;
     break;
   case 3:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e7c;
+    pcVar27 = &DAT_007a9e7c;
     break;
   case 4:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e74;
+    pcVar27 = &DAT_007a9e74;
     break;
   case 5:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e6c;
+    pcVar27 = &DAT_007a9e6c;
     break;
   case 6:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e64;
+    pcVar27 = &DAT_007a9e64;
     break;
   case 7:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e5c;
+    pcVar27 = &DAT_007a9e5c;
     break;
   case 8:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e54;
+    pcVar27 = &DAT_007a9e54;
     break;
   case 9:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e50;
+    pcVar27 = &DAT_007a9e50;
     break;
   case 10:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e48;
+    pcVar27 = &DAT_007a9e48;
     break;
   case 0xb:
     uVar13 = 0xffffffff;
-    pcVar26 = &DAT_007a9e40;
+    pcVar27 = &DAT_007a9e40;
     do {
-      pcVar27 = pcVar26;
+      pcVar28 = pcVar27;
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      pcVar27 = pcVar26 + 1;
-      cVar2 = *pcVar26;
-      pcVar26 = pcVar27;
+      pcVar28 = pcVar27 + 1;
+      cVar2 = *pcVar27;
+      pcVar27 = pcVar28;
     } while (cVar2 != '\0');
     uVar13 = ~uVar13;
     iVar10 = -1;
     pbVar22 = local_74;
     do {
-      pbVar28 = pbVar22;
+      pbVar29 = pbVar22;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pbVar28 = pbVar22 + 1;
+      pbVar29 = pbVar22 + 1;
       bVar3 = *pbVar22;
-      pbVar22 = pbVar28;
+      pbVar22 = pbVar29;
     } while (bVar3 != 0);
-    pbVar25 = (byte *)(pcVar27 + -uVar13);
-    pbVar28 = pbVar28 + -1;
-    for (uVar20 = uVar13 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
-      *(undefined4 *)pbVar28 = *(undefined4 *)pbVar25;
-      pbVar25 = pbVar25 + 4;
-      pbVar28 = pbVar28 + 4;
+    pbVar26 = (byte *)(pcVar28 + -uVar13);
+    pbVar29 = pbVar29 + -1;
+    for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+      *(undefined4 *)pbVar29 = *(undefined4 *)pbVar26;
+      pbVar26 = pbVar26 + 4;
+      pbVar29 = pbVar29 + 4;
     }
     pbVar22 = local_e8;
     for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *pbVar28 = *pbVar25;
-      pbVar25 = pbVar25 + 1;
-      pbVar28 = pbVar28 + 1;
+      *pbVar29 = *pbVar26;
+      pbVar26 = pbVar26 + 1;
+      pbVar29 = pbVar29 + 1;
     }
-    pcVar26 = &DAT_007a9e94;
+    pcVar27 = &DAT_007a9e94;
     break;
   case 0xc:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e38;
+    pcVar27 = &DAT_007a9e38;
     break;
   case 0xd:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e30;
+    pcVar27 = &DAT_007a9e30;
     break;
   case 0xe:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e28;
+    pcVar27 = &DAT_007a9e28;
     break;
   case 0xf:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e20;
+    pcVar27 = &DAT_007a9e20;
     break;
   case 0x10:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e18;
+    pcVar27 = &DAT_007a9e18;
     break;
   case 0x11:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e10;
+    pcVar27 = &DAT_007a9e10;
     break;
   case 0x12:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e08;
+    pcVar27 = &DAT_007a9e08;
     break;
   case 0x13:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9e00;
+    pcVar27 = &DAT_007a9e00;
     break;
   case 0x14:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9df8;
+    pcVar27 = &DAT_007a9df8;
     break;
   case 0x15:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9df4;
+    pcVar27 = &DAT_007a9df4;
     break;
   case 0x16:
     uVar13 = 0xffffffff;
-    pcVar26 = &DAT_007a9dec;
+    pcVar27 = &DAT_007a9dec;
     do {
-      pcVar27 = pcVar26;
+      pcVar28 = pcVar27;
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      pcVar27 = pcVar26 + 1;
-      cVar2 = *pcVar26;
-      pcVar26 = pcVar27;
+      pcVar28 = pcVar27 + 1;
+      cVar2 = *pcVar27;
+      pcVar27 = pcVar28;
     } while (cVar2 != '\0');
     uVar13 = ~uVar13;
     iVar10 = -1;
     pbVar22 = local_74;
     do {
-      pbVar28 = pbVar22;
+      pbVar29 = pbVar22;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pbVar28 = pbVar22 + 1;
+      pbVar29 = pbVar22 + 1;
       bVar3 = *pbVar22;
-      pbVar22 = pbVar28;
+      pbVar22 = pbVar29;
     } while (bVar3 != 0);
-    pbVar25 = (byte *)(pcVar27 + -uVar13);
-    pbVar28 = pbVar28 + -1;
-    for (uVar20 = uVar13 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
-      *(undefined4 *)pbVar28 = *(undefined4 *)pbVar25;
-      pbVar25 = pbVar25 + 4;
-      pbVar28 = pbVar28 + 4;
+    pbVar26 = (byte *)(pcVar28 + -uVar13);
+    pbVar29 = pbVar29 + -1;
+    for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+      *(undefined4 *)pbVar29 = *(undefined4 *)pbVar26;
+      pbVar26 = pbVar26 + 4;
+      pbVar29 = pbVar29 + 4;
     }
     pbVar22 = local_e8;
     for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *pbVar28 = *pbVar25;
-      pbVar25 = pbVar25 + 1;
-      pbVar28 = pbVar28 + 1;
+      *pbVar29 = *pbVar26;
+      pbVar26 = pbVar26 + 1;
+      pbVar29 = pbVar29 + 1;
     }
-    pcVar26 = &DAT_007a9e9c;
+    pcVar27 = &DAT_007a9e9c;
     break;
   case 0x17:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9de4;
+    pcVar27 = &DAT_007a9de4;
     break;
   case 0x18:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9ddc;
+    pcVar27 = &DAT_007a9ddc;
     break;
   case 0x19:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dd8;
+    pcVar27 = &DAT_007a9dd8;
     break;
   case 0x1a:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dd4;
+    pcVar27 = &DAT_007a9dd4;
     break;
   case 0x1b:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dd0;
+    pcVar27 = &DAT_007a9dd0;
     break;
   case 0x1c:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dcc;
+    pcVar27 = &DAT_007a9dcc;
     break;
   case 0x1d:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dc8;
+    pcVar27 = &DAT_007a9dc8;
     break;
   case 0x1e:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dc4;
+    pcVar27 = &DAT_007a9dc4;
     break;
   case 0x1f:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dc0;
+    pcVar27 = &DAT_007a9dc0;
     break;
   case 0x20:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dbc;
+    pcVar27 = &DAT_007a9dbc;
     break;
   case 0x21:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9db8;
+    pcVar27 = &DAT_007a9db8;
     break;
   case 0x22:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9db4;
+    pcVar27 = &DAT_007a9db4;
     break;
   case 0x23:
     uVar13 = 0xffffffff;
-    pcVar26 = &DAT_007a9db0;
+    pcVar27 = &DAT_007a9db0;
     do {
-      pcVar27 = pcVar26;
+      pcVar28 = pcVar27;
       if (uVar13 == 0) break;
       uVar13 = uVar13 - 1;
-      pcVar27 = pcVar26 + 1;
-      cVar2 = *pcVar26;
-      pcVar26 = pcVar27;
+      pcVar28 = pcVar27 + 1;
+      cVar2 = *pcVar27;
+      pcVar27 = pcVar28;
     } while (cVar2 != '\0');
     uVar13 = ~uVar13;
     iVar10 = -1;
     pbVar22 = local_74;
     do {
-      pbVar28 = pbVar22;
+      pbVar29 = pbVar22;
       if (iVar10 == 0) break;
       iVar10 = iVar10 + -1;
-      pbVar28 = pbVar22 + 1;
+      pbVar29 = pbVar22 + 1;
       bVar3 = *pbVar22;
-      pbVar22 = pbVar28;
+      pbVar22 = pbVar29;
     } while (bVar3 != 0);
-    pbVar25 = (byte *)(pcVar27 + -uVar13);
-    pbVar28 = pbVar28 + -1;
-    for (uVar20 = uVar13 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
-      *(undefined4 *)pbVar28 = *(undefined4 *)pbVar25;
-      pbVar25 = pbVar25 + 4;
-      pbVar28 = pbVar28 + 4;
+    pbVar26 = (byte *)(pcVar28 + -uVar13);
+    pbVar29 = pbVar29 + -1;
+    for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+      *(undefined4 *)pbVar29 = *(undefined4 *)pbVar26;
+      pbVar26 = pbVar26 + 4;
+      pbVar29 = pbVar29 + 4;
     }
     pbVar22 = local_e8;
     for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *pbVar28 = *pbVar25;
-      pbVar25 = pbVar25 + 1;
-      pbVar28 = pbVar28 + 1;
+      *pbVar29 = *pbVar26;
+      pbVar26 = pbVar26 + 1;
+      pbVar29 = pbVar29 + 1;
     }
-    pcVar26 = &DAT_007a9ea4;
+    pcVar27 = &DAT_007a9ea4;
     break;
   case 0x24:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9dac;
+    pcVar27 = &DAT_007a9dac;
     break;
   case 0x25:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9da4;
+    pcVar27 = &DAT_007a9da4;
     break;
   case 0x26:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9d9c;
+    pcVar27 = &DAT_007a9d9c;
     break;
   case 0x27:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9d94;
+    pcVar27 = &DAT_007a9d94;
     break;
   case 0x28:
     pbVar22 = local_74;
-    pcVar26 = &DAT_007a9d8c;
+    pcVar27 = &DAT_007a9d8c;
     break;
   default:
     goto switchD_0044fb10_default;
   }
   uVar13 = 0xffffffff;
   do {
-    pcVar27 = pcVar26;
+    pcVar28 = pcVar27;
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
-    pcVar27 = pcVar26 + 1;
-    cVar2 = *pcVar26;
-    pcVar26 = pcVar27;
+    pcVar28 = pcVar27 + 1;
+    cVar2 = *pcVar27;
+    pcVar27 = pcVar28;
   } while (cVar2 != '\0');
   uVar13 = ~uVar13;
   iVar10 = -1;
   do {
-    pbVar28 = pbVar22;
+    pbVar29 = pbVar22;
     if (iVar10 == 0) break;
     iVar10 = iVar10 + -1;
-    pbVar28 = pbVar22 + 1;
+    pbVar29 = pbVar22 + 1;
     bVar3 = *pbVar22;
-    pbVar22 = pbVar28;
+    pbVar22 = pbVar29;
   } while (bVar3 != 0);
-  pbVar22 = (byte *)(pcVar27 + -uVar13);
-  pbVar28 = pbVar28 + -1;
-  for (uVar20 = uVar13 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
-    *(undefined4 *)pbVar28 = *(undefined4 *)pbVar22;
+  pbVar22 = (byte *)(pcVar28 + -uVar13);
+  pbVar29 = pbVar29 + -1;
+  for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+    *(undefined4 *)pbVar29 = *(undefined4 *)pbVar22;
     pbVar22 = pbVar22 + 4;
-    pbVar28 = pbVar28 + 4;
+    pbVar29 = pbVar29 + 4;
   }
   for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *pbVar28 = *pbVar22;
+    *pbVar29 = *pbVar22;
     pbVar22 = pbVar22 + 1;
-    pbVar28 = pbVar28 + 1;
+    pbVar29 = pbVar29 + 1;
   }
 switchD_0044fb10_default:
   iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)(local_ec + 0x1d5),0xe,DAT_0080677c,local_74,0x1d);
   if (iVar10 != 0) {
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x2da);
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2da);
   }
   iVar10 = *(int *)(local_ec + 0x6f7);
   if ((((iVar10 == 0xb) || (iVar10 == 0x16)) || (iVar10 == 0x23)) &&
      (iVar10 = STT3DSprC::LoadSequence
                          ((STT3DSprC *)(local_ec + 0x1d5),0xd,DAT_0080677c,local_e8,0x1d),
      iVar10 != 0)) {
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x2de);
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2de);
   }
   switch(*(undefined4 *)(local_ec + 0x6f3)) {
   case 0:
-    pcVar26 = &DAT_007a9d88;
+    pcVar27 = &DAT_007a9d88;
     break;
   case 1:
-    pcVar26 = &DAT_007a4ffc;
+    pcVar27 = &DAT_007a4ffc;
     break;
   case 2:
-    pcVar26 = &DAT_007aa028;
+    pcVar27 = &DAT_007aa028;
     break;
   case 3:
-    pcVar26 = &DAT_007aa024;
+    pcVar27 = &DAT_007aa024;
     break;
   case 4:
-    pcVar26 = &DAT_007aa020;
+    pcVar27 = &DAT_007aa020;
     break;
   case 5:
-    pcVar26 = &DAT_007aa01c;
+    pcVar27 = &DAT_007aa01c;
     break;
   case 6:
-    pcVar26 = &DAT_007aa018;
+    pcVar27 = &DAT_007aa018;
     break;
   case 7:
-    pcVar26 = &DAT_007aa014;
+    pcVar27 = &DAT_007aa014;
     break;
   default:
     goto switchD_0044fe4c_default;
   }
   uVar13 = 0xffffffff;
   do {
-    pcVar27 = pcVar26;
+    pcVar28 = pcVar27;
     if (uVar13 == 0) break;
     uVar13 = uVar13 - 1;
-    pcVar27 = pcVar26 + 1;
-    cVar2 = *pcVar26;
-    pcVar26 = pcVar27;
+    pcVar28 = pcVar27 + 1;
+    cVar2 = *pcVar27;
+    pcVar27 = pcVar28;
   } while (cVar2 != '\0');
   uVar13 = ~uVar13;
   iVar10 = -1;
   pbVar22 = local_74;
   do {
-    pbVar28 = pbVar22;
+    pbVar29 = pbVar22;
     if (iVar10 == 0) break;
     iVar10 = iVar10 + -1;
-    pbVar28 = pbVar22 + 1;
+    pbVar29 = pbVar22 + 1;
     bVar3 = *pbVar22;
-    pbVar22 = pbVar28;
+    pbVar22 = pbVar29;
   } while (bVar3 != 0);
-  pbVar22 = (byte *)(pcVar27 + -uVar13);
-  pbVar28 = pbVar28 + -1;
-  for (uVar20 = uVar13 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
-    *(undefined4 *)pbVar28 = *(undefined4 *)pbVar22;
+  pbVar22 = (byte *)(pcVar28 + -uVar13);
+  pbVar29 = pbVar29 + -1;
+  for (uVar15 = uVar13 >> 2; uVar15 != 0; uVar15 = uVar15 - 1) {
+    *(undefined4 *)pbVar29 = *(undefined4 *)pbVar22;
     pbVar22 = pbVar22 + 4;
-    pbVar28 = pbVar28 + 4;
+    pbVar29 = pbVar29 + 4;
   }
   for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
-    *pbVar28 = *pbVar22;
+    *pbVar29 = *pbVar22;
     pbVar22 = pbVar22 + 1;
-    pbVar28 = pbVar28 + 1;
+    pbVar29 = pbVar29 + 1;
   }
 switchD_0044fe4c_default:
   pSVar1 = (STT3DSprC *)(local_ec + 0x1d5);
   iVar10 = STT3DSprC::LoadSequence(pSVar1,0xc,DAT_0080677c,local_74,0x1d);
   if (iVar10 != 0) {
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x2eb);
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2eb);
   }
   switch(*(undefined4 *)(local_ec + 0x6f7)) {
   case 9:
     local_c = ((8 - (int)*(short *)(local_ec + 0x6c) / 0x2d) * 0xf) % 0x78;
-    uVar20 = 0xe;
+    uVar15 = 0xe;
     uVar13 = *(int *)(local_ec + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)(local_ec + 0x1c) = uVar13;
     break;
@@ -7703,7 +7727,7 @@ switchD_0044fe4c_default:
     goto LAB_0045003f;
   case 0x15:
     local_c = ((8 - (int)*(short *)(local_ec + 0x6c) / 0x2d) * 0x14) % 0xa0;
-    uVar20 = 0x13;
+    uVar15 = 0x13;
     uVar13 = *(int *)(local_ec + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)(local_ec + 0x1c) = uVar13;
     break;
@@ -7717,9 +7741,9 @@ LAB_0045003f:
     uVar13 = local_c;
     goto LAB_00450050;
   }
-  uVar20 = (uVar13 >> 0x10) % uVar20;
-  *(uint *)(local_ec + 0x822) = uVar20;
-  thunk_FUN_004abe40(pSVar1,'\x0e',uVar20 + local_c);
+  uVar15 = (uVar13 >> 0x10) % uVar15;
+  *(uint *)(local_ec + 0x822) = uVar15;
+  thunk_FUN_004abe40(pSVar1,'\x0e',uVar15 + local_c);
   uVar13 = *(int *)(local_ec + 0x822) + local_c;
 LAB_00450050:
   thunk_FUN_004abe40(pSVar1,'\f',uVar13);
@@ -7753,7 +7777,7 @@ LAB_00450050:
     if (*(int *)(local_78 + 0x45) == 1) {
       iVar10 = STT3DSprC::LoadSequence(pSVar1,0xb,DAT_00806774,(byte *)s_forcef0_007aa008,0x1d);
       if (iVar10 != 0) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x31b);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x31b);
       }
       thunk_FUN_004ad670(pSVar1,'\x0e');
       thunk_FUN_004ad150(pSVar1,'\v');
@@ -7764,20 +7788,21 @@ LAB_00450050:
       thunk_FUN_006377b0(*(uint *)(local_ec + 0x1ed),1,-1,-1,-1,0x12);
     }
   }
-  FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a9d3c,0x329);
+  RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x329);
 LAB_00450268:
   *(int *)(local_ec + 0x46b) = 0;
   FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x471),(int *)(local_ec + 0x46b));
   if (*(int *)(local_ec + 0x7ca) != 0) {
     iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x7ca),&local_30);
     if (iVar10 == -4) {
-      iVar10 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x335,0,0,&DAT_007a4ccc);
+      iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x335,0,0,&DAT_007a4ccc,
+                                  s_STBoatC__GetMessage_MESS_ID_ALLC_007a9fc8);
       if (iVar10 != 0) {
         pcVar9 = (code *)swi(3);
         uVar12 = (*pcVar9)();
         return uVar12;
       }
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x336);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x336);
     }
     FUN_006ea3e0(*(void **)(local_ec + 0x211),*(uint *)(local_ec + 0x1ed),*(int *)(local_30 + 0x1ed)
                 );
@@ -7785,20 +7810,21 @@ LAB_00450268:
   if ((*(int *)(local_ec + 0x45d) == 0xf) && (*(int *)(local_ec + 0x596) == 3)) {
     iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(local_ec + 0x58e),&local_30);
     if (iVar10 == -4) {
-      iVar10 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x33c,0,0,&DAT_007a4ccc);
+      iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x33c,0,0,&DAT_007a4ccc,
+                                  s_STBoatC__GetMessage_MESS_ID_ALLC_007a9f8c);
       if (iVar10 != 0) {
         pcVar9 = (code *)swi(3);
         uVar12 = (*pcVar9)();
         return uVar12;
       }
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x33d);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x33d);
     }
     FUN_006ea3e0(*(void **)(local_ec + 0x211),*(uint *)(local_ec + 0x1ed),*(int *)(local_30 + 0x1ed)
                 );
-    DAT_00858df8 = local_184;
+    g_currentExceptionFrame = local_184.previous;
     return 0;
   }
-  DAT_00858df8 = local_184;
+  g_currentExceptionFrame = local_184.previous;
   return 0;
 }
 

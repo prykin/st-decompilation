@@ -21,7 +21,7 @@ undefined4 __fastcall thunk_FUN_004d9000(int *param_1)
     *(STT3DSprC **)((int)param_1 + 0x5ff) = this;
     iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
-      FUN_006a5e40(iVar2,DAT_007ed77c,0x7bf5b0,0x61);
+      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0x61);
     }
   }
   switch(*(undefined4 *)((int)param_1 + 0x245)) {
@@ -56,7 +56,7 @@ undefined4 __fastcall thunk_FUN_004d9000(int *param_1)
                       (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,DAT_00806774,PTR_DAT_00790c24,0x1d)
     ;
     if (iVar2 != 0) {
-      FUN_006a5e40(iVar2,DAT_007ed77c,0x7bf5b0,0x79);
+      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0x79);
     }
     thunk_FUN_004ad5e0(*(int *)((int)param_1 + 0x5ff));
     uVar4 = 10;

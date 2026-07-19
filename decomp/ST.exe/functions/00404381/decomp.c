@@ -4,20 +4,20 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
 {
   code *pcVar1;
   cLoadingTy *pcVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   void *unaff_ESI;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar4;
   undefined4 auStack_48 [16];
   cLoadingTy *pcStack_8;
   
   pcStack_8 = this;
   thunk_FUN_00555570((int)this);
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
+  pIVar4 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pcVar2 = pcStack_8;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     FUN_006b4170(*(int *)(pcStack_8 + 4),0,*(int *)(pcStack_8 + 0x14) + *(int *)(pcStack_8 + 0xc),
                  *(int *)(pcStack_8 + 0x10) + *(int *)(pcStack_8 + 0x18),*(int *)(pcStack_8 + 0x1c),
                  *(int *)(pcStack_8 + 0x34),0);
@@ -37,17 +37,18 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
     if (*(code **)(pcVar2 + 0x58) != (code *)0x0) {
       (**(code **)(pcVar2 + 0x58))(*(undefined4 *)(pcVar2 + 0x54));
     }
-    DAT_00858df8 = (undefined1 *)uVar5;
+    g_currentExceptionFrame = pIVar4;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
-  iVar4 = FUN_006ad4d0(s_E____titans_grig_loading_cpp_007c8f0c,0xcc,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = pIVar4;
+  iVar3 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0xcc,0,errorCode,&DAT_007a4ccc,
+                             s_cLoadingTy__DrawLine_007c8f7c);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c8f0c,0xcd);
+  RaiseInternalException(errorCode,0,s_E____titans_grig_loading_cpp_007c8f0c,0xcd);
   return;
 }
 

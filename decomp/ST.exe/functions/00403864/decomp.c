@@ -25,7 +25,8 @@ void __thiscall thunk_FUN_00492280(void *this,int param_1)
     }
   }
   else {
-    iVar2 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50f0,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50f0,0,0,&DAT_007a4ccc,
+                               s_STBoatC__CancelLoading_incorrect_007abbc4);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();

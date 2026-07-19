@@ -11,25 +11,25 @@ PrividerTy::OutListProc
 {
   code *pcVar1;
   byte bVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
-  byte bVar5;
+  byte bVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   uint local_8;
   
   local_c = param_8;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
-  if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_Start_prov_obj_cpp_007ccd28,0x2c,0,iVar3,&DAT_007a4ccc);
-    if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7ccd28,0x2c);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode != 0) {
+    g_currentExceptionFrame = local_50.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x2c,0,errorCode,
+                               &DAT_007a4ccc,s_PrividerTy__OutListProc_007ccd50);
+    if (iVar3 == 0) {
+      RaiseInternalException(errorCode,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x2c);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -40,18 +40,18 @@ PrividerTy::OutListProc
     bVar2 = 0;
     local_8 = local_8 & 0xffffff00;
     do {
-      bVar5 = bVar2;
+      bVar4 = bVar2;
       if (*(int *)(local_c + 0x1c2a + (local_8 & 0xff) * 4) == param_2) break;
       bVar2 = bVar2 + 1;
       local_8 = CONCAT31(local_8._1_3_,bVar2);
-      bVar5 = 0xff;
+      bVar4 = 0xff;
     } while (bVar2 < 0x16);
-    if (bVar5 != 0xff) {
+    if (bVar4 != 0xff) {
       FUN_006b4680(param_1,param_4,param_5,*(BITMAPINFO **)(local_c + 0x1c82),(uint *)0x0,0,
                    param_5 + -0x67,param_6,param_7,0);
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return;
 }
 

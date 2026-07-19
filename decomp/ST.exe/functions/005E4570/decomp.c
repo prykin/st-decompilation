@@ -32,8 +32,7 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
   uint uVar18;
   int iVar19;
   uint uVar20;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   undefined4 *local_24;
   int local_20;
   MTaskTy *local_1c;
@@ -46,19 +45,20 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
   local_18 = this;
   uVar5 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x65) = uVar5;
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
-  iVar6 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
+  iVar6 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)local_68;
-    iVar19 = FUN_006ad4d0(s_E____titans_Start_task_obj_cpp_007cd994,0x5b5,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_68.previous;
+    iVar19 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x5b5,0,iVar6,
+                                &DAT_007a4ccc,s_MTaskTy__GetMessage_007cdca4);
     if (iVar19 != 0) {
       pcVar3 = (code *)swi(3);
       uVar5 = (*pcVar3)();
       return uVar5;
     }
-    FUN_006a5e40(iVar6,0,0x7cd994,0x5b5);
+    RaiseInternalException(iVar6,0,s_E____titans_Start_task_obj_cpp_007cd994,0x5b5);
     return 0xffff;
   }
   uVar12 = *(uint *)(param_1 + 0x10);
@@ -143,7 +143,7 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
           PlayScript(local_18);
           iVar19 = 0x1f;
           do {
-            thunk_FUN_00568bc0(&DAT_00807658,iVar6);
+            thunk_FUN_00568bc0(&g_sound,iVar6);
             iVar6 = iVar6 + 1;
             iVar19 = iVar19 + -1;
           } while (iVar19 != 0);
@@ -339,7 +339,7 @@ LAB_005e496b:
           iVar6 = 1;
           iVar19 = 0x1f;
           do {
-            thunk_FUN_00568bc0(&DAT_00807658,iVar6);
+            thunk_FUN_00568bc0(&g_sound,iVar6);
             iVar6 = iVar6 + 1;
             iVar19 = iVar19 + -1;
           } while (iVar19 != 0);
@@ -590,7 +590,7 @@ LAB_005e5255:
     FUN_006b3730(puVar9,uVar12,uVar18,uVar20,uVar10);
   }
 switchD_005e45f7_caseD_1:
-  DAT_00858df8 = (undefined4 *)local_68;
+  g_currentExceptionFrame = local_68.previous;
   uVar5 = FUN_006e5fd0();
   return uVar5;
 }

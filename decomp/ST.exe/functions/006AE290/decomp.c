@@ -25,7 +25,7 @@ uint * FUN_006ae290(uint *param_1,uint param_2,uint param_3,uint param_4)
     iVar1 = FUN_006ae230(param_1);
     if (iVar1 != 0) {
       FUN_006ab060(&param_1);
-      FUN_006a5e40(-2,DAT_007ed77c,0x7eda44,0x37);
+      RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_TBL_C_darrcrea_c_007eda44,0x37);
       return (uint *)0x0;
     }
     param_1[5] = param_4;

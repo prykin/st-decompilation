@@ -24,8 +24,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   undefined4 uVar17;
   char acStack_114 [2];
   undefined1 uStack_112;
-  undefined4 *puStack_ec;
-  undefined4 auStack_e8 [16];
+  InternalExceptionFrame IStack_ec;
   undefined4 auStack_a8 [2];
   undefined2 uStack_9e;
   undefined2 uStack_9c;
@@ -54,19 +53,20 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   pWStack_50 = this;
   DVar3 = timeGetTime();
   *(DWORD *)(this + 0x61) = DVar3;
-  puStack_ec = DAT_00858df8;
-  DAT_00858df8 = &puStack_ec;
-  iVar4 = __setjmp3(auStack_e8,0,unaff_EDI,unaff_ESI);
+  IStack_ec.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_ec;
+  iVar4 = __setjmp3(IStack_ec.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pWStack_50;
   if (iVar4 != 0) {
-    DAT_00858df8 = puStack_ec;
-    iVar8 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_ec.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6,0,iVar4,&DAT_007a4ccc
+                               ,s_WaitTy__NoneWait_007cddf4);
     if (iVar8 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cdd5c,0x2a6);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6);
     return;
   }
   if ((*(int *)(pWStack_50 + 0x1a87) != 0) &&
@@ -489,7 +489,7 @@ LAB_005e91f7:
       FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
       FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
       PaintWait(this_00,'\0');
-      DAT_00858df8 = puStack_ec;
+      g_currentExceptionFrame = IStack_ec.previous;
       return;
     }
   }
@@ -546,12 +546,12 @@ LAB_005e91f7:
       this_00[0x65] = (WaitTy)0x2;
       if ((WVar1 != (WaitTy)0xff) && (*(int *)(this_00 + (uint)(byte)WVar1 * 0x1fb + 0xd1) != 0)) {
         FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)WVar1 * 0x1fb + 0xc1));
-        DAT_00858df8 = puStack_ec;
+        g_currentExceptionFrame = IStack_ec.previous;
         return;
       }
     }
   }
-  DAT_00858df8 = puStack_ec;
+  g_currentExceptionFrame = IStack_ec.previous;
   return;
 }
 

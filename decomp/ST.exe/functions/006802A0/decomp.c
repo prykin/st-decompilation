@@ -32,7 +32,7 @@ void __cdecl FUN_006802a0(int param_1,char *param_2)
       pcVar5 = pcVar5 + 1;
     }
   }
-  FUN_006a5e40(param_1,DAT_007ed77c,0x7d5604,0x74);
+  RaiseInternalException(param_1,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x74);
   return;
 }
 

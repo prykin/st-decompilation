@@ -363,13 +363,14 @@ LAB_0048a2dd:
     case 0xffffffff:
       return 1;
     default:
-      iVar9 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4677,0,0,&DAT_007a4ccc);
+      iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4677,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__GetDefenceTarget___inco_007ab974);
       if (iVar9 != 0) {
         pcVar2 = (code *)swi(3);
         uVar8 = (*pcVar2)();
         return uVar8;
       }
-      FUN_006a5e40(0,DAT_007ed77c,0x7a9d3c,0x4678);
+      RaiseInternalException(0,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4678);
       return 0xffffffff;
     }
   }

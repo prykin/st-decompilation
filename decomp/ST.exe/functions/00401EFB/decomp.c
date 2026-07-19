@@ -61,13 +61,14 @@ void __fastcall thunk_FUN_0058e570(int *param_1)
   case 0:
     iVar6 = (**(code **)(*param_1 + 0x20))();
     if (iVar6 == -1) {
-      iVar6 = FUN_006ad4d0(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2dc,0,-5,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2dc,0,-5,&DAT_007a4ccc,
+                                 s_stop_move_error_007ad3a0);
       if (iVar6 != 0) {
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
         return;
       }
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7cbb7c,0x2dd);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2dd);
     }
     else if (iVar6 == 1) {
       iVar6 = thunk_FUN_0058f1e0(param_1,(uint)(0x1d < *(int *)((int)param_1 + 0x253)));
@@ -125,7 +126,8 @@ LAB_0058ea68:
     else {
       if (iVar6 != 1) {
         if (iVar6 != 2) {
-          iVar6 = FUN_006ad4d0(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2d3,0,0,&DAT_007a4ccc);
+          iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2d3,0,0,
+                                     &DAT_007a4ccc,s_STSharkC__LifeShark_Error_Move_007cbbcc);
           if (iVar6 == 0) {
             return;
           }
@@ -221,7 +223,8 @@ LAB_0058e87e:
   case 5:
     iVar6 = (**(code **)(*param_1 + 0x20))();
     if (iVar6 == -1) {
-      iVar6 = FUN_006ad4d0(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x265,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x265,0,0,&DAT_007a4ccc,
+                                 s_stop_move_error_007ad3a0);
       if (iVar6 != 0) {
         pcVar4 = (code *)swi(3);
         (*pcVar4)();
@@ -246,8 +249,8 @@ LAB_0058e87e:
       return;
     }
     if (((iVar6 < 2) || (3 < iVar6)) &&
-       (iVar6 = FUN_006ad4d0(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2f8,0,0,&DAT_007a4ccc),
-       iVar6 != 0)) {
+       (iVar6 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2f8,0,0,&DAT_007a4ccc,
+                                   s_STSharkC__LifeShark_Error_Move_007cbbcc), iVar6 != 0)) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;

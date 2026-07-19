@@ -11,7 +11,8 @@ void __fastcall FUN_00492390(int *param_1)
     local_8 = param_1;
     iVar1 = FUN_006e62d0(DAT_00802a38,*(int *)((int)param_1 + 0x58e),(int *)&local_8);
     if (iVar1 == -4) {
-      FUN_006a5e40(-0x5001fffd,DAT_007ed77c,0x7a9d3c,0x5100);
+      RaiseInternalException
+                (-0x5001fffd,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5100);
     }
     (**(code **)(*local_8 + 0x9c))();
   }

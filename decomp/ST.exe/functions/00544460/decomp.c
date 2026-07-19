@@ -13,8 +13,7 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar4;
-  undefined4 local_b8;
-  undefined4 local_b4 [16];
+  InternalExceptionFrame local_b8;
   undefined4 local_74 [5];
   undefined4 local_60;
   undefined4 local_5c;
@@ -27,10 +26,10 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
   undefined4 *local_14;
   CursorClassTy *local_8;
   
-  local_b8 = DAT_00858df8;
-  DAT_00858df8 = &local_b8;
+  local_b8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_b8;
   local_8 = this;
-  iVar2 = __setjmp3(local_b4,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     puVar4 = local_28;
@@ -87,17 +86,18 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
       thunk_FUN_00544100(this_00,iVar2,local_28,(int)local_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0x1e);
-    DAT_00858df8 = (undefined4 *)local_b8;
+    g_currentExceptionFrame = local_b8.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_b8;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x15a,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_b8.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x15a,0,iVar2,&DAT_007a4ccc
+                             ,s_CursorClassTy__DelSysAcc_007c7eac);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c7d60,0x15b);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x15b);
   return;
 }
 

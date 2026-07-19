@@ -12,23 +12,25 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   int iVar4;
   undefined4 uVar5;
   void *unaff_ESI;
+  InternalExceptionFrame *pIVar6;
   undefined4 local_54 [16];
   byte *local_14;
   uint local_10;
   STManRub3C *local_c;
   ushort *local_8;
   
-  uVar5 = DAT_00858df8;
+  pIVar6 = g_currentExceptionFrame;
   local_8 = (ushort *)0x0;
-  DAT_00858df8 = &stack0xffffffa8;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_c = this;
-  iVar3 = __setjmp3(local_54,0,unaff_ESI,uVar5);
+  iVar3 = __setjmp3(local_54,0,unaff_ESI,pIVar6);
   pSVar2 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar5;
-    iVar4 = FUN_006ad4d0(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x4e,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = pIVar6;
+    iVar4 = ReportDebugMessage(s_E____titans_nick_to_rab3m_cpp_007d13ec,0x4e,0,iVar3,&DAT_007a4ccc,
+                               s_STManRub3C__GetMessage_007d1410);
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7d13ec,0x50);
+      RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x50);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);
@@ -60,18 +62,18 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
       thunk_FUN_0062dd40((int)pSVar2);
       thunk_FUN_0062e130((int)pSVar2);
       DAT_008117a4 = 0;
-      DAT_00858df8 = (undefined1 *)uVar5;
+      g_currentExceptionFrame = pIVar6;
       return 0;
     }
     if (iVar3 == 0x10f) {
       local_14 = (byte *)thunk_FUN_0062d670(local_c,&local_10);
       STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_RUBBISH_3_0079d080,local_14,local_10,0xc);
       FUN_006ab060(&local_14);
-      DAT_00858df8 = (undefined1 *)uVar5;
+      g_currentExceptionFrame = pIVar6;
       return 0;
     }
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
+  g_currentExceptionFrame = pIVar6;
   return 0;
 }
 

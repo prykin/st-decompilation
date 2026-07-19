@@ -19,18 +19,16 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
   MReportTy *pMVar10;
   undefined4 *puVar11;
   char *pcVar12;
-  undefined4 **ppuStack_98;
-  undefined4 auStack_94 [16];
-  undefined4 **ppuStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_98;
+  InternalExceptionFrame IStack_54;
   undefined4 *puStack_10;
   MReportTy *pMStack_c;
   undefined4 *puStack_8;
   
-  ppuStack_54 = DAT_00858df8;
-  DAT_00858df8 = &ppuStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pMStack_c = this;
-  iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pMStack_c;
   if (iVar4 == 0) {
     if (*(uint *)(pMStack_c + 0x8f) != 0) {
@@ -58,15 +56,15 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       puStack_8 = (undefined4 *)0x0;
       wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079c0d4,
                 &DAT_00807ddd,PTR_s_PL_LOG_0079c0d8);
-      ppuStack_98 = DAT_00858df8;
-      DAT_00858df8 = &ppuStack_98;
-      iVar4 = __setjmp3(auStack_94,0,puVar11,pcVar12);
+      IStack_98.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_98;
+      iVar4 = __setjmp3(IStack_98.jumpBuffer,0,puVar11,pcVar12);
       if (iVar4 == 0) {
         puStack_8 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
       }
       puVar11 = puStack_8;
       this_01 = pMStack_c;
-      DAT_00858df8 = ppuStack_98;
+      g_currentExceptionFrame = IStack_98.previous;
       if (puStack_8 != (undefined4 *)0x0) {
         puStack_10 = &DAT_0080c522;
         iVar4 = *(int *)(pMStack_c + (uint)(byte)pMStack_c[0x6a] * 4 + 0x347);
@@ -153,13 +151,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
     SetCtrl(this_01,1);
     *(undefined4 *)(this_01 + 0x2d) = 5;
     FUN_006e6080(this_01,0xf,0,(undefined4 *)(this_01 + 0x1d));
-    DAT_00858df8 = ppuStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     return;
   }
-  DAT_00858df8 = ppuStack_54;
-  iVar8 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x30e,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_54.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x30e,0,iVar4,&DAT_007a4ccc,
+                             s_MReportTy__SetCtrl_007cd05c);
   if (iVar8 == 0) {
-    FUN_006a5e40(iVar4,0,0x7ccec8,0x30e);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x30e);
     return;
   }
   pcVar2 = (code *)swi(3);

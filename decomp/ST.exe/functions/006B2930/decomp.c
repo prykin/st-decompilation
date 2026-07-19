@@ -20,8 +20,7 @@ FUN_006b2930(int *param_1,uint param_2,uint param_3,undefined4 *param_4,int *par
   undefined4 local_104;
   uint local_100;
   uint local_fc;
-  undefined4 local_8c;
-  undefined4 local_88 [16];
+  InternalExceptionFrame local_8c;
   uint local_48;
   uint local_44;
   int local_40;
@@ -62,11 +61,11 @@ FUN_006b2930(int *param_1,uint param_2,uint param_3,undefined4 *param_4,int *par
       else {
         local_30 = (uint *)0x0;
         local_24 = (undefined4 *)0x0;
-        local_8c = DAT_00858df8;
-        DAT_00858df8 = &local_8c;
-        local_20 = (undefined4 *)__setjmp3(local_88,0,unaff_EDI,unaff_ESI);
+        local_8c.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &local_8c;
+        local_20 = (undefined4 *)__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
         if (local_20 != (undefined4 *)0x0) {
-          DAT_00858df8 = (undefined4 *)local_8c;
+          g_currentExceptionFrame = local_8c.previous;
           FUN_006a5e90(local_24);
           puVar3 = local_30;
           if (local_30 == (uint *)0x0) {
@@ -127,7 +126,7 @@ FUN_006b2930(int *param_1,uint param_2,uint param_3,undefined4 *param_4,int *par
                 local_2c = local_24;
                 do {
                   if (*(short *)((int)piVar8 + -2) != iVar10) {
-                    FUN_006a5e40(-5,DAT_007ed77c,0x7edac0,0x4ef);
+                    RaiseInternalException(-5,DAT_007ed77c,s_E__DKW_DDX_C_ddsinit_c_007edac0,0x4ef);
                   }
                   iVar7 = *piVar8;
                   piVar8 = (int *)((int)piVar8 + param_3 * 10);
@@ -195,7 +194,7 @@ FUN_006b2930(int *param_1,uint param_2,uint param_3,undefined4 *param_4,int *par
         FUN_006a5e90(puVar4);
         puVar9[0x34] = (uint)local_30;
         local_1c = param_5;
-        DAT_00858df8 = (undefined4 *)local_8c;
+        g_currentExceptionFrame = local_8c.previous;
         if (0 < (int)param_4) {
           local_18 = param_4;
           do {
@@ -316,7 +315,7 @@ LAB_006b2fe2:
   if (local_28 == (undefined4 *)0x0) {
     return (undefined4 *)0x0;
   }
-  FUN_006a5e40((int)local_28,DAT_007ed77c,0x7edac0,0x578);
+  RaiseInternalException((int)local_28,DAT_007ed77c,s_E__DKW_DDX_C_ddsinit_c_007edac0,0x578);
   return puVar4;
 }
 

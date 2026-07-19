@@ -41,8 +41,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
   char local_6a0 [1044];
   byte local_28c [260];
   byte local_188 [260];
-  undefined4 *local_84;
-  undefined4 local_80 [16];
+  InternalExceptionFrame local_84;
   ChooseMapTy *local_40;
   undefined4 local_3c;
   undefined4 local_38;
@@ -62,19 +61,20 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
   local_40 = this;
   uVar8 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x61) = uVar8;
-  local_84 = DAT_00858df8;
-  DAT_00858df8 = &local_84;
-  iVar9 = __setjmp3(local_80,0,unaff_EDI,unaff_ESI);
+  local_84.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_84;
+  iVar9 = __setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_40;
   if (iVar9 != 0) {
-    DAT_00858df8 = local_84;
-    iVar24 = FUN_006ad4d0(s_E____titans_Start_load_obj_cpp_007cc728,0x6f7,0,iVar9,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_84.previous;
+    iVar24 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x6f7,0,iVar9,
+                                &DAT_007a4ccc,s_ChooseMapTy__GetMessage_007cc8c0);
     if (iVar24 != 0) {
       pcVar5 = (code *)swi(3);
       uVar8 = (*pcVar5)();
       return uVar8;
     }
-    FUN_006a5e40(iVar9,0,0x7cc728,0x6f7);
+    RaiseInternalException(iVar9,0,s_E____titans_Start_load_obj_cpp_007cc728,0x6f7);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_40,param_1);
@@ -1326,7 +1326,7 @@ LAB_005b1108:
     }
   }
 switchD_005b0c37_caseD_1:
-  DAT_00858df8 = local_84;
+  g_currentExceptionFrame = local_84.previous;
   uVar8 = thunk_FUN_005b6430();
   return uVar8;
 }

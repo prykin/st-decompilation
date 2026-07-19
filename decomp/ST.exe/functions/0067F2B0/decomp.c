@@ -15,7 +15,7 @@ void FUN_0067f2b0(LPCSTR param_1,int param_2)
       pcVar3 = (char *)thunk_FUN_0067eea0(pbVar2);
       iVar1 = thunk_FUN_0067f030((byte *)s__curr_path_007d55f4,pcVar3,puVar4);
       if (iVar1 == 0) {
-        FUN_006a5e40(-2,DAT_007ed77c,0x7d55d8,0xbb);
+        RaiseInternalException(-2,DAT_007ed77c,s___ai_ai_script_v_inl_007d55d8,0xbb);
       }
     }
   }
@@ -25,7 +25,7 @@ void FUN_0067f2b0(LPCSTR param_1,int param_2)
     __makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0);
     iVar1 = thunk_FUN_0067f030((byte *)s__curr_path_007d55f4,&DAT_0084868c,(uint *)0x0);
     if (iVar1 == 0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7d55d8,0xb5);
+      RaiseInternalException(-2,DAT_007ed77c,s___ai_ai_script_v_inl_007d55d8,0xb5);
     }
     puVar4 = (uint *)0x0;
     DAT_00848a24 = DAT_00848a24 + 1;
@@ -33,7 +33,7 @@ void FUN_0067f2b0(LPCSTR param_1,int param_2)
     pbVar2 = thunk_FUN_0067ece0(DAT_00848a24);
     iVar1 = thunk_FUN_0067f030(pbVar2,pcVar3,puVar4);
     if (iVar1 == 0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7d55d8,0xb6);
+      RaiseInternalException(-2,DAT_007ed77c,s___ai_ai_script_v_inl_007d55d8,0xb6);
       return;
     }
   }

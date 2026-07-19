@@ -84,7 +84,8 @@ thunk_FUN_0057a2c0(int *param_1,uint param_2,int *param_3,int param_4,int param_
   iVar10 = FUN_006aac70(param_2 * 8);
   *param_3 = iVar10;
   if (((iVar10 == 0) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
-    iVar10 = FUN_006ad4d0(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x4c,0,0,&DAT_007a4ccc);
+    iVar10 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x4c,0,0,&DAT_007a4ccc,
+                                s_ConusExplosion_Bad_parameters_or_007caf24);
     if (iVar10 != 0) {
       pcVar6 = (code *)swi(3);
       uVar12 = (*pcVar6)();

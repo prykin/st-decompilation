@@ -137,7 +137,7 @@ int FUN_006b1680(int *param_1,int param_2)
       LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
     }
     if (iVar4 != 0) {
-      FUN_006a5e40(iVar4,DAT_007ed77c,0x7edac0,0x14a);
+      RaiseInternalException(iVar4,DAT_007ed77c,s_E__DKW_DDX_C_ddsinit_c_007edac0,0x14a);
       return iVar4;
     }
   }

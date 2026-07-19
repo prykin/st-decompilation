@@ -25,8 +25,7 @@ void FUN_00562f50(uint param_1,int param_2,int param_3,int param_4,int param_5,i
   int iVar18;
   int *piVar19;
   bool bVar20;
-  undefined4 local_1b8;
-  undefined4 local_1b4 [16];
+  InternalExceptionFrame local_1b8;
   undefined4 *local_174;
   int local_16c;
   int *local_164;
@@ -150,9 +149,9 @@ void FUN_00562f50(uint param_1,int param_2,int param_3,int param_4,int param_5,i
     DAT_008033ac = DAT_008033a8 * DAT_008033a4;
     DAT_00803304 = param_2 - DAT_008033bc;
     DAT_00803308 = param_3 - DAT_008033c0;
-    local_1b8 = DAT_00858df8;
-    DAT_00858df8 = &local_1b8;
-    iVar14 = __setjmp3(local_1b4,2,FUN_0072da21,0xffffffff);
+    local_1b8.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_1b8;
+    iVar14 = __setjmp3(local_1b8.jumpBuffer,2,FUN_0072da21,0xffffffff);
     local_1c = &stack0xfffffe18;
     if (iVar14 == 0) {
       local_1c = &stack0xfffffe18;
@@ -962,12 +961,13 @@ LAB_005637bc:
           } while (iVar14 < (int)uVar17);
         }
       }
-      DAT_00858df8 = (undefined4 *)local_1b8;
+      g_currentExceptionFrame = local_1b8.previous;
       iVar14 = local_70;
     }
     else {
-      DAT_00858df8 = (undefined4 *)local_1b8;
-      iVar15 = FUN_006ad4d0(s_E____titans_scoreai_cpp_007c96b0,0xdc2,0,iVar14,&DAT_007a4ccc);
+      g_currentExceptionFrame = local_1b8.previous;
+      iVar15 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0xdc2,0,iVar14,&DAT_007a4ccc,
+                                  s_AiAiCalcMinesFields_007c96e8);
       if (iVar15 != 0) {
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
@@ -991,7 +991,7 @@ LAB_005637bc:
       iVar15 = iVar15 + 4;
     } while (iVar15 < 0x40);
     if (iVar14 != 0) {
-      FUN_006a5e40(iVar14,DAT_007ed77c,0x7c96b0,0xdd4);
+      RaiseInternalException(iVar14,DAT_007ed77c,s_E____titans_scoreai_cpp_007c96b0,0xdd4);
     }
   }
   ExceptionList = local_14;

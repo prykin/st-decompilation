@@ -23,8 +23,7 @@ SpriteClassTy::SetImages
   SpriteClassTy *pSVar11;
   void *unaff_EDI;
   SpriteClassTy *pSVar12;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   SpriteClassTy *local_c;
   undefined4 local_8;
   
@@ -35,10 +34,10 @@ SpriteClassTy::SetImages
   if (this[0x4c] == (SpriteClassTy)0x80) {
     return 0;
   }
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_c;
   if (iVar4 == 0) {
     *(undefined4 *)(local_c + 0x4d) = 0;
@@ -67,7 +66,7 @@ SpriteClassTy::SetImages
       pcVar5 = FUN_00725c60(param_1,param_4,0,param_6);
       *(char **)(pSVar3 + 0x51) = pcVar5;
       if (pcVar5 == (char *)0x0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0454,0xe4);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xe4);
       }
       iVar4 = *(int *)(pSVar3 + 0x51);
       FUN_006b2930(*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,
@@ -82,7 +81,7 @@ SpriteClassTy::SetImages
       psVar6 = FUN_00725f50(param_1,param_4,param_3,0,param_6);
       *(short **)(pSVar3 + 0x59) = psVar6;
       if (psVar6 == (short *)0x0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0454,0xf8);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xf8);
       }
       psVar6 = *(short **)(pSVar3 + 0x59);
       FUN_006b2930(*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),(int)*psVar6,
@@ -99,7 +98,7 @@ SpriteClassTy::SetImages
       psVar6 = FUN_00726a80(param_1,param_4,0,param_6);
       *(short **)(pSVar3 + 0x55) = psVar6;
       if (psVar6 == (short *)0x0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0454,0xee);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xee);
       }
       psVar6 = *(short **)(pSVar3 + 0x55);
       FUN_006b2930(*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,(undefined4 *)(int)*psVar6,
@@ -146,19 +145,20 @@ SpriteClassTy::SetImages
       *(uint *)(pSVar3 + 0x5d) = param_5;
     }
     *(undefined4 *)(pSVar3 + 0x61) = 0;
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
   }
   else {
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     local_8 = 0xfffffffc;
     if (param_6 != 0) {
-      iVar8 = FUN_006ad4d0(s_E__Ourlib_Sprite_cpp_007f0454,0x115,0,iVar4,&DAT_007a4ccc);
+      iVar8 = ReportDebugMessage(s_E__Ourlib_Sprite_cpp_007f0454,0x115,0,iVar4,&DAT_007a4ccc,
+                                 s_SpriteClassTy__SetImages_007f04c0);
       if (iVar8 != 0) {
         pcVar2 = (code *)swi(3);
         uVar7 = (*pcVar2)();
         return uVar7;
       }
-      FUN_006a5e40(iVar4,0,0x7f0454,0x117);
+      RaiseInternalException(iVar4,0,s_E__Ourlib_Sprite_cpp_007f0454,0x117);
       return 0xfffffffc;
     }
   }

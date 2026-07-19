@@ -16,8 +16,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   BehPanelTy *pBVar5;
   short *psVar6;
   bool bVar7;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   int local_28;
   undefined4 local_24;
   undefined4 local_20;
@@ -29,16 +28,17 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   int local_c;
   BehPanelTy *local_8;
   
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
-    iVar3 = FUN_006ad4d0(s_E____titans_Andrey_behpanel_cpp_007c1694,0xb2,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_6c.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Andrey_behpanel_cpp_007c1694,0xb2,0,iVar2,&DAT_007a4ccc
+                               ,s_BehPanelTy__Update_007c1758);
     if (iVar3 == 0) {
-      FUN_006a5e40(iVar2,0,0x7c1694,0xb2);
+      RaiseInternalException(iVar2,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0xb2);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -105,7 +105,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
     *(undefined4 *)(this_00 + 0x28) = 0x20;
     FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1ca),(undefined4 *)(this_00 + 0x18));
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
+  g_currentExceptionFrame = local_6c.previous;
   return;
 }
 

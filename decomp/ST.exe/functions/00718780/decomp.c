@@ -17,8 +17,7 @@ FUN_00718780(int param_1,int param_2,int param_3,int param_4,int param_5,undefin
   void *unaff_EDI;
   float local_c6c;
   float afStack_c68 [767];
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   int local_28;
   float local_24;
   float *local_20;
@@ -33,9 +32,9 @@ FUN_00718780(int param_1,int param_2,int param_3,int param_4,int param_5,undefin
   local_10 = -1.0;
   local_18 = -1.0;
   local_14 = -1.0;
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
-  iVar3 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
+  iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (param_6 == (undefined4 *)0x0) {
       param_6 = FUN_006aac10(param_2 + param_3);
@@ -117,13 +116,14 @@ FUN_00718780(int param_1,int param_2,int param_3,int param_4,int param_5,undefin
         local_20 = local_20 + 3;
       } while (param_2 < local_28);
     }
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return param_6;
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
-  iVar7 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,0xdc,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_6c.previous;
+  iVar7 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0xdc,0,iVar3,&DAT_007a4ccc,
+                             s_CreateReplColorTbl_error__007f0730);
   if (iVar7 == 0) {
-    FUN_006a5e40(iVar3,0,0x7f0718,0xdd);
+    RaiseInternalException(iVar3,0,s_E__Ourlib_Palette_cpp_007f0718,0xdd);
     return (undefined4 *)0x0;
   }
   pcVar1 = (code *)swi(3);

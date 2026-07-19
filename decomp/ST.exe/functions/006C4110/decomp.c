@@ -48,7 +48,7 @@ int FUN_006c4110(int param_1)
   }
   LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x508));
   if (iVar2 != 0) {
-    FUN_006a5e40(iVar2,DAT_007ed77c,0x7ede80,0x337);
+    RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DV_C_dvideo_cpp_007ede80,0x337);
     return iVar2;
   }
   return 0;

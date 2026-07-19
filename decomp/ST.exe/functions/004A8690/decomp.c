@@ -21,13 +21,15 @@ void __thiscall FUN_004a8690(void *this,int param_1)
         this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
                                                      *(undefined1 *)((int)this + 0x24)),local_8,1);
         if (this_00 == (int *)0x0) {
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1742,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1742,0,0,
+                                     &DAT_007a4ccc,s_STGroupBoatC__GenSwitch_NULL_007ac540);
           if (iVar3 != 0) {
             pcVar2 = (code *)swi(3);
             (*pcVar2)();
             return;
           }
-          FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x1743);
+          RaiseInternalException
+                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1743);
         }
         iVar3 = (**(code **)(*this_00 + 0x2c))();
         if ((iVar3 == 0x16) || (iVar3 = (**(code **)(*this_00 + 0x2c))(), iVar3 == 0x25)) {

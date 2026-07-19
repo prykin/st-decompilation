@@ -32,8 +32,7 @@ undefined4 __thiscall SIDTy::GetMessage(SIDTy *this,int param_1)
   bool bVar21;
   int iVar22;
   int iVar23;
-  undefined4 *local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   int local_20;
   int local_1c;
   int local_18;
@@ -45,15 +44,16 @@ undefined4 __thiscall SIDTy::GetMessage(SIDTy *this,int param_1)
   local_10 = this;
   uVar6 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x61) = uVar6;
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
-  iVar7 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
+  iVar7 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar7 != 0) {
-    DAT_00858df8 = local_64;
-    iVar22 = FUN_006ad4d0(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x212,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_64.previous;
+    iVar22 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x212,0,iVar7,&DAT_007a4ccc
+                                ,s_SIDTy__GetMessage_007cd6d4);
     if (iVar22 == 0) {
-      FUN_006a5e40(iVar7,0,0x7cd5c4,0x212);
+      RaiseInternalException(iVar7,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x212);
       return 0xffff;
     }
     pcVar5 = (code *)swi(3);
@@ -165,10 +165,10 @@ LAB_005d97ca:
             local_8 = puVar10;
             DAT_00807340 = 1;
             if ((int)local_8 < 0) {
-              thunk_FUN_005738d0(&DAT_00807658);
+              thunk_FUN_005738d0(&g_sound);
             }
             else {
-              thunk_FUN_00572510(&DAT_00807658);
+              thunk_FUN_00572510(&g_sound);
             }
             if (DAT_00808446 != '\0') {
               DeleteCtrls(this_00);
@@ -393,7 +393,7 @@ LAB_005d97ca:
   }
   FUN_006b35d0(DAT_008075a8,*(uint *)(this_00 + 0x1cb4));
 LAB_005d9ccb:
-  DAT_00858df8 = local_64;
+  g_currentExceptionFrame = local_64.previous;
   uVar6 = thunk_FUN_005b6430();
   return uVar6;
 }

@@ -18,22 +18,22 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   undefined4 *puVar9;
   void *unaff_EDI;
   STGroupBoatC *pSVar10;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   undefined4 *local_c;
   STGroupBoatC *local_8;
   
   local_c = param_1;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x158b,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x158b,0,iVar3,&DAT_007a4ccc,
+                               s_STGroupBoatC__RestoreGrpBData_007ac3f4);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7abe3c,0x158c);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x158c);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -373,12 +373,12 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   }
   if (*(int *)((int)puVar2 + 0x2aa) == -1) {
     *(undefined4 *)(local_8 + 0x29f) = 0;
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return;
   }
   uVar5 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)((int)puVar2 + 0x2aa) + (int)puVar2));
   *(undefined4 *)(local_8 + 0x29f) = uVar5;
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return;
 }
 

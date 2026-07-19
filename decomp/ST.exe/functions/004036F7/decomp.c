@@ -284,7 +284,8 @@ void __fastcall thunk_FUN_00420ae0(int *param_1)
     pcVar9 = &DAT_007a4fb4;
     break;
   default:
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xce5,0,0,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xce5,0,0,&DAT_007a4ccc,
+                               s_STSprGameObjC__LoadLifeFrame_unk_007a5008);
     if (iVar6 == 0) {
       return;
     }

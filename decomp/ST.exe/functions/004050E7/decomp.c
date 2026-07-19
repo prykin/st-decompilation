@@ -73,13 +73,19 @@ undefined4 __fastcall thunk_FUN_004da9c0(undefined4 param_1)
             uVar3 = thunk_FUN_004406c0(bVar9);
             uVar3 = uVar3 & 0xff;
             if (uVar3 == 1) {
-              thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,0x71,(int *)0x0,0);
+              SoundClassTy::PlaySound_thunk
+                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,0x71,(SoundPosition *)0x0
+                         ,0);
             }
             else if (uVar3 == 2) {
-              thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,0x72,(int *)0x0,0);
+              SoundClassTy::PlaySound_thunk
+                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,0x72,(SoundPosition *)0x0
+                         ,0);
             }
             else if (uVar3 == 3) {
-              thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,0x73,(int *)0x0,0);
+              SoundClassTy::PlaySound_thunk
+                        ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,0x73,(SoundPosition *)0x0
+                         ,0);
             }
           }
         }
@@ -176,7 +182,9 @@ LAB_004dabff:
             if (uVar6 != 3) goto LAB_004dad15;
             iVar4 = 0x79;
           }
-          thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,iVar4,(int *)0x0,0);
+          SoundClassTy::PlaySound_thunk
+                    ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,iVar4,(SoundPosition *)0x0,0)
+          ;
         }
 LAB_004dad15:
         iVar4 = 0;

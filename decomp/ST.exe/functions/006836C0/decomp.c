@@ -11,7 +11,7 @@ int __cdecl FUN_006836c0(int param_1,byte *param_2)
   bool bVar7;
   
   if ((param_1 == 0) || (param_2 == (byte *)0x0)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d5604,0x38a);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x38a);
   }
   iVar2 = *(int *)(param_1 + 8);
   iVar6 = 0;

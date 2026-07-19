@@ -23,10 +23,10 @@ void FUN_0075e630(int *param_1,int param_2)
     *(undefined **)(iVar1 + 8) = &DAT_0075f710;
     iVar4 = param_1[0x1f];
     if (iVar4 < 1) {
-      FUN_006a5e40(0x37,DAT_007ed77c,0x7f2e88,0x4d9);
+      RaiseInternalException(0x37,DAT_007ed77c,s_E__DKW_JPG_C_jquant2_c_007f2e88,0x4d9);
     }
     if (0x100 < iVar4) {
-      FUN_006a5e40(0x38,DAT_007ed77c,0x7f2e88,0x4db);
+      RaiseInternalException(0x38,DAT_007ed77c,s_E__DKW_JPG_C_jquant2_c_007f2e88,0x4db);
     }
     if (param_1[0x14] == 2) {
       uVar3 = (param_1[0x1a] + 2) * 6;

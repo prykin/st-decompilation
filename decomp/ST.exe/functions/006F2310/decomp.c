@@ -18,8 +18,7 @@ undefined4 * FUN_006f2310(byte param_1,char *param_2,undefined4 *param_3,int par
   undefined4 local_262;
   short local_25e;
   char local_25c [516];
-  undefined4 *local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   int local_14;
   undefined4 local_10;
   undefined4 *local_c;
@@ -27,24 +26,25 @@ undefined4 * FUN_006f2310(byte param_1,char *param_2,undefined4 *param_3,int par
   
   local_8 = 0;
   local_14 = 0;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar3 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = local_58;
+    g_currentExceptionFrame = local_58.previous;
     if ((local_8 != 0) && (local_14 != 0)) {
       FUN_006ab060(&local_8);
     }
     if ((param_4 != 0) || (iVar3 != -4)) {
       wsprintfA(local_378,s_cMf32__RecGetParam_File___s__Sec_007efc28,(int)local_c + 0x231,
                 s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
-      iVar4 = FUN_006ad4d0(s_E__Ourlib_Mf32int_cpp_007efaa4,0x296,0,iVar3,&DAT_007a4ccc);
+      iVar4 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x296,0,iVar3,&DAT_007a4ccc,
+                                 local_378);
       if (iVar4 != 0) {
         pcVar2 = (code *)swi(3);
         puVar5 = (undefined4 *)(*pcVar2)();
         return puVar5;
       }
-      FUN_006a5e40(iVar3,0,0x7efaa4,0x298);
+      RaiseInternalException(iVar3,0,s_E__Ourlib_Mf32int_cpp_007efaa4,0x298);
     }
     return (undefined4 *)0x0;
   }
@@ -71,7 +71,7 @@ undefined4 * FUN_006f2310(byte param_1,char *param_2,undefined4 *param_3,int par
   }
   iVar3 = FUN_00751b60(*(int *)*local_c,(ushort *)local_274,&local_10);
   if (iVar3 == -4) {
-    FUN_006a5e40(-4,DAT_007ed77c,0x7efaa4,0x284);
+    RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x284);
   }
   if (param_3 == (undefined4 *)0x0) {
     param_3 = FUN_006aac10(0xc);
@@ -79,7 +79,7 @@ undefined4 * FUN_006f2310(byte param_1,char *param_2,undefined4 *param_3,int par
   *param_3 = local_26a;
   param_3[1] = local_266;
   param_3[2] = local_262;
-  DAT_00858df8 = local_58;
+  g_currentExceptionFrame = local_58.previous;
   return param_3;
 }
 

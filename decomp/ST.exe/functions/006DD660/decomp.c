@@ -12,7 +12,7 @@ void __thiscall FUN_006dd660(void *this,int param_1,int param_2,int param_3,int 
                                   *(undefined4 *)((int)this + 0x90)));
     return;
   }
-  FUN_006a5e40(-0x34,DAT_007ed77c,0x7ee758,0x3da);
+  RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Strend_cpp_007ee758,0x3da);
   return;
 }
 

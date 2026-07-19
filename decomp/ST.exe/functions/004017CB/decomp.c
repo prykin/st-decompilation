@@ -364,7 +364,7 @@ LAB_004286d0:
     }
     FUN_006a5e90(DAT_007f4d6c);
     iVar4 = iStack_30;
-    FUN_006a5e40(iStack_30,DAT_007ed77c,0x7a5208,0x78f);
+    RaiseInternalException(iStack_30,DAT_007ed77c,s_E____titans_wlad_Td3dshad_cpp_007a5208,0x78f);
   }
   ExceptionList = pvStack_14;
   return iVar4;

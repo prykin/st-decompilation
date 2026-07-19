@@ -16,25 +16,26 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar6;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   STGroupBoatC *local_10;
   undefined2 local_c;
   undefined2 local_a;
   char local_8 [2];
   short local_6;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar2 == 0) {
     if (*(int *)(local_10 + 0x212) == 0) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x509);
+      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x509)
+      ;
     }
     if (*(int *)(this_00 + 0x20e) == 0) {
-      FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x50b);
+      RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x50b)
+      ;
     }
     uVar6 = 0;
     iVar2 = *(int *)(*(int *)(this_00 + 0x20e) + 0xc);
@@ -53,14 +54,15 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
         uVar6 = uVar6 + 1;
       } while ((int)uVar6 < iVar2);
     }
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
   }
   else {
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51c,0,iVar2,&DAT_007a4ccc);
+      iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51c,0,iVar2,&DAT_007a4ccc
+                                 ,s_STGroupBoatC__ReMakePVecAndTgtLi_007abec8);
       if (iVar4 == 0) {
-        FUN_006a5e40(iVar2,0,0x7abe3c,0x51d);
+        RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x51d);
         return 0xffffffff;
       }
       pcVar1 = (code *)swi(3);

@@ -9,21 +9,20 @@ PanelTy::PaintIBut(PanelTy *this,int param_1,char *param_2,UINT param_3,int para
 {
   code *pcVar1;
   PanelTy *pPVar2;
-  undefined4 *puVar3;
-  undefined4 uVar4;
-  byte *pbVar5;
-  ushort *puVar6;
-  uint *puVar7;
+  undefined4 *errorCode;
+  undefined4 uVar3;
+  byte *pbVar4;
+  ushort *puVar5;
+  uint *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar8;
-  byte bVar9;
-  int iVar10;
-  undefined4 *puVar11;
-  int iVar12;
-  undefined4 *puVar13;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  uint uVar7;
+  byte bVar8;
+  int iVar9;
+  undefined4 *puVar10;
+  int iVar11;
+  undefined4 *puVar12;
+  InternalExceptionFrame local_58;
   int *local_14;
   PanelTy *local_10;
   int local_c;
@@ -35,12 +34,12 @@ PanelTy::PaintIBut(PanelTy *this,int param_1,char *param_2,UINT param_3,int para
   }
   else {
     local_8 = *local_14;
-    iVar10 = DAT_00806730;
+    iVar9 = DAT_00806730;
     if (*(int *)(this + 0x5c) == 0) goto LAB_00538de2;
   }
-  iVar10 = *(int *)(this + 0x3c);
+  iVar9 = *(int *)(this + 0x3c);
 LAB_00538de2:
-  local_8 = local_8 - iVar10;
+  local_8 = local_8 - iVar9;
   if (param_5 == 0) {
     local_c = local_14[1] - *(int *)(this + 0x44);
   }
@@ -50,42 +49,43 @@ LAB_00538de2:
   else {
     local_c = local_14[1] - *(int *)(this + 0x44);
   }
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_10 = this;
-  puVar3 = (undefined4 *)__setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  errorCode = (undefined4 *)__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_10;
-  if (puVar3 != (undefined4 *)0x0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar10 = FUN_006ad4d0(s_E____titans_Andrey_panel_cpp_007c7390,0xdf,0,(int)puVar3,&DAT_007a4ccc);
-    if (iVar10 == 0) {
-      FUN_006a5e40((int)puVar3,0,0x7c7390,0xdf);
+  if (errorCode != (undefined4 *)0x0) {
+    g_currentExceptionFrame = local_58.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0xdf,0,(int)errorCode,
+                               &DAT_007a4ccc,s_PanelTy__PaintIBut_007c7460);
+    if (iVar9 == 0) {
+      RaiseInternalException((int)errorCode,0,s_E____titans_Andrey_panel_cpp_007c7390,0xdf);
       return;
     }
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  iVar10 = 1;
-  uVar8 = 0xffffffff;
-  puVar11 = puVar3;
-  puVar13 = puVar3;
-  uVar4 = thunk_FUN_00529fe0(param_1);
-  bVar9 = (byte)puVar3;
-  pbVar5 = (byte *)FUN_006f2c00(param_2,1,uVar4);
-  puVar6 = FUN_00709af0(DAT_00806794,1,pbVar5,uVar8,bVar9,iVar10,(int)puVar11,puVar13);
-  iVar10 = local_c;
-  thunk_FUN_00540760(*(undefined4 **)(pPVar2 + 0x68),local_8,local_c,'\x01',(byte *)puVar6);
-  ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)(pPVar2 + 0x68),0,local_8,iVar10,
+  iVar9 = 1;
+  uVar7 = 0xffffffff;
+  puVar10 = errorCode;
+  puVar12 = errorCode;
+  uVar3 = thunk_FUN_00529fe0(param_1);
+  bVar8 = (byte)errorCode;
+  pbVar4 = (byte *)FUN_006f2c00(param_2,1,uVar3);
+  puVar5 = FUN_00709af0(DAT_00806794,1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
+  iVar9 = local_c;
+  thunk_FUN_00540760(*(undefined4 **)(pPVar2 + 0x68),local_8,local_c,'\x01',(byte *)puVar5);
+  ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)(pPVar2 + 0x68),0,local_8,iVar9,
                    local_14[2],local_14[3]);
-  uVar4 = thunk_FUN_00529fe0(param_1);
-  iVar12 = -1;
-  iVar10 = -2;
-  puVar7 = (uint *)FUN_006b0140(param_3,DAT_00807618);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar7,iVar10,iVar12,uVar4);
+  uVar3 = thunk_FUN_00529fe0(param_1);
+  iVar11 = -1;
+  iVar9 = -2;
+  puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar11,uVar3);
   FUN_006b3640(DAT_008075a8,*(uint *)(pPVar2 + 0x60),0xffffffff,*(uint *)(pPVar2 + 0x3c),
                *(uint *)(pPVar2 + 0x44));
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return;
 }
 

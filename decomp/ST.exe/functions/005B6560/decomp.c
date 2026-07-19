@@ -11,23 +11,24 @@ void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint
   int iVar3;
   void *unaff_ESI;
   uint uVar4;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar5;
   undefined4 local_48 [16];
   MMMObjTy *local_8;
   
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar5 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar5);
+  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar5);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar5;
-    iVar3 = FUN_006ad4d0(s_E____titans_Start_mmenuobj_cpp_007cca38,0x121,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = pIVar5;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x121,0,iVar2,&DAT_007a4ccc
+                               ,s_MMMObjTy__PaintSlBut_007ccb00);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7cca38,0x121);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x121);
     return;
   }
   switch(*(undefined2 *)(param_2 + 0x14)) {
@@ -55,13 +56,13 @@ switchD_005b65a4_default:
   }
   else {
     if (*(short *)(param_2 + 0x14) != 3) {
-      DAT_00858df8 = (undefined1 *)uVar5;
+      g_currentExceptionFrame = pIVar5;
       return;
     }
     uVar4 = 9;
   }
   thunk_FUN_005b6730(local_8,uVar4,'\x01',-1);
-  DAT_00858df8 = (undefined1 *)uVar5;
+  g_currentExceptionFrame = pIVar5;
   return;
 }
 

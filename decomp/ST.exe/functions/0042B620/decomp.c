@@ -44,8 +44,9 @@ uint FUN_0042b620(uint param_1,uint param_2,undefined4 param_3)
     }
     break;
   default:
-    iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x17a,0,0,
-                         (byte *)s_STAllPlayersC__GetObjPtr_player__007a609c);
+    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x17a,0,0,
+                               s_STAllPlayersC__GetObjPtr_player__007a609c,(int)(char)param_1,
+                               param_2 & 0xffff);
     if (iVar2 == 0) {
       return 0;
     }

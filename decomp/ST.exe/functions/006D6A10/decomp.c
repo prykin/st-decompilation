@@ -13,10 +13,8 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   int iVar9;
-  undefined4 local_dc;
-  undefined4 local_d8 [16];
-  undefined4 local_98;
-  undefined4 local_94 [16];
+  InternalExceptionFrame local_dc;
+  InternalExceptionFrame local_98;
   tagRECT local_54;
   int *local_44;
   RECT local_40;
@@ -52,18 +50,18 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   }
   *(DWORD *)(*(int *)((int)this + 0x288) + 0xec) = DVar6;
   if (*(int *)((int)this + 0x30c) == 0) {
-    local_98 = DAT_00858df8;
-    DAT_00858df8 = &local_98;
-    iVar9 = __setjmp3(local_94,0,unaff_EDI,unaff_ESI);
+    local_98.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_98;
+    iVar9 = __setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this = local_10;
     if (iVar9 == 0) {
       iVar9 = FUN_006d63e0(local_10,param_1);
       local_8 = iVar9;
       FUN_006bb370(*(int *)(*(int *)((int)this + 0x288) + 0x28),0,0);
-      DAT_00858df8 = (undefined4 *)local_98;
+      g_currentExceptionFrame = local_98.previous;
     }
     else {
-      DAT_00858df8 = (undefined4 *)local_98;
+      g_currentExceptionFrame = local_98.previous;
       local_8 = iVar9;
     }
   }
@@ -140,17 +138,17 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
           *(undefined4 *)((int)this + 0x300) = 0;
           *(undefined4 *)((int)this + 0x2fc) = 0;
         }
-        local_dc = DAT_00858df8;
-        DAT_00858df8 = &local_dc;
-        iVar9 = __setjmp3(local_d8,0,unaff_EDI,unaff_ESI);
+        local_dc.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &local_dc;
+        iVar9 = __setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
         this = local_10;
         if (iVar9 == 0) {
           FUN_006bb370(*(int *)(*(int *)((int)local_10 + 0x288) + 0x28),0,0);
-          DAT_00858df8 = (undefined4 *)local_dc;
+          g_currentExceptionFrame = local_dc.previous;
           iVar9 = local_8;
         }
         else {
-          DAT_00858df8 = (undefined4 *)local_dc;
+          g_currentExceptionFrame = local_dc.previous;
           local_8 = iVar9;
         }
       }

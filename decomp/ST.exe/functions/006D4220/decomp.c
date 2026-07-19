@@ -89,7 +89,7 @@ undefined4 * FUN_006d4220(undefined4 *param_1,LPCSTR param_2,DWORD param_3,undef
   if (local_c != (HANDLE)0x0) {
     CloseHandle(local_c);
   }
-  FUN_006a5e40(local_8,DAT_007ed77c,0x7ee22c,0x4b);
+  RaiseInternalException(local_8,DAT_007ed77c,s_E__DKW_FMM_C_fmap_c_007ee22c,0x4b);
   return (undefined4 *)0x0;
 }
 

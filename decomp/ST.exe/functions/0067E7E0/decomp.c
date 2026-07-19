@@ -27,8 +27,7 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
   char local_c8 [32];
   uint local_a8;
   undefined4 local_a4;
-  undefined4 *local_a0;
-  undefined4 local_9c [16];
+  InternalExceptionFrame local_a0;
   byte local_5c [64];
   int local_1c;
   int local_18;
@@ -45,12 +44,13 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
   *(undefined1 *)puVar12 = 0;
   local_8 = (uint *)0x0;
   local_10 = (uint *)0x0;
-  local_a0 = DAT_00858df8;
-  DAT_00858df8 = &local_a0;
-  iVar7 = __setjmp3(local_9c,0,unaff_EDI,unaff_ESI);
+  local_a0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a0;
+  iVar7 = __setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
-    DAT_00858df8 = local_a0;
-    iVar10 = FUN_006ad4d0(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_a0.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar7,&DAT_007a4ccc,
+                                s_CreateArbList_007d30e0);
     if (iVar10 == 0) {
       if (local_8 != (uint *)0x0) {
         FUN_006ae110((byte *)local_8);
@@ -58,7 +58,7 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
       if (local_10 != (uint *)0x0) {
         FUN_006ae110((byte *)local_10);
       }
-      FUN_006a5e40(iVar7,0,0x7d2fa4,0x248);
+      RaiseInternalException(iVar7,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x248);
       return (uint *)0x0;
     }
     pcVar3 = (code *)swi(3);
@@ -66,7 +66,7 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
     return puVar6;
   }
   if (param_1 == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2fa4,0x216);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x216);
   }
   local_8 = FUN_006ae290((uint *)0x0,5,0x98,5);
   if (param_2 != 0) {
@@ -103,7 +103,7 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
       if (local_10 != (uint *)0x0) {
         FUN_006ae110((byte *)local_10);
       }
-      DAT_00858df8 = local_a0;
+      g_currentExceptionFrame = local_a0.previous;
       return local_8;
     }
     local_c = FUN_006f2d90(param_1,pcVar5,0,1);

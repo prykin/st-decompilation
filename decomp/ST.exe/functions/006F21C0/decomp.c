@@ -13,30 +13,30 @@ int FUN_006f21c0(byte param_1,char *param_2)
   char *pcVar7;
   ushort *puVar8;
   CHAR local_158 [260];
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   undefined4 *local_10;
   undefined4 local_c;
   ushort *local_8;
   
   local_8 = (ushort *)0x0;
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = local_54;
+    g_currentExceptionFrame = local_54.previous;
     if (local_8 != (ushort *)0x0) {
       FUN_006ab060(&local_8);
     }
     wsprintfA(local_158,s_cMf32__RecChk_File___s__Sect__s_N_007efbf8,(int)local_10 + 0x231,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
-    iVar5 = FUN_006ad4d0(s_E__Ourlib_Mf32int_cpp_007efaa4,0x261,0,iVar4,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x261,0,iVar4,&DAT_007a4ccc,
+                               local_158);
     if (iVar5 != 0) {
       pcVar3 = (code *)swi(3);
       iVar4 = (*pcVar3)();
       return iVar4;
     }
-    FUN_006a5e40(iVar4,0,0x7efaa4,0x263);
+    RaiseInternalException(iVar4,0,s_E__Ourlib_Mf32int_cpp_007efaa4,0x263);
     return iVar4;
   }
   uVar6 = 0xffffffff;
@@ -74,7 +74,7 @@ int FUN_006f21c0(byte param_1,char *param_2)
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }
-  DAT_00858df8 = local_54;
+  g_currentExceptionFrame = local_54.previous;
   return iVar4;
 }
 

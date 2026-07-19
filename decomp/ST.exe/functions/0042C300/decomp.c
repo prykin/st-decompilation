@@ -24,7 +24,8 @@ undefined4 FUN_0042c300(undefined4 param_1,uint param_2,int param_3,uint param_4
   }
   else {
     if (param_2 != 1) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x28f);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x28f);
       goto LAB_0042c3a0;
     }
     iVar5 = (int)&DAT_007f4fd3 + (char)param_1 * 0xa62;

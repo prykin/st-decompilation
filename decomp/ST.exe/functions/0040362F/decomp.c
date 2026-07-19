@@ -65,8 +65,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   undefined4 uStack_c0;
   undefined4 uStack_bc;
   undefined4 uStack_74;
-  undefined4 uStack_70;
-  undefined4 auStack_6c [16];
+  InternalExceptionFrame IStack_70;
   undefined4 uStack_2c;
   undefined2 uStack_28;
   undefined2 uStack_22;
@@ -87,19 +86,20 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  uStack_70 = DAT_00858df8;
-  DAT_00858df8 = &uStack_70;
-  iVar4 = __setjmp3(auStack_6c,0,unaff_EDI,unaff_ESI);
+  IStack_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_70;
+  iVar4 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pPStack_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_70;
-    iVar3 = FUN_006ad4d0(s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_70.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d,0,iVar4,&DAT_007a4ccc
+                               ,s_PrividerTy__CreateCtrls_007cce6c);
     if (iVar3 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7ccd28,0x24d);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d);
     return;
   }
   PStack_5 = pPStack_10[0x1a5f];
@@ -222,7 +222,7 @@ LAB_005bbb22:
     *(undefined4 *)(this_00 + 0x31) = 1;
     FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1a73),(undefined4 *)pPVar1);
   }
-  DAT_00858df8 = (undefined4 *)uStack_70;
+  g_currentExceptionFrame = IStack_70.previous;
   return;
 }
 

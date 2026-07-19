@@ -11,19 +11,19 @@ undefined4 FUN_006e3510(undefined4 param_1)
   undefined4 unaff_ESI;
   int iVar7;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   int local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar7 = FUN_006ad4d0(s_E__Ourlib_Sapp_cpp_007ee78c,0x44,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar7 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x44,0,iVar2,&DAT_007a4ccc,
+                               s_AppClassTy__InitApp_Error___007ee770);
     if (iVar7 == 0) {
-      FUN_006a5e40(iVar2,0,0x7ee78c,0x45);
+      RaiseInternalException(iVar2,0,s_E__Ourlib_Sapp_cpp_007ee78c,0x45);
       return 0;
     }
     pcVar1 = (code *)swi(3);
@@ -47,22 +47,22 @@ undefined4 FUN_006e3510(undefined4 param_1)
       *(uint **)(local_c + 0x28) = puVar6;
       puVar6 = FUN_006ae290((uint *)0x0,0x14,0x20,10);
       *(uint **)(local_c + 0x2c) = puVar6;
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 1;
     }
     iVar2 = 0;
     if (0 < iVar7) {
       do {
-        if (*(int *)(*(int *)(local_c + 8) + iVar2 * 8) == *(int *)(iVar7 + *(int *)(local_c + 8)))
-        {
-          iVar3 = FUN_006ad4d0(s_E__Ourlib_Sapp_cpp_007ee78c,0x32,0,0,
-                               (byte *)s_Two_types_with_id_____lX_007ee7a0);
+        iVar3 = *(int *)(iVar7 + *(int *)(local_c + 8));
+        if (*(int *)(*(int *)(local_c + 8) + iVar2 * 8) == iVar3) {
+          iVar3 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x32,0,0,
+                                     s_Two_types_with_id_____lX_007ee7a0,iVar3);
           if (iVar3 != 0) {
             pcVar1 = (code *)swi(3);
             uVar4 = (*pcVar1)();
             return uVar4;
           }
-          FUN_006a5e40(-0x96,DAT_007ed77c,0x7ee78c,0x33);
+          RaiseInternalException(-0x96,DAT_007ed77c,s_E__Ourlib_Sapp_cpp_007ee78c,0x33);
         }
         iVar2 = iVar2 + 1;
       } while (iVar2 < local_8);

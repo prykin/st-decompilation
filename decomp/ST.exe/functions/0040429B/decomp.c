@@ -22,8 +22,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   UINT UVar14;
   char acStack_c8 [2];
   undefined1 uStack_c6;
-  undefined4 *puStack_a0;
-  undefined4 auStack_9c [16];
+  InternalExceptionFrame IStack_a0;
   undefined4 auStack_5c [8];
   int iStack_3c;
   char cStack_38;
@@ -44,15 +43,16 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   pPStack_20 = this;
   DVar8 = timeGetTime();
   *(DWORD *)(this + 0x61) = DVar8;
-  puStack_a0 = DAT_00858df8;
-  DAT_00858df8 = &puStack_a0;
-  iVar9 = __setjmp3(auStack_9c,0,unaff_EDI,unaff_ESI);
+  IStack_a0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_a0;
+  iVar9 = __setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pPStack_20;
   if (iVar9 != 0) {
-    DAT_00858df8 = puStack_a0;
-    iVar10 = FUN_006ad4d0(s_E____titans_Start_prov_obj_cpp_007ccd28,0x1bc,0,iVar9,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_a0.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x1bc,0,iVar9,
+                                &DAT_007a4ccc,s_PrividerTy__NonePrivider_007cce18);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar9,0,0x7ccd28,0x1bc);
+      RaiseInternalException(iVar9,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x1bc);
       return;
     }
     pcVar4 = (code *)swi(3);
@@ -62,7 +62,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   switch(pPStack_20[0x65]) {
   case (PrividerTy)0x1:
     if (pPStack_20[0x1a71] == (PrividerTy)0x0) {
-      DAT_00858df8 = puStack_a0;
+      g_currentExceptionFrame = IStack_a0.previous;
       return;
     }
     psStack_10 = (short *)0x0;
@@ -91,7 +91,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
     if (iVar9 != -0x4d) {
       if (iVar9 != 0) {
         if (iVar9 != 1) {
-          DAT_00858df8 = puStack_a0;
+          g_currentExceptionFrame = IStack_a0.previous;
           return;
         }
         if (uStack_1c == 0x1a) {
@@ -197,14 +197,14 @@ LAB_005bb532:
         *(undefined4 *)(this_01 + 0x1a69) = *(undefined4 *)(this_01 + 0x61);
         if (psStack_10 != (short *)0x0) {
           FUN_006ab060(&psStack_10);
-          DAT_00858df8 = puStack_a0;
+          g_currentExceptionFrame = IStack_a0.previous;
           return;
         }
-        DAT_00858df8 = puStack_a0;
+        g_currentExceptionFrame = IStack_a0.previous;
         return;
       }
       if ((uint)(*(int *)(this_01 + 0x61) - *(int *)(this_01 + 0x1a69)) < 0x7531) {
-        DAT_00858df8 = puStack_a0;
+        g_currentExceptionFrame = IStack_a0.previous;
         return;
       }
     }
@@ -233,7 +233,7 @@ LAB_005bb532:
       auStack_5c[3] = 2;
       MMsgTy::SetMessage(*(MMsgTy **)(*(int *)(this_01 + 0x1a5b) + 0x2e6),0x2525,'\0',auStack_5c,
                          (undefined4 *)0x0,(undefined4 *)0x0,0,0);
-      DAT_00858df8 = puStack_a0;
+      g_currentExceptionFrame = IStack_a0.previous;
       return;
     }
     (*(code *)**(undefined4 **)this_01)(auStack_5c);
@@ -287,7 +287,7 @@ LAB_005bb532:
       this_01[0x65] = (PrividerTy)0x1;
       CreateCtrls(this_01,'\0');
       PaintPrivider(this_01,'\0');
-      DAT_00858df8 = puStack_a0;
+      g_currentExceptionFrame = IStack_a0.previous;
       return;
     }
     break;
@@ -324,7 +324,7 @@ LAB_005bb532:
       if ((PVar1 != (PrividerTy)0xff) && (*(int *)(this_01 + (uint)(byte)PVar1 * 0x1fb + 0xd1) != 0)
          ) {
         FUN_006e3b50((undefined4 *)(this_01 + (uint)(byte)PVar1 * 0x1fb + 0xc1));
-        DAT_00858df8 = puStack_a0;
+        g_currentExceptionFrame = IStack_a0.previous;
         return;
       }
     }
@@ -356,11 +356,11 @@ LAB_005bb532:
         FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1c8a));
       }
       SetMode(this_01,(char)this_01[0x1a60],'\0');
-      DAT_00858df8 = puStack_a0;
+      g_currentExceptionFrame = IStack_a0.previous;
       return;
     }
   }
-  DAT_00858df8 = puStack_a0;
+  g_currentExceptionFrame = IStack_a0.previous;
   return;
 }
 

@@ -64,14 +64,14 @@ undefined4 FUN_00758a60(int param_1)
     }
     bVar1 = *pbVar7;
     if (0x1f < bVar5) {
-      FUN_006a5e40(0x1a,DAT_007ed77c,0x7f2db0,0x1d4);
+      RaiseInternalException(0x1a,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x1d4);
     }
     if (bVar5 < 0x10) {
       *(byte *)(uVar4 + 0xdc + param_1) = bVar1 & 0xf;
       bVar5 = (byte)((int)(uint)bVar1 >> 4);
       *(byte *)(uVar4 + 0xec + param_1) = bVar5;
       if (bVar5 < *(byte *)(uVar4 + 0xdc + param_1)) {
-        FUN_006a5e40(0x1b,DAT_007ed77c,0x7f2db0,0x1dc);
+        RaiseInternalException(0x1b,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x1dc);
       }
     }
     else {

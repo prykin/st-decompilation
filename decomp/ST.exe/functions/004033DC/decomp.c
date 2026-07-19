@@ -9,7 +9,6 @@ int __thiscall STBoatC::BackLoadRC(STBoatC *this,undefined4 param_1)
   int iVar5;
   STBoatC *pSVar6;
   int iVar7;
-  undefined4 uVar8;
   STBoatC *pSStack_8;
   
   *(undefined4 *)(this + 0xb7) = 0;
@@ -77,13 +76,14 @@ LAB_0046acad:
         }
         goto LAB_0046abcb;
       }
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x22fd,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x22fd,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackLoadRC__LOADRC_PDEP_007aa5ac);
       if (iVar5 != 0) {
         pcVar1 = (code *)swi(3);
         iVar5 = (*pcVar1)();
         return iVar5;
       }
-      uVar8 = 0x22fe;
+      iVar5 = 0x22fe;
     }
     else {
       if (*(int *)(this + 0x4d9) == 5) {
@@ -105,13 +105,14 @@ LAB_0046acad:
         }
         goto LAB_0046acad;
       }
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2311,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2311,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackLoadRC__LOADRC_PDEP_007aa580);
       if (iVar5 != 0) {
         pcVar1 = (code *)swi(3);
         iVar5 = (*pcVar1)();
         return iVar5;
       }
-      uVar8 = 0x2312;
+      iVar5 = 0x2312;
     }
     goto LAB_0046ac10;
   case 0xc:
@@ -145,13 +146,14 @@ LAB_0046abcb:
         iVar5 = (**(code **)(*(int *)this + 0xd8))();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2338,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2338,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackLoadRC__LOADRC_ODEP_007aa554);
       if (iVar5 != 0) {
         pcVar1 = (code *)swi(3);
         iVar5 = (*pcVar1)();
         return iVar5;
       }
-      uVar8 = 0x2339;
+      iVar5 = 0x2339;
     }
     else {
       if (*(int *)(this + 0x4d9) == 2) {
@@ -180,19 +182,21 @@ LAB_0046aaed:
         iVar5 = (**(code **)(*(int *)this + 0xd8))();
         return -(uint)(iVar5 != 0);
       }
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2350,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2350,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackLoadRC__LOADRC_ODEP_007aa528);
       if (iVar5 != 0) {
         pcVar1 = (code *)swi(3);
         iVar5 = (*pcVar1)();
         return iVar5;
       }
-      uVar8 = 0x2351;
+      iVar5 = 0x2351;
     }
 LAB_0046ac10:
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,uVar8);
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5);
     return 0xffff;
   default:
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2367,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2367,0,0,&DAT_007a4ccc,
+                               s_STBoatC__BackLoadRC_007aa510);
     if (iVar5 == 0) {
       return -1;
     }

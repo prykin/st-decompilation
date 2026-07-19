@@ -9,23 +9,24 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   code *pcVar4;
   CursorClassTy *this_01;
   FSGSTy *pFVar5;
+  int errorCode;
   int iVar6;
-  int iVar7;
   void *unaff_ESI;
-  undefined4 uVar8;
+  InternalExceptionFrame *pIVar7;
   undefined4 auStack_48 [16];
   FSGSTy *pFStack_8;
   
-  uVar8 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar7 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pFStack_8 = this;
-  iVar6 = __setjmp3(auStack_48,0,unaff_ESI,uVar8);
+  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar7);
   this_01 = DAT_00802a30;
-  if (iVar6 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar8;
-    iVar7 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xab9,0,iVar6,&DAT_007a4ccc);
-    if (iVar7 == 0) {
-      FUN_006a5e40(iVar6,0,0x7cbf70,0xab9);
+  if (errorCode != 0) {
+    g_currentExceptionFrame = pIVar7;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xab9,0,errorCode,
+                               &DAT_007a4ccc,s_FSGSTy__CreateGame_007cc554);
+    if (iVar6 == 0) {
+      RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xab9);
       return;
     }
     pcVar4 = (code *)swi(3);
@@ -45,12 +46,12 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   pFVar5 = pFStack_8;
   if (param_1 != 0) {
     if (*(MMsgTy **)(*(int *)(pFStack_8 + 0x1a5b) + 0x2e6) == (MMsgTy *)0x0) {
-      DAT_00858df8 = (undefined1 *)uVar8;
+      g_currentExceptionFrame = pIVar7;
       return;
     }
     MMsgTy::SetMessage(*(MMsgTy **)(*(int *)(pFStack_8 + 0x1a5b) + 0x2e6),0x2594,'\0',
                        (undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
-    DAT_00858df8 = (undefined1 *)uVar8;
+    g_currentExceptionFrame = pIVar7;
     return;
   }
   DAT_0080877f = *(undefined4 *)(DAT_00811764 + 0x38);
@@ -82,11 +83,11 @@ LAB_005a33fb:
   (**(code **)(*(int *)pFVar5 + 8))();
   this_00 = *(MMsgTy **)(*(int *)(pFVar5 + 0x1a5b) + 0x2e6);
   if (this_00 == (MMsgTy *)0x0) {
-    DAT_00858df8 = (undefined1 *)uVar8;
+    g_currentExceptionFrame = pIVar7;
     return;
   }
   MMsgTy::HidePanel(this_00,1,0,1);
-  DAT_00858df8 = (undefined1 *)uVar8;
+  g_currentExceptionFrame = pIVar7;
   return;
 }
 

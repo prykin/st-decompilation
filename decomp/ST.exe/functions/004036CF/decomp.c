@@ -33,26 +33,26 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   undefined4 uStack_4a0;
   undefined4 uStack_49c;
   undefined4 uStack_498;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   ComboTy *pCStack_10;
   ComboTy *pCStack_c;
   ComboTy CStack_5;
   
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pCStack_10 = this;
-  iVar2 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_10;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_54;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_combo_cpp_007cbeec,99,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_54.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,99,0,iVar2,&DAT_007a4ccc,
+                               s_ComboTy__InitCombo_007cbf28);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7cbeec,99);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_combo_cpp_007cbeec,99);
     return;
   }
   pCVar4 = pCStack_10 + 0x88;
@@ -223,11 +223,11 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x10c),(undefined4 *)pCVar4);
     *(undefined4 *)(this_00 + 0x110) = 1;
     FUN_006b35d0(DAT_008075a8,*(uint *)pCStack_c);
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     return;
   }
   thunk_FUN_005943f0(pCStack_10);
-  DAT_00858df8 = (undefined4 *)uStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return;
 }
 

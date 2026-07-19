@@ -21,18 +21,17 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
   byte *pbVar10;
   bool bVar11;
   byte local_b0 [48];
-  undefined4 local_80;
-  undefined4 local_7c [16];
+  InternalExceptionFrame local_80;
   undefined4 local_3c [11];
   undefined1 local_f;
   FSGSTy *local_c;
   undefined4 *local_8;
   
   if ((this[0x1a5f] == (FSGSTy)0x6) && (this[0x1a60] == (FSGSTy)0x0)) {
-    local_80 = DAT_00858df8;
-    DAT_00858df8 = &local_80;
+    local_80.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_80;
     local_c = this;
-    iVar4 = __setjmp3(local_7c,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
     if (iVar4 == 0) {
       *(undefined4 *)(local_c + 0x2d) = 0x26;
@@ -117,29 +116,30 @@ LAB_005a2562:
                 *(undefined4 *)(this_00 + 0x2d) = 0x22;
                 FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1b20),
                              (undefined4 *)(this_00 + 0x1d));
-                DAT_00858df8 = (undefined4 *)local_80;
+                g_currentExceptionFrame = local_80.previous;
                 return;
               }
             }
             uVar7 = uVar7 + 1;
             if (local_8 <= uVar7) {
-              DAT_00858df8 = (undefined4 *)local_80;
+              g_currentExceptionFrame = local_80.previous;
               return;
             }
           } while( true );
         }
       }
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_80;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_80.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12,0,iVar4,&DAT_007a4ccc
+                               ,s_FSGSTy__AddPlayer_007cc4b4);
     if (iVar6 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0xa12);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa12);
   }
   return;
 }

@@ -15,8 +15,7 @@ int FUN_006736f0(void)
   void *unaff_EDI;
   char *pcVar10;
   bool bVar11;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   uint local_10;
   byte *local_c;
   int *local_8;
@@ -239,11 +238,11 @@ LAB_006739cd:
   }
   if ((DAT_007d2d24 & 0x800) == 0) {
     if (DAT_007d2d18 == 0x3c) {
-      local_54 = DAT_00858df8;
-      DAT_00858df8 = &local_54;
-      iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+      local_54.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_54;
+      iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar3 != 0) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return iVar3;
       }
       thunk_FUN_00672b60((char *)DAT_00811948,DAT_0081194c);
@@ -251,7 +250,7 @@ LAB_006739cd:
         (*(code *)DAT_0081194c[5])(DAT_00811948,1);
       }
       DAT_007d2d24 = DAT_007d2d24 | 0x80;
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       iVar3 = thunk_FUN_006736f0();
       if (iVar3 < 0) {
         return iVar3;

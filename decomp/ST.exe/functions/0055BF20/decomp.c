@@ -9,19 +9,17 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
   BITMAPINFO *pBVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *local_94;
-  undefined4 local_90 [16];
-  undefined4 *local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_94;
+  InternalExceptionFrame local_50;
   CFsgsConnection *local_c;
   BITMAPINFO *local_8;
   
   *(undefined4 *)((int)this + 0x3c) = param_1;
   local_8 = (BITMAPINFO *)0x0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_c;
   if (iVar3 == 0) {
     pcVar4 = CFsgsConnection::GetIconFilename(local_c);
@@ -30,11 +28,11 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
       local_8 = (BITMAPINFO *)FUN_006bc260(pcVar4);
     }
   }
-  DAT_00858df8 = local_50;
+  g_currentExceptionFrame = local_50.previous;
   if (local_8 != (BITMAPINFO *)0x0) {
-    DAT_00858df8 = &local_94;
-    local_94 = local_50;
-    iVar3 = __setjmp3(local_90,0,unaff_EDI,unaff_ESI);
+    g_currentExceptionFrame = &local_94;
+    local_94.previous = local_50.previous;
+    iVar3 = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar2 = local_c;
     if (iVar3 == 0) {
       pCVar1 = local_c + 0x40;
@@ -43,11 +41,11 @@ void __thiscall FUN_0055bf20(void *this,undefined4 param_1)
       }
       pBVar5 = FUN_006bbfa0(local_8,(undefined4 *)0x0,*(HPALETTE *)(pCVar2 + 0x3c));
       *(BITMAPINFO **)pCVar1 = pBVar5;
-      DAT_00858df8 = local_94;
+      g_currentExceptionFrame = local_94.previous;
       FUN_006ab060(&local_8);
       return;
     }
-    DAT_00858df8 = local_94;
+    g_currentExceptionFrame = local_94.previous;
     FUN_006ab060(&local_8);
   }
   return;

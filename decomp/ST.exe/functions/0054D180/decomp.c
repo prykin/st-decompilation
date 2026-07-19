@@ -13,14 +13,13 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   STPlaySystemC *pSVar5;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   STPlaySystemC *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
     pSVar5 = local_8 + 0xc0;
@@ -51,17 +50,18 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
     *(undefined4 *)(pSVar2 + 0x71) = 0;
     *(undefined4 *)(pSVar2 + 0x75) = 0;
     FUN_006e52d0((int)pSVar2);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1b1,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1b1,0,iVar3,&DAT_007a4ccc,
+                             s_STPlaySystemC__DoneSystem_007c84d8);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c8430,0x1b3);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x1b3);
   return;
 }
 

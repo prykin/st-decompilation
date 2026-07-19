@@ -21,8 +21,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   uint *puVar13;
   undefined4 auStack_2bc [11];
   byte abStack_290 [560];
-  undefined4 uStack_60;
-  undefined4 auStack_5c [16];
+  InternalExceptionFrame IStack_60;
   char acStack_1c [8];
   undefined1 uStack_14;
   FSGSTy *pFStack_10;
@@ -30,10 +29,10 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
   uint uStack_8;
   
   if ((this[0x1a5f] == (FSGSTy)0x8) && (*(int *)(this + 0x1ebe) != 0)) {
-    uStack_60 = DAT_00858df8;
-    DAT_00858df8 = &uStack_60;
+    IStack_60.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_60;
     pFStack_10 = this;
-    iVar4 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -127,19 +126,19 @@ LAB_005a3810:
                     *(undefined4 *)(this_01 + 0x2d) = 0x22;
                     FUN_006e6080(this_01,2,*(undefined4 *)(this_01 + 0x1b20),
                                  (undefined4 *)(this_01 + 0x1d));
-                    DAT_00858df8 = (undefined4 *)uStack_60;
+                    g_currentExceptionFrame = IStack_60.previous;
                     return;
                   }
                 }
                 uVar7 = uVar7 + 1;
                 if (uStack_8 <= uVar7) {
-                  DAT_00858df8 = (undefined4 *)uStack_60;
+                  g_currentExceptionFrame = IStack_60.previous;
                   return;
                 }
               } while( true );
             }
           }
-          DAT_00858df8 = (undefined4 *)uStack_60;
+          g_currentExceptionFrame = IStack_60.previous;
           return;
         }
         iVar4 = *(int *)(this_01 + 0x1ec2);
@@ -176,14 +175,15 @@ LAB_005a36ee:
         param_1 = param_1 + -1;
       } while( true );
     }
-    DAT_00858df8 = (undefined4 *)uStack_60;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_60.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6,0,iVar4,&DAT_007a4ccc
+                               ,s_FSGSTy__SetGameList_007cc56c);
     if (iVar6 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0xaf6);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xaf6);
   }
   return;
 }

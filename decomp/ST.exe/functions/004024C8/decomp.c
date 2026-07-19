@@ -16,8 +16,7 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   uint uVar9;
   byte bVar10;
   undefined4 *puVar11;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   CPanelTy *pCStack_10;
   int iStack_c;
   int iStack_8;
@@ -30,10 +29,10 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
       bVar2 = true;
     }
     if (!bVar2) {
-      uStack_54 = DAT_00858df8;
-      DAT_00858df8 = &uStack_54;
+      IStack_54.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_54;
       pCStack_10 = this;
-      iVar3 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+      iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this_00 = pCStack_10;
       if (iVar3 == 0) {
         switch(*(undefined2 *)(pCStack_10 + 0x23f)) {
@@ -121,13 +120,13 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
               } while (iStack_8 != 0);
               iStack_c = iStack_c + -1;
             } while (iStack_c != 0);
-            DAT_00858df8 = (undefined4 *)uStack_54;
+            g_currentExceptionFrame = IStack_54.previous;
             return;
           }
 switchD_004f9f52_caseD_3:
           *(undefined2 *)(this_00 + 0x23f) = 4;
           thunk_FUN_005252c0(0xb0);
-          DAT_00858df8 = (undefined4 *)uStack_54;
+          g_currentExceptionFrame = IStack_54.previous;
           return;
         case 2:
         case 4:
@@ -170,20 +169,21 @@ switchD_004f9f52_caseD_3:
             OptPanelTy::SwitchOptPanelOff(DAT_008016dc);
           }
         default:
-          DAT_00858df8 = (undefined4 *)uStack_54;
+          g_currentExceptionFrame = IStack_54.previous;
           return;
         case 3:
           goto switchD_004f9f52_caseD_3;
         }
       }
-      DAT_00858df8 = (undefined4 *)uStack_54;
-      iVar6 = FUN_006ad4d0(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f,0,iVar3,&DAT_007a4ccc);
+      g_currentExceptionFrame = IStack_54.previous;
+      iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f,0,iVar3,
+                                 &DAT_007a4ccc,s_CPanelTy__SwitchCPanel_007c2284);
       if (iVar6 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
-      FUN_006a5e40(iVar3,0,0x7c1bd8,0x40f);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x40f);
     }
   }
   return;

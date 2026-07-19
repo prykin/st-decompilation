@@ -12,8 +12,7 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
   undefined4 unaff_ESI;
   void *unaff_EDI;
   _OFSTRUCT local_f8;
-  undefined4 local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_70;
   uint local_2c;
   uint local_28;
   uint local_24;
@@ -35,12 +34,13 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
   local_14 = -1;
   local_8 = (int *)0x0;
   local_c = (int *)0x0;
-  local_70 = DAT_00858df8;
-  DAT_00858df8 = &local_70;
-  iVar2 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+  local_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_70;
+  iVar2 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_70;
-    iVar5 = FUN_006ad4d0(s_E__Ourlib_Mfimg_cpp_007effe0,0x387,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_70.previous;
+    iVar5 = ReportDebugMessage(s_E__Ourlib_Mfimg_cpp_007effe0,0x387,0,iVar2,&DAT_007a4ccc,
+                               s_imgGetDibFromFile_007f00d8);
     if (iVar5 == 0) {
       if (((local_10 != (int *)0x0) && (local_10 != local_8)) && (local_10 != local_c)) {
         FUN_006ab060(&local_10);
@@ -60,7 +60,7 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
       if (local_c != (int *)0x0) {
         FUN_006ab060(&local_c);
       }
-      FUN_006a5e40(iVar2,0,0x7effe0,0x390);
+      RaiseInternalException(iVar2,0,s_E__Ourlib_Mfimg_cpp_007effe0,0x390);
       return (int *)0x0;
     }
     pcVar1 = (code *)swi(3);
@@ -88,7 +88,7 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
     HVar3 = OpenFile((LPCSTR)param_1,&local_f8,0);
     local_14 = HVar3;
     if (HVar3 == -1) {
-      FUN_006a5e40(-10,DAT_007ed77c,0x7effe0,0x35f);
+      RaiseInternalException(-10,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x35f);
     }
     piVar4 = FUN_00751f30(HVar3,0);
     local_18 = piVar4;
@@ -106,7 +106,7 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
                              param_5);
       FUN_006ab060(&local_8);
       if (local_c == (int *)0x0) {
-        FUN_006a5e40(-0x34,DAT_007ed77c,0x7effe0,0x36a);
+        RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x36a);
       }
     }
     local_10 = (int *)FUN_0070b770((int)local_c,param_7);
@@ -117,7 +117,7 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
     HVar3 = OpenFile((LPCSTR)param_1,&local_f8,0);
     local_14 = HVar3;
     if (HVar3 == -1) {
-      FUN_006a5e40(-10,DAT_007ed77c,0x7effe0,0x34d);
+      RaiseInternalException(-10,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x34d);
     }
     piVar4 = FUN_00751fc0(HVar3);
     local_1c = piVar4;
@@ -135,7 +135,7 @@ FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
                              param_5);
       FUN_006ab060(&local_8);
       if (local_c == (int *)0x0) {
-        FUN_006a5e40(-0x34,DAT_007ed77c,0x7effe0,0x358);
+        RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x358);
       }
     }
     local_10 = (int *)FUN_0070b770((int)local_c,param_7);
@@ -157,7 +157,7 @@ LAB_0070baee:
       }
       piVar4 = local_10;
       if (local_10 == (int *)0x0) {
-        FUN_006a5e40(-0x34,DAT_007ed77c,0x7effe0,0x378);
+        RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x378);
         piVar4 = local_10;
       }
     }
@@ -176,7 +176,7 @@ LAB_0070baee:
     local_24 = 1;
   }
   if ((((local_2c == 1) && (local_28 == 1)) && (local_20 == 1)) && (local_24 == 1)) {
-    DAT_00858df8 = (undefined4 *)local_70;
+    g_currentExceptionFrame = local_70.previous;
     return local_10;
   }
   piVar4 = FUN_00751cb0((undefined4 *)0x0,(ushort *)0x0,local_10,(ushort *)0x0,
@@ -184,7 +184,7 @@ LAB_0070baee:
   if (local_10 != (int *)0x0) {
     FUN_006ab060(&local_10);
   }
-  DAT_00858df8 = (undefined4 *)local_70;
+  g_currentExceptionFrame = local_70.previous;
   return piVar4;
 }
 

@@ -65,7 +65,7 @@ LAB_004ab0d1:
     goto switchD_004ab11d_default;
   }
   if (iVar2 == 1) {
-    thunk_FUN_00567510(&DAT_00807658,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+    thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
     *(undefined4 *)((int)this + 0x1c) = 0;
     return 0;
   }

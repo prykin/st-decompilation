@@ -16,24 +16,24 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar7;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   MMObjTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_8;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_mmenuobj_cpp_007cca38,0x8c,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x8c,0,iVar4,&DAT_007a4ccc,
+                               s_MMObjTy__PaintSprBut_007cca94);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cca38,0x8c);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0x8c);
     return;
   }
   switch(*(undefined2 *)(param_1 + 0x14)) {
@@ -108,13 +108,13 @@ switchD_005b56d4_default:
   }
   else {
     if (*(short *)(param_1 + 0x14) != 3) {
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
     uVar7 = 3;
   }
   thunk_FUN_005b6730(local_8,uVar7,'\x01',-1);
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

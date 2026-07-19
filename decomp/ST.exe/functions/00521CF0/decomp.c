@@ -22,8 +22,7 @@ void __fastcall FUN_00521cf0(int param_1)
   char local_4b4 [64];
   char local_474 [1040];
   byte local_64;
-  undefined4 *local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   uint local_1c;
   uint local_18;
   int local_14;
@@ -38,10 +37,10 @@ void __fastcall FUN_00521cf0(int param_1)
     iVar4 = **(int **)(*(int *)(param_1 + 0x198) + 0x14);
   }
   if (iVar4 != 0) {
-    local_60 = DAT_00858df8;
-    DAT_00858df8 = &local_60;
+    local_60.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_60;
     local_14 = param_1;
-    iVar4 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       if (DAT_00808783 == '\x03') {
         local_10 = 1;
@@ -162,11 +161,11 @@ void __fastcall FUN_00521cf0(int param_1)
                 CFsgsConnection::SendChatMessage
                           ((CFsgsConnection *)&DAT_00802a90,
                            (char *)**(undefined4 **)(*(int *)(iVar4 + 0x198) + 0x14));
-                DAT_00858df8 = local_60;
+                g_currentExceptionFrame = local_60.previous;
                 return;
               }
               CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
-              DAT_00858df8 = local_60;
+              g_currentExceptionFrame = local_60.previous;
               return;
             }
           }
@@ -439,11 +438,11 @@ LAB_00522294:
           if (DAT_008016d8 != (void *)0x0) {
             if (DAT_0080874d != 0xff) {
               thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,(uint)DAT_0080874d);
-              DAT_00858df8 = local_60;
+              g_currentExceptionFrame = local_60.previous;
               return;
             }
             thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,8);
-            DAT_00858df8 = local_60;
+            g_currentExceptionFrame = local_60.previous;
             return;
           }
         }
@@ -451,15 +450,15 @@ LAB_00522294:
       else if (DAT_0080874e != '\0') {
         if (0 < *(int *)(*(int *)(local_14 + 0x198) + 8)) {
           thunk_FUN_00522810((char *)**(undefined4 **)(*(int *)(local_14 + 0x198) + 0x14));
-          DAT_00858df8 = local_60;
+          g_currentExceptionFrame = local_60.previous;
           return;
         }
         thunk_FUN_00522810((char *)0x0);
       }
-      DAT_00858df8 = local_60;
+      g_currentExceptionFrame = local_60.previous;
       return;
     }
-    DAT_00858df8 = local_60;
+    g_currentExceptionFrame = local_60.previous;
   }
   return;
 }

@@ -16,7 +16,8 @@ void thunk_FUN_0044b030(char param_1,int param_2,int param_3)
   }
   else {
     if (param_2 != 1) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3042,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3042,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__ActivateTV_invali_007a88f4);
       if (iVar5 == 0) {
         return;
       }

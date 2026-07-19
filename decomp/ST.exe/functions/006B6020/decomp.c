@@ -10,7 +10,7 @@ uint FUN_006b6020(int param_1,uint param_2,char *param_3)
   while (uVar2 <= param_2) {
     uVar2 = FUN_006b5480(param_1);
     if (uVar2 != 0) {
-      FUN_006a5e40(uVar2,DAT_007ed77c,0x7edb98,0xe);
+      RaiseInternalException(uVar2,DAT_007ed77c,s_E__DKW_TBL_C_sarrput_c_007edb98,0xe);
       return uVar2;
     }
     uVar2 = *(uint *)(param_1 + 0xc);

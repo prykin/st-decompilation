@@ -23,27 +23,27 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
   char *pcVar10;
   char local_4a4 [64];
   char local_464 [1044];
-  undefined4 *local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   WaitTy *local_c;
   char *local_8;
   
   local_c = this;
   uVar4 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x61) = uVar4;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar5 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar5 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_c;
   if (iVar5 != 0) {
-    DAT_00858df8 = local_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x3bb,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x3bb,0,iVar5,&DAT_007a4ccc
+                               ,s_WaitTy__GetMessage_007cde54);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       uVar4 = (*pcVar2)();
       return uVar4;
     }
-    FUN_006a5e40(iVar5,0,0x7cdd5c,0x3bb);
+    RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x3bb);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,param_1);
@@ -262,7 +262,7 @@ LAB_005eab28:
   FUN_006e6080(this_01,2,*(undefined4 *)(*(int *)(this_01 + 0x1a5b) + 0x54c),
                (undefined4 *)(this_01 + 0x1d));
 LAB_005eab6a:
-  DAT_00858df8 = local_50;
+  g_currentExceptionFrame = local_50.previous;
   uVar4 = thunk_FUN_005b6430();
   return uVar4;
 }

@@ -9,19 +9,19 @@ void __thiscall thunk_FUN_0054b700(void *this,int param_1)
   int iVar4;
   int iVar5;
   int iVar6;
-  undefined4 uVar7;
+  InternalExceptionFrame *pIVar7;
   undefined4 auStack_48 [16];
   void *pvStack_8;
   
-  uVar7 = DAT_00858df8;
+  pIVar7 = g_currentExceptionFrame;
   if (param_1 == *(int *)((int)this + 0x4df)) {
     return;
   }
-  DAT_00858df8 = &stack0xffffffb4;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pvStack_8 = this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,uVar7);
+  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,pIVar7);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar7;
+    g_currentExceptionFrame = pIVar7;
     return;
   }
   if (DAT_0080874e == '\x03') {
@@ -72,7 +72,7 @@ LAB_0054b81b:
     }
     else {
       if (DAT_0080874e != '\x03') {
-        DAT_00858df8 = (undefined1 *)uVar7;
+        g_currentExceptionFrame = pIVar7;
         return;
       }
       pBVar3 = (BITMAPINFO *)FUN_0070b3a0(*(int *)((int)pvVar1 + 0x4e3),4);
@@ -81,7 +81,7 @@ LAB_0054b81b:
     }
     thunk_FUN_005403c0(iVar2,iVar4,'\x06',pBVar3);
   }
-  DAT_00858df8 = (undefined1 *)uVar7;
+  g_currentExceptionFrame = pIVar7;
   return;
 }
 

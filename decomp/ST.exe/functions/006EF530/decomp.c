@@ -9,15 +9,15 @@ int __cdecl FUN_006ef530(int param_1,int param_2,char *param_3)
   undefined4 *puVar5;
   byte bVar6;
   void *unaff_ESI;
-  undefined4 uVar7;
+  InternalExceptionFrame *pIVar7;
   undefined4 local_44 [16];
   
-  uVar7 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb8;
-  iVar2 = __setjmp3(local_44,0,unaff_ESI,uVar7);
+  pIVar7 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
+  iVar2 = __setjmp3(local_44,0,unaff_ESI,pIVar7);
   if (iVar2 == 0) {
     if (param_1 == 0) {
-      FUN_006a5e40(-0x34,DAT_007ed77c,0x7eef88,0x66);
+      RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x66);
     }
     puVar3 = FUN_006f0cd0(*(undefined4 *)(param_1 + 9),param_3,1);
     *(int *)(param_2 + 0x1c) = (int)(short)*puVar3;
@@ -40,17 +40,18 @@ int __cdecl FUN_006ef530(int param_1,int param_2,char *param_3)
       puVar5 = puVar5 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
-    DAT_00858df8 = (undefined1 *)uVar7;
+    g_currentExceptionFrame = pIVar7;
     return 0;
   }
-  DAT_00858df8 = (undefined1 *)uVar7;
-  iVar4 = FUN_006ad4d0(s_E__ourlib_Mfstmap_cpp_007eef88,0x70,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = pIVar7;
+  iVar4 = ReportDebugMessage(s_E__ourlib_Mfstmap_cpp_007eef88,0x70,0,iVar2,&DAT_007a4ccc,
+                             s__mfTMapSetMeshParam_007eefc4);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)();
     return iVar2;
   }
-  FUN_006a5e40(iVar2,0,0x7eef88,0x72);
+  RaiseInternalException(iVar2,0,s_E__ourlib_Mfstmap_cpp_007eef88,0x72);
   return iVar2;
 }
 

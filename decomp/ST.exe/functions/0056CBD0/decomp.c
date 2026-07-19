@@ -20,17 +20,17 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
   tagPAINTSTRUCT local_ac;
   undefined4 local_6c [4];
   undefined4 local_5c;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   LRESULT local_8;
   
   local_8 = 0;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar2 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x3aa,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x3aa,0,iVar2,&DAT_007a4ccc,
+                               s_STAppC__MainWindowProc_007ca0f8);
     if (iVar2 == 0) {
       return local_8;
     }
@@ -40,8 +40,8 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
   }
   iVar2 = FUN_006e4370(param_2,param_3,param_4);
   if ((iVar2 != 0) &&
-     (iVar2 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x330,0,-0x5001fff8,&DAT_007a4ccc),
-     iVar2 != 0)) {
+     (iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x330,0,-0x5001fff8,&DAT_007a4ccc,
+                                 s_STAppC__MainWindowProc_007ca0f8), iVar2 != 0)) {
     pcVar1 = (code *)swi(3);
     LVar3 = (*pcVar1)();
     return LVar3;
@@ -50,7 +50,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
     if (param_2 == 0x20) {
       pHVar5 = LoadCursorA(DAT_00856d70,(LPCSTR)0x66);
       SetCursor(pHVar5);
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return 1;
     }
     switch(param_2) {
@@ -62,7 +62,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
       }
       local_5c = 0x66;
       FUN_006e3dd0(3,1,(int)local_6c);
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case 0xf:
       BeginPaint(param_1,&local_ac);
@@ -77,10 +77,10 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
         thunk_FUN_00554a50(DAT_00802a58);
       }
       EndPaint(param_1,&local_ac);
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case 0x10:
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return 0;
     case 0x1c:
       if (param_3 == 0) {
@@ -99,7 +99,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
         }
         pHVar5 = LoadCursorA(DAT_00856d70,(LPCSTR)0x7f00);
         SetCursor(pHVar5);
-        DAT_00858df8 = (undefined4 *)local_4c;
+        g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
       if (DAT_0080759c != (undefined4 *)0x0) {
@@ -112,44 +112,44 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
       thunk_FUN_00571320(&DAT_00807620,param_1);
       pHVar5 = LoadCursorA(DAT_00856d70,(LPCSTR)0x66);
       SetCursor(pHVar5);
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
   }
   else if (param_2 < 0x3ba) {
     if (param_2 == 0x3b9) {
       if (param_3 != 1) {
-        DAT_00858df8 = (undefined4 *)local_4c;
+        g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
       if (param_4 >> 0x10 != 0x4453) {
-        thunk_FUN_00566f30(&DAT_00807658,param_1);
-        DAT_00858df8 = (undefined4 *)local_4c;
+        thunk_FUN_00566f30(&g_sound,param_1);
+        g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
-      thunk_FUN_00566f30(&DAT_00807658,param_1);
-      DAT_00858df8 = (undefined4 *)local_4c;
+      thunk_FUN_00566f30(&g_sound,param_1);
+      g_currentExceptionFrame = local_4c.previous;
       return local_8;
     }
     if (param_2 == 0x100) {
       if (param_3 == 0x13) {
         if (DAT_00802a30 == (undefined4 *)0x0) {
-          DAT_00858df8 = (undefined4 *)local_4c;
+          g_currentExceptionFrame = local_4c.previous;
           return local_8;
         }
         local_bc = 0xa100;
         (**(code **)*DAT_00802a30)(local_cc);
-        DAT_00858df8 = (undefined4 *)local_4c;
+        g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
     }
     else if (param_2 == 0x112) {
       if ((param_3 & 0xfff0) == 0xf140) {
-        DAT_00858df8 = (undefined4 *)local_4c;
+        g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
       if ((param_3 & 0xfff0) == 0xf170) {
-        DAT_00858df8 = (undefined4 *)local_4c;
+        g_currentExceptionFrame = local_4c.previous;
         return local_8;
       }
     }
@@ -171,11 +171,11 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
     *(undefined4 *)(DAT_00806728 + 0x4efa) = 0;
     thunk_FUN_00567180((void *)(DAT_00806728 + 0x38),param_1);
     FUN_006e3db0(DAT_00806728 + 0x113a);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }
   LVar3 = DefWindowProcA(param_1,param_2,param_3,param_4);
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return LVar3;
 }
 

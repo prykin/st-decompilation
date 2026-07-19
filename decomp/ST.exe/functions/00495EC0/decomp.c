@@ -13,7 +13,8 @@ undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint p
   
   if ((((param_1 < 0) || (DAT_007fb240 <= param_1)) || (param_2 < 0)) ||
      (((DAT_007fb242 <= param_2 || (param_3 < 0)) || (DAT_007fb244 <= param_3)))) {
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_dump_cpp_007abdd4,0x7f,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x7f,0,0,&DAT_007a4ccc,
+                               s_DumpClassC__WritePtr_007abdf8);
     if (iVar3 != 0) {
       pcVar2 = (code *)swi(3);
       uVar4 = (*pcVar2)();
@@ -32,7 +33,8 @@ undefined4 DumpClassC::WritePtr(short param_1,short param_2,short param_3,uint p
     *(short *)(param_5 + 0x5b) = param_1;
     return 0;
   }
-  iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_dump_cpp_007abdd4,0x84,0,0,&DAT_007a4ccc);
+  iVar3 = ReportDebugMessage(s_E____titans_wlad_To_dump_cpp_007abdd4,0x84,0,0,&DAT_007a4ccc,
+                             s_DumpClassC__WritePtr_cell_is_bus_007abe14);
   if (iVar3 != 0) {
     pcVar2 = (code *)swi(3);
     uVar4 = (*pcVar2)();

@@ -22,6 +22,7 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   int iVar13;
+  undefined4 *extraout_EAX;
   int *piVar15;
   uint uVar16;
   undefined4 *puVar17;
@@ -36,8 +37,7 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   undefined4 *puVar24;
   undefined1 uVar25;
   char local_17c [260];
-  undefined4 *local_78;
-  undefined4 local_74 [16];
+  InternalExceptionFrame local_78;
   uint local_34;
   int local_30;
   STPlaySystemC *local_2c;
@@ -53,17 +53,18 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   
   local_34 = 7;
   local_8 = (uint *)0x0;
-  local_78 = DAT_00858df8;
-  DAT_00858df8 = &local_78;
+  local_78.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_78;
   local_c = this;
-  iVar7 = __setjmp3(local_74,0,unaff_EDI,unaff_ESI);
+  iVar7 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar20 = local_c;
   if (iVar7 != 0) {
-    DAT_00858df8 = local_78;
-    iVar13 = FUN_006ad4d0(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x742,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_78.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x742,0,iVar7,
+                                &DAT_007a4ccc,s_STPlaySystemC__PrepareMail_007c85dc);
     if (iVar13 == 0) {
-      puVar10 = (undefined4 *)FUN_006a5e40(iVar7,0,0x7c8430,0x744);
-      return puVar10;
+      RaiseInternalException(iVar7,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x744);
+      return extraout_EAX;
     }
     pcVar4 = (code *)swi(3);
     puVar10 = (undefined4 *)(*pcVar4)();
@@ -79,7 +80,7 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
           pSVar20 = local_c;
           if (iVar7 == -0x4d) {
             puVar10 = (undefined4 *)thunk_FUN_00550380(6);
-            DAT_00858df8 = local_78;
+            g_currentExceptionFrame = local_78.previous;
             return puVar10;
           }
           if (iVar7 != 1) goto LAB_0054f531;
@@ -226,7 +227,7 @@ LAB_0054f531:
     pSVar1 = pSVar20 + 0x39;
     if ((puVar10 == (undefined4 *)0x0) && (*(int *)(pSVar20 + 0x28) == 0)) {
       *(undefined2 *)(*(int *)(pSVar20 + 0x3d) + 5) = 0;
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return puVar10;
     }
     *(undefined1 *)(*(int *)(pSVar20 + 0x3d) + 4) = 0;
@@ -235,7 +236,7 @@ LAB_0054f531:
     if (((int)(uint)(byte)pSVar20[0x4d] < *(int *)(&DAT_007c2af8 + (uint)DAT_0080733b * 0x18)) &&
        (DAT_00808784 == 0)) {
       pSVar20[0x4d] = (STPlaySystemC)((char)pSVar20[0x4d] + 1);
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return puVar10;
     }
     for (; puVar10 != (undefined4 *)0x0; puVar10 = (undefined4 *)*puVar10) {
@@ -277,7 +278,7 @@ LAB_0054f531:
     }
     pSVar20 = local_c;
     if (DAT_00808783 != '\x03') {
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return puVar10;
     }
     iVar7 = *(int *)(local_c + 0x3d);
@@ -290,7 +291,7 @@ LAB_0054f531:
       local_c[0x4d] = SVar5;
       if ((int)(uint)(byte)SVar5 <
           *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0xc)) {
-        DAT_00858df8 = local_78;
+        g_currentExceptionFrame = local_78.previous;
         return puVar10;
       }
       if (DAT_00808783 == '\x03') {
@@ -302,7 +303,7 @@ LAB_0054f531:
           uVar25 = 7;
 LAB_0054f6c6:
           puVar10 = (undefined4 *)thunk_FUN_00550380(uVar25);
-          DAT_00858df8 = local_78;
+          g_currentExceptionFrame = local_78.previous;
           return puVar10;
         }
       }
@@ -321,7 +322,7 @@ LAB_0054f6c6:
       }
     }
     pSVar20[0x4d] = (STPlaySystemC)0x0;
-    DAT_00858df8 = local_78;
+    g_currentExceptionFrame = local_78.previous;
     return puVar10;
   }
   local_10 = 0;
@@ -331,7 +332,7 @@ LAB_0054f6c6:
   if (*(int *)(local_c + 0x6d) == 0) {
     bVar6 = thunk_FUN_00550110((int)local_c);
     if ((undefined4 *)CONCAT31(extraout_var_00,bVar6) != (undefined4 *)0x0) {
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return (undefined4 *)CONCAT31(extraout_var_00,bVar6);
     }
     if (local_20 < 3) {
@@ -375,7 +376,7 @@ LAB_0054f6c6:
   if (*(int *)(local_c + 0x71) != 0) {
     bVar6 = thunk_FUN_00550110((int)local_c);
     if ((undefined4 *)CONCAT31(extraout_var,bVar6) != (undefined4 *)0x0) {
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return (undefined4 *)CONCAT31(extraout_var,bVar6);
     }
     iVar7 = thunk_FUN_0054eb20(pSVar20,&local_28);
@@ -391,7 +392,7 @@ LAB_0054f6c6:
     uVar25 = 10;
 LAB_0054f76e:
     puVar10 = (undefined4 *)thunk_FUN_00550380(uVar25);
-    DAT_00858df8 = local_78;
+    g_currentExceptionFrame = local_78.previous;
     return puVar10;
   }
   iVar7 = FUN_006e51b0(0x807620);
@@ -418,7 +419,7 @@ LAB_0054f76e:
           *(undefined4 *)(pSVar20 + (uint)(byte)pSVar20[0xbb] * 4 + 0xa7) = uVar12;
           SVar5 = pSVar20[0xbb];
           pSVar20[0xbb] = (STPlaySystemC)((char)SVar5 + '\x01');
-          DAT_00858df8 = local_78;
+          g_currentExceptionFrame = local_78.previous;
           return (undefined4 *)CONCAT31((int3)((uint)uVar12 >> 8),(char)SVar5 + '\x01');
         }
         *(int *)(pSVar20 + 0xa7) = *(int *)(pSVar20 + 0xab);
@@ -428,12 +429,12 @@ LAB_0054f76e:
         iVar7 = FUN_006e51b0(0x807620);
         *(int *)(pSVar20 + 0xb7) = iVar7;
         if (DAT_0080735e == '\0') {
-          DAT_00858df8 = local_78;
+          g_currentExceptionFrame = local_78.previous;
           return (undefined4 *)CONCAT31((int3)((uint)iVar7 >> 8),DAT_0080735e);
         }
         uVar8 = iVar7 - *(int *)(pSVar20 + 0xa7);
         if (3000 < uVar8 / 5) {
-          DAT_00858df8 = local_78;
+          g_currentExceptionFrame = local_78.previous;
           return (undefined4 *)(uVar8 * -0x33333333);
         }
         puVar10 = (undefined4 *)0x0;
@@ -443,7 +444,7 @@ LAB_0054f76e:
           puVar10 = (undefined4 *)thunk_FUN_0052d320(DAT_008016d8,pcVar11,uVar8);
         }
         pSVar20[0xbb] = (STPlaySystemC)0x0;
-        DAT_00858df8 = local_78;
+        g_currentExceptionFrame = local_78.previous;
         return puVar10;
       }
       uVar25 = 0x10;
@@ -559,7 +560,7 @@ switchD_0054fb75_caseD_12:
     }
 LAB_0054fad8:
     if (local_10 == 0) {
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return (undefined4 *)0x0;
     }
     local_10 = 0;

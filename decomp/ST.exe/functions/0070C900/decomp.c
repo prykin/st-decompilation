@@ -7,13 +7,13 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
   int iVar3;
   void *unaff_ESI;
   uint *puVar4;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar5;
   undefined4 local_48 [16];
   uint local_8;
   
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar1 = __setjmp3(local_48,0,unaff_ESI,uVar5);
+  pIVar5 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  iVar1 = __setjmp3(local_48,0,unaff_ESI,pIVar5);
   if (iVar1 == 0) {
     if (param_4 < 0) {
       puVar4 = &local_8;
@@ -29,10 +29,10 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
     if (param_2 != (uint *)0x0) {
       *param_2 = local_8;
     }
-    DAT_00858df8 = (undefined1 *)uVar5;
+    g_currentExceptionFrame = pIVar5;
     return puVar2;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
+  g_currentExceptionFrame = pIVar5;
   return (undefined4 *)0x0;
 }
 

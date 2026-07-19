@@ -20,7 +20,7 @@ LAB_0075817a:
   }
   switch(*(int *)((int)param_1 + 0x18e)) {
   default:
-    FUN_006a5e40(0x43,DAT_007ed77c,0x7f2db0,0x35f);
+    RaiseInternalException(0x43,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x35f);
   case 1:
   case 0xd0:
   case 0xd1:
@@ -49,7 +49,7 @@ LAB_0075817a:
   case 0xcd:
   case 0xce:
   case 0xcf:
-    FUN_006a5e40(0x3b,DAT_007ed77c,0x7f2db0,0x30d);
+    RaiseInternalException(0x3b,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x30d);
     *(undefined4 *)((int)param_1 + 0x18e) = 0;
     goto LAB_0075817a;
   case 0xc4:

@@ -15,17 +15,16 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
   void *unaff_EDI;
   MMsgTy *pMVar5;
   int *piVar6;
-  undefined4 local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_70;
   int local_2c [8];
   MMsgTy *local_c;
   uint local_8;
   
   if (this[0x65] != (MMsgTy)0x2) {
-    local_70 = DAT_00858df8;
-    DAT_00858df8 = &local_70;
+    local_70.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_70;
     local_c = this;
-    iVar2 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+    iVar2 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
     if (iVar2 == 0) {
       iVar2 = 0xd;
@@ -61,7 +60,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       if (param_1 == 0) {
         this_00[0x65] = (MMsgTy)0x2;
         HideSprites(this_00);
-        DAT_00858df8 = (undefined4 *)local_70;
+        g_currentExceptionFrame = local_70.previous;
         return;
       }
       if (param_3 == 0) {
@@ -100,17 +99,18 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       }
       this_00[0x65] = (MMsgTy)0x4;
       thunk_FUN_005b6730(this_00,6,'\x01',-1);
-      DAT_00858df8 = (undefined4 *)local_70;
+      g_currentExceptionFrame = local_70.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_70;
-    iVar3 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_70.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4,0,iVar2,&DAT_007a4ccc
+                               ,s_MMsgTy__HidePanel_007cccc8);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7ccb74,0x1a4);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4);
   }
   return;
 }

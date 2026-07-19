@@ -63,13 +63,15 @@ FUN_00491240(void *this,int param_1,short param_2,short param_3,short param_4,un
       *(short *)((int)this + 0x5b2) = sVar1 + -1;
       break;
     default:
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fe6,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fe6,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__PrepareForLoading_too_m_007abaa4);
       if (iVar3 != 0) {
         pcVar2 = (code *)swi(3);
         (*pcVar2)();
         return;
       }
-      FUN_006a5e40(-0x5001fff5,DAT_007ed77c,0x7a9d3c,0x4fe6);
+      RaiseInternalException
+                (-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fe6);
     }
     if (*(short *)((int)this + 0x5b2) != -1) {
       *(undefined4 *)((int)this + 0x5c4) = 0;
@@ -94,7 +96,8 @@ FUN_00491240(void *this,int param_1,short param_2,short param_3,short param_4,un
     *(undefined4 *)((int)this + 0x5c4) = 1;
   }
   else {
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fcb,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4fcb,0,0,&DAT_007a4ccc,
+                               s_STBoatC__PrepareForLoading_name__007abad0);
     if (iVar3 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();

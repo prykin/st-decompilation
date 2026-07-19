@@ -8,22 +8,23 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
 {
   code *pcVar1;
   HelpPanelTy *this_00;
+  int errorCode;
   int iVar2;
-  int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
   void *unaff_ESI;
+  InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
   HelpPanelTy *local_8;
   
-  uVar4 = DAT_00858df8;
+  pIVar4 = g_currentExceptionFrame;
   if (this[0x1a0] == (HelpPanelTy)param_1) {
     return 0;
   }
-  DAT_00858df8 = &stack0xffffffb4;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
   this_00 = local_8;
-  if (iVar2 == 0) {
+  if (errorCode == 0) {
     local_8[0x1a0] = (HelpPanelTy)param_1;
     if (param_1 != '\0') {
       if (DAT_008016e8 != (ProdPanelTy *)0x0) {
@@ -63,24 +64,25 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
         OptPanelTy::SwitchOptPanelOff(DAT_008016dc);
       }
       SwitchOptPanel(this_00,1);
-      DAT_00858df8 = (undefined1 *)uVar4;
+      g_currentExceptionFrame = pIVar4;
       return 1;
     }
     if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)(DAT_00801688 + 0x23f) == 1)) {
       CPanelTy::ShiftControls(DAT_00801688,1);
     }
     SwitchOptPanel(this_00,0);
-    DAT_00858df8 = (undefined1 *)uVar4;
+    g_currentExceptionFrame = pIVar4;
     return 1;
   }
-  DAT_00858df8 = (undefined1 *)uVar4;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x12e,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  g_currentExceptionFrame = pIVar4;
+  iVar2 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x12e,0,errorCode,
+                             &DAT_007a4ccc,s_HelpPanelTy__SetPanel_007c399c);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    uVar3 = (*pcVar1)();
+    return uVar3;
   }
-  FUN_006a5e40(iVar2,0,0x7c383c,0x12e);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x12e);
   return 1;
 }
 

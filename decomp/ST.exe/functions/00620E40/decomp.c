@@ -4,8 +4,8 @@ void __thiscall FUN_00620e40(void *this,int param_1,int param_2,uint param_3)
 {
   uint uVar1;
   uint uVar2;
-  int iVar3;
-  int local_10 [3];
+  int soundId;
+  SoundPosition local_10;
   
   uVar1 = *(uint *)(DAT_00802a38 + 0xe4);
   if (DAT_0080874d == param_3) {
@@ -19,21 +19,22 @@ void __thiscall FUN_00620e40(void *this,int param_1,int param_2,uint param_3)
       return;
     }
     if (DAT_0080874e == '\x01') {
-      iVar3 = 0x8f;
+      soundId = 0x8f;
     }
     else if (DAT_0080874e == '\x02') {
-      iVar3 = 0x90;
+      soundId = 0x90;
     }
     else {
       if (DAT_0080874e != '\x03') {
         return;
       }
-      iVar3 = 0x91;
+      soundId = 0x91;
     }
-    local_10[2] = 0;
-    local_10[0] = -1;
-    local_10[1] = 0xffffffff;
-    thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,iVar3,local_10,0);
+    local_10.unknown = 0;
+    local_10.x = -1;
+    local_10.y = -1;
+    SoundClassTy::PlaySound_thunk
+              ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,soundId,&local_10,0);
     thunk_FUN_00620da0(this,param_1,param_2,0x28);
     *(uint *)((int)this + 0xf1) = uVar1 + 0xfa;
     return;

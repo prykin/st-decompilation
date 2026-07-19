@@ -20,7 +20,7 @@ int __cdecl thunk_FUN_006839d0(int param_1,int *param_2,undefined2 param_3,int p
   iStack_8 = 0;
   iStack_c = 0;
   if (((param_4 == 0) || (param_2 == (int *)0x0)) || (param_1 == 0)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d5604,0x3e5);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x3e5);
   }
   iVar2 = param_2[1];
   param_4 = 0;
@@ -50,7 +50,7 @@ int __cdecl thunk_FUN_006839d0(int param_1,int *param_2,undefined2 param_3,int p
         iVar5 = iVar5 + 1;
         break;
       default:
-        FUN_006a5e40(-0x34,DAT_007ed77c,0x7d5604,0x3f6);
+        RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0x3f6);
       }
       param_4 = param_4 + 1;
     } while (param_4 < (int)(&DAT_00813bc4)[DAT_008488b0 * 0xac5]);

@@ -17,8 +17,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
   void *unaff_EDI;
   STGroupBoatC *pSVar10;
   uint uVar11;
-  undefined4 uStack_84;
-  undefined4 auStack_80 [16];
+  InternalExceptionFrame IStack_84;
   undefined4 uStack_40;
   undefined2 uStack_3c;
   undefined2 uStack_3a;
@@ -42,23 +41,24 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
   iStack_28 = 0;
   iStack_2c = 0;
   uStack_18 = 2;
-  uStack_84 = DAT_00858df8;
-  DAT_00858df8 = &uStack_84;
+  IStack_84.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_84;
   pSStack_30 = this;
-  iVar3 = __setjmp3(auStack_80,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_30;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_84;
+    g_currentExceptionFrame = IStack_84.previous;
     if (iVar3 == -0x5001fff7) {
       return uStack_18;
     }
-    iVar7 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xaa0,0,iVar3,&DAT_007a4ccc);
+    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0xaa0,0,iVar3,&DAT_007a4ccc,
+                               s_STGroupBoatC__GrpLoadObj_007ac074);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       uVar8 = (*pcVar1)();
       return uVar8;
     }
-    FUN_006a5e40(iVar3,0,0x7abe3c,0xaa1);
+    RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xaa1);
     return 0xffffffff;
   }
   if ((param_1 != 1) && (param_1 != 0)) goto LAB_0049e26d;
@@ -87,7 +87,8 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
         piStack_8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24])
                                               ,uStack_c,1);
         if (piStack_8 == (int *)0x0) {
-          FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0xa5b);
+          RaiseInternalException
+                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa5b);
         }
         iVar3 = (**(code **)(*piStack_8 + 0xf8))();
         if (iVar3 != 0) {
@@ -164,7 +165,7 @@ LAB_0049e241:
   if (puVar5 != (uint *)0x0) {
     FUN_006ae110((byte *)puVar5);
   }
-  FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0xa86);
+  RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa86);
 LAB_0049e26d:
   if (*(uint *)((int)DAT_00802a38 + 0xe4) % 0x14 == 0) {
     uVar11 = 0;
@@ -175,7 +176,8 @@ LAB_0049e26d:
           piStack_8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),pSVar2[0x24]),
                                                 uStack_c,1);
           if (piStack_8 == (int *)0x0) {
-            FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0xa8e);
+            RaiseInternalException
+                      (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa8e);
           }
           iVar3 = (**(code **)(*piStack_8 + 0xf8))();
           if ((iVar3 != 0) &&
@@ -185,7 +187,8 @@ LAB_0049e26d:
             iVar3 = thunk_FUN_00492370((int)piStack_8);
             if (iVar3 == *(int *)(pSVar2 + 0x2a9)) {
               uStack_18 = 0;
-              FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0xa95);
+              RaiseInternalException
+                        (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa95);
             }
             iVar3 = thunk_FUN_0045ff10((int)piStack_8);
             if ((iVar3 == 0xf) || (uVar6 = thunk_FUN_0045f400(piStack_8,0xf), uVar6 == 1)) {
@@ -200,7 +203,7 @@ LAB_0049e26d:
       uStack_18 = 0;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_84;
+  g_currentExceptionFrame = IStack_84.previous;
   return uStack_18;
 }
 

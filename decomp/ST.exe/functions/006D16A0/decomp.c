@@ -40,7 +40,7 @@ FUN_006d16a0(undefined4 *param_1,int param_2,int param_3,int param_4,uint param_
      (param_10 != *(ushort *)(param_6 + 0xe))) {
     ExceptionList = &local_14;
     local_1c = &stack0xfffffd98;
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7ee1e4,0x19);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__DKW_WGR_C_dibxtoyc_c_007ee1e4,0x19);
     ExceptionList = local_14;
     return (undefined4 *)0x0;
   }

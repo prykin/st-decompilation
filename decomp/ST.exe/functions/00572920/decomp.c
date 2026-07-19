@@ -14,8 +14,7 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
   byte *pbVar7;
   undefined *puVar8;
   byte local_158 [260];
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   void *local_10;
   undefined4 local_c;
   HKEY local_8;
@@ -41,9 +40,9 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
     pbVar7 = local_158;
     puVar8 = &DAT_007ca69c;
     wsprintfA((LPSTR)pbVar7,&DAT_007ca69c,local_158,PTR_s_PL_LOG_0079b0d0);
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
-    iVar5 = __setjmp3(local_50,0,pbVar7,puVar8);
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
+    iVar5 = __setjmp3(local_54.jumpBuffer,0,pbVar7,puVar8);
     if (iVar5 == 0) {
       puVar6 = FUN_006f0ec0(0x345,local_158,2,0,0);
       if (puVar6 != (undefined4 *)0x0) {
@@ -56,10 +55,10 @@ undefined4 __thiscall FUN_00572920(void *this,byte param_1)
                      '\0',(uint *)0x0);
         cMf32::delete(this_00,puVar6);
       }
-      DAT_00858df8 = local_54;
+      g_currentExceptionFrame = local_54.previous;
     }
     else {
-      DAT_00858df8 = local_54;
+      g_currentExceptionFrame = local_54.previous;
       local_c = 0;
     }
   }

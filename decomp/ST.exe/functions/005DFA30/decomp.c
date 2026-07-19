@@ -28,21 +28,21 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   undefined4 local_5a8 [256];
   byte local_1a8 [260];
   undefined4 local_a4 [20];
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   MTaskTy *local_10;
   MTaskTy *local_c;
   undefined4 *local_8;
   
   *(undefined4 *)(this + 0x61) = *(undefined4 *)(this + 0x69);
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = local_54;
-    iVar4 = FUN_006ad4d0(s_E____titans_Start_task_obj_cpp_007cd994,0xdd,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0xdd,0,iVar4,&DAT_007a4ccc,
+                               s_MTaskTy__InitMTask_007cda1c);
     pMVar3 = local_10;
     if (iVar4 == 0) {
       thunk_FUN_005b66e0(local_10);
@@ -163,7 +163,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   puVar6 = FUN_00709af0(DAT_00806784,0xb,(byte *)s_MT_CHECK_007cda58,0xffffffff,0,1,0,
                         (undefined4 *)0x0);
   *(ushort **)(pMVar3 + 0x81) = puVar6;
-  thunk_FUN_00568bc0(&DAT_00807658,0);
+  thunk_FUN_00568bc0(&g_sound,0);
   FUN_006bc360(*(int *)(pMVar3 + 0x5d),local_5a8,(int *)0x0);
   FUN_00718780((int)local_5a8,0,0x100,0x1a,0x10,(undefined4 *)(pMVar3 + 0x91));
   FUN_00718780((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)(pMVar3 + 0x191));
@@ -284,7 +284,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   PlayScript(pMVar3);
   PaintMTask(pMVar3);
   thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)(pMVar3 + 0x5d),10,2);
-  DAT_00858df8 = local_54;
+  g_currentExceptionFrame = local_54.previous;
   return;
 }
 

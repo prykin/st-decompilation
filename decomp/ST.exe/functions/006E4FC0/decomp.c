@@ -9,16 +9,15 @@ WPARAM FUN_006e4fc0(void)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   int iVar5;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   tagMSG local_28;
   int *local_c;
   int local_8;
   
   local_8 = 0;
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
-  WVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
+  WVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (WVar2 == 0) {
     while (local_8 == 0) {
       BVar3 = PeekMessageA(&local_28,(HWND)0x0,0,0,1);
@@ -57,14 +56,15 @@ WPARAM FUN_006e4fc0(void)
         local_c[8] = 1;
       }
     }
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return local_28.wParam;
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
-  iVar5 = FUN_006ad4d0(s_E__Ourlib_Sapp_cpp_007ee78c,0x336,0,WVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_6c.previous;
+  iVar5 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x336,0,WVar2,&DAT_007a4ccc,
+                             s_AppClassTy__RunApp_Error___007eea60);
   if (iVar5 == 0) {
     (**(code **)(*local_c + 8))();
-    FUN_006a5e40(WVar2,0,0x7ee78c,0x338);
+    RaiseInternalException(WVar2,0,s_E__Ourlib_Sapp_cpp_007ee78c,0x338);
     return WVar2;
   }
   pcVar1 = (code *)swi(3);

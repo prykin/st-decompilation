@@ -14,19 +14,19 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
   void *unaff_EDI;
   uint uVar5;
   undefined1 *puVar6;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint local_c;
   STT3DSprC *local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_Tspr3d_cpp_007ac638,0xf1,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0xf1,0,iVar3,&DAT_007a4ccc,
+                               s_STT3DSprC__StartShow_007ac6dc);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
@@ -35,19 +35,19 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
     return 0xffffffff;
   }
   if (*(int *)(local_8 + 0x18) == -1) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0xce);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xce);
   }
   if (((char)param_1 < '\0') || (*(int *)(pSVar2 + 0x14) + -1 < (int)(char)param_1)) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0xcf);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xcf);
   }
   uVar5 = (uint)(char)param_1;
   iVar3 = uVar5 * 0x24;
   if (*(int *)(*(int *)(pSVar2 + 0x20) + iVar3) == 0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0xd0);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd0);
   }
   local_c = 1 << (param_1 & 0x1f);
   if ((*(uint *)(pSVar2 + 0x1c) & local_c) != 0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0xd1);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd1);
   }
   FUN_006e9cb0(*(void **)(pSVar2 + 0x3c),*(uint **)(pSVar2 + 0x18),uVar5);
   *(uint *)(pSVar2 + 0x1c) = *(uint *)(pSVar2 + 0x1c) | local_c;
@@ -80,7 +80,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
   }
 LAB_004ac330:
   *(undefined4 *)(*(int *)(pSVar2 + 0x20) + 0x1c + iVar3) = param_2;
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

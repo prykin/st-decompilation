@@ -19,8 +19,7 @@ void __thiscall AiTactClassTy::HelpOrganize(AiTactClassTy *this,int param_1)
   void *unaff_EDI;
   uint *puVar11;
   bool bVar12;
-  undefined4 uStack_98;
-  undefined4 auStack_94 [16];
+  InternalExceptionFrame IStack_98;
   uint auStack_54 [2];
   char cStack_4c;
   undefined1 uStack_4b;
@@ -84,10 +83,10 @@ LAB_00690758:
   bVar12 = iVar7 < 0;
 LAB_00690763:
   if ((bVar12) && (*(short *)(param_1 + 0x1a) != -1)) {
-    uStack_98 = DAT_00858df8;
-    DAT_00858df8 = &uStack_98;
+    IStack_98.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_98;
     pAStack_c = this;
-    iVar7 = __setjmp3(auStack_94,0,unaff_EDI,unaff_ESI);
+    iVar7 = __setjmp3(IStack_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_01 = pAStack_c;
     if (iVar7 == 0) {
       if (DAT_007fa174 == 0) {
@@ -138,7 +137,7 @@ LAB_00690763:
                                         *(undefined2 *)(*(int *)(iVar10 + 4) + 0x7d));
                   uStack_18 = CONCAT22(*(undefined2 *)(iVar7 + 0x7b),(short)uStack_10);
                   FUN_006ae1c0(*(uint **)(pAStack_c + 0xc9),(undefined4 *)&uStack_1c);
-                  DAT_00858df8 = (undefined4 *)uStack_98;
+                  g_currentExceptionFrame = IStack_98.previous;
                   return;
                 }
               }
@@ -146,24 +145,25 @@ LAB_00690763:
               iVar10 = *(int *)(pAStack_c + 0xa5);
               bVar12 = uStack_8 < *(uint *)(iVar10 + 0xc);
               if ((int)*(uint *)(iVar10 + 0xc) <= (int)uStack_8) {
-                DAT_00858df8 = (undefined4 *)uStack_98;
+                g_currentExceptionFrame = IStack_98.previous;
                 return;
               }
             } while( true );
           }
         }
       }
-      DAT_00858df8 = (undefined4 *)uStack_98;
+      g_currentExceptionFrame = IStack_98.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_98;
-    iVar10 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x433,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_98.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x433,0,iVar7,&DAT_007a4ccc,
+                                s_AiTactClassTy__HelpOrganize_007d5894);
     if (iVar10 != 0) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    FUN_006a5e40(iVar7,0,0x7d56e0,0x434);
+    RaiseInternalException(iVar7,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x434);
   }
   return;
 }

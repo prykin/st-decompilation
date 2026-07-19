@@ -20,24 +20,22 @@ undefined4 FUN_0054e4f0(int param_1)
   char *pcVar13;
   undefined1 local_2b8;
   char local_2b7 [515];
-  undefined4 **local_b4;
-  undefined4 local_b0 [16];
-  undefined4 **local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_b4;
+  InternalExceptionFrame local_70;
   undefined4 local_2c [8];
   int *local_c;
   int local_8;
   
   iVar3 = FUN_006e5f00(param_1);
   if (iVar3 != 0xffff) {
-    local_70 = DAT_00858df8;
-    DAT_00858df8 = &local_70;
-    iVar3 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+    local_70.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_70;
+    iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if (*(int *)(param_1 + 0x10) == 8) {
-        local_b4 = DAT_00858df8;
-        DAT_00858df8 = &local_b4;
-        iVar3 = __setjmp3(local_b0,0,unaff_EDI,unaff_ESI);
+        local_b4.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &local_b4;
+        iVar3 = __setjmp3(local_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
         this = DAT_00806754;
         if (iVar3 == 0) {
           if (DAT_00802a58 != (cLoadingTy *)0x0) {
@@ -85,12 +83,12 @@ undefined4 FUN_0054e4f0(int param_1)
           if (DAT_00802a58 != (cLoadingTy *)0x0) {
             cLoadingTy::SetState(DAT_00802a58,2,0,(char *)&DAT_0080f33a);
           }
-          DAT_00858df8 = local_b4;
+          g_currentExceptionFrame = local_b4.previous;
           piVar11 = local_c;
         }
         else {
-          DAT_00858df8 = local_b4;
-          FUN_006a5e40(iVar3,0,0x7c8430,0x42f);
+          g_currentExceptionFrame = local_b4.previous;
+          RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x42f);
           piVar11 = local_c;
         }
         uVar10 = 0;
@@ -144,15 +142,16 @@ undefined4 FUN_0054e4f0(int param_1)
             uVar10 = uVar10 + 1;
             pcVar12 = pcVar12 + 0x9c;
           } while (uVar10 < DAT_00808aaf);
-          DAT_00858df8 = local_70;
+          g_currentExceptionFrame = local_70.previous;
           return 0;
         }
       }
-      DAT_00858df8 = local_70;
+      g_currentExceptionFrame = local_70.previous;
       return 0;
     }
-    DAT_00858df8 = local_70;
-    iVar3 = FUN_006ad4d0(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x463,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_70.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x463,0,iVar3,
+                               &DAT_007a4ccc,s_STPlaySystemC__GetMessage_error___007c8554);
     if (iVar3 != 0) {
       pcVar2 = (code *)swi(3);
       uVar6 = (*pcVar2)();

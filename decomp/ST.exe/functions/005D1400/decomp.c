@@ -51,8 +51,7 @@ undefined4 __thiscall SettMapMTy::GetMessage(SettMapMTy *this,int param_1)
   undefined4 local_150;
   undefined4 local_14c;
   undefined4 local_148;
-  undefined4 *local_f4;
-  undefined4 local_f0 [16];
+  InternalExceptionFrame local_f4;
   undefined4 local_b0 [8];
   undefined4 local_90 [4];
   undefined4 local_80;
@@ -87,19 +86,20 @@ undefined4 __thiscall SettMapMTy::GetMessage(SettMapMTy *this,int param_1)
   uVar10 = FUN_006e51b0(*(int *)(this + 0x10));
   uVar20 = 0;
   *(undefined4 *)(this + 0x61) = uVar10;
-  local_f4 = DAT_00858df8;
-  DAT_00858df8 = &local_f4;
-  iVar11 = __setjmp3(local_f0,0,unaff_EDI,unaff_ESI);
+  local_f4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_f4;
+  iVar11 = __setjmp3(local_f4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_48;
   if (iVar11 != 0) {
-    DAT_00858df8 = local_f4;
-    iVar28 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x986,0,iVar11,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_f4.previous;
+    iVar28 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x986,0,iVar11,
+                                &DAT_007a4ccc,s_SettMapMTy__GetMessage_007cd4e4);
     if (iVar28 != 0) {
       pcVar7 = (code *)swi(3);
       uVar10 = (*pcVar7)();
       return uVar10;
     }
-    FUN_006a5e40(iVar11,0,0x7cd258,0x986);
+    RaiseInternalException(iVar11,0,s_E____titans_Start_settmobj_cpp_007cd258,0x986);
     return 0xffff;
   }
   SettMapTy::GetMessage((SettMapTy *)local_48,param_1);
@@ -1855,11 +1855,11 @@ LAB_005d34ee:
   }
   uVar20 = *(uint *)(param_1 + 0x10);
   if (uVar20 < 0x6a7f) {
-    DAT_00858df8 = local_f4;
+    g_currentExceptionFrame = local_f4.previous;
     return 0;
   }
   if (0x6afe < uVar20) {
-    DAT_00858df8 = local_f4;
+    g_currentExceptionFrame = local_f4.previous;
     return 0;
   }
   pcVar24 = (char *)0x0;
@@ -2170,7 +2170,7 @@ switchD_005d35aa_default:
   if (*(short *)(param_1 + 0x14) == 3) {
     thunk_FUN_005b6730(this_01,9,'\x01',-1);
   }
-  DAT_00858df8 = local_f4;
+  g_currentExceptionFrame = local_f4.previous;
   return 0;
 }
 

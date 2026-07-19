@@ -112,7 +112,7 @@ BITMAPINFO * FUN_006bbfa0(BITMAPINFO *param_1,undefined4 *param_2,HPALETTE param
       if ((DVar7 == 0xffffff03) && (local_c = GetLastError(), local_c == 0)) {
         local_c = DVar7;
       }
-      FUN_006a5e40(local_c,DAT_007ed77c,0x7edc5c,0x52);
+      RaiseInternalException(local_c,DAT_007ed77c,s_E__DKW_WGR_C_dibto8_cpp_007edc5c,0x52);
     }
     return local_8;
   }
@@ -145,7 +145,7 @@ BITMAPINFO * FUN_006bbfa0(BITMAPINFO *param_1,undefined4 *param_2,HPALETTE param
     FUN_006c7f90((int)local_8,(byte *)0x0,param_3,-1);
     return local_8;
   }
-  FUN_006a5e40(-2,DAT_007ed77c,0x7edc5c,0x1b);
+  RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_WGR_C_dibto8_cpp_007edc5c,0x1b);
   return (BITMAPINFO *)0x0;
 }
 

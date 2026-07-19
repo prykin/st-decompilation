@@ -98,7 +98,7 @@ undefined4 * FUN_006d4380(undefined4 *param_1,LPCSTR param_2,uint param_3)
   if (local_8 != (HANDLE)0x0) {
     CloseHandle(local_8);
   }
-  FUN_006a5e40(DVar7,DAT_007ed77c,0x7ee22c,0x91);
+  RaiseInternalException(DVar7,DAT_007ed77c,s_E__DKW_FMM_C_fmap_c_007ee22c,0x91);
   return (undefined4 *)0x0;
 }
 

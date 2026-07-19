@@ -21,8 +21,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   undefined4 uStack_848;
   undefined4 uStack_844;
   undefined4 uStack_74;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   WaitTy *pWStack_8;
   
   puVar6 = auStack_8d8;
@@ -31,9 +30,9 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
-  iVar5 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
+  iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pWVar3 = pWStack_8;
   if (iVar5 == 0) {
     if (*(int *)(pWStack_8 + 0x1a64) == 0) {
@@ -64,17 +63,18 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       (**(code **)(*piVar1 + 8))(6,DAT_0081176c + 0x54c,0,auStack_8d8,0);
       FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar4 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303,0,iVar5,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_4c.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303,0,iVar5,&DAT_007a4ccc,
+                             s_WaitTy__CreateCtrls_007cde24);
   if (iVar4 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar5,0,0x7cdd5c,0x303);
+  RaiseInternalException(iVar5,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x303);
   return;
 }
 

@@ -16,13 +16,15 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   piVar3 = param_2;
   param_2 = (int *)thunk_FUN_0042b620((uint)param_2,param_3,1);
   if (param_2 == (int *)0x0) {
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21ed,0,0,&DAT_007a4ccc);
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21ed,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC___ChangeDock_007a8020);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x21ee);
+    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x21ee)
+    ;
   }
   iVar4 = (**(code **)(*param_2 + 0x2c))();
   if ((((iVar4 == 0x33) &&

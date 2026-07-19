@@ -9,8 +9,7 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar4;
-  undefined4 uStack_b8;
-  undefined4 auStack_b4 [16];
+  InternalExceptionFrame IStack_b8;
   undefined4 auStack_74 [5];
   undefined4 uStack_60;
   undefined4 uStack_5c;
@@ -24,10 +23,10 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
   undefined4 *puStack_10;
   uint uStack_c;
   
-  uStack_b8 = DAT_00858df8;
-  DAT_00858df8 = &uStack_b8;
+  IStack_b8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_b8;
   pCStack_28 = this;
-  iVar2 = __setjmp3(auStack_b4,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_28;
   if (iVar2 == 0) {
     puVar4 = auStack_24;
@@ -91,17 +90,18 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
       thunk_FUN_00544100(this_00,iVar2,auStack_24,(int)auStack_74);
       iVar2 = iVar2 + 1;
     } while (iVar2 < 0x1e);
-    DAT_00858df8 = (undefined4 *)uStack_b8;
+    g_currentExceptionFrame = IStack_b8.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_b8;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x127,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_b8.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x127,0,iVar2,&DAT_007a4ccc
+                             ,s_CursorClassTy__AddSysAcc_007c7e8c);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c7d60,0x128);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x128);
   return;
 }
 

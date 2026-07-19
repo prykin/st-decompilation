@@ -10,7 +10,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   int iVar5;
   int iVar6;
   void *unaff_ESI;
-  undefined4 uVar7;
+  InternalExceptionFrame *pIVar7;
   undefined4 auStack_58 [16];
   undefined4 uStack_18;
   undefined4 uStack_14;
@@ -18,10 +18,10 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   undefined1 uStack_c;
   FSGSTy *pFStack_8;
   
-  uVar7 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffa4;
+  pIVar7 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
   pFStack_8 = this;
-  iVar5 = __setjmp3(auStack_58,0,unaff_ESI,uVar7);
+  iVar5 = __setjmp3(auStack_58,0,unaff_ESI,pIVar7);
   this_00 = DAT_00802a30;
   if (iVar5 == 0) {
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -45,17 +45,18 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
       uStack_c = 0;
       thunk_FUN_005b8f40(*(void **)(iVar5 + 0x2e6),&uStack_18);
     }
-    DAT_00858df8 = (undefined1 *)uVar7;
+    g_currentExceptionFrame = pIVar7;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar7;
-  iVar6 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918,0,iVar5,&DAT_007a4ccc);
+  g_currentExceptionFrame = pIVar7;
+  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918,0,iVar5,&DAT_007a4ccc,
+                             s_FSGSTy__DoLogon_007cc3f4);
   if (iVar6 != 0) {
     pcVar3 = (code *)swi(3);
     (*pcVar3)();
     return;
   }
-  FUN_006a5e40(iVar5,0,0x7cbf70,0x918);
+  RaiseInternalException(iVar5,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918);
   return;
 }
 

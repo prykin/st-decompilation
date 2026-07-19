@@ -31,8 +31,7 @@ ccFntTy::CreateTypeSSpr
   ccFntTy *pcVar18;
   char *pcVar19;
   undefined4 local_e4 [18];
-  undefined4 local_9c;
-  undefined4 local_98 [16];
+  InternalExceptionFrame local_9c;
   char local_58 [12];
   uint local_4c;
   ccFntTy *local_48;
@@ -61,13 +60,14 @@ ccFntTy::CreateTypeSSpr
   local_3c = 0xffffffff;
   local_c = (uint *)0x0;
   local_5 = 0;
-  local_9c = DAT_00858df8;
-  DAT_00858df8 = &local_9c;
+  local_9c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_9c;
   local_48 = this;
-  iVar7 = __setjmp3(local_98,0,unaff_EDI,unaff_ESI);
+  iVar7 = __setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
-    DAT_00858df8 = (undefined4 *)local_9c;
-    iVar8 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x9d0,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_9c.previous;
+    iVar8 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x9d0,0,iVar7,&DAT_007a4ccc,
+                               s_ccFntTy__CreateTypeSSpr_007f03a4);
     pcVar4 = local_48;
     if (iVar8 != 0) {
       pcVar3 = (code *)swi(3);
@@ -80,11 +80,11 @@ ccFntTy::CreateTypeSSpr
     }
     FUN_00725e30((int *)&local_10);
     FUN_007109f0(pcVar4,local_e4);
-    FUN_006a5e40(iVar7,0,0x7f0190,0x9d5);
+    RaiseInternalException(iVar7,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x9d5);
     return (undefined4 *)0x0;
   }
   if ((param_1 == (uint *)0x0) || ((char)*param_1 == '\0')) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x95f);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x95f);
   }
   pcVar4 = local_48;
   Save(local_48,local_e4);
@@ -357,7 +357,7 @@ ccFntTy::CreateTypeSSpr
     FUN_006ab060(&local_c);
   }
   FUN_007109f0(pcVar4,local_e4);
-  DAT_00858df8 = (undefined4 *)local_9c;
+  g_currentExceptionFrame = local_9c.previous;
   return local_10;
 }
 

@@ -8,17 +8,16 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   void *local_14;
   int local_10;
   int local_c;
   int local_8;
   
   local_10 = -4;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     iVar2 = thunk_FUN_0054cbb0(param_2,&local_8);
     if (iVar2 == 0) {
@@ -31,14 +30,14 @@ int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_
     if (local_10 == 0) {
       thunk_FUN_0054cd90();
     }
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return iVar2;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x128,0,0,
-                       (byte *)s_Not_found_system_type_for_game_t_007c8488);
+  g_currentExceptionFrame = local_58.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x128,0,0,
+                             s_Not_found_system_type_for_game_t_007c8488,param_2);
   if (iVar3 == 0) {
-    FUN_006a5e40(iVar2,0,0x7c8430,0x129);
+    RaiseInternalException(iVar2,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x129);
     return local_10;
   }
   pcVar1 = (code *)swi(3);

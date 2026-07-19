@@ -19,10 +19,8 @@ void __thiscall thunk_FUN_00567510(void *this,int param_1,int param_2,int param_
   int iVar13;
   undefined4 uVar14;
   undefined4 uVar15;
-  undefined4 uStack_b0;
-  undefined4 auStack_ac [16];
-  undefined4 uStack_6c;
-  undefined4 auStack_68 [16];
+  InternalExceptionFrame IStack_b0;
+  InternalExceptionFrame IStack_6c;
   uint uStack_28;
   int iStack_24;
   void *pvStack_20;
@@ -54,12 +52,12 @@ void __thiscall thunk_FUN_00567510(void *this,int param_1,int param_2,int param_
     }
     *(int *)((int)this + 0x10e9) = iVar4;
     *(int *)((int)this + 0x10ed) = param_2 - iVar4 * param_1;
-    uStack_b0 = DAT_00858df8;
-    DAT_00858df8 = &uStack_b0;
-    iVar4 = __setjmp3(auStack_ac,0,unaff_EDI,unaff_ESI);
+    IStack_b0.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_b0;
+    iVar4 = __setjmp3(IStack_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pvVar3 = pvStack_20;
     if (iVar4 != 0) {
-      DAT_00858df8 = (undefined4 *)uStack_b0;
+      g_currentExceptionFrame = IStack_b0.previous;
       return;
     }
     iStack_8 = 2;
@@ -167,7 +165,7 @@ void __thiscall thunk_FUN_00567510(void *this,int param_1,int param_2,int param_
       iStack_8 = iVar4 + 1;
       piStack_10 = piStack_10 + 3;
     } while (iStack_8 < 0x20);
-    DAT_00858df8 = (undefined4 *)uStack_b0;
+    g_currentExceptionFrame = IStack_b0.previous;
     return;
   }
   if ((((*(int *)((int)this + 0x10d9) == param_1) && (*(int *)((int)this + 0x10dd) == param_2)) &&
@@ -177,12 +175,12 @@ void __thiscall thunk_FUN_00567510(void *this,int param_1,int param_2,int param_
   *(int *)((int)this + 0x10e5) = param_3;
   *(int *)((int)this + 0x10d9) = param_1;
   *(int *)((int)this + 0x10dd) = param_2;
-  uStack_6c = DAT_00858df8;
-  DAT_00858df8 = &uStack_6c;
-  iVar4 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
+  IStack_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_6c;
+  iVar4 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pvVar3 = pvStack_20;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_6c;
+    g_currentExceptionFrame = IStack_6c.previous;
     return;
   }
   switch(*(undefined4 *)((int)pvStack_20 + 0x10e5)) {
@@ -240,7 +238,7 @@ switchD_005675bc_default:
       piVar12 = piVar12 + 3;
     } while (iVar4 < 0x20);
   }
-  DAT_00858df8 = (undefined4 *)uStack_6c;
+  g_currentExceptionFrame = IStack_6c.previous;
   return;
 }
 

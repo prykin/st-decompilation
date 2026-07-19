@@ -16,8 +16,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
   void *unaff_EDI;
   byte bVar11;
   int iVar12;
-  undefined4 local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   int local_20;
   undefined4 *local_1c;
   int local_18;
@@ -32,12 +31,12 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
   local_14 = (ushort *)0x0;
   local_5 = 0;
   local_6 = 0;
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
-  iVar5 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
+  iVar5 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 == 0) {
     if (param_1 == 0) {
-      FUN_006a5e40(-0x34,DAT_007ed77c,0x7eef88,0x8b);
+      RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x8b);
     }
     if (param_3 == 0) {
       param_3 = param_1;
@@ -67,7 +66,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
       iVar10 = iVar10 + 1;
     } while (iVar10 < 0x10);
     if (local_5 < 5) {
-      FUN_006a5e40(-5,DAT_007ed77c,0x7eef88,0x9e);
+      RaiseInternalException(-5,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x9e);
     }
     local_14 = FUN_006f1ce0(0xf,param_2,(int *)0x0,1);
     local_18 = 0;
@@ -115,11 +114,12 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
       } while (local_18 < local_20);
     }
     cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_14);
-    DAT_00858df8 = (undefined4 *)local_64;
+    g_currentExceptionFrame = local_64.previous;
     return local_10;
   }
-  DAT_00858df8 = (undefined4 *)local_64;
-  iVar10 = FUN_006ad4d0(s_E__ourlib_Mfstmap_cpp_007eef88,0xba,0,iVar5,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_64.previous;
+  iVar10 = ReportDebugMessage(s_E__ourlib_Mfstmap_cpp_007eef88,0xba,0,iVar5,&DAT_007a4ccc,
+                              s_mfTMapLoad_007eefd8);
   if (iVar10 != 0) {
     pcVar4 = (code *)swi(3);
     psVar9 = (short *)(*pcVar4)();
@@ -127,7 +127,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
   }
   cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_14);
   FUN_006efb70((int *)&local_10);
-  FUN_006a5e40(iVar5,0,0x7eef88,0xbf);
+  RaiseInternalException(iVar5,0,s_E__ourlib_Mfstmap_cpp_007eef88,0xbf);
   return (short *)0x0;
 }
 

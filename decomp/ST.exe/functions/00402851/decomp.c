@@ -136,20 +136,13 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 uStackY_3a8;
   int iStackY_3a4;
   undefined4 uStackY_2ac;
-  undefined4 **ppuStackY_2a8;
-  undefined4 auStackY_2a4 [16];
-  undefined4 **ppuStackY_264;
-  undefined4 auStackY_260 [16];
-  undefined4 **ppuStackY_220;
-  undefined4 auStackY_21c [16];
-  undefined4 **ppuStackY_1dc;
-  undefined4 auStackY_1d8 [16];
-  undefined4 **ppuStackY_198;
-  undefined4 auStackY_194 [16];
-  undefined4 **ppuStackY_154;
-  undefined4 auStackY_150 [16];
-  undefined4 **ppuStackY_110;
-  undefined4 auStackY_10c [16];
+  InternalExceptionFrame IStackY_2a8;
+  InternalExceptionFrame IStackY_264;
+  InternalExceptionFrame IStackY_220;
+  InternalExceptionFrame IStackY_1dc;
+  InternalExceptionFrame IStackY_198;
+  InternalExceptionFrame IStackY_154;
+  InternalExceptionFrame IStackY_110;
   undefined4 auStackY_cc [4];
   undefined4 uStackY_bc;
   undefined4 uStackY_b8;
@@ -192,19 +185,20 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 uVar41;
   
   FUN_0072da40();
-  ppuStackY_110 = DAT_00858df8;
-  DAT_00858df8 = &ppuStackY_110;
+  IStackY_110.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStackY_110;
   this_00 = extraout_ECX;
-  iVar5 = __setjmp3(auStackY_10c,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(IStackY_110.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = ppuStackY_110;
-    iVar16 = FUN_006ad4d0(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x350,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStackY_110.previous;
+    iVar16 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x350,0,iVar5,
+                                &DAT_007a4ccc);
     if (iVar16 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c70a0,0x350);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x350);
     return;
   }
   iVar5 = 10;
@@ -1067,7 +1061,7 @@ switchD_0052fbb9_caseD_9:
       }
       else if (bVar4 == 6) {
         uVar18 = 0;
-        if (DAT_00807658 == 0) {
+        if (g_sound == 0) {
           uVar13 = 0;
         }
         else {
@@ -1078,11 +1072,11 @@ switchD_0052fbb9_caseD_9:
         }
         else {
           piVar39 = (int *)0x0;
-          ppuStackY_264 = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_264;
-          iVar5 = __setjmp3(auStackY_260,0,unaff_EDI,iVar16);
+          IStackY_264.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_264;
+          iVar5 = __setjmp3(IStackY_264.jumpBuffer,0,unaff_EDI,iVar16);
           if (iVar5 == 0) {
-            if (DAT_00807658 == 0) {
+            if (g_sound == 0) {
               uVar13 = 0;
             }
             else {
@@ -1098,13 +1092,13 @@ switchD_0052fbb9_caseD_9:
           else {
             uVar13 = 0;
           }
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar11 = 0;
           }
           else {
             uVar11 = *(uint *)(DAT_0080765c + 0x50) & 1;
           }
-          DAT_00858df8 = ppuStackY_264;
+          g_currentExceptionFrame = IStackY_264.previous;
           this_00 = (UPanelTy *)pOVar30;
           if (uVar11 != 0) {
             iVar5 = *(int *)(DAT_0080765c + 100);
@@ -1119,7 +1113,7 @@ LAB_00530da0:
       }
       else if (bVar4 == 7) {
         uVar18 = 0;
-        if (DAT_00807658 == 0) {
+        if (g_sound == 0) {
           uVar13 = 0;
         }
         else {
@@ -1127,11 +1121,11 @@ LAB_00530da0:
         }
         if (uVar13 != 0) {
           piVar39 = (int *)0x0;
-          ppuStackY_154 = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_154;
-          iVar5 = __setjmp3(auStackY_150,0,unaff_EDI,iVar16);
+          IStackY_154.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_154;
+          iVar5 = __setjmp3(IStackY_154.jumpBuffer,0,unaff_EDI,iVar16);
           if (iVar5 == 0) {
-            if (DAT_00807658 == 0) {
+            if (g_sound == 0) {
               uVar13 = 0;
             }
             else {
@@ -1147,13 +1141,13 @@ LAB_00530da0:
           else {
             uVar13 = 0;
           }
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar11 = 0;
           }
           else {
             uVar11 = *(uint *)(DAT_0080765c + 0x38) & 1;
           }
-          DAT_00858df8 = ppuStackY_154;
+          g_currentExceptionFrame = IStackY_154.previous;
           this_00 = (UPanelTy *)pOVar30;
           if (uVar11 != 0) {
             iVar5 = *(int *)(DAT_0080765c + 0x4c);
@@ -1199,7 +1193,7 @@ LAB_00530da0:
       uVar12 = (bVar4 != 5) - 1 & 4;
       if (bVar4 == 5) {
         if ((char)DAT_00807300 == '\x02') {
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar13 = 0;
           }
           else {
@@ -1212,7 +1206,7 @@ LAB_00530da0:
           }
         }
         if ((char)DAT_00807300 == '\x04') {
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar13 = 0;
           }
           else {
@@ -1229,11 +1223,11 @@ LAB_005311d8:
         case 1:
           goto switchD_005311ec_caseD_1;
         case 2:
-          ppuStackY_198 = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_198;
-          iVar5 = __setjmp3(auStackY_194,0,unaff_EDI,unaff_ESI);
+          IStackY_198.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_198;
+          iVar5 = __setjmp3(IStackY_198.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
-            if (DAT_00807658 == 0) {
+            if (g_sound == 0) {
               uVar18 = 0;
             }
             else {
@@ -1249,13 +1243,13 @@ LAB_005311d8:
           else {
             uVar13 = 0;
           }
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar18 = 0;
           }
           else {
             uVar18 = *(uint *)(DAT_0080765c + 0x80) & 1;
           }
-          DAT_00858df8 = ppuStackY_198;
+          g_currentExceptionFrame = IStackY_198.previous;
           if (uVar18 == 0) {
 LAB_0053108d:
             uVar18 = 0;
@@ -1269,11 +1263,11 @@ LAB_0053108d:
         default:
           goto switchD_005311ec_caseD_3;
         case 4:
-          ppuStackY_1dc = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_1dc;
-          iVar5 = __setjmp3(auStackY_1d8,0,unaff_EDI,unaff_ESI);
+          IStackY_1dc.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_1dc;
+          iVar5 = __setjmp3(IStackY_1dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
-            if (DAT_00807658 == 0) {
+            if (g_sound == 0) {
               uVar18 = 0;
             }
             else {
@@ -1289,13 +1283,13 @@ LAB_0053108d:
           else {
             uVar13 = 0;
           }
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar18 = 0;
           }
           else {
             uVar18 = *(uint *)(DAT_0080765c + 0x68) & 1;
           }
-          DAT_00858df8 = ppuStackY_1dc;
+          g_currentExceptionFrame = IStackY_1dc.previous;
           if (uVar18 == 0) goto LAB_0053108d;
           uVar18 = (*(int *)(DAT_0080765c + 0x7c) - *(int *)(DAT_0080765c + 0x78)) + 1;
           this_00 = (UPanelTy *)pOVar30;
@@ -1310,7 +1304,7 @@ LAB_0053108f:
       else {
         if (bVar4 == 6) {
           uVar18 = 0;
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar13 = 0;
           }
           else {
@@ -1320,11 +1314,11 @@ LAB_0053108f:
             iVar16 = 0;
             goto LAB_0053138b;
           }
-          ppuStackY_220 = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_220;
-          iVar5 = __setjmp3(auStackY_21c,0,unaff_EDI,unaff_ESI);
+          IStackY_220.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_220;
+          iVar5 = __setjmp3(IStackY_220.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
-            if (DAT_00807658 == 0) {
+            if (g_sound == 0) {
               uVar18 = 0;
             }
             else {
@@ -1340,13 +1334,13 @@ LAB_0053108f:
           else {
             uVar13 = 0;
           }
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar18 = 0;
           }
           else {
             uVar18 = *(uint *)(DAT_0080765c + 0x50) & 1;
           }
-          DAT_00858df8 = ppuStackY_220;
+          g_currentExceptionFrame = IStackY_220.previous;
           if (uVar18 != 0) {
             uVar18 = (*(int *)(DAT_0080765c + 100) - *(int *)(DAT_0080765c + 0x60)) + 1;
             this_00 = (UPanelTy *)pOVar30;
@@ -1356,7 +1350,7 @@ LAB_0053108f:
         }
         if (bVar4 == 7) {
           uVar18 = 0;
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar13 = 0;
           }
           else {
@@ -1366,11 +1360,11 @@ LAB_0053108f:
             iVar16 = 0;
             goto LAB_0053138b;
           }
-          ppuStackY_2a8 = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_2a8;
-          iVar5 = __setjmp3(auStackY_2a4,0,unaff_EDI,unaff_ESI);
+          IStackY_2a8.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_2a8;
+          iVar5 = __setjmp3(IStackY_2a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
-            if (DAT_00807658 == 0) {
+            if (g_sound == 0) {
               uVar18 = 0;
             }
             else {
@@ -1386,13 +1380,13 @@ LAB_0053108f:
           else {
             uVar13 = 0;
           }
-          if (DAT_00807658 == 0) {
+          if (g_sound == 0) {
             uVar18 = 0;
           }
           else {
             uVar18 = *(uint *)(DAT_0080765c + 0x38) & 1;
           }
-          DAT_00858df8 = ppuStackY_2a8;
+          g_currentExceptionFrame = IStackY_2a8.previous;
           if (uVar18 == 0) goto LAB_0053108d;
           uVar18 = (*(int *)(DAT_0080765c + 0x4c) - *(int *)(DAT_0080765c + 0x48)) + 1;
           this_00 = (UPanelTy *)pOVar30;
@@ -1678,7 +1672,7 @@ switchD_005311ec_caseD_3:
     bVar4 = (char)uVar18 + 1;
     uVar18 = (uint)bVar4;
   } while (bVar4 < 2);
-  DAT_00858df8 = ppuStackY_110;
+  g_currentExceptionFrame = IStackY_110.previous;
   return;
 }
 

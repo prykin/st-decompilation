@@ -4,20 +4,19 @@ undefined4 FUN_006b7e00(int param_1,uint param_2,undefined4 *param_3,undefined4 
 {
   HMIXEROBJ hmxobj;
   int iVar1;
-  MMRESULT MVar2;
-  int iVar3;
+  MMRESULT exceptionCode;
+  int iVar2;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  tMIXERCONTROLDETAILS *ptVar4;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  tMIXERCONTROLDETAILS *ptVar3;
+  InternalExceptionFrame local_68;
   tMIXERCONTROLDETAILS local_24;
   undefined4 local_c;
   undefined4 local_8;
   
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
-  iVar1 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
+  iVar1 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     *param_3 = 0;
     *param_4 = 0;
@@ -26,28 +25,28 @@ undefined4 FUN_006b7e00(int param_1,uint param_2,undefined4 *param_3,undefined4 
          (iVar1 = param_1 + (param_2 & 0xff) * 0x18,
          (*(byte *)(param_1 + 0x38 + (param_2 & 0xff) * 0x18) & 1) != 0)) &&
         (param_3 != (undefined4 *)0x0)) && (param_4 != (undefined4 *)0x0)) {
-      ptVar4 = &local_24;
-      for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-        ptVar4->cbStruct = 0;
-        ptVar4 = (tMIXERCONTROLDETAILS *)&ptVar4->dwControlID;
+      ptVar3 = &local_24;
+      for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
+        ptVar3->cbStruct = 0;
+        ptVar3 = (tMIXERCONTROLDETAILS *)&ptVar3->dwControlID;
       }
       local_24.dwControlID = *(DWORD *)(iVar1 + 0x3c);
       local_24.cChannels = *(DWORD *)(iVar1 + 0x44);
       local_24.paDetails = &local_c;
       local_24.cbStruct = 0x18;
       local_24.cbDetails = 4;
-      MVar2 = mixerGetControlDetailsA(hmxobj,&local_24,0);
-      if (MVar2 != 0) {
-        FUN_006a5e40(MVar2,DAT_007ed77c,0x7edbe8,0xab);
+      exceptionCode = mixerGetControlDetailsA(hmxobj,&local_24,0);
+      if (exceptionCode != 0) {
+        RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_SND_C_mixer_cpp_007edbe8,0xab);
       }
       *param_3 = local_c;
       *param_4 = local_8;
     }
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_68;
-  FUN_006a5e40(iVar1,0,0x7edbe8,0xb2);
+  g_currentExceptionFrame = local_68.previous;
+  RaiseInternalException(iVar1,0,s_E__DKW_SND_C_mixer_cpp_007edbe8,0xb2);
   return 0xffffffff;
 }
 

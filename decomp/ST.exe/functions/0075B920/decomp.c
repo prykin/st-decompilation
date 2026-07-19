@@ -19,10 +19,10 @@ void FUN_0075b920(int *param_1)
       iVar2 = *(int *)(*param_1 + 0x14);
       iVar3 = *(int *)(*param_1 + 0x18);
       if (((iVar2 < 0) || (3 < iVar2)) || (piVar4[iVar2 + 0x2b] == 0)) {
-        FUN_006a5e40(0x31,DAT_007ed77c,0x7f2df8,100);
+        RaiseInternalException(0x31,DAT_007ed77c,s_E__DKW_JPG_C_jdhuff_c_007f2df8,100);
       }
       if (((iVar3 < 0) || (3 < iVar3)) || (piVar4[iVar3 + 0x2f] == 0)) {
-        FUN_006a5e40(0x31,DAT_007ed77c,0x7f2df8,0x67);
+        RaiseInternalException(0x31,DAT_007ed77c,s_E__DKW_JPG_C_jdhuff_c_007f2df8,0x67);
       }
       FUN_0075b540(piVar4,piVar4[iVar2 + 0x2b],(int *)(iVar1 + 0x28 + iVar2 * 4));
       FUN_0075b540(piVar4,piVar4[iVar3 + 0x2f],(int *)(iVar1 + 0x38 + iVar3 * 4));

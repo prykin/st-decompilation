@@ -17,8 +17,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   undefined4 *puVar7;
   undefined4 local_9c [9];
   undefined4 local_78 [9];
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   CPanelTy *local_10;
   undefined4 local_c;
   undefined1 local_8;
@@ -37,15 +36,16 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   if (bVar3) {
     return;
   }
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar5 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x2ff,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x2ff,0,iVar5,&DAT_007a4ccc
+                               ,s_CPanelTy__SetCmdBoat_007c2684);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar5,0,0x7c2524,0x2ff);
+      RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x2ff);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -95,7 +95,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 1:
     local_5 = 0;
     thunk_FUN_0054edf0((undefined4 *)0xa,(undefined4 *)&local_5,0,0xffffffff);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   case 2:
   case 3:
@@ -113,7 +113,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 0x13:
   case 0x18:
     thunk_FUN_0054b630(DAT_00802a30,(uint)(byte)CVar1,0);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   case 4:
     puVar7 = local_78;
@@ -124,13 +124,13 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     *(undefined1 *)puVar7 = 0;
     local_78[0]._0_1_ = 10;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_78,0,0xffffffff);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   case 0xb:
   case 0xc:
     local_6 = CVar1 == (CPanelTy)0xb;
     thunk_FUN_0054edf0((undefined4 *)0x28,(undefined4 *)&local_6,0,0xffffffff);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
     if ((DAT_00801684 != (ProdPanelTy *)0x0) && (*(short *)(DAT_00801684 + 0x172) == 2)) {
@@ -141,7 +141,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     local_8 = 0;
     local_c = 3;
     thunk_FUN_0054edf0((undefined4 *)0x21,&local_c,0,0xffffffff);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   default:
     goto switchD_00503d36_caseD_15;
@@ -159,7 +159,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     *(undefined1 *)puVar7 = 0;
     local_9c[0]._0_1_ = 0x14;
     thunk_FUN_0054edf0((undefined4 *)0x17,local_9c,0,0xffffffff);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   case 0x4c:
     if ((DAT_008016ec != (int *)0x0) && (*(short *)((int)DAT_008016ec + 0x172) == 2)) {
@@ -168,7 +168,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   }
   thunk_FUN_004fad20(pCVar4);
 switchD_00503d36_caseD_15:
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return;
 }
 

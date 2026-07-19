@@ -48,7 +48,8 @@ LAB_0042d1c3:
       goto LAB_0042d1c3;
     }
 LAB_0042d270:
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x406,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x406,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__ResetActivityFrom_007a6368);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();

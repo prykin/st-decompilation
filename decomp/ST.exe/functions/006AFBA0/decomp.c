@@ -34,7 +34,7 @@ short * FUN_006afba0(int param_1,int param_2,short *param_3,short *param_4,short
     iVar5 = FUN_006c8ec0(param_1,param_2,(uint)param_3,(undefined4 *)param_4,(int)param_5,
                          (int)param_6,(int)param_7,param_8,(int)param_9,(int)param_10);
     if (iVar5 != 0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7eda5c,0x2af);
+      RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_WAY_C_sway3d_cpp_007eda5c,0x2af);
       return (short *)0x0;
     }
     sVar1 = *(short *)(param_1 + ((int)param_8 + param_2 * (int)param_9 + iVar7 * (int)param_10) * 2

@@ -7,7 +7,7 @@ void FUN_005c29b0(char param_1)
   SettMapTy SVar1;
   undefined4 uVar2;
   CursorClassTy *this;
-  undefined4 **ppuVar3;
+  InternalExceptionFrame *pIVar3;
   int iVar4;
   undefined4 *puVar5;
   uint *puVar6;
@@ -53,10 +53,8 @@ void FUN_005c29b0(char param_1)
   undefined4 local_1d1;
   undefined4 local_1cd;
   int local_1c9;
-  undefined4 **local_cc;
-  undefined4 local_c8 [16];
-  undefined4 **local_88;
-  undefined4 local_84 [16];
+  InternalExceptionFrame local_cc;
+  InternalExceptionFrame local_88;
   undefined4 local_44 [7];
   undefined4 local_28;
   undefined4 local_24;
@@ -67,12 +65,12 @@ void FUN_005c29b0(char param_1)
   uint local_c;
   uint local_8;
   
-  local_88 = DAT_00858df8;
-  DAT_00858df8 = &local_88;
-  iVar4 = __setjmp3(local_84,0,unaff_EDI,unaff_ESI);
+  local_88.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_88;
+  iVar4 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_18;
   if (iVar4 != 0) {
-    DAT_00858df8 = local_88;
+    g_currentExceptionFrame = local_88.previous;
     SVar1 = local_18[0x1e26];
     if ((((SVar1 == (SettMapTy)0xd) || (SVar1 == (SettMapTy)0xe)) || (SVar1 == (SettMapTy)0xf)) ||
        (uVar7 = 0x6947, SVar1 == (SettMapTy)0x10)) {
@@ -279,14 +277,14 @@ void FUN_005c29b0(char param_1)
     local_14 = hFindFile;
     if (hFindFile != (HANDLE)0xffffffff) {
       do {
-        ppuVar3 = DAT_00858df8;
+        pIVar3 = g_currentExceptionFrame;
         if (((byte)local_50c.dwFileAttributes & 0x10) == 0) {
-          local_cc = DAT_00858df8;
-          DAT_00858df8 = &local_cc;
-          iVar4 = __setjmp3(local_c8,0,unaff_EDI,unaff_ESI);
+          local_cc.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &local_cc;
+          iVar4 = __setjmp3(local_cc.jumpBuffer,0,unaff_EDI,unaff_ESI);
           this_01 = local_18;
           hFindFile = local_14;
-          ppuVar3 = local_cc;
+          pIVar3 = local_cc.previous;
           if (iVar4 == 0) {
             wsprintfA((LPSTR)local_3cc,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_SYSTEM__0079c0ec,
                       local_50c.cFileName);
@@ -356,10 +354,10 @@ void FUN_005c29b0(char param_1)
             }
             cMf32::delete(this_00,puVar5);
             hFindFile = local_14;
-            ppuVar3 = local_cc;
+            pIVar3 = local_cc.previous;
           }
         }
-        DAT_00858df8 = ppuVar3;
+        g_currentExceptionFrame = pIVar3;
         BVar10 = FindNextFileA(hFindFile,&local_50c);
       } while (BVar10 != 0);
     }
@@ -399,7 +397,7 @@ void FUN_005c29b0(char param_1)
       } while (local_10 != (uint *)0x0);
     }
     if (*(int *)(*(int *)(this_01 + 0x1f7c) + 0xc) == 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0xd7);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0xd7);
     }
     if (*(int *)(*(int *)(this_01 + 0x1f7c) + 0xc) + -1 < *(int *)(this_01 + 0x1f58)) {
       *(undefined4 *)(this_01 + 0x1f58) = 0;
@@ -917,7 +915,7 @@ void FUN_005c29b0(char param_1)
   if (DAT_008067a0 != '\0') {
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,(char *)(this_01 + 0x1a5f));
   }
-  DAT_00858df8 = local_88;
+  g_currentExceptionFrame = local_88.previous;
   return;
 }
 

@@ -22,8 +22,7 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
   char local_78 [32];
   uint local_58;
   int local_54;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint *local_c;
   ushort *local_8;
   
@@ -35,12 +34,13 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
   *(undefined1 *)puVar9 = 0;
   local_c = (uint *)0x0;
   local_8 = (ushort *)0x0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar6 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar6 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x156,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x156,0,iVar6,&DAT_007a4ccc,
+                               s__CreateStgListByRoot_007d3008);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       puVar5 = (uint *)(*pcVar2)();
@@ -49,11 +49,11 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
     if (local_c != (uint *)0x0) {
       FUN_006ae110((byte *)local_c);
     }
-    FUN_006a5e40(iVar6,0,0x7d2fa4,0x158);
+    RaiseInternalException(iVar6,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x158);
     return (uint *)0x0;
   }
   if (param_1 == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2fa4,0x13f);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x13f);
   }
   local_c = FUN_006ae290((uint *)0x0,5,0x98,5);
   uVar7 = 0xffffffff;
@@ -111,7 +111,7 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
     }
     pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return local_c;
 }
 

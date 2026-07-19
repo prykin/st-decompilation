@@ -3,12 +3,13 @@ DWORD FUN_006d4aa0(int param_1,int param_2,undefined4 param_3)
 
 {
   uint uVar1;
+  DWORD extraout_EAX;
   DWORD DVar2;
   uint uVar3;
   
   if ((*(uint *)(param_1 + 8) & 0x100000) != 0) {
-    DVar2 = FUN_006a5e40(-0x30,DAT_007ed77c,0x7ee22c,0x1b0);
-    return DVar2;
+    RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_FMM_C_fmap_c_007ee22c,0x1b0);
+    return extraout_EAX;
   }
   DVar2 = 0xffffffaf;
   if (*(int *)(param_1 + 0x34) != 0) {

@@ -11,7 +11,7 @@ thunk_FUN_006a4160(undefined4 *param_1,uint param_2,uint param_3,char *param_4,i
   iVar1 = DAT_00854a4c;
   DAT_00854a4c = 0;
   if (iVar1 != 0) {
-    FUN_006a5e40(-5,DAT_007ed77c,0x7ec1d0,0x380);
+    RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Crt__Dbgheap_c_007ec1d0,0x380);
   }
   return piVar2;
 }

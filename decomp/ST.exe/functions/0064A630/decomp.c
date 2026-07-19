@@ -2,25 +2,25 @@
 int * __cdecl FUN_0064a630(int param_1)
 
 {
-  int iVar1;
+  int exceptionCode;
   void *unaff_ESI;
-  undefined4 uVar2;
+  InternalExceptionFrame *pIVar1;
   undefined4 local_48 [16];
   int *local_8;
   
-  uVar2 = DAT_00858df8;
+  pIVar1 = g_currentExceptionFrame;
   local_8 = (int *)0x0;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar1 = __setjmp3(local_48,0,unaff_ESI,uVar2);
-  if (iVar1 == 0) {
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  exceptionCode = __setjmp3(local_48,0,unaff_ESI,pIVar1);
+  if (exceptionCode == 0) {
     local_8 = FUN_006aac10(0x10);
     thunk_FUN_0064a6f0(local_8,param_1);
-    DAT_00858df8 = (undefined1 *)uVar2;
+    g_currentExceptionFrame = pIVar1;
     return local_8;
   }
-  DAT_00858df8 = (undefined1 *)uVar2;
+  g_currentExceptionFrame = pIVar1;
   thunk_FUN_0064a800(&local_8);
-  FUN_006a5e40(iVar1,0,0x7d2a04,0x17);
+  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_erc_cpp_007d2a04,0x17);
   return (int *)0x0;
 }
 

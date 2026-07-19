@@ -459,7 +459,7 @@ LAB_0041098f:
     ExceptionList = local_14;
     return -4;
   }
-  FUN_006a5e40(iVar3,DAT_007ed77c,0x7a4ca8,0xa4b);
+  RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xa4b);
   ExceptionList = local_14;
   return iVar3;
 }

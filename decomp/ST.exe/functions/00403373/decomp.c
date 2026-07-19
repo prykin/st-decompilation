@@ -11,14 +11,14 @@ PanelTy::PaintBut(PanelTy *this,int param_1,byte param_2,char *param_3,undefined
   LPSTR pCVar5;
   void *unaff_ESI;
   int iVar6;
-  undefined4 uVar7;
+  InternalExceptionFrame *pIVar7;
   undefined4 auStack_54 [16];
   PanelTy *pPStack_14;
   int iStack_10;
   int iStack_c;
   ushort *puStack_8;
   
-  uVar7 = DAT_00858df8;
+  pIVar7 = g_currentExceptionFrame;
   piVar3 = *(int **)(param_1 + 0x18);
   puStack_8 = (ushort *)0x0;
   if (param_5 == 0) {
@@ -42,9 +42,9 @@ LAB_00538a14:
     iStack_c = piVar3[1] - *(int *)(this + 0x44);
   }
   if (param_4 != (undefined *)0x0) {
-    DAT_00858df8 = &stack0xffffffa8;
+    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
     pPStack_14 = this;
-    piVar3 = (int *)__setjmp3(auStack_54,0,unaff_ESI,uVar7);
+    piVar3 = (int *)__setjmp3(auStack_54,0,unaff_ESI,pIVar7);
     if (piVar3 == (int *)0x0) {
       iVar6 = 1;
       uVar4 = (*(code *)param_4)(param_1);
@@ -56,17 +56,18 @@ LAB_00538a14:
       cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_8);
       FUN_006b3640(DAT_008075a8,*(uint *)(pPVar2 + 0x60),0xffffffff,*(uint *)(pPVar2 + 0x3c),
                    *(uint *)(pPVar2 + 0x44));
-      DAT_00858df8 = (undefined1 *)uVar7;
+      g_currentExceptionFrame = pIVar7;
       return;
     }
-    DAT_00858df8 = (undefined1 *)uVar7;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_panel_cpp_007c7390,0xb2,0,(int)piVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = pIVar7;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0xb2,0,(int)piVar3,
+                               &DAT_007a4ccc,s_PanelTy__PaintBut_007c742c);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40((int)piVar3,0,0x7c7390,0xb2);
+    RaiseInternalException((int)piVar3,0,s_E____titans_Andrey_panel_cpp_007c7390,0xb2);
   }
   return;
 }

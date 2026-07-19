@@ -9,74 +9,74 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
   uint uVar1;
   code *pcVar2;
   bool bVar3;
-  int iVar4;
-  undefined2 *puVar5;
-  int *piVar6;
+  int errorCode;
+  undefined2 *puVar4;
+  int *piVar5;
   AiFltClassTy *this_00;
-  int iVar7;
+  int iVar6;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  undefined4 uVar8;
+  undefined4 uVar7;
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined8 uVar9;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  undefined8 uVar8;
+  InternalExceptionFrame local_4c;
   AiTactClassTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
-  if (iVar4 == 0) {
-    if ((param_1 != 0) && (uVar1 = *(uint *)(param_1 + 0xc), uVar8 = extraout_EDX, uVar1 != 0)) {
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
+    if ((param_1 != 0) && (uVar1 = *(uint *)(param_1 + 0xc), uVar7 = extraout_EDX, uVar1 != 0)) {
       while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
         if (uVar1 < *(uint *)(param_1 + 0xc)) {
-          puVar5 = (undefined2 *)(*(int *)(param_1 + 8) * uVar1 + *(int *)(param_1 + 0x1c));
+          puVar4 = (undefined2 *)(*(int *)(param_1 + 8) * uVar1 + *(int *)(param_1 + 0x1c));
         }
         else {
-          puVar5 = (undefined2 *)0x0;
+          puVar4 = (undefined2 *)0x0;
         }
         if (DAT_007fa174 == 0) {
-          piVar6 = (int *)0x0;
+          piVar5 = (int *)0x0;
         }
         else {
-          piVar6 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar8 >> 8),local_8[0x24]),
-                                             CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),1);
-          uVar8 = extraout_EDX_00;
+          piVar5 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar7 >> 8),local_8[0x24]),
+                                             CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),1);
+          uVar7 = extraout_EDX_00;
         }
-        if (piVar6 != (int *)0x0) {
-          uVar9 = (**(code **)(*piVar6 + 0x2c))();
-          uVar8 = (undefined4)((ulonglong)uVar9 >> 0x20);
-          if (((int)uVar9 < 1) || (0x28 < (int)uVar9)) {
+        if (piVar5 != (int *)0x0) {
+          uVar8 = (**(code **)(*piVar5 + 0x2c))();
+          uVar7 = (undefined4)((ulonglong)uVar8 >> 0x20);
+          if (((int)uVar8 < 1) || (0x28 < (int)uVar8)) {
             bVar3 = false;
           }
           else {
             bVar3 = true;
           }
           if ((bVar3) &&
-             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,(short)piVar6[0x207]),
-             uVar8 = extraout_EDX_01, this_00 != (AiFltClassTy *)0x0)) {
-            AiFltClassTy::_AddObjFlt(this_00,piVar6,0);
+             (this_00 = (AiFltClassTy *)thunk_FUN_0068e290(local_8,(short)piVar5[0x207]),
+             uVar7 = extraout_EDX_01, this_00 != (AiFltClassTy *)0x0)) {
+            AiFltClassTy::_AddObjFlt(this_00,piVar5,0);
             FUN_006b0c70(param_1,uVar1);
-            uVar8 = extraout_EDX_02;
+            uVar7 = extraout_EDX_02;
           }
         }
       }
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x292,0,iVar4,&DAT_007a4ccc);
-  if (iVar7 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x292,0,errorCode,&DAT_007a4ccc,
+                             s_AiTactClassTy__GiveObjByGrpNum_007d5804);
+  if (iVar6 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7d56e0,0x293);
+  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x293);
   return;
 }
 

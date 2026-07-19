@@ -29,7 +29,7 @@ int FUN_0075f8e0(int param_1,int *param_2)
     }
   } while (iVar4 <= iVar2);
   if (iVar7 < 2) {
-    FUN_006a5e40(0x37,DAT_007ed77c,0x7f2ea0,0xd5);
+    RaiseInternalException(0x37,DAT_007ed77c,s_E__DKW_JPG_C_jquant1_c_007f2ea0,0xd5);
   }
   local_8 = 1;
   iVar6 = iVar1;

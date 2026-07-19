@@ -17,22 +17,22 @@ HoloTy::Init(HoloTy *this,HoloTy param_1,int param_2,int param_3,int param_4,int
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar6;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   HoloTy *local_14;
   uint local_10;
   int local_c;
   uint local_8;
   
   local_10 = 0;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar3 = FUN_006ad4d0(s_E____titans_Start_hologram_cpp_007cc674,0x9a,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0x9a,0,iVar3,&DAT_007a4ccc,
+                               s_HoloTy__Init_007cc6d0);
     if (iVar3 == 0) {
       *this_00 = SUB41(local_10,0);
       return local_10 & 0xff;
@@ -98,19 +98,19 @@ switchD_005aadcd_default:
         this_00[2] = (HoloTy)param_7;
         if (param_7 == '\0') {
           *(undefined4 *)(this_00 + 0x17) = 0xffffffff;
-          DAT_00858df8 = (undefined4 *)local_58;
+          g_currentExceptionFrame = local_58.previous;
           *this_00 = (HoloTy)0x1;
           return 1;
         }
         *(undefined4 *)(this_00 + 0x17) = *(undefined4 *)(this_00 + 0x13);
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         *this_00 = (HoloTy)0x1;
         return 1;
       }
     }
     Done(this_00);
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   *this_00 = SUB41(local_10,0);
   return local_10 & 0xff;
 }

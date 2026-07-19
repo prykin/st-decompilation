@@ -33,8 +33,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   LPCSTR pCVar22;
   int iVar23;
   char local_898 [2100];
-  undefined4 *local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   MReportTy *local_20;
   undefined4 local_1c;
   byte *local_18;
@@ -44,15 +43,16 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   UINT local_8;
   size_t sVar14;
   
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
   local_20 = this;
-  iVar4 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = local_64;
-    iVar11 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1b4,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_64.previous;
+    iVar11 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1b4,0,iVar4,&DAT_007a4ccc
+                                ,s_MReportTy__PaintMReport_007ccf98);
     if (iVar11 == 0) {
-      FUN_006a5e40(iVar4,0,0x7ccec8,0x1b4);
+      RaiseInternalException(iVar4,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1b4);
       return;
     }
     pcVar15 = (code *)swi(3);
@@ -66,11 +66,11 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
     OutTGlProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x1a,10,0x2e9,0x32,(int)this_00);
   }
   if (*(int *)(this_00 + 0x453) != 0) {
-    DAT_00858df8 = local_64;
+    g_currentExceptionFrame = local_64.previous;
     return;
   }
   if (param_1 != '\0') {
-    DAT_00858df8 = local_64;
+    g_currentExceptionFrame = local_64.previous;
     return;
   }
   thunk_FUN_00540620(0x1a,0x46,0x1a,0x46,*(uint *)(*(int *)(this_00 + 0x73) + 4),
@@ -591,7 +591,7 @@ LAB_005bf406:
   iVar4 = *(int *)(this_00 + 0x73);
   FUN_006b48e0((int)DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
                (int)(this_00 + 0xa3),0x4c,0x10000ff);
-  DAT_00858df8 = local_64;
+  g_currentExceptionFrame = local_64.previous;
   return;
 }
 

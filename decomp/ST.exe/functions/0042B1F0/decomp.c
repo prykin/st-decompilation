@@ -18,8 +18,7 @@ STAllPlayersC::GetGObjFromBox
   undefined4 unaff_ESI;
   int iVar7;
   void *unaff_EDI;
-  undefined4 local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_70;
   int local_2c;
   int local_28;
   int local_24;
@@ -37,19 +36,20 @@ STAllPlayersC::GetGObjFromBox
   local_10 = param_6 + -1 + local_c;
   local_18 = (int)param_4;
   local_1c = param_7 + -1 + local_18;
-  local_70 = DAT_00858df8;
-  DAT_00858df8 = &local_70;
-  iVar4 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+  local_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_70;
+  iVar4 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_70;
+    g_currentExceptionFrame = local_70.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x155,0,iVar4,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x155,0,iVar4,
+                                 &DAT_007a4ccc,s_STAllPlayersC__GetGObjFromBox_007a6078);
       if (iVar6 != 0) {
         pcVar2 = (code *)swi(3);
         (*pcVar2)();
         return;
       }
-      FUN_006a5e40(iVar4,0,0x7a6004,0x156);
+      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x156);
     }
     return;
   }
@@ -78,11 +78,12 @@ STAllPlayersC::GetGObjFromBox
   iVar4 = local_1c;
   if ((((DAT_007fb240 < local_8) || (DAT_007fb242 < local_c)) || (DAT_007fb244 < local_18)) ||
      (((local_14 < local_8 || (local_10 < local_c)) || (local_1c < local_18)))) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x133);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x133);
   }
   if (param_8 == (int *)0x0) {
     if (((param_9 == (int *)0x0) && (param_10 == (int *)0x0)) && (param_11 == (int *)0x0)) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x135);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x135);
     }
   }
   else if (*param_8 == 0) {
@@ -149,7 +150,7 @@ LAB_0042b469:
       local_24 = local_24 + -1;
     } while (local_24 != 0);
   }
-  DAT_00858df8 = (undefined4 *)local_70;
+  g_currentExceptionFrame = local_70.previous;
   return;
 }
 

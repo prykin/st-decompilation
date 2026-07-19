@@ -36,13 +36,15 @@ undefined4 FUN_00442b40(undefined4 *param_1,uint param_2)
   local_c = 0;
   local_18 = uVar4;
   if (this == (int *)0x0) {
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x246d,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x246d,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC___SubMDObject_inva_007a80dc);
     if (iVar5 != 0) {
       pcVar3 = (code *)swi(3);
       uVar6 = (*pcVar3)();
       return uVar6;
     }
-    FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x246e);
+    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x246e)
+    ;
   }
   if ((uVar4 != 0x3b) && (uVar4 != 0x60)) {
     local_10 = 0;

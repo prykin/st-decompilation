@@ -16,24 +16,25 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   undefined4 uVar7;
   int iVar8;
   int iVar9;
-  undefined4 uVar10;
+  InternalExceptionFrame *pIVar10;
   undefined4 local_48 [16];
   CPanelTy *local_8;
   
-  uVar10 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar10 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,uVar10);
+  iVar3 = __setjmp3(local_48,0,unaff_ESI,pIVar10);
   pCVar2 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar10;
-    iVar5 = FUN_006ad4d0(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = pIVar10;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0,0,iVar3,&DAT_007a4ccc,
+                               s_CPanelTy__PaintIDSObj_007c27d0);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7c2700,0xa0);
+    RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0xa0);
     return;
   }
   if (DAT_0080874e == '\x03') {
@@ -62,7 +63,7 @@ LAB_00504f81:
     FUN_006b3640(DAT_008075a8,*(uint *)(pCVar2 + 0x15c),0xffffffff,*(uint *)(pCVar2 + 0x50),
                  *(uint *)(pCVar2 + 0xa8));
   }
-  DAT_00858df8 = (undefined1 *)uVar10;
+  g_currentExceptionFrame = pIVar10;
   return;
 }
 

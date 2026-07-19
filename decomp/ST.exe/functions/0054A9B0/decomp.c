@@ -15,8 +15,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   void *unaff_EDI;
   int iVar7;
   longlong lVar8;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   int local_14;
   int local_10;
   int local_c;
@@ -25,11 +24,11 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   if ((DAT_00807598 == (void *)0x0) || (DAT_00802a88 == (void *)0x0)) {
     return;
   }
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar4 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return;
   }
   if (param_1 < _DAT_0079034c) {
@@ -123,7 +122,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
     }
     *(SpriteClassTy **)(local_c + 0x4eb) = this;
     if (this == (SpriteClassTy *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return;
     }
     SpriteClassTy::InitSprite(this,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
@@ -142,12 +141,12 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
          *(int *)(*(int *)(local_c + 0x4eb) + 0x20) - *(int *)(*(int *)(local_c + 0x4e7) + 0xd) / 2;
     iVar4 = *(int *)(local_c + 0x4eb);
     if (*(uint *)(iVar4 + 4) == 0xffffffff) {
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return;
     }
     FUN_006b34d0(*(uint **)(iVar4 + 0x48),*(uint *)(iVar4 + 4),0xfffffffe,*(uint *)(iVar4 + 0x1c),
                  *(uint *)(iVar4 + 0x20));
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return;
   }
 LAB_0054acfd:
@@ -162,7 +161,7 @@ LAB_0054acfd:
     FUN_006ea960(DAT_00807598,local_8,param_1,param_2,param_3 + _DAT_007904fc);
     FUN_006ea050(DAT_00807598,local_8,1,0xffffffff,0);
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return;
 }
 

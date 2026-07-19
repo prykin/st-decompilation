@@ -16,7 +16,7 @@ undefined4 __cdecl FUN_00680890(byte param_1,byte *param_2,uint param_3,undefine
   local_8 = 0;
   pcVar3 = (char *)thunk_FUN_006803b0(param_1);
   if (*pcVar3 == '\0') {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d5604,0xff);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_script_cpp_007d5604,0xff);
   }
   puVar7 = &local_8;
   cVar1 = thunk_FUN_00680570();

@@ -69,8 +69,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   undefined4 local_a4;
   undefined4 local_94;
   undefined4 local_90;
-  undefined4 local_7c;
-  undefined4 local_78 [16];
+  InternalExceptionFrame local_7c;
   undefined4 local_38;
   undefined2 local_2e;
   undefined2 local_2c;
@@ -97,15 +96,16 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  local_7c = DAT_00858df8;
-  DAT_00858df8 = &local_7c;
-  iVar8 = __setjmp3(local_78,0,unaff_EDI,unaff_ESI);
+  local_7c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_7c;
+  iVar8 = __setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_1c;
   if (iVar8 != 0) {
-    DAT_00858df8 = (undefined4 *)local_7c;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x34d,0,iVar8,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_7c.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x34d,0,iVar8,&DAT_007a4ccc
+                               ,s_SettMapTy__CreateCtrls_007cd1e0);
     if (iVar9 == 0) {
-      FUN_006a5e40(iVar8,0,0x7cd0e8,0x34d);
+      RaiseInternalException(iVar8,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x34d);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -433,7 +433,7 @@ LAB_005c69ed:
     local_38._2_2_ = 1;
     MMsgTy::StatePanel(*(MMsgTy **)(iVar8 + 0x2e6),(int)&local_38);
   }
-  DAT_00858df8 = (undefined4 *)local_7c;
+  g_currentExceptionFrame = local_7c.previous;
   return;
 }
 

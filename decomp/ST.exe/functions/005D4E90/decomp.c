@@ -17,23 +17,23 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   undefined4 unaff_ESI;
   char *pcVar9;
   void *unaff_EDI;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   SettMapSTy *local_14;
   int local_10;
   int local_c;
   int local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar6 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar6 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_14;
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar8 = FUN_006ad4d0(s_E____titans_Start_settsobj_cpp_007cd544,0x3b,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Start_settsobj_cpp_007cd544,0x3b,0,iVar6,&DAT_007a4ccc,
+                               s_SettMapSTy__SetListCtrls_007cd56c);
     if (iVar8 == 0) {
-      FUN_006a5e40(iVar6,0,0x7cd544,0x3b);
+      RaiseInternalException(iVar6,0,s_E____titans_Start_settsobj_cpp_007cd544,0x3b);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -120,7 +120,7 @@ LAB_005d5030:
     local_10 = iVar6 + 8;
     local_c = local_c + 1;
     if (0x832 < local_10) {
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return;
     }
   } while( true );

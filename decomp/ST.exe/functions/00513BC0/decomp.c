@@ -15,21 +15,21 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar6;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint local_c;
   HelpPanelTy *local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar5 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9,0,iVar3,&DAT_007a4ccc
+                               ,s_HelpPanelTy__PrevBut_007c3ab8);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c383c,0x2e9);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x2e9);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -47,11 +47,11 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
       piVar4 = *(int **)(iVar3 + 0x1c);
     }
     if ((char)piVar4[2] != '\0') {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
     if (*(char *)((int)piVar4 + 0x12) != '\0') {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
     uVar6 = 0xffffffff;
@@ -65,7 +65,7 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
       piVar4 = (int *)0x0;
     }
     if (piVar4 == (int *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
     local_c = uVar6;
@@ -80,37 +80,37 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
       case '\x01':
         RCProc(local_8,(int)pvVar1,uVar6,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\x02':
         ObjProc(local_8,(int)pvVar1,uVar6,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\x03':
         SubProc(local_8,(int)pvVar1,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\x04':
         ArmProc(local_8,(int)pvVar1,uVar6,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\x05':
         TechProc(local_8,(uint)pvVar1,(byte)uVar6,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\x06':
         TTreeProc(local_8,(uint)pvVar1,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\a':
         MObjProc(local_8);
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\b':
         TipProc(local_8,pvVar1,uVar6,'\0');
@@ -118,21 +118,21 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
       case '\n':
         IndexBut(local_8);
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\v':
         SpecProc(local_8,(int)pvVar1,uVar6,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       case '\f':
         NatProc(local_8,(int)pvVar1,'\0');
         PutToSHlp(this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return;
       }
       PutToSHlp(this_00,(int)unaff_EDI);
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
     iVar5 = *(uint *)(iVar3 + 0xc) - iVar5;
@@ -145,7 +145,7 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
   *(int *)(this_00 + 0x1b7) = *(int *)(*(int *)(this_00 + 0x1b3) + 0xc) - iVar5;
 LAB_00513e3e:
   PrevBut(this_00);
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return;
 }
 

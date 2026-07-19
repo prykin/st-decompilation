@@ -4,34 +4,33 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
 {
   code *pcVar1;
   HelpPanelTy *pHVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  HelpPanelTy *pHVar5;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  HelpPanelTy *pHVar4;
+  InternalExceptionFrame IStack_50;
   HelpPanelTy *pHStack_c;
   int iStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pHStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pHVar2 = pHStack_c;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     if (*(uint *)(pHStack_c + 0x17c) != 0) {
       FUN_006e56b0(*(void **)(pHStack_c + 0xc),*(uint *)(pHStack_c + 0x17c));
     }
     *(undefined4 *)(pHVar2 + 0x17c) = 0;
-    pHVar5 = pHVar2 + 0x180;
+    pHVar4 = pHVar2 + 0x180;
     iStack_8 = 7;
     do {
-      if (*(uint *)pHVar5 != 0) {
-        FUN_006e56b0(*(void **)(pHVar2 + 0xc),*(uint *)pHVar5);
-        *(uint *)pHVar5 = 0;
+      if (*(uint *)pHVar4 != 0) {
+        FUN_006e56b0(*(void **)(pHVar2 + 0xc),*(uint *)pHVar4);
+        *(uint *)pHVar4 = 0;
       }
-      pHVar5 = pHVar5 + 4;
+      pHVar4 = pHVar4 + 4;
       iStack_8 = iStack_8 + -1;
     } while (iStack_8 != 0);
     if (*(uint *)(pHVar2 + 0x19c) != 0) {
@@ -58,13 +57,13 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       FUN_006b5570(*(byte **)(pHVar2 + 0x1d3));
     }
     *(undefined4 *)(pHVar2 + 0x1d3) = 0;
-    pHVar5 = pHVar2 + 0x1f0;
+    pHVar4 = pHVar2 + 0x1f0;
     iStack_8 = 10;
     do {
-      if (*(int *)pHVar5 != 0) {
-        cMf32::RecMemFree(DAT_00806790,(uint *)pHVar5);
+      if (*(int *)pHVar4 != 0) {
+        cMf32::RecMemFree(DAT_00806790,(uint *)pHVar4);
       }
-      pHVar5 = pHVar5 + 4;
+      pHVar4 = pHVar4 + 4;
       iStack_8 = iStack_8 + -1;
     } while (iStack_8 != 0);
     *(undefined4 *)(pHVar2 + 0x238) = 0;
@@ -106,17 +105,18 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       cMf32::RecMemFree(DAT_00806790,(uint *)(pHVar2 + 0x21c));
     }
     DAT_00801690 = 0;
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0xcf,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xcf,0,errorCode,
+                             &DAT_007a4ccc,s_HelpPanelTy__DoneHelpPanel_007c3918);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c383c,0xcf);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xcf);
   return;
 }
 

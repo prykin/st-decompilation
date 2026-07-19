@@ -13,14 +13,13 @@ int __thiscall InputClassTy::Done(InputClassTy *this)
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   InputClassTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pIVar3 = local_8;
   if (iVar4 == 0) {
     if (*(byte **)(local_8 + 0x28) != (byte *)0x0) {
@@ -53,17 +52,18 @@ int __thiscall InputClassTy::Done(InputClassTy *this)
       FUN_006ae110(*(byte **)(pIVar3 + 0x24));
       *(undefined4 *)(pIVar3 + 0x24) = 0;
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E__Ourlib_Sinput_cpp_007f092c,0x69,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar5 = ReportDebugMessage(s_E__Ourlib_Sinput_cpp_007f092c,0x69,0,iVar4,&DAT_007a4ccc,
+                             s_InputClassTy__Done_007f0944);
   if (iVar5 != 0) {
     pcVar2 = (code *)swi(3);
     iVar4 = (*pcVar2)();
     return iVar4;
   }
-  FUN_006a5e40(iVar4,0,0x7f092c,0x6a);
+  RaiseInternalException(iVar4,0,s_E__Ourlib_Sinput_cpp_007f092c,0x6a);
   return iVar4;
 }
 

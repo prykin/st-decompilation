@@ -17,23 +17,23 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   uint uVar10;
   byte bVar11;
   void *pvVar12;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   CampaignTy *pCStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_4c;
-    iVar8 = FUN_006ad4d0(s_E____titans_Start_camp_obj_cpp_007cbcd4,0xb5,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0xb5,0,iVar3,&DAT_007a4ccc,
+                               s_CampaignTy__PaintCampaign_007cbdf0);
     if (iVar8 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cbcd4,0xb5);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0xb5);
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
@@ -91,11 +91,11 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
         iVar3 = iVar3 + 1;
         pCVar7 = pCVar7 + 0x1fb;
       } while (iVar3 < (int)(uint)(byte)pCVar2[0x9a]);
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
+  g_currentExceptionFrame = IStack_4c.previous;
   return;
 }
 

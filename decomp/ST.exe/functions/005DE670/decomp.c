@@ -18,8 +18,7 @@ void __fastcall FUN_005de670(int param_1)
   byte local_374 [260];
   char local_270 [260];
   byte local_16c [260];
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   byte *local_24;
   LPVOID local_20;
   int local_1c;
@@ -40,11 +39,11 @@ void __fastcall FUN_005de670(int param_1)
   if (*(int *)(param_1 + 0x69a) != 0) {
     FUN_006ab060((int *)(param_1 + 0x69a));
   }
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
-  iVar2 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
+  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     if (local_14 != (HANDLE)0xffffffff) {
       CloseHandle(local_14);
     }
@@ -73,49 +72,49 @@ void __fastcall FUN_005de670(int param_1)
   pvVar3 = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_14 = pvVar3;
   if (pvVar3 == (HANDLE)0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x413);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x413);
   }
   DVar4 = SetFilePointer(pvVar3,0,(PLONG)0x0,2);
   iVar2 = local_1c;
   *(DWORD *)(local_1c + 0x6ae) = DVar4;
   if (DVar4 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x415);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x415);
   }
   __makepath(local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
   hFile = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x41a);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41a);
   }
   DVar4 = SetFilePointer(hFile,0,(PLONG)0x0,2);
   *(DWORD *)(iVar2 + 0x6b2) = DVar4;
   if (DVar4 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x41c);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
   local_c = (LPVOID)FUN_006aac70(*(int *)(iVar2 + 0x6ae) + local_18 + *(int *)(iVar2 + 0x6b2));
   if (local_c == (LPVOID)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x41e);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
   }
   lpBuffer = (LPVOID)(*(int *)(iVar2 + 0x6ae) + (int)local_c);
   local_24 = (byte *)((int)lpBuffer + *(int *)(iVar2 + 0x6b2));
   local_20 = local_c;
   local_8 = SetFilePointer(pvVar3,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x421);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x421);
   }
   BVar5 = ReadFile(pvVar3,local_20,*(DWORD *)(iVar2 + 0x6ae),&local_8,(LPOVERLAPPED)0x0);
   if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != local_8)) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x422);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x422);
   }
   CloseHandle(pvVar3);
   pvVar3 = local_10;
   local_8 = SetFilePointer(local_10,0,(PLONG)0x0,0);
   if (local_8 == 0xffffffff) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x425);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x425);
   }
   BVar5 = ReadFile(pvVar3,lpBuffer,*(DWORD *)(iVar2 + 0x6b2),&local_8,(LPOVERLAPPED)0x0);
   if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != local_8)) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x426);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x426);
   }
   CloseHandle(pvVar3);
   uVar6 = 0xffffffff;
@@ -150,7 +149,7 @@ void __fastcall FUN_005de670(int param_1)
   }
   *(uint *)(iVar2 + 0x6a6) =
        (uint)(uVar6 % *(uint *)(iVar2 + 0x6a2) != 0) + uVar6 / *(uint *)(iVar2 + 0x6a2);
-  DAT_00858df8 = (undefined4 *)local_68;
+  g_currentExceptionFrame = local_68.previous;
   return;
 }
 

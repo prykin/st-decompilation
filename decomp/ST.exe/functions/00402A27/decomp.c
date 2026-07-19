@@ -13,8 +13,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   undefined4 unaff_ESI;
   short *psVar9;
   void *unaff_EDI;
-  undefined4 uStack_74;
-  undefined4 auStack_70 [16];
+  InternalExceptionFrame IStack_74;
   int iStack_30;
   int iStack_2c;
   uint *puStack_28;
@@ -28,15 +27,16 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   int iStack_8;
   
   iStack_18 = 1;
-  uStack_74 = DAT_00858df8;
-  DAT_00858df8 = &uStack_74;
+  IStack_74.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_74;
   pAStack_1c = this;
-  iVar5 = __setjmp3(auStack_70,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_74;
-    iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_flt_cpp_007d2b80,0x2df,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_74.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x2df,0,iVar5,&DAT_007a4ccc,
+                               s_AiFltClassTy__AppendZone_007d2c00);
     if (iVar7 == 0) {
-      FUN_006a5e40(iVar5,0,0x7d2b80,0x2e0);
+      RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x2e0);
       return iVar5;
     }
     pcVar3 = (code *)swi(3);
@@ -145,7 +145,7 @@ LAB_0065f3c9:
   if (iStack_18 != 0) {
     FUN_006ae1c0(*(uint **)(pAStack_1c + 0x22f),(undefined4 *)param_1);
   }
-  DAT_00858df8 = (undefined4 *)uStack_74;
+  g_currentExceptionFrame = IStack_74.previous;
   return 0;
 }
 

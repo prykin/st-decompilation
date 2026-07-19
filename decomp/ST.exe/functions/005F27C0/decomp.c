@@ -22,8 +22,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
   STBHEShellC *pSVar10;
   bool bVar11;
   undefined1 *puVar12;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   int local_28;
   int local_24;
   byte *local_20;
@@ -34,20 +33,21 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
   int local_c;
   int local_8;
   
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
   local_14 = this;
-  iVar4 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
-    iVar5 = FUN_006ad4d0(s_E____titans_nick_to_BheShell_cpp_007ce694,0x163,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_6c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_nick_to_BheShell_cpp_007ce694,0x163,0,iVar4,
+                               &DAT_007a4ccc,s_STBHEShellC__GetMessage_007ce6bc);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       uVar6 = (*pcVar1)();
       return uVar6;
     }
-    FUN_006a5e40(iVar4,0,0x7ce694,0x165);
+    RaiseInternalException(iVar4,0,s_E____titans_nick_to_BheShell_cpp_007ce694,0x165);
     return 0xffff;
   }
   uVar9 = *(uint *)(param_1 + 0x10);
@@ -55,51 +55,51 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
     if (uVar9 == 0x112) {
       uVar9 = *(uint *)(local_14 + 0x8f);
       if ((int)uVar9 < 0) {
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       if ((*(int *)(local_14 + 0x104) != 0) && (*(int *)(local_14 + 0x104) != 2)) {
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       puVar12 = (undefined1 *)0x0;
     }
     else {
       if (uVar9 != 0x113) {
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       uVar9 = *(uint *)(local_14 + 0x8f);
       if ((int)uVar9 < 0) {
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       if ((*(int *)(local_14 + 0x104) != 0) && (*(int *)(local_14 + 0x104) != 2)) {
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       puVar12 = &LAB_00403170;
     }
     FUN_006e9520(DAT_00807598,uVar9,0,(uint)puVar12,(uint)local_14);
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
   if (uVar9 == 0x10f) {
     local_20 = (byte *)thunk_FUN_005f5a90(local_14,(int *)&local_1c);
     STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_20,local_1c);
     FUN_006ab060(&local_20);
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
   if (uVar9 != 0) {
     if (uVar9 != 2) {
       if (uVar9 != 3) {
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       thunk_FUN_005f3b00((int)local_14);
       thunk_FUN_005f53a0((int)this_00);
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
     puVar8 = *(undefined4 **)(param_1 + 0x14);
@@ -148,7 +148,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
         thunk_FUN_005f35f0(*(int *)(this_00 + 0x87));
       }
       *(undefined4 *)(this_00 + 0x7d) = DAT_007e66d4;
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
     thunk_FUN_005f5b80(local_14,puVar8);
@@ -160,11 +160,11 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
     *pSVar10 = (STBHEShellC)0x0;
     *(undefined4 *)(this_00 + 0x1c) = *(undefined4 *)(this_00 + 0x16d);
     if (this_00[0x103] == (STBHEShellC)0x0) {
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
     thunk_FUN_005f35f0(*(int *)(this_00 + 0x87));
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
   switch(*(undefined4 *)(local_14 + 0x104)) {
@@ -392,16 +392,16 @@ switchD_005f29cb_default:
     iVar4 = thunk_FUN_005f3940(*(int *)(this_00 + 0x93),*(int *)(this_00 + 0x97),
                                *(int *)(this_00 + 0x9b));
     this_00[0x103] = SUB41(iVar4,0);
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
   iVar4 = *(int *)(this_00 + 0x104);
   if (((iVar4 != 5) && (iVar4 != 3)) && (iVar4 != 4)) {
     thunk_FUN_005f4680((int)this_00);
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
+  g_currentExceptionFrame = local_6c.previous;
   return 0;
 }
 

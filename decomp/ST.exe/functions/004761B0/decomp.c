@@ -71,7 +71,8 @@ int __fastcall FUN_004761b0(int *param_1,undefined4 param_2,int param_3)
     uVar9 = (undefined2)((uint)(iVar6 + 1) >> 0x10);
     switch(iVar6 + 1) {
     case 0:
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x311d,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x311d,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__SetMine__SETMINE_MOVE_e_007ab0e0);
       if (iVar6 != 0) {
         pcVar5 = (code *)swi(3);
         iVar6 = (*pcVar5)();

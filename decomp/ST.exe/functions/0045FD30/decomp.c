@@ -21,7 +21,8 @@ undefined4 __fastcall FUN_0045fd30(void *param_1)
   }
   if (*(int *)((int)param_1 + 0xe8) == 1) {
     if (*(char *)((int)param_1 + 0x4d) == '\x01') {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1498,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1498,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__StopMove___ZONE_B_007aa0d4);
       if (iVar5 != 0) {
         pcVar4 = (code *)swi(3);
         uVar6 = (*pcVar4)();

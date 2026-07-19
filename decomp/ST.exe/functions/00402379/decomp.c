@@ -20,8 +20,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar14;
-  undefined4 ***pppuStack_80;
-  undefined4 auStack_7c [16];
+  InternalExceptionFrame IStack_80;
   undefined4 uStack_3c;
   short asStack_38 [6];
   undefined4 uStack_2c;
@@ -38,10 +37,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   puStack_c = (uint *)0x0;
   if ((((this[0x676] != (AiPlrClassTy)0x0) && (*(int *)(this + 0x640) != 0xff)) &&
       (*(int *)(this + 0x695) != 0)) && (DAT_007fa174 != 0)) {
-    pppuStack_80 = DAT_00858df8;
-    DAT_00858df8 = &pppuStack_80;
+    IStack_80.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_80;
     pAStack_20 = this;
-    iVar3 = __setjmp3(auStack_7c,0,unaff_EDI,unaff_ESI);
+    iVar3 = __setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pAStack_20;
     if (iVar3 == 0) {
       iVar3 = *(int *)(pAStack_20 + 0x681);
@@ -153,7 +152,7 @@ LAB_0067c61b:
           if (puVar4 != (uint *)0x0) {
             FUN_006ae110((byte *)puVar4);
           }
-          DAT_00858df8 = (undefined4 ****)pppuStack_80;
+          g_currentExceptionFrame = IStack_80.previous;
           return;
         }
       }
@@ -235,8 +234,9 @@ LAB_0067c61b:
       }
     }
     else {
-      DAT_00858df8 = (undefined4 ****)pppuStack_80;
-      iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x570,0,iVar3,&DAT_007a4ccc);
+      g_currentExceptionFrame = IStack_80.previous;
+      iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x570,0,iVar3,&DAT_007a4ccc,
+                                 s_AiPlrClassTy__Offensive_007d2f2c);
       if (iVar7 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -246,7 +246,7 @@ LAB_0067c61b:
         FUN_006ae110((byte *)puStack_c);
         puStack_c = (uint *)0x0;
       }
-      FUN_006a5e40(iVar3,0,0x7d2e4c,0x573);
+      RaiseInternalException(iVar3,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x573);
     }
   }
   return;

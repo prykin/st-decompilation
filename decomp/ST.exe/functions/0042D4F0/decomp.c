@@ -13,7 +13,8 @@ void FUN_0042d4f0(char param_1,int param_2,int param_3,int param_4)
   }
   else {
     if (param_2 != 1) {
-      iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x44d,0,0,&DAT_007a4ccc);
+      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x44d,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__ResetActivityFrom_007a6418);
       if (iVar2 == 0) {
         return;
       }
@@ -44,7 +45,8 @@ LAB_0042d599:
   else {
     if (((iVar2 != 0x1a4) && (iVar2 != 0x1ae)) && (iVar2 != 0x1b8)) {
 LAB_0042d5bc:
-      iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x45f,0,0,&DAT_007a4ccc);
+      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x45f,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__ResetActivityFrom_007a63dc);
       if (iVar2 == 0) {
         return;
       }

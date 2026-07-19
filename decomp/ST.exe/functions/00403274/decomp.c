@@ -14,8 +14,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
   undefined4 unaff_ESI;
   STTmMineC *pSVar8;
   void *unaff_EDI;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   undefined4 uStack_14;
   STTmMineC *pSStack_10;
   int *piStack_c;
@@ -36,20 +35,21 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     if ((param_2 != 0) && (-1 < piStack_c[0xe])) {
       return 0xffffffff;
     }
-    uStack_58 = DAT_00858df8;
-    DAT_00858df8 = &uStack_58;
+    IStack_58.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_58;
     pSStack_10 = this;
-    iVar4 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     piVar3 = piStack_c;
     if (iVar4 != 0) {
-      DAT_00858df8 = (undefined4 *)uStack_58;
-      iVar6 = FUN_006ad4d0(s_E____titans_nick_to_TmMin_cpp_007d209c,0x603,0,iVar4,&DAT_007a4ccc);
+      g_currentExceptionFrame = IStack_58.previous;
+      iVar6 = ReportDebugMessage(s_E____titans_nick_to_TmMin_cpp_007d209c,0x603,0,iVar4,
+                                 &DAT_007a4ccc,s_STTmMineC__LoadImagSpr_007d20fc);
       if (iVar6 != 0) {
         pcVar2 = (code *)swi(3);
         uVar7 = (*pcVar2)();
         return uVar7;
       }
-      FUN_006a5e40(iVar4,0,0x7d209c,0x605);
+      RaiseInternalException(iVar4,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x605);
       return 0xffff;
     }
     puVar5 = FUN_00709af0(DAT_00806764,0x1d,(&PTR_s_blast_p_007d1f68)[*piStack_c],0xffffffff,0,1,0,
@@ -77,7 +77,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
       FUN_006eab60(*(void **)pSVar8,uStack_8);
     }
     piVar3[0xe] = uStack_8;
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
   }
   return uStack_14;
 }

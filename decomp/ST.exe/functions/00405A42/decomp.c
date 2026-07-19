@@ -19,8 +19,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   bool bVar12;
   bool bVar13;
   bool bVar14;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   undefined4 uStack_18;
   uint uStack_14;
   undefined4 uStack_10;
@@ -30,16 +29,17 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   if (*(int *)(this + 0x19c) != 0) {
     return;
   }
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pOStack_c = this;
-  iVar2 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pOStack_c;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_5c;
-    iVar3 = FUN_006ad4d0(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x125,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_5c.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x125,0,iVar2,
+                               &DAT_007a4ccc,s_OptPanelTy__SwitchOptPanel_007c71e0);
     if (iVar3 == 0) {
-      FUN_006a5e40(iVar2,0,0x7c70a0,0x125);
+      RaiseInternalException(iVar2,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x125);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -59,12 +59,12 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
         pOStack_c[0x1a9] = (OptPanelTy)0x0;
       }
       if ((OptPanelTy)param_1 == pOStack_c[0x1a4]) {
-        DAT_00858df8 = (undefined4 *)uStack_5c;
+        g_currentExceptionFrame = IStack_5c.previous;
         return;
       }
       pOStack_c[0x1a4] = (OptPanelTy)param_1;
       SetOptControls(pOStack_c);
-      DAT_00858df8 = (undefined4 *)uStack_5c;
+      g_currentExceptionFrame = IStack_5c.previous;
       return;
     case '\x03':
     case '\x04':
@@ -142,7 +142,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
          (bVar12 ||
          (bVar11 || (bVar10 || (bVar9 || (bVar8 || (bVar7 || (bVar6 || (bVar5 || bVar4))))))))))) &&
        (param_1 == '\x0f')) {
-      DAT_00858df8 = (undefined4 *)uStack_5c;
+      g_currentExceptionFrame = IStack_5c.previous;
       return;
     }
     uStack_10 = 0;
@@ -200,7 +200,7 @@ switchD_0052f589_caseD_3:
 LAB_0052f60b:
   thunk_FUN_005252c0(iVar2);
 switchD_0052f30f_default:
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   return;
 }
 

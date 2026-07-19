@@ -25,8 +25,7 @@ void __fastcall FUN_00572510(void *param_1)
   char *pcVar15;
   _WIN32_FIND_DATAA local_29c;
   byte local_15c [260];
-  undefined4 *local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   undefined4 *local_14;
   void *local_10;
   int local_c;
@@ -57,9 +56,9 @@ void __fastcall FUN_00572510(void *param_1)
       pcVar15 = s__s_s_s__s_007ca1ec;
       wsprintfA((LPSTR)pbVar13,s__s_s_s__s_007ca1ec,(int)param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
                 local_8,PTR_s_PL_LOG_0079b0d0);
-      local_58 = DAT_00858df8;
-      DAT_00858df8 = &local_58;
-      iVar4 = __setjmp3(local_54,0,pbVar13,pcVar15);
+      local_58.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_58;
+      iVar4 = __setjmp3(local_58.jumpBuffer,0,pbVar13,pcVar15);
       if (iVar4 == 0) {
         puVar5 = FUN_006f0ec0(0x345,local_15c,0,0,0);
         this = local_10;
@@ -152,11 +151,11 @@ LAB_005727f1:
           thunk_FUN_00573240();
           cMf32::delete(this_00,puVar5);
         }
-        DAT_00858df8 = local_58;
+        g_currentExceptionFrame = local_58.previous;
         local_10 = this;
       }
       else {
-        DAT_00858df8 = local_58;
+        g_currentExceptionFrame = local_58.previous;
         local_c = 0;
       }
       param_1 = local_10;

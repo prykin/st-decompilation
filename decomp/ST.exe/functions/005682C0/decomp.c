@@ -16,8 +16,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
   undefined4 unaff_ESI;
   int *piVar12;
   void *unaff_EDI;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   int local_28;
   uint local_24;
   uint local_20;
@@ -29,10 +28,10 @@ void __thiscall FUN_005682c0(void *this,int param_1)
   int local_8;
   
   if (*(int *)((int)this + 0xf8b) != 0) {
-    local_6c = DAT_00858df8;
-    DAT_00858df8 = &local_6c;
+    local_6c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_6c;
     local_1c = this;
-    iVar4 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pvVar2 = local_1c;
     if (iVar4 == 0) {
       if (DAT_00807363 == '\0') {
@@ -148,7 +147,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
           local_14 = iVar4 + 1;
           piVar12 = piVar12 + 3;
         } while (local_14 < 0x20);
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return;
       }
       iVar4 = 2;
@@ -156,10 +155,10 @@ void __thiscall FUN_005682c0(void *this,int param_1)
         FUN_006c1ce0(iVar4,param_1);
         iVar4 = iVar4 + 1;
       } while (iVar4 < 0x20);
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
   }
   return;
 }

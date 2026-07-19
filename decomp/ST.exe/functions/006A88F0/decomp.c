@@ -332,7 +332,7 @@ LAB_006a8be6:
       *param_12 = local_8;
       return puVar5;
     }
-    FUN_006a5e40(-2,DAT_007ed77c,0x7ed718,0x68e);
+    RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_WAY_C_way3d_cpp_007ed718,0x68e);
   }
   return (undefined4 *)0x0;
 }

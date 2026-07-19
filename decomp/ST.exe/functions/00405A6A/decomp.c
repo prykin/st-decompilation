@@ -69,8 +69,8 @@ undefined4 __fastcall thunk_FUN_004c84c0(int *param_1)
       *(undefined4 *)((int)param_1 + 0x365) = *(undefined4 *)((int)param_1 + 0x361);
       iVar6 = thunk_FUN_004c90c0((int)param_1);
       if ((iVar6 == 0) &&
-         (iVar6 = FUN_006ad4d0(s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x19f,0,0,&DAT_007a4ccc),
-         iVar6 != 0)) {
+         (iVar6 = ReportDebugMessage(s_E____titans_Artem_TLO_bproc_cpp_007ad3b4,0x19f,0,0,
+                                     &DAT_007a4ccc,s_What_s_that___007ad3dc), iVar6 != 0)) {
         pcVar4 = (code *)swi(3);
         uVar7 = (*pcVar4)();
         return uVar7;

@@ -55,8 +55,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   undefined4 local_4b8;
   undefined4 local_4b4;
   undefined4 local_4b0;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
   piVar9 = local_8c4;
@@ -65,9 +64,9 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     *piVar9 = 0;
     piVar9 = piVar9 + 1;
   }
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar7 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar7 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar7 == 0) {
     pFVar1 = local_8 + 0x1e8e;
@@ -162,17 +161,18 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     *(undefined4 *)(this_00 + 0x2d) = 0x61;
     *(undefined4 *)(this_00 + 0x35) = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar6 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x666,0,iVar7,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x666,0,iVar7,&DAT_007a4ccc,
+                             s_FSGSTy__LicCtrls_007cc328);
   if (iVar6 != 0) {
     pcVar3 = (code *)swi(3);
     (*pcVar3)();
     return;
   }
-  FUN_006a5e40(iVar7,0,0x7cbf70,0x666);
+  RaiseInternalException(iVar7,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x666);
   return;
 }
 

@@ -25,8 +25,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   int iVar14;
   undefined4 uVar15;
   InfocPanelTy local_188 [300];
-  undefined4 *local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   InfocPanelTy local_18;
   undefined3 uStack_17;
   InfocPanelTy *local_14;
@@ -34,20 +33,21 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   InfocPanelTy *local_c;
   InfocPanelTy local_5;
   
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  iVar5 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar5 != 0) {
-    DAT_00858df8 = local_5c;
-    iVar13 = FUN_006ad4d0(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x99,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_5c.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0x99,0,iVar5,&DAT_007a4ccc
+                                ,s_InfocPanelTy__Update_007c3f74);
     if (iVar13 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c3eb0,0x99);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0x99);
     return;
   }
   pIVar12 = local_14 + 0x1ab;
@@ -187,7 +187,7 @@ LAB_00520987:
     if (6 < (byte)local_5) {
       local_c = pIVar12;
       PaintInfoc(this_00);
-      DAT_00858df8 = local_5c;
+      g_currentExceptionFrame = local_5c.previous;
       return;
     }
   } while( true );

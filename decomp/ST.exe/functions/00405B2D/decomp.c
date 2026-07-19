@@ -23,7 +23,8 @@ int __fastcall thunk_FUN_0047bf70(int *param_1)
     iVar2 = thunk_FUN_00479600(param_1,2);
     return iVar2;
   }
-  iVar2 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3771,0,0,&DAT_007a4ccc);
+  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3771,0,0,&DAT_007a4ccc,
+                             s_STBoatC__BackTeleport_incorrect_e_007ab52c);
   if (iVar2 == 0) {
     return -1;
   }

@@ -3,14 +3,14 @@ void __fastcall thunk_FUN_00550bb0(int param_1)
 
 {
   int iVar1;
-  void *pvVar2;
-  undefined4 in_stack_ffffffb4;
+  InternalExceptionFrame *pIVar2;
+  int in_stack_ffffffb4;
   char cStack_5;
   
-  pvVar2 = DAT_00858df8;
+  pIVar2 = g_currentExceptionFrame;
   if (DAT_0080877e == '\0') {
-    DAT_00858df8 = &stack0xffffffb0;
-    iVar1 = __setjmp3((undefined4 *)&stack0xffffffb4,0,pvVar2,in_stack_ffffffb4);
+    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
+    iVar1 = __setjmp3((undefined4 *)&stack0xffffffb4,0,pIVar2,in_stack_ffffffb4);
     if (iVar1 == 0) {
       FUN_006b6500((int)DAT_00811764,1);
       cStack_5 = '\0';
@@ -19,11 +19,11 @@ void __fastcall thunk_FUN_00550bb0(int param_1)
         *(undefined4 *)(param_1 + 0x59) = 1;
       }
       FUN_006b6500((int)DAT_00811764,DAT_0080733c);
-      DAT_00858df8 = pvVar2;
+      g_currentExceptionFrame = pIVar2;
       return;
     }
   }
-  DAT_00858df8 = pvVar2;
+  g_currentExceptionFrame = pIVar2;
   return;
 }
 

@@ -14,14 +14,13 @@ void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
   MMObjTy *this_00;
   void *unaff_EDI;
   int iVar5;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   MMObjTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = (MMObjTy *)this;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     MMObjTy::CloseButtons(local_8);
@@ -42,13 +41,14 @@ void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
     }
     this_00[0x65] = (MMObjTy)0x4;
     thunk_FUN_005b6730(this_00,2,'\x01',-1);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_Start_main_obj_cpp_007cc8e8,0xf7,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xf7,0,iVar2,&DAT_007a4ccc,
+                             s_MainMenuTy__CloseButtons_007cc9c0);
   if (iVar5 == 0) {
-    FUN_006a5e40(iVar2,0,0x7cc8e8,0xf7);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0xf7);
     return;
   }
   pcVar1 = (code *)swi(3);

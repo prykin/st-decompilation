@@ -12,8 +12,7 @@ FUN_00677960(short param_1,short param_2,short param_3,short param_4,short param
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar5;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   int local_18;
   int local_14;
   uint local_10;
@@ -22,22 +21,23 @@ FUN_00677960(short param_1,short param_2,short param_3,short param_4,short param
   short local_6;
   
   local_14 = 0;
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  iVar2 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  iVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_5c;
-    iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x37f,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_5c.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x37f,0,iVar2,&DAT_007a4ccc,
+                               s__EnumRCField_007d2e04);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
       return iVar2;
     }
-    FUN_006a5e40(iVar2,0,0x7d2d58,0x380);
+    RaiseInternalException(iVar2,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x380);
     return iVar2;
   }
   if (DAT_007fa15c == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2d58,0x36b);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x36b);
   }
   uVar5 = *(int *)(DAT_007fa15c + 0xc) - 1;
   if (-1 < (int)uVar5) {
@@ -66,18 +66,18 @@ FUN_00677960(short param_1,short param_2,short param_3,short param_4,short param
         uVar5 = local_10;
         if (((iVar2 != 0) && (param_8 != (undefined *)0x0)) &&
            (iVar2 = (*(code *)param_8)(0,local_10,this,param_9), iVar2 != 0)) {
-          DAT_00858df8 = (undefined4 *)local_5c;
+          g_currentExceptionFrame = local_5c.previous;
           return -1;
         }
       }
       uVar5 = uVar5 - 1;
       if ((int)uVar5 < 0) {
-        DAT_00858df8 = (undefined4 *)local_5c;
+        g_currentExceptionFrame = local_5c.previous;
         return local_14;
       }
     } while( true );
   }
-  DAT_00858df8 = (undefined4 *)local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   return local_14;
 }
 

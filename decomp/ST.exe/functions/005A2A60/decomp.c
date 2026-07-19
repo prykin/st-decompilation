@@ -17,18 +17,17 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   void *unaff_EDI;
   byte *pbVar8;
   bool bVar9;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   uint local_10;
   int local_c;
   FSGSTy *local_8;
   
   if (((this[0x1a5f] == (FSGSTy)0x6) && (this[0x1a60] == (FSGSTy)0x0)) &&
      (*(int *)(this + 0x1ea6) != 0)) {
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
     local_8 = this;
-    iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+    iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
       local_c = *(int *)(local_8 + 0x1ea6);
@@ -71,17 +70,18 @@ LAB_005a2b1c:
       }
       *(undefined4 *)(local_8 + 0x2d) = 5;
       FUN_006e6080(local_8,2,*(undefined4 *)(local_8 + 0x1b20),(undefined4 *)(local_8 + 0x1d));
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar5 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa50,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa50,0,iVar3,&DAT_007a4ccc
+                               ,s_FSGSTy__ChangePlayer_007cc4e4);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cbf70,0xa50);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa50);
   }
   return;
 }

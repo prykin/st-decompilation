@@ -47,7 +47,8 @@ STAllPlayersC::DestroyObjectMsg
     iVar4 = DAT_007fa164;
     break;
   default:
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2eb1,0,0,&DAT_007a4ccc);
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2eb1,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__DestroyObjectMsg_007a86e0);
     if (iVar4 == 0) {
       return 0;
     }

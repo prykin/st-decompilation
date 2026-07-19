@@ -10,8 +10,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   SIDTy *pSVar5;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   SIDTy *pSStack_c;
   int iStack_8;
   
@@ -19,15 +18,16 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
   pSStack_c = this;
   DVar2 = timeGetTime();
   *(DWORD *)(this + 0x61) = DVar2;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x98,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x98,0,iVar3,&DAT_007a4ccc,
+                               s_SIDTy__NoneSID_007cd650);
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7cd5c4,0x98);
+      RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x98);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -80,11 +80,11 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
       *(undefined4 *)(this_00 + 0x49) = 0;
       *(undefined4 *)(this_00 + 0x4d) = 0x693f;
       thunk_FUN_005b66e0(this_00);
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return;
 }
 

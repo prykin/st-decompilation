@@ -22,8 +22,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
   byte *pbVar10;
   void *unaff_EDI;
   byte *pbVar11;
-  undefined4 local_80;
-  undefined4 local_7c [16];
+  InternalExceptionFrame local_80;
   int local_3c [4];
   undefined4 local_2c;
   undefined4 local_28;
@@ -39,16 +38,17 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
   if ((*(int *)(this + 0x23b) == 6) && (*(int *)(param_1 + 0x10) != 3)) {
     return 0;
   }
-  local_80 = DAT_00858df8;
-  DAT_00858df8 = &local_80;
+  local_80.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar3 = __setjmp3(local_7c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_1c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_80;
-    iVar4 = FUN_006ad4d0(s_E____titans_Igor_To_fish_cpp_007cb044,0x663,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_80.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Igor_To_fish_cpp_007cb044,0x663,0,iVar3,&DAT_007a4ccc,
+                               s_STFishC__GetMessage_007cb02c);
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7cb044,0x664);
+      RaiseInternalException(iVar3,0,s_E____titans_Igor_To_fish_cpp_007cb044,0x664);
       return 0xffff;
     }
     pcVar2 = (code *)swi(3);
@@ -61,33 +61,33 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
     switch(uVar6) {
     case 0x112:
       thunk_FUN_004ad5e0((int)(this_00 + 0x1d5));
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x113:
       (*(code *)**(undefined4 **)(this_00 + 0x1d5))();
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     default:
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     case 0x127:
       goto switchD_0057c669_caseD_127;
     case 0x128:
       if (*(int *)(this_00 + 0x23b) == 3) {
-        DAT_00858df8 = (undefined4 *)local_80;
+        g_currentExceptionFrame = local_80.previous;
         return 0;
       }
       uVar6 = thunk_FUN_004ad650((int)(this_00 + 0x1d5));
       FUN_006eab60(*(void **)(this_00 + 0x211),uVar6);
       thunk_FUN_0057bf20(this_00);
       *(undefined4 *)(this_00 + 0x23b) = 3;
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     }
   }
   if (uVar6 == 0x110) {
     if (*(int *)(this_00 + 0x23b) == 0) {
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     }
     pSVar1 = (STT3DSprC *)(this_00 + 0x1d5);
@@ -96,23 +96,23 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
     thunk_FUN_004ad5e0((int)pSVar1);
     STT3DSprC::LoadSequence(pSVar1,8,DAT_00806774,(byte *)s_explsna_007cb018,0x1d);
     STT3DSprC::StartShow(pSVar1,8,*(undefined4 *)(DAT_00802a38 + 0xe4));
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   if (3 < uVar6) {
     if (uVar6 != 0x10f) {
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     }
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(this_00 + 0x1d5),&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
     local_c = (byte *)FUN_006aac70(local_10 + 0x46 + local_8);
     if (local_14 == (byte *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     }
     if (local_c == (byte *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     }
     pSVar9 = this_00 + 0x243;
@@ -167,7 +167,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
     FUN_006ab060(&local_14);
     FUN_006ab060(&local_18);
     FUN_006ab060(&local_c);
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   if (uVar6 == 3) {
@@ -177,20 +177,20 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
                        CONCAT31((int3)((uint)extraout_ECX >> 8),this_00[0x8e]),(int)this_00);
     thunk_FUN_0058d080(*(int *)(this_00 + 0x18));
     thunk_FUN_004ad310((int)(this_00 + 0x1d5));
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   if (uVar6 == 0) {
     if (*(int *)(this_00 + 0x23b) == 3) {
-      DAT_00858df8 = (undefined4 *)local_80;
+      g_currentExceptionFrame = local_80.previous;
       return 0;
     }
     thunk_FUN_0057cd70((int *)this_00);
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   if (uVar6 != 2) {
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   local_20 = *(undefined4 **)(param_1 + 0x14);
@@ -275,7 +275,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
     pSVar1 = (STT3DSprC *)(this_00 + 0x1d5);
     iVar3 = STT3DSprC::LoadSequence(pSVar1,0xe,DAT_0080676c,(byte *)s_fish1_007caff0,0x1d);
     if (iVar3 != 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cb044,0xf6);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_To_fish_cpp_007cb044,0xf6);
     }
     thunk_FUN_004ac610(pSVar1,'\x0e');
     thunk_FUN_004abe40(pSVar1,'\x0e',0);
@@ -285,9 +285,9 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
                       ((STT3DSprC *)(this_00 + 0x1d5),0xe,DAT_0080676c,(byte *)s_fish_b_007caff8,
                        0x1d);
     if (iVar3 != 0) {
-      uVar5 = 0xea;
+      iVar3 = 0xea;
 LAB_0057c332:
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cb044,uVar5);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_To_fish_cpp_007cb044,iVar3);
     }
     break;
   case 0xe9:
@@ -295,7 +295,7 @@ LAB_0057c332:
                       ((STT3DSprC *)(this_00 + 0x1d5),0xe,DAT_0080676c,(byte *)s_fish_gr_007cb000,
                        0x1d);
     if (iVar3 != 0) {
-      uVar5 = 0xf0;
+      iVar3 = 0xf0;
       goto LAB_0057c332;
     }
     break;
@@ -303,7 +303,7 @@ LAB_0057c332:
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)(this_00 + 0x1d5),0xe,DAT_0080676c,&DAT_007cb008,0x1d);
     if (iVar3 != 0) {
-      uVar5 = 0xfd;
+      iVar3 = 0xfd;
       goto LAB_0057c332;
     }
     break;
@@ -311,7 +311,7 @@ LAB_0057c332:
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)(this_00 + 0x1d5),0xe,DAT_0080676c,&DAT_007cb010,0x1d);
     if (iVar3 != 0) {
-      uVar5 = 0x104;
+      iVar3 = 0x104;
       goto LAB_0057c332;
     }
     break;
@@ -333,10 +333,10 @@ LAB_0057c3e4:
   if ((*(int *)(this_00 + 0x23b) != 6) && (iVar3 = thunk_FUN_0058cfe0((int)this_00), iVar3 == 0)) {
     thunk_FUN_0057bf20(this_00);
     *(undefined4 *)(this_00 + 0x23b) = 3;
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_80;
+  g_currentExceptionFrame = local_80.previous;
   return 0;
 switchD_0057c669_caseD_127:
   pSVar9 = this_00 + 0x235;
@@ -350,7 +350,7 @@ switchD_0057c669_caseD_127:
                                           0xc9 + 100),(undefined2 *)pSVar9,(undefined2 *)pSVar9,
                              (short *)(this_00 + 0x239));
   if (iVar3 == 0) {
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   sVar7 = *(short *)pSVar9;
@@ -381,7 +381,7 @@ switchD_0057c669_caseD_127:
   }
   *(short *)(this_00 + 0x239) = sVar7;
   *(undefined4 *)(this_00 + 0x23b) = 4;
-  DAT_00858df8 = (undefined4 *)local_80;
+  g_currentExceptionFrame = local_80.previous;
   return 0;
 }
 

@@ -19,8 +19,7 @@ HoloTy::CalcHologram
   undefined4 *puVar8;
   uint uVar9;
   longlong lVar10;
-  undefined4 uStack_78;
-  undefined4 auStack_74 [16];
+  InternalExceptionFrame IStack_78;
   uint uStack_34;
   uint uStack_30;
   uint uStack_2c;
@@ -34,12 +33,13 @@ HoloTy::CalcHologram
   undefined4 *puStack_c;
   int iStack_8;
   
-  uStack_78 = DAT_00858df8;
-  DAT_00858df8 = &uStack_78;
-  iVar2 = __setjmp3(auStack_74,0,unaff_EDI,unaff_ESI);
+  IStack_78.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_78;
+  iVar2 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_78;
-    iVar2 = FUN_006ad4d0(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_78.previous;
+    iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc,
+                               s_HoloTy__CalcHologram_007cc6b4);
     if (iVar2 == 0) {
       return (undefined4 *)0x0;
     }
@@ -155,7 +155,7 @@ LAB_005aab34:
       uStack_28 = uStack_18;
     } while (iStack_14 < (int)uVar6);
   }
-  DAT_00858df8 = (undefined4 *)uStack_78;
+  g_currentExceptionFrame = IStack_78.previous;
   return puStack_c;
 }
 

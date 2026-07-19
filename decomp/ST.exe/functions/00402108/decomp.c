@@ -26,12 +26,9 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   undefined4 uStack_4e0;
   undefined1 auStack_460 [41];
   undefined1 auStack_437 [855];
-  undefined4 *puStack_e0;
-  undefined4 auStack_dc [16];
-  undefined4 *puStack_9c;
-  undefined4 auStack_98 [16];
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_e0;
+  InternalExceptionFrame IStack_9c;
+  InternalExceptionFrame IStack_58;
   int iStack_14;
   int iStack_10;
   FSGSTy *pFStack_c;
@@ -39,10 +36,10 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
   
   if (((param_5 != (undefined4 *)0x0) && (*(int *)(this + 0x1a97) != 0)) &&
      (this[0x65] == (FSGSTy)0x1)) {
-    uStack_58 = DAT_00858df8;
-    DAT_00858df8 = (undefined4 **)&uStack_58;
+    IStack_58.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_58;
     pFStack_c = this;
-    iVar4 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pFVar12 = pFStack_c;
     if (iVar4 == 0) {
       if ((param_3 == 1) || (param_3 == 8)) {
@@ -56,9 +53,9 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
       }
       if (param_3 == 1) {
         piStack_8 = (int *)0x0;
-        puStack_9c = DAT_00858df8;
-        DAT_00858df8 = &puStack_9c;
-        iVar4 = __setjmp3(auStack_98,0,unaff_EDI,unaff_ESI);
+        IStack_9c.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &IStack_9c;
+        iVar4 = __setjmp3(IStack_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
         if (iVar4 == 0) {
           piVar7 = FUN_006c7c50(param_5,param_4);
           pFVar12 = pFStack_c;
@@ -89,10 +86,10 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
             FUN_006c79a0(piVar7,*(undefined4 **)(pFVar12 + 0x1a97),0);
             FUN_006c7980(piVar7);
           }
-          DAT_00858df8 = (undefined4 **)puStack_9c;
+          g_currentExceptionFrame = IStack_9c.previous;
         }
         else {
-          DAT_00858df8 = (undefined4 **)puStack_9c;
+          g_currentExceptionFrame = IStack_9c.previous;
           pFVar12 = pFStack_c;
           if (piStack_8 != (int *)0x0) {
             FUN_006c7980(piStack_8);
@@ -102,9 +99,9 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
       }
       else if (param_3 == 8) {
         *(undefined4 *)(pFVar12 + 0x1aa3) = 0;
-        puStack_e0 = DAT_00858df8;
-        DAT_00858df8 = &puStack_e0;
-        iVar4 = __setjmp3(auStack_dc,0,unaff_EDI,unaff_ESI);
+        IStack_e0.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &IStack_e0;
+        iVar4 = __setjmp3(IStack_e0.jumpBuffer,0,unaff_EDI,unaff_ESI);
         pFVar12 = pFStack_c;
         if (iVar4 == 0) {
           puVar5 = (undefined4 *)FUN_006aac70(param_4);
@@ -153,21 +150,21 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
                 *(undefined4 *)(pFVar12 + 0x1a9f) = 0;
                 FUN_006ab060((undefined4 *)(pFVar12 + 0x1a9b));
                 *(undefined4 *)(pFVar12 + 0x1aa3) = 0;
-                DAT_00858df8 = (undefined4 **)puStack_e0;
+                g_currentExceptionFrame = IStack_e0.previous;
               }
               else {
                 DVar6 = timeGetTime();
                 *(DWORD *)(pFVar12 + 0x1aa7) = DVar6;
-                DAT_00858df8 = (undefined4 **)puStack_e0;
+                g_currentExceptionFrame = IStack_e0.previous;
               }
               goto LAB_005a1cfd;
             }
             FUN_006ab060((undefined4 *)(pFVar12 + 0x1a9b));
           }
-          DAT_00858df8 = (undefined4 **)puStack_e0;
+          g_currentExceptionFrame = IStack_e0.previous;
         }
         else {
-          DAT_00858df8 = (undefined4 **)puStack_e0;
+          g_currentExceptionFrame = IStack_e0.previous;
           if (*(undefined4 **)(pFStack_c + 0x1a9f) != (undefined4 *)0x0) {
             FUN_006c6fc0(*(undefined4 **)(pFStack_c + 0x1a9f));
           }
@@ -219,17 +216,18 @@ LAB_005a1cfd:
         }
         *(undefined4 *)(pFVar12 + 0x1aaf) = param_2;
       }
-      DAT_00858df8 = (undefined4 **)uStack_58;
+      g_currentExceptionFrame = IStack_58.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 **)uStack_58;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9b5,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_58.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9b5,0,iVar4,&DAT_007a4ccc
+                               ,s_FSGSTy__SetBanner_007cc45c);
     if (iVar9 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x9b5);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9b5);
   }
   return;
 }

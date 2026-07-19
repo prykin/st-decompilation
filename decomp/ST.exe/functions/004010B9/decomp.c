@@ -11,15 +11,14 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   undefined4 uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   CursorClassTy *pCStack_c;
   ushort *puStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pCStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_c;
   if (iVar3 == 0) {
     SpriteClassTy::InitSprite
@@ -44,17 +43,18 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
     FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar1,1,0x4047ff,0,0,*(uint *)(this_00 + 0x4d2));
     FUN_006b28c0((int)DAT_008075a8,*(uint *)pCVar1,1);
     FUN_006b3af0(DAT_008075a8,*(uint *)pCVar1);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x65,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x65,0,iVar3,&DAT_007a4ccc,
+                             s_CursorClassTy__InitCursor_007c7d88);
   if (iVar3 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(-0x34,0,0x7c7d60,0x66);
+  RaiseInternalException(-0x34,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x66);
   return;
 }
 

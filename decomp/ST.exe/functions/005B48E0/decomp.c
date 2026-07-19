@@ -16,16 +16,15 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
   undefined4 unaff_ESI;
   MainMenuTy *pMVar8;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   int local_10;
   int local_c;
   MainMenuTy *local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar7 = local_8;
   if (iVar3 == 0) {
     if (*(int *)(local_8 + 0x1acf) != 0) {
@@ -100,13 +99,14 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
       local_10 = local_10 + 0x17;
       pMVar7 = local_8;
     } while (local_c < 0x25c);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_54;
-  iVar6 = FUN_006ad4d0(s_E____titans_Start_main_obj_cpp_007cc8e8,0x1ba,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_54.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x1ba,0,iVar3,&DAT_007a4ccc,
+                             s_MainMenuTy__AnimationMainMenu_007cc9f8);
   if (iVar6 == 0) {
-    FUN_006a5e40(iVar3,0,0x7cc8e8,0x1ba);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0x1ba);
     return;
   }
   pcVar2 = (code *)swi(3);

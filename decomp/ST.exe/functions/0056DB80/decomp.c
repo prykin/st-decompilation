@@ -9,7 +9,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
   STAppC SVar1;
   code *pcVar2;
   void *pvVar3;
-  undefined4 **ppuVar4;
+  InternalExceptionFrame *pIVar4;
   uint *puVar5;
   ushort *puVar6;
   undefined4 uVar7;
@@ -34,12 +34,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
   STAppC local_328 [260];
   byte local_224;
   undefined4 local_223;
-  undefined4 **local_120;
-  undefined4 local_11c [16];
-  undefined4 **local_dc;
-  undefined4 local_d8 [16];
-  undefined4 **local_98;
-  undefined4 local_94 [16];
+  InternalExceptionFrame local_120;
+  InternalExceptionFrame local_dc;
+  InternalExceptionFrame local_98;
   undefined4 local_54 [4];
   undefined4 local_44;
   undefined4 local_34 [8];
@@ -57,9 +54,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
   }
   *(undefined2 *)puVar12 = 0;
   *(undefined1 *)((int)puVar12 + 2) = 0;
-  local_98 = DAT_00858df8;
-  DAT_00858df8 = &local_98;
-  iVar8 = __setjmp3(local_94,0,unaff_EDI,unaff_ESI);
+  local_98.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_98;
+  iVar8 = __setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar10 = local_c;
   if (iVar8 == 0) {
     *(undefined4 *)(local_c + 0x4eee) = 0;
@@ -138,15 +135,15 @@ void __thiscall STAppC::StartGame(STAppC *this)
     puVar6 = FUN_006f1ce0(0,PTR_s_ORIG_DB_0079b088,(int *)&local_8,0);
     if ((puVar6 == (ushort *)0x0) || (local_14 = pSVar10 + 0x7d1a, pSVar10[0x7d1a] == (STAppC)0x0))
     {
-      local_dc = DAT_00858df8;
-      DAT_00858df8 = &local_dc;
-      iVar8 = __setjmp3(local_d8,0,unaff_EDI,unaff_ESI);
+      local_dc.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_dc;
+      iVar8 = __setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pSVar10 = local_c;
-      ppuVar4 = local_dc;
+      pIVar4 = local_dc.previous;
       if (iVar8 == 0) {
         DAT_00806758 = FUN_006f0ec0(0x345,(byte *)(local_c + 0x76f6),0,0,0);
-        DAT_00858df8 = local_dc;
-        ppuVar4 = DAT_00858df8;
+        g_currentExceptionFrame = local_dc.previous;
+        pIVar4 = g_currentExceptionFrame;
       }
     }
     else {
@@ -155,18 +152,18 @@ void __thiscall STAppC::StartGame(STAppC *this)
       puVar13 = &DAT_007c6ee4;
       pSVar11 = local_14;
       wsprintfA((LPSTR)local_14,&DAT_007c6ee4,pSVar10 + 0x60,pSVar10 + 0x78fe);
-      local_120 = DAT_00858df8;
-      DAT_00858df8 = &local_120;
-      iVar8 = __setjmp3(local_11c,0,pSVar11,puVar13);
+      local_120.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_120;
+      iVar8 = __setjmp3(local_120.jumpBuffer,0,pSVar11,puVar13);
       pSVar10 = local_c;
-      ppuVar4 = local_120;
+      pIVar4 = local_120.previous;
       if (iVar8 == 0) {
         DAT_00806758 = FUN_006f0ec0(0x345,(byte *)(local_c + 0x7d1a),0,0,0);
-        DAT_00858df8 = local_120;
-        ppuVar4 = DAT_00858df8;
+        g_currentExceptionFrame = local_120.previous;
+        pIVar4 = g_currentExceptionFrame;
       }
     }
-    DAT_00858df8 = ppuVar4;
+    g_currentExceptionFrame = pIVar4;
     pSVar11 = pSVar10 + 0x7d12;
     if (*(int *)(pSVar10 + 0x7d12) != 0) {
       FUN_006ab060((undefined4 *)pSVar11);
@@ -435,18 +432,21 @@ void __thiscall STAppC::StartGame(STAppC *this)
     FUN_006e3db0((int)local_34);
     thunk_FUN_0056a500();
     thunk_FUN_00577690(DAT_0081163c);
-    thunk_FUN_00568dd0(pSVar10 + 0x38,1,(char *)0x0,0x4b7,(int *)0x0,0);
+    SoundClassTy::PlaySound_thunk
+              ((SoundClassTy *)(pSVar10 + 0x38),SOUND_MODE_1,(char *)0x0,0x4b7,(SoundPosition *)0x0,
+               0);
     DAT_0080674c = 2;
     ShowCursor(0);
     DAT_00856d7c = 0;
     FUN_006bbb20((int)DAT_0080759c,0);
     FUN_006ba780((int)DAT_0080759c,0);
-    DAT_00858df8 = local_98;
+    g_currentExceptionFrame = local_98.previous;
     pSVar10[0x1195] = (STAppC)0x0;
     return;
   }
-  DAT_00858df8 = local_98;
-  iVar8 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x54d,0,iVar8,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_98.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x54d,0,iVar8,&DAT_007a4ccc,
+                             s_STAppC__StartGame_007ca1b0);
   if (iVar8 == 0) {
     pcVar9 = this_04;
     if (DAT_00806754 != (undefined4 *)0x0) {

@@ -6,15 +6,14 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
   int iVar1;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   void *pvStack_8;
   
   if (*(int *)((int)this + 0xf8b) != 0) {
-    uStack_4c = DAT_00858df8;
-    DAT_00858df8 = &uStack_4c;
+    IStack_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_4c;
     pvStack_8 = this;
-    iVar1 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+    iVar1 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pvStack_8;
     if (iVar1 == 0) {
       switch(param_1) {
@@ -25,7 +24,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 4);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 2:
         iVar1 = 4;
@@ -33,7 +32,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 0xb);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 3:
         iVar1 = 0xb;
@@ -41,7 +40,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 0x12);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 4:
         iVar1 = 0x12;
@@ -49,7 +48,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 0x15);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 5:
         iVar1 = 0x15;
@@ -57,7 +56,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 0x1a);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 6:
         iVar1 = 0x1b;
@@ -65,7 +64,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 0x1e);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 7:
         iVar1 = 0x1e;
@@ -73,7 +72,7 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
           thunk_FUN_00568bc0(this_00,iVar1);
           iVar1 = iVar1 + 1;
         } while (iVar1 < 0x20);
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 0xb:
         iVar1 = 0;
@@ -83,15 +82,15 @@ void __thiscall thunk_FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 2);
         *(undefined4 *)((int)this_00 + 0xe03) = 0xffffffff;
         *(undefined4 *)((int)this_00 + 0xe07) = 0xffffffff;
-        DAT_00858df8 = (undefined4 *)uStack_4c;
+        g_currentExceptionFrame = IStack_4c.previous;
         return;
       case 0xc:
         thunk_FUN_00568bc0(pvStack_8,0x1a);
       }
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
   }
   return;
 }

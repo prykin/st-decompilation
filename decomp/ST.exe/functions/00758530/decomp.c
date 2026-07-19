@@ -105,13 +105,13 @@ undefined4 FUN_00758530(undefined4 *param_1,undefined4 param_2,uint param_3)
   iVar4 = iVar4 + -1;
   pbVar8 = pbVar8 + 1;
   if (*(int *)(*(int *)((int)param_1 + 0x1a6) + 0x54) != 0) {
-    FUN_006a5e40(0x39,DAT_007ed77c,0x7f2db0,0xea);
+    RaiseInternalException(0x39,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0xea);
   }
   if (((param_1[6] == 0) || (param_1[5] == 0)) || ((int)param_1[7] < 1)) {
-    FUN_006a5e40(0x1f,DAT_007ed77c,0x7f2db0,0xf1);
+    RaiseInternalException(0x1f,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0xf1);
   }
   if ((uint)bVar1 * 0x100 + (uint)bVar2 + -8 != param_1[7] * 3) {
-    FUN_006a5e40(9,DAT_007ed77c,0x7f2db0,0xf4);
+    RaiseInternalException(9,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0xf4);
   }
   if (param_1[0x34] == 0) {
     uVar5 = (**(code **)*param_1)(param_1,1,param_1[7] * 0x54);

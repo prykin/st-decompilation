@@ -15,8 +15,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
   int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   int local_1c;
   BldBoatPanelTy *local_18;
   int *local_14;
@@ -54,21 +53,22 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
     uVar4 = thunk_FUN_00526ba0(*local_8,*(char *)((int)local_8 + 9));
     local_10 = (byte *)FUN_0070b3a0(iVar7,uVar4);
   }
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
-  iVar5 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
+  iVar5 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar3 = local_c;
   pBVar2 = local_18;
   iVar7 = local_1c;
   if (iVar5 != 0) {
-    DAT_00858df8 = local_60;
-    iVar7 = FUN_006ad4d0(s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e,0,iVar5,&DAT_007a4ccc,
+                               s_BldBoatPanelTy__PaintBldBut_007c186c);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c17b4,0x9e);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e);
     return;
   }
   FUN_006b4170(*(int *)(local_18 + 0x68),0,local_1c,local_c,local_14[2],local_14[3],0);
@@ -92,7 +92,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
 LAB_004ef4e9:
   FUN_006b3640(DAT_008075a8,*(uint *)(pBVar2 + 0x60),0xffffffff,*(uint *)(pBVar2 + 0x3c),
                *(uint *)(pBVar2 + 0x44));
-  DAT_00858df8 = local_60;
+  g_currentExceptionFrame = local_60.previous;
   return;
 }
 

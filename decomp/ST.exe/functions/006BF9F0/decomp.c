@@ -7,8 +7,7 @@ FUN_006bf9f0(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param
   int iVar1;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   uint local_10;
   int *local_c;
   int local_8;
@@ -27,21 +26,21 @@ FUN_006bf9f0(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param
     param_1[0x6d] = 1;
     param_1[0x6e] = 1;
     *(uint *)(*param_1 + 0xc) = *(uint *)(*param_1 + 0xc) & 0xfffffeff;
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
-    iVar1 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
+    iVar1 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar1 == 0) {
       FUN_006bd740(param_1);
       iVar1 = local_8;
     }
     local_8 = iVar1;
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     local_c[0x6d] = 1;
     local_c[0x6e] = 1;
     *(uint *)(*local_c + 0xc) = *(uint *)(*local_c + 0xc) | local_10 & 0x100;
     DAT_00854fe8 = 0;
     if (local_8 != 0) {
-      FUN_006a5e40(local_8,DAT_007ed77c,0x7edc8c,0x811);
+      RaiseInternalException(local_8,DAT_007ed77c,s_E__DKW_DDX_C_ddsmovex_c_007edc8c,0x811);
       return 0;
     }
   }

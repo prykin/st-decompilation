@@ -48,7 +48,8 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
         _DAT_00853cf0 = 0;
         uVar3 = thunk_FUN_006938c0(param_2);
         if (DAT_00853d84 <= uVar3) {
-          iVar7 = FUN_006ad4d0(s_E____titans_Maps_DefObj_cpp_007d6218,0x1ba,0,uVar3,&DAT_007a4ccc);
+          iVar7 = ReportDebugMessage(s_E____titans_Maps_DefObj_cpp_007d6218,0x1ba,0,uVar3,
+                                     &DAT_007a4ccc,s_Out_of_Range_Entourage_Group_Ind_007d623c);
           if (iVar7 != 0) {
             pcVar2 = (code *)swi(3);
             puVar4 = (uint *)(*pcVar2)();
@@ -58,8 +59,8 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
         }
         iVar7 = uVar3 * 0x218;
         if (*(uint *)(iVar7 + 0x20c + DAT_00853d80) <= param_5) {
-          iVar5 = FUN_006ad4d0(s_E____titans_Maps_DefObj_cpp_007d6218,0x1c0,0,param_5,&DAT_007a4ccc)
-          ;
+          iVar5 = ReportDebugMessage(s_E____titans_Maps_DefObj_cpp_007d6218,0x1c0,0,param_5,
+                                     &DAT_007a4ccc,s_Out_of_Range_Entourage_Index_007d61f4);
           if (iVar5 != 0) {
             pcVar2 = (code *)swi(3);
             puVar4 = (uint *)(*pcVar2)();

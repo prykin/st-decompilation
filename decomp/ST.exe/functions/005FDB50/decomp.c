@@ -43,7 +43,7 @@ undefined4 __thiscall FUN_005fdb50(void *this,int param_1,int param_2)
         if ((iVar5 == 1) || (iVar5 == 2)) {
           iVar5 = STT3DSprC::Init(this_00,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
           if (iVar5 != 0) {
-            FUN_006a5e40(-1,DAT_007ed77c,0x7cebc8,0x13d);
+            RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_DcBom_cpp_007cebc8,0x13d);
             return 0xffff;
           }
           iVar5 = STT3DSprC::LoadSequence(this_00,0xd,DAT_00806774,(byte *)s_adcbo_007ce924,0x1d);

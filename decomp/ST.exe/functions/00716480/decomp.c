@@ -22,8 +22,7 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
   char *pcVar11;
   char *pcVar12;
   SpriteClassTy *pSVar13;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   SpriteClassTy *local_8;
   
   if (*(int *)(this + 4) == -1) {
@@ -32,20 +31,21 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
   if (this[0x4c] == (SpriteClassTy)0x80) {
     return 0;
   }
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar5 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_8;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar7 = FUN_006ad4d0(s_E__Ourlib_Sprite_cpp_007f0454,0x161,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar7 = ReportDebugMessage(s_E__Ourlib_Sprite_cpp_007f0454,0x161,0,iVar5,&DAT_007a4ccc,
+                               s_SpriteClassTy__SetImagesPtr_007f04dc);
     if (iVar7 != 0) {
       pcVar3 = (code *)swi(3);
       uVar6 = (*pcVar3)();
       return uVar6;
     }
-    FUN_006a5e40(iVar5,0,0x7f0454,0x163);
+    RaiseInternalException(iVar5,0,s_E__Ourlib_Sprite_cpp_007f0454,0x163);
     return 0xfffffc18;
   }
   *(undefined4 *)(local_8 + 0x4d) = 0;
@@ -140,7 +140,7 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
     *(uint *)(pSVar4 + 0x5d) = param_3;
   }
   *(undefined4 *)(pSVar4 + 0x61) = 0;
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return 0;
 }
 

@@ -54,7 +54,8 @@ int __thiscall FUN_0047fe10(void *this,int param_1)
       return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
     }
     if (iVar5 != 2) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3bbf,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3bbf,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Scout_incorrect_entry_007ab85c);
       if (iVar5 == 0) {
         return -1;
       }
@@ -76,7 +77,8 @@ int __thiscall FUN_0047fe10(void *this,int param_1)
                                                  *(undefined1 *)((int)this + 0x24)),
                                         CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x30)));
     if (pvVar6 == (void *)0x0) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b9b,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b9b,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Scout_ptr__NULL_007ab8d8);
       if (iVar5 == 0) {
         return -1;
       }
@@ -111,7 +113,8 @@ int __thiscall FUN_0047fe10(void *this,int param_1)
       }
       break;
     default:
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3bb7,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3bb7,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Scout_incorrect_ssi_num_007ab884);
       if (iVar5 == 0) {
         return 2;
       }
@@ -149,7 +152,8 @@ LAB_0047ff46:
                                                *(undefined1 *)((int)this + 0x24)),
                                       (uint)*(ushort *)((int)this + 0x30));
   if (pvVar6 == (void *)0x0) {
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b57,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b57,0,0,&DAT_007a4ccc,
+                               s_STBoatC__Scout_ptr__NULL_007ab8d8);
     if (iVar5 == 0) {
       return -1;
     }
@@ -183,7 +187,8 @@ LAB_0047ff46:
     }
     break;
   default:
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b76,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b76,0,0,&DAT_007a4ccc,
+                               s_STBoatC__Scout_incorrect_ssi_num_007ab8b0);
     if (iVar5 == 0) {
       return 2;
     }

@@ -68,7 +68,8 @@ FUN_00435930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int *param
     }
   }
   else {
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x11ea,0,0,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x11ea,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__GetCursorType_inv_007a73a4);
     if (iVar6 != 0) {
       pcVar3 = (code *)swi(3);
       sVar4 = (*pcVar3)();

@@ -15,8 +15,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   CPanelTy *pCVar5;
   CPanelTy *pCVar6;
   uint uVar7;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint local_c;
   CPanelTy *local_8;
   
@@ -46,16 +45,17 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     sVar2 = -*(short *)(this + 0x241);
   }
   *(short *)(this + 0x2e) = sVar2;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar4 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar5 = local_8;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar3 = FUN_006ad4d0(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x452,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x452,0,iVar4,&DAT_007a4ccc,
+                               s_CPanelTy__ShiftControls_007c22a0);
     if (iVar3 == 0) {
-      FUN_006a5e40(iVar4,0,0x7c1bd8,0x452);
+      RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x452);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -120,7 +120,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   if (((char)local_c != '\0') && (*(int *)(pCVar5 + uVar7 * 4 + 0x314) != 0)) {
     FUN_006e6080(pCVar5,2,*(int *)(pCVar5 + uVar7 * 4 + 0x314),(undefined4 *)(pCVar5 + 0x18));
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return;
 }
 

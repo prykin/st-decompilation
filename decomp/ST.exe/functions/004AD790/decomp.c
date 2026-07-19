@@ -20,8 +20,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   char *pcVar10;
   char *pcVar11;
   void *unaff_EDI;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   char *local_1c;
   STT3DSprC *local_18;
   undefined4 *local_14;
@@ -29,14 +28,15 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   char *local_c;
   int local_8;
   
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
   local_18 = this;
-  iVar3 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3da,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3da,0,iVar3,&DAT_007a4ccc,
+                               s_STT3DSprC__SaveSpr_007ac724);
     if (iVar3 == 0) {
       return (undefined4 *)0x0;
     }
@@ -195,7 +195,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       local_8 = local_8 + 1;
     } while (local_8 < *(int *)(this_00 + 0x14));
   }
-  DAT_00858df8 = (undefined4 *)local_60;
+  g_currentExceptionFrame = local_60.previous;
   return local_14;
 }
 

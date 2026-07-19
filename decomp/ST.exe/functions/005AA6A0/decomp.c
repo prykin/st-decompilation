@@ -19,17 +19,16 @@ void __thiscall HoloTy::OutHoloProc(HoloTy *this,uint param_1)
   int iVar8;
   DWORD DVar9;
   DWORD DVar10;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   int local_8;
   
   local_8 = in_stack_00000020;
   if (((in_stack_00000020 != 0) && (*(int *)(in_stack_00000020 + 7) != 0)) &&
      (*(int *)(in_stack_00000020 + 0xb) != 0)) {
-    local_50 = DAT_00858df8;
-    DAT_00858df8 = &local_50;
-    iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+    local_50.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_50;
+    iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
       if (*(int *)(local_8 + 0xf) != 0) {
@@ -70,17 +69,18 @@ switchD_005aa738_default:
           uVar6 = uVar6 + 1;
         } while (uVar6 < *(uint *)(local_8 + 0xf));
       }
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_Start_hologram_cpp_007cc674,0x1e,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0x1e,0,iVar3,&DAT_007a4ccc,
+                               s_HoloTy__OutHoloProc_007cc69c);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cc674,0x1e);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_hologram_cpp_007cc674,0x1e);
   }
   return;
 }

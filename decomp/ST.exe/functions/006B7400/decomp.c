@@ -5,18 +5,18 @@ int FUN_006b7400(int *param_1,int param_2,int *param_3,int *param_4,int *param_5
 {
   char cVar1;
   int *piVar2;
-  int iVar3;
-  char cVar4;
+  int exceptionCode;
+  char cVar3;
   
   if (0x7f < param_2) {
     param_2 = param_2 + -0x80;
   }
-  iVar3 = FUN_006b7190(param_1);
-  if (iVar3 != 0) {
-    if (iVar3 != -4) {
-      FUN_006a5e40(iVar3,DAT_007ed77c,0x7edbc4,0x431);
+  exceptionCode = FUN_006b7190(param_1);
+  if (exceptionCode != 0) {
+    if (exceptionCode != -4) {
+      RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_DDX_C_dplay2_cpp_007edbc4,0x431);
     }
-    return iVar3;
+    return exceptionCode;
   }
   piVar2 = (int *)param_1[0x11];
   do {
@@ -25,14 +25,14 @@ int FUN_006b7400(int *param_1,int param_2,int *param_3,int *param_4,int *param_5
     }
     if (param_2 == -1) goto LAB_006b749d;
     if (-1 < param_2) {
-      cVar4 = (char)param_2;
+      cVar3 = (char)param_2;
       if (param_7 == 0) {
         if (((param_6 == -1) || (param_6 == *(int *)(piVar2[4] + 1))) &&
-           ((*(char *)piVar2[4] == cVar4 || (*(char *)piVar2[4] == (char)(cVar4 + -0x80)))))
+           ((*(char *)piVar2[4] == cVar3 || (*(char *)piVar2[4] == (char)(cVar3 + -0x80)))))
         goto LAB_006b749d;
       }
       else if (((param_6 != *(int *)((char *)piVar2[4] + 1)) &&
-               (cVar1 = *(char *)piVar2[4], cVar1 != cVar4)) && (cVar1 != (char)(cVar4 + -0x80))) {
+               (cVar1 = *(char *)piVar2[4], cVar1 != cVar3)) && (cVar1 != (char)(cVar3 + -0x80))) {
 LAB_006b749d:
         if (piVar2 == (int *)0x0) {
           return -4;

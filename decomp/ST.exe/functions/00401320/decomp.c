@@ -24,7 +24,7 @@ undefined4 __fastcall thunk_FUN_004dce00(int *param_1)
     *(STT3DSprC **)((int)param_1 + 0x5ff) = this;
     iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar3 != 0) {
-      FUN_006a5e40(iVar3,DAT_007ed77c,0x7bf64c,0x58);
+      RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_Artem_TLO_jump_cpp_007bf64c,0x58);
     }
   }
   if (*(int *)((int)param_1 + 0x245) == 5) {
@@ -38,7 +38,7 @@ undefined4 __fastcall thunk_FUN_004dce00(int *param_1)
     iVar3 = STT3DSprC::LoadSequence
                       (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,DAT_00806774,abStack_108,0x1d);
     if (iVar3 != 0) {
-      FUN_006a5e40(iVar3,DAT_007ed77c,0x7bf64c,0x61);
+      RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_Artem_TLO_jump_cpp_007bf64c,0x61);
     }
     thunk_FUN_004ad5e0(*(int *)((int)param_1 + 0x5ff));
     uVar5 = 10;

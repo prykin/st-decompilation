@@ -17,15 +17,14 @@ void __fastcall thunk_FUN_00567330(int param_1)
   char *pcVar11;
   byte *pbVar12;
   byte abStack_150 [260];
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   int iStack_8;
   
   if ((*(int *)(param_1 + 0xdef) == 0) || (*(int *)(param_1 + 0xdf3) == 0)) {
-    uStack_4c = DAT_00858df8;
-    DAT_00858df8 = &uStack_4c;
+    IStack_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_4c;
     iStack_8 = param_1;
-    iVar4 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     iVar3 = iStack_8;
     if (iVar4 == 0) {
       uVar7 = 0xffffffff;
@@ -88,10 +87,10 @@ void __fastcall thunk_FUN_00567330(int param_1)
       *(undefined4 **)(iVar3 + 0xdef) = puVar5;
       piVar6 = FUN_0071a5e0((int)puVar5,s_SOUNDLIST_007c97f0,0);
       *(int **)(iVar3 + 0xdf3) = piVar6;
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     *(undefined4 *)(iStack_8 + 0xf8b) = 0;
   }
   return;

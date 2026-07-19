@@ -34,8 +34,7 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   undefined4 auStack_73c [5];
   undefined4 auStack_728 [307];
   undefined4 local_25c [84];
-  undefined4 local_10c;
-  undefined4 local_108 [16];
+  InternalExceptionFrame local_10c;
   undefined4 local_c8 [4];
   undefined4 local_b8;
   undefined4 local_b4;
@@ -64,19 +63,20 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
   uint local_c;
   CPanelTy *local_8;
   
-  local_10c = DAT_00858df8;
-  DAT_00858df8 = &local_10c;
+  local_10c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_10c;
   local_20 = this;
-  iVar2 = __setjmp3(local_108,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_10c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_10c;
-    iVar12 = FUN_006ad4d0(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x94e,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_10c.previous;
+    iVar12 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x94e,0,iVar2,
+                                &DAT_007a4ccc,s_CPanelTy__SetControlObjSI_007c2920);
     if (iVar12 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7c2700,0x94e);
+    RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel4_cpp_007c2700,0x94e);
     return;
   }
   if (param_1 != '\0') {
@@ -133,10 +133,10 @@ void __thiscall CPanelTy::SetControlObjSI(CPanelTy *this,char param_1)
       *(undefined4 *)(this_00 + 0x2c) = 0;
       *(undefined4 *)(this_00 + 0x28) = 0x20;
       FUN_006e6080(this_00,2,*(int *)(this_00 + 0x9c4),(undefined4 *)(this_00 + 0x18));
-      DAT_00858df8 = (undefined4 *)local_10c;
+      g_currentExceptionFrame = local_10c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_10c;
+    g_currentExceptionFrame = local_10c.previous;
     return;
   }
   local_18 = local_18 & 0xffffff00;
@@ -236,7 +236,7 @@ LAB_0050eb47:
     switch(*(undefined4 *)(this_00 + 0xbf5)) {
     case 0x53:
       if (this_00[0xc3c] != (CPanelTy)0x1) {
-        DAT_00858df8 = (undefined4 *)local_10c;
+        g_currentExceptionFrame = local_10c.previous;
         return;
       }
       uVar17 = 0;
@@ -259,7 +259,7 @@ LAB_0050eb47:
     case 0x59:
     case 0x5a:
       if (this_00[0xc31] == (CPanelTy)0x0) {
-        DAT_00858df8 = (undefined4 *)local_10c;
+        g_currentExceptionFrame = local_10c.previous;
         return;
       }
       goto LAB_0050eb47;
@@ -364,13 +364,13 @@ LAB_0050edc5:
             bVar10 = (char)local_8 + 1;
             local_8 = (CPanelTy *)CONCAT31(local_8._1_3_,bVar10);
           } while (bVar10 < 4);
-          DAT_00858df8 = (undefined4 *)local_10c;
+          g_currentExceptionFrame = local_10c.previous;
           return;
         }
       } while( true );
     case 0x5c:
       if (*(int *)(this_00 + 0xc12) == 0) {
-        DAT_00858df8 = (undefined4 *)local_10c;
+        g_currentExceptionFrame = local_10c.previous;
         return;
       }
       uVar17 = 0;
@@ -386,7 +386,7 @@ LAB_0050edc5:
       uVar9 = (uint)(this_00[0xbfc] != (CPanelTy)0x0);
       break;
     default:
-      DAT_00858df8 = (undefined4 *)local_10c;
+      g_currentExceptionFrame = local_10c.previous;
       return;
     case 0x67:
     case 0x68:
@@ -408,7 +408,7 @@ LAB_0050edc5:
       uVar5 = CreateBut(this_00,5,0,uVar9,0xba,0x5d,1,0x7c22e4,0xb213,0xb214,0,0,0,(char *)0x0,0,0,0
                        );
       *(undefined4 *)(this_00 + 0xb23) = uVar5;
-      DAT_00858df8 = (undefined4 *)local_10c;
+      g_currentExceptionFrame = local_10c.previous;
       return;
     case 0x6d:
       uVar5 = CreateBut(this_00,5,0,(uint)(this_00[0xbfc] != (CPanelTy)0x0),0x2a,0x7b,1,0x7c2300,
@@ -429,14 +429,14 @@ LAB_0050edc5:
       uVar5 = CreateBut(this_00,5,0,(uint)(this_00[0xbfc] != (CPanelTy)0x0),0xc5,100,0,0,0xb21b,
                         0xb21c,0,0,0,(char *)0x0,0x11,10,0);
       *(undefined4 *)(this_00 + 0xb33) = uVar5;
-      DAT_00858df8 = (undefined4 *)local_10c;
+      g_currentExceptionFrame = local_10c.previous;
       return;
     }
   }
   uVar5 = CreateBut(this_00,5,0,uVar9,0x9a,0x59,1,(int)pCVar4,uVar5,uVar14,sVar15,uVar19,iVar2,
                     pcVar3,iVar12,uVar16,uVar17);
   *(undefined4 *)(this_00 + 0x314) = uVar5;
-  DAT_00858df8 = (undefined4 *)local_10c;
+  g_currentExceptionFrame = local_10c.previous;
   return;
 }
 

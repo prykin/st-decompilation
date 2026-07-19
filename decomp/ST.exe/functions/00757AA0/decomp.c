@@ -7,13 +7,13 @@ void FUN_00757aa0(int param_1)
   int *piVar3;
   
   if ((0xffdc < *(int *)(param_1 + 0x18)) || (0xffdc < *(int *)(param_1 + 0x14))) {
-    FUN_006a5e40(0x28,DAT_007ed77c,0x7f2d98,0x32);
+    RaiseInternalException(0x28,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0x32);
   }
   if (*(int *)(param_1 + 0xcc) != 8) {
-    FUN_006a5e40(0xd,DAT_007ed77c,0x7f2d98,0x36);
+    RaiseInternalException(0xd,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0x36);
   }
   if (10 < *(int *)(param_1 + 0x1c)) {
-    FUN_006a5e40(0x18,DAT_007ed77c,0x7f2d98,0x3b);
+    RaiseInternalException(0x18,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0x3b);
   }
   iVar2 = 0;
   *(undefined4 *)(param_1 + 0x122) = 1;
@@ -22,7 +22,7 @@ void FUN_00757aa0(int param_1)
     piVar3 = (int *)(*(int *)(param_1 + 0xd0) + 0xc);
     do {
       if ((((piVar3[-1] < 1) || (4 < piVar3[-1])) || (*piVar3 < 1)) || (4 < *piVar3)) {
-        FUN_006a5e40(0x10,DAT_007ed77c,0x7f2d98,0x44);
+        RaiseInternalException(0x10,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0x44);
       }
       iVar1 = *(int *)(param_1 + 0x122);
       if (*(int *)(param_1 + 0x122) <= piVar3[-1]) {

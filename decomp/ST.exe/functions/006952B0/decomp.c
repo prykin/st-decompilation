@@ -14,8 +14,7 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
   void *unaff_EDI;
   undefined4 *puVar6;
   int *piVar7;
-  undefined4 local_d4;
-  undefined4 local_d0 [16];
+  InternalExceptionFrame local_d4;
   undefined4 local_90 [6];
   uint *local_78;
   uint *local_74;
@@ -191,9 +190,9 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       if (DAT_00853dd4 != (undefined4 *)0x0) {
         FUN_006ab060(&DAT_00853dd4);
       }
-      local_d4 = DAT_00858df8;
-      DAT_00858df8 = &local_d4;
-      iVar4 = __setjmp3(local_d0,0,unaff_EDI,unaff_ESI);
+      local_d4.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_d4;
+      iVar4 = __setjmp3(local_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pvVar2 = local_4c;
       if (iVar4 == 0) {
         if (param_2 != (byte *)0x0) {
@@ -203,10 +202,10 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
                        (uint *)0x0);
           thunk_FUN_0069ff90((int)pvVar2);
         }
-        DAT_00858df8 = (undefined4 *)local_d4;
+        g_currentExceptionFrame = local_d4.previous;
       }
       else {
-        DAT_00858df8 = (undefined4 *)local_d4;
+        g_currentExceptionFrame = local_d4.previous;
       }
     }
     else {

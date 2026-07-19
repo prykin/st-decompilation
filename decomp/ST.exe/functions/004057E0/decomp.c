@@ -25,8 +25,7 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   int iVar18;
   undefined2 uVar19;
   undefined4 uVar20;
-  undefined4 *puStack_a4;
-  undefined4 auStack_a0 [16];
+  InternalExceptionFrame IStack_a4;
   undefined4 uStack_60;
   int iStack_5c;
   undefined4 uStack_58;
@@ -55,9 +54,9 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
   pHStack_44 = this;
   pbStack_38 = (byte *)FUN_0070b3a0(*(int *)(this + 0x248),4);
   if (DAT_007fa174 != 0) {
-    puStack_a4 = DAT_00858df8;
-    DAT_00858df8 = &puStack_a4;
-    iVar4 = __setjmp3(auStack_a0,0,unaff_EDI,unaff_ESI);
+    IStack_a4.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_a4;
+    iVar4 = __setjmp3(IStack_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pHStack_44;
     if (iVar4 == 0) {
       if (param_3 == '\0') {
@@ -554,21 +553,22 @@ void __thiscall HelpPanelTy::ArmProc(HelpPanelTy *this,int param_1,int param_2,c
               UVar5 = thunk_FUN_00525ca0(uVar19);
               DrawDescription(this_00,&iStack_8,UVar5);
               AddLinks(this_00,&iStack_8,'\x04',param_1,param_2);
-              DAT_00858df8 = puStack_a4;
+              g_currentExceptionFrame = IStack_a4.previous;
               return;
             }
           } while( true );
         }
       } while( true );
     }
-    DAT_00858df8 = puStack_a4;
-    iVar17 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x8c4,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_a4.previous;
+    iVar17 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x8c4,0,iVar4,
+                                &DAT_007a4ccc,s_HelpPanelTy__ArmProc_007c3cbc);
     if (iVar17 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7c383c,0x8c4);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x8c4);
   }
   return;
 }

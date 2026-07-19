@@ -220,7 +220,8 @@ thunk_FUN_0044e980(undefined4 param_1,int param_2,int param_3,undefined4 *param_
     break;
   default:
     *param_4 = 0;
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x12e,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x12e,0,0,&DAT_007a4ccc,
+                               s_STBoatC__GetVisualInfo_BODY_LEVE_007a9d60);
     if (iVar3 == 0) {
       return;
     }

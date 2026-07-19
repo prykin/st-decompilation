@@ -27,8 +27,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   undefined4 local_9ec;
   undefined4 local_21c;
   undefined4 local_1f4 [84];
-  undefined4 local_a4;
-  undefined4 local_a0 [16];
+  InternalExceptionFrame local_a4;
   undefined4 local_60 [4];
   undefined4 local_50;
   undefined4 local_4c;
@@ -56,9 +55,9 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  local_a4 = DAT_00858df8;
-  DAT_00858df8 = &local_a4;
-  iVar4 = __setjmp3(local_a0,0,unaff_EDI,unaff_ESI);
+  local_a4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a4;
+  iVar4 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 == 0) {
     if (param_1 == '\0') {
@@ -133,17 +132,18 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
     if (param_1 == '\0') {
       thunk_FUN_00540dc0(1,*(undefined4 *)(this_00 + 8),2,0xc0a1,2,0x1c,0,0,0,0,0,0);
     }
-    DAT_00858df8 = (undefined4 *)local_a4;
+    g_currentExceptionFrame = local_a4.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_a4;
-  iVar5 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x9d,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_a4.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x9d,0,iVar4,&DAT_007a4ccc,
+                             s_SettMapMTy__CreateCtrls_007cd2b8);
   if (iVar5 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7cd258,0x9d);
+  RaiseInternalException(iVar4,0,s_E____titans_Start_settmobj_cpp_007cd258,0x9d);
   return;
 }
 

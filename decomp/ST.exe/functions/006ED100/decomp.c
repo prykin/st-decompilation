@@ -24,8 +24,7 @@ int __fastcall FUN_006ed100(undefined4 *param_1)
   void *unaff_EDI;
   uint *puVar17;
   longlong lVar18;
-  undefined4 local_120;
-  undefined4 local_11c [16];
+  InternalExceptionFrame local_120;
   double local_dc;
   double local_d4;
   int local_cc;
@@ -543,9 +542,9 @@ LAB_006ed2c1:
         FUN_006ab060(puVar17 + 0x39);
         puVar17[0x38] = 0;
       }
-      local_120 = DAT_00858df8;
-      DAT_00858df8 = &local_120;
-      iVar11 = __setjmp3(local_11c,0,unaff_EDI,unaff_ESI);
+      local_120.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_120;
+      iVar11 = __setjmp3(local_120.jumpBuffer,0,unaff_EDI,unaff_ESI);
       puVar17 = local_2c;
       param_1 = local_c8;
       if (iVar11 == 0) {
@@ -573,7 +572,7 @@ LAB_006ed2c1:
       else if (local_18 == 0) {
         local_18 = iVar11;
       }
-      DAT_00858df8 = (undefined4 *)local_120;
+      g_currentExceptionFrame = local_120.previous;
       if (iVar11 == 2) {
         *puVar17 = *puVar17 & 0xffffffbf;
       }
@@ -1115,7 +1114,7 @@ LAB_006ee40c:
 LAB_006ef0d0:
   iVar11 = local_18;
   if (local_18 != 0) {
-    FUN_006a5e40(local_18,DAT_007ed77c,0x7eef4c,0x1069);
+    RaiseInternalException(local_18,DAT_007ed77c,s_E__ourlib_St3dspr_cpp_007eef4c,0x1069);
     return iVar11;
   }
   uVar15 = local_64;

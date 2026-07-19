@@ -6,7 +6,8 @@ void __thiscall FUN_00589b50(void *this,uint param_1)
   int iVar2;
   
   if (7 < param_1) {
-    iVar2 = FUN_006ad4d0(s_E____titans_Igor_to_oct_cpp_007cba18,0x71,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_Igor_to_oct_cpp_007cba18,0x71,0,0,&DAT_007a4ccc,
+                               s_STOctopusC__SetSprRange___Bad_di_007cba3c);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();

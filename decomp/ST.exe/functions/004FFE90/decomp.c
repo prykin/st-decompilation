@@ -19,8 +19,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
   CPanelTy *pCVar8;
   CPanelTy *pCVar9;
   bool bVar10;
-  undefined4 local_88;
-  undefined4 local_84 [16];
+  InternalExceptionFrame local_88;
   CPanelTy local_44;
   CPanelTy local_43;
   CPanelTy local_42;
@@ -42,20 +41,21 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
   byte local_8;
   undefined3 uStack_7;
   
-  local_88 = DAT_00858df8;
-  DAT_00858df8 = &local_88;
+  local_88.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_88;
   local_c = this;
-  iVar5 = __setjmp3(local_84,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_88;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_88.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2,0,iVar5,&DAT_007a4ccc
+                               ,s_CPanelTy__Update5Panel_007c24b8);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c23cc,0x1c2);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2);
     return;
   }
   pCVar7 = local_c + 0xc51;
@@ -92,7 +92,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     }
     SwitchTV(this_00,0);
     PaintInfoObj(this_00);
-    DAT_00858df8 = (undefined4 *)local_88;
+    g_currentExceptionFrame = local_88.previous;
     return;
   }
   if (this_00[0xc6e] != local_27) {
@@ -225,7 +225,7 @@ LAB_00500126:
       }
     }
   }
-  DAT_00858df8 = (undefined4 *)local_88;
+  g_currentExceptionFrame = local_88.previous;
   return;
 }
 

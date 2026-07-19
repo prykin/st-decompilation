@@ -48,8 +48,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   undefined4 uStack_c4;
   undefined4 uStack_c0;
   undefined4 uStack_bc;
-  undefined4 uStack_b8;
-  undefined4 auStack_b4 [16];
+  InternalExceptionFrame IStack_b8;
   undefined4 auStack_74 [4];
   undefined4 uStack_64;
   undefined4 uStack_60;
@@ -84,9 +83,9 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     *piVar16 = 0;
     piVar16 = piVar16 + 1;
   }
-  uStack_b8 = DAT_00858df8;
-  DAT_00858df8 = &uStack_b8;
-  puVar4 = (undefined4 *)__setjmp3(auStack_b4,0,unaff_EDI,unaff_ESI);
+  IStack_b8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_b8;
+  puVar4 = (undefined4 *)__setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pTStack_14;
   if (puVar4 == (undefined4 *)0x0) {
     uVar22 = 0x77;
@@ -215,18 +214,18 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     *(undefined4 *)(this_00 + 0x28) = 0x20;
     *(undefined4 *)(this_00 + 0x2c) = 1;
     FUN_006e6080(this_00,2,*(undefined4 *)pSVar2,(undefined4 *)pSVar1);
-    DAT_00858df8 = (undefined4 *)uStack_b8;
+    g_currentExceptionFrame = IStack_b8.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_b8;
-  iVar10 = FUN_006ad4d0(s_E____titans_Andrey_tradecen_cpp_007c8624,0x53,0,(int)puVar4,&DAT_007a4ccc)
-  ;
+  g_currentExceptionFrame = IStack_b8.previous;
+  iVar10 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x53,0,(int)puVar4,
+                              &DAT_007a4ccc,s_TradePanelTy__InitTradePanel_007c864c);
   if (iVar10 != 0) {
     pcVar3 = (code *)swi(3);
     (*pcVar3)();
     return;
   }
-  FUN_006a5e40((int)puVar4,0,0x7c8624,0x53);
+  RaiseInternalException((int)puVar4,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x53);
   return;
 }
 

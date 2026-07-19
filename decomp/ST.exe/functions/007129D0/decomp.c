@@ -21,8 +21,7 @@ uint * __thiscall ccFntTy::SepColorStrInSarr(ccFntTy *this,uint *param_1,uint *p
   void *unaff_EDI;
   char *pcVar12;
   ccFntTy *pcVar13;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   char local_24 [12];
   ccFntTy *local_18;
   char *local_14;
@@ -34,13 +33,14 @@ uint * __thiscall ccFntTy::SepColorStrInSarr(ccFntTy *this,uint *param_1,uint *p
   local_c = (uint *)0x0;
   local_8 = (ccFntTy *)0x0;
   local_10 = -1;
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar4 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_68;
-    iVar7 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x857,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_68.previous;
+    iVar7 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x857,0,iVar4,&DAT_007a4ccc,
+                               s_ccFntTy__SepColorStrInSarr_007f0304);
     if (iVar7 != 0) {
       pcVar3 = (code *)swi(3);
       puVar5 = (uint *)(*pcVar3)();
@@ -52,11 +52,11 @@ uint * __thiscall ccFntTy::SepColorStrInSarr(ccFntTy *this,uint *param_1,uint *p
     if ((local_c != (uint *)0x0) && (local_c != param_1)) {
       FUN_006b5570((byte *)local_c);
     }
-    FUN_006a5e40(iVar4,0,0x7f0190,0x85c);
+    RaiseInternalException(iVar4,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x85c);
     return (uint *)0x0;
   }
   if ((param_2 == (uint *)0x0) || (param_2[2] == 0)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x83b);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x83b);
   }
   puVar5 = param_1;
   if (param_1 == (uint *)0x0) {
@@ -202,7 +202,7 @@ LAB_00712a6e:
       uVar10 = uVar10 + 1;
     } while ((int)uVar10 < (int)uVar8);
   }
-  DAT_00858df8 = (undefined4 *)local_68;
+  g_currentExceptionFrame = local_68.previous;
   return local_c;
 }
 

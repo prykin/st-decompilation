@@ -15,25 +15,25 @@ STAllPlayersC::GetGObjFromZone2
   undefined4 unaff_ESI;
   int *piVar7;
   void *unaff_EDI;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   int iStack_10;
   undefined4 *puStack_c;
   int iStack_8;
   
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
-  iVar3 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
+  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x10e,0,iVar3,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x10e,0,iVar3,
+                                 &DAT_007a4ccc,s_STAllPlayersC__GetGObjFromZone2_007a6050);
       if (iVar5 != 0) {
         pcVar2 = (code *)swi(3);
         (*pcVar2)();
         return;
       }
-      FUN_006a5e40(iVar3,0,0x7a6004,0x10f);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x10f);
     }
     return;
   }
@@ -42,7 +42,7 @@ STAllPlayersC::GetGObjFromZone2
         ((param_11 == (int *)0x0 && ((param_12 == (int *)0x0 && (param_13 == (int *)0x0)))))) &&
        (param_14 == (int *)0x0)))) &&
      (((param_15 == (int *)0x0 && (param_16 == (int *)0x0)) && (param_17 == (int *)0x0)))) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0xb7);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xb7);
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
     puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
@@ -191,7 +191,7 @@ joined_r0x0042b01c:
     } while (iStack_10 < iStack_8);
     FUN_006a5e90(puStack_c);
   }
-  DAT_00858df8 = (undefined4 *)uStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return;
 }
 

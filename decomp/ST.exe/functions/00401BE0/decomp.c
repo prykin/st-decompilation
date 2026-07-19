@@ -98,8 +98,7 @@ uint * __thiscall thunk_FUN_00652810(void *this,int param_1)
   int iVar33;
   byte abStack_484 [256];
   byte abStack_384 [256];
-  uint **ppuStack_284;
-  undefined4 auStack_280 [16];
+  InternalExceptionFrame IStack_284;
   uint auStack_240 [2];
   undefined1 uStack_237;
   uint **ppuStack_236;
@@ -192,9 +191,9 @@ uint * __thiscall thunk_FUN_00652810(void *this,int param_1)
       }
     }
     iStack_19c = *(int *)(*(int *)((int)this + 0x4e2) + 8);
-    ppuStack_284 = DAT_00858df8;
-    DAT_00858df8 = (uint **)&ppuStack_284;
-    iVar8 = __setjmp3(auStack_280,0,unaff_EDI,unaff_ESI);
+    IStack_284.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_284;
+    iVar8 = __setjmp3(IStack_284.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pAStack_188;
     if (iVar8 == 0) {
       uStack_14 = 0;
@@ -3873,8 +3872,9 @@ LAB_00653778:
                             if (pAStack_164 == (AiFltClassTy *)0x9) {
                               iVar8 = (**(code **)(*(int *)this_00 + 0x18))();
                               if (iVar8 == 8) {
-                                thunk_FUN_00568dd0(&DAT_00807658,0xc,(char *)pppppppuStack_15c,0,
-                                                   (int *)0x0,0);
+                                SoundClassTy::PlaySound_thunk
+                                          ((SoundClassTy *)&g_sound,SOUND_MODE_12,
+                                           (char *)pppppppuStack_15c,0,(SoundPosition *)0x0,0);
                                 break;
                               }
                             }
@@ -3885,8 +3885,9 @@ LAB_00653778:
                               pppppppuVar25 = (uint *******)apppppppuStack_34;
                               do {
                                 if (*pppppppuVar25 == (uint ******)(uint)DAT_0080874d) {
-                                  thunk_FUN_00568dd0(&DAT_00807658,0xc,(char *)pppppppuStack_15c,0,
-                                                     (int *)0x0,0);
+                                  SoundClassTy::PlaySound_thunk
+                                            ((SoundClassTy *)&g_sound,SOUND_MODE_12,
+                                             (char *)pppppppuStack_15c,0,(SoundPosition *)0x0,0);
                                   break;
                                 }
                                 iVar33 = iVar33 + 1;
@@ -5417,10 +5418,10 @@ LAB_00659aae:
       if (puStack_194 == (uint *)0x456) {
         *(int *)(this_00 + 0xd6) = *(int *)(this_00 + 0xd6) + 1;
       }
-      DAT_00858df8 = ppuStack_284;
-      return (uint *)ppuStack_284;
+      g_currentExceptionFrame = IStack_284.previous;
+      return (uint *)IStack_284.previous;
     }
-    DAT_00858df8 = ppuStack_284;
+    g_currentExceptionFrame = IStack_284.previous;
     if (pbStack_180 != (byte *)0x0) {
       FUN_006ae110(pbStack_180);
     }

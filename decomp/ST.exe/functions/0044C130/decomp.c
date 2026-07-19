@@ -97,7 +97,8 @@ uint FUN_0044c130(int param_1,int param_2)
     uVar4 = FUN_00709470(DAT_00807598,local_54,0x11,1,10,0xff);
     return uVar4;
   default:
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x324e,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x324e,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__GetTOBJImage_unkn_007a8a8c);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();

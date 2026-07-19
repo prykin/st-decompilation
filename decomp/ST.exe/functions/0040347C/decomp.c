@@ -20,8 +20,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   byte *pbVar13;
   void *unaff_EDI;
   bool bVar14;
-  undefined4 *puStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   uint *puStack_18;
   FSGSTy *pFStack_14;
   uint uStack_10;
@@ -32,15 +31,16 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   if ((param_3 == (char *)0x0) || (param_2 == (byte *)0x0)) {
     return;
   }
-  puStack_5c = DAT_00858df8;
-  DAT_00858df8 = &puStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pFStack_14 = this;
-  iVar5 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = puStack_5c;
-    iVar12 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_5c.previous;
+    iVar12 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec,0,iVar5,
+                                &DAT_007a4ccc,s_FSGSTy__AddMessage_007cc474);
     if (iVar12 == 0) {
-      FUN_006a5e40(iVar5,0,0x7cbf70,0x9ec);
+      RaiseInternalException(iVar5,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -66,7 +66,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
     } while (cVar2 != '\0');
     puStack_c = FUN_006aac10(~uVar9 + 4);
     if (puStack_c == (uint *)0x0) {
-      DAT_00858df8 = puStack_5c;
+      g_currentExceptionFrame = IStack_5c.previous;
       return;
     }
     wsprintfA((LPSTR)puStack_c,s__s_1d_s_007c6fe4,&DAT_007c6ff0,param_1 & 0xff,param_3);
@@ -90,7 +90,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
     } while (cVar2 != '\0');
     puStack_c = FUN_006aac10(~uVar9 + ~uVar10 + 0xc);
     if (puStack_c == (uint *)0x0) {
-      DAT_00858df8 = puStack_5c;
+      g_currentExceptionFrame = IStack_5c.previous;
       return;
     }
     pbVar13 = &DAT_00807e1d;
@@ -192,7 +192,7 @@ LAB_005a2188:
     }
     FUN_006ab060(&puStack_c);
   }
-  DAT_00858df8 = puStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   return;
 }
 

@@ -34,7 +34,8 @@ FUN_00590010(int param_1,int param_2,int param_3,undefined4 param_4,undefined4 p
   local_c = param_5;
   if ((((param_1 < 0) || (param_2 < 0)) || (param_3 < 0)) ||
      (((DAT_007fb240 <= param_1 || (DAT_007fb242 <= param_2)) || (4 < param_3)))) {
-    iVar3 = FUN_006ad4d0(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x4bb,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_Igor_To_shark_cpp_007cbb7c,0x4bb,0,0,&DAT_007a4ccc,
+                               s_STSharkC__CreateShark___Bad_para_007cbbf4);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar2 = (*pcVar1)();

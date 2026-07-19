@@ -26,8 +26,7 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
   void *unaff_EDI;
   uint uVar11;
   ulonglong uVar12;
-  undefined4 local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_70;
   float local_2c;
   float local_28;
   float local_24;
@@ -40,18 +39,19 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
   int local_c;
   byte *local_8;
   
-  local_70 = DAT_00858df8;
-  DAT_00858df8 = &local_70;
-  iVar3 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+  local_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_70;
+  iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_70;
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,0x112,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_70.previous;
+    iVar6 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x112,0,iVar3,&DAT_007a4ccc,
+                               s_CreateReplColorTblHi_error__007f074c);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       puVar5 = (undefined4 *)(*pcVar1)();
       return puVar5;
     }
-    FUN_006a5e40(iVar3,0,0x7f0718,0x113);
+    RaiseInternalException(iVar3,0,s_E__Ourlib_Palette_cpp_007f0718,0x113);
     return (undefined4 *)0x0;
   }
   if (param_7 == (undefined4 *)0x0) {
@@ -110,7 +110,8 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
              (uVar2 << 5 | uVar9) << 5 | uVar8;
       }
       else {
-        iVar3 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,0x10a,0,0,&DAT_007a4ccc);
+        iVar3 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x10a,0,0,&DAT_007a4ccc,
+                                   s_Bad_color___007f0778);
         if (iVar3 != 0) {
           pcVar1 = (code *)swi(3);
           puVar5 = (undefined4 *)(*pcVar1)();
@@ -119,8 +120,8 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
       }
       iVar3 = thunk_FUN_006a5210();
       if ((iVar3 == 0) &&
-         (iVar3 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,0x10d,0,0,&DAT_007a4ccc), iVar3 != 0
-         )) {
+         (iVar3 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x10d,0,0,&DAT_007a4ccc,
+                                     s_Memory_error___007f0768), iVar3 != 0)) {
         pcVar1 = (code *)swi(3);
         puVar5 = (undefined4 *)(*pcVar1)();
         return puVar5;
@@ -129,7 +130,7 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
       local_c = local_c + -1;
     } while (local_c != 0);
   }
-  DAT_00858df8 = (undefined4 *)local_70;
+  g_currentExceptionFrame = local_70.previous;
   return param_7;
 }
 

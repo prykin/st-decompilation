@@ -16,8 +16,7 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
   byte *pbVar10;
   byte *pbVar11;
   byte abStack_160 [260];
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   void *pvStack_18;
   byte *pbStack_14;
   undefined4 uStack_10;
@@ -29,13 +28,13 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
     *(undefined1 *)((int)this + 0x1163) = 1;
     *(undefined4 *)((int)this + 0x7d0e) = 1;
   }
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pvStack_18 = this;
-  iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pvVar2 = pvStack_18;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_5c;
+    g_currentExceptionFrame = IStack_5c.previous;
     return 0;
   }
   pbStack_c = (byte *)((int)pvStack_18 + 0x76f6);
@@ -96,7 +95,7 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
     }
   }
   cMf32::delete(pcStack_8,(undefined4 *)pcStack_8);
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   return uStack_10;
 }
 

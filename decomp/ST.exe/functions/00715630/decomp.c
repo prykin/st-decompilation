@@ -10,10 +10,8 @@ FUN_00715630(int *param_1,int param_2,uint *param_3,int *param_4,undefined4 *par
   undefined4 unaff_ESI;
   byte *pbVar4;
   void *unaff_EDI;
-  undefined4 *local_a8;
-  undefined4 local_a4 [16];
-  undefined4 local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_a8;
+  InternalExceptionFrame local_64;
   uint local_20;
   uint local_1c;
   uint local_18;
@@ -28,11 +26,11 @@ FUN_00715630(int *param_1,int param_2,uint *param_3,int *param_4,undefined4 *par
   if (param_1 == (int *)0x0) {
     return 0;
   }
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = (undefined4 **)&local_64;
-  iVar1 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
+  iVar1 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
-    DAT_00858df8 = (undefined4 **)local_64;
+    g_currentExceptionFrame = local_64.previous;
     if (local_8 != (byte *)0x0) {
       FUN_006ab060(&local_8);
     }
@@ -40,22 +38,22 @@ FUN_00715630(int *param_1,int param_2,uint *param_3,int *param_4,undefined4 *par
       FUN_006ab060(&local_c);
     }
     if (iVar1 != -0x4d) {
-      FUN_006a5e40(iVar1,0,0x7f043c,0xbb);
+      RaiseInternalException(iVar1,0,s_E__ourlib_connect_cpp_007f043c,0xbb);
       return 0xffffffff;
     }
     return 0xffffffb3;
   }
-  local_a8 = DAT_00858df8;
-  DAT_00858df8 = &local_a8;
-  iVar1 = __setjmp3(local_a4,0,unaff_EDI,unaff_ESI);
+  local_a8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a8;
+  iVar1 = __setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     local_14 = FUN_006b7400(param_1,param_2,param_4,(int *)&local_8,(int *)&local_18,param_7,param_8
                            );
-    DAT_00858df8 = (undefined4 **)local_a8;
+    g_currentExceptionFrame = local_a8.previous;
   }
   else {
-    DAT_00858df8 = (undefined4 **)local_a8;
-    FUN_006a5e40(-0x4d,0,0x7f043c,0x97);
+    g_currentExceptionFrame = local_a8.previous;
+    RaiseInternalException(-0x4d,0,s_E__ourlib_connect_cpp_007f043c,0x97);
   }
   if (local_14 == 0) {
     local_c = FUN_007154e0(local_8,local_18,(byte *)&local_20,(int *)&local_10,&local_1c);
@@ -96,10 +94,10 @@ FUN_00715630(int *param_1,int param_2,uint *param_3,int *param_4,undefined4 *par
     if (local_8 != (byte *)0x0) {
       FUN_006ab060(&local_8);
     }
-    DAT_00858df8 = (undefined4 **)local_64;
+    g_currentExceptionFrame = local_64.previous;
     return 1;
   }
-  DAT_00858df8 = (undefined4 **)local_64;
+  g_currentExceptionFrame = local_64.previous;
   return 0;
 }
 

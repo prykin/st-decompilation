@@ -8,19 +8,19 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
 {
   code *pcVar1;
   MMObjTy *this_00;
+  int errorCode;
   int iVar2;
-  int iVar3;
   void *unaff_ESI;
-  undefined4 uVar4;
+  InternalExceptionFrame *pIVar3;
   undefined4 local_48 [16];
   MMObjTy *local_8;
   
-  uVar4 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar3 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = (MMObjTy *)this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
+  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar3);
   this_00 = local_8;
-  if (iVar2 == 0) {
+  if (errorCode == 0) {
     *(MMObjTy **)(DAT_0081176c + 0x2e6) = local_8;
     local_8[0x9a] = (MMObjTy)0x8;
     MMObjTy::InitSprBut(local_8,(undefined4 *)(local_8 + 0x9b),s_MM_MBUT12_007ccc10,0x194,0x213,0x24
@@ -42,17 +42,18 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
     MMObjTy::InitSprBut(this_00,(undefined4 *)(this_00 + 0x1caf),s_MM_TABLO_007ccbb0,0x30,0x203,0xb5
                         ,0x11,0,0,0,0,0x14,0,0,0,0,0,0x4b,0,0,0,0,0,-1,-1);
     HideSprites((MMsgTy *)this_00);
-    DAT_00858df8 = (undefined1 *)uVar4;
+    g_currentExceptionFrame = pIVar3;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar4;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x22,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  g_currentExceptionFrame = pIVar3;
+  iVar2 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x22,0,errorCode,
+                             &DAT_007a4ccc,s_MMsgTy__InitMMsg_007ccb9c);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7ccb74,0x22);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x22);
   return;
 }
 

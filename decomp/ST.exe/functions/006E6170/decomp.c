@@ -24,7 +24,7 @@ FUN_006e6170(void *this,int param_1,undefined4 *param_2,int *param_3,undefined4 
     local_10 = param_4;
     iVar2 = (**(code **)*puVar1)(local_24);
     if (iVar2 == 0xffff) {
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7ee78c,0x503);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E__Ourlib_Sapp_cpp_007ee78c,0x503);
     }
     return 0;
   }

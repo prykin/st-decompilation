@@ -106,7 +106,7 @@ LAB_006c4834:
   if (iVar2 == 0) {
     return 0;
   }
-  FUN_006a5e40(iVar2,DAT_007ed77c,0x7edef4,0xae);
+  RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DDX_C_ddcreats_c_007edef4,0xae);
   return iVar2;
 }
 

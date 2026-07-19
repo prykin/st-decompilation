@@ -20,8 +20,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   int iVar13;
   undefined4 uVar14;
   HINSTANCE pHVar15;
-  undefined4 uStack_74;
-  undefined4 auStack_70 [16];
+  InternalExceptionFrame IStack_74;
   undefined4 uStack_30;
   int iStack_2c;
   undefined4 uStack_28;
@@ -38,9 +37,9 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   pHStack_14 = this;
   pbStack_10 = (byte *)FUN_0070b3a0(*(int *)(this + 0x248),4);
   if (DAT_007fa174 != 0) {
-    uStack_74 = DAT_00858df8;
-    DAT_00858df8 = &uStack_74;
-    iVar4 = __setjmp3(auStack_70,0,unaff_EDI,unaff_ESI);
+    IStack_74.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_74;
+    iVar4 = __setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pHStack_14;
     if (iVar4 == 0) {
       if (param_3 == '\0') {
@@ -282,17 +281,18 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       UVar5 = thunk_FUN_00523410(param_1,bVar12,2);
       DrawDescription(this_00,&iStack_8,UVar5);
       AddLinks(this_00,&iStack_8,'\v',param_1,param_2);
-      DAT_00858df8 = (undefined4 *)uStack_74;
+      g_currentExceptionFrame = IStack_74.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_74;
-    iVar13 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x929,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_74.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x929,0,iVar4,
+                                &DAT_007a4ccc,s_HelpPanelTy__SpecProc_007c3d54);
     if (iVar13 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7c383c,0x929);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x929);
   }
   return;
 }

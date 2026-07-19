@@ -10,17 +10,16 @@ int thunk_FUN_004ca3c0(void)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   byte abStack_15c [256];
-  undefined4 *puStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   int iStack_18;
   int iStack_14;
   int iStack_10;
   undefined4 uStack_c;
   undefined4 *puStack_8;
   
-  puStack_5c = DAT_00858df8;
-  DAT_00858df8 = &puStack_5c;
-  iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
+  iVar3 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (*(int *)(iStack_18 + 0x5f3) != 0) {
       iVar3 = *(int *)(iStack_18 + 0x1f5);
@@ -47,7 +46,7 @@ int thunk_FUN_004ca3c0(void)
                 *(undefined4 *)(iStack_18 + 0x5c0));
       iVar3 = STT3DSprC::LoadSequence(pSVar1,0xd,DAT_0080678c,abStack_15c,0x1d);
       if (iVar3 != 0) {
-        FUN_006a5e40(iVar3,DAT_007ed77c,0x7ad4d0,0xd3);
+        RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xd3);
       }
       thunk_FUN_004abce0(pSVar1,0xd,iStack_10,iStack_14,'\0');
       thunk_FUN_004abe40(pSVar1,'\r',uStack_c);
@@ -88,7 +87,7 @@ int thunk_FUN_004ca3c0(void)
                 *(undefined4 *)(iStack_18 + 0x5c0));
       iVar3 = STT3DSprC::LoadSequence(pSVar1,8,DAT_0080678c,abStack_15c,0x1d);
       if (iVar3 != 0) {
-        FUN_006a5e40(iVar3,DAT_007ed77c,0x7ad4d0,0xea);
+        RaiseInternalException(iVar3,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xea);
       }
       thunk_FUN_004abce0(pSVar1,8,iStack_10,iStack_14,'\0');
       thunk_FUN_004abe40(pSVar1,'\b',uStack_c);
@@ -103,17 +102,18 @@ int thunk_FUN_004ca3c0(void)
       }
       FUN_006ab060(&puStack_8);
     }
-    DAT_00858df8 = puStack_5c;
+    g_currentExceptionFrame = IStack_5c.previous;
     return 0;
   }
-  DAT_00858df8 = puStack_5c;
-  iVar5 = FUN_006ad4d0(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf6,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_5c.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf6,0,iVar3,&DAT_007a4ccc,
+                             s_TLOBaseTy__ReloadLogoPlane_error_007ad4f8);
   if (iVar5 != 0) {
     pcVar2 = (code *)swi(3);
     iVar3 = (*pcVar2)();
     return iVar3;
   }
-  FUN_006a5e40(iVar3,0,0x7ad4d0,0xf7);
+  RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xf7);
   return iVar3;
 }
 

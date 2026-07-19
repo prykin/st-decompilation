@@ -20,17 +20,16 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
   byte bVar13;
   byte bVar14;
   size_t _Count;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   CPanelTy *pCStack_10;
   char *pcStack_c;
   uint *puStack_8;
   
   if ((DAT_0080c4f7 == 1) && (*(int *)(this + 0x24b) != 0)) {
-    uStack_54 = DAT_00858df8;
-    DAT_00858df8 = &uStack_54;
+    IStack_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_54;
     pCStack_10 = this;
-    iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar3 = pCStack_10;
     if (iVar4 == 0) {
       iVar4 = *(int *)(pCStack_10 + 0x24b);
@@ -45,12 +44,14 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             puVar12 = (undefined1 *)0x0;
           }
           if ((uint)(*(int *)(pCVar3 + 0x253) - *(int *)(pCVar3 + 599)) < *(uint *)(puVar12 + 1)) {
-            DAT_00858df8 = (undefined4 *)uStack_54;
+            g_currentExceptionFrame = IStack_54.previous;
             return;
           }
           switch(*puVar12) {
           case 1:
-            thunk_FUN_00568dd0(&DAT_00807658,0xc,puVar12 + 9,*(int *)(puVar12 + 5),(int *)0x0,0);
+            SoundClassTy::PlaySound_thunk
+                      ((SoundClassTy *)&g_sound,SOUND_MODE_12,puVar12 + 9,*(int *)(puVar12 + 5),
+                       (SoundPosition *)0x0,0);
             break;
           case 2:
             if (*(int **)(pCVar3 + 0x1d8) != (int *)0x0) {
@@ -201,17 +202,18 @@ LAB_004f9a8a:
           uVar11 = *(uint *)(iVar4 + 0xc);
         } while (iVar10 + 1U < uVar11);
       }
-      DAT_00858df8 = (undefined4 *)uStack_54;
+      g_currentExceptionFrame = IStack_54.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_54;
-    iVar10 = FUN_006ad4d0(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3b0,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_54.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3b0,0,iVar4,&DAT_007a4ccc
+                                ,s_CPanelTy__PlayBrief_007c2248);
     if (iVar10 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7c1bd8,0x3b0);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x3b0);
   }
   return;
 }

@@ -30,8 +30,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   undefined4 uVar19;
   undefined4 auStack_f8 [8];
   uint auStack_d8 [25];
-  undefined4 *puStack_74;
-  undefined4 auStack_70 [16];
+  InternalExceptionFrame IStack_74;
   int iStack_30;
   undefined4 uStack_2c;
   undefined4 uStack_28;
@@ -43,16 +42,17 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   int iStack_8;
   
   iStack_8 = 1;
-  puStack_74 = DAT_00858df8;
-  DAT_00858df8 = &puStack_74;
+  IStack_74.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_74;
   pCStack_18 = this;
-  iVar6 = __setjmp3(auStack_70,0,unaff_EDI,unaff_ESI);
+  iVar6 = __setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_18;
   if (iVar6 != 0) {
-    DAT_00858df8 = puStack_74;
-    iVar10 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fc,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_74.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fc,0,iVar6,
+                                &DAT_007a4ccc,s_CursorClassTy__GCGameState_007c7fc4);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar6,0,0x7c7d60,0x6fe);
+      RaiseInternalException(iVar6,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x6fe);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -225,7 +225,7 @@ LAB_0054b372:
   if ((param_1 != 0) && (iStack_8 != 0)) {
     DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
   }
-  DAT_00858df8 = puStack_74;
+  g_currentExceptionFrame = IStack_74.previous;
   return;
 }
 

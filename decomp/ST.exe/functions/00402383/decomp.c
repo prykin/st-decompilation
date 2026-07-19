@@ -11,8 +11,7 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   SettMapTy *pSVar6;
-  undefined4 *puStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   SettMapTy *pSStack_c;
   int iStack_8;
   
@@ -20,15 +19,16 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
   pSStack_c = this;
   DVar3 = timeGetTime();
   *(DWORD *)(this + 0x61) = DVar3;
-  puStack_50 = DAT_00858df8;
-  DAT_00858df8 = &puStack_50;
-  iVar4 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_c;
   if (iVar4 != 0) {
-    DAT_00858df8 = puStack_50;
-    iVar5 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243,0,iVar4,&DAT_007a4ccc
+                               ,s_SettMapTy__NoneSettMap_007cd1a8);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar4,0,0x7cd0e8,0x243);
+      RaiseInternalException(iVar4,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x243);
       return 0;
     }
     pcVar2 = (code *)swi(3);
@@ -180,13 +180,13 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
         thunk_FUN_005c8200();
       }
       PaintSettMap(this_00,'\0');
-      DAT_00858df8 = puStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return iStack_8;
     }
   }
   else {
     if (SVar1 != (SettMapTy)0x4) {
-      DAT_00858df8 = puStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return 0;
     }
     if ((pSStack_c[0x21e4] != (SettMapTy)0x0) && (0 < *(int *)(DAT_0081176c + 0x300))) {
@@ -269,12 +269,12 @@ int __thiscall SettMapTy::NoneSettMap(SettMapTy *this,int *param_1)
       if ((SVar1 != (SettMapTy)0xff) && (*(int *)(this_00 + (uint)(byte)SVar1 * 0x1fb + 0xd1) != 0))
       {
         FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)SVar1 * 0x1fb + 0xc1));
-        DAT_00858df8 = puStack_50;
+        g_currentExceptionFrame = IStack_50.previous;
         return iStack_8;
       }
     }
   }
-  DAT_00858df8 = puStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return iStack_8;
 }
 

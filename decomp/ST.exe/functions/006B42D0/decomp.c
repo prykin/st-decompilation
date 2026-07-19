@@ -113,7 +113,7 @@ int FUN_006b42d0(uint param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *
     }
     iVar1 = local_20;
     if (local_20 != 0) {
-      FUN_006a5e40(local_20,DAT_007ed77c,0x7edaf0,0x84);
+      RaiseInternalException(local_20,DAT_007ed77c,s_E__DKW_DDX_C_dddibpus_c_007edaf0,0x84);
       ExceptionList = local_14;
       return iVar1;
     }

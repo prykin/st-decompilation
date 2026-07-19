@@ -21,32 +21,32 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
   uint uVar13;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   uint local_18;
   uint local_14;
   uint local_10;
   uint local_c;
   AiTactClassTy *local_8;
   
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
   local_8 = this;
-  iVar7 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  iVar7 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar6 = local_8;
   if (iVar7 != 0) {
-    DAT_00858df8 = (undefined4 *)local_5c;
-    iVar12 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x276,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_5c.previous;
+    iVar12 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x276,0,iVar7,&DAT_007a4ccc,
+                                s_AiTactClassTy__GiveObjByFltType_007d57dc);
     if (iVar12 != 0) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    FUN_006a5e40(iVar7,0,0x7d56e0,0x277);
+    RaiseInternalException(iVar7,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x277);
     return;
   }
   if ((param_1 == 0) || (*(int *)(param_1 + 0xc) == 0)) {
-    DAT_00858df8 = (undefined4 *)local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     return;
   }
   local_c = thunk_FUN_0068e480(local_8,1);
@@ -60,7 +60,7 @@ joined_r0x0068f3e2:
       do {
         uVar3 = uVar3 - 1;
         if ((int)uVar3 < 0) {
-          DAT_00858df8 = (undefined4 *)local_5c;
+          g_currentExceptionFrame = local_5c.previous;
           return;
         }
         if (uVar3 < *(uint *)(param_1 + 0xc)) {

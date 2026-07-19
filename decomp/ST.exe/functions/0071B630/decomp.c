@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_0071b630(void *this,undefined4 *param_1,undefined4 *pa
   iVar1 = (**(code **)(**(int **)((int)this + 0x20) + 0x24))
                     (*(int **)((int)this + 0x20),0x10,&local_14);
   if (iVar1 != 0) {
-    FUN_006a5e40(iVar1,DAT_007ed77c,0x7f092c,0x77);
+    RaiseInternalException(iVar1,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x77);
   }
   if (param_3 != (int *)0x0) {
     *param_3 = local_14;

@@ -25,8 +25,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
   byte bVar14;
   int iVar15;
   undefined4 uVar16;
-  undefined4 *local_a0;
-  undefined4 local_9c [16];
+  InternalExceptionFrame local_a0;
   undefined4 local_5c;
   int local_58;
   undefined4 local_54;
@@ -53,10 +52,10 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
   local_8 = 0;
   local_9 = '\0';
   if (DAT_007fa174 != 0) {
-    local_a0 = DAT_00858df8;
-    DAT_00858df8 = &local_a0;
+    local_a0.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_a0;
     local_40 = this;
-    iVar5 = __setjmp3(local_9c,0,unaff_EDI,unaff_ESI);
+    iVar5 = __setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_40;
     if (iVar5 == 0) {
       if (param_3 == '\0') {
@@ -493,17 +492,18 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
       UVar6 = thunk_FUN_00523410(param_1,bVar14,2);
       DrawDescription(this_00,&local_8,UVar6);
       AddLinks(this_00,&local_8,'\x02',param_1,param_2);
-      DAT_00858df8 = local_a0;
+      g_currentExceptionFrame = local_a0.previous;
       return;
     }
-    DAT_00858df8 = local_a0;
-    iVar15 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x7ec,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_a0.previous;
+    iVar15 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x7ec,0,iVar5,
+                                &DAT_007a4ccc,s_HelpPanelTy__ObjProc_007c3ca0);
     if (iVar15 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c383c,0x7ec);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x7ec);
   }
   return;
 }

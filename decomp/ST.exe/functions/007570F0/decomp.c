@@ -11,7 +11,7 @@ void FUN_007570f0(int param_1)
     if ((*(int *)(param_1 + 0x4c) != 0) && (*(int *)(param_1 + 0x80) == 0)) {
       if ((*(int *)(param_1 + 0x54) == 0) || (*(int *)(param_1 + 100) == 0)) {
         if (*(int *)(param_1 + 0x5c) == 0) {
-          FUN_006a5e40(0x2d,DAT_007ed77c,0x7f2d68,0x1cd);
+          RaiseInternalException(0x2d,DAT_007ed77c,s_E__DKW_JPG_C_jdmaster_c_007f2d68,0x1cd);
         }
         else {
           *(undefined4 *)(param_1 + 0x1ba) = *(undefined4 *)(iVar1 + 0x14);

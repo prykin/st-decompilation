@@ -82,7 +82,7 @@ undefined4 * FUN_006c79a0(int *param_1,undefined4 *param_2,int param_3)
     if (param_2 == (undefined4 *)0x0) {
       FUN_006ab060(&param_1);
     }
-    FUN_006a5e40(uVar4,DAT_007ed77c,0x7ee030,0x7c);
+    RaiseInternalException(uVar4,DAT_007ed77c,s_E__DKW_GPC_C_pcxtodib_c_007ee030,0x7c);
     return (undefined4 *)0x0;
   }
   return param_1;

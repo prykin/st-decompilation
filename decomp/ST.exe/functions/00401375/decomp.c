@@ -9,8 +9,7 @@ uint __fastcall thunk_FUN_00567060(int param_1)
   undefined3 extraout_var;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   uint uStack_10;
   uint uStack_c;
   uint uStack_8;
@@ -28,13 +27,13 @@ uint __fastcall thunk_FUN_00567060(int param_1)
     uStack_c = 0;
     uStack_8 = uStack_8 & 0xffffff00;
     do {
-      uStack_54 = DAT_00858df8;
-      DAT_00858df8 = &uStack_54;
-      iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+      IStack_54.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_54;
+      iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
         FUN_006c1f00(uStack_8 & 0xff,&uStack_c,(uint *)0x0);
       }
-      DAT_00858df8 = (undefined4 *)uStack_54;
+      g_currentExceptionFrame = IStack_54.previous;
       if (uStack_c == 1) {
         uStack_10 = 1;
       }

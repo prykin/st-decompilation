@@ -12,17 +12,16 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar8;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   uint uStack_14;
   CPanelTy *pCStack_10;
   uint uStack_c;
   uint uStack_8;
   
-  uStack_58 = DAT_00858df8;
-  DAT_00858df8 = &uStack_58;
+  IStack_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_58;
   pCStack_10 = this;
-  iVar4 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_10;
   if (iVar4 == 0) {
     iVar4 = FUN_0070b3a0(*(int *)(pCStack_10 + 0x2b2),0);
@@ -64,17 +63,18 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
         uVar8 = (uint)(byte)uStack_8;
       } while ((int)uVar8 < (int)((byte)pCVar2[0xbb5] + uStack_14));
     }
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_58;
-  iVar6 = FUN_006ad4d0(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x32,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_58.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x32,0,iVar4,&DAT_007a4ccc,
+                             s_CPanelTy__PaintBCapacity_007c2568);
   if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7c2524,0x32);
+  RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x32);
   return;
 }
 

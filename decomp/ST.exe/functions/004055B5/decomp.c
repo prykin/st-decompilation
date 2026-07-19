@@ -65,8 +65,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   undefined4 uStack_a4;
   undefined4 uStack_94;
   undefined4 uStack_90;
-  undefined4 uStack_7c;
-  undefined4 auStack_78 [16];
+  InternalExceptionFrame IStack_7c;
   undefined4 uStack_38;
   undefined2 uStack_2e;
   undefined2 uStack_2c;
@@ -93,15 +92,16 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  uStack_7c = DAT_00858df8;
-  DAT_00858df8 = &uStack_7c;
-  iVar8 = __setjmp3(auStack_78,0,unaff_EDI,unaff_ESI);
+  IStack_7c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_7c;
+  iVar8 = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pSStack_1c;
   if (iVar8 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_7c;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x34d,0,iVar8,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_7c.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x34d,0,iVar8,&DAT_007a4ccc
+                               ,s_SettMapTy__CreateCtrls_007cd1e0);
     if (iVar9 == 0) {
-      FUN_006a5e40(iVar8,0,0x7cd0e8,0x34d);
+      RaiseInternalException(iVar8,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x34d);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -430,7 +430,7 @@ LAB_005c69ed:
     uStack_38._2_2_ = 1;
     MMsgTy::StatePanel(*(MMsgTy **)(iVar8 + 0x2e6),(int)&uStack_38);
   }
-  DAT_00858df8 = (undefined4 *)uStack_7c;
+  g_currentExceptionFrame = IStack_7c.previous;
   return;
 }
 
