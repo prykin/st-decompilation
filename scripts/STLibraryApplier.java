@@ -71,7 +71,7 @@ public class STLibraryApplier extends GhidraScript {
 
     private boolean safeToApply(Function function, String expected) {
         if (function.getName(true).equals(expected)) return true;
-        return function.getTags().stream().anyMatch(tag -> TAG.equals(tag.getName()));
+        return function.getSymbol().getSource() == SourceType.DEFAULT;
     }
 
     private Namespace getOrCreateNamespace(String qualified) throws Exception {

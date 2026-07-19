@@ -103,10 +103,14 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             String source = item.sources.size() == 1 ? item.sources.iterator().next() : "";
             long line = source.isEmpty() ? -1 : recoverLine(item.sourceRefs.get(source));
             boolean defaultName = item.function.getSymbol().getSource().toString().equals("DEFAULT");
-            String confidence = item.sources.size() == 1 && defaultName ? "high" :
+            boolean previouslyApplied = item.function.getName(true).equals(qualified) &&
+                item.function.getTags().stream()
+                    .anyMatch(tag -> "RECOVERED_DEBUG_NAME".equals(tag.getName()));
+            String confidence = item.sources.size() == 1 && (defaultName || previouslyApplied) ? "high" :
                 item.sources.size() <= 1 ? "medium" : "conflict";
             String reason = item.sources.size() > 1 ? "multiple_source_paths" :
-                source.isEmpty() ? "no_source_path" : "unique_method_and_source";
+                source.isEmpty() ? "no_source_path" : previouslyApplied ?
+                    "previously_applied_debug_symbol" : "unique_method_and_source";
             ThiscallEvidence thiscall = findThiscallEvidence(item.function);
             proposals.add(new Proposal(item.function, qualified, owner, method, source, line,
                 confidence, reason, thiscall.convention, thiscall.evidence));
@@ -146,8 +150,10 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             return -1;
         }
         Instruction instruction = listing.getInstructionAt(sourceReference);
+        // MSVC pushes arguments right-to-left.  In both ReportDebugMessage and
+        // RaiseInternalException calls the source line is pushed immediately before sourceFile.
         for (int i = 0; i < 3 && instruction != null; i++) {
-            instruction = listing.getInstructionAfter(instruction.getAddress());
+            instruction = listing.getInstructionBefore(instruction.getAddress());
             if (instruction == null) {
                 break;
             }

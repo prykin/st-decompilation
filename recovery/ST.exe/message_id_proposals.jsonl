@@ -1,0 +1,13 @@
+{"apply":true,"name":"MESS_HITKILL","value_hex":"0x128","value":296,"function_address":"0044EE30","function":"STBoatC::GetMessage","confidence":"high","reason":"existing_enum_value"}
+{"apply":true,"name":"MESS_ID_ALLCREATE","value_hex":"0x111","value":273,"function_address":"0044EE30","function":"STBoatC::GetMessage","confidence":"high","reason":"existing_enum_value"}
+{"apply":false,"name":"MESS_ID_CREATE","value_hex":"0x3","value":3,"function_address":"0044EE30","function":"STBoatC::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_CREATE","value_hex":"0x111","value":273,"function_address":"0044EE30","function":"STBoatC::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x5","value":5,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x6105","value":24837,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x6151","value":24913,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x63FF","value":25599,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x6949","value":26953,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x694A","value":26954,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_ID_MSGOK","value_hex":"0x698A","value":27018,"function_address":"005A4350","function":"FSGSTy::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_TORPHIT","value_hex":"0x3","value":3,"function_address":"0044EE30","function":"STBoatC::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}
+{"apply":false,"name":"MESS_TORPHIT","value_hex":"0x111","value":273,"function_address":"0044EE30","function":"STBoatC::GetMessage","confidence":"low","reason":"ambiguous_function_candidates"}

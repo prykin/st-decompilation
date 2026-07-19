@@ -20,8 +20,10 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileResults;
@@ -57,15 +59,12 @@ import ghidra.program.util.DefinedStringIterator;
 public class STDecompExport extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
     private static final int MAX_FILENAME_COMPONENT = 96;
-    private static final String FUNCTION_FINGERPRINT_VERSION = "4";
-
     private Path programRoot;
     private Path functionsRoot;
     private Listing listing;
     private ReferenceManager references;
     private SymbolTable symbols;
     private DecompInterface decompiler;
-    private String dataTypesFingerprint;
 
     @Override
     protected void run() throws Exception {
@@ -89,7 +88,6 @@ public class STDecompExport extends GhidraScript {
         listing = currentProgram.getListing();
         references = currentProgram.getReferenceManager();
         symbols = currentProgram.getSymbolTable();
-        dataTypesFingerprint = dataTypesFingerprint();
         programRoot = outputRoot.toPath().toAbsolutePath().normalize()
             .resolve(safeFileName(currentProgram.getName()));
         functionsRoot = programRoot.resolve("functions");
@@ -307,6 +305,7 @@ public class STDecompExport extends GhidraScript {
         int total = currentProgram.getFunctionManager().getFunctionCount();
         int number = 0;
         int reused = 0;
+        Set<String> liveFunctionIds = new TreeSet<>();
 
         while (iterator.hasNext()) {
             checkCancelled();
@@ -317,6 +316,7 @@ public class STDecompExport extends GhidraScript {
             monitor.setProgress(number);
 
             String id = addr(function.getEntryPoint());
+            liveFunctionIds.add(id);
             Path dir = functionsRoot.resolve(id);
             Files.createDirectories(dir);
 
@@ -329,18 +329,21 @@ public class STDecompExport extends GhidraScript {
                 Files.deleteIfExists(dir.resolve("listing.asm"));
             }
 
-            List<String> callers = functionSet(function.getCallingFunctions(monitor));
-            List<String> callees = functionSet(function.getCalledFunctions(monitor));
+            Set<Function> callingFunctions = function.getCallingFunctions(monitor);
+            Set<Function> calledFunctions = function.getCalledFunctions(monitor);
+            List<String> callers = functionSet(callingFunctions);
+            List<String> callees = functionSet(calledFunctions);
             List<String> stringsUsed = new ArrayList<>();
             List<String> globalsUsed = new ArrayList<>();
             collectReferencedData(function, stringsUsed, globalsUsed);
             List<String> comments = collectComments(function);
             String fingerprint = functionFingerprint(function, tags, callers, callees,
-                stringsUsed, globalsUsed, comments);
+                stringsUsed, globalsUsed, comments, calledFunctions);
             Path fingerprintPath = dir.resolve("fingerprint.sha256");
             Path metaPath = dir.resolve("meta.json");
-            boolean reusable = Files.exists(metaPath) && Files.exists(fingerprintPath) &&
-                fingerprint.equals(Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim()) &&
+            String storedFingerprint = Files.exists(fingerprintPath) ?
+                Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim() : "";
+            boolean reusable = Files.exists(metaPath) && fingerprint.equals(storedFingerprint) &&
                 (library || (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
 
             if (reusable) {
@@ -420,15 +423,15 @@ public class STDecompExport extends GhidraScript {
         writeJsonArray(programRoot.resolve("functions.json"), indexRows);
         writeJsonArray(programRoot.resolve("library_functions.json"), libraryRows);
         writeJsonArray(programRoot.resolve("callgraph.json"), graphRows);
+        pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
     }
 
     private String functionFingerprint(Function function, List<String> tags, List<String> callers,
             List<String> callees, List<String> stringsUsed, List<String> globalsUsed,
-            List<String> comments) throws Exception {
+            List<String> comments, Set<Function> calledFunctions) throws Exception {
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        updateDigest(digest, FUNCTION_FINGERPRINT_VERSION);
-        updateDigest(digest, dataTypesFingerprint);
+        updateDigest(digest, functionDataTypesFingerprint(function, calledFunctions));
         updateDigest(digest, function.getName(true));
         updateDigest(digest, function.getSignature().getPrototypeString(true));
         updateDigest(digest, nullToEmpty(function.getCallingConventionName()));
@@ -442,9 +445,18 @@ public class STDecompExport extends GhidraScript {
         updateDigest(digest, String.join("\n", tags));
         updateDigest(digest, String.join("\n", callers));
         updateDigest(digest, String.join("\n", callees));
+        List<String> calleeSignatures = new ArrayList<>();
+        for (Function callee : calledFunctions) {
+            calleeSignatures.add(functionId(callee) + "\u0000" +
+                callee.getSignature().getPrototypeString(true) + "\u0000" +
+                nullToEmpty(callee.getCallingConventionName()));
+        }
+        calleeSignatures.sort(Comparator.naturalOrder());
+        updateDigest(digest, String.join("\n", calleeSignatures));
         updateDigest(digest, String.join("\n", stringsUsed));
         updateDigest(digest, String.join("\n", globalsUsed));
         updateDigest(digest, String.join("\n", comments));
+        updateDigest(digest, functionSymbolsFingerprint(function));
         InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
             checkCancelled();
@@ -462,26 +474,93 @@ public class STDecompExport extends GhidraScript {
         return hex.toString();
     }
 
-    private static void updateDigest(MessageDigest digest, String value) {
-        digest.update(value.getBytes(StandardCharsets.UTF_8));
-        digest.update((byte)0);
+    private String functionSymbolsFingerprint(Function function) {
+        Set<String> related = new TreeSet<>();
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            Symbol local = symbols.getPrimarySymbol(instruction.getAddress());
+            if (local != null) related.add(addr(local.getAddress()) + " " + local.getName(true));
+            for (Reference reference : references.getReferencesFrom(instruction.getAddress())) {
+                Symbol target = symbols.getPrimarySymbol(reference.getToAddress());
+                if (target != null)
+                    related.add(addr(target.getAddress()) + " " + target.getName(true));
+            }
+        }
+        return String.join("\n", related);
     }
 
-    private String dataTypesFingerprint() throws Exception {
-        List<String> definitions = new ArrayList<>();
-        Iterator<DataType> iterator = currentProgram.getDataTypeManager().getAllDataTypes();
-        while (iterator.hasNext()) {
-            checkCancelled();
-            DataType type = iterator.next();
-            definitions.add(type.getPathName() + "\u0000" + type.getLength() + "\u0000" +
+    private void pruneStaleFunctionDirectories(Set<String> liveIds) throws IOException {
+        if (!Files.isDirectory(functionsRoot)) return;
+        try (Stream<Path> entries = Files.list(functionsRoot)) {
+            for (Path entry : entries.toList()) {
+                String name = entry.getFileName().toString();
+                if (!Files.isDirectory(entry) || !name.matches("[0-9A-Fa-f]{8,16}") ||
+                        liveIds.contains(name.toUpperCase(Locale.ROOT))) continue;
+                try (Stream<Path> tree = Files.walk(entry)) {
+                    for (Path path : tree.sorted(Comparator.reverseOrder()).toList())
+                        Files.deleteIfExists(path);
+                }
+            }
+        }
+    }
+
+    private String functionDataTypesFingerprint(Function function, Set<Function> calledFunctions)
+            throws Exception {
+        Map<String, DataType> related = new java.util.TreeMap<>();
+        collectRelatedDataType(function.getReturnType(), related);
+        for (Variable variable : function.getParameters())
+            collectRelatedDataType(variable.getDataType(), related);
+        for (Variable variable : function.getLocalVariables())
+            collectRelatedDataType(variable.getDataType(), related);
+        for (Function callee : calledFunctions) {
+            collectRelatedDataType(callee.getReturnType(), related);
+            for (Variable variable : callee.getParameters())
+                collectRelatedDataType(variable.getDataType(), related);
+        }
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            Instruction instruction = instructions.next();
+            for (Reference reference : references.getReferencesFrom(instruction.getAddress())) {
+                Data data = listing.getDefinedDataAt(reference.getToAddress());
+                if (data != null) collectRelatedDataType(data.getDataType(), related);
+            }
+        }
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        for (DataType type : related.values()) {
+            updateDigest(digest, type.getPathName() + "\u0000" + type.getLength() + "\u0000" +
                 nullToEmpty(type.getDescription()) + "\u0000" + dataTypeDetailJson(type));
         }
-        definitions.sort(Comparator.naturalOrder());
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
-        for (String definition : definitions) updateDigest(digest, definition);
         StringBuilder hex = new StringBuilder();
         for (byte value : digest.digest()) hex.append(String.format("%02x", value & 0xff));
         return hex.toString();
+    }
+
+    private void collectRelatedDataType(DataType type, Map<String, DataType> result) {
+        if (type == null || result.putIfAbsent(type.getPathName(), type) != null) return;
+        if (type instanceof ghidra.program.model.data.Pointer pointer) {
+            collectRelatedDataType(pointer.getDataType(), result);
+        }
+        else if (type instanceof ghidra.program.model.data.TypeDef typedef) {
+            collectRelatedDataType(typedef.getBaseDataType(), result);
+        }
+        else if (type instanceof ghidra.program.model.data.Array array) {
+            collectRelatedDataType(array.getDataType(), result);
+        }
+        else if (type instanceof ghidra.program.model.data.Composite composite) {
+            for (ghidra.program.model.data.DataTypeComponent component : composite.getComponents())
+                collectRelatedDataType(component.getDataType(), result);
+        }
+        else if (type instanceof ghidra.program.model.data.FunctionDefinition definition) {
+            collectRelatedDataType(definition.getReturnType(), result);
+            for (ghidra.program.model.data.ParameterDefinition argument : definition.getArguments())
+                collectRelatedDataType(argument.getDataType(), result);
+        }
+    }
+
+    private static void updateDigest(MessageDigest digest, String value) {
+        digest.update(value.getBytes(StandardCharsets.UTF_8));
+        digest.update((byte)0);
     }
 
     private void writeFunctionListing(Function function, Path path) throws IOException {

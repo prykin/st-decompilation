@@ -62,7 +62,6 @@ public class STDebugSymbolApplier extends GhidraScript {
                     String method = unt(columns[5]);
                     String callingConvention = unt(columns[6]);
                     String source = unt(columns[8]);
-                    String sourceLine = columns[9];
 
                     if (!safeToReplace(function, expectedOldName)) {
                         printerr("Skipping user-named/conflicting function at " + columns[1] +
@@ -70,11 +69,20 @@ public class STDebugSymbolApplier extends GhidraScript {
                         failed++;
                         continue;
                     }
+                    if (!callingConvention.isBlank() &&
+                            !callingConvention.equals(function.getCallingConventionName()) &&
+                            function.getSignatureSource() == SourceType.USER_DEFINED) {
+                        printerr("Skipping manually refined calling convention at " + columns[1] +
+                            ": " + function.getCallingConventionName() + " (proposal: " +
+                            callingConvention + ")");
+                        failed++;
+                        continue;
+                    }
                     Namespace namespace = getOrCreateOwner(owner);
                     function.setParentNamespace(namespace);
                     function.setName(method, SourceType.USER_DEFINED);
                     function.addTag(TAG);
-                    addRecoveryComment(function, qualified, source, sourceLine);
+                    addRecoveryComment(function, qualified, source);
                     if (!callingConvention.isBlank()) {
                         try {
                             function.setCallingConvention(callingConvention);
@@ -114,8 +122,7 @@ public class STDebugSymbolApplier extends GhidraScript {
     private boolean safeToReplace(Function function, String expectedOldName) {
         String current = function.getName(true);
         if (current.equals(expectedOldName)) return true;
-        if (function.getSymbol().getSource() == SourceType.DEFAULT) return true;
-        return function.getTags().stream().anyMatch(tag -> TAG.equals(tag.getName()));
+        return function.getSymbol().getSource() == SourceType.DEFAULT;
     }
 
     private Namespace getOrCreateOwner(String owner) throws Exception {
@@ -138,10 +145,11 @@ public class STDebugSymbolApplier extends GhidraScript {
         return parent;
     }
 
-    private void addRecoveryComment(Function function, String qualified, String source,
-            String sourceLine) {
-        String location = source.isBlank() ? "unknown source" : source +
-            (sourceLine.isBlank() ? "" : ":" + sourceLine);
+    private void addRecoveryComment(Function function, String qualified, String source) {
+        // source_line identifies the diagnostic statement that emitted the embedded
+        // metadata, not the definition of this function.  Keep it in the proposal for
+        // auditing, but do not present it as a source location in Ghidra.
+        String location = source.isBlank() ? "unknown source" : source;
         String block = "Recovered from embedded debug metadata:\n" + location + "\n" + qualified;
         String old = function.getComment();
         if (old == null || old.isBlank()) {
@@ -149,6 +157,23 @@ public class STDebugSymbolApplier extends GhidraScript {
         }
         else if (!old.contains("Recovered from embedded debug metadata:")) {
             function.setComment(old + "\n\n" + block);
+        }
+        else {
+            // Replace only the three-line block owned by this script.  Anything the
+            // analyst wrote before or after it is preserved byte-for-byte.
+            String marker = "Recovered from embedded debug metadata:";
+            int start = old.indexOf(marker);
+            int markerEnd = old.indexOf('\n', start);
+            int locationEnd = markerEnd < 0 ? -1 : old.indexOf('\n', markerEnd + 1);
+            int blockEnd = locationEnd < 0 ? -1 : old.indexOf('\n', locationEnd + 1);
+            if (markerEnd >= 0 && locationEnd >= 0) {
+                if (blockEnd < 0) blockEnd = old.length();
+                function.setComment(old.substring(0, start) + block + old.substring(blockEnd));
+            }
+            else {
+                printerr("Malformed recovered-comment block at " + function.getEntryPoint() +
+                    "; preserving it without changes");
+            }
         }
     }
 
