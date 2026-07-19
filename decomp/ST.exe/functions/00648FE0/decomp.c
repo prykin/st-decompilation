@@ -32,7 +32,7 @@ void FUN_00648fe0(void)
   local_10 = (char *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar12 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x10a,0,iVar3,&DAT_007a4ccc,

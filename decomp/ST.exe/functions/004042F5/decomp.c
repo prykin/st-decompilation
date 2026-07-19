@@ -3,7 +3,7 @@ int __thiscall thunk_FUN_004658d0(void *this,int param_1)
 
 {
   int iVar1;
-  void *pvVar2;
+  STGroupBoatC *pSVar2;
   uint uVar3;
   undefined4 extraout_ECX;
   undefined2 extraout_var;
@@ -33,14 +33,15 @@ int __thiscall thunk_FUN_004658d0(void *this,int param_1)
     case 0:
       return -1;
     case 1:
-      pvVar2 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar1 >> 8),
-                                                   *(undefined1 *)((int)this + 0x24)),
-                                          CONCAT22(extraout_var_00,*(undefined2 *)((int)this + 0x30)
-                                                  ));
-      uVar3 = thunk_FUN_004a7af0(pvVar2,0,CONCAT22(extraout_var_01,*(undefined2 *)((int)this + 0x32)
-                                                  ),*(uint *)((int)this + 0x48f));
+      pSVar2 = (STGroupBoatC *)
+               thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar1 >> 8),
+                                           *(undefined1 *)((int)this + 0x24)),
+                                  CONCAT22(extraout_var_00,*(undefined2 *)((int)this + 0x30)));
+      uVar3 = STGroupBoatC::GetPatrolTask
+                        (pSVar2,0,CONCAT22(extraout_var_01,*(undefined2 *)((int)this + 0x32)),
+                         *(uint *)((int)this + 0x48f));
       if (uVar3 == 0) {
-        iVar1 = thunk_FUN_004608b0(this,0);
+        iVar1 = STBoatC::Defence(this,0);
         if (iVar1 == -1) {
           return -1;
         }
@@ -57,19 +58,21 @@ int __thiscall thunk_FUN_004658d0(void *this,int param_1)
 LAB_0046597c:
       *(undefined4 *)((int)this + 0x497) = 1;
       *(undefined4 *)((int)this + 0x493) = 0;
-      iVar1 = thunk_FUN_004608b0(this,0);
+      iVar1 = STBoatC::Defence(this,0);
       return (-(uint)(iVar1 != -1) & 3) - 1;
     default:
       goto switchD_0046590f_caseD_2;
     case 3:
       break;
     case 4:
-      pvVar2 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                   *(undefined1 *)((int)this + 0x24)),
-                                          CONCAT22((short)((uint)iVar1 >> 0x10),
-                                                   *(undefined2 *)((int)this + 0x30)));
-      uVar3 = thunk_FUN_004a7af0(pvVar2,1,CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x32)),
-                                 *(uint *)((int)this + 0x48f));
+      pSVar2 = (STGroupBoatC *)
+               thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
+                                           *(undefined1 *)((int)this + 0x24)),
+                                  CONCAT22((short)((uint)iVar1 >> 0x10),
+                                           *(undefined2 *)((int)this + 0x30)));
+      uVar3 = STGroupBoatC::GetPatrolTask
+                        (pSVar2,1,CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x32)),
+                         *(uint *)((int)this + 0x48f));
       if (uVar3 != 0) goto LAB_0046597c;
       thunk_FUN_00481520(this,*(undefined4 *)((int)this + 199),*(undefined4 *)((int)this + 0xcb),
                          *(undefined4 *)((int)this + 0xcf));
@@ -79,7 +82,7 @@ LAB_0046597c:
   else {
 switchD_0046590f_caseD_2:
     if (*(int *)((int)this + 0x497) == 1) {
-      iVar1 = thunk_FUN_004608b0(this,2);
+      iVar1 = STBoatC::Defence(this,2);
       if (iVar1 == -1) {
         return -1;
       }

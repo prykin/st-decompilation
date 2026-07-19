@@ -30,7 +30,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_20 = (STAllPlayersC *)this;
-  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar7 = local_20;
   if (iVar2 == 0) {
     *param_1 = 0x80;
@@ -42,7 +42,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     local_1c = STAllPlayersC::SaveGObjData(pSVar7,(int *)&local_10);
     iVar2 = *param_1;
     *param_1 = iVar2 + local_10;
-    puVar3 = (undefined4 *)FUN_006aac70(iVar2 + local_10);
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar2 + local_10);
     *puVar3 = *(undefined4 *)(pSVar7 + 0x20);
     puVar3[1] = *(undefined4 *)(pSVar7 + 0x24);
     puVar3[2] = *(undefined4 *)(pSVar7 + 0x28);

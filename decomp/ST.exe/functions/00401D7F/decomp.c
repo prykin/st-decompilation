@@ -78,7 +78,7 @@ LAB_006737e7:
           if (iVar3 == 0) break;
         }
         if (piStack_8 != (int *)0x0) goto LAB_0067383b;
-        piVar5 = (int *)FUN_006aac70(0xc);
+        piVar5 = (int *)Library::DKW::LIB::FUN_006aac70(0xc);
         if (piVar5 != (int *)0x0) {
           piStack_8 = piVar5;
           pcVar6 = FUN_006c49b0((char *)pbStack_c);
@@ -240,7 +240,7 @@ LAB_006739cd:
     if (DAT_007d2d18 == 0x3c) {
       IStack_54.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &IStack_54;
-      iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar3 != 0) {
         g_currentExceptionFrame = IStack_54.previous;
         return iVar3;

@@ -1,4 +1,4 @@
-FUN_0042dfe0:
+STAllPlayersC::PrepareToCmd:
 0042DFE0  55                        PUSH EBP
 0042DFE1  8B EC                     MOV EBP,ESP
 0042DFE3  83 EC 10                  SUB ESP,0x10

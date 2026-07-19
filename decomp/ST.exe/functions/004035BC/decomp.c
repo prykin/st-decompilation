@@ -1,5 +1,5 @@
 
-void __thiscall thunk_FUN_0043beb0(void *this,undefined4 param_1,int *param_2)
+void __thiscall STAllPlayersC::GetPanelInfo(STAllPlayersC *this,undefined4 param_1,int *param_2)
 
 {
   code *pcVar1;
@@ -35,14 +35,14 @@ void __thiscall thunk_FUN_0043beb0(void *this,undefined4 param_1,int *param_2)
   int iStack_1c;
   undefined2 *puStack_18;
   uint uStack_14;
-  void *pvStack_10;
+  STAllPlayersC *pSStack_10;
   uint uStack_c;
   undefined2 uStack_8;
   undefined2 uStack_6;
   
   piVar8 = param_2;
   uStack_20 = 0;
-  pvStack_10 = this;
+  pSStack_10 = this;
   if ((char)param_1 == '\x01') {
     uVar11 = (uint)DAT_0080874d;
     iVar3 = *(int *)((int)&DAT_007f4f83 + uVar11 * 0xa62);
@@ -94,16 +94,17 @@ void __thiscall thunk_FUN_0043beb0(void *this,undefined4 param_1,int *param_2)
         uVar11 = uStack_24;
         FUN_006acc70(iStack_1c,uStack_24,&uStack_c);
         if ((short)uStack_c != -1) {
-          piVar4 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                      *(undefined1 *)((int)&DAT_007f4f87 + iVar2)),
-                                             uStack_c,1);
+          piVar4 = (int *)GetObjPtr(pSStack_10,
+                                    CONCAT31((int3)((uint)extraout_ECX >> 8),
+                                             *(undefined1 *)((int)&DAT_007f4f87 + iVar2)),uStack_c,1
+                                   );
           thunk_FUN_004162b0(piVar4,&uStack_6,&uStack_8,(undefined2 *)((int)&param_1 + 2));
           *(undefined1 *)((int)piVar8 + (0x2e - param_1._2_2_)) = 1;
           (**(code **)(*piVar4 + 0x30))(auStack_6c);
           uStack_34 = uStack_64;
           uStack_30 = uStack_69;
           uStack_2c = uStack_51;
-          FUN_006ae1c0(*(uint **)((int)piVar8 + 0x32),&uStack_34);
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)piVar8 + 0x32),&uStack_34);
           uVar11 = uStack_24;
         }
         uStack_24 = uVar11 + 1;
@@ -178,8 +179,8 @@ void __thiscall thunk_FUN_0043beb0(void *this,undefined4 param_1,int *param_2)
         do {
           FUN_006acc70(iStack_1c,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            uVar5 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_00 >> 8),DAT_0080874d),
-                                       uStack_c,1);
+            uVar5 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX_00 >> 8),DAT_0080874d),
+                              uStack_c,1);
             iVar2 = thunk_FUN_00493cd0(uVar5);
             if (iVar2 == 0) break;
           }
@@ -204,8 +205,8 @@ LAB_0043c293:
           do {
             FUN_006acc70(iStack_1c,uVar11,&uStack_c);
             if ((short)uStack_c != -1) {
-              uVar5 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_01 >> 8),DAT_0080874d),
-                                         uStack_c,1);
+              uVar5 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX_01 >> 8),DAT_0080874d),
+                                uStack_c,1);
               iVar2 = thunk_FUN_0042b760(CONCAT31((int3)(uVar5 >> 8),DAT_0080874d),
                                          CONCAT22(extraout_var,*(undefined2 *)(uVar5 + 0x30)));
               if ((iVar2 != 0) &&
@@ -243,7 +244,7 @@ LAB_0043c293:
         do {
           FUN_006acc70(iStack_1c,uVar5,&uStack_c);
           if ((short)uStack_c != -1) {
-            uVar7 = thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
+            uVar7 = GetObjPtr(pSStack_10,CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
             *(undefined1 *)(*(int *)(uVar7 + 0x7ee) + 0x36 + (int)piVar8) = 3;
           }
           uVar5 = uVar5 + 1;
@@ -305,7 +306,7 @@ LAB_0043c293:
           FUN_006acc70(iStack_1c,uStack_24,&uStack_c);
           if ((short)uStack_c != -1) {
             iStack_28 = iStack_28 + 1;
-            uVar7 = thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
+            uVar7 = GetObjPtr(pSStack_10,CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
             if (iStack_28 == 1) {
               uVar5 = (uint)*(ushort *)(uVar7 + 0x30);
             }
@@ -769,7 +770,7 @@ LAB_0043ca5a:
 LAB_0043ca31:
       uVar12 = 1;
 LAB_0043ca35:
-      piVar8 = (int *)thunk_FUN_0042b620(uVar11,uStack_c,uVar12);
+      piVar8 = (int *)GetObjPtr(pSStack_10,uVar11,uStack_c,uVar12);
       (**(code **)(*piVar8 + 0x34))(param_2);
       return;
     }
@@ -805,10 +806,10 @@ LAB_0043ca35:
         do {
           FUN_006acc70(iVar2,uVar5,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                        *(undefined1 *)
-                                                         ((int)&DAT_007f4fd7 + uVar11 * 0xa62)),
-                                               uStack_c,1);
+            piVar8 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)(uStack_c >> 8),
+                                               *(undefined1 *)((int)&DAT_007f4fd7 + uVar11 * 0xa62))
+                                      ,uStack_c,1);
             (**(code **)(*piVar8 + 0x38))(param_2);
             return;
           }
@@ -848,10 +849,10 @@ LAB_0043ca35:
         do {
           FUN_006acc70(iVar2,uVar5,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                        *(undefined1 *)
-                                                         ((int)&DAT_007f4fd7 + uVar11 * 0xa62)),
-                                               uStack_c,1);
+            piVar8 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)(uStack_c >> 8),
+                                               *(undefined1 *)((int)&DAT_007f4fd7 + uVar11 * 0xa62))
+                                      ,uStack_c,1);
             (**(code **)(*piVar8 + 0x3c))(param_2);
             return;
           }
@@ -892,9 +893,10 @@ LAB_0043ca35:
         do {
           FUN_006acc70(iStack_1c,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar4 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                        *(undefined1 *)((int)&DAT_007f4f87 + iVar2))
-                                               ,uStack_c,1);
+            piVar4 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)(uStack_c >> 8),
+                                               *(undefined1 *)((int)&DAT_007f4f87 + iVar2)),uStack_c
+                                      ,1);
             (**(code **)(*piVar4 + 0x40))(piVar8);
             return;
           }
@@ -930,10 +932,10 @@ LAB_0043ca35:
         do {
           FUN_006acc70(iVar2,uVar5,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                        *(undefined1 *)
-                                                         ((int)&DAT_007f4fd7 + uVar11 * 0xa62)),
-                                               uStack_c,1);
+            piVar8 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)(uStack_c >> 8),
+                                               *(undefined1 *)((int)&DAT_007f4fd7 + uVar11 * 0xa62))
+                                      ,uStack_c,1);
             (**(code **)(*piVar8 + 0x44))(param_2);
             return;
           }
@@ -959,8 +961,9 @@ LAB_0043ca35:
         do {
           FUN_006acc70(iVar2,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                        *(undefined1 *)(iStack_28 + 4)),uStack_c,1);
+            piVar8 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)(uStack_c >> 8),*(undefined1 *)(iStack_28 + 4))
+                                      ,uStack_c,1);
             (**(code **)(*piVar8 + 0x48))(param_2);
             return;
           }
@@ -1000,10 +1003,11 @@ LAB_0043ca35:
           do {
             FUN_006acc70(iVar2,uVar5,&uStack_c);
             if ((short)uStack_c != -1) {
-              piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                          *(undefined1 *)
-                                                           ((int)&DAT_007f4fd7 + uVar11 * 0xa62)),
-                                                 uStack_c,1);
+              piVar8 = (int *)GetObjPtr(pSStack_10,
+                                        CONCAT31((int3)(uStack_c >> 8),
+                                                 *(undefined1 *)
+                                                  ((int)&DAT_007f4fd7 + uVar11 * 0xa62)),uStack_c,1)
+              ;
               (**(code **)(*piVar8 + 0x50))(param_2);
               return;
             }
@@ -1062,7 +1066,7 @@ LAB_0043d41d:
               uVar5 = 0xffffffff;
               uVar11 = CONCAT22((short)((uint)piVar4 >> 0x10),*(undefined2 *)((int)piVar4 + -2));
 LAB_0043d447:
-              piVar4 = (int *)thunk_FUN_0042b620(uVar5,uVar11,uVar12);
+              piVar4 = (int *)GetObjPtr(pSStack_10,uVar5,uVar11,uVar12);
               (**(code **)(*piVar4 + 0x58))(piVar8);
             }
             piVar4 = param_2 + 4;
@@ -1138,7 +1142,7 @@ LAB_0043d5b1:
               uVar5 = 0xffffffff;
               uVar11 = CONCAT22((short)((uint)iVar2 >> 0x10),*puVar6);
 LAB_0043d5b7:
-              piVar4 = (int *)thunk_FUN_0042b620(uVar5,uVar11,uVar12);
+              piVar4 = (int *)GetObjPtr(pSStack_10,uVar5,uVar11,uVar12);
               (**(code **)(*piVar4 + 0x5c))(piVar8);
             }
 LAB_0043d5c4:
@@ -1179,8 +1183,9 @@ LAB_0043d5c4:
                 FUN_006acc70(iVar2,uVar11,&uStack_c);
                 if ((short)uStack_c != -1) {
                   iVar3 = iVar3 + 1;
-                  uVar5 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_04 >> 8),
-                                                      DAT_0080874d),uStack_c,1);
+                  uVar5 = GetObjPtr(pSStack_10,
+                                    CONCAT31((int3)((uint)extraout_ECX_04 >> 8),DAT_0080874d),
+                                    uStack_c,1);
                   if (iVar3 == 1) {
                     uStack_20 = (uint)*(ushort *)(uVar5 + 0x30);
                   }
@@ -1235,10 +1240,9 @@ LAB_0043d5c4:
             return;
           }
           if (iVar2 == 0x1ae) {
-            piVar8 = (int *)thunk_FUN_0042b620(0xffffffff,
-                                               CONCAT22((short)((int)&DAT_007f4f83 + uVar11 * 0xa62
-                                                               >> 0x10),
-                                                        (&DAT_007f4f8b)[uVar11 * 0x531]),3);
+            piVar8 = (int *)GetObjPtr(this,0xffffffff,
+                                      CONCAT22((short)((int)&DAT_007f4f83 + uVar11 * 0xa62 >> 0x10),
+                                               (&DAT_007f4f8b)[uVar11 * 0x531]),3);
             (**(code **)(*piVar8 + 100))(param_2);
             return;
           }
@@ -1279,10 +1283,11 @@ LAB_0043d5c4:
           do {
             FUN_006acc70(iVar2,uVar5,&uStack_c);
             if ((short)uStack_c != -1) {
-              piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),
-                                                          *(undefined1 *)
-                                                           ((int)&DAT_007f4f87 + uVar11 * 0xa62)),
-                                                 uStack_c,1);
+              piVar8 = (int *)GetObjPtr(pSStack_10,
+                                        CONCAT31((int3)(uStack_c >> 8),
+                                                 *(undefined1 *)
+                                                  ((int)&DAT_007f4f87 + uVar11 * 0xa62)),uStack_c,1)
+              ;
               (**(code **)(*piVar8 + 0x60))(param_2);
               break;
             }
@@ -1323,9 +1328,10 @@ LAB_0043d5c4:
         do {
           FUN_006acc70(iVar3,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar8 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_02 >> 8),
-                                                        *(undefined1 *)((int)&DAT_007f4f87 + iVar2))
-                                               ,uStack_c,1);
+            piVar8 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)((uint)extraout_ECX_02 >> 8),
+                                               *(undefined1 *)((int)&DAT_007f4f87 + iVar2)),uStack_c
+                                      ,1);
             (**(code **)(*piVar8 + 0x4c))(param_2);
             return;
           }
@@ -1360,7 +1366,7 @@ LAB_0043d5c4:
         do {
           FUN_006acc70(iVar2,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            uVar5 = thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
+            uVar5 = GetObjPtr(pSStack_10,CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
             if (*(int *)(uVar5 + 0x7e6) == 0) {
               *(undefined1 *)((int)piVar8 + 0x11) = 3;
             }
@@ -1379,8 +1385,9 @@ LAB_0043d5c4:
         do {
           FUN_006acc70(iVar2,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            piVar4 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),DAT_0080874d
-                                                       ),uStack_c,1);
+            piVar4 = (int *)GetObjPtr(pSStack_10,
+                                      CONCAT31((int3)((uint)extraout_EDX >> 8),DAT_0080874d),
+                                      uStack_c,1);
             uVar12 = (**(code **)(*piVar4 + 0x2c))();
             switch(uVar12) {
             case 7:
@@ -1416,7 +1423,7 @@ switchD_0043d1bf_caseD_a:
           FUN_006acc70(iStack_1c,uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
             iVar2 = iVar2 + 1;
-            uVar5 = thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
+            uVar5 = GetObjPtr(pSStack_10,CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1);
             if (iVar2 == 1) {
               uStack_20 = (uint)*(ushort *)(uVar5 + 0x30);
             }
@@ -1514,7 +1521,7 @@ LAB_0043cb81:
   }
   uVar12 = 1;
 LAB_0043cb5c:
-  piVar8 = (int *)thunk_FUN_0042b620(uVar11,uStack_c,uVar12);
+  piVar8 = (int *)GetObjPtr(pSStack_10,uVar11,uStack_c,uVar12);
   (**(code **)(*piVar8 + 0x30))(param_2);
   return;
 switchD_0043c594_caseD_1:

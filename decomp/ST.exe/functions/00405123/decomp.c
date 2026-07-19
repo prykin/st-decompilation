@@ -66,7 +66,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   IStack_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_c4;
   pCStack_80 = this;
-  iVar4 = __setjmp3(IStack_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_80;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_c4.previous;
@@ -93,7 +93,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
     *(int *)pCVar11 = 0;
     pCVar11 = pCVar11 + 4;
   }
-  thunk_FUN_0043beb0(DAT_007fa174,4,(int *)pCVar12);
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,4,(int *)pCVar12);
   CVar3 = this_00[0xbfa];
   if ((CStack_77 != CVar3) || (CStack_76 != this_00[0xbfb])) {
 LAB_005091b9:
@@ -202,20 +202,24 @@ LAB_005091b9:
           iVar10 = 0;
         }
         uVar5 = (uint)pCStack_10 & 0xff;
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x37,0x7e - uVar5,
-                     *(int *)(this_00 + 0x28a),0,iVar10,
-                     *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x5c,*(int *)(this_00 + 0x9ed)
-                     ,0,0x3f,0xc,0x75,0x11);
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x6c,*(int *)(this_00 + 0x9ed)
-                     ,0,0x3f,0x1c,0x44,0x13);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x37,0x7e - uVar5,
+                   *(int *)(this_00 + 0x28a),0,iVar10,
+                   *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x5c,*(int *)(this_00 + 0x9ed),0
+                   ,0x3f,0xc,0x75,0x11);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x6c,*(int *)(this_00 + 0x9ed),0
+                   ,0x3f,0x1c,0x44,0x13);
         PaintDamageXY(this_00,*(int *)(this_00 + 0x194),iVar4 + 0x41,0x5d,
                       CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[0xc24]),0x2714);
         PaintCostsXY(this_00,*(int *)(this_00 + 0x194),iVar4 + 0x41,0x68,
                      *(ushort *)(this_00 + 0xc1c),*(ushort *)(this_00 + 0xc20),4,2);
         if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
-                       *(uint *)(this_00 + 0xa8));
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+                     *(uint *)(this_00 + 0xa8));
         }
       }
     }
@@ -367,20 +371,24 @@ LAB_005091b9:
           iVar10 = 0;
         }
         uVar5 = uStack_c & 0xff;
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x37,0x7e - uVar5,
-                     *(int *)(this_00 + 0x28a),0,iVar10,
-                     *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x5c,*(int *)(this_00 + 0x9ed)
-                     ,0,0x3f,0xc,0x75,0x11);
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x6c,*(int *)(this_00 + 0x9ed)
-                     ,0,0x3f,0x1c,0x44,0x13);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x37,0x7e - uVar5,
+                   *(int *)(this_00 + 0x28a),0,iVar10,
+                   *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x5c,*(int *)(this_00 + 0x9ed),0
+                   ,0x3f,0xc,0x75,0x11);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x3f,0x6c,*(int *)(this_00 + 0x9ed),0
+                   ,0x3f,0x1c,0x44,0x13);
         PaintDamageXY(this_00,*(int *)(this_00 + 0x194),iVar4 + 0x41,0x5d,
                       CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00[0xc24]),0x2714);
         PaintCostsXY(this_00,*(int *)(this_00 + 0x194),iVar4 + 0x41,0x68,
                      *(ushort *)(this_00 + 0xc1c),*(ushort *)(this_00 + 0xc20),4,2);
         if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
-                       *(uint *)(this_00 + 0xa8));
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+                     *(uint *)(this_00 + 0xa8));
         }
       }
       if ((*(int *)(this_00 + 0xbf5) != 0x44) || (*(ushort *)(this_00 + 0xc34) == uStack_3d))
@@ -429,20 +437,24 @@ LAB_005091b9:
             uStack_14 = 0;
           }
           uVar5 = uStack_20 & 0xff;
-          FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x37,(iVar4 - uVar5) + 0x21,
-                       *(int *)(this_00 + 0x28a),0,uStack_14,
-                       *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
-          FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x3f,iVar4 + -1,
-                       *(int *)(this_00 + 0x9ed),0,0x3f,0xc,0x75,0x11);
-          FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x3f,iVar4 + 0xf,
-                       *(int *)(this_00 + 0x9ed),0,0x3f,0x1c,0x44,0x13);
+          Library::DKW::WGR::FUN_006b55f0
+                    (*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x37,(iVar4 - uVar5) + 0x21,
+                     *(int *)(this_00 + 0x28a),0,uStack_14,
+                     *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
+          Library::DKW::WGR::FUN_006b55f0
+                    (*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x3f,iVar4 + -1,
+                     *(int *)(this_00 + 0x9ed),0,0x3f,0xc,0x75,0x11);
+          Library::DKW::WGR::FUN_006b55f0
+                    (*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x3f,iVar4 + 0xf,
+                     *(int *)(this_00 + 0x9ed),0,0x3f,0x1c,0x44,0x13);
           PaintDamageXY(this_00,*(int *)(this_00 + 0x194),iVar10 + 0x41,iVar4,
                         CONCAT31((int3)((uint)extraout_ECX >> 8),'d' - (char)*pCStack_8),0x36b1);
           PaintCostsXY(this_00,*(int *)(this_00 + 0x194),iVar10 + 0x41,iVar4 + 0xb,
                        *(ushort *)pCStack_18,*(ushort *)(pCStack_18 + 4),4,2);
           if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-            FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,
-                         *(uint *)(this_00 + 0x50),*(uint *)(this_00 + 0xa8));
+            Library::DKW::DDX::FUN_006b3640
+                      (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+                       *(uint *)(this_00 + 0xa8));
           }
         }
         pCStack_18 = pCStack_18 + 2;
@@ -511,8 +523,9 @@ LAB_005091b9:
         goto switchD_0050858c_caseD_3b;
       }
       if (this_00[0xc33] == CStack_3e) goto switchD_0050858c_caseD_3b;
-      FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x39,0x65,*(int *)(this_00 + 0x9ed),0
-                   ,0x39,0x15,0x4c,0x1b);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(this_00 + 0x194),0,iVar4 + 0x39,0x65,*(int *)(this_00 + 0x9ed),0,
+                 0x39,0x15,0x4c,0x1b);
       PaintPerRes(this_00,iVar4);
       uVar5 = *(uint *)(this_00 + 0x15c);
       goto joined_r0x00508b00;
@@ -569,7 +582,7 @@ LAB_00509179:
       uVar18 = *(uint *)(this_00 + 0xa8);
       uVar17 = *(uint *)(this_00 + 0x50);
 LAB_0050918d:
-      FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar17,uVar18);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar17,uVar18);
     }
     goto switchD_0050858c_caseD_3b;
   case 0x3a:
@@ -596,8 +609,9 @@ LAB_0050918d:
         } while (uStack_c != 0);
       }
       if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
-                     *(uint *)(this_00 + 0xa8));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+                   *(uint *)(this_00 + 0xa8));
       }
     }
     if (this_00[0xc3b] != CStack_36) {
@@ -622,8 +636,9 @@ LAB_0050918d:
         } while (uStack_c != 0);
       }
       if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
-                     *(uint *)(this_00 + 0xa8));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+                   *(uint *)(this_00 + 0xa8));
       }
     }
     if (*(ushort *)(this_00 + 0xc34) == uStack_3d) goto switchD_0050858c_caseD_3b;
@@ -667,7 +682,7 @@ LAB_0050918d:
     puVar15 = *(undefined4 **)(this_00 + 0x194);
     iVar10 = (puVar15[1] - *(int *)(iVar4 + 4)) / 2;
     if (CVar3 == (CPanelTy)0x1) {
-      FUN_006b55f0(puVar15,0,iVar10 + 0x39,0x65,iVar4,0,0x39,0x15,0x4c,0x1b);
+      Library::DKW::WGR::FUN_006b55f0(puVar15,0,iVar10 + 0x39,0x65,iVar4,0,0x39,0x15,0x4c,0x1b);
       PaintDamageXY(this_00,*(int *)(this_00 + 0x194),iVar10 + 0x39,0x65,
                     CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00[0xc3d]),0x2714);
       uStack_14 = 0;
@@ -695,8 +710,9 @@ LAB_0050918d:
       }
     }
     else if (CVar3 == (CPanelTy)0x2) {
-      FUN_006b55f0(puVar15,0,iVar10,0x71,iVar4,0,0,0x21,*(int *)(iVar4 + 4),
-                   *(int *)(iVar4 + 8) + -0x21);
+      Library::DKW::WGR::FUN_006b55f0
+                (puVar15,0,iVar10,0x71,iVar4,0,0,0x21,*(int *)(iVar4 + 4),
+                 *(int *)(iVar4 + 8) + -0x21);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,*(undefined4 *)(this_00 + 0xc3d));
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1bc),*(int *)(this_00 + 0x194),0,iVar10,0x71,
                        *(int *)(*(int *)(this_00 + 0x9ed) + 4),

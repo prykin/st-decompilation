@@ -23,7 +23,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_8 = this;
-  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0xa9,0,-1,&DAT_007a4ccc);
@@ -68,9 +68,9 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
                          (int)((ulonglong)(double)_DAT_008073d4 >> 0x20));
             DAT_008073d0 = (float)*(double *)((int)DAT_00807598 + 0x98);
             _DAT_008073d4 = (float)*(double *)((int)DAT_00807598 + 0xa0);
-            lVar5 = __ftol();
+            lVar5 = Library::MSVCRT::__ftol();
             DAT_008073d8 = (int)lVar5;
-            lVar5 = __ftol();
+            lVar5 = Library::MSVCRT::__ftol();
             DAT_008073dc = (int)lVar5;
           }
           DAT_0080674c = 1;

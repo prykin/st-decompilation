@@ -19,7 +19,7 @@ uint * FUN_0065f840(int param_1,uint param_2,int param_3)
       ((int)param_2 < *(int *)(param_1 + 0xc))) && (0 < param_3)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    iVar1 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar1 != 0) {
       g_currentExceptionFrame = local_54.previous;
       if (local_8 != (uint *)0x0) {
@@ -27,7 +27,7 @@ uint * FUN_0065f840(int param_1,uint param_2,int param_3)
       }
       return (uint *)0x0;
     }
-    puVar2 = FUN_006ae290((uint *)0x0,5,6,5);
+    puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,6,5);
     uVar3 = *(uint *)(param_1 + 0xc);
     uVar5 = param_2;
     local_8 = puVar2;
@@ -45,7 +45,7 @@ uint * FUN_0065f840(int param_1,uint param_2,int param_3)
         }
         local_10 = *puVar4;
         local_c = *(undefined2 *)(puVar4 + 1);
-        FUN_006ae1c0(puVar2,&local_10);
+        Library::DKW::TBL::FUN_006ae1c0(puVar2,&local_10);
         uVar3 = *(uint *)(param_1 + 0xc);
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)uVar3);

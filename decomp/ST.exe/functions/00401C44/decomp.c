@@ -34,7 +34,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pCStack_10 = this;
-  iVar5 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar3 = pCStack_8;
   uVar2 = uStack_c;
   this_00 = pCStack_10;
@@ -68,8 +68,9 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
       if (bVar4 < 0xb) {
         uVar2 = (uint)bVar4;
         if (-1 < (int)*(uint *)(this_00 + uVar2 * 4 + 0x148)) {
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + uVar2 * 4 + 0x148),0xffffffff,
-                       *(uint *)(this_00 + uVar2 * 4 + 0x3c),*(uint *)(this_00 + uVar2 * 4 + 0x94));
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + uVar2 * 4 + 0x148),0xffffffff,
+                     *(uint *)(this_00 + uVar2 * 4 + 0x3c),*(uint *)(this_00 + uVar2 * 4 + 0x94));
         }
       }
     }

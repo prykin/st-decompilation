@@ -1,4 +1,4 @@
-FUN_004899a0:
+STBoatC::GetDefenceTarget:
 004899A0  55                        PUSH EBP
 004899A1  8B EC                     MOV EBP,ESP
 004899A3  83 EC 6C                  SUB ESP,0x6c

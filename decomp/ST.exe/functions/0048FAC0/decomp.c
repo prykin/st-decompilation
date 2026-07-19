@@ -31,7 +31,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
-  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -62,7 +62,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     FUN_006ab060(&local_c);
     *param_1 = *param_1 + local_8;
   }
-  puVar3 = (undefined4 *)FUN_006aac70(*param_1);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
   *puVar3 = *(undefined4 *)(pSVar4 + 0x20);
   puVar3[1] = *(undefined4 *)(pSVar4 + 0x24);
   puVar3[2] = *(undefined4 *)(pSVar4 + 0x28);

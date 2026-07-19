@@ -1,5 +1,5 @@
 
-ushort * __cdecl FUN_00719d00(undefined4 param_1,char *param_2,byte param_3,int param_4)
+ushort * __cdecl FUN_00719d00(cMf32 *param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;
@@ -16,7 +16,7 @@ ushort * __cdecl FUN_00719d00(undefined4 param_1,char *param_2,byte param_3,int 
   local_c = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     local_5 = param_3 & 4;
     if (local_5 == 0) {
@@ -25,7 +25,7 @@ ushort * __cdecl FUN_00719d00(undefined4 param_1,char *param_2,byte param_3,int 
     else {
       ppuVar5 = &local_c;
     }
-    local_c = FUN_006f1ce0(2,param_2,(int *)ppuVar5,param_4);
+    local_c = cMf32::RecGet(param_1,2,param_2,(int *)ppuVar5,param_4);
     if (local_c != (ushort *)0x0) {
       iVar2 = FUN_00719df0(param_1,param_2,param_4);
       if (((short)iVar2 == 1) && (local_5 != 0)) {

@@ -18,7 +18,7 @@ FUN_0070ad60(cMf32 *param_1,char *param_2,int param_3,uint param_4,uint *param_5
   local_c = 0;
   local_8 = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-  errorCode = __setjmp3(local_4c,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar4);
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar4;
     iVar2 = ReportDebugMessage(s_E__Ourlib_Mfimg_cpp_007effe0,400,0,errorCode,&DAT_007a4ccc,

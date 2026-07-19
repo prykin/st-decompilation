@@ -16,9 +16,9 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
   local_8 = (undefined4 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar1 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
-    puVar2 = FUN_006aac10(0x260);
+    puVar2 = Library::DKW::LIB::FUN_006aac10(0x260);
     puVar5 = param_1;
     puVar6 = puVar2;
     for (iVar1 = 0x98; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -41,17 +41,17 @@ undefined4 * __cdecl FUN_00668330(undefined4 *param_1)
       iVar1 = iVar1 + 0xc;
     } while (iVar1 < 0x54);
     if (*(int *)((int)puVar2 + 0x1eb) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,0x2c,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x2c,10);
       *(uint **)((int)local_8 + 0x1eb) = puVar4;
       puVar2 = local_8;
     }
     if (*(int *)((int)puVar2 + 0x203) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,0x14,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
       *(uint **)((int)local_8 + 0x203) = puVar4;
       puVar2 = local_8;
     }
     if (*(int *)((int)puVar2 + 0x20f) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,0xc,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
       *(uint **)((int)local_8 + 0x20f) = puVar4;
       puVar2 = local_8;
     }

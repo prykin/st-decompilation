@@ -1,4 +1,4 @@
-FUN_0043aaf0:
+STAllPlayersC::GetCamPoint:
 0043AAF0  55                        PUSH EBP
 0043AAF1  8B EC                     MOV EBP,ESP
 0043AAF3  83 EC 14                  SUB ESP,0x14

@@ -1,5 +1,5 @@
 
-uint thunk_FUN_0042dfe0(undefined4 *param_1,uint *param_2)
+uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *param_1,uint *param_2)
 
 {
   int iVar1;
@@ -40,7 +40,7 @@ uint thunk_FUN_0042dfe0(undefined4 *param_1,uint *param_2)
             *puVar3 = uVar5;
           }
           if (param_1 != (undefined4 *)0x0) {
-            puVar7 = (undefined4 *)FUN_006aac70(uVar5);
+            puVar7 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5);
             *param_1 = puVar7;
             puVar8 = *(undefined4 **)(pbStack_8 + 0x1c);
             for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
@@ -73,8 +73,8 @@ uint thunk_FUN_0042dfe0(undefined4 *param_1,uint *param_2)
         do {
           FUN_006acc70(iVar4,uVar5,&param_2);
           if (((short)param_2 != -1) &&
-             (uVar6 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                         (uint)param_2,1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {
+             (uVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
+                                (uint)param_2,1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {
             iStack_c = 1;
             puStack_10 = param_2;
             break;

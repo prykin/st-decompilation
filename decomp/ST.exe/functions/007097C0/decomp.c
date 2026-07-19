@@ -15,14 +15,14 @@ int * __cdecl FUN_007097c0(int param_1)
   pIVar5 = g_currentExceptionFrame;
   local_8 = (int *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   if (errorCode == 0) {
     if (param_1 == 0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfrload_cpp_007eff5c,0x19);
     }
-    local_8 = FUN_006aac10(8);
+    local_8 = Library::DKW::LIB::FUN_006aac10(8);
     *local_8 = param_1;
-    puVar2 = FUN_006ae290((uint *)0x0,0x14,0x2d,0x14);
+    puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0x2d,0x14);
     local_8[1] = (int)puVar2;
     g_currentExceptionFrame = pIVar5;
     return local_8;

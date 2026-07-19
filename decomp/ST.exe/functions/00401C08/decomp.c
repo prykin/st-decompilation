@@ -8,7 +8,7 @@ undefined4 __fastcall thunk_FUN_004de820(int *param_1)
   undefined2 extraout_var_01;
   STGroupC *this;
   uint *puVar4;
-  int *this_00;
+  TLOBaseTy *this_00;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   undefined4 extraout_ECX;
@@ -30,18 +30,21 @@ undefined4 __fastcall thunk_FUN_004de820(int *param_1)
     puVar4[1] = 0;
     iVar3 = FUN_006b1190((int)puVar4,&uStack_8);
     while (-1 < iVar3) {
-      this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)iVar3 >> 8),(char)param_1[9]),
-                                          uStack_8,1);
-      if (((this_00 != (int *)0x0) && (iVar3 = (**(code **)(*this_00 + 0x2c))(), iVar3 == 0x45)) &&
-         ((this_00[0x134] == 0 &&
+      this_00 = (TLOBaseTy *)
+                STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,CONCAT31((int3)((uint)iVar3 >> 8),(char)param_1[9]),uStack_8
+                           ,1);
+      if (((this_00 != (TLOBaseTy *)0x0) &&
+          (iVar3 = (**(code **)(*(int *)this_00 + 0x2c))(), iVar3 == 0x45)) &&
+         ((*(int *)(this_00 + 0x4d0) == 0 &&
           ((iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar3 != 0 &&
            (bVar1 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var,bVar1) != 0)))))) {
         iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1);
         if ((iVar3 != 0) &&
            (bVar2 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var_00,bVar2) != 0)) {
           thunk_FUN_004c7cc0(this_00,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
-          this_00[0x134] = 2;
-          thunk_FUN_004cabb0(0);
+          *(undefined4 *)(this_00 + 0x4d0) = 2;
+          TLOBaseTy::RotateSpr(this_00,0);
         }
         bVar2 = true;
       }

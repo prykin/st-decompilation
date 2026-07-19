@@ -20,7 +20,7 @@ thunk_FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 p
   int iStack_8;
   
   if (*(int *)((int)this + 0x5e) == 0) {
-    puVar1 = FUN_006ae290((uint *)0x0,7,0x24,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,0x24,10);
     *(uint **)((int)this + 0x5e) = puVar1;
     if (puVar1 == (uint *)0x0) {
       return 0xffffffff;
@@ -42,7 +42,7 @@ thunk_FUN_00617b10(void *this,undefined4 param_1,undefined4 param_2,undefined4 p
   uStack_1e = (undefined2)uStack_28;
   uStack_1c = uStack_28._2_2_;
   uStack_1a = uStack_24;
-  uVar2 = FUN_006ae1c0(*(uint **)((int)this + 0x5e),&uStack_28);
+  uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x5e),&uStack_28);
   thunk_FUN_0061d0c0(param_1,param_2,param_3,param_4,param_5,param_6,
                      *(undefined4 *)((int)this + 0x20),*(undefined4 *)((int)this + 0x54),
                      CONCAT22(extraout_var,*(undefined2 *)((int)this + 0x58)),

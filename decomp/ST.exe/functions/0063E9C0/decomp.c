@@ -73,13 +73,13 @@ LAB_0063eacd:
           iVar4 = ((iVar4 * iVar4 * -0x5f) / 2000 - iVar4 * local_18) + *(int *)((int)this + 0x2b4);
         }
         *(float *)(iVar10 + 0x2c) = (float)iVar4;
-        lVar12 = __ftol();
+        lVar12 = Library::MSVCRT::__ftol();
         fcos(extraout_ST0);
-        lVar13 = __ftol();
+        lVar13 = Library::MSVCRT::__ftol();
         fsin(extraout_ST1);
         iVar4 = (int)lVar13 + *(int *)(iVar10 + 0x14);
         *(int *)(iVar10 + 8) = iVar4;
-        lVar13 = __ftol();
+        lVar13 = Library::MSVCRT::__ftol();
         iVar5 = (int)lVar13 + *(int *)(iVar10 + 0x18);
         *(int *)(iVar10 + 0xc) = iVar5;
         sVar8 = (short)(iVar4 >> 0x1f);

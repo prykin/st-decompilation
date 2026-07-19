@@ -1,4 +1,4 @@
-FUN_0044ab90:
+STAllPlayersC::CheckTmps:
 0044AB90  55                        PUSH EBP
 0044AB91  8B EC                     MOV EBP,ESP
 0044AB93  83 EC 10                  SUB ESP,0x10

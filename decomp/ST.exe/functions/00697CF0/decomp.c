@@ -72,7 +72,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
     local_8 = 0;
     ExceptionList = &local_14;
     local_70 = iVar5;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     local_88 = 0;
     local_28 = &stack0xffffff14;
@@ -94,7 +94,7 @@ void __thiscall FUN_00697cf0(void *this,int param_1,int param_2)
         local_a4 = piVar14;
         if ((*piVar14 == 0) && (*(int *)((int)piVar14 + 5) < 1)) {
           if (*(int *)((int)piVar14 + 0x15) != 0) {
-            uVar4 = FUN_0072e6c0();
+            uVar4 = Library::MSVCRT::FUN_0072e6c0();
             local_a0 = (int)uVar4 % 6 + 1;
             local_74 = 0;
             local_90 = 0;
@@ -173,10 +173,10 @@ LAB_00697e8c:
     local_28 = puVar2;
     if (iVar12 != 0) {
       local_8 = 1;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_b4 = &stack0xffffff14;
       local_1c = &stack0xffffff14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_8 = 0xffffffff;
       local_a8 = iVar12 * 2;
       local_1c = &stack0xffffff14;
@@ -229,7 +229,7 @@ LAB_00697e8c:
               bVar17 = local_94 < *(uint *)(iVar12 + 0xc);
             } while ((int)local_94 < (int)*(uint *)(iVar12 + 0xc));
           }
-          local_9c = FUN_0072e6c0();
+          local_9c = Library::MSVCRT::FUN_0072e6c0();
           local_9c = local_9c & 0x80000007;
           if ((int)local_9c < 0) {
             local_9c = (local_9c - 1 | 0xfffffff8) + 1;
@@ -237,7 +237,7 @@ LAB_00697e8c:
           local_c4 = 10;
           local_3c = 0xffffff9c;
           local_98 = -100;
-          local_58 = FUN_0072e6c0();
+          local_58 = Library::MSVCRT::FUN_0072e6c0();
           local_58 = local_58 & 0x80000003;
           if ((int)local_58 < 0) {
             local_58 = (local_58 - 1 | 0xfffffffc) + 1;
@@ -245,7 +245,7 @@ LAB_00697e8c:
           do {
             iVar12 = *(int *)((int)local_a4 + 0x15);
             uVar4 = *(uint *)(iVar12 + 0xc);
-            uVar8 = FUN_0072e6c0();
+            uVar8 = Library::MSVCRT::FUN_0072e6c0();
             uVar8 = (int)uVar8 % (int)uVar4;
             puVar1 = (&PTR_DAT_007d7f70)[local_9c];
             if (uVar8 < uVar4) {
@@ -320,7 +320,7 @@ LAB_00697e8c:
     }
     local_a8 = iVar12 * 3;
     for (; (-1 < param_1 && (0 < local_a8)); local_a8 = local_a8 + -1) {
-      uVar4 = FUN_0072e6c0();
+      uVar4 = Library::MSVCRT::FUN_0072e6c0();
       iVar5 = *(int *)((int)this + 0x5853);
       if ((uint)(int)*(short *)(local_28 + ((int)uVar4 % iVar12) * 0x10) < *(uint *)(iVar5 + 0xc)) {
         local_a4 = (int *)(*(int *)(iVar5 + 8) *
@@ -335,7 +335,7 @@ LAB_00697e8c:
         local_50 = *(int *)((int)local_a4 + 0x11) / 10 + 1;
         iVar12 = *(int *)((int)local_a4 + 0x15);
         uVar4 = *(uint *)(iVar12 + 0xc);
-        uVar8 = FUN_0072e6c0();
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
         local_2c = (int)uVar8 % (int)uVar4;
         local_94 = 0;
         if (0 < (int)uVar4) {
@@ -353,7 +353,7 @@ LAB_00697e8c:
             if (iVar12 != 0) {
               iVar5 = *(int *)(iVar12 + 2) / *(int *)((int)this + 0x5833);
               uVar8 = *(int *)(iVar12 + 2) % *(int *)((int)this + 0x5833);
-              uVar4 = FUN_0072e6c0();
+              uVar4 = Library::MSVCRT::FUN_0072e6c0();
               uVar4 = uVar4 & 0x80000003;
               if ((int)uVar4 < 0) {
                 uVar4 = (uVar4 - 1 | 0xfffffffc) + 1;
@@ -368,9 +368,9 @@ LAB_00697e8c:
                   bVar17 = true;
                 }
                 if (bVar17) {
-                  uVar4 = FUN_0072e6c0();
+                  uVar4 = Library::MSVCRT::FUN_0072e6c0();
                   if ((int)uVar4 % 6 == 1) {
-                    uVar4 = FUN_0072e6c0();
+                    uVar4 = Library::MSVCRT::FUN_0072e6c0();
                     uVar11 = (int)uVar4 % 3 + 1;
                     iVar16 = 0;
                     iVar12 = 1;
@@ -378,11 +378,11 @@ LAB_00697e8c:
                     iVar9 = 0;
                   }
                   else if ((int)uVar4 % 6 == 2) {
-                    uVar4 = FUN_0072e6c0();
+                    uVar4 = Library::MSVCRT::FUN_0072e6c0();
                     uVar11 = (int)uVar4 % 6 + 1;
                     iVar16 = 0;
                     iVar12 = 0xff;
-                    uVar4 = FUN_0072e6c0();
+                    uVar4 = Library::MSVCRT::FUN_0072e6c0();
                     uVar4 = uVar4 & 0x80000001;
                     if ((int)uVar4 < 0) {
                       uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;
@@ -391,11 +391,11 @@ LAB_00697e8c:
                     iVar9 = 1;
                   }
                   else {
-                    uVar4 = FUN_0072e6c0();
+                    uVar4 = Library::MSVCRT::FUN_0072e6c0();
                     uVar11 = (int)uVar4 % 6 + 1;
                     iVar16 = 0;
                     iVar12 = 0xff;
-                    uVar4 = FUN_0072e6c0();
+                    uVar4 = Library::MSVCRT::FUN_0072e6c0();
                     uVar4 = uVar4 & 0x80000001;
                     if ((int)uVar4 < 0) {
                       uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;

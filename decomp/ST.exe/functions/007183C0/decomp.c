@@ -27,11 +27,11 @@ FUN_007183c0(undefined4 param_1,undefined4 param_2,float *param_3,undefined1 *pa
     FUN_007182f0(*param_3,fVar1,fVar2);
     FUN_007182f0(*param_3 - _DAT_0079e270,fVar1,fVar2);
   }
-  lVar3 = __ftol();
+  lVar3 = Library::MSVCRT::__ftol();
   *param_4 = (char)lVar3;
-  lVar3 = __ftol();
+  lVar3 = Library::MSVCRT::__ftol();
   param_4[1] = (char)lVar3;
-  uVar4 = __ftol();
+  uVar4 = Library::MSVCRT::__ftol();
   param_4[2] = (char)uVar4;
   return uVar4 & 0xffffffff00000000;
 }

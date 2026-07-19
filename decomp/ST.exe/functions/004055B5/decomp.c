@@ -94,7 +94,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
   }
   IStack_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_7c;
-  iVar8 = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pSStack_1c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = IStack_7c.previous;
@@ -126,21 +126,24 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
     goto LAB_005c69ed;
   }
   if (*(uint *)(pSStack_1c + 0x1c6f) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(pSStack_1c + 0x1cb3),*(uint *)(pSStack_1c + 0x1c6f),0xfffffffe,
-                 *(uint *)(pSStack_1c + 0x1c87),*(uint *)(pSStack_1c + 0x1c8b));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(pSStack_1c + 0x1cb3),*(uint *)(pSStack_1c + 0x1c6f),0xfffffffe,
+               *(uint *)(pSStack_1c + 0x1c87),*(uint *)(pSStack_1c + 0x1c8b));
   }
   if (*(uint *)(this_01 + 0x1d00) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_01 + 0x1d44),*(uint *)(this_01 + 0x1d00),0xfffffffe,
-                 *(uint *)(this_01 + 0x1d18),*(uint *)(this_01 + 0x1d1c));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_01 + 0x1d44),*(uint *)(this_01 + 0x1d00),0xfffffffe,
+               *(uint *)(this_01 + 0x1d18),*(uint *)(this_01 + 0x1d1c));
   }
   if (*(uint *)(this_01 + 0x1d91) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_01 + 0x1dd5),*(uint *)(this_01 + 0x1d91),0xfffffffe,
-                 *(uint *)(this_01 + 0x1da9),*(uint *)(this_01 + 0x1dad));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_01 + 0x1dd5),*(uint *)(this_01 + 0x1d91),0xfffffffe,
+               *(uint *)(this_01 + 0x1da9),*(uint *)(this_01 + 0x1dad));
   }
   pMVar10 = (MMObjTy *)(this_01 + 0x20cc);
   iVar8 = 10;
   do {
-    FUN_006b3430(DAT_008075a8,*(uint *)pMVar10);
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)pMVar10);
     pMVar10 = pMVar10 + 4;
     iVar8 = iVar8 + -1;
   } while (iVar8 != 0);
@@ -308,7 +311,7 @@ void __thiscall SettMapTy::CreateCtrls(SettMapTy *this,char param_1)
       if (*(byte **)(DAT_0081176c + 0x548) != (byte *)0x0) {
         FUN_006b5570(*(byte **)(DAT_0081176c + 0x548));
       }
-      puVar6 = FUN_006b54f0((uint *)0x0,10,10);
+      puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
       *(uint **)(DAT_0081176c + 0x548) = puVar6;
       MVar1 = *(MMObjTy *)(this_01 + 0x1e26);
       uStack_5d8 = DAT_0080995c;
@@ -406,7 +409,7 @@ LAB_005c665d:
       iVar8 = iVar8 + -1;
     } while (iVar8 != 0);
   }
-  FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1e22));
+  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1e22));
   MVar1 = *(MMObjTy *)(this_01 + 0x1e26);
   if (((MVar1 != (MMObjTy)0x6) && (MVar1 != (MMObjTy)0x7)) && (MVar1 != (MMObjTy)0xe)) {
     *(undefined4 *)(this_01 + 0x2d) = 0x20;

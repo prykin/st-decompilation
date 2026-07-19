@@ -25,7 +25,7 @@ LAB_006b719c:
         }
         return iVar2;
       }
-      local_8 = (char *)FUN_006aac70(local_c);
+      local_8 = (char *)Library::DKW::LIB::FUN_006aac70(local_c);
       iVar2 = (**(code **)(*(int *)*piVar1 + 100))
                         ((int *)*piVar1,&local_10,local_14,0,local_8,&local_c);
       if (iVar2 == -0x7788ff42) {
@@ -38,7 +38,7 @@ LAB_006b719c:
     if (*local_8 != '\x05') break;
     param_1 = (int *)FUN_006b73e0(piVar1[0x14],local_10);
     if (param_1 == (int *)0x0) {
-      param_1 = (int *)FUN_006aac70(0x18);
+      param_1 = (int *)Library::DKW::LIB::FUN_006aac70(0x18);
       if (param_1 == (int *)0x0) {
         return -2;
       }
@@ -51,7 +51,7 @@ LAB_006b719c:
     param_1[2] = (uint)(byte)local_8[1];
     param_1[3] = (int)*(short *)(local_8 + 2);
     param_1[4] = local_c + -8;
-    iVar2 = FUN_006aac70(*(int *)(local_8 + 4));
+    iVar2 = Library::DKW::LIB::FUN_006aac70(*(int *)(local_8 + 4));
     param_1[5] = iVar2;
     uVar5 = param_1[4];
     pcVar6 = local_8 + 8;
@@ -94,7 +94,7 @@ code_r0x006b72b1:
         FUN_006b98c0(piVar1 + 0x14,param_1);
         FUN_006ab060(&param_1);
 LAB_006b7373:
-        puVar3 = (undefined4 *)FUN_006aac70(0x14);
+        puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x14);
         if (puVar3 == (undefined4 *)0x0) {
           return -2;
         }

@@ -1,4 +1,4 @@
-FUN_006e5d90:
+SystemClassTy::Life:
 006E5D90  55                        PUSH EBP
 006E5D91  8B EC                     MOV EBP,ESP
 006E5D93  83 EC 6C                  SUB ESP,0x6c

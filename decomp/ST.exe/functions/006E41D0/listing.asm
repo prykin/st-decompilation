@@ -1,4 +1,4 @@
-FUN_006e41d0:
+AppClassTy::AddDecodeMessage:
 006E41D0  55                        PUSH EBP
 006E41D1  8B EC                     MOV EBP,ESP
 006E41D3  83 EC 4C                  SUB ESP,0x4c

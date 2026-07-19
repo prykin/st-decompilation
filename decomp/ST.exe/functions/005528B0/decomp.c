@@ -29,7 +29,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
   pIVar15 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = (SpecPanelTy *)this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar15);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar15);
   this_00 = local_8;
   if (iVar2 == 0) {
     uVar13 = 0x77;

@@ -22,7 +22,7 @@ STAllPlayersC::RegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int p
   local_50.previous = g_currentExceptionFrame;
   local_c = *(uint **)((int)&DAT_007f4e24 + param_1 * 0xa62 + 1);
   g_currentExceptionFrame = &local_50;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (param_3 == 0) {
       RaiseInternalException
@@ -34,7 +34,7 @@ STAllPlayersC::RegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int p
       RaiseInternalException
                 (-0x5001fffa,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x692);
     }
-    FUN_006ae140(puVar2,param_2 & 0xffff,&param_3);
+    Library::DKW::TBL::FUN_006ae140(puVar2,param_2 & 0xffff,&param_3);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

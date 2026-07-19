@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_00604a00(void *this,int param_1)
     }
     local_14 = 3;
     STParticleC::GetMessage(this_00,(int)local_24);
-    FUN_0072e2b0((undefined4 *)this_00);
+    Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00);
     uVar1 = 1;
     *(undefined4 *)((int)this + param_1 * 4 + 0x219) = 0;
   }

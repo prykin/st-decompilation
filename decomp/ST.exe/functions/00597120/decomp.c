@@ -58,7 +58,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   *(DWORD *)(this + 0x61) = DVar5;
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
-  iVar6 = __setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_28;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_a8.previous;
@@ -115,7 +115,8 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     if (((*(undefined4 **)(this_01 + 0x1a97) != (undefined4 *)0x0) &&
         (*(int **)(this_01 + 0x1a9f) != (int *)0x0)) &&
        (*(int *)(this_01 + 0x1aa3) < *(int *)(this_01 + 0x61) - *(int *)(this_01 + 0x1aa7))) {
-      FUN_006c7070(*(int **)(this_01 + 0x1a9f),*(undefined4 **)(this_01 + 0x1a97),0);
+      Library::DKW::GPC::FUN_006c7070
+                (*(int **)(this_01 + 0x1a9f),*(undefined4 **)(this_01 + 0x1a97),0);
       iVar6 = FUN_006c7000(*(int *)(this_01 + 0x1a9f));
       *(int *)(this_01 + 0x1aa3) = iVar6;
       if (iVar6 < 1) {
@@ -201,34 +202,34 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     *(undefined2 *)puVar8 = 0;
     if (this_00 != (HoloTy *)0x0) {
       HoloTy::Done(this_00);
-      FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f2b));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f2b));
       *(undefined4 *)(this_01 + 0x1f2b) = 0;
     }
     if (*(HoloTy **)(this_01 + 0x1f23) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(this_01 + 0x1f23));
-      FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f23));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f23));
       *(undefined4 *)(this_01 + 0x1f23) = 0;
     }
     if (*(HoloTy **)(this_01 + 0x1f27) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(this_01 + 0x1f27));
-      FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f27));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f27));
       *(undefined4 *)(this_01 + 0x1f27) = 0;
     }
     if (*(HoloTy **)(this_01 + 0x1f2f) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(this_01 + 0x1f2f));
-      FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f2f));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1f2f));
       *(undefined4 *)(this_01 + 0x1f2f) = 0;
     }
     switch(this_01[0x65]) {
     case (FSGSTy)0x6:
-      FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1abc));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1abc));
       this_01[0x1a5f] = (FSGSTy)0x1;
       thunk_FUN_0055c180((CFsgsConnection *)&DAT_00802a90);
       local_18 = 1;
       break;
     case (FSGSTy)0x7:
       if ((this_01[0x1a5f] != (FSGSTy)0x3) && (this_01[0x1a5f] != (FSGSTy)0x9)) {
-        FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1abc));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1abc));
       }
     case (FSGSTy)0x8:
     case (FSGSTy)0xa:
@@ -430,7 +431,9 @@ joined_r0x00597872:
       FVar1 = this_01[0x1a5a];
       this_01[0x65] = (FSGSTy)0x2;
       if ((FVar1 != (FSGSTy)0xff) && (*(int *)(this_01 + (uint)(byte)FVar1 * 0x1fb + 0xd1) != 0)) {
-        FUN_006e3b50((undefined4 *)(this_01 + (uint)(byte)FVar1 * 0x1fb + 0xc1));
+        AppClassTy::PostNextMessage
+                  ((AppClassTy *)&DAT_00807620,
+                   (undefined4 *)(this_01 + (uint)(byte)FVar1 * 0x1fb + 0xc1));
         g_currentExceptionFrame = local_a8.previous;
         return;
       }

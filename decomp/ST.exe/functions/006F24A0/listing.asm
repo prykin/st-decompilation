@@ -1,4 +1,4 @@
-FUN_006f24a0:
+cMf32::RecGetLen:
 006F24A0  55                        PUSH EBP
 006F24A1  8B EC                     MOV EBP,ESP
 006F24A3  81 EC 6C 03 00 00         SUB ESP,0x36c

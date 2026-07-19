@@ -14,11 +14,11 @@ undefined4 FUN_005da7a0(void)
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     piVar1 = (int *)(local_8 + 0x68a);
     if (*(int *)(local_8 + 0x68a) == 0) {
-      FUN_006b62d0(piVar1);
+      Library::DKW::DDX::FUN_006b62d0(piVar1);
       piVar4 = (int *)*piVar1;
       bVar2 = true;
       if (*piVar4 <= piVar4[1]) {
@@ -36,8 +36,9 @@ undefined4 FUN_005da7a0(void)
         pcVar5 = FUN_006c8170(pcVar5);
         if (pcVar5 != (char *)0x0) {
           iVar3 = *piVar1;
-          FUN_0072da70((undefined4 *)(iVar3 + 0x1c),(undefined4 *)(iVar3 + 8),
-                       *(int *)(iVar3 + 4) * 0x14);
+          Library::MSVCRT::FUN_0072da70
+                    ((undefined4 *)(iVar3 + 0x1c),(undefined4 *)(iVar3 + 8),
+                     *(int *)(iVar3 + 4) * 0x14);
           iVar3 = *piVar1;
           *(undefined4 *)(iVar3 + 0xc) = DAT_007cd700;
           *(undefined4 *)(iVar3 + 0x10) = DAT_007cd704;

@@ -16,7 +16,7 @@ undefined4 FUN_006939f0(void)
   local_c = 1;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar1 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     puVar2 = local_10;
     for (iVar1 = 0x666; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -24,7 +24,7 @@ undefined4 FUN_006939f0(void)
       puVar2 = puVar2 + 1;
     }
     *(undefined1 *)puVar2 = 0;
-    FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079d770,(int *)&local_8,1);
+    cMf32::RecGet(in_stack_00000004,0,PTR_s_DESCRIPTOR_0079d770,(int *)&local_8,1);
     g_currentExceptionFrame = local_54.previous;
   }
   else {

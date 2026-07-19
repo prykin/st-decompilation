@@ -17,7 +17,7 @@ FUN_006eff90(short *param_1,int param_2,int param_3,int param_4,uint param_5,ush
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_1 == (short *)0x0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x17b);
@@ -29,7 +29,7 @@ FUN_006eff90(short *param_1,int param_2,int param_3,int param_4,uint param_5,ush
     }
     FUN_006f01a0(param_1,param_2,param_3,param_4);
     local_8 = param_2 / 2;
-    puVar3 = FUN_006aac10(0x50);
+    puVar3 = Library::DKW::LIB::FUN_006aac10(0x50);
     *(undefined4 **)
      ((int)param_1 +
      ((((int)param_1[1] / 2) * param_4 + param_3 / 2) * ((int)*param_1 / 2) + local_8) * 4 + 0x459)

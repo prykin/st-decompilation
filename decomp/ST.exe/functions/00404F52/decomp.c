@@ -83,9 +83,10 @@ int __thiscall thunk_FUN_00462180(void *this,int param_1)
     uVar10 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar10;
     *(short *)((int)this + 0xf8) = (short)((ulonglong)(uVar10 >> 0x10) % 0x1f) + 0x1e;
-    piVar11 = (int *)thunk_FUN_0042b620((uint)*(byte *)((int)this + 0x33a),
-                                        (uint)*(ushort *)((int)this + 0x33f),
-                                        *(undefined4 *)((int)this + 0x33b));
+    piVar11 = (int *)STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,(uint)*(byte *)((int)this + 0x33a),
+                                (uint)*(ushort *)((int)this + 0x33f),
+                                *(undefined4 *)((int)this + 0x33b));
     if (((piVar11 != (int *)0x0) && (piVar11 != this)) &&
        ((*(int *)((int)this + 0x6f7) != 9 ||
         ((iVar16 = (**(code **)(*piVar11 + 0x2c))(), iVar16 == 0x3b ||

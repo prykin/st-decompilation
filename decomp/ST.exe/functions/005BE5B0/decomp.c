@@ -46,7 +46,7 @@ void __thiscall MReportTy::PaintMReport(MReportTy *this,char param_1)
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_20 = this;
-  iVar4 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x1b4,0,iVar4,&DAT_007a4ccc
@@ -267,7 +267,7 @@ LAB_005bf156:
         do {
           sVar14 = _Count;
           _Count = sVar14 + 1;
-          _strncpy((char *)&DAT_0080f33a,local_898,_Count);
+          Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,local_898,_Count);
           iVar4 = FUN_00711110(*(void **)(this_00 + 0x83),&DAT_0080f33a);
           if (0x2a7 < iVar4) break;
         } while ((int)_Count < (int)(~uVar9 - 1));
@@ -277,7 +277,7 @@ LAB_005bf156:
             *puVar8 = 0;
             puVar8 = puVar8 + 1;
           }
-          _strncpy((char *)&DAT_0080f33a,local_898,sVar14 - 2);
+          Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,local_898,sVar14 - 2);
           uVar9 = 0xffffffff;
           pcVar6 = &DAT_007c7274;
           do {
@@ -471,8 +471,8 @@ LAB_005bf156:
         pcVar6 = pcVar6 + 1;
         pcVar17 = pcVar17 + 1;
       }
-      for (puVar7 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != (uint *)0x0;
-          puVar7 = FUN_0072e560(puVar7,'\n')) {
+      for (puVar7 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar7 != (uint *)0x0;
+          puVar7 = Library::MSVCRT::FUN_0072e560(puVar7,'\n')) {
         *(undefined1 *)puVar7 = 0x20;
       }
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x83),*(int *)(this_00 + 0x73),0,0x37,0x145,400,0xf);
@@ -584,13 +584,15 @@ LAB_005bef6c:
   ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x8b),(int)local_c,0,*(int *)(local_c + 4) + -0x69,
                    (*(int *)(local_c + 8) + -0x1c) / 2,0x50,0x1c);
   ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x8b),&DAT_0080f33a,-1,-1,8);
-  FUN_006c5000((int)DAT_0080759c,0x174,0x1a9,(int)local_c,0,0,0,*(uint *)(local_c + 4),
-               *(int *)(local_c + 8),(int)(this_00 + 0xa3),0x4c);
+  Library::DKW::DDX::FUN_006c5000
+            ((int)DAT_0080759c,0x174,0x1a9,(int)local_c,0,0,0,*(uint *)(local_c + 4),
+             *(int *)(local_c + 8),(int)(this_00 + 0xa3),0x4c);
   FUN_006ab060(&local_c);
 LAB_005bf406:
   iVar4 = *(int *)(this_00 + 0x73);
-  FUN_006b48e0((int)DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
-               (int)(this_00 + 0xa3),0x4c,0x10000ff);
+  Library::DKW::DDX::FUN_006b48e0
+            ((int)DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
+             (int)(this_00 + 0xa3),0x4c,0x10000ff);
   g_currentExceptionFrame = local_64.previous;
   return;
 }

@@ -1,4 +1,4 @@
-FUN_004189d0:
+STGameObjC::MoveStep:
 004189D0  55                        PUSH EBP
 004189D1  8B EC                     MOV EBP,ESP
 004189D3  83 EC 0C                  SUB ESP,0xc

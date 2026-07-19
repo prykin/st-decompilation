@@ -89,8 +89,9 @@ LAB_006a6ed7:
           }
           pbVar19 = local_18 + param_6 * 4;
           local_24 = pbVar6;
-          FUN_0072da70((undefined4 *)(pbVar6 + local_20 * 4),
-                       (undefined4 *)(pbVar6 + local_20 * 4 + -0x200),local_20 * 4 - 0x200);
+          Library::MSVCRT::FUN_0072da70
+                    ((undefined4 *)(pbVar6 + local_20 * 4),
+                     (undefined4 *)(pbVar6 + local_20 * 4 + -0x200),local_20 * 4 - 0x200);
         }
         pbVar6 = local_1c;
         local_c = 0xff;

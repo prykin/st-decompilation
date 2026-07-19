@@ -14,6 +14,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   undefined4 *puVar8;
   uint uVar9;
   uint *puVar10;
+  ccFntTy *this_02;
   uint uVar11;
   cMf32 *extraout_ECX;
   cMf32 *extraout_ECX_00;
@@ -40,7 +41,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pMStack_18 = this;
-  iVar4 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
     iVar18 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0xc6,0,iVar4,&DAT_007a4ccc,
@@ -55,7 +56,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   }
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -96,7 +97,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   uVar7 = thunk_FUN_005df290(*(int *)(pMVar14 + 0x5d),(undefined *)0x0,DAT_00807dd9);
   *(undefined4 *)(pMVar14 + 0x87) = uVar7;
   *(undefined4 *)(DAT_0081176c + 0x38) = uVar7;
-  puVar8 = FUN_0070ceb0(0x19d,DAT_00806780,s_RPT_FNTN_007ccf4c,0);
+  puVar8 = ccFntTy::operator(this_02,0x19d,DAT_00806780,s_RPT_FNTN_007ccf4c,0);
   *(undefined4 **)(pMVar14 + 0x8b) = puVar8;
   puVar8[0x16] = 1;
   puVar8[0x17] = 0;
@@ -145,7 +146,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
     pMVar14 = pMVar14 + 0x347;
     iVar4 = 3;
     do {
-      puVar10 = FUN_006ae290((uint *)0x0,0x18,4,0x18);
+      puVar10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x18,4,0x18);
       *(uint **)pMVar14 = puVar10;
       pMVar14 = pMVar14 + 4;
       iVar4 = iVar4 + -1;
@@ -156,7 +157,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
               &DAT_00807ddd,PTR_s_PL_LOG_0079c0d8);
     IStack_a0.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_a0;
-    iVar4 = __setjmp3(IStack_a0.jumpBuffer,0,puVar8,pcVar17);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_a0.jumpBuffer,0,puVar8,pcVar17);
     if (iVar4 == 0) {
       pcStack_14 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
     }
@@ -203,9 +204,9 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
         uStack_10 = 0;
         pMStack_c = (MReportTy *)0x0;
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,PTR_DAT_0079c0dc,s__01d_02d_007ccf40);
-        iVar4 = FUN_0072ee80(pcVar17,(byte *)&DAT_0080f33a);
+        iVar4 = Library::MSVCRT::FUN_0072ee80(pcVar17,(byte *)&DAT_0080f33a);
         if (((iVar4 == 2) && (uStack_10 != 0)) && (uStack_10 < 4)) {
-          FUN_006ae1c0(*(uint **)(pMVar14 + uStack_10 * 4 + 0x343),&pMStack_c);
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pMVar14 + uStack_10 * 4 + 0x343),&pMStack_c);
         }
         pcVar17 = (char *)cMf32::RecNameGetNext(this_01);
         pcVar3 = extraout_ECX_00;
@@ -269,8 +270,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(pMVar14 + 0x5d));
   uStack_8 = 0xffffffff;
   FUN_006b2330((uint)DAT_008075a8,&uStack_8,0x32,0x403099,0x2bd,0x15e,DAT_0081176c + 0x140);
-  FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x47,0x46);
-  puVar5 = (undefined1 *)FUN_0072e530(0x33);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x47,0x46);
+  puVar5 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
   if (puVar5 == (undefined1 *)0x0) {
     puVar5 = (undefined1 *)0x0;
   }
@@ -296,7 +297,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
     cVar19 = '\x01';
     uVar9 = 0x10;
     iVar18 = 1;
-    iVar4 = FUN_006bf9f0(DAT_008075a8,0x47,0x46,0x2bd,0x15e);
+    iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x47,0x46,0x2bd,0x15e);
     uVar9 = HoloTy::Init(*(HoloTy **)(pMVar14 + 0x453),2,0x47,0x46,iVar4,iVar18,uVar9,cVar19,uVar11)
     ;
     if (uVar9 != 0) {
@@ -313,8 +314,8 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
     uStack_8 = 0xffffffff;
   }
   FUN_006b2330((uint)DAT_008075a8,&uStack_8,0x32,0x401217,0x2e9,0x32,(uint)pMVar14);
-  FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x1a,10);
-  puVar5 = (undefined1 *)FUN_0072e530(0x33);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x1a,10);
+  puVar5 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
   if (puVar5 == (undefined1 *)0x0) {
     puVar5 = (undefined1 *)0x0;
   }
@@ -340,7 +341,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
     cVar19 = '\x01';
     uVar9 = 0x10;
     iVar18 = 1;
-    iVar4 = FUN_006bf9f0(DAT_008075a8,0x1a,10,0x2e9,0x32);
+    iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x1a,10,0x2e9,0x32);
     uVar9 = HoloTy::Init(*(HoloTy **)(pMVar14 + 0x457),3,0x1a,10,iVar4,iVar18,uVar9,cVar19,uVar11);
     if (uVar9 != 0) {
       iVar4 = *(int *)(pMVar14 + 0x457);
@@ -358,11 +359,11 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,MReportTy param_1)
   thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)(pMVar14 + 0x5d),10,2);
   pcVar17 = *(char **)(pMVar14 + 0x457);
   if (((pcVar17 != (char *)0x0) && (*pcVar17 != '\0')) && (-1 < (int)*(uint *)(pcVar17 + 3))) {
-    FUN_006b3430(DAT_008075a8,*(uint *)(pcVar17 + 3));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar17 + 3));
   }
   pcVar17 = *(char **)(pMVar14 + 0x453);
   if (((pcVar17 != (char *)0x0) && (*pcVar17 != '\0')) && (-1 < (int)*(uint *)(pcVar17 + 3))) {
-    FUN_006b3430(DAT_008075a8,*(uint *)(pcVar17 + 3));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar17 + 3));
   }
   this_00 = DAT_00802a30;
   if (DAT_00802a30 != (CursorClassTy *)0x0) {

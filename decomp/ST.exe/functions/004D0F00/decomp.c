@@ -16,7 +16,7 @@ undefined4 FUN_004d0f00(void)
   local_20[2] = 2;
   local_20[1] = 0xff;
   local_20[0] = 0x3ea;
-  thunk_FUN_0054cc20(0x3ea,0,0,local_20,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x3ea,0,0,local_20,0);
   return 0;
 }
 

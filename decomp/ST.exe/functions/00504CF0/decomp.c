@@ -26,7 +26,7 @@ void __thiscall CPanelTy::PaintNameResSI(CPanelTy *this)
   pIVar13 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,pIVar13);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar13);
   pCVar2 = local_8;
   if (iVar3 == 0) {
     uVar4 = thunk_FUN_005276e0(local_8[0xc31],(byte)local_8[0xc32]);

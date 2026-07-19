@@ -23,7 +23,7 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = local_c;
   if (iVar3 == 0) {
     if (local_c == (AiFltClassTy *)0x0) {
@@ -52,23 +52,23 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (*(int *)pAVar8 == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,0x2c,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x2c,10);
       *(uint **)pAVar8 = puVar4;
     }
     if (*(int *)(pAVar2 + 0x217) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,0x14,0x34,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0x34,10);
       *(uint **)(pAVar2 + 0x217) = puVar4;
     }
     if (*(int *)(pAVar2 + 0x223) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,0x14,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x14,10);
       *(uint **)(pAVar2 + 0x223) = puVar4;
     }
     if (*(int *)(pAVar2 + 0x22f) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,0xc,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
       *(uint **)(pAVar2 + 0x22f) = puVar4;
     }
     if (*(int *)(pAVar2 + 0x23b) == 0) {
-      puVar4 = FUN_006ae290((uint *)0x0,10,4,10);
+      puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
       *(uint **)(pAVar2 + 0x23b) = puVar4;
     }
     g_currentExceptionFrame = local_50.previous;

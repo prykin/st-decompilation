@@ -21,7 +21,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -57,7 +57,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
     }
     psVar4 = &param_2;
 LAB_004a4e27:
-    FUN_006ae140(*(uint **)(this_00 + 0x29f),uVar5,(undefined4 *)psVar4);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x29f),uVar5,(undefined4 *)psVar4);
   }
   else {
     if (*(int *)(local_c + 0x29f) == 0) {

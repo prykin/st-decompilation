@@ -52,7 +52,7 @@ AiEventClassTy::__CreateObjPl
   IStack_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_e8;
   pAStack_38 = this;
-  iVar3 = __setjmp3(IStack_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_e8.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0xcb,0,iVar3,&DAT_007a4ccc,
@@ -131,7 +131,7 @@ AiEventClassTy::__CreateObjPl
       if (param_8 == (char *)0x0) {
         _Source = &DAT_008016a0;
       }
-      _strncpy(acStack_6e,_Source,0xe);
+      Library::MSVCRT::_strncpy(acStack_6e,_Source,0xe);
       uStack_7e = param_9;
       uStack_72 = 1;
       uStack_5f = param_10;

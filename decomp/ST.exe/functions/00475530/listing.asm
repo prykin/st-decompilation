@@ -1,4 +1,4 @@
-FUN_00475530:
+STBoatC::BackWaitLoad:
 00475530  55                        PUSH EBP
 00475531  8B EC                     MOV EBP,ESP
 00475533  83 EC 28                  SUB ESP,0x28

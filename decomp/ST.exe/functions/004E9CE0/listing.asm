@@ -1,4 +1,4 @@
-FUN_004e9ce0:
+TLOBaseTy::teleNone:
 004E9CE0  55                        PUSH EBP
 004E9CE1  8B EC                     MOV EBP,ESP
 004E9CE3  83 EC 60                  SUB ESP,0x60

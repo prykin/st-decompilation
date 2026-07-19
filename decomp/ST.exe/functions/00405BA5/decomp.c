@@ -14,7 +14,7 @@ undefined4 __fastcall thunk_FUN_004d9c80(int *param_1)
   int iStack_8;
   
   if (*(int *)((int)param_1 + 0x5ff) == 0) {
-    puVar1 = (undefined4 *)FUN_0072e530(0x40);
+    puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (puVar1 == (undefined4 *)0x0) {
       this = (STT3DSprC *)0x0;
     }

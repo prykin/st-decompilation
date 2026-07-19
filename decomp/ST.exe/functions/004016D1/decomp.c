@@ -36,7 +36,7 @@ int __thiscall thunk_FUN_004dfc70(void *this,int *param_1)
             puVar7 = &uStack_8;
             puVar6 = &uStack_20;
             iVar2 = (**(code **)(*param_1 + 0x2c))();
-            iVar2 = thunk_FUN_004458d0(iVar2,puVar6,puVar7,puVar8);
+            iVar2 = STAllPlayersC::GetBoatWeaponInfo(iVar2,puVar6,puVar7,puVar8);
             if (iVar2 == 2) {
 LAB_004dfd49:
               iStack_10 = 1;

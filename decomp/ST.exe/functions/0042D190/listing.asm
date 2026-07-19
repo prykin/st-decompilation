@@ -1,4 +1,4 @@
-FUN_0042d190:
+STAllPlayersC::ResetActivityFromObjs:
 0042D190  55                        PUSH EBP
 0042D191  8B EC                     MOV EBP,ESP
 0042D193  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

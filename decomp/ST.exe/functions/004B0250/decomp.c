@@ -58,8 +58,8 @@ FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   }
   local_88[9] = (int)sVar13 / (int)(uint)DAT_008087c4._2_1_;
   local_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
-  local_10 = (undefined4 *)FUN_006aac70(DAT_007fb246 * 5);
-  local_2c = FUN_006ae290((uint *)0x0,10,4,10);
+  local_10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(DAT_007fb246 * 5);
+  local_2c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
   local_18 = 0;
   do {
     local_34 = (undefined4 *)(DAT_007fb246 * local_18);
@@ -144,7 +144,7 @@ LAB_004b04c9:
                   if (((&PTR_LAB_0079072c)[iVar8] == (undefined *)0x2) ||
                      ((iVar8 = (**(code **)(*local_c + 0x2c))(), iVar8 == 0x78 &&
                       ((&PTR_LAB_0079072c)[*(int *)((int)local_c + 0x259)] == (undefined *)0x2)))) {
-                    FUN_006ae1c0(local_2c,&local_c);
+                    Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_c);
                   }
                   goto LAB_004b057d;
                 }
@@ -154,7 +154,7 @@ LAB_004b04c9:
                  ((iVar8 = (**(code **)(*local_c + 0x2c))(), iVar8 == 0x78 &&
                   ((&PTR_LAB_0079072c)[*(int *)((int)local_c + 0x259)] == (undefined *)0x2)))) {
                 *(undefined1 *)((int)puVar10 + iVar14 + (int)local_10) = 6;
-                FUN_006ae1c0(local_2c,&local_c);
+                Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_c);
               }
               else {
                 *(undefined1 *)((int)puVar10 + iVar14 + (int)local_10) = 5;

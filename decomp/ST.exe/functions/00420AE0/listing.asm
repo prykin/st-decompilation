@@ -1,4 +1,4 @@
-FUN_00420ae0:
+STSprGameObjC::LoadLifeFrame:
 00420AE0  55                        PUSH EBP
 00420AE1  8B EC                     MOV EBP,ESP
 00420AE3  83 EC 34                  SUB ESP,0x34

@@ -7,7 +7,7 @@ void FUN_006b0020(uint *param_1,int *param_2)
   if (param_2 != (int *)0x0) {
     *param_2 = 0;
   }
-  puVar1 = (uint *)FUN_006aac70(param_1[3] * param_1[2] + 0x1c);
+  puVar1 = (uint *)Library::DKW::LIB::FUN_006aac70(param_1[3] * param_1[2] + 0x1c);
   if (puVar1 == (uint *)0x0) {
     return;
   }

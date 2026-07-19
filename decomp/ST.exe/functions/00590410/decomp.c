@@ -19,7 +19,7 @@ void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     thunk_FUN_00540dc0(0,*(undefined4 *)(local_8 + 8),2,100,2,1,0,0,0,0,0,0);
@@ -35,7 +35,7 @@ void __thiscall MAdvTy::DoneMAdv(MAdvTy *this)
     cMf32::RecMemFree(DAT_00806780,(uint *)(this_00 + 0x5e));
     thunk_FUN_0055dbf0(DAT_0080759c,10,2);
     if (*(int *)(this_00 + 0x48) != 0) {
-      FUN_006e3b50((undefined4 *)(this_00 + 0x38));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(this_00 + 0x38));
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

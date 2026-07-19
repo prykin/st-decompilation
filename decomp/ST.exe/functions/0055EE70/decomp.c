@@ -30,7 +30,7 @@ int FUN_0055ee70(undefined1 *param_1,int param_2,int param_3)
   puVar6 = &stack0xffffffb0;
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   iVar4 = 0;
   iVar2 = param_2 * -2 + 3;
   local_28 = 0;

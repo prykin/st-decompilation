@@ -85,7 +85,7 @@ FUN_005fcff0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       }
     }
     else {
-      _strncpy(local_126,param_8,0xe);
+      Library::MSVCRT::_strncpy(local_126,param_8,0xe);
       local_118 = 0;
     }
   }

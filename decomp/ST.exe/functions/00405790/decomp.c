@@ -40,7 +40,7 @@ thunk_FUN_00636260(void *this,uint param_1,int param_2,int param_3,int param_4,i
   }
   *(undefined4 *)((int)this + 0x20) = 0x16;
 LAB_006362c5:
-  puVar2 = FUN_006ae290((uint *)0x0,param_5 * param_6,0x32,10);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_5 * param_6,0x32,10);
   *(uint **)((int)this + 0x2c) = puVar2;
   if ((puVar2 != (uint *)0x0) && (0 < param_4)) {
     *(int *)this = param_5;
@@ -51,20 +51,20 @@ LAB_006362c5:
       puVar5 = puVar5 + 1;
     }
     *(undefined2 *)puVar5 = 0;
-    FUN_006ae140(puVar2,param_5 * param_6 - 1,auStack_50);
+    Library::DKW::TBL::FUN_006ae140(puVar2,param_5 * param_6 - 1,auStack_50);
     param_1 = 0;
     fStack_c = _DAT_0079c5a4 / (float)param_5;
     if (0 < param_5) {
       do {
         fcos((float10)(int)param_1 * (float10)fStack_c);
         fsin((float10)(int)param_1 * (float10)fStack_c);
-        lVar7 = __ftol();
+        lVar7 = Library::MSVCRT::__ftol();
         uStack_18 = (undefined4)lVar7;
-        lVar7 = __ftol();
+        lVar7 = Library::MSVCRT::__ftol();
         uStack_1c = (undefined4)lVar7;
-        lVar7 = __ftol();
+        lVar7 = Library::MSVCRT::__ftol();
         uStack_10 = (undefined4)lVar7;
-        lVar7 = __ftol();
+        lVar7 = Library::MSVCRT::__ftol();
         uStack_14 = (undefined4)lVar7;
         if (0 < param_6) {
           param_4 = param_6;

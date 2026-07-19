@@ -214,8 +214,8 @@ LAB_004cd038:
     thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar5 >> 8),*(undefined1 *)((int)this + 0x24)),iVar5);
   }
 LAB_004cd1d7:
-  thunk_FUN_004ca3c0();
-  thunk_FUN_004cabb0(1);
+  TLOBaseTy::ReloadLogoPlane(this);
+  TLOBaseTy::RotateSpr(this,1);
   if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
     thunk_FUN_004d8b70((char)*(uint *)((int)this + 0x24));
   }

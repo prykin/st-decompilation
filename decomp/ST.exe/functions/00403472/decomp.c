@@ -29,7 +29,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
   }
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pcVar10 = pcStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;

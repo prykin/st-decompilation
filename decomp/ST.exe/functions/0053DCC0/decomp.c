@@ -36,23 +36,24 @@ UPanelTy::PaintLBut(UPanelTy *this,int param_1,byte param_2,char *param_3,char *
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       uVar5 = (*(code *)param_5)(param_1);
       pCVar6 = FUN_006f2c00(param_3,1,uVar5);
-      local_8 = FUN_006f1ce0(param_2,pCVar6,(int *)0x0,1);
+      local_8 = cMf32::RecGet(DAT_00806790,param_2,pCVar6,(int *)0x0,1);
       iVar4 = local_c;
       pUVar3 = local_14;
       thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),local_10,local_c,param_2,(byte *)local_8)
       ;
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (*(int *)(param_1 + 0x14) == 3) {
-        local_8 = FUN_006f1ce0(6,param_4,(int *)0x0,1);
+        local_8 = cMf32::RecGet(DAT_00806790,6,param_4,(int *)0x0,1);
         thunk_FUN_00540760(*(undefined4 **)(pUVar3 + 0x68),local_10,iVar4,'\x06',(byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
-      FUN_006b3640(DAT_008075a8,*(uint *)(pUVar3 + 0x60),0xffffffff,*(uint *)(pUVar3 + 0x3c),
-                   *(uint *)(pUVar3 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(pUVar3 + 0x60),0xffffffff,*(uint *)(pUVar3 + 0x3c),
+                 *(uint *)(pUVar3 + 0x44));
       g_currentExceptionFrame = local_58.previous;
       return;
     }

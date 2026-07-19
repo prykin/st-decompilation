@@ -1,4 +1,4 @@
-FUN_0045fd30:
+STBoatC::StopMove:
 0045FD30  55                        PUSH EBP
 0045FD31  8B EC                     MOV EBP,ESP
 0045FD33  51                        PUSH ECX

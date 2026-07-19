@@ -36,7 +36,7 @@ void __thiscall InfocPanelTy::PaintInfoc(InfocPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar5 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;

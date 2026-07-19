@@ -9,7 +9,7 @@ void FUN_0075bed0(undefined4 *param_1)
   
   puVar1 = (undefined4 *)(**(code **)*param_1)(param_1,1,0x40);
   *(undefined4 **)((int)param_1 + 0x1aa) = puVar1;
-  *puVar1 = FUN_0075bf40;
+  *puVar1 = Library::DKW::JPG::FUN_0075bf40;
   puVar1[0xb] = 0;
   puVar1[0xc] = 0;
   puVar1[0xd] = 0;

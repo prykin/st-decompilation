@@ -17,10 +17,10 @@ undefined4 * __cdecl FUN_00648620(undefined4 *param_1,undefined4 *param_2,int pa
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     *param_4 = param_3 + 0x85U;
-    puVar3 = FUN_006aac10(param_3 + 0x85U);
+    puVar3 = Library::DKW::LIB::FUN_006aac10(param_3 + 0x85U);
     puVar5 = puVar3;
     for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar5 = *param_1;

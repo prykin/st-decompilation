@@ -23,7 +23,9 @@ void __thiscall FUN_00575120(void *this,short *param_1,int param_2,int param_3)
     puVar4 = puVar4 + -iVar2;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
-  local_8 = (undefined4 *)FUN_006aac70((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2));
+  local_8 = (undefined4 *)
+            Library::DKW::LIB::FUN_006aac70
+                      ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2));
   thunk_FUN_00574920(param_1,param_2,param_3,local_8);
   FUN_006ab060(&local_8);
   return;

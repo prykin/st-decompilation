@@ -39,7 +39,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_28 = (STSprGameObjC *)this;
-  iVar5 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar1 = local_28;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_88.previous;
@@ -135,7 +135,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
     }
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(pSVar1 + 0x1d5),&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)pSVar1,(int *)&local_10);
-    local_c = (byte *)FUN_006aac70(local_10 + 0x96 + local_8);
+    local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x96 + local_8);
     if (local_14 == (byte *)0x0) {
       g_currentExceptionFrame = local_88.previous;
       return 0;
@@ -264,7 +264,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
       puVar9 = puVar9 + 1;
       pSVar10 = pSVar10 + 4;
     }
-    thunk_FUN_0058a8d0((int)pSVar1);
+    Bad((STOctopusC *)pSVar1,(int)unaff_EDI);
     if (((((*(int *)(pSVar1 + 0x299) < 0) || ((int)DAT_007fb240 <= *(int *)(pSVar1 + 0x299))) ||
          (*(int *)(pSVar1 + 0x29d) < 0)) ||
         (((int)DAT_007fb242 <= *(int *)(pSVar1 + 0x29d) ||
@@ -365,7 +365,7 @@ LAB_0058a005:
     *(undefined2 *)(pSVar1 + 0x52) = *(undefined2 *)((int)local_1c + 0x82);
     *(undefined2 *)(pSVar1 + 0x6c) = *(undefined2 *)(local_1c + 0x21);
     *(undefined4 *)(pSVar1 + 0x24d) = local_1c[0xc];
-    local_44[0] = FUN_006aac70(0x44);
+    local_44[0] = Library::DKW::LIB::FUN_006aac70(0x44);
     if (local_44[0] != 0) {
       iVar5 = 0;
       do {

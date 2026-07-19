@@ -33,7 +33,7 @@ undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param
   if (param_5 < 1) {
     return (undefined4 *)0x0;
   }
-  puVar5 = FUN_006aac10(param_2 * param_3 * 2);
+  puVar5 = Library::DKW::LIB::FUN_006aac10(param_2 * param_3 * 2);
   if (puVar5 == (undefined4 *)0x0) {
     return (undefined4 *)0x0;
   }
@@ -119,8 +119,9 @@ LAB_00561bff:
           }
           piVar12 = local_1c + param_5 * 2;
           local_24 = piVar8;
-          FUN_0072da70((undefined4 *)(local_28 + 0x800 + (int)piVar8),
-                       (undefined4 *)(uVar7 + (int)piVar8),uVar7);
+          Library::MSVCRT::FUN_0072da70
+                    ((undefined4 *)(local_28 + 0x800 + (int)piVar8),
+                     (undefined4 *)(uVar7 + (int)piVar8),uVar7);
           local_28 = uVar7;
         }
         piVar8 = local_1c;

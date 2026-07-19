@@ -1,4 +1,4 @@
-FUN_00690b90:
+AiTactClassTy::GetMessage:
 00690B90  55                        PUSH EBP
 00690B91  8B EC                     MOV EBP,ESP
 00690B93  83 EC 54                  SUB ESP,0x54

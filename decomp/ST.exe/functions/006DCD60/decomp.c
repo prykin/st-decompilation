@@ -17,15 +17,17 @@ void __fastcall FUN_006dcd60(int param_1)
   
   iVar7 = *(int *)(param_1 + 0x358);
   if ((iVar7 != 0) && ((*(byte *)(param_1 + 0xa8) & 8) == 0)) {
-    lVar9 = __ftol();
+    lVar9 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar9;
     dVar3 = (double)iVar6 * *(double *)(param_1 + 0x368);
     if (*(int *)(iVar7 + 0x28) < iVar6) {
-      iVar7 = FUN_006acf50(*(undefined4 **)(*(int *)(param_1 + 0x358) + 8),iVar6 * iVar6 + 0x18);
+      iVar7 = Library::DKW::LIB::FUN_006acf50
+                        (*(undefined4 **)(*(int *)(param_1 + 0x358) + 8),iVar6 * iVar6 + 0x18);
       *(int *)(*(int *)(param_1 + 0x358) + 8) = iVar7;
       *(undefined4 *)(*(int *)(param_1 + 0x358) + 0xc) =
            *(undefined4 *)(*(int *)(param_1 + 0x358) + 8);
-      iVar7 = FUN_006acf50(*(undefined4 **)(*(int *)(param_1 + 0x358) + 0x10),iVar6 * iVar6 + 0x10);
+      iVar7 = Library::DKW::LIB::FUN_006acf50
+                        (*(undefined4 **)(*(int *)(param_1 + 0x358) + 0x10),iVar6 * iVar6 + 0x10);
       *(int *)(*(int *)(param_1 + 0x358) + 0x10) = iVar7;
       *(int *)(*(int *)(param_1 + 0x358) + 0x14) = *(int *)(*(int *)(param_1 + 0x358) + 0x10) + 8;
       iVar7 = *(int *)(param_1 + 0x358);
@@ -61,10 +63,10 @@ void __fastcall FUN_006dcd60(int param_1)
       local_c = (dVar4 - *(double *)(param_1 + 0x68)) * _DAT_0079df60 + local_c;
     }
     dVar1 = dVar1 / *(double *)(param_1 + 0x368);
-    fVar8 = FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar8 = Library::MSVCRT::FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     dVar1 = (double)(fVar8 * (float10)*(double *)(param_1 + 0x368));
     local_c = local_c / *(double *)(param_1 + 0x368);
-    fVar8 = FUN_00730450(SUB84(local_c,0),(uint)((ulonglong)local_c >> 0x20));
+    fVar8 = Library::MSVCRT::FUN_00730450(SUB84(local_c,0),(uint)((ulonglong)local_c >> 0x20));
     dVar2 = (double)(fVar8 * (float10)*(double *)(param_1 + 0x368));
     local_c._0_4_ = SUB84(dVar2,0);
     dVar4 = dVar3 - dVar1;

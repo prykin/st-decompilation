@@ -7,7 +7,7 @@ void __thiscall FUN_005801c0(void *this,int param_1)
   short sVar3;
   int iVar4;
   
-  thunk_FUN_0057dfd0(this,*(int *)((int)this + 0x259) - param_1,1);
+  STResourceC::SetResource(this,*(int *)((int)this + 0x259) - param_1,1);
   if (*(int *)((int)this + 0x25d) == 1) {
     sVar1 = *(short *)((int)this + 0x245);
     sVar2 = *(short *)((int)this + 0x24d);

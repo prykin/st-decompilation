@@ -14,7 +14,7 @@ int FUN_00562cd0(int param_1,int param_2,int param_3)
   
   iVar7 = (int)(param_3 * 0x168 + (param_3 * 0x168 >> 0x1f & 0xfU)) >> 4;
   iVar1 = FUN_006db6d0(iVar7);
-  iVar2 = FUN_006db640(iVar7);
+  iVar2 = Library::DKW::STR::FUN_006db640(iVar7);
   iVar7 = 0;
   iVar3 = iVar1 * 3 + param_1 * 0x10000;
   iVar5 = iVar2 * -3 + param_2 * 0x10000;

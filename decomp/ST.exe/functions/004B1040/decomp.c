@@ -43,11 +43,11 @@ FUN_004b1040(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undef
     local_34 = param_7;
   }
   if (param_8 != (char *)0x0) {
-    _strncpy(local_30,param_8,0xe);
+    Library::MSVCRT::_strncpy(local_30,param_8,0xe);
   }
   local_1d = param_9;
   local_15 = param_10;
-  thunk_FUN_0054cc20(1000,0,0,&local_5c,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,1000,0,0,&local_5c,0);
   return;
 }
 

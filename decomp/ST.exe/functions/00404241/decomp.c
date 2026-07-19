@@ -32,9 +32,10 @@ ProdPanelTy::InitProdPanel
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pPStack_14 = this;
-  iVar2 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
+    puVar3 = ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
+                               (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
     this_00 = pPStack_14;
     puVar13 = (undefined4 *)0x0;
     iVar12 = 0;

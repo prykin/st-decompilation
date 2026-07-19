@@ -19,7 +19,7 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pMVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8[0xb3] == (MTestTy)0x1) {

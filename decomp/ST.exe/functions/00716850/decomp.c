@@ -32,29 +32,30 @@ int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,i
   local_8 = (int *)0x0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar4 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (param_1 == 0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0x31);
     }
     if (param_3 == '\x1d') {
-      local_c = FUN_006f1ce0(0x1d,param_2,(int *)0x0,param_5);
+      local_c = cMf32::RecGet((cMf32 *)param_1,0x1d,param_2,(int *)0x0,param_5);
       if (local_c == (ushort *)0x0) {
         RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0x34);
       }
-      puVar5 = FUN_006f2310(6,(char *)local_c,(undefined4 *)local_24,param_5);
+      puVar5 = cMf32::RecGetParam((cMf32 *)param_1,6,(char *)local_c,(undefined4 *)local_24,param_5)
+      ;
       if (puVar5 == (undefined4 *)0x0) {
         RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0x36);
       }
       iVar4 = (int)local_1a;
-      FUN_006f2310(0x1d,param_2,(undefined4 *)local_24,1);
-      local_8 = FUN_006aac10(iVar4 * 4 + 0x35);
+      cMf32::RecGetParam((cMf32 *)param_1,0x1d,param_2,(undefined4 *)local_24,1);
+      local_8 = Library::DKW::LIB::FUN_006aac10(iVar4 * 4 + 0x35);
       *local_8 = iVar4;
       local_8[1] = param_1;
       *(undefined1 *)(local_8 + 2) = 0x1d;
-      puVar5 = FUN_006aac10(*local_8 << 2);
+      puVar5 = Library::DKW::LIB::FUN_006aac10(*local_8 << 2);
       *(undefined4 **)((int)local_8 + 0x21) = puVar5;
-      puVar5 = FUN_006aac10(*local_8 << 2);
+      puVar5 = Library::DKW::LIB::FUN_006aac10(*local_8 << 2);
       *(undefined4 **)((int)local_8 + 0x29) = puVar5;
       iVar4 = FUN_0070a6f0(param_1,6,(char *)local_c,param_5);
       *(int *)((int)local_8 + 9) = iVar4;
@@ -79,7 +80,8 @@ int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,i
         } while (iVar9 < *local_8);
       }
       if ((char)local_c[0x10] != '\0') {
-        puVar5 = FUN_006f2310(0x16,(char *)(local_c + 0x10),(undefined4 *)local_24,param_5);
+        puVar5 = cMf32::RecGetParam((cMf32 *)param_1,0x16,(char *)(local_c + 0x10),
+                                    (undefined4 *)local_24,param_5);
         if (puVar5 == (undefined4 *)0x0) {
           RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0x52);
         }
@@ -128,18 +130,18 @@ int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,i
       }
     }
     else {
-      local_10 = FUN_006f1ce0(0x13,param_2,(int *)0x0,param_5);
+      local_10 = cMf32::RecGet((cMf32 *)param_1,0x13,param_2,(int *)0x0,param_5);
       if (local_10 == (ushort *)0x0) {
         RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0x6d);
       }
-      FUN_006f2310(0x13,param_2,(undefined4 *)local_24,1);
-      local_8 = FUN_006aac10(local_24[0] * 4 + 0x35);
+      cMf32::RecGetParam((cMf32 *)param_1,0x13,param_2,(undefined4 *)local_24,1);
+      local_8 = Library::DKW::LIB::FUN_006aac10(local_24[0] * 4 + 0x35);
       *local_8 = (int)local_24[0];
       local_8[1] = param_1;
       *(undefined1 *)(local_8 + 2) = 0x13;
-      puVar5 = FUN_006aac10(*local_8 << 2);
+      puVar5 = Library::DKW::LIB::FUN_006aac10(*local_8 << 2);
       *(undefined4 **)((int)local_8 + 0x21) = puVar5;
-      puVar5 = FUN_006aac10(*local_8 << 2);
+      puVar5 = Library::DKW::LIB::FUN_006aac10(*local_8 << 2);
       *(undefined4 **)((int)local_8 + 0x29) = puVar5;
       *(int *)((int)local_8 + 0x1d) = (int)local_1e;
       *(uint *)((int)local_8 + 0x19) = CONCAT22(local_1a,uStack_1c);

@@ -15,7 +15,7 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_8 = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -43,10 +43,11 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
         g_currentExceptionFrame = IStack_50.previous;
         return;
       }
-      FUN_006c1ce0(*(int *)(pSVar2 + 0xe03),
-                   DAT_0080730a -
-                   (int)((DAT_0080730a + 4000) * (DVar4 - *(int *)(pSVar2 + 0xdff))) /
-                   (int)*(uint *)(pSVar2 + 0xdfb));
+      Library::DKW::SND::FUN_006c1ce0
+                (*(int *)(pSVar2 + 0xe03),
+                 DAT_0080730a -
+                 (int)((DAT_0080730a + 4000) * (DVar4 - *(int *)(pSVar2 + 0xdff))) /
+                 (int)*(uint *)(pSVar2 + 0xdfb));
       g_currentExceptionFrame = IStack_50.previous;
       return;
     }

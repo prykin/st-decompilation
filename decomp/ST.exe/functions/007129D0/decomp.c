@@ -36,7 +36,7 @@ uint * __thiscall ccFntTy::SepColorStrInSarr(ccFntTy *this,uint *param_1,uint *p
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar4 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_68.previous;
     iVar7 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x857,0,iVar4,&DAT_007a4ccc,
@@ -60,7 +60,7 @@ uint * __thiscall ccFntTy::SepColorStrInSarr(ccFntTy *this,uint *param_1,uint *p
   }
   puVar5 = param_1;
   if (param_1 == (uint *)0x0) {
-    puVar5 = FUN_006b54f0((uint *)0x0,0x14,0x14);
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,0x14,0x14);
   }
   uVar8 = param_2[2];
   local_c = puVar5;
@@ -93,7 +93,7 @@ LAB_00712a6e:
         }
         if (local_10 < 1) {
           if (param_2 != param_1) {
-            FUN_006b6020((int)local_c,uVar10,pcVar6);
+            Library::DKW::TBL::FUN_006b6020((int)local_c,uVar10,pcVar6);
           }
         }
         else {
@@ -104,7 +104,7 @@ LAB_00712a6e:
             cVar1 = *pcVar6;
             pcVar6 = pcVar6 + 1;
           } while (cVar1 != '\0');
-          local_8 = (ccFntTy *)FUN_006aac10(~uVar8 + 3);
+          local_8 = (ccFntTy *)Library::DKW::LIB::FUN_006aac10(~uVar8 + 3);
           uVar8 = 0xffffffff;
           pcVar11 = local_18 + 0x9e;
           do {
@@ -128,7 +128,7 @@ LAB_00712a6e:
             pcVar11 = pcVar11 + 1;
             pcVar13 = pcVar13 + 1;
           }
-          pcVar6 = __itoa(local_10,local_24,0x10);
+          pcVar6 = Library::MSVCRT::__itoa(local_10,local_24,0x10);
           uVar8 = 0xffffffff;
           do {
             pcVar12 = pcVar6;
@@ -194,7 +194,7 @@ LAB_00712a6e:
             pcVar11 = pcVar11 + 1;
             pcVar13 = pcVar13 + 1;
           }
-          FUN_006b6020((int)local_c,uVar10,(char *)local_8);
+          Library::DKW::TBL::FUN_006b6020((int)local_c,uVar10,(char *)local_8);
           FUN_006ab060(&local_8);
         }
       }

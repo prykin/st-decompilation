@@ -36,7 +36,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar5 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -57,7 +57,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     if (iVar5 != 0) {
       return 0xffff;
     }
-    thunk_FUN_004abe40(*(void **)(pSVar4 + 0x2af),'\x0f',*(undefined4 *)(pSVar4 + 0x29f));
+    STT3DSprC::SetCurFase(*(STT3DSprC **)(pSVar4 + 0x2af),'\x0f',*(undefined4 *)(pSVar4 + 0x29f));
     thunk_FUN_004ac610(*(void **)(pSVar4 + 0x2af),'\x0f');
     STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x2af),0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
     uVar6 = thunk_FUN_004acd30(*(void **)(pSVar4 + 0x2af),'\x0f');
@@ -66,7 +66,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     return local_24;
   }
   if (*(int *)(local_18 + 0x2af) == 0) {
-    puVar7 = (undefined4 *)FUN_0072e530(0x40);
+    puVar7 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (puVar7 == (undefined4 *)0x0) {
       uVar6 = 0;
     }
@@ -98,7 +98,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     if (iVar5 != 0) {
       return 0xffff;
     }
-    thunk_FUN_004abe40(*(void **)(pSVar4 + 0x2af),'\r',*(undefined4 *)(pSVar4 + 0x296));
+    STT3DSprC::SetCurFase(*(STT3DSprC **)(pSVar4 + 0x2af),'\r',*(undefined4 *)(pSVar4 + 0x296));
     thunk_FUN_004ad3c0(*(void **)(pSVar4 + 0x2af),
                        (float)*(int *)(pSVar4 + 0x28a) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)(pSVar4 + 0x28e) * _DAT_007904f8 * _DAT_007904f0,

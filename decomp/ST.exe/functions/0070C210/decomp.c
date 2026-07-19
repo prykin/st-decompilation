@@ -10,7 +10,7 @@ FUN_0070c210(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  iVar1 = __setjmp3((undefined4 *)&stack0xffffffbc,0,pIVar3,in_stack_ffffffbc);
+  iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffbc,0,pIVar3,in_stack_ffffffbc);
   if (iVar1 == 0) {
     puVar2 = FUN_0070bfe0(param_1,param_2,param_3,param_4);
     g_currentExceptionFrame = pIVar3;

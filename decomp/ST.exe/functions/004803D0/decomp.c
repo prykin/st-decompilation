@@ -24,7 +24,7 @@ int __thiscall FUN_004803d0(void *this,int param_1)
   }
   iVar1 = *(int *)((int)this + 0x6ef);
   if (iVar1 == 0) {
-    iVar1 = thunk_FUN_004732f0(this,param_1);
+    iVar1 = STBoatC::LoadObj(this,param_1);
     if (iVar1 == -1) {
       return -1;
     }
@@ -52,13 +52,13 @@ int __thiscall FUN_004803d0(void *this,int param_1)
         *(undefined2 *)((int)this + 0x3d0) = 0xffff;
         *(undefined2 *)((int)this + 0x3ce) = 0xffff;
         *(undefined4 *)((int)this + 0x6ef) = 2;
-        iVar1 = thunk_FUN_004758e0(this,(undefined4 *)0x1);
+        iVar1 = STBoatC::UnLoadObj(this,(undefined4 *)0x1);
         return iVar1;
       }
     }
   }
   else if (iVar1 == 2) {
-    iVar1 = thunk_FUN_004758e0(this,(undefined4 *)0x2);
+    iVar1 = STBoatC::UnLoadObj(this,(undefined4 *)0x2);
     return iVar1;
   }
   return 2;

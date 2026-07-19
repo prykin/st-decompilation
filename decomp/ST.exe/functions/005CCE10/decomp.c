@@ -37,7 +37,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_14 = this;
-  iVar5 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_80.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x164,0,iVar5,&DAT_007a4ccc
@@ -58,7 +58,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   local_2c = 0x26;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar5 = __setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_14;
   if (iVar5 == 0) {
     FUN_006e6080(local_14,2,*(undefined4 *)(local_14 + 0x211d),local_3c);
@@ -201,7 +201,7 @@ joined_r0x005cd0bb:
       }
       local_108.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_108;
-      iVar5 = __setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar5 == 0) {
         FUN_006e6080(local_14,2,*(undefined4 *)(local_14 + 0x211d),local_3c);
       }
@@ -217,7 +217,7 @@ joined_r0x005cd0bb:
       }
       g_currentExceptionFrame = &local_14c;
       local_14c.previous = local_108.previous;
-      iVar5 = __setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar5 == 0) {
         FUN_006e6080(local_14,2,*(undefined4 *)(local_14 + 0x211d),local_3c);
       }

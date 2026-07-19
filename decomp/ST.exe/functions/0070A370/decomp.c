@@ -15,7 +15,7 @@ undefined4 __cdecl FUN_0070a370(int param_1)
   
   pIVar6 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff88;
-  iVar2 = __setjmp3(local_74,0,unaff_ESI,pIVar6);
+  iVar2 = Library::MSVCRT::__setjmp3(local_74,0,unaff_ESI,pIVar6);
   if (iVar2 == 0) {
     if (param_1 != 0) {
       if (*(int *)(param_1 + 4) != 0) {
@@ -30,7 +30,7 @@ undefined4 __cdecl FUN_0070a370(int param_1)
         FUN_006ae110(*(byte **)(param_1 + 4));
         *(undefined4 *)(param_1 + 4) = 0;
       }
-      puVar3 = FUN_006ae290((uint *)0x0,0x14,0x2d,0x14);
+      puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0x2d,0x14);
       *(uint **)(param_1 + 4) = puVar3;
     }
     g_currentExceptionFrame = pIVar6;

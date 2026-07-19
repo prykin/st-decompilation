@@ -66,7 +66,7 @@ LAB_00555e34:
       bVar7 = uVar5 < uVar2;
     } while ((int)uVar5 < (int)uVar2);
   }
-  uVar2 = FUN_006ae1c0(puVar1,param_1);
+  uVar2 = Library::DKW::TBL::FUN_006ae1c0(puVar1,param_1);
   return uVar2;
 }
 

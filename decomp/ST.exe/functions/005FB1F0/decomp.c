@@ -48,11 +48,11 @@ FUN_005fb1f0(void *this,short param_1,short param_2,uint param_3,int param_4,sho
       param_4 = (int)(param_3 * iVar5 + local_c * iVar4) / 10000;
       iVar4 = (int)(local_c * iVar5 - param_3 * iVar4) / 10000;
       FUN_006dd530(*(void **)((int)this + 0x211),&local_1c,&local_18,&local_14);
-      lVar10 = __ftol();
+      lVar10 = Library::MSVCRT::__ftol();
       sVar1 = *(short *)((int)this + 0x45);
-      lVar11 = __ftol();
+      lVar11 = Library::MSVCRT::__ftol();
       sVar2 = *(short *)((int)this + 0x43);
-      lVar12 = __ftol();
+      lVar12 = Library::MSVCRT::__ftol();
       param_2._0_1_ = (undefined1)iVar4;
       return ((uint)(0 < (int)(((int)(short)lVar10 - (int)sVar1) * local_10 +
                                ((int)(short)lVar11 - (int)sVar2) * iVar4 +

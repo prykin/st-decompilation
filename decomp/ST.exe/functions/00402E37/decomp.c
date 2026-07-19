@@ -28,7 +28,7 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,und
     return 0;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa0;
-  iVar3 = __setjmp3(auStack_5c,0,unaff_ESI,pIVar5);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_5c,0,unaff_ESI,pIVar5);
   pAVar2 = pAStack_8;
   if (iVar3 == 0) {
     uStack_1c = param_4;
@@ -43,7 +43,7 @@ AiPlrClassTy::SetTech(AiPlrClassTy *this,int param_1,int param_2,int param_3,und
     }
     iStack_14 = iVar3;
     iStack_10 = iVar3;
-    FUN_006ae1c0(*(uint **)(pAStack_8 + 0x6a1),(undefined4 *)&uStack_1c);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pAStack_8 + 0x6a1),(undefined4 *)&uStack_1c);
     thunk_FUN_00676c40(*(int *)(pAVar2 + 0x6a1),&LAB_004029b9);
     g_currentExceptionFrame = pIVar5;
     return 0;

@@ -1,4 +1,4 @@
-FUN_00476ce0:
+STBoatC::Capture:
 00476CE0  55                        PUSH EBP
 00476CE1  8B EC                     MOV EBP,ESP
 00476CE3  83 EC 60                  SUB ESP,0x60

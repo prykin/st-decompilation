@@ -64,7 +64,7 @@ void thunk_FUN_00512be0(int param_1)
   }
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  aiStack_8c4[0] = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  aiStack_8c4[0] = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (aiStack_8c4[0] == 0) {
     aiStack_8c4[1] = 2;
     iStack_8a4 = *(int *)((int)pvStack_8 + 0x3c) + 0x21;

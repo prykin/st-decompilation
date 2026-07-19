@@ -30,14 +30,14 @@ void __thiscall ProdPanelTy::PaintTab(ProdPanelTy *this,int param_1,undefined *p
     IStack_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_58;
     pPStack_14 = this;
-    piVar3 = (int *)__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    piVar3 = (int *)Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (piVar3 == (int *)0x0) {
       iVar7 = 1;
       uVar4 = (*(code *)param_2)(param_1);
       iVar6 = 2;
       pCVar5 = thunk_FUN_00571240(s_BUT_BLDTAB_007c7af4,0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar6,uVar4);
-      puStack_8 = FUN_006f1ce0(1,pCVar5,piVar3,iVar7);
+      puStack_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar3,iVar7);
       iVar6 = iStack_c;
       pPVar2 = pPStack_14;
       thunk_FUN_00540760(*(undefined4 **)(pPStack_14 + 0x68),iStack_10,iStack_c,'\x01',
@@ -47,13 +47,14 @@ void __thiscall ProdPanelTy::PaintTab(ProdPanelTy *this,int param_1,undefined *p
         iVar7 = 1;
         piVar3 = (int *)0x0;
         pCVar5 = thunk_FUN_00571240(s_BUT_BLDFRAME_007c7ae4,0);
-        puStack_8 = FUN_006f1ce0(6,pCVar5,piVar3,iVar7);
+        puStack_8 = cMf32::RecGet(DAT_00806790,6,pCVar5,piVar3,iVar7);
         thunk_FUN_00540760(*(undefined4 **)(pPVar2 + 0x68),iStack_10,iVar6,'\x06',(byte *)puStack_8)
         ;
         cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_8);
       }
-      FUN_006b3640(DAT_008075a8,*(uint *)(pPVar2 + 0x60),0xffffffff,*(uint *)(pPVar2 + 0x3c),
-                   *(uint *)(pPVar2 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(pPVar2 + 0x60),0xffffffff,*(uint *)(pPVar2 + 0x3c),
+                 *(uint *)(pPVar2 + 0x44));
       g_currentExceptionFrame = IStack_58.previous;
       return;
     }

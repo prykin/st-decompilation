@@ -7,7 +7,7 @@ undefined4 __fastcall thunk_FUN_004e0830(int *param_1)
   int iVar3;
   int iVar4;
   uint uVar5;
-  void *this;
+  STResourceC *this;
   short sVar6;
   short sVar7;
   int iVar8;
@@ -107,7 +107,7 @@ LAB_004e0a4f:
            *(int *)(*(int *)((int)param_1 + 0x1f5) + iVar3 * 0x24 + 0x14)) && (param_1[0x13a] == 0))
       {
         param_1[0x134] = 0;
-        thunk_FUN_004cabb0(1);
+        TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,1);
       }
     }
   }
@@ -143,7 +143,7 @@ LAB_004e0a4f:
               param_1[0x140] = param_1[0x16d] * 0xc9 + 100;
               param_1[0x141] = param_1[0x16e] * 0xc9 + -0x28;
               thunk_FUN_004ec0f0((int)param_1);
-              thunk_FUN_004cabb0(0);
+              TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
               if (param_1[0x16b] == 0x52) {
                 iVar2 = *param_1;
                 iVar3 = thunk_FUN_004406c0(*(char *)((int)param_1 + 0x23d));
@@ -173,7 +173,7 @@ LAB_004e0a4f:
       param_1[0x134] = 4;
       param_1[0x144] = 0;
       param_1[0x145] = *(int *)(DAT_00802a38 + 0xe4);
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
     }
     break;
   case 4:
@@ -215,7 +215,7 @@ LAB_004e0de2:
     }
     param_1[0x134] = 5;
     thunk_FUN_004cbf70((int)param_1);
-    thunk_FUN_004cabb0(0);
+    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
     iVar2 = param_1[0x16b];
     if (iVar2 != 0x52) {
 joined_r0x004e0f0b:
@@ -237,7 +237,7 @@ LAB_004e0f14:
       param_1[0x137] = 0;
       param_1[0x142] = 0;
       thunk_FUN_004cbf70((int)param_1);
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
     }
     break;
   case 6:
@@ -245,7 +245,7 @@ LAB_004e0f14:
         (param_1[0x140] != param_1[0x16d] * 0xc9 + 100)) ||
        (param_1[0x141] != param_1[0x16e] * 0xc9 + -0x28)) break;
     param_1[0x134] = 5;
-    thunk_FUN_004cabb0(0);
+    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
     iVar2 = param_1[0x16b];
     if (iVar2 != 0x52) goto joined_r0x004e0f0b;
     cVar15 = *(char *)((int)param_1 + 0x23d);
@@ -275,8 +275,8 @@ switchD_004e0aad_default:
         param_1[0x146] = DAT_007be8c4;
       }
       this = thunk_FUN_004d85e0(param_1[0x16c],param_1[0x16d],param_1[0x16e]);
-      if (this != (void *)0x0) {
-        thunk_FUN_0057dfd0(this,param_1[0x138],1);
+      if (this != (STResourceC *)0x0) {
+        STResourceC::SetResource(this,param_1[0x138],1);
       }
       if ((param_1[0x138] == 0) && (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d))) {
         (**(code **)(*param_1 + 0x90))(4,0x3bd);

@@ -62,7 +62,7 @@ float * thunk_FUN_0064a970(char *param_1,int param_2,int *param_3)
   puStack_1c = (undefined4 *)0x0;
   IStack_c0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_c0;
-  iVar5 = __setjmp3(IStack_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_c0.previous;
     if (puStack_1c != (undefined4 *)0x0) {
@@ -79,7 +79,7 @@ float * thunk_FUN_0064a970(char *param_1,int param_2,int *param_3)
     }
     return (float *)0x0;
   }
-  _strncpy((char *)(piStack_38 + 1),&DAT_008016a0,0x7f);
+  Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),&DAT_008016a0,0x7f);
   piStack_38[0x21] = -1;
   cVar3 = *param_1;
   pcVar12 = param_1;
@@ -126,7 +126,7 @@ switchD_0064aa67_caseD_1:
             cVar3 = *pcVar10;
             pcVar10 = pcVar10 + 1;
           } while (cVar3 != '\0');
-          pfStack_8 = (float *)FUN_006aac10(~uVar13 + ~uVar14 + 2);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(~uVar13 + ~uVar14 + 2);
           if ((pfStack_8 != (float *)0x0) && (pcVar12 != (char *)0x0)) {
             uVar13 = 0xffffffff;
             do {
@@ -200,7 +200,7 @@ LAB_0064bbb1:
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
           iVar5 = (**(code **)*piStack_38)(param_1);
           iVar8 = (**(code **)*piStack_38)(param_1 + 5);
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           switch(*(undefined2 *)(pcStack_10 + 1)) {
           case 1:
             *pfStack_8 = (float)(iVar8 + iVar5);
@@ -231,7 +231,7 @@ LAB_0064bbb1:
         if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
           pcVar12 = thunk_FUN_00674af0((int)sVar4);
           if (pcVar12 != (char *)0x0) {
-            _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+            Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
             piStack_38[0x21] = -1;
             iVar5 = -0x76;
             goto LAB_0064c2a4;
@@ -242,7 +242,7 @@ LAB_0064bbb1:
         piStack_c = (int *)(float)(int)pbStack_18;
         fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1 + 5);
         fStack_14 = (float)fVar18;
-        pfStack_8 = (float *)FUN_006aac10(4);
+        pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
         switch((int)*(short *)(pcStack_10 + 1)) {
         case 1:
           *pfStack_8 = fStack_14 + (float)piStack_c;
@@ -270,7 +270,7 @@ LAB_0064bbb1:
           if ((cVar3 != '\x05') && (cVar3 != '\x02')) {
             pcVar12 = thunk_FUN_00674af0((int)sVar4);
             if (pcVar12 != (char *)0x0) {
-              _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+              Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
               piStack_38[0x21] = -1;
               iVar5 = -0x76;
               goto LAB_0064c2a4;
@@ -281,7 +281,7 @@ LAB_0064bbb1:
           piStack_c = (int *)(float)fVar18;
           fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1 + 5);
           fStack_14 = (float)fVar18;
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           iVar5 = (int)*(short *)(pcStack_10 + 1);
           switch(iVar5) {
           case 1:
@@ -307,7 +307,7 @@ LAB_0064bbb1:
         piStack_c = (int *)(float)fVar18;
         pbStack_18 = (byte *)(**(code **)*piStack_38)(param_1 + 5);
         fStack_14 = (float)(int)pbStack_18;
-        pfStack_8 = (float *)FUN_006aac10(4);
+        pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
         iVar5 = (int)*(short *)(pcStack_10 + 1);
         switch(iVar5) {
         case 1:
@@ -318,7 +318,7 @@ switchD_0064b42d_caseD_2:
           pcVar12 = thunk_FUN_00674af0(iVar5);
 joined_r0x0064b49a:
           if (pcVar12 != (char *)0x0) {
-            _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+            Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
           }
           piStack_38[0x21] = -1;
           RaiseInternalException(-0x76,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -339,7 +339,7 @@ joined_r0x0064b49a:
       default:
         pcVar12 = thunk_FUN_00674af0((int)sVar4);
         if (pcVar12 != (char *)0x0) {
-          _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+          Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
           piStack_38[0x21] = -1;
           iVar5 = -0x76;
           goto LAB_0064c2a4;
@@ -373,7 +373,7 @@ switchD_0064aa67_caseD_3:
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
           iVar5 = (**(code **)*piStack_38)(param_1);
           iVar8 = (**(code **)*piStack_38)(param_1 + 5);
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           sVar4 = *(short *)(pcStack_10 + 1);
           if (sVar4 == 3) {
             if ((iVar5 != 0) && (iVar8 != 0)) {
@@ -403,7 +403,7 @@ LAB_0064b78b:
       }
       pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
       if (pcVar12 != (char *)0x0) {
-        _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+        Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
       }
 LAB_0064b714:
       piStack_38[0x21] = -1;
@@ -419,7 +419,7 @@ LAB_0064b714:
 LAB_0064ae25:
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
         if (pcVar12 != (char *)0x0) {
-          _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+          Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
         }
         piStack_38[0x21] = -1;
         iVar5 = -0x76;
@@ -428,7 +428,7 @@ LAB_0064ae25:
       if ((param_1[5] != '\x04') && (param_1[5] != '\x01')) goto LAB_0064ae25;
       uVar13 = (**(code **)*piStack_38)(param_1);
       uVar14 = (**(code **)*piStack_38)(param_1 + 5);
-      pfStack_8 = (float *)FUN_006aac10(4);
+      pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       sVar4 = *(short *)(pcStack_10 + 1);
       if (sVar4 == 8) {
         *pfStack_8 = (float)(uVar14 & uVar13);
@@ -451,7 +451,7 @@ LAB_0064b368:
         RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_erc_cpp_007d2a04,0x164);
       }
       if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
-        pfStack_8 = (float *)FUN_006aac10(4);
+        pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
         uVar13 = (**(code **)*piStack_38)(param_1);
         *pfStack_8 = (float)~uVar13;
         goto LAB_0064b36f;
@@ -467,13 +467,13 @@ LAB_0064b368:
         pcVar12 = param_1 + iVar5 * 5;
         cVar3 = param_1[iVar5 * 5];
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           fVar9 = (float)(**(code **)*piStack_38)(pcVar12);
           *pfStack_8 = fVar9;
           goto LAB_0064b36f;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           fVar18 = (float10)(**(code **)(*piStack_38 + 4))(pcVar12);
           *pfStack_8 = (float)fVar18;
           goto LAB_0064b291;
@@ -491,7 +491,7 @@ LAB_0064b368:
             cVar3 = *pcVar10;
             pcVar10 = pcVar10 + 1;
           } while (cVar3 != '\0');
-          pfStack_8 = (float *)FUN_006aac10(~uVar13 + 1);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(~uVar13 + 1);
           uVar13 = 0xffffffff;
           do {
             pcVar10 = pcVar12;
@@ -519,7 +519,7 @@ LAB_0064b368:
       }
       pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
       if (pcVar12 != (char *)0x0) {
-        _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+        Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
       }
       piStack_38[0x21] = -1;
       iVar5 = -0x76;
@@ -538,7 +538,7 @@ LAB_0064b368:
         if ((param_1[5] == '\x04') || (param_1[5] == '\x01')) {
           iVar5 = (**(code **)*piStack_38)(param_1);
           iVar8 = (**(code **)*piStack_38)(param_1 + 5);
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           switch(*(undefined2 *)(pcStack_10 + 1)) {
           case 0x1e:
             *pfStack_8 = (float)(uint)(iVar5 == iVar8);
@@ -570,7 +570,7 @@ LAB_0064b368:
           fStack_20 = (float)fVar18;
           fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1 + 5);
           fStack_24 = (float)fVar18;
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           switch(*(undefined2 *)(pcStack_10 + 1)) {
           case 0x1e:
             if (fStack_20 == fStack_24) {
@@ -622,7 +622,7 @@ LAB_0064b368:
           if ((pbVar7 == (byte *)0x0) || (pbVar6 == (byte *)0x0)) {
             RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_erc_cpp_007d2a04,0x11c);
           }
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           do {
             bVar2 = *pbVar7;
             bVar17 = bVar2 < *pbVar6;
@@ -673,13 +673,13 @@ LAB_0064ab59:
       if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
         if (pcVar12 != (char *)0x0) {
-          _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+          Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
         }
         piStack_38[0x21] = -1;
         iVar5 = -0x76;
         goto LAB_0064c2a4;
       }
-      pfStack_8 = (float *)FUN_006aac10(4);
+      pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       iVar5 = (**(code **)*piStack_38)(param_1);
       *pfStack_8 = (float)(uint)(iVar5 == 0);
       goto LAB_0064b36f;
@@ -687,7 +687,7 @@ LAB_0064ab59:
 LAB_0064b7ea:
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
     if (pcVar12 != (char *)0x0) {
-      _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+      Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
     }
 LAB_0064b80a:
     piStack_38[0x21] = -1;
@@ -706,8 +706,8 @@ LAB_0064b80a:
             if (pbVar7 == (byte *)0x0) {
               RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_erc_cpp_007d2a04,0x192);
             }
-            pfStack_8 = (float *)FUN_006aac10(4);
-            fVar9 = (float)FUN_0072ff00(pbVar7);
+            pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+            fVar9 = (float)Library::MSVCRT::FUN_0072ff00(pbVar7);
             *pfStack_8 = fVar9;
             goto LAB_0064b36f;
           }
@@ -720,7 +720,7 @@ LAB_0064b80a:
             if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
               pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
               if (pcVar12 != (char *)0x0) {
-                _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+                Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
               }
               piStack_38[0x21] = -1;
               iVar5 = -0x78;
@@ -731,8 +731,8 @@ LAB_0064b80a:
               RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_erc_cpp_007d2a04,0x1a0);
             }
             pbStack_18 = (byte *)0x0;
-            pfStack_8 = (float *)FUN_006aac10(4);
-            fVar18 = FUN_00730310(pbVar7,(int *)&pbStack_18);
+            pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+            fVar18 = Library::MSVCRT::FUN_00730310(pbVar7,(int *)&pbStack_18);
             *pfStack_8 = (float)fVar18;
             goto LAB_0064b291;
           }
@@ -750,15 +750,15 @@ LAB_0064b80a:
               if (0x24 < iVar8) {
                 iVar8 = 0x24;
               }
-              pfStack_8 = (float *)FUN_006aac10(0x40);
-              __itoa(iVar5,(char *)pfStack_8,iVar8);
+              pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(0x40);
+              Library::MSVCRT::__itoa(iVar5,(char *)pfStack_8,iVar8);
               goto LAB_0064bbb1;
             }
           }
         }
         pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
         if (pcVar12 != (char *)0x0) {
-          _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+          Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
         }
         piStack_38[0x21] = -1;
         iVar5 = -0x78;
@@ -791,7 +791,7 @@ LAB_0064b901:
               }
               pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
               if (pcVar12 != (char *)0x0) {
-                _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+                Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
               }
               piStack_38[0x21] = -1;
               RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -801,7 +801,7 @@ LAB_0064b901:
             iVar5 = iVar5 + -1;
           } while (iVar5 != 0);
         }
-        pfStack_8 = (float *)FUN_006aac10(4);
+        pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
         *pfStack_8 = (float)pcStack_28 / (float)param_2;
         goto LAB_0064b291;
       }
@@ -811,13 +811,13 @@ LAB_0064b901:
         }
         cVar3 = *param_1;
         if ((cVar3 == '\x04') || (cVar3 == '\x01')) {
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           iVar5 = (**(code **)*piStack_38)(param_1);
           *pfStack_8 = (float)-iVar5;
           goto LAB_0064b36f;
         }
         if ((cVar3 == '\x05') || (cVar3 == '\x02')) {
-          pfStack_8 = (float *)FUN_006aac10(4);
+          pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1);
           *pfStack_8 = (float)-fVar18;
           goto LAB_0064b36f;
@@ -841,8 +841,9 @@ LAB_0064b659:
 LAB_0064b663:
               if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
                 fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1);
-                FUN_00730450(SUB84((double)fVar18,0),(uint)((ulonglong)(double)fVar18 >> 0x20));
-                lVar19 = __ftol();
+                Library::MSVCRT::FUN_00730450
+                          (SUB84((double)fVar18,0),(uint)((ulonglong)(double)fVar18 >> 0x20));
+                lVar19 = Library::MSVCRT::__ftol();
                 piStack_c = (int *)lVar19;
               }
             }
@@ -853,7 +854,7 @@ LAB_0064b663:
               }
               pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
               if (pcVar12 != (char *)0x0) {
-                _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+                Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
               }
               piStack_38[0x21] = -1;
               RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -863,7 +864,7 @@ LAB_0064b663:
             fStack_14 = (float)((int)fStack_14 + -1);
           } while (fStack_14 != 0.0);
         }
-        pfStack_8 = (float *)FUN_006aac10(4);
+        pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
         *pfStack_8 = (float)((int)pcStack_28 / param_2);
         goto LAB_0064b36f;
       }
@@ -883,16 +884,17 @@ LAB_0064b663:
         if (0x40 < iVar5) {
           iVar5 = 0x40;
         }
-        pfStack_8 = (float *)FUN_006aac10(iVar5 + 10);
-        FUN_007301e0(SUB84((double)(float)pbStack_18,0),
-                     (int)((ulonglong)(double)(float)pbStack_18 >> 0x20),iVar5,(char *)pfStack_8);
+        pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(iVar5 + 10);
+        Library::MSVCRT::FUN_007301e0
+                  (SUB84((double)(float)pbStack_18,0),
+                   (int)((ulonglong)(double)(float)pbStack_18 >> 0x20),iVar5,(char *)pfStack_8);
         goto LAB_0064bbb1;
       }
     }
 LAB_0064bd33:
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
     if (pcVar12 != (char *)0x0) {
-      _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+      Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
     }
     piStack_38[0x21] = -1;
     iVar5 = -0x78;
@@ -905,13 +907,13 @@ LAB_0064bd33:
     }
     if ((*param_1 == '\x04') || (*param_1 == '\x01')) {
       pbStack_18 = (byte *)(**(code **)*piStack_38)(param_1);
-      pfStack_8 = (float *)FUN_006aac10(4);
+      pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       *pfStack_8 = (float)(int)pbStack_18;
       goto LAB_0064b291;
     }
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
     if (pcVar12 != (char *)0x0) {
-      _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+      Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
     }
     piStack_38[0x21] = -1;
     iVar5 = -0x78;
@@ -923,16 +925,17 @@ LAB_0064bd33:
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1);
       pbStack_18 = (byte *)(float)fVar18;
-      pfStack_8 = (float *)FUN_006aac10(4);
-      FUN_0072e150(SUB84((double)(float)pbStack_18,0),
-                   (uint)((ulonglong)(double)(float)pbStack_18 >> 0x20));
-      lVar19 = __ftol();
+      pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      Library::MSVCRT::FUN_0072e150
+                (SUB84((double)(float)pbStack_18,0),
+                 (uint)((ulonglong)(double)(float)pbStack_18 >> 0x20));
+      lVar19 = Library::MSVCRT::__ftol();
       *pfStack_8 = (float)lVar19;
       goto LAB_0064b36f;
     }
     pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
     if (pcVar12 != (char *)0x0) {
-      _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+      Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
     }
     piStack_38[0x21] = -1;
     iVar5 = -0x78;
@@ -944,10 +947,11 @@ LAB_0064bd33:
     if ((*param_1 == '\x05') || (*param_1 == '\x02')) {
       fVar18 = (float10)(**(code **)(*piStack_38 + 4))(param_1);
       pbStack_18 = (byte *)(float)fVar18;
-      pfStack_8 = (float *)FUN_006aac10(4);
-      FUN_00730450(SUB84((double)(float)pbStack_18,0),
-                   (uint)((ulonglong)(double)(float)pbStack_18 >> 0x20));
-      lVar19 = __ftol();
+      pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
+      Library::MSVCRT::FUN_00730450
+                (SUB84((double)(float)pbStack_18,0),
+                 (uint)((ulonglong)(double)(float)pbStack_18 >> 0x20));
+      lVar19 = Library::MSVCRT::__ftol();
       *pfStack_8 = (float)lVar19;
       goto LAB_0064b36f;
     }
@@ -959,7 +963,7 @@ LAB_0064bd33:
     if ((*param_1 != '\x06') && (*param_1 != '\x03')) {
       pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
       if (pcVar12 != (char *)0x0) {
-        _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+        Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
       }
       piStack_38[0x21] = -1;
       RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -979,7 +983,7 @@ LAB_0064bd33:
     fStack_20 = (float)(~uVar13 + 1);
     fStack_14 = 0.0;
     pcStack_28 = (char *)0x200;
-    puStack_1c = (undefined4 *)FUN_006aac70(0x200);
+    puStack_1c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x200);
     if (1 < param_2) {
       piStack_c = (int *)(param_1 + 5);
       iStack_30 = param_2 + -1;
@@ -996,7 +1000,7 @@ LAB_0064bd33:
           }
           if ((int)pcVar12 <= iStack_2c) {
             pcStack_28 = (char *)((int)pcVar12 + 0x200);
-            puStack_1c = (undefined4 *)FUN_006acf50(puStack_1c,(uint)pcStack_28);
+            puStack_1c = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puStack_1c,(uint)pcStack_28);
           }
           puVar1 = (undefined4 *)((int)fStack_14 + (int)puStack_1c);
           fStack_14 = (float)((int)fStack_14 + 4);
@@ -1019,7 +1023,7 @@ LAB_0064bd33:
           if ((int)pcVar12 <= iStack_2c) {
             pcVar12 = (char *)((int)pcVar12 + 0x200);
             pcStack_28 = pcVar12;
-            puStack_1c = (undefined4 *)FUN_006acf50(puStack_1c,(uint)pcVar12);
+            puStack_1c = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puStack_1c,(uint)pcVar12);
           }
           puVar1 = (undefined4 *)((int)fStack_14 + (int)puStack_1c);
           fStack_14 = (float)((int)fStack_14 + 4);
@@ -1034,7 +1038,7 @@ LAB_0064bd33:
           if ((int)pcVar12 <= (int)fStack_24) {
             pcVar12 = (char *)((int)pcVar12 + 0x200);
             pcStack_28 = pcVar12;
-            puStack_1c = (undefined4 *)FUN_006acf50(puStack_1c,(uint)pcVar12);
+            puStack_1c = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puStack_1c,(uint)pcVar12);
           }
           *(double *)((int)fStack_14 + (int)puStack_1c) = (double)fStack_34;
           fStack_14 = (float)((int)fStack_14 + 8);
@@ -1045,7 +1049,7 @@ LAB_0064bd33:
         else {
           pcVar10 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
           if (pcVar10 != (char *)0x0) {
-            _strncpy((char *)(piStack_38 + 1),pcVar10,0x7f);
+            Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar10,0x7f);
           }
           piStack_38[0x21] = -1;
           RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1055,8 +1059,8 @@ LAB_0064bd33:
       } while (iStack_30 != 0);
     }
     fVar9 = fStack_20;
-    pfStack_8 = (float *)FUN_006aac10((uint)fStack_20);
-    FUN_007300e0((undefined1 *)pfStack_8,(int)fVar9,pbStack_18,puStack_1c);
+    pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10((uint)fStack_20);
+    Library::MSVCRT::FUN_007300e0((undefined1 *)pfStack_8,(int)fVar9,pbStack_18,puStack_1c);
     if (param_3 != (int *)0x0) {
       *param_3 = 3;
     }
@@ -1081,7 +1085,7 @@ LAB_0064bd33:
         else {
           pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
           if (pcVar12 != (char *)0x0) {
-            _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+            Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
           }
           piStack_38[0x21] = -1;
           RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1091,7 +1095,7 @@ LAB_0064bd33:
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    pfStack_8 = (float *)FUN_006aac10(4);
+    pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
     if (((iStack_68 <= iStack_74) && (iStack_74 < iStack_5c + iStack_68)) &&
        ((iStack_64 <= iStack_70 &&
         (((iStack_70 < iStack_58 + iStack_64 && (iStack_60 <= iStack_6c)) &&
@@ -1114,7 +1118,7 @@ LAB_0064bd33:
         else {
           pcVar12 = thunk_FUN_00674af0((int)*(short *)(pcStack_10 + 1));
           if (pcVar12 != (char *)0x0) {
-            _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+            Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
           }
           piStack_38[0x21] = -1;
           RaiseInternalException(-0x78,DAT_007ed77c,s___ai_ai_erc_h_007d2a24,0x79);
@@ -1124,7 +1128,7 @@ LAB_0064bd33:
         param_2 = param_2 + -1;
       } while (param_2 != 0);
     }
-    pfStack_8 = (float *)FUN_006aac10(4);
+    pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
     if ((((iStack_48 <= iStack_50) && (iStack_50 < iStack_40 + iStack_48)) &&
         (iStack_44 <= iStack_4c)) && (iStack_4c < iStack_3c + iStack_44)) {
       *pfStack_8 = 1.4013e-45;
@@ -1144,7 +1148,7 @@ LAB_0064b36f:
 switchD_0064aa67_caseD_2:
     pcVar12 = thunk_FUN_00674af0(iVar5);
     if (pcVar12 != (char *)0x0) {
-      _strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
+      Library::MSVCRT::_strncpy((char *)(piStack_38 + 1),pcVar12,0x7f);
     }
     piStack_38[0x21] = -1;
     iVar5 = -0x75;

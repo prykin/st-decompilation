@@ -68,7 +68,7 @@ uint * FUN_00565820(uint param_1,int param_2,int param_3,int param_4,int param_5
   local_60 = 0;
   local_d8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d8;
-  iVar4 = __setjmp3(local_d8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_d8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     local_14 = FUN_00561240(param_4,param_5,param_6);
     iVar9 = local_14[2];
@@ -77,7 +77,7 @@ uint * FUN_00565820(uint param_1,int param_2,int param_3,int param_4,int param_5
     iVar12 = iVar4 * iVar15;
     local_28 = iVar4;
     local_c = iVar15;
-    local_48 = FUN_006aac10(iVar12 * 7);
+    local_48 = Library::DKW::LIB::FUN_006aac10(iVar12 * 7);
     local_20 = (uint *)0x0;
     local_2c = (uint *)0x0;
     local_30 = local_14[1] + -1 + param_2;
@@ -297,7 +297,8 @@ LAB_00565c6c:
       local_28 = (local_14[4] - (int)local_2c) + 1;
     }
     local_38 = param_2 - local_30;
-    puVar6 = FUN_006ae290((uint *)0x0,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
+    puVar6 = Library::DKW::TBL::FUN_006ae290
+                       ((uint *)0x0,(int)(*local_14 + (*local_14 >> 0x1f & 3U)) >> 2,6,10);
     local_8 = 0;
     local_1c = local_34;
     local_24 = puVar6;
@@ -318,7 +319,7 @@ LAB_00565c6c:
                 local_40 = (short)iVar7 + (short)local_30;
                 local_3e = (short)local_10 + (short)local_44;
                 local_3c = (undefined2)local_8;
-                FUN_006ae1c0(puVar6,(undefined4 *)&local_40);
+                Library::DKW::TBL::FUN_006ae1c0(puVar6,(undefined4 *)&local_40);
                 local_94[local_8] = local_94[local_8] + 1;
                 iVar4 = iVar7 - iVar12;
                 pbVar13 = (byte *)((iVar4 - iVar15) + (int)local_20);
@@ -376,7 +377,7 @@ LAB_00565c6c:
       local_1c = (uint *)((int)local_1c + iVar12);
     } while (local_8 < 5);
     if ((0 < (int)param_7) && ((int)param_7 < (int)puVar6[3])) {
-      local_1c = FUN_006ae290((uint *)0x0,param_7,6,10);
+      local_1c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_7,6,10);
       while( true ) {
         iVar9 = 0;
         local_2c = local_94;
@@ -404,7 +405,7 @@ LAB_00565c6c:
           do {
             uVar11 = FUN_006acc70((int)local_24,iVar4 + uVar10,(undefined4 *)&local_40);
             if (-1 < (int)uVar11) {
-              FUN_006ae1c0(local_1c,(undefined4 *)&local_40);
+              Library::DKW::TBL::FUN_006ae1c0(local_1c,(undefined4 *)&local_40);
             }
             iVar4 = iVar4 + 1;
           } while (iVar4 < (int)uVar14);
@@ -420,7 +421,7 @@ LAB_00565c6c:
           iVar9 = iVar9 + (int)((uVar14 + 1) * 0x10000) / iVar4;
           uVar10 = FUN_006acc70((int)local_24,iVar9 >> 0x10,(undefined4 *)&local_40);
           if (-1 < (int)uVar10) {
-            FUN_006ae1c0(local_1c,(undefined4 *)&local_40);
+            Library::DKW::TBL::FUN_006ae1c0(local_1c,(undefined4 *)&local_40);
           }
           param_7 = param_7 - 1;
         } while (param_7 != 0);

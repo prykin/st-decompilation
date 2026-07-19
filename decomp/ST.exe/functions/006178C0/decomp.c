@@ -1,5 +1,9 @@
 
-void __fastcall FUN_006178c0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_jbomb_m.Cpp
+   JumpManagC::CheckSystrm */
+
+void __thiscall JumpManagC::CheckSystrm(JumpManagC *this,int param_1)
 
 {
   code *pcVar1;
@@ -10,7 +14,7 @@ void __fastcall FUN_006178c0(int param_1)
   bool bVar6;
   int local_8;
   
-  iVar4 = *(int *)(param_1 + 0x5e);
+  iVar4 = *(int *)(this + 0x5e);
   iVar3 = 1;
   if (iVar4 != 0) {
     uVar5 = 0;
@@ -40,7 +44,7 @@ void __fastcall FUN_006178c0(int param_1)
           iVar3 = -1;
         }
         uVar5 = uVar5 + 1;
-        iVar4 = *(int *)(param_1 + 0x5e);
+        iVar4 = *(int *)(this + 0x5e);
         bVar6 = uVar5 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar5 < (int)*(uint *)(iVar4 + 0xc));
       if (iVar3 == 0) {

@@ -48,7 +48,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_8 = this;
-  iVar4 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_b8.previous;
@@ -90,7 +90,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     }
     FUN_006ae110(*(byte **)(this_00 + 0x1f84));
   }
-  puVar5 = FUN_006ae290((uint *)0x0,8,0x60,8);
+  puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
   *(uint **)(this_00 + 0x1f84) = puVar5;
   local_c = &DAT_008087e8;
   do {
@@ -192,7 +192,7 @@ LAB_005d5350:
       local_18 = *(undefined4 *)(pcVar9 + 0xb);
       local_29 = 0;
       local_25 = 1;
-      FUN_006ae1c0(*(uint **)(local_8 + 0x1f84),(undefined4 *)&local_74);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x1f84),(undefined4 *)&local_74);
       this_00 = local_8;
     }
     local_c = pcVar9 + 0x51;

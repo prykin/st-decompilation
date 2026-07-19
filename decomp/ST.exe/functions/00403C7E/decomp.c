@@ -6,7 +6,7 @@ void __thiscall thunk_FUN_0062af40(void *this,undefined4 *param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  puVar1 = (undefined4 *)FUN_006aac70(0xd7);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xd7);
   *param_1 = 0;
   if (puVar1 != (undefined4 *)0x0) {
     puVar3 = puVar1;

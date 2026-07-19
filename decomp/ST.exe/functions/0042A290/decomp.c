@@ -36,7 +36,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
   
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
-  iVar3 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     psVar4 = FUN_006ef640(param_1,param_2,DAT_00806760,DAT_00806760,&LAB_00403dff);
     local_1c = psVar4;
@@ -77,8 +77,8 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
     if (local_10 == (int *)0x0) {
       RaiseInternalException(-2,DAT_007ed77c,s_E____titans_tload_cpp_007a5fdc,0x48e);
     }
-    FUN_0072e150(0xc0000000,0x403ccccc);
-    lVar15 = __ftol();
+    Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
+    lVar15 = Library::MSVCRT::__ftol();
     iVar3 = (int)lVar15;
     local_30 = iVar3;
     FUN_006dc050(this,0,0,0,iVar3,iVar3,0,0xc0240000,0,0x40240000,0,0xc0240000,0,0x40240000,
@@ -88,7 +88,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
     FUN_006dd800(this,219.932);
     this[0x49] = 5;
     FUN_006dd610(this,4,0,0x40240000,0,0x40240000);
-    local_c = FUN_006ae290((uint *)0x0,100,8,100);
+    local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,100,8,100);
     local_18 = 0;
     if (0 < *(int *)((int)psVar4 + 0x455)) {
       local_14 = (int *)((int)psVar4 + 0x459);
@@ -126,7 +126,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
             *(undefined2 *)(piVar1 + 1) = (undefined2)local_8;
             local_24 = piVar1[10];
             *(undefined2 *)(piVar1 + 2) = (undefined2)local_2c;
-            local_20 = (undefined4 *)FUN_006aac70(uVar13);
+            local_20 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar13);
             puVar8 = (undefined4 *)this[3];
             puVar14 = local_20;
             for (uVar12 = uVar13 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
@@ -140,7 +140,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
               puVar14 = (undefined4 *)((int)puVar14 + 1);
             }
             piVar1[0x10] = (int)local_20;
-            FUN_006ae1c0(local_c,&local_24);
+            Library::DKW::TBL::FUN_006ae1c0(local_c,&local_24);
             this = local_10;
             iVar3 = local_30;
           }
@@ -155,7 +155,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
     }
     if (this != (int *)0x0) {
       FUN_006dbcf0(this);
-      FUN_0072e2b0(this);
+      Library::MSVCRT::FUN_0072e2b0(this);
     }
     FUN_006ae110((byte *)local_c);
     thunk_FUN_00428e50(psVar4);

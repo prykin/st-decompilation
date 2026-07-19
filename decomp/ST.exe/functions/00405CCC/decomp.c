@@ -16,14 +16,14 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pPStack_8 = (ProdPanelTy *)this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar5);
   this_00 = pPStack_8;
   if (errorCode == 0) {
     DAT_00801680 = pPStack_8;
-    puVar2 = FUN_006ae290((uint *)0x0,0x28,0x30,10);
+    puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x28,0x30,10);
     *(uint **)(this_00 + 0x27a) = puVar2;
     *(int *)(this_00 + 0x3c) = *(int *)(this_00 + 0x3c) + (DAT_00806730 + -800) / 2;
-    puVar3 = FUN_006f1ce0(1,s_BKG_BUILDLABW_007c1918,(int *)0x0,1);
+    puVar3 = cMf32::RecGet(DAT_00806790,1,s_BKG_BUILDLABW_007c1918,(int *)0x0,1);
     *(ushort **)(this_00 + 0x184) = puVar3;
     puVar3 = FUN_00709af0(DAT_00806794,0xb,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
     *(ushort **)(this_00 + 0x188) = puVar3;

@@ -10,7 +10,7 @@ void __fastcall thunk_FUN_00550bb0(int param_1)
   pIVar2 = g_currentExceptionFrame;
   if (DAT_0080877e == '\0') {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-    iVar1 = __setjmp3((undefined4 *)&stack0xffffffb4,0,pIVar2,in_stack_ffffffb4);
+    iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb4,0,pIVar2,in_stack_ffffffb4);
     if (iVar1 == 0) {
       FUN_006b6500((int)DAT_00811764,1);
       cStack_5 = '\0';

@@ -16,6 +16,7 @@ SpecPanelTy::InitPanel
   undefined4 *puVar5;
   uint *puVar6;
   LPSTR pCVar7;
+  ccFntTy *this_00;
   uint uVar8;
   uint uVar9;
   undefined4 unaff_ESI;
@@ -34,13 +35,13 @@ SpecPanelTy::InitPanel
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
     *(int *)(local_8 + 0x3c) = *(int *)(local_8 + 0x3c) + (DAT_00806730 + -800) / 2;
-    puVar4 = FUN_006f1ce0(1,param_1,(int *)0x0,1);
+    puVar4 = cMf32::RecGet(DAT_00806790,1,param_1,(int *)0x0,1);
     *(ushort **)(pSVar2 + 0x185) = puVar4;
-    puVar5 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
+    puVar5 = ccFntTy::operator(this_00,0x19d,*(int *)(DAT_00802a28 + 0x28));
     *(undefined4 **)(pSVar2 + 0x189) = puVar5;
     puVar5[0x16] = 0;
     puVar5[0x17] = 0;

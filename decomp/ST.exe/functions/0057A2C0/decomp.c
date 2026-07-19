@@ -81,7 +81,7 @@ FUN_0057a2c0(int *param_1,uint param_2,int *param_3,int param_4,int param_5,unde
   local_1c = &stack0xfffffec8;
   local_f0 = (undefined1 *)0x0;
   ExceptionList = &local_14;
-  iVar10 = FUN_006aac70(param_2 * 8);
+  iVar10 = Library::DKW::LIB::FUN_006aac70(param_2 * 8);
   *param_3 = iVar10;
   if (((iVar10 == 0) || (param_2 == 0)) || ((param_2 != 5 && (param_2 != 7)))) {
     iVar10 = ReportDebugMessage(s_E____titans_Igor_to_etorp_cpp_007caf5c,0x4c,0,0,&DAT_007a4ccc,
@@ -113,7 +113,7 @@ LAB_0057ac02:
       iVar15 = (((int)*(short *)((int)param_1 + 0x3a) - (int)(short)param_1[0xd]) * 10000) / iVar10;
       iVar19 = (((int)*(short *)((int)param_1 + 0x3e) - (int)(short)param_1[0xe]) * 10000) / iVar10;
       local_50 = (iVar22 * 10000) / iVar10;
-      lVar25 = __ftol();
+      lVar25 = Library::MSVCRT::__ftol();
       local_78 = (int)lVar25;
       iVar10 = param_2 - 1;
       if (-1 < iVar10) {
@@ -180,7 +180,7 @@ LAB_0057ac02:
       ExceptionList = local_14;
       return 1;
     }
-    lVar25 = __ftol();
+    lVar25 = Library::MSVCRT::__ftol();
     local_c4 = (int)lVar25;
     local_dc = FUN_006acf0d((int)(short)param_1[0xd],(int)*(short *)((int)param_1 + 0x36),
                             (int)(short)param_1[0xe],(int)*(short *)((int)param_1 + 0x3a),
@@ -204,7 +204,7 @@ LAB_0057ac02:
           param_2 = 7;
         }
         local_8 = 0;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         local_1c = &stack0xfffffec8;
         puVar23 = (undefined4 *)&stack0xfffffec8;
         for (uVar14 = param_2 & 0x3fffffff; uVar14 != 0; uVar14 = uVar14 - 1) {
@@ -316,7 +316,7 @@ LAB_0057ac02:
           }
           local_8 = 1;
           local_84 = iVar16;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           local_d8 = 0;
           local_74 = 0;

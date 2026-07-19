@@ -68,7 +68,7 @@ undefined4 __thiscall thunk_FUN_00660180(void *this,short *param_1,char param_2)
   puStack_8 = (uint *)0x0;
   IStack_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_78;
-  iVar2 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_78.previous;
     if (puStack_8 != (uint *)0x0) {
@@ -76,14 +76,14 @@ undefined4 __thiscall thunk_FUN_00660180(void *this,short *param_1,char param_2)
     }
     return 0xffffffff;
   }
-  puVar3 = FUN_006ae290((uint *)0x0,1,6,10);
+  puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,10);
   sStack_14 = param_1[3] / 2 + *param_1;
   sStack_12 = param_1[4] / 2 + param_1[1];
   asStack_10[0] = param_1[5] / 2 + param_1[2];
   puStack_8 = puVar3;
   thunk_FUN_00675950(CONCAT22(sStack_12,sStack_14),CONCAT22(asStack_10[0],sStack_12),asStack_10[0],
                      &sStack_14,&sStack_12,asStack_10,0);
-  uVar1 = FUN_006ae1c0(puVar3,(undefined4 *)&sStack_14);
+  uVar1 = Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&sStack_14);
   uStack_18 = 1;
   uVar1 = CONCAT22((short)(uVar1 >> 0x10),*(short *)((int)pvStack_c + 0x7d));
   puStack_1c = puVar3;

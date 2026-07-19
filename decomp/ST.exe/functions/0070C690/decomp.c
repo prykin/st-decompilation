@@ -25,7 +25,7 @@ FUN_0070c690(int param_1,int param_2,int param_3,int param_4,int param_5,byte pa
   local_8 = (undefined4 *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar2 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_64.previous;
     if ((local_c != (undefined4 *)0x0) && (local_c != local_8)) {
@@ -43,7 +43,8 @@ FUN_0070c690(int param_1,int param_2,int param_3,int param_4,int param_5,byte pa
     param_2 = 0;
   }
   iVar2 = FUN_006b4fa0(param_1);
-  local_c = FUN_006b55f0((undefined4 *)0x0,0,0,0,param_1,iVar2,param_2,param_3,param_4,param_5);
+  local_c = Library::DKW::WGR::FUN_006b55f0
+                      ((undefined4 *)0x0,0,0,0,param_1,iVar2,param_2,param_3,param_4,param_5);
   if (local_c == (undefined4 *)0x0) {
     RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x4d8);
   }
@@ -61,8 +62,9 @@ FUN_0070c690(int param_1,int param_2,int param_3,int param_4,int param_5,byte pa
   }
   if (((((local_10 != 1) || (local_14 != 1)) || (local_18 != 1)) ||
       (puVar1 = local_c, local_1c != 1)) &&
-     (local_8 = FUN_00751cb0((undefined4 *)0x0,(ushort *)0x0,local_c,(ushort *)0x0,
-                             (local_c[1] * local_10) / local_14,(local_c[2] * local_18) / local_1c),
+     (local_8 = Library::DKW::WGR::FUN_00751cb0
+                          ((undefined4 *)0x0,(ushort *)0x0,local_c,(ushort *)0x0,
+                           (local_c[1] * local_10) / local_14,(local_c[2] * local_18) / local_1c),
      puVar1 = local_8, local_c != (undefined4 *)0x0)) {
     FUN_006ab060(&local_c);
     puVar1 = local_8;

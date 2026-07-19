@@ -13,7 +13,7 @@ void __thiscall thunk_FUN_004a8220(void *this,char param_1,short param_2,undefin
       FUN_006acc70(*(int *)((int)this + 0xef),uVar2,&uStack_8);
       if ((uStack_8._2_2_ == param_2) && ((char)uStack_8 == param_1)) {
         uStack_8 = (void *)CONCAT22(param_3,(undefined2)uStack_8);
-        FUN_006ae140(*(uint **)((int)this + 0xef),uVar2,&uStack_8);
+        Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar2,&uStack_8);
         break;
       }
       uVar2 = uVar2 + 1;
@@ -31,7 +31,7 @@ void __thiscall thunk_FUN_004a8220(void *this,char param_1,short param_2,undefin
       }
     }
     uStack_8 = (void *)CONCAT22(param_3,(undefined2)uStack_8);
-    FUN_006ae140(*(uint **)((int)this + 0x20e),uVar2,&uStack_8);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x20e),uVar2,&uStack_8);
   }
   return;
 }

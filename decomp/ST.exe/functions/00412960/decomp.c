@@ -17,7 +17,7 @@ int FUN_00412960(int param_1,int param_2,int param_3,int param_4,int param_5,int
       param_1 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
       param_2 = param_2 + (DAT_007f4d28 * param_4 >> 0x10);
     }
-    DAT_007f4d28 = FUN_006db640(param_5 - *(int *)(param_7 + 4));
+    DAT_007f4d28 = Library::DKW::STR::FUN_006db640(param_5 - *(int *)(param_7 + 4));
     DAT_007f4d38 = FUN_006db6d0(param_5 - *(int *)(param_7 + 4));
     if (param_6 != *(int *)(param_7 + 8)) {
       iVar2 = 30000;

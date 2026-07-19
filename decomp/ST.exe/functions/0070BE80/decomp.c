@@ -17,7 +17,7 @@ FUN_0070be80(byte *param_1,int param_2,int param_3,int param_4,int param_5,byte 
   local_c = 0;
   local_8 = (int *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-  iVar2 = __setjmp3(local_4c,0,unaff_ESI,pIVar4);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
     local_8 = FUN_0070b900(param_1,param_2,param_3,param_4,param_5,param_7,8,(uint *)0x0,0);
     iVar2 = FUN_006b4fa0((int)local_8);

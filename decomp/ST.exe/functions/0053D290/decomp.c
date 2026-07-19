@@ -28,7 +28,7 @@ void __thiscall SAMPanelTy::ShiftControls(SAMPanelTy *this,int param_1)
     *(short *)(this + 0x2e) = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar3 == 0) {
       iVar3 = 7;

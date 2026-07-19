@@ -14,7 +14,7 @@ undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort par
   
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar5);
   if (errorCode == 0) {
     if (param_2 == (void *)0x0) {
       RaiseInternalException
@@ -30,7 +30,7 @@ undefined4 __thiscall STAllPlayersC::RegisterMine(STAllPlayersC *this,ushort par
                   (-0x5001fffa,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f07);
       }
     }
-    FUN_006ae140(DAT_007fa158,(uint)param_1,&param_2);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa158,(uint)param_1,&param_2);
     thunk_FUN_00419c50(param_2,param_1);
     g_currentExceptionFrame = pIVar5;
     return 0;

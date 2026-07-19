@@ -1,4 +1,4 @@
-FUN_004732f0:
+STBoatC::LoadObj:
 004732F0  55                        PUSH EBP
 004732F1  8B EC                     MOV EBP,ESP
 004732F3  83 EC 3C                  SUB ESP,0x3c

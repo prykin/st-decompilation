@@ -16,7 +16,7 @@ STAllPlayersC::GetGObjFromZone
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pSStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     GetGObjFromZone2(pSStack_8,param_1,param_2,param_3,param_4,param_5,param_6,(int *)0x0,(int *)0x0
                      ,param_7,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,(int *)0x0,

@@ -47,14 +47,16 @@ int FUN_006b3120(uint *param_1,uint *param_2)
         do {
           uVar2 = *(uint *)(param_2[0x34] + iVar7 * 4);
           if (-1 < (int)uVar2) {
-            local_8 = FUN_006b3640((int *)param_1,uVar2,param_2[0x31],param_2[6] + (int)*psVar6,
-                                   (int)psVar6[1] + param_2[7]);
+            local_8 = Library::DKW::DDX::FUN_006b3640
+                                ((int *)param_1,uVar2,param_2[0x31],param_2[6] + (int)*psVar6,
+                                 (int)psVar6[1] + param_2[7]);
             if (local_8 != 0) {
               return local_8;
             }
             bVar5 = FUN_006b33f0((int)param_1,*(uint *)(param_2[0x34] + iVar7 * 4));
             if ((CONCAT31(extraout_var,bVar5) == 0) &&
-               (local_8 = FUN_006b3430((int *)param_1,*(uint *)(param_2[0x34] + iVar7 * 4)),
+               (local_8 = Library::DKW::DDX::FUN_006b3430
+                                    ((int *)param_1,*(uint *)(param_2[0x34] + iVar7 * 4)),
                local_8 != 0)) {
               return local_8;
             }

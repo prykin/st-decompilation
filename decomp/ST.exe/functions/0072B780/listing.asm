@@ -1,4 +1,4 @@
-FUN_0072b780:
+ControlClassTy::GetMessage:
 0072B780  55                        PUSH EBP
 0072B781  8B EC                     MOV EBP,ESP
 0072B783  83 EC 6C                  SUB ESP,0x6c

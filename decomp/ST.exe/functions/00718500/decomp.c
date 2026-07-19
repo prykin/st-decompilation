@@ -33,13 +33,13 @@ FUN_00718500(undefined4 param_1,int param_2,int param_3,byte param_4,byte param_
   float fVar12;
   undefined1 uVar13;
   
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
-  iVar3 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (param_7 == 0) {
-      param_7 = FUN_006aac70(param_2 + param_3);
+      param_7 = Library::DKW::LIB::FUN_006aac70(param_2 + param_3);
     }
     iVar3 = param_2 + param_3;
     if (param_2 < iVar3) {

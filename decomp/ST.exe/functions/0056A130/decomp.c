@@ -12,7 +12,7 @@ void __thiscall FUN_0056a130(void *this,uint param_1,char param_2,int param_3,ui
     return;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar1 = __setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar3,in_stack_ffffffb8);
+  iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar3,in_stack_ffffffb8);
   if (iVar1 == 0) {
     if (param_4 == (uint *)0x0) {
       param_4 = (uint *)FUN_0071a990(*(int *)((int)this + 0xdf3),

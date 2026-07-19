@@ -34,7 +34,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_18 = this;
-  iVar7 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar6 = local_18;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_60.previous;

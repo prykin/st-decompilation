@@ -23,7 +23,7 @@ undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -93,7 +93,9 @@ switchD_005b939a_default:
     *(MMObjTy *)(this_00 + 0x1a5a) = MVar2;
     if (*(MMObjTy *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xe1) == (MMObjTy)0x0) {
       if (*(int *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xd1) != 0) {
-        FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xc1));
+        AppClassTy::PostNextMessage
+                  ((AppClassTy *)&DAT_00807620,
+                   (undefined4 *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xc1));
       }
     }
     else {

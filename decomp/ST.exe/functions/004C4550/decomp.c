@@ -42,7 +42,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
   short local_2c;
   short sStack_2a;
   short local_28;
-  void *local_24;
+  STJellyManC *local_24;
   undefined2 local_20;
   int local_1c;
   int local_18;
@@ -88,7 +88,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
         local_94 = *(undefined2 *)((int)this + iVar10 + 0x2a9);
         local_98 = (undefined2)local_10;
         local_92 = *(undefined2 *)((int)this + iVar10 + 0x2ad);
-        thunk_FUN_0054cc20(0x168,0,0,local_b0,0);
+        STPlaySystemC::CreateGameObject(DAT_00802a38,0x168,0,0,local_b0,0);
         return 0;
       }
       *(undefined4 *)((int)this + iVar10 + 0x29d) = 1;
@@ -152,7 +152,8 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
               local_66 = local_28 + (short)local_10;
               iVar3 = (int)param_1 + *(int *)((int)this + 0x235) * 2;
               local_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
-              local_24 = (void *)(*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
+              local_24 = (STJellyManC *)
+                         (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
               puVar5 = (undefined4 *)
                        thunk_FUN_0041dc40(local_c0,local_24,0,-*(short *)((int)this + 0x259));
               local_2c = (short)*puVar5;
@@ -194,11 +195,10 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
                 else {
                   iVar3 = 0x28;
                 }
-                thunk_FUN_0054cc20(iVar3,0,0,local_84,0);
+                STPlaySystemC::CreateGameObject(DAT_00802a38,iVar3,0,0,local_84,0);
               }
               *(int *)((int)this + iVar10 + 0x2c5) = *(int *)((int)this + iVar10 + 0x2c5) + -1;
-              *(undefined4 *)((int)this + iVar10 + 0x2c9) =
-                   *(undefined4 *)((int)DAT_00802a38 + 0xe4);
+              *(undefined4 *)((int)this + iVar10 + 0x2c9) = *(undefined4 *)(DAT_00802a38 + 0xe4);
               iVar3 = local_18;
               piVar9 = param_1;
             }
@@ -370,7 +370,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
              (*(int *)(DAT_007fb248 + 4 +
                       ((int)sVar6 * (int)DAT_007fb240 + (int)sVar8 * (int)DAT_007fb246 + (int)sVar7)
                       * 8) == 0)))))) {
-          thunk_FUN_00581ac0(local_24,local_18,param_1,local_10);
+          STJellyManC::Error(local_24,local_18,param_1,local_10);
           *(undefined4 *)((int)this + (int)piVar9 * 0x80 + 0x29d) = 1;
           *(int *)((int)this + (int)piVar9 * 0x80 + 0x2c5) =
                *(int *)((int)this + (int)piVar9 * 0x80 + 0x2c5) + -1;

@@ -11,7 +11,7 @@ void __thiscall FUN_00568bc0(void *this,int param_1)
   pIVar2 = g_currentExceptionFrame;
   if (*(int *)((int)this + 0xf8b) != 0) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-    iVar1 = __setjmp3(local_48,0,unaff_ESI,pIVar2);
+    iVar1 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar2);
     if (iVar1 == 0) {
       FUN_006c1f00(param_1,&local_8,(uint *)0x0);
       if (local_8 == 1) {

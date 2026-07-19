@@ -152,8 +152,8 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
     if (iVar10 != 0) {
       local_28 = (int)(param_5 + 7 + (param_5 + 7 >> 0x1f & 7U)) >> 3;
       dVar2 = (double)(param_2 / (float)*(double *)((int)this + 0x368));
-      FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
-      lVar27 = __ftol();
+      Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
+      lVar27 = Library::MSVCRT::__ftol();
       local_68 = param_2 - (float)(int)lVar27 * (float)*(double *)((int)this + 0x368);
       iVar10 = (int)lVar27 - *(int *)((int)this + 0x374);
       local_c4 = 0;
@@ -168,8 +168,8 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
       }
       dVar2 = (double)(param_3 / (float)*(double *)((int)this + 0x368));
       local_48 = iVar10;
-      FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
-      lVar27 = __ftol();
+      Library::MSVCRT::FUN_0072e150(SUB84(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));
+      lVar27 = Library::MSVCRT::__ftol();
       local_c0 = param_3 - (float)(int)lVar27 * (float)*(double *)((int)this + 0x368);
       local_54 = (int)lVar27 - *(int *)((int)this + 0x378);
       local_d4 = 0;
@@ -184,9 +184,10 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
       }
       puVar9 = local_1c;
       if ((0 < param_5) && (0 < param_6)) {
-        FUN_0072e150(SUB84((double)(param_4 * _DAT_00790538),0),
-                     (uint)((ulonglong)(double)(param_4 * _DAT_00790538) >> 0x20));
-        lVar27 = __ftol();
+        Library::MSVCRT::FUN_0072e150
+                  (SUB84((double)(param_4 * _DAT_00790538),0),
+                   (uint)((ulonglong)(double)(param_4 * _DAT_00790538) >> 0x20));
+        lVar27 = Library::MSVCRT::__ftol();
         local_60 = (int)lVar27;
         if ((((param_7[7] != 0) &&
              ((pbVar25 = (byte *)param_7[8], pbVar25 != (byte *)0x0 && (param_7[6] == param_1)))) &&
@@ -234,7 +235,7 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
               } while (local_f0 < iVar4);
             }
             if (iVar4 <= local_f0) {
-              local_a0 = (short *)FUN_006aac70(iVar4 * 8);
+              local_a0 = (short *)Library::DKW::LIB::FUN_006aac70(iVar4 * 8);
               iVar22 = 0;
               if (0 < iVar4) {
                 psVar19 = psVar5 + 1;
@@ -258,7 +259,7 @@ FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,in
           }
         }
         local_8 = 0;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         local_1c = &stack0xfffffea0;
         local_64 = (uint *)&stack0xfffffea0;
         puVar23 = (undefined4 *)&stack0xfffffea0;
@@ -452,7 +453,7 @@ LAB_004259c4:
                            *(int *)((int)this + 0x38c) + iVar10 + local_48);
         local_24 = bVar14 & 0xf;
         if (local_9c <= local_d0) {
-          puVar13 = (uint *)FUN_006acf50(local_a8,(local_9c * 3 + 0x1e) * 4);
+          puVar13 = (uint *)Library::DKW::LIB::FUN_006acf50(local_a8,(local_9c * 3 + 0x1e) * 4);
           if (puVar13 == (uint *)0x0) {
 LAB_0042678e:
             local_4c = -2;
@@ -489,7 +490,8 @@ LAB_0042678e:
             break;
           }
           if (local_44 + -1 <= (int)uVar15) {
-            local_a0 = (short *)FUN_006acf50((undefined4 *)local_a0,local_44 * 8 + 0x50);
+            local_a0 = (short *)Library::DKW::LIB::FUN_006acf50
+                                          ((undefined4 *)local_a0,local_44 * 8 + 0x50);
             if (local_a0 == (short *)0x0) goto LAB_0042678e;
             local_a8[local_d0 * 3 + 2] = (uint)local_a0;
             local_44 = local_44 + 10;

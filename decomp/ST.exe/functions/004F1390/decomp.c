@@ -17,7 +17,7 @@ CPanelTy::OutProc(CPanelTy *this,uint param_1,undefined4 param_2,undefined4 para
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = __setjmp3(local_44,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     FUN_006b4640(param_1,param_4,param_5,param_8,(uint *)0x0);
     g_currentExceptionFrame = pIVar3;

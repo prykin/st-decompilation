@@ -63,7 +63,7 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   IStack_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_7c;
   pCStack_38 = this;
-  iVar5 = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar13 = pCStack_18;
   pCVar11 = pCStack_38;
   if (iVar5 != 0) {

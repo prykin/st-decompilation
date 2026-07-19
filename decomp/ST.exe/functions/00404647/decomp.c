@@ -1,5 +1,6 @@
 
-void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
+void __thiscall
+STAllPlayersC::PointPick(STAllPlayersC *this,uint *param_1,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
@@ -11,7 +12,6 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
   undefined2 extraout_var;
   uint uVar7;
   uint uVar8;
-  STAllPlayersC *in_ECX;
   undefined2 extraout_var_00;
   undefined2 extraout_var_01;
   undefined4 extraout_ECX;
@@ -47,7 +47,7 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
   piVar2 = (int *)FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
   cVar11 = (char)param_1;
   if (piVar2 == (int *)0x0) {
-    thunk_FUN_0042d6b0(cVar11);
+    RemoveActiveTV(cVar11);
     return;
   }
   iVar3 = (**(code **)(*piVar2 + 0xec))();
@@ -69,15 +69,15 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
         iVar3 = *(int *)((int)&DAT_007f4f83 + iVar3);
         if (iVar3 != 0) {
           if (iVar3 == 0x3c) {
-            iVar3 = thunk_FUN_0044ab90(param_1,0,0x1ae,(char)piVar2[9],(uint *)0x0,
-                                       (uint)*(ushort *)((int)piVar2 + 0x32));
+            iVar3 = CheckTmps(param_1,0,0x1ae,(char)piVar2[9],(uint *)0x0,
+                              (uint)*(ushort *)((int)piVar2 + 0x32));
             if (0 < iVar3) {
-              thunk_FUN_0044b030(cVar11,0,iVar3);
-              thunk_FUN_00435060();
+              ActivateTV(this,cVar11,0,iVar3);
+              SelfCheckObjControl(this);
               return;
             }
-            STAllPlayersC::PushTV(cVar11,0);
-            uVar6 = thunk_FUN_0042d4f0(cVar11,0,1,0);
+            PushTV(cVar11,0);
+            uVar6 = ResetActivityFromTmp(this,cVar11,0,1,0);
             uVar7 = CONCAT22(extraout_var_13,*(undefined2 *)((int)piVar2 + 0x32));
             uVar8 = CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]);
             iVar3 = piVar2[8];
@@ -93,16 +93,16 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
             (*pcVar1)();
             return;
           }
-          iVar3 = thunk_FUN_0044ab90(param_1,0,0x1ae,(char)piVar2[9],(uint *)0x0,
-                                     (uint)*(ushort *)((int)piVar2 + 0x32));
+          iVar3 = CheckTmps(param_1,0,0x1ae,(char)piVar2[9],(uint *)0x0,
+                            (uint)*(ushort *)((int)piVar2 + 0x32));
           if (0 < iVar3) {
-            thunk_FUN_0044b030(cVar11,0,iVar3);
-            thunk_FUN_00435060();
+            ActivateTV(this,cVar11,0,iVar3);
+            SelfCheckObjControl(this);
             return;
           }
           if (iVar3 < 0) {
-            STAllPlayersC::PushTV(cVar11,0);
-            thunk_FUN_0042d4f0(cVar11,0,1,0);
+            PushTV(cVar11,0);
+            ResetActivityFromTmp(this,cVar11,0,1,0);
             uVar7 = CONCAT22(extraout_var,*(undefined2 *)((int)piVar2 + 0x32));
             uVar8 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)piVar2[9]);
             iVar3 = piVar2[8];
@@ -115,13 +115,13 @@ void thunk_FUN_00433e90(uint *param_1,int param_2,int param_3,int param_4)
         cVar10 = (char)piVar2[9];
         iVar3 = 0x1ae;
 LAB_004345a2:
-        iVar3 = thunk_FUN_0044ab90(param_1,0,iVar3,cVar10,(uint *)0x0,uVar6);
+        iVar3 = CheckTmps(param_1,0,iVar3,cVar10,(uint *)0x0,uVar6);
         uVar6 = extraout_EDX_00;
         uVar9 = extraout_var_02;
         if (0 < iVar3) {
 LAB_004345b4:
-          thunk_FUN_0044b030(cVar11,0,iVar3);
-          thunk_FUN_00435060();
+          ActivateTV(this,cVar11,0,iVar3);
+          SelfCheckObjControl(this);
           return;
         }
       }
@@ -137,7 +137,7 @@ LAB_004345b4:
           return;
         }
         *(undefined4 *)((int)&DAT_007f5023 + iVar3) = 0;
-        thunk_FUN_0042d4f0(cVar11,1,0,0);
+        ResetActivityFromTmp(this,cVar11,1,0,0);
         iVar5 = *(int *)((int)&DAT_007f4f83 + iVar3);
         uVar9 = (undefined2)((uint)iVar3 >> 0x10);
         if (iVar5 == 0) {
@@ -147,11 +147,11 @@ LAB_004345b4:
           goto LAB_004345a2;
         }
         if (iVar5 == 0x3c) {
-          iVar3 = thunk_FUN_0044ab90(param_1,0,piVar2[8],(char)piVar2[9],(uint *)0x0,
-                                     CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+          iVar3 = CheckTmps(param_1,0,piVar2[8],(char)piVar2[9],(uint *)0x0,
+                            CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
           if (0 < iVar3) {
-            thunk_FUN_0044b030(cVar11,0,iVar3);
-            thunk_FUN_00435060();
+            ActivateTV(this,cVar11,0,iVar3);
+            SelfCheckObjControl(this);
             return;
           }
         }
@@ -166,11 +166,11 @@ LAB_004345b4:
             (*pcVar1)();
             return;
           }
-          iVar3 = thunk_FUN_0044ab90(param_1,0,0x1ae,(char)piVar2[9],(uint *)0x0,
-                                     CONCAT22(extraout_var_12,*(undefined2 *)((int)piVar2 + 0x32)));
+          iVar3 = CheckTmps(param_1,0,0x1ae,(char)piVar2[9],(uint *)0x0,
+                            CONCAT22(extraout_var_12,*(undefined2 *)((int)piVar2 + 0x32)));
           if (-1 < iVar3) goto LAB_004345b4;
         }
-        STAllPlayersC::PushTV(cVar11,0);
+        PushTV(cVar11,0);
         uVar6 = extraout_EDX;
         uVar9 = extraout_var_01;
       }
@@ -178,8 +178,8 @@ LAB_004345b4:
       uVar8 = CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]);
       iVar3 = piVar2[8];
 LAB_0043440e:
-      STAllPlayersC::AddObjToTmp2(in_ECX,cVar11,0,0,iVar3,uVar8,uVar7);
-      thunk_FUN_00435060();
+      AddObjToTmp2(this,cVar11,0,0,iVar3,uVar8,uVar7);
+      SelfCheckObjControl(this);
       return;
     }
     if (uVar7 < 1000) {
@@ -194,16 +194,16 @@ LAB_0043440e:
     iVar3 = cVar11 * 0xa62;
     if (*(int *)((int)&DAT_007f5023 + iVar3) == 0) {
       *(undefined4 *)((int)&DAT_007f5023 + iVar3) = 1;
-      thunk_FUN_0042d4f0(cVar11,0,0,0);
+      ResetActivityFromTmp(this,cVar11,0,0,0);
       iVar5 = *(int *)((int)&DAT_007f4fd3 + iVar3);
       if (iVar5 < 0x19b) {
         if (iVar5 == 0x19a) {
-          puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-          FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-          iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
+          puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+          Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+          iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
           param_1 = puVar4;
           if (-1 < iVar5) {
-            thunk_FUN_0044b030(cVar11,1,iVar5);
+            ActivateTV(this,cVar11,1,iVar5);
             goto LAB_00434cb8;
           }
           goto LAB_00434c88;
@@ -213,13 +213,13 @@ LAB_0043440e:
           goto LAB_00434c44;
         }
 LAB_004349ac:
-        puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-        FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-        iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+        iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
         uVar6 = extraout_ECX_00;
         param_1 = puVar4;
         if (iVar5 < 1) goto LAB_00434c92;
-        thunk_FUN_0044b030(cVar11,1,iVar5);
+        ActivateTV(this,cVar11,1,iVar5);
       }
       else {
         if ((iVar5 != 0x1a4) && (iVar5 != 0x1b8)) {
@@ -234,21 +234,20 @@ LAB_00434c12:
           return;
         }
 LAB_00434c44:
-        puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-        FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-        iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+        iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
         param_1 = puVar4;
         if (0 < iVar5) {
-          thunk_FUN_0044b030(cVar11,1,iVar5);
+          ActivateTV(this,cVar11,1,iVar5);
           goto LAB_00434cb8;
         }
 LAB_00434c88:
-        iVar5 = STAllPlayersC::PushTV(cVar11,1);
+        iVar5 = PushTV(cVar11,1);
         uVar6 = extraout_ECX_01;
 LAB_00434c92:
-        STAllPlayersC::AddObjToTmp
-                  (in_ECX,cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
-                   CONCAT22((short)((uint)iVar5 >> 0x10),*(undefined2 *)((int)piVar2 + 0x32)));
+        AddObjToTmp(this,cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
+                    CONCAT22((short)((uint)iVar5 >> 0x10),*(undefined2 *)((int)piVar2 + 0x32)));
       }
       *(undefined4 *)((int)&DAT_007f4fd3 + iVar3) = 0x19a;
       puVar4 = param_1;
@@ -271,21 +270,21 @@ LAB_00434c92:
           if ((iVar5 != 0x5a) && (iVar5 != 0x172)) goto LAB_00434ab0;
           goto LAB_00434ae2;
         }
-        puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-        FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-        iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+        iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
         if (0 < iVar5) {
-          thunk_FUN_0044b030(cVar11,1,iVar5);
+          ActivateTV(this,cVar11,1,iVar5);
           goto LAB_00434cb8;
         }
         if (-1 < iVar5) goto LAB_00434cb8;
-        STAllPlayersC::PushTV(cVar11,1);
+        PushTV(cVar11,1);
         param_1 = puVar4;
         if (*(int *)((int)&DAT_007f4fe7 + iVar3) != piVar2[9]) goto LAB_00434b39;
-        STAllPlayersC::CalibrateTmp
-                  (in_ECX,cVar11,1,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0);
-        thunk_FUN_0042d190(CONCAT31((int3)((uint)extraout_EDX_03 >> 8),(char)piVar2[9]),0x19a,
-                           (int)pbStack_8,0,0);
+        CalibrateTmp(this,cVar11,1,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0);
+        ResetActivityFromObjs
+                  (this,CONCAT31((int3)((uint)extraout_EDX_03 >> 8),(char)piVar2[9]),0x19a,
+                   (int)pbStack_8,0,0);
         FUN_006ae110(pbStack_8);
         uVar6 = extraout_EDX_04;
         uVar9 = extraout_var_06;
@@ -303,23 +302,22 @@ LAB_00434ab0:
           return;
         }
 LAB_00434ae2:
-        puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-        FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-        iVar5 = thunk_FUN_0044ab90(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+        iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
         if (0 < iVar5) {
-          thunk_FUN_0044b030(cVar11,1,iVar5);
+          ActivateTV(this,cVar11,1,iVar5);
           goto LAB_00434cb8;
         }
-        STAllPlayersC::PushTV(cVar11,1);
+        PushTV(cVar11,1);
         param_1 = puVar4;
 LAB_00434b39:
-        thunk_FUN_0042d4f0(cVar11,1,1,0);
+        ResetActivityFromTmp(this,cVar11,1,1,0);
         uVar6 = extraout_EDX_05;
         uVar9 = extraout_var_07;
       }
-      STAllPlayersC::AddObjToTmp
-                (in_ECX,cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
-                 CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+      AddObjToTmp(this,cVar11,1,0,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
+                  CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
       *(undefined4 *)((int)&DAT_007f4fd3 + iVar3) = 0x19a;
       puVar4 = param_1;
     }
@@ -341,38 +339,37 @@ LAB_00434cb8:
               if (*(int *)((int)&DAT_007f4f87 + iVar3) != (int)(char)piVar2[9]) {
                 return;
               }
-              iVar3 = STAllPlayersC::PushTV(param_1,0,0,cVar11,*(short *)((int)piVar2 + 0x32));
+              iVar3 = PushTV(param_1,0,0,cVar11,*(short *)((int)piVar2 + 0x32));
               if (iVar3 == 1) {
                 thunk_FUN_0042c300(param_1,0,0,(uint)param_1,(uint)*(ushort *)((int)piVar2 + 0x32));
-                thunk_FUN_00435060();
+                SelfCheckObjControl(this);
                 return;
               }
-              STAllPlayersC::AddObjToTmp
-                        (in_ECX,cVar11,0,0,(uint)param_1,
-                         CONCAT22(extraout_var_00,*(undefined2 *)((int)piVar2 + 0x32)));
-              thunk_FUN_00435060();
+              AddObjToTmp(this,cVar11,0,0,(uint)param_1,
+                          CONCAT22(extraout_var_00,*(undefined2 *)((int)piVar2 + 0x32)));
+              SelfCheckObjControl(this);
               return;
             }
-            puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-            FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-            iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
+            puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+            Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+            iVar5 = CheckTmps(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
             if (iVar5 < 1) {
               if (iVar5 < 0) {
-                STAllPlayersC::PushTV(cVar11,0);
+                PushTV(cVar11,0);
                 param_1 = puVar4;
                 if (*(int *)((int)&DAT_007f4f97 + iVar3) != piVar2[9]) goto LAB_0043414f;
-                uVar6 = STAllPlayersC::CalibrateTmp
-                                  (in_ECX,cVar11,0,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0)
+                uVar6 = CalibrateTmp(this,cVar11,0,1,puVar4,(int *)&pbStack_8,(int *)0x0,(int *)0x0)
                 ;
-                thunk_FUN_0042d190(CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),0x3c,
-                                   (int)pbStack_8,0,0);
+                ResetActivityFromObjs
+                          (this,CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),0x3c,
+                           (int)pbStack_8,0,0);
                 iVar5 = FUN_006ae110(pbStack_8);
                 uVar9 = extraout_var_10;
                 goto LAB_0043415b;
               }
             }
             else {
-              thunk_FUN_0044b030(cVar11,0,iVar5);
+              ActivateTV(this,cVar11,0,iVar5);
             }
           }
           else {
@@ -389,29 +386,29 @@ LAB_00434cb8:
             if (param_4 == 1) {
               return;
             }
-            puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-            FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-            iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
+            puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+            Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+            iVar5 = CheckTmps(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
             if (iVar5 < 1) {
-              STAllPlayersC::PushTV(cVar11,0);
+              PushTV(cVar11,0);
               param_1 = puVar4;
 LAB_0043414f:
-              iVar5 = thunk_FUN_0042d4f0(cVar11,0,1,0);
+              iVar5 = ResetActivityFromTmp(this,cVar11,0,1,0);
               uVar9 = extraout_var_09;
               goto LAB_0043415b;
             }
-            thunk_FUN_0044b030(cVar11,0,iVar5);
+            ActivateTV(this,cVar11,0,iVar5);
           }
           goto LAB_00434cb8;
         }
 LAB_0043429d:
-        puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-        FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-        iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+        iVar5 = CheckTmps(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
         uVar9 = extraout_var_11;
         param_1 = puVar4;
         if (iVar5 < 1) goto LAB_0043415b;
-        thunk_FUN_0044b030(cVar11,0,iVar5);
+        ActivateTV(this,cVar11,0,iVar5);
       }
       else {
         if (*(int *)((int)&DAT_007f5023 + iVar3) != 1) {
@@ -428,16 +425,16 @@ LAB_0043429d:
           return;
         }
         *(undefined4 *)((int)&DAT_007f5023 + iVar3) = 0;
-        thunk_FUN_0042d4f0(cVar11,1,0,0);
+        ResetActivityFromTmp(this,cVar11,1,0,0);
         iVar5 = *(int *)((int)&DAT_007f4f83 + iVar3);
         if (iVar5 == 0) goto LAB_0043429d;
         if (iVar5 == 0x3c) {
-          puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-          FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-          iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
+          puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+          Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+          iVar5 = CheckTmps(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
           param_1 = puVar4;
           if (iVar5 < 0) goto LAB_0043404a;
-          thunk_FUN_0044b030(cVar11,0,iVar5);
+          ActivateTV(this,cVar11,0,iVar5);
           goto LAB_00434cb8;
         }
         if (iVar5 != 0x1ae) {
@@ -450,21 +447,20 @@ LAB_0043429d:
           (*pcVar1)();
           return;
         }
-        puVar4 = FUN_006ae290((uint *)0x0,0,2,1);
-        FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
-        iVar5 = thunk_FUN_0044ab90(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+        Library::DKW::TBL::FUN_006ae1c0(puVar4,(undefined4 *)((int)piVar2 + 0x32));
+        iVar5 = CheckTmps(param_1,0,0x3c,(char)piVar2[9],puVar4,0);
         param_1 = puVar4;
         if (0 < iVar5) {
-          thunk_FUN_0044b030(cVar11,0,iVar5);
+          ActivateTV(this,cVar11,0,iVar5);
           goto LAB_00434cb8;
         }
 LAB_0043404a:
-        iVar5 = STAllPlayersC::PushTV(cVar11,0);
+        iVar5 = PushTV(cVar11,0);
         uVar9 = extraout_var_08;
 LAB_0043415b:
-        STAllPlayersC::AddObjToTmp
-                  (in_ECX,cVar11,0,0,CONCAT31((int3)((uint)iVar5 >> 8),(char)piVar2[9]),
-                   CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+        AddObjToTmp(this,cVar11,0,0,CONCAT31((int3)((uint)iVar5 >> 8),(char)piVar2[9]),
+                    CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
       }
       *(undefined4 *)((int)&DAT_007f4f83 + iVar3) = 0x3c;
       puVar4 = param_1;
@@ -494,12 +490,12 @@ LAB_004345cf:
     if (iVar3 < 0x19b) {
       if (iVar3 != 0x19a) {
         if (iVar3 == 0) {
-          iVar3 = thunk_FUN_0044ab90(param_1,1,uVar7,(char)piVar2[9],(uint *)0x0,
-                                     (uint)*(ushort *)((int)piVar2 + 0x32));
+          iVar3 = CheckTmps(param_1,1,uVar7,(char)piVar2[9],(uint *)0x0,
+                            (uint)*(ushort *)((int)piVar2 + 0x32));
           uVar9 = extraout_var_14;
           if (0 < iVar3) {
-            thunk_FUN_0044b030(cVar11,1,iVar3);
-            thunk_FUN_00435060();
+            ActivateTV(this,cVar11,1,iVar3);
+            SelfCheckObjControl(this);
             return;
           }
           goto LAB_00434768;
@@ -507,11 +503,11 @@ LAB_004345cf:
         if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_004346e3;
         goto LAB_00434715;
       }
-      iVar3 = thunk_FUN_0044ab90(param_1,1,uVar7,(char)piVar2[9],(uint *)0x0,
-                                 (uint)*(ushort *)((int)piVar2 + 0x32));
+      iVar3 = CheckTmps(param_1,1,uVar7,(char)piVar2[9],(uint *)0x0,
+                        (uint)*(ushort *)((int)piVar2 + 0x32));
       if (0 < iVar3) {
-        thunk_FUN_0044b030(cVar11,1,iVar3);
-        thunk_FUN_00435060();
+        ActivateTV(this,cVar11,1,iVar3);
+        SelfCheckObjControl(this);
         return;
       }
     }
@@ -528,42 +524,41 @@ LAB_004346e3:
         return;
       }
 LAB_00434715:
-      iVar3 = thunk_FUN_0044ab90(param_1,1,uVar7,(char)piVar2[9],(uint *)0x0,
-                                 (uint)*(ushort *)((int)piVar2 + 0x32));
+      iVar3 = CheckTmps(param_1,1,uVar7,(char)piVar2[9],(uint *)0x0,
+                        (uint)*(ushort *)((int)piVar2 + 0x32));
       if (0 < iVar3) {
-        thunk_FUN_0044b030(cVar11,1,iVar3);
-        thunk_FUN_00435060();
+        ActivateTV(this,cVar11,1,iVar3);
+        SelfCheckObjControl(this);
         return;
       }
       if (-1 < iVar3) {
 LAB_00434cbd:
-        thunk_FUN_00435060();
+        SelfCheckObjControl(this);
         return;
       }
     }
-    STAllPlayersC::PushTV(cVar11,1);
-    iVar3 = thunk_FUN_0042d4f0(cVar11,1,1,0);
+    PushTV(cVar11,1);
+    iVar3 = ResetActivityFromTmp(this,cVar11,1,1,0);
     uVar9 = extraout_var_15;
 LAB_00434768:
-    STAllPlayersC::AddObjToTmp2
-              (in_ECX,cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)iVar3 >> 8),(char)piVar2[9]),
-               CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
-    thunk_FUN_00435060();
+    AddObjToTmp2(this,cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)iVar3 >> 8),(char)piVar2[9]),
+                 CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+    SelfCheckObjControl(this);
     return;
   }
   *(undefined4 *)((int)&DAT_007f5023 + iVar3) = 1;
-  thunk_FUN_0042d4f0(cVar11,0,0,0);
+  ResetActivityFromTmp(this,cVar11,0,0,0);
   iVar3 = *(int *)((int)&DAT_007f4fd3 + iVar3);
   if (iVar3 < 0x19b) {
     if (iVar3 != 0x19a) {
       if (iVar3 == 0) {
-        iVar3 = thunk_FUN_0044ab90(param_1,1,piVar2[8],(char)piVar2[9],(uint *)0x0,
-                                   CONCAT22(extraout_var_03,*(undefined2 *)((int)piVar2 + 0x32)));
+        iVar3 = CheckTmps(param_1,1,piVar2[8],(char)piVar2[9],(uint *)0x0,
+                          CONCAT22(extraout_var_03,*(undefined2 *)((int)piVar2 + 0x32)));
         uVar6 = extraout_EDX_01;
         uVar9 = extraout_var_04;
         if (0 < iVar3) {
-          thunk_FUN_0044b030(cVar11,1,iVar3);
-          thunk_FUN_00435060();
+          ActivateTV(this,cVar11,1,iVar3);
+          SelfCheckObjControl(this);
           return;
         }
         goto LAB_004348d7;
@@ -571,11 +566,11 @@ LAB_00434768:
       if ((iVar3 != 0x5a) && (iVar3 != 0x172)) goto LAB_00434863;
       goto LAB_00434895;
     }
-    iVar3 = thunk_FUN_0044ab90(param_1,1,piVar2[8],(char)piVar2[9],(uint *)0x0,
-                               CONCAT22(extraout_var_03,*(undefined2 *)((int)piVar2 + 0x32)));
+    iVar3 = CheckTmps(param_1,1,piVar2[8],(char)piVar2[9],(uint *)0x0,
+                      CONCAT22(extraout_var_03,*(undefined2 *)((int)piVar2 + 0x32)));
     if (0 < iVar3) {
-      thunk_FUN_0044b030(cVar11,1,iVar3);
-      thunk_FUN_00435060();
+      ActivateTV(this,cVar11,1,iVar3);
+      SelfCheckObjControl(this);
       return;
     }
   }
@@ -592,22 +587,21 @@ LAB_00434863:
       return;
     }
 LAB_00434895:
-    iVar3 = thunk_FUN_0044ab90(param_1,1,piVar2[8],(char)piVar2[9],(uint *)0x0,
-                               CONCAT22(extraout_var_03,*(undefined2 *)((int)piVar2 + 0x32)));
+    iVar3 = CheckTmps(param_1,1,piVar2[8],(char)piVar2[9],(uint *)0x0,
+                      CONCAT22(extraout_var_03,*(undefined2 *)((int)piVar2 + 0x32)));
     if (-1 < iVar3) {
-      thunk_FUN_0044b030(cVar11,1,iVar3);
-      thunk_FUN_00435060();
+      ActivateTV(this,cVar11,1,iVar3);
+      SelfCheckObjControl(this);
       return;
     }
   }
-  STAllPlayersC::PushTV(cVar11,1);
+  PushTV(cVar11,1);
   uVar6 = extraout_EDX_02;
   uVar9 = extraout_var_05;
 LAB_004348d7:
-  STAllPlayersC::AddObjToTmp2
-            (in_ECX,cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
-             CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
-  thunk_FUN_00435060();
+  AddObjToTmp2(this,cVar11,1,0,piVar2[8],CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]),
+               CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32)));
+  SelfCheckObjControl(this);
   return;
 }
 

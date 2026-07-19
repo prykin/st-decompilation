@@ -1,4 +1,4 @@
-FUN_00556dd0:
+TraksClassTy::TraksCreateCollection:
 00556DD0  55                        PUSH EBP
 00556DD1  8B EC                     MOV EBP,ESP
 00556DD3  83 EC 78                  SUB ESP,0x78

@@ -1,5 +1,9 @@
 
-int FUN_006e4d70(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   AppClassTy::LifeToAllSystem */
+
+int __thiscall AppClassTy::LifeToAllSystem(AppClassTy *this,int param_1)
 
 {
   uint uVar1;
@@ -12,10 +16,12 @@ int FUN_006e4d70(int param_1)
   uint uVar7;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
+  AppClassTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar5 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x297,0,iVar3,&DAT_007a4ccc,
@@ -67,7 +73,7 @@ int FUN_006e4d70(int param_1)
           else {
             iVar3 = 0;
           }
-          iVar3 = FUN_006e4d70(*(int *)(iVar3 + 8));
+          iVar3 = LifeToAllSystem(local_8,*(int *)(iVar3 + 8));
           if (iVar3 != 0) {
             RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_Sapp_cpp_007ee78c,0x293);
           }

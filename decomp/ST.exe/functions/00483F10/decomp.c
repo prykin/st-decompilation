@@ -22,10 +22,10 @@ undefined4 __fastcall FUN_00483f10(int param_1)
     uVar4 = (int)*(short *)(param_1 + 0x43) - (int)*(short *)(iVar2 + 0x43);
     uVar5 = (int)*(short *)(param_1 + 0x41) - (int)*(short *)(iVar2 + 0x41);
     uVar1 = *(uint *)(param_1 + 0x810);
-    lVar6 = __allmul(uVar5,(int)uVar5 >> 0x1f,uVar5,(int)uVar5 >> 0x1f);
-    lVar7 = __allmul(uVar4,(int)uVar4 >> 0x1f,uVar4,(int)uVar4 >> 0x1f);
-    lVar8 = __allmul(uVar3,(int)uVar3 >> 0x1f,uVar3,(int)uVar3 >> 0x1f);
-    lVar9 = __allmul(uVar1,(int)uVar1 >> 0x1f,uVar1,(int)uVar1 >> 0x1f);
+    lVar6 = Library::MSVCRT::__allmul(uVar5,(int)uVar5 >> 0x1f,uVar5,(int)uVar5 >> 0x1f);
+    lVar7 = Library::MSVCRT::__allmul(uVar4,(int)uVar4 >> 0x1f,uVar4,(int)uVar4 >> 0x1f);
+    lVar8 = Library::MSVCRT::__allmul(uVar3,(int)uVar3 >> 0x1f,uVar3,(int)uVar3 >> 0x1f);
+    lVar9 = Library::MSVCRT::__allmul(uVar1,(int)uVar1 >> 0x1f,uVar1,(int)uVar1 >> 0x1f);
     if (lVar9 < lVar7 + lVar6 + lVar8) {
       return 0;
     }

@@ -1,4 +1,4 @@
-FUN_0071ca50:
+InputClassTy::GetMessage:
 0071CA50  55                        PUSH EBP
 0071CA51  8B EC                     MOV EBP,ESP
 0071CA53  83 EC 58                  SUB ESP,0x58

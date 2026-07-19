@@ -1,5 +1,9 @@
 
-void __thiscall FUN_00589b50(void *this,uint param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Igor\to_oct.cpp
+   STOctopusC::SetSprRange */
+
+void __thiscall STOctopusC::SetSprRange(STOctopusC *this,uint param_1)
 
 {
   code *pcVar1;
@@ -15,15 +19,15 @@ void __thiscall FUN_00589b50(void *this,uint param_1)
     }
     param_1 = 0;
   }
-  if ((*(int *)((int)this + 0x2a5) != 0xf8) && (*(int *)((int)this + 0x2a5) != 0xf9)) {
+  if ((*(int *)(this + 0x2a5) != 0xf8) && (*(int *)(this + 0x2a5) != 0xf9)) {
     iVar2 = param_1 * 6;
-    *(short *)((int)this + 0x6c) = (short)iVar2;
-    thunk_FUN_004abce0((void *)((int)this + 0x1d5),0xe,iVar2,iVar2 + 5,'\0');
+    *(short *)(this + 0x6c) = (short)iVar2;
+    thunk_FUN_004abce0(this + 0x1d5,0xe,iVar2,iVar2 + 5,'\0');
     return;
   }
   iVar2 = param_1 * 8;
-  *(short *)((int)this + 0x6c) = (short)iVar2;
-  thunk_FUN_004abce0((void *)((int)this + 0x1d5),0xe,iVar2,iVar2 + 7,'\0');
+  *(short *)(this + 0x6c) = (short)iVar2;
+  thunk_FUN_004abce0(this + 0x1d5,0xe,iVar2,iVar2 + 7,'\0');
   return;
 }
 

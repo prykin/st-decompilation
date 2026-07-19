@@ -14,7 +14,7 @@ int __cdecl FUN_006ef530(int param_1,int param_2,char *param_3)
   
   pIVar7 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  iVar2 = __setjmp3(local_44,0,unaff_ESI,pIVar7);
+  iVar2 = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar7);
   if (iVar2 == 0) {
     if (param_1 == 0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x66);

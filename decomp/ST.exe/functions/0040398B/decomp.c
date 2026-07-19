@@ -52,7 +52,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pUStack_10 = this;
-  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     piVar7 = aiStack_1d0;
     for (iVar4 = 0x5f; pUVar3 = pUStack_10, iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -64,7 +64,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     if (param_6 != 0) {
       pUVar1 = pUStack_10 + 0x6c;
       wsprintfA((LPSTR)pUVar1,&DAT_007c181c,param_6);
-      puStack_8 = FUN_006f1ce0(param_5,(char *)pUVar1,(int *)0x0,1);
+      puStack_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)pUVar1,(int *)0x0,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
       uStack_1c0 = *(undefined4 *)(puStack_8 + 2);

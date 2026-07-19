@@ -1,4 +1,4 @@
-FUN_005582a0:
+VisibleClassTy::PrepareToSave:
 005582A0  55                        PUSH EBP
 005582A1  8B EC                     MOV EBP,ESP
 005582A3  83 EC 64                  SUB ESP,0x64

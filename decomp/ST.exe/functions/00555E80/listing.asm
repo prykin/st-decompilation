@@ -1,4 +1,4 @@
-FUN_00555e80:
+TraksClassTy::TraksExec:
 00555E80  55                        PUSH EBP
 00555E81  8B EC                     MOV EBP,ESP
 00555E83  83 EC 48                  SUB ESP,0x48

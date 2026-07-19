@@ -37,7 +37,7 @@ undefined4 FUN_006b4b20(int *param_1,uint param_2,int param_3,byte param_4)
   uVar3 = *(uint *)(param_2 + 4);
   uVar4 = *(uint *)(param_2 + 8);
   uVar13 = *(ushort *)(param_2 + 0xe) * uVar3 + 0x1f >> 3 & 0x1ffffffc;
-  puVar5 = (uint *)FUN_006aac70((int)((uVar3 + 1) * uVar4 * 3) / 2 + 0x16);
+  puVar5 = (uint *)Library::DKW::LIB::FUN_006aac70((int)((uVar3 + 1) * uVar4 * 3) / 2 + 0x16);
   if (puVar5 == (uint *)0x0) {
     return 0xfffffffe;
   }

@@ -29,7 +29,7 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_c = this;
-  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -44,7 +44,7 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
     return 0xffff;
   }
   if (*(int *)(local_c + param_1 * 4 + 0x70) == 0) {
-    puVar4 = FUN_006ae290((uint *)0x0,10,0xc,10);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
     *(uint **)(pSVar2 + param_1 * 4 + 0x70) = puVar4;
   }
   else {
@@ -73,7 +73,7 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
     local_1c = param_2;
     local_18 = param_3;
     local_14 = param_4;
-    uVar6 = FUN_006ae1c0(puVar4,&local_1c);
+    uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_1c);
     g_currentExceptionFrame = local_60.previous;
     return uVar6;
   }

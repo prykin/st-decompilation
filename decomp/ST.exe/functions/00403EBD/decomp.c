@@ -61,7 +61,7 @@ undefined4 __thiscall STGameObjC::GetMessage(STGameObjC *this,int param_1)
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pSStack_10 = this;
-  iVar5 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = pSStack_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_58.previous;
@@ -451,11 +451,11 @@ LAB_0041b308:
               *(undefined4 *)(pSVar3 + 0x165) = 0;
               *(undefined4 *)(pSVar3 + 0x169) = 0;
               *(undefined4 *)(pSVar3 + 0x16d) = 0;
-              FUN_006afe40((int *)(pSVar3 + 0x15d),*(uint **)(pSVar3 + 0x171));
-              FUN_006afe40((int *)(pSVar3 + 0x161),*(uint **)(pSVar3 + 0x175));
-              FUN_006afe40((int *)(pSVar3 + 0x165),*(uint **)(pSVar3 + 0x179));
-              FUN_006afe40((int *)(pSVar3 + 0x169),*(uint **)(pSVar3 + 0x17d));
-              FUN_006afe40((int *)(pSVar3 + 0x16d),*(uint **)(pSVar3 + 0x181));
+              Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x15d),*(uint **)(pSVar3 + 0x171));
+              Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x161),*(uint **)(pSVar3 + 0x175));
+              Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x165),*(uint **)(pSVar3 + 0x179));
+              Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x169),*(uint **)(pSVar3 + 0x17d));
+              Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x16d),*(uint **)(pSVar3 + 0x181));
               thunk_FUN_0043fc50(8,0);
             }
           }
@@ -816,8 +816,8 @@ LAB_0041b92c:
       }
       *(int *)(pSVar3 + 0x12d) = 0;
       *(undefined4 *)(pSVar3 + 0x131) = 0;
-      FUN_006afe40((int *)(pSVar3 + 0x12d),*(uint **)(pSVar3 + 0x135));
-      FUN_006afe40((int *)(pSVar3 + 0x131),*(uint **)(pSVar3 + 0x139));
+      Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x12d),*(uint **)(pSVar3 + 0x135));
+      Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x131),*(uint **)(pSVar3 + 0x139));
       uVar25 = 6;
       goto LAB_0041be5f;
     }
@@ -945,10 +945,10 @@ LAB_0041bac6:
       *(undefined4 *)(pSVar3 + 0x141) = 0;
       *(undefined4 *)(pSVar3 + 0x145) = 0;
       *(undefined4 *)(pSVar3 + 0x149) = 0;
-      FUN_006afe40((int *)(pSVar3 + 0x13d),*(uint **)(pSVar3 + 0x14d));
-      FUN_006afe40((int *)(pSVar3 + 0x141),*(uint **)(pSVar3 + 0x151));
-      FUN_006afe40((int *)(pSVar3 + 0x145),*(uint **)(pSVar3 + 0x155));
-      FUN_006afe40((int *)(pSVar3 + 0x149),*(uint **)(pSVar3 + 0x159));
+      Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x13d),*(uint **)(pSVar3 + 0x14d));
+      Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x141),*(uint **)(pSVar3 + 0x151));
+      Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x145),*(uint **)(pSVar3 + 0x155));
+      Library::DKW::TBL::FUN_006afe40((int *)(pSVar3 + 0x149),*(uint **)(pSVar3 + 0x159));
       uVar25 = 7;
       goto LAB_0041be5f;
     }
@@ -1051,7 +1051,7 @@ LAB_0041bcad:
         FUN_006ae110(pbVar1);
         *(int *)pSStack_c = 0;
       }
-      FUN_006afe40((int *)pSStack_c,*(uint **)pSStack_14);
+      Library::DKW::TBL::FUN_006afe40((int *)pSStack_c,*(uint **)pSStack_14);
       uVar25 = 0xc;
       goto LAB_0041be5f;
     }

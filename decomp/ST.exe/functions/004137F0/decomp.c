@@ -36,7 +36,7 @@ undefined4 FUN_004137f0(void *param_1,int param_2,uint param_3,int param_4)
     param_1 = (void *)0x0;
     param_4 = 0;
     param_2 = 0;
-    iVar3 = FUN_006aac70(iVar5 * 0x10 + 0xc);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(iVar5 * 0x10 + 0xc);
     *(int *)((int)this + 0x59) = iVar3;
     piVar6 = (int *)(iVar3 + 0xc);
     *(int *)(iVar3 + 4) = iVar2;

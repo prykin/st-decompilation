@@ -29,7 +29,7 @@ FUN_004ebda0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,u
       *(undefined4 *)((int)this + 0x510) = 0;
       *(undefined4 *)((int)this + 0x514) = *(undefined4 *)(DAT_00802a38 + 0xe4);
       thunk_FUN_004ec0f0((int)this);
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr(this,0);
     }
   }
   return;

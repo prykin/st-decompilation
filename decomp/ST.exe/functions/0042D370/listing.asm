@@ -1,4 +1,4 @@
-FUN_0042d370:
+STAllPlayersC::SetActivityToObjs:
 0042D370  55                        PUSH EBP
 0042D371  8B EC                     MOV EBP,ESP
 0042D373  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

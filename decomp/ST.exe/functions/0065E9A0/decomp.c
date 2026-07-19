@@ -31,7 +31,7 @@ FUN_0065e9a0(void *this,uint param_1,short *param_2,uint param_3,uint param_4,by
   local_10 = this;
   uVar2 = thunk_FUN_0043e460((char)uVar4);
   if (uVar2 != 0) {
-    local_8 = FUN_006aac10((uint)uVar2 * 0x2c);
+    local_8 = Library::DKW::LIB::FUN_006aac10((uint)uVar2 * 0x2c);
     DAT_00811900 = 0;
     if ((char)param_6 == '\b') {
       param_6 = CONCAT31(param_6._1_3_,(char)uVar4);

@@ -13,7 +13,7 @@ void __thiscall FUN_004ebcb0(void *this,int param_1,int param_2)
     *(undefined4 *)((int)this + 0x4dc) = 0;
     *(undefined4 *)((int)this + 0x4e0) = 0;
     *(undefined4 *)((int)this + 0x4ec) = 0;
-    thunk_FUN_004cabb0(0);
+    TLOBaseTy::RotateSpr(this,0);
     if (*(int *)((int)this + 0x5ac) == 0x52) {
       iVar1 = *(int *)this;
       iVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));

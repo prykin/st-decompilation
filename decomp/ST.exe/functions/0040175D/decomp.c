@@ -116,7 +116,7 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   }
   IStack_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_c4;
-  iVar3 = __setjmp3(IStack_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_c4.previous;
@@ -191,7 +191,7 @@ LAB_005aecc2:
     uStack_48 = 0x6327;
     uStack_50 = uStack_70;
     (**(code **)(**(int **)(this_00 + 0xc) + 8))(5,this_00 + 0x1c83,0,auStack_80,0);
-    FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1c87));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1c87));
     goto LAB_005aecc2;
   }
   uStack_570 = *(undefined4 *)(this_00 + 8);
@@ -253,16 +253,19 @@ LAB_005aecc2:
   uStack_118 = uStack_570;
   (**(code **)(**(int **)(this_00 + 0xc) + 8))(7,this_00 + 0x1a6c,0,auStack_598,0);
   if (*(uint *)(this_00 + 0x1a74) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_00 + 0x1ab8),*(uint *)(this_00 + 0x1a74),0xfffffffe,
-                 *(uint *)(this_00 + 0x1a8c),*(uint *)(this_00 + 0x1a90));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_00 + 0x1ab8),*(uint *)(this_00 + 0x1a74),0xfffffffe,
+               *(uint *)(this_00 + 0x1a8c),*(uint *)(this_00 + 0x1a90));
   }
   if (*(uint *)(this_00 + 0x1b05) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_00 + 0x1b49),*(uint *)(this_00 + 0x1b05),0xfffffffe,
-                 *(uint *)(this_00 + 0x1b1d),*(uint *)(this_00 + 0x1b21));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_00 + 0x1b49),*(uint *)(this_00 + 0x1b05),0xfffffffe,
+               *(uint *)(this_00 + 0x1b1d),*(uint *)(this_00 + 0x1b21));
   }
   if (*(uint *)(this_00 + 0x1b96) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),0xfffffffe,
-                 *(uint *)(this_00 + 0x1bae),*(uint *)(this_00 + 0x1bb2));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),0xfffffffe,
+               *(uint *)(this_00 + 0x1bae),*(uint *)(this_00 + 0x1bb2));
   }
 LAB_005aef44:
   if ((this_00[0x20b4] == (ChooseMapTy)0x0) || (param_1 != '\0')) {
@@ -300,7 +303,7 @@ LAB_005aef44:
     uStack_f54 = 0;
     uStack_f50 = 0xc0a2;
     (**(code **)(*piVar9 + 8))(6,DAT_0081176c + 0x54c,0,auStack_fe4,0);
-    FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
   }
   iVar3 = *(int *)(this_00 + 0x1a5b);
   if (*(int *)(iVar3 + 0x2e6) != 0) {

@@ -1,4 +1,4 @@
-FUN_004a7af0:
+STGroupBoatC::GetPatrolTask:
 004A7AF0  55                        PUSH EBP
 004A7AF1  8B EC                     MOV EBP,ESP
 004A7AF3  83 EC 28                  SUB ESP,0x28

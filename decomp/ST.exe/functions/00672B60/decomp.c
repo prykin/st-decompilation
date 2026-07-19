@@ -28,13 +28,13 @@ int FUN_00672b60(char *param_1,undefined4 *param_2)
     DAT_00811908 = 0;
     DAT_007d2d24 = 0x600;
   }
-  local_1c = FUN_006aac10(0x30);
+  local_1c = Library::DKW::LIB::FUN_006aac10(0x30);
   if (local_1c == (int *)0x0) {
     return -2;
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  exceptionCode = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  exceptionCode = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (exceptionCode != 0) {
     g_currentExceptionFrame = local_60.previous;
     FUN_006a5e90(local_c);
@@ -52,19 +52,19 @@ int FUN_00672b60(char *param_1,undefined4 *param_2)
     return exceptionCode;
   }
   if (DAT_0085755c == (undefined4 *)0x0) {
-    local_c = (undefined4 *)FUN_006aac70(0x401);
+    local_c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x401);
     *(undefined1 *)local_c = 0;
   }
   if (DAT_00857528 == (char *)0x0) {
-    local_10 = (char *)FUN_006aac70(0x401);
+    local_10 = (char *)Library::DKW::LIB::FUN_006aac70(0x401);
     *local_10 = '\0';
   }
   if (DAT_00811948 == (char *)0x0) {
-    local_14 = (char *)FUN_006aac70(0x401);
+    local_14 = (char *)Library::DKW::LIB::FUN_006aac70(0x401);
     *local_14 = '\0';
   }
   if (DAT_0085753c == (char *)0x0) {
-    local_8 = (char *)FUN_006aac70(0x105);
+    local_8 = (char *)Library::DKW::LIB::FUN_006aac70(0x105);
     *local_8 = '\0';
   }
   else {

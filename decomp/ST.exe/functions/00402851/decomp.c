@@ -184,11 +184,11 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 uVar40;
   undefined4 uVar41;
   
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   IStackY_110.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStackY_110;
   this_00 = extraout_ECX;
-  iVar5 = __setjmp3(IStackY_110.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStackY_110.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStackY_110.previous;
     iVar16 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x350,0,iVar5,
@@ -293,7 +293,7 @@ LAB_0052fd4a:
         do {
           pUVar23 = aUStackY_984;
           pUVar21 = pUVar21 + 1;
-          _strncpy((char *)pUVar23,(char *)(this_00 + 0x1f5),(size_t)pUVar21);
+          Library::MSVCRT::_strncpy((char *)pUVar23,(char *)(this_00 + 0x1f5),(size_t)pUVar21);
           uVar18 = 0xffffffff;
           pcVar8 = &DAT_007c7278;
           do {
@@ -336,7 +336,8 @@ LAB_0052fd4a:
           *(undefined4 *)pUVar23 = 0;
           pUVar23 = pUVar23 + 4;
         }
-        _strncpy((char *)aUStackY_984,(char *)(this_00 + 0x1f5),(size_t)(pUVar21 + -3));
+        Library::MSVCRT::_strncpy
+                  ((char *)aUStackY_984,(char *)(this_00 + 0x1f5),(size_t)(pUVar21 + -3));
         uVar18 = 0xffffffff;
         pcVar8 = &DAT_007c7274;
         do {
@@ -453,7 +454,7 @@ LAB_0052ff02:
         unaff_ESI = 10;
         do {
           unaff_ESI = unaff_ESI + 1;
-          _strncpy((char *)auStackY_880,(char *)puVar6,unaff_ESI);
+          Library::MSVCRT::_strncpy((char *)auStackY_880,(char *)puVar6,unaff_ESI);
           uVar18 = 0xffffffff;
           pcVar8 = &DAT_007c7278;
           do {
@@ -497,7 +498,7 @@ LAB_0052ff02:
           *puVar9 = 0;
           puVar9 = puVar9 + 1;
         }
-        _strncpy((char *)auStackY_880,(char *)puVar6,unaff_ESI - 3);
+        Library::MSVCRT::_strncpy((char *)auStackY_880,(char *)puVar6,unaff_ESI - 3);
         uVar18 = 0xffffffff;
         pcVar8 = &DAT_007c7274;
         do {
@@ -1074,7 +1075,7 @@ switchD_0052fbb9_caseD_9:
           piVar39 = (int *)0x0;
           IStackY_264.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStackY_264;
-          iVar5 = __setjmp3(IStackY_264.jumpBuffer,0,unaff_EDI,iVar16);
+          iVar5 = Library::MSVCRT::__setjmp3(IStackY_264.jumpBuffer,0,unaff_EDI,iVar16);
           if (iVar5 == 0) {
             if (g_sound == 0) {
               uVar13 = 0;
@@ -1085,7 +1086,7 @@ switchD_0052fbb9_caseD_9:
             if (uVar13 != 0) {
               piVar39 = &iStackY_70;
               uVar12 = 0x530e3a;
-              FUN_006b7e00(DAT_0080765c,1,&iStackY_74,piVar39);
+              Library::DKW::SND::FUN_006b7e00(DAT_0080765c,1,&iStackY_74,piVar39);
             }
             uVar13 = (uint)(iStackY_74 + iStackY_70) >> 1;
           }
@@ -1123,7 +1124,7 @@ LAB_00530da0:
           piVar39 = (int *)0x0;
           IStackY_154.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStackY_154;
-          iVar5 = __setjmp3(IStackY_154.jumpBuffer,0,unaff_EDI,iVar16);
+          iVar5 = Library::MSVCRT::__setjmp3(IStackY_154.jumpBuffer,0,unaff_EDI,iVar16);
           if (iVar5 == 0) {
             if (g_sound == 0) {
               uVar13 = 0;
@@ -1134,7 +1135,7 @@ LAB_00530da0:
             if (uVar13 != 0) {
               piVar39 = &iStackY_6c;
               uVar12 = 0x530d50;
-              FUN_006b7e00(DAT_0080765c,0,&iStackY_60,piVar39);
+              Library::DKW::SND::FUN_006b7e00(DAT_0080765c,0,&iStackY_60,piVar39);
             }
             uVar13 = (uint)(iStackY_60 + iStackY_6c) >> 1;
           }
@@ -1225,7 +1226,7 @@ LAB_005311d8:
         case 2:
           IStackY_198.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStackY_198;
-          iVar5 = __setjmp3(IStackY_198.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar5 = Library::MSVCRT::__setjmp3(IStackY_198.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
             if (g_sound == 0) {
               uVar18 = 0;
@@ -1236,7 +1237,7 @@ LAB_005311d8:
             if (uVar18 != 0) {
               uVar17 = 0x53124e;
               iVar16 = DAT_0080765c;
-              FUN_006b7e00(DAT_0080765c,3,&iStackY_4c,&iStackY_50);
+              Library::DKW::SND::FUN_006b7e00(DAT_0080765c,3,&iStackY_4c,&iStackY_50);
             }
             uVar13 = (uint)(iStackY_50 + iStackY_4c) >> 1;
           }
@@ -1265,7 +1266,7 @@ LAB_0053108d:
         case 4:
           IStackY_1dc.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStackY_1dc;
-          iVar5 = __setjmp3(IStackY_1dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar5 = Library::MSVCRT::__setjmp3(IStackY_1dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
             if (g_sound == 0) {
               uVar18 = 0;
@@ -1276,7 +1277,7 @@ LAB_0053108d:
             if (uVar18 != 0) {
               uVar17 = 0x531309;
               iVar16 = DAT_0080765c;
-              FUN_006b7e00(DAT_0080765c,2,&iStackY_64,&iStackY_5c);
+              Library::DKW::SND::FUN_006b7e00(DAT_0080765c,2,&iStackY_64,&iStackY_5c);
             }
             uVar13 = (uint)(iStackY_64 + iStackY_5c) >> 1;
           }
@@ -1316,7 +1317,7 @@ LAB_0053108f:
           }
           IStackY_220.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStackY_220;
-          iVar5 = __setjmp3(IStackY_220.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar5 = Library::MSVCRT::__setjmp3(IStackY_220.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
             if (g_sound == 0) {
               uVar18 = 0;
@@ -1327,7 +1328,8 @@ LAB_0053108f:
             if (uVar18 != 0) {
               uVar17 = 0x53111e;
               iVar16 = DAT_0080765c;
-              FUN_006b7e00(DAT_0080765c,1,(undefined4 *)&stack0xffffffb8,&iStackY_68);
+              Library::DKW::SND::FUN_006b7e00
+                        (DAT_0080765c,1,(undefined4 *)&stack0xffffffb8,&iStackY_68);
             }
             uVar13 = (uint)(iStackY_68 + in_stack_ffffffb8) >> 1;
           }
@@ -1362,7 +1364,7 @@ LAB_0053108f:
           }
           IStackY_2a8.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStackY_2a8;
-          iVar5 = __setjmp3(IStackY_2a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar5 = Library::MSVCRT::__setjmp3(IStackY_2a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (iVar5 == 0) {
             if (g_sound == 0) {
               uVar18 = 0;
@@ -1373,7 +1375,7 @@ LAB_0053108f:
             if (uVar18 != 0) {
               uVar17 = 0x531039;
               iVar16 = DAT_0080765c;
-              FUN_006b7e00(DAT_0080765c,0,&iStackY_58,&iStackY_54);
+              Library::DKW::SND::FUN_006b7e00(DAT_0080765c,0,&iStackY_58,&iStackY_54);
             }
             uVar13 = (uint)(iStackY_58 + iStackY_54) >> 1;
           }

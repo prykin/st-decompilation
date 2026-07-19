@@ -11,7 +11,7 @@ int __cdecl FUN_0055d730(int param_1,byte param_2)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar2 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     DAT_008032b4 = FUN_00717fc0(param_1,PTR_s_PLT_PAUSE_0079af70,param_2,1);
     DAT_008032b8 = FUN_00717fc0(param_1,PTR_s_PLT_EXPLITE_0079af74,param_2,1);

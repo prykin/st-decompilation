@@ -90,7 +90,7 @@ int FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param_5)
       if ((local_28 < (int)uVar7) && (local_30 != 0)) {
         if (local_24 == (byte *)0x0) {
           local_8 = 0;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           local_24 = &stack0xffffff34;
           local_1c = &stack0xffffff34;

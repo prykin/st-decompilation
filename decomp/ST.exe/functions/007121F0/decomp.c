@@ -50,9 +50,9 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
       local_80.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_80;
       local_24 = this;
-      iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar3 == 0) {
-        local_10 = FUN_006b54f0((uint *)0x0,param_5,*(uint *)(param_1 + 0x10));
+        local_10 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,param_5,*(uint *)(param_1 + 0x10));
         iVar3 = FUN_00714da0(&local_30);
         if (iVar3 != 0) {
           RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x77a);
@@ -90,14 +90,14 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
                       FUN_006b60b0((char *)local_30,(char *)local_30);
                     }
                     if (param_6 == 0) {
-                      FUN_006b5aa0((int)local_10,(char *)local_30);
+                      Library::DKW::TBL::FUN_006b5aa0((int)local_10,(char *)local_30);
                     }
                     else {
                       local_c = local_30;
                       do {
                         local_8 = GetFittingStr(this_00,(char *)0x0,local_c,(uint *)0x0,param_3,
                                                 &local_c);
-                        FUN_006b5aa0((int)local_10,local_8);
+                        Library::DKW::TBL::FUN_006b5aa0((int)local_10,local_8);
                         if (local_8 != (char *)0x0) {
                           FUN_006ab060(&local_8);
                         }
@@ -143,14 +143,14 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
                     }
                     puVar4 = local_10;
                     if (param_6 == 0) {
-                      FUN_006b5aa0((int)local_10,(char *)local_30);
+                      Library::DKW::TBL::FUN_006b5aa0((int)local_10,(char *)local_30);
                     }
                     else {
                       local_c = local_30;
                       do {
                         local_8 = GetFittingStr(this_00,(char *)0x0,local_c,(uint *)0x0,param_3,
                                                 &local_c);
-                        FUN_006b5aa0((int)puVar4,local_8);
+                        Library::DKW::TBL::FUN_006b5aa0((int)puVar4,local_8);
                         if (local_8 != (char *)0x0) {
                           FUN_006ab060(&local_8);
                         }
@@ -173,13 +173,13 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
           }
           puVar4 = local_10;
           if (param_6 == 0) {
-            FUN_006b5aa0((int)local_10,(char *)local_30);
+            Library::DKW::TBL::FUN_006b5aa0((int)local_10,(char *)local_30);
           }
           else {
             local_c = local_30;
             do {
               local_8 = GetFittingStr(this_00,(char *)0x0,local_c,(uint *)0x0,param_3,&local_c);
-              FUN_006b5aa0((int)puVar4,local_8);
+              Library::DKW::TBL::FUN_006b5aa0((int)puVar4,local_8);
               if (local_8 != (char *)0x0) {
                 FUN_006ab060(&local_8);
               }

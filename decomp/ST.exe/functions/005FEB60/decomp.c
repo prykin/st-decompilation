@@ -74,7 +74,7 @@ int __thiscall FUN_005feb60(void *this,int param_1,int param_2,int param_3)
     }
     local_8 = 0;
     ExceptionList = &local_14;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     local_44 = 0;
     local_1c = &stack0xffffff64;
@@ -182,9 +182,9 @@ LAB_005fef0e:
     local_1c = puVar5;
     if (iVar12 != 0) {
       *(int *)((int)this + 0x237) = iVar12;
-      iVar14 = FUN_006aac70(iVar12 * 0x18);
+      iVar14 = Library::DKW::LIB::FUN_006aac70(iVar12 * 0x18);
       *(int *)((int)this + 0x23b) = iVar14;
-      iVar14 = FUN_006aac70(iVar12 * 4);
+      iVar14 = Library::DKW::LIB::FUN_006aac70(iVar12 * 4);
       *(int *)((int)this + 0x23f) = iVar14;
       puVar15 = (undefined4 *)&stack0xffffff64;
       puVar16 = *(undefined4 **)((int)this + 0x23b);

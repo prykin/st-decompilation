@@ -20,19 +20,20 @@ ComboTy::OutBmpProc(ComboTy *this,uint param_1,undefined4 param_2,undefined4 par
   if (param_8 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     iVar3 = local_8;
     if (iVar2 == 0) {
       if (*(int *)(local_8 + 0x60) != 0) {
         iVar2 = *(int *)(local_8 + 0x78);
-        FUN_006c5000(param_1,param_4,param_5 + 3,iVar2,0,0,0,*(uint *)(iVar2 + 4),
-                     *(int *)(iVar2 + 8),*(int *)(local_8 + 0x60),
-                     (byte)*(undefined4 *)(local_8 + 0x58));
+        Library::DKW::DDX::FUN_006c5000
+                  (param_1,param_4,param_5 + 3,iVar2,0,0,0,*(uint *)(iVar2 + 4),*(int *)(iVar2 + 8),
+                   *(int *)(local_8 + 0x60),(byte)*(undefined4 *)(local_8 + 0x58));
       }
       if (*(int *)(iVar3 + 0x5c) != 0) {
         iVar2 = *(int *)(iVar3 + 0x74);
-        FUN_006c5000(param_1,param_4,param_5,iVar2,0,0,0,*(uint *)(iVar2 + 4),*(int *)(iVar2 + 8),
-                     *(int *)(iVar3 + 0x5c),(byte)*(undefined4 *)(iVar3 + 0x50));
+        Library::DKW::DDX::FUN_006c5000
+                  (param_1,param_4,param_5,iVar2,0,0,0,*(uint *)(iVar2 + 4),*(int *)(iVar2 + 8),
+                   *(int *)(iVar3 + 0x5c),(byte)*(undefined4 *)(iVar3 + 0x50));
         g_currentExceptionFrame = local_4c.previous;
         return;
       }

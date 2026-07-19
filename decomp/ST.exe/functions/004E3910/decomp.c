@@ -19,9 +19,10 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
   undefined4 uVar8;
   int iVar9;
   int iVar10;
-  char cVar11;
-  short sVar12;
-  int local_20;
+  STSharkC *pSVar11;
+  char cVar12;
+  short sVar13;
+  STSharkC *local_20;
   int local_1c;
   int local_18;
   int *local_14;
@@ -43,7 +44,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
           local_c = iVar10;
           if (local_10 == 0) {
             local_10 = 1;
-            local_8 = FUN_006ae290((uint *)0x0,10000,0xc,10);
+            local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10000,0xc,10);
             iVar10 = 0;
             uVar8 = _DAT_007fb240;
             if (0 < DAT_007fb242) {
@@ -52,45 +53,45 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                 if (0 < DAT_007fb244) {
                   do {
                     sVar2 = (short)iVar10;
-                    sVar12 = (short)iVar4;
-                    bVar1 = thunk_FUN_004961b0(0,sVar2,sVar12);
+                    sVar13 = (short)iVar4;
+                    bVar1 = thunk_FUN_004961b0(0,sVar2,sVar13);
                     if ((CONCAT31(extraout_var,bVar1) != 0) &&
                        (((sVar3 = (short)_DAT_007fb240, sVar3 < 1 || (sVar2 < 0)) ||
                         (((DAT_007fb242 <= sVar2 ||
-                          (((sVar12 < 0 || (DAT_007fb244 <= sVar12)) ||
+                          (((sVar13 < 0 || (DAT_007fb244 <= sVar13)) ||
                            (*(int *)(DAT_007fb248 +
-                                    ((int)sVar2 * (int)sVar3 + (int)sVar12 * (int)DAT_007fb246) * 8)
+                                    ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)DAT_007fb246) * 8)
                             == 0)))) &&
-                         ((((sVar2 < 0 || (DAT_007fb242 <= sVar2)) || (sVar12 < 0)) ||
-                          ((DAT_007fb244 <= sVar12 ||
+                         ((((sVar2 < 0 || (DAT_007fb242 <= sVar2)) || (sVar13 < 0)) ||
+                          ((DAT_007fb244 <= sVar13 ||
                            (*(int *)(DAT_007fb248 + 4 +
-                                    ((int)sVar2 * (int)sVar3 + (int)sVar12 * (int)DAT_007fb246) * 8)
+                                    ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)DAT_007fb246) * 8)
                             == 0)))))))))) {
-                      local_20 = 0;
+                      local_20 = (STSharkC *)0x0;
                       local_1c = iVar10;
                       local_18 = iVar4;
-                      FUN_006ae1c0(local_8,&local_20);
+                      Library::DKW::TBL::FUN_006ae1c0(local_8,&local_20);
                     }
-                    bVar1 = thunk_FUN_004961b0((short)_DAT_007fb240 + -1,sVar2,sVar12);
+                    bVar1 = thunk_FUN_004961b0((short)_DAT_007fb240 + -1,sVar2,sVar13);
                     if (CONCAT31(extraout_var_00,bVar1) != 0) {
                       sVar3 = (short)_DAT_007fb240;
                       if (((short)(sVar3 + -1) < 0) ||
                          ((((((sVar3 <= (short)(sVar3 + -1) || (sVar2 < 0)) ||
-                             (DAT_007fb242 <= sVar2)) || ((sVar12 < 0 || (DAT_007fb244 <= sVar12))))
+                             (DAT_007fb242 <= sVar2)) || ((sVar13 < 0 || (DAT_007fb244 <= sVar13))))
                            || (*(int *)(DAT_007fb248 +
-                                       ((int)sVar2 * (int)sVar3 + (int)sVar12 * (int)DAT_007fb246 +
+                                       ((int)sVar2 * (int)sVar3 + (int)sVar13 * (int)DAT_007fb246 +
                                        (int)(short)(sVar3 + -1)) * 8) == 0)) &&
                           (((((short)(sVar3 + -1) < 0 || (sVar3 <= (short)(sVar3 + -1))) ||
                             ((sVar2 < 0 ||
-                             (((DAT_007fb242 <= sVar2 || (sVar12 < 0)) || (DAT_007fb244 <= sVar12)))
+                             (((DAT_007fb242 <= sVar2 || (sVar13 < 0)) || (DAT_007fb244 <= sVar13)))
                              ))) || (*(int *)(DAT_007fb248 + 4 +
                                              ((int)sVar2 * (int)sVar3 +
-                                              (int)sVar12 * (int)DAT_007fb246 +
+                                              (int)sVar13 * (int)DAT_007fb246 +
                                              (int)(short)(sVar3 + -1)) * 8) == 0)))))) {
-                        local_20 = sVar3 + -1;
+                        local_20 = (STSharkC *)(sVar3 + -1);
                         local_1c = iVar10;
                         local_18 = iVar4;
-                        FUN_006ae1c0(local_8,&local_20);
+                        Library::DKW::TBL::FUN_006ae1c0(local_8,&local_20);
                       }
                     }
                     iVar4 = iVar4 + 1;
@@ -101,62 +102,62 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                 iVar10 = iVar10 + 1;
               } while (iVar10 < DAT_007fb242);
             }
-            iVar10 = 0;
+            pSVar11 = (STSharkC *)0x0;
             sVar2 = DAT_007fb244;
             if (0 < (short)uVar8) {
               do {
-                iVar4 = 0;
+                iVar10 = 0;
                 if (0 < sVar2) {
                   do {
-                    sVar2 = (short)iVar10;
-                    sVar12 = (short)iVar4;
-                    bVar1 = thunk_FUN_004961b0(sVar2,0,sVar12);
+                    sVar2 = (short)pSVar11;
+                    sVar13 = (short)iVar10;
+                    bVar1 = thunk_FUN_004961b0(sVar2,0,sVar13);
                     if (CONCAT31(extraout_var_01,bVar1) != 0) {
                       if (((((sVar2 < 0) || (DAT_007fb240 <= sVar2)) ||
-                           ((DAT_007fb242 < 1 || ((sVar12 < 0 || (DAT_007fb244 <= sVar12)))))) ||
+                           ((DAT_007fb242 < 1 || ((sVar13 < 0 || (DAT_007fb244 <= sVar13)))))) ||
                           (*(int *)(DAT_007fb248 +
-                                   ((int)sVar12 * (int)DAT_007fb246 + (int)sVar2) * 8) == 0)) &&
+                                   ((int)sVar13 * (int)DAT_007fb246 + (int)sVar2) * 8) == 0)) &&
                          (((((sVar2 < 0 || (DAT_007fb240 <= sVar2)) || (DAT_007fb242 < 1)) ||
-                           ((sVar12 < 0 || (DAT_007fb244 <= sVar12)))) ||
+                           ((sVar13 < 0 || (DAT_007fb244 <= sVar13)))) ||
                           (*(int *)(DAT_007fb248 + 4 +
-                                   ((int)sVar12 * (int)DAT_007fb246 + (int)sVar2) * 8) == 0)))) {
+                                   ((int)sVar13 * (int)DAT_007fb246 + (int)sVar2) * 8) == 0)))) {
                         local_1c = 0;
-                        local_20 = iVar10;
-                        local_18 = iVar4;
-                        FUN_006ae1c0(local_8,&local_20);
+                        local_20 = pSVar11;
+                        local_18 = iVar10;
+                        Library::DKW::TBL::FUN_006ae1c0(local_8,&local_20);
                       }
                     }
-                    bVar1 = thunk_FUN_004961b0(sVar2,DAT_007fb242 + -1,sVar12);
+                    bVar1 = thunk_FUN_004961b0(sVar2,DAT_007fb242 + -1,sVar13);
                     if (CONCAT31(extraout_var_02,bVar1) != 0) {
                       sVar3 = DAT_007fb242 + -1;
                       sVar7 = (short)_DAT_007fb240;
                       if ((((sVar2 < 0) || (sVar7 <= sVar2)) ||
                           ((sVar3 < 0 ||
-                           ((((DAT_007fb242 <= sVar3 || (sVar12 < 0)) || (DAT_007fb244 <= sVar12))
+                           ((((DAT_007fb242 <= sVar3 || (sVar13 < 0)) || (DAT_007fb244 <= sVar13))
                             || (*(int *)(DAT_007fb248 +
-                                        ((int)sVar12 * (int)DAT_007fb246 + (int)sVar7 * (int)sVar3 +
+                                        ((int)sVar13 * (int)DAT_007fb246 + (int)sVar7 * (int)sVar3 +
                                         (int)sVar2) * 8) == 0)))))) &&
                          (((sVar2 < 0 || (sVar7 <= sVar2)) ||
                           ((sVar3 < 0 ||
-                           (((DAT_007fb242 <= sVar3 || (sVar12 < 0)) ||
-                            ((DAT_007fb244 <= sVar12 ||
+                           (((DAT_007fb242 <= sVar3 || (sVar13 < 0)) ||
+                            ((DAT_007fb244 <= sVar13 ||
                              (*(int *)(DAT_007fb248 + 4 +
-                                      ((int)sVar12 * (int)DAT_007fb246 + (int)sVar3 * (int)sVar7 +
+                                      ((int)sVar13 * (int)DAT_007fb246 + (int)sVar3 * (int)sVar7 +
                                       (int)sVar2) * 8) == 0)))))))))) {
                         local_1c = DAT_007fb242 + -1;
-                        local_20 = iVar10;
-                        local_18 = iVar4;
-                        FUN_006ae1c0(local_8,&local_20);
+                        local_20 = pSVar11;
+                        local_18 = iVar10;
+                        Library::DKW::TBL::FUN_006ae1c0(local_8,&local_20);
                       }
                     }
-                    iVar4 = iVar4 + 1;
+                    iVar10 = iVar10 + 1;
                     uVar8 = _DAT_007fb240;
                     param_1 = local_14;
                     sVar2 = DAT_007fb244;
-                  } while (iVar4 < DAT_007fb244);
+                  } while (iVar10 < DAT_007fb244);
                 }
-                iVar10 = iVar10 + 1;
-              } while (iVar10 < (short)uVar8);
+                pSVar11 = pSVar11 + 1;
+              } while ((int)pSVar11 < (int)(short)uVar8);
             }
             if (local_8[3] != 0) {
               uVar5 = param_1[7] * 0x41c64e6d + 0x3039;
@@ -178,14 +179,15 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
               if (DAT_007fb242 <= iVar6) {
                 iVar6 = DAT_007fb242 + -1;
               }
-              iVar10 = thunk_FUN_00590010(local_20,local_1c,local_18,iVar10,iVar9,iVar4,iVar6,0,
-                                          param_1[9]);
+              iVar10 = STSharkC::CreateShark
+                                 (local_20,(int)local_20,local_1c,local_18,iVar10,iVar9,iVar4,iVar6,
+                                  0,param_1[9]);
               this = (STT3DSprC *)((int)param_1 + 0x1d5);
               param_1[local_c + 0x134] = *(int *)(iVar10 + 0x18);
-              cVar11 = '\0';
+              cVar12 = '\0';
               iVar10 = thunk_FUN_004acd30(this,'\v');
-              thunk_FUN_004abce0(this,0xb,0,iVar10,cVar11);
-              thunk_FUN_004abe40(this,'\v',0);
+              thunk_FUN_004abce0(this,0xb,0,iVar10,cVar12);
+              STT3DSprC::SetCurFase(this,'\v',0);
               thunk_FUN_004ac700(this,'\v');
               STT3DSprC::StartShow(this,0xb,*(undefined4 *)((int)DAT_00802a38 + 0xe4));
               (**(code **)(*param_1 + 0x90))(3,0x25d);

@@ -35,7 +35,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   g_currentExceptionFrame = &IStack_80;
   pSStack_1c = this;
   uStack_14 = uStack_18;
-  errorCode = __setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_1c;
   uVar7 = uStack_14;
   uVar6 = uStack_18;
@@ -51,17 +51,18 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
         ;
       }
     }
-    FUN_006ae140(*(uint **)(pSVar2 + 0x29),uVar7,&param_1);
-    this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
-                                        param_1,1);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar2 + 0x29),uVar7,&param_1);
+    this_00 = (int *)STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
+                                param_1,1);
     thunk_FUN_00419c30(this_00,*(undefined2 *)(pSVar2 + 0x25));
     *(short *)(pSVar2 + 0x27) = *(short *)(pSVar2 + 0x27) + 1;
     if (param_2 == 1) {
       if (*(int *)(pSVar2 + 0x2d) == 0) {
-        puVar3 = FUN_006ae290((uint *)0x0,5,2,5);
+        puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,2,5);
         *(uint **)(pSVar2 + 0x2d) = puVar3;
       }
-      FUN_006ae1c0(*(uint **)(pSVar2 + 0x2d),&param_1);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + 0x2d),&param_1);
       uStack_5 = 0xff;
       (**(code **)(*(int *)pSVar2 + 8))(0x65,&uStack_5);
     }

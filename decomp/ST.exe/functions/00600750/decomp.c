@@ -169,7 +169,7 @@ LAB_00600928:
             if (local_10 < iVar4) {
               local_10 = local_10 + 1;
             }
-            thunk_FUN_004abe40(this,'\x0f',local_10);
+            STT3DSprC::SetCurFase(this,'\x0f',local_10);
           }
           if (*(char *)(iVar6 + 0x28 + *(int *)((int)param_1 + 0x233)) != '\0') {
             iVar4 = thunk_FUN_004acd30(this,'\x0e');
@@ -198,9 +198,9 @@ LAB_00600928:
           if (local_28 < iVar5) {
             iVar6 = local_28 + 1;
           }
-          thunk_FUN_004abe40(this,'\x0e',iVar6);
+          STT3DSprC::SetCurFase(this,'\x0e',iVar6);
           STT3DSprC::ShowCurFase(this,'\x0e');
-          thunk_FUN_004abe40(this,'\r',iVar4);
+          STT3DSprC::SetCurFase(this,'\r',iVar4);
           STT3DSprC::ShowCurFase(this,'\r');
           iVar4 = (int)local_c + *(int *)((int)param_1 + 0x233);
           local_28 = (int)*(short *)(iVar4 + 6);

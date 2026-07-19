@@ -15,7 +15,7 @@ int __fastcall thunk_FUN_005fd850(int param_1)
   iVar3 = -1;
   iStack_8 = -1;
   if (*(int *)(param_1 + 0x226) != 0) {
-    puVar1 = (undefined4 *)FUN_006aac70(*(int *)(param_1 + 0x226) * 0x52);
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(param_1 + 0x226) * 0x52);
     *(undefined4 **)(param_1 + 0x233) = puVar1;
     iStack_8 = 0;
     uVar4 = *(int *)(param_1 + 0x226) * 0x52;
@@ -32,7 +32,7 @@ int __fastcall thunk_FUN_005fd850(int param_1)
   if (((*(int *)(param_1 + 0x233) != 0) && (*(char *)(param_1 + 0x232) != '\0')) &&
      (iVar7 = 0, 0 < *(int *)(param_1 + 0x226))) {
     do {
-      puVar1 = (undefined4 *)FUN_0072e530(0x40);
+      puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
       if (puVar1 == (undefined4 *)0x0) {
         uVar2 = 0;
       }

@@ -34,7 +34,7 @@ LAB_004c9106:
     *(undefined4 *)(param_1 + 0x261) = 1;
     *(undefined4 *)(param_1 + 0x2e1) = 1;
   }
-  thunk_FUN_004cabb0(1);
+  TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,1);
   return iVar2;
 }
 

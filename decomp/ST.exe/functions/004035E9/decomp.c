@@ -20,7 +20,7 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
   if (param_8 != 0) {
     IStack_48.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_48;
-    errorCode = __setjmp3(IStack_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(IStack_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,

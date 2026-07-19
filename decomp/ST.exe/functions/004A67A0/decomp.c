@@ -26,7 +26,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -218,7 +218,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     *(undefined4 *)(local_8 + 0x59) = 0;
   }
   else {
-    puVar4 = (undefined4 *)FUN_006aac70(local_c[8]);
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_c[8]);
     *(undefined4 **)(local_8 + 0x59) = puVar4;
     uVar8 = puVar2[8];
     puVar9 = (undefined4 *)(puVar2[7] + (int)puVar2);
@@ -322,7 +322,7 @@ void __thiscall STGroupBoatC::RestoreGrpBData(STGroupBoatC *this,undefined4 *par
     *(undefined4 *)(local_8 + 0x21e) = 0;
   }
   else {
-    puVar4 = (undefined4 *)FUN_006aac70(uVar8);
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar8);
     *(undefined4 **)(local_8 + 0x21e) = puVar4;
     puVar9 = (undefined4 *)((int)puVar2 + *(int *)((int)puVar2 + 0x211));
     for (uVar7 = uVar8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {

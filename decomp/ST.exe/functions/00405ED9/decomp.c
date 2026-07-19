@@ -48,7 +48,7 @@ int thunk_FUN_004d11d0(undefined4 *param_1)
   iStack_c = 0;
   IStack_cc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_cc;
-  iVar3 = __setjmp3(IStack_cc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_cc.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_cc.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,0x166,0,iVar3,
@@ -152,26 +152,26 @@ int thunk_FUN_004d11d0(undefined4 *param_1)
     *(undefined4 *)(&DAT_007f57ea + *(int *)(pSStack_3c + 0x24) * 0xa62) = 1;
   }
   if (DAT_007fa170 == (uint *)0x0) {
-    DAT_007fa170 = FUN_006ae290((uint *)0x0,10,4,10);
+    DAT_007fa170 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
   }
   pSStack_2c = pSStack_3c;
-  FUN_006ae1c0(DAT_007fa170,&pSStack_2c);
+  Library::DKW::TBL::FUN_006ae1c0(DAT_007fa170,&pSStack_2c);
   iVar3 = *(int *)(pSStack_3c + 0x259);
   if (iVar3 == 100) {
     if (*(int *)(&DAT_007f57f6 + *(int *)(pSStack_3c + 0x24) * 0xa62) == 0) {
-      puVar5 = FUN_006ae290((uint *)0x0,10,4,10);
+      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
       *(uint **)(&DAT_007f57f6 + *(int *)(pSStack_3c + 0x24) * 0xa62) = puVar5;
     }
     ppSVar15 = &pSStack_8;
     pSStack_8 = pSStack_3c;
     puVar5 = *(uint **)(&DAT_007f57f6 + *(int *)(pSStack_3c + 0x24) * 0xa62);
 LAB_004d1763:
-    FUN_006ae1c0(puVar5,ppSVar15);
+    Library::DKW::TBL::FUN_006ae1c0(puVar5,ppSVar15);
   }
   else {
     if (iVar3 == 0x4d) {
       if (*(int *)(&DAT_007f5802 + *(int *)(pSStack_3c + 0x24) * 0xa62) == 0) {
-        puVar5 = FUN_006ae290((uint *)0x0,10,4,10);
+        puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
         *(uint **)(&DAT_007f5802 + *(int *)(pSStack_3c + 0x24) * 0xa62) = puVar5;
       }
       ppSVar15 = &pSStack_40;
@@ -181,7 +181,7 @@ LAB_004d1763:
     }
     if (iVar3 == 0x43) {
       if (*(int *)(&DAT_007f580e + *(int *)(pSStack_3c + 0x24) * 0xa62) == 0) {
-        puVar5 = FUN_006ae290((uint *)0x0,10,4,10);
+        puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
         *(uint **)(&DAT_007f580e + *(int *)(pSStack_3c + 0x24) * 0xa62) = puVar5;
       }
       ppSVar15 = &pSStack_44;
@@ -191,7 +191,7 @@ LAB_004d1763:
     }
     if (iVar3 == 0x73) {
       if (*(int *)(&DAT_007f5812 + *(int *)(pSStack_3c + 0x24) * 0xa62) == 0) {
-        puVar5 = FUN_006ae290((uint *)0x0,10,4,10);
+        puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
         *(uint **)(&DAT_007f5812 + *(int *)(pSStack_3c + 0x24) * 0xa62) = puVar5;
       }
       ppSVar15 = &pSStack_30;
@@ -201,7 +201,7 @@ LAB_004d1763:
     }
     if (iVar3 == 0x3a) {
       if (DAT_007fa16c == (uint *)0x0) {
-        DAT_007fa16c = FUN_006ae290((uint *)0x0,10,4,10);
+        DAT_007fa16c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
       }
       ppSVar15 = &pSStack_48;
       pSStack_48 = pSStack_3c;
@@ -210,7 +210,7 @@ LAB_004d1763:
     }
     if (iVar3 == 0x65) {
       if (*(int *)(&DAT_007f5806 + *(int *)(pSStack_3c + 0x24) * 0xa62) == 0) {
-        puVar5 = FUN_006ae290((uint *)0x0,10,4,10);
+        puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
         *(uint **)(&DAT_007f5806 + *(int *)(pSStack_3c + 0x24) * 0xa62) = puVar5;
       }
       ppSVar15 = &pSStack_34;
@@ -220,7 +220,7 @@ LAB_004d1763:
     }
     if (iVar3 == 0x3b) {
       if (*(int *)(&DAT_007f580a + *(int *)(pSStack_3c + 0x24) * 0xa62) == 0) {
-        puVar5 = FUN_006ae290((uint *)0x0,10,4,10);
+        puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
         *(uint **)(&DAT_007f580a + *(int *)(pSStack_3c + 0x24) * 0xa62) = puVar5;
       }
       ppSVar15 = &pSStack_38;
@@ -240,7 +240,7 @@ LAB_004d1763:
         puVar6 = puVar6 + 1;
         pSVar12 = pSVar12 + 4;
       }
-      puStack_28 = (undefined4 *)FUN_006aac70(0x44);
+      puStack_28 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x44);
       puStack_28[1] = DAT_00806774;
       puStack_28[2] = DAT_00806774;
       *puStack_28 = DAT_00806774;
@@ -265,7 +265,7 @@ LAB_004d1763:
       STT3DSprC::RestoreSpr
                 ((STT3DSprC *)(pSStack_3c + 0x1d5),(int *)&puStack_28,
                  (undefined4 *)(*(int *)((int)param_1 + 299) + (int)param_1));
-      puVar6 = (undefined4 *)FUN_0072e530(0x40);
+      puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
       if (puVar6 == (undefined4 *)0x0) {
         pSVar7 = (STT3DSprC *)0x0;
       }
@@ -314,7 +314,7 @@ LAB_004d1763:
         pSStack_8 = (STAllPlayersC *)((int)param_1 + 0x143);
         pSVar12 = pSStack_3c + 0x350;
         do {
-          puVar6 = (undefined4 *)FUN_0072e530(0x40);
+          puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
           if (puVar6 == (undefined4 *)0x0) {
             pSVar7 = (STT3DSprC *)0x0;
           }
@@ -363,7 +363,7 @@ LAB_004d1763:
   *(undefined4 *)(pSStack_3c + 0x2b4) = 1;
   *(undefined4 *)(pSStack_3c + 0x2b0) = uVar10;
   *(undefined4 *)(pSStack_3c + 0x2a4) = 0;
-  puVar6 = (undefined4 *)FUN_0072e530(0x40);
+  puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (puVar6 == (undefined4 *)0x0) {
     pSVar7 = (STT3DSprC *)0x0;
   }
@@ -444,15 +444,16 @@ LAB_004d204d:
     thunk_FUN_004abce0(pSVar7,(byte)pSStack_3c[0x2f0],
                        *(int *)(*(int *)(pSStack_3c + 0x364) + iVar3 * 8),
                        *(int *)(*(int *)(pSStack_3c + 0x364) + 4 + iVar3 * 8),'\0');
-    thunk_FUN_004abe40(pSVar7,(char)pSStack_3c[0x2f0],
-                       *(undefined4 *)
-                        (*(int *)(pSStack_3c + 0x364) +
-                        (*(int *)(pSStack_3c + 0x2ec) + *(int *)(pSStack_3c + 0x241) * 4) * 8));
+    STT3DSprC::SetCurFase
+              (pSVar7,(char)pSStack_3c[0x2f0],
+               *(undefined4 *)
+                (*(int *)(pSStack_3c + 0x364) +
+                (*(int *)(pSStack_3c + 0x2ec) + *(int *)(pSStack_3c + 0x241) * 4) * 8));
     STT3DSprC::StartShow(pSVar7,(byte)pSStack_3c[0x2f0],*(undefined4 *)(DAT_00802a38 + 0xe4));
     pSStack_8 = (STAllPlayersC *)&DAT_0000000b;
     pSVar12 = pSStack_3c + 0x350;
     do {
-      puVar6 = (undefined4 *)FUN_0072e530(0x40);
+      puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
       if (puVar6 == (undefined4 *)0x0) {
         this = (STT3DSprC *)0x0;
       }
@@ -526,7 +527,7 @@ LAB_004d1f0b:
       thunk_FUN_004abce0(*(void **)(pSStack_3c + 0x35c),0xe,0,
                          **(int **)(*(int *)((int)*(void **)(pSStack_3c + 0x35c) + 0x20) + 0x1f8) +
                          -1,'\0');
-      thunk_FUN_004abe40(*(void **)(pSStack_3c + 0x35c),'\x0e',0);
+      STT3DSprC::SetCurFase(*(STT3DSprC **)(pSStack_3c + 0x35c),'\x0e',0);
       STT3DSprC::StartShow
                 (*(STT3DSprC **)(pSStack_3c + 0x35c),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
       thunk_FUN_004ad460(*(void **)(pSStack_3c + 0x35c),0);

@@ -67,7 +67,7 @@ void __cdecl thunk_FUN_00674ef0(char *param_1)
       pcVar5 = pcVar5 + 1;
       pcVar7 = pcVar7 + 1;
     }
-    FUN_0072eb70(acStack_108,DAT_00811978);
+    Library::MSVCRT::FUN_0072eb70(acStack_108,DAT_00811978);
   }
   return;
 }

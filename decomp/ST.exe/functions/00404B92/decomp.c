@@ -26,7 +26,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
     IStack_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_6c;
     pFStack_8 = this;
-    iVar4 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {

@@ -12,7 +12,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   int iVar3;
   int *piVar4;
   uint *puVar5;
-  void *this_00;
+  STBoatC *this_00;
   int iVar6;
   char cVar7;
   uint uVar8;
@@ -46,7 +46,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_34 = this;
-  iVar3 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_88.previous;
     if (local_28 != (uint *)0x0) {
@@ -76,15 +76,15 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2837)
     ;
   }
-  FUN_006afe40((int *)&local_18,param_2);
-  FUN_006afe40((int *)&local_14,param_3);
+  Library::DKW::TBL::FUN_006afe40((int *)&local_18,param_2);
+  Library::DKW::TBL::FUN_006afe40((int *)&local_14,param_3);
   uVar9 = 0;
   this_01 = local_34;
   if (0 < (int)uVar8) {
     do {
       FUN_006acc70((int)local_18,uVar9,&local_8);
       this_01 = local_34;
-      piVar4 = (int *)thunk_FUN_0042b620(param_1,local_8,1);
+      piVar4 = (int *)GetObjPtr(local_34,param_1,local_8,1);
       if ((piVar4 == (int *)0x0) || (iVar3 = (**(code **)(*piVar4 + 0xf8))(), iVar3 == 0)) {
         FUN_006b0c70((int)local_18,uVar9);
         uVar8 = uVar8 - 1;
@@ -102,7 +102,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if (0 < (int)local_c) {
     do {
       FUN_006acc70((int)local_14,uVar8,&local_8);
-      piVar4 = (int *)thunk_FUN_0042b620(param_1,local_8,1);
+      piVar4 = (int *)GetObjPtr(this_01,param_1,local_8,1);
       if (((piVar4 == (int *)0x0) || (iVar3 = thunk_FUN_00490d90((int)piVar4), iVar3 == 0)) ||
          ((iVar3 = (**(code **)(*piVar4 + 0xf8))(), iVar3 == 0 || ((short)piVar4[0xc] == -1)))) {
         FUN_006b0c70((int)local_14,uVar8);
@@ -127,10 +127,10 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
           FUN_006acc70((int)local_14,uVar9,(undefined4 *)&local_1a);
           if ((short)local_8 == local_1a) {
             if (puVar5 == (uint *)0x0) {
-              puVar5 = FUN_006ae290((uint *)0x0,1,2,1);
+              puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
               local_28 = puVar5;
             }
-            FUN_006ae1c0(puVar5,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(puVar5,&local_8);
             FUN_006b0c70((int)local_18,uVar8);
             local_10 = local_10 - 1;
             uVar8 = uVar8 - 1;
@@ -157,9 +157,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       local_24 = (int *)((int)&DAT_007f5816 + cVar7 * 0xa62);
       do {
         FUN_006acc70((int)puVar5,local_20,&local_8);
-        this_00 = (void *)thunk_FUN_0042b620(param_1,local_8,1);
+        this_00 = (STBoatC *)GetObjPtr(this_01,param_1,local_8,1);
         local_2c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-        thunk_FUN_0045ef00(this_00,0x21,&local_2c);
+        STBoatC::CmdToObj(this_00,0x21,&local_2c);
         if ((*local_24 != 0) &&
            (iVar3 = _DeleteGuardBoat(this_01,param_1,(short)local_8,1), iVar3 == -1)) {
           _DeleteGuardBoat(this_01,param_1,(short)local_8,0);
@@ -177,7 +177,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if (local_10 == 0) {
     bVar10 = local_c == 0;
     if (!bVar10) {
-      FUN_006afe40((int *)&local_18,puVar5);
+      Library::DKW::TBL::FUN_006afe40((int *)&local_18,puVar5);
       goto LAB_00445db2;
     }
   }
@@ -187,7 +187,7 @@ LAB_00445db2:
   }
   if (bVar10) {
     if (local_10 != 0) {
-      FUN_006afe40((int *)&local_14,puVar5);
+      Library::DKW::TBL::FUN_006afe40((int *)&local_14,puVar5);
       goto LAB_00445dca;
     }
   }
@@ -199,7 +199,7 @@ LAB_00445dca:
       if (0 < (int)local_30) {
         do {
           FUN_006acc70((int)puVar5,local_20,&local_8);
-          FUN_006ae1c0(local_14,&local_8);
+          Library::DKW::TBL::FUN_006ae1c0(local_14,&local_8);
           local_20 = local_20 + 1;
         } while ((int)local_20 < (int)local_30);
       }
@@ -233,17 +233,17 @@ LAB_00445e36:
       uVar8 = uVar8 + 1;
     } while ((int)uVar8 < (int)local_10);
   }
-  local_44 = FUN_006ae290((uint *)0x0,local_10,2,1);
-  FUN_006afe40((int *)&local_44,local_18);
-  local_40 = FUN_006ae290((uint *)0x0,local_c,2,1);
-  FUN_006afe40((int *)&local_40,local_14);
-  local_3c = FUN_006ae290((uint *)0x0,1,4,1);
+  local_44 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_10,2,1);
+  Library::DKW::TBL::FUN_006afe40((int *)&local_44,local_18);
+  local_40 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_c,2,1);
+  Library::DKW::TBL::FUN_006afe40((int *)&local_40,local_14);
+  local_3c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
   puVar1 = (undefined4 *)((int)&DAT_007f5816 + cVar7 * 0xa62);
   if (*(int *)((int)&DAT_007f5816 + cVar7 * 0xa62) == 0) {
-    puVar5 = FUN_006ae290((uint *)0x0,1,0xc,1);
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0xc,1);
     *puVar1 = puVar5;
   }
-  FUN_006ae1c0((uint *)*puVar1,&local_44);
+  Library::DKW::TBL::FUN_006ae1c0((uint *)*puVar1,&local_44);
   OptimizeGuardBoats(this_01,cVar7);
   DistributeGuardBoats(this_01,param_1);
   if (local_18 != (uint *)0x0) {

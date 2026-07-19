@@ -1,8 +1,13 @@
 
-undefined4 FUN_00609b90(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\nick\to_field.cpp
+   STFieldC::InitSprSistem */
+
+undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
 
 {
   code *pcVar1;
+  STFieldC *this_00;
   int iVar2;
   int iVar3;
   undefined4 uVar4;
@@ -14,12 +19,14 @@ undefined4 FUN_00609b90(int param_1)
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar2 == 0) {
     if ((*(int *)(local_8 + 0x234) != 0) &&
        (iVar2 = *(int *)(*(int *)(local_8 + 0x234) + 0xc), uVar5 = 0, 0 < iVar2)) {
       do {
-        iVar3 = *(int *)(local_8 + 0x234);
+        iVar3 = *(int *)(this_00 + 0x234);
         if (uVar5 < *(uint *)(iVar3 + 0xc)) {
           iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
         }
@@ -27,11 +34,11 @@ undefined4 FUN_00609b90(int param_1)
           iVar3 = 0;
         }
         if (iVar3 != 0) {
-          if ((*(int *)(local_8 + 0x1f5) == 0x4d) && (param_1 != 0)) {
+          if ((*(int *)(this_00 + 0x1f5) == 0x4d) && (param_1 != 0)) {
             *(undefined4 *)(iVar3 + 4) = 0;
           }
           if (*(int *)(iVar3 + 0x3c) < 0) {
-            STFieldC::LoadImagSpr(local_8,uVar5);
+            LoadImagSpr(this_00,uVar5);
           }
         }
         uVar5 = uVar5 + 1;

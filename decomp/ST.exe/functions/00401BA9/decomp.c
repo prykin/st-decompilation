@@ -59,7 +59,7 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,CPanelTy param_
       IStack_58.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &IStack_58;
       pCStack_10 = this;
-      iVar5 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pCVar4 = pCStack_10;
       if (iVar5 == 0) {
         puVar11 = (undefined4 *)(uint)param_1;
@@ -97,9 +97,10 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,CPanelTy param_
             if (bVar10 < 0xb) {
               uVar7 = (uint)bVar10;
               if (-1 < (int)*(uint *)(pCVar4 + uVar7 * 4 + 0x148)) {
-                FUN_006b3640(DAT_008075a8,*(uint *)(pCVar4 + uVar7 * 4 + 0x148),0xffffffff,
-                             *(uint *)(pCVar4 + uVar7 * 4 + 0x3c),
-                             *(uint *)(pCVar4 + uVar7 * 4 + 0x94));
+                Library::DKW::DDX::FUN_006b3640
+                          (DAT_008075a8,*(uint *)(pCVar4 + uVar7 * 4 + 0x148),0xffffffff,
+                           *(uint *)(pCVar4 + uVar7 * 4 + 0x3c),*(uint *)(pCVar4 + uVar7 * 4 + 0x94)
+                          );
                 puVar11 = puStack_c;
               }
             }
@@ -123,9 +124,10 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,CPanelTy param_
             if (bVar10 < 0xb) {
               uVar7 = (uint)bVar10;
               if (-1 < (int)*(uint *)(pCVar4 + uVar7 * 4 + 0x148)) {
-                FUN_006b3640(DAT_008075a8,*(uint *)(pCVar4 + uVar7 * 4 + 0x148),0xffffffff,
-                             *(uint *)(pCVar4 + uVar7 * 4 + 0x3c),
-                             *(uint *)(pCVar4 + uVar7 * 4 + 0x94));
+                Library::DKW::DDX::FUN_006b3640
+                          (DAT_008075a8,*(uint *)(pCVar4 + uVar7 * 4 + 0x148),0xffffffff,
+                           *(uint *)(pCVar4 + uVar7 * 4 + 0x3c),*(uint *)(pCVar4 + uVar7 * 4 + 0x94)
+                          );
               }
             }
           }

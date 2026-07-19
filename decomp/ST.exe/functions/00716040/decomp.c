@@ -37,7 +37,7 @@ SpriteClassTy::SetImages
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_c;
   if (iVar4 == 0) {
     *(undefined4 *)(local_c + 0x4d) = 0;
@@ -69,9 +69,10 @@ SpriteClassTy::SetImages
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xe4);
       }
       iVar4 = *(int *)(pSVar3 + 0x51);
-      FUN_006b2930(*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,
-                   (undefined4 *)(int)*(short *)(iVar4 + 0x23),(int *)(iVar4 + 0x2d),0x8000000,
-                   (int)*(short *)(iVar4 + 0x29),(int)*(short *)(iVar4 + 0x2b));
+      Library::DKW::DDX::FUN_006b2930
+                (*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,
+                 (undefined4 *)(int)*(short *)(iVar4 + 0x23),(int *)(iVar4 + 0x2d),0x8000000,
+                 (int)*(short *)(iVar4 + 0x29),(int)*(short *)(iVar4 + 0x2b));
       iVar4 = *(int *)(pSVar3 + 0x51);
       *(int *)(pSVar3 + 0xc) = (int)*(short *)(iVar4 + 0x23);
       *(int *)(pSVar3 + 0x24) = (int)*(short *)(iVar4 + 0x29);
@@ -84,9 +85,10 @@ SpriteClassTy::SetImages
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xf8);
       }
       psVar6 = *(short **)(pSVar3 + 0x59);
-      FUN_006b2930(*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),(int)*psVar6,
-                   (undefined4 *)(int)psVar6[1],(int *)(psVar6 + 6),0x4000000,(int)psVar6[2],
-                   (int)psVar6[3]);
+      Library::DKW::DDX::FUN_006b2930
+                (*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),(int)*psVar6,
+                 (undefined4 *)(int)psVar6[1],(int *)(psVar6 + 6),0x4000000,(int)psVar6[2],
+                 (int)psVar6[3]);
       psVar6 = *(short **)(pSVar3 + 0x59);
       *(int *)(pSVar3 + 0xc) = (int)psVar6[1];
       *(int *)(pSVar3 + 0x18) = (int)*psVar6;
@@ -101,8 +103,9 @@ SpriteClassTy::SetImages
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xee);
       }
       psVar6 = *(short **)(pSVar3 + 0x55);
-      FUN_006b2930(*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,(undefined4 *)(int)*psVar6,
-                   (int *)(psVar6 + 5),0x8000000,(int)psVar6[3],(int)psVar6[4]);
+      Library::DKW::DDX::FUN_006b2930
+                (*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,(undefined4 *)(int)*psVar6,
+                 (int *)(psVar6 + 5),0x8000000,(int)psVar6[3],(int)psVar6[4]);
       psVar6 = *(short **)(pSVar3 + 0x55);
       *(int *)(pSVar3 + 0xc) = (int)*psVar6;
       *(int *)(pSVar3 + 0x24) = (int)psVar6[3];

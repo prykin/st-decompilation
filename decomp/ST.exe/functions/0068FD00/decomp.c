@@ -27,7 +27,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_8 = this;
-  iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_80.previous;

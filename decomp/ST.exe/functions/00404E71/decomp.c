@@ -1,6 +1,6 @@
 
 void __thiscall
-thunk_FUN_00691690(void *this,cMf32 *param_1,undefined4 param_2,int param_3,undefined *param_4)
+thunk_FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *param_4)
 
 {
   short *psVar1;
@@ -110,7 +110,7 @@ LAB_0069177d:
           pcVar4 = (char *)thunk_FUN_006a2d00(1,iStack_c,uVar7,1,0);
           puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
           if (puVar8 != (ushort *)0x0) {
-            puVar3 = (undefined4 *)FUN_006aac70(0xa9);
+            puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xa9);
             piStack_1c = (int *)(iStack_c * 6);
             piStack_28 = (int *)((int)pvStack_14 +
                                 ((int)piStack_1c + uStack_8 + iVar10 * 0x49) * 8 + 0x1954);
@@ -191,7 +191,7 @@ LAB_00691a65:
                     *(undefined4 *)(*piVar11 + 0x25) = 0;
                   }
                   if (iVar10 == 0) {
-                    puVar9 = (undefined4 *)FUN_006aac70(0x640);
+                    puVar9 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x640);
                     *(undefined4 **)
                      ((int)pvStack_14 +
                      (int)piStack_10 * 4 + (iStack_18 + ((int)piStack_1c + uStack_8) * 2) * 0x3c) =
@@ -217,7 +217,7 @@ LAB_00691a65:
           pcVar4 = (char *)thunk_FUN_006a2d00(0,iStack_c,uVar7,0,1);
           puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
           if (puVar8 != (ushort *)0x0) {
-            puVar3 = (undefined4 *)FUN_006aac70(0x59);
+            puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x59);
             iStack_18 = iStack_c * 6 + iVar10 * 0x92;
             piVar11 = (int *)((int)pvStack_14 + (iStack_18 + uStack_8) * 4 + 0x1a74);
             *piVar11 = (int)puVar3;
@@ -284,7 +284,7 @@ LAB_00691a65:
                   *psVar1 = *psVar1 + 1;
                 }
                 if (iVar10 == 0) {
-                  puVar9 = (undefined4 *)FUN_006aac70(0x640);
+                  puVar9 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x640);
                   *(undefined4 **)
                    ((int)pvStack_14 +
                    ((int)piStack_10 + (uStack_8 + (iStack_c * 3 + 0x36) * 2) * 10) * 4) = puVar9;
@@ -306,7 +306,7 @@ LAB_00691a65:
           pcVar4 = (char *)thunk_FUN_006a2d00(3,iStack_c,uVar7,1,1);
           puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
           if (puVar8 != (ushort *)0x0) {
-            puVar3 = (undefined4 *)FUN_006aac70(0x45);
+            puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x45);
             iStack_18 = iStack_c * 6 + iVar10 * 0x92;
             piStack_1c = (int *)((int)pvStack_14 + (iStack_18 + uStack_8) * 4 + 0x1b08);
             *piStack_1c = (int)puVar3;
@@ -372,7 +372,7 @@ LAB_00691a65:
                   *psVar1 = *psVar1 + 1;
                 }
                 if (iVar10 == 0) {
-                  puVar9 = (undefined4 *)FUN_006aac70(0x640);
+                  puVar9 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x640);
                   *(undefined4 **)
                    ((int)pvStack_14 +
                    ((int)piStack_10 + (uStack_8 + (iStack_c * 3 + 0x90) * 2) * 5) * 4) = puVar9;
@@ -392,7 +392,7 @@ LAB_00691a65:
           iVar14 = 0;
           do {
             pcStack_24 = thunk_FUN_00692390(0,0,iVar14,iVar10);
-            iVar5 = FUN_006f21c0(7,pcStack_24);
+            iVar5 = cMf32::RecChk(param_2,7,pcStack_24);
             if (iVar5 != 0) break;
             pcVar4 = FUN_00725c60(param_2,pcStack_24,2,1);
             *(char **)((int)pvStack_14 + (iVar14 + iVar10 * 0x92) * 4 + 0x1954) = pcVar4;
@@ -404,7 +404,7 @@ LAB_00691a65:
           uVar13 = 0;
           puVar6 = thunk_FUN_00691650(s_STONE_007d5978,iVar10);
           wsprintfA(aCStack_190,s__s_u_u_007d5970,puVar6,uVar13,uVar15);
-          iVar14 = FUN_006f21c0(7,aCStack_190);
+          iVar14 = cMf32::RecChk(param_2,7,aCStack_190);
           if (iVar14 == 0) {
             pcVar4 = FUN_00725c60(param_2,aCStack_190,2,1);
             *(char **)((int)pvVar2 + iVar10 * 0x248 + 0x1a74) = pcVar4;
@@ -426,7 +426,7 @@ LAB_00691a65:
     }
     if (this_00 != (int *)0x0) {
       FUN_006dbcf0(this_00);
-      FUN_0072e2b0(this_00);
+      Library::MSVCRT::FUN_0072e2b0(this_00);
     }
     iStack_20 = iVar10 + 1;
     this = pvStack_14;

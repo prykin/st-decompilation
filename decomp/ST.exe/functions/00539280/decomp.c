@@ -13,6 +13,7 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
   LPSTR pCVar4;
   ushort *puVar5;
   uint *puVar6;
+  ccFntTy *this_01;
   void *unaff_ESI;
   int iVar7;
   undefined4 uVar8;
@@ -26,21 +27,22 @@ void __thiscall PausePanelTy::InitPausePanel(PausePanelTy *this)
   pIVar12 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = (PanelTy *)this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar12);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar12);
   this_00 = local_8;
   if (iVar2 == 0) {
     DAT_008016e0 = local_8;
     iVar2 = DAT_00806730 + -0x1c;
     *(int *)(local_8 + 0x3c) = iVar2;
-    *(int *)(local_8 + 0x174) = (*(int *)(local_8 + 0x40) - iVar2) + DAT_00806730;
-    puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
+    this_01 = (ccFntTy *)((*(int *)(local_8 + 0x40) - iVar2) + DAT_00806730);
+    *(ccFntTy **)(local_8 + 0x174) = this_01;
+    puVar3 = ccFntTy::operator(this_01,0x19d,*(int *)(DAT_00802a28 + 0x28));
     *(undefined4 **)(this_00 + 0x17c) = puVar3;
     puVar3[0x16] = 0;
     puVar3[0x17] = 0;
     iVar2 = 1;
     piVar9 = (int *)0x0;
     pCVar4 = thunk_FUN_00571240(s_BKG_PAUSE_007c74d8,0);
-    puVar5 = FUN_006f1ce0(1,pCVar4,piVar9,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar9,iVar2);
     *(ushort **)(this_00 + 0x180) = puVar5;
     thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),0,0,'\x01',(byte *)puVar5);
     ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x17c),*(int *)(this_00 + 0x68),0,0x52,2,0xd1,0xc);

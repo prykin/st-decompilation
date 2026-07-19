@@ -1,5 +1,11 @@
 
-undefined4 FUN_004458d0(int param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetBoatWeaponInfo */
+
+undefined4
+STAllPlayersC::GetBoatWeaponInfo
+          (int param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
 
 {
   code *pcVar1;

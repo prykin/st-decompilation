@@ -3,10 +3,11 @@ void FUN_0042a9f0(char param_1)
 
 {
   int iVar1;
+  STAllPlayersC *in_ECX;
   undefined4 *puVar2;
   
-  thunk_FUN_0042d4f0(param_1,0,0,0);
-  thunk_FUN_0042d4f0(param_1,1,0,0);
+  STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,0,0,0);
+  STAllPlayersC::ResetActivityFromTmp(in_ECX,param_1,1,0,0);
   iVar1 = (int)param_1;
   _param_1 = 5;
   puVar2 = (undefined4 *)((int)&DAT_007f4f8d + iVar1 * 0xa62);

@@ -18,7 +18,7 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
     return 0;
   }
   *(undefined4 *)((int)this + 0x4d0) = 1;
-  thunk_FUN_004cabb0(1);
+  TLOBaseTy::RotateSpr(this,1);
   thunk_FUN_004e5eb0(*(int *)((int)this + 0x24),param_2);
   if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
   goto LAB_004e2b69;

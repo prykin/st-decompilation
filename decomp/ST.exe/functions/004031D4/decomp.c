@@ -14,7 +14,7 @@ void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pMStack_8 = this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,pIVar5);
+  iVar2 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar5);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar5;
     iVar3 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0x121,0,iVar2,&DAT_007a4ccc
@@ -44,8 +44,9 @@ void __thiscall MMMObjTy::PaintSlBut(MMMObjTy *this,int param_1,int param_2,uint
   *(int *)(param_1 + 8) = iVar2;
 switchD_005b65a4_default:
   if (*(uint *)(param_1 + 4) != 0xffffffff) {
-    FUN_006b3730(*(uint **)(param_1 + 0x48),*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),
-                 *(uint *)(param_1 + 0x1c),*(uint *)(param_1 + 0x20));
+    Library::DKW::DDX::FUN_006b3730
+              (*(uint **)(param_1 + 0x48),*(uint *)(param_1 + 4),*(uint *)(param_1 + 8),
+               *(uint *)(param_1 + 0x1c),*(uint *)(param_1 + 0x20));
   }
   if (*(short *)(param_2 + 0x14) == 2) {
     uVar4 = 10;

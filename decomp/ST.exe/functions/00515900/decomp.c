@@ -34,7 +34,7 @@ HelpPanelTy::DrawWeapon
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_8 = this;
-  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x412,0,iVar2,&DAT_007a4ccc
@@ -85,7 +85,7 @@ HelpPanelTy::DrawWeapon
       local_17 = param_3;
       local_13 = param_5 & 0xff;
       local_18 = 4;
-      FUN_006ae1c0(*(uint **)(local_8 + 0x1d7),&local_28);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x1d7),&local_28);
       iVar2 = *(int *)(pbVar4 + 8);
       if (iVar2 < 0x10) {
         iVar2 = 0xf;

@@ -77,7 +77,7 @@ void __fastcall thunk_FUN_00660d40(int param_1)
               {
                 cStack_40 = *(char *)(iStack_8 + 0x24);
               }
-              _strncpy(acStack_3f,(char *)(iVar6 + 0x15),0xe);
+              Library::MSVCRT::_strncpy(acStack_3f,(char *)(iVar6 + 0x15),0xe);
               if (iVar5 == 0) {
                 sVar2 = *(short *)(iVar3 + 0x7f);
               }

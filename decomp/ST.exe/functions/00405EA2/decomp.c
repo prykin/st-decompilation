@@ -67,12 +67,12 @@ LAB_004f3d83:
     IStack_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_5c;
     pCStack_14 = this;
-    errorCode = (int *)__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = (int *)Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == (int *)0x0) {
       iVar9 = 1;
       uVar4 = (*(code *)param_6)(param_2);
       pCVar5 = FUN_006f2c00(param_4,1,uVar4);
-      puStack_8 = FUN_006f1ce0(param_3,pCVar5,errorCode,iVar9);
+      puStack_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar5,errorCode,iVar9);
       pCVar3 = pCStack_14;
       uVar2 = (uint)param_1;
       thunk_FUN_00540760(*(undefined4 **)(pCStack_14 + uVar2 * 4 + 0x180),iStack_10,iStack_c,param_3
@@ -88,8 +88,9 @@ LAB_004f3d83:
       puVar6 = (uint *)FUN_006b0140(param_5,DAT_00807618);
       ccFntTy::WrTxt(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar7,uVar4,iVar8,iVar10);
       if ((param_1 < 0xb) && (-1 < (int)*(uint *)(pCVar3 + uVar2 * 4 + 0x148))) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
-                     *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
+                   *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
       }
       g_currentExceptionFrame = IStack_5c.previous;
       return;

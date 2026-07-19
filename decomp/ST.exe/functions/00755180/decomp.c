@@ -18,16 +18,16 @@ int FUN_00755180(int param_1,LPCSTR param_2,undefined4 *param_3,int param_4)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_4 == 1) {
-      FUN_006d4380(*(undefined4 **)(param_1 + 8),param_2,0);
+      Library::DKW::FMM::FUN_006d4380(*(undefined4 **)(param_1 + 8),param_2,0);
     }
     else if (param_4 == 2) {
-      FUN_006d4220(*(undefined4 **)(param_1 + 8),param_2,0x100000,0x100000);
+      Library::DKW::FMM::FUN_006d4220(*(undefined4 **)(param_1 + 8),param_2,0x100000,0x100000);
     }
     else {
-      FUN_006d4510(*(undefined4 **)(param_1 + 8),param_2,0x100000);
+      Library::DKW::FMM::FUN_006d4510(*(undefined4 **)(param_1 + 8),param_2,0x100000);
     }
     piVar3 = (int *)(param_1 + 8);
     g_currentExceptionFrame = local_4c.previous;

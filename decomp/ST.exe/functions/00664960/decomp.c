@@ -130,7 +130,7 @@ void __fastcall FUN_00664960(void *param_1)
            CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 4:
-      FUN_006ae1c0(*(uint **)((int)param_1 + 0x20b),&local_3c);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)param_1 + 0x20b),&local_3c);
       thunk_FUN_00676c40(*(int *)((int)param_1 + 0x20b),&LAB_004013cf);
       goto LAB_00665024;
     case 5:
@@ -191,14 +191,14 @@ void __fastcall FUN_00664960(void *param_1)
               ((iVar15 <= (int)local_48 &&
                ((((iVar7 <= local_50 && (local_50 <= iVar1)) && (iVar16 <= local_54)) &&
                 (local_54 <= (int)local_48)))))))) {
-            FUN_006ae140(*(uint **)((int)param_1 + 0x22f),local_c,&local_3c);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)((int)param_1 + 0x22f),local_c,&local_3c);
             goto LAB_00665024;
           }
           local_c = local_c + 1;
         } while ((int)local_c < (int)local_4c);
       }
       if (*(uint **)((int)param_1 + 0x22f) != (uint *)0x0) {
-        FUN_006b11d0(*(uint **)((int)param_1 + 0x22f),0,&local_3c);
+        Library::DKW::TBL::FUN_006b11d0(*(uint **)((int)param_1 + 0x22f),0,&local_3c);
       }
       *(short *)((int)param_1 + 0x170) = *(short *)((int)param_1 + 0x170) + 1;
       goto LAB_00665024;
@@ -276,7 +276,7 @@ void __fastcall FUN_00664960(void *param_1)
         } while ((int)uVar9 < (int)local_4c);
       }
       if (puVar17 != (uint *)0x0) {
-        FUN_006b11d0(puVar17,0,&local_3c);
+        Library::DKW::TBL::FUN_006b11d0(puVar17,0,&local_3c);
       }
       *(short *)((int)param_1 + 0x127) = *(short *)((int)param_1 + 0x127) + 1;
       goto LAB_00665024;
@@ -1074,9 +1074,11 @@ joined_r0x00666ceb:
               else {
                 puVar14 = (undefined2 *)0x0;
               }
-              pvVar12 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)local_10 >> 8),
-                                                            *(undefined1 *)((int)param_1 + 0x24)),
-                                                   CONCAT22((short)(local_c >> 0x10),*puVar14),1);
+              pvVar12 = (void *)STAllPlayersC::GetObjPtr
+                                          (DAT_007fa174,
+                                           CONCAT31((int3)((uint)local_10 >> 8),
+                                                    *(undefined1 *)((int)param_1 + 0x24)),
+                                           CONCAT22((short)(local_c >> 0x10),*puVar14),1);
               local_48 = pvVar12;
               switch(*(undefined4 *)((int)param_1 + 0xc3)) {
               case 0xa3:

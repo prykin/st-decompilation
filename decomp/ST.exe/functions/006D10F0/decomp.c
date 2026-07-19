@@ -18,7 +18,7 @@ undefined4 * FUN_006d10f0(int param_1,int param_2,int param_3,uint param_4,int p
   if (param_5 != 0) {
     uVar1 = uVar3 + iVar5;
   }
-  puVar2 = (undefined4 *)FUN_006aac70(uVar1);
+  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar1);
   if (puVar2 != (undefined4 *)0x0) {
     puVar6 = puVar2;
     for (uVar3 = uVar3 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {

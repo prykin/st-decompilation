@@ -1,5 +1,10 @@
 
-uint FUN_0042b620(uint param_1,uint param_2,undefined4 param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetObjPtr */
+
+uint __thiscall
+STAllPlayersC::GetObjPtr(STAllPlayersC *this,uint param_1,uint param_2,undefined4 param_3)
 
 {
   code *pcVar1;

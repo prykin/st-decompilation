@@ -1,4 +1,4 @@
-FUN_00723420:
+TabClassTy::GetMessage:
 00723420  55                        PUSH EBP
 00723421  8B EC                     MOV EBP,ESP
 00723423  81 EC B8 00 00 00         SUB ESP,0xb8

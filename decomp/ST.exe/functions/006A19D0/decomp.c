@@ -37,7 +37,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
       if (param_5 == 0xff) {
         local_8 = local_8 ^ ((byte)local_8 ^ bVar8) & 0xf;
         local_c = uVar5;
-        uVar7 = FUN_0072e6c0();
+        uVar7 = Library::MSVCRT::FUN_0072e6c0();
         local_8 = local_8 ^ (byte)(((char)((int)uVar7 %
                                           (int)*(short *)(&DAT_007df9a8 + (short)uVar4 * 2)) +
                                    '\x01') * '\x10' ^ (byte)local_8) & 0xf0;
@@ -50,7 +50,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
         if (param_5 == 1) {
           local_c._2_1_ = (byte)((uint)uVar5 >> 0x10);
           local_c = CONCAT22(uVar2 ^ (local_c._2_1_ ^ bVar8) & 0xf,(ushort)local_c);
-          uVar7 = FUN_0072e6c0();
+          uVar7 = Library::MSVCRT::FUN_0072e6c0();
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar4 * 2)) + '\x01')
                   * '\x10' ^ local_c._2_1_;
           local_c = CONCAT22(local_c._2_2_ ^ bVar8 & 0xf0,(ushort)local_c);
@@ -58,7 +58,7 @@ FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
         else {
           local_c._0_1_ = (byte)uVar5;
           local_c = CONCAT22(local_c._2_2_,uVar1 ^ ((byte)local_c ^ bVar8) & 0xf);
-          uVar7 = FUN_0072e6c0();
+          uVar7 = Library::MSVCRT::FUN_0072e6c0();
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar4 * 2)) + '\x01')
                   * '\x10' ^ (byte)local_c;
           local_c = CONCAT22(local_c._2_2_,(ushort)local_c ^ bVar8 & 0xf0);

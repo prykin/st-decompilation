@@ -41,7 +41,7 @@ undefined4 __thiscall thunk_FUN_00615fd0(void *this,int param_1,undefined4 param
       *(undefined4 *)((int)this + 0x307) = uStack_c;
       *(int *)((int)this + 0x22b) = (int)param_2._2_2_;
       *(int *)((int)this + 0x233) = (int)sStack_6;
-      iVar2 = thunk_FUN_006132f0(0,iVar2);
+      iVar2 = STGenBombC::LoadImagSpr(this,0,iVar2);
       if (iVar2 != 0) {
         if (*(int *)((int)this + 0x1f7) == 0) {
           thunk_FUN_00617560(this,0x478);
@@ -69,7 +69,7 @@ LAB_006161a8:
     iVar2 = 0x48c;
     goto LAB_006161a8;
   }
-  iVar2 = thunk_FUN_006132f0(0,0);
+  iVar2 = STGenBombC::LoadImagSpr(this,0,0);
   if (iVar2 != 0) {
     *(undefined4 *)((int)this + 0x307) = uStack_c;
     return 7;

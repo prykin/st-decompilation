@@ -1,4 +1,4 @@
-FUN_0071c8c0:
+InputClassTy::AddToMouse:
 0071C8C0  55                        PUSH EBP
 0071C8C1  8B EC                     MOV EBP,ESP
 0071C8C3  83 EC 5C                  SUB ESP,0x5c

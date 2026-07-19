@@ -76,12 +76,12 @@ STPlaySystemC::SetCtrlCmd
   g_currentExceptionFrame = &local_54;
   local_c = param_5;
   local_8 = this;
-  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar7 = local_c;
   if (iVar3 == 0) {
     iVar3 = local_c + param_7;
     local_10 = iVar3;
-    puVar4 = FUN_006aac10(iVar3 + 0x1b);
+    puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
     puVar4[1] = *(undefined4 *)(local_8 + 0xe4);
     *(undefined1 *)(puVar4 + 2) = param_1;
     *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)(DAT_00802a30 + 0x4ae);

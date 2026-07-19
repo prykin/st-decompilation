@@ -27,7 +27,7 @@ HoloTy::Init(HoloTy *this,HoloTy param_1,int param_2,int param_3,int param_4,int
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -92,7 +92,7 @@ HoloTy::Init(HoloTy *this,HoloTy param_1,int param_2,int param_3,int param_4,int
         default:
           goto switchD_005aadcd_default;
         }
-        FUN_006b3640(DAT_008075a8,*(uint *)pHVar1,0xffffffff,uVar5,uVar6);
+        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pHVar1,0xffffffff,uVar5,uVar6);
 switchD_005aadcd_default:
         FUN_006b3af0(DAT_008075a8,*(uint *)pHVar1);
         this_00[2] = (HoloTy)param_7;

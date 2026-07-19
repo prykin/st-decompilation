@@ -31,9 +31,10 @@ thunk_FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,undefined2
       do {
         FUN_006acc70(*(int *)((int)this + 0x29),uVar2,&uStack_10);
         if ((short)uStack_10 != -1) {
-          this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                        *(undefined1 *)((int)this + 0x24)),uStack_10
-                                               ,1);
+          this_00 = (void *)STAllPlayersC::GetObjPtr
+                                      (DAT_007fa174,
+                                       CONCAT31((int3)((uint)extraout_EDX >> 8),
+                                                *(undefined1 *)((int)this + 0x24)),uStack_10,1);
           thunk_FUN_004162b0(this_00,(undefined2 *)&iStack_14,(undefined2 *)&iStack_18,
                              (undefined2 *)&iStack_1c);
           iVar6 = iVar6 + iStack_14;

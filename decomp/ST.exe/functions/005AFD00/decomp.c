@@ -13,7 +13,7 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   code *pcVar4;
   int iVar5;
   uint *puVar6;
-  undefined4 *puVar7;
+  cMf32 *pcVar7;
   ushort *puVar8;
   BOOL BVar9;
   LONG LVar10;
@@ -102,7 +102,7 @@ switchD_005afd30_caseD_c:
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_28 = this;
-  iVar5 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar16 = local_28;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_a4.previous;
@@ -128,23 +128,23 @@ switchD_005afd30_caseD_c:
     FUN_006b5570(*(byte **)(pCVar16 + 0x1c9f));
     *(undefined4 *)(pCVar16 + 0x1c9f) = 0;
   }
-  puVar6 = FUN_006b54f0((uint *)0x0,0x32,10);
+  puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,0x32,10);
   *(uint **)(pCVar16 + 0x1c97) = puVar6;
-  puVar6 = FUN_006ae290((uint *)0x0,0x32,8,10);
+  puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,8,10);
   *(uint **)(pCVar16 + 0x1c9b) = puVar6;
-  puVar6 = FUN_006b54f0((uint *)0x0,10,10);
+  puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   *(uint **)(pCVar16 + 0x1c9f) = puVar6;
   *(undefined4 *)(pCVar16 + 0x2d) = 0x20;
   *(undefined4 *)(pCVar16 + 0x31) = 0;
   FUN_006e6080(pCVar16,2,*(undefined4 *)(pCVar16 + 0x1a6c),(undefined4 *)(pCVar16 + 0x1d));
   iVar5 = *(int *)(pCVar16 + 0x1a5b);
   if (*(int *)(iVar5 + 0x2e6) != 0) {
-    puVar7 = &local_60;
+    puVar23 = &local_60;
     for (iVar12 = 6; iVar12 != 0; iVar12 = iVar12 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+      *puVar23 = 0;
+      puVar23 = puVar23 + 1;
     }
-    *(undefined2 *)puVar7 = 0;
+    *(undefined2 *)puVar23 = 0;
     local_60._2_2_ = 0xffff;
     local_60._0_2_ = 0xffff;
     MMsgTy::StatePanel(*(MMsgTy **)(iVar5 + 0x2e6),(int)&local_60);
@@ -154,7 +154,7 @@ switchD_005afd30_caseD_c:
   uVar20 = 0x3f;
   pCVar17 = pCVar16 + 0x1c23;
   do {
-    FUN_006b3640(DAT_008075a8,*(uint *)pCVar17,0xffffffff,0x114,uVar20);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pCVar17,0xffffffff,0x114,uVar20);
     uVar20 = uVar20 + 0x13;
     pCVar17 = pCVar17 + 4;
   } while ((int)uVar20 < 0x1e1);
@@ -379,16 +379,16 @@ LAB_005b0041:
                 }
                 local_e8.previous = g_currentExceptionFrame;
                 g_currentExceptionFrame = &local_e8;
-                iVar5 = __setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+                iVar5 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
                 pCVar16 = local_28;
                 if (iVar5 == 0) {
-                  puVar7 = FUN_006f0ec0(0x345,(byte *)(local_28 + 0x1faf),0,0,0);
+                  pcVar7 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)(local_28 + 0x1faf),0,0,0);
                   if (DAT_0080c4cb != (uint *)0x0) {
                     FUN_006b5570((byte *)DAT_0080c4cb);
                   }
-                  DAT_0080c4cb = FUN_0071aa10((int)puVar7,PTR_s_OBJECTIVES_0079c074,0);
+                  DAT_0080c4cb = FUN_0071aa10((int)pcVar7,PTR_s_OBJECTIVES_0079c074,0);
                   if (DAT_0080c4cb == (uint *)0x0) {
-                    DAT_0080c4cb = FUN_006b54f0((uint *)0x0,10,10);
+                    DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
                   }
                   puVar23 = (undefined4 *)&DAT_0080ed16;
                   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -396,11 +396,11 @@ LAB_005b0041:
                     puVar23 = puVar23 + 1;
                   }
                   local_14 = (cMf32 **)&DAT_0080ed16;
-                  puVar8 = FUN_006f1ce0(0xc,PTR_s_MISSION_0079c064,(int *)&local_14,0);
+                  puVar8 = cMf32::RecGet(pcVar7,0xc,PTR_s_MISSION_0079c064,(int *)&local_14,0);
                   if (puVar8 == (ushort *)0x0) {
                     local_10 = 0;
                   }
-                  cMf32::delete(this_00,puVar7);
+                  cMf32::delete(this_00,(undefined4 *)pcVar7);
                 }
                 else {
                   local_10 = 0;
@@ -408,7 +408,7 @@ LAB_005b0041:
                 g_currentExceptionFrame = local_e8.previous;
                 if (local_10 == 0) goto LAB_005b01f3;
               }
-              FUN_006b5aa0(*(int *)(pCVar16 + 0x1c9f),local_26c.cFileName);
+              Library::DKW::TBL::FUN_006b5aa0(*(int *)(pCVar16 + 0x1c9f),local_26c.cFileName);
             }
           }
         }
@@ -557,10 +557,11 @@ LAB_005b01f3:
         pCVar19 = local_26c.cFileName;
         uVar26 = 0;
         local_24 = (cMf32 *)0x0;
-        FUN_0072e730((byte *)pCVar19,(byte *)0x0,(byte *)0x0,local_370,(byte *)0x0);
+        Library::MSVCRT::FUN_0072e730((byte *)pCVar19,(byte *)0x0,(byte *)0x0,local_370,(byte *)0x0)
+        ;
         local_12c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_12c;
-        iVar5 = __setjmp3(local_12c.jumpBuffer,0,pCVar19,uVar26);
+        iVar5 = Library::MSVCRT::__setjmp3(local_12c.jumpBuffer,0,pCVar19,uVar26);
         pCVar16 = local_28;
         if (iVar5 == 0) {
           uVar20 = 0xffffffff;
@@ -619,7 +620,7 @@ LAB_005b01f3:
             pCVar17 = pCVar17 + 1;
             pCVar18 = pCVar18 + 1;
           }
-          puVar7 = FUN_006f0ec0(0x345,(byte *)(local_28 + 0x1faf),0,0,0);
+          pcVar7 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)(local_28 + 0x1faf),0,0,0);
           bVar25 = false;
           switch(pCVar16[0x1a5f]) {
           case (ChooseMapTy)0x1:
@@ -639,10 +640,11 @@ LAB_005b01f3:
           }
           if (bVar25) {
             local_14 = &local_24;
-            puVar8 = FUN_006f1ce0(0x80,PTR_s_SAVE_DESC_0079c070,(int *)&local_14,0);
+            puVar8 = cMf32::RecGet(pcVar7,0x80,PTR_s_SAVE_DESC_0079c070,(int *)&local_14,0);
             pcVar14 = extraout_ECX;
             if ((puVar8 != (ushort *)0x0) && (pcVar14 = local_24, local_c == local_24)) {
-              FUN_006ae1c0(*(uint **)(pCVar16 + 0x1c9b),&local_26c.ftLastWriteTime.dwLowDateTime);
+              Library::DKW::TBL::FUN_006ae1c0
+                        (*(uint **)(pCVar16 + 0x1c9b),&local_26c.ftLastWriteTime.dwLowDateTime);
               uVar20 = 0xffffffff;
               pcVar15 = PTR_DAT_0079c06c;
               do {
@@ -655,13 +657,13 @@ LAB_005b01f3:
 LAB_005b051b:
               iVar5 = *(int *)(pCVar16 + 0x1c97);
 LAB_005b0523:
-              FUN_006b5aa0(iVar5,(char *)pbVar21);
+              Library::DKW::TBL::FUN_006b5aa0(iVar5,(char *)pbVar21);
               pcVar14 = extraout_ECX_01;
             }
           }
           else {
             local_14 = (cMf32 **)&DAT_008087b6;
-            puVar8 = FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079c078,(int *)&local_14,0);
+            puVar8 = cMf32::RecGet(pcVar7,0,PTR_s_DESCRIPTOR_0079c078,(int *)&local_14,0);
             pcVar14 = extraout_ECX_00;
             if (((puVar8 != (ushort *)0x0) && (DAT_008087b6 != 0)) &&
                ((_DAT_008087ba == local_c ||
@@ -689,7 +691,7 @@ LAB_005b0523:
               }
             }
           }
-          cMf32::delete(pcVar14,puVar7);
+          cMf32::delete(pcVar14,(undefined4 *)pcVar7);
           g_currentExceptionFrame = local_12c.previous;
         }
         else {
@@ -732,7 +734,7 @@ LAB_005b0523:
           else {
             pcVar11 = (char *)0x0;
           }
-          iVar5 = __strcmpi(pcVar11,pcVar15);
+          iVar5 = Library::MSVCRT::__strcmpi(pcVar11,pcVar15);
           if (0 < iVar5) {
             FUN_006b8200(*(int *)(pCVar16 + 0x1c9f),uVar20,uVar13);
             local_1c = 1;
@@ -775,7 +777,7 @@ LAB_005b0639:
             else {
               pcVar11 = (char *)0x0;
             }
-            iVar5 = __strcmpi(pcVar11,pcVar15);
+            iVar5 = Library::MSVCRT::__strcmpi(pcVar11,pcVar15);
             if (0 < iVar5) {
               iVar5 = *(int *)(pCVar16 + 0x1c97);
               goto LAB_005b06e8;

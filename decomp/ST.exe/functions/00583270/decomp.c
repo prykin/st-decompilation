@@ -20,7 +20,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
   undefined4 *puVar9;
   STSprGameObjC *pSVar10;
   byte *pbVar11;
-  void *unaff_EDI;
+  int *unaff_EDI;
   int *piVar12;
   char *pcVar13;
   byte *pbVar14;
@@ -46,7 +46,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
   local_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a0;
   local_3c = (STSprGameObjC *)this;
-  iVar4 = __setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_3c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_a0.previous;
@@ -93,7 +93,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
         return 0;
       }
       if (uVar7 == 0) {
-        thunk_FUN_005825c0((int *)this_00);
+        LifeGun((STJellyGunC *)this_00,unaff_EDI);
         g_currentExceptionFrame = local_a0.previous;
         return 0;
       }
@@ -263,7 +263,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
           this_00[0x250] = *(STSprGameObjC *)((int)local_38 + 0x61);
           this_00[0x251] = *(STSprGameObjC *)((int)local_38 + 0x62);
           *(undefined4 *)(this_00 + 0x252) = *(undefined4 *)((int)local_38 + 99);
-          local_34[0] = FUN_006aac70(0x44);
+          local_34[0] = Library::DKW::LIB::FUN_006aac70(0x44);
           if (local_34[0] != 0) {
             iVar4 = 0;
             do {
@@ -308,7 +308,7 @@ undefined4 __thiscall STJellyGunC::GetMessage(STJellyGunC *this,int param_1)
     else if (uVar7 == 0x10f) {
       local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(this_00 + 0x1d5),&local_8);
       local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = (byte *)FUN_006aac70(local_10 + 0x6f + local_8);
+      local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x6f + local_8);
       if (((local_14 != (byte *)0x0) && (local_18 != (byte *)0x0)) && (local_c != (byte *)0x0)) {
         pSVar10 = this_00 + 0x256;
         pbVar11 = local_c;

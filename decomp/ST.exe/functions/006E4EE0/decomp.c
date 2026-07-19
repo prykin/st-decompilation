@@ -13,7 +13,7 @@ int __fastcall FUN_006e4ee0(int *param_1)
   do {
     if (iVar2 == 0) {
 LAB_006e4f26:
-      iVar1 = FUN_006e4d70(param_1[4]);
+      iVar1 = AppClassTy::LifeToAllSystem((AppClassTy *)param_1,param_1[4]);
       if (iVar1 != 0) {
         param_1[7] = 1;
         return iVar1;

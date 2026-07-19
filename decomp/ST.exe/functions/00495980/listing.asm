@@ -1,4 +1,4 @@
-FUN_00495980:
+DumpClassC::GetMessage:
 00495980  55                        PUSH EBP
 00495981  8B EC                     MOV EBP,ESP
 00495983  81 EC 8C 00 00 00         SUB ESP,0x8c

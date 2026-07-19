@@ -27,7 +27,7 @@ FUN_00747b12(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   if (param_5 != (short *)0x0) {
     iVar1 = FUN_0074d664(param_5);
     uVar4 = (iVar1 + 1U) * 2;
-    puVar2 = (undefined4 *)FUN_0072e530(uVar4);
+    puVar2 = (undefined4 *)Library::MSVCRT::FUN_0072e530(uVar4);
     *(undefined4 **)((int)this + 0x14) = puVar2;
     if (puVar2 != (undefined4 *)0x0) {
       for (uVar3 = (iVar1 + 1U & 0x7fffffff) >> 1; uVar3 != 0; uVar3 = uVar3 - 1) {

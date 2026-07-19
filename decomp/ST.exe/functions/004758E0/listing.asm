@@ -1,4 +1,4 @@
-FUN_004758e0:
+STBoatC::UnLoadObj:
 004758E0  55                        PUSH EBP
 004758E1  8B EC                     MOV EBP,ESP
 004758E3  83 EC 2C                  SUB ESP,0x2c

@@ -35,7 +35,7 @@ undefined4 __fastcall thunk_FUN_004ec2a0(int param_1)
       iVar1 = DAT_0079aa9c;
     }
     thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,iVar1,iVar1,'\0');
-    thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\x0e',iVar1);
+    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',iVar1);
     STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
   }
   return 0;

@@ -41,7 +41,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   FUN_006e6080(this,2,*(undefined4 *)(this + 0x1b5),(undefined4 *)(this + 0x18));
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar5 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pOVar12 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -61,10 +61,10 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   *(undefined4 *)(pOVar12 + 0x2fd) = 0;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
-  iVar5 = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
-    puVar7 = FUN_006ae290((uint *)0x0,1,0x98,1);
+    puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x98,1);
     *(uint **)(local_8 + 0x2fd) = puVar7;
     pOVar12 = local_8;
     goto LAB_00532758;
@@ -144,7 +144,7 @@ LAB_00532758:
     }
   }
   local_c0 = 1;
-  FUN_006b11d0(*(uint **)(pOVar12 + 0x2fd),0,(undefined4 *)local_12c);
+  Library::DKW::TBL::FUN_006b11d0(*(uint **)(pOVar12 + 0x2fd),0,(undefined4 *)local_12c);
   *(undefined4 *)(pOVar12 + 0x28) = 0x28;
   pOVar1 = pOVar12 + 0x18;
   *(undefined4 *)(pOVar12 + 0x2c) = *(undefined4 *)(*(int *)(pOVar12 + 0x2fd) + 0xc);

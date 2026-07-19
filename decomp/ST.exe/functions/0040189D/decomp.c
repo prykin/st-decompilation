@@ -15,13 +15,13 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pMStack_8 = (MMObjTy *)this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = pMStack_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj(pMStack_8);
     if (DAT_00802a30 != 0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
       }
       else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -49,7 +49,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (*(int *)(pMVar2 + 0x4d) != 0) {
-      FUN_006e3b50((undefined4 *)(pMVar2 + 0x3d));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(pMVar2 + 0x3d));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

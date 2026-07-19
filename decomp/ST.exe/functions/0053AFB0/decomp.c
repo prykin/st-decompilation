@@ -39,7 +39,7 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_14 = (PanelTy *)this;
-  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -78,7 +78,7 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
       iVar13 = 1;
       pCVar5 = thunk_FUN_00571240(s_BUT_SWITCH_007c71d0,0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar13,uVar6);
-      local_c = FUN_006f1ce0(1,pCVar5,piVar15,iVar17);
+      local_c = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar15,iVar17);
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_10,iVar3 + iVar9,'\x01',
                          (byte *)local_c);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
@@ -292,8 +292,9 @@ LAB_0053b2ea:
           *(undefined2 *)(this_00 + 0x172) = 1;
           ShiftControls((PlayPanelTy *)this_00,1);
         }
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                     *(uint *)(this_00 + 0x44));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                   *(uint *)(this_00 + 0x44));
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
@@ -306,8 +307,9 @@ LAB_0053b2ea:
           *(int *)(this_00 + 0x44) = iVar3;
           *(undefined2 *)(this_00 + 0x172) = 2;
         }
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                     *(uint *)(this_00 + 0x44));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                   *(uint *)(this_00 + 0x44));
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
@@ -345,8 +347,9 @@ LAB_0053b2ea:
       }
       pbVar7 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x1d9),uVar4);
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_10,iVar3 + iVar9,'\x01',pbVar7);
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                   *(uint *)(this_00 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                 *(uint *)(this_00 + 0x44));
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
@@ -497,8 +500,9 @@ LAB_0053b2ea:
             thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),(int)local_c,local_8,'\x06',pbVar7);
           }
         }
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                     *(uint *)(this_00 + 0x44));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                   *(uint *)(this_00 + 0x44));
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
@@ -511,8 +515,9 @@ LAB_0053b2ea:
                          piVar15[2],piVar15[3]);
         ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1dd),&DAT_0080f33a,-1,-1,
                        (DAT_0080874e != '\x03') - 1 & 5);
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                     *(uint *)(this_00 + 0x44));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                   *(uint *)(this_00 + 0x44));
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }

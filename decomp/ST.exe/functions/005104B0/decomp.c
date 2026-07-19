@@ -22,7 +22,7 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -41,7 +41,7 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   local_10[1] = *(int *)(local_8 + 0x1af);
   *(int *)pFVar4 = 0;
   *(undefined4 *)(local_8 + 0x1af) = 0;
-  thunk_FUN_0043beb0(DAT_007fa174,0x11,(int *)pFVar4);
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,0x11,(int *)pFVar4);
   iVar2 = 2;
   bVar6 = true;
   piVar5 = local_10;

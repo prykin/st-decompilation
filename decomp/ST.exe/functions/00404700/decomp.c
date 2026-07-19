@@ -59,19 +59,19 @@ thunk_FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,i
   sVar2 = *(short *)((int)this + 0x25a);
   *(undefined4 *)((int)this + 0x2c1) = 0x172;
   fStack_1c = (float)(int)sVar2;
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   iStack_24 = (int)lVar10;
   iStack_10 = *(int *)((int)this + 0x280);
   sVar3 = *(short *)((int)this + 0x25c);
   fStack_18 = (float)iStack_10;
   fStack_1c = (float)(int)sVar3;
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   iStack_20 = (int)lVar10;
   iStack_14 = *(int *)((int)this + 0x284);
   uStack_28 = CONCAT22((short)((ulonglong)lVar10 >> 0x10),*(short *)((int)this + 0x25e));
   fStack_1c = (float)iStack_14;
   fStack_8 = (float)(int)*(short *)((int)this + 0x25e);
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   iVar6 = param_3 - (int)lVar10;
   iStack_20 = param_2 - iStack_20;
   fStack_44 = SQRT((float)((param_1 - iStack_24) * (param_1 - iStack_24) + iStack_20 * iStack_20 +
@@ -83,18 +83,18 @@ thunk_FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,i
     fStack_44 = (float)iVar6 / fStack_44;
     iVar6 = (iVar4 * iStack_10) / 10000;
     iVar4 = (iVar4 * iStack_14) / 10000;
-    lVar10 = __ftol();
+    lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
     *(short *)((int)this + 0x272) =
          (sVar2 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
                   (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar5;
-    lVar10 = __ftol();
+    lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
     *(short *)((int)this + 0x274) =
          (sVar3 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
                   (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar6;
     fVar9 = extraout_ST1;
-    lVar10 = __ftol();
+    lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
     fStack_4c = (float)-extraout_ST0;
     fStack_48 = -fStack_48;

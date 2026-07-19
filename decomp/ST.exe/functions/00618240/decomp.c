@@ -104,10 +104,10 @@ FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *param_4)
       iVar17 = 0;
       local_8 = 0;
       ExceptionList = &local_14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_60 = &stack0xffffff58;
       local_1c = &stack0xffffff58;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_8 = 0xffffffff;
       local_34 = 0;
       local_6c = (int *)&stack0xffffff58;
@@ -236,10 +236,10 @@ LAB_0061856a:
               local_48 = *(undefined4 *)(local_60 + piVar18[iVar11] * 0x2c + 0x26);
               local_44 = (uint)*(ushort *)(local_60 + piVar18[iVar11] * 0x2c + 0x2a);
               if (*(int *)((int)this + 0x62) == 0) {
-                puVar9 = FUN_006ae290((uint *)0x0,7,8,10);
+                puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,8,10);
                 *(uint **)((int)this + 0x62) = puVar9;
               }
-              uVar8 = FUN_006ae1c0(*(uint **)((int)this + 0x62),&local_48);
+              uVar8 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x62),&local_48);
               local_58[0] = 0;
               if (-1 < (int)uVar8) goto LAB_0061871c;
             }

@@ -26,7 +26,7 @@ int __cdecl FUN_006efdb0(undefined2 *param_1,int param_2,char *param_3,char para
   local_8 = (byte *)0x0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar2 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((param_2 == 0) || (param_1 == (undefined2 *)0x0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x144);
@@ -38,7 +38,7 @@ int __cdecl FUN_006efdb0(undefined2 *param_1,int param_2,char *param_3,char para
     }
     uVar7 = iVar2 * 9;
     local_10 = uVar7;
-    local_8 = (byte *)FUN_006aac10(uVar7);
+    local_8 = (byte *)Library::DKW::LIB::FUN_006aac10(uVar7);
     local_c = 0;
     if (0 < *(int *)((int)param_1 + 0x455)) {
       piVar4 = (int *)((int)param_1 + 0x459);
@@ -67,7 +67,8 @@ int __cdecl FUN_006efdb0(undefined2 *param_1,int param_2,char *param_3,char para
     _local_20 = CONCAT22(*param_1,(short)iVar2);
     _local_1c = CONCAT13(*(undefined1 *)(param_1 + 2),CONCAT12(8,param_1[1]));
     local_18 = 5;
-    FUN_006f13f0(0xf,param_3,local_8,uVar7,(undefined4 *)&local_20,param_4,(uint *)0x0);
+    cMf32::RecPut((cMf32 *)param_2,0xf,param_3,local_8,uVar7,(undefined4 *)&local_20,param_4,
+                  (uint *)0x0);
     if (local_8 != (byte *)0x0) {
       FUN_006ab060(&local_8);
     }

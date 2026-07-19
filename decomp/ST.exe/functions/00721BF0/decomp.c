@@ -1,8 +1,13 @@
 
-int FUN_00721bf0(int *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\_sedit.cpp
+   EditorClassTy::SendToSliders */
+
+int __thiscall EditorClassTy::SendToSliders(EditorClassTy *this,int *param_1)
 
 {
   code *pcVar1;
+  EditorClassTy *this_00;
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
@@ -10,26 +15,27 @@ int FUN_00721bf0(int *param_1)
   int *piVar4;
   InternalExceptionFrame local_6c;
   int local_28 [8];
-  void *local_8;
+  EditorClassTy *local_8;
   
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((param_1[3] & 0xffffffU) == 2) {
       piVar4 = local_28;
-      for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
+      for (iVar2 = 8; this_00 = local_8, iVar2 != 0; iVar2 = iVar2 + -1) {
         *piVar4 = *param_1;
         param_1 = param_1 + 1;
         piVar4 = piVar4 + 1;
       }
-      local_28[2] = *(int *)((int)local_8 + 0x1fc);
+      local_28[2] = *(int *)(local_8 + 0x1fc);
       if (local_28[2] != 0) {
         FUN_006e6060(local_8,local_28);
       }
-      local_28[2] = *(int *)((int)local_8 + 0x200);
+      local_28[2] = *(int *)(this_00 + 0x200);
       if (local_28[2] != 0) {
-        FUN_006e6060(local_8,local_28);
+        FUN_006e6060(this_00,local_28);
       }
     }
     g_currentExceptionFrame = local_6c.previous;

@@ -41,7 +41,7 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
   
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
     iVar6 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x112,0,iVar3,&DAT_007a4ccc,
@@ -55,7 +55,7 @@ FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte 
     return (undefined4 *)0x0;
   }
   if (param_7 == (undefined4 *)0x0) {
-    param_7 = (undefined4 *)FUN_006aac70(0x10000);
+    param_7 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x10000);
   }
   puVar5 = param_7;
   for (iVar3 = 0x4000; iVar3 != 0; iVar3 = iVar3 + -1) {

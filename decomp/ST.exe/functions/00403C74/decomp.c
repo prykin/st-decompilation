@@ -23,11 +23,11 @@ MMMObjTy::OutLstProc
     iStack_8 = param_8;
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
-    errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       OutBSlProc(param_2,param_1,param_2,param_3,param_4,param_5 + 0x16,param_6,param_7 + -0x16,
                  (undefined4 *)(DAT_0081176c + 0x140));
-      FUN_006c68f0(param_1,param_4,param_5,param_6,0x15,DAT_0081176c + 0x144);
+      Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,0x15,DAT_0081176c + 0x144);
       FUN_006c6850(param_1,param_4,param_5,param_6,0x15,*(undefined4 *)(DAT_0081176c + 0x140));
       uVar7 = 0;
       pvVar6 = *(void **)(DAT_0081176c + 0x34);

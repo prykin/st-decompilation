@@ -1,4 +1,4 @@
-FUN_0057f580:
+STDcResourcC::Init:
 0057F580  55                        PUSH EBP
 0057F581  8B EC                     MOV EBP,ESP
 0057F583  83 EC 08                  SUB ESP,0x8

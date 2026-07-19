@@ -1,4 +1,4 @@
-FUN_0071c530:
+InputClassTy::DelAcc:
 0071C530  55                        PUSH EBP
 0071C531  8B EC                     MOV EBP,ESP
 0071C533  81 EC D4 01 00 00         SUB ESP,0x1d4

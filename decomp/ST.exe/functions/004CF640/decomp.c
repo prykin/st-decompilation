@@ -37,7 +37,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
   piVar4 = param_1;
   do {
     if (*piVar4 == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,5,0x30,5);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
       *piVar4 = (int)puVar2;
     }
     iVar6 = *piVar4;
@@ -132,7 +132,7 @@ void __thiscall FUN_004cf640(void *this,int *param_1)
             if (local_54 == '\0') {
               thunk_FUN_004e6b40(*(int *)((int)this + 0x24),iVar6,local_4a);
             }
-            FUN_006ae1c0((uint *)param_1[local_8],local_5c);
+            Library::DKW::TBL::FUN_006ae1c0((uint *)param_1[local_8],local_5c);
           }
         }
         local_14 = local_14 + 1;

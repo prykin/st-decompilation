@@ -39,7 +39,7 @@ int __thiscall FUN_00714f00(void *this,char *param_1,size_t param_2)
   }
   iVar2 = FUN_00714ce0(this,uVar3 + 1 + sVar4);
   if (iVar2 == 0) {
-    _strncat(*(char **)this,param_1,param_2);
+    Library::MSVCRT::_strncat(*(char **)this,param_1,param_2);
     iVar2 = 0;
   }
   return iVar2;

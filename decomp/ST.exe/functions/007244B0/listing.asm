@@ -1,4 +1,4 @@
-FUN_007244b0:
+SliderClassTy::GetMessage:
 007244B0  55                        PUSH EBP
 007244B1  8B EC                     MOV EBP,ESP
 007244B3  83 EC 70                  SUB ESP,0x70

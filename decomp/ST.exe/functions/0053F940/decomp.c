@@ -64,7 +64,7 @@ ProdPanelTy::CreateSlider
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar2 == 0) {
     piVar7 = local_42c;
@@ -93,7 +93,7 @@ ProdPanelTy::CreateSlider
     local_31c = 1;
     pCVar3 = thunk_FUN_00571240(s_BUT_SLLT_007c7abc,0);
     pCVar3 = FUN_006f2c00(pCVar3,iVar2,uVar6);
-    local_c = FUN_006f1ce0(1,pCVar3,piVar7,iVar8);
+    local_c = cMf32::RecGet(DAT_00806790,1,pCVar3,piVar7,iVar8);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);

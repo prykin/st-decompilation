@@ -10,7 +10,7 @@ uint * FUN_006b00c0(uint *param_1,uint *param_2,undefined *param_3)
   uint *puVar6;
   uint *puVar7;
   
-  puVar2 = FUN_006ae290(param_1,param_2[4],param_2[2],param_2[5]);
+  puVar2 = Library::DKW::TBL::FUN_006ae290(param_1,param_2[4],param_2[2],param_2[5]);
   if (puVar2 == (uint *)0x0) {
     return (uint *)0x0;
   }

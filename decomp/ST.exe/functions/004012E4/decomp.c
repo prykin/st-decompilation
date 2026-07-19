@@ -29,20 +29,20 @@ undefined4 __thiscall thunk_FUN_00629f90(void *this,int param_1,undefined4 param
     *(char *)((int)this + 0xd6) = (char)uVar5;
   }
   fsin((float10)*(int *)(param_1 + 0x2c) * (float10)_DAT_0079d064 * (float10)_DAT_0079d060);
-  lVar7 = __ftol();
+  lVar7 = Library::MSVCRT::__ftol();
   fcos(extraout_ST0);
   *(int *)((int)this + 0x8a) = (int)lVar7;
-  lVar7 = __ftol();
+  lVar7 = Library::MSVCRT::__ftol();
   iVar6 = (int)lVar7;
   *(int *)((int)this + 0x8e) = iVar6;
   if (iVar6 < 0) {
     *(int *)((int)this + 0x8e) = -iVar6;
   }
   fsin((float10)*(int *)(param_1 + 0x30) * (float10)_DAT_0079d064 * (float10)_DAT_0079d060);
-  lVar7 = __ftol();
+  lVar7 = Library::MSVCRT::__ftol();
   fcos(extraout_ST0_00);
   *(int *)((int)this + 0x92) = (int)lVar7;
-  lVar7 = __ftol();
+  lVar7 = Library::MSVCRT::__ftol();
   *(int *)((int)this + 0x96) = (int)lVar7;
   *(undefined4 *)((int)this + 0x9a) = *(undefined4 *)(param_1 + 0x34);
   *(undefined4 *)((int)this + 0xa2) = 5;

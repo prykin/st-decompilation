@@ -30,7 +30,7 @@ FUN_006f0ec0(uint param_1,byte *param_2,int param_3,undefined4 param_4,undefined
   local_8 = (undefined4 *)0x0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
     if (local_8 != (undefined4 *)0x0) {
@@ -64,12 +64,14 @@ FUN_006f0ec0(uint param_1,byte *param_2,int param_3,undefined4 param_4,undefined
     return (undefined4 *)0x0;
   }
   DAT_00856ec0._0_1_ = 0;
-  local_8 = FUN_006aac10(param_1);
+  local_8 = Library::DKW::LIB::FUN_006aac10(param_1);
   *local_8 = 0;
-  FUN_0072e730(param_2,local_c,local_360,local_260,local_160);
-  iVar3 = __strcmpi((char *)local_160,&DAT_007c7080);
-  if ((iVar3 == 0) || (iVar3 = __strcmpi((char *)local_160,&DAT_007c7078), iVar3 == 0)) {
-    __makepath((char *)((int)local_8 + 0x231),(char *)local_c,(char *)local_360,(char *)local_260,
+  Library::MSVCRT::FUN_0072e730(param_2,local_c,local_360,local_260,local_160);
+  iVar3 = Library::MSVCRT::__strcmpi((char *)local_160,&DAT_007c7080);
+  if ((iVar3 == 0) ||
+     (iVar3 = Library::MSVCRT::__strcmpi((char *)local_160,&DAT_007c7078), iVar3 == 0)) {
+    Library::MSVCRT::__makepath
+              ((char *)((int)local_8 + 0x231),(char *)local_c,(char *)local_360,(char *)local_260,
                &DAT_007c7080);
   }
   else {

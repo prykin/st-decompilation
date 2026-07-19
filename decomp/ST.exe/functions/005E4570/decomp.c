@@ -47,7 +47,7 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
   *(undefined4 *)(this + 0x65) = uVar5;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar6 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -328,7 +328,7 @@ LAB_005e496b:
         } while (iVar6 != 0);
         PaintMTask(this_00);
         this_00[0x6d] = (MTaskTy)0x3;
-        FUN_006afe40((int *)(this_00 + 0x74),*(uint **)(this_00 + 0x78));
+        Library::DKW::TBL::FUN_006afe40((int *)(this_00 + 0x74),*(uint **)(this_00 + 0x78));
         PlayScript(this_00);
         thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)(this_00 + 0x5d),10,2);
         break;
@@ -587,7 +587,7 @@ LAB_005e496b:
     uVar18 = *(uint *)(local_18 + 0x5b6);
     puVar9 = *(uint **)(local_18 + 0x5f6);
 LAB_005e5255:
-    FUN_006b3730(puVar9,uVar12,uVar18,uVar20,uVar10);
+    Library::DKW::DDX::FUN_006b3730(puVar9,uVar12,uVar18,uVar20,uVar10);
   }
 switchD_005e45f7_caseD_1:
   g_currentExceptionFrame = local_68.previous;

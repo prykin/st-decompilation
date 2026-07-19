@@ -15,7 +15,7 @@ undefined4 thunk_FUN_006a5cd0(void)
   {
     return 0;
   }
-  iVar2 = FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+  iVar2 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
   if (iVar2 == 1) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();

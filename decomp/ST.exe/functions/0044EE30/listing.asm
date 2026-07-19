@@ -1,4 +1,4 @@
-FUN_0044ee30:
+STBoatC::GetMessage:
 0044EE30  55                        PUSH EBP
 0044EE31  8B EC                     MOV EBP,ESP
 0044EE33  81 EC 80 02 00 00         SUB ESP,0x280

@@ -1,4 +1,4 @@
-FUN_00442b40:
+STAllPlayersC::_SubMDObject:
 00442B40  55                        PUSH EBP
 00442B41  8B EC                     MOV EBP,ESP
 00442B43  83 EC 4C                  SUB ESP,0x4c

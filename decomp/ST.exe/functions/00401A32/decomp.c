@@ -119,10 +119,12 @@ void __fastcall thunk_FUN_00586af0(int *param_1)
     iVar9 = (uVar8 >> 0x10 | (int)((ulonglong)((longlong)iStack_4c * 0xeeff) >> 0x20) << 0x10) +
             (uint)((uVar8 >> 0xf & 1) != 0);
     *(int *)((int)param_1 + 0x23d) = iVar9;
-    piStack_44 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)iVar9 >> 8),
-                                                    *(undefined1 *)((int)param_1 + 0x26f)),
-                                           CONCAT22((short)((uint)iVar7 >> 0x10),
-                                                    *(undefined2 *)((int)param_1 + 0x273)),1);
+    piStack_44 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,
+                                   CONCAT31((int3)((uint)iVar9 >> 8),
+                                            *(undefined1 *)((int)param_1 + 0x26f)),
+                                   CONCAT22((short)((uint)iVar7 >> 0x10),
+                                            *(undefined2 *)((int)param_1 + 0x273)),1);
     if (piStack_44 == (int *)0x0) {
 LAB_00587844:
       piStack_44 = thunk_FUN_00586320((int)param_1);
@@ -905,9 +907,9 @@ LAB_00587761:
     piStack_44 = piVar10;
     if ((piVar10 == (int *)0x1) && (*(uint *)((int)param_1 + 0x26f) != 0xff)) {
       puVar11 = (undefined4 *)
-                thunk_FUN_0042b620(*(uint *)((int)param_1 + 0x26f),
-                                   CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x273)),1
-                                  );
+                STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,*(uint *)((int)param_1 + 0x26f),
+                           CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x273)),1);
       if (puVar11 != (undefined4 *)0x0) {
         puVar18 = &DAT_008116f0;
         for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -964,10 +966,10 @@ LAB_00587761:
       return;
     }
     if ((((int)piVar10 < 10) && (*(uint *)((int)param_1 + 0x26f) != 0xff)) &&
-       (piVar10 = (int *)thunk_FUN_0042b620(*(uint *)((int)param_1 + 0x26f),
-                                            CONCAT22(extraout_var_01,
-                                                     *(undefined2 *)((int)param_1 + 0x273)),1),
-       piVar10 != (int *)0x0)) {
+       (piVar10 = (int *)STAllPlayersC::GetObjPtr
+                                   (DAT_007fa174,*(uint *)((int)param_1 + 0x26f),
+                                    CONCAT22(extraout_var_01,*(undefined2 *)((int)param_1 + 0x273)),
+                                    1), piVar10 != (int *)0x0)) {
       (**(code **)(*piVar10 + 0xe0))(param_1[0x9e],auStack_28,auStack_2c,auStack_30,&iStack_24);
       thunk_FUN_00416240(param_1,auStack_28[0],auStack_2c[0],auStack_30[0]);
       (**(code **)(*param_1 + 0xd8))();

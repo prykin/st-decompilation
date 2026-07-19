@@ -95,7 +95,7 @@ thunk_FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefi
   }
   uStack_8 = 0;
   ExceptionList = &pvStack_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   uStack_8 = 0xffffffff;
   iStack_a0 = 0;
   puStack_1c = &stack0xffffff4c;

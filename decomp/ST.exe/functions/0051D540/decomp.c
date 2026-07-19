@@ -43,7 +43,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   local_c = 0;
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar4 = __setjmp3(local_78.jumpBuffer,0,pvVar13,iVar4);
+  iVar4 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,pvVar13,iVar4);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_78.previous;
@@ -139,7 +139,7 @@ LAB_0051d689:
   iVar4 = 1;
   pCVar6 = thunk_FUN_00571240(s_BUT_HLPTDAY_007c3da8,0);
   pCVar6 = FUN_006f2c00(pCVar6,iVar4,uVar11);
-  local_8 = FUN_006f1ce0(1,pCVar6,piVar14,iVar9);
+  local_8 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar14,iVar9);
   iVar4 = uVar10 + 10;
   thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x218),0x50,iVar4,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
@@ -154,7 +154,7 @@ LAB_0051d689:
   local_34[2] = local_18;
   local_34[3] = *(int *)(local_8 + 4);
   local_34[1] = iVar4;
-  FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),local_34);
+  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),local_34);
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
   CheckBkView(this_00,uVar10 + 0x1e,10);
   local_c = (uVar10 / 10 + 1) * 10;
@@ -166,11 +166,12 @@ LAB_0051d689:
     iVar4 = iVar4 / (int)(uint)*(ushort *)(this_00 + 0x1b1) + 1;
   }
   CreateSlider(this_00,iVar4);
-  FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
-               *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff
-              );
-  FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-               *(uint *)(this_00 + 0x44));
+  Library::DKW::WGR::FUN_006b5110
+            (*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
+             *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+             *(uint *)(this_00 + 0x44));
   g_currentExceptionFrame = local_78.previous;
   return;
 }

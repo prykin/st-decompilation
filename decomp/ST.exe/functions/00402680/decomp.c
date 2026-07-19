@@ -36,7 +36,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
   IStack_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_b0;
   pUStack_c = this;
-  iVar3 = __setjmp3(IStack_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     puVar7 = auStack_6c;
     for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {

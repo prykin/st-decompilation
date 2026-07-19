@@ -28,7 +28,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -44,7 +44,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
       this_01 = local_c;
       *(undefined4 *)(*(int *)(local_c + 0x1eaa) + 0xc) = 0;
       for (; param_1 != 0; param_1 = param_1 + -1) {
-        FUN_006ae1c0(*(uint **)(this_01 + 0x1eaa),param_2);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_01 + 0x1eaa),param_2);
         param_2 = param_2 + 0x1a;
       }
       do {
@@ -67,7 +67,7 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
             else {
               _Str2 = (char *)0x0;
             }
-            iVar4 = __strcmpi(_Str1,_Str2);
+            iVar4 = Library::MSVCRT::__strcmpi(_Str1,_Str2);
             if (0 < iVar4) {
               FUN_006b0cd0(*(int *)(this_01 + 0x1eaa),uVar8,uVar1);
               local_8 = 1;

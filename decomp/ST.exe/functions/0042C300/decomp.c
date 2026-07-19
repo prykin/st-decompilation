@@ -5,6 +5,7 @@ undefined4 FUN_0042c300(undefined4 param_1,uint param_2,int param_3,uint param_4
   uint *puVar1;
   int iVar2;
   int *piVar3;
+  STAllPlayersC *in_ECX;
   int *piVar4;
   int iVar5;
   uint uVar6;
@@ -48,10 +49,10 @@ LAB_0042c3a0:
       do {
         FUN_006acc70((int)puVar1,uVar6,&param_1);
         if ((short)param_1 == (short)param_5) {
-          piVar3 = (int *)thunk_FUN_0042b620(param_4,param_5,1);
+          piVar3 = (int *)STAllPlayersC::GetObjPtr(in_ECX,param_4,param_5,1);
           (**(code **)(*piVar3 + 0xe8))(0);
           param_1 = 0xffff;
-          FUN_006ae140(puVar1,uVar6,&param_1);
+          Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,&param_1);
           *(short *)((int)piVar4 + 0xe) = *(short *)((int)piVar4 + 0xe) + -1;
           if (*(short *)((int)piVar4 + 0xe) == 0) {
             FUN_006ae110(*(byte **)((int)piVar4 + 10));

@@ -17,7 +17,7 @@ void __thiscall AiTactClassTy::InitDistrObj(AiTactClassTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pAStack_c = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pAStack_c;
   if (errorCode == 0) {
     puVar2 = thunk_FUN_00676170(*(undefined4 *)(pAStack_c + 0x24));

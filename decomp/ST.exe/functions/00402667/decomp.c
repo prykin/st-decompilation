@@ -32,7 +32,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
     IStack_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_54;
     pCStack_10 = this;
-    iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar2 = pCStack_10;
     if (iVar3 != 0) {
       g_currentExceptionFrame = IStack_54.previous;
@@ -53,7 +53,8 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       iVar4 = FUN_0070b3a0(*(int *)(pCVar2 + 0x2da),3);
       iVar3 = (int)((uStack_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
-      FUN_006b5110(iVar6,0,199,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
+      Library::DKW::WGR::FUN_006b5110
+                (iVar6,0,199,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
       uVar5 = *(uint *)(pCVar2 + 0x15c);
       if ((int)uVar5 < 0) {
         g_currentExceptionFrame = IStack_54.previous;
@@ -69,7 +70,8 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       iVar4 = FUN_0070b3a0(*(int *)(pCVar2 + 0x2da),1);
       iVar3 = (int)((uStack_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
-      FUN_006b5110(iVar6,0,2,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
+      Library::DKW::WGR::FUN_006b5110
+                (iVar6,0,2,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
       uVar5 = *(uint *)(pCVar2 + 0x154);
       if ((int)uVar5 < 0) {
         g_currentExceptionFrame = IStack_54.previous;
@@ -78,7 +80,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       uVar10 = *(uint *)(pCVar2 + 0xa0);
       uVar9 = *(uint *)(pCVar2 + 0x48);
     }
-    FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar9,uVar10);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar9,uVar10);
     g_currentExceptionFrame = IStack_54.previous;
     return;
   }

@@ -1,5 +1,9 @@
 
-int FUN_004c60e0(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Artem\TLO_BldMark.cpp
+   TLOBldMark::Create */
+
+int __thiscall TLOBldMark::Create(TLOBldMark *this)
 
 {
   code *pcVar1;
@@ -7,9 +11,10 @@ int FUN_004c60e0(void)
   int iVar3;
   void *unaff_ESI;
   undefined4 local_48 [16];
-  undefined4 local_8;
+  TLOBldMark *local_8;
   
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,g_currentExceptionFrame);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,g_currentExceptionFrame);
   if (iVar2 == 0) {
     DAT_007fb2ac = local_8;
     return 0;

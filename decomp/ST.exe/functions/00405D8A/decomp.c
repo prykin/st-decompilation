@@ -1,5 +1,5 @@
 
-void __cdecl thunk_FUN_006a4950(undefined4 *param_1)
+void __cdecl Library::MSVCRT::thunk_FUN_006a4950(undefined4 *param_1)
 
 {
   DAT_00854a4c = 0;

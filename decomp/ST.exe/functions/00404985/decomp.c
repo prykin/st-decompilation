@@ -20,7 +20,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pSStack_10 = this;
-  iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_10;
   if (iVar3 == 0) {
     if (*(int *)(pSStack_10 + 0x212) == 0) {
@@ -35,7 +35,7 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
         FUN_006acc70(*(int *)(pSVar2 + 0x20e),(int)uStack_c._2_2_,&uStack_8);
         if (uStack_8._2_2_ != -1) {
           uStack_8._2_2_ = -1;
-          FUN_006ae140(*(uint **)(pSVar2 + 0x20e),(int)uStack_c._2_2_,&uStack_8);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar2 + 0x20e),(int)uStack_c._2_2_,&uStack_8);
           *(int *)(pSVar2 + 0x212) = *(int *)(pSVar2 + 0x212) + -1;
           *(undefined4 *)(*(int *)(pSVar2 + 0x21e) + uStack_c._2_2_ * 8) = 0xffffffff;
         }

@@ -44,7 +44,7 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_24 = this;
-  iVar5 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_24;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_74.previous;
@@ -81,8 +81,9 @@ void __thiscall CPanelTy::PaintTV(CPanelTy *this)
           uVar14 = *(uint *)(this_00 + uVar6 * 4 + 0x148);
 joined_r0x004f81d1:
           if (-1 < (int)uVar14) {
-            FUN_006b3640(DAT_008075a8,uVar14,0xffffffff,*(uint *)(this_00 + uVar6 * 4 + 0x3c),
-                         *(uint *)(this_00 + uVar6 * 4 + 0x94));
+            Library::DKW::DDX::FUN_006b3640
+                      (DAT_008075a8,uVar14,0xffffffff,*(uint *)(this_00 + uVar6 * 4 + 0x3c),
+                       *(uint *)(this_00 + uVar6 * 4 + 0x94));
           }
         }
       }
@@ -128,9 +129,10 @@ joined_r0x004f81d1:
         if ((bVar12 & 8) < 0xb) {
           uVar14 = bVar12 & 8;
           if (-1 < (int)*(uint *)(this_00 + uVar14 * 4 + 0x148)) {
-            FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + uVar14 * 4 + 0x148),0xffffffff,
-                         *(uint *)(this_00 + uVar14 * 4 + 0x3c),
-                         *(uint *)(this_00 + uVar14 * 4 + 0x94));
+            Library::DKW::DDX::FUN_006b3640
+                      (DAT_008075a8,*(uint *)(this_00 + uVar14 * 4 + 0x148),0xffffffff,
+                       *(uint *)(this_00 + uVar14 * 4 + 0x3c),*(uint *)(this_00 + uVar14 * 4 + 0x94)
+                      );
           }
         }
         if (this_00[0x2ea] == (CPanelTy)0x5) {
@@ -283,8 +285,9 @@ joined_r0x004f81d1:
             uVar14 = *(uint *)(this_00 + uVar6 * 4 + 0x148);
 joined_r0x004f861b:
             if (-1 < (int)uVar14) {
-              FUN_006b3640(DAT_008075a8,uVar14,0xffffffff,*(uint *)(this_00 + uVar6 * 4 + 0x3c),
-                           *(uint *)(this_00 + uVar6 * 4 + 0x94));
+              Library::DKW::DDX::FUN_006b3640
+                        (DAT_008075a8,uVar14,0xffffffff,*(uint *)(this_00 + uVar6 * 4 + 0x3c),
+                         *(uint *)(this_00 + uVar6 * 4 + 0x94));
             }
           }
         }

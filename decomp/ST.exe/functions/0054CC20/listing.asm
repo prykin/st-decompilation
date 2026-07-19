@@ -1,4 +1,4 @@
-FUN_0054cc20:
+STPlaySystemC::CreateGameObject:
 0054CC20  55                        PUSH EBP
 0054CC21  8B EC                     MOV EBP,ESP
 0054CC23  83 EC 4C                  SUB ESP,0x4c

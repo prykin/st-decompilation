@@ -27,7 +27,7 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pVVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -56,23 +56,23 @@ void __thiscall VisibleClassTy::InitData(VisibleClassTy *this)
   }
   else {
     *(undefined4 *)(local_c + 0x114) = 1;
-    puVar6 = FUN_006aac10(*(int *)(local_c + 0x24) * iVar4 * 2);
+    puVar6 = Library::DKW::LIB::FUN_006aac10(*(int *)(local_c + 0x24) * iVar4 * 2);
     *(undefined4 **)(pVVar3 + 0x38) = puVar6;
-    puVar6 = FUN_006aac10(*(int *)(pVVar3 + 0x30) * *(int *)(pVVar3 + 0x34));
+    puVar6 = Library::DKW::LIB::FUN_006aac10(*(int *)(pVVar3 + 0x30) * *(int *)(pVVar3 + 0x34));
     *(undefined4 **)(pVVar3 + 0x4c) = puVar6;
-    puVar6 = FUN_006aac10(*(int *)(pVVar3 + 0x30) * *(int *)(pVVar3 + 0x34) * 2);
+    puVar6 = Library::DKW::LIB::FUN_006aac10(*(int *)(pVVar3 + 0x30) * *(int *)(pVVar3 + 0x34) * 2);
     *(undefined4 **)(pVVar3 + 0x50) = puVar6;
     pVVar11 = pVVar3 + 0x3c;
     iVar4 = 4;
     do {
-      puVar6 = FUN_006aac10(*(int *)(pVVar3 + 0x28) * *(int *)(pVVar3 + 0x2c));
+      puVar6 = Library::DKW::LIB::FUN_006aac10(*(int *)(pVVar3 + 0x28) * *(int *)(pVVar3 + 0x2c));
       *(undefined4 **)pVVar11 = puVar6;
       pVVar11 = pVVar11 + 4;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    puVar7 = FUN_006ae290((uint *)0x0,10,0x1c,10);
+    puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1c,10);
     *(uint **)(pVVar3 + 0xf4) = puVar7;
-    puVar7 = FUN_006ae290((uint *)0x0,10,0xc,10);
+    puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
     *(uint **)(pVVar3 + 0x110) = puVar7;
     *(uint *)(pVVar3 + 0xf8) = (uint)DAT_00808a95;
     pVVar3[DAT_0080874d + 0xfc] = (VisibleClassTy)0x1;

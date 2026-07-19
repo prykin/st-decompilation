@@ -55,7 +55,7 @@ thunk_FUN_004e99e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 p
     uStack_60 = 1000;
     uStack_4c = 0x6c;
     uStack_5c = uStack_70;
-    thunk_FUN_0054cc20(0x3e9,0,(int *)((int)this + 0x61b),&uStack_74,0);
+    STPlaySystemC::CreateGameObject(DAT_00802a38,0x3e9,0,(int *)((int)this + 0x61b),&uStack_74,0);
     uVar1 = *(undefined4 *)(*(int *)((int)this + 0x61b) + 0x18);
     *(undefined4 *)((int)this + 0x4fc) = 0;
     *(undefined4 *)((int)this + 0x4f8) = uVar1;

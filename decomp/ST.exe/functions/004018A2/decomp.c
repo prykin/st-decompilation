@@ -57,12 +57,12 @@ thunk_FUN_004b0f20(int param_1,int param_2,undefined4 param_3,undefined4 param_4
   }
   uStack_50 = uStack_64;
   if (param_8 != (char *)0x0) {
-    _strncpy(acStack_34,param_8,0xe);
+    Library::MSVCRT::_strncpy(acStack_34,param_8,0xe);
   }
   uStack_25 = param_9;
   uStack_21 = param_10;
   uStack_1d = 100;
-  thunk_FUN_0054cc20(0x3e9,0,0,&uStack_74,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x3e9,0,0,&uStack_74,0);
   return;
 }
 

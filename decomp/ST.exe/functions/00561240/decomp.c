@@ -29,7 +29,7 @@ int * FUN_00561240(int param_1,int param_2,int param_3)
   local_8 = -0x75300000;
   iVar7 = iVar4 / 2;
   iVar6 = param_2 / 2;
-  local_10 = FUN_006db640(param_3);
+  local_10 = Library::DKW::STR::FUN_006db640(param_3);
   iVar3 = FUN_006db6d0(param_3);
   local_14 = (iVar4 - iVar7) + -1;
   local_28 = local_14 * iVar3;
@@ -77,7 +77,7 @@ int * FUN_00561240(int param_1,int param_2,int param_3)
   iVar4 = param_1 + 0x8000 >> 0x10;
   iVar3 = ((local_8 + 0x8000 >> 0x10) - iVar4) + 1;
   local_10 = iVar4;
-  piVar5 = FUN_006aac10(iVar3 * 8 + 0x1c);
+  piVar5 = Library::DKW::LIB::FUN_006aac10(iVar3 * 8 + 0x1c);
   local_18 = 2;
   piVar5[4] = iVar3;
   piVar5[3] = iVar4;

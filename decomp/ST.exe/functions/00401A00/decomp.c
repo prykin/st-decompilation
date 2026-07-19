@@ -7,7 +7,7 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   STGroupBoatC *pSVar3;
   int iVar4;
   uint *puVar5;
-  void *pvVar6;
+  STBoatC *pSVar6;
   uint uVar7;
   int iVar8;
   undefined4 uVar9;
@@ -42,7 +42,7 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
   IStack_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_80;
   pSStack_18 = this;
-  iVar4 = __setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = pSStack_18;
   if (iVar4 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
@@ -85,9 +85,11 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
           FUN_006acc70((int)puVar5,uVar11,(undefined4 *)&uStack_2c);
           FUN_006acc70(*(int *)(pSVar3 + 0x29),uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            pvVar6 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                         pSVar3[0x24]),uStack_c,1);
-            if (pvVar6 == (void *)0x0) {
+            pSVar6 = (STBoatC *)
+                     STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar3[0x24]),
+                                uStack_c,1);
+            if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd2a);
             }
@@ -97,7 +99,7 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
             uStack_34 = uStack_20;
             uStack_30 = uStack_2a;
             uStack_2e = uStack_28;
-            thunk_FUN_0045ef00(pvVar6,8,&uStack_3c);
+            STBoatC::CmdToObj(pSVar6,8,&uStack_3c);
             puVar5 = puStack_1c;
           }
           uVar11 = uVar11 + 1;
@@ -112,15 +114,17 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
         do {
           FUN_006acc70(*(int *)(pSVar3 + 0x29),uVar11,&uStack_c);
           if ((short)uStack_c != -1) {
-            pvVar6 = (void *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),pSVar3[0x24]),
-                                                uStack_c,1);
-            if (pvVar6 == (void *)0x0) {
+            pSVar6 = (STBoatC *)
+                     STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,CONCAT31((int3)(uStack_c >> 8),pSVar3[0x24]),uStack_c,1
+                               );
+            if (pSVar6 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xd3d);
             }
-            iVar4 = thunk_FUN_0045ff10((int)pvVar6);
+            iVar4 = thunk_FUN_0045ff10((int)pSVar6);
             if (iVar4 == 8) break;
-            uVar7 = thunk_FUN_0045f400(pvVar6,8);
+            uVar7 = STBoatC::CheckPBoxCmd(pSVar6,8);
             if (uVar7 == 1) break;
           }
           uVar11 = uVar11 + 1;

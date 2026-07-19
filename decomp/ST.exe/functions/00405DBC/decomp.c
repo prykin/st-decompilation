@@ -44,7 +44,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pCStack_8 = this;
-  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar5 = pCStack_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_50.previous;

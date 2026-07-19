@@ -26,7 +26,7 @@ STAllPlayersC::CalibrateTmp
   puStack_c = (uint *)0x0;
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
-  iVar2 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
     if (iVar2 != -0x5001fff7) {
@@ -68,23 +68,23 @@ STAllPlayersC::CalibrateTmp
     ;
   }
   if ((param_5 != (int *)0x0) && (*param_5 == 0)) {
-    puVar3 = FUN_006ae290((uint *)0x0,0,2,1);
+    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     *param_5 = (int)puVar3;
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
-    puVar3 = FUN_006ae290((uint *)0x0,0,2,1);
+    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     *param_6 = (int)puVar3;
   }
   if ((param_7 != (int *)0x0) && (*param_7 == 0)) {
-    puVar3 = FUN_006ae290((uint *)0x0,0,2,1);
+    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
     *param_7 = (int)puVar3;
   }
   if (((param_5 == (int *)0x0) && (param_6 == (int *)0x0)) && (param_7 == (int *)0x0)) {
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3080)
     ;
   }
-  FUN_006afe40((int *)&puStack_10,puStack_18);
-  FUN_006afe40((int *)&puStack_c,param_4);
+  Library::DKW::TBL::FUN_006afe40((int *)&puStack_10,puStack_18);
+  Library::DKW::TBL::FUN_006afe40((int *)&puStack_c,param_4);
   uVar7 = 0;
   if (0 < (int)uVar5) {
     do {
@@ -94,7 +94,7 @@ STAllPlayersC::CalibrateTmp
           FUN_006acc70((int)puStack_c,uVar6,(undefined4 *)&sStack_6);
           if (sStack_8 == sStack_6) {
             if (param_6 != (int *)0x0) {
-              FUN_006ae1c0((uint *)*param_6,(undefined4 *)&sStack_6);
+              Library::DKW::TBL::FUN_006ae1c0((uint *)*param_6,(undefined4 *)&sStack_6);
             }
             FUN_006b0c70((int)puStack_10,uVar7);
             uVar5 = uVar5 - 1;
@@ -110,10 +110,10 @@ STAllPlayersC::CalibrateTmp
     } while ((int)uVar7 < (int)uVar5);
   }
   if (param_5 != (int *)0x0) {
-    FUN_006afe40(param_5,puStack_10);
+    Library::DKW::TBL::FUN_006afe40(param_5,puStack_10);
   }
   if (param_7 != (int *)0x0) {
-    FUN_006afe40(param_7,puStack_c);
+    Library::DKW::TBL::FUN_006afe40(param_7,puStack_c);
   }
   FUN_006ae110((byte *)puStack_10);
   FUN_006ae110((byte *)puStack_c);

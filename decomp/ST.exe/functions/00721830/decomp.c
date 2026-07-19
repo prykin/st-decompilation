@@ -22,7 +22,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       }
     }
     if (*(int *)(*(int *)((int)this + 0x138) + 8) == 0) {
-      FUN_006b5aa0(*(int *)((int)this + 0x138),PTR_DAT_007f0b04);
+      Library::DKW::TBL::FUN_006b5aa0(*(int *)((int)this + 0x138),PTR_DAT_007f0b04);
     }
     iVar3 = *(int *)((int)this + 0x20c) + *(int *)((int)this + 0x144);
     if (iVar3 < *(int *)(*(int *)((int)this + 0x138) + 8)) {
@@ -73,7 +73,7 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       cVar1 = *pcVar4;
       pcVar4 = pcVar4 + 1;
     } while (cVar1 != '\0');
-    pcVar4 = (char *)FUN_006aac10(~uVar2 + ~uVar5);
+    pcVar4 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar2 + ~uVar5);
     uVar2 = 0xffffffff;
     do {
       pcVar7 = pcVar6;
@@ -97,8 +97,9 @@ undefined4 __thiscall FUN_00721830(void *this,char *param_1)
       pcVar7 = pcVar7 + 1;
     }
     FUN_00753050((int)pcVar4,*(int *)((int)this + 0x148) + *(int *)((int)this + 0x210),*param_1);
-    FUN_006b6020(*(int *)((int)this + 0x138),
-                 *(int *)((int)this + 0x144) + *(int *)((int)this + 0x20c),pcVar4);
+    Library::DKW::TBL::FUN_006b6020
+              (*(int *)((int)this + 0x138),*(int *)((int)this + 0x144) + *(int *)((int)this + 0x20c)
+               ,pcVar4);
     FUN_006a5e90((undefined4 *)pcVar4);
     FUN_00721080(this,*(int *)((int)this + 0x210) + 1,*(uint *)((int)this + 0x20c));
   }

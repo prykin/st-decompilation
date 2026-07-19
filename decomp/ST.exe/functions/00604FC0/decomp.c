@@ -58,7 +58,7 @@ undefined4 __thiscall FUN_00604fc0(void *this,undefined4 *param_1)
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
       if (uVar6 != 0) {
-        piVar2 = (int *)FUN_006aac70(uVar6);
+        piVar2 = (int *)Library::DKW::LIB::FUN_006aac70(uVar6);
         *(int **)((int)this + 0x2b3) = piVar2;
         for (uVar4 = uVar6 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
           *piVar2 = *piVar8;

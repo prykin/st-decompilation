@@ -19,7 +19,7 @@ int __thiscall FUN_00714ce0(void *this,uint param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   piVar1 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -29,11 +29,11 @@ int __thiscall FUN_00714ce0(void *this,uint param_1)
     return iVar2;
   }
   if ((undefined4 *)*local_8 == (undefined4 *)0x0) {
-    puVar3 = FUN_006aac10(param_1);
+    puVar3 = Library::DKW::LIB::FUN_006aac10(param_1);
     local_8 = piVar1;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006acf50((undefined4 *)*local_8,param_1);
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006acf50((undefined4 *)*local_8,param_1);
     iVar2 = piVar1[1];
     uVar4 = param_1 - iVar2;
     puVar6 = (undefined4 *)(iVar2 + (int)puVar3);

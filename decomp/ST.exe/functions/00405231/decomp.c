@@ -27,7 +27,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pCStack_8 = this;
-  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar3 = pCStack_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -144,14 +144,16 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
                              (DAT_0080874e == '\x03') + 2,-1,-1);
       if (DAT_0080c4d3 != 2) {
         ccFntTy::WrTxt(*(ccFntTy **)(pCVar3 + 0x1cc),(uint *)(pCVar3 + 0x1e1),0xd,10,0,-1,-1);
-        uVar5 = FUN_006b3640(DAT_008075a8,*(uint *)(pCVar3 + 0x174),0xffffffff,
-                             *(uint *)(pCVar3 + 0xec),*(uint *)(pCVar3 + 0xf0));
+        uVar5 = Library::DKW::DDX::FUN_006b3640
+                          (DAT_008075a8,*(uint *)(pCVar3 + 0x174),0xffffffff,
+                           *(uint *)(pCVar3 + 0xec),*(uint *)(pCVar3 + 0xf0));
       }
     }
   }
   if ((*(short *)(pCVar3 + 0x23f) != 2) && (uVar5 = *(uint *)(pCVar3 + 0x158), -1 < (int)uVar5)) {
-    uVar5 = FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,*(uint *)(pCVar3 + 0x4c),
-                         *(uint *)(pCVar3 + 0xa4));
+    uVar5 = Library::DKW::DDX::FUN_006b3640
+                      (DAT_008075a8,uVar5,0xffffffff,*(uint *)(pCVar3 + 0x4c),
+                       *(uint *)(pCVar3 + 0xa4));
   }
   g_currentExceptionFrame = IStack_50.previous;
   return uVar5;

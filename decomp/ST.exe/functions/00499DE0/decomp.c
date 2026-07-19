@@ -8,24 +8,25 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
 {
   code *pcVar1;
   STGroupBoatC *this_00;
-  char cVar7;
+  char cVar8;
   int iVar2;
-  int *piVar3;
+  STBoatC *pSVar3;
   undefined4 uVar4;
-  uint *puVar5;
-  int iVar6;
+  int *piVar5;
+  uint *puVar6;
+  int iVar7;
   undefined4 extraout_ECX;
-  int *piVar8;
+  int *piVar9;
   undefined4 extraout_ECX_00;
-  ushort uVar9;
+  ushort uVar10;
   undefined4 extraout_EDX;
-  uint uVar10;
   uint uVar11;
+  uint uVar12;
   undefined4 unaff_ESI;
-  short sVar12;
+  short sVar13;
   void *unaff_EDI;
-  uint *puVar13;
-  undefined4 *puVar14;
+  uint *puVar14;
+  undefined4 *puVar15;
   InternalExceptionFrame local_a4;
   STGroupBoatC *local_60;
   uint local_5c;
@@ -53,14 +54,14 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   uint local_c;
   undefined1 local_5;
   
-  uVar10 = 0;
+  uVar11 = 0;
   local_10 = (byte *)0x0;
   local_34 = (uint *)0x0;
   local_30 = (uint *)0x0;
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_60 = this;
-  iVar2 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_60;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_a4.previous;
@@ -70,9 +71,9 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       }
       return 0;
     }
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5eb,0,iVar2,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5eb,0,iVar2,&DAT_007a4ccc,
                                s_STGroupBoatC__DistributeTargets_007abf14);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
@@ -83,26 +84,28 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   if (*(int *)(local_60 + 0x20e) == 0) {
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x55a);
   }
-  FUN_006afe40((int *)&local_10,param_1);
+  Library::DKW::TBL::FUN_006afe40((int *)&local_10,param_1);
   local_20 = *(undefined4 *)(DAT_00802a38 + 0xe4);
   local_14 = *(int *)(local_10 + 0xc);
   if (0 < local_14) {
     do {
       iVar2 = local_14;
-      FUN_006acc70((int)local_10,uVar10,&local_c);
+      FUN_006acc70((int)local_10,uVar11,&local_c);
       if ((short)local_c == -1) {
-        FUN_006b0c70((int)local_10,uVar10);
-        uVar10 = uVar10 - 1;
+        FUN_006b0c70((int)local_10,uVar11);
+        uVar11 = uVar11 - 1;
         local_14 = iVar2 + -1;
       }
       else {
-        piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[0x24]),
-                                           local_c,1);
-        if (piVar3 == (int *)0x0) {
+        pSVar3 = (STBoatC *)
+                 STAllPlayersC::GetObjPtr
+                           (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[0x24]),
+                            local_c,1);
+        if (pSVar3 == (STBoatC *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x564);
         }
-        uVar4 = (**(code **)(*piVar3 + 0x2c))();
+        uVar4 = (**(code **)(*(int *)pSVar3 + 0x2c))();
         switch(uVar4) {
         case 7:
         case 8:
@@ -115,68 +118,70 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         case 0x1b:
         case 0x24:
         case 0x25:
-          FUN_006b0c70((int)local_10,uVar10);
-          uVar10 = uVar10 - 1;
+          FUN_006b0c70((int)local_10,uVar11);
+          uVar11 = uVar11 - 1;
           local_14 = local_14 + -1;
-          thunk_FUN_0045ef00(piVar3,3,&local_20);
+          STBoatC::CmdToObj(pSVar3,3,&local_20);
           break;
         default:
           if ((*(int *)(this_00 + 0x20a) == 1) &&
-             (iVar2 = (**(code **)(*piVar3 + 0x2c))(), iVar2 != 0x17)) {
-            FUN_006b0c70((int)local_10,uVar10);
-            uVar10 = uVar10 - 1;
+             (iVar2 = (**(code **)(*(int *)pSVar3 + 0x2c))(), iVar2 != 0x17)) {
+            FUN_006b0c70((int)local_10,uVar11);
+            uVar11 = uVar11 - 1;
             local_14 = local_14 + -1;
-            iVar2 = thunk_FUN_00490d90((int)piVar3);
+            iVar2 = thunk_FUN_00490d90((int)pSVar3);
             if (iVar2 == 0) {
-              thunk_FUN_0045ef00(piVar3,3,&local_20);
+              STBoatC::CmdToObj(pSVar3,3,&local_20);
             }
           }
         }
       }
-      uVar10 = uVar10 + 1;
-    } while ((int)uVar10 < local_14);
+      uVar11 = uVar11 + 1;
+    } while ((int)uVar11 < local_14);
   }
   iVar2 = local_14;
-  uVar10 = 0;
+  uVar11 = 0;
   if (local_14 != 0) {
-    iVar6 = *(int *)(this_00 + 0x20e);
+    iVar7 = *(int *)(this_00 + 0x20e);
     *(undefined4 *)(this_00 + 0x212) = 0;
-    uVar11 = 0;
-    if (*(int *)(iVar6 + 0xc) != 0) {
+    uVar12 = 0;
+    if (*(int *)(iVar7 + 0xc) != 0) {
       do {
-        FUN_006acc70(iVar6,uVar10,&local_1c);
+        FUN_006acc70(iVar7,uVar11,&local_1c);
         if (local_1c._2_2_ != -1) {
           *(int *)(this_00 + 0x212) = *(int *)(this_00 + 0x212) + 1;
         }
-        iVar6 = *(int *)(this_00 + 0x20e);
-        uVar11 = uVar11 + 1;
-        uVar10 = uVar11 & 0xffff;
-      } while (uVar10 < *(uint *)(iVar6 + 0xc));
+        iVar7 = *(int *)(this_00 + 0x20e);
+        uVar12 = uVar12 + 1;
+        uVar11 = uVar12 & 0xffff;
+      } while (uVar11 < *(uint *)(iVar7 + 0xc));
     }
     if (*(int *)(this_00 + 0x212) == 0) {
       RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x58f)
       ;
     }
-    uVar10 = 0;
+    uVar11 = 0;
     local_24 = 0;
     if (0 < iVar2) {
       do {
-        FUN_006acc70((int)local_10,uVar10,&local_c);
+        FUN_006acc70((int)local_10,uVar11,&local_c);
         if ((short)local_c != -1) {
-          piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),this_00[0x24])
-                                             ,local_c,1);
-          iVar2 = (**(code **)(*piVar3 + 0x2c))();
+          pSVar3 = (STBoatC *)
+                   STAllPlayersC::GetObjPtr
+                             (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),this_00[0x24]),
+                              local_c,1);
+          iVar2 = (**(code **)(*(int *)pSVar3 + 0x2c))();
           if (iVar2 == 9) {
             GetDepotForAttack(this_00,local_c,&local_5,&local_16,&local_2a,&local_28,&local_26);
             if (local_16 == -1) {
-              puVar14 = &local_20;
+              puVar15 = &local_20;
               iVar2 = 3;
               local_20 = *(undefined4 *)(DAT_00802a38 + 0xe4);
             }
             else {
               local_44 = *(undefined4 *)(this_00 + 0x20a);
               local_3b = local_16;
-              puVar14 = &local_48;
+              puVar15 = &local_48;
               local_40 = local_5;
               local_3f = 1;
               iVar2 = 2;
@@ -188,65 +193,69 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             local_50 = 0;
             local_4c = 2;
             do {
-              uVar10 = *(int *)(this_00 + 0x31) * 0x41c64e6d + 0x3039;
-              *(uint *)(this_00 + 0x31) = uVar10;
-              local_54 = (uVar10 >> 0x10) % local_5c;
+              uVar11 = *(int *)(this_00 + 0x31) * 0x41c64e6d + 0x3039;
+              *(uint *)(this_00 + 0x31) = uVar11;
+              local_54 = (uVar11 >> 0x10) % local_5c;
               iVar2 = 0;
               if (0 < *(int *)(this_00 + 0x21a)) {
-                piVar3 = *(int **)(this_00 + 0x21e);
-                piVar8 = piVar3;
-                uVar10 = local_54;
+                piVar5 = *(int **)(this_00 + 0x21e);
+                piVar9 = piVar5;
+                uVar11 = local_54;
                 do {
-                  if ((*piVar8 != -1) &&
-                     (uVar9 = (short)uVar10 - (short)piVar8[1], uVar10 = (uint)uVar9,
-                     (short)uVar9 < 1)) {
-                    if (local_50 < piVar3[iVar2 * 2 + 1]) {
-                      local_50 = piVar3[(short)iVar2 * 2 + 1];
+                  if ((*piVar9 != -1) &&
+                     (uVar10 = (short)uVar11 - (short)piVar9[1], uVar11 = (uint)uVar10,
+                     (short)uVar10 < 1)) {
+                    if (local_50 < piVar5[iVar2 * 2 + 1]) {
+                      local_50 = piVar5[(short)iVar2 * 2 + 1];
                       local_58 = iVar2;
                     }
                     break;
                   }
                   iVar2 = iVar2 + 1;
-                  piVar8 = piVar8 + 2;
+                  piVar9 = piVar9 + 2;
                 } while (iVar2 < *(int *)(this_00 + 0x21a));
               }
               local_4c = local_4c + -1;
             } while (local_4c != 0);
-            sVar12 = (short)local_58;
-            FUN_006acc70(*(int *)(this_00 + 0x20e),(int)sVar12,&local_1c);
+            sVar13 = (short)local_58;
+            FUN_006acc70(*(int *)(this_00 + 0x20e),(int)sVar13,&local_1c);
             local_48 = *(undefined4 *)(DAT_00802a38 + 0xe4);
             local_40 = (undefined1)local_1c;
             local_44 = *(undefined4 *)(this_00 + 0x20a);
             local_3b = local_1c._2_2_;
-            cVar7 = (char)((uint)local_1c >> 8);
-            local_3f = (int)cVar7;
-            local_39 = sVar12;
-            piVar3 = (int *)thunk_FUN_0042b620(CONCAT31(cVar7 >> 7,this_00[0x24]),local_c,1);
-            puVar14 = &local_48;
+            cVar8 = (char)((uint)local_1c >> 8);
+            local_3f = (int)cVar8;
+            local_39 = sVar13;
+            pSVar3 = (STBoatC *)
+                     STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,CONCAT31(cVar8 >> 7,this_00[0x24]),local_c,1);
+            puVar15 = &local_48;
             iVar2 = 2;
           }
-          thunk_FUN_0045ef00(piVar3,iVar2,puVar14);
+          STBoatC::CmdToObj(pSVar3,iVar2,puVar15);
         }
         local_24 = local_24 + 1;
-        uVar10 = local_24 & 0xffff;
-      } while ((int)uVar10 < local_14);
+        uVar11 = local_24 & 0xffff;
+      } while ((int)uVar11 < local_14);
     }
     if (*(int *)(this_00 + 0x20a) == 1) {
       local_14 = *(int *)(*(int *)(this_00 + 0x29) + 0xc);
-      uVar10 = 0;
+      uVar11 = 0;
       local_24 = 0;
-      puVar5 = local_34;
+      puVar6 = local_34;
       if (0 < local_14) {
         do {
-          FUN_006acc70(*(int *)(this_00 + 0x29),uVar10,&local_c);
+          FUN_006acc70(*(int *)(this_00 + 0x29),uVar11,&local_c);
           if ((short)local_c != -1) {
-            piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_00 >> 8),
-                                                        this_00[0x24]),local_c,1);
-            if (piVar3 == (int *)0x0) {
+            piVar5 = (int *)STAllPlayersC::GetObjPtr
+                                      (DAT_007fa174,
+                                       CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00[0x24]),
+                                       local_c,1);
+            if (piVar5 == (int *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5c4);
             }
-            uVar4 = (**(code **)(*piVar3 + 0x2c))();
+            uVar4 = (**(code **)(*piVar5 + 0x2c))();
             switch(uVar4) {
             case 7:
             case 8:
@@ -261,39 +270,39 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             case 0x25:
               break;
             default:
-              iVar2 = (**(code **)(*piVar3 + 0x2c))();
+              iVar2 = (**(code **)(*piVar5 + 0x2c))();
               if (iVar2 == 0x17) {
-                puVar13 = puVar5;
-                if (puVar5 == (uint *)0x0) {
-                  puVar5 = FUN_006ae290((uint *)0x0,1,2,1);
-                  puVar13 = puVar5;
-                  local_34 = puVar5;
+                puVar14 = puVar6;
+                if (puVar6 == (uint *)0x0) {
+                  puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                  puVar14 = puVar6;
+                  local_34 = puVar6;
                 }
               }
               else {
-                iVar2 = thunk_FUN_00490d90((int)piVar3);
+                iVar2 = thunk_FUN_00490d90((int)piVar5);
                 if (iVar2 == 0) break;
-                puVar13 = local_30;
+                puVar14 = local_30;
                 if (local_30 == (uint *)0x0) {
-                  local_30 = FUN_006ae290((uint *)0x0,1,2,1);
-                  puVar13 = local_30;
+                  local_30 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+                  puVar14 = local_30;
                 }
               }
-              FUN_006ae1c0(puVar13,&local_c);
+              Library::DKW::TBL::FUN_006ae1c0(puVar14,&local_c);
             }
           }
           local_24 = local_24 + 1;
-          uVar10 = local_24 & 0xffff;
-        } while ((int)uVar10 < local_14);
+          uVar11 = local_24 & 0xffff;
+        } while ((int)uVar11 < local_14);
       }
-      puVar13 = local_30;
+      puVar14 = local_30;
       STAllPlayersC::RegisterPGPair
-                (DAT_007fa174,CONCAT31((int3)((uint)local_14 >> 8),this_00[0x24]),puVar5,local_30);
-      if (puVar5 != (uint *)0x0) {
-        FUN_006ae110((byte *)puVar5);
+                (DAT_007fa174,CONCAT31((int3)((uint)local_14 >> 8),this_00[0x24]),puVar6,local_30);
+      if (puVar6 != (uint *)0x0) {
+        FUN_006ae110((byte *)puVar6);
       }
-      if (puVar13 != (uint *)0x0) {
-        FUN_006ae110((byte *)puVar13);
+      if (puVar14 != (uint *)0x0) {
+        FUN_006ae110((byte *)puVar14);
       }
     }
   }

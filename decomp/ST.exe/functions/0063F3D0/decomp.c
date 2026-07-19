@@ -25,7 +25,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_c;
   if (errorCode == 0) {
     if (*(int *)(local_c + 0x33a) == -1) {

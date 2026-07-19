@@ -89,7 +89,7 @@ LAB_004cc50a:
     uVar1 = (*(int *)((int)param_1 + 0x617) - *(int *)(&DAT_00797750 + uVar1 * 8 + iVar4)) + iVar3;
   }
   thunk_FUN_004ad380(*(void **)((int)param_1 + 0x603),uVar5,uVar1);
-  thunk_FUN_004abe40(*(void **)((int)param_1 + 0x603),'\x0e',0);
+  STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x603),'\x0e',0);
   STT3DSprC::StartShow
             (*(STT3DSprC **)((int)param_1 + 0x603),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
   thunk_FUN_004ad460(*(void **)((int)param_1 + 0x603),1);

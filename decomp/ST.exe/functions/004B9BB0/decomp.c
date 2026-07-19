@@ -23,7 +23,7 @@ undefined4 __thiscall FUN_004b9bb0(void *this,int param_1,undefined2 param_2,und
     *(undefined4 *)((int)this + 0x5d7) = 0;
     if (((iVar2 == 0) || (iVar2 == 4)) || (iVar2 == 5)) {
       *(undefined4 *)((int)this + 0x5df) = 0;
-      thunk_FUN_004b80d0(1,1);
+      TLOBaseTy::SetState(this,1,1);
       if (DAT_008117bc != (undefined4 *)0x0) {
         local_e = *(undefined2 *)((int)this + 0x32);
         local_10 = *(undefined2 *)((int)this + 0x24);

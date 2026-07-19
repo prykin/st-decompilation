@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004cc220(int param_1)
   uVar1 = *(int *)(param_1 + 0x1c) * 0x41c64e6d + 0x3039;
   *(uint *)(param_1 + 0x1c) = uVar1;
   *(uint *)(param_1 + 0x450) = (uVar1 >> 0x10) % 0x33 + *(int *)(DAT_00802a38 + 0xe4);
-  puVar2 = (undefined4 *)FUN_0072e530(0x40);
+  puVar2 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (puVar2 == (undefined4 *)0x0) {
     this = (STT3DSprC *)0x0;
   }

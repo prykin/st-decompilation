@@ -1,4 +1,4 @@
-FUN_006e5c70:
+SystemClassTy::GetToAllObjects:
 006E5C70  55                        PUSH EBP
 006E5C71  8B EC                     MOV EBP,ESP
 006E5C73  83 EC 50                  SUB ESP,0x50

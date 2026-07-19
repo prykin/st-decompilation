@@ -19,12 +19,12 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (DAT_00806758 != 0) {
       iVar4 = FUN_00715050(DAT_00806758,param_1,0);
       if (iVar4 != 0) {
-        _strncpy(&DAT_0080c4d7,param_1,0x1f);
+        Library::MSVCRT::_strncpy(&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = pCStack_8;
         DAT_0080c4f6 = 0;
         if (*(byte **)(pCStack_8 + 0x24b) != (byte *)0x0) {
@@ -49,7 +49,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
           pCVar3[0x260] = (CPanelTy)0x3;
           DAT_0080c4f7 = 3;
-          FUN_006b3430(DAT_008075a8,*(uint *)(pCVar3 + 0x17c));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pCVar3 + 0x17c));
         }
       }
     }

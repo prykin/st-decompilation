@@ -31,7 +31,7 @@ undefined4 __thiscall MainMenuTy::GetMessage(MainMenuTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar2;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  iVar3 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_8c.previous;

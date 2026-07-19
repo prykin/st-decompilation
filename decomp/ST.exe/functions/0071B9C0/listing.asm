@@ -1,4 +1,4 @@
-FUN_0071b9c0:
+InputClassTy::None:
 0071B9C0  55                        PUSH EBP
 0071B9C1  8B EC                     MOV EBP,ESP
 0071B9C3  81 EC B8 01 00 00         SUB ESP,0x1b8

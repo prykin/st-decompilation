@@ -9,6 +9,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   ushort *puVar4;
   byte *pbVar5;
   int iVar6;
+  ccFntTy *this_01;
   SpecPanelTy *pSVar7;
   int iVar8;
   undefined4 unaff_ESI;
@@ -53,7 +54,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
   }
   IStack_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_b0;
-  iVar6 = __setjmp3(IStack_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(IStack_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pIStack_10;
   if (iVar6 == 0) {
     uVar16 = 0x8b;
@@ -81,7 +82,7 @@ void __thiscall InfocPanelTy::InitInfocPanel(InfocPanelTy *this)
     pbVar5 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
     puVar4 = FUN_00709af0(DAT_00806794,0xb,pbVar5,uVar11,bVar12,iVar6,iVar13,puVar17);
     *(ushort **)(this_00 + 0x3cc) = puVar4;
-    puVar17 = FUN_0070ceb0(0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+    puVar17 = ccFntTy::operator(this_01,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
     *(undefined4 **)(this_00 + 0x3d5) = puVar17;
     puVar17[0x16] = 1;
     puVar17[0x17] = 0;

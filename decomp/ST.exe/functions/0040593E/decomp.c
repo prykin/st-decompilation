@@ -5,7 +5,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
-  void *this_00;
+  STBoatC *this_00;
   int iVar4;
   undefined4 uVar5;
   uint uVar6;
@@ -24,7 +24,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pSStack_14 = this;
-  iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
@@ -41,13 +41,15 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
         do {
           FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&uStack_c);
           if ((short)uStack_c != -1) {
-            this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                          pSVar2[0x24]),uStack_c,1);
-            if (this_00 == (void *)0x0) {
+            this_00 = (STBoatC *)
+                      STAllPlayersC::GetObjPtr
+                                (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24])
+                                 ,uStack_c,1);
+            if (this_00 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x65e);
             }
-            thunk_FUN_0045ef00(this_00,3,&uStack_8);
+            STBoatC::CmdToObj(this_00,3,&uStack_8);
           }
           uVar8 = uVar8 + 1;
           uVar6 = uVar8 & 0xffff;

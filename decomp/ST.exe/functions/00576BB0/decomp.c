@@ -12,9 +12,9 @@ void FUN_00576bb0(void)
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = __setjmp3(local_44,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
-    this = (void *)FUN_0072e530(0x24);
+    this = (void *)Library::MSVCRT::FUN_0072e530(0x24);
     if (this == (void *)0x0) {
       DAT_00811638 = (int *)0x0;
     }
@@ -26,7 +26,7 @@ void FUN_00576bb0(void)
     }
     DAT_00811638[8] = 0;
     (**(code **)*DAT_00811638)();
-    FUN_006e4650(DAT_00811638,0);
+    AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,DAT_00811638,0);
     DAT_00811638[8] = 1;
     g_currentExceptionFrame = pIVar3;
     return;

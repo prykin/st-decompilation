@@ -32,7 +32,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_c = this;
-    iVar6 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar6 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar3 = local_c;
     if (iVar6 == 0) {
       cVar5 = '\0';

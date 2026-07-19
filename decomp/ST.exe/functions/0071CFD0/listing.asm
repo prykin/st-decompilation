@@ -1,4 +1,4 @@
-FUN_0071cfd0:
+ButtonClassTy::GetMessage:
 0071CFD0  55                        PUSH EBP
 0071CFD1  8B EC                     MOV EBP,ESP
 0071CFD3  83 EC 70                  SUB ESP,0x70

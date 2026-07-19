@@ -19,7 +19,7 @@ void __cdecl thunk_FUN_005751f0(short *param_1)
   iVar7 = 0;
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     puVar5 = FUN_006b04d0(0x4f2);
     if (puVar5 == (undefined4 *)0x0) {
@@ -36,9 +36,9 @@ void __cdecl thunk_FUN_005751f0(short *param_1)
                  0x40240000,0x4024000000000000,0x4023ee97865e3540,0);
     *(undefined4 *)((int)DAT_0080760c + 0x128) = 0;
     FUN_006dd610(DAT_0080760c,4,0,0x40240000,0,0x40240000);
-    puVar6 = FUN_006ae290((uint *)0x0,0x14,8,0x14);
+    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,8,0x14);
     *(uint **)((int)param_1 + 0x44d) = puVar6;
-    puVar6 = FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
+    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
     *(uint **)((int)param_1 + 0x451) = puVar6;
     if (0 < *(int *)((int)param_1 + 0x455)) {
       puVar5 = (undefined4 *)((int)param_1 + 0x459);
@@ -54,7 +54,8 @@ void __cdecl thunk_FUN_005751f0(short *param_1)
     sVar2 = param_1[1];
     iStack_10 = (int)sVar2 / 2;
     puStack_8 = (undefined4 *)
-                FUN_006aac70((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2));
+                Library::DKW::LIB::FUN_006aac70
+                          ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2));
     iStack_c = 0;
     if (0 < (int)sVar2 / 2) {
       do {

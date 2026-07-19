@@ -1,5 +1,9 @@
 
-int FUN_004c6a00(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Artem\TLO_BldMark.cpp
+   TLOBldMark::GetMessage */
+
+int __thiscall TLOBldMark::GetMessage(TLOBldMark *this,int param_1)
 
 {
   code *pcVar1;
@@ -8,11 +12,12 @@ int FUN_004c6a00(int param_1)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
-  int local_8;
+  TLOBldMark *local_8;
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar4;
     iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0xb6,0,iVar2,
@@ -27,16 +32,16 @@ int FUN_004c6a00(int param_1)
   }
   iVar2 = *(int *)(param_1 + 0x10);
   if (iVar2 == 0) {
-    thunk_FUN_004c61e0(local_8);
+    thunk_FUN_004c61e0((int)local_8);
   }
   else {
     if (iVar2 == 2) {
-      thunk_FUN_004c60e0();
+      Create(local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     }
     if (iVar2 == 3) {
-      thunk_FUN_004c61a0(local_8);
+      thunk_FUN_004c61a0((int)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     }

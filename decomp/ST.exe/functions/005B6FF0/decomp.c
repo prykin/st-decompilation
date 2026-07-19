@@ -19,7 +19,7 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 0xd;
@@ -34,8 +34,9 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
     } while (iVar3 != 0);
     *(undefined4 *)(pMVar2 + 0x1cff) = 0;
     if (*(uint *)(pMVar2 + 0x1cfb) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(pMVar2 + 0x1d3f),*(uint *)(pMVar2 + 0x1cfb),*(uint *)(pMVar2 + 0x1cff)
-                   ,*(uint *)(pMVar2 + 0x1d13),*(uint *)(pMVar2 + 0x1d17));
+      Library::DKW::DDX::FUN_006b3730
+                (*(uint **)(pMVar2 + 0x1d3f),*(uint *)(pMVar2 + 0x1cfb),*(uint *)(pMVar2 + 0x1cff),
+                 *(uint *)(pMVar2 + 0x1d13),*(uint *)(pMVar2 + 0x1d17));
     }
     if (*(uint *)(pMVar2 + 0x1cfb) != 0xffffffff) {
       FUN_006b3af0(*(int **)(pMVar2 + 0x1d3f),*(uint *)(pMVar2 + 0x1cfb));
@@ -49,8 +50,9 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
       do {
         *(uint *)(pMVar5 + 4) = 0;
         if (*(uint *)pMVar5 != 0xffffffff) {
-          FUN_006b3730(*(uint **)(pMVar5 + 0x44),*(uint *)pMVar5,*(uint *)(pMVar5 + 4),
-                       *(uint *)(pMVar5 + 0x18),*(uint *)(pMVar5 + 0x1c));
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(pMVar5 + 0x44),*(uint *)pMVar5,*(uint *)(pMVar5 + 4),
+                     *(uint *)(pMVar5 + 0x18),*(uint *)(pMVar5 + 0x1c));
         }
         if (*(uint *)pMVar5 != 0xffffffff) {
           FUN_006b3af0(*(int **)(pMVar5 + 0x44),*(uint *)pMVar5);

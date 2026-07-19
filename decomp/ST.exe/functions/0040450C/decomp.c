@@ -1,5 +1,5 @@
 
-void __cdecl thunk_FUN_006a49c0(undefined4 *param_1,int param_2)
+void __cdecl Library::MSVCRT::thunk_FUN_006a49c0(undefined4 *param_1,int param_2)
 
 {
   code *pcVar1;

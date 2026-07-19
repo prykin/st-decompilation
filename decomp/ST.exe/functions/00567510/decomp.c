@@ -54,7 +54,7 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
     *(int *)((int)this + 0x10ed) = param_2 - iVar4 * param_1;
     local_b0.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_b0;
-    iVar4 = __setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pvVar3 = local_20;
     if (iVar4 != 0) {
       g_currentExceptionFrame = local_b0.previous;
@@ -125,7 +125,7 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
           }
           iVar8 = uVar7 + uVar6;
         }
-        FUN_006c1ce0(local_8,iVar8);
+        Library::DKW::SND::FUN_006c1ce0(local_8,iVar8);
         iVar4 = *(int *)((int)pvVar3 + 0x10e9) * local_24 + *(int *)((int)pvVar3 + 0x10ed);
         uVar6 = iVar4 - local_1c >> 0x1f;
         iVar11 = (int)(((iVar4 - local_1c ^ uVar6) - uVar6) * 7) / 10;
@@ -159,7 +159,7 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
           }
           iVar4 = (bVar1 - 1 & 2) - 1;
         }
-        FUN_006c1d80(iVar5,iVar4 * iVar11);
+        Library::DKW::SND::FUN_006c1d80(iVar5,iVar4 * iVar11);
         iVar4 = iVar5;
       }
       local_8 = iVar4 + 1;
@@ -177,7 +177,7 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
   *(int *)((int)this + 0x10dd) = param_2;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pvVar3 = local_20;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -211,8 +211,9 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
   default:
     goto switchD_005675bc_default;
   }
-  FUN_006c2160((float)*(int *)((int)local_20 + 0x10d9),(float)*(int *)((int)local_20 + 0x10dd),fVar2
-               ,uVar14,uVar15,0,0,0,0x3f800000);
+  Library::DKW::SND::FUN_006c2160
+            ((float)*(int *)((int)local_20 + 0x10d9),(float)*(int *)((int)local_20 + 0x10dd),fVar2,
+             uVar14,uVar15,0,0,0,0x3f800000);
 switchD_005675bc_default:
   if (*(int *)((int)pvVar3 + 0x10e1) != param_4) {
     *(int *)((int)pvVar3 + 0x10e1) = param_4;
@@ -223,15 +224,15 @@ switchD_005675bc_default:
       if (local_18 == 1) {
         if (((3 < iVar4) && (iVar4 < 0xb)) || ((0x11 < iVar4 && (iVar4 < 0x15)))) {
           iVar5 = *(int *)((int)pvVar3 + 0x10e1) * 0x10;
-          FUN_006c2220(iVar4,(float)*piVar12,(float)piVar12[1],0,
-                       (float)*(int *)(&DAT_007c9790 + iVar5),(float)*(int *)(&DAT_007c9788 + iVar5)
-                      );
+          Library::DKW::SND::FUN_006c2220
+                    (iVar4,(float)*piVar12,(float)piVar12[1],0,
+                     (float)*(int *)(&DAT_007c9790 + iVar5),(float)*(int *)(&DAT_007c9788 + iVar5));
         }
         if ((10 < iVar4) && (iVar4 < 0x12)) {
           iVar5 = *(int *)((int)pvVar3 + 0x10e1) * 0x10;
-          FUN_006c2220(iVar4,(float)*piVar12,(float)piVar12[1],0,
-                       (float)*(int *)(&DAT_007c9790 + iVar5),(float)*(int *)(&DAT_007c978c + iVar5)
-                      );
+          Library::DKW::SND::FUN_006c2220
+                    (iVar4,(float)*piVar12,(float)piVar12[1],0,
+                     (float)*(int *)(&DAT_007c9790 + iVar5),(float)*(int *)(&DAT_007c978c + iVar5));
         }
       }
       iVar4 = iVar4 + 1;

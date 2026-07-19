@@ -23,7 +23,7 @@ int __fastcall FUN_006971b0(int param_1)
   local_8 = 0;
   uVar2 = *(uint *)(param_1 + 0x583b);
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   if ((*(int *)(param_1 + 0x5853) != 0) && (&stack0x00000000 != (undefined1 *)0x50)) {
     puVar7 = (undefined4 *)&stack0xffffffb0;

@@ -22,7 +22,7 @@ void FUN_0069f660(undefined4 param_1,int param_2,int param_3,int param_4,int par
   iVar1 = (param_5 - param_3 ^ uVar7) - uVar7;
   iVar8 = ((param_4 <= param_2) - 1 & 2) - 1;
   iVar4 = ((param_5 <= param_3) - 1 & 2) - 1;
-  puVar2 = (undefined2 *)FUN_006aac70((iVar1 + iVar11) * 4 + 8);
+  puVar2 = (undefined2 *)Library::DKW::LIB::FUN_006aac70((iVar1 + iVar11) * 4 + 8);
   if (puVar2 == (undefined2 *)0x0) {
     return;
   }

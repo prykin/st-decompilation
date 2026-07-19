@@ -1,7 +1,12 @@
 
-undefined4 __cdecl
-FUN_00590010(int param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,
-            undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Igor\To_shark.cpp
+   STSharkC::CreateShark */
+
+undefined4 __thiscall
+STSharkC::CreateShark
+          (STSharkC *this,int param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,
+          undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
 
 {
   code *pcVar1;

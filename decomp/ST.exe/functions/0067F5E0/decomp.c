@@ -18,7 +18,7 @@ uint __cdecl FUN_0067f5e0(byte *param_1)
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  uVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if (-1 < (int)uVar3) {
@@ -62,9 +62,9 @@ LAB_0067f665:
   uVar3 = 0xffffffff;
 LAB_0067f671:
   if ((int)uVar3 < 0) {
-    uVar3 = FUN_006b5aa0(DAT_00848a2c,(char *)param_1);
+    uVar3 = Library::DKW::TBL::FUN_006b5aa0(DAT_00848a2c,(char *)param_1);
     local_8 = 0;
-    uVar6 = FUN_006ae1c0(DAT_00848a28,&local_8);
+    uVar6 = Library::DKW::TBL::FUN_006ae1c0(DAT_00848a28,&local_8);
     if (uVar6 != uVar3) {
       RaiseInternalException(-5,DAT_007ed77c,s___ai_ai_script_v_inl_007d55d8,0x126);
     }

@@ -30,7 +30,7 @@ thunk_FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int par
   uStack_98 = (undefined2)uVar2;
   iVar3 = *(int *)((int)this + 4) + 1;
   *(int *)((int)this + 4) = iVar3;
-  iVar3 = FUN_006acf50(*(undefined4 **)this,iVar3 * 0x92 + 0xaa);
+  iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)this,iVar3 * 0x92 + 0xaa);
   *(int *)this = iVar3;
   puVar5 = &uStack_9c;
   puVar7 = (undefined4 *)(iVar3 + -0x7a + *(int *)((int)this + 4) * 0x92);

@@ -34,7 +34,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   if (iVar5 != 0) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar3 = local_c;
     uVar2 = local_10;
     if (iVar5 == 0) {
@@ -58,16 +58,17 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
                        *(int *)(local_c + 0x20));
         }
         else {
-          FUN_006b3640((int *)DAT_008075a8,*(uint *)(local_c + 0x1c),*(uint *)(local_c + 0x20),
-                       *(int *)(local_c + 0xb9) + *(int *)(local_c + 0x34),
-                       *(int *)(local_c + 0xbd) + *(int *)(local_c + 0x38));
+          Library::DKW::DDX::FUN_006b3640
+                    ((int *)DAT_008075a8,*(uint *)(local_c + 0x1c),*(uint *)(local_c + 0x20),
+                     *(int *)(local_c + 0xb9) + *(int *)(local_c + 0x34),
+                     *(int *)(local_c + 0xbd) + *(int *)(local_c + 0x38));
         }
       }
       this_00 = *(SpriteClassTy **)(pCVar3 + 0x4eb);
       if ((this_00 != (SpriteClassTy *)0x0) && (DAT_00807598 != (void *)0x0)) {
         if (*(int *)(this_00 + 0xc) + -1 <= *(int *)(this_00 + 8)) {
           SpriteClassTy::CloseSprite(this_00);
-          FUN_0072e2b0(*(undefined4 **)(pCVar3 + 0x4eb));
+          Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pCVar3 + 0x4eb));
           *(undefined4 *)(pCVar3 + 0x4eb) = 0;
           g_currentExceptionFrame = local_54.previous;
           return;
@@ -85,8 +86,9 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
                *(int *)(*(int *)(pCVar3 + 0x4eb) + 0x20) -
                *(int *)(*(int *)(pCVar3 + 0x4e7) + 0xd) / 2;
           iVar5 = *(int *)(pCVar3 + 0x4eb);
-          FUN_006b3730(DAT_008075a8,*(uint *)(iVar5 + 4),*(uint *)(iVar5 + 8),
-                       *(uint *)(iVar5 + 0x1c),*(uint *)(iVar5 + 0x20));
+          Library::DKW::DDX::FUN_006b3730
+                    (DAT_008075a8,*(uint *)(iVar5 + 4),*(uint *)(iVar5 + 8),*(uint *)(iVar5 + 0x1c),
+                     *(uint *)(iVar5 + 0x20));
         }
       }
       g_currentExceptionFrame = local_54.previous;

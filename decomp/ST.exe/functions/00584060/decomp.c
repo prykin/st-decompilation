@@ -19,10 +19,11 @@ undefined4 __thiscall FUN_00584060(void *this,int *param_1,int *param_2,int *par
   short local_6;
   
   if (*(int *)((int)this + 0x23d) != 0) {
-    this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)this >> 8),
-                                                 *(undefined1 *)((int)this + 0x241)),
-                                        CONCAT22((short)((uint)*(int *)((int)this + 0x23d) >> 0x10),
-                                                 *(undefined2 *)((int)this + 0x245)),1);
+    this_00 = (int *)STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,
+                                CONCAT31((int3)((uint)this >> 8),*(undefined1 *)((int)this + 0x241))
+                                ,CONCAT22((short)((uint)*(int *)((int)this + 0x23d) >> 0x10),
+                                          *(undefined2 *)((int)this + 0x245)),1);
     if ((this_00 != (int *)0x0) && (iVar2 = (**(code **)(*this_00 + 0xf8))(), iVar2 != 0)) {
       thunk_FUN_004162f0(this_00,&local_6,&local_8,&local_a);
       *param_1 = (int)local_6;

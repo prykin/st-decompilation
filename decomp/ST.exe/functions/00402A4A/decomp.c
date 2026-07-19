@@ -58,7 +58,7 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
   }
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = pSStack_8;
   if (iVar5 == 0) {
     aiStack_8c4[0] = 0;
@@ -118,18 +118,21 @@ void __thiscall StartSystemTy::CreateBinDesc(StartSystemTy *this)
     auStack_688[3] = uVar1;
     iStack_4b8 = iStack_88c;
     (**(code **)(*(int *)pSVar3 + 8))(8,pSVar3 + 0x389,0,aiStack_8c4,0);
-    FUN_006b3430(DAT_008075a8,*(uint *)(pSVar3 + 0x540));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pSVar3 + 0x540));
     if (*(uint *)(pSVar3 + 0x391) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(pSVar3 + 0x3d5),*(uint *)(pSVar3 + 0x391),0xfffffffe,
-                   *(uint *)(pSVar3 + 0x3a9),*(uint *)(pSVar3 + 0x3ad));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(pSVar3 + 0x3d5),*(uint *)(pSVar3 + 0x391),0xfffffffe,
+                 *(uint *)(pSVar3 + 0x3a9),*(uint *)(pSVar3 + 0x3ad));
     }
     if (*(uint *)(pSVar3 + 0x422) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(pSVar3 + 0x466),*(uint *)(pSVar3 + 0x422),0xfffffffe,
-                   *(uint *)(pSVar3 + 0x43a),*(uint *)(pSVar3 + 0x43e));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(pSVar3 + 0x466),*(uint *)(pSVar3 + 0x422),0xfffffffe,
+                 *(uint *)(pSVar3 + 0x43a),*(uint *)(pSVar3 + 0x43e));
     }
     if (*(uint *)(pSVar3 + 0x4b3) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(pSVar3 + 0x4f7),*(uint *)(pSVar3 + 0x4b3),0xfffffffe,
-                   *(uint *)(pSVar3 + 0x4cb),*(uint *)(pSVar3 + 0x4cf));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(pSVar3 + 0x4f7),*(uint *)(pSVar3 + 0x4b3),0xfffffffe,
+                 *(uint *)(pSVar3 + 0x4cb),*(uint *)(pSVar3 + 0x4cf));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

@@ -102,8 +102,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       *(undefined1 *)puVar10 = 0;
       puVar10 = (undefined4 *)((int)puVar10 + 1);
     }
-    _strncpy(*(char **)((int)this + 0x88),*(char **)((int)this + 0x58),*(size_t *)((int)this + 0xc))
-    ;
+    Library::MSVCRT::_strncpy
+              (*(char **)((int)this + 0x88),*(char **)((int)this + 0x58),
+               *(size_t *)((int)this + 0xc));
     uVar6 = 0xffffffff;
     pcVar3 = &DAT_007c8ff4;
     do {
@@ -112,8 +113,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       cVar1 = *pcVar3;
       pcVar3 = pcVar3 + 1;
     } while (cVar1 != '\0');
-    iVar8 = _strncmp((char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),&DAT_007c8ff4,
-                     ~uVar6 - 1);
+    iVar8 = Library::MSVCRT::_strncmp
+                      ((char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),
+                       &DAT_007c8ff4,~uVar6 - 1);
     if (iVar8 == 0) {
       *(undefined4 *)((int)this + 0x7c) = *(undefined4 *)((int)this + 0xc);
     }
@@ -153,7 +155,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
           pcVar12 = pcVar12 + 1;
         }
       }
-      pcVar3 = __itoa(*(int *)((int)this + 0x98),local_24,0x10);
+      pcVar3 = Library::MSVCRT::__itoa(*(int *)((int)this + 0x98),local_24,0x10);
       uVar6 = 0xffffffff;
       do {
         pcVar12 = pcVar3;
@@ -186,18 +188,20 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         pcVar3 = pcVar3 + 1;
         pcVar12 = pcVar12 + 1;
       }
-      _strncat(*(char **)((int)this + 0x88),
-               (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
-      if (bVar2) {
-        _strncat(*(char **)((int)this + 0x88),
+      Library::MSVCRT::_strncat
+                (*(char **)((int)this + 0x88),
                  (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
+      if (bVar2) {
+        Library::MSVCRT::_strncat
+                  (*(char **)((int)this + 0x88),
+                   (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
       }
     }
     iVar8 = -1;
     iVar9 = -1;
     switch(*(undefined4 *)((int)this + 0x74)) {
     case 0xfffffffc:
-      puVar4 = FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
       if (puVar4 != (uint *)0x0) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -211,7 +215,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       iVar9 = *(int *)((int)this + 100);
       break;
     case 0xfffffffd:
-      puVar4 = FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
       if (puVar4 != (uint *)0x0) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -223,7 +227,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
       break;
     case 0xfffffffe:
-      puVar4 = FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
       if (puVar4 != (uint *)0x0) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -298,8 +302,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
             *(undefined1 *)puVar10 = 0;
             puVar10 = (undefined4 *)((int)puVar10 + 1);
           }
-          _strncpy(*(char **)((int)this + 0x88),*(char **)((int)this + 0x90),
-                   *(int *)((int)this + 0xc) - *(int *)((int)this + 0x84));
+          Library::MSVCRT::_strncpy
+                    (*(char **)((int)this + 0x88),*(char **)((int)this + 0x90),
+                     *(int *)((int)this + 0xc) - *(int *)((int)this + 0x84));
           FUN_006b4170(local_c,local_10,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
                        (char)*(undefined4 *)((int)this + 0xa0));
           if ((*(int *)((int)this + 0x74) == -4) || (*(int *)((int)this + 0x74) == -7)) {
@@ -355,7 +360,8 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       iVar8 = *(int *)((int)this + 0x80);
       pcVar3 = *(char **)((int)this + 0x8c);
     }
-    _strncpy(*(char **)((int)this + 0x88),pcVar3,*(int *)((int)this + 0xc) - iVar8);
+    Library::MSVCRT::_strncpy(*(char **)((int)this + 0x88),pcVar3,*(int *)((int)this + 0xc) - iVar8)
+    ;
     uVar6 = 0xffffffff;
     pcVar3 = &DAT_007c8ff4;
     do {
@@ -364,8 +370,9 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       cVar1 = *pcVar3;
       pcVar3 = pcVar3 + 1;
     } while (cVar1 != '\0');
-    iVar8 = _strncmp((char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),&DAT_007c8ff4,
-                     ~uVar6 - 1);
+    iVar8 = Library::MSVCRT::_strncmp
+                      ((char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),
+                       &DAT_007c8ff4,~uVar6 - 1);
     if (iVar8 == 0) {
       *(undefined4 *)((int)this + 0x7c) = *(undefined4 *)((int)this + 0xc);
     }
@@ -405,7 +412,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
           pcVar12 = pcVar12 + 1;
         }
       }
-      pcVar3 = __itoa(*(int *)((int)this + 0x98),local_24,0x10);
+      pcVar3 = Library::MSVCRT::__itoa(*(int *)((int)this + 0x98),local_24,0x10);
       uVar6 = 0xffffffff;
       do {
         pcVar12 = pcVar3;
@@ -438,11 +445,13 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         pcVar3 = pcVar3 + 1;
         pcVar12 = pcVar12 + 1;
       }
-      _strncat(*(char **)((int)this + 0x88),
-               (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
-      if (local_14 != 0) {
-        _strncat(*(char **)((int)this + 0x88),
+      Library::MSVCRT::_strncat
+                (*(char **)((int)this + 0x88),
                  (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
+      if (local_14 != 0) {
+        Library::MSVCRT::_strncat
+                  (*(char **)((int)this + 0x88),
+                   (char *)(*(int *)((int)this + 0x58) + *(int *)((int)this + 0xc)),1);
       }
     }
     iVar8 = -1;
@@ -456,7 +465,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       local_18 = 1;
       break;
     case 0xfffffffc:
-      puVar4 = FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
       if (puVar4 != (uint *)0x0) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -469,7 +478,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       local_14 = *(int *)((int)this + 100);
       break;
     case 0xfffffffd:
-      puVar4 = FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
       if (puVar4 != (uint *)0x0) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;
@@ -481,7 +490,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
       }
       break;
     case 0xfffffffe:
-      puVar4 = FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
+      puVar4 = Library::MSVCRT::FUN_00730590(*(uint **)((int)this + 0x8c),&DAT_007c8ff4);
       if (puVar4 != (uint *)0x0) {
         local_5 = (undefined1)*puVar4;
         *(undefined1 *)puVar4 = 0;

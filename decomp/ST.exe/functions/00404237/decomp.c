@@ -20,7 +20,7 @@ void thunk_FUN_00682850(void)
     pcVar6[3] = '\0';
     pcVar6 = pcVar6 + 4;
   }
-  _strncpy(acStack_8c,DAT_00857528,0x7f);
+  Library::MSVCRT::_strncpy(acStack_8c,DAT_00857528,0x7f);
   pfVar3 = (float *)thunk_FUN_006686f0(iVar2);
   pfVar5 = (float *)0x0;
   thunk_FUN_006827a0();

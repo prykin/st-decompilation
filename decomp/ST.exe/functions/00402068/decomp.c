@@ -27,7 +27,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
     IStack_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_54;
     pSStack_c = this;
-    iVar5 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar4 = pSStack_c;
     if (iVar5 == 0) {
       iVar5 = *(int *)(pSStack_c + 0x1f84);

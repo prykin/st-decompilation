@@ -33,7 +33,7 @@ thunk_FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 
   
   IStack_b4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_b4;
-  iVar2 = __setjmp3(IStack_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_b4.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0xe7,0,iVar2,&DAT_007a4ccc,
@@ -76,9 +76,9 @@ thunk_FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 
   FUN_006e3db0((int)aiStack_70);
   if (param_1 != 0) {
     if (DAT_008026f0 == (uint *)0x0) {
-      DAT_008026f0 = FUN_006ae290((uint *)0x0,10,0x4c,10);
+      DAT_008026f0 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x4c,10);
     }
-    FUN_006ae1c0(DAT_008026f0,auStack_50);
+    Library::DKW::TBL::FUN_006ae1c0(DAT_008026f0,auStack_50);
     g_currentExceptionFrame = IStack_b4.previous;
     return;
   }

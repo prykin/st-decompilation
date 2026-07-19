@@ -37,7 +37,7 @@ undefined4 * __thiscall FUN_00617fb0(void *this,int *param_1)
     iVar1 = *(int *)(iVar1 + 0xc) * *(int *)(iVar1 + 8) + 0x1c;
   }
   iVar5 = iVar1 + iVar3 + 0x5e + iVar5;
-  puVar2 = (undefined4 *)FUN_006aac70(iVar5);
+  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar5);
   puVar7 = (undefined4 *)((int)this + 0x1c);
   puVar9 = puVar2;
   for (iVar3 = 0x14; iVar3 != 0; iVar3 = iVar3 + -1) {

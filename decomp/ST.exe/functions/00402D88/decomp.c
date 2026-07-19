@@ -58,21 +58,21 @@ void __thiscall thunk_FUN_00694cd0(void *this,int param_1)
                                (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4);
         }
         else if (cVar1 == '\x01') {
-          uVar6 = FUN_0072e6c0();
+          uVar6 = Library::MSVCRT::FUN_0072e6c0();
           puVar7[8] = (((int)uVar6 % 0x1a + 0x32) *
                       *(int *)(&DAT_007d59e0 +
                               ((uint)*(byte *)((int)this + 0x249) +
                               (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 100;
         }
         else if (cVar1 == '\x02') {
-          uVar6 = FUN_0072e6c0();
+          uVar6 = Library::MSVCRT::FUN_0072e6c0();
           puVar7[8] = (((int)uVar6 % 0x15 + 0x1e) *
                       *(int *)(&DAT_007d59e0 +
                               ((uint)*(byte *)((int)this + 0x249) +
                               (*(int *)(psVar8 + 5) + -0xdd) * 3) * 4)) / 100;
         }
         else {
-          uVar6 = FUN_0072e6c0();
+          uVar6 = Library::MSVCRT::FUN_0072e6c0();
           puVar7[8] = (((int)uVar6 % 0x18 + 0xf) *
                       *(int *)(&DAT_007d59e0 +
                               ((uint)*(byte *)((int)this + 0x249) +

@@ -20,7 +20,7 @@ undefined4 __cdecl thunk_FUN_00680890(byte param_1,byte *param_2,uint param_3,un
   }
   puVar7 = &uStack_8;
   cVar1 = thunk_FUN_00680570();
-  FUN_006f13f0(param_1,pcVar3,param_2,param_3,param_4,cVar1,puVar7);
+  cMf32::RecPut(DAT_008489d0,param_1,pcVar3,param_2,param_3,param_4,cVar1,puVar7);
   DAT_00848a0c = DAT_00848a0c + uStack_8;
   DAT_00848a10 = DAT_00848a10 + 1;
   uVar8 = uStack_8;

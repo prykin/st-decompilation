@@ -27,7 +27,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
   pCStack_10 = this;
-  iVar4 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar3 = pCStack_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_64.previous;
@@ -66,7 +66,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
     pCVar11 = pCVar11 + 1;
   }
   puStack_8 = (undefined4 *)0x0;
-  FUN_006f1ce0(0xc,s_TEXTURE_DSCR_007cd130,(int *)&puStack_8,1);
+  cMf32::RecGet(*(cMf32 **)(pCStack_10 + 0x234),0xc,s_TEXTURE_DSCR_007cd130,(int *)&puStack_8,1);
   thunk_FUN_00693710(*puStack_8);
   cMf32::RecMemFree(*(cMf32 **)(pCVar3 + 0x234),(uint *)&puStack_8);
   puVar5 = FUN_006f0ec0(0x345,(byte *)(pCVar3 + 0x20),1,0,0);

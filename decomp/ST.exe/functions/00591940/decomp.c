@@ -27,7 +27,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0xb5,0,iVar3,&DAT_007a4ccc,
@@ -85,12 +85,14 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
       pCVar7 = pCVar2 + 0xff;
       do {
         if (*(uint *)(pCVar7 + -0x18) != 0xffffffff) {
-          FUN_006b3730(*(uint **)(pCVar7 + 0x2c),*(uint *)(pCVar7 + -0x18),*(uint *)(pCVar7 + -0x14)
-                       ,*(uint *)pCVar7,*(uint *)(pCVar7 + 4));
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(pCVar7 + 0x2c),*(uint *)(pCVar7 + -0x18),*(uint *)(pCVar7 + -0x14),
+                     *(uint *)pCVar7,*(uint *)(pCVar7 + 4));
         }
         if ((pCVar2[0x65] == (CampaignTy)0x1) && (*(uint *)(pCVar7 + 0x79) != 0xffffffff)) {
-          FUN_006b3730(*(uint **)(pCVar7 + 0xbd),*(uint *)(pCVar7 + 0x79),*(uint *)(pCVar7 + 0x7d),
-                       *(uint *)(pCVar7 + 0x91),*(uint *)(pCVar7 + 0x95));
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(pCVar7 + 0xbd),*(uint *)(pCVar7 + 0x79),*(uint *)(pCVar7 + 0x7d),
+                     *(uint *)(pCVar7 + 0x91),*(uint *)(pCVar7 + 0x95));
         }
         iVar3 = iVar3 + 1;
         pCVar7 = pCVar7 + 0x1fb;

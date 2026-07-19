@@ -15,7 +15,7 @@ void __cdecl thunk_FUN_00648c10(int param_1,uint param_2)
   iStack_c = 0;
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
-  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((((DAT_00802a38 == (void *)0x0) || (param_1 == 0)) || (7 < param_2)) ||
        (7 < (byte)(&DAT_008087e9)[param_2 * 0x51])) {

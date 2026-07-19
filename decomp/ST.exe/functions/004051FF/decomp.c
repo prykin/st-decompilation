@@ -31,7 +31,7 @@ bool __thiscall thunk_FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,in
   if (*(int *)(psVar1 + 0x27) != 0) {
     FUN_006ab060((undefined4 *)(psVar1 + 0x27));
   }
-  iVar3 = FUN_006aac70(600);
+  iVar3 = Library::DKW::LIB::FUN_006aac70(600);
   *(int *)(psVar1 + 0x27) = iVar3;
   psVar1[0x23] = 0;
   psVar1[0x24] = 0;

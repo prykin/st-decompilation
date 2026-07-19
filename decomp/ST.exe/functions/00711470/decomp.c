@@ -17,7 +17,7 @@ int FUN_00711470(uint *param_1)
     if (cVar1 == '\0') {
       return iVar4;
     }
-    puVar3 = FUN_00730590(param_1,&DAT_007c8ff4);
+    puVar3 = Library::MSVCRT::FUN_00730590(param_1,&DAT_007c8ff4);
     iVar5 = iVar4 + 1;
     iVar4 = iVar4 + 1;
     if (puVar3 == (uint *)0x0) break;

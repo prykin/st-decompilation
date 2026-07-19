@@ -13,7 +13,7 @@ undefined4 * __cdecl FUN_0070c900(int param_1,uint *param_2,char param_3,int par
   
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar1 = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  iVar1 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   if (iVar1 == 0) {
     if (param_4 < 0) {
       puVar4 = &local_8;

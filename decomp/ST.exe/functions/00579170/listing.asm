@@ -1,4 +1,4 @@
-FUN_00579170:
+STCrabC::Bad:
 00579170  53                        PUSH EBX
 00579171  56                        PUSH ESI
 00579172  0F BF 35 40 B2 7F 00      MOVSX ESI,word ptr [0x007fb240]

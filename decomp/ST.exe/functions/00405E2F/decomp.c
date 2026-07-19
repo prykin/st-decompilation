@@ -11,7 +11,7 @@ void __cdecl thunk_FUN_005252c0(int param_1)
   iStack_8 = 0;
   if (param_1 != -1) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-    iVar1 = __setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar2,in_stack_ffffffb8);
+    iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar2,in_stack_ffffffb8);
     if (iVar1 == 0) {
       switch(param_1) {
       case 0xaf:

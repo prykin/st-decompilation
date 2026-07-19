@@ -46,11 +46,11 @@ void thunk_FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int pa
     FUN_00414980(4000);
   }
   uStack_8 = 0;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   iVar7 = DAT_007f4d34 * DAT_007f4d30 * DAT_007f4d2c + 7;
   uVar15 = (int)(iVar7 + (iVar7 >> 0x1f & 7U)) >> 3;
   DAT_007f4d3c = &stack0xffffff84;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puVar16 = (undefined4 *)&stack0xffffff84;
   for (uVar13 = uVar15 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
     *puVar16 = 0;
@@ -110,7 +110,8 @@ void thunk_FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int pa
       } while ((int)uStack_28 < (int)DAT_007f4d4c);
     }
   }
-  DAT_007f4d04 = (int *)FUN_006aac70((uint)*(ushort *)((int)param_1 + 0x27) * 0x1c);
+  DAT_007f4d04 = (int *)Library::DKW::LIB::FUN_006aac70
+                                  ((uint)*(ushort *)((int)param_1 + 0x27) * 0x1c);
   DAT_007f4d40 = 0;
   DAT_007f4cf8 = 0;
   iStack_30 = 0;
@@ -298,7 +299,7 @@ void thunk_FUN_00413af0(void *param_1,int param_2,int param_3,int param_4,int pa
       *(undefined4 *)((int)param_1 + 0x55) = 0;
     }
   }
-  DAT_007f4d28 = FUN_006db640(*(int *)((int)param_1 + 0x55));
+  DAT_007f4d28 = Library::DKW::STR::FUN_006db640(*(int *)((int)param_1 + 0x55));
   DAT_007f4d38 = FUN_006db6d0(*(int *)((int)param_1 + 0x55));
   iVar7 = *(int *)((int)param_1 + 0x4d);
   switch(iVar7) {

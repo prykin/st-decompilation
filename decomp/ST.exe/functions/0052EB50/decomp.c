@@ -48,7 +48,7 @@ OptPanelTy::CreateSlider
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pOVar2 = local_10;
   if (iVar3 == 0) {
     puVar6 = local_42c;
@@ -74,7 +74,7 @@ OptPanelTy::CreateSlider
     local_42c[2] = local_42c[0];
     pCVar4 = thunk_FUN_00571240(s_BUT_MINUS_007c718c,0);
     pCVar4 = FUN_006f2c00(pCVar4,iVar3,uVar8);
-    local_c = FUN_006f1ce0(1,pCVar4,piVar9,iVar10);
+    local_c = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar9,iVar10);
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);

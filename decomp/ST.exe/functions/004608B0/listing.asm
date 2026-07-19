@@ -1,4 +1,4 @@
-FUN_004608b0:
+STBoatC::Defence:
 004608B0  55                        PUSH EBP
 004608B1  8B EC                     MOV EBP,ESP
 004608B3  83 EC 60                  SUB ESP,0x60

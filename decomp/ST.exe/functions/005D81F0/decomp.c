@@ -24,7 +24,7 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
   *(DWORD *)(this + 0x61) = DVar2;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -57,9 +57,10 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     if (*(int *)(this_00 + 0x1a68) < *(int *)(this_00 + 0x1a6c) + -1) {
       *(int *)(this_00 + 0x1a68) = *(int *)(this_00 + 0x1a68) + 1;
       if (*(uint *)(this_00 + 0x1a64) != 0xffffffff) {
-        FUN_006b3730(*(uint **)(this_00 + 0x1aa8),*(uint *)(this_00 + 0x1a64),
-                     *(uint *)(this_00 + 0x1a68),*(uint *)(this_00 + 0x1a7c),
-                     *(uint *)(this_00 + 0x1a80));
+        Library::DKW::DDX::FUN_006b3730
+                  (*(uint **)(this_00 + 0x1aa8),*(uint *)(this_00 + 0x1a64),
+                   *(uint *)(this_00 + 0x1a68),*(uint *)(this_00 + 0x1a7c),
+                   *(uint *)(this_00 + 0x1a80));
       }
       local_8 = 0;
     }
@@ -72,9 +73,10 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     if (0 < *(int *)(this_00 + 0x1a68)) {
       *(int *)(this_00 + 0x1a68) = *(int *)(this_00 + 0x1a68) + -1;
       if (*(uint *)(this_00 + 0x1a64) != 0xffffffff) {
-        FUN_006b3730(*(uint **)(this_00 + 0x1aa8),*(uint *)(this_00 + 0x1a64),
-                     *(uint *)(this_00 + 0x1a68),*(uint *)(this_00 + 0x1a7c),
-                     *(uint *)(this_00 + 0x1a80));
+        Library::DKW::DDX::FUN_006b3730
+                  (*(uint **)(this_00 + 0x1aa8),*(uint *)(this_00 + 0x1a64),
+                   *(uint *)(this_00 + 0x1a68),*(uint *)(this_00 + 0x1a7c),
+                   *(uint *)(this_00 + 0x1a80));
       }
       local_8 = 0;
     }

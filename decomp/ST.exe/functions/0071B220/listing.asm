@@ -1,4 +1,4 @@
-FUN_0071b220:
+InputClassTy::Create:
 0071B220  55                        PUSH EBP
 0071B221  8B EC                     MOV EBP,ESP
 0071B223  81 EC 84 00 00 00         SUB ESP,0x84

@@ -11,7 +11,7 @@ void FUN_0042a860(void)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar1 = __setjmp3(local_48.jumpBuffer,0,unaff_ESI,in_stack_fffffbb8);
+  iVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_ESI,in_stack_fffffbb8);
   if (iVar1 == 0) {
     puVar2 = &stack0xfffffbb9;
     iVar1 = 0x100;

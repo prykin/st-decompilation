@@ -33,8 +33,8 @@ void FUN_00706e30(undefined1 *param_1,int param_2,ushort *param_3,int param_4,ui
     param_16 = 0x1f;
     piVar11 = local_80;
     do {
-      uVar2 = FUN_0072e6c0();
-      uVar3 = FUN_0072e6c0();
+      uVar2 = Library::MSVCRT::FUN_0072e6c0();
+      uVar3 = Library::MSVCRT::FUN_0072e6c0();
       param_16 = param_16 - 1;
       *piVar11 = ((int)uVar3 % param_15) * param_2 + (int)uVar2 % param_15;
       piVar11 = piVar11 + 1;

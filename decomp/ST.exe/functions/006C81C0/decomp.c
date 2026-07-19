@@ -12,7 +12,7 @@ int * FUN_006c81c0(int param_1,int param_2,int param_3,int param_4,int param_5)
   if (param_5 < 1) {
     return (int *)0x0;
   }
-  piVar3 = (int *)FUN_006aac70(param_5 * 8);
+  piVar3 = (int *)Library::DKW::LIB::FUN_006aac70(param_5 * 8);
   if (piVar3 == (int *)0x0) {
     return (int *)0x0;
   }

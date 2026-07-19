@@ -66,7 +66,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar7 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar7 == 0) {
     pFVar1 = local_8 + 0x1e8e;
@@ -82,7 +82,7 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
     iVar7 = FUN_006b50c0(0x2c8 - *(int *)(this_00 + 0x1b4c),0x149,
                          (uint)*(ushort *)(*(int *)(this_00 + 0x5d) + 0xe),uVar4,puVar8,iVar7);
     *(int *)pFVar1 = iVar7;
-    ptVar5 = FUN_006c4880(DAT_0080759c,0x22,0x72,0x2e1,0x14c,8);
+    ptVar5 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x22,0x72,0x2e1,0x14c,8);
     iVar7 = *(int *)pFVar1;
     *(LPBITMAPINFO *)(this_00 + 0x1e92) = ptVar5;
     if ((iVar7 != 0) && (ptVar5 != (LPBITMAPINFO)0x0)) {
@@ -146,16 +146,19 @@ void __thiscall FSGSTy::LicCtrls(FSGSTy *this)
       *(undefined4 *)(this_00 + 0x2d) = 5;
       FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1b14),(undefined4 *)(this_00 + 0x1d));
       if (*(uint *)(this_00 + 0x1b2c) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(this_00 + 0x1b70),*(uint *)(this_00 + 0x1b2c),0xfffffffe,
-                     *(uint *)(this_00 + 0x1b44),*(uint *)(this_00 + 0x1b48));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(this_00 + 0x1b70),*(uint *)(this_00 + 0x1b2c),0xfffffffe,
+                   *(uint *)(this_00 + 0x1b44),*(uint *)(this_00 + 0x1b48));
       }
       if (*(uint *)(this_00 + 0x1bbd) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(this_00 + 0x1c01),*(uint *)(this_00 + 0x1bbd),0xfffffffe,
-                     *(uint *)(this_00 + 0x1bd5),*(uint *)(this_00 + 0x1bd9));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(this_00 + 0x1c01),*(uint *)(this_00 + 0x1bbd),0xfffffffe,
+                   *(uint *)(this_00 + 0x1bd5),*(uint *)(this_00 + 0x1bd9));
       }
       if (*(uint *)(this_00 + 0x1c4e) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(this_00 + 0x1c92),*(uint *)(this_00 + 0x1c4e),0xfffffffe,
-                     *(uint *)(this_00 + 0x1c66),*(uint *)(this_00 + 0x1c6a));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(this_00 + 0x1c92),*(uint *)(this_00 + 0x1c4e),0xfffffffe,
+                   *(uint *)(this_00 + 0x1c66),*(uint *)(this_00 + 0x1c6a));
       }
     }
     *(undefined4 *)(this_00 + 0x2d) = 0x61;

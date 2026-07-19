@@ -32,7 +32,7 @@ undefined4 * __cdecl thunk_FUN_00691190(undefined4 *param_1,uint *param_2)
   iStack_18 = 0;
   IStack_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_68;
-  iVar4 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     iVar4 = 8;
     piStack_24 = (int *)((int)param_1 + 0x85);
@@ -48,7 +48,7 @@ undefined4 * __cdecl thunk_FUN_00691190(undefined4 *param_1,uint *param_2)
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
     *param_2 = iStack_c + 0x10cU;
-    puVar5 = FUN_006aac10(iStack_c + 0x10cU);
+    puVar5 = Library::DKW::LIB::FUN_006aac10(iStack_c + 0x10cU);
     puVar8 = param_1;
     puVar10 = puVar5;
     for (iVar4 = 0x43; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -98,7 +98,8 @@ undefined4 * __cdecl thunk_FUN_00691190(undefined4 *param_1,uint *param_2)
           }
           if (puVar5 != (undefined4 *)0x0) {
             puStack_1c = thunk_FUN_006684e0(puVar5,&uStack_10);
-            puStack_8 = (undefined4 *)FUN_006acf50(puStack_8,puStack_8[5] + uStack_10);
+            puStack_8 = (undefined4 *)
+                        Library::DKW::LIB::FUN_006acf50(puStack_8,puStack_8[5] + uStack_10);
             puVar5 = puStack_1c;
             puVar8 = (undefined4 *)(iVar4 + 0x10b + (int)puStack_8);
             for (uVar7 = uStack_10 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {

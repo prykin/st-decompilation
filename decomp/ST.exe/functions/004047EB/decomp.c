@@ -52,9 +52,10 @@ thunk_FUN_0065e450(int param_1,undefined4 param_2,uint param_3,undefined4 param_
       else {
         puVar5 = (undefined2 *)0x0;
       }
-      this = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar5 >> 8),
-                                                 *(undefined1 *)(param_1 + 0x24)),
-                                        CONCAT22((short)((uint)uVar8 >> 0x10),*puVar5),1);
+      this = (void *)STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,
+                                CONCAT31((int3)((uint)puVar5 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                                CONCAT22((short)((uint)uVar8 >> 0x10),*puVar5),1);
       uVar8 = extraout_EDX_00;
       switch(uVar2) {
       case 0:

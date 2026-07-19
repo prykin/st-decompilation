@@ -22,7 +22,7 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,undefined4 param_2,int para
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_c;
   if (errorCode == 0) {
     if (param_1 != -1) {

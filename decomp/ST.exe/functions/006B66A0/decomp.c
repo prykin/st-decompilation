@@ -19,7 +19,7 @@ int FUN_006b66a0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undef
   uStack_18 = 0;
   iVar2 = (**(code **)(*piStack_1c + 0x58))();
   if (iVar2 == -0x7788ffe2) {
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     if (&stack0x00000000 == (undefined1 *)0x1c) {
       return -2;
     }

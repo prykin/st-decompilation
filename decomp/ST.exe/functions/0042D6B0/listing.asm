@@ -1,4 +1,4 @@
-FUN_0042d6b0:
+STAllPlayersC::RemoveActiveTV:
 0042D6B0  55                        PUSH EBP
 0042D6B1  8B EC                     MOV EBP,ESP
 0042D6B3  53                        PUSH EBX

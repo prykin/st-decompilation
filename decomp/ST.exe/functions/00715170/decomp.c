@@ -16,7 +16,7 @@ undefined4 __cdecl FUN_00715170(uint *param_1,int param_2,char *param_3,char par
   local_8 = (byte *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  errorCode = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if ((((param_1 == (uint *)0x0) || (param_2 == 0)) || (param_3 == (char *)0x0)) ||
        (param_1[7] == 0)) {
@@ -24,7 +24,7 @@ undefined4 __cdecl FUN_00715170(uint *param_1,int param_2,char *param_3,char par
     }
     local_18[0] = param_1[3];
     local_8 = (byte *)FUN_006b0020(param_1,(int *)&local_c);
-    FUN_006f13f0(0x14,param_3,local_8,local_c,local_18,param_4,(uint *)0x0);
+    cMf32::RecPut((cMf32 *)param_2,0x14,param_3,local_8,local_c,local_18,param_4,(uint *)0x0);
     if (local_8 != (byte *)0x0) {
       FUN_006ab060(&local_8);
     }

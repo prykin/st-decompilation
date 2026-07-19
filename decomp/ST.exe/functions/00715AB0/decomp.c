@@ -19,7 +19,7 @@ undefined4 __thiscall SpriteClassTy::CloseSprite(SpriteClassTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   pSVar2 = local_8;
   if (errorCode == 0) {
     if ((*(int **)(local_8 + 0x48) != (int *)0x0) && (*(uint *)(local_8 + 4) != 0xffffffff)) {

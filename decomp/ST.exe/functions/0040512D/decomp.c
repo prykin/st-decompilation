@@ -52,10 +52,11 @@ STAllPlayersC::GetActiveCenter
           FUN_006acc70(iVar3,uStack_18,&uStack_14);
           if ((short)uStack_14 != -1) {
             iStack_1c = iStack_1c + 1;
-            pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)DAT_0080874d * 0x29 >> 8),
-                                                         *(undefined1 *)
-                                                          ((int)&DAT_007f4f87 +
-                                                          (uint)DAT_0080874d * 0xa62)),uStack_14,1);
+            pvVar5 = (void *)GetObjPtr(DAT_007fa174,
+                                       CONCAT31((int3)((uint)DAT_0080874d * 0x29 >> 8),
+                                                *(undefined1 *)
+                                                 ((int)&DAT_007f4f87 + (uint)DAT_0080874d * 0xa62)),
+                                       uStack_14,1);
             thunk_FUN_004162b0(pvVar5,(undefined2 *)&iStack_8,(undefined2 *)&iStack_c,
                                (undefined2 *)&iStack_10);
             iVar9 = iVar9 + iStack_8;
@@ -92,8 +93,9 @@ joined_r0x0042de37:
       return 0;
     }
     if (iVar1 == 0x1ae) {
-      pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4f87 + iVar3)
-                                                  ),(uint)(ushort)(&DAT_007f4f8b)[uVar6 * 0x531],3);
+      pvVar5 = (void *)GetObjPtr(DAT_007fa174,
+                                 CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4f87 + iVar3)),
+                                 (uint)(ushort)(&DAT_007f4f8b)[uVar6 * 0x531],3);
       thunk_FUN_004162b0(pvVar5,(undefined2 *)&iStack_8,(undefined2 *)&iStack_c,
                          (undefined2 *)&iStack_10);
       if (param_1 != (undefined2 *)0x0) {
@@ -125,9 +127,9 @@ joined_r0x0042de37:
       if (iVar1 == 0x1a4) {
         uVar4 = 5;
 LAB_0042da27:
-        pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31(uVar7,*(undefined1 *)
-                                                            ((int)&DAT_007f4fd7 + iVar3)),
-                                            (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],uVar4);
+        pvVar5 = (void *)GetObjPtr(DAT_007fa174,
+                                   CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4fd7 + iVar3)),
+                                   (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],uVar4);
         thunk_FUN_004162b0(pvVar5,(undefined2 *)&iStack_8,(undefined2 *)&iStack_c,
                            (undefined2 *)&iStack_10);
       }
@@ -143,9 +145,9 @@ LAB_0042dbdf:
           }
           goto joined_r0x0042dc09;
         }
-        pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31(uVar7,*(undefined1 *)
-                                                            ((int)&DAT_007f4fd7 + iVar3)),
-                                            (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],6);
+        pvVar5 = (void *)GetObjPtr(DAT_007fa174,
+                                   CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4fd7 + iVar3)),
+                                   (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],6);
         thunk_FUN_004162b0(pvVar5,(undefined2 *)&iStack_8,(undefined2 *)&iStack_c,
                            (undefined2 *)&iStack_10);
       }
@@ -175,10 +177,11 @@ joined_r0x0042dc56:
           FUN_006acc70(iVar3,uStack_18,&uStack_14);
           if ((short)uStack_14 != -1) {
             iStack_1c = iStack_1c + 1;
-            pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)DAT_0080874d * 0x29 >> 8),
-                                                         *(undefined1 *)
-                                                          ((int)&DAT_007f4fd7 +
-                                                          (uint)DAT_0080874d * 0xa62)),uStack_14,1);
+            pvVar5 = (void *)GetObjPtr(DAT_007fa174,
+                                       CONCAT31((int3)((uint)DAT_0080874d * 0x29 >> 8),
+                                                *(undefined1 *)
+                                                 ((int)&DAT_007f4fd7 + (uint)DAT_0080874d * 0xa62)),
+                                       uStack_14,1);
             thunk_FUN_004162b0(pvVar5,(undefined2 *)&iStack_8,(undefined2 *)&iStack_c,
                                (undefined2 *)&iStack_10);
             iVar9 = iVar9 + iStack_8;
@@ -208,9 +211,9 @@ joined_r0x0042dc56:
     }
     if (iVar1 != 0) {
       if (iVar1 == 0x5a) {
-        pvVar5 = (void *)thunk_FUN_0042b620(CONCAT31(uVar7,*(undefined1 *)
-                                                            ((int)&DAT_007f4fd7 + iVar3)),
-                                            (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],4);
+        pvVar5 = (void *)GetObjPtr(DAT_007fa174,
+                                   CONCAT31(uVar7,*(undefined1 *)((int)&DAT_007f4fd7 + iVar3)),
+                                   (uint)(ushort)(&DAT_007f4fdb)[uVar6 * 0x531],4);
         thunk_FUN_004162b0(pvVar5,(undefined2 *)&iStack_8,(undefined2 *)&iStack_c,
                            (undefined2 *)&iStack_10);
         if (param_1 != (undefined2 *)0x0) {

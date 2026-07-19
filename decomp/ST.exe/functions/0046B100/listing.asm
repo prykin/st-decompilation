@@ -1,4 +1,4 @@
-FUN_0046b100:
+STBoatC::Build:
 0046B100  55                        PUSH EBP
 0046B101  8B EC                     MOV EBP,ESP
 0046B103  81 EC D4 00 00 00         SUB ESP,0xd4

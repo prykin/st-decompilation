@@ -35,7 +35,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   if (iStack_1c != 0) {
     IStack_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_90;
-    iVar2 = __setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       uStack_18 = *(uint *)(iStack_1c + 0xc);
       iVar2 = iStack_1c;
@@ -75,7 +75,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                     if (0 < *(int *)(pbStack_48 + 0xc)) {
                       do {
                         FUN_006acc70((int)pbStack_48,uVar7,(undefined4 *)&sStack_12);
-                        FUN_006ae1c0(puStack_38,(undefined4 *)&sStack_12);
+                        Library::DKW::TBL::FUN_006ae1c0(puStack_38,(undefined4 *)&sStack_12);
                         uVar7 = uVar7 + 1;
                       } while ((int)uVar7 < *(int *)(pbStack_48 + 0xc));
                     }
@@ -118,7 +118,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       }
       FUN_006acc70(iVar2,0,&iStack_3c);
       uVar7 = *(uint *)(iStack_3c + 0xc);
-      puVar3 = FUN_006ae290((uint *)0x0,uVar7,10,1);
+      puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar7,10,1);
       *(uint **)((int)&DAT_007f581a + param_1 * 0xa62) = puVar3;
       uStack_10 = 0;
       uStack_c = 0;
@@ -127,10 +127,10 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
         do {
           FUN_006acc70(iStack_3c,uStack_c,(undefined4 *)&sStack_6);
           sStack_28 = sStack_6;
-          puStack_26 = FUN_006ae290((uint *)0x0,1,4,1);
+          puStack_26 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           uStack_22 = 0;
-          FUN_006ae1c0(puStack_26,&uStack_10);
-          FUN_006ae1c0(puVar3,(undefined4 *)&sStack_28);
+          Library::DKW::TBL::FUN_006ae1c0(puStack_26,&uStack_10);
+          Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&sStack_28);
           uStack_c = uStack_c + 1;
         } while ((int)uStack_c < (int)uVar7);
       }
@@ -148,7 +148,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                 do {
                   FUN_006acc70((int)puVar3,uVar4,(undefined4 *)&sStack_28);
                   if (sStack_28 == sStack_6) {
-                    FUN_006ae1c0(puStack_26,&uStack_c);
+                    Library::DKW::TBL::FUN_006ae1c0(puStack_26,&uStack_c);
                     break;
                   }
                   uVar4 = uVar4 + 1;
@@ -156,10 +156,10 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
               }
               if (uVar4 == uVar7) {
                 sStack_28 = sStack_6;
-                puStack_26 = FUN_006ae290((uint *)0x0,1,4,1);
+                puStack_26 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
                 uStack_22 = 0;
-                FUN_006ae1c0(puStack_26,&uStack_c);
-                FUN_006ae1c0(puVar3,(undefined4 *)&sStack_28);
+                Library::DKW::TBL::FUN_006ae1c0(puStack_26,&uStack_c);
+                Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&sStack_28);
               }
               uStack_10 = uStack_10 + 1;
             } while ((int)uStack_10 < iStack_2c);

@@ -33,10 +33,14 @@
 /* WARNING: Removing unreachable block (ram,0x0070dec5) */
 /* WARNING: Removing unreachable block (ram,0x0070ded5) */
 /* WARNING: Removing unreachable block (ram,0x0070dedb) */
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::operator */
 
-HDC __cdecl
-FUN_0070d1f0(uint param_1,LOGFONTA *param_2,uint *param_3,byte *param_4,int param_5,byte *param_6,
-            int param_7,int param_8,uint param_9,uint param_10,uint param_11,undefined *param_12)
+HDC __thiscall
+ccFntTy::operator(ccFntTy *this,uint param_1,LOGFONTA *param_2,uint *param_3,byte *param_4,
+                 int param_5,byte *param_6,int param_7,int param_8,uint param_9,uint param_10,
+                 uint param_11,undefined *param_12)
 
 {
   uint *puVar1;
@@ -89,7 +93,7 @@ FUN_0070d1f0(uint param_1,LOGFONTA *param_2,uint *param_3,byte *param_4,int para
   local_8 = 0;
   pIVar25 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
-  iVar5 = __setjmp3((undefined4 *)&stack0xffffffa8,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffa8,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = pIVar25;
     if ((local_8 == 0) &&
@@ -106,7 +110,7 @@ FUN_0070d1f0(uint param_1,LOGFONTA *param_2,uint *param_3,byte *param_4,int para
      (((param_7 < 1 || (0xf < param_7)) || (param_8 < 2)))) {
     RaiseInternalException(-0x34,(int)DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0xf7);
   }
-  pIVar6 = (InternalExceptionFrame *)FUN_006aac10(param_1);
+  pIVar6 = (InternalExceptionFrame *)Library::DKW::LIB::FUN_006aac10(param_1);
   pIVar6->previous = (InternalExceptionFrame *)0x0;
   *(undefined4 *)((int)pIVar6[2].jumpBuffer + 0xe) = 0;
   pIVar26 = pIVar6;
@@ -148,7 +152,7 @@ FUN_0070d1f0(uint param_1,LOGFONTA *param_2,uint *param_3,byte *param_4,int para
   *(uint *)((int)pIVar6[5].jumpBuffer + 5) = param_10;
   *(int *)((int)pIVar6[5].jumpBuffer + 0x31) = param_8;
   uVar21 = param_7 * param_8 + 1;
-  pbVar7 = (byte *)FUN_006aac10(uVar21);
+  pbVar7 = (byte *)Library::DKW::LIB::FUN_006aac10(uVar21);
   *(byte **)((int)pIVar6[5].jumpBuffer + 0x2d) = pbVar7;
   pbVar17 = param_6;
   for (uVar20 = uVar21 >> 2; uVar20 != 0; uVar20 = uVar20 - 1) {
@@ -282,7 +286,7 @@ LAB_0070d485:
        *(int *)((int)pIVar6[4].jumpBuffer + 0x3d) + pIVar6[3].jumpBuffer[4];
   *(undefined4 *)((int)pIVar6[5].jumpBuffer + 0x11) = *(undefined4 *)((int)pIVar6[5].jumpBuffer + 9)
   ;
-  puVar12 = FUN_006aac10(*(int *)((int)pIVar6[5].jumpBuffer + 0x21) * 10 + 0x70);
+  puVar12 = Library::DKW::LIB::FUN_006aac10(*(int *)((int)pIVar6[5].jumpBuffer + 0x21) * 10 + 0x70);
   *(undefined4 **)((int)pIVar6[2].jumpBuffer + 0xe) = puVar12;
   *(undefined2 *)puVar12 = (undefined2)param_7;
   *(undefined4 *)((int)pIVar6[5].jumpBuffer + 0x3d) = 0;
@@ -293,7 +297,7 @@ LAB_0070d485:
   *(LOGPALETTE **)((int)pIVar6[4].jumpBuffer + 0x19) = plpal;
   pHVar13 = CreatePalette(plpal);
   *(HPALETTE *)((int)&pIVar6[4].previous + 1) = pHVar13;
-  local_c = (LOGPALETTE *)FUN_006aac10(0x408);
+  local_c = (LOGPALETTE *)Library::DKW::LIB::FUN_006aac10(0x408);
   local_c->palVersion = 0x300;
   local_c->palNumEntries = 0x100;
   *(undefined1 *)&local_c[0x80].palVersion = 0xff;
@@ -391,7 +395,7 @@ LAB_0070d485:
   pIVar18 = *(IMAGE_DOS_HEADER **)((int)pIVar6[5].jumpBuffer + 0x19);
   if (((pIVar18 == &IMAGE_DOS_HEADER_00400000) || (pIVar18 == (IMAGE_DOS_HEADER *)&DAT_00800000)) ||
      (pIVar18 == (IMAGE_DOS_HEADER *)0x1000000)) {
-    pIVar18 = (IMAGE_DOS_HEADER *)FUN_006aac10(0x3ffff);
+    pIVar18 = (IMAGE_DOS_HEADER *)Library::DKW::LIB::FUN_006aac10(0x3ffff);
     *(IMAGE_DOS_HEADER **)((int)&pIVar6[6].previous + 1) = pIVar18;
   }
   uVar23 = (undefined2)((uint)pIVar18 >> 0x10);

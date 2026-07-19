@@ -7,7 +7,8 @@ void FUN_00757670(int param_1,int param_2)
   int *piVar3;
   int iVar4;
   
-  DVar2 = FUN_006d4c50(*(int *)(param_1 + 8),param_2,(int)*(short *)(*(int *)(param_1 + 8) + 0x16));
+  DVar2 = Library::DKW::FMM::FUN_006d4c50
+                    (*(int *)(param_1 + 8),param_2,(int)*(short *)(*(int *)(param_1 + 8) + 0x16));
   if (DVar2 == 0) {
     piVar3 = (int *)(*(int *)(*(int *)(param_1 + 8) + 0x34) + param_2);
     iVar4 = *piVar3;

@@ -60,7 +60,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     if (*(uint *)(local_8 + 0x19c) != 0) {

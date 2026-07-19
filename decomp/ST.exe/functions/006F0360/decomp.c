@@ -24,7 +24,7 @@ int __cdecl FUN_006f0360(short *param_1,undefined *param_2)
   local_1c = 0;
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
     iVar7 = ReportDebugMessage(s_E__ourlib_Mfstmap_cpp_007eef88,0x1f2,0,iVar3,&DAT_007a4ccc,

@@ -6,7 +6,7 @@ undefined2 * FUN_006bc3e0(int param_1,undefined2 *param_2,undefined4 *param_3)
   
   puVar1 = param_2;
   if (param_2 == (undefined2 *)0x0) {
-    puVar1 = (undefined2 *)FUN_006aac70(0x404);
+    puVar1 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(0x404);
     if (puVar1 == (undefined2 *)0x0) {
       return (undefined2 *)0x0;
     }

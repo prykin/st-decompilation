@@ -73,10 +73,10 @@ void __fastcall FUN_006ddd50(void *param_1)
     ExceptionList = &local_14;
     *(undefined4 *)((int)param_1 + 0x2d8) = 1;
     local_8 = 0;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_3c = (undefined4 *)&stack0xfffffed4;
     local_1c = &stack0xfffffed4;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     if ((*(int *)((int)param_1 + 0xa8) < 0) || (3 < *(int *)((int)param_1 + 0xa8))) {
       local_90 = *(int *)((int)param_1 + 0x13c);

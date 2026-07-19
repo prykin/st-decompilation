@@ -10,6 +10,8 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   uint uVar6;
   undefined4 uVar7;
   int iVar8;
+  ccFntTy *this_00;
+  ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar9;
@@ -28,7 +30,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   IStack_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_70;
   pMStack_c = this;
-  iVar4 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = pMStack_c;
   if (iVar4 == 0) {
     pMVar1 = pMStack_c + 0x5d;
@@ -52,14 +54,14 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     FUN_00718780((int)auStack_470,0,0x100,0x2e,0x10,(undefined4 *)(pMVar3 + 0x1a3));
     thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)pMVar1);
     if (*(uint **)(pMVar3 + 0x83) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pMVar3 + 0x83));
+      ccFntTy::operator(this_00,*(uint **)(pMVar3 + 0x83));
     }
     iVar4 = thunk_FUN_005defe0(*(uint *)pMVar1,(undefined *)0x0,DAT_00807dd9);
     *(int *)(pMVar3 + 0x83) = iVar4;
     *(undefined4 *)(iVar4 + 0x58) = 1;
     *(undefined4 *)(iVar4 + 0x5c) = 0;
     if (*(uint **)(pMVar3 + 0x87) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pMVar3 + 0x87));
+      ccFntTy::operator(this_01,*(uint **)(pMVar3 + 0x87));
     }
     uVar7 = thunk_FUN_005df290(*(uint *)pMVar1,(undefined *)0x0,DAT_00807dd9);
     *(undefined4 *)(pMVar3 + 0x87) = uVar7;
@@ -73,7 +75,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
       }
       auStack_2c[3] = 2;
       auStack_2c[4] = 0x70ff;
-      FUN_006e3b50(auStack_2c);
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,auStack_2c);
     }
     g_currentExceptionFrame = IStack_70.previous;
     return;

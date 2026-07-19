@@ -13,7 +13,7 @@ void FUN_006e4bb0(int *param_1)
     local_1c = 0xf;
     local_14 = 9;
     (**(code **)(*(int *)param_1[1] + 0x20))(local_24);
-    FUN_006e5c70(local_24);
+    SystemClassTy::GetToAllObjects((SystemClassTy *)param_1[1],local_24);
     *param_1 = 0;
   }
   if (param_1[2] != 0) {

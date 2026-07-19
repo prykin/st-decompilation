@@ -29,7 +29,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   if (uVar2 == 0) {
     return (uint *)0x0;
   }
-  puVar3 = FUN_006ae290((uint *)0x0,(uint)uVar2,6,1);
+  puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)uVar2,6,1);
   local_8 = puVar3;
   uVar2 = thunk_FUN_004233c0((int)param_1);
   DAT_007f4d4c = (uint)uVar2;
@@ -37,12 +37,12 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     local_14 = (undefined2)param_6;
     local_12 = (undefined2)param_7;
     local_10 = (undefined2)param_8;
-    FUN_006ae1c0(puVar3,(undefined4 *)&local_14);
+    Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&local_14);
     goto LAB_004157f0;
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (*(int *)((int)param_1 + 0x4d) != 0) {
       iVar4 = FUN_006db910(param_3,param_4,param_6,param_7);
@@ -63,7 +63,8 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           local_14 = *(undefined2 *)(iVar5 + 0xc + (int)DAT_007f4d04);
           local_12 = *(undefined2 *)(iVar5 + 0x10 + (int)DAT_007f4d04);
           local_10 = *(undefined2 *)(iVar5 + 0x14 + (int)DAT_007f4d04);
-          FUN_006ae140(local_8,*(uint *)(iVar5 + 0x18 + (int)DAT_007f4d04),(undefined4 *)&local_14);
+          Library::DKW::TBL::FUN_006ae140
+                    (local_8,*(uint *)(iVar5 + 0x18 + (int)DAT_007f4d04),(undefined4 *)&local_14);
           iVar4 = iVar4 + 1;
           iVar5 = iVar5 + 0x1c;
         } while (iVar4 < DAT_007f4d40);
@@ -75,7 +76,8 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           local_14 = *(undefined2 *)(DAT_007f4d04 + iVar5 * 7 + -4);
           local_12 = *(undefined2 *)(DAT_007f4d04 + iVar5 * 7 + -3);
           local_10 = *(undefined2 *)(DAT_007f4d04 + iVar5 * 7 + -2);
-          FUN_006ae140(local_8,DAT_007f4d04[iVar5 * 7 + -1],(undefined4 *)&local_14);
+          Library::DKW::TBL::FUN_006ae140
+                    (local_8,DAT_007f4d04[iVar5 * 7 + -1],(undefined4 *)&local_14);
           iVar4 = iVar4 + 1;
         } while (iVar4 < DAT_007f4cf8);
         g_currentExceptionFrame = local_58.previous;
@@ -90,7 +92,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
       local_12 = (undefined2)param_7;
       if (*(short *)((int)param_1 + 0x27) != 0) {
         do {
-          FUN_006ae1c0(local_8,(undefined4 *)&local_14);
+          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)&local_14);
           iVar4 = iVar4 + 1;
         } while (iVar4 < (int)(uint)*(ushort *)((int)param_1 + 0x27));
       }

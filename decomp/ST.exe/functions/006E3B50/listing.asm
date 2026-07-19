@@ -1,4 +1,4 @@
-FUN_006e3b50:
+AppClassTy::PostNextMessage:
 006E3B50  55                        PUSH EBP
 006E3B51  8B EC                     MOV EBP,ESP
 006E3B53  83 EC 48                  SUB ESP,0x48

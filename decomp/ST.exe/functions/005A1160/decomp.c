@@ -31,7 +31,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
   local_c = this;
-  iVar4 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_90.previous;
     iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935,0,iVar4,

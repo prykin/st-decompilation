@@ -1,4 +1,4 @@
-FUN_006e36e0:
+AppClassTy::DoneApp:
 006E36E0  55                        PUSH EBP
 006E36E1  8B EC                     MOV EBP,ESP
 006E36E3  83 EC 50                  SUB ESP,0x50

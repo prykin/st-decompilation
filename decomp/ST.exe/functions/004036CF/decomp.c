@@ -41,7 +41,7 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pCStack_10 = this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
@@ -139,8 +139,9 @@ void __thiscall ComboTy::InitCombo(ComboTy *this,undefined4 *param_1)
     FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar4,2,0x401712,
                  *(int *)(*(int *)(this_00 + 0xfc) + 4) + 3,
                  *(int *)(*(int *)(this_00 + 0xfc) + 8) + 3,(uint)(this_00 + 0x88));
-    FUN_006b3640(DAT_008075a8,*(uint *)pCVar4,0xffffffff,*(int *)(this_00 + 0xec) - 3,
-                 *(uint *)(this_00 + 0xf0));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)pCVar4,0xffffffff,*(int *)(this_00 + 0xec) - 3,
+               *(uint *)(this_00 + 0xf0));
     pCVar4 = this_00 + 0x18;
     pCVar7 = pCVar4;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {

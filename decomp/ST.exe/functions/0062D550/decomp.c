@@ -33,7 +33,7 @@ uint * FUN_0062d550(int *param_1,int *param_2)
   if (iVar6 != 0) {
     iVar6 = *piVar2 + iVar6 + iVar3 * 4;
     *piVar2 = iVar6;
-    puVar4 = (uint *)FUN_006aac70(iVar6);
+    puVar4 = (uint *)Library::DKW::LIB::FUN_006aac70(iVar6);
     local_c = 8;
     puVar8 = puVar4;
     do {

@@ -39,7 +39,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
   param_2[3] = 0;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar7 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 == 0) {
     if (DAT_00802a58 != (cLoadingTy *)0x0) {
       cLoadingTy::SetProcess(DAT_00802a58,0,(uint *)s_Preparing_mini_map____007c6f28,900);
@@ -100,7 +100,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
                    (int)((ulonglong)(double)((float)(int)param_1[1] * _DAT_007904f4) >> 0x20));
       FUN_006ddbe0((int)this);
       FUN_006ddd50(this);
-      puVar8 = FUN_006aac10(local_24);
+      puVar8 = Library::DKW::LIB::FUN_006aac10(local_24);
       *local_c = (int)puVar8;
       if (puVar8 == (undefined4 *)0x0) {
         RaiseInternalException(-2,DAT_007ed77c,s_E____titans_Andrey_minimap_cpp_007c6f00,0x2f);
@@ -146,7 +146,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
   }
   if (this != (int *)0x0) {
     FUN_006dbcf0(this);
-    FUN_0072e2b0(this);
+    Library::MSVCRT::FUN_0072e2b0(this);
   }
   if (iVar7 != 0) {
     iVar11 = 4;

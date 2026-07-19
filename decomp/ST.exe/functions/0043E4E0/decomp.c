@@ -28,17 +28,17 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   local_c = (uint)uVar4;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar5 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar3 = local_c;
   if (iVar5 == 0) {
-    puVar6 = FUN_006ae290((uint *)0x0,local_c,2,1);
+    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_c,2,1);
     iVar8 = local_10;
     iVar5 = local_14;
     if ((uVar3 != 0) && (local_8 = 0, 0 < local_10)) {
       do {
         piVar1 = *(int **)(*(int *)(iVar5 + 0x1c) + local_8 * 4);
         if ((piVar1 != (int *)0x0) && (iVar7 = (**(code **)(*piVar1 + 0xf8))(), iVar7 == 1)) {
-          FUN_006ae1c0(puVar6,&local_8);
+          Library::DKW::TBL::FUN_006ae1c0(puVar6,&local_8);
         }
         local_8 = local_8 + 1;
       } while (local_8 < iVar8);

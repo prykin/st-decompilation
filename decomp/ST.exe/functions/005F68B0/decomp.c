@@ -27,7 +27,7 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
   }
   *(undefined2 *)puVar7 = *(undefined2 *)puVar1;
   *(undefined4 *)((int)this + 0x2b7) = 0xffffffff;
-  local_28[0] = FUN_006aac70(0x44);
+  local_28[0] = Library::DKW::LIB::FUN_006aac70(0x44);
   iVar2 = 0;
   do {
     *(undefined4 *)(iVar2 + local_28[0]) = DAT_00806774;
@@ -55,7 +55,7 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
     return iVar2;
   }
   local_8 = puVar7;
-  puVar1 = (undefined4 *)FUN_006aac70(0x6c);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x6c);
   *(undefined4 **)((int)this + 0x2e6) = puVar1;
   for (iVar3 = 0x1b; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar1 = *puVar7;
@@ -69,7 +69,7 @@ int __thiscall FUN_005f68b0(void *this,undefined4 *param_1)
     uVar4 = *(uint *)(*(int *)((int)this + 0x2e6) + 0x5c);
     iVar8 = uVar4 * 4;
     local_28[7] = iVar8;
-    iVar3 = FUN_006aac70(iVar8);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(iVar8);
     *(int *)(*(int *)((int)this + 0x2e6) + 0x58) = iVar3;
     puVar7 = *(undefined4 **)(*(int *)((int)this + 0x2e6) + 0x58);
     for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {

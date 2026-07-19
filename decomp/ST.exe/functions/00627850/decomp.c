@@ -112,7 +112,7 @@ FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       sVar7 = (short)local_8;
     }
     else {
-      _strncpy(local_2c,param_9,0xe);
+      Library::MSVCRT::_strncpy(local_2c,param_9,0xe);
       local_1e = 0;
     }
   }

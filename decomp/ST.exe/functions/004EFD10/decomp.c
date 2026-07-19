@@ -22,11 +22,11 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_8 = this;
-    errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (errorCode == 0) {
       pBVar1 = local_8 + 0x27a;
-      thunk_FUN_0043beb0(DAT_007fa174,0xc,(int *)pBVar1);
+      STAllPlayersC::GetPanelInfo(DAT_007fa174,0xc,(int *)pBVar1);
       thunk_FUN_0053f510(this_00,*(uint *)(*(int *)pBVar1 + 0xc),local_c);
       thunk_FUN_004efe20(this_00);
       g_currentExceptionFrame = local_50.previous;

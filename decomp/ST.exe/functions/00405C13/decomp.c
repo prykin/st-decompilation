@@ -60,8 +60,9 @@ thunk_FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint
           else {
             puVar4 = (undefined2 *)0x0;
           }
-          piVar5 = (int *)thunk_FUN_0042b620(uStack_c,CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4
-                                                              ),1);
+          piVar5 = (int *)STAllPlayersC::GetObjPtr
+                                    (DAT_007fa174,uStack_c,
+                                     CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),1);
           if ((piVar5 == (int *)0x0) || (iVar9 = (**(code **)(*piVar5 + 0xf8))(), iVar9 == 0))
           goto LAB_0065e27e;
           uVar6 = (**(code **)(*piVar5 + 0x2c))();

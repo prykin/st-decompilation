@@ -27,7 +27,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x48,0,iVar2,&DAT_007a4ccc,
@@ -51,7 +51,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   }
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -73,7 +73,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   iVar2 = 0;
   do {
     if (*(int *)(this_01 + iVar2 * 4 + 0x1a7f) != 0) {
-      puVar5 = FUN_006c4a20(*(int *)(this_01 + iVar2 * 4 + 0x1a7f));
+      puVar5 = Library::DKW::FLC::FUN_006c4a20(*(int *)(this_01 + iVar2 * 4 + 0x1a7f));
       *(undefined4 **)(this_01 + iVar2 * 4 + 0x1aa7) = puVar5;
       if (puVar5 != (undefined4 *)0x0) {
         switch(iVar2) {

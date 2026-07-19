@@ -31,7 +31,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -51,7 +51,7 @@ void __thiscall BehPanelTy::Update(BehPanelTy *this)
   local_1c = *(undefined4 *)(local_10 + 0x1b7);
   local_18 = *(undefined2 *)(local_10 + 0x1bb);
   local_16 = local_10[0x1bd];
-  thunk_FUN_0043beb0(DAT_007fa174,0xb,(int *)(local_10 + 0x1ab));
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,0xb,(int *)(local_10 + 0x1ab));
   local_8 = (BehPanelTy *)&local_24;
   local_14 = -0x1af - (int)this_00;
   pBVar5 = this_00 + 0x1af;

@@ -24,7 +24,7 @@ int __thiscall thunk_FUN_00614a90(void *this,undefined4 *param_1)
   puVar4 = (undefined4 *)((int)param_1 + 0x116);
   iStack_8 = 0x116;
   if (*(int *)((int)this + 0x2dd) != 0) {
-    puVar1 = (undefined4 *)FUN_006aac70(*(int *)((int)this + 0x2d5) * 0x1c);
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)this + 0x2d5) * 0x1c);
     *(undefined4 **)((int)this + 0x2dd) = puVar1;
     for (uVar3 = (uint)(*(int *)((int)this + 0x2d5) * 0x1c) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
       *puVar1 = *puVar4;
@@ -40,7 +40,7 @@ int __thiscall thunk_FUN_00614a90(void *this,undefined4 *param_1)
     puVar4 = (undefined4 *)(iStack_8 + (int)param_1);
   }
   if (*(int *)((int)this + 0x2e5) != 0) {
-    puVar1 = (undefined4 *)FUN_006aac70(*(int *)((int)this + 0x2e1) << 2);
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)this + 0x2e1) << 2);
     *(undefined4 **)((int)this + 0x2e5) = puVar1;
     for (uVar3 = *(uint *)((int)this + 0x2e1) & 0x3fffffff; uVar3 != 0; uVar3 = uVar3 - 1) {
       *puVar1 = *puVar4;

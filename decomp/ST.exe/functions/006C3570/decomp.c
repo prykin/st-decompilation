@@ -7,7 +7,7 @@ void FUN_006c3570(int param_1)
   if (param_1 != 0) {
     EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x508));
     if ((*(uint *)(param_1 + 4) & 0x20000000) != 0) {
-      FUN_006c4110(param_1);
+      Library::DKW::DV::FUN_006c4110(param_1);
     }
     if ((*(uint *)(param_1 + 4) & 0x40000000) != 0) {
       FUN_006c3f00(param_1);

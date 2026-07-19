@@ -27,11 +27,11 @@ FUN_004c5bd0(void *this,float param_1,short *param_2,short *param_3,short *param
              *(short *)((int)this + 0x5b8) * 200;
   *param_5 = 0;
   FUN_006dd530(*(void **)((int)this + 0x211),&param_1,(float *)&param_2,(float *)&param_3);
-  lVar8 = __ftol();
+  lVar8 = Library::MSVCRT::__ftol();
   param_1 = (float)(int)(short)lVar8;
-  lVar8 = __ftol();
+  lVar8 = Library::MSVCRT::__ftol();
   param_1 = (float)(int)(short)lVar8;
-  lVar8 = __ftol();
+  lVar8 = Library::MSVCRT::__ftol();
   fVar3 = (float)(int)*(short *)((int)this + 0x43) - param_1;
   fVar1 = (float)((float10)(int)*(short *)((int)this + 0x41) - extraout_ST0);
   fVar4 = (float)(int)*param_4 - (float)(int)(short)lVar8;

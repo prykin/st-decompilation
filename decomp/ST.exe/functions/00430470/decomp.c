@@ -20,7 +20,7 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (param_2 == -1) {
       if (param_1 == 0) {
@@ -46,7 +46,7 @@ undefined4 __thiscall STAllPlayersC::RegisterTorpedo(STAllPlayersC *this,int par
                   (-0x5001fffa,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7f0);
       }
     }
-    FUN_006ae140(DAT_007fa130,uVar5,&param_1);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa130,uVar5,&param_1);
     DAT_007fa134 = DAT_007fa134 + 1;
     g_currentExceptionFrame = local_4c.previous;
     return CONCAT22((short)((uint)DAT_007fa134 >> 0x10),(short)uVar5);

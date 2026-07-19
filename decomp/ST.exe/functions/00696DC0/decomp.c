@@ -42,7 +42,8 @@ LAB_00696e1a:
           (piVar1 = (int *)(*(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c)),
           piVar1 != (int *)0x0)) &&
          ((*(int *)((int)piVar1 + 0x11) <= param_2 &&
-          ((*piVar1 == param_1 && (uVar2 = FUN_0072e6c0(), (int)uVar2 % (iVar4 + 1) != 0)))))) {
+          ((*piVar1 == param_1 &&
+           (uVar2 = Library::MSVCRT::FUN_0072e6c0(), (int)uVar2 % (iVar4 + 1) != 0)))))) {
         thunk_FUN_00696d00(this,piVar1,uVar5);
       }
       uVar5 = uVar5 + 1;

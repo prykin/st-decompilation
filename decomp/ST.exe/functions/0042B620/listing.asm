@@ -1,4 +1,4 @@
-FUN_0042b620:
+STAllPlayersC::GetObjPtr:
 0042B620  55                        PUSH EBP
 0042B621  8B EC                     MOV EBP,ESP
 0042B623  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]

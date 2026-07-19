@@ -36,7 +36,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_c = this;
-  iVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;

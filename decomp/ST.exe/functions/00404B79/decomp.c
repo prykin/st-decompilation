@@ -78,7 +78,8 @@ void __cdecl thunk_FUN_00574920(short *param_1,int param_2,int param_3,undefined
         if (piVar10 == (int *)0x0) {
           FUN_006a5e90(*(undefined4 **)(iVar2 + 0xc));
           puVar3 = (undefined4 *)
-                   FUN_006aac70((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
+                   Library::DKW::LIB::FUN_006aac70
+                             ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
           *(undefined4 **)(iVar2 + 0xc) = puVar3;
           iStack_28 = 1;
           iStack_20 = 1;
@@ -154,8 +155,8 @@ LAB_00574bcc:
                 }
               }
               puVar5 = (undefined4 *)
-                       FUN_006aac70((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4)
-              ;
+                       Library::DKW::LIB::FUN_006aac70
+                                 ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
               *(undefined4 **)(iVar2 + 0xc) = puVar5;
               puVar3 = *(undefined4 **)(iVar2 + 0x10);
               if ((puVar3 != (undefined4 *)0x0) ||
@@ -175,8 +176,8 @@ LAB_00574bcc:
             }
             else if (iStack_20 == 0) {
               puVar6 = (undefined4 *)
-                       FUN_006aac70((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4)
-              ;
+                       Library::DKW::LIB::FUN_006aac70
+                                 ((uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2) * 4);
               puVar3 = *(undefined4 **)(iVar2 + 0xc);
               puVar5 = puVar6;
               for (iVar7 = (uint)*(byte *)(param_1 + 2) * (uint)*(byte *)(param_1 + 2); iVar7 != 0;
@@ -282,7 +283,7 @@ LAB_00574e10:
         uStack_6c = *(undefined4 *)(iVar2 + 0x10);
         uStack_68 = *(undefined4 *)(iVar2 + 0x14);
         uStack_64 = *(undefined4 *)(iVar2 + 0xc);
-        FUN_006ae1c0(*(uint **)((int)param_1 + 0x451),&uStack_6c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)param_1 + 0x451),&uStack_6c);
       }
     }
     iStack_34 = iStack_34 + -1;

@@ -19,7 +19,7 @@ void __thiscall FSGSTy::PaintLogLogin(FSGSTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pFStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar2 = pFStack_8;
   if (iVar3 == 0) {
     iVar3 = *(int *)(pFStack_8 + 0x1ac0);
@@ -61,7 +61,7 @@ void __thiscall FSGSTy::PaintLogLogin(FSGSTy *this)
     puVar5 = (uint *)FUN_006b0140(0x2551,DAT_00807618);
     ccFntTy::WrStr(*(ccFntTy **)(pFVar2 + 0x1a73),puVar5,iVar3,iVar8,uVar9);
     FUN_006c7570(*(int *)(pFVar2 + 0x1ac0),0,0xe6,0x93,(undefined4 *)0x16,0x14,2,0xf);
-    FUN_006b3430(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
     FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
     g_currentExceptionFrame = IStack_4c.previous;
     return;

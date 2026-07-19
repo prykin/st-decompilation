@@ -21,12 +21,12 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     local_10 = *(int *)(local_8 + 0x1ab);
     local_c = *(undefined2 *)(local_8 + 0x1af);
-    thunk_FUN_0043beb0(DAT_007fa174,0x12,(int *)(local_8 + 0x1ab));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x12,(int *)(local_8 + 0x1ab));
     *(undefined4 *)(this_00 + 0x28) = 5;
     pSVar4 = this_00 + 0x1b5;
     iVar2 = 6;

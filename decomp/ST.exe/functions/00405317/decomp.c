@@ -23,7 +23,7 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   *(DWORD *)(this + 0x61) = DVar3;
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pMStack_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
@@ -54,8 +54,9 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
             *(uint *)(pMVar7 + -0x14) = 0;
           }
           if (*(uint *)(pMVar7 + -0x18) != 0xffffffff) {
-            FUN_006b3730(*(uint **)(pMVar7 + 0x2c),*(uint *)(pMVar7 + -0x18),
-                         *(uint *)(pMVar7 + -0x14),*(uint *)pMVar7,*(uint *)(pMVar7 + 4));
+            Library::DKW::DDX::FUN_006b3730
+                      (*(uint **)(pMVar7 + 0x2c),*(uint *)(pMVar7 + -0x18),*(uint *)(pMVar7 + -0x14)
+                       ,*(uint *)pMVar7,*(uint *)(pMVar7 + 4));
           }
         }
         iVar4 = iVar4 + 1;
@@ -88,18 +89,20 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
                    *(int *)(this_00 + iVar4 * 0x1fb + 0xef) + -1) {
             if ((*(int *)(this_00 + iVar4 * 0x1fb + 0xeb) == 0) &&
                (*(uint *)(this_00 + iVar4 * 0x1fb + 0xe7) != 0xffffffff)) {
-              FUN_006b34d0(*(uint **)(this_00 + iVar4 * 0x1fb + 299),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0xe7),0xfffffffe,
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0xff),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x103));
+              Library::DKW::DDX::FUN_006b34d0
+                        (*(uint **)(this_00 + iVar4 * 0x1fb + 299),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xe7),0xfffffffe,
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xff),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x103));
             }
             *(int *)(this_00 + iVar4 * 0x1fb + 0xeb) = *(int *)(this_00 + iVar4 * 0x1fb + 0xeb) + 1;
             if (*(uint *)(this_00 + iVar4 * 0x1fb + 0xe7) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(this_00 + iVar4 * 0x1fb + 299),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0xe7),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0xeb),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0xff),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x103));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(this_00 + iVar4 * 0x1fb + 299),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xe7),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xeb),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xff),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x103));
             }
             iStack_8 = 0;
           }
@@ -107,27 +110,30 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
                    *(int *)(this_00 + iVar4 * 0x1fb + 0x180) + -3) {
             if (*(int *)(this_00 + iVar4 * 0x1fb + 0x17c) == 0) {
               if (*(uint *)(this_00 + iVar4 * 0x1fb + 0x178) != 0xffffffff) {
-                FUN_006b34d0(*(uint **)(this_00 + iVar4 * 0x1fb + 0x1bc),
-                             *(uint *)(this_00 + iVar4 * 0x1fb + 0x178),0xfffffffe,
-                             *(uint *)(this_00 + iVar4 * 0x1fb + 400),
-                             *(uint *)(this_00 + iVar4 * 0x1fb + 0x194));
+                Library::DKW::DDX::FUN_006b34d0
+                          (*(uint **)(this_00 + iVar4 * 0x1fb + 0x1bc),
+                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x178),0xfffffffe,
+                           *(uint *)(this_00 + iVar4 * 0x1fb + 400),
+                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x194));
               }
               if ((this_00[iVar4 * 0x1fb + 0xe2] != (MainMenuTy)0x0) &&
                  (*(uint *)(this_00 + iVar4 * 0x1fb + 0x209) != 0xffffffff)) {
-                FUN_006b34d0(*(uint **)(this_00 + iVar4 * 0x1fb + 0x24d),
-                             *(uint *)(this_00 + iVar4 * 0x1fb + 0x209),0xfffffffe,
-                             *(uint *)(this_00 + iVar4 * 0x1fb + 0x221),
-                             *(uint *)(this_00 + iVar4 * 0x1fb + 0x225));
+                Library::DKW::DDX::FUN_006b34d0
+                          (*(uint **)(this_00 + iVar4 * 0x1fb + 0x24d),
+                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x209),0xfffffffe,
+                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x221),
+                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x225));
               }
             }
             *(int *)(this_00 + iVar4 * 0x1fb + 0x17c) =
                  *(int *)(this_00 + iVar4 * 0x1fb + 0x17c) + 1;
             if (*(uint *)(this_00 + iVar4 * 0x1fb + 0x178) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(this_00 + iVar4 * 0x1fb + 0x1bc),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x178),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x17c),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 400),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x194));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(this_00 + iVar4 * 0x1fb + 0x1bc),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x178),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x17c),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 400),
+                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x194));
             }
             thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             iStack_8 = 0;
@@ -194,8 +200,9 @@ LAB_005b353c:
             uVar5 = *(int *)(pMVar7 + -0x8d) - 1;
             *(uint *)(pMVar7 + -0x8d) = uVar5;
             if (*(uint *)(pMVar7 + -0x91) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(pMVar7 + -0x4d),*(uint *)(pMVar7 + -0x91),uVar5,
-                           *(uint *)(pMVar7 + -0x79),*(uint *)(pMVar7 + -0x75));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(pMVar7 + -0x4d),*(uint *)(pMVar7 + -0x91),uVar5,
+                         *(uint *)(pMVar7 + -0x79),*(uint *)(pMVar7 + -0x75));
             }
             goto LAB_005b353c;
           }
@@ -222,7 +229,9 @@ LAB_005b353c:
         } while (iVar4 < (int)(uint)(byte)this_00[0x9a]);
       }
       if (*(int *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xd1) != 0) {
-        FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xc1));
+        AppClassTy::PostNextMessage
+                  ((AppClassTy *)&DAT_00807620,
+                   (undefined4 *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xc1));
         g_currentExceptionFrame = IStack_54.previous;
         return;
       }

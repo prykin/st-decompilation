@@ -22,17 +22,19 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pTStack_10 = this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pTStack_10;
   if (iVar2 == 0) {
-    FUN_006b55f0(*(undefined4 **)(pTStack_10 + 0x68),0,0x1f,0x31,*(int *)(pTStack_10 + 0x185),0,0x1f
-                 ,0x31,0x44,0x39);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(pTStack_10 + 0x68),0,0x1f,0x31,*(int *)(pTStack_10 + 0x185),0,0x1f,
+               0x31,0x44,0x39);
     bVar8 = 0x3a;
     iVar6 = 0;
     iVar2 = FUN_0070b3a0(*(int *)(this_00 + 0x1d1),(uint)(byte)this_00[0x1d0]);
     FUN_006b5440(*(int *)(this_00 + 0x68),0,0x22,0x38,iVar2,iVar6,bVar8);
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0xa6,0x31,*(int *)(this_00 + 0x185),0,0xa6,0x31,
-                 0x77,0x26);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x68),0,0xa6,0x31,*(int *)(this_00 + 0x185),0,0xa6,0x31,
+               0x77,0x26);
     if (this_00[0x1bb] == (TradePanelTy)0x0) {
       bVar8 = 0x3a;
       iVar6 = 0;

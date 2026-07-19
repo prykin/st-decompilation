@@ -24,7 +24,7 @@ void __fastcall thunk_FUN_00567330(int param_1)
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
     iStack_8 = param_1;
-    iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     iVar3 = iStack_8;
     if (iVar4 == 0) {
       uVar7 = 0xffffffff;

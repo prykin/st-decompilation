@@ -1,4 +1,4 @@
-FUN_00491240:
+STBoatC::PrepareForLoading:
 00491240  55                        PUSH EBP
 00491241  8B EC                     MOV EBP,ESP
 00491243  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

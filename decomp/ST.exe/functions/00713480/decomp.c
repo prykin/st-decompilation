@@ -63,7 +63,7 @@ ccFntTy::CreateTypeSSpr
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
   local_48 = this;
-  iVar7 = __setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_9c.previous;
     iVar8 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x9d0,0,iVar7,&DAT_007a4ccc,
@@ -126,7 +126,7 @@ ccFntTy::CreateTypeSSpr
   }
   iVar7 = FUN_007114c0(pcVar4,param_1);
   iVar8 = iVar7 + 3;
-  local_10 = FUN_006aac10(iVar8 * 4 + 0x31);
+  local_10 = Library::DKW::LIB::FUN_006aac10(iVar8 * 4 + 0x31);
   *(short *)((int)local_10 + 0x23) = (short)iVar8;
   *(undefined2 *)((int)local_10 + 0x29) = (undefined2)local_20;
   *(undefined2 *)((int)local_10 + 0x2b) = (undefined2)local_38;
@@ -134,7 +134,7 @@ ccFntTy::CreateTypeSSpr
                       (int)*(short *)((int)local_10 + 0x2b),1);
   local_4c = iVar7 + 0xd + iVar8;
   local_44 = puVar9;
-  local_c = FUN_006aac10(local_4c);
+  local_c = Library::DKW::LIB::FUN_006aac10(local_4c);
   local_30 = param_1;
   local_14 = 0;
   local_2c = 0;
@@ -197,7 +197,7 @@ ccFntTy::CreateTypeSSpr
           *(char *)puVar11 = '\0';
           puVar11 = (uint *)((int)puVar11 + 1);
         }
-        _strncpy((char *)local_c,(char *)param_1,local_14);
+        Library::MSVCRT::_strncpy((char *)local_c,(char *)param_1,local_14);
         uVar14 = 0xffffffff;
         pcVar10 = &DAT_007c8ff4;
         do {
@@ -206,7 +206,7 @@ ccFntTy::CreateTypeSSpr
           cVar1 = *pcVar10;
           pcVar10 = pcVar10 + 1;
         } while (cVar1 != '\0');
-        iVar7 = _strncmp((char *)local_1c,&DAT_007c8ff4,~uVar14 - 1);
+        iVar7 = Library::MSVCRT::_strncmp((char *)local_1c,&DAT_007c8ff4,~uVar14 - 1);
         if (iVar7 == 0) {
           local_3c = local_14;
         }
@@ -246,7 +246,7 @@ ccFntTy::CreateTypeSSpr
               pcVar18 = pcVar18 + 1;
             }
           }
-          pcVar10 = __itoa(param_7,local_58,0x10);
+          pcVar10 = Library::MSVCRT::__itoa(param_7,local_58,0x10);
           uVar14 = 0xffffffff;
           do {
             pcVar19 = pcVar10;
@@ -279,10 +279,10 @@ ccFntTy::CreateTypeSSpr
             pcVar10 = pcVar10 + 1;
             pcVar19 = pcVar19 + 1;
           }
-          _strncat((char *)local_c,(char *)local_1c,1);
+          Library::MSVCRT::_strncat((char *)local_c,(char *)local_1c,1);
           puVar16 = local_30;
           if (local_24 != 0) {
-            _strncat((char *)local_c,(char *)local_1c,1);
+            Library::MSVCRT::_strncat((char *)local_c,(char *)local_1c,1);
             puVar16 = local_30;
           }
         }
@@ -293,7 +293,7 @@ ccFntTy::CreateTypeSSpr
           local_24 = local_40;
           break;
         case 0xfffffffc:
-          puVar11 = FUN_00730590(puVar16,&DAT_007c8ff4);
+          puVar11 = Library::MSVCRT::FUN_00730590(puVar16,&DAT_007c8ff4);
           if (puVar11 != (uint *)0x0) {
             local_5 = (undefined1)*puVar11;
             *(undefined1 *)puVar11 = 0;
@@ -306,7 +306,7 @@ ccFntTy::CreateTypeSSpr
           local_24 = local_40;
           break;
         case 0xfffffffd:
-          puVar11 = FUN_00730590(puVar16,&DAT_007c8ff4);
+          puVar11 = Library::MSVCRT::FUN_00730590(puVar16,&DAT_007c8ff4);
           if (puVar11 != (uint *)0x0) {
             local_5 = (undefined1)*puVar11;
             *(undefined1 *)puVar11 = 0;
@@ -318,7 +318,7 @@ ccFntTy::CreateTypeSSpr
           }
           break;
         case 0xfffffffe:
-          puVar11 = FUN_00730590(puVar16,&DAT_007c8ff4);
+          puVar11 = Library::MSVCRT::FUN_00730590(puVar16,&DAT_007c8ff4);
           if (puVar11 != (uint *)0x0) {
             local_5 = (undefined1)*puVar11;
             *(undefined1 *)puVar11 = 0;

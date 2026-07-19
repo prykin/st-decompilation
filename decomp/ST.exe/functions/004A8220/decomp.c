@@ -13,7 +13,7 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,undefined2 pa
       FUN_006acc70(*(int *)((int)this + 0xef),uVar2,&local_8);
       if ((local_8._2_2_ == param_2) && ((char)local_8 == param_1)) {
         local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
-        FUN_006ae140(*(uint **)((int)this + 0xef),uVar2,&local_8);
+        Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar2,&local_8);
         break;
       }
       uVar2 = uVar2 + 1;
@@ -31,7 +31,7 @@ void __thiscall FUN_004a8220(void *this,char param_1,short param_2,undefined2 pa
       }
     }
     local_8 = (void *)CONCAT22(param_3,(undefined2)local_8);
-    FUN_006ae140(*(uint **)((int)this + 0x20e),uVar2,&local_8);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0x20e),uVar2,&local_8);
   }
   return;
 }

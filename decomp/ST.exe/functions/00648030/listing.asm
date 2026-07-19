@@ -1,4 +1,4 @@
-FUN_00648030:
+AiBossClassTy::GetMessage:
 00648030  55                        PUSH EBP
 00648031  8B EC                     MOV EBP,ESP
 00648033  83 EC 50                  SUB ESP,0x50

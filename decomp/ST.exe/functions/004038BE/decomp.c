@@ -31,7 +31,7 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
     IStack_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_54;
     pPStack_10 = this;
-    iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pPVar5 = pPStack_10;
     if (iVar4 == 0) {
       if (*(int *)(pPStack_10 + 0x17c) != 0) {

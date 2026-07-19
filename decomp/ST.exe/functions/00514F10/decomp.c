@@ -21,7 +21,7 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -38,7 +38,7 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
   if (*(byte **)(local_8 + 0x1d3) != (byte *)0x0) {
     FUN_006b5570(*(byte **)(local_8 + 0x1d3));
   }
-  puVar4 = FUN_006b54f0((uint *)0x0,10,10);
+  puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   *(uint **)(this_00 + 0x1d3) = puVar4;
   iVar3 = 0;
   if (0 < *(int *)(DAT_0080c4cb + 8)) {
@@ -62,9 +62,9 @@ LAB_00514f85:
   }
   *(uint **)(this_00 + 0x1d3) = puVar4;
   if (puVar4 == (uint *)0x0) {
-    puVar4 = FUN_006b54f0((uint *)0x0,10,10);
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)(this_00 + 0x1d3) = puVar4;
-    FUN_006b5aa0((int)puVar4,&DAT_007c3b5c);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_007c3b5c);
   }
   puVar4 = *(uint **)(this_00 + 0x1d3);
   if (puVar4[2] != 0) {

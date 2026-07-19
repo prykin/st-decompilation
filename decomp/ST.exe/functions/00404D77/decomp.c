@@ -8,7 +8,7 @@ undefined4 * __thiscall thunk_FUN_006025d0(void *this,undefined4 *param_1)
   undefined4 *puVar4;
   
   if (*(int *)((int)this + 0x36e) != 3) {
-    puVar1 = (undefined4 *)FUN_006aac70(0x17e);
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x17e);
     if (*(int *)((int)this + 0x36e) == 2) {
       *(uint *)((int)this + 0x36e) = (uint)(*(char *)((int)this + 0x39f) < '\x01');
     }

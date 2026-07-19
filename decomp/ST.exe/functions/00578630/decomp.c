@@ -41,7 +41,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar5 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar1 = local_1c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -82,7 +82,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
   if (uVar8 == 0x10f) {
     local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(pSVar1 + 0x1d5),&local_8);
     local_18 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)pSVar1,(int *)&local_10);
-    local_c = (byte *)FUN_006aac70(local_10 + 0x68 + local_8);
+    local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x68 + local_8);
     if (local_14 == (byte *)0x0) {
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -189,7 +189,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
       puVar9 = puVar9 + 1;
       pSVar10 = pSVar10 + 4;
     }
-    thunk_FUN_00579170((int)pSVar1);
+    Bad((STCrabC *)pSVar1,(int)unaff_EDI);
     if (((((*(int *)(pSVar1 + 0x26d) < 0) || ((int)DAT_007fb240 <= *(int *)(pSVar1 + 0x26d))) ||
          (*(int *)(pSVar1 + 0x271) < 0)) ||
         (((int)DAT_007fb242 <= *(int *)(pSVar1 + 0x271) ||
@@ -346,7 +346,7 @@ LAB_00578b5d:
     *(undefined2 *)(pSVar1 + 0x50) = *(undefined2 *)(local_20 + 0x16);
     *(undefined2 *)(pSVar1 + 0x6c) = *(undefined2 *)((int)local_20 + 0x5a);
     *(undefined4 *)(pSVar1 + 0x23d) = local_20[0xc];
-    local_3c[0] = FUN_006aac70(0x44);
+    local_3c[0] = Library::DKW::LIB::FUN_006aac70(0x44);
     if (local_3c[0] != 0) {
       iVar5 = 0;
       do {

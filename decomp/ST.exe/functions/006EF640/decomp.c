@@ -33,7 +33,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
   local_6 = 0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar5 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 == 0) {
     if (param_1 == 0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x8b);
@@ -49,7 +49,8 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
     if (param_5 != (undefined *)0x0) {
       (*(code *)param_5)(-iVar5);
     }
-    local_10 = (short *)FUN_006aac10(((int)local_a / 2) * ((int)local_8 / 2) * 0x18 + 0x45d);
+    local_10 = (short *)Library::DKW::LIB::FUN_006aac10
+                                  (((int)local_a / 2) * ((int)local_8 / 2) * 0x18 + 0x45d);
     *local_10 = local_a;
     local_10[1] = local_8;
     *(undefined1 *)(local_10 + 2) = local_6;
@@ -68,13 +69,13 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
     if (local_5 < 5) {
       RaiseInternalException(-5,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x9e);
     }
-    local_14 = FUN_006f1ce0(0xf,param_2,(int *)0x0,1);
+    local_14 = cMf32::RecGet((cMf32 *)param_1,0xf,param_2,(int *)0x0,1);
     local_18 = 0;
     if (0 < iVar5) {
       iVar5 = 0;
       do {
         pbVar1 = (byte *)(iVar5 + (int)local_14);
-        local_1c = FUN_006aac10(0x50);
+        local_1c = Library::DKW::LIB::FUN_006aac10(0x50);
         *(undefined4 **)
          ((int)local_10 +
          ((((int)local_10[1] / 2) * (uint)*pbVar1 + (uint)(pbVar1[2] >> 1)) * ((int)*local_10 / 2) +

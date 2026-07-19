@@ -14,7 +14,7 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_8;
   if (errorCode == 0) {
     if (-1 < (int)*(uint *)(pCStack_8 + 0x4d6)) {
@@ -28,7 +28,7 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
     *(undefined4 *)(pCVar2 + 0x4e7) = 0;
     if (*(SpriteClassTy **)(pCVar2 + 0x4eb) != (SpriteClassTy *)0x0) {
       SpriteClassTy::CloseSprite(*(SpriteClassTy **)(pCVar2 + 0x4eb));
-      FUN_0072e2b0(*(undefined4 **)(pCVar2 + 0x4eb));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pCVar2 + 0x4eb));
       *(undefined4 *)(pCVar2 + 0x4eb) = 0;
     }
     if (*(int **)(pCVar2 + 0xad) != (int *)0x0) {

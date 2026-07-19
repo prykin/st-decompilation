@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_00615ad0(void *param_1)
   iVar1 = thunk_FUN_00615860((int)*(short *)((int)param_1 + 0x1f5),&local_10,&local_c,&local_8);
   if (iVar1 != 0) {
     if (*(int *)((int)param_1 + 0x2dd) == 0) {
-      iVar1 = FUN_006aac70(0x1c);
+      iVar1 = Library::DKW::LIB::FUN_006aac70(0x1c);
       *(int *)((int)param_1 + 0x2dd) = iVar1;
     }
     *(undefined4 *)((int)param_1 + 0x2d5) = 1;

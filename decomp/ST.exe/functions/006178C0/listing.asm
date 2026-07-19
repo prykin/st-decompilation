@@ -1,4 +1,4 @@
-FUN_006178c0:
+JumpManagC::CheckSystrm:
 006178C0  55                        PUSH EBP
 006178C1  8B EC                     MOV EBP,ESP
 006178C3  83 EC 08                  SUB ESP,0x8

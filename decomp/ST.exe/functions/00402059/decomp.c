@@ -85,7 +85,7 @@ thunk_FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,unde
       }
     }
     else {
-      _strncpy(acStack_126,param_6,0xe);
+      Library::MSVCRT::_strncpy(acStack_126,param_6,0xe);
       uStack_118 = 0;
     }
   }
@@ -123,7 +123,7 @@ thunk_FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,unde
       }
     }
     else {
-      _strncpy(acStack_117,param_7,0x103);
+      Library::MSVCRT::_strncpy(acStack_117,param_7,0x103);
       uStack_14 = 0;
     }
   }

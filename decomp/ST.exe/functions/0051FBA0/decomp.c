@@ -13,6 +13,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   uint uVar4;
   undefined4 uVar5;
   int iVar6;
+  ccFntTy *this_01;
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -23,7 +24,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {
@@ -42,7 +43,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
       }
       break;
     case 2:
-      puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x30));
+      puVar3 = ccFntTy::operator(DAT_00802a28,0x19d,*(int *)(DAT_00802a28 + 0x30));
       *(undefined4 **)(this_00 + 0x11e) = puVar3;
       puVar3[0x16] = 0;
       puVar3[0x17] = 0;
@@ -71,7 +72,7 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
     case 3:
       DAT_00801694 = (HelpStringTy *)0x0;
       if (*(uint **)(local_8 + 0x11e) != (uint *)0x0) {
-        FUN_00710560(*(uint **)(local_8 + 0x11e));
+        ccFntTy::operator(this_01,*(uint **)(local_8 + 0x11e));
         *(undefined4 *)(this_00 + 0x11e) = 0;
       }
       if (*(int *)(this_00 + 0x12a) != 0) {

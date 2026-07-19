@@ -5,7 +5,7 @@ CFsgsConnection * __thiscall FUN_0055bd40(void *this,byte param_1)
   *(undefined ***)this = &PTR_LAB_0079aefc;
   CFsgsConnection::~CFsgsConnection(this);
   if ((param_1 & 1) != 0) {
-    FUN_0072e2b0(this);
+    Library::MSVCRT::FUN_0072e2b0(this);
   }
   return this;
 }

@@ -1,4 +1,4 @@
-FUN_0055ab50:
+VisibleClassTy::VisHoleExec:
 0055AB50  55                        PUSH EBP
 0055AB51  8B EC                     MOV EBP,ESP
 0055AB53  83 EC 4C                  SUB ESP,0x4c

@@ -17,7 +17,7 @@ void __thiscall OptPanelTy::Question(OptPanelTy *this,char param_1)
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pOStack_8 = this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  iVar2 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   this_00 = pOStack_8;
   if (iVar2 == 0) {
     if (param_1 == '\x04') {

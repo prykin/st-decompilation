@@ -1,5 +1,5 @@
 
-uint thunk_FUN_0044c130(int param_1,int param_2)
+uint __thiscall STAllPlayersC::GetTOBJImage(STAllPlayersC *this,int param_1,int param_2)
 
 {
   code *pcVar1;
@@ -8,7 +8,7 @@ uint thunk_FUN_0044c130(int param_1,int param_2)
   uint uVar4;
   int iVar5;
   int *piVar6;
-  byte abStack_154 [256];
+  STBoatC aSStack_154 [256];
   int aiStack_54 [12];
   undefined4 uStack_24;
   undefined4 uStack_20;
@@ -65,36 +65,39 @@ uint thunk_FUN_0044c130(int param_1,int param_2)
   case 0x27:
   case 0x28:
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0044e980(param_1,iVar3,0xe,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
-                       &param_2);
-    if (abStack_154[0] != 0) {
-      puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,abStack_154,0xffffffff,0,1,0,(undefined4 *)0x0)
-      ;
+    STBoatC::GetVisualInfo
+              (aSStack_154,param_1,iVar3,0xe,&piStack_c,(char *)aSStack_154,(undefined1 *)&uStack_8,
+               &param_2);
+    if (aSStack_154[0] != (STBoatC)0x0) {
+      puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,(byte *)aSStack_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
       uStack_1c = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
     }
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0044e980(param_1,iVar3,0xd,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
-                       &param_2);
-    if (abStack_154[0] != 0) {
-      puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,abStack_154,0xffffffff,0,1,0,(undefined4 *)0x0)
-      ;
+    STBoatC::GetVisualInfo
+              ((STBoatC *)&uStack_8,param_1,iVar3,0xd,&piStack_c,(char *)aSStack_154,
+               (STBoatC *)&uStack_8,&param_2);
+    if (aSStack_154[0] != (STBoatC)0x0) {
+      puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,(byte *)aSStack_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
       uStack_20 = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
     }
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0044e980(param_1,iVar3,0xc,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
-                       &param_2);
-    if (abStack_154[0] != 0) {
-      puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,abStack_154,0xffffffff,0,1,0,(undefined4 *)0x0)
-      ;
+    STBoatC::GetVisualInfo
+              ((STBoatC *)&piStack_c,param_1,iVar3,0xc,(undefined4 *)&piStack_c,(char *)aSStack_154,
+               (undefined1 *)&uStack_8,&param_2);
+    if (aSStack_154[0] != (STBoatC)0x0) {
+      puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,(byte *)aSStack_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
       uStack_24 = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
     }
     uVar4 = FUN_00709470(DAT_00807598,aiStack_54,0x11,1,10,0xff);
@@ -179,13 +182,13 @@ uint thunk_FUN_0044c130(int param_1,int param_2)
     iVar5 = 0;
     do {
       piStack_c = (int *)0x0;
-      abStack_154[0] = 0;
+      aSStack_154[0] = (STBoatC)0x0;
       uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
       param_2 = 0;
-      thunk_FUN_004c2950(param_1,iVar3,iVar5,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
+      thunk_FUN_004c2950(param_1,iVar3,iVar5,&piStack_c,(char *)aSStack_154,(undefined1 *)&uStack_8,
                          &param_2);
-      if (abStack_154[0] != 0) {
-        puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,abStack_154,0xffffffff,0,1,0,
+      if (aSStack_154[0] != (STBoatC)0x0) {
+        puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,(byte *)aSStack_154,0xffffffff,0,1,0,
                               (undefined4 *)0x0);
         if (*(int *)puVar2 + -1 < param_2) {
           param_2 = *(int *)puVar2 + -1;
@@ -203,10 +206,10 @@ uint thunk_FUN_0044c130(int param_1,int param_2)
   case 0xe0:
   case 0xe2:
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_00580910(param_1,iVar3,0xe,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
+    thunk_FUN_00580910(param_1,iVar3,0xe,&piStack_c,(char *)aSStack_154,(undefined1 *)&uStack_8,
                        &param_2);
     break;
   case 0xe6:
@@ -226,34 +229,35 @@ uint thunk_FUN_0044c130(int param_1,int param_2)
   case 0xfa:
   case 0xfb:
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0057a140(param_1,iVar3,0xe,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
+    thunk_FUN_0057a140(param_1,iVar3,0xe,&piStack_c,(char *)aSStack_154,(undefined1 *)&uStack_8,
                        &param_2);
     goto joined_r0x0044c40d;
   case 0xfd:
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_005ec740(param_1,iVar3,0xe,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
+    thunk_FUN_005ec740(param_1,iVar3,0xe,&piStack_c,(char *)aSStack_154,(undefined1 *)&uStack_8,
                        &param_2);
     break;
   case 0xfe:
     piStack_c = (int *)0x0;
-    abStack_154[0] = 0;
+    aSStack_154[0] = (STBoatC)0x0;
     uStack_8 = CONCAT31(uStack_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_005fcf50(param_1,iVar3,0xe,&piStack_c,(char *)abStack_154,(undefined1 *)&uStack_8,
+    thunk_FUN_005fcf50(param_1,iVar3,0xe,&piStack_c,(char *)aSStack_154,(undefined1 *)&uStack_8,
                        &param_2);
 joined_r0x0044c40d:
-    if (abStack_154[0] == 0) goto LAB_0044c477;
+    if (aSStack_154[0] == (STBoatC)0x0) goto LAB_0044c477;
     goto LAB_0044c44d;
   }
-  if (abStack_154[0] != 0) {
+  if (aSStack_154[0] != (STBoatC)0x0) {
 LAB_0044c44d:
-    puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,abStack_154,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar2 = FUN_00709af0(piStack_c,(byte)uStack_8,(byte *)aSStack_154,0xffffffff,0,1,0,
+                          (undefined4 *)0x0);
     uStack_1c = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
   }
 LAB_0044c477:

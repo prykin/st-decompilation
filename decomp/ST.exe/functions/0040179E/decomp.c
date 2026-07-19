@@ -30,10 +30,10 @@ undefined4 __fastcall thunk_FUN_0060d940(int param_1)
       fcos(fVar8 + (float10)fVar2);
       iVar4 = *(int *)(iVar4 + 0x10);
       uVar6 = iVar4 * iStack_8;
-      lVar9 = __ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       fsin(extraout_ST1);
       iVar7 = (int)lVar9 + *(int *)(param_1 + 0x1e9);
-      lVar9 = __ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       iVar3 = (int)lVar9 + *(int *)(param_1 + 0x1ed);
       iStack_c = 0;
       if (0 < iVar4) {

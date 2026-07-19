@@ -22,7 +22,7 @@ void __fastcall thunk_FUN_006a0470(int param_1)
   *(int *)(param_1 + 0x5703) = iVar6;
   iVar2 = (*(int **)(param_1 + 8))[1] * 0x28;
   *(int *)(param_1 + 0x5707) = iVar2;
-  puVar3 = (undefined4 *)FUN_006aac70(iVar6 * iVar2);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar6 * iVar2);
   uVar7 = *(int *)(param_1 + 0x5703) * *(int *)(param_1 + 0x5707);
   *(undefined4 **)(param_1 + 0x56ff) = puVar3;
   for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {

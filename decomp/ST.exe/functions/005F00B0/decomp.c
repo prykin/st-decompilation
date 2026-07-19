@@ -16,7 +16,7 @@ void __thiscall FUN_005f00b0(void *this,undefined1 *param_1)
   param_1[7] = uVar2;
   *(undefined4 *)(param_1 + 8) = *(undefined4 *)((int)this + 0x18);
   (**(code **)(*(int *)this + 0x74))(local_14);
-  _strncpy(param_1 + 0xc,local_14,0xe);
+  Library::MSVCRT::_strncpy(param_1 + 0xc,local_14,0xe);
   uVar2 = (**(code **)(*(int *)this + 0x7c))();
   param_1[0x1b] = uVar2;
   iVar1 = *(int *)((int)this + 0x23a);

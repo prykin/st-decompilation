@@ -15,7 +15,7 @@ void __thiscall MMObjTy::CloseButtons(MMObjTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pMStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = pMStack_8;
   if (iVar3 == 0) {
     iVar3 = 0xd;

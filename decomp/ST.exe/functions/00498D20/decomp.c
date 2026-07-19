@@ -30,13 +30,13 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     if (*(int *)((int)this + 0xe7) == 0) {
       param_2 = *(int **)((int)this + 0xef);
       uVar5 = param_2[3];
-      puVar2 = FUN_006ae290((uint *)0x0,uVar5,4,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,4,1);
       uVar6 = 0;
       *(uint **)((int)this + 0xef) = puVar2;
       if (0 < (int)uVar5) {
         do {
           FUN_006acc70((int)param_2,uVar6,&local_8);
-          FUN_006ae140(*(uint **)((int)this + 0xef),uVar6,&local_8);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)((int)this + 0xef),uVar6,&local_8);
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < (int)uVar5);
         return;
@@ -55,13 +55,14 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     if (*(int *)((int)this + 0x15c) == 0) {
       param_2 = *(int **)((int)this + 0x160);
       uVar5 = param_2[3];
-      puVar2 = FUN_006ae290((uint *)0x0,uVar5,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
       uVar6 = 0;
       *(uint **)((int)this + 0x160) = puVar2;
       if (0 < (int)uVar5) {
         do {
           FUN_006acc70((int)param_2,uVar6,(undefined4 *)((int)&param_1 + 2));
-          FUN_006ae140(*(uint **)((int)this + 0x160),uVar6,(undefined4 *)((int)&param_1 + 2));
+          Library::DKW::TBL::FUN_006ae140
+                    (*(uint **)((int)this + 0x160),uVar6,(undefined4 *)((int)&param_1 + 2));
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < (int)uVar5);
         return;
@@ -80,13 +81,14 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     if (*(int *)((int)this + 0x164) == 0) {
       param_2 = *(int **)((int)this + 0x168);
       uVar5 = param_2[3];
-      puVar2 = FUN_006ae290((uint *)0x0,uVar5,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
       uVar6 = 0;
       *(uint **)((int)this + 0x168) = puVar2;
       if (0 < (int)uVar5) {
         do {
           FUN_006acc70((int)param_2,uVar6,(undefined4 *)((int)&param_1 + 2));
-          FUN_006ae140(*(uint **)((int)this + 0x168),uVar6,(undefined4 *)((int)&param_1 + 2));
+          Library::DKW::TBL::FUN_006ae140
+                    (*(uint **)((int)this + 0x168),uVar6,(undefined4 *)((int)&param_1 + 2));
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < (int)uVar5);
         return;
@@ -101,7 +103,7 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     *(int *)((int)this + 0x107) = param_2[1];
     iVar3 = *piVar4;
     param_2 = *(int **)(iVar3 + 0xc);
-    puVar2 = FUN_006ae290((uint *)0x0,1,6,1);
+    puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
     *piVar4 = (int)puVar2;
     uVar5 = 0;
     if (0 < (int)param_2) {
@@ -114,7 +116,7 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
         }
         local_10 = *puVar1;
         local_c = *(undefined2 *)(puVar1 + 1);
-        FUN_006ae140((uint *)*piVar4,uVar5,&local_10);
+        Library::DKW::TBL::FUN_006ae140((uint *)*piVar4,uVar5,&local_10);
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < (int)param_2);
       return;
@@ -137,13 +139,14 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     if (*(int *)((int)this + 0x10b) == 0) {
       param_2 = *(int **)((int)this + 0x10f);
       uVar5 = param_2[3];
-      puVar2 = FUN_006ae290((uint *)0x0,uVar5,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
       uVar6 = 0;
       *(uint **)((int)this + 0x10f) = puVar2;
       if (0 < (int)uVar5) {
         do {
           FUN_006acc70((int)param_2,uVar6,(undefined4 *)((int)&param_1 + 2));
-          FUN_006ae140(*(uint **)((int)this + 0x10f),uVar6,(undefined4 *)((int)&param_1 + 2));
+          Library::DKW::TBL::FUN_006ae140
+                    (*(uint **)((int)this + 0x10f),uVar6,(undefined4 *)((int)&param_1 + 2));
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < (int)uVar5);
       }
@@ -151,13 +154,14 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     if (*(int *)((int)this + 0x123) == 0) {
       param_2 = *(int **)((int)this + 0x127);
       uVar5 = param_2[3];
-      puVar2 = FUN_006ae290((uint *)0x0,uVar5,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar5,2,1);
       uVar6 = 0;
       *(uint **)((int)this + 0x127) = puVar2;
       if (0 < (int)uVar5) {
         do {
           FUN_006acc70((int)param_2,uVar6,(undefined4 *)((int)&param_1 + 2));
-          FUN_006ae140(*(uint **)((int)this + 0x127),uVar6,(undefined4 *)((int)&param_1 + 2));
+          Library::DKW::TBL::FUN_006ae140
+                    (*(uint **)((int)this + 0x127),uVar6,(undefined4 *)((int)&param_1 + 2));
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < (int)uVar5);
         return;
@@ -262,46 +266,46 @@ LAB_00499129:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x71) = 1;
     if (*(int *)((int)this + 0x1ca) == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,1,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
       *(uint **)((int)this + 0x1ca) = puVar2;
     }
-    FUN_006ae1c0(*(uint **)((int)this + 0x1ca),param_2);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ca),param_2);
     return;
   case 0x67:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x75) = 1;
     if (*(int *)((int)this + 0x1ce) == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,1,4,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
       *(uint **)((int)this + 0x1ce) = puVar2;
     }
-    FUN_006ae1c0(*(uint **)((int)this + 0x1ce),param_2);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ce),param_2);
     return;
   case 0x68:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x79) = 1;
     if (*(int *)((int)this + 0x1d2) == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,1,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
       *(uint **)((int)this + 0x1d2) = puVar2;
     }
-    FUN_006ae1c0(*(uint **)((int)this + 0x1d2),param_2);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d2),param_2);
     return;
   case 0x69:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x7d) = 1;
     if (*(int *)((int)this + 0x1d6) == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,1,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
       *(uint **)((int)this + 0x1d6) = puVar2;
     }
-    FUN_006ae1c0(*(uint **)((int)this + 0x1d6),param_2);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d6),param_2);
     return;
   case 0x6a:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x81) = 1;
     if (*(int *)((int)this + 0x1da) == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,1,2,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
       *(uint **)((int)this + 0x1da) = puVar2;
     }
-    FUN_006ae1c0(*(uint **)((int)this + 0x1da),param_2);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1da),param_2);
   }
   return;
 }

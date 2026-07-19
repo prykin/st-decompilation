@@ -7,6 +7,7 @@ void __thiscall thunk_FUN_0041dd00(void *this,int param_1)
   float fVar1;
   undefined4 uVar2;
   int iVar3;
+  int *unaff_ESI;
   float fVar4;
   float fVar5;
   
@@ -62,7 +63,7 @@ void __thiscall thunk_FUN_0041dd00(void *this,int param_1)
       return;
     }
   }
-  thunk_FUN_00420340(this);
+  STSprGameObjC::LoadActFrame(this,unaff_ESI);
   if (((0 < *(int *)((int)this + 0x105)) && (*(uint *)((int)this + 0x24) == (uint)DAT_0080874d)) &&
      (*(int *)((int)this + 0x20) != 0x14)) {
     FUN_006e6710(*(void **)((int)this + 0x211),

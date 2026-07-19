@@ -60,7 +60,7 @@ STSprGameObjC::CheckRay
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   local_1c = this;
-  iVar8 = __setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_ac.previous;
     if (iVar8 != -0x5001fff7) {

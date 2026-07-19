@@ -30,7 +30,7 @@ void FUN_004969f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
   local_8 = param_6;
   local_1c = param_1;
   local_18 = param_2;
-  FUN_006ae1c0(DAT_007fb270,&local_1c);
+  Library::DKW::TBL::FUN_006ae1c0(DAT_007fb270,&local_1c);
   return;
 }
 

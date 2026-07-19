@@ -39,7 +39,7 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   uStack_c = 0;
   IStack_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_78;
-  iVar4 = __setjmp3(IStack_78.jumpBuffer,0,pvVar13,iVar4);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_78.jumpBuffer,0,pvVar13,iVar4);
   this_00 = pHStack_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_78.previous;
@@ -135,7 +135,7 @@ LAB_0051d689:
   iVar4 = 1;
   pCVar6 = thunk_FUN_00571240(s_BUT_HLPTDAY_007c3da8,0);
   pCVar6 = FUN_006f2c00(pCVar6,iVar4,uVar11);
-  puStack_8 = FUN_006f1ce0(1,pCVar6,piVar14,iVar9);
+  puStack_8 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar14,iVar9);
   iVar4 = uVar10 + 10;
   thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x218),0x50,iVar4,'\x01',(byte *)puStack_8);
   iStack_18 = *(int *)(puStack_8 + 2);
@@ -150,7 +150,7 @@ LAB_0051d689:
   aiStack_34[2] = iStack_18;
   aiStack_34[3] = *(int *)(puStack_8 + 4);
   aiStack_34[1] = iVar4;
-  FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),aiStack_34);
+  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),aiStack_34);
   cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_8);
   CheckBkView(this_00,uVar10 + 0x1e,10);
   uStack_c = (uVar10 / 10 + 1) * 10;
@@ -162,11 +162,12 @@ LAB_0051d689:
     iVar4 = iVar4 / (int)(uint)*(ushort *)(this_00 + 0x1b1) + 1;
   }
   CreateSlider(this_00,iVar4);
-  FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
-               *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff
-              );
-  FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-               *(uint *)(this_00 + 0x44));
+  Library::DKW::WGR::FUN_006b5110
+            (*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
+             *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+             *(uint *)(this_00 + 0x44));
   g_currentExceptionFrame = IStack_78.previous;
   return;
 }

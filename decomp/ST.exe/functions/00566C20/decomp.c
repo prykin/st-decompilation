@@ -21,7 +21,7 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
   *(undefined4 *)(this + 0x1c) = uVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar5 = ReportDebugMessage(s_E____titans_snd_mngr_cpp_007c9748,0xdc,0,iVar4,&DAT_007a4ccc,

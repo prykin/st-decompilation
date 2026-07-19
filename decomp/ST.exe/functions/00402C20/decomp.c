@@ -160,7 +160,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   IStack_2c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_2c8;
   pCStack_124 = this;
-  iVar7 = __setjmp3(IStack_2c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(IStack_2c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar6 = pCStack_124;
   if (iVar7 != 0) {
     g_currentExceptionFrame = IStack_2c8.previous;
@@ -222,7 +222,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (puStack_4c != (ushort *)0x0) {
           puStack_18 = (undefined4 *)(uStack_9c + 1);
-          pcStack_94 = (char *)FUN_006aac10((uint)puStack_18);
+          pcStack_94 = (char *)Library::DKW::LIB::FUN_006aac10((uint)puStack_18);
           if (pcStack_94 != (char *)0x0) {
             *pcStack_94 = (*(int *)(pCVar6 + 0x4a2) == 10) + '\x01';
             puVar10 = puStack_4c;
@@ -255,7 +255,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (puStack_1c != (ushort *)0x0) {
           puStack_24 = (undefined4 *)(uStack_a8 + 1);
-          puStack_18 = FUN_006aac10((uint)puStack_24);
+          puStack_18 = Library::DKW::LIB::FUN_006aac10((uint)puStack_24);
           if (puStack_18 != (undefined4 *)0x0) {
             *(undefined1 *)puStack_18 = 3;
             puVar10 = puStack_1c;
@@ -337,7 +337,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (puStack_54 != (undefined4 *)0x0) {
           puStack_18 = (undefined4 *)(uStack_a4 + 1);
-          puStack_24 = FUN_006aac10((uint)puStack_18);
+          puStack_24 = Library::DKW::LIB::FUN_006aac10((uint)puStack_18);
           if (puStack_24 != (undefined4 *)0x0) {
             *(undefined1 *)puStack_24 = 4;
             puVar14 = puStack_54;
@@ -366,13 +366,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       uStack_e8 = 0;
       uStack_e4 = 0;
       CStack_e3 = (CursorClassTy)0x0;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_f4._1_3_ = (undefined3)lVar13;
       uStack_f0._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_f0._1_3_ = (undefined3)lVar13;
       uStack_ec._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       CStack_e3 = pCVar6[0xfb];
       uStack_ec._1_3_ = (undefined3)lVar13;
       puVar15 = &uStack_f4;
@@ -395,7 +395,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       if (puStack_3c != (ushort *)0x0) {
         puStack_18 = (undefined4 *)(uStack_98 + 1);
-        puStack_20 = (ushort *)FUN_006aac10((uint)puStack_18);
+        puStack_20 = (ushort *)Library::DKW::LIB::FUN_006aac10((uint)puStack_18);
         if (puStack_20 != (ushort *)0x0) {
           *(char *)puStack_20 = (*(short *)(pCVar6 + 0x494) == 0xc) + '\x01';
           puVar10 = puStack_3c;
@@ -427,11 +427,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                            *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&fStack_10,&fStack_c,
                            (float *)&puStack_8);
       if (iVar7 == 0) break;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_11b = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_11a = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       bStack_119 = (byte)lVar13;
       if (4 < bStack_119) {
         bStack_119 = 4;
@@ -458,11 +458,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&fStack_10,&fStack_c,
                          (float *)&puStack_8);
     if (iVar7 != 0) {
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_130 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_12c = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       iStack_128 = (int)lVar13;
       if (iStack_128 < 0) {
         iStack_128 = 0;
@@ -487,11 +487,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          (float *)&puStack_8);
     if (iVar7 != 0) {
       auStack_178[0] = 2;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_173 = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_172 = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       bStack_171 = (byte)lVar13;
       if (4 < bStack_171) {
         bStack_171 = 4;
@@ -549,7 +549,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (puStack_44 != (ushort *)0x0) {
           puStack_18 = (undefined4 *)(uStack_a0 + 1);
-          puStack_14 = (ushort *)FUN_006aac10((uint)puStack_18);
+          puStack_14 = (ushort *)Library::DKW::LIB::FUN_006aac10((uint)puStack_18);
           if (puStack_14 != (ushort *)0x0) {
             *(undefined1 *)puStack_14 = 3;
             puVar10 = puStack_44;
@@ -596,11 +596,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          (float *)&puStack_8);
     if (iVar7 != 0) {
       cStack_19c = ((*(short *)(pCVar6 + 0x494) != 0xf) - 1U & 0xf2) + 0x10;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_19b = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_197 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       iStack_193 = (int)lVar13;
       if (iStack_193 < 0) {
         iStack_193 = 0;
@@ -624,11 +624,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&fStack_10,&fStack_c,
                          (float *)&puStack_8);
     if (iVar7 != 0) {
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_13c = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_138 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       iStack_134 = (int)lVar13;
       if (iStack_134 < 0) {
         iStack_134 = 0;
@@ -721,11 +721,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&fStack_10,&fStack_c,
                          (float *)&puStack_8);
     if (iVar7 != 0) {
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_207 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_203 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       iStack_1ff = (int)lVar13;
       if (iStack_1ff < 0) {
         iStack_1ff = 0;
@@ -777,13 +777,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     uStack_fc = 0;
     uStack_f8 = 0;
     CStack_f7 = (CursorClassTy)0x0;
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     uStack_108._1_3_ = (undefined3)lVar13;
     uStack_104._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     uStack_104._1_3_ = (undefined3)lVar13;
     uStack_100._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     CStack_f7 = pCVar6[0xfb];
     uStack_100._1_3_ = (undefined3)lVar13;
     puVar15 = &uStack_108;
@@ -803,13 +803,13 @@ LAB_0054a196:
       uStack_8c = 0;
       uStack_88 = 0;
       uStack_84 = 0;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_90._1_3_ = (undefined3)lVar13;
       uStack_8c._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       uStack_8c._1_3_ = (undefined3)lVar13;
       uStack_88._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       iVar7 = (int)lVar13;
       uStack_88._1_3_ = (undefined3)lVar13;
       uStack_84 = (undefined1)((ulonglong)lVar13 >> 0x18);

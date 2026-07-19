@@ -24,13 +24,13 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
     if (*(byte **)(local_8 + 0x696) != (byte *)0x0) {
       FUN_006b5570(*(byte **)(local_8 + 0x696));
     }
-    puVar4 = FUN_006b54f0((uint *)0x0,10,10);
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)(pSVar2 + 0x696) = puVar4;
     iVar3 = WSAStartup(0x101,&local_1dc);
     if (iVar3 == 0) {
@@ -42,7 +42,7 @@ void __thiscall StartSystemTy::GetIP(StartSystemTy *this)
           iVar3 = 0;
           do {
             pcVar7 = inet_ntoa((in_addr)p_Var6->S_un_b);
-            FUN_006b5aa0(*(int *)(pSVar2 + 0x696),pcVar7);
+            Library::DKW::TBL::FUN_006b5aa0(*(int *)(pSVar2 + 0x696),pcVar7);
             iVar3 = iVar3 + 4;
             p_Var6 = *(_union_1226 **)((int)phVar5->h_addr_list + iVar3);
           } while (p_Var6 != (_union_1226 *)0x0);

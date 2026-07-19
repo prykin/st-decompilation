@@ -17,7 +17,7 @@ FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,s
   int local_f;
   
   if (*(int *)((int)this + 0x38) == 0) {
-    puVar1 = FUN_006ae290((uint *)0x0,10,0x19,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x19,10);
     *(uint **)((int)this + 0x38) = puVar1;
     if (puVar1 == (uint *)0x0) {
       return -1;
@@ -44,7 +44,7 @@ FUN_005f14b0(void *this,short param_1,short param_2,short param_3,byte param_4,s
     iVar3 = -1;
   }
   else {
-    uVar2 = FUN_006ae1c0(*(uint **)((int)this + 0x38),(undefined4 *)&local_20);
+    uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x38),(undefined4 *)&local_20);
     iVar3 = uVar2 + 1;
     if (-1 < iVar3) {
       DAT_00811788 = DAT_00811788 + 1;

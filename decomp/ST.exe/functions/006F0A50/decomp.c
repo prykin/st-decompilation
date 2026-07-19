@@ -20,7 +20,7 @@ FUN_006f0a50(short *param_1,int *param_2,int param_3,int param_4,int param_5,int
   
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar4 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if ((((param_1 == (short *)0x0) || (param_2 == (int *)0x0)) || (param_7 < 0)) || (5 < param_7))
     {

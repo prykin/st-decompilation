@@ -18,7 +18,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pSStack_8 = this;
-  iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if ((DAT_008087b6 != 0) && (*(int *)(DAT_0081176c + 0x2f4) != 0)) {
       FUN_006e83f0(*(int *)(DAT_0081176c + 0x2f0),0x14,0x14,0x8b,(uint)DAT_008087c2);

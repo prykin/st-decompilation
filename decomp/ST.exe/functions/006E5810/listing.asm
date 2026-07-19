@@ -1,4 +1,4 @@
-FUN_006e5810:
+SystemClassTy::PostMessage:
 006E5810  55                        PUSH EBP
 006E5811  8B EC                     MOV EBP,ESP
 006E5813  83 EC 48                  SUB ESP,0x48

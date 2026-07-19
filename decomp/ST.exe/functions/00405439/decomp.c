@@ -21,7 +21,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pSStack_10 = this;
-  iVar2 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = pSStack_10;
   if (iVar2 == 0) {
     *param_1 = 0x40;
@@ -35,7 +35,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       FUN_006ab060(&puStack_c);
       *param_1 = *param_1 + uStack_8;
     }
-    iVar2 = FUN_006aac70(*param_1);
+    iVar2 = Library::DKW::LIB::FUN_006aac70(*param_1);
     uStack_8 = 0;
     *(int *)(iVar2 + 4) = (int)(char)pSVar5[0x24];
     *(undefined4 *)(iVar2 + 0xc) = 2;

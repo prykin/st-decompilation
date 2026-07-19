@@ -16,11 +16,11 @@ void __cdecl thunk_FUN_00575460(int *param_1)
   piVar2 = DAT_0080760c;
   if (DAT_0080760c != (int *)0x0) {
     FUN_006dbcf0(DAT_0080760c);
-    FUN_0072e2b0(piVar2);
+    Library::MSVCRT::FUN_0072e2b0(piVar2);
     DAT_0080760c = (int *)0x0;
   }
   if (param_1 != (int *)0x0) {
-    puVar6 = FUN_006ae290((uint *)0x0,0x14,4,0x14);
+    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,4,0x14);
     *(undefined4 *)(*(int *)((int)param_1 + 0x451) + 4) = 0;
     while( true ) {
       iVar3 = *(int *)((int)param_1 + 0x451);
@@ -30,7 +30,7 @@ void __cdecl thunk_FUN_00575460(int *param_1)
       *(uint *)(iVar3 + 4) = uVar4 + 1;
       if (iVar7 == 0) break;
       puVar1 = (undefined4 *)(iVar7 + 8);
-      FUN_006ae1c0(puVar6,puVar1);
+      Library::DKW::TBL::FUN_006ae1c0(puVar6,puVar1);
       FUN_006a5e90((undefined4 *)*puVar1);
     }
     FUN_006ae110(*(byte **)((int)param_1 + 0x451));
@@ -51,7 +51,7 @@ void __cdecl thunk_FUN_00575460(int *param_1)
           } while (*piVar2 != *piVar8);
           if (piVar8 == (int *)0x0) {
 LAB_0057554f:
-            FUN_006ae1c0(puVar6,piVar2);
+            Library::DKW::TBL::FUN_006ae1c0(puVar6,piVar2);
             FUN_006ab060(piVar2);
           }
           *piVar2 = 0;

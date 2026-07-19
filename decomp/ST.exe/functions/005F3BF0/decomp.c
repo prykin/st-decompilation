@@ -52,13 +52,13 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
       *(int *)((int)this + 0xf7) =
            (*(int *)((int)this + 0xdf) * *(int *)((int)this + 0xdf) * 10000) / 0x1f6;
       iVar6 = *(int *)((int)this + 0x9b);
-      lVar10 = __ftol();
+      lVar10 = Library::MSVCRT::__ftol();
       iVar9 = (int)lVar10 + 1;
       fVar4 = (float)(int)local_14 / (float)(iVar9 * 2);
       local_14 = (fVar4 * fVar4) / (float)(int)local_14;
       dVar1 = (double)(fVar4 / local_14 + _DAT_00790784);
-      FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-      lVar10 = __ftol();
+      Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+      lVar10 = Library::MSVCRT::__ftol();
       local_10 = (int)lVar10;
       if (*(int *)((int)this + 0xef) != 0) {
         *(undefined2 *)((int)this + 0xd1) = *(undefined2 *)((int)this + 0x93);
@@ -66,16 +66,16 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
         *(undefined2 *)((int)this + 0xd3) = *(undefined2 *)((int)this + 0x97);
         *(undefined2 *)((int)this + 0xd5) = *(undefined2 *)((int)this + 0x9b);
         *(undefined4 *)((int)this + 0xe3) = *(undefined4 *)((int)this + 0xdf);
-        lVar10 = __ftol();
+        lVar10 = Library::MSVCRT::__ftol();
         *(int *)((int)this + 0xcd) = (int)lVar10;
-        lVar10 = __ftol();
+        lVar10 = Library::MSVCRT::__ftol();
         local_18 = -*(int *)((int)this + 0xdf);
         iVar6 = thunk_FUN_005f3b30((float)local_10,(float)*(int *)((int)this + 0xdf),
                                    (float)(0x4b0 - iVar6),(float)local_18,local_20);
         if (iVar6 != 0) {
-          lVar11 = __ftol();
+          lVar11 = Library::MSVCRT::__ftol();
           *(int *)((int)this + 0xdf) = (int)lVar11;
-          lVar11 = __ftol();
+          lVar11 = Library::MSVCRT::__ftol();
           *(int *)((int)this + 0xeb) = (int)lVar11;
           *(int *)((int)this + 0xd7) =
                ((param_1 - *(short *)((int)this + 0xd1)) * (int)lVar10) / iVar5;
@@ -112,9 +112,9 @@ FUN_005f3bf0(void *this,int param_1,int param_2,undefined4 param_3,char param_4)
                                            (int)*(short *)((int)this + 0x9b)) + 0x44c),
                                    (float)local_18,local_20);
         if (iVar5 != 0) {
-          lVar10 = __ftol();
+          lVar10 = Library::MSVCRT::__ftol();
           *(int *)((int)this + 0xdf) = (int)lVar10;
-          lVar10 = __ftol();
+          lVar10 = Library::MSVCRT::__ftol();
           *(int *)((int)this + 0xeb) = (int)lVar10;
           *(int *)((int)this + 0xd7) =
                ((param_1 - *(short *)((int)this + 0xd1)) * local_10) / (int)local_14;

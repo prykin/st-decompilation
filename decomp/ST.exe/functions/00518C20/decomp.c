@@ -55,7 +55,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
     local_40 = this;
-    iVar5 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_40;
     if (iVar5 == 0) {
       if (param_2 == '\0') {
@@ -185,7 +185,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2b = (-(uint)(cVar4 != '\x03') & 0xfffffffc) + 0xe2;
         local_2c = 1;
         local_27 = local_1c;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
         local_8 = local_8 + 0x14;
         local_14 = 1;
       }
@@ -205,7 +205,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
         local_14 = 1;
         local_8 = local_8 + 0x14;
       }
@@ -225,7 +225,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2c = 1;
         local_2b = 0xdd;
         local_27 = local_1c;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
         local_14 = 1;
         local_8 = local_8 + 0x14;
       }
@@ -269,7 +269,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_4f = (uint)*local_18;
         local_50 = 5;
         local_4b = 0;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_60);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_60);
         local_8 = local_8 + 5 + *(int *)(pbVar8 + 8);
         local_14 = local_14 + 1;
       } while ((ushort)local_14 < 3);
@@ -474,7 +474,7 @@ void __thiscall HelpPanelTy::SubProc(HelpPanelTy *this,int param_1,char param_2)
         local_2b = (-(uint)(cVar4 != '\x03') & 0xfffffffc) + 0xe2;
         local_2c = 1;
         local_27 = local_1c;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_3c);
         local_8 = local_8 + 0x14;
       }
       UVar6 = thunk_FUN_00523410(param_1,(char)local_20,2);

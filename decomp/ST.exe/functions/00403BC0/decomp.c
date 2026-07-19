@@ -18,7 +18,7 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pHStack_c = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pHStack_c;
   if (errorCode == 0) {
     if (param_2 == '\0') {

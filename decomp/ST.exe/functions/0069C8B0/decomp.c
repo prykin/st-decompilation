@@ -25,7 +25,7 @@ uint * FUN_0069c8b0(int param_1,int param_2,int param_3)
   void *local_8;
   
   iVar1 = param_1;
-  puVar2 = FUN_006ae290((uint *)0x0,10,0x10,10);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x10,10);
   if (((puVar2 != (uint *)0x0) && (param_1 != 0)) && (0 < param_3)) {
     local_18 = 0;
     local_1c = 0;
@@ -50,9 +50,9 @@ LAB_0069ca03:
             local_44[1] = 0;
             local_44[2] = 0;
             local_38 = (uint *)0x0;
-            local_38 = FUN_006ae290((uint *)0x0,10,4,10);
+            local_38 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
             local_44[0] = local_24;
-            uVar6 = FUN_006ae1c0(puVar2,local_44);
+            uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar2,local_44);
             if (uVar6 < puVar2[3]) {
               iVar5 = puVar2[2] * uVar6 + puVar2[7];
             }

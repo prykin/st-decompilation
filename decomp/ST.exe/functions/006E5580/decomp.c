@@ -25,9 +25,9 @@ SystemClassTy::CreateObject
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_8 = this;
-  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    puVar3 = (undefined4 *)FUN_006e54b0(param_1,param_2,param_3,param_5);
+    puVar3 = (undefined4 *)_CreateObject(local_8,param_1,param_2,param_3,param_5);
     puVar5 = local_28;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar5 = 0;

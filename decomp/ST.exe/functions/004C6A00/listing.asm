@@ -1,4 +1,4 @@
-FUN_004c6a00:
+TLOBldMark::GetMessage:
 004C6A00  55                        PUSH EBP
 004C6A01  8B EC                     MOV EBP,ESP
 004C6A03  83 EC 48                  SUB ESP,0x48

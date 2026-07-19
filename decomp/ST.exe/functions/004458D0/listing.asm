@@ -1,4 +1,4 @@
-FUN_004458d0:
+STAllPlayersC::GetBoatWeaponInfo:
 004458D0  55                        PUSH EBP
 004458D1  8B EC                     MOV EBP,ESP
 004458D3  56                        PUSH ESI

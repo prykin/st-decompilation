@@ -41,7 +41,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     IStack_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_5c;
     pCStack_18 = this;
-    iVar5 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     puVar2 = puStack_14;
     this_00 = pCStack_18;
     if (iVar5 == 0) {
@@ -57,7 +57,8 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
       else {
         iVar5 = 0;
       }
-      FUN_006b55f0(puStack_14,0,5,0x1f,*(int *)(pCStack_18 + 0x286),0,0,iVar5,uStack_10 & 0xff,6);
+      Library::DKW::WGR::FUN_006b55f0
+                (puStack_14,0,5,0x1f,*(int *)(pCStack_18 + 0x286),0,0,iVar5,uStack_10 & 0xff,6);
       if ((param_1 == 0) && (CStack_5 == (CPanelTy)0x2)) {
         UVar9 = 0x36ba;
         uVar8 = uStack_c;

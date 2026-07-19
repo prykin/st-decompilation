@@ -1,4 +1,4 @@
-FUN_00578560:
+STCrabC::SetSprRange:
 00578560  55                        PUSH EBP
 00578561  8B EC                     MOV EBP,ESP
 00578563  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

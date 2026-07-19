@@ -19,7 +19,7 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
   local_10 = (uint *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar1 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     if (param_2 == 0) {
       if (*(void **)(local_14 + 0x284) != (void *)0x0) {

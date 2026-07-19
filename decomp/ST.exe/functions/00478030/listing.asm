@@ -1,4 +1,4 @@
-FUN_00478030:
+STBoatC::BackCapture:
 00478030  55                        PUSH EBP
 00478031  8B EC                     MOV EBP,ESP
 00478033  51                        PUSH ECX

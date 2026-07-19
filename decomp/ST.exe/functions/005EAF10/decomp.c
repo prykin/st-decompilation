@@ -43,7 +43,7 @@ undefined4 __thiscall STArtiafactC::GetMessage(STArtiafactC *this,int param_1)
   if (iVar7 != 0xffff) {
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
-    iVar7 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar7 == 0) {
       uVar9 = *(uint *)(param_1 + 0x10);
@@ -74,9 +74,10 @@ undefined4 __thiscall STArtiafactC::GetMessage(STArtiafactC *this,int param_1)
           local_8[0x315] = *(STArtiafactC *)(iVar7 + 0x18);
           if (((local_8[0x24e] != (STArtiafactC)0x0) && (*(short *)(local_8 + 0x2ab) != -1)) &&
              ((this_01 = *(void **)(local_8 + 0x2ad), this_01 != (void *)0x0 ||
-              (this_01 = (void *)thunk_FUN_0042b620(CONCAT31(uVar11,local_8[0x2a3]),
-                                                    CONCAT22((short)(uVar9 - 0x112 >> 0x10),
-                                                             *(short *)(local_8 + 0x2ab)),1),
+              (this_01 = (void *)STAllPlayersC::GetObjPtr
+                                           (DAT_007fa174,CONCAT31(uVar11,local_8[0x2a3]),
+                                            CONCAT22((short)(uVar9 - 0x112 >> 0x10),
+                                                     *(short *)(local_8 + 0x2ab)),1),
               this_01 != (void *)0x0)))) {
             thunk_FUN_00492510(this_01,*(int *)(this_00 + 0x18));
             (**(code **)(*(int *)this_00 + 0xac))(*(undefined4 *)((int)this_01 + 0x18));
@@ -406,9 +407,10 @@ switchD_005eb5ad_caseD_129:
   }
   uVar9 = *(uint *)(this_00 + 0x2ad);
   if ((uVar9 != 0) ||
-     (uVar9 = thunk_FUN_0042b620(CONCAT31(uVar11,this_00[0x2a3]),
-                                 CONCAT22((short)((uint)iVar7 >> 0x10),*(short *)(this_00 + 0x2ab)),
-                                 1), uVar9 != 0)) {
+     (uVar9 = STAllPlayersC::GetObjPtr
+                        (DAT_007fa174,CONCAT31(uVar11,this_00[0x2a3]),
+                         CONCAT22((short)((uint)iVar7 >> 0x10),*(short *)(this_00 + 0x2ab)),1),
+     uVar9 != 0)) {
     *(int *)(this_00 + 0x277) = (int)*(short *)(uVar9 + 0x41);
     *(int *)(this_00 + 0x27b) = (int)*(short *)(uVar9 + 0x43);
     *(int *)(this_00 + 0x27f) = (int)*(short *)(uVar9 + 0x45);

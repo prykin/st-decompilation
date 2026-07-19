@@ -15,7 +15,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pHStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   pHVar3 = pHStack_8;
   if (errorCode == 0) {
     HVar1 = pHStack_8[0x1a1];

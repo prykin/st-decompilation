@@ -17,7 +17,7 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,undefin
   pIVar8 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pSStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,pIVar8);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar8);
   pSVar2 = pSStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = pIVar8;

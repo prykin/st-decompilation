@@ -350,7 +350,7 @@ LAB_006ed2c1:
               local_1c = local_b8 >> 0x10;
               iVar11 = local_bc >> 0x10;
               local_14 = -param_1[0x42];
-              lVar18 = __ftol();
+              lVar18 = Library::MSVCRT::__ftol();
               uVar15 = (int)lVar18 + local_b4;
               if ((int)uVar15 < 0) {
                 uVar15 = 0;
@@ -380,7 +380,7 @@ LAB_006ed2c1:
             local_c4 = (double)*(int *)(uVar15 + 0x1d) / (double)*(int *)(uVar15 + 0x21);
             iVar11 = (int)(local_14 - 1) / 2;
             local_cc = iVar11;
-            iVar16 = FUN_006db640(*(int *)(uVar15 + 0x19));
+            iVar16 = Library::DKW::STR::FUN_006db640(*(int *)(uVar15 + 0x19));
             local_3c = (double)CONCAT44(iVar16,(undefined4)local_3c);
             local_dc = (double)iVar16 * _DAT_0079b148 * local_c4;
             iVar16 = FUN_006db6d0(*(int *)(puVar17[0x28] + 0x19));
@@ -544,7 +544,7 @@ LAB_006ed2c1:
       }
       local_120.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_120;
-      iVar11 = __setjmp3(local_120.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar11 = Library::MSVCRT::__setjmp3(local_120.jumpBuffer,0,unaff_EDI,unaff_ESI);
       puVar17 = local_2c;
       param_1 = local_c8;
       if (iVar11 == 0) {

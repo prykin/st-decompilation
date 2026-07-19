@@ -42,11 +42,11 @@ void __thiscall FUN_004e3200(void *this,int *param_1)
   local_10 = 0;
   local_14 = 0;
   if (*param_1 == 0) {
-    puVar4 = FUN_006ae290((uint *)0x0,5,0x30,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
     *param_1 = (int)puVar4;
   }
   if (param_1[1] == 0) {
-    puVar4 = FUN_006ae290((uint *)0x0,5,0x30,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x30,5);
     param_1[1] = (int)puVar4;
   }
   *(undefined4 *)(*param_1 + 0xc) = 0;
@@ -106,7 +106,7 @@ LAB_004e3526:
           else {
             puVar4 = (uint *)*param_1;
           }
-          FUN_006ae1c0(puVar4,local_48);
+          Library::DKW::TBL::FUN_006ae1c0(puVar4,local_48);
         }
       }
       puVar7 = puVar7 + 1;
@@ -157,7 +157,7 @@ LAB_004e336e:
           puVar11 = local_36;
           iVar5 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),*puVar4);
           thunk_FUN_004e68a0(*(int *)((int)this + 0x24),(undefined1 *)*puVar4,iVar5 + 1,puVar11);
-          FUN_006ae1c0((uint *)*param_1,local_48);
+          Library::DKW::TBL::FUN_006ae1c0((uint *)*param_1,local_48);
         }
       }
       puVar10 = puVar4 + 1;

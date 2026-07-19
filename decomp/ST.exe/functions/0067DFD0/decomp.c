@@ -14,7 +14,7 @@ uint * __cdecl FUN_0067dfd0(int param_1,int param_2,uint param_3)
   pIVar4 = g_currentExceptionFrame;
   local_8 = (byte *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
     if (param_1 == 0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x181);

@@ -1,6 +1,7 @@
 
 int * __cdecl
-thunk_FUN_006a4160(undefined4 *param_1,uint param_2,uint param_3,char *param_4,int param_5)
+Library::MSVCRT::thunk_FUN_006a4160
+          (undefined4 *param_1,uint param_2,uint param_3,char *param_4,int param_5)
 
 {
   int iVar1;

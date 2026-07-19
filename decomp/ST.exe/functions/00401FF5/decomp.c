@@ -23,13 +23,13 @@ undefined4 thunk_FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 pa
     return 0xffffffff;
   }
   puVar1 = (uint *)FUN_006b0140(100,DAT_00807618);
-  FUN_0072f260(0,puVar1);
+  Library::MSVCRT::FUN_0072f260(0,puVar1);
   FUN_006ad190(0x18,s_dbg_msg_rpt_007caaec,0);
   thunk_FUN_004e82b0();
   uStack_8 = 0;
   IStack_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_60;
-  iVar2 = __setjmp3(IStack_60.jumpBuffer,2,FUN_0072da21,0);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0);
   if (iVar2 == 0) {
     puStack_1c = &stack0xffffff8c;
     iVar2 = STAppC::InitApp((STAppC *)&DAT_00807620,param_1,param_2,param_3,param_4);
@@ -37,7 +37,7 @@ undefined4 thunk_FUN_00575a10(HINSTANCE param_1,undefined4 param_2,undefined4 pa
       ExceptionList = pvStack_14;
       return 0;
     }
-    FUN_006e4fc0();
+    AppClassTy::RunApp((AppClassTy *)&DAT_00807620);
     g_currentExceptionFrame = IStack_60.previous;
   }
   else {

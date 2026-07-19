@@ -91,9 +91,9 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
       local_44 = 0xffffffff;
       local_3c = uVar2;
       local_24 = uVar3;
-      local_70 = __allmul(uVar3,local_20,uVar3,local_20);
-      local_68 = __allmul(local_14,local_10,local_14,local_10);
-      local_80 = __allmul(uVar2,local_38,uVar2,local_38);
+      local_70 = Library::MSVCRT::__allmul(uVar3,local_20,uVar3,local_20);
+      local_68 = Library::MSVCRT::__allmul(local_14,local_10,local_14,local_10);
+      local_80 = Library::MSVCRT::__allmul(uVar2,local_38,uVar2,local_38);
       if ((uVar3 == 0 && local_20 == 0) && (local_14 == 0 && local_10 == 0)) {
         param_4 = param_4 + 1;
         param_5 = param_5 + 1;
@@ -122,47 +122,60 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           local_2c._2_2_ = *(short *)((int)local_60 + 0x43) - local_2c._2_2_;
           if (uVar3 == 0 && local_20 == 0) {
             local_4c = (int)param_3 - (int)local_28;
-            lVar11 = __allmul(local_4c,(int)local_4c >> 0x1f,uVar2,local_38);
-            lVar12 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),local_14,local_10);
+            lVar11 = Library::MSVCRT::__allmul(local_4c,(int)local_4c >> 0x1f,uVar2,local_38);
+            lVar12 = Library::MSVCRT::__allmul
+                               ((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),local_14,local_10);
             local_54 = local_68 + local_80;
             local_34 = (uint)local_2c._2_2_;
             local_b4 = (uint)param_2;
             local_b0 = (int)local_b4 >> 0x1f;
             local_78 = lVar12;
-            lVar13 = __allmul(local_34,(int)local_34 >> 0x1f,(uint)local_68,local_68._4_4_);
-            lVar11 = __allmul(local_b4,local_b0,(uint)local_80,(int)((ulonglong)local_80 >> 0x20));
+            lVar13 = Library::MSVCRT::__allmul
+                               (local_34,(int)local_34 >> 0x1f,(uint)local_68,local_68._4_4_);
+            lVar11 = Library::MSVCRT::__allmul
+                               (local_b4,local_b0,(uint)local_80,(int)((ulonglong)local_80 >> 0x20))
+            ;
             lVar11 = (lVar12 - lVar13) - lVar11;
-            local_5c = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),2,0);
+            local_5c = Library::MSVCRT::__allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),2,0);
             uVar2 = local_4c * local_4c +
                     ((int)param_1 - (int)(short)local_2c) * ((int)param_1 - (int)(short)local_2c) +
                     local_34 * local_34;
-            lVar11 = __allmul(local_90,local_8c,local_90,local_8c);
-            lVar12 = __allmul(uVar2 - (uint)lVar11,
-                              (((int)uVar2 >> 0x1f) - (int)((ulonglong)lVar11 >> 0x20)) -
-                              (uint)(uVar2 < (uint)lVar11),(uint)local_68,
-                              (int)((ulonglong)local_68 >> 0x20));
-            lVar13 = __allmul(param_2 * 2,param_2 * 2 >> 0x1f,(uint)local_78,
-                              (int)((ulonglong)local_78 >> 0x20));
-            lVar11 = __allmul(local_b4,local_b0,local_b4,local_b0);
-            lVar11 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),(uint)local_80,
-                              (int)((ulonglong)local_80 >> 0x20));
+            lVar11 = Library::MSVCRT::__allmul(local_90,local_8c,local_90,local_8c);
+            lVar12 = Library::MSVCRT::__allmul
+                               (uVar2 - (uint)lVar11,
+                                (((int)uVar2 >> 0x1f) - (int)((ulonglong)lVar11 >> 0x20)) -
+                                (uint)(uVar2 < (uint)lVar11),(uint)local_68,
+                                (int)((ulonglong)local_68 >> 0x20));
+            lVar13 = Library::MSVCRT::__allmul
+                               (param_2 * 2,param_2 * 2 >> 0x1f,(uint)local_78,
+                                (int)((ulonglong)local_78 >> 0x20));
+            lVar11 = Library::MSVCRT::__allmul(local_b4,local_b0,local_b4,local_b0);
+            lVar11 = Library::MSVCRT::__allmul
+                               ((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),(uint)local_80,
+                                (int)((ulonglong)local_80 >> 0x20));
             lVar11 = lVar11 + (lVar12 - lVar13);
-            lVar11 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),(uint)local_54,
-                              local_54._4_4_);
-            lVar11 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),4,0);
-            lVar12 = __allmul((uint)local_5c,local_5c._4_4_,(uint)local_5c,local_5c._4_4_);
+            lVar11 = Library::MSVCRT::__allmul
+                               ((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),(uint)local_54,
+                                local_54._4_4_);
+            lVar11 = Library::MSVCRT::__allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),4,0);
+            lVar12 = Library::MSVCRT::__allmul
+                               ((uint)local_5c,local_5c._4_4_,(uint)local_5c,local_5c._4_4_);
             local_a0 = lVar12 - lVar11;
             uVar2 = local_3c;
             if (-1 < local_a0) {
               if (local_a0 == 0) {
-                lVar11 = __allmul((uint)local_54,local_54._4_4_,0xfffffffe,-1);
-                uVar14 = __alldiv((uint)local_5c,(uint)((ulonglong)local_5c >> 0x20),(uint)lVar11,
-                                  (uint)((ulonglong)lVar11 >> 0x20));
+                lVar11 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,0xfffffffe,-1);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)local_5c,(uint)((ulonglong)local_5c >> 0x20),(uint)lVar11,
+                                    (uint)((ulonglong)lVar11 >> 0x20));
                 uVar2 = local_3c;
                 iVar5 = (int)uVar14;
                 local_30 = iVar5;
-                lVar11 = __allmul(iVar5 - param_2,iVar5 - param_2 >> 0x1f,local_3c,local_38);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_14,local_10);
+                lVar11 = Library::MSVCRT::__allmul
+                                   (iVar5 - param_2,iVar5 - param_2 >> 0x1f,local_3c,local_38);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_14,local_10
+                                   );
                 local_34 = param_5 - iVar5;
                 iVar8 = (int)uVar14 + (int)param_3;
                 iVar5 = param_6 - iVar8;
@@ -182,14 +195,17 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               }
               else {
                 local_98 = SQRT((double)local_a0);
-                local_e4 = __allmul((uint)local_54,local_54._4_4_,2,0);
+                local_e4 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,2,0);
                 local_ac = (double)local_e4;
-                lVar11 = __ftol();
+                lVar11 = Library::MSVCRT::__ftol();
                 uVar2 = local_3c;
                 iVar5 = (int)lVar11;
                 local_30 = iVar5;
-                lVar11 = __allmul(iVar5 - param_2,iVar5 - param_2 >> 0x1f,local_3c,local_38);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_14,local_10);
+                lVar11 = Library::MSVCRT::__allmul
+                                   (iVar5 - param_2,iVar5 - param_2 >> 0x1f,local_3c,local_38);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_14,local_10
+                                   );
                 local_4c = (int)uVar14 + (int)param_3;
                 iVar8 = ((int)param_4 - (int)param_1) * ((int)param_4 - (int)param_1);
                 uVar3 = (param_5 - iVar5) * (param_5 - iVar5) +
@@ -206,10 +222,13 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                 }
                 local_ec = -(uint)local_5c;
                 iStack_e8 = -(local_5c._4_4_ + (uint)((uint)local_5c != 0));
-                lVar11 = __ftol();
+                lVar11 = Library::MSVCRT::__ftol();
                 local_30 = (int)lVar11;
-                lVar11 = __allmul(local_30 - param_2,local_30 - param_2 >> 0x1f,uVar2,local_38);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_14,local_10);
+                lVar11 = Library::MSVCRT::__allmul
+                                   (local_30 - param_2,local_30 - param_2 >> 0x1f,uVar2,local_38);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_14,local_10
+                                   );
                 local_4c = (int)uVar14 + (int)param_3;
                 uVar3 = (param_5 - local_30) * (param_5 - local_30) +
                         iVar8 + ((int)param_6 - local_4c) * ((int)param_6 - local_4c);
@@ -227,57 +246,76 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
             }
           }
           else {
-            local_78 = __allmul((int)param_2 - (int)local_2c._2_2_,
-                                (int)param_2 - (int)local_2c._2_2_ >> 0x1f,uVar3,local_20);
-            lVar11 = __allmul((int)param_3 - (int)local_28,(int)param_3 - (int)local_28 >> 0x1f,
-                              uVar3,local_20);
+            local_78 = Library::MSVCRT::__allmul
+                                 ((int)param_2 - (int)local_2c._2_2_,
+                                  (int)param_2 - (int)local_2c._2_2_ >> 0x1f,uVar3,local_20);
+            lVar11 = Library::MSVCRT::__allmul
+                               ((int)param_3 - (int)local_28,(int)param_3 - (int)local_28 >> 0x1f,
+                                uVar3,local_20);
             local_cc = lVar11;
-            lVar11 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),uVar2,local_38);
-            lVar12 = __allmul((uint)local_78,(int)((ulonglong)local_78 >> 0x20),local_14,local_10);
+            lVar11 = Library::MSVCRT::__allmul
+                               ((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),uVar2,local_38);
+            lVar12 = Library::MSVCRT::__allmul
+                               ((uint)local_78,(int)((ulonglong)local_78 >> 0x20),local_14,local_10)
+            ;
             local_54 = local_70 + local_68 + local_80;
             local_dc = (uint)param_1;
             local_d8 = (int)local_dc >> 0x1f;
             local_d4 = lVar12 + lVar11;
-            lVar13 = __allmul(local_dc,local_d8,(uint)(local_80 + local_68),
-                              (int)((ulonglong)(local_80 + local_68) >> 0x20));
+            lVar13 = Library::MSVCRT::__allmul
+                               (local_dc,local_d8,(uint)(local_80 + local_68),
+                                (int)((ulonglong)(local_80 + local_68) >> 0x20));
             local_c4 = (uint)(short)local_2c;
             local_c0 = (int)local_c4 >> 0x1f;
             local_bc = lVar13;
-            lVar15 = __allmul(local_c4,local_c0,(uint)local_70,(int)((ulonglong)local_70 >> 0x20));
+            lVar15 = Library::MSVCRT::__allmul
+                               (local_c4,local_c0,(uint)local_70,(int)((ulonglong)local_70 >> 0x20))
+            ;
             lVar11 = ((lVar12 + lVar11) - lVar15) - CONCAT44(local_bc._4_4_,(int)lVar13);
-            local_5c = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),2,0);
+            local_5c = Library::MSVCRT::__allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),2,0);
             uVar3 = (uint)((ulonglong)local_5c >> 0x20);
-            lVar11 = __allmul(local_c4,local_c0,local_c4,local_c0);
-            lVar12 = __allmul(local_90,local_8c,local_90,local_8c);
-            lVar12 = __allmul((uint)(lVar11 - lVar12),(int)((ulonglong)(lVar11 - lVar12) >> 0x20),
-                              (uint)local_70,(int)((ulonglong)local_70 >> 0x20));
-            lVar11 = __allmul((uint)local_d4,(int)((ulonglong)local_d4 >> 0x20),2,0);
-            lVar13 = __allmul((uint)(local_bc - lVar11),
-                              (int)((ulonglong)(local_bc - lVar11) >> 0x20),local_dc,local_d8);
-            lVar15 = __allmul((uint)local_cc,local_cc._4_4_,(uint)local_cc,local_cc._4_4_);
-            lVar11 = __allmul((uint)local_78,local_78._4_4_,(uint)local_78,local_78._4_4_);
+            lVar11 = Library::MSVCRT::__allmul(local_c4,local_c0,local_c4,local_c0);
+            lVar12 = Library::MSVCRT::__allmul(local_90,local_8c,local_90,local_8c);
+            lVar12 = Library::MSVCRT::__allmul
+                               ((uint)(lVar11 - lVar12),(int)((ulonglong)(lVar11 - lVar12) >> 0x20),
+                                (uint)local_70,(int)((ulonglong)local_70 >> 0x20));
+            lVar11 = Library::MSVCRT::__allmul
+                               ((uint)local_d4,(int)((ulonglong)local_d4 >> 0x20),2,0);
+            lVar13 = Library::MSVCRT::__allmul
+                               ((uint)(local_bc - lVar11),
+                                (int)((ulonglong)(local_bc - lVar11) >> 0x20),local_dc,local_d8);
+            lVar15 = Library::MSVCRT::__allmul
+                               ((uint)local_cc,local_cc._4_4_,(uint)local_cc,local_cc._4_4_);
+            lVar11 = Library::MSVCRT::__allmul
+                               ((uint)local_78,local_78._4_4_,(uint)local_78,local_78._4_4_);
             lVar11 = lVar13 + lVar12 + lVar15 + lVar11;
-            lVar11 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),(uint)local_54,
-                              (int)((ulonglong)local_54 >> 0x20));
-            lVar11 = __allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),4,0);
-            lVar12 = __allmul((uint)local_5c,uVar3,(uint)local_5c,uVar3);
+            lVar11 = Library::MSVCRT::__allmul
+                               ((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),(uint)local_54,
+                                (int)((ulonglong)local_54 >> 0x20));
+            lVar11 = Library::MSVCRT::__allmul((uint)lVar11,(int)((ulonglong)lVar11 >> 0x20),4,0);
+            lVar12 = Library::MSVCRT::__allmul((uint)local_5c,uVar3,(uint)local_5c,uVar3);
             local_a0 = lVar12 - lVar11;
             uVar2 = local_3c;
             iVar9 = local_18;
             if (-1 < local_a0) {
               if (local_a0 == 0) {
-                lVar11 = __allmul((uint)local_54,local_54._4_4_,0xfffffffe,-1);
-                uVar14 = __alldiv((uint)local_5c,uVar3,(uint)lVar11,
-                                  (uint)((ulonglong)lVar11 >> 0x20));
+                lVar11 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,0xfffffffe,-1);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)local_5c,uVar3,(uint)lVar11,
+                                    (uint)((ulonglong)lVar11 >> 0x20));
                 local_48 = (int)uVar14;
                 uVar3 = local_48 - param_1;
                 local_84 = (int)uVar3 >> 0x1f;
-                lVar11 = __allmul(uVar3,local_84,local_14,local_10);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20);
+                lVar11 = Library::MSVCRT::__allmul(uVar3,local_84,local_14,local_10);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20
+                                   );
                 uVar2 = local_3c;
                 iVar10 = (int)uVar14 + (int)param_2;
-                lVar11 = __allmul(uVar3,local_84,local_3c,local_38);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20);
+                lVar11 = Library::MSVCRT::__allmul(uVar3,local_84,local_3c,local_38);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20
+                                   );
                 local_34 = param_5 - iVar10;
                 iVar5 = (int)uVar14 + (int)param_3;
                 iVar9 = param_6 - iVar5;
@@ -297,18 +335,22 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               }
               else {
                 local_98 = SQRT((double)local_a0);
-                local_f4 = __allmul((uint)local_54,local_54._4_4_,2,0);
+                local_f4 = Library::MSVCRT::__allmul((uint)local_54,local_54._4_4_,2,0);
                 local_ac = (double)local_f4;
-                lVar11 = __ftol();
+                lVar11 = Library::MSVCRT::__ftol();
                 local_48 = (int)lVar11;
                 uVar6 = local_48 - param_1;
                 local_84 = (int)uVar6 >> 0x1f;
-                lVar11 = __allmul(uVar6,local_84,local_14,local_10);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20);
+                lVar11 = Library::MSVCRT::__allmul(uVar6,local_84,local_14,local_10);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20
+                                   );
                 uVar2 = local_3c;
                 local_30 = (int)uVar14 + (int)param_2;
-                lVar11 = __allmul(uVar6,local_84,local_3c,local_38);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20);
+                lVar11 = Library::MSVCRT::__allmul(uVar6,local_84,local_3c,local_38);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20
+                                   );
                 local_34 = param_5 - local_30;
                 iVar5 = (int)uVar14 + (int)param_3;
                 iVar9 = param_6 - iVar5;
@@ -326,15 +368,19 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
                 iVar9 = local_18;
                 local_fc = -(uint)local_5c;
                 iStack_f8 = -(uVar3 + ((uint)local_5c != 0));
-                lVar11 = __ftol();
+                lVar11 = Library::MSVCRT::__ftol();
                 local_48 = (int)lVar11;
                 local_88 = local_48 - param_1;
                 local_84 = (int)local_88 >> 0x1f;
-                lVar11 = __allmul(local_88,local_84,local_14,local_10);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20);
+                lVar11 = Library::MSVCRT::__allmul(local_88,local_84,local_14,local_10);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20
+                                   );
                 iVar8 = (int)uVar14 + (int)param_2;
-                lVar11 = __allmul(local_88,local_84,uVar2,local_38);
-                uVar14 = __alldiv((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20);
+                lVar11 = Library::MSVCRT::__allmul(local_88,local_84,uVar2,local_38);
+                uVar14 = Library::MSVCRT::__alldiv
+                                   ((uint)lVar11,(uint)((ulonglong)lVar11 >> 0x20),local_24,local_20
+                                   );
                 local_4c = (int)uVar14 + (int)param_3;
                 local_34 = param_5 - iVar8;
                 uVar3 = ((int)param_6 - local_4c) * ((int)param_6 - local_4c) +
@@ -369,9 +415,9 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
           local_8 = *(short *)(puVar4 + 1);
           puVar7 = *(uint **)((int)pvVar1 + local_44 * 4 + 0x282);
           if (puVar7 == (uint *)0x0) {
-            puVar7 = FUN_006ae290((uint *)0x0,1,6,1);
+            puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
             *(uint **)((int)pvVar1 + uVar2 * 4 + 0x282) = puVar7;
-            uVar3 = FUN_006ae1c0(puVar7,&local_c);
+            uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar7,&local_c);
             return uVar3 << 0x10 | uVar2 & 0xffff;
           }
           _param_1 = 0xffffffff;
@@ -385,11 +431,11 @@ FUN_00481560(void *this,short param_1,short param_2,short param_3,short param_4,
               uVar3 = uVar3 - 1;
             } while (-1 < (int)uVar3);
             if (_param_1 != 0xffffffff) {
-              FUN_006ae140(puVar7,_param_1,&local_c);
+              Library::DKW::TBL::FUN_006ae140(puVar7,_param_1,&local_c);
               return _param_1 << 0x10 | uVar2 & 0xffff;
             }
           }
-          uVar3 = FUN_006ae1c0(puVar7,&local_c);
+          uVar3 = Library::DKW::TBL::FUN_006ae1c0(puVar7,&local_c);
           return uVar3 << 0x10 | uVar2 & 0xffff;
         }
       }

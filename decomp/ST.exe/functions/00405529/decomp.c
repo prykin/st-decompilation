@@ -23,7 +23,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
     pFStack_8 = this;
-    iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pFVar3 = pFStack_8;
     if (iVar4 == 0) {
       iVar4 = *(int *)(pFStack_8 + 0x1ac0);

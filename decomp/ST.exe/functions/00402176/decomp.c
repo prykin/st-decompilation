@@ -33,7 +33,7 @@ undefined4 __thiscall thunk_FUN_00631390(void *this,undefined4 *param_1)
     piVar6 = (int *)((int)param_1 + 0x59 + *piVar6);
   }
   if (*(int *)((int)this + 0x34) != 0) {
-    iVar2 = FUN_006aac70(*(int *)((int)this + 0x30));
+    iVar2 = Library::DKW::LIB::FUN_006aac70(*(int *)((int)this + 0x30));
     *(int *)((int)this + 0x34) = iVar2;
   }
   if (*(int **)((int)this + 0x34) != (int *)0x0) {

@@ -1,5 +1,6 @@
 
-int * __cdecl thunk_FUN_006a3c80(uint param_1,int param_2,uint param_3,char *param_4,int param_5)
+int * __cdecl
+Library::MSVCRT::thunk_FUN_006a3c80(uint param_1,int param_2,uint param_3,char *param_4,int param_5)
 
 {
   int *piVar1;

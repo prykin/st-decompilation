@@ -1,4 +1,4 @@
-FUN_0071c1d0:
+InputClassTy::AddAcc:
 0071C1D0  55                        PUSH EBP
 0071C1D1  8B EC                     MOV EBP,ESP
 0071C1D3  81 EC D0 01 00 00         SUB ESP,0x1d0

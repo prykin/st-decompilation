@@ -18,7 +18,7 @@ int __thiscall ccFntTy::EraseSufr(ccFntTy *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pcVar2 = local_8;
   if (iVar3 == 0) {
     if ((*(int *)(local_8 + 0x72) != 0) && (*(int *)(local_8 + 0x7a) != 0)) {

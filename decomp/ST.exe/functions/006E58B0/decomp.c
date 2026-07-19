@@ -1,5 +1,9 @@
 
-int FUN_006e58b0(undefined4 *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   SystemClassTy::PostNextMessage */
+
+int __thiscall SystemClassTy::PostNextMessage(SystemClassTy *this,undefined4 *param_1)
 
 {
   code *pcVar1;
@@ -8,13 +12,14 @@ int FUN_006e58b0(undefined4 *param_1)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
-  int local_8;
+  SystemClassTy *local_8;
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    FUN_006ae1c0(*(uint **)(local_8 + 8),param_1);
+    Library::DKW::TBL::FUN_006ae1c0(local_8->nextMessages,param_1);
     g_currentExceptionFrame = pIVar4;
     return 0;
   }

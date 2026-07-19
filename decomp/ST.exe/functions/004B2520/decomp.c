@@ -44,7 +44,7 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,undefined4 param_5
   *param_10 = 0;
   local_48 = 1;
   local_8 = 0;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_34 = 0;
   local_8 = 0xffffffff;
   iVar5 = thunk_FUN_004b2390(param_1,param_3,param_4,param_5,param_10,1);

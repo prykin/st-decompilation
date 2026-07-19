@@ -130,7 +130,7 @@ void __fastcall thunk_FUN_00664960(void *param_1)
            CONCAT13(uStack_2c,CONCAT12(uStack_2d,CONCAT11(uStack_2e,uStack_2f)));
       break;
     case 4:
-      FUN_006ae1c0(*(uint **)((int)param_1 + 0x20b),&uStack_3c);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)param_1 + 0x20b),&uStack_3c);
       thunk_FUN_00676c40(*(int *)((int)param_1 + 0x20b),&LAB_004013cf);
       goto LAB_00665024;
     case 5:
@@ -191,14 +191,14 @@ void __fastcall thunk_FUN_00664960(void *param_1)
               ((iVar15 <= (int)pvStack_48 &&
                ((((iVar7 <= iStack_50 && (iStack_50 <= iVar1)) && (iVar16 <= iStack_54)) &&
                 (iStack_54 <= (int)pvStack_48)))))))) {
-            FUN_006ae140(*(uint **)((int)param_1 + 0x22f),uStack_c,&uStack_3c);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)((int)param_1 + 0x22f),uStack_c,&uStack_3c);
             goto LAB_00665024;
           }
           uStack_c = uStack_c + 1;
         } while ((int)uStack_c < (int)uStack_4c);
       }
       if (*(uint **)((int)param_1 + 0x22f) != (uint *)0x0) {
-        FUN_006b11d0(*(uint **)((int)param_1 + 0x22f),0,&uStack_3c);
+        Library::DKW::TBL::FUN_006b11d0(*(uint **)((int)param_1 + 0x22f),0,&uStack_3c);
       }
       *(short *)((int)param_1 + 0x170) = *(short *)((int)param_1 + 0x170) + 1;
       goto LAB_00665024;
@@ -276,7 +276,7 @@ void __fastcall thunk_FUN_00664960(void *param_1)
         } while ((int)uVar9 < (int)uStack_4c);
       }
       if (puVar17 != (uint *)0x0) {
-        FUN_006b11d0(puVar17,0,&uStack_3c);
+        Library::DKW::TBL::FUN_006b11d0(puVar17,0,&uStack_3c);
       }
       *(short *)((int)param_1 + 0x127) = *(short *)((int)param_1 + 0x127) + 1;
       goto LAB_00665024;
@@ -1074,9 +1074,11 @@ joined_r0x00666ceb:
               else {
                 puVar14 = (undefined2 *)0x0;
               }
-              pvVar12 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puStack_10 >> 8),
-                                                            *(undefined1 *)((int)param_1 + 0x24)),
-                                                   CONCAT22((short)(uStack_c >> 0x10),*puVar14),1);
+              pvVar12 = (void *)STAllPlayersC::GetObjPtr
+                                          (DAT_007fa174,
+                                           CONCAT31((int3)((uint)puStack_10 >> 8),
+                                                    *(undefined1 *)((int)param_1 + 0x24)),
+                                           CONCAT22((short)(uStack_c >> 0x10),*puVar14),1);
               pvStack_48 = pvVar12;
               switch(*(undefined4 *)((int)param_1 + 0xc3)) {
               case 0xa3:

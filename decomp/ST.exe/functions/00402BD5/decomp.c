@@ -26,7 +26,7 @@ int __thiscall thunk_FUN_0069b190(void *this,int param_1,int param_2,int param_3
   *(int *)((int)this + 0x5837) = param_2;
   FUN_006ab060((undefined4 *)((int)this + 0x584f));
   uVar5 = uVar10 * 2;
-  puVar3 = (undefined4 *)FUN_006aac70(uVar5);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5);
   *(undefined4 *)((int)this + 0x584f) = puVar3;
   for (uVar10 = (uVar10 & 0x7fffffff) >> 1; uVar10 != 0; uVar10 = uVar10 - 1) {
     *puVar3 = 0;

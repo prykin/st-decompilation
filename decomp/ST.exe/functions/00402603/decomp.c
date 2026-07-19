@@ -24,7 +24,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pSStack_8 = this;
-  iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = pSStack_8;
   if (iVar4 == 0) {
     if (*(int *)(pSStack_8 + 0x20e) == 0) {
@@ -37,7 +37,7 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     uVar9 = *(uint *)(*(int *)(pSVar3 + 0x20e) + 0xc);
     *(uint *)(pSVar3 + 0x21a) = uVar9;
     uStack_c = uVar9;
-    puVar5 = (undefined4 *)FUN_006aac70(uVar9 * 8);
+    puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar9 * 8);
     uVar2 = uStack_c;
     *(undefined4 **)(pSVar3 + 0x21e) = puVar5;
     for (iVar4 = (uVar9 & 0x1fffffff) << 1; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -53,11 +53,13 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
     if (0 < (int)uStack_c) {
       do {
         FUN_006acc70(*(int *)(pSVar3 + 0x20e),uVar9,(undefined4 *)&uStack_14);
-        uVar6 = thunk_FUN_0042b620(CONCAT22(uStack_12,CONCAT11(cStack_13,uStack_14)),
-                                   CONCAT22(uStack_10,uStack_12),(int)cStack_13);
+        uVar6 = STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,CONCAT22(uStack_12,CONCAT11(cStack_13,uStack_14)),
+                           CONCAT22(uStack_10,uStack_12),(int)cStack_13);
         if (uVar6 == 0) {
           uStack_12 = 0xffff;
-          FUN_006ae140(*(uint **)(pSVar3 + 0x20e),uVar9,(undefined4 *)&uStack_14);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar3 + 0x20e),uVar9,(undefined4 *)&uStack_14)
+          ;
           *(undefined4 *)(*(int *)(pSVar3 + 0x21e) + uVar9 * 8) = 0xffffffff;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
             *(undefined4 *)(*(int *)(pSVar3 + 0x21e) + 8 + uVar9 * 8) =

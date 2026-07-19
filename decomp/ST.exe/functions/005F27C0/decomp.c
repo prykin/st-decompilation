@@ -36,7 +36,7 @@ undefined4 __thiscall STBHEShellC::GetMessage(STBHEShellC *this,int param_1)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_14 = this;
-  iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_6c.previous;

@@ -47,10 +47,10 @@ undefined4 __fastcall thunk_FUN_005f95b0(void *param_1)
   uStack_18 = (uVar1 >> 0x10) % 0x169;
   *(uint *)(*(int *)((int)param_1 + 0x2e6) + 0x4c) = uStack_18;
   fcos((float10)uStack_18 * (float10)_DAT_0079c70c);
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   fsin(extraout_ST0);
   *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x50) = (int)lVar10;
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   *(int *)(*(int *)((int)param_1 + 0x2e6) + 0x54) = (int)lVar10;
   thunk_FUN_00416270(param_1,&sStack_8,&sStack_6,(undefined2 *)&iStack_c);
   *(int *)((int)param_1 + 0x2c5) = (int)sStack_6;
@@ -75,7 +75,7 @@ undefined4 __fastcall thunk_FUN_005f95b0(void *param_1)
   uStack_18 = (uint)(short)(((short)(iVar8 / 200) + (short)(iVar8 >> 0x1f)) -
                            (short)((longlong)iVar8 * 0x51eb851f >> 0x3f));
   if ((int)uStack_18 < 1) {
-    iVar2 = FUN_006aac70(200);
+    iVar2 = Library::DKW::LIB::FUN_006aac70(200);
     iStack_10 = 10;
     iVar9 = 0;
     do {
@@ -212,7 +212,7 @@ undefined4 __fastcall thunk_FUN_005f95b0(void *param_1)
   uStack_44 = 0;
   puStack_14 = *(undefined2 **)(iVar7 + 0x58);
   if (puStack_14 == (undefined2 *)0x0) {
-    puStack_14 = (undefined2 *)FUN_006aac70(200);
+    puStack_14 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(200);
   }
   iVar7 = iStack_10;
   iVar9 = thunk_FUN_0060e210(&uStack_64,&uStack_44,uStack_18,puStack_14,iStack_10);

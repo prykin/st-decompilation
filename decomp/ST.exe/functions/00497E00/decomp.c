@@ -20,7 +20,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
   byte *pbVar9;
   InternalExceptionFrame local_84;
   undefined4 local_40 [2];
-  undefined4 local_38;
+  int local_38;
   undefined4 local_34;
   undefined4 local_30;
   undefined4 local_2c;
@@ -35,7 +35,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
   local_20 = (STGroupC *)this;
-  iVar2 = __setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_20;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_84.previous;
@@ -64,7 +64,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     local_1c[2] = 0;
     local_1c[3] = 0;
     local_18 = (byte *)SaveGrpBData((STGroupBoatC *)this_00,(int *)&local_10);
-    local_8 = (byte *)FUN_006aac70(local_10 + local_c);
+    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + local_c);
     pbVar8 = local_1c;
     pbVar9 = local_8;
     for (uVar6 = local_c >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
@@ -92,7 +92,8 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     *(uint *)(local_8 + 0x38) = local_c;
     *(uint *)(local_8 + 0x3c) = local_10;
     STPlaySystemC::SaveObjData
-              (DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_8,local_10 + local_c);
+              ((STPlaySystemC *)DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_8,
+               local_10 + local_c);
     FUN_006ab060(&local_1c);
     FUN_006ab060(&local_18);
     FUN_006ab060(&local_8);
@@ -217,8 +218,8 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     local_2c = *(undefined4 *)(this_00 + 8);
     local_30 = 10;
     local_34 = 0;
-    local_38 = *(undefined4 *)(DAT_00802a38 + 0x14);
-    FUN_006e5810(local_40);
+    local_38 = DAT_00802a38->systemId;
+    SystemClassTy::PostMessage(DAT_00802a38,local_40);
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
@@ -237,7 +238,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
         } while ((int)uVar6 < *(int *)(iVar2 + 0xc));
       }
       if (*(int *)(this_00 + 0x1e6) == 6) {
-        thunk_FUN_004a7490((int)this_00);
+        ReMakePatrolPoints((STGroupBoatC *)this_00,(int)unaff_EDI);
         thunk_FUN_004a7e30(this_00,1);
       }
       if ((*(short *)(this_00 + 0x27) == 0) && (*(int *)(this_00 + 0x20) == 0)) {
@@ -297,7 +298,7 @@ LAB_004984e9:
       puVar3 = (uint *)GrpGuard((STGroupBoatC *)this_00,2);
       break;
     case 6:
-      puVar3 = (uint *)thunk_FUN_0049b7d0(this_00,2);
+      puVar3 = (uint *)GrpPatrol((STGroupBoatC *)this_00,2);
       break;
     case 7:
       puVar3 = (uint *)GrpGoToDeep((STGroupBoatC *)this_00,2);
@@ -408,7 +409,7 @@ switchD_004984e0_default:
       if (iVar2 != 6) {
         *(undefined4 *)(this_00 + 0x1e6) = 6;
       }
-      puVar3 = (uint *)thunk_FUN_0049b7d0(this_00,(uint)(iVar2 == 6));
+      puVar3 = (uint *)GrpPatrol((STGroupBoatC *)this_00,(uint)(iVar2 == 6));
       if (puVar3 == (uint *)0xffffffff) {
         return 0xffff;
       }

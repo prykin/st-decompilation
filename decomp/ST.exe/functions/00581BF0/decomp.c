@@ -27,7 +27,7 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -133,7 +133,7 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     return 0;
   }
   if (uVar7 == 0x10f) {
-    local_8 = (byte *)FUN_006aac70(0x3a);
+    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x3a);
     if (local_8 == (byte *)0x0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;
@@ -209,9 +209,9 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
       }
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13e);
     }
-    iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x207) = iVar3;
-    iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x20b) = iVar3;
     if ((*(int *)(pSVar2 + 0x207) != 0) && (iVar3 != 0)) goto LAB_00581d62;
     iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x143,0,0,&DAT_007a4ccc,
@@ -239,9 +239,9 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     *(undefined2 *)pSVar10 = *(undefined2 *)puVar8;
     *(undefined4 *)(pSVar2 + 0x1d5) = *(undefined4 *)((int)puVar9 + 0x2e);
     *(undefined4 *)(pSVar2 + 0x20f) = 0;
-    iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x207) = iVar3;
-    iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x20b) = iVar3;
     if ((*(int *)(pSVar2 + 0x207) != 0) && (iVar3 != 0)) goto LAB_00581d62;
     iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x15a,0,0,&DAT_007a4ccc,

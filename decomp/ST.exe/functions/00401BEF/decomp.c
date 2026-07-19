@@ -5,7 +5,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   code *pcVar1;
   STGroupBoatC *pSVar2;
   int iVar3;
-  void *this_00;
+  STBoatC *this_00;
   int iVar4;
   undefined4 uVar5;
   undefined4 extraout_ECX;
@@ -32,7 +32,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   IStack_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_6c;
   pSStack_1c = this;
-  iVar3 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_1c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_6c.previous;
@@ -60,9 +60,11 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
       do {
         FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&uStack_14);
         if ((short)uStack_14 != -1) {
-          this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]
-                                                       ),uStack_14,1);
-          if (this_00 == (void *)0x0) {
+          this_00 = (STBoatC *)
+                    STAllPlayersC::GetObjPtr
+                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),
+                               uStack_14,1);
+          if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x720);
           }
@@ -72,7 +74,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
           uStack_24 = 0xffff;
           uStack_22 = 0xffff;
           uStack_20 = 0xffff;
-          thunk_FUN_0045ef00(this_00,1,&uStack_28);
+          STBoatC::CmdToObj(this_00,1,&uStack_28);
         }
         uVar8 = uVar8 + 1;
         uVar6 = uVar8 & 0xffff;
@@ -91,8 +93,9 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
         do {
           FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar8,&uStack_14);
           if ((short)uStack_14 != -1) {
-            uVar8 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
-                                       uStack_14,1);
+            uVar8 = STAllPlayersC::GetObjPtr
+                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
+                               uStack_14,1);
             if (uVar8 == 0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x732);

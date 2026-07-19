@@ -2,6 +2,7 @@
 void FUN_006e4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
+  AppClassTy *in_ECX;
   undefined4 local_14;
   undefined4 local_10;
   undefined4 local_c;
@@ -11,7 +12,7 @@ void FUN_006e4290(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
   local_c = param_3;
   local_10 = param_2;
   local_8 = param_4;
-  FUN_006e41d0(&local_14);
+  AppClassTy::AddDecodeMessage(in_ECX,&local_14);
   return;
 }
 

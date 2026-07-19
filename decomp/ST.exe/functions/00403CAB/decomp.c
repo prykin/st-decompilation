@@ -146,7 +146,7 @@ void __fastcall thunk_FUN_00585020(int *param_1)
       *(undefined4 *)((int)param_1 + 0x23d) = *(undefined4 *)(DAT_00802a38 + 0xe4);
       iVar4 = (int)((ulonglong)((longlong)*(int *)((int)param_1 + 0x24d) * -0x2aaaaaab) >> 0x20);
       *(int *)((int)param_1 + 0x24d) = iVar4 - (iVar4 >> 0x1f);
-      if (DAT_00802a88 != (void *)0x0) {
+      if (DAT_00802a88 != (VisibleClassTy *)0x0) {
         sVar7 = *(short *)((int)param_1 + 0x43);
         if (sVar7 < 0) {
           iVar4 = (short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
@@ -165,8 +165,8 @@ void __fastcall thunk_FUN_00585020(int *param_1)
           iVar6 = (int)(short)((sVar7 / 0xc9 + (sVar7 >> 0xf)) -
                               (short)((longlong)(int)sVar7 * 0x28c1979 >> 0x3f));
         }
-        thunk_FUN_0055a9d0(DAT_00802a88,iVar6,iVar4,(undefined *)0x0,param_1[9],(undefined *)0x5,500
-                          );
+        VisibleClassTy::VisHoleCreate
+                  (DAT_00802a88,iVar6,iVar4,(undefined *)0x0,param_1[9],(undefined *)0x5,500);
       }
       *(undefined4 *)((int)param_1 + 0x231) = 1;
       (**(code **)(*param_1 + 0xd8))();

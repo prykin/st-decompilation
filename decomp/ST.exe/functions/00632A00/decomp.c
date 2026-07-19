@@ -29,7 +29,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_18;
   if (iVar2 == 0) {
     if (*(int *)(local_18 + 0x11) == 3) {

@@ -17,7 +17,7 @@ void __thiscall thunk_FUN_006027f0(void *this,char *param_1)
     pcVar4 = pcVar4 + 1;
   } while (cVar1 != '\0');
   if (0x103 < ~uVar2 - 1) {
-    _strncpy((char *)((int)this + 0x26a),param_1,0x103);
+    Library::MSVCRT::_strncpy((char *)((int)this + 0x26a),param_1,0x103);
     *(undefined1 *)((int)this + 0x36d) = 0;
     return;
   }

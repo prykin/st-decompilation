@@ -38,7 +38,7 @@ uint * thunk_FUN_0043ec20(char param_1,int param_2,short param_3,short param_4,s
   if (DAT_007fb244 + -1 < iVar3) {
     iVar3 = DAT_007fb244 + -1;
   }
-  puVar2 = FUN_006ae290((uint *)0x0,0,2,1);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   iVar4 = DAT_007fb240 * _param_3 + iStack_8 + (iVar5 + -1) * (int)DAT_007fb246;
   if (iVar5 <= iVar3) {
     _param_5 = (iVar3 - iVar5) + 1;
@@ -63,7 +63,7 @@ uint * thunk_FUN_0043ec20(char param_1,int param_2,short param_3,short param_4,s
 LAB_0043eda0:
                   if ((param_10 == -1) ||
                      (iVar4 = (**(code **)(*piVar1 + 0x6c))(), iVar4 == param_10)) {
-                    FUN_006ae1c0(puVar2,(undefined4 *)((int)piVar1 + 0x32));
+                    Library::DKW::TBL::FUN_006ae1c0(puVar2,(undefined4 *)((int)piVar1 + 0x32));
                   }
                 }
                 else {

@@ -69,7 +69,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar7;
   local_c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c8;
-  iVar8 = __setjmp3(local_c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_44;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_c8.previous;
@@ -818,12 +818,14 @@ LAB_005d5b7e:
         *(undefined4 *)(this_00 + 0x21a1) = 0;
         *(undefined4 *)(*(int *)(this_00 + 0x1e2f) + 0xc) = 0;
         *(undefined4 *)(this_00 + 0x1f37) = 0xff;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+        Library::DKW::TBL::FUN_006ae1c0
+                  (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
         local_8 = (char *)CONCAT31(local_8._1_3_,1);
         do {
           if (*(char *)((int)&local_40 + uVar20) != '\0') {
             *(uint *)(this_00 + 0x1f37) = uVar20;
-            FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+            Library::DKW::TBL::FUN_006ae1c0
+                      (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
             if ((byte)local_14[2] == uVar20) {
               *(uint *)(this_00 + 0x21a1) = (uint)local_8 & 0xff;
             }
@@ -868,12 +870,13 @@ LAB_005d619b:
           pSVar21 = pSVar21 + 1;
           pSVar25 = pSVar25 + 1;
         }
-        for (puVar13 = FUN_0072e560((uint *)(this_00 + 0x1e33),'\n'); puVar13 != (uint *)0x0;
-            puVar13 = FUN_0072e560(puVar13,'\n')) {
+        for (puVar13 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e33),'\n');
+            puVar13 != (uint *)0x0; puVar13 = Library::MSVCRT::FUN_0072e560(puVar13,'\n')) {
           *(undefined1 *)puVar13 = 0x20;
         }
         *(undefined4 *)(this_00 + 0x1f37) = 1;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+        Library::DKW::TBL::FUN_006ae1c0
+                  (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
         pcVar10 = (char *)FUN_006b0140(0x23f0,DAT_00807618);
         uVar20 = 0xffffffff;
         do {
@@ -897,12 +900,13 @@ LAB_005d619b:
           pSVar21 = pSVar21 + 1;
           pSVar25 = pSVar25 + 1;
         }
-        for (puVar13 = FUN_0072e560((uint *)(this_00 + 0x1e33),'\n'); puVar13 != (uint *)0x0;
-            puVar13 = FUN_0072e560(puVar13,'\n')) {
+        for (puVar13 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e33),'\n');
+            puVar13 != (uint *)0x0; puVar13 = Library::MSVCRT::FUN_0072e560(puVar13,'\n')) {
           *(undefined1 *)puVar13 = 0x20;
         }
         *(undefined4 *)(this_00 + 0x1f37) = 2;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+        Library::DKW::TBL::FUN_006ae1c0
+                  (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
         uVar20 = local_28;
         if ((DAT_00807dd1 & 0xffff0000) == 0xd0dd0000) {
           uVar20 = (uint)(local_14[4] != '\x02');
@@ -931,12 +935,13 @@ LAB_005d619b:
             pSVar21 = pSVar21 + 1;
             pSVar25 = pSVar25 + 1;
           }
-          for (puVar13 = FUN_0072e560((uint *)(this_00 + 0x1e33),'\n'); puVar13 != (uint *)0x0;
-              puVar13 = FUN_0072e560(puVar13,'\n')) {
+          for (puVar13 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e33),'\n');
+              puVar13 != (uint *)0x0; puVar13 = Library::MSVCRT::FUN_0072e560(puVar13,'\n')) {
             *(undefined1 *)puVar13 = 0x20;
           }
           *(undefined4 *)(this_00 + 0x1f37) = 3;
-          FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+          Library::DKW::TBL::FUN_006ae1c0
+                    (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
         }
         *(undefined4 *)(this_00 + 0x21a9) = *(undefined4 *)(*(int *)(this_00 + 0x1e2f) + 0xc);
         bVar1 = local_14[3];
@@ -1005,7 +1010,8 @@ LAB_005d6676:
               pSVar25 = pSVar25 + 1;
             }
             *(undefined4 *)(this_00 + 0x1f37) = 0;
-            FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+            Library::DKW::TBL::FUN_006ae1c0
+                      (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
           }
           if (*(SettMapTy *)(this_00 + 0x1e26) != (SettMapTy)0x2) {
             bVar26 = true;
@@ -1037,7 +1043,8 @@ LAB_005d6676:
                 pSVar25 = pSVar25 + 1;
               }
               *(undefined4 *)(this_00 + 0x1f37) = 2;
-              FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+              Library::DKW::TBL::FUN_006ae1c0
+                        (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
             }
           }
           local_8 = (char *)0x0;
@@ -1076,7 +1083,8 @@ LAB_005d6676:
               }
               *(undefined4 *)(this_00 + 0x1f37) = 4;
               *(char **)(this_00 + 0x1f3b) = local_8;
-              FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+              Library::DKW::TBL::FUN_006ae1c0
+                        (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
               local_8 = local_8 + 1;
               iVar8 = *(int *)(local_14 + 0x50);
               pcVar10 = *(char **)(iVar8 + 0xc);
@@ -1215,7 +1223,8 @@ LAB_005d6784:
               uVar7 = FUN_006b0140(0x1f4a,DAT_00807618);
               wsprintfA((LPSTR)(this_00 + 0x1e33),&DAT_007cd508,uVar7,iVar8);
               *(uint *)(this_00 + 0x1f37) = uVar20;
-              FUN_006ae1c0(*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
+              Library::DKW::TBL::FUN_006ae1c0
+                        (*(uint **)(this_00 + 0x1e2f),(undefined4 *)(this_00 + 0x1e33));
               if ((byte)local_14[0x4a] == uVar20) {
                 *(uint *)(this_00 + 0x21a1) = (uint)local_8 & 0xff;
               }

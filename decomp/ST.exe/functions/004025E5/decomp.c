@@ -58,7 +58,7 @@ LAB_0062f450:
   }
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
-  iVar2 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_14;
   if (iVar2 == 0) {
     iVar2 = STT3DSprC::Init(pSStack_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
@@ -68,7 +68,7 @@ LAB_0062f450:
     }
     iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,ppuStack_8[*param_2],0x1d);
     if (iVar2 == 0) {
-      thunk_FUN_004abe40(this_00,'\x0e',param_2[6]);
+      STT3DSprC::SetCurFase(this_00,'\x0e',param_2[6]);
       thunk_FUN_004ad380(this_00,iStack_10 / 2,iStack_c / 2 - 0xe);
       thunk_FUN_004ad3c0(this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,

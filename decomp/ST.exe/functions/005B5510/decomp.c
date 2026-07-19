@@ -33,7 +33,7 @@ MMObjTy::CreateSprBut
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar5 = local_1cc;
     for (iVar2 = 0x5f; iVar2 != 0; iVar2 = iVar2 + -1) {

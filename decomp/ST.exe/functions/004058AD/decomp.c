@@ -37,7 +37,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
   IStack_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_88;
   pSStack_44 = this;
-  iVar2 = __setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     iVar2 = 0x5590;
     puStack_14 = &DAT_007f4fdd;
@@ -132,7 +132,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
       puStack_14 = (uint *)((int)puStack_14 + 0xa62);
     } while ((int)puStack_14 < 0x7fa2ed);
     iStack_28 = iVar2 + DAT_007fb246;
-    puVar3 = (undefined4 *)FUN_006aac70(iStack_28);
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iStack_28);
     puVar4 = puVar3 + 2;
     *puVar3 = *(undefined4 *)(pSStack_44 + 0x1c);
     piVar8 = &DAT_007f4e29;

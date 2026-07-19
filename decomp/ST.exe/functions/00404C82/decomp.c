@@ -25,7 +25,7 @@ uint * thunk_FUN_0069c8b0(int param_1,int param_2,int param_3)
   void *pvStack_8;
   
   iVar1 = param_1;
-  puVar2 = FUN_006ae290((uint *)0x0,10,0x10,10);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x10,10);
   if (((puVar2 != (uint *)0x0) && (param_1 != 0)) && (0 < param_3)) {
     iStack_18 = 0;
     iStack_1c = 0;
@@ -50,9 +50,9 @@ LAB_0069ca03:
             aiStack_44[1] = 0;
             aiStack_44[2] = 0;
             puStack_38 = (uint *)0x0;
-            puStack_38 = FUN_006ae290((uint *)0x0,10,4,10);
+            puStack_38 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
             aiStack_44[0] = iStack_24;
-            uVar6 = FUN_006ae1c0(puVar2,aiStack_44);
+            uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar2,aiStack_44);
             if (uVar6 < puVar2[3]) {
               iVar5 = puVar2[2] * uVar6 + puVar2[7];
             }

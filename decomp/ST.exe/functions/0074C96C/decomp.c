@@ -9,7 +9,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
   
   local_8 = 0;
   if (*(int *)((int)this + 0x8c) == 0) {
-    pvVar1 = (void *)FUN_0072e530(0xe8);
+    pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xe8);
     if (pvVar1 == (void *)0x0) {
       puVar2 = (undefined4 *)0x0;
     }
@@ -20,7 +20,7 @@ undefined4 __thiscall FUN_0074c96c(void *this,int param_1)
     if (puVar2 == (undefined4 *)0x0) goto LAB_0074c9fe;
   }
   if (*(int *)((int)this + 0x90) == 0) {
-    pvVar1 = (void *)FUN_0072e530(0xb0);
+    pvVar1 = (void *)Library::MSVCRT::FUN_0072e530(0xb0);
     if (pvVar1 == (void *)0x0) {
       puVar2 = (undefined4 *)0x0;
     }

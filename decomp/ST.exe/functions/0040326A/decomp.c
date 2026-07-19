@@ -27,7 +27,7 @@ void __thiscall CPanelTy::PaintNewDeep(CPanelTy *this)
   IStack_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_60;
   pCStack_10 = this;
-  iVar7 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar4 = pCStack_10;
   if (iVar7 != 0) {
     g_currentExceptionFrame = IStack_60.previous;
@@ -129,8 +129,9 @@ LAB_00500d40:
             uVar8 = *(uint *)(pCVar4 + uVar3 * 4 + 0x148);
 joined_r0x00500e7c:
             if (-1 < (int)uVar8) {
-              FUN_006b3640(DAT_008075a8,uVar8,0xffffffff,*(uint *)(pCVar4 + uVar3 * 4 + 0x3c),
-                           *(uint *)(pCVar4 + uVar3 * 4 + 0x94));
+              Library::DKW::DDX::FUN_006b3640
+                        (DAT_008075a8,uVar8,0xffffffff,*(uint *)(pCVar4 + uVar3 * 4 + 0x3c),
+                         *(uint *)(pCVar4 + uVar3 * 4 + 0x94));
             }
           }
         }

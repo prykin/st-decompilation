@@ -39,7 +39,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;
     local_10 = this;
-    iVar8 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar8 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pAVar6 = local_10;
     if (iVar8 == 0) {
       local_8 = 0;

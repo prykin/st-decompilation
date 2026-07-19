@@ -1,5 +1,5 @@
 
-uint __fastcall thunk_FUN_0044ce40(undefined4 param_1)
+uint __fastcall thunk_FUN_0044ce40(STAllPlayersC *param_1)
 
 {
   int iVar1;
@@ -10,19 +10,20 @@ uint __fastcall thunk_FUN_0044ce40(undefined4 param_1)
   short sVar6;
   uint uVar7;
   uint uStack_c;
-  undefined4 uStack_8;
+  STAllPlayersC *pSStack_8;
   
   uVar5 = 0;
   uVar7 = 0;
   iVar4 = *(int *)((int)&DAT_007f4f8d + (uint)DAT_0080874d * 0xa62);
   iVar1 = *(int *)(iVar4 + 0xc);
-  uStack_8 = param_1;
+  pSStack_8 = param_1;
   if (0 < iVar1) {
     do {
       FUN_006acc70(iVar4,uVar7,&uStack_c);
       if (((short)uStack_c != -1) &&
-         (piVar2 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c,1
-                                            ), piVar2 != (int *)0x0)) {
+         (piVar2 = (int *)STAllPlayersC::GetObjPtr
+                                    (pSStack_8,CONCAT31((int3)(uStack_c >> 8),DAT_0080874d),uStack_c
+                                     ,1), piVar2 != (int *)0x0)) {
         uVar3 = (**(code **)(*piVar2 + 0x2c))();
         switch(uVar3) {
         case 1:

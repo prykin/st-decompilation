@@ -18,7 +18,7 @@ undefined4 thunk_FUN_005ec9f0(int param_1)
   ppuStack_10 = &PTR_s_cont1_007cde70;
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar1 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
     return uStack_c;
@@ -32,7 +32,7 @@ undefined4 thunk_FUN_005ec9f0(int param_1)
       return uStack_c;
     }
     thunk_FUN_004ac610(this,'\x0e');
-    thunk_FUN_004abe40(this,'\x0e',*(undefined4 *)((int)pvStack_8 + 0x2ca));
+    STT3DSprC::SetCurFase(this,'\x0e',*(undefined4 *)((int)pvStack_8 + 0x2ca));
     thunk_FUN_004ad3c0(this,(float)*(int *)((int)pvStack_8 + 0x2be) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)pvStack_8 + 0x2c2) * _DAT_007904f8 * _DAT_007904f0,
                        (float)*(int *)((int)pvStack_8 + 0x2c6) * _DAT_007904f8 * _DAT_007904f0 +

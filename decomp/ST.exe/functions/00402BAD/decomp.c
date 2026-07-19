@@ -36,7 +36,7 @@ undefined4 __fastcall thunk_FUN_0061dd40(int param_1)
           iStack_8 = 0;
           do {
             iVar2 = *(int *)(*(int *)(param_1 + 0x9f) + iStack_c * 4);
-            lVar7 = __ftol();
+            lVar7 = Library::MSVCRT::__ftol();
             *(int *)(iVar2 + 0xc + iStack_8) = (int)(short)lVar7;
             iVar6 = iVar6 + 1;
             iStack_8 = iStack_8 + 0x14;

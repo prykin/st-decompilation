@@ -65,7 +65,8 @@ void __fastcall thunk_FUN_006975f0(void *param_1)
                ((*(int *)((int)piStack_10 + 0xd) == 2 && (*piStack_10 == 1)))))) &&
              ((piStack_10 != (int *)0x0 &&
               (((*(int *)((int)piStack_10 + 0x11) <= iStack_20 &&
-                (uVar5 = FUN_0072e6c0(), (int)uVar5 % (int)(((iVar7 < 4) - 1 & 3) + 2) != 0)) &&
+                (uVar5 = Library::MSVCRT::FUN_0072e6c0(),
+                (int)uVar5 % (int)(((iVar7 < 4) - 1 & 3) + 2) != 0)) &&
                (iVar6 = *(int *)((int)piStack_10 + 0x15), iVar6 != 0)))))) {
             uStack_18 = 0;
             if (0 < *(int *)(iVar6 + 0xc)) {

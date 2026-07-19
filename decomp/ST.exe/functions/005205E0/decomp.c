@@ -26,7 +26,7 @@ void __thiscall InfocPanelTy::ShiftControls(InfocPanelTy *this,int param_1)
     *(short *)(this + 0x2e) = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       if (*(int *)(local_8 + 0x3d0) != 0) {
         FUN_006e6080(local_8,2,*(int *)(local_8 + 0x3d0),(undefined4 *)(local_8 + 0x18));

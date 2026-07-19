@@ -22,9 +22,9 @@ uint * __thiscall ccFntTy::_TxtToSarr(ccFntTy *this,uint *param_1)
   if (param_1 != (uint *)0x0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
-      local_c = FUN_006b54f0((uint *)0x0,0x14,0x14);
+      local_c = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,0x14,0x14);
       cVar1 = (char)*param_1;
       uVar5 = local_5;
       while( true ) {
@@ -32,13 +32,13 @@ uint * __thiscall ccFntTy::_TxtToSarr(ccFntTy *this,uint *param_1)
           g_currentExceptionFrame = local_50.previous;
           return local_c;
         }
-        puVar3 = FUN_00730590(param_1,&DAT_007c8ff4);
+        puVar3 = Library::MSVCRT::FUN_00730590(param_1,&DAT_007c8ff4);
         if (puVar3 != (uint *)0x0) {
           uVar5 = (undefined1)*puVar3;
           *(undefined1 *)puVar3 = 0;
           local_5 = uVar5;
         }
-        FUN_006b5aa0((int)local_c,(char *)param_1);
+        Library::DKW::TBL::FUN_006b5aa0((int)local_c,(char *)param_1);
         if (puVar3 == (uint *)0x0) break;
         param_1 = (uint *)((int)puVar3 + 1);
         *(undefined1 *)puVar3 = uVar5;

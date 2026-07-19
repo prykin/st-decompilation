@@ -18,7 +18,7 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
   pIVar9 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pCStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,pIVar9);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar9);
   pCVar2 = pCStack_8;
   if (iVar3 == 0) {
     thunk_FUN_00540760(*(undefined4 **)(pCStack_8 + 400),0,0,'\x01',*(byte **)(pCStack_8 + 0x994));
@@ -31,8 +31,9 @@ void __thiscall CPanelTy::PaintMap(CPanelTy *this)
     puVar4 = (uint *)FUN_006b0140(0x2712,DAT_00807618);
     ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),puVar4,iVar5,iVar6,iVar3,iVar7,iVar8);
     if (-1 < (int)*(uint *)(pCVar2 + 0x158)) {
-      FUN_006b3640(DAT_008075a8,*(uint *)(pCVar2 + 0x158),0xffffffff,*(uint *)(pCVar2 + 0x4c),
-                   *(uint *)(pCVar2 + 0xa4));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(pCVar2 + 0x158),0xffffffff,*(uint *)(pCVar2 + 0x4c),
+                 *(uint *)(pCVar2 + 0xa4));
     }
     g_currentExceptionFrame = pIVar9;
     return;

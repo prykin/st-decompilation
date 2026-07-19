@@ -1,2 +1,2 @@
-thunk_FUN_0047d080:
+STBoatC::Annih:
 004014FB  E9 80 BB 07 00            JMP 0x0047d080

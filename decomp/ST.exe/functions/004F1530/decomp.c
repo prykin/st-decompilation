@@ -17,10 +17,11 @@ CPanelTy::OutProc(CPanelTy *this,int param_1,undefined4 param_2,undefined4 param
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = __setjmp3(local_44,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
-    FUN_006b48e0(param_1,param_4,param_5,param_8,0,0,0,*(uint *)(param_8 + 4),*(int *)(param_8 + 8),
-                 DAT_008032b4,0,0x10000ff);
+    Library::DKW::DDX::FUN_006b48e0
+              (param_1,param_4,param_5,param_8,0,0,0,*(uint *)(param_8 + 4),*(int *)(param_8 + 8),
+               DAT_008032b4,0,0x10000ff);
     g_currentExceptionFrame = pIVar3;
     return;
   }

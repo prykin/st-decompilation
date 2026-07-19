@@ -31,7 +31,7 @@ void __fastcall FUN_00566aa0(void *param_1)
           if (((int)uVar3 < 2) ||
              ((*(char *)((int)param_1 + 0x38) != '\x01' &&
               (*(char *)((int)param_1 + 0x38) != '\x03')))) {
-            uVar2 = FUN_0072e6c0();
+            uVar2 = Library::MSVCRT::FUN_0072e6c0();
             uVar2 = uVar2 % uVar3;
             if ((uVar2 == *(uint *)((int)param_1 + 0x39)) && (1 < *(int *)((int)param_1 + 0x3d))) {
               uVar2 = *(uint *)((int)param_1 + 0x39) + 1;
@@ -41,7 +41,7 @@ void __fastcall FUN_00566aa0(void *param_1)
             }
           }
           else {
-            uVar2 = FUN_0072e6c0();
+            uVar2 = Library::MSVCRT::FUN_0072e6c0();
             uVar2 = uVar2 % (uVar3 - 1) + 1;
             if ((uVar2 == *(uint *)((int)param_1 + 0x39)) && (1 < *(int *)((int)param_1 + 0x3d))) {
               uVar2 = *(uint *)((int)param_1 + 0x39) + 1;

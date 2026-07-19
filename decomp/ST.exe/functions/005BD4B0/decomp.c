@@ -28,7 +28,7 @@ MReportTy::OutTGlProc
     local_c = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     iVar8 = local_c;
     if (iVar2 == 0) {
       iVar2 = 1;
@@ -73,8 +73,9 @@ MReportTy::OutTGlProc
       uVar7 = FUN_006b0140(0x2337,DAT_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,s__0_s__2_s_007ccf08,uVar7,uVar5);
       ccFntTy::WrStr(*(ccFntTy **)(iVar8 + 0x83),&DAT_0080f33a,10,-1,0);
-      FUN_006c5000(param_1,param_4,param_5,local_8,0,0,0,*(uint *)(local_8 + 4),
-                   *(int *)(local_8 + 8),iVar8 + 0xa3,0x4c);
+      Library::DKW::DDX::FUN_006c5000
+                (param_1,param_4,param_5,local_8,0,0,0,*(uint *)(local_8 + 4),*(int *)(local_8 + 8),
+                 iVar8 + 0xa3,0x4c);
       FUN_006ab060(&local_8);
       g_currentExceptionFrame = local_50.previous;
       return;

@@ -12,7 +12,7 @@ void __fastcall FUN_005f9e40(int param_1)
   if (puVar1 != (undefined4 *)0x0) {
     this = (STT3DSprC *)*puVar1;
     if (this != (STT3DSprC *)0x0) {
-      thunk_FUN_004abe40(this,'\x0e',puVar1[8]);
+      STT3DSprC::SetCurFase(this,'\x0e',puVar1[8]);
       STT3DSprC::ShowCurFase(this,'\x0e');
       iVar2 = *(int *)(param_1 + 0x2e6);
       thunk_FUN_004ad3c0(this,(float)*(int *)(iVar2 + 0x14) * _DAT_007904f8 * _DAT_007904f0,

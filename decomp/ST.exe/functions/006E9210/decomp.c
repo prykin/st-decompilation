@@ -12,9 +12,9 @@ void __thiscall FUN_006e9210(void *this,uint param_1)
     if ((uVar2 & 0x8000) != 0) {
       puVar1[1] = puVar1[1] | 2;
       *puVar1 = uVar2 & 0xff87ffff | 0xc;
-      lVar3 = __ftol();
+      lVar3 = Library::MSVCRT::__ftol();
       puVar1[0xb] = (uint)lVar3;
-      lVar3 = __ftol();
+      lVar3 = Library::MSVCRT::__ftol();
       puVar1[0xc] = (uint)lVar3;
       return;
     }

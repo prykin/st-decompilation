@@ -60,7 +60,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
   if (pbVar13 != (byte *)0x0) {
     pIVar19 = g_currentExceptionFrame;
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff80;
-    iVar4 = __setjmp3(auStack_7c,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(auStack_7c,0,unaff_EDI,unaff_ESI);
     this_00 = pHStack_20;
     if (iVar4 == 0) {
       if (param_3 == '\0') {
@@ -143,8 +143,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         pcVar7 = pcVar7 + 1;
         pcVar14 = pcVar14 + 1;
       }
-      for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-          puVar6 = FUN_0072e560(puVar6,'\n')) {
+      for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+          puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
         *(undefined1 *)puVar6 = 0x20;
       }
       ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -163,7 +163,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
       uStack_2c = 2;
       uStack_2b = *(undefined4 *)(pbVar8 + 9);
       uStack_27 = param_2;
-      FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
       iStack_8 = iStack_8 + *(int *)(pbVar13 + 8);
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1e0),*(int *)(this_00 + 0x218),0,0,iStack_8,200,0xf
                       );
@@ -215,8 +215,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           pcVar7 = pcVar7 + 1;
           pcVar14 = pcVar14 + 1;
         }
-        for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-            puVar6 = FUN_0072e560(puVar6,'\n')) {
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+            puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }
         ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -235,7 +235,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uStack_2c = 3;
         uStack_2b = *(undefined4 *)(pbVar8 + 0xd);
         uStack_27 = (uint)*pbVar8;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
         iStack_8 = iStack_8 + *(int *)(pbVar13 + 8);
       }
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1e0),*(int *)(this_00 + 0x218),0,0,iStack_8,200,0xf
@@ -278,8 +278,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
             pcVar7 = pcVar7 + 1;
             pcVar14 = pcVar14 + 1;
           }
-          for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-              puVar6 = FUN_0072e560(puVar6,'\n')) {
+          for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+              puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
             *(undefined1 *)puVar6 = 0x20;
           }
           ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -299,7 +299,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           uStack_2c = 2;
           uStack_2b = *(undefined4 *)pbVar13;
           uStack_27 = (uint)*pbStack_c;
-          FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
           iStack_8 = iStack_8 + *(int *)(pbVar8 + 8);
           ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1e0),*(int *)(this_00 + 0x218),0,0,iStack_8,200
                            ,0xf);
@@ -419,8 +419,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           pcVar7 = pcVar7 + 1;
           pcVar14 = pcVar14 + 1;
         }
-        for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-            puVar6 = FUN_0072e560(puVar6,'\n')) {
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+            puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }
         ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -440,7 +440,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uStack_2c = 0xb;
         uStack_2b = *(undefined4 *)(pbVar13 + 0x1f);
         uStack_27 = (uint)*pbVar13;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
         iStack_8 = iStack_8 + *(int *)(pbVar8 + 8);
       }
       if (*(int *)(pbVar13 + 0x23) != 0) {
@@ -479,8 +479,8 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
           pcVar7 = pcVar7 + 1;
           pcVar14 = pcVar14 + 1;
         }
-        for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-            puVar6 = FUN_0072e560(puVar6,'\n')) {
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+            puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }
         ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -501,7 +501,7 @@ void __thiscall HelpPanelTy::RCProc(HelpPanelTy *this,int param_1,uint param_2,c
         uStack_2c = 2;
         uStack_2b = *(undefined4 *)(pbVar8 + 0x23);
         uStack_27 = (uint)*pbVar8;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_3c);
         iStack_8 = iStack_8 + *(int *)(pbVar13 + 8);
       }
       AddLinks(this_00,&iStack_8,'\x01',param_1,param_2);

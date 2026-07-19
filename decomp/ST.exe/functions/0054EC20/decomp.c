@@ -30,7 +30,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar5 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar10 = local_10;
   if (iVar5 == 0) {
     **(undefined4 **)(local_10 + 0x4f) = 0;
@@ -45,7 +45,7 @@ void __thiscall PlaySystemTy::SendClientMail(PlaySystemTy *this,int param_1)
     }
     uVar4 = local_8;
     if (*(uint *)(local_10 + 0x53) < local_8) {
-      iVar5 = FUN_006acf50(*(undefined4 **)(local_10 + 0x4f),local_8);
+      iVar5 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)(local_10 + 0x4f),local_8);
       *(int *)(pPVar10 + 0x4f) = iVar5;
       *(uint *)(pPVar10 + 0x53) = uVar4;
     }

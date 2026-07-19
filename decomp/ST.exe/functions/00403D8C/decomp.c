@@ -19,7 +19,7 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = pSStack_c;
   if (iVar2 == 0) {
     if (0 < param_1) {
@@ -43,7 +43,7 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
     pSVar5 = pSStack_c + 0x219;
     iVar4 = iStack_8;
     do {
-      FUN_0072e2b0(*(undefined4 **)pSVar5);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)pSVar5);
       pSVar5 = pSVar5 + 4;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);

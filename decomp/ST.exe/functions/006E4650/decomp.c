@@ -1,8 +1,13 @@
 
-int FUN_006e4650(int *param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   AppClassTy::AddSystem */
+
+int __thiscall AppClassTy::AddSystem(AppClassTy *this,int *param_1,int param_2)
 
 {
   code *pcVar1;
+  AppClassTy *this_00;
   int iVar2;
   int *piVar3;
   undefined4 unaff_ESI;
@@ -15,11 +20,13 @@ int FUN_006e4650(int *param_1,int param_2)
   undefined4 local_14;
   int *local_10;
   undefined4 local_c;
-  void *local_8;
+  AppClassTy *local_8;
   
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar2 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
     iVar4 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x1e9,0,iVar2,&DAT_007a4ccc,
@@ -40,13 +47,13 @@ int FUN_006e4650(int *param_1,int param_2)
     iVar2 = (*pcVar1)();
     return iVar2;
   }
-  piVar3 = (int *)FUN_006e45a0(local_8,param_1[5]);
+  piVar3 = (int *)FUN_006e45a0(this_00,param_1[5]);
   if (piVar3 == (int *)0x0) {
     param_1[7] = 0;
     local_14 = 1;
     local_10 = param_1;
     local_c = 0;
-    FUN_006ae1c0(*(uint **)((int)local_8 + 0x10),&local_14);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x10),&local_14);
     local_28 = 0xf;
     local_24 = 8;
     iVar2 = (**(code **)(*param_1 + 0x18))(local_34);

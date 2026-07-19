@@ -6,6 +6,10 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
   FSGSTy *pFVar2;
   int errorCode;
   int iVar3;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *this_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame IStack_4c;
@@ -14,14 +18,14 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pFStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     CFsgsConnection::StopBanners((CFsgsConnection *)&DAT_00802a90);
     pFVar2 = pFStack_8;
     MMObjTy::DoneMMObj((MMObjTy *)pFStack_8);
     if (DAT_00802a30 != 0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
       }
       else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -49,22 +53,22 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     }
     if (*(HoloTy **)(pFVar2 + 0x1f23) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f23));
-      FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f23));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f23));
       *(undefined4 *)(pFVar2 + 0x1f23) = 0;
     }
     if (*(HoloTy **)(pFVar2 + 0x1f27) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f27));
-      FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f27));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f27));
       *(undefined4 *)(pFVar2 + 0x1f27) = 0;
     }
     if (*(HoloTy **)(pFVar2 + 0x1f2b) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f2b));
-      FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2b));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2b));
       *(undefined4 *)(pFVar2 + 0x1f2b) = 0;
     }
     if (*(HoloTy **)(pFVar2 + 0x1f2f) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f2f));
-      FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2f));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2f));
       *(undefined4 *)(pFVar2 + 0x1f2f) = 0;
     }
     if (*(int *)(pFVar2 + 0x1e8e) != 0) {
@@ -104,19 +108,23 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FUN_006b3bb0(DAT_008075a8,*(uint *)(pFVar2 + 0x1a8f));
     }
     *(undefined4 *)(pFVar2 + 0x1a8f) = 0xffffffff;
+    this_00 = (ccFntTy *)0x0;
     if (*(int *)(pFVar2 + 0x1a97) != 0) {
       FUN_006ab060((undefined4 *)(pFVar2 + 0x1a97));
+      this_00 = extraout_ECX;
     }
     if (*(uint **)(pFVar2 + 0x1a77) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pFVar2 + 0x1a77));
+      ccFntTy::operator(this_00,*(uint **)(pFVar2 + 0x1a77));
       *(undefined4 *)(pFVar2 + 0x1a77) = 0;
+      this_00 = extraout_ECX_00;
     }
     if (*(uint **)(pFVar2 + 0x1a7b) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pFVar2 + 0x1a7b));
+      ccFntTy::operator(this_00,*(uint **)(pFVar2 + 0x1a7b));
       *(undefined4 *)(pFVar2 + 0x1a7b) = 0;
+      this_00 = extraout_ECX_01;
     }
     if (*(uint **)(pFVar2 + 0x1a7f) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pFVar2 + 0x1a7f));
+      ccFntTy::operator(this_00,*(uint **)(pFVar2 + 0x1a7f));
       *(undefined4 *)(pFVar2 + 0x1a7f) = 0;
     }
     if (*(HGDIOBJ *)(pFVar2 + 0x1a67) != (HGDIOBJ)0x0) {
@@ -128,7 +136,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
     }
     *(undefined4 *)(pFVar2 + 0x1fb3) = 0;
     if (*(int *)(pFVar2 + 0x4d) != 0) {
-      FUN_006e3b50((undefined4 *)(pFVar2 + 0x3d));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(pFVar2 + 0x3d));
     }
     if (*(MMsgTy **)(*(int *)(pFVar2 + 0x1a5b) + 0x2e6) != (MMsgTy *)0x0) {
       MMsgTy::HideSprites(*(MMsgTy **)(*(int *)(pFVar2 + 0x1a5b) + 0x2e6));

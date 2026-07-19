@@ -61,7 +61,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   local_14 = local_3c;
   local_c = local_40;
   local_8 = local_3c;
-  errorCode = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
       FUN_006c7ea0(param_1,0,&local_50,8,param_5);

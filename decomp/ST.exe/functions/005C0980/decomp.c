@@ -39,7 +39,7 @@ MReportTy::CreateBut
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     local_1cc[0] = param_2;
     local_1cc[1] = param_1;

@@ -34,7 +34,7 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
   uStack_8 = 0;
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
-  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     auStack_1cc[0] = param_2;
     auStack_1cc[1] = param_1;

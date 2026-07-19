@@ -21,9 +21,10 @@ FUN_005ff430(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefi
     uVar6 = thunk_FUN_00601db0(*(undefined4 *)
                                 (*(int *)((int)this + 0x23b) + 4 +
                                 *(int *)(*(int *)((int)this + 0x23f) + param_2 * 4) * 0x18));
-    this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                 *(undefined1 *)(puVar1 + 4)),
-                                        CONCAT22((short)((uint)uVar6 >> 0x10),*puVar1),uVar6);
+    this_00 = (int *)STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,
+                                CONCAT31((int3)((uint)extraout_ECX >> 8),*(undefined1 *)(puVar1 + 4)
+                                        ),CONCAT22((short)((uint)uVar6 >> 0x10),*puVar1),uVar6);
     if (this_00 == (int *)0x0) {
       return 0;
     }

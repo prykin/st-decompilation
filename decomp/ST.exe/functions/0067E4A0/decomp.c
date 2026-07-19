@@ -12,7 +12,7 @@ LPSTR __cdecl FUN_0067e4a0(undefined4 param_1,undefined4 param_2)
   
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  iVar2 = __setjmp3(local_44,0,unaff_ESI,pIVar5);
+  iVar2 = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar5);
   if (iVar2 == 0) {
     iVar2 = 3;
     pCVar3 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_1);

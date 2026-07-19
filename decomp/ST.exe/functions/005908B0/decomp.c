@@ -21,7 +21,7 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
   *(undefined4 *)(this + 0x58) = uVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (errorCode == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {

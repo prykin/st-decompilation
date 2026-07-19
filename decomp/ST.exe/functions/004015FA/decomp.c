@@ -17,7 +17,7 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pHStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iVar3 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e;
     FUN_006b5f80(DAT_008075a8,iVar3,DAT_00806734 + -0x1a,(DAT_00806730 - iVar3) + -0x87,0x12);

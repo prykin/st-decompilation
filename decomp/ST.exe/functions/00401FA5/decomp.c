@@ -20,7 +20,7 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
     IStack_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_70;
     pMStack_c = this;
-    iVar2 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pMStack_c;
     if (iVar2 == 0) {
       iVar2 = 0xd;

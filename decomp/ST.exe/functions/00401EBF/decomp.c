@@ -22,7 +22,7 @@ undefined4 * __cdecl thunk_FUN_0065cd10(undefined4 *param_1,uint *param_2)
   iStack_c = 0;
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
-  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     uVar5 = 0;
     iVar2 = *(int *)((int)param_1 + 0x462);
@@ -60,7 +60,7 @@ undefined4 * __cdecl thunk_FUN_0065cd10(undefined4 *param_1,uint *param_2)
     }
     iStack_c = iStack_c + iVar2 + iVar6;
     *param_2 = iStack_c + 0x49fU;
-    puVar3 = FUN_006aac10(iStack_c + 0x49fU);
+    puVar3 = Library::DKW::LIB::FUN_006aac10(iStack_c + 0x49fU);
     puVar8 = param_1;
     puVar9 = puVar3;
     for (iVar2 = 0x127; iVar2 != 0; iVar2 = iVar2 + -1) {

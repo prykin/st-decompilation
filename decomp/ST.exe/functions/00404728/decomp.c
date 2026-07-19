@@ -19,7 +19,7 @@ undefined4 __thiscall thunk_FUN_0062f6c0(void *this,int param_1)
       puVar3 = *(undefined4 **)(*piVar1 + 0x10);
       if (puVar3 != (undefined4 *)0x0) {
         thunk_FUN_004ad310((int)puVar3);
-        FUN_0072e2b0(puVar3);
+        Library::MSVCRT::FUN_0072e2b0(puVar3);
         *(undefined4 *)(*piVar1 + 0x10) = 0;
       }
       uVar4 = 1;

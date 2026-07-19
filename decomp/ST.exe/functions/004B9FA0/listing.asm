@@ -1,4 +1,4 @@
-FUN_004b9fa0:
+TLOBaseTy::GetMessage:
 004B9FA0  55                        PUSH EBP
 004B9FA1  8B EC                     MOV EBP,ESP
 004B9FA3  81 EC D8 06 00 00         SUB ESP,0x6d8

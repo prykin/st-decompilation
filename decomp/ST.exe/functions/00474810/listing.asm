@@ -1,4 +1,4 @@
-FUN_00474810:
+STBoatC::BackLoadObj:
 00474810  55                        PUSH EBP
 00474811  8B EC                     MOV EBP,ESP
 00474813  56                        PUSH ESI

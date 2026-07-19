@@ -17,7 +17,7 @@ void __thiscall FUN_00630000(void *this,int param_1)
       *(int *)(*piVar2 + 0x2c) = iVar1;
       this_00 = *(STT3DSprC **)(*piVar2 + 0x10);
       if (this_00 != (STT3DSprC *)0x0) {
-        thunk_FUN_004abe40(this_00,'\x0e',*(undefined4 *)(*piVar2 + 0x2c));
+        STT3DSprC::SetCurFase(this_00,'\x0e',*(undefined4 *)(*piVar2 + 0x2c));
         STT3DSprC::ShowCurFase(this_00,'\x0e');
         iVar1 = *piVar2;
         thunk_FUN_004ad3c0(this_00,(float)*(int *)(iVar1 + 0x20) * _DAT_007904f8 * _DAT_007904f0,

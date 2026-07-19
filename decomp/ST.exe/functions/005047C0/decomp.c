@@ -25,7 +25,7 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 == 0) {
     PaintDamageXY(local_c,*(int *)(local_c + 0x194),param_1 + 0x39,0x65,(uint)(byte)local_c[0xc33],

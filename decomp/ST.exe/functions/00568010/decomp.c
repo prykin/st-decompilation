@@ -14,7 +14,7 @@ void __thiscall FUN_00568010(void *this,undefined1 param_1)
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar1 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar2 = local_c;
     if (iVar1 == 0) {
       switch(param_1) {

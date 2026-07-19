@@ -10,7 +10,7 @@ uint __cdecl FUN_0067fdf0(undefined4 param_1,byte *param_2)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  uVar1 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar1 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar1 != 0) {
     g_currentExceptionFrame = local_48.previous;
     if (-1 < (int)uVar1) {

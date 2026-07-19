@@ -75,13 +75,13 @@ void __fastcall FUN_00577440(int param_1)
         } while (piVar4 != (int *)0x0);
         if (bVar1) {
           FUN_006b0a20(DAT_0080759c,param_1 + 0x28 + local_8 * 4,local_8,(uVar3 - local_8) + 1,0);
-          FUN_006e5d90();
+          SystemClassTy::Life((SystemClassTy *)param_1);
           return;
         }
       }
     }
   }
-  FUN_006e5d90();
+  SystemClassTy::Life((SystemClassTy *)param_1);
   return;
 }
 

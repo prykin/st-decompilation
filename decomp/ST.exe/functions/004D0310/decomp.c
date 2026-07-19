@@ -83,8 +83,8 @@ undefined4 __fastcall FUN_004d0310(int param_1)
   thunk_FUN_004ad460(*(void **)(param_1 + 0x5ff),0);
   thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xe,iVar6,iVar6,'\0');
   thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xc,iVar6,iVar6,'\0');
-  thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\x0e',iVar6);
-  thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\f',iVar6);
+  STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\x0e',iVar6);
+  STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\f',iVar6);
   STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
   STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
   iVar6 = local_8;
@@ -98,7 +98,7 @@ undefined4 __fastcall FUN_004d0310(int param_1)
   } while (cVar2 != '\0');
   if (iVar3 != -2) {
     thunk_FUN_004abce0(*(void **)(param_1 + 0x5ff),0xd,local_8,local_8,'\0');
-    thunk_FUN_004abe40(*(void **)(param_1 + 0x5ff),'\r',iVar6);
+    STT3DSprC::SetCurFase(*(STT3DSprC **)(param_1 + 0x5ff),'\r',iVar6);
     STT3DSprC::StartShow(*(STT3DSprC **)(param_1 + 0x5ff),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
   }
   return 0;

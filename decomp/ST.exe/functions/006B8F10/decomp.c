@@ -82,8 +82,9 @@ int FUN_006b8f10(byte *param_1,int *param_2)
       local_28 = local_14 - iVar3;
       local_24 = local_10 - local_18;
       if ((*(uint *)(pbVar2 + 4) & 0x8000000) != 0) {
-        iVar3 = FUN_006b82e0(*(int *)pbVar2,local_14,local_10,param_1,local_28,local_24,local_c,
-                             local_8);
+        iVar3 = Library::DKW::DDX::FUN_006b82e0
+                          (*(int *)pbVar2,local_14,local_10,param_1,local_28,local_24,local_c,
+                           local_8);
         *(uint *)(pbVar2 + 4) = *(uint *)(pbVar2 + 4) | 0x4000;
         return iVar3;
       }

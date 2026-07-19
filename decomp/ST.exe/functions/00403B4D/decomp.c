@@ -19,7 +19,7 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pFStack_c = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode != 0) {
     g_currentExceptionFrame = IStack_50.previous;
     iVar2 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1c8,0,errorCode,

@@ -33,7 +33,7 @@ undefined4 __fastcall FUN_004ea870(int *param_1)
            (bVar1 = thunk_FUN_004c7c20((int)param_1), CONCAT31(extraout_var_00,bVar1) != 0)) {
           thunk_FUN_004c7cc0(param_1,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
           param_1[0x134] = 2;
-          thunk_FUN_004cabb0(0);
+          TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
         }
         thunk_FUN_004dea40((int)local_8);
         return 0;

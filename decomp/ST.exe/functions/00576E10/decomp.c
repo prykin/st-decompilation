@@ -19,7 +19,7 @@ undefined4 __thiscall GameSystemC::CreateSystemObjects(GameSystemC *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pGVar2 = local_8;
   if (errorCode == 0) {
     (**(code **)(*(int *)local_8 + 0xc))(0x100,&DAT_007fb2a4,0,0);

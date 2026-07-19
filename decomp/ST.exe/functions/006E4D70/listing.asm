@@ -1,4 +1,4 @@
-FUN_006e4d70:
+AppClassTy::LifeToAllSystem:
 006E4D70  55                        PUSH EBP
 006E4D71  8B EC                     MOV EBP,ESP
 006E4D73  83 EC 48                  SUB ESP,0x48

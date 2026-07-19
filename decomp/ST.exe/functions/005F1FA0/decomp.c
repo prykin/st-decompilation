@@ -35,7 +35,7 @@ undefined4 * __thiscall FUN_005f1fa0(void *this,int *param_1)
     }
   }
   iVar1 = local_c + 0x30 + local_8;
-  puVar3 = (undefined4 *)FUN_006aac70(iVar1);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar1);
   uVar2 = DAT_00811788;
   *(undefined4 *)((int)this + 0x2c) = 2;
   *(undefined4 *)((int)this + 0x34) = uVar2;

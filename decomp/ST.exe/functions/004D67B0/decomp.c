@@ -19,7 +19,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   pIVar4 = g_currentExceptionFrame;
   if (iVar2 != 0) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-    iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+    iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
     if (iVar2 == 0) {
       thunk_FUN_0041dd00(local_8,param_1);
       g_currentExceptionFrame = pIVar4;

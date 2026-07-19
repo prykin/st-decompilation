@@ -75,7 +75,7 @@ FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_
     }
   }
   else {
-    _strncpy(local_11a,param_6,0xe);
+    Library::MSVCRT::_strncpy(local_11a,param_6,0xe);
     local_10c = 0;
   }
   uVar3 = 0xffffffff;
@@ -111,7 +111,7 @@ FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int param_
     }
   }
   else {
-    _strncpy(local_10b,param_7,0x103);
+    Library::MSVCRT::_strncpy(local_10b,param_7,0x103);
     local_8 = 0;
   }
   (**(code **)(*DAT_00802a38 + 8))(0x15a,0,0,local_144,0);

@@ -14,7 +14,7 @@ void __thiscall FUN_006e92c0(void *this,uint param_1,float param_2)
     if ((uVar2 & 0x8000) != 0) {
       if (param_2 != (float)_DAT_0079d670) {
         *puVar1 = uVar2 & 0xff87ffff | 0x4000c;
-        lVar3 = __ftol();
+        lVar3 = Library::MSVCRT::__ftol();
         puVar1[0xb] = (uint)lVar3;
         return;
       }

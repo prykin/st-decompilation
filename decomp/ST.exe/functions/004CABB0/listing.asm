@@ -1,4 +1,4 @@
-FUN_004cabb0:
+TLOBaseTy::RotateSpr:
 004CABB0  55                        PUSH EBP
 004CABB1  8B EC                     MOV EBP,ESP
 004CABB3  83 EC 4C                  SUB ESP,0x4c

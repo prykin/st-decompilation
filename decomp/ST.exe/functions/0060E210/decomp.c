@@ -16,7 +16,7 @@ FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,undefined2 *param
   longlong lVar8;
   
   iVar1 = param_3;
-  pdVar2 = (double *)FUN_006aac70(param_3 * 8);
+  pdVar2 = (double *)Library::DKW::LIB::FUN_006aac70(param_3 * 8);
   if (pdVar2 != (double *)0x0) {
     iVar6 = param_3 + -1;
     *(undefined4 *)pdVar2 = 0;
@@ -67,9 +67,9 @@ FUN_0060e210(undefined4 param_1,undefined4 param_2,int param_3,undefined2 *param
             } while (iVar4 != 0);
           }
         }
-        lVar8 = __ftol();
+        lVar8 = Library::MSVCRT::__ftol();
         *param_4 = (short)lVar8;
-        lVar8 = __ftol();
+        lVar8 = Library::MSVCRT::__ftol();
         param_4[1] = (short)lVar8;
         param_4 = param_4 + 2;
         param_3 = param_3 + 1;

@@ -46,7 +46,8 @@ LAB_004b77c4:
                 FUN_006acc70(iVar1,uVar5,&uStack_28);
                 if (*(int *)((int)&DAT_007f579a + iStack_24 * 4 + iVar6) <
                     *(int *)((int)&DAT_007f579a + iStack_18 * 4 + iVar6)) {
-                  FUN_006b11d0(*(uint **)(&DAT_007f57b2 + iVar6),uVar5,&iStack_1c);
+                  Library::DKW::TBL::FUN_006b11d0
+                            (*(uint **)(&DAT_007f57b2 + iVar6),uVar5,&iStack_1c);
                   iVar2 = iVar2 + iStack_14;
                   iVar1 = thunk_FUN_004b71c0(cVar4);
                   if (iVar1 < iVar2) goto LAB_004b78f0;
@@ -58,7 +59,7 @@ LAB_004b77c4:
             }
             iVar1 = thunk_FUN_004b71c0(cVar4);
             if (iStack_14 + iVar2 <= iVar1) {
-              FUN_006ae1c0(*(uint **)(&DAT_007f57b2 + iVar6),&iStack_1c);
+              Library::DKW::TBL::FUN_006ae1c0(*(uint **)(&DAT_007f57b2 + iVar6),&iStack_1c);
               iVar2 = iVar2 + iStack_14;
             }
           }

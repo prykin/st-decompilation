@@ -19,7 +19,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   pIVar10 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pCStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,pIVar10);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar10);
   pCVar2 = pCStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = pIVar10;
@@ -57,8 +57,9 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),puVar4,iVar3,iVar5,uVar7,iVar8,iVar9);
 LAB_00504f81:
   if (-1 < (int)*(uint *)(pCVar2 + 0x15c)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(pCVar2 + 0x15c),0xffffffff,*(uint *)(pCVar2 + 0x50),
-                 *(uint *)(pCVar2 + 0xa8));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pCVar2 + 0x15c),0xffffffff,*(uint *)(pCVar2 + 0x50),
+               *(uint *)(pCVar2 + 0xa8));
   }
   g_currentExceptionFrame = pIVar10;
   return;

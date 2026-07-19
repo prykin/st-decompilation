@@ -23,7 +23,7 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = *(int *)(local_8 + 0x1ac0);
@@ -66,7 +66,7 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
     ccFntTy::WrStr(*(ccFntTy **)(pFVar2 + 0x1a73),puVar5,iVar3,iVar8,uVar9);
     FUN_006c7570(*(int *)(pFVar2 + 0x1ac0),0,0x19,0xc5,(undefined4 *)0x186,0x19,4,0xf);
     FUN_006c7570(*(int *)(pFVar2 + 0x1ac0),0,0x1b,199,(undefined4 *)0x182,0x15,4,0xf);
-    FUN_006b3430(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
     FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
     g_currentExceptionFrame = local_4c.previous;
     return;

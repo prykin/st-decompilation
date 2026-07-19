@@ -10,7 +10,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   STGroupC *this_00;
   int iVar2;
   uint *puVar3;
-  void *this_01;
+  STBoatC *this_01;
   int iVar4;
   undefined4 uVar5;
   undefined4 extraout_ECX;
@@ -35,7 +35,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_14 = (STGroupC *)this;
-  iVar2 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -73,13 +73,15 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
       do {
         FUN_006acc70(*(int *)(this_00 + 0x29),uVar6,&local_c);
         if ((short)local_c != -1) {
-          this_01 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),
-                                                        this_00[0x24]),local_c,1);
-          if (this_01 == (void *)0x0) {
+          this_01 = (STBoatC *)
+                    STAllPlayersC::GetObjPtr
+                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),this_00[0x24]),
+                               local_c,1);
+          if (this_01 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x629);
           }
-          thunk_FUN_0045ef00(this_01,1,&local_20);
+          STBoatC::CmdToObj(this_01,1,&local_20);
         }
         uVar7 = uVar7 + 1;
         uVar6 = uVar7 & 0xffff;
@@ -96,8 +98,10 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
         do {
           FUN_006acc70(*(int *)(this_00 + 0x29),uVar7,&local_c);
           if ((short)local_c != -1) {
-            uVar7 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00[0x24]),
-                                       local_c,1);
+            uVar7 = STAllPlayersC::GetObjPtr
+                              (DAT_007fa174,
+                               CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00[0x24]),local_c,1)
+            ;
             if (uVar7 == 0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x638);

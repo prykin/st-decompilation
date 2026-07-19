@@ -27,7 +27,7 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
-    iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
       local_c = *(int *)(local_8 + 0x1ea6);

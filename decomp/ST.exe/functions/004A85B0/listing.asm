@@ -1,4 +1,4 @@
-FUN_004a85b0:
+STGroupBoatC::StartReceiveOrderSound:
 004A85B0  55                        PUSH EBP
 004A85B1  8B EC                     MOV EBP,ESP
 004A85B3  83 EC 08                  SUB ESP,0x8

@@ -1,4 +1,4 @@
-FUN_00609b90:
+STFieldC::InitSprSistem:
 00609B90  55                        PUSH EBP
 00609B91  8B EC                     MOV EBP,ESP
 00609B93  83 EC 48                  SUB ESP,0x48

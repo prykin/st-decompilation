@@ -29,9 +29,10 @@ int __fastcall FUN_0065e3b0(int param_1,undefined4 param_2)
         else {
           puVar2 = (undefined2 *)0x0;
         }
-        piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uVar5 >> 8),
-                                                    *(undefined1 *)(param_1 + 0x24)),
-                                           CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),1);
+        piVar3 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,
+                                   CONCAT31((int3)(uVar5 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                                   CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),1);
         uVar5 = extraout_ECX_00;
         if (piVar3 != (int *)0x0) {
           iVar4 = (**(code **)(*piVar3 + 0xd4))();

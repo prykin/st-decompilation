@@ -1,4 +1,4 @@
-FUN_004cbc10:
+TLOBaseTy::AddSprInit:
 004CBC10  55                        PUSH EBP
 004CBC11  8B EC                     MOV EBP,ESP
 004CBC13  83 EC 48                  SUB ESP,0x48

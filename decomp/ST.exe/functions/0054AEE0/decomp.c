@@ -48,7 +48,7 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_18 = this;
-  iVar6 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_74.previous;
@@ -80,7 +80,7 @@ LAB_0054b019:
     *puVar13 = 0;
     puVar13 = puVar13 + 1;
   }
-  if ((DAT_007fa174 == 0) || (DAT_00808784 != 0)) {
+  if ((DAT_007fa174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
     if ((DAT_00801690 == (void *)0x0) || (*(short *)((int)DAT_00801690 + 0x172) == 2)) {
       uVar19 = *(undefined4 *)(this_00 + 0x38);
@@ -118,7 +118,7 @@ LAB_0054b366:
       FUN_006e1dd0(DAT_00807598,*(int *)(this_00 + 0xc5) - *(int *)(this_00 + 0x4b2),
                    *(int *)(this_00 + 0xc9) - *(int *)(this_00 + 0x4b6),(float *)0x0,(float *)0x0,
                    &local_10);
-      lVar16 = __ftol();
+      lVar16 = Library::MSVCRT::__ftol();
       local_c = (undefined4)lVar16;
     }
     else {
@@ -167,10 +167,10 @@ LAB_0054b366:
           puVar9 = (uint *)((int)puVar9 + 1);
           puVar15 = (uint *)((int)puVar15 + 1);
         }
-        puVar9 = FUN_0072e560(local_d8,'\n');
+        puVar9 = Library::MSVCRT::FUN_0072e560(local_d8,'\n');
         while (puVar9 != (uint *)0x0) {
           *(undefined1 *)puVar9 = 0x20;
-          puVar9 = FUN_0072e560(puVar9,'\n');
+          puVar9 = Library::MSVCRT::FUN_0072e560(puVar9,'\n');
         }
         if (local_28._1_1_ == '\0') {
           wsprintfA((LPSTR)local_d8,&DAT_007a4ccc,local_d8);
@@ -184,18 +184,20 @@ LAB_0054b366:
       }
       if (this_00[0x4de] == (CursorClassTy)0x0) {
 LAB_0054b2a9:
-        uVar5 = thunk_FUN_00435930(DAT_007fa174,*(undefined4 *)(this_00 + 0x49a),
-                                   *(undefined4 *)(this_00 + 0x4a2),
-                                   (int *)*(undefined4 *)(this_00 + 0x49a),
-                                   *(int *)(this_00 + 0xc5) - *(int *)(this_00 + 0x4b2),
-                                   *(int *)(this_00 + 0xc9) - *(int *)(this_00 + 0x4b6));
+        uVar5 = STAllPlayersC::GetCursorType
+                          (DAT_007fa174,*(undefined4 *)(this_00 + 0x4a2),
+                           *(undefined4 *)(this_00 + 0x49a),
+                           *(int *)(this_00 + 0xc5) - *(int *)(this_00 + 0x4b2),
+                           (int *)(*(int *)(this_00 + 0xc9) - *(int *)(this_00 + 0x4b6)),unaff_EDI,
+                           unaff_ESI);
         while (uVar5 == 0x58) {
           thunk_FUN_0054a8d0(this_00);
-          uVar5 = thunk_FUN_00435930(DAT_007fa174,
-                                     *(int *)(this_00 + 0xc5) - *(int *)(this_00 + 0x4b2),
-                                     *(undefined4 *)(this_00 + 0x4a2),*(int **)(this_00 + 0x49a),
-                                     *(int *)(this_00 + 0xc5) - *(int *)(this_00 + 0x4b2),
-                                     *(int *)(this_00 + 0xc9) - *(int *)(this_00 + 0x4b6));
+          uVar5 = STAllPlayersC::GetCursorType
+                            (DAT_007fa174,*(undefined4 *)(this_00 + 0x4a2),
+                             *(undefined4 *)(this_00 + 0x49a),
+                             *(int *)(this_00 + 0xc5) - *(int *)(this_00 + 0x4b2),
+                             (int *)(*(int *)(this_00 + 0xc9) - *(int *)(this_00 + 0x4b6)),unaff_EDI
+                             ,unaff_ESI);
         }
         uVar19 = *(undefined4 *)(this_00 + 0x38);
         uVar17 = *(undefined4 *)(this_00 + 0x34);

@@ -32,7 +32,7 @@ FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 param_4,i
     iVar6 = *(int *)(iVar6 + 0xc);
     local_8 = 0;
     ExceptionList = &local_14;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_1c = &stack0xffffffa8;
     local_8 = 0xffffffff;
     local_24 = 0xffffffff;

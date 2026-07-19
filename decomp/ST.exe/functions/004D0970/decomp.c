@@ -8,7 +8,7 @@ FUN_004d0970(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   if (*(int *)((int)this + 0x249) <= *(int *)((int)this + 0x245) + 1) {
     iVar1 = *(int *)((int)this + 0x249) + 10;
     *(int *)((int)this + 0x249) = iVar1;
-    iVar1 = FUN_006acf50(*(undefined4 **)((int)this + 0x24d),iVar1 * 0xc);
+    iVar1 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)this + 0x24d),iVar1 * 0xc);
     *(int *)((int)this + 0x24d) = iVar1;
   }
   *(undefined4 *)(*(int *)((int)this + 0x24d) + *(int *)((int)this + 0x245) * 0xc) = param_1;

@@ -29,7 +29,7 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
   *(undefined4 *)(this + 0xa1) = uVar5;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar6 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar4 = local_c;
   if (iVar6 == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {
@@ -51,12 +51,12 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
         pMVar4[0xb3] = (MTestTy)0x1;
         if (DAT_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(DAT_00811778);
-          FUN_0072e2b0((undefined4 *)DAT_00811778);
+          Library::MSVCRT::FUN_0072e2b0((undefined4 *)DAT_00811778);
           DAT_00811778 = (HoloTy *)0x0;
         }
         FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403099,0xf9,0x123,DAT_0081176c + 0x140);
-        FUN_006b3640(DAT_008075a8,local_8,0xffffffff,10,0xb4);
-        DAT_00811778 = (HoloTy *)FUN_0072e530(0x33);
+        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,10,0xb4);
+        DAT_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (DAT_00811778 == (HoloTy *)0x0) {
           DAT_00811778 = (HoloTy *)0x0;
         }
@@ -81,14 +81,14 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           cVar9 = '\x01';
           uVar8 = 0x10;
           iVar7 = 1;
-          iVar6 = FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
+          iVar6 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
           HoloTy::Init(DAT_00811778,4,10,0xb4,iVar6,iVar7,uVar8,cVar9,uVar10);
           pHVar3 = DAT_00811778;
           pHVar1 = DAT_00811778 + 0x13;
           DAT_00811778[2] = (HoloTy)0x1;
           *(undefined4 *)(pHVar3 + 0x17) = *(undefined4 *)pHVar1;
           if (-1 < (int)*(uint *)(DAT_00811778 + 3)) {
-            FUN_006b3430(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
           }
         }
         if (local_8 != 0xffffffff) {
@@ -101,10 +101,10 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
         pMVar4[0xb3] = (MTestTy)0x5;
         if (DAT_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(DAT_00811778);
-          FUN_0072e2b0((undefined4 *)DAT_00811778);
+          Library::MSVCRT::FUN_0072e2b0((undefined4 *)DAT_00811778);
           DAT_00811778 = (HoloTy *)0x0;
         }
-        DAT_00811778 = (HoloTy *)FUN_0072e530(0x33);
+        DAT_00811778 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
         if (DAT_00811778 == (HoloTy *)0x0) {
           DAT_00811778 = (HoloTy *)0x0;
         }
@@ -133,13 +133,13 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           cVar9 = '\x01';
           uVar8 = 0x10;
           iVar7 = 1;
-          iVar6 = FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
+          iVar6 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
           HoloTy::Init(DAT_00811778,4,10,0xb4,iVar6,iVar7,uVar8,cVar9,uVar10);
           pHVar1 = DAT_00811778;
           DAT_00811778[2] = (HoloTy)0x0;
           *(undefined4 *)(pHVar1 + 0x17) = 0xffffffff;
           if (-1 < (int)*(uint *)(DAT_00811778 + 3)) {
-            FUN_006b3430(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
           }
           FUN_006b5f80(DAT_008075a8,10,0xb4,0xf9,0x121);
           thunk_FUN_00540620(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',

@@ -47,7 +47,7 @@ thunk_FUN_0061b340(void *this,int param_1,int param_2,int param_3,int param_4,in
           FUN_006e3310(DAT_00807598,(*(int *)((int)DAT_00807598 + 0x380) * param_4) / 0xc9,
                        (int *)((*(int *)((int)DAT_00807598 + 0x380) * param_5) / 0xc9),param_3,
                        &iStack_14);
-          lVar11 = __ftol();
+          lVar11 = Library::MSVCRT::__ftol();
           iVar10 = (int)(short)lVar11;
           iVar8 = param_3 + 1;
           iVar5 = iStack_14;

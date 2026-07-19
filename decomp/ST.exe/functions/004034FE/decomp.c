@@ -17,7 +17,7 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   this_00 = pCStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_4c.previous;
@@ -73,16 +73,19 @@ LAB_004fef26:
     }
   }
   if (-1 < (int)*(uint *)(this_00 + 0x168)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x168),0xffffffff,*(uint *)(this_00 + 0x5c),
-                 *(uint *)(this_00 + 0xb4));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x168),0xffffffff,*(uint *)(this_00 + 0x5c),
+               *(uint *)(this_00 + 0xb4));
   }
   if (-1 < (int)*(uint *)(this_00 + 0x164)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
-                 *(uint *)(this_00 + 0xb0));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
+               *(uint *)(this_00 + 0xb0));
   }
   if ((DAT_0080874e != '\x03') && (-1 < (int)*(uint *)(this_00 + 0x160))) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x160),0xffffffff,*(uint *)(this_00 + 0x54),
-                 *(uint *)(this_00 + 0xac));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x160),0xffffffff,*(uint *)(this_00 + 0x54),
+               *(uint *)(this_00 + 0xac));
   }
   g_currentExceptionFrame = IStack_4c.previous;
   return;

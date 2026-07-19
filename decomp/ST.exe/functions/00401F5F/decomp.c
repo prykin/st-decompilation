@@ -32,7 +32,7 @@ float * thunk_FUN_00671f10(int param_1,int *param_2,int *param_3)
   iStack_14 = 0;
   IStack_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_70;
-  iVar3 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_70.previous;
     if (pfStack_8 != (float *)0x0) {
@@ -50,7 +50,7 @@ float * thunk_FUN_00671f10(int param_1,int *param_2,int *param_3)
     }
     return (float *)0x0;
   }
-  _strncpy((char *)(piStack_24 + 1),&DAT_008016a0,0x7f);
+  Library::MSVCRT::_strncpy((char *)(piStack_24 + 1),&DAT_008016a0,0x7f);
   piStack_24[0x21] = -1;
   piStack_c = thunk_FUN_0064a630(10);
   fStack_20 = 0.0;
@@ -69,7 +69,7 @@ float * thunk_FUN_00671f10(int param_1,int *param_2,int *param_3)
         case 1:
         case 4:
           fVar6 = (float)(**(code **)*piStack_24)(puVar2);
-          pfStack_18 = (float *)FUN_006aac10(4);
+          pfStack_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *pfStack_18 = fVar6;
           if (param_2 != (int *)0x0) {
             *param_2 = 1;
@@ -79,7 +79,7 @@ float * thunk_FUN_00671f10(int param_1,int *param_2,int *param_3)
         case 5:
           fVar8 = (float10)(**(code **)(*piStack_24 + 4))(puVar2);
           fStack_20 = (float)fVar8;
-          pfStack_18 = (float *)FUN_006aac10(4);
+          pfStack_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *pfStack_18 = fStack_20;
           if (param_2 != (int *)0x0) {
             *param_2 = 2;
@@ -92,7 +92,7 @@ float * thunk_FUN_00671f10(int param_1,int *param_2,int *param_3)
             RaiseInternalException(-0x6b,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x585)
             ;
           }
-          pfStack_18 = (float *)FUN_006aac10(4);
+          pfStack_18 = (float *)Library::DKW::LIB::FUN_006aac10(4);
           *pfStack_18 = fVar6;
           if (param_2 != (int *)0x0) {
             *param_2 = 3;
@@ -132,7 +132,7 @@ LAB_006721a4:
     }
     else {
       iStack_1c = 1;
-      pfStack_8 = (float *)FUN_006aac10(4);
+      pfStack_8 = (float *)Library::DKW::LIB::FUN_006aac10(4);
       *pfStack_8 = (float)(uint)(iStack_10 == 0);
     }
     if (pfStack_8 == (float *)0x0) {

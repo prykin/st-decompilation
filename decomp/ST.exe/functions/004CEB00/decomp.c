@@ -108,7 +108,7 @@ switchD_004ceb68_caseD_32:
                               );
             *(undefined4 *)((int)this + 0x4d0) = 3;
             *(undefined4 *)((int)this + 0x3d0) = 1;
-            thunk_FUN_004cabb0(0);
+            TLOBaseTy::RotateSpr(this,0);
             iVar4 = *(int *)((int)this + 0x5ac);
             if (iVar4 == 0x5c) {
               (**(code **)(*(int *)this + 0x90))(3,0x39b);
@@ -221,7 +221,7 @@ switchD_004ceb68_caseD_32:
       pcVar11 = pcVar11 + 1;
     }
     local_2b = *(undefined4 *)((int)this + 0x375);
-    thunk_FUN_0054cc20(0x14,0,&local_24,local_6c,0);
+    STPlaySystemC::CreateGameObject(DAT_00802a38,0x14,0,&local_24,local_6c,0);
     *(undefined4 *)((int)this + 0x4d4) = *(undefined4 *)(local_24 + 0x18);
     *(undefined4 *)((int)this + 0x4d8) = 0;
     if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
@@ -246,7 +246,7 @@ switchD_004ceb68_caseD_32:
 LAB_004cf029:
     *(undefined4 *)((int)this + 0x4d0) = 4;
     *(undefined4 *)((int)this + 0x3d0) = 5;
-    thunk_FUN_004cabb0(1);
+    TLOBaseTy::RotateSpr(this,1);
     thunk_FUN_004cbf70((int)this);
     return local_10;
   case 4:
@@ -297,7 +297,7 @@ switchD_004cf07f_caseD_40:
   default:
     goto switchD_004ceb47_default;
   }
-  thunk_FUN_004cabb0(1);
+  TLOBaseTy::RotateSpr(this,1);
 switchD_004ceb47_default:
   return local_10;
 }

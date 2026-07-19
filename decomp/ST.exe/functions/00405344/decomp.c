@@ -18,7 +18,7 @@ void thunk_FUN_00522810(char *param_1)
   
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_4c.previous;
     return;
@@ -68,7 +68,7 @@ void thunk_FUN_00522810(char *param_1)
     g_currentExceptionFrame = IStack_4c.previous;
     return;
   }
-  iVar2 = _strncmp(_Str1,s_EXITON_007c416c,6);
+  iVar2 = Library::MSVCRT::_strncmp(_Str1,s_EXITON_007c416c,6);
   if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
     thunk_FUN_004d88f0(DAT_0080874d,5000);
     if (DAT_0080874e == '\x03') {
@@ -81,7 +81,7 @@ void thunk_FUN_00522810(char *param_1)
     thunk_FUN_004d8b70(DAT_0080874d);
     thunk_FUN_004d78e0(DAT_0080874d);
   }
-  iVar2 = _strncmp(_Str1,s_CORIUM_007c4164,6);
+  iVar2 = Library::MSVCRT::_strncmp(_Str1,s_CORIUM_007c4164,6);
   if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
     thunk_FUN_004d88f0(DAT_0080874d,5000);
     thunk_FUN_004d8b70(DAT_0080874d);
@@ -89,7 +89,7 @@ void thunk_FUN_00522810(char *param_1)
   }
   if (DAT_0080874e == '\x03') {
 LAB_00522a79:
-    iVar2 = _strncmp(_Str1,s_SILICON_007c4148,7);
+    iVar2 = Library::MSVCRT::_strncmp(_Str1,s_SILICON_007c4148,7);
     if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
       thunk_FUN_004e4380((uint)DAT_0080874d,10000);
       thunk_FUN_004d8b70(DAT_0080874d);
@@ -98,14 +98,14 @@ LAB_00522a79:
     if (DAT_0080874e != '\x03') goto LAB_00522ad4;
   }
   else {
-    iVar2 = _strncmp(_Str1,&DAT_007c415c,4);
+    iVar2 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c415c,4);
     if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
       thunk_FUN_004d87b0(DAT_0080874d,1000);
       thunk_FUN_004d8b70(DAT_0080874d);
       thunk_FUN_004d78e0(DAT_0080874d);
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
-    iVar2 = _strncmp(_Str1,s_METAL_007c4154,5);
+    iVar2 = Library::MSVCRT::_strncmp(_Str1,s_METAL_007c4154,5);
     if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
       thunk_FUN_004d8a30(DAT_0080874d,1000);
       thunk_FUN_004d8b70(DAT_0080874d);
@@ -113,24 +113,24 @@ LAB_00522a79:
     }
     if (DAT_0080874e == '\x03') goto LAB_00522a79;
 LAB_00522ad4:
-    iVar2 = _strncmp(_Str1,&DAT_007c4144,3);
+    iVar2 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c4144,3);
     if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
       thunk_FUN_004b7080((uint)DAT_0080874d,100);
       thunk_FUN_004d8b70(DAT_0080874d);
     }
     if (DAT_0080874e != '\x03') goto LAB_00522b59;
   }
-  iVar2 = _strncmp(_Str1,s_ENERGY_007c413c,6);
+  iVar2 = Library::MSVCRT::_strncmp(_Str1,s_ENERGY_007c413c,6);
   if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
     thunk_FUN_004e4270((uint)DAT_0080874d,100);
     thunk_FUN_004d8b70(DAT_0080874d);
   }
 LAB_00522b59:
-  iVar2 = _strncmp(_Str1,&DAT_007c4134,4);
+  iVar2 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c4134,4);
   if ((iVar2 == 0) && (DAT_007fa174 != 0)) {
     thunk_FUN_004e75f0((uint)DAT_0080874d);
   }
-  iVar2 = _strncmp(_Str1,&DAT_007c4130,3);
+  iVar2 = Library::MSVCRT::_strncmp(_Str1,&DAT_007c4130,3);
   if ((iVar2 == 0) && (DAT_00802a88 != 0)) {
     if (*(int *)(DAT_00802a88 + 0x114) == 0) {
       *(undefined4 *)(DAT_00802a88 + 0xf8) = 0;

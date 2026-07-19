@@ -129,13 +129,13 @@ int __fastcall thunk_FUN_0060aef0(void *param_1)
   }
   uStack_8 = 0;
   iStack_78 = iVar18;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puStack_a8 = &stack0xfffffef8;
   if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
     uStack_8 = 1;
     puStack_a8 = &stack0xfffffef8;
     puStack_1c = &stack0xfffffef8;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     puStack_74 = &stack0xfffffef8;
   }
   puStack_1c = &stack0xfffffef8;
@@ -368,7 +368,7 @@ LAB_0060b649:
   if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
     if (iStack_4c != 0) {
       uStack_8 = 2;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       uStack_8 = 0xffffffff;
       iVar11 = 0;
       iStack_4c = 0;

@@ -1,4 +1,4 @@
-FUN_00589b50:
+STOctopusC::SetSprRange:
 00589B50  55                        PUSH EBP
 00589B51  8B EC                     MOV EBP,ESP
 00589B53  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

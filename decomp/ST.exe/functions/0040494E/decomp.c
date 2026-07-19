@@ -12,7 +12,7 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   
   uVar7 = param_3;
   piVar4 = param_2;
-  param_2 = (int *)thunk_FUN_0042b620((uint)param_2,param_3,1);
+  param_2 = (int *)GetObjPtr(this,(uint)param_2,param_3,1);
   if (param_2 == (int *)0x0) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21d0,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___ChangeMD_007a8000);
@@ -28,7 +28,7 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
     iVar5 = _AddMDPairs(this,(uint)piVar4,uVar7);
   }
   else {
-    iVar5 = thunk_FUN_00442b40(piVar4,uVar7);
+    iVar5 = _SubMDObject(piVar4,uVar7);
   }
   if ((((iVar5 == 1) && (iVar1 = *(int *)((int)&DAT_007f4e24 + (int)piVar4 * 0xa62 + 1), iVar1 != 0)
        ) && (iVar2 = *(int *)(iVar1 + 0xc), iVar2 != 0)) && (uVar7 = 0, 0 < iVar2)) {

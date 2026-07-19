@@ -18,7 +18,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pCStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_c;
   if (iVar3 == 0) {
     pbVar4 = (byte *)FUN_0070b3a0(*(int *)(pCStack_c + 0x2b2),1);

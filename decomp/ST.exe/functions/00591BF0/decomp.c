@@ -42,7 +42,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
   *(DWORD *)(this + 0x61) = DVar5;
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar6 = __setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_c4.previous;
@@ -73,8 +73,9 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
             *(uint *)(pCVar10 + -0x14) = 0;
           }
           if (*(uint *)(pCVar10 + -0x18) != 0xffffffff) {
-            FUN_006b3730(*(uint **)(pCVar10 + 0x2c),*(uint *)(pCVar10 + -0x18),
-                         *(uint *)(pCVar10 + -0x14),*(uint *)pCVar10,*(uint *)(pCVar10 + 4));
+            Library::DKW::DDX::FUN_006b3730
+                      (*(uint **)(pCVar10 + 0x2c),*(uint *)(pCVar10 + -0x18),
+                       *(uint *)(pCVar10 + -0x14),*(uint *)pCVar10,*(uint *)(pCVar10 + 4));
           }
         }
         iVar6 = iVar6 + 1;
@@ -107,18 +108,20 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
                    *(int *)(this_00 + iVar6 * 0x1fb + 0xef) + -1) {
             if ((*(int *)(this_00 + iVar6 * 0x1fb + 0xeb) == 0) &&
                (*(uint *)(this_00 + iVar6 * 0x1fb + 0xe7) != 0xffffffff)) {
-              FUN_006b34d0(*(uint **)(this_00 + iVar6 * 0x1fb + 299),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0xe7),0xfffffffe,
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0xff),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x103));
+              Library::DKW::DDX::FUN_006b34d0
+                        (*(uint **)(this_00 + iVar6 * 0x1fb + 299),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0xe7),0xfffffffe,
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0xff),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0x103));
             }
             *(int *)(this_00 + iVar6 * 0x1fb + 0xeb) = *(int *)(this_00 + iVar6 * 0x1fb + 0xeb) + 1;
             if (*(uint *)(this_00 + iVar6 * 0x1fb + 0xe7) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(this_00 + iVar6 * 0x1fb + 299),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0xe7),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0xeb),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0xff),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x103));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(this_00 + iVar6 * 0x1fb + 299),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0xe7),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0xeb),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0xff),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0x103));
             }
             local_8 = 0;
           }
@@ -126,27 +129,30 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
                    *(int *)(this_00 + iVar6 * 0x1fb + 0x180) + -3) {
             if (*(int *)(this_00 + iVar6 * 0x1fb + 0x17c) == 0) {
               if (*(uint *)(this_00 + iVar6 * 0x1fb + 0x178) != 0xffffffff) {
-                FUN_006b34d0(*(uint **)(this_00 + iVar6 * 0x1fb + 0x1bc),
-                             *(uint *)(this_00 + iVar6 * 0x1fb + 0x178),0xfffffffe,
-                             *(uint *)(this_00 + iVar6 * 0x1fb + 400),
-                             *(uint *)(this_00 + iVar6 * 0x1fb + 0x194));
+                Library::DKW::DDX::FUN_006b34d0
+                          (*(uint **)(this_00 + iVar6 * 0x1fb + 0x1bc),
+                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x178),0xfffffffe,
+                           *(uint *)(this_00 + iVar6 * 0x1fb + 400),
+                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x194));
               }
               if ((this_00[iVar6 * 0x1fb + 0xe2] != (CampaignTy)0x0) &&
                  (*(uint *)(this_00 + iVar6 * 0x1fb + 0x209) != 0xffffffff)) {
-                FUN_006b34d0(*(uint **)(this_00 + iVar6 * 0x1fb + 0x24d),
-                             *(uint *)(this_00 + iVar6 * 0x1fb + 0x209),0xfffffffe,
-                             *(uint *)(this_00 + iVar6 * 0x1fb + 0x221),
-                             *(uint *)(this_00 + iVar6 * 0x1fb + 0x225));
+                Library::DKW::DDX::FUN_006b34d0
+                          (*(uint **)(this_00 + iVar6 * 0x1fb + 0x24d),
+                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x209),0xfffffffe,
+                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x221),
+                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x225));
               }
             }
             *(int *)(this_00 + iVar6 * 0x1fb + 0x17c) =
                  *(int *)(this_00 + iVar6 * 0x1fb + 0x17c) + 1;
             if (*(uint *)(this_00 + iVar6 * 0x1fb + 0x178) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(this_00 + iVar6 * 0x1fb + 0x1bc),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x178),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x17c),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 400),
-                           *(uint *)(this_00 + iVar6 * 0x1fb + 0x194));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(this_00 + iVar6 * 0x1fb + 0x1bc),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0x178),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0x17c),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 400),
+                         *(uint *)(this_00 + iVar6 * 0x1fb + 0x194));
             }
             thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
             local_8 = 0;
@@ -241,8 +247,9 @@ LAB_00591d08:
             uVar7 = *(int *)(pCVar10 + -0x8d) - 1;
             *(uint *)(pCVar10 + -0x8d) = uVar7;
             if (*(uint *)(pCVar10 + -0x91) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(pCVar10 + -0x4d),*(uint *)(pCVar10 + -0x91),uVar7,
-                           *(uint *)(pCVar10 + -0x79),*(uint *)(pCVar10 + -0x75));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(pCVar10 + -0x4d),*(uint *)(pCVar10 + -0x91),uVar7,
+                         *(uint *)(pCVar10 + -0x79),*(uint *)(pCVar10 + -0x75));
             }
             goto LAB_00591d08;
           }
@@ -269,7 +276,9 @@ LAB_00591d08:
         } while (iVar6 < (int)(uint)(byte)this_00[0x9a]);
       }
       if (*(int *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xd1) != 0) {
-        FUN_006e3b50((undefined4 *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xc1));
+        AppClassTy::PostNextMessage
+                  ((AppClassTy *)&DAT_00807620,
+                   (undefined4 *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xc1));
         g_currentExceptionFrame = local_c4.previous;
         return;
       }

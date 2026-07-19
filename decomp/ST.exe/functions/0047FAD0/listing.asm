@@ -1,4 +1,4 @@
-FUN_0047fad0:
+STBoatC::BackDismant:
 0047FAD0  55                        PUSH EBP
 0047FAD1  8B EC                     MOV EBP,ESP
 0047FAD3  53                        PUSH EBX

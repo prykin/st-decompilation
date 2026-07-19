@@ -19,7 +19,7 @@ undefined4 * __thiscall thunk_FUN_006012d0(void *this,int *param_1)
   int iStack_8;
   
   iStack_10 = 0;
-  puStack_c = (undefined4 *)FUN_006aac70(0x3d);
+  puStack_c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x3d);
   *(undefined4 *)((int)this + 0x212) = 2;
   puVar7 = (undefined4 *)((int)this + 0x206);
   puVar9 = puStack_c;
@@ -50,7 +50,8 @@ undefined4 * __thiscall thunk_FUN_006012d0(void *this,int *param_1)
     iStack_10 = *(int *)((int)this + 0x237) * 0x1c + 4;
   }
   if (iStack_8 + iStack_10 != 0) {
-    puStack_c = (undefined4 *)FUN_006acf50(puStack_c,iStack_8 + 0x3d + iStack_10);
+    puStack_c = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puStack_c,iStack_8 + 0x3d + iStack_10)
+    ;
     iVar3 = 0;
     iStack_14 = 0;
     iStack_18 = 0;

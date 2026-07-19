@@ -21,7 +21,7 @@ CPanelTy::PaintCostsXY
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_8;
   if (iVar3 == 0) {
     if ((param_4 != 0xffff) || (param_5 != 0xffff)) {

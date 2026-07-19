@@ -47,7 +47,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar5 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pRVar4 = local_10;
   if (iVar5 == 0) {
     if ((local_8 == (undefined4 *)0x0) || (*(char *)(local_8 + 2) == '\0')) {
@@ -65,8 +65,9 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
                                     7 - (uint)(*(char *)(local_8 + 2) != '\0'));
       thunk_FUN_00540760(*(undefined4 **)(pRVar4 + 0x68),iVar5,iVar7,'\x06',pbVar6);
     }
-    FUN_006b3640(DAT_008075a8,*(uint *)(pRVar4 + 0x60),0xffffffff,*(uint *)(pRVar4 + 0x3c),
-                 *(uint *)(pRVar4 + 0x44));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pRVar4 + 0x60),0xffffffff,*(uint *)(pRVar4 + 0x3c),
+               *(uint *)(pRVar4 + 0x44));
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

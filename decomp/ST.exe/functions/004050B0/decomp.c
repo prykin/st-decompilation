@@ -7,6 +7,7 @@ STAllPlayersC::GetTOBJListFromDArr
   short sVar1;
   code *pcVar2;
   bool bVar3;
+  STAllPlayersC *this_00;
   int iVar4;
   int *piVar5;
   int iVar6;
@@ -24,7 +25,7 @@ STAllPlayersC::GetTOBJListFromDArr
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pSStack_14 = this;
-  iVar4 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2049,0,iVar4,&DAT_007a4ccc
@@ -37,14 +38,15 @@ STAllPlayersC::GetTOBJListFromDArr
     puVar7 = (uint *)(*pcVar2)();
     return puVar7;
   }
-  puStack_c = FUN_006ae290((uint *)0x0,0,2,1);
+  puStack_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
+  this_00 = pSStack_14;
   iVar4 = 0;
   if (0 < iStack_10) {
     do {
       sVar1 = *(short *)(*(int *)(param_2 + 0x1c) + iVar4 * 2);
       uStack_8 = CONCAT22((short)((uint)*(int *)(param_2 + 0x1c) >> 0x10),sVar1);
       if (sVar1 != -1) {
-        piVar5 = (int *)thunk_FUN_0042b620(param_1,uStack_8,1);
+        piVar5 = (int *)GetObjPtr(this_00,param_1,uStack_8,1);
         if (piVar5 == (int *)0x0) {
           RaiseInternalException
                     (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2040);
@@ -74,7 +76,7 @@ switchD_0043efb1_caseD_3a:
 LAB_0043efd8:
         if ((bVar3) &&
            ((param_5 == -1 || (iVar6 = (**(code **)(*piVar5 + 0x6c))(), iVar6 == param_5)))) {
-          FUN_006ae1c0(puStack_c,&uStack_8);
+          Library::DKW::TBL::FUN_006ae1c0(puStack_c,&uStack_8);
         }
       }
       iVar4 = iVar4 + 1;

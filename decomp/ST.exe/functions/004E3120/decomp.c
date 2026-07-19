@@ -31,7 +31,7 @@ undefined4 __fastcall FUN_004e3120(int param_1)
       (**(code **)*DAT_008117bc)(local_24);
     }
     *(undefined4 *)(param_1 + 0x4d0) = 0;
-    thunk_FUN_004cabb0(1);
+    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,1);
   }
   return 1;
 }

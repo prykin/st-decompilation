@@ -16,7 +16,7 @@ int __thiscall FUN_005ec370(void *this,uint *param_1)
   uint local_c;
   uint local_8;
   
-  local_10 = (undefined4 *)FUN_006aac70(0x246);
+  local_10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x246);
   puVar6 = (undefined4 *)((int)this + 0x326);
   puVar8 = local_10;
   for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -37,7 +37,7 @@ int __thiscall FUN_005ec370(void *this,uint *param_1)
   local_14 = STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),&local_8);
   local_18 = STAllPlayersC::SaveGObjData(this,(int *)&local_c);
   uVar1 = local_c + 0x24e + local_8;
-  local_10 = (undefined4 *)FUN_006acf50(local_10,uVar1);
+  local_10 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_10,uVar1);
   *(uint *)((int)local_10 + 0x246) = local_8;
   puVar4 = (undefined4 *)((int)local_10 + 0x24a);
   puVar6 = local_14;

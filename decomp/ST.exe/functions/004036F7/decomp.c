@@ -1,8 +1,8 @@
 
-void __fastcall thunk_FUN_00420ae0(int *param_1)
+void __thiscall STSprGameObjC::LoadLifeFrame(STSprGameObjC *this,int *param_1)
 
 {
-  STT3DSprC *this;
+  STT3DSprC *this_00;
   char cVar1;
   code *pcVar2;
   byte bVar3;
@@ -90,16 +90,16 @@ void __fastcall thunk_FUN_00420ae0(int *param_1)
     pbVar11 = pbVar11 + 1;
   }
   bVar3 = thunk_FUN_004ab030();
-  __itoa((uint)bVar3,pcVar9,_Radix);
-  iVar6 = param_1[8];
+  Library::MSVCRT::__itoa((uint)bVar3,pcVar9,_Radix);
+  iVar6 = *(int *)(this + 0x20);
   if ((((iVar6 == 0x14) || (iVar6 == 1000)) || (iVar6 == 0x172)) || (iVar6 == 0x1a4)) {
-    uVar4 = (**(code **)(*param_1 + 0x2c))();
+    uVar4 = (**(code **)(*(int *)this + 0x2c))();
   }
   else {
     if (iVar6 != 0x3e9) {
       return;
     }
-    uVar4 = *(undefined4 *)((int)param_1 + 0x259);
+    uVar4 = *(undefined4 *)(this + 0x259);
   }
   switch(uVar4) {
   case 1:
@@ -554,19 +554,19 @@ void __fastcall thunk_FUN_00420ae0(int *param_1)
     pbVar8 = pbVar8 + 1;
     pbVar11 = pbVar11 + 1;
   }
-  this = (STT3DSprC *)((int)param_1 + 0x1d5);
-  STT3DSprC::LoadSequence(this,1,DAT_00806774,abStack_24,0x1d);
-  FUN_006ea5e0(*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),1,0);
-  thunk_FUN_004ac610(this,'\x01');
-  STT3DSprC::StartShow(this,1,*(undefined4 *)(DAT_00802a38 + 0xe4));
-  iVar6 = (**(code **)(*param_1 + 0xc))();
+  this_00 = (STT3DSprC *)(this + 0x1d5);
+  STT3DSprC::LoadSequence(this_00,1,DAT_00806774,abStack_24,0x1d);
+  FUN_006ea5e0(*(void **)(this + 0x211),*(uint *)(this + 0x1ed),1,0);
+  thunk_FUN_004ac610(this_00,'\x01');
+  STT3DSprC::StartShow(this_00,1,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  iVar6 = (**(code **)(*(int *)this + 0xc))();
   if (iVar6 != 3) {
     return;
   }
-  STT3DSprC::LoadSequence(this,2,DAT_00806774,abStack_38,0x1d);
-  FUN_006ea5e0(*(void **)((int)param_1 + 0x211),*(uint *)((int)param_1 + 0x1ed),2,0);
-  thunk_FUN_004ac610(this,'\x02');
-  STT3DSprC::StartShow(this,2,*(undefined4 *)(DAT_00802a38 + 0xe4));
+  STT3DSprC::LoadSequence(this_00,2,DAT_00806774,abStack_38,0x1d);
+  FUN_006ea5e0(*(void **)(this + 0x211),*(uint *)(this + 0x1ed),2,0);
+  thunk_FUN_004ac610(this_00,'\x02');
+  STT3DSprC::StartShow(this_00,2,*(undefined4 *)(DAT_00802a38 + 0xe4));
   return;
 }
 

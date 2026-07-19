@@ -59,7 +59,7 @@ undefined4 __fastcall thunk_FUN_004c84c0(int *param_1)
   }
   if (((*(int *)((int)param_1 + 0x361) == 5) &&
       (iVar6 = (**(code **)(*param_1 + 0x7c))(), iVar6 == 100)) || (99 < param_1[0xe5])) {
-    iVar6 = thunk_FUN_004c94b0();
+    iVar6 = TLOBaseTy::procResult((TLOBaseTy *)param_1);
     if (iVar6 == 0) {
       return 0;
     }

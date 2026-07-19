@@ -20,7 +20,7 @@ undefined4 FUN_00693eb0(int param_1,int param_2)
   undefined4 uStackY_18;
   
   iVar10 = param_2;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puVar8 = this;
   puVar9 = local_19ac;
   for (iVar6 = 0x666; iVar6 != 0; iVar6 = iVar6 + -1) {

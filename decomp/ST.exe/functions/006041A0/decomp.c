@@ -23,7 +23,7 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_c;
   if (iVar2 == 0) {
     if (0 < param_1) {
@@ -47,7 +47,7 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
     pSVar5 = local_c + 0x219;
     iVar4 = local_8;
     do {
-      FUN_0072e2b0(*(undefined4 **)pSVar5);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)pSVar5);
       pSVar5 = pSVar5 + 4;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);

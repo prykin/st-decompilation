@@ -19,7 +19,7 @@ FUN_00718f40(undefined4 *param_1,undefined4 *param_2,uint param_3,UINT param_4,i
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar3 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x151,0,iVar2,&DAT_007a4ccc,
@@ -32,13 +32,13 @@ FUN_00718f40(undefined4 *param_1,undefined4 *param_2,uint param_3,UINT param_4,i
     RaiseInternalException(iVar2,0,s_E__Ourlib_Palette_cpp_007f0718,0x152);
     return iVar2;
   }
-  FUN_0072da70(local_44c,param_2,0x400);
+  Library::MSVCRT::FUN_0072da70(local_44c,param_2,0x400);
   if (*param_6 < param_5) {
     if (*param_9 + param_7 <= param_8) {
       *param_9 = param_8;
       puVar6 = local_44c;
       uVar5 = 100;
-      lVar4 = __ftol();
+      lVar4 = Library::MSVCRT::__ftol();
       FUN_00718d50((int)param_2,param_3,param_4,100,(byte)lVar4,uVar5,puVar6);
       FUN_006b0a20(param_1,(int)local_44c,param_3,param_4,1);
       *param_6 = *param_6 + 1;

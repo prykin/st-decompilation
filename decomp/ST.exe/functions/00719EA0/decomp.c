@@ -23,11 +23,12 @@ int * __cdecl FUN_00719ea0(LPCSTR param_1,int *param_2)
   local_c = (int *)0x0;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
-  errorCode = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     local_c = FUN_0071ae80(param_1,(DWORD *)0x0);
-    FUN_00752e40(local_4c,local_c);
-    local_8 = FUN_006aac10((-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + local_3a);
+    Library::DKW::SND::FUN_00752e40(local_4c,local_c);
+    local_8 = Library::DKW::LIB::FUN_006aac10
+                        ((-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + local_3a);
     uVar4 = (-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a;
     piVar3 = local_4c;
     piVar6 = local_8;

@@ -22,7 +22,7 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (iVar2 == 0) {
     local_8[0x194] = (ProdPanelTy)param_1;

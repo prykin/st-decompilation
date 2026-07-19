@@ -47,7 +47,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pMStack_10 = (MMObjTy *)this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pMStack_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
@@ -64,7 +64,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   *(undefined4 *)(pMStack_10 + 0x1ffc) = param_1;
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -104,7 +104,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   iVar2 = 0;
   do {
     if (*(int *)(this_01 + iVar2 * 4 + 0x1bc7) != 0) {
-      puVar5 = FUN_006c4a20(*(int *)(this_01 + iVar2 * 4 + 0x1bc7));
+      puVar5 = Library::DKW::FLC::FUN_006c4a20(*(int *)(this_01 + iVar2 * 4 + 0x1bc7));
       *(undefined4 **)(this_01 + iVar2 * 4 + 0x1bd7) = puVar5;
       if (puVar5 != (undefined4 *)0x0) {
         switch(iVar2) {
@@ -142,7 +142,7 @@ switchD_00590c7b_default:
 LAB_00590d2d:
             iVar17 = iStack_c + iVar2;
             if (*(int *)(this_01 + iVar17 * 4 + 0x1a5f) != 0) {
-              puVar5 = FUN_006c4a20(*(int *)(this_01 + iVar17 * 4 + 0x1a5f));
+              puVar5 = Library::DKW::FLC::FUN_006c4a20(*(int *)(this_01 + iVar17 * 4 + 0x1a5f));
               *(undefined4 **)(this_01 + iVar17 * 4 + 0x1b13) = puVar5;
             }
           }
@@ -155,7 +155,7 @@ LAB_00590d24:
               if (1 < iVar2) {
                 if (iVar2 == 6) {
                   if (*(int *)(this_01 + 0x1aa7) != 0) {
-                    puVar5 = FUN_006c4a20(*(int *)(this_01 + 0x1aa7));
+                    puVar5 = Library::DKW::FLC::FUN_006c4a20(*(int *)(this_01 + 0x1aa7));
                     *(undefined4 **)(this_01 + 0x1b67) = puVar5;
                   }
                   goto LAB_00590d4c;
@@ -165,7 +165,7 @@ LAB_00590d24:
               iVar17 = *(int *)(this_01 + iVar2 * 4 + 0x1a5f);
             }
             if (iVar17 != 0) {
-              puVar5 = FUN_006c4a20(iVar17);
+              puVar5 = Library::DKW::FLC::FUN_006c4a20(iVar17);
               *(undefined4 **)(this_01 + iVar2 * 4 + 0x1b4f) = puVar5;
             }
           }

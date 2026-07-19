@@ -25,9 +25,9 @@ uint __thiscall thunk_FUN_006001e0(void *this,int param_1)
   if (((*(byte *)(DAT_00802a38 + 0xe4) & 1) == 0) &&
      (iVar3 = *(int *)((int)this + 0x233) + iVar5,
      0x31 < (int)*(short *)(iVar3 + 4) - (int)*(short *)(iVar3 + 10))) {
-    thunk_FUN_00556760(DAT_00802a7c,1,1,0,(int)*(short *)(iVar3 + 0x12),
-                       (int)*(short *)(iVar3 + 0x14),(int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,
-                       0);
+    TraksClassTy::TraksCreate
+              (DAT_00802a7c,1,1,0,(int)*(short *)(iVar3 + 0x12),(int)*(short *)(iVar3 + 0x14),
+               (int)*(short *)(iVar3 + 0x16),0,0,0,0,0,0,-1,0,0);
   }
   iVar3 = *(int *)((int)this + 0x233);
   psVar1 = (short *)(iVar5 + iVar3);

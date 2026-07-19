@@ -40,7 +40,7 @@ LPSTR __cdecl FUN_006f2c00(char *param_1,int param_2,undefined4 param_3)
     }
   }
   else {
-    __itoa(param_2,local_24,10);
+    Library::MSVCRT::__itoa(param_2,local_24,10);
     wsprintfA(local_44,s__s_s_s_007c6edc,&DAT_007d5628,local_24,&DAT_007d5630);
     pCVar5 = &DAT_00856e40 + iVar2 * 0x20;
     wsprintfA(pCVar5,local_44,param_1,param_3);

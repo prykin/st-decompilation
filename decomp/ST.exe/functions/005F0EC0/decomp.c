@@ -84,7 +84,7 @@ FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       }
     }
     else {
-      _strncpy(local_126,param_6,0xe);
+      Library::MSVCRT::_strncpy(local_126,param_6,0xe);
       local_118 = 0;
     }
   }
@@ -122,7 +122,7 @@ FUN_005f0ec0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
       }
     }
     else {
-      _strncpy(local_117,param_7,0x103);
+      Library::MSVCRT::_strncpy(local_117,param_7,0x103);
       local_14 = 0;
     }
   }

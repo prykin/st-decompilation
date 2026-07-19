@@ -63,7 +63,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar8;
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
-  iVar9 = __setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_40;
   if (iVar9 != 0) {
     g_currentExceptionFrame = local_84.previous;
@@ -109,9 +109,10 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
             *(uint *)(DAT_0081176c + 0x4cf) =
                  *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
             if (*(uint *)(DAT_0081176c + 0x4b3) != 0xffffffff) {
-              FUN_006b3730(*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),
-                           *(uint *)(DAT_0081176c + 0x4b7),*(uint *)(DAT_0081176c + 0x4cb),
-                           *(uint *)(DAT_0081176c + 0x4cf));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),
+                         *(uint *)(DAT_0081176c + 0x4b7),*(uint *)(DAT_0081176c + 0x4cb),
+                         *(uint *)(DAT_0081176c + 0x4cf));
             }
           }
         }
@@ -325,9 +326,10 @@ LAB_005b1da4:
                          (*(int *)(*(int *)(this_00 + 0x1c7b) + 4) - (int)pcVar14) + -4,0x13);
         ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x30),local_8,2,-1,
                        (-(uint)(*(short *)(param_1 + 0x16) != 0) & 2) + 1);
-        FUN_006b3640(DAT_008075a8,
-                     *(uint *)(this_00 + (*(ushort *)(param_1 + 0x1a) / 0x13) * 4 + 0x1c23),
-                     0xfffffffe,0x114,*(ushort *)(param_1 + 0x1a) + 0x3f);
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,
+                   *(uint *)(this_00 + (*(ushort *)(param_1 + 0x1a) / 0x13) * 4 + 0x1c23),0xfffffffe
+                   ,0x114,*(ushort *)(param_1 + 0x1a) + 0x3f);
         break;
       case 0x8162:
         uVar12 = *(uint *)(*(int *)(this_00 + 0x1c9f) + 8);
@@ -366,8 +368,10 @@ LAB_005b1b6c:
             if (iVar9 == 0) {
               pCVar17 = this_00 + 0x1da7;
               FUN_006b78c0((char *)pCVar17,(char *)pCVar17);
-              FUN_0072e730((byte *)pCVar17,local_188,local_28c,(byte *)0x0,(byte *)0x0);
-              __makepath((char *)pCVar17,(char *)local_188,(char *)local_28c,(char *)0x0,(char *)0x0
+              Library::MSVCRT::FUN_0072e730
+                        ((byte *)pCVar17,local_188,local_28c,(byte *)0x0,(byte *)0x0);
+              Library::MSVCRT::__makepath
+                        ((char *)pCVar17,(char *)local_188,(char *)local_28c,(char *)0x0,(char *)0x0
                         );
             }
             else {
@@ -455,8 +459,9 @@ LAB_005b1b6c:
         uVar12 = *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
         *(uint *)(this_00 + 0x1bb2) = uVar12;
         if (*(uint *)(this_00 + 0x1b96) != 0xffffffff) {
-          FUN_006b3730(*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),
-                       *(uint *)(this_00 + 0x1b9a),*(uint *)(this_00 + 0x1bae),uVar12);
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),
+                     *(uint *)(this_00 + 0x1b9a),*(uint *)(this_00 + 0x1bae),uVar12);
         }
       }
       goto switchD_005b0c37_caseD_1;
@@ -551,7 +556,7 @@ LAB_005b1b6c:
       FUN_00715360(DAT_00811764,0,'\x1b',local_6e0,0x451,1,0xffffffff);
     }
 LAB_005b2011:
-    FUN_006b6020(*(int *)(*(int *)(this_00 + 0x1a5b) + 0x686),0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020(*(int *)(*(int *)(this_00 + 0x1a5b) + 0x686),0,&DAT_008016a0);
     *(undefined4 *)(this_00 + 0x2d) = 0x33;
     *(undefined4 *)(this_00 + 0x31) = *(undefined4 *)(*(int *)(this_00 + 0x1a5b) + 0x686);
     FUN_006e6080(this_00,2,*(undefined4 *)(*(int *)(this_00 + 0x1a5b) + 0x54c),

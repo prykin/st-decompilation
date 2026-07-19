@@ -16,7 +16,7 @@ undefined4 * __cdecl FUN_00648780(int param_1,char *param_2)
   local_8 = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x7f);

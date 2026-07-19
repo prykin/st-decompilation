@@ -11,7 +11,7 @@ undefined4 FUN_004b6fc0(char param_1)
     *puVar3 = 0;
     puVar3 = puVar3 + 1;
   }
-  puVar1 = FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
+  puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0xc,0x14);
   *(uint **)(&DAT_007f57b2 + param_1 * 0xa62) = puVar1;
   return 0;
 }

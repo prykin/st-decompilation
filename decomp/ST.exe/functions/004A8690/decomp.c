@@ -1,5 +1,9 @@
 
-void __thiscall FUN_004a8690(void *this,int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_grpb.cpp
+   STGroupBoatC::GenSwitch */
+
+void __thiscall STGroupBoatC::GenSwitch(STGroupBoatC *this,int param_1)
 
 {
   uint uVar1;
@@ -12,14 +16,15 @@ void __thiscall FUN_004a8690(void *this,int param_1)
   uint local_8;
   
   uVar5 = 0;
-  uVar1 = *(uint *)(*(int *)((int)this + 0x29) + 0xc);
+  uVar1 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   if (uVar1 != 0) {
     uVar4 = 0;
     do {
-      FUN_006acc70(*(int *)((int)this + 0x29),uVar4,&local_8);
+      FUN_006acc70(*(int *)(this + 0x29),uVar4,&local_8);
       if ((short)local_8 != -1) {
-        this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                     *(undefined1 *)((int)this + 0x24)),local_8,1);
+        this_00 = (int *)STAllPlayersC::GetObjPtr
+                                   (DAT_007fa174,
+                                    CONCAT31((int3)((uint)extraout_EDX >> 8),this[0x24]),local_8,1);
         if (this_00 == (int *)0x0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1742,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__GenSwitch_NULL_007ac540);

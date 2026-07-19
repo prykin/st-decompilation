@@ -25,7 +25,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  errorCode = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
     iVar3 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x13c,0,errorCode,
@@ -55,7 +55,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   DAT_00807418 = DAT_00807408;
   DAT_0080741c = DAT_0080740c;
   local_14 = DAT_00807408;
-  fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   local_14 = (&DAT_00807574)[param_1 * 4];
   _DAT_00807428 = DAT_00807420;
   DAT_0080743c = DAT_0080743c & 0xff;

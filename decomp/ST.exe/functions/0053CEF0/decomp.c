@@ -38,7 +38,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = (SpecPanelTy *)this;
-  iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_14;
   if (iVar3 == 0) {
     DAT_008016ec = local_14;

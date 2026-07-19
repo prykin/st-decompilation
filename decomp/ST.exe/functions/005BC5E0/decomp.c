@@ -44,7 +44,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar7;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
-  iVar8 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_8c.previous;
@@ -203,9 +203,9 @@ LAB_005bccb9:
                        *(uint **)(iVar8 + 8 + (uint)*(ushort *)(param_1 + 0x14) * 0x14),2,-1,
                        (-(uint)(*(short *)(param_1 + 0x16) != 0) & 2) + 1);
       }
-      FUN_006b3640(DAT_008075a8,
-                   *(uint *)(this_00 + (*(ushort *)(param_1 + 0x1a) / 0x13) * 4 + 0x1c2a),0xfffffffe
-                   ,0x7a,*(ushort *)(param_1 + 0x1a) + 0x67);
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + (*(ushort *)(param_1 + 0x1a) / 0x13) * 4 + 0x1c2a)
+                 ,0xfffffffe,0x7a,*(ushort *)(param_1 + 0x1a) + 0x67);
       break;
     case 0x8163:
       uVar7 = *(undefined4 *)(param_1 + 0x14);
@@ -222,8 +222,9 @@ LAB_005bccb9:
       uVar12 = *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
       *(uint *)(this_00 + 0x1bb9) = uVar12;
       if (*(uint *)(this_00 + 0x1b9d) != 0xffffffff) {
-        FUN_006b3730(*(uint **)(this_00 + 0x1be1),*(uint *)(this_00 + 0x1b9d),
-                     *(uint *)(this_00 + 0x1ba1),*(uint *)(this_00 + 0x1bb5),uVar12);
+        Library::DKW::DDX::FUN_006b3730
+                  (*(uint **)(this_00 + 0x1be1),*(uint *)(this_00 + 0x1b9d),
+                   *(uint *)(this_00 + 0x1ba1),*(uint *)(this_00 + 0x1bb5),uVar12);
       }
     }
     goto switchD_005bc9da_caseD_6944;
@@ -333,11 +334,11 @@ LAB_005bcd75:
       this_00[0x65] = (PrividerTy)0x5;
       this_00[0x1a60] = (PrividerTy)0x0;
       local_8 = 0xffffffff;
-      FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1c8a));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1c8a));
       FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    *(int *)(this_00 + 0x1a5b) + 0x140);
-      FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x197);
-      puVar9 = (undefined1 *)FUN_0072e530(0x33);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x197);
+      puVar9 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
       if (puVar9 == (undefined1 *)0x0) {
         puVar9 = (undefined1 *)0x0;
       }
@@ -363,7 +364,7 @@ LAB_005bcd75:
         cVar13 = '\x01';
         uVar12 = 0x10;
         iVar10 = 1;
-        iVar8 = FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
+        iVar8 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
         uVar12 = HoloTy::Init(*(HoloTy **)(this_00 + 0x1c9a),1,0x79,0x197,iVar8,iVar10,uVar12,cVar13
                               ,uVar14);
         if (uVar12 != 0) {
@@ -371,7 +372,7 @@ LAB_005bcd75:
           *(undefined1 *)(iVar8 + 2) = 1;
           *(undefined4 *)(iVar8 + 0x17) = *(undefined4 *)(iVar8 + 0x13);
           if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x1c9a) + 3)) {
-            FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x1c9a) + 3));
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x1c9a) + 3));
           }
           FUN_006b3af0(DAT_008075a8,*(uint *)(this_00 + 0x1c8a));
         }

@@ -25,7 +25,7 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (MMObjTy *)this;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_ESI,unaff_EBX);
   this_00 = local_10;
   if (errorCode == 0) {
     MMObjTy::CloseButtons(local_10);

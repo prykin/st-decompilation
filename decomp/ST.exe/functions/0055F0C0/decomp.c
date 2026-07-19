@@ -38,17 +38,17 @@ int * FUN_0055f0c0(int *param_1,uint param_2,uint param_3,int param_4,uint param
   }
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_34 = (uint *)&stack0xffffff88;
   local_1c = &stack0xffffff88;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_24 = (int *)&stack0xffffff88;
   local_1c = &stack0xffffff88;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   local_30 = (int *)&stack0xffffff88;
   local_1c = &stack0xffffff88;
-  local_44[0] = (int *)FUN_006aac70(param_3 * 4);
+  local_44[0] = (int *)Library::DKW::LIB::FUN_006aac70(param_3 * 4);
   if (param_4 < 0) {
     param_4 = 1;
   }

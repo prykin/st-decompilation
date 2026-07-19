@@ -15,7 +15,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pSStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = pSStack_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = IStack_4c.previous;

@@ -1,4 +1,4 @@
-FUN_0047c050:
+STBoatC::Bring:
 0047C050  55                        PUSH EBP
 0047C051  8B EC                     MOV EBP,ESP
 0047C053  83 EC 10                  SUB ESP,0x10

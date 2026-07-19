@@ -1,4 +1,4 @@
-FUN_0044e980:
+STBoatC::GetVisualInfo:
 0044E980  55                        PUSH EBP
 0044E981  8B EC                     MOV EBP,ESP
 0044E983  8B 45 14                  MOV EAX,dword ptr [EBP + 0x14]

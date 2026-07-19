@@ -1,4 +1,4 @@
-FUN_00479600:
+STBoatC::Teleport:
 00479600  55                        PUSH EBP
 00479601  8B EC                     MOV EBP,ESP
 00479603  83 EC 2C                  SUB ESP,0x2c

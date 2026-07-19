@@ -28,7 +28,7 @@ undefined4 __cdecl FUN_006a58b0(undefined4 *param_1,int param_2,int param_3)
     param_1[0xc] = iVar3 - iVar4;
     return uVar2;
   }
-  iVar3 = FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+  iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
   if (iVar3 == 1) {
     pcVar1 = (code *)swi(3);
     uVar2 = (*pcVar1)();

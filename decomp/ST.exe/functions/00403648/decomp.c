@@ -22,7 +22,7 @@ void __thiscall CPanelTy::PaintInfoBoat(CPanelTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pCStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -92,8 +92,9 @@ LAB_004fea77:
           iVar3 = 0;
         }
         uVar5 = uStack_8 & 0xff;
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,0x3c,0x52 - uVar5,*(int *)(this_00 + 0x28a)
-                     ,0,iVar3,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x184),0,0x3c,0x52 - uVar5,*(int *)(this_00 + 0x28a),0
+                   ,iVar3,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
         pbVar6 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2ca),1);
         thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x184),10,0x30,'\x06',pbVar6);
       }
@@ -106,16 +107,19 @@ LAB_004fea77:
     }
   }
   if (-1 < (int)*(uint *)(this_00 + 0x148)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x148),0xffffffff,*(uint *)(this_00 + 0x3c),
-                 *(uint *)(this_00 + 0x94));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x148),0xffffffff,*(uint *)(this_00 + 0x3c),
+               *(uint *)(this_00 + 0x94));
   }
   if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                 *(uint *)(this_00 + 0x98));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+               *(uint *)(this_00 + 0x98));
   }
   if ((DAT_0080874e != '\x03') && (-1 < (int)*(uint *)(this_00 + 0x150))) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x150),0xffffffff,*(uint *)(this_00 + 0x44),
-                 *(uint *)(this_00 + 0x9c));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x150),0xffffffff,*(uint *)(this_00 + 0x44),
+               *(uint *)(this_00 + 0x9c));
   }
   g_currentExceptionFrame = IStack_50.previous;
   return;

@@ -2,19 +2,25 @@
 void __fastcall FUN_005db2a0(int param_1)
 
 {
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *this;
   int iVar1;
   int *piVar2;
   
   thunk_FUN_0055db70();
+  this = (ccFntTy *)0x0;
   if (*(int *)(param_1 + 0x2c) != 0) {
     cMf32::RecMemFree(DAT_00806780,(uint *)(param_1 + 0x2c));
+    this = extraout_ECX;
   }
   if (*(uint **)(param_1 + 0x30) != (uint *)0x0) {
-    FUN_00710560(*(uint **)(param_1 + 0x30));
+    ccFntTy::operator(this,*(uint **)(param_1 + 0x30));
     *(undefined4 *)(param_1 + 0x30) = 0;
+    this = extraout_ECX_00;
   }
   if (*(uint **)(param_1 + 0x34) != (uint *)0x0) {
-    FUN_00710560(*(uint **)(param_1 + 0x34));
+    ccFntTy::operator(this,*(uint **)(param_1 + 0x34));
     *(undefined4 *)(param_1 + 0x34) = 0;
   }
   piVar2 = (int *)(param_1 + 0x244);

@@ -1,4 +1,4 @@
-FUN_006e5970:
+SystemClassTy::SendMessage:
 006E5970  55                        PUSH EBP
 006E5971  8B EC                     MOV EBP,ESP
 006E5973  81 EC A4 00 00 00         SUB ESP,0xa4

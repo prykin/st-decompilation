@@ -37,9 +37,9 @@ UPanelTy::PaintTxtBut
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_10 = this;
-    iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
-      local_8 = FUN_006f1ce0(param_2,param_3,(int *)0x0,1);
+      local_8 = cMf32::RecGet(DAT_00806790,param_2,param_3,(int *)0x0,1);
       iVar6 = local_c;
       pUVar2 = local_10;
       iVar3 = local_14;
@@ -52,8 +52,9 @@ UPanelTy::PaintTxtBut
       iVar3 = -2;
       puVar5 = (uint *)FUN_006b0140(param_5,DAT_00807618);
       ccFntTy::WrStr(param_4,puVar5,iVar3,iVar6,uVar4);
-      FUN_006b3640(DAT_008075a8,*(uint *)(pUVar2 + 0x60),0xffffffff,*(uint *)(pUVar2 + 0x3c),
-                   *(uint *)(pUVar2 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(pUVar2 + 0x60),0xffffffff,*(uint *)(pUVar2 + 0x3c),
+                 *(uint *)(pUVar2 + 0x44));
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

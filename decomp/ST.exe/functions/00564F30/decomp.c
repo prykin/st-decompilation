@@ -84,7 +84,7 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
   local_8 = (int)(iVar3 * uVar7) / DAT_00803390;
   piVar10 = *(int **)(DAT_008033b0 + param_3 * 4);
   iVar3 = FUN_006db6d0(iVar2);
-  iVar11 = FUN_006db640(iVar2);
+  iVar11 = Library::DKW::STR::FUN_006db640(iVar2);
   local_28 = param_2 * 0x10000 - DAT_00803354 * -iVar11 >> 0x10;
   iVar12 = param_1 * 0x10000 - DAT_00803354 * iVar3 >> 0x10;
   iVar5 = FUN_006acf90(iVar12,local_28,DAT_00803304,DAT_00803308);
@@ -271,8 +271,9 @@ int FUN_00564f30(int param_1,int param_2,int param_3,int *param_4,int param_5,in
         DAT_00803398 = 99;
       }
       if (iVar5 < iVar11) {
-        FUN_0072da70((undefined4 *)(local_1c + (iVar5 * 5 + 5) * 4),
-                     (undefined4 *)(iVar5 * 0x14 + local_1c),iVar11 * 0x14 + iVar5 * -0x14);
+        Library::MSVCRT::FUN_0072da70
+                  ((undefined4 *)(local_1c + (iVar5 * 5 + 5) * 4),
+                   (undefined4 *)(iVar5 * 0x14 + local_1c),iVar11 * 0x14 + iVar5 * -0x14);
         iVar11 = DAT_00803398;
       }
       DAT_00803398 = iVar11 + 1;

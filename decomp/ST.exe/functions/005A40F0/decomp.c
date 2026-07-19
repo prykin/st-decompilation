@@ -38,7 +38,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
   if (this[0x1a5f] == (FSGSTy)0x9) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
-    iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_01 = local_8;
     if (iVar3 == 0) {
       pFVar1 = local_8 + 0x1edb;
@@ -47,7 +47,7 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
       }
       *(undefined4 *)(this_01 + 0x1edf) = param_2;
       *(int *)(this_01 + 0x1ee3) = param_3;
-      puVar4 = (undefined4 *)FUN_006aac70(param_3 * 0x24);
+      puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_3 * 0x24);
       iVar3 = *(int *)(this_01 + 0x1ee3);
       *(undefined4 **)pFVar1 = puVar4;
       for (uVar6 = iVar3 * 9 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {

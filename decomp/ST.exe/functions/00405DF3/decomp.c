@@ -21,7 +21,7 @@ void __thiscall OptPanelTy::PaintVolume(OptPanelTy *this,byte param_1,byte param
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pOStack_18 = this;
-  iVar4 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pOVar2 = pOStack_18;
   if (iVar4 == 0) {
     uVar3 = uStack_8._1_3_;

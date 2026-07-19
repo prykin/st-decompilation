@@ -19,7 +19,7 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   pIVar7 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pFStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar7);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar7);
   this_01 = DAT_00802a30;
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar7;

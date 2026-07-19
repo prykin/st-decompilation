@@ -20,7 +20,7 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;

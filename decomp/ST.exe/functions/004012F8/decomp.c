@@ -38,7 +38,7 @@ thunk_FUN_00676d80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,ch
   }
   IStack_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_70;
-  iVar3 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_70.previous;
     iVar7 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x295,0,iVar3,&DAT_007a4ccc,

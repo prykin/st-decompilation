@@ -1,4 +1,4 @@
-FUN_006f2310:
+cMf32::RecGetParam:
 006F2310  55                        PUSH EBP
 006F2311  8B EC                     MOV EBP,ESP
 006F2313  81 EC 74 03 00 00         SUB ESP,0x374

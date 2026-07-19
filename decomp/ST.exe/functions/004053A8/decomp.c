@@ -10,7 +10,8 @@ uint thunk_FUN_0042d770(uint param_1,int *param_2)
   int iVar6;
   undefined2 extraout_var;
   uint uVar7;
-  undefined4 auStack_28 [2];
+  undefined4 uStack_28;
+  STAllPlayersC *pSStack_24;
   int iStack_20;
   int iStack_1c;
   uint uStack_18;
@@ -24,28 +25,28 @@ uint thunk_FUN_0042d770(uint param_1,int *param_2)
   iVar6 = *(int *)((int)&DAT_007f4f8d + (char)param_1 * 0xa62);
   iStack_1c = 1;
   iStack_20 = 1;
-  puVar3 = FUN_006ae290((uint *)0x0,0,2,1);
+  puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   *param_2 = (int)puVar3;
   iVar1 = *(int *)(iVar6 + 0xc);
   if (iVar1 == 0) {
     return CONCAT22((short)((uint)puVar3 >> 0x10),0xffff);
   }
-  puVar3 = FUN_006ae290((uint *)0x0,0,2,1);
+  puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   uStack_14 = 0;
   puStack_10 = puVar3;
   if (0 < iVar1) {
     do {
       FUN_006acc70(iVar6,uStack_14,&uStack_c);
       if ((short)uStack_c != -1) {
-        uVar4 = thunk_FUN_0042b620(param_1,uStack_c,1);
+        uVar4 = STAllPlayersC::GetObjPtr(pSStack_24,param_1,uStack_c,1);
         iVar5 = thunk_FUN_00493cd0(uVar4);
         puVar3 = puStack_10;
         if ((iVar5 == 0) &&
-           (auStack_28[0] = CONCAT22((short)(uVar4 >> 0x10),*(short *)(uVar4 + 0x30)),
+           (uStack_28 = CONCAT22((short)(uVar4 >> 0x10),*(short *)(uVar4 + 0x30)),
            *(short *)(uVar4 + 0x30) != -1)) {
           iStack_1c = iVar5;
-          FUN_006ae1c0(puStack_10,auStack_28);
-          FUN_006ae1c0((uint *)*param_2,&uStack_c);
+          Library::DKW::TBL::FUN_006ae1c0(puStack_10,&uStack_28);
+          Library::DKW::TBL::FUN_006ae1c0((uint *)*param_2,&uStack_c);
           puVar3 = puStack_10;
         }
       }

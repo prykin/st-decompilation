@@ -26,7 +26,7 @@ undefined4 __fastcall thunk_FUN_004e27e0(int param_1)
        iVar2 == *(int *)(*(int *)(param_1 + 0x1f5) + 0x1c4))) && (*(int *)(param_1 + 0x4d0) == 0))
      && (*(int *)(param_1 + 0x4f8) == 0)) {
     *(undefined4 *)(param_1 + 0x520) = 0;
-    thunk_FUN_004cabb0(0);
+    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
   }
   return 0;
 }

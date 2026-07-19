@@ -11,11 +11,12 @@ void __fastcall thunk_FUN_0054a8d0(void *param_1)
     }
     *(undefined4 *)((int)param_1 + 0x10b) = 0xffffffff;
     if (*(int *)((int)param_1 + 0xa9) == 0) {
-      FUN_006b8a60(*(byte **)((int)param_1 + 0xad));
+      Library::DKW::DDX::FUN_006b8a60(*(byte **)((int)param_1 + 0xad));
     }
     else if (*(uint *)((int)param_1 + 0x1c) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)((int)param_1 + 0x60),*(uint *)((int)param_1 + 0x1c),0xfffffffe,
-                   *(uint *)((int)param_1 + 0x34),*(uint *)((int)param_1 + 0x38));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)((int)param_1 + 0x60),*(uint *)((int)param_1 + 0x1c),0xfffffffe,
+                 *(uint *)((int)param_1 + 0x34),*(uint *)((int)param_1 + 0x38));
     }
     CursorClassTy::DrawSprite(param_1,*(int *)((int)param_1 + 0xc5),*(int *)((int)param_1 + 0xc9));
     *(undefined1 *)((int)param_1 + 0xde) = 0;

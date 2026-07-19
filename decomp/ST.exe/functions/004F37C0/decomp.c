@@ -26,7 +26,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,int param_2,byte param_3,char *p
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  errorCode = (int *)__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = (int *)Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode != (int *)0x0) {
     g_currentExceptionFrame = local_54.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_cp_sup_cpp_007c1a4c,0x1de,0,(int)errorCode,
@@ -41,7 +41,7 @@ CPanelTy::PaintBBut(CPanelTy *this,byte param_1,int param_2,byte param_3,char *p
   }
   iVar6 = 1;
   pCVar4 = FUN_006f2c00(param_4,1,param_5 & 0xff);
-  local_c = FUN_006f1ce0(param_3,pCVar4,errorCode,iVar6);
+  local_c = cMf32::RecGet(DAT_00806790,param_3,pCVar4,errorCode,iVar6);
   pCVar3 = local_8;
   uVar2 = (uint)param_1;
   iVar6 = local_10[1];
@@ -81,8 +81,9 @@ LAB_004f38ad:
                      (byte *)local_c);
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
   if ((param_1 < 0xb) && (-1 < (int)*(uint *)(pCVar3 + uVar2 * 4 + 0x148))) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
-                 *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
+               *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
   }
   g_currentExceptionFrame = local_54.previous;
   return;

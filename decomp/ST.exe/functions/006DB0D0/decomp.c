@@ -14,7 +14,7 @@ void FUN_006db0d0(undefined4 *param_1,int param_2,int param_3,int param_4,int pa
   int local_8;
   
   piVar3 = (int *)&stack0xffffffe8;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   iVar2 = -1;
   iVar1 = -(param_7 >> 1);
   iVar5 = param_3;

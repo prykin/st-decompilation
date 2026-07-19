@@ -8,10 +8,10 @@ void thunk_FUN_005531f0(void)
   
   pIVar2 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  iVar1 = __setjmp3((undefined4 *)&stack0xffffffbc,0,pIVar2,in_stack_ffffffbc);
+  iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffbc,0,pIVar2,in_stack_ffffffbc);
   if (iVar1 == 0) {
     if (DAT_00802a4c == (uint *)0x0) {
-      DAT_00802a4c = FUN_006ae290((uint *)0x0,10,6,10);
+      DAT_00802a4c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,6,10);
     }
     g_currentExceptionFrame = pIVar2;
     return;

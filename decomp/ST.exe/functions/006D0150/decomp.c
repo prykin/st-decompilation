@@ -34,8 +34,8 @@ void FUN_006d0150(int *param_1,uint param_2,char *param_3)
           puVar6 = puVar3;
         }
       }
-      _strncpy((char *)(puVar6 + 6),param_3,*psVar8);
-      FUN_006b3640(param_1,*puVar6,0xffffffff,puVar6[1],puVar6[2]);
+      Library::MSVCRT::_strncpy((char *)(puVar6 + 6),param_3,*psVar8);
+      Library::DKW::DDX::FUN_006b3640(param_1,*puVar6,0xffffffff,puVar6[1],puVar6[2]);
     }
   }
   return;

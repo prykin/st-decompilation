@@ -45,7 +45,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
       local_10 = (uint *)0x0;
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
-      iVar5 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pAVar3 = local_1c;
       if (iVar5 == 0) {
         local_8 = thunk_FUN_0065da10((int)local_1c,extraout_EDX_00);
@@ -61,8 +61,9 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
                 puVar6 = (undefined2 *)0x0;
               }
               local_24 = CONCAT22((short)((uint)puVar6 >> 0x10),*puVar6);
-              this_00 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(local_24 >> 8),pAVar3[0x24]),
-                                                  local_24,1);
+              this_00 = (int *)STAllPlayersC::GetObjPtr
+                                         (DAT_007fa174,CONCAT31((int3)(local_24 >> 8),pAVar3[0x24]),
+                                          local_24,1);
               if ((this_00 != (int *)0x0) && ((int)*(short *)(pAVar3 + 0x179) < local_20 - local_c))
               {
                 iVar5 = (**(code **)(*this_00 + 0x2c))();
@@ -116,10 +117,10 @@ LAB_00661a96:
                     }
                     if ((bVar2) && (local_18 != 0)) {
                       if (puVar8 == (uint *)0x0) {
-                        puVar8 = FUN_006ae290((uint *)0x0,10,2,10);
+                        puVar8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
                         local_10 = puVar8;
                       }
-                      FUN_006ae1c0(puVar8,&local_24);
+                      Library::DKW::TBL::FUN_006ae1c0(puVar8,&local_24);
                       local_c = local_c + 1;
                     }
                   }

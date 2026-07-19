@@ -60,7 +60,7 @@ ProdPanelTy::CreateSlider
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pPStack_10 = this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pPStack_10;
   if (iVar2 == 0) {
     piVar7 = aiStack_42c;
@@ -89,7 +89,7 @@ ProdPanelTy::CreateSlider
     uStack_31c = 1;
     pCVar3 = thunk_FUN_00571240(s_BUT_SLLT_007c7abc,0);
     pCVar3 = FUN_006f2c00(pCVar3,iVar2,uVar6);
-    puStack_c = FUN_006f1ce0(1,pCVar3,piVar7,iVar8);
+    puStack_c = cMf32::RecGet(DAT_00806790,1,pCVar3,piVar7,iVar8);
     uStack_414 = *(undefined4 *)(puStack_c + 2);
     uStack_410 = *(undefined4 *)(puStack_c + 4);
     cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_c);

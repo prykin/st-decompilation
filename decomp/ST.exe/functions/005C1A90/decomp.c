@@ -39,7 +39,7 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar7;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar8 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -91,8 +91,8 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
             pcVar9 = pcVar9 + 1;
             pcVar16 = pcVar16 + 1;
           }
-          for (puVar10 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar10 != (uint *)0x0;
-              puVar10 = FUN_0072e560(puVar10,'\n')) {
+          for (puVar10 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar10 != (uint *)0x0;
+              puVar10 = Library::MSVCRT::FUN_0072e560(puVar10,'\n')) {
             *(undefined1 *)puVar10 = 0x20;
           }
           ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x87),&DAT_0080f33a,-1,-1,
@@ -228,8 +228,8 @@ switchD_005c1b14_caseD_5:
       pcVar9 = pcVar9 + 1;
       pcVar16 = pcVar16 + 1;
     }
-    for (puVar10 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar10 != (uint *)0x0;
-        puVar10 = FUN_0072e560(puVar10,'\n')) {
+    for (puVar10 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar10 != (uint *)0x0;
+        puVar10 = Library::MSVCRT::FUN_0072e560(puVar10,'\n')) {
       *(undefined1 *)puVar10 = 0x20;
     }
     PaintBut(this_00,param_1,0,2,'\x01',&DAT_0080f33a);

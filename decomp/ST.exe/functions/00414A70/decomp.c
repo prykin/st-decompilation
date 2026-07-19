@@ -24,7 +24,7 @@ void FUN_00414a70(int param_1,int param_2)
     local_10 = 0x14;
     local_1c = DAT_007f4d54;
   }
-  DAT_007f4d18 = FUN_006aac70(param_2 * 0x18);
+  DAT_007f4d18 = Library::DKW::LIB::FUN_006aac70(param_2 * 0x18);
   iVar10 = 1;
   DAT_007f4d44 = 0;
   if (0 < DAT_007f4d2c / 2) {

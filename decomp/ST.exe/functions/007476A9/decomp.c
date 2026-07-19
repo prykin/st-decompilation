@@ -19,7 +19,7 @@ undefined4 FUN_007476a9(int param_1,undefined4 *param_2)
       uVar2 = 0x80040203;
     }
     else {
-      this = (void *)FUN_0072e530(0x30);
+      this = (void *)Library::MSVCRT::FUN_0072e530(0x30);
       if (this == (void *)0x0) {
         puVar3 = (undefined4 *)0x0;
       }

@@ -19,7 +19,7 @@ undefined4 * __cdecl FUN_0070aad0(cMf32 *param_1,char *param_2,int param_3)
   local_10 = (undefined4 *)0x0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar3 = ReportDebugMessage(s_E__Ourlib_Mfimg_cpp_007effe0,0x11b,0,errorCode,&DAT_007a4ccc,
@@ -44,9 +44,9 @@ undefined4 * __cdecl FUN_0070aad0(cMf32 *param_1,char *param_2,int param_3)
     g_currentExceptionFrame = local_54.previous;
     return (undefined4 *)0x0;
   }
-  piVar2 = FUN_006c7dc0(local_c);
+  piVar2 = Library::DKW::GPC::FUN_006c7dc0(local_c);
   local_10 = piVar2;
-  local_8 = FUN_006c7070(piVar2,(undefined4 *)0x0,0);
+  local_8 = Library::DKW::GPC::FUN_006c7070(piVar2,(undefined4 *)0x0,0);
   if (piVar2 != (int *)0x0) {
     FUN_006c6fc0(piVar2);
   }

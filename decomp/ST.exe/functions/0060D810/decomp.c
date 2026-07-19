@@ -14,7 +14,7 @@ void __thiscall FUN_0060d810(void *this,undefined4 param_1,undefined4 param_2)
     }
     **(undefined4 **)((int)this + 0x244) = 0;
     *(undefined4 *)(*(int *)((int)this + 0x244) + 4) = 0x33;
-    iVar1 = FUN_006aac70(0xcc);
+    iVar1 = Library::DKW::LIB::FUN_006aac70(0xcc);
     *(int *)(*(int *)((int)this + 0x244) + 8) = iVar1;
     puVar2 = &DAT_007cf730;
     puVar3 = *(undefined4 **)(*(int *)((int)this + 0x244) + 8);

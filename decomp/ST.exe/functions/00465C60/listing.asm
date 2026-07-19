@@ -1,4 +1,4 @@
-FUN_00465c60:
+STBoatC::LoadRC:
 00465C60  55                        PUSH EBP
 00465C61  8B EC                     MOV EBP,ESP
 00465C63  83 EC 28                  SUB ESP,0x28

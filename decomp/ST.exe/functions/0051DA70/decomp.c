@@ -86,7 +86,7 @@ void __fastcall FUN_0051da70(int *param_1)
       iVar12 = ((bVar8 - local_8) - (uint)bVar4) + -1 + (uint)bVar3;
     }
     if (-1 < iVar12) {
-      uVar10 = FUN_0072e6c0();
+      uVar10 = Library::MSVCRT::FUN_0072e6c0();
       uVar10 = uVar10 % (iVar12 + 1U);
       uVar5 = (uint)*(byte *)(param_1 + 0x94);
       local_8 = uVar10 & 0xff;

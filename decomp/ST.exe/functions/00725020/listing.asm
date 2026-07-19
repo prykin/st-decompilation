@@ -1,4 +1,4 @@
-FUN_00725020:
+TrackbarClassTy::GetMessage:
 00725020  55                        PUSH EBP
 00725021  8B EC                     MOV EBP,ESP
 00725023  83 EC 78                  SUB ESP,0x78

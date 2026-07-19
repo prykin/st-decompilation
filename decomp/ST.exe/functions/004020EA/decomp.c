@@ -23,9 +23,11 @@ void __thiscall thunk_FUN_0065d940(void *this,int param_1,int param_2)
         else {
           puVar1 = (undefined2 *)0x0;
         }
-        piVar2 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)pvVar3 >> 8),
-                                                    *(undefined1 *)((int)this + 0x24)),
-                                           CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),1);
+        piVar2 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,
+                                   CONCAT31((int3)((uint)pvVar3 >> 8),
+                                            *(undefined1 *)((int)this + 0x24)),
+                                   CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),1);
         pvVar3 = extraout_ECX;
         if (piVar2 != (int *)0x0) {
           AiFltClassTy::_AddObjFlt(this,piVar2,param_2);

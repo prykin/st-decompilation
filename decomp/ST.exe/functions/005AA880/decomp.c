@@ -38,7 +38,7 @@ HoloTy::CalcHologram
   
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
-  iVar2 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
     iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc,
@@ -59,7 +59,7 @@ HoloTy::CalcHologram
   }
   local_34 = uVar6;
   local_2c = uVar7;
-  local_1c = FUN_006aac10(uVar7 * uVar3 * 4);
+  local_1c = Library::DKW::LIB::FUN_006aac10(uVar7 * uVar3 * 4);
   local_c = local_1c;
   if ((local_1c != (undefined4 *)0x0) && (local_14 = 0, uVar6 != 0)) {
     local_30 = param_6 & 0xff;
@@ -81,7 +81,7 @@ HoloTy::CalcHologram
               if (local_8 < (int)local_28) {
                 fsin(((float10)local_8 * (float10)_DAT_0079c040) / (float10)(int)local_28);
               }
-              lVar10 = __ftol();
+              lVar10 = Library::MSVCRT::__ftol();
               local_c[local_10 + iVar4] = (int)lVar10;
               iVar2 = iVar4;
             }
@@ -105,7 +105,7 @@ HoloTy::CalcHologram
                 fsin(((float10)(int)local_28 * (float10)_DAT_0079c040) / (float10)(int)local_34);
               }
               local_8 = iVar2;
-              lVar10 = __ftol();
+              lVar10 = Library::MSVCRT::__ftol();
               local_c[local_10 + local_8] = (int)lVar10;
             }
             iVar4 = iVar4 + 1;
@@ -123,7 +123,7 @@ HoloTy::CalcHologram
             if (local_8 < (int)local_28) {
               fsin(((float10)local_8 * (float10)_DAT_0079c040) / (float10)(int)local_28);
             }
-            lVar10 = __ftol();
+            lVar10 = Library::MSVCRT::__ftol();
             local_c[local_10 + iVar4] = (int)lVar10;
             iVar2 = iVar4;
           }

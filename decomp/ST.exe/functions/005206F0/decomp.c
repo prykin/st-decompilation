@@ -36,7 +36,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  iVar5 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -59,7 +59,7 @@ void __thiscall InfocPanelTy::Update(InfocPanelTy *this)
     pIVar11 = pIVar11 + 4;
   }
   *pIVar11 = *pIVar10;
-  thunk_FUN_0043beb0(DAT_007fa174,9,(int *)pIVar12);
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,9,(int *)pIVar12);
   if (this_00[0x1ab] == (InfocPanelTy)0x0) {
     this_00[0x3d4] = (InfocPanelTy)0xff;
   }

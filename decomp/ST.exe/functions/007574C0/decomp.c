@@ -17,8 +17,9 @@ void FUN_007574c0(int param_1,int param_2,undefined4 *param_3,int param_4)
   }
   uVar1 = iVar3 + 8;
   puVar5 = (undefined4 *)(param_2 + 0x10 + param_4);
-  FUN_0072da70((undefined4 *)(uVar1 + param_2 + 0x10 + param_4),puVar5,
-               *(short *)(param_2 + 8) - param_4);
+  Library::MSVCRT::FUN_0072da70
+            ((undefined4 *)(uVar1 + param_2 + 0x10 + param_4),puVar5,
+             *(short *)(param_2 + 8) - param_4);
   for (uVar4 = uVar1 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
     *puVar5 = *param_3;
     param_3 = param_3 + 1;

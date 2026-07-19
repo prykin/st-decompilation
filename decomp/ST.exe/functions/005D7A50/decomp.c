@@ -25,7 +25,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_8;
   if (iVar3 == 0) {
     this_00 = (SpriteClassTy *)(local_8 + 0x1a60);
@@ -35,9 +35,10 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     *(undefined4 *)(this_01 + 0x1a80) = 0x193;
     *(undefined4 *)(this_01 + 0x1a68) = 0;
     if (*(uint *)(this_01 + 0x1a64) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(this_01 + 0x1aa8),*(uint *)(this_01 + 0x1a64),
-                   *(uint *)(this_01 + 0x1a68),*(uint *)(this_01 + 0x1a7c),
-                   *(uint *)(this_01 + 0x1a80));
+      Library::DKW::DDX::FUN_006b3730
+                (*(uint **)(this_01 + 0x1aa8),*(uint *)(this_01 + 0x1a64),
+                 *(uint *)(this_01 + 0x1a68),*(uint *)(this_01 + 0x1a7c),*(uint *)(this_01 + 0x1a80)
+                );
     }
     iVar3 = 1;
     puVar5 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
@@ -104,7 +105,7 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     pSVar1 = this_01 + 0x1cb4;
     FUN_006b2330((uint)DAT_008075a8,(uint *)pSVar1,0x2e,0x4023f6,*(uint *)(uVar4 + 4),
                  *(uint *)(uVar4 + 8),uVar4);
-    FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,0xe1,0x1a9);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,0xe1,0x1a9);
     FUN_006b3af0(DAT_008075a8,*(uint *)pSVar1);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)(this_01 + 0x1b01),DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
@@ -133,9 +134,9 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
     if (*(uint *)(this_01 + 0x1c27) != 0xffffffff) {
       FUN_006b3af0(*(int **)(this_01 + 0x1c6b),*(uint *)(this_01 + 0x1c27));
     }
-    puVar6 = FUN_006b54f0((uint *)0x0,1,1);
+    puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(this_01 + 0x1cd0) = puVar6;
-    FUN_006b6020((int)puVar6,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020((int)puVar6,0,&DAT_008016a0);
     iVar3 = 1;
     puVar5 = (undefined4 *)(*(int *)(this_01 + 0x1cb8) + 0x28);
     uVar4 = FUN_006b4fe0(*(int *)(this_01 + 0x1cb8));

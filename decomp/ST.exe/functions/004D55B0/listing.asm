@@ -1,4 +1,4 @@
-FUN_004d55b0:
+TLOEmbryoTy::GetMessage:
 004D55B0  55                        PUSH EBP
 004D55B1  8B EC                     MOV EBP,ESP
 004D55B3  81 EC BC 01 00 00         SUB ESP,0x1bc

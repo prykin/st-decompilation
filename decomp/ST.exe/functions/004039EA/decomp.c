@@ -21,7 +21,7 @@ void thunk_FUN_00541030(void)
   }
   IStack_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_68;
-  iVar4 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (DAT_008026f0 != (byte *)0x0) {
       pbVar2 = DAT_008026f0;

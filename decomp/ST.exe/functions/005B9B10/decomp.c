@@ -33,7 +33,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (DAT_008067a0 != '\0') {
       CFsgsConnection::CloseGame((CFsgsConnection *)&DAT_00802a90);
@@ -41,13 +41,13 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       DAT_00802a99 = 0;
       DAT_008067a0 = '\0';
     }
-    puVar5 = FUN_006b54f0((uint *)0x0,1,10);
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,10);
     this_01 = local_10;
     *(uint **)(local_10 + 0x1c92) = puVar5;
-    FUN_006b5aa0((int)puVar5,(char *)&DAT_00807ddd);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar5,(char *)&DAT_00807ddd);
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
       }
       else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -119,7 +119,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     do {
       FUN_006b2330((uint)DAT_008075a8,(uint *)pPVar11,0x31,0x40597f,
                    *(uint *)(*(int *)(this_01 + 0x1c82) + 4),0x13,(uint)this_01);
-      FUN_006b3640(DAT_008075a8,*(uint *)pPVar11,0xffffffff,0x7a,uVar7);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pPVar11,0xffffffff,0x7a,uVar7);
       uVar7 = uVar7 + 0x13;
       pPVar11 = pPVar11 + 4;
     } while ((int)uVar7 < 0x209);
@@ -154,11 +154,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     pPVar11 = this_01 + 0x1c8a;
     FUN_006b2330((uint)DAT_008075a8,(uint *)pPVar11,0x31,0x4023f6,*(uint *)(uVar7 + 4),
                  *(uint *)(uVar7 + 8),uVar7);
-    FUN_006b3640(DAT_008075a8,*(uint *)pPVar11,0xffffffff,0x79,0x197);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pPVar11,0xffffffff,0x79,0x197);
     CreateCtrls(this_01,'\x01');
     FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403c74,0x22e,0x145,(uint)this_01);
-    FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x51);
-    puVar9 = (undefined1 *)FUN_0072e530(0x33);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x51);
+    puVar9 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar9 == (undefined1 *)0x0) {
       puVar9 = (undefined1 *)0x0;
     }
@@ -184,7 +184,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
       cVar13 = '\x01';
       uVar7 = 0x10;
       iVar14 = 1;
-      iVar4 = FUN_006bf9f0(DAT_008075a8,0x79,0x51,0x22e,0x145);
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x51,0x22e,0x145);
       uVar7 = HoloTy::Init(*(HoloTy **)(this_01 + 0x1c96),2,0x79,0x51,iVar4,iVar14,uVar7,cVar13,
                            uVar10);
       if (uVar7 != 0) {
@@ -220,8 +220,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     if (this_01[0x1a5f] == (PrividerTy)0x0) {
       FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x402f13,0x22e,0x2e,
                    *(int *)(this_01 + 0x1a5b) + 0x140);
-      FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x197);
-      puVar9 = (undefined1 *)FUN_0072e530(0x33);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x79,0x197);
+      puVar9 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
       if (puVar9 == (undefined1 *)0x0) {
         puVar9 = (undefined1 *)0x0;
       }
@@ -247,7 +247,7 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
         cVar13 = '\x01';
         uVar7 = 0x10;
         iVar14 = 1;
-        iVar4 = FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
+        iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
         uVar7 = HoloTy::Init(*(HoloTy **)(this_01 + 0x1c9a),1,0x79,0x197,iVar4,iVar14,uVar7,cVar13,
                              uVar10);
         if (uVar7 != 0) {
@@ -284,11 +284,11 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     }
     pcVar2 = *(char **)(this_01 + 0x1c96);
     if (((pcVar2 != (char *)0x0) && (*pcVar2 != '\0')) && (-1 < (int)*(uint *)(pcVar2 + 3))) {
-      FUN_006b3430(DAT_008075a8,*(uint *)(pcVar2 + 3));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar2 + 3));
     }
     pcVar2 = *(char **)(this_01 + 0x1c9a);
     if (((pcVar2 != (char *)0x0) && (*pcVar2 != '\0')) && (-1 < (int)*(uint *)(pcVar2 + 3))) {
-      FUN_006b3430(DAT_008075a8,*(uint *)(pcVar2 + 3));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar2 + 3));
     }
     g_currentExceptionFrame = local_54.previous;
     return;

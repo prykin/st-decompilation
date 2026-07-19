@@ -20,7 +20,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pMStack_8 = (MMObjTy *)this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = pMStack_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj(pMStack_8);
@@ -36,7 +36,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     *(undefined4 *)(pMVar2 + 0x1f43) = 0;
     if (DAT_00802a30 != 0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
       }
       else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -48,7 +48,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     if (*(HoloTy **)(pMVar2 + 0x21ec) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x21ec));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21ec));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21ec));
       *(undefined4 *)(pMVar2 + 0x21ec) = 0;
     }
     if (pMVar2[0x21e2] != (MMObjTy)0x0) {
@@ -67,22 +67,22 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
     }
     if (*(HoloTy **)(pMVar2 + 0x21f4) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x21f4));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21f4));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21f4));
       *(undefined4 *)(pMVar2 + 0x21f4) = 0;
     }
     if (*(HoloTy **)(pMVar2 + 0x21e8) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x21e8));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21e8));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21e8));
       *(undefined4 *)(pMVar2 + 0x21e8) = 0;
     }
     if (*(HoloTy **)(pMVar2 + 0x21f0) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x21f0));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21f0));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21f0));
       *(undefined4 *)(pMVar2 + 0x21f0) = 0;
     }
     if (*(HoloTy **)(pMVar2 + 0x21f8) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x21f8));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21f8));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x21f8));
       *(undefined4 *)(pMVar2 + 0x21f8) = 0;
     }
     if (*(int *)(DAT_0081176c + 0x2c) != 0) {
@@ -149,7 +149,7 @@ void __thiscall SettMapTy::DoneSettMap(SettMapTy *this)
       *(undefined4 *)(*(int *)(*(int *)(pMVar2 + 0x1a5b) + 0x2e6) + 0x1cab) = 0;
     }
     if (*(int *)(pMVar2 + 0x4d) != 0) {
-      FUN_006e3b50((undefined4 *)(pMVar2 + 0x3d));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(pMVar2 + 0x3d));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

@@ -51,7 +51,7 @@ thunk_FUN_00614c80(void *this,undefined4 *param_1,int param_2,int param_3,int pa
     uStack_18 = param_8;
     param_9 = uVar3;
     iStack_10 = iStack_20;
-    param_1 = (undefined4 *)FUN_006aac70(uVar3 * 4);
+    param_1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar3 * 4);
     iVar2 = thunk_FUN_0060e210(&uStack_24,&uStack_14,4,(undefined2 *)param_1,uVar3);
     if (iVar2 == 0) {
       if (*(undefined4 **)((int)this + 0x2e5) == (undefined4 *)0x0) {

@@ -1,5 +1,9 @@
 
-void __fastcall FUN_0058a8d0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Igor\to_oct.cpp
+   STOctopusC::Bad */
+
+void __thiscall STOctopusC::Bad(STOctopusC *this,int param_1)
 
 {
   code *pcVar1;
@@ -9,7 +13,7 @@ void __fastcall FUN_0058a8d0(int param_1)
   
   iVar3 = (int)DAT_007fb242;
   iVar4 = (int)DAT_007fb240;
-  if (7 < *(int *)(param_1 + 0x2a9)) {
+  if (7 < *(int *)(this + 0x2a9)) {
     iVar2 = ReportDebugMessage(s_E____titans_Igor_to_oct_cpp_007cba18,0x21a,0,0,&DAT_007a4ccc,
                                s_STOctopusC__Bad_direction_007cba88);
     if (iVar2 != 0) {
@@ -17,12 +21,12 @@ void __fastcall FUN_0058a8d0(int param_1)
       (*pcVar1)();
       return;
     }
-    *(undefined4 *)(param_1 + 0x2a9) = 0;
+    *(undefined4 *)(this + 0x2a9) = 0;
   }
-  if ((((iVar4 + -1 < *(int *)(param_1 + 0x299)) || (*(int *)(param_1 + 0x299) < 0)) ||
-      (iVar3 + -1 < *(int *)(param_1 + 0x29d))) || (*(int *)(param_1 + 0x29d) < 0)) {
-    *(int *)(param_1 + 0x299) = iVar4 + -1 >> 1;
-    *(int *)(param_1 + 0x29d) = iVar3 + -1 >> 1;
+  if ((((iVar4 + -1 < *(int *)(this + 0x299)) || (*(int *)(this + 0x299) < 0)) ||
+      (iVar3 + -1 < *(int *)(this + 0x29d))) || (*(int *)(this + 0x29d) < 0)) {
+    *(int *)(this + 0x299) = iVar4 + -1 >> 1;
+    *(int *)(this + 0x29d) = iVar3 + -1 >> 1;
   }
   return;
 }

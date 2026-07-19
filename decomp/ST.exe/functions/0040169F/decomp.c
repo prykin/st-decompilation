@@ -27,7 +27,7 @@ ushort * thunk_FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int 
   }
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
-  iVar1 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
     return puStack_10;

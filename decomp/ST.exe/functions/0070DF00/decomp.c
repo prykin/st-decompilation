@@ -1,5 +1,9 @@
 
-undefined4 * __cdecl FUN_0070df00(uint param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::operator */
+
+undefined4 * __thiscall ccFntTy::operator(ccFntTy *this,uint param_1,int param_2)
 
 {
   code *pcVar1;
@@ -14,12 +18,12 @@ undefined4 * __cdecl FUN_0070df00(uint param_1,int param_2)
   local_8 = (undefined4 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if ((param_2 == 0) || (*(int *)(param_2 + 0xa0) != 0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x1de);
     }
-    puVar2 = FUN_006aac10(param_1);
+    puVar2 = Library::DKW::LIB::FUN_006aac10(param_1);
     puVar2[0x13] = 1;
     puVar2[0x1b] = 100;
     puVar2[0x1a] = 100;

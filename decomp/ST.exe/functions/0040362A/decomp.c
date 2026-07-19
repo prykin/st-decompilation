@@ -80,7 +80,7 @@ undefined4 __fastcall thunk_FUN_004d2fd0(int param_1)
     } while (iVar2 < 0xc);
   }
   uStack_c = iStack_18 + uStack_4d + uStack_55 + 0x14f + uStack_5d;
-  pbStack_8 = (byte *)FUN_006aac70(uStack_c);
+  pbStack_8 = (byte *)Library::DKW::LIB::FUN_006aac70(uStack_c);
   puVar1 = &uStack_17c;
   pbVar5 = pbStack_8;
   for (iVar2 = 0x53; iVar2 != 0; iVar2 = iVar2 + -1) {

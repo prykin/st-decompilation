@@ -22,7 +22,7 @@ FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar6 = ReportDebugMessage(s_E__Ourlib_mfaobj_cpp_007efd3c,0x45,0,iVar3,&DAT_007a4ccc,
@@ -68,7 +68,7 @@ FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,
   pcVar4 = (char *)cMf32::RecNameGetNext(param_1);
   while (pcVar4 != (char *)0x0) {
     puVar5 = FUN_006f2d90(param_1,pcVar4,param_5,1);
-    iVar3 = FUN_006f2600(0xc,pcVar4,(undefined1 *)0x0,1);
+    iVar3 = cMf32::RecGetOrigLen(param_1,0xc,pcVar4,(undefined1 *)0x0,1);
     iVar3 = (*(code *)param_3)(puVar5,iVar3,param_1,pcVar4,param_4);
     if (iVar3 != 0) {
       RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfaobj_cpp_007efd3c,0x3f);

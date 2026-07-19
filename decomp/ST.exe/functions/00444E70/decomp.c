@@ -28,10 +28,11 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
   do {
     local_8 = piVar4;
     if (0 < piVar4[-1]) {
-      FUN_006ae140(*(uint **)((int)&DAT_007f4e24 + iVar5 + 1),piVar4[-1] - 1,&local_c);
+      Library::DKW::TBL::FUN_006ae140
+                (*(uint **)((int)&DAT_007f4e24 + iVar5 + 1),piVar4[-1] - 1,&local_c);
     }
     if (0 < *piVar4) {
-      FUN_006ae140(*(uint **)((int)&DAT_007f4e29 + iVar5),*piVar4 - 1,&local_c);
+      Library::DKW::TBL::FUN_006ae140(*(uint **)((int)&DAT_007f4e29 + iVar5),*piVar4 - 1,&local_c);
     }
     local_10 = piVar4 + 1;
     iVar6 = 0;
@@ -235,7 +236,7 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
     }
     else {
       uVar7 = *(uint *)((int)local_8 + 0xa6f) / 0x18;
-      puVar2 = FUN_006ae290((uint *)0x0,uVar7,0xc,1);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar7,0xc,1);
       *(uint **)((int)&DAT_007f5816 + iVar5) = puVar2;
       local_10 = (int *)0x0;
       if (uVar7 != 0) {
@@ -253,7 +254,8 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
           if (*piVar4 != -1) {
             local_18 = FUN_006b0060((uint *)0x0,(uint *)(*piVar4 + (int)param_1));
           }
-          FUN_006ae140(*(uint **)((int)&DAT_007f5816 + iVar5),(uint)local_10,&local_20);
+          Library::DKW::TBL::FUN_006ae140
+                    (*(uint **)((int)&DAT_007f5816 + iVar5),(uint)local_10,&local_20);
           piVar4 = piVar4 + 6;
           local_10 = (int *)((int)local_10 + 1);
         } while ((int)local_10 < (int)uVar7);
@@ -271,21 +273,21 @@ void __thiscall FUN_00444e70(void *this,undefined4 *param_1)
   }
   local_8 = piVar4;
   if (0 < (int)param_1[0x155d]) {
-    FUN_006ae140(DAT_007fa154,param_1[0x155d] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa154,param_1[0x155d] - 1,&local_c);
   }
   if (0 < (int)param_1[0x155e]) {
-    FUN_006ae140(DAT_007fa158,param_1[0x155e] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa158,param_1[0x155e] - 1,&local_c);
   }
   if (0 < (int)param_1[0x155f]) {
-    FUN_006ae140(DAT_007fa15c,param_1[0x155f] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa15c,param_1[0x155f] - 1,&local_c);
   }
   if (0 < (int)param_1[0x1560]) {
-    FUN_006ae140(DAT_007fa160,param_1[0x1560] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa160,param_1[0x1560] - 1,&local_c);
   }
   if (0 < (int)param_1[0x1561]) {
-    FUN_006ae140(DAT_007fa164,param_1[0x1561] - 1,&local_c);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa164,param_1[0x1561] - 1,&local_c);
   }
-  DAT_007fa168 = (undefined4 *)FUN_006aac70(param_1[0x1563]);
+  DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1[0x1563]);
   uVar7 = param_1[0x1563];
   puVar8 = (undefined4 *)(param_1[0x1562] + (int)param_1);
   puVar11 = DAT_007fa168;

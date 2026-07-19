@@ -34,7 +34,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pFStack_14 = this;
-  iVar5 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
     iVar12 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x9ec,0,iVar5,
@@ -64,7 +64,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
       cVar2 = *pcVar8;
       pcVar8 = pcVar8 + 1;
     } while (cVar2 != '\0');
-    puStack_c = FUN_006aac10(~uVar9 + 4);
+    puStack_c = Library::DKW::LIB::FUN_006aac10(~uVar9 + 4);
     if (puStack_c == (uint *)0x0) {
       g_currentExceptionFrame = IStack_5c.previous;
       return;
@@ -88,7 +88,7 @@ FSGSTy::AddMessage(FSGSTy *this,uint param_1,byte *param_2,char *param_3,uint pa
       cVar2 = *pcVar8;
       pcVar8 = pcVar8 + 1;
     } while (cVar2 != '\0');
-    puStack_c = FUN_006aac10(~uVar9 + ~uVar10 + 0xc);
+    puStack_c = Library::DKW::LIB::FUN_006aac10(~uVar9 + ~uVar10 + 0xc);
     if (puStack_c == (uint *)0x0) {
       g_currentExceptionFrame = IStack_5c.previous;
       return;
@@ -122,16 +122,16 @@ LAB_005a1fc3:
     }
   }
   if (puStack_c != (uint *)0x0) {
-    for (puVar6 = FUN_0072e560(puStack_c,'\n'); puVar6 != (uint *)0x0;
-        puVar6 = FUN_0072e560(puVar6,'\n')) {
+    for (puVar6 = Library::MSVCRT::FUN_0072e560(puStack_c,'\n'); puVar6 != (uint *)0x0;
+        puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
       *(undefined1 *)puVar6 = 0x20;
     }
-    puVar6 = FUN_006b54f0((uint *)0x0,1,10);
+    puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,10);
     puStack_18 = puVar6;
     if (puVar6 != (uint *)0x0) {
       uStack_10 = 0;
       cStack_5 = '\0';
-      FUN_006b5aa0((int)puVar6,(char *)puStack_c);
+      Library::DKW::TBL::FUN_006b5aa0((int)puVar6,(char *)puStack_c);
       this_00 = pFStack_14;
       puVar7 = ccFntTy::FormSarr(*(ccFntTy **)(pFStack_14 + 0x1a77),(int)puVar6,
                                  (uint *)s________________007c21d8,
@@ -162,7 +162,7 @@ LAB_005a1fc3:
           do {
             pcVar8 = *(char **)(puVar7[5] + iVar5 * 4);
 LAB_005a2188:
-            FUN_006b5aa0(*(int *)(this_00 + 0x1e9e),pcVar8);
+            Library::DKW::TBL::FUN_006b5aa0(*(int *)(this_00 + 0x1e9e),pcVar8);
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)puVar7[2]);
         }

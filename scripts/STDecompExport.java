@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.security.MessageDigest;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,6 +57,7 @@ import ghidra.program.util.DefinedStringIterator;
 public class STDecompExport extends GhidraScript {
     private static final int DECOMPILE_TIMEOUT_SECONDS = 120;
     private static final int MAX_FILENAME_COMPONENT = 96;
+    private static final String FUNCTION_FINGERPRINT_VERSION = "4";
 
     private Path programRoot;
     private Path functionsRoot;
@@ -63,6 +65,7 @@ public class STDecompExport extends GhidraScript {
     private ReferenceManager references;
     private SymbolTable symbols;
     private DecompInterface decompiler;
+    private String dataTypesFingerprint;
 
     @Override
     protected void run() throws Exception {
@@ -86,6 +89,7 @@ public class STDecompExport extends GhidraScript {
         listing = currentProgram.getListing();
         references = currentProgram.getReferenceManager();
         symbols = currentProgram.getSymbolTable();
+        dataTypesFingerprint = dataTypesFingerprint();
         programRoot = outputRoot.toPath().toAbsolutePath().normalize()
             .resolve(safeFileName(currentProgram.getName()));
         functionsRoot = programRoot.resolve("functions");
@@ -302,6 +306,7 @@ public class STDecompExport extends GhidraScript {
         FunctionIterator iterator = currentProgram.getFunctionManager().getFunctions(true);
         int total = currentProgram.getFunctionManager().getFunctionCount();
         int number = 0;
+        int reused = 0;
 
         while (iterator.hasNext()) {
             checkCancelled();
@@ -319,11 +324,39 @@ public class STDecompExport extends GhidraScript {
             function.getTags().forEach(tag -> tags.add(tag.getName()));
             tags.sort(Comparator.naturalOrder());
             boolean library = tags.contains("LIBRARY");
+            if (library) {
+                Files.deleteIfExists(dir.resolve("decomp.c"));
+                Files.deleteIfExists(dir.resolve("listing.asm"));
+            }
+
+            List<String> callers = functionSet(function.getCallingFunctions(monitor));
+            List<String> callees = functionSet(function.getCalledFunctions(monitor));
+            List<String> stringsUsed = new ArrayList<>();
+            List<String> globalsUsed = new ArrayList<>();
+            collectReferencedData(function, stringsUsed, globalsUsed);
+            List<String> comments = collectComments(function);
+            String fingerprint = functionFingerprint(function, tags, callers, callees,
+                stringsUsed, globalsUsed, comments);
+            Path fingerprintPath = dir.resolve("fingerprint.sha256");
+            Path metaPath = dir.resolve("meta.json");
+            boolean reusable = Files.exists(metaPath) && Files.exists(fingerprintPath) &&
+                fingerprint.equals(Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim()) &&
+                (library || (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
+
+            if (reusable) {
+                String meta = Files.readString(metaPath, StandardCharsets.UTF_8).trim();
+                indexRows.add(meta);
+                if (library) libraryRows.add(meta);
+                for (String callee : callees) {
+                    graphRows.add(jsonObject(field("from", functionId(function)), field("to", callee)));
+                }
+                reused++;
+                continue;
+            }
+
             String status;
             if (library) {
                 status = "skipped_library";
-                Files.deleteIfExists(dir.resolve("decomp.c"));
-                Files.deleteIfExists(dir.resolve("listing.asm"));
             }
             else {
                 DecompileResults result = decompiler.decompileFunction(
@@ -340,12 +373,6 @@ public class STDecompExport extends GhidraScript {
                 writeFunctionListing(function, dir.resolve("listing.asm"));
             }
 
-            List<String> callers = functionSet(function.getCallingFunctions(monitor));
-            List<String> callees = functionSet(function.getCalledFunctions(monitor));
-            List<String> stringsUsed = new ArrayList<>();
-            List<String> globalsUsed = new ArrayList<>();
-            collectReferencedData(function, stringsUsed, globalsUsed);
-            List<String> comments = collectComments(function);
             String meta = jsonObject(
                 field("id", id),
                 field("program", currentProgram.getName()),
@@ -377,7 +404,8 @@ public class STDecompExport extends GhidraScript {
                 rawField("parameters", variablesJson(function.getParameters())),
                 rawField("locals", variablesJson(function.getLocalVariables()))
             );
-            writeJson(dir.resolve("meta.json"), meta);
+            writeJson(metaPath, meta);
+            writeText(fingerprintPath, fingerprint + System.lineSeparator());
             indexRows.add(meta);
             if (library) libraryRows.add(meta);
 
@@ -392,6 +420,68 @@ public class STDecompExport extends GhidraScript {
         writeJsonArray(programRoot.resolve("functions.json"), indexRows);
         writeJsonArray(programRoot.resolve("library_functions.json"), libraryRows);
         writeJsonArray(programRoot.resolve("callgraph.json"), graphRows);
+        println("Functions reused without decompilation: " + reused + "/" + total);
+    }
+
+    private String functionFingerprint(Function function, List<String> tags, List<String> callers,
+            List<String> callees, List<String> stringsUsed, List<String> globalsUsed,
+            List<String> comments) throws Exception {
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        updateDigest(digest, FUNCTION_FINGERPRINT_VERSION);
+        updateDigest(digest, dataTypesFingerprint);
+        updateDigest(digest, function.getName(true));
+        updateDigest(digest, function.getSignature().getPrototypeString(true));
+        updateDigest(digest, nullToEmpty(function.getCallingConventionName()));
+        updateDigest(digest, Boolean.toString(function.isThunk()));
+        updateDigest(digest, Boolean.toString(function.hasNoReturn()));
+        updateDigest(digest, Boolean.toString(function.hasVarArgs()));
+        updateDigest(digest, nullToEmpty(function.getComment()));
+        updateDigest(digest, nullToEmpty(function.getRepeatableComment()));
+        updateDigest(digest, variablesJson(function.getParameters()));
+        updateDigest(digest, variablesJson(function.getLocalVariables()));
+        updateDigest(digest, String.join("\n", tags));
+        updateDigest(digest, String.join("\n", callers));
+        updateDigest(digest, String.join("\n", callees));
+        updateDigest(digest, String.join("\n", stringsUsed));
+        updateDigest(digest, String.join("\n", globalsUsed));
+        updateDigest(digest, String.join("\n", comments));
+        InstructionIterator instructions = listing.getInstructions(function.getBody(), true);
+        while (instructions.hasNext()) {
+            checkCancelled();
+            Instruction instruction = instructions.next();
+            updateDigest(digest, addr(instruction.getAddress()));
+            try {
+                digest.update(instruction.getBytes());
+            }
+            catch (ghidra.program.model.mem.MemoryAccessException exception) {
+                updateDigest(digest, instruction.toString());
+            }
+        }
+        StringBuilder hex = new StringBuilder();
+        for (byte value : digest.digest()) hex.append(String.format("%02x", value & 0xff));
+        return hex.toString();
+    }
+
+    private static void updateDigest(MessageDigest digest, String value) {
+        digest.update(value.getBytes(StandardCharsets.UTF_8));
+        digest.update((byte)0);
+    }
+
+    private String dataTypesFingerprint() throws Exception {
+        List<String> definitions = new ArrayList<>();
+        Iterator<DataType> iterator = currentProgram.getDataTypeManager().getAllDataTypes();
+        while (iterator.hasNext()) {
+            checkCancelled();
+            DataType type = iterator.next();
+            definitions.add(type.getPathName() + "\u0000" + type.getLength() + "\u0000" +
+                nullToEmpty(type.getDescription()) + "\u0000" + dataTypeDetailJson(type));
+        }
+        definitions.sort(Comparator.naturalOrder());
+        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        for (String definition : definitions) updateDigest(digest, definition);
+        StringBuilder hex = new StringBuilder();
+        for (byte value : digest.digest()) hex.append(String.format("%02x", value & 0xff));
+        return hex.toString();
     }
 
     private void writeFunctionListing(Function function, Path path) throws IOException {
@@ -496,6 +586,23 @@ public class STDecompExport extends GhidraScript {
     }
 
     private String dataTypeDetailJson(DataType type) {
+        if (type instanceof ghidra.program.model.data.FunctionDefinition definition) {
+            List<String> arguments = new ArrayList<>();
+            for (ghidra.program.model.data.ParameterDefinition argument : definition.getArguments()) {
+                arguments.add(jsonObject(
+                    field("name", nullToEmpty(argument.getName())),
+                    field("type", argument.getDataType().getPathName()),
+                    field("comment", nullToEmpty(argument.getComment()))
+                ));
+            }
+            return jsonObject(
+                field("calling_convention", nullToEmpty(definition.getCallingConventionName())),
+                field("return_type", definition.getReturnType().getPathName()),
+                rawField("varargs", Boolean.toString(definition.hasVarArgs())),
+                rawField("noreturn", Boolean.toString(definition.hasNoReturn())),
+                rawField("arguments", "[" + String.join(",", arguments) + "]")
+            );
+        }
         if (type instanceof ghidra.program.model.data.Composite composite) {
             List<String> components = new ArrayList<>();
             for (ghidra.program.model.data.DataTypeComponent component : composite.getComponents()) {

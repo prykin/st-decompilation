@@ -56,21 +56,21 @@ LAB_0059d77b:
 LAB_0059d780:
     IStack_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_50;
-    iVar6 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar6 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar6 == 0) {
-      puVar4 = FUN_006b54f0((uint *)0x0,1,1);
+      puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00 = pFStack_c;
       *(uint **)(pFStack_c + 0x1af8) = puVar4;
-      FUN_006b5aa0((int)puVar4,&DAT_008016a0);
-      puVar4 = FUN_006b54f0((uint *)0x0,1,1);
+      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       *(uint **)(this_00 + 0x1afc) = puVar4;
-      FUN_006b5aa0((int)puVar4,&DAT_008016a0);
-      puVar4 = FUN_006b54f0((uint *)0x0,1,1);
+      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       *(uint **)(this_00 + 0x1b00) = puVar4;
-      FUN_006b5aa0((int)puVar4,&DAT_008016a0);
-      puVar4 = FUN_006b54f0((uint *)0x0,1,1);
+      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       *(uint **)(this_00 + 0x1b04) = puVar4;
-      FUN_006b5aa0((int)puVar4,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar8 = auStack_8dc;
       for (iVar6 = 0x223; iVar5 = iStack_8, iVar6 != 0; iVar6 = iVar6 + -1) {
         *puVar8 = 0;

@@ -19,7 +19,7 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_8;
   if (iVar4 == 0) {
     if (param_1 == 0) {

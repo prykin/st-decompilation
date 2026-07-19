@@ -31,7 +31,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_1c = this;
-    iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pvVar2 = local_1c;
     if (iVar4 == 0) {
       if (DAT_00807363 == '\0') {
@@ -45,7 +45,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
           if (local_20 == 1) {
             if ((((iVar4 < 4) || (10 < iVar4)) && ((iVar4 < 0x12 || (0x14 < iVar4)))) &&
                ((iVar4 < 0xb || (0x11 < iVar4)))) {
-              FUN_006c1ce0(iVar4,param_1);
+              Library::DKW::SND::FUN_006c1ce0(iVar4,param_1);
             }
             else {
               iVar9 = *(int *)((int)pvVar2 + 0x10e1) * 0x10;
@@ -104,7 +104,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
                 }
                 iVar8 = uVar6 + uVar5;
               }
-              FUN_006c1ce0(local_14,iVar8);
+              Library::DKW::SND::FUN_006c1ce0(local_14,iVar8);
               iVar11 = *(int *)((int)pvVar2 + 0x10e9) * local_28 + *(int *)((int)pvVar2 + 0x10ed);
               uVar5 = iVar11 - local_10 >> 0x1f;
               iVar4 = (int)(((iVar11 - local_10 ^ uVar5) - uVar5) * 7) / 10;
@@ -128,7 +128,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
               *(int *)((int)pvVar2 + 0x10f1) = iVar11;
               iVar4 = iVar3;
               if (iVar11 == local_10) {
-                FUN_006c1d80(iVar3,0);
+                Library::DKW::SND::FUN_006c1d80(iVar3,0);
                 piVar12 = local_18;
               }
               else {
@@ -139,7 +139,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
                 else {
                   bVar1 = local_10 <= iVar11;
                 }
-                FUN_006c1d80(iVar3,((bVar1 - 1 & 2) - 1) * iVar7);
+                Library::DKW::SND::FUN_006c1d80(iVar3,((bVar1 - 1 & 2) - 1) * iVar7);
                 piVar12 = local_18;
               }
             }
@@ -152,7 +152,7 @@ void __thiscall FUN_005682c0(void *this,int param_1)
       }
       iVar4 = 2;
       do {
-        FUN_006c1ce0(iVar4,param_1);
+        Library::DKW::SND::FUN_006c1ce0(iVar4,param_1);
         iVar4 = iVar4 + 1;
       } while (iVar4 < 0x20);
       g_currentExceptionFrame = local_6c.previous;

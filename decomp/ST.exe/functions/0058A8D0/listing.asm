@@ -1,4 +1,4 @@
-FUN_0058a8d0:
+STOctopusC::Bad:
 0058A8D0  53                        PUSH EBX
 0058A8D1  56                        PUSH ESI
 0058A8D2  0F BF 1D 42 B2 7F 00      MOVSX EBX,word ptr [0x007fb242]

@@ -22,7 +22,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
     IStack_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_54;
     pWStack_c = this;
-    iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pWVar2 = pWStack_c;
     if (iVar3 == 0) {
       if (param_2 != 0) {
@@ -58,7 +58,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
           do {
             pcVar6 = *(char **)(puVar5[5] + iVar3 * 4);
 LAB_005e7d14:
-            FUN_006b5aa0(*(int *)(pWVar2 + 0x1af0),pcVar6);
+            Library::DKW::TBL::FUN_006b5aa0(*(int *)(pWVar2 + 0x1af0),pcVar6);
             iVar3 = iVar3 + 1;
           } while (iVar3 < (int)puVar5[2]);
         }
@@ -71,7 +71,8 @@ LAB_005e7d14:
       else if (iVar3 < 0x2c) {
         puVar7 = *(undefined4 **)(pWVar2 + 0x1aec);
         iVar9 = 0x2c - iVar3;
-        FUN_006b55f0(puVar7,0,0,0,(int)puVar7,0,0,iVar3 * 0x13 + -0x1a2,puVar7[1],iVar9 * 0x13);
+        Library::DKW::WGR::FUN_006b55f0
+                  (puVar7,0,0,0,(int)puVar7,0,0,iVar3 * 0x13 + -0x1a2,puVar7[1],iVar9 * 0x13);
       }
       else {
         iVar3 = *(int *)(pWVar2 + 0x1aec);

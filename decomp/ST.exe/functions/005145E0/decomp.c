@@ -20,7 +20,7 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iVar3 = *(int *)(local_8 + 0x1cb);
     if (*(int *)(local_8 + 0x1cf) < *(int *)(iVar3 + 0xc) + -1) {

@@ -14,7 +14,7 @@ undefined4 * __cdecl FUN_00649a60(int param_1)
   pIVar4 = g_currentExceptionFrame;
   local_8 = (undefined4 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar4;
     iVar3 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x178,0,errorCode,

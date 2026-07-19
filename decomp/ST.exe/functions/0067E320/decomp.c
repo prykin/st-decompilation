@@ -18,7 +18,7 @@ LPSTR __cdecl FUN_0067e320(int param_1,int param_2)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar3 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar5 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1c7,0,iVar3,&DAT_007a4ccc,
@@ -60,7 +60,7 @@ LPSTR __cdecl FUN_0067e320(int param_1,int param_2)
   iVar3 = 0;
   do {
     pCVar4 = FUN_006f2c00(local_88,3,iVar3);
-    iVar5 = FUN_006f21c0(0xc,pCVar4);
+    iVar5 = cMf32::RecChk((cMf32 *)param_1,0xc,pCVar4);
     if (iVar5 != 0) {
       g_currentExceptionFrame = local_48.previous;
       return pCVar4;

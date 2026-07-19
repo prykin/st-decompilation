@@ -1,4 +1,4 @@
-FUN_004c60e0:
+TLOBldMark::Create:
 004C60E0  55                        PUSH EBP
 004C60E1  8B EC                     MOV EBP,ESP
 004C60E3  83 EC 48                  SUB ESP,0x48

@@ -16,13 +16,13 @@ LAB_00696007:
   }
   else {
     if (*(int *)(iVar3 + 0x15) == 0) {
-      puVar1 = FUN_006ae290((uint *)0x0,10,6,10);
+      puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,6,10);
       *(uint **)(iVar3 + 0x15) = puVar1;
       if (puVar1 == (uint *)0x0) goto LAB_00696007;
     }
     local_c = 0;
     iStack_a = param_2;
-    uVar2 = FUN_006ae1c0(*(uint **)(iVar3 + 0x15),(undefined4 *)&local_c);
+    uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(iVar3 + 0x15),(undefined4 *)&local_c);
     if (-1 < (int)uVar2) {
       *(uint *)(iVar3 + 0x11) = uVar2 + 1;
       if (*(int *)((int)this + 0x584f) != 0) {

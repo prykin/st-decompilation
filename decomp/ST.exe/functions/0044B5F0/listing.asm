@@ -1,4 +1,4 @@
-FUN_0044b5f0:
+STAllPlayersC::SelectObjects:
 0044B5F0  55                        PUSH EBP
 0044B5F1  8B EC                     MOV EBP,ESP
 0044B5F3  83 EC 10                  SUB ESP,0x10

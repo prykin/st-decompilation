@@ -27,7 +27,8 @@ uint FUN_00755830(int param_1,uint *param_2,int param_3)
     if ((int)uVar3 < 0) {
       return uVar3;
     }
-    uVar4 = FUN_006d4c50(*(int *)(param_1 + 8),uVar3,(int)*(short *)(*(int *)(param_1 + 8) + 0x16));
+    uVar4 = Library::DKW::FMM::FUN_006d4c50
+                      (*(int *)(param_1 + 8),uVar3,(int)*(short *)(*(int *)(param_1 + 8) + 0x16));
     if (uVar4 == 0) {
       *(uint *)(*(int *)(param_1 + 8) + 8) = *(uint *)(*(int *)(param_1 + 8) + 8) | 0x10;
       iVar5 = *(int *)(*(int *)(param_1 + 8) + 0x34);

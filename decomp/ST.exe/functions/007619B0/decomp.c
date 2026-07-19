@@ -23,7 +23,7 @@ int __cdecl FID_conflict__remove(char *_Filename)
     iVar2 = 0;
   }
   else {
-    __dosmaperr(local_8);
+    Library::MSVCRT::__dosmaperr(local_8);
     iVar2 = -1;
   }
   return iVar2;

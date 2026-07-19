@@ -144,7 +144,7 @@ int thunk_FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param
     if ((aiStack_44[6] < iVar11) && (aiStack_44[5] != 0)) {
       if (puStack_24 == (undefined4 *)0x0) {
         uStack_8 = 0;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         puStack_1c = &stack0xfffffec8;
         puStack_24 = (undefined4 *)&stack0xfffffec8;
         uStack_8 = 0xffffffff;

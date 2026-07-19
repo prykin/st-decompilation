@@ -1,4 +1,4 @@
-FUN_00604a90:
+STExplosionC::SaveObj:
 00604A90  55                        PUSH EBP
 00604A91  8B EC                     MOV EBP,ESP
 00604A93  6A FF                     PUSH -0x1

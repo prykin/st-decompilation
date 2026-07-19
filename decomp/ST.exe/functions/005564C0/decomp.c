@@ -1,9 +1,14 @@
 
-undefined4 FUN_005564c0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\grig\traks.cpp
+   TraksClassTy::GetMessage */
+
+undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
 
 {
   uint uVar1;
   code *pcVar2;
+  TraksClassTy *this_00;
   int errorCode;
   uint *puVar3;
   int iVar4;
@@ -11,14 +16,16 @@ undefined4 FUN_005564c0(int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_58;
-  int local_14;
+  TraksClassTy *local_14;
   byte *local_10;
   uint local_c;
   ushort *local_8;
   
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  errorCode = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_14 = this;
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = local_14;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_58.previous;
     iVar4 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x151,0,errorCode,
@@ -37,13 +44,13 @@ undefined4 FUN_005564c0(int param_1)
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {
     if (uVar1 == 3) {
-      thunk_FUN_005557b0(local_14);
+      thunk_FUN_005557b0((int)this_00);
       DAT_00802a7c = 0;
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (uVar1 == 0) {
-      thunk_FUN_00555e80();
+      TraksExec(this_00);
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -53,14 +60,14 @@ undefined4 FUN_005564c0(int param_1)
         local_8 = FUN_006f2d90(DAT_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
-        puVar3 = FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
-        *(uint **)(local_14 + 0x24) = puVar3;
-        *(int *)(local_14 + 0x1c) = DAT_00808754 * 0x7d;
+        puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
+        *(uint **)(this_00 + 0x24) = puVar3;
+        *(int *)(this_00 + 0x1c) = DAT_00808754 * 0x7d;
       }
       else {
-        thunk_FUN_00556170((int)local_8);
+        PrepareAfterSave(this_00,(int)local_8);
       }
-      thunk_FUN_00555720();
+      CreateDate(this_00);
       if ((DAT_00806754 != (cMf32 *)0x0) && (local_8 != (ushort *)0x0)) {
         cMf32::RecMemFree(DAT_00806754,(uint *)&local_8);
         g_currentExceptionFrame = local_58.previous;
@@ -70,7 +77,7 @@ undefined4 FUN_005564c0(int param_1)
   }
   else if (uVar1 == 0x10f) {
     local_c = 0;
-    local_10 = (byte *)thunk_FUN_00555fe0(&local_c);
+    local_10 = (byte *)PrepareToSave(this_00,&local_c);
     STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_TRACKS_0079aebc,local_10,local_c,0xc);
     if (local_10 != (byte *)0x0) {
       FUN_006ab060(&local_10);

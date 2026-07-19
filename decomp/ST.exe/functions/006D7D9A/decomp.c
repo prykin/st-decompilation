@@ -142,7 +142,7 @@ LAB_006d7fb4:
     uVar8 = 0xfffffffb;
   }
 LAB_006d7fc6:
-  thunk_FUN_006a4950(local_8);
+  Library::MSVCRT::thunk_FUN_006a4950(local_8);
   return uVar8;
 }
 

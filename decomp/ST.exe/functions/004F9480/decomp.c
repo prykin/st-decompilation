@@ -1,5 +1,9 @@
 
-void FUN_004f9480(int param_1,int param_2,undefined4 param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Andrey\cpanel.cpp
+   CPanelTy::OutText */
+
+void __thiscall CPanelTy::OutText(CPanelTy *this,int param_1,int param_2,undefined4 param_3)
 
 {
   code *pcVar1;
@@ -9,13 +13,15 @@ void FUN_004f9480(int param_1,int param_2,undefined4 param_3)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
+  CPanelTy *local_c;
   uint *local_8;
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_c = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    local_8 = FUN_006b54f0((uint *)0x0,10,10);
+    local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     iVar2 = param_1 + param_2;
     if (param_2 < 1) {
       iVar2 = *(int *)(DAT_0080c4c7 + 8);
@@ -29,7 +35,7 @@ void FUN_004f9480(int param_1,int param_2,undefined4 param_3)
       }
       thunk_FUN_005411a0((int)local_8,pcVar3,s____s__007c221c);
     }
-    thunk_FUN_004f92b0((int *)&local_8,param_3);
+    OutText(local_c,(int *)&local_8,param_3);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

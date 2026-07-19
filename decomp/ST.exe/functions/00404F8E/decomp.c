@@ -358,7 +358,7 @@ LAB_0061a4fd:
       }
       *(short *)((int)param_1 + 0xcd) = sVar2;
       if (*(int *)((int)param_1 + 0x93) == 3) {
-        thunk_FUN_00556760(DAT_00802a7c,1,1,0,iVar11,iStack_8,uVar9,0,0,0,0,0,0,-1,0,0);
+        TraksClassTy::TraksCreate(DAT_00802a7c,1,1,0,iVar11,iStack_8,uVar9,0,0,0,0,0,0,-1,0,0);
       }
       return 1;
     }

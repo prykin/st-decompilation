@@ -6,6 +6,10 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   IntercomPanelTy *pIVar2;
   int errorCode;
   int iVar3;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *this_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame IStack_4c;
@@ -14,20 +18,23 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pIStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pIVar2 = pIStack_8;
   if (errorCode == 0) {
+    this_00 = extraout_ECX;
     if (*(byte **)(pIStack_8 + 0x198) != (byte *)0x0) {
       FUN_006b5570(*(byte **)(pIStack_8 + 0x198));
       *(undefined4 *)(pIVar2 + 0x198) = 0;
+      this_00 = extraout_ECX_00;
     }
     if (*(uint *)(pIVar2 + 0x1a0) != 0) {
       FUN_006e56b0(*(void **)(pIVar2 + 0xc),*(uint *)(pIVar2 + 0x1a0));
+      this_00 = extraout_ECX_01;
     }
     *(undefined4 *)(pIVar2 + 0x1a0) = 0;
     DAT_0080169c = 0;
     if (*(uint **)(pIVar2 + 0x180) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pIVar2 + 0x180));
+      ccFntTy::operator(this_00,*(uint **)(pIVar2 + 0x180));
       *(undefined4 *)(pIVar2 + 0x180) = 0;
     }
     if (*(int *)(pIVar2 + 0x184) != 0) {

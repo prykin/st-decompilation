@@ -28,7 +28,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
     IStack_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_8c;
     pFStack_10 = this;
-    iVar4 = __setjmp3(IStack_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
       pFVar2 = pFStack_10;
@@ -86,7 +86,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
             StartServTy::WrTextDDX
                       (this_01,0,600,(int)pSVar3,0x30,0x10,(uint *)aSStack_48,0xffffffff,0xffffffff,
                        *(void **)(pFVar2 + 0x1a7f),0);
-            ptVar6 = _gmtime((time_t *)(piVar9 + -3));
+            ptVar6 = Library::MSVCRT::_gmtime((time_t *)(piVar9 + -3));
             wsprintfA((LPSTR)aSStack_48,s__2d____2d____4d_007cc27c,ptVar6->tm_mday,
                       ptVar6->tm_mon + 1,ptVar6->tm_year + 0x76c);
             StartServTy::WrTextDDX

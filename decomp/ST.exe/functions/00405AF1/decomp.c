@@ -17,7 +17,7 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pAStack_8 = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = pAStack_8;
   if (errorCode == 0) {
     pAVar1 = pAStack_8 + 0x130;

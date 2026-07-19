@@ -36,27 +36,27 @@ undefined4 __thiscall thunk_FUN_0061f290(void *this,int param_1)
             uStack_10 = 1;
             if ((param_1 != 0) && (DAT_00802a88 != (void *)0x0)) {
               if ((float)piVar4[3] < _DAT_0079034c) {
-                lVar5 = __ftol();
+                lVar5 = Library::MSVCRT::__ftol();
                 iVar3 = (short)lVar5 + -1;
               }
               else {
-                lVar5 = __ftol();
+                lVar5 = Library::MSVCRT::__ftol();
                 iVar3 = (int)(short)lVar5;
               }
               if ((float)piVar4[2] < _DAT_0079034c) {
-                lVar5 = __ftol();
+                lVar5 = Library::MSVCRT::__ftol();
                 iStack_8 = (short)lVar5 + -1;
               }
               else {
-                lVar5 = __ftol();
+                lVar5 = Library::MSVCRT::__ftol();
                 iStack_8 = (int)(short)lVar5;
               }
               if ((float)piVar4[1] < _DAT_0079034c) {
-                lVar5 = __ftol();
+                lVar5 = Library::MSVCRT::__ftol();
                 iVar2 = (short)lVar5 + -1;
               }
               else {
-                lVar5 = __ftol();
+                lVar5 = Library::MSVCRT::__ftol();
                 iVar2 = (int)(short)lVar5;
               }
               if ((((((DAT_0080874d == -1) || (*(int *)((int)this_00 + 0xf8) == 0)) ||

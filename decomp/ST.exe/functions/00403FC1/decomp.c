@@ -66,7 +66,7 @@ int thunk_FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param
     }
     iStack_64 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &pvStack_14;
-    pcVar1 = (char *)FUN_006aac70(iStack_64 << 5);
+    pcVar1 = (char *)Library::DKW::LIB::FUN_006aac70(iStack_64 << 5);
     pcStack_54 = pcVar1;
     uVar2 = FUN_00411cf0(pcVar1,iStack_64);
     uStack_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
@@ -87,7 +87,7 @@ int thunk_FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param
         if (iStack_5c < (int)uVar2) {
           iStack_5c = uVar2 * 2;
           uStack_8 = 0;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           uStack_8 = 0xffffffff;
           pbStack_24 = &stack0xffffff3c;
           puStack_1c = &stack0xffffff3c;
@@ -242,7 +242,7 @@ int thunk_FUN_00411260(int param_1,int param_2,int param_3,int param_4,int param
           iStack_60 = param_3;
           iStack_64 = iStack_64 + 1;
           uVar4 = uVar4 + 0x20;
-          pcStack_54 = (char *)FUN_006acf50((undefined4 *)pcStack_54,uVar4);
+          pcStack_54 = (char *)Library::DKW::LIB::FUN_006acf50((undefined4 *)pcStack_54,uVar4);
           uVar2 = FUN_00411cf0(pcStack_54,iStack_64);
           uStack_3c = (int)(uVar2 * param_6 + 0xb4) / 0x168;
           if (uStack_3c == uVar2) {

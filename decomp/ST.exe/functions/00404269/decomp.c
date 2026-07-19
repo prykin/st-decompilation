@@ -27,7 +27,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
     IStack_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_80;
     pFStack_c = this;
-    iVar4 = __setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pFStack_c;
     if (iVar4 == 0) {
       *(undefined4 *)(pFStack_c + 0x2d) = 0x26;
@@ -58,7 +58,7 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       }
       *(undefined1 *)puVar8 = *(undefined1 *)param_1;
       uStack_f = 0;
-      FUN_006ae1c0(puVar2,auStack_3c);
+      Library::DKW::TBL::FUN_006ae1c0(puVar2,auStack_3c);
       FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
       thunk_FUN_00540620(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',*(BITMAPINFO **)(this_00 + 0x1e9a)
                         );

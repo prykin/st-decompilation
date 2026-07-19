@@ -25,7 +25,7 @@ int __thiscall FUN_00714e20(void *this,char *param_1,size_t param_2)
   }
   iVar3 = FUN_00714ce0(this,sVar2 + 1);
   if (iVar3 == 0) {
-    _strncpy(*(char **)this,param_1,param_2);
+    Library::MSVCRT::_strncpy(*(char **)this,param_1,param_2);
     iVar3 = 0;
   }
   return iVar3;

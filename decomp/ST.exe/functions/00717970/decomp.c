@@ -73,30 +73,30 @@ switchD_007179c7_default:
   dVar4 = (double)((iVar5 * 10) / 2) + dVar4 * _DAT_0079df60;
 LAB_00717b22:
   if (local_44 < _DAT_0079d670) {
-    lVar15 = __ftol();
+    lVar15 = Library::MSVCRT::__ftol();
     *(int *)((int)param_1 + 0x47e) = (int)lVar15;
-    FUN_0073459a(extraout_ECX_00);
+    Library::MSVCRT::FUN_0073459a(extraout_ECX_00);
   }
   else {
-    lVar15 = __ftol();
+    lVar15 = Library::MSVCRT::__ftol();
     *(int *)((int)param_1 + 0x47e) = (int)lVar15;
-    FUN_0073459a(extraout_ECX);
+    Library::MSVCRT::FUN_0073459a(extraout_ECX);
   }
-  lVar15 = __ftol();
+  lVar15 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar15;
   dVar4 = dVar4 * _DAT_0079df60;
   *(int *)((int)param_1 + 0x476) = iVar5;
   if (dVar4 < _DAT_0079d670) {
-    lVar15 = __ftol();
+    lVar15 = Library::MSVCRT::__ftol();
     *(int *)((int)param_1 + 0x482) = (int)lVar15;
-    FUN_0073459a(extraout_ECX_02);
+    Library::MSVCRT::FUN_0073459a(extraout_ECX_02);
   }
   else {
-    lVar15 = __ftol();
+    lVar15 = Library::MSVCRT::__ftol();
     *(int *)((int)param_1 + 0x482) = (int)lVar15;
-    FUN_0073459a(extraout_ECX_01);
+    Library::MSVCRT::FUN_0073459a(extraout_ECX_01);
   }
-  lVar15 = __ftol();
+  lVar15 = Library::MSVCRT::__ftol();
   iVar10 = (int)lVar15;
   iVar6 = param_1[0xc];
   *(int *)((int)param_1 + 0x47a) = iVar10;

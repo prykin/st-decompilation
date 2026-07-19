@@ -1,4 +1,4 @@
-FUN_00555720:
+TraksClassTy::CreateDate:
 00555720  55                        PUSH EBP
 00555721  8B EC                     MOV EBP,ESP
 00555723  83 EC 44                  SUB ESP,0x44

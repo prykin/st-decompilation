@@ -27,7 +27,7 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   local_8 = (undefined4 *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     if (local_8 != (undefined4 *)0x0) {
@@ -40,7 +40,8 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   iVar6 = param_4;
   iVar7 = param_5;
   iVar3 = FUN_006b4fa0(param_1);
-  local_8 = FUN_006b55f0((undefined4 *)0x0,0,0,0,param_1,iVar3,iVar2,iVar5,iVar6,iVar7);
+  local_8 = Library::DKW::WGR::FUN_006b55f0
+                      ((undefined4 *)0x0,0,0,0,param_1,iVar3,iVar2,iVar5,iVar6,iVar7);
   if (local_8 == (undefined4 *)0x0) {
     wsprintfA(local_45c,s_img___d__d__d__d___lx__d__ly__d__007f0118,param_2,param_3,param_4,param_5,
               *(undefined4 *)(param_1 + 4),*(undefined4 *)(param_1 + 8),param_6);
@@ -66,8 +67,9 @@ FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint pa
   puVar4 = local_8;
   if (((local_8 != (undefined4 *)0x0) &&
       ((((local_18 != 1 || (local_14 != 1)) || (local_c != 1)) || (local_10 != 1)))) &&
-     (puVar4 = FUN_00751cb0((undefined4 *)0x0,(ushort *)0x0,local_8,(ushort *)0x0,
-                            (local_8[1] * local_18) / local_14,(local_8[2] * local_c) / local_10),
+     (puVar4 = Library::DKW::WGR::FUN_00751cb0
+                         ((undefined4 *)0x0,(ushort *)0x0,local_8,(ushort *)0x0,
+                          (local_8[1] * local_18) / local_14,(local_8[2] * local_c) / local_10),
      local_8 != (undefined4 *)0x0)) {
     FUN_006ab060(&local_8);
     g_currentExceptionFrame = local_5c.previous;

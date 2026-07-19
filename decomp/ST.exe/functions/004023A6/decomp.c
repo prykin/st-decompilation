@@ -14,26 +14,27 @@ void thunk_FUN_005c29b0(char param_1)
   undefined4 uVar7;
   ushort *puVar8;
   HANDLE hFindFile;
+  cMf32 *this_00;
   UINT UVar9;
   BOOL BVar10;
-  undefined1 *puVar11;
-  uint uVar12;
+  cMf32 *pcVar11;
+  undefined1 *puVar12;
   uint uVar13;
+  uint uVar14;
   cMf32 *extraout_ECX;
   cMf32 *extraout_ECX_00;
   cMf32 *extraout_ECX_01;
-  cMf32 *this_00;
-  int iVar14;
-  char *pcVar15;
+  int iVar15;
+  char *pcVar16;
   SettMapTy *this_01;
   undefined4 unaff_ESI;
-  char *pcVar16;
-  SettMapTy *pSVar17;
+  char *pcVar17;
+  SettMapTy *pSVar18;
   void *unaff_EDI;
-  char *pcVar18;
-  uint *puVar19;
-  char cVar20;
-  int iVar21;
+  char *pcVar19;
+  uint *puVar20;
+  char cVar21;
+  int iVar22;
   undefined4 auStack_b18 [256];
   byte abStack_718 [260];
   char acStack_614 [260];
@@ -58,7 +59,7 @@ void thunk_FUN_005c29b0(char param_1)
   undefined4 auStack_44 [7];
   undefined4 uStack_28;
   undefined4 uStack_24;
-  undefined4 *puStack_1c;
+  cMf32 *pcStack_1c;
   SettMapTy *pSStack_18;
   HANDLE pvStack_14;
   uint *puStack_10;
@@ -67,7 +68,7 @@ void thunk_FUN_005c29b0(char param_1)
   
   IStack_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_88;
-  iVar4 = __setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pSStack_18;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_88.previous;
@@ -89,7 +90,7 @@ void thunk_FUN_005c29b0(char param_1)
   }
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -110,10 +111,10 @@ void thunk_FUN_005c29b0(char param_1)
       iVar4 = DAT_0080c506;
     }
     if (((SVar1 == (SettMapTy)0x6) || (SVar1 == (SettMapTy)0x1)) ||
-       (iVar21 = DAT_0080c502, SVar1 == (SettMapTy)0x2)) {
-      iVar21 = DAT_0080c506;
+       (iVar22 = DAT_0080c502, SVar1 == (SettMapTy)0x2)) {
+      iVar22 = DAT_0080c506;
     }
-    iVar4 = *(int *)(iVar21 + 8) * *(uint *)(this_01 + 0x1c5f) + *(int *)(iVar4 + 0x1c);
+    iVar4 = *(int *)(iVar22 + 8) * *(uint *)(this_01 + 0x1c5f) + *(int *)(iVar4 + 0x1c);
   }
   else {
     iVar4 = 0;
@@ -126,40 +127,40 @@ void thunk_FUN_005c29b0(char param_1)
       puVar5 = puVar5 + 1;
     }
     iVar4 = *(int *)(this_01 + 0x1c63);
-    iVar21 = *(int *)(this_01 + 0x1f43);
-    pcVar15 = (char *)0x0;
+    iVar22 = *(int *)(this_01 + 0x1f43);
+    pcVar16 = (char *)0x0;
   }
   else {
     DAT_0080995c = *(undefined4 *)(iVar4 + 0x90);
-    uVar12 = 0xffffffff;
-    pcVar15 = (char *)(iVar4 + 0x4c);
+    uVar13 = 0xffffffff;
+    pcVar16 = (char *)(iVar4 + 0x4c);
     do {
-      pcVar16 = pcVar15;
-      if (uVar12 == 0) break;
-      uVar12 = uVar12 - 1;
-      pcVar16 = pcVar15 + 1;
-      cVar20 = *pcVar15;
-      pcVar15 = pcVar16;
-    } while (cVar20 != '\0');
-    uVar12 = ~uVar12;
-    pcVar16 = pcVar16 + -uVar12;
-    pcVar18 = (char *)&DAT_00809960;
-    for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-      *(undefined4 *)pcVar18 = *(undefined4 *)pcVar16;
-      pcVar16 = pcVar16 + 4;
-      pcVar18 = pcVar18 + 4;
+      pcVar17 = pcVar16;
+      if (uVar13 == 0) break;
+      uVar13 = uVar13 - 1;
+      pcVar17 = pcVar16 + 1;
+      cVar21 = *pcVar16;
+      pcVar16 = pcVar17;
+    } while (cVar21 != '\0');
+    uVar13 = ~uVar13;
+    pcVar17 = pcVar17 + -uVar13;
+    pcVar19 = (char *)&DAT_00809960;
+    for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
+      *(undefined4 *)pcVar19 = *(undefined4 *)pcVar17;
+      pcVar17 = pcVar17 + 4;
+      pcVar19 = pcVar19 + 4;
     }
-    pcVar15 = (char *)(iVar4 + 0x70);
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-      *pcVar18 = *pcVar16;
-      pcVar16 = pcVar16 + 1;
-      pcVar18 = pcVar18 + 1;
+    pcVar16 = (char *)(iVar4 + 0x70);
+    for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+      *pcVar19 = *pcVar17;
+      pcVar17 = pcVar17 + 1;
+      pcVar19 = pcVar19 + 1;
     }
     iVar4 = *(int *)(this_01 + 0x1c63);
-    iVar21 = *(int *)(this_01 + 0x1f43);
+    iVar22 = *(int *)(this_01 + 0x1f43);
   }
-  StartSystemTy::SetObjectives(DAT_0081176c,iVar21,pcVar15,iVar4);
-  puVar6 = FUN_006ae290((uint *)0x0,8,0x60,8);
+  StartSystemTy::SetObjectives(DAT_0081176c,iVar22,pcVar16,iVar4);
+  puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
   *(uint **)(this_01 + 0x1f84) = puVar6;
   uVar7 = FUN_0070a9f0(DAT_00806780,s_LOADSINGLE_007cc79c,0,1);
   *(undefined4 *)(DAT_0081176c + 0x2c) = uVar7;
@@ -176,7 +177,7 @@ void thunk_FUN_005c29b0(char param_1)
     wsprintfA((LPSTR)&uStack_28,&DAT_007cc584,DAT_0080995c);
     *(undefined4 *)(this_01 + 0x1a82) = uStack_28;
     *(undefined4 *)(this_01 + 0x1a86) = uStack_24;
-    _strncpy((char *)(this_01 + 0x1a8a),(char *)&DAT_0080c3c3,0x1d5);
+    Library::MSVCRT::_strncpy((char *)(this_01 + 0x1a8a),(char *)&DAT_0080c3c3,0x1d5);
     this_01[0x1c5e] = (SettMapTy)0x0;
   }
   *(undefined4 *)(this_01 + 0x2189) = *(undefined4 *)(this_01 + 8);
@@ -189,7 +190,7 @@ void thunk_FUN_005c29b0(char param_1)
   *(undefined4 *)(this_01 + 0x21b5) = 0x1f;
   *(undefined4 *)(this_01 + 0x21b9) = 1;
   *(undefined4 *)(this_01 + 0x21b1) = 0x4d;
-  puVar6 = FUN_006ae290((uint *)0x0,0xf,0x10c,5);
+  puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0xf,0x10c,5);
   *(uint **)(this_01 + 0x1e2f) = puVar6;
   puVar8 = FUN_0070a5a0(DAT_00806780,6,s_MM_COMBO_007cd164,0,1);
   *(ushort **)(this_01 + 0x1e2b) = puVar8;
@@ -206,71 +207,71 @@ void thunk_FUN_005c29b0(char param_1)
     this_01[0x21e3] = (SettMapTy)0x1;
     iVar4 = 1;
     puVar5 = (undefined4 *)(*(int *)(this_01 + 0x5d) + 0x28);
-    uVar12 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
-    iVar4 = FUN_006b50c0(0xf9,0x123,(uint)*(ushort *)(*(int *)(this_01 + 0x5d) + 0xe),uVar12,puVar5,
+    uVar13 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
+    iVar4 = FUN_006b50c0(0xf9,0x123,(uint)*(ushort *)(*(int *)(this_01 + 0x5d) + 0xe),uVar13,puVar5,
                          iVar4);
     *(int *)(this_01 + 0x1c67) = iVar4;
-    uVar12 = *(uint *)(iVar4 + 0x14);
-    if (uVar12 == 0) {
-      uVar12 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+    uVar13 = *(uint *)(iVar4 + 0x14);
+    if (uVar13 == 0) {
+      uVar13 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
                *(int *)(iVar4 + 8);
     }
     puVar5 = (undefined4 *)FUN_006b4fa0(iVar4);
-    for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
+    for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
     }
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+    for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1c67),0,0x10,6,0xea,
                      0x14);
     uVar7 = 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar4 = 0;
     puVar6 = (uint *)FUN_006b0140(0x2344,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar21,uVar7);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar22,uVar7);
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1c67),0,0x10,0x2e,0xea,
                      0x14);
     uVar7 = 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar4 = 0;
     puVar6 = (uint *)FUN_006b0140(0x2345,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar21,uVar7);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar22,uVar7);
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1c67),0,0x10,0x56,0xea,
                      0x14);
     uVar7 = 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar4 = 0;
     puVar6 = (uint *)FUN_006b0140(0x2350,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar21,uVar7);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar22,uVar7);
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1c67),0,0x10,0x7e,0xea,
                      0x14);
     uVar7 = 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar4 = 0;
     puVar6 = (uint *)FUN_006b0140(0x2352,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar21,uVar7);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar22,uVar7);
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1c67),0,0x10,0xa6,0xea,
                      0x14);
     uVar7 = 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar4 = 0;
     puVar6 = (uint *)FUN_006b0140(0x2351,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar21,uVar7);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar22,uVar7);
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1c67),0,0x10,0xce,0xea,
                      0x14);
     uVar7 = 2;
-    iVar21 = -1;
+    iVar22 = -1;
     iVar4 = 0;
     puVar6 = (uint *)FUN_006b0140(0x2353,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar21,uVar7);
-    uVar12 = *(uint *)(this_01 + 0x1c67);
-    FUN_006b2330((uint)DAT_008075a8,(uint *)(this_01 + 0x1f80),0x31,0x40407f,*(uint *)(uVar12 + 4),
-                 *(uint *)(uVar12 + 8),uVar12);
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_01 + 0x1f80),0xffffffff,10,0xb4);
-    puVar6 = FUN_006ae290((uint *)0x0,5,0x20c,5);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar4,iVar22,uVar7);
+    uVar13 = *(uint *)(this_01 + 0x1c67);
+    FUN_006b2330((uint)DAT_008075a8,(uint *)(this_01 + 0x1f80),0x31,0x40407f,*(uint *)(uVar13 + 4),
+                 *(uint *)(uVar13 + 8),uVar13);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)(this_01 + 0x1f80),0xffffffff,10,0xb4);
+    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x20c,5);
     *(uint **)(this_01 + 0x1f7c) = puVar6;
     wsprintfA((LPSTR)auStack_3cc,s__s_s_s_s_007cd140,&DAT_00807680,PTR_s_SYSTEM__0079c0ec,
               &DAT_007c72d8,PTR_DAT_0079c0f0);
@@ -282,18 +283,18 @@ void thunk_FUN_005c29b0(char param_1)
         if (((byte)_Stack_50c.dwFileAttributes & 0x10) == 0) {
           IStack_cc.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &IStack_cc;
-          iVar4 = __setjmp3(IStack_cc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar4 = Library::MSVCRT::__setjmp3(IStack_cc.jumpBuffer,0,unaff_EDI,unaff_ESI);
           this_01 = pSStack_18;
           hFindFile = pvStack_14;
           pIVar3 = IStack_cc.previous;
           if (iVar4 == 0) {
             wsprintfA((LPSTR)auStack_3cc,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_SYSTEM__0079c0ec,
                       _Stack_50c.cFileName);
-            puVar5 = FUN_006f0ec0(0x345,(byte *)auStack_3cc,0,0,0);
-            puStack_1c = puVar5;
-            iVar4 = FUN_006f24a0(0xc,s_TEXTURE_DSCR_007cd130,0);
+            this_00 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)auStack_3cc,0,0,0);
+            pcStack_1c = this_00;
+            iVar4 = cMf32::RecGetLen(this_00,0xc,s_TEXTURE_DSCR_007cd130,0);
             this_01 = pSStack_18;
-            this_00 = extraout_ECX;
+            pcVar11 = extraout_ECX;
             if (-1 < iVar4) {
               uStack_c = 0;
               if (iVar4 == 4) {
@@ -302,11 +303,12 @@ void thunk_FUN_005c29b0(char param_1)
               else {
                 puStack_10 = auStack_3cc;
               }
-              puVar8 = FUN_006f1ce0(0xc,s_TEXTURE_DSCR_007cd130,(int *)&puStack_10,0);
-              this_00 = extraout_ECX_00;
+              puVar8 = cMf32::RecGet(this_00,0xc,s_TEXTURE_DSCR_007cd130,(int *)&puStack_10,0);
+              pcVar11 = extraout_ECX_00;
               if (puVar8 != (ushort *)0x0) {
-                FUN_0072e730((byte *)_Stack_50c.cFileName,(byte *)0x0,(byte *)0x0,abStack_718,
-                             (byte *)0x0);
+                Library::MSVCRT::FUN_0072e730
+                          ((byte *)_Stack_50c.cFileName,(byte *)0x0,(byte *)0x0,abStack_718,
+                           (byte *)0x0);
                 switch(uStack_c & 0xff) {
                 case 0:
                   UVar9 = 0x4a42;
@@ -323,37 +325,37 @@ void thunk_FUN_005c29b0(char param_1)
                 default:
                   UVar9 = 0x4a46;
                 }
-                pcVar15 = (char *)FUN_006b0140(UVar9,DAT_00807618);
-                uVar12 = 0xffffffff;
+                pcVar16 = (char *)FUN_006b0140(UVar9,DAT_00807618);
+                uVar13 = 0xffffffff;
                 do {
-                  pcVar16 = pcVar15;
-                  if (uVar12 == 0) break;
-                  uVar12 = uVar12 - 1;
-                  pcVar16 = pcVar15 + 1;
-                  cVar20 = *pcVar15;
-                  pcVar15 = pcVar16;
-                } while (cVar20 != '\0');
-                uVar12 = ~uVar12;
-                pcVar15 = pcVar16 + -uVar12;
-                pcVar16 = acStack_614;
-                for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
-                  *(undefined4 *)pcVar16 = *(undefined4 *)pcVar15;
-                  pcVar15 = pcVar15 + 4;
+                  pcVar17 = pcVar16;
+                  if (uVar13 == 0) break;
+                  uVar13 = uVar13 - 1;
+                  pcVar17 = pcVar16 + 1;
+                  cVar21 = *pcVar16;
+                  pcVar16 = pcVar17;
+                } while (cVar21 != '\0');
+                uVar13 = ~uVar13;
+                pcVar16 = pcVar17 + -uVar13;
+                pcVar17 = acStack_614;
+                for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
+                  *(undefined4 *)pcVar17 = *(undefined4 *)pcVar16;
                   pcVar16 = pcVar16 + 4;
+                  pcVar17 = pcVar17 + 4;
                 }
                 puVar6 = *(uint **)(this_01 + 0x1f7c);
-                for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-                  *pcVar16 = *pcVar15;
-                  pcVar15 = pcVar15 + 1;
+                for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
+                  *pcVar17 = *pcVar16;
                   pcVar16 = pcVar16 + 1;
+                  pcVar17 = pcVar17 + 1;
                 }
                 uStack_510 = uStack_c;
-                FUN_006ae1c0(puVar6,(undefined4 *)abStack_718);
-                this_00 = extraout_ECX_01;
-                puVar5 = puStack_1c;
+                Library::DKW::TBL::FUN_006ae1c0(puVar6,(undefined4 *)abStack_718);
+                pcVar11 = extraout_ECX_01;
+                this_00 = pcStack_1c;
               }
             }
-            cMf32::delete(this_00,puVar5);
+            cMf32::delete(pcVar11,(undefined4 *)this_00);
             hFindFile = pvStack_14;
             pIVar3 = IStack_cc.previous;
           }
@@ -366,34 +368,34 @@ void thunk_FUN_005c29b0(char param_1)
       FindClose(hFindFile);
     }
     if (1 < *(int *)(*(int *)(this_01 + 0x1f7c) + 0xc)) {
-      puVar5 = (undefined4 *)(*(int *)(*(int *)(this_01 + 0x1f7c) + 0xc) + -1);
-      puStack_1c = puVar5;
+      pcVar11 = (cMf32 *)(*(int *)(*(int *)(this_01 + 0x1f7c) + 0xc) + -1);
+      pcStack_1c = pcVar11;
       do {
         puStack_10 = (uint *)0x0;
-        uVar12 = 0;
-        if (0 < (int)puVar5) {
+        uVar13 = 0;
+        if (0 < (int)pcVar11) {
           do {
             iVar4 = *(int *)(this_01 + 0x1f7c);
-            if (uVar12 < *(uint *)(iVar4 + 0xc)) {
-              iVar21 = *(int *)(iVar4 + 8) * uVar12 + *(int *)(iVar4 + 0x1c);
-            }
-            else {
-              iVar21 = 0;
-            }
-            uVar13 = uVar12 + 1;
             if (uVar13 < *(uint *)(iVar4 + 0xc)) {
-              iVar14 = *(int *)(iVar4 + 8) * uVar13 + *(int *)(iVar4 + 0x1c);
+              iVar22 = *(int *)(iVar4 + 8) * uVar13 + *(int *)(iVar4 + 0x1c);
             }
             else {
-              iVar14 = 0;
+              iVar22 = 0;
             }
-            if (*(uint *)(iVar14 + 0x208) < *(uint *)(iVar21 + 0x208)) {
-              FUN_006b0cd0(iVar4,uVar12,uVar13);
+            uVar14 = uVar13 + 1;
+            if (uVar14 < *(uint *)(iVar4 + 0xc)) {
+              iVar15 = *(int *)(iVar4 + 8) * uVar14 + *(int *)(iVar4 + 0x1c);
+            }
+            else {
+              iVar15 = 0;
+            }
+            if (*(uint *)(iVar15 + 0x208) < *(uint *)(iVar22 + 0x208)) {
+              FUN_006b0cd0(iVar4,uVar13,uVar14);
               puStack_10 = (uint *)0x1;
             }
-            puVar5 = puStack_1c;
-            uVar12 = uVar13;
-          } while ((int)uVar13 < (int)puStack_1c);
+            pcVar11 = pcStack_1c;
+            uVar13 = uVar14;
+          } while ((int)uVar14 < (int)pcStack_1c);
         }
       } while (puStack_10 != (uint *)0x0);
     }
@@ -435,52 +437,53 @@ void thunk_FUN_005c29b0(char param_1)
   *(undefined4 *)(this_01 + 0x1dad) = 0x5b;
   *(undefined4 *)(this_01 + 0x1d95) = 0;
   uStack_c = 0x41;
-  pSVar17 = this_01 + 0x20f4;
+  pSVar18 = this_01 + 0x20f4;
   do {
     iVar4 = 1;
     puVar5 = (undefined4 *)(*(int *)(this_01 + 0x5d) + 0x28);
-    uVar12 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
-    uVar12 = FUN_006b50c0(0x1e5,0x14,(uint)*(ushort *)(*(int *)(this_01 + 0x5d) + 0xe),uVar12,puVar5
+    uVar13 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
+    uVar13 = FUN_006b50c0(0x1e5,0x14,(uint)*(ushort *)(*(int *)(this_01 + 0x5d) + 0xe),uVar13,puVar5
                           ,iVar4);
-    *(uint *)pSVar17 = uVar12;
-    pvStack_14 = *(HANDLE *)(uVar12 + 0x14);
+    *(uint *)pSVar18 = uVar13;
+    pvStack_14 = *(HANDLE *)(uVar13 + 0x14);
     if (pvStack_14 == (HANDLE)0x0) {
-      pvStack_14 = (HANDLE)(((uint)*(ushort *)(uVar12 + 0xe) * *(int *)(uVar12 + 4) + 0x1f >> 3 &
-                            0x1ffffffc) * *(int *)(uVar12 + 8));
+      pvStack_14 = (HANDLE)(((uint)*(ushort *)(uVar13 + 0xe) * *(int *)(uVar13 + 4) + 0x1f >> 3 &
+                            0x1ffffffc) * *(int *)(uVar13 + 8));
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0(uVar12);
-    for (uVar12 = (uint)pvStack_14 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
+    puVar5 = (undefined4 *)FUN_006b4fa0(uVar13);
+    for (uVar13 = (uint)pvStack_14 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
     }
-    for (uVar12 = (uint)pvStack_14 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+    for (uVar13 = (uint)pvStack_14 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    uVar12 = *(uint *)pSVar17;
-    FUN_006b2330((uint)DAT_008075a8,(uint *)(pSVar17 + -0x28),0x31,0x40407f,*(uint *)(uVar12 + 4),
-                 *(uint *)(uVar12 + 8),uVar12);
-    FUN_006b3640(DAT_008075a8,*(uint *)(pSVar17 + -0x28),0xffffffff,0x113,uStack_c);
-    pSVar17 = pSVar17 + 4;
+    uVar13 = *(uint *)pSVar18;
+    FUN_006b2330((uint)DAT_008075a8,(uint *)(pSVar18 + -0x28),0x31,0x40407f,*(uint *)(uVar13 + 4),
+                 *(uint *)(uVar13 + 8),uVar13);
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pSVar18 + -0x28),0xffffffff,0x113,uStack_c);
+    pSVar18 = pSVar18 + 4;
     uStack_c = uStack_c + 0x19;
   } while ((int)uStack_c < 0x13b);
   iVar4 = 1;
   puVar5 = (undefined4 *)(*(int *)(this_01 + 0x5d) + 0x28);
-  uVar12 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
-  iVar4 = FUN_006b50c0(0x205,0x8c,(uint)*(ushort *)(*(int *)(this_01 + 0x5d) + 0xe),uVar12,puVar5,
+  uVar13 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
+  iVar4 = FUN_006b50c0(0x205,0x8c,(uint)*(ushort *)(*(int *)(this_01 + 0x5d) + 0xe),uVar13,puVar5,
                        iVar4);
   *(int *)(this_01 + 0x1e1e) = iVar4;
-  uVar12 = *(uint *)(iVar4 + 0x14);
-  if (uVar12 == 0) {
-    uVar12 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+  uVar13 = *(uint *)(iVar4 + 0x14);
+  if (uVar13 == 0) {
+    uVar13 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
              *(int *)(iVar4 + 8);
   }
   puVar5 = (undefined4 *)FUN_006b4fa0(iVar4);
-  for (uVar13 = uVar12 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
+  for (uVar14 = uVar13 >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
     *puVar5 = 0xffffffff;
     puVar5 = puVar5 + 1;
   }
-  for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
+  for (uVar13 = uVar13 & 3; uVar13 != 0; uVar13 = uVar13 - 1) {
     *(undefined1 *)puVar5 = 0xff;
     puVar5 = (undefined4 *)((int)puVar5 + 1);
   }
@@ -492,172 +495,172 @@ void thunk_FUN_005c29b0(char param_1)
      )) {
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,8,5,0xa5,0x14);
     uVar7 = 2;
-    iVar14 = -1;
-    iVar21 = -3;
+    iVar15 = -1;
+    iVar22 = -3;
     iVar4 = 0xa5;
-    puVar19 = (uint *)&DAT_008016a0;
+    puVar20 = (uint *)&DAT_008016a0;
     puVar6 = (uint *)FUN_006b0140(0x256d,DAT_00807618);
-    puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+    puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   }
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,8,0x1b,0xa5,0x14)
   ;
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa5;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f4b,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,0x104,0x1b,0xa5,
                    0x14);
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa5;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f4c,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,8,0x31,0xa5,0x14)
   ;
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa5;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f4d,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,0x104,0x31,0xa5,
                    0x14);
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa5;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f4e,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,8,0x47,0xa5,0x14)
   ;
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa5;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f4f,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,0x104,0x47,0xa5,
                    0x14);
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa5;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f56,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,10,0x5d,100,0x14)
   ;
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 100;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f51,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,0x96,0x5d,0x82,
                    0x14);
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0x82;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f58,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,0x140,0x5d,0xa0,
                    0x14);
   uVar7 = 2;
-  iVar14 = -1;
-  iVar21 = -3;
+  iVar15 = -1;
+  iVar22 = -3;
   iVar4 = 0xa0;
-  puVar19 = (uint *)&DAT_008016a0;
+  puVar20 = (uint *)&DAT_008016a0;
   puVar6 = (uint *)FUN_006b0140(0x1f50,DAT_00807618);
-  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+  puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+  ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   SVar1 = this_01[0x1e26];
   if (((SVar1 != (SettMapTy)0x6) && (SVar1 != (SettMapTy)0x1)) && (SVar1 != (SettMapTy)0x2)) {
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,8,0x73,0xe1,
                      0x14);
     uVar7 = 2;
-    iVar14 = -1;
-    iVar21 = -3;
+    iVar15 = -1;
+    iVar22 = -3;
     iVar4 = 0xe1;
-    puVar19 = (uint *)&DAT_008016a0;
+    puVar20 = (uint *)&DAT_008016a0;
     puVar6 = (uint *)FUN_006b0140(0x1f54,DAT_00807618);
-    puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+    puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
     ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x34),*(int *)(this_01 + 0x1e1e),0,0x104,0x73,0xdc
                      ,0x14);
     uVar7 = 2;
-    iVar14 = -1;
-    iVar21 = -3;
+    iVar15 = -1;
+    iVar22 = -3;
     iVar4 = 0xe1;
-    puVar19 = (uint *)&DAT_008016a0;
+    puVar20 = (uint *)&DAT_008016a0;
     puVar6 = (uint *)FUN_006b0140(0x1f53,DAT_00807618);
-    puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar19,iVar4);
-    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar21,iVar14,uVar7);
+    puVar6 = thunk_FUN_00540c40(*(void **)(DAT_0081176c + 0x34),puVar6,puVar20,iVar4);
+    ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar6,iVar22,iVar15,uVar7);
   }
-  uVar12 = *(uint *)(this_01 + 0x1e1e);
-  pSVar17 = this_01 + 0x1e22;
-  FUN_006b2330((uint)DAT_008075a8,(uint *)pSVar17,0x31,0x40407f,*(uint *)(uVar12 + 4),
-               *(uint *)(uVar12 + 8),uVar12);
-  FUN_006b3640(DAT_008075a8,*(uint *)pSVar17,0xffffffff,0x112,0x149);
+  uVar13 = *(uint *)(this_01 + 0x1e1e);
+  pSVar18 = this_01 + 0x1e22;
+  FUN_006b2330((uint)DAT_008075a8,(uint *)pSVar18,0x31,0x40407f,*(uint *)(uVar13 + 4),
+               *(uint *)(uVar13 + 8),uVar13);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pSVar18,0xffffffff,0x112,0x149);
   (**(code **)(*(int *)this_01 + 0x18))(1);
   if (this_01[0x21e2] != (SettMapTy)0x0) {
     FUN_006b2330((uint)DAT_008075a8,&uStack_8,0x32,0x4042d2,0xf9,0x121,
                  *(int *)(this_01 + 0x1a5b) + 0x140);
-    FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,10,0xb4);
-    puVar11 = (undefined1 *)FUN_0072e530(0x33);
-    if (puVar11 == (undefined1 *)0x0) {
-      puVar11 = (undefined1 *)0x0;
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,10,0xb4);
+    puVar12 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (puVar12 == (undefined1 *)0x0) {
+      puVar12 = (undefined1 *)0x0;
     }
     else {
-      puVar11[2] = 1;
-      *puVar11 = 0;
-      *(undefined4 *)(puVar11 + 3) = 0xffffffff;
-      puVar11[1] = 2;
-      *(undefined4 *)(puVar11 + 7) = 0;
-      *(undefined4 *)(puVar11 + 0xb) = 0;
-      *(undefined4 *)(puVar11 + 0xf) = 0;
-      *(undefined4 *)(puVar11 + 0x1b) = 1;
-      *(undefined4 *)(puVar11 + 0x13) = 1;
-      *(undefined4 *)(puVar11 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar11 + 0x27) = 0;
-      *(undefined4 *)(puVar11 + 0x23) = 0;
-      *(undefined4 *)(puVar11 + 0x2f) = 1;
-      *(undefined4 *)(puVar11 + 0x2b) = 1;
+      puVar12[2] = 1;
+      *puVar12 = 0;
+      *(undefined4 *)(puVar12 + 3) = 0xffffffff;
+      puVar12[1] = 2;
+      *(undefined4 *)(puVar12 + 7) = 0;
+      *(undefined4 *)(puVar12 + 0xb) = 0;
+      *(undefined4 *)(puVar12 + 0xf) = 0;
+      *(undefined4 *)(puVar12 + 0x1b) = 1;
+      *(undefined4 *)(puVar12 + 0x13) = 1;
+      *(undefined4 *)(puVar12 + 0x17) = 0xffffffff;
+      *(undefined4 *)(puVar12 + 0x27) = 0;
+      *(undefined4 *)(puVar12 + 0x23) = 0;
+      *(undefined4 *)(puVar12 + 0x2f) = 1;
+      *(undefined4 *)(puVar12 + 0x2b) = 1;
     }
-    *(undefined1 **)(this_01 + 0x21ec) = puVar11;
-    if (puVar11 != (undefined1 *)0x0) {
-      uVar13 = 0;
-      cVar20 = '\x01';
-      uVar12 = 0x10;
-      iVar21 = 1;
-      iVar4 = FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x121);
-      uVar12 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21ec),4,10,0xb4,iVar4,iVar21,uVar12,cVar20,
-                            uVar13);
-      if (uVar12 != 0) {
+    *(undefined1 **)(this_01 + 0x21ec) = puVar12;
+    if (puVar12 != (undefined1 *)0x0) {
+      uVar14 = 0;
+      cVar21 = '\x01';
+      uVar13 = 0x10;
+      iVar22 = 1;
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x121);
+      uVar13 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21ec),4,10,0xb4,iVar4,iVar22,uVar13,cVar21,
+                            uVar14);
+      if (uVar13 != 0) {
         iVar4 = *(int *)(this_01 + 0x21ec);
         *(undefined1 *)(iVar4 + 2) = 1;
         *(undefined4 *)(iVar4 + 0x17) = *(undefined4 *)(iVar4 + 0x13);
         if (-1 < (int)*(uint *)(*(int *)(this_01 + 0x21ec) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21ec) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21ec) + 3));
         }
         if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
           FUN_006b3af0(*(int **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391));
@@ -677,49 +680,49 @@ void thunk_FUN_005c29b0(char param_1)
     }
   }
   if (this_01[0x21e5] == (SettMapTy)0x0) {
-    FUN_006b3af0(DAT_008075a8,*(uint *)pSVar17);
+    FUN_006b3af0(DAT_008075a8,*(uint *)pSVar18);
   }
   else {
     FUN_006b2330((uint)DAT_008075a8,&uStack_8,0x32,0x403099,0x205,0x8c,
                  *(int *)(this_01 + 0x1a5b) + 0x140);
-    FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x112,0x149);
-    puVar11 = (undefined1 *)FUN_0072e530(0x33);
-    if (puVar11 == (undefined1 *)0x0) {
-      puVar11 = (undefined1 *)0x0;
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x112,0x149);
+    puVar12 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (puVar12 == (undefined1 *)0x0) {
+      puVar12 = (undefined1 *)0x0;
     }
     else {
-      puVar11[2] = 1;
-      *puVar11 = 0;
-      *(undefined4 *)(puVar11 + 3) = 0xffffffff;
-      puVar11[1] = 2;
-      *(undefined4 *)(puVar11 + 7) = 0;
-      *(undefined4 *)(puVar11 + 0xb) = 0;
-      *(undefined4 *)(puVar11 + 0xf) = 0;
-      *(undefined4 *)(puVar11 + 0x1b) = 1;
-      *(undefined4 *)(puVar11 + 0x13) = 1;
-      *(undefined4 *)(puVar11 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar11 + 0x27) = 0;
-      *(undefined4 *)(puVar11 + 0x23) = 0;
-      *(undefined4 *)(puVar11 + 0x2f) = 1;
-      *(undefined4 *)(puVar11 + 0x2b) = 1;
+      puVar12[2] = 1;
+      *puVar12 = 0;
+      *(undefined4 *)(puVar12 + 3) = 0xffffffff;
+      puVar12[1] = 2;
+      *(undefined4 *)(puVar12 + 7) = 0;
+      *(undefined4 *)(puVar12 + 0xb) = 0;
+      *(undefined4 *)(puVar12 + 0xf) = 0;
+      *(undefined4 *)(puVar12 + 0x1b) = 1;
+      *(undefined4 *)(puVar12 + 0x13) = 1;
+      *(undefined4 *)(puVar12 + 0x17) = 0xffffffff;
+      *(undefined4 *)(puVar12 + 0x27) = 0;
+      *(undefined4 *)(puVar12 + 0x23) = 0;
+      *(undefined4 *)(puVar12 + 0x2f) = 1;
+      *(undefined4 *)(puVar12 + 0x2b) = 1;
     }
-    *(undefined1 **)(this_01 + 0x21f4) = puVar11;
-    if (puVar11 != (undefined1 *)0x0) {
-      uVar13 = 0;
-      cVar20 = '\x01';
-      uVar12 = 0x10;
-      iVar21 = 1;
-      iVar4 = FUN_006bf9f0(DAT_008075a8,0x112,0x149,0x205,0x8c);
-      uVar12 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21f4),2,0x112,0x149,iVar4,iVar21,uVar12,cVar20,
-                            uVar13);
-      if (uVar12 != 0) {
+    *(undefined1 **)(this_01 + 0x21f4) = puVar12;
+    if (puVar12 != (undefined1 *)0x0) {
+      uVar14 = 0;
+      cVar21 = '\x01';
+      uVar13 = 0x10;
+      iVar22 = 1;
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x112,0x149,0x205,0x8c);
+      uVar13 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21f4),2,0x112,0x149,iVar4,iVar22,uVar13,cVar21,
+                            uVar14);
+      if (uVar13 != 0) {
         iVar4 = *(int *)(this_01 + 0x21f4);
         *(undefined1 *)(iVar4 + 2) = 1;
         *(undefined4 *)(iVar4 + 0x17) = *(undefined4 *)(iVar4 + 0x13);
         if (-1 < (int)*(uint *)(*(int *)(this_01 + 0x21f4) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21f4) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21f4) + 3));
         }
-        FUN_006b3af0(DAT_008075a8,*(uint *)pSVar17);
+        FUN_006b3af0(DAT_008075a8,*(uint *)pSVar18);
       }
     }
     if (uStack_8 != 0xffffffff) {
@@ -737,53 +740,53 @@ void thunk_FUN_005c29b0(char param_1)
     if (*(uint *)(this_01 + 0x1d91) != 0xffffffff) {
       FUN_006b3af0(*(int **)(this_01 + 0x1dd5),*(uint *)(this_01 + 0x1d91));
     }
-    pSVar17 = this_01 + 0x20cc;
+    pSVar18 = this_01 + 0x20cc;
     iVar4 = 10;
     do {
-      FUN_006b3af0(DAT_008075a8,*(uint *)pSVar17);
-      pSVar17 = pSVar17 + 4;
+      FUN_006b3af0(DAT_008075a8,*(uint *)pSVar18);
+      pSVar18 = pSVar18 + 4;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }
   else {
     FUN_006b2330((uint)DAT_008075a8,&uStack_8,0x32,0x4042d2,0x205,0x104,
                  *(int *)(this_01 + 0x1a5b) + 0x140);
-    FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x112,0x38);
-    puVar11 = (undefined1 *)FUN_0072e530(0x33);
-    if (puVar11 == (undefined1 *)0x0) {
-      puVar11 = (undefined1 *)0x0;
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,0x112,0x38);
+    puVar12 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (puVar12 == (undefined1 *)0x0) {
+      puVar12 = (undefined1 *)0x0;
     }
     else {
-      puVar11[2] = 1;
-      *puVar11 = 0;
-      *(undefined4 *)(puVar11 + 3) = 0xffffffff;
-      puVar11[1] = 2;
-      *(undefined4 *)(puVar11 + 7) = 0;
-      *(undefined4 *)(puVar11 + 0xb) = 0;
-      *(undefined4 *)(puVar11 + 0xf) = 0;
-      *(undefined4 *)(puVar11 + 0x1b) = 1;
-      *(undefined4 *)(puVar11 + 0x13) = 1;
-      *(undefined4 *)(puVar11 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar11 + 0x27) = 0;
-      *(undefined4 *)(puVar11 + 0x23) = 0;
-      *(undefined4 *)(puVar11 + 0x2f) = 1;
-      *(undefined4 *)(puVar11 + 0x2b) = 1;
+      puVar12[2] = 1;
+      *puVar12 = 0;
+      *(undefined4 *)(puVar12 + 3) = 0xffffffff;
+      puVar12[1] = 2;
+      *(undefined4 *)(puVar12 + 7) = 0;
+      *(undefined4 *)(puVar12 + 0xb) = 0;
+      *(undefined4 *)(puVar12 + 0xf) = 0;
+      *(undefined4 *)(puVar12 + 0x1b) = 1;
+      *(undefined4 *)(puVar12 + 0x13) = 1;
+      *(undefined4 *)(puVar12 + 0x17) = 0xffffffff;
+      *(undefined4 *)(puVar12 + 0x27) = 0;
+      *(undefined4 *)(puVar12 + 0x23) = 0;
+      *(undefined4 *)(puVar12 + 0x2f) = 1;
+      *(undefined4 *)(puVar12 + 0x2b) = 1;
     }
-    *(undefined1 **)(this_01 + 0x21e8) = puVar11;
-    if (puVar11 != (undefined1 *)0x0) {
-      uVar13 = 0;
-      cVar20 = '\x01';
-      uVar12 = 0x10;
-      iVar21 = 1;
-      iVar4 = FUN_006bf9f0(DAT_008075a8,0x112,0x38,0x205,0x104);
-      uVar12 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21e8),2,0x112,0x38,iVar4,iVar21,uVar12,cVar20,
-                            uVar13);
-      if (uVar12 != 0) {
+    *(undefined1 **)(this_01 + 0x21e8) = puVar12;
+    if (puVar12 != (undefined1 *)0x0) {
+      uVar14 = 0;
+      cVar21 = '\x01';
+      uVar13 = 0x10;
+      iVar22 = 1;
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x112,0x38,0x205,0x104);
+      uVar13 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21e8),2,0x112,0x38,iVar4,iVar22,uVar13,cVar21,
+                            uVar14);
+      if (uVar13 != 0) {
         iVar4 = *(int *)(this_01 + 0x21e8);
         *(undefined1 *)(iVar4 + 2) = 1;
         *(undefined4 *)(iVar4 + 0x17) = *(undefined4 *)(iVar4 + 0x13);
         if (-1 < (int)*(uint *)(*(int *)(this_01 + 0x21e8) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21e8) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21e8) + 3));
         }
         if (*(uint *)(this_01 + 0x1c6f) != 0xffffffff) {
           FUN_006b3af0(*(int **)(this_01 + 0x1cb3),*(uint *)(this_01 + 0x1c6f));
@@ -794,11 +797,11 @@ void thunk_FUN_005c29b0(char param_1)
         if (*(uint *)(this_01 + 0x1d91) != 0xffffffff) {
           FUN_006b3af0(*(int **)(this_01 + 0x1dd5),*(uint *)(this_01 + 0x1d91));
         }
-        pSVar17 = this_01 + 0x20cc;
+        pSVar18 = this_01 + 0x20cc;
         iVar4 = 10;
         do {
-          FUN_006b3af0(DAT_008075a8,*(uint *)pSVar17);
-          pSVar17 = pSVar17 + 4;
+          FUN_006b3af0(DAT_008075a8,*(uint *)pSVar18);
+          pSVar18 = pSVar18 + 4;
           iVar4 = iVar4 + -1;
         } while (iVar4 != 0);
       }
@@ -811,42 +814,42 @@ void thunk_FUN_005c29b0(char param_1)
   if (this_01[0x21e3] != (SettMapTy)0x0) {
     FUN_006b2330((uint)DAT_008075a8,&uStack_8,0x32,0x403099,0xf9,0x123,
                  *(int *)(this_01 + 0x1a5b) + 0x140);
-    FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,10,0xb4);
-    puVar11 = (undefined1 *)FUN_0072e530(0x33);
-    if (puVar11 == (undefined1 *)0x0) {
-      puVar11 = (undefined1 *)0x0;
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uStack_8,0xffffffff,10,0xb4);
+    puVar12 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (puVar12 == (undefined1 *)0x0) {
+      puVar12 = (undefined1 *)0x0;
     }
     else {
-      puVar11[2] = 1;
-      *puVar11 = 0;
-      *(undefined4 *)(puVar11 + 3) = 0xffffffff;
-      puVar11[1] = 2;
-      *(undefined4 *)(puVar11 + 7) = 0;
-      *(undefined4 *)(puVar11 + 0xb) = 0;
-      *(undefined4 *)(puVar11 + 0xf) = 0;
-      *(undefined4 *)(puVar11 + 0x1b) = 1;
-      *(undefined4 *)(puVar11 + 0x13) = 1;
-      *(undefined4 *)(puVar11 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar11 + 0x27) = 0;
-      *(undefined4 *)(puVar11 + 0x23) = 0;
-      *(undefined4 *)(puVar11 + 0x2f) = 1;
-      *(undefined4 *)(puVar11 + 0x2b) = 1;
+      puVar12[2] = 1;
+      *puVar12 = 0;
+      *(undefined4 *)(puVar12 + 3) = 0xffffffff;
+      puVar12[1] = 2;
+      *(undefined4 *)(puVar12 + 7) = 0;
+      *(undefined4 *)(puVar12 + 0xb) = 0;
+      *(undefined4 *)(puVar12 + 0xf) = 0;
+      *(undefined4 *)(puVar12 + 0x1b) = 1;
+      *(undefined4 *)(puVar12 + 0x13) = 1;
+      *(undefined4 *)(puVar12 + 0x17) = 0xffffffff;
+      *(undefined4 *)(puVar12 + 0x27) = 0;
+      *(undefined4 *)(puVar12 + 0x23) = 0;
+      *(undefined4 *)(puVar12 + 0x2f) = 1;
+      *(undefined4 *)(puVar12 + 0x2b) = 1;
     }
-    *(undefined1 **)(this_01 + 0x21f0) = puVar11;
-    if (puVar11 != (undefined1 *)0x0) {
-      uVar13 = 0;
-      cVar20 = '\x01';
-      uVar12 = 0x10;
-      iVar21 = 1;
-      iVar4 = FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
-      uVar12 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21f0),4,10,0xb4,iVar4,iVar21,uVar12,cVar20,
-                            uVar13);
-      if (uVar12 != 0) {
+    *(undefined1 **)(this_01 + 0x21f0) = puVar12;
+    if (puVar12 != (undefined1 *)0x0) {
+      uVar14 = 0;
+      cVar21 = '\x01';
+      uVar13 = 0x10;
+      iVar22 = 1;
+      iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
+      uVar13 = HoloTy::Init(*(HoloTy **)(this_01 + 0x21f0),4,10,0xb4,iVar4,iVar22,uVar13,cVar21,
+                            uVar14);
+      if (uVar13 != 0) {
         iVar4 = *(int *)(this_01 + 0x21f0);
         *(undefined1 *)(iVar4 + 2) = 1;
         *(undefined4 *)(iVar4 + 0x17) = *(undefined4 *)(iVar4 + 0x13);
         if (-1 < (int)*(uint *)(*(int *)(this_01 + 0x21f0) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21f0) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_01 + 0x21f0) + 3));
         }
         FUN_006b3af0(DAT_008075a8,*(uint *)(this_01 + 0x1f80));
       }
@@ -888,7 +891,7 @@ void thunk_FUN_005c29b0(char param_1)
   uStack_1d1 = uVar7;
   if (*(int *)(iVar4 + 0x2e6) != 0) {
     puVar5 = auStack_44;
-    for (iVar21 = 6; iVar21 != 0; iVar21 = iVar21 + -1) {
+    for (iVar22 = 6; iVar22 != 0; iVar22 = iVar22 + -1) {
       *puVar5 = 0xffffffff;
       puVar5 = puVar5 + 1;
     }

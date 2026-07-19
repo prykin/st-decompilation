@@ -6,7 +6,7 @@ void FUN_0044e220(void)
   int iVar2;
   undefined4 *in_stack_00000014;
   
-  iVar1 = FUN_006aac70(10);
+  iVar1 = Library::DKW::LIB::FUN_006aac70(10);
   iVar2 = 0;
   do {
     *(char *)(iVar2 + iVar1) = (char)iVar2;

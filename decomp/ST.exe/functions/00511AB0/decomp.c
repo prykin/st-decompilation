@@ -25,7 +25,7 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pHVar3 = local_c;
     if (iVar4 == 0) {
       iVar8 = 1;
@@ -51,7 +51,8 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
       iVar4 = *(int *)pHVar1;
-      FUN_006b55f0(puVar6,0,0,0,iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8));
+      Library::DKW::WGR::FUN_006b55f0
+                (puVar6,0,0,0,iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8));
       FUN_006ab060((undefined4 *)pHVar1);
       *(undefined4 **)pHVar1 = puVar6;
       g_currentExceptionFrame = local_50.previous;

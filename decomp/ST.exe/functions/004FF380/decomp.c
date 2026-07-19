@@ -51,7 +51,7 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
   local_4c = this;
-  iVar4 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_4c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_90.previous;
@@ -80,10 +80,10 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
   }
   *(undefined2 *)pCVar13 = 0;
   local_16 = *(int *)(local_4c + 0xb4b);
-  FUN_006afe40(&local_16,*(uint **)(local_4c + 0xb95));
+  Library::DKW::TBL::FUN_006afe40(&local_16,*(uint **)(local_4c + 0xb95));
   *(undefined4 *)(*(int *)(this_00 + 0xb95) + 0xc) = 0;
   *(int *)(this_00 + 0xb4b) = local_16;
-  thunk_FUN_0043beb0(DAT_007fa174,1,(int *)(this_00 + 0xb63));
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,1,(int *)(this_00 + 0xb63));
   if (local_48 != this_00[0xb63]) {
     if (DAT_00801684 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(DAT_00801684,'\0');
@@ -145,15 +145,17 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
       if (bVar3 < 0xb) {
         uVar5 = (uint)bVar3;
         if (-1 < (int)*(uint *)(this_00 + uVar5 * 4 + 0x148)) {
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + uVar5 * 4 + 0x148),0xffffffff,
-                       *(uint *)(this_00 + uVar5 * 4 + 0x3c),*(uint *)(this_00 + uVar5 * 4 + 0x94));
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + uVar5 * 4 + 0x148),0xffffffff,
+                     *(uint *)(this_00 + uVar5 * 4 + 0x3c),*(uint *)(this_00 + uVar5 * 4 + 0x94));
         }
       }
     }
     uVar5 = FUN_006b5a50(local_16,*(int *)(this_00 + 0xb95));
     if (uVar5 != 0) {
-      FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,0,0,*(int *)(this_00 + 0x958),0,0,0,
-                   *(int *)(*(int *)(this_00 + 0x958) + 4),0x3c);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(this_00 + 0x184),0,0,0,*(int *)(this_00 + 0x958),0,0,0,
+                 *(int *)(*(int *)(this_00 + 0x958) + 4),0x3c);
       uVar16 = *(undefined4 *)(*(int *)(this_00 + 0xb95) + 0xc);
       uVar6 = FUN_006b0140(0x36b9,DAT_00807618);
       wsprintfA(*(LPSTR *)(this_00 + 0x213),s__1_s_0_d_007c245c,uVar6,uVar16);
@@ -161,8 +163,9 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
                        *(int *)(*(int *)(this_00 + 0x958) + 4) + -4,0x2d);
       ccFntTy::WrTxt(*(ccFntTy **)(this_00 + 0x1b8),*(uint **)(this_00 + 0x213),-2,-1,0,-1,-1);
       if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                     *(uint *)(this_00 + 0x98));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+                   *(uint *)(this_00 + 0x98));
       }
       if ((DAT_0080874e == '\x03') && (local_2c != this_00[0xb7f])) {
         PaintEnergy(this_00,1);
@@ -236,12 +239,13 @@ LAB_004ff723:
       PaintInfoBoat(this_00);
     }
     else {
-      FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,1,0,*(int *)(this_00 + 0x958),0,1,0,0x4e,0x20
-                  );
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(this_00 + 0x184),0,1,0,*(int *)(this_00 + 0x958),0,1,0,0x4e,0x20);
       PaintName(this_00,1);
       if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                     *(uint *)(this_00 + 0x98));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+                   *(uint *)(this_00 + 0x98));
       }
     }
   }
@@ -265,20 +269,24 @@ LAB_004ff875:
   iVar4 = 0;
 LAB_004ff87a:
   if (iVar4 != 0) {
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,1,0,*(int *)(this_00 + 0x958),0,1,0,0x4e,0x20);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x184),0,1,0,*(int *)(this_00 + 0x958),0,1,0,0x4e,0x20);
     PaintName(this_00,1);
     if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                   *(uint *)(this_00 + 0x98));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+                 *(uint *)(this_00 + 0x98));
     }
   }
   if (local_2d != this_00[0xb7e]) {
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,1,0x1f,*(int *)(this_00 + 0x958),0,1,0x1f,0x4e,
-                 0x11);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x184),0,1,0x1f,*(int *)(this_00 + 0x958),0,1,0x1f,0x4e,
+               0x11);
     PaintLife(this_00,1);
     if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                   *(uint *)(this_00 + 0x98));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+                 *(uint *)(this_00 + 0x98));
     }
   }
   if (((DAT_0080874e == '\x03') && (this_00[0xb6a] == (CPanelTy)0x3)) &&
@@ -288,11 +296,13 @@ LAB_004ff87a:
   iVar4 = *(int *)(this_00 + 0xb66);
   if (((iVar4 == 7) || (iVar4 == 0x13)) || (iVar4 == 0x1b)) {
     if (*(int *)(this_00 + 0xb81) != local_2a) {
-      FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,1,0x2f,*(int *)(this_00 + 0x958),0,1,0x2f,
-                   0x4e,0x24);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(this_00 + 0x184),0,1,0x2f,*(int *)(this_00 + 0x958),0,1,0x2f,0x4e,
+                 0x24);
       if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                     *(uint *)(this_00 + 0x98));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+                   *(uint *)(this_00 + 0x98));
       }
     }
     iVar4 = *(int *)(this_00 + 0xb81);
@@ -304,8 +314,9 @@ LAB_004ff87a:
       pbVar9 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2ca),1);
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x184),10,0x30,'\x06',pbVar9);
       if (-1 < (int)*(uint *)(this_00 + 0x14c)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
-                     *(uint *)(this_00 + 0x98));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + 0x14c),0xffffffff,*(uint *)(this_00 + 0x40),
+                   *(uint *)(this_00 + 0x98));
       }
     }
     FUN_006b4170(*(int *)(this_00 + 0x184),0,0x3b,0x31,7,0x21,0);
@@ -322,8 +333,9 @@ LAB_004ff87a:
       iVar4 = 0;
     }
     uVar5 = local_8 & 0xff;
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,0x3c,0x52 - uVar5,*(int *)(this_00 + 0x28a),0,
-                 iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x184),0,0x3c,0x52 - uVar5,*(int *)(this_00 + 0x28a),0,
+               iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
     uVar5 = *(uint *)(this_00 + 0x14c);
   }
   else {
@@ -332,13 +344,15 @@ LAB_004ff87a:
         && ((local_2a._2_2_ == *(short *)(this_00 + 0xb83) &&
             (local_24 == *(short *)(this_00 + 0xb87))))) &&
        (local_20 == *(short *)(this_00 + 0xb8b))) goto LAB_004ffb91;
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x184),0,1,0x2f,*(int *)(this_00 + 0x958),0,1,0x2f,0x4e,
-                 0x24);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x184),0,1,0x2f,*(int *)(this_00 + 0x958),0,1,0x2f,0x4e,
+               0x24);
     PaintWeap(this_00,1);
     uVar5 = *(uint *)(this_00 + 0x14c);
   }
   if (-1 < (int)uVar5) {
-    FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,*(uint *)(this_00 + 0x40),*(uint *)(this_00 + 0x98));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,uVar5,0xffffffff,*(uint *)(this_00 + 0x40),*(uint *)(this_00 + 0x98));
   }
 LAB_004ffb91:
   iVar4 = 5;
@@ -359,8 +373,9 @@ LAB_004ffb91:
     if (bVar3 < 0xb) {
       uVar5 = (uint)bVar3;
       if (-1 < (int)*(uint *)(this_00 + uVar5 * 4 + 0x148)) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + uVar5 * 4 + 0x148),0xffffffff,
-                     *(uint *)(this_00 + uVar5 * 4 + 0x3c),*(uint *)(this_00 + uVar5 * 4 + 0x94));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(this_00 + uVar5 * 4 + 0x148),0xffffffff,
+                   *(uint *)(this_00 + uVar5 * 4 + 0x3c),*(uint *)(this_00 + uVar5 * 4 + 0x94));
       }
     }
   }

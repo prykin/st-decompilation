@@ -39,7 +39,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
   local_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_78;
   local_24 = this;
-  iVar2 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_24;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_78.previous;
@@ -55,8 +55,9 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     }
     return;
   }
-  this_01 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),local_24[0x24]),
-                                      param_2,1);
+  this_01 = (int *)STAllPlayersC::GetObjPtr
+                             (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),local_24[0x24]),
+                              param_2,1);
   local_18 = this_01;
   if (param_1 == 1) {
     iVar2 = (**(code **)(*this_01 + 0x2c))();
@@ -75,7 +76,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
             uVar7 = uVar7 + 1;
           } while ((int)uVar7 < iVar2);
         }
-        FUN_006ae140(*(uint **)(this_00 + 0x266),uVar7,&param_2);
+        Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x266),uVar7,&param_2);
         DistributeMD(this_00,0,*(int *)(this_00 + 0x24e),*(int *)(this_00 + 0x266),
                      *(int *)(this_00 + 0x29));
         this_01 = local_18;
@@ -201,7 +202,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       }
       puVar5 = *(uint **)(this_00 + 0x24e);
     }
-    FUN_006ae140(puVar5,uVar7,&param_2);
+    Library::DKW::TBL::FUN_006ae140(puVar5,uVar7,&param_2);
     iVar2 = *(int *)(this_00 + 0x29);
     iVar3 = *(int *)(this_00 + 0x266);
     iVar4 = *(int *)(this_00 + 0x24e);
@@ -222,7 +223,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           FUN_006acc70(*(int *)(this_00 + 0x266),uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            FUN_006ae140(*(uint **)(this_00 + 0x266),uVar7,&local_10);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x266),uVar7,&local_10);
             break;
           }
           uVar7 = uVar7 + 1;
@@ -272,7 +273,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         FUN_006acc70(*(int *)(this_00 + 0x266),uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          FUN_006ae140(*(uint **)(this_00 + 0x266),uVar8,&local_10);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x266),uVar8,&local_10);
           break;
         }
         uVar8 = uVar8 + 1;
@@ -324,7 +325,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
           FUN_006acc70(*(int *)(this_00 + 0x24e),uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            FUN_006ae140(*(uint **)(this_00 + 0x24e),uVar7,&local_10);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x24e),uVar7,&local_10);
             break;
           }
           uVar7 = uVar7 + 1;
@@ -373,7 +374,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         FUN_006acc70(*(int *)(this_00 + 0x24e),uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          FUN_006ae140(*(uint **)(this_00 + 0x24e),uVar8,&local_10);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x24e),uVar8,&local_10);
           break;
         }
         uVar8 = uVar8 + 1;

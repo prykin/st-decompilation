@@ -17,7 +17,7 @@ void FUN_00753050(int param_1,int param_2,char param_3)
       cVar1 = *pcVar4;
       pcVar4 = pcVar4 + 1;
     } while (cVar1 != '\0');
-    FUN_0072da70((undefined4 *)(pcVar3 + 1),(undefined4 *)pcVar3,~uVar2);
+    Library::MSVCRT::FUN_0072da70((undefined4 *)(pcVar3 + 1),(undefined4 *)pcVar3,~uVar2);
     *pcVar3 = param_3;
   }
   return;

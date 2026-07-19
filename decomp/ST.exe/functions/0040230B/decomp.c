@@ -288,7 +288,7 @@ LAB_0040dde1:
   FUN_006a5e90(*(undefined4 **)(iVar5 + 0x97));
   *(int *)(iVar5 + 0xa7) = *(int *)(iVar5 + 0xa7) + iStack_3c;
   *(int *)(iVar5 + 0xab) = iStack_40;
-  puVar9 = FUN_006aac10(0x10);
+  puVar9 = Library::DKW::LIB::FUN_006aac10(0x10);
   *(undefined4 **)(iVar5 + 0x97) = puVar9;
   if (puVar9 != (undefined4 *)0x0) {
     *(undefined4 *)(iVar5 + 0x9b) = 2;

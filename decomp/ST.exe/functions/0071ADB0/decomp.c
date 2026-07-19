@@ -12,12 +12,12 @@ undefined4 __cdecl FUN_0071adb0(byte *param_1,uint param_2,int param_3,char *par
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  errorCode = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (((param_3 == 0) || (param_1 == (byte *)0x0)) || (param_4 == (char *)0x0)) {
       RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfany_cpp_007f08c8,0x2d);
     }
-    FUN_006f13f0(0,param_4,param_1,param_2,(undefined4 *)0x0,param_5,(uint *)0x0);
+    cMf32::RecPut((cMf32 *)param_3,0,param_4,param_1,param_2,(undefined4 *)0x0,param_5,(uint *)0x0);
     g_currentExceptionFrame = local_48.previous;
     return 1;
   }

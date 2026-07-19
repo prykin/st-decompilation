@@ -113,7 +113,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   local_2c = (undefined4 *)0x0;
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
-  iVar7 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar6 = local_48;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_90.previous;
@@ -128,7 +128,7 @@ int __thiscall FUN_0040ae40(void *this,uint param_1,char param_2)
   iVar11 = local_8 * DAT_007fb27e;
   iVar7 = local_c * DAT_007fb278;
   if (*(short *)((int)DAT_007fb280 + (*(int *)(local_48 + 0xbb) + iVar7 + iVar11) * 2) < 0) {
-    puVar8 = (undefined4 *)FUN_006aac70(0x90);
+    puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x90);
     *(undefined4 **)(iVar6 + 0x9f) = puVar8;
     for (iVar7 = 0x24; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar8 = 0xffffffff;
@@ -258,7 +258,7 @@ joined_r0x0040b258:
     }
 LAB_0040b481:
     if (puVar16 == (undefined1 *)0x0) goto LAB_0040b56a;
-    puVar8 = (undefined4 *)FUN_006aac70(0x90);
+    puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x90);
     *(undefined4 **)(iVar6 + 0x9f) = puVar8;
     for (iVar7 = 0x24; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar8 = 0xffffffff;
@@ -290,7 +290,7 @@ LAB_0040b56a:
                          (int)*(short *)(iVar6 + 0x4b),*(int *)(iVar6 + 0xbb),*(int *)(iVar6 + 0xbf)
                          ,*(int *)(iVar6 + 0xc3));
     *(int *)(iVar6 + 0xaf) = iVar7;
-    local_28 = FUN_006aac10(0x2ae);
+    local_28 = Library::DKW::LIB::FUN_006aac10(0x2ae);
     sVar1 = *(short *)(iVar6 + 0x47);
     local_10 = (undefined1 *)((int)local_28 + 0x156);
     iVar7 = 2;
@@ -375,17 +375,19 @@ LAB_0040b56a:
       local_24 = 4;
     }
     local_24 = local_24 | 1;
-    psVar10 = FUN_006a9190((int)DAT_007fb280,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
-                           (short *)(int)*(short *)(iVar6 + 0x47),
-                           (short *)(int)*(short *)(iVar6 + 0x49),
-                           (short *)(int)*(short *)(iVar6 + 0x4b),*(short **)(iVar6 + 0xbb),
-                           *(short **)(iVar6 + 0xbf),*(short **)(iVar6 + 0xc3),
-                           *(int *)(iVar6 + 0xb7),(int *)(iVar6 + 0xa3),local_28,psVar10,local_24);
+    psVar10 = Library::DKW::WAY::FUN_006a9190
+                        ((int)DAT_007fb280,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
+                         (short *)(int)*(short *)(iVar6 + 0x47),
+                         (short *)(int)*(short *)(iVar6 + 0x49),
+                         (short *)(int)*(short *)(iVar6 + 0x4b),*(short **)(iVar6 + 0xbb),
+                         *(short **)(iVar6 + 0xbf),*(short **)(iVar6 + 0xc3),*(int *)(iVar6 + 0xb7),
+                         (int *)(iVar6 + 0xa3),local_28,psVar10,local_24);
     *(short **)(iVar6 + 0x9f) = psVar10;
     if (psVar10 == (short *)0x0) {
       psVar10 = (short *)((int)DAT_007fb27a * (int)DAT_007fb278);
       local_40 = psVar10;
-      local_2c = (undefined4 *)FUN_006aac70((int)DAT_007fb27c * (int)psVar10 * 2);
+      local_2c = (undefined4 *)Library::DKW::LIB::FUN_006aac70((int)DAT_007fb27c * (int)psVar10 * 2)
+      ;
       iVar7 = (int)DAT_007fb27c;
       puVar8 = DAT_007fb280;
       puVar15 = local_2c;
@@ -432,12 +434,13 @@ LAB_0040b56a:
           local_1c = local_1c + 1;
         } while (local_1c <= local_34);
       }
-      psVar10 = FUN_006a8270((int)local_2c,(int)DAT_007fb278,(int)DAT_007fb27a,
-                             (undefined4 *)(int)DAT_007fb27c,(short *)(int)*(short *)(iVar6 + 0x47),
-                             (short *)(int)*(short *)(iVar6 + 0x49),
-                             (short *)(int)*(short *)(iVar6 + 0x4b),*(short **)(iVar6 + 0xbb),
-                             *(short **)(iVar6 + 0xbf),*(short **)(iVar6 + 0xc3),
-                             *(int *)(iVar6 + 0xb7),(int *)(iVar6 + 0xa3),local_24);
+      psVar10 = Library::DKW::WAY::FUN_006a8270
+                          ((int)local_2c,(int)DAT_007fb278,(int)DAT_007fb27a,
+                           (undefined4 *)(int)DAT_007fb27c,(short *)(int)*(short *)(iVar6 + 0x47),
+                           (short *)(int)*(short *)(iVar6 + 0x49),
+                           (short *)(int)*(short *)(iVar6 + 0x4b),*(short **)(iVar6 + 0xbb),
+                           *(short **)(iVar6 + 0xbf),*(short **)(iVar6 + 0xc3),
+                           *(int *)(iVar6 + 0xb7),(int *)(iVar6 + 0xa3),local_24);
       *(short **)(iVar6 + 0x9f) = psVar10;
     }
     FUN_006ab060(&local_28);

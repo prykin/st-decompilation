@@ -125,7 +125,7 @@ LAB_00629242:
   IStack_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_70;
   pSStack_1c = this;
-  iVar9 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar9 != 0) {
     g_currentExceptionFrame = IStack_70.previous;
     iVar11 = ReportDebugMessage(s_E____titans_nick_to_Part_Cpp_007d1354,0x2ac,0,iVar9,&DAT_007a4ccc,

@@ -65,12 +65,12 @@ longlong FUN_0074d786(uint param_1,uint param_2,uint param_3,uint param_4,uint p
     bVar4 = 0;
   }
   bVar2 = (bool)(bVar4 ^ bVar3);
-  uVar12 = __allmul(uVar9,0,local_c,0);
-  lVar13 = __allmul(local_8,0,uVar9,0);
-  lVar14 = __allmul(local_10,0,local_c,0);
+  uVar12 = Library::MSVCRT::__allmul(uVar9,0,local_c,0);
+  lVar13 = Library::MSVCRT::__allmul(local_8,0,uVar9,0);
+  lVar14 = Library::MSVCRT::__allmul(local_10,0,local_c,0);
   uVar1 = lVar14 + lVar13 + (uVar12 >> 0x20);
   uVar9 = (uint)uVar1;
-  lVar13 = __allmul(local_8,0,local_10,0);
+  lVar13 = Library::MSVCRT::__allmul(local_8,0,local_10,0);
   local_34 = (uint)uVar12;
   uVar1 = lVar13 + (uVar1 >> 0x20);
   local_28 = (uint)(uVar1 >> 0x20);
@@ -118,16 +118,16 @@ LAB_0074d94d:
   }
   if (uVar1 < CONCAT44(uVar5,param_3)) {
     if (uVar1 == 0) {
-      lVar13 = __aulldiv(local_34,uVar9,param_3,uVar5);
+      lVar13 = Library::MSVCRT::__aulldiv(local_34,uVar9,param_3,uVar5);
       if (bVar2) {
         lVar13 = CONCAT44(-((int)((ulonglong)lVar13 >> 0x20) + (uint)((int)lVar13 != 0)),
                           -(int)lVar13);
       }
     }
     else if (uVar5 == 0) {
-      lVar14 = __aulldiv(uVar9,(uint)uVar1,param_3,0);
-      uVar15 = __aullrem(uVar9,(uint)uVar1,param_3,0);
-      lVar13 = __aulldiv(local_34,(uint)uVar15,param_3,0);
+      lVar14 = Library::MSVCRT::__aulldiv(uVar9,(uint)uVar1,param_3,0);
+      uVar15 = Library::MSVCRT::__aullrem(uVar9,(uint)uVar1,param_3,0);
+      lVar13 = Library::MSVCRT::__aulldiv(local_34,(uint)uVar15,param_3,0);
       lVar13 = lVar13 + (lVar14 << 0x20);
       if (bVar2) {
         lVar13 = CONCAT44(-((int)((ulonglong)lVar13 >> 0x20) + (uint)((int)lVar13 != 0)),
@@ -137,14 +137,14 @@ LAB_0074d94d:
     else {
       param_8 = 0x40;
       do {
-        lVar13 = __allshl(1,iVar8);
-        lVar14 = __allshl(1,local_28);
+        lVar13 = Library::MSVCRT::__allshl(1,iVar8);
+        lVar14 = Library::MSVCRT::__allshl(1,local_28);
         local_28 = (uint)((ulonglong)lVar14 >> 0x20);
         uVar9 = (uint)lVar14;
         if ((uVar12 & 0x8000000000000000) != 0) {
           uVar9 = uVar9 + 1;
         }
-        uVar12 = __allshl(1,(int)(uVar12 >> 0x20));
+        uVar12 = Library::MSVCRT::__allshl(1,(int)(uVar12 >> 0x20));
         if ((uVar5 <= local_28) && ((uVar5 < local_28 || (param_3 <= uVar9)))) {
           local_28 = (local_28 - uVar5) - (uint)(uVar9 < param_3);
           lVar13 = lVar13 + 1;

@@ -58,11 +58,11 @@ undefined4 __thiscall thunk_FUN_006164e0(void *this,int *param_1,int *param_2,in
       fVar8 = thunk_FUN_00616400((int)this,iStack_10,iStack_14,iStack_18);
       if (fVar8 != (float10)_DAT_0079034c) {
         sVar1 = *(short *)((int)this + 0x25a);
-        lVar9 = __ftol();
+        lVar9 = Library::MSVCRT::__ftol();
         iStack_8 = (int)*(short *)((int)this + 0x25c);
-        lVar10 = __ftol();
+        lVar10 = Library::MSVCRT::__ftol();
         iStack_c = (int)*(short *)((int)this + 0x25e);
-        lVar11 = __ftol();
+        lVar11 = Library::MSVCRT::__ftol();
         iVar2 = FUN_006acf0d((int)sVar1,iStack_8,iStack_c,iStack_10,iStack_14,iStack_18);
         iVar2 = (iVar2 << 3) / *(int *)((int)this + 0x288);
         if (iVar2 != 0) {

@@ -1,4 +1,4 @@
-FUN_004653b0:
+STBoatC::BackAttack:
 004653B0  55                        PUSH EBP
 004653B1  8B EC                     MOV EBP,ESP
 004653B3  51                        PUSH ECX

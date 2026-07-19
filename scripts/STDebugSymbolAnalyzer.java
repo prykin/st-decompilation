@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
@@ -35,6 +36,8 @@ import ghidra.program.util.DefinedStringIterator;
 public class STDebugSymbolAnalyzer extends GhidraScript {
     private static final Pattern METHOD = Pattern.compile(
         "^[A-Za-z_~][A-Za-z0-9_~<>]*(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+$");
+    private static final Pattern METHOD_PREFIX = Pattern.compile(
+        "^([A-Za-z_~][A-Za-z0-9_~<>]*(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+)(?=$|\\s|[-:(])");
     private static final Pattern SOURCE = Pattern.compile(
         "(?i)^[A-Za-z]:\\\\.*\\.(?:c|cc|cpp|cxx|h|hh|hpp|hxx)$");
 
@@ -56,7 +59,8 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         for (Data data : DefinedStringIterator.forProgram(currentProgram)) {
             monitor.checkCancelled();
             String value = stringValue(data);
-            if (!METHOD.matcher(value).matches() && !SOURCE.matcher(value).matches()) {
+            String recoveredMethod = methodValue(value);
+            if (recoveredMethod == null && !SOURCE.matcher(value).matches()) {
                 continue;
             }
             ReferenceIterator refs = currentProgram.getReferenceManager()
@@ -69,9 +73,9 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
                 }
                 FunctionEvidence item = evidence.computeIfAbsent(function.getEntryPoint(),
                     ignored -> new FunctionEvidence(function));
-                if (METHOD.matcher(value).matches()) {
-                    item.methods.add(value);
-                    item.methodRefs.put(value, ref.getFromAddress());
+                if (recoveredMethod != null) {
+                    item.methods.add(recoveredMethod);
+                    item.methodRefs.put(recoveredMethod, ref.getFromAddress());
                 }
                 else {
                     item.sources.add(value);
@@ -88,13 +92,11 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
 
         for (FunctionEvidence item : evidence.values()) {
             monitor.checkCancelled();
-            if (item.methods.size() != 1) {
-                if (!item.methods.isEmpty()) {
-                    conflicts.add(conflictJson(item, "multiple_method_strings"));
-                }
+            String qualified = selectMethod(item);
+            if (qualified == null) {
+                if (!item.methods.isEmpty()) conflicts.add(conflictJson(item, "multiple_method_strings"));
                 continue;
             }
-            String qualified = item.methods.iterator().next();
             int split = qualified.lastIndexOf("::");
             String owner = qualified.substring(0, split);
             String method = qualified.substring(split + 2);
@@ -117,6 +119,15 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
         writeSummary(dir.resolve("summary.txt"), proposals, conflicts.size());
         println("Debug-symbol analysis complete: " + dir);
         println("Proposals: " + proposals.size() + ", conflicts: " + conflicts.size());
+    }
+
+    private String selectMethod(FunctionEvidence item) {
+        if (item.methods.size() == 1) return item.methods.iterator().next();
+        // Makes the analyzer idempotent after proposals have already been applied. Diagnostic
+        // strings inside a method often mention field-like helpers such as Class::Invalid.
+        String current = item.function.getName(true);
+        if (item.methods.contains(current)) return current;
+        return null;
     }
 
     private File outputDirectory() throws Exception {
@@ -184,6 +195,12 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
                 .replace("\\\\", "\\").replace("\\\"", "\"");
         }
         return representation;
+    }
+
+    private static String methodValue(String value) {
+        if (METHOD.matcher(value).matches()) return value;
+        Matcher matcher = METHOD_PREFIX.matcher(value);
+        return matcher.find() ? matcher.group(1) : null;
     }
 
     private String conflictJson(FunctionEvidence item, String reason) {

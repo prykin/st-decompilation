@@ -25,7 +25,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_8 = this;
-  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_8;
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -47,14 +47,14 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
       this_00[0x24] = *(STGroupC *)(iVar2 + 4);
       *(undefined2 *)(this_00 + 0x25) = *(undefined2 *)(iVar2 + 0x14);
       *(undefined2 *)(this_00 + 0x27) = *(undefined2 *)(iVar2 + 0x18);
-      puVar3 = FUN_006ae310((uint *)0x0,5,2,5,0x4045c5);
+      puVar3 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,5,2,5,0x4045c5);
       *(uint **)(this_00 + 0x29) = puVar3;
       iStack_c = *(int *)(iVar2 + 0x1c);
       uVar6 = extraout_var_01;
       if (0 < iStack_c) {
         puVar8 = (undefined4 *)(iVar2 + 0x24);
         do {
-          FUN_006ae140(*(uint **)(this_00 + 0x29),uVar7,puVar8);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x29),uVar7,puVar8);
           uVar7 = uVar7 + 1;
           puVar8 = puVar8 + 1;
           uVar6 = extraout_var_02;

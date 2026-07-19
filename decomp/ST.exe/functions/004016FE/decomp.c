@@ -17,7 +17,7 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pMStack_c = this;
-  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = pMStack_c;
   if (iVar3 == 0) {
     if ((param_2 != 0) && (uVar4 = (uint)(param_1 * 0x28) / param_2, uVar4 != 0)) {

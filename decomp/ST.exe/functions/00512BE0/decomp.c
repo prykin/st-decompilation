@@ -64,7 +64,7 @@ void FUN_00512be0(int param_1)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8c4[0] = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8c4[0] = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (local_8c4[0] == 0) {
     local_8c4[1] = 2;
     local_8a4 = *(int *)((int)local_8 + 0x3c) + 0x21;

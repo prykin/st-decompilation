@@ -6,7 +6,7 @@ void __fastcall FUN_004eef20(int param_1)
   int iVar2;
   
   if (*(uint **)(param_1 + 0x28a) != (uint *)0x0) {
-    FUN_00710560(*(uint **)(param_1 + 0x28a));
+    ccFntTy::operator((ccFntTy *)param_1,*(uint **)(param_1 + 0x28a));
     *(undefined4 *)(param_1 + 0x28a) = 0;
   }
   if (*(uint *)(param_1 + 0x292) != 0) {

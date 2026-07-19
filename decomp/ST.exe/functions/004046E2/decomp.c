@@ -86,14 +86,14 @@ LAB_00690763:
     IStack_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_98;
     pAStack_c = this;
-    iVar7 = __setjmp3(IStack_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar7 = Library::MSVCRT::__setjmp3(IStack_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_01 = pAStack_c;
     if (iVar7 == 0) {
-      if (DAT_007fa174 == 0) {
+      if (DAT_007fa174 == (STAllPlayersC *)0x0) {
         uVar8 = 0;
       }
       else {
-        uVar8 = thunk_FUN_0042b620((uint)(byte)pAStack_c[0x24],uStack_10,1);
+        uVar8 = STAllPlayersC::GetObjPtr(DAT_007fa174,(uint)(byte)pAStack_c[0x24],uStack_10,1);
       }
       if ((uVar8 != 0) && (iVar7 = thunk_FUN_0068e290(this_01,*(short *)(uVar8 + 0x30)), iVar7 != 0)
          ) {
@@ -136,7 +136,8 @@ LAB_00690763:
                   _uStack_1c = CONCAT22(*(undefined2 *)(iVar7 + 0x7d),
                                         *(undefined2 *)(*(int *)(iVar10 + 4) + 0x7d));
                   uStack_18 = CONCAT22(*(undefined2 *)(iVar7 + 0x7b),(short)uStack_10);
-                  FUN_006ae1c0(*(uint **)(pAStack_c + 0xc9),(undefined4 *)&uStack_1c);
+                  Library::DKW::TBL::FUN_006ae1c0
+                            (*(uint **)(pAStack_c + 0xc9),(undefined4 *)&uStack_1c);
                   g_currentExceptionFrame = IStack_98.previous;
                   return;
                 }

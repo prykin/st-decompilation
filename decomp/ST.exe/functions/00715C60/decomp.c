@@ -35,7 +35,7 @@ SpriteClassTy::SetImagesReg
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar5 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -74,9 +74,10 @@ SpriteClassTy::SetImagesReg
   case 0x81:
     puVar6 = FUN_00709af0(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
     *(ushort **)(pSVar4 + 0x51) = puVar6;
-    FUN_006b2930(*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,
-                 (undefined4 *)(int)*(short *)((int)puVar6 + 0x23),(int *)((int)puVar6 + 0x2d),
-                 0x8000000,(int)*(short *)((int)puVar6 + 0x29),(int)*(short *)((int)puVar6 + 0x2b));
+    Library::DKW::DDX::FUN_006b2930
+              (*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,
+               (undefined4 *)(int)*(short *)((int)puVar6 + 0x23),(int *)((int)puVar6 + 0x2d),
+               0x8000000,(int)*(short *)((int)puVar6 + 0x29),(int)*(short *)((int)puVar6 + 0x2b));
     iVar5 = *(int *)(pSVar4 + 0x51);
     *(int *)(pSVar4 + 0xc) = (int)*(short *)(iVar5 + 0x23);
     *(int *)(pSVar4 + 0x24) = (int)*(short *)(iVar5 + 0x29);
@@ -85,9 +86,10 @@ SpriteClassTy::SetImagesReg
   case 8:
     puVar6 = FUN_00709af0(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
     *(ushort **)(pSVar4 + 0x59) = puVar6;
-    FUN_006b2930(*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),(int)(short)*puVar6,
-                 (undefined4 *)(int)(short)puVar6[1],(int *)(puVar6 + 6),0x4000000,
-                 (int)(short)puVar6[2],(int)(short)puVar6[3]);
+    Library::DKW::DDX::FUN_006b2930
+              (*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),(int)(short)*puVar6,
+               (undefined4 *)(int)(short)puVar6[1],(int *)(puVar6 + 6),0x4000000,
+               (int)(short)puVar6[2],(int)(short)puVar6[3]);
     psVar2 = *(short **)(pSVar4 + 0x59);
     *(int *)(pSVar4 + 0xc) = (int)psVar2[1];
     *(int *)(pSVar4 + 0x18) = (int)*psVar2;
@@ -98,8 +100,9 @@ SpriteClassTy::SetImagesReg
   case 0x1e:
     puVar6 = FUN_00709af0(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
     *(ushort **)(pSVar4 + 0x55) = puVar6;
-    FUN_006b2930(*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,(undefined4 *)(int)(short)*puVar6,
-                 (int *)(puVar6 + 5),0x8000000,(int)(short)puVar6[3],(int)(short)puVar6[4]);
+    Library::DKW::DDX::FUN_006b2930
+              (*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,(undefined4 *)(int)(short)*puVar6,
+               (int *)(puVar6 + 5),0x8000000,(int)(short)puVar6[3],(int)(short)puVar6[4]);
     psVar2 = *(short **)(pSVar4 + 0x55);
     *(int *)(pSVar4 + 0xc) = (int)*psVar2;
     *(int *)(pSVar4 + 0x24) = (int)psVar2[3];

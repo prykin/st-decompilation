@@ -45,7 +45,7 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
   pCStack_20 = this;
-  iVar4 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_20;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_64.previous;
@@ -287,9 +287,10 @@ switchD_00506214_caseD_2:
         iVar4 = 0;
       }
       uVar5 = (uint)pCStack_10 & 0xff;
-      FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,UStack_8 + 0x37,0x7e - uVar5,
-                   *(int *)(this_00 + 0x28a),0,iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5
-                   ,5,uVar5);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(this_00 + 0x194),0,UStack_8 + 0x37,0x7e - uVar5,
+                 *(int *)(this_00 + 0x28a),0,iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5
+                 ,uVar5);
       pbVar6 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2ca),1);
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),UVar13 + 5,0x5c,'\x06',pbVar6);
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1b8),*(int *)(this_00 + 0x194),0,UVar13 + 2,0x52,
@@ -319,8 +320,8 @@ switchD_00506214_caseD_2:
         pCVar14 = pCVar14 + 1;
         pCVar17 = pCVar17 + 1;
       }
-      for (puVar8 = FUN_0072e560((uint *)(this_00 + 0x1e1),'\n'); puVar8 != (uint *)0x0;
-          puVar8 = FUN_0072e560(puVar8,'\n')) {
+      for (puVar8 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e1),'\n');
+          puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
         *(undefined1 *)puVar8 = 0x20;
       }
       goto LAB_00507034;
@@ -369,9 +370,10 @@ LAB_005070be:
       iVar4 = 0;
     }
     uVar5 = (uint)pbStack_1c & 0xff;
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,UStack_8 + 0x37,0x7e - uVar5,
-                 *(int *)(this_00 + 0x28a),0,iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5
-                 ,uVar5);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x194),0,UStack_8 + 0x37,0x7e - uVar5,
+               *(int *)(this_00 + 0x28a),0,iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,
+               uVar5);
     pbVar6 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2ca),1);
     thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),UVar13 + 5,0x5c,'\x06',pbVar6);
     ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1b8),*(int *)(this_00 + 0x194),0,UVar13 + 2,0x52,0xb2
@@ -401,8 +403,8 @@ LAB_005070be:
       pCVar14 = pCVar14 + 1;
       pCVar17 = pCVar17 + 1;
     }
-    for (puVar8 = FUN_0072e560((uint *)(this_00 + 0x1e1),'\n'); puVar8 != (uint *)0x0;
-        puVar8 = FUN_0072e560(puVar8,'\n')) {
+    for (puVar8 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e1),'\n');
+        puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
       *(undefined1 *)puVar8 = 0x20;
     }
     goto LAB_00507034;
@@ -448,9 +450,10 @@ LAB_005070be:
           pbStack_1c = (byte *)0x0;
         }
         uVar5 = uStack_18 & 0xff;
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x37,(iVar4 - uVar5) + 0x21,
-                     *(int *)(this_00 + 0x28a),0,(int)pbStack_1c,
-                     *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x194),0,iVar10 + 0x37,(iVar4 - uVar5) + 0x21,
+                   *(int *)(this_00 + 0x28a),0,(int)pbStack_1c,
+                   *(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,uVar5);
         pbVar6 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2ca),1);
         thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),iVar10 + 5,iVar4 + -1,'\x06',pbVar6);
         PaintDamageXY(this_00,*(int *)(this_00 + 0x194),iVar10 + 0x41,iVar4,
@@ -769,9 +772,10 @@ LAB_00507784:
       iVar4 = 0;
     }
     uVar5 = (uint)pbStack_1c & 0xff;
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x194),0,UStack_8 + 0x37,0x7e - uVar5,
-                 *(int *)(this_00 + 0x28a),0,iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5
-                 ,uVar5);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x194),0,UStack_8 + 0x37,0x7e - uVar5,
+               *(int *)(this_00 + 0x28a),0,iVar4,*(int *)(*(int *)(this_00 + 0x28a) + 8) - uVar5,5,
+               uVar5);
     pbVar6 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x2ca),1);
     thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),UVar13 + 5,0x5c,'\x06',pbVar6);
     ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1b8),*(int *)(this_00 + 0x194),0,UVar13 + 2,0x52,0xb2
@@ -799,8 +803,8 @@ LAB_00507784:
       pCVar14 = pCVar14 + 1;
       pCVar17 = pCVar17 + 1;
     }
-    for (puVar8 = FUN_0072e560((uint *)(this_00 + 0x1e1),'\n'); puVar8 != (uint *)0x0;
-        puVar8 = FUN_0072e560(puVar8,'\n')) {
+    for (puVar8 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e1),'\n');
+        puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
       *(undefined1 *)puVar8 = 0x20;
     }
 LAB_00507034:
@@ -821,8 +825,9 @@ switchD_00506878_caseD_3b:
   PaintIDSObj(this_00);
 switchD_00506377_caseD_df:
   if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
-                 *(uint *)(this_00 + 0xa8));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+               *(uint *)(this_00 + 0xa8));
   }
   g_currentExceptionFrame = IStack_64.previous;
   return;

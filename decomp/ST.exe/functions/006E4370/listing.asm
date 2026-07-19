@@ -1,4 +1,4 @@
-FUN_006e4370:
+AppClassTy::DecodeMessage:
 006E4370  55                        PUSH EBP
 006E4371  8B EC                     MOV EBP,ESP
 006E4373  83 EC 68                  SUB ESP,0x68

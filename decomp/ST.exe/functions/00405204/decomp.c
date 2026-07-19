@@ -34,13 +34,13 @@ thunk_FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *par
   puStack_c = (undefined4 *)0x0;
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
-  piVar3 = (int *)__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  piVar3 = (int *)Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   piStack_18 = piVar3;
   if (piVar3 == (int *)0x0) {
     iStack_10 = param_3;
     if (((*(char *)(param_1 + 6) == '\x02') && (*(int *)((int)param_1 + 0xc2) != 0)) &&
        (iVar7 = *(int *)(*(int *)((int)param_1 + 0xc2) + 0xc), iVar7 != 0)) {
-      puStack_c = FUN_006aac10(iVar7 << 2);
+      puStack_c = Library::DKW::LIB::FUN_006aac10(iVar7 << 2);
       iVar7 = *(int *)((int)param_1 + 0xc2);
       uVar13 = 0;
       if (0 < *(int *)(iVar7 + 0xc)) {
@@ -101,7 +101,7 @@ thunk_FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *par
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
     *param_4 = iVar9 + 299U;
-    puVar4 = FUN_006aac10(iVar9 + 299U);
+    puVar4 = Library::DKW::LIB::FUN_006aac10(iVar9 + 299U);
     puVar8 = param_1;
     puVar14 = puVar4;
     for (iVar7 = 0x4a; iVar7 != 0; iVar7 = iVar7 + -1) {

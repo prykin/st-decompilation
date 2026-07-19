@@ -83,13 +83,13 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             fVar23 = fVar23 * (float10)*(float *)((int)this + 0x91);
             fsin(fVar23);
             fcos(fVar22 * (float10)*(float *)((int)this + 0x8d));
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             fsin(extraout_ST1);
             *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             fcos((float10)(float)fVar23);
             *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
           }
           uVar14 = uVar14 + 1;
@@ -126,12 +126,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             fsin(fVar24);
             fcos(fVar25);
             fsin(fVar25);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             fcos((float10)(float)fVar24);
             *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
           }
           iStack_18 = iStack_18 + 2;
@@ -156,12 +156,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             fsin(fVar24);
             fcos(fVar25);
             fsin(fVar25);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar15 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             fcos((float10)(float)fVar24);
             *(int *)(iVar15 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar15 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
           }
           uStack_14 = uStack_14 + 1;
@@ -260,12 +260,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             fsin(fVar25);
             fcos(fVar24);
             fsin(fVar24);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             fcos(extraout_ST0);
             *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
             fVar25 = extraout_ST0_00;
           }
@@ -311,7 +311,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             *(undefined4 *)(iVar15 + 8) = 1;
             *(float *)(iVar15 + 0x21) = *(float *)((int)this + 0x41) - fVar1;
           }
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           iVar15 = (int)lVar26;
           fVar1 = (float)(extraout_ST0_01 - (float10)iVar15 * (float10)*(float *)((int)this + 0x75))
           ;
@@ -464,12 +464,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin((float10)fVar1);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar15 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)fVar1);
               *(int *)(iVar15 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar15 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
             }
             uVar11 = uVar11 + 1;
@@ -549,7 +549,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
           }
           *(float *)((int)this + 0x7d) =
                *(float *)((int)this + 0x75) * _DAT_007904fc * _DAT_00790784;
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           *(undefined4 *)((int)this + 0x2d) = 2;
           *(float *)((int)this + 0x81) = (float)(extraout_ST0_02 / (float10)(int)lVar26);
           fVar6 = _DAT_0079c5a4;
@@ -558,7 +558,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = fVar1;
           }
           else {
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(float *)((int)this + 0x79) = fVar1 - (float)((int)lVar26 << 1) * _DAT_0079d1a4;
           }
         }
@@ -574,12 +574,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin((float10)fVar6);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)fVar6);
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
             }
             uVar14 = uVar14 + 1;
@@ -649,12 +649,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin((float10)fVar6);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)fVar6);
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
             }
             uVar14 = uVar14 + 1;
@@ -667,11 +667,11 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = fVar1;
           }
           else {
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(float *)((int)this + 0x79) = fVar1 - (float)((int)lVar26 << 1) * _DAT_0079d1a4;
           }
           if (*(float *)((int)this + 0x65) != _DAT_0079034c) {
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             uVar14 = (int)(uint)lVar26 >> 0x1f;
             param_1 = ((uint)lVar26 ^ uVar14) - uVar14;
             if (param_1 == 0) {
@@ -696,8 +696,8 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
                         *(float *)(iVar19 + 0x21));
             *(float *)((int)this + 0x49) = fVar1;
             if (*(float *)((int)this + 0x89) < fVar1) {
-              __ftol();
-              lVar26 = __ftol();
+              Library::MSVCRT::__ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               uVar14 = (int)(uint)lVar26 >> 0x1f;
               *(float *)((int)this + 0x49) =
                    (float)(extraout_ST0_03 -
@@ -719,8 +719,8 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
                         *(float *)(iVar15 + 0x21));
             *(float *)((int)this + 0x4d) = fVar1;
             if (*(float *)((int)this + 0x89) < fVar1) {
-              __ftol();
-              lVar26 = __ftol();
+              Library::MSVCRT::__ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               uVar14 = (int)(uint)lVar26 >> 0x1f;
               *(float *)((int)this + 0x4d) =
                    (float)(extraout_ST0_04 -
@@ -897,12 +897,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin(fVar24);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar24);
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
             }
             uVar14 = uVar14 + 1;
@@ -913,7 +913,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = fVar6;
           }
           else {
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(float *)((int)this + 0x79) = fVar6 - (float)((int)lVar26 << 1) * _DAT_0079d1a4;
           }
           *(undefined4 *)((int)this + 0x2d) = 4;
@@ -942,12 +942,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin(fVar24);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar24);
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
               fVar25 = extraout_ST0_05;
             }
@@ -955,7 +955,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
           } while ((int)uVar11 < iVar15);
         }
         if (*(uint *)((int)this + 9) <= uVar14) {
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           iVar15 = (int)lVar26;
           *(undefined4 *)((int)this + 0x35) = 0;
           *(undefined4 *)((int)this + 0x2d) = 5;
@@ -969,7 +969,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = (float)extraout_ST1_02;
             return;
           }
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           *(float *)((int)this + 0x79) =
                (float)(extraout_ST0_07 - (float10)((int)lVar26 << 1) * (float10)_DAT_0079d1a4);
         }
@@ -1060,12 +1060,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin(fVar24);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar24);
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
               fVar25 = extraout_ST0_08;
             }
@@ -1077,7 +1077,7 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             *(float *)((int)this + 0x79) = (float)fVar25;
           }
           else {
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(float *)((int)this + 0x79) =
                  (float)(extraout_ST0_09 - (float10)((int)lVar26 << 1) * (float10)_DAT_0079d1a4);
           }
@@ -1108,12 +1108,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
               fsin(fVar24);
               fcos(fVar25);
               fsin(fVar25);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x8d);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               fcos((float10)(float)fVar24);
               *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x91);
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x95);
             }
             uVar11 = uVar11 + 1;
@@ -1148,12 +1148,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
             fsin((float10)fVar6);
             fcos((float10)fVar1);
             fsin((float10)fVar1);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar18 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             fcos(extraout_ST0_10);
             *(int *)(iVar18 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             *(int *)(iVar18 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
           }
           iVar19 = *(int *)((int)this + 0x1d);
@@ -1182,12 +1182,12 @@ void __thiscall thunk_FUN_00633770(void *this,int param_1,int param_2)
           fsin((float10)fVar1);
           fcos(fVar25);
           fsin(fVar25);
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           *(int *)(iVar19 + 0xd) = (int)lVar26 + *(int *)((int)this + 0x95);
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           fcos((float10)fVar1);
           *(int *)(iVar19 + 0x11) = (int)lVar26 + *(int *)((int)this + 0x99);
-          lVar26 = __ftol();
+          lVar26 = Library::MSVCRT::__ftol();
           *(int *)(iVar19 + 0x15) = (int)lVar26 + *(int *)((int)this + 0x9d);
         }
       }

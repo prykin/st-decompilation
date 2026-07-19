@@ -21,13 +21,13 @@ void __thiscall cLoadingTy::ShowScr(cLoadingTy *this,int param_1,int param_2)
   }
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     FUN_006b0a20(DAT_0080759c,(int)auStack_44c,0,0x100,0);
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pcVar2 = pcStack_8;
     FUN_006b4640((uint)DAT_0080759c,0,0,*(BITMAPINFO **)pcStack_8,(uint *)0x0);
-    FUN_006bb370((int)DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
     thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)pcVar2,param_1,param_2);
     g_currentExceptionFrame = IStack_4c.previous;
     return;

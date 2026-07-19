@@ -1,4 +1,4 @@
-FUN_006e53a0:
+SystemClassTy::FindFirstObject:
 006E53A0  55                        PUSH EBP
 006E53A1  8B EC                     MOV EBP,ESP
 006E53A3  83 EC 54                  SUB ESP,0x54

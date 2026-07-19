@@ -55,7 +55,7 @@ uint __fastcall FUN_006978c0(int param_1)
               } while ((int)uVar8 < (int)uVar6);
             }
           }
-          uVar6 = FUN_0072e6c0();
+          uVar6 = Library::MSVCRT::FUN_0072e6c0();
           uVar6 = uVar6 & 0x80000001;
           if ((int)uVar6 < 0) {
             uVar6 = (uVar6 - 1 | 0xfffffffe) + 1;
@@ -66,7 +66,7 @@ uint __fastcall FUN_006978c0(int param_1)
           }
           uVar6 = uVar8;
           if ((uVar8 != 0) && (0 < iVar9)) {
-            uVar7 = FUN_0072e6c0();
+            uVar7 = Library::MSVCRT::FUN_0072e6c0();
             uVar6 = (int)uVar7 / (iVar9 + 1);
             if (-1 < (int)uVar7 % (iVar9 + 1)) {
               uVar6 = *(uint *)((int)local_8 + 0x15);
@@ -84,8 +84,8 @@ uint __fastcall FUN_006978c0(int param_1)
                     iVar2 = *(int *)(pbVar5 + 2);
                     iVar4 = *(int *)(param_1 + 0x5833);
                     if (((*pbVar5 & 2) != 0) &&
-                       (uVar6 = FUN_0072e6c0(), (int)uVar6 % (int)(((iVar9 < 3) - 1 & 2) + 2) == 1))
-                    {
+                       (uVar6 = Library::MSVCRT::FUN_0072e6c0(),
+                       (int)uVar6 % (int)(((iVar9 < 3) - 1 & 2) + 2) == 1)) {
                       thunk_FUN_006a0c90(iVar2 % iVar4,iVar2 / iVar4,uVar3 + 1,uVar8,0xff,1,1);
                     }
                   }

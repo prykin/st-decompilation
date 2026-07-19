@@ -10,7 +10,7 @@ int FUN_0074823a(int param_1,undefined4 *param_2)
     iVar1 = -0x7fffbffd;
   }
   else {
-    this = (void *)FUN_0072e530(0x14);
+    this = (void *)Library::MSVCRT::FUN_0072e530(0x14);
     if (this == (void *)0x0) {
       puVar2 = (undefined4 *)0x0;
     }

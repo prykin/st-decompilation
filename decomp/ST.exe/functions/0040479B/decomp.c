@@ -35,7 +35,7 @@ void __thiscall thunk_FUN_0060d390(void *this,uint *param_1)
     uStack_8 = 0;
     iVar11 = *(int *)((int)this + 0x23c);
     ExceptionList = &pvStack_14;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     uStack_8 = 0xffffffff;
     uVar7 = iVar11 * 0x44;
     uVar1 = thunk_FUN_0062ca00();
@@ -67,7 +67,8 @@ void __thiscall thunk_FUN_0060d390(void *this,uint *param_1)
       } while (iVar11 < *(int *)((int)this + 0x23c));
     }
     if ((uVar7 != 0) &&
-       (puStack_3c = (undefined4 *)FUN_006aac70(uStack_30), puStack_3c != (undefined4 *)0x0)) {
+       (puStack_3c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uStack_30),
+       puStack_3c != (undefined4 *)0x0)) {
       puVar10 = *(undefined4 **)((int)this + 0x244);
       puVar12 = puStack_3c;
       for (uVar7 = *(int *)((int)this + 0x23c) * 0x11 & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {

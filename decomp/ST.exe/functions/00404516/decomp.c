@@ -203,11 +203,11 @@ LAB_006018c7:
     }
   }
   if (param_2 < 0) {
-    lVar11 = __ftol();
+    lVar11 = Library::MSVCRT::__ftol();
     iVar2 = (short)lVar11 + -1;
   }
   else {
-    lVar11 = __ftol();
+    lVar11 = Library::MSVCRT::__ftol();
     iVar2 = (int)(short)lVar11;
   }
   if (iVar2 < 0x65) {

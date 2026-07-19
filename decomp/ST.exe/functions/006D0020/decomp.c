@@ -14,7 +14,7 @@ void FUN_006d0020(HDC param_1,undefined4 param_2,undefined4 param_3,int param_4,
   tagRECT local_14;
   
   pHVar2 = param_1;
-  iVar4 = FUN_006ce770((uint)param_1,&param_1);
+  iVar4 = Library::DKW::DDX::FUN_006ce770((uint)param_1,&param_1);
   iVar3 = param_8;
   if (iVar4 == 0) {
     SetTextColor(param_1,*(COLORREF *)(param_8 + 0xc));
@@ -39,7 +39,7 @@ void FUN_006d0020(HDC param_1,undefined4 param_2,undefined4 param_3,int param_4,
       pCVar6 = pCVar6 + 1;
     } while (cVar1 != '\0');
     DrawTextA(param_1,lpchText,~uVar5 - 1,&local_14,0x800);
-    FUN_006ce8c0((int)pHVar2,param_1);
+    Library::DKW::DDX::FUN_006ce8c0((int)pHVar2,param_1);
   }
   return;
 }

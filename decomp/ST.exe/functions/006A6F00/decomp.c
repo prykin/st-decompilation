@@ -79,8 +79,9 @@ LAB_006a76ae:
           }
           pbVar16 = local_10 + param_5 * 4;
           local_18 = pbVar6;
-          FUN_0072da70((undefined4 *)(pbVar6 + local_14 * 4),
-                       (undefined4 *)(pbVar6 + local_14 * 4 + -0x200),local_14 * 4 - 0x200);
+          Library::MSVCRT::FUN_0072da70
+                    ((undefined4 *)(pbVar6 + local_14 * 4),
+                     (undefined4 *)(pbVar6 + local_14 * 4 + -0x200),local_14 * 4 - 0x200);
         }
         pbVar6 = local_c;
         param_6 = 0xff;

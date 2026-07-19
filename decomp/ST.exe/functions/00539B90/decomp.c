@@ -79,11 +79,12 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   }
   local_b0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b0;
-  iVar9 = __setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar9 == 0) {
     DAT_008016e4 = local_14;
-    puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
+    puVar3 = ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
+                               (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
     *(undefined4 **)(this_00 + 0x1dd) = puVar3;
     puVar3[0x16] = 0;
     puVar3[0x17] = 0;
@@ -124,7 +125,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       puVar3 = (undefined4 *)((int)puVar3 + 1);
     }
     pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYW_007c75e4,0);
-    puVar4 = FUN_006f1ce0(1,pCVar6,piVar24,iVar9);
+    puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar24,iVar9);
     pPVar1 = this_00 + 0x1cd;
     *(ushort **)pPVar1 = puVar4;
     thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),0,0,'\x01',(byte *)puVar4);
@@ -133,7 +134,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       iVar9 = 1;
       piVar24 = (int *)0x0;
       pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYC_007c75d0,0);
-      puVar4 = FUN_006f1ce0(1,pCVar6,piVar24,iVar9);
+      puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar24,iVar9);
       *(ushort **)pPVar1 = puVar4;
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),0x20,0xa4,'\x01',(byte *)puVar4);
       cMf32::RecMemFree(DAT_00806790,(uint *)pPVar1);
@@ -141,7 +142,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     iVar9 = 1;
     piVar24 = (int *)0x0;
     pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYB_007c75bc,0);
-    puVar4 = FUN_006f1ce0(1,pCVar6,piVar24,iVar9);
+    puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar24,iVar9);
     *(ushort **)pPVar1 = puVar4;
     ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1dd),*(int *)(this_00 + 0x68),0,0x6c,2,0xf3,0xc);
     uVar19 = (DAT_0080874e != '\x03') - 1 & 5;

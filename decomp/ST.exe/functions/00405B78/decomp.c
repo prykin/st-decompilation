@@ -14,7 +14,7 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pMStack_8 = (MMObjTy *)this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pMVar2 = pMStack_8;
   if (errorCode == 0) {
     MMObjTy::DoneMMObj(pMStack_8);
@@ -47,7 +47,7 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
       FUN_006ab060((undefined4 *)(pMVar2 + 0x1cc0));
     }
     if (*(int *)(pMVar2 + 0x4d) != 0) {
-      FUN_006e3b50((undefined4 *)(pMVar2 + 0x3d));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(pMVar2 + 0x3d));
     }
     g_currentExceptionFrame = pIVar4;
     return;

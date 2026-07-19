@@ -21,7 +21,7 @@ CGenerate::CteateField
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pCStack_8 = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_8;
   if (iVar3 == 0) {
     iVar3 = param_1 * param_2;
@@ -32,11 +32,12 @@ CGenerate::CteateField
     *(int *)(pCStack_8 + 0x5837) = iVar3 / param_1;
     *(undefined4 *)(pCStack_8 + 0x583b) = param_5;
     *(undefined4 *)(pCStack_8 + 0x5847) = param_3;
-    iVar3 = FUN_006aac70(iVar3);
+    iVar3 = Library::DKW::LIB::FUN_006aac70(iVar3);
     *(int *)(pCVar2 + 0x584b) = iVar3;
-    iVar3 = FUN_006aac70(*(int *)(pCVar2 + 0x582f) * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
+    iVar3 = Library::DKW::LIB::FUN_006aac70
+                      (*(int *)(pCVar2 + 0x582f) * ((-(uint)(param_6 != 0) & 7) + 1) * 2);
     *(int *)(pCVar2 + 0x584f) = iVar3;
-    puVar4 = FUN_006ae290((uint *)0x0,10,0x1d,10);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1d,10);
     *(uint **)(pCVar2 + 0x5853) = puVar4;
     g_currentExceptionFrame = IStack_50.previous;
     if (((*(int *)(pCVar2 + 0x584b) == 0) || (*(int *)(pCVar2 + 0x584f) == 0)) ||

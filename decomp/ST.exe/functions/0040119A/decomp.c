@@ -30,7 +30,7 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   IStack_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_6c;
   pSStack_14 = this;
-  iVar3 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_6c.previous;
@@ -111,7 +111,7 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
     *param_1 = iVar3;
   }
 LAB_004212f3:
-  puStack_18 = (undefined4 *)FUN_006aac70(*param_1);
+  puStack_18 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
   *(int *)((int)puStack_18 + 0x111) = -1;
   *(undefined4 *)((int)puStack_18 + 0x115) = 0;
   *(undefined4 *)((int)puStack_18 + 0x119) = 0xffffffff;

@@ -20,7 +20,7 @@ void FUN_0075f7d0(int *param_1)
   
   iVar1 = *(int *)((int)param_1 + 0x1ba);
   local_10 = (int *)(iVar1 + 0x20);
-  iVar3 = FUN_0075f8e0((int)param_1,local_10);
+  iVar3 = Library::DKW::JPG::FUN_0075f8e0((int)param_1,local_10);
   piVar4 = (int *)(**(code **)(*param_1 + 8))(param_1,1,iVar3,param_1[0x1c]);
   local_c = 0;
   iVar5 = iVar3;

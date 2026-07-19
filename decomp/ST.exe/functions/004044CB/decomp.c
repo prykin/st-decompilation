@@ -43,7 +43,7 @@ thunk_FUN_006405f0(int param_1,undefined4 param_2,undefined4 param_3,undefined2 
   auStack_38[0] = 0x78;
   uStack_14 = param_9;
   uStack_12 = 0;
-  thunk_FUN_0054cc20(0x78,0,0,auStack_38,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x78,0,0,auStack_38,0);
   return;
 }
 

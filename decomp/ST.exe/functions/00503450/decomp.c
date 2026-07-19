@@ -66,7 +66,7 @@ void __thiscall CPanelTy::SetControlBoatSI(CPanelTy *this)
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  iVar7 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
     iVar8 = ReportDebugMessage(s_E____titans_Andrey_cpanel2_cpp_007c2524,0x29d,0,iVar7,&DAT_007a4ccc

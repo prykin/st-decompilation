@@ -12,12 +12,12 @@ undefined4 * __cdecl thunk_FUN_00648400(char *param_1,undefined4 param_2)
   pIVar2 = g_currentExceptionFrame;
   puStack_8 = (undefined4 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  exceptionCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar2);
+  exceptionCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar2);
   if (exceptionCode == 0) {
-    puStack_8 = FUN_006aac10(0x85);
+    puStack_8 = Library::DKW::LIB::FUN_006aac10(0x85);
     *(undefined4 *)((int)puStack_8 + 1) = 0x85;
     *(undefined1 *)((int)puStack_8 + 5) = 2;
-    _strncpy((char *)((int)puStack_8 + 6),param_1,0x3f);
+    Library::MSVCRT::_strncpy((char *)((int)puStack_8 + 6),param_1,0x3f);
     puVar1 = thunk_FUN_0065c9e0(param_1);
     *(undefined4 **)((int)puStack_8 + 0x4e) = puVar1;
     *(undefined4 *)((int)puStack_8 + 0x52) = param_2;

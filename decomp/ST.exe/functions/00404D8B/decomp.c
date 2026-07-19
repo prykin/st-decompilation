@@ -17,7 +17,7 @@ cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int par
   thunk_FUN_00555570((int)this);
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   this_00 = pcStack_8;
   if (errorCode == 0) {
     if (-1 < *(int *)(pcStack_8 + 0x3c)) {

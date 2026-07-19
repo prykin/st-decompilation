@@ -22,7 +22,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xd9,0,iVar2,&DAT_007a4ccc,
@@ -41,7 +41,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
   do {
     if (*(int *)pSVar3 == 0) {
       local_8 = iVar6;
-      puVar4 = (undefined4 *)FUN_006aac70(0x3e);
+      puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x3e);
       *(undefined4 **)(local_c + iVar2 * 4 + 0x1e5) = puVar4;
       if (puVar4 != (undefined4 *)0x0) {
         for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -51,7 +51,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
         *(undefined2 *)puVar4 = 0;
         iVar6 = iVar2;
         if (local_c[0x1f9] != (STRubbishC)0x0) {
-          puVar4 = (undefined4 *)FUN_0072e530(0x40);
+          puVar4 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
           if (puVar4 == (undefined4 *)0x0) {
             uVar5 = 0;
           }

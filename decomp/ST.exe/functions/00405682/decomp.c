@@ -15,7 +15,7 @@ thunk_FUN_004e20d0(void *this,int param_1,int param_2,int param_3,undefined4 par
     thunk_FUN_004e2200(this,param_1,param_2,param_4);
     if (*(int *)((int)this + 0x520) == 0) {
       *(undefined4 *)((int)this + 0x520) = 1;
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr(this,0);
     }
     uVar1 = 1;
   }

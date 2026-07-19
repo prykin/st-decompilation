@@ -1,4 +1,4 @@
-FUN_00420340:
+STSprGameObjC::LoadActFrame:
 00420340  55                        PUSH EBP
 00420341  8B EC                     MOV EBP,ESP
 00420343  83 EC 20                  SUB ESP,0x20

@@ -23,7 +23,7 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   local_8 = (ushort *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_c = this;
-  iVar3 = __setjmp3(local_54,0,unaff_ESI,pIVar6);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar6);
   pSVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = pIVar6;

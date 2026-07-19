@@ -27,7 +27,7 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar1 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     return local_10;

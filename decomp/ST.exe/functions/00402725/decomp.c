@@ -23,7 +23,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode != 0) {
     g_currentExceptionFrame = IStack_4c.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x1bb,0,errorCode,

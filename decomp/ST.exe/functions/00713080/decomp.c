@@ -28,7 +28,7 @@ char * __thiscall ccFntTy::_SarrToTxt(ccFntTy *this,char *param_1,int param_2)
   if (param_2 != 0) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if (param_1 == (char *)0x0) {
         iVar6 = 0;
@@ -54,7 +54,7 @@ LAB_007130e8:
             iVar6 = iVar6 + 1;
           } while (iVar6 < iVar3);
         }
-        param_1 = (char *)FUN_006aac10(local_c);
+        param_1 = (char *)Library::DKW::LIB::FUN_006aac10(local_c);
       }
       iVar3 = 0;
       pcVar7 = param_1;

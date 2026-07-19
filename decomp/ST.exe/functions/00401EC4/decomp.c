@@ -90,7 +90,7 @@ int __fastcall thunk_FUN_005f4fa0(void *param_1)
                 FUN_006e3210((int)DAT_00807598,
                              (*(int *)(pcVar9 + 2) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9,
                              (*(int *)(pcVar9 + 6) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9);
-                lVar10 = __ftol();
+                lVar10 = Library::MSVCRT::__ftol();
                 uVar7 = (undefined4)((ulonglong)lVar10 >> 0x20);
                 if (*(int *)(pcVar9 + 10) < (int)(short)lVar10) {
                   *pcVar9 = '\x02';

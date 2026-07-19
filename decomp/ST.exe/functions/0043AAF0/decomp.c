@@ -1,7 +1,12 @@
 
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetCamPoint */
+
 undefined4
-FUN_0043aaf0(int param_1,uint param_2,int param_3,uint param_4,int *param_5,int *param_6,
-            int *param_7,undefined4 *param_8)
+STAllPlayersC::GetCamPoint
+          (int param_1,uint param_2,int param_3,uint param_4,int *param_5,int *param_6,int *param_7,
+          undefined4 *param_8)
 
 {
   int iVar1;
@@ -38,7 +43,7 @@ FUN_0043aaf0(int param_1,uint param_2,int param_3,uint param_4,int *param_5,int 
           FUN_006acc70(param_3,local_c,&local_10);
           if ((short)local_10 != -1) {
             uVar5 = uVar5 + 1;
-            pvVar4 = (void *)thunk_FUN_0042b620(param_2,local_10,1);
+            pvVar4 = (void *)GetObjPtr(DAT_007fa174,param_2,local_10,1);
             thunk_FUN_004162b0(pvVar4,(undefined2 *)&param_1,(undefined2 *)&local_8,
                                (undefined2 *)((int)&param_4 + 2));
             iVar6 = iVar6 + param_1;
@@ -51,7 +56,7 @@ FUN_0043aaf0(int param_1,uint param_2,int param_3,uint param_4,int *param_5,int 
           do {
             FUN_006acc70(param_3,local_c,&local_10);
             if ((short)local_10 != -1) {
-              pvVar4 = (void *)thunk_FUN_0042b620(param_2,local_10,1);
+              pvVar4 = (void *)GetObjPtr(DAT_007fa174,param_2,local_10,1);
               thunk_FUN_004162b0(pvVar4,(undefined2 *)&param_1,(undefined2 *)&local_8,
                                  (undefined2 *)((int)&param_4 + 2));
               iVar3 = FUN_006acf90((int)(short)param_1,(int)(short)local_8,
@@ -109,7 +114,7 @@ LAB_0043acdb:
     if (param_1 != 0x1b8) goto LAB_0043acdb;
     uVar9 = 6;
   }
-  pvVar4 = (void *)thunk_FUN_0042b620(param_2,param_4,uVar9);
+  pvVar4 = (void *)GetObjPtr(DAT_007fa174,param_2,param_4,uVar9);
   thunk_FUN_004162b0(pvVar4,(undefined2 *)&param_1,(undefined2 *)&local_8,
                      (undefined2 *)((int)&param_4 + 2));
   if (param_5 != (int *)0x0) {

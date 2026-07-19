@@ -62,10 +62,10 @@ undefined4 __fastcall FUN_0060a000(int param_1)
                  puVar5 != (undefined4 *)0x0)) {
                 puVar5[0xb] = (float)((float10)(int)local_c * fVar6);
                 fcos((float10)(int)local_c * fVar6);
-                lVar7 = __ftol();
+                lVar7 = Library::MSVCRT::__ftol();
                 fsin(extraout_ST0);
                 puVar5[3] = (int)lVar7 + *(int *)(param_1 + 0x1e9);
-                lVar7 = __ftol();
+                lVar7 = Library::MSVCRT::__ftol();
                 puVar5[4] = (int)lVar7 + *(int *)(param_1 + 0x1ed);
                 puVar5[5] = iVar4 * local_18 + *(int *)(param_1 + 0x1f1);
                 puVar5[6] = *(undefined4 *)(param_1 + 0x1e9);
@@ -109,10 +109,10 @@ undefined4 __fastcall FUN_0060a000(int param_1)
              puVar5 != (undefined4 *)0x0)) {
             puVar5[0xb] = (float)((float10)(int)local_c * fVar6);
             fcos((float10)(int)local_c * fVar6);
-            lVar7 = __ftol();
+            lVar7 = Library::MSVCRT::__ftol();
             fsin(extraout_ST0_01);
             puVar5[3] = (int)lVar7 + *(int *)(param_1 + 0x1e9);
-            lVar7 = __ftol();
+            lVar7 = Library::MSVCRT::__ftol();
             puVar5[4] = (int)lVar7 + *(int *)(param_1 + 0x1ed);
             puVar5[5] = *(undefined4 *)(param_1 + 0x1f1);
             iVar4 = *(int *)(param_1 + 0x1e9);

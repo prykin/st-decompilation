@@ -1,2 +1,2 @@
-thunk_FUN_00556dd0:
+TraksClassTy::TraksCreateCollection:
 004048FE  E9 CD 24 15 00            JMP 0x00556dd0

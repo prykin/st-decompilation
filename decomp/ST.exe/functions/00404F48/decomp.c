@@ -17,7 +17,7 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar5 = iStack_8;
   pSVar2 = pSStack_c;
   if (iVar3 != 0) {

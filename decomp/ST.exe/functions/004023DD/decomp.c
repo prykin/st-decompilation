@@ -20,7 +20,7 @@ undefined4 * thunk_FUN_00649eb0(void)
   puStack_8 = (undefined4 *)0x0;
   puStack_10 = (undefined4 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
-  errorCode = __setjmp3(auStack_58,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_58,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
     puStack_8 = thunk_FUN_00648400(s_Default_Arbiter_007d2988,1);
     puStack_10 = thunk_FUN_0065cd10(*(undefined4 **)((int)puStack_8 + 0x4e),&uStack_14);

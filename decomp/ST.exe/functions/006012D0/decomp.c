@@ -19,7 +19,7 @@ undefined4 * __thiscall FUN_006012d0(void *this,int *param_1)
   int local_8;
   
   local_10 = 0;
-  local_c = (undefined4 *)FUN_006aac70(0x3d);
+  local_c = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x3d);
   *(undefined4 *)((int)this + 0x212) = 2;
   puVar7 = (undefined4 *)((int)this + 0x206);
   puVar9 = local_c;
@@ -50,7 +50,7 @@ undefined4 * __thiscall FUN_006012d0(void *this,int *param_1)
     local_10 = *(int *)((int)this + 0x237) * 0x1c + 4;
   }
   if (local_8 + local_10 != 0) {
-    local_c = (undefined4 *)FUN_006acf50(local_c,local_8 + 0x3d + local_10);
+    local_c = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_c,local_8 + 0x3d + local_10);
     iVar3 = 0;
     local_14 = 0;
     local_18 = 0;

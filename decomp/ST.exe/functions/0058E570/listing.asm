@@ -1,4 +1,4 @@
-FUN_0058e570:
+STSharkC::LifeShark:
 0058E570  55                        PUSH EBP
 0058E571  8B EC                     MOV EBP,ESP
 0058E573  83 EC 2C                  SUB ESP,0x2c

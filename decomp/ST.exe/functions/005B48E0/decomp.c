@@ -24,7 +24,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar7 = local_8;
   if (iVar3 == 0) {
     if (*(int *)(local_8 + 0x1acf) != 0) {
@@ -34,7 +34,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
         piVar1 = *(int **)pMVar8;
         if (piVar1 != (int *)0x0) {
           FUN_006b5f80(DAT_008075a8,*piVar1,piVar1[1],piVar1[2],piVar1[3]);
-          FUN_006c4ac0(*(int **)pMVar8);
+          Library::DKW::FLC::FUN_006c4ac0(*(int **)pMVar8);
         }
         pMVar8 = pMVar8 + 4;
         iVar3 = iVar3 + -1;

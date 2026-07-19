@@ -1,4 +1,4 @@
-FUN_0044c130:
+STAllPlayersC::GetTOBJImage:
 0044C130  55                        PUSH EBP
 0044C131  8B EC                     MOV EBP,ESP
 0044C133  81 EC 50 01 00 00         SUB ESP,0x150

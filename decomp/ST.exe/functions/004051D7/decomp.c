@@ -1,5 +1,5 @@
 
-int thunk_FUN_004c60e0(void)
+int __thiscall TLOBldMark::Create(TLOBldMark *this)
 
 {
   code *pcVar1;
@@ -7,11 +7,12 @@ int thunk_FUN_004c60e0(void)
   int iVar3;
   void *unaff_ESI;
   undefined4 auStack_48 [16];
-  undefined4 uStack_8;
+  TLOBldMark *pTStack_8;
   
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,g_currentExceptionFrame);
+  pTStack_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,g_currentExceptionFrame);
   if (iVar2 == 0) {
-    DAT_007fb2ac = uStack_8;
+    DAT_007fb2ac = pTStack_8;
     return 0;
   }
   iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x2a,0,iVar2,&DAT_007a4ccc,

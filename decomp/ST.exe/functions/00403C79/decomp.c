@@ -24,7 +24,7 @@ STAllPlayersC::ReplaceObject
   
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
-  iVar3 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_64.previous;
     if (iVar3 != -0x5001fff7) {
@@ -52,7 +52,7 @@ STAllPlayersC::ReplaceObject
           FUN_006acc70((int)puVar1,uVar6,&uStack_8);
           if ((short)uStack_8 == (short)param_2) {
             uStack_8 = param_3;
-            FUN_006ae140(puVar1,uVar6,&uStack_8);
+            Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,&uStack_8);
             break;
           }
           uVar6 = uVar6 + 1;
@@ -73,7 +73,7 @@ STAllPlayersC::ReplaceObject
           do {
             FUN_006acc70((int)apuStack_20[0],uVar7,&uStack_8);
             if ((short)uStack_8 == (short)param_2) {
-              FUN_006ae140(apuStack_20[0],uVar7,&param_3);
+              Library::DKW::TBL::FUN_006ae140(apuStack_20[0],uVar7,&param_3);
               break;
             }
             uVar7 = uVar7 + 1;

@@ -1,4 +1,4 @@
-FUN_0055a9d0:
+VisibleClassTy::VisHoleCreate:
 0055A9D0  55                        PUSH EBP
 0055A9D1  8B EC                     MOV EBP,ESP
 0055A9D3  83 EC 68                  SUB ESP,0x68

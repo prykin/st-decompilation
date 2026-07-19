@@ -6,7 +6,7 @@ void __thiscall FUN_0074df72(void *this,undefined4 param_1)
   
   puVar1 = (undefined4 *)FUN_0074e2ff((int)this + 0xc);
   if ((puVar1 == (undefined4 *)0x0) &&
-     (puVar1 = (undefined4 *)FUN_0072e530(0xc), puVar1 == (undefined4 *)0x0)) {
+     (puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0xc), puVar1 == (undefined4 *)0x0)) {
     return;
   }
   puVar1[2] = param_1;

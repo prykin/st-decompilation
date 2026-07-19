@@ -10,7 +10,7 @@ undefined4 __fastcall FUN_004dc760(int *param_1)
     if ((param_1[0x138] != 0) || (param_1[0x135] == 1)) {
       param_1[0x134] = 1;
       param_1[0x135] = 0;
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
       thunk_FUN_004c2c10((int)param_1);
       (**(code **)(*param_1 + 0x90))(4,0x339);
     }
@@ -23,7 +23,7 @@ undefined4 __fastcall FUN_004dc760(int *param_1)
         iVar1 = *(int *)(DAT_00802a38 + 0xe4);
         param_1[0x135] = 0;
         param_1[0x137] = iVar1;
-        thunk_FUN_004cabb0(0);
+        TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
         iVar1 = (**(code **)(*param_1 + 0x2c))();
         thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar1 >> 8),(char)param_1[9]),iVar1);
         if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
@@ -57,7 +57,7 @@ undefined4 __fastcall FUN_004dc760(int *param_1)
       if (9999 < iVar1 + 100) {
         param_1[0x136] = 10000;
         param_1[0x134] = 0;
-        thunk_FUN_004cabb0(0);
+        TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
         iVar1 = (**(code **)(*param_1 + 0x2c))();
         thunk_FUN_004b7710(CONCAT31((int3)((uint)iVar1 >> 8),(char)param_1[9]),iVar1);
         if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
@@ -69,7 +69,7 @@ undefined4 __fastcall FUN_004dc760(int *param_1)
     if (param_1[0x135] == 1) {
       param_1[0x134] = 1;
       param_1[0x135] = 0;
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
       thunk_FUN_004c2c10((int)param_1);
       (**(code **)(*param_1 + 0x90))(4,0x339);
       iVar1 = (**(code **)(*param_1 + 0x2c))();

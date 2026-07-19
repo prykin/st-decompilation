@@ -1,4 +1,4 @@
-FUN_006f21c0:
+cMf32::RecChk:
 006F21C0  55                        PUSH EBP
 006F21C1  8B EC                     MOV EBP,ESP
 006F21C3  81 EC 54 01 00 00         SUB ESP,0x154

@@ -57,10 +57,10 @@ undefined4 __fastcall FUN_0060dab0(int param_1)
               sVar2 = *psVar1;
               fcos((float10)*(float *)(iVar9 + 0x2c));
               sVar3 = psVar1[1];
-              lVar11 = __ftol();
+              lVar11 = Library::MSVCRT::__ftol();
               fsin((float10)*(float *)(iVar9 + 0x2c));
               *(int *)(iVar9 + 0xc) = (int)lVar11 + *(int *)(iVar9 + 0x18);
-              lVar11 = __ftol();
+              lVar11 = Library::MSVCRT::__ftol();
               *(int *)(iVar9 + 0x10) = (int)lVar11 + *(int *)(iVar9 + 0x1c);
               *(int *)(iVar9 + 0x14) = *(int *)(iVar9 + 0x20) + (int)sVar3 / (iVar7 * 0x50 + 200);
               if (iVar5 - (iVar4 * sVar2) / 10000 < *(int *)(param_1 + 0x1f9)) {

@@ -20,10 +20,10 @@ void __thiscall BldObjPanelTy::Update(BldObjPanelTy *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (errorCode == 0) {
-    thunk_FUN_0043beb0(DAT_007fa174,8,(int *)(local_8 + 0x27e));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,8,(int *)(local_8 + 0x27e));
     if (*(int *)(this_00 + (uint)(byte)this_00[0x279] * 4 + 0x27e) == 0) {
       uVar4 = 0;
     }

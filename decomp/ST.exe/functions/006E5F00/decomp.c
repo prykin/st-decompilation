@@ -1,5 +1,9 @@
 
-int FUN_006e5f00(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   SystemClassTy::GetMessage */
+
+int __thiscall SystemClassTy::GetMessage(SystemClassTy *this,int param_1)
 
 {
   code *pcVar1;
@@ -8,11 +12,12 @@ int FUN_006e5f00(int param_1)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
-  void *local_8;
+  SystemClassTy *local_8;
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
     if ((*(int *)(param_1 + 0x10) == 10) && (*(uint *)(param_1 + 0x14) != 0)) {
       FUN_006e56b0(local_8,*(uint *)(param_1 + 0x14));

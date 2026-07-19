@@ -19,7 +19,7 @@ undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
   local_c = 0;
   *(undefined4 *)((int)this + 0xb0) = *(undefined4 *)((int)this + 0xb4);
   local_8 = this;
-  local_10 = (undefined4 *)FUN_006aac70(0x98);
+  local_10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x98);
   *(undefined4 *)((int)this + 0x28) = 2;
   if (this == (void *)0x0) {
     puVar5 = (undefined4 *)0x0;
@@ -56,7 +56,7 @@ undefined4 * __thiscall FUN_0062d670(void *this,uint *param_1)
        (local_14 = thunk_FUN_0062d550(piVar2,(int *)&local_c), local_c != 0)) {
       uVar4 = *puVar1;
       *puVar1 = uVar4 + local_c;
-      local_10 = (undefined4 *)FUN_006acf50(local_10,uVar4 + local_c);
+      local_10 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_10,uVar4 + local_c);
       puVar6 = local_14;
       puVar8 = (uint *)((*puVar1 - local_c) + (int)local_10);
       for (uVar4 = local_c >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {

@@ -15,7 +15,7 @@ undefined4 __cdecl FUN_006809f0(uint *param_1)
   local_c = 0;
   local_8 = (byte *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
-  local_14 = __setjmp3(local_58,0,unaff_ESI,pIVar1);
+  local_14 = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar1);
   if (local_14 == 0) {
     local_18 = param_1[2];
     local_10 = local_14;

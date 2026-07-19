@@ -1,4 +1,4 @@
-FUN_0047bf70:
+STBoatC::BackTeleport:
 0047BF70  55                        PUSH EBP
 0047BF71  8B EC                     MOV EBP,ESP
 0047BF73  56                        PUSH ESI

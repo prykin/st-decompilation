@@ -102,7 +102,7 @@ void __cdecl FUN_00575640(short *param_1,undefined4 *param_2,short *param_3)
     } while (local_1c < *(int *)((int)psVar2 + 0x455));
   }
   if (param_3 != (short *)0x0) {
-    param_1 = (short *)FUN_006aac70(uVar10);
+    param_1 = (short *)Library::DKW::LIB::FUN_006aac70(uVar10);
     puVar11 = param_2;
     psVar9 = param_1;
     for (uVar8 = uVar10 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {

@@ -10,7 +10,7 @@ void __thiscall FUN_006ddae0(void *this,int param_1,int param_2,int param_3,unde
   *(int *)((int)this + 0x148) = param_1;
   uVar2 = param_1 + param_2 + param_3;
   *(int *)((int)this + 0x150) = param_3;
-  iVar1 = FUN_006acf50(*(undefined4 **)((int)this + 0x154),(uVar2 + 1) * 0x100);
+  iVar1 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)this + 0x154),(uVar2 + 1) * 0x100);
   *(int *)((int)this + 0x154) = iVar1;
   iVar1 = 0;
   do {

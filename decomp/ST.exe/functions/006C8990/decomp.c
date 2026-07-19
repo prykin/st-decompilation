@@ -43,7 +43,7 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
     }
     else {
       uVar8 = (uint)*local_c;
-      uVar6 = FUN_00730610(uVar8,8);
+      uVar6 = Library::MSVCRT::FUN_00730610(uVar8,8);
     }
     if (uVar6 == 0) break;
     local_c = local_c + 1;
@@ -70,7 +70,7 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
           uVar7 = (byte)PTR_DAT_007f1280[uVar8 * 2] & 4;
         }
         else {
-          uVar7 = FUN_00730610(uVar8,4);
+          uVar7 = Library::MSVCRT::FUN_00730610(uVar8,4);
           uVar9 = local_18;
           uVar6 = uStack_1c;
         }
@@ -128,7 +128,7 @@ float10 FUN_006c8990(byte *param_1,int *param_2,undefined4 *param_3)
             uVar8 = (byte)PTR_DAT_007f1280[uVar6 * 2] & 4;
           }
           else {
-            uVar8 = FUN_00730610(uVar6,4);
+            uVar8 = Library::MSVCRT::FUN_00730610(uVar6,4);
           }
           if (uVar8 == 0) {
             if (bVar2) {

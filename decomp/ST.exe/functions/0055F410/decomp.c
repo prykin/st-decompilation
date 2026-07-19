@@ -150,35 +150,36 @@ void FUN_0055f410(uint param_1,int param_2,int param_3,int param_4,int param_5,i
     DAT_00803308 = param_3 - DAT_008033c0;
     local_1b8.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_1b8;
-    iVar15 = __setjmp3(local_1b8.jumpBuffer,2,FUN_0072da21,0xffffffff);
+    iVar15 = Library::MSVCRT::__setjmp3
+                       (local_1b8.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
     local_1c = &stack0xfffffe14;
     if (iVar15 == 0) {
       local_1c = &stack0xfffffe14;
-      local_60[0] = FUN_006aac10(DAT_008033ac * 2);
-      DAT_00803380 = FUN_006aac10(DAT_008033ac * 2);
+      local_60[0] = Library::DKW::LIB::FUN_006aac10(DAT_008033ac * 2);
+      DAT_00803380 = Library::DKW::LIB::FUN_006aac10(DAT_008033ac * 2);
       local_8 = iVar15;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_a4 = &stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_84 = (int *)&stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       DAT_008032fc = &stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       DAT_008033b0 = (undefined4 *)&stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_164 = (int *)&stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_80 = (undefined4 *)&stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       DAT_00803300 = (int *)&stack0xfffffe14;
       local_1c = &stack0xfffffe14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_1c = &stack0xfffffe14;
       local_8 = 0xffffffff;
       puVar6 = (undefined4 *)&stack0xfffffe14;
@@ -211,9 +212,10 @@ void FUN_0055f410(uint param_1,int param_2,int param_3,int param_4,int param_5,i
               } while (iVar16 < (int)uVar18);
             }
             if (iVar16 < (int)uVar18) {
-              FUN_0072da70((undefined4 *)(&stack0xfffffe18 + iVar16 * 4),
-                           (undefined4 *)(&stack0xfffffe14 + iVar16 * 4),
-                           (iVar16 * 0x3fffffff + uVar18) * 4);
+              Library::MSVCRT::FUN_0072da70
+                        ((undefined4 *)(&stack0xfffffe18 + iVar16 * 4),
+                         (undefined4 *)(&stack0xfffffe14 + iVar16 * 4),
+                         (iVar16 * 0x3fffffff + uVar18) * 4);
             }
             *(int **)(&stack0xfffffe14 + iVar16 * 4) = piVar10;
             uVar18 = uVar18 + 1;
@@ -838,7 +840,7 @@ LAB_0056016e:
         local_40 = local_6c[0];
         if (local_6c[0] == (int *)0x0) {
           local_8 = 1;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           local_15c = 0;
           local_78 = 0;

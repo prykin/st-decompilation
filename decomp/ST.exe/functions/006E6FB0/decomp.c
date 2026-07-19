@@ -215,43 +215,43 @@ void __thiscall FUN_006e6fb0(void *this,int param_1,int param_2,int param_3,int 
           puVar2 = (undefined4 *)*puVar2) {
         switch(*(undefined4 *)((int)this + 0xa8)) {
         case 0:
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_18 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar4 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_8 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar3 = (int)lVar14;
           break;
         case 1:
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_18 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar4 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_8 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar3 = (int)lVar14;
           break;
         case 2:
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_18 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar4 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_8 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar3 = (int)lVar14;
           break;
         case 3:
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_18 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar4 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           local_8 = (int)lVar14;
-          lVar14 = __ftol();
+          lVar14 = Library::MSVCRT::__ftol();
           iVar3 = (int)lVar14;
           break;
         default:
@@ -316,32 +316,32 @@ switchD_006e74ad_default:
           dVar1 = ((double)(int)puVar2[2] / *(double *)((int)this + 200)) *
                   (((double)*(int *)((int)this + 0x3dc) * _DAT_0079df60) /
                   (double)(int)**(short **)((int)this + 0x280));
-          FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-          lVar14 = __ftol();
+          Library::MSVCRT::FUN_00730450(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+          lVar14 = Library::MSVCRT::__ftol();
           iVar4 = (int)lVar14;
           switch(*(undefined4 *)((int)this + 0xa8)) {
           case 0:
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             local_30 = (int)lVar14;
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             iVar3 = (int)lVar14;
             break;
           case 1:
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             local_30 = (int)lVar14;
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             iVar3 = (int)lVar14;
             break;
           case 2:
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             local_30 = (int)lVar14;
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             iVar3 = (int)lVar14;
             break;
           case 3:
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             local_30 = (int)lVar14;
-            lVar14 = __ftol();
+            lVar14 = Library::MSVCRT::__ftol();
             iVar3 = (int)lVar14;
             break;
           default:
@@ -482,47 +482,47 @@ switchD_006e74ad_default:
           if (((pbVar13[3] & 1) != 0) && ((*pbVar13 & *(byte *)((int)this + 0x418)) != 0)) {
             if (((*puVar10 & 0x800000) != 0) || (*(int *)((int)this + 0x3e0) != 0)) {
               dVar1 = (double)((float)puVar10[0x1d] / (float)*(double *)((int)this + 200));
-              FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-              lVar14 = __ftol();
+              Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+              lVar14 = Library::MSVCRT::__ftol();
               *(byte *)(puVar10 + 0x44) = (byte)lVar14;
               if (**(short **)((int)this + 0x280) <= (short)(ushort)(byte)lVar14) {
                 *(char *)(puVar10 + 0x44) = (char)**(short **)((int)this + 0x280) + -1;
               }
               dVar1 = (double)((float)puVar10[0x1e] / (float)*(double *)((int)this + 200));
-              FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-              lVar14 = __ftol();
+              Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+              lVar14 = Library::MSVCRT::__ftol();
               *(byte *)((int)puVar10 + 0x111) = (byte)lVar14;
               if (*(short *)(*(int *)((int)this + 0x280) + 2) <= (short)(ushort)(byte)lVar14) {
                 *(char *)((int)puVar10 + 0x111) = *(char *)(*(int *)((int)this + 0x280) + 2) + -1;
               }
               dVar1 = (double)((float)puVar10[0x1f] / (float)*(double *)((int)this + 0xd0));
-              FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-              lVar14 = __ftol();
+              Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+              lVar14 = Library::MSVCRT::__ftol();
               *(byte *)((int)puVar10 + 0x112) = (byte)lVar14;
               if (4 < (byte)lVar14) {
                 *(undefined1 *)((int)puVar10 + 0x112) = 4;
               }
               switch(*(undefined4 *)((int)this + 0xa8)) {
               case 0:
-                lVar14 = __ftol();
+                lVar14 = Library::MSVCRT::__ftol();
                 puVar10[0x42] = (uint)lVar14;
                 break;
               case 1:
-                lVar14 = __ftol();
+                lVar14 = Library::MSVCRT::__ftol();
                 puVar10[0x42] = (uint)lVar14;
                 break;
               case 2:
-                lVar14 = __ftol();
+                lVar14 = Library::MSVCRT::__ftol();
                 puVar10[0x42] = (uint)lVar14;
                 break;
               case 3:
-                lVar14 = __ftol();
+                lVar14 = Library::MSVCRT::__ftol();
                 puVar10[0x42] = (uint)lVar14;
                 break;
               default:
                 goto switchD_006e7e25_default;
               }
-              lVar14 = __ftol();
+              lVar14 = Library::MSVCRT::__ftol();
               puVar10[0x43] = (uint)lVar14;
 switchD_006e7e25_default:
               if ((int)puVar10[0x43] < 1) {

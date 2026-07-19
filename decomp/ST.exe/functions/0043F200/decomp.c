@@ -27,7 +27,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
   local_8 = *(int *)(local_10 + 0xc);
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar4 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_64.previous;
     iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2075,0,iVar4,&DAT_007a4ccc
@@ -40,7 +40,7 @@ uint * __thiscall STAllPlayersC::GetTOBJList(STAllPlayersC *this,char param_1,by
     RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2076);
     return (uint *)0x0;
   }
-  local_c = FUN_006ae290((uint *)0x0,0,2,1);
+  local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   iVar4 = 0;
   if (0 < local_8) {
     do {
@@ -67,7 +67,7 @@ LAB_0043f2ad:
         iVar6 = 0;
 LAB_0043f2b2:
         if (iVar6 == 0) {
-          FUN_006ae1c0(local_c,(undefined4 *)((int)piVar2 + 0x32));
+          Library::DKW::TBL::FUN_006ae1c0(local_c,(undefined4 *)((int)piVar2 + 0x32));
         }
       }
       iVar4 = iVar4 + 1;

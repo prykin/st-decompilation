@@ -1,5 +1,5 @@
 
-int thunk_FUN_00555720(void)
+int __thiscall TraksClassTy::CreateDate(TraksClassTy *this)
 
 {
   code *pcVar1;
@@ -8,7 +8,7 @@ int thunk_FUN_00555720(void)
   void *unaff_ESI;
   undefined4 auStack_44 [16];
   
-  iVar2 = __setjmp3(auStack_44,0,unaff_ESI,g_currentExceptionFrame);
+  iVar2 = Library::MSVCRT::__setjmp3(auStack_44,0,unaff_ESI,g_currentExceptionFrame);
   if (iVar2 == 0) {
     return 0;
   }

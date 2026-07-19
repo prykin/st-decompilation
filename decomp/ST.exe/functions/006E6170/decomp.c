@@ -11,7 +11,7 @@ FUN_006e6170(void *this,int param_1,undefined4 *param_2,int *param_3,undefined4 
   undefined4 local_14;
   undefined4 local_10;
   
-  puVar1 = (undefined4 *)FUN_006e54b0(param_1,param_2,param_3,param_5);
+  puVar1 = (undefined4 *)SystemClassTy::_CreateObject(this,param_1,param_2,param_3,param_5);
   if (puVar1 != (undefined4 *)0x0) {
     puVar1[6] = *(undefined4 *)((int)this + 0x20);
     *(int *)((int)this + 0x20) = *(int *)((int)this + 0x20) + 1;

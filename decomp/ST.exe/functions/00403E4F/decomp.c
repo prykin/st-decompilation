@@ -22,7 +22,7 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pCStack_10 = this;
-  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_10;
   if (iVar3 == 0) {
     thunk_FUN_00540760(*(undefined4 **)(pCStack_10 + 0x194),param_1,0x50,'\x01',
@@ -50,10 +50,10 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     _Count = 0x32;
     _Dest = pCVar2 + 0x1e1;
     _Source = (char *)FUN_006b0140(0x2721,DAT_00807618);
-    _strncpy((char *)_Dest,_Source,_Count);
+    Library::MSVCRT::_strncpy((char *)_Dest,_Source,_Count);
     pCVar2[0x212] = (CPanelTy)0x0;
-    for (puVar5 = FUN_0072e560((uint *)_Dest,'\n'); puVar5 != (uint *)0x0;
-        puVar5 = FUN_0072e560(puVar5,'\n')) {
+    for (puVar5 = Library::MSVCRT::FUN_0072e560((uint *)_Dest,'\n'); puVar5 != (uint *)0x0;
+        puVar5 = Library::MSVCRT::FUN_0072e560(puVar5,'\n')) {
       *(undefined1 *)puVar5 = 0x20;
     }
     uVar6 = FUN_006b0140(UStack_8,DAT_00807618);

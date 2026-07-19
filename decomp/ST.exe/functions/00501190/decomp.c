@@ -25,7 +25,7 @@ void __thiscall CPanelTy::PaintBCapacity(CPanelTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_10;
   if (iVar4 == 0) {
     iVar4 = FUN_0070b3a0(*(int *)(local_10 + 0x2b2),0);

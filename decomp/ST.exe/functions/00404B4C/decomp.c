@@ -31,7 +31,7 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pvStack_18 = this;
-  iVar3 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pvVar2 = pvStack_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
@@ -46,7 +46,7 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
   puVar5 = FUN_0071aa10((int)pcVar4,PTR_s_DESCRIPTION_0079b074,0);
   *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
   if (puVar5 == (uint *)0x0) {
-    puVar5 = FUN_006b54f0((uint *)0x0,10,10);
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)((int)pvVar2 + 0x4ea7) = puVar5;
   }
   if (*(byte **)((int)pvVar2 + 0x4eab) != (byte *)0x0) {
@@ -55,7 +55,7 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
   puVar5 = FUN_0071aa10((int)pcVar4,PTR_s_OBJECTIVES_0079b078,0);
   *(uint **)((int)pvVar2 + 0x4eab) = puVar5;
   if (puVar5 == (uint *)0x0) {
-    puVar5 = FUN_006b54f0((uint *)0x0,10,10);
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)((int)pvVar2 + 0x4eab) = puVar5;
   }
   pbVar11 = (byte *)((int)pvVar2 + 0x4da3);
@@ -68,9 +68,9 @@ undefined4 __thiscall thunk_FUN_0056e9e0(void *this,int param_1)
     pbVar9 = pbVar9 + 4;
   }
   pbStack_14 = pbVar11;
-  puVar6 = FUN_006f1ce0(0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&pbStack_14,0);
+  puVar6 = cMf32::RecGet(pcStack_8,0xc,PTR_s_TITLE_MISSION_0079b070,(int *)&pbStack_14,0);
   if ((puVar6 == (ushort *)0x0) || (*pbVar11 == 0)) {
-    FUN_0072e730(pbStack_c,(byte *)0x0,(byte *)0x0,abStack_160,(byte *)0x0);
+    Library::MSVCRT::FUN_0072e730(pbStack_c,(byte *)0x0,(byte *)0x0,abStack_160,(byte *)0x0);
     uVar7 = 0xffffffff;
     pbVar9 = abStack_160;
     do {

@@ -19,7 +19,7 @@ int __thiscall AiPlrClassTy::CloseAllTact(AiPlrClassTy *this)
   IStack_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_80;
   pAStack_8 = this;
-  iVar4 = __setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = pAStack_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_80.previous;

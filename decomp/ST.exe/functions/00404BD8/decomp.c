@@ -37,7 +37,7 @@ SoundClassTy::PlaySound_thunk
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
   pSStack_8 = this;
-  iVar4 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar14 = pSStack_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_64.previous;

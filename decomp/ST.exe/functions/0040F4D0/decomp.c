@@ -26,7 +26,7 @@ void FUN_0040f4d0(undefined4 *param_1,uint param_2,int param_3,int param_4)
   pcVar11 = &stack0xffffffbc;
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   puVar7 = param_1;
   puVar8 = (undefined4 *)&stack0xffffffbc;

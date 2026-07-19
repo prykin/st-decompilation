@@ -24,7 +24,7 @@ undefined4 __thiscall STManBasisC::GetMessage(STManBasisC *this,int param_1)
   local_8 = (ushort *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_c = this;
-  errorCode = __setjmp3(local_54,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar5);
   this_00 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar5;

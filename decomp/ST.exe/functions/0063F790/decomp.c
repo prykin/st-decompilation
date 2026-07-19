@@ -43,13 +43,13 @@ int __fastcall FUN_0063f790(int param_1)
     if ((local_c < *(uint *)(iVar12 + 0xc)) &&
        (iVar12 = *(int *)(iVar12 + 8) * local_c + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
       *(float *)(iVar12 + 0x2c) = (float)iVar7;
-      __ftol();
+      Library::MSVCRT::__ftol();
       fcos(extraout_ST0);
-      lVar15 = __ftol();
+      lVar15 = Library::MSVCRT::__ftol();
       fsin(extraout_ST1);
       iVar9 = (int)lVar15 + *(int *)(iVar12 + 0x14);
       *(int *)(iVar12 + 8) = iVar9;
-      lVar15 = __ftol();
+      lVar15 = Library::MSVCRT::__ftol();
       iVar8 = (int)lVar15 + *(int *)(iVar12 + 0x18);
       fVar1 = (float)iVar6 * _DAT_007904f8;
       *(int *)(iVar12 + 0xc) = iVar8;
@@ -83,13 +83,13 @@ int __fastcall FUN_0063f790(int param_1)
     if ((local_c < *(uint *)(iVar12 + 0xc)) &&
        (iVar12 = *(int *)(iVar12 + 8) * local_c + *(int *)(iVar12 + 0x1c), iVar12 != 0)) {
       *(float *)(iVar12 + 0x2c) = (float)iVar7;
-      __ftol();
+      Library::MSVCRT::__ftol();
       fcos(extraout_ST0_00);
-      lVar15 = __ftol();
+      lVar15 = Library::MSVCRT::__ftol();
       fsin(extraout_ST1_00);
       iVar9 = (int)lVar15 + *(int *)(iVar12 + 0x14);
       *(int *)(iVar12 + 8) = iVar9;
-      lVar15 = __ftol();
+      lVar15 = Library::MSVCRT::__ftol();
       iVar8 = (int)lVar15 + *(int *)(iVar12 + 0x18);
       fVar1 = (float)iVar6 * _DAT_007904f8;
       *(int *)(iVar12 + 0xc) = iVar8;
@@ -161,13 +161,13 @@ int __fastcall FUN_0063f790(int param_1)
           if (-1 < *(int *)(iVar9 + 0x34)) {
             *(float *)(iVar12 + 0x2c) =
                  (float)(*(int *)(param_1 + 0x2c0) * 0x23 + *(int *)(param_1 + 0x2b4));
-            __ftol();
+            Library::MSVCRT::__ftol();
             fcos(extraout_ST0_01);
-            lVar15 = __ftol();
+            lVar15 = Library::MSVCRT::__ftol();
             fsin(extraout_ST1_01);
             iVar9 = (int)lVar15 + *(int *)(iVar12 + 0x14);
             *(int *)(iVar12 + 8) = iVar9;
-            lVar15 = __ftol();
+            lVar15 = Library::MSVCRT::__ftol();
             iVar8 = (int)lVar15 + *(int *)(iVar12 + 0x18);
             fVar1 = (float)(((iVar6 * -8) / 2 -
                             ((int)(iVar6 * iVar6 + (iVar6 * iVar6 >> 0x1f & 3U)) >> 2)) + (int)sVar2

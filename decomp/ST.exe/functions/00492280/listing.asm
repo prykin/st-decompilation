@@ -1,4 +1,4 @@
-FUN_00492280:
+STBoatC::CancelLoading:
 00492280  55                        PUSH EBP
 00492281  8B EC                     MOV EBP,ESP
 00492283  8B 81 5D 04 00 00         MOV EAX,dword ptr [ECX + 0x45d]

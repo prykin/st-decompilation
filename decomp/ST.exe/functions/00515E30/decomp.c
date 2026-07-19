@@ -45,7 +45,7 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_20 = this;
-  iVar3 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_20;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_88.previous;
@@ -121,11 +121,12 @@ LAB_005160da:
     iVar3 = iVar3 / (int)(uint)*(ushort *)(this_00 + 0x1b1) + 1;
   }
   CreateSlider(this_00,iVar3);
-  FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
-               *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff
-              );
-  FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-               *(uint *)(this_00 + 0x44));
+  Library::DKW::WGR::FUN_006b5110
+            (*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
+             *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+             *(uint *)(this_00 + 0x44));
   g_currentExceptionFrame = local_88.previous;
   return;
   while( true ) {
@@ -151,8 +152,8 @@ code_r0x00516013:
     pcVar7 = pcVar7 + 1;
     pcVar9 = pcVar9 + 1;
   }
-  for (puVar4 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != (uint *)0x0;
-      puVar4 = FUN_0072e560(puVar4,'\n')) {
+  for (puVar4 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar4 != (uint *)0x0;
+      puVar4 = Library::MSVCRT::FUN_0072e560(puVar4,'\n')) {
     *(undefined1 *)puVar4 = 0x20;
   }
   ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5)
@@ -165,7 +166,7 @@ LAB_0051607e:
   local_33 = *local_c;
   local_2f = local_c[1];
   local_44 = 0x50;
-  FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_44);
+  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_44);
   local_1c = local_1c + 1;
   local_c = (int *)((int)local_c + 9);
   *param_1 = *param_1 + 0xf;

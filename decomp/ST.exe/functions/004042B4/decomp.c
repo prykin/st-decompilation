@@ -9,7 +9,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   ushort *puVar5;
   uint *puVar6;
   char *pcVar7;
-  undefined4 *puVar8;
+  cMf32 *pcVar8;
   undefined2 *puVar9;
   int iVar10;
   uint uVar11;
@@ -23,13 +23,14 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   void *unaff_EDI;
   ChooseMapTy *pCVar16;
   char *pcVar17;
-  short *psVar18;
+  undefined4 *puVar18;
+  short *psVar19;
   InternalExceptionFrame IStack_100;
   InternalExceptionFrame IStack_bc;
   InternalExceptionFrame IStack_78;
   short asStack_34 [14];
   ChooseMapTy *pCStack_18;
-  undefined4 *puStack_14;
+  cMf32 *pcStack_14;
   ChooseMapTy *pCStack_10;
   int iStack_c;
   undefined1 *puStack_8;
@@ -37,7 +38,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   IStack_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_78;
   pCStack_10 = this;
-  iVar4 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_78.previous;
     iVar10 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x2c0,0,iVar4,
@@ -57,7 +58,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   if (*(byte **)(DAT_0081176c + 0x548) != (byte *)0x0) {
     FUN_006b5570(*(byte **)(DAT_0081176c + 0x548));
   }
-  puVar6 = FUN_006b54f0((uint *)0x0,10,10);
+  puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   pCVar14 = pCStack_10;
   *(uint **)(DAT_0081176c + 0x548) = puVar6;
   if ((0 < (int)(*(int *)(*(int *)(pCStack_10 + 0x1c97) + 8) +
@@ -165,16 +166,16 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     }
     IStack_bc.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_bc;
-    iVar4 = __setjmp3(IStack_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar14 = pCStack_10;
     if (iVar4 == 0) {
-      puStack_14 = FUN_006f0ec0(0x345,(byte *)(pCStack_10 + 0x1faf),0,0,0);
+      pcStack_14 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)(pCStack_10 + 0x1faf),0,0,0);
     }
-    puVar8 = puStack_14;
+    pcVar8 = pcStack_14;
     g_currentExceptionFrame = IStack_bc.previous;
-    if (puStack_14 != (undefined4 *)0x0) {
-      StartSystemTy::LoadMapData(DAT_0081176c,(int)puStack_14,(char)pCVar14[0x1a5f]);
-      cMf32::delete(this_00,puVar8);
+    if (pcStack_14 != (cMf32 *)0x0) {
+      StartSystemTy::LoadMapData(DAT_0081176c,(int)pcStack_14,(char)pCVar14[0x1a5f]);
+      cMf32::delete(this_00,(undefined4 *)pcVar8);
     }
     goto LAB_005ae602;
   }
@@ -282,36 +283,36 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     }
     IStack_100.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_100;
-    iVar4 = __setjmp3(IStack_100.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_100.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar14 = pCStack_10;
     if (iVar4 == 0) {
-      puVar8 = FUN_006f0ec0(0x345,(byte *)(pCStack_10 + 0x1faf),0,0,0);
-      puStack_14 = puVar8;
+      pcVar8 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)(pCStack_10 + 0x1faf),0,0,0);
+      pcStack_14 = pcVar8;
       if (DAT_0080c4cb != (uint *)0x0) {
         FUN_006b5570((byte *)DAT_0080c4cb);
       }
-      DAT_0080c4cb = FUN_0071aa10((int)puVar8,PTR_s_OBJECTIVES_0079c074,0);
-      puVar8 = (undefined4 *)&DAT_0080ed16;
+      DAT_0080c4cb = FUN_0071aa10((int)pcVar8,PTR_s_OBJECTIVES_0079c074,0);
+      puVar18 = (undefined4 *)&DAT_0080ed16;
       for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar8 = 0;
-        puVar8 = puVar8 + 1;
+        *puVar18 = 0;
+        puVar18 = puVar18 + 1;
       }
       puStack_8 = &DAT_0080ed16;
-      puVar5 = FUN_006f1ce0(0xc,PTR_s_MISSION_0079c064,(int *)&puStack_8,0);
-      puVar8 = puStack_14;
+      puVar5 = cMf32::RecGet(pcVar8,0xc,PTR_s_MISSION_0079c064,(int *)&puStack_8,0);
+      pcVar8 = pcStack_14;
       if (puVar5 == (ushort *)0x0) {
         iStack_c = 0;
       }
       iVar4 = iStack_c;
       puStack_8 = &DAT_0080874e;
-      FUN_006f1ce0(0xc,PTR_DAT_0079c068,(int *)&puStack_8,0);
-      cMf32::delete(this_01,puVar8);
+      cMf32::RecGet(pcStack_14,0xc,PTR_DAT_0079c068,(int *)&puStack_8,0);
+      cMf32::delete(this_01,(undefined4 *)pcVar8);
       if (*(byte **)(DAT_0081176c + 0x548) != (byte *)0x0) {
         FUN_006b5570(*(byte **)(DAT_0081176c + 0x548));
       }
       if (DAT_0080c4cb == (uint *)0x0) {
-        DAT_0080c4cb = FUN_006b54f0((uint *)0x0,10,10);
-        puVar6 = FUN_006b54f0((uint *)0x0,10,10);
+        DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+        puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
         *(uint **)(DAT_0081176c + 0x548) = puVar6;
       }
       else {
@@ -327,7 +328,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
                             (char *)0x0,1);
         *(uint **)(DAT_0081176c + 0x548) = puVar6;
         if (*(int *)(DAT_0081176c + 0x548) == 0) {
-          puVar6 = FUN_006b54f0((uint *)0x0,10,10);
+          puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
           *(uint **)(DAT_0081176c + 0x548) = puVar6;
           g_currentExceptionFrame = IStack_100.previous;
           goto LAB_005ae53a;
@@ -360,13 +361,13 @@ LAB_005ae53a:
   FUN_006e6080(pCVar14,2,*(undefined4 *)(DAT_0081176c + 0x389),(undefined4 *)pCVar15);
   iVar10 = *(int *)(pCVar14 + 0x1a5b);
   if (*(int *)(iVar10 + 0x2e6) != 0) {
-    psVar18 = asStack_34;
+    psVar19 = asStack_34;
     for (iVar13 = 6; iVar13 != 0; iVar13 = iVar13 + -1) {
-      psVar18[0] = 0;
-      psVar18[1] = 0;
-      psVar18 = psVar18 + 2;
+      psVar19[0] = 0;
+      psVar19[1] = 0;
+      psVar19 = psVar19 + 2;
     }
-    *psVar18 = 0;
+    *psVar19 = 0;
     asStack_34[0] = (-(ushort)(iVar4 != 0) & 2) - 1;
     asStack_34[1] = asStack_34[0];
     MMsgTy::StatePanel(*(MMsgTy **)(iVar10 + 0x2e6),(int)asStack_34);

@@ -8,7 +8,7 @@ int FUN_006d4ef0(undefined4 *param_1,undefined4 param_2,int param_3)
   int local_8;
   
   local_8 = 0;
-  this = (void *)FUN_0072e530(0x318);
+  this = (void *)Library::MSVCRT::FUN_0072e530(0x318);
   if (this == (void *)0x0) {
     puVar1 = (undefined4 *)0x0;
   }

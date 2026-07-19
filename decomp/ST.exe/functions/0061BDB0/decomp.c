@@ -57,7 +57,7 @@ undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_
                  (*(int *)((int)this + 0x9f) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9,
                  (int *)((*(int *)((int)this + 0xa3) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9),
                  iVar5,&param_1);
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     if (*(int *)((int)this + 0xd7) < (int)(short)lVar6) {
       *(int *)((int)this + 0xd7) = (int)(short)lVar6;
     }

@@ -26,7 +26,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
     local_7c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_7c;
     local_8 = this;
-    errorCode = __setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (errorCode == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -45,7 +45,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
                         );
       *(undefined4 *)(*(int *)(this_01 + 0x1ea6) + 0xc) = 0;
       local_b = 1;
-      FUN_006ae1c0(*(uint **)(this_01 + 0x1ea6),local_38);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_01 + 0x1ea6),local_38);
       *(undefined4 *)(this_01 + 0x2d) = 0x28;
       pFVar1 = this_01 + 0x1d;
       *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(*(int *)(this_01 + 0x1ea6) + 0xc);

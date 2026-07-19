@@ -1,5 +1,5 @@
 
-int thunk_FUN_004cbc10(void)
+int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
 
 {
   code *pcVar1;
@@ -8,42 +8,43 @@ int thunk_FUN_004cbc10(void)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 auStack_48 [16];
-  int *piStack_8;
+  TLOBaseTy *pTStack_8;
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  pTStack_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    switch(piStack_8[0x16b]) {
+    switch(*(undefined4 *)(pTStack_8 + 0x5ac)) {
     case 0x32:
     case 0x40:
     case 0x49:
     case 0x5c:
-      thunk_FUN_004d01f0(piStack_8);
+      thunk_FUN_004d01f0(pTStack_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x45:
-      thunk_FUN_004eaa20(piStack_8);
+      thunk_FUN_004eaa20((int *)pTStack_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x4e:
-      thunk_FUN_004d9c80(piStack_8);
+      thunk_FUN_004d9c80((int *)pTStack_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x52:
     case 0x5f:
-      thunk_FUN_004ec050((int)piStack_8);
+      thunk_FUN_004ec050((int)pTStack_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x69:
-      thunk_FUN_004dce00(piStack_8);
+      thunk_FUN_004dce00((int *)pTStack_8);
       break;
     case 0x70:
-      thunk_FUN_004d9000(piStack_8);
+      thunk_FUN_004d9000((int *)pTStack_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x72:
-      thunk_FUN_004ecea0(piStack_8);
+      thunk_FUN_004ecea0((int *)pTStack_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     }

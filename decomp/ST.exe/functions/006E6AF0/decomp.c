@@ -30,25 +30,25 @@ void __thiscall FUN_006e6af0(void *this,byte *param_1)
   local_20 = this;
   switch(*(undefined4 *)((int)this + 0xa8)) {
   case 0:
-    lVar11 = __ftol();
+    lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
   case 1:
-    lVar11 = __ftol();
+    lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
   case 2:
-    lVar11 = __ftol();
+    lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
   case 3:
-    lVar11 = __ftol();
+    lVar11 = Library::MSVCRT::__ftol();
     iVar9 = (int)lVar11;
     break;
   default:
     goto switchD_006e6b1d_default;
   }
-  lVar11 = __ftol();
+  lVar11 = Library::MSVCRT::__ftol();
   iVar1 = (int)lVar11;
 switchD_006e6b1d_default:
   iVar9 = ((int)*(short *)(pbVar10 + 0xe) - (int)*(short *)(param_1 + 0xe)) + iVar9;

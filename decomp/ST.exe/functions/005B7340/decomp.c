@@ -19,34 +19,38 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (iVar3 == 0) {
     if (*(uint *)(local_8 + 0x1cfb) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(local_8 + 0x1d3f),*(uint *)(local_8 + 0x1cfb),
-                   *(uint *)(local_8 + 0x1cff),*(uint *)(local_8 + 0x1d13),
-                   *(uint *)(local_8 + 0x1d17));
+      Library::DKW::DDX::FUN_006b3730
+                (*(uint **)(local_8 + 0x1d3f),*(uint *)(local_8 + 0x1cfb),
+                 *(uint *)(local_8 + 0x1cff),*(uint *)(local_8 + 0x1d13),*(uint *)(local_8 + 0x1d17)
+                );
     }
     if (*(uint *)(pMVar2 + 0x1d8c) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(pMVar2 + 0x1dd0),*(uint *)(pMVar2 + 0x1d8c),*(uint *)(pMVar2 + 0x1d90)
-                   ,*(uint *)(pMVar2 + 0x1da4),*(uint *)(pMVar2 + 0x1da8));
+      Library::DKW::DDX::FUN_006b3730
+                (*(uint **)(pMVar2 + 0x1dd0),*(uint *)(pMVar2 + 0x1d8c),*(uint *)(pMVar2 + 0x1d90),
+                 *(uint *)(pMVar2 + 0x1da4),*(uint *)(pMVar2 + 0x1da8));
     }
     iVar3 = 0;
     if (pMVar2[0x9a] != (MMsgTy)0x0) {
       pMVar5 = pMVar2 + 0xff;
       do {
         if (*(uint *)(pMVar5 + -0x18) != 0xffffffff) {
-          FUN_006b3730(*(uint **)(pMVar5 + 0x2c),*(uint *)(pMVar5 + -0x18),*(uint *)(pMVar5 + -0x14)
-                       ,*(uint *)pMVar5,*(uint *)(pMVar5 + 4));
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(pMVar5 + 0x2c),*(uint *)(pMVar5 + -0x18),*(uint *)(pMVar5 + -0x14),
+                     *(uint *)pMVar5,*(uint *)(pMVar5 + 4));
         }
         if (*(uint *)(pMVar5 + 0x79) != 0xffffffff) {
-          FUN_006b3730(*(uint **)(pMVar5 + 0xbd),*(uint *)(pMVar5 + 0x79),*(uint *)(pMVar5 + 0x7d),
-                       *(uint *)(pMVar5 + 0x91),*(uint *)(pMVar5 + 0x95));
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(pMVar5 + 0xbd),*(uint *)(pMVar5 + 0x79),*(uint *)(pMVar5 + 0x7d),
+                     *(uint *)(pMVar5 + 0x91),*(uint *)(pMVar5 + 0x95));
         }
         if ((pMVar5[-0x1d] != (MMsgTy)0x0) && (*(uint *)(pMVar5 + 0x10a) != 0xffffffff)) {
-          FUN_006b3730(*(uint **)(pMVar5 + 0x14e),*(uint *)(pMVar5 + 0x10a),
-                       *(uint *)(pMVar5 + 0x10e),*(uint *)(pMVar5 + 0x122),*(uint *)(pMVar5 + 0x126)
-                      );
+          Library::DKW::DDX::FUN_006b3730
+                    (*(uint **)(pMVar5 + 0x14e),*(uint *)(pMVar5 + 0x10a),*(uint *)(pMVar5 + 0x10e),
+                     *(uint *)(pMVar5 + 0x122),*(uint *)(pMVar5 + 0x126));
         }
         iVar3 = iVar3 + 1;
         pMVar5 = pMVar5 + 0x1fb;

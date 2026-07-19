@@ -29,7 +29,7 @@ int __thiscall ccFntTy::VisLineSarr(ccFntTy *this,int param_1,int param_2)
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_14 = this;
-    iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_14;
     if (iVar2 != 0) {
       g_currentExceptionFrame = local_58.previous;

@@ -26,10 +26,11 @@ uint __thiscall thunk_FUN_0065da50(void *this,int param_1,char param_2)
   
   uStack_8 = 0;
   uVar2 = CONCAT22((short)((uint)in_EAX >> 0x10),*(short *)((int)this + 0x7d));
-  if ((((*(short *)((int)this + 0x7d) != -2) && (DAT_007fa174 != 0)) &&
+  if ((((*(short *)((int)this + 0x7d) != -2) && (DAT_007fa174 != (STAllPlayersC *)0x0)) &&
       (this_00 = (STGroupC *)
                  thunk_FUN_0042b760(CONCAT31((int3)(uVar2 >> 8),*(undefined1 *)((int)this + 0x24)),
-                                    uVar2), this_00 != (STGroupC *)0x0)) && (DAT_007fa174 != 0)) {
+                                    uVar2), this_00 != (STGroupC *)0x0)) &&
+     (DAT_007fa174 != (STAllPlayersC *)0x0)) {
     cVar8 = *(char *)((int)this + 0x81);
     if ((cVar8 < '\0') || ('\a' < cVar8)) {
       cVar8 = (char)*(undefined4 *)((int)this + 0x24);
@@ -66,9 +67,11 @@ uint __thiscall thunk_FUN_0065da50(void *this,int param_1,char param_2)
           else {
             puVar5 = (undefined2 *)0x0;
           }
-          piVar6 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar7 >> 8),
-                                                      *(undefined1 *)((int)this + 0x24)),
-                                             CONCAT22((short)(uVar2 >> 0x10),*puVar5),1);
+          piVar6 = (int *)STAllPlayersC::GetObjPtr
+                                    (DAT_007fa174,
+                                     CONCAT31((int3)((uint)uVar7 >> 8),
+                                              *(undefined1 *)((int)this + 0x24)),
+                                     CONCAT22((short)(uVar2 >> 0x10),*puVar5),1);
           uVar2 = extraout_ECX_01;
           uVar7 = extraout_EDX_02;
           if (piVar6 != (int *)0x0) {
