@@ -18,26 +18,25 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
   int iVar8;
   undefined2 extraout_var;
   undefined2 extraout_var_00;
-  undefined2 uVar13;
-  uint uVar9;
-  undefined4 *puVar10;
-  int iVar11;
+  undefined2 uVar14;
+  undefined4 uVar9;
+  uint uVar10;
+  undefined4 *puVar11;
   int iVar12;
+  int iVar13;
   undefined2 extraout_var_01;
   undefined2 extraout_var_02;
   undefined2 extraout_var_03;
   undefined2 extraout_var_04;
   undefined4 unaff_ESI;
-  int *piVar14;
-  int iVar15;
-  STSprGameObjC *pSVar16;
-  byte *pbVar17;
+  int *piVar15;
+  int iVar16;
+  STSprGameObjC *pSVar17;
+  byte *pbVar18;
   void *unaff_EDI;
-  int iVar18;
-  byte *pbVar19;
-  undefined4 uVar20;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  int iVar19;
+  byte *pbVar20;
+  InternalExceptionFrame local_68;
   STSprGameObjC *local_24;
   int local_20;
   int local_1c;
@@ -50,75 +49,76 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
   if ((((byte)this[0x261] & 4) != 0) && (*(int *)(param_1 + 0x10) != 3)) {
     return 0;
   }
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
   local_24 = (STSprGameObjC *)this;
-  iVar8 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  iVar8 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_24;
   if (iVar8 != 0) {
-    DAT_00858df8 = (undefined4 *)local_68;
-    iVar12 = FUN_006ad4d0(s_E____titans_Igor_To_gold_cpp_007cb19c,0x169,0,iVar8,&DAT_007a4ccc);
-    if (iVar12 == 0) {
-      FUN_006a5e40(iVar8,0,0x7cb19c,0x16a);
+    g_currentExceptionFrame = local_68.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x169,0,iVar8,&DAT_007a4ccc,
+                                s_STDcResourcC__GetMessage_007cb1f4);
+    if (iVar13 == 0) {
+      RaiseInternalException(iVar8,0,s_E____titans_Igor_To_gold_cpp_007cb19c,0x16a);
       return 0xffff;
     }
     pcVar3 = (code *)swi(3);
-    uVar20 = (*pcVar3)();
-    return uVar20;
+    uVar9 = (*pcVar3)();
+    return uVar9;
   }
   iVar8 = STSprGameObjC::GetMessage(local_24,param_1);
-  uVar13 = extraout_var_01;
+  uVar14 = extraout_var_01;
   if (iVar8 == 0xffff) {
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7cb19c,0x56);
-    uVar13 = extraout_var_02;
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_Igor_To_gold_cpp_007cb19c,0x56);
+    uVar14 = extraout_var_02;
   }
-  uVar9 = *(uint *)(param_1 + 0x10);
-  if (0x108 < uVar9) {
-    if (uVar9 == 0x10f) {
+  uVar10 = *(uint *)(param_1 + 0x10);
+  if (0x108 < uVar10) {
+    if (uVar10 == 0x10f) {
       if (*(int *)(this_00 + 0x25d) == 2) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       local_10 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_8);
       local_c = (byte *)FUN_006aac70(local_8 + 0x46);
       if (local_10 == (byte *)0x0) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       if (local_c == (byte *)0x0) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       *(undefined4 *)(this_00 + 0x23d) = 2;
-      pSVar16 = this_00 + 0x231;
-      pbVar17 = local_c;
+      pSVar17 = this_00 + 0x231;
+      pbVar18 = local_c;
       for (iVar8 = 0x11; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *(undefined4 *)pbVar17 = *(undefined4 *)pSVar16;
-        pSVar16 = pSVar16 + 4;
-        pbVar17 = pbVar17 + 4;
+        *(undefined4 *)pbVar18 = *(undefined4 *)pSVar17;
+        pSVar17 = pSVar17 + 4;
+        pbVar18 = pbVar18 + 4;
       }
-      *(undefined2 *)pbVar17 = *(undefined2 *)pSVar16;
-      pbVar17 = local_10;
-      pbVar19 = local_c + 0x46;
-      for (uVar9 = local_8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *(undefined4 *)pbVar19 = *(undefined4 *)pbVar17;
-        pbVar17 = pbVar17 + 4;
-        pbVar19 = pbVar19 + 4;
+      *(undefined2 *)pbVar18 = *(undefined2 *)pSVar17;
+      pbVar18 = local_10;
+      pbVar20 = local_c + 0x46;
+      for (uVar10 = local_8 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+        *(undefined4 *)pbVar20 = *(undefined4 *)pbVar18;
+        pbVar18 = pbVar18 + 4;
+        pbVar20 = pbVar20 + 4;
       }
-      for (uVar9 = local_8 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-        *pbVar19 = *pbVar17;
-        pbVar17 = pbVar17 + 1;
-        pbVar19 = pbVar19 + 1;
+      for (uVar10 = local_8 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+        *pbVar20 = *pbVar18;
+        pbVar18 = pbVar18 + 1;
+        pbVar20 = pbVar20 + 1;
       }
       STPlaySystemC::SaveObjData
                 (DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_c,local_8 + 0x46);
       FUN_006ab060(&local_10);
       FUN_006ab060(&local_c);
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    if (uVar9 != 0x111) {
-      DAT_00858df8 = (undefined4 *)local_68;
+    if (uVar10 != 0x111) {
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     sVar7 = *(short *)(this_00 + 0x245);
@@ -126,78 +126,78 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
     sVar2 = *(short *)(this_00 + 0x249);
     if ((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar2 < 0)) ||
        (((DAT_007fb242 <= sVar2 || (sVar1 < 0)) || (DAT_007fb244 <= sVar1)))) {
-      piVar14 = (int *)0x0;
+      piVar15 = (int *)0x0;
     }
     else {
-      piVar14 = *(int **)(DAT_007fb248 +
+      piVar15 = *(int **)(DAT_007fb248 +
                          ((int)sVar1 * (int)DAT_007fb246 + (int)sVar2 * (int)DAT_007fb240 +
                          (int)sVar7) * 8);
     }
-    if (piVar14 == (int *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_68;
+    if (piVar15 == (int *)0x0) {
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    iVar8 = (**(code **)(*piVar14 + 0x2c))();
+    iVar8 = (**(code **)(*piVar15 + 0x2c))();
     if ((*(int *)(this_00 + 0x255) != 0xdd) || ((iVar8 != 0x39 && (iVar8 != 0x5e)))) {
       if (*(int *)(this_00 + 0x255) != 0xde) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       if ((iVar8 != 0x4f) && (iVar8 != 0x61)) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
     }
     thunk_FUN_005803c0();
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     return 0;
   }
-  if (uVar9 == 0x108) {
+  if (uVar10 == 0x108) {
     iVar8 = thunk_FUN_004ab050();
     local_18 = (undefined4 *)0x0;
     if (*(int *)(this_00 + 0x265) < 1) {
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
-    iVar12 = iVar8 * 2 + 1;
+    iVar13 = iVar8 * 2 + 1;
     local_14 = iVar8 * 8 + -0x1c;
-    iVar8 = iVar12 * 4;
+    iVar8 = iVar13 * 4;
     do {
-      iVar11 = iVar8;
-      if (8 < iVar12) {
-        iVar11 = local_14;
+      iVar12 = iVar8;
+      if (8 < iVar13) {
+        iVar12 = local_14;
       }
-      local_20 = *(int *)((int)&DAT_007cb0b8 + iVar11) + *(int *)(this_00 + 0x245);
+      local_20 = *(int *)((int)&DAT_007cb0b8 + iVar12) + *(int *)(this_00 + 0x245);
       thunk_FUN_004ad3c0(*(void **)(*(int *)(this_00 + 0x26d) + (int)local_18 * 4),
                          (float)local_20 * _DAT_007904f8 + _DAT_007904f4,
-                         (float)(*(int *)((int)&DAT_007cb0dc + iVar11) + *(int *)(this_00 + 0x249))
+                         (float)(*(int *)((int)&DAT_007cb0dc + iVar12) + *(int *)(this_00 + 0x249))
                          * _DAT_007904f8 + _DAT_007904f4,
                          (float)*(int *)(this_00 + 0x24d) * _DAT_00790504 + _DAT_00790500 +
                          _DAT_007904fc);
-      iVar18 = iVar8 + 4;
-      iVar15 = iVar12 + 1;
-      iVar11 = local_14 + 4;
+      iVar19 = iVar8 + 4;
+      iVar16 = iVar13 + 1;
+      iVar12 = local_14 + 4;
       if (*(int *)(this_00 + 0x255) == 0xde) {
-        iVar18 = iVar8 + 8;
-        iVar15 = iVar12 + 2;
-        iVar11 = local_14 + 8;
+        iVar19 = iVar8 + 8;
+        iVar16 = iVar13 + 2;
+        iVar12 = local_14 + 8;
       }
-      local_14 = iVar11;
+      local_14 = iVar12;
       local_18 = (undefined4 *)((int)local_18 + 1);
-      iVar12 = iVar15;
-      iVar8 = iVar18;
+      iVar13 = iVar16;
+      iVar8 = iVar19;
     } while ((int)local_18 < *(int *)(this_00 + 0x265));
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     return 0;
   }
-  if (uVar9 != 0) {
-    if (uVar9 != 2) {
-      if (uVar9 != 3) {
-        DAT_00858df8 = (undefined4 *)local_68;
+  if (uVar10 != 0) {
+    if (uVar10 != 2) {
+      if (uVar10 != 3) {
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       thunk_FUN_004d8530((int)this_00);
-      uVar13 = extraout_var;
+      uVar14 = extraout_var;
       if (*(int *)(this_00 + 0x26d) != 0) {
         iVar8 = *(int *)(this_00 + 0x265) + -1;
         *(int *)(this_00 + 0x265) = iVar8;
@@ -208,20 +208,20 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
           *(int *)(this_00 + 0x265) = iVar8;
         }
         FUN_0072e2b0(*(undefined4 **)(this_00 + 0x26d));
-        uVar13 = extraout_var_00;
+        uVar14 = extraout_var_00;
       }
       if (*(short *)(this_00 + 0x32) != -1) {
         STAllPlayersC::UnRegisterDeposit
-                  (DAT_007fa174,CONCAT22(uVar13,*(short *)(this_00 + 0x32)),(uint)this_00);
+                  (DAT_007fa174,CONCAT22(uVar14,*(short *)(this_00 + 0x32)),(uint)this_00);
       }
       thunk_FUN_004ad310((int)(this_00 + 0x1d5));
       if (*(int **)(this_00 + 0x273) == (int *)0x0) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       FUN_006e6580(*(void **)(this_00 + 0x211),*(int **)(this_00 + 0x273));
       *(undefined4 *)(this_00 + 0x273) = 0;
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     local_18 = *(undefined4 **)(param_1 + 0x14);
@@ -229,12 +229,12 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       *(undefined4 *)(this_00 + 0x261) = 4;
       *(undefined4 *)(this_00 + 0x265) = 0;
       *(undefined4 *)(this_00 + 0x26d) = 0;
-      puVar10 = *(undefined4 **)(param_1 + 0x14);
-      pSVar16 = this_00 + 0x231;
+      puVar11 = *(undefined4 **)(param_1 + 0x14);
+      pSVar17 = this_00 + 0x231;
       for (iVar8 = 10; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *(undefined4 *)pSVar16 = *puVar10;
-        puVar10 = puVar10 + 1;
-        pSVar16 = pSVar16 + 4;
+        *(undefined4 *)pSVar17 = *puVar11;
+        puVar11 = puVar11 + 1;
+        pSVar17 = pSVar17 + 4;
       }
       if (*(int *)(this_00 + 0x251) < 1) {
         thunk_FUN_00580380(this_00);
@@ -242,25 +242,26 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       }
       iVar8 = *(int *)(this_00 + 0x255);
       if ((((iVar8 != 0xdd) && (iVar8 != 0xde)) && (iVar8 != 0xdc)) && (iVar8 != 0xe0)) {
-        iVar8 = FUN_006ad4d0(s_E____titans_Igor_To_gold_cpp_007cb19c,0x6a,0,0,&DAT_007a4ccc);
+        iVar8 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x6a,0,0,&DAT_007a4ccc,
+                                   s_STResourceC__Invalid_resource_ty_007cb214);
         if (iVar8 != 0) {
           pcVar3 = (code *)swi(3);
-          uVar20 = (*pcVar3)();
-          return uVar20;
+          uVar9 = (*pcVar3)();
+          return uVar9;
         }
         *(undefined4 *)(this_00 + 0x231) = 0xde;
-        uVar13 = extraout_var_04;
+        uVar14 = extraout_var_04;
       }
       sVar7 = *(short *)(this_00 + 0x245);
       sVar1 = *(short *)(this_00 + 0x249);
-      local_14 = CONCAT22(uVar13,sVar1);
+      local_14 = CONCAT22(uVar14,sVar1);
       sVar2 = *(short *)(this_00 + 0x24d);
       if (((sVar7 < 0) || (DAT_007fb240 <= sVar7)) ||
          (((sVar1 < 0 || ((DAT_007fb242 <= sVar1 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)))) {
-        piVar14 = (int *)0x0;
+        piVar15 = (int *)0x0;
       }
       else {
-        piVar14 = *(int **)(DAT_007fb248 +
+        piVar15 = *(int **)(DAT_007fb248 +
                            ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar1 +
                            (int)sVar7) * 8);
       }
@@ -274,11 +275,11 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
                           (int)sVar7) * 2);
       }
       if ((sVar7 != 0) &&
-         ((piVar14 == (int *)0x0 ||
-          (((iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x39 &&
-            (iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x4f)) &&
-           ((iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x5e &&
-            (iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x61)))))))) {
+         ((piVar15 == (int *)0x0 ||
+          (((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x39 &&
+            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x4f)) &&
+           ((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x5e &&
+            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
       iVar8 = STAllPlayersC::RegisterDeposit(DAT_007fa174,0xffff,this_00);
@@ -291,20 +292,20 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
                          *(short *)(this_00 + 0x24d),0);
       iVar8 = CreateRes((STDcResourcC *)this_00);
       if (iVar8 == 0xffff) {
-        uVar20 = 0x85;
+        iVar8 = 0x85;
         goto LAB_0057e60c;
       }
     }
     else {
       if (local_18[3] != 2) goto LAB_0057e624;
-      puVar10 = local_18;
-      pSVar16 = this_00 + 0x231;
+      puVar11 = local_18;
+      pSVar17 = this_00 + 0x231;
       for (iVar8 = 0x11; iVar8 != 0; iVar8 = iVar8 + -1) {
-        *(undefined4 *)pSVar16 = *puVar10;
-        puVar10 = puVar10 + 1;
-        pSVar16 = pSVar16 + 4;
+        *(undefined4 *)pSVar17 = *puVar11;
+        puVar11 = puVar11 + 1;
+        pSVar17 = pSVar17 + 4;
       }
-      *(undefined2 *)pSVar16 = *(undefined2 *)puVar10;
+      *(undefined2 *)pSVar17 = *(undefined2 *)puVar11;
       *(undefined4 *)(this_00 + 0x273) = 0;
       *(undefined4 *)(this_00 + 0x265) = 0;
       *(undefined4 *)(this_00 + 0x26d) = 0;
@@ -316,10 +317,10 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       sVar2 = *(short *)(this_00 + 0x24d);
       if (((((sVar7 < 0) || (DAT_007fb240 <= sVar7)) || (sVar1 < 0)) ||
           ((DAT_007fb242 <= sVar1 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)) {
-        piVar14 = (int *)0x0;
+        piVar15 = (int *)0x0;
       }
       else {
-        piVar14 = *(int **)(DAT_007fb248 +
+        piVar15 = *(int **)(DAT_007fb248 +
                            ((int)sVar1 * (int)DAT_007fb240 + (int)DAT_007fb246 * (int)sVar2 +
                            (int)sVar7) * 8);
       }
@@ -333,11 +334,11 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
                           (int)sVar7) * 2);
       }
       if ((sVar7 != 0) &&
-         ((piVar14 == (int *)0x0 ||
-          (((iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x39 &&
-            (iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x4f)) &&
-           ((iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x5e &&
-            (iVar8 = (**(code **)(*piVar14 + 0x2c))(), iVar8 != 0x61)))))))) {
+         ((piVar15 == (int *)0x0 ||
+          (((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x39 &&
+            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x4f)) &&
+           ((iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x5e &&
+            (iVar8 = (**(code **)(*piVar15 + 0x2c))(), iVar8 != 0x61)))))))) {
         thunk_FUN_00580380(this_00);
       }
       iVar8 = STAllPlayersC::RegisterDeposit(DAT_007fa174,*(ushort *)(this_00 + 0x32),this_00);
@@ -353,15 +354,15 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
                          *(short *)(this_00 + 0x24d),0);
       iVar8 = CreateRes((STDcResourcC *)this_00);
       if (iVar8 == 0xffff) {
-        uVar20 = 0xb1;
+        iVar8 = 0xb1;
 LAB_0057e60c:
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7cb19c,uVar20);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_Igor_To_gold_cpp_007cb19c,iVar8);
       }
     }
     *(uint *)(this_00 + 0x261) = *(uint *)(this_00 + 0x261) & 0xfffffffb;
 LAB_0057e624:
     if (((byte)this_00[0x261] & 4) != 0) {
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     thunk_FUN_004d84e0((int)this_00);
@@ -374,21 +375,21 @@ LAB_0057e624:
     *(short *)(this_00 + 0x45) = *(short *)(this_00 + 0x24d) * 200 + 100;
     *(short *)(this_00 + 0x41) = *(short *)(this_00 + 0x245) * 0xc9 + 100;
     *(short *)(this_00 + 0x43) = *(short *)(this_00 + 0x249) * 0xc9 + 100;
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     return 0;
   }
   iVar8 = thunk_FUN_0041c710((int)this_00);
   if (iVar8 == 0) {
     if (((byte)this_00[0x261] & 1) == 0) {
       thunk_FUN_005803e0((int)this_00);
-      uVar9 = *(uint *)(this_00 + 0x261) | 2;
+      uVar10 = *(uint *)(this_00 + 0x261) | 2;
 LAB_0057e6f0:
-      *(uint *)(this_00 + 0x261) = uVar9;
+      *(uint *)(this_00 + 0x261) = uVar10;
     }
   }
   else if (((byte)this_00[0x261] & 2) != 0) {
     thunk_FUN_005803c0();
-    uVar9 = *(uint *)(this_00 + 0x261) & 0xfffffffd;
+    uVar10 = *(uint *)(this_00 + 0x261) & 0xfffffffd;
     goto LAB_0057e6f0;
   }
   pvVar5 = DAT_00802a88;
@@ -396,14 +397,14 @@ LAB_0057e6f0:
     if (DAT_00802a88 == (void *)0x0) goto LAB_0057e9c2;
     iVar8 = *(int *)(this_00 + 0x24d);
     if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
-      uVar9 = 0;
+      uVar10 = 0;
     }
     else {
       thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
                          *(int *)(this_00 + 0x245),*(int *)(this_00 + 0x249),(int *)&local_18,
                          &local_14);
       if ((iVar8 < 0) || (4 < iVar8)) {
-        uVar9 = 0xffffffff;
+        uVar10 = 0xffffffff;
       }
       else {
         if (((((int)local_18 < 0) || (*(int *)((int)pvVar5 + 0x28) <= (int)local_18)) ||
@@ -415,16 +416,16 @@ LAB_0057e6f0:
           bVar4 = true;
         }
         if (((bVar4) && (*(int *)((int)pvVar5 + 0x10c) < 4)) &&
-           (iVar12 = *(int *)((int)pvVar5 + *(int *)((int)pvVar5 + 0x10c) * 4 + 0x3c), iVar12 != 0))
+           (iVar13 = *(int *)((int)pvVar5 + *(int *)((int)pvVar5 + 0x10c) * 4 + 0x3c), iVar13 != 0))
         {
-          uVar9 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) * *(int *)((int)pvVar5 + 0x28)
-                                  + iVar12 + (int)local_18);
+          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) *
+                                   *(int *)((int)pvVar5 + 0x28) + iVar13 + (int)local_18);
         }
         else {
-          uVar9 = 0xffffffff;
+          uVar10 = 0xffffffff;
         }
-        if (-1 < (int)uVar9) {
-          if (uVar9 == 0xf) {
+        if (-1 < (int)uVar10) {
+          if (uVar10 == 0xf) {
             if ((((int)local_18 < 0) || (*(int *)((int)pvVar5 + 0x30) <= (int)local_18)) ||
                (((&DAT_0079aed0)[iVar8] + local_14 < 0 ||
                 (*(int *)((int)pvVar5 + 0x34) <= (&DAT_0079aed0)[iVar8] + local_14)))) {
@@ -434,43 +435,43 @@ LAB_0057e6f0:
               bVar4 = true;
             }
             if ((bVar4) && (*(int *)((int)pvVar5 + 0x4c) != 0)) {
-              uVar9 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) *
-                                      *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) +
-                                     (int)local_18);
+              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_14) *
+                                       *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) +
+                                      (int)local_18);
             }
             else {
-              uVar9 = 0xffffffff;
+              uVar10 = 0xffffffff;
             }
-            if (-1 < (int)uVar9) {
-              uVar9 = (uint)(uVar9 != 0xf);
+            if (-1 < (int)uVar10) {
+              uVar10 = (uint)(uVar10 != 0xf);
             }
           }
           else {
-            uVar9 = 2;
+            uVar10 = 2;
           }
         }
       }
     }
-    if (uVar9 != 2) {
-      puVar10 = STFieldC::CreateField
+    if (uVar10 != 2) {
+      puVar11 = STFieldC::CreateField
                           ((STFieldC *)this_00,*(int *)(this_00 + 0x245),*(int *)(this_00 + 0x249));
-      *(undefined4 **)(this_00 + 0x273) = puVar10;
+      *(undefined4 **)(this_00 + 0x273) = puVar11;
       goto LAB_0057e9c2;
     }
-    piVar14 = *(int **)(this_00 + 0x273);
-    if (piVar14 == (int *)0x0) goto LAB_0057e9c2;
+    piVar15 = *(int **)(this_00 + 0x273);
+    if (piVar15 == (int *)0x0) goto LAB_0057e9c2;
   }
   else {
     if (DAT_00802a88 == (void *)0x0) goto LAB_0057e9c2;
     iVar8 = *(int *)(this_00 + 0x24d);
     if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
-      uVar9 = 0;
+      uVar10 = 0;
     }
     else {
       thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
                          *(int *)(this_00 + 0x245),*(int *)(this_00 + 0x249),&local_1c,&local_20);
       if ((iVar8 < 0) || (4 < iVar8)) {
-        uVar9 = 0xffffffff;
+        uVar10 = 0xffffffff;
       }
       else {
         if ((((local_1c < 0) || (*(int *)((int)pvVar5 + 0x28) <= local_1c)) ||
@@ -482,16 +483,16 @@ LAB_0057e6f0:
           bVar4 = true;
         }
         if (((bVar4) && (*(int *)((int)pvVar5 + 0x10c) < 4)) &&
-           (iVar12 = *(int *)((int)pvVar5 + *(int *)((int)pvVar5 + 0x10c) * 4 + 0x3c), iVar12 != 0))
+           (iVar13 = *(int *)((int)pvVar5 + *(int *)((int)pvVar5 + 0x10c) * 4 + 0x3c), iVar13 != 0))
         {
-          uVar9 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) * *(int *)((int)pvVar5 + 0x28)
-                                  + iVar12 + local_1c);
+          uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) *
+                                   *(int *)((int)pvVar5 + 0x28) + iVar13 + local_1c);
         }
         else {
-          uVar9 = 0xffffffff;
+          uVar10 = 0xffffffff;
         }
-        if (-1 < (int)uVar9) {
-          if (uVar9 == 0xf) {
+        if (-1 < (int)uVar10) {
+          if (uVar10 == 0xf) {
             if (((local_1c < 0) || (*(int *)((int)pvVar5 + 0x30) <= local_1c)) ||
                (((&DAT_0079aed0)[iVar8] + local_20 < 0 ||
                 (*(int *)((int)pvVar5 + 0x34) <= (&DAT_0079aed0)[iVar8] + local_20)))) {
@@ -501,27 +502,27 @@ LAB_0057e6f0:
               bVar4 = true;
             }
             if ((bVar4) && (*(int *)((int)pvVar5 + 0x4c) != 0)) {
-              uVar9 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) *
-                                      *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) +
-                                     local_1c);
+              uVar10 = (uint)*(byte *)(((&DAT_0079aed0)[iVar8] + local_20) *
+                                       *(int *)((int)pvVar5 + 0x30) + *(int *)((int)pvVar5 + 0x4c) +
+                                      local_1c);
             }
             else {
-              uVar9 = 0xffffffff;
+              uVar10 = 0xffffffff;
             }
-            if (-1 < (int)uVar9) {
-              uVar9 = (uint)(uVar9 != 0xf);
+            if (-1 < (int)uVar10) {
+              uVar10 = (uint)(uVar10 != 0xf);
             }
           }
           else {
-            uVar9 = 2;
+            uVar10 = 2;
           }
         }
       }
     }
-    if (uVar9 != 2) goto LAB_0057e9c2;
-    piVar14 = *(int **)(this_00 + 0x273);
+    if (uVar10 != 2) goto LAB_0057e9c2;
+    piVar15 = *(int **)(this_00 + 0x273);
   }
-  FUN_006e6580(*(void **)(this_00 + 0x211),piVar14);
+  FUN_006e6580(*(void **)(this_00 + 0x211),piVar15);
   *(undefined4 *)(this_00 + 0x273) = 0;
 LAB_0057e9c2:
   (**(code **)(*(int *)this_00 + 0xd8))();
@@ -560,11 +561,11 @@ LAB_0057e9c2:
                            (int)*(short *)(DAT_00806724 + 0x2c));
         iVar8 = iVar8 + 1;
       } while (iVar8 < *(int *)(this_00 + 0x265));
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_68;
+  g_currentExceptionFrame = local_68.previous;
   return 0;
 }
 

@@ -15,8 +15,7 @@ STAllPlayersC::AddObjsToGroup
   uint uVar7;
   uint uVar8;
   void *unaff_EDI;
-  undefined4 uStack_90;
-  undefined4 auStack_8c [16];
+  InternalExceptionFrame IStack_90;
   undefined1 auStack_4c [4];
   int iStack_48;
   undefined4 uStack_40;
@@ -66,9 +65,9 @@ STAllPlayersC::AddObjsToGroup
       uVar8 = uVar8 + 1;
     } while ((int)uVar8 < (int)uVar7);
   }
-  uStack_90 = DAT_00858df8;
-  DAT_00858df8 = &uStack_90;
-  iVar4 = __setjmp3(auStack_8c,0,unaff_EDI,unaff_ESI);
+  IStack_90.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_90;
+  iVar4 = __setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = puStack_14;
   if (iVar4 == 0) {
     uVar8 = uStack_24;
@@ -116,17 +115,18 @@ STAllPlayersC::AddObjsToGroup
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < (int)uVar7);
     }
-    DAT_00858df8 = (undefined4 *)uStack_90;
+    g_currentExceptionFrame = IStack_90.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)uStack_90;
-  iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d8,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_90.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d8,0,iVar4,&DAT_007a4ccc,
+                             s_STAllPlayersC__AddObjsToGroup_007a60d0);
   if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     uVar6 = (*pcVar1)();
     return uVar6;
   }
-  FUN_006a5e40(iVar4,0,0x7a6004,0x1d9);
+  RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1d9);
   return 0xffffffff;
 }
 

@@ -251,7 +251,7 @@ LAB_006c596b:
     ExceptionList = local_14;
     return 0;
   }
-  FUN_006a5e40(local_2c,DAT_007ed77c,0x7edf74,0x2ff);
+  RaiseInternalException(local_2c,DAT_007ed77c,s_E__DKW_DDX_C_ddline_c_007edf74,0x2ff);
   ExceptionList = local_14;
   return local_2c;
 }

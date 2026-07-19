@@ -17,8 +17,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   void *unaff_EDI;
   uint uVar9;
   bool bVar10;
-  undefined4 uStack_88;
-  undefined4 auStack_84 [16];
+  InternalExceptionFrame IStack_88;
   uint *puStack_44;
   uint *puStack_40;
   uint *puStack_3c;
@@ -40,12 +39,12 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   puStack_14 = (uint *)0x0;
   puStack_28 = (uint *)0x0;
   iStack_38 = 0;
-  uStack_88 = DAT_00858df8;
-  DAT_00858df8 = &uStack_88;
+  IStack_88.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_88;
   pSStack_34 = this;
-  iVar3 = __setjmp3(auStack_84,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_88;
+    g_currentExceptionFrame = IStack_88.previous;
     if (puStack_28 != (uint *)0x0) {
       FUN_006ae110((byte *)puStack_28);
     }
@@ -56,13 +55,14 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       FUN_006ae110((byte *)puStack_14);
     }
     if (iVar3 != -0x5001fff7) {
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x28a2,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x28a2,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__RegisterPGPair_007a836c);
       if (iVar6 != 0) {
         pcVar2 = (code *)swi(3);
         (*pcVar2)();
         return;
       }
-      FUN_006a5e40(iVar3,0,0x7a6004,0x28a3);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x28a3);
     }
     return;
   }
@@ -70,7 +70,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       (uVar8 = param_2[3], uStack_10 = uVar8, uVar8 == 0)) || (uStack_c = param_3[3], uStack_c == 0)
      ) {
     uVar8 = uStack_10;
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x2837);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2837)
+    ;
   }
   FUN_006afe40((int *)&puStack_18,param_2);
   FUN_006afe40((int *)&puStack_14,param_3);
@@ -91,7 +92,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     } while ((int)uVar9 < (int)uVar8);
   }
   if (uVar8 == 0) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x2842);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2842)
+    ;
   }
   uVar8 = 0;
   if (0 < (int)uStack_c) {
@@ -108,7 +110,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     } while ((int)uVar8 < (int)uStack_c);
   }
   if (uStack_c == 0) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x284d);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x284d)
+    ;
   }
   uVar8 = 0;
   puVar5 = puStack_28;
@@ -165,7 +168,8 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       OptimizeGuardBoats(this_01,cVar7);
       DistributeGuardBoats(this_01,param_1);
     }
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x2872);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2872)
+    ;
   }
   if (uStack_10 == 0) {
     bVar10 = uStack_c == 0;
@@ -245,7 +249,7 @@ LAB_00445e36:
   if (puStack_14 != (uint *)0x0) {
     FUN_006ae110((byte *)puStack_14);
   }
-  DAT_00858df8 = (undefined4 *)uStack_88;
+  g_currentExceptionFrame = IStack_88.previous;
   return;
 }
 

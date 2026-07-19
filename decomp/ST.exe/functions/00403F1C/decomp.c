@@ -41,7 +41,7 @@ void thunk_FUN_004ab300(int param_1)
   }
   thunk_FUN_004a9c80(iVar1);
 switchD_004ab3a0_default:
-  thunk_FUN_00567510(&DAT_00807658,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
   return;
 }
 

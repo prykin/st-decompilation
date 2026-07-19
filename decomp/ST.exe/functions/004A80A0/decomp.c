@@ -35,13 +35,15 @@ void __thiscall STGroupBoatC::SetPatrolCmdToBoat(STGroupBoatC *this,int param_1)
         uVar3 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),this[0x24]),local_30[0],
                                    1);
         if (uVar3 == 0) {
-          iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x16c9,0,0,&DAT_007a4ccc);
+          iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x16c9,0,0,
+                                     &DAT_007a4ccc,s_STGroupBoatC__SetPatrolCmdToBoat_007ac4bc);
           if (iVar4 != 0) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
-          FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x16ca);
+          RaiseInternalException
+                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x16ca);
         }
         FUN_006ae1c0(local_8,local_30);
         *(undefined4 *)(uVar3 + 0x493) = 1;

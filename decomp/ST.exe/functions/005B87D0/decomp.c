@@ -31,8 +31,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   int iVar19;
   int iVar20;
   uint local_478 [256];
-  undefined4 *local_78;
-  undefined4 local_74 [16];
+  InternalExceptionFrame local_78;
   int local_34 [8];
   MMObjTy *local_14;
   UINT *local_10;
@@ -41,10 +40,10 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   
   local_c = local_c & 0xffffff00;
   if ((this[0x65] == (MMsgTy)0x2) && (this[0x1ca9] == (MMsgTy)0x0)) {
-    local_78 = DAT_00858df8;
-    DAT_00858df8 = &local_78;
+    local_78.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_78;
     local_14 = (MMObjTy *)this;
-    iVar4 = __setjmp3(local_74,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_14;
     if (iVar4 == 0) {
       MMObjTy::CloseButtons(local_14);
@@ -185,17 +184,18 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         local_34[2] = iVar4;
         (**(code **)(*piVar1 + 0x18))(local_34);
       }
-      DAT_00858df8 = local_78;
+      g_currentExceptionFrame = local_78.previous;
       return 1;
     }
-    DAT_00858df8 = local_78;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_78.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181,0,iVar4,&DAT_007a4ccc
+                               ,s_MMsgTy__SetPanel_007cccb4);
     if (iVar9 != 0) {
       pcVar2 = (code *)swi(3);
       uVar5 = (*pcVar2)();
       return uVar5;
     }
-    FUN_006a5e40(iVar4,0,0x7ccb74,0x181);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181);
   }
   return 0;
 }

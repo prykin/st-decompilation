@@ -11,18 +11,17 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   undefined4 *puVar6;
   void *unaff_EDI;
   undefined4 *puVar7;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   int iStack_18;
   int iStack_14;
   STGroupC *pSStack_10;
   undefined4 *puStack_c;
   uint uStack_8;
   
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pSStack_10 = this;
-  iVar2 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = pSStack_10;
   if (iVar2 == 0) {
     *param_1 = 0x40;
@@ -97,17 +96,18 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     }
     *(undefined4 *)(iVar2 + 0x38) = 0xffffffff;
     *(undefined4 *)(iVar2 + 0x3c) = 0;
-    DAT_00858df8 = (undefined4 *)uStack_5c;
+    g_currentExceptionFrame = IStack_5c.previous;
     return iVar2;
   }
-  DAT_00858df8 = (undefined4 *)uStack_5c;
-  iVar3 = FUN_006ad4d0(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1b9,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_5c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1b9,0,iVar2,&DAT_007a4ccc,
+                             s_STGroupC__SaveGrpData_007a5168);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)();
     return iVar2;
   }
-  FUN_006a5e40(iVar2,0,0x7a50a4,0x1ba);
+  RaiseInternalException(iVar2,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1ba);
   return iStack_18;
 }
 

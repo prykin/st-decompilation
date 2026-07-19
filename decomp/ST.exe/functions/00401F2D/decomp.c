@@ -9,19 +9,18 @@ undefined4 thunk_FUN_005ec9f0(int param_1)
   undefined4 uVar2;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   undefined **ppuStack_10;
   undefined4 uStack_c;
   void *pvStack_8;
   
   uStack_c = 0;
   ppuStack_10 = &PTR_s_cont1_007cde70;
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
-  iVar1 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
+  iVar1 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     return uStack_c;
   }
   this = (STT3DSprC *)((int)pvStack_8 + 0x1d5);
@@ -50,7 +49,7 @@ undefined4 thunk_FUN_005ec9f0(int param_1)
       thunk_FUN_004ad150(this,'\v');
       thunk_FUN_004ac700(this,'\v');
       STT3DSprC::StartShow(this,0xb,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      DAT_00858df8 = (undefined4 *)uStack_54;
+      g_currentExceptionFrame = IStack_54.previous;
       return uStack_c;
     }
   }
@@ -73,7 +72,7 @@ undefined4 thunk_FUN_005ec9f0(int param_1)
     uVar2 = thunk_FUN_004ad650((int)this);
     *(undefined4 *)((int)pvStack_8 + 0x2d6) = uVar2;
   }
-  DAT_00858df8 = (undefined4 *)uStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return uStack_c;
 }
 

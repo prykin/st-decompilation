@@ -1,2 +1,2 @@
-thunk_FUN_00568dd0:
+SoundClassTy::PlaySound_thunk:
 00404BD8  E9 F3 41 16 00            JMP 0x00568dd0

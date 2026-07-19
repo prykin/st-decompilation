@@ -268,7 +268,7 @@ LAB_006aeee7:
                 iVar9 = FUN_006ab090((int)param_12,iVar26,iVar26,iVar26,(int)param_13,(int)param_13,
                                      (int)param_13,-1,-1,-1);
                 if (iVar9 != 0) {
-                  FUN_006a5e40(-2,DAT_007ed77c,0x7eda5c,0x187);
+                  RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_WAY_C_sway3d_cpp_007eda5c,0x187);
                   return (short *)0x0;
                 }
                 if ((((int)param_13 < (int)(((uint)psVar5 ^ uVar17) - uVar17)) ||

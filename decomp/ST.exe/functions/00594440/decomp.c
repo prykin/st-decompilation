@@ -16,25 +16,25 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   ComboTy *local_c;
   uint local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_combo_cpp_007cbeec,0xb7,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_combo_cpp_007cbeec,0xb7,0,iVar3,&DAT_007a4ccc,
+                               s_ComboTy__GetMessage_007cbf58);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       uVar5 = (*pcVar2)();
       return uVar5;
     }
-    FUN_006a5e40(iVar3,0,0x7cbeec,0xb7);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_combo_cpp_007cbeec,0xb7);
     return 0xffff;
   }
   uVar7 = *(uint *)(param_1 + 0x10);
@@ -69,7 +69,7 @@ switchD_005944a8_caseD_64:
       thunk_FUN_005943f0(local_c);
     }
 switchD_005944a8_caseD_4:
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     uVar5 = FUN_006e5fd0();
     return uVar5;
   }

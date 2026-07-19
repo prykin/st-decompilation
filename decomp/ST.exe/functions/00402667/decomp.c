@@ -14,8 +14,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar10;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   CPanelTy *pCStack_10;
   uint uStack_c;
   int iStack_8;
@@ -30,16 +29,17 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
   }
   uStack_c = CONCAT31(uStack_c._1_3_,CVar7);
   if ((byte)CVar7 < 0x65) {
-    uStack_54 = DAT_00858df8;
-    DAT_00858df8 = &uStack_54;
+    IStack_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_54;
     pCStack_10 = this;
-    iVar3 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+    iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar2 = pCStack_10;
     if (iVar3 != 0) {
-      DAT_00858df8 = (undefined4 *)uStack_54;
-      iVar6 = FUN_006ad4d0(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x4a,0,iVar3,&DAT_007a4ccc);
+      g_currentExceptionFrame = IStack_54.previous;
+      iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x4a,0,iVar3,
+                                 &DAT_007a4ccc,s_CPanelTy__PaintEnergy_007c2424);
       if (iVar6 == 0) {
-        FUN_006a5e40(iVar3,0,0x7c23cc,0x4a);
+        RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x4a);
         return;
       }
       pcVar1 = (code *)swi(3);
@@ -56,7 +56,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       FUN_006b5110(iVar6,0,199,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
       uVar5 = *(uint *)(pCVar2 + 0x15c);
       if ((int)uVar5 < 0) {
-        DAT_00858df8 = (undefined4 *)uStack_54;
+        g_currentExceptionFrame = IStack_54.previous;
         return;
       }
       uVar10 = *(uint *)(pCVar2 + 0xa8);
@@ -72,14 +72,14 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       FUN_006b5110(iVar6,0,2,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
       uVar5 = *(uint *)(pCVar2 + 0x154);
       if ((int)uVar5 < 0) {
-        DAT_00858df8 = (undefined4 *)uStack_54;
+        g_currentExceptionFrame = IStack_54.previous;
         return;
       }
       uVar10 = *(uint *)(pCVar2 + 0xa0);
       uVar9 = *(uint *)(pCVar2 + 0x48);
     }
     FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar9,uVar10);
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     return;
   }
   return;

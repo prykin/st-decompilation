@@ -29,7 +29,7 @@ int FUN_006b65f0(undefined4 *param_1,undefined4 *param_2)
   local_30 = param_1[5];
   iVar2 = (**(code **)(*(int *)*param_1 + 0x34))((int *)*param_1,local_54,0,FUN_006b6530,param_2,0);
   if (iVar2 != 0) {
-    FUN_006a5e40(iVar2,DAT_007ed77c,0x7edbc4,0x183);
+    RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DDX_C_dplay2_cpp_007edbc4,0x183);
     return iVar2;
   }
   return 0;

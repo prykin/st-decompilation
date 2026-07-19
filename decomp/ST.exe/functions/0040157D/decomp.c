@@ -12,20 +12,20 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char *pcVar6;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   STFieldC *pSStack_c;
   undefined4 *puStack_8;
   
   puStack_8 = (undefined4 *)0x0;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar3 = FUN_006ad4d0(s_E____titans_Igor_To_gold_cpp_007cb19c,0x414,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x414,0,iVar3,&DAT_007a4ccc,
+                               s_STFieldC__CreateField_007cb2c0);
     if (iVar3 == 0) {
       return puStack_8;
     }
@@ -52,11 +52,11 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
       puStack_8 = puVar5;
       FUN_006e6540((int)puVar5,(float)param_1 * _DAT_007904f8 + _DAT_007904f4,
                    (float)param_2 * _DAT_007904f8 + _DAT_007904f4,-1);
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return puVar5;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return puStack_8;
 }
 

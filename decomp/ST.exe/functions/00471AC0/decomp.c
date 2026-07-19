@@ -209,8 +209,8 @@ LAB_00472a3a:
           }
           else {
             if (iVar8 != 5) {
-              iVar8 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2dbf,0,0,&DAT_007a4ccc)
-              ;
+              iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2dbf,0,0,
+                                         &DAT_007a4ccc,s_STBoatC__Guard___incorrect_entry_007aad20);
               if (iVar8 == 0) {
                 return 2;
               }
@@ -671,9 +671,10 @@ LAB_00471ec9:
     }
     break;
   case 1:
-    iVar8 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2c5e,0,-1,&DAT_007a4ccc);
+    iVar8 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2c5e,0,-1,&DAT_007a4ccc,
+                               s_STBoatC__Guard_NOT_ZONE_A_007aad48);
     if (iVar8 == 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7a9d3c,0x2c5f);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2c5f);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);

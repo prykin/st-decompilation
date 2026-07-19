@@ -5,7 +5,7 @@ void FUN_00758490(int param_1)
   undefined1 *puVar1;
   
   if (*(int *)(*(int *)(param_1 + 0x1a6) + 0x50) != 0) {
-    FUN_006a5e40(0x3c,DAT_007ed77c,0x7f2db0,0xb3);
+    RaiseInternalException(0x3c,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0xb3);
   }
   puVar1 = (undefined1 *)(param_1 + 0xec);
   do {

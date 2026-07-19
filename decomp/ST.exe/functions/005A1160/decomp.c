@@ -22,26 +22,26 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   undefined4 uVar12;
   int iVar13;
   int iVar14;
-  undefined4 *local_90;
-  undefined4 local_8c [16];
+  InternalExceptionFrame local_90;
   undefined4 local_4c [8];
   undefined4 local_2c [8];
   FSGSTy *local_c;
   int local_8;
   
-  local_90 = DAT_00858df8;
-  DAT_00858df8 = &local_90;
+  local_90.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_90;
   local_c = this;
-  iVar4 = __setjmp3(local_8c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = local_90;
-    iVar11 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_90.previous;
+    iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935,0,iVar4,
+                                &DAT_007a4ccc,s_FSGSTy__CheckUpdate_007cc408);
     if (iVar11 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x935);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x935);
     return;
   }
   wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_UPDATES__0079c020,
@@ -50,7 +50,7 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   pFVar3 = local_c;
   if (pcVar5 == (char *)0x0) {
     DoLogon(local_c);
-    DAT_00858df8 = local_90;
+    g_currentExceptionFrame = local_90.previous;
     return;
   }
   uVar8 = 0xffffffff;
@@ -118,11 +118,11 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
   if (*(MMsgTy **)(*(int *)(pFVar3 + 0x1a5b) + 0x2e6) != (MMsgTy *)0x0) {
     MMsgTy::SetMessage(*(MMsgTy **)(*(int *)(pFVar3 + 0x1a5b) + 0x2e6),0x25b7,'\x01',local_2c,
                        local_4c,(undefined4 *)0x0,local_8,0x25b8);
-    DAT_00858df8 = local_90;
+    g_currentExceptionFrame = local_90.previous;
     return;
   }
   (*(code *)**(undefined4 **)pFVar3)(local_2c);
-  DAT_00858df8 = local_90;
+  g_currentExceptionFrame = local_90.previous;
   return;
 }
 

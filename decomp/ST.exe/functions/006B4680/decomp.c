@@ -7,7 +7,7 @@ int FUN_006b4680(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *
   BITMAPINFO *pBVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  int exceptionCode;
   int local_2c;
   int local_28;
   DWORD local_24;
@@ -20,7 +20,8 @@ int FUN_006b4680(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *
   uint local_8;
   
   piVar1 = param_1;
-  if ((((param_1[3] & 0x1100U) != 0x100) && (iVar5 = 0, 0 < (int)param_8)) && (0 < (int)param_9)) {
+  if ((((param_1[3] & 0x1100U) != 0x100) && (exceptionCode = 0, 0 < (int)param_8)) &&
+     (0 < (int)param_9)) {
     param_10 = param_10 & 0xffffff;
     if ((param_1[2] & 0x4000000U) != 0) {
       EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x13c));
@@ -28,14 +29,15 @@ int FUN_006b4680(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *
     pBVar2 = param_4;
     param_1 = (int *)0x0;
     if ((piVar1[8] < 0x11) && ((param_4->bmiHeader).biBitCount == 8)) {
-      iVar5 = FUN_006bb8b0((int)piVar1);
-      if (iVar5 == 0) {
-        iVar5 = FUN_006d0cf0((int)piVar1,param_2,param_3,(int)pBVar2,(int)param_5,param_6,param_7,
-                             param_8,param_9,(byte)param_10);
+      exceptionCode = FUN_006bb8b0((int)piVar1);
+      if (exceptionCode == 0) {
+        exceptionCode =
+             FUN_006d0cf0((int)piVar1,param_2,param_3,(int)pBVar2,(int)param_5,param_6,param_7,
+                          param_8,param_9,(byte)param_10);
         FUN_006bb980((int)piVar1);
       }
-      if ((iVar5 == -0x7789ff60) || (iVar5 == -0x7789fe52)) {
-        iVar5 = 0;
+      if ((exceptionCode == -0x7789ff60) || (exceptionCode == -0x7789fe52)) {
+        exceptionCode = 0;
       }
     }
     else {
@@ -59,13 +61,15 @@ int FUN_006b4680(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *
         iVar3 = FUN_006d0680((int)(piVar1 + 0x13),&local_1c,&local_c,(int)param_4,&local_2c,&local_8
                             );
         if (iVar3 != 0) {
-          iVar5 = FUN_006bb6c0((int)piVar1,&param_1,local_14,local_10,param_10,0);
-          if (iVar5 == 0) {
-            iVar5 = FUN_006d0a20((uint)piVar1,param_1,0,0,pBVar2,param_5,local_2c,local_28,local_14,
-                                 local_10);
-            if (iVar5 == 0) {
-              iVar5 = FUN_006bb9d0((int)piVar1,local_1c,local_18,local_14,local_10,param_1,local_14,
-                                   local_10,0x8000);
+          exceptionCode = FUN_006bb6c0((int)piVar1,&param_1,local_14,local_10,param_10,0);
+          if (exceptionCode == 0) {
+            exceptionCode =
+                 FUN_006d0a20((uint)piVar1,param_1,0,0,pBVar2,param_5,local_2c,local_28,local_14,
+                              local_10);
+            if (exceptionCode == 0) {
+              exceptionCode =
+                   FUN_006bb9d0((int)piVar1,local_1c,local_18,local_14,local_10,param_1,local_14,
+                                local_10,0x8000);
             }
           }
         }
@@ -77,9 +81,9 @@ int FUN_006b4680(int *param_1,int param_2,int param_3,BITMAPINFO *param_4,uint *
     if (param_1 != (int *)0x0) {
       (**(code **)(*param_1 + 8))(param_1);
     }
-    if (iVar5 != 0) {
-      FUN_006a5e40(iVar5,DAT_007ed77c,0x7edb08,0x4c);
-      return iVar5;
+    if (exceptionCode != 0) {
+      RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_DDX_C_dddibtpc_c_007edb08,0x4c);
+      return exceptionCode;
     }
   }
   return 0;

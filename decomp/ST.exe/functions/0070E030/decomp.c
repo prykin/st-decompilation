@@ -25,8 +25,7 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
   undefined2 auStackY_104c0 [32740];
   int local_4c0 [128];
   int local_2c0 [128];
-  undefined4 local_c0;
-  undefined4 local_bc [16];
+  InternalExceptionFrame local_c0;
   RECT local_7c;
   int local_6c;
   int local_68;
@@ -78,9 +77,9 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
         } while (iVar10 < (int)(uint)*(ushort *)(iVar7 + 100));
       }
     }
-    local_c0 = DAT_00858df8;
-    DAT_00858df8 = &local_c0;
-    uVar5 = __setjmp3(local_bc,0,unaff_EDI,unaff_ESI);
+    local_c0.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_c0;
+    uVar5 = __setjmp3(local_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (uVar5 == 0) {
       local_60.abcA = 0;
       local_60.abcB = 0;
@@ -103,7 +102,7 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
                    ((local_60.abcA < 1) - 1 & local_60.abcA);
       }
       if (local_50 < 1) {
-        FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x22e);
+        RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x22e);
       }
       else {
         local_1c = *(int *)((int)param_1 + 0x151) + local_50;
@@ -1400,10 +1399,10 @@ LAB_0070f411:
       *(short *)(iVar15 + 100) = *(short *)(iVar15 + 100) + 1;
       *(int *)((int)param_1 + 0x17d) = *(int *)((int)param_1 + 0x17d) + local_1c;
       param_1[0x2b] = param_1[0x2b] + 1;
-      DAT_00858df8 = (undefined4 *)local_c0;
+      g_currentExceptionFrame = local_c0.previous;
       return (uint)uVar3;
     }
-    DAT_00858df8 = (undefined4 *)local_c0;
+    g_currentExceptionFrame = local_c0.previous;
     if (local_28 != (int *)0x0) {
       FUN_006ab060(&local_28);
     }

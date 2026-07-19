@@ -11,8 +11,7 @@ uint __fastcall FUN_006d5ed0(int param_1)
   void *unaff_EDI;
   LPCRITICAL_SECTION lpCriticalSection;
   int iVar5;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   uint local_18;
   int local_14;
   int local_10;
@@ -41,14 +40,14 @@ uint __fastcall FUN_006d5ed0(int param_1)
       iVar5 = *(int *)(*(int *)(param_1 + 0x58) + 0x44) + 0x30;
       local_14 = iVar5;
       if (*(int *)(*(int *)(param_1 + 0x5c) + 0x310) == 0) {
-        local_5c = DAT_00858df8;
-        DAT_00858df8 = &local_5c;
-        uVar2 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+        local_5c.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &local_5c;
+        uVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
         param_1 = local_c;
         iVar4 = local_10;
         iVar5 = local_14;
         if (uVar2 != 0) {
-          DAT_00858df8 = (undefined4 *)local_5c;
+          g_currentExceptionFrame = local_5c.previous;
           LeaveCriticalSection(local_8);
           return uVar2;
         }
@@ -58,7 +57,7 @@ uint __fastcall FUN_006d5ed0(int param_1)
                        *(undefined4 *)(local_14 + 4),(*(uint *)(local_14 + 8) ^ uVar2) - uVar2,0,
                        *(uint *)(local_10 + 4) & 0xc);
         }
-        DAT_00858df8 = (undefined4 *)local_5c;
+        g_currentExceptionFrame = local_5c.previous;
       }
       else {
         *(undefined4 *)(param_1 + 100) = *(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x40);

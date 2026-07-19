@@ -18,7 +18,7 @@ void FUN_0075cbc0(int param_1)
   int iVar14;
   float *pfVar15;
   int iVar16;
-  undefined4 uVar17;
+  int sourceLine;
   int local_10;
   code *local_c;
   int local_8;
@@ -43,10 +43,10 @@ void FUN_0075cbc0(int param_1)
         local_8 = 0;
         break;
       default:
-        uVar17 = 0x90;
+        sourceLine = 0x90;
         iVar16 = 6;
 LAB_0075cca0:
-        FUN_006a5e40(iVar16,DAT_007ed77c,0x7f2e28,uVar17);
+        RaiseInternalException(iVar16,DAT_007ed77c,s_E__DKW_JPG_C_jddctmgr_c_007f2e28,sourceLine);
         break;
       case 4:
         iVar14 = 0;
@@ -67,7 +67,7 @@ LAB_0075cca0:
         }
         else {
           if (iVar16 != 2) {
-            uVar17 = 0x8b;
+            sourceLine = 0x8b;
             iVar16 = 0x2f;
             goto LAB_0075cca0;
           }
@@ -125,7 +125,7 @@ LAB_0075cca0:
           } while ((int)pdVar13 < 0x7a2198);
         }
         else {
-          FUN_006a5e40(0x2f,DAT_007ed77c,0x7f2e28,0xed);
+          RaiseInternalException(0x2f,DAT_007ed77c,s_E__DKW_JPG_C_jddctmgr_c_007f2e28,0xed);
         }
       }
       local_10 = local_10 + 1;

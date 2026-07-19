@@ -27,8 +27,7 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
   code *pcVar16;
   int iVar17;
   UINT UVar18;
-  undefined4 *local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   undefined4 local_20;
   uint local_1c;
   undefined4 local_18;
@@ -37,16 +36,17 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
   ushort *local_c;
   uint local_8;
   
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
   local_14 = (PanelTy *)this;
-  iVar3 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar3 != 0) {
-    DAT_00858df8 = local_64;
-    iVar9 = FUN_006ad4d0(s_E____titans_Andrey_playpan_cpp_007c7574,500,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_64.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,500,0,iVar3,&DAT_007a4ccc,
+                               s_PlayPanelTy__GetMessage_007c76ac);
     if (iVar9 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c7574,500);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_playpan_cpp_007c7574,500);
       return 0xffff;
     }
     pcVar16 = (code *)swi(3);
@@ -82,7 +82,7 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_10,iVar3 + iVar9,'\x01',
                          (byte *)local_c);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
-      DAT_00858df8 = local_64;
+      g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     if (0x6200 < uVar4) {
@@ -92,7 +92,7 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
       else {
         if (uVar4 != 0x6202) {
           if (uVar4 != 0xb208) {
-            DAT_00858df8 = local_64;
+            g_currentExceptionFrame = local_64.previous;
             return 0;
           }
           iVar3 = **(int **)(param_1 + 0x14);
@@ -117,7 +117,7 @@ undefined4 __thiscall PlayPanelTy::GetMessage(PlayPanelTy *this,int param_1)
               pPVar11 = pPVar11 + 4;
               iVar3 = iVar3 + -1;
             } while (iVar3 != 0);
-            DAT_00858df8 = local_64;
+            g_currentExceptionFrame = local_64.previous;
             return 0;
           }
           if (iVar3 == 2) {
@@ -179,11 +179,11 @@ LAB_0053b42f:
               pPVar11 = pPVar11 + 4;
               iVar3 = iVar3 + -1;
             } while (iVar3 != 0);
-            DAT_00858df8 = local_64;
+            g_currentExceptionFrame = local_64.previous;
             return 0;
           }
           if (iVar3 != 3) {
-            DAT_00858df8 = local_64;
+            g_currentExceptionFrame = local_64.previous;
             return 0;
           }
           if (DAT_0080874d < 8) {
@@ -244,7 +244,7 @@ LAB_0053b2ea:
             pPVar11 = pPVar11 + 4;
             iVar3 = iVar3 + -1;
           } while (iVar3 != 0);
-          DAT_00858df8 = local_64;
+          g_currentExceptionFrame = local_64.previous;
           return 0;
         }
         pcVar14 = s_BUT_SLDN_007c3e34;
@@ -252,7 +252,7 @@ LAB_0053b2ea:
       pcVar16 = thunk_FUN_00529fe0;
       pCVar5 = thunk_FUN_00571240(pcVar14,0);
       UPanelTy::PaintBut((UPanelTy *)this_00,param_1,6,pCVar5,pcVar16);
-      DAT_00858df8 = local_64;
+      g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     if (uVar4 == 0x6200) {
@@ -278,7 +278,7 @@ LAB_0053b2ea:
         pPVar11 = pPVar11 + 4;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
-      DAT_00858df8 = local_64;
+      g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     if (uVar4 == 0) {
@@ -294,7 +294,7 @@ LAB_0053b2ea:
         }
         FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                      *(uint *)(this_00 + 0x44));
-        DAT_00858df8 = local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
       if (*(short *)(this_00 + 0x172) == 4) {
@@ -308,19 +308,19 @@ LAB_0053b2ea:
         }
         FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                      *(uint *)(this_00 + 0x44));
-        DAT_00858df8 = local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
     }
     else {
       if (uVar4 == 2) {
         InitPlayPanel((PlayPanelTy *)this_00);
-        DAT_00858df8 = local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
       if (uVar4 == 3) {
         DonePlayPanel((PlayPanelTy *)this_00);
-        DAT_00858df8 = local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
     }
@@ -347,7 +347,7 @@ LAB_0053b2ea:
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_10,iVar3 + iVar9,'\x01',pbVar7);
       FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                    *(uint *)(this_00 + 0x44));
-      DAT_00858df8 = local_64;
+      g_currentExceptionFrame = local_64.previous;
       return 0;
     }
     switch(uVar4) {
@@ -421,7 +421,7 @@ LAB_0053b2ea:
           }
           if (DAT_00802a38 != 0) {
             thunk_FUN_0054edf0((undefined4 *)0x5,&local_20,1,0xffffffff);
-            DAT_00858df8 = local_64;
+            g_currentExceptionFrame = local_64.previous;
             return 0;
           }
         }
@@ -499,7 +499,7 @@ LAB_0053b2ea:
         }
         FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                      *(uint *)(this_00 + 0x44));
-        DAT_00858df8 = local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
       if ((DAT_00808a8f != '\0') &&
@@ -513,7 +513,7 @@ LAB_0053b2ea:
                        (DAT_0080874e != '\x03') - 1 & 5);
         FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                      *(uint *)(this_00 + 0x44));
-        DAT_00858df8 = local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
       break;
@@ -540,7 +540,7 @@ LAB_0053b2ea:
           *(undefined4 *)(this_00 + 0x28) = 0x22;
           *(undefined2 *)(this_00 + 0x2c) = 4;
           FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1c1),(undefined4 *)pPVar11);
-          DAT_00858df8 = local_64;
+          g_currentExceptionFrame = local_64.previous;
           return 0;
         }
       }
@@ -554,10 +554,10 @@ LAB_0053b2ea:
     UVar18 = 0x274e;
     pCVar5 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
     UPanelTy::PaintIBut((UPanelTy *)this_00,param_1,pCVar5,UVar18);
-    DAT_00858df8 = local_64;
+    g_currentExceptionFrame = local_64.previous;
     return 0;
   }
-  DAT_00858df8 = local_64;
+  g_currentExceptionFrame = local_64.previous;
   return 0;
 }
 

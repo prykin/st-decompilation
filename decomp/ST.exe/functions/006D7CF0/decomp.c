@@ -7,8 +7,8 @@ HPALETTE FUN_006d7cf0(LOGPALETTE *param_1)
   HPALETTE pHVar2;
   DWORD DVar3;
   int iVar4;
-  char *pcVar5;
-  undefined4 uVar6;
+  char *sourceFile;
+  int sourceLine;
   
   param_1->palVersion = 0x300;
   param_1->palNumEntries = 0x100;
@@ -27,11 +27,11 @@ HPALETTE FUN_006d7cf0(LOGPALETTE *param_1)
   if (pHVar2 == (HPALETTE)0x0) {
     DVar3 = GetLastError();
     if (DVar3 != 0) {
-      uVar6 = 0x19;
-      pcVar5 = s_E__DKW_WGR_C_palsync_c_007ee2b8;
+      sourceLine = 0x19;
+      sourceFile = s_E__DKW_WGR_C_palsync_c_007ee2b8;
       iVar4 = DAT_007ed77c;
       DVar3 = GetLastError();
-      FUN_006a5e40(DVar3,iVar4,(int)pcVar5,uVar6);
+      RaiseInternalException(DVar3,iVar4,sourceFile,sourceLine);
       return (HPALETTE)0x0;
     }
   }

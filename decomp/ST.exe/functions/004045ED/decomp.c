@@ -93,7 +93,7 @@ void __cdecl thunk_FUN_00428e50(short *param_1)
     if (piVar6 != (int *)0x0) goto LAB_00428e95;
   }
   piVar6 = piStack_30;
-  FUN_006a5e40(-2,DAT_007ed77c,0x7a5fdc,0x24d);
+  RaiseInternalException(-2,DAT_007ed77c,s_E____titans_tload_cpp_007a5fdc,0x24d);
 LAB_00428e95:
   dVar1 = ((double)DAT_00807570 * _DAT_00790590) / (double)_DAT_007ac580 + _DAT_007901c0;
   FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));

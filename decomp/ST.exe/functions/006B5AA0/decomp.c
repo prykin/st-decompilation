@@ -8,7 +8,7 @@ int FUN_006b5aa0(int param_1,char *param_2)
   if (*(uint *)(param_1 + 0xc) <= *(uint *)(param_1 + 8)) {
     iVar1 = FUN_006b5480(param_1);
     if (iVar1 != 0) {
-      FUN_006a5e40(iVar1,DAT_007ed77c,0x7edb80,0xe);
+      RaiseInternalException(iVar1,DAT_007ed77c,s_E__DKW_TBL_C_sarrappe_c_007edb80,0xe);
       return iVar1;
     }
   }

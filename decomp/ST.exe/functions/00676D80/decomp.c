@@ -18,8 +18,7 @@ FUN_00676d80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char par
   byte *pbVar9;
   void *unaff_EDI;
   bool bVar10;
-  undefined4 local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_70;
   byte local_2c [16];
   int local_1c;
   int local_18;
@@ -37,23 +36,24 @@ FUN_00676d80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char par
   else if ((param_5 < '\0') || (local_5 = param_5, '\b' < param_5)) {
     local_5 = -1;
   }
-  local_70 = DAT_00858df8;
-  DAT_00858df8 = &local_70;
-  iVar3 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+  local_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_70;
+  iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_70;
-    iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x295,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_70.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x295,0,iVar3,&DAT_007a4ccc,
+                               s__EnumPlObj_007d2df4);
     if (iVar7 != 0) {
       pcVar2 = (code *)swi(3);
       iVar3 = (*pcVar2)();
       return iVar3;
     }
-    FUN_006a5e40(iVar3,0,0x7d2d58,0x296);
+    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x296);
     return iVar3;
   }
   local_1c = thunk_FUN_0042a990((char)param_1);
   if (local_1c == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2d58,0x293);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_mdef_cpp_007d2d58,0x293);
   }
   else {
     local_14 = 0;
@@ -163,7 +163,7 @@ LAB_00676f4c:
             iVar3 = (*(code *)param_12)(param_1,local_14,this,param_13);
           }
           if (iVar3 != 0) {
-            DAT_00858df8 = (undefined4 *)local_70;
+            g_currentExceptionFrame = local_70.previous;
             return -1;
           }
         }
@@ -171,13 +171,13 @@ LAB_00677041:
         local_14 = local_14 + 1;
         uVar8 = local_14 & 0xffff;
         if (*(uint *)(local_1c + 0xc) <= uVar8) {
-          DAT_00858df8 = (undefined4 *)local_70;
+          g_currentExceptionFrame = local_70.previous;
           return local_18;
         }
       } while( true );
     }
   }
-  DAT_00858df8 = (undefined4 *)local_70;
+  g_currentExceptionFrame = local_70.previous;
   return local_18;
 }
 

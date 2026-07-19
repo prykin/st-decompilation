@@ -40,7 +40,7 @@ LAB_0071a597:
     }
   }
   if (param_3 != 0) {
-    FUN_006a5e40(-4,DAT_007ed77c,0x7f0800,0x131);
+    RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mfwav_cpp_007f0800,0x131);
   }
   return 0;
 }

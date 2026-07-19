@@ -82,7 +82,7 @@ int __thiscall FUN_006eaff0(void *this,int param_1,int param_2,undefined4 *param
   if (local_24 == 0) {
     return 0;
   }
-  FUN_006a5e40(local_24,DAT_007ed77c,0x7eef4c,0x73d);
+  RaiseInternalException(local_24,DAT_007ed77c,s_E__ourlib_St3dspr_cpp_007eef4c,0x73d);
   return local_24;
 }
 

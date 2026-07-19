@@ -262,7 +262,7 @@ LAB_006bb2e7:
     iVar3 = 0;
   }
   else {
-    FUN_006a5e40(iVar3,DAT_007ed77c,0x7edc48,0x3db);
+    RaiseInternalException(iVar3,DAT_007ed77c,s_E__DKW_DDX_C_ddx_c_007edc48,0x3db);
   }
   ExceptionList = local_14;
   return iVar3;

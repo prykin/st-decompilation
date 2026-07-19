@@ -9,8 +9,7 @@ int FUN_00754530(int param_1,uint *param_2,int param_3,uint param_4,undefined4 p
   undefined4 *puVar5;
   ushort *puVar6;
   bool bVar7;
-  undefined4 local_258;
-  undefined4 local_254 [16];
+  InternalExceptionFrame local_258;
   uint local_214;
   ushort *local_210;
   uint local_20c;
@@ -46,9 +45,9 @@ int FUN_00754530(int param_1,uint *param_2,int param_3,uint param_4,undefined4 p
   local_1ec = (uint)(*(ushort *)(param_1 + 0xe) >> 3);
   ExceptionList = &local_14;
   FUN_00756200(local_1dc,0x3d,0x1be);
-  local_258 = DAT_00858df8;
-  DAT_00858df8 = &local_258;
-  uVar1 = __setjmp3(local_254,2,FUN_0072da21,local_8);
+  local_258.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_258;
+  uVar1 = __setjmp3(local_258.jumpBuffer,2,FUN_0072da21,local_8);
   local_1c = &stack0xfffffd8c;
   puVar4 = &stack0xfffffd8c;
   if (uVar1 == 0) {
@@ -169,7 +168,7 @@ int FUN_00754530(int param_1,uint *param_2,int param_3,uint param_4,undefined4 p
       else {
         local_200[0] = (undefined4 *)&stack0xfffffd8c;
         local_1c = &stack0xfffffd8c;
-        FUN_006a5e40(-0x30,DAT_007ed77c,0x7f2cb8,0x109);
+        RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_JPG_C_jpgdecod_c_007f2cb8,0x109);
       }
     }
     else if (local_158 < local_170) {
@@ -217,13 +216,14 @@ int FUN_00754530(int param_1,uint *param_2,int param_3,uint param_4,undefined4 p
   local_1c = puVar4;
   local_1e8 = uVar1;
   uVar1 = local_1e8;
-  DAT_00858df8 = (undefined4 *)local_258;
+  g_currentExceptionFrame = local_258.previous;
   if ((local_1e8 != 0) && (param_3 == 0)) {
     FUN_006ab060(&local_204);
   }
   FUN_007562c0(local_1dc);
   if (uVar1 != 0) {
-    FUN_006a5e40(uVar1 | 0x8fff0000,DAT_007ed77c,0x7f2cb8,0x136);
+    RaiseInternalException(uVar1 | 0x8fff0000,DAT_007ed77c,s_E__DKW_JPG_C_jpgdecod_c_007f2cb8,0x136)
+    ;
     local_204 = 0;
   }
   ExceptionList = local_14;

@@ -11,20 +11,20 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   undefined4 local_c;
   int local_8;
   
   local_c = 0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar5 = FUN_006ad4d0(s_E____titans_Artem_TLO_ai_cpp_007ac758,0x313,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_cpp_007ac758,0x313,0,iVar3,&DAT_007a4ccc,
+                               s_TLOAiChkOrFindBuildingPlace_erro_007ac77c);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7ac758,0x314);
+      RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_ai_cpp_007ac758,0x314);
       return 0;
     }
     pcVar2 = (code *)swi(3);
@@ -41,7 +41,7 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
     iVar3 = thunk_FUN_004ae0b0(*param_3,local_8,*param_5,param_2,param_1,(undefined4 *)0x0,
                                (int *)0x0,(int *)0x0,iVar3,(int *)0x0);
     if (iVar3 != 0) {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 1;
     }
   }
@@ -49,20 +49,20 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   if (puVar1 == (undefined *)0x0) {
     uVar4 = thunk_FUN_004af080(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
                                param_9);
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return uVar4;
   }
   if (puVar1 == (undefined *)0x1) {
     uVar4 = thunk_FUN_004affa0(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return uVar4;
   }
   if (puVar1 != (undefined *)0x2) {
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return local_c;
   }
   uVar4 = thunk_FUN_004b0250(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return uVar4;
 }
 

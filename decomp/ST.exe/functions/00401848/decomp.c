@@ -16,8 +16,7 @@ VisibleClassTy::SetZoneMin2
   undefined4 unaff_ESI;
   int iVar9;
   void *unaff_EDI;
-  undefined4 uStack_60;
-  undefined4 auStack_5c [17];
+  InternalExceptionFrame IStack_60;
   int iStack_18;
   VisibleClassTy *pVStack_14;
   int iStack_10;
@@ -28,13 +27,14 @@ VisibleClassTy::SetZoneMin2
      ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
     pVStack_14 = this;
     if (*(int *)(this + param_4 * 4 + 0xd4) == 0) {
-      uStack_60 = DAT_00858df8;
-      DAT_00858df8 = &uStack_60;
-      iVar4 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+      IStack_60.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_60;
+      iVar4 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this = pVStack_14;
       if (iVar4 != 0) {
-        DAT_00858df8 = (undefined4 *)uStack_60;
-        iVar4 = FUN_006ad4d0(s_E____titans_grig_visible_cpp_007c92cc,0x3a3,0,iVar4,&DAT_007a4ccc);
+        g_currentExceptionFrame = IStack_60.previous;
+        iVar4 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x3a3,0,iVar4,
+                                   &DAT_007a4ccc,s_VisibleClassTy__SetZoneMin2_007c9440);
         if (iVar4 == 0) {
           return;
         }
@@ -44,7 +44,7 @@ VisibleClassTy::SetZoneMin2
       }
       puVar5 = FUN_006aac10(*(int *)(pVStack_14 + 0x24) * *(int *)(pVStack_14 + 0x20));
       *(undefined4 **)(this + param_4 * 4 + 0xd4) = puVar5;
-      DAT_00858df8 = (undefined4 *)uStack_60;
+      g_currentExceptionFrame = IStack_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
       thunk_FUN_0055bb00(this,6,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6)

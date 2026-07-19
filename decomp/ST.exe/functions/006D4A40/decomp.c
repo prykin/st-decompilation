@@ -2,11 +2,12 @@
 undefined4 FUN_006d4a40(int param_1,int param_2,undefined4 *param_3)
 
 {
+  undefined4 extraout_EAX;
   undefined4 uVar1;
   
   if ((*(uint *)(param_1 + 8) & 0x100000) != 0) {
-    uVar1 = FUN_006a5e40(-0x30,DAT_007ed77c,0x7ee22c,0x19a);
-    return uVar1;
+    RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_FMM_C_fmap_c_007ee22c,0x19a);
+    return extraout_EAX;
   }
   uVar1 = 0xffffffaf;
   if (*(int *)(param_1 + 0x34) != 0) {

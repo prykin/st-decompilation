@@ -15,8 +15,7 @@ STPlaySystemC::SetCtrlCmd
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar8;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   int iStack_10;
   uint uStack_c;
   STPlaySystemC *pSStack_8;
@@ -69,11 +68,11 @@ STPlaySystemC::SetCtrlCmd
       param_5 = 2;
     }
   }
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   uStack_c = param_5;
   pSStack_8 = this;
-  iVar3 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar7 = uStack_c;
   if (iVar3 == 0) {
     iVar3 = uStack_c + param_7;
@@ -123,22 +122,23 @@ STPlaySystemC::SetCtrlCmd
       if (bVar2) {
         FUN_006b9910((undefined4 *)(pSStack_8 + 0x39),puVar4);
         PlaySystemTy::SendClientMail((PlaySystemTy *)pSStack_8,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)uStack_54;
+        g_currentExceptionFrame = IStack_54.previous;
         return;
       }
     }
     FUN_006b9910((undefined4 *)(pSStack_8 + 0x39),puVar4);
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_54;
-  iVar5 = FUN_006ad4d0(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55b,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_54.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55b,0,iVar3,&DAT_007a4ccc,
+                             s_STPlaySystemC__SetCtrlCmd_007c85bc);
   if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c8430,0x55d);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x55d);
   return;
 }
 

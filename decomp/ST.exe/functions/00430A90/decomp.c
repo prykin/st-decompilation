@@ -24,8 +24,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
   void *unaff_EDI;
   int *piVar14;
   char cVar15;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   uint *local_28;
   uint local_24;
   int local_20;
@@ -37,16 +36,17 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
   int local_8;
   
   local_c = (ushort *)0x0;
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar4 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
-    iVar7 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa05,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_6c.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xa05,0,iVar4,&DAT_007a4ccc,
+                               s_STAllPlayersC__GetMessage_007a67b8);
     if (iVar7 == 0) {
-      FUN_006a5e40(iVar4,0,0x7a6004,0xa06);
+      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0xa06);
       return 0xffff;
     }
     pcVar3 = (code *)swi(3);
@@ -225,7 +225,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         FUN_006ab060(&DAT_007fa168);
       }
       DAT_007fa174 = 0;
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
     if (uVar11 == 0) {
@@ -247,7 +247,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       } while ((int)piVar14 < 0x7fab3a);
       thunk_FUN_004da9c0(this_00);
       thunk_FUN_004d8360();
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
     if (uVar11 == 2) {
@@ -306,7 +306,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           *(undefined1 *)puVar13 = 0x50;
           puVar13 = (undefined4 *)((int)puVar13 + 1);
         }
-        DAT_00858df8 = (undefined4 *)local_6c;
+        g_currentExceptionFrame = local_6c.previous;
         return 0;
       }
       cVar15 = '\0';
@@ -322,7 +322,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       } while ((int)puVar13 < 0x7fa135);
       thunk_FUN_00444e70(this_00,(undefined4 *)local_c);
       cMf32::RecMemFree(DAT_00806754,(uint *)&local_c);
-      DAT_00858df8 = (undefined4 *)local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 0;
     }
   }
@@ -358,10 +358,10 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       thunk_FUN_004b7750(iVar4);
       iVar4 = iVar4 + 1;
     } while (iVar4 < 8);
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
+  g_currentExceptionFrame = local_6c.previous;
   return 0;
 }
 

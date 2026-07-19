@@ -7,30 +7,32 @@ undefined4 __thiscall DebugSystemC::CreateSystemObjects(DebugSystemC *this)
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
   void *unaff_ESI;
+  InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
   DebugSystemC *local_8;
   
-  uVar4 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar4 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar4);
-  if (iVar2 == 0) {
+  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  if (errorCode == 0) {
     (**(code **)(*(int *)local_8 + 0xc))(0x8100,&DAT_007fb228,0,0);
-    DAT_00858df8 = (undefined1 *)uVar4;
+    g_currentExceptionFrame = pIVar4;
     return 0;
   }
-  DAT_00858df8 = (undefined1 *)uVar4;
-  iVar3 = FUN_006ad4d0(s_E____titans_tsystem_cpp_007cab5c,0x1df,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  g_currentExceptionFrame = pIVar4;
+  iVar2 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x1df,0,errorCode,&DAT_007a4ccc,
+                             s_DebugSystemC__CreateSystemObject_007cac88);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    uVar3 = (*pcVar1)();
+    return uVar3;
   }
-  FUN_006a5e40(iVar2,0,0x7cab5c,0x1e0);
+  RaiseInternalException(errorCode,0,s_E____titans_tsystem_cpp_007cab5c,0x1e0);
   return 0xffffffff;
 }
 

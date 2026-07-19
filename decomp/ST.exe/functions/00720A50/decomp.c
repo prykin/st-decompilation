@@ -19,8 +19,7 @@ int __fastcall FUN_00720a50(int *param_1)
   int iVar11;
   void *unaff_EDI;
   undefined4 *puVar12;
-  undefined4 local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   size_t local_20;
   int *local_1c;
   int local_18;
@@ -33,20 +32,21 @@ int __fastcall FUN_00720a50(int *param_1)
   if ((param_1[0x4e] == 0) || (*(int *)(param_1[0x4e] + 8) == 0)) {
     return 0;
   }
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
   local_1c = param_1;
-  iVar3 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   piVar7 = local_1c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_64;
-    iVar11 = FUN_006ad4d0(s_E__Ourlib__sedit_cpp_007f0b08,0x51,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_64.previous;
+    iVar11 = ReportDebugMessage(s_E__Ourlib__sedit_cpp_007f0b08,0x51,0,iVar3,&DAT_007a4ccc,
+                                s_EditorClassTy___Draw_Error___007f0b20);
     if (iVar11 != 0) {
       pcVar2 = (code *)swi(3);
       iVar3 = (*pcVar2)();
       return iVar3;
     }
-    FUN_006a5e40(iVar3,0,0x7f0b08,0x52);
+    RaiseInternalException(iVar3,0,s_E__Ourlib__sedit_cpp_007f0b08,0x52);
     return iVar3;
   }
   local_18 = FUN_00720d30((int)local_1c);
@@ -166,7 +166,7 @@ int __fastcall FUN_00720a50(int *param_1)
     }
     FUN_006ab060(&local_8);
   }
-  DAT_00858df8 = (undefined4 *)local_64;
+  g_currentExceptionFrame = local_64.previous;
   return iVar3;
 }
 

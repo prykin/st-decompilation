@@ -18,22 +18,22 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
   void *unaff_EDI;
   undefined4 *puVar8;
   int *piVar9;
-  undefined4 local_8c;
-  undefined4 local_88 [16];
+  InternalExceptionFrame local_8c;
   int local_48 [8];
   undefined4 local_28 [8];
   StartSystemTy *local_8;
   
-  local_8c = DAT_00858df8;
-  DAT_00858df8 = &local_8c;
+  local_8c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_8c;
   local_8 = this;
-  iVar5 = __setjmp3(local_88,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_8;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_8c;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0x31a,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_8c.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x31a,0,iVar5,&DAT_007a4ccc
+                               ,s_StartSystemTy__GetMessage_007cd84c);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar5,0,0x7cd718,0x31b);
+      RaiseInternalException(iVar5,0,s_E____titans_Start_startsys_cpp_007cd718,0x31b);
       return 0xffff;
     }
     pcVar3 = (code *)swi(3);
@@ -204,7 +204,7 @@ int __thiscall StartSystemTy::GetMessage(StartSystemTy *this,int *param_1)
     }
   }
 switchD_005dd1c0_default:
-  DAT_00858df8 = (undefined4 *)local_8c;
+  g_currentExceptionFrame = local_8c.previous;
   iVar5 = FUN_006e5f00((int)param_1);
   return iVar5;
 }

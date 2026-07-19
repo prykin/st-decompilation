@@ -6,7 +6,7 @@ undefined4 __fastcall thunk_FUN_004d01f0(void *param_1)
 {
   undefined4 *puVar1;
   STT3DSprC *this;
-  int iVar2;
+  int exceptionCode;
   int iStack_10;
   int iStack_c;
   int iStack_8;
@@ -20,9 +20,10 @@ undefined4 __fastcall thunk_FUN_004d01f0(void *param_1)
       this = (STT3DSprC *)thunk_FUN_004ab810(puVar1);
     }
     *(STT3DSprC **)((int)param_1 + 0x5ff) = this;
-    iVar2 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
-    if (iVar2 != 0) {
-      FUN_006a5e40(iVar2,DAT_007ed77c,0x7bf39c,0x28b);
+    exceptionCode = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
+    if (exceptionCode != 0) {
+      RaiseInternalException
+                (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x28b);
     }
     thunk_FUN_004ce9e0(param_1,&iStack_10,&iStack_c,&iStack_8);
     thunk_FUN_004ad3c0(*(void **)((int)param_1 + 0x5ff),

@@ -138,7 +138,7 @@ LAB_006b1da4:
 LAB_006b1fe2:
   *param_2 = param_1;
   if (local_8 != 0) {
-    FUN_006a5e40(local_8,DAT_007ed77c,0x7edac0,0x322);
+    RaiseInternalException(local_8,DAT_007ed77c,s_E__DKW_DDX_C_ddsinit_c_007edac0,0x322);
     return local_8;
   }
   return 0;

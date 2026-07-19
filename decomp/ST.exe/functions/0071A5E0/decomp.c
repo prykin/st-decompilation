@@ -20,8 +20,7 @@ int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
   char *pcVar14;
   int iVar15;
   bool bVar16;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   int local_14;
   int local_10;
   uint *local_c;
@@ -29,13 +28,14 @@ int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
   
   local_8 = (int *)0x0;
   local_c = (uint *)0x0;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar3 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   local_14 = iVar3;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar12 = FUN_006ad4d0(s_E__Ourlib_mfwav_cpp_007f0800,0x16f,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar12 = ReportDebugMessage(s_E__Ourlib_mfwav_cpp_007f0800,0x16f,0,iVar3,&DAT_007a4ccc,
+                                s_mfSndTblLoad_007f0870);
     if (iVar12 == 0) {
       if (local_8 != (int *)0x0) {
         if (local_8[3] != 0) {
@@ -78,7 +78,7 @@ int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
       if (local_c != (uint *)0x0) {
         FUN_006b5570((byte *)local_c);
       }
-      FUN_006a5e40(iVar3,0,0x7f0800,0x187);
+      RaiseInternalException(iVar3,0,s_E__Ourlib_mfwav_cpp_007f0800,0x187);
       return (int *)0x0;
     }
     pcVar2 = (code *)swi(3);
@@ -86,7 +86,7 @@ int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
     return piVar9;
   }
   if ((param_1 == 0) || (param_2 == (char *)0x0)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0800,0x148);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfwav_cpp_007f0800,0x148);
   }
   local_8 = FUN_006aac10(0x10);
   *local_8 = param_1;
@@ -165,7 +165,7 @@ LAB_0071a6d8:
       iVar3 = iVar3 + 1;
     } while (iVar3 < piVar9[2]);
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return piVar9;
 }
 

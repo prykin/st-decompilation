@@ -55,7 +55,8 @@ int __fastcall FUN_0047fad0(int *param_1,undefined4 param_2,void *param_3)
     iVar5 = thunk_FUN_0047df00(param_1,param_2,(int *)0x2);
     return iVar5;
   default:
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b30,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3b30,0,0,&DAT_007a4ccc,
+                               s_STBoatC__BackDismant_incorrect_e_007ab830);
     if (iVar5 == 0) {
       return -1;
     }

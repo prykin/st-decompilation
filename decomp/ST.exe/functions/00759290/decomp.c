@@ -16,7 +16,7 @@ int FUN_00759290(int *param_1,int param_2,uint param_3)
     param_3 = param_3 + (8 - (param_3 & 7));
   }
   if ((param_2 < 0) || (1 < param_2)) {
-    FUN_006a5e40(0xc,DAT_007ed77c,0x7f2dc8,0x110);
+    RaiseInternalException(0xc,DAT_007ed77c,s_E__DKW_JPG_C_jmemmgr_c_007f2dc8,0x110);
   }
   puVar2 = (undefined4 *)0x0;
   puVar3 = *(undefined4 **)(iVar1 + 0x30 + param_2 * 4);

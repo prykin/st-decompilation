@@ -18,8 +18,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   undefined4 unaff_ESI;
   void *unaff_EDI;
   int *piVar6;
-  undefined4 *local_1d0;
-  undefined4 local_1cc [16];
+  InternalExceptionFrame local_1d0;
   int local_18c [4];
   undefined4 local_17c;
   undefined4 local_178;
@@ -58,10 +57,10 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   
   local_c = (ushort *)0x0;
   local_8 = 0;
-  local_1d0 = DAT_00858df8;
-  DAT_00858df8 = &local_1d0;
+  local_1d0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_1d0;
   local_10 = this;
-  iVar3 = __setjmp3(local_1cc,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_1d0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_10;
   if (iVar3 == 0) {
     piVar6 = local_18c;
@@ -118,17 +117,18 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
       local_64 = FUN_0070a6f0(DAT_00806790,0x12,param_14,1);
     }
     (**(code **)(**(int **)(pPVar2 + 0xc) + 8))(2,&local_8,0,local_18c,0);
-    DAT_00858df8 = local_1d0;
+    g_currentExceptionFrame = local_1d0.previous;
     return local_8;
   }
-  DAT_00858df8 = local_1d0;
-  iVar4 = FUN_006ad4d0(s_E____titans_Andrey_panel_cpp_007c7390,0x97,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_1d0.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_panel_cpp_007c7390,0x97,0,iVar3,&DAT_007a4ccc,
+                             s_PanelTy__CreateBut_007c7414);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     uVar5 = (*pcVar1)();
     return uVar5;
   }
-  FUN_006a5e40(iVar3,0,0x7c7390,0x97);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_panel_cpp_007c7390,0x97);
   return 0;
 }
 

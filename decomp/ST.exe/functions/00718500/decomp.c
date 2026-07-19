@@ -17,8 +17,7 @@ FUN_00718500(undefined4 param_1,int param_2,int param_3,byte param_4,byte param_
   int iVar7;
   float afStackY_1888 [768];
   float afStackY_c88 [768];
-  undefined4 local_88;
-  undefined4 local_84 [16];
+  InternalExceptionFrame local_88;
   float *local_44;
   float local_40;
   float *local_3c;
@@ -35,9 +34,9 @@ FUN_00718500(undefined4 param_1,int param_2,int param_3,byte param_4,byte param_
   undefined1 uVar13;
   
   FUN_0072da40();
-  local_88 = DAT_00858df8;
-  DAT_00858df8 = &local_88;
-  iVar3 = __setjmp3(local_84,0,unaff_EDI,unaff_ESI);
+  local_88.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_88;
+  iVar3 = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (param_7 == 0) {
       param_7 = FUN_006aac70(param_2 + param_3);
@@ -100,14 +99,14 @@ FUN_00718500(undefined4 param_1,int param_2,int param_3,byte param_4,byte param_
         *(undefined1 *)((int)pfVar11 + param_7) = uVar13;
       } while ((int)pfVar11 + 1 < iVar3);
     }
-    DAT_00858df8 = (undefined4 *)local_88;
+    g_currentExceptionFrame = local_88.previous;
     return param_7;
   }
-  DAT_00858df8 = (undefined4 *)local_88;
+  g_currentExceptionFrame = local_88.previous;
   local_2c = 1.042596e-38;
-  iVar7 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,0x93,0,iVar3,&DAT_007a4ccc);
+  iVar7 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x93,0,iVar3,&DAT_007a4ccc);
   if (iVar7 == 0) {
-    FUN_006a5e40(iVar3,0,0x7f0718,0x94);
+    RaiseInternalException(iVar3,0,s_E__Ourlib_Palette_cpp_007f0718,0x94);
     return 0;
   }
   pcVar1 = (code *)swi(3);

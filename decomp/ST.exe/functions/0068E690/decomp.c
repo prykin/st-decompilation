@@ -8,7 +8,7 @@ undefined4 __thiscall FUN_0068e690(void *this,int param_1)
   local_c = 0;
   local_8 = 0;
   if (param_1 == 0) {
-    FUN_006a5e40(-6,DAT_007ed77c,0x7d56e0,0x107);
+    RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_tact_cpp_007d56e0,0x107);
     return 0xfffffffa;
   }
   local_c = *(undefined4 *)(param_1 + 0x18);

@@ -16,8 +16,7 @@ FUN_00718d50(int param_1,uint param_2,int param_3,uint param_4,byte param_5,uint
   undefined4 unaff_ESI;
   byte *pbVar7;
   void *unaff_EDI;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   float local_24;
   float local_20;
   float local_1c;
@@ -29,9 +28,9 @@ FUN_00718d50(int param_1,uint param_2,int param_3,uint param_4,byte param_5,uint
   byte local_7;
   byte local_6;
   
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
-  iVar3 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
+  iVar3 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (param_7 == (undefined4 *)0x0) {
       local_c = FUN_006aac10(param_3 * 4);
@@ -77,17 +76,18 @@ FUN_00718d50(int param_1,uint param_2,int param_3,uint param_4,byte param_5,uint
         pbVar1[2] = local_6;
       } while (iVar3 < param_3);
     }
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     return local_c;
   }
-  DAT_00858df8 = (undefined4 *)local_68;
-  iVar4 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,0x136,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_68.previous;
+  iVar4 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,0x136,0,iVar3,&DAT_007a4ccc,
+                             s_ChangePalette_Error__007f0784);
   if (iVar4 != 0) {
     pcVar2 = (code *)swi(3);
     puVar5 = (undefined4 *)(*pcVar2)();
     return puVar5;
   }
-  FUN_006a5e40(iVar3,0,0x7f0718,0x137);
+  RaiseInternalException(iVar3,0,s_E__Ourlib_Palette_cpp_007f0718,0x137);
   return (undefined4 *)0x0;
 }
 

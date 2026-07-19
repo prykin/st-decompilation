@@ -19,13 +19,14 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
                           ((int)DAT_007fb246 * (int)param_4 + (int)DAT_007fb240 * (int)param_3 +
                           (int)param_2) * 8), iVar6 == 0 || (*(int *)(iVar6 + 0x18) != param_5))))))
       )))) {
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcc,0,0,&DAT_007a4ccc,
+                               s_STBoatC__SetNewMD_007aba24);
     if (iVar6 != 0) {
       pcVar5 = (code *)swi(3);
       (*pcVar5)();
       return;
     }
-    FUN_006a5e40(0,DAT_007ed77c,0x7a9d3c,0x4bcd);
+    RaiseInternalException(0,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcd);
   }
   if (param_1 == 1) {
     if (*(int *)(this + 0x4a1) != param_5) {

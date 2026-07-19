@@ -4,22 +4,21 @@ void __cdecl FUN_00710560(uint *param_1)
 {
   code *pcVar1;
   uint *puVar2;
-  int iVar3;
-  uint *puVar4;
-  int iVar5;
+  int errorCode;
+  uint *puVar3;
+  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   uint *local_8;
   
   local_8 = param_1;
-  iVar5 = 0;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar4 = 0;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = local_8;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     if (local_8 != (uint *)0x0) {
       if (local_8[0x28] == 0) {
         if (*(HGDIOBJ *)((int)local_8 + 0x111) != (HGDIOBJ)0x0) {
@@ -59,28 +58,28 @@ void __cdecl FUN_00710560(uint *param_1)
         if (*(int *)((int)puVar2 + 0x125) != 0) {
           FUN_006ab060((undefined4 *)((int)puVar2 + 0x125));
         }
-        puVar4 = puVar2;
+        puVar3 = puVar2;
         if (0 < **(short **)((int)puVar2 + 0x9a)) {
           do {
-            puVar4 = puVar4 + 1;
-            if (*puVar4 != 0) {
+            puVar3 = puVar3 + 1;
+            if (*puVar3 != 0) {
               if ((cMf32 *)*puVar2 == (cMf32 *)0x0) {
-                FUN_006ab060(puVar4);
+                FUN_006ab060(puVar3);
               }
               else {
-                cMf32::RecMemFree((cMf32 *)*puVar2,puVar4);
+                cMf32::RecMemFree((cMf32 *)*puVar2,puVar3);
               }
             }
-            iVar5 = iVar5 + 1;
-          } while (iVar5 < **(short **)((int)puVar2 + 0x9a));
+            iVar4 = iVar4 + 1;
+          } while (iVar4 < **(short **)((int)puVar2 + 0x9a));
         }
-        puVar4 = (uint *)((int)puVar2 + 0x9a);
-        if (*puVar4 != 0) {
+        puVar3 = (uint *)((int)puVar2 + 0x9a);
+        if (*puVar3 != 0) {
           if ((cMf32 *)*puVar2 == (cMf32 *)0x0) {
-            FUN_006ab060(puVar4);
+            FUN_006ab060(puVar3);
           }
           else {
-            cMf32::RecMemFree((cMf32 *)*puVar2,puVar4);
+            cMf32::RecMemFree((cMf32 *)*puVar2,puVar3);
           }
         }
         if ((*(undefined4 **)((int)puVar2 + 0x72) != (undefined4 *)0x0) &&
@@ -93,13 +92,14 @@ void __cdecl FUN_00710560(uint *param_1)
       }
       FUN_006a5e90(param_1);
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x400,0,iVar3,&DAT_007a4ccc);
-  if (iVar5 == 0) {
-    FUN_006a5e40(iVar3,0,0x7f0190,0x402);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar4 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x400,0,errorCode,&DAT_007a4ccc,
+                             s_ccFntTy__operator_delete_007f01f8);
+  if (iVar4 == 0) {
+    RaiseInternalException(errorCode,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x402);
     return;
   }
   pcVar1 = (code *)swi(3);

@@ -21,16 +21,15 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   int iVar11;
   int iVar12;
   undefined4 *puVar13;
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   TradePanelTy *local_10;
   int local_c;
   int local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar6 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar6 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar5 = local_10;
   if (iVar6 == 0) {
     pTVar1 = local_10 + 0x18d;
@@ -74,17 +73,18 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
         local_c = local_c + -1;
       } while (local_c != 0);
     }
-    DAT_00858df8 = local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   }
-  DAT_00858df8 = local_54;
-  iVar11 = FUN_006ad4d0(s_E____titans_Andrey_tradecen_cpp_007c8624,0x111,0,iVar6,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_54.previous;
+  iVar11 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x111,0,iVar6,&DAT_007a4ccc
+                              ,s_TradePanelTy__PaintIndicators_007c8728);
   if (iVar11 != 0) {
     pcVar4 = (code *)swi(3);
     (*pcVar4)();
     return;
   }
-  FUN_006a5e40(iVar6,0,0x7c8624,0x111);
+  RaiseInternalException(iVar6,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x111);
   return;
 }
 

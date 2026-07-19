@@ -24,8 +24,7 @@ cTypingTy::TypingInit
   void *unaff_EDI;
   uint *puVar11;
   undefined4 local_9c [18];
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   uint local_10;
   cTypingTy *local_c;
   cTypingTy local_5;
@@ -37,12 +36,13 @@ cTypingTy::TypingInit
   if (param_2 != (void *)0x0) {
     ccFntTy::Save(param_2,local_9c);
   }
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar8 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0xa23,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar8 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0xa23,0,iVar4,&DAT_007a4ccc,
+                               s_cTypingTy__TypingInit_007f03bc);
     if (iVar8 != 0) {
       pcVar2 = (code *)swi(3);
       iVar4 = (*pcVar2)();
@@ -64,14 +64,14 @@ cTypingTy::TypingInit
     if (param_2 != (void *)0x0) {
       FUN_007109f0(param_2,local_9c);
     }
-    FUN_006a5e40(iVar4,0,0x7f0190,0xa2a);
+    RaiseInternalException(iVar4,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0xa2a);
     if (-1 < iVar4) {
       return -1;
     }
     return iVar4;
   }
   if ((param_1 == (uint *)0x0) || (param_2 == (void *)0x0)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0190,0x9ed);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x9ed);
   }
   pcVar3 = local_c;
   *(undefined4 *)((int)param_2 + 0x7e) = 1;
@@ -208,7 +208,7 @@ cTypingTy::TypingInit
   *(undefined4 *)(pcVar3 + 0x8c) = *(undefined4 *)(pcVar3 + 0x58);
   iVar4 = *(int *)(pcVar3 + 8);
   FUN_007109f0(param_2,local_9c);
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return iVar4;
 }
 

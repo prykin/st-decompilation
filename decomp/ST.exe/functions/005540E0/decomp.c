@@ -27,18 +27,18 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
   char local_457 [515];
   undefined1 local_254;
   char local_253 [515];
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint local_c;
   uint *local_8;
   
   local_8 = (uint *)0x0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar7 = FUN_006ad4d0(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc,
+                               s_cLoadingTy__new_007c8ed4);
     if (iVar7 == 0) {
       if (local_8 != (uint *)0x0) {
         cMf32::RecMemFree(DAT_00806780,local_8);
@@ -48,7 +48,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
         }
         FUN_006ab060(&local_8);
       }
-      FUN_006a5e40(iVar3,0,0x7c8f0c,0x41);
+      RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x41);
       return (uint *)0x0;
     }
     pcVar2 = (code *)swi(3);
@@ -93,7 +93,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
     }
     local_c = uVar5;
     if (uVar5 == 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7c8f0c,0x24);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_grig_loading_cpp_007c8f0c,0x24);
     }
     iVar3 = 1;
     bVar12 = 0;
@@ -141,7 +141,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
     }
     else {
       if (DAT_0080874e != '\x03') {
-        FUN_006a5e40(-1,DAT_007ed77c,0x7c8f0c,0x2f);
+        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_grig_loading_cpp_007c8f0c,0x2f);
         goto LAB_00554324;
       }
       local_c = 0;
@@ -195,7 +195,7 @@ LAB_00554324:
     local_8[0x13] = uVar5;
   }
   local_8[0x12] = param_3;
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
 

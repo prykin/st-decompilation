@@ -9,51 +9,51 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,int param_1,int param_2)
   code *pcVar1;
   STGroupC *this_00;
   uint uVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
-  undefined4 uVar5;
-  uint uVar6;
+  undefined4 uVar4;
+  uint uVar5;
   undefined4 unaff_ESI;
-  uint uVar7;
+  uint uVar6;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   STGroupC *local_10;
   uint local_c;
   uint local_8;
   
   local_c = *(uint *)(param_1 + 0xc);
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar2 = local_c;
   this_00 = local_10;
-  if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_tc_grp_cpp_007a50a4,0xf8,0,iVar3,&DAT_007a4ccc);
-    if (iVar4 != 0) {
+  if (errorCode != 0) {
+    g_currentExceptionFrame = local_54.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0xf8,0,errorCode,&DAT_007a4ccc
+                               ,s_STGroupC__AddObjs_007a5134);
+    if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
-      uVar5 = (*pcVar1)();
-      return uVar5;
+      uVar4 = (*pcVar1)();
+      return uVar4;
     }
-    FUN_006a5e40(iVar3,0,0x7a50a4,0xf9);
+    RaiseInternalException(errorCode,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0xf9);
     return 0xffffffff;
   }
   if (local_c == 0) {
     return 0;
   }
-  uVar7 = 0;
+  uVar6 = 0;
   if (local_c != 0) {
-    uVar6 = 0;
+    uVar5 = 0;
     do {
-      FUN_006acc70(param_1,uVar6,&local_8);
+      FUN_006acc70(param_1,uVar5,&local_8);
       AddObj(this_00,local_8,param_2);
-      uVar7 = uVar7 + 1;
-      uVar6 = uVar7 & 0xffff;
-    } while (uVar6 < uVar2);
+      uVar6 = uVar6 + 1;
+      uVar5 = uVar6 & 0xffff;
+    } while (uVar5 < uVar2);
   }
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

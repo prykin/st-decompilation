@@ -1,4 +1,4 @@
-FUN_006a5e40:
+RaiseInternalException:
 006A5E40  55                        PUSH EBP
 006A5E41  8B EC                     MOV EBP,ESP
 006A5E43  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

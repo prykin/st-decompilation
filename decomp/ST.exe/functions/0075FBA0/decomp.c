@@ -35,7 +35,7 @@ void FUN_0075fba0(int *param_1)
   }
   else {
     if (iVar3 != 2) {
-      FUN_006a5e40(0x2f,DAT_007ed77c,0x7f2ea0,0x318);
+      RaiseInternalException(0x2f,DAT_007ed77c,s_E__DKW_JPG_C_jquant1_c_007f2ea0,0x318);
       return;
     }
     puVar2 = (undefined4 *)(iVar1 + 0x44);

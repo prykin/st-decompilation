@@ -36,7 +36,7 @@ int __cdecl thunk_FUN_006a2ed0(short *param_1)
     piStack_14 = (int *)FUN_006dbca0((int)puVar6);
     if (piStack_14 != (int *)0x0) goto LAB_006a2f2f;
   }
-  FUN_006a5e40(-2,DAT_007ed77c,0x7dfacc,0xcf);
+  RaiseInternalException(-2,DAT_007ed77c,s_E____titans_Maps_prepare_cpp_007dfacc,0xcf);
 LAB_006a2f2f:
   dVar1 = (double)((float)(int)param_1[1] * _DAT_0079d84c);
   dVar2 = (double)((float)-(int)param_1[1] * _DAT_0079d84c);

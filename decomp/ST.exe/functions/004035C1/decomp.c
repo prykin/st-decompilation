@@ -13,8 +13,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   int *piVar6;
   void *unaff_EDI;
   byte *pbVar7;
-  undefined4 uStack_68;
-  undefined4 auStack_64 [16];
+  InternalExceptionFrame IStack_68;
   int iStack_24;
   int iStack_20;
   uint uStack_1c;
@@ -24,10 +23,10 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   uint uStack_c;
   ushort *puStack_8;
   
-  uStack_68 = DAT_00858df8;
-  DAT_00858df8 = &uStack_68;
+  IStack_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_68;
   pSStack_18 = this;
-  iVar2 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = pSStack_18;
   if (iVar2 == 0) {
     if (*(int *)(pSStack_18 + 0x11) == 3) {
@@ -135,13 +134,14 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         } while ((int)uStack_1c < iStack_24);
       }
     }
-    DAT_00858df8 = (undefined4 *)uStack_68;
+    g_currentExceptionFrame = IStack_68.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_68;
-  iVar4 = FUN_006ad4d0(s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bd,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_68.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bd,0,iVar2,&DAT_007a4ccc,
+                             s_STTeamLissagC__InitVisibelSystem_007d1d60);
   if (iVar4 == 0) {
-    FUN_006a5e40(iVar2,0,0x7d1d3c,0x1bf);
+    RaiseInternalException(iVar2,0,s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bf);
     return;
   }
   pcVar1 = (code *)swi(3);

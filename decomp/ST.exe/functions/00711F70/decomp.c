@@ -17,8 +17,7 @@ ccFntTy::WrSarr(ccFntTy *this,int param_1,int param_2,int param_3,int param_4,in
   void *unaff_EDI;
   uint *puVar5;
   undefined4 uVar6;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   int local_1c;
   ccFntTy *local_18;
   int local_14;
@@ -35,17 +34,18 @@ ccFntTy::WrSarr(ccFntTy *this,int param_1,int param_2,int param_3,int param_4,in
       if (iVar2 < param_3 + param_2) {
         param_3 = iVar2 - param_2;
       }
-      local_60 = DAT_00858df8;
-      DAT_00858df8 = &local_60;
+      local_60.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_60;
       local_18 = this;
-      iVar2 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+      iVar2 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this_00 = local_18;
       if (iVar2 != 0) {
-        DAT_00858df8 = (undefined4 *)local_60;
-        iVar4 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x752,0,iVar2,&DAT_007a4ccc);
+        g_currentExceptionFrame = local_60.previous;
+        iVar4 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x752,0,iVar2,&DAT_007a4ccc,
+                                   s_ccFntTy__WrSarr_007f02c8);
         if (iVar4 == 0) {
           *(undefined4 *)(local_18 + 0x4c) = 1;
-          FUN_006a5e40(iVar2,0,0x7f0190,0x756);
+          RaiseInternalException(iVar2,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x756);
           return iVar2;
         }
         pcVar1 = (code *)swi(3);
@@ -106,7 +106,7 @@ ccFntTy::WrSarr(ccFntTy *this,int param_1,int param_2,int param_3,int param_4,in
         } while (local_10 < local_1c);
       }
       *(undefined4 *)(this_00 + 0x4c) = 1;
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
     }
   }
   return 0;

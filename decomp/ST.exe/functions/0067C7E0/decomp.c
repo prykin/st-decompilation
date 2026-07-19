@@ -23,8 +23,7 @@ undefined4 FUN_0067c7e0(int param_1)
   uint *puVar14;
   bool bVar15;
   byte bVar16;
-  undefined4 local_b0;
-  undefined4 local_ac [16];
+  InternalExceptionFrame local_b0;
   uint local_6c [3];
   byte *local_60;
   undefined4 local_38 [5];
@@ -36,19 +35,20 @@ undefined4 FUN_0067c7e0(int param_1)
   int local_c;
   byte *local_8;
   
-  local_b0 = DAT_00858df8;
-  DAT_00858df8 = &local_b0;
-  iVar3 = __setjmp3(local_ac,0,unaff_EDI,unaff_ESI);
+  local_b0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_b0;
+  iVar3 = __setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_b0;
-    iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x655,0,iVar3,
-                         (byte *)s_AiPlrClassTy__GetMessage_error_m_007d2f48);
+    g_currentExceptionFrame = local_b0.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x655,0,iVar3,
+                               s_AiPlrClassTy__GetMessage_error_m_007d2f48,
+                               *(undefined4 *)(param_1 + 0x10),*(undefined4 *)(local_10 + 0x18));
     if (iVar7 != 0) {
       pcVar2 = (code *)swi(3);
       uVar8 = (*pcVar2)();
       return uVar8;
     }
-    FUN_006a5e40(iVar3,0,0x7d2e4c,0x656);
+    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x656);
     return 0xffff;
   }
   *(undefined4 *)(local_10 + 0x6fe) = *(undefined4 *)(DAT_00802a38 + 0xe4);
@@ -139,7 +139,7 @@ undefined4 FUN_0067c7e0(int param_1)
       else if (uVar9 == 2) {
         puVar12 = *(undefined4 **)(param_1 + 0x14);
         if (puVar12 == (undefined4 *)0x0) {
-          FUN_006a5e40(-6,DAT_007ed77c,0x7d2e4c,0x586);
+          RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x586);
         }
         AiPlrClassTy::InitData(local_10,puVar12);
         if (DAT_007fa174 != 0) {
@@ -297,7 +297,7 @@ undefined4 FUN_0067c7e0(int param_1)
     }
   }
   FUN_006e5fd0();
-  DAT_00858df8 = (undefined4 *)local_b0;
+  g_currentExceptionFrame = local_b0.previous;
   return 0;
 }
 

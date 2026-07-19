@@ -14,24 +14,23 @@ int FUN_004b80d0(int param_1,int param_2)
   short sVar9;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int *local_c;
   int local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar5 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar5 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar8 = FUN_006ad4d0(s_E____titans_Artem_TLO_base_cpp_007ac820,0xe1,0,iVar5,
-                         (byte *)s_TLOBaseTy__SetState_error__state_007ac7f0);
+    g_currentExceptionFrame = local_50.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Artem_TLO_base_cpp_007ac820,0xe1,0,iVar5,
+                               s_TLOBaseTy__SetState_error__state_007ac7f0,param_1);
     if (iVar8 != 0) {
       pcVar2 = (code *)swi(3);
       iVar5 = (*pcVar2)();
       return iVar5;
     }
-    FUN_006a5e40(iVar5,0,0x7ac820,0xe2);
+    RaiseInternalException(iVar5,0,s_E____titans_Artem_TLO_base_cpp_007ac820,0xe2);
     return iVar5;
   }
   if ((param_2 == 0) || (iVar5 = thunk_FUN_004b7f90(local_c,param_1), iVar5 != 0)) {
@@ -102,7 +101,8 @@ int FUN_004b80d0(int param_1,int param_2)
               do {
                 iVar7 = thunk_FUN_004960d0((short)iVar8,(short)local_8,(short)local_c[0x16e]);
                 if (iVar7 != 0) {
-                  FUN_006a5e40(-5,DAT_007ed77c,0x7ac820,0x6a);
+                  RaiseInternalException
+                            (-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x6a);
                 }
                 iVar8 = iVar8 + 1;
               } while (iVar8 < iVar5 + local_c[0x16c]);
@@ -140,7 +140,8 @@ int FUN_004b80d0(int param_1,int param_2)
               do {
                 iVar7 = thunk_FUN_00496140((short)iVar8,(short)local_8,(short)local_c[0x16e]);
                 if (iVar7 != 0) {
-                  FUN_006a5e40(-5,DAT_007ed77c,0x7ac820,0x87);
+                  RaiseInternalException
+                            (-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x87);
                 }
                 iVar8 = iVar8 + 1;
               } while (iVar8 < iVar5 + local_c[0x16c]);
@@ -264,7 +265,7 @@ int FUN_004b80d0(int param_1,int param_2)
       if (sVar9 != 0) {
         iVar5 = thunk_FUN_00496140(sVar4,(short)local_c[0x16d],sVar1);
         if (iVar5 != 0) {
-          FUN_006a5e40(-5,DAT_007ed77c,0x7ac820,0x73);
+          RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_base_cpp_007ac820,0x73);
         }
         *(undefined4 *)((int)local_c + 0x251) = 0;
       }
@@ -335,12 +336,12 @@ int FUN_004b80d0(int param_1,int param_2)
          (iVar5 = thunk_FUN_004ea620((int)local_c), iVar5 != 0)) {
         local_c[0xff] = 1;
         local_c[0x100] = 0;
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

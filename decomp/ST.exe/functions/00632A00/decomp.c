@@ -16,8 +16,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   int *piVar6;
   void *unaff_EDI;
   byte *pbVar7;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   int local_24;
   int local_20;
   uint local_1c;
@@ -27,10 +26,10 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   uint local_c;
   ushort *local_8;
   
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
   local_18 = this;
-  iVar2 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_18;
   if (iVar2 == 0) {
     if (*(int *)(local_18 + 0x11) == 3) {
@@ -138,13 +137,14 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         } while ((int)local_1c < local_24);
       }
     }
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_68;
-  iVar4 = FUN_006ad4d0(s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bd,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_68.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bd,0,iVar2,&DAT_007a4ccc,
+                             s_STTeamLissagC__InitVisibelSystem_007d1d60);
   if (iVar4 == 0) {
-    FUN_006a5e40(iVar2,0,0x7d1d3c,0x1bf);
+    RaiseInternalException(iVar2,0,s_E____titans_nick_to_supp_cpp_007d1d3c,0x1bf);
     return;
   }
   pcVar1 = (code *)swi(3);

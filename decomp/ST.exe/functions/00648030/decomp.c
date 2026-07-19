@@ -15,21 +15,21 @@ undefined4 FUN_00648030(int param_1)
   void *unaff_EDI;
   undefined4 *puVar10;
   char *pcVar11;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   AiBossClassTy *local_10;
   byte *local_c;
   uint local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_boss_cpp_007d2750,0xde,0,iVar2,
-                         (byte *)s_AiBossClassTy__GetMessage_error_m_007d27b0);
+    g_currentExceptionFrame = local_54.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0xde,0,iVar2,
+                               s_AiBossClassTy__GetMessage_error_m_007d27b0,
+                               *(undefined4 *)(param_1 + 0x10),*(undefined4 *)(local_10 + 0x18));
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar2,0,0x7d2750,0xdf);
+      RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_cpp_007d2750,0xdf);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);
@@ -54,7 +54,7 @@ undefined4 FUN_00648030(int param_1)
     else if (uVar7 == 2) {
       puVar3 = *(undefined4 **)(param_1 + 0x14);
       if (puVar3 == (undefined4 *)0x0) {
-        FUN_006a5e40(-6,DAT_007ed77c,0x7d2750,0x61);
+        RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_boss_cpp_007d2750,0x61);
       }
       AiBossClassTy::InitData(local_10,puVar3);
       DAT_008117bc = local_10;
@@ -157,7 +157,7 @@ undefined4 FUN_00648030(int param_1)
   }
 LAB_00648291:
   FUN_006e5fd0();
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

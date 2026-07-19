@@ -20,14 +20,14 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   uint uVar9;
   void *pvVar10;
   undefined4 uVar11;
-  undefined4 uVar12;
+  InternalExceptionFrame *pIVar12;
   undefined4 auStack_48 [16];
   MAdvTy *pMStack_8;
   
-  uVar12 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar12 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pMStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,uVar12);
+  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,pIVar12);
   if (iVar3 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pMVar2 = pMStack_8;
@@ -72,17 +72,18 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
       this_03 = extraout_ECX;
     }
     StartServTy::WrTextDDX(this_03,0,iVar3,iVar5,iVar6,iVar7,puVar4,uVar9,uVar8,pvVar10,uVar11);
-    DAT_00858df8 = (undefined1 *)uVar12;
+    g_currentExceptionFrame = pIVar12;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar12;
-  iVar5 = FUN_006ad4d0(s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = pIVar12;
+  iVar5 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d,0,iVar3,&DAT_007a4ccc,
+                             s_MAdvTy__PaintMAdv_007cbc74);
   if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cbc24,0x4d);
+  RaiseInternalException(iVar3,0,s_E____titans_Start_adv_obj_cpp_007cbc24,0x4d);
   return;
 }
 

@@ -12,8 +12,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   undefined4 *puVar7;
   void *unaff_EDI;
   AiTactClassTy *pAVar8;
-  undefined4 uStack_64;
-  undefined4 auStack_60 [16];
+  InternalExceptionFrame IStack_64;
   undefined4 uStack_20;
   int iStack_1c;
   AiTactClassTy *pAStack_18;
@@ -26,10 +25,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   iStack_c = 0;
   puStack_10 = (undefined4 *)0x0;
   puStack_8 = (undefined4 *)0x0;
-  uStack_64 = DAT_00858df8;
-  DAT_00858df8 = &uStack_64;
+  IStack_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_64;
   pAStack_18 = this;
-  iVar3 = __setjmp3(auStack_60,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = pAStack_18;
   if (iVar3 == 0) {
     if (pAStack_18 != (AiTactClassTy *)0x0) {
@@ -102,20 +101,21 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       *(uint *)(pAVar2 + 0xa1) = uVar6;
       *(AiTactClassTy **)(iStack_c + 0x284) = pAVar2;
     }
-    DAT_00858df8 = (undefined4 *)uStack_64;
+    g_currentExceptionFrame = IStack_64.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)uStack_64;
+  g_currentExceptionFrame = IStack_64.previous;
   thunk_FUN_0068e010((int)pAStack_18);
   thunk_FUN_006686c0((int *)&puStack_8);
   thunk_FUN_006686c0((int *)&puStack_10);
-  iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x61,0,iVar3,&DAT_007a4ccc);
+  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x61,0,iVar3,&DAT_007a4ccc,
+                             s_AiTactClassTy__InitData_007d5700);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     iVar3 = (*pcVar1)();
     return iVar3;
   }
-  FUN_006a5e40(iVar3,0,0x7d56e0,0x62);
+  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x62);
   return iVar3;
 }
 

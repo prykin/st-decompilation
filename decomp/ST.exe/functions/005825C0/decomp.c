@@ -90,7 +90,8 @@ LAB_005829e6:
       else {
         if (local_2c != 1) {
           if (local_2c != 2) {
-            iVar9 = FUN_006ad4d0(s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x11b,0,0,&DAT_007a4ccc);
+            iVar9 = ReportDebugMessage(s_E____titans_Igor_to_jelly_cpp_007cb7b0,0x11b,0,0,
+                                       &DAT_007a4ccc,s_STJellyGunC__LifeGun_Error_Move_007cb7d4);
             if (iVar9 == 0) {
               return;
             }

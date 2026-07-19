@@ -13,14 +13,13 @@ FUN_007192d0(undefined4 *param_1,undefined4 *param_2,uint param_3,UINT param_4,i
   undefined4 *puVar5;
   DWORD *pDVar6;
   undefined4 local_450 [256];
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   DWORD local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     local_c = iVar2;
     local_8 = timeGetTime();
@@ -38,13 +37,14 @@ FUN_007192d0(undefined4 *param_1,undefined4 *param_2,uint param_3,UINT param_4,i
       puVar5 = puVar5 + 1;
     }
     FUN_006b08f0(param_1,(int)local_450,param_3,param_4);
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_50;
-  iVar4 = FUN_006ad4d0(s_E__Ourlib_Palette_cpp_007f0718,399,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_50.previous;
+  iVar4 = ReportDebugMessage(s_E__Ourlib_Palette_cpp_007f0718,399,0,iVar2,&DAT_007a4ccc,
+                             s_DarkPalette_Error__007f07b0);
   if (iVar4 == 0) {
-    FUN_006a5e40(iVar2,0,0x7f0718,400);
+    RaiseInternalException(iVar2,0,s_E__Ourlib_Palette_cpp_007f0718,400);
     return iVar2;
   }
   pcVar1 = (code *)swi(3);

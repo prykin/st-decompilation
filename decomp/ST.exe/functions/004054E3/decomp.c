@@ -13,7 +13,8 @@ void __thiscall thunk_FUN_00492080(void *this,int param_1)
   
   if ((((*(int *)((int)this + 0x45d) != 0xf) && (*(int *)((int)this + 0x45d) != 0xe)) ||
       (*(int *)((int)this + 0x58e) != param_1)) || (*(int *)((int)this + 0x596) != 2)) {
-    iVar2 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50db,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50db,0,0,&DAT_007a4ccc,
+                               s_STBoatC__NotReadyForLoading_inco_007abb58);
     if (iVar2 == 0) {
       return;
     }
@@ -46,7 +47,8 @@ void __thiscall thunk_FUN_00492080(void *this,int param_1)
     *(undefined4 *)((int)this + 0x592) = 0;
     return;
   }
-  iVar2 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50c8,0,0,&DAT_007a4ccc);
+  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50c8,0,0,&DAT_007a4ccc,
+                             s_STBoatC__NotReadyForLoading_it_s_007abb8c);
   if (iVar2 == 0) {
     *(undefined4 *)((int)this + 0x596) = 1;
     *(undefined4 *)((int)this + 0x592) = 0;

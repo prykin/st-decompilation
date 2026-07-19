@@ -39,7 +39,8 @@ undefined4 __thiscall FUN_0047c050(void *this,int *param_1)
     }
     iVar6 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x7ca),(int *)&param_1);
     if (iVar6 == -4) {
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3781,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3781,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Bring_can_not_find_obje_007ab55c);
       if (iVar6 == 0) {
         return 0;
       }
@@ -114,9 +115,10 @@ undefined4 __thiscall FUN_0047c050(void *this,int *param_1)
       thunk_FUN_00460260(this,0);
       return 2;
     case -1:
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x379a,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x379a,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Bring__BRING_MOVE_error_007ab5dc);
       if (iVar6 == 0) {
-        FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x379a);
+        RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x379a);
         return 0xffff;
       }
       pcVar4 = (code *)swi(3);
@@ -200,9 +202,11 @@ undefined4 __thiscall FUN_0047c050(void *this,int *param_1)
         }
         break;
       case -1:
-        iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x37e9,0,0,&DAT_007a4ccc);
+        iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x37e9,0,0,&DAT_007a4ccc,
+                                   s_STBoatC__Bring__BRING_MOVEOBJ_er_007ab5b0);
         if (iVar6 == 0) {
-          FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,0x37e9);
+          RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x37e9)
+          ;
           return 0xffff;
         }
         pcVar4 = (code *)swi(3);
@@ -293,7 +297,8 @@ undefined4 __thiscall FUN_0047c050(void *this,int *param_1)
     }
     else {
       if (iVar6 != 4) {
-        iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3857,0,0,&DAT_007a4ccc);
+        iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3857,0,0,&DAT_007a4ccc,
+                                   s_STBoatC__Bring___incorrect_entry_007ab588);
         if (iVar6 == 0) {
           return 0xffffffff;
         }

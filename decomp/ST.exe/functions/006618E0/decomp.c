@@ -21,8 +21,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
   undefined4 extraout_EDX_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   uint local_24;
   int local_20;
   AiFltClassTy *local_1c;
@@ -44,9 +43,9 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
       local_18 = thunk_FUN_0068f8f0(*(void **)(this + 0x284),*(short *)(this + 0x7b));
       local_8 = (uint *)0x0;
       local_10 = (uint *)0x0;
-      local_68 = DAT_00858df8;
-      DAT_00858df8 = &local_68;
-      iVar5 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+      local_68.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_68;
+      iVar5 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pAVar3 = local_1c;
       if (iVar5 == 0) {
         local_8 = thunk_FUN_0065da10((int)local_1c,extraout_EDX_00);
@@ -140,10 +139,10 @@ LAB_00661a96:
             }
           }
         }
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return;
       }
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       if (local_8 != (uint *)0x0) {
         FUN_006ae110((byte *)local_8);
         local_8 = (uint *)0x0;
@@ -152,13 +151,14 @@ LAB_00661a96:
         FUN_006ae110((byte *)local_10);
         local_10 = (uint *)0x0;
       }
-      iVar9 = FUN_006ad4d0(s_E____titans_ai_ai_flt_cpp_007d2b80,0x6e9,0,iVar5,&DAT_007a4ccc);
+      iVar9 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x6e9,0,iVar5,&DAT_007a4ccc,
+                                 s_AiFltClassTy__GoToRepair_007d2c40);
       if (iVar9 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
-      FUN_006a5e40(iVar5,0,0x7d2b80,0x6ea);
+      RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x6ea);
     }
   }
   return;

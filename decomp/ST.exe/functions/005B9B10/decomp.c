@@ -25,16 +25,15 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
   char cVar13;
   int iVar14;
   undefined4 local_454 [256];
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   PrividerTy *local_10;
   int local_c;
   uint local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (DAT_008067a0 != '\0') {
       CFsgsConnection::CloseGame((CFsgsConnection *)&DAT_00802a90);
@@ -291,13 +290,14 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     if (((pcVar2 != (char *)0x0) && (*pcVar2 != '\0')) && (-1 < (int)*(uint *)(pcVar2 + 3))) {
       FUN_006b3430(DAT_008075a8,*(uint *)(pcVar2 + 3));
     }
-    DAT_00858df8 = local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   }
-  DAT_00858df8 = local_54;
-  iVar14 = FUN_006ad4d0(s_E____titans_Start_prov_obj_cpp_007ccd28,0xac,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_54.previous;
+  iVar14 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0xac,0,iVar4,&DAT_007a4ccc,
+                              s_PrividerTy__InitPrivider_007ccda0);
   if (iVar14 == 0) {
-    FUN_006a5e40(iVar4,0,0x7ccd28,0xac);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0xac);
     return;
   }
   pcVar3 = (code *)swi(3);

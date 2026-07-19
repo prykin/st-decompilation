@@ -22,8 +22,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   void *unaff_EDI;
   bool bVar12;
   uint *puVar13;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   float local_1c;
   STParticleC *local_18;
   int local_14;
@@ -32,16 +31,17 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   uint local_8;
   
   local_8 = 0;
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
   local_18 = this;
-  iVar7 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  iVar7 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar6 = local_18;
   if (iVar7 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
-    iVar10 = FUN_006ad4d0(s_E____titans_nick_to_Part_Cpp_007d1354,800,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_nick_to_Part_Cpp_007d1354,800,0,iVar7,&DAT_007a4ccc,
+                                s_STParticleC__InitVisibelDeton_007d13bc);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar7,0,0x7d1354,0x322);
+      RaiseInternalException(iVar7,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x322);
       return 0xffff;
     }
     pcVar2 = (code *)swi(3);
@@ -176,7 +176,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
     }
     FUN_006ea4e0(DAT_00807598,*(uint *)pSVar1,1,0x5a,0x53);
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 0;
   }
   return 0;

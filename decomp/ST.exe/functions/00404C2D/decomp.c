@@ -9,14 +9,13 @@ StartServTy::WrTextDDX
   int iVar2;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   BITMAPINFO *pBStack_c;
   int iStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
-  iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_4 < 1) {
       iVar2 = FUN_00711370(param_9,param_6);
@@ -39,11 +38,12 @@ StartServTy::WrTextDDX
     FUN_006b5f80(DAT_008075a8,param_2,param_3,iStack_8,param_5);
     thunk_FUN_005404f0(param_2,param_3,'\x01',pBStack_c,-(uint)(param_1 != 0));
     ccFntTy::EraseSufr(param_9);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar2 = FUN_006ad4d0(s_E____titans_Andrey_support_cpp_007c7b2c,0x75,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar2 = ReportDebugMessage(s_E____titans_Andrey_support_cpp_007c7b2c,0x75,0,iVar2,&DAT_007a4ccc,
+                             s_StartServTy__WrTextDDX_007c7b84);
   if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();

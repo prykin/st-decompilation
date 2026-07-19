@@ -16,8 +16,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   undefined4 *puVar11;
   void *unaff_EDI;
   undefined4 *puVar12;
-  undefined4 uStack_d4;
-  undefined4 auStack_d0 [16];
+  InternalExceptionFrame IStack_d4;
   undefined4 uStack_90;
   short sStack_8a;
   short sStack_82;
@@ -56,20 +55,21 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   piStack_44 = (int *)thunk_FUN_0042b620(param_1,param_2,1);
   iStack_58 = (**(code **)(*piStack_44 + 0x2c))();
   uStack_10 = 0;
-  uStack_d4 = DAT_00858df8;
-  DAT_00858df8 = &uStack_d4;
-  iVar4 = __setjmp3(auStack_d0,0,unaff_EDI,unaff_ESI);
+  IStack_d4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_d4;
+  iVar4 = __setjmp3(IStack_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar7 = iStack_4c;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_d4;
+    g_currentExceptionFrame = IStack_d4.previous;
     if (iVar4 != -0x5001fff7) {
-      iVar7 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2454,0,iVar4,&DAT_007a4ccc);
+      iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2454,0,iVar4,
+                                 &DAT_007a4ccc,s_STAllPlayersC___AddMDPairs_007a80bc);
       if (iVar7 != 0) {
         pcVar1 = (code *)swi(3);
         uVar8 = (*pcVar1)();
         return uVar8;
       }
-      FUN_006a5e40(iVar4,0,0x7a6004,0x2455);
+      RaiseInternalException(iVar4,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2455);
     }
     return uStack_10;
   }
@@ -78,7 +78,8 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
     iVar4 = iStack_4c;
     do {
       if (*piVar6 == 0) {
-        FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x23dd);
+        RaiseInternalException
+                  (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x23dd);
       }
       piVar6 = piVar6 + 1;
       iVar4 = iVar4 + -1;
@@ -253,13 +254,13 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
         }
         iStack_14 = iVar7 + 1;
         if (iStack_4c <= iVar7 + 1) {
-          DAT_00858df8 = (undefined4 *)uStack_d4;
+          g_currentExceptionFrame = IStack_d4.previous;
           return uStack_10;
         }
       } while( true );
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_d4;
+  g_currentExceptionFrame = IStack_d4.previous;
   return uStack_10;
 }
 

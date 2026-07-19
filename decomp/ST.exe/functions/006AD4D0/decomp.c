@@ -1,5 +1,8 @@
 
-int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte *param_5)
+/* WARNING: Restarted to delay deadcode elimination for space: stack */
+
+int __cdecl
+ReportDebugMessage(char *sourceFile,int sourceLine,int isFatal,int errorCode,char *format,...)
 
 {
   char cVar1;
@@ -12,6 +15,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
   char *pcVar8;
   char *pcVar9;
   undefined4 *puVar10;
+  undefined4 *unaff_EBP;
   uint *puVar11;
   uint *puVar12;
   char *pcVar13;
@@ -25,21 +29,17 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
   char local_34c [447];
   char acStack_18d [65];
   CHAR local_14c [260];
-  char local_48 [4];
-  char local_44 [4];
-  char local_40 [4];
-  char local_3c [52];
-  undefined4 *local_8;
+  char debugMessage [64];
   
-  local_8 = (undefined4 *)&stack0xfffffffc;
   if (DAT_007ed798 == 0) {
-    DAT_00858dd0 = (char *)0x0;
+    g_exceptionSourceFile = (char *)0x0;
     return 0;
   }
   local_34c[0] = '\0';
   local_74c = local_74c & 0xffffff00;
-  if ((param_5 != (byte *)0x0) &&
-     (iVar2 = FUN_007300e0(local_34c,0x200,param_5,(undefined4 *)&stack0x00000018), iVar2 < 0)) {
+  if ((format != (char *)0x0) &&
+     (iVar2 = FUN_007300e0(local_34c,0x200,(byte *)format,(undefined4 *)&stack0x00000018), iVar2 < 0
+     )) {
     uVar5 = 0xffffffff;
     pcVar8 = s_User_message_too_long_007ed7b4;
     do {
@@ -145,13 +145,13 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
   }
   *(undefined1 *)puVar7 = 10;
   pcVar8 = (char *)((int)puVar7 + 1);
-  if (param_1 != (char *)0x0) {
+  if (sourceFile != (char *)0x0) {
     pcVar9 = (char *)((int)puVar7 + 7);
     *(undefined4 *)pcVar8 = s_File__007ed890._0_4_;
     *(undefined2 *)((int)puVar7 + 5) = s_File__007ed890._4_2_;
     *(char *)((int)puVar7 + 7) = s_File__007ed890[6];
     uVar5 = 0xffffffff;
-    pcVar8 = param_1;
+    pcVar8 = sourceFile;
     do {
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
@@ -162,12 +162,12 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
     if (iVar2 < 0x41) {
       uVar5 = 0xffffffff;
       do {
-        pcVar8 = param_1;
+        pcVar8 = sourceFile;
         if (uVar5 == 0) break;
         uVar5 = uVar5 - 1;
-        pcVar8 = param_1 + 1;
-        cVar1 = *param_1;
-        param_1 = pcVar8;
+        pcVar8 = sourceFile + 1;
+        cVar1 = *sourceFile;
+        sourceFile = pcVar8;
       } while (cVar1 != '\0');
       uVar5 = ~uVar5;
       pcVar8 = pcVar8 + -uVar5;
@@ -185,7 +185,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
     }
     else {
       uVar6 = 0xffffffff;
-      pcVar8 = param_1 + (~uVar5 - 0x41);
+      pcVar8 = sourceFile + (~uVar5 - 0x41);
       do {
         pcVar13 = pcVar8;
         if (uVar6 == 0) break;
@@ -220,35 +220,31 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
       *pcVar9 = ' ';
     }
     pcVar9 = pcVar9 + 1;
-    if (0 < param_2) {
+    if (0 < sourceLine) {
       iVar2 = FUN_00730c40(pcVar9,0x7ed884);
       pcVar9 = pcVar9 + iVar2;
     }
-    puVar10 = local_8;
-    if ((DAT_00854eb4 != (int *)0x0) && (BVar4 = IsBadReadPtr(local_8,4), BVar4 == 0)) {
-      puVar10 = (undefined4 *)*puVar10;
-      BVar4 = IsBadReadPtr(puVar10,8);
+    if (((DAT_00854eb4 != (int *)0x0) && (BVar4 = IsBadReadPtr(&stack0xfffffffc,4), BVar4 == 0)) &&
+       (BVar4 = IsBadReadPtr(unaff_EBP,8), BVar4 == 0)) {
+      iVar2 = FUN_00730c40(pcVar9,0x7ed87c);
+      pcVar9 = pcVar9 + iVar2;
+      BVar4 = IsBadReadPtr((void *)*unaff_EBP,8);
       if (BVar4 == 0) {
-        iVar2 = FUN_00730c40(pcVar9,0x7ed87c);
+        iVar2 = FUN_00730c40(pcVar9,0x7ed874);
         pcVar9 = pcVar9 + iVar2;
-        BVar4 = IsBadReadPtr((void *)*puVar10,8);
-        if (BVar4 == 0) {
-          iVar2 = FUN_00730c40(pcVar9,0x7ed874);
-          pcVar9 = pcVar9 + iVar2;
-        }
       }
     }
     *pcVar9 = '\n';
     pcVar8 = pcVar9 + 1;
   }
-  if ((DAT_00858dd0 != (char *)0x0) && (DAT_00858dd4 == param_4)) {
+  if ((g_exceptionSourceFile != (char *)0x0) && (g_exceptionCode == errorCode)) {
     pcVar9 = pcVar8 + 10;
     *(undefined4 *)pcVar8 = s_ExcRaise__007ed868._0_4_;
     *(undefined4 *)(pcVar8 + 4) = s_ExcRaise__007ed868._4_4_;
     *(undefined2 *)(pcVar8 + 8) = s_ExcRaise__007ed868._8_2_;
     uVar5 = 0xffffffff;
     pcVar8[10] = s_ExcRaise__007ed868[10];
-    pcVar8 = DAT_00858dd0;
+    pcVar8 = g_exceptionSourceFile;
     do {
       if (uVar5 == 0) break;
       uVar5 = uVar5 - 1;
@@ -258,7 +254,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
     iVar2 = ~uVar5 - 1;
     if (iVar2 < 0x37) {
       uVar5 = 0xffffffff;
-      pcVar8 = DAT_00858dd0;
+      pcVar8 = g_exceptionSourceFile;
       do {
         pcVar13 = pcVar8;
         if (uVar5 == 0) break;
@@ -283,7 +279,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
     }
     else {
       uVar6 = 0xffffffff;
-      pcVar8 = DAT_00858dd0 + (~uVar5 - 0x37);
+      pcVar8 = g_exceptionSourceFile + (~uVar5 - 0x37);
       do {
         pcVar13 = pcVar8;
         if (uVar6 == 0) break;
@@ -313,8 +309,8 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
     pcVar9[iVar2] = '\n';
     pcVar8 = pcVar9 + iVar2 + 1;
   }
-  DAT_00858dd0 = (char *)0x0;
-  if (param_4 != 0) {
+  g_exceptionSourceFile = (char *)0x0;
+  if (errorCode != 0) {
     iVar2 = FUN_00730c40(pcVar8,0x7ed848);
     pcVar8 = pcVar8 + iVar2;
   }
@@ -371,25 +367,25 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
       }
       *(undefined2 *)pcVar9 = *(undefined2 *)pcVar8;
       pcVar9[2] = pcVar8[2];
-      if (param_3 == 0) {
-        local_48[0] = s_Debug_Message_007ed7cc[0];
-        local_48[1] = s_Debug_Message_007ed7cc[1];
-        local_48[2] = s_Debug_Message_007ed7cc[2];
-        local_48[3] = s_Debug_Message_007ed7cc[3];
-        local_44[0] = s_Debug_Message_007ed7cc[4];
-        local_44[1] = s_Debug_Message_007ed7cc[5];
-        local_44[2] = s_Debug_Message_007ed7cc[6];
-        local_44[3] = s_Debug_Message_007ed7cc[7];
-        local_40[0] = s_Debug_Message_007ed7cc[8];
-        local_40[1] = s_Debug_Message_007ed7cc[9];
-        local_40[2] = s_Debug_Message_007ed7cc[10];
-        local_40[3] = s_Debug_Message_007ed7cc[0xb];
-        local_3c[0] = s_Debug_Message_007ed7cc[0xc];
-        local_3c[1] = s_Debug_Message_007ed7cc[0xd];
+      if (isFatal == 0) {
+        debugMessage[0] = s_Debug_Message_007ed7cc[0];
+        debugMessage[1] = s_Debug_Message_007ed7cc[1];
+        debugMessage[2] = s_Debug_Message_007ed7cc[2];
+        debugMessage[3] = s_Debug_Message_007ed7cc[3];
+        debugMessage[4] = s_Debug_Message_007ed7cc[4];
+        debugMessage[5] = s_Debug_Message_007ed7cc[5];
+        debugMessage[6] = s_Debug_Message_007ed7cc[6];
+        debugMessage[7] = s_Debug_Message_007ed7cc[7];
+        debugMessage[8] = s_Debug_Message_007ed7cc[8];
+        debugMessage[9] = s_Debug_Message_007ed7cc[9];
+        debugMessage[10] = s_Debug_Message_007ed7cc[10];
+        debugMessage[0xb] = s_Debug_Message_007ed7cc[0xb];
+        debugMessage[0xc] = s_Debug_Message_007ed7cc[0xc];
+        debugMessage[0xd] = s_Debug_Message_007ed7cc[0xd];
       }
       else {
         pcVar8 = s_Debug_Error_Message_007ed804;
-        pcVar9 = local_48;
+        pcVar9 = debugMessage;
         for (iVar2 = 5; iVar2 != 0; iVar2 = iVar2 + -1) {
           *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
           pcVar8 = pcVar8 + 4;
@@ -414,7 +410,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
         } while (cVar1 != '\0');
         uVar5 = ~uVar5;
         iVar2 = -1;
-        pcVar8 = local_48;
+        pcVar8 = debugMessage;
         do {
           pcVar13 = pcVar8;
           if (iVar2 == 0) break;
@@ -441,7 +437,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
         (**(code **)(*(int *)DAT_00854eb8[0xc] + 0x50))((int *)DAT_00854eb8[0xc],DAT_00854eb8[1],8);
         (**(code **)(*(int *)DAT_00854eb8[0xc] + 0x4c))((int *)DAT_00854eb8[0xc]);
       }
-      iVar2 = FUN_006ad3a0((LPCSTR)&local_74c,local_48,2);
+      iVar2 = FUN_006ad3a0((LPCSTR)&local_74c,debugMessage,2);
       if (iVar2 == 4) {
         iVar2 = 1;
         if ((DAT_00854eb8 != (undefined4 *)0x0) && ((DAT_00854eb8[2] & 1) != 0)) {
@@ -491,7 +487,7 @@ int __cdecl FUN_006ad4d0(char *param_1,int param_2,int param_3,int param_4,byte 
     }
     FUN_00733d60(DAT_00854eb4);
   }
-  iVar2 = -(uint)(param_3 != 0);
+  iVar2 = -(uint)(isFatal != 0);
 LAB_006ad9d3:
   DAT_00858ddc = 0;
   if (-1 < iVar2) {

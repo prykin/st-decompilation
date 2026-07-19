@@ -7,22 +7,23 @@ void __thiscall MAdvTy::NoneMAdv(MAdvTy *this)
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
   void *unaff_ESI;
   undefined4 local_44 [16];
   
-  iVar2 = __setjmp3(local_44,0,unaff_ESI,DAT_00858df8);
-  if (iVar2 == 0) {
+  errorCode = __setjmp3(local_44,0,unaff_ESI,g_currentExceptionFrame);
+  if (errorCode == 0) {
     return;
   }
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_adv_obj_cpp_007cbc24,0x57,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar2 = ReportDebugMessage(s_E____titans_Start_adv_obj_cpp_007cbc24,0x57,0,errorCode,&DAT_007a4ccc
+                             ,s_MAdvTy__NoneMAdv_007cbc8c);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7cbc24,0x57);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_adv_obj_cpp_007cbc24,0x57);
   return;
 }
 

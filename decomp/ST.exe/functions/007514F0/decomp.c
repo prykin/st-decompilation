@@ -19,7 +19,7 @@ void FUN_007514f0(int *param_1,byte param_2)
   *(byte *)(param_1 + 5) = bVar3;
   if (7 < bVar3) {
     if (param_1[2] < (int)(*(byte *)((int)param_1 + 0x15) + 1)) {
-      FUN_006a5e40(-0x33,DAT_007ed77c,0x7f2b00,0x34);
+      RaiseInternalException(-0x33,DAT_007ed77c,s_E__DKW_PK_C_fastpk_cpp_007f2b00,0x34);
       return;
     }
     *(undefined1 *)param_1[1] = *(undefined1 *)((int)param_1 + 0x16);

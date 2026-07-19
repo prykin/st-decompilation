@@ -12,8 +12,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_70;
-  undefined4 auStack_6c [16];
+  InternalExceptionFrame IStack_70;
   undefined1 auStack_2c [14];
   uint uStack_1e;
   STAppC *pSStack_10;
@@ -21,20 +20,21 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   int iStack_8;
   
   iStack_8 = 0;
-  uStack_70 = DAT_00858df8;
-  DAT_00858df8 = &uStack_70;
+  IStack_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_70;
   pSStack_10 = this;
-  iVar3 = __setjmp3(auStack_6c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_10;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_70;
-    iVar6 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x914,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_70.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x914,0,iVar3,&DAT_007a4ccc,
+                               s_STAppC__ReadCmdPlay_007ca25c);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7ca0c8,0x914);
+    RaiseInternalException(iVar3,0,s_E____titans_tapp_cpp_007ca0c8,0x914);
     return;
   }
   hFile = CreateFileA((LPCSTR)(pSStack_10 + 0x7b06),0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
@@ -135,7 +135,7 @@ LAB_00571620:
     thunk_FUN_0052d320(DAT_008016d8,s_Error_playing_command__007ca2a0,9);
     thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_command_has_turned_of_007ca274,8);
   }
-  DAT_00858df8 = (undefined4 *)uStack_70;
+  g_currentExceptionFrame = IStack_70.previous;
   return;
 }
 

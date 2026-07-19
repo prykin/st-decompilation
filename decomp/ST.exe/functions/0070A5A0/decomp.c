@@ -4,38 +4,39 @@ FUN_0070a5a0(undefined4 param_1,byte param_2,char *param_3,byte param_4,int para
 
 {
   code *pcVar1;
-  int iVar2;
-  ushort *puVar3;
-  int iVar4;
+  int errorCode;
+  ushort *puVar2;
+  int iVar3;
   void *unaff_ESI;
-  int *piVar5;
-  undefined4 uVar6;
+  int *piVar4;
+  InternalExceptionFrame *pIVar5;
   undefined4 local_48 [16];
   int local_8;
   
-  uVar6 = DAT_00858df8;
+  pIVar5 = g_currentExceptionFrame;
   local_8 = 0;
-  DAT_00858df8 = &stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,uVar6);
-  if (iVar2 == 0) {
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
+  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar5);
+  if (errorCode == 0) {
     if ((param_4 & 2) == 0) {
-      piVar5 = (int *)0x0;
+      piVar4 = (int *)0x0;
     }
     else {
-      piVar5 = &local_8;
+      piVar4 = &local_8;
     }
-    puVar3 = FUN_006f1ce0(param_2,param_3,piVar5,param_5);
-    DAT_00858df8 = (undefined1 *)uVar6;
-    return puVar3;
+    puVar2 = FUN_006f1ce0(param_2,param_3,piVar4,param_5);
+    g_currentExceptionFrame = pIVar5;
+    return puVar2;
   }
-  DAT_00858df8 = (undefined1 *)uVar6;
-  iVar4 = FUN_006ad4d0(s_E__Ourlib_Mfimg_cpp_007effe0,0x1f,0,iVar2,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = pIVar5;
+  iVar3 = ReportDebugMessage(s_E__Ourlib_Mfimg_cpp_007effe0,0x1f,0,errorCode,&DAT_007a4ccc,
+                             s_mfImgLoad_007efff4);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
-    puVar3 = (ushort *)(*pcVar1)();
-    return puVar3;
+    puVar2 = (ushort *)(*pcVar1)();
+    return puVar2;
   }
-  FUN_006a5e40(iVar2,0,0x7effe0,0x21);
+  RaiseInternalException(errorCode,0,s_E__Ourlib_Mfimg_cpp_007effe0,0x21);
   return (ushort *)0x0;
 }
 

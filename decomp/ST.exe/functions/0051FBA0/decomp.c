@@ -17,14 +17,13 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   HelpStringTy *pHVar8;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   HelpStringTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {
@@ -82,18 +81,19 @@ undefined4 __thiscall HelpStringTy::GetMessage(HelpStringTy *this,int param_1)
     case 5:
       OutStr(local_8);
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     uVar5 = FUN_006e5fd0();
     return uVar5;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar6 = FUN_006ad4d0(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d,0,iVar2,&DAT_007a4ccc,
+                             s_HelpStringTy__GetMessage_007c3e90);
   if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     uVar5 = (*pcVar1)();
     return uVar5;
   }
-  FUN_006a5e40(iVar2,0,0x7c3e4c,0x4d);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_helpstr_cpp_007c3e4c,0x4d);
   return 0xffff;
 }
 

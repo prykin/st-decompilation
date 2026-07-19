@@ -40,7 +40,7 @@ undefined4 FUN_00756720(int *param_1)
     return uVar3;
   }
   if (param_1[3] != 0xcc) {
-    FUN_006a5e40(0x12,DAT_007ed77c,0x7f2d50,0x52);
+    RaiseInternalException(0x12,DAT_007ed77c,s_E__DKW_JPG_C_jdapistd_c_007f2d50,0x52);
   }
   uVar3 = FUN_00756800((int)param_1);
   return uVar3;

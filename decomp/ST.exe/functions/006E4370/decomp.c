@@ -9,8 +9,7 @@ int FUN_006e4370(int param_1,undefined4 param_2,undefined4 param_3)
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   undefined4 local_28;
   undefined4 local_24;
   int local_18;
@@ -18,9 +17,9 @@ int FUN_006e4370(int param_1,undefined4 param_2,undefined4 param_3)
   undefined4 local_10;
   int local_8;
   
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
-  iVar3 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
+  iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (*(int *)(local_8 + 0x14) != 0) {
       *(undefined4 *)(*(int *)(local_8 + 0x14) + 4) = 0;
@@ -45,17 +44,18 @@ int FUN_006e4370(int param_1,undefined4 param_2,undefined4 param_3)
         }
       }
     }
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
-  iVar5 = FUN_006ad4d0(s_E__Ourlib_Sapp_cpp_007ee78c,0x178,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_6c.previous;
+  iVar5 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x178,0,iVar3,&DAT_007a4ccc,
+                             s_AppClassTy__DecodeMessage_Error___007ee94c);
   if (iVar5 != 0) {
     pcVar2 = (code *)swi(3);
     iVar3 = (*pcVar2)();
     return iVar3;
   }
-  FUN_006a5e40(iVar3,0,0x7ee78c,0x179);
+  RaiseInternalException(iVar3,0,s_E__Ourlib_Sapp_cpp_007ee78c,0x179);
   return iVar3;
 }
 

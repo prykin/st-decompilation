@@ -20,21 +20,21 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   undefined4 *puVar9;
   char cVar10;
   uint *puVar11;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   CGenerate *local_10;
   byte *local_c;
   int local_8;
   
   local_8 = 1;
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar2 = FUN_006ad4d0(s_E____titans_Maps_generate_cpp_007d864c,0xcd,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar2 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0xcd,0,iVar2,&DAT_007a4ccc,
+                               s_CGenerate__SaveMap_007d868c);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -99,7 +99,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   if (local_c != (byte *)0x0) {
     FUN_006ab060(&local_c);
   }
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return local_8;
 }
 

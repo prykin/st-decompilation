@@ -14,24 +14,24 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   uint uVar8;
   char cVar9;
   uint uVar10;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   PrividerTy *pPStack_c;
   uint uStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pPStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar7 = FUN_006ad4d0(s_E____titans_Start_prov_obj_cpp_007ccd28,0x279,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x279,0,iVar3,&DAT_007a4ccc
+                               ,s_PrividerTy__DeleteCtrls_007cce88);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7ccd28,0x279);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x279);
     return;
   }
   if (DAT_00802a30 != 0) {
@@ -187,11 +187,11 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b34d0(*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
                    *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return;
 }
 

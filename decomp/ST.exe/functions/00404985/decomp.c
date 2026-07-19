@@ -11,21 +11,21 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint uVar7;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   int iStack_14;
   STGroupBoatC *pSStack_10;
   undefined4 uStack_c;
   undefined4 uStack_8;
   
-  uStack_58 = DAT_00858df8;
-  DAT_00858df8 = &uStack_58;
+  IStack_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_58;
   pSStack_10 = this;
-  iVar3 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_10;
   if (iVar3 == 0) {
     if (*(int *)(pSStack_10 + 0x212) == 0) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x4d7);
+      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4d7)
+      ;
     }
     uVar7 = 0;
     iStack_14 = *(int *)(param_1 + 0xc);
@@ -46,7 +46,8 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
       FUN_006ae110(*(byte **)(pSVar2 + 0x20e));
       *(undefined4 *)(pSVar2 + 0x20e) = 0;
       FUN_006ab060((undefined4 *)(pSVar2 + 0x21e));
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x4e5);
+      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4e5)
+      ;
     }
     iVar6 = -1;
     iVar3 = 0;
@@ -69,18 +70,19 @@ undefined4 __thiscall STGroupBoatC::ReMakePVecAndTgtList(STGroupBoatC *this,int 
         iVar3 = iVar3 + 1;
       } while (iVar3 < *(int *)(pSVar2 + 0x21a));
     }
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
   }
   else {
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
     if (iVar3 != -0x5001fff7) {
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4f3,0,iVar3,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4f3,0,iVar3,&DAT_007a4ccc
+                                 ,s_STGroupBoatC__ReMakePVecAndTgtLi_007abe9c);
       if (iVar6 != 0) {
         pcVar1 = (code *)swi(3);
         uVar5 = (*pcVar1)();
         return uVar5;
       }
-      FUN_006a5e40(iVar3,0,0x7abe3c,0x4f4);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x4f4);
       return 0xffffffff;
     }
   }

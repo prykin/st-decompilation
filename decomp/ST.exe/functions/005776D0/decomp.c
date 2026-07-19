@@ -38,8 +38,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
   undefined1 local_1d90 [8];
   cMf32 *local_1d88;
   _WIN32_FIND_DATAA local_3f4;
-  undefined4 **local_1b0;
-  undefined4 local_1ac [16];
+  InternalExceptionFrame local_1b0;
   char local_16c [64];
   undefined4 local_12c;
   byte local_128;
@@ -47,10 +46,8 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
   undefined1 local_126;
   undefined1 local_125;
   DWORD local_124;
-  undefined4 **local_d0;
-  undefined4 local_cc [16];
-  undefined4 **local_8c;
-  undefined4 local_88 [16];
+  InternalExceptionFrame local_d0;
+  InternalExceptionFrame local_8c;
   undefined4 local_48;
   undefined *puVar19;
   cMf32 *pcVar20;
@@ -58,15 +55,15 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
   int iVar22;
   
   FUN_0072da40();
-  local_8c = DAT_00858df8;
-  DAT_00858df8 = &local_8c;
+  local_8c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_8c;
   iVar22 = extraout_ECX;
-  iVar5 = __setjmp3(local_88,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = local_8c;
-    iVar22 = FUN_006ad4d0(s_E____titans_tsystem_cpp_007cab5c,0x1c6,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_8c.previous;
+    iVar22 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x1c6,0,iVar5,&DAT_007a4ccc);
     if (iVar22 == 0) {
-      FUN_006a5e40(iVar5,0,0x7cab5c,0x1c7);
+      RaiseInternalException(iVar5,0,s_E____titans_tsystem_cpp_007cab5c,0x1c7);
       return 0xffff;
     }
     pcVar4 = (code *)swi(3);
@@ -85,7 +82,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           FUN_00725760(DAT_00807598,DAT_00808784,-(uint)(DAT_00808784 != 0) & DAT_008032b4);
           if (DAT_008016e0 != (PausePanelTy *)0x0) {
             PausePanelTy::SwitchPausePanel(DAT_008016e0,DAT_00808784);
-            DAT_00858df8 = local_8c;
+            g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
         }
@@ -94,7 +91,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         if (*(int *)(iVar22 + 0x42c) == 0) {
           DAT_00808784 = piVar3[1];
           FUN_00725760(DAT_00807598,DAT_00808784,-(uint)(DAT_00808784 != 0) & DAT_008032b4);
-          DAT_00858df8 = local_8c;
+          g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
       }
@@ -107,7 +104,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         *(int *)(iVar22 + 0x42c) = iVar5;
         if (DAT_008016e0 != (PausePanelTy *)0x0) {
           PausePanelTy::SwitchPausePanel(DAT_008016e0,iVar5);
-          DAT_00858df8 = local_8c;
+          g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
       }
@@ -128,7 +125,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           FUN_006e8640(DAT_00807598,
                        *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar22 + 0x10),
                        *(undefined4 *)(s_FrmPanelTy__GetMessage_007c2ae0 + iVar22 + 4));
-          DAT_00858df8 = local_8c;
+          g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
       }
@@ -173,15 +170,15 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         wsprintfA((LPSTR)&DAT_0080f33a,pCVar9);
         if (DAT_008016d8 != (void *)0x0) {
           thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,8);
-          DAT_00858df8 = local_8c;
+          g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
       }
       break;
     case 8:
-      local_1b0 = DAT_00858df8;
-      DAT_00858df8 = &local_1b0;
-      iVar22 = __setjmp3(local_1ac,0,unaff_EDI,unaff_ESI);
+      local_1b0.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_1b0;
+      iVar22 = __setjmp3(local_1b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar22 == 0) {
         wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
         puVar7 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
@@ -255,7 +252,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           pcVar14 = extraout_ECX_05;
         }
         cMf32::delete(pcVar14,puVar7);
-        DAT_00858df8 = local_8c;
+        g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
       break;
@@ -277,7 +274,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
     uVar12 = (uint)bVar2;
     if (cVar1 == '\0') {
       if (bVar2 == 0xff) {
-        DAT_00858df8 = local_8c;
+        g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
       thunk_FUN_00648dd0(uVar12);
@@ -285,7 +282,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
     else {
       if (cVar1 != '\x01') {
         if (cVar1 != '\x02') {
-          DAT_00858df8 = local_8c;
+          g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
         _Count = *(size_t *)(pcVar16 + 1);
@@ -305,13 +302,13 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           bVar18 = pvVar6 != (HANDLE)0xffffffff;
           if (!bVar18) {
             DAT_00808794 = 1;
-            DAT_00858df8 = local_8c;
+            g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
           puVar21 = (undefined *)0x0;
-          local_d0 = DAT_00858df8;
-          DAT_00858df8 = &local_d0;
-          iVar5 = __setjmp3(local_cc,0,(void *)0x0,iVar22);
+          local_d0.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &local_d0;
+          iVar5 = __setjmp3(local_d0.jumpBuffer,0,(void *)0x0,iVar22);
           if (iVar5 == 0) {
             puVar7 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f022,0,0,0);
             if (puVar7 == (undefined4 *)0x0) {
@@ -340,16 +337,16 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
             }
           }
 LAB_00577956:
-          DAT_00858df8 = local_d0;
+          g_currentExceptionFrame = local_d0.previous;
           if (!bVar18) {
             DAT_00808794 = 1;
-            DAT_00858df8 = local_8c;
+            g_currentExceptionFrame = local_8c.previous;
             return 0;
           }
         } while( true );
       }
       if (bVar2 == 0xff) {
-        DAT_00858df8 = local_8c;
+        g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
       thunk_FUN_00648dd0(uVar12);
@@ -357,11 +354,11 @@ LAB_00577956:
     }
     if (DAT_008016dc != (void *)0x0) {
       thunk_FUN_00532ce0(DAT_008016dc);
-      DAT_00858df8 = local_8c;
+      g_currentExceptionFrame = local_8c.previous;
       return 0;
     }
   }
-  DAT_00858df8 = local_8c;
+  g_currentExceptionFrame = local_8c.previous;
   return 0;
 }
 

@@ -20,8 +20,7 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
   void *unaff_EDI;
   undefined4 *puVar15;
   int iVar16;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   int local_18;
   undefined4 *local_14;
   int local_10;
@@ -30,9 +29,9 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
   
   iVar13 = 0;
   local_c = (uint *)0x0;
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  iVar4 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  iVar4 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   local_18 = iVar4;
   if (iVar4 == 0) {
     puVar5 = FUN_006aac10(param_1);
@@ -73,7 +72,7 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
       FUN_006f1ce0(3,param_3,piVar14,1);
     }
     if (*(short *)*piVar14 < 1) {
-      FUN_006a5e40(-6,DAT_007ed77c,0x7f0190,0xbf);
+      RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0xbf);
     }
     psVar7 = (short *)*piVar14;
     local_10 = 0;
@@ -172,11 +171,12 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
         iVar16 = iVar16 + 10;
       } while (iVar13 < (int)(uint)*(ushort *)(iVar4 + 100));
     }
-    DAT_00858df8 = (undefined4 *)local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     return puVar5;
   }
-  DAT_00858df8 = (undefined4 *)local_5c;
-  iVar16 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0xdc,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_5c.previous;
+  iVar16 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0xdc,0,iVar4,&DAT_007a4ccc,
+                              s_ccFntTy__operator_new_007f0178);
   if (iVar16 == 0) {
     if (local_c != (uint *)0x0) {
       puVar1 = (uint *)((int)local_c + 0x9a);
@@ -192,7 +192,7 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
       cMf32::RecMemFree(param_2,puVar1);
       FUN_006a5e90(local_c);
     }
-    FUN_006a5e40(iVar4,0,0x7f0190,0xe4);
+    RaiseInternalException(iVar4,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0xe4);
     return (undefined4 *)0x0;
   }
   pcVar2 = (code *)swi(3);

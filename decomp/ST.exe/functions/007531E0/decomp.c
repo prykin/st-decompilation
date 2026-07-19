@@ -21,7 +21,7 @@ undefined4 * FUN_007531e0(undefined4 *param_1,LPCSTR param_2,int param_3)
       return puVar1;
     }
     FUN_006d46a0(puVar1,0);
-    FUN_006a5e40(-5,DAT_007ed77c,0x7f2bf4,0x51);
+    RaiseInternalException(-5,DAT_007ed77c,s_E__DKW_FMM_C_fmem_c_007f2bf4,0x51);
   }
   return (undefined4 *)0x0;
 }

@@ -20,15 +20,14 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
   uint uVar12;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   StartSystemTy *local_c;
   uint local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_c;
   if (iVar4 == 0) {
     thunk_FUN_005db2a0((int)local_c);
@@ -225,14 +224,15 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     FUN_006b2330((uint)DAT_008075a8,(uint *)(pSVar3 + 0x558),0x31,0x4023f6,*(uint *)(uVar8 + 4),
                  *(uint *)(uVar8 + 8),uVar8);
     FUN_006b3640(DAT_008075a8,*(uint *)(pSVar3 + 0x558),0xffffffff,0xcd,499);
-    DAT_00858df8 = local_50;
+    g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  DAT_00858df8 = local_50;
+  g_currentExceptionFrame = local_50.previous;
   thunk_FUN_005db2a0((int)local_c);
-  iVar11 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0x1ac,0,iVar4,&DAT_007a4ccc);
+  iVar11 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x1ac,0,iVar4,&DAT_007a4ccc,
+                              s_StartSystemTy__LoadGraph_007cd778);
   if (iVar11 == 0) {
-    FUN_006a5e40(iVar4,0,0x7cd718,0x1ad);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_startsys_cpp_007cd718,0x1ad);
     return 0xfffffffc;
   }
   pcVar2 = (code *)swi(3);

@@ -17,17 +17,16 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
   undefined4 uVar10;
   int iVar11;
   int iVar12;
-  undefined4 uStack_6c;
-  undefined4 auStack_68 [16];
+  InternalExceptionFrame IStack_6c;
   undefined4 auStack_28 [8];
   FSGSTy *pFStack_8;
   
   if (((this[0x1a5f] == (FSGSTy)0x1) && (*(int *)(this + 0x1ac0) != 0)) &&
      (-1 < *(int *)(this + 0x1abc))) {
-    uStack_6c = DAT_00858df8;
-    DAT_00858df8 = &uStack_6c;
+    IStack_6c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_6c;
     pFStack_8 = this;
-    iVar4 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -46,7 +45,7 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
         *(undefined4 *)(pFStack_8 + 0x4d) = 0x7102;
         *(undefined4 *)(pFStack_8 + 0x49) = 1;
         FUN_006e6020(pFStack_8,(undefined4 *)(pFStack_8 + 0x3d));
-        DAT_00858df8 = (undefined4 *)uStack_6c;
+        g_currentExceptionFrame = IStack_6c.previous;
         return;
       }
       iVar4 = *(int *)(pFStack_8 + 0x1ac0);
@@ -86,21 +85,22 @@ void __thiscall FSGSTy::Finished(FSGSTy *this,int param_1)
       if (*(MMsgTy **)(iVar4 + 0x2e6) != (MMsgTy *)0x0) {
         MMsgTy::SetMessage(*(MMsgTy **)(iVar4 + 0x2e6),0x25bc,'\0',auStack_28,(undefined4 *)0x0,
                            (undefined4 *)0x0,0,0);
-        DAT_00858df8 = (undefined4 *)uStack_6c;
+        g_currentExceptionFrame = IStack_6c.previous;
         return;
       }
       (*(code *)**(undefined4 **)pFVar3)(auStack_28);
-      DAT_00858df8 = (undefined4 *)uStack_6c;
+      g_currentExceptionFrame = IStack_6c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_6c;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x95b,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_6c.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x95b,0,iVar4,&DAT_007a4ccc
+                               ,s_FSGSTy__Finished_007cc448);
     if (iVar9 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x95b);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x95b);
   }
   return;
 }

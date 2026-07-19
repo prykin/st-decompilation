@@ -15,7 +15,8 @@ FUN_006e6200(void *this,int param_1,undefined4 *param_2,undefined4 *param_3,int 
   puVar4 = param_2;
   iVar2 = FUN_006e62d0(this,(int)param_2,(int *)&param_2);
   if (iVar2 == 0) {
-    iVar2 = FUN_006ad4d0(s_E__Ourlib_Sapp_cpp_007ee78c,0x50e,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x50e,0,0,&DAT_007a4ccc,
+                               s_Duplicate_name___007eebf8);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
@@ -37,7 +38,7 @@ FUN_006e6200(void *this,int param_1,undefined4 *param_2,undefined4 *param_3,int 
     local_14 = 2;
     iVar2 = (**(code **)*param_2)(local_24);
     if (iVar2 == 0xffff) {
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7ee78c,0x518);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E__Ourlib_Sapp_cpp_007ee78c,0x518);
     }
     return 0;
   }

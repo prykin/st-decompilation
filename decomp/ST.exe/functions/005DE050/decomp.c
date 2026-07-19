@@ -15,8 +15,7 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
   undefined4 unaff_ESI;
   uint uVar7;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   StartSystemTy *local_10;
   int local_c;
   int local_8;
@@ -30,9 +29,9 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
       FUN_00710790(iVar3);
     }
     local_8 = *(int *)(iVar3 + 0x8a);
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
-    iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
+    iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar2 = local_10;
     if (iVar3 == 0) {
       iVar3 = *(int *)(local_10 + 0x544);
@@ -58,17 +57,18 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
         } while ((int)uVar7 < (int)(*(int *)(local_c + 0x1e0) + uVar4));
       }
       FUN_006b35d0(DAT_008075a8,*(uint *)(pSVar2 + 0x540));
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar5 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0x3cb,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x3cb,0,iVar3,&DAT_007a4ccc
+                               ,s_StartSystemTy__PaintBinDesc_007cd8e0);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cd718,0x3cb);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_startsys_cpp_007cd718,0x3cb);
   }
   return;
 }

@@ -14,15 +14,14 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
   uint uVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   SettMapMTy *pSStack_8;
   
   if (*(int *)(this + 0x1f84) != 0) {
-    uStack_4c = DAT_00858df8;
-    DAT_00858df8 = &uStack_4c;
+    IStack_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_4c;
     pSStack_8 = this;
-    iVar5 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+    iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pSStack_8;
     if (iVar5 == 0) {
       iVar5 = *(int *)(pSStack_8 + 0x1f84);
@@ -79,7 +78,7 @@ LAB_005d1245:
                (DAT_0080874e == *(char *)(iVar6 + 3))) break;
             uVar8 = uVar8 + 1;
             if (uVar2 <= uVar8) {
-              DAT_00858df8 = (undefined4 *)uStack_4c;
+              g_currentExceptionFrame = IStack_4c.previous;
               return;
             }
           }
@@ -90,17 +89,18 @@ LAB_005d1245:
           AddPlayerList(pSStack_8,DAT_0080877f,uVar8,(DAT_0080874f != '\0') + 2,pcVar7);
         }
       }
-      DAT_00858df8 = (undefined4 *)uStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x62f,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x62f,0,iVar5,&DAT_007a4ccc
+                               ,s_SettMapMTy__AddPlayerList_007cd4c4);
     if (iVar6 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7cd258,0x62f);
+    RaiseInternalException(iVar5,0,s_E____titans_Start_settmobj_cpp_007cd258,0x62f);
   }
   return;
 }

@@ -65,7 +65,7 @@ uint FUN_006b9770(byte *param_1,int *param_2,int param_3)
   else {
     local_c = -4;
   }
-  FUN_006a5e40(local_c,DAT_007ed77c,0x7edc30,0x34);
+  RaiseInternalException(local_c,DAT_007ed77c,s_E__DKW_STR_C_strtobin_c_007edc30,0x34);
   return local_8;
 }
 

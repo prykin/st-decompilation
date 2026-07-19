@@ -62,7 +62,7 @@ undefined4 FUN_00758df0(undefined4 *param_1)
     uVar7 = bVar2 & 0xf;
     iVar10 = (int)(uint)bVar2 >> 4;
     if (3 < uVar7) {
-      FUN_006a5e40(0x1e,DAT_007ed77c,0x7f2db0,0x23b);
+      RaiseInternalException(0x1e,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x23b);
     }
     if (param_1[uVar7 + 0x27] == 0) {
       uVar8 = FUN_00759e30(param_1);

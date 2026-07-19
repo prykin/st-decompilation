@@ -9,24 +9,24 @@ byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_
   byte *pbVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   uint local_c;
   byte *local_8;
   
   local_8 = (byte *)0x0;
   local_c = 0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar4 = FUN_006ad4d0(s_E__ourlib_connect_cpp_007f043c,0x7e,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar4 = ReportDebugMessage(s_E__ourlib_connect_cpp_007f043c,0x7e,0,iVar3,&DAT_007a4ccc,
+                               s_cnUnPackMess_007f042c);
     if (iVar4 == 0) {
       if ((local_8 != (byte *)0x0) && (local_c != 0)) {
         FUN_006ab060(&local_8);
       }
-      FUN_006a5e40(iVar3,0,0x7f043c,0x82);
+      RaiseInternalException(iVar3,0,s_E__ourlib_connect_cpp_007f043c,0x82);
       return (byte *)0x0;
     }
     pcVar2 = (code *)swi(3);
@@ -47,7 +47,7 @@ byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_
     }
     if (param_5 != (uint *)0x0) {
       *param_5 = 0;
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return local_8;
     }
   }
@@ -56,7 +56,7 @@ byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_
     local_8 = (byte *)FUN_006aac10(*(uint *)(param_1 + 5));
     iVar3 = FUN_007519d0((ushort *)(param_1 + 9),local_8);
     if (iVar3 != *(int *)(param_1 + 5)) {
-      FUN_006a5e40(-0x33,DAT_007ed77c,0x7f043c,0x6a);
+      RaiseInternalException(-0x33,DAT_007ed77c,s_E__ourlib_connect_cpp_007f043c,0x6a);
     }
     if (param_3 != (byte *)0x0) {
       *param_3 = *param_1 + 0x80;
@@ -68,7 +68,7 @@ byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_
       *param_5 = uVar1;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
 

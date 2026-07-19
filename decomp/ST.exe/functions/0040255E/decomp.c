@@ -15,23 +15,23 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   ushort *puVar7;
   float10 fVar8;
   longlong lVar9;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   float fStack_18;
   float fStack_14;
   OpticClassC *pOStack_10;
   ushort *puStack_c;
   float fStack_8;
   
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pOStack_10 = this;
-  iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_5c;
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_optic_cpp_007ac594,0x107,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_5c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x107,0,iVar3,&DAT_007a4ccc,
+                               s_OpticClassC__InitOptic_007ac5e0);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7ac594,0x108);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_To_optic_cpp_007ac594,0x108);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -99,13 +99,13 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
       if (*pcVar4 == DAT_0080874d) {
         thunk_FUN_004ab470(*(int *)((int)&DAT_008087eb + iVar3 * 0x51),
                            *(int *)((int)&DAT_008087ef + iVar3 * 0x51));
-        DAT_00858df8 = (undefined4 *)uStack_5c;
+        g_currentExceptionFrame = IStack_5c.previous;
         return;
       }
       pcVar4 = pcVar4 + 0x51;
       iVar3 = iVar3 + 1;
     } while ((int)pcVar4 < 0x808a71);
-    DAT_00858df8 = (undefined4 *)uStack_5c;
+    g_currentExceptionFrame = IStack_5c.previous;
     return;
   }
   puVar6 = puStack_c;
@@ -134,7 +134,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   DAT_0080674c = 2;
   DAT_0080745d = 0;
   cMf32::RecMemFree(DAT_00806754,(uint *)&puStack_c);
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   return;
 }
 

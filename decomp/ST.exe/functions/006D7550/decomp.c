@@ -12,8 +12,7 @@ FUN_006d7550(HDC param_1,int param_2,int param_3,int param_4,UINT param_5,uint p
   LPVOID lpvBits;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_7c;
-  undefined4 local_78 [16];
+  InternalExceptionFrame local_7c;
   undefined1 local_38 [16];
   ushort uStack_28;
   ushort local_26;
@@ -57,9 +56,9 @@ FUN_006d7550(HDC param_1,int param_2,int param_3,int param_4,UINT param_5,uint p
           else {
             local_10 = (param_6 != 0x10) - 1 & 3;
           }
-          local_7c = DAT_00858df8;
-          DAT_00858df8 = &local_7c;
-          DVar3 = __setjmp3(local_78,0,unaff_EDI,unaff_ESI);
+          local_7c.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &local_7c;
+          DVar3 = __setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
           if (DVar3 == 0) {
             local_c = (LPBITMAPINFO)FUN_006d10f0(param_4,param_5,param_6,local_10,1);
             lpvBits = (LPVOID)FUN_006b4fa0((int)local_c);
@@ -67,13 +66,13 @@ FUN_006d7550(HDC param_1,int param_2,int param_3,int param_4,UINT param_5,uint p
             h = local_18;
             iVar2 = GetDIBits(local_14,local_18,0,param_5,lpvBits,local_c,0);
             if (iVar2 == 0) {
-              FUN_006a5e40(-0xfd,DAT_007ed77c,0x7ee2a0,0x3d);
+              RaiseInternalException(-0xfd,DAT_007ed77c,s_E__DKW_WGR_C_dibget_c_007ee2a0,0x3d);
             }
             local_8 = 0;
-            DAT_00858df8 = (undefined4 *)local_7c;
+            g_currentExceptionFrame = local_7c.previous;
           }
           else {
-            DAT_00858df8 = (undefined4 *)local_7c;
+            g_currentExceptionFrame = local_7c.previous;
             FUN_006ab060(&local_c);
             hdc = local_14;
             h = local_18;
@@ -98,7 +97,7 @@ LAB_006d76f9:
   }
   DeleteObject(hdc);
   if (local_8 != 0) {
-    FUN_006a5e40(local_8,DAT_007ed77c,0x7ee2a0,0x50);
+    RaiseInternalException(local_8,DAT_007ed77c,s_E__DKW_WGR_C_dibget_c_007ee2a0,0x50);
   }
   return local_c;
 }

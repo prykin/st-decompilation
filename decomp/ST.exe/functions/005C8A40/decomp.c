@@ -34,8 +34,7 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
   UINT UVar22;
   int iVar23;
   undefined4 uVar24;
-  undefined4 *local_dc;
-  undefined4 local_d8 [16];
+  InternalExceptionFrame local_dc;
   uint local_98 [13];
   undefined4 local_64;
   undefined4 local_60;
@@ -64,19 +63,20 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
   local_38 = this;
   uVar5 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x61) = uVar5;
-  local_dc = DAT_00858df8;
-  DAT_00858df8 = &local_dc;
-  iVar6 = __setjmp3(local_d8,0,unaff_EDI,unaff_ESI);
+  local_dc.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_dc;
+  iVar6 = __setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_38;
   if (iVar6 != 0) {
-    DAT_00858df8 = local_dc;
-    iVar11 = FUN_006ad4d0(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x758,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_dc.previous;
+    iVar11 = ReportDebugMessage(s_E____titans_Start_sett_obj_cpp_007cd0e8,0x758,0,iVar6,
+                                &DAT_007a4ccc,s_SettMapTy__GetMessage_007cd23c);
     if (iVar11 != 0) {
       pcVar2 = (code *)swi(3);
       uVar5 = (*pcVar2)();
       return uVar5;
     }
-    FUN_006a5e40(iVar6,0,0x7cd0e8,0x758);
+    RaiseInternalException(iVar6,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x758);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_38,param_1);
@@ -1684,7 +1684,7 @@ LAB_005cae0f:
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }
 LAB_005cae3e:
-  DAT_00858df8 = local_dc;
+  g_currentExceptionFrame = local_dc.previous;
   uVar5 = thunk_FUN_005b6430();
   return uVar5;
 }

@@ -13,14 +13,13 @@ void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
   void *unaff_EDI;
   int iVar8;
   undefined4 uVar9;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   FSGSTy *pFStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pFStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar2 = pFStack_8;
   if (iVar3 == 0) {
     iVar3 = *(int *)(pFStack_8 + 0x1ac0);
@@ -96,17 +95,18 @@ void __thiscall FSGSTy::PaintLogNew(FSGSTy *this)
     FUN_006b5ee0(*(int *)(pFVar2 + 0x1ac0),0,0x18,0xab,0x188,0x4d,0xf,0xd);
     FUN_006b3430(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
     FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar8 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,999,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_4c.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,999,0,iVar3,&DAT_007a4ccc,
+                             s_FSGSTy__PaintLogNew_007cc200);
   if (iVar8 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cbf70,999);
+  RaiseInternalException(iVar3,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,999);
   return;
 }
 

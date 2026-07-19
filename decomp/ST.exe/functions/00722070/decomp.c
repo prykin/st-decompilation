@@ -21,7 +21,7 @@ void __thiscall FUN_00722070(void *this,int param_1)
     if (*(int *)((int)this + 0x17c) != 0) {
       iVar2 = FUN_006e6020(this,(undefined4 *)((int)this + 0x16c));
       if (iVar2 != 0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1c4);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1c4);
       }
     }
   }
@@ -32,7 +32,7 @@ void __thiscall FUN_00722070(void *this,int param_1)
       local_14 = 0x18;
       iVar2 = FUN_006e5fe0(this,local_24);
       if (iVar2 != 0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1cb);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1cb);
       }
     }
     local_10 = local_70;
@@ -52,83 +52,83 @@ void __thiscall FUN_00722070(void *this,int param_1)
       local_54 = 0x35;
       iVar2 = FUN_006e5fe0(this,local_24);
       if (iVar2 != 0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d1);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d1);
       }
     }
     local_70[1] = 200;
     local_54 = 0x3a;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d2);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d2);
     }
     local_70[1] = 0xd0;
     local_54 = 0x3b;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d3);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d3);
     }
     local_70[1] = 0xcd;
     local_54 = 0x3c;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d4);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d4);
     }
     local_70[1] = 0xcb;
     local_54 = 0x3d;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d5);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d5);
     }
     local_70[1] = 199;
     local_54 = 0x3e;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d6);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d6);
     }
     local_70[1] = 0xcf;
     local_54 = 0x3f;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d7);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d7);
     }
     if ((*(byte *)((int)this + 0x20) & 4) == 0) {
       local_70[1] = 0x1c;
       local_54 = 0x39;
       iVar2 = FUN_006e5fe0(this,local_24);
       if (iVar2 != 0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d8);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d8);
       }
     }
     local_70[1] = 0xd2;
     local_54 = 0x38;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1d9);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1d9);
     }
     local_70[1] = 0xe;
     local_54 = 0x36;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1da);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1da);
     }
     local_70[1] = 0xd3;
     local_54 = 0x37;
     iVar2 = FUN_006e5fe0(this,local_24);
     if (iVar2 != 0) {
-      FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1db);
+      RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1db);
     }
     if (*(int *)((int)this + 0x1bc) != 0) {
       local_70[1] = 0xf;
       local_54 = 0x40;
       iVar2 = FUN_006e5fe0(this,local_24);
       if (iVar2 != 0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1dd);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1dd);
       }
       local_70[1] = 0x100000f;
       local_54 = 0x41;
       iVar2 = FUN_006e5fe0(this,local_24);
       if (iVar2 != 0) {
-        FUN_006a5e40(0,DAT_007ed77c,0x7f0b08,0x1de);
+        RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x1de);
       }
     }
   }

@@ -12,8 +12,7 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
   STAllPlayersC *pSVar7;
   void *unaff_EDI;
   undefined4 *puVar8;
-  undefined4 uStack_6c;
-  undefined4 auStack_68 [16];
+  InternalExceptionFrame IStack_6c;
   undefined4 *puStack_28;
   int iStack_24;
   STAllPlayersC *pSStack_20;
@@ -24,10 +23,10 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
   uint uStack_c;
   uint uStack_8;
   
-  uStack_6c = DAT_00858df8;
-  DAT_00858df8 = &uStack_6c;
+  IStack_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_6c;
   pSStack_20 = (STAllPlayersC *)this;
-  iVar2 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar7 = pSStack_20;
   if (iVar2 == 0) {
     *param_1 = 0x80;
@@ -104,17 +103,18 @@ undefined4 * __thiscall STTorpC::SaveTorpData(STTorpC *this,int *param_1)
     puVar3[0x1e] = iStack_24 + uStack_c;
     puVar3[0x1f] = uStack_10;
     FUN_006ab060(&puStack_1c);
-    DAT_00858df8 = (undefined4 *)uStack_6c;
+    g_currentExceptionFrame = IStack_6c.previous;
     return puVar3;
   }
-  DAT_00858df8 = (undefined4 *)uStack_6c;
-  iVar4 = FUN_006ad4d0(s_E____titans_nick_to_torp_cpp_007d25c0,0x4d4,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_6c.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_nick_to_torp_cpp_007d25c0,0x4d4,0,iVar2,&DAT_007a4ccc,
+                             s_STTorpC__SaveTorpData_007d2638);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     puVar5 = (undefined4 *)(*pcVar1)();
     return puVar5;
   }
-  FUN_006a5e40(iVar2,0,0x7d25c0,0x4d5);
+  RaiseInternalException(iVar2,0,s_E____titans_nick_to_torp_cpp_007d25c0,0x4d5);
   return puStack_28;
 }
 

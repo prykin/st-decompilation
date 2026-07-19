@@ -39,7 +39,8 @@ void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
       return;
     }
     if (iVar2 == 2) {
-      iVar2 = FUN_006ad4d0(s_E____titans_Igor_to_sat_cpp_007cbab8,0x11b,0,0,&DAT_007a4ccc);
+      iVar2 = ReportDebugMessage(s_E____titans_Igor_to_sat_cpp_007cbab8,0x11b,0,0,&DAT_007a4ccc,
+                                 s_For_Artem___already_has_athe_tar_007cbadc);
       if (iVar2 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();

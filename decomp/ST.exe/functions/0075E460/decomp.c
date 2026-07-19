@@ -14,7 +14,7 @@ void FUN_0075e460(int *param_1)
   puVar1[8] = 0;
   puVar1[10] = 0;
   if (param_1[0x1c] != 3) {
-    FUN_006a5e40(0x2e,DAT_007ed77c,0x7f2e88,0x51b);
+    RaiseInternalException(0x2e,DAT_007ed77c,s_E__DKW_JPG_C_jquant2_c_007f2e88,0x51b);
   }
   uVar2 = (**(code **)*param_1)(param_1,1,0x80);
   puVar1[6] = uVar2;
@@ -32,10 +32,10 @@ void FUN_0075e460(int *param_1)
   else {
     iVar3 = param_1[0x16];
     if (iVar3 < 8) {
-      FUN_006a5e40(0x37,DAT_007ed77c,0x7f2e88,0x530);
+      RaiseInternalException(0x37,DAT_007ed77c,s_E__DKW_JPG_C_jquant2_c_007f2e88,0x530);
     }
     if (0x100 < iVar3) {
-      FUN_006a5e40(0x38,DAT_007ed77c,0x7f2e88,0x533);
+      RaiseInternalException(0x38,DAT_007ed77c,s_E__DKW_JPG_C_jquant2_c_007f2e88,0x533);
     }
     uVar2 = (**(code **)(*param_1 + 8))(param_1,1,iVar3,3);
     puVar1[4] = uVar2;

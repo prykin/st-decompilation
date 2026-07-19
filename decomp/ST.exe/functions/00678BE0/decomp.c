@@ -7,55 +7,56 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
-  undefined4 *puVar4;
-  AiPlrClassTy *pAVar5;
+  undefined4 *puVar3;
+  AiPlrClassTy *pAVar4;
   void *unaff_ESI;
-  undefined4 uVar6;
+  InternalExceptionFrame *pIVar5;
   undefined4 local_54 [16];
   AiPlrClassTy *local_14;
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
   
-  uVar6 = DAT_00858df8;
+  pIVar5 = g_currentExceptionFrame;
   local_c = (undefined4 *)0x0;
   local_8 = (undefined4 *)0x0;
-  DAT_00858df8 = &stack0xffffffa8;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
-  iVar2 = __setjmp3(local_54,0,unaff_ESI,uVar6);
-  pAVar5 = local_14;
-  if (iVar2 == 0) {
+  errorCode = __setjmp3(local_54,0,unaff_ESI,pIVar5);
+  pAVar4 = local_14;
+  if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)(local_14 + 0x1c),&local_10);
-    if (pAVar5 == (AiPlrClassTy *)0x0) {
-      pAVar5 = (AiPlrClassTy *)0x0;
+    if (pAVar4 == (AiPlrClassTy *)0x0) {
+      pAVar4 = (AiPlrClassTy *)0x0;
     }
     else {
-      pAVar5 = pAVar5 + 0x5d3;
+      pAVar4 = pAVar4 + 0x5d3;
     }
-    local_c = thunk_FUN_0067d3b0((undefined4 *)pAVar5,local_8,local_10,param_1);
+    local_c = thunk_FUN_0067d3b0((undefined4 *)pAVar4,local_8,local_10,param_1);
     local_c[3] = 1;
     if (local_8 != (undefined4 *)0x0) {
       FUN_006ab060(&local_8);
     }
-    DAT_00858df8 = (undefined1 *)uVar6;
+    g_currentExceptionFrame = pIVar5;
     return local_c;
   }
-  DAT_00858df8 = (undefined1 *)uVar6;
+  g_currentExceptionFrame = pIVar5;
   if (local_8 != (undefined4 *)0x0) {
     FUN_006ab060(&local_8);
   }
   if (local_c != (undefined4 *)0x0) {
     FUN_006ab060(&local_c);
   }
-  iVar3 = FUN_006ad4d0(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x61,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  iVar2 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x61,0,errorCode,&DAT_007a4ccc,
+                             s_AiPlrClassTy__PrepareToSave_007d2e88);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
-    puVar4 = (undefined4 *)(*pcVar1)();
-    return puVar4;
+    puVar3 = (undefined4 *)(*pcVar1)();
+    return puVar3;
   }
-  FUN_006a5e40(iVar2,0,0x7d2e4c,0x62);
+  RaiseInternalException(errorCode,0,s_E____titans_ai_ai_plr_cpp_007d2e4c,0x62);
   return (undefined4 *)0x0;
 }
 

@@ -19,8 +19,7 @@ undefined4 * thunk_FUN_006494c0(void)
   char *pcVar13;
   char acStack_390 [532];
   uint auStack_17c [65];
-  undefined4 uStack_78;
-  undefined4 auStack_74 [16];
+  InternalExceptionFrame IStack_78;
   int aiStack_34 [6];
   undefined4 uStack_1c;
   uint uStack_18;
@@ -32,21 +31,22 @@ undefined4 * thunk_FUN_006494c0(void)
   puStack_c = (undefined4 *)0x0;
   puStack_8 = (uint *)0x0;
   puStack_10 = (undefined4 *)0x0;
-  uStack_78 = DAT_00858df8;
-  DAT_00858df8 = &uStack_78;
-  iVar3 = __setjmp3(auStack_74,0,unaff_EDI,unaff_ESI);
+  IStack_78.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_78;
+  iVar3 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_78;
+    g_currentExceptionFrame = IStack_78.previous;
     thunk_FUN_0065d0f0((int *)&puStack_10);
     thunk_FUN_0067d160((int *)&puStack_8);
     thunk_FUN_0067d160((int *)&puStack_c);
-    iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_creat_cpp_007d2880,0x139,0,iVar3,&DAT_007a4ccc);
+    iVar4 = ReportDebugMessage(s_E____titans_ai_ai_creat_cpp_007d2880,0x139,0,iVar3,&DAT_007a4ccc,
+                               s_CreatePlrDataForWS_007d28d0);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
       puVar5 = (undefined4 *)(*pcVar2)();
       return puVar5;
     }
-    FUN_006a5e40(iVar3,0,0x7d2880,0x13a);
+    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_creat_cpp_007d2880,0x13a);
     return (undefined4 *)0x0;
   }
   piVar10 = aiStack_34;
@@ -211,11 +211,11 @@ undefined4 * thunk_FUN_006494c0(void)
     puStack_c = thunk_FUN_0067d3b0(puStack_8,puStack_10,uStack_14,&uStack_18);
     thunk_FUN_0065d0f0((int *)&puStack_10);
     thunk_FUN_0067d160((int *)&puStack_8);
-    DAT_00858df8 = (undefined4 *)uStack_78;
+    g_currentExceptionFrame = IStack_78.previous;
     return puStack_c;
   }
-  FUN_006a5e40(aiStack_34[0],DAT_007ed77c,0x7d2880,0x133);
-  DAT_00858df8 = (undefined4 *)uStack_78;
+  RaiseInternalException(aiStack_34[0],DAT_007ed77c,s_E____titans_ai_ai_creat_cpp_007d2880,0x133);
+  g_currentExceptionFrame = IStack_78.previous;
   return puStack_c;
 }
 

@@ -11,8 +11,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
   undefined4 unaff_ESI;
   int iVar5;
   void *unaff_EDI;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   undefined2 uStack_14;
   undefined2 uStack_12;
   undefined2 uStack_10;
@@ -37,9 +36,9 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
     FUN_006ae1c0(puVar3,(undefined4 *)&uStack_14);
     goto LAB_004157f0;
   }
-  uStack_58 = DAT_00858df8;
-  DAT_00858df8 = &uStack_58;
-  iVar4 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+  IStack_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_58;
+  iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (*(int *)((int)param_1 + 0x4d) != 0) {
       iVar4 = FUN_006db910(param_3,param_4,param_6,param_7);
@@ -76,7 +75,7 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
           FUN_006ae140(puStack_8,DAT_007f4d04[iVar5 * 7 + -1],(undefined4 *)&uStack_14);
           iVar4 = iVar4 + 1;
         } while (iVar4 < DAT_007f4cf8);
-        DAT_00858df8 = (undefined4 *)uStack_58;
+        g_currentExceptionFrame = IStack_58.previous;
         iVar4 = iStack_c;
         goto LAB_004157e1;
       }
@@ -93,13 +92,14 @@ uint * STGroupBoatC::Way3DGrpGetDistrPoint
         } while (iVar4 < (int)(uint)*(ushort *)((int)param_1 + 0x27));
       }
     }
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
     iVar4 = iStack_c;
   }
   else {
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
     iStack_c = iVar4;
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeae,0,iVar4,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeae,0,iVar4,&DAT_007a4ccc,
+                               s_STGroupBoatC__Way3DGrpGetDistrPo_007a4cf8);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       puVar3 = (uint *)(*pcVar1)();
@@ -113,7 +113,7 @@ LAB_004157f0:
   if (iVar4 != 0) {
     FUN_006ae110((byte *)puVar3);
     puStack_8 = (uint *)0x0;
-    FUN_006a5e40(iVar4,DAT_007ed77c,0x7a4ca8,0xeb8);
+    RaiseInternalException(iVar4,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xeb8);
     return (uint *)0x0;
   }
   return puVar3;

@@ -5,43 +5,45 @@ STAllPlayersC::UnRegisterGroup(STAllPlayersC *this,char param_1,uint param_2,int
 {
   code *pcVar1;
   uint *puVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  undefined4 uVar6;
+  int errorCode;
+  uint uVar3;
+  int iVar4;
+  undefined4 uVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   uint *puStack_c;
   int iStack_8;
   
-  uStack_50 = DAT_00858df8;
+  IStack_50.previous = g_currentExceptionFrame;
   puStack_c = *(uint **)((int)&DAT_007f4e24 + param_1 * 0xa62 + 1);
-  DAT_00858df8 = &uStack_50;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
-  if (iVar3 == 0) {
+  g_currentExceptionFrame = &IStack_50;
+  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     if (param_3 == 0) {
-      FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x6a7);
+      RaiseInternalException
+                (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x6a7);
     }
     puVar2 = puStack_c;
-    uVar4 = FUN_006acc70((int)puStack_c,param_2 & 0xffff,&iStack_8);
-    if ((uVar4 == 0xfffffffc) || (iStack_8 != param_3)) {
-      FUN_006a5e40(-0x5001fffe,DAT_007ed77c,0x7a6004,0x6a9);
+    uVar3 = FUN_006acc70((int)puStack_c,param_2 & 0xffff,&iStack_8);
+    if ((uVar3 == 0xfffffffc) || (iStack_8 != param_3)) {
+      RaiseInternalException
+                (-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x6a9);
     }
     iStack_8 = 0;
     FUN_006ae140(puVar2,param_2 & 0xffff,&iStack_8);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x6ad,0,iVar3,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x6ad,0,errorCode,
+                             &DAT_007a4ccc,s_STAllPlayersC__UnRegisterGroup_007a664c);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    uVar5 = (*pcVar1)();
+    return uVar5;
   }
-  FUN_006a5e40(iVar3,0,0x7a6004,0x6ae);
+  RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x6ae);
   return 0xffffffff;
 }
 

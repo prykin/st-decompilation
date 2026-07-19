@@ -36,26 +36,25 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   undefined4 uVar22;
   _WIN32_FIND_DATAA local_21c;
   byte local_dc [64];
-  undefined4 **local_9c;
-  undefined4 local_98 [16];
-  undefined4 **local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_9c;
+  InternalExceptionFrame local_58;
   HANDLE local_14;
   int local_10;
   SIDTy *local_c;
   int local_8;
   
   local_10 = 0;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar5 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar14 = local_c;
   if (iVar5 != 0) {
-    DAT_00858df8 = local_58;
-    iVar13 = FUN_006ad4d0(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167,0,iVar5,&DAT_007a4ccc
+                                ,s_SIDTy__PrepFiles_007cd694);
     if (iVar13 == 0) {
-      FUN_006a5e40(iVar5,0,0x7cd5c4,0x167);
+      RaiseInternalException(iVar5,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167);
       return;
     }
     pcVar4 = (code *)swi(3);
@@ -168,9 +167,9 @@ LAB_005d8dbf:
               pcVar21 = s__s_s_s__s_007ca1ec;
               wsprintfA((LPSTR)pSVar14,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079c19c,
                         local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
-              local_9c = DAT_00858df8;
-              DAT_00858df8 = &local_9c;
-              iVar5 = __setjmp3(local_98,0,pSVar14,pcVar21);
+              local_9c.previous = g_currentExceptionFrame;
+              g_currentExceptionFrame = &local_9c;
+              iVar5 = __setjmp3(local_9c.jumpBuffer,0,pSVar14,pcVar21);
               pSVar14 = local_c;
               if (iVar5 == 0) {
                 puVar7 = FUN_006f0ec0(0x345,(byte *)(local_c + 0x1cd4),0,0,0);
@@ -183,10 +182,10 @@ LAB_005d8dbf:
                   }
                   cMf32::delete(this_00,puVar7);
                 }
-                DAT_00858df8 = local_9c;
+                g_currentExceptionFrame = local_9c.previous;
               }
               else {
-                DAT_00858df8 = local_9c;
+                g_currentExceptionFrame = local_9c.previous;
               }
             }
           }
@@ -312,7 +311,7 @@ LAB_005d9011:
   *(undefined4 *)(pSVar14 + 0x31) = 9;
   FUN_006e6080(pSVar14,2,*(undefined4 *)(pSVar14 + 0x1af5),(undefined4 *)(pSVar14 + 0x1d));
   FUN_006b35d0(DAT_008075a8,*(uint *)(pSVar14 + 0x1cb4));
-  DAT_00858df8 = local_58;
+  g_currentExceptionFrame = local_58.previous;
   return;
 }
 

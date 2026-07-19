@@ -16,8 +16,7 @@ STRubbishC::LoadImagSpr
   undefined4 uVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 ***local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   undefined4 local_18;
   STT3DSprC *local_14;
   int local_10;
@@ -60,14 +59,14 @@ LAB_0062f450:
   if (param_1 == (void *)0x0) {
     return 0xffffffff;
   }
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  iVar2 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  iVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 == 0) {
     iVar2 = STT3DSprC::Init(local_14,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar2 != 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7d1798,0x17b);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_Rubb_cpp_007d1798,0x17b);
       return 0xffff;
     }
     iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,local_8[*param_2],0x1d);
@@ -77,19 +76,20 @@ LAB_0062f450:
       thunk_FUN_004ad3c0(this_00,(float)param_2[3] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[4] * _DAT_007904f8 * _DAT_007904f0,
                          (float)param_2[5] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
-      DAT_00858df8 = (undefined4 ****)local_5c;
+      g_currentExceptionFrame = local_5c.previous;
       return local_18;
     }
   }
   else {
-    DAT_00858df8 = (undefined4 ****)local_5c;
-    iVar3 = FUN_006ad4d0(s_E____titans_nick_to_Rubb_cpp_007d1798,0x189,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_5c.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0x189,0,iVar2,&DAT_007a4ccc,
+                               s_STRubbishC__LoadImagSpr_007d17fc);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    FUN_006a5e40(iVar2,0,0x7d1798,0x18b);
+    RaiseInternalException(iVar2,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0x18b);
   }
   return 0xffff;
 }

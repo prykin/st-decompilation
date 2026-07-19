@@ -1,4 +1,4 @@
-FUN_00568dd0:
+SoundClassTy::PlaySound:
 00568DD0  55                        PUSH EBP
 00568DD1  8B EC                     MOV EBP,ESP
 00568DD3  83 EC 60                  SUB ESP,0x60

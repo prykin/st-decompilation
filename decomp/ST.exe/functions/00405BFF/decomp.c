@@ -19,25 +19,25 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   bool bVar12;
   byte bVar13;
   byte bVar14;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   VisibleClassTy *pVStack_10;
   int iStack_c;
   short *psStack_8;
   
   iVar10 = 0;
   psStack_8 = (short *)0x0;
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pVStack_10 = this;
-  iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pVStack_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_54;
-    iVar10 = FUN_006ad4d0(s_E____titans_grig_visible_cpp_007c92cc,0xaa,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_54.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0xaa,0,iVar4,&DAT_007a4ccc,
+                                s_VisibleClassTy__Init_007c9310);
     if (iVar10 == 0) {
       FUN_0070b600((int *)&psStack_8);
-      FUN_006a5e40(iVar4,0,0x7c92cc,0xac);
+      RaiseInternalException(iVar4,0,s_E____titans_grig_visible_cpp_007c92cc,0xac);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -139,7 +139,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       if (*(int *)(this_00 + 0xf8) != 0) {
         *(undefined4 *)((int)DAT_00807598 + 0x466) = 1;
         *(undefined4 *)((int)pvVar3 + 0x2d8) = 1;
-        DAT_00858df8 = (undefined4 *)uStack_54;
+        g_currentExceptionFrame = IStack_54.previous;
         return;
       }
       goto LAB_00557fbb;
@@ -150,7 +150,7 @@ LAB_00557fbb:
   pvVar3 = DAT_00807598;
   *(undefined4 *)((int)DAT_00807598 + 0x466) = 0;
   *(undefined4 *)((int)pvVar3 + 0x2d8) = 1;
-  DAT_00858df8 = (undefined4 *)uStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return;
 }
 

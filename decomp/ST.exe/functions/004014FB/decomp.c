@@ -92,7 +92,8 @@ LAB_0047d831:
       uVar7 = thunk_FUN_004176c0(this,*(short *)((int)this + 0x69b));
       uVar7 = thunk_FUN_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
-        iVar9 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3896,0,0,&DAT_007a4ccc);
+        iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3896,0,0,&DAT_007a4ccc,
+                                   s_STBoatC__Annih_ANNIH_MOVE_1_007ab67c);
         if (iVar9 != 0) {
           pcVar4 = (code *)swi(3);
           iVar9 = (*pcVar4)();
@@ -170,7 +171,8 @@ LAB_0047d831:
           } while (iStack_c < (int)(uint)*(byte *)((int)this + 0x2bf));
         }
         if (iStack_18 == -1) {
-          iVar9 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x38bd,0,0,&DAT_007a4ccc);
+          iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x38bd,0,0,
+                                     &DAT_007a4ccc,s_STBoatC__Annih_ANNIH_MOVE_2_007ab658);
           if (iVar9 != 0) {
             pcVar4 = (code *)swi(3);
             iVar9 = (*pcVar4)();
@@ -237,7 +239,8 @@ LAB_0047d241:
   }
   else {
     if (iVar9 != 2) {
-      iVar9 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3902,0,0,&DAT_007a4ccc);
+      iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3902,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Annih_incorrect_entry_007ab630);
       if (iVar9 != 0) {
         pcVar4 = (code *)swi(3);
         iVar9 = (*pcVar4)();

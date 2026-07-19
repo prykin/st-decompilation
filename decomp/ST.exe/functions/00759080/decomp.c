@@ -33,7 +33,7 @@ undefined4 FUN_00759080(int param_1)
   }
   bVar2 = *pbVar6;
   if ((cVar1 != -1) || (bVar2 != 0xd8)) {
-    FUN_006a5e40(0x34,DAT_007ed77c,0x7f2db0,0x2c4);
+    RaiseInternalException(0x34,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x2c4);
   }
   *(uint *)(param_1 + 0x18e) = (uint)bVar2;
   puVar3[1] = iVar4 + -1;

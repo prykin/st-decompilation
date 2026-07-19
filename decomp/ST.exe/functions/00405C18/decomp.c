@@ -75,10 +75,8 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   undefined4 uStackY_728;
   undefined4 uStackY_724;
   undefined4 uStackY_720;
-  undefined4 **ppuStackY_2bc;
-  undefined4 auStackY_2b8 [16];
-  undefined4 **ppuStackY_278;
-  undefined4 auStackY_274 [16];
+  InternalExceptionFrame IStackY_2bc;
+  InternalExceptionFrame IStackY_278;
   undefined4 auStackY_234 [4];
   undefined4 uStackY_224;
   undefined4 uStackY_220;
@@ -165,15 +163,16 @@ void __thiscall MTaskTy::PlayScript(MTaskTy *this)
   SpriteClassTy *pSVar32;
   
   FUN_0072da40();
-  ppuStackY_278 = DAT_00858df8;
-  DAT_00858df8 = &ppuStackY_278;
+  IStackY_278.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStackY_278;
   pMStackY_8c = extraout_ECX;
-  iVar5 = __setjmp3(auStackY_274,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(IStackY_278.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = ppuStackY_278;
-    iVar13 = FUN_006ad4d0(s_E____titans_Start_task_obj_cpp_007cd994,0x45f,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStackY_278.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0x45f,0,iVar5,
+                                &DAT_007a4ccc);
     if (iVar13 == 0) {
-      FUN_006a5e40(iVar5,0,0x7cd994,0x45f);
+      RaiseInternalException(iVar5,0,s_E____titans_Start_task_obj_cpp_007cd994,0x45f);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -861,7 +860,7 @@ LAB_005e24c5:
             if (puVar8 == (uint *)0x0) break;
           }
           in_stack_ffffffdc = (uint *)0x5e2f24;
-          thunk_FUN_0056a130(&DAT_00807658,0,'\x03',-1,puVar8);
+          thunk_FUN_0056a130(&g_sound,0,'\x03',-1,puVar8);
         }
         break;
       case 7:
@@ -878,9 +877,9 @@ LAB_005e24c5:
           pSVar30 = (SpriteClassTy *)0x0;
           piStackY_142 = (int *)0x0;
           iStackY_94 = 1;
-          ppuStackY_2bc = DAT_00858df8;
-          DAT_00858df8 = &ppuStackY_2bc;
-          iVar5 = __setjmp3(auStackY_2b8,0,unaff_EDI,pSVar20);
+          IStackY_2bc.previous = g_currentExceptionFrame;
+          g_currentExceptionFrame = &IStackY_2bc;
+          iVar5 = __setjmp3(IStackY_2bc.jumpBuffer,0,unaff_EDI,pSVar20);
           if (iVar5 == 0) {
             pSVar31 = pSVar30;
             if (pSVar20 != (SpriteClassTy *)0x0) {
@@ -1004,10 +1003,10 @@ LAB_005e3030:
             }
             FUN_006ae140(*(uint **)(this_01 + 0x64b),*(uint *)(pSVar30 + 0xe),
                          (undefined4 *)aSStackY_1dc);
-            DAT_00858df8 = ppuStackY_2bc;
+            g_currentExceptionFrame = IStackY_2bc.previous;
           }
           else {
-            DAT_00858df8 = ppuStackY_2bc;
+            g_currentExceptionFrame = IStackY_2bc.previous;
             SpriteClassTy::CloseSprite(aSStackY_1dc);
             this_01 = pMStackY_8c;
             if (piStackY_142 != (int *)0x0) {
@@ -1744,7 +1743,7 @@ LAB_005e195d:
         }
         uVar7 = thunk_FUN_005df290(*(int *)(this_01 + 0x5d),(undefined *)0x0,DAT_00807dd9);
         *(undefined4 *)(this_01 + 0x8d) = uVar7;
-        thunk_FUN_00568bc0(&DAT_00807658,0);
+        thunk_FUN_00568bc0(&g_sound,0);
         if ((DAT_00807300._1_1_ & 8) != 0) {
           puVar8 = (uint *)FUN_00719d00(*(undefined4 *)(this_01 + 0x70),
                                         (char *)((int)piVar18 + 0x2d),0,0);
@@ -1754,12 +1753,12 @@ LAB_005e195d:
             *(uint **)(this_01 + 0x85) = puVar8;
             if (puVar8 == (uint *)0x0) {
               in_stack_ffffffdc = (uint *)0x5e1cab;
-              thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
+              thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
               break;
             }
           }
           in_stack_ffffffdc = (uint *)0x5e1c94;
-          thunk_FUN_0056a130(&DAT_00807658,0,'\x02',0,puVar8);
+          thunk_FUN_0056a130(&g_sound,0,'\x02',0,puVar8);
         }
       }
       iVar5 = *(int *)(this_01 + 0x7c);
@@ -1792,7 +1791,7 @@ LAB_005e34e0:
     }
     this_01[0x6d] = (MTaskTy)0x1;
   }
-  DAT_00858df8 = ppuStackY_278;
+  g_currentExceptionFrame = IStackY_278.previous;
   return;
 }
 

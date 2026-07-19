@@ -13,17 +13,16 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   TLOBaseTy *local_8;
   
   local_8 = this;
   if ((param_1 != 0) && (iVar3 = (**(code **)(*(int *)this + 0xf8))(), iVar3 == 0)) {
     return;
   }
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = *(int *)(local_8 + 0x21d);
@@ -41,13 +40,14 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
     if (*(int *)(&DAT_00794d94 + *(int *)(pTVar2 + 0x235) * 4) != 0) {
       thunk_FUN_004c2f70((int)pTVar2);
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_Artem_TLO_bcomm_cpp_007ac8a8,0x2f,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_bcomm_cpp_007ac8a8,0x2f,0,iVar3,&DAT_007a4ccc,
+                             s_TLOBaseTy__SetActivity_007ac8d0);
   if (iVar5 == 0) {
-    FUN_006a5e40(iVar3,0,0x7ac8a8,0x30);
+    RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_bcomm_cpp_007ac8a8,0x30);
     return;
   }
   pcVar1 = (code *)swi(3);

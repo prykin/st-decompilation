@@ -16,8 +16,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   uint local_10;
   CursorClassTy *local_c;
   int local_8;
@@ -33,9 +32,9 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
     iVar5 = CONCAT31(extraout_var,bVar4);
   }
   if (iVar5 != 0) {
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
-    iVar5 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
+    iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar3 = local_c;
     uVar2 = local_10;
     if (iVar5 == 0) {
@@ -70,7 +69,7 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
           SpriteClassTy::CloseSprite(this_00);
           FUN_0072e2b0(*(undefined4 **)(pCVar3 + 0x4eb));
           *(undefined4 *)(pCVar3 + 0x4eb) = 0;
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return;
         }
         if ((uint)(*(int *)(this_00 + 0x40) + *(int *)(this_00 + 0x44)) <= uVar2) {
@@ -90,17 +89,18 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
                        *(uint *)(iVar5 + 0x1c),*(uint *)(iVar5 + 0x20));
         }
       }
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xcc,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xcc,0,iVar5,
+                               &DAT_007a4ccc,s_CursorClassTy__DrawSprite_007c7e48);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7c7d60,0xcd);
+    RaiseInternalException(iVar5,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xcd);
   }
   return;
 }

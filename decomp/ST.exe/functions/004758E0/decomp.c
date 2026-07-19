@@ -78,7 +78,8 @@ int __thiscall FUN_004758e0(void *this,undefined4 *param_1)
   if (iVar6 == 5) {
     iVar6 = thunk_FUN_0045ff50(this,2);
     if (iVar6 == -1) {
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3079,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3079,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__UnLoadObj__5_007ab0a8);
       if (iVar6 != 0) {
         pcVar4 = (code *)swi(3);
         iVar6 = (*pcVar4)();
@@ -161,7 +162,8 @@ int __thiscall FUN_004758e0(void *this,undefined4 *param_1)
       iVar6 = (**(code **)(*(int *)this + 0xd8))();
       return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
     }
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x309b,0,0,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x309b,0,0,&DAT_007a4ccc,
+                               s_STBoatC__UnLoadObj_RotateCheat_007ab080);
     if (iVar6 != 0) {
       pcVar4 = (code *)swi(3);
       iVar6 = (*pcVar4)();
@@ -238,7 +240,8 @@ int __thiscall FUN_004758e0(void *this,undefined4 *param_1)
       } while (local_10 < (int)(uint)*(byte *)((int)this + 0x2bf));
     }
     if (local_20 == -1) {
-      iVar6 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30d2,0,0,&DAT_007a4ccc);
+      iVar6 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30d2,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__UnLoadObj_LLMoveStep_007ab05c);
       if (iVar6 != 0) {
         pcVar4 = (code *)swi(3);
         iVar6 = (*pcVar4)();

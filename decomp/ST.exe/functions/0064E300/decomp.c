@@ -11,8 +11,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar4;
-  undefined4 local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   uint local_20 [3];
   void *local_14;
   uint local_10;
@@ -25,14 +24,14 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   local_20[2] = 0xffffffff;
   local_20[1] = 0;
   local_14 = (void *)0x0;
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
-  uVar1 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
+  uVar1 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar1 != 0) {
-    DAT_00858df8 = (undefined4 *)local_64;
+    g_currentExceptionFrame = local_64.previous;
     thunk_FUN_006686c0((int *)&local_8);
     thunk_FUN_006686c0((int *)&local_c);
-    FUN_006a5e40(uVar1,0,0x7d2a34,0x1b8);
+    RaiseInternalException(uVar1,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b8);
     return uVar1;
   }
   if (((int)local_10 < 0) || (bVar4 = local_10 == 8, 8 < (int)local_10)) {
@@ -54,7 +53,7 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
   thunk_FUN_0054cc20(900,local_20 + 1,&local_14,local_c,0);
   thunk_FUN_006686c0((int *)&local_c);
   if (local_14 == (void *)0x0) {
-    FUN_006a5e40(-0xab,DAT_007ed77c,0x7d2a34,0x1b4);
+    RaiseInternalException(-0xab,DAT_007ed77c,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b4);
     uVar1 = local_20[2];
   }
   else {
@@ -64,11 +63,11 @@ uint FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_4,unde
     if (puVar3 != (uint *)0x0) {
       thunk_FUN_0065d940(local_14,(int)puVar3,0);
       FUN_006ae110((byte *)puVar3);
-      DAT_00858df8 = (undefined4 *)local_64;
+      g_currentExceptionFrame = local_64.previous;
       return uVar1;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_64;
+  g_currentExceptionFrame = local_64.previous;
   return uVar1;
 }
 

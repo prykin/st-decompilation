@@ -20,8 +20,7 @@ VisibleClassTy::SetZoneAst
   undefined4 unaff_ESI;
   int iVar9;
   void *unaff_EDI;
-  undefined4 local_60;
-  undefined4 local_5c [17];
+  InternalExceptionFrame local_60;
   int local_18;
   VisibleClassTy *local_14;
   int local_10;
@@ -32,13 +31,14 @@ VisibleClassTy::SetZoneAst
      ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[param_4 * 0x51] < 8)))) {
     local_14 = this;
     if (*(int *)(this + param_4 * 4 + 0x74) == 0) {
-      local_60 = DAT_00858df8;
-      DAT_00858df8 = &local_60;
-      iVar4 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+      local_60.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_60;
+      iVar4 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this = local_14;
       if (iVar4 != 0) {
-        DAT_00858df8 = (undefined4 *)local_60;
-        iVar4 = FUN_006ad4d0(s_E____titans_grig_visible_cpp_007c92cc,0x2d7,0,iVar4,&DAT_007a4ccc);
+        g_currentExceptionFrame = local_60.previous;
+        iVar4 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x2d7,0,iVar4,
+                                   &DAT_007a4ccc,s_VisibleClassTy__SetZoneAst_007c93dc);
         if (iVar4 == 0) {
           return;
         }
@@ -48,7 +48,7 @@ VisibleClassTy::SetZoneAst
       }
       puVar5 = FUN_006aac10(*(int *)(local_14 + 0x24) * *(int *)(local_14 + 0x20));
       *(undefined4 **)(this + param_4 * 4 + 0x74) = puVar5;
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
     }
     if ((param_7 & 0x1000) != 0) {
       thunk_FUN_0055bb00(this,3,(short)param_1,(short)param_2,param_3,param_4,(char)param_5,param_6)

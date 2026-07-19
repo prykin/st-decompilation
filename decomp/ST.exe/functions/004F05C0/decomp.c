@@ -28,8 +28,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   undefined4 auStack_310 [4];
   undefined4 auStack_300 [3];
   undefined4 auStack_2f4 [143];
-  undefined4 *local_b8;
-  undefined4 local_b4 [16];
+  InternalExceptionFrame local_b8;
   undefined4 local_74 [4];
   undefined4 local_64;
   undefined4 local_60;
@@ -59,15 +58,16 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     *piVar13 = 0;
     piVar13 = piVar13 + 1;
   }
-  local_b8 = DAT_00858df8;
-  DAT_00858df8 = &local_b8;
-  iVar7 = __setjmp3(local_b4,0,unaff_EDI,unaff_ESI);
+  local_b8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_b8;
+  iVar7 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_1c;
   if (iVar7 != 0) {
-    DAT_00858df8 = local_b8;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_bldobj_cpp_007c1984,0x3d,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_b8.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_bldobj_cpp_007c1984,0x3d,0,iVar7,&DAT_007a4ccc,
+                               s_BldObjPanelTy__InitBldObjPanel_007c19a8);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar7,0,0x7c1984,0x3d);
+      RaiseInternalException(iVar7,0,s_E____titans_Andrey_bldobj_cpp_007c1984,0x3d);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -173,7 +173,7 @@ switchD_004f0850_default:
   local_20 = 1;
   local_44 = local_64;
   (**(code **)(**(int **)(this_00 + 0xc) + 8))(5,(ProdPanelTy *)(this_00 + 0x292),0,local_74,0);
-  DAT_00858df8 = local_b8;
+  g_currentExceptionFrame = local_b8.previous;
   return;
 }
 

@@ -8,12 +8,11 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_94;
-  undefined4 local_90 [16];
+  InternalExceptionFrame local_94;
   int local_50;
   int local_4c;
   int local_48;
@@ -50,8 +49,8 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   local_3c = local_4c + param_3;
   local_2c = local_4c + local_10 + -1;
   local_34 = ((local_4c + local_10) - param_3) + -1;
-  local_94 = DAT_00858df8;
-  DAT_00858df8 = &local_94;
+  local_94.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_94;
   local_44 = local_4c;
   local_38 = local_40;
   local_30 = local_48;
@@ -62,23 +61,24 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   local_14 = local_3c;
   local_c = local_40;
   local_8 = local_3c;
-  iVar2 = __setjmp3(local_90,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
+  errorCode = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     if (-1 < (int)param_5) {
       FUN_006c7ea0(param_1,0,&local_50,8,param_5);
     }
     FUN_006c7f10(param_1,0,&local_50,8,param_4);
-    DAT_00858df8 = (undefined4 *)local_94;
+    g_currentExceptionFrame = local_94.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_94;
-  iVar3 = FUN_006ad4d0(s_E____titans_Start_mmenuobj_cpp_007cca38,0xa0,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  g_currentExceptionFrame = local_94.previous;
+  iVar2 = ReportDebugMessage(s_E____titans_Start_mmenuobj_cpp_007cca38,0xa0,0,errorCode,
+                             &DAT_007a4ccc,s_MMObjTy__PaintButDib_007ccab0);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7cca38,0xa0);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_mmenuobj_cpp_007cca38,0xa0);
   return;
 }
 

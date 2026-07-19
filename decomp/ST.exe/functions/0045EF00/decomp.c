@@ -130,7 +130,8 @@ LAB_0045f1a9:
     *(undefined2 *)((int)this + 0x435) = *(undefined2 *)(param_2 + 3);
     return;
   default:
-    iVar2 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x13a7,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x13a7,0,0,&DAT_007a4ccc,
+                               s_STBoatC__CmdToObj_unknown_type_007aa080);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();

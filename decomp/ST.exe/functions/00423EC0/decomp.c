@@ -21,26 +21,26 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar8;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   STGroupC *local_8;
   
   uVar7 = 0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17c,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17c,0,iVar2,&DAT_007a4ccc,
+                               s_STGroupC__GetMessage_007a514c);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       uVar5 = (*pcVar1)();
       return uVar5;
     }
-    FUN_006a5e40(iVar2,0,0x7a50a4,0x17d);
+    RaiseInternalException(iVar2,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x17d);
     return 0xffff;
   }
   FUN_006e5fd0();
@@ -74,7 +74,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
       STAllPlayersC::RegisterGroup
                 (DAT_007fa174,(char)this_00[0x24],
                  CONCAT22(extraout_var,*(undefined2 *)(this_00 + 0x25)),(int)this_00);
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
@@ -88,11 +88,11 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
     if (*(byte **)(this_00 + 0x2d) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(this_00 + 0x2d));
       *(undefined4 *)(this_00 + 0x2d) = 0;
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

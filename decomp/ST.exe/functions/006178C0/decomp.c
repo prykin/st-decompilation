@@ -44,8 +44,8 @@ void __fastcall FUN_006178c0(int param_1)
         bVar6 = uVar5 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar5 < (int)*(uint *)(iVar4 + 0xc));
       if (iVar3 == 0) {
-        iVar4 = FUN_006ad4d0(s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x8a,0,0,
-                             (byte *)s_JumpManagC__CheckSystrm_CheckPro_007d00a0);
+        iVar4 = ReportDebugMessage(s_E____titans_nick_to_jbomb_m_Cpp_007d005c,0x8a,0,0,
+                                   s_JumpManagC__CheckSystrm_CheckPro_007d00a0,0);
         if (iVar4 != 0) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();

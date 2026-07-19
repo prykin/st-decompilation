@@ -17,8 +17,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   uint uVar10;
   int iVar11;
   undefined4 *puVar12;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   byte bStack_14;
   undefined3 uStack_13;
   CPanelTy *pCStack_10;
@@ -32,10 +31,10 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
     pCStack_8 = this + 0xb63;
   }
   uStack_c = CONCAT31(uStack_c._1_3_,param_1 == 0);
-  uStack_58 = DAT_00858df8;
-  DAT_00858df8 = &uStack_58;
+  IStack_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_58;
   pCStack_10 = this;
-  iVar5 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar3 = pCStack_8;
   uVar2 = uStack_c;
   this_00 = pCStack_10;
@@ -56,7 +55,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
         pcVar6 = thunk_FUN_00526100(pCVar3,0);
         *(char **)(this_00 + uVar9 * 4 + 0x2f6) = pcVar6;
         thunk_FUN_005252c0(0xb3);
-        DAT_00858df8 = (undefined4 *)uStack_58;
+        g_currentExceptionFrame = IStack_58.previous;
         return;
       }
       pbVar7 = (byte *)thunk_FUN_00526100(pCStack_8,0);
@@ -77,20 +76,21 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
     else if (pCStack_10[uVar9 + 0x2ec] == (CPanelTy)0x5) {
       pcVar6 = thunk_FUN_00526100(pCStack_8,0);
       *(char **)(this_00 + uVar9 * 4 + 0x2f6) = pcVar6;
-      DAT_00858df8 = (undefined4 *)uStack_58;
+      g_currentExceptionFrame = IStack_58.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_58;
-  iVar11 = FUN_006ad4d0(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3,0,iVar5,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_58.previous;
+  iVar11 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3,0,iVar5,&DAT_007a4ccc,
+                              s_CPanelTy__SwitchTV_007c2484);
   if (iVar11 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar5,0,0x7c23cc,0xd3);
+  RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xd3);
   return;
 }
 

@@ -13,7 +13,7 @@ uint FUN_00757750(uint param_1)
   iVar2 = *(int *)(param_1 + 0x136);
   if (iVar2 != 1) {
     if ((iVar2 < 1) || (4 < iVar2)) {
-      FUN_006a5e40(0x18,DAT_007ed77c,0x7f2d98,0xa1);
+      RaiseInternalException(0x18,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0xa1);
     }
     iVar2 = FUN_00759e70(*(int *)(param_1 + 0x14),*(int *)(param_1 + 0x122) << 3);
     *(int *)(param_1 + 0x14a) = iVar2;
@@ -43,7 +43,7 @@ uint FUN_00757750(uint param_1)
         }
         *(uint *)(iVar2 + 0x48) = uVar4;
         if (10 < *(int *)(uVar1 + 0x152) + iVar5) {
-          FUN_006a5e40(0xb,DAT_007ed77c,0x7f2d98,0xbe);
+          RaiseInternalException(0xb,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0xbe);
         }
         if (0 < iVar5) {
           do {

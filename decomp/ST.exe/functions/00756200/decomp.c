@@ -7,10 +7,10 @@ void FUN_00756200(undefined4 *param_1,int param_2,int param_3)
   
   *param_1 = 0;
   if (param_2 != 0x3d) {
-    FUN_006a5e40(10,DAT_007ed77c,0x7f2d38,0x27);
+    RaiseInternalException(10,DAT_007ed77c,s_E__DKW_JPG_C_jdapimin_c_007f2d38,0x27);
   }
   if (param_3 != 0x1be) {
-    FUN_006a5e40(0x13,DAT_007ed77c,0x7f2d38,0x2a);
+    RaiseInternalException(0x13,DAT_007ed77c,s_E__DKW_JPG_C_jdapimin_c_007f2d38,0x2a);
   }
   puVar1 = param_1;
   for (iVar2 = 0x6f; iVar2 != 0; iVar2 = iVar2 + -1) {

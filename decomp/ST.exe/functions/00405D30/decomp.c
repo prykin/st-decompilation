@@ -9,15 +9,14 @@ undefined4 * thunk_FUN_00602e90(void)
   ushort *puVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   int iStack_c;
   undefined4 *puStack_8;
   
   puStack_8 = (undefined4 *)0x0;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
-  iVar1 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar1 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     if (*(int *)(iStack_c + 0x241) == 1) {
       pbVar2 = (&PTR_s_Dest4_0_007cec00)[*(int *)(iStack_c + 0x372)];
@@ -44,10 +43,10 @@ undefined4 * thunk_FUN_00602e90(void)
                                  _DAT_007904fc,0);
       }
     }
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return puStack_8;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return puStack_8;
 }
 

@@ -34,21 +34,21 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
   undefined4 local_848;
   undefined4 local_80;
   undefined4 local_7c;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   IntercomPanelTy *local_c;
   uint local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_intercom_cpp_007c401c,0x197,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x197,0,iVar3,
+                               &DAT_007a4ccc,s_IntercomPanelTy__GetMessage_007c41a0);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c401c,0x197);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x197);
       return 0xffff;
     }
     pcVar2 = (code *)swi(3);
@@ -105,11 +105,11 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
           }
           FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                        *(uint *)(this_00 + 0x44));
-          DAT_00858df8 = (undefined4 *)local_50;
+          g_currentExceptionFrame = local_50.previous;
           return 0;
         }
         if (*(short *)(this_00 + 0x172) != 4) {
-          DAT_00858df8 = (undefined4 *)local_50;
+          g_currentExceptionFrame = local_50.previous;
           return 0;
         }
         iVar3 = *(int *)(this_00 + 0x18c) - *(int *)(this_00 + 0x48);
@@ -123,20 +123,20 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
         }
         FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                      *(uint *)(this_00 + 0x44));
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       if (uVar7 == 2) {
         InitIntercomPanel(this_00);
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       if (uVar7 != 3) {
-        DAT_00858df8 = (undefined4 *)local_50;
+        g_currentExceptionFrame = local_50.previous;
         return 0;
       }
       DoneIntercomPanel(this_00);
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
     thunk_FUN_00521cf0((int)this_00);
@@ -147,7 +147,7 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
   }
   else if (uVar7 != 0xc0a0) {
     if (uVar7 != 0xc0af) {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
     iVar3 = *(int *)(this_00 + 0x19c);
@@ -180,13 +180,13 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
                  *(int *)(iVar3 + 4),*(int *)(iVar3 + 8));
     FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                  *(uint *)(this_00 + 0x44));
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   if (*(short *)(this_00 + 0x172) == 1) {
     SwitchIntercomPanel(this_00,0);
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

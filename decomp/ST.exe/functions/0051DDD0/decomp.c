@@ -32,8 +32,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
   bool bVar20;
   code *pcVar21;
   UINT UVar22;
-  undefined4 local_84;
-  undefined4 local_80 [16];
+  InternalExceptionFrame local_84;
   int local_40;
   int local_3c;
   int local_38;
@@ -50,20 +49,21 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
   uint local_c;
   UINT *local_8;
   
-  local_84 = DAT_00858df8;
-  DAT_00858df8 = &local_84;
+  local_84.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_84;
   local_20 = (PanelTy *)this;
-  iVar6 = __setjmp3(local_80,0,unaff_EDI,unaff_ESI);
+  iVar6 = __setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_20;
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)local_84;
-    iVar13 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0xac7,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_84.previous;
+    iVar13 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0xac7,0,iVar6,
+                                &DAT_007a4ccc,s_HelpPanelTy__GetMessage_007c3db8);
     if (iVar13 != 0) {
       pcVar21 = (code *)swi(3);
       uVar14 = (*pcVar21)();
       return uVar14;
     }
-    FUN_006a5e40(iVar6,0,0x7c383c,0xac7);
+    RaiseInternalException(iVar6,0,s_E____titans_Andrey_helppan_cpp_007c383c,0xac7);
     return 0xffff;
   }
   if (*(int *)(param_1 + 0x10) == 2) {
@@ -80,7 +80,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
       UVar22 = 0x274e;
       pCVar12 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
       UPanelTy::PaintIBut((UPanelTy *)this_00,param_1,pCVar12,UVar22);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     }
     if (uVar15 < 0x8161) {
@@ -90,7 +90,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           FUN_00710790(iVar6);
         }
         *(int *)(param_1 + 0x18) = *(int *)(iVar6 + 0x8a) + 1;
-        DAT_00858df8 = (undefined4 *)local_84;
+        g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       if (0x60 < uVar15) {
@@ -98,7 +98,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           local_c = (uint)*(ushort *)(param_1 + 0x18);
           local_8 = (UINT *)(uint)*(ushort *)(param_1 + 0x1a);
           if (*(short *)(this_00 + 0x172) != 1) {
-            DAT_00858df8 = (undefined4 *)local_84;
+            g_currentExceptionFrame = local_84.previous;
             return 0;
           }
           switch(this_00[0x1a1]) {
@@ -112,7 +112,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
             local_1c = (uint *)0x0;
             local_14 = *(undefined4 **)(*(int *)(this_00 + 0x1d7) + 0xc);
             if (local_14 == (undefined4 *)0x0) {
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             }
             local_18 = (uint)*(ushort *)(this_00 + 0x1af) -
@@ -139,7 +139,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
               if ((bVar20) && ((int)local_8 < *(int *)(this_00 + 0x44) + 300)) break;
               local_1c = (uint *)((int)local_1c + 1);
               if (local_14 <= local_1c) {
-                DAT_00858df8 = (undefined4 *)local_84;
+                g_currentExceptionFrame = local_84.previous;
                 return 0;
               }
             }
@@ -151,37 +151,37 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
             case '\x01':
               RCProc((HelpPanelTy *)this_00,(int)pvVar4,uVar15,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x02':
               ObjProc((HelpPanelTy *)this_00,(int)pvVar4,uVar15,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x03':
               SubProc((HelpPanelTy *)this_00,(int)pvVar4,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x04':
               ArmProc((HelpPanelTy *)this_00,(int)pvVar4,uVar15,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x05':
               TechProc((HelpPanelTy *)this_00,(uint)pvVar4,(byte)uVar15,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\x06':
               TTreeProc((HelpPanelTy *)this_00,(uint)pvVar4,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\a':
               MObjProc((HelpPanelTy *)this_00);
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\b':
               TipProc((HelpPanelTy *)this_00,pvVar4,uVar15,'\0');
@@ -189,26 +189,26 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
             case '\n':
               IndexBut((HelpPanelTy *)this_00);
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\v':
               SpecProc((HelpPanelTy *)this_00,(int)pvVar4,uVar15,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             case '\f':
               NatProc((HelpPanelTy *)this_00,(int)pvVar4,'\0');
               PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             }
             PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-            DAT_00858df8 = (undefined4 *)local_84;
+            g_currentExceptionFrame = local_84.previous;
             return 0;
           case (PanelTy)0x6:
             goto switchD_0051e4d9_caseD_6;
           default:
-            DAT_00858df8 = (undefined4 *)local_84;
+            g_currentExceptionFrame = local_84.previous;
             return 0;
           case (PanelTy)0x8:
             if (*(int *)(*(int *)(this_00 + 0x1d7) + 0xc) == 0) {
@@ -231,16 +231,16 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
               bVar20 = true;
             }
             if (!bVar20) {
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             }
             if (*(int *)(this_00 + 0x44) + 300 <= (int)local_8) {
-              DAT_00858df8 = (undefined4 *)local_84;
+              g_currentExceptionFrame = local_84.previous;
               return 0;
             }
             DAT_0080734d = DAT_0080734d == '\0';
             thunk_FUN_00515180(this_00,'\b');
-            DAT_00858df8 = (undefined4 *)local_84;
+            g_currentExceptionFrame = local_84.previous;
             return 0;
           }
         }
@@ -255,20 +255,20 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
                        0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
           FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                        *(uint *)(this_00 + 0x44));
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         if (uVar15 != 0x6332) {
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         local_10 = *(undefined4 **)(param_1 + 0x1c);
         if (local_10 == (undefined4 *)0x0) {
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         if (*(int *)(this_00 + 0x1d3) == 0) {
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         iVar6 = *(int *)(this_00 + 0x1e4);
@@ -321,7 +321,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         }
         FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x218),0,0,0,0x19c,
                      0x118,0xff);
-        DAT_00858df8 = (undefined4 *)local_84;
+        g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       if (uVar15 != 0x60) {
@@ -338,11 +338,11 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
             }
             FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c)
                          ,*(uint *)(this_00 + 0x44));
-            DAT_00858df8 = (undefined4 *)local_84;
+            g_currentExceptionFrame = local_84.previous;
             return 0;
           }
           if (*(short *)(this_00 + 0x172) != 4) {
-            DAT_00858df8 = (undefined4 *)local_84;
+            g_currentExceptionFrame = local_84.previous;
             return 0;
           }
           iVar6 = *(int *)(this_00 + 0x50) - *(int *)(this_00 + 0x48);
@@ -355,20 +355,20 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           }
           FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                        *(uint *)(this_00 + 0x44));
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         if (uVar15 == 2) {
           InitHelpPanel((HelpPanelTy *)this_00);
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         if (uVar15 != 3) {
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         DoneHelpPanel((HelpPanelTy *)this_00);
-        DAT_00858df8 = (undefined4 *)local_84;
+        g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       local_18 = (uint)*(ushort *)(param_1 + 0x18);
@@ -461,13 +461,13 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
       goto switchD_0051dfcc_caseD_7;
     }
     if (0xbfff < uVar15) {
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     }
     if (uVar15 == 0xbfff) {
       (**(code **)(*(int *)this_00 + 0x18))(0);
       thunk_FUN_005252c0(0xae);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     }
     switch(uVar15) {
@@ -478,7 +478,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
       }
       else {
         if (PVar3 != (PanelTy)0xa) {
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         iVar6 = *(int *)(this_00 + 0x1bb);
@@ -629,7 +629,7 @@ LAB_0051ef61:
       }
       FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                    *(uint *)(this_00 + 0x44));
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0x8162:
       PVar3 = this_00[0x1a1];
@@ -638,7 +638,7 @@ LAB_0051ef61:
       }
       else {
         if (PVar3 != (PanelTy)0xa) {
-          DAT_00858df8 = (undefined4 *)local_84;
+          g_currentExceptionFrame = local_84.previous;
           return 0;
         }
         iVar6 = *(int *)(this_00 + 0x1bb);
@@ -658,7 +658,7 @@ LAB_0051ef61:
         local_1c = (uint *)0x0;
       }
       if (local_1c == (uint *)0x0) {
-        DAT_00858df8 = (undefined4 *)local_84;
+        g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       bVar20 = false;
@@ -704,20 +704,20 @@ LAB_0051ef61:
 switchD_0051ea9b_caseD_0:
       if (bVar20) {
         PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-        DAT_00858df8 = (undefined4 *)local_84;
+        g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       ChangeTree((HelpPanelTy *)this_00,(int *)local_1c,*(int *)(param_1 + 0x14));
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0x8163:
       if (this_00[0x1a1] != (PanelTy)0xa) {
         *(undefined4 *)(this_00 + 0x1b7) = *(undefined4 *)(param_1 + 0x14);
-        DAT_00858df8 = (undefined4 *)local_84;
+        g_currentExceptionFrame = local_84.previous;
         return 0;
       }
       *(undefined4 *)(this_00 + 0x1bf) = *(undefined4 *)(param_1 + 0x14);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0x8164:
       pcVar21 = thunk_FUN_00529fe0;
@@ -738,7 +738,7 @@ switchD_0051ea9b_caseD_0:
                          '\x06',pbVar9);
       FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                    *(uint *)(this_00 + 0x44));
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     default:
       goto switchD_0051e4d9_caseD_7;
@@ -748,31 +748,31 @@ switchD_0051ea9b_caseD_0:
     switch(uVar15) {
     case 0xc09f:
       HomeBut((HelpPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0xc0a0:
       BackBut((HelpPanelTy *)this_00,unaff_EDI);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0xc0a1:
       IndexBut((HelpPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0xc0a2:
       PrevBut((HelpPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0xc0a3:
       NextBut((HelpPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0xc0a4:
       BwdBut((HelpPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0xc0a5:
       FwdBut((HelpPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     default:
       goto switchD_0051e4d9_caseD_7;
@@ -803,7 +803,7 @@ switchD_0051ea9b_caseD_0:
   }
   UPanelTy::PaintBut((UPanelTy *)this_00,param_1,bVar18,pCVar12,pcVar21);
 switchD_0051e4d9_caseD_7:
-  DAT_00858df8 = (undefined4 *)local_84;
+  g_currentExceptionFrame = local_84.previous;
   return 0;
 switchD_0051e4d9_caseD_6:
   if (*(int *)(this_00 + 0x1a3) == 1) {
@@ -820,7 +820,7 @@ switchD_0051e4d9_caseD_6:
   }
   uVar17 = 0;
   if ((ushort)local_18 == 0) {
-    DAT_00858df8 = (undefined4 *)local_84;
+    g_currentExceptionFrame = local_84.previous;
     return 0;
   }
   local_28 = 0x1a;
@@ -841,21 +841,21 @@ switchD_0051e4d9_caseD_6:
     if ((bVar20) && ((int)local_8 < *(int *)(this_00 + 0x44) + 300)) break;
     uVar17 = uVar17 + 1;
     if ((ushort)local_18 <= uVar17) {
-      DAT_00858df8 = (undefined4 *)local_84;
+      g_currentExceptionFrame = local_84.previous;
       return 0;
     }
   }
   TechProc((HelpPanelTy *)this_00,*(uint *)((int)local_10 + (uint)uVar17 * 0xd),
            *(byte *)((int)local_10 + (uint)uVar17 * 0xd + 4),'\0');
   PutToSHlp((HelpPanelTy *)this_00,(int)unaff_EDI);
-  DAT_00858df8 = (undefined4 *)local_84;
+  g_currentExceptionFrame = local_84.previous;
   return 0;
 LAB_0051e1b2:
   this_00[0x1db] = (PanelTy)0x46;
 switchD_0051dfcc_caseD_7:
   iVar6 = *(int *)(this_00 + 0x178);
   if ((undefined4 *)iVar6 == local_10) {
-    DAT_00858df8 = (undefined4 *)local_84;
+    g_currentExceptionFrame = local_84.previous;
     return 0;
   }
   if (iVar6 != 0) {
@@ -869,7 +869,7 @@ switchD_0051dfcc_caseD_7:
   }
   *(undefined4 **)(this_00 + 0x178) = local_10;
   if (local_10 == (undefined4 *)0x0) {
-    DAT_00858df8 = (undefined4 *)local_84;
+    g_currentExceptionFrame = local_84.previous;
     return 0;
   }
   *(undefined4 *)(this_00 + 0x28) = 0x4201;
@@ -877,7 +877,7 @@ switchD_0051dfcc_caseD_7:
   *(undefined2 *)(this_00 + 0x2e) = 2;
   *(undefined4 **)(this_00 + 0x30) = local_10;
   (**(code **)*DAT_00802a30)(this_00 + 0x18);
-  DAT_00858df8 = (undefined4 *)local_84;
+  g_currentExceptionFrame = local_84.previous;
   return 0;
 }
 

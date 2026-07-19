@@ -10,17 +10,16 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
   STExplosionC *pSVar5;
   void *unaff_EDI;
   STExplosionC *pSVar6;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   STExplosionC *pSStack_c;
   int iStack_8;
   
   iVar4 = 0;
   iStack_8 = 0;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar2 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = pSStack_c;
   if (iVar2 == 0) {
     if (0 < param_1) {
@@ -36,10 +35,10 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
         iVar4 = iVar4 + 1;
       } while (iVar4 < param_1);
     }
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return iStack_8;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   if (0 < iStack_8) {
     pSVar5 = pSStack_c + 0x219;
     iVar4 = iStack_8;
@@ -49,13 +48,14 @@ int __thiscall STExplosionC::CreateGroupPart(STExplosionC *this,int param_1)
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
   }
-  iVar4 = FUN_006ad4d0(s_E____titans_nick_to_Expl_cpp_007cf630,0x1f6,0,iVar2,&DAT_007a4ccc);
+  iVar4 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x1f6,0,iVar2,&DAT_007a4ccc,
+                             s_STExplosionC__CreateGroupPart_007cf670);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)();
     return iVar2;
   }
-  FUN_006a5e40(iVar2,0,0x7cf630,0x1f8);
+  RaiseInternalException(iVar2,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x1f8);
   return 0xffff;
 }
 

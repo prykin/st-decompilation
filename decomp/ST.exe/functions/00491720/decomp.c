@@ -29,7 +29,7 @@ void __fastcall FUN_00491720(int *param_1,undefined4 param_2)
     local_1c = 0x5dd3;
     if ((*piVar1 == 0) &&
        (iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)param_1 + 0x5a2),piVar1), iVar3 == -4)) {
-      FUN_006a5e40(-4,DAT_007ed77c,0x7a9d3c,0x501f);
+      RaiseInternalException(-4,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x501f);
     }
     local_14 = *(undefined2 *)(*piVar1 + 0x24);
     local_12 = *(undefined2 *)(*piVar1 + 0x32);

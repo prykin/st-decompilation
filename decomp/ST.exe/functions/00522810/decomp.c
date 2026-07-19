@@ -13,15 +13,14 @@ void FUN_00522810(char *param_1)
   char *pcVar5;
   void *unaff_EDI;
   char *pcVar6;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   int local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   uVar3 = 0xffffffff;
@@ -50,23 +49,23 @@ void FUN_00522810(char *param_1)
   FUN_006b77e0(_Str1,(byte *)_Str1);
   FUN_006b7780(_Str1,_Str1);
   if (_DAT_008087a1 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (DAT_008087a5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (DAT_00808783 == '\x03') {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (DAT_0080874e == '\0') {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (DAT_0080874d == 0xff) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   iVar2 = _strncmp(_Str1,s_EXITON_007c416c,6);
@@ -143,7 +142,7 @@ LAB_00522b59:
       if (uVar3 != 0) {
         *(undefined4 *)(DAT_00807598 + 0x466) = 1;
         *(undefined4 *)(iVar2 + 0x2d8) = 1;
-        DAT_00858df8 = (undefined4 *)local_4c;
+        g_currentExceptionFrame = local_4c.previous;
         return;
       }
     }
@@ -151,7 +150,7 @@ LAB_00522b59:
     *(undefined4 *)(DAT_00807598 + 0x466) = 0;
     *(undefined4 *)(iVar2 + 0x2d8) = 1;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

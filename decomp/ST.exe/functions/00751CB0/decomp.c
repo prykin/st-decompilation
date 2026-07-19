@@ -61,7 +61,7 @@ FUN_00751cb0(undefined4 *param_1,ushort *param_2,undefined4 *param_3,ushort *par
     return param_3;
   }
   if (uVar8 != 0x10) {
-    FUN_006a5e40(-0x30,DAT_007ed77c,0x7f2b30,0x4c);
+    RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_WGR_C_dibsetsi_c_007f2b30,0x4c);
     return (undefined4 *)0x0;
   }
   if ((param_5 == iVar1 * 2) && (param_6 == uVar3 * 2)) {

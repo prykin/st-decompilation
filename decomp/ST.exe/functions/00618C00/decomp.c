@@ -16,23 +16,23 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
   undefined4 *puVar6;
   void *unaff_EDI;
   STJumpMineC *pSVar7;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   void *local_14;
   byte *local_10;
   uint local_c;
   STJumpMineC *local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_8 = this;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar4 = FUN_006ad4d0(s_E____titans_nick_to_jump_mine_cp_007d0100,0xad,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_nick_to_jump_mine_cp_007d0100,0xad,0,iVar2,
+                               &DAT_007a4ccc,s_STJumpMineC__GetMessage_007d0128);
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar2,0,0x7d0100,0xaf);
+      RaiseInternalException(iVar2,0,s_E____titans_nick_to_jump_mine_cp_007d0100,0xaf);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);
@@ -45,7 +45,7 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
       local_10 = (byte *)thunk_FUN_00619350(local_8,&local_c);
       STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_10,local_c);
       FUN_006ab060(&local_10);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (uVar3 == 0) {
@@ -59,12 +59,12 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
             LoadImagJMine(this_00,1);
           }
           if (this_00[0x150] == (STJumpMineC)0x0) {
-            DAT_00858df8 = (undefined4 *)local_58;
+            g_currentExceptionFrame = local_58.previous;
             return 0;
           }
         }
         thunk_FUN_00619a20((int)this_00);
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
@@ -85,7 +85,7 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
         if ((*(int *)(this_00 + 0x93) == 5) || (*(int *)(this_00 + 0x93) == 0)) {
           thunk_FUN_006192e0(this_00);
           *(undefined4 *)(this_00 + 0x93) = 6;
-          DAT_00858df8 = (undefined4 *)local_58;
+          g_currentExceptionFrame = local_58.previous;
           return 0;
         }
       }
@@ -102,7 +102,7 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
         if (iVar2 == 0) {
 LAB_00618ce0:
           thunk_FUN_006192e0(this_00);
-          DAT_00858df8 = (undefined4 *)local_58;
+          g_currentExceptionFrame = local_58.previous;
           return 0;
         }
         iVar2 = thunk_FUN_0061bdb0(this_00,0,*(int *)(this_00 + 0xe7),*(int *)(this_00 + 0xeb),
@@ -125,7 +125,7 @@ LAB_00618ce0:
         }
         if (this_00[0x150] != (STJumpMineC)0x0) {
           LoadImagJMine(this_00,1);
-          DAT_00858df8 = (undefined4 *)local_58;
+          g_currentExceptionFrame = local_58.previous;
           return 0;
         }
       }
@@ -139,7 +139,7 @@ LAB_00618ce0:
         thunk_FUN_00617aa0(*(void **)(this_00 + 0x7d),*(int *)(this_00 + 0x18));
       }
       thunk_FUN_00619320((int)this_00);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
@@ -153,17 +153,17 @@ LAB_00618ce0:
   else if (uVar3 == 0x112) {
     if ((-1 < (int)*(uint *)(local_8 + 0x97)) && (*(int *)(local_8 + 0x93) != 5)) {
       FUN_006e9520(DAT_00807598,*(uint *)(local_8 + 0x97),0,0,(uint)local_8);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
   else if (((uVar3 == 0x113) && (-1 < (int)*(uint *)(local_8 + 0x97))) &&
           (*(int *)(local_8 + 0x93) != 5)) {
     FUN_006e9520(DAT_00807598,*(uint *)(local_8 + 0x97),0,0x401109,(uint)(local_8 + 0x4d));
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 

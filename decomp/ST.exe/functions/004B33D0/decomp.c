@@ -44,8 +44,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   int local_2db;
   undefined4 local_2d7;
   undefined4 local_2d3;
-  undefined4 local_2c0;
-  undefined4 local_2bc [16];
+  InternalExceptionFrame local_2c0;
   undefined1 *local_27c;
   int local_274;
   int local_270;
@@ -112,16 +111,17 @@ int FUN_004b33d0(uint param_1,int *param_2)
   puStack_10 = &LAB_0072d964;
   local_14 = ExceptionList;
   local_1c = &stack0xfffffc94;
-  local_2c0 = DAT_00858df8;
-  DAT_00858df8 = &local_2c0;
+  local_2c0.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_2c0;
   ExceptionList = &local_14;
-  iVar6 = __setjmp3(local_2bc,2,FUN_0072da21,0xffffffff);
+  iVar6 = __setjmp3(local_2c0.jumpBuffer,2,FUN_0072da21,0xffffffff);
   local_1c = &stack0xfffffc94;
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)local_2c0;
-    iVar20 = FUN_006ad4d0(s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c1,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_2c0.previous;
+    iVar20 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c1,0,iVar6,
+                                &DAT_007a4ccc,s_TLOAiBldPlacesFind_error___007ac7a8);
     if (iVar20 == 0) {
-      FUN_006a5e40(iVar6,0,0x7ac7c8,0x3c2);
+      RaiseInternalException(iVar6,0,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x3c2);
       ExceptionList = local_14;
       return iVar6;
     }
@@ -132,7 +132,7 @@ int FUN_004b33d0(uint param_1,int *param_2)
   local_1c = &stack0xfffffc94;
   if (param_2 == (int *)0x0) {
     local_1c = &stack0xfffffc94;
-    FUN_006a5e40(-5,DAT_007ed77c,0x7ac7c8,0x5d);
+    RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_ai_fnd_cpp_007ac7c8,0x5d);
   }
   if (param_2[3] == 0) {
     puVar7 = FUN_006ae290((uint *)0x0,10,0x14,10);
@@ -485,7 +485,7 @@ LAB_004b60cd:
       piVar11 = piVar11 + 1;
       iVar6 = iVar6 + -1;
     } while (iVar6 != 0);
-    DAT_00858df8 = (undefined4 *)local_2c0;
+    g_currentExceptionFrame = local_2c0.previous;
     ExceptionList = local_14;
     return 0;
   }

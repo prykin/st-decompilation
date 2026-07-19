@@ -20,8 +20,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   int *piVar9;
   void *unaff_EDI;
   uint *puVar10;
-  undefined4 *local_8c;
-  undefined4 local_88 [16];
+  InternalExceptionFrame local_8c;
   StartServTy local_48 [52];
   int local_14;
   FSGSTy *local_10;
@@ -30,10 +29,10 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
   
   local_14 = *(int *)(this + 0x1edb);
   if (((*(int *)(this + 0x1e8e) != 0) && (*(int *)(this + 0x1e92) != 0)) && (local_14 != 0)) {
-    local_8c = DAT_00858df8;
-    DAT_00858df8 = &local_8c;
+    local_8c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_8c;
     local_10 = this;
-    iVar4 = __setjmp3(local_88,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
       pFVar2 = local_10;
@@ -102,17 +101,18 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
           local_8 = local_8 + 0x10;
         } while (local_c < *(uint *)(pFVar2 + 0x1ee3));
       }
-      DAT_00858df8 = local_8c;
+      g_currentExceptionFrame = local_8c.previous;
       return;
     }
-    DAT_00858df8 = local_8c;
-    iVar7 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x49b,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_8c.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x49b,0,iVar4,&DAT_007a4ccc
+                               ,s_FSGSTy__PaintLadder_007cc264);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x49b);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x49b);
   }
   return;
 }

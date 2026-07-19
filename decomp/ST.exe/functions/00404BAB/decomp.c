@@ -5,7 +5,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
   STAppC SVar1;
   code *pcVar2;
   void *pvVar3;
-  undefined4 **ppuVar4;
+  InternalExceptionFrame *pIVar4;
   uint *puVar5;
   ushort *puVar6;
   undefined4 uVar7;
@@ -30,12 +30,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
   STAppC aSStack_328 [260];
   byte bStack_224;
   undefined4 uStack_223;
-  undefined4 **ppuStack_120;
-  undefined4 auStack_11c [16];
-  undefined4 **ppuStack_dc;
-  undefined4 auStack_d8 [16];
-  undefined4 **ppuStack_98;
-  undefined4 auStack_94 [16];
+  InternalExceptionFrame IStack_120;
+  InternalExceptionFrame IStack_dc;
+  InternalExceptionFrame IStack_98;
   undefined4 auStack_54 [4];
   undefined4 uStack_44;
   undefined4 auStack_34 [8];
@@ -53,9 +50,9 @@ void __thiscall STAppC::StartGame(STAppC *this)
   }
   *(undefined2 *)puVar12 = 0;
   *(undefined1 *)((int)puVar12 + 2) = 0;
-  ppuStack_98 = DAT_00858df8;
-  DAT_00858df8 = &ppuStack_98;
-  iVar8 = __setjmp3(auStack_94,0,unaff_EDI,unaff_ESI);
+  IStack_98.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_98;
+  iVar8 = __setjmp3(IStack_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar10 = pSStack_c;
   if (iVar8 == 0) {
     *(undefined4 *)(pSStack_c + 0x4eee) = 0;
@@ -134,15 +131,15 @@ void __thiscall STAppC::StartGame(STAppC *this)
     puVar6 = FUN_006f1ce0(0,PTR_s_ORIG_DB_0079b088,(int *)&pSStack_8,0);
     if ((puVar6 == (ushort *)0x0) || (pSStack_14 = pSVar10 + 0x7d1a, pSVar10[0x7d1a] == (STAppC)0x0)
        ) {
-      ppuStack_dc = DAT_00858df8;
-      DAT_00858df8 = &ppuStack_dc;
-      iVar8 = __setjmp3(auStack_d8,0,unaff_EDI,unaff_ESI);
+      IStack_dc.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_dc;
+      iVar8 = __setjmp3(IStack_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pSVar10 = pSStack_c;
-      ppuVar4 = ppuStack_dc;
+      pIVar4 = IStack_dc.previous;
       if (iVar8 == 0) {
         DAT_00806758 = FUN_006f0ec0(0x345,(byte *)(pSStack_c + 0x76f6),0,0,0);
-        DAT_00858df8 = ppuStack_dc;
-        ppuVar4 = DAT_00858df8;
+        g_currentExceptionFrame = IStack_dc.previous;
+        pIVar4 = g_currentExceptionFrame;
       }
     }
     else {
@@ -151,18 +148,18 @@ void __thiscall STAppC::StartGame(STAppC *this)
       puVar13 = &DAT_007c6ee4;
       pSVar11 = pSStack_14;
       wsprintfA((LPSTR)pSStack_14,&DAT_007c6ee4,pSVar10 + 0x60,pSVar10 + 0x78fe);
-      ppuStack_120 = DAT_00858df8;
-      DAT_00858df8 = &ppuStack_120;
-      iVar8 = __setjmp3(auStack_11c,0,pSVar11,puVar13);
+      IStack_120.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_120;
+      iVar8 = __setjmp3(IStack_120.jumpBuffer,0,pSVar11,puVar13);
       pSVar10 = pSStack_c;
-      ppuVar4 = ppuStack_120;
+      pIVar4 = IStack_120.previous;
       if (iVar8 == 0) {
         DAT_00806758 = FUN_006f0ec0(0x345,(byte *)(pSStack_c + 0x7d1a),0,0,0);
-        DAT_00858df8 = ppuStack_120;
-        ppuVar4 = DAT_00858df8;
+        g_currentExceptionFrame = IStack_120.previous;
+        pIVar4 = g_currentExceptionFrame;
       }
     }
-    DAT_00858df8 = ppuVar4;
+    g_currentExceptionFrame = pIVar4;
     pSVar11 = pSVar10 + 0x7d12;
     if (*(int *)(pSVar10 + 0x7d12) != 0) {
       FUN_006ab060((undefined4 *)pSVar11);
@@ -431,18 +428,21 @@ void __thiscall STAppC::StartGame(STAppC *this)
     FUN_006e3db0((int)auStack_34);
     thunk_FUN_0056a500();
     thunk_FUN_00577690(DAT_0081163c);
-    thunk_FUN_00568dd0(pSVar10 + 0x38,1,(char *)0x0,0x4b7,(int *)0x0,0);
+    SoundClassTy::PlaySound_thunk
+              ((SoundClassTy *)(pSVar10 + 0x38),SOUND_MODE_1,(char *)0x0,0x4b7,(SoundPosition *)0x0,
+               0);
     DAT_0080674c = 2;
     ShowCursor(0);
     DAT_00856d7c = 0;
     FUN_006bbb20((int)DAT_0080759c,0);
     FUN_006ba780((int)DAT_0080759c,0);
-    DAT_00858df8 = ppuStack_98;
+    g_currentExceptionFrame = IStack_98.previous;
     pSVar10[0x1195] = (STAppC)0x0;
     return;
   }
-  DAT_00858df8 = ppuStack_98;
-  iVar8 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x54d,0,iVar8,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_98.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x54d,0,iVar8,&DAT_007a4ccc,
+                             s_STAppC__StartGame_007ca1b0);
   if (iVar8 == 0) {
     pcVar9 = this_04;
     if (DAT_00806754 != (undefined4 *)0x0) {

@@ -23,8 +23,7 @@ STBoatC::GetExplosionInfo
   void *unaff_EDI;
   longlong lVar11;
   longlong lVar12;
-  undefined4 local_80;
-  undefined4 local_7c [16];
+  InternalExceptionFrame local_80;
   uint local_3c;
   int local_38;
   undefined4 local_34;
@@ -40,16 +39,17 @@ STBoatC::GetExplosionInfo
   
   local_28 = param_1 >> 0x10;
   local_20 = CONCAT44(param_1,(undefined4)local_20) & 0xffffffffffff;
-  local_80 = DAT_00858df8;
-  DAT_00858df8 = &local_80;
+  local_80.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_80;
   local_24 = this;
-  iVar3 = __setjmp3(local_7c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_24;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_80;
-    iVar10 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d5f,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_80.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d5f,0,iVar3,&DAT_007a4ccc
+                                ,s_STBoatC__GetExplosionInfo_007ab8f8);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar3,0,0x7a9d3c,0x3d60);
+      RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d60);
       return 0xffffffff;
     }
     pcVar1 = (code *)swi(3);
@@ -58,11 +58,11 @@ STBoatC::GetExplosionInfo
   }
   iVar3 = local_20._4_4_;
   if (((longlong)local_20 < 0) || ((int)((byte)local_24[0x281] - 1) < local_20._4_4_)) {
-    FUN_006a5e40(-0x5001fff5,DAT_007ed77c,0x7a9d3c,0x3d4f);
+    RaiseInternalException(-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d4f);
   }
   uVar4 = FUN_006acc70(*(int *)(pSVar2 + iVar3 * 4 + 0x282),local_28,&local_34);
   if (uVar4 == 0xfffffffc) {
-    FUN_006a5e40(-0x5001fff5,DAT_007ed77c,0x7a9d3c,0x3d50);
+    RaiseInternalException(-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d50);
   }
   puVar5 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,local_34,local_30,*(short *)(pSVar2 + 0x6c));
   uVar9 = *puVar5;
@@ -110,11 +110,11 @@ STBoatC::GetExplosionInfo
       CONCAT44(local_c,local_28)) {
     *param_5 = (uint)(local_30 + 0x46 < 0x15);
     *param_5 = 1;
-    DAT_00858df8 = (undefined4 *)local_80;
+    g_currentExceptionFrame = local_80.previous;
     return 0;
   }
   *param_5 = 0;
-  DAT_00858df8 = (undefined4 *)local_80;
+  g_currentExceptionFrame = local_80.previous;
   return 0;
 }
 

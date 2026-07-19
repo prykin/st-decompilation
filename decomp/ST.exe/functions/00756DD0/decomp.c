@@ -7,7 +7,7 @@ void FUN_00756dd0(int param_1)
   
   iVar1 = *(int *)(param_1 + 0x192);
   if (*(int *)(param_1 + 0xc) != 0xcf) {
-    FUN_006a5e40(0x12,DAT_007ed77c,0x7f2d68,0x209);
+    RaiseInternalException(0x12,DAT_007ed77c,s_E__DKW_JPG_C_jdmaster_c_007f2d68,0x209);
   }
   if (((*(int *)(param_1 + 0x4c) != 0) && (*(int *)(param_1 + 0x60) != 0)) &&
      (*(int *)(param_1 + 0x80) != 0)) {
@@ -17,7 +17,7 @@ void FUN_00756dd0(int param_1)
     *(undefined4 *)(iVar1 + 8) = 0;
     return;
   }
-  FUN_006a5e40(0x2d,DAT_007ed77c,0x7f2d68,0x213);
+  RaiseInternalException(0x2d,DAT_007ed77c,s_E__DKW_JPG_C_jdmaster_c_007f2d68,0x213);
   return;
 }
 

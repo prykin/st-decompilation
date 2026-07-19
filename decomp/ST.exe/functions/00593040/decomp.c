@@ -27,8 +27,7 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
   char *pcVar16;
   undefined4 *puVar17;
   byte bVar18;
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   undefined4 local_10;
   int *local_c;
   CampaignTy *local_8;
@@ -36,19 +35,20 @@ undefined4 __thiscall CampaignTy::GetMessage(CampaignTy *this,int param_1)
   local_8 = this;
   uVar4 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x61) = uVar4;
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar5 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar5 != 0) {
-    DAT_00858df8 = local_54;
-    iVar10 = FUN_006ad4d0(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x24f,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x24f,0,iVar5,
+                                &DAT_007a4ccc,s_CampaignTy__GetMessage_007cbea0);
     if (iVar10 != 0) {
       pcVar3 = (code *)swi(3);
       uVar4 = (*pcVar3)();
       return uVar4;
     }
-    FUN_006a5e40(iVar5,0,0x7cbcd4,0x24f);
+    RaiseInternalException(iVar5,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x24f);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_8,param_1);
@@ -275,7 +275,7 @@ LAB_00593378:
     *(undefined4 *)(this_00 + iVar5 * 0x1fb + 0x194) = local_10;
   }
 switchD_005931ad_caseD_6944:
-  DAT_00858df8 = local_54;
+  g_currentExceptionFrame = local_54.previous;
   uVar4 = thunk_FUN_005b6430();
   return uVar4;
 }

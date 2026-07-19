@@ -12,16 +12,15 @@ undefined4 FUN_00558840(int param_1)
   void *unaff_EDI;
   undefined4 *puVar7;
   bool bVar8;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   VisibleClassTy *local_14;
   byte *local_10;
   uint local_c;
   ushort *local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     *(undefined4 *)(local_14 + 0x108) = *(undefined4 *)(DAT_00802a38 + 0xe4);
     uVar6 = *(uint *)(param_1 + 0x10);
@@ -117,14 +116,15 @@ undefined4 FUN_00558840(int param_1)
       *(undefined4 *)(local_14 + 0x104) = 0;
     }
     FUN_006e5fd0();
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
-  iVar5 = FUN_006ad4d0(s_E____titans_grig_visible_cpp_007c92cc,0x186,0,iVar2,
-                       (byte *)s_VisibleClassTy__GetMessage_error_007c9380);
+  g_currentExceptionFrame = local_58.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x186,0,iVar2,
+                             s_VisibleClassTy__GetMessage_error_007c9380,
+                             *(undefined4 *)(param_1 + 0x10));
   if (iVar5 == 0) {
-    FUN_006a5e40(iVar2,0,0x7c92cc,0x187);
+    RaiseInternalException(iVar2,0,s_E____titans_grig_visible_cpp_007c92cc,0x187);
     return 0xffff;
   }
   pcVar1 = (code *)swi(3);

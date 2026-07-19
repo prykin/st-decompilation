@@ -19,7 +19,7 @@ undefined4 FUN_00758800(int param_1)
   pbVar9 = (byte *)*puVar4;
   iVar5 = puVar4[1];
   if (*(int *)(*(int *)(param_1 + 0x1a6) + 0x54) == 0) {
-    FUN_006a5e40(0x3d,DAT_007ed77c,0x7f2db0,0x11a);
+    RaiseInternalException(0x3d,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x11a);
   }
   if (iVar5 == 0) {
     iVar5 = (*(code *)puVar4[3])(param_1);
@@ -56,7 +56,7 @@ undefined4 FUN_00758800(int param_1)
   uVar6 = (uint)bVar3;
   pbVar9 = pbVar9 + 1;
   if ((((uint)bVar1 * 0x100 + (uint)bVar2 != uVar6 * 2 + 6) || (bVar3 == 0)) || (4 < bVar3)) {
-    FUN_006a5e40(9,DAT_007ed77c,0x7f2db0,0x121);
+    RaiseInternalException(9,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x121);
   }
   *(uint *)(param_1 + 0x136) = uVar6;
   local_8 = 0;
@@ -94,7 +94,7 @@ undefined4 FUN_00758800(int param_1)
           puVar8 = puVar8 + 0x15;
         } while (iVar7 < *(int *)(param_1 + 0x1c));
       }
-      FUN_006a5e40(5,DAT_007ed77c,0x7f2db0,0x133);
+      RaiseInternalException(5,DAT_007ed77c,s_E__DKW_JPG_C_jdmarker_c_007f2db0,0x133);
 LAB_00758979:
       *local_c = puVar8;
       puVar8[5] = (int)(uint)bVar2 >> 4;

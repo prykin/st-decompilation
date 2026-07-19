@@ -20,7 +20,7 @@ FUN_006a2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5,un
       iVar3 = *local_8 + param_3;
       if ((((int)uVar4 < 0) || (*param_1 <= (int)uVar4)) || ((iVar3 < 0 || (param_1[1] <= iVar3))))
       {
-        FUN_006a5e40(0x521,DAT_007ed77c,0x7dfa6c,0x2ff);
+        RaiseInternalException(0x521,DAT_007ed77c,s_E____titans_Maps_map_cnt_cpp_007dfa6c,0x2ff);
       }
       thunk_FUN_006a23a0(param_1,uVar4,iVar3,param_4,(short *)param_5,param_6,param_7);
       local_8 = local_8 + 2;

@@ -20,7 +20,7 @@ FUN_006dd6e0(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
     FUN_006dcd60((int)this);
     return;
   }
-  FUN_006a5e40(-0x34,DAT_007ed77c,0x7ee758,0x3e4);
+  RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Strend_cpp_007ee758,0x3e4);
   return;
 }
 

@@ -26,20 +26,18 @@ void thunk_FUN_005c7800(void)
   byte abStackY_228 [336];
   undefined4 auStackY_d8 [17];
   undefined4 uStackY_94;
-  undefined4 *puStackY_8c;
-  undefined4 auStackY_88 [15];
-  undefined4 uStackY_4c;
+  InternalExceptionFrame IStackY_8c;
   undefined *puVar15;
   undefined4 uVar16;
   SettMapTy *this_01;
   
   FUN_0072da40();
-  puStackY_8c = DAT_00858df8;
-  DAT_00858df8 = &puStackY_8c;
+  IStackY_8c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStackY_8c;
   this_01 = extraout_ECX;
-  iVar4 = __setjmp3(auStackY_88,0,unaff_EDI,extraout_ECX);
+  iVar4 = __setjmp3(IStackY_8c.jumpBuffer,0,unaff_EDI,extraout_ECX);
   if (iVar4 != 0) {
-    DAT_00858df8 = puStackY_8c;
+    g_currentExceptionFrame = IStackY_8c.previous;
     puVar6 = (undefined4 *)&stack0xffffffc8;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar6 = 0;
@@ -182,7 +180,7 @@ LAB_005c7ae0:
     if ((((SVar3 != (SettMapTy)0x6) && (SVar3 != (SettMapTy)0x1)) && (SVar3 != (SettMapTy)0x2)) &&
        (DAT_0080877e != '\0')) {
       FUN_00715360(DAT_00811764,0,'\x1e',(char *)&DAT_00853de0,0x232,1,0xffffffff);
-      uStackY_4c = 0x5c7c09;
+      IStackY_8c.jumpBuffer[0xf] = 0x5c7c09;
       FUN_00715360(DAT_00811764,0,' ',(char *)(this_01 + 0x1f53),0xd,1,0xffffffff);
     }
     thunk_FUN_006952b0(auStackY_5a80,(byte *)&DAT_00853de0,(byte *)(this_01 + 0x1f53));
@@ -305,11 +303,11 @@ LAB_005c7ae0:
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b34d0(*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
                    *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
-      DAT_00858df8 = puStackY_8c;
+      g_currentExceptionFrame = IStackY_8c.previous;
       return;
     }
   }
-  DAT_00858df8 = puStackY_8c;
+  g_currentExceptionFrame = IStackY_8c.previous;
   return;
 }
 

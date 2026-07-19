@@ -88,7 +88,7 @@ short * FUN_006a8270(int param_1,int param_2,uint param_3,undefined4 *param_4,sh
     psVar6 = param_9;
     psVar9 = param_8;
     if (iVar12 != 0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7ed718,0x5d2);
+      RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_WAY_C_way3d_cpp_007ed718,0x5d2);
       return (short *)0x0;
     }
     sVar3 = *(short *)(param_1 +

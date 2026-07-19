@@ -14,8 +14,7 @@ undefined4 __fastcall FUN_005deb90(int param_1)
   byte local_36c [260];
   char local_268 [259];
   byte abStack_165 [261];
-  undefined4 *local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   int local_1c;
   undefined4 local_18;
   uint local_14;
@@ -31,10 +30,10 @@ undefined4 __fastcall FUN_005deb90(int param_1)
   if (*(uint *)(param_1 + 0x69e) < (uint)(*(int *)(param_1 + 0x6b2) + *(int *)(param_1 + 0x6ae))) {
     return 0;
   }
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
   local_1c = param_1;
-  iVar3 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar2 = local_1c;
   if (iVar3 == 0) {
     local_8 = (*(int *)(local_1c + 0x69e) - *(int *)(local_1c + 0x6ae)) - *(int *)(local_1c + 0x6b2)
@@ -66,16 +65,16 @@ undefined4 __fastcall FUN_005deb90(int param_1)
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x458);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x458);
     }
     local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
     if (local_8 == 0xffffffff) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x459);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x459);
     }
     BVar5 = WriteFile(pvVar4,*(LPCVOID *)(iVar2 + 0x69a),*(DWORD *)(iVar2 + 0x6ae),&local_8,
                       (LPOVERLAPPED)0x0);
     if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6ae) != local_8)) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x45a);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x45a);
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);
@@ -84,23 +83,23 @@ undefined4 __fastcall FUN_005deb90(int param_1)
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
     if (pvVar4 == (HANDLE)0xffffffff) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x45f);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x45f);
     }
     local_8 = SetFilePointer(pvVar4,0,(PLONG)0x0,0);
     if (local_8 == 0xffffffff) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x460);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x460);
     }
     BVar5 = WriteFile(pvVar4,(LPCVOID)(*(int *)(iVar2 + 0x6ae) + *(int *)(iVar2 + 0x69a)),
                       *(DWORD *)(iVar2 + 0x6b2),&local_8,(LPOVERLAPPED)0x0);
     if ((BVar5 == 0) || (*(DWORD *)(iVar2 + 0x6b2) != local_8)) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cd718,0x461);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x461);
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);
-    DAT_00858df8 = local_60;
+    g_currentExceptionFrame = local_60.previous;
     return 1;
   }
-  DAT_00858df8 = local_60;
+  g_currentExceptionFrame = local_60.previous;
   if (local_c != (HANDLE)0xffffffff) {
     CloseHandle(local_c);
   }

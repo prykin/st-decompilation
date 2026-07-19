@@ -1009,7 +1009,7 @@ LAB_004267d5:
   }
   FUN_006a5e90(local_a8);
   iVar22 = local_4c;
-  FUN_006a5e40(local_4c,DAT_007ed77c,0x7a5208,0x560);
+  RaiseInternalException(local_4c,DAT_007ed77c,s_E____titans_wlad_Td3dshad_cpp_007a5208,0x560);
   ExceptionList = local_14;
   return iVar22;
 LAB_00426637:

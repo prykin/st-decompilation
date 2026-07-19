@@ -21,8 +21,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   void *unaff_EDI;
   int iVar12;
   byte bVar13;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   STDcResourcC *pSStack_18;
   int iStack_14;
   int iStack_10;
@@ -30,20 +29,21 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   int iStack_8;
   
   iStack_8 = 1;
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pSStack_18 = this;
-  iVar6 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  iVar6 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_18;
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_5c;
-    iVar10 = FUN_006ad4d0(s_E____titans_Igor_To_gold_cpp_007cb19c,0x2b3,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_5c.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x2b3,0,iVar6,&DAT_007a4ccc,
+                                s_STDcResourcC__CreateRes_007cb28c);
     if (iVar10 != 0) {
       pcVar4 = (code *)swi(3);
       iVar6 = (*pcVar4)();
       return iVar6;
     }
-    FUN_006a5e40(iVar6,0,0x7cb19c,0x2b4);
+    RaiseInternalException(iVar6,0,s_E____titans_Igor_To_gold_cpp_007cb19c,0x2b4);
     return 0xffff;
   }
   switch(*(undefined4 *)(pSStack_18 + 0x255)) {
@@ -257,7 +257,7 @@ LAB_0057fd72:
       } while (iStack_c < *(int *)(this_00 + 0x265));
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   return iStack_8;
 switchD_0057f734_caseD_df:
   iStack_8 = 0;

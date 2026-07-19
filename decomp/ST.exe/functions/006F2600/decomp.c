@@ -13,30 +13,30 @@ int FUN_006f2600(byte param_1,char *param_2,undefined1 *param_3,int param_4)
   char *pcVar7;
   ushort *puVar8;
   CHAR local_158 [260];
-  undefined4 *local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   undefined4 *local_10;
   undefined4 local_c;
   ushort *local_8;
   
   local_8 = (ushort *)0x0;
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = local_54;
+    g_currentExceptionFrame = local_54.previous;
     if ((param_4 == 0) && (iVar4 == -4)) {
       return -4;
     }
     wsprintfA(local_158,s_cMf32__RecGetOrigLen_File___s__S_007efc90,(int)local_10 + 0x231,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
-    iVar5 = FUN_006ad4d0(s_E__Ourlib_Mf32int_cpp_007efaa4,0x2e7,0,iVar4,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x2e7,0,iVar4,&DAT_007a4ccc,
+                               local_158);
     if (iVar5 != 0) {
       pcVar3 = (code *)swi(3);
       iVar4 = (*pcVar3)();
       return iVar4;
     }
-    FUN_006a5e40(iVar4,0,0x7efaa4,0x2e9);
+    RaiseInternalException(iVar4,0,s_E__Ourlib_Mf32int_cpp_007efaa4,0x2e9);
     if (iVar4 < 0) {
       return iVar4;
     }
@@ -75,7 +75,7 @@ int FUN_006f2600(byte param_1,char *param_2,undefined1 *param_3,int param_4)
   }
   iVar4 = FUN_00751b60(*(int *)*local_10,local_8,&local_c);
   if (iVar4 == -4) {
-    FUN_006a5e40(-4,DAT_007ed77c,0x7efaa4,0x2dd);
+    RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x2dd);
   }
   iVar4 = *(int *)(local_8 + 3);
   if (param_3 != (undefined1 *)0x0) {
@@ -84,7 +84,7 @@ int FUN_006f2600(byte param_1,char *param_2,undefined1 *param_3,int param_4)
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }
-  DAT_00858df8 = local_54;
+  g_currentExceptionFrame = local_54.previous;
   return iVar4;
 }
 

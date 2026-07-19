@@ -81,7 +81,8 @@ undefined1 thunk_FUN_00430750(int param_1)
   case 0xb9:
     return 0x3c;
   }
-  iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x867,0,0,&DAT_007a4ccc);
+  iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x867,0,0,&DAT_007a4ccc,
+                             s_GetSpeed__Warning___unknown_obje_007a6760);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     uVar2 = (*pcVar1)();

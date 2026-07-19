@@ -19,8 +19,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar12;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   uint local_24;
   int local_20;
   uint local_1c;
@@ -38,9 +37,9 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
   param_2[2] = 0;
   local_14 = 0;
   param_2[3] = 0;
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
-  iVar7 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
+  iVar7 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 == 0) {
     if (DAT_00802a58 != (cLoadingTy *)0x0) {
       cLoadingTy::SetProcess(DAT_00802a58,0,(uint *)s_Preparing_mini_map____007c6f28,900);
@@ -54,7 +53,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
     }
     local_10 = this;
     if (this == (int *)0x0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7c6f00,0x16);
+      RaiseInternalException(-2,DAT_007ed77c,s_E____titans_Andrey_minimap_cpp_007c6f00,0x16);
     }
     local_18 = (int)*param_1;
     dVar1 = (double)((float)(int)param_1[1] * local_8 * _DAT_007904f4);
@@ -104,7 +103,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
       puVar8 = FUN_006aac10(local_24);
       *local_c = (int)puVar8;
       if (puVar8 == (undefined4 *)0x0) {
-        FUN_006a5e40(-2,DAT_007ed77c,0x7c6f00,0x2f);
+        RaiseInternalException(-2,DAT_007ed77c,s_E____titans_Andrey_minimap_cpp_007c6f00,0x2f);
       }
       iVar7 = 0;
       if (0 < (int)param_3) {
@@ -130,13 +129,14 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
       local_1c = uVar9 + 1;
       local_c = local_c + 1;
     } while ((int)local_1c < 4);
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     iVar7 = local_20;
   }
   else {
-    DAT_00858df8 = (undefined4 *)local_68;
+    g_currentExceptionFrame = local_68.previous;
     local_20 = iVar7;
-    iVar11 = FUN_006ad4d0(s_E____titans_Andrey_minimap_cpp_007c6f00,0x3a,0,iVar7,&DAT_007a4ccc);
+    iVar11 = ReportDebugMessage(s_E____titans_Andrey_minimap_cpp_007c6f00,0x3a,0,iVar7,&DAT_007a4ccc
+                                ,s_CreateMiniMap_007c6ef0);
     this = local_10;
     if (iVar11 != 0) {
       pcVar6 = (code *)swi(3);
@@ -155,7 +155,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
       param_2 = param_2 + 1;
       iVar11 = iVar11 + -1;
     } while (iVar11 != 0);
-    FUN_006a5e40(iVar7,DAT_007ed77c,0x7c6f00,0x42);
+    RaiseInternalException(iVar7,DAT_007ed77c,s_E____titans_Andrey_minimap_cpp_007c6f00,0x42);
   }
   if (DAT_00802a58 != (cLoadingTy *)0x0) {
     cLoadingTy::SetState(DAT_00802a58,2,0,(char *)0x0);

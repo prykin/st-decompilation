@@ -7,31 +7,30 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
   code *pcVar3;
   CursorClassTy *this_00;
   FSGSTy *this_01;
-  int iVar4;
-  undefined4 uVar5;
-  int iVar6;
+  int errorCode;
+  undefined4 uVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_7c;
-  undefined4 auStack_78 [16];
+  InternalExceptionFrame IStack_7c;
   undefined4 auStack_38 [11];
   undefined1 uStack_b;
   FSGSTy *pFStack_8;
   
   if (this[0x1a5f] == (FSGSTy)0x6) {
     this[0x1a60] = (FSGSTy)0x0;
-    uStack_7c = DAT_00858df8;
-    DAT_00858df8 = &uStack_7c;
+    IStack_7c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_7c;
     pFStack_8 = this;
-    iVar4 = __setjmp3(auStack_78,0,unaff_EDI,unaff_ESI);
+    errorCode = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
-    if (iVar4 == 0) {
+    if (errorCode == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar5 = *(undefined4 *)(DAT_00802a30 + 0xc9);
+        uVar4 = *(undefined4 *)(DAT_00802a30 + 0xc9);
         uVar2 = *(undefined4 *)(DAT_00802a30 + 0xc5);
         DAT_00802a30[0x493] = (CursorClassTy)0x1;
         *(undefined2 *)(this_00 + 0x494) = 0xffff;
-        CursorClassTy::SetGCType(this_00,0,uVar2,uVar5);
+        CursorClassTy::SetGCType(this_00,0,uVar2,uVar4);
         CursorClassTy::DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
         this_00[0xd2] = (CursorClassTy)0x0;
         *(undefined4 *)(this_00 + 0x4df) = 0xffffffff;
@@ -50,12 +49,12 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
       FUN_006e6080(this_01,2,*(undefined4 *)(this_01 + 0x1b20),(undefined4 *)pFVar1);
       *(undefined4 *)(this_01 + 0x2d) = 0x20;
       if ((*(int *)(*(int *)(this_01 + 0x1ea6) + 0xc) == 0) || (*(int *)(this_01 + 0x1a6b) == 0)) {
-        uVar5 = 0;
+        uVar4 = 0;
       }
       else {
-        uVar5 = 1;
+        uVar4 = 1;
       }
-      *(undefined4 *)(this_01 + 0x31) = uVar5;
+      *(undefined4 *)(this_01 + 0x31) = uVar4;
       FUN_006e6080(this_01,2,*(undefined4 *)(this_01 + 0x1b20),(undefined4 *)pFVar1);
       *(undefined4 *)(this_01 + 0x2d) = 0x20;
       *(undefined4 *)(this_01 + 0x31) = 0;
@@ -66,17 +65,18 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
       if ((*(int *)(this_01 + 0x1b18) != 0) && (*(int *)(this_01 + 0x1a6b) != 0)) {
         FUN_006e6080(this_01,2,*(int *)(this_01 + 0x1b18),(undefined4 *)pFVar1);
       }
-      DAT_00858df8 = (undefined4 *)uStack_7c;
+      g_currentExceptionFrame = IStack_7c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)uStack_7c;
-    iVar6 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa7d,0,iVar4,&DAT_007a4ccc);
-    if (iVar6 != 0) {
+    g_currentExceptionFrame = IStack_7c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa7d,0,errorCode,
+                               &DAT_007a4ccc,s_FSGSTy__JoinChannel_007cc520);
+    if (iVar5 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0xa7d);
+    RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xa7d);
   }
   return;
 }

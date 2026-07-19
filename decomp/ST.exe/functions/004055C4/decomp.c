@@ -118,7 +118,8 @@ LAB_00476dba:
       }
       break;
     case -1:
-      iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x31d2,0,0,&DAT_007a4ccc);
+      iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x31d2,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__Capture__CAPTURE_MOVE_e_007ab234);
       if (iVar4 != 0) {
         pcVar1 = (code *)swi(3);
         iVar4 = (*pcVar1)();
@@ -224,7 +225,8 @@ LAB_00476dba:
       uVar8 = thunk_FUN_004176c0(this,*(short *)((int)this + 0x60f));
       uVar8 = thunk_FUN_00417910(this,(short)uVar8);
       if (uVar8 == 0xffffffff) {
-        iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3237,0,0,&DAT_007a4ccc);
+        iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3237,0,0,&DAT_007a4ccc,
+                                   s_STBoatC__Capture__CAPTURE_PMOVE_007ab20c);
         if (iVar4 != 0) {
           pcVar1 = (code *)swi(3);
           iVar4 = (*pcVar1)();
@@ -309,7 +311,8 @@ LAB_00476dba:
         } while ((short)iVar4 < (short)(ushort)*(byte *)((int)this + 0x2bf));
       }
       if (iStack_8 == -1) {
-        iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x325c,0,0,&DAT_007a4ccc);
+        iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x325c,0,0,&DAT_007a4ccc,
+                                   s_STBoatC__Capture__CAPTURE_PMOVE_2_007ab1e4);
         if (iVar4 != 0) {
           pcVar1 = (code *)swi(3);
           iVar4 = (*pcVar1)();
@@ -354,7 +357,8 @@ LAB_00476dba:
     if (iVar4 != 3) {
       if (iVar4 != 4) {
         if (iVar4 != 5) {
-          iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x330e,0,0,&DAT_007a4ccc);
+          iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x330e,0,0,
+                                     &DAT_007a4ccc,s_STBoatC__Capture___incorrect_ent_007ab138);
           if (iVar4 != 0) {
             pcVar1 = (code *)swi(3);
             iVar4 = (*pcVar1)();
@@ -364,7 +368,8 @@ LAB_00476dba:
         }
         iVar4 = thunk_FUN_0045ff50(this,2);
         if (iVar4 == -1) {
-          iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32fc,0,0,&DAT_007a4ccc);
+          iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32fc,0,0,
+                                     &DAT_007a4ccc,s_STBoatC__Capture__CAPTURE_ESCMOV_007ab164);
           if (iVar4 != 0) {
             pcVar1 = (code *)swi(3);
             iVar4 = (*pcVar1)();
@@ -402,7 +407,8 @@ LAB_00477b2e:
         uVar8 = thunk_FUN_004176c0(this,*(short *)((int)this + 0x60f));
         uVar8 = thunk_FUN_00417910(this,(short)uVar8);
         if (uVar8 == 0xffffffff) {
-          iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32c1,0,0,&DAT_007a4ccc);
+          iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32c1,0,0,
+                                     &DAT_007a4ccc,s_STBoatC__Capture__CAPTURE_OMOVE_007ab1bc);
           if (iVar4 != 0) {
             pcVar1 = (code *)swi(3);
             iVar4 = (*pcVar1)();
@@ -486,7 +492,8 @@ LAB_00477b2e:
           } while ((short)param_1 < (short)(ushort)*(byte *)((int)this + 0x2bf));
         }
         if (iStack_8 == -1) {
-          iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32e6,0,0,&DAT_007a4ccc);
+          iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x32e6,0,0,
+                                     &DAT_007a4ccc,s_STBoatC__Capture__CAPTURE_OMOVE_2_007ab194);
           if (iVar4 != 0) {
             pcVar1 = (code *)swi(3);
             iVar4 = (*pcVar1)();

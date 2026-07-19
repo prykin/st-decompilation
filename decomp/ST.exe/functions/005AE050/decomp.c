@@ -28,12 +28,9 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   ChooseMapTy *pCVar16;
   char *pcVar17;
   short *psVar18;
-  undefined4 *local_100;
-  undefined4 local_fc [16];
-  undefined4 *local_bc;
-  undefined4 local_b8 [16];
-  undefined4 local_78;
-  undefined4 local_74 [16];
+  InternalExceptionFrame local_100;
+  InternalExceptionFrame local_bc;
+  InternalExceptionFrame local_78;
   short local_34 [14];
   ChooseMapTy *local_18;
   undefined4 *local_14;
@@ -41,15 +38,16 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
   int local_c;
   undefined1 *local_8;
   
-  local_78 = DAT_00858df8;
-  DAT_00858df8 = (undefined4 **)&local_78;
+  local_78.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_78;
   local_10 = this;
-  iVar4 = __setjmp3(local_74,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 **)local_78;
-    iVar10 = FUN_006ad4d0(s_E____titans_Start_load_obj_cpp_007cc728,0x2c0,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_78.previous;
+    iVar10 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x2c0,0,iVar4,
+                                &DAT_007a4ccc,s_ChooseMapTy__ShowDescription_007cc830);
     if (iVar10 == 0) {
-      FUN_006a5e40(iVar4,0,0x7cc728,0x2c0);
+      RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x2c0);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -169,15 +167,15 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pCVar14 = pCVar14 + 1;
       pCVar15 = pCVar15 + 1;
     }
-    local_bc = DAT_00858df8;
-    DAT_00858df8 = &local_bc;
-    iVar4 = __setjmp3(local_b8,0,unaff_EDI,unaff_ESI);
+    local_bc.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_bc;
+    iVar4 = __setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar14 = local_10;
     if (iVar4 == 0) {
       local_14 = FUN_006f0ec0(0x345,(byte *)(local_10 + 0x1faf),0,0,0);
     }
     puVar8 = local_14;
-    DAT_00858df8 = (undefined4 **)local_bc;
+    g_currentExceptionFrame = local_bc.previous;
     if (local_14 != (undefined4 *)0x0) {
       StartSystemTy::LoadMapData(DAT_0081176c,(int)local_14,(char)pCVar14[0x1a5f]);
       cMf32::delete(this_00,puVar8);
@@ -285,9 +283,9 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
       pCVar15 = pCVar15 + 1;
       pCVar14 = pCVar14 + 1;
     }
-    local_100 = DAT_00858df8;
-    DAT_00858df8 = &local_100;
-    iVar4 = __setjmp3(local_fc,0,unaff_EDI,unaff_ESI);
+    local_100.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_100;
+    iVar4 = __setjmp3(local_100.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar14 = local_10;
     if (iVar4 == 0) {
       puVar8 = FUN_006f0ec0(0x345,(byte *)(local_10 + 0x1faf),0,0,0);
@@ -334,15 +332,15 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
         if (*(int *)(DAT_0081176c + 0x548) == 0) {
           puVar6 = FUN_006b54f0((uint *)0x0,10,10);
           *(uint **)(DAT_0081176c + 0x548) = puVar6;
-          DAT_00858df8 = (undefined4 **)local_100;
+          g_currentExceptionFrame = local_100.previous;
           goto LAB_005ae53a;
         }
       }
-      DAT_00858df8 = (undefined4 **)local_100;
+      g_currentExceptionFrame = local_100.previous;
     }
     else {
       iVar4 = 0;
-      DAT_00858df8 = (undefined4 **)local_100;
+      g_currentExceptionFrame = local_100.previous;
       local_c = 0;
     }
   }
@@ -383,7 +381,7 @@ LAB_005ae602:
   if (-1 < (int)*(uint *)(DAT_0081176c + 0x540)) {
     FUN_006b35d0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
   }
-  DAT_00858df8 = (undefined4 **)local_78;
+  g_currentExceptionFrame = local_78.previous;
   return;
 }
 

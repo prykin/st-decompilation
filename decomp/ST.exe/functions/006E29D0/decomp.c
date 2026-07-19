@@ -43,7 +43,7 @@ void __thiscall FUN_006e29d0(void *this,float *param_1,int param_2,int param_3,i
                         (float10)dVar2 * (float10)_DAT_0079df60);
     break;
   default:
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7ee758,0xbf1);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Strend_cpp_007ee758,0xbf1);
     return;
   }
   param_1[2] = (float)(fVar3 * (float10)_DAT_0079df60 - fVar4 * (float10)_DAT_0079df60);

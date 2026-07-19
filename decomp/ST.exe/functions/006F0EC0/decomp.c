@@ -21,19 +21,18 @@ FUN_006f0ec0(uint param_1,byte *param_2,int param_3,undefined4 param_4,undefined
   byte local_360 [256];
   byte local_260 [256];
   byte local_160 [256];
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   _FILETIME local_1c;
   _FILETIME local_14;
   byte local_c [4];
   undefined4 *local_8;
   
   local_8 = (undefined4 *)0x0;
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
-  iVar3 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
+  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
+    g_currentExceptionFrame = local_60.previous;
     if (local_8 != (undefined4 *)0x0) {
       FUN_007508f0((undefined4 *)*local_8);
       uVar6 = 0xffffffff;
@@ -61,7 +60,7 @@ FUN_006f0ec0(uint param_1,byte *param_2,int param_3,undefined4 param_4,undefined
       }
       FUN_006ab060(&local_8);
     }
-    FUN_006a5e40(iVar3,0,0x7efaa4,0x77);
+    RaiseInternalException(iVar3,0,s_E__Ourlib_Mf32int_cpp_007efaa4,0x77);
     return (undefined4 *)0x0;
   }
   DAT_00856ec0._0_1_ = 0;
@@ -155,13 +154,13 @@ FUN_006f0ec0(uint param_1,byte *param_2,int param_3,undefined4 param_4,undefined
     if (param_3 != 3) {
       uVar5 = FUN_00750970(param_2,local_8 + 1,0);
       *local_8 = uVar5;
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return local_8;
     }
     uVar5 = FUN_00750970(param_2,local_8 + 1,0x100000);
   }
   *local_8 = uVar5;
-  DAT_00858df8 = (undefined4 *)local_60;
+  g_currentExceptionFrame = local_60.previous;
   return local_8;
 }
 

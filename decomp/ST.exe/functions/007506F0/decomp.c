@@ -87,7 +87,7 @@ int FUN_007506f0(int param_1,int param_2,int param_3,int param_4,int param_5,int
     ExceptionList = local_14;
     return 0;
   }
-  FUN_006a5e40(local_24,DAT_007ed77c,0x7f2ab4,0x49);
+  RaiseInternalException(local_24,DAT_007ed77c,s_E__DKW_DDX_C_ddcopyp_c_007f2ab4,0x49);
   ExceptionList = local_14;
   return iVar4;
 }

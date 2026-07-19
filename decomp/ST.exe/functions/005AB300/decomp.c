@@ -34,8 +34,7 @@ void __thiscall ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy param_1
   char local_46c [32];
   undefined1 local_44c;
   undefined4 local_26c [7];
-  undefined4 *local_250;
-  undefined4 local_24c [16];
+  InternalExceptionFrame local_250;
   undefined4 local_20c;
   undefined4 local_1ff;
   undefined4 local_1fb;
@@ -61,20 +60,21 @@ void __thiscall ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy param_1
   uint local_c;
   uint local_8;
   
-  local_250 = DAT_00858df8;
-  DAT_00858df8 = &local_250;
+  local_250.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_250;
   local_10 = this;
-  iVar4 = __setjmp3(local_24c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_250.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = local_250;
-    iVar18 = FUN_006ad4d0(s_E____titans_Start_load_obj_cpp_007cc728,0x15a,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_250.previous;
+    iVar18 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x15a,0,iVar4,
+                                &DAT_007a4ccc,s_ChooseMapTy__InitChooseMap_007cc770);
     if (iVar18 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cc728,0x15a);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_load_obj_cpp_007cc728,0x15a);
     return;
   }
   local_10[0x1a5f] = param_1;
@@ -853,12 +853,12 @@ switchD_005ab66b_caseD_6:
         local_44c = 0;
         CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,local_46c);
       }
-      thunk_FUN_00568bc0(&DAT_00807658,0);
+      thunk_FUN_00568bc0(&g_sound,0);
       if ((DAT_00807300._1_1_ & 8) != 0) {
-        thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
+        thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
       }
       thunk_FUN_005b6730(this_01,0xb,'\0',-1);
-      DAT_00858df8 = local_250;
+      g_currentExceptionFrame = local_250.previous;
       return;
     }
   }

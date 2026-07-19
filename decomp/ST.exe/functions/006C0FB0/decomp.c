@@ -51,7 +51,7 @@ LAB_006c1324:
     DVar6 = GetLastError();
     if (DVar6 != 0xfffffffc) {
       LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
-      FUN_006a5e40(DVar6,DAT_007ed77c,0x7ede14,999);
+      RaiseInternalException(DVar6,DAT_007ed77c,s_E__DKW_SND_C_dxsnd2_cpp_007ede14,999);
       return -1;
     }
   }

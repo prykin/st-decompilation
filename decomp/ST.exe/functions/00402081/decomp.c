@@ -6,29 +6,29 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
 {
   double dVar1;
   code *pcVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar5;
-  float10 fVar6;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  uint uVar4;
+  float10 fVar5;
+  InternalExceptionFrame IStack_5c;
   OpticClassC *pOStack_18;
   int iStack_14;
   float fStack_10;
   float fStack_c;
   float fStack_8;
   
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
   pOStack_18 = this;
-  iVar3 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
-  if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_5c;
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_optic_cpp_007ac594,0x13c,0,iVar3,&DAT_007a4ccc);
-    if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7ac594,0x13d);
+  errorCode = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode != 0) {
+    g_currentExceptionFrame = IStack_5c.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x13c,0,errorCode,
+                               &DAT_007a4ccc);
+    if (iVar3 == 0) {
+      RaiseInternalException(errorCode,0,s_E____titans_wlad_To_optic_cpp_007ac594,0x13d);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -42,7 +42,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   DAT_00807400 = (&DAT_00807568)[param_1 * 4];
   DAT_00807404 = (&DAT_0080756c)[param_1 * 4];
   DAT_00807420 = ((float)DAT_00807408 * _DAT_007ac580) / (float)DAT_00807570;
-  uVar5 = DAT_0080743c & 0xff;
+  uVar4 = DAT_0080743c & 0xff;
   _DAT_00807434 = 0x3f800000;
   _DAT_00807438 = 0x3f800000;
   DAT_0080743c = DAT_0080743c & 0xffffff00;
@@ -52,7 +52,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   DAT_00807418 = DAT_00807408;
   DAT_0080741c = DAT_0080740c;
   iStack_14 = DAT_00807408;
-  fVar6 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   iStack_14 = (&DAT_00807574)[param_1 * 4];
   _DAT_00807428 = DAT_00807420;
   DAT_0080743c = DAT_0080743c & 0xff;
@@ -64,7 +64,7 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   _DAT_00807451 = 0;
   _DAT_00807455 = 0;
   _DAT_00807459 = 0;
-  DAT_00807424 = (float)((float10)iStack_14 * ((float10)_DAT_00790580 / fVar6));
+  DAT_00807424 = (float)((float10)iStack_14 * ((float10)_DAT_00790580 / fVar5));
   _DAT_0080742c = DAT_00807424;
   FUN_006dbd20(DAT_00807598,DAT_0080759c,(&DAT_00807568)[param_1 * 4],(&DAT_0080756c)[param_1 * 4],
                (&DAT_00807570)[param_1 * 4],iStack_14,
@@ -84,21 +84,21 @@ void __thiscall OpticClassC::ReInitOptic(OpticClassC *this,int param_1)
   thunk_FUN_004a8f20(1);
   DAT_0080674c = 2;
   DAT_0080745d = 0;
-  if (uVar5 == 1) {
+  if (uVar4 == 1) {
     thunk_FUN_004a9c80(1);
   }
   else {
-    if (uVar5 != 2) {
+    if (uVar4 != 2) {
       DAT_0080674c = 2;
       DAT_0080745d = 0;
-      DAT_00858df8 = (undefined4 *)uStack_5c;
+      g_currentExceptionFrame = IStack_5c.previous;
       return;
     }
     thunk_FUN_004a9c80(1);
     thunk_FUN_004a9c80(1);
   }
-  thunk_FUN_00567510(&DAT_00807658,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  thunk_FUN_00567510(&g_sound,DAT_008073d8,DAT_008073dc,DAT_008073fc,DAT_0080743c & 0xff);
+  g_currentExceptionFrame = IStack_5c.previous;
   return;
 }
 

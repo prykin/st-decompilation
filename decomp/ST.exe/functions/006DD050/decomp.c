@@ -11,7 +11,7 @@ void __thiscall FUN_006dd050(void *param_1,uint param_2,double param_3,double pa
   float10 fVar5;
   
   if (((int)param_2 < 0) || (0xc < (int)param_2)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7ee758,0x32c);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Strend_cpp_007ee758,0x32c);
     return;
   }
   if (param_2 == 4) {

@@ -16,21 +16,21 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   undefined4 *puVar9;
   char cVar10;
   uint *puVar11;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   CGenerate *pCStack_10;
   byte *pbStack_c;
   int iStack_8;
   
   iStack_8 = 1;
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pCStack_10 = this;
-  iVar2 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_10;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_54;
-    iVar2 = FUN_006ad4d0(s_E____titans_Maps_generate_cpp_007d864c,0xcd,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_54.previous;
+    iVar2 = ReportDebugMessage(s_E____titans_Maps_generate_cpp_007d864c,0xcd,0,iVar2,&DAT_007a4ccc,
+                               s_CGenerate__SaveMap_007d868c);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       iVar2 = (*pcVar1)();
@@ -95,7 +95,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   if (pbStack_c != (byte *)0x0) {
     FUN_006ab060(&pbStack_c);
   }
-  DAT_00858df8 = (undefined4 *)uStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return iStack_8;
 }
 

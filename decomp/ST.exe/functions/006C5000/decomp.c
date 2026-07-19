@@ -70,7 +70,7 @@ int FUN_006c5000(int param_1,int param_2,int param_3,int param_4,int param_5,int
     }
     iVar2 = local_24;
     if (local_24 != 0) {
-      FUN_006a5e40(local_24,DAT_007ed77c,0x7edf5c,0x3a);
+      RaiseInternalException(local_24,DAT_007ed77c,s_E__DKW_DDX_C_dddibpsh_c_007edf5c,0x3a);
       ExceptionList = local_14;
       return iVar2;
     }

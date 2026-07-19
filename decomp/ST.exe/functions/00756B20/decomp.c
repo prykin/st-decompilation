@@ -15,7 +15,7 @@ void FUN_00756b20(int param_1)
   
   iVar3 = param_1;
   if (*(int *)(param_1 + 0xc) != 0xca) {
-    FUN_006a5e40(0x12,DAT_007ed77c,0x7f2d68,0x5e);
+    RaiseInternalException(0x12,DAT_007ed77c,s_E__DKW_JPG_C_jdmaster_c_007f2d68,0x5e);
   }
   iVar4 = *(int *)(param_1 + 0x28);
   uVar2 = *(uint *)(param_1 + 0x2c);

@@ -3,7 +3,7 @@ void FUN_00550830(int param_1)
 
 {
   uint uVar1;
-  int iVar2;
+  int soundId;
   
   if (param_1 != 0) {
     wsprintfA((LPSTR)&DAT_0080f33a,s__s>__s_007c40dc,param_1,param_1 + 0x40);
@@ -17,18 +17,19 @@ void FUN_00550830(int param_1)
       thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,uVar1);
     }
     if (DAT_0080874e == '\x01') {
-      iVar2 = 0x38;
+      soundId = 0x38;
     }
     else if (DAT_0080874e == '\x02') {
-      iVar2 = 0x39;
+      soundId = 0x39;
     }
     else {
       if (DAT_0080874e != '\x03') {
         return;
       }
-      iVar2 = 0x3a;
+      soundId = 0x3a;
     }
-    thunk_FUN_00568dd0(&DAT_00807658,5,(char *)0x0,iVar2,(int *)0x0,0);
+    SoundClassTy::PlaySound_thunk
+              ((SoundClassTy *)&g_sound,SOUND_MODE_5,(char *)0x0,soundId,(SoundPosition *)0x0,0);
   }
   return;
 }

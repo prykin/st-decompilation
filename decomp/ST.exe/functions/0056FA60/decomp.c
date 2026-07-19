@@ -43,15 +43,12 @@ undefined4 __thiscall STAppC::GetMessage(STAppC *this,int param_1)
   byte local_44c [256];
   byte local_34c [256];
   byte local_24c [256];
-  undefined4 ***local_14c;
-  undefined4 local_148 [16];
-  undefined4 ***local_108;
-  undefined4 local_104 [16];
+  InternalExceptionFrame local_14c;
+  InternalExceptionFrame local_108;
   undefined1 local_c4 [12];
   undefined4 local_b8;
   undefined4 local_b4;
-  undefined4 ***local_a4;
-  undefined4 local_a0 [16];
+  InternalExceptionFrame local_a4;
   int local_60;
   int local_5c;
   int local_58;
@@ -74,16 +71,17 @@ undefined4 __thiscall STAppC::GetMessage(STAppC *this,int param_1)
   uint *local_c;
   byte *local_8;
   
-  local_a4 = DAT_00858df8;
-  DAT_00858df8 = &local_a4;
+  local_a4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a4;
   local_18 = this;
-  iVar8 = __setjmp3(local_a0,0,unaff_EDI,unaff_ESI);
+  iVar8 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar14 = local_18;
   if (iVar8 != 0) {
-    DAT_00858df8 = local_a4;
-    iVar17 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x890,0,iVar8,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_a4.previous;
+    iVar17 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x890,0,iVar8,&DAT_007a4ccc,
+                                s_STAppC__GetMessage_007ca228);
     if (iVar17 == 0) {
-      FUN_006a5e40(iVar8,0,0x7ca0c8,0x891);
+      RaiseInternalException(iVar8,0,s_E____titans_tapp_cpp_007ca0c8,0x891);
       return 0xffff;
     }
     pcVar7 = (code *)swi(3);
@@ -126,7 +124,7 @@ switchD_0056fad2_caseD_6105:
       local_3c = 0x200;
       local_2c = uVar15;
       FUN_006e3db0((int)local_44);
-      DAT_00858df8 = local_a4;
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
     switch(uVar23) {
@@ -225,7 +223,7 @@ switchD_0056fad2_caseD_6105:
         }
         *(undefined2 *)pSVar14 = *(undefined2 *)puVar12;
         pSVar14[2] = *(STAppC *)((int)puVar12 + 2);
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       break;
@@ -283,7 +281,7 @@ switchD_0056fad2_caseD_6105:
       }
       OpenGameDBs(pSVar14);
       StartGame(pSVar14);
-      DAT_00858df8 = local_a4;
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     case 0x6102:
     case 0x6103:
@@ -331,13 +329,13 @@ switchD_0056fad2_caseD_6102:
         }
         else if (local_34 != 0x610a) {
           FUN_006e3db0((int)local_44);
-          DAT_00858df8 = local_a4;
+          g_currentExceptionFrame = local_a4.previous;
           return 0;
         }
       }
       local_30 = *(undefined4 *)(param_1 + 0x14);
       FUN_006e3db0((int)local_44);
-      DAT_00858df8 = local_a4;
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     case 0x6105:
       goto switchD_0056fad2_caseD_6105;
@@ -360,7 +358,7 @@ switchD_0056fad2_caseD_6102:
       thunk_FUN_00542d80();
       if (DAT_007fa174 != 0) {
         thunk_FUN_0042a9f0((char)SVar3);
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       break;
@@ -389,7 +387,7 @@ switchD_0056fad2_caseD_6102:
       thunk_FUN_00542d80();
       if ((DAT_0081163c != 0) && (*(int *)(param_1 + 0x14) == 0)) {
         thunk_FUN_00577690(DAT_0081163c);
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       break;
@@ -500,7 +498,7 @@ switchD_0056fad2_caseD_6102:
         if (uVar23 != 0x6122) {
           if (uVar23 == 0x6123) goto switchD_0056fad2_caseD_6102;
           if (uVar23 != 0x6124) {
-            DAT_00858df8 = local_a4;
+            g_currentExceptionFrame = local_a4.previous;
             return 0;
           }
         }
@@ -514,7 +512,7 @@ switchD_0056fad2_caseD_6102:
       local_10 = FUN_006c2a00((LPCSTR)&DAT_00803408);
       if ((local_10 != 0) && (DAT_008075a4 == (int *)0x0)) {
         FUN_006e3db0((int)(pSVar14 + 0x113a));
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       if (*(int *)(pSVar14 + 0xfc3) != 0) {
@@ -542,11 +540,11 @@ switchD_0056fad2_caseD_6102:
       FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
       FUN_006bab60((int)DAT_0080759c,0);
       FUN_006bb370((int)DAT_0080759c,0,0);
-      local_14c = DAT_00858df8;
-      DAT_00858df8 = &local_14c;
-      local_4c = __setjmp3(local_148,0,unaff_EDI,unaff_ESI);
+      local_14c.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_14c;
+      local_4c = __setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (local_4c != 0) {
-        DAT_00858df8 = local_14c;
+        g_currentExceptionFrame = local_14c.previous;
         if (local_10 != 0) {
           FUN_006c2c80(DAT_008075a4);
         }
@@ -562,7 +560,7 @@ switchD_0056fad2_caseD_6102:
         thunk_FUN_00567220((int)pSVar14);
         thunk_FUN_00567180(pSVar14,DAT_00856d78);
         FUN_006e3db0((int)(pSVar18 + 0x113a));
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       uVar23 = 0;
@@ -599,10 +597,10 @@ switchD_0056fad2_caseD_6102:
           } while (iVar17 < *piVar1);
         }
         if (local_c != (uint *)0x0) {
-          local_108 = DAT_00858df8;
+          local_108.previous = g_currentExceptionFrame;
           DAT_00806738 = iVar8;
-          DAT_00858df8 = &local_108;
-          iVar17 = __setjmp3(local_104,0,unaff_EDI,unaff_ESI);
+          g_currentExceptionFrame = &local_108;
+          iVar17 = __setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
           iVar8 = local_1c;
           if (iVar17 == 0) {
             DVar10 = FUN_006b9b40(DAT_0080759c,0x10000001,local_24,local_20,local_1c,local_24,
@@ -610,7 +608,7 @@ switchD_0056fad2_caseD_6102:
             local_48 = (uint)(DVar10 == 0);
           }
           uVar23 = local_48;
-          DAT_00858df8 = local_108;
+          g_currentExceptionFrame = local_108.previous;
           if ((local_c != (uint *)0x0) && (local_48 != 0)) break;
         }
         if (iVar8 == 0x10) {
@@ -629,7 +627,7 @@ switchD_0056fad2_caseD_6102:
       if (iVar8 == 8) {
 LAB_00570645:
         if (uVar23 == 0) {
-          FUN_006a5e40(-1,DAT_007ed77c,0x7ca0c8,0x792);
+          RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x792);
         }
       }
       iVar8 = local_10;
@@ -671,27 +669,27 @@ LAB_0057073b:
       *(undefined4 *)(pSVar14 + 0x4efa) = 1;
       if (iVar8 == 0) {
         FUN_006c4000((int)DAT_008075a0);
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       FUN_006c2d90(DAT_008075a4);
-      FUN_006a5e40(local_4c,DAT_007ed77c,0x7ca0c8,0x7bc);
-      DAT_00858df8 = local_a4;
+      RaiseInternalException(local_4c,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x7bc);
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
     if (uVar23 != 0x7101) {
       if (uVar23 == 0x7102) {
         thunk_FUN_0055dbf0(DAT_0080759c,10,2);
         *(undefined4 *)(pSVar14 + 0x1c) = 1;
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       if (uVar23 != 0x7104) {
-        DAT_00858df8 = local_a4;
+        g_currentExceptionFrame = local_a4.previous;
         return 0;
       }
       thunk_FUN_005718d0((int)pSVar14);
-      DAT_00858df8 = local_a4;
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
     iVar8 = *(int *)(param_1 + 0x14);
@@ -883,13 +881,13 @@ LAB_00570ab6:
     }
 LAB_00570c2f:
     if (local_10 == 0) {
-      DAT_00858df8 = local_a4;
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
     pvVar13 = FindFirstFileA((LPCSTR)&DAT_00803408,&local_68c);
     if (pvVar13 != (HANDLE)0xffffffff) {
       (**(code **)(*(int *)pSVar14 + 0x18))(local_44);
-      DAT_00858df8 = local_a4;
+      g_currentExceptionFrame = local_a4.previous;
       return 0;
     }
     iVar8 = *(int *)pSVar14;
@@ -897,7 +895,7 @@ LAB_00570c2f:
 LAB_00570c77:
     (**(code **)(iVar8 + 0x18))(pSVar14);
   }
-  DAT_00858df8 = local_a4;
+  g_currentExceptionFrame = local_a4.previous;
   return 0;
 }
 

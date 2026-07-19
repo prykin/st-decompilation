@@ -22,8 +22,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,int param_1,char 
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar13;
-  undefined4 *local_9c;
-  undefined4 local_98 [16];
+  InternalExceptionFrame local_9c;
   undefined4 local_58;
   undefined1 local_3c [16];
   undefined4 local_2c;
@@ -37,20 +36,21 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,int param_1,char 
   undefined4 local_d;
   undefined4 *local_8;
   
-  local_9c = DAT_00858df8;
-  DAT_00858df8 = &local_9c;
+  local_9c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_9c;
   local_1c = this;
-  iVar4 = __setjmp3(local_98,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_1c;
   if (iVar4 != 0) {
-    DAT_00858df8 = local_9c;
-    iVar11 = FUN_006ad4d0(s_E____titans_Start_startsys_cpp_007cd718,0x231,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_9c.previous;
+    iVar11 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x231,0,iVar4,
+                                &DAT_007a4ccc,s_StartSystemTy__LoadMapData_007cd7b0);
     if (iVar11 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cd718,0x231);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_startsys_cpp_007cd718,0x231);
     return;
   }
   if (param_1 != 0) {
@@ -223,7 +223,7 @@ LAB_005dc430:
       MMsgTy::StatePanel(this_00,(int)&local_58);
     }
   }
-  DAT_00858df8 = local_9c;
+  g_currentExceptionFrame = local_9c.previous;
   return;
 }
 

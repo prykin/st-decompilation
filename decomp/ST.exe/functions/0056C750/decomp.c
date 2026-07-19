@@ -20,17 +20,15 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   undefined4 unaff_ESI;
   STAppC *pSVar5;
   void *unaff_EDI;
-  undefined4 *local_94;
-  undefined4 local_90 [16];
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_94;
+  InternalExceptionFrame local_50;
   STAppC *local_c;
   STAppC *local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = (undefined4 **)&local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_8;
   if (iVar2 == 0) {
     if (*(int *)(local_8 + 0x1189) != 0) {
@@ -130,16 +128,16 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     pSVar5 = pSVar5 + 0x38;
     thunk_FUN_00572920(pSVar5,1);
     thunk_FUN_005672e0((int)pSVar5);
-    local_94 = DAT_00858df8;
-    DAT_00858df8 = &local_94;
+    local_94.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_94;
     local_c = pSVar5;
-    iVar2 = __setjmp3(local_90,0,unaff_EDI,unaff_ESI);
+    iVar2 = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar5 = local_c;
     if ((iVar2 == 0) && (*(int *)local_c != 0)) {
       FUN_006b81d0(*(undefined4 **)(local_c + 4));
       *(int *)(pSVar5 + 4) = 0;
     }
-    DAT_00858df8 = (undefined4 **)local_94;
+    g_currentExceptionFrame = local_94.previous;
     DestroyWindow(DAT_00806748);
     DAT_00806748 = (HWND)0x0;
     UnregisterClassA(s_STWindowClass_007c9e3c,DAT_00856d70);
@@ -154,13 +152,14 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       FUN_006ab060(&DAT_00802ad0);
     }
     InterlockedDecrement(&DAT_0085e000);
-    DAT_00858df8 = (undefined4 **)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 **)local_50;
-  iVar3 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x31c,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_50.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x31c,0,iVar2,&DAT_007a4ccc,
+                             s_STAppC__DoneApp_007ca0e4);
   if (iVar3 == 0) {
-    FUN_006a5e40(iVar2,0,0x7ca0c8,0x31d);
+    RaiseInternalException(iVar2,0,s_E____titans_tapp_cpp_007ca0c8,0x31d);
     return;
   }
   pcVar1 = (code *)swi(3);

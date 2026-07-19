@@ -12,30 +12,30 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar4 = FUN_006ad4d0(s_E____titans_Andrey_pause_cpp_007c7490,0x54,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Andrey_pause_cpp_007c7490,0x54,0,iVar3,&DAT_007a4ccc,
+                               s_PausePanelTy__SwitchPausePanel_007c7508);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7c7490,0x54);
+    RaiseInternalException(iVar3,0,s_E____titans_Andrey_pause_cpp_007c7490,0x54);
     return;
   }
   switch(*(undefined2 *)(local_8 + 0x172)) {
   case 1:
     if (param_1 != 0) {
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
     ShiftControls(local_8,0);
@@ -47,12 +47,12 @@ LAB_0053962f:
       thunk_FUN_005252c0(iVar3);
     }
 switchD_005395f3_default:
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   case 2:
   case 4:
     if (param_1 == 0) {
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
     *(undefined2 *)(local_8 + 0x172) = 3;

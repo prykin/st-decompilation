@@ -16,8 +16,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   char *pcVar10;
   char *pcVar11;
   void *unaff_EDI;
-  undefined4 uStack_60;
-  undefined4 auStack_5c [16];
+  InternalExceptionFrame IStack_60;
   char *pcStack_1c;
   STT3DSprC *pSStack_18;
   undefined4 *puStack_14;
@@ -25,14 +24,15 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   char *pcStack_c;
   int iStack_8;
   
-  uStack_60 = DAT_00858df8;
-  DAT_00858df8 = &uStack_60;
+  IStack_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_60;
   pSStack_18 = this;
-  iVar3 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_18;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_60;
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3da,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_60.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3da,0,iVar3,&DAT_007a4ccc,
+                               s_STT3DSprC__SaveSpr_007ac724);
     if (iVar3 == 0) {
       return (undefined4 *)0x0;
     }
@@ -191,7 +191,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       iStack_8 = iStack_8 + 1;
     } while (iStack_8 < *(int *)(this_00 + 0x14));
   }
-  DAT_00858df8 = (undefined4 *)uStack_60;
+  g_currentExceptionFrame = IStack_60.previous;
   return puStack_14;
 }
 

@@ -12,14 +12,14 @@ void FUN_00759f50(int *param_1,int param_2)
   *(undefined4 **)((int)param_1 + 0x196) = puVar2;
   *puVar2 = FUN_0075a0f0;
   if (param_2 != 0) {
-    FUN_006a5e40(4,DAT_007ed77c,0x7f2de0,0x1eb);
+    RaiseInternalException(4,DAT_007ed77c,s_E__DKW_JPG_C_jdmainct_c_007f2de0,0x1eb);
   }
   if (*(int *)(*(int *)((int)param_1 + 0x1b2) + 8) == 0) {
     param_1 = *(int **)((int)param_1 + 0x12a);
   }
   else {
     if (*(int *)((int)param_1 + 0x12a) < 2) {
-      FUN_006a5e40(0x2e,DAT_007ed77c,0x7f2de0,0x1f2);
+      RaiseInternalException(0x2e,DAT_007ed77c,s_E__DKW_JPG_C_jdmainct_c_007f2de0,0x1f2);
     }
     FUN_0075a040(param_1);
     param_1 = (int *)(*(int *)((int)param_1 + 0x12a) + 2);

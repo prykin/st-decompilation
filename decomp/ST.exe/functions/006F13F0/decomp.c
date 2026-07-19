@@ -15,10 +15,8 @@ int FUN_006f13f0(byte param_1,char *param_2,byte *param_3,uint param_4,undefined
   char *pcVar8;
   ushort *puVar9;
   CHAR local_1a4 [260];
-  undefined4 **local_a0;
-  undefined4 local_9c [16];
-  undefined4 **local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_a0;
+  InternalExceptionFrame local_5c;
   int *local_18;
   uint local_14;
   int local_10;
@@ -28,11 +26,11 @@ int FUN_006f13f0(byte param_1,char *param_2,byte *param_3,uint param_4,undefined
   local_c = (byte *)0x0;
   local_8 = (ushort *)0x0;
   local_10 = 0;
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  iVar5 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  iVar5 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
-    DAT_00858df8 = local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     if (local_8 != (ushort *)0x0) {
       FUN_006ab060(&local_8);
     }
@@ -41,9 +39,10 @@ int FUN_006f13f0(byte param_1,char *param_2,byte *param_3,uint param_4,undefined
     }
     wsprintfA(local_1a4,s_cMf32__RecPut_File___s__Sect__s_N_007efafc,(int)local_18 + 0x231,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_Mf32int_cpp_007efaa4,0x106,0,iVar5,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x106,0,iVar5,&DAT_007a4ccc,
+                               local_1a4);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar5,0,0x7efaa4,0x108);
+      RaiseInternalException(iVar5,0,s_E__Ourlib_Mf32int_cpp_007efaa4,0x108);
       return 0;
     }
     pcVar3 = (code *)swi(3);
@@ -51,10 +50,10 @@ int FUN_006f13f0(byte param_1,char *param_2,byte *param_3,uint param_4,undefined
     return iVar5;
   }
   if (((param_3 == (byte *)0x0) || (param_4 == 0)) || (param_2 == (char *)0x0)) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7efaa4,0xd2);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0xd2);
   }
   if (*param_2 == '\0') {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7efaa4,0xd3);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0xd3);
   }
   if ((int)param_4 < 0x20) {
     param_6 = '\0';
@@ -62,24 +61,24 @@ int FUN_006f13f0(byte param_1,char *param_2,byte *param_3,uint param_4,undefined
   if ((param_6 == '\x01') || (param_6 == '\x02')) {
     local_c = (byte *)FUN_006aac10(param_4);
     local_10 = 1;
-    local_a0 = DAT_00858df8;
-    DAT_00858df8 = &local_a0;
-    iVar5 = __setjmp3(local_9c,0,unaff_EDI,unaff_ESI);
+    local_a0.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_a0;
+    iVar5 = __setjmp3(local_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar5 == 0) {
       if (param_6 == '\x01') {
         local_14 = FUN_00751140(param_3,param_4,local_c,param_4);
-        DAT_00858df8 = local_a0;
+        g_currentExceptionFrame = local_a0.previous;
       }
       else if (param_6 == '\x02') {
         local_14 = FUN_00751170(param_3,param_4,local_c,param_4);
-        DAT_00858df8 = local_a0;
+        g_currentExceptionFrame = local_a0.previous;
       }
       else {
-        DAT_00858df8 = local_a0;
+        g_currentExceptionFrame = local_a0.previous;
       }
     }
     else {
-      DAT_00858df8 = local_a0;
+      g_currentExceptionFrame = local_a0.previous;
       if (local_c != (byte *)0x0) {
         FUN_006ab060(&local_c);
       }
@@ -144,7 +143,7 @@ int FUN_006f13f0(byte param_1,char *param_2,byte *param_3,uint param_4,undefined
   if ((local_c != (byte *)0x0) && (local_10 != 0)) {
     FUN_006ab060(&local_c);
   }
-  DAT_00858df8 = local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   return *(int *)(*(int *)(*local_18 + 4) + 0x34) + uVar7;
 }
 

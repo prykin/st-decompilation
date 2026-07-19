@@ -8,8 +8,7 @@ undefined4 __fastcall thunk_FUN_00572ba0(int param_1)
   byte *pbVar3;
   char *pcVar4;
   byte abStack_154 [260];
-  undefined4 *puStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   int iStack_c;
   undefined4 uStack_8;
   
@@ -19,9 +18,9 @@ undefined4 __fastcall thunk_FUN_00572ba0(int param_1)
   iStack_c = param_1;
   wsprintfA((LPSTR)pbVar3,s__s_s_s__s_007ca1ec,param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
             param_1 + 0x785,PTR_s_PL_LOG_0079b0d0);
-  puStack_50 = DAT_00858df8;
-  DAT_00858df8 = &puStack_50;
-  iVar1 = __setjmp3(auStack_4c,0,pbVar3,pcVar4);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar1 = __setjmp3(IStack_50.jumpBuffer,0,pbVar3,pcVar4);
   if (iVar1 == 0) {
     puVar2 = FUN_006f0ec0(0x345,abStack_154,2,0,0);
     iVar1 = iStack_c;
@@ -36,10 +35,10 @@ undefined4 __fastcall thunk_FUN_00572ba0(int param_1)
                    '\0',(uint *)0x0);
       cMf32::delete(this,puVar2);
     }
-    DAT_00858df8 = puStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return uStack_8;
   }
-  DAT_00858df8 = puStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return 0;
 }
 

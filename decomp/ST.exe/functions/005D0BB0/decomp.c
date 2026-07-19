@@ -21,18 +21,17 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar12;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   byte local_10;
   undefined3 uStack_f;
   SettMapMTy *local_c;
   uint local_8;
   
   if ((*(int *)(this + 0x1f84) != 0) && (DAT_00808a8f == param_2)) {
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
     local_c = this;
-    iVar5 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+    iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar4 = local_c;
     if (iVar5 == 0) {
       iVar5 = *(int *)(local_c + 0x1f84);
@@ -65,7 +64,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
           }
           (**(code **)(*(int *)local_c + 0x2c))();
           *(int *)(pSVar4 + 0x2121) = *(int *)(pSVar4 + 0x2121) + 1;
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return;
         }
         if (param_3 != 0xff) {
@@ -125,17 +124,18 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
           }
         }
       }
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x5df,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x5df,0,iVar5,&DAT_007a4ccc
+                               ,s_SettMapMTy__ChangePlayerTeam_007cd47c);
     if (iVar9 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7cd258,0x5df);
+    RaiseInternalException(iVar5,0,s_E____titans_Start_settmobj_cpp_007cd258,0x5df);
   }
   return;
 }

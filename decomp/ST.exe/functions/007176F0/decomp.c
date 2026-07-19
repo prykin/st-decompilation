@@ -49,7 +49,7 @@ FUN_007176f0(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,
     FUN_00717380((int)this);
     return;
   }
-  FUN_006a5e40(-0x34,DAT_007ed77c,0x7f06d4,0xe9);
+  RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Stdark_cpp_007f06d4,0xe9);
   return;
 }
 

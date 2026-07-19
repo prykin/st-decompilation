@@ -21,8 +21,7 @@ short * __cdecl thunk_FUN_0042a290(int param_1,char *param_2)
   undefined4 *puVar14;
   longlong lVar15;
   CHAR aCStack_f4 [128];
-  undefined4 *puStack_74;
-  undefined4 auStack_70 [16];
+  InternalExceptionFrame IStack_74;
   int iStack_30;
   int iStack_2c;
   int iStack_28;
@@ -35,9 +34,9 @@ short * __cdecl thunk_FUN_0042a290(int param_1,char *param_2)
   uint *puStack_c;
   uint uStack_8;
   
-  puStack_74 = DAT_00858df8;
-  DAT_00858df8 = &puStack_74;
-  iVar3 = __setjmp3(auStack_70,0,unaff_EDI,unaff_ESI);
+  IStack_74.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_74;
+  iVar3 = __setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     psVar4 = FUN_006ef640(param_1,param_2,DAT_00806760,DAT_00806760,&LAB_00403dff);
     psStack_1c = psVar4;
@@ -76,7 +75,7 @@ short * __cdecl thunk_FUN_0042a290(int param_1,char *param_2)
     }
     this = piStack_10;
     if (piStack_10 == (int *)0x0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7a5fdc,0x48e);
+      RaiseInternalException(-2,DAT_007ed77c,s_E____titans_tload_cpp_007a5fdc,0x48e);
     }
     FUN_0072e150(0xc0000000,0x403ccccc);
     lVar15 = __ftol();
@@ -164,13 +163,14 @@ short * __cdecl thunk_FUN_0042a290(int param_1,char *param_2)
     if (DAT_00802a58 != (cLoadingTy *)0x0) {
       cLoadingTy::SetState(DAT_00802a58,2,0,(char *)0x0);
     }
-    DAT_00858df8 = puStack_74;
+    g_currentExceptionFrame = IStack_74.previous;
     return psVar4;
   }
-  DAT_00858df8 = puStack_74;
-  iVar10 = FUN_006ad4d0(s_E____titans_tload_cpp_007a5fdc,0x502,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_74.previous;
+  iVar10 = ReportDebugMessage(s_E____titans_tload_cpp_007a5fdc,0x502,0,iVar3,&DAT_007a4ccc,
+                              s_LoadLand_007a5ff8);
   if (iVar10 == 0) {
-    FUN_006a5e40(iVar3,0,0x7a5fdc,0x503);
+    RaiseInternalException(iVar3,0,s_E____titans_tload_cpp_007a5fdc,0x503);
     return (short *)0x0;
   }
   pcVar2 = (code *)swi(3);

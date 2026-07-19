@@ -65,7 +65,8 @@ void __fastcall FUN_00419df0(int *param_1)
       }
       else if (uVar1 != 0x1a4) {
 LAB_00419f6c:
-        iVar4 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x54d,0,0,&DAT_007a4ccc);
+        iVar4 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x54d,0,0,&DAT_007a4ccc,
+                                   s_STGameObjC__SetSelfCheckFlag_unk_007a4e58);
         if (iVar4 == 0) {
           return;
         }
@@ -295,7 +296,8 @@ LAB_00419f6c:
       return;
     }
   }
-  iVar4 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x5a5,0,0,&DAT_007a4ccc);
+  iVar4 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x5a5,0,0,&DAT_007a4ccc,
+                             s_STGameObjC__SetSelfCheckFlag_unk_007a4e58);
   if (iVar4 == 0) {
     return;
   }

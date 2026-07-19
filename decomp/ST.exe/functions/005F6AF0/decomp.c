@@ -14,16 +14,15 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 **local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   undefined4 local_c;
   STColl3C *local_8;
   
   local_c = 0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_8;
   if (iVar2 == 0) {
     this_00 = (STT3DSprC *)(local_8 + 0x1d5);
@@ -44,7 +43,7 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
       thunk_FUN_004acfe0(this_00,'\n');
       uVar3 = thunk_FUN_004ad650((int)this_00);
       *(undefined4 *)(this_01 + 0x2b7) = uVar3;
-      DAT_00858df8 = (undefined4 ***)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return local_c;
     }
     iVar2 = STT3DSprC::LoadSequence(this_00,0xe,DAT_00806774,(byte *)s_coll3_007ce6d8,0x1d);
@@ -68,19 +67,20 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
         thunk_FUN_0041c5a0((int *)this_01);
       }
       this_01[699] = (STColl3C)0x0;
-      DAT_00858df8 = (undefined4 ***)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return local_c;
     }
   }
   else {
-    DAT_00858df8 = (undefined4 ***)local_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_nick_to_coll3_cpp_007ce868,0x1af,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_nick_to_coll3_cpp_007ce868,0x1af,0,iVar2,&DAT_007a4ccc,
+                               s_STColl3C__LoadImagSpr_007ce8a8);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();
       return uVar3;
     }
-    FUN_006a5e40(iVar2,0,0x7ce868,0x1b1);
+    RaiseInternalException(iVar2,0,s_E____titans_nick_to_coll3_cpp_007ce868,0x1b1);
   }
   return 0xffff;
 }

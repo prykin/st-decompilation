@@ -18,7 +18,8 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
     iVar2 = (**(code **)(*(int *)this + 0x20))();
     return iVar2;
   }
-  iVar2 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30fa,0,0,&DAT_007a4ccc);
+  iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30fa,0,0,&DAT_007a4ccc,
+                             s_STBoatC__BackUnLoadObj_007ab0c4);
   if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)();

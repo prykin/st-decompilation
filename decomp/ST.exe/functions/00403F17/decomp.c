@@ -15,8 +15,7 @@ HelpPanelTy::DrawWeapon
   void *unaff_EDI;
   undefined2 uVar8;
   HINSTANCE pHVar9;
-  undefined4 *puStack_6c;
-  undefined4 auStack_68 [16];
+  InternalExceptionFrame IStack_6c;
   int iStack_28;
   int iStack_24;
   undefined4 uStack_20;
@@ -28,19 +27,20 @@ HelpPanelTy::DrawWeapon
   HelpPanelTy *pHStack_8;
   
   uStack_c = 0;
-  puStack_6c = DAT_00858df8;
-  DAT_00858df8 = &puStack_6c;
+  IStack_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_6c;
   pHStack_8 = this;
-  iVar2 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = puStack_6c;
-    iVar7 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x412,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_6c.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x412,0,iVar2,&DAT_007a4ccc
+                               ,s_HelpPanelTy__DrawWeapon_007c3ba4);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       uVar6 = (*pcVar1)();
       return uVar6;
     }
-    FUN_006a5e40(iVar2,0,0x7c383c,0x412);
+    RaiseInternalException(iVar2,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x412);
     return 0;
   }
   if (param_3 != 0) {
@@ -87,11 +87,11 @@ HelpPanelTy::DrawWeapon
         iVar2 = 0xf;
       }
       *param_2 = *param_2 + iVar2;
-      DAT_00858df8 = puStack_6c;
+      g_currentExceptionFrame = IStack_6c.previous;
       return 1;
     }
   }
-  DAT_00858df8 = puStack_6c;
+  g_currentExceptionFrame = IStack_6c.previous;
   return uStack_c;
 }
 

@@ -3544,22 +3544,22 @@
 {"address":"007ED74C","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memallcl.c\"","referenced_from":["006AAC10 FUN_006aac10"]}
 {"address":"007ED764","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memalloc.c\"","referenced_from":["006AAC70 FUN_006aac70"]}
 {"address":"007ED780","type":"string","length":24,"value":"\"E:\\\\DKW\\\\LIB\\\\C\\\\memreall.c\"","referenced_from":["006ACF50 FUN_006acf50"]}
-{"address":"007ED7B4","type":"string","length":24,"value":"\"User message too long\"","referenced_from":["006AD2A0 FUN_006ad2a0","006AD4D0 FUN_006ad4d0","006ADB90 FUN_006adb90"]}
-{"address":"007ED7CC","type":"string","length":16,"value":"\"Debug Message\"","referenced_from":["006AD2A0 FUN_006ad2a0","006AD4D0 FUN_006ad4d0"]}
+{"address":"007ED7B4","type":"string","length":24,"value":"\"User message too long\"","referenced_from":["006AD2A0 FUN_006ad2a0","006AD4D0 ReportDebugMessage","006ADB90 FUN_006adb90"]}
+{"address":"007ED7CC","type":"string","length":16,"value":"\"Debug Message\"","referenced_from":["006AD2A0 FUN_006ad2a0","006AD4D0 ReportDebugMessage"]}
 {"address":"007ED7DC","type":"string","length":28,"value":"\"Debug Message - SECOND CALL\"","referenced_from":["006AD3A0 FUN_006ad3a0"]}
-{"address":"007ED7F8","type":"string","length":12,"value":"\" (UNSAFE)\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED804","type":"string","length":20,"value":"\"Debug Error Message\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED818","type":"string","length":40,"value":"\"(Press Retry to debug the application)\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED840","type":"string","length":7,"value":"\"%08X  \"","referenced_from":["006AD4D0 FUN_006ad4d0","006ADC30 FUN_006adc30"]}
-{"address":"007ED848","type":"string","length":25,"value":"\"Error Code: 0x%08lX (%d)\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED868","type":"string","length":12,"value":"\"ExcRaise: \"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED874","type":"string","length":7,"value":"\" %08X)\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED87C","type":"string","length":7,"value":"\" (%08X\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED884","type":"string","length":9,"value":"\"Line: %d\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED890","type":"string","length":8,"value":"\"File: \"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED898","type":"string","length":8,"value":"\"unknown\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED8A0","type":"string","length":12,"value":"\"Program: \"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
-{"address":"007ED8AC","type":"string","length":79,"value":"\"\\n%d ========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\\n\"","referenced_from":["006AD4D0 FUN_006ad4d0"]}
+{"address":"007ED7F8","type":"string","length":12,"value":"\" (UNSAFE)\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED804","type":"string","length":20,"value":"\"Debug Error Message\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED818","type":"string","length":40,"value":"\"(Press Retry to debug the application)\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED840","type":"string","length":7,"value":"\"%08X  \"","referenced_from":["006AD4D0 ReportDebugMessage","006ADC30 FUN_006adc30"]}
+{"address":"007ED848","type":"string","length":25,"value":"\"Error Code: 0x%08lX (%d)\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED868","type":"string","length":12,"value":"\"ExcRaise: \"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED874","type":"string","length":7,"value":"\" %08X)\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED87C","type":"string","length":7,"value":"\" (%08X\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED884","type":"string","length":9,"value":"\"Line: %d\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED890","type":"string","length":8,"value":"\"File: \"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED898","type":"string","length":8,"value":"\"unknown\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED8A0","type":"string","length":12,"value":"\"Program: \"","referenced_from":["006AD4D0 ReportDebugMessage"]}
+{"address":"007ED8AC","type":"string","length":79,"value":"\"\\n%d ========================================  %02d.%02d.%d  %d:%02d:%02d.%03d\\n\"","referenced_from":["006AD4D0 ReportDebugMessage"]}
 {"address":"007ED8FC","type":"string","length":52,"value":"\"%08X  %08X  %08X  %08X  %08X  %08X            %08X\\n\"","referenced_from":["006ADC30 FUN_006adc30"]}
 {"address":"007ED930","type":"string","length":48,"value":"\"%08X  %08X  %08X  %08X  %08X  %08X  %08X  %08X\\n\"","referenced_from":["006ADC30 FUN_006adc30"]}
 {"address":"007ED960","type":"string","length":18,"value":"\"----------------\\n\"","referenced_from":["006ADC30 FUN_006adc30"]}

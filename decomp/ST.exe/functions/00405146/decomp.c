@@ -22,8 +22,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   void *unaff_EDI;
   uint *puVar13;
   undefined4 *puVar14;
-  undefined4 uStack_a4;
-  undefined4 auStack_a0 [16];
+  InternalExceptionFrame IStack_a4;
   STGroupBoatC *pSStack_60;
   uint uStack_5c;
   int iStack_58;
@@ -54,30 +53,31 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   pbStack_10 = (byte *)0x0;
   puStack_34 = (uint *)0x0;
   puStack_30 = (uint *)0x0;
-  uStack_a4 = DAT_00858df8;
-  DAT_00858df8 = &uStack_a4;
+  IStack_a4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_a4;
   pSStack_60 = this;
-  iVar2 = __setjmp3(auStack_a0,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_60;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_a4;
+    g_currentExceptionFrame = IStack_a4.previous;
     if (iVar2 == -0x5001fff7) {
       if (pbStack_10 != (byte *)0x0) {
         FUN_006ae110(pbStack_10);
       }
       return 0;
     }
-    iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5eb,0,iVar2,&DAT_007a4ccc);
+    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5eb,0,iVar2,&DAT_007a4ccc,
+                               s_STGroupBoatC__DistributeTargets_007abf14);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    FUN_006a5e40(iVar2,0,0x7abe3c,0x5ec);
+    RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5ec);
     return 0xffffffff;
   }
   if (*(int *)(pSStack_60 + 0x20e) == 0) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x55a);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x55a);
   }
   FUN_006afe40((int *)&pbStack_10,param_1);
   uStack_20 = *(undefined4 *)(DAT_00802a38 + 0xe4);
@@ -95,7 +95,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[0x24]),
                                            uStack_c,1);
         if (piVar3 == (int *)0x0) {
-          FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x564);
+          RaiseInternalException
+                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x564);
         }
         uVar4 = (**(code **)(*piVar3 + 0x2c))();
         switch(uVar4) {
@@ -149,7 +150,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
       } while (uVar10 < *(uint *)(iVar6 + 0xc));
     }
     if (*(int *)(this_00 + 0x212) == 0) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x58f);
+      RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x58f)
+      ;
     }
     uVar10 = 0;
     uStack_24 = 0;
@@ -238,7 +240,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX_00 >> 8),
                                                         this_00[0x24]),uStack_c,1);
             if (piVar3 == (int *)0x0) {
-              FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7abe3c,0x5c4);
+              RaiseInternalException
+                        (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5c4);
             }
             uVar4 = (**(code **)(*piVar3 + 0x2c))();
             switch(uVar4) {
@@ -295,7 +298,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   if (pbStack_10 != (byte *)0x0) {
     FUN_006ae110(pbStack_10);
   }
-  DAT_00858df8 = (undefined4 *)uStack_a4;
+  g_currentExceptionFrame = IStack_a4.previous;
   return 0;
 }
 

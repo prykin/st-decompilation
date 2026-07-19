@@ -18,24 +18,24 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   STManRuinC *pSVar9;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
   STManRuinC *local_c;
   ushort *local_8;
   
   local_8 = (ushort *)0x0;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar3 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar6 = FUN_006ad4d0(s_E____titans_nick_to_ruinm_cpp_007d19f8,0x94,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_nick_to_ruinm_cpp_007d19f8,0x94,0,iVar3,&DAT_007a4ccc,
+                               s_STManRuinC__GetMessage_007d1a1c);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7d19f8,0x96);
+      RaiseInternalException(iVar3,0,s_E____titans_nick_to_ruinm_cpp_007d19f8,0x96);
       return 0xffff;
     }
     pcVar2 = (code *)swi(3);
@@ -45,18 +45,18 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
   uVar1 = *(uint *)(param_1 + 0x10);
   if (3 < uVar1) {
     if (uVar1 != 0x10f) {
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     local_14 = (byte *)thunk_FUN_00631220(local_c,(int *)&local_10);
     STPlaySystemC::SaveObjData(DAT_00802a38,PTR_DAT_0079d198,local_14,local_10,0xc);
     FUN_006ab060(&local_14);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (uVar1 == 3) {
     thunk_FUN_00631560((int)local_c);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (uVar1 == 0) {
@@ -103,11 +103,11 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
       }
     }
     thunk_FUN_00631010(this_00);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (uVar1 != 2) {
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   *(int *)(local_c + 0x71) = *(int *)(local_c + 0x18) * DAT_00808754;
@@ -159,10 +159,10 @@ LAB_006304e7:
 LAB_00630558:
   if ((local_8 != (ushort *)0x0) && (DAT_00806754 != (cMf32 *)0x0)) {
     cMf32::RecMemFree(DAT_00806754,(uint *)&local_8);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 

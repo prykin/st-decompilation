@@ -16,8 +16,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   undefined4 *puVar7;
   void *unaff_EDI;
   AiTactClassTy *pAVar8;
-  undefined4 local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   undefined4 local_20;
   int local_1c;
   AiTactClassTy *local_18;
@@ -30,10 +29,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
   local_c = 0;
   local_10 = (undefined4 *)0x0;
   local_8 = (undefined4 *)0x0;
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
   local_18 = this;
-  iVar3 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = local_18;
   if (iVar3 == 0) {
     if (local_18 != (AiTactClassTy *)0x0) {
@@ -106,20 +105,21 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       *(uint *)(pAVar2 + 0xa1) = uVar6;
       *(AiTactClassTy **)(local_c + 0x284) = pAVar2;
     }
-    DAT_00858df8 = (undefined4 *)local_64;
+    g_currentExceptionFrame = local_64.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_64;
+  g_currentExceptionFrame = local_64.previous;
   thunk_FUN_0068e010((int)local_18);
   thunk_FUN_006686c0((int *)&local_8);
   thunk_FUN_006686c0((int *)&local_10);
-  iVar4 = FUN_006ad4d0(s_E____titans_ai_ai_tact_cpp_007d56e0,0x61,0,iVar3,&DAT_007a4ccc);
+  iVar4 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x61,0,iVar3,&DAT_007a4ccc,
+                             s_AiTactClassTy__InitData_007d5700);
   if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     iVar3 = (*pcVar1)();
     return iVar3;
   }
-  FUN_006a5e40(iVar3,0,0x7d56e0,0x62);
+  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x62);
   return iVar3;
 }
 

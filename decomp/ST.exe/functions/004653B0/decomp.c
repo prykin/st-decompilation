@@ -14,7 +14,6 @@ int __fastcall FUN_004653b0(int *param_1,int param_2,int param_3)
   int iVar6;
   int iVar7;
   undefined2 uVar8;
-  undefined4 uVar9;
   int *local_8;
   
   uVar8 = (undefined2)((uint)param_2 >> 0x10);
@@ -55,13 +54,14 @@ LAB_00465581:
         iVar3 = (**(code **)(*param_1 + 0xd8))();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b8c,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b8c,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackAttack_RotateCheat_W_007aa210);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         iVar3 = (*pcVar1)();
         return iVar3;
       }
-      uVar9 = 0x1b8d;
+      iVar3 = 0x1b8d;
       goto LAB_00465763;
     }
     if (*(int *)((int)param_1 + 0x832) != 1) {
@@ -69,13 +69,14 @@ LAB_00465581:
     }
     iVar3 = thunk_FUN_00415ed0(param_1,&local_8,&param_3);
     if (iVar3 == -1) {
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b9e,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1b9e,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackAttack_LLMoveStep_W_007aa1e4);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         iVar3 = (*pcVar1)();
         return iVar3;
       }
-      uVar9 = 0x1b9f;
+      iVar3 = 0x1b9f;
       goto LAB_00465763;
     }
   }
@@ -124,15 +125,16 @@ LAB_00465581:
         iVar3 = (**(code **)(*param_1 + 0xd8))();
         return (-(uint)(iVar3 != 0) & 0xfffffffd) + 2;
       }
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bc5,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bc5,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackAttack_RotateCheat_D_007aa1b0);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         iVar3 = (*pcVar1)();
         return iVar3;
       }
-      uVar9 = 0x1bc6;
+      iVar3 = 0x1bc6;
 LAB_00465763:
-      FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,uVar9);
+      RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar3);
       return 0xffff;
     }
     if (*(int *)((int)param_1 + 0x832) != 1) {
@@ -140,13 +142,14 @@ LAB_00465763:
     }
     iVar3 = thunk_FUN_00415ed0(param_1,&local_8,&param_3);
     if (iVar3 == -1) {
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bd7,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x1bd7,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__BackAttack_LLMoveStep_D_007aa180);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         iVar3 = (*pcVar1)();
         return iVar3;
       }
-      uVar9 = 0x1bd8;
+      iVar3 = 0x1bd8;
       goto LAB_00465763;
     }
   }

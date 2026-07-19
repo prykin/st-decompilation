@@ -11,7 +11,7 @@ undefined4 * FUN_006aac10(uint param_1)
   }
   puVar1 = (undefined4 *)thunk_FUN_006a3be0(param_1);
   if (puVar1 == (undefined4 *)0x0) {
-    FUN_006a5e40(-2,DAT_007ed77c,0x7ed74c,0x17);
+    RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_LIB_C_memallcl_c_007ed74c,0x17);
     return (undefined4 *)0x0;
   }
   puVar3 = puVar1;

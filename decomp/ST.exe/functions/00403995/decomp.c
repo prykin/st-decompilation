@@ -56,7 +56,8 @@ thunk_FUN_004458d0(int param_1,undefined4 *param_2,undefined4 *param_3,undefined
     uVar3 = 2;
     break;
   default:
-    iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x281a,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x281a,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC__GetBoatWeaponInfo_007a832c);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();

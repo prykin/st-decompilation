@@ -14,7 +14,8 @@ undefined4 __fastcall FUN_004d95a0(int param_1)
     uVar3 = 1;
     break;
   case 2:
-    iVar2 = FUN_006ad4d0(s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0xb0,0,0,&DAT_007a4ccc);
+    iVar2 = ReportDebugMessage(s_E____titans_Artem_TLO_glsat_cpp_007bf5b0,0xb0,0,0,&DAT_007a4ccc,
+                               s_Please_Fill_this_case___007bf5d8);
     if (iVar2 != 0) {
       pcVar1 = (code *)swi(3);
       uVar3 = (*pcVar1)();

@@ -297,6 +297,7 @@ public class STDecompExport extends GhidraScript {
 
     private void exportFunctions() throws Exception {
         List<String> indexRows = new ArrayList<>();
+        List<String> libraryRows = new ArrayList<>();
         List<String> graphRows = new ArrayList<>();
         FunctionIterator iterator = currentProgram.getFunctionManager().getFunctions(true);
         int total = currentProgram.getFunctionManager().getFunctionCount();
@@ -314,19 +315,30 @@ public class STDecompExport extends GhidraScript {
             Path dir = functionsRoot.resolve(id);
             Files.createDirectories(dir);
 
-            DecompileResults result = decompiler.decompileFunction(
-                function, DECOMPILE_TIMEOUT_SECONDS, monitor);
+            List<String> tags = new ArrayList<>();
+            function.getTags().forEach(tag -> tags.add(tag.getName()));
+            tags.sort(Comparator.naturalOrder());
+            boolean library = tags.contains("LIBRARY");
             String status;
-            String cCode = "";
-            if (result != null && result.decompileCompleted() && result.getDecompiledFunction() != null) {
-                status = "ok";
-                cCode = result.getDecompiledFunction().getC();
+            if (library) {
+                status = "skipped_library";
+                Files.deleteIfExists(dir.resolve("decomp.c"));
+                Files.deleteIfExists(dir.resolve("listing.asm"));
             }
             else {
-                status = result == null ? "no_result" : nullToEmpty(result.getErrorMessage());
+                DecompileResults result = decompiler.decompileFunction(
+                    function, DECOMPILE_TIMEOUT_SECONDS, monitor);
+                String cCode = "";
+                if (result != null && result.decompileCompleted() && result.getDecompiledFunction() != null) {
+                    status = "ok";
+                    cCode = result.getDecompiledFunction().getC();
+                }
+                else {
+                    status = result == null ? "no_result" : nullToEmpty(result.getErrorMessage());
+                }
+                writeText(dir.resolve("decomp.c"), cCode);
+                writeFunctionListing(function, dir.resolve("listing.asm"));
             }
-            writeText(dir.resolve("decomp.c"), cCode);
-            writeFunctionListing(function, dir.resolve("listing.asm"));
 
             List<String> callers = functionSet(function.getCallingFunctions(monitor));
             List<String> callees = functionSet(function.getCalledFunctions(monitor));
@@ -334,10 +346,6 @@ public class STDecompExport extends GhidraScript {
             List<String> globalsUsed = new ArrayList<>();
             collectReferencedData(function, stringsUsed, globalsUsed);
             List<String> comments = collectComments(function);
-            List<String> tags = new ArrayList<>();
-            function.getTags().forEach(tag -> tags.add(tag.getName()));
-            tags.sort(Comparator.naturalOrder());
-
             String meta = jsonObject(
                 field("id", id),
                 field("program", currentProgram.getName()),
@@ -357,6 +365,8 @@ public class STDecompExport extends GhidraScript {
                 rawField("inline", Boolean.toString(function.isInline())),
                 rawField("noreturn", Boolean.toString(function.hasNoReturn())),
                 rawField("varargs", Boolean.toString(function.hasVarArgs())),
+                rawField("library", Boolean.toString(library)),
+                rawField("body_exported", Boolean.toString(!library)),
                 field("decompile_status", status),
                 rawField("tags", jsonStringArray(tags)),
                 rawField("callers", jsonStringArray(callers)),
@@ -369,6 +379,7 @@ public class STDecompExport extends GhidraScript {
             );
             writeJson(dir.resolve("meta.json"), meta);
             indexRows.add(meta);
+            if (library) libraryRows.add(meta);
 
             for (String callee : callees) {
                 graphRows.add(jsonObject(
@@ -379,6 +390,7 @@ public class STDecompExport extends GhidraScript {
         }
 
         writeJsonArray(programRoot.resolve("functions.json"), indexRows);
+        writeJsonArray(programRoot.resolve("library_functions.json"), libraryRows);
         writeJsonArray(programRoot.resolve("callgraph.json"), graphRows);
     }
 

@@ -8,8 +8,7 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
   byte *pbVar3;
   char *pcVar4;
   byte local_154 [260];
-  undefined4 *local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   undefined4 local_8;
   
@@ -19,9 +18,9 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
   local_c = param_1;
   wsprintfA((LPSTR)pbVar3,s__s_s_s__s_007ca1ec,param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
             param_1 + 0x785,PTR_s_PL_LOG_0079b0d0);
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar1 = __setjmp3(local_4c,0,pbVar3,pcVar4);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar1 = __setjmp3(local_50.jumpBuffer,0,pbVar3,pcVar4);
   if (iVar1 == 0) {
     puVar2 = FUN_006f0ec0(0x345,local_154,2,0,0);
     iVar1 = local_c;
@@ -36,10 +35,10 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
                    '\0',(uint *)0x0);
       cMf32::delete(this,puVar2);
     }
-    DAT_00858df8 = local_50;
+    g_currentExceptionFrame = local_50.previous;
     return local_8;
   }
-  DAT_00858df8 = local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

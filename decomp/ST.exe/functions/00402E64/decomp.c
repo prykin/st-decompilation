@@ -351,7 +351,7 @@ LAB_0040c875:
         else {
           FUN_006a5e90(puVar12);
           FUN_006a5e90(puVar5);
-          FUN_006a5e40(-2,DAT_007ed77c,0x7a4ca8,0x233);
+          RaiseInternalException(-2,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0x233);
           puVar5 = (undefined4 *)0x0;
         }
       }

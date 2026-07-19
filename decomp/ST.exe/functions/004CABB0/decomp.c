@@ -8,19 +8,19 @@ int FUN_004cabb0(int param_1)
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   int local_c;
   void *local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar4 = FUN_006ad4d0(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x1a7,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x1a7,0,iVar3,&DAT_007a4ccc
+                               ,s_TLOBaseTy__RotateSpr_error_007ad520);
     if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7ad4d0,0x1a8);
+      RaiseInternalException(iVar3,0,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0x1a8);
       return iVar3;
     }
     pcVar2 = (code *)swi(3);
@@ -31,7 +31,7 @@ int FUN_004cabb0(int param_1)
      (iVar3 = thunk_FUN_004ac910((void *)((int)local_8 + 0x1d5),'\x04'),
      *(int *)(&DAT_007cdf52 + *(int *)(&DAT_0079125c + *(int *)((int)local_8 + 0x235) * 4) * 0x32) <
      iVar3)) {
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return 0;
   }
   if (*(int *)((int)local_8 + 0x5ef) != 0) {
@@ -117,7 +117,7 @@ LAB_004cadb1:
     thunk_FUN_004ac6b0(pvVar1,'\b');
   }
   thunk_FUN_004cba30((int)local_8);
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return 0;
 }
 

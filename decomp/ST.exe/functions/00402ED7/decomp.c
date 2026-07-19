@@ -91,7 +91,7 @@ LAB_004e05d3:
   this = (STT3DSprC *)(param_1 + 0x1d5);
   iVar1 = STT3DSprC::LoadSequence(this,0xb,DAT_0080678c,pbStack_8,0x1d);
   if (iVar1 != 0) {
-    FUN_006a5e40(iVar1,DAT_007ed77c,0x7bf910,0xc3);
+    RaiseInternalException(iVar1,DAT_007ed77c,s_E____titans_Artem_TLO_rc_cpp_007bf910,0xc3);
   }
   iVar1 = *(int *)(param_1 + 0x4e8);
   if (iVar1 == 1) {

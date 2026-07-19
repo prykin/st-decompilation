@@ -4,35 +4,35 @@ FUN_0071a030(byte *param_1,uint param_2,byte param_3,int param_4,char *param_5,c
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   ushort local_10 [6];
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     if (((param_4 == 0) || (param_1 == (byte *)0x0)) || (param_5 == (char *)0x0)) {
-      FUN_006a5e40(-6,DAT_007ed77c,0x7f0800,0x7b);
+      RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfwav_cpp_007f0800,0x7b);
     }
     local_10[0] = (ushort)param_3;
     FUN_006f13f0(2,param_5,param_1,param_2,(undefined4 *)local_10,param_6,(uint *)0x0);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 1;
   }
-  DAT_00858df8 = (undefined4 *)local_54;
-  iVar3 = FUN_006ad4d0(s_E__Ourlib_mfwav_cpp_007f0800,0x80,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  g_currentExceptionFrame = local_54.previous;
+  iVar2 = ReportDebugMessage(s_E__Ourlib_mfwav_cpp_007f0800,0x80,0,errorCode,&DAT_007a4ccc,
+                             s_mfWavSave_007f0844);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar4 = (*pcVar1)();
-    return uVar4;
+    uVar3 = (*pcVar1)();
+    return uVar3;
   }
-  FUN_006a5e40(iVar2,0,0x7f0800,0x82);
+  RaiseInternalException(errorCode,0,s_E__Ourlib_mfwav_cpp_007f0800,0x82);
   return 0;
 }
 

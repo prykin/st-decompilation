@@ -50,7 +50,7 @@ FUN_006b55f0(undefined4 *param_1,int param_2,int param_3,int param_4,int param_5
                               param_9,param_10);
         return puVar4;
       }
-      FUN_006a5e40(-0x30,DAT_007ed77c,0x7edb68,0x30);
+      RaiseInternalException(-0x30,DAT_007ed77c,s_E__DKW_WGR_C_dibcopy_c_007edb68,0x30);
       return (undefined4 *)0x0;
     }
     local_3c.top = param_8;

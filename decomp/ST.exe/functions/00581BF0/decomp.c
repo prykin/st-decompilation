@@ -19,26 +19,26 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
   STGameObjC *pSVar10;
   void *unaff_EDI;
   byte *pbVar11;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   STGameObjC *local_10;
   int local_c;
   byte *local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_10;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar6 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x191,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x191,0,iVar3,&DAT_007a4ccc
+                               ,s_STJellyManC__GetMessage_007cb348);
     if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    FUN_006a5e40(iVar3,0,0x7cb2f0,0x192);
+    RaiseInternalException(iVar3,0,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x192);
     return 0xffff;
   }
   STGameObjC::GetMessage(local_10,param_1);
@@ -47,13 +47,14 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     if (uVar7 == 0x124) {
       iVar3 = *(int *)(pSVar2 + 0x1fd) + -1;
       if (iVar3 < 0) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       while ((iVar6 = *(int *)(*(int *)(pSVar2 + 0x207) + iVar3 * 4), iVar6 == 0 ||
              (*(int *)(iVar6 + 8) != *(int *)(param_1 + 0x14)))) {
         if ((iVar3 < 0) &&
-           (iVar6 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x128,0,0,&DAT_007a4ccc),
+           (iVar6 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x128,0,0,
+                                       &DAT_007a4ccc,s_Jell_m_Small_finding_jelly_007cb364),
            iVar6 != 0)) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
@@ -61,7 +62,7 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
         }
         iVar3 = iVar3 + -1;
         if (iVar3 < 0) {
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
       }
@@ -69,11 +70,11 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
       iVar3 = *(int *)(pSVar2 + 0x20f);
       *(int *)(pSVar2 + 0x20f) = iVar3 + -1;
       if (((byte)pSVar2[0x1d5] & 1) == 0) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       if (iVar3 + -1 != 0) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
     }
@@ -89,12 +90,12 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
           } while (-1 < iVar3);
         }
         if (iVar3 < 0) {
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         iVar6 = FUN_006e5380(DAT_00802a38,*(int *)(param_1 + 0x14),&local_c);
         if (iVar6 != 0) {
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         iVar6 = *(int *)(pSVar2 + 0x1fd) + -1;
@@ -109,12 +110,13 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
         if (iVar6 < 0) {
           *(int *)(*(int *)(pSVar2 + 0x207) + iVar3 * 4) = local_c;
           *(int *)(pSVar2 + 0x20f) = *(int *)(pSVar2 + 0x20f) + 1;
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar3 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x110,0,0,&DAT_007a4ccc);
+        iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x110,0,0,&DAT_007a4ccc
+                                   ,s_STJellyManC__max_jellies_error_007cb384);
         if (iVar3 == 0) {
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         pcVar1 = (code *)swi(3);
@@ -122,18 +124,18 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
         return uVar4;
       }
       if (uVar7 != 0x128) {
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
     }
     thunk_FUN_005811c0(pSVar2);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar7 == 0x10f) {
     local_8 = (byte *)FUN_006aac70(0x3a);
     if (local_8 == (byte *)0x0) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     pSVar10 = pSVar2 + 0x1d9;
@@ -156,28 +158,28 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     local_8[0x39] = 0;
     STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(pSVar2 + 0x18),local_8,0x3a);
     FUN_006ab060(&local_8);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar7 == 0) {
     thunk_FUN_00581bc0((int)pSVar2);
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   if (uVar7 != 2) {
     if (uVar7 != 3) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (*(int *)(pSVar2 + 0x207) != 0) {
       FUN_006ab060((undefined4 *)(pSVar2 + 0x207));
     }
     if (*(int *)(pSVar2 + 0x20b) == 0) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     FUN_006ab060((undefined4 *)(pSVar2 + 0x20b));
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   iVar3 = *(int *)(param_1 + 0x14);
@@ -198,30 +200,32 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     if ((((*(int *)(pSVar2 + 0x1ed) < 0) || (*(int *)(pSVar2 + 0x1f1) < 0)) ||
         ((int)DAT_007fb240 < *(int *)(pSVar2 + 0x1f5))) ||
        ((int)DAT_007fb242 < *(int *)(pSVar2 + 0x1f9))) {
-      iVar3 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13d,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13d,0,0,&DAT_007a4ccc,
+                                 s_Bad_init_coordinates_007cb3ac);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         uVar4 = (*pcVar1)();
         return uVar4;
       }
-      FUN_006a5e40(-1,DAT_007ed77c,0x7cb2f0,0x13e);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x13e);
     }
     iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x207) = iVar3;
     iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x20b) = iVar3;
     if ((*(int *)(pSVar2 + 0x207) != 0) && (iVar3 != 0)) goto LAB_00581d62;
-    iVar3 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x143,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x143,0,0,&DAT_007a4ccc,
+                               s_Not_enough_memory_007cb3c8);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    uVar4 = 0x144;
+    iVar3 = 0x144;
   }
   else {
     if (uVar7 != 2) {
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     puVar9 = *(undefined4 **)(param_1 + 0x14);
@@ -240,15 +244,16 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     iVar3 = FUN_006aac70(*(int *)(pSVar2 + 0x1fd) << 2);
     *(int *)(pSVar2 + 0x20b) = iVar3;
     if ((*(int *)(pSVar2 + 0x207) != 0) && (iVar3 != 0)) goto LAB_00581d62;
-    iVar3 = FUN_006ad4d0(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x15a,0,0,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x15a,0,0,&DAT_007a4ccc,
+                               s_Not_enough_memory_007cb3c8);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    uVar4 = 0x15b;
+    iVar3 = 0x15b;
   }
-  FUN_006a5e40(-1,DAT_007ed77c,0x7cb2f0,uVar4);
+  RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,iVar3);
 LAB_00581d62:
   puVar9 = *(undefined4 **)(pSVar2 + 0x207);
   for (uVar7 = *(uint *)(pSVar2 + 0x1fd) & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
@@ -268,7 +273,7 @@ LAB_00581d62:
     *(undefined1 *)puVar9 = 0;
     puVar9 = (undefined4 *)((int)puVar9 + 1);
   }
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

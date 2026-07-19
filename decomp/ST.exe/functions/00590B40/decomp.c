@@ -43,22 +43,22 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
   undefined4 local_16d;
   undefined4 local_169;
   undefined4 local_70 [7];
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   MMObjTy *local_10;
   int local_c;
   int local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = (MMObjTy *)this;
-  iVar2 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_10;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar17 = FUN_006ad4d0(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x7d,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar17 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x7d,0,iVar2,&DAT_007a4ccc
+                                ,s_CampaignTy__InitCampaign_007cbcfc);
     if (iVar17 == 0) {
-      FUN_006a5e40(iVar2,0,0x7cbcd4,0x7d);
+      RaiseInternalException(iVar2,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x7d);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -393,11 +393,11 @@ switchD_00590d73_default:
             MMsgTy::SetPanel(*(MMsgTy **)(iVar2 + 0x2e6),0,(int)&local_26c,0,0);
             MMsgTy::StatePanel(*(MMsgTy **)(*(int *)(this_01 + 0x1a5b) + 0x2e6),(int)local_70);
           }
-          thunk_FUN_00568bc0(&DAT_00807658,0);
+          thunk_FUN_00568bc0(&g_sound,0);
           if ((DAT_00807300._1_1_ & 8) != 0) {
-            thunk_FUN_0056a130(&DAT_00807658,0x12,'\x02',0,(uint *)0x0);
+            thunk_FUN_0056a130(&g_sound,0x12,'\x02',0,(uint *)0x0);
           }
-          thunk_FUN_00568bc0(&DAT_00807658,1);
+          thunk_FUN_00568bc0(&g_sound,1);
           if (DAT_0080874e == 1) {
             thunk_FUN_005b6730(this_01,0x15,'\0',1);
             thunk_FUN_005b6730(this_01,0x18,'\x02',1);
@@ -406,17 +406,17 @@ switchD_00590d73_default:
             if (DAT_0080874e == 2) {
               thunk_FUN_005b6730(this_01,0x16,'\0',1);
               thunk_FUN_005b6730(this_01,0x19,'\x02',1);
-              DAT_00858df8 = (undefined4 *)local_54;
+              g_currentExceptionFrame = local_54.previous;
               return;
             }
             if (DAT_0080874e == 3) {
               thunk_FUN_005b6730(this_01,0x17,'\0',1);
               thunk_FUN_005b6730(this_01,0x1a,'\x02',1);
-              DAT_00858df8 = (undefined4 *)local_54;
+              g_currentExceptionFrame = local_54.previous;
               return;
             }
           }
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return;
         }
       } while( true );

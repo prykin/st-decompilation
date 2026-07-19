@@ -18,22 +18,22 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
   int iVar9;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_64;
-  undefined4 local_60 [16];
+  InternalExceptionFrame local_64;
   short local_20 [10];
   AiFltClassTy *local_c;
   int local_8;
   
-  local_64 = DAT_00858df8;
-  DAT_00858df8 = &local_64;
+  local_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_64;
   local_c = this;
-  iVar6 = __setjmp3(local_60,0,unaff_EDI,unaff_ESI);
+  iVar6 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar6 != 0) {
-    DAT_00858df8 = (undefined4 *)local_64;
-    iVar9 = FUN_006ad4d0(s_E____titans_ai_ai_flt_cpp_007d2b80,0x303,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_64.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x303,0,iVar6,&DAT_007a4ccc,
+                               s_AiFltClassTy__AppendPoint_007d2c20);
     if (iVar9 == 0) {
-      FUN_006a5e40(iVar6,0,0x7d2b80,0x304);
+      RaiseInternalException(iVar6,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x304);
       return iVar6;
     }
     pcVar5 = (code *)swi(3);
@@ -77,13 +77,13 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
                                  (uVar7 >> 0x10) % (uint)(int)sVar2 + (int)sVar1,2,local_20,
                                  local_20 + 1,local_20 + 2,0);
       if ((iVar6 != 0) && (iVar6 = thunk_FUN_0065f5c0(this_00,local_20), iVar6 != 0)) {
-        DAT_00858df8 = (undefined4 *)local_64;
+        g_currentExceptionFrame = local_64.previous;
         return 0;
       }
       local_8 = local_8 + 1;
     } while (local_8 < param_2);
   }
-  DAT_00858df8 = (undefined4 *)local_64;
+  g_currentExceptionFrame = local_64.previous;
   return 0;
 }
 

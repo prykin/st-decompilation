@@ -20,25 +20,25 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   undefined1 uVar12;
   byte bVar13;
   undefined4 auStack_450 [256];
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   FSGSTy *pFStack_c;
   uint uStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pFStack_c = this;
-  iVar4 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pFStack_c;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar11 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar11 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d,0,iVar4,
+                                &DAT_007a4ccc,s_FSGSTy__InitFSGS_007cbff8);
     if (iVar11 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x15d);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x15d);
     return;
   }
   thunk_FUN_005daf20(*(int *)(pFStack_c + 0x1a5b));
@@ -243,9 +243,9 @@ LAB_00596510:
     *(undefined4 *)(*(int *)(*(int *)(this_01 + 0x1a5b) + 0x2e6) + 0x1cab) =
          *(undefined4 *)(this_01 + 8);
   }
-  thunk_FUN_00568bc0(&DAT_00807658,0);
+  thunk_FUN_00568bc0(&g_sound,0);
   thunk_FUN_005b6730(this_01,0xb,'\0',-1);
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return;
 }
 

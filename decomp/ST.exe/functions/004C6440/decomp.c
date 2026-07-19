@@ -97,7 +97,7 @@ LAB_004c6899:
                          (&PTR_s_tlo_bldmark_si_007ad25c)
                          [*(byte *)(*(int *)((int)this + 0x10) + 0x112e)],0x1d);
       if (iVar8 != 0) {
-        FUN_006a5e40(iVar8,DAT_007ed77c,0x7ad2f4,0x82);
+        RaiseInternalException(iVar8,DAT_007ed77c,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x82);
       }
       iVar8 = 0;
       cVar1 = *(char *)(*(int *)((int)this + 0x10) + 0x112e);
@@ -129,7 +129,7 @@ LAB_004c6899:
                        *(byte **)(&DAT_007ad250 +
                                  (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112e) * 4),0x1d);
     if (iVar5 != 0) {
-      FUN_006a5e40(iVar5,DAT_007ed77c,0x7ad2f4,0x77);
+      RaiseInternalException(iVar5,DAT_007ed77c,s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x77);
     }
     thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,
                        *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),
@@ -153,7 +153,8 @@ LAB_004c6848:
       fVar3 = (float)(iVar8 + 1) * _DAT_007904f8;
       goto LAB_004c6848;
     }
-    iVar5 = FUN_006ad4d0(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x98,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_BldMark_cp_007ad2f4,0x98,0,0,&DAT_007a4ccc,
+                               s_error_007ad33c);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       uVar6 = (*pcVar2)();

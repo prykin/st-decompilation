@@ -12,16 +12,15 @@ uint __cdecl FUN_0067f950(byte *param_1)
   byte *pbVar7;
   void *unaff_EDI;
   bool bVar8;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   undefined4 local_8;
   
   local_8 = 0;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  uVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  uVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     if (-1 < (int)uVar3) {
       uVar3 = 0xffffffff;
     }
@@ -67,10 +66,10 @@ LAB_0067f9e1:
     local_8 = 0;
     uVar6 = FUN_006ae1c0(DAT_00848a30,&local_8);
     if (uVar6 != uVar3) {
-      FUN_006a5e40(-5,DAT_007ed77c,0x7d55d8,0x195);
+      RaiseInternalException(-5,DAT_007ed77c,s___ai_ai_script_v_inl_007d55d8,0x195);
     }
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return uVar3;
 }
 

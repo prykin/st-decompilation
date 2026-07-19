@@ -9,7 +9,7 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   int iVar5;
   void *unaff_ESI;
   int *piVar6;
-  undefined4 uVar7;
+  InternalExceptionFrame *pIVar7;
   undefined4 auStack_58 [16];
   int iStack_18;
   FrmPanelTy *pFStack_14;
@@ -17,7 +17,7 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   ushort *puStack_c;
   uint uStack_8;
   
-  uVar7 = DAT_00858df8;
+  pIVar7 = g_currentExceptionFrame;
   puStack_c = (ushort *)0x0;
   piVar6 = *(int **)(param_1 + 0x18);
   iStack_18 = *piVar6 - *(int *)(this + 0x3c);
@@ -28,15 +28,16 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
     iStack_10 = piVar6[1] - *(int *)(this + 0x44);
   }
   uStack_8 = 0;
-  DAT_00858df8 = &stack0xffffffa4;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
   pFStack_14 = this;
-  iVar3 = __setjmp3(auStack_58,0,unaff_ESI,uVar7);
+  iVar3 = __setjmp3(auStack_58,0,unaff_ESI,pIVar7);
   pFVar2 = pFStack_14;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar7;
-    iVar5 = FUN_006ad4d0(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x8f,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = pIVar7;
+    iVar5 = ReportDebugMessage(s_E____titans_Andrey_frmpanel_cpp_007c2958,0x8f,0,iVar3,&DAT_007a4ccc
+                               ,s_FrmPanelTy__PaintBut_007c2ac4);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c2958,0x8f);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x8f);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -62,7 +63,7 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_c);
   FUN_006b3640(DAT_008075a8,*(uint *)(pFVar2 + 0x60),0xffffffff,*(uint *)(pFVar2 + 0x3c),
                *(uint *)(pFVar2 + 0x44));
-  DAT_00858df8 = (undefined1 *)uVar7;
+  g_currentExceptionFrame = pIVar7;
   return;
 }
 

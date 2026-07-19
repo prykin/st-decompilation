@@ -15,8 +15,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint *puVar6;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   uint local_24;
   uint local_20;
   int local_1a;
@@ -27,20 +26,21 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   short local_6;
   
   local_14 = (int)*(short *)(this + 0x816) * (int)*(short *)(this + 0x816) * 0x9dd1;
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
   local_10 = this;
-  iVar3 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_10;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_68;
-    iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_68.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb4,0,iVar3,&DAT_007a4ccc,
+                               s_STBoatC___CheckDefenceShots_007aba00);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7a9d3c,0x4bb5);
+    RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb5);
     return;
   }
   iVar3 = *(int *)(local_10 + 0x47b);
@@ -88,7 +88,7 @@ LAB_0048d016:
       uVar5 = uVar5 + 1;
     } while ((int)uVar5 < *(int *)(iVar3 + 0xc));
   }
-  DAT_00858df8 = (undefined4 *)local_68;
+  g_currentExceptionFrame = local_68.previous;
   return;
 }
 

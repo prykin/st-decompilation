@@ -16,8 +16,7 @@ int FUN_0071b9c0(void)
   undefined4 *puVar9;
   uint *puVar10;
   byte local_1bc [256];
-  undefined4 local_bc;
-  undefined4 local_b8 [16];
+  InternalExceptionFrame local_bc;
   uint local_78 [8];
   int local_58 [2];
   int local_50;
@@ -37,14 +36,15 @@ int FUN_0071b9c0(void)
   undefined4 *local_c;
   void *local_8;
   
-  local_bc = DAT_00858df8;
-  DAT_00858df8 = &local_bc;
-  iVar3 = __setjmp3(local_b8,0,unaff_EDI,unaff_ESI);
+  local_bc.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_bc;
+  iVar3 = __setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_bc;
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_Sinput_cpp_007f092c,0x1a9,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_bc.previous;
+    iVar6 = ReportDebugMessage(s_E__Ourlib_Sinput_cpp_007f092c,0x1a9,0,iVar3,&DAT_007a4ccc,
+                               s_InputClassTy__None_error_007f0958);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7f092c,0x1aa);
+      RaiseInternalException(iVar3,0,s_E__Ourlib_Sinput_cpp_007f092c,0x1aa);
       return iVar3;
     }
     pcVar2 = (code *)swi(3);
@@ -62,7 +62,7 @@ int FUN_0071b9c0(void)
     iVar3 = (**(code **)(**(int **)((int)this + 0x1c) + 0x24))
                       (*(int **)((int)this + 0x1c),0x100,local_1bc);
     if (iVar3 != 0) {
-      FUN_006a5e40(iVar3,DAT_007ed77c,0x7f092c,0xdb);
+      RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0xdb);
     }
     *(undefined4 *)((int)this + 0x70) = 0;
     *(undefined4 *)(*(int *)((int)this + 0x24) + 4) = 0;
@@ -349,7 +349,7 @@ LAB_0071bc28:
           puVar7 = (uint *)0x0;
         }
         if (puVar7 == (uint *)0x0) {
-          DAT_00858df8 = (undefined4 *)local_bc;
+          g_currentExceptionFrame = local_bc.previous;
           return 0;
         }
         if ((((*puVar7 & 8) != 0) && (puVar7[0x17] != 0)) && (puVar7[0x18] == 0)) {
@@ -419,7 +419,7 @@ LAB_0071c152:
       }
     }
   }
-  DAT_00858df8 = (undefined4 *)local_bc;
+  g_currentExceptionFrame = local_bc.previous;
   return 0;
 }
 

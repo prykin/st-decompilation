@@ -34,7 +34,8 @@ undefined4 * __fastcall FUN_0057f580(uint param_1)
       *(int *)(param_1 + 0x265) = *(int *)(param_1 + 0x265) + 1;
       iVar3 = STT3DSprC::Init(this,DAT_008073cc,0x5a,0x45,param_1,0xb4,0x8c,0x11);
       if (iVar3 != 0) {
-        iVar3 = FUN_006ad4d0(s_E____titans_Igor_To_gold_cpp_007cb19c,0x203,0,0,&DAT_007a4ccc);
+        iVar3 = ReportDebugMessage(s_E____titans_Igor_To_gold_cpp_007cb19c,0x203,0,0,&DAT_007a4ccc,
+                                   s_STDcResourcC__Init_Sprite_Error_007cb264);
         if (iVar3 != 0) {
           pcVar1 = (code *)swi(3);
           puVar2 = (undefined4 *)(*pcVar1)();

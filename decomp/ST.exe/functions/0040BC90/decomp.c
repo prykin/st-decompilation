@@ -124,7 +124,7 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
                            (int)*(short *)(iVar2 + 0x49),(int)*(short *)(iVar2 + 0x4b));
       if (iVar3 != 0) {
         FUN_006a5e90(puVar8);
-        FUN_006a5e40(-2,DAT_007ed77c,0x7a4ca8,0x173);
+        RaiseInternalException(-2,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0x173);
         return -2;
       }
       sVar7 = *(short *)((int)puVar8 +

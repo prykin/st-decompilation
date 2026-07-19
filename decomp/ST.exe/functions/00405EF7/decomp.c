@@ -5,23 +5,24 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,OptPanelT
   short sVar1;
   code *pcVar2;
   OptPanelTy *this_00;
+  int errorCode;
   int iVar3;
-  int iVar4;
   void *unaff_ESI;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar4;
   undefined4 auStack_48 [16];
   OptPanelTy *pOStack_8;
   
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar4 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pOStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
+  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   this_00 = pOStack_8;
-  if (iVar3 != 0) {
-    DAT_00858df8 = (undefined1 *)uVar5;
-    iVar4 = FUN_006ad4d0(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x4a6,0,iVar3,&DAT_007a4ccc);
-    if (iVar4 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c70a0,0x4a6);
+  if (errorCode != 0) {
+    g_currentExceptionFrame = pIVar4;
+    iVar3 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x4a6,0,errorCode,
+                               &DAT_007a4ccc,s_OptPanelTy__Notification_007c7314);
+    if (iVar3 == 0) {
+      RaiseInternalException(errorCode,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x4a6);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -37,7 +38,7 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,OptPanelT
   }
   else {
     if (param_1 != '\f') {
-      DAT_00858df8 = (undefined1 *)uVar5;
+      g_currentExceptionFrame = pIVar4;
       return;
     }
     *(undefined4 *)(pOStack_8 + 0x1a5) = 0x4276;
@@ -51,7 +52,7 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,OptPanelT
   if ((sVar1 == 2) || (sVar1 == 4)) {
     SwitchOptPanel(this_00,-1);
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
+  g_currentExceptionFrame = pIVar4;
   return;
 }
 

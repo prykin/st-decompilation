@@ -13,7 +13,7 @@ undefined4 __fastcall thunk_FUN_004ec0f0(int param_1)
                     (*(STT3DSprC **)(param_1 + 0x5ff),0xe,DAT_00806774,
                      *(byte **)(&DAT_007cde6c + *(int *)(param_1 + 0x50c) * 4),0x1d);
   if (iVar1 != 0) {
-    FUN_006a5e40(iVar1,DAT_007ed77c,0x7c1648,0x126);
+    RaiseInternalException(iVar1,DAT_007ed77c,s_E____titans_Artem_TLO_trade_cpp_007c1648,0x126);
   }
   uVar4 = 10;
   iVar1 = thunk_FUN_004ad650(param_1 + 0x1d5);

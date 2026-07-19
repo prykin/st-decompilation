@@ -22,8 +22,7 @@ HoloTy::CalcHologram
   undefined4 *puVar8;
   uint uVar9;
   longlong lVar10;
-  undefined4 local_78;
-  undefined4 local_74 [16];
+  InternalExceptionFrame local_78;
   uint local_34;
   uint local_30;
   uint local_2c;
@@ -37,12 +36,13 @@ HoloTy::CalcHologram
   undefined4 *local_c;
   int local_8;
   
-  local_78 = DAT_00858df8;
-  DAT_00858df8 = &local_78;
-  iVar2 = __setjmp3(local_74,0,unaff_EDI,unaff_ESI);
+  local_78.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_78;
+  iVar2 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_78;
-    iVar2 = FUN_006ad4d0(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_78.previous;
+    iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc,
+                               s_HoloTy__CalcHologram_007cc6b4);
     if (iVar2 == 0) {
       return (undefined4 *)0x0;
     }
@@ -158,7 +158,7 @@ LAB_005aab34:
       local_28 = local_18;
     } while (local_14 < (int)uVar6);
   }
-  DAT_00858df8 = (undefined4 *)local_78;
+  g_currentExceptionFrame = local_78.previous;
   return local_c;
 }
 

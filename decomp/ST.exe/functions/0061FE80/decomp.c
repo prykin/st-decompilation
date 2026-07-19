@@ -5,8 +5,8 @@ FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,
 {
   uint uVar1;
   uint uVar2;
-  int iVar3;
-  int local_10 [3];
+  int soundId;
+  SoundPosition local_10;
   
   uVar1 = *(uint *)(DAT_00802a38 + 0xe4);
   if (DAT_0080874d == param_3) {
@@ -21,30 +21,30 @@ FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,
     }
     if (DAT_0080874e == '\x01') {
       if (param_5 == 0xa6) {
-        iVar3 = 0x86;
+        soundId = 0x86;
       }
       else if (param_5 == 0xa7) {
-        iVar3 = 0x89;
+        soundId = 0x89;
       }
       else {
         if (param_5 != 0xbd) {
           return;
         }
-        iVar3 = 0x8c;
+        soundId = 0x8c;
       }
     }
     else if (DAT_0080874e == '\x02') {
       if (param_5 == 0xa6) {
-        iVar3 = 0x87;
+        soundId = 0x87;
       }
       else if (param_5 == 0xa7) {
-        iVar3 = 0x8a;
+        soundId = 0x8a;
       }
       else {
         if (param_5 != 0xbd) {
           return;
         }
-        iVar3 = 0x8d;
+        soundId = 0x8d;
       }
     }
     else {
@@ -52,22 +52,23 @@ FUN_0061fe80(void *this,int param_1,int param_2,uint param_3,undefined4 param_4,
         return;
       }
       if (param_5 == 0xa6) {
-        iVar3 = 0x88;
+        soundId = 0x88;
       }
       else if (param_5 == 0xa7) {
-        iVar3 = 0x8b;
+        soundId = 0x8b;
       }
       else {
         if (param_5 != 0xbd) {
           return;
         }
-        iVar3 = 0x8e;
+        soundId = 0x8e;
       }
     }
-    local_10[2] = 0;
-    local_10[0] = -1;
-    local_10[1] = 0xffffffff;
-    thunk_FUN_00568dd0(&DAT_00807658,6,(char *)0x0,iVar3,local_10,0);
+    local_10.unknown = 0;
+    local_10.x = -1;
+    local_10.y = -1;
+    SoundClassTy::PlaySound_thunk
+              ((SoundClassTy *)&g_sound,SOUND_MODE_6,(char *)0x0,soundId,&local_10,0);
     thunk_FUN_00620da0(this,param_1,param_2,0x8e);
     *(uint *)((int)this + 0xc1) = uVar1 + 0xfa;
     return;

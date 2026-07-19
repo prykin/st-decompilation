@@ -11,8 +11,7 @@ int __cdecl FUN_006f0360(short *param_1,undefined *param_2)
   int iVar6;
   void *unaff_EDI;
   int iVar7;
-  undefined4 local_60;
-  undefined4 local_5c [16];
+  InternalExceptionFrame local_60;
   int local_1c;
   int local_18;
   int local_14;
@@ -23,19 +22,20 @@ int __cdecl FUN_006f0360(short *param_1,undefined *param_2)
   local_8 = (int *)0x0;
   local_14 = 0;
   local_1c = 0;
-  local_60 = DAT_00858df8;
-  DAT_00858df8 = &local_60;
-  iVar3 = __setjmp3(local_5c,0,unaff_EDI,unaff_ESI);
+  local_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_60;
+  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_60;
-    iVar7 = FUN_006ad4d0(s_E__ourlib_Mfstmap_cpp_007eef88,0x1f2,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_60.previous;
+    iVar7 = ReportDebugMessage(s_E__ourlib_Mfstmap_cpp_007eef88,0x1f2,0,iVar3,&DAT_007a4ccc,
+                               s_mfTMapOptimize_007ef044);
     if (iVar7 != 0) {
       pcVar2 = (code *)swi(3);
       iVar3 = (*pcVar2)();
       return iVar3;
     }
     FUN_006f07e0((int *)&local_8);
-    FUN_006a5e40(iVar3,0,0x7eef88,500);
+    RaiseInternalException(iVar3,0,s_E__ourlib_Mfstmap_cpp_007eef88,500);
     if (-1 < iVar3) {
       return -1;
     }
@@ -118,7 +118,7 @@ LAB_006f0559:
     local_c = iVar3 + 1;
     if (4 < local_c) {
       FUN_006f07e0((int *)&local_8);
-      DAT_00858df8 = (undefined4 *)local_60;
+      g_currentExceptionFrame = local_60.previous;
       return local_14;
     }
   } while( true );

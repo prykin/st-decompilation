@@ -16,16 +16,15 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   undefined4 uVar8;
   void *unaff_ESI;
   char *pcVar9;
-  undefined4 in_stack_ffffff70;
+  InternalExceptionFrame *in_stack_ffffff70;
   undefined4 local_8c [16];
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   GameSystemC *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_48,0,unaff_ESI,in_stack_ffffff70);
+  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,in_stack_ffffff70);
   if (iVar4 == 0) {
     DAT_00806750 = thunk_FUN_0042a290(DAT_00806754,s_3D_MAP_007ca1e4);
     puVar5 = FUN_006b04d0(0x4f2);
@@ -46,7 +45,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     pcVar9 = s_scmask_007cac10;
     pvVar6 = DAT_00806770;
     DAT_00806724 = FUN_0070ae60(DAT_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
-    DAT_00858df8 = (undefined4 *)&stack0xffffff70;
+    g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff70;
     iVar4 = __setjmp3(local_8c,0,pvVar6,pcVar9);
     pGVar3 = local_8;
     if (iVar4 == 0) {
@@ -54,17 +53,18 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
       *(undefined4 **)(pGVar3 + 0x431) = puVar5;
     }
     *(undefined4 *)(pGVar3 + 0x42c) = DAT_00808784;
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar7 = FUN_006ad4d0(s_E____titans_tsystem_cpp_007cab5c,0x86,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar7 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x86,0,iVar4,&DAT_007a4ccc,
+                             s_GameSystemC__InitSystem_007cabf4);
   if (iVar7 != 0) {
     pcVar1 = (code *)swi(3);
     uVar8 = (*pcVar1)();
     return uVar8;
   }
-  FUN_006a5e40(iVar4,0,0x7cab5c,0x86);
+  RaiseInternalException(iVar4,0,s_E____titans_tsystem_cpp_007cab5c,0x86);
   return 0xfffffffc;
 }
 

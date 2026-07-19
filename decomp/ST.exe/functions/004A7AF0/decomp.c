@@ -43,7 +43,8 @@ uint __thiscall FUN_004a7af0(void *this,int param_1,uint param_2,uint param_3)
             return 0;
           }
           if (local_1a != 2) {
-            iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x164b,0,0,&DAT_007a4ccc);
+            iVar2 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x164b,0,0,
+                                       &DAT_007a4ccc,s_STGroupBoatC__GetPatrolTask_inco_007ac488);
             if (iVar2 == 0) {
               return 0;
             }

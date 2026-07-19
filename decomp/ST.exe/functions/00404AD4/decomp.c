@@ -18,13 +18,14 @@ undefined4 __fastcall thunk_FUN_004c6d00(int *param_1)
   if (param_1[0xff] == 0) {
     iVar3 = (**(code **)(*param_1 + 0x1c))();
     if (iVar3 == -1) {
-      iVar3 = FUN_006ad4d0(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x4f,0,-5,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x4f,0,-5,&DAT_007a4ccc,
+                                 s_move_error_007ad390);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         uVar4 = (*pcVar1)();
         return uVar4;
       }
-      uVar4 = 0x4f;
+      iVar3 = 0x4f;
     }
     else {
       if (iVar3 == 1) goto LAB_004c6e4d;
@@ -43,20 +44,21 @@ undefined4 __fastcall thunk_FUN_004c6d00(int *param_1)
         }
         goto LAB_004c6f47;
       }
-      uVar4 = 0x59;
+      iVar3 = 0x59;
     }
   }
   else {
     if (param_1[0x100] == 0) {
       iVar3 = (**(code **)(*param_1 + 0x20))();
       if (iVar3 == -1) {
-        iVar3 = FUN_006ad4d0(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35,0,-5,&DAT_007a4ccc);
+        iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35,0,-5,
+                                   &DAT_007a4ccc,s_stop_move_error_007ad3a0);
         if (iVar3 != 0) {
           pcVar1 = (code *)swi(3);
           uVar4 = (*pcVar1)();
           return uVar4;
         }
-        FUN_006a5e40(-5,DAT_007ed77c,0x7ad368,0x35);
+        RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x35);
       }
       else if (iVar3 == 1) {
         param_1[0x100] = 1;
@@ -84,15 +86,16 @@ LAB_004c6e4d:
       thunk_FUN_004167a0((int)param_1);
       goto LAB_004c6f47;
     }
-    iVar3 = FUN_006ad4d0(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x47,0,-5,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x47,0,-5,&DAT_007a4ccc,
+                               s_move_error_007ad390);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       uVar4 = (*pcVar1)();
       return uVar4;
     }
-    uVar4 = 0x47;
+    iVar3 = 0x47;
   }
-  FUN_006a5e40(-5,DAT_007ed77c,0x7ad368,uVar4);
+  RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_bmove_cpp_007ad368,iVar3);
 LAB_004c6f47:
   thunk_FUN_004162f0(param_1,&sStack_6,&sStack_8,&sStack_a);
   param_1[0x16c] = (int)sStack_6;

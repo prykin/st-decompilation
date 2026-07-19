@@ -29,17 +29,16 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   undefined4 *puVar19;
   undefined4 uVar20;
   undefined4 uVar21;
-  undefined4 local_5c;
-  undefined4 local_58 [17];
+  InternalExceptionFrame local_5c;
   SpecPanelTy *local_14;
   int local_10;
   SpecPanelTy *local_c;
   int local_8;
   
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
   local_14 = (SpecPanelTy *)this;
-  iVar3 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_14;
   if (iVar3 == 0) {
     DAT_008016ec = local_14;
@@ -102,17 +101,18 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     uVar9 = (**(code **)(iVar3 + 4))
                       (0,1,0xa0,0x5c,0,1,1,pCVar6,uVar9,uVar12,uVar14,uVar15,uVar17,uVar20,uVar21);
     *(undefined4 *)(pSVar2 + 0x1cd) = uVar9;
-    DAT_00858df8 = (undefined4 *)local_5c;
+    g_currentExceptionFrame = local_5c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_5c;
-  iVar16 = FUN_006ad4d0(s_E____titans_Andrey_setamine_cpp_007c7798,0x29,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_5c.previous;
+  iVar16 = ReportDebugMessage(s_E____titans_Andrey_setamine_cpp_007c7798,0x29,0,iVar3,&DAT_007a4ccc,
+                              s_SAMPanelTy__InitSAMPanel_007c77c0);
   if (iVar16 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c7798,0x29);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_setamine_cpp_007c7798,0x29);
   return;
 }
 

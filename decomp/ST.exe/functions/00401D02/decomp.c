@@ -19,8 +19,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   int iVar13;
   int iVar14;
   undefined4 *puVar15;
-  undefined4 uStack_1c8;
-  undefined4 auStack_1c4 [16];
+  InternalExceptionFrame IStack_1c8;
   uint auStack_184 [4];
   undefined4 uStack_174;
   undefined4 uStack_170;
@@ -48,10 +47,10 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   int iStack_5c;
   InterSystemC *pIStack_8;
   
-  uStack_1c8 = DAT_00858df8;
-  DAT_00858df8 = &uStack_1c8;
+  IStack_1c8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_1c8;
   pIStack_8 = this;
-  iVar4 = __setjmp3(auStack_1c4,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_1c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pIVar3 = pIStack_8;
   if (iVar4 == 0) {
     if (DAT_0080874e == '\x01') {
@@ -224,17 +223,18 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
       pcVar8 = (char *)FUN_006b0140(0x4275,DAT_00807618);
       thunk_FUN_0052d320(DAT_008016d8,pcVar8,uVar11);
     }
-    DAT_00858df8 = (undefined4 *)uStack_1c8;
+    g_currentExceptionFrame = IStack_1c8.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)uStack_1c8;
-  iVar13 = FUN_006ad4d0(s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_1c8.previous;
+  iVar13 = ReportDebugMessage(s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3,0,iVar4,&DAT_007a4ccc
+                              ,s_InterSystemC__CreateInterfObject_007c7c10);
   if (iVar13 != 0) {
     pcVar1 = (code *)swi(3);
     uVar10 = (*pcVar1)();
     return uVar10;
   }
-  FUN_006a5e40(iVar4,0,0x7c7be8,0xb3);
+  RaiseInternalException(iVar4,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0xb3);
   return 0xfffffffc;
 }
 

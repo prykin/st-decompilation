@@ -28,8 +28,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   byte bVar15;
   char *pcVar16;
   ulong uVar17;
-  undefined4 *local_a8;
-  undefined4 local_a4 [16];
+  InternalExceptionFrame local_a8;
   char *local_64;
   char *local_60;
   char *local_5c;
@@ -57,19 +56,20 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   local_28 = this;
   DVar5 = timeGetTime();
   *(DWORD *)(this + 0x61) = DVar5;
-  local_a8 = DAT_00858df8;
-  DAT_00858df8 = &local_a8;
-  iVar6 = __setjmp3(local_a4,0,unaff_EDI,unaff_ESI);
+  local_a8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a8;
+  iVar6 = __setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_28;
   if (iVar6 != 0) {
-    DAT_00858df8 = local_a8;
-    iVar12 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x284,0,iVar6,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_a8.previous;
+    iVar12 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x284,0,iVar6,
+                                &DAT_007a4ccc,s_FSGSTy__NoneFSGS_007cc0d4);
     if (iVar12 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar6,0,0x7cbf70,0x284);
+    RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x284);
     return;
   }
   switch(local_28[0x65]) {
@@ -189,7 +189,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
       local_8 = 0;
     }
     if (local_8 == 0) {
-      DAT_00858df8 = local_a8;
+      g_currentExceptionFrame = local_a8.previous;
       return;
     }
     puVar8 = &local_24;
@@ -303,7 +303,7 @@ joined_r0x00597872:
     }
     if (*(MMsgTy **)(*(int *)(this_01 + 0x1a5b) + 0x2e6) != (MMsgTy *)0x0) {
       MMsgTy::StatePanel(*(MMsgTy **)(*(int *)(this_01 + 0x1a5b) + 0x2e6),(int)&local_24);
-      DAT_00858df8 = local_a8;
+      g_currentExceptionFrame = local_a8.previous;
       return;
     }
     break;
@@ -411,32 +411,32 @@ joined_r0x00597872:
           this_01[0x1a5f] = FVar1;
           SetState(this_01,7);
           this_01[0x1a61] = (FSGSTy)0x0;
-          DAT_00858df8 = local_a8;
+          g_currentExceptionFrame = local_a8.previous;
           return;
         case (FSGSTy)0x6:
           this_01[0x1a5f] = FVar1;
           SetState(this_01,8);
           this_01[0x1a61] = (FSGSTy)0x0;
-          DAT_00858df8 = local_a8;
+          g_currentExceptionFrame = local_a8.previous;
           return;
         case (FSGSTy)0x8:
           this_01[0x1a5f] = FVar1;
           SetState(this_01,10);
         }
         this_01[0x1a61] = (FSGSTy)0x0;
-        DAT_00858df8 = local_a8;
+        g_currentExceptionFrame = local_a8.previous;
         return;
       }
       FVar1 = this_01[0x1a5a];
       this_01[0x65] = (FSGSTy)0x2;
       if ((FVar1 != (FSGSTy)0xff) && (*(int *)(this_01 + (uint)(byte)FVar1 * 0x1fb + 0xd1) != 0)) {
         FUN_006e3b50((undefined4 *)(this_01 + (uint)(byte)FVar1 * 0x1fb + 0xc1));
-        DAT_00858df8 = local_a8;
+        g_currentExceptionFrame = local_a8.previous;
         return;
       }
     }
   }
-  DAT_00858df8 = local_a8;
+  g_currentExceptionFrame = local_a8.previous;
   return;
 }
 

@@ -7,8 +7,7 @@ int __cdecl FUN_006488c0(int param_1,char *param_2,undefined4 *param_3,char para
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   uint local_14;
   uint local_10;
   undefined4 *local_c;
@@ -16,23 +15,24 @@ int __cdecl FUN_006488c0(int param_1,char *param_2,undefined4 *param_3,char para
   
   local_8 = (byte *)0x0;
   local_c = (undefined4 *)0x0;
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)((int)param_3 + 5) != '\x02')) {
-      FUN_006a5e40(-0x34,DAT_007ed77c,0x7d27f4,0x9c);
+      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x9c);
     }
     local_c = thunk_FUN_0065cd10(*(undefined4 **)((int)param_3 + 0x4e),&local_14);
     local_8 = (byte *)thunk_FUN_00648620(param_3,local_c,local_14,&local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
     FUN_006f3110(param_1,param_2,local_8,local_10,param_4);
     thunk_FUN_006484f0((int *)&local_8);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
-  iVar3 = FUN_006ad4d0(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0xa3,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_58.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_boss_d_cpp_007d27f4,0xa3,0,iVar2,&DAT_007a4ccc,
+                             s_SaveBossEdit_007d2838);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     iVar2 = (*pcVar1)();
@@ -40,7 +40,7 @@ int __cdecl FUN_006488c0(int param_1,char *param_2,undefined4 *param_3,char para
   }
   thunk_FUN_0065d0f0((int *)&local_c);
   thunk_FUN_006484f0((int *)&local_8);
-  FUN_006a5e40(iVar2,0,0x7d27f4,0xa6);
+  RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0xa6);
   return iVar2;
 }
 

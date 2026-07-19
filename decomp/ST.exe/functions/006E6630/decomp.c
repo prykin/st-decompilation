@@ -11,7 +11,7 @@ FUN_006e6630(void *this,int param_1,undefined1 param_2,undefined1 param_3,undefi
   if (*(int *)((int)this + 0x41c) <= param_1) {
     iVar1 = FUN_006acf50(*(undefined4 **)((int)this + 0x420),(param_1 + 100) * 4);
     if (iVar1 == 0) {
-      FUN_006a5e40(-2,DAT_007ed77c,0x7eec34,0x79);
+      RaiseInternalException(-2,DAT_007ed77c,s_E__ourlib_St3dsmap_cpp_007eec34,0x79);
       return 0xfffffffe;
     }
     puVar4 = (undefined4 *)(iVar1 + *(int *)((int)this + 0x41c) * 4);

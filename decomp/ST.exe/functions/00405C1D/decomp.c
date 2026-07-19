@@ -9,13 +9,12 @@ undefined4 thunk_FUN_00609b90(int param_1)
   undefined4 unaff_ESI;
   uint uVar5;
   void *unaff_EDI;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   STFieldC *pSStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
-  iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
+  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((*(int *)(pSStack_8 + 0x234) != 0) &&
        (iVar2 = *(int *)(*(int *)(pSStack_8 + 0x234) + 0xc), uVar5 = 0, 0 < iVar2)) {
@@ -38,17 +37,18 @@ undefined4 thunk_FUN_00609b90(int param_1)
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < iVar2);
     }
-    DAT_00858df8 = (undefined4 *)uStack_4c;
+    g_currentExceptionFrame = IStack_4c.previous;
     return 1;
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_nick_to_field_cpp_007cf850,0x208,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_4c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x208,0,iVar2,&DAT_007a4ccc,
+                             s_STFieldC__InitSprSistem_void__007cf874);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     uVar4 = (*pcVar1)();
     return uVar4;
   }
-  FUN_006a5e40(iVar2,0,0x7cf850,0x20a);
+  RaiseInternalException(iVar2,0,s_E____titans_nick_to_field_cpp_007cf850,0x20a);
   return 0xffff;
 }
 

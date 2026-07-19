@@ -36,15 +36,14 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
   undefined4 local_16d;
   int local_169;
   undefined4 local_6c [7];
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   WaitTy *local_c;
   uint local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_c;
   if (iVar4 == 0) {
     _DAT_0080f32e = 0;
@@ -371,18 +370,19 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
       MMsgTy::SetPanel(*(MMsgTy **)(*(int *)(this_01 + 0x1a5b) + 0x2e6),0,(int)&local_268,0,0);
       MMsgTy::StatePanel(*(MMsgTy **)(*(int *)(this_01 + 0x1a5b) + 0x2e6),(int)local_6c);
     }
-    thunk_FUN_00568bc0(&DAT_00807658,0);
+    thunk_FUN_00568bc0(&g_sound,0);
     if ((DAT_00807300._1_1_ & 8) != 0) {
-      thunk_FUN_0056a130(&DAT_00807658,0x14,'\x02',0,(uint *)0x0);
+      thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
     }
     thunk_FUN_005b6730(this_01,0xb,'\0',-1);
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_50;
-  iVar13 = FUN_006ad4d0(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xa3,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_50.previous;
+  iVar13 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0xa3,0,iVar4,&DAT_007a4ccc,
+                              s_WaitTy__InitWait_007cdd84);
   if (iVar13 == 0) {
-    FUN_006a5e40(iVar4,0,0x7cdd5c,0xa3);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0xa3);
     return;
   }
   pcVar3 = (code *)swi(3);

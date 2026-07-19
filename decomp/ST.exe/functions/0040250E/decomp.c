@@ -6,22 +6,21 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,undefined4 param_2,int para
   char cVar1;
   code *pcVar2;
   MReportTy *pMVar3;
-  int iVar4;
-  uint uVar5;
-  int iVar6;
+  int errorCode;
+  uint uVar4;
+  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   MReportTy *pMStack_c;
   uint uStack_8;
   
-  puStack_50 = DAT_00858df8;
-  DAT_00858df8 = &puStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pMStack_c = this;
-  iVar4 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = pMStack_c;
-  if (iVar4 == 0) {
+  if (errorCode == 0) {
     if (param_1 != -1) {
       cVar1 = *(char *)((int)&DAT_0080c83a + (byte)pMStack_c[0x69] + 3);
       uStack_8 = CONCAT31(uStack_8._1_3_,cVar1);
@@ -29,12 +28,12 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,undefined4 param_2,int para
       ccFntTy::SetSurf(*(ccFntTy **)(pMVar3 + 0x8b),*(int *)(pMVar3 + 0x73),0,param_3 + 8,
                        param_4 + 5,0x36,0x14);
       if (cVar1 == -1) {
-        uVar5 = 8;
+        uVar4 = 8;
       }
       else {
-        uVar5 = uStack_8 & 0xff;
+        uVar4 = uStack_8 & 0xff;
       }
-      ccFntTy::WrStr(*(ccFntTy **)(pMVar3 + 0x8b),&DAT_0080f33a,-1,-1,uVar5);
+      ccFntTy::WrStr(*(ccFntTy **)(pMVar3 + 0x8b),&DAT_0080f33a,-1,-1,uVar4);
     }
     cVar1 = DAT_0080c846;
     uStack_8 = CONCAT31(uStack_8._1_3_,DAT_0080c846);
@@ -42,23 +41,24 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,undefined4 param_2,int para
     ccFntTy::SetSurf(*(ccFntTy **)(pMVar3 + 0x8b),*(int *)(pMVar3 + 0x73),0,param_3 + 0x4c,
                      param_4 + 5,0x36,0x14);
     if (cVar1 == -1) {
-      uVar5 = 8;
+      uVar4 = 8;
     }
     else {
-      uVar5 = uStack_8 & 0xff;
+      uVar4 = uStack_8 & 0xff;
     }
-    ccFntTy::WrStr(*(ccFntTy **)(pMVar3 + 0x8b),&DAT_0080f33a,-1,-1,uVar5);
-    DAT_00858df8 = puStack_50;
+    ccFntTy::WrStr(*(ccFntTy **)(pMVar3 + 0x8b),&DAT_0080f33a,-1,-1,uVar4);
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   }
-  DAT_00858df8 = puStack_50;
-  iVar6 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x21c,0,iVar4,&DAT_007a4ccc);
-  if (iVar6 != 0) {
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x21c,0,errorCode,
+                             &DAT_007a4ccc,s_MReportTy__PaintObjScore_007cd008);
+  if (iVar5 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7ccec8,0x21c);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x21c);
   return;
 }
 

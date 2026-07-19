@@ -16,34 +16,34 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
   undefined4 extraout_ECX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   AiFltClassTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar5 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = local_8;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     if (iVar5 != -100) {
-      iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_flt_cpp_007d2b80,0xa5,0,iVar5,&DAT_007a4ccc);
+      iVar7 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0xa5,0,iVar5,&DAT_007a4ccc,
+                                 s_AiFltClassTy___AddObjFlt_007d2be0);
       if (iVar7 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
-      FUN_006a5e40(iVar5,0,0x7d2b80,0xa6);
+      RaiseInternalException(iVar5,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0xa6);
     }
     return;
   }
   if (param_1 == (int *)0x0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (*(short *)(local_8 + 0x7d) == -2) {
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
   if (DAT_007fa174 != (STAllPlayersC *)0x0) {
@@ -56,7 +56,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
     }
     if (((bVar2) && (*(short *)(pAVar3 + 0x7b) != 1)) ||
        (iVar5 = (**(code **)(*param_1 + 0x2c))(), iVar5 == 0x78)) {
-      FUN_006a5e40(-100,DAT_007ed77c,0x7d2b80,0x9b);
+      RaiseInternalException(-100,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0x9b);
     }
     puVar6 = FUN_006ae290((uint *)0x0,1,2,1);
     FUN_006ae1c0(puVar6,(undefined4 *)((int)param_1 + 0x32));
@@ -80,10 +80,10 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
               (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pAVar3[0x24]),
                *(ushort *)(pAVar3 + 0x7d),(int)puVar6,(undefined2 *)0x0);
     FUN_006ae110((byte *)puVar6);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return;
 }
 

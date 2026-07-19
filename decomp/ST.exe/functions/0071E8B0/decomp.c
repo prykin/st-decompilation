@@ -12,26 +12,26 @@ undefined4 FUN_0071e8b0(int *param_1)
   int *piVar7;
   void *unaff_EDI;
   int *piVar8;
-  undefined4 local_70;
-  undefined4 local_6c [16];
+  InternalExceptionFrame local_70;
   int local_2c [5];
   int *local_18;
   undefined4 local_14;
   int *local_c;
   int *local_8;
   
-  local_70 = DAT_00858df8;
-  DAT_00858df8 = &local_70;
-  iVar3 = __setjmp3(local_6c,0,unaff_EDI,unaff_ESI);
+  local_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_70;
+  iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_70;
-    iVar5 = FUN_006ad4d0(s_E__Ourlib__sviewer_cpp_007f0a68,0x108,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_70.previous;
+    iVar5 = ReportDebugMessage(s_E__Ourlib__sviewer_cpp_007f0a68,0x108,0,iVar3,&DAT_007a4ccc,
+                               s_ViewerClassTy__GetMessage_error___007f0aa0);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       uVar6 = (*pcVar2)();
       return uVar6;
     }
-    FUN_006a5e40(iVar3,0,0x7f0a68,0x109);
+    RaiseInternalException(iVar3,0,s_E__Ourlib__sviewer_cpp_007f0a68,0x109);
     return 0xffff;
   }
   switch(param_1[4]) {
@@ -51,7 +51,7 @@ undefined4 FUN_0071e8b0(int *param_1)
     piVar7 = (int *)param_1[5];
     local_8 = piVar7;
     if (piVar7 == (int *)0x0) {
-      FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0a68,0x2a);
+      RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib__sviewer_cpp_007f0a68,0x2a);
     }
     local_c[7] = *piVar7;
     local_c[8] = piVar7[1];
@@ -355,7 +355,7 @@ undefined4 FUN_0071e8b0(int *param_1)
     }
   }
   FUN_0072b780(param_1);
-  DAT_00858df8 = (undefined4 *)local_70;
+  g_currentExceptionFrame = local_70.previous;
   return 0;
 }
 

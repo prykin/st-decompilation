@@ -11,24 +11,24 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
   int iVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   HelpPanelTy *pHStack_8;
   
-  uStack_4c = DAT_00858df8;
-  DAT_00858df8 = &uStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pHStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pHStack_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_4c;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x39b,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x39b,0,iVar3,&DAT_007a4ccc
+                               ,s_HelpPanelTy__PrepMissObj_007c3b3c);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7c383c,0x39b);
+    RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x39b);
     return;
   }
   if (*(byte **)(pHStack_8 + 0x1d3) != (byte *)0x0) {
@@ -80,7 +80,7 @@ LAB_00514f85:
     *(undefined4 *)(this_00 + 0x2c) = 1;
     FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x19c),(undefined4 *)pHVar1);
   }
-  DAT_00858df8 = (undefined4 *)uStack_4c;
+  g_currentExceptionFrame = IStack_4c.previous;
   return;
 }
 

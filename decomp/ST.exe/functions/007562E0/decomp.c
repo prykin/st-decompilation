@@ -10,7 +10,7 @@ void FUN_007562e0(int param_1,int param_2,undefined4 param_3)
     *(undefined4 *)(*(int *)(param_1 + 0x1a6) + -0x370 + param_2 * 4) = param_3;
     return;
   }
-  FUN_006a5e40(0x43,DAT_007ed77c,0x7f2d38,0x74);
+  RaiseInternalException(0x43,DAT_007ed77c,s_E__DKW_JPG_C_jdapimin_c_007f2d38,0x74);
   return;
 }
 

@@ -106,7 +106,8 @@ LAB_00475545:
         } while (local_10 < (int)(uint)*(byte *)((int)param_1 + 0x2bf));
       }
       if (local_1c == -1) {
-        iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x303e,0,0,&DAT_007a4ccc);
+        iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x303e,0,0,&DAT_007a4ccc,
+                                   s_STBoatC__BackWaitLoad_swli_regim_007ab030);
         if (iVar4 != 0) {
           pcVar3 = (code *)swi(3);
           iVar4 = (*pcVar3)();
@@ -125,7 +126,8 @@ LAB_00475545:
     iVar4 = thunk_FUN_004749c0(param_1,(void *)0x2);
     return iVar4;
   }
-  iVar4 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc);
+  iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc,
+                             s_STBoatC__BackWaitLoad_swli_regim_007aaff0);
   if (iVar4 != 0) {
     pcVar3 = (code *)swi(3);
     iVar4 = (*pcVar3)();

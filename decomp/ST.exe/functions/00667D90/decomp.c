@@ -14,25 +14,25 @@ undefined4 FUN_00667d90(int param_1)
   undefined4 extraout_EDX_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   AiFltClassTy *local_10;
   byte *local_c;
   uint local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar5 = FUN_006ad4d0(s_E____titans_ai_ai_flt_cpp_007d2b80,0xeca,0,iVar3,
-                         (byte *)s_AiFltClassTy__GetMessage_error_m_007d2c7c);
+    g_currentExceptionFrame = local_54.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0xeca,0,iVar3,
+                               s_AiFltClassTy__GetMessage_error_m_007d2c7c,
+                               *(undefined4 *)(param_1 + 0x10),*(undefined4 *)(local_10 + 0x18));
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       uVar6 = (*pcVar2)();
       return uVar6;
     }
-    FUN_006a5e40(iVar3,0,0x7d2b80,0xecb);
+    RaiseInternalException(iVar3,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0xecb);
     return 0xffff;
   }
   *(undefined4 *)(local_10 + 0x280) = *(undefined4 *)(DAT_00802a38 + 0xe4);
@@ -60,7 +60,7 @@ undefined4 FUN_00667d90(int param_1)
       else if (uVar4 == 2) {
         puVar1 = *(undefined4 **)(param_1 + 0x14);
         if (puVar1 == (undefined4 *)0x0) {
-          FUN_006a5e40(-6,DAT_007ed77c,0x7d2b80,0xe70);
+          RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0xe70);
         }
         AiFltClassTy::InitData(local_10,puVar1);
         if (puVar1[3] == 0) {
@@ -127,7 +127,7 @@ undefined4 FUN_00667d90(int param_1)
   }
 LAB_00668010:
   FUN_006e5fd0();
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

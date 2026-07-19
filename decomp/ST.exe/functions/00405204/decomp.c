@@ -21,8 +21,7 @@ thunk_FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *par
   undefined4 *puVar14;
   uint *puVar15;
   bool bVar16;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   int *piStack_18;
   uint uStack_14;
   int iStack_10;
@@ -33,9 +32,9 @@ thunk_FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *par
   puStack_8 = (undefined4 *)0x0;
   iStack_10 = 0;
   puStack_c = (undefined4 *)0x0;
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
-  piVar3 = (int *)__setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
+  piVar3 = (int *)__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   piStack_18 = piVar3;
   if (piVar3 == (int *)0x0) {
     iStack_10 = param_3;
@@ -202,10 +201,10 @@ thunk_FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *par
       FUN_006ab060(&puStack_c);
       puVar4 = puStack_8;
     }
-    DAT_00858df8 = (undefined4 *)uStack_5c;
+    g_currentExceptionFrame = IStack_5c.previous;
     return puVar4;
   }
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   if (((*(char *)(param_1 + 6) == '\x02') && (iVar7 = *(int *)((int)param_1 + 0xc2), iVar7 != 0)) &&
      ((iVar9 = *(int *)(iVar7 + 0xc), iVar9 != 0 && (puStack_c != (undefined4 *)0x0)))) {
     if (0 < iVar9) {
@@ -236,9 +235,10 @@ thunk_FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *par
   if (puStack_8 != (undefined4 *)0x0) {
     FUN_006ab060(&puStack_8);
   }
-  iVar7 = FUN_006ad4d0(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xda,0,(int)piVar3,&DAT_007a4ccc);
+  iVar7 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xda,0,(int)piVar3,&DAT_007a4ccc
+                             ,s_PlrDataPack_007d2fc8);
   if (iVar7 == 0) {
-    FUN_006a5e40((int)piVar3,0,0x7d2fa4,0xdb);
+    RaiseInternalException((int)piVar3,0,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xdb);
     return (undefined4 *)0x0;
   }
   pcVar2 = (code *)swi(3);

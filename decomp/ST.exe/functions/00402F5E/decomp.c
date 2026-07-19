@@ -24,21 +24,21 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   undefined4 auStack_5a8 [256];
   byte abStack_1a8 [260];
   undefined4 auStack_a4 [20];
-  undefined4 *puStack_54;
-  undefined4 auStack_50 [16];
+  InternalExceptionFrame IStack_54;
   MTaskTy *pMStack_10;
   MTaskTy *pMStack_c;
   undefined4 *puStack_8;
   
   *(undefined4 *)(this + 0x61) = *(undefined4 *)(this + 0x69);
-  puStack_54 = DAT_00858df8;
-  DAT_00858df8 = &puStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pMStack_10 = this;
-  iVar4 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = pMStack_10;
   if (iVar4 != 0) {
-    DAT_00858df8 = puStack_54;
-    iVar4 = FUN_006ad4d0(s_E____titans_Start_task_obj_cpp_007cd994,0xdd,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_54.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,0xdd,0,iVar4,&DAT_007a4ccc,
+                               s_MTaskTy__InitMTask_007cda1c);
     pMVar3 = pMStack_10;
     if (iVar4 == 0) {
       thunk_FUN_005b66e0(pMStack_10);
@@ -159,7 +159,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   puVar6 = FUN_00709af0(DAT_00806784,0xb,(byte *)s_MT_CHECK_007cda58,0xffffffff,0,1,0,
                         (undefined4 *)0x0);
   *(ushort **)(pMVar3 + 0x81) = puVar6;
-  thunk_FUN_00568bc0(&DAT_00807658,0);
+  thunk_FUN_00568bc0(&g_sound,0);
   FUN_006bc360(*(int *)(pMVar3 + 0x5d),auStack_5a8,(int *)0x0);
   FUN_00718780((int)auStack_5a8,0,0x100,0x1a,0x10,(undefined4 *)(pMVar3 + 0x91));
   FUN_00718780((int)auStack_5a8,0,0x100,0x2e,0x10,(undefined4 *)(pMVar3 + 0x191));
@@ -280,7 +280,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   PlayScript(pMVar3);
   PaintMTask(pMVar3);
   thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)(pMVar3 + 0x5d),10,2);
-  DAT_00858df8 = puStack_54;
+  g_currentExceptionFrame = IStack_54.previous;
   return;
 }
 

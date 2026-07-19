@@ -22,7 +22,7 @@ void FUN_0075a0f0(int param_1,int param_2)
     return;
   }
   if (param_2 != 2) {
-    FUN_006a5e40(4,DAT_007ed77c,0x7f2de0,0x14f);
+    RaiseInternalException(4,DAT_007ed77c,s_E__DKW_JPG_C_jdmainct_c_007f2de0,0x14f);
     return;
   }
   *(code **)(iVar1 + 4) = FUN_0075a640;

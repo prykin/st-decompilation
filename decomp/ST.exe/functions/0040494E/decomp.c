@@ -14,13 +14,15 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   piVar4 = param_2;
   param_2 = (int *)thunk_FUN_0042b620((uint)param_2,param_3,1);
   if (param_2 == (int *)0x0) {
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21d0,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21d0,0,0,&DAT_007a4ccc,
+                               s_STAllPlayersC___ChangeMD_007a8000);
     if (iVar5 != 0) {
       pcVar3 = (code *)swi(3);
       iVar5 = (*pcVar3)();
       return iVar5;
     }
-    FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a6004,0x21d1);
+    RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x21d1)
+    ;
   }
   if (param_1 == 1) {
     iVar5 = _AddMDPairs(this,(uint)piVar4,uVar7);

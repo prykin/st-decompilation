@@ -41,12 +41,9 @@ void __thiscall ChooseMapTy::PrepFiles(ChooseMapTy *this,uint param_1)
   undefined4 uVar26;
   byte local_370 [260];
   _WIN32_FIND_DATAA local_26c;
-  undefined4 *local_12c;
-  undefined4 local_128 [16];
-  undefined4 *local_e8;
-  undefined4 local_e4 [16];
-  undefined4 local_a4;
-  undefined4 local_a0 [16];
+  InternalExceptionFrame local_12c;
+  InternalExceptionFrame local_e8;
+  InternalExceptionFrame local_a4;
   undefined4 local_60;
   FILETIME local_44;
   FILETIME local_3c;
@@ -102,20 +99,21 @@ switchD_005afd30_caseD_c:
       local_c = (cMf32 *)0x8f000805;
     }
   }
-  local_a4 = DAT_00858df8;
-  DAT_00858df8 = (undefined4 **)&local_a4;
+  local_a4.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a4;
   local_28 = this;
-  iVar5 = __setjmp3(local_a0,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar16 = local_28;
   if (iVar5 != 0) {
-    DAT_00858df8 = (undefined4 **)local_a4;
-    iVar12 = FUN_006ad4d0(s_E____titans_Start_load_obj_cpp_007cc728,0x4f5,0,iVar5,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_a4.previous;
+    iVar12 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x4f5,0,iVar5,
+                                &DAT_007a4ccc,s_ChooseMapTy__PrepFiles_007cc898);
     if (iVar12 != 0) {
       pcVar4 = (code *)swi(3);
       (*pcVar4)();
       return;
     }
-    FUN_006a5e40(iVar5,0,0x7cc728,0x4f5);
+    RaiseInternalException(iVar5,0,s_E____titans_Start_load_obj_cpp_007cc728,0x4f5);
     return;
   }
   if (*(byte **)(local_28 + 0x1c97) != (byte *)0x0) {
@@ -379,9 +377,9 @@ LAB_005b0041:
                   pCVar16 = pCVar16 + 1;
                   pCVar17 = pCVar17 + 1;
                 }
-                local_e8 = DAT_00858df8;
-                DAT_00858df8 = &local_e8;
-                iVar5 = __setjmp3(local_e4,0,unaff_EDI,unaff_ESI);
+                local_e8.previous = g_currentExceptionFrame;
+                g_currentExceptionFrame = &local_e8;
+                iVar5 = __setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
                 pCVar16 = local_28;
                 if (iVar5 == 0) {
                   puVar7 = FUN_006f0ec0(0x345,(byte *)(local_28 + 0x1faf),0,0,0);
@@ -407,7 +405,7 @@ LAB_005b0041:
                 else {
                   local_10 = 0;
                 }
-                DAT_00858df8 = (undefined4 **)local_e8;
+                g_currentExceptionFrame = local_e8.previous;
                 if (local_10 == 0) goto LAB_005b01f3;
               }
               FUN_006b5aa0(*(int *)(pCVar16 + 0x1c9f),local_26c.cFileName);
@@ -560,9 +558,9 @@ LAB_005b01f3:
         uVar26 = 0;
         local_24 = (cMf32 *)0x0;
         FUN_0072e730((byte *)pCVar19,(byte *)0x0,(byte *)0x0,local_370,(byte *)0x0);
-        local_12c = DAT_00858df8;
-        DAT_00858df8 = &local_12c;
-        iVar5 = __setjmp3(local_128,0,pCVar19,uVar26);
+        local_12c.previous = g_currentExceptionFrame;
+        g_currentExceptionFrame = &local_12c;
+        iVar5 = __setjmp3(local_12c.jumpBuffer,0,pCVar19,uVar26);
         pCVar16 = local_28;
         if (iVar5 == 0) {
           uVar20 = 0xffffffff;
@@ -692,10 +690,10 @@ LAB_005b0523:
             }
           }
           cMf32::delete(pcVar14,puVar7);
-          DAT_00858df8 = (undefined4 **)local_12c;
+          g_currentExceptionFrame = local_12c.previous;
         }
         else {
-          DAT_00858df8 = (undefined4 **)local_12c;
+          g_currentExceptionFrame = local_12c.previous;
         }
       }
       BVar9 = FindNextFileA(local_18,&local_26c);
@@ -817,7 +815,7 @@ LAB_005b07ac:
   FUN_006e6080(pCVar16,2,uVar26,(undefined4 *)(pCVar16 + 0x1d));
   *(undefined4 *)(pCVar16 + 0x1a64) = 1;
   *(undefined4 *)(pCVar16 + 0x1a68) = *(undefined4 *)(pCVar16 + 0x61);
-  DAT_00858df8 = (undefined4 **)local_a4;
+  g_currentExceptionFrame = local_a4.previous;
   return;
 }
 

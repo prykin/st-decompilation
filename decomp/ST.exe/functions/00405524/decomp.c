@@ -19,8 +19,7 @@ void thunk_FUN_005c8200(void)
   byte abStack_218 [336];
   undefined4 auStack_c8 [17];
   undefined4 uStack_84;
-  undefined4 *puStack_7c;
-  undefined4 auStack_78 [16];
+  InternalExceptionFrame IStack_7c;
   undefined4 auStack_38 [4];
   undefined4 uStack_28;
   undefined4 uStack_18;
@@ -28,11 +27,11 @@ void thunk_FUN_005c8200(void)
   SettMapTy *pSStack_c;
   SettMapTy *pSStack_8;
   
-  puStack_7c = DAT_00858df8;
-  DAT_00858df8 = &puStack_7c;
-  iVar2 = __setjmp3(auStack_78,0,unaff_EDI,unaff_ESI);
+  IStack_7c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_7c;
+  iVar2 = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = puStack_7c;
+    g_currentExceptionFrame = IStack_7c.previous;
     if (DAT_0080877e != '\0') {
       DVar5 = timeGetTime();
       *(DWORD *)(pSStack_c + 0x1f53) = DVar5;
@@ -68,7 +67,7 @@ void thunk_FUN_005c8200(void)
   pSStack_8 = (SettMapTy *)&DAT_008087b6;
   puVar4 = FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079c110,(int *)&pSStack_8,0);
   if (puVar4 == (ushort *)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x45a);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x45a);
   }
   if (DAT_0080877e == '\0') {
     *(undefined4 *)(pSStack_c + 0x2121) = 0xffffffff;
@@ -138,12 +137,12 @@ void thunk_FUN_005c8200(void)
   pSStack_8 = (SettMapTy *)&DAT_00853de0;
   puVar4 = FUN_006f1ce0(0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&pSStack_8,0);
   if (puVar4 == (ushort *)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x475);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x475);
   }
   pSStack_8 = pSStack_c + 0x1f53;
   puVar4 = FUN_006f1ce0(0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&pSStack_8,0);
   if (puVar4 == (ushort *)0x0) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7cd0e8,0x477);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x477);
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
@@ -177,7 +176,7 @@ void thunk_FUN_005c8200(void)
     pSVar9 = pSVar9 + 4;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  DAT_00858df8 = puStack_7c;
+  g_currentExceptionFrame = IStack_7c.previous;
   return;
 }
 

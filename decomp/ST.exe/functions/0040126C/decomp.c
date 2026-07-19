@@ -14,8 +14,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   void *unaff_EDI;
   undefined4 *puVar9;
   undefined4 auStack_470 [256];
-  undefined4 *puStack_70;
-  undefined4 auStack_6c [16];
+  InternalExceptionFrame IStack_70;
   undefined4 auStack_2c [8];
   MReportTy *pMStack_c;
   char cStack_5;
@@ -26,10 +25,10 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   else {
     cStack_5 = DAT_0080874e;
   }
-  puStack_70 = DAT_00858df8;
-  DAT_00858df8 = &puStack_70;
+  IStack_70.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_70;
   pMStack_c = this;
-  iVar4 = __setjmp3(auStack_6c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = pMStack_c;
   if (iVar4 == 0) {
     pMVar1 = pMStack_c + 0x5d;
@@ -76,17 +75,18 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
       auStack_2c[4] = 0x70ff;
       FUN_006e3b50(auStack_2c);
     }
-    DAT_00858df8 = puStack_70;
+    g_currentExceptionFrame = IStack_70.previous;
     return;
   }
-  DAT_00858df8 = puStack_70;
-  iVar8 = FUN_006ad4d0(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_70.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c,0,iVar4,&DAT_007a4ccc,
+                             s_MReportTy__SetCtrl_007cd05c);
   if (iVar8 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7ccec8,0x32c);
+  RaiseInternalException(iVar4,0,s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c);
   return;
 }
 

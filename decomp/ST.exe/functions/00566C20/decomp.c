@@ -13,25 +13,25 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   SoundManagerTy *local_8;
   
   local_8 = this;
   uVar3 = FUN_006e51b0(*(int *)(this + 0x10));
   *(undefined4 *)(this + 0x1c) = uVar3;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar5 = FUN_006ad4d0(s_E____titans_snd_mngr_cpp_007c9748,0xdc,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_snd_mngr_cpp_007c9748,0xdc,0,iVar4,&DAT_007a4ccc,
+                               s_SoundManagerTy__GetMessage_007c9768);
     if (iVar5 != 0) {
       pcVar2 = (code *)swi(3);
       uVar3 = (*pcVar2)();
       return uVar3;
     }
-    FUN_006a5e40(iVar4,0,0x7c9748,0xdc);
+    RaiseInternalException(iVar4,0,s_E____titans_snd_mngr_cpp_007c9748,0xdc);
     return 0xffff;
   }
   iVar4 = *(int *)(param_1 + 0x10);
@@ -94,9 +94,9 @@ LAB_00566d35:
     }
   }
   thunk_FUN_00566aa0(local_8);
-  SoundClassTy::CheckFader((SoundClassTy *)&DAT_00807658);
+  SoundClassTy::CheckFader((SoundClassTy *)&g_sound);
 LAB_00566d75:
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   uVar3 = FUN_006e5fd0();
   return uVar3;
 }

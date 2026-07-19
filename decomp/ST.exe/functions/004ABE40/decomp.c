@@ -11,7 +11,8 @@ undefined4 __thiscall FUN_004abe40(void *this,char param_1,undefined4 param_2)
   
   if (*(int *)((int)this + 0x18) != -1) {
     if ((param_1 < '\0') || (*(int *)((int)this + 0x14) + -1 < (int)param_1)) {
-      iVar4 = FUN_006ad4d0(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x93,0,0,&DAT_007a4ccc);
+      iVar4 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x93,0,0,&DAT_007a4ccc,
+                                 s_STT3DSprC__SetCurFase_wrong_leve_007ac67c);
       if (iVar4 != 0) {
         pcVar3 = (code *)swi(3);
         uVar5 = (*pcVar3)();

@@ -4,19 +4,19 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
 {
   code *pcVar1;
   MMObjTy *pMVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
   void *unaff_ESI;
-  undefined4 uVar5;
+  InternalExceptionFrame *pIVar4;
   undefined4 auStack_48 [16];
   MMObjTy *pMStack_8;
   
-  uVar5 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar4 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pMStack_8 = (MMObjTy *)this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,uVar5);
+  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pMVar2 = pMStack_8;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     MMObjTy::DoneMMObj(pMStack_8);
     if (*(byte **)(pMVar2 + 0x1cd0) != (byte *)0x0) {
       FUN_006b5570(*(byte **)(pMVar2 + 0x1cd0));
@@ -49,17 +49,18 @@ void __thiscall SIDTy::DoneSID(SIDTy *this)
     if (*(int *)(pMVar2 + 0x4d) != 0) {
       FUN_006e3b50((undefined4 *)(pMVar2 + 0x3d));
     }
-    DAT_00858df8 = (undefined1 *)uVar5;
+    g_currentExceptionFrame = pIVar4;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar5;
-  iVar4 = FUN_006ad4d0(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x62,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = pIVar4;
+  iVar3 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x62,0,errorCode,&DAT_007a4ccc
+                             ,s_SIDTy__DoneSID_007cd628);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cd5c4,0x62);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x62);
   return;
 }
 

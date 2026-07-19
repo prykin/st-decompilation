@@ -13,14 +13,13 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
   MMObjTy *pMVar4;
   void *unaff_EDI;
   int iVar5;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   MMObjTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = (MMObjTy *)this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar4 = local_8;
   if (iVar3 == 0) {
     MMObjTy::DoneMMObj(local_8);
@@ -33,7 +32,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       }
     }
     thunk_FUN_0055dbf0(DAT_0080759c,10,2);
-    thunk_FUN_00568bc0(&DAT_00807658,1);
+    thunk_FUN_00568bc0(&g_sound,1);
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
       cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
@@ -75,17 +74,18 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     if (*(int *)(pMVar2 + 0x4d) != 0) {
       FUN_006e3b50((undefined4 *)(pMVar2 + 0x3d));
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x9d,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar5 = ReportDebugMessage(s_E____titans_Start_camp_obj_cpp_007cbcd4,0x9d,0,iVar3,&DAT_007a4ccc,
+                             s_CampaignTy__DoneCampaign_007cbdd0);
   if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7cbcd4,0x9d);
+  RaiseInternalException(iVar3,0,s_E____titans_Start_camp_obj_cpp_007cbcd4,0x9d);
   return;
 }
 

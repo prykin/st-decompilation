@@ -10,20 +10,19 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
   code *pcVar1;
   InfocPanelTy *pIVar2;
   char cVar3;
+  int errorCode;
   int iVar4;
-  int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   InfocPanelTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pIVar2 = local_8;
-  if (iVar4 == 0) {
+  if (errorCode == 0) {
     if ((local_8[0x3d4] == (InfocPanelTy)0xff) && (param_1 == 0xffff)) {
       wsprintfA((LPSTR)(local_8 + 0x18d),s_______d_007c3fc0,param_2 & 0xffff);
     }
@@ -41,17 +40,18 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
                      0xc);
     ccFntTy::WrStr(*(ccFntTy **)(pIVar2 + 0x189),(uint *)(pIVar2 + 0x18d),-1,-1,
                    (DAT_0080874e != '\x03') - 1 & 5);
-    DAT_00858df8 = local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = local_4c;
-  iVar5 = FUN_006ad4d0(s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9,0,iVar4,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9,0,errorCode,
+                             &DAT_007a4ccc,s_InfocPanelTy__PaintInfocObj_007c3f94);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar4,0,0x7c3eb0,0xa9);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_infocen_cpp_007c3eb0,0xa9);
   return;
 }
 

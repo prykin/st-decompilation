@@ -15,8 +15,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   uint uVar6;
   uint uVar7;
   void *unaff_EDI;
-  undefined4 local_90;
-  undefined4 local_8c [16];
+  InternalExceptionFrame local_90;
   byte *local_4c;
   byte *local_48;
   byte *local_44;
@@ -38,9 +37,9 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   local_1c = *(int *)((int)&DAT_007f5816 + param_1 * 0xa62);
   local_40 = *(uint **)((int)&DAT_007f581a + param_1 * 0xa62);
   if (local_1c != 0) {
-    local_90 = DAT_00858df8;
-    DAT_00858df8 = &local_90;
-    iVar2 = __setjmp3(local_8c,0,unaff_EDI,unaff_ESI);
+    local_90.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_90;
+    iVar2 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       local_18 = *(uint *)(local_1c + 0xc);
       iVar2 = local_1c;
@@ -173,18 +172,19 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
           iVar2 = local_1c;
         } while ((int)local_c < (int)local_18);
       }
-      DAT_00858df8 = (undefined4 *)local_90;
+      g_currentExceptionFrame = local_90.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_90;
+    g_currentExceptionFrame = local_90.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a25,0,0,&DAT_007a4ccc);
+      iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a25,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__OptimizeGuardBoat_007a8430);
       if (iVar5 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
-      FUN_006a5e40(iVar2,0,0x7a6004,0x2a26);
+      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2a26);
     }
   }
   return;

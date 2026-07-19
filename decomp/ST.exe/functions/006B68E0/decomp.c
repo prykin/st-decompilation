@@ -25,7 +25,7 @@ int FUN_006b68e0(undefined4 *param_1,undefined4 *param_2)
       return 0;
     }
   }
-  FUN_006a5e40(iVar1,DAT_007ed77c,0x7edbc4,0x242);
+  RaiseInternalException(iVar1,DAT_007ed77c,s_E__DKW_DDX_C_dplay2_cpp_007edbc4,0x242);
   return iVar1;
 }
 

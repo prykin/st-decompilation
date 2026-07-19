@@ -36,8 +36,7 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   int iVar19;
   int iVar20;
   undefined4 uVar21;
-  undefined4 *local_88;
-  undefined4 local_84 [16];
+  InternalExceptionFrame local_88;
   HelpPanelTy *local_44;
   int local_40;
   byte *local_3c;
@@ -61,15 +60,16 @@ void __thiscall HelpPanelTy::TechProc(HelpPanelTy *this,uint param_1,byte param_
   local_8 = 0;
   local_44 = this;
   local_3c = (byte *)FUN_0070b3a0((int)pvVar18,4);
-  local_88 = DAT_00858df8;
-  DAT_00858df8 = &local_88;
-  iVar7 = __setjmp3(local_84,0,pvVar18,uVar21);
+  local_88.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_88;
+  iVar7 = __setjmp3(local_88.jumpBuffer,0,pvVar18,uVar21);
   this_00 = local_44;
   if (iVar7 != 0) {
-    DAT_00858df8 = local_88;
-    iVar19 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x55a,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_88.previous;
+    iVar19 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x55a,0,iVar7,
+                                &DAT_007a4ccc,s_HelpPanelTy__TechProc_007c3c44);
     if (iVar19 == 0) {
-      FUN_006a5e40(iVar7,0,0x7c383c,0x55a);
+      RaiseInternalException(iVar7,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x55a);
       return;
     }
     pcVar3 = (code *)swi(3);
@@ -419,7 +419,7 @@ LAB_00516f6b:
   UVar8 = thunk_FUN_00528a30(uVar17,param_2);
   DrawDescription(this_00,&local_8,UVar8);
   AddLinks(this_00,&local_8,'\x05',param_1,local_38);
-  DAT_00858df8 = local_88;
+  g_currentExceptionFrame = local_88.previous;
   return;
 }
 

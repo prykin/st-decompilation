@@ -12,7 +12,7 @@ int FUN_00759480(int *param_1,int param_2,uint param_3,uint param_4)
   iVar2 = *param_1;
   uVar1 = (uint)(0x3b9ac9f4 / (ulonglong)param_3);
   if (uVar1 == 0) {
-    FUN_006a5e40(0x45,DAT_007ed77c,0x7f2dc8,0x195);
+    RaiseInternalException(0x45,DAT_007ed77c,s_E__DKW_JPG_C_jmemmgr_c_007f2dc8,0x195);
   }
   if ((int)param_4 <= (int)uVar1) {
     uVar1 = param_4;

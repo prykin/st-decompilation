@@ -16,8 +16,7 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   undefined4 *puVar11;
   void *unaff_EDI;
   STAllPlayersC *pSVar12;
-  undefined4 uStack_6c;
-  undefined4 auStack_68 [16];
+  InternalExceptionFrame IStack_6c;
   uint *puStack_28;
   int iStack_24;
   uint *puStack_20;
@@ -28,20 +27,21 @@ undefined4 * __thiscall STAllPlayersC::SaveGObjData(STAllPlayersC *this,int *par
   undefined4 *puStack_c;
   uint uStack_8;
   
-  uStack_6c = DAT_00858df8;
-  DAT_00858df8 = &uStack_6c;
+  IStack_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_6c;
   pSStack_14 = this;
-  iVar3 = __setjmp3(auStack_68,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_14;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_6c;
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe46,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_6c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe46,0,iVar3,&DAT_007a4ccc,
+                               s_STAllPlayersC__SaveGObjData_007a5058);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       puVar4 = (undefined4 *)(*pcVar1)();
       return puVar4;
     }
-    FUN_006a5e40(iVar3,0,0x7a4e0c,0xe47);
+    RaiseInternalException(iVar3,0,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xe47);
     return puStack_c;
   }
   *param_1 = 0x281;
@@ -429,7 +429,7 @@ LAB_004212f3:
         *(undefined2 *)(puVar11 + 1) = *(undefined2 *)(puVar4 + 1);
         *(int *)((int)puStack_18 + 0x269) = iVar3 + 0x140;
         *(undefined4 *)((int)puStack_18 + 0x26d) = 6;
-        DAT_00858df8 = (undefined4 *)uStack_6c;
+        g_currentExceptionFrame = IStack_6c.previous;
         return puStack_18;
       }
       if (iVar5 == 1000) {
@@ -622,12 +622,12 @@ LAB_004212f3:
         *(undefined1 *)((int)puVar11 + 10) = *(undefined1 *)((int)puVar8 + 10);
         *(int *)((int)puVar4 + 0x249) = iVar5 + 0x23;
         *(undefined4 *)((int)puVar4 + 0x24d) = 0xb;
-        DAT_00858df8 = (undefined4 *)uStack_6c;
+        g_currentExceptionFrame = IStack_6c.previous;
         return puStack_c;
       }
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_6c;
+  g_currentExceptionFrame = IStack_6c.previous;
   return puStack_c;
 }
 

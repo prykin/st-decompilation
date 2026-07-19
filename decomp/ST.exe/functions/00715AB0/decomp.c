@@ -8,21 +8,20 @@ undefined4 __thiscall SpriteClassTy::CloseSprite(SpriteClassTy *this)
 {
   code *pcVar1;
   SpriteClassTy *pSVar2;
+  int errorCode;
   int iVar3;
-  int iVar4;
-  undefined4 uVar5;
+  undefined4 uVar4;
   undefined4 unaff_EBX;
   void *unaff_ESI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   SpriteClassTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,unaff_EBX);
+  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   pSVar2 = local_8;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     if ((*(int **)(local_8 + 0x48) != (int *)0x0) && (*(uint *)(local_8 + 4) != 0xffffffff)) {
       FUN_006b3bb0(*(int **)(local_8 + 0x48),*(uint *)(local_8 + 4));
     }
@@ -55,17 +54,18 @@ undefined4 __thiscall SpriteClassTy::CloseSprite(SpriteClassTy *this)
     *(undefined4 *)(pSVar2 + 0x48) = 0;
     *(undefined4 *)(pSVar2 + 0x4d) = 0;
     pSVar2[0x65] = (SpriteClassTy)0x0;
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar4 = FUN_006ad4d0(s_E__Ourlib_Sprite_cpp_007f0454,0x76,0,iVar3,&DAT_007a4ccc);
-  if (iVar4 != 0) {
+  g_currentExceptionFrame = local_4c.previous;
+  iVar3 = ReportDebugMessage(s_E__Ourlib_Sprite_cpp_007f0454,0x76,0,errorCode,&DAT_007a4ccc,
+                             s_SpriteClassTy__CloseSprite_007f0488);
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar5 = (*pcVar1)();
-    return uVar5;
+    uVar4 = (*pcVar1)();
+    return uVar4;
   }
-  FUN_006a5e40(iVar3,0,0x7f0454,0x78);
+  RaiseInternalException(errorCode,0,s_E__Ourlib_Sprite_cpp_007f0454,0x78);
   return 0xfffffc18;
 }
 

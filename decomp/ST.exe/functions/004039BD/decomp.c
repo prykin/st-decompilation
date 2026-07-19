@@ -9,8 +9,7 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
   undefined4 unaff_ESI;
   undefined4 *puVar4;
   void *unaff_EDI;
-  undefined4 uStack_b8;
-  undefined4 auStack_b4 [16];
+  InternalExceptionFrame IStack_b8;
   undefined4 auStack_74 [5];
   undefined4 uStack_60;
   undefined4 uStack_5c;
@@ -20,10 +19,10 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
   undefined4 *puStack_14;
   CursorClassTy *pCStack_8;
   
-  uStack_b8 = DAT_00858df8;
-  DAT_00858df8 = &uStack_b8;
+  IStack_b8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_b8;
   pCStack_8 = this;
-  iVar2 = __setjmp3(auStack_b4,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = auStack_28;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -47,17 +46,18 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
       FUN_006e6000(this_00,3,1,auStack_28);
       puVar4 = puVar4 + 1;
     } while ((int)puVar4 < 0x808146);
-    DAT_00858df8 = (undefined4 *)uStack_b8;
+    g_currentExceptionFrame = IStack_b8.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_b8;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x175,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_b8.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x175,0,iVar2,&DAT_007a4ccc
+                             ,s_CursorClassTy__AddOpticAcc_007c7ecc);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c7d60,0x176);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x176);
   return;
 }
 

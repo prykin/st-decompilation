@@ -18,8 +18,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
   uint *puVar12;
   char *pcVar13;
   uint auStack_450 [256];
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   uint uStack_c;
   cLoadingTy *pcStack_8;
   
@@ -28,15 +27,16 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
   if (*(int *)(this + 0x3c) < -1) {
     return;
   }
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
+  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pcVar10 = pcStack_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_grig_loading_cpp_007c8f0c,0x14a,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x14a,0,iVar3,&DAT_007a4ccc,
+                               s_cLoadingTy__SetState_007c8fd0);
     if (iVar6 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c8f0c,0x14b);
+      RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0x14b);
       return;
     }
     pcVar2 = (code *)swi(3);
@@ -102,7 +102,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
       pcVar13 = pcVar13 + 1;
     }
     DrawLine(pcStack_8,auStack_450);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   case 1:
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
@@ -223,12 +223,12 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
       }
       DrawLine(pcVar10,auStack_450);
       *(uint *)(pcVar10 + 0x50) = uVar8;
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return;
     }
     if (*(code **)(pcVar10 + 0x58) != (code *)0x0) {
       (**(code **)(pcVar10 + 0x58))(*(undefined4 *)(pcVar10 + 0x54));
-      DAT_00858df8 = (undefined4 *)uStack_50;
+      g_currentExceptionFrame = IStack_50.previous;
       return;
     }
     break;
@@ -385,14 +385,14 @@ joined_r0x00555393:
       }
     }
     DrawLineCR(pcVar10,auStack_450);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   default:
     if (*(code **)(pcStack_8 + 0x58) != (code *)0x0) {
       (**(code **)(pcStack_8 + 0x58))(*(undefined4 *)(pcStack_8 + 0x54));
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
+  g_currentExceptionFrame = IStack_50.previous;
   return;
 }
 

@@ -13,8 +13,7 @@ int FUN_006d0a20(uint param_1,int *param_2,int param_3,int param_4,BITMAPINFO *p
   int local_f8 [4];
   undefined4 local_e8;
   int local_d4;
-  undefined4 local_74;
-  undefined4 local_70 [16];
+  InternalExceptionFrame local_74;
   undefined4 local_30 [4];
   int local_20;
   undefined1 *local_1c;
@@ -84,9 +83,9 @@ LAB_006d0b09:
     }
   }
   else {
-    local_74 = DAT_00858df8;
-    DAT_00858df8 = &local_74;
-    iVar2 = __setjmp3(local_70,2,FUN_0072da21,local_8);
+    local_74.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_74;
+    iVar2 = __setjmp3(local_74.jumpBuffer,2,FUN_0072da21,local_8);
     local_1c = &stack0xfffffed0;
     puVar1 = &stack0xfffffed0;
     if (iVar2 == 0) {
@@ -98,10 +97,10 @@ LAB_006d0b09:
     local_1c = puVar1;
     local_20 = iVar2;
     iVar2 = local_20;
-    DAT_00858df8 = (undefined4 *)local_74;
+    g_currentExceptionFrame = local_74.previous;
     FUN_006c44e0(param_1,local_30);
     if (iVar2 != 0) {
-      FUN_006a5e40(iVar2,DAT_007ed77c,0x7ee1cc,0x1f);
+      RaiseInternalException(iVar2,DAT_007ed77c,s_E__DKW_DDX_C__dddibts_c_007ee1cc,0x1f);
     }
   }
   ExceptionList = local_14;

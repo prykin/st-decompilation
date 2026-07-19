@@ -87,7 +87,8 @@ thunk_FUN_0043aaf0(int param_1,uint param_2,int param_3,uint param_4,int *param_
     else {
       if (param_1 != 0x172) {
 LAB_0043acdb:
-        iVar6 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x19fb,0,0,&DAT_007a4ccc);
+        iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x19fb,0,0,&DAT_007a4ccc
+                                   ,s_STAllPlayersC__GetCamPoint_inval_007a79f4);
         if (iVar6 == 0) {
           return 0xffffffff;
         }

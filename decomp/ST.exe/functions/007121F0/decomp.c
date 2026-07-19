@@ -17,8 +17,7 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
   ccFntTy *pcVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_80;
-  undefined4 local_7c [16];
+  InternalExceptionFrame local_80;
   char *local_3c;
   undefined4 local_38;
   uint *local_30;
@@ -48,19 +47,19 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
       if ((int)uVar1 < (int)(param_5 + param_4)) {
         param_5 = uVar1 - param_4;
       }
-      local_80 = DAT_00858df8;
-      DAT_00858df8 = &local_80;
+      local_80.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_80;
       local_24 = this;
-      iVar3 = __setjmp3(local_7c,0,unaff_EDI,unaff_ESI);
+      iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar3 == 0) {
         local_10 = FUN_006b54f0((uint *)0x0,param_5,*(uint *)(param_1 + 0x10));
         iVar3 = FUN_00714da0(&local_30);
         if (iVar3 != 0) {
-          FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x77a);
+          RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x77a);
         }
         iVar3 = FUN_00714da0(&local_3c);
         if (iVar3 != 0) {
-          FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x77b);
+          RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x77b);
         }
         this_00 = local_24;
         iVar3 = 0;
@@ -110,7 +109,7 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
                 }
                 iVar3 = FUN_00714e80(&local_30,(char *)puVar4);
                 if (iVar3 != 0) {
-                  FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x795);
+                  RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x795);
                 }
                 iVar3 = FUN_00711110(this_00,local_30);
                 if (*(int *)(this_00 + 0x7e) == 0) {
@@ -125,17 +124,18 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
                  (iVar5 = FUN_007121a0(param_1,local_18 + 1,local_1c), iVar5 != 0)) {
                 iVar3 = FUN_00714dc0(&local_3c,(char *)local_30);
                 if (iVar3 != 0) {
-                  FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x79c);
+                  RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x79c);
                 }
                 if (((char)*local_30 != '\0') &&
                    (iVar3 = FUN_00714f70(&local_30,(char *)param_2), iVar3 != 0)) {
-                  FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x79d);
+                  RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x79d);
                 }
                 iVar3 = FUN_00711110(this_00,local_30);
                 if (param_3 < iVar3) {
                   iVar3 = FUN_00714dc0(&local_30,local_3c);
                   if (iVar3 != 0) {
-                    FUN_006a5e40(iVar3,DAT_007ed77c,0x7f0190,0x79f);
+                    RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x79f)
+                    ;
                   }
                   if ((char)*local_30 != '\0') {
                     if (local_14 == 0) {
@@ -187,7 +187,7 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
           }
           local_14 = 0;
         }
-        DAT_00858df8 = (undefined4 *)local_80;
+        g_currentExceptionFrame = local_80.previous;
         if (local_3c != (char *)0x0) {
           FUN_006ab060(&local_3c);
         }
@@ -197,8 +197,9 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
         }
         return local_10;
       }
-      DAT_00858df8 = (undefined4 *)local_80;
-      iVar5 = FUN_006ad4d0(s_E__Ourlib_mfcfnt_cpp_007f0190,0x7c3,0,iVar3,&DAT_007a4ccc);
+      g_currentExceptionFrame = local_80.previous;
+      iVar5 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x7c3,0,iVar3,&DAT_007a4ccc,
+                                 s_ccFntTy__FormSarr_007f02d8);
       if (iVar5 != 0) {
         pcVar2 = (code *)swi(3);
         puVar4 = (uint *)(*pcVar2)();
@@ -218,7 +219,7 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
         FUN_006ab060(&local_3c);
       }
       local_38 = 0;
-      FUN_006a5e40(iVar3,0,0x7f0190,0x7ca);
+      RaiseInternalException(iVar3,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x7ca);
       if (local_3c != (char *)0x0) {
         FUN_006ab060(&local_3c);
       }

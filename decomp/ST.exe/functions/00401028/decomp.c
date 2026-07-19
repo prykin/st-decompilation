@@ -13,8 +13,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   uint uVar6;
   uint uVar7;
   void *unaff_EDI;
-  undefined4 uStack_68;
-  undefined4 auStack_64 [16];
+  InternalExceptionFrame IStack_68;
   byte *pbStack_24;
   byte *pbStack_20;
   byte *pbStack_1c;
@@ -24,27 +23,29 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   int iStack_c;
   uint uStack_8;
   
-  uStack_68 = DAT_00858df8;
+  IStack_68.previous = g_currentExceptionFrame;
   iStack_18 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
-  DAT_00858df8 = &uStack_68;
+  g_currentExceptionFrame = &IStack_68;
   pSStack_14 = this;
-  iVar2 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar4 = iStack_18;
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_68;
+    g_currentExceptionFrame = IStack_68.previous;
     if (iVar2 != -0x5001fff7) {
-      iVar4 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x296d,0,0,&DAT_007a4ccc);
+      iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x296d,0,0,&DAT_007a4ccc,
+                                 s_STAllPlayersC__DeleteGuardBoat_007a83b8);
       if (iVar4 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
-      FUN_006a5e40(iVar2,0,0x7a6004,0x296e);
+      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x296e);
     }
     return;
   }
   if (iStack_18 == 0) {
-    FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x291d);
+    RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x291d)
+    ;
   }
   iStack_c = *(int *)(iVar4 + 0xc);
   if (param_3 == 1) {
@@ -83,7 +84,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
     }
     if (iStack_c == 0) {
       DeletePGPairs(pSStack_14,(char)param_1);
-      DAT_00858df8 = (undefined4 *)uStack_68;
+      g_currentExceptionFrame = IStack_68.previous;
       return;
     }
   }
@@ -112,8 +113,9 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
               FUN_006acc70((int)pbStack_20,uVar7,&uStack_8);
               pvVar3 = (void *)thunk_FUN_0042b620(param_1,uStack_8,1);
               if (pvVar3 == (void *)0x0) {
-                iVar2 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2955,0,0,
-                                     &DAT_007a4ccc);
+                iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2955,0,0,
+                                           &DAT_007a4ccc,s_STAllPlayersC__DeleteGuardBoat_N_007a83e0
+                                          );
                 if (iVar2 != 0) {
                   pcVar1 = (code *)swi(3);
                   (*pcVar1)();
@@ -140,14 +142,14 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
     }
     if (iStack_c == 0) {
       DeletePGPairs(pSStack_14,(char)param_1);
-      DAT_00858df8 = (undefined4 *)uStack_68;
+      g_currentExceptionFrame = IStack_68.previous;
       return;
     }
   }
   this_00 = pSStack_14;
   OptimizeGuardBoats(pSStack_14,(char)param_1);
   DistributeGuardBoats(this_00,param_1);
-  DAT_00858df8 = (undefined4 *)uStack_68;
+  g_currentExceptionFrame = IStack_68.previous;
   return;
 }
 

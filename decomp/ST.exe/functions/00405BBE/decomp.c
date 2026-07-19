@@ -4,50 +4,51 @@ STAllPlayersC::AddObjsToTmp(STAllPlayersC *this,uint param_1,int param_2,int par
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
-  undefined4 uVar4;
+  undefined4 uVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar5;
-  undefined4 uStack_54;
-  undefined4 auStack_50 [16];
+  uint uVar4;
+  InternalExceptionFrame IStack_54;
   int iStack_10;
   STAllPlayersC *pSStack_c;
   uint uStack_8;
   
-  uStack_54 = DAT_00858df8;
-  DAT_00858df8 = &uStack_54;
+  IStack_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_54;
   pSStack_c = this;
-  iVar2 = __setjmp3(auStack_50,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
+  errorCode = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     if (param_4 == 0) {
-      FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7a6004,0x266);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x266);
     }
     iStack_10 = *(int *)(param_4 + 0xc);
-    uVar5 = 0;
+    uVar4 = 0;
     if (0 < iStack_10) {
       do {
-        FUN_006acc70(param_4,uVar5,&uStack_8);
+        FUN_006acc70(param_4,uVar4,&uStack_8);
         if ((short)uStack_8 != -1) {
           AddObjToTmp(pSStack_c,(char)param_1,param_2,param_3,param_1,uStack_8);
         }
-        uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < iStack_10);
+        uVar4 = uVar4 + 1;
+      } while ((int)uVar4 < iStack_10);
     }
-    DAT_00858df8 = (undefined4 *)uStack_54;
+    g_currentExceptionFrame = IStack_54.previous;
   }
   else {
-    DAT_00858df8 = (undefined4 *)uStack_54;
-    if (iVar2 != -0x5001fff7) {
-      iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x26e,0,iVar2,&DAT_007a4ccc);
-      if (iVar3 == 0) {
-        FUN_006a5e40(iVar2,0,0x7a6004,0x26f);
+    g_currentExceptionFrame = IStack_54.previous;
+    if (errorCode != -0x5001fff7) {
+      iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x26e,0,errorCode,
+                                 &DAT_007a4ccc,s_STAllPlayersC__AddObjsToTmp_007a6288);
+      if (iVar2 == 0) {
+        RaiseInternalException(errorCode,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x26f);
         return 0xffffffff;
       }
       pcVar1 = (code *)swi(3);
-      uVar4 = (*pcVar1)();
-      return uVar4;
+      uVar3 = (*pcVar1)();
+      return uVar3;
     }
   }
   return 0;

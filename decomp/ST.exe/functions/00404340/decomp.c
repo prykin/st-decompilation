@@ -21,13 +21,15 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
         this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),this[0x24]),
                                              param_1,1);
         if (this_00 == (void *)0x0) {
-          iVar3 = FUN_006ad4d0(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x256,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x256,0,0,&DAT_007a4ccc,
+                                     s_STGroupC__SetAVPar_007a51a4);
           if (iVar3 != 0) {
             pcVar2 = (code *)swi(3);
             (*pcVar2)();
             return;
           }
-          FUN_006a5e40(-0x5001fffc,DAT_007ed77c,0x7a50a4,599);
+          RaiseInternalException
+                    (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_tc_grp_cpp_007a50a4,599);
         }
         if (*(int *)((int)this_00 + 0x20) == 0x14) {
           thunk_FUN_004956c0(this_00,*(undefined4 *)(this + 0x39));

@@ -5,23 +5,22 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   HelpPanelTy HVar1;
   code *pcVar2;
   HelpPanelTy *this_00;
-  int iVar3;
-  UINT UVar4;
-  int iVar5;
+  int errorCode;
+  UINT UVar3;
+  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   HelpPanelTy *pHStack_c;
   int iStack_8;
   
   iStack_8 = 0;
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pHStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pHStack_c;
-  if (iVar3 == 0) {
+  if (errorCode == 0) {
     if (param_2 == '\0') {
       HVar1 = pHStack_c[0x1a1];
       if (((HVar1 == (HelpPanelTy)0x0) || (HVar1 == (HelpPanelTy)0x6)) ||
@@ -48,23 +47,24 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
         }
       }
     }
-    UVar4 = thunk_FUN_00523410(param_1,'\0',0);
-    DrawTitle(this_00,0x55f9,0,UVar4);
+    UVar3 = thunk_FUN_00523410(param_1,'\0',0);
+    DrawTitle(this_00,0x55f9,0,UVar3);
     DrawObj(this_00,&iStack_8,param_1,0,0);
-    UVar4 = thunk_FUN_00523410(param_1,'\0',2);
-    DrawDescription(this_00,&iStack_8,UVar4);
+    UVar3 = thunk_FUN_00523410(param_1,'\0',2);
+    DrawDescription(this_00,&iStack_8,UVar3);
     AddLinks(this_00,&iStack_8,'\f',param_1,0);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar5 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x93f,0,iVar3,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x93f,0,errorCode,
+                             &DAT_007a4ccc,s_HelpPanelTy__NatProc_007c3d70);
+  if (iVar4 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c383c,0x93f);
+  RaiseInternalException(errorCode,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x93f);
   return;
 }
 

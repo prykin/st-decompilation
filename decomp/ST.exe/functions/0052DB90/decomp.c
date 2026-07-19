@@ -17,14 +17,13 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   uint uVar8;
   PopUpTy *pPVar9;
   void *unaff_EDI;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   PopUpTy *local_8;
   
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8[0x9c] != (PopUpTy)0x0) {
@@ -59,17 +58,18 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
       } while (iVar3 != 0);
       pPVar2[0x9c] = (PopUpTy)0x0;
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar6 = FUN_006ad4d0(s_E____titans_Andrey_mpopup_cpp_007c6f84,0xa8,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_mpopup_cpp_007c6f84,0xa8,0,iVar3,&DAT_007a4ccc,
+                             s_PopUpTy__Clear_007c702c);
   if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c6f84,0xa8);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_mpopup_cpp_007c6f84,0xa8);
   return;
 }
 

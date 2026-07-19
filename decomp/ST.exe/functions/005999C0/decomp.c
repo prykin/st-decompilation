@@ -16,16 +16,15 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar8;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   FSGSTy *local_10;
   int local_c;
   int local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar3 = local_10;
   if (iVar4 == 0) {
     pFVar1 = local_10 + 0x1ac0;
@@ -60,13 +59,14 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
                  (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
     FUN_006b3af0(DAT_008075a8,*(uint *)(pFVar3 + 0x1abc));
     pFVar3[0x1abb] = (FSGSTy)param_1;
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_54;
-  iVar7 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8,0,iVar4,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_54.previous;
+  iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8,0,iVar4,&DAT_007a4ccc,
+                             s_FSGSTy__PrepBkgMess_007cc1cc);
   if (iVar7 == 0) {
-    FUN_006a5e40(iVar4,0,0x7cbf70,0x3a8);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x3a8);
     return;
   }
   pcVar2 = (code *)swi(3);

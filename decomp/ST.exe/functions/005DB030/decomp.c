@@ -21,9 +21,9 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   byte local_378 [260];
   byte local_274 [260];
   byte local_170 [260];
-  undefined4 local_6c;
+  InternalExceptionFrame *local_6c;
   undefined4 local_68 [9];
-  undefined4 uStackY_44;
+  int iStackY_44;
   undefined1 uVar10;
   undefined4 uVar11;
   int *piVar12;
@@ -38,12 +38,12 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   pbVar8 = local_378;
   pbVar9 = local_170;
   __makepath((char *)pbVar9,(char *)pbVar8,(char *)local_274,(char *)local_47c,(char *)0x0);
-  local_6c = DAT_00858df8;
-  uStackY_44 = 0x5db0d9;
-  DAT_00858df8 = &local_6c;
+  local_6c = g_currentExceptionFrame;
+  iStackY_44 = 0x5db0d9;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&local_6c;
   iVar2 = __setjmp3(local_68,0,pbVar9,pbVar8);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c;
     return 0;
   }
   uVar10 = 0;
@@ -109,7 +109,7 @@ joined_r0x005db18e:
   }
 LAB_005db1e1:
   cMf32::delete(this,puVar3);
-  DAT_00858df8 = (undefined4 *)local_6c;
+  g_currentExceptionFrame = local_6c;
   return uVar13;
 }
 

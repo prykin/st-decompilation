@@ -39,7 +39,8 @@ void __fastcall FUN_0057cd70(int *param_1)
   if (iVar3 == 4) {
     iVar3 = (**(code **)(*param_1 + 0x20))();
     if (iVar3 == -1) {
-      iVar3 = FUN_006ad4d0(s_E____titans_Igor_To_fish_cpp_007cb044,0x709,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_Igor_To_fish_cpp_007cb044,0x709,0,0,&DAT_007a4ccc,
+                                 s_stop_move_error_007ad3a0);
       if (iVar3 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -69,7 +70,8 @@ void __fastcall FUN_0057cd70(int *param_1)
       }
       else {
         if (iVar3 != 2) {
-          iVar3 = FUN_006ad4d0(s_E____titans_Igor_To_fish_cpp_007cb044,0x72d,0,0,&DAT_007a4ccc);
+          iVar3 = ReportDebugMessage(s_E____titans_Igor_To_fish_cpp_007cb044,0x72d,0,0,&DAT_007a4ccc
+                                     ,s_STFishC__LifeFish_Error_Move_007cb068);
           if (iVar3 == 0) {
             return;
           }
@@ -92,7 +94,8 @@ void __fastcall FUN_0057cd70(int *param_1)
       *(undefined4 *)((int)param_1 + 0x23f) = 7;
     }
     else if ((iVar3 != 2) && (iVar3 != 3)) {
-      iVar3 = FUN_006ad4d0(s_E____titans_Igor_To_fish_cpp_007cb044,0x740,0,0,&DAT_007a4ccc);
+      iVar3 = ReportDebugMessage(s_E____titans_Igor_To_fish_cpp_007cb044,0x740,0,0,&DAT_007a4ccc,
+                                 s_STFishC__LifeFish_Error_Move_007cb068);
       if (iVar3 == 0) {
         return;
       }

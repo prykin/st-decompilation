@@ -328,7 +328,7 @@ LAB_004125c1:
       return 0;
     }
     if (iVar2 != -4) {
-      FUN_006a5e40(iVar2,DAT_007ed77c,0x7a4ca8,0xc3a);
+      RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_wlad_Grpway3d_cpp_007a4ca8,0xc3a);
       ExceptionList = local_14;
       return iVar2;
     }

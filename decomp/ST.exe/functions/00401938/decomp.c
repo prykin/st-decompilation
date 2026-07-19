@@ -34,7 +34,8 @@ int __fastcall thunk_FUN_0047cf20(int *param_1)
     iVar5 = thunk_FUN_004758e0(param_1,(undefined4 *)0x2);
     return iVar5;
   }
-  iVar5 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3870,0,0,&DAT_007a4ccc);
+  iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3870,0,0,&DAT_007a4ccc,
+                             s_STBoatC__BackBring_incorrect_ent_007ab604);
   if (iVar5 == 0) {
     return -1;
   }

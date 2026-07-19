@@ -17,19 +17,18 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
   uint uVar7;
   undefined4 local_90 [15];
   undefined4 local_54;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   STFieldC *local_c;
   uint local_8;
   
   local_8 = 0xffffffff;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     uVar7 = local_8;
     if (0 < (int)local_8) {
       do {
@@ -38,9 +37,10 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
         *(undefined4 *)(pSVar2 + 0x234) = 0;
       } while (uVar7 != 0);
     }
-    iVar5 = FUN_006ad4d0(s_E____titans_nick_to_field_cpp_007cf850,0x1e5,0,iVar3,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x1e5,0,iVar3,&DAT_007a4ccc,
+                               s_STFieldC__CreateField_007cb2c0);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7cf850,0x1e7);
+      RaiseInternalException(iVar3,0,s_E____titans_nick_to_field_cpp_007cf850,0x1e7);
       return 0xffff;
     }
     pcVar1 = (code *)swi(3);
@@ -65,11 +65,11 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
       } while (param_1 != 0);
     }
     if (-1 < (int)local_8) {
-      DAT_00858df8 = (undefined4 *)local_50;
+      g_currentExceptionFrame = local_50.previous;
       return local_8 + 1;
     }
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
 

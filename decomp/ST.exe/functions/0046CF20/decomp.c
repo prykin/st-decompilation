@@ -19,7 +19,6 @@ uint __fastcall FUN_0046cf20(int *param_1,undefined4 param_2)
   uint extraout_EDX;
   uint uVar10;
   undefined8 uVar11;
-  undefined4 uVar12;
   short local_18;
   short local_16;
   short local_14 [2];
@@ -50,15 +49,16 @@ uint __fastcall FUN_0046cf20(int *param_1,undefined4 param_2)
       iVar7 = (**(code **)(*param_1 + 0xd8))();
       return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
     }
-    iVar7 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x25a8,0,0,&DAT_007a4ccc);
+    iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x25a8,0,0,&DAT_007a4ccc,
+                               s_STBoatC__CreateGame__CREATEGAME__007aa82c);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       uVar10 = (*pcVar1)();
       return uVar10;
     }
-    uVar12 = 0x25a9;
+    iVar7 = 0x25a9;
 LAB_0046d1e2:
-    FUN_006a5e40(0xffff,DAT_007ed77c,0x7a9d3c,uVar12);
+    RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar7);
     return 0xffff;
   }
   if (param_1[0x14a] == 2) {
@@ -71,13 +71,14 @@ LAB_0046d1e2:
   if (param_1[0x14a] == 3) {
     iVar7 = thunk_FUN_00415ed0(param_1,&local_10,&local_c);
     if (iVar7 == -1) {
-      iVar7 = FUN_006ad4d0(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x25c7,0,0,&DAT_007a4ccc);
+      iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x25c7,0,0,&DAT_007a4ccc,
+                                 s_STBoatC__CreateGame__CREATEGAME__007aa7fc);
       if (iVar7 != 0) {
         pcVar1 = (code *)swi(3);
         uVar10 = (*pcVar1)();
         return uVar10;
       }
-      uVar12 = 0x25c8;
+      iVar7 = 0x25c8;
       goto LAB_0046d1e2;
     }
     if (iVar7 == 0) {

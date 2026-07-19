@@ -84,7 +84,7 @@ LAB_006b49e8:
       LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x4f0));
     }
     if (iVar4 != 0) {
-      FUN_006a5e40(iVar4,DAT_007ed77c,0x7edb20,0x46);
+      RaiseInternalException(iVar4,DAT_007ed77c,s_E__DKW_DDX_C_dddibtps_c_007edb20,0x46);
       ExceptionList = local_14;
       return iVar4;
     }

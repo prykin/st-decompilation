@@ -5,47 +5,47 @@ STGroupBoatC::InitWay(STGroupBoatC *this,int param_1,int param_2,int param_3,int
 {
   code *pcVar1;
   STGroupBoatC *pSVar2;
-  int iVar3;
-  uint uVar4;
-  int iVar5;
-  undefined4 uVar6;
+  int errorCode;
+  uint uVar3;
+  int iVar4;
+  undefined4 uVar5;
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
-  uint uVar7;
+  uint uVar6;
   void *unaff_EDI;
-  undefined4 uStack_50;
-  undefined4 auStack_4c [16];
+  InternalExceptionFrame IStack_50;
   STGroupBoatC *pSStack_c;
   uint uStack_8;
   
-  uStack_50 = DAT_00858df8;
-  DAT_00858df8 = &uStack_50;
+  IStack_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_EDI,unaff_ESI);
+  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_c;
-  if (iVar3 == 0) {
-    uVar7 = 0;
+  if (errorCode == 0) {
+    uVar6 = 0;
     if (*(int *)(param_1 + 0xc) != 0) {
       do {
-        FUN_006acc70(param_1,uVar7,&uStack_8);
-        uVar4 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),uStack_8,1
+        FUN_006acc70(param_1,uVar6,&uStack_8);
+        uVar3 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),uStack_8,1
                                   );
-        *(undefined4 *)(uVar4 + 0xfd) = 0;
-        uVar7 = uVar7 + 1;
-      } while (uVar7 < *(uint *)(param_1 + 0xc));
+        *(undefined4 *)(uVar3 + 0xfd) = 0;
+        uVar6 = uVar6 + 1;
+      } while (uVar6 < *(uint *)(param_1 + 0xc));
     }
     Way3DGrpDistribTgt(pSVar2,param_1,param_2,param_3,param_4);
-    DAT_00858df8 = (undefined4 *)uStack_50;
+    g_currentExceptionFrame = IStack_50.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)uStack_50;
-  iVar5 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e,0,iVar3,&DAT_007a4ccc);
-  if (iVar5 != 0) {
+  g_currentExceptionFrame = IStack_50.previous;
+  iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6e,0,errorCode,&DAT_007a4ccc,
+                             s_STGroupBoatC__InitWay_007abe60);
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar6 = (*pcVar1)();
-    return uVar6;
+    uVar5 = (*pcVar1)();
+    return uVar5;
   }
-  FUN_006a5e40(iVar3,0,0x7abe3c,0x6f);
+  RaiseInternalException(errorCode,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x6f);
   return 0xffffffff;
 }
 

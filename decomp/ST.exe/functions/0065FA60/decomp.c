@@ -8,8 +8,7 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint *puVar4;
-  undefined4 local_5c;
-  undefined4 local_58 [16];
+  InternalExceptionFrame local_5c;
   uint local_18;
   int local_14;
   uint *local_10;
@@ -18,9 +17,9 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
   short local_6;
   
   local_10 = (uint *)0x0;
-  local_5c = DAT_00858df8;
-  DAT_00858df8 = &local_5c;
-  iVar1 = __setjmp3(local_58,0,unaff_EDI,unaff_ESI);
+  local_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_5c;
+  iVar1 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     if (param_2 == 0) {
       if (*(void **)(local_14 + 0x284) != (void *)0x0) {
@@ -40,7 +39,7 @@ uint * FUN_0065fa60(int param_1,int param_2,short *param_3)
     }
   }
   puVar4 = local_10;
-  DAT_00858df8 = (undefined4 *)local_5c;
+  g_currentExceptionFrame = local_5c.previous;
   if (local_10 != (uint *)0x0) {
     if (local_10[3] == 0) {
       FUN_006ae110((byte *)local_10);

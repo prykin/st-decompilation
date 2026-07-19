@@ -26,8 +26,7 @@ undefined4 __thiscall TradePanelTy::GetMessage(TradePanelTy *this,int param_1)
   int iVar14;
   undefined4 *puVar15;
   undefined4 uVar16;
-  undefined4 local_68;
-  undefined4 local_64 [16];
+  InternalExceptionFrame local_68;
   undefined1 local_24;
   short sStack_23;
   uint uStack_21;
@@ -41,16 +40,17 @@ undefined4 __thiscall TradePanelTy::GetMessage(TradePanelTy *this,int param_1)
   SpecPanelTy *local_c;
   int local_8;
   
-  local_68 = DAT_00858df8;
-  DAT_00858df8 = &local_68;
+  local_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_68;
   local_c = (SpecPanelTy *)this;
-  iVar3 = __setjmp3(local_64,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_68;
-    iVar8 = FUN_006ad4d0(s_E____titans_Andrey_tradecen_cpp_007c8624,0x175,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_68.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x175,0,iVar3,
+                               &DAT_007a4ccc,s_TradePanelTy__GetMessage_007c8778);
     if (iVar8 == 0) {
-      FUN_006a5e40(iVar3,0,0x7c8624,0x175);
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x175);
       return 0xffff;
     }
     pcVar13 = (code *)swi(3);
@@ -68,7 +68,7 @@ LAB_00552481:
       uVar7 = 0;
       pCVar4 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
       (**(code **)(iVar3 + 0x10))(param_1,pCVar4,iVar8,uVar7,uVar16);
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     if (uVar9 < 0xb200) {
@@ -88,19 +88,19 @@ LAB_00552481:
         if (this_00[0x1bb] != (SpecPanelTy)0x0) {
           *(undefined4 *)(this_00 + 0x28) = 0xbfff;
           (*(code *)**(undefined4 **)this_00)(this_00 + 0x18);
-          DAT_00858df8 = (undefined4 *)local_68;
+          g_currentExceptionFrame = local_68.previous;
           return 0;
         }
       }
       else {
         if (uVar9 == 2) {
           InitTradePanel((TradePanelTy *)this_00);
-          DAT_00858df8 = (undefined4 *)local_68;
+          g_currentExceptionFrame = local_68.previous;
           return 0;
         }
         if (uVar9 == 3) {
           DoneTradePanel((TradePanelTy *)this_00);
-          DAT_00858df8 = (undefined4 *)local_68;
+          g_currentExceptionFrame = local_68.previous;
           return 0;
         }
       }
@@ -120,7 +120,7 @@ LAB_00552481:
         uStack_1c = (undefined1)
                     ((ushort)*(undefined2 *)(this_00 + (uint)(byte)SVar1 * 8 + 0x1b1) >> 8);
         thunk_FUN_0054edf0((undefined4 *)0x20,(undefined4 *)&local_24,0,0xffffffff);
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
     }
@@ -131,14 +131,14 @@ LAB_00552481:
            *(undefined2 *)(param_1 + 0x14);
       PaintIndicators((TradePanelTy *)this_00);
       thunk_FUN_00551800(this_00);
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     if (uVar9 == 0xb20a) {
       this_00[0x1d0] = (SpecPanelTy)(**(char **)(param_1 + 0x14) + -1);
       thunk_FUN_00551b10(this_00);
       PaintPanel((TradePanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
     if (uVar9 == 0xb20b) {
@@ -172,7 +172,7 @@ LAB_00552481:
       }
       FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
                    *(uint *)(this_00 + 0x44));
-      DAT_00858df8 = (undefined4 *)local_68;
+      g_currentExceptionFrame = local_68.previous;
       return 0;
     }
   }
@@ -183,7 +183,7 @@ LAB_00552481:
     }
     else {
       if (uVar9 != 0xc006) {
-        DAT_00858df8 = (undefined4 *)local_68;
+        g_currentExceptionFrame = local_68.previous;
         return 0;
       }
       iVar3 = *(int *)this_00;
@@ -195,7 +195,7 @@ LAB_00552481:
     pCVar4 = thunk_FUN_00571240(pcVar10,0);
     (**(code **)(iVar3 + 8))(param_1,1,pCVar4,pcVar13,uVar7,uVar16);
   }
-  DAT_00858df8 = (undefined4 *)local_68;
+  g_currentExceptionFrame = local_68.previous;
   return 0;
 }
 

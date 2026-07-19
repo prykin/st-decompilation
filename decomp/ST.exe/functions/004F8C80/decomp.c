@@ -12,6 +12,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   int iVar4;
   uint uVar5;
   int iVar6;
+  uint extraout_EAX;
   undefined *puVar7;
   char cVar8;
   undefined4 unaff_ESI;
@@ -22,27 +23,27 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
   char *pcVar12;
   CPanelTy *pCVar13;
   LPCSTR pCVar14;
-  undefined4 *local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   char local_c;
   undefined3 uStack_b;
   CPanelTy *local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar4 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar3 = local_8;
   if (iVar4 != 0) {
-    DAT_00858df8 = local_50;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc,0,iVar4,&DAT_007a4ccc,
+                               s_CPanelTy__PaintSMap_007c216c);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       uVar5 = (*pcVar2)();
       return uVar5;
     }
-    uVar5 = FUN_006a5e40(iVar4,0,0x7c1bd8,0x2fc);
-    return uVar5;
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc);
+    return extraout_EAX;
   }
   if ((uint)(*(int *)(local_8 + 0x38) - *(int *)(local_8 + 0x998)) < 100) {
     if ((*(int *)((int)DAT_00807598 + 0x442) == 0) && (*(int *)((int)DAT_00807598 + 0x446) == 0)) {
@@ -52,11 +53,11 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       uVar5 = 1;
     }
     if (uVar5 == 0) {
-      DAT_00858df8 = local_50;
+      g_currentExceptionFrame = local_50.previous;
       return 0;
     }
     if (1 < DAT_0080673c) {
-      DAT_00858df8 = local_50;
+      g_currentExceptionFrame = local_50.previous;
       return uVar5;
     }
   }
@@ -156,7 +157,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     uVar5 = FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,*(uint *)(pCVar3 + 0x4c),
                          *(uint *)(pCVar3 + 0xa4));
   }
-  DAT_00858df8 = local_50;
+  g_currentExceptionFrame = local_50.previous;
   return uVar5;
 }
 

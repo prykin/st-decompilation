@@ -18,17 +18,16 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   void *unaff_EDI;
   int *piVar9;
   int local_298 [144];
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   UpgPanelTy *local_14;
   int local_10;
   int local_c;
   int local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pUVar2 = local_14;
   if (iVar3 == 0) {
     pUVar8 = local_14 + 0x1ab;
@@ -98,17 +97,18 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
       iVar3 = iVar3 + 0x1b;
       local_c = local_c + -1;
     } while (local_c != 0);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
-  iVar6 = FUN_006ad4d0(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_58.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54,0,iVar3,&DAT_007a4ccc,
+                             s_UpgPanelTy__Update_007c8850);
   if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c87b8,0x54);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54);
   return;
 }
 

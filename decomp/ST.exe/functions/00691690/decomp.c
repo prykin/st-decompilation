@@ -81,7 +81,7 @@ FUN_00691690(void *this,cMf32 *param_1,undefined4 param_2,int param_3,undefined 
     if (puVar3 == (undefined4 *)0x0) {
       this_00 = (int *)0x0;
 LAB_0069177d:
-      FUN_006a5e40(-2,DAT_007ed77c,0x7d5980,0x4e);
+      RaiseInternalException(-2,DAT_007ed77c,s_E____titans_Maps_CntLib_cpp_007d5980,0x4e);
     }
     else {
       this_00 = (int *)FUN_006dbca0((int)puVar3);

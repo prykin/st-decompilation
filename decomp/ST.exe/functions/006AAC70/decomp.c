@@ -9,7 +9,7 @@ int FUN_006aac70(int param_1)
   }
   iVar1 = thunk_FUN_006a3be0(param_1);
   if (iVar1 == 0) {
-    FUN_006a5e40(-2,DAT_007ed77c,0x7ed764,0x16);
+    RaiseInternalException(-2,DAT_007ed77c,s_E__DKW_LIB_C_memalloc_c_007ed764,0x16);
     iVar1 = 0;
   }
   return iVar1;

@@ -7,6 +7,7 @@ STGroupBoatC::GetDepotForAttack
 {
   code *pcVar1;
   int iVar2;
+  int extraout_EAX;
   void *this_00;
   int *this_01;
   int iVar3;
@@ -14,8 +15,7 @@ STGroupBoatC::GetDepotForAttack
   undefined4 unaff_ESI;
   STGroupBoatC *pSVar5;
   void *unaff_EDI;
-  undefined4 uStack_68;
-  undefined4 auStack_64 [16];
+  InternalExceptionFrame IStack_68;
   undefined1 uStack_24;
   char cStack_23;
   short sStack_22;
@@ -31,15 +31,17 @@ STGroupBoatC::GetDepotForAttack
   short sStack_6;
   
   iStack_18 = 1000000;
-  uStack_68 = DAT_00858df8;
-  DAT_00858df8 = &uStack_68;
+  IStack_68.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_68;
   pSStack_14 = this;
-  iVar2 = __setjmp3(auStack_64,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = pSStack_14;
   if (iVar2 == 0) {
     *param_3 = -1;
     if ((*(int *)(pSStack_14 + 0x1e6) != 2) || (iVar2 = *(int *)(pSStack_14 + 0x20e), iVar2 == 0)) {
-      iVar2 = FUN_006a5e40(-0x5001fff7,DAT_007ed77c,0x7abe3c,0x1708);
+      RaiseInternalException
+                (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1708);
+      iVar2 = extraout_EAX;
     }
     this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)iVar2 >> 8),pSVar5[0x24]),param_1,1);
     thunk_FUN_004162b0(this_00,&sStack_10,&sStack_e,&sStack_c);
@@ -73,18 +75,19 @@ STGroupBoatC::GetDepotForAttack
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iStack_1c);
     }
-    DAT_00858df8 = (undefined4 *)uStack_68;
+    g_currentExceptionFrame = IStack_68.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)uStack_68;
+  g_currentExceptionFrame = IStack_68.previous;
   if (iVar2 != -0x5001fff7) {
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x171b,0,iVar2,&DAT_007a4ccc);
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x171b,0,iVar2,&DAT_007a4ccc,
+                               s_STGroupBoatC__GetDepotForAttack_007ac4e4);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar2,0,0x7abe3c,0x171c);
+    RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x171c);
   }
   return;
 }

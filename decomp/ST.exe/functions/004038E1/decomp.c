@@ -8,8 +8,7 @@ uint * thunk_FUN_0065fa60(int param_1,int param_2,short *param_3)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   uint *puVar4;
-  undefined4 uStack_5c;
-  undefined4 auStack_58 [16];
+  InternalExceptionFrame IStack_5c;
   uint uStack_18;
   int iStack_14;
   uint *puStack_10;
@@ -18,9 +17,9 @@ uint * thunk_FUN_0065fa60(int param_1,int param_2,short *param_3)
   short sStack_6;
   
   puStack_10 = (uint *)0x0;
-  uStack_5c = DAT_00858df8;
-  DAT_00858df8 = &uStack_5c;
-  iVar1 = __setjmp3(auStack_58,0,unaff_EDI,unaff_ESI);
+  IStack_5c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_5c;
+  iVar1 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     if (param_2 == 0) {
       if (*(void **)(iStack_14 + 0x284) != (void *)0x0) {
@@ -42,7 +41,7 @@ uint * thunk_FUN_0065fa60(int param_1,int param_2,short *param_3)
     }
   }
   puVar4 = puStack_10;
-  DAT_00858df8 = (undefined4 *)uStack_5c;
+  g_currentExceptionFrame = IStack_5c.previous;
   if (puStack_10 != (uint *)0x0) {
     if (puStack_10[3] == 0) {
       FUN_006ae110((byte *)puStack_10);

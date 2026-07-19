@@ -2,31 +2,31 @@
 int __cdecl thunk_FUN_0064a6f0(int *param_1,int param_2)
 
 {
-  int iVar1;
-  undefined4 *puVar2;
+  int exceptionCode;
+  undefined4 *puVar1;
   void *unaff_ESI;
-  undefined4 uVar3;
+  InternalExceptionFrame *pIVar2;
   undefined4 auStack_44 [16];
   
-  uVar3 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb8;
-  iVar1 = __setjmp3(auStack_44,0,unaff_ESI,uVar3);
-  if (iVar1 == 0) {
+  pIVar2 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
+  exceptionCode = __setjmp3(auStack_44,0,unaff_ESI,pIVar2);
+  if (exceptionCode == 0) {
     if (param_1 == (int *)0x0) {
-      FUN_006a5e40(-0x34,DAT_007ed77c,0x7d2a04,0x25);
+      RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_erc_cpp_007d2a04,0x25);
     }
     thunk_FUN_0064a7c0(param_1);
     if (param_2 < 1) {
       param_2 = 10;
     }
     *param_1 = param_2;
-    puVar2 = FUN_006aac10(param_2 * 5);
-    param_1[2] = (int)puVar2;
-    DAT_00858df8 = (undefined1 *)uVar3;
+    puVar1 = FUN_006aac10(param_2 * 5);
+    param_1[2] = (int)puVar1;
+    g_currentExceptionFrame = pIVar2;
     return 0;
   }
-  DAT_00858df8 = (undefined1 *)uVar3;
-  FUN_006a5e40(iVar1,0,0x7d2a04,0x2a);
-  return iVar1;
+  g_currentExceptionFrame = pIVar2;
+  RaiseInternalException(exceptionCode,0,s_E____titans_ai_ai_erc_cpp_007d2a04,0x2a);
+  return exceptionCode;
 }
 

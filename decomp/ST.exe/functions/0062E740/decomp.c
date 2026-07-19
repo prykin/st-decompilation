@@ -21,23 +21,23 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
   int iVar11;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 **local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   STGameObjC *local_14;
   byte *local_10;
   uint local_c;
   int local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = (STGameObjC *)this;
-  iVar7 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar7 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar7 != 0) {
-    DAT_00858df8 = (undefined4 ***)local_58;
-    iVar8 = FUN_006ad4d0(s_E____titans_nick_to_Rubb_cpp_007d1798,0xa6,0,iVar7,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_nick_to_Rubb_cpp_007d1798,0xa6,0,iVar7,&DAT_007a4ccc,
+                               s_STRubbishC__GetMessage_007d17bc);
     if (iVar8 == 0) {
-      FUN_006a5e40(iVar7,0,0x7d1798,0xa8);
+      RaiseInternalException(iVar7,0,s_E____titans_nick_to_Rubb_cpp_007d1798,0xa8);
       return 0xffff;
     }
     pcVar5 = (code *)swi(3);
@@ -58,15 +58,15 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
       local_10 = (byte *)thunk_FUN_0062f940(this_00,&local_c);
       STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_10,local_c);
       FUN_006ab060(&local_10);
-      DAT_00858df8 = (undefined4 ***)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
-    DAT_00858df8 = (undefined4 ***)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (uVar4 == 3) {
     thunk_FUN_0062f7a0(this_00);
-    DAT_00858df8 = (undefined4 ***)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (uVar4 == 0) {
@@ -78,19 +78,19 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
         this_00[0x1f9] = (STGameObjC)0x1;
       }
       thunk_FUN_0062f150(this_00);
-      DAT_00858df8 = (undefined4 ***)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (*(int *)(this_00 + 0x1fa) != 2) {
-      DAT_00858df8 = (undefined4 ***)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     thunk_FUN_0062f900(this_00);
-    DAT_00858df8 = (undefined4 ***)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (uVar4 != 2) {
-    DAT_00858df8 = (undefined4 ***)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   iVar7 = *(int *)(param_1 + 0x14);
@@ -98,11 +98,11 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
   if (*(int *)(iVar7 + 0xc) == 2) {
     thunk_FUN_0062fa80(this_00,iVar7);
     if (this_00[0x1f9] == (STGameObjC)0x0) {
-      DAT_00858df8 = (undefined4 ***)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     thunk_FUN_0062fe00(this_00);
-    DAT_00858df8 = (undefined4 ***)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return 0;
   }
   if (((*(int *)(this_00 + 0x1d5) < 0) || (*(int *)(this_00 + 0x1d9) < 0)) ||
@@ -205,7 +205,7 @@ LAB_0062ea02:
     return 0xffff;
   }
   *(undefined4 *)(this_00 + 0x1fa) = 1;
-  DAT_00858df8 = (undefined4 ***)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 

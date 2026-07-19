@@ -19,8 +19,7 @@ HelpPanelTy::DrawWeapon
   void *unaff_EDI;
   undefined2 uVar8;
   HINSTANCE pHVar9;
-  undefined4 *local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_6c;
   int local_28;
   int local_24;
   undefined4 local_20;
@@ -32,19 +31,20 @@ HelpPanelTy::DrawWeapon
   HelpPanelTy *local_8;
   
   local_c = 0;
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
   local_8 = this;
-  iVar2 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = local_6c;
-    iVar7 = FUN_006ad4d0(s_E____titans_Andrey_helppan_cpp_007c383c,0x412,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_6c.previous;
+    iVar7 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x412,0,iVar2,&DAT_007a4ccc
+                               ,s_HelpPanelTy__DrawWeapon_007c3ba4);
     if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       uVar6 = (*pcVar1)();
       return uVar6;
     }
-    FUN_006a5e40(iVar2,0,0x7c383c,0x412);
+    RaiseInternalException(iVar2,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x412);
     return 0;
   }
   if (param_3 != 0) {
@@ -91,11 +91,11 @@ HelpPanelTy::DrawWeapon
         iVar2 = 0xf;
       }
       *param_2 = *param_2 + iVar2;
-      DAT_00858df8 = local_6c;
+      g_currentExceptionFrame = local_6c.previous;
       return 1;
     }
   }
-  DAT_00858df8 = local_6c;
+  g_currentExceptionFrame = local_6c.previous;
   return local_c;
 }
 

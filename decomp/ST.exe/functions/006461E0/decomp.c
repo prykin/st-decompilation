@@ -18,22 +18,22 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
   undefined4 *puVar7;
   void *unaff_EDI;
   STVolcanoC *pSVar8;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   byte *local_10;
   uint local_c;
   STVolcanoC *local_8;
   
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar3 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar5 = FUN_006ad4d0(s_E____titans_nick_to_volc_cpp_007d26e4,0x121,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_nick_to_volc_cpp_007d26e4,0x121,0,iVar3,&DAT_007a4ccc,
+                               s_STVolcanoC__GetMessage_007d2708);
     if (iVar5 == 0) {
-      FUN_006a5e40(iVar3,0,0x7d26e4,0x123);
+      RaiseInternalException(iVar3,0,s_E____titans_nick_to_volc_cpp_007d26e4,0x123);
       return 0xffff;
     }
     pcVar2 = (code *)swi(3);
@@ -44,7 +44,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
   if (uVar1 < 4) {
     if (uVar1 == 3) {
       thunk_FUN_006479e0((int)local_8);
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
     if (uVar1 == 0) {
@@ -67,7 +67,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           }
           *(undefined4 *)(this_00 + 0xa9) = 4;
           thunk_FUN_00647a60(this_00,0x4b5);
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         break;
@@ -92,7 +92,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
                            _DAT_007904fc,0);
               this_00[0x5c] = (STVolcanoC)0x1;
               thunk_FUN_006479e0((int)this_00);
-              DAT_00858df8 = (undefined4 *)local_54;
+              g_currentExceptionFrame = local_54.previous;
               return 0;
             }
             puVar4 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
@@ -109,7 +109,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
             }
           }
           thunk_FUN_006479e0((int)this_00);
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         if (((*(uint *)(local_8 + 0x58) & 2) != 0) && (*(uint *)(DAT_00802a38 + 0xe4) % 3 == 0)) {
@@ -138,13 +138,13 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           if (iVar3 != 0) {
             this_00[0xa8] = (STVolcanoC)0x1;
             LoadImagVolcano(this_00,2);
-            DAT_00858df8 = (undefined4 *)local_54;
+            g_currentExceptionFrame = local_54.previous;
             return 0;
           }
         }
         else if (*(int *)(this_00 + 0xa9) == 2) {
           thunk_FUN_00647960((int)this_00);
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         break;
@@ -179,7 +179,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         }
         if (this_00[0xa8] != (STVolcanoC)0x0) {
           thunk_FUN_00647960((int)this_00);
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         iVar3 = thunk_FUN_00646e00(*(int *)(this_00 + 0x65),*(int *)(this_00 + 0x69),
@@ -187,7 +187,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         if (iVar3 != 0) {
           this_00[0xa8] = (STVolcanoC)0x1;
           LoadImagVolcano(this_00,0);
-          DAT_00858df8 = (undefined4 *)local_54;
+          g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         break;
@@ -214,7 +214,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           }
           if (local_8[0xa8] != (STVolcanoC)0x0) {
             thunk_FUN_00647960((int)local_8);
-            DAT_00858df8 = (undefined4 *)local_54;
+            g_currentExceptionFrame = local_54.previous;
             return 0;
           }
           iVar3 = thunk_FUN_00646e00(*(int *)(local_8 + 0x65),*(int *)(local_8 + 0x69),
@@ -222,18 +222,18 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           if (iVar3 != 0) {
             this_00[0xa8] = (STVolcanoC)0x1;
             LoadImagVolcano(this_00,0);
-            DAT_00858df8 = (undefined4 *)local_54;
+            g_currentExceptionFrame = local_54.previous;
             return 0;
           }
         }
         break;
       case 5:
         thunk_FUN_00646d00(local_8);
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       case 6:
         *(undefined4 *)(local_8 + 0xa9) = 1;
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
     }
@@ -243,7 +243,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         thunk_FUN_00646db0(local_8,puVar7);
         *(undefined4 *)(this_00 + 0xb1) = *(undefined4 *)(this_00 + 0xad);
         this_00[0xa8] = (STVolcanoC)0x0;
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       pSVar8 = local_8 + 0x1c;
@@ -259,11 +259,11 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         *(uint *)(this_00 + 0xb1) = uVar1;
         *(undefined4 *)(this_00 + 0xa9) = 6;
         *(uint *)(this_00 + 0xa4) = (uVar1 >> 0x10) % 0x2711 + 20000;
-        DAT_00858df8 = (undefined4 *)local_54;
+        g_currentExceptionFrame = local_54.previous;
         return 0;
       }
       thunk_FUN_00646d00(this_00);
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return 0;
     }
   }
@@ -272,7 +272,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
     STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_10,local_c);
     FUN_006ab060(&local_10);
   }
-  DAT_00858df8 = (undefined4 *)local_54;
+  g_currentExceptionFrame = local_54.previous;
   return 0;
 }
 

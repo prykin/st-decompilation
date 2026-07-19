@@ -90,7 +90,8 @@ undefined4 __fastcall FUN_004189d0(int *param_1)
       thunk_FUN_004168b0((int)param_1);
       return 0;
     }
-    iVar5 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x33f,0,0,&DAT_007a4ccc);
+    iVar5 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x33f,0,0,&DAT_007a4ccc,
+                               s_STGameObjC__MoveStep_far_cells_007a4e30);
     if (iVar5 != 0) {
       pcVar4 = (code *)swi(3);
       uVar6 = (*pcVar4)();

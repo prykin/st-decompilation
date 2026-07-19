@@ -24,8 +24,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   undefined4 local_854;
   undefined4 local_850;
   undefined4 local_84c;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   FSGSTy *local_10;
   int local_c;
   MMObjTy *local_8;
@@ -36,9 +35,9 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     *puVar8 = 0;
     puVar8 = puVar8 + 1;
   }
-  local_54 = DAT_00858df8;
-  DAT_00858df8 = &local_54;
-  iVar6 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+  local_54.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_54;
+  iVar6 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar6 == 0) {
     if (*(byte **)(local_10 + 0x1ae8) != (byte *)0x0) {
@@ -108,17 +107,18 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     *(undefined4 *)(this_00 + 0x2d) = 0x61;
     *(undefined4 *)(this_00 + 0x35) = 0;
     FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
-    DAT_00858df8 = (undefined4 *)local_54;
+    g_currentExceptionFrame = local_54.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_54;
-  iVar7 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x81d,0,iVar6,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_54.previous;
+  iVar7 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x81d,0,iVar6,&DAT_007a4ccc,
+                             s_FSGSTy__LadderCtrls_007cc3a4);
   if (iVar7 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar6,0,0x7cbf70,0x81d);
+  RaiseInternalException(iVar6,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x81d);
   return;
 }
 

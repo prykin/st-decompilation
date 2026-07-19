@@ -19,18 +19,18 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
   char local_457 [515];
   char local_254 [512];
   ushort *local_54;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   ushort local_a;
   byte *local_8;
   
   local_8 = (byte *)0x0;
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_50;
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_mfwav_cpp_007f0800,0xf5,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_50.previous;
+    iVar6 = ReportDebugMessage(s_E__Ourlib_mfwav_cpp_007f0800,0xf5,0,iVar3,&DAT_007a4ccc,
+                               s_mfSndLibLoad_007f0860);
     if (iVar6 == 0) {
       if (local_8 != (byte *)0x0) {
         cMf32::RecMemFree(*(cMf32 **)(local_8 + 1),(uint *)&local_54);
@@ -49,7 +49,7 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
         }
         FUN_006ab060(&local_8);
       }
-      FUN_006a5e40(iVar3,0,0x7f0800,0x105);
+      RaiseInternalException(iVar3,0,s_E__Ourlib_mfwav_cpp_007f0800,0x105);
       return (byte *)0x0;
     }
     pcVar2 = (code *)swi(3);
@@ -57,7 +57,7 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
     return pbVar7;
   }
   if (param_1 == 0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7f0800,0xd6);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfwav_cpp_007f0800,0xd6);
   }
   local_8 = (byte *)FUN_006aac10(9);
   *(int *)(local_8 + 1) = param_1;
@@ -132,7 +132,7 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
     local_8[7] = 0;
     local_8[8] = 0;
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   return local_8;
 }
 

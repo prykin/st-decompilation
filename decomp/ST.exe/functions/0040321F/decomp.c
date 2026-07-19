@@ -159,7 +159,8 @@ void __fastcall thunk_FUN_0041a680(int param_1)
       return;
     }
   }
-  iVar3 = FUN_006ad4d0(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x5f5,0,0,&DAT_007a4ccc);
+  iVar3 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x5f5,0,0,&DAT_007a4ccc,
+                             s_STGameObjC__ResetSelfCheckFlag_u_007a4e90);
   if (iVar3 == 0) {
     return;
   }

@@ -16,15 +16,14 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
   AiFltClassTy *pAVar7;
   void *unaff_EDI;
   AiFltClassTy *pAVar8;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   AiFltClassTy *local_c;
   int local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = local_c;
   if (iVar3 == 0) {
     if (local_c == (AiFltClassTy *)0x0) {
@@ -72,18 +71,19 @@ int __thiscall AiFltClassTy::InitData(AiFltClassTy *this,undefined4 *param_1)
       puVar4 = FUN_006ae290((uint *)0x0,10,4,10);
       *(uint **)(pAVar2 + 0x23b) = puVar4;
     }
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  DAT_00858df8 = (undefined4 *)local_50;
+  g_currentExceptionFrame = local_50.previous;
   thunk_FUN_0065d480((int)local_c);
-  iVar5 = FUN_006ad4d0(s_E____titans_ai_ai_flt_cpp_007d2b80,0x31,0,iVar3,&DAT_007a4ccc);
+  iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x31,0,iVar3,&DAT_007a4ccc,
+                             s_AiFltClassTy__InitData_007d2ba0);
   if (iVar5 != 0) {
     pcVar1 = (code *)swi(3);
     iVar3 = (*pcVar1)();
     return iVar3;
   }
-  FUN_006a5e40(iVar3,0,0x7d2b80,0x32);
+  RaiseInternalException(iVar3,0,s_E____titans_ai_ai_flt_cpp_007d2b80,0x32);
   return iVar3;
 }
 

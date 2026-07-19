@@ -20,8 +20,7 @@ int thunk_FUN_00566600(int param_1)
   undefined1 uStack_368;
   char acStack_367 [515];
   byte abStack_164 [260];
-  undefined4 uStack_60;
-  undefined4 auStack_5c [16];
+  InternalExceptionFrame IStack_60;
   int iStack_1c;
   char *pcStack_18;
   cMf32 *pcStack_14;
@@ -30,16 +29,16 @@ int thunk_FUN_00566600(int param_1)
   ushort *puStack_8;
   
   iStack_1c = 0;
-  uStack_60 = DAT_00858df8;
-  DAT_00858df8 = &uStack_60;
-  iVar2 = __setjmp3(auStack_5c,0,unaff_EDI,unaff_ESI);
+  IStack_60.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_60;
+  iVar2 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_60;
+    g_currentExceptionFrame = IStack_60.previous;
     thunk_FUN_00566900(iStack_10);
     return iVar2;
   }
   if (*(int *)(iStack_10 + 0x18) != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_60;
+    g_currentExceptionFrame = IStack_60.previous;
     return iStack_1c;
   }
   uVar6 = 0xffffffff;
@@ -139,7 +138,7 @@ int thunk_FUN_00566600(int param_1)
   }
   uStack_c = uVar6;
   if (uVar6 == 0) {
-    FUN_006a5e40(-4,DAT_007ed77c,0x7c9748,0x25);
+    RaiseInternalException(-4,DAT_007ed77c,s_E____titans_snd_mngr_cpp_007c9748,0x25);
   }
   if ((param_1 == 0) || ((param_1 < 0 && (*(int *)(iStack_10 + 0x28) < 1)))) {
     uVar7 = FUN_0072e6c0();
@@ -161,7 +160,7 @@ int thunk_FUN_00566600(int param_1)
     pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,iVar2);
     puStack_8 = FUN_006f2d90(*(undefined4 *)(iStack_10 + 0x18),pCVar5,bVar12,iVar13);
     if (puStack_8 == (ushort *)0x0) {
-      FUN_006a5e40(-4,DAT_007ed77c,0x7c9748,0x32);
+      RaiseInternalException(-4,DAT_007ed77c,s_E____titans_snd_mngr_cpp_007c9748,0x32);
       goto LAB_0056681c;
     }
   }
@@ -172,7 +171,7 @@ LAB_0056681c:
   if (puStack_8 != (ushort *)0x0) {
     cMf32::RecMemFree(*(cMf32 **)(iStack_10 + 0x18),(uint *)&puStack_8);
   }
-  DAT_00858df8 = (undefined4 *)uStack_60;
+  g_currentExceptionFrame = IStack_60.previous;
   return iStack_1c;
 }
 

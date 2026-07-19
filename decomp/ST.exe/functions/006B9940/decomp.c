@@ -5,7 +5,7 @@ int FUN_006b9940(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int *
   undefined4 *puVar1;
   undefined4 *puVar2;
   undefined4 *puVar3;
-  int iVar4;
+  int exceptionCode;
   
   if (param_4 != (int *)0x0) {
     *param_4 = 0;
@@ -15,31 +15,31 @@ int FUN_006b9940(undefined4 *param_1,undefined4 param_2,undefined4 param_3,int *
   if (puVar3 == (undefined4 *)0x0) {
     return -2;
   }
-  iVar4 = DirectDrawCreate(param_2,puVar3 + 0xb,0);
-  if (iVar4 == 0) {
+  exceptionCode = DirectDrawCreate(param_2,puVar3 + 0xb,0);
+  if (exceptionCode == 0) {
     puVar2 = (undefined4 *)puVar3[0xb];
     puVar1 = puVar3 + 0xc;
-    iVar4 = (**(code **)*puVar2)(puVar2,&DAT_0079fd88,puVar1);
-    if (iVar4 == 0) {
+    exceptionCode = (**(code **)*puVar2)(puVar2,&DAT_0079fd88,puVar1);
+    if (exceptionCode == 0) {
       if (param_4 != (int *)0x0) {
-        iVar4 = (**(code **)(*(int *)*puVar1 + 0x50))((int *)*puVar1,param_3,0x55);
-        if (iVar4 != 0) goto LAB_006b99e3;
-        iVar4 = FUN_006b9a40((int)puVar3,param_4);
-        if (iVar4 != 0) goto LAB_006b99e3;
-        iVar4 = (**(code **)(*(int *)*puVar1 + 0x50))((int *)*puVar1,param_3,8);
+        exceptionCode = (**(code **)(*(int *)*puVar1 + 0x50))((int *)*puVar1,param_3,0x55);
+        if (exceptionCode != 0) goto LAB_006b99e3;
+        exceptionCode = FUN_006b9a40((int)puVar3,param_4);
+        if (exceptionCode != 0) goto LAB_006b99e3;
+        exceptionCode = (**(code **)(*(int *)*puVar1 + 0x50))((int *)*puVar1,param_3,8);
       }
       puVar3[1] = param_3;
     }
   }
 LAB_006b99e3:
   InitializeCriticalSection((LPCRITICAL_SECTION)(puVar3 + 0x13c));
-  if (iVar4 != 0) {
+  if (exceptionCode != 0) {
     FUN_006ba600(puVar3);
     if (param_4 != (int *)0x0) {
       FUN_006ab060(param_4);
     }
-    FUN_006a5e40(iVar4,DAT_007ed77c,0x7edc48,0x6d);
-    return iVar4;
+    RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_DDX_C_ddx_c_007edc48,0x6d);
+    return exceptionCode;
   }
   *param_1 = puVar3;
   return 0;

@@ -12,8 +12,7 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   int iVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   int iStack_14;
   int iStack_10;
   uint uStack_c;
@@ -23,9 +22,9 @@ uint * STAllPlayersC::GetObjsList(char param_1)
   iStack_10 = *(int *)(iStack_14 + 0xc);
   uVar4 = thunk_FUN_0043e460(param_1);
   uStack_c = (uint)uVar4;
-  uStack_58 = DAT_00858df8;
-  DAT_00858df8 = &uStack_58;
-  iVar5 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+  IStack_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_58;
+  iVar5 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar3 = uStack_c;
   if (iVar5 == 0) {
     puVar6 = FUN_006ae290((uint *)0x0,uStack_c,2,1);
@@ -40,13 +39,14 @@ uint * STAllPlayersC::GetObjsList(char param_1)
         iStack_8 = iStack_8 + 1;
       } while (iStack_8 < iVar8);
     }
-    DAT_00858df8 = (undefined4 *)uStack_58;
+    g_currentExceptionFrame = IStack_58.previous;
     return puVar6;
   }
-  DAT_00858df8 = (undefined4 *)uStack_58;
-  iVar8 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f8c,0,iVar5,&DAT_007a4ccc);
+  g_currentExceptionFrame = IStack_58.previous;
+  iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f8c,0,iVar5,&DAT_007a4ccc,
+                             s_STAllPlayersC__GetObjsList_007a7f74);
   if (iVar8 == 0) {
-    FUN_006a5e40(iVar5,0,0x7a6004,0x1f8d);
+    RaiseInternalException(iVar5,0,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1f8d);
     return (uint *)0x0;
   }
   pcVar2 = (code *)swi(3);

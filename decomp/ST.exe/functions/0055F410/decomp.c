@@ -26,8 +26,7 @@ void FUN_0055f410(uint param_1,int param_2,int param_3,int param_4,int param_5,i
   int iVar19;
   int *piVar20;
   bool bVar21;
-  undefined4 local_1b8;
-  undefined4 local_1b4 [17];
+  InternalExceptionFrame local_1b8;
   int local_170;
   int *local_168;
   int *local_164;
@@ -149,9 +148,9 @@ void FUN_0055f410(uint param_1,int param_2,int param_3,int param_4,int param_5,i
     DAT_008033ac = DAT_008033a8 * DAT_008033a4;
     DAT_00803304 = param_2 - DAT_008033bc;
     DAT_00803308 = param_3 - DAT_008033c0;
-    local_1b8 = DAT_00858df8;
-    DAT_00858df8 = &local_1b8;
-    iVar15 = __setjmp3(local_1b4,2,FUN_0072da21,0xffffffff);
+    local_1b8.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_1b8;
+    iVar15 = __setjmp3(local_1b8.jumpBuffer,2,FUN_0072da21,0xffffffff);
     local_1c = &stack0xfffffe14;
     if (iVar15 == 0) {
       local_1c = &stack0xfffffe14;
@@ -963,12 +962,13 @@ LAB_0056016e:
           } while (iVar15 < (int)uVar18);
         }
       }
-      DAT_00858df8 = (undefined4 *)local_1b8;
+      g_currentExceptionFrame = local_1b8.previous;
       iVar15 = local_70;
     }
     else {
-      DAT_00858df8 = (undefined4 *)local_1b8;
-      iVar16 = FUN_006ad4d0(s_E____titans_scoreai_cpp_007c96b0,0x956,0,iVar15,&DAT_007a4ccc);
+      g_currentExceptionFrame = local_1b8.previous;
+      iVar16 = ReportDebugMessage(s_E____titans_scoreai_cpp_007c96b0,0x956,0,iVar15,&DAT_007a4ccc,
+                                  s_AiCalcDispositionAreas_007c96cc);
       if (iVar16 != 0) {
         pcVar3 = (code *)swi(3);
         (*pcVar3)();
@@ -992,7 +992,7 @@ LAB_0056016e:
       iVar16 = iVar16 + 4;
     } while (iVar16 < 0x40);
     if (iVar15 != 0) {
-      FUN_006a5e40(iVar15,DAT_007ed77c,0x7c96b0,0x968);
+      RaiseInternalException(iVar15,DAT_007ed77c,s_E____titans_scoreai_cpp_007c96b0,0x968);
     }
   }
   ExceptionList = local_14;

@@ -22,8 +22,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   undefined4 *puVar10;
   bool bVar11;
   uint uVar12;
-  undefined4 *local_a8;
-  undefined4 local_a4 [16];
+  InternalExceptionFrame local_a8;
   undefined4 local_64 [8];
   undefined4 local_44 [8];
   STPlaySystemC *local_24;
@@ -40,20 +39,21 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
   if (DAT_0080c512 != 0) {
     return 0;
   }
-  local_a8 = DAT_00858df8;
-  DAT_00858df8 = &local_a8;
-  iVar2 = __setjmp3(local_a4,0,unaff_EDI,unaff_ESI);
+  local_a8.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_a8;
+  iVar2 = __setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   DVar9 = local_1c;
   this_00 = local_24;
   if (iVar2 != 0) {
-    DAT_00858df8 = local_a8;
-    iVar4 = FUN_006ad4d0(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x411,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_a8.previous;
+    iVar4 = ReportDebugMessage(s_E____titans_Andrey_tplaysys_cpp_007c8430,0x411,0,iVar2,
+                               &DAT_007a4ccc,s_STPlaySystemC__Life_007c853c);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       uVar5 = (*pcVar1)();
       return uVar5;
     }
-    FUN_006a5e40(iVar2,0,0x7c8430,0x412);
+    RaiseInternalException(iVar2,0,s_E____titans_Andrey_tplaysys_cpp_007c8430,0x412);
     return 0xffffffff;
   }
   if ((DAT_00808783 == '\x03') && (499 < local_1c - *(int *)(local_24 + 0x7f))) {
@@ -445,11 +445,11 @@ LAB_0054e052:
         }
         if (DAT_0080c522 != 0) {
           *(undefined4 *)(this_00 + 0xe8) = 1;
-          DAT_00858df8 = local_a8;
+          g_currentExceptionFrame = local_a8.previous;
           return 0;
         }
         *(undefined4 *)(this_00 + 0xec) = 1;
-        DAT_00858df8 = local_a8;
+        g_currentExceptionFrame = local_a8.previous;
         return 0;
       }
       if (DAT_0080c522 == 0) {
@@ -465,7 +465,7 @@ LAB_0054e052:
     FUN_006e3ab0(local_44);
   }
 switchD_0054e0ae_caseD_9:
-  DAT_00858df8 = local_a8;
+  g_currentExceptionFrame = local_a8.previous;
   return 0;
 LAB_0054dfad:
   thunk_FUN_00550380(3);

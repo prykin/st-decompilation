@@ -17,7 +17,7 @@ int FUN_007579c0(int *param_1)
       return 1;
     }
     if (*(int *)(iVar1 + 0x10) == 0) {
-      FUN_006a5e40(0x22,DAT_007ed77c,0x7f2d98,0x137);
+      RaiseInternalException(0x22,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0x137);
     }
     FUN_00757710(param_1);
   }
@@ -30,7 +30,7 @@ int FUN_007579c0(int *param_1)
       }
     }
     else if (*(int *)(*(int *)((int)param_1 + 0x1a6) + 0x54) != 0) {
-      FUN_006a5e40(0x3a,DAT_007ed77c,0x7f2d98,0x13f);
+      RaiseInternalException(0x3a,DAT_007ed77c,s_E__DKW_JPG_C_jdinput_c_007f2d98,0x13f);
       return 2;
     }
   }

@@ -3,17 +3,16 @@ int * __cdecl FUN_00719ea0(LPCSTR param_1,int *param_2)
 
 {
   code *pcVar1;
+  int errorCode;
   int iVar2;
-  int iVar3;
-  int *piVar4;
+  int *piVar3;
+  uint uVar4;
   uint uVar5;
-  uint uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar7;
-  undefined4 *puVar8;
-  undefined4 local_90;
-  undefined4 local_8c [16];
+  int *piVar6;
+  undefined4 *puVar7;
+  InternalExceptionFrame local_90;
   int local_4c [4];
   uint local_3a;
   undefined4 *local_36;
@@ -22,53 +21,54 @@ int * __cdecl FUN_00719ea0(LPCSTR param_1,int *param_2)
   
   local_8 = (int *)0x0;
   local_c = (int *)0x0;
-  local_90 = DAT_00858df8;
-  DAT_00858df8 = &local_90;
-  iVar2 = __setjmp3(local_8c,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
+  local_90.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_90;
+  errorCode = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (errorCode == 0) {
     local_c = FUN_0071ae80(param_1,(DWORD *)0x0);
     FUN_00752e40(local_4c,local_c);
     local_8 = FUN_006aac10((-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + local_3a);
-    uVar5 = (-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a;
-    piVar4 = local_4c;
-    piVar7 = local_8;
-    for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *piVar7 = *piVar4;
-      piVar4 = piVar4 + 1;
-      piVar7 = piVar7 + 1;
+    uVar4 = (-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a;
+    piVar3 = local_4c;
+    piVar6 = local_8;
+    for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *piVar6 = *piVar3;
+      piVar3 = piVar3 + 1;
+      piVar6 = piVar6 + 1;
     }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(char *)piVar7 = (char)*piVar4;
-      piVar4 = (int *)((int)piVar4 + 1);
-      piVar7 = (int *)((int)piVar7 + 1);
+    for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+      *(char *)piVar6 = (char)*piVar3;
+      piVar3 = (int *)((int)piVar3 + 1);
+      piVar6 = (int *)((int)piVar6 + 1);
     }
     *(undefined4 *)((int)local_8 + 0x16) = 0;
-    puVar8 = (undefined4 *)((-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + (int)local_8);
-    for (uVar6 = local_3a >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *puVar8 = *local_36;
+    puVar7 = (undefined4 *)((-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + (int)local_8);
+    for (uVar5 = local_3a >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *puVar7 = *local_36;
       local_36 = local_36 + 1;
-      puVar8 = puVar8 + 1;
+      puVar7 = puVar7 + 1;
     }
-    for (uVar6 = local_3a & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-      *(undefined1 *)puVar8 = *(undefined1 *)local_36;
+    for (uVar5 = local_3a & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(undefined1 *)puVar7 = *(undefined1 *)local_36;
       local_36 = (undefined4 *)((int)local_36 + 1);
-      puVar8 = (undefined4 *)((int)puVar8 + 1);
+      puVar7 = (undefined4 *)((int)puVar7 + 1);
     }
     if (local_c != (int *)0x0) {
       FUN_006ab060(&local_c);
     }
-    DAT_00858df8 = (undefined4 *)local_90;
+    g_currentExceptionFrame = local_90.previous;
     if (param_2 != (int *)0x0) {
       *param_2 = (-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + local_3a;
     }
     return local_8;
   }
-  DAT_00858df8 = (undefined4 *)local_90;
-  iVar3 = FUN_006ad4d0(s_E__Ourlib_mfwav_cpp_007f0800,0x61,0,iVar2,&DAT_007a4ccc);
-  if (iVar3 != 0) {
+  g_currentExceptionFrame = local_90.previous;
+  iVar2 = ReportDebugMessage(s_E__Ourlib_mfwav_cpp_007f0800,0x61,0,errorCode,&DAT_007a4ccc,
+                             s_GetPcmFromWavFile_007f0830);
+  if (iVar2 != 0) {
     pcVar1 = (code *)swi(3);
-    piVar4 = (int *)(*pcVar1)();
-    return piVar4;
+    piVar3 = (int *)(*pcVar1)();
+    return piVar3;
   }
   if (local_c != (int *)0x0) {
     FUN_006ab060(&local_c);
@@ -76,7 +76,7 @@ int * __cdecl FUN_00719ea0(LPCSTR param_1,int *param_2)
   if (local_8 != (int *)0x0) {
     FUN_006ab060(&local_8);
   }
-  FUN_006a5e40(iVar2,0,0x7f0800,0x66);
+  RaiseInternalException(errorCode,0,s_E__Ourlib_mfwav_cpp_007f0800,0x66);
   return (int *)0x0;
 }
 

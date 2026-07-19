@@ -19,7 +19,7 @@ void FUN_0075d150(int *param_1)
   puVar3[1] = FUN_0075d370;
   puVar3[2] = 0;
   if (*(int *)((int)param_1 + 0x11e) != 0) {
-    FUN_006a5e40(0x17,DAT_007ed77c,0x7f2e58,0x1a4);
+    RaiseInternalException(0x17,DAT_007ed77c,s_E__DKW_JPG_C_jdsample_c_007f2e58,0x1a4);
   }
   if ((param_1[0x11] == 0) || (bVar2 = true, *(int *)((int)param_1 + 0x12a) < 2)) {
     bVar2 = false;
@@ -69,7 +69,7 @@ LAB_0075d2ac:
             *(char *)(local_14 + 0x96 + (int)puVar3) = (char)(iVar1 / iVar6);
           }
           else {
-            FUN_006a5e40(0x25,DAT_007ed77c,0x7f2e58,0x1d9);
+            RaiseInternalException(0x25,DAT_007ed77c,s_E__DKW_JPG_C_jdsample_c_007f2e58,0x1d9);
           }
         }
         uVar8 = *(undefined4 *)((int)param_1 + 0x126);

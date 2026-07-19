@@ -18,20 +18,20 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   byte *pbVar11;
   void *unaff_EDI;
   byte *pbVar12;
-  undefined4 uStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   uint uStack_14;
   STT3DSprC *pSStack_c;
   int iStack_8;
   
-  uStack_58 = DAT_00858df8;
-  DAT_00858df8 = &uStack_58;
+  IStack_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_58;
   pSStack_c = this;
-  iVar3 = __setjmp3(auStack_54,0,unaff_EDI,unaff_ESI);
+  iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_c;
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_58;
-    iVar3 = FUN_006ad4d0(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3b,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_58.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x3b,0,iVar3,&DAT_007a4ccc,
+                               s_STT3DSprC__LoadSequence_007ac61c);
     if (iVar3 != 0) {
       pcVar2 = (code *)swi(3);
       uVar7 = (*pcVar2)();
@@ -40,10 +40,10 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
     return 0xffffffff;
   }
   if (*(int *)(pSStack_c + 0x18) == -1) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0x22);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x22);
   }
   if (((char)param_1 < '\0') || (*(int *)(this_00 + 0x14) + -1 < (int)(char)param_1)) {
-    FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0x23);
+    RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x23);
   }
   uStack_14 = (uint)(char)param_1;
   iVar3 = uStack_14 * 0x24;
@@ -51,7 +51,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   if (*(int *)(*(int *)(this_00 + 0x20) + iVar3) != 0) {
     iVar4 = UnLoadSequence(this_00,param_1);
     if (iVar4 != 0) {
-      FUN_006a5e40(-1,DAT_007ed77c,0x7ac638,0x24);
+      RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x24);
     }
   }
   puVar5 = FUN_00709af0(param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
@@ -114,7 +114,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   pbVar11 = (byte *)(*(int *)(this_00 + 0x20) + 0xe + iStack_8);
   *pbVar11 = *pbVar11 | 0x20;
   *(uint *)(this_00 + 0x1c) = *(uint *)(this_00 + 0x1c) & ~(1 << ((byte)uVar8 & 0x1f));
-  DAT_00858df8 = (undefined4 *)uStack_58;
+  g_currentExceptionFrame = IStack_58.previous;
   return 0;
 }
 

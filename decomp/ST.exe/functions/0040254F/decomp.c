@@ -16,20 +16,20 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   int iVar8;
   byte bVar9;
   undefined4 uVar10;
-  undefined4 *puStack_4c;
-  undefined4 auStack_48 [16];
+  InternalExceptionFrame IStack_4c;
   MainMenuTy *pMStack_8;
   
   iVar8 = 0;
-  puStack_4c = DAT_00858df8;
-  DAT_00858df8 = &puStack_4c;
+  IStack_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_4c;
   pMStack_8 = this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
-    DAT_00858df8 = puStack_4c;
-    iVar8 = FUN_006ad4d0(s_E____titans_Start_main_obj_cpp_007cc8e8,0x48,0,iVar2,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_4c.previous;
+    iVar8 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x48,0,iVar2,&DAT_007a4ccc,
+                               s_MainMenuTy__InitMainMenu_007cc910);
     if (iVar8 == 0) {
-      FUN_006a5e40(iVar2,0,0x7cc8e8,0x48);
+      RaiseInternalException(iVar2,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0x48);
       return;
     }
     pcVar1 = (code *)swi(3);
@@ -154,16 +154,16 @@ switchD_005b2a8d_default:
         *(undefined4 *)(this_00 + 0x4df) = 0xffffffff;
       }
       SetMode(this_01,param_1,1);
-      thunk_FUN_00568bc0(&DAT_00807658,0);
+      thunk_FUN_00568bc0(&g_sound,0);
       if ((DAT_00807300._1_1_ & 8) != 0) {
-        thunk_FUN_0056a130(&DAT_00807658,0x10,'\x02',0,(uint *)0x0);
+        thunk_FUN_0056a130(&g_sound,0x10,'\x02',0,(uint *)0x0);
       }
       if (DAT_00808446 == '\0') {
         *(undefined4 *)(this_01 + 0x1a6b) = 2;
         *(undefined4 *)(this_01 + 0x1a67) = *(undefined4 *)(this_01 + 8);
         *(undefined4 *)(this_01 + 0x1a6f) = 0x6902;
       }
-      DAT_00858df8 = puStack_4c;
+      g_currentExceptionFrame = IStack_4c.previous;
       return;
     }
   } while( true );

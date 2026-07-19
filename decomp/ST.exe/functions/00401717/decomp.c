@@ -27,8 +27,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   int iVar19;
   int iVar20;
   uint auStack_478 [256];
-  undefined4 *puStack_78;
-  undefined4 auStack_74 [16];
+  InternalExceptionFrame IStack_78;
   int aiStack_34 [8];
   MMObjTy *pMStack_14;
   UINT *pUStack_10;
@@ -37,10 +36,10 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
   
   uStack_c = uStack_c & 0xffffff00;
   if ((this[0x65] == (MMsgTy)0x2) && (this[0x1ca9] == (MMsgTy)0x0)) {
-    puStack_78 = DAT_00858df8;
-    DAT_00858df8 = &puStack_78;
+    IStack_78.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &IStack_78;
     pMStack_14 = (MMObjTy *)this;
-    iVar4 = __setjmp3(auStack_74,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pMStack_14;
     if (iVar4 == 0) {
       MMObjTy::CloseButtons(pMStack_14);
@@ -182,17 +181,18 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
         aiStack_34[2] = iVar4;
         (**(code **)(*piVar1 + 0x18))(aiStack_34);
       }
-      DAT_00858df8 = puStack_78;
+      g_currentExceptionFrame = IStack_78.previous;
       return 1;
     }
-    DAT_00858df8 = puStack_78;
-    iVar9 = FUN_006ad4d0(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = IStack_78.previous;
+    iVar9 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181,0,iVar4,&DAT_007a4ccc
+                               ,s_MMsgTy__SetPanel_007cccb4);
     if (iVar9 != 0) {
       pcVar2 = (code *)swi(3);
       uVar5 = (*pcVar2)();
       return uVar5;
     }
-    FUN_006a5e40(iVar4,0,0x7ccb74,0x181);
+    RaiseInternalException(iVar4,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x181);
   }
   return 0;
 }

@@ -14,8 +14,7 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
   void *unaff_EDI;
   PlayPanelTy *pPVar5;
   PlayPanelTy *pPVar6;
-  undefined4 local_54;
-  undefined4 local_50 [16];
+  InternalExceptionFrame local_54;
   PlayPanelTy *local_10;
   int local_c;
   PlayPanelTy *local_8;
@@ -33,10 +32,10 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
       sVar2 = -sVar2;
     }
     *(short *)(this + 0x2e) = sVar2;
-    local_54 = DAT_00858df8;
-    DAT_00858df8 = &local_54;
+    local_54.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_54;
     local_10 = this;
-    iVar4 = __setjmp3(local_50,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pPVar5 = local_10;
     if (iVar4 == 0) {
       if (*(int *)(local_10 + 0x17c) != 0) {
@@ -64,17 +63,18 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
       if (*(int *)(pPVar5 + 0x1c1) != 0) {
         FUN_006e6080(pPVar5,2,*(int *)(pPVar5 + 0x1c1),(undefined4 *)(pPVar5 + 0x18));
       }
-      DAT_00858df8 = (undefined4 *)local_54;
+      g_currentExceptionFrame = local_54.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_54;
-    iVar3 = FUN_006ad4d0(s_E____titans_Andrey_playpan_cpp_007c7574,0xfe,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_54.previous;
+    iVar3 = ReportDebugMessage(s_E____titans_Andrey_playpan_cpp_007c7574,0xfe,0,iVar4,&DAT_007a4ccc,
+                               s_PlayPanelTy__ShiftControls_007c7668);
     if (iVar3 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7c7574,0xfe);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_playpan_cpp_007c7574,0xfe);
   }
   return;
 }

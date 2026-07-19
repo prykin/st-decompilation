@@ -12,18 +12,16 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   int iVar4;
   DWORD DVar5;
   int iVar6;
-  undefined4 *puVar7;
+  InternalExceptionFrame *pIVar7;
   undefined4 unaff_ESI;
   uint uVar8;
   void *unaff_EDI;
   undefined4 *puVar9;
   undefined4 local_4bc [256];
-  undefined4 *local_bc;
-  undefined4 local_b8 [16];
+  InternalExceptionFrame local_bc;
   undefined4 local_78 [4];
   undefined4 local_68;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   STAppC *local_14;
   int local_10;
   uint local_c;
@@ -33,13 +31,13 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
   local_c = 0;
   if ((((param_1 != 0) || (DAT_00806730 != 800)) && ((param_1 != 1 || (DAT_00806730 != 0x400)))) &&
      ((param_1 != 2 || (DAT_00806730 != 0x500)))) {
-    local_58 = DAT_00858df8;
-    DAT_00858df8 = (undefined4 **)&local_58;
+    local_58.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_58;
     local_14 = this;
-    iVar4 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+    iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b13e0(DAT_008075a8);
-      puVar7 = DAT_00858df8;
+      pIVar7 = g_currentExceptionFrame;
       uVar8 = local_c;
       for (; (uVar8 == 0 && (-1 < local_8)); local_8 = local_8 + -1) {
         if (local_8 == 0) {
@@ -80,9 +78,9 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
             *puVar9 = 0;
             puVar9 = puVar9 + 1;
           }
-          DAT_00858df8 = &local_bc;
-          local_bc = puVar7;
-          iVar4 = __setjmp3(local_b8,0,unaff_EDI,unaff_ESI);
+          g_currentExceptionFrame = &local_bc;
+          local_bc.previous = pIVar7;
+          iVar4 = __setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
           uVar8 = local_c;
           if (iVar4 == 0) {
             DVar5 = FUN_006b9b40(DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,DAT_00806738,
@@ -93,14 +91,14 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
             FUN_006e3dd0(3,1,(int)local_78);
             uVar8 = (uint)(DVar5 == 0);
           }
-          puVar7 = local_bc;
-          DAT_00858df8 = (undefined4 **)local_bc;
+          pIVar7 = local_bc.previous;
+          g_currentExceptionFrame = local_bc.previous;
           if ((local_10 != 0) && (uVar8 != 0)) break;
         }
       }
       iVar4 = local_8;
       if (local_8 < 0) {
-        FUN_006a5e40(-1,DAT_007ed77c,0x7ca0c8,0x442);
+        RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x442);
       }
       FUN_006b1470(DAT_008075a8);
       FUN_006b1680(DAT_008075a8,(int)DAT_0080759c);
@@ -111,17 +109,18 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       FUN_006b1980(DAT_008075a8,3,-1,(&DAT_00807568)[iVar4 * 4],(&DAT_0080756c)[iVar4 * 4],
                    (&DAT_00807570)[iVar4 * 4],(&DAT_00807574)[iVar4 * 4]);
       FUN_006b1cc0((int)DAT_008075a8,3,0,0,(undefined4 *)0x0);
-      DAT_00858df8 = (undefined4 **)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 **)local_58;
-    iVar6 = FUN_006ad4d0(s_E____titans_tapp_cpp_007ca0c8,0x44f,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x44f,0,iVar4,&DAT_007a4ccc,
+                               s_STAppC__ChangeResolution_007ca190);
     if (iVar6 != 0) {
       pcVar3 = (code *)swi(3);
       (*pcVar3)();
       return;
     }
-    FUN_006a5e40(iVar4,0,0x7ca0c8,0x44f);
+    RaiseInternalException(iVar4,0,s_E____titans_tapp_cpp_007ca0c8,0x44f);
   }
   return;
 }

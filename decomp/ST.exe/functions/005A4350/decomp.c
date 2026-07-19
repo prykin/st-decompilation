@@ -52,8 +52,7 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
   char local_6b8 [32];
   undefined1 local_698;
   CHAR local_4b8 [260];
-  undefined4 **local_3b4;
-  undefined4 local_3b0 [16];
+  InternalExceptionFrame local_3b4;
   undefined4 local_370 [7];
   undefined4 local_354 [7];
   undefined4 local_338 [7];
@@ -62,14 +61,12 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
   undefined4 local_2e4 [7];
   undefined4 local_2c8 [7];
   undefined4 local_2ac [7];
-  undefined4 **local_290;
-  undefined4 local_28c [16];
+  InternalExceptionFrame local_290;
   undefined4 local_24c [4];
   undefined4 local_23c;
   uint local_238;
   undefined4 local_22c [4];
-  undefined4 **local_21c;
-  undefined4 local_218 [16];
+  InternalExceptionFrame local_21c;
   undefined4 local_1d8 [2];
   undefined2 local_1ce;
   undefined2 local_1cc;
@@ -165,19 +162,20 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
   uVar8 = FUN_006e51b0(*(int *)(this + 0x10));
   pcVar26 = (char *)0x0;
   *(undefined4 *)(this + 0x61) = uVar8;
-  local_21c = DAT_00858df8;
-  DAT_00858df8 = &local_21c;
-  iVar9 = __setjmp3(local_218,0,unaff_EDI,unaff_ESI);
+  local_21c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_21c;
+  iVar9 = __setjmp3(local_21c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar7 = local_20;
   if (iVar9 != 0) {
-    DAT_00858df8 = local_21c;
-    iVar32 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1048,0,iVar9,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_21c.previous;
+    iVar32 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1048,0,iVar9,
+                                &DAT_007a4ccc,s_FSGSTy__GetMessage_007cc5d8);
     if (iVar32 != 0) {
       pcVar6 = (code *)swi(3);
       uVar8 = (*pcVar6)();
       return uVar8;
     }
-    FUN_006a5e40(iVar9,0,0x7cbf70,0x1048);
+    RaiseInternalException(iVar9,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x1048);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_20,(int)param_1);
@@ -2627,9 +2625,9 @@ LAB_005a52aa:
       if ((DAT_00802a30 != (CursorClassTy *)0x0) && (DAT_00802a30[0x493] == (CursorClassTy)0x5))
       goto switchD_005a43f5_caseD_1;
       thunk_FUN_005daa60();
-      local_290 = DAT_00858df8;
-      DAT_00858df8 = &local_290;
-      iVar9 = __setjmp3(local_28c,0,unaff_EDI,unaff_ESI);
+      local_290.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &local_290;
+      iVar9 = __setjmp3(local_290.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pFVar7 = local_20;
       if (iVar9 == 0) {
         FUN_006b6150((uint)DAT_00807362);
@@ -2640,11 +2638,12 @@ LAB_005a52aa:
           uVar8 = **(undefined4 **)(*(int *)(pFVar7 + 0x1ae8) + 0x14);
         }
         FUN_006b69b0(&DAT_00811764,(int *)&DAT_007cd6f0,0,uVar8,0x20);
-        DAT_00858df8 = local_290;
+        g_currentExceptionFrame = local_290.previous;
       }
       else {
-        DAT_00858df8 = local_290;
-        iVar9 = FUN_006ad4d0(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xc08,0,iVar9,&DAT_007a4ccc);
+        g_currentExceptionFrame = local_290.previous;
+        iVar9 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0xc08,0,iVar9,
+                                   &DAT_007a4ccc,s_FSGSTy__GetMessage_MESS_ID_MSGOK_007cc638);
         if (iVar9 != 0) {
           pcVar6 = (code *)swi(3);
           uVar8 = (*pcVar6)();
@@ -2758,16 +2757,16 @@ LAB_005a4ecf:
     if (local_15 == '\0') goto switchD_005a43f5_caseD_1;
     thunk_FUN_005daa60();
     FUN_006b61a0(local_22c,(byte *)(puVar12 + 0x17));
-    local_3b4 = DAT_00858df8;
-    DAT_00858df8 = &local_3b4;
-    iVar9 = __setjmp3(local_3b0,0,unaff_EDI,unaff_ESI);
+    local_3b4.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_3b4;
+    iVar9 = __setjmp3(local_3b4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     puVar12 = local_8;
     if (iVar9 == 0) {
       FUN_006b6a50(&DAT_00811764,(undefined4 *)&DAT_007cd6f0,
                    (in_addr)((_union_1226 *)(local_8 + 4))->S_un_b,local_22c);
     }
     pCVar23 = DAT_00802a30;
-    DAT_00858df8 = local_3b4;
+    g_currentExceptionFrame = local_3b4.previous;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
       uVar8 = *(undefined4 *)(DAT_00802a30 + 0xc9);
       uVar15 = *(undefined4 *)(DAT_00802a30 + 0xc5);
@@ -3191,7 +3190,7 @@ LAB_005a50be:
   }
   MMsgTy::SetMessage(pMVar19,UVar10,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
 switchD_005a43f5_caseD_1:
-  DAT_00858df8 = local_21c;
+  g_currentExceptionFrame = local_21c.previous;
   uVar8 = thunk_FUN_005b6430();
   return uVar8;
 }

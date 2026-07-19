@@ -234,7 +234,8 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
       }
     } while( true );
   }
-  iVar8 = FUN_006ad4d0(s_E____titans_wlad_to_allpl_cpp_007a6004,0x352,0,0,&DAT_007a4ccc);
+  iVar8 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x352,0,0,&DAT_007a4ccc,
+                             s_STAllPlayersC__DelObjFromTmps_in_007a62d0);
   if (iVar8 == 0) {
     return 0xffffffff;
   }

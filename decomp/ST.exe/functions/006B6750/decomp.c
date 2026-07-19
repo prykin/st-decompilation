@@ -32,12 +32,12 @@ int FUN_006b6750(undefined4 *param_1,uint param_2,undefined4 param_3,undefined4 
   local_30 = param_1[5];
   iVar1 = (**(code **)(*(int *)*param_1 + 0x60))((int *)*param_1,local_54,2);
   if (iVar1 != 0) {
-    FUN_006a5e40(iVar1,DAT_007ed77c,0x7edbc4,0x1e0);
+    RaiseInternalException(iVar1,DAT_007ed77c,s_E__DKW_DDX_C_dplay2_cpp_007edbc4,0x1e0);
     return iVar1;
   }
   iVar1 = FUN_006b6830(param_1);
   if (iVar1 != 0) {
-    FUN_006a5e40(iVar1,DAT_007ed77c,0x7edbc4,0x1ed);
+    RaiseInternalException(iVar1,DAT_007ed77c,s_E__DKW_DDX_C_dplay2_cpp_007edbc4,0x1ed);
     return iVar1;
   }
   return 0;

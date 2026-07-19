@@ -19,14 +19,14 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
   void *unaff_ESI;
   int *piVar11;
   ushort *puVar12;
-  undefined4 uVar13;
+  InternalExceptionFrame *pIVar13;
   undefined4 local_48 [16];
   IntercomPanelTy *local_8;
   
-  uVar13 = DAT_00858df8;
-  DAT_00858df8 = &stack0xffffffb4;
+  pIVar13 = g_currentExceptionFrame;
+  g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,uVar13);
+  iVar3 = __setjmp3(local_48,0,unaff_ESI,pIVar13);
   pIVar2 = local_8;
   if (iVar3 == 0) {
     DAT_0080169c = local_8;
@@ -50,17 +50,18 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     puVar9 = FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(pIVar2 + 0x198) = puVar9;
     FUN_006b6020((int)puVar9,0,&DAT_008016a0);
-    DAT_00858df8 = (undefined1 *)uVar13;
+    g_currentExceptionFrame = pIVar13;
     return;
   }
-  DAT_00858df8 = (undefined1 *)uVar13;
-  iVar10 = FUN_006ad4d0(s_E____titans_Andrey_intercom_cpp_007c401c,0x34,0,iVar3,&DAT_007a4ccc);
+  g_currentExceptionFrame = pIVar13;
+  iVar10 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x34,0,iVar3,&DAT_007a4ccc,
+                              s_IntercomPanelTy__InitIntercomPan_007c4074);
   if (iVar10 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar3,0,0x7c401c,0x34);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x34);
   return;
 }
 

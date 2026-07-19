@@ -24,8 +24,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
   uint uVar13;
   byte bVar14;
   LPCSTR pCVar15;
-  undefined4 *local_bc;
-  undefined4 local_b8 [16];
+  InternalExceptionFrame local_bc;
   undefined1 local_78 [16];
   undefined4 local_68;
   int local_58;
@@ -42,10 +41,10 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
   uint local_c;
   MoneyTy local_5;
   
-  local_bc = DAT_00858df8;
-  DAT_00858df8 = &local_bc;
+  local_bc.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_bc;
   local_10 = this;
-  iVar5 = __setjmp3(local_b8,0,unaff_EDI,unaff_ESI);
+  iVar5 = __setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar5 == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {
@@ -508,18 +507,19 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
         }
       }
     }
-    DAT_00858df8 = local_bc;
+    g_currentExceptionFrame = local_bc.previous;
     uVar10 = FUN_006e5fd0();
     return uVar10;
   }
-  DAT_00858df8 = local_bc;
-  iVar11 = FUN_006ad4d0(s_E____titans_Andrey_money_cpp_007c6f48,0x12a,0,iVar5,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_bc.previous;
+  iVar11 = ReportDebugMessage(s_E____titans_Andrey_money_cpp_007c6f48,0x12a,0,iVar5,&DAT_007a4ccc,
+                              s_MoneyTy__GetMessage_007c6f6c);
   if (iVar11 != 0) {
     pcVar2 = (code *)swi(3);
     uVar10 = (*pcVar2)();
     return uVar10;
   }
-  FUN_006a5e40(iVar5,0,0x7c6f48,0x12a);
+  RaiseInternalException(iVar5,0,s_E____titans_Andrey_money_cpp_007c6f48,0x12a);
   return 0xffff;
 }
 

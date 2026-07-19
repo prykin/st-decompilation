@@ -25,8 +25,7 @@ void __fastcall thunk_FUN_00572510(void *param_1)
   char *pcVar15;
   _WIN32_FIND_DATAA _Stack_29c;
   byte abStack_15c [260];
-  undefined4 *puStack_58;
-  undefined4 auStack_54 [16];
+  InternalExceptionFrame IStack_58;
   undefined4 *puStack_14;
   void *pvStack_10;
   int iStack_c;
@@ -57,9 +56,9 @@ void __fastcall thunk_FUN_00572510(void *param_1)
       pcVar15 = s__s_s_s__s_007ca1ec;
       wsprintfA((LPSTR)pbVar13,s__s_s_s__s_007ca1ec,(int)param_1 + 0x28,PTR_s_SAVEGAME__0079b0cc,
                 puStack_8,PTR_s_PL_LOG_0079b0d0);
-      puStack_58 = DAT_00858df8;
-      DAT_00858df8 = &puStack_58;
-      iVar4 = __setjmp3(auStack_54,0,pbVar13,pcVar15);
+      IStack_58.previous = g_currentExceptionFrame;
+      g_currentExceptionFrame = &IStack_58;
+      iVar4 = __setjmp3(IStack_58.jumpBuffer,0,pbVar13,pcVar15);
       if (iVar4 == 0) {
         puVar5 = FUN_006f0ec0(0x345,abStack_15c,0,0,0);
         this = pvStack_10;
@@ -152,11 +151,11 @@ LAB_005727f1:
           thunk_FUN_00573240();
           cMf32::delete(this_00,puVar5);
         }
-        DAT_00858df8 = puStack_58;
+        g_currentExceptionFrame = IStack_58.previous;
         pvStack_10 = this;
       }
       else {
-        DAT_00858df8 = puStack_58;
+        g_currentExceptionFrame = IStack_58.previous;
         iStack_c = 0;
       }
       param_1 = pvStack_10;

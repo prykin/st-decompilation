@@ -16,15 +16,14 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   undefined4 uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_50;
-  undefined4 local_4c [16];
+  InternalExceptionFrame local_50;
   STLightC *local_c;
   uint local_8;
   
-  local_50 = DAT_00858df8;
-  DAT_00858df8 = &local_50;
+  local_50.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_4c,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 == 0) {
     puVar3 = FUN_00709af0(DAT_00806774,0,(&PTR_s_light01_007d0164)[*(int *)(local_c + 0x3c)],
@@ -53,17 +52,18 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     *(undefined4 *)(*(int *)(this_00 + 0x57) + *(int *)(this_00 + 0x93) * 0xc) = 0;
     puVar5 = FUN_006ae290((uint *)0x0,local_8,0x30,10);
     *(uint **)(this_00 + 0xa3) = puVar5;
-    DAT_00858df8 = (undefined4 *)local_50;
+    g_currentExceptionFrame = local_50.previous;
     return 1;
   }
-  DAT_00858df8 = (undefined4 *)local_50;
-  iVar6 = FUN_006ad4d0(s_E____titans_nick_to_light_Cpp_007d01b0,0x13b,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_50.previous;
+  iVar6 = ReportDebugMessage(s_E____titans_nick_to_light_Cpp_007d01b0,0x13b,0,iVar2,&DAT_007a4ccc,
+                             s_STLightC__LoadNextLight_007d01f0);
   if (iVar6 != 0) {
     pcVar1 = (code *)swi(3);
     uVar7 = (*pcVar1)();
     return uVar7;
   }
-  FUN_006a5e40(iVar2,0,0x7d01b0,0x13d);
+  RaiseInternalException(iVar2,0,s_E____titans_nick_to_light_Cpp_007d01b0,0x13d);
   return 0xffff;
 }
 

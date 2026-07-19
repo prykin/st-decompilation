@@ -27,17 +27,16 @@ ProdPanelTy::InitProdPanel
   int iVar12;
   undefined4 *puVar13;
   undefined4 uVar14;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   ProdPanelTy *local_14;
   int local_10;
   PanelTy *local_c;
   int local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
     this_00 = local_14;
@@ -96,17 +95,18 @@ ProdPanelTy::InitProdPanel
       local_c = local_c + 4;
       local_10 = local_10 + -1;
     } while (local_10 != 0);
-    DAT_00858df8 = (undefined4 *)local_58;
+    g_currentExceptionFrame = local_58.previous;
     return;
   }
-  DAT_00858df8 = (undefined4 *)local_58;
-  iVar12 = FUN_006ad4d0(s_E____titans_Andrey_specpan_cpp_007c7870,0x193,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_58.previous;
+  iVar12 = ReportDebugMessage(s_E____titans_Andrey_specpan_cpp_007c7870,0x193,0,iVar2,&DAT_007a4ccc,
+                              s_ProdPanelTy__InitProdPanel_007c7a00);
   if (iVar12 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  FUN_006a5e40(iVar2,0,0x7c7870,0x193);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_specpan_cpp_007c7870,0x193);
   return;
 }
 

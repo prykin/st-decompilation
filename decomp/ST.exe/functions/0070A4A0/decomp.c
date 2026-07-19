@@ -11,24 +11,24 @@ undefined4 __cdecl FUN_0070a4a0(int param_1,char param_2,char *param_3)
   undefined4 unaff_ESI;
   uint uVar6;
   void *unaff_EDI;
-  undefined4 local_78;
-  undefined4 local_74 [16];
+  InternalExceptionFrame local_78;
   char local_34;
   uint auStack_33 [10];
   uint local_b;
   
-  local_78 = DAT_00858df8;
-  DAT_00858df8 = &local_78;
-  iVar3 = __setjmp3(local_74,0,unaff_EDI,unaff_ESI);
+  local_78.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_78;
+  iVar3 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_78;
-    iVar4 = FUN_006ad4d0(s_E__Ourlib_mfrload_cpp_007eff5c,0x1c1,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_78.previous;
+    iVar4 = ReportDebugMessage(s_E__Ourlib_mfrload_cpp_007eff5c,0x1c1,0,iVar3,&DAT_007a4ccc,
+                               s_mfRLoadRefresh_007effd0);
     if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
       uVar5 = (*pcVar1)();
       return uVar5;
     }
-    FUN_006a5e40(iVar3,0,0x7eff5c,0x1c3);
+    RaiseInternalException(iVar3,0,s_E__Ourlib_mfrload_cpp_007eff5c,0x1c3);
     return 0;
   }
   if (((param_1 != 0) && (iVar3 = *(int *)(param_1 + 4), iVar3 != 0)) &&
@@ -51,7 +51,7 @@ LAB_0070a537:
       iVar3 = *(int *)(param_1 + 4);
     } while (uVar6 < *(uint *)(iVar3 + 0xc));
   }
-  DAT_00858df8 = (undefined4 *)local_78;
+  g_currentExceptionFrame = local_78.previous;
   return 1;
 }
 

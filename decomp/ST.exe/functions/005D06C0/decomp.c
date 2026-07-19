@@ -15,15 +15,14 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar7;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
   if (*(int *)(this + 0x1f84) != 0) {
-    local_4c = DAT_00858df8;
-    DAT_00858df8 = &local_4c;
+    local_4c.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+    iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar2 = local_8;
     if (iVar3 == 0) {
       iVar3 = *(int *)(local_8 + 0x1f84);
@@ -62,17 +61,18 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
         (**(code **)(*(int *)local_8 + 0x2c))();
         *(int *)(pSVar2 + 0x2121) = *(int *)(pSVar2 + 0x2121) + 1;
       }
-      DAT_00858df8 = (undefined4 *)local_4c;
+      g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar5 = FUN_006ad4d0(s_E____titans_Start_settmobj_cpp_007cd258,0x57d,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar5 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x57d,0,iVar3,&DAT_007a4ccc
+                               ,s_SettMapMTy__ChangePlayerCiv_007cd410);
     if (iVar5 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
     }
-    FUN_006a5e40(iVar3,0,0x7cd258,0x57d);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_settmobj_cpp_007cd258,0x57d);
   }
   return;
 }

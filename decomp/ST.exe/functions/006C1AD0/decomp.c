@@ -3,36 +3,36 @@ int FUN_006c1ad0(uint param_1,int param_2)
 
 {
   int iVar1;
-  int iVar2;
-  uint uVar3;
-  byte *pbVar4;
+  int exceptionCode;
+  uint uVar2;
+  byte *pbVar3;
   
-  iVar2 = 0;
+  exceptionCode = 0;
   if (DAT_008568b4 != 0) {
     EnterCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
     if (param_1 == 0xff) {
-      uVar3 = 0;
-      pbVar4 = &DAT_00854ff8;
+      uVar2 = 0;
+      pbVar3 = &DAT_00854ff8;
       do {
-        if (((*pbVar4 & 1) != 0) && (iVar1 = FUN_006c19d0(param_2,uVar3), iVar2 == 0)) {
-          iVar2 = iVar1;
+        if (((*pbVar3 & 1) != 0) && (iVar1 = FUN_006c19d0(param_2,uVar2), exceptionCode == 0)) {
+          exceptionCode = iVar1;
         }
-        pbVar4 = pbVar4 + 0xc4;
-        uVar3 = uVar3 + 1;
-      } while ((int)pbVar4 < 0x856878);
+        pbVar3 = pbVar3 + 0xc4;
+        uVar2 = uVar2 + 1;
+      } while ((int)pbVar3 < 0x856878);
     }
     else if ((((int)param_1 < 0) || (0x1f < (int)param_1)) ||
             (((&DAT_00854ff8)[param_1 * 0xc4] & 1) == 0)) {
-      iVar2 = -4;
+      exceptionCode = -4;
     }
     else {
-      iVar2 = FUN_006c19d0(param_2,param_1);
+      exceptionCode = FUN_006c19d0(param_2,param_1);
     }
     LeaveCriticalSection((LPCRITICAL_SECTION)&DAT_00856898);
-    if ((iVar2 != -4) && (iVar2 != 0)) {
-      FUN_006a5e40(iVar2,DAT_007ed77c,0x7ede14,0x4d9);
+    if ((exceptionCode != -4) && (exceptionCode != 0)) {
+      RaiseInternalException(exceptionCode,DAT_007ed77c,s_E__DKW_SND_C_dxsnd2_cpp_007ede14,0x4d9);
     }
-    return iVar2;
+    return exceptionCode;
   }
   return -0x34;
 }

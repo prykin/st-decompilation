@@ -16,30 +16,30 @@ FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,
   char *pcVar9;
   undefined1 local_250;
   char local_24f [515];
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   int local_8;
   
   local_8 = 0;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
-  iVar3 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
+  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
-    DAT_00858df8 = (undefined4 *)local_4c;
-    iVar6 = FUN_006ad4d0(s_E__Ourlib_mfaobj_cpp_007efd3c,0x45,0,iVar3,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_4c.previous;
+    iVar6 = ReportDebugMessage(s_E__Ourlib_mfaobj_cpp_007efd3c,0x45,0,iVar3,&DAT_007a4ccc,
+                               s_mfAObjEnum_007efd60);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       iVar3 = (*pcVar2)();
       return iVar3;
     }
-    FUN_006a5e40(iVar3,0,0x7efd3c,0x47);
+    RaiseInternalException(iVar3,0,s_E__Ourlib_mfaobj_cpp_007efd3c,0x47);
     if (-1 < iVar3) {
       return -1;
     }
     return iVar3;
   }
   if (param_3 == (undefined *)0x0) {
-    FUN_006a5e40(-0x34,DAT_007ed77c,0x7efd3c,0x37);
+    RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfaobj_cpp_007efd3c,0x37);
   }
   uVar7 = 0xffffffff;
   do {
@@ -71,12 +71,12 @@ FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,
     iVar3 = FUN_006f2600(0xc,pcVar4,(undefined1 *)0x0,1);
     iVar3 = (*(code *)param_3)(puVar5,iVar3,param_1,pcVar4,param_4);
     if (iVar3 != 0) {
-      FUN_006a5e40(iVar3,DAT_007ed77c,0x7efd3c,0x3f);
+      RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfaobj_cpp_007efd3c,0x3f);
     }
     local_8 = local_8 + 1;
     pcVar4 = (char *)cMf32::RecNameGetNext(param_1);
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
+  g_currentExceptionFrame = local_4c.previous;
   return local_8;
 }
 

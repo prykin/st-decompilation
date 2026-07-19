@@ -14,18 +14,17 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   CPanelTy *pCVar5;
-  undefined4 local_4c;
-  undefined4 local_48 [16];
+  InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
   if (param_1 == *(int *)(this + 0x130)) {
     return 0;
   }
   *(int *)(this + 0x130) = param_1;
-  local_4c = DAT_00858df8;
-  DAT_00858df8 = &local_4c;
+  local_4c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_EDI,unaff_ESI);
+  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     ShiftControls(local_8,1,param_1);
@@ -48,17 +47,18 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
       pCVar5 = pCVar5 + 4;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
-    DAT_00858df8 = (undefined4 *)local_4c;
+    g_currentExceptionFrame = local_4c.previous;
     return 1;
   }
-  DAT_00858df8 = (undefined4 *)local_4c;
-  iVar3 = FUN_006ad4d0(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b,0,iVar2,&DAT_007a4ccc);
+  g_currentExceptionFrame = local_4c.previous;
+  iVar3 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b,0,iVar2,&DAT_007a4ccc,
+                             s_CPanelTy__ShiftControls_007c22a0);
   if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
     uVar4 = (*pcVar1)();
     return uVar4;
   }
-  FUN_006a5e40(iVar2,0,0x7c1bd8,0x42b);
+  RaiseInternalException(iVar2,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x42b);
   return 1;
 }
 

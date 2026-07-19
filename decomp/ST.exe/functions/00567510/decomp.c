@@ -19,10 +19,8 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
   int iVar13;
   undefined4 uVar14;
   undefined4 uVar15;
-  undefined4 local_b0;
-  undefined4 local_ac [16];
-  undefined4 local_6c;
-  undefined4 local_68 [16];
+  InternalExceptionFrame local_b0;
+  InternalExceptionFrame local_6c;
   uint local_28;
   int local_24;
   void *local_20;
@@ -54,12 +52,12 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
     }
     *(int *)((int)this + 0x10e9) = iVar4;
     *(int *)((int)this + 0x10ed) = param_2 - iVar4 * param_1;
-    local_b0 = DAT_00858df8;
-    DAT_00858df8 = &local_b0;
-    iVar4 = __setjmp3(local_ac,0,unaff_EDI,unaff_ESI);
+    local_b0.previous = g_currentExceptionFrame;
+    g_currentExceptionFrame = &local_b0;
+    iVar4 = __setjmp3(local_b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pvVar3 = local_20;
     if (iVar4 != 0) {
-      DAT_00858df8 = (undefined4 *)local_b0;
+      g_currentExceptionFrame = local_b0.previous;
       return;
     }
     local_8 = 2;
@@ -167,7 +165,7 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
       local_8 = iVar4 + 1;
       local_10 = local_10 + 3;
     } while (local_8 < 0x20);
-    DAT_00858df8 = (undefined4 *)local_b0;
+    g_currentExceptionFrame = local_b0.previous;
     return;
   }
   if ((((*(int *)((int)this + 0x10d9) == param_1) && (*(int *)((int)this + 0x10dd) == param_2)) &&
@@ -177,12 +175,12 @@ void __thiscall FUN_00567510(void *this,int param_1,int param_2,int param_3,int 
   *(int *)((int)this + 0x10e5) = param_3;
   *(int *)((int)this + 0x10d9) = param_1;
   *(int *)((int)this + 0x10dd) = param_2;
-  local_6c = DAT_00858df8;
-  DAT_00858df8 = &local_6c;
-  iVar4 = __setjmp3(local_68,0,unaff_EDI,unaff_ESI);
+  local_6c.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_6c;
+  iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pvVar3 = local_20;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_6c;
+    g_currentExceptionFrame = local_6c.previous;
     return;
   }
   switch(*(undefined4 *)((int)local_20 + 0x10e5)) {
@@ -240,7 +238,7 @@ switchD_005675bc_default:
       piVar12 = piVar12 + 3;
     } while (iVar4 < 0x20);
   }
-  DAT_00858df8 = (undefined4 *)local_6c;
+  g_currentExceptionFrame = local_6c.previous;
   return;
 }
 

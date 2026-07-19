@@ -11,8 +11,7 @@ uint thunk_FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_
   undefined4 unaff_ESI;
   void *unaff_EDI;
   bool bVar4;
-  undefined4 uStack_64;
-  undefined4 auStack_60 [16];
+  InternalExceptionFrame IStack_64;
   uint auStack_20 [3];
   void *pvStack_14;
   uint uStack_10;
@@ -25,14 +24,14 @@ uint thunk_FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_
   auStack_20[2] = 0xffffffff;
   auStack_20[1] = 0;
   pvStack_14 = (void *)0x0;
-  uStack_64 = DAT_00858df8;
-  DAT_00858df8 = &uStack_64;
-  uVar1 = __setjmp3(auStack_60,0,unaff_EDI,unaff_ESI);
+  IStack_64.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &IStack_64;
+  uVar1 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar1 != 0) {
-    DAT_00858df8 = (undefined4 *)uStack_64;
+    g_currentExceptionFrame = IStack_64.previous;
     thunk_FUN_006686c0((int *)&puStack_8);
     thunk_FUN_006686c0((int *)&puStack_c);
-    FUN_006a5e40(uVar1,0,0x7d2a34,0x1b8);
+    RaiseInternalException(uVar1,0,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b8);
     return uVar1;
   }
   if (((int)uStack_10 < 0) || (bVar4 = uStack_10 == 8, 8 < (int)uStack_10)) {
@@ -54,7 +53,7 @@ uint thunk_FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_
   thunk_FUN_0054cc20(900,auStack_20 + 1,&pvStack_14,puStack_c,0);
   thunk_FUN_006686c0((int *)&puStack_c);
   if (pvStack_14 == (void *)0x0) {
-    FUN_006a5e40(-0xab,DAT_007ed77c,0x7d2a34,0x1b4);
+    RaiseInternalException(-0xab,DAT_007ed77c,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b4);
     uVar1 = auStack_20[2];
   }
   else {
@@ -64,11 +63,11 @@ uint thunk_FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_
     if (puVar3 != (uint *)0x0) {
       thunk_FUN_0065d940(pvStack_14,(int)puVar3,0);
       FUN_006ae110((byte *)puVar3);
-      DAT_00858df8 = (undefined4 *)uStack_64;
+      g_currentExceptionFrame = IStack_64.previous;
       return uVar1;
     }
   }
-  DAT_00858df8 = (undefined4 *)uStack_64;
+  g_currentExceptionFrame = IStack_64.previous;
   return uVar1;
 }
 

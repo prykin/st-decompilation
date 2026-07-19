@@ -16,8 +16,7 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
   undefined4 uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 local_58;
-  undefined4 local_54 [16];
+  InternalExceptionFrame local_58;
   undefined1 local_14;
   undefined3 uStack_13;
   undefined1 local_10;
@@ -27,20 +26,21 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
   undefined1 local_a;
   ProdPanelTy *local_8;
   
-  local_58 = DAT_00858df8;
-  DAT_00858df8 = &local_58;
+  local_58.previous = g_currentExceptionFrame;
+  g_currentExceptionFrame = &local_58;
   local_8 = (ProdPanelTy *)this;
-  iVar4 = __setjmp3(local_54,0,unaff_EDI,unaff_ESI);
+  iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
-    DAT_00858df8 = (undefined4 *)local_58;
-    iVar6 = FUN_006ad4d0(s_E____titans_Andrey_bldboat_cpp_007c17b4,0xec,0,iVar4,&DAT_007a4ccc);
+    g_currentExceptionFrame = local_58.previous;
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_bldboat_cpp_007c17b4,0xec,0,iVar4,&DAT_007a4ccc,
+                               s_BldBoatPanelTy__GetMessage_007c1894);
     if (iVar6 != 0) {
       pcVar2 = (code *)swi(3);
       uVar7 = (*pcVar2)();
       return uVar7;
     }
-    FUN_006a5e40(iVar4,0,0x7c17b4,0xec);
+    RaiseInternalException(iVar4,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0xec);
     return 0xffff;
   }
   if (*(int *)(param_1 + 0x10) == 2) {
@@ -51,17 +51,17 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
   if (uVar1 < 0xb203) {
     if (uVar1 == 0xb202) {
       ProdPanelTy::PaintTab(this_00,param_1,&LAB_00402e7d);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (uVar1 == 2) {
       InitBldBoatPanel((BldBoatPanelTy *)this_00);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (uVar1 == 3) {
       thunk_FUN_004eef20((int)this_00);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
     if (uVar1 == 0xb201) {
@@ -69,7 +69,7 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
       this_00[0x278] = (ProdPanelTy)(**(char **)(param_1 + 0x14) + -1);
       thunk_FUN_005252c0(0xae);
       (**(code **)(*(int *)this_00 + 0x1c))();
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     }
   }
@@ -110,7 +110,7 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
         local_a = 0xff;
         thunk_FUN_0054edf0((undefined4 *)0x1e,(undefined4 *)&local_14,0,0xffffffff);
         thunk_FUN_005252c0(0xae);
-        DAT_00858df8 = (undefined4 *)local_58;
+        g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       break;
@@ -118,7 +118,7 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
       *(undefined4 *)(this_00 + 0x199) = *(undefined4 *)(param_1 + 0x14);
       thunk_FUN_004ef140(this_00);
       thunk_FUN_005252c0(0xae);
-      DAT_00858df8 = (undefined4 *)local_58;
+      g_currentExceptionFrame = local_58.previous;
       return 0;
     case 0xc0af:
     case 0xc0b0:
@@ -128,7 +128,7 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
       PaintBldBut((BldBoatPanelTy *)this_00,param_1);
     }
   }
-  DAT_00858df8 = (undefined4 *)local_58;
+  g_currentExceptionFrame = local_58.previous;
   return 0;
 }
 
