@@ -42,7 +42,7 @@ undefined4 __fastcall FUN_004c2c10(int param_1)
     else if (*(int *)(param_1 + 0x5ac) == 0x73) {
       local_24 = *(undefined4 *)(param_1 + 0x4d0);
     }
-    thunk_FUN_0054cc20(0xdc,0,&local_8,local_58,0);
+    STPlaySystemC::CreateGameObject(DAT_00802a38,0xdc,0,&local_8,local_58,0);
     uVar1 = *(undefined4 *)(local_8 + 0x18);
     *(undefined4 *)(param_1 + 0x408) = 1;
     *(undefined4 *)(param_1 + 0x40c) = uVar1;

@@ -9,7 +9,7 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
   undefined4 *puVar5;
   
   puVar5 = (undefined4 *)0x0;
-  iVar3 = FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+  iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
   if (iVar3 == 1) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
@@ -21,7 +21,7 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
   }
   do {
     if ((puVar2 == (undefined4 *)0x0) || (puVar2 == puVar5)) {
-      iVar3 = FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+      iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
       if (iVar3 == 1) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -34,7 +34,7 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
       if ((void *)puVar2[2] != (void *)0x0) {
         iVar3 = thunk_FUN_006a55d0((void *)puVar2[2],1,0);
         if (iVar3 == 0) {
-          iVar3 = FUN_00730fa0(0,0,0,0,(byte *)s__File_Error___d____007eca44);
+          iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s__File_Error___d____007eca44);
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
@@ -42,7 +42,7 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
           }
         }
         else {
-          iVar3 = FUN_00730fa0(0,0,0,0,(byte *)s__hs__d____007eca34);
+          iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s__hs__d____007eca34);
           if (iVar3 == 1) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
@@ -50,7 +50,7 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
           }
         }
       }
-      iVar3 = FUN_00730fa0(0,0,0,0,(byte *)s___ld__007eca2c);
+      iVar3 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s___ld__007eca2c);
       if (iVar3 == 1) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
@@ -58,7 +58,8 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
       }
       uVar4 = puVar2[5] & 0xffff;
       if (uVar4 == 4) {
-        iVar3 = FUN_00730fa0(0,0,0,0,(byte *)s_client_block_at_0x_08X__subtype___007ec9ec);
+        iVar3 = Library::MSVCRT::FUN_00730fa0
+                          (0,0,0,0,(byte *)s_client_block_at_0x_08X__subtype___007ec9ec);
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
@@ -70,7 +71,8 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
         }
       }
       else if (puVar2[5] == 1) {
-        iVar3 = FUN_00730fa0(0,0,0,0,(byte *)s_normal_block_at_0x_08X___u_bytes_007ec9bc);
+        iVar3 = Library::MSVCRT::FUN_00730fa0
+                          (0,0,0,0,(byte *)s_normal_block_at_0x_08X___u_bytes_007ec9bc);
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
@@ -79,7 +81,8 @@ void __cdecl thunk_FUN_006a5990(undefined4 *param_1)
       }
       else {
         if (uVar4 != 2) goto LAB_006a5b2e;
-        iVar3 = FUN_00730fa0(0,0,0,0,(byte *)s_crt_block_at_0x_08X__subtype__x__007ec980);
+        iVar3 = Library::MSVCRT::FUN_00730fa0
+                          (0,0,0,0,(byte *)s_crt_block_at_0x_08X__subtype__x__007ec980);
         if (iVar3 == 1) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();

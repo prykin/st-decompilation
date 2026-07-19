@@ -91,7 +91,7 @@ void __fastcall FUN_005f4680(int param_1)
       iVar4 = ((*(int *)(param_1 + 0xa7) - *(int *)(param_1 + 0x9b)) * 0x28) / local_8 +
               *(int *)(param_1 + 0x9b);
     }
-    thunk_FUN_00556760(DAT_00802a7c,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
+    TraksClassTy::TraksCreate(DAT_00802a7c,1,1,0,iVar5,iVar3,iVar4,0,0,0,0,0,0,-1,0,0);
     if (*(char *)(param_1 + 0xc4) == '\0') {
       FUN_006eaaa0(DAT_00807598,*(uint *)(param_1 + 0x8f),0);
       *(undefined1 *)(param_1 + 0xc4) = 1;

@@ -26,7 +26,7 @@ int __thiscall FUN_0061d9c0(void *this,undefined4 *param_1,int *param_2,int para
     param_3 = 0;
   }
   uVar5 = *(uint *)((int)this + 0x93);
-  puVar1 = (undefined4 *)FUN_006aac70(uVar5 * 4);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5 * 4);
   *(undefined4 **)((int)this + 0x9b) = puVar1;
   puVar7 = param_1;
   for (uVar2 = uVar5 & 0x3fffffff; uVar2 != 0; uVar2 = uVar2 - 1) {
@@ -53,7 +53,7 @@ int __thiscall FUN_0061d9c0(void *this,undefined4 *param_1,int *param_2,int para
     } while (iVar3 != 0);
   }
   *param_2 = local_8;
-  iVar3 = FUN_006aac70(local_c);
+  iVar3 = Library::DKW::LIB::FUN_006aac70(local_c);
   *(int *)((int)this + 0x9f) = iVar3;
   param_2 = (int *)(iVar3 + *(int *)((int)this + 0x93) * 4);
   local_c = 0;

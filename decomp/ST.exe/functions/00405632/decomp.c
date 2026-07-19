@@ -58,8 +58,8 @@ thunk_FUN_004b0250(uint param_1,int param_2,int *param_3,int *param_4,int *param
   }
   aiStack_88[9] = (int)sVar13 / (int)(uint)DAT_008087c4._2_1_;
   iStack_40 = thunk_FUN_004e81b0(param_1,param_2 + -0x32,0);
-  puStack_10 = (undefined4 *)FUN_006aac70(DAT_007fb246 * 5);
-  puStack_2c = FUN_006ae290((uint *)0x0,10,4,10);
+  puStack_10 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(DAT_007fb246 * 5);
+  puStack_2c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,4,10);
   iStack_18 = 0;
   do {
     puStack_34 = (undefined4 *)(DAT_007fb246 * iStack_18);
@@ -145,7 +145,7 @@ LAB_004b04c9:
                      ((iVar8 = (**(code **)(*piStack_c + 0x2c))(), iVar8 == 0x78 &&
                       ((&PTR_LAB_0079072c)[*(int *)((int)piStack_c + 0x259)] == (undefined *)0x2))))
                   {
-                    FUN_006ae1c0(puStack_2c,&piStack_c);
+                    Library::DKW::TBL::FUN_006ae1c0(puStack_2c,&piStack_c);
                   }
                   goto LAB_004b057d;
                 }
@@ -155,7 +155,7 @@ LAB_004b04c9:
                  ((iVar8 = (**(code **)(*piStack_c + 0x2c))(), iVar8 == 0x78 &&
                   ((&PTR_LAB_0079072c)[*(int *)((int)piStack_c + 0x259)] == (undefined *)0x2)))) {
                 *(undefined1 *)((int)puVar10 + iVar14 + (int)puStack_10) = 6;
-                FUN_006ae1c0(puStack_2c,&piStack_c);
+                Library::DKW::TBL::FUN_006ae1c0(puStack_2c,&piStack_c);
               }
               else {
                 *(undefined1 *)((int)puVar10 + iVar14 + (int)puStack_10) = 5;

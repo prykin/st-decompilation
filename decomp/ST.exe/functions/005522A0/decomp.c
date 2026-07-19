@@ -43,7 +43,7 @@ undefined4 __thiscall TradePanelTy::GetMessage(TradePanelTy *this,int param_1)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_c = (SpecPanelTy *)this;
-  iVar3 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -170,8 +170,9 @@ LAB_00552481:
         puVar6 = FUN_00709af0(DAT_00806794,6,pbVar5,uVar9,bVar11,iVar8,iVar12,puVar15);
         thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_8,iVar3,'\x06',(byte *)puVar6);
       }
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                   *(uint *)(this_00 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                 *(uint *)(this_00 + 0x44));
       g_currentExceptionFrame = local_68.previous;
       return 0;
     }

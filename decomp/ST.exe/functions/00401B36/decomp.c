@@ -51,7 +51,7 @@ undefined4 __thiscall thunk_FUN_004ebab0(void *this,int param_1,int param_2)
     *(undefined4 *)((int)this + 0x4ec) = 0;
     uVar2 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
     *(uint *)((int)this + 0x50c) = uVar2 & 0xff;
-    thunk_FUN_004cabb0(0);
+    TLOBaseTy::RotateSpr(this,0);
   }
   return 0;
 }

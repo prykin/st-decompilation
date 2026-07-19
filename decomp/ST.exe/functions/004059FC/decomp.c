@@ -29,7 +29,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   IStack_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_60;
   pWStack_8 = this;
-  iVar4 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_60.previous;
     iVar9 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x15e,0,iVar4,&DAT_007a4ccc
@@ -49,7 +49,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
   if (*(byte **)(DAT_0081176c + 0x548) != (byte *)0x0) {
     FUN_006b5570(*(byte **)(DAT_0081176c + 0x548));
   }
-  puVar6 = FUN_006b54f0((uint *)0x0,10,10);
+  puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   this_01 = pWStack_8;
   *(uint **)(DAT_0081176c + 0x548) = puVar6;
   if (*(int *)(pWStack_8 + 0x1a8f) == -1) {
@@ -68,7 +68,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     if (iVar4 == -0x70) {
       IStack_a4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &IStack_a4;
-      iVar4 = __setjmp3(IStack_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(IStack_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
         puStack_10 = FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
       }
@@ -79,7 +79,8 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
         StartSystemTy::LoadMapData
                   (DAT_0081176c,(int)puStack_10,(pWStack_8[0x1a93] != (WaitTy)0x2) + '\x04');
         iStack_c = 1;
-        FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,abStack_1a8,(byte *)0x0);
+        Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,abStack_1a8,(byte *)0x0)
+        ;
         pbVar10 = abStack_1a8;
         uVar7 = FUN_006b0140(0x252a,DAT_00807618);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___s__007c85fc,uVar7,pbVar10);

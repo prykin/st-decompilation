@@ -27,7 +27,7 @@ int FUN_00561dc0(int param_1,int param_2,int param_3)
   }
   iVar8 = (int)(local_10 * 0x168 + (local_10 * 0x168 >> 0x1f & 0xfU)) >> 4;
   iVar3 = FUN_006db6d0(iVar8);
-  iVar4 = FUN_006db640(iVar8);
+  iVar4 = Library::DKW::STR::FUN_006db640(iVar8);
   local_1c = 0;
   iVar8 = iVar1 + iVar3 * 3;
   local_c = 0;
@@ -63,7 +63,7 @@ int FUN_00561dc0(int param_1,int param_2,int param_3)
   }
   iVar8 = (int)(local_10 * 0x168 + (local_10 * 0x168 >> 0x1f & 0xfU)) >> 4;
   iVar4 = FUN_006db6d0(iVar8);
-  iVar5 = FUN_006db640(iVar8);
+  iVar5 = Library::DKW::STR::FUN_006db640(iVar8);
   iVar3 = 0;
   iVar8 = iVar1 + iVar4 * 3;
   local_c = 0;
@@ -97,7 +97,7 @@ int FUN_00561dc0(int param_1,int param_2,int param_3)
   }
   iVar8 = (int)(param_3 * 0x168 + (param_3 * 0x168 >> 0x1f & 0xfU)) >> 4;
   iVar7 = FUN_006db6d0(iVar8);
-  iVar3 = FUN_006db640(iVar8);
+  iVar3 = Library::DKW::STR::FUN_006db640(iVar8);
   iVar8 = 0;
   iVar1 = iVar1 + iVar7 * 3;
   local_c = 0;

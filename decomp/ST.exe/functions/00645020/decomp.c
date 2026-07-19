@@ -23,7 +23,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
-  errorCode = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar2 = local_c;
   if (errorCode == 0) {
     if (local_c == 0) {

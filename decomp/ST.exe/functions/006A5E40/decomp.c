@@ -9,7 +9,7 @@ void RaiseInternalException(int exceptionCode,int overwriteContext,char *sourceF
   }
   if (g_currentExceptionFrame != (InternalExceptionFrame *)0x0) {
                     /* WARNING: Subroutine does not return */
-    _longjmp(g_currentExceptionFrame->jumpBuffer,exceptionCode);
+    Library::MSVCRT::_longjmp(g_currentExceptionFrame->jumpBuffer,exceptionCode);
   }
   return;
 }

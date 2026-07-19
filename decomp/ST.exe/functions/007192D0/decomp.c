@@ -19,7 +19,7 @@ FUN_007192d0(undefined4 *param_1,undefined4 *param_2,uint param_3,UINT param_4,i
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     local_c = iVar2;
     local_8 = timeGetTime();

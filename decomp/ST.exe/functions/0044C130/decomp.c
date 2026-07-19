@@ -1,5 +1,9 @@
 
-uint FUN_0044c130(int param_1,int param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::GetTOBJImage */
+
+uint __thiscall STAllPlayersC::GetTOBJImage(STAllPlayersC *this,int param_1,int param_2)
 
 {
   code *pcVar1;
@@ -8,7 +12,7 @@ uint FUN_0044c130(int param_1,int param_2)
   uint uVar4;
   int iVar5;
   int *piVar6;
-  byte local_154 [256];
+  STBoatC local_154 [256];
   int local_54 [12];
   undefined4 local_24;
   undefined4 local_20;
@@ -65,33 +69,39 @@ uint FUN_0044c130(int param_1,int param_2)
   case 0x27:
   case 0x28:
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0044e980(param_1,iVar3,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
-    if (local_154[0] != 0) {
-      puVar2 = FUN_00709af0(local_c,(byte)local_8,local_154,0xffffffff,0,1,0,(undefined4 *)0x0);
+    STBoatC::GetVisualInfo
+              (local_154,param_1,iVar3,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,
+               &param_2);
+    if (local_154[0] != (STBoatC)0x0) {
+      puVar2 = FUN_00709af0(local_c,(byte)local_8,(byte *)local_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
       local_1c = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
     }
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0044e980(param_1,iVar3,0xd,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
-    if (local_154[0] != 0) {
-      puVar2 = FUN_00709af0(local_c,(byte)local_8,local_154,0xffffffff,0,1,0,(undefined4 *)0x0);
+    STBoatC::GetVisualInfo
+              ((STBoatC *)&local_8,param_1,iVar3,0xd,&local_c,(char *)local_154,(STBoatC *)&local_8,
+               &param_2);
+    if (local_154[0] != (STBoatC)0x0) {
+      puVar2 = FUN_00709af0(local_c,(byte)local_8,(byte *)local_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
       local_20 = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
     }
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
-    thunk_FUN_0044e980(param_1,iVar3,0xc,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
-    ;
-    if (local_154[0] != 0) {
-      puVar2 = FUN_00709af0(local_c,(byte)local_8,local_154,0xffffffff,0,1,0,(undefined4 *)0x0);
+    STBoatC::GetVisualInfo
+              ((STBoatC *)&local_c,param_1,iVar3,0xc,(undefined4 *)&local_c,(char *)local_154,
+               (undefined1 *)&local_8,&param_2);
+    if (local_154[0] != (STBoatC)0x0) {
+      puVar2 = FUN_00709af0(local_c,(byte)local_8,(byte *)local_154,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
       local_24 = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
     }
     uVar4 = FUN_00709470(DAT_00807598,local_54,0x11,1,10,0xff);
@@ -176,13 +186,14 @@ uint FUN_0044c130(int param_1,int param_2)
     iVar5 = 0;
     do {
       local_c = (int *)0x0;
-      local_154[0] = 0;
+      local_154[0] = (STBoatC)0x0;
       local_8 = CONCAT31(local_8._1_3_,0x1d);
       param_2 = 0;
       thunk_FUN_004c2950(param_1,iVar3,iVar5,&local_c,(char *)local_154,(undefined1 *)&local_8,
                          &param_2);
-      if (local_154[0] != 0) {
-        puVar2 = FUN_00709af0(local_c,(byte)local_8,local_154,0xffffffff,0,1,0,(undefined4 *)0x0);
+      if (local_154[0] != (STBoatC)0x0) {
+        puVar2 = FUN_00709af0(local_c,(byte)local_8,(byte *)local_154,0xffffffff,0,1,0,
+                              (undefined4 *)0x0);
         if (*(int *)puVar2 + -1 < param_2) {
           param_2 = *(int *)puVar2 + -1;
         }
@@ -199,7 +210,7 @@ uint FUN_0044c130(int param_1,int param_2)
   case 0xe0:
   case 0xe2:
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_00580910(param_1,iVar3,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
@@ -222,7 +233,7 @@ uint FUN_0044c130(int param_1,int param_2)
   case 0xfa:
   case 0xfb:
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_0057a140(param_1,iVar3,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
@@ -230,7 +241,7 @@ uint FUN_0044c130(int param_1,int param_2)
     goto joined_r0x0044c40d;
   case 0xfd:
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_005ec740(param_1,iVar3,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
@@ -238,18 +249,19 @@ uint FUN_0044c130(int param_1,int param_2)
     break;
   case 0xfe:
     local_c = (int *)0x0;
-    local_154[0] = 0;
+    local_154[0] = (STBoatC)0x0;
     local_8 = CONCAT31(local_8._1_3_,0x1d);
     param_2 = 0;
     thunk_FUN_005fcf50(param_1,iVar3,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
     ;
 joined_r0x0044c40d:
-    if (local_154[0] == 0) goto LAB_0044c477;
+    if (local_154[0] == (STBoatC)0x0) goto LAB_0044c477;
     goto LAB_0044c44d;
   }
-  if (local_154[0] != 0) {
+  if (local_154[0] != (STBoatC)0x0) {
 LAB_0044c44d:
-    puVar2 = FUN_00709af0(local_c,(byte)local_8,local_154,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar2 = FUN_00709af0(local_c,(byte)local_8,(byte *)local_154,0xffffffff,0,1,0,(undefined4 *)0x0
+                         );
     local_1c = *(undefined4 *)(*(int *)((int)puVar2 + 0x21) + param_2 * 4);
   }
 LAB_0044c477:

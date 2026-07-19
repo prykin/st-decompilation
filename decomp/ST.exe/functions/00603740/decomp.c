@@ -27,7 +27,7 @@ undefined4 __thiscall STExplosion::GetMessage(STExplosion *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = (STGameObjC *)this;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar9 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -67,7 +67,7 @@ undefined4 __thiscall STExplosion::GetMessage(STExplosion *this,int param_1)
                   ((*(int **)(pSVar9 + 699) != (int *)0x0 &&
                    (iVar4 = thunk_FUN_006372e0(*(int **)(pSVar9 + 699)), iVar4 != 0)))) {
             thunk_FUN_006366d0(*(int *)(pSVar9 + 699));
-            FUN_0072e2b0(*(undefined4 **)(pSVar9 + 699));
+            Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pSVar9 + 699));
             *(undefined4 *)(pSVar9 + 0x2b7) = 0xffffffff;
             *(undefined4 *)(pSVar9 + 699) = 0;
           }
@@ -265,14 +265,14 @@ undefined4 __thiscall STExplosion::GetMessage(STExplosion *this,int param_1)
       }
       if (*(int *)(pSVar9 + 699) != 0) {
         thunk_FUN_006366d0(*(int *)(pSVar9 + 699));
-        FUN_0072e2b0(*(undefined4 **)(pSVar9 + 699));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pSVar9 + 699));
         *(undefined4 *)(pSVar9 + 699) = 0;
       }
       thunk_FUN_00604120((int)pSVar9);
       g_currentExceptionFrame = local_54.previous;
       return 0;
     }
-    local_c = (byte *)thunk_FUN_00604a90(pSVar9,&local_8);
+    local_c = (byte *)STExplosionC::SaveObj((STExplosionC *)pSVar9,&local_8);
     if (local_c == (byte *)0x0) {
       g_currentExceptionFrame = local_54.previous;
       return 0;

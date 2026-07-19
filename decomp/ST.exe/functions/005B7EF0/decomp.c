@@ -41,7 +41,7 @@ MMsgTy::SetMessage(MMsgTy *this,UINT param_1,char param_2,undefined4 *param_3,un
     local_78.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_78;
     local_14 = (MMObjTy *)this;
-    iVar3 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_14;
     if (iVar3 == 0) {
       iVar3 = *(int *)(local_14 + 0x1cab);

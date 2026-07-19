@@ -1,2 +1,2 @@
-thunk_FUN_00465c60:
+STBoatC::LoadRC:
 00405434  E9 27 08 06 00            JMP 0x00465c60

@@ -29,7 +29,7 @@ undefined4 __cdecl thunk_FUN_0057b350(int *param_1,int param_2,int *param_3)
     }
   }
   else {
-    iVar7 = FUN_006aac70(param_2 << 3);
+    iVar7 = Library::DKW::LIB::FUN_006aac70(param_2 << 3);
     *param_3 = iVar7;
     if (iVar7 != 0) {
       iStack_8 = 0;

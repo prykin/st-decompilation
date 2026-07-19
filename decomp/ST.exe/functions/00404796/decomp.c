@@ -1,5 +1,5 @@
 
-void __fastcall thunk_FUN_0048a670(void *param_1)
+void __thiscall STBoatC::_SetSpeedFireLife(STBoatC *this,void *param_1)
 
 {
   undefined4 uVar1;
@@ -7,10 +7,10 @@ void __fastcall thunk_FUN_0048a670(void *param_1)
   byte bVar3;
   int iVar4;
   
-  switch(*(undefined4 *)((int)param_1 + 0x6f7)) {
+  switch(*(undefined4 *)(this + 0x6f7)) {
   case 1:
   case 0x20:
-    *(undefined4 *)((int)param_1 + 0x219) = 0x5a;
+    *(undefined4 *)(this + 0x219) = 0x5a;
     break;
   case 2:
   case 5:
@@ -27,13 +27,13 @@ void __fastcall thunk_FUN_0048a670(void *param_1)
   case 0x26:
   case 0x27:
   case 0x28:
-    *(undefined4 *)((int)param_1 + 0x219) = 0x8c;
+    *(undefined4 *)(this + 0x219) = 0x8c;
     break;
   case 3:
   case 4:
   case 0xb:
   case 0xf:
-    *(undefined4 *)((int)param_1 + 0x219) = 0xbe;
+    *(undefined4 *)(this + 0x219) = 0xbe;
     break;
   case 7:
   case 8:
@@ -53,13 +53,13 @@ void __fastcall thunk_FUN_0048a670(void *param_1)
   case 10:
   case 0x17:
   case 0x22:
-    *(undefined4 *)((int)param_1 + 0x219) = 0xfa;
+    *(undefined4 *)(this + 0x219) = 0xfa;
     break;
   case 0x16:
-    *(undefined4 *)((int)param_1 + 0x219) = 0xe6;
+    *(undefined4 *)(this + 0x219) = 0xe6;
     break;
   case 0x23:
-    *(undefined4 *)((int)param_1 + 0x219) = 0xaa;
+    *(undefined4 *)(this + 0x219) = 0xaa;
     break;
   default:
     iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x46b8,0,0,&DAT_007a4ccc,
@@ -70,12 +70,12 @@ void __fastcall thunk_FUN_0048a670(void *param_1)
       return;
     }
   }
-  bVar3 = thunk_FUN_00430750(*(int *)((int)param_1 + 0x6f7));
-  thunk_FUN_00417ff0(param_1,bVar3);
-  thunk_FUN_00418010(param_1,bVar3 / 2);
-  uVar1 = *(undefined4 *)(&DAT_007dfbac + *(int *)((int)param_1 + 0x6f7) * 4);
-  *(undefined4 *)((int)param_1 + 0x716) = uVar1;
-  *(undefined4 *)((int)param_1 + 0x712) = uVar1;
+  bVar3 = thunk_FUN_00430750(*(int *)(this + 0x6f7));
+  thunk_FUN_00417ff0(this,bVar3);
+  thunk_FUN_00418010(this,bVar3 / 2);
+  uVar1 = *(undefined4 *)(&DAT_007dfbac + *(int *)(this + 0x6f7) * 4);
+  *(undefined4 *)(this + 0x716) = uVar1;
+  *(undefined4 *)(this + 0x712) = uVar1;
   return;
 }
 

@@ -67,7 +67,7 @@ void __cdecl FUN_00674d20(char *param_1)
       pcVar5 = pcVar5 + 1;
       pcVar7 = pcVar7 + 1;
     }
-    FUN_0072eb70(local_108,DAT_00811970);
+    Library::MSVCRT::FUN_0072eb70(local_108,DAT_00811970);
   }
   return;
 }

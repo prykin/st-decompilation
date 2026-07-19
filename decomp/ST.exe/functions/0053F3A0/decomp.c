@@ -19,7 +19,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar3 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;

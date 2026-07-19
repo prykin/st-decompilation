@@ -1,5 +1,9 @@
 
-void __fastcall FUN_004a7490(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_grpb.cpp
+   STGroupBoatC::ReMakePatrolPoints */
+
+void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
 
 {
   ushort uVar1;
@@ -28,29 +32,30 @@ void __fastcall FUN_004a7490(int param_1)
   short local_1a;
   short local_18;
   int local_14;
-  int local_10;
+  STGroupBoatC *local_10;
   uint local_c;
   uint local_8;
   
-  uVar1 = *(ushort *)(param_1 + 0x27);
+  uVar1 = *(ushort *)(this + 0x27);
   if (uVar1 < 10) {
-    *(undefined4 *)(param_1 + 0x242) = 2;
+    *(undefined4 *)(this + 0x242) = 2;
   }
   else if (uVar1 < 0x28) {
-    *(undefined4 *)(param_1 + 0x242) = 4;
+    *(undefined4 *)(this + 0x242) = 4;
   }
   else if (uVar1 < 100) {
-    *(undefined4 *)(param_1 + 0x242) = 6;
+    *(undefined4 *)(this + 0x242) = 6;
   }
   else if (uVar1 < 0xf0) {
-    *(undefined4 *)(param_1 + 0x242) = 8;
+    *(undefined4 *)(this + 0x242) = 8;
   }
   else {
-    *(undefined4 *)(param_1 + 0x242) = 10;
+    *(undefined4 *)(this + 0x242) = 10;
   }
-  local_10 = param_1;
-  puVar3 = FUN_006ae290((uint *)0x0,*(uint *)(*(int *)(param_1 + 0x226) + 0xc),0xe,1);
-  iVar7 = *(int *)(param_1 + 0x226);
+  local_10 = this;
+  puVar3 = Library::DKW::TBL::FUN_006ae290
+                     ((uint *)0x0,*(uint *)(*(int *)(this + 0x226) + 0xc),0xe,1);
+  iVar7 = *(int *)(this + 0x226);
   uVar9 = 0;
   if (0 < *(int *)(iVar7 + 0xc)) {
     do {
@@ -60,8 +65,8 @@ void __fastcall FUN_004a7490(int param_1)
       local_22 = 0;
       local_26 = 0;
       local_28 = local_18;
-      FUN_006ae140(puVar3,uVar9,(undefined4 *)&local_2c);
-      iVar7 = *(int *)(param_1 + 0x226);
+      Library::DKW::TBL::FUN_006ae140(puVar3,uVar9,(undefined4 *)&local_2c);
+      iVar7 = *(int *)(this + 0x226);
       uVar9 = uVar9 + 1;
     } while ((int)uVar9 < *(int *)(iVar7 + 0xc));
   }
@@ -73,10 +78,11 @@ void __fastcall FUN_004a7490(int param_1)
       do {
         FUN_006acc70((int)puVar3,local_8,(undefined4 *)&local_2c);
         FUN_006acc70((int)puVar3,local_c,(undefined4 *)&local_3c);
-        psVar4 = FUN_006a9190((int)DAT_007fb280,(int)DAT_007fb278,(int)DAT_007fb27a,
-                              (int)DAT_007fb27c,(short *)(int)local_2c,(short *)(int)local_2a,
-                              (short *)(int)local_28,(short *)(int)local_3c,(short *)(int)local_3a,
-                              (short *)(int)local_38,0,&local_14,(undefined4 *)0x0,(short *)0x0,0);
+        psVar4 = Library::DKW::WAY::FUN_006a9190
+                           ((int)DAT_007fb280,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
+                            (short *)(int)local_2c,(short *)(int)local_2a,(short *)(int)local_28,
+                            (short *)(int)local_3c,(short *)(int)local_3a,(short *)(int)local_38,0,
+                            &local_14,(undefined4 *)0x0,(short *)0x0,0);
         if (psVar4 == (short *)0x0) {
           uVar9 = (int)DAT_007fb278 * (int)DAT_007fb27a * (int)DAT_007fb27c;
           puVar8 = DAT_007fb280;
@@ -97,7 +103,7 @@ void __fastcall FUN_004a7490(int param_1)
           iVar7 = *(short *)((int)DAT_007fb238 +
                             ((int)DAT_007fb27e * (int)local_38 + (int)DAT_007fb278 * (int)local_3a +
                             (int)local_3c) * 2) + -1;
-          param_1 = local_10;
+          this = local_10;
         }
         else {
           iVar7 = (int)psVar4[3];
@@ -105,7 +111,7 @@ void __fastcall FUN_004a7490(int param_1)
         }
         uVar9 = local_c;
         iVar7 = iVar7 / 3;
-        if (iVar7 < *(int *)(param_1 + 0x242)) {
+        if (iVar7 < *(int *)(this + 0x242)) {
           FUN_006b0c70((int)puVar3,local_c);
           local_8 = local_8 - 1;
           local_c = uVar9 - 1;
@@ -113,16 +119,16 @@ void __fastcall FUN_004a7490(int param_1)
         else {
           local_32 = iVar7;
           local_26 = iVar7;
-          FUN_006ae140(puVar3,local_8,(undefined4 *)&local_2c);
-          FUN_006ae140(puVar3,local_c,(undefined4 *)&local_3c);
+          Library::DKW::TBL::FUN_006ae140(puVar3,local_8,(undefined4 *)&local_2c);
+          Library::DKW::TBL::FUN_006ae140(puVar3,local_c,(undefined4 *)&local_3c);
         }
         local_8 = local_8 + 1;
         local_c = local_c + 1;
       } while ((int)local_8 < (int)(puVar3[3] - 1));
     }
-    if (*(uint *)(param_1 + 0x232) != 0xffffffff) {
-      FUN_006acc70(*(int *)(param_1 + 0x22a),*(uint *)(param_1 + 0x232),(undefined4 *)&local_4c);
-      iVar7 = *(int *)(param_1 + 0x226);
+    if (*(uint *)(this + 0x232) != 0xffffffff) {
+      FUN_006acc70(*(int *)(this + 0x22a),*(uint *)(this + 0x232),(undefined4 *)&local_4c);
+      iVar7 = *(int *)(this + 0x226);
       uVar9 = 0;
       local_c = 0xffffffff;
       if (0 < *(int *)(iVar7 + 0xc)) {
@@ -133,7 +139,7 @@ void __fastcall FUN_004a7490(int param_1)
             if (uVar9 != 0xffffffff) goto LAB_004a77bb;
             break;
           }
-          iVar7 = *(int *)(param_1 + 0x226);
+          iVar7 = *(int *)(this + 0x226);
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < *(int *)(iVar7 + 0xc));
       }
@@ -145,10 +151,10 @@ void __fastcall FUN_004a7490(int param_1)
         return;
       }
 LAB_004a77bb:
-      *(undefined4 *)(param_1 + 0x232) = 0xffffffff;
+      *(undefined4 *)(this + 0x232) = 0xffffffff;
       local_8 = local_c;
-      if (*(int *)(param_1 + 0x236) == 1) {
-        iVar7 = *(int *)(param_1 + 0x226);
+      if (*(int *)(this + 0x236) == 1) {
+        iVar7 = *(int *)(this + 0x226);
         if ((int)local_c < *(int *)(iVar7 + 0xc)) {
           do {
             FUN_006acc70(iVar7,local_8,(undefined4 *)&local_1c);
@@ -157,40 +163,40 @@ LAB_004a77bb:
               do {
                 FUN_006acc70((int)puVar3,uVar9,(undefined4 *)&local_2c);
                 if (((local_1c == local_2c) && (local_1a == local_2a)) && (local_18 == local_28)) {
-                  *(uint *)(param_1 + 0x232) = uVar9;
+                  *(uint *)(this + 0x232) = uVar9;
                   break;
                 }
                 uVar9 = uVar9 + 1;
               } while ((int)uVar9 < (int)puVar3[3]);
             }
-            if (*(int *)(param_1 + 0x232) != -1) break;
-            iVar7 = *(int *)(param_1 + 0x226);
+            if (*(int *)(this + 0x232) != -1) break;
+            iVar7 = *(int *)(this + 0x226);
             local_8 = local_8 + 1;
           } while ((int)local_8 < *(int *)(iVar7 + 0xc));
         }
-        if (*(int *)(param_1 + 0x232) != -1) goto LAB_004a792e;
-        *(uint *)(param_1 + 0x232) = puVar3[3] - 1;
+        if (*(int *)(this + 0x232) != -1) goto LAB_004a792e;
+        *(uint *)(this + 0x232) = puVar3[3] - 1;
       }
       else {
         for (; -1 < (int)local_8; local_8 = local_8 - 1) {
-          FUN_006acc70(*(int *)(param_1 + 0x226),local_8,(undefined4 *)&local_1c);
+          FUN_006acc70(*(int *)(this + 0x226),local_8,(undefined4 *)&local_1c);
           uVar9 = 0;
           if (0 < (int)puVar3[3]) {
             do {
               FUN_006acc70((int)puVar3,uVar9,(undefined4 *)&local_2c);
               if (((local_1c == local_2c) && (local_1a == local_2a)) && (local_18 == local_28)) {
-                *(uint *)(param_1 + 0x232) = uVar9;
+                *(uint *)(this + 0x232) = uVar9;
                 break;
               }
               uVar9 = uVar9 + 1;
             } while ((int)uVar9 < (int)puVar3[3]);
           }
-          if (*(int *)(param_1 + 0x232) != -1) break;
+          if (*(int *)(this + 0x232) != -1) break;
         }
-        if (*(int *)(param_1 + 0x232) != -1) goto LAB_004a792e;
-        *(undefined4 *)(param_1 + 0x232) = 0;
+        if (*(int *)(this + 0x232) != -1) goto LAB_004a792e;
+        *(undefined4 *)(this + 0x232) = 0;
       }
-      if ((*(int *)(param_1 + 0x232) == -1) &&
+      if ((*(int *)(this + 0x232) == -1) &&
          (iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x160e,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__ReMakePatrolPoints_007ac418),
          iVar7 != 0)) {
@@ -201,19 +207,19 @@ LAB_004a77bb:
       goto LAB_004a792e;
     }
   }
-  *(undefined4 *)(param_1 + 0x232) = 0;
+  *(undefined4 *)(this + 0x232) = 0;
 LAB_004a792e:
-  if (*(byte **)(param_1 + 0x22a) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0x22a));
-    *(undefined4 *)(param_1 + 0x22a) = 0;
+  if (*(byte **)(this + 0x22a) != (byte *)0x0) {
+    FUN_006ae110(*(byte **)(this + 0x22a));
+    *(undefined4 *)(this + 0x22a) = 0;
   }
-  puVar5 = FUN_006ae290((uint *)0x0,puVar3[3],0xe,1);
-  *(uint **)(param_1 + 0x22a) = puVar5;
+  puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,puVar3[3],0xe,1);
+  *(uint **)(this + 0x22a) = puVar5;
   uVar9 = 0;
   if (0 < (int)puVar3[3]) {
     do {
       FUN_006acc70((int)puVar3,uVar9,(undefined4 *)&local_2c);
-      FUN_006ae140(*(uint **)(param_1 + 0x22a),uVar9,(undefined4 *)&local_2c);
+      Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22a),uVar9,(undefined4 *)&local_2c);
       uVar9 = uVar9 + 1;
     } while ((int)uVar9 < (int)puVar3[3]);
   }

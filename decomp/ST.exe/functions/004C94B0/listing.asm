@@ -1,4 +1,4 @@
-FUN_004c94b0:
+TLOBaseTy::procResult:
 004C94B0  55                        PUSH EBP
 004C94B1  8B EC                     MOV EBP,ESP
 004C94B3  83 EC 4C                  SUB ESP,0x4c

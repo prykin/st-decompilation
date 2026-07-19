@@ -65,9 +65,10 @@ int __thiscall FUN_006d63e0(void *this,int *param_1)
                   *(undefined4 *)(iVar4 + 0x24));
       }
       iVar4 = *(int *)((int)this + 0x288);
-      FUN_006b42d0(*(uint *)(iVar4 + 0x28),iVar7,iVar1,(BITMAPINFO *)(iVar8 + 0x30),local_bc,
-                   *(int *)(iVar4 + 8),*(int *)(iVar4 + 0xc),*(DWORD *)(iVar4 + 0x10),
-                   *(DWORD *)(iVar4 + 0x14));
+      Library::DKW::DDX::FUN_006b42d0
+                (*(uint *)(iVar4 + 0x28),iVar7,iVar1,(BITMAPINFO *)(iVar8 + 0x30),local_bc,
+                 *(int *)(iVar4 + 8),*(int *)(iVar4 + 0xc),*(DWORD *)(iVar4 + 0x10),
+                 *(DWORD *)(iVar4 + 0x14));
     }
     else {
       if (((*(byte *)(iVar4 + 4) & 8) == 0) &&

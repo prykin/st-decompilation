@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004eaa20(int *param_1)
   int local_8;
   
   if (*(int *)((int)param_1 + 0x5ff) == 0) {
-    puVar1 = (undefined4 *)FUN_0072e530(0x40);
+    puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (puVar1 == (undefined4 *)0x0) {
       this = (STT3DSprC *)0x0;
     }
@@ -62,7 +62,7 @@ undefined4 __fastcall FUN_004eaa20(int *param_1)
   FUN_006ea340(*(void **)((int)param_1 + 0x211),uVar3,iVar2,uVar4);
   thunk_FUN_004abce0(*(void **)((int)param_1 + 0x5ff),0xe,0x28,
                      (-(uint)(param_1[0x134] != 3) & 0xffffffed) + 0x3b,'\0');
-  thunk_FUN_004abe40(*(void **)((int)param_1 + 0x5ff),'\x0e',0x28);
+  STT3DSprC::SetCurFase(*(STT3DSprC **)((int)param_1 + 0x5ff),'\x0e',0x28);
   STT3DSprC::StartShow
             (*(STT3DSprC **)((int)param_1 + 0x5ff),0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
   param_1[0x135] = 0;

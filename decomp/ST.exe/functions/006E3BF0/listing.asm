@@ -1,4 +1,4 @@
-FUN_006e3bf0:
+AppClassTy::SendMessageToAllSystemsInArr:
 006E3BF0  55                        PUSH EBP
 006E3BF1  8B EC                     MOV EBP,ESP
 006E3BF3  83 EC 50                  SUB ESP,0x50

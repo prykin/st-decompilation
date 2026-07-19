@@ -19,7 +19,7 @@ AiEventClassTy::_CreateDest
   iStack_c = -1;
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x13c,0,iVar3,&DAT_007a4ccc,

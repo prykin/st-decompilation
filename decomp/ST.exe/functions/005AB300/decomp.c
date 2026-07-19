@@ -63,7 +63,7 @@ void __thiscall ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy param_1
   local_250.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_250;
   local_10 = this;
-  iVar4 = __setjmp3(local_250.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_250.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_250.previous;
@@ -84,7 +84,7 @@ void __thiscall ChooseMapTy::InitChooseMap(ChooseMapTy *this,ChooseMapTy param_1
   _DAT_0080f32e = 0;
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -362,7 +362,7 @@ switchD_005ab66b_caseD_6:
         if (*(byte **)(DAT_0081176c + 0x548) != (byte *)0x0) {
           FUN_006b5570(*(byte **)(DAT_0081176c + 0x548));
         }
-        puVar8 = FUN_006b54f0((uint *)0x0,10,10);
+        puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
         *(uint **)(DAT_0081176c + 0x548) = puVar8;
         uVar11 = param_2 - 1;
         if (*(int *)(DAT_0081176c + 0x389) != 0) {
@@ -447,7 +447,7 @@ switchD_005ab66b_caseD_6:
         do {
           FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar13,0x31,0x40213a,
                        *(uint *)(*(int *)(this_01 + 0x1c7b) + 4),0x13,(uint)this_01);
-          FUN_006b3640(DAT_008075a8,*(uint *)pCVar13,0xffffffff,0x114,uVar11);
+          Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pCVar13,0xffffffff,0x114,uVar11);
           uVar11 = uVar11 + 0x13;
           pCVar13 = pCVar13 + 4;
         } while ((int)uVar11 < 0x1e1);
@@ -455,8 +455,8 @@ switchD_005ab66b_caseD_6:
         PrepFiles(this_01,*(uint *)(this_01 + 0x1c93));
         FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x4042d2,0x204,0x19d,
                      *(int *)(this_01 + 0x1a5b) + 0x140);
-        FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x112,0x38);
-        puVar10 = (undefined1 *)FUN_0072e530(0x33);
+        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,0x112,0x38);
+        puVar10 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
         if (puVar10 == (undefined1 *)0x0) {
           puVar10 = (undefined1 *)0x0;
         }
@@ -482,7 +482,7 @@ switchD_005ab66b_caseD_6:
           cVar19 = '\x01';
           uVar11 = 0x10;
           iVar18 = 1;
-          iVar4 = FUN_006bf9f0(DAT_008075a8,0x112,0x38,0x204,0x19d);
+          iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x112,0x38,0x204,0x19d);
           uVar11 = HoloTy::Init(*(HoloTy **)(this_01 + 0x20b8),2,0x112,0x38,iVar4,iVar18,uVar11,
                                 cVar19,uVar12);
           if (uVar11 != 0) {
@@ -516,24 +516,27 @@ switchD_005ab66b_caseD_6:
         }
         if (this_01[0x20b4] == (ChooseMapTy)0x0) {
           if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
-            FUN_006b34d0(*(uint **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391),0xfffffffe
-                         ,*(uint *)(DAT_0081176c + 0x3a9),*(uint *)(DAT_0081176c + 0x3ad));
+            Library::DKW::DDX::FUN_006b34d0
+                      (*(uint **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391),0xfffffffe,
+                       *(uint *)(DAT_0081176c + 0x3a9),*(uint *)(DAT_0081176c + 0x3ad));
           }
           if (*(uint *)(DAT_0081176c + 0x422) != 0xffffffff) {
-            FUN_006b34d0(*(uint **)(DAT_0081176c + 0x466),*(uint *)(DAT_0081176c + 0x422),0xfffffffe
-                         ,*(uint *)(DAT_0081176c + 0x43a),*(uint *)(DAT_0081176c + 0x43e));
+            Library::DKW::DDX::FUN_006b34d0
+                      (*(uint **)(DAT_0081176c + 0x466),*(uint *)(DAT_0081176c + 0x422),0xfffffffe,
+                       *(uint *)(DAT_0081176c + 0x43a),*(uint *)(DAT_0081176c + 0x43e));
           }
           if (*(uint *)(DAT_0081176c + 0x4b3) != 0xffffffff) {
-            FUN_006b34d0(*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),0xfffffffe
-                         ,*(uint *)(DAT_0081176c + 0x4cb),*(uint *)(DAT_0081176c + 0x4cf));
+            Library::DKW::DDX::FUN_006b34d0
+                      (*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),0xfffffffe,
+                       *(uint *)(DAT_0081176c + 0x4cb),*(uint *)(DAT_0081176c + 0x4cf));
           }
-          FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x540));
         }
         else {
           FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x4042d2,0xf9,0x121,
                        *(int *)(this_01 + 0x1a5b) + 0x140);
-          FUN_006b3640(DAT_008075a8,local_8,0xffffffff,10,0xb4);
-          puVar10 = (undefined1 *)FUN_0072e530(0x33);
+          Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,10,0xb4);
+          puVar10 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
           if (puVar10 == (undefined1 *)0x0) {
             puVar10 = (undefined1 *)0x0;
           }
@@ -559,7 +562,7 @@ switchD_005ab66b_caseD_6:
             cVar19 = '\x01';
             uVar11 = 0x10;
             iVar18 = 1;
-            iVar4 = FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x121);
+            iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x121);
             uVar11 = HoloTy::Init(*(HoloTy **)(this_01 + 0x20bc),4,10,0xb4,iVar4,iVar18,uVar11,
                                   cVar19,uVar12);
             if (uVar11 != 0) {
@@ -591,17 +594,17 @@ switchD_005ab66b_caseD_6:
           if ((((CVar1 == (ChooseMapTy)0xc) || (CVar1 == (ChooseMapTy)0x4)) ||
               (CVar1 == (ChooseMapTy)0x5)) || (CVar1 == (ChooseMapTy)0x13)) {
             if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
-              FUN_006b34d0(*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),
-                           0xfffffffe,*(uint *)(DAT_0081176c + 0x578),
-                           *(uint *)(DAT_0081176c + 0x57c));
+              Library::DKW::DDX::FUN_006b34d0
+                        (*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe
+                         ,*(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
             }
             if (*(uint *)(DAT_0081176c + 0x5f1) != 0xffffffff) {
-              FUN_006b34d0(*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),
-                           0xfffffffe,*(uint *)(DAT_0081176c + 0x609),
-                           *(uint *)(DAT_0081176c + 0x60d));
+              Library::DKW::DDX::FUN_006b34d0
+                        (*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe
+                         ,*(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
             }
-            FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
-            FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
           }
           else {
             if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
@@ -617,16 +620,18 @@ switchD_005ab66b_caseD_6:
         else {
           FUN_006b2330((uint)DAT_008075a8,&local_8,0x32,0x403b61,400,0x62,
                        *(int *)(this_01 + 0x1a5b) + 0x140);
-          FUN_006b3640(DAT_008075a8,local_8,0xffffffff,200,0x1f1);
+          Library::DKW::DDX::FUN_006b3640(DAT_008075a8,local_8,0xffffffff,200,0x1f1);
           if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
-            FUN_006b34d0(*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe
-                         ,*(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
+            Library::DKW::DDX::FUN_006b34d0
+                      (*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe,
+                       *(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
           }
           if (*(uint *)(DAT_0081176c + 0x5f1) != 0xffffffff) {
-            FUN_006b34d0(*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe
-                         ,*(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
+            Library::DKW::DDX::FUN_006b34d0
+                      (*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe,
+                       *(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
           }
-          puVar10 = (undefined1 *)FUN_0072e530(0x33);
+          puVar10 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
           if (puVar10 == (undefined1 *)0x0) {
             puVar10 = (undefined1 *)0x0;
           }
@@ -652,7 +657,7 @@ switchD_005ab66b_caseD_6:
             cVar19 = '\x01';
             uVar11 = 0x10;
             iVar18 = 1;
-            iVar4 = FUN_006bf9f0(DAT_008075a8,200,0x1f1,400,0x62);
+            iVar4 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,200,0x1f1,400,0x62);
             uVar11 = HoloTy::Init(*(HoloTy **)(this_01 + 0x20c0),1,200,0x1f1,iVar4,iVar18,uVar11,
                                   cVar19,uVar12);
             if (uVar11 != 0) {
@@ -703,7 +708,7 @@ switchD_005ab66b_caseD_6:
         pCVar13 = this_01 + 0x1c87;
         FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar13,0x31,0x404acf,*(uint *)(uVar11 + 4),
                      *(uint *)(uVar11 + 8),uVar11);
-        FUN_006b3640(DAT_008075a8,*(uint *)pCVar13,0xffffffff,0x112,0x1d3);
+        Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pCVar13,0xffffffff,0x112,0x1d3);
         FUN_006b3af0(DAT_008075a8,*(uint *)pCVar13);
         switch(local_c) {
         case 0:
@@ -722,17 +727,17 @@ switchD_005ab66b_caseD_6:
         pcVar14 = *(char **)(this_01 + 0x20b8);
         if (((pcVar14 != (char *)0x0) && (*pcVar14 != '\0')) && (-1 < (int)*(uint *)(pcVar14 + 3)))
         {
-          FUN_006b3430(DAT_008075a8,*(uint *)(pcVar14 + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar14 + 3));
         }
         pcVar14 = *(char **)(this_01 + 0x20bc);
         if (((pcVar14 != (char *)0x0) && (*pcVar14 != '\0')) && (-1 < (int)*(uint *)(pcVar14 + 3)))
         {
-          FUN_006b3430(DAT_008075a8,*(uint *)(pcVar14 + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar14 + 3));
         }
         pcVar14 = *(char **)(this_01 + 0x20c0);
         if (((pcVar14 != (char *)0x0) && (*pcVar14 != '\0')) && (-1 < (int)*(uint *)(pcVar14 + 3)))
         {
-          FUN_006b3430(DAT_008075a8,*(uint *)(pcVar14 + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pcVar14 + 3));
         }
         this_00 = DAT_00802a30;
         if (DAT_00802a30 != (CursorClassTy *)0x0) {

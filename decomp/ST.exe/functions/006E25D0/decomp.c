@@ -37,21 +37,21 @@ int __thiscall FUN_006e25d0(void *this,int *param_1)
     }
   }
   iVar3 = 1;
-  lVar4 = __ftol();
+  lVar4 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar4 + *(int *)((int)this + 0x30) * 0x10000;
   *param_1 = iVar2;
   if ((iVar2 < *(int *)((int)this + 0x30) * 0x10000) ||
      (*(int *)((int)this + 0x38) * 0x10000 <= iVar2)) {
     iVar3 = 0;
   }
-  lVar4 = __ftol();
+  lVar4 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar4 + *(int *)((int)this + 0x34) * 0x10000;
   param_1[1] = iVar2;
   if ((iVar2 < *(int *)((int)this + 0x34) * 0x10000) ||
      (*(int *)((int)this + 0x3c) * 0x10000 <= iVar2)) {
     iVar3 = 0;
   }
-  lVar4 = __ftol();
+  lVar4 = Library::MSVCRT::__ftol();
   param_1[2] = (int)lVar4;
   param_1[3] = iVar3;
   return iVar3;

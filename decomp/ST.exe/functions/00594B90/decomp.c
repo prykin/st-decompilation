@@ -22,17 +22,21 @@ FSGSTy::OutChSlProc(FSGSTy *this,int param_1,undefined4 param_2,undefined4 param
     local_8 = param_8;
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
-    errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     puVar2 = local_8;
     if (errorCode == 0) {
-      FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
+      Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
       FUN_006c6850(param_1,param_4,param_5,param_6,param_7,*puVar2);
-      FUN_006c6660(param_1,param_4 + -0x15 + param_6,param_5 + 0x26,7,param_7 - 0x62,3,0);
-      FUN_006c6470(param_1,param_4 + -0x15 + param_6,param_5 + 0x26,(undefined4 *)0x7,
-                   param_7 + -0x62,3,*puVar2);
+      Library::DKW::DDX::FUN_006c6660
+                (param_1,param_4 + -0x15 + param_6,param_5 + 0x26,7,param_7 - 0x62,3,0);
+      Library::DKW::DDX::FUN_006c6470
+                (param_1,param_4 + -0x15 + param_6,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0x62,
+                 3,*puVar2);
       local_c = param_5 + -0x16 + param_7;
-      FUN_006c53b0(param_1,param_4,local_c,param_4 + -1 + param_6,local_c,*puVar2);
-      FUN_006c53b0(param_1,param_4 + 0x168,local_c,param_4 + 0x168,param_5 + -1 + param_7,*puVar2);
+      Library::DKW::DDX::FUN_006c53b0
+                (param_1,param_4,local_c,param_4 + -1 + param_6,local_c,*puVar2);
+      Library::DKW::DDX::FUN_006c53b0
+                (param_1,param_4 + 0x168,local_c,param_4 + 0x168,param_5 + -1 + param_7,*puVar2);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

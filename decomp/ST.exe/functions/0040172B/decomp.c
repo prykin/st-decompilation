@@ -55,26 +55,26 @@ LAB_005a3b63:
     if (iVar4 == 0) {
       IStack_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &IStack_68;
-      iVar4 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
         pbVar3 = thunk_FUN_0055d590((byte *)s_Profile_Age_007cc1a8,param_2,param_3);
         this_01 = pFStack_14;
         if (pbVar3 != (byte *)0x0) {
-          FUN_006b6020(*(int *)(pFStack_14 + 0x1af8),0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(*(int *)(pFStack_14 + 0x1af8),0,(char *)pbVar3);
           *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(this_01 + 0x1af8);
           *(undefined4 *)(this_01 + 0x2d) = 0x33;
           FUN_006e6080(this_01,2,*(undefined4 *)(this_01 + 0x1ad8),(undefined4 *)(this_01 + 0x1d));
         }
         pbVar3 = thunk_FUN_0055d590((byte *)s_Profile_Sex_007cc198,param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
-          FUN_006b6020(*(int *)(this_01 + 0x1afc),0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(*(int *)(this_01 + 0x1afc),0,(char *)pbVar3);
           *(undefined4 *)(this_01 + 0x2d) = 0x33;
           *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(this_01 + 0x1afc);
           FUN_006e6080(this_01,2,*(undefined4 *)(this_01 + 0x1adc),(undefined4 *)(this_01 + 0x1d));
         }
         pbVar3 = thunk_FUN_0055d590((byte *)s_Profile_Location_007cc184,param_2,param_3);
         if (pbVar3 != (byte *)0x0) {
-          FUN_006b6020(*(int *)(this_01 + 0x1b00),0,(char *)pbVar3);
+          Library::DKW::TBL::FUN_006b6020(*(int *)(this_01 + 0x1b00),0,(char *)pbVar3);
           *(undefined4 *)(this_01 + 0x2d) = 0x33;
           *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(this_01 + 0x1b00);
           FUN_006e6080(this_01,2,*(undefined4 *)(this_01 + 0x1ae0),(undefined4 *)(this_01 + 0x1d));
@@ -88,9 +88,9 @@ LAB_005a3b63:
           puVar5 = ccFntTy::_TxtToSarr(*(ccFntTy **)(this_01 + 0x1a73),puStack_10);
           *(uint **)(this_01 + 0x1b04) = puVar5;
           if (puVar5 == (uint *)0x0) {
-            puVar5 = FUN_006b54f0((uint *)0x0,1,1);
+            puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
             *(uint **)(this_01 + 0x1b04) = puVar5;
-            FUN_006b5aa0((int)puVar5,&DAT_008016a0);
+            Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
           }
           *(undefined4 *)(this_01 + 0x2d) = 0x33;
           *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(this_01 + 0x1b04);
@@ -119,7 +119,7 @@ LAB_005a3b63:
             pbVar8 = pbVar8 + 1;
           } while (bVar1 != 0);
           if (iVar4 != -2) {
-            iVar4 = FUN_0072ee80((char *)pbVar3,(byte *)s__d__d_007cc5b8);
+            iVar4 = Library::MSVCRT::FUN_0072ee80((char *)pbVar3,(byte *)s__d__d_007cc5b8);
             if (iVar4 != 2) {
               FStack_c.dwHighDateTime = 0;
               FStack_c.dwLowDateTime = 0;

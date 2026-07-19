@@ -113,7 +113,7 @@ int __thiscall thunk_FUN_0060ef40(void *this,int param_1)
   iStack_8c = (iStack_94 - iStack_38) * iStack_9c;
   uStack_8 = 0;
   uVar10 = iStack_8c * 10;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puVar11 = (undefined4 *)&stack0xffffff38;
   puStack_1c = &stack0xffffff38;
   for (uVar5 = uVar10 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
@@ -190,17 +190,18 @@ LAB_0060f230:
     }
     iVar6 = iVar6 + 1;
   } while (iVar6 < 3);
-  psStack_6c = FUN_006afba0((int)puStack_54,iStack_84 - iVar2,(short *)(iStack_94 - iStack_38),
-                            (short *)0x5,(short *)(iStack_3c - iVar2),
-                            (short *)(iStack_48 - iStack_38),psStack_40,(short *)(iStack_80 - iVar2)
-                            ,(short *)(iStack_b0 - iStack_38),psStack_34,aiStack_68,2);
+  psStack_6c = Library::DKW::WAY::FUN_006afba0
+                         ((int)puStack_54,iStack_84 - iVar2,(short *)(iStack_94 - iStack_38),
+                          (short *)0x5,(short *)(iStack_3c - iVar2),(short *)(iStack_48 - iStack_38)
+                          ,psStack_40,(short *)(iStack_80 - iVar2),(short *)(iStack_b0 - iStack_38),
+                          psStack_34,aiStack_68,2);
   if (psStack_6c == (short *)0x0) {
     aiStack_68[0] = 0;
   }
   else {
     piVar8 = (int *)((int)this + 0x2dd);
     if (*piVar8 == 0) {
-      iVar2 = FUN_006aac70((aiStack_68[0] + 1) * 0x1c);
+      iVar2 = Library::DKW::LIB::FUN_006aac70((aiStack_68[0] + 1) * 0x1c);
       *piVar8 = iVar2;
     }
     else {

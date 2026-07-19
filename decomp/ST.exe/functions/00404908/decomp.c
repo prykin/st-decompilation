@@ -404,7 +404,7 @@ thunk_FUN_0048dfd0(int param_1,int param_2,uint param_3,int param_4,int param_5,
   sStack_e = ((short)iStack_e8 - (short)iStack_28) + 1;
   sStack_a = sStack_e * sStack_10;
   puStack_30 = (undefined4 *)0x0;
-  puStack_8 = (undefined4 *)FUN_006aac70(sStack_a * 10);
+  puStack_8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(sStack_a * 10);
   iVar18 = iStack_20;
   iStack_14 = 0;
   do {
@@ -449,7 +449,8 @@ thunk_FUN_0048dfd0(int param_1,int param_2,uint param_3,int param_4,int param_5,
     sStack_38 = DAT_007fb278;
     sStack_32 = DAT_007fb27e;
     puStack_30 = (undefined4 *)
-                 FUN_006aac70((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
+                 Library::DKW::LIB::FUN_006aac70
+                           ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
     uVar8 = (int)sStack_34 * (int)sStack_36 * (int)sStack_38;
     puVar12 = DAT_007fb280;
     puVar17 = puStack_30;
@@ -470,7 +471,8 @@ thunk_FUN_0048dfd0(int param_1,int param_2,uint param_3,int param_4,int param_5,
     sStack_10 = DAT_007fb278;
     sStack_a = DAT_007fb27e;
     puStack_8 = (undefined4 *)
-                FUN_006aac70((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
+                Library::DKW::LIB::FUN_006aac70
+                          ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
     uVar8 = (int)sStack_c * (int)sStack_e * (int)sStack_10;
     puVar12 = DAT_007fb280;
     puVar17 = puStack_8;

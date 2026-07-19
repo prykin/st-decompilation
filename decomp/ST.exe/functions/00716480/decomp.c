@@ -34,7 +34,7 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar5 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar4 = local_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -72,10 +72,10 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
   case (SpriteClassTy)0x7:
   case (SpriteClassTy)0x81:
     *(short **)(pSVar4 + 0x51) = param_1;
-    FUN_006b2930(*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,
-                 (undefined4 *)(int)*(short *)((int)param_1 + 0x23),(int *)((int)param_1 + 0x2d),
-                 0x8000000,(int)*(short *)((int)param_1 + 0x29),(int)*(short *)((int)param_1 + 0x2b)
-                );
+    Library::DKW::DDX::FUN_006b2930
+              (*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,
+               (undefined4 *)(int)*(short *)((int)param_1 + 0x23),(int *)((int)param_1 + 0x2d),
+               0x8000000,(int)*(short *)((int)param_1 + 0x29),(int)*(short *)((int)param_1 + 0x2b));
     iVar5 = *(int *)(pSVar4 + 0x51);
     *(int *)(pSVar4 + 0xc) = (int)*(short *)(iVar5 + 0x23);
     *(int *)(pSVar4 + 0x24) = (int)*(short *)(iVar5 + 0x29);
@@ -83,9 +83,10 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
     break;
   case (SpriteClassTy)0x8:
     *(short **)(pSVar4 + 0x59) = param_1;
-    FUN_006b2930(*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),(int)*param_1,
-                 (undefined4 *)(int)param_1[1],(int *)(param_1 + 6),0x4000000,(int)param_1[2],
-                 (int)param_1[3]);
+    Library::DKW::DDX::FUN_006b2930
+              (*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),(int)*param_1,
+               (undefined4 *)(int)param_1[1],(int *)(param_1 + 6),0x4000000,(int)param_1[2],
+               (int)param_1[3]);
     psVar2 = *(short **)(pSVar4 + 0x59);
     *(int *)(pSVar4 + 0xc) = (int)psVar2[1];
     *(int *)(pSVar4 + 0x18) = (int)*psVar2;
@@ -95,8 +96,9 @@ SpriteClassTy::SetImagesPtr(SpriteClassTy *this,short *param_1,SpriteClassTy par
     break;
   case (SpriteClassTy)0x1e:
     *(short **)(pSVar4 + 0x55) = param_1;
-    FUN_006b2930(*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,(undefined4 *)(int)*param_1,
-                 (int *)(param_1 + 5),0x8000000,(int)param_1[3],(int)param_1[4]);
+    Library::DKW::DDX::FUN_006b2930
+              (*(int **)(pSVar4 + 0x48),*(uint *)(pSVar4 + 4),0,(undefined4 *)(int)*param_1,
+               (int *)(param_1 + 5),0x8000000,(int)param_1[3],(int)param_1[4]);
     psVar2 = *(short **)(pSVar4 + 0x55);
     *(int *)(pSVar4 + 0xc) = (int)*psVar2;
     *(int *)(pSVar4 + 0x24) = (int)psVar2[3];

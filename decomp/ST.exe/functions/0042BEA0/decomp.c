@@ -26,7 +26,7 @@ STAllPlayersC::AddObjToTmp2
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
     if (iVar2 == -0x5001fff7) {
@@ -121,7 +121,7 @@ LAB_0042bf8b:
   }
   RaiseInternalException(-0x5001ffff,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a);
 LAB_0042c072:
-  piVar4 = (int *)thunk_FUN_0042b620(param_5,param_6,local_8);
+  piVar4 = (int *)GetObjPtr(local_c,param_5,param_6,local_8);
   (**(code **)(*piVar4 + 0xe8))(1);
   g_currentExceptionFrame = local_58.previous;
   return local_10;

@@ -79,7 +79,7 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
     }
     local_c0.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_c0;
-    uVar5 = __setjmp3(local_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    uVar5 = Library::MSVCRT::__setjmp3(local_c0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (uVar5 == 0) {
       local_60.abcA = 0;
       local_60.abcB = 0;
@@ -125,7 +125,8 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
               *piVar17 = iVar7;
               FUN_006b4170(iVar7,0,0,0,*(int *)((int)param_1 + 0x135),*(int *)((int)param_1 + 0x139)
                            ,(char)*(undefined2 *)(*(int *)((int)param_1 + 0x9a) + 0x42));
-              FUN_006b55f0((undefined4 *)*piVar17,0,0,0,(int)local_c,0,0,0,local_c[1],local_c[2]);
+              Library::DKW::WGR::FUN_006b55f0
+                        ((undefined4 *)*piVar17,0,0,0,(int)local_c,0,0,0,local_c[1],local_c[2]);
               if (local_c != (int *)0x0) {
                 FUN_006ab060(&local_c);
               }
@@ -155,9 +156,10 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
       FillRect(*(HDC *)((int)param_1 + 0xfd),&local_7c,*(HBRUSH *)((int)param_1 + 0x109));
       TextOutA(*(HDC *)((int)param_1 + 0xfd),*(int *)((int)param_1 + 0x141) + local_54,
                *(int *)((int)param_1 + 0x145),&local_40,iVar15);
-      local_28 = FUN_006b55f0((undefined4 *)0x0,0,0,0,*(int *)((int)param_1 + 0x125),
-                              *(int *)((int)param_1 + 0x129),0,0,*(int *)((int)param_1 + 0x165),
-                              *(int *)((int)param_1 + 0x169));
+      local_28 = Library::DKW::WGR::FUN_006b55f0
+                           ((undefined4 *)0x0,0,0,0,*(int *)((int)param_1 + 0x125),
+                            *(int *)((int)param_1 + 0x129),0,0,*(int *)((int)param_1 + 0x165),
+                            *(int *)((int)param_1 + 0x169));
       local_34 = 0;
       if (0 < **(short **)((int)param_1 + 0x9a)) {
         do {
@@ -180,9 +182,10 @@ uint FUN_0070e030(int *param_1,uint param_2,int param_3)
             FillRect(*(HDC *)((int)param_1 + 0xfd),&local_7c,*(HBRUSH *)((int)param_1 + 0x109));
             TextOutA(*(HDC *)((int)param_1 + 0xfd),*(int *)((int)param_1 + 0x149) + local_54,
                      *(int *)((int)param_1 + 0x14d),&local_40,local_6c);
-            puVar8 = FUN_006b55f0((undefined4 *)0x0,0,0,0,*(int *)((int)param_1 + 0x125),
-                                  *(int *)((int)param_1 + 0x129),0,0,*(int *)((int)param_1 + 0x165),
-                                  *(int *)((int)param_1 + 0x169));
+            puVar8 = Library::DKW::WGR::FUN_006b55f0
+                               ((undefined4 *)0x0,0,0,0,*(int *)((int)param_1 + 0x125),
+                                *(int *)((int)param_1 + 0x129),0,0,*(int *)((int)param_1 + 0x165),
+                                *(int *)((int)param_1 + 0x169));
             local_10 = 0;
             local_44 = puVar8;
             if (0 < *(int *)((int)param_1 + 0x161)) {
@@ -551,7 +554,7 @@ LAB_0070ecc7:
           }
           else if (uVar5 == 0x4000) {
             DVar9 = timeGetTime();
-            FUN_0072e6b0(DVar9);
+            Library::MSVCRT::FUN_0072e6b0(DVar9);
             local_10 = 0;
             if (0 < *(int *)((int)param_1 + 0x161)) {
               do {
@@ -565,7 +568,7 @@ LAB_0070ecc7:
                                  ((uint)*(ushort *)((int)piVar17 + 0xe) * piVar17[1] + 0x1f >> 3 &
                                  0x1ffffffc) * ((piVar17[2] - local_10) + -1) + iVar15) == -1) {
                       iVar15 = *(int *)((int)param_1 + 0x189);
-                      uVar5 = FUN_0072e6c0();
+                      uVar5 = Library::MSVCRT::FUN_0072e6c0();
                       piVar17 = local_24;
                       uVar2 = *(undefined1 *)
                                ((int)uVar5 % (iVar15 + -1) + iVar15 * local_34 + 2 +
@@ -599,8 +602,9 @@ LAB_0070fd65:
                       iVar15 = *(int *)((int)param_1 + 0x15d);
                     }
                     if (iVar15 <= (int)local_c) break;
-                    piVar18 = FUN_006b55f0((undefined4 *)0x0,0,0,0,(int)local_24,0,0,0,local_1c,
-                                           *(int *)((int)param_1 + 0x161));
+                    piVar18 = Library::DKW::WGR::FUN_006b55f0
+                                        ((undefined4 *)0x0,0,0,0,(int)local_24,0,0,0,local_1c,
+                                         *(int *)((int)param_1 + 0x161));
                     local_30 = piVar18;
                     if (((0 < *(int *)((int)param_1 + 0x159)) &&
                         ((int)piVar17 < *(int *)((int)param_1 + 0x159))) &&
@@ -1341,9 +1345,10 @@ LAB_0070f411:
           local_48 = iVar7;
           local_4c = iVar15;
           iVar15 = local_68;
-          FUN_006b55f0((undefined4 *)param_1[local_68],0,*(int *)((int)param_1 + 0x17d),
-                       *(int *)((int)param_1 + 0x181),(int)local_24,0,0,0,local_1c,
-                       *(int *)((int)param_1 + 0x161));
+          Library::DKW::WGR::FUN_006b55f0
+                    ((undefined4 *)param_1[local_68],0,*(int *)((int)param_1 + 0x17d),
+                     *(int *)((int)param_1 + 0x181),(int)local_24,0,0,0,local_1c,
+                     *(int *)((int)param_1 + 0x161));
           if (local_24 != (int *)0x0) {
             FUN_006ab060(&local_24);
           }
@@ -1357,7 +1362,8 @@ LAB_0070f411:
           (int)(uint)*(ushort *)(*(undefined4 **)((int)param_1 + 0x9a) + 0x19)) {
         iVar15 = *(int *)((int)param_1 + 0x179) + *(int *)((int)param_1 + 0x13d);
         *(int *)((int)param_1 + 0x179) = iVar15;
-        iVar15 = FUN_006acf50(*(undefined4 **)((int)param_1 + 0x9a),iVar15 * 10 + 0x70);
+        iVar15 = Library::DKW::LIB::FUN_006acf50
+                           (*(undefined4 **)((int)param_1 + 0x9a),iVar15 * 10 + 0x70);
         *(int *)((int)param_1 + 0x9a) = iVar15;
       }
       *(undefined2 *)

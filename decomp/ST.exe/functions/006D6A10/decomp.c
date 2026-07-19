@@ -52,12 +52,12 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
   if (*(int *)((int)this + 0x30c) == 0) {
     local_98.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_98;
-    iVar9 = __setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar9 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this = local_10;
     if (iVar9 == 0) {
       iVar9 = FUN_006d63e0(local_10,param_1);
       local_8 = iVar9;
-      FUN_006bb370(*(int *)(*(int *)((int)this + 0x288) + 0x28),0,0);
+      Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)((int)this + 0x288) + 0x28),0,0);
       g_currentExceptionFrame = local_98.previous;
     }
     else {
@@ -126,7 +126,7 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         if ((*(uint *)(iVar3 + 8) & 0x4000000) != 0) {
           LeaveCriticalSection((LPCRITICAL_SECTION)(iVar3 + 0x4f0));
         }
-        FUN_006bb370(*(int *)(*(int *)((int)this + 0x288) + 0x28),0,0);
+        Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)((int)this + 0x288) + 0x28),0,0);
       }
       else {
         if (*(int *)((int)this + 0x300) != 0) {
@@ -140,10 +140,10 @@ int __thiscall FUN_006d6a10(void *this,int *param_1)
         }
         local_dc.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_dc;
-        iVar9 = __setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar9 = Library::MSVCRT::__setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
         this = local_10;
         if (iVar9 == 0) {
-          FUN_006bb370(*(int *)(*(int *)((int)local_10 + 0x288) + 0x28),0,0);
+          Library::DKW::DDX::FUN_006bb370(*(int *)(*(int *)((int)local_10 + 0x288) + 0x28),0,0);
           g_currentExceptionFrame = local_dc.previous;
           iVar9 = local_8;
         }

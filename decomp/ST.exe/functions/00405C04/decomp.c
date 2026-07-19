@@ -56,7 +56,7 @@ thunk_FUN_004af080(uint param_1,int param_2,int *param_3,int *param_4,int *param
     iStack_28 = 2;
     iStack_2c = 2;
   }
-  puVar8 = (undefined4 *)FUN_006aac70(DAT_007fb246 * 5);
+  puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(DAT_007fb246 * 5);
   iStack_14 = 0;
   do {
     iVar9 = DAT_007fb246 * iStack_14;

@@ -48,7 +48,7 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
   }
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar4 == 0) {
     auStack_8c4[0] = 0;
@@ -98,14 +98,16 @@ void __thiscall StartSystemTy::CreateChatView(StartSystemTy *this)
     aiStack_688[2] = iVar3;
     iStack_678 = iVar4;
     (**(code **)(*(int *)pSVar2 + 8))(8,pSVar2 + 0x550,0,auStack_8c4,0);
-    FUN_006b3430(DAT_008075a8,*(uint *)(pSVar2 + 0x558));
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pSVar2 + 0x558));
     if (*(uint *)(pSVar2 + 0x560) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(pSVar2 + 0x5a4),*(uint *)(pSVar2 + 0x560),0xfffffffe,
-                   *(uint *)(pSVar2 + 0x578),*(uint *)(pSVar2 + 0x57c));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(pSVar2 + 0x5a4),*(uint *)(pSVar2 + 0x560),0xfffffffe,
+                 *(uint *)(pSVar2 + 0x578),*(uint *)(pSVar2 + 0x57c));
     }
     if (*(uint *)(pSVar2 + 0x5f1) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(pSVar2 + 0x635),*(uint *)(pSVar2 + 0x5f1),0xfffffffe,
-                   *(uint *)(pSVar2 + 0x609),*(uint *)(pSVar2 + 0x60d));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(pSVar2 + 0x635),*(uint *)(pSVar2 + 0x5f1),0xfffffffe,
+                 *(uint *)(pSVar2 + 0x609),*(uint *)(pSVar2 + 0x60d));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

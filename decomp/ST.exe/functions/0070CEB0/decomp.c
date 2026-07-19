@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte param_4)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::operator */
+
+undefined4 * __thiscall
+ccFntTy::operator(ccFntTy *this,uint param_1,void *param_2,char *param_3,byte param_4)
 
 {
   uint *puVar1;
@@ -31,10 +36,10 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
   local_c = (uint *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar4 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   local_18 = iVar4;
   if (iVar4 == 0) {
-    puVar5 = FUN_006aac10(param_1);
+    puVar5 = Library::DKW::LIB::FUN_006aac10(param_1);
     piVar14 = (int *)((int)puVar5 + 0x9a);
     *puVar5 = param_2;
     *piVar14 = 0;
@@ -65,11 +70,11 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
     puVar5[0x2b] = 1;
     local_c = puVar5;
     if ((param_4 & 1) == 0) {
-      puVar6 = FUN_006f1ce0(3,param_3,(int *)0x0,1);
+      puVar6 = cMf32::RecGet(param_2,3,param_3,(int *)0x0,1);
       *piVar14 = (int)puVar6;
     }
     else {
-      FUN_006f1ce0(3,param_3,piVar14,1);
+      cMf32::RecGet(param_2,3,param_3,piVar14,1);
     }
     if (*(short *)*piVar14 < 1) {
       RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0xbf);
@@ -91,7 +96,7 @@ undefined4 * __cdecl FUN_0070ceb0(uint param_1,void *param_2,char *param_3,byte 
         }
         else {
           uVar9 = FUN_006b5050((int)puVar8);
-          puVar10 = FUN_006aac10(uVar9);
+          puVar10 = Library::DKW::LIB::FUN_006aac10(uVar9);
           *puVar15 = puVar10;
           uVar9 = FUN_006b5050((int)puVar8);
           puVar15 = (undefined4 *)*puVar15;

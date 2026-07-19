@@ -57,7 +57,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_50 = this;
-  iVar3 = __setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar6 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
@@ -94,7 +94,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
       puVar8 = (undefined4 *)((int)&DAT_007f4e2f + local_20);
       uVar9 = uVar6;
       do {
-        puVar4 = FUN_006ae290((uint *)0x0,0,0x24,1);
+        puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,0x24,1);
         *puVar8 = puVar4;
         puVar8 = puVar8 + 1;
         uVar9 = uVar9 - 1;
@@ -102,12 +102,12 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
     }
     local_18 = *(uint *)((int)&DAT_007f4e29 + local_20);
     if ((local_18 != 0) && (local_c = *(uint *)(local_18 + 0xc), local_c != 0)) {
-      local_10 = FUN_006ae290((uint *)0x0,0,4,1);
+      local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
       if (0 < (int)uVar6) {
         piVar5 = local_60;
         uVar9 = uVar6;
         do {
-          puVar4 = FUN_006ae290((uint *)0x0,0,4,1);
+          puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
           *piVar5 = (int)puVar4;
           piVar5 = piVar5 + 1;
           uVar9 = uVar9 - 1;
@@ -122,7 +122,7 @@ void __thiscall STAllPlayersC::_MakeMDPairs(STAllPlayersC *this,char param_1)
             puVar4 = local_10;
             if ((iVar3 == 0x3b) || (iVar3 == 0x60)) {
 LAB_00441e92:
-              FUN_006ae1c0(puVar4,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_8);
             }
             else {
               iVar7 = 0;
@@ -154,7 +154,7 @@ LAB_00441e92:
         puVar8 = (undefined4 *)((int)&DAT_007f4e2f + local_20);
         uVar9 = uVar6;
         do {
-          FUN_006ae1c0((uint *)*puVar8,(undefined4 *)&local_48);
+          Library::DKW::TBL::FUN_006ae1c0((uint *)*puVar8,(undefined4 *)&local_48);
           puVar8 = puVar8 + 1;
           uVar9 = uVar9 - 1;
         } while (uVar9 != 0);
@@ -193,7 +193,7 @@ LAB_00441e92:
                 if (((uint *)*local_14)[3] == 0) {
                   local_96 = 0xffff;
                   local_9e = 0xffff;
-                  FUN_006ae1c0((uint *)*local_14,&local_a4);
+                  Library::DKW::TBL::FUN_006ae1c0((uint *)*local_14,&local_a4);
                 }
               }
               else {
@@ -219,7 +219,7 @@ LAB_00441e92:
                       iVar3 = local_68;
                     }
                     local_34 = local_30;
-                    FUN_006ae1c0((uint *)*local_14,(undefined4 *)&local_48);
+                    Library::DKW::TBL::FUN_006ae1c0((uint *)*local_14,(undefined4 *)&local_48);
                     uVar6 = uVar6 + 1;
                   } while ((int)uVar6 < local_80[4]);
                 }

@@ -52,7 +52,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_24 = (STSprGameObjC *)this;
-  iVar8 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_24;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -80,7 +80,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         return 0;
       }
       local_10 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_8);
-      local_c = (byte *)FUN_006aac70(local_8 + 0x46);
+      local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_8 + 0x46);
       if (local_10 == (byte *)0x0) {
         g_currentExceptionFrame = local_68.previous;
         return 0;
@@ -203,11 +203,12 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         *(int *)(this_00 + 0x265) = iVar8;
         while (-1 < iVar8) {
           thunk_FUN_004ad310(*(int *)(*(int *)(this_00 + 0x26d) + iVar8 * 4));
-          FUN_0072e2b0(*(undefined4 **)(*(int *)(this_00 + 0x26d) + *(int *)(this_00 + 0x265) * 4));
+          Library::MSVCRT::FUN_0072e2b0
+                    (*(undefined4 **)(*(int *)(this_00 + 0x26d) + *(int *)(this_00 + 0x265) * 4));
           iVar8 = *(int *)(this_00 + 0x265) + -1;
           *(int *)(this_00 + 0x265) = iVar8;
         }
-        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x26d));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x26d));
         uVar14 = extraout_var_00;
       }
       if (*(short *)(this_00 + 0x32) != -1) {

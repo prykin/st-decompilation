@@ -22,7 +22,7 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   if (DAT_007ee240 < 8) {
     MessageBoxA(*(HWND *)(param_4 + 0x78),s_Need_compile__vidrend_cpp__with___007ee244,
                 s_Error_007ee274,0x1010);
-    FUN_0072ef80(0xffffffff);
+    Library::MSVCRT::FUN_0072ef80(0xffffffff);
   }
   return this;
 }

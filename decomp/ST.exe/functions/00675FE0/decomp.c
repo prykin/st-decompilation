@@ -17,7 +17,7 @@ void __cdecl FUN_00675fe0(uint param_1)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar3 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar7 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x118,0,iVar3,&DAT_007a4ccc,
@@ -45,7 +45,7 @@ void __cdecl FUN_00675fe0(uint param_1)
           do {
             puVar5 = (ushort *)(puVar4[2] * uVar8 + puVar4[7]);
 LAB_00676053:
-            piVar6 = (int *)thunk_FUN_0042b620(param_1,(uint)*puVar5,1);
+            piVar6 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,param_1,(uint)*puVar5,1);
             if (piVar6 != (int *)0x0) {
               iVar3 = (**(code **)(*piVar6 + 0x2c))();
               if (iVar3 == 0x78) {

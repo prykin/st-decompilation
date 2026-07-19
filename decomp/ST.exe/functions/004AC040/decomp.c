@@ -18,7 +18,7 @@ undefined4 __thiscall STT3DSprC::ShowCurFase(STT3DSprC *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
     if (*(int *)(local_8 + 0x18) == -1) {

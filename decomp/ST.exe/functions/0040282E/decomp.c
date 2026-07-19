@@ -16,7 +16,7 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pSStack_8 = this;
-  errorCode = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = IStack_54.previous;
@@ -33,14 +33,14 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   if (param_2 == 0xffffffff) {
     aiStack_10[0] = param_1;
     aiStack_10[1] = 0;
-    FUN_006ae1c0(*(uint **)(pSStack_8 + 0x241),aiStack_10);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSStack_8 + 0x241),aiStack_10);
     g_currentExceptionFrame = IStack_54.previous;
     return 0;
   }
   FUN_006acc70(*(int *)(pSStack_8 + 0x241),param_2,aiStack_10);
   if (aiStack_10[0] == param_1) {
     aiStack_10[1] = 0;
-    FUN_006ae140(*(uint **)(pSVar2 + 0x241),param_2,aiStack_10);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar2 + 0x241),param_2,aiStack_10);
     g_currentExceptionFrame = IStack_54.previous;
     return 0;
   }

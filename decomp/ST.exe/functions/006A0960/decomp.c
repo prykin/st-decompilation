@@ -11,7 +11,8 @@ undefined4 __thiscall CGenerate::_saveObj(CGenerate *this)
   undefined4 uVar3;
   undefined4 in_stack_ffffffb8;
   
-  iVar2 = __setjmp3((undefined4 *)&stack0xffffffb8,0,g_currentExceptionFrame,in_stack_ffffffb8);
+  iVar2 = Library::MSVCRT::__setjmp3
+                    ((undefined4 *)&stack0xffffffb8,0,g_currentExceptionFrame,in_stack_ffffffb8);
   if (iVar2 == 0) {
     return 1;
   }

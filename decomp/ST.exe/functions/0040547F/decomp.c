@@ -1,5 +1,6 @@
 
-uint __thiscall thunk_FUN_004a7af0(void *this,int param_1,uint param_2,uint param_3)
+uint __thiscall
+STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint param_3)
 
 {
   code *pcVar1;
@@ -17,29 +18,29 @@ uint __thiscall thunk_FUN_004a7af0(void *this,int param_1,uint param_2,uint para
   int iStack_e;
   int iStack_a;
   
-  if (*(int *)((int)this + 0x22a) == 0) {
+  if (*(int *)(this + 0x22a) == 0) {
     return 1;
   }
-  FUN_006acc70(*(int *)((int)this + 0x22a),*(uint *)((int)this + 0x232),(undefined4 *)&sStack_14);
+  FUN_006acc70(*(int *)(this + 0x22a),*(uint *)(this + 0x232),(undefined4 *)&sStack_14);
   if (param_1 == 1) {
     iStack_1e = thunk_FUN_0040bc90(this,param_2 & 0xffff,(short *)(int)sStack_14,
                                    (short *)(int)sStack_12,(short *)(int)sStack_10,'\0');
-    if (*(int *)((int)this + 0x242) < iStack_1e) {
-      if ((1 < *(ushort *)((int)this + 0x27)) &&
-         (((*(int *)((int)this + 0x236) == 1 && (iStack_1e <= iStack_a / 2)) ||
-          ((*(int *)((int)this + 0x236) == 0 && (iStack_1e <= iStack_e / 2)))))) {
-        FUN_006acc70(*(int *)((int)this + 0x22e),param_3,&uStack_2c);
+    if (*(int *)(this + 0x242) < iStack_1e) {
+      if ((1 < *(ushort *)(this + 0x27)) &&
+         (((*(int *)(this + 0x236) == 1 && (iStack_1e <= iStack_a / 2)) ||
+          ((*(int *)(this + 0x236) == 0 && (iStack_1e <= iStack_e / 2)))))) {
+        FUN_006acc70(*(int *)(this + 0x22e),param_3,&uStack_2c);
         if (iStack_1a != 0) {
           if (iStack_1a == 1) {
             if (iStack_1e < iStack_26) {
               iStack_1a = 1;
               iStack_26 = iStack_1e;
-              FUN_006ae140(*(uint **)((int)this + 0x22e),param_3,&uStack_2c);
+              Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&uStack_2c);
               return 0;
             }
             iStack_1a = 2;
             iStack_22 = iStack_1e;
-            FUN_006ae140(*(uint **)((int)this + 0x22e),param_3,&uStack_2c);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&uStack_2c);
             return 0;
           }
           if (iStack_1a != 2) {
@@ -53,27 +54,27 @@ uint __thiscall thunk_FUN_004a7af0(void *this,int param_1,uint param_2,uint para
             return uVar3;
           }
           if (iStack_22 <= iStack_1e) {
-            if (*(int *)((int)this + 0x23e) == 0) {
-              *(undefined4 *)((int)this + 0x23e) = 1;
+            if (*(int *)(this + 0x23e) == 0) {
+              *(undefined4 *)(this + 0x23e) = 1;
             }
             iStack_1a = 3;
             uStack_2c = 1;
-            FUN_006ae140(*(uint **)((int)this + 0x22e),param_3,&uStack_2c);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&uStack_2c);
             iVar2 = thunk_FUN_004a7e30(this,1);
             return (uint)(iVar2 != 0);
           }
         }
         iStack_1a = 1;
         iStack_26 = iStack_1e;
-        FUN_006ae140(*(uint **)((int)this + 0x22e),param_3,&uStack_2c);
+        Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&uStack_2c);
       }
       return 0;
     }
-    if (*(int *)((int)this + 0x23e) == 0) {
-      *(undefined4 *)((int)this + 0x23e) = 1;
+    if (*(int *)(this + 0x23e) == 0) {
+      *(undefined4 *)(this + 0x23e) = 1;
     }
-    FUN_006acc70(*(int *)((int)this + 0x22e),param_3,&uStack_2c);
-    puVar4 = *(uint **)((int)this + 0x22e);
+    FUN_006acc70(*(int *)(this + 0x22e),param_3,&uStack_2c);
+    puVar4 = *(uint **)(this + 0x22e);
   }
   else {
     iVar2 = thunk_FUN_00423e70(this,param_2);
@@ -86,14 +87,14 @@ uint __thiscall thunk_FUN_004a7af0(void *this,int param_1,uint param_2,uint para
     if ((int)*(short *)(iVar2 + 0x4b) != *(int *)(iVar2 + 0xcf)) {
       return 0;
     }
-    if (*(int *)((int)this + 0x23e) == 0) {
-      *(undefined4 *)((int)this + 0x23e) = 1;
+    if (*(int *)(this + 0x23e) == 0) {
+      *(undefined4 *)(this + 0x23e) = 1;
     }
-    FUN_006acc70(*(int *)((int)this + 0x22e),param_3,&uStack_2c);
-    puVar4 = *(uint **)((int)this + 0x22e);
+    FUN_006acc70(*(int *)(this + 0x22e),param_3,&uStack_2c);
+    puVar4 = *(uint **)(this + 0x22e);
   }
   uStack_2c = 1;
-  FUN_006ae140(puVar4,param_3,&uStack_2c);
+  Library::DKW::TBL::FUN_006ae140(puVar4,param_3,&uStack_2c);
   iVar2 = thunk_FUN_004a7e30(this,1);
   return (uint)(iVar2 != 0);
 }

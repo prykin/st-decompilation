@@ -1,4 +1,4 @@
-FUN_006f1ce0:
+cMf32::RecGet:
 006F1CE0  55                        PUSH EBP
 006F1CE1  8B EC                     MOV EBP,ESP
 006F1CE3  81 EC 78 03 00 00         SUB ESP,0x378

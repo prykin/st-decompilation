@@ -9,7 +9,7 @@ void FUN_00757280(undefined4 *param_1,undefined4 param_2)
     param_1[4] = uVar1;
   }
   *(undefined **)(param_1[4] + 8) = &DAT_007572f0;
-  *(code **)(param_1[4] + 0xc) = FUN_00757300;
+  *(code **)(param_1[4] + 0xc) = Library::DKW::JPG::FUN_00757300;
   *(code **)(param_1[4] + 0x10) = FUN_00757330;
   *(code **)(param_1[4] + 0x14) = FUN_00757cd0;
   *(undefined **)(param_1[4] + 0x18) = &DAT_00757350;

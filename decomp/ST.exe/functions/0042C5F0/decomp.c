@@ -1,5 +1,11 @@
 
-undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::DelObjFromTmps */
+
+undefined4 __thiscall
+STAllPlayersC::DelObjFromTmps
+          (STAllPlayersC *this,char param_1,int param_2,uint param_3,uint param_4)
 
 {
   undefined4 *puVar1;
@@ -24,7 +30,7 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1a4) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,5);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,5);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -56,10 +62,10 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
             do {
               FUN_006acc70((int)puVar2,uVar9,&local_8);
               if ((short)local_8 == (short)param_4) {
-                piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,1);
+                piVar6 = (int *)GetObjPtr(this,param_3,param_4,1);
                 (**(code **)(*piVar6 + 0xe8))(0);
                 local_8 = 0xffff;
-                FUN_006ae140(puVar2,uVar9,&local_8);
+                Library::DKW::TBL::FUN_006ae140(puVar2,uVar9,&local_8);
                 *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
                 if (*(short *)((int)puVar1 + 0xe) == 0) {
                   FUN_006ae110(*(byte **)((int)puVar1 + 10));
@@ -93,7 +99,7 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x5a) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,4);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,4);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -118,7 +124,7 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x172) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,2);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,2);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -145,7 +151,7 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1b8) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,6);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,6);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -170,7 +176,7 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
         puVar1 = (undefined4 *)((int)&DAT_007f4f83 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4f83 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1ae) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,3);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,3);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
@@ -203,10 +209,10 @@ undefined4 FUN_0042c5f0(char param_1,int param_2,uint param_3,uint param_4)
           do {
             FUN_006acc70((int)puVar2,uVar9,&local_8);
             if ((short)local_8 == (short)param_4) {
-              piVar6 = (int *)thunk_FUN_0042b620(param_3,param_4,1);
+              piVar6 = (int *)GetObjPtr(this,param_3,param_4,1);
               (**(code **)(*piVar6 + 0xe8))(0);
               local_8 = 0xffff;
-              FUN_006ae140(puVar2,uVar9,&local_8);
+              Library::DKW::TBL::FUN_006ae140(puVar2,uVar9,&local_8);
               *(short *)((int)puVar1 + 0xe) = *(short *)((int)puVar1 + 0xe) + -1;
               if (*(short *)((int)puVar1 + 0xe) == 0) {
                 FUN_006ae110(*(byte **)((int)puVar1 + 10));

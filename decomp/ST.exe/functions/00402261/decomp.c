@@ -165,7 +165,7 @@ void __fastcall thunk_FUN_0058a9e0(int *param_1)
   }
   this = (STT3DSprC *)((int)param_1 + 0x1d5);
   *(short *)(param_1 + 0x1b) = sVar6 / 0x2d - (short)((int)sVar6 / -0x4c000000);
-  thunk_FUN_004abe40(this,'\x0e',iVar4);
+  STT3DSprC::SetCurFase(this,'\x0e',iVar4);
   STT3DSprC::SetCurShad(this,'\x0e',iVar2);
   STT3DSprC::ShowCurFase(this,'\x0e');
   *(int *)((int)param_1 + 0x24d) = *(int *)((int)param_1 + 0x24d) + 1;

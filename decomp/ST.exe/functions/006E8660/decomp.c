@@ -35,8 +35,9 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
   }
   else {
     if (*(int *)((int)this + 0x318) <= *(int *)((int)this + 0x314)) {
-      iVar1 = FUN_006acf50(*(undefined4 **)((int)this + 0x31c),
-                           (*(int *)((int)this + 0x318) + 10) * 0x114);
+      iVar1 = Library::DKW::LIB::FUN_006acf50
+                        (*(undefined4 **)((int)this + 0x31c),
+                         (*(int *)((int)this + 0x318) + 10) * 0x114);
       if (iVar1 == 0) {
         return 0xfffffffe;
       }
@@ -66,7 +67,7 @@ FUN_006e8660(void *this,int *param_1,uint param_2,uint param_3,uint param_4,uint
   puVar4[6] = param_8;
   puVar4[0x23] = 0xffffffff;
   if (0 < (int)param_2) {
-    puVar2 = FUN_006aac10(param_2 << 2);
+    puVar2 = Library::DKW::LIB::FUN_006aac10(param_2 << 2);
     puVar4[0x29] = (uint)puVar2;
     if (puVar2 == (undefined4 *)0x0) {
       return 0xfffffffe;

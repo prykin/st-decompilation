@@ -7,8 +7,9 @@ undefined4 FUN_006b5480(int param_1)
   int iVar3;
   undefined4 *puVar4;
   
-  iVar1 = FUN_006acf50(*(undefined4 **)(param_1 + 0x14),
-                       (*(int *)(param_1 + 0xc) + *(int *)(param_1 + 0x10)) * 4);
+  iVar1 = Library::DKW::LIB::FUN_006acf50
+                    (*(undefined4 **)(param_1 + 0x14),
+                     (*(int *)(param_1 + 0xc) + *(int *)(param_1 + 0x10)) * 4);
   if (iVar1 == 0) {
     return 0xfffffffe;
   }

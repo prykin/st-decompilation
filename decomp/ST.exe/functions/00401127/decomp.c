@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void thunk_FUN_00555910(int param_1)
+void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
 
 {
   undefined2 uVar1;
@@ -18,22 +18,23 @@ void thunk_FUN_00555910(int param_1)
   int iStack_14;
   int iStack_10;
   int iStack_c;
-  int iStack_8;
+  TraksClassTy *pTStack_8;
   
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
-  iVar3 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pTStack_8 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     sVar4 = *(short *)(param_1 + 0x22);
     iStack_20 = (int)sVar4;
     if (((uint)((int)*(short *)(param_1 + 0x14) + *(int *)(param_1 + 0x24)) <=
-         *(uint *)(iStack_8 + 0x20)) || (*(short *)(param_1 + 0x3a) != 0)) {
+         *(uint *)(pTStack_8 + 0x20)) || (*(short *)(param_1 + 0x3a) != 0)) {
       *(short *)(param_1 + 0x22) = sVar4 + 1;
       if (*(short *)(param_1 + 0x36) <= (short)(sVar4 + 1)) {
         *(short *)(param_1 + 0x22) = sVar4;
         *(undefined2 *)(param_1 + 0x38) = 1;
       }
-      *(undefined4 *)(param_1 + 0x24) = *(undefined4 *)(iStack_8 + 0x20);
+      *(undefined4 *)(param_1 + 0x24) = *(undefined4 *)(pTStack_8 + 0x20);
     }
     iStack_c = (int)*(short *)(param_1 + 2);
     iStack_10 = (int)*(short *)(param_1 + 4);
@@ -42,7 +43,7 @@ void thunk_FUN_00555910(int param_1)
     iStack_14 = (int)*(short *)(param_1 + 6);
     iStack_1c = (int)*(short *)(param_1 + 0x20);
     if (*(short *)(param_1 + 0x3a) == 0) {
-      iVar3 = *(int *)(iStack_8 + 0x20) - *(int *)(param_1 + 0x28);
+      iVar3 = *(int *)(pTStack_8 + 0x20) - *(int *)(param_1 + 0x28);
       if (iVar3 == 0) {
         iVar3 = 1;
       }

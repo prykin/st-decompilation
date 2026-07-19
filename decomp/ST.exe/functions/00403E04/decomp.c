@@ -30,7 +30,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pAStack_8 = this;
-  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pAStack_8;
   if (iVar4 == 0) {
     if ((param_1 != 0) && (*(int *)(param_1 + 0xc) != 0)) {
@@ -64,12 +64,13 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
         else {
           puVar5 = (undefined2 *)0x0;
         }
-        if (DAT_007fa174 == 0) {
+        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
           piVar6 = (int *)0x0;
         }
         else {
-          piVar6 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar8 >> 8),this_00[0x24]),
-                                             CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),1);
+          piVar6 = (int *)STAllPlayersC::GetObjPtr
+                                    (DAT_007fa174,CONCAT31((int3)((uint)uVar8 >> 8),this_00[0x24]),
+                                     CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),1);
           uVar8 = extraout_EDX_00;
         }
         if (piVar6 != (int *)0x0) {

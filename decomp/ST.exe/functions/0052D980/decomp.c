@@ -26,7 +26,7 @@ void __thiscall PopUpTy::ChangeState(PopUpTy *this)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -74,8 +74,8 @@ LAB_0052da81:
       }
       *(uint *)(pPVar8 + 0x3c) = uVar5;
       FUN_006b2800((int)DAT_008075a8,*(uint *)pPVar8,uVar5,0x13);
-      FUN_006b3640(DAT_008075a8,*(uint *)pPVar8,0xffffffff,0xd,local_c);
-      FUN_006b3430(DAT_008075a8,*(uint *)pPVar8);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pPVar8,0xffffffff,0xd,local_c);
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)pPVar8);
     }
     local_5 = (PopUpTy)((char)local_5 + 1);
     local_14 = iVar3 + 1;

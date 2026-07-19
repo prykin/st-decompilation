@@ -24,7 +24,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pSStack_8 = this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar10 = puStack_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
@@ -77,7 +77,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x97) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puStack_10 + 0x275));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puStack_10 + 0x275));
     *(undefined4 **)(pSStack_8 + 0x97) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x275);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x271) + (int)param_1);
@@ -96,7 +96,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x9f) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x27d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x27d));
     *(undefined4 **)(pSStack_8 + 0x9f) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x27d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x279) + (int)param_1);
@@ -115,7 +115,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x11d) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x115));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x115));
     *(undefined4 **)(pSStack_8 + 0x11d) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x115);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x111) + (int)param_1);
@@ -134,7 +134,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x121) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x11d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x11d));
     *(undefined4 **)(pSStack_8 + 0x121) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x11d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x119) + (int)param_1);
@@ -153,7 +153,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x125) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x125));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x125));
     *(undefined4 **)(pSStack_8 + 0x125) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x125);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x121) + (int)param_1);
@@ -172,7 +172,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x129) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x12d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x12d));
     *(undefined4 **)(pSStack_8 + 0x129) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x12d);
     puVar5 = (undefined4 *)((int)param_1 + *(int *)((int)puVar10 + 0x129));
@@ -257,7 +257,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x185) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x1e5));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x1e5));
     *(undefined4 **)(pSStack_8 + 0x185) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x1e5);
     puVar5 = (undefined4 *)((int)param_1 + *(int *)((int)puVar10 + 0x1e1));
@@ -276,7 +276,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x189) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x1ed));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x1ed));
     *(undefined4 **)(pSStack_8 + 0x189) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x1ed);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x1e9) + (int)param_1);
@@ -295,7 +295,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x18d) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x1f5));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x1f5));
     *(undefined4 **)(pSStack_8 + 0x18d) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x1f5);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x1f1) + (int)param_1);
@@ -314,7 +314,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x191) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x1fd));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x1fd));
     *(undefined4 **)(pSStack_8 + 0x191) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x1fd);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x1f9) + (int)param_1);
@@ -333,7 +333,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x195) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x205));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x205));
     *(undefined4 **)(pSStack_8 + 0x195) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x205);
     puVar5 = (undefined4 *)((int)param_1 + *(int *)((int)puVar10 + 0x201));
@@ -352,7 +352,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSStack_8 + 0x199) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x20d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x20d));
     *(undefined4 **)(pSStack_8 + 0x199) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x20d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x209) + (int)param_1);
@@ -386,7 +386,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1a5) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x225));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x225));
     *(undefined4 **)(pSStack_8 + 0x1a5) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x225);
     puVar5 = (undefined4 *)((int)param_1 + *(int *)((int)puVar10 + 0x221));
@@ -405,7 +405,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1a9) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x22d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x22d));
     *(undefined4 **)(pSStack_8 + 0x1a9) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x22d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x229) + (int)param_1);
@@ -424,7 +424,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1ad) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x235));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x235));
     *(undefined4 **)(pSStack_8 + 0x1ad) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x235);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x231) + (int)param_1);
@@ -443,7 +443,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1b1) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x23d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x23d));
     *(undefined4 **)(pSStack_8 + 0x1b1) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x23d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x239) + (int)param_1);
@@ -462,7 +462,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1b5) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x245));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x245));
     *(undefined4 **)(pSStack_8 + 0x1b5) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x245);
     puVar5 = (undefined4 *)((int)param_1 + *(int *)((int)puVar10 + 0x241));
@@ -481,7 +481,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1b9) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x24d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x24d));
     *(undefined4 **)(pSStack_8 + 0x1b9) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x24d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x249) + (int)param_1);
@@ -500,7 +500,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1bd) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x255));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x255));
     *(undefined4 **)(pSStack_8 + 0x1bd) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x255);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x251) + (int)param_1);
@@ -519,7 +519,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1c1) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x25d));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x25d));
     *(undefined4 **)(pSStack_8 + 0x1c1) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x25d);
     puVar5 = (undefined4 *)(*(int *)((int)puVar10 + 0x259) + (int)param_1);
@@ -538,7 +538,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     *(undefined4 *)(pSVar9 + 0x1c5) = 0;
   }
   else {
-    puVar3 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x265));
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x265));
     *(undefined4 **)(pSStack_8 + 0x1c5) = puVar3;
     uVar8 = *(uint *)((int)puVar10 + 0x265);
     puVar5 = (undefined4 *)((int)param_1 + *(int *)((int)puVar10 + 0x261));
@@ -558,7 +558,7 @@ void __thiscall STAllPlayersC::RestoreGObjData(STAllPlayersC *this,undefined4 *p
     g_currentExceptionFrame = IStack_54.previous;
     return;
   }
-  puVar5 = (undefined4 *)FUN_006aac70(*(int *)((int)puVar10 + 0x26d));
+  puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)puVar10 + 0x26d));
   *(undefined4 **)(pSStack_8 + 0x1c9) = puVar5;
   uVar8 = *(uint *)((int)puVar10 + 0x26d);
   puVar10 = (undefined4 *)(*(int *)((int)puVar10 + 0x269) + (int)param_1);

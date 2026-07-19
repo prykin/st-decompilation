@@ -16,9 +16,9 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_8 = this;
-  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    puVar3 = (undefined4 *)FUN_006aac70(0x6c);
+    puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x6c);
     *(undefined4 **)(pSStack_8 + 0x2e6) = puVar3;
     for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar3 = 0;

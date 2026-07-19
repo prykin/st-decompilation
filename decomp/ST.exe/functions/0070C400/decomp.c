@@ -12,7 +12,7 @@ undefined4 * __cdecl FUN_0070c400(byte *param_1,int param_2)
   pIVar3 = g_currentExceptionFrame;
   local_8 = (int *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar1 = __setjmp3(local_48,0,unaff_ESI,pIVar3);
+  iVar1 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   if (iVar1 != 0) {
     g_currentExceptionFrame = pIVar3;
     if (local_8 != (int *)0x0) {

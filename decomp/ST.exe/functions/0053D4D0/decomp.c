@@ -31,7 +31,7 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = (SpecPanelTy *)this;
-  iVar5 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -88,8 +88,9 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
                                     (uint)(this_00[bVar4 + 0x1ab] == (SpecPanelTy)0x0));
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),iVar9 - iVar5,iVar2 - iVar7,'\x01',pbVar8)
       ;
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                   *(uint *)(this_00 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                 *(uint *)(this_00 + 0x44));
     }
     else if (uVar1 == 0xb518) {
       iVar5 = *(int *)this_00;

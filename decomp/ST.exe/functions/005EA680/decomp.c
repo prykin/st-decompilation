@@ -32,7 +32,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
   *(undefined4 *)(this + 0x61) = uVar4;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar5 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -54,9 +54,10 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       *(uint *)(DAT_0081176c + 0x4cf) =
            *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
       if (*(uint *)(DAT_0081176c + 0x4b3) != 0xffffffff) {
-        FUN_006b3730(*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),
-                     *(uint *)(DAT_0081176c + 0x4b7),*(uint *)(DAT_0081176c + 0x4cb),
-                     *(uint *)(DAT_0081176c + 0x4cf));
+        Library::DKW::DDX::FUN_006b3730
+                  (*(uint **)(DAT_0081176c + 0x4f7),*(uint *)(DAT_0081176c + 0x4b3),
+                   *(uint *)(DAT_0081176c + 0x4b7),*(uint *)(DAT_0081176c + 0x4cb),
+                   *(uint *)(DAT_0081176c + 0x4cf));
       }
     }
     else if (uVar7 < 0x610b) {
@@ -256,7 +257,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     FUN_00715360(DAT_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  FUN_006b6020(*(int *)(*(int *)(this_01 + 0x1a5b) + 0x686),0,&DAT_008016a0);
+  Library::DKW::TBL::FUN_006b6020(*(int *)(*(int *)(this_01 + 0x1a5b) + 0x686),0,&DAT_008016a0);
   *(undefined4 *)(this_01 + 0x2d) = 0x33;
   *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(*(int *)(this_01 + 0x1a5b) + 0x686);
   FUN_006e6080(this_01,2,*(undefined4 *)(*(int *)(this_01 + 0x1a5b) + 0x54c),

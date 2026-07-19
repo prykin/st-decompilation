@@ -23,7 +23,7 @@ int FUN_00672440(int param_1,int param_2,short *param_3)
   local_10 = 0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar1 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
     g_currentExceptionFrame = local_64.previous;
     if (0 < iVar1) {
@@ -31,7 +31,7 @@ int FUN_00672440(int param_1,int param_2,short *param_3)
     }
     return iVar1;
   }
-  _strncpy((char *)(local_1c + 1),&DAT_008016a0,0x7f);
+  Library::MSVCRT::_strncpy((char *)(local_1c + 1),&DAT_008016a0,0x7f);
   local_1c[0x21] = -1;
   if (param_3 != (short *)0x0) {
     psVar4 = param_3;

@@ -22,7 +22,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
     IStack_7c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_7c;
     pFStack_8 = this;
-    errorCode = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (errorCode == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -41,7 +41,7 @@ void __thiscall FSGSTy::JoinChannel(FSGSTy *this,void *param_1)
                          *(BITMAPINFO **)(pFStack_8 + 0x1e9a));
       *(undefined4 *)(*(int *)(this_01 + 0x1ea6) + 0xc) = 0;
       uStack_b = 1;
-      FUN_006ae1c0(*(uint **)(this_01 + 0x1ea6),auStack_38);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_01 + 0x1ea6),auStack_38);
       *(undefined4 *)(this_01 + 0x2d) = 0x28;
       pFVar1 = this_01 + 0x1d;
       *(undefined4 *)(this_01 + 0x31) = *(undefined4 *)(*(int *)(this_01 + 0x1ea6) + 0xc);

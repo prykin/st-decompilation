@@ -26,9 +26,10 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pSStack_10 = this;
-  errorCode = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    puStack_c = FUN_006ae290((uint *)0x0,(uint)*(ushort *)(pSStack_10 + 0x27),2,1);
+    puStack_c = Library::DKW::TBL::FUN_006ae290
+                          ((uint *)0x0,(uint)*(ushort *)(pSStack_10 + 0x27),2,1);
     uVar2 = uStack_18;
     if (uStack_18 != 0) {
       uVar5 = 0;
@@ -36,7 +37,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
       do {
         FUN_006acc70(*(int *)(pSStack_10 + 0x29),uVar5,(undefined4 *)&sStack_6);
         if (sStack_6 != -1) {
-          FUN_006ae140(puStack_c,uVar7 & 0xffff,(undefined4 *)&sStack_6);
+          Library::DKW::TBL::FUN_006ae140(puStack_c,uVar7 & 0xffff,(undefined4 *)&sStack_6);
           uVar7 = uVar7 + 1;
           uStack_14 = uVar7;
         }

@@ -29,7 +29,7 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pSVar3 = local_8;

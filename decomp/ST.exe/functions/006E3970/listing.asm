@@ -1,4 +1,4 @@
-FUN_006e3970:
+AppClassTy::DeleteObject:
 006E3970  55                        PUSH EBP
 006E3971  8B EC                     MOV EBP,ESP
 006E3973  83 EC 50                  SUB ESP,0x50

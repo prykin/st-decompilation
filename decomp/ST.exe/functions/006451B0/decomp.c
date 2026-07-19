@@ -21,12 +21,12 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uin
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffac;
   local_8 = this;
-  errorCode = __setjmp3(local_50,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_50,0,unaff_ESI,pIVar5);
   if (errorCode == 0) {
     if (*param_2 == 0xffffffff) {
       local_10 = param_1;
       local_c = 1;
-      uVar2 = FUN_006ae1c0(*(uint **)(local_8 + 0x241),&local_10);
+      uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x241),&local_10);
       *param_2 = uVar2;
     }
     g_currentExceptionFrame = pIVar5;

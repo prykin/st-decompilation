@@ -24,7 +24,7 @@ SettMapMTy::ChgPlList
   
   IStack_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_48;
-  errorCode = __setjmp3(IStack_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode != 0) {
     g_currentExceptionFrame = IStack_48.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x1dd,0,errorCode,

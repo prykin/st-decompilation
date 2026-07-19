@@ -31,17 +31,17 @@ thunk_FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int pa
   case 0:
   case 2:
   case 4:
-    puVar1 = FUN_006ae290((uint *)0x0,param_1 * param_2,0x39,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1 * param_2,0x39,10);
     *(uint **)this = puVar1;
     uVar5 = param_1 * param_2;
     break;
   case 1:
-    puVar1 = FUN_006ae290((uint *)0x0,param_1 + param_2,0x39,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1 + param_2,0x39,10);
     *(uint **)this = puVar1;
     uVar5 = param_1;
     break;
   case 3:
-    puVar1 = FUN_006ae290((uint *)0x0,(param_1 + 4) * param_2 + 1,0x39,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,(param_1 + 4) * param_2 + 1,0x39,10);
     *(uint **)this = puVar1;
     uVar5 = param_1 * param_2;
   }
@@ -57,7 +57,7 @@ thunk_FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int pa
       if (param_4 != 1) {
         uVar5 = param_1 - 1;
       }
-      FUN_006ae140(puVar1,uVar5,auStack_40);
+      Library::DKW::TBL::FUN_006ae140(puVar1,uVar5,auStack_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
       *(undefined4 *)((int)this + 0xd) = param_3;
       *(undefined1 *)((int)this + 4) = 1;
@@ -70,7 +70,7 @@ thunk_FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int pa
       *(undefined4 *)((int)this + 0x15) = param_5[0x12];
       break;
     case 2:
-      FUN_006ae140(puVar1,param_1 * param_2 - 1,auStack_40);
+      Library::DKW::TBL::FUN_006ae140(puVar1,param_1 * param_2 - 1,auStack_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
       *(int *)((int)this + 0x1d) = param_2;
       *(undefined1 *)((int)this + 4) = 1;
@@ -87,7 +87,7 @@ thunk_FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int pa
       uVar5 = (param_1 + 4) * param_2 + 1;
       *(uint *)((int)this + 0x21) = uVar5;
       *(undefined4 *)((int)this + 0x11) = 3;
-      FUN_006ae140(puVar1,uVar5,auStack_40);
+      Library::DKW::TBL::FUN_006ae140(puVar1,uVar5,auStack_40);
       *(undefined1 *)((int)this + 4) = 1;
       *(undefined4 *)((int)this + 0x19) = *param_5;
       *(undefined4 *)((int)this + 0x1d) = param_5[1];
@@ -107,7 +107,7 @@ thunk_FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int pa
       *(undefined4 *)((int)this + 0x65) = param_5[8];
       break;
     case 4:
-      FUN_006ae140(puVar1,param_1 * param_2 - 1,auStack_40);
+      Library::DKW::TBL::FUN_006ae140(puVar1,param_1 * param_2 - 1,auStack_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
       *(int *)((int)this + 0x1d) = param_2;
       *(undefined1 *)((int)this + 4) = 1;

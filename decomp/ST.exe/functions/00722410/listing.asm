@@ -1,4 +1,4 @@
-FUN_00722410:
+EditorClassTy::GetMessage:
 00722410  55                        PUSH EBP
 00722411  8B EC                     MOV EBP,ESP
 00722413  83 EC 70                  SUB ESP,0x70

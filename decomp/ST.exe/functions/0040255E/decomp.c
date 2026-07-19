@@ -25,7 +25,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pOStack_10 = this;
-  iVar3 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
     iVar5 = ReportDebugMessage(s_E____titans_wlad_To_optic_cpp_007ac594,0x107,0,iVar3,&DAT_007a4ccc,
@@ -61,7 +61,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     _DAT_00807438 = 0x3f800000;
     DAT_0080743c._0_1_ = 0;
     dVar1 = (double)(_DAT_007904f8 / (_DAT_007ac580 / (float)DAT_00807570) + (float)_DAT_007901c0);
-    fVar8 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar8 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     _DAT_00807428 = DAT_00807420;
     ram0x0080743d = 0;
     _DAT_00807441 = 0;
@@ -74,8 +74,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     fVar8 = ((float10)_DAT_00790580 / fVar8) * (float10)DAT_00807574;
     DAT_00807424 = (float)fVar8;
     _DAT_0080742c = (float)fVar8;
-    FUN_0072e150(0xc0000000,0x403ccccc);
-    lVar9 = __ftol();
+    Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
+    lVar9 = Library::MSVCRT::__ftol();
     FUN_006dc050(DAT_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574,
                  SUB84((double)(_DAT_00807428 * _DAT_00790780),0),
                  (int)((ulonglong)(double)(_DAT_00807428 * _DAT_00790780) >> 0x20),
@@ -117,8 +117,8 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
   }
   *puVar7 = *puVar6;
   *(char *)(puVar7 + 1) = (char)puVar6[1];
-  FUN_0072e150(0xc0000000,0x403ccccc);
-  lVar9 = __ftol();
+  Library::MSVCRT::FUN_0072e150(0xc0000000,0x403ccccc);
+  lVar9 = Library::MSVCRT::__ftol();
   FUN_006dc050(DAT_00807598,DAT_0080759c,DAT_00807568,DAT_0080756c,DAT_00807570,DAT_00807574,
                SUB84((double)(DAT_00807420 * _DAT_00790780),0),
                (int)((ulonglong)(double)(DAT_00807420 * _DAT_00790780) >> 0x20),

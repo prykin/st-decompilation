@@ -1,5 +1,9 @@
 
-void __thiscall FUN_00578560(void *this,uint param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Igor\to_crab.cpp
+   STCrabC::SetSprRange */
+
+void __thiscall STCrabC::SetSprRange(STCrabC *this,uint param_1)
 
 {
   code *pcVar1;
@@ -16,8 +20,8 @@ void __thiscall FUN_00578560(void *this,uint param_1)
     param_1 = 0;
   }
   iVar2 = param_1 * 6;
-  *(short *)((int)this + 0x6c) = (short)iVar2;
-  thunk_FUN_004abce0((void *)((int)this + 0x1d5),0xe,iVar2,iVar2 + 5,'\0');
+  *(short *)(this + 0x6c) = (short)iVar2;
+  thunk_FUN_004abce0(this + 0x1d5,0xe,iVar2,iVar2 + 5,'\0');
   return;
 }
 

@@ -17,7 +17,7 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
     IStack_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_50;
     pSStack_c = this;
-    iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pSStack_c;
     if (iVar2 == 0) {
       uStack_8 = 0;

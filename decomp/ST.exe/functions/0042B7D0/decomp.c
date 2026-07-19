@@ -71,7 +71,7 @@ STAllPlayersC::AddObjsToGroup
   }
   local_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_90;
-  iVar4 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = local_14;
   if (iVar4 == 0) {
     uVar8 = local_24;
@@ -90,7 +90,7 @@ STAllPlayersC::AddObjsToGroup
       local_40 = 1;
       local_38 = uVar8 & 0xffff;
       (**(code **)(*DAT_00802a38 + 8))(0x10ff,local_1c,&local_10,local_4c,0);
-      FUN_006ae140(puVar2,uVar8 & 0xffff,&local_10);
+      Library::DKW::TBL::FUN_006ae140(puVar2,uVar8 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,param_3,0);
       local_5 = 2;
       (**(code **)(*(int *)local_10 + 8))(0x65,&local_5);
@@ -114,7 +114,7 @@ STAllPlayersC::AddObjsToGroup
            (iVar4 = thunk_FUN_004233a0((int)local_c), iVar4 == 0)) {
           thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_c + 8));
           local_c = (STGroupC *)0x0;
-          FUN_006ae140(puVar2,uVar8,&local_c);
+          Library::DKW::TBL::FUN_006ae140(puVar2,uVar8,&local_c);
         }
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < (int)uVar7);

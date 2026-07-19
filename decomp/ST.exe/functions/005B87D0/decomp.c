@@ -43,7 +43,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
     local_78.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_78;
     local_14 = (MMObjTy *)this;
-    iVar4 = __setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_14;
     if (iVar4 == 0) {
       MMObjTy::CloseButtons(local_14);

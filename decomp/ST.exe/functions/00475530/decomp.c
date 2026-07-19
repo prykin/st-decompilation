@@ -1,5 +1,9 @@
 
-int __fastcall FUN_00475530(int *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_boat.cpp
+   STBoatC::BackWaitLoad */
+
+int __thiscall STBoatC::BackWaitLoad(STBoatC *this,int *param_1)
 
 {
   uint uVar1;
@@ -29,43 +33,43 @@ int __fastcall FUN_00475530(int *param_1)
   undefined4 local_14;
   int local_10;
   int local_c;
-  undefined4 *local_8;
+  STBoatC *local_8;
   
-  iVar4 = param_1[0x170];
+  iVar4 = *(int *)(this + 0x5c0);
   if (iVar4 == 0) {
 LAB_00475545:
-    iVar4 = (**(code **)(*param_1 + 0xd8))();
+    iVar4 = (**(code **)(*(int *)this + 0xd8))();
     return -(uint)(iVar4 != 0);
   }
   if ((iVar4 == 1) || (iVar4 == 2)) {
-    iVar17 = param_1[0x171];
+    iVar17 = *(int *)(this + 0x5c4);
     if (iVar17 == 0) {
-      iVar4 = thunk_FUN_00460360(param_1);
+      iVar4 = thunk_FUN_00460360((int *)this);
       return iVar4;
     }
     if (((((iVar17 == 1) || (iVar17 == 2)) || (iVar17 == 3)) || ((iVar17 == 5 || (iVar17 == 6)))) ||
        (iVar17 == 7)) {
-      *(undefined4 *)((int)param_1 + 0x76) = 1;
-      iVar4 = (**(code **)(*param_1 + 0xd8))();
+      *(undefined4 *)(this + 0x76) = 1;
+      iVar4 = (**(code **)(*(int *)this + 0xd8))();
       return -(uint)(iVar4 != 0);
     }
     if (iVar17 == 4) {
-      local_1c = thunk_FUN_00415ed0(param_1,&local_18,&local_14);
-      uVar5 = param_1[7] * 0x41c64e6d + 0x3039;
-      param_1[7] = uVar5;
+      local_1c = thunk_FUN_00415ed0(this,&local_18,&local_14);
+      uVar5 = *(int *)(this + 0x1c) * 0x41c64e6d + 0x3039;
+      *(uint *)(this + 0x1c) = uVar5;
       iVar4 = (uVar5 >> 0x10) % 7 - 3;
-      uVar5 = param_1[7] * 0x41c64e6d + 0x3039;
-      param_1[7] = uVar5;
-      uVar1 = param_1[7] * 0x41c64e6d + 0x3039;
-      param_1[7] = uVar1;
+      uVar5 = *(int *)(this + 0x1c) * 0x41c64e6d + 0x3039;
+      *(uint *)(this + 0x1c) = uVar5;
+      uVar1 = *(int *)(this + 0x1c) * 0x41c64e6d + 0x3039;
+      *(uint *)(this + 0x1c) = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
-      if ((*(int *)((int)param_1 + 0x74a) <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
-         (local_10 = 0, *(char *)((int)param_1 + 0x2bf) != '\0')) {
-        local_8 = (undefined4 *)((int)param_1 + 0x2b3);
+      if ((*(int *)(this + 0x74a) <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
+         (local_10 = 0, this[0x2bf] != (STBoatC)0x0)) {
+        local_8 = this + 0x2b3;
         do {
           puVar6 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,*local_8,*(undefined2 *)(local_8 + 1),
-                                      (short)param_1[0x1b]);
+                   thunk_FUN_0041dc40(local_2c,*(undefined4 *)local_8,*(undefined2 *)(local_8 + 4),
+                                      *(short *)(this + 0x6c));
           uVar2 = *puVar6;
           bVar19 = 0;
           sVar18 = 0;
@@ -87,23 +91,24 @@ LAB_00475545:
             sVar16 = 0;
             sVar18 = 0;
             bVar19 = 0;
-            lVar10 = __ftol();
-            iVar7 = (int)local_20 + *(short *)((int)param_1 + 0x45) + local_c + (int)(short)lVar10;
-            iVar8 = (int)*(short *)((int)param_1 + 0x43) - (int)local_24._2_2_;
-            iVar9 = (int)(short)local_24 + iVar4 + *(short *)((int)param_1 + 0x41);
+            lVar10 = Library::MSVCRT::__ftol();
+            iVar7 = (int)local_20 + *(short *)(this + 0x45) + local_c + (int)(short)lVar10;
+            iVar8 = (int)*(short *)(this + 0x43) - (int)local_24._2_2_;
+            iVar9 = (int)(short)local_24 + iVar4 + *(short *)(this + 0x41);
           }
           else {
-            iVar7 = (int)local_20 + local_c + *(short *)((int)param_1 + 0x45);
+            iVar7 = (int)local_20 + local_c + *(short *)(this + 0x45);
             local_24._2_2_ = (short)((uint)uVar2 >> 0x10);
-            iVar8 = (int)*(short *)((int)param_1 + 0x43) - (int)local_24._2_2_;
+            iVar8 = (int)*(short *)(this + 0x43) - (int)local_24._2_2_;
             local_24._0_2_ = (short)uVar2;
-            iVar9 = (int)(short)local_24 + iVar4 + *(short *)((int)param_1 + 0x41);
+            iVar9 = (int)(short)local_24 + iVar4 + *(short *)(this + 0x41);
           }
-          thunk_FUN_00556760(DAT_00802a7c,1,2,7,iVar9,iVar8 + ((uVar5 >> 0x10) % 7 - 3),iVar7,sVar11
-                             ,sVar12,sVar13,sVar14,sVar15,sVar16,iVar17,sVar18,bVar19);
-          local_8 = (undefined4 *)((int)local_8 + 6);
+          TraksClassTy::TraksCreate
+                    (DAT_00802a7c,1,2,7,iVar9,iVar8 + ((uVar5 >> 0x10) % 7 - 3),iVar7,sVar11,sVar12,
+                     sVar13,sVar14,sVar15,sVar16,iVar17,sVar18,bVar19);
+          local_8 = local_8 + 6;
           local_10 = local_10 + 1;
-        } while (local_10 < (int)(uint)*(byte *)((int)param_1 + 0x2bf));
+        } while (local_10 < (int)(uint)(byte)this[0x2bf]);
       }
       if (local_1c == -1) {
         iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x303e,0,0,&DAT_007a4ccc,
@@ -116,14 +121,14 @@ LAB_00475545:
         return -1;
       }
       if (local_1c != 0) {
-        iVar4 = (**(code **)(*param_1 + 0xd8))();
+        iVar4 = (**(code **)(*(int *)this + 0xd8))();
         return (-(uint)(iVar4 != 0) & 0xfffffffd) + 2;
       }
       goto LAB_00475545;
     }
   }
   if (iVar4 == 3) {
-    iVar4 = thunk_FUN_004749c0(param_1,(void *)0x2);
+    iVar4 = WaitLoad(this,(void *)0x2);
     return iVar4;
   }
   iVar4 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3052,0,0,&DAT_007a4ccc,

@@ -75,7 +75,7 @@ thunk_FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int 
     }
   }
   else {
-    _strncpy(acStack_11a,param_6,0xe);
+    Library::MSVCRT::_strncpy(acStack_11a,param_6,0xe);
     uStack_10c = 0;
   }
   uVar3 = 0xffffffff;
@@ -111,7 +111,7 @@ thunk_FUN_006034e0(undefined2 param_1,undefined2 param_2,undefined2 param_3,int 
     }
   }
   else {
-    _strncpy(acStack_10b,param_7,0x103);
+    Library::MSVCRT::_strncpy(acStack_10b,param_7,0x103);
     uStack_8 = 0;
   }
   (**(code **)(*DAT_00802a38 + 8))(0x15a,0,0,auStack_144,0);

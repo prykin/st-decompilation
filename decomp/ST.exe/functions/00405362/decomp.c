@@ -47,7 +47,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
   IStack_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_80;
   pHStack_20 = this;
-  iVar8 = __setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(IStack_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   piVar13 = piStack_14;
   this_00 = pHStack_20;
   if (iVar8 != 0) {
@@ -119,7 +119,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
           cStack_2b = *(char *)((int)piStack_14 + 0x11) + '\x01';
           uStack_2a = 0;
           uStack_29 = 0;
-          FUN_006b11d0(*(uint **)(this_00 + 0x1b3),uVar10 & 0xffff,&uStack_3c);
+          Library::DKW::TBL::FUN_006b11d0(*(uint **)(this_00 + 0x1b3),uVar10 & 0xffff,&uStack_3c);
           uVar10 = uVar10 + 1;
           cStack_5 = '\x01';
           uStack_18 = uVar10;
@@ -177,8 +177,9 @@ LAB_00513233:
   }
   *(bool *)((int)piVar13 + 0x12) = *(char *)((int)piVar13 + 0x12) == '\0';
   if ((*(int *)(this_00 + 0x19c) != 0) && (this_00[0x1a1] == (HelpPanelTy)0x0)) {
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
-                 0x19c,0x118);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
+               0x19c,0x118);
     pHVar1 = this_00 + 0x18;
     pHVar15 = pHVar1;
     for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {

@@ -1,5 +1,10 @@
 
-void FUN_0042cef0(int param_1,char param_2,short param_3)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::DelObjFromSaveTmps */
+
+void __thiscall
+STAllPlayersC::DelObjFromSaveTmps(STAllPlayersC *this,int param_1,char param_2,short param_3)
 
 {
   code *pcVar1;
@@ -28,7 +33,7 @@ void FUN_0042cef0(int param_1,char param_2,short param_3)
               FUN_006acc70(*piVar5,uVar6,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
-                FUN_006ae140((uint *)*piVar5,uVar6,&param_1);
+                Library::DKW::TBL::FUN_006ae140((uint *)*piVar5,uVar6,&param_1);
                 *(short *)(piVar5 + 1) = (short)piVar5[1] + -1;
                 if ((short)piVar5[1] == 0) {
                   FUN_006ae110((byte *)*piVar5);
@@ -71,7 +76,7 @@ LAB_0042cf42:
               FUN_006acc70(*piVar5,uVar6,&param_1);
               if ((short)param_1 == param_3) {
                 param_1 = 0xffff;
-                FUN_006ae140((uint *)*piVar5,uVar6,&param_1);
+                Library::DKW::TBL::FUN_006ae140((uint *)*piVar5,uVar6,&param_1);
                 *(short *)(piVar5 + 1) = (short)piVar5[1] + -1;
                 if ((short)piVar5[1] == 0) {
                   FUN_006ae110((byte *)*piVar5);

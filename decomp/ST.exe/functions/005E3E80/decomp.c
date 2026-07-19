@@ -30,7 +30,7 @@ MTaskTy::CreateTextSSpr
   local_8 = (undefined4 *)0x0;
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar3 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (((param_1 == (uint *)0x0) || ((char)*param_1 == '\0')) || (param_6 == (void *)0x0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_Start_task_obj_cpp_007cd994,0x46c);
@@ -60,7 +60,7 @@ MTaskTy::CreateTextSSpr
       local_c = 0;
     }
     uVar2 = local_c;
-    local_8 = FUN_006aac10(0x3d);
+    local_8 = Library::DKW::LIB::FUN_006aac10(0x3d);
     *(undefined2 *)((int)local_8 + 0x23) = 3;
     *(undefined2 *)((int)local_8 + 0x29) = (undefined2)local_18;
     *(short *)((int)local_8 + 0x2b) = (short)iVar3;

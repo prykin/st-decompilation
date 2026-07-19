@@ -26,33 +26,33 @@ void thunk_FUN_0054a9b0(float param_1,float param_2,float param_3)
   }
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
-  iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_58.previous;
     return;
   }
   if (param_1 < _DAT_0079034c) {
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     uStack_8 = (int)(short)lVar8 - 1;
   }
   else {
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     uStack_8 = (uint)(short)lVar8;
   }
   if (param_2 < _DAT_0079034c) {
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     iVar4 = (short)lVar8 + -1;
   }
   else {
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     iVar4 = (int)(short)lVar8;
   }
   if (param_3 < _DAT_0079034c) {
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     iVar7 = (short)lVar8 + -1;
   }
   else {
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     iVar7 = (int)(short)lVar8;
   }
   pvVar3 = DAT_00802a88;
@@ -111,10 +111,10 @@ void thunk_FUN_0054a9b0(float param_1,float param_2,float param_3)
   if (0 < (int)uVar5) {
     if (*(SpriteClassTy **)(iStack_c + 0x4eb) != (SpriteClassTy *)0x0) {
       SpriteClassTy::CloseSprite(*(SpriteClassTy **)(iStack_c + 0x4eb));
-      FUN_0072e2b0(*(undefined4 **)(iStack_c + 0x4eb));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(iStack_c + 0x4eb));
       *(undefined4 *)(iStack_c + 0x4eb) = 0;
     }
-    puVar6 = (undefined4 *)FUN_0072e530(0x91);
+    puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x91);
     if (puVar6 == (undefined4 *)0x0) {
       this = (SpriteClassTy *)0x0;
     }
@@ -146,8 +146,9 @@ void thunk_FUN_0054a9b0(float param_1,float param_2,float param_3)
       g_currentExceptionFrame = IStack_58.previous;
       return;
     }
-    FUN_006b34d0(*(uint **)(iVar4 + 0x48),*(uint *)(iVar4 + 4),0xfffffffe,*(uint *)(iVar4 + 0x1c),
-                 *(uint *)(iVar4 + 0x20));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(iVar4 + 0x48),*(uint *)(iVar4 + 4),0xfffffffe,*(uint *)(iVar4 + 0x1c),
+               *(uint *)(iVar4 + 0x20));
     g_currentExceptionFrame = IStack_58.previous;
     return;
   }

@@ -20,7 +20,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
     *(undefined4 *)this = 0;
   }
   else {
-    uVar4 = FUN_0072e530(param_1 << 4);
+    uVar4 = Library::MSVCRT::FUN_0072e530(param_1 << 4);
     *(undefined4 *)this = uVar4;
     local_8 = 0;
     if (*(int *)((int)this + 8) != 0) {
@@ -48,7 +48,7 @@ int * __thiscall FUN_0074faa3(void *this,int param_1,int param_2)
           }
           else {
             uVar1 = *(ushort *)(*piVar8 + -2);
-            puVar5 = (ushort *)FUN_0072e530((uint)uVar1 * 2 + 2);
+            puVar5 = (ushort *)Library::MSVCRT::FUN_0072e530((uint)uVar1 * 2 + 2);
             *puVar5 = uVar1;
             *(ushort **)(puVar7 + 4) = puVar5 + 1;
             puVar9 = (undefined4 *)*piVar8;

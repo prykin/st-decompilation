@@ -163,7 +163,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
   local_2c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_2c8;
   local_124 = this;
-  iVar7 = __setjmp3(local_2c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_2c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar6 = local_124;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_2c8.previous;
@@ -224,7 +224,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_4c != (ushort *)0x0) {
           local_18 = (undefined4 *)(local_9c + 1);
-          local_94 = (char *)FUN_006aac10((uint)local_18);
+          local_94 = (char *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
           if (local_94 != (char *)0x0) {
             *local_94 = (*(int *)(pCVar6 + 0x4a2) == 10) + '\x01';
             puVar10 = local_4c;
@@ -256,7 +256,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_1c != (ushort *)0x0) {
           local_24 = (undefined4 *)(local_a8 + 1);
-          local_18 = FUN_006aac10((uint)local_24);
+          local_18 = Library::DKW::LIB::FUN_006aac10((uint)local_24);
           if (local_18 != (undefined4 *)0x0) {
             *(undefined1 *)local_18 = 3;
             puVar10 = local_1c;
@@ -338,7 +338,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_54 != (undefined4 *)0x0) {
           local_18 = (undefined4 *)(local_a4 + 1);
-          local_24 = FUN_006aac10((uint)local_18);
+          local_24 = Library::DKW::LIB::FUN_006aac10((uint)local_18);
           if (local_24 != (undefined4 *)0x0) {
             *(undefined1 *)local_24 = 4;
             puVar14 = local_54;
@@ -367,13 +367,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       local_e8 = 0;
       local_e4 = 0;
       CStack_e3 = (CursorClassTy)0x0;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_f4._1_3_ = (undefined3)lVar13;
       local_f0._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_f0._1_3_ = (undefined3)lVar13;
       local_ec._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       CStack_e3 = pCVar6[0xfb];
       local_ec._1_3_ = (undefined3)lVar13;
       puVar15 = &local_f4;
@@ -396,7 +396,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       }
       if (local_3c != (ushort *)0x0) {
         local_18 = (undefined4 *)(local_98 + 1);
-        local_20 = (ushort *)FUN_006aac10((uint)local_18);
+        local_20 = (ushort *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
         if (local_20 != (ushort *)0x0) {
           *(char *)local_20 = (*(short *)(pCVar6 + 0x494) == 0xc) + '\x01';
           puVar10 = local_3c;
@@ -428,11 +428,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                            *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&local_10,&local_c,
                            (float *)&local_8);
       if (iVar7 == 0) break;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_11b = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_11a = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_119 = (byte)lVar13;
       if (4 < local_119) {
         local_119 = 4;
@@ -459,11 +459,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&local_10,&local_c,
                          (float *)&local_8);
     if (iVar7 != 0) {
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_130 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_12c = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_128 = (int)lVar13;
       if (local_128 < 0) {
         local_128 = 0;
@@ -488,11 +488,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          (float *)&local_8);
     if (iVar7 != 0) {
       local_178[0] = 2;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_173 = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_172 = (undefined1)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_171 = (byte)lVar13;
       if (4 < local_171) {
         local_171 = 4;
@@ -548,7 +548,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
         }
         if (local_44 != (ushort *)0x0) {
           local_18 = (undefined4 *)(local_a0 + 1);
-          local_14 = (ushort *)FUN_006aac10((uint)local_18);
+          local_14 = (ushort *)Library::DKW::LIB::FUN_006aac10((uint)local_18);
           if (local_14 != (ushort *)0x0) {
             *(undefined1 *)local_14 = 3;
             puVar10 = local_44;
@@ -595,11 +595,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          (float *)&local_8);
     if (iVar7 != 0) {
       local_19c = ((*(short *)(pCVar6 + 0x494) != 0xf) - 1U & 0xf2) + 0x10;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_19b = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_197 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_193 = (int)lVar13;
       if (local_193 < 0) {
         local_193 = 0;
@@ -623,11 +623,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&local_10,&local_c,
                          (float *)&local_8);
     if (iVar7 != 0) {
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_13c = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_138 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_134 = (int)lVar13;
       if (local_134 < 0) {
         local_134 = 0;
@@ -720,11 +720,11 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
                          *(int *)(pCVar6 + 0xc9) - *(int *)(pCVar6 + 0x4b6),&local_10,&local_c,
                          (float *)&local_8);
     if (iVar7 != 0) {
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_207 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_203 = (undefined4)lVar13;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_1ff = (int)lVar13;
       if (local_1ff < 0) {
         local_1ff = 0;
@@ -776,13 +776,13 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_fc = 0;
     local_f8 = 0;
     CStack_f7 = (CursorClassTy)0x0;
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     local_108._1_3_ = (undefined3)lVar13;
     local_104._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     local_104._1_3_ = (undefined3)lVar13;
     local_100._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     CStack_f7 = pCVar6[0xfb];
     local_100._1_3_ = (undefined3)lVar13;
     puVar15 = &local_108;
@@ -802,13 +802,13 @@ LAB_0054a196:
       local_8c = 0;
       local_88 = 0;
       local_84 = 0;
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_90._1_3_ = (undefined3)lVar13;
       local_8c._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       local_8c._1_3_ = (undefined3)lVar13;
       local_88._0_1_ = (undefined1)((ulonglong)lVar13 >> 0x18);
-      lVar13 = __ftol();
+      lVar13 = Library::MSVCRT::__ftol();
       iVar7 = (int)lVar13;
       local_88._1_3_ = (undefined3)lVar13;
       local_84 = (undefined1)((ulonglong)lVar13 >> 0x18);

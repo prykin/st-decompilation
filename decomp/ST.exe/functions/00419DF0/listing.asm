@@ -1,4 +1,4 @@
-FUN_00419df0:
+STGameObjC::SetSelfCheckFlag:
 00419DF0  53                        PUSH EBX
 00419DF1  8B D9                     MOV EBX,ECX
 00419DF3  56                        PUSH ESI

@@ -1,5 +1,5 @@
 
-undefined4 thunk_FUN_00442b40(undefined4 *param_1,uint param_2)
+undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
 
 {
   ushort uVar1;
@@ -9,6 +9,7 @@ undefined4 thunk_FUN_00442b40(undefined4 *param_1,uint param_2)
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
+  STAllPlayersC *in_ECX;
   short sStack_50;
   short sStack_4e;
   short sStack_4c;
@@ -30,7 +31,7 @@ undefined4 thunk_FUN_00442b40(undefined4 *param_1,uint param_2)
   aiStack_2c[1] = 0x39;
   aiStack_2c[2] = 0x4f;
   aiStack_2c[3] = 0x5e;
-  this = (int *)thunk_FUN_0042b620((uint)param_1,param_2,1);
+  this = (int *)GetObjPtr(in_ECX,(uint)param_1,param_2,1);
   piStack_14 = this;
   uVar4 = (**(code **)(*this + 0x2c))();
   uStack_c = 0;
@@ -65,7 +66,7 @@ undefined4 thunk_FUN_00442b40(undefined4 *param_1,uint param_2)
               {
                 sStack_42 = -1;
                 sStack_4a = -1;
-                FUN_006ae140(puVar2,uVar4,(undefined4 *)&sStack_50);
+                Library::DKW::TBL::FUN_006ae140(puVar2,uVar4,(undefined4 *)&sStack_50);
                 uStack_c = 1;
               }
               uVar4 = uVar4 + 1;
@@ -95,7 +96,7 @@ undefined4 thunk_FUN_00442b40(undefined4 *param_1,uint param_2)
               ((sStack_46 == sStack_6 && (sStack_44 == sStack_8)))) && (sStack_42 == sStack_1c)) {
             sStack_42 = -1;
             sStack_4a = -1;
-            FUN_006ae140(puVar2,uVar4,(undefined4 *)&sStack_50);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar4,(undefined4 *)&sStack_50);
             uStack_c = 1;
           }
           uVar4 = uVar4 + 1;

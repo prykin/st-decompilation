@@ -20,12 +20,12 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (DAT_0080c4fa != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4fa);
     }
-    DAT_0080c4fa = FUN_006b54f0((uint *)0x0,100,0x14);
+    DAT_0080c4fa = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,100,0x14);
     iVar2 = *(int *)(local_8 + 0x67e);
     if (iVar2 != 0) {
       uVar6 = *(uint *)(iVar2 + 0x14);

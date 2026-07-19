@@ -56,7 +56,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   }
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pHStack_8;
   if (iVar2 == 0) {
     if (*(uint *)(pHStack_8 + 0x19c) != 0) {

@@ -20,7 +20,7 @@ undefined4 __thiscall STAllPlayersC::IsTorpLive(STAllPlayersC *this,short param_
   pIVar5 = g_currentExceptionFrame;
   local_c = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-  errorCode = __setjmp3(local_4c,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar5);
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar5;
     if (errorCode != -0x5001fff7) {

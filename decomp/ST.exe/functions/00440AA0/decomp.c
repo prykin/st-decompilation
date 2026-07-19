@@ -72,7 +72,7 @@ STAllPlayersC::_AssignDocks(STAllPlayersC *this,uint param_1,int param_2,int par
   local_80 = *(int *)((int)&DAT_007f4e24 + (char)param_1 * 0xa62 + 1);
   g_currentExceptionFrame = &local_c8;
   local_40 = this;
-  iVar3 = __setjmp3(local_c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_c8.previous;
     if (iVar3 != -0x5001fff7) {
@@ -110,7 +110,7 @@ LAB_00440bab:
         local_20 = uVar13;
       }
       else {
-        piVar4 = (int *)thunk_FUN_0042b620(param_1,local_28,1);
+        piVar4 = (int *)GetObjPtr(local_40,param_1,local_28,1);
         iVar3 = (**(code **)(*piVar4 + 0xf8))();
         if (iVar3 == 0) goto LAB_00440bab;
       }
@@ -132,7 +132,7 @@ LAB_00440c19:
         uVar12 = uVar12 - 1;
       }
       else {
-        piVar4 = (int *)thunk_FUN_0042b620(param_1,local_28,1);
+        piVar4 = (int *)GetObjPtr(local_40,param_1,local_28,1);
         iVar3 = (**(code **)(*piVar4 + 0xf8))();
         if (iVar3 == 0) goto LAB_00440c19;
       }
@@ -143,7 +143,7 @@ LAB_00440c19:
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2225)
     ;
   }
-  puVar5 = FUN_006ae290((uint *)0x0,uVar13,0xc,1);
+  puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar13,0xc,1);
   uVar12 = 0;
   local_44 = puVar5;
   if (0 < (int)uVar13) {
@@ -151,7 +151,7 @@ LAB_00440c19:
       local_10 = (uint *)0x0;
       local_8 = 0;
       local_c = 0;
-      FUN_006ae140(puVar5,uVar12,&local_10);
+      Library::DKW::TBL::FUN_006ae140(puVar5,uVar12,&local_10);
       uVar12 = uVar12 + 1;
     } while ((int)uVar12 < (int)uVar13);
   }
@@ -169,7 +169,7 @@ LAB_00440c19:
           do {
             FUN_006acc70(local_6c,local_2c,&local_28);
             if ((short)local_28 != -1) {
-              pvVar6 = (void *)thunk_FUN_0042b620(param_1,local_28,1);
+              pvVar6 = (void *)GetObjPtr(local_40,param_1,local_28,1);
               if (pvVar6 == (void *)0x0) {
                 iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2239,0,0,
                                            &DAT_007a4ccc,s_STAllPlayersC___AssignDocks_inva_007a8064
@@ -228,11 +228,11 @@ LAB_00440c19:
                       if (uVar12 != uVar13) {
                         FUN_006acc70((int)local_44,uVar12,&local_10);
                         if (local_10 == (uint *)0x0) {
-                          local_10 = FUN_006ae290((uint *)0x0,1,6,1);
-                          FUN_006ae140(puVar5,uVar12,&local_10);
+                          local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
+                          Library::DKW::TBL::FUN_006ae140(puVar5,uVar12,&local_10);
                         }
                         local_3c = (short)local_28;
-                        FUN_006ae1c0(local_10,(undefined4 *)&local_3c);
+                        Library::DKW::TBL::FUN_006ae1c0(local_10,(undefined4 *)&local_3c);
                       }
                     }
                   }
@@ -248,13 +248,13 @@ LAB_00440c19:
     } while ((int)local_1c < local_84);
   }
   uVar13 = local_48;
-  puVar5 = FUN_006ae290((uint *)0x0,local_48,4,1);
+  puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_48,4,1);
   uVar12 = 0;
   local_78 = puVar5;
   if (0 < (int)uVar13) {
     do {
-      local_54 = FUN_006ae290((uint *)0x0,local_20,4,1);
-      FUN_006ae140(puVar5,uVar12,&local_54);
+      local_54 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_20,4,1);
+      Library::DKW::TBL::FUN_006ae140(puVar5,uVar12,&local_54);
       uVar12 = uVar12 + 1;
     } while ((int)uVar12 < (int)uVar13);
   }
@@ -263,7 +263,7 @@ LAB_00440c19:
     do {
       uVar13 = local_1c;
       FUN_006acc70(param_2,local_1c,&local_28);
-      pvVar6 = (void *)thunk_FUN_0042b620(param_1,local_28,1);
+      pvVar6 = (void *)GetObjPtr(local_40,param_1,local_28,1);
       thunk_FUN_004162b0(pvVar6,&local_12,&local_14,&local_16);
       uVar12 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
       puVar7 = DAT_007fb280;
@@ -285,7 +285,7 @@ LAB_00440c19:
          (uVar13 = 0, 0 < (int)local_64)) {
         do {
           FUN_006acc70((int)local_10,uVar13,(undefined4 *)&local_3c);
-          piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22((undefined2)uStack_3a,local_3c),1);
+          piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22((undefined2)uStack_3a,local_3c),1);
           thunk_FUN_004162b0(piVar4,&local_12,&local_14,&local_16);
           iVar3 = (**(code **)(*piVar4 + 0x2c))();
           bVar2 = thunk_FUN_00430750(iVar3);
@@ -293,7 +293,7 @@ LAB_00440c19:
                                   ((int)local_16 * (int)DAT_007fb27e +
                                    (int)local_14 * (int)DAT_007fb278 + (int)local_12) * 2) * 0xc9 +
                        -0xc9) / 3) / (int)(uint)bVar2;
-          FUN_006ae140(local_10,uVar13,(undefined4 *)&local_3c);
+          Library::DKW::TBL::FUN_006ae140(local_10,uVar13,(undefined4 *)&local_3c);
           uVar13 = uVar13 + 1;
         } while ((int)uVar13 < (int)local_64);
       }
@@ -301,7 +301,7 @@ LAB_00440c19:
       if (0 < (int)local_48) {
         do {
           FUN_006acc70(param_3,uVar13,&local_28);
-          piVar4 = (int *)thunk_FUN_0042b620(param_1,local_28,1);
+          piVar4 = (int *)GetObjPtr(local_40,param_1,local_28,1);
           thunk_FUN_004162b0(piVar4,&local_12,&local_14,&local_16);
           local_68 = (int)*(short *)((int)DAT_007fb238 +
                                     ((int)local_16 * (int)DAT_007fb27e +
@@ -315,7 +315,7 @@ LAB_00440c19:
             local_68 = ((local_68 * 0xc9 + -0xc9) / 3) / (int)(uint)bVar2;
           }
           FUN_006acc70((int)local_78,uVar13,&local_54);
-          FUN_006ae140(local_54,local_1c,&local_68);
+          Library::DKW::TBL::FUN_006ae140(local_54,local_1c,&local_68);
           uVar13 = uVar13 + 1;
         } while ((int)uVar13 < (int)local_48);
       }
@@ -333,7 +333,7 @@ LAB_00440c19:
         uVar13 = local_64;
         if (local_64 == 1) {
           FUN_006acc70((int)local_10,0,(undefined4 *)&local_3c);
-          piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22((undefined2)uStack_3a,local_3c),1);
+          piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22((undefined2)uStack_3a,local_3c),1);
           local_60 = thunk_FUN_00486b40((int)piVar4);
           iVar3 = (**(code **)(*piVar4 + 0x78))();
           if (iVar3 < 1) {
@@ -341,7 +341,7 @@ LAB_00440c19:
           }
           iVar8 = (**(code **)(*piVar4 + 0x2c))();
           local_c = (int)(*(int *)(&DAT_007e049c + iVar8 * 4) * local_60) / iVar3 + uStack_3a;
-          FUN_006ae140(puVar5,local_1c,&local_10);
+          Library::DKW::TBL::FUN_006ae140(puVar5,local_1c,&local_10);
           uVar13 = local_20;
         }
         else {
@@ -353,8 +353,8 @@ LAB_00440c19:
                 uVar10 = uVar12 + 1;
                 FUN_006acc70((int)local_10,uVar10,(undefined4 *)&local_5c);
                 if (CONCAT22(uStack_58,uStack_5a) < CONCAT22(uStack_30,uStack_32)) {
-                  FUN_006ae140(local_10,uVar12,(undefined4 *)&local_5c);
-                  FUN_006ae140(local_10,uVar10,(undefined4 *)&local_34);
+                  Library::DKW::TBL::FUN_006ae140(local_10,uVar12,(undefined4 *)&local_5c);
+                  Library::DKW::TBL::FUN_006ae140(local_10,uVar10,(undefined4 *)&local_34);
                 }
                 puVar11 = local_10;
                 uVar12 = uVar10;
@@ -362,7 +362,7 @@ LAB_00440c19:
             }
           }
           FUN_006acc70((int)puVar11,0,(undefined4 *)&local_34);
-          piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22(uStack_32,local_34),1);
+          piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22(uStack_32,local_34),1);
           iVar3 = thunk_FUN_00486b40((int)piVar4);
           iVar8 = (**(code **)(*piVar4 + 0x78))();
           if (iVar8 < 1) {
@@ -376,7 +376,7 @@ LAB_00440c19:
           if (1 < (int)local_64) {
             do {
               FUN_006acc70((int)local_10,local_2c,(undefined4 *)&local_5c);
-              piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22(uStack_5a,local_5c),1);
+              piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22(uStack_5a,local_5c),1);
               local_60 = thunk_FUN_00486b40((int)piVar4);
               iVar8 = (**(code **)(*piVar4 + 0x78))();
               if (iVar8 < 1) {
@@ -398,7 +398,7 @@ LAB_00440c19:
             } while ((int)local_2c < (int)local_64);
           }
           local_c = local_50;
-          FUN_006ae140(local_44,local_1c,&local_10);
+          Library::DKW::TBL::FUN_006ae140(local_44,local_1c,&local_10);
           uVar13 = local_20;
           puVar5 = local_44;
         }
@@ -421,12 +421,12 @@ LAB_00440c19:
           }
           else {
             if (local_10 == (uint *)0x0) {
-              local_10 = FUN_006ae290((uint *)0x0,1,6,1);
+              local_10 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,6,1);
             }
-            FUN_006ae1c0(local_10,(undefined4 *)&local_3c);
+            Library::DKW::TBL::FUN_006ae1c0(local_10,(undefined4 *)&local_3c);
             local_8 = 0;
           }
-          FUN_006ae140(puVar5,uVar12,&local_10);
+          Library::DKW::TBL::FUN_006ae140(puVar5,uVar12,&local_10);
           uVar12 = uVar12 + 1;
         } while ((int)uVar12 < (int)uVar13);
       }
@@ -439,7 +439,7 @@ LAB_00440c19:
             uVar13 = local_64;
             if (local_64 == 1) {
               FUN_006acc70((int)local_10,0,(undefined4 *)&local_3c);
-              piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22((undefined2)uStack_3a,local_3c),1)
+              piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22((undefined2)uStack_3a,local_3c),1)
               ;
               iVar3 = thunk_FUN_00486b40((int)piVar4);
               iVar8 = (**(code **)(*piVar4 + 0x78))();
@@ -458,15 +458,15 @@ LAB_00440c19:
                     uVar10 = uVar12 + 1;
                     FUN_006acc70((int)local_10,uVar10,(undefined4 *)&local_5c);
                     if (CONCAT22(uStack_58,uStack_5a) < CONCAT22(uStack_30,uStack_32)) {
-                      FUN_006ae140(local_10,uVar12,(undefined4 *)&local_5c);
-                      FUN_006ae140(local_10,uVar10,(undefined4 *)&local_34);
+                      Library::DKW::TBL::FUN_006ae140(local_10,uVar12,(undefined4 *)&local_5c);
+                      Library::DKW::TBL::FUN_006ae140(local_10,uVar10,(undefined4 *)&local_34);
                     }
                     uVar12 = uVar10;
                   } while ((int)uVar10 < (int)uVar13);
                 }
               }
               FUN_006acc70((int)local_10,0,(undefined4 *)&local_34);
-              piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22(uStack_32,local_34),1);
+              piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22(uStack_32,local_34),1);
               iVar3 = thunk_FUN_00486b40((int)piVar4);
               iVar8 = (**(code **)(*piVar4 + 0x78))();
               if (iVar8 < 1) {
@@ -480,7 +480,7 @@ LAB_00440c19:
               if (1 < (int)local_64) {
                 do {
                   FUN_006acc70((int)local_10,local_6c,(undefined4 *)&local_5c);
-                  piVar4 = (int *)thunk_FUN_0042b620(param_1,CONCAT22(uStack_5a,local_5c),1);
+                  piVar4 = (int *)GetObjPtr(local_40,param_1,CONCAT22(uStack_5a,local_5c),1);
                   local_60 = thunk_FUN_00486b40((int)piVar4);
                   iVar8 = (**(code **)(*piVar4 + 0x78))();
                   if (iVar8 < 1) {
@@ -503,7 +503,7 @@ LAB_00440c19:
               }
               local_8 = local_50;
             }
-            FUN_006ae140(local_44,local_2c,&local_10);
+            Library::DKW::TBL::FUN_006ae140(local_44,local_2c,&local_10);
             uVar13 = local_20;
             puVar5 = local_44;
           }
@@ -511,7 +511,7 @@ LAB_00440c19:
         } while ((int)local_2c < (int)uVar13);
       }
       if (local_70 == (uint *)0x0) {
-        local_70 = FUN_006ae290((uint *)0x0,0,4,1);
+        local_70 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
       }
       FUN_006acc70(param_3,local_1c,(undefined4 *)&local_4c);
       uVar12 = 0;
@@ -524,13 +524,13 @@ LAB_00440c19:
       }
       if (uVar12 == uVar13) {
         local_4a = 0xffff;
-        FUN_006ae1c0(local_70,(undefined4 *)&local_4c);
+        Library::DKW::TBL::FUN_006ae1c0(local_70,(undefined4 *)&local_4c);
       }
       else if (uVar12 == uVar13 - 1) {
         FUN_006acc70(param_2,uVar12,(undefined4 *)&local_4a);
-        FUN_006ae1c0(local_70,(undefined4 *)&local_4c);
+        Library::DKW::TBL::FUN_006ae1c0(local_70,(undefined4 *)&local_4c);
         local_c = local_8;
-        FUN_006ae140(puVar5,uVar12,&local_10);
+        Library::DKW::TBL::FUN_006ae140(puVar5,uVar12,&local_10);
       }
       else {
         uVar13 = uVar12 + 1;
@@ -548,10 +548,10 @@ LAB_00440c19:
         }
         local_60 = uVar12;
         FUN_006acc70(param_2,uVar12,(undefined4 *)&local_4a);
-        FUN_006ae1c0(local_70,(undefined4 *)&local_4c);
+        Library::DKW::TBL::FUN_006ae1c0(local_70,(undefined4 *)&local_4c);
         FUN_006acc70((int)puVar5,uVar12,&local_10);
         local_c = local_8;
-        FUN_006ae140(puVar5,uVar12,&local_10);
+        Library::DKW::TBL::FUN_006ae140(puVar5,uVar12,&local_10);
         local_2c = 0;
         if (0 < (int)local_20) {
           do {

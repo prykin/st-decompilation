@@ -10,7 +10,7 @@ undefined4 FUN_00693dc0(undefined4 param_1,undefined4 param_2)
   undefined4 local_19a8 [1635];
   undefined4 uStackY_1c;
   
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   thunk_FUN_00693910(local_19a8);
   puVar3 = this;
   puVar4 = local_19a8;

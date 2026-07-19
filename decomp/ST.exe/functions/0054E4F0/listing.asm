@@ -1,4 +1,4 @@
-FUN_0054e4f0:
+STPlaySystemC::GetMessage:
 0054E4F0  55                        PUSH EBP
 0054E4F1  8B EC                     MOV EBP,ESP
 0054E4F3  81 EC B4 02 00 00         SUB ESP,0x2b4

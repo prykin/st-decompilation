@@ -11,14 +11,14 @@ void FUN_00576ce0(void)
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = __setjmp3(local_44,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     if (DAT_00811638 != (int *)0x0) {
       if (DAT_00811638[8] == 1) {
         FUN_006e4b80(&DAT_00807620,(int)DAT_00811638);
       }
       (**(code **)(*DAT_00811638 + 4))();
-      FUN_0072e2b0(DAT_00811638);
+      Library::MSVCRT::FUN_0072e2b0(DAT_00811638);
       DAT_00811638 = (int *)0x0;
     }
     g_currentExceptionFrame = pIVar3;

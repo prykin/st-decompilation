@@ -14,7 +14,8 @@ int __cdecl FUN_006adb90(char *param_1,int param_2,int param_3,byte *param_4)
   
   local_204[0] = '\0';
   if ((param_4 != (byte *)0x0) &&
-     (iVar3 = FUN_007300e0(local_204,0x200,param_4,(undefined4 *)&stack0x00000014), iVar3 < 0)) {
+     (iVar3 = Library::MSVCRT::FUN_007300e0(local_204,0x200,param_4,(undefined4 *)&stack0x00000014),
+     iVar3 < 0)) {
     uVar4 = 0xffffffff;
     pcVar6 = s_User_message_too_long_007ed7b4;
     do {

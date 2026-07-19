@@ -52,7 +52,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
   local_84.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_84;
   local_20 = (PanelTy *)this;
-  iVar6 = __setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_20;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_84.previous;
@@ -247,14 +247,17 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         if (uVar15 == 0x6200) {
           *(undefined4 *)(this_00 + 0x1c3) = *(undefined4 *)(param_1 + 0x14);
           iVar6 = *(ushort *)(this_00 + 0x1af) + 0x16;
-          FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,iVar6,*(int *)(this_00 + 0x1dc),0,
-                       0x21,iVar6,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af));
-          FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
-                       *(int *)(this_00 + 0x218),0,0,
-                       (uint)*(ushort *)(this_00 + 0x1b1) * *(int *)(this_00 + 0x1c3),0x19c,
-                       0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                       *(uint *)(this_00 + 0x44));
+          Library::DKW::WGR::FUN_006b55f0
+                    (*(undefined4 **)(this_00 + 0x68),0,0x21,iVar6,*(int *)(this_00 + 0x1dc),0,0x21,
+                     iVar6,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af));
+          Library::DKW::WGR::FUN_006b5110
+                    (*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
+                     *(int *)(this_00 + 0x218),0,0,
+                     (uint)*(ushort *)(this_00 + 0x1b1) * *(int *)(this_00 + 0x1c3),0x19c,
+                     0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                     *(uint *)(this_00 + 0x44));
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
@@ -282,8 +285,9 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         else {
           local_14 = (undefined4 *)CONCAT31(local_14._1_3_,(-(DAT_0080874e != '\x01') & 6U) + 1);
         }
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,
-                     0x16,0x19c,0x118);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,
+                   0x16,0x19c,0x118);
         iVar6 = *(int *)(this_00 + 0x218);
         local_1c = *(uint **)(iVar6 + 0x14);
         if (local_1c == (uint *)0x0) {
@@ -319,8 +323,9 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
             uVar15 = uVar15 + 1;
           } while ((int)uVar15 < (int)(uVar16 + *(int *)((int)local_10 + 0x1e0)));
         }
-        FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x218),0,0,0,0x19c,
-                     0x118,0xff);
+        Library::DKW::WGR::FUN_006b5110
+                  (*(int *)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x218),0,0,0,0x19c,0x118,
+                   0xff);
         g_currentExceptionFrame = local_84.previous;
         return 0;
       }
@@ -336,8 +341,9 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
               *(undefined2 *)(this_00 + 0x172) = 1;
               ShiftControls((HelpPanelTy *)this_00,1);
             }
-            FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c)
-                         ,*(uint *)(this_00 + 0x44));
+            Library::DKW::DDX::FUN_006b3640
+                      (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                       *(uint *)(this_00 + 0x44));
             g_currentExceptionFrame = local_84.previous;
             return 0;
           }
@@ -353,8 +359,9 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
             *(int *)(this_00 + 0x44) = iVar6;
             *(undefined2 *)(this_00 + 0x172) = 2;
           }
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                       *(uint *)(this_00 + 0x44));
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                     *(uint *)(this_00 + 0x44));
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
@@ -510,8 +517,9 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           local_1c = (uint *)CONCAT31(local_1c._1_3_,bVar20 + '\a');
         }
         iVar6 = *(ushort *)(param_1 + 0x1a) + 0x16;
-        FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,iVar6,*(int *)(this_00 + 0x1dc),0,0x21,
-                     iVar6,0x19c,*(int *)(*(int *)(this_00 + 0x1ec) + 8));
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(this_00 + 0x68),0,0x21,iVar6,*(int *)(this_00 + 0x1dc),0,0x21,
+                   iVar6,0x19c,*(int *)(*(int *)(this_00 + 0x1ec) + 8));
         iVar6 = *(int *)(this_00 + 0x1ec);
         uVar15 = *(uint *)(iVar6 + 0x14);
         if (uVar15 == 0) {
@@ -551,11 +559,11 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           pcVar10 = pcVar10 + 1;
           pcVar19 = pcVar19 + 1;
         }
-        puVar11 = FUN_0072e560(&DAT_0080f33a,'\n');
+        puVar11 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n');
         pUVar5 = local_8;
         while (local_8 = pUVar5, puVar11 != (uint *)0x0) {
           *(undefined1 *)puVar11 = 0x20;
-          puVar11 = FUN_0072e560(puVar11,'\n');
+          puVar11 = Library::MSVCRT::FUN_0072e560(puVar11,'\n');
           pUVar5 = local_8;
         }
         ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e4),&DAT_0080f33a,
@@ -627,8 +635,9 @@ LAB_0051ef61:
         FUN_006b5440(*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(param_1 + 0x1a) + 0x16,
                      *(int *)(this_00 + 0x1ec),0,0xff);
       }
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                   *(uint *)(this_00 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                 *(uint *)(this_00 + 0x44));
       g_currentExceptionFrame = local_84.previous;
       return 0;
     case 0x8162:
@@ -736,8 +745,9 @@ switchD_0051ea9b_caseD_0:
                                     (*(int *)(*(int *)(param_1 + 0x1c) + 0x1c) != 1) + 1);
       thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),0x1c3,*(ushort *)(param_1 + 0x16) + 0x2d,
                          '\x06',pbVar9);
-      FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                   *(uint *)(this_00 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+                 *(uint *)(this_00 + 0x44));
       g_currentExceptionFrame = local_84.previous;
       return 0;
     default:

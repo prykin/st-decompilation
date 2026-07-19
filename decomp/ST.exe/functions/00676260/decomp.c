@@ -22,9 +22,9 @@ int __cdecl FUN_00676260(uint param_1,int param_2)
   local_8 = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    if (DAT_007fa174 == 0) {
+    if (DAT_007fa174 == (STAllPlayersC *)0x0) {
       this = (STGroupC *)0x0;
     }
     else {
@@ -43,7 +43,7 @@ int __cdecl FUN_00676260(uint param_1,int param_2)
       do {
         puVar4 = (ushort *)(puVar2[2] * uVar7 + puVar2[7]);
 LAB_006762e0:
-        piVar5 = (int *)thunk_FUN_0042b620(param_1,(uint)*puVar4,1);
+        piVar5 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,param_1,(uint)*puVar4,1);
         if (piVar5 != (int *)0x0) {
           iVar3 = (**(code **)(*piVar5 + 0x2c))();
           if (iVar3 == 0x78) {

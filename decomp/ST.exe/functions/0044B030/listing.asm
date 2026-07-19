@@ -1,4 +1,4 @@
-FUN_0044b030:
+STAllPlayersC::ActivateTV:
 0044B030  55                        PUSH EBP
 0044B031  8B EC                     MOV EBP,ESP
 0044B033  83 EC 10                  SUB ESP,0x10

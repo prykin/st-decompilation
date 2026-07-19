@@ -45,7 +45,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_18 = this;
-    iVar5 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     puVar2 = local_14;
     this_00 = local_18;
     if (iVar5 == 0) {
@@ -61,7 +61,8 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
       else {
         iVar5 = 0;
       }
-      FUN_006b55f0(local_14,0,5,0x1f,*(int *)(local_18 + 0x286),0,0,iVar5,local_10 & 0xff,6);
+      Library::DKW::WGR::FUN_006b55f0
+                (local_14,0,5,0x1f,*(int *)(local_18 + 0x286),0,0,iVar5,local_10 & 0xff,6);
       if ((param_1 == 0) && (local_5 == (CPanelTy)0x2)) {
         UVar9 = 0x36ba;
         uVar8 = local_c;

@@ -27,7 +27,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_10 = this;
-  iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -106,7 +106,8 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
       nNumberOfBytesToRead = iVar3 + 0x1b;
       if (*(uint *)(pSVar2 + 0x118d) < nNumberOfBytesToRead) {
         *(uint *)(pSVar2 + 0x118d) = nNumberOfBytesToRead;
-        iVar3 = FUN_006acf50(*(undefined4 **)(pSVar2 + 0x1189),nNumberOfBytesToRead);
+        iVar3 = Library::DKW::LIB::FUN_006acf50
+                          (*(undefined4 **)(pSVar2 + 0x1189),nNumberOfBytesToRead);
         *(int *)(pSVar2 + 0x1189) = iVar3;
       }
       DVar4 = SetFilePointer(hFile,*(LONG *)(pSVar2 + 0x1191),(PLONG)0x0,0);

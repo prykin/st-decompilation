@@ -21,13 +21,13 @@ void __fastcall FUN_006e1050(void *param_1)
   
   dVar1 = *(double *)((int)param_1 + 0xd8) * *(double *)((int)param_1 + 200) * _DAT_0079df60 +
           _DAT_007901c0;
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar6 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar6 = Library::MSVCRT::__ftol();
   *(int *)((int)param_1 + 0x2c0) = (int)lVar6;
   dVar1 = (*(double *)((int)param_1 + 0xe0) * *(double *)((int)param_1 + 200) + _DAT_0079cd88) *
           _DAT_007901c0;
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar6 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar6 = Library::MSVCRT::__ftol();
   iVar3 = (int)lVar6;
   *(int *)((int)param_1 + 0x2c4) = iVar3;
   iVar4 = (*(int *)((int)param_1 + 0x28) + -1 + *(int *)((int)param_1 + 0x2c0)) /
@@ -38,16 +38,16 @@ void __fastcall FUN_006e1050(void *param_1)
   iVar3 = iVar3 * iVar4;
   if (iVar3 - *(int *)((int)param_1 + 0x2b4) != 0 && *(int *)((int)param_1 + 0x2b4) <= iVar3) {
     *(int *)((int)param_1 + 0x2b4) = iVar3;
-    iVar4 = FUN_006acf50(*(undefined4 **)((int)param_1 + 0x2b0),iVar3 * 2);
+    iVar4 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)((int)param_1 + 0x2b0),iVar3 * 2);
     *(int *)((int)param_1 + 0x2b0) = iVar4;
   }
   dVar1 = *(double *)((int)param_1 + 0x98) / *(double *)((int)param_1 + 200);
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar6 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar6 = Library::MSVCRT::__ftol();
   local_8 = (int)lVar6;
   dVar1 = *(double *)((int)param_1 + 0xa0) / *(double *)((int)param_1 + 200);
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar6 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar6 = Library::MSVCRT::__ftol();
   local_c = (int)lVar6;
   local_18 = ((float)local_8 + (float)_DAT_007901c0) * (float)*(double *)((int)param_1 + 200);
   local_10 = 0;
@@ -68,9 +68,9 @@ void __fastcall FUN_006e1050(void *param_1)
   if (*(int *)((int)param_1 + 0x358) != 0) {
     *(undefined4 *)(*(int *)((int)param_1 + 0x358) + 0x280) = *(undefined4 *)((int)param_1 + 0x280);
     iVar4 = *(int *)((int)param_1 + 0x358);
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     iVar3 = (int)lVar6;
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     iVar5 = (int)lVar6;
     if (((*(int *)((int)param_1 + 0x374) == iVar3) && (*(int *)((int)param_1 + 0x378) == iVar5)) &&
        (*(int *)(iVar4 + 0x134) == 0)) {

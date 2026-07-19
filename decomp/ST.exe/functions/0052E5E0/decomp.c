@@ -15,6 +15,7 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   byte *pbVar6;
   undefined4 uVar7;
   uint *puVar8;
+  ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 uVar9;
@@ -35,38 +36,39 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     DAT_008016dc = local_8;
-    puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
+    puVar3 = ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
+                               (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
     *(undefined4 **)(this_00 + 0x17c) = puVar3;
     puVar3[0x16] = 0;
     puVar3[0x17] = 0;
-    puVar3 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x2c));
+    puVar3 = ccFntTy::operator(this_01,0x19d,*(int *)(DAT_00802a28 + 0x2c));
     *(undefined4 **)(this_00 + 0x180) = puVar3;
     puVar3[0x16] = 1;
     puVar3[0x17] = 0;
     iVar2 = 1;
     piVar16 = (int *)0x0;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPTIONS_007c713c,0);
-    puVar5 = FUN_006f1ce0(1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
     iVar2 = 1;
     piVar16 = (int *)0x0;
     *(ushort **)(this_00 + 0x184) = puVar5;
     *(undefined4 *)(this_00 + 0x188) = 0;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPT_NUM_007c712c,0);
-    puVar5 = FUN_006f1ce0(1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
     iVar2 = 1;
     piVar16 = (int *)0x0;
     *(ushort **)(this_00 + 0x18c) = puVar5;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPT_SAVE_007c711c,0);
-    puVar5 = FUN_006f1ce0(1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
     iVar2 = 1;
     piVar16 = (int *)0x0;
     *(ushort **)(this_00 + 400) = puVar5;
     pCVar4 = thunk_FUN_00571240(s_BKG_OPT_MOBJ_007c710c,0);
-    puVar5 = FUN_006f1ce0(1,pCVar4,piVar16,iVar2);
+    puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar16,iVar2);
     puVar3 = (undefined4 *)0x0;
     iVar17 = 0;
     iVar2 = 1;
@@ -82,9 +84,9 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar7 = FUN_006b50c0(0xde,0xb,(uint)*(ushort *)(*(int *)(this_00 + 0x184) + 0xe),uVar12,puVar3,
                          iVar2);
     *(undefined4 *)(this_00 + 0x1e5) = uVar7;
-    puVar8 = FUN_006b54f0((uint *)0x0,1,1);
+    puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(this_00 + 0x1f1) = puVar8;
-    FUN_006b6020((int)puVar8,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020((int)puVar8,0,&DAT_008016a0);
     PrepMissObj(this_00);
     SetOptControls(this_00);
     uVar19 = 0;

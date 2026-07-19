@@ -1,2 +1,2 @@
-thunk_FUN_0047c050:
+STBoatC::Bring:
 0040480E  E9 3D 78 07 00            JMP 0x0047c050

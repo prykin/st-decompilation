@@ -26,7 +26,7 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
   IStack_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_b8;
   pCStack_28 = this;
-  iVar2 = __setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_28;
   if (iVar2 == 0) {
     puVar4 = auStack_24;

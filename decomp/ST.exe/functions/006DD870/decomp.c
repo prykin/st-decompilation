@@ -20,13 +20,13 @@ void __fastcall FUN_006dd870(int param_1)
   }
   else {
     if (*(int *)(param_1 + 0x158) == 0) {
-      iVar1 = FUN_006aac70(0xc000);
+      iVar1 = Library::DKW::LIB::FUN_006aac70(0xc000);
       *(int *)(param_1 + 0x158) = iVar1;
     }
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     uVar5 = (uint)lVar8 & 0x7f00;
     *(uint *)(param_1 + 0x16c) = uVar5;
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     *(uint *)(param_1 + 0x170) = (uint)lVar8 & 0x7f00;
     local_c = 0;
     iVar1 = (int)uVar5 >> 8;
@@ -81,11 +81,12 @@ void __fastcall FUN_006dd870(int param_1)
         }
       } while (iVar1 < 0xc000);
     }
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     iVar1 = (int)lVar8;
     *(int *)(param_1 + 0x174) = iVar1;
     if (((*(int *)(param_1 + 0x144) != 0) && (0 < iVar1)) && (iVar1 < *(int *)(param_1 + 0x2c))) {
-      iVar1 = FUN_006acf50(*(undefined4 **)(param_1 + 0x1c),*(int *)(param_1 + 0x28) * iVar1);
+      iVar1 = Library::DKW::LIB::FUN_006acf50
+                        (*(undefined4 **)(param_1 + 0x1c),*(int *)(param_1 + 0x28) * iVar1);
       *(int *)(param_1 + 0x1c) = iVar1;
       return;
     }

@@ -29,7 +29,7 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
   IStack_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_68;
   pSStack_24 = this;
-  iVar5 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_24;
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_68.previous;

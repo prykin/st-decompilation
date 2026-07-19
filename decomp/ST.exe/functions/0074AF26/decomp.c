@@ -44,7 +44,7 @@ FUN_0074af26(void *this,uint param_1,uint param_2,undefined4 param_3,undefined4 
     }
     else {
       auStack_40[1] = 0x74af8d;
-      uVar8 = __alldiv(param_1,param_2,10000,0);
+      uVar8 = Library::MSVCRT::__alldiv(param_1,param_2,10000,0);
       local_1c[1] = 1000 - (int)uVar8;
       if ((int)local_1c[1] < 500) {
         local_1c[1] = 500;

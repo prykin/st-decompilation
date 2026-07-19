@@ -18,10 +18,10 @@ int __cdecl FUN_00552f50(int param_1)
   }
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar1 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     iVar1 = param_1 * 2 + 1;
-    local_8 = FUN_006aac70(iVar1 * iVar1);
+    local_8 = Library::DKW::LIB::FUN_006aac70(iVar1 * iVar1);
     local_10 = 0;
     local_c = 0;
     if (0 < iVar1) {

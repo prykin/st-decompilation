@@ -17,8 +17,9 @@ undefined4 * __thiscall FUN_0055c050(void *this,int param_1)
   iVar3 = 0x1c;
   iVar1 = CFsgsConnection::GetUserIconIndex
                     (this,(char *)(param_1 + 0x10),*(ulong *)(param_1 + 0x25));
-  puVar2 = FUN_006b55f0((undefined4 *)0x0,0,0,0,*(int *)((int)this + 0x40),0,0,iVar1 * 0xe,iVar3,
-                        iVar4);
+  puVar2 = Library::DKW::WGR::FUN_006b55f0
+                     ((undefined4 *)0x0,0,0,0,*(int *)((int)this + 0x40),0,0,iVar1 * 0xe,iVar3,iVar4
+                     );
   return puVar2;
 }
 

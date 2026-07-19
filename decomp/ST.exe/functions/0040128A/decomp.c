@@ -14,7 +14,7 @@ void __thiscall HoloTy::Done(HoloTy *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pHStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pHVar2 = pHStack_8;
   if (errorCode == 0) {
     if (-1 < (int)*(uint *)(pHStack_8 + 3)) {

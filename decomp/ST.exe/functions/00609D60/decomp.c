@@ -37,7 +37,7 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
   if ((local_c != (uint *)0x0) && (local_c[1] != 0xffffffff)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     puVar3 = local_c;
     if (iVar4 != 0) {
       g_currentExceptionFrame = local_54.previous;

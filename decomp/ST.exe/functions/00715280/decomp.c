@@ -12,12 +12,12 @@ int __cdecl FUN_00715280(int param_1,char *param_2,int param_3)
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffac;
-  iVar2 = __setjmp3(local_50,0,unaff_ESI,pIVar4);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
     if (param_1 == 0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_mfdarr_cpp_007f03fc,0x5b);
     }
-    FUN_006f2310(0x14,param_2,local_10,1);
+    cMf32::RecGetParam((cMf32 *)param_1,0x14,param_2,local_10,1);
     g_currentExceptionFrame = pIVar4;
     return local_10[0];
   }

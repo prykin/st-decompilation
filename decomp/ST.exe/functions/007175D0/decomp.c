@@ -8,7 +8,7 @@ void FUN_007175d0(byte *param_1,int param_2,int param_3,byte param_4)
   byte *pbVar4;
   
   uVar3 = param_2 * param_3;
-  pbVar1 = (byte *)FUN_006aac70(uVar3);
+  pbVar1 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar3);
   pbVar4 = pbVar1;
   for (uVar2 = uVar3 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
     *(undefined4 *)pbVar4 = *(undefined4 *)param_1;

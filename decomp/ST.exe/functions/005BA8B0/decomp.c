@@ -26,7 +26,7 @@ void __thiscall PrividerTy::PaintPrivider(PrividerTy *this,char param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0xec,0,errorCode,

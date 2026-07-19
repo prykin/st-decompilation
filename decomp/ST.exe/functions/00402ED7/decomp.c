@@ -117,7 +117,7 @@ LAB_004e05d3:
   iVar2 = iVar2 + -1;
 LAB_004e068c:
   thunk_FUN_004abce0(this,0xb,iVar3,iVar2,'\0');
-  thunk_FUN_004abe40(this,'\v',iVar3);
+  STT3DSprC::SetCurFase(this,'\v',iVar3);
   STT3DSprC::StartShow(this,0xb,*(undefined4 *)(DAT_00802a38 + 0xe4));
   return 0;
 }

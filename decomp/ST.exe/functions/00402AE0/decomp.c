@@ -10,7 +10,7 @@ uint thunk_FUN_0069c710(int param_1,int param_2,int param_3)
   iVar3 = param_3;
   uVar4 = 0xffffffff;
   if (param_3 != 0) {
-    uVar4 = FUN_006ae1c0(*(uint **)(param_3 + 0xc),&param_2);
+    uVar4 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_3 + 0xc),&param_2);
     if (-1 < (int)uVar4) {
       pbVar1 = (byte *)(param_1 + 1 + param_2 * 0xe);
       bVar2 = *pbVar1;

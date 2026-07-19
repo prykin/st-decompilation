@@ -19,19 +19,19 @@ FUN_004c21a0(void *this,undefined4 param_1,int *param_2,float param_3,int param_
   local_8 = this;
   FUN_006e1c20(*(void **)((int)this + 0x211),param_3,param_4,0.0,&param_3,&local_c);
   if (param_3 < _DAT_0079034c) {
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     iVar5 = (short)lVar6 + -1;
   }
   else {
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     iVar5 = (int)(short)lVar6;
   }
   if (local_c < _DAT_0079034c) {
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     param_4 = (short)lVar6 + -1;
   }
   else {
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     param_4 = (int)(short)lVar6;
   }
   piVar1 = local_8;

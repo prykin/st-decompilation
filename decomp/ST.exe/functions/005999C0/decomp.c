@@ -24,7 +24,7 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar3 = local_10;
   if (iVar4 == 0) {
     pFVar1 = local_10 + 0x1ac0;
@@ -55,8 +55,9 @@ void __thiscall FSGSTy::PrepBkgMess(FSGSTy *this,char param_1)
     else {
       uVar5 = (-(uint)(param_1 != '\x01') & 0xffffff6e) + 0xb4;
     }
-    FUN_006b3640(DAT_008075a8,*(uint *)(pFVar3 + 0x1abc),0xffffffff,uVar5,
-                 (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pFVar3 + 0x1abc),0xffffffff,uVar5,
+               (-(uint)(param_1 != '\0') & 0xffffffb4) + 0xaa);
     FUN_006b3af0(DAT_008075a8,*(uint *)(pFVar3 + 0x1abc));
     pFVar3[0x1abb] = (FSGSTy)param_1;
     g_currentExceptionFrame = local_54.previous;

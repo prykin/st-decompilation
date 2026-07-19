@@ -26,7 +26,7 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
-  errorCode = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar6 = local_c;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -53,7 +53,7 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
     RaiseInternalException(-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d73);
   }
   local_18[0] = 0x7fff;
-  FUN_006ae140(puVar1,uVar6,(undefined4 *)local_18);
+  Library::DKW::TBL::FUN_006ae140(puVar1,uVar6,(undefined4 *)local_18);
   uVar6 = 0;
   bVar3 = true;
   if (0 < (int)puVar1[3]) {

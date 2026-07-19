@@ -20,7 +20,7 @@ undefined4 thunk_FUN_005faa10(int param_1)
   uStack_c = 0;
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar1 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
     return uStack_c;

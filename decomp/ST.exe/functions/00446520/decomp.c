@@ -10,7 +10,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   code *pcVar1;
   STAllPlayersC *this_00;
   int iVar2;
-  void *pvVar3;
+  STBoatC *pSVar3;
   int iVar4;
   uint uVar5;
   undefined4 unaff_ESI;
@@ -31,7 +31,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   local_18 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
   g_currentExceptionFrame = &local_68;
   local_14 = this;
-  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar4 = local_18;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -64,9 +64,9 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
             FUN_006acc70((int)local_20,uVar6,&local_8);
             if ((short)local_8 == param_2) {
               FUN_006b0c70((int)local_20,uVar6);
-              pvVar3 = (void *)thunk_FUN_0042b620(param_1,local_8,1);
+              pSVar3 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,1);
               local_10 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-              thunk_FUN_0045ef00(pvVar3,0x21,&local_10);
+              STBoatC::CmdToObj(pSVar3,0x21,&local_10);
               break;
             }
             uVar6 = uVar6 + 1;
@@ -115,8 +115,8 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
           if (0 < iVar4) {
             do {
               FUN_006acc70((int)local_20,uVar7,&local_8);
-              pvVar3 = (void *)thunk_FUN_0042b620(param_1,local_8,1);
-              if (pvVar3 == (void *)0x0) {
+              pSVar3 = (STBoatC *)GetObjPtr(local_14,param_1,local_8,1);
+              if (pSVar3 == (STBoatC *)0x0) {
                 iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2955,0,0,
                                            &DAT_007a4ccc,s_STAllPlayersC__DeleteGuardBoat_N_007a83e0
                                           );
@@ -128,7 +128,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
               }
               else {
                 local_10 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-                thunk_FUN_0045ef00(pvVar3,0x21,&local_10);
+                STBoatC::CmdToObj(pSVar3,0x21,&local_10);
               }
               uVar7 = uVar7 + 1;
             } while ((int)uVar7 < iVar4);

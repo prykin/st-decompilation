@@ -15,14 +15,14 @@ int __cdecl FUN_00716e60(cMf32 *param_1,char *param_2,char param_3,int param_4)
   
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_3 == '\x1d') {
-      local_8 = FUN_006f1ce0(0x1d,param_2,(int *)0x0,param_4);
+      local_8 = cMf32::RecGet(param_1,0x1d,param_2,(int *)0x0,param_4);
       if (local_8 == (ushort *)0x0) {
         RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0xd2);
       }
-      puVar3 = FUN_006f2310(6,(char *)local_8,(undefined4 *)local_14,param_4);
+      puVar3 = cMf32::RecGetParam(param_1,6,(char *)local_8,(undefined4 *)local_14,param_4);
       if (puVar3 == (undefined4 *)0x0) {
         RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0xd3);
       }
@@ -30,7 +30,7 @@ int __cdecl FUN_00716e60(cMf32 *param_1,char *param_2,char param_3,int param_4)
       g_currentExceptionFrame = local_58.previous;
       return (int)local_a;
     }
-    puVar3 = FUN_006f2310(0x13,param_2,(undefined4 *)local_14,param_4);
+    puVar3 = cMf32::RecGetParam(param_1,0x13,param_2,(undefined4 *)local_14,param_4);
     if (puVar3 == (undefined4 *)0x0) {
       RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mftspr_cpp_007f0504,0xd8);
     }

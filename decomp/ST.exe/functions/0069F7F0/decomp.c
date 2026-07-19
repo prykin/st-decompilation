@@ -29,7 +29,7 @@ int __cdecl FUN_0069f7f0(int param_1,int param_2,int param_3,int param_4,int par
       param_4 = param_1;
       if (0 < param_5) {
         do {
-          uVar3 = FUN_0072e6c0();
+          uVar3 = Library::MSVCRT::FUN_0072e6c0();
           iVar7 = iVar6 + 1;
           iVar6 = 0;
           iVar5 = 0;

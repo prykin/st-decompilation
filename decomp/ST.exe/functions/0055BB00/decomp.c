@@ -15,7 +15,7 @@ FUN_0055bb00(void *this,undefined1 param_1,undefined2 param_2,undefined2 param_3
     local_10 = CONCAT22(param_2,(short)CONCAT31((int3)param_5,param_1));
     _local_c = CONCAT13(param_6,CONCAT12(param_4,param_3));
     local_8 = param_7;
-    FUN_006ae1c0(*(uint **)((int)this + 0x110),&local_10);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x110),&local_10);
   }
   return;
 }

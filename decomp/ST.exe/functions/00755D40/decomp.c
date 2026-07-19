@@ -13,9 +13,10 @@ void FUN_00755d40(int param_1,int param_2,int param_3)
     iVar2 = (int)sVar1;
   }
   iVar2 = iVar2 + 8;
-  FUN_0072da70((undefined4 *)(param_2 + 0x10 + param_3),
-               (undefined4 *)(iVar2 + param_2 + 0x10 + param_3),
-               (*(short *)(param_2 + 8) - iVar2) - param_3);
+  Library::MSVCRT::FUN_0072da70
+            ((undefined4 *)(param_2 + 0x10 + param_3),
+             (undefined4 *)(iVar2 + param_2 + 0x10 + param_3),
+             (*(short *)(param_2 + 8) - iVar2) - param_3);
   *(short *)(param_2 + 8) = *(short *)(param_2 + 8) - (short)iVar2;
   return;
 }

@@ -30,7 +30,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
   IStack_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_74;
   pAStack_1c = this;
-  iVar5 = __setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_74.previous;
     iVar7 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0x2df,0,iVar5,&DAT_007a4ccc,
@@ -90,7 +90,7 @@ LAB_0065f468:
         bVar4 = true;
       }
       if (bVar4) {
-        FUN_006ae140(puStack_28,uStack_c,(undefined4 *)param_1);
+        Library::DKW::TBL::FUN_006ae140(puStack_28,uStack_c,(undefined4 *)param_1);
         goto LAB_0065f468;
       }
       if ((int)*(short *)(pAStack_1c + 0x170) <= (int)uStack_c) {
@@ -143,7 +143,7 @@ LAB_0065f3c9:
     } while ((int)uStack_c < (int)uStack_24);
   }
   if (iStack_18 != 0) {
-    FUN_006ae1c0(*(uint **)(pAStack_1c + 0x22f),(undefined4 *)param_1);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pAStack_1c + 0x22f),(undefined4 *)param_1);
   }
   g_currentExceptionFrame = IStack_74.previous;
   return 0;

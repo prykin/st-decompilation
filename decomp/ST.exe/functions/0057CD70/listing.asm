@@ -1,4 +1,4 @@
-FUN_0057cd70:
+STFishC::LifeFish:
 0057CD70  55                        PUSH EBP
 0057CD71  8B EC                     MOV EBP,ESP
 0057CD73  51                        PUSH ECX

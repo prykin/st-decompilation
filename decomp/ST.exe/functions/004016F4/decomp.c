@@ -87,13 +87,13 @@ LAB_00617221:
   fVar7 = (float10)fcos((float10)fStack_8);
   fStack_c = (float)(fVar7 * (float10)*(int *)((int)this + 0x2c1));
   fsin((float10)fStack_8);
-  lVar8 = __ftol();
+  lVar8 = Library::MSVCRT::__ftol();
   *param_1 = (int)lVar8 + (int)*(short *)((int)this + 0x272);
   sVar1 = *(short *)((int)this + 0x274);
-  lVar8 = __ftol();
+  lVar8 = Library::MSVCRT::__ftol();
   *param_2 = (int)sVar1 + (int)lVar8;
   sVar1 = *(short *)((int)this + 0x276);
-  lVar8 = __ftol();
+  lVar8 = Library::MSVCRT::__ftol();
   *param_3 = (int)sVar1 + (int)lVar8;
   return iVar5;
 }

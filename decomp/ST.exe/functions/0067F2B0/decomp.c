@@ -21,8 +21,9 @@ void FUN_0067f2b0(LPCSTR param_1,int param_2)
   }
   else {
     GetFullPathNameA(param_1,0x104,&DAT_0084868c,(LPSTR *)0x0);
-    FUN_0072e730(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,&DAT_00811990);
-    __makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0);
+    Library::MSVCRT::FUN_0072e730
+              (&DAT_0084868c,&DAT_008478a8,&DAT_00848790,&DAT_0084858c,&DAT_00811990);
+    Library::MSVCRT::__makepath(&DAT_0084868c,&DAT_008478a8,&DAT_00848790,(char *)0x0,(char *)0x0);
     iVar1 = thunk_FUN_0067f030((byte *)s__curr_path_007d55f4,&DAT_0084868c,(uint *)0x0);
     if (iVar1 == 0) {
       RaiseInternalException(-2,DAT_007ed77c,s___ai_ai_script_v_inl_007d55d8,0xb5);

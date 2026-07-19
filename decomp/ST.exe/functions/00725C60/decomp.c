@@ -21,13 +21,13 @@ char * __cdecl FUN_00725c60(cMf32 *param_1,char *param_2,byte param_3,int param_
   local_8 = (char *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    local_c = FUN_006f1ce0(7,param_2,(int *)0x0,param_4);
+    local_c = cMf32::RecGet(param_1,7,param_2,(int *)0x0,param_4);
     if (local_c == (ushort *)0x0) {
       RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mfspr_cpp_007f0c8c,0x1c);
     }
-    local_8 = (char *)FUN_006aac10(*(short *)((int)local_c + 0x23) * 4 + 0x31);
+    local_8 = (char *)Library::DKW::LIB::FUN_006aac10(*(short *)((int)local_c + 0x23) * 4 + 0x31);
     puVar7 = local_c;
     pcVar5 = local_8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

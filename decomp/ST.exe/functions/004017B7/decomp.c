@@ -21,7 +21,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -44,7 +44,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     return uVar7;
   }
   if (*(int *)(pSStack_c + 0x234) == 0) {
-    puVar4 = FUN_006ae290((uint *)0x0,param_1,0x40,10);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1,0x40,10);
     *(uint **)(pSVar2 + 0x234) = puVar4;
   }
   if ((*(int *)(pSVar2 + 0x234) != 0) && (param_1 != 0)) {
@@ -56,7 +56,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     uStack_54 = 0xffffffff;
     if (0 < (int)param_1) {
       do {
-        uStack_8 = FUN_006ae1c0(*(uint **)(pSVar2 + 0x234),auStack_90);
+        uStack_8 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + 0x234),auStack_90);
         param_1 = param_1 - 1;
       } while (param_1 != 0);
     }

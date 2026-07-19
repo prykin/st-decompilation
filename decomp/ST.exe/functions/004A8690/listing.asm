@@ -1,4 +1,4 @@
-FUN_004a8690:
+STGroupBoatC::GenSwitch:
 004A8690  55                        PUSH EBP
 004A8691  8B EC                     MOV EBP,ESP
 004A8693  83 EC 08                  SUB ESP,0x8

@@ -1,4 +1,4 @@
-FUN_00436f20:
+STAllPlayersC::CmdToPlsObj:
 00436F20  55                        PUSH EBP
 00436F21  8B EC                     MOV EBP,ESP
 00436F23  81 EC F8 01 00 00         SUB ESP,0x1f8

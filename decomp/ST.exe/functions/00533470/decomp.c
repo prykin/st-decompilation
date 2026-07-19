@@ -26,7 +26,7 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x459,0,iVar4,

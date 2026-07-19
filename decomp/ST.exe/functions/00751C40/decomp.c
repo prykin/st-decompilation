@@ -18,7 +18,7 @@ void FUN_00751c40(undefined4 param_1,uint param_2,int param_3,uint *param_4,int 
     local_10[2] = 0x1f;
     param_4 = local_10;
   }
-  FUN_00754530((int)local_38,param_4,0,0,param_1,param_2);
+  Library::DKW::JPG::FUN_00754530((int)local_38,param_4,0,0,param_1,param_2);
   return;
 }
 

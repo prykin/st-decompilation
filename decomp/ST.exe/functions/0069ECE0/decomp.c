@@ -110,12 +110,12 @@ void __thiscall FUN_0069ece0(void *this,int param_1,int param_2)
   thunk_FUN_006a0a70(this);
   if (0 < param_1) {
     do {
-      uVar1 = FUN_0072e6c0();
+      uVar1 = Library::MSVCRT::FUN_0072e6c0();
       iVar3 = (int)uVar1 % (*(int *)((int)this + 0x5833) * 100 + -99);
-      uVar1 = FUN_0072e6c0();
+      uVar1 = Library::MSVCRT::FUN_0072e6c0();
       local_c = (int)uVar1 % (*(int *)((int)this + 0x5837) * 100 + -99);
       uVar2 = thunk_FUN_00695010(this,iVar3 / 200,local_c / 200,param_2);
-      uVar1 = FUN_0072e6c0();
+      uVar1 = Library::MSVCRT::FUN_0072e6c0();
       iVar4 = (int)uVar1 % 10;
       switch(uVar2) {
       case 1:

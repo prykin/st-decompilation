@@ -23,7 +23,7 @@ PrividerTy::OutListProc
   local_c = param_8;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x2c,0,errorCode,
@@ -47,8 +47,9 @@ PrividerTy::OutListProc
       bVar4 = 0xff;
     } while (bVar2 < 0x16);
     if (bVar4 != 0xff) {
-      FUN_006b4680(param_1,param_4,param_5,*(BITMAPINFO **)(local_c + 0x1c82),(uint *)0x0,0,
-                   param_5 + -0x67,param_6,param_7,0);
+      Library::DKW::DDX::FUN_006b4680
+                (param_1,param_4,param_5,*(BITMAPINFO **)(local_c + 0x1c82),(uint *)0x0,0,
+                 param_5 + -0x67,param_6,param_7,0);
     }
   }
   g_currentExceptionFrame = local_50.previous;

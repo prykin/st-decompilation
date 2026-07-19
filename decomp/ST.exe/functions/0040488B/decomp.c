@@ -90,7 +90,7 @@ int thunk_FUN_0040e0f0(int param_1,int param_2,int param_3,int param_4,int param
       if ((iStack_28 < (int)uVar7) && (uStack_30 != 0)) {
         if (pbStack_24 == (byte *)0x0) {
           uStack_8 = 0;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           uStack_8 = 0xffffffff;
           pbStack_24 = &stack0xffffff34;
           puStack_1c = &stack0xffffff34;

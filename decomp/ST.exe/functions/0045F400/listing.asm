@@ -1,4 +1,4 @@
-FUN_0045f400:
+STBoatC::CheckPBoxCmd:
 0045F400  55                        PUSH EBP
 0045F401  8B EC                     MOV EBP,ESP
 0045F403  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

@@ -1,12 +1,13 @@
 
 uint __thiscall
-thunk_FUN_0055a9d0(void *this,int param_1,int param_2,undefined *param_3,uint param_4,
-                  undefined *param_5,undefined4 param_6)
+VisibleClassTy::VisHoleCreate
+          (VisibleClassTy *this,int param_1,int param_2,undefined *param_3,uint param_4,
+          undefined *param_5,undefined4 param_6)
 
 {
   uint *puVar1;
   code *pcVar2;
-  void *this_00;
+  VisibleClassTy *this_00;
   int iVar3;
   int iVar4;
   uint uVar5;
@@ -20,18 +21,18 @@ thunk_FUN_0055a9d0(void *this,int param_1,int param_2,undefined *param_3,uint pa
   uint uStack_18;
   undefined4 uStack_14;
   undefined4 uStack_10;
-  void *pvStack_c;
+  VisibleClassTy *pVStack_c;
   uint uStack_8;
   
   uStack_8 = 0xffffffff;
-  if ((*(int *)((int)this + 0x114) != 0) && (-1 < (int)param_5)) {
+  if ((*(int *)(this + 0x114) != 0) && (-1 < (int)param_5)) {
     IStack_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_6c;
-    pvStack_c = this;
-    iVar3 = __setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    this_00 = pvStack_c;
+    pVStack_c = this;
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    this_00 = pVStack_c;
     if (iVar3 == 0) {
-      puVar1 = *(uint **)((int)pvStack_c + 0xf4);
+      puVar1 = *(uint **)(pVStack_c + 0xf4);
       if (puVar1 != (uint *)0x0) {
         piVar6 = aiStack_28;
         for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -44,8 +45,8 @@ thunk_FUN_0055a9d0(void *this,int param_1,int param_2,undefined *param_3,uint pa
         puStack_20 = param_3;
         uStack_10 = param_6;
         puStack_1c = param_5;
-        uStack_14 = *(undefined4 *)((int)this_00 + 0x108);
-        uStack_8 = FUN_006ae1c0(puVar1,aiStack_28);
+        uStack_14 = *(undefined4 *)(this_00 + 0x108);
+        uStack_8 = Library::DKW::TBL::FUN_006ae1c0(puVar1,aiStack_28);
         thunk_FUN_00558dc0(this_00,aiStack_28[0],aiStack_28[1],puStack_20,uStack_18,puStack_1c,-6,
                            0xffffffff);
       }

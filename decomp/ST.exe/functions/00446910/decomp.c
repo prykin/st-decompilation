@@ -22,7 +22,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   local_58.previous = g_currentExceptionFrame;
   local_8 = *(byte **)((int)&DAT_007f5816 + param_1 * 0xa62);
   g_currentExceptionFrame = &local_58;
-  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pbVar2 = local_8;
   if (iVar3 == 0) {
     if (local_8 != (byte *)0x0) {

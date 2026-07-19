@@ -37,7 +37,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -81,14 +81,14 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
     }
     DAT_0080c4c7 = FUN_0071aa10(*(int *)(pMVar3 + 0x70),PTR_s_DESCRIPTION_0079c21c,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
-      DAT_0080c4c7 = FUN_006b54f0((uint *)0x0,10,10);
+      DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
     DAT_0080c4cb = FUN_0071aa10(*(int *)(pMVar3 + 0x70),PTR_s_OBJECTIVES_0079c220,0);
     if (DAT_0080c4cb == (uint *)0x0) {
-      DAT_0080c4cb = FUN_006b54f0((uint *)0x0,10,10);
+      DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     puVar5 = &DAT_0080c3c3;
     for (iVar4 = 0x41; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -96,9 +96,10 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
       puVar5 = puVar5 + 1;
     }
     local_8 = &DAT_0080c3c3;
-    puVar6 = FUN_006f1ce0(0xc,PTR_s_TITLE_MISSION_0079c218,(int *)&local_8,0);
+    puVar6 = cMf32::RecGet(*(cMf32 **)(pMVar3 + 0x70),0xc,PTR_s_TITLE_MISSION_0079c218,
+                           (int *)&local_8,0);
     if ((puVar6 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
-      FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
+      Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,(byte *)0x0,(byte *)0x0,local_1a8,(byte *)0x0);
       uVar10 = 0xffffffff;
       pbVar12 = local_1a8;
       do {
@@ -135,7 +136,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   iVar4 = FUN_00715050(iVar4,pcVar16,0);
   *(int *)(pMVar3 + 0x74) = iVar4;
   if (iVar4 == 0) {
-    puVar7 = FUN_006ae290((uint *)0x0,1,0x50,1);
+    puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x50,1);
     puVar5 = local_a4;
     for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar5 = 0;
@@ -143,12 +144,12 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
     }
     *(uint **)(pMVar3 + 0x74) = puVar7;
     local_a4[0]._0_1_ = 8;
-    FUN_006ae1c0(puVar7,local_a4);
+    Library::DKW::TBL::FUN_006ae1c0(puVar7,local_a4);
   }
-  FUN_006afe40((int *)(pMVar3 + 0x78),*(uint **)(pMVar3 + 0x74));
+  Library::DKW::TBL::FUN_006afe40((int *)(pMVar3 + 0x78),*(uint **)(pMVar3 + 0x74));
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -178,7 +179,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   local_8 = (undefined4 *)0x5;
   do {
     FUN_006b2330((uint)DAT_008075a8,(uint *)pMVar14,0x31,0x402f63,0,0,(uint)local_c);
-    FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
     FUN_006b3af0(DAT_008075a8,*(uint *)pMVar14);
     local_c = local_c + 0xc;
     pMVar14 = pMVar14 + 4;
@@ -189,7 +190,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   local_8 = (undefined4 *)0x5;
   do {
     FUN_006b2330((uint)DAT_008075a8,(uint *)pMVar14,0x31,0x402f63,0,0,(uint)local_c);
-    FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
     FUN_006b3af0(DAT_008075a8,*(uint *)pMVar14);
     local_c = local_c + 0xc;
     pMVar14 = pMVar14 + 4;
@@ -224,7 +225,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   }
   pMVar14 = pMVar3 + 0x484;
   FUN_006b2330((uint)DAT_008075a8,(uint *)pMVar14,0x32,0x402f63,0,0,(uint)(pMVar3 + 0x6bf));
-  FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
   FUN_006b3af0(DAT_008075a8,*(uint *)pMVar14);
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)(pMVar3 + 0x48c),DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
@@ -255,13 +256,13 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,MTaskTy param_2)
   }
   pMVar14 = pMVar3 + 0x63f;
   FUN_006b2330((uint)DAT_008075a8,(uint *)pMVar14,0x32,0x402f63,0,0,(uint)(pMVar3 + 0x6cb));
-  FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pMVar14,0xffffffff,0,0);
   FUN_006b3af0(DAT_008075a8,*(uint *)pMVar14);
-  puVar7 = FUN_006ae310((uint *)0x0,10,0x9e,10,0x405de4);
+  puVar7 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x9e,10,0x405de4);
   *(uint **)(pMVar3 + 0x64b) = puVar7;
-  puVar7 = FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
+  puVar7 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
   *(uint **)(pMVar3 + 0x647) = puVar7;
-  puVar7 = FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
+  puVar7 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,10,0x3e,10,0x40365c);
   *(uint **)(pMVar3 + 0x64f) = puVar7;
   if (*(MMsgTy **)(DAT_0081176c + 0x2e6) != (MMsgTy *)0x0) {
     MMsgTy::HidePanel(*(MMsgTy **)(DAT_0081176c + 0x2e6),0,0,1);

@@ -1,4 +1,4 @@
-FUN_004f9480:
+CPanelTy::OutText:
 004F9480  55                        PUSH EBP
 004F9481  8B EC                     MOV EBP,ESP
 004F9483  83 EC 4C                  SUB ESP,0x4c

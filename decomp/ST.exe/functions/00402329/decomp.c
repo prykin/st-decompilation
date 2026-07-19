@@ -7,15 +7,19 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   int iVar2;
   uint *puVar3;
   int iVar4;
-  cMf32 *extraout_ECX;
-  cMf32 *extraout_ECX_00;
-  cMf32 *extraout_ECX_01;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *this_01;
+  cMf32 *extraout_ECX_02;
+  cMf32 *extraout_ECX_03;
+  cMf32 *extraout_ECX_04;
   cMf32 *pcVar5;
   MTaskTy *pMVar6;
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  SpriteClassTy *this_01;
+  SpriteClassTy *this_02;
   undefined4 *puVar8;
   InternalExceptionFrame IStack_4c;
   MTaskTy *pMStack_8;
@@ -23,7 +27,7 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pMStack_8 = this;
-  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_4c.previous;
     iVar4 = ReportDebugMessage(s_E____titans_Start_task_obj_cpp_007cd994,299,0,iVar2,&DAT_007a4ccc,
@@ -105,15 +109,15 @@ void __thiscall MTaskTy::DoneMTask(MTaskTy *this)
     uVar7 = 0;
     if (*(int *)(iVar2 + 0xc) != 0) {
       if (*(int *)(iVar2 + 0xc) == 0) {
-        this_01 = (SpriteClassTy *)0x0;
+        this_02 = (SpriteClassTy *)0x0;
         goto LAB_005e0672;
       }
       do {
-        this_01 = (SpriteClassTy *)(*(int *)(iVar2 + 8) * uVar7 + *(int *)(iVar2 + 0x1c));
+        this_02 = (SpriteClassTy *)(*(int *)(iVar2 + 8) * uVar7 + *(int *)(iVar2 + 0x1c));
 LAB_005e0672:
-        SpriteClassTy::CloseSprite(this_01);
-        if (*(int *)(this_01 + 0x9a) != 0) {
-          FUN_006ab060((undefined4 *)(this_01 + 0x9a));
+        SpriteClassTy::CloseSprite(this_02);
+        if (*(int *)(this_02 + 0x9a) != 0) {
+          FUN_006ab060((undefined4 *)(this_02 + 0x9a));
         }
         iVar2 = *(int *)(this_00 + 0x64b);
         uVar7 = uVar7 + 1;
@@ -142,6 +146,7 @@ LAB_005e06d9:
     *(undefined4 *)(this_00 + 0x647) = 0;
   }
   iVar2 = *(int *)(this_00 + 0x64f);
+  this_01 = (ccFntTy *)0x0;
   if (iVar2 != 0) {
     uVar7 = 0;
     if (*(int *)(iVar2 + 0xc) != 0) {
@@ -159,22 +164,25 @@ LAB_005e072b:
     }
     FUN_006ae110(*(byte **)(this_00 + 0x64f));
     *(undefined4 *)(this_00 + 0x64f) = 0;
+    this_01 = extraout_ECX;
   }
   pMVar6 = this_00 + 0x653;
   iVar2 = 0xb;
   do {
     if (*(int *)pMVar6 != 0) {
       FUN_006ab060((undefined4 *)pMVar6);
+      this_01 = extraout_ECX_00;
     }
     pMVar6 = pMVar6 + 0xc;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (*(uint **)(this_00 + 0x89) != (uint *)0x0) {
-    FUN_00710560(*(uint **)(this_00 + 0x89));
+    ccFntTy::operator(this_01,*(uint **)(this_00 + 0x89));
     *(undefined4 *)(this_00 + 0x89) = 0;
+    this_01 = extraout_ECX_01;
   }
   if (*(uint **)(this_00 + 0x8d) != (uint *)0x0) {
-    FUN_00710560(*(uint **)(this_00 + 0x8d));
+    ccFntTy::operator(this_01,*(uint **)(this_00 + 0x8d));
     *(undefined4 *)(this_00 + 0x8d) = 0;
   }
   *(undefined4 *)(this_00 + 0x81) = 0;
@@ -185,7 +193,7 @@ LAB_005e072b:
       pcVar5 = *(cMf32 **)(this_00 + 0x70);
     }
     cMf32::RecMemFree(pcVar5,(uint *)(this_00 + 0x5d));
-    pcVar5 = extraout_ECX;
+    pcVar5 = extraout_ECX_02;
   }
   if (DAT_008085e3 != 0) {
     FUN_006c1e20();
@@ -197,12 +205,12 @@ LAB_005e072b:
   }
   if (*(byte **)(this_00 + 0x74) != (byte *)0x0) {
     FUN_006ae110(*(byte **)(this_00 + 0x74));
-    pcVar5 = extraout_ECX_00;
+    pcVar5 = extraout_ECX_03;
   }
   *(undefined4 *)(this_00 + 0x74) = 0;
   if (*(byte **)(this_00 + 0x78) != (byte *)0x0) {
     FUN_006ae110(*(byte **)(this_00 + 0x78));
-    pcVar5 = extraout_ECX_01;
+    pcVar5 = extraout_ECX_04;
   }
   *(undefined4 *)(this_00 + 0x78) = 0;
   if (*(undefined4 **)(this_00 + 0x70) != (undefined4 *)0x0) {
@@ -210,7 +218,7 @@ LAB_005e072b:
   }
   *(undefined4 *)(this_00 + 0x70) = 0;
   if (*(int *)(this_00 + 0x4d) != 0) {
-    FUN_006e3b50((undefined4 *)(this_00 + 0x3d));
+    AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(this_00 + 0x3d));
   }
   DAT_00807654 = 0x21;
   g_currentExceptionFrame = IStack_4c.previous;

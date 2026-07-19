@@ -23,15 +23,16 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
   if (param_8 != 0) {
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
-    errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       MMMObjTy::OutRGlProc
                 (param_3,param_1,param_2,param_3,param_4,param_5,param_6,param_7 + -0x5f,
                  (undefined4 *)(DAT_0081176c + 0x140));
       iStack_8 = param_4 + -0x15 + param_6;
-      FUN_006c6660(param_1,iStack_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
-      FUN_006c6470(param_1,iStack_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
-                   *(undefined4 *)(DAT_0081176c + 0x140));
+      Library::DKW::DDX::FUN_006c6660(param_1,iStack_8,param_5 + 0x26,7,param_7 - 0xab,3,0);
+      Library::DKW::DDX::FUN_006c6470
+                (param_1,iStack_8,param_5 + 0x26,(undefined4 *)0x7,param_7 + -0xab,3,
+                 *(undefined4 *)(DAT_0081176c + 0x140));
       uVar7 = 2;
       pvVar6 = *(void **)(DAT_0081176c + 0x34);
       uVar5 = 0xffffffff;
@@ -39,10 +40,12 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
       puVar2 = (uint *)FUN_006b0140(0x2616,DAT_00807618);
       StartServTy::WrTextDDX
                 (this_01,0,param_4 + 10,param_5 + 0xf8,0xe6,0x19,puVar2,uVar4,uVar5,pvVar6,uVar7);
-      FUN_006c6470(param_1,param_4 + 10,param_5 + 0xf8,(undefined4 *)0xe6,0x19,4,
-                   *(undefined4 *)(DAT_0081176c + 0x140));
-      FUN_006c6470(param_1,param_4 + 0xc,param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
-                   *(undefined4 *)(DAT_0081176c + 0x140));
+      Library::DKW::DDX::FUN_006c6470
+                (param_1,param_4 + 10,param_5 + 0xf8,(undefined4 *)0xe6,0x19,4,
+                 *(undefined4 *)(DAT_0081176c + 0x140));
+      Library::DKW::DDX::FUN_006c6470
+                (param_1,param_4 + 0xc,param_5 + 0xfa,(undefined4 *)0xe2,0x15,4,
+                 *(undefined4 *)(DAT_0081176c + 0x140));
       MMMObjTy::OutRGlProc
                 (param_2,param_1,param_2,param_3,param_4,param_5 + -0x5c + param_7,param_6,0x5c,
                  (undefined4 *)(DAT_0081176c + 0x140));
@@ -75,10 +78,12 @@ FSGSTy::OutTRGlProc(FSGSTy *this,int param_1,MMMObjTy *param_2,MMMObjTy *param_3
       StartServTy::WrTextDDX
                 (this_02,0,param_4 + 0x78,param_5 + 0x155,0xa0,0x19,puVar2,uVar4,uVar5,pvVar6,uVar7)
       ;
-      FUN_006c6470(param_1,param_4 + 0x78,param_5 + 0x155,(undefined4 *)0xa0,0x19,4,
-                   *(undefined4 *)(DAT_0081176c + 0x140));
-      FUN_006c6470(param_1,param_4 + 0x7a,param_5 + 0x157,(undefined4 *)0x9c,0x15,4,
-                   *(undefined4 *)(DAT_0081176c + 0x140));
+      Library::DKW::DDX::FUN_006c6470
+                (param_1,param_4 + 0x78,param_5 + 0x155,(undefined4 *)0xa0,0x19,4,
+                 *(undefined4 *)(DAT_0081176c + 0x140));
+      Library::DKW::DDX::FUN_006c6470
+                (param_1,param_4 + 0x7a,param_5 + 0x157,(undefined4 *)0x9c,0x15,4,
+                 *(undefined4 *)(DAT_0081176c + 0x140));
       g_currentExceptionFrame = IStack_4c.previous;
       return;
     }

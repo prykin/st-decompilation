@@ -30,7 +30,8 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
   iVar2 = thunk_FUN_00423e70(this,param_1);
   if (iVar2 != 0) {
     local_8 = (undefined4 *)
-              FUN_006aac70((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
+              Library::DKW::LIB::FUN_006aac70
+                        ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
     uVar5 = (int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278;
     puVar8 = DAT_007fb280;
     puVar10 = local_8;
@@ -112,11 +113,12 @@ FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_
     if (param_5 != '\0') {
       uVar5 = 4;
     }
-    psVar4 = FUN_006a9190((int)local_8,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
-                          (short *)(int)*(short *)(iVar2 + 0x47),
-                          (short *)(int)*(short *)(iVar2 + 0x49),
-                          (short *)(int)*(short *)(iVar2 + 0x4b),param_2,param_3,param_4,0,&local_2c
-                          ,(undefined4 *)0x0,(short *)0x0,uVar5);
+    psVar4 = Library::DKW::WAY::FUN_006a9190
+                       ((int)local_8,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
+                        (short *)(int)*(short *)(iVar2 + 0x47),
+                        (short *)(int)*(short *)(iVar2 + 0x49),
+                        (short *)(int)*(short *)(iVar2 + 0x4b),param_2,param_3,param_4,0,&local_2c,
+                        (undefined4 *)0x0,(short *)0x0,uVar5);
     puVar8 = local_8;
     if (psVar4 == (short *)0x0) {
       iVar3 = FUN_006ab090((int)local_8,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,

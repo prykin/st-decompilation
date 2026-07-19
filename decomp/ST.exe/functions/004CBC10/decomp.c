@@ -1,5 +1,9 @@
 
-int FUN_004cbc10(void)
+/* Recovered from embedded debug metadata:
+   E:\__titans\Artem\TLO_bspr.cpp
+   TLOBaseTy::AddSprInit */
+
+int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
 
 {
   code *pcVar1;
@@ -8,13 +12,14 @@ int FUN_004cbc10(void)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
-  int *local_8;
+  TLOBaseTy *local_8;
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  local_8 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    switch(local_8[0x16b]) {
+    switch(*(undefined4 *)(local_8 + 0x5ac)) {
     case 0x32:
     case 0x40:
     case 0x49:
@@ -23,11 +28,11 @@ int FUN_004cbc10(void)
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x45:
-      thunk_FUN_004eaa20(local_8);
+      thunk_FUN_004eaa20((int *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x4e:
-      thunk_FUN_004d9c80(local_8);
+      thunk_FUN_004d9c80((int *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x52:
@@ -36,14 +41,14 @@ int FUN_004cbc10(void)
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x69:
-      thunk_FUN_004dce00(local_8);
+      thunk_FUN_004dce00((int *)local_8);
       break;
     case 0x70:
-      thunk_FUN_004d9000(local_8);
+      thunk_FUN_004d9000((int *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     case 0x72:
-      thunk_FUN_004ecea0(local_8);
+      thunk_FUN_004ecea0((int *)local_8);
       g_currentExceptionFrame = pIVar4;
       return 0;
     }

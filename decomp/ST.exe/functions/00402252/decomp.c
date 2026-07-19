@@ -10,7 +10,7 @@ undefined4 __fastcall thunk_FUN_004dec10(int *param_1)
     iVar1 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
     if (iVar1 == *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x20c)) {
       param_1[0x134] = 1;
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
       thunk_FUN_004c2c10((int)param_1);
       (**(code **)(*param_1 + 0x90))(4,0x340);
       return 0;
@@ -21,7 +21,7 @@ undefined4 __fastcall thunk_FUN_004dec10(int *param_1)
        (iVar1 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e'),
        iVar1 == *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x20c))) {
       param_1[0x134] = 3;
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
       thunk_FUN_004c2d40((int)param_1);
       (**(code **)(*param_1 + 0x90))(4,0x341);
       return 0;
@@ -39,7 +39,7 @@ undefined4 __fastcall thunk_FUN_004dec10(int *param_1)
       if (4999 < iVar1 + 0x32) {
         param_1[0x135] = 5000;
         param_1[0x134] = 0;
-        thunk_FUN_004cabb0(0);
+        TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
         iVar1 = (**(code **)(*param_1 + 0x2c))();
         thunk_FUN_004b7710(CONCAT31((int3)((uint)iVar1 >> 8),(char)param_1[9]),iVar1);
         if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
@@ -54,7 +54,7 @@ undefined4 __fastcall thunk_FUN_004dec10(int *param_1)
     iVar1 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x0e');
     if (iVar1 == *(int *)(*(int *)((int)param_1 + 0x1f5) + 0x20c)) {
       param_1[0x134] = 2;
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
       param_1[0x136] = *(int *)(DAT_00802a38 + 0xe4);
       iVar1 = (**(code **)(*param_1 + 0x2c))();
       thunk_FUN_004b76d0(CONCAT31((int3)((uint)iVar1 >> 8),(char)param_1[9]),iVar1);

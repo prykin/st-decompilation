@@ -9,7 +9,7 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
   uint uVar5;
   
   if (param_1 == (undefined4 *)0x0) {
-    iVar4 = FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+    iVar4 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
     if (iVar4 == 1) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
@@ -34,7 +34,8 @@ void __cdecl FUN_006a57a0(undefined4 *param_1)
         param_1[(puVar3[5] & 0xffff) + 6] = param_1[(puVar3[5] & 0xffff) + 6] + puVar3[4];
       }
       else {
-        iVar4 = FUN_00730fa0(0,0,0,0,(byte *)s_Bad_memory_block_found_at_0x_08X_007ec8d8);
+        iVar4 = Library::MSVCRT::FUN_00730fa0
+                          (0,0,0,0,(byte *)s_Bad_memory_block_found_at_0x_08X_007ec8d8);
         if (iVar4 == 1) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();

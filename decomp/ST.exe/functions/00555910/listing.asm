@@ -1,4 +1,4 @@
-FUN_00555910:
+TraksClassTy::DrawTrakSprite:
 00555910  55                        PUSH EBP
 00555911  8B EC                     MOV EBP,ESP
 00555913  83 EC 60                  SUB ESP,0x60

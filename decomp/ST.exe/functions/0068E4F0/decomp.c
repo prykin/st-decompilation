@@ -18,7 +18,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
   undefined4 local_c;
   uint local_8;
   
-  puVar2 = FUN_006ae290((uint *)0x0,0x14,2,0x14);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,2,0x14);
   iVar3 = *(int *)((int)this + 0xa5);
   local_8 = 0;
   if (0 < *(int *)(iVar3 + 0xc)) {
@@ -48,7 +48,7 @@ uint * __thiscall FUN_0068e4f0(void *this,int param_1)
               puVar5 = (undefined2 *)0x0;
             }
             local_c = CONCAT22((short)((uint)iVar3 >> 0x10),*puVar5);
-            FUN_006ae1c0(puVar2,&local_c);
+            Library::DKW::TBL::FUN_006ae1c0(puVar2,&local_c);
             uVar7 = uVar7 + 1;
             bVar9 = uVar7 < puVar4[3];
             iVar3 = extraout_EDX_01;

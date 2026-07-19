@@ -26,7 +26,7 @@ undefined4 __thiscall STLightC::GetMessage(STLightC *this,int param_1)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_8 = this;
-  iVar4 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_60.previous;

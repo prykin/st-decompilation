@@ -15,7 +15,7 @@ void __thiscall FUN_00724e20(void *this,int param_1,int param_2)
       *(int *)((int)this + 400) = *(int *)((int)this + 0x18c) + -1;
       return;
     }
-    lVar2 = __ftol();
+    lVar2 = Library::MSVCRT::__ftol();
     *(int *)((int)this + 400) = (int)lVar2;
     return;
   }
@@ -27,7 +27,7 @@ void __thiscall FUN_00724e20(void *this,int param_1,int param_2)
     *(int *)((int)this + 400) = *(int *)((int)this + 0x18c) + -1;
     return;
   }
-  lVar2 = __ftol();
+  lVar2 = Library::MSVCRT::__ftol();
   *(int *)((int)this + 400) = (int)lVar2;
   return;
 }

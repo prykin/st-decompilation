@@ -13,7 +13,7 @@ void __thiscall OptPanelTy::UpdateObjectives(OptPanelTy *this)
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pOStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     PrepMissObj(pOStack_8);
     if (DAT_00801690 != (void *)0x0) {

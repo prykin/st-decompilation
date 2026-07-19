@@ -28,7 +28,7 @@ ccFntTy::FormText(ccFntTy *this,char *param_1,uint *param_2,uint *param_3,int pa
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  errorCode = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (errorCode == 0) {
     puVar2 = _TxtToSarr(local_14,param_2);

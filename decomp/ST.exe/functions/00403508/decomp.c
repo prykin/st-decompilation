@@ -34,7 +34,7 @@ void __thiscall UPanelTy::PaintIBut(UPanelTy *this,int param_1,char *param_2,UIN
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pUStack_10 = this;
-  errorCode = (undefined4 *)__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = (undefined4 *)Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pUVar2 = pUStack_10;
   if (errorCode == (undefined4 *)0x0) {
     iVar9 = 1;
@@ -54,8 +54,9 @@ void __thiscall UPanelTy::PaintIBut(UPanelTy *this,int param_1,char *param_2,UIN
     iVar9 = -2;
     puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
     ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar11,uVar3);
-    FUN_006b3640(DAT_008075a8,*(uint *)(pUVar2 + 0x60),0xffffffff,*(uint *)(pUVar2 + 0x3c),
-                 *(uint *)(pUVar2 + 0x44));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pUVar2 + 0x60),0xffffffff,*(uint *)(pUVar2 + 0x3c),
+               *(uint *)(pUVar2 + 0x44));
     g_currentExceptionFrame = IStack_58.previous;
     return;
   }

@@ -50,11 +50,11 @@ undefined4 __fastcall FUN_004d9fe0(int *param_1)
     }
     if (param_1[0x134] == 4) {
       thunk_FUN_004c4550(param_1,(int *)0x0);
-      thunk_FUN_004cabb0(0);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
       return 0;
     }
   }
-  thunk_FUN_004cabb0(0);
+  TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
   return 0;
 }
 

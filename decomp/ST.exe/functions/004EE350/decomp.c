@@ -31,16 +31,17 @@ void __thiscall BehPanelTy::PaintBBut(BehPanelTy *this,int param_1,char *param_2
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
-  piVar3 = (int *)__setjmp3(local_54,0,unaff_ESI,pIVar6);
+  piVar3 = (int *)Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar6);
   if (piVar3 == (int *)0x0) {
     iVar5 = 1;
     pCVar4 = FUN_006f2c00(param_2,1,param_3 & 0xff);
-    local_8 = FUN_006f1ce0(1,pCVar4,piVar3,iVar5);
+    local_8 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar3,iVar5);
     pBVar2 = local_14;
     thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),local_10,local_c,'\x01',(byte *)local_8);
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-    FUN_006b3640(DAT_008075a8,*(uint *)(pBVar2 + 0x60),0xffffffff,*(uint *)(pBVar2 + 0x3c),
-                 *(uint *)(pBVar2 + 0x44));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pBVar2 + 0x60),0xffffffff,*(uint *)(pBVar2 + 0x3c),
+               *(uint *)(pBVar2 + 0x44));
     g_currentExceptionFrame = pIVar6;
     return;
   }

@@ -138,7 +138,7 @@ undefined4 __thiscall STTorpC::GetMessage(STTorpC *this,int param_1)
   local_28c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_28c;
   local_c8 = (STSprGameObjC *)this;
-  iVar11 = __setjmp3(local_28c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar11 = Library::MSVCRT::__setjmp3(local_28c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c8;
   if (iVar11 != 0) {
     g_currentExceptionFrame = local_28c.previous;
@@ -265,7 +265,7 @@ undefined4 __thiscall STTorpC::GetMessage(STTorpC *this,int param_1)
         g_currentExceptionFrame = local_28c.previous;
         return 0;
       }
-      local_158[0] = FUN_006aac70(0x44);
+      local_158[0] = Library::DKW::LIB::FUN_006aac70(0x44);
       iVar12 = 0;
       do {
         *(int **)(iVar12 + local_158[0]) = DAT_00806774;
@@ -322,7 +322,7 @@ LAB_00642c6e:
     }
     this_00[0x27d] = (STSprGameObjC)0x0;
     *(undefined4 *)(this_00 + 0x27e) = 0;
-    puVar14 = FUN_006ae290((uint *)0x0,0,8,1);
+    puVar14 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,8,1);
     *(uint **)(this_00 + 0x241) = puVar14;
     *(undefined4 *)(this_00 + 0x270) = 1;
     *(undefined4 *)(this_00 + 0x278) = 0xffffffff;
@@ -462,9 +462,10 @@ switchD_00640ad9_caseD_a2:
       uVar16 = extraout_EDX;
     }
     if (*(int *)(this_00 + 0x259) == 0x97) {
-      local_4c = (byte *)thunk_FUN_0042b620(CONCAT31((int3)((uint)piVar13 >> 8),this_00[0x24]),
-                                            CONCAT22((short)((uint)uVar16 >> 0x10),
-                                                     *(undefined2 *)(this_00 + 0x262)),1);
+      local_4c = (byte *)STAllPlayersC::GetObjPtr
+                                   (DAT_007fa174,CONCAT31((int3)((uint)piVar13 >> 8),this_00[0x24]),
+                                    CONCAT22((short)((uint)uVar16 >> 0x10),
+                                             *(undefined2 *)(this_00 + 0x262)),1);
       if ((local_4c != (byte *)0x0) &&
          (iVar11 = (**(code **)(*(int *)local_4c + 0x2c))(), iVar11 == 0x3f)) {
         this_00[0x288] = (STSprGameObjC)0x1;
@@ -730,7 +731,7 @@ switchD_00640c2d_caseD_a2:
           this_00[0x282] = (STSprGameObjC)0x0;
         }
         else {
-          thunk_FUN_004abe40((STT3DSprC *)(this_00 + 0x1d5),'\x02',(uint)(byte)SVar8);
+          STT3DSprC::SetCurFase((STT3DSprC *)(this_00 + 0x1d5),'\x02',(uint)(byte)SVar8);
           STT3DSprC::ShowCurFase((STT3DSprC *)(this_00 + 0x1d5),'\x02');
         }
       }
@@ -958,9 +959,9 @@ switchD_00640c2d_caseD_a2:
      (((iVar11 == 0x9c || (iVar11 == 0x9d)) ||
       ((iVar11 == 0x9e || ((iVar11 == 0xae || (iVar11 == 0xa5)))))))) goto LAB_0064190c;
   if ((byte)this_00[0x27d] < 9) {
-    local_4c = (byte *)thunk_FUN_0042b620(CONCAT31((int3)((uint)iVar11 >> 8),this_00[0x24]),
-                                          CONCAT22(sVar10 >> 0xf,*(undefined2 *)(this_00 + 0x262)),1
-                                         );
+    local_4c = (byte *)STAllPlayersC::GetObjPtr
+                                 (DAT_007fa174,CONCAT31((int3)((uint)iVar11 >> 8),this_00[0x24]),
+                                  CONCAT22(sVar10 >> 0xf,*(undefined2 *)(this_00 + 0x262)),1);
     if ((local_4c == (byte *)0x0) || (this_00[0x27d] == (STSprGameObjC)0x8)) {
       *(undefined4 *)(this_00 + 0x264) = 0;
     }
@@ -1009,9 +1010,10 @@ switchD_006415e9_caseD_9f:
       iVar11 = FUN_006acf0d(local_80,local_7c,local_78,(int)*(short *)(this_00 + 0x41),
                             (int)*(short *)(this_00 + 0x43),(int)*(short *)(this_00 + 0x45));
       if (iVar11 == 0) {
-        thunk_FUN_00556760(DAT_00802a7c,7,1,0,(int)*(short *)(this_00 + 0x41),
-                           (int)*(short *)(this_00 + 0x43),(int)*(short *)(this_00 + 0x45),0,0,0,0,0
-                           ,0,-1,0,0);
+        TraksClassTy::TraksCreate
+                  (DAT_00802a7c,7,1,0,(int)*(short *)(this_00 + 0x41),
+                   (int)*(short *)(this_00 + 0x43),(int)*(short *)(this_00 + 0x45),0,0,0,0,0,0,-1,0,
+                   0);
       }
       else {
         local_94 = ((*(short *)(this_00 + 0x41) - local_80) * 10000) / iVar11;
@@ -1027,22 +1029,24 @@ switchD_006415e9_caseD_9f:
         iVar11 = (((*(short *)(this_00 + 0x45) - local_78) * 10000) / iVar11) * iVar11;
         iVar12 = (uVar17 >> 0x10) % 0xb + 5;
         local_88 = iVar11;
-        thunk_FUN_00556760(DAT_00802a7c,7,1,0,local_cc,local_34,iVar11 / 40000 + local_78,
-                           (short)((iVar12 * local_10) / 10000),(short)((iVar12 * local_94) / 10000)
-                           ,0,0,0,0,-1,0,0);
+        TraksClassTy::TraksCreate
+                  (DAT_00802a7c,7,1,0,local_cc,local_34,iVar11 / 40000 + local_78,
+                   (short)((iVar12 * local_10) / 10000),(short)((iVar12 * local_94) / 10000),0,0,0,0
+                   ,-1,0,0);
         local_34 = (local_14 * 3) / 40000 + local_84 + local_7c;
         uVar17 = *(int *)(this_00 + 0x1c) * 0x41c64e6d + 0x3039;
         *(uint *)(this_00 + 0x1c) = uVar17;
         iVar12 = (uVar17 >> 0x10) % 0xb + 5;
         lVar5 = (longlong)(iVar12 * local_10) * -0x68db8bad;
-        thunk_FUN_00556760(DAT_00802a7c,7,1,0,((iVar18 * 3) / 40000 - local_a8) + local_80,local_34,
-                           (iVar11 * 3) / 40000 + local_78,
-                           (short)(int)(lVar5 >> 0x2c) - (short)(lVar5 >> 0x3f),
-                           (short)((iVar12 * local_94) / 10000),0,0,0,0,-1,0,0);
+        TraksClassTy::TraksCreate
+                  (DAT_00802a7c,7,1,0,((iVar18 * 3) / 40000 - local_a8) + local_80,local_34,
+                   (iVar11 * 3) / 40000 + local_78,
+                   (short)(int)(lVar5 >> 0x2c) - (short)(lVar5 >> 0x3f),
+                   (short)((iVar12 * local_94) / 10000),0,0,0,0,-1,0,0);
       }
     }
     else {
-      thunk_FUN_00556dd0(DAT_00802a7c,local_13c);
+      TraksClassTy::TraksCreateCollection(DAT_00802a7c,local_13c);
     }
   }
 LAB_0064190c:
@@ -1070,9 +1074,10 @@ LAB_00642c8b:
   this_00[0x27c] = (STSprGameObjC)0x0;
   STT3DSprC::StopShow((STT3DSprC *)(this_00 + 0x1d5),0);
   if (*(int *)(this_00 + 0x259) == 0x99) {
-    piVar13 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00[0x24]),
-                                        CONCAT22(extraout_var_01,*(undefined2 *)(this_00 + 0x262)),1
-                                       );
+    piVar13 = (int *)STAllPlayersC::GetObjPtr
+                               (DAT_007fa174,
+                                CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00[0x24]),
+                                CONCAT22(extraout_var_01,*(undefined2 *)(this_00 + 0x262)),1);
     if (piVar13 == (int *)0x0) {
       iVar11 = *(int *)(this_00 + 0x1c);
 LAB_00641a40:

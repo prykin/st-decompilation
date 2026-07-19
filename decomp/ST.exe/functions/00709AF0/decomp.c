@@ -31,7 +31,7 @@ FUN_00709af0(int *param_1,byte param_2,byte *param_3,uint param_4,byte param_5,i
   local_c = 0;
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
-  errorCode = __setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_88.previous;
     iVar4 = ReportDebugMessage(s_E__Ourlib_mfrload_cpp_007eff5c,0xc4,0,errorCode,&DAT_007a4ccc,
@@ -130,7 +130,7 @@ FUN_00709af0(int *param_1,byte param_2,byte *param_3,uint param_4,byte param_5,i
       local_1b = puVar5;
       local_14 = local_43;
       local_8 = puVar5;
-      FUN_006ae1c0(puVar2,(undefined4 *)&local_44);
+      Library::DKW::TBL::FUN_006ae1c0(puVar2,(undefined4 *)&local_44);
       g_currentExceptionFrame = local_88.previous;
       return local_8;
     }

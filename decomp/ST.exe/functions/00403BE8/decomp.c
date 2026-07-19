@@ -34,7 +34,7 @@ thunk_FUN_00660540(void *this,undefined4 param_1,undefined2 param_2,undefined2 p
   uVar3 = 0;
   iStack_1a = iVar4;
   if (param_7 != (char *)0x0) {
-    pcVar1 = _strncpy(acStack_16,param_7,0xe);
+    pcVar1 = Library::MSVCRT::_strncpy(acStack_16,param_7,0xe);
     uVar3 = (undefined2)((uint)pcVar1 >> 0x10);
     iVar4 = extraout_EDX;
   }

@@ -26,7 +26,7 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_c = this;
-  iVar6 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_64.previous;

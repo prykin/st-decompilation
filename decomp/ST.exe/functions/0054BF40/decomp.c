@@ -27,7 +27,7 @@ CursorClassTy::SetGCType(CursorClassTy *this,ushort param_1,undefined4 param_2,u
   local_10 = 1;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
-  iVar2 = __setjmp3(local_54,0,unaff_ESI,pIVar8);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar8);
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar8;

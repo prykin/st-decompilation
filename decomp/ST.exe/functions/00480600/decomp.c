@@ -71,8 +71,8 @@ undefined4 __fastcall FUN_00480600(void *param_1)
     local_c = puVar6;
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar4) {
-      thunk_FUN_004abe40(this,'\x0e',local_8);
-      thunk_FUN_004abe40(this,'\f',(int)puVar6 + *(int *)((int)param_1 + 0x822) + iVar3);
+      STT3DSprC::SetCurFase(this,'\x0e',local_8);
+      STT3DSprC::SetCurFase(this,'\f',(int)puVar6 + *(int *)((int)param_1 + 0x822) + iVar3);
       iVar3 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar3 != 0) {
         return 0xffffffff;
@@ -93,8 +93,8 @@ switchD_004806bc_caseD_a:
             0x18;
     iVar3 = thunk_FUN_004ac910(this,'\x0e');
     if (iVar5 != iVar3) {
-      thunk_FUN_004abe40(this,'\x0e',iVar5);
-      thunk_FUN_004abe40(this,'\f',iVar5);
+      STT3DSprC::SetCurFase(this,'\x0e',iVar5);
+      STT3DSprC::SetCurFase(this,'\f',iVar5);
       iVar3 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar3 != 0) {
         return 0xffffffff;
@@ -122,8 +122,8 @@ switchD_004806bc_caseD_a:
     local_c = puVar6;
     uVar4 = thunk_FUN_004ac910(this,'\x0e');
     if (local_8 != uVar4) {
-      thunk_FUN_004abe40(this,'\x0e',local_8);
-      thunk_FUN_004abe40(this,'\f',(int)puVar6 + *(int *)((int)param_1 + 0x822) + iVar5);
+      STT3DSprC::SetCurFase(this,'\x0e',local_8);
+      STT3DSprC::SetCurFase(this,'\f',(int)puVar6 + *(int *)((int)param_1 + 0x822) + iVar5);
       iVar3 = STT3DSprC::ShowCurFase(this,'\x0e');
       if (iVar3 != 0) {
         return 0xffffffff;
@@ -216,11 +216,13 @@ LAB_00480b80:
                 *(int *)((int)param_1 + 0x74a) = iVar3 + 1;
               }
               if (*(int *)((int)param_1 + 0x74a) == (int)*(short *)(DAT_00806724 + 0x23) / 2 + 1) {
-                thunk_FUN_0042c5f0(DAT_0080874d,*(int *)((int)param_1 + 0x20),local_8,
-                                   CONCAT22((short)((uint)*(int *)((int)param_1 + 0x74a) >> 0x10),
-                                            *(undefined2 *)((int)param_1 + 0x32)));
-                thunk_FUN_0042cef0(*(int *)((int)param_1 + 0x20),*(char *)((int)param_1 + 0x24),
-                                   *(short *)((int)param_1 + 0x32));
+                STAllPlayersC::DelObjFromTmps
+                          (DAT_007fa174,DAT_0080874d,*(int *)((int)param_1 + 0x20),local_8,
+                           CONCAT22((short)((uint)*(int *)((int)param_1 + 0x74a) >> 0x10),
+                                    *(undefined2 *)((int)param_1 + 0x32)));
+                STAllPlayersC::DelObjFromSaveTmps
+                          (DAT_007fa174,*(int *)((int)param_1 + 0x20),*(char *)((int)param_1 + 0x24)
+                           ,*(short *)((int)param_1 + 0x32));
                 thunk_FUN_004ad5e0((int)this);
               }
             }
@@ -446,7 +448,7 @@ LAB_00480f12:
         sVar18 = 0;
         sVar19 = 0;
         bVar20 = 0;
-        lVar12 = __ftol();
+        lVar12 = Library::MSVCRT::__ftol();
         iVar7 = (int)local_14 + *(short *)((int)param_1 + 0x45) + local_10 + (int)(short)lVar12;
         iVar10 = (int)*(short *)((int)param_1 + 0x43) - (int)local_18._2_2_;
         iVar11 = (int)(short)local_18 + iVar3 + *(short *)((int)param_1 + 0x41);
@@ -458,8 +460,9 @@ LAB_00480f12:
         local_18._0_2_ = (short)uVar8;
         iVar11 = (int)(short)local_18 + iVar3 + *(short *)((int)param_1 + 0x41);
       }
-      thunk_FUN_00556760(DAT_00802a7c,1,2,7,iVar11,iVar10 + ((uVar4 >> 0x10) % 7 - 3),iVar7,sVar13,
-                         sVar14,sVar15,sVar16,sVar17,sVar18,iVar5,sVar19,bVar20);
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,1,2,7,iVar11,iVar10 + ((uVar4 >> 0x10) % 7 - 3),iVar7,sVar13,sVar14,
+                 sVar15,sVar16,sVar17,sVar18,iVar5,sVar19,bVar20);
       local_c = (undefined4 *)((int)local_c + 6);
       local_8 = local_8 + 1;
     } while ((int)local_8 < (int)(uint)*(byte *)((int)param_1 + 0x2bf));

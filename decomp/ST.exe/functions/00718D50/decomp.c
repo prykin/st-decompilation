@@ -30,10 +30,10 @@ FUN_00718d50(int param_1,uint param_2,int param_3,uint param_4,byte param_5,uint
   
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar3 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (param_7 == (undefined4 *)0x0) {
-      local_c = FUN_006aac10(param_3 * 4);
+      local_c = Library::DKW::LIB::FUN_006aac10(param_3 * 4);
     }
     else {
       local_c = param_7;

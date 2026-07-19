@@ -1,12 +1,12 @@
 
-void thunk_FUN_00435060(void)
+void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
 
 {
   int iVar1;
   code *pcVar2;
   byte bVar3;
   int iVar4;
-  int *piVar5;
+  STGameObjC *pSVar5;
   uint uVar6;
   int iVar7;
   undefined2 uVar9;
@@ -24,6 +24,7 @@ void thunk_FUN_00435060(void)
   int extraout_EDX_09;
   int extraout_EDX_10;
   int extraout_EDX_11;
+  int *unaff_EDI;
   uint uVar10;
   int iVar11;
   uint uStack_c;
@@ -44,16 +45,16 @@ void thunk_FUN_00435060(void)
             if (0 < iVar4) {
               do {
                 uVar6 = FUN_006acc70(*(int *)((int)&DAT_007f4f83 + iVar8 + 10),uVar10,&uStack_c);
-                piVar5 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uVar6 >> 8),
-                                                            *(undefined1 *)
-                                                             ((int)&DAT_007f4f83 + iVar8 + 4)),
-                                                   uStack_c,1);
-                if (piVar5 != (int *)0x0) {
+                pSVar5 = (STGameObjC *)
+                         GetObjPtr(this,CONCAT31((int3)(uVar6 >> 8),
+                                                 *(undefined1 *)((int)&DAT_007f4f83 + iVar8 + 4)),
+                                   uStack_c,1);
+                if (pSVar5 != (STGameObjC *)0x0) {
                   if (iStack_8 == 0) {
-                    thunk_FUN_00419df0(piVar5);
+                    STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
                   }
                   else {
-                    thunk_FUN_0041a680((int)piVar5);
+                    STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
                   }
                 }
                 uVar10 = uVar10 + 1;
@@ -62,14 +63,14 @@ void thunk_FUN_00435060(void)
           }
         }
         else if (iVar4 == 0x1ae) {
-          piVar5 = (int *)thunk_FUN_0042b620(0xffffffff,
-                                             (uint)*(ushort *)((int)&DAT_007f4f83 + iVar8 + 8),3);
-          if (piVar5 != (int *)0x0) {
+          pSVar5 = (STGameObjC *)
+                   GetObjPtr(this,0xffffffff,(uint)*(ushort *)((int)&DAT_007f4f83 + iVar8 + 8),3);
+          if (pSVar5 != (STGameObjC *)0x0) {
             if (iStack_8 == 0) {
-              thunk_FUN_00419df0(piVar5);
+              STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
             }
             else {
-              thunk_FUN_0041a680((int)piVar5);
+              STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
             }
           }
         }
@@ -101,16 +102,17 @@ void thunk_FUN_00435060(void)
             if (0 < iVar1) {
               do {
                 uVar6 = FUN_006acc70(*(int *)(iVar7 + 10),uVar10,&uStack_c);
-                piVar5 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uVar6 >> 8),
-                                                            *(undefined1 *)(iVar7 + 4)),uStack_c,1);
+                pSVar5 = (STGameObjC *)
+                         GetObjPtr(this,CONCAT31((int3)(uVar6 >> 8),*(undefined1 *)(iVar7 + 4)),
+                                   uStack_c,1);
                 iVar8 = extraout_EDX_03;
-                if (piVar5 != (int *)0x0) {
+                if (pSVar5 != (STGameObjC *)0x0) {
                   if (iStack_8 == 0) {
-                    thunk_FUN_00419df0(piVar5);
+                    STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
                     iVar8 = extraout_EDX_04;
                   }
                   else {
-                    thunk_FUN_0041a680((int)piVar5);
+                    STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
                     iVar8 = extraout_EDX_05;
                   }
                 }
@@ -122,50 +124,51 @@ void thunk_FUN_00435060(void)
         }
         else if (iVar1 != 0) {
           if (iVar1 == 0x5a) {
-            piVar5 = (int *)thunk_FUN_0042b620(0xffffffff,(uint)*(ushort *)(iVar7 + 8),4);
+            pSVar5 = (STGameObjC *)GetObjPtr(this,0xffffffff,(uint)*(ushort *)(iVar7 + 8),4);
             iVar8 = extraout_EDX_01;
-            if (piVar5 != (int *)0x0) {
+            if (pSVar5 != (STGameObjC *)0x0) {
               if (iVar11 != 0) goto LAB_004352f5;
-              thunk_FUN_00419df0(piVar5);
+              STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
               iVar8 = extraout_EDX_02;
             }
           }
           else {
             if (iVar1 != 0x172) goto LAB_00435287;
-            piVar5 = (int *)thunk_FUN_0042b620(0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8))
-                                               ,2);
+            pSVar5 = (STGameObjC *)
+                     GetObjPtr(this,0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),2);
             iVar8 = extraout_EDX;
-            if (piVar5 != (int *)0x0) {
+            if (pSVar5 != (STGameObjC *)0x0) {
               if (iVar11 != 0) goto LAB_004352f5;
-              thunk_FUN_00419df0(piVar5);
+              STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
               iVar8 = extraout_EDX_00;
             }
           }
         }
       }
       else if (iVar1 == 0x1a4) {
-        piVar5 = (int *)thunk_FUN_0042b620(0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),5);
+        pSVar5 = (STGameObjC *)
+                 GetObjPtr(this,0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),5);
         iVar8 = extraout_EDX_09;
-        if (piVar5 != (int *)0x0) {
+        if (pSVar5 != (STGameObjC *)0x0) {
           if (iVar11 == 0) {
-            thunk_FUN_00419df0(piVar5);
+            STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
             iVar8 = extraout_EDX_10;
           }
           else {
 LAB_004352f5:
-            thunk_FUN_0041a680((int)piVar5);
+            STGameObjC::ResetSelfCheckFlag(pSVar5,(int)unaff_EDI);
             iVar8 = extraout_EDX_11;
           }
         }
       }
       else if (iVar1 == 0x1b8) {
-        piVar5 = (int *)thunk_FUN_0042b620(0xffffffff,
-                                           CONCAT22((short)((uint)iVar4 >> 0x10),
-                                                    *(undefined2 *)(iVar7 + 8)),6);
+        pSVar5 = (STGameObjC *)
+                 GetObjPtr(this,0xffffffff,
+                           CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)(iVar7 + 8)),6);
         iVar8 = extraout_EDX_07;
-        if (piVar5 != (int *)0x0) {
+        if (pSVar5 != (STGameObjC *)0x0) {
           if (iVar11 != 0) goto LAB_004352f5;
-          thunk_FUN_00419df0(piVar5);
+          STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
           iVar8 = extraout_EDX_08;
         }
       }

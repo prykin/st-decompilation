@@ -38,7 +38,7 @@ cTypingTy::TypingInit
   }
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar8 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0xa23,0,iVar4,&DAT_007a4ccc,
@@ -142,7 +142,7 @@ cTypingTy::TypingInit
       pcVar5 = pcVar5 + 1;
     }
     iVar4 = FUN_00711470(param_1);
-    puVar6 = FUN_006aac10(iVar4 * 4 + 3);
+    puVar6 = Library::DKW::LIB::FUN_006aac10(iVar4 * 4 + 3);
     *(undefined4 **)(pcVar3 + 0xa8) = puVar6;
   }
   else {
@@ -173,7 +173,7 @@ cTypingTy::TypingInit
   if (*(int *)(pcVar3 + 0x6c) == -1) {
     *(int *)(pcVar3 + 0x6c) = (*(int *)pcVar5 - *(int *)(pcVar3 + 100)) / 2;
   }
-  puVar6 = FUN_006aac10(*(int *)(pcVar3 + 8) * 2 + 10);
+  puVar6 = Library::DKW::LIB::FUN_006aac10(*(int *)(pcVar3 + 8) * 2 + 10);
   *(undefined4 **)(pcVar3 + 0x88) = puVar6;
   ccFntTy::Save(param_2,(undefined4 *)(pcVar3 + 0x10));
   uVar9 = 0xffffffff;
@@ -184,7 +184,7 @@ cTypingTy::TypingInit
     uVar10 = *puVar7;
     puVar7 = (uint *)((int)puVar7 + 1);
   } while ((char)uVar10 != '\0');
-  puVar7 = (uint *)FUN_006aac70(~uVar9);
+  puVar7 = (uint *)Library::DKW::LIB::FUN_006aac70(~uVar9);
   uVar9 = 0xffffffff;
   *(uint **)(pcVar3 + 0x58) = puVar7;
   puVar11 = param_1;

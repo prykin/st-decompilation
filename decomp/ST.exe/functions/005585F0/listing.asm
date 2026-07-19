@@ -1,4 +1,4 @@
-FUN_005585f0:
+Visible::PrepareAfterSave:
 005585F0  55                        PUSH EBP
 005585F1  8B EC                     MOV EBP,ESP
 005585F3  83 EC 54                  SUB ESP,0x54

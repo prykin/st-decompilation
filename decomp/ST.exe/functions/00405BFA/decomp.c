@@ -109,8 +109,8 @@ switchD_006239c1_caseD_4:
           *(int *)(&DAT_007d04c0 + (uint)*(byte *)((int)param_1 + 0x2ad) * 4)) {
         thunk_FUN_004ad0e0((void *)((int)param_1 + 0x1d5),9);
       }
-      thunk_FUN_004abe40((STT3DSprC *)((int)param_1 + 0x1d5),'\t',
-                         *(undefined4 *)((int)param_1 + 0x2db));
+      STT3DSprC::SetCurFase
+                ((STT3DSprC *)((int)param_1 + 0x1d5),'\t',*(undefined4 *)((int)param_1 + 0x2db));
       STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\t');
     }
     if (*(int *)((int)param_1 + 0x2db) < *(int *)((int)param_1 + 0x2d7)) {
@@ -123,14 +123,15 @@ switchD_006239c1_caseD_4:
       thunk_FUN_004ad070((void *)((int)param_1 + 0x1d5),10);
     }
     else {
-      thunk_FUN_004abe40((STT3DSprC *)((int)param_1 + 0x1d5),'\n',*(int *)((int)param_1 + 0x2e1));
+      STT3DSprC::SetCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\n',*(int *)((int)param_1 + 0x2e1))
+      ;
       STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\n');
       *(int *)((int)param_1 + 0x2e1) = *(int *)((int)param_1 + 0x2e1) + 1;
     }
   }
   iVar2 = *(int *)((int)param_1 + 0x2ce);
   if (iVar2 < *(int *)((int)param_1 + 0x2d2)) {
-    thunk_FUN_004abe40((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e',iVar2);
+    STT3DSprC::SetCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e',iVar2);
     STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e');
 LAB_00623d08:
     *(int *)((int)param_1 + 0x2ce) = *(int *)((int)param_1 + 0x2ce) + 1;
@@ -152,14 +153,14 @@ LAB_00623d08:
     return uStack_8;
   }
   if (DAT_00802a88 != (void *)0x0) {
-    lVar5 = __ftol();
+    lVar5 = Library::MSVCRT::__ftol();
     iVar2 = (int)lVar5;
     if ((DAT_0080874d != -1) && (*(int *)((int)this + 0xf8) != 0)) {
       piVar7 = &iStack_1c;
       piVar6 = &iStack_18;
-      lVar5 = __ftol();
+      lVar5 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar5;
-      lVar5 = __ftol();
+      lVar5 = Library::MSVCRT::__ftol();
       thunk_FUN_00558c00(this,*(undefined4 *)((int)this + 0x10c),(int)lVar5,iVar4,piVar6,piVar7);
       if ((((-1 < iVar2) &&
            (((iVar2 < 5 && (-1 < iStack_18)) && (iStack_18 < *(int *)((int)this + 0x30))))) &&

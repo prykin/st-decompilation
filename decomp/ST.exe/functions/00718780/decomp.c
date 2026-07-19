@@ -34,10 +34,10 @@ FUN_00718780(int param_1,int param_2,int param_3,int param_4,int param_5,undefin
   local_14 = -1.0;
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     if (param_6 == (undefined4 *)0x0) {
-      param_6 = FUN_006aac10(param_2 + param_3);
+      param_6 = Library::DKW::LIB::FUN_006aac10(param_2 + param_3);
     }
     local_8 = &local_c6c;
     iVar3 = 0;

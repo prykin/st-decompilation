@@ -1,4 +1,4 @@
-FUN_00556760:
+TraksClassTy::TraksCreate:
 00556760  55                        PUSH EBP
 00556761  8B EC                     MOV EBP,ESP
 00556763  81 EC A4 00 00 00         SUB ESP,0xa4

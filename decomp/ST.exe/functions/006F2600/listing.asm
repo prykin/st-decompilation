@@ -1,4 +1,4 @@
-FUN_006f2600:
+cMf32::RecGetOrigLen:
 006F2600  55                        PUSH EBP
 006F2601  8B EC                     MOV EBP,ESP
 006F2603  81 EC 54 01 00 00         SUB ESP,0x154

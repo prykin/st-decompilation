@@ -40,7 +40,7 @@ void __fastcall thunk_FUN_00696810(void *param_1)
         uVar6 = 0;
         uVar5 = 0;
         iVar4 = 0;
-        uVar3 = FUN_0072e6c0();
+        uVar3 = Library::MSVCRT::FUN_0072e6c0();
         uVar3 = thunk_FUN_00695c10(param_1,uStack_10,
                                    (int)uVar3 % *(int *)((int)param_1 + 0x5847) + 1,iVar4,uVar5,
                                    uVar6);

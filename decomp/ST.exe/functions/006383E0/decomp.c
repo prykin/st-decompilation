@@ -95,7 +95,7 @@ FUN_006383e0(int param_1,int param_2,int param_3,undefined4 param_4,undefined2 p
   }
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   local_a0 = 0;
   local_1c = &stack0xffffff4c;

@@ -17,7 +17,7 @@ undefined4 * __thiscall thunk_FUN_00614950(void *this,int *param_1)
   if (*(int *)((int)this + 0x2e5) != 0) {
     iStack_8 = iStack_8 + *(int *)((int)this + 0x2e1) * 4;
   }
-  puVar1 = (undefined4 *)FUN_006aac70(iStack_8);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iStack_8);
   if (this == (void *)0x0) {
     puVar4 = (undefined4 *)0x0;
   }

@@ -14,7 +14,7 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pBStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pBVar2 = pBStack_8;
   if (errorCode == 0) {
     if (*(uint *)(pBStack_8 + 0x1be) != 0) {

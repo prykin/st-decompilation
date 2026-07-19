@@ -36,7 +36,7 @@ FUN_0069b530(void *this,undefined4 param_1,int param_2,int param_3,int param_4,i
   local_8 = 0;
   iVar8 = *(int *)((int)this + 0x5847);
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   local_34 = 0;
   if (0 < iVar8) {

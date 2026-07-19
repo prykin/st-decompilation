@@ -33,7 +33,7 @@ LAB_00749680:
       }
       iVar3 = *(int *)(param_1 + 0x3c);
       while (iVar3 < *(int *)(param_1 + 0x38)) {
-        this = (void *)FUN_0072e530(0x48);
+        this = (void *)Library::MSVCRT::FUN_0072e530(0x48);
         if (this == (void *)0x0) {
           iVar3 = 0;
         }

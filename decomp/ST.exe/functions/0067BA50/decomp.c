@@ -28,7 +28,7 @@ undefined4 __cdecl FUN_0067ba50(int param_1,uint *param_2)
     _local_14 = CONCAT22(local_3f,*(undefined2 *)(param_1 + 0x7d));
     local_c = local_39;
     local_8 = 0xffffffff;
-    FUN_006ae1c0(param_2,(undefined4 *)&local_14);
+    Library::DKW::TBL::FUN_006ae1c0(param_2,(undefined4 *)&local_14);
   }
   return 0;
 }

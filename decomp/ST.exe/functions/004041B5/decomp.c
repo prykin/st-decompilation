@@ -16,7 +16,7 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,uint param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pPStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = pPStack_8;
   if (iVar3 == 0) {
     uVar5 = param_1 & 0xff;

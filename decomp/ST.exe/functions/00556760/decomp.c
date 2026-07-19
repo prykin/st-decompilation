@@ -1,10 +1,14 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\grig\traks.cpp
+   TraksClassTy::TraksCreate */
 
 uint __thiscall
-FUN_00556760(void *this,short param_1,short param_2,uint param_3,int param_4,int param_5,int param_6
-            ,short param_7,short param_8,short param_9,short param_10,short param_11,short param_12,
-            int param_13,short param_14,byte param_15)
+TraksClassTy::TraksCreate
+          (TraksClassTy *this,short param_1,short param_2,uint param_3,int param_4,int param_5,
+          int param_6,short param_7,short param_8,short param_9,short param_10,short param_11,
+          short param_12,int param_13,short param_14,byte param_15)
 
 {
   code *pcVar1;
@@ -25,7 +29,7 @@ FUN_00556760(void *this,short param_1,short param_2,uint param_3,int param_4,int
   undefined4 *puVar14;
   InternalExceptionFrame local_a8;
   uint local_64;
-  void *local_60;
+  TraksClassTy *local_60;
   int local_5c;
   short local_58;
   short local_56;
@@ -63,7 +67,7 @@ FUN_00556760(void *this,short param_1,short param_2,uint param_3,int param_4,int
   if (((param_15 & 1) == 0) && (DAT_0080731e == 0)) {
     return 0;
   }
-  if (*(int *)((int)this + 0x24) == 0) {
+  if (*(int *)(this + 0x24) == 0) {
     return 0;
   }
   if (param_4 < 0) {
@@ -135,7 +139,7 @@ LAB_00556926:
 LAB_0055693a:
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
-  iVar8 = __setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_a8.previous;
     iVar3 = ReportDebugMessage(s_E____titans_grig_traks_cpp_007c9104,0x1bc,0,iVar8,&DAT_007a4ccc,
@@ -218,7 +222,7 @@ LAB_0055693a:
                (float)(int)local_52 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   FUN_006eaaa0(DAT_00807598,local_26,0);
   local_36 = (undefined2)param_3;
-  local_34 = *(undefined4 *)((int)local_60 + 0x20);
+  local_34 = *(undefined4 *)(local_60 + 0x20);
   if (iVar8 != 0) {
     uVar11 = thunk_FUN_00555d90(local_60,(undefined4 *)&local_58);
     g_currentExceptionFrame = local_a8.previous;

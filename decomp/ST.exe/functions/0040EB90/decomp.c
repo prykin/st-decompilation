@@ -36,7 +36,7 @@ undefined4 FUN_0040eb90(void)
   iVar9 = 0;
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   iVar7 = 0;
   DAT_007f4d00 = (int *)&stack0xffffff74;

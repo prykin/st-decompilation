@@ -49,7 +49,7 @@ undefined4 __thiscall FUN_0060ea30(void *this,uint param_1)
       }
       *(undefined1 *)puVar4 = 0;
       if (((*(int *)((int)this + 0x20c) != 7) && (*(int *)((int)this + 0x20c) != 9)) &&
-         (iVar3 = thunk_FUN_006132f0(1,0), iVar3 != 0)) {
+         (iVar3 = STGenBombC::LoadImagSpr(this,1,0), iVar3 != 0)) {
         return 0;
       }
       thunk_FUN_0060ec00(this);

@@ -20,7 +20,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pGVar3 = local_8;
   if (errorCode == 0) {
     if (*(int *)(local_8 + 0x431) != 0) {
@@ -38,7 +38,7 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
     DAT_0080674c = 0;
     if (DAT_00807598 != (int *)0x0) {
       FUN_006dbcf0(DAT_00807598);
-      FUN_0072e2b0(piVar2);
+      Library::MSVCRT::FUN_0072e2b0(piVar2);
       DAT_00807598 = (int *)0x0;
     }
     thunk_FUN_00578370();

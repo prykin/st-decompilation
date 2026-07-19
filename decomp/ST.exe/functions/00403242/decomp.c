@@ -28,7 +28,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pPStack_14 = this;
-  iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar3 = pPStack_14;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_58.previous;
@@ -117,8 +117,9 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
         _Count = 0x14;
         do {
           _Count = _Count + 1;
-          _strncpy((char *)&DAT_0080f33a,
-                   (char *)(&DAT_00808ab0 + (iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x27),_Count);
+          Library::MSVCRT::_strncpy
+                    ((char *)&DAT_0080f33a,
+                     (char *)(&DAT_00808ab0 + (iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x27),_Count);
           iVar8 = FUN_00711110(*(void **)(pPVar3 + 0x1dd),&DAT_0080f33a);
           if (0x10d < iVar8) break;
         } while ((int)_Count < iStack_8);
@@ -131,8 +132,9 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     iStack_10 = iStack_10 + -1;
     if (iStack_10 == 0) {
       iStack_8 = iVar4;
-      FUN_006b3640(DAT_008075a8,*(uint *)(pPVar3 + 0x60),0xffffffff,*(uint *)(pPVar3 + 0x3c),
-                   *(uint *)(pPVar3 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(pPVar3 + 0x60),0xffffffff,*(uint *)(pPVar3 + 0x3c),
+                 *(uint *)(pPVar3 + 0x44));
       g_currentExceptionFrame = IStack_58.previous;
       return;
     }

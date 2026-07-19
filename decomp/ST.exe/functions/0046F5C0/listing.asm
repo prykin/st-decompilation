@@ -1,4 +1,4 @@
-FUN_0046f5c0:
+STBoatC::ToDok:
 0046F5C0  55                        PUSH EBP
 0046F5C1  8B EC                     MOV EBP,ESP
 0046F5C3  83 EC 24                  SUB ESP,0x24

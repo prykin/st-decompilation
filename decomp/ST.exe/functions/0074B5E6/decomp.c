@@ -19,9 +19,10 @@ FUN_0074b5e6(void *this,uint param_1,int *param_2,uint param_3,int param_4,uint 
     }
     else {
       lVar3 = FUN_0074d786(param_5,param_6,param_5,param_6,param_1,(int)param_1 >> 0x1f,0,0);
-      uVar4 = __alldiv(param_3 - (uint)lVar3,
-                       (param_4 - (int)((ulonglong)lVar3 >> 0x20)) - (uint)(param_3 < (uint)lVar3),
-                       param_1 - 1,(int)(param_1 - 1) >> 0x1f);
+      uVar4 = Library::MSVCRT::__alldiv
+                        (param_3 - (uint)lVar3,
+                         (param_4 - (int)((ulonglong)lVar3 >> 0x20)) - (uint)(param_3 < (uint)lVar3)
+                         ,param_1 - 1,(int)(param_1 - 1) >> 0x1f);
       iVar2 = FUN_0074b584((int)uVar4);
       *param_2 = iVar2;
     }

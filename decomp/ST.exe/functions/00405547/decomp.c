@@ -12,9 +12,9 @@ void thunk_FUN_004a8f20(int param_1)
                  (int)((ulonglong)(double)_DAT_008073d4 >> 0x20));
     DAT_008073d0 = (float)*(double *)((int)DAT_00807598 + 0x98);
     _DAT_008073d4 = (float)*(double *)((int)DAT_00807598 + 0xa0);
-    lVar1 = __ftol();
+    lVar1 = Library::MSVCRT::__ftol();
     DAT_008073d8 = (undefined4)lVar1;
-    lVar1 = __ftol();
+    lVar1 = Library::MSVCRT::__ftol();
     DAT_008073dc = (undefined4)lVar1;
   }
   return;

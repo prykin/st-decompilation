@@ -1,4 +1,4 @@
-FUN_0071f3a0:
+ListClassTy::GetMessage:
 0071F3A0  55                        PUSH EBP
 0071F3A1  8B EC                     MOV EBP,ESP
 0071F3A3  81 EC 98 00 00 00         SUB ESP,0x98

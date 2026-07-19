@@ -14,7 +14,7 @@ void __cdecl FUN_00675ea0(uint param_1,int *param_2)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar4 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_48.previous;
     iVar6 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x101,0,iVar4,&DAT_007a4ccc,
@@ -51,8 +51,8 @@ void __cdecl FUN_00675ea0(uint param_1,int *param_2)
   bVar3 = true;
 LAB_00675f12:
   if (bVar3) {
-    puVar5 = FUN_006ae290((uint *)0x0,1,2,1);
-    FUN_006ae1c0(puVar5,(undefined4 *)((int)param_2 + 0x32));
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+    Library::DKW::TBL::FUN_006ae1c0(puVar5,(undefined4 *)((int)param_2 + 0x32));
     thunk_FUN_00675dc0(param_1,(int)puVar5);
     FUN_006ae110((byte *)puVar5);
   }

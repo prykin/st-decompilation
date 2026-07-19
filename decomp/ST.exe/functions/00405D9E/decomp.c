@@ -30,7 +30,7 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   uStack_8 = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
   pFStack_14 = this;
-  iVar3 = __setjmp3(auStack_58,0,unaff_ESI,pIVar7);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_58,0,unaff_ESI,pIVar7);
   pFVar2 = pFStack_14;
   if (iVar3 != 0) {
     g_currentExceptionFrame = pIVar7;
@@ -58,11 +58,12 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   iVar3 = 1;
   piVar6 = (int *)0x0;
   pCVar4 = FUN_006f2c00(param_2,1,uStack_8);
-  puStack_c = FUN_006f1ce0(1,pCVar4,piVar6,iVar3);
+  puStack_c = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar6,iVar3);
   thunk_FUN_00540760(*(undefined4 **)(pFVar2 + 0x68),iStack_18,iStack_10,'\x01',(byte *)puStack_c);
   cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_c);
-  FUN_006b3640(DAT_008075a8,*(uint *)(pFVar2 + 0x60),0xffffffff,*(uint *)(pFVar2 + 0x3c),
-               *(uint *)(pFVar2 + 0x44));
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(pFVar2 + 0x60),0xffffffff,*(uint *)(pFVar2 + 0x3c),
+             *(uint *)(pFVar2 + 0x44));
   g_currentExceptionFrame = pIVar7;
   return;
 }

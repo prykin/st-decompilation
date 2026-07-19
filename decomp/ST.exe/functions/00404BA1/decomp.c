@@ -25,7 +25,7 @@ void __thiscall thunk_FUN_004f1610(void *this,char param_1)
   iVar6 = *(int *)((int)this + uStack_10 * 4 + 0x2fe);
   if (iVar6 != 0) {
     uStack_40 = 0x5b;
-    FUN_006e5970(2,iVar6,(int)auStack_50);
+    SystemClassTy::SendMessage(*(SystemClassTy **)((int)this + 0xc),2,iVar6,(int)auStack_50);
     iStack_c = iStack_3c;
     uStack_8 = uStack_8 & 0xffffff00;
     if (uStack_38 != 0) {
@@ -60,12 +60,14 @@ void __thiscall thunk_FUN_004f1610(void *this,char param_1)
                *(undefined4 *)
                 (&DAT_00807e66 + *(int *)((uVar4 + uStack_10 * 6) * 0x27 + 0x789 + (int)this) * 4);
           puStack_1c = auStack_9c;
-          FUN_006e5970(2,*(int *)(iVar6 + uVar4 * 4),(int)auStack_30);
+          SystemClassTy::SendMessage
+                    (*(SystemClassTy **)((int)this + 0xc),2,*(int *)(iVar6 + uVar4 * 4),
+                     (int)auStack_30);
           uStack_20 = 0x51;
           iVar6 = *(int *)(iStack_c + uVar4 * 4);
         }
         uStack_18 = 1;
-        FUN_006e5970(2,iVar6,(int)auStack_30);
+        SystemClassTy::SendMessage(*(SystemClassTy **)((int)this + 0xc),2,iVar6,(int)auStack_30);
         bVar3 = (char)uStack_8 + 1;
         uStack_8 = CONCAT31(uStack_8._1_3_,bVar3);
       } while (bVar3 < uStack_38);

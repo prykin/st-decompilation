@@ -20,7 +20,7 @@ undefined4 * __cdecl FUN_006684e0(undefined4 *param_1,uint *param_2)
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iVar3 = 7;
     piVar6 = (int *)((int)param_1 + 0x1eb);
@@ -35,7 +35,7 @@ undefined4 * __cdecl FUN_006684e0(undefined4 *param_1,uint *param_2)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     *param_2 = local_c + 0x260U;
-    puVar4 = FUN_006aac10(local_c + 0x260U);
+    puVar4 = Library::DKW::LIB::FUN_006aac10(local_c + 0x260U);
     puVar7 = puVar4;
     for (iVar3 = 0x98; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar7 = *param_1;

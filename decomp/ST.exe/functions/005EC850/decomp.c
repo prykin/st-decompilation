@@ -18,7 +18,7 @@ int __thiscall FUN_005ec850(void *this,int *param_1)
   *(undefined1 *)((int)this + 0x316) = 0;
   iVar1 = *param_1;
   local_24[7] = iVar1;
-  local_24[0] = FUN_006aac70(0x44);
+  local_24[0] = Library::DKW::LIB::FUN_006aac70(0x44);
   iVar2 = 0;
   do {
     *(undefined4 *)(iVar2 + local_24[0]) = DAT_00806774;

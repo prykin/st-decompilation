@@ -21,7 +21,7 @@ void __thiscall MReportTy::NoneMReport(MReportTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pMStack_c = this;
-  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pMStack_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -98,8 +98,9 @@ LAB_005bfb27:
                            *(byte **)(*(int *)(this_00 + 0x73) + 8),'\x01',
                            *(BITMAPINFO **)(this_00 + 0x5d));
         iVar4 = *(int *)(this_00 + 0x73);
-        FUN_006b48e0(DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
-                     (int)(this_00 + 0xa3),0x4c,0x10000ff);
+        Library::DKW::DDX::FUN_006b48e0
+                  (DAT_0080759c,0x1a,0x46,iVar4,0,0,0,*(uint *)(iVar4 + 4),*(int *)(iVar4 + 8),
+                   (int)(this_00 + 0xa3),0x4c,0x10000ff);
         g_currentExceptionFrame = IStack_50.previous;
         return;
       }
@@ -122,12 +123,12 @@ LAB_005bfb27:
     if (iStack_8 != 0) {
       if (*(HoloTy **)(this_00 + 0x453) != (HoloTy *)0x0) {
         HoloTy::Done(*(HoloTy **)(this_00 + 0x453));
-        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x453));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x453));
         *(undefined4 *)(this_00 + 0x453) = 0;
       }
       if (*(HoloTy **)(this_00 + 0x457) != (HoloTy *)0x0) {
         HoloTy::Done(*(HoloTy **)(this_00 + 0x457));
-        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x457));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x457));
         *(undefined4 *)(this_00 + 0x457) = 0;
       }
       this_00[0x65] = (MReportTy)0x1;

@@ -24,14 +24,14 @@ void __thiscall thunk_FUN_005d00b0(void *this,int param_1,uint param_2)
   uStack_64._3_1_ = *(undefined1 *)(param_1 + 3);
   uStack_64._2_1_ = *(undefined1 *)(param_1 + 2);
   uStack_60 = 1;
-  FUN_006afe40(&iStack_14,puVar1);
+  Library::DKW::TBL::FUN_006afe40(&iStack_14,puVar1);
   uStack_10 = *(undefined4 *)(param_1 + 0x54);
   uStack_1a = *(undefined1 *)(param_1 + 0x4a);
   uStack_c = *(undefined4 *)(param_1 + 0x58);
   uStack_8 = *(undefined4 *)(param_1 + 0x5c);
   uStack_19 = 0;
   uStack_15 = 0;
-  FUN_006b11d0(*(uint **)((int)this + 0x1f84),param_2,&uStack_64);
+  Library::DKW::TBL::FUN_006b11d0(*(uint **)((int)this + 0x1f84),param_2,&uStack_64);
   return;
 }
 

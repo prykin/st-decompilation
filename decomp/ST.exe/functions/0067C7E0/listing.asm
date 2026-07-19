@@ -1,4 +1,4 @@
-FUN_0067c7e0:
+AiPlrClassTy::GetMessage:
 0067C7E0  55                        PUSH EBP
 0067C7E1  8B EC                     MOV EBP,ESP
 0067C7E3  81 EC AC 00 00 00         SUB ESP,0xac

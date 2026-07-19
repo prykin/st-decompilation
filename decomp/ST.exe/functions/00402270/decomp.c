@@ -20,8 +20,9 @@ void __cdecl thunk_FUN_00675dc0(uint param_1,int param_2)
       do {
         puVar1 = (undefined2 *)(*(int *)(param_2 + 8) * uVar4 + *(int *)(param_2 + 0x1c));
 LAB_00675dfe:
-        piVar2 = (int *)thunk_FUN_0042b620(param_1,CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),1
-                                          );
+        piVar2 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,param_1,
+                                   CONCAT22((short)((uint)puVar1 >> 0x10),*puVar1),1);
         if (((piVar2 != (int *)0x0) && (iVar3 = (**(code **)(*piVar2 + 0x2c))(), iVar3 == 0x78)) &&
            (iVar3 = (**(code **)(*piVar2 + 0x2c))(), iVar3 == 0x78)) {
           *(undefined4 *)((int)piVar2 + 0x269) = 0xffffffff;

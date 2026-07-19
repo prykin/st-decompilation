@@ -1,4 +1,4 @@
-FUN_00590010:
+STSharkC::CreateShark:
 00590010  55                        PUSH EBP
 00590011  8B EC                     MOV EBP,ESP
 00590013  83 EC 34                  SUB ESP,0x34

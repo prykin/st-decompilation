@@ -38,13 +38,13 @@ void FUN_007596d0(int *param_1)
       if (*piVar2 == 0) {
         if (iVar3 < (int)((piVar2[1] - 1U) / (uint)piVar2[3] + 1)) {
           piVar2[4] = piVar2[3] * iVar3;
-          FUN_00760370();
+          Library::DKW::JPG::FUN_00760370();
           piVar2[10] = 1;
         }
         else {
           piVar2[4] = piVar2[1];
         }
-        iVar4 = FUN_00759480(param_1,1,piVar2[2],piVar2[4]);
+        iVar4 = Library::DKW::JPG::FUN_00759480(param_1,1,piVar2[2],piVar2[4]);
         *piVar2 = iVar4;
         piVar2[5] = *(int *)(iVar1 + 0x4c);
         piVar2[6] = 0;
@@ -56,13 +56,13 @@ void FUN_007596d0(int *param_1)
       if (*piVar2 == 0) {
         if (iVar3 < (int)((piVar2[1] - 1U) / (uint)piVar2[3] + 1)) {
           piVar2[4] = piVar2[3] * iVar3;
-          FUN_00760370();
+          Library::DKW::JPG::FUN_00760370();
           piVar2[10] = 1;
         }
         else {
           piVar2[4] = piVar2[1];
         }
-        iVar4 = FUN_00759530(param_1,1,piVar2[2],piVar2[4]);
+        iVar4 = Library::DKW::JPG::FUN_00759530(param_1,1,piVar2[2],piVar2[4]);
         *piVar2 = iVar4;
         piVar2[5] = *(int *)(iVar1 + 0x4c);
         piVar2[6] = 0;

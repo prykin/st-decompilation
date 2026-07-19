@@ -15,9 +15,9 @@ thunk_FUN_006774c0(undefined4 param_1,byte *param_2,char param_3,short param_4,s
   pIVar3 = g_currentExceptionFrame;
   puStack_8 = (uint *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  exceptionCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar3);
+  exceptionCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar3);
   if (exceptionCode == 0) {
-    puVar1 = FUN_006ae290((uint *)0x0,10,2,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
     puVar2 = &LAB_00401852;
     if (param_10 == 0) {
       puVar2 = &LAB_00403490;

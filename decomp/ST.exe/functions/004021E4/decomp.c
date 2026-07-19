@@ -41,7 +41,7 @@ void __fastcall thunk_FUN_005de670(int param_1)
   }
   IStack_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_68;
-  iVar2 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_68.previous;
     if (pvStack_14 != (HANDLE)0xffffffff) {
@@ -58,7 +58,7 @@ void __fastcall thunk_FUN_005de670(int param_1)
     *(undefined4 *)(iStack_1c + 0x69e) = 0;
     return;
   }
-  FUN_0072e730(&DAT_0080ed16,abStack_478,abStack_374,abStack_16c,(byte *)0x0);
+  Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,abStack_478,abStack_374,abStack_16c,(byte *)0x0);
   uStack_18 = 0xffffffff;
   pbVar8 = abStack_16c;
   do {
@@ -68,7 +68,8 @@ void __fastcall thunk_FUN_005de670(int param_1)
     pbVar8 = pbVar8 + 1;
   } while (bVar1 != 0);
   uStack_18 = ~uStack_18;
-  __makepath(acStack_270,(char *)abStack_478,(char *)abStack_374,(char *)abStack_16c,
+  Library::MSVCRT::__makepath
+            (acStack_270,(char *)abStack_478,(char *)abStack_374,(char *)abStack_16c,
              PTR_DAT_0079c1c0);
   pvVar3 = CreateFileA(acStack_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   pvStack_14 = pvVar3;
@@ -81,7 +82,8 @@ void __fastcall thunk_FUN_005de670(int param_1)
   if (DVar4 == 0xffffffff) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x415);
   }
-  __makepath(acStack_270,(char *)abStack_478,(char *)abStack_374,(char *)abStack_16c,
+  Library::MSVCRT::__makepath
+            (acStack_270,(char *)abStack_478,(char *)abStack_374,(char *)abStack_16c,
              PTR_DAT_0079c1c4);
   hFile = CreateFileA(acStack_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   pvStack_10 = hFile;
@@ -93,7 +95,8 @@ void __fastcall thunk_FUN_005de670(int param_1)
   if (DVar4 == 0xffffffff) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
-  pvStack_c = (LPVOID)FUN_006aac70(*(int *)(iVar2 + 0x6ae) + uStack_18 + *(int *)(iVar2 + 0x6b2));
+  pvStack_c = (LPVOID)Library::DKW::LIB::FUN_006aac70
+                                (*(int *)(iVar2 + 0x6ae) + uStack_18 + *(int *)(iVar2 + 0x6b2));
   if (pvStack_c == (LPVOID)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
   }

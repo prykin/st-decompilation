@@ -1,12 +1,17 @@
 
-undefined4 FUN_00667d90(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_flt.cpp
+   AiFltClassTy::GetMessage */
+
+undefined4 __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,int param_1)
 
 {
   undefined4 *puVar1;
   code *pcVar2;
+  AiFltClassTy *this_00;
   int iVar3;
   uint uVar4;
-  STGroupC *this;
+  STGroupC *this_01;
   int iVar5;
   undefined4 uVar6;
   undefined4 extraout_EDX;
@@ -21,7 +26,9 @@ undefined4 FUN_00667d90(int param_1)
   
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar3 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_10 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar5 = ReportDebugMessage(s_E____titans_ai_ai_flt_cpp_007d2b80,0xeca,0,iVar3,
@@ -44,8 +51,8 @@ undefined4 FUN_00667d90(int param_1)
     else if (uVar4 < 4) {
       if (uVar4 == 3) {
         thunk_FUN_0065d6e0((int)local_10,extraout_EDX);
-        thunk_FUN_0065d720((int)local_10,extraout_EDX_01);
-        thunk_FUN_0065d480((int)local_10);
+        thunk_FUN_0065d720((int)this_00,extraout_EDX_01);
+        thunk_FUN_0065d480((int)this_00);
       }
       else if (uVar4 == 0) {
         if (*(int *)(local_10 + 0x93) == 0) {
@@ -54,7 +61,7 @@ undefined4 FUN_00667d90(int param_1)
         }
         else {
           thunk_FUN_00664960(local_10);
-          thunk_FUN_00661580(local_10);
+          thunk_FUN_00661580(this_00);
         }
       }
       else if (uVar4 == 2) {
@@ -62,54 +69,54 @@ undefined4 FUN_00667d90(int param_1)
         if (puVar1 == (undefined4 *)0x0) {
           RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0xe70);
         }
-        AiFltClassTy::InitData(local_10,puVar1);
+        InitData(this_00,puVar1);
         if (puVar1[3] == 0) {
-          *(undefined4 *)(local_10 + 0x1c) = DAT_00808754;
+          *(undefined4 *)(this_00 + 0x1c) = DAT_00808754;
         }
         else {
-          *(undefined4 *)(local_10 + 0x1c) = *(undefined4 *)(local_10 + 0x86);
+          *(undefined4 *)(this_00 + 0x1c) = *(undefined4 *)(this_00 + 0x86);
         }
         iVar3 = puVar1[3];
         iVar5 = extraout_EDX_00;
         if (iVar3 == 0) {
-          uVar4 = thunk_FUN_00435850(CONCAT31((int3)((uint)extraout_EDX_00 >> 8),local_10[0x24]),1,
+          uVar4 = thunk_FUN_00435850(CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00[0x24]),1,
                                      (int *)0x0);
-          *(short *)(local_10 + 0x7d) = (short)uVar4;
-          thunk_FUN_0065d6a0((int)local_10);
-          uVar4 = *(int *)(local_10 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)(local_10 + 0x1c) = uVar4;
-          *(uint *)(local_10 + 0x8b) = (uVar4 >> 0x10 & 7) + 8;
-          uVar4 = *(int *)(local_10 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)(local_10 + 0x1c) = uVar4;
-          *(uint *)(local_10 + 0x1fb) = (uVar4 >> 0x10) % 0x1a + 0x19;
-          uVar4 = *(int *)(local_10 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)(local_10 + 0x1c) = uVar4;
-          *(uint *)(local_10 + 0x203) = (uVar4 >> 0x10) % 0x1a + 0x19;
-          thunk_FUN_00676c40(*(int *)(local_10 + 0x20b),&LAB_004013cf);
-          iVar5 = *(int *)(local_10 + 0x223);
-          *(undefined2 *)(local_10 + 0x170) = *(undefined2 *)(*(int *)(local_10 + 0x22f) + 0xc);
-          iVar3 = CONCAT22((short)((uint)*(int *)(local_10 + 0x22f) >> 0x10),
+          *(short *)(this_00 + 0x7d) = (short)uVar4;
+          thunk_FUN_0065d6a0((int)this_00);
+          uVar4 = *(int *)(this_00 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(this_00 + 0x1c) = uVar4;
+          *(uint *)(this_00 + 0x8b) = (uVar4 >> 0x10 & 7) + 8;
+          uVar4 = *(int *)(this_00 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(this_00 + 0x1c) = uVar4;
+          *(uint *)(this_00 + 0x1fb) = (uVar4 >> 0x10) % 0x1a + 0x19;
+          uVar4 = *(int *)(this_00 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(this_00 + 0x1c) = uVar4;
+          *(uint *)(this_00 + 0x203) = (uVar4 >> 0x10) % 0x1a + 0x19;
+          thunk_FUN_00676c40(*(int *)(this_00 + 0x20b),&LAB_004013cf);
+          iVar5 = *(int *)(this_00 + 0x223);
+          *(undefined2 *)(this_00 + 0x170) = *(undefined2 *)(*(int *)(this_00 + 0x22f) + 0xc);
+          iVar3 = CONCAT22((short)((uint)*(int *)(this_00 + 0x22f) >> 0x10),
                            *(undefined2 *)(iVar5 + 0xc));
-          *(undefined2 *)(local_10 + 0x127) = *(undefined2 *)(iVar5 + 0xc);
+          *(undefined2 *)(this_00 + 0x127) = *(undefined2 *)(iVar5 + 0xc);
         }
-        if ((*(short *)(local_10 + 0x7d) == -2) || (DAT_007fa174 == 0)) {
-          this = (STGroupC *)0x0;
+        if ((*(short *)(this_00 + 0x7d) == -2) || (DAT_007fa174 == 0)) {
+          this_01 = (STGroupC *)0x0;
         }
         else {
-          this = (STGroupC *)
-                 thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar5 >> 8),local_10[0x24]),
-                                    CONCAT22((short)((uint)iVar3 >> 0x10),
-                                             *(short *)(local_10 + 0x7d)));
+          this_01 = (STGroupC *)
+                    thunk_FUN_0042b760(CONCAT31((int3)((uint)iVar5 >> 8),this_00[0x24]),
+                                       CONCAT22((short)((uint)iVar3 >> 0x10),
+                                                *(short *)(this_00 + 0x7d)));
         }
-        if (this != (STGroupC *)0x0) {
-          STGroupC::SetAVPar(this,1);
+        if (this_01 != (STGroupC *)0x0) {
+          STGroupC::SetAVPar(this_01,1);
         }
       }
     }
     else if (uVar4 == 0x10f) {
       local_8 = 0;
-      local_c = (byte *)AiFltClassTy::PrepareToSave(local_10,&local_8);
-      STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(local_10 + 0x18),local_c,local_8);
+      local_c = (byte *)PrepareToSave(local_10,&local_8);
+      STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_c,local_8);
       if (local_c != (byte *)0x0) {
         FUN_006ab060(&local_c);
       }

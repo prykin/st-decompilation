@@ -42,8 +42,9 @@ undefined4 __fastcall FUN_006d54c0(void *param_1)
   *(int *)(*(int *)((int)param_1 + 0x288) + 0xb8) = piVar1[8];
   *(int *)(*(int *)((int)param_1 + 0x288) + 0xbc) = piVar1[9];
   uVar4 = piVar1[0xe] >> 0x1f;
-  local_10 = FUN_006c4350(*(int *)(*(int *)((int)param_1 + 0x288) + 0x28),&local_8,piVar1[0xd],
-                          (piVar1[0xe] ^ uVar4) - uVar4,0,0);
+  local_10 = Library::DKW::DDX::FUN_006c4350
+                       (*(int *)(*(int *)((int)param_1 + 0x288) + 0x28),&local_8,piVar1[0xd],
+                        (piVar1[0xe] ^ uVar4) - uVar4,0,0);
   if (local_10 == 0) {
     local_10 = 0;
     local_c = 0;

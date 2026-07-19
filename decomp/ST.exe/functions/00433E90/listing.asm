@@ -1,4 +1,4 @@
-FUN_00433e90:
+STAllPlayersC::PointPick:
 00433E90  55                        PUSH EBP
 00433E91  8B EC                     MOV EBP,ESP
 00433E93  51                        PUSH ECX

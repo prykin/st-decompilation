@@ -19,7 +19,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pMStack_c = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pMStack_c;
   if (errorCode == 0) {
     uStack_8 = uStack_8 & 0xffffff00;

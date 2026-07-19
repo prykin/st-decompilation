@@ -16,7 +16,7 @@ undefined4 * __cdecl FUN_00725550(int param_1,char *param_2,int param_3)
   local_c = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar3 = ReportDebugMessage(s_E__ourlib_mfpla_cpp_007f0c44,0x27,0,iVar2,&DAT_007a4ccc,
@@ -35,7 +35,7 @@ undefined4 * __cdecl FUN_00725550(int param_1,char *param_2,int param_3)
   }
   iVar2 = FUN_007256a0(param_1,param_2,param_3);
   if (-1 < iVar2) {
-    FUN_006f1ce0(0xd,param_2,(int *)&local_8,param_3);
+    cMf32::RecGet((cMf32 *)param_1,0xd,param_2,(int *)&local_8,param_3);
     if (local_8 != (undefined4 *)0x0) {
       puVar4 = local_8;
       if (0 < iVar2) {

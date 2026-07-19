@@ -22,7 +22,7 @@ void __thiscall CPanelTy::PaintBioSonar(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_c;
   if (iVar3 == 0) {
     pbVar4 = (byte *)FUN_0070b3a0(*(int *)(local_c + 0x2b2),1);

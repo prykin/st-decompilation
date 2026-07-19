@@ -21,7 +21,7 @@ undefined4 __thiscall STGroupC::AddObjs(STGroupC *this,int param_1,int param_2)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pSStack_10 = this;
-  errorCode = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar2 = uStack_c;
   this_00 = pSStack_10;
   if (errorCode != 0) {

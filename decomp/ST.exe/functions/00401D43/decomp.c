@@ -11,7 +11,7 @@ void __cdecl thunk_FUN_0055dbf0(undefined4 *param_1,int param_2,int param_3)
   
   IStack_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_48;
-  errorCode = __setjmp3(IStack_48.jumpBuffer,0,unaff_ESI,in_stack_fffffbb8);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_48.jumpBuffer,0,unaff_ESI,in_stack_fffffbb8);
   if (errorCode == 0) {
     FUN_006b0ba0((int)param_1,&stack0xfffffbb8,0,0x100);
     FUN_007192d0(param_1,(undefined4 *)&stack0xfffffbb8,0,0x100,param_2,param_3);

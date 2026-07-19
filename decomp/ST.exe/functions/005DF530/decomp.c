@@ -20,11 +20,12 @@ MTaskTy::OutGlassBmpProc
   pIVar4 = g_currentExceptionFrame;
   if (((param_8 != (int *)0x0) && (local_8 = param_8, *param_8 != 0)) && (param_8[1] != 0)) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-    iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+    iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
     if (iVar2 == 0) {
       iVar2 = *local_8;
-      FUN_006b48e0(param_1,param_4,param_5,iVar2,0,0,0,*(uint *)(iVar2 + 4),*(int *)(iVar2 + 8),
-                   local_8[1],0,0x10000ff);
+      Library::DKW::DDX::FUN_006b48e0
+                (param_1,param_4,param_5,iVar2,0,0,0,*(uint *)(iVar2 + 4),*(int *)(iVar2 + 8),
+                 local_8[1],0,0x10000ff);
       g_currentExceptionFrame = pIVar4;
       return;
     }

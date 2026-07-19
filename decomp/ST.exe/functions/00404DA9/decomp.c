@@ -15,7 +15,7 @@ uint * __cdecl thunk_FUN_00676170(undefined4 param_1)
   pIVar4 = g_currentExceptionFrame;
   puStack_8 = (uint *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar4;
     iVar3 = ReportDebugMessage(s_E____titans_ai_ai_mdef_cpp_007d2d58,0x125,0,errorCode,&DAT_007a4ccc

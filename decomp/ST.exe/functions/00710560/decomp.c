@@ -1,5 +1,9 @@
 
-void __cdecl FUN_00710560(uint *param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\mfcfnt.cpp
+   ccFntTy::operator */
+
+void __thiscall ccFntTy::operator(ccFntTy *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -16,7 +20,7 @@ void __cdecl FUN_00710560(uint *param_1)
   iVar4 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = local_8;
   if (errorCode == 0) {
     if (local_8 != (uint *)0x0) {

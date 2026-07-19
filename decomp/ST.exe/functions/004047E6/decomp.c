@@ -8,14 +8,14 @@ void __thiscall thunk_FUN_0069f5c0(void *this,uint param_1,uint param_2,uint par
   
   uVar1 = param_3;
   if (param_3 == 0) {
-    uVar2 = FUN_0072e6c0();
+    uVar2 = Library::MSVCRT::FUN_0072e6c0();
     uVar2 = uVar2 & 0x8000000f;
     if ((int)uVar2 < 0) {
       uVar2 = (uVar2 - 1 | 0xfffffff0) + 1;
     }
   }
   else {
-    uVar2 = FUN_0072e6c0();
+    uVar2 = Library::MSVCRT::FUN_0072e6c0();
     uVar2 = (int)uVar2 % 0xb;
   }
   param_3 = 0;

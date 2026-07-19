@@ -41,9 +41,10 @@ int __fastcall FUN_0065dc00(int param_1,undefined4 param_2,uint param_3,char par
       else {
         puVar3 = (undefined2 *)0x0;
       }
-      piVar4 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uVar7 >> 8),*(undefined1 *)(param_1 + 0x24)
-                                                 ),CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),1
-                                        );
+      piVar4 = (int *)STAllPlayersC::GetObjPtr
+                                (DAT_007fa174,
+                                 CONCAT31((int3)(uVar7 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                                 CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),1);
       uVar7 = extraout_ECX_00;
       if ((piVar4 != (int *)0x0) &&
          (iVar5 = (**(code **)(*piVar4 + 0xf8))(), uVar7 = extraout_ECX_01, iVar5 != 0)) {

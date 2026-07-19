@@ -13,7 +13,7 @@ undefined4 __fastcall FUN_004dd570(int param_1)
       if (*(int *)(param_1 + 0x4d0) != 3) goto LAB_004dd5bb;
       *(undefined4 *)(param_1 + 0x4d0) = 0;
     }
-    thunk_FUN_004cabb0(0);
+    TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
   }
 LAB_004dd5bb:
   if ((DAT_008117a4 != (void *)0x0) && (*(int *)(param_1 + 0x4d0) == 0)) {

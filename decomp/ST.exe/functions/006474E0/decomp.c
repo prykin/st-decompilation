@@ -26,7 +26,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_14 = this;
-  errorCode = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_14;
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_1 == 2)) {

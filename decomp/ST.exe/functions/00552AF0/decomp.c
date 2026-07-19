@@ -24,7 +24,7 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
     }
     *(short *)(this + 0x2e) = sVar3;
     pIVar2 = g_currentExceptionFrame;
-    errorCode = __setjmp3(local_44,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       g_currentExceptionFrame = pIVar2;
       return;

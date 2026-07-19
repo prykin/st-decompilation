@@ -58,19 +58,19 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
   sVar2 = *(short *)((int)this + 0x25a);
   *(undefined4 *)((int)this + 0x2c1) = 0x172;
   local_1c = (float)(int)sVar2;
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   local_24 = (int)lVar10;
   local_10 = *(int *)((int)this + 0x280);
   sVar3 = *(short *)((int)this + 0x25c);
   local_18 = (float)local_10;
   local_1c = (float)(int)sVar3;
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   local_20 = (int)lVar10;
   local_14 = *(int *)((int)this + 0x284);
   local_28 = CONCAT22((short)((ulonglong)lVar10 >> 0x10),*(short *)((int)this + 0x25e));
   local_1c = (float)local_14;
   local_8 = (float)(int)*(short *)((int)this + 0x25e);
-  lVar10 = __ftol();
+  lVar10 = Library::MSVCRT::__ftol();
   iVar6 = param_3 - (int)lVar10;
   local_20 = param_2 - local_20;
   local_44 = SQRT((float)((param_1 - local_24) * (param_1 - local_24) + local_20 * local_20 +
@@ -82,18 +82,18 @@ FUN_00616a80(void *this,int param_1,int param_2,int param_3,int *param_4,int *pa
     local_44 = (float)iVar6 / local_44;
     iVar6 = (iVar4 * local_10) / 10000;
     iVar4 = (iVar4 * local_14) / 10000;
-    lVar10 = __ftol();
+    lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
     *(short *)((int)this + 0x272) =
          (sVar2 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
                   (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar5;
-    lVar10 = __ftol();
+    lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
     *(short *)((int)this + 0x274) =
          (sVar3 - (((short)(iVar7 / 10000) + (short)(iVar7 >> 0x1f)) -
                   (short)((longlong)iVar7 * 0x68db8bad >> 0x3f))) + (short)iVar6;
     fVar9 = extraout_ST1;
-    lVar10 = __ftol();
+    lVar10 = Library::MSVCRT::__ftol();
     iVar7 = (int)lVar10 * 0x172;
     local_4c = (float)-extraout_ST0;
     local_48 = -local_48;

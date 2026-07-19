@@ -35,7 +35,7 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
     if (local_8 != (ushort *)0x0) {
@@ -67,7 +67,7 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
     cVar1 = *pcVar12;
     pcVar12 = pcVar12 + 1;
   } while (cVar1 != '\0');
-  local_8 = (ushort *)FUN_006aac10(~uVar9 + 0x17);
+  local_8 = (ushort *)Library::DKW::LIB::FUN_006aac10(~uVar9 + 0x17);
   this_00 = local_14;
   *(undefined1 *)local_8 = param_1;
   iVar4 = -1;
@@ -96,7 +96,7 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x163);
   }
   puVar6 = (undefined4 *)FUN_006f1cb0(this_00,DVar5);
-  local_10 = FUN_006aac10(*(uint *)((int)local_8 + 1));
+  local_10 = Library::DKW::LIB::FUN_006aac10(*(uint *)((int)local_8 + 1));
   uVar9 = *(uint *)((int)local_8 + 1);
   puVar11 = local_10;
   for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
@@ -117,7 +117,7 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
     cVar1 = *pcVar12;
     pcVar12 = pcVar12 + 1;
   } while (cVar1 != '\0');
-  local_c = (ushort *)FUN_006aac10(~uVar9 + 0x17);
+  local_c = (ushort *)Library::DKW::LIB::FUN_006aac10(~uVar9 + 0x17);
   iVar4 = -1;
   *(char *)local_c = (char)*local_8;
   pcVar12 = param_3;
@@ -150,7 +150,7 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }
-  FUN_00751050(*(uint **)this_00,local_c,local_10,*(uint *)((int)local_c + 1));
+  Library::DKW::DB::FUN_00751050(*(uint **)this_00,local_c,local_10,*(uint *)((int)local_c + 1));
   if (local_c != (ushort *)0x0) {
     FUN_006ab060(&local_c);
   }

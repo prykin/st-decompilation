@@ -27,7 +27,7 @@ int FUN_007516f0(int param_1,byte *param_2)
   local_14 = ExceptionList;
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puVar7 = (undefined4 *)&stack0xffffffa8;
   for (iVar4 = 0x4000; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar7 = 0;

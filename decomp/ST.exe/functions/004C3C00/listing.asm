@@ -1,4 +1,4 @@
-FUN_004c3c00:
+TLOBaseTy::fireFindCheckTarget:
 004C3C00  55                        PUSH EBP
 004C3C01  8B EC                     MOV EBP,ESP
 004C3C03  81 EC B4 00 00 00         SUB ESP,0xb4

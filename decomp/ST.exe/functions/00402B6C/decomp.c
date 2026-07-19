@@ -10,7 +10,7 @@ undefined4 __thiscall thunk_FUN_004e16d0(void *this,int param_1)
   }
   *(undefined4 *)((int)this + 0x4d0) = 1;
   *(undefined4 *)((int)this + 0x4e4) = 1;
-  thunk_FUN_004cabb0(1);
+  TLOBaseTy::RotateSpr(this,1);
   *(undefined4 *)((int)this + 0x4e8) = 1;
   switch(*(undefined4 *)((int)this + 0x5ac)) {
   case 0x39:

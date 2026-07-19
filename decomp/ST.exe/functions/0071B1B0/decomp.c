@@ -3,7 +3,7 @@ undefined4 * __fastcall FUN_0071b1b0(undefined4 *param_1)
 
 {
   FUN_006e5fb0(param_1);
-  *param_1 = &PTR_FUN_0079e284;
+  *param_1 = &PTR_GetMessage_0079e284;
   param_1[6] = 0;
   param_1[8] = 0;
   param_1[7] = 0;

@@ -8,7 +8,7 @@ void __cdecl FUN_0042a780(int *param_1)
   int *piVar4;
   int iVar5;
   
-  puVar2 = FUN_006ae290((uint *)0x0,100,4,100);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,100,4,100);
   iVar5 = 0;
   iVar3 = *param_1;
   if (0 < *(int *)(iVar3 + 0x455)) {
@@ -26,7 +26,7 @@ void __cdecl FUN_0042a780(int *param_1)
         } while (*(int *)(iVar3 + 0x40) != *piVar4);
         if (piVar4 == (int *)0x0) {
 LAB_0042a7e7:
-          FUN_006ae1c0(puVar2,(undefined4 *)(iVar3 + 0x40));
+          Library::DKW::TBL::FUN_006ae1c0(puVar2,(undefined4 *)(iVar3 + 0x40));
           FUN_006ab060((undefined4 *)(iVar3 + 0x40));
         }
       }

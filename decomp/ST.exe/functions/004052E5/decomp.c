@@ -1,9 +1,10 @@
 
-void thunk_FUN_0042d6b0(char param_1)
+void STAllPlayersC::RemoveActiveTV(char param_1)
 
 {
   code *pcVar1;
   int iVar2;
+  STAllPlayersC *in_ECX;
   undefined4 *puVar3;
   
   iVar2 = *(int *)((int)&DAT_007f5023 + param_1 * 0xa62);
@@ -24,7 +25,7 @@ void thunk_FUN_0042d6b0(char param_1)
     puVar3 = &DAT_007f4fd3;
   }
   puVar3 = (undefined4 *)((int)puVar3 + param_1 * 0xa62);
-  thunk_FUN_0042d4f0(param_1,iVar2,0,1);
+  ResetActivityFromTmp(in_ECX,param_1,iVar2,0,1);
   if (*(byte **)((int)puVar3 + 10) != (byte *)0x0) {
     FUN_006ae110(*(byte **)((int)puVar3 + 10));
     *(undefined4 *)((int)puVar3 + 10) = 0;

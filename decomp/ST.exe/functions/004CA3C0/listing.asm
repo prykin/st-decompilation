@@ -1,4 +1,4 @@
-FUN_004ca3c0:
+TLOBaseTy::ReloadLogoPlane:
 004CA3C0  55                        PUSH EBP
 004CA3C1  8B EC                     MOV EBP,ESP
 004CA3C3  81 EC 58 01 00 00         SUB ESP,0x158

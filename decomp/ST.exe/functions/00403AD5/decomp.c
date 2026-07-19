@@ -19,14 +19,14 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_8 = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar3 == 0) {
     uVar5 = *(int *)(*(int *)(pSStack_8 + 0x1f84) + 0xc) * 0x60;
     uVar6 = uVar5 + 9;
     uStack_c = uVar6;
     if (*(uint *)(pSStack_8 + 0x222a) < uVar6) {
-      iVar3 = FUN_006acf50(*(undefined4 **)(pSStack_8 + 0x2226),uVar6);
+      iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)(pSStack_8 + 0x2226),uVar6);
       *(int *)(pSVar2 + 0x2226) = iVar3;
       *(uint *)(pSVar2 + 0x222a) = uVar6;
     }

@@ -20,14 +20,14 @@ uint __thiscall thunk_FUN_00631880(void *this,undefined4 *param_1,undefined4 par
     *(undefined1 *)puVar4 = *(undefined1 *)param_1;
     uStack_b = param_2;
     if (*(int *)((int)this + 0x3c) == 0) {
-      puVar2 = FUN_006ae290((uint *)0x0,10,0x25,10);
+      puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x25,10);
       *(uint **)((int)this + 0x3c) = puVar2;
     }
     if (*(uint **)((int)this + 0x3c) == (uint *)0x0) {
       uVar1 = 0xffffffff;
     }
     else {
-      uVar1 = FUN_006ae1c0(*(uint **)((int)this + 0x3c),auStack_2c);
+      uVar1 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x3c),auStack_2c);
       if (-1 < (int)uVar1) {
         return uVar1 + 1;
       }

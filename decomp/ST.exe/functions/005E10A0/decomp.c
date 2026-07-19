@@ -16,7 +16,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar2 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_1 != (uint *)0x0) {
       if (-1 < (int)*param_1) {
@@ -34,7 +34,7 @@ void __thiscall MTaskTy::TTaskItemClose(MTaskTy *this,uint *param_1)
       } while (iVar2 != 0);
       if (*(int **)((int)param_1 + 0x31) != (int *)0x0) {
         FUN_00714060(*(int **)((int)param_1 + 0x31));
-        FUN_0072e2b0(*(undefined4 **)((int)param_1 + 0x31));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)((int)param_1 + 0x31));
         *(undefined4 *)((int)param_1 + 0x31) = 0;
       }
       if (*(int *)((int)param_1 + 0x3a) != 0) {

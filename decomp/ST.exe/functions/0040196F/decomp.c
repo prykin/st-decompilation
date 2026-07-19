@@ -1,6 +1,7 @@
 
-int thunk_FUN_0044ab90(undefined4 param_1,uint param_2,int param_3,char param_4,uint *param_5,
-                      undefined4 param_6)
+int STAllPlayersC::CheckTmps
+              (undefined4 param_1,uint param_2,int param_3,char param_4,uint *param_5,
+              undefined4 param_6)
 
 {
   code *pcVar1;
@@ -49,7 +50,7 @@ LAB_0044ac57:
       return -1;
     }
     param_2 = uVar5;
-    FUN_006afe40((int *)&puStack_c,param_5);
+    Library::DKW::TBL::FUN_006afe40((int *)&puStack_c,param_5);
     if (0 < (int)uVar5) {
       do {
         FUN_006acc70((int)puStack_c,uVar6,(undefined4 *)((int)&param_6 + 2));
@@ -69,8 +70,8 @@ LAB_0044ac57:
           if (((*(int *)((int)piVar3 + -10) == iVar2) &&
               (*(int *)((int)piVar3 + -6) == (int)param_4)) &&
              (iVar7 = *(int *)(*piVar3 + 0xc), iVar7 != 0)) {
-            FUN_006afe40((int *)&pbStack_10,puVar4);
-            FUN_006afe40((int *)&pbStack_8,(uint *)*piVar3);
+            Library::DKW::TBL::FUN_006afe40((int *)&pbStack_10,puVar4);
+            Library::DKW::TBL::FUN_006afe40((int *)&pbStack_8,(uint *)*piVar3);
             uVar6 = 0;
             if (0 < iVar7) {
               do {

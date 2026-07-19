@@ -19,7 +19,7 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   this_00 = local_8;
   if (errorCode == 0) {
     HVar1 = local_8[0x1a1];
@@ -34,8 +34,9 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
     }
     local_8[0x1a1] = (HelpPanelTy)0xa;
     *(undefined4 *)(local_8 + 0x1a3) = 0;
-    FUN_006b55f0(*(undefined4 **)(local_8 + 0x68),0,0x21,0x16,*(int *)(local_8 + 0x1dc),0,0x21,0x16,
-                 0x1b8,0x118);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(local_8 + 0x68),0,0x21,0x16,*(int *)(local_8 + 0x1dc),0,0x21,0x16,
+               0x1b8,0x118);
     if (*(int *)(this_00 + 0x178) != 0) {
       *(undefined4 *)(this_00 + 0x28) = 0x4202;
       *(undefined2 *)(this_00 + 0x2c) = 0;

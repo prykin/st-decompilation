@@ -1,7 +1,8 @@
 
-void __cdecl
-thunk_FUN_0044e980(undefined4 param_1,int param_2,int param_3,undefined4 *param_4,char *param_5,
-                  undefined1 *param_6,undefined4 *param_7)
+void __thiscall
+STBoatC::GetVisualInfo
+          (STBoatC *this,undefined4 param_1,int param_2,int param_3,undefined4 *param_4,
+          char *param_5,undefined1 *param_6,undefined4 *param_7)
 
 {
   char cVar1;

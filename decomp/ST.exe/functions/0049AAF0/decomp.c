@@ -44,7 +44,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_8 = this;
-  iVar6 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar12 = local_8;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_70.previous;
@@ -87,7 +87,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
         *(undefined4 *)(pSVar15 + 0x20e) = 0;
         *(undefined4 *)(pSVar15 + 0x212) = 0;
       }
-      puVar7 = FUN_006ae290((uint *)0x0,0,4,1);
+      puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,4,1);
       sVar5 = 0;
       *(uint **)(local_8 + 0x20e) = puVar7;
       pSVar12 = local_8;
@@ -97,13 +97,16 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
           FUN_006acc70(*(int *)(pSVar12 + 0xef),uVar14,(undefined4 *)&local_2c);
           if (((byte)local_2c < 8) &&
              ((((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[(char)local_2c * 0x51] < 8)) &&
-               (piVar8 = (int *)thunk_FUN_0042b620(CONCAT22(uStack_2a,CONCAT11(cStack_2b,local_2c)),
-                                                   CONCAT22(uStack_28,uStack_2a),(int)cStack_2b),
+               (piVar8 = (int *)STAllPlayersC::GetObjPtr
+                                          (DAT_007fa174,
+                                           CONCAT22(uStack_2a,CONCAT11(cStack_2b,local_2c)),
+                                           CONCAT22(uStack_28,uStack_2a),(int)cStack_2b),
                pSVar12 = local_8, piVar8 != (int *)0x0)) &&
               ((iVar6 = (**(code **)(*piVar8 + 0xf8))(), pSVar12 = local_8, iVar6 == 1 &&
                (iVar6 = (**(code **)(*piVar8 + 0xf4))((int)(char)local_8[0x24]), pSVar12 = local_8,
                iVar6 == 1)))))) {
-            FUN_006ae140(*(uint **)(local_8 + 0x20e),uVar14,(undefined4 *)&local_2c);
+            Library::DKW::TBL::FUN_006ae140
+                      (*(uint **)(local_8 + 0x20e),uVar14,(undefined4 *)&local_2c);
             pSVar12 = local_8;
           }
           sVar5 = sVar5 + 1;
@@ -124,7 +127,7 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
         *(undefined4 *)(pSVar12 + 0x20e) = 0;
         *(undefined4 *)(pSVar12 + 0x212) = 0;
       }
-      puVar7 = FUN_006ae290((uint *)0x0,1,4,1);
+      puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
       *(uint **)(pSVar12 + 0x20e) = puVar7;
       local_c = CONCAT22((short)((uint)puVar7 >> 0x10),*(short *)(pSVar12 + 0xf3));
       iVar6 = (int)*(short *)(pSVar12 + 0xf3);
@@ -216,7 +219,8 @@ LAB_0049b073:
                            (iVar6 = (**(code **)(*piVar8 + 0xf4))((int)(char)pSVar12[0x24]),
                            iVar6 == 1)) {
                           local_18 = iVar6;
-                          FUN_006ae1c0(*(uint **)(pSVar12 + 0x20e),(undefined4 *)&local_2c);
+                          Library::DKW::TBL::FUN_006ae1c0
+                                    (*(uint **)(pSVar12 + 0x20e),(undefined4 *)&local_2c);
                         }
                       }
                     }
@@ -271,7 +275,8 @@ LAB_0049aec9:
                            (iVar9 = (**(code **)(*piVar8 + 0xf4))((int)(char)local_8[0x24]),
                            iVar9 == 1)) {
                           local_18 = iVar9;
-                          FUN_006ae1c0(*(uint **)(pSVar12 + 0x20e),(undefined4 *)&local_2c);
+                          Library::DKW::TBL::FUN_006ae1c0
+                                    (*(uint **)(pSVar12 + 0x20e),(undefined4 *)&local_2c);
                         }
                         sVar5 = (short)local_c;
                         goto LAB_0049af27;
@@ -307,9 +312,10 @@ LAB_0049aec9:
         do {
           FUN_006acc70(*(int *)(local_8 + 0x20e),(int)sVar5,(undefined4 *)&local_2c);
           if ((cStack_2b != '\x01') ||
-             (uVar14 = thunk_FUN_0042b620(CONCAT22(uStack_2a,CONCAT11(1,local_2c)),
-                                          CONCAT22(uStack_28,uStack_2a),1),
-             *(int *)(uVar14 + 0x20) != 0x14)) {
+             (uVar14 = STAllPlayersC::GetObjPtr
+                                 (DAT_007fa174,CONCAT22(uStack_2a,CONCAT11(1,local_2c)),
+                                  CONCAT22(uStack_28,uStack_2a),1), *(int *)(uVar14 + 0x20) != 0x14)
+             ) {
             FUN_006b0c70(*(int *)(local_8 + 0x20e),(int)sVar5);
             iVar6 = iVar6 + -1;
             sVar5 = sVar5 + -1;

@@ -29,14 +29,14 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   }
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
-  iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 == 0) {
     local_3c[1] = *(uint *)(local_8 + 300);
     local_3c[0] = 0x76;
     local_33 = param_1;
     local_31 = 0;
-    local_2b = FUN_006ae290((uint *)0x0,10,2,10);
+    local_2b = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,2,10);
     thunk_FUN_006902b0(this_00,-0x8000,local_3c);
     this_01 = (void *)thunk_FUN_0068e290(this_00,param_1);
     if (this_01 != (void *)0x0) {

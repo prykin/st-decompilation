@@ -15,7 +15,9 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
   undefined4 uVar5;
   int iVar6;
   uint uVar7;
-  undefined4 extraout_ECX;
+  ccFntTy *extraout_ECX;
+  ccFntTy *this_01;
+  undefined4 extraout_ECX_00;
   int iVar8;
   uint uVar9;
   undefined4 unaff_ESI;
@@ -31,7 +33,7 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_18 = this;
-  iVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -56,8 +58,9 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
       if (this_00[0x9c] != (PopUpTy)0x0) {
         FUN_006b7830(*(int *)(this_00 + 0x98),0);
         puVar3 = *(undefined4 **)(this_00 + 0x90);
-        FUN_006b55f0(puVar3,0,0,0,(int)puVar3,0,0,0x13,puVar3[1],
-                     (uint)(byte)this_00[0x9c] * 0x13 + -0x13);
+        Library::DKW::WGR::FUN_006b55f0
+                  (puVar3,0,0,0,(int)puVar3,0,0,0x13,puVar3[1],
+                   (uint)(byte)this_00[0x9c] * 0x13 + -0x13);
         FUN_006b4170(*(int *)(this_00 + 0x90),0,0,(uint)(byte)this_00[0x9c] * 0x13 + -0x13,
                      *(int *)(*(int *)(this_00 + 0x90) + 4),0x13,0x89);
         iVar2 = *(int *)(this_00 + 0x98);
@@ -65,7 +68,7 @@ undefined4 __thiscall PopUpTy::GetMessage(PopUpTy *this,int param_1)
           this_00[0x9c] = *(PopUpTy *)(iVar2 + 8);
         }
         if ((int)(uint)DAT_00807346 <= *(int *)(iVar2 + 8)) {
-          OutStr(this_00,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_00807346 - 1));
+          OutStr(this_00,CONCAT31((int3)((uint)extraout_ECX_00 >> 8),DAT_00807346 - 1));
         }
         local_5 = (PopUpTy)0x0;
         local_c = -0x18 - (int)this_00;
@@ -101,8 +104,8 @@ LAB_0052e184:
             }
             *(uint *)(pPVar10 + 0x3c) = uVar9;
             FUN_006b2800((int)DAT_008075a8,*(uint *)pPVar10,uVar9,0x13);
-            FUN_006b3640(DAT_008075a8,*(uint *)pPVar10,0xffffffff,0xd,local_10);
-            FUN_006b3430(DAT_008075a8,*(uint *)pPVar10);
+            Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pPVar10,0xffffffff,0xd,local_10);
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)pPVar10);
           }
           local_5 = (PopUpTy)((char)local_5 + 1);
           local_14 = iVar2 + 1;
@@ -145,13 +148,13 @@ LAB_0052e184:
       FUN_006b2330((uint)DAT_008075a8,(uint *)pPVar10,8,0x405c22,*(uint *)(pPVar10 + 0x3c),0x13,
                    (uint)this_00);
       FUN_006b1bd0((int)DAT_008075a8,*(uint *)pPVar10);
-      FUN_006b3640(DAT_008075a8,*(uint *)pPVar10,0xffffffff,0xd,uVar7);
+      Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pPVar10,0xffffffff,0xd,uVar7);
       FUN_006b3af0(DAT_008075a8,*(uint *)pPVar10);
       pPVar10 = pPVar10 + 4;
       uVar7 = uVar7 + 0x13;
       local_10 = local_10 - 1;
     } while (local_10 != 0);
-    puVar4 = FUN_006b54f0((uint *)0x0,10,10);
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)(this_00 + 0x98) = puVar4;
     uVar5 = FUN_006e51b0(0x807620);
     *(undefined4 *)(this_00 + 0x9d) = uVar5;
@@ -169,11 +172,13 @@ LAB_0052e184:
       pPVar10 = pPVar10 + 4;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
+    this_01 = (ccFntTy *)0x0;
     if (*(int *)(this_00 + 0x90) != 0) {
       FUN_006ab060((undefined4 *)(this_00 + 0x90));
+      this_01 = extraout_ECX;
     }
     if (*(uint **)(this_00 + 0x94) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x94));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x94));
       *(undefined4 *)(this_00 + 0x94) = 0;
     }
     if (*(byte **)(this_00 + 0x98) != (byte *)0x0) {
@@ -197,7 +202,7 @@ LAB_0052e184:
           iVar6 = 0;
         }
         if (iVar6 != 0) {
-          FUN_006b3640(DAT_008075a8,*(uint *)pPVar10,0xffffffff,0xd,uVar9);
+          Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pPVar10,0xffffffff,0xd,uVar9);
           iVar2 = local_c;
         }
       }

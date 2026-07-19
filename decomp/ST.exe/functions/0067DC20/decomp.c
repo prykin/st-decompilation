@@ -36,7 +36,7 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
   local_8 = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar6 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x156,0,iVar6,&DAT_007a4ccc,
@@ -55,7 +55,7 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
   if (param_1 == 0) {
     RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x13f);
   }
-  local_c = FUN_006ae290((uint *)0x0,5,0x98,5);
+  local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   uVar7 = 0xffffffff;
   do {
     pcVar3 = param_3;
@@ -99,13 +99,13 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
           pcVar10[3] = '\0';
           pcVar10 = pcVar10 + 4;
         }
-        _strncpy(local_e8,_Source,0x3f);
-        _strncpy(local_a8,(char *)((int)local_8 + 0x5b),0xb);
-        _strncpy(local_9c,pcVar3,0x1f);
-        _strncpy(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
+        Library::MSVCRT::_strncpy(local_e8,_Source,0x3f);
+        Library::MSVCRT::_strncpy(local_a8,(char *)((int)local_8 + 0x5b),0xb);
+        Library::MSVCRT::_strncpy(local_9c,pcVar3,0x1f);
+        Library::MSVCRT::_strncpy(local_78,PTR_s_OBJECTIVES_0079d718,0x1f);
         local_54 = (int)*(short *)((int)local_8 + 0x19);
         local_58 = uVar7;
-        FUN_006ae1c0(local_c,(undefined4 *)local_e8);
+        Library::DKW::TBL::FUN_006ae1c0(local_c,(undefined4 *)local_e8);
       }
       cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_8);
     }

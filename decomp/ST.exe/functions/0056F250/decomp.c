@@ -13,7 +13,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   uint uVar5;
   undefined4 unaff_ESI;
   byte *pbVar6;
-  undefined4 *puVar7;
+  cMf32 *pcVar7;
   byte *pbVar8;
   void *unaff_EDI;
   char *pcVar9;
@@ -29,7 +29,7 @@ void __thiscall FUN_0056f250(void *this,char param_1,byte param_2,char *param_3)
   undefined1 local_1b;
   undefined1 local_1a;
   undefined4 local_19;
-  undefined4 *local_14;
+  cMf32 *local_14;
   void *local_10;
   byte *local_c;
   uint local_8;
@@ -88,37 +88,37 @@ LAB_0056f325:
     }
     local_a4.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_a4;
-    iVar3 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if ((param_1 == '\0') || (this_00 = extraout_ECX, param_1 == '\x03')) {
-        local_14 = FUN_006f0ec0(0x345,local_1a8,1,0,0);
+        local_14 = (cMf32 *)FUN_006f0ec0(0x345,local_1a8,1,0,0);
         this_00 = extraout_ECX_00;
       }
-      puVar7 = local_14;
+      pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
         FUN_006efdb0(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
         pvVar2 = local_10;
         FUN_0071adb0(*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),
-                     (int)puVar7,PTR_s_TEXTURE_0079b07c,'\x01');
-        STPlaySystemC::Save(DAT_00802a38,puVar7);
-        FUN_006f13f0(0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,(undefined4 *)0x0,
-                     '\0',(uint *)0x0);
-        FUN_006f13f0(0,PTR_s_DESCRIPTOR_0079b080,(byte *)((int)pvVar2 + 0x1196),0x1999,
-                     (undefined4 *)0x0,'\0',(uint *)0x0);
-        FUN_006f13f0(0xc,PTR_s_TITLE_MISSION_0079b070,(byte *)((int)pvVar2 + 0x4da3),0x104,
-                     (undefined4 *)0x0,'\0',(uint *)0x0);
+                     (int)pcVar7,PTR_s_TEXTURE_0079b07c,'\x01');
+        STPlaySystemC::Save(DAT_00802a38,pcVar7);
+        cMf32::RecPut(pcVar7,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0,PTR_s_DESCRIPTOR_0079b080,(byte *)((int)pvVar2 + 0x1196),0x1999,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0xc,PTR_s_TITLE_MISSION_0079b070,(byte *)((int)pvVar2 + 0x4da3),0x104,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
         local_60.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_60;
-        iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
         pvVar2 = local_10;
-        puVar7 = local_14;
+        pcVar7 = local_14;
         if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != (uint *)0x0)) {
           FUN_0071ab30(*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
                        '\x01');
         }
         g_currentExceptionFrame = local_60.previous;
         if (*(uint **)((int)pvVar2 + 0x4eab) != (uint *)0x0) {
-          FUN_0071ab30(*(uint **)((int)pvVar2 + 0x4eab),(int)puVar7,PTR_s_OBJECTIVES_0079b078,'\x01'
+          FUN_0071ab30(*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01'
                       );
         }
         if (DAT_00807598 != (void *)0x0) {
@@ -134,37 +134,37 @@ LAB_0056f325:
             cVar13 = '\0';
             puVar12 = (undefined4 *)0x0;
             uVar4 = FUN_006b5050((int)local_c);
-            FUN_006f13f0(0xc,PTR_s_SMALL_MAP_0079b084,local_c,uVar4,puVar12,cVar13,puVar14);
+            cMf32::RecPut(pcVar7,0xc,PTR_s_SMALL_MAP_0079b084,local_c,uVar4,puVar12,cVar13,puVar14);
             FUN_006ab060(&local_c);
           }
         }
-        FUN_006f13f0(0xc,PTR_s_TYPE_START_0079b08c,(byte *)((int)pvVar2 + 0x1180),1,
-                     (undefined4 *)0x0,'\0',(uint *)0x0);
-        FUN_006f13f0(0,PTR_s_ORIG_DB_0079b088,(byte *)((int)pvVar2 + 0x78fe),0x104,(undefined4 *)0x0
-                     ,'\0',(uint *)0x0);
-        FUN_006f13f0(0,PTR_s_REPORT_0079b090,(byte *)((int)pvVar2 + 0x4f02),0x27f0,(undefined4 *)0x0
-                     ,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0xc,PTR_s_TYPE_START_0079b08c,(byte *)((int)pvVar2 + 0x1180),1,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0,PTR_s_ORIG_DB_0079b088,(byte *)((int)pvVar2 + 0x78fe),0x104,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0,PTR_s_REPORT_0079b090,(byte *)((int)pvVar2 + 0x4f02),0x27f0,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
         local_1b = *(undefined1 *)((int)pvVar2 + 0x112e);
         local_1a = *(undefined1 *)((int)pvVar2 + 0x112f);
         local_1c = *(byte *)((int)pvVar2 + 0x112d);
         local_19 = *(undefined4 *)((int)pvVar2 + 0x1130);
-        FUN_006f13f0(0x80,PTR_s_SAVE_PLAYER_0079b058,&local_1c,7,(undefined4 *)0x0,'\0',(uint *)0x0)
-        ;
-        FUN_006f13f0(0,PTR_s_RESTART_GAME_0079b060,(byte *)((int)pvVar2 + 0x2b2f),0x2274,
-                     (undefined4 *)0x0,'\0',(uint *)0x0);
-        FUN_006f13f0(0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(byte *)((int)pvVar2 + 0x4eaf),4,
-                     (undefined4 *)0x0,'\0',(uint *)0x0);
-        FUN_006f13f0(0xc,PTR_s_STATETIMER_GAME_0079b064,(byte *)((int)pvVar2 + 0x4eb3),4,
-                     (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0x80,PTR_s_SAVE_PLAYER_0079b058,&local_1c,7,(undefined4 *)0x0,'\0',
+                      (uint *)0x0);
+        cMf32::RecPut(pcVar7,0,PTR_s_RESTART_GAME_0079b060,(byte *)((int)pvVar2 + 0x2b2f),0x2274,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(byte *)((int)pvVar2 + 0x4eaf),4,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
+        cMf32::RecPut(pcVar7,0xc,PTR_s_STATETIMER_GAME_0079b064,(byte *)((int)pvVar2 + 0x4eb3),4,
+                      (undefined4 *)0x0,'\0',(uint *)0x0);
         if (*(short *)((int)pvVar2 + 0x4ed7) == 1) {
-          FUN_006f13f0(0xc,PTR_s_BRIEFING_GAME_0079b06c,(byte *)((int)pvVar2 + 0x4eb7),0x20,
-                       (undefined4 *)0x0,'\0',(uint *)0x0);
+          cMf32::RecPut(pcVar7,0xc,PTR_s_BRIEFING_GAME_0079b06c,(byte *)((int)pvVar2 + 0x4eb7),0x20,
+                        (undefined4 *)0x0,'\0',(uint *)0x0);
         }
-        FUN_006f13f0(0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&local_8,4,(undefined4 *)0x0,'\0',
-                     (uint *)0x0);
+        cMf32::RecPut(pcVar7,0x80,PTR_s_SAVE_DESC_0079b054,(byte *)&local_8,4,(undefined4 *)0x0,'\0'
+                      ,(uint *)0x0);
         this_00 = extraout_ECX_01;
       }
-      cMf32::delete(this_00,puVar7);
+      cMf32::delete(this_00,(undefined4 *)pcVar7);
       g_currentExceptionFrame = local_a4.previous;
       return;
     }

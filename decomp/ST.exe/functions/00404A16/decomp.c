@@ -7,19 +7,27 @@ void __cdecl thunk_FUN_004f4640(int param_1,undefined *param_2,BYTE param_3)
   uint uVar3;
   uint uVar4;
   char *pcVar5;
-  LOGFONTA *pLVar6;
+  undefined4 *puVar6;
   char *pcVar7;
-  CHAR *pCVar8;
-  LOGFONTA LStack_a8;
+  undefined4 auStack_a8 [5];
+  undefined1 uStack_94;
+  undefined1 uStack_93;
+  undefined1 uStack_92;
+  BYTE BStack_91;
+  undefined1 uStack_90;
+  undefined1 uStack_8f;
+  undefined1 uStack_8e;
+  undefined1 uStack_8d;
+  char acStack_8c [32];
   byte abStack_6c [60];
   byte abStack_30 [44];
   
-  pLVar6 = &LStack_a8;
+  puVar6 = auStack_a8;
   for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
-  LStack_a8.lfCharSet = param_3;
+  BStack_91 = param_3;
   uVar3 = 0xffffffff;
   pcVar5 = s_Small_Fonts_007c1bb4;
   do {
@@ -31,30 +39,30 @@ void __cdecl thunk_FUN_004f4640(int param_1,undefined *param_2,BYTE param_3)
     pcVar5 = pcVar7;
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
-  LStack_a8.lfHeight = -8;
-  LStack_a8.lfWidth = 0;
-  LStack_a8.lfEscapement = 0;
-  LStack_a8.lfOrientation = 0;
-  LStack_a8.lfWeight = 400;
-  LStack_a8.lfItalic = '\0';
-  LStack_a8.lfUnderline = '\0';
-  LStack_a8.lfStrikeOut = '\0';
-  LStack_a8.lfOutPrecision = '\x01';
-  LStack_a8.lfClipPrecision = '\x02';
-  LStack_a8.lfQuality = '\x01';
-  LStack_a8.lfPitchAndFamily = '\"';
+  auStack_a8[0] = 0xfffffff8;
+  auStack_a8[1] = 0;
+  auStack_a8[2] = 0;
+  auStack_a8[3] = 0;
+  auStack_a8[4] = 400;
+  uStack_94 = 0;
+  uStack_93 = 0;
+  uStack_92 = 0;
+  uStack_90 = 1;
+  uStack_8f = 2;
+  uStack_8e = 1;
+  uStack_8d = 0x22;
   pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = LStack_a8.lfFaceName;
+  pcVar7 = acStack_8c;
   for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
+    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
     pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+    pcVar7 = pcVar7 + 4;
   }
   abStack_30[0] = 0;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
+    *pcVar7 = *pcVar5;
     pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+    pcVar7 = pcVar7 + 1;
   }
   abStack_30[1] = 0x6a;
   abStack_30[0x10] = 0x10;
@@ -157,7 +165,8 @@ void __cdecl thunk_FUN_004f4640(int param_1,undefined *param_2,BYTE param_3)
   abStack_6c[0x38] = 0x7c;
   abStack_6c[0x39] = 0x7e;
   abStack_6c[0x3a] = 0x2a;
-  FUN_0070d1f0(0x19d,&LStack_a8,(uint *)0x0,abStack_6c,param_1,abStack_30,6,7,1,0,0x20022c,param_2);
+  ccFntTy::operator((ccFntTy *)auStack_a8,0x19d,(LOGFONTA *)auStack_a8,(uint *)0x0,abStack_6c,
+                    param_1,abStack_30,6,7,1,0,0x20022c,param_2);
   return;
 }
 

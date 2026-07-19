@@ -6,7 +6,7 @@ FUN_006e65c0(void *this,undefined4 param_1,undefined1 param_2,undefined4 param_3
 {
   undefined4 *puVar1;
   
-  puVar1 = FUN_006aac10(0x1c);
+  puVar1 = Library::DKW::LIB::FUN_006aac10(0x1c);
   if (puVar1 == (undefined4 *)0x0) {
     return 0xfffffffe;
   }

@@ -48,7 +48,7 @@ void __fastcall FUN_006dc320(void *param_1)
   *(double *)((int)param_1 + 0xe0) =
        (double)(int)local_18 / (*(double *)((int)param_1 + 0x78) - *(double *)((int)param_1 + 0x70))
   ;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
   *(int *)((int)param_1 + 0x2f0) = iVar5;
   if (iVar5 < 0x36) {
@@ -57,7 +57,7 @@ void __fastcall FUN_006dc320(void *param_1)
   else {
     *(uint *)((int)param_1 + 0x2f0) = ((0x53 < iVar5) - 1 & 0xffffffdf) + 100;
   }
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
   *(int *)((int)param_1 + 0x2f4) = iVar5;
   if (iVar5 < 0x36) {
@@ -126,12 +126,12 @@ void __fastcall FUN_006dc320(void *param_1)
   *(int *)((int)param_1 + 0x3b4) = local_40 - local_50;
   *(int *)((int)param_1 + 0x3c0) = local_3c - local_4c;
   *(int *)((int)param_1 + 0x3cc) = local_38 - local_48;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   *(int *)((int)param_1 + 0x3d4) = (int)lVar6;
   iStack_c = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   *(int *)((int)param_1 + 0x3d0) = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   *(int *)((int)param_1 + 0x3d8) = (int)lVar6;
   *(undefined4 *)((int)param_1 + 0x3e0) = 1;
   if (*(short **)((int)param_1 + 0x280) == (short *)0x0) goto LAB_006dcafd;
@@ -142,40 +142,40 @@ void __fastcall FUN_006dc320(void *param_1)
   _local_10 = CONCAT44(iVar5,local_10);
   switch(*(undefined4 *)((int)param_1 + 0xa8)) {
   case 0:
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_24 = (int)lVar6;
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_20 = (double)(lVar6 << 0x20);
     break;
   case 1:
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_24 = (int)lVar6;
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_20 = (double)(lVar6 << 0x20);
     break;
   case 2:
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_24 = (int)lVar6;
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_20 = (double)(lVar6 << 0x20);
     break;
   case 3:
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_24 = (int)lVar6;
-    lVar6 = __ftol();
+    lVar6 = Library::MSVCRT::__ftol();
     local_20 = (double)(lVar6 << 0x20);
   }
   local_20 = (double)local_20._4_4_;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   *(int *)((int)param_1 + 1000) = (int)lVar6;
   iStack_c = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   local_20 = (double)CONCAT44((int)lVar6,(uint)local_20);
   *(int *)((int)param_1 + 0x3f4) = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar6;
   *(int *)((int)param_1 + 0x400) = iVar2;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar1 = (int)lVar6;
   *(int *)((int)param_1 + 0x40c) = iVar1;
   if (0 < iStack_c) {
@@ -278,9 +278,9 @@ LAB_006dca21:
 LAB_006dcafd:
   FUN_006e1c20(param_1,*(float *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x34),0.0,&local_14,
                &local_18);
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar6;
   switch(*(undefined4 *)((int)param_1 + 0xa8)) {
   case 0:
@@ -301,9 +301,9 @@ LAB_006dcafd:
   }
   FUN_006e1c20(param_1,(float)(*(int *)((int)param_1 + 0x38) + -1),*(int *)((int)param_1 + 0x34),0.0
                ,&local_14,&local_18);
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar6;
   switch(*(undefined4 *)((int)param_1 + 0xa8)) {
   case 0:
@@ -325,9 +325,9 @@ LAB_006dcafd:
   FUN_006e1c20(param_1,*(float *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x3c) + -1,
                (float)((float10)*(double *)((int)param_1 + 0xd0) * (float10)_DAT_0079df90),&local_14
                ,&local_18);
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar6;
   switch(*(undefined4 *)((int)param_1 + 0xa8)) {
   case 0:
@@ -350,9 +350,9 @@ LAB_006dcafd:
                *(int *)((int)param_1 + 0x3c) + -1,
                (float)((float10)*(double *)((int)param_1 + 0xd0) * (float10)_DAT_0079df90),&local_14
                ,&local_18);
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar5 = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar2 = (int)lVar6;
   switch(*(undefined4 *)((int)param_1 + 0xa8)) {
   case 0:

@@ -130,7 +130,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     ExceptionList = &local_14;
     FUN_006e1c20(param_1,*(float *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x34),
                  -(float)*(double *)((int)param_1 + 0xd0),&local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -148,7 +148,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (-30000 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -165,7 +165,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     }
     FUN_006e1c20(param_1,*(float *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x3c) + -1,
                  -(float)*(double *)((int)param_1 + 0xd0),&local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -182,7 +182,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -200,7 +200,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     FUN_006e1c20(param_1,(float)(*(int *)((int)param_1 + 0x38) + -1),
                  *(int *)((int)param_1 + 0x3c) + -1,-(float)*(double *)((int)param_1 + 0xd0),
                  &local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -217,7 +217,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -234,7 +234,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     }
     FUN_006e1c20(param_1,(float)(*(int *)((int)param_1 + 0x38) + -1),*(int *)((int)param_1 + 0x34),
                  -(float)*(double *)((int)param_1 + 0xd0),&local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -250,7 +250,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -268,7 +268,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     fVar1 = (float)((float10)*(double *)((int)param_1 + 0xd0) * (float10)_DAT_0079df90);
     FUN_006e1c20(param_1,*(float *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x34),fVar1,
                  &local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -284,7 +284,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -301,7 +301,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     }
     FUN_006e1c20(param_1,*(float *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x3c) + -1,fVar1,
                  &local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -317,7 +317,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -334,7 +334,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     }
     FUN_006e1c20(param_1,(float)(*(int *)((int)param_1 + 0x38) + -1),
                  *(int *)((int)param_1 + 0x3c) + -1,fVar1,&local_20,&local_28);
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -350,7 +350,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -368,7 +368,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     FUN_006e1c20(param_1,(float)(*(int *)((int)param_1 + 0x38) + -1),*(int *)((int)param_1 + 0x34),
                  fVar1,&local_20,&local_28);
     local_84 = (double)local_28;
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -384,7 +384,7 @@ void __fastcall FUN_006de9c0(void *param_1)
     if (local_c4 < iVar6) {
       local_c4 = iVar6;
     }
-    lVar13 = __ftol();
+    lVar13 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar13;
     if (iVar6 < 0) {
       iVar6 = 0;
@@ -485,7 +485,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,-1);
         if (CONCAT31(extraout_var_02,bVar5) != 0) {
           local_8 = 0;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -499,7 +499,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,-2);
         if (CONCAT31(extraout_var_03,bVar5) != 0) {
           local_8 = 1;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -515,7 +515,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-1,-1);
         if (CONCAT31(extraout_var_04,bVar5) != 0) {
           local_8 = 2;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -529,7 +529,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-1,-2);
         if (CONCAT31(extraout_var_05,bVar5) != 0) {
           local_8 = 3;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -543,7 +543,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-2,-1);
         if (CONCAT31(extraout_var_06,bVar5) != 0) {
           local_8 = 4;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -557,7 +557,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-2,-2);
         if (CONCAT31(extraout_var_07,bVar5) != 0) {
           local_8 = 5;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -574,7 +574,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,-1);
         if (CONCAT31(extraout_var_08,bVar5) != 0) {
           local_8 = 6;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -588,7 +588,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,-2);
         if (CONCAT31(extraout_var_09,bVar5) != 0) {
           local_8 = 7;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -602,7 +602,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11 + 1,-1);
         if (CONCAT31(extraout_var_10,bVar5) != 0) {
           local_8 = 8;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -616,7 +616,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11 + 1,-2);
         if (CONCAT31(extraout_var_11,bVar5) != 0) {
           local_8 = 9;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -636,7 +636,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,iVar12);
         if (CONCAT31(extraout_var_12,bVar5) != 0) {
           local_8 = 10;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -651,7 +651,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,iVar12 + 1);
         if (CONCAT31(extraout_var_13,bVar5) != 0) {
           local_8 = 0xb;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -668,7 +668,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-1,iVar12);
         if (CONCAT31(extraout_var_14,bVar5) != 0) {
           local_8 = 0xc;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -682,7 +682,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-1,iVar12 + 1);
         if (CONCAT31(extraout_var_15,bVar5) != 0) {
           local_8 = 0xd;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -696,7 +696,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-2,iVar12);
         if (CONCAT31(extraout_var_16,bVar5) != 0) {
           local_8 = 0xe;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -710,7 +710,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-2,iVar12 + 1);
         if (CONCAT31(extraout_var_17,bVar5) != 0) {
           local_8 = 0xf;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -727,7 +727,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,iVar12);
         if (CONCAT31(extraout_var_18,bVar5) != 0) {
           local_8 = 0x10;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -741,7 +741,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11,iVar12 + 1);
         if (CONCAT31(extraout_var_19,bVar5) != 0) {
           local_8 = 0x11;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -755,7 +755,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11 + 1,iVar12);
         if (CONCAT31(extraout_var_20,bVar5) != 0) {
           local_8 = 0x12;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -769,7 +769,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar11 + 1,iVar12 + 1);
         if (CONCAT31(extraout_var_21,bVar5) != 0) {
           local_8 = 0x13;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -788,7 +788,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-1,iVar11);
         if (CONCAT31(extraout_var_22,bVar5) != 0) {
           local_8 = 0x14;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -802,7 +802,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,-2,iVar11);
         if (CONCAT31(extraout_var_23,bVar5) != 0) {
           local_8 = 0x15;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -822,7 +822,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar12,iVar11);
         if (CONCAT31(extraout_var_24,bVar5) != 0) {
           local_8 = 0x16;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;
@@ -836,7 +836,7 @@ LAB_006defd4:
         bVar5 = FUN_006de570(param_1,iVar12 + 1,iVar11);
         if (CONCAT31(extraout_var_25,bVar5) != 0) {
           local_8 = 0x17;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           puVar10 = (undefined4 *)&stack0xfffffee8;
           local_1c = &stack0xfffffee8;

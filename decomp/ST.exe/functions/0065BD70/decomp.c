@@ -175,9 +175,10 @@ int __thiscall FUN_0065bd70(void *this,int param_1,int param_2)
         *(int *)((int)this + 0x52f) = iVar8;
         *(uint *)((int)this + 0x533) = (uint)(byte)(&DAT_008087e8)[iVar8 * 0x51];
         *(uint *)((int)this + 0x537) = (uint)(byte)(&DAT_008087ea)[iVar8 * 0x51];
-        piVar2 = (int *)thunk_FUN_0042b620((uint)uVar1,
-                                           CONCAT22((short)((uint)(iVar8 * 9) >> 0x10),
-                                                    *(undefined2 *)(param_1 + 0x16)),1);
+        piVar2 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,(uint)uVar1,
+                                   CONCAT22((short)((uint)(iVar8 * 9) >> 0x10),
+                                            *(undefined2 *)(param_1 + 0x16)),1);
         iVar8 = extraout_EDX;
         if (piVar2 != (int *)0x0) {
           uVar3 = (**(code **)(*piVar2 + 0x2c))();
@@ -198,7 +199,7 @@ int __thiscall FUN_0065bd70(void *this,int param_1,int param_2)
           *(uint *)((int)this + 0x54f) = uVar12;
 LAB_0065c021:
           (**(code **)(*piVar2 + 0x74))(local_1c);
-          FUN_006b6020(*(int *)((int)this + 0x5b3),0,local_1c);
+          Library::DKW::TBL::FUN_006b6020(*(int *)((int)this + 0x5b3),0,local_1c);
           iVar8 = extraout_EDX_00;
         }
       }
@@ -209,7 +210,8 @@ LAB_0065c021:
   case 0x5dd8:
   case 0x5dd9:
   case 0x5dda:
-    piVar2 = (int *)thunk_FUN_0042b620(0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),5);
+    piVar2 = (int *)STAllPlayersC::GetObjPtr
+                              (DAT_007fa174,0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),5);
     uVar4 = extraout_var;
     if (piVar2 != (int *)0x0) {
       uVar3 = (**(code **)(*piVar2 + 300))();
@@ -229,7 +231,7 @@ LAB_0065c021:
       uVar3 = (**(code **)(*piVar2 + 0x138))();
       *(undefined4 *)((int)this + 0x54f) = uVar3;
       (**(code **)(*piVar2 + 0x74))(local_1c);
-      FUN_006b6020(*(int *)((int)this + 0x5b3),0,local_1c);
+      Library::DKW::TBL::FUN_006b6020(*(int *)((int)this + 0x5b3),0,local_1c);
       uVar4 = extraout_var_00;
     }
     sVar7 = *(short *)(iVar6 + 0x18);
@@ -247,7 +249,8 @@ LAB_0065c021:
   case 0x5ddc:
   case 0x5ddd:
   case 0x5dde:
-    piVar2 = (int *)thunk_FUN_0042b620(0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),2);
+    piVar2 = (int *)STAllPlayersC::GetObjPtr
+                              (DAT_007fa174,0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),2);
     uVar4 = extraout_var_01;
     if (piVar2 != (int *)0x0) {
       *(undefined4 *)((int)this + 0x52f) = 0;
@@ -263,7 +266,7 @@ LAB_0065c021:
       *(int *)((int)this + 0x543) = (int)param_1._2_2_;
       *(int *)((int)this + 0x54b) = (int)local_6;
       (**(code **)(*piVar2 + 0x74))(local_1c);
-      FUN_006b6020(*(int *)((int)this + 0x5b3),0,local_1c);
+      Library::DKW::TBL::FUN_006b6020(*(int *)((int)this + 0x5b3),0,local_1c);
       uVar4 = extraout_var_02;
     }
     sVar7 = *(short *)(iVar6 + 0x18);
@@ -306,8 +309,10 @@ LAB_0065c021:
         *(int *)((int)this + 0x52f) = iVar5;
         *(uint *)((int)this + 0x533) = (uint)(byte)(&DAT_008087e8)[iVar5 * 0x51];
         *(uint *)((int)this + 0x537) = (uint)(byte)(&DAT_008087ea)[iVar5 * 0x51];
-        piVar2 = (int *)thunk_FUN_0042b620(0,CONCAT22((short)((uint)(iVar5 * 9) >> 0x10),
-                                                      *(undefined2 *)(param_1 + 0x16)),3);
+        piVar2 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,0,
+                                   CONCAT22((short)((uint)(iVar5 * 9) >> 0x10),
+                                            *(undefined2 *)(param_1 + 0x16)),3);
         iVar8 = extraout_EDX_01;
         if (piVar2 != (int *)0x0) {
           uVar3 = (**(code **)(*piVar2 + 0x2c))();
@@ -379,7 +384,8 @@ LAB_0065c570:
     uVar9 = CONCAT22(uVar11,*(undefined2 *)(param_1 + 0x16));
 LAB_0065c4bb:
     if (((short)uVar9 == -1) ||
-       (piVar2 = (int *)thunk_FUN_0042b620(uVar12,uVar9,1), piVar2 == (int *)0x0)) {
+       (piVar2 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,uVar12,uVar9,1), piVar2 == (int *)0x0)
+       ) {
       *(undefined4 *)((int)this + 0x563) = 0;
       goto switchD_0065bf29_caseD_5dc7;
     }
@@ -417,7 +423,7 @@ LAB_0065c4bb:
     pcVar10 = (char *)(*(int *)(param_1 + 0x18) + 0x92);
     uVar12 = 0;
   }
-  FUN_006b6020(iVar6,uVar12,pcVar10);
+  Library::DKW::TBL::FUN_006b6020(iVar6,uVar12,pcVar10);
 switchD_0065bf29_caseD_5dc7:
   *(uint *)((int)this + 0x5a7) = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
   *(undefined4 *)((int)this + 0x5ab) = *(undefined4 *)(DAT_00802a38 + 0xe4);

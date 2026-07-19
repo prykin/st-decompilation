@@ -6,6 +6,7 @@ STAllPlayersC::UnRegisterObject
 {
   code *pcVar1;
   void *pvVar2;
+  STAllPlayersC *this_00;
   short sVar3;
   int iVar4;
   int iVar5;
@@ -33,7 +34,7 @@ STAllPlayersC::UnRegisterObject
   IStack_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_68;
   pSStack_18 = this;
-  iVar4 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_68.previous;
     if (iVar4 == -0x5001fff7) {
@@ -355,7 +356,8 @@ LAB_0042f547:
       }
     }
   }
-  piVar7 = (int *)thunk_FUN_0042b620(param_1,param_3,1);
+  this_00 = pSStack_18;
+  piVar7 = (int *)GetObjPtr(pSStack_18,param_1,param_3,1);
   if (piVar7 != param_4) {
     RaiseInternalException(-0x5001fff9,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7a3);
   }
@@ -372,21 +374,21 @@ LAB_0042f547:
     }
   }
   thunk_FUN_00440820(param_1,param_3);
-  thunk_FUN_0042c5f0(DAT_0080874d,param_4[8],param_1,param_3);
-  thunk_FUN_0042cef0(param_4[8],(char)param_1,(short)param_3);
+  DelObjFromTmps(this_00,DAT_0080874d,param_4[8],param_1,param_3);
+  DelObjFromSaveTmps(this_00,param_4[8],(char)param_1,(short)param_3);
   piVar7 = piStack_10;
   puVar8 = puStack_14;
   uVar9 = param_3;
   if ((short)param_2 != -1) {
     (**(code **)(*piStack_10 + 4))(param_3);
-    FUN_006ae140(puStack_14,param_3 & 0xffff,&uStack_c);
+    Library::DKW::TBL::FUN_006ae140(puStack_14,param_3 & 0xffff,&uStack_c);
     sVar3 = thunk_FUN_004233c0((int)piVar7);
     if ((sVar3 != 0) || (iVar4 = thunk_FUN_004233a0((int)piVar7), iVar4 != 0)) goto LAB_00430018;
     thunk_FUN_0054cf70(DAT_00802a38,piVar7[2]);
     puVar8 = puStack_1c;
     uVar9 = param_2;
   }
-  FUN_006ae140(puVar8,uVar9 & 0xffff,&uStack_c);
+  Library::DKW::TBL::FUN_006ae140(puVar8,uVar9 & 0xffff,&uStack_c);
 LAB_00430018:
   iVar4 = (**(code **)(*param_4 + 0x2c))();
   puVar8 = puStack_20;
@@ -404,7 +406,7 @@ LAB_00430018:
         }
       }
       uStack_8 = 0xffff;
-      FUN_006ae140(puVar8,uVar9,&uStack_8);
+      Library::DKW::TBL::FUN_006ae140(puVar8,uVar9,&uStack_8);
     }
   }
   g_currentExceptionFrame = IStack_68.previous;

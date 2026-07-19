@@ -167,7 +167,8 @@ undefined4 __thiscall thunk_FUN_006264d0(void *this,int *param_1,int param_2)
               return 0;
             }
             if (((uint)param_1[9] < 8) &&
-               ((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[param_1[9] * 0x51] < 8)))) {
+               ((DAT_00802a38 == (STPlaySystemC *)0x0 ||
+                ((byte)(&DAT_008087e9)[param_1[9] * 0x51] < 8)))) {
               bVar6 = *(byte *)(piVar3 + 9);
               bVar1 = *(byte *)(piVar10 + 9);
               _bStack_50 = CONCAT31(uStack_4f,bVar6);
@@ -244,7 +245,7 @@ LAB_0062687f:
                         (uStack_20,uStack_54,uStack_40,uStack_28,uStack_24,uStack_38);
   iStack_8f = piVar10[6];
   uStack_8b = 0xffff;
-  thunk_FUN_0054cc20(0x28,0,0,auStack_bc,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x28,0,0,auStack_bc,0);
   return 1;
 }
 

@@ -1,2 +1,2 @@
-thunk_FUN_004758e0:
+STBoatC::UnLoadObj:
 004011AE  E9 2D 47 07 00            JMP 0x004758e0

@@ -19,14 +19,14 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pPStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = pPStack_8;
   if (iVar3 == 0) {
     if (pPStack_8[0x9c] != (PopUpTy)0x0) {
       if (*(byte **)(pPStack_8 + 0x98) != (byte *)0x0) {
         FUN_006b5570(*(byte **)(pPStack_8 + 0x98));
       }
-      puVar4 = FUN_006b54f0((uint *)0x0,10,10);
+      puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
       *(uint **)(pPVar2 + 0x98) = puVar4;
       iVar3 = *(int *)(pPVar2 + 0x90);
       uVar8 = *(uint *)(iVar3 + 0x14);

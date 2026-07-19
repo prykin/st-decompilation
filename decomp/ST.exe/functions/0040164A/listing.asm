@@ -1,2 +1,2 @@
-thunk_FUN_00491fb0:
+STBoatC::ReadyForLoading:
 0040164A  E9 61 09 09 00            JMP 0x00491fb0

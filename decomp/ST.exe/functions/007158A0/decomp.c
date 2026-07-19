@@ -22,7 +22,7 @@ SpriteClassTy::InitSprite
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (errorCode == 0) {
     switch(param_3) {
@@ -32,8 +32,9 @@ SpriteClassTy::InitSprite
                    0xffffffff,0);
       break;
     case '\b':
-      FUN_006b2220(param_1,(uint *)(local_8 + 4),param_2,0,(undefined4 *)0x0,(int *)0x0,0xffffffff,
-                   0xffffffff);
+      Library::DKW::DDX::FUN_006b2220
+                (param_1,(uint *)(local_8 + 4),param_2,0,(undefined4 *)0x0,(int *)0x0,0xffffffff,
+                 0xffffffff);
       break;
     case -0x80:
       *(undefined4 *)(local_8 + 0x2c) = 0;

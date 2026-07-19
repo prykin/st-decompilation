@@ -43,7 +43,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
     IStack_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_70;
     pCStack_1c = this;
-    iVar4 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar2 = pCStack_1c;
     if (iVar4 == 0) {
       iStack_2c = -0x16 - (int)pCStack_c;

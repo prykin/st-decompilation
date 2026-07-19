@@ -1,4 +1,4 @@
-FUN_0047d080:
+STBoatC::Annih:
 0047D080  55                        PUSH EBP
 0047D081  8B EC                     MOV EBP,ESP
 0047D083  83 EC 60                  SUB ESP,0x60

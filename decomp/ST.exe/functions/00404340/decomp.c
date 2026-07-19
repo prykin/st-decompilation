@@ -18,8 +18,10 @@ void __thiscall STGroupC::SetAVPar(STGroupC *this,uint param_1)
     do {
       FUN_006acc70(*(int *)(this + 0x29),uVar4,&param_1);
       if ((short)param_1 != -1) {
-        this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),this[0x24]),
-                                             param_1,1);
+        this_00 = (void *)STAllPlayersC::GetObjPtr
+                                    (DAT_007fa174,
+                                     CONCAT31((int3)((uint)extraout_ECX >> 8),this[0x24]),param_1,1)
+        ;
         if (this_00 == (void *)0x0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_tc_grp_cpp_007a50a4,0x256,0,0,&DAT_007a4ccc,
                                      s_STGroupC__SetAVPar_007a51a4);

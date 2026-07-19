@@ -57,7 +57,7 @@ LAB_006c3a62:
     if (param_2 != 0x100) {
       if (param_2 == 0x101) {
         if ((param_3 == 0x1b) && ((*(uint *)(iVar2 + 4) & 0x20000000) != 0)) {
-          FUN_006c4110(iVar2);
+          Library::DKW::DV::FUN_006c4110(iVar2);
           if (pcVar5 != (code *)0x0) {
             uVar3 = (*pcVar5)(param_1,*(undefined4 *)(iVar2 + 0x80),2,0);
             return uVar3;

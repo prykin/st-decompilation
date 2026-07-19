@@ -67,7 +67,7 @@ STAllPlayersC::AddObjsToGroup
   }
   IStack_90.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_90;
-  iVar4 = __setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar2 = puStack_14;
   if (iVar4 == 0) {
     uVar8 = uStack_24;
@@ -86,7 +86,7 @@ STAllPlayersC::AddObjsToGroup
       uStack_40 = 1;
       uStack_38 = uVar8 & 0xffff;
       (**(code **)(*DAT_00802a38 + 8))(0x10ff,auStack_1c,&pSStack_10,auStack_4c,0);
-      FUN_006ae140(puVar2,uVar8 & 0xffff,&pSStack_10);
+      Library::DKW::TBL::FUN_006ae140(puVar2,uVar8 & 0xffff,&pSStack_10);
       STGroupC::AddObjs(pSStack_10,param_3,0);
       uStack_5 = 2;
       (**(code **)(*(int *)pSStack_10 + 8))(0x65,&uStack_5);
@@ -110,7 +110,7 @@ STAllPlayersC::AddObjsToGroup
            (iVar4 = thunk_FUN_004233a0((int)pSStack_c), iVar4 == 0)) {
           thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(pSStack_c + 8));
           pSStack_c = (STGroupC *)0x0;
-          FUN_006ae140(puVar2,uVar8,&pSStack_c);
+          Library::DKW::TBL::FUN_006ae140(puVar2,uVar8,&pSStack_c);
         }
         uVar8 = uVar8 + 1;
       } while ((int)uVar8 < (int)uVar7);

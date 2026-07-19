@@ -42,7 +42,7 @@ STBoatC::GetExplosionInfo
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_24 = this;
-  iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_24;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -73,14 +73,14 @@ STBoatC::GetExplosionInfo
   *param_4 = *(short *)(pSVar2 + 0x45) + local_30;
   local_34 = uVar9;
   FUN_006dd530(*(void **)(pSVar2 + 0x211),local_14,&local_c,&local_8);
-  lVar11 = __ftol();
+  lVar11 = Library::MSVCRT::__ftol();
   local_3c = (uint)(short)lVar11;
   local_38 = (int)local_3c >> 0x1f;
-  lVar11 = __ftol();
+  lVar11 = Library::MSVCRT::__ftol();
   uVar4 = (uint)(short)lVar11;
   local_28 = (int)uVar4 >> 0x1f;
   local_2c = uVar4;
-  lVar11 = __ftol();
+  lVar11 = Library::MSVCRT::__ftol();
   uVar6 = (uint)(short)lVar11;
   local_20 = CONCAT44((int)uVar6 >> 0x1f,(undefined4)local_20);
   uVar7 = (uint)*(short *)(pSVar2 + 0x43);
@@ -90,22 +90,22 @@ STBoatC::GetExplosionInfo
   local_14[0] = (float)((((int)uVar8 >> 0x1f) - local_38) - (uint)(uVar8 < local_3c));
   uVar8 = (uint)*param_4;
   iVar3 = (((int)uVar8 >> 0x1f) - ((int)uVar6 >> 0x1f)) - (uint)(uVar8 < uVar6);
-  local_20 = __allmul(uVar8 - uVar6,iVar3,uVar8 - uVar6,iVar3);
+  local_20 = Library::MSVCRT::__allmul(uVar8 - uVar6,iVar3,uVar8 - uVar6,iVar3);
   uVar6 = (uint)*param_2;
   uVar8 = uVar6 - local_3c;
   local_38 = (((int)uVar6 >> 0x1f) - local_38) - (uint)(uVar6 < local_3c);
   uVar6 = (uint)*param_3;
   iVar3 = (((int)uVar6 >> 0x1f) - local_28) - (uint)(uVar6 < local_2c);
-  lVar11 = __allmul(uVar6 - local_2c,iVar3,uVar6 - local_2c,iVar3);
+  lVar11 = Library::MSVCRT::__allmul(uVar6 - local_2c,iVar3,uVar6 - local_2c,iVar3);
   local_c = (float)((ulonglong)lVar11 >> 0x20);
   local_28 = (uint)lVar11;
-  lVar11 = __allmul(uVar8,local_38,uVar8,local_38);
+  lVar11 = Library::MSVCRT::__allmul(uVar8,local_38,uVar8,local_38);
   lVar11 = lVar11 + CONCAT44(local_c,local_28) + local_20;
   local_28 = (uint)lVar11;
   local_c = (float)((ulonglong)lVar11 >> 0x20);
-  lVar11 = __allmul(local_18,(int)local_14[0],local_18,(int)local_14[0]);
+  lVar11 = Library::MSVCRT::__allmul(local_18,(int)local_14[0],local_18,(int)local_14[0]);
   local_3c = (uint)lVar11;
-  lVar12 = __allmul(uVar7 - uVar4,iVar10,uVar7 - uVar4,iVar10);
+  lVar12 = Library::MSVCRT::__allmul(uVar7 - uVar4,iVar10,uVar7 - uVar4,iVar10);
   if ((longlong)(lVar12 + CONCAT44((int)((ulonglong)lVar11 >> 0x20),local_3c) + local_20) <=
       CONCAT44(local_c,local_28)) {
     *param_5 = (uint)(local_30 + 0x46 < 0x15);

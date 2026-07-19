@@ -1,4 +1,4 @@
-FUN_0041a680:
+STGameObjC::ResetSelfCheckFlag:
 0041A680  56                        PUSH ESI
 0041A681  8B F1                     MOV ESI,ECX
 0041A683  83 BE CD 01 00 00 01      CMP dword ptr [ESI + 0x1cd],0x1

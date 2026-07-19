@@ -42,7 +42,7 @@ FUN_0069f8d0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   if ((param_4 == param_6) && (iVar3 = 1, param_5 == param_7)) {
 LAB_0069fb6f:
     FUN_006ab060(&local_18);
-    local_28 = (undefined2 *)FUN_006aac70(iVar3 * 4);
+    local_28 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(iVar3 * 4);
     if (local_28 != (undefined2 *)0x0) {
       local_20 = 1;
       bVar13 = param_4 != param_6;
@@ -86,7 +86,7 @@ LAB_0069fc43:
   }
   else {
     local_24 = 0x80;
-    local_1c = (short *)FUN_006aac70(0x400);
+    local_1c = (short *)Library::DKW::LIB::FUN_006aac70(0x400);
     local_18 = local_1c;
     if (local_1c != (short *)0x0) {
       local_10 = local_1c + 0x100;
@@ -117,7 +117,8 @@ LAB_0069fc43:
             local_38 = (undefined2 *)((int)local_38 + 0x400);
             local_24 = local_24 + 0x80;
             uVar5 = local_2c + 0x200;
-            psVar4 = (short *)FUN_006acf50((undefined4 *)local_18,(uint)local_38);
+            psVar4 = (short *)Library::DKW::LIB::FUN_006acf50((undefined4 *)local_18,(uint)local_38)
+            ;
             if (psVar4 == (short *)0x0) goto LAB_0069fc5a;
             local_1c = psVar4 + ((int)local_1c - (int)local_18 >> 2) * 2;
             local_10 = psVar4 + ((int)local_10 - (int)local_18 >> 2) * 2;
@@ -129,8 +130,9 @@ LAB_0069fc43:
             }
             psVar6 = local_1c + local_8 * 2;
             local_18 = psVar4;
-            FUN_0072da70((undefined4 *)(local_2c + 0x400 + (int)psVar4),
-                         (undefined4 *)(uVar5 + (int)psVar4),uVar5);
+            Library::MSVCRT::FUN_0072da70
+                      ((undefined4 *)(local_2c + 0x400 + (int)psVar4),
+                       (undefined4 *)(uVar5 + (int)psVar4),uVar5);
             local_2c = uVar5;
           }
           psVar4 = local_10;

@@ -2,7 +2,7 @@
 int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
 
 {
-  void *this_00;
+  STResourceC *this_00;
   int iVar1;
   uint uVar2;
   int iVar3;
@@ -29,8 +29,8 @@ int __thiscall FUN_004e1930(void *this,int *param_1,int param_2)
     this_00 = thunk_FUN_004d85e0(*(int *)((int)this + 0x5b0),*(int *)((int)this + 0x5b4),
                                  *(int *)((int)this + 0x5b8));
     uVar4 = extraout_ECX;
-    if (this_00 != (void *)0x0) {
-      thunk_FUN_0057dfd0(this_00,*(int *)((int)this + 0x4e0),1);
+    if (this_00 != (STResourceC *)0x0) {
+      STResourceC::SetResource(this_00,*(int *)((int)this + 0x4e0),1);
       uVar4 = extraout_ECX_00;
     }
     if ((*(int *)((int)this + 0x4e0) == 0) && (param_2 != 0)) {

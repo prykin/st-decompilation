@@ -21,6 +21,7 @@ int __thiscall FUN_00478640(void *this,int param_1)
   int iVar10;
   int iVar11;
   int extraout_EDX;
+  int unaff_EDI;
   undefined4 *puVar13;
   undefined2 uVar9;
   undefined2 uVar12;
@@ -34,7 +35,7 @@ int __thiscall FUN_00478640(void *this,int param_1)
     *(undefined4 *)((int)this + 0x2c4) = 0;
     iVar8 = thunk_FUN_004d6df0(this);
     if ((iVar8 == 0) ||
-       ((iVar8 = thunk_FUN_00493340((int)this), iVar8 == 1 &&
+       ((iVar8 = STBoatC::CheckForReplenisher(this,unaff_EDI), iVar8 == 1 &&
         (bVar7 = thunk_FUN_004d6f70(this), CONCAT31(extraout_var_04,bVar7) == 1)))) {
       *(undefined4 *)((int)this + 0x631) = 0;
       *(undefined4 *)((int)this + 0x62d) = 0;
@@ -120,7 +121,7 @@ LAB_0047926a:
     case 0:
       iVar8 = thunk_FUN_004d6df0(this);
       if ((iVar8 != 0) &&
-         ((iVar8 = thunk_FUN_00493340((int)this), iVar8 != 1 ||
+         ((iVar8 = STBoatC::CheckForReplenisher(this,unaff_EDI), iVar8 != 1 ||
           (bVar7 = thunk_FUN_004d6f70(this), CONCAT31(extraout_var,bVar7) != 1)))) {
         sVar2 = *(short *)((int)this + 0x61d);
         sVar3 = *(short *)((int)this + 0x621);
@@ -145,7 +146,7 @@ LAB_0047926a:
 LAB_00478d20:
           *(undefined4 *)((int)this + 0x631) = 2;
           *(undefined4 *)((int)this + 0x62d) = 0;
-          iVar8 = thunk_FUN_004608b0(this,0);
+          iVar8 = STBoatC::Defence(this,0);
           if (iVar8 == -1) {
             return -1;
           }
@@ -169,7 +170,7 @@ LAB_0047885b:
     case 1:
       iVar8 = thunk_FUN_004d6df0(this);
       if ((iVar8 != 0) &&
-         ((iVar8 = thunk_FUN_00493340((int)this), iVar8 != 1 ||
+         ((iVar8 = STBoatC::CheckForReplenisher(this,unaff_EDI), iVar8 != 1 ||
           (bVar7 = thunk_FUN_004d6f70(this), CONCAT31(extraout_var_00,bVar7) != 1)))) {
         sVar2 = *(short *)((int)this + 0x61d);
         sVar3 = *(short *)((int)this + 0x621);
@@ -220,7 +221,7 @@ LAB_00478e51:
   }
   if (iVar8 == 2) {
     *(int *)((int)this + 0x62d) = *(int *)((int)this + 0x62d) + 1;
-    iVar8 = thunk_FUN_004608b0(this,2);
+    iVar8 = STBoatC::Defence(this,2);
     if (iVar8 == -1) {
       return -1;
     }
@@ -235,7 +236,7 @@ LAB_00478e51:
     }
     iVar8 = thunk_FUN_004d6df0(this);
     if ((iVar8 == 0) ||
-       ((iVar8 = thunk_FUN_00493340((int)this), iVar8 == 1 &&
+       ((iVar8 = STBoatC::CheckForReplenisher(this,unaff_EDI), iVar8 == 1 &&
         (bVar7 = thunk_FUN_004d6f70(this), CONCAT31(extraout_var_01,bVar7) == 1))))
     goto LAB_00478e51;
     sVar2 = *(short *)((int)this + 0x61d);
@@ -397,7 +398,7 @@ LAB_00478ff2:
     case 1:
       iVar8 = thunk_FUN_004d6df0(this);
       if ((iVar8 == 0) ||
-         ((iVar8 = thunk_FUN_00493340((int)this), iVar8 == 1 &&
+         ((iVar8 = STBoatC::CheckForReplenisher(this,unaff_EDI), iVar8 == 1 &&
           (bVar7 = thunk_FUN_004d6f70(this), CONCAT31(extraout_var_02,bVar7) == 1)))) {
         thunk_FUN_004602b0(this);
         goto LAB_00478e51;

@@ -18,7 +18,7 @@ short * __cdecl FUN_006ef9d0(short *param_1,int param_2,int param_3,undefined *p
   local_8 = 0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((param_1 == (short *)0x0) || (param_2 == 0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0xd4);

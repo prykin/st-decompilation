@@ -15,7 +15,7 @@ int __thiscall thunk_FUN_0060d660(void *this,int *param_1)
   
   iVar2 = *(int *)((int)this + 0x23c);
   uVar5 = iVar2 * 0x44;
-  iVar1 = FUN_006aac70(uVar5);
+  iVar1 = Library::DKW::LIB::FUN_006aac70(uVar5);
   *(int *)((int)this + 0x244) = iVar1;
   if (iVar1 == 0) {
     return 0;
@@ -51,7 +51,8 @@ int __thiscall thunk_FUN_0060d660(void *this,int *param_1)
           piVar6 = (int *)((int)piVar6 + iVar1);
         }
         if (*(int *)(iStack_14 + 8 + *(int *)((int)this + 0x244)) != 0) {
-          iVar2 = FUN_006aac70(*(int *)(iStack_14 + *(int *)((int)this + 0x244) + 4) << 2);
+          iVar2 = Library::DKW::LIB::FUN_006aac70
+                            (*(int *)(iStack_14 + *(int *)((int)this + 0x244) + 4) << 2);
           *(int *)(iStack_14 + 8 + *(int *)((int)this + 0x244)) = iVar2;
           piVar7 = *(int **)(iStack_14 + *(int *)((int)this + 0x244) + 8);
           for (uVar3 = *(uint *)(iStack_14 + 4 + *(int *)((int)this + 0x244)) & 0x3fffffff;

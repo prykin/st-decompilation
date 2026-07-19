@@ -20,7 +20,7 @@ undefined4 * __cdecl FUN_0071ae80(LPCSTR param_1,DWORD *param_2)
   local_10 = (HANDLE)0xffffffff;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     hFile = CreateFileA(param_1,0x80000000,0,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
     local_10 = hFile;
@@ -35,7 +35,7 @@ undefined4 * __cdecl FUN_0071ae80(LPCSTR param_1,DWORD *param_2)
     if (nNumberOfBytesToRead == 0xffffffff) {
       RaiseInternalException(-9,DAT_007ed77c,s_E__Ourlib_mfany_cpp_007f08c8,0x4a);
     }
-    local_8 = FUN_006aac10(nNumberOfBytesToRead);
+    local_8 = Library::DKW::LIB::FUN_006aac10(nNumberOfBytesToRead);
     BVar2 = ReadFile(hFile,local_8,nNumberOfBytesToRead,&local_c,(LPOVERLAPPED)0x0);
     if (BVar2 == 0) {
       RaiseInternalException(-0xc,DAT_007ed77c,s_E__Ourlib_mfany_cpp_007f08c8,0x4e);

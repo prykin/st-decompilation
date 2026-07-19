@@ -15,7 +15,7 @@ undefined4 __cdecl FUN_0071b010(LPCSTR param_1,int param_2,char *param_3,char pa
   local_8 = (byte *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (((param_2 == 0) || (param_1 == (LPCSTR)0x0)) || (param_3 == (char *)0x0)) {
       RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfany_cpp_007f08c8,0x6f);

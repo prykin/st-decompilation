@@ -26,7 +26,7 @@ uint thunk_FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_
   pvStack_14 = (void *)0x0;
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
-  uVar1 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar1 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar1 != 0) {
     g_currentExceptionFrame = IStack_64.previous;
     thunk_FUN_006686c0((int *)&puStack_8);
@@ -50,7 +50,7 @@ uint thunk_FUN_0064e300(int param_1,char *param_2,undefined2 param_3,char param_
   *(uint *)((int)puStack_8 + 0x77) = uVar1;
   puStack_c = thunk_FUN_006684e0(puStack_8,auStack_20);
   thunk_FUN_006686c0((int *)&puStack_8);
-  thunk_FUN_0054cc20(900,auStack_20 + 1,&pvStack_14,puStack_c,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,900,auStack_20 + 1,&pvStack_14,puStack_c,0);
   thunk_FUN_006686c0((int *)&puStack_c);
   if (pvStack_14 == (void *)0x0) {
     RaiseInternalException(-0xab,DAT_007ed77c,s_E____titans_ai_ai_event_cpp_007d2a34,0x1b4);

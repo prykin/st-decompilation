@@ -24,19 +24,20 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_10 = this;
-  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pHVar2 = local_10;
   if (iVar3 == 0) {
-    if (DAT_007fa174 != 0) {
+    if (DAT_007fa174 != (STAllPlayersC *)0x0) {
       *param_1 = *param_1 + 2;
-      local_8 = (byte *)thunk_FUN_0044c130((uint)param_3,param_2);
+      local_8 = (byte *)STAllPlayersC::GetTOBJImage(DAT_007fa174,(uint)param_3,param_2);
       if (local_8 != (byte *)0x0) {
         local_14 = *(int *)(local_8 + 4);
         local_c = *(int *)(local_8 + 8);
         iVar3 = (0x19c - local_14) / 2;
-        FUN_006b55f0(*(undefined4 **)(pHVar2 + 0x218),0,iVar3,*param_1,*(int *)(pHVar2 + 0x21c),0,
-                     (*(int *)(*(int *)(pHVar2 + 0x21c) + 4) - local_14) / 2,
-                     (*(int *)(*(int *)(pHVar2 + 0x21c) + 8) - local_c) / 2,local_14,local_c);
+        Library::DKW::WGR::FUN_006b55f0
+                  (*(undefined4 **)(pHVar2 + 0x218),0,iVar3,*param_1,*(int *)(pHVar2 + 0x21c),0,
+                   (*(int *)(*(int *)(pHVar2 + 0x21c) + 4) - local_14) / 2,
+                   (*(int *)(*(int *)(pHVar2 + 0x21c) + 8) - local_c) / 2,local_14,local_c);
         FUN_006b5440(*(int *)(pHVar2 + 0x218),0,iVar3,*param_1,(int)local_8,0,0xff);
         FUN_006b5ee0(*(int *)(pHVar2 + 0x218),0,iVar3 + -2,*param_1 + -2,local_14 + 4,local_c + 4,
                      0x6f,0xd);

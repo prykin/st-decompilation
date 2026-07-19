@@ -16,7 +16,7 @@ undefined4 * FUN_00602e90(void)
   local_8 = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar1 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     if (*(int *)(local_c + 0x241) == 1) {
       pbVar2 = (&PTR_s_Dest4_0_007cec00)[*(int *)(local_c + 0x372)];

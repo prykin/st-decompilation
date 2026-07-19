@@ -14,13 +14,14 @@ FUN_0071a030(byte *param_1,uint param_2,byte param_3,int param_4,char *param_5,c
   
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (((param_4 == 0) || (param_1 == (byte *)0x0)) || (param_5 == (char *)0x0)) {
       RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfwav_cpp_007f0800,0x7b);
     }
     local_10[0] = (ushort)param_3;
-    FUN_006f13f0(2,param_5,param_1,param_2,(undefined4 *)local_10,param_6,(uint *)0x0);
+    cMf32::RecPut((cMf32 *)param_4,2,param_5,param_1,param_2,(undefined4 *)local_10,param_6,
+                  (uint *)0x0);
     g_currentExceptionFrame = local_54.previous;
     return 1;
   }

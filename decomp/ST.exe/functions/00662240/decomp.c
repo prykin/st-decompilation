@@ -77,7 +77,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_c = this;
-  iVar7 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_74.previous;
@@ -92,7 +92,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
     return iVar7;
   }
   if (*param_1 < 100) {
-    FUN_006ae1c0(*(uint **)(local_c + 0x217),param_1);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_c + 0x217),param_1);
     g_currentExceptionFrame = local_74.previous;
     return 0;
   }
@@ -183,14 +183,16 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
           if ((int)*(short *)(this_00 + 0x157) <= CONCAT22(extraout_var_02,uVar6)) {
             *(undefined1 *)(param_1 + 2) = 1;
             if (*(char *)((int)param_1 + 9) != '\0') {
-              if (DAT_007fa174 == 0) {
+              if (DAT_007fa174 == (STAllPlayersC *)0x0) {
                 pvVar12 = (void *)0x0;
               }
               else {
-                pvVar12 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)CONCAT22(extraout_var_02,
-                                                                                    uVar6) >> 8),
-                                                              *(undefined1 *)((int)param_1 + 0x12)),
-                                                     CONCAT22(extraout_var_03,(short)param_1[4]),1);
+                pvVar12 = (void *)STAllPlayersC::GetObjPtr
+                                            (DAT_007fa174,
+                                             CONCAT31((int3)((uint)CONCAT22(extraout_var_02,uVar6)
+                                                            >> 8),
+                                                      *(undefined1 *)((int)param_1 + 0x12)),
+                                             CONCAT22(extraout_var_03,(short)param_1[4]),1);
               }
               if (pvVar12 != (void *)0x0) {
                 thunk_FUN_004162b0(pvVar12,local_2c,local_30,(undefined2 *)((int)&local_8 + 2));
@@ -282,7 +284,7 @@ LAB_00663af0:
       else {
         bVar21 = true;
       }
-      if ((bVar21) && (DAT_007fa174 != 0)) {
+      if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
         iVar7 = thunk_FUN_004e6a80(*(int *)(this_00 + 0x24),iVar7);
         iVar16 = extraout_EDX_00;
       }
@@ -293,7 +295,7 @@ LAB_00663af0:
         else {
           bVar21 = true;
         }
-        if ((bVar21) && (DAT_007fa174 != 0)) {
+        if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
           iVar7 = thunk_FUN_004e6c20(*(int *)(this_00 + 0x24),iVar7);
           iVar16 = extraout_EDX_01;
         }
@@ -304,14 +306,14 @@ LAB_00663af0:
           else {
             iVar16 = 0;
           }
-          if ((iVar16 == 0) || (DAT_007fa174 == 0)) {
+          if ((iVar16 == 0) || (DAT_007fa174 == (STAllPlayersC *)0x0)) {
             if (((iVar7 == 0xdd) || ((iVar7 == 0xde || (iVar7 == 0xe2)))) || (iVar7 == 0xdc)) {
               bVar21 = true;
             }
             else {
               bVar21 = false;
             }
-            if ((bVar21) && (DAT_007fa174 != 0)) {
+            if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
               iVar7 = 1;
             }
             else {
@@ -357,12 +359,14 @@ LAB_00663af0:
               puVar14 = (uint *)0x0;
             }
             uVar20 = *puVar14;
-            if (DAT_007fa174 == 0) {
+            if (DAT_007fa174 == (STAllPlayersC *)0x0) {
               local_14 = (void *)0x0;
             }
             else {
-              local_14 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar13 >> 8),
-                                                             this_00[0x24]),(uint)(ushort)uVar20,1);
+              local_14 = (void *)STAllPlayersC::GetObjPtr
+                                           (DAT_007fa174,
+                                            CONCAT31((int3)((uint)puVar13 >> 8),this_00[0x24]),
+                                            (uint)(ushort)uVar20,1);
               puVar13 = extraout_EDX_03;
             }
             if (local_14 != (void *)0x0) {
@@ -453,7 +457,7 @@ LAB_0066263e:
       else {
         bVar21 = true;
       }
-      if ((bVar21) && (DAT_007fa174 != 0)) {
+      if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
         iVar7 = thunk_FUN_004e6a80(*(int *)(this_00 + 0x24),iVar7);
       }
       else {
@@ -463,7 +467,7 @@ LAB_0066263e:
         else {
           bVar21 = true;
         }
-        if ((bVar21) && (DAT_007fa174 != 0)) {
+        if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
           iVar7 = thunk_FUN_004e6c20(*(int *)(this_00 + 0x24),iVar7);
         }
         else {
@@ -473,7 +477,7 @@ LAB_0066263e:
           else {
             bVar21 = false;
           }
-          if ((bVar21) && (DAT_007fa174 != 0)) {
+          if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
             iVar7 = thunk_FUN_004e80f0(*(int *)(this_00 + 0x24),iVar7);
           }
           else {
@@ -483,7 +487,7 @@ LAB_0066263e:
             else {
               bVar21 = false;
             }
-            if ((bVar21) && (DAT_007fa174 != 0)) {
+            if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
               iVar7 = 1;
             }
             else {
@@ -609,7 +613,7 @@ LAB_0066263e:
       else {
         bVar21 = true;
       }
-      if ((bVar21) && (DAT_007fa174 != 0)) {
+      if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
         iVar7 = thunk_FUN_004e6a80(*(int *)(this_00 + 0x24),iVar7);
         iVar16 = extraout_EDX_05;
       }
@@ -620,7 +624,7 @@ LAB_0066263e:
         else {
           bVar21 = true;
         }
-        if ((bVar21) && (DAT_007fa174 != 0)) {
+        if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
           iVar7 = thunk_FUN_004e6c20(*(int *)(this_00 + 0x24),iVar7);
           iVar16 = extraout_EDX_06;
         }
@@ -631,14 +635,14 @@ LAB_0066263e:
           else {
             iVar16 = 0;
           }
-          if ((iVar16 == 0) || (DAT_007fa174 == 0)) {
+          if ((iVar16 == 0) || (DAT_007fa174 == (STAllPlayersC *)0x0)) {
             if (((iVar7 == 0xdd) || ((iVar7 == 0xde || (iVar7 == 0xe2)))) || (iVar7 == 0xdc)) {
               bVar21 = true;
             }
             else {
               bVar21 = false;
             }
-            if ((bVar21) && (DAT_007fa174 != 0)) {
+            if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
               iVar7 = 1;
             }
             else {
@@ -681,12 +685,14 @@ LAB_0066263e:
             puVar8 = (ushort *)0x0;
           }
           uVar3 = *puVar8;
-          if (DAT_007fa174 == 0) {
+          if (DAT_007fa174 == (STAllPlayersC *)0x0) {
             local_24 = (void *)0x0;
           }
           else {
-            local_24 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar8 >> 8),this_00[0x24]),
-                                                  (uint)uVar3,1);
+            local_24 = (void *)STAllPlayersC::GetObjPtr
+                                         (DAT_007fa174,
+                                          CONCAT31((int3)((uint)puVar8 >> 8),this_00[0x24]),
+                                          (uint)uVar3,1);
           }
           if ((local_24 != (void *)0x0) && (iVar7 = thunk_FUN_004c93e0(local_24,1), iVar7 == 0)) {
             *(undefined1 *)(param_1 + 2) = 1;
@@ -751,7 +757,7 @@ LAB_0066263e:
       else {
         bVar21 = true;
       }
-      if ((bVar21) && (DAT_007fa174 != 0)) {
+      if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
         iVar16 = thunk_FUN_004e6a80(*(int *)(local_c + 0x24),uVar20);
         iVar7 = extraout_EDX_11;
       }
@@ -762,7 +768,7 @@ LAB_0066263e:
         else {
           bVar21 = true;
         }
-        if ((bVar21) && (DAT_007fa174 != 0)) {
+        if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
           iVar16 = thunk_FUN_004e6c20(*(int *)(local_c + 0x24),uVar20);
           iVar7 = extraout_EDX_12;
         }
@@ -773,14 +779,14 @@ LAB_0066263e:
           else {
             iVar7 = 0;
           }
-          if ((iVar7 == 0) || (DAT_007fa174 == 0)) {
+          if ((iVar7 == 0) || (DAT_007fa174 == (STAllPlayersC *)0x0)) {
             if (((uVar20 == 0xdd) || ((uVar20 == 0xde || (uVar20 == 0xe2)))) || (uVar20 == 0xdc)) {
               bVar21 = true;
             }
             else {
               bVar21 = false;
             }
-            if ((bVar21) && (DAT_007fa174 != 0)) {
+            if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
               iVar16 = 1;
             }
             else {
@@ -824,12 +830,14 @@ LAB_00663076:
           }
           uVar6 = *puVar9;
           puVar13 = (uint *)CONCAT22((short)((uint)puVar13 >> 0x10),uVar6);
-          if (DAT_007fa174 == 0) {
+          if (DAT_007fa174 == (STAllPlayersC *)0x0) {
             pvVar12 = (void *)0x0;
           }
           else {
-            pvVar12 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar9 >> 8),this_00[0x24]),
-                                                 (uint)puVar13,1);
+            pvVar12 = (void *)STAllPlayersC::GetObjPtr
+                                        (DAT_007fa174,
+                                         CONCAT31((int3)((uint)puVar9 >> 8),this_00[0x24]),
+                                         (uint)puVar13,1);
           }
           local_24 = pvVar12;
           if (pvVar12 != (void *)0x0) {
@@ -886,7 +894,7 @@ LAB_00663076:
     else {
       bVar21 = true;
     }
-    if ((bVar21) && (DAT_007fa174 != 0)) {
+    if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
       iVar7 = thunk_FUN_004e6a80(*(int *)(local_c + 0x24),uVar20);
       uVar19 = extraout_EDX_08;
     }
@@ -897,7 +905,7 @@ LAB_00663076:
       else {
         bVar21 = true;
       }
-      if ((bVar21) && (DAT_007fa174 != 0)) {
+      if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
         iVar7 = thunk_FUN_004e6c20(*(int *)(local_c + 0x24),uVar20);
         uVar19 = extraout_EDX_09;
       }
@@ -908,14 +916,14 @@ LAB_00663076:
         else {
           uVar19 = 0;
         }
-        if ((uVar19 == 0) || (DAT_007fa174 == 0)) {
+        if ((uVar19 == 0) || (DAT_007fa174 == (STAllPlayersC *)0x0)) {
           if (((uVar20 == 0xdd) || ((uVar20 == 0xde || (uVar20 == 0xe2)))) || (uVar20 == 0xdc)) {
             bVar21 = true;
           }
           else {
             bVar21 = false;
           }
-          if ((bVar21) && (DAT_007fa174 != 0)) {
+          if ((bVar21) && (DAT_007fa174 != (STAllPlayersC *)0x0)) {
             iVar7 = 1;
           }
           else {
@@ -971,12 +979,13 @@ LAB_00662dbb:
       }
       uVar6 = *puVar9;
       puVar13 = (uint *)CONCAT22((short)((uint)puVar13 >> 0x10),uVar6);
-      if (DAT_007fa174 == 0) {
+      if (DAT_007fa174 == (STAllPlayersC *)0x0) {
         local_10 = (uint *)0x0;
       }
       else {
-        local_10 = (uint *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar9 >> 8),this_00[0x24]),
-                                              (uint)puVar13,1);
+        local_10 = (uint *)STAllPlayersC::GetObjPtr
+                                     (DAT_007fa174,CONCAT31((int3)((uint)puVar9 >> 8),this_00[0x24])
+                                      ,(uint)puVar13,1);
       }
       if (local_10 == (uint *)0x0) goto LAB_00662e52;
       switch(**(undefined4 **)((int)param_1 + 10)) {
@@ -1114,13 +1123,14 @@ LAB_00663325:
         bVar21 = true;
       }
       if (bVar21) {
-        if (DAT_007fa174 == 0) {
+        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
           pvVar12 = (void *)0x0;
         }
         else {
-          pvVar12 = (void *)thunk_FUN_0042b620((uint)CONCAT11((char)((ushort)puVar13[0xe] >> 8),
-                                                              local_c[0x24]),
-                                               (uint)(ushort)puVar13[0xe],1);
+          pvVar12 = (void *)STAllPlayersC::GetObjPtr
+                                      (DAT_007fa174,
+                                       (uint)CONCAT11((char)((ushort)puVar13[0xe] >> 8),
+                                                      local_c[0x24]),(uint)(ushort)puVar13[0xe],1);
         }
         if (pvVar12 == (void *)0x0) goto LAB_00663325;
         iVar7 = thunk_FUN_004c9430(pvVar12,1,*(int *)(*(int *)((int)param_1 + 9) + 8));
@@ -1305,12 +1315,14 @@ LAB_006636da:
           puVar11 = (uint *)0x0;
         }
         uVar20 = *puVar11;
-        if (DAT_007fa174 == 0) {
+        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
           pvVar12 = (void *)0x0;
         }
         else {
-          pvVar12 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar13 >> 8),local_c[0x24]),
-                                               (uint)(ushort)uVar20,1);
+          pvVar12 = (void *)STAllPlayersC::GetObjPtr
+                                      (DAT_007fa174,
+                                       CONCAT31((int3)((uint)puVar13 >> 8),local_c[0x24]),
+                                       (uint)(ushort)uVar20,1);
           puVar13 = extraout_EDX_15;
         }
         if ((pvVar12 != (void *)0x0) &&
@@ -1405,8 +1417,10 @@ LAB_0066380d:
               puVar14 = (uint *)0x0;
             }
             local_28 = CONCAT22((short)((uint)puVar14 >> 0x10),(short)*puVar14);
-            piVar15 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)puVar11 >> 8),local_c[0x24]),
-                                                local_28,1);
+            piVar15 = (int *)STAllPlayersC::GetObjPtr
+                                       (DAT_007fa174,
+                                        CONCAT31((int3)((uint)puVar11 >> 8),local_c[0x24]),local_28,
+                                        1);
             puVar11 = extraout_ECX_00;
             if (piVar15 != (int *)0x0) {
               iVar7 = (**(code **)(*piVar15 + 0x2c))();
@@ -1425,7 +1439,7 @@ LAB_0066380d:
                  )) {
                 *(short *)((int)param_1 + 0xf) = *(short *)((int)param_1 + 0xf) + 1;
                 if (*(uint **)((int)param_1 + 0x11) != (uint *)0x0) {
-                  FUN_006ae1c0(*(uint **)((int)param_1 + 0x11),&local_28);
+                  Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)param_1 + 0x11),&local_28);
                   puVar11 = extraout_ECX_02;
                 }
               }

@@ -18,7 +18,7 @@ CursorClassTy::CursDrawInit(CursorClassTy *this,int param_1,int param_2,int para
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar3;
     iVar2 = ReportDebugMessage(s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xd8,0,errorCode,
@@ -36,7 +36,7 @@ CursorClassTy::CursDrawInit(CursorClassTy *this,int param_1,int param_2,int para
     g_currentExceptionFrame = pIVar3;
     return;
   }
-  FUN_006b8d50(*(int **)(local_8 + 0xad),param_1,param_2,param_3,param_4);
+  Library::DKW::DDX::FUN_006b8d50(*(int **)(local_8 + 0xad),param_1,param_2,param_3,param_4);
   g_currentExceptionFrame = pIVar3;
   return;
 }

@@ -28,7 +28,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_8;
   if (iVar2 == 0) {
     if (*(int *)(local_8 + 0x1189) != 0) {
@@ -60,7 +60,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       DAT_008075a4 = 0;
     }
     if (DAT_008075a8 != (int *)0x0) {
-      FUN_006b3cc0(DAT_008075a8);
+      Library::DKW::DDX::FUN_006b3cc0(DAT_008075a8);
       DAT_008075a8 = (int *)0x0;
     }
     if (DAT_0080759c != (undefined4 *)0x0) {
@@ -131,7 +131,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
     local_c = pSVar5;
-    iVar2 = __setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar5 = local_c;
     if ((iVar2 == 0) && (*(int *)local_c != 0)) {
       FUN_006b81d0(*(undefined4 **)(local_c + 4));
@@ -141,10 +141,11 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     DestroyWindow(DAT_00806748);
     DAT_00806748 = (HWND)0x0;
     UnregisterClassA(s_STWindowClass_007c9e3c,DAT_00856d70);
+    pSVar5 = local_8;
     if (*(int *)(local_8 + 0x115a) != 0) {
       FUN_006ab060((undefined4 *)(local_8 + 0x115a));
     }
-    FUN_006e36e0();
+    AppClassTy::DoneApp((AppClassTy *)pSVar5);
     if (DAT_008030d4 != 0) {
       FUN_006ab060(&DAT_008030d4);
     }

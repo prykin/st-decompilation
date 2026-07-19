@@ -90,9 +90,10 @@ LAB_00643f4a:
   }
   if (*(int *)(param_1 + 0x23d) == 1) {
     if (*(byte *)(param_1 + 0x27d) < 8) {
-      local_c = thunk_FUN_0042b620(CONCAT31((int3)((uint)in_EAX >> 8),
-                                            *(undefined1 *)(param_1 + 0x24)),
-                                   CONCAT22(uVar8,*(undefined2 *)(param_1 + 0x262)),1);
+      local_c = STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,
+                           CONCAT31((int3)((uint)in_EAX >> 8),*(undefined1 *)(param_1 + 0x24)),
+                           CONCAT22(uVar8,*(undefined2 *)(param_1 + 0x262)),1);
     }
     uVar4 = local_c;
     if (((*(char *)(param_1 + 0x27d) == '\0') && (*(int *)(param_1 + 0x259) != 10)) &&
@@ -117,7 +118,7 @@ LAB_00643f4a:
   else {
     if (*(int *)(param_1 + 0x270) == 0) {
       pSVar1 = (STT3DSprC *)(param_1 + 0x1d5);
-      iVar9 = thunk_FUN_004abe40(pSVar1,'\0',(uint)*(byte *)(param_1 + 0x27c));
+      iVar9 = STT3DSprC::SetCurFase(pSVar1,'\0',(uint)*(byte *)(param_1 + 0x27c));
       if (iVar9 != 0) {
         return 0xffffffff;
       }
@@ -128,7 +129,7 @@ LAB_00643f4a:
       bVar6 = *(byte *)(param_1 + 0x27c);
       iVar9 = thunk_FUN_004acd30(pSVar1,'\x01');
       if ((int)(uint)bVar6 < iVar9) {
-        iVar9 = thunk_FUN_004abe40(pSVar1,'\x01',(uint)bVar6);
+        iVar9 = STT3DSprC::SetCurFase(pSVar1,'\x01',(uint)bVar6);
         if (iVar9 != 0) {
           return 0xffffffff;
         }
@@ -176,7 +177,7 @@ LAB_00643f4a:
         (**(code **)(*local_8 + 0xe4))(*(undefined4 *)(param_1 + 0x278));
       }
       pSVar1 = (STT3DSprC *)(param_1 + 0x1d5);
-      iVar9 = thunk_FUN_004abe40(pSVar1,'\0',(uint)*(byte *)(param_1 + 0x27c));
+      iVar9 = STT3DSprC::SetCurFase(pSVar1,'\0',(uint)*(byte *)(param_1 + 0x27c));
       if (iVar9 != 0) {
         return 0xffffffff;
       }
@@ -187,7 +188,7 @@ LAB_00643f4a:
       bVar6 = *(byte *)(param_1 + 0x27c);
       iVar9 = thunk_FUN_004acd30(pSVar1,'\x01');
       if ((int)(uint)bVar6 < iVar9) {
-        iVar9 = thunk_FUN_004abe40(pSVar1,'\x01',(uint)bVar6);
+        iVar9 = STT3DSprC::SetCurFase(pSVar1,'\x01',(uint)bVar6);
         if (iVar9 != 0) {
           return 0xffffffff;
         }

@@ -44,7 +44,7 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
   pMStack_c = this;
-  iVar5 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar7 = iStack_14;
   if (iVar5 == 0) {
     uVar10 = *(uint *)(iStack_14 + 0x14);
@@ -87,8 +87,9 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
     FUN_006b5f80(DAT_008075a8,*piStack_20,piStack_20[1],(int)puStack_8,(int)pbVar4);
     thunk_FUN_00540620(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)puStack_8,pbVar4,'\x01',
                        *(BITMAPINFO **)(pMStack_c + 0x5d));
-    FUN_006b48e0(DAT_0080759c,*piVar3,piVar3[1],iVar7,0,0,0,(uint)puStack_8,(int)pbVar4,
-                 (int)(pMStack_c + 0xa3),0x4c,0x10000ff);
+    Library::DKW::DDX::FUN_006b48e0
+              (DAT_0080759c,*piVar3,piVar3[1],iVar7,0,0,0,(uint)puStack_8,(int)pbVar4,
+               (int)(pMStack_c + 0xa3),0x4c,0x10000ff);
     g_currentExceptionFrame = IStack_64.previous;
     return;
   }

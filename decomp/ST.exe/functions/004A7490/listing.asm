@@ -1,4 +1,4 @@
-FUN_004a7490:
+STGroupBoatC::ReMakePatrolPoints:
 004A7490  55                        PUSH EBP
 004A7491  8B EC                     MOV EBP,ESP
 004A7493  83 EC 48                  SUB ESP,0x48

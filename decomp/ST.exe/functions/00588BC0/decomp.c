@@ -44,7 +44,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   local_44 = (STSprGameObjC *)this;
-  iVar2 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_44;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_8c.previous;
@@ -75,7 +75,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
   if (uVar5 == 0x10f) {
     local_20 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(this_00 + 0x1d5),&local_10);
     local_1c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_18);
-    local_14 = (byte *)FUN_006aac70(local_18 + 0x87 + local_10);
+    local_14 = (byte *)Library::DKW::LIB::FUN_006aac70(local_18 + 0x87 + local_10);
     if (local_20 == (byte *)0x0) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;
@@ -333,7 +333,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
     this_00[0x276] = *(STSprGameObjC *)((int)local_48 + 0x79);
     this_00[0x277] = *(STSprGameObjC *)((int)local_48 + 0x7a);
     *(undefined4 *)(this_00 + 0x278) = *(undefined4 *)((int)local_48 + 0x7b);
-    local_40[0] = FUN_006aac70(0x44);
+    local_40[0] = Library::DKW::LIB::FUN_006aac70(0x44);
     if (local_40[0] == 0) {
       g_currentExceptionFrame = local_8c.previous;
       return 0;

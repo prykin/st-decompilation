@@ -10,7 +10,7 @@ bool FUN_00571810(char *param_1)
   if (param_1 == (char *)0x0) {
     return false;
   }
-  _strncpy((char *)&param_1,param_1,4);
+  Library::MSVCRT::_strncpy((char *)&param_1,param_1,4);
   param_1 = (char *)((uint)param_1 & 0xffffff);
   FUN_006b77e0((char *)&param_1,(byte *)&param_1);
   pbVar3 = &DAT_007ca2e4;

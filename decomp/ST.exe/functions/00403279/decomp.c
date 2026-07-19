@@ -31,7 +31,7 @@ STManRub3C::AddNewDock
   IStack_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_7c;
   pSStack_8 = this;
-  iVar3 = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_7c.previous;
@@ -46,7 +46,7 @@ STManRub3C::AddNewDock
     return 0xffff;
   }
   if (*(int *)(pSStack_8 + param_1 * 4 + 0x50) == 0) {
-    puVar4 = FUN_006ae290((uint *)0x0,10,0x28,10);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x28,10);
     *(uint **)(pSVar2 + param_1 * 4 + 0x50) = puVar4;
   }
   else {
@@ -88,7 +88,7 @@ STManRub3C::AddNewDock
     uStack_2e = param_4;
     uStack_2c = 0;
     uStack_18 = 0;
-    uVar6 = FUN_006ae1c0(puVar4,&iStack_38);
+    uVar6 = Library::DKW::TBL::FUN_006ae1c0(puVar4,&iStack_38);
     g_currentExceptionFrame = IStack_7c.previous;
     return uVar6;
   }

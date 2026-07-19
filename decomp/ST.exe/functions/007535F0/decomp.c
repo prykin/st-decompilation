@@ -19,10 +19,12 @@ bool FUN_007535f0(byte *param_1)
   byte local_108 [260];
   
   pbVar8 = param_1;
-  FUN_0072e730(param_1,(byte *)&param_1,local_408,local_308,local_208);
-  iVar3 = __strcmpi((char *)local_208,&DAT_007c7078);
-  if ((iVar3 == 0) || (iVar3 = __strcmpi((char *)local_208,&DAT_007c7080), iVar3 == 0)) {
-    __makepath((char *)local_108,(char *)&param_1,(char *)local_408,(char *)local_308,&DAT_007c7078)
+  Library::MSVCRT::FUN_0072e730(param_1,(byte *)&param_1,local_408,local_308,local_208);
+  iVar3 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7078);
+  if ((iVar3 == 0) ||
+     (iVar3 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7080), iVar3 == 0)) {
+    Library::MSVCRT::__makepath
+              ((char *)local_108,(char *)&param_1,(char *)local_408,(char *)local_308,&DAT_007c7078)
     ;
   }
   else {
@@ -87,9 +89,11 @@ bool FUN_007535f0(byte *param_1)
   if (iVar3 == 0) {
     return false;
   }
-  iVar3 = __strcmpi((char *)local_208,&DAT_007c7078);
-  if ((iVar3 == 0) || (iVar3 = __strcmpi((char *)local_208,&DAT_007c7080), iVar3 == 0)) {
-    __makepath((char *)local_108,(char *)&param_1,(char *)local_408,(char *)local_308,&DAT_007c7080)
+  iVar3 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7078);
+  if ((iVar3 == 0) ||
+     (iVar3 = Library::MSVCRT::__strcmpi((char *)local_208,&DAT_007c7080), iVar3 == 0)) {
+    Library::MSVCRT::__makepath
+              ((char *)local_108,(char *)&param_1,(char *)local_408,(char *)local_308,&DAT_007c7080)
     ;
   }
   else {

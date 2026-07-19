@@ -15,6 +15,9 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   uint uVar9;
   LPSTR pCVar10;
   int iVar11;
+  undefined4 extraout_ECX;
+  ccFntTy *this_02;
+  ccFntTy *this_03;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined1 uVar12;
@@ -27,7 +30,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pFStack_c = this;
-  iVar4 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pFStack_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -48,7 +51,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   DAT_00802a99 = 0;
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -85,7 +88,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   *(undefined4 *)(this_01 + 0x1f87) = 0xf;
   *(undefined4 *)(this_01 + 0x1f8b) = 1;
   *(undefined4 *)(this_01 + 0x1f83) = 0x4d;
-  puVar7 = FUN_006ae290((uint *)0x0,5,0x10c,5);
+  puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10c,5);
   *(uint **)(this_01 + 0x1fb3) = puVar7;
   *(undefined4 *)(this_01 + 0x1a6f) = *(undefined4 *)(*(int *)(this_01 + 0x1a5b) + 0x30);
   *(undefined4 *)(this_01 + 0x1a73) = *(undefined4 *)(*(int *)(this_01 + 0x1a5b) + 0x34);
@@ -93,12 +96,13 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   *(int *)(this_01 + 0x1a77) = iVar4;
   *(undefined4 *)(iVar4 + 0x7e) = 1;
   *(undefined2 *)(iVar4 + 0x9e) = 0;
+  this_02 = (ccFntTy *)CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_007c6ff0);
   *(undefined1 *)(iVar4 + 0x9e) = DAT_007c6ff0;
-  puVar8 = FUN_0070ceb0(0x19d,DAT_00806780,s_FSGS_NB_007cc070,0);
+  puVar8 = ccFntTy::operator(this_02,0x19d,DAT_00806780,s_FSGS_NB_007cc070,0);
   *(undefined4 **)(this_01 + 0x1a7b) = puVar8;
   puVar8[0x16] = 1;
   puVar8[0x17] = 0;
-  puVar8 = FUN_0070ceb0(0x19d,DAT_00806780,s_FSGS_NS_007cc064,0);
+  puVar8 = ccFntTy::operator(this_03,0x19d,DAT_00806780,s_FSGS_NS_007cc064,0);
   *(undefined4 **)(this_01 + 0x1a7f) = puVar8;
   puVar8[0x16] = 1;
   puVar8[0x17] = 0;
@@ -130,7 +134,8 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   uVar9 = *(uint *)(this_01 + 0x1a97);
   FUN_006b2330((uint)DAT_008075a8,(uint *)(this_01 + 0x1a8f),0x31,0x4023f6,*(uint *)(uVar9 + 4),
                *(uint *)(uVar9 + 8),uVar9);
-  FUN_006b3640(DAT_008075a8,*(uint *)(this_01 + 0x1a8f),0xffffffff,DAT_00806730 - 0x24d,0);
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(this_01 + 0x1a8f),0xffffffff,DAT_00806730 - 0x24d,0);
   iVar4 = 1;
   puVar8 = (undefined4 *)(*(int *)(this_01 + 0x5d) + 0x28);
   uVar9 = FUN_006b4fe0(*(int *)(this_01 + 0x5d));
@@ -141,7 +146,7 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   pFVar1 = this_01 + 0x1abc;
   FUN_006b2330((uint)DAT_008075a8,(uint *)pFVar1,0x31,0x4023f6,*(uint *)(uVar9 + 4),
                *(uint *)(uVar9 + 8),uVar9);
-  FUN_006b3640(DAT_008075a8,*(uint *)pFVar1,0xffffffff,0xb4,0xaa);
+  Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pFVar1,0xffffffff,0xb4,0xaa);
   FUN_006b3af0(DAT_008075a8,*(uint *)pFVar1);
   SpriteClassTy::InitSprite
             ((SpriteClassTy *)(this_01 + 0x1b28),DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
@@ -197,14 +202,14 @@ void __thiscall FSGSTy::InitFSGS(FSGSTy *this,byte param_1)
   *(undefined4 *)(this_01 + 0x1e19) = 0;
   *(undefined4 *)(this_01 + 0x1c6a) = 0;
   *(undefined4 *)(this_01 + 0x1c66) = 0;
-  puVar7 = FUN_006b54f0((uint *)0x0,10,10);
+  puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   *(uint **)(this_01 + 0x1b08) = puVar7;
-  FUN_006b5aa0((int)puVar7,s_License_agreement_007cc01c);
-  FUN_006b5aa0(*(int *)(this_01 + 0x1b08),s_Nothing_to_do_007cc00c);
+  Library::DKW::TBL::FUN_006b5aa0((int)puVar7,s_License_agreement_007cc01c);
+  Library::DKW::TBL::FUN_006b5aa0(*(int *)(this_01 + 0x1b08),s_Nothing_to_do_007cc00c);
   PaintFSGS(this_01,'\x01');
   thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)(this_01 + 0x5d),10,2);
   if ((5 < param_1) && (param_1 < 9)) {
-    puVar7 = FUN_006b54f0((uint *)0x0,100,100);
+    puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,100,100);
     *(uint **)(this_01 + 0x1e9e) = puVar7;
   }
   this_01[0x1a62] = (FSGSTy)0x0;

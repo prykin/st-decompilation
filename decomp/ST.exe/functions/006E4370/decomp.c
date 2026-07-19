@@ -1,9 +1,15 @@
 
-int FUN_006e4370(int param_1,undefined4 param_2,undefined4 param_3)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sapp.cpp
+   AppClassTy::DecodeMessage */
+
+int __thiscall
+AppClassTy::DecodeMessage(AppClassTy *this,int param_1,undefined4 param_2,undefined4 param_3)
 
 {
   uint uVar1;
   code *pcVar2;
+  AppClassTy *this_00;
   int iVar3;
   int *piVar4;
   int iVar5;
@@ -15,16 +21,18 @@ int FUN_006e4370(int param_1,undefined4 param_2,undefined4 param_3)
   int local_18;
   undefined4 local_14;
   undefined4 local_10;
-  int local_8;
+  AppClassTy *local_8;
   
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
-  iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = local_8;
   if (iVar3 == 0) {
     if (*(int *)(local_8 + 0x14) != 0) {
       *(undefined4 *)(*(int *)(local_8 + 0x14) + 4) = 0;
       while( true ) {
-        iVar3 = *(int *)(local_8 + 0x14);
+        iVar3 = *(int *)(this_00 + 0x14);
         uVar1 = *(uint *)(iVar3 + 4);
         if (uVar1 < *(uint *)(iVar3 + 0xc)) {
           piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
@@ -40,7 +48,7 @@ int FUN_006e4370(int param_1,undefined4 param_2,undefined4 param_3)
           local_18 = piVar4[1];
           local_14 = param_2;
           local_10 = param_3;
-          FUN_006e3dd0(piVar4[2],piVar4[3],(int)&local_28);
+          SendMessage(this_00,piVar4[2],piVar4[3],(int)&local_28);
         }
       }
     }

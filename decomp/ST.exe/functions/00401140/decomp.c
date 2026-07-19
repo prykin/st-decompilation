@@ -58,26 +58,26 @@ void __fastcall thunk_FUN_0060aa00(void *param_1)
                 uVar3 = *(int *)(iVar6 + 0x34) + 1;
                 *(uint *)(iVar6 + 0x34) = uVar3;
                 *(float *)(iVar6 + 0x30) = (float)((uVar3 >> 1) + 10) + *(float *)(iVar6 + 0x30);
-                lVar8 = __ftol();
+                lVar8 = Library::MSVCRT::__ftol();
                 *(int *)(iVar6 + 0x24) = (int)lVar8;
                 if ((float10)(*(int *)((int)param_1 + 0x1fd) + 100) <= extraout_ST0) {
                   *(undefined4 *)(iVar6 + 0x30) = 0x43480000;
                   *(undefined4 *)(iVar6 + 0x34) = 0;
                 }
-                __ftol();
+                Library::MSVCRT::__ftol();
                 fVar7 = extraout_ST0_00;
               }
               fcos(fVar7);
-              lVar8 = __ftol();
+              lVar8 = Library::MSVCRT::__ftol();
               fsin(extraout_ST1);
               iVar1 = (int)lVar8 + *(int *)(iVar6 + 0x18);
               *(int *)(iVar6 + 0xc) = iVar1;
-              lVar8 = __ftol();
+              lVar8 = Library::MSVCRT::__ftol();
               iVar4 = (int)lVar8 + *(int *)(iVar6 + 0x1c);
               *(int *)(iVar6 + 0x10) = iVar4;
               FUN_006e3210(DAT_00807598,(iVar1 * *(int *)(DAT_00807598 + 0x380)) / 0xc9,
                            (iVar4 * *(int *)(DAT_00807598 + 0x380)) / 0xc9);
-              lVar8 = __ftol();
+              lVar8 = Library::MSVCRT::__ftol();
               *(int *)(iVar6 + 0x14) = (short)lVar8 + 0x2d;
             }
             iStack_18 = iStack_18 + 1;
@@ -93,7 +93,7 @@ void __fastcall thunk_FUN_0060aa00(void *param_1)
           }
           else if ((*(int *)((int)param_1 + 0x20d) == 4) && ((int)uStack_1c <= iStack_14)) {
             *(float *)(iVar6 + 0x2c) = *(float *)(iVar6 + 0x2c) - fStack_8;
-            __ftol();
+            Library::MSVCRT::__ftol();
             fVar2 = *(float *)((int)param_1 + 0x22a) + *(float *)(iVar6 + 0x30);
             *(float *)(iVar6 + 0x30) = fVar2;
             if ((float)*(int *)((int)param_1 + 0x1f9) <= fVar2) {
@@ -104,10 +104,10 @@ void __fastcall thunk_FUN_0060aa00(void *param_1)
             *(float *)(iVar6 + 0x2c) = fStack_8 + *(float *)(iVar6 + 0x2c);
           }
           fcos((float10)*(float *)(iVar6 + 0x2c));
-          lVar8 = __ftol();
+          lVar8 = Library::MSVCRT::__ftol();
           fsin((float10)*(float *)(iVar6 + 0x2c));
           *(int *)(iVar6 + 0xc) = (int)lVar8 + *(int *)(iVar6 + 0x18);
-          lVar8 = __ftol();
+          lVar8 = Library::MSVCRT::__ftol();
           *(int *)(iVar6 + 0x10) = (int)lVar8 + *(int *)(iVar6 + 0x1c);
         }
       }
@@ -116,7 +116,7 @@ void __fastcall thunk_FUN_0060aa00(void *param_1)
   }
   if ((*(int *)((int)param_1 + 0x20d) != 4) && (*(int *)((int)param_1 + 0x20d) != 3)) {
     *(float *)((int)param_1 + 0x22a) = (float)(*(int *)((int)param_1 + 0x230) * 0x1e);
-    lVar8 = __ftol();
+    lVar8 = Library::MSVCRT::__ftol();
     iVar6 = (int)lVar8;
     *(int *)((int)param_1 + 0x226) = iVar6;
     if (iVar6 < *(int *)((int)param_1 + 0x1f9)) {

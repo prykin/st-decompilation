@@ -24,14 +24,14 @@ void __thiscall FUN_005d00b0(void *this,int param_1,uint param_2)
   local_64._3_1_ = *(undefined1 *)(param_1 + 3);
   local_64._2_1_ = *(undefined1 *)(param_1 + 2);
   local_60 = 1;
-  FUN_006afe40(&local_14,puVar1);
+  Library::DKW::TBL::FUN_006afe40(&local_14,puVar1);
   local_10 = *(undefined4 *)(param_1 + 0x54);
   local_1a = *(undefined1 *)(param_1 + 0x4a);
   local_c = *(undefined4 *)(param_1 + 0x58);
   local_8 = *(undefined4 *)(param_1 + 0x5c);
   local_19 = 0;
   local_15 = 0;
-  FUN_006b11d0(*(uint **)((int)this + 0x1f84),param_2,&local_64);
+  Library::DKW::TBL::FUN_006b11d0(*(uint **)((int)this + 0x1f84),param_2,&local_64);
   return;
 }
 

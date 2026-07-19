@@ -1,4 +1,4 @@
-FUN_006e3dd0:
+AppClassTy::SendMessage:
 006E3DD0  55                        PUSH EBP
 006E3DD1  8B EC                     MOV EBP,ESP
 006E3DD3  81 EC A0 00 00 00         SUB ESP,0xa0

@@ -58,7 +58,8 @@ LAB_00574651:
       *(undefined2 *)(param_2 + 1) = local_18._0_2_;
       *(undefined2 *)((int)param_2 + 6) = (undefined2)local_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)local_10;
-      local_24 = FUN_006aac10((uint)*(byte *)(param_1 + 4) * (uint)*(byte *)(param_1 + 4));
+      local_24 = Library::DKW::LIB::FUN_006aac10
+                           ((uint)*(byte *)(param_1 + 4) * (uint)*(byte *)(param_1 + 4));
       local_28 = param_2[10];
       local_10 = 0;
       local_c = 0;
@@ -113,7 +114,7 @@ LAB_00574651:
         local_c = 0;
       }
       local_18 = local_24;
-      FUN_006ae1c0(*(uint **)(param_1 + 0x44d),&local_28);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + 0x44d),&local_28);
       param_2[6] = local_18;
       return;
     }

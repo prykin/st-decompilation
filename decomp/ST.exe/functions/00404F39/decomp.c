@@ -6,7 +6,7 @@ int __thiscall thunk_FUN_004805b0(void *this,int *param_1)
   
   iVar1 = *(int *)((int)this + 0x6ef);
   if (iVar1 == 0) {
-    iVar1 = thunk_FUN_00474810(this,param_1);
+    iVar1 = STBoatC::BackLoadObj(this,param_1);
     return iVar1;
   }
   if (iVar1 == 1) {

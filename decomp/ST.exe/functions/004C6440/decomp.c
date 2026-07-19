@@ -35,20 +35,20 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
     piVar7 = local_20;
     FUN_006e1c20(DAT_00807598,param_1,param_2,(float)local_c * _DAT_00790504,&local_14,&local_18);
     if (local_14 < _DAT_0079034c) {
-      lVar9 = __ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       iVar8 = (short)lVar9 + -1;
     }
     else {
-      lVar9 = __ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       iVar8 = (int)(short)lVar9;
     }
     local_10 = iVar8;
     if (local_18 < _DAT_0079034c) {
-      lVar9 = __ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       local_8 = (short)lVar9 + -1;
     }
     else {
-      lVar9 = __ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       local_8 = (int)(short)lVar9;
     }
     pvVar4 = DAT_00802a88;
@@ -117,7 +117,7 @@ LAB_004c6899:
         iVar8 = *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4);
       }
       thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,iVar8,iVar8,'\0');
-      thunk_FUN_004abe40(*(void **)((int)this + 0x2c),'\0',iVar8);
+      STT3DSprC::SetCurFase(*(STT3DSprC **)((int)this + 0x2c),'\0',iVar8);
       uVar6 = FUN_006e51b0(*(int *)((int)this + 0x10));
       STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,uVar6);
       iVar8 = local_10;
@@ -134,8 +134,9 @@ LAB_004c6899:
     thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,
                        *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),
                        *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),'\0');
-    thunk_FUN_004abe40(*(void **)((int)this + 0x2c),'\0',
-                       *(undefined4 *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
+    STT3DSprC::SetCurFase
+              (*(STT3DSprC **)((int)this + 0x2c),'\0',
+               *(undefined4 *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
     uVar6 = FUN_006e51b0(*(int *)((int)this + 0x10));
     STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,uVar6);
   }

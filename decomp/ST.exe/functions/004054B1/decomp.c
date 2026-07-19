@@ -23,7 +23,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pAStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = pAStack_8;
   if (iVar3 == 0) {
     if (pAStack_8 == (AiEventClassTy *)0x0) {
@@ -41,11 +41,11 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     *(short *)pAVar12 = (short)*piVar9;
     pAVar12[2] = *(AiEventClassTy *)((int)piVar9 + 2);
     pAStack_8[0x91] = (AiEventClassTy)0x1;
-    puVar4 = FUN_006b54f0((uint *)0x0,5,5);
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,5,5);
     *(uint **)(pAVar2 + 0x5b3) = puVar4;
     uVar10 = 0;
     do {
-      FUN_006b6020(*(int *)(pAVar2 + 0x5b3),uVar10,&DAT_008016a0);
+      Library::DKW::TBL::FUN_006b6020(*(int *)(pAVar2 + 0x5b3),uVar10,&DAT_008016a0);
       uVar10 = uVar10 + 1;
     } while ((int)uVar10 < 4);
     if (pAVar2[0x8c] == (AiEventClassTy)0x0) {
@@ -68,7 +68,7 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     else {
       uVar10 = *(int *)pAVar12 * 5;
     }
-    puVar5 = FUN_006aac10(uVar10);
+    puVar5 = Library::DKW::LIB::FUN_006aac10(uVar10);
     *(undefined4 **)(pAVar2 + 0x502) = puVar5;
     if (pAVar12 == (AiEventClassTy *)0x0) {
       uVar10 = 0;
@@ -89,7 +89,8 @@ int __thiscall AiEventClassTy::InitData(AiEventClassTy *this,int *param_1)
     }
     uVar6 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)(pAVar2 + 0x4f2) + 0x49e + (int)param_1));
     *(undefined4 *)(pAVar2 + 0x4ee) = uVar6;
-    puVar4 = FUN_006c8680((uint *)0x0,(uint *)(*(int *)(pAVar2 + 0x4e6) + 0x49e + (int)param_1));
+    puVar4 = Library::DKW::TBL::FUN_006c8680
+                       ((uint *)0x0,(uint *)(*(int *)(pAVar2 + 0x4e6) + 0x49e + (int)param_1));
     *(uint **)(pAVar2 + 0x4e2) = puVar4;
     iVar3 = *(int *)(pAVar2 + 0x4ee);
     uVar10 = 0;

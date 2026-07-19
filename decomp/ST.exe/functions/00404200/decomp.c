@@ -18,7 +18,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pAStack_8 = this;
-  iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = pAStack_8;
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_4c.previous;
@@ -54,8 +54,8 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
        (iVar5 = (**(code **)(*param_1 + 0x2c))(), iVar5 == 0x78)) {
       RaiseInternalException(-100,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0x9b);
     }
-    puVar6 = FUN_006ae290((uint *)0x0,1,2,1);
-    FUN_006ae1c0(puVar6,(undefined4 *)((int)param_1 + 0x32));
+    puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
+    Library::DKW::TBL::FUN_006ae1c0(puVar6,(undefined4 *)((int)param_1 + 0x32));
     iVar5 = (**(code **)(*param_1 + 0x2c))();
     if ((iVar5 < 1) || (0x28 < iVar5)) {
       bVar2 = false;

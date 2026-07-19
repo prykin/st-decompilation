@@ -58,14 +58,15 @@ undefined4 __thiscall thunk_FUN_00427bb0(void *this,int param_1,int param_2,int 
 LAB_00427cca:
           iVar9 = iVar8;
           if (DAT_007f4d84 <= DAT_007f4d78) {
-            puVar2 = (undefined4 *)FUN_006acf50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+            puVar2 = (undefined4 *)
+                     Library::DKW::LIB::FUN_006acf50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
             if (puVar2 == (undefined4 *)0x0) {
               return 0;
             }
             DAT_007f4d84 = DAT_007f4d84 + 10;
             DAT_007f4d6c = puVar2;
           }
-          iVar8 = FUN_006aac70(0x20);
+          iVar8 = Library::DKW::LIB::FUN_006aac70(0x20);
           if (iVar8 == 0) {
             return 0;
           }

@@ -58,7 +58,8 @@ LAB_00574651:
       *(undefined2 *)(param_2 + 1) = puStack_18._0_2_;
       *(undefined2 *)((int)param_2 + 6) = (undefined2)iStack_14;
       *(undefined2 *)(param_2 + 2) = (undefined2)iStack_10;
-      puStack_24 = FUN_006aac10((uint)*(byte *)(param_1 + 4) * (uint)*(byte *)(param_1 + 4));
+      puStack_24 = Library::DKW::LIB::FUN_006aac10
+                             ((uint)*(byte *)(param_1 + 4) * (uint)*(byte *)(param_1 + 4));
       uStack_28 = param_2[10];
       iStack_10 = 0;
       iStack_c = 0;
@@ -113,7 +114,7 @@ LAB_00574651:
         iStack_c = 0;
       }
       puStack_18 = puStack_24;
-      FUN_006ae1c0(*(uint **)(param_1 + 0x44d),&uStack_28);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + 0x44d),&uStack_28);
       param_2[6] = puStack_18;
       return;
     }

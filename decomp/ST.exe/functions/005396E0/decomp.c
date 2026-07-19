@@ -32,7 +32,7 @@ void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       if (*(int *)(local_8 + 0x184) != 0) {
         FUN_006e6080(local_8,2,*(int *)(local_8 + 0x184),(undefined4 *)(local_8 + 0x18));

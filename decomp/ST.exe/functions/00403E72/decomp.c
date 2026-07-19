@@ -37,7 +37,7 @@ thunk_FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,
       if (param_5 == 0xff) {
         uStack_8 = uStack_8 ^ ((byte)uStack_8 ^ bVar8) & 0xf;
         uStack_c = uVar5;
-        uVar7 = FUN_0072e6c0();
+        uVar7 = Library::MSVCRT::FUN_0072e6c0();
         uStack_8 = uStack_8 ^
                    (byte)(((char)((int)uVar7 % (int)*(short *)(&DAT_007df9a8 + (short)uVar4 * 2)) +
                           '\x01') * '\x10' ^ (byte)uStack_8) & 0xf0;
@@ -50,7 +50,7 @@ thunk_FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,
         if (param_5 == 1) {
           uStack_c._2_1_ = (byte)((uint)uVar5 >> 0x10);
           uStack_c = CONCAT22(uVar2 ^ (uStack_c._2_1_ ^ bVar8) & 0xf,(ushort)uStack_c);
-          uVar7 = FUN_0072e6c0();
+          uVar7 = Library::MSVCRT::FUN_0072e6c0();
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar4 * 2)) + '\x01')
                   * '\x10' ^ uStack_c._2_1_;
           uStack_c = CONCAT22(uStack_c._2_2_ ^ bVar8 & 0xf0,(ushort)uStack_c);
@@ -58,7 +58,7 @@ thunk_FUN_006a19d0(int *param_1,int param_2,int param_3,int param_4,int param_5,
         else {
           uStack_c._0_1_ = (byte)uVar5;
           uStack_c = CONCAT22(uStack_c._2_2_,uVar1 ^ ((byte)uStack_c ^ bVar8) & 0xf);
-          uVar7 = FUN_0072e6c0();
+          uVar7 = Library::MSVCRT::FUN_0072e6c0();
           bVar8 = ((char)((int)uVar7 % (int)*(short *)(&DAT_007df9c8 + (short)uVar4 * 2)) + '\x01')
                   * '\x10' ^ (byte)uStack_c;
           uStack_c = CONCAT22(uStack_c._2_2_,(ushort)uStack_c ^ bVar8 & 0xf0);

@@ -35,7 +35,7 @@ HoloTy::CalcHologram
   
   IStack_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_78;
-  iVar2 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_78.previous;
     iVar2 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,99,0,iVar2,&DAT_007a4ccc,
@@ -56,7 +56,7 @@ HoloTy::CalcHologram
   }
   uStack_34 = uVar6;
   uStack_2c = uVar7;
-  puStack_1c = FUN_006aac10(uVar7 * uVar3 * 4);
+  puStack_1c = Library::DKW::LIB::FUN_006aac10(uVar7 * uVar3 * 4);
   puStack_c = puStack_1c;
   if ((puStack_1c != (undefined4 *)0x0) && (iStack_14 = 0, uVar6 != 0)) {
     uStack_30 = param_6 & 0xff;
@@ -78,7 +78,7 @@ HoloTy::CalcHologram
               if (iStack_8 < (int)uStack_28) {
                 fsin(((float10)iStack_8 * (float10)_DAT_0079c040) / (float10)(int)uStack_28);
               }
-              lVar10 = __ftol();
+              lVar10 = Library::MSVCRT::__ftol();
               puStack_c[iStack_10 + iVar4] = (int)lVar10;
               iVar2 = iVar4;
             }
@@ -102,7 +102,7 @@ HoloTy::CalcHologram
                 fsin(((float10)(int)uStack_28 * (float10)_DAT_0079c040) / (float10)(int)uStack_34);
               }
               iStack_8 = iVar2;
-              lVar10 = __ftol();
+              lVar10 = Library::MSVCRT::__ftol();
               puStack_c[iStack_10 + iStack_8] = (int)lVar10;
             }
             iVar4 = iVar4 + 1;
@@ -120,7 +120,7 @@ HoloTy::CalcHologram
             if (iStack_8 < (int)uStack_28) {
               fsin(((float10)iStack_8 * (float10)_DAT_0079c040) / (float10)(int)uStack_28);
             }
-            lVar10 = __ftol();
+            lVar10 = Library::MSVCRT::__ftol();
             puStack_c[iStack_10 + iVar4] = (int)lVar10;
             iVar2 = iVar4;
           }

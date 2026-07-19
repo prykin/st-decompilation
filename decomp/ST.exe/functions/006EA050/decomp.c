@@ -17,7 +17,7 @@ void __thiscall FUN_006ea050(void *this,uint param_1,int param_2,uint param_3,in
         FUN_006ab060(puVar1 + 0x2a);
       }
       if ((puVar1[1] & 1) == 0) {
-        puVar3 = (undefined4 *)FUN_006aac70(puVar1[0x25] << 3);
+        puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(puVar1[0x25] << 3);
         if (puVar3 == (undefined4 *)0x0) {
           return;
         }

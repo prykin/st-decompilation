@@ -28,7 +28,7 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -139,7 +139,7 @@ LAB_006304e7:
   }
   if (*(int *)(this_00 + 0x34) == 0) {
     uVar1 = (int)DAT_007fb240 * (int)DAT_007fb242 * 5;
-    puVar4 = (undefined4 *)FUN_006aac70(uVar1);
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar1);
     *(undefined4 **)(this_00 + 0x34) = puVar4;
     if (puVar4 == (undefined4 *)0x0) {
       thunk_FUN_006308b0(this_00);

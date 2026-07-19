@@ -76,7 +76,7 @@ void __fastcall FUN_00660d40(int param_1)
                  ((local_40 = *(char *)(local_8 + 0x81), local_40 < '\0' || ('\a' < local_40)))) {
                 local_40 = *(char *)(local_8 + 0x24);
               }
-              _strncpy(local_3f,(char *)(iVar6 + 0x15),0xe);
+              Library::MSVCRT::_strncpy(local_3f,(char *)(iVar6 + 0x15),0xe);
               if (iVar5 == 0) {
                 sVar2 = *(short *)(iVar3 + 0x7f);
               }

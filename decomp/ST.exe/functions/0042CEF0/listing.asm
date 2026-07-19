@@ -1,4 +1,4 @@
-FUN_0042cef0:
+STAllPlayersC::DelObjFromSaveTmps:
 0042CEF0  55                        PUSH EBP
 0042CEF1  8B EC                     MOV EBP,ESP
 0042CEF3  51                        PUSH ECX

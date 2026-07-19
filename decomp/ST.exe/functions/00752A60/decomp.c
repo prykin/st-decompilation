@@ -21,7 +21,7 @@ byte * FUN_00752a60(int param_1,int param_2,int param_3,int param_4,int param_5,
   
   iVar10 = (int)(param_3 + 7 + (param_3 + 7 >> 0x1f & 7U)) >> 3;
   *param_7 = iVar10 * param_4;
-  pbVar2 = (byte *)FUN_006aac10(iVar10 * param_4);
+  pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac10(iVar10 * param_4);
   if (pbVar2 == (byte *)0x0) {
     return (byte *)0x0;
   }

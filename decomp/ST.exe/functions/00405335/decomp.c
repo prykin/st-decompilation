@@ -55,7 +55,7 @@ thunk_FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,in
     uVar5 = ((*(int *)((int)this + 0x5833) - param_2) / param_4 + 2) *
             ((*(int *)((int)this + 0x5837) - param_3) / param_4 + 2);
     ExceptionList = &pvStack_14;
-    puStack_78 = (undefined4 *)FUN_006aac70(uVar5 * 0x40);
+    puStack_78 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5 * 0x40);
     piVar7 = (int *)&stack0xffffff6c;
     puVar8 = puStack_78;
     for (iVar4 = (uVar5 & 0x3ffffff) << 4; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -111,14 +111,14 @@ thunk_FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,in
     iVar4 = iStack_40;
     if (-1 < (int)uStack_3c) {
       uStack_8 = 0;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       piStack_5c = (int *)&stack0xffffff6c;
       puStack_1c = &stack0xffffff6c;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       uStack_8 = 0xffffffff;
       piStack_58 = (int *)&stack0xffffff6c;
       puStack_1c = &stack0xffffff6c;
-      FUN_00730810((undefined1 *)puStack_78,uStack_3c,0x40,&LAB_00402adb);
+      Library::MSVCRT::FUN_00730810((undefined1 *)puStack_78,uStack_3c,0x40,&LAB_00402adb);
       iStack_28 = (iStack_50 * param_5) / 100;
       uStack_60 = 0;
       if (0 < (int)uStack_3c) {
@@ -160,10 +160,10 @@ thunk_FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,in
         iVar4 = param_1;
         if (0 < param_1) {
 LAB_0069c0f3:
-          uVar5 = FUN_0072e6c0();
+          uVar5 = Library::MSVCRT::FUN_0072e6c0();
           iVar4 = (int)uVar5 % 3 + 1;
           iStack_30 = iVar4;
-          uVar5 = FUN_0072e6c0();
+          uVar5 = Library::MSVCRT::FUN_0072e6c0();
           piVar7 = piStack_58;
           uVar5 = uVar5 & 0x80000007;
           if ((int)uVar5 < 0) {
@@ -174,7 +174,8 @@ LAB_0069c0f3:
             while( true ) {
               if (iVar3 <= iStack_70) {
                 puStack_78[piStack_58[iVar3] * 0x10] = iVar4 << 0x10 | uVar5 & 0xffff;
-                FUN_006ae1c0(*(uint **)(param_7 + 0x18),puStack_78 + piStack_58[iVar3] * 0x10);
+                Library::DKW::TBL::FUN_006ae1c0
+                          (*(uint **)(param_7 + 0x18),puStack_78 + piStack_58[iVar3] * 0x10);
                 iVar4 = piVar7[iVar3];
                 *(short *)(param_6 + iVar3 * 4) =
                      (short)((int)(puStack_78[iVar4 * 0x10 + 0xe] - puStack_78[iVar4 * 0x10 + 0xc])

@@ -1,4 +1,4 @@
-FUN_0046d450:
+STBoatC::UnLoadRC:
 0046D450  55                        PUSH EBP
 0046D451  8B EC                     MOV EBP,ESP
 0046D453  83 EC 24                  SUB ESP,0x24

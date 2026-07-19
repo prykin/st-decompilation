@@ -26,7 +26,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x3aa,0,iVar2,&DAT_007a4ccc,
@@ -38,7 +38,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
     LVar3 = (*pcVar1)();
     return LVar3;
   }
-  iVar2 = FUN_006e4370(param_2,param_3,param_4);
+  iVar2 = AppClassTy::DecodeMessage(DAT_00806728,param_2,param_3,param_4);
   if ((iVar2 != 0) &&
      (iVar2 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x330,0,-0x5001fff8,&DAT_007a4ccc,
                                  s_STAppC__MainWindowProc_007ca0f8), iVar2 != 0)) {
@@ -61,7 +61,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
         puVar6 = puVar6 + 1;
       }
       local_5c = 0x66;
-      FUN_006e3dd0(3,1,(int)local_6c);
+      AppClassTy::SendMessage(DAT_00806728,3,1,(int)local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
     case 0xf:
@@ -155,22 +155,23 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
     }
   }
   else if (param_2 == 0x2660) {
-    FUN_006c4110(DAT_008075a0);
+    Library::DKW::DV::FUN_006c4110(DAT_008075a0);
     if ((*(uint *)(DAT_008075a0 + 4) & 0x40000000) != 0) {
       FUN_006c3f00(DAT_008075a0);
     }
     if (DAT_00806738 != 8) {
       DAT_00806738 = 8;
-      FUN_006b9b40(DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,8,DAT_00806730,DAT_00806734,0,0
-                   ,0);
-      FUN_006b1470(DAT_008075a8);
+      Library::DKW::DDX::FUN_006b9b40
+                (DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,8,DAT_00806730,DAT_00806734,0,0,0
+                );
+      Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
     }
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-    FUN_006bab60((int)DAT_0080759c,0x1000000);
-    FUN_006bb370((int)DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0x1000000);
+    Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
     *(undefined4 *)(DAT_00806728 + 0x4efa) = 0;
-    thunk_FUN_00567180((void *)(DAT_00806728 + 0x38),param_1);
-    FUN_006e3db0(DAT_00806728 + 0x113a);
+    thunk_FUN_00567180(DAT_00806728 + 0x38,param_1);
+    FUN_006e3db0((int)(DAT_00806728 + 0x113a));
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }

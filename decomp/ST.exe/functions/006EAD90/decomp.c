@@ -62,8 +62,9 @@ FUN_006ead90(void *this,int param_1,int param_2,int param_3,int param_4,undefine
                 if (((int)puVar5[5] < (int)uVar1) ||
                    ((puVar5[5] == uVar1 && ((int)puVar5[3] < *(int *)(iVar4 + 0xc))))) {
                   if (iVar2 < local_c) {
-                    FUN_0072da70(local_8 + iVar2 * 5 + 5,local_8 + iVar2 * 5,
-                                 local_10 + iVar2 * -0x14);
+                    Library::MSVCRT::FUN_0072da70
+                              (local_8 + iVar2 * 5 + 5,local_8 + iVar2 * 5,local_10 + iVar2 * -0x14)
+                    ;
                   }
                   break;
                 }

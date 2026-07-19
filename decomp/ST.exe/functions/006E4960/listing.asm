@@ -1,4 +1,4 @@
-FUN_006e4960:
+AppClassTy::AddChildSystem:
 006E4960  55                        PUSH EBP
 006E4961  8B EC                     MOV EBP,ESP
 006E4963  83 EC 74                  SUB ESP,0x74

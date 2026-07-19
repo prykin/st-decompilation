@@ -12,7 +12,7 @@ FUN_00750080(void *this,undefined4 *param_1,int param_2,undefined8 param_3,int p
   EnterCriticalSection((LPCRITICAL_SECTION)((int)this + 8));
   local_8 = (int *)0x0;
   *param_1 = 0;
-  this_00 = (void *)FUN_0072e530(0x50);
+  this_00 = (void *)Library::MSVCRT::FUN_0072e530(0x50);
   if (this_00 == (void *)0x0) {
     piVar1 = (int *)0x0;
   }

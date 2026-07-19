@@ -5,7 +5,7 @@ undefined4 FUN_006c2a80(undefined4 *param_1,undefined4 param_2)
   undefined4 *puVar1;
   
   *param_1 = 0;
-  puVar1 = FUN_006aac10(0xb8);
+  puVar1 = Library::DKW::LIB::FUN_006aac10(0xb8);
   if (puVar1 == (undefined4 *)0x0) {
     return 0xfffffffe;
   }

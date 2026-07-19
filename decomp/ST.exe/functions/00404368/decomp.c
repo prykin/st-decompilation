@@ -67,7 +67,7 @@ int thunk_FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param
     }
     iStack_68 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &pvStack_14;
-    pcStack_58 = (char *)FUN_006aac70(iStack_68 << 5);
+    pcStack_58 = (char *)Library::DKW::LIB::FUN_006aac70(iStack_68 << 5);
     iStack_34 = FUN_00411cf0(pcStack_58,iStack_68);
     iStack_40 = (int)(iStack_34 * param_6 + 0xb4) / 0x168;
     if (iStack_40 == iStack_34) {
@@ -88,7 +88,7 @@ int thunk_FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param
         if (iStack_60 < (int)uStack_24) {
           iStack_60 = uStack_24 * 2;
           uStack_8 = 0;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           uStack_8 = 0xffffffff;
           pbStack_28 = &stack0xffffff3c;
           puStack_1c = &stack0xffffff3c;
@@ -243,7 +243,7 @@ int thunk_FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param
           iStack_64 = param_3;
           iStack_68 = iStack_68 + 1;
           uVar3 = uVar3 + 0x20;
-          pcStack_58 = (char *)FUN_006acf50((undefined4 *)pcStack_58,uVar3);
+          pcStack_58 = (char *)Library::DKW::LIB::FUN_006acf50((undefined4 *)pcStack_58,uVar3);
           iStack_34 = FUN_00411cf0(pcStack_58,iStack_68);
           iStack_40 = (int)(iStack_34 * param_6 + 0xb4) / 0x168;
           if (iStack_40 == iStack_34) {

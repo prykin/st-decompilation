@@ -52,12 +52,12 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   aiStack_6c[2] = 0x4f;
   aiStack_6c[3] = 0x5e;
   pSStack_5c = this;
-  piStack_44 = (int *)thunk_FUN_0042b620(param_1,param_2,1);
+  piStack_44 = (int *)GetObjPtr(this,param_1,param_2,1);
   iStack_58 = (**(code **)(*piStack_44 + 0x2c))();
   uStack_10 = 0;
   IStack_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_d4;
-  iVar4 = __setjmp3(IStack_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar7 = iStack_4c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_d4.previous;
@@ -118,7 +118,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
           if (0 < (int)uStack_48) {
             do {
               FUN_006acc70((int)puStack_c,uStack_18,&uStack_1c);
-              piVar6 = (int *)thunk_FUN_0042b620(param_1,uStack_1c,1);
+              piVar6 = (int *)GetObjPtr(pSVar2,param_1,uStack_1c,1);
               piStack_44 = piVar6;
               iVar7 = (**(code **)(*piVar6 + 0x88))(auStack_54);
               if (0 < iVar7) {
@@ -145,7 +145,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   do {
                     FUN_006acc70((int)puStack_8,uVar10,&uStack_90);
                     if ((sStack_8a == -1) && (sStack_82 == -1)) {
-                      FUN_006ae140(puStack_8,uVar10,(undefined4 *)&sStack_40);
+                      Library::DKW::TBL::FUN_006ae140(puStack_8,uVar10,(undefined4 *)&sStack_40);
                       uStack_10 = 1;
                       break;
                     }
@@ -153,7 +153,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   } while ((int)uVar10 < (int)uVar9);
                 }
                 if (uVar10 == uVar9) {
-                  FUN_006ae1c0(puStack_8,(undefined4 *)&sStack_40);
+                  Library::DKW::TBL::FUN_006ae1c0(puStack_8,(undefined4 *)&sStack_40);
                   uStack_10 = 1;
                 }
               }
@@ -208,7 +208,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
             if (0 < (int)uStack_48) {
               do {
                 FUN_006acc70((int)puStack_c,uStack_18,&uStack_1c);
-                piVar6 = (int *)thunk_FUN_0042b620(param_1,uStack_1c,1);
+                piVar6 = (int *)GetObjPtr(pSVar2,param_1,uStack_1c,1);
                 piStack_44 = piVar6;
                 thunk_FUN_004162b0(piVar6,&sStack_38,&sStack_36,&sStack_34);
                 uStack_32 = *(undefined2 *)((int)piVar6 + 0x32);
@@ -233,7 +233,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   do {
                     FUN_006acc70((int)puStack_8,uVar10,&uStack_90);
                     if ((sStack_8a == -1) && (sStack_82 == -1)) {
-                      FUN_006ae140(puStack_8,uVar10,(undefined4 *)&sStack_40);
+                      Library::DKW::TBL::FUN_006ae140(puStack_8,uVar10,(undefined4 *)&sStack_40);
                       uStack_10 = 1;
                       break;
                     }
@@ -241,7 +241,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   } while ((int)uVar10 < (int)uVar9);
                 }
                 if (uVar10 == uVar9) {
-                  FUN_006ae1c0(puStack_8,(undefined4 *)&sStack_40);
+                  Library::DKW::TBL::FUN_006ae1c0(puStack_8,(undefined4 *)&sStack_40);
                   uStack_10 = 1;
                 }
                 uStack_18 = uStack_18 + 1;

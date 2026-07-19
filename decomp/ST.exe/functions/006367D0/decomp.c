@@ -41,9 +41,9 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
                      (iVar11 = *(int *)(iVar11 + 8) * uVar8 + *(int *)(iVar11 + 0x1c), iVar11 != 0))
                   {
                     if (iVar2 < 300) {
-                      uVar3 = FUN_0072e6c0();
+                      uVar3 = Library::MSVCRT::FUN_0072e6c0();
                       uVar3 = uVar3 % ((uVar10 * 3 >> 1) + 0x1f);
-                      uVar4 = FUN_0072e6c0();
+                      uVar4 = Library::MSVCRT::FUN_0072e6c0();
                       uVar4 = uVar4 & 0x80000001;
                       if ((int)uVar4 < 0) {
                         uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;
@@ -166,9 +166,9 @@ undefined4 __fastcall FUN_006367d0(int *param_1)
               if ((uVar8 < *(uint *)(iVar11 + 0xc)) &&
                  (iVar11 = *(int *)(iVar11 + 8) * uVar8 + *(int *)(iVar11 + 0x1c), iVar11 != 0)) {
                 if (iVar2 < 500) {
-                  uVar3 = FUN_0072e6c0();
+                  uVar3 = Library::MSVCRT::FUN_0072e6c0();
                   uVar3 = uVar3 % ((uVar10 * 3 >> 1) + 0x1f);
-                  uVar4 = FUN_0072e6c0();
+                  uVar4 = Library::MSVCRT::FUN_0072e6c0();
                   uVar4 = uVar4 & 0x80000001;
                   if ((int)uVar4 < 0) {
                     uVar4 = (uVar4 - 1 | 0xfffffffe) + 1;

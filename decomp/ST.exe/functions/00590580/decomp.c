@@ -31,7 +31,7 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   pIVar12 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar3 = __setjmp3(local_48,0,unaff_ESI,pIVar12);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar12);
   if (iVar3 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pMVar2 = local_8;

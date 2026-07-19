@@ -25,7 +25,7 @@ void __thiscall FUN_004f1610(void *this,char param_1)
   iVar6 = *(int *)((int)this + local_10 * 4 + 0x2fe);
   if (iVar6 != 0) {
     local_40 = 0x5b;
-    FUN_006e5970(2,iVar6,(int)local_50);
+    SystemClassTy::SendMessage(*(SystemClassTy **)((int)this + 0xc),2,iVar6,(int)local_50);
     local_c = local_3c;
     local_8 = local_8 & 0xffffff00;
     if (local_38 != 0) {
@@ -60,12 +60,14 @@ void __thiscall FUN_004f1610(void *this,char param_1)
                          (&DAT_00807e66 +
                          *(int *)((uVar4 + local_10 * 6) * 0x27 + 0x789 + (int)this) * 4);
           local_1c = local_9c;
-          FUN_006e5970(2,*(int *)(iVar6 + uVar4 * 4),(int)local_30);
+          SystemClassTy::SendMessage
+                    (*(SystemClassTy **)((int)this + 0xc),2,*(int *)(iVar6 + uVar4 * 4),
+                     (int)local_30);
           local_20 = 0x51;
           iVar6 = *(int *)(local_c + uVar4 * 4);
         }
         local_18 = 1;
-        FUN_006e5970(2,iVar6,(int)local_30);
+        SystemClassTy::SendMessage(*(SystemClassTy **)((int)this + 0xc),2,iVar6,(int)local_30);
         bVar3 = (char)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar3);
       } while (bVar3 < local_38);

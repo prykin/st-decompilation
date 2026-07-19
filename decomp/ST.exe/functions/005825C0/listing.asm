@@ -1,4 +1,4 @@
-FUN_005825c0:
+STJellyGunC::LifeGun:
 005825C0  55                        PUSH EBP
 005825C1  8B EC                     MOV EBP,ESP
 005825C3  83 EC 48                  SUB ESP,0x48

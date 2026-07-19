@@ -4,6 +4,7 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,uint
 
 {
   code *pcVar1;
+  STAllPlayersC *this_00;
   int errorCode;
   uint uVar2;
   int iVar3;
@@ -20,19 +21,20 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,uint
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = pSStack_c;
   if (errorCode == 0) {
-    uVar2 = thunk_FUN_0042b620(param_1,param_2,3);
+    uVar2 = GetObjPtr(pSStack_c,param_1,param_2,3);
     uVar4 = extraout_EDX;
     if (uVar2 != param_3) {
       RaiseInternalException
                 (-0x5001fff9,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x2f1d);
       uVar4 = extraout_EDX_00;
     }
-    thunk_FUN_0042c5f0(DAT_0080874d,*(int *)(param_3 + 0x20),
-                       CONCAT31((int3)((uint)uVar4 >> 8),*(undefined1 *)(param_3 + 0x24)),param_2);
-    thunk_FUN_0042cef0(*(int *)(param_3 + 0x20),(char)param_1,(short)param_2);
-    FUN_006ae140(DAT_007fa158,param_2 & 0xffff,&uStack_8);
+    DelObjFromTmps(this_00,DAT_0080874d,*(int *)(param_3 + 0x20),
+                   CONCAT31((int3)((uint)uVar4 >> 8),*(undefined1 *)(param_3 + 0x24)),param_2);
+    DelObjFromSaveTmps(this_00,*(int *)(param_3 + 0x20),(char)param_1,(short)param_2);
+    Library::DKW::TBL::FUN_006ae140(DAT_007fa158,param_2 & 0xffff,&uStack_8);
     g_currentExceptionFrame = IStack_50.previous;
   }
   else {

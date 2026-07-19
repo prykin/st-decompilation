@@ -18,7 +18,7 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pSStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_8;
   if (iVar3 == 0) {
     *(undefined4 *)(pSStack_8 + 0x34) = param_1;
@@ -27,7 +27,7 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
     *(uint *)(pSStack_8 + 0x14) = param_7;
     FUN_006e8660(*(void **)(pSStack_8 + 0x3c),(int *)(pSStack_8 + 0x18),param_7,0,param_5,param_6,
                  param_2,param_3,param_4);
-    puVar4 = (undefined4 *)FUN_006aac70(*(int *)(pSVar2 + 0x14) * 0x24);
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar2 + 0x14) * 0x24);
     *(undefined4 **)(pSVar2 + 0x20) = puVar4;
     for (uVar6 = *(int *)(pSVar2 + 0x14) * 9 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar4 = 0;

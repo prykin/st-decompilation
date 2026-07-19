@@ -21,7 +21,7 @@ int FUN_006734c0(void)
      && (0 < DAT_00857558)) {
     local_8 = DAT_00811908;
     do {
-      puVar3 = FUN_00730590(DAT_0085755c,(char *)local_8[1]);
+      puVar3 = Library::MSVCRT::FUN_00730590(DAT_0085755c,(char *)local_8[1]);
       if (puVar3 != (uint *)0x0) {
         uVar5 = 0xffffffff;
         pcVar8 = (char *)local_8[1];
@@ -45,11 +45,12 @@ int FUN_006734c0(void)
           uVar4 = (DAT_00857558 - iVar2) + uVar5;
           if (0x400 < (int)uVar4) {
             iVar6 = (int)puVar3 - (int)DAT_0085755c;
-            DAT_0085755c = (uint *)FUN_006acf50(DAT_0085755c,uVar4);
+            DAT_0085755c = (uint *)Library::DKW::LIB::FUN_006acf50(DAT_0085755c,uVar4);
             puVar3 = (uint *)(iVar6 + (int)DAT_0085755c);
           }
-          FUN_0072da70((undefined4 *)(uVar5 + (int)puVar3),(undefined4 *)(iVar2 + (int)puVar3),
-                       ((DAT_00857558 - iVar2) - (int)puVar3) + 1 + (int)DAT_0085755c);
+          Library::MSVCRT::FUN_0072da70
+                    ((undefined4 *)(uVar5 + (int)puVar3),(undefined4 *)(iVar2 + (int)puVar3),
+                     ((DAT_00857558 - iVar2) - (int)puVar3) + 1 + (int)DAT_0085755c);
           puVar7 = (uint *)local_8[2];
           puVar9 = puVar3;
           for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
@@ -63,7 +64,7 @@ int FUN_006734c0(void)
             puVar9 = (uint *)((int)puVar9 + 1);
           }
           DAT_00857558 = DAT_00857558 + (uVar5 - iVar2);
-          puVar3 = FUN_00730590((uint *)((int)puVar3 + 1),(char *)local_8[1]);
+          puVar3 = Library::MSVCRT::FUN_00730590((uint *)((int)puVar3 + 1),(char *)local_8[1]);
         } while (puVar3 != (uint *)0x0);
       }
       local_8 = (int *)*local_8;

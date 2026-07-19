@@ -1,2 +1,2 @@
-thunk_FUN_00590010:
+STSharkC::CreateShark:
 00401FD7  E9 34 E0 18 00            JMP 0x00590010

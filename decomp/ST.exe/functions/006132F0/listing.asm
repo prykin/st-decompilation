@@ -1,4 +1,4 @@
-FUN_006132f0:
+STGenBombC::LoadImagSpr:
 006132F0  55                        PUSH EBP
 006132F1  8B EC                     MOV EBP,ESP
 006132F3  83 EC 58                  SUB ESP,0x58

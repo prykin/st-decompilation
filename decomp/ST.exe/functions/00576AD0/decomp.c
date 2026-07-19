@@ -21,7 +21,7 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
   local_8 = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
   local_c = this;
-  errorCode = __setjmp3(local_4c,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar5);
   pBVar2 = local_c;
   if (errorCode == 0) {
     (**(code **)(*(int *)local_c + 0xc))(1,&local_8,0,0);

@@ -96,18 +96,18 @@ void __cdecl thunk_FUN_00428e50(short *param_1)
   RaiseInternalException(-2,DAT_007ed77c,s_E____titans_tload_cpp_007a5fdc,0x24d);
 LAB_00428e95:
   dVar1 = ((double)DAT_00807570 * _DAT_00790590) / (double)_DAT_007ac580 + _DAT_007901c0;
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar18 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar18 = Library::MSVCRT::__ftol();
   iVar12 = (int)lVar18;
   uVar11 = iVar12 + 3U & 0xfffffffc;
   dVar1 = (double)(_DAT_007904f8 / (_DAT_007ac580 / (float)DAT_00807570) + (float)_DAT_007901c0);
   uStack_e8 = uVar11;
   iStack_14 = iVar12;
-  fVar17 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  fVar17 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   uStack_b4 = (double)((float10)_DAT_00790580 / fVar17);
   dVar1 = _DAT_00790570 / uStack_b4 + _DAT_007901c0;
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar18 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar18 = Library::MSVCRT::__ftol();
   uStack_c4 = (uint)lVar18;
   dVar1 = (double)(int)uStack_c4 * uStack_b4 - _DAT_00790580;
   dVar3 = ((double)(int)(uVar11 - iVar12) * (_DAT_00790590 / (double)iStack_14) + _DAT_00790590) -
@@ -124,7 +124,7 @@ LAB_00428e95:
     do {
       iVar10 = *piStack_40;
       if (iVar10 != 0) {
-        puVar5 = FUN_006aac10(*(uint *)(iVar10 + 0x24));
+        puVar5 = Library::DKW::LIB::FUN_006aac10(*(uint *)(iVar10 + 0x24));
         *(undefined4 **)(iVar10 + 0x3c) = puVar5;
       }
       iVar12 = iVar12 + 1;
@@ -169,7 +169,7 @@ LAB_00428e95:
   do {
     _bStack_50 = CONCAT31(uStack_4f,(byte)iStack_2c >> 1);
     FUN_006dd610(piVar6,(uint)piStack_40,0,0x40240000,0,0x40240000);
-    puStack_44 = FUN_006ae290((uint *)0x0,10,0x1c,10);
+    puStack_44 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1c,10);
     DAT_007f4dd0 = 0;
     iStack_90 = 0;
     if (0 < *(int *)((int)param_1 + 0x455)) {
@@ -231,7 +231,7 @@ LAB_004292e2:
           iStack_110 = thunk_FUN_00428b20((int *)piVar6[3],uStack_e8,uStack_c4,auStack_108);
           iStack_114 = piVar13[10];
           iStack_10c = piVar13[0xf];
-          uVar11 = FUN_006ae1c0(puStack_44,&iStack_114);
+          uVar11 = Library::DKW::TBL::FUN_006ae1c0(puStack_44,&iStack_114);
           piVar13[6] = uVar11;
         }
 LAB_004293c6:
@@ -642,7 +642,7 @@ LAB_00429d7d:
     if (3 < (int)piStack_40) {
       if (piVar6 != (int *)0x0) {
         FUN_006dbcf0(piVar6);
-        FUN_0072e2b0(piVar6);
+        Library::MSVCRT::FUN_0072e2b0(piVar6);
       }
       return;
     }

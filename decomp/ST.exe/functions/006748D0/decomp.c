@@ -19,7 +19,7 @@ undefined4 FUN_006748d0(void)
   DAT_00811914 = DAT_0081190c;
   local_8 = 0;
   if (DAT_0085755c[DAT_0081190c] == 0x30) {
-    uVar1 = FUN_007306e0((uint)DAT_0085755c[DAT_0081190c + 1]);
+    uVar1 = Library::MSVCRT::FUN_007306e0((uint)DAT_0085755c[DAT_0081190c + 1]);
     if (uVar1 == 0x62) {
       local_8 = 2;
     }
@@ -29,7 +29,7 @@ undefined4 FUN_006748d0(void)
   }
   pIVar6 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
-  iVar2 = __setjmp3(local_4c,0,unaff_ESI,pIVar6);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar6);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar6;
     pbVar3 = DAT_0085755c;
@@ -39,7 +39,7 @@ undefined4 FUN_006748d0(void)
           uVar1 = (byte)PTR_DAT_007f1280[(char)pbVar3[DAT_00811914] * 2] & 4;
         }
         else {
-          uVar1 = FUN_00730610((int)(char)pbVar3[DAT_00811914],4);
+          uVar1 = Library::MSVCRT::FUN_00730610((int)(char)pbVar3[DAT_00811914],4);
           pbVar3 = DAT_0085755c;
         }
         if (uVar1 == 0) break;
@@ -55,7 +55,7 @@ undefined4 FUN_006748d0(void)
   }
   if (local_8 != 0) {
     DAT_00811914 = DAT_00811914 + 2;
-    uVar1 = FUN_006b9770(DAT_0085755c,&DAT_00811914,local_8);
+    uVar1 = Library::DKW::STR::FUN_006b9770(DAT_0085755c,&DAT_00811914,local_8);
     _DAT_00857548 = (double)CONCAT44(DAT_0085754c,uVar1);
     g_currentExceptionFrame = pIVar6;
     return 0;
@@ -63,7 +63,7 @@ undefined4 FUN_006748d0(void)
   fVar4 = FUN_006c8990(DAT_0085755c,&DAT_00811914,&local_c);
   _DAT_00857548 = (double)fVar4;
   if (local_c == 0) {
-    lVar5 = __ftol();
+    lVar5 = Library::MSVCRT::__ftol();
     _DAT_00857548 = (double)CONCAT44(DAT_0085754c,(int)lVar5);
     g_currentExceptionFrame = pIVar6;
     DAT_007d2d18 = 0x25;

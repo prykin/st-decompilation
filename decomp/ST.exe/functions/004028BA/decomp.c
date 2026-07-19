@@ -1,5 +1,6 @@
 
-uint thunk_FUN_0042b620(uint param_1,uint param_2,undefined4 param_3)
+uint __thiscall
+STAllPlayersC::GetObjPtr(STAllPlayersC *this,uint param_1,uint param_2,undefined4 param_3)
 
 {
   code *pcVar1;

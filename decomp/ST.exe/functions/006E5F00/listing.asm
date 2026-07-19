@@ -1,4 +1,4 @@
-FUN_006e5f00:
+SystemClassTy::GetMessage:
 006E5F00  55                        PUSH EBP
 006E5F01  8B EC                     MOV EBP,ESP
 006E5F03  83 EC 48                  SUB ESP,0x48

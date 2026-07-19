@@ -17,7 +17,7 @@ void __thiscall FUN_00490ed0(void *this,char *param_1)
     pcVar4 = pcVar4 + 1;
   } while (cVar1 != '\0');
   if (0xe < ~uVar2 - 1) {
-    _strncpy((char *)((int)this + 0x6fb),param_1,0xe);
+    Library::MSVCRT::_strncpy((char *)((int)this + 0x6fb),param_1,0xe);
     *(undefined1 *)((int)this + 0x709) = 0;
     return;
   }

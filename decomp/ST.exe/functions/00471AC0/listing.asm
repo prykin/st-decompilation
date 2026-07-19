@@ -1,4 +1,4 @@
-FUN_00471ac0:
+STBoatC::Guard:
 00471AC0  55                        PUSH EBP
 00471AC1  8B EC                     MOV EBP,ESP
 00471AC3  83 EC 60                  SUB ESP,0x60

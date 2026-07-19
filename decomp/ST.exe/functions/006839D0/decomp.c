@@ -60,7 +60,7 @@ int __cdecl FUN_006839d0(int param_1,int *param_2,undefined2 param_3,int param_4
   local_15 = *(undefined2 *)(&DAT_00813bc4 + DAT_008488b0 * 0xac5);
   thunk_FUN_0064a830(param_2,(undefined4 *)&local_18);
   local_10 = iVar2;
-  FUN_006ae1c0(*(uint **)(param_1 + 0xf),&local_10);
+  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + 0xf),&local_10);
   return iVar2;
 }
 

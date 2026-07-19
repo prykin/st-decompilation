@@ -8,7 +8,7 @@ void __thiscall SIDTy::PaintSID(SIDTy *this)
   void *unaff_ESI;
   undefined4 auStack_44 [16];
   
-  errorCode = __setjmp3(auStack_44,0,unaff_ESI,g_currentExceptionFrame);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_44,0,unaff_ESI,g_currentExceptionFrame);
   if (errorCode == 0) {
     return;
   }

@@ -49,7 +49,7 @@ thunk_FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int p
   if (*(byte **)((int)this + 0x169) != (byte *)0x0) {
     FUN_006ae110(*(byte **)((int)this + 0x169));
   }
-  puVar2 = FUN_006ae290((uint *)0x0,iVar5 * param_5,0x23,10);
+  puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,iVar5 * param_5,0x23,10);
   *(uint **)((int)this + 0x169) = puVar2;
   if ((puVar2 != (uint *)0x0) && (param_4 = 0, 0 < *(int *)((int)this + 0x10d))) {
     do {
@@ -67,11 +67,11 @@ thunk_FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int p
           *(undefined1 *)((int)puVar3 + 2) = 0;
           if (param_4 == 0) {
             fcos((float10)param_1);
-            lVar7 = __ftol();
+            lVar7 = Library::MSVCRT::__ftol();
             iVar1 = (int)lVar7;
             fsin((float10)param_1);
             iStack_1a = iVar1;
-            lVar7 = __ftol();
+            lVar7 = Library::MSVCRT::__ftol();
             iStack_16 = (int)lVar7;
             param_1 = param_1 + fStack_8;
           }
@@ -100,7 +100,7 @@ thunk_FUN_005f4c50(void *this,float param_1,undefined4 param_2,int param_3,int p
             thunk_FUN_005f4a30((int)auStack_2c,3,uVar4);
           }
           auStack_2c[0] = uVar4 == 0;
-          FUN_006ae1c0(*(uint **)((int)this + 0x169),(undefined4 *)auStack_2c);
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x169),(undefined4 *)auStack_2c);
           param_3 = param_3 + 1;
           iVar5 = iVar5 + 1;
         } while (param_3 < *(int *)((int)this + 0x109));

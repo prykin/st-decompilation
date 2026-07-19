@@ -60,25 +60,26 @@ LAB_004f4331:
     IStack_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_58;
     pCStack_14 = this;
-    iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       uVar5 = (*(code *)param_6)(param_2);
       pCVar6 = FUN_006f2c00(param_4,2,uVar5);
-      puStack_8 = FUN_006f1ce0(param_3,pCVar6,(int *)0x0,1);
+      puStack_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar6,(int *)0x0,1);
       pCVar3 = pCStack_14;
       uVar2 = (uint)param_1;
       thunk_FUN_00540760(*(undefined4 **)(pCStack_14 + uVar2 * 4 + 0x180),iStack_10,iStack_c,param_3
                          ,(byte *)puStack_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_8);
       if ((*(int *)(*(int *)(param_2 + 0x14) + 4) == 3) && (param_5 != (char *)0x0)) {
-        puStack_8 = FUN_006f1ce0(6,param_5,(int *)0x0,1);
+        puStack_8 = cMf32::RecGet(DAT_00806790,6,param_5,(int *)0x0,1);
         thunk_FUN_00540760(*(undefined4 **)(pCVar3 + uVar2 * 4 + 0x180),iStack_10,iStack_c,'\x06',
                            (byte *)puStack_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_8);
       }
       if ((param_1 < 0xb) && (-1 < (int)*(uint *)(pCVar3 + uVar2 * 4 + 0x148))) {
-        FUN_006b3640(DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
-                     *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
+                   *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
       }
       g_currentExceptionFrame = IStack_58.previous;
       return;

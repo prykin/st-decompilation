@@ -1,7 +1,8 @@
 
-short __fastcall
-thunk_FUN_00435930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int *param_4,
-                  undefined4 param_5,undefined4 param_6)
+short __thiscall
+STAllPlayersC::GetCursorType
+          (STAllPlayersC *this,undefined4 param_1,int *param_2,undefined4 param_3,int *param_4,
+          undefined4 param_5,undefined4 param_6)
 
 {
   int iVar1;
@@ -9,16 +10,17 @@ thunk_FUN_00435930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int 
   code *pcVar3;
   short sVar4;
   int *piVar5;
+  undefined4 in_EDX;
   undefined4 extraout_EDX;
   int iVar6;
   uint uVar7;
   uint uStack_8;
   
-  if ((param_4 != (int *)0x0) &&
-     ((((iVar6 = param_4[8], iVar6 == 0x14 || (iVar6 == 1000)) || (iVar6 == 0x3e9)) ||
+  if ((param_2 != (int *)0x0) &&
+     ((((iVar6 = param_2[8], iVar6 == 0x14 || (iVar6 == 1000)) || (iVar6 == 0x3e9)) ||
       ((iVar6 == 0x172 || (iVar6 == 0x1a4)))))) {
-    thunk_FUN_0041f390((int)param_4);
-    param_2 = extraout_EDX;
+    thunk_FUN_0041f390((int)param_2);
+    in_EDX = extraout_EDX;
   }
   uVar7 = (uint)DAT_0080874d;
   iVar6 = uVar7 * 0xa62;
@@ -30,9 +32,9 @@ thunk_FUN_00435930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int 
       if (*(uint *)((int)&DAT_007f4f87 + iVar6) != uVar7) {
         return 0;
       }
-      sVar4 = thunk_FUN_00435b90(CONCAT31((int3)((uint)param_2 >> 8),DAT_0080874d),
-                                 *(int *)((int)&DAT_007f4f8d + iVar6),param_3,param_4,param_5,
-                                 param_6);
+      sVar4 = thunk_FUN_00435b90(CONCAT31((int3)((uint)in_EDX >> 8),DAT_0080874d),
+                                 *(int *)((int)&DAT_007f4f8d + iVar6),param_1,param_2,param_3,
+                                 param_4);
       return sVar4;
     }
   }
@@ -56,10 +58,10 @@ thunk_FUN_00435930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int 
       do {
         FUN_006acc70(iVar1,uVar7,&uStack_8);
         if ((short)uStack_8 != -1) {
-          piVar5 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uStack_8 >> 8),
-                                                      *(undefined1 *)((int)&DAT_007f4fd7 + iVar6)),
-                                             uStack_8,1);
-          sVar4 = (**(code **)(*piVar5 + 0x28))(param_3,param_4,param_5,param_6);
+          piVar5 = (int *)GetObjPtr(this,CONCAT31((int3)(uStack_8 >> 8),
+                                                  *(undefined1 *)((int)&DAT_007f4fd7 + iVar6)),
+                                    uStack_8,1);
+          sVar4 = (**(code **)(*piVar5 + 0x28))(param_1,param_2,param_3,param_4);
           return sVar4;
         }
         uVar7 = uVar7 + 1;
@@ -76,12 +78,12 @@ thunk_FUN_00435930(undefined4 param_1,undefined4 param_2,undefined4 param_3,int 
       return sVar4;
     }
   }
-  if ((param_4 != (int *)0x0) && (param_4[9] == (uint)DAT_0080874d)) {
-    if ((param_4[8] == 0x14) && (iVar6 = (**(code **)(*param_4 + 0xec))(), iVar6 == 1)) {
+  if ((param_2 != (int *)0x0) && (param_2[9] == (uint)DAT_0080874d)) {
+    if ((param_2[8] == 0x14) && (iVar6 = (**(code **)(*param_2 + 0xec))(), iVar6 == 1)) {
       return 3;
     }
-    if (((param_4[8] == 1000) || (param_4[8] == 0x3e9)) &&
-       (iVar6 = (**(code **)(*param_4 + 0xec))(), iVar6 == 1)) {
+    if (((param_2[8] == 1000) || (param_2[8] == 0x3e9)) &&
+       (iVar6 = (**(code **)(*param_2 + 0xec))(), iVar6 == 1)) {
       return 4;
     }
   }

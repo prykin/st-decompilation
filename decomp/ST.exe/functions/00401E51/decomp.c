@@ -52,7 +52,7 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   IStack_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_78;
   pSStack_c = this;
-  iVar7 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar20 = pSStack_c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = IStack_78.previous;
@@ -68,7 +68,7 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
   }
   if (DAT_0080877e != '\0') {
     if (DAT_00808783 == '\x03') {
-      FUN_006b7510(DAT_00811764,-1,&iStack_20,-1,0);
+      Library::DKW::DDX::FUN_006b7510(DAT_00811764,-1,&iStack_20,-1,0);
       uStack_18 = 0;
       if (0 < iStack_20) {
         do {
@@ -147,7 +147,7 @@ LAB_0054f52c:
                 pSStack_2c = (STPlaySystemC *)
                              (*(int *)((int)puVar18 + 0x13) + *(int *)((int)puVar18 + 0xf));
                 uVar8 = (int)pSStack_2c + 0x1b;
-                puVar9 = FUN_006aac10(uVar8);
+                puVar9 = Library::DKW::LIB::FUN_006aac10(uVar8);
                 puVar19 = puVar18;
                 puVar22 = puVar9;
                 for (uVar16 = uVar8 >> 2; uVar16 != 0; uVar16 = uVar16 - 1) {
@@ -243,7 +243,7 @@ LAB_0054f531:
     uStack_34 = uVar8;
     pSStack_2c = pSVar1;
     if (*(uint *)(pSVar20 + 0x45) < uVar8) {
-      iVar7 = FUN_006acf50(*(undefined4 **)(pSVar20 + 0x3d),uVar8);
+      iVar7 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)(pSVar20 + 0x3d),uVar8);
       *(int *)(pSVar20 + 0x3d) = iVar7;
       *(uint *)(pSVar20 + 0x45) = uVar8;
     }
@@ -323,7 +323,7 @@ LAB_0054f6c6:
   }
   iStack_10 = 0;
   pSStack_2c = (STPlaySystemC *)timeGetTime();
-  FUN_006b7510(DAT_00811764,-1,&iStack_20,-1,0);
+  Library::DKW::DDX::FUN_006b7510(DAT_00811764,-1,&iStack_20,-1,0);
   pSVar20 = pSStack_c;
   if (*(int *)(pSStack_c + 0x6d) == 0) {
     bVar6 = thunk_FUN_00550110((int)pSStack_c);
@@ -484,7 +484,7 @@ LAB_0054f98b:
       goto switchD_0054fb75_caseD_12;
     case 0x31:
       if (*(int *)(pSVar20 + 0x45) < (int)uStack_18) {
-        iVar7 = FUN_006acf50(*(undefined4 **)(pSVar20 + 0x3d),uStack_18);
+        iVar7 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)(pSVar20 + 0x3d),uStack_18);
         *(int *)(pSVar20 + 0x3d) = iVar7;
         *(uint *)(pSVar20 + 0x45) = uStack_18;
       }

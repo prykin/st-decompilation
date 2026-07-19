@@ -24,7 +24,7 @@ void __thiscall FUN_00696940(void *this,int param_1)
             (piVar6 = (int *)(*(int *)(iVar3 + 8) * local_c + *(int *)(iVar3 + 0x1c)),
             piVar6 != (int *)0x0)) && (*piVar6 != param_1)) {
           if (*(int *)((int)piVar6 + 0x15) != 0) {
-            uVar2 = FUN_0072e6c0();
+            uVar2 = Library::MSVCRT::FUN_0072e6c0();
             local_14 = (int)uVar2 % 6 + 1;
           }
           iVar3 = *(int *)((int)piVar6 + 0x15);
@@ -40,7 +40,7 @@ void __thiscall FUN_00696940(void *this,int param_1)
               }
               iVar4 = *(int *)(iVar3 + 2) / *(int *)((int)this + 0x5833);
               uVar5 = *(int *)(iVar3 + 2) % *(int *)((int)this + 0x5833);
-              uVar2 = FUN_0072e6c0();
+              uVar2 = Library::MSVCRT::FUN_0072e6c0();
               uVar2 = uVar2 & 0x80000003;
               if ((int)uVar2 < 0) {
                 uVar2 = (uVar2 - 1 | 0xfffffffc) + 1;
@@ -82,9 +82,9 @@ void __thiscall FUN_00696940(void *this,int param_1)
               iVar4 = *(int *)((int)this + 0x5833);
               local_14 = 0;
               if (((*(int *)((int)piVar6 + 5) < 1) || (2 < *(int *)((int)piVar6 + 5))) ||
-                 (uVar2 = FUN_0072e6c0(), (int)uVar2 % 3 != 0)) {
+                 (uVar2 = Library::MSVCRT::FUN_0072e6c0(), (int)uVar2 % 3 != 0)) {
                 if (*(int *)((int)piVar6 + 5) != 1) goto LAB_00696b1f;
-                uVar2 = FUN_0072e6c0();
+                uVar2 = Library::MSVCRT::FUN_0072e6c0();
                 uVar2 = uVar2 & 0x80000007;
                 if ((int)uVar2 < 0) {
                   uVar2 = (uVar2 - 1 | 0xfffffff8) + 1;

@@ -1,4 +1,4 @@
-FUN_0047fe10:
+STBoatC::Scout:
 0047FE10  55                        PUSH EBP
 0047FE11  8B EC                     MOV EBP,ESP
 0047FE13  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

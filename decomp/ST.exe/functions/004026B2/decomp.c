@@ -181,7 +181,7 @@ LAB_004e2f8d:
   (**(code **)(iVar2 + 0x90))(4,uVar4);
 LAB_004e2fe4:
   *(undefined4 *)((int)this + 0x4d0) = 0;
-  thunk_FUN_004cabb0(1);
+  TLOBaseTy::RotateSpr(this,1);
   return 1;
 }
 

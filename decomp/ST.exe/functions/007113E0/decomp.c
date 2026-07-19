@@ -17,7 +17,7 @@ int __thiscall FUN_007113e0(void *this,uint *param_1)
   if ((char)*param_1 != '\0') {
     do {
       iVar3 = iVar2;
-      puVar1 = FUN_00730590(param_1,&DAT_007c8ff4);
+      puVar1 = Library::MSVCRT::FUN_00730590(param_1,&DAT_007c8ff4);
       if (puVar1 != (uint *)0x0) {
         local_5 = (undefined1)*puVar1;
         *(undefined1 *)puVar1 = 0;

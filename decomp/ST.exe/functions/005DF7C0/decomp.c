@@ -34,12 +34,13 @@ LAB_005df7f3:
     }
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if (local_8[0xb] != 0) {
         iVar3 = local_8[1];
-        FUN_006b48e0((int)param_1,param_4,param_5,iVar3,0,0,0,*(uint *)(iVar3 + 4),
-                     *(int *)(iVar3 + 8),local_8[0xb],0,0x10000ff);
+        Library::DKW::DDX::FUN_006b48e0
+                  ((int)param_1,param_4,param_5,iVar3,0,0,0,*(uint *)(iVar3 + 4),*(int *)(iVar3 + 8)
+                   ,local_8[0xb],0,0x10000ff);
         g_currentExceptionFrame = local_4c.previous;
         return;
       }

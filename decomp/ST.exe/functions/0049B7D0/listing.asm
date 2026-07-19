@@ -1,4 +1,4 @@
-FUN_0049b7d0:
+STGroupBoatC::GrpPatrol:
 0049B7D0  55                        PUSH EBP
 0049B7D1  8B EC                     MOV EBP,ESP
 0049B7D3  83 EC 68                  SUB ESP,0x68

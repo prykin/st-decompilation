@@ -29,7 +29,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pVStack_10 = this;
-  iVar4 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pVStack_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_54.previous;

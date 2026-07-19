@@ -23,7 +23,7 @@ cLoadingTy::InitParam
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pcStack_8 = this;
-  iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pcVar4 = pcStack_8;
   if (iVar5 == 0) {
     *(int *)(pcStack_8 + 0x14) = param_1;
@@ -81,7 +81,7 @@ cLoadingTy::InitParam
     *(int *)(pcVar4 + 0x54) = param_9;
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     FUN_006b4640(DAT_0080759c,0,0,*(BITMAPINFO **)pcVar4,(uint *)0x0);
-    FUN_006bb370(DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
     g_currentExceptionFrame = IStack_4c.previous;
     return;
   }

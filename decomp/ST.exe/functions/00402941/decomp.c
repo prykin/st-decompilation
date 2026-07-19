@@ -32,7 +32,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   }
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pWVar3 = pWStack_8;
   if (iVar5 == 0) {
     if (*(int *)(pWStack_8 + 0x1a64) == 0) {
@@ -61,7 +61,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       uStack_848 = 0;
       uStack_844 = 0xc0a2;
       (**(code **)(*piVar1 + 8))(6,DAT_0081176c + 0x54c,0,auStack_8d8,0);
-      FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

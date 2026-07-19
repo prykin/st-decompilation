@@ -374,8 +374,9 @@ LAB_006ec68d:
   if ((param_1[0x51] == 0) || (param_1[7] == 0)) {
     iVar13 = param_1[0xd];
     iVar8 = param_1[0xc];
-    FUN_007506f0(param_1[1],param_1[8] + iVar8,param_1[9] + iVar13,param_1[3],param_1[10],iVar8,
-                 iVar13,param_1[0xe] - iVar8,param_1[0xf] - iVar13);
+    Library::DKW::DDX::FUN_007506f0
+              (param_1[1],param_1[8] + iVar8,param_1[9] + iVar13,param_1[3],param_1[10],iVar8,iVar13
+               ,param_1[0xe] - iVar8,param_1[0xf] - iVar13);
   }
   else {
     iVar13 = 0;

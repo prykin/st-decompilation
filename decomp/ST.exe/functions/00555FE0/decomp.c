@@ -1,5 +1,9 @@
 
-undefined4 * FUN_00555fe0(uint *param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\grig\traks.cpp
+   TraksClassTy::PrepareToSave */
+
+undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -12,7 +16,7 @@ undefined4 * FUN_00555fe0(uint *param_1)
   void *unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame local_58;
-  int local_14;
+  TraksClassTy *local_14;
   uint local_10;
   undefined4 *local_c;
   undefined4 *local_8;
@@ -22,11 +26,12 @@ undefined4 * FUN_00555fe0(uint *param_1)
   local_10 = 0;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  errorCode = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_14 = this;
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar5 = local_10;
   if (errorCode == 0) {
     *param_1 = local_10 + 0x5d;
-    local_8 = FUN_006aac10(local_10 + 0x5d);
+    local_8 = Library::DKW::LIB::FUN_006aac10(local_10 + 0x5d);
     *local_8 = 0x46;
     local_8[1] = 0xff;
     local_8[2] = 2;

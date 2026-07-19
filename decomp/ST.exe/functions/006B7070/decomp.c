@@ -29,7 +29,7 @@ void FUN_006b7070(undefined4 *param_1)
     iVar1 = (**(code **)(*piStack_40 + 0x58))();
     if (iVar1 == -0x7788ffe2) {
       local_8 = 0;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       ppiVar3 = &piStack_40;
       local_20 = (undefined1 *)&piStack_40;
       local_1c = (undefined1 *)&piStack_40;

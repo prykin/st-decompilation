@@ -14,7 +14,7 @@ void __thiscall OptPanelTy::SwitchOptPanelOff(OptPanelTy *this)
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pOStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar3);
   this_00 = pOStack_8;
   if (errorCode == 0) {
     if ((*(short *)(pOStack_8 + 0x172) == 1) || (*(short *)(pOStack_8 + 0x172) == 3)) {

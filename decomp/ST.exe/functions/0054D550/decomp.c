@@ -22,9 +22,10 @@ STPlaySystemC::SaveObjData
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    FUN_006f13f0(param_4,param_1,param_2,param_3,(undefined4 *)0x0,'\x02',(uint *)0x0);
+    cMf32::RecPut(*(cMf32 **)(local_8 + 0x24),param_4,param_1,param_2,param_3,(undefined4 *)0x0,
+                  '\x02',(uint *)0x0);
     g_currentExceptionFrame = pIVar4;
     return 0;
   }

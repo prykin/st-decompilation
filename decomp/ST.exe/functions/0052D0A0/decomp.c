@@ -24,7 +24,7 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
     local_10 = param_8;
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
-    errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
       if ((local_10 != 0) && (*(BITMAPINFO **)(local_10 + 0x90) != (BITMAPINFO *)0x0)) {
         bVar4 = 0xff;
@@ -41,9 +41,10 @@ PopUpTy::OutProc(PopUpTy *this,int *param_1,int param_2,undefined4 param_3,int p
           local_8 = CONCAT31(local_8._1_3_,bVar2);
         } while (bVar2 < 0xf);
         if (bVar4 != 0xff) {
-          FUN_006b4680(param_1,param_4,param_5,*(BITMAPINFO **)(local_10 + 0x90),(uint *)0x0,0,
-                       (local_c & 0xff) * 0x13,*(DWORD *)(local_10 + 0x54 + (local_c & 0xff) * 4),
-                       0x13,0x1000089);
+          Library::DKW::DDX::FUN_006b4680
+                    (param_1,param_4,param_5,*(BITMAPINFO **)(local_10 + 0x90),(uint *)0x0,0,
+                     (local_c & 0xff) * 0x13,*(DWORD *)(local_10 + 0x54 + (local_c & 0xff) * 4),0x13
+                     ,0x1000089);
         }
       }
       g_currentExceptionFrame = local_54.previous;

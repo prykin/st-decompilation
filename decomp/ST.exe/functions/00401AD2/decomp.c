@@ -28,21 +28,21 @@ void __thiscall thunk_FUN_0052afe0(void *this,byte param_1,float param_2,float p
   aiStack_30[4] = 1;
   aiStack_30[7] = 1;
   if (param_2 < _DAT_0079034c) {
-    lVar9 = __ftol();
+    lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (short)lVar9 + -1;
   }
   else {
-    lVar9 = __ftol();
+    lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (int)(short)lVar9;
   }
   bVar1 = param_3 < _DAT_0079034c;
   *(int *)((int)this + 0x237) = iVar5;
   if (bVar1) {
-    lVar9 = __ftol();
+    lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (short)lVar9 + -1;
   }
   else {
-    lVar9 = __ftol();
+    lVar9 = Library::MSVCRT::__ftol();
     iVar5 = (int)(short)lVar9;
   }
   *(int *)((int)this + 0x23b) = iVar5;

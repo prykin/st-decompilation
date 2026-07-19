@@ -9,6 +9,7 @@ void thunk_FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
   int iVar5;
   uint uVar6;
   int iVar7;
+  STAllPlayersC *in_ECX;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -32,12 +33,12 @@ void thunk_FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
     puVar3 = STGroupC::GetGroupContent(pSStack_14,unaff_EDI);
     param_2 = puVar3[3];
     if (param_2 != 0) {
-      puStack_18 = FUN_006ae290((uint *)0x0,param_2,4,1);
+      puStack_18 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_2,4,1);
       uVar11 = 0;
       if (0 < (int)param_2) {
         do {
           FUN_006acc70((int)puVar3,uVar11,&uStack_2c);
-          pSStack_14 = (STGroupC *)thunk_FUN_0042b620(param_1,uStack_2c,1);
+          pSStack_14 = (STGroupC *)STAllPlayersC::GetObjPtr(in_ECX,param_1,uStack_2c,1);
           if ((pSStack_14 == (STGroupC *)0x0) ||
              (iVar4 = (**(code **)(*(int *)pSStack_14 + 0xf8))(), iVar4 == 0)) {
             FUN_006b0c70((int)puVar3,uVar11);
@@ -45,7 +46,7 @@ void thunk_FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
             uVar11 = uVar11 - 1;
           }
           else {
-            FUN_006ae140(puStack_18,uVar11,&pSStack_14);
+            Library::DKW::TBL::FUN_006ae140(puStack_18,uVar11,&pSStack_14);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < (int)param_2);
@@ -129,10 +130,11 @@ LAB_0044e508:
                         iVar4 = piVar2[piVar1[9]];
 joined_r0x0044e51a:
                         if (iVar4 == 0) {
-                          puVar3 = FUN_006ae290((uint *)0x0,1,2,1);
+                          puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
                           piVar2[piVar1[9]] = (int)puVar3;
                         }
-                        FUN_006ae1c0((uint *)piVar2[piVar1[9]],(undefined4 *)((int)piVar1 + 0x32));
+                        Library::DKW::TBL::FUN_006ae1c0
+                                  ((uint *)piVar2[piVar1[9]],(undefined4 *)((int)piVar1 + 0x32));
                         break;
                       }
                       if (iVar7 <= iVar10) goto LAB_0044e508;

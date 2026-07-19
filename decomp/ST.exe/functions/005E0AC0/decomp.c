@@ -26,7 +26,7 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -144,8 +144,9 @@ LAB_005e0d20:
                 SpriteClassTy::CloseSprite(this_01);
               }
               else {
-                FUN_006b3730(*(uint **)(this_01 + 0x48),uVar7,uVar4,*(uint *)(this_01 + 0x1c),
-                             *(uint *)(this_01 + 0x20));
+                Library::DKW::DDX::FUN_006b3730
+                          (*(uint **)(this_01 + 0x48),uVar7,uVar4,*(uint *)(this_01 + 0x1c),
+                           *(uint *)(this_01 + 0x20));
               }
             }
             break;
@@ -158,8 +159,9 @@ LAB_005e0d20:
                 *(undefined4 *)(this_01 + 8) = 0;
               }
               *(undefined4 *)(this_01 + 0x44) = *(undefined4 *)(this_00 + 0x69);
-              FUN_006b3730(*(uint **)(this_01 + 0x48),uVar7,*(uint *)(this_01 + 8),
-                           *(uint *)(this_01 + 0x1c),*(uint *)(this_01 + 0x20));
+              Library::DKW::DDX::FUN_006b3730
+                        (*(uint **)(this_01 + 0x48),uVar7,*(uint *)(this_01 + 8),
+                         *(uint *)(this_01 + 0x1c),*(uint *)(this_01 + 0x20));
             }
             break;
           case (SpriteClassTy)0x3:
@@ -213,7 +215,7 @@ LAB_005e0d20:
             uVar9 = *(uint *)(this_01 + 8);
             puVar8 = *(uint **)(this_01 + 0x48);
 LAB_005e0edd:
-            FUN_006b3730(puVar8,uVar7,uVar9,uVar4,uVar6);
+            Library::DKW::DDX::FUN_006b3730(puVar8,uVar7,uVar9,uVar4,uVar6);
             uVar6 = local_8;
           }
         }

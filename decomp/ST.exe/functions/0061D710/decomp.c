@@ -39,7 +39,7 @@ undefined4 * __thiscall FUN_0061d710(void *this,int *param_1)
   }
   iVar4 = iVar10 + 0x20 +
           *(int *)(*(int *)((int)this + 0xa3) + 0xc) * *(int *)(*(int *)((int)this + 0xa3) + 8);
-  puVar2 = (undefined4 *)FUN_006aac70(iVar4);
+  puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar4);
   if (this == (void *)0x0) {
     puVar8 = (undefined4 *)0x0;
   }

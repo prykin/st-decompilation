@@ -11,7 +11,7 @@ void __fastcall FUN_00696790(int param_1)
   iVar3 = 0;
   if (0 < *(int *)(param_1 + 0x582f)) {
     do {
-      uVar1 = FUN_0072e6c0();
+      uVar1 = Library::MSVCRT::FUN_0072e6c0();
       iVar4 = iVar3 + 1;
       *(char *)(iVar3 + *(int *)(param_1 + 0x584b)) =
            (char)((int)uVar1 % *(int *)(param_1 + 0x583b));

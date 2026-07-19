@@ -36,7 +36,7 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
     *(undefined2 *)((int)puVar3 + 0x4e) = 0;
   }
   puVar3[0x10] = 0;
-  FUN_0072da70(puVar3 + 4,puVar3,0x40);
+  Library::MSVCRT::FUN_0072da70(puVar3 + 4,puVar3,0x40);
   *puVar3 = 0;
   *(undefined4 *)((int)puVar3 + 10) = 0;
   *(undefined2 *)((int)puVar3 + 0xe) = 0;

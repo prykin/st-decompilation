@@ -43,7 +43,7 @@ undefined4 __fastcall thunk_FUN_004dccf0(int param_1)
   uStack_18 = 0xf;
   uStack_10 = uVar2;
   uStack_c = uVar1;
-  thunk_FUN_0054cc20(0x186,0,&iStack_8,auStack_48,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x186,0,&iStack_8,auStack_48,0);
   if (iStack_8 != 0) {
     *(undefined4 *)(param_1 + 0x4ec) = *(undefined4 *)(iStack_8 + 0x18);
   }

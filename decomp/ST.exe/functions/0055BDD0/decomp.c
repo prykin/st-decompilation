@@ -11,10 +11,10 @@ void FUN_0055bdd0(char *param_1,char *param_2)
   char *pcVar7;
   
   if (param_1 == (char *)0x0) {
-    _strncpy((char *)&DAT_0080f33a,param_2,0x834);
+    Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,param_2,0x834);
   }
   else {
-    _strncpy((char *)&DAT_0080f33a,param_1,0x20);
+    Library::MSVCRT::_strncpy((char *)&DAT_0080f33a,param_1,0x20);
     uVar2 = 0xffffffff;
     pcVar5 = &DAT_007c94cc;
     do {
@@ -56,7 +56,7 @@ void FUN_0055bdd0(char *param_1,char *param_2)
       cVar1 = *pcVar5;
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
-    _strncat((char *)&DAT_0080f33a,param_2,0x814 - (~uVar2 - 1));
+    Library::MSVCRT::_strncat((char *)&DAT_0080f33a,param_2,0x814 - (~uVar2 - 1));
   }
   DAT_0080fb6d = 0;
   if (DAT_008016d8 != (void *)0x0) {

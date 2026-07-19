@@ -15,7 +15,7 @@ void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pAStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar5);
   pAVar2 = pAStack_8;
   if (errorCode == 0) {
     if ((*(int *)(pAStack_8 + 0x130) != 0) && (*(byte **)(pAStack_8 + 0xbd) != (byte *)0x0)) {

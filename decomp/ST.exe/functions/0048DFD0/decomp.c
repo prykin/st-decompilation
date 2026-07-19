@@ -404,7 +404,7 @@ FUN_0048dfd0(int param_1,int param_2,uint param_3,int param_4,int param_5,int *p
   sStack_e = ((short)local_e8 - (short)local_28) + 1;
   local_a = sStack_e * local_10;
   local_30 = (undefined4 *)0x0;
-  local_8 = (undefined4 *)FUN_006aac70(local_a * 10);
+  local_8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_a * 10);
   iVar18 = local_20;
   local_14 = 0;
   do {
@@ -449,7 +449,8 @@ FUN_0048dfd0(int param_1,int param_2,uint param_3,int param_4,int param_5,int *p
     local_38 = DAT_007fb278;
     local_32 = DAT_007fb27e;
     local_30 = (undefined4 *)
-               FUN_006aac70((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
+               Library::DKW::LIB::FUN_006aac70
+                         ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
     uVar8 = (int)local_34 * (int)local_36 * (int)local_38;
     puVar12 = DAT_007fb280;
     puVar17 = local_30;
@@ -470,7 +471,8 @@ FUN_0048dfd0(int param_1,int param_2,uint param_3,int param_4,int param_5,int *p
     local_10 = DAT_007fb278;
     local_a = DAT_007fb27e;
     local_8 = (undefined4 *)
-              FUN_006aac70((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
+              Library::DKW::LIB::FUN_006aac70
+                        ((int)DAT_007fb27c * (int)DAT_007fb27a * (int)DAT_007fb278 * 2);
     uVar8 = (int)sStack_c * (int)sStack_e * (int)local_10;
     puVar12 = DAT_007fb280;
     puVar17 = local_8;

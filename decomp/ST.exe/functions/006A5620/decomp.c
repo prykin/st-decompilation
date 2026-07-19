@@ -15,9 +15,9 @@ BOOL __cdecl FUN_006a5620(int param_1)
   if (iVar1 == 0) {
     return 0;
   }
-  uVar2 = FUN_00731ae0((int)lpMem);
+  uVar2 = Library::MSVCRT::FUN_00731ae0((int)lpMem);
   if (uVar2 != 0) {
-    BVar3 = FUN_00731b40(uVar2,(int)lpMem);
+    BVar3 = Library::MSVCRT::FUN_00731b40(uVar2,(int)lpMem);
     return BVar3;
   }
   if ((DAT_00857154 & 0x8000) != 0) {

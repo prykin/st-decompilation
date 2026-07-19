@@ -18,7 +18,7 @@ uint FUN_00679120(byte *param_1,int param_2,int param_3,int param_4)
   
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  uVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  uVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (uVar2 == 0) {
     local_20 = thunk_FUN_00678e00(local_14,param_1);
     if (-1 < (int)local_20) {
@@ -49,7 +49,7 @@ uint FUN_00679120(byte *param_1,int param_2,int param_3,int param_4)
         *(short *)(*piVar3 + 100) = (short)local_c + 2;
         *(short *)(*piVar3 + 0x66) = (short)param_4;
         *(undefined1 *)(*piVar3 + 0x68) = *(undefined1 *)((int)local_14 + 0x64f);
-        thunk_FUN_0054cc20(0x38e,local_24,&local_10,*piVar3,0);
+        STPlaySystemC::CreateGameObject(DAT_00802a38,0x38e,local_24,&local_10,*piVar3,0);
         FUN_006ab060(piVar3);
         *piVar3 = local_10;
         piVar3[1] = *(int *)(local_10 + 0x18);

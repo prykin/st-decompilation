@@ -1,10 +1,10 @@
 
-undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
+undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int *param_1)
 
 {
   int iVar1;
   code *pcVar2;
-  void *this_00;
+  TraksClassTy *this_00;
   int iVar3;
   int iVar4;
   uint uVar5;
@@ -18,7 +18,7 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
   char cVar11;
   InternalExceptionFrame IStack_7c;
   int iStack_38;
-  void *pvStack_34;
+  TraksClassTy *pTStack_34;
   int iStack_30;
   int iStack_2c;
   int iStack_28;
@@ -32,13 +32,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
   int iStack_8;
   
   if (((((*(byte *)(param_1 + 0x1b) & 1) == 0) && (DAT_0080731e == 0)) ||
-      (*(int *)((int)this + 0x24) == 0)) || ((param_1 == (int *)0x0 || (DAT_00806770 == 0)))) {
+      (*(int *)(this + 0x24) == 0)) || ((param_1 == (int *)0x0 || (DAT_00806770 == 0)))) {
     return 0;
   }
   IStack_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_7c;
-  pvStack_34 = this;
-  iVar3 = __setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pTStack_34 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iStack_8 = FUN_006acf0d(param_1[4],param_1[5],param_1[6],param_1[7],param_1[8],param_1[9]);
     if (iStack_8 == 0) {
@@ -47,13 +47,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
       if (0 < iVar3) {
         iVar4 = iStack_10 - iVar3;
         if (iVar4 < 0) {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         else {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+        *(uint *)(pTStack_34 + 0x1c) = uVar5;
         iStack_10 = (uVar5 >> 0x10) % (((iStack_10 + iVar3) - iVar4) + 1U) + iVar4;
       }
       iStack_8 = param_1[0x17];
@@ -64,13 +64,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
         iVar3 = param_1[0xe] + iStack_8;
         iStack_8 = param_1[0xe] - iStack_8;
         if (iStack_8 < 0) {
-          uVar5 = *(int *)((int)pvStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+          uVar5 = *(int *)(pTStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(pTStack_34 + 0x1c) = uVar5;
           iStack_8 = (uVar5 >> 0x10) % ((iVar3 - iStack_8) + 1U) + iStack_8;
         }
         else {
-          uVar5 = *(int *)((int)pvStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+          uVar5 = *(int *)(pTStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(pTStack_34 + 0x1c) = uVar5;
           iStack_8 = (uVar5 >> 0x10) % ((iVar3 - iStack_8) + 1U) + iStack_8;
         }
       }
@@ -79,13 +79,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
       if (0 < iVar3) {
         iVar4 = iStack_14 - iVar3;
         if (iVar4 < 0) {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         else {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+        *(uint *)(pTStack_34 + 0x1c) = uVar5;
         iStack_14 = (uVar5 >> 0x10) % (((iStack_14 + iVar3) - iVar4) + 1U) + iVar4;
       }
       iStack_18 = param_1[0x15];
@@ -96,13 +96,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
         iVar3 = param_1[0xc] + iStack_18;
         iStack_18 = param_1[0xc] - iStack_18;
         if (iStack_18 < 0) {
-          uVar5 = *(int *)((int)pvStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+          uVar5 = *(int *)(pTStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(pTStack_34 + 0x1c) = uVar5;
           iStack_18 = (uVar5 >> 0x10) % ((iVar3 - iStack_18) + 1U) + iStack_18;
         }
         else {
-          uVar5 = *(int *)((int)pvStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+          uVar5 = *(int *)(pTStack_34 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(pTStack_34 + 0x1c) = uVar5;
           iStack_18 = (uVar5 >> 0x10) % ((iVar3 - iStack_18) + 1U) + iStack_18;
         }
       }
@@ -114,13 +114,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
         iVar4 = param_1[0xb];
         iStack_c = iVar4 - iVar3;
         if (iStack_c < 0) {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         else {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+        *(uint *)(pTStack_34 + 0x1c) = uVar5;
         sVar10 = (short)((uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_c) + 1U)) + (short)iStack_c;
       }
       iVar3 = param_1[0x13];
@@ -131,18 +131,18 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
         iVar4 = param_1[10];
         iStack_c = iVar4 - iVar3;
         if (iStack_c < 0) {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         else {
-          iVar7 = *(int *)((int)pvStack_34 + 0x1c);
+          iVar7 = *(int *)(pTStack_34 + 0x1c);
         }
         uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-        *(uint *)((int)pvStack_34 + 0x1c) = uVar5;
+        *(uint *)(pTStack_34 + 0x1c) = uVar5;
         sVar9 = (short)((uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_c) + 1U)) + (short)iStack_c;
       }
-      thunk_FUN_00556760(pvStack_34,(short)*param_1,(short)param_1[1],0,param_1[4],param_1[5],
-                         param_1[6],sVar9,sVar10,(short)iStack_18,(short)iStack_14,(short)iStack_8,
-                         (short)iStack_10,param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
+      TraksCreate(pTStack_34,(short)*param_1,(short)param_1[1],0,param_1[4],param_1[5],param_1[6],
+                  sVar9,sVar10,(short)iStack_18,(short)iStack_14,(short)iStack_8,(short)iStack_10,
+                  param_1[0x19],(short)param_1[0x1a],(byte)param_1[0x1b]);
     }
     else {
       iVar3 = DAT_00806760;
@@ -168,7 +168,7 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
         }
         param_1[3] = iVar3;
       }
-      this_00 = pvStack_34;
+      this_00 = pTStack_34;
       iStack_30 = 0;
       while( true ) {
         if (param_1[3] < 1) {
@@ -187,13 +187,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar4 = param_1[0xf];
           iStack_18 = iVar4 - iVar3;
           if (iStack_18 < 0) {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_18 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_18) + 1U) + iStack_18;
         }
         iVar3 = param_1[0x17];
@@ -204,13 +204,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar4 = param_1[0xe];
           iStack_14 = iVar4 - iVar3;
           if (iStack_14 < 0) {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_14 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_14) + 1U) + iStack_14;
         }
         iVar3 = param_1[0x16];
@@ -221,13 +221,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar4 = param_1[0xd];
           iStack_1c = iVar4 - iVar3;
           if (iStack_1c < 0) {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_1c = (uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_1c) + 1U) + iStack_1c;
         }
         iVar3 = param_1[0x15];
@@ -238,13 +238,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar4 = param_1[0xc];
           iStack_20 = iVar4 - iVar3;
           if (iStack_20 < 0) {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_20 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_20) + 1U) + iStack_20;
         }
         iVar3 = param_1[0x14];
@@ -255,13 +255,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar4 = param_1[0xb];
           iStack_24 = iVar4 - iVar3;
           if (iStack_24 < 0) {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_24 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_24) + 1U) + iStack_24;
         }
         iVar3 = param_1[0x13];
@@ -272,13 +272,13 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar4 = param_1[10];
           iStack_28 = iVar4 - iVar3;
           if (iStack_28 < 0) {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar7 = *(int *)((int)this_00 + 0x1c);
+            iVar7 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar7 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_28 = (uVar5 >> 0x10) % (((iVar4 + iVar3) - iStack_28) + 1U) + iStack_28;
         }
         if (param_1[0x12] < 1) {
@@ -290,8 +290,8 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar7 = (param_1[6] * iVar3 + param_1[9] * iStack_c) / iStack_8;
           iVar4 = param_1[0x12];
           iStack_2c = iVar7 - iVar4;
-          uVar5 = *(int *)((int)this_00 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          uVar5 = *(int *)(this_00 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iStack_2c = (uVar5 >> 0x10) % (((iVar7 + iVar4) - iStack_2c) + 1U) + iStack_2c;
         }
         if (param_1[0x11] < 1) {
@@ -301,8 +301,8 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar7 = (iVar3 * param_1[5] + param_1[8] * iStack_c) / iStack_8;
           iVar4 = param_1[0x11];
           iStack_10 = iVar7 - iVar4;
-          uVar5 = *(int *)((int)this_00 + 0x1c) * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          uVar5 = *(int *)(this_00 + 0x1c) * 0x41c64e6d + 0x3039;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iVar4 = (uVar5 >> 0x10) % (((iVar7 + iVar4) - iStack_10) + 1U) + iStack_10;
         }
         if (param_1[0x10] < 1) {
@@ -313,20 +313,20 @@ undefined4 __thiscall thunk_FUN_00556dd0(void *this,int *param_1)
           iVar3 = param_1[0x10];
           iStack_10 = iVar7 - iVar3;
           if (iStack_10 < 0) {
-            iVar1 = *(int *)((int)this_00 + 0x1c);
+            iVar1 = *(int *)(this_00 + 0x1c);
           }
           else {
-            iVar1 = *(int *)((int)this_00 + 0x1c);
+            iVar1 = *(int *)(this_00 + 0x1c);
           }
           uVar5 = iVar1 * 0x41c64e6d + 0x3039;
-          *(uint *)((int)this_00 + 0x1c) = uVar5;
+          *(uint *)(this_00 + 0x1c) = uVar5;
           iVar3 = (uVar5 >> 0x10) % (((iVar7 + iVar3) - iStack_10) + 1U) + iStack_10;
         }
-        thunk_FUN_00556760(this_00,(short)*param_1,(short)param_1[1],
-                           (param_1[2] * iStack_c * iStack_38) / (iStack_8 * 100),iVar3,iVar4,
-                           iStack_2c,(short)iStack_28,(short)iStack_24,(short)iStack_20,
-                           (short)iStack_1c,(short)iStack_14,(short)iStack_18,param_1[0x19],
-                           (short)param_1[0x1a],(byte)param_1[0x1b]);
+        TraksCreate(this_00,(short)*param_1,(short)param_1[1],
+                    (param_1[2] * iStack_c * iStack_38) / (iStack_8 * 100),iVar3,iVar4,iStack_2c,
+                    (short)iStack_28,(short)iStack_24,(short)iStack_20,(short)iStack_1c,
+                    (short)iStack_14,(short)iStack_18,param_1[0x19],(short)param_1[0x1a],
+                    (byte)param_1[0x1b]);
         iStack_30 = iStack_30 + 1;
       }
     }

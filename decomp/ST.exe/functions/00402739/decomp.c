@@ -114,7 +114,7 @@ LAB_00428c07:
     return 0;
   }
   iVar2 = (iStack_14 - uStack_10) * uVar4;
-  iVar3 = FUN_006aac70(iVar2);
+  iVar3 = Library::DKW::LIB::FUN_006aac70(iVar2);
   FUN_006b0290(iVar3,param_4[2],0,0,(int)param_1,param_2,*param_4,param_4[1],param_4[2],param_4[3]);
   DAT_007f4dd0 = DAT_007f4dd0 + iVar2;
   return iVar3;

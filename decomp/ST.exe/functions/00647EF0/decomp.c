@@ -24,7 +24,7 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   local_8 = (undefined4 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
-  errorCode = __setjmp3(local_54,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar5);
   pAVar4 = local_14;
   if (errorCode == 0) {
     local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)(local_14 + 0x1c),&local_10);

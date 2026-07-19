@@ -113,7 +113,7 @@ thunk_FUN_00627850(undefined4 param_1,undefined4 param_2,undefined4 param_3,unde
       sVar7 = (short)iStack_8;
     }
     else {
-      _strncpy(acStack_2c,param_9,0xe);
+      Library::MSVCRT::_strncpy(acStack_2c,param_9,0xe);
       uStack_1e = 0;
     }
   }

@@ -27,7 +27,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pUVar2 = local_14;
   if (iVar3 == 0) {
     pUVar8 = local_14 + 0x1ab;
@@ -38,7 +38,7 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
       pUVar7 = pUVar7 + 4;
       piVar9 = piVar9 + 1;
     }
-    thunk_FUN_0043beb0(DAT_007fa174,0x10,(int *)pUVar8);
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x10,(int *)pUVar8);
     iVar3 = 0x19;
     pUVar8 = pUVar2 + 0x1ab;
     local_8 = 3;

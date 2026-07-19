@@ -46,7 +46,7 @@ STAllPlayersC::RegisterObject
   IStack_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_94;
   pSStack_18 = this;
-  iVar6 = __setjmp3(IStack_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(IStack_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar6 != 0) {
     g_currentExceptionFrame = IStack_94.previous;
     iVar13 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x67e,0,iVar6,&DAT_007a4ccc
@@ -75,7 +75,7 @@ STAllPlayersC::RegisterObject
     uVar12 = param_3 & 0xffff;
   }
   uStack_20 = uVar12;
-  FUN_006ae140(puVar4,uVar12,&param_4);
+  Library::DKW::TBL::FUN_006ae140(puVar4,uVar12,&param_4);
   thunk_FUN_00419c50(param_4,(short)uVar12);
   if (param_4[8] == 0x14) {
     iVar6 = (**(code **)(*param_4 + 0x2c))();
@@ -349,7 +349,7 @@ LAB_0042eb3e:
     uStack_44 = 1;
     uStack_3c = uVar12;
     (**(code **)(*DAT_00802a38 + 8))(0x10ff,auStack_10,&pSStack_c,auStack_50,0);
-    FUN_006ae140(puStack_1c,uVar12,&pSStack_c);
+    Library::DKW::TBL::FUN_006ae140(puStack_1c,uVar12,&pSStack_c);
     iVar6 = param_5;
   }
   else {
@@ -383,7 +383,7 @@ LAB_0042ebf6:
   iVar6 = (**(code **)(*param_4 + 0x2c))();
   if (iVar6 == 0x1d) {
     if (puStack_24 == (uint *)0x0) {
-      puStack_24 = FUN_006ae290((uint *)0x0,1,2,1);
+      puStack_24 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
       *(uint **)((int)&DAT_007f5107 + (char)param_1 * 0xa62) = puStack_24;
     }
     puVar4 = puStack_24;
@@ -397,7 +397,7 @@ LAB_0042ebf6:
         }
       }
     }
-    FUN_006ae140(puVar4,uVar12,(undefined4 *)((int)param_4 + 0x32));
+    Library::DKW::TBL::FUN_006ae140(puVar4,uVar12,(undefined4 *)((int)param_4 + 0x32));
   }
   g_currentExceptionFrame = IStack_94.previous;
   return 0;

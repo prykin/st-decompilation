@@ -1,5 +1,5 @@
 
-void __fastcall thunk_FUN_004a7490(int param_1)
+void __thiscall STGroupBoatC::ReMakePatrolPoints(STGroupBoatC *this,int param_1)
 
 {
   ushort uVar1;
@@ -28,29 +28,30 @@ void __fastcall thunk_FUN_004a7490(int param_1)
   short sStack_1a;
   short sStack_18;
   int iStack_14;
-  int iStack_10;
+  STGroupBoatC *pSStack_10;
   uint uStack_c;
   uint uStack_8;
   
-  uVar1 = *(ushort *)(param_1 + 0x27);
+  uVar1 = *(ushort *)(this + 0x27);
   if (uVar1 < 10) {
-    *(undefined4 *)(param_1 + 0x242) = 2;
+    *(undefined4 *)(this + 0x242) = 2;
   }
   else if (uVar1 < 0x28) {
-    *(undefined4 *)(param_1 + 0x242) = 4;
+    *(undefined4 *)(this + 0x242) = 4;
   }
   else if (uVar1 < 100) {
-    *(undefined4 *)(param_1 + 0x242) = 6;
+    *(undefined4 *)(this + 0x242) = 6;
   }
   else if (uVar1 < 0xf0) {
-    *(undefined4 *)(param_1 + 0x242) = 8;
+    *(undefined4 *)(this + 0x242) = 8;
   }
   else {
-    *(undefined4 *)(param_1 + 0x242) = 10;
+    *(undefined4 *)(this + 0x242) = 10;
   }
-  iStack_10 = param_1;
-  puVar3 = FUN_006ae290((uint *)0x0,*(uint *)(*(int *)(param_1 + 0x226) + 0xc),0xe,1);
-  iVar7 = *(int *)(param_1 + 0x226);
+  pSStack_10 = this;
+  puVar3 = Library::DKW::TBL::FUN_006ae290
+                     ((uint *)0x0,*(uint *)(*(int *)(this + 0x226) + 0xc),0xe,1);
+  iVar7 = *(int *)(this + 0x226);
   uVar9 = 0;
   if (0 < *(int *)(iVar7 + 0xc)) {
     do {
@@ -60,8 +61,8 @@ void __fastcall thunk_FUN_004a7490(int param_1)
       uStack_22 = 0;
       iStack_26 = 0;
       sStack_28 = sStack_18;
-      FUN_006ae140(puVar3,uVar9,(undefined4 *)&sStack_2c);
-      iVar7 = *(int *)(param_1 + 0x226);
+      Library::DKW::TBL::FUN_006ae140(puVar3,uVar9,(undefined4 *)&sStack_2c);
+      iVar7 = *(int *)(this + 0x226);
       uVar9 = uVar9 + 1;
     } while ((int)uVar9 < *(int *)(iVar7 + 0xc));
   }
@@ -73,11 +74,11 @@ void __fastcall thunk_FUN_004a7490(int param_1)
       do {
         FUN_006acc70((int)puVar3,uStack_8,(undefined4 *)&sStack_2c);
         FUN_006acc70((int)puVar3,uStack_c,(undefined4 *)&sStack_3c);
-        psVar4 = FUN_006a9190((int)DAT_007fb280,(int)DAT_007fb278,(int)DAT_007fb27a,
-                              (int)DAT_007fb27c,(short *)(int)sStack_2c,(short *)(int)sStack_2a,
-                              (short *)(int)sStack_28,(short *)(int)sStack_3c,
-                              (short *)(int)sStack_3a,(short *)(int)sStack_38,0,&iStack_14,
-                              (undefined4 *)0x0,(short *)0x0,0);
+        psVar4 = Library::DKW::WAY::FUN_006a9190
+                           ((int)DAT_007fb280,(int)DAT_007fb278,(int)DAT_007fb27a,(int)DAT_007fb27c,
+                            (short *)(int)sStack_2c,(short *)(int)sStack_2a,(short *)(int)sStack_28,
+                            (short *)(int)sStack_3c,(short *)(int)sStack_3a,(short *)(int)sStack_38,
+                            0,&iStack_14,(undefined4 *)0x0,(short *)0x0,0);
         if (psVar4 == (short *)0x0) {
           uVar9 = (int)DAT_007fb278 * (int)DAT_007fb27a * (int)DAT_007fb27c;
           puVar8 = DAT_007fb280;
@@ -98,7 +99,7 @@ void __fastcall thunk_FUN_004a7490(int param_1)
           iVar7 = *(short *)((int)DAT_007fb238 +
                             ((int)DAT_007fb27e * (int)sStack_38 + (int)DAT_007fb278 * (int)sStack_3a
                             + (int)sStack_3c) * 2) + -1;
-          param_1 = iStack_10;
+          this = pSStack_10;
         }
         else {
           iVar7 = (int)psVar4[3];
@@ -106,7 +107,7 @@ void __fastcall thunk_FUN_004a7490(int param_1)
         }
         uVar9 = uStack_c;
         iVar7 = iVar7 / 3;
-        if (iVar7 < *(int *)(param_1 + 0x242)) {
+        if (iVar7 < *(int *)(this + 0x242)) {
           FUN_006b0c70((int)puVar3,uStack_c);
           uStack_8 = uStack_8 - 1;
           uStack_c = uVar9 - 1;
@@ -114,16 +115,16 @@ void __fastcall thunk_FUN_004a7490(int param_1)
         else {
           iStack_32 = iVar7;
           iStack_26 = iVar7;
-          FUN_006ae140(puVar3,uStack_8,(undefined4 *)&sStack_2c);
-          FUN_006ae140(puVar3,uStack_c,(undefined4 *)&sStack_3c);
+          Library::DKW::TBL::FUN_006ae140(puVar3,uStack_8,(undefined4 *)&sStack_2c);
+          Library::DKW::TBL::FUN_006ae140(puVar3,uStack_c,(undefined4 *)&sStack_3c);
         }
         uStack_8 = uStack_8 + 1;
         uStack_c = uStack_c + 1;
       } while ((int)uStack_8 < (int)(puVar3[3] - 1));
     }
-    if (*(uint *)(param_1 + 0x232) != 0xffffffff) {
-      FUN_006acc70(*(int *)(param_1 + 0x22a),*(uint *)(param_1 + 0x232),(undefined4 *)&sStack_4c);
-      iVar7 = *(int *)(param_1 + 0x226);
+    if (*(uint *)(this + 0x232) != 0xffffffff) {
+      FUN_006acc70(*(int *)(this + 0x22a),*(uint *)(this + 0x232),(undefined4 *)&sStack_4c);
+      iVar7 = *(int *)(this + 0x226);
       uVar9 = 0;
       uStack_c = 0xffffffff;
       if (0 < *(int *)(iVar7 + 0xc)) {
@@ -134,7 +135,7 @@ void __fastcall thunk_FUN_004a7490(int param_1)
             if (uVar9 != 0xffffffff) goto LAB_004a77bb;
             break;
           }
-          iVar7 = *(int *)(param_1 + 0x226);
+          iVar7 = *(int *)(this + 0x226);
           uVar9 = uVar9 + 1;
         } while ((int)uVar9 < *(int *)(iVar7 + 0xc));
       }
@@ -146,10 +147,10 @@ void __fastcall thunk_FUN_004a7490(int param_1)
         return;
       }
 LAB_004a77bb:
-      *(undefined4 *)(param_1 + 0x232) = 0xffffffff;
+      *(undefined4 *)(this + 0x232) = 0xffffffff;
       uStack_8 = uStack_c;
-      if (*(int *)(param_1 + 0x236) == 1) {
-        iVar7 = *(int *)(param_1 + 0x226);
+      if (*(int *)(this + 0x236) == 1) {
+        iVar7 = *(int *)(this + 0x226);
         if ((int)uStack_c < *(int *)(iVar7 + 0xc)) {
           do {
             FUN_006acc70(iVar7,uStack_8,(undefined4 *)&sStack_1c);
@@ -159,41 +160,41 @@ LAB_004a77bb:
                 FUN_006acc70((int)puVar3,uVar9,(undefined4 *)&sStack_2c);
                 if (((sStack_1c == sStack_2c) && (sStack_1a == sStack_2a)) &&
                    (sStack_18 == sStack_28)) {
-                  *(uint *)(param_1 + 0x232) = uVar9;
+                  *(uint *)(this + 0x232) = uVar9;
                   break;
                 }
                 uVar9 = uVar9 + 1;
               } while ((int)uVar9 < (int)puVar3[3]);
             }
-            if (*(int *)(param_1 + 0x232) != -1) break;
-            iVar7 = *(int *)(param_1 + 0x226);
+            if (*(int *)(this + 0x232) != -1) break;
+            iVar7 = *(int *)(this + 0x226);
             uStack_8 = uStack_8 + 1;
           } while ((int)uStack_8 < *(int *)(iVar7 + 0xc));
         }
-        if (*(int *)(param_1 + 0x232) != -1) goto LAB_004a792e;
-        *(uint *)(param_1 + 0x232) = puVar3[3] - 1;
+        if (*(int *)(this + 0x232) != -1) goto LAB_004a792e;
+        *(uint *)(this + 0x232) = puVar3[3] - 1;
       }
       else {
         for (; -1 < (int)uStack_8; uStack_8 = uStack_8 - 1) {
-          FUN_006acc70(*(int *)(param_1 + 0x226),uStack_8,(undefined4 *)&sStack_1c);
+          FUN_006acc70(*(int *)(this + 0x226),uStack_8,(undefined4 *)&sStack_1c);
           uVar9 = 0;
           if (0 < (int)puVar3[3]) {
             do {
               FUN_006acc70((int)puVar3,uVar9,(undefined4 *)&sStack_2c);
               if (((sStack_1c == sStack_2c) && (sStack_1a == sStack_2a)) && (sStack_18 == sStack_28)
                  ) {
-                *(uint *)(param_1 + 0x232) = uVar9;
+                *(uint *)(this + 0x232) = uVar9;
                 break;
               }
               uVar9 = uVar9 + 1;
             } while ((int)uVar9 < (int)puVar3[3]);
           }
-          if (*(int *)(param_1 + 0x232) != -1) break;
+          if (*(int *)(this + 0x232) != -1) break;
         }
-        if (*(int *)(param_1 + 0x232) != -1) goto LAB_004a792e;
-        *(undefined4 *)(param_1 + 0x232) = 0;
+        if (*(int *)(this + 0x232) != -1) goto LAB_004a792e;
+        *(undefined4 *)(this + 0x232) = 0;
       }
-      if ((*(int *)(param_1 + 0x232) == -1) &&
+      if ((*(int *)(this + 0x232) == -1) &&
          (iVar7 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x160e,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__ReMakePatrolPoints_007ac418),
          iVar7 != 0)) {
@@ -204,19 +205,19 @@ LAB_004a77bb:
       goto LAB_004a792e;
     }
   }
-  *(undefined4 *)(param_1 + 0x232) = 0;
+  *(undefined4 *)(this + 0x232) = 0;
 LAB_004a792e:
-  if (*(byte **)(param_1 + 0x22a) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(param_1 + 0x22a));
-    *(undefined4 *)(param_1 + 0x22a) = 0;
+  if (*(byte **)(this + 0x22a) != (byte *)0x0) {
+    FUN_006ae110(*(byte **)(this + 0x22a));
+    *(undefined4 *)(this + 0x22a) = 0;
   }
-  puVar5 = FUN_006ae290((uint *)0x0,puVar3[3],0xe,1);
-  *(uint **)(param_1 + 0x22a) = puVar5;
+  puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,puVar3[3],0xe,1);
+  *(uint **)(this + 0x22a) = puVar5;
   uVar9 = 0;
   if (0 < (int)puVar3[3]) {
     do {
       FUN_006acc70((int)puVar3,uVar9,(undefined4 *)&sStack_2c);
-      FUN_006ae140(*(uint **)(param_1 + 0x22a),uVar9,(undefined4 *)&sStack_2c);
+      Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22a),uVar9,(undefined4 *)&sStack_2c);
       uVar9 = uVar9 + 1;
     } while ((int)uVar9 < (int)puVar3[3]);
   }

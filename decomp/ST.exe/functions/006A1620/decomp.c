@@ -33,7 +33,7 @@ FUN_006a1620(int *param_1,int param_2,int param_3,int param_4,int param_5,ushort
     uVar4 = (byte)((byte)uVar4 ^ (byte)puVar1[2] & 0xf) & 0xf ^ uVar4;
     *puVar1 = uVar4;
     if ((puVar1[2] & 0xf) == 0) {
-      uVar5 = FUN_0072e6c0();
+      uVar5 = Library::MSVCRT::FUN_0072e6c0();
       bVar7 = ((char)((int)uVar5 % (int)DAT_007df9e8) + '\x01') * '\x10';
     }
     else {

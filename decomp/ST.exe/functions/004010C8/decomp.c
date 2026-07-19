@@ -7,7 +7,7 @@ undefined4 thunk_FUN_004d83d0(undefined1 param_1,int param_2,int param_3,uint pa
   undefined4 *puVar3;
   
   if (DAT_007fa168 == 0) {
-    DAT_007fa168 = FUN_006aac70((int)DAT_007fb246);
+    DAT_007fa168 = Library::DKW::LIB::FUN_006aac70((int)DAT_007fb246);
   }
   if (param_2 < 0) {
     param_2 = 0;

@@ -22,11 +22,11 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   if (iVar2 == 0) {
     if (DAT_00802a30 != 0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-        FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+        Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
       }
       else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -52,10 +52,10 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
       }
       if (*(HoloTy **)(this_00 + 0x21f8) != (HoloTy *)0x0) {
         HoloTy::Done(*(HoloTy **)(this_00 + 0x21f8));
-        FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21f8));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x21f8));
         *(undefined4 *)(this_00 + 0x21f8) = 0;
       }
-      puVar3 = (undefined1 *)FUN_0072e530(0x33);
+      puVar3 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
       if (puVar3 == (undefined1 *)0x0) {
         puVar3 = (undefined1 *)0x0;
       }
@@ -81,7 +81,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
         cVar6 = '\x01';
         uVar5 = 0x10;
         iVar4 = 1;
-        iVar2 = FUN_006bf9f0(DAT_008075a8,200,0x1f1,400,0x62);
+        iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,200,0x1f1,400,0x62);
         uVar5 = HoloTy::Init(*(HoloTy **)(this_00 + 0x21f8),1,200,0x1f1,iVar2,iVar4,uVar5,cVar6,
                              uVar7);
         if (uVar5 != 0) {
@@ -89,7 +89,7 @@ void __thiscall SettMapMTy::DeleteCtrls(SettMapMTy *this)
           *(undefined1 *)(iVar2 + 2) = 0;
           *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
           if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x21f8) + 3)) {
-            FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21f8) + 3));
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x21f8) + 3));
           }
           HoloTy::NextFas(*(HoloTy **)(this_00 + 0x21f8));
         }

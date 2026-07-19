@@ -45,7 +45,7 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
   *(DWORD *)(this + 0x61) = DVar8;
   IStack_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_a0;
-  iVar9 = __setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = pPStack_20;
   if (iVar9 != 0) {
     g_currentExceptionFrame = IStack_a0.previous;
@@ -254,35 +254,38 @@ LAB_005bb532:
     if (iStack_8 != 0) {
       if (*(HoloTy **)(this_01 + 0x1c96) != (HoloTy *)0x0) {
         HoloTy::Done(*(HoloTy **)(this_01 + 0x1c96));
-        FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1c96));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1c96));
         *(undefined4 *)(this_01 + 0x1c96) = 0;
       }
       if (*(HoloTy **)(this_01 + 0x1c9a) != (HoloTy *)0x0) {
         HoloTy::Done(*(HoloTy **)(this_01 + 0x1c9a));
-        FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1c9a));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1c9a));
         *(undefined4 *)(this_01 + 0x1c9a) = 0;
       }
       if (*(uint *)(this_01 + 0x1a7b) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(this_01 + 0x1abf),*(uint *)(this_01 + 0x1a7b),0xfffffffe,
-                     *(uint *)(this_01 + 0x1a93),*(uint *)(this_01 + 0x1a97));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(this_01 + 0x1abf),*(uint *)(this_01 + 0x1a7b),0xfffffffe,
+                   *(uint *)(this_01 + 0x1a93),*(uint *)(this_01 + 0x1a97));
       }
       if (*(uint *)(this_01 + 0x1b0c) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(this_01 + 0x1b50),*(uint *)(this_01 + 0x1b0c),0xfffffffe,
-                     *(uint *)(this_01 + 0x1b24),*(uint *)(this_01 + 0x1b28));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(this_01 + 0x1b50),*(uint *)(this_01 + 0x1b0c),0xfffffffe,
+                   *(uint *)(this_01 + 0x1b24),*(uint *)(this_01 + 0x1b28));
       }
       if (*(uint *)(this_01 + 0x1b9d) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(this_01 + 0x1be1),*(uint *)(this_01 + 0x1b9d),0xfffffffe,
-                     *(uint *)(this_01 + 0x1bb5),*(uint *)(this_01 + 0x1bb9));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(this_01 + 0x1be1),*(uint *)(this_01 + 0x1b9d),0xfffffffe,
+                   *(uint *)(this_01 + 0x1bb5),*(uint *)(this_01 + 0x1bb9));
       }
       pPVar11 = this_01 + 0x1c2a;
       iVar9 = 0x16;
       do {
-        FUN_006b3430(DAT_008075a8,*(uint *)pPVar11);
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)pPVar11);
         pPVar11 = pPVar11 + 4;
         iVar9 = iVar9 + -1;
       } while (iVar9 != 0);
       if (this_01[0x1a5f] == (PrividerTy)0x0) {
-        FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1c8a));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1c8a));
       }
       this_01[0x65] = (PrividerTy)0x1;
       CreateCtrls(this_01,'\0');
@@ -323,7 +326,9 @@ LAB_005bb532:
       this_01[0x65] = (PrividerTy)0x2;
       if ((PVar1 != (PrividerTy)0xff) && (*(int *)(this_01 + (uint)(byte)PVar1 * 0x1fb + 0xd1) != 0)
          ) {
-        FUN_006e3b50((undefined4 *)(this_01 + (uint)(byte)PVar1 * 0x1fb + 0xc1));
+        AppClassTy::PostNextMessage
+                  ((AppClassTy *)&DAT_00807620,
+                   (undefined4 *)(this_01 + (uint)(byte)PVar1 * 0x1fb + 0xc1));
         g_currentExceptionFrame = IStack_a0.previous;
         return;
       }
@@ -349,11 +354,11 @@ LAB_005bb532:
     if (iStack_8 != 0) {
       if (*(HoloTy **)(this_01 + 0x1c9a) != (HoloTy *)0x0) {
         HoloTy::Done(*(HoloTy **)(this_01 + 0x1c9a));
-        FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1c9a));
+        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_01 + 0x1c9a));
         *(undefined4 *)(this_01 + 0x1c9a) = 0;
       }
       if (this_01[0x1a60] == (PrividerTy)0x0) {
-        FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1c8a));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_01 + 0x1c8a));
       }
       SetMode(this_01,(char)this_01[0x1a60],'\0');
       g_currentExceptionFrame = IStack_a0.previous;

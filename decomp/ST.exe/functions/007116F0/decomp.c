@@ -28,7 +28,7 @@ int __thiscall ccFntTy::WrCh(ccFntTy *this,byte *param_1,uint param_2)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     if (((*(int *)(local_8 + 0xa0) != 0) && (*(int *)(local_8 + 0xa8) != 0)) &&
@@ -48,10 +48,11 @@ int __thiscall ccFntTy::WrCh(ccFntTy *this,byte *param_1,uint param_2)
     iVar5 = (int)*(short *)(iVar9 + 0x68 + iVar2);
     iVar6 = (int)*(short *)(iVar9 + 0x66 + iVar2);
     iVar2 = FUN_006b4fa0(*(int *)(this_00 + uVar8 * 4 + 4));
-    FUN_006b5110(*(int *)(this_00 + 0x72),*(int *)(this_00 + 0x76),
-                 *(int *)(this_00 + 0x60) + *(int *)(this_00 + 0x50),
-                 *(int *)(this_00 + 100) + *(int *)(this_00 + 0x54),
-                 *(int *)(this_00 + uVar8 * 4 + 4),iVar2,iVar6,iVar5,iVar7,iVar4,bVar10);
+    Library::DKW::WGR::FUN_006b5110
+              (*(int *)(this_00 + 0x72),*(int *)(this_00 + 0x76),
+               *(int *)(this_00 + 0x60) + *(int *)(this_00 + 0x50),
+               *(int *)(this_00 + 100) + *(int *)(this_00 + 0x54),*(int *)(this_00 + uVar8 * 4 + 4),
+               iVar2,iVar6,iVar5,iVar7,iVar4,bVar10);
     *(int *)(this_00 + 0x50) =
          *(int *)(this_00 + 0x50) +
          (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6a + iVar9) + *(int *)(this_00 + 0x58);

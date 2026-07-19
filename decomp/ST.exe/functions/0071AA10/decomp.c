@@ -17,7 +17,7 @@ uint * __cdecl FUN_0071aa10(int param_1,char *param_2,int param_3)
   local_c = (uint *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E__Ourlib_mfsarr_cpp_007f0898,0x1e,0,errorCode,&DAT_007a4ccc,
@@ -39,12 +39,12 @@ uint * __cdecl FUN_0071aa10(int param_1,char *param_2,int param_3)
   if (param_1 == 0) {
     RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfsarr_cpp_007f0898,0x15);
   }
-  puVar2 = FUN_006f1ce0(0x17,param_2,(int *)&local_8,param_3);
+  puVar2 = cMf32::RecGet((cMf32 *)param_1,0x17,param_2,(int *)&local_8,param_3);
   if (puVar2 == (ushort *)0x0) {
     g_currentExceptionFrame = local_50.previous;
     return (uint *)0x0;
   }
-  puVar3 = FUN_006c8680((uint *)0x0,local_8);
+  puVar3 = Library::DKW::TBL::FUN_006c8680((uint *)0x0,local_8);
   if (local_8 != (uint *)0x0) {
     local_c = puVar3;
     cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_8);

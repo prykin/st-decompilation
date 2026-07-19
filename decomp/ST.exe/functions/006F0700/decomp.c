@@ -14,12 +14,12 @@ int * __cdecl FUN_006f0700(int param_1,int param_2)
   local_8 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if ((param_1 < 1) || (param_2 < 1)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x223);
     }
-    piVar2 = FUN_006aac10(param_1 * param_2 * 0x24 + 0xe);
+    piVar2 = Library::DKW::LIB::FUN_006aac10(param_1 * param_2 * 0x24 + 0xe);
     *piVar2 = param_1;
     piVar2[1] = param_2;
     g_currentExceptionFrame = local_4c.previous;

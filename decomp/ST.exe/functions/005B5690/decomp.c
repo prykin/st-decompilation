@@ -22,7 +22,7 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -54,10 +54,11 @@ MMObjTy::PaintSprBut(MMObjTy *this,int param_1,uint param_2,int param_3,int para
 switchD_005b56d4_default:
   iVar4 = (param_2 & 0xff) * 0x1fb;
   if (*(uint *)(local_8 + (param_2 & 0xff) * 0x1fb + 0xe7) != 0xffffffff) {
-    FUN_006b3730(*(uint **)(local_8 + iVar4 + 299),
-                 *(uint *)(local_8 + (param_2 & 0xff) * 0x1fb + 0xe7),
-                 *(uint *)(local_8 + iVar4 + 0xeb),*(uint *)(local_8 + iVar4 + 0xff),
-                 *(uint *)(local_8 + iVar4 + 0x103));
+    Library::DKW::DDX::FUN_006b3730
+              (*(uint **)(local_8 + iVar4 + 299),
+               *(uint *)(local_8 + (param_2 & 0xff) * 0x1fb + 0xe7),
+               *(uint *)(local_8 + iVar4 + 0xeb),*(uint *)(local_8 + iVar4 + 0xff),
+               *(uint *)(local_8 + iVar4 + 0x103));
   }
   if (pMVar3[iVar4 + 0xe2] != (MMObjTy)0x0) {
     switch(*(undefined2 *)(param_1 + 0x14)) {
@@ -76,9 +77,10 @@ switchD_005b56d4_default:
            *(int *)(pMVar3 + iVar4 + 0x103) + *(int *)(pMVar3 + iVar4 + 0xb7);
     }
     if (*(uint *)(pMVar3 + iVar4 + 0x209) != 0xffffffff) {
-      FUN_006b3730(*(uint **)(pMVar3 + iVar4 + 0x24d),*(uint *)(pMVar3 + iVar4 + 0x209),
-                   *(uint *)(pMVar3 + iVar4 + 0x20d),*(uint *)(pMVar3 + iVar4 + 0x221),
-                   *(uint *)(pMVar3 + iVar4 + 0x225));
+      Library::DKW::DDX::FUN_006b3730
+                (*(uint **)(pMVar3 + iVar4 + 0x24d),*(uint *)(pMVar3 + iVar4 + 0x209),
+                 *(uint *)(pMVar3 + iVar4 + 0x20d),*(uint *)(pMVar3 + iVar4 + 0x221),
+                 *(uint *)(pMVar3 + iVar4 + 0x225));
     }
   }
   iVar6 = *(int *)(pMVar3 + iVar4 + 400);
@@ -97,9 +99,10 @@ switchD_005b56d4_default:
     *(int *)(pMVar3 + iVar4 + 0x17c) = *(int *)(pMVar3 + iVar4 + 0x180) + -2;
   }
   if (*(uint *)(pMVar3 + iVar4 + 0x178) != 0xffffffff) {
-    FUN_006b3730(*(uint **)(pMVar3 + iVar4 + 0x1bc),*(uint *)(pMVar3 + iVar4 + 0x178),
-                 *(uint *)(pMVar3 + iVar4 + 0x17c),*(uint *)(pMVar3 + iVar4 + 400),
-                 *(uint *)(pMVar3 + iVar4 + 0x194));
+    Library::DKW::DDX::FUN_006b3730
+              (*(uint **)(pMVar3 + iVar4 + 0x1bc),*(uint *)(pMVar3 + iVar4 + 0x178),
+               *(uint *)(pMVar3 + iVar4 + 0x17c),*(uint *)(pMVar3 + iVar4 + 400),
+               *(uint *)(pMVar3 + iVar4 + 0x194));
   }
   *(int *)(pMVar3 + iVar4 + 400) = iVar6;
   *(undefined4 *)(pMVar3 + iVar4 + 0x194) = uVar1;

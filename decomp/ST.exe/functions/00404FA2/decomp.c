@@ -117,10 +117,10 @@ thunk_FUN_00644410(void *this,undefined4 *param_1,int *param_2,int *param_3,int 
                          (iVar5 == iStack_24)) {
                         *param_1 = 1;
                         *(undefined4 *)((int)pvStack_10 + 0x270) = 0;
-                        lVar14 = __ftol();
+                        lVar14 = Library::MSVCRT::__ftol();
                         *param_2 = (int)lVar14;
                         *(short *)((int)pvVar1 + 0x41) = (short)lVar14;
-                        lVar14 = __ftol();
+                        lVar14 = Library::MSVCRT::__ftol();
                         *param_3 = (int)lVar14;
                         *(short *)((int)pvVar1 + 0x43) = (short)lVar14;
                         *param_4 = 5;

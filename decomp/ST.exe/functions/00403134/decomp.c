@@ -16,7 +16,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_8;
   if (iVar3 == 0) {
     if (*(uint *)(pCStack_8 + 0x10c) != 0) {
@@ -68,7 +68,7 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
       FUN_006ab060((undefined4 *)(this_00 + 0x104));
     }
     if (*(int *)(this_00 + 0x98) != 0) {
-      FUN_006e3b50((undefined4 *)(this_00 + 0x88));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(this_00 + 0x88));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

@@ -91,7 +91,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = (MMObjTy *)this;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -267,18 +267,21 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   uVar6 = MMObjTy::CreateSprBut(this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
   *(undefined4 *)(this_00 + 0x1afd) = uVar6;
   PrepFiles((SIDTy *)this_00);
-  FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1cb4));
+  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1cb4));
   if (*(uint *)(this_00 + 0x1b05) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_00 + 0x1b49),*(uint *)(this_00 + 0x1b05),0xfffffffe,
-                 *(uint *)(this_00 + 0x1b1d),*(uint *)(this_00 + 0x1b21));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_00 + 0x1b49),*(uint *)(this_00 + 0x1b05),0xfffffffe,
+               *(uint *)(this_00 + 0x1b1d),*(uint *)(this_00 + 0x1b21));
   }
   if (*(uint *)(this_00 + 0x1b96) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),0xfffffffe,
-                 *(uint *)(this_00 + 0x1bae),*(uint *)(this_00 + 0x1bb2));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),0xfffffffe,
+               *(uint *)(this_00 + 0x1bae),*(uint *)(this_00 + 0x1bb2));
   }
   if (*(uint *)(this_00 + 0x1c27) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(this_00 + 0x1c6b),*(uint *)(this_00 + 0x1c27),0xfffffffe,
-                 *(uint *)(this_00 + 0x1c3f),*(uint *)(this_00 + 0x1c43));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(this_00 + 0x1c6b),*(uint *)(this_00 + 0x1c27),0xfffffffe,
+               *(uint *)(this_00 + 0x1c3f),*(uint *)(this_00 + 0x1c43));
   }
   g_currentExceptionFrame = local_50.previous;
   return;

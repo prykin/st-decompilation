@@ -22,7 +22,7 @@ STAllPlayersC::GetGObjFromZone2
   
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
     if (iVar3 != -0x5001fff7) {
@@ -45,51 +45,51 @@ STAllPlayersC::GetGObjFromZone2
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xb7);
   }
   if ((param_6 != (int *)0x0) && (*param_6 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_6 = (int)puVar4;
   }
   if ((param_7 != (int *)0x0) && (*param_7 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_7 = (int)puVar4;
   }
   if ((param_8 != (int *)0x0) && (*param_8 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_8 = (int)puVar4;
   }
   if ((param_9 != (int *)0x0) && (*param_9 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_9 = (int)puVar4;
   }
   if ((param_10 != (int *)0x0) && (*param_10 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_10 = (int)puVar4;
   }
   if ((param_11 != (int *)0x0) && (*param_11 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_11 = (int)puVar4;
   }
   if ((param_12 != (int *)0x0) && (*param_12 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_12 = (int)puVar4;
   }
   if ((param_13 != (int *)0x0) && (*param_13 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_13 = (int)puVar4;
   }
   if ((param_14 != (int *)0x0) && (*param_14 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_14 = (int)puVar4;
   }
   if ((param_15 != (int *)0x0) && (*param_15 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_15 = (int)puVar4;
   }
   if ((param_16 != (int *)0x0) && (*param_16 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_16 = (int)puVar4;
   }
   if ((param_17 != (int *)0x0) && (*param_17 == 0)) {
-    puVar4 = FUN_006ae290((uint *)0x0,0,2,5);
+    puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_17 = (int)puVar4;
   }
   FUN_006ead90(DAT_00807598,param_2,param_3,param_4,param_5,&puStack_c,&iStack_8);
@@ -115,7 +115,8 @@ LAB_0042b01f:
             if (piVar7[9] != (int)param_1) {
               piVar6 = param_8;
               if (param_7 != (int *)0x0) {
-                FUN_006ae1c0((uint *)*param_7,(undefined4 *)((int)piVar7 + 0x32));
+                Library::DKW::TBL::FUN_006ae1c0((uint *)*param_7,(undefined4 *)((int)piVar7 + 0x32))
+                ;
               }
               goto joined_r0x0042b01c;
             }
@@ -156,7 +157,7 @@ LAB_0042b01f:
               piVar7 = (int *)((int)piVar7 + 0x32);
               puVar4 = (uint *)*param_12;
 LAB_0042b022:
-              FUN_006ae1c0(puVar4,piVar7);
+              Library::DKW::TBL::FUN_006ae1c0(puVar4,piVar7);
             }
           }
           else if ((param_13 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)
@@ -179,7 +180,7 @@ LAB_0042b022:
         else {
           piVar6 = param_11;
           if (param_10 != (int *)0x0) {
-            FUN_006ae1c0((uint *)*param_10,(undefined4 *)((int)piVar7 + 0x32));
+            Library::DKW::TBL::FUN_006ae1c0((uint *)*param_10,(undefined4 *)((int)piVar7 + 0x32));
           }
 joined_r0x0042b01c:
           piVar7 = piVar7 + 9;

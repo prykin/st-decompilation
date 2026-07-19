@@ -46,10 +46,10 @@ ccFntTy::FormIndentSarr
       local_68.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_68;
       local_18 = this;
-      iVar5 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar5 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar5 == 0) {
-        local_8 = FUN_006b54f0((uint *)0x0,param_6,*(uint *)(param_1 + 0x10));
-        puVar6 = FUN_006b54f0((uint *)0x0,param_6,*(uint *)(param_1 + 0x10));
+        local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,param_6,*(uint *)(param_1 + 0x10));
+        puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,param_6,*(uint *)(param_1 + 0x10));
         local_24 = param_6 + param_5;
         local_1c = param_5;
         local_20 = puVar6;
@@ -81,11 +81,11 @@ LAB_007128c7:
                   if (puVar8 != (uint *)0x0) {
                     uVar2 = *puVar7;
                     *(undefined1 *)puVar7 = 0;
-                    FUN_006b5aa0((int)puVar6,(char *)local_14);
+                    Library::DKW::TBL::FUN_006b5aa0((int)puVar6,(char *)local_14);
                     *(char *)puVar7 = (char)uVar2;
                     local_14 = (uint *)((int)puVar7 + 1);
                     if (param_7 != (char *)0x0) {
-                      FUN_00752d50((int)puVar6,0,param_7);
+                      Library::DKW::TBL::FUN_00752d50((int)puVar6,0,param_7);
                     }
                     puVar8 = FormSarr(local_18,(int)puVar6,param_2,param_4,0,0xffffffff,param_8);
                     local_c = puVar8;
@@ -110,7 +110,7 @@ LAB_007128c7:
               cVar1 = *(char *)puVar7;
             }
             if (local_14 != puVar7) {
-              FUN_006b5aa0((int)puVar6,(char *)local_14);
+              Library::DKW::TBL::FUN_006b5aa0((int)puVar6,(char *)local_14);
             }
             param_5 = param_5 + 1;
             local_1c = param_5;
@@ -118,7 +118,7 @@ LAB_007128c7:
         }
         if (0 < (int)puVar6[2]) {
           if (param_7 != (char *)0x0) {
-            FUN_00752d50((int)puVar6,0,param_7);
+            Library::DKW::TBL::FUN_00752d50((int)puVar6,0,param_7);
           }
           puVar7 = FormSarr(local_18,(int)puVar6,param_2,param_4,0,0xffffffff,param_8);
           local_c = puVar7;

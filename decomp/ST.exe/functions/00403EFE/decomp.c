@@ -42,7 +42,7 @@ undefined4 __thiscall thunk_FUN_004c4550(void *this,int *param_1)
   short sStack_2c;
   short sStack_2a;
   short sStack_28;
-  void *pvStack_24;
+  STJellyManC *pSStack_24;
   undefined2 uStack_20;
   int iStack_1c;
   int iStack_18;
@@ -88,7 +88,7 @@ undefined4 __thiscall thunk_FUN_004c4550(void *this,int *param_1)
         uStack_94 = *(undefined2 *)((int)this + iVar10 + 0x2a9);
         uStack_98 = (undefined2)iStack_10;
         uStack_92 = *(undefined2 *)((int)this + iVar10 + 0x2ad);
-        thunk_FUN_0054cc20(0x168,0,0,auStack_b0,0);
+        STPlaySystemC::CreateGameObject(DAT_00802a38,0x168,0,0,auStack_b0,0);
         return 0;
       }
       *(undefined4 *)((int)this + iVar10 + 0x29d) = 1;
@@ -153,9 +153,10 @@ undefined4 __thiscall thunk_FUN_004c4550(void *this,int *param_1)
               sStack_66 = sStack_28 + (short)iStack_10;
               iVar3 = (int)param_1 + *(int *)((int)this + 0x235) * 2;
               uStack_20 = *(undefined2 *)(&DAT_007932d8 + iVar11 + iVar3 * 0x16);
-              pvStack_24 = (void *)(*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
+              pSStack_24 = (STJellyManC *)
+                           (*(uint *)(&DAT_007932d4 + iVar3 * 0x16 + iVar11) & 0xffff0000);
               puVar5 = (undefined4 *)
-                       thunk_FUN_0041dc40(auStack_c0,pvStack_24,0,-*(short *)((int)this + 0x259));
+                       thunk_FUN_0041dc40(auStack_c0,pSStack_24,0,-*(short *)((int)this + 0x259));
               sStack_2c = (short)*puVar5;
               sStack_2a = (short)((uint)*puVar5 >> 0x10);
               sStack_64 = sStack_2c + *(short *)((int)this + iVar10 + 0x2a5);
@@ -195,11 +196,10 @@ undefined4 __thiscall thunk_FUN_004c4550(void *this,int *param_1)
                 else {
                   iVar3 = 0x28;
                 }
-                thunk_FUN_0054cc20(iVar3,0,0,auStack_84,0);
+                STPlaySystemC::CreateGameObject(DAT_00802a38,iVar3,0,0,auStack_84,0);
               }
               *(int *)((int)this + iVar10 + 0x2c5) = *(int *)((int)this + iVar10 + 0x2c5) + -1;
-              *(undefined4 *)((int)this + iVar10 + 0x2c9) =
-                   *(undefined4 *)((int)DAT_00802a38 + 0xe4);
+              *(undefined4 *)((int)this + iVar10 + 0x2c9) = *(undefined4 *)(DAT_00802a38 + 0xe4);
               iVar3 = iStack_18;
               piVar9 = param_1;
             }
@@ -328,7 +328,7 @@ undefined4 __thiscall thunk_FUN_004c4550(void *this,int *param_1)
         sVar6 = *(short *)((int)this + 0x45);
       }
       if (*(int *)((int)this + 0x4d0) != 0) {
-        iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4d0),(int *)&pvStack_24);
+        iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x4d0),(int *)&pSStack_24);
         if (iVar3 != 0) {
           *(undefined4 *)((int)this + 0x4d0) = 0;
           *(undefined4 *)((int)piVar9 * 0x80 + 0x29d + (int)this) = 1;
@@ -371,7 +371,7 @@ undefined4 __thiscall thunk_FUN_004c4550(void *this,int *param_1)
              (*(int *)(DAT_007fb248 + 4 +
                       ((int)sVar6 * (int)DAT_007fb240 + (int)sVar8 * (int)DAT_007fb246 + (int)sVar7)
                       * 8) == 0)))))) {
-          thunk_FUN_00581ac0(pvStack_24,iStack_18,param_1,iStack_10);
+          STJellyManC::Error(pSStack_24,iStack_18,param_1,iStack_10);
           *(undefined4 *)((int)this + (int)piVar9 * 0x80 + 0x29d) = 1;
           *(int *)((int)this + (int)piVar9 * 0x80 + 0x2c5) =
                *(int *)((int)this + (int)piVar9 * 0x80 + 0x2c5) + -1;

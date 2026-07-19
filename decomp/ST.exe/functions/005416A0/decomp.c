@@ -7,19 +7,27 @@ void __cdecl FUN_005416a0(int param_1,undefined *param_2,BYTE param_3)
   uint uVar3;
   uint uVar4;
   char *pcVar5;
-  LOGFONTA *pLVar6;
+  undefined4 *puVar6;
   char *pcVar7;
-  CHAR *pCVar8;
-  LOGFONTA local_b0;
+  undefined4 local_b0 [5];
+  undefined1 local_9c;
+  undefined1 local_9b;
+  undefined1 local_9a;
+  BYTE local_99;
+  undefined1 local_98;
+  undefined1 local_97;
+  undefined1 local_96;
+  undefined1 local_95;
+  char local_94 [32];
   byte local_74 [88];
   byte local_1c [24];
   
-  pLVar6 = &local_b0;
+  puVar6 = local_b0;
   for (iVar2 = 0xf; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pLVar6->lfHeight = 0;
-    pLVar6 = (LOGFONTA *)&pLVar6->lfWidth;
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
-  local_b0.lfCharSet = param_3;
+  local_99 = param_3;
   uVar3 = 0xffffffff;
   pcVar5 = s_Verdana_007c1bc4;
   do {
@@ -31,30 +39,30 @@ void __cdecl FUN_005416a0(int param_1,undefined *param_2,BYTE param_3)
     pcVar5 = pcVar7;
   } while (cVar1 != '\0');
   uVar3 = ~uVar3;
-  local_b0.lfHeight = -0x10;
-  local_b0.lfWidth = 0;
-  local_b0.lfEscapement = 0;
-  local_b0.lfOrientation = 0;
-  local_b0.lfWeight = 400;
-  local_b0.lfItalic = '\0';
-  local_b0.lfUnderline = '\0';
-  local_b0.lfStrikeOut = '\0';
-  local_b0.lfOutPrecision = '\x03';
-  local_b0.lfClipPrecision = '\x02';
-  local_b0.lfQuality = '\x01';
-  local_b0.lfPitchAndFamily = '\"';
+  local_b0[0] = 0xfffffff0;
+  local_b0[1] = 0;
+  local_b0[2] = 0;
+  local_b0[3] = 0;
+  local_b0[4] = 400;
+  local_9c = 0;
+  local_9b = 0;
+  local_9a = 0;
+  local_98 = 3;
+  local_97 = 2;
+  local_96 = 1;
+  local_95 = 0x22;
   pcVar5 = pcVar7 + -uVar3;
-  pCVar8 = local_b0.lfFaceName;
+  pcVar7 = local_94;
   for (uVar4 = uVar3 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *(undefined4 *)pCVar8 = *(undefined4 *)pcVar5;
+    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar5;
     pcVar5 = pcVar5 + 4;
-    pCVar8 = pCVar8 + 4;
+    pcVar7 = pcVar7 + 4;
   }
   local_1c[0] = 0;
   for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-    *pCVar8 = *pcVar5;
+    *pcVar7 = *pcVar5;
     pcVar5 = pcVar5 + 1;
-    pCVar8 = pCVar8 + 1;
+    pcVar7 = pcVar7 + 1;
   }
   local_1c[2] = 0x13;
   local_1c[1] = 0x49;
@@ -163,7 +171,8 @@ void __cdecl FUN_005416a0(int param_1,undefined *param_2,BYTE param_3)
   local_74[0x54] = 0x7a;
   local_74[0x55] = 0x7c;
   local_74[0x56] = 0x7e;
-  FUN_0070d1f0(0x19d,&local_b0,(uint *)0x0,local_74,param_1,local_1c,10,2,1,1,0x40001c,param_2);
+  ccFntTy::operator((ccFntTy *)local_b0,0x19d,(LOGFONTA *)local_b0,(uint *)0x0,local_74,param_1,
+                    local_1c,10,2,1,1,0x40001c,param_2);
   return;
 }
 

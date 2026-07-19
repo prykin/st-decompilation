@@ -19,7 +19,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pSStack_10 = this;
-  errorCode = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar2 = iStack_c;
   if (errorCode == 0) {
     if (iStack_c == 0) {

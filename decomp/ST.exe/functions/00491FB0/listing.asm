@@ -1,4 +1,4 @@
-FUN_00491fb0:
+STBoatC::ReadyForLoading:
 00491FB0  55                        PUSH EBP
 00491FB1  8B EC                     MOV EBP,ESP
 00491FB3  56                        PUSH ESI

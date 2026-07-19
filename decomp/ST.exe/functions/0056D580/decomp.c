@@ -22,7 +22,7 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  errorCode = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     pcVar3 = extraout_ECX;
     if (DAT_0080678c != 0) {

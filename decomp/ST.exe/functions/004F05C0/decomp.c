@@ -60,7 +60,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  iVar7 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_1c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_b8.previous;
@@ -78,7 +78,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   DAT_00801684 = (ProdPanelTy *)local_1c;
   pPVar11 = (ProdPanelTy *)(local_1c + 0x27e);
   do {
-    puVar3 = FUN_006ae290((uint *)0x0,10,0x30,5);
+    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
     *(uint **)pPVar11 = puVar3;
     pPVar11 = pPVar11 + 4;
     iVar7 = iVar7 + -1;
@@ -87,11 +87,11 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   *(int *)(this_00 + 0x3c) = *(int *)(this_00 + 0x3c) + (DAT_00806730 + -800) / 2;
   piVar13 = (int *)0x0;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJW_007c19e0,0);
-  puVar5 = FUN_006f1ce0(1,pCVar4,piVar13,iVar7);
+  puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar13,iVar7);
   *(ushort **)(this_00 + 0x184) = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
   wsprintfA((LPSTR)(this_00 + 0x6c),&DAT_007c181c,pCVar4);
-  puVar5 = FUN_006f1ce0(1,(char *)(this_00 + 0x6c),(int *)0x0,1);
+  puVar5 = cMf32::RecGet(DAT_00806790,1,(char *)(this_00 + 0x6c),(int *)0x0,1);
   *(ushort **)(this_00 + 0x27a) = puVar5;
   puVar5 = FUN_00709af0(DAT_00806794,0xb,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   *(ushort **)(this_00 + 0x188) = puVar5;

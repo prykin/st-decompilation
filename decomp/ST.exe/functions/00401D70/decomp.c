@@ -24,7 +24,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
   pSStack_10 = this;
-  errorCode = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = pSStack_10;
   if (errorCode != 0) {
     g_currentExceptionFrame = IStack_64.previous;
@@ -41,7 +41,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     return;
   }
   if (*(int *)(pSStack_10 + 0x47b) == 0) {
-    puVar5 = FUN_006ae290((uint *)0x0,10,0xe,5);
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xe,5);
     *(uint **)(pSVar3 + 0x47b) = puVar5;
   }
   uVar1 = (*(uint **)(pSVar3 + 0x47b))[3];
@@ -54,7 +54,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
       {
         iStack_1a = iStack_1a + param_3;
         uStack_16 = uStack_8;
-        FUN_006ae140(*(uint **)(pSVar3 + 0x47b),uVar1,&iStack_20);
+        Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar3 + 0x47b),uVar1,&iStack_20);
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b76);
         uVar4 = uStack_c;
@@ -64,7 +64,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     sStack_1c = param_2;
     iStack_1a = param_3;
     uStack_16 = uStack_8;
-    FUN_006ae140(*(uint **)(pSVar3 + 0x47b),uStack_c,&iStack_20);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar3 + 0x47b),uStack_c,&iStack_20);
     g_currentExceptionFrame = IStack_64.previous;
     return;
   }
@@ -72,7 +72,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   sStack_1c = param_2;
   iStack_1a = param_3;
   uStack_16 = uStack_8;
-  FUN_006ae1c0(*(uint **)(pSVar3 + 0x47b),&iStack_20);
+  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar3 + 0x47b),&iStack_20);
   g_currentExceptionFrame = IStack_64.previous;
   return;
 }

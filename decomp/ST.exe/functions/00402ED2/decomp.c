@@ -20,7 +20,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_8;
   if (iVar2 == 0) {
     ShiftControls(pCStack_8,1,param_1);

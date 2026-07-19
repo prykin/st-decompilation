@@ -43,7 +43,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
   if (DAT_007fa174 != 0) {
     local_74.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_74;
-    iVar4 = __setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_14;
     if (iVar4 == 0) {
       if (param_3 == '\0') {
@@ -120,8 +120,8 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
           pcVar7 = pcVar7 + 1;
           pcVar11 = pcVar11 + 1;
         }
-        for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-            puVar6 = FUN_0072e560(puVar6,'\n')) {
+        for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+            puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
           *(undefined1 *)puVar6 = 0x20;
         }
         ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -140,7 +140,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
         local_20 = 2;
         local_1f = iVar4;
         local_1b = param_2;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_30);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_30);
         local_8 = local_8 + *(int *)(pbVar8 + 8);
       }
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1e0),*(int *)(this_00 + 0x218),0,0,local_8,0x91,0xf
@@ -231,8 +231,8 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
         pcVar7 = pcVar7 + 1;
         pcVar11 = pcVar11 + 1;
       }
-      for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-          puVar6 = FUN_0072e560(puVar6,'\n')) {
+      for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+          puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
         *(undefined1 *)puVar6 = 0x20;
       }
       ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
@@ -250,7 +250,7 @@ void __thiscall HelpPanelTy::SpecProc(HelpPanelTy *this,int param_1,int param_2,
       local_20 = 3;
       local_1f = local_c;
       local_1b = param_2;
-      FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_30);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&local_30);
       local_8 = local_8 + *(int *)(pbVar8 + 8);
       ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1e0),*(int *)(this_00 + 0x218),0,0,local_8,0x91,0xf
                       );

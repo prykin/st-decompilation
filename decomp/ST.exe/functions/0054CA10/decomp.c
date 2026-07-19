@@ -35,7 +35,8 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
     cVar1 = *pcVar6;
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  puVar3 = (undefined4 *)FUN_006b9770((byte *)((~uVar5 - 1) + param_4),(int *)0x0,10);
+  puVar3 = (undefined4 *)
+           Library::DKW::STR::FUN_006b9770((byte *)((~uVar5 - 1) + param_4),(int *)0x0,10);
   DAT_00802a3c = DAT_00802a3c + 1;
   if (DAT_00802a58 != (cLoadingTy *)0x0) {
     cLoadingTy::SetState(DAT_00802a58,1,DAT_00802a3c,(char *)0x0);

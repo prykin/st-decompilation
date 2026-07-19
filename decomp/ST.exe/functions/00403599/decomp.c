@@ -47,7 +47,7 @@ LAB_0068372e:
       iVar6 = iVar6 + 1;
     } while (iVar6 < iVar2);
   }
-  iVar2 = FUN_006b5aa0(param_1,(char *)param_2);
+  iVar2 = Library::DKW::TBL::FUN_006b5aa0(param_1,(char *)param_2);
   return iVar2;
 }
 

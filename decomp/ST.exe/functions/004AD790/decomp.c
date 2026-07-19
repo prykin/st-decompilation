@@ -31,7 +31,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_18 = this;
-  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -70,7 +70,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       local_c = (char *)((int)local_c + 0x24);
     } while (iVar3 < *(int *)(this_00 + 0x14));
   }
-  local_14 = (undefined4 *)FUN_006aac70(*param_1);
+  local_14 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
   uVar9 = *param_1;
   puVar6 = local_14;
   for (uVar7 = uVar9 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {

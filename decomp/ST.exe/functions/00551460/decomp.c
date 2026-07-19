@@ -28,11 +28,12 @@ void __thiscall TradePanelTy::SetModeControls(TradePanelTy *this,char param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pTVar2 = local_8;
     if (iVar3 == 0) {
-      FUN_006b55f0(*(undefined4 **)(local_8 + 0x68),0,0xa6,0x31,*(int *)(local_8 + 0x185),0,0xa6,
-                   0x31,0x77,0x39);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(local_8 + 0x68),0,0xa6,0x31,*(int *)(local_8 + 0x185),0,0xa6,0x31,
+                 0x77,0x39);
       if (*(uint *)(pTVar2 + 0x1c8) != 0) {
         FUN_006e56b0(*(void **)(pTVar2 + 0xc),*(uint *)(pTVar2 + 0x1c8));
       }

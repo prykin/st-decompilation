@@ -19,7 +19,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
   undefined4 *puVar8;
   STSprGameObjC *pSVar9;
   byte *pbVar10;
-  void *unaff_EDI;
+  int *unaff_EDI;
   byte *pbVar11;
   InternalExceptionFrame local_80;
   int local_3c;
@@ -43,7 +43,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_20 = (STSprGameObjC *)this;
-  iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_20;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -82,7 +82,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
       }
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(this_00 + 0x1d5),&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_10);
-      local_c = (byte *)FUN_006aac70(local_10 + 0x66 + local_8);
+      local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x66 + local_8);
       if (local_18 == (byte *)0x0) {
         g_currentExceptionFrame = local_80.previous;
         return 0;
@@ -167,7 +167,7 @@ undefined4 __thiscall STSharkC::GetMessage(STSharkC *this,int param_1)
       return 0;
     }
     if (uVar6 == 0) {
-      thunk_FUN_0058e570((int *)this_00);
+      LifeShark((STSharkC *)this_00,unaff_EDI);
       g_currentExceptionFrame = local_80.previous;
       return 0;
     }
@@ -304,7 +304,7 @@ LAB_0058dc72:
       *(undefined4 *)(this_00 + 599) = *(undefined4 *)((int)local_1c + 0x4e);
       *(undefined4 *)(this_00 + 0x241) = *(undefined4 *)((int)local_1c + 0x52);
       *(undefined4 *)(this_00 + 0x245) = *(undefined4 *)((int)local_1c + 0x56);
-      local_3c = FUN_006aac70(0x44);
+      local_3c = Library::DKW::LIB::FUN_006aac70(0x44);
       if (local_3c != 0) {
         iVar3 = 0;
         do {

@@ -1,4 +1,4 @@
-FUN_0045ef00:
+STBoatC::CmdToObj:
 0045EF00  55                        PUSH EBP
 0045EF01  8B EC                     MOV EBP,ESP
 0045EF03  53                        PUSH EBX

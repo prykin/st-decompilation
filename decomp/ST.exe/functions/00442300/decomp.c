@@ -56,12 +56,12 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
   local_6c[2] = 0x4f;
   local_6c[3] = 0x5e;
   local_5c = this;
-  local_44 = (int *)thunk_FUN_0042b620(param_1,param_2,1);
+  local_44 = (int *)GetObjPtr(this,param_1,param_2,1);
   local_58 = (**(code **)(*local_44 + 0x2c))();
   local_10 = 0;
   local_d4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_d4;
-  iVar4 = __setjmp3(local_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar7 = local_4c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_d4.previous;
@@ -122,7 +122,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
           if (0 < (int)local_48) {
             do {
               FUN_006acc70((int)local_c,local_18,&local_1c);
-              piVar6 = (int *)thunk_FUN_0042b620(param_1,local_1c,1);
+              piVar6 = (int *)GetObjPtr(pSVar2,param_1,local_1c,1);
               local_44 = piVar6;
               iVar7 = (**(code **)(*piVar6 + 0x88))(local_54);
               if (0 < iVar7) {
@@ -148,7 +148,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   do {
                     FUN_006acc70((int)local_8,uVar10,&local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      FUN_006ae140(local_8,uVar10,(undefined4 *)&local_40);
+                      Library::DKW::TBL::FUN_006ae140(local_8,uVar10,(undefined4 *)&local_40);
                       local_10 = 1;
                       break;
                     }
@@ -156,7 +156,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   } while ((int)uVar10 < (int)uVar9);
                 }
                 if (uVar10 == uVar9) {
-                  FUN_006ae1c0(local_8,(undefined4 *)&local_40);
+                  Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)&local_40);
                   local_10 = 1;
                 }
               }
@@ -211,7 +211,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
             if (0 < (int)local_48) {
               do {
                 FUN_006acc70((int)local_c,local_18,&local_1c);
-                piVar6 = (int *)thunk_FUN_0042b620(param_1,local_1c,1);
+                piVar6 = (int *)GetObjPtr(pSVar2,param_1,local_1c,1);
                 local_44 = piVar6;
                 thunk_FUN_004162b0(piVar6,&local_38,&local_36,&local_34);
                 local_32 = *(undefined2 *)((int)piVar6 + 0x32);
@@ -235,7 +235,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   do {
                     FUN_006acc70((int)local_8,uVar10,&local_90);
                     if ((local_8a == -1) && (local_82 == -1)) {
-                      FUN_006ae140(local_8,uVar10,(undefined4 *)&local_40);
+                      Library::DKW::TBL::FUN_006ae140(local_8,uVar10,(undefined4 *)&local_40);
                       local_10 = 1;
                       break;
                     }
@@ -243,7 +243,7 @@ undefined4 __thiscall STAllPlayersC::_AddMDPairs(STAllPlayersC *this,uint param_
                   } while ((int)uVar10 < (int)uVar9);
                 }
                 if (uVar10 == uVar9) {
-                  FUN_006ae1c0(local_8,(undefined4 *)&local_40);
+                  Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)&local_40);
                   local_10 = 1;
                 }
                 local_18 = local_18 + 1;

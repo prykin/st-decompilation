@@ -20,7 +20,7 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
   undefined4 local_c;
   
   if (*(int *)((int)this + 0x3c) == 0) {
-    puVar1 = FUN_006ae290((uint *)0x0,10,0x20,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x20,10);
     *(uint **)((int)this + 0x3c) = puVar1;
   }
   puVar1 = *(uint **)((int)this + 0x3c);
@@ -44,11 +44,11 @@ FUN_005f15f0(void *this,undefined2 param_1,undefined2 param_2,undefined2 param_3
   local_c = 0xffffffff;
   if (-1 < param_6) {
     local_e = 0;
-    uVar2 = FUN_006ae1c0(puVar1,&local_24);
+    uVar2 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&local_24);
     return uVar2 + 1;
   }
   local_e = *(undefined1 *)(DAT_00806724 + 0x23);
-  uVar2 = FUN_006ae1c0(puVar1,&local_24);
+  uVar2 = Library::DKW::TBL::FUN_006ae1c0(puVar1,&local_24);
   return uVar2 + 1;
 }
 

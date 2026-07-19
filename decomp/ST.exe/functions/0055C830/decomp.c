@@ -31,9 +31,9 @@ FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param
     case 1:
     case 2:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        _strncpy((char *)local_34,(char *)param_4,0x10);
+        Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
-        FUN_0072ee80(param_5,(byte *)s__4s_d_d_d_d_007c94d0);
+        Library::MSVCRT::FUN_0072ee80(param_5,(byte *)s__4s_d_d_d_d_007c94d0);
         local_f = param_2;
         local_b = param_3;
         FSGSTy::AddPlayer(DAT_0081174c,(undefined4 *)local_34);
@@ -56,7 +56,7 @@ LAB_0055cf74:
       break;
     case 3:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        _strncpy((char *)local_34,(char *)param_4,0x10);
+        Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         FSGSTy::DelPlayer(DAT_0081174c,local_34);
         uVar7 = 0xffffffff;
@@ -93,7 +93,7 @@ LAB_0055cf74:
         bVar1 = *pbVar9;
         pbVar9 = pbVar9 + 1;
       } while (bVar1 != 0);
-      param_2 = (byte *)FUN_006aac70(~uVar7 + ~uVar8 + 4);
+      param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar7 + ~uVar8 + 4);
       if (param_2 != (byte *)0x0) {
         wsprintfA((LPSTR)param_2,s__s__s_007c411c,pcVar3,param_4);
         if (*(char *)((int)this + 9) != '\0') {
@@ -116,9 +116,9 @@ LAB_0055cf74:
             pcVar4 = pcVar4 + 4;
           }
           *pcVar4 = '\0';
-          _strncpy(local_488,(char *)param_2,0x40);
+          Library::MSVCRT::_strncpy(local_488,(char *)param_2,0x40);
           local_449 = 0;
-          _strncpy(local_448,param_5,0x410);
+          Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
           StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         }
@@ -147,7 +147,7 @@ LAB_0055c9c0:
       iVar6 = 0;
 LAB_0055c9c5:
       if (iVar6 != 0) {
-        _strncpy((char *)((int)this + 0x2c),(char *)param_4,0x10);
+        Library::MSVCRT::_strncpy((char *)((int)this + 0x2c),(char *)param_4,0x10);
         *(undefined1 *)((int)this + 0x3b) = 0;
         *(char *)((int)this + 0x2b) = (*(char *)((int)this + 0x2b) == '\a') + '\a';
       }
@@ -176,7 +176,7 @@ LAB_0055c9c5:
         bVar1 = *pbVar10;
         pbVar10 = pbVar10 + 1;
       } while (bVar1 != 0);
-      param_2 = (byte *)FUN_006aac70(~uVar7 + ~uVar8 + 4);
+      param_2 = (byte *)Library::DKW::LIB::FUN_006aac70(~uVar7 + ~uVar8 + 4);
       if (param_2 != (byte *)0x0) {
         uVar5 = FUN_006b0140(0x2576,DAT_00807618);
         wsprintfA((LPSTR)param_2,s__s__s_007c411c,uVar5,pbVar9);
@@ -200,9 +200,9 @@ LAB_0055c9c5:
             pcVar4 = pcVar4 + 4;
           }
           *pcVar4 = '\0';
-          _strncpy(local_488,(char *)param_2,0x40);
+          Library::MSVCRT::_strncpy(local_488,(char *)param_2,0x40);
           local_449 = 0;
-          _strncpy(local_448,param_5,0x410);
+          Library::MSVCRT::_strncpy(local_448,param_5,0x410);
           local_345 = 0;
           StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         }
@@ -219,7 +219,7 @@ LAB_0055c9c5:
       break;
     case 9:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
-        _strncpy((char *)local_34,(char *)param_4,0x10);
+        Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
         local_f = param_2;
         local_b = param_3;
@@ -254,9 +254,9 @@ LAB_0055c9c5:
           pcVar4 = pcVar4 + 4;
         }
         *pcVar4 = '\0';
-        _strncpy(local_488,(char *)param_4,0x40);
+        Library::MSVCRT::_strncpy(local_488,(char *)param_4,0x40);
         local_449 = 0;
-        _strncpy(local_448,param_5,0x410);
+        Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
         StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         return;
@@ -281,9 +281,9 @@ LAB_0055c9c5:
           pcVar4 = pcVar4 + 4;
         }
         *pcVar4 = '\0';
-        _strncpy(local_488,(char *)param_4,0x40);
+        Library::MSVCRT::_strncpy(local_488,(char *)param_4,0x40);
         local_449 = 0;
-        _strncpy(local_448,param_5,0x410);
+        Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
         StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         return;
@@ -331,7 +331,7 @@ LAB_0055c9c5:
           pcVar4 = pcVar4 + 1;
           pcVar3 = pcVar3 + 1;
         }
-        _strncpy(local_448,param_5,0x410);
+        Library::MSVCRT::_strncpy(local_448,param_5,0x410);
         local_345 = 0;
         StartSystemTy::AddToChat(DAT_0081176c,(int)local_488);
         return;

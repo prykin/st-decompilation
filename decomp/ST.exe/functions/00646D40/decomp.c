@@ -6,7 +6,7 @@ void __thiscall FUN_00646d40(void *this,undefined4 *param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  puVar1 = (undefined4 *)FUN_006aac70(0x95);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x95);
   *(undefined4 *)((int)this + 0x28) = 2;
   *(undefined4 *)((int)this + 0xad) = *(undefined4 *)((int)this + 0xb1);
   if (this == (void *)0x0) {

@@ -26,7 +26,7 @@ void __thiscall FUN_00631220(void *this,int *param_1)
     local_10 = local_10 + *(int *)((int)this + 0x30);
   }
   iVar2 = local_10;
-  puVar1 = (undefined4 *)FUN_006aac70(local_10);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_10);
   *(undefined4 *)((int)this + 0x65) = *(undefined4 *)((int)this + 0x71);
   if (puVar1 == (undefined4 *)0x0) {
     *param_1 = iVar2;

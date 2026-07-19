@@ -18,7 +18,7 @@ void __thiscall MTaskTy::PrepareTSurf(MTaskTy *this,int param_1,char param_2,cha
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  errorCode = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     uVar5 = *(uint *)(param_1 + 0x14);
     if (uVar5 == 0) {

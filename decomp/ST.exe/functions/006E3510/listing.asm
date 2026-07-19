@@ -1,4 +1,4 @@
-FUN_006e3510:
+AppClassTy::InitApp:
 006E3510  55                        PUSH EBP
 006E3511  8B EC                     MOV EBP,ESP
 006E3513  83 EC 4C                  SUB ESP,0x4c

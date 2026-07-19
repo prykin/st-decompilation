@@ -33,14 +33,15 @@ undefined4 __fastcall FUN_005deb90(int param_1)
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_1c = param_1;
-  iVar3 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar2 = local_1c;
   if (iVar3 == 0) {
     local_8 = (*(int *)(local_1c + 0x69e) - *(int *)(local_1c + 0x6ae)) - *(int *)(local_1c + 0x6b2)
     ;
-    _strncpy((char *)(abStack_165 + 1),
-             (char *)(*(int *)(local_1c + 0x6ae) + *(int *)(local_1c + 0x6b2) +
-                     *(int *)(local_1c + 0x69a)),local_8);
+    Library::MSVCRT::_strncpy
+              ((char *)(abStack_165 + 1),
+               (char *)(*(int *)(local_1c + 0x6ae) + *(int *)(local_1c + 0x6b2) +
+                       *(int *)(local_1c + 0x69a)),local_8);
     uVar1 = local_14;
     abStack_165[local_8] = 0;
     iVar3 = local_10;
@@ -59,8 +60,9 @@ undefined4 __fastcall FUN_005deb90(int param_1)
       local_14 = (uint)(pvVar4 != (HANDLE)0xffffffff);
       uVar1 = local_14;
     }
-    FUN_0072e730(&DAT_0080ed16,local_36c,local_470,abStack_165 + 1,(byte *)0x0);
-    __makepath(local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
+    Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_36c,local_470,abStack_165 + 1,(byte *)0x0);
+    Library::MSVCRT::__makepath
+              (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
                PTR_DAT_0079c1c0);
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;
@@ -78,7 +80,8 @@ undefined4 __fastcall FUN_005deb90(int param_1)
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);
-    __makepath(local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
+    Library::MSVCRT::__makepath
+              (local_268,(char *)local_36c,(char *)local_470,(char *)(abStack_165 + 1),
                PTR_DAT_0079c1c4);
     pvVar4 = CreateFileA(local_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     local_c = pvVar4;

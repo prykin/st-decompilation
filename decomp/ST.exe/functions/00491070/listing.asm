@@ -1,4 +1,4 @@
-FUN_00491070:
+STBoatC::ReleaseLoad:
 00491070  55                        PUSH EBP
 00491071  8B EC                     MOV EBP,ESP
 00491073  56                        PUSH ESI

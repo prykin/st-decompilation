@@ -1,4 +1,4 @@
-FUN_004abe40:
+STT3DSprC::SetCurFase:
 004ABE40  55                        PUSH EBP
 004ABE41  8B EC                     MOV EBP,ESP
 004ABE43  8B 41 18                  MOV EAX,dword ptr [ECX + 0x18]

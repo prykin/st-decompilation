@@ -1,2 +1,2 @@
-thunk_FUN_0046b100:
+STBoatC::Build:
 00404543  E9 B8 6B 06 00            JMP 0x0046b100

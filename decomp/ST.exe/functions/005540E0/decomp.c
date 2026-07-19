@@ -16,6 +16,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
   int iVar7;
   uint *puVar8;
   uint uVar9;
+  ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char *pcVar10;
@@ -34,7 +35,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
   local_8 = (uint *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar7 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0x3a,0,iVar3,&DAT_007a4ccc,
@@ -43,7 +44,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
       if (local_8 != (uint *)0x0) {
         cMf32::RecMemFree(DAT_00806780,local_8);
         if ((uint *)local_8[2] != (uint *)0x0) {
-          FUN_00710560((uint *)local_8[2]);
+          ccFntTy::operator(this_01,(uint *)local_8[2]);
           local_8[2] = 0;
         }
         FUN_006ab060(&local_8);
@@ -55,7 +56,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
     puVar8 = (uint *)(*pcVar2)();
     return puVar8;
   }
-  local_8 = FUN_006aac10(param_1);
+  local_8 = Library::DKW::LIB::FUN_006aac10(param_1);
   this_00 = DAT_00806780;
   if (DAT_0080874e == '\x01') {
     local_c = 0;
@@ -97,7 +98,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
     }
     iVar3 = 1;
     bVar12 = 0;
-    uVar9 = FUN_0072e6c0();
+    uVar9 = Library::MSVCRT::FUN_0072e6c0();
     pCVar4 = FUN_006f2c00(s_LOADINGW_007c8ee8,1,uVar9 % uVar5 + 1);
   }
   else {
@@ -135,7 +136,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
       }
       iVar3 = 1;
       bVar12 = 0;
-      uVar5 = FUN_0072e6c0();
+      uVar5 = Library::MSVCRT::FUN_0072e6c0();
       uVar5 = uVar5 % local_c;
       pcVar11 = s_LOADINGB_007c8ef4;
     }
@@ -177,7 +178,7 @@ uint * __thiscall cLoadingTy::new(cLoadingTy *this,uint param_1,int param_2,uint
       }
       iVar3 = 1;
       bVar12 = 0;
-      uVar5 = FUN_0072e6c0();
+      uVar5 = Library::MSVCRT::FUN_0072e6c0();
       uVar5 = uVar5 % local_c;
       pcVar11 = s_LOADINGS_007c8f00;
     }

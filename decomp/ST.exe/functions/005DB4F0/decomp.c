@@ -27,7 +27,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_c;
   if (iVar4 == 0) {
     thunk_FUN_005db2a0((int)local_c);
@@ -68,18 +68,18 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       case 4:
         *(undefined4 *)(pSVar3 + 0x2b8) = 0x103;
         *(undefined4 *)(pSVar3 + 700) = 0x1f9;
-        uVar8 = FUN_0072e6c0();
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
         *(uint *)(pSVar3 + 0x2c0) = ((uVar8 & 1) + 1) * 0x19;
-        uVar8 = FUN_0072e6c0();
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
         *(uint *)(pSVar3 + 0x2c4) = (uVar8 % 3 + 1) * 1000;
         *(undefined2 *)(pSVar3 + 0x2cd) = 0;
         break;
       case 5:
         *(undefined4 *)(pSVar3 + 0x2cf) = 0x205;
         *(undefined4 *)(pSVar3 + 0x2d3) = 0x1fa;
-        uVar8 = FUN_0072e6c0();
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
         *(uint *)(pSVar3 + 0x2d7) = (uVar8 % 3 + 2) * 0x19;
-        uVar8 = FUN_0072e6c0();
+        uVar8 = Library::MSVCRT::FUN_0072e6c0();
         *(uint *)(pSVar3 + 0x2db) = ((uVar8 & 1) + 1) * 1000;
         *(undefined2 *)(pSVar3 + 0x2e4) = 0;
       }
@@ -98,7 +98,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     pSVar1 = pSVar3 + 0x2ec;
     FUN_006b2330((uint)DAT_008075a8,(uint *)pSVar1,0x32,0x4023f6,*(uint *)(uVar8 + 4),
                  *(uint *)(uVar8 + 8),uVar8);
-    FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,1,0);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,1,0);
     FUN_006b3af0(DAT_008075a8,*(uint *)pSVar1);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)(pSVar3 + 0x2f8),DAT_008075a8,0x32,'\a',(undefined4 *)0x0,0,0);
@@ -157,7 +157,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     pSVar1 = pSVar3 + 0x540;
     FUN_006b2330((uint)DAT_008075a8,(uint *)pSVar1,0x31,0x4023f6,*(uint *)(uVar8 + 4),
                  *(uint *)(uVar8 + 8),uVar8);
-    FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,0xd,0xb9);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,0xd,0xb9);
     FUN_006b3af0(DAT_008075a8,*(uint *)pSVar1);
     iVar4 = 1;
     puVar9 = (undefined4 *)(*(int *)(pSVar3 + 0x2f0) + 0x28);
@@ -183,11 +183,11 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     pSVar1 = pSVar3 + 0x554;
     FUN_006b2330((uint)DAT_008075a8,(uint *)pSVar1,0x31,0x4023f6,*(uint *)(uVar8 + 4),
                  *(uint *)(uVar8 + 8),uVar8);
-    FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,0xcb,0x23f);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)pSVar1,0xffffffff,0xcb,0x23f);
     FUN_006b3af0(DAT_008075a8,*(uint *)pSVar1);
-    puVar10 = FUN_006b54f0((uint *)0x0,1,1);
+    puVar10 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(pSVar3 + 0x686) = puVar10;
-    FUN_006b6020((int)puVar10,0,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b6020((int)puVar10,0,&DAT_008016a0);
     SpriteClassTy::InitSprite
               ((SpriteClassTy *)(pSVar3 + 0x55c),DAT_008075a8,0x31,'\a',(undefined4 *)0x0,0,0);
     (**(code **)(*(int *)(pSVar3 + 0x55c) + 4))(DAT_00806784,7,0,s_MM_SLDUP_007cc04c,0xffffffff);
@@ -223,7 +223,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     uVar8 = *(uint *)(pSVar3 + 0x67e);
     FUN_006b2330((uint)DAT_008075a8,(uint *)(pSVar3 + 0x558),0x31,0x4023f6,*(uint *)(uVar8 + 4),
                  *(uint *)(uVar8 + 8),uVar8);
-    FUN_006b3640(DAT_008075a8,*(uint *)(pSVar3 + 0x558),0xffffffff,0xcd,499);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)(pSVar3 + 0x558),0xffffffff,0xcd,499);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

@@ -10,6 +10,19 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   HelpPanelTy *pHVar2;
   int errorCode;
   int iVar3;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *extraout_ECX_02;
+  ccFntTy *extraout_ECX_03;
+  ccFntTy *extraout_ECX_04;
+  ccFntTy *extraout_ECX_05;
+  ccFntTy *extraout_ECX_06;
+  ccFntTy *extraout_ECX_07;
+  ccFntTy *extraout_ECX_08;
+  ccFntTy *extraout_ECX_09;
+  ccFntTy *extraout_ECX_10;
+  ccFntTy *this_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   HelpPanelTy *pHVar4;
@@ -20,11 +33,13 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  errorCode = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pHVar2 = local_c;
   if (errorCode == 0) {
+    this_00 = extraout_ECX;
     if (*(uint *)(local_c + 0x17c) != 0) {
       FUN_006e56b0(*(void **)(local_c + 0xc),*(uint *)(local_c + 0x17c));
+      this_00 = extraout_ECX_00;
     }
     *(undefined4 *)(pHVar2 + 0x17c) = 0;
     pHVar4 = pHVar2 + 0x180;
@@ -33,32 +48,39 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       if (*(uint *)pHVar4 != 0) {
         FUN_006e56b0(*(void **)(pHVar2 + 0xc),*(uint *)pHVar4);
         *(uint *)pHVar4 = 0;
+        this_00 = extraout_ECX_01;
       }
       pHVar4 = pHVar4 + 4;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if (*(uint *)(pHVar2 + 0x19c) != 0) {
       FUN_006e56b0(*(void **)(pHVar2 + 0xc),*(uint *)(pHVar2 + 0x19c));
+      this_00 = extraout_ECX_02;
     }
     *(undefined4 *)(pHVar2 + 0x19c) = 0;
     if (*(byte **)(pHVar2 + 0x1b3) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(pHVar2 + 0x1b3));
+      this_00 = extraout_ECX_03;
     }
     *(undefined4 *)(pHVar2 + 0x1b3) = 0;
     if (*(byte **)(pHVar2 + 0x1bb) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(pHVar2 + 0x1bb));
+      this_00 = extraout_ECX_04;
     }
     *(undefined4 *)(pHVar2 + 0x1bb) = 0;
     if (*(byte **)(pHVar2 + 0x1cb) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(pHVar2 + 0x1cb));
+      this_00 = extraout_ECX_05;
     }
     *(undefined4 *)(pHVar2 + 0x1cb) = 0;
     if (*(byte **)(pHVar2 + 0x1d7) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(pHVar2 + 0x1d7));
+      this_00 = extraout_ECX_06;
     }
     *(undefined4 *)(pHVar2 + 0x1d7) = 0;
     if (*(byte **)(pHVar2 + 0x1d3) != (byte *)0x0) {
       FUN_006b5570(*(byte **)(pHVar2 + 0x1d3));
+      this_00 = extraout_ECX_07;
     }
     *(undefined4 *)(pHVar2 + 0x1d3) = 0;
     pHVar4 = pHVar2 + 0x1f0;
@@ -66,6 +88,7 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     do {
       if (*(int *)pHVar4 != 0) {
         cMf32::RecMemFree(DAT_00806790,(uint *)pHVar4);
+        this_00 = extraout_ECX_08;
       }
       pHVar4 = pHVar4 + 4;
       local_8 = local_8 + -1;
@@ -82,15 +105,17 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     *(undefined4 *)(pHVar2 + 0x240) = 0;
     *(undefined4 *)(pHVar2 + 0x23c) = 0;
     if (*(uint **)(pHVar2 + 0x1e0) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pHVar2 + 0x1e0));
+      ccFntTy::operator(this_00,*(uint **)(pHVar2 + 0x1e0));
       *(undefined4 *)(pHVar2 + 0x1e0) = 0;
+      this_00 = extraout_ECX_09;
     }
     if (*(uint **)(pHVar2 + 0x1e4) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pHVar2 + 0x1e4));
+      ccFntTy::operator(this_00,*(uint **)(pHVar2 + 0x1e4));
       *(undefined4 *)(pHVar2 + 0x1e4) = 0;
+      this_00 = extraout_ECX_10;
     }
     if (*(uint **)(pHVar2 + 0x1e8) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pHVar2 + 0x1e8));
+      ccFntTy::operator(this_00,*(uint **)(pHVar2 + 0x1e8));
       *(undefined4 *)(pHVar2 + 0x1e8) = 0;
     }
     if (*(int *)(pHVar2 + 0x218) != 0) {

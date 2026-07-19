@@ -1,4 +1,4 @@
-FUN_004c9770:
+TLOBaseTy::LoadImages:
 004C9770  55                        PUSH EBP
 004C9771  8B EC                     MOV EBP,ESP
 004C9773  81 EC 50 01 00 00         SUB ESP,0x150

@@ -18,7 +18,7 @@ undefined4 __thiscall SpecPanelTy::SetPanel(SpecPanelTy *this,char param_1)
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pSStack_8 = this;
-  iVar2 = __setjmp3(auStack_48,0,unaff_ESI,pIVar5);
+  iVar2 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar5);
   this_00 = pSStack_8;
   if (iVar2 == 0) {
     pSStack_8[0x184] = (SpecPanelTy)param_1;

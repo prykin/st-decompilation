@@ -21,7 +21,7 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   pIVar7 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
   pFStack_8 = this;
-  iVar5 = __setjmp3(auStack_58,0,unaff_ESI,pIVar7);
+  iVar5 = Library::MSVCRT::__setjmp3(auStack_58,0,unaff_ESI,pIVar7);
   this_00 = DAT_00802a30;
   if (iVar5 == 0) {
     if (DAT_00802a30 != (CursorClassTy *)0x0) {

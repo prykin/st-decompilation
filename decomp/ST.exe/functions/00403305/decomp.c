@@ -29,7 +29,7 @@ int __thiscall thunk_FUN_0061d8f0(void *this,undefined4 *param_1)
   piVar1 = (int *)(iStack_c + (int)(param_1 + 0x24));
   piVar6 = piVar1 + 1;
   piStack_8 = piVar6;
-  piVar2 = (int *)FUN_006aac70(*(int *)((int)this + 0x93) << 4);
+  piVar2 = (int *)Library::DKW::LIB::FUN_006aac70(*(int *)((int)this + 0x93) << 4);
   *(int **)((int)this + 0x57) = piVar2;
   for (iVar4 = (*(uint *)((int)this + 0x93) & 0xfffffff) << 2; iVar4 != 0; iVar4 = iVar4 + -1) {
     *piVar2 = *piVar6;

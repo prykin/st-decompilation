@@ -14,10 +14,10 @@ undefined4 __thiscall thunk_FUN_004d10a0(void *this,int param_1)
             iVar1;
   }
   thunk_FUN_004abce0((void *)((int)this + 0x1d5),*(byte *)((int)this + 0x2f0),iVar1,iVar1 + 8,'\0');
-  thunk_FUN_004abe40((void *)((int)this + 0x1d5),*(char *)((int)this + 0x2f0),iVar2);
-  thunk_FUN_004abce0((void *)((int)this + 0x1d5),*(char *)((int)this + 0x2f0) - 1,iVar1,iVar1 + 8,
-                     '\0');
-  thunk_FUN_004abe40((void *)((int)this + 0x1d5),*(char *)((int)this + 0x2f0) + -1,iVar2);
+  STT3DSprC::SetCurFase((STT3DSprC *)((int)this + 0x1d5),*(char *)((int)this + 0x2f0),iVar2);
+  thunk_FUN_004abce0((STT3DSprC *)((int)this + 0x1d5),*(char *)((int)this + 0x2f0) - 1,iVar1,
+                     iVar1 + 8,'\0');
+  STT3DSprC::SetCurFase((STT3DSprC *)((int)this + 0x1d5),*(char *)((int)this + 0x2f0) + -1,iVar2);
   return 0;
 }
 

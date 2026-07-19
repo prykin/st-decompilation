@@ -19,7 +19,7 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_4c.previous;

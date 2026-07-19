@@ -1,5 +1,11 @@
 
-void FUN_0042d4f0(char param_1,int param_2,int param_3,int param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::ResetActivityFromTmp */
+
+void __thiscall
+STAllPlayersC::ResetActivityFromTmp
+          (STAllPlayersC *this,char param_1,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;
@@ -58,7 +64,8 @@ LAB_0042d5e8:
     uVar5 = CONCAT22((short)((uint)param_4 >> 0x10),(short)piVar3[2]);
     iVar4 = 0;
   }
-  thunk_FUN_0042d190(CONCAT31((int3)((uint)iVar2 >> 8),(char)piVar3[1]),iVar2,iVar4,uVar5,param_4);
+  ResetActivityFromObjs
+            (this,CONCAT31((int3)((uint)iVar2 >> 8),(char)piVar3[1]),iVar2,iVar4,uVar5,param_4);
 LAB_0042d5ff:
   if (param_3 == 0) {
     if (param_2 == 0) {

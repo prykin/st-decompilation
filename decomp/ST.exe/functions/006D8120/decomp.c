@@ -99,7 +99,7 @@ uint __cdecl FUN_006d8120(int param_1)
       } while (local_20 != 0);
       uVar6 = 0;
 LAB_006d8217:
-      thunk_FUN_006a4950((undefined4 *)pbVar7);
+      Library::MSVCRT::thunk_FUN_006a4950((undefined4 *)pbVar7);
     }
   }
   return uVar6;

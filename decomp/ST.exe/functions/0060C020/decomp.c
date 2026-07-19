@@ -18,7 +18,7 @@ undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
   
   local_8 = 0x83;
   local_18 = this;
-  puVar1 = (undefined4 *)FUN_006aac70(0x83);
+  puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x83);
   *(undefined4 *)((int)this + 0x1e1) = 2;
   if (this == (void *)0x0) {
     puVar4 = (undefined4 *)0x0;
@@ -38,7 +38,7 @@ undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
     local_14 = (undefined4 *)FUN_006b0020(*(uint **)((int)local_18 + 0x234),(int *)&local_c);
     uVar3 = local_c + 0x87;
     local_8 = uVar3;
-    puVar1 = (undefined4 *)FUN_006acf50(puVar1,uVar3);
+    puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar1,uVar3);
     *(uint *)((int)puVar1 + uVar3 + (-4 - local_c)) = local_c;
     puVar4 = local_14;
     puVar6 = (undefined4 *)((int)puVar1 + (local_8 - local_c));
@@ -58,7 +58,7 @@ undefined4 * __thiscall FUN_0060c020(void *this,uint *param_1)
       if (local_1c != (uint *)0x0) {
         uVar3 = local_8 + 4 + local_10;
         local_8 = uVar3;
-        puVar1 = (undefined4 *)FUN_006acf50(puVar1,uVar3);
+        puVar1 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar1,uVar3);
         puVar7 = (uint *)((int)puVar1 + uVar3 + (-4 - local_10));
         *puVar7 = local_10;
         puVar5 = local_1c;

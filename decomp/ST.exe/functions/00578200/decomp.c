@@ -18,7 +18,7 @@ undefined4 __thiscall DebugSystemC::CreateSystemObjects(DebugSystemC *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
     (**(code **)(*(int *)local_8 + 0xc))(0x8100,&DAT_007fb228,0,0);
     g_currentExceptionFrame = pIVar4;

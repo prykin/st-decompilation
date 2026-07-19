@@ -57,7 +57,7 @@ MMObjTy::PaintButDib(MMObjTy *this,int param_1,int *param_2,int param_3,byte par
   iStack_14 = iStack_3c;
   iStack_c = iStack_40;
   iStack_8 = iStack_3c;
-  errorCode = __setjmp3(IStack_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (-1 < (int)param_5) {
       FUN_006c7ea0(param_1,0,&iStack_50,8,param_5);

@@ -27,7 +27,7 @@ void __thiscall TradePanelTy::ShiftControls(TradePanelTy *this,int param_1)
     *(short *)(this + 0x2e) = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (errorCode == 0) {
       if (*(int *)(local_8 + 0x1c4) != 0) {

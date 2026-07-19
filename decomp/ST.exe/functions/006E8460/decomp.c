@@ -10,9 +10,9 @@ void __cdecl FUN_006e8460(int param_1,int param_2,uint param_3,undefined1 param_
   longlong lVar6;
   
   iVar1 = DAT_00856d84;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   param_1 = (int)lVar6;
-  lVar6 = __ftol();
+  lVar6 = Library::MSVCRT::__ftol();
   iVar4 = (int)lVar6;
   if ((int)lVar6 < (int)(param_3 - 1)) {
     iVar4 = param_3 - 1;

@@ -57,7 +57,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
   }
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
-  iVar4 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 == 0) {
     if (param_1 == '\0') {
@@ -88,7 +88,7 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
       local_28 = 0x6327;
       local_30 = local_50;
       (**(code **)(**(int **)(local_8 + 0xc) + 8))(5,local_8 + 0x21fc,0,local_60,0);
-      FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x2200));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x2200));
     }
     else {
       if (local_8[0x21e6] != (SettMapMTy)0x0) {
@@ -117,16 +117,18 @@ void __thiscall SettMapMTy::CreateCtrls(SettMapMTy *this,char param_1)
         local_9ec = 0xc0a2;
         (**(code **)(*piVar1 + 8))(6,DAT_0081176c + 0x54c,0,local_a80,0);
       }
-      FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x558));
       if (*(uint *)(DAT_0081176c + 0x560) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(DAT_0081176c + 0x5a4),*(uint *)(DAT_0081176c + 0x560),0xfffffffe,
+                   *(uint *)(DAT_0081176c + 0x578),*(uint *)(DAT_0081176c + 0x57c));
       }
       if (*(uint *)(DAT_0081176c + 0x5f1) != 0xffffffff) {
-        FUN_006b34d0(*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe,
-                     *(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
+        Library::DKW::DDX::FUN_006b34d0
+                  (*(uint **)(DAT_0081176c + 0x635),*(uint *)(DAT_0081176c + 0x5f1),0xfffffffe,
+                   *(uint *)(DAT_0081176c + 0x609),*(uint *)(DAT_0081176c + 0x60d));
       }
-      FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
     }
     SettMapTy::CreateCtrls((SettMapTy *)this_00,param_1);
     if (param_1 == '\0') {

@@ -73,14 +73,15 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
     if (*(uint *)(local_8 + 0x19c) != 0) {
       FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x19c));
     }
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
-                 0x19c,0x118);
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
+               0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = *(int *)(this_00 + 0x3c) + 0x21;
     if (*(int *)(this_00 + 0x5c) == 0) {

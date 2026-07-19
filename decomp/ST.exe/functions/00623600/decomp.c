@@ -57,10 +57,10 @@ LAB_0062371f:
             *(undefined4 *)((int)param_1 + 0x2ce) = 0;
           }
           pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-          thunk_FUN_004abe40(pSVar1,'\x0e',*(undefined4 *)((int)param_1 + 0x2ce));
+          STT3DSprC::SetCurFase(pSVar1,'\x0e',*(undefined4 *)((int)param_1 + 0x2ce));
           STT3DSprC::ShowCurFase(pSVar1,'\x0e');
           if (*(char *)((int)param_1 + 0x352) != '\0') {
-            thunk_FUN_004abe40(pSVar1,'\f',*(undefined4 *)((int)param_1 + 0x2ce));
+            STT3DSprC::SetCurFase(pSVar1,'\f',*(undefined4 *)((int)param_1 + 0x2ce));
             STT3DSprC::ShowCurFase(pSVar1,'\f');
           }
           if (DAT_00807326 != '\0') {
@@ -79,10 +79,10 @@ LAB_0062371f:
           *(undefined4 *)((int)param_1 + 0x2ce) = 0;
         }
         pSVar1 = (STT3DSprC *)((int)param_1 + 0x1d5);
-        thunk_FUN_004abe40(pSVar1,'\x0e',*(undefined4 *)((int)param_1 + 0x2ce));
+        STT3DSprC::SetCurFase(pSVar1,'\x0e',*(undefined4 *)((int)param_1 + 0x2ce));
         STT3DSprC::ShowCurFase(pSVar1,'\x0e');
         if (*(char *)((int)param_1 + 0x352) != '\0') {
-          thunk_FUN_004abe40(pSVar1,'\f',*(undefined4 *)((int)param_1 + 0x2ce));
+          STT3DSprC::SetCurFase(pSVar1,'\f',*(undefined4 *)((int)param_1 + 0x2ce));
           STT3DSprC::ShowCurFase(pSVar1,'\f');
         }
         if (DAT_00807326 != '\0') {

@@ -55,7 +55,7 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     uVar5 = ((*(int *)((int)this + 0x5833) - param_2) / param_4 + 2) *
             ((*(int *)((int)this + 0x5837) - param_3) / param_4 + 2);
     ExceptionList = &local_14;
-    local_78 = (undefined4 *)FUN_006aac70(uVar5 * 0x40);
+    local_78 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar5 * 0x40);
     piVar7 = (int *)&stack0xffffff6c;
     puVar8 = local_78;
     for (iVar4 = (uVar5 & 0x3ffffff) << 4; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -111,14 +111,14 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
     iVar4 = local_40;
     if (-1 < (int)local_3c) {
       local_8 = 0;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_5c = (int *)&stack0xffffff6c;
       local_1c = &stack0xffffff6c;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_8 = 0xffffffff;
       local_58 = (int *)&stack0xffffff6c;
       local_1c = &stack0xffffff6c;
-      FUN_00730810((undefined1 *)local_78,local_3c,0x40,&LAB_00402adb);
+      Library::MSVCRT::FUN_00730810((undefined1 *)local_78,local_3c,0x40,&LAB_00402adb);
       local_28 = (local_50 * param_5) / 100;
       local_60 = 0;
       if (0 < (int)local_3c) {
@@ -159,10 +159,10 @@ FUN_0069bdc0(void *this,int param_1,int param_2,int param_3,int param_4,int para
         iVar4 = param_1;
         if (0 < param_1) {
 LAB_0069c0f3:
-          uVar5 = FUN_0072e6c0();
+          uVar5 = Library::MSVCRT::FUN_0072e6c0();
           iVar4 = (int)uVar5 % 3 + 1;
           local_30 = iVar4;
-          uVar5 = FUN_0072e6c0();
+          uVar5 = Library::MSVCRT::FUN_0072e6c0();
           piVar7 = local_58;
           uVar5 = uVar5 & 0x80000007;
           if ((int)uVar5 < 0) {
@@ -173,7 +173,8 @@ LAB_0069c0f3:
             while( true ) {
               if (iVar3 <= local_70) {
                 local_78[local_58[iVar3] * 0x10] = iVar4 << 0x10 | uVar5 & 0xffff;
-                FUN_006ae1c0(*(uint **)(param_7 + 0x18),local_78 + local_58[iVar3] * 0x10);
+                Library::DKW::TBL::FUN_006ae1c0
+                          (*(uint **)(param_7 + 0x18),local_78 + local_58[iVar3] * 0x10);
                 iVar4 = piVar7[iVar3];
                 *(short *)(param_6 + iVar3 * 4) =
                      (short)((int)(local_78[iVar4 * 0x10 + 0xe] - local_78[iVar4 * 0x10 + 0xc]) / 2)

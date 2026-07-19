@@ -85,7 +85,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   }
   IStack_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_b8;
-  puVar4 = (undefined4 *)__setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  puVar4 = (undefined4 *)Library::MSVCRT::__setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pTStack_14;
   if (puVar4 == (undefined4 *)0x0) {
     uVar22 = 0x77;
@@ -99,7 +99,7 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     pCVar5 = thunk_FUN_00571240(s_BKG_TRADECENTERW_007c8680,0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar5,uVar15,uVar17,iVar18,iVar20,UVar21,iVar10,uVar22);
-    puVar6 = FUN_0070ceb0(0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+    puVar6 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
     uVar12 = 1;
     *(undefined4 **)(this_00 + 0x1dd) = puVar6;
     puVar6[0x16] = 1;
@@ -169,10 +169,10 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     aiStack_490[3] = 2;
     pCVar5 = thunk_FUN_00571240(s_BUT_TBUP_007c22d8,0);
     pCVar5 = FUN_006f2c00(pCVar5,iVar10,uVar15);
-    puStack_18 = FUN_006f1ce0(1,pCVar5,piVar16,iVar18);
+    puStack_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar5,piVar16,iVar18);
     uStack_478 = *(undefined4 *)(puStack_18 + 2);
     uStack_474 = *(undefined4 *)(puStack_18 + 4);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&puStack_18);
+    cMf32::RecMemFree((cMf32 *)DAT_00806790,(uint *)&puStack_18);
     iVar10 = *(int *)(this_00 + 0x5c);
     aiStack_490[4] = *(int *)(this_00 + 0x3c) + 0x69;
     iVar18 = DAT_00806734;

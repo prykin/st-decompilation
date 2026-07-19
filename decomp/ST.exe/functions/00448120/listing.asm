@@ -1,4 +1,4 @@
-FUN_00448120:
+STAllPlayersC::PutOnPlaceGuardBoats:
 00448120  55                        PUSH EBP
 00448121  8B EC                     MOV EBP,ESP
 00448123  81 EC 00 01 00 00         SUB ESP,0x100

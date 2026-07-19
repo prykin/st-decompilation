@@ -19,7 +19,7 @@ StartServTy::WrTextDDX
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_4 < 1) {
       iVar2 = FUN_00711370(param_9,param_6);
@@ -35,7 +35,8 @@ StartServTy::WrTextDDX
     }
     else {
       local_c = (BITMAPINFO *)
-                FUN_006b55f0((undefined4 *)0x0,0,0,0,param_1,0,param_2,param_3,local_8,param_5);
+                Library::DKW::WGR::FUN_006b55f0
+                          ((undefined4 *)0x0,0,0,0,param_1,0,param_2,param_3,local_8,param_5);
       ccFntTy::SetSurf(param_9,(int)local_c,0,0,0,0,0);
     }
     ccFntTy::WrTxt(param_9,param_6,param_7,param_8,param_10,-1,-1);

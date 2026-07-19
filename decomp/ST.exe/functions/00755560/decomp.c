@@ -93,23 +93,26 @@ uint FUN_00755560(uint param_1,ushort *param_2,undefined4 param_3,undefined4 par
       if (param_1 == 0) {
         return 0xfffffffe;
       }
-      FUN_0072da70((undefined4 *)(iVar6 + 0x10 + iVar13),
-                   (undefined4 *)(param_1 + iVar6 + 0x10 + iVar13),
-                   ((int)*(short *)(iVar13 + 8) - param_1) - iVar6);
+      Library::MSVCRT::FUN_0072da70
+                ((undefined4 *)(iVar6 + 0x10 + iVar13),
+                 (undefined4 *)(param_1 + iVar6 + 0x10 + iVar13),
+                 ((int)*(short *)(iVar13 + 8) - param_1) - iVar6);
       *(short *)(iVar13 + 8) = *(short *)(iVar13 + 8) - (short)param_1;
     }
     uVar11 = FUN_00753b40(uVar4);
     if ((int)uVar11 < 0) {
       return uVar11;
     }
-    DVar7 = FUN_006d4c50(*(int *)(uVar4 + 8),uVar11,(int)*(short *)(*(int *)(uVar4 + 8) + 0x16));
+    DVar7 = Library::DKW::FMM::FUN_006d4c50
+                      (*(int *)(uVar4 + 8),uVar11,(int)*(short *)(*(int *)(uVar4 + 8) + 0x16));
     if (DVar7 != 0) {
       return DVar7;
     }
     iVar13 = *(int *)(*(int *)(uVar4 + 8) + 0x34);
     iVar14 = *(int *)(uVar4 + 0x10) + iVar13;
     puVar8 = (uint *)(iVar13 + uVar11);
-    FUN_0072da70(puVar8 + 4,(undefined4 *)(iVar6 + 0x10 + iVar14),*(short *)(iVar14 + 8) - iVar6);
+    Library::MSVCRT::FUN_0072da70
+              (puVar8 + 4,(undefined4 *)(iVar6 + 0x10 + iVar14),*(short *)(iVar14 + 8) - iVar6);
     *puVar8 = uVar11;
     *(short *)(puVar8 + 2) = *(short *)(iVar14 + 8) - (short)iVar6;
     puVar8[1] = **(uint **)(uVar4 + 0x18);

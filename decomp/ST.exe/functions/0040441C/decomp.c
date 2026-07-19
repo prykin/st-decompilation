@@ -32,7 +32,7 @@ thunk_FUN_0062d2d0(void *this,int param_1,int param_2,int param_3,undefined4 par
     iVar6 = *(int *)(iVar6 + 0xc);
     uStack_8 = 0;
     ExceptionList = &pvStack_14;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     puStack_1c = &stack0xffffffa8;
     uStack_8 = 0xffffffff;
     uStack_24 = 0xffffffff;

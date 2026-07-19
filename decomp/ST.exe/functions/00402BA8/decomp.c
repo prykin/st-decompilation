@@ -24,7 +24,7 @@ AiEventClassTy::_CreateArt
   iStack_24 = -1;
   IStack_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_68;
-  iVar3 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_68.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0x117,0,iVar3,&DAT_007a4ccc,

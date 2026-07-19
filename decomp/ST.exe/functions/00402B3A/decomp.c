@@ -30,7 +30,7 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
     pPStack_8 = this;
-    iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pPVar6 = pPStack_8;
     if (iVar5 == 0) {
       if (*(int *)(pPStack_8 + 0x180) != 0) {

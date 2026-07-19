@@ -19,6 +19,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   int *piVar10;
   undefined4 *puVar11;
   UINT *pUVar12;
+  ccFntTy *this_01;
   uint uVar13;
   uint uVar14;
   UINT *pUVar15;
@@ -51,7 +52,7 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = (UPanelTy *)this;
-  iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -66,13 +67,13 @@ void __thiscall HelpPanelTy::InitHelpPanel(HelpPanelTy *this)
     return;
   }
   DAT_00801690 = local_10;
-  puVar4 = FUN_006ae290((uint *)0x0,300,0x14,0x32);
+  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,300,0x14,0x32);
   *(uint **)(this_00 + 0x1b3) = puVar4;
-  puVar4 = FUN_006ae290((uint *)0x0,200,0x14,0x32);
+  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,200,0x14,0x32);
   *(uint **)(this_00 + 0x1bb) = puVar4;
-  puVar4 = FUN_006ae290((uint *)0x0,100,9,0x32);
+  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,100,9,0x32);
   *(uint **)(this_00 + 0x1cb) = puVar4;
-  puVar4 = FUN_006ae290((uint *)0x0,0x14,0x19,0x14);
+  puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0x19,0x14);
   *(uint **)(this_00 + 0x1d7) = puVar4;
   this_00[0x253] = (UPanelTy)0x0;
   this_00[0x252] = (UPanelTy)0x0;
@@ -139,7 +140,7 @@ LAB_00510fa9:
           local_17 = 0;
           local_16 = 0;
           local_15 = 0;
-          FUN_006ae1c0(puVar4,&local_28);
+          Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_28);
         }
       }
       local_8 = local_8 + 1;
@@ -169,7 +170,7 @@ LAB_00510fa9:
         if ((pUVar15 != (UINT *)0x0) && (pUVar12 != (UINT *)0x0)) {
           local_14 = (char *)FUN_006b0140(*pUVar12,DAT_00807618);
           pcVar5 = (char *)FUN_006b0140(*pUVar15,DAT_00807618);
-          iVar3 = __strcmpi(pcVar5,local_14);
+          iVar3 = Library::MSVCRT::__strcmpi(pcVar5,local_14);
           if (0 < iVar3) {
             FUN_006b0cd0(*(int *)(this_00 + 0x1bb),uVar13,local_8);
             local_c = (UPanelTy *)0x1;
@@ -184,24 +185,25 @@ LAB_00510fa9:
   iVar3 = 1;
   piVar10 = (int *)0x0;
   pCVar6 = thunk_FUN_00571240(s_BKG_HELPW_007c390c,0);
-  puVar7 = FUN_006f1ce0(1,pCVar6,piVar10,iVar3);
+  puVar7 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar10,iVar3);
   *(ushort **)(this_00 + 0x1dc) = puVar7;
-  puVar7 = FUN_006f1ce0(1,s_HLP_OBJ_BKG_007c38fc,(int *)0x0,1);
+  puVar7 = cMf32::RecGet(DAT_00806790,1,s_HLP_OBJ_BKG_007c38fc,(int *)0x0,1);
   iVar3 = 1;
   piVar10 = (int *)0x0;
   *(ushort **)(this_00 + 0x21c) = puVar7;
   pCVar6 = thunk_FUN_00571240(s_BUT_HLPLINK_007c38ec,0);
-  puVar7 = FUN_006f1ce0(1,pCVar6,piVar10,iVar3);
+  puVar7 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar10,iVar3);
   *(ushort **)(this_00 + 0x24c) = puVar7;
-  puVar11 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x28));
+  puVar11 = ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
+                              (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
   *(undefined4 **)(this_00 + 0x1e0) = puVar11;
   puVar11[0x16] = 0;
   puVar11[0x17] = 0;
-  puVar11 = FUN_0070df00(0x19d,*(int *)(DAT_00802a28 + 0x2c));
+  puVar11 = ccFntTy::operator(this_01,0x19d,*(int *)(DAT_00802a28 + 0x2c));
   *(undefined4 **)(this_00 + 0x1e4) = puVar11;
   puVar11[0x16] = 1;
   puVar11[0x17] = 0;
-  puVar11 = FUN_0070ceb0(0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+  puVar11 = ccFntTy::operator((ccFntTy *)DAT_00806790,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
   *(undefined4 **)(this_00 + 0x1e8) = puVar11;
   puVar11[0x16] = 1;
   puVar11[0x17] = 0;

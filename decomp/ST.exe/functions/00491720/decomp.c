@@ -96,7 +96,7 @@ void __fastcall FUN_00491720(int *param_1,undefined4 param_2)
     (**(code **)(*param_1 + 0x104))(uVar7);
   }
   local_c = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
-  thunk_FUN_0045ef00(param_1,3,&local_c);
+  STBoatC::CmdToObj((STBoatC *)param_1,3,&local_c);
   return;
 }
 

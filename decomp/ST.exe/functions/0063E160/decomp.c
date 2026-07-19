@@ -41,7 +41,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_10 = this;
-    iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     piVar3 = local_c;
     if (iVar4 != 0) {
       g_currentExceptionFrame = local_58.previous;

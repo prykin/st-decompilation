@@ -36,7 +36,7 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
     local_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_60;
     local_10 = this;
-    iVar4 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -155,9 +155,9 @@ LAB_005a3810:
           if (iVar4 == 0x100) {
             if (*(int *)(this_01 + 0x1ec6) != -1) {
               if ((char)param_2[0x1f] != '\0') {
-                _strncpy(local_1c,(char *)((int)param_2 + 0x7f),8);
+                Library::MSVCRT::_strncpy(local_1c,(char *)((int)param_2 + 0x7f),8);
                 local_14 = 0;
-                FUN_0072ee80(local_1c,&DAT_007cc584);
+                Library::MSVCRT::FUN_0072ee80(local_1c,&DAT_007cc584);
                 if (local_8 == *(int *)(this_01 + 0x1ec6)) {
                   puVar13 = *(uint **)(this_01 + 0x1ebe);
                   goto LAB_005a36e9;
@@ -171,7 +171,7 @@ LAB_005a3810:
             puVar13 = *(uint **)(this_01 + 0x1ebe);
           }
 LAB_005a36e9:
-          FUN_006ae1c0(puVar13,param_2);
+          Library::DKW::TBL::FUN_006ae1c0(puVar13,param_2);
         }
 LAB_005a36ee:
         param_2 = param_2 + 0x97;

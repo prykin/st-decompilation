@@ -15,7 +15,7 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,OptPanelT
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pOStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   this_00 = pOStack_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = pIVar4;

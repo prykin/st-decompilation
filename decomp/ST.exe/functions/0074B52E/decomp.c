@@ -16,8 +16,9 @@ undefined4 FUN_0074b52e(int param_1,undefined4 *param_2)
     }
     else {
       uVar2 = *(int *)(param_1 + 0x44) - 1;
-      uVar3 = __alldiv(*(uint *)(param_1 + 0x48),*(uint *)(param_1 + 0x4c),uVar2,(int)uVar2 >> 0x1f)
-      ;
+      uVar3 = Library::MSVCRT::__alldiv
+                        (*(uint *)(param_1 + 0x48),*(uint *)(param_1 + 0x4c),uVar2,
+                         (int)uVar2 >> 0x1f);
       *param_2 = (int)uVar3;
     }
     LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + -0x4c));

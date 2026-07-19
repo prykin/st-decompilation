@@ -1,4 +1,4 @@
-FUN_0057dfd0:
+STResourceC::SetResource:
 0057DFD0  55                        PUSH EBP
 0057DFD1  8B EC                     MOV EBP,ESP
 0057DFD3  56                        PUSH ESI

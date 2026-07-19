@@ -22,7 +22,7 @@ void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  iVar2 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
     iVar3 = ReportDebugMessage(s_E____titans_Start_settmobj_cpp_007cd258,0x21b,0,iVar2,&DAT_007a4ccc

@@ -29,7 +29,7 @@ FUN_005a39a0(void *this,ccFntTy *param_1,byte *param_2,uint param_3,byte *param_
       pbVar9 = pbVar9 + 1;
     } while (bVar1 != 0);
     if (iVar5 != -2) {
-      uVar4 = FUN_0072ff00(pbVar3);
+      uVar4 = Library::MSVCRT::FUN_0072ff00(pbVar3);
       wsprintfA((LPSTR)local_10,&DAT_007c28fc,uVar4);
       goto LAB_005a3a15;
     }

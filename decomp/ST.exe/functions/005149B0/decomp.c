@@ -25,7 +25,7 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Andrey_helppan_cpp_007c383c,0x350,0,iVar4,&DAT_007a4ccc

@@ -33,15 +33,15 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
   }
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar6 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pFStack_10;
   if (iVar6 == 0) {
     if (*(byte **)(pFStack_10 + 0x1ae8) != (byte *)0x0) {
       FUN_006b5570(*(byte **)(pFStack_10 + 0x1ae8));
     }
-    puVar2 = FUN_006b54f0((uint *)0x0,1,1);
+    puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(this_00 + 0x1ae8) = puVar2;
-    FUN_006b5aa0((int)puVar2,&DAT_008016a0);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     if (*(int *)(this_00 + 0x1e8e) != 0) {
       FUN_006ab060((undefined4 *)(this_00 + 0x1e8e));
     }
@@ -54,7 +54,7 @@ void __thiscall FSGSTy::LadderCtrls(FSGSTy *this)
     uVar4 = FUN_006b50c0(0x2e1,0x175,(uint)*(ushort *)(*(int *)(this_00 + 0x5d) + 0xe),uVar3,puVar8,
                          iVar6);
     *(undefined4 *)(this_00 + 0x1e8e) = uVar4;
-    ptVar5 = FUN_006c4880(DAT_0080759c,0x22,0x5e,0x2e1,0x175,8);
+    ptVar5 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x22,0x5e,0x2e1,0x175,8);
     *(LPBITMAPINFO *)(this_00 + 0x1e92) = ptVar5;
     uVar4 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x2c,0x90,0x96,0x19,0x6906,0x698e);
     *(undefined4 *)(this_00 + 0x1eb6) = uVar4;

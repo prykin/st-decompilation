@@ -19,7 +19,7 @@ char * FUN_006c49b0(char *param_1)
       cVar1 = *pcVar2;
       pcVar2 = pcVar2 + 1;
     } while (cVar1 != '\0');
-    pcVar2 = (char *)FUN_006aac70(~uVar3);
+    pcVar2 = (char *)Library::DKW::LIB::FUN_006aac70(~uVar3);
     if (pcVar2 != (char *)0x0) {
       uVar3 = 0xffffffff;
       do {

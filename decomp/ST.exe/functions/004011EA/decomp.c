@@ -51,7 +51,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
   }
   IStack_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_60;
-  iVar5 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar3 = iStack_c;
   pBVar2 = pBStack_18;
   iVar7 = iStack_1c;
@@ -86,8 +86,9 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
     ccFntTy::WrStr(*(ccFntTy **)(pBVar2 + 0x28a),(uint *)(pBVar2 + 0x6c),-2,-1,0);
   }
 LAB_004ef4e9:
-  FUN_006b3640(DAT_008075a8,*(uint *)(pBVar2 + 0x60),0xffffffff,*(uint *)(pBVar2 + 0x3c),
-               *(uint *)(pBVar2 + 0x44));
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(pBVar2 + 0x60),0xffffffff,*(uint *)(pBVar2 + 0x3c),
+             *(uint *)(pBVar2 + 0x44));
   g_currentExceptionFrame = IStack_60.previous;
   return;
 }

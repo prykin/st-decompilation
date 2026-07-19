@@ -46,7 +46,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
   puStack_10 = (uint *)0x0;
   IStack_a0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_a0;
-  iVar7 = __setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar7 != 0) {
     g_currentExceptionFrame = IStack_a0.previous;
     iVar10 = ReportDebugMessage(s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x245,0,iVar7,&DAT_007a4ccc,
@@ -68,7 +68,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
   if (param_1 == 0) {
     RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x216);
   }
-  puStack_8 = FUN_006ae290((uint *)0x0,5,0x98,5);
+  puStack_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   if (param_2 != 0) {
     puStack_10 = thunk_FUN_0067dfd0(param_1,0,0xffffffff);
   }
@@ -117,8 +117,8 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
         pcVar14[3] = '\0';
         pcVar14 = pcVar14 + 4;
       }
-      _strncpy(acStack_138,(char *)_Source,0x3f);
-      _strncpy(acStack_ec,pcVar5,0x1f);
+      Library::MSVCRT::_strncpy(acStack_138,(char *)_Source,0x3f);
+      Library::MSVCRT::_strncpy(acStack_ec,pcVar5,0x1f);
       uVar8 = 0xffffffff;
       pcVar14 = PTR_s_AIBOSS_0079d720;
       do {
@@ -176,10 +176,10 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
         pbVar11 = pbVar11 + 1;
         pbVar15 = pbVar15 + 1;
       }
-      FUN_0072ee80(pcVar5,abStack_5c);
+      Library::MSVCRT::FUN_0072ee80(pcVar5,abStack_5c);
       iVar7 = iStack_18;
       if (iStack_18 == 0) {
-        _strncpy(acStack_c8,PTR_s_OBJECTIVES_0079d718,0x1f);
+        Library::MSVCRT::_strncpy(acStack_c8,PTR_s_OBJECTIVES_0079d718,0x1f);
       }
       else {
         uVar8 = 0xffffffff;
@@ -285,7 +285,7 @@ uint * __cdecl thunk_FUN_0067e7e0(int param_1,int param_2)
         }
       }
       if (bVar4) {
-        FUN_006ae1c0(puStack_8,(undefined4 *)acStack_138);
+        Library::DKW::TBL::FUN_006ae1c0(puStack_8,(undefined4 *)acStack_138);
       }
       cMf32::RecMemFree((cMf32 *)param_1,(uint *)&puStack_c);
     }

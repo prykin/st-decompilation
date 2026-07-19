@@ -18,7 +18,7 @@ void __thiscall STAllPlayersC::DeletePGPairs(STAllPlayersC *this,char param_1)
   IStack_58.previous = g_currentExceptionFrame;
   pbStack_8 = *(byte **)((int)&DAT_007f5816 + param_1 * 0xa62);
   g_currentExceptionFrame = &IStack_58;
-  iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pbVar2 = pbStack_8;
   if (iVar3 == 0) {
     if (pbStack_8 != (byte *)0x0) {

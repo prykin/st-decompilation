@@ -1,4 +1,4 @@
-FUN_00558840:
+VisibleClassTy::GetMessage:
 00558840  55                        PUSH EBP
 00558841  8B EC                     MOV EBP,ESP
 00558843  83 EC 54                  SUB ESP,0x54

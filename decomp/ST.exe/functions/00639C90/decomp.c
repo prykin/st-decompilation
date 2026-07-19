@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_00639c90(void *this,uint param_1)
   int iVar8;
   uint uVar9;
   undefined4 *puVar10;
-  void *pvVar11;
+  VisibleClassTy *pVVar11;
   uint uVar12;
   byte *pbVar13;
   undefined4 *puVar14;
@@ -45,7 +45,7 @@ undefined4 __thiscall FUN_00639c90(void *this,uint param_1)
       local_8 = (byte *)thunk_FUN_0063cff0(this,&local_10);
       local_14 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)((int)this + 0x1d5),&param_1);
       if (param_1 != 0) {
-        local_8 = (byte *)FUN_006acf50((undefined4 *)local_8,local_10 + param_1);
+        local_8 = (byte *)Library::DKW::LIB::FUN_006acf50((undefined4 *)local_8,local_10 + param_1);
         pbVar13 = local_14;
         pbVar15 = local_8 + local_10;
         for (uVar9 = param_1 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
@@ -181,12 +181,12 @@ LAB_00639dab:
     }
     uVar9 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar9;
-    thunk_FUN_00556760(DAT_00802a7c,0,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
-                       *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e) - iVar7,0,0,0,0,0,0,
-                       -1,0,0);
+    TraksClassTy::TraksCreate
+              (DAT_00802a7c,0,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+               *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e) - iVar7,0,0,0,0,0,0,-1,0,0);
     (**(code **)(*(int *)this + 0xd8))();
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = DAT_00802a88;
+    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -219,16 +219,14 @@ LAB_00639dab:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar8,iVar7,
-                            &local_18,&local_1c), -1 < (int)local_c)) &&
+    if ((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
+        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)(DAT_00802a88 + 0x10c),iVar8,iVar7,&local_18
+                            ,&local_1c), -1 < (int)local_c)) &&
        (((((int)local_c < 5 && (-1 < local_18)) &&
-         ((local_18 < *(int *)((int)pvVar11 + 0x30) &&
+         ((local_18 < *(int *)(pVVar11 + 0x30) &&
           ((local_1c = local_1c + (&DAT_0079aed0)[local_c], -1 < local_1c &&
-           (local_1c < *(int *)((int)pvVar11 + 0x34))))))) && (*(int *)((int)pvVar11 + 0x4c) != 0)))
-       ) {
-      cVar2 = *(char *)(local_1c * *(int *)((int)pvVar11 + 0x30) + *(int *)((int)pvVar11 + 0x4c) +
-                       local_18);
+           (local_1c < *(int *)(pVVar11 + 0x34))))))) && (*(int *)(pVVar11 + 0x4c) != 0)))) {
+      cVar2 = *(char *)(local_1c * *(int *)(pVVar11 + 0x30) + *(int *)(pVVar11 + 0x4c) + local_18);
 joined_r0x0063a754:
       if (cVar2 == '\0') {
         if (*(char *)((int)this + 0x29f) == '\0') {
@@ -290,8 +288,8 @@ LAB_0063a27d:
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 != (void *)0x0) {
+    pVVar11 = DAT_00802a88;
+    if (DAT_00802a88 != (VisibleClassTy *)0x0) {
       iVar7 = *(int *)((int)this + 0x26e);
       sVar3 = (short)(iVar7 >> 0x1f);
       if (iVar7 < 0) {
@@ -322,16 +320,16 @@ LAB_0063a27d:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-           (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar8,iVar7,
+      if (((((DAT_0080874d == -1) || (*(int *)(DAT_00802a88 + 0xf8) == 0)) ||
+           (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)(DAT_00802a88 + 0x10c),iVar8,iVar7,
                                &local_1c,&local_18), (int)local_c < 0)) ||
           (((4 < (int)local_c || (local_1c < 0)) ||
-           ((*(int *)((int)pvVar11 + 0x30) <= local_1c ||
+           ((*(int *)(pVVar11 + 0x30) <= local_1c ||
             ((local_18 = local_18 + (&DAT_0079aed0)[local_c], local_18 < 0 ||
-             (*(int *)((int)pvVar11 + 0x34) <= local_18)))))))) ||
-         ((*(int *)((int)pvVar11 + 0x4c) == 0 ||
-          (*(char *)(local_18 * *(int *)((int)pvVar11 + 0x30) + *(int *)((int)pvVar11 + 0x4c) +
-                    local_1c) != '\0')))) {
+             (*(int *)(pVVar11 + 0x34) <= local_18)))))))) ||
+         ((*(int *)(pVVar11 + 0x4c) == 0 ||
+          (*(char *)(local_18 * *(int *)(pVVar11 + 0x30) + *(int *)(pVVar11 + 0x4c) + local_1c) !=
+           '\0')))) {
         if (*(char *)((int)this + 0x29f) == '\0') {
           thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
           *(undefined1 *)((int)this + 0x29f) = 1;
@@ -350,7 +348,7 @@ LAB_0063a27d:
     if (CONCAT31(extraout_var,bVar6) != 0 && -1 < extraout_var) {
       *(undefined4 *)((int)this + 0x28e) = *(undefined4 *)(DAT_00802a38 + 0xe4);
       *(undefined1 *)((int)this + 0x265) = 4;
-      if (DAT_00802a88 != (void *)0x0) {
+      if (DAT_00802a88 != (VisibleClassTy *)0x0) {
         iVar7 = *(int *)((int)this + 0x26a);
         sVar3 = (short)(iVar7 >> 0x1f);
         if (iVar7 < 0) {
@@ -371,8 +369,9 @@ LAB_0063a27d:
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        thunk_FUN_0055a9d0(DAT_00802a88,iVar8,iVar7,(undefined *)0x0,*(uint *)((int)this + 0x259),
-                           (undefined *)0x5,0x271);
+        VisibleClassTy::VisHoleCreate
+                  (DAT_00802a88,iVar8,iVar7,(undefined *)0x0,*(uint *)((int)this + 0x259),
+                   (undefined *)0x5,0x271);
       }
       if (*(short *)((int)this + 0x263) != -1) {
         thunk_FUN_006404b0(this,(int)*(short *)((int)this + 0x253),
@@ -394,15 +393,16 @@ LAB_0063a27d:
       uVar9 = iVar7 * 0x41c64e6d + 0x3039;
       uVar5 = (ushort)(uVar9 >> 0x10);
       *(uint *)((int)this + 0x1c) = uVar9;
-      thunk_FUN_00556760(DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
-                         *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1
-                         ,0,0,0,0,-1,0,0);
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+                 *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
+                 ,-1,0,0);
     }
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = DAT_00802a88;
+    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -435,17 +435,16 @@ LAB_0063a27d:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar8,iVar7,
+    if (((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
+         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)(DAT_00802a88 + 0x10c),iVar8,iVar7,
                              &local_1c,&local_18), -1 < (int)local_c)) &&
         (((int)local_c < 5 && (-1 < local_1c)))) &&
-       (iVar7 = *(int *)((int)pvVar11 + 0x30), local_1c < iVar7)) {
+       (iVar7 = *(int *)(pVVar11 + 0x30), local_1c < iVar7)) {
       iVar8 = (&DAT_0079aed0)[local_c];
 LAB_0063a728:
       iVar8 = iVar8 + local_18;
-      if (((-1 < iVar8) && (iVar8 < *(int *)((int)pvVar11 + 0x34))) &&
-         (*(int *)((int)pvVar11 + 0x4c) != 0)) {
-        cVar2 = *(char *)(iVar8 * iVar7 + local_1c + *(int *)((int)pvVar11 + 0x4c));
+      if (((-1 < iVar8) && (iVar8 < *(int *)(pVVar11 + 0x34))) && (*(int *)(pVVar11 + 0x4c) != 0)) {
+        cVar2 = *(char *)(iVar8 * iVar7 + local_1c + *(int *)(pVVar11 + 0x4c));
         goto joined_r0x0063a754;
       }
     }
@@ -465,13 +464,14 @@ LAB_0063a728:
       uVar9 = iVar7 * 0x41c64e6d + 0x3039;
       uVar5 = (ushort)(uVar9 >> 0x10);
       *(uint *)((int)this + 0x1c) = uVar9;
-      thunk_FUN_00556760(DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
-                         *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1
-                         ,0,0,0,0,-1,0,0);
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+                 *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
+                 ,-1,0,0);
     }
     (**(code **)(*(int *)this + 0xd8))();
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = DAT_00802a88;
+    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -504,11 +504,11 @@ LAB_0063a728:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar8,iVar7,
-                            &local_1c,&local_18), -1 < (int)local_c)) &&
+    if ((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
+        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)(DAT_00802a88 + 0x10c),iVar8,iVar7,&local_1c
+                            ,&local_18), -1 < (int)local_c)) &&
        ((((int)local_c < 5 && (-1 < local_1c)) &&
-        (iVar7 = *(int *)((int)pvVar11 + 0x30), local_1c < iVar7)))) {
+        (iVar7 = *(int *)(pVVar11 + 0x30), local_1c < iVar7)))) {
       iVar8 = (&DAT_0079aed0)[local_c];
       goto LAB_0063a728;
     }
@@ -519,8 +519,8 @@ LAB_0063a728:
       thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                          *(undefined2 *)((int)this + 0x26e));
       (**(code **)(*(int *)this + 0xd8))();
-      pvVar11 = DAT_00802a88;
-      if (DAT_00802a88 != (void *)0x0) {
+      pVVar11 = DAT_00802a88;
+      if (DAT_00802a88 != (VisibleClassTy *)0x0) {
         iVar7 = *(int *)((int)this + 0x26e);
         sVar3 = (short)(iVar7 >> 0x1f);
         if (iVar7 < 0) {
@@ -551,15 +551,15 @@ LAB_0063a728:
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-            ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar8,iVar7
-                                 ,&local_1c,&local_18), (int)local_c < 0 ||
-             (((4 < (int)local_c || (local_1c < 0)) || (*(int *)((int)pvVar11 + 0x30) <= local_1c)))
-             ))) || (((local_18 = (&DAT_0079aed0)[local_c] + local_18, local_18 < 0 ||
-                      (*(int *)((int)pvVar11 + 0x34) <= local_18)) ||
-                     ((*(int *)((int)pvVar11 + 0x4c) == 0 ||
-                      (*(char *)(local_18 * *(int *)((int)pvVar11 + 0x30) + local_1c +
-                                *(int *)((int)pvVar11 + 0x4c)) != '\0')))))) {
+        if ((((DAT_0080874d == -1) || (*(int *)(DAT_00802a88 + 0xf8) == 0)) ||
+            ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)(DAT_00802a88 + 0x10c),iVar8,iVar7,
+                                 &local_1c,&local_18), (int)local_c < 0 ||
+             (((4 < (int)local_c || (local_1c < 0)) || (*(int *)(pVVar11 + 0x30) <= local_1c))))))
+           || (((local_18 = (&DAT_0079aed0)[local_c] + local_18, local_18 < 0 ||
+                (*(int *)(pVVar11 + 0x34) <= local_18)) ||
+               ((*(int *)(pVVar11 + 0x4c) == 0 ||
+                (*(char *)(local_18 * *(int *)(pVVar11 + 0x30) + local_1c + *(int *)(pVVar11 + 0x4c)
+                          ) != '\0')))))) {
           if (*(char *)((int)this + 0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
             *(undefined1 *)((int)this + 0x29f) = 1;
@@ -577,9 +577,10 @@ LAB_0063a728:
       uVar9 = iVar7 * 0x41c64e6d + 0x3039;
       uVar5 = (ushort)(uVar9 >> 0x10);
       *(uint *)((int)this + 0x1c) = uVar9;
-      thunk_FUN_00556760(DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
-                         *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1
-                         ,0,0,0,0,-1,0,0);
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,1,1,uVar9 >> 0x10 & 1,*(int *)((int)this + 0x266),
+                 *(int *)((int)this + 0x26a),*(int *)((int)this + 0x26e),uVar5 & 1,uVar5 & 1,0,0,0,0
+                 ,-1,0,0);
       thunk_FUN_0063f340((int)this);
       return 0;
     }
@@ -641,8 +642,8 @@ LAB_0063a728:
     thunk_FUN_00416240(this,*(undefined2 *)((int)this + 0x266),*(undefined2 *)((int)this + 0x26a),
                        *(undefined2 *)((int)this + 0x26e));
     (**(code **)(*(int *)this + 0xd8))();
-    pvVar11 = DAT_00802a88;
-    if (DAT_00802a88 == (void *)0x0) {
+    pVVar11 = DAT_00802a88;
+    if (DAT_00802a88 == (VisibleClassTy *)0x0) {
       return 0;
     }
     iVar7 = *(int *)((int)this + 0x26e);
@@ -675,11 +676,11 @@ LAB_0063a728:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar8,iVar7,
+    if (((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
+         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)(DAT_00802a88 + 0x10c),iVar8,iVar7,
                              &local_1c,&local_18), -1 < (int)local_c)) &&
         (((int)local_c < 5 && (-1 < local_1c)))) &&
-       (iVar7 = *(int *)((int)pvVar11 + 0x30), local_1c < iVar7)) {
+       (iVar7 = *(int *)(pVVar11 + 0x30), local_1c < iVar7)) {
       iVar8 = (&DAT_0079aed0)[local_c];
       goto LAB_0063a728;
     }
@@ -776,7 +777,7 @@ LAB_0063a728:
       iVar7 = *(int *)((int)this + 0x34f) + 1;
       *(int *)((int)this + 0x34f) = iVar7;
       if (iVar7 == 7) {
-        FUN_006c83b0(DAT_008075a8,2,3,(int *)&DAT_007d1ff8);
+        Library::DKW::DDX::FUN_006c83b0(DAT_008075a8,2,3,(int *)&DAT_007d1ff8);
       }
       if (8 < *(int *)((int)this + 0x34f)) {
         FUN_006ead40(*(void **)((int)this + 0x211),0,0,0x108,0xf7,
@@ -838,7 +839,7 @@ LAB_0063a728:
         iVar7 = *(int *)(*(int *)((int)this + 0x211) + 0x380);
         FUN_006e3210(*(int *)((int)this + 0x211),(*(int *)((int)this + 0x2a4) * iVar7) / 0xc9,
                      (*(int *)((int)this + 0x2a8) * iVar7) / 0xc9);
-        lVar16 = __ftol();
+        lVar16 = Library::MSVCRT::__ftol();
         param_1 = (int)(short)lVar16 + 0x2d;
       }
       uVar9 = *(int *)((int)this + 0x367) + 1;
@@ -922,7 +923,7 @@ LAB_0063a728:
       iVar7 = *(int *)((int)this + 0x34f) + 1;
       *(int *)((int)this + 0x34f) = iVar7;
       if (iVar7 == 7) {
-        FUN_006c83b0(DAT_008075a8,2,3,(int *)&DAT_007d1ff8);
+        Library::DKW::DDX::FUN_006c83b0(DAT_008075a8,2,3,(int *)&DAT_007d1ff8);
       }
       if (8 < *(int *)((int)this + 0x34f)) {
         FUN_006ead40(*(void **)((int)this + 0x211),0,0,0x108,0xf7,

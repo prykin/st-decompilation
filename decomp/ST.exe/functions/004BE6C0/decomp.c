@@ -45,7 +45,7 @@ void __thiscall FUN_004be6c0(void *this,undefined4 *param_1)
   *(undefined1 *)(param_1 + 7) = uVar2;
   *(undefined4 *)((int)param_1 + 3) = *(undefined4 *)((int)this + 0x5ac);
   param_1[2] = *(undefined4 *)((int)this + 0x18);
-  _strncpy((char *)(param_1 + 3),(char *)((int)this + 0x5c4),0xe);
+  Library::MSVCRT::_strncpy((char *)(param_1 + 3),(char *)((int)this + 0x5c4),0xe);
   if (*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) == 0) {
     *(undefined2 *)((int)param_1 + 0x1e) = 0;
     *(undefined2 *)(param_1 + 8) = 0;

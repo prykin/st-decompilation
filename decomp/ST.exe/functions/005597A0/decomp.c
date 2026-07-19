@@ -33,7 +33,7 @@ VisibleClassTy::SetZoneDes
     if (*(int *)(this + param_4 * 4 + 0x54) == 0) {
       local_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_60;
-      iVar4 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this = local_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = local_60.previous;
@@ -46,7 +46,8 @@ VisibleClassTy::SetZoneDes
         (*pcVar2)();
         return;
       }
-      puVar5 = FUN_006aac10(*(int *)(local_14 + 0x24) * *(int *)(local_14 + 0x20));
+      puVar5 = Library::DKW::LIB::FUN_006aac10
+                         (*(int *)(local_14 + 0x24) * *(int *)(local_14 + 0x20));
       *(undefined4 **)(this + param_4 * 4 + 0x54) = puVar5;
       g_currentExceptionFrame = local_60.previous;
     }

@@ -134,7 +134,7 @@ LAB_00632f7e:
     }
     break;
   case 3:
-    iVar6 = FUN_006aac70(*(int *)((int)param_1 + 0x19) << 3);
+    iVar6 = Library::DKW::LIB::FUN_006aac70(*(int *)((int)param_1 + 0x19) << 3);
     fVar1 = *(float *)((int)param_1 + 0x6d) - *(float *)((int)param_1 + 0x69);
     *(int *)((int)param_1 + 0x39) = iVar6;
     *(undefined4 *)((int)param_1 + 0x31) = 0;
@@ -166,7 +166,7 @@ LAB_00632f7e:
     bVar4 = *(float *)((int)param_1 + 0x81) != _DAT_0079034c;
     *(undefined4 *)((int)param_1 + 0x71) = 0x40490fdb;
     if (bVar4) {
-      lVar12 = __ftol();
+      lVar12 = Library::MSVCRT::__ftol();
       iStack_14 = (int)lVar12;
       if (iStack_14 < 1) {
         iStack_14 = 1;
@@ -243,7 +243,7 @@ LAB_00632f7e:
             *(float *)(iVar11 + 0x21) = fStack_10;
             *(undefined4 *)(iVar11 + 0x25) = *(undefined4 *)((int)param_1 + 0x6d);
             *(undefined4 *)((int)param_1 + 0x71) = *(undefined4 *)((int)param_1 + 0x6d);
-            uVar9 = FUN_0072e6c0();
+            uVar9 = Library::MSVCRT::FUN_0072e6c0();
             *(undefined4 *)(iVar11 + 8) = 1;
             *(undefined4 *)(iVar11 + 0x1d) = 7;
             *(int *)(iVar11 + 0x19) = (int)uVar9 % 7;
@@ -260,11 +260,11 @@ LAB_00632f7e:
         else {
           iVar11 = 0;
         }
-        uVar9 = FUN_0072e6c0();
+        uVar9 = Library::MSVCRT::FUN_0072e6c0();
         fStack_8 = (float)((int)uVar9 % 0x168) * _DAT_0079d1a8;
         if (iVar11 != 0) {
           *(float *)(iVar11 + 0x21) = fStack_8;
-          uVar9 = FUN_0072e6c0();
+          uVar9 = Library::MSVCRT::FUN_0072e6c0();
           fVar1 = *(float *)((int)param_1 + 0x79);
           fVar2 = *(float *)((int)param_1 + 0x6d);
           fVar3 = *(float *)((int)param_1 + 0x6d);

@@ -25,7 +25,7 @@ int FUN_0069b910(int param_1,int param_2,int *param_3,int param_4,int param_5,in
   if (0 < param_4) {
     iVar9 = param_2 * 3;
     while (iVar8 = local_8, 0 < iVar9) {
-      uVar5 = FUN_0072e6c0();
+      uVar5 = Library::MSVCRT::FUN_0072e6c0();
       local_18 = (int)uVar5 % param_2;
       if (param_6 < *(int *)(local_18 * 0x40 + 0x2c + param_1)) {
         iVar8 = local_18 * 0x40;

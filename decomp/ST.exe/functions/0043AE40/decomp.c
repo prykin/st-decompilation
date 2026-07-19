@@ -42,8 +42,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       if (iVar6 != 0x3c) {
         if (iVar6 == 0x1ae) {
           if (param_3 == 1) {
-            pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31(uVar11,(char)piVar1[1]),
-                                                (uint)*(ushort *)(piVar1 + 2),3);
+            pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
+                                       (uint)*(ushort *)(piVar1 + 2),3);
             thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                                (undefined2 *)&local_8);
             iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,
@@ -58,7 +58,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
               DAT_0080745d = 0;
             }
           }
-          thunk_FUN_0044b030(DAT_0080874d,0,param_2);
+          ActivateTV(this,DAT_0080874d,0,param_2);
           return;
         }
         iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1a3b,0,0,&DAT_007a4ccc
@@ -71,10 +71,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         return;
       }
       if (((param_3 == 1) &&
-          (iVar6 = thunk_FUN_0043aaf0(0x3c,CONCAT31(uVar11,(char)piVar1[1]),
-                                      *(int *)((int)piVar1 + 10),
-                                      CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-                                      &local_10,&local_c,&local_8,&param_1), iVar6 == 0)) &&
+          (iVar6 = GetCamPoint(0x3c,CONCAT31(uVar11,(char)piVar1[1]),*(int *)((int)piVar1 + 10),
+                               CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),&local_10,
+                               &local_c,&local_8,&param_1), iVar6 == 0)) &&
          (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -106,10 +105,10 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         if (((param_3 == 1) &&
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),
                               *(undefined2 *)((int)&DAT_007f4f83 + iVar6 + 8)),
-            iVar6 = thunk_FUN_0043aaf0(0x3c,CONCAT31((int3)(uVar9 >> 8),
-                                                     *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)
-                                                    ),*(int *)((int)&DAT_007f4f83 + iVar6 + 10),
-                                       uVar9,&local_10,&local_c,&local_8,&param_1), iVar6 == 0)) &&
+            iVar6 = GetCamPoint(0x3c,CONCAT31((int3)(uVar9 >> 8),
+                                              *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)),
+                                *(int *)((int)&DAT_007f4f83 + iVar6 + 10),uVar9,&local_10,&local_c,
+                                &local_8,&param_1), iVar6 == 0)) &&
            (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                  DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -121,8 +120,8 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         }
         bVar4 = DAT_0080874d;
         *(undefined4 *)((int)&DAT_007f5023 + (uint)DAT_0080874d * 0xa62) = 0;
-        thunk_FUN_0042d4f0(bVar4,1,0,0);
-        thunk_FUN_0044b030(DAT_0080874d,0,iVar5);
+        ResetActivityFromTmp(this,bVar4,1,0,0);
+        ActivateTV(this,DAT_0080874d,0,iVar5);
         return;
       }
       if (iVar2 != 0x1ae) {
@@ -136,10 +135,9 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         return;
       }
       if (param_3 == 1) {
-        pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)iVar10 >> 8),
-                                                     *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)
-                                                    ),
-                                            (uint)*(ushort *)((int)&DAT_007f4f83 + iVar6 + 8),3);
+        pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)iVar10 >> 8),
+                                                 *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)),
+                                   (uint)*(ushort *)((int)&DAT_007f4f83 + iVar6 + 8),3);
         thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                            (undefined2 *)&local_8);
         iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -155,7 +153,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       }
       bVar4 = DAT_0080874d;
       *(undefined4 *)((int)&DAT_007f5023 + (uint)DAT_0080874d * 0xa62) = 0;
-      thunk_FUN_0042d4f0(bVar4,1,0,0);
+      ResetActivityFromTmp(this,bVar4,1,0,0);
       iVar5 = param_2;
     }
     iVar6 = 0;
@@ -195,9 +193,9 @@ LAB_0043aee4:
       if (iVar6 == 0x19a) {
         if (((param_3 == 1) &&
             (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-            iVar6 = thunk_FUN_0043aaf0(0x19a,CONCAT31((int3)(uVar9 >> 8),(char)piVar1[1]),
-                                       *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,
-                                       &param_1), iVar6 == 0)) &&
+            iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar9 >> 8),(char)piVar1[1]),
+                                *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,
+                                &param_1), iVar6 == 0)) &&
            (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                  DAT_0080741c), iVar6 != 1)) {
           thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -207,7 +205,7 @@ LAB_0043aee4:
           DAT_0080674c = 2;
           DAT_0080745d = 0;
         }
-        thunk_FUN_0044b030(DAT_0080874d,1,iVar5);
+        ActivateTV(this,DAT_0080874d,1,iVar5);
         return;
       }
       if (iVar6 == 0) {
@@ -217,9 +215,9 @@ LAB_0043aee4:
         if (param_3 == 1) {
           uVar12 = 4;
 LAB_0043b0f1:
-          pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31(uVar11,(char)piVar1[1]),
-                                              CONCAT22((short)((uint)param_3 >> 0x10),
-                                                       (short)piVar1[2]),uVar12);
+          pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
+                                     CONCAT22((short)((uint)param_3 >> 0x10),(short)piVar1[2]),
+                                     uVar12);
           thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                              (undefined2 *)&local_8);
           iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414
@@ -264,8 +262,8 @@ LAB_0043b0af:
       if (param_3 != 1) goto LAB_0043b294;
       uVar12 = 5;
     }
-    pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
-                                        (uint)*(ushort *)(piVar1 + 2),uVar12);
+    pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
+                               (uint)*(ushort *)(piVar1 + 2),uVar12);
     thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
     ;
     iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -279,7 +277,7 @@ LAB_0043b0af:
       DAT_0080745d = 0;
     }
 LAB_0043b294:
-    thunk_FUN_0044b030(DAT_0080874d,1,param_2);
+    ActivateTV(this,DAT_0080874d,1,param_2);
     return;
   }
   piVar1 = (int *)((int)&DAT_007f4fd3 + iVar6 + param_2 * 0x10);
@@ -289,9 +287,9 @@ LAB_0043b294:
     if (iVar6 == 0x19a) {
       if (((param_3 == 1) &&
           (uVar9 = CONCAT22((short)((uint)&local_c >> 0x10),(short)piVar1[2]),
-          iVar6 = thunk_FUN_0043aaf0(0x19a,CONCAT31((int3)(uVar9 >> 8),(char)piVar1[1]),
-                                     *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,
-                                     &param_1), iVar6 == 0)) &&
+          iVar6 = GetCamPoint(0x19a,CONCAT31((int3)(uVar9 >> 8),(char)piVar1[1]),
+                              *(int *)((int)piVar1 + 10),uVar9,&local_10,&local_c,&local_8,&param_1)
+          , iVar6 == 0)) &&
          (iVar6 = FUN_006eb230(DAT_00807598,param_1,DAT_00807410,DAT_00807414,DAT_00807418,
                                DAT_0080741c), iVar6 != 1)) {
         thunk_FUN_004a8e00(local_10,local_c,local_8);
@@ -303,8 +301,8 @@ LAB_0043b294:
       }
       bVar4 = DAT_0080874d;
       *(undefined4 *)((int)&DAT_007f5023 + (uint)DAT_0080874d * 0xa62) = 1;
-      thunk_FUN_0042d4f0(bVar4,0,0,0);
-      thunk_FUN_0044b030(DAT_0080874d,1,iVar5);
+      ResetActivityFromTmp(this,bVar4,0,0,0);
+      ActivateTV(this,DAT_0080874d,1,iVar5);
       return;
     }
     if (iVar6 == 0) {
@@ -314,8 +312,8 @@ LAB_0043b294:
       if (param_3 == 1) {
         uVar12 = 4;
 LAB_0043b2fe:
-        pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31(uVar8,(char)piVar1[1]),
-                                            (uint)*(ushort *)(piVar1 + 2),uVar12);
+        pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),
+                                   (uint)*(ushort *)(piVar1 + 2),uVar12);
         thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                            (undefined2 *)&local_8);
         iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -352,8 +350,8 @@ LAB_0043b4a2:
   }
   else if (iVar6 == 0x1a4) {
     if (param_3 == 1) {
-      pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31(uVar8,(char)piVar1[1]),
-                                          (uint)*(ushort *)(piVar1 + 2),5);
+      pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),
+                                 5);
       thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                          (undefined2 *)&local_8);
       iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -364,8 +362,8 @@ LAB_0043b4a2:
   else {
     if (iVar6 != 0x1b8) goto LAB_0043b4a2;
     if (param_3 == 1) {
-      pvVar7 = (void *)thunk_FUN_0042b620(CONCAT31(uVar11,(char)piVar1[1]),
-                                          (uint)*(ushort *)(piVar1 + 2),6);
+      pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2)
+                                 ,6);
       thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                          (undefined2 *)&local_8);
       iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -379,12 +377,12 @@ LAB_0043b4a2:
   }
   bVar4 = DAT_0080874d;
   *(undefined4 *)((int)&DAT_007f5023 + (uint)DAT_0080874d * 0xa62) = 1;
-  thunk_FUN_0042d4f0(bVar4,0,0,0);
+  ResetActivityFromTmp(this,bVar4,0,0,0);
 LAB_0043b686:
   iVar6 = 1;
   iVar5 = param_2;
 LAB_0043bb49:
-  thunk_FUN_0044b030(DAT_0080874d,iVar6,iVar5);
+  ActivateTV(this,DAT_0080874d,iVar6,iVar5);
   return;
 }
 

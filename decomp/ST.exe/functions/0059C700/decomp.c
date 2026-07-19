@@ -37,19 +37,19 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar5 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 == 0) {
-    puVar2 = FUN_006b54f0((uint *)0x0,1,1);
+    puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00 = local_8;
     *(uint **)(local_8 + 0x1ae8) = puVar2;
-    FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
-    puVar2 = FUN_006b54f0((uint *)0x0,1,1);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
+    puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(this_00 + 0x1aec) = puVar2;
     pcVar6 = (char *)&DAT_00807e5d;
     if (DAT_0080735f == '\0') {
       pcVar6 = &DAT_008016a0;
     }
-    FUN_006b5aa0((int)puVar2,pcVar6);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar2,pcVar6);
     puVar7 = local_8d8;
     for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar7 = 0;

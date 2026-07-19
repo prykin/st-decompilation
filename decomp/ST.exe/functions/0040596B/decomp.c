@@ -40,7 +40,7 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
   IStack_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_8c;
   pMStack_8 = this;
-  iVar5 = __setjmp3(IStack_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   puVar4 = puStack_44;
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_8c.previous;
@@ -153,8 +153,9 @@ LAB_005c1806:
                    ,iVar7 + 0xb,0x1a,0xd,0,0xd);
     }
   }
-  FUN_006b48e0(DAT_0080759c,puVar4[3],puVar4[4],*(int *)(pMStack_8 + 0x73),0,iVar5,iVar7,puVar4[5],
-               puVar4[6],(int)(pMStack_8 + 0xa3),0x4c,0x10000ff);
+  Library::DKW::DDX::FUN_006b48e0
+            (DAT_0080759c,puVar4[3],puVar4[4],*(int *)(pMStack_8 + 0x73),0,iVar5,iVar7,puVar4[5],
+             puVar4[6],(int)(pMStack_8 + 0xa3),0x4c,0x10000ff);
   g_currentExceptionFrame = IStack_8c.previous;
   return;
 }

@@ -12,13 +12,14 @@ undefined2 * thunk_FUN_0044d320(uint param_1)
   uint uStack_18;
   int iStack_14;
   int iStack_10;
+  STAllPlayersC *pSStack_c;
   int iStack_8;
   
   uVar2 = param_1;
   iStack_8 = 0;
   iStack_14 = *(int *)((int)&DAT_007f4f8d + (uint)DAT_0080874d * 0xa62);
   iStack_10 = *(int *)(iStack_14 + 0xc);
-  puVar3 = (undefined2 *)FUN_006aac70(0xc);
+  puVar3 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(0xc);
   if (param_1 < 0x1001) {
     if (param_1 == 0x1000) {
       *puVar3 = 0x201;
@@ -221,8 +222,10 @@ LAB_0044d710:
     do {
       FUN_006acc70(iStack_14,param_1,&uStack_18);
       if (((short)uStack_18 != -1) &&
-         (piVar4 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                             uStack_18,1), piVar4 != (int *)0x0)) {
+         (piVar4 = (int *)STAllPlayersC::GetObjPtr
+                                    (pSStack_c,
+                                     CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
+                                     uStack_18,1), piVar4 != (int *)0x0)) {
         if (uVar2 < 0x1001) {
           if (uVar2 == 0x1000) {
 switchD_0044d78f_caseD_28:

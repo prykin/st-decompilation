@@ -58,7 +58,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             cVar1 = *pcVar7;
             pcVar7 = pcVar7 + 1;
           } while (cVar1 != '\0');
-          local_c = (char *)FUN_006aac10(~uVar3 + ~uVar4);
+          local_c = (char *)Library::DKW::LIB::FUN_006aac10(~uVar3 + ~uVar4);
           uVar3 = 0xffffffff;
           pcVar7 = local_8;
           do {
@@ -113,7 +113,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             pcVar8 = pcVar8 + 1;
           }
           FUN_006b7830(*(int *)((int)this + 0x138),uVar6);
-          FUN_006b6020(*(int *)((int)this + 0x138),uVar6 - 1,local_c);
+          Library::DKW::TBL::FUN_006b6020(*(int *)((int)this + 0x138),uVar6 - 1,local_c);
           FUN_006ab060(&local_c);
           FUN_00721080(this,~uVar3 - 1,uVar6 - 1);
           return;
@@ -143,7 +143,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             cVar1 = *pcVar7;
             pcVar7 = pcVar7 + 1;
           } while (cVar1 != '\0');
-          local_c = (char *)FUN_006aac10(~uVar3 + ~uVar4);
+          local_c = (char *)Library::DKW::LIB::FUN_006aac10(~uVar3 + ~uVar4);
           uVar3 = 0xffffffff;
           pcVar7 = local_10;
           do {
@@ -198,7 +198,7 @@ void __thiscall FUN_00721520(void *this,int param_1,uint param_2)
             pcVar8 = pcVar8 + 1;
           }
           FUN_006b7830(*(int *)((int)this + 0x138),uVar6 + 1);
-          FUN_006b6020(*(int *)((int)this + 0x138),uVar6,local_c);
+          Library::DKW::TBL::FUN_006b6020(*(int *)((int)this + 0x138),uVar6,local_c);
           FUN_006ab060(&local_c);
           FUN_00721080(this,param_1,param_2);
           return;

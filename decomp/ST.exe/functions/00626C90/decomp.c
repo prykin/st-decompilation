@@ -20,7 +20,7 @@ void __thiscall FUN_00626c90(void *this,char *param_1)
   iVar3 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
   param_1[7] = (char)iVar3;
   *(undefined4 *)(param_1 + 8) = *(undefined4 *)((int)this + 0x18);
-  _strncpy(param_1 + 0xc,(char *)((int)this + 0x28e),0xe);
+  Library::MSVCRT::_strncpy(param_1 + 0xc,(char *)((int)this + 0x28e),0xe);
   param_1[0x1b] = 'd';
   param_1[0x2a] = '\0';
   param_1[0x2b] = '\0';

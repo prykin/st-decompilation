@@ -3,17 +3,17 @@ void __thiscall
 StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int param_3)
 
 {
-  StartSystemTy *pSVar1;
+  SystemClassTy **ppSVar1;
   code *pcVar2;
-  StartSystemTy *pSVar3;
-  int iVar4;
-  uint *puVar5;
-  undefined2 *puVar6;
-  undefined4 uVar7;
-  uint uVar8;
-  char *pcVar9;
-  int iVar10;
-  uint uVar11;
+  SystemClassTy *this_00;
+  int iVar3;
+  uint *puVar4;
+  undefined2 *puVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  char *pcVar8;
+  int iVar9;
+  uint uVar10;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame IStack_70;
@@ -21,22 +21,22 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
   undefined4 uStack_1c;
   undefined4 uStack_18;
   uint *puStack_c;
-  StartSystemTy *pSStack_8;
+  SystemClassTy *pSStack_8;
   
   IStack_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_70;
-  pSStack_8 = this;
-  iVar4 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar4 != 0) {
+  pSStack_8 = (SystemClassTy *)this;
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_70.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x26b,0,iVar4,
-                                &DAT_007a4ccc,s_StartSystemTy__SetObjectives_007cd808);
-    if (iVar10 != 0) {
+    iVar9 = ReportDebugMessage(s_E____titans_Start_startsys_cpp_007cd718,0x26b,0,iVar3,&DAT_007a4ccc
+                               ,s_StartSystemTy__SetObjectives_007cd808);
+    if (iVar9 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_startsys_cpp_007cd718,0x26b);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_startsys_cpp_007cd718,0x26b);
     return;
   }
   if (param_1 != 0) {
@@ -45,7 +45,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
     }
     DAT_0080c4c7 = FUN_0071aa10(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
-      DAT_0080c4c7 = FUN_006b54f0((uint *)0x0,10,10);
+      DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
@@ -54,97 +54,100 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
       DAT_0080c4cb = FUN_0071aa10(param_1,param_2,0);
     }
     if (DAT_0080c4cb == (uint *)0x0) {
-      DAT_0080c4cb = FUN_006b54f0((uint *)0x0,10,10);
+      DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
-    pSVar3 = pSStack_8;
-    if (*(byte **)(pSStack_8 + 0x548) != (byte *)0x0) {
-      FUN_006b5570(*(byte **)(pSStack_8 + 0x548));
+    this_00 = pSStack_8;
+    if (pSStack_8[0x2a].nextMessages != (byte *)0x0) {
+      FUN_006b5570(pSStack_8[0x2a].nextMessages);
     }
-    puVar5 = FUN_006b54f0((uint *)0x0,10,10);
-    *(uint **)(pSVar3 + 0x548) = puVar5;
-    iVar4 = 0;
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+    this_00[0x2a].nextMessages = puVar4;
+    iVar3 = 0;
     if (0 < (int)DAT_0080c4cb[2]) {
       if ((int)DAT_0080c4cb[2] < 1) {
-        pcVar9 = (char *)0x0;
+        pcVar8 = (char *)0x0;
         goto LAB_005dc828;
       }
       do {
-        pcVar9 = *(char **)(DAT_0080c4cb[5] + iVar4 * 4);
+        pcVar8 = *(char **)(DAT_0080c4cb[5] + iVar3 * 4);
 LAB_005dc828:
-        thunk_FUN_005411a0(*(int *)(pSVar3 + 0x548),pcVar9,s_____s_007c72b4);
-        iVar4 = iVar4 + 1;
-      } while (iVar4 < (int)DAT_0080c4cb[2]);
+        thunk_FUN_005411a0((int)this_00[0x2a].nextMessages,pcVar8,s_____s_007c72b4);
+        iVar3 = iVar3 + 1;
+      } while (iVar3 < (int)DAT_0080c4cb[2]);
     }
-    iVar4 = *(int *)(pSVar3 + 0x34);
-    *(undefined4 *)(iVar4 + 0x7e) = 1;
-    puVar6 = (undefined2 *)(iVar4 + 0x9e);
-    *puVar6 = 0;
-    *(undefined1 *)puVar6 = DAT_007cc854;
+    iVar3 = this_00[1].systemId;
+    *(undefined4 *)(iVar3 + 0x7e) = 1;
+    puVar5 = (undefined2 *)(iVar3 + 0x9e);
+    *puVar5 = 0;
+    *(undefined1 *)puVar5 = DAT_007cc854;
     puStack_c = ccFntTy::FormIndentSarr
-                          (*(ccFntTy **)(pSVar3 + 0x34),*(int *)(pSVar3 + 0x548),
+                          ((ccFntTy *)this_00[1].systemId,(int)this_00[0x2a].nextMessages,
                            (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,
-                           *(int *)(*(int *)(pSVar3 + 0x544) + 4) + -0x14,0,0xffffffff,(char *)0x0,1
-                          );
-    if (*(byte **)(pSVar3 + 0x548) != (byte *)0x0) {
-      FUN_006b5570(*(byte **)(pSVar3 + 0x548));
+                           *(int *)((int)this_00[0x2a].messages + 4) + -0x14,0,0xffffffff,
+                           (char *)0x0,1);
+    if (this_00[0x2a].nextMessages != (byte *)0x0) {
+      FUN_006b5570(this_00[0x2a].nextMessages);
     }
-    puVar5 = FUN_006b54f0((uint *)0x0,10,10);
-    *(uint **)(pSVar3 + 0x548) = puVar5;
-    pSVar1 = pSVar3 + 0x3c;
-    uVar7 = FUN_006b0140(0x2347,DAT_00807618);
-    wsprintfA((LPSTR)pSVar1,s__2__s__007cd800,uVar7);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),(char *)pSVar1);
-    wsprintfA((LPSTR)pSVar1,s__0__s_007cd7f8,&DAT_0080c3c3);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),(char *)pSVar1);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),&DAT_007c3b5c);
-    uVar8 = DAT_008087c4 & 0xffff;
-    uVar11 = (uint)DAT_008087c2;
-    uVar7 = FUN_006b0140(0x2344,DAT_00807618);
-    wsprintfA((LPSTR)pSVar1,s__2__s___0_d_2x_0_d_007cd7e0,uVar7,uVar11,uVar8);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),(char *)pSVar1);
-    uVar8 = DAT_008087c4 >> 0x10 & 0xff;
-    uVar7 = FUN_006b0140(0x2345,DAT_00807618);
-    wsprintfA((LPSTR)pSVar1,s__2__s___0_d_007cd7d0,uVar7,uVar8);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),(char *)pSVar1);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),&DAT_007c3b5c);
-    uVar7 = FUN_006b0140(0x2346,DAT_00807618);
-    wsprintfA((LPSTR)pSVar1,s__2__s__007cd800,uVar7);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),(char *)pSVar1);
-    FUN_006b5aa0(*(int *)(pSVar3 + 0x548),&DAT_007c3b5c);
-    puVar5 = puStack_c;
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+    this_00[0x2a].nextMessages = puVar4;
+    ppSVar1 = &this_00[1].parentSystem;
+    uVar6 = FUN_006b0140(0x2347,DAT_00807618);
+    wsprintfA((LPSTR)ppSVar1,s__2__s__007cd800,uVar6);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,(char *)ppSVar1);
+    wsprintfA((LPSTR)ppSVar1,s__0__s_007cd7f8,&DAT_0080c3c3);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,(char *)ppSVar1);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,&DAT_007c3b5c);
+    uVar7 = DAT_008087c4 & 0xffff;
+    uVar10 = (uint)DAT_008087c2;
+    uVar6 = FUN_006b0140(0x2344,DAT_00807618);
+    wsprintfA((LPSTR)ppSVar1,s__2__s___0_d_2x_0_d_007cd7e0,uVar6,uVar10,uVar7);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,(char *)ppSVar1);
+    uVar7 = DAT_008087c4 >> 0x10 & 0xff;
+    uVar6 = FUN_006b0140(0x2345,DAT_00807618);
+    wsprintfA((LPSTR)ppSVar1,s__2__s___0_d_007cd7d0,uVar6,uVar7);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,(char *)ppSVar1);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,&DAT_007c3b5c);
+    uVar6 = FUN_006b0140(0x2346,DAT_00807618);
+    wsprintfA((LPSTR)ppSVar1,s__2__s__007cd800,uVar6);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,(char *)ppSVar1);
+    Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,&DAT_007c3b5c);
+    puVar4 = puStack_c;
     if (puStack_c != (uint *)0x0) {
       if (puStack_c[2] != 0) {
-        ccFntTy::SepColorStrInSarr(*(ccFntTy **)(pSVar3 + 0x34),puStack_c,puStack_c);
+        ccFntTy::SepColorStrInSarr((ccFntTy *)this_00[1].systemId,puStack_c,puStack_c);
       }
-      iVar4 = 0;
-      if (0 < (int)puVar5[2]) {
-        if ((int)puVar5[2] < 1) {
-          pcVar9 = (char *)0x0;
+      iVar3 = 0;
+      if (0 < (int)puVar4[2]) {
+        if ((int)puVar4[2] < 1) {
+          pcVar8 = (char *)0x0;
           goto LAB_005dca07;
         }
         do {
-          pcVar9 = *(char **)(puVar5[5] + iVar4 * 4);
+          pcVar8 = *(char **)(puVar4[5] + iVar3 * 4);
 LAB_005dca07:
-          FUN_006b5aa0(*(int *)(pSVar3 + 0x548),pcVar9);
-          iVar4 = iVar4 + 1;
-        } while (iVar4 < (int)puVar5[2]);
+          Library::DKW::TBL::FUN_006b5aa0((int)this_00[0x2a].nextMessages,pcVar8);
+          iVar3 = iVar3 + 1;
+        } while (iVar3 < (int)puVar4[2]);
       }
-      FUN_006b5570((byte *)puVar5);
+      FUN_006b5570((byte *)puVar4);
     }
+    iVar3 = *(int *)((int)&this_00[0x1c].nextMessages + 1);
     uStack_1c = 0x28;
-    uStack_18 = CONCAT22(*(undefined2 *)(*(int *)(pSVar3 + 0x548) + 8),1);
-    if (*(int *)(pSVar3 + 0x389) != 0) {
-      FUN_006e5970(2,*(int *)(pSVar3 + 0x389),(int)auStack_2c);
+    uStack_18 = CONCAT22(*(undefined2 *)((int)this_00[0x2a].nextMessages + 8),1);
+    if (iVar3 != 0) {
+      SystemClassTy::SendMessage(this_00,2,iVar3,(int)auStack_2c);
     }
+    iVar3 = *(int *)((int)&this_00[0x1c].nextMessages + 1);
     uStack_1c = 0x22;
     uStack_18 = 0;
-    if (*(int *)(pSVar3 + 0x389) != 0) {
-      FUN_006e5970(2,*(int *)(pSVar3 + 0x389),(int)auStack_2c);
+    if (iVar3 != 0) {
+      SystemClassTy::SendMessage(this_00,2,iVar3,(int)auStack_2c);
     }
     uStack_1c = 0x20;
     uStack_18 = (uint)(param_3 != 0);
-    if (*(int *)(pSVar3 + 0x389) != 0) {
-      FUN_006e5970(2,*(int *)(pSVar3 + 0x389),(int)auStack_2c);
+    iVar3 = *(int *)((int)&this_00[0x1c].nextMessages + 1);
+    if (iVar3 != 0) {
+      SystemClassTy::SendMessage(this_00,2,iVar3,(int)auStack_2c);
     }
   }
   g_currentExceptionFrame = IStack_70.previous;

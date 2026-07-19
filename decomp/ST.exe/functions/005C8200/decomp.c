@@ -29,7 +29,7 @@ void FUN_005c8200(void)
   
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
-  iVar2 = __setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_7c.previous;
     if (DAT_0080877e != '\0') {
@@ -65,7 +65,7 @@ void FUN_005c8200(void)
     puVar10 = puVar10 + 1;
   }
   local_8 = (SettMapTy *)&DAT_008087b6;
-  puVar4 = FUN_006f1ce0(0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
+  puVar4 = cMf32::RecGet(*(cMf32 **)(local_c + 7999),0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x45a);
   }
@@ -92,14 +92,14 @@ void FUN_005c8200(void)
   }
   DAT_0080c4c7 = FUN_0071aa10(*(int *)(local_c + 7999),PTR_s_DESCRIPTION_0079c108,0);
   if (DAT_0080c4c7 == (uint *)0x0) {
-    DAT_0080c4c7 = FUN_006b54f0((uint *)0x0,10,10);
+    DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
   if (DAT_0080c4cb != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4cb);
   }
   DAT_0080c4cb = FUN_0071aa10(*(int *)(local_c + 7999),PTR_s_OBJECTIVES_0079c10c,0);
   if (DAT_0080c4cb == (uint *)0x0) {
-    DAT_0080c4cb = FUN_006b54f0((uint *)0x0,10,10);
+    DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
   puVar3 = &DAT_0080c3c3;
   for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -107,9 +107,10 @@ void FUN_005c8200(void)
     puVar3 = puVar3 + 1;
   }
   local_8 = (SettMapTy *)&DAT_0080c3c3;
-  puVar4 = FUN_006f1ce0(0xc,PTR_s_TITLE_MISSION_0079c104,(int *)&local_8,0);
+  puVar4 = cMf32::RecGet(*(cMf32 **)(local_c + 7999),0xc,PTR_s_TITLE_MISSION_0079c104,
+                         (int *)&local_8,0);
   if ((puVar4 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
-    FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_218,(byte *)0x0);
+    Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_218,(byte *)0x0);
     uVar6 = 0xffffffff;
     pbVar8 = local_218;
     do {
@@ -135,12 +136,14 @@ void FUN_005c8200(void)
     }
   }
   local_8 = (SettMapTy *)&DAT_00853de0;
-  puVar4 = FUN_006f1ce0(0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&local_8,0);
+  puVar4 = cMf32::RecGet(*(cMf32 **)(local_c + 7999),0xc,PTR_s_GENERATE_RND_0079c0f8,(int *)&local_8
+                         ,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x475);
   }
   local_8 = local_c + 0x1f53;
-  puVar4 = FUN_006f1ce0(0xc,PTR_s_INTERFACE_RND_0079c0fc,(int *)&local_8,0);
+  puVar4 = cMf32::RecGet(*(cMf32 **)(local_c + 7999),0xc,PTR_s_INTERFACE_RND_0079c0fc,
+                         (int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x477);
   }
@@ -155,7 +158,7 @@ void FUN_005c8200(void)
     wsprintfA((LPSTR)&local_18,&DAT_007cc584,DAT_0080995c);
     *(undefined4 *)(local_c + 0x1a82) = local_18;
     *(undefined4 *)(local_c + 0x1a86) = local_14;
-    _strncpy((char *)(local_c + 0x1a8a),(char *)&DAT_0080c3c3,0x1d5);
+    Library::MSVCRT::_strncpy((char *)(local_c + 0x1a8a),(char *)&DAT_0080c3c3,0x1d5);
     local_c[0x1c5e] = (SettMapTy)0x0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,(char *)(local_c + 0x1a5f));
   }

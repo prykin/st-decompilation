@@ -23,7 +23,7 @@ FUN_006e6200(void *this,int param_1,undefined4 *param_2,undefined4 *param_3,int 
       return uVar3;
     }
   }
-  param_2 = (undefined4 *)FUN_006e54b0(param_1,param_3,param_4,param_6);
+  param_2 = (undefined4 *)SystemClassTy::_CreateObject(this,param_1,param_3,param_4,param_6);
   if (param_2 != (undefined4 *)0x0) {
     param_2[6] = puVar4;
     if (*(undefined4 **)((int)this + 0x20) <= puVar4) {

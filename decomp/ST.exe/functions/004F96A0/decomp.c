@@ -33,7 +33,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
-    iVar4 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar3 = local_10;
     if (iVar4 == 0) {
       iVar4 = *(int *)(local_10 + 0x24b);
@@ -60,11 +60,11 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
           case 2:
             if (*(int **)(pCVar3 + 0x1d8) != (int *)0x0) {
               FUN_00714060(*(int **)(pCVar3 + 0x1d8));
-              FUN_0072e2b0(*(undefined4 **)(pCVar3 + 0x1d8));
+              Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pCVar3 + 0x1d8));
               *(undefined4 *)(pCVar3 + 0x1d8) = 0;
             }
             FUN_006b4170(*(int *)(pCVar3 + 0x1b4),0,100,5,0x226,0x55,0);
-            local_8 = FUN_006b54f0((uint *)0x0,10,10);
+            local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
             if (*(int *)(puVar12 + 10) < 1) {
               local_c = *(char **)(DAT_0080c4c7 + 8);
             }
@@ -92,7 +92,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
               FUN_006b5570((byte *)local_8);
             }
             if (puVar5 == (uint *)0x0) {
-              puVar5 = FUN_006b54f0((uint *)0x0,1,1);
+              puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
             }
             local_8 = puVar5;
             if (puVar12[5] == '\0') {
@@ -111,7 +111,7 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             else {
               ccFntTy::SetSurf(*(ccFntTy **)(pCVar3 + 0x1d4),*(int *)(pCVar3 + 0x1b4),0,100,5,0x226,
                                0x55);
-              this_00 = (cTypingTy *)FUN_0072e530(0xb4);
+              this_00 = (cTypingTy *)Library::MSVCRT::FUN_0072e530(0xb4);
               if (this_00 == (cTypingTy *)0x0) {
                 this_00 = (cTypingTy *)0x0;
               }
@@ -180,11 +180,11 @@ LAB_004f9a8a:
               _Count = 0x1f;
               if (puVar12[10] == '\0') {
                 pcVar7 = (char *)thunk_FUN_005260b0(*(int *)(puVar12 + 5),puVar12[9],0);
-                _strncpy((char *)(pCVar3 + 0x265),pcVar7,_Count);
+                Library::MSVCRT::_strncpy((char *)(pCVar3 + 0x265),pcVar7,_Count);
                 pCVar3[0x285] = (CPanelTy)0x1;
               }
               else {
-                _strncpy((char *)(pCVar3 + 0x265),puVar12 + 10,0x1f);
+                Library::MSVCRT::_strncpy((char *)(pCVar3 + 0x265),puVar12 + 10,0x1f);
                 pCVar3[0x285] = (CPanelTy)0x0;
               }
               pCVar3[0x284] = (CPanelTy)0x0;

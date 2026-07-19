@@ -38,7 +38,7 @@ ccFntTy::GetFittingStr
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
   local_1c = this;
-  iVar5 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_60.previous;
     iVar6 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x93f,0,iVar5,&DAT_007a4ccc,
@@ -121,7 +121,7 @@ ccFntTy::GetFittingStr
         uVar3 = *puVar10;
         puVar10 = (uint *)((int)puVar10 + 1);
       } while ((char)uVar3 != '\0');
-      param_1 = (char *)FUN_006aac10(~uVar9 + uVar8);
+      param_1 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar9 + uVar8);
     }
     uVar8 = 0xffffffff;
     do {
@@ -192,7 +192,7 @@ ccFntTy::GetFittingStr
         uVar9 = *puVar10;
         puVar10 = (uint *)((int)puVar10 + 1);
       } while ((char)uVar9 != '\0');
-      param_1 = (char *)FUN_006aac10(~uVar8);
+      param_1 = (char *)Library::DKW::LIB::FUN_006aac10(~uVar8);
     }
     uVar8 = 0xffffffff;
     do {

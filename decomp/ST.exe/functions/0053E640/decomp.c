@@ -10,6 +10,9 @@ void __thiscall SpecPanelTy::DonePanel(SpecPanelTy *this)
   SpecPanelTy *pSVar2;
   int errorCode;
   int iVar3;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *this_00;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
@@ -18,15 +21,17 @@ void __thiscall SpecPanelTy::DonePanel(SpecPanelTy *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   pSVar2 = local_8;
   if (errorCode == 0) {
+    this_00 = extraout_ECX;
     if (*(uint *)(local_8 + 0x17c) != 0) {
       FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x17c));
+      this_00 = extraout_ECX_00;
     }
     *(undefined4 *)(pSVar2 + 0x17c) = 0;
     if (*(uint **)(pSVar2 + 0x189) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pSVar2 + 0x189));
+      ccFntTy::operator(this_00,*(uint **)(pSVar2 + 0x189));
       *(undefined4 *)(pSVar2 + 0x189) = 0;
     }
     if (*(int *)(pSVar2 + 0x185) != 0) {

@@ -36,7 +36,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar7 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_60.previous;
@@ -120,7 +120,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       return 0;
     }
     thunk_FUN_006366d0(*(int *)(this_00 + 0x363));
-    FUN_0072e2b0(*(undefined4 **)(this_00 + 0x363));
+    Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x363));
     *(undefined4 *)(this_00 + 0x363) = 0;
     g_currentExceptionFrame = local_60.previous;
     return 0;
@@ -197,7 +197,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     if ((*(int **)(this_00 + 0x363) != (int *)0x0) &&
        (iVar7 = thunk_FUN_006372e0(*(int **)(this_00 + 0x363)), iVar7 != 0)) {
       thunk_FUN_006366d0(*(int *)(this_00 + 0x363));
-      FUN_0072e2b0(*(undefined4 **)(this_00 + 0x363));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x363));
       *(undefined4 *)(this_00 + 0x363) = 0;
     }
     if (this_00[0x359] == (STMineSetC)0x0) {

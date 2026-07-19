@@ -1,4 +1,4 @@
-FUN_00555fe0:
+TraksClassTy::PrepareToSave:
 00555FE0  55                        PUSH EBP
 00555FE1  8B EC                     MOV EBP,ESP
 00555FE3  83 EC 54                  SUB ESP,0x54

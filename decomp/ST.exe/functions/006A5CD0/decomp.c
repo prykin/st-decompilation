@@ -14,7 +14,7 @@ undefined4 FUN_006a5cd0(void)
   if (((local_24 == 0) && (local_30 == 0)) && (((DAT_007ec178 & 0x10) == 0 || (local_2c == 0)))) {
     return 0;
   }
-  iVar2 = FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
+  iVar2 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,&DAT_007a4ccc);
   if (iVar2 == 1) {
     pcVar1 = (code *)swi(3);
     uVar3 = (*pcVar1)();

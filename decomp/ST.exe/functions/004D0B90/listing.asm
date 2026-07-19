@@ -1,4 +1,4 @@
-FUN_004d0b90:
+TLOFakeTy::GetMessage:
 004D0B90  55                        PUSH EBP
 004D0B91  8B EC                     MOV EBP,ESP
 004D0B93  83 EC 4C                  SUB ESP,0x4c

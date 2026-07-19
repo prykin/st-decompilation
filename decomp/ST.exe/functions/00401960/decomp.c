@@ -65,7 +65,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   }
   IStack_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_ac;
-  iVar8 = __setjmp3(IStack_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(IStack_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pBStack_18;
   if (iVar8 != 0) {
     g_currentExceptionFrame = IStack_ac.previous;

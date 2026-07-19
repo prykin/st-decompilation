@@ -1,5 +1,9 @@
 
-undefined4 FUN_00442b40(undefined4 *param_1,uint param_2)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::_SubMDObject */
+
+undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
 
 {
   ushort uVar1;
@@ -9,6 +13,7 @@ undefined4 FUN_00442b40(undefined4 *param_1,uint param_2)
   uint uVar4;
   int iVar5;
   undefined4 uVar6;
+  STAllPlayersC *in_ECX;
   short local_50;
   short local_4e;
   short local_4c;
@@ -30,7 +35,7 @@ undefined4 FUN_00442b40(undefined4 *param_1,uint param_2)
   local_2c[1] = 0x39;
   local_2c[2] = 0x4f;
   local_2c[3] = 0x5e;
-  this = (int *)thunk_FUN_0042b620((uint)param_1,param_2,1);
+  this = (int *)GetObjPtr(in_ECX,(uint)param_1,param_2,1);
   local_14 = this;
   uVar4 = (**(code **)(*this + 0x2c))();
   local_c = 0;
@@ -64,7 +69,7 @@ undefined4 FUN_00442b40(undefined4 *param_1,uint param_2)
                  (((local_4e == local_6 && (local_4c == local_8)) && (local_4a == local_1c)))) {
                 local_42 = -1;
                 local_4a = -1;
-                FUN_006ae140(puVar2,uVar4,(undefined4 *)&local_50);
+                Library::DKW::TBL::FUN_006ae140(puVar2,uVar4,(undefined4 *)&local_50);
                 local_c = 1;
               }
               uVar4 = uVar4 + 1;
@@ -94,7 +99,7 @@ undefined4 FUN_00442b40(undefined4 *param_1,uint param_2)
               ((local_46 == local_6 && (local_44 == local_8)))) && (local_42 == local_1c)) {
             local_42 = -1;
             local_4a = -1;
-            FUN_006ae140(puVar2,uVar4,(undefined4 *)&local_50);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar4,(undefined4 *)&local_50);
             local_c = 1;
           }
           uVar4 = uVar4 + 1;

@@ -18,10 +18,10 @@ int __cdecl thunk_FUN_00552f50(int param_1)
   }
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
-  iVar1 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
     iVar1 = param_1 * 2 + 1;
-    iStack_8 = FUN_006aac70(iVar1 * iVar1);
+    iStack_8 = Library::DKW::LIB::FUN_006aac70(iVar1 * iVar1);
     iStack_10 = 0;
     iStack_c = 0;
     if (0 < iVar1) {

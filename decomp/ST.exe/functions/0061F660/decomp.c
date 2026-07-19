@@ -22,7 +22,7 @@ undefined4 __thiscall SndUnderAttMenegC::GetMessage(SndUnderAttMenegC *this,int 
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E____titans_nick_to_manag_Cpp_007d020c,0x6e,0,iVar3,&DAT_007a4ccc,

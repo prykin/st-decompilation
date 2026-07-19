@@ -1,4 +1,4 @@
-FUN_0071e8b0:
+ViewerClassTy::GetMessage:
 0071E8B0  55                        PUSH EBP
 0071E8B1  8B EC                     MOV EBP,ESP
 0071E8B3  83 EC 6C                  SUB ESP,0x6c

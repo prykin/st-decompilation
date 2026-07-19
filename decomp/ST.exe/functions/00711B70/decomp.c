@@ -32,7 +32,7 @@ ccFntTy::WrTxt(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
   local_18 = this;
-  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_18;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_64.previous;
@@ -75,7 +75,7 @@ ccFntTy::WrTxt(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
   local_10 = 0;
   cVar1 = (char)*param_1;
   while (cVar1 != '\0') {
-    local_20 = FUN_00730590(param_1,&DAT_007c8ff4);
+    local_20 = Library::MSVCRT::FUN_00730590(param_1,&DAT_007c8ff4);
     if (local_20 != (uint *)0x0) {
       local_5 = (undefined1)*local_20;
       *(undefined1 *)local_20 = 0;

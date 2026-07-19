@@ -97,7 +97,7 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
   ExceptionList = &local_14;
   local_d4 = param_1 * param_2;
   FUN_006ab060((undefined4 *)((int)this + 0x584b));
-  puVar8 = (undefined4 *)FUN_006aac70(param_1 * param_2);
+  puVar8 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_1 * param_2);
   *(undefined4 *)((int)this + 0x584b) = puVar8;
   uVar14 = *(uint *)((int)this + 0x582f);
   for (uVar13 = uVar14 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
@@ -110,17 +110,17 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
   }
   thunk_FUN_006948e0(this,*(int *)((int)this + 0x5833));
   local_8 = 0;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   iVar16 = local_d4;
   local_b4 = &stack0xfffffe98;
   local_1c = &stack0xfffffe98;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_9c = &stack0xfffffe98;
   local_1c = &stack0xfffffe98;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_94 = &stack0xfffffe98;
   local_1c = &stack0xfffffe98;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   local_dc = 0;
   local_3c = &stack0xfffffe98;
@@ -239,9 +239,9 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
         local_11c = iVar9;
         local_50 = iVar15;
         do {
-          uVar14 = FUN_0072e6c0();
+          uVar14 = Library::MSVCRT::FUN_0072e6c0();
           iVar17 = (int)uVar14 % iVar16;
-          uVar14 = FUN_0072e6c0();
+          uVar14 = Library::MSVCRT::FUN_0072e6c0();
           iVar15 = (int)uVar14 % iVar16;
           iVar9 = FUN_006acf90((int)*(short *)(local_b4 + iVar17 * 10),
                                (int)*(short *)((int)(local_b4 + iVar17 * 10) + 2),
@@ -267,14 +267,14 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
         uStack_12a = 0xde;
         local_128 = 0;
         local_126 = 0;
-        FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
         local_8c = local_8c + 1;
         local_134 = *(uint *)(puVar6 + local_58 * 10);
         local_130 = local_130 & 0xffff0000;
         uStack_12a = 0xdd;
         local_128 = 0;
         local_126 = 0;
-        FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
         local_118 = local_118 + 2;
         local_f4 = 0;
         iVar16 = 0;
@@ -325,22 +325,22 @@ FUN_006991c0(void *this,int param_1,int param_2,int param_3,int param_4,uint par
     *(int *)(param_8 + 8) = local_118;
     if (0 < param_4) {
       local_8 = 1;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_a8 = &stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_24 = &stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_10c = (undefined4 *)&stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_e4 = (undefined4 *)&stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_110 = &stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_8 = 0xffffffff;
       local_dc = 0;
       local_108 = &stack0xfffffe98;
@@ -484,9 +484,9 @@ LAB_0069999c:
               local_48 = 0;
               local_58 = 0;
               do {
-                uVar14 = FUN_0072e6c0();
+                uVar14 = Library::MSVCRT::FUN_0072e6c0();
                 local_4c = (int)uVar14 % local_144;
-                uVar13 = FUN_0072e6c0();
+                uVar13 = Library::MSVCRT::FUN_0072e6c0();
                 local_5c = (int)uVar13 % local_144;
                 iVar17 = ((int)uVar13 % local_144) * 10;
                 iVar9 = ((int)uVar14 % local_144) * 10;
@@ -565,7 +565,7 @@ LAB_00699f26:
                 uStack_12a = 0xdd;
                 local_128 = 0;
                 local_126 = 1;
-                FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+                Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
                 iVar9 = local_58;
                 local_118 = local_118 + 1;
                 iVar16 = *(int *)(local_108 + iVar16 * 4);
@@ -590,7 +590,7 @@ LAB_00699f26:
                   uStack_12a = 0xde;
                   local_128 = 0;
                   local_126 = 1;
-                  FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+                  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
                   iVar16 = *(int *)(local_108 + iVar9 * 4);
                   local_e4[local_114] = iVar16;
                   *(undefined4 *)(local_9c + iVar16 * 10 + 6) = 0;
@@ -608,16 +608,16 @@ LAB_00699f26:
     local_bc = param_3 - local_118;
     if (0 < local_bc) {
       local_8 = 2;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_120 = (undefined4 *)&stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_a0 = (undefined4 *)&stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_84 = (undefined4 *)&stack0xfffffe98;
       local_1c = &stack0xfffffe98;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_8 = 0xffffffff;
       iVar16 = 0;
       local_b8 = 0;
@@ -665,7 +665,7 @@ LAB_00699f26:
           }
           local_dc = 0;
           do {
-            uVar13 = FUN_0072e6c0();
+            uVar13 = Library::MSVCRT::FUN_0072e6c0();
             iVar16 = (int)uVar13 % local_b8;
             uVar13 = local_a0[iVar16];
             if (uVar13 >> 0x10 != 0) {
@@ -710,12 +710,12 @@ LAB_00699f26:
         } while (0 < local_100);
         if (uVar14 != 0) {
           local_8 = 3;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_ac = (undefined4 *)&stack0xfffffe98;
           local_1c = &stack0xfffffe98;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_1c = &stack0xfffffe98;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           local_dc = 0;
           local_e8 = &stack0xfffffe98;
@@ -775,7 +775,7 @@ LAB_00699f26:
             local_38 = 0;
             if (0 < local_13c) {
               do {
-                uVar13 = FUN_0072e6c0();
+                uVar13 = Library::MSVCRT::FUN_0072e6c0();
                 iVar9 = (int)uVar13 % (int)uVar14;
                 if (puVar8[iVar9] == 0) {
                   puVar8[iVar9] = 0xdd;
@@ -802,7 +802,7 @@ LAB_00699f26:
             iVar16 = 0;
             if (0 < local_90) {
               do {
-                uVar13 = FUN_0072e6c0();
+                uVar13 = Library::MSVCRT::FUN_0072e6c0();
                 iVar9 = (int)uVar13 % (int)uVar14;
                 if (puVar8[iVar9] == 0) {
                   puVar8[iVar9] = 0xde;
@@ -869,7 +869,7 @@ LAB_00699f26:
                                           (uint)*(ushort *)(local_120 + local_20[iVar16]) * 10) + 4)
                                   );
               local_126 = 2;
-              FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
+              Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_8 + 0x1c),&local_134);
               local_118 = local_118 + 1;
               iVar16 = iVar16 + 1;
             } while (iVar16 < (int)uVar14);

@@ -30,7 +30,7 @@ void __thiscall FSGSTy::DelPlayer(FSGSTy *this,byte *param_1)
     local_84.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_84;
     local_10 = this;
-    iVar3 = __setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_84.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_10;
     if (iVar3 == 0) {
       *(undefined4 *)(local_10 + 0x2d) = 0x26;

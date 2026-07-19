@@ -1,4 +1,4 @@
-FUN_006f13f0:
+cMf32::RecPut:
 006F13F0  55                        PUSH EBP
 006F13F1  8B EC                     MOV EBP,ESP
 006F13F3  81 EC A0 01 00 00         SUB ESP,0x1a0

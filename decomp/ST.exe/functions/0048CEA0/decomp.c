@@ -29,7 +29,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_10 = this;
-  iVar3 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_68.previous;
@@ -54,7 +54,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
         else {
-          this_00 = (int *)thunk_FUN_0042b620(local_24,local_20,1);
+          this_00 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,local_24,local_20,1);
           if (this_00 != (int *)0x0) {
             iVar3 = (**(code **)(*this_00 + 0xf8))();
             if (iVar3 == 1) {
@@ -82,7 +82,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
 LAB_0048d016:
-        FUN_006ae140(puVar6,uVar5,&local_24);
+        Library::DKW::TBL::FUN_006ae140(puVar6,uVar5,&local_24);
       }
       iVar3 = *(int *)(pSVar2 + 0x47b);
       uVar5 = uVar5 + 1;

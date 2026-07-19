@@ -18,7 +18,7 @@ undefined4 __thiscall FUN_004dbe00(void *this,int param_1)
         *(undefined4 *)(param_1 + 0x4c0) = 0;
         if (*(int **)(param_1 + 0x61f) != (int *)0x0) {
           thunk_FUN_00635fd0(*(int **)(param_1 + 0x61f));
-          FUN_0072e2b0(*(undefined4 **)(iVar2 + 0x61f));
+          Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(iVar2 + 0x61f));
           *(undefined4 *)(iVar2 + 0x61f) = 0;
         }
       }

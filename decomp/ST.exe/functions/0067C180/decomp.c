@@ -44,7 +44,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;
-    iVar3 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_20;
     if (iVar3 == 0) {
       iVar3 = *(int *)(local_20 + 0x681);
@@ -52,7 +52,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
         if ((iVar3 == 0) ||
            ((uint)(iVar3 * 3 + *(int *)(local_20 + 0x685)) <= *(uint *)(local_20 + 0x6fe))) {
           *(undefined4 *)(local_20 + 0x685) = *(undefined4 *)(local_20 + 0x6fe);
-          puVar4 = FUN_006ae290((uint *)0x0,5,0x10,5);
+          puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
           local_c = puVar4;
           thunk_FUN_0067a240(this_00,&LAB_00403544,puVar4);
           uVar8 = puVar4[3];
@@ -136,7 +136,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                     uVar10 = thunk_FUN_00675430(local_28);
                     local_24 = (undefined2)uVar10;
-                    FUN_006ae1c0(*(uint **)(this_00 + 0x6ad),&local_3c);
+                    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x6ad),&local_3c);
                     iVar3 = local_18;
                   }
                   local_8 = local_8 + 1;
@@ -165,7 +165,7 @@ LAB_0067c61b:
           *(undefined4 *)(local_20 + 0x685) = *(undefined4 *)(local_20 + 0x6fe);
           thunk_FUN_0067be20((int)local_20,uVar8,*(int *)(local_20 + 0x6ad));
           iVar3 = thunk_FUN_0067bd50(*(int *)(this_00 + 0x6ad));
-          puVar11 = FUN_006ae290((uint *)0x0,5,0x10,5);
+          puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
           local_c = puVar11;
           thunk_FUN_0067a240(this_00,&LAB_00403544,puVar11);
           iVar3 = iVar3 + puVar11[3];
@@ -210,7 +210,7 @@ LAB_0067c61b:
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                         uVar10 = thunk_FUN_00675430(local_28);
                         local_24 = (undefined2)uVar10;
-                        FUN_006ae1c0(*(uint **)(this_00 + 0x6ad),&local_3c);
+                        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x6ad),&local_3c);
                         iVar3 = local_18;
                         uVar8 = local_8;
                       }

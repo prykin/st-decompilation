@@ -1,4 +1,4 @@
-FUN_004c3570:
+TLOBaseTy::fireProc:
 004C3570  55                        PUSH EBP
 004C3571  8B EC                     MOV EBP,ESP
 004C3573  83 EC 58                  SUB ESP,0x58

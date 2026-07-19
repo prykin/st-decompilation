@@ -55,10 +55,11 @@ int FUN_006bea40(int *param_1,uint param_2)
   if (DAT_00854fe8 != 0) {
     ExceptionList = &local_14;
     local_1c = &stack0xffffff4c;
-    FUN_006c4630(iVar1,*(int **)(iVar1 + 0x44),local_60);
-    DAT_00854f74 = FUN_006c4880(iVar1,DAT_00854f30,DAT_00854f34,DAT_00854f38,DAT_00854f3c,
-                                *(uint *)(iVar1 + 0x20));
-    FUN_006c44e0(iVar1,local_60);
+    Library::DKW::DDX::FUN_006c4630(iVar1,*(int **)(iVar1 + 0x44),local_60);
+    DAT_00854f74 = Library::DKW::DDX::FUN_006c4880
+                             (iVar1,DAT_00854f30,DAT_00854f34,DAT_00854f38,DAT_00854f3c,
+                              *(uint *)(iVar1 + 0x20));
+    Library::DKW::DDX::FUN_006c44e0(iVar1,local_60);
     ExceptionList = local_14;
     return 0;
   }
@@ -227,7 +228,7 @@ int FUN_006bea40(int *param_1,uint param_2)
   iVar6 = (**(code **)(**(int **)(iVar1 + 0x38) + 0xc))();
   if (iVar6 == 0) {
     local_8 = 0;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     local_78 = &stack0xffffff3c;
     local_1c = &stack0xffffff3c;

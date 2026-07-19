@@ -1,4 +1,4 @@
-FUN_006f17c0:
+cMf32::RecDel:
 006F17C0  55                        PUSH EBP
 006F17C1  8B EC                     MOV EBP,ESP
 006F17C3  81 EC 50 01 00 00         SUB ESP,0x150

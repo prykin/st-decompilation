@@ -43,7 +43,7 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
   
   local_c = 0;
   local_4c = this;
-  FUN_0072e6b0(*(undefined4 *)param_1);
+  Library::MSVCRT::FUN_0072e6b0(*(undefined4 *)param_1);
   pbVar5 = param_1;
   puVar6 = (undefined4 *)((int)this + 0x1c);
   for (iVar4 = 0x8c; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -74,16 +74,16 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
     local_2c = 5;
     local_20 = local_44 / 0x640;
     local_44 = local_44 / 3;
-    local_8 = FUN_006aac70(local_28 * 4);
+    local_8 = Library::DKW::LIB::FUN_006aac70(local_28 * 4);
     puVar6 = local_90;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar6 = 0;
       puVar6 = puVar6 + 1;
     }
-    local_54 = FUN_006ae290((uint *)0x0,10,0x40,10);
-    local_78 = FUN_006ae290((uint *)0x0,10,0x40,10);
-    local_50 = FUN_006ae290((uint *)0x0,local_1c,0xf,10);
-    local_74 = FUN_006ae290((uint *)0x0,local_1c,0xf,10);
+    local_54 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x40,10);
+    local_78 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x40,10);
+    local_50 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_1c,0xf,10);
+    local_74 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_1c,0xf,10);
     local_14 = 0x32;
     while ((0 < local_10 || (local_3c < local_14 + local_48))) {
       local_54[3] = 0;
@@ -146,15 +146,15 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       thunk_FUN_0069b190(this,**(int **)((int)this + 8) << 1,(*(int **)((int)this + 8))[1] << 1,
                          local_34 + -1);
       thunk_FUN_0069ff90((int)this);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       local_6c[3] = thunk_FUN_0069bdc0(this,local_28,10,10,4,0x23,local_8,(int)local_6c);
       thunk_FUN_0069ff90((int)this);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       local_6c[2] = thunk_FUN_006991c0(this,**(int **)((int)this + 8) << 1,
                                        (*(int **)((int)this + 8))[1] << 1,local_1c,local_18,local_28
                                        ,local_8,local_34 + -1,(int)local_6c);
       thunk_FUN_0069ff90((int)this);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00695eb0(this);
       thunk_FUN_0069ff90((int)this);
       bVar3 = thunk_FUN_00695180((int)local_6c,(int)local_90,(int)&local_38,local_c);
@@ -172,16 +172,17 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
     if (local_c == 1) {
       thunk_FUN_00694c80((int)this);
       DAT_00853dd4 = (undefined4 *)
-                     FUN_006aac70((*(int **)((int)this + 8))[1] * **(int **)((int)this + 8) * 0x28);
+                     Library::DKW::LIB::FUN_006aac70
+                               ((*(int **)((int)this + 8))[1] * **(int **)((int)this + 8) * 0x28);
       thunk_FUN_00575640(*(short **)((int)this + 0xc),DAT_00853dd4,(short *)0x1);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_00694cd0(this,(int)local_90);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_006a0470((int)this);
       thunk_FUN_0069ff90((int)this);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       thunk_FUN_0069cb50(this);
-      _DAT_00853dd0 = FUN_0072e6c0();
+      _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
       iVar4 = **(int **)((int)this + 8);
       iVar1 = (*(int **)((int)this + 8))[1];
       thunk_FUN_0069f160(this,iVar4 * 2,iVar1 * 2,local_34,(iVar4 * iVar1 * 4) / 100);
@@ -192,14 +193,14 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       }
       local_d4.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_d4;
-      iVar4 = __setjmp3(local_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(local_d4.jumpBuffer,0,unaff_EDI,unaff_ESI);
       pvVar2 = local_4c;
       if (iVar4 == 0) {
         if (param_2 != (byte *)0x0) {
-          FUN_006f13f0(0xc,PTR_s_GENERATE_RND_0079d774,param_1,0x232,(undefined4 *)0x0,'\0',
-                       (uint *)0x0);
-          FUN_006f13f0(0xc,PTR_s_INTERFACE_RND_0079d778,param_2,0xd,(undefined4 *)0x0,'\0',
-                       (uint *)0x0);
+          cMf32::RecPut(*(cMf32 **)((int)local_4c + 0x18),0xc,PTR_s_GENERATE_RND_0079d774,param_1,
+                        0x232,(undefined4 *)0x0,'\0',(uint *)0x0);
+          cMf32::RecPut(*(cMf32 **)((int)pvVar2 + 0x18),0xc,PTR_s_INTERFACE_RND_0079d778,param_2,0xd
+                        ,(undefined4 *)0x0,'\0',(uint *)0x0);
           thunk_FUN_0069ff90((int)pvVar2);
         }
         g_currentExceptionFrame = local_d4.previous;

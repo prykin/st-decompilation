@@ -21,7 +21,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pSStack_c = this;
-  errorCode = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_c;
   if (errorCode == 0) {
     if (*(int *)(pSStack_c + 0x33a) == -1) {

@@ -11,7 +11,7 @@ FUN_006e88c0(void *this,int *param_1,undefined4 param_2,undefined4 param_3,undef
   iVar1 = FUN_006e8660(this,param_1,0,0,0,0,0,0,0);
   if (iVar1 == 0) {
     iVar1 = *(int *)((int)this + 0x31c) + *param_1 * 0x114;
-    puVar2 = (undefined4 *)FUN_006aac70(0x49);
+    puVar2 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x49);
     *(undefined4 **)(iVar1 + 0xa0) = puVar2;
     if (puVar2 == (undefined4 *)0x0) {
       return -2;

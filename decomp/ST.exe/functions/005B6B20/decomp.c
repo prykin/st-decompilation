@@ -18,7 +18,7 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = (MMObjTy *)this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   this_00 = local_8;
   if (errorCode == 0) {
     *(MMObjTy **)(DAT_0081176c + 0x2e6) = local_8;

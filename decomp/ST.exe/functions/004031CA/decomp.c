@@ -14,7 +14,7 @@ void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pIStack_8 = this;
-  iVar3 = __setjmp3(auStack_48,0,unaff_ESI,pIVar5);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar5);
   pIVar2 = pIStack_8;
   if (iVar3 == 0) {
     FUN_006b1a50(DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)(pIStack_8 + 0x188));

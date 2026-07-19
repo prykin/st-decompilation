@@ -27,7 +27,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
   IStack_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_70;
   pCStack_28 = this;
-  iVar3 = __setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_28;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_70.previous;

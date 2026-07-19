@@ -20,7 +20,7 @@ undefined4 * __thiscall cMf32::RecKeyGetPrev(cMf32 *this,undefined4 *param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     iVar4 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x35a,0,iVar2,&DAT_007a4ccc,

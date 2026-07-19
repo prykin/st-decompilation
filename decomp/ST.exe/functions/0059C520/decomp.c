@@ -18,7 +18,7 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   pFVar2 = local_8;
   if (errorCode == 0) {
     switch(local_8[0x1a5f]) {

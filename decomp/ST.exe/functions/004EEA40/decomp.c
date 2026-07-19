@@ -60,7 +60,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  iVar8 = __setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar8 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_1c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_b8.previous;
@@ -78,25 +78,25 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   DAT_0080167c = (ProdPanelTy *)local_1c;
   pPVar11 = (ProdPanelTy *)(local_1c + 0x27a);
   do {
-    puVar3 = FUN_006ae290((uint *)0x0,10,0x30,5);
+    puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
     *(uint **)pPVar11 = puVar3;
     pPVar11 = pPVar11 + 4;
     iVar8 = iVar8 + -1;
   } while (iVar8 != 0);
   *(int *)(this_00 + 0x3c) = *(int *)(this_00 + 0x3c) + (DAT_00806730 + -800) / 2;
-  puVar4 = FUN_0070ceb0(0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
+  puVar4 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
   *(undefined4 **)(this_00 + 0x28a) = puVar4;
   puVar4[0x16] = 1;
   puVar4[0x17] = 0;
   iVar8 = 1;
   piVar13 = (int *)0x0;
   pCVar5 = thunk_FUN_00571240(s_BKG_BLDBOATW_007c1834,0);
-  puVar6 = FUN_006f1ce0(1,pCVar5,piVar13,iVar8);
+  puVar6 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar5,piVar13,iVar8);
   *(ushort **)(this_00 + 0x184) = puVar6;
   pPVar11 = (ProdPanelTy *)(this_00 + 0x6c);
   pCVar5 = thunk_FUN_00571240(s_BKG_BLDBOATBUT_007c1820,0);
   wsprintfA((LPSTR)pPVar11,&DAT_007c181c,pCVar5);
-  puVar6 = FUN_006f1ce0(1,(char *)pPVar11,(int *)0x0,1);
+  puVar6 = cMf32::RecGet((cMf32 *)DAT_00806790,1,(char *)pPVar11,(int *)0x0,1);
   *(ushort **)(this_00 + 0x28e) = puVar6;
   if (DAT_0080874d == 0xff) {
     iVar8 = 1;

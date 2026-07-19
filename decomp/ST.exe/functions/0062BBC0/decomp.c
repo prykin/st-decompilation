@@ -24,7 +24,7 @@ FUN_0062bbc0(int param_1,int param_2,int param_3,int param_4,int param_5,int par
   float local_c;
   int *local_8;
   
-  local_8 = (int *)FUN_006aac70(0x6d);
+  local_8 = (int *)Library::DKW::LIB::FUN_006aac70(0x6d);
   piVar7 = local_8;
   for (iVar6 = 0x1b; iVar6 != 0; iVar6 = iVar6 + -1) {
     *piVar7 = 0;

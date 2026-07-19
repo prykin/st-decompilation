@@ -101,21 +101,21 @@ void FUN_00760df0(int param_1,int param_2,int *param_3,int *param_4,int param_5)
               (((pfVar8[5] + pfVar8[-1]) - (pfVar8[3] + pfVar8[1])) * _DAT_007a22b0 -
               ((local_c - (pfVar8[3] - pfVar8[1]) * _DAT_007a22a8) -
               (pfVar8[5] + pfVar8[-1] + pfVar8[3] + pfVar8[1])));
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     *puVar11 = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     puVar11[7] = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     puVar11[1] = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     puVar11[6] = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     puVar11[2] = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     puVar11[5] = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     puVar11[4] = *(undefined1 *)(((int)lVar12 + 4 >> 3 & 0x3ffU) + iVar9);
-    lVar12 = __ftol();
+    lVar12 = Library::MSVCRT::__ftol();
     pfVar8 = pfVar8 + 8;
     param_4 = param_4 + 1;
     local_14 = (float)((int)local_14 + -1);

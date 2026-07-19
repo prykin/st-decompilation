@@ -22,7 +22,7 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
   IStack_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_b8;
   pCStack_8 = this;
-  iVar2 = __setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = auStack_28;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {

@@ -217,14 +217,14 @@ undefined4 __fastcall FUN_004d2760(int *param_1)
   do {
     if (*piVar1 != 0) {
       thunk_FUN_004ad310(*piVar1);
-      FUN_0072e2b0((undefined4 *)*piVar1);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)*piVar1);
     }
     piVar1 = piVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
   if (param_1[0xd7] != 0) {
     thunk_FUN_004ad310(param_1[0xd7]);
-    FUN_0072e2b0((undefined4 *)param_1[0xd7]);
+    Library::MSVCRT::FUN_0072e2b0((undefined4 *)param_1[0xd7]);
   }
   thunk_FUN_004ad310((int)param_1 + 0x1d5);
   return 0;

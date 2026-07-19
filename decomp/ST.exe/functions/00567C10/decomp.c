@@ -30,7 +30,7 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_1c = this;
-    iVar3 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pvVar2 = local_1c;
     if (iVar3 == 0) {
       local_8 = 2;
@@ -101,7 +101,7 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
               }
               iVar7 = uVar5 + uVar4;
             }
-            FUN_006c1ce0(local_8,iVar7);
+            Library::DKW::SND::FUN_006c1ce0(local_8,iVar7);
             iVar6 = local_14;
             iVar3 = *(int *)((int)pvVar2 + 0x10e9) * local_28 + *(int *)((int)pvVar2 + 0x10ed);
             uVar4 = iVar3 - local_14 >> 0x1f;
@@ -136,12 +136,12 @@ void __thiscall FUN_00567c10(void *this,int *param_1)
               }
               iVar3 = (bVar1 - 1 & 2) - 1;
             }
-            FUN_006c1d80(local_8,iVar3 * iVar9);
+            Library::DKW::SND::FUN_006c1d80(local_8,iVar3 * iVar9);
             iVar3 = local_8;
             piVar11 = local_18;
           }
           else {
-            FUN_006c2220(local_8,(float)*piVar11,(float)local_14,0,-1.0,-1.0);
+            Library::DKW::SND::FUN_006c2220(local_8,(float)*piVar11,(float)local_14,0,-1.0,-1.0);
             iVar3 = local_8;
           }
         }

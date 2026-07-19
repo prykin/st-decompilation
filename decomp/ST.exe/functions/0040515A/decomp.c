@@ -11,7 +11,7 @@ undefined4 __thiscall thunk_FUN_004c6210(void *this,undefined4 param_1,undefined
   *(undefined4 *)((int)this + 0x18) = 0;
   *(undefined4 *)((int)this + 0x1c) = param_1;
   *(undefined4 *)((int)this + 0x20) = param_2;
-  puVar1 = (undefined4 *)FUN_0072e530(0x40);
+  puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
   if (puVar1 == (undefined4 *)0x0) {
     this_00 = (STT3DSprC *)0x0;
   }
@@ -44,8 +44,9 @@ undefined4 __thiscall thunk_FUN_004c6210(void *this,undefined4 param_1,undefined
   thunk_FUN_004abce0(*(void **)((int)this + 0x2c),0,
                      *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),
                      *(int *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4),'\0');
-  thunk_FUN_004abe40(*(void **)((int)this + 0x2c),'\0',
-                     *(undefined4 *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
+  STT3DSprC::SetCurFase
+            (*(STT3DSprC **)((int)this + 0x2c),'\0',
+             *(undefined4 *)(&DAT_00790f84 + *(int *)((int)this + 0x1c) * 4));
   uVar4 = FUN_006e51b0(*(int *)((int)this + 0x10));
   STT3DSprC::StartShow(*(STT3DSprC **)((int)this + 0x2c),0,uVar4);
   thunk_FUN_004ad430(*(int *)((int)this + 0x2c));

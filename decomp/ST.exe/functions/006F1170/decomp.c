@@ -15,12 +15,12 @@ void __thiscall cMf32::delete(cMf32 *this,undefined4 *param_1)
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = __setjmp3(local_44,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     if (param_1 != (undefined4 *)0x0) {
       FUN_007508f0((undefined4 *)*param_1);
       if (param_1[5] != 0) {
-        FUN_00750990((byte *)((int)param_1 + 0x231),param_1 + 1);
+        Library::DKW::DB::FUN_00750990((byte *)((int)param_1 + 0x231),param_1 + 1);
       }
       FUN_006a5e90(param_1);
     }

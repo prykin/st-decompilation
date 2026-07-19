@@ -22,13 +22,13 @@ ChatGlassTy::OutChGlProc
     local_8 = param_8;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     puVar2 = local_8;
     if (iVar3 == 0) {
-      FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
+      Library::DKW::DDX::FUN_006c68f0(param_1,param_4,param_5,param_6,param_7,(int)(local_8 + 1));
       FUN_006c6850(param_1,param_4,param_5,param_6,param_7,*puVar2);
       iVar3 = param_5 + -0x16 + param_7;
-      FUN_006c53b0(param_1,param_4,iVar3,param_4 + -1 + param_6,iVar3,*puVar2);
+      Library::DKW::DDX::FUN_006c53b0(param_1,param_4,iVar3,param_4 + -1 + param_6,iVar3,*puVar2);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

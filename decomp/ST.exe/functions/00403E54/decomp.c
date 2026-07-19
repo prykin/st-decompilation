@@ -96,7 +96,7 @@ int __fastcall thunk_FUN_0060c320(void *param_1)
   }
   uStack_8 = 0;
   ExceptionList = &pvStack_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   uStack_8 = 0xffffffff;
   puStack_68 = &stack0xffffff60;
   puVar10 = &stack0xffffff60;

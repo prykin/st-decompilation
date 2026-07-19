@@ -42,7 +42,7 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,int param_1)
   local_80.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_80;
   local_1c = (STSprGameObjC *)this;
-  iVar2 = __setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_1c;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_80.previous;
@@ -62,7 +62,7 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,int param_1)
     if (uVar5 == 0x10f) {
       local_18 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(this_01 + 0x1d5),&local_8);
       local_14 = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_01,(int *)&local_10);
-      local_c = (byte *)FUN_006aac70(local_10 + 0x7c + local_8);
+      local_c = (byte *)Library::DKW::LIB::FUN_006aac70(local_10 + 0x7c + local_8);
       if (((local_18 != (byte *)0x0) && (local_14 != (byte *)0x0)) && (local_c != (byte *)0x0)) {
         pSVar8 = this_01 + 0x275;
         pbVar9 = local_c;
@@ -186,7 +186,7 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,int param_1)
                                 (short)((longlong)(int)sVar6 * 0x28c1979 >> 0x3f));
           }
           *(int *)(this_01 + 0x255) = iVar2;
-          thunk_FUN_004abe40(this_00,'\x0e',0);
+          STT3DSprC::SetCurFase(this_00,'\x0e',0);
         }
         else if (uVar5 == 2) {
           local_20 = *(undefined4 **)(param_1 + 0x14);
@@ -222,7 +222,7 @@ undefined4 __thiscall STSatC::GetMessage(STSatC *this,int param_1)
           *(undefined2 *)(this_01 + 0x41) = *(undefined2 *)((int)local_20 + 0x6a);
           *(undefined2 *)(this_01 + 0x43) = *(undefined2 *)(local_20 + 0x1b);
           *(undefined2 *)(this_01 + 0x45) = *(undefined2 *)((int)local_20 + 0x6e);
-          local_3c = FUN_006aac70(0x44);
+          local_3c = Library::DKW::LIB::FUN_006aac70(0x44);
           if (local_3c != 0) {
             iVar2 = 0;
             do {

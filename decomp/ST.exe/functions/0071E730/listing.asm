@@ -1,4 +1,4 @@
-FUN_0071e730:
+ViewerClassTy::_Draw:
 0071E730  55                        PUSH EBP
 0071E731  8B EC                     MOV EBP,ESP
 0071E733  83 EC 48                  SUB ESP,0x48

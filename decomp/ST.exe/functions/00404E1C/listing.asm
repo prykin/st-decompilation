@@ -1,2 +1,2 @@
-thunk_FUN_004732f0:
+STBoatC::LoadObj:
 00404E1C  E9 CF E4 06 00            JMP 0x004732f0

@@ -33,14 +33,15 @@ undefined4 __fastcall thunk_FUN_005deb90(int param_1)
   IStack_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_60;
   iStack_1c = param_1;
-  iVar3 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar2 = iStack_1c;
   if (iVar3 == 0) {
     DStack_8 = (*(int *)(iStack_1c + 0x69e) - *(int *)(iStack_1c + 0x6ae)) -
                *(int *)(iStack_1c + 0x6b2);
-    _strncpy((char *)(abStack_165 + 1),
-             (char *)(*(int *)(iStack_1c + 0x6ae) + *(int *)(iStack_1c + 0x6b2) +
-                     *(int *)(iStack_1c + 0x69a)),DStack_8);
+    Library::MSVCRT::_strncpy
+              ((char *)(abStack_165 + 1),
+               (char *)(*(int *)(iStack_1c + 0x6ae) + *(int *)(iStack_1c + 0x6b2) +
+                       *(int *)(iStack_1c + 0x69a)),DStack_8);
     uVar1 = uStack_14;
     abStack_165[DStack_8] = 0;
     iVar3 = iStack_10;
@@ -59,8 +60,10 @@ undefined4 __fastcall thunk_FUN_005deb90(int param_1)
       uStack_14 = (uint)(pvVar4 != (HANDLE)0xffffffff);
       uVar1 = uStack_14;
     }
-    FUN_0072e730(&DAT_0080ed16,abStack_36c,abStack_470,abStack_165 + 1,(byte *)0x0);
-    __makepath(acStack_268,(char *)abStack_36c,(char *)abStack_470,(char *)(abStack_165 + 1),
+    Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,abStack_36c,abStack_470,abStack_165 + 1,(byte *)0x0)
+    ;
+    Library::MSVCRT::__makepath
+              (acStack_268,(char *)abStack_36c,(char *)abStack_470,(char *)(abStack_165 + 1),
                PTR_DAT_0079c1c0);
     pvVar4 = CreateFileA(acStack_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     pvStack_c = pvVar4;
@@ -78,7 +81,8 @@ undefined4 __fastcall thunk_FUN_005deb90(int param_1)
     }
     FlushFileBuffers(pvVar4);
     CloseHandle(pvVar4);
-    __makepath(acStack_268,(char *)abStack_36c,(char *)abStack_470,(char *)(abStack_165 + 1),
+    Library::MSVCRT::__makepath
+              (acStack_268,(char *)abStack_36c,(char *)abStack_470,(char *)(abStack_165 + 1),
                PTR_DAT_0079c1c4);
     pvVar4 = CreateFileA(acStack_268,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);
     pvStack_c = pvVar4;

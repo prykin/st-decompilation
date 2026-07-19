@@ -1,4 +1,4 @@
-FUN_00435060:
+STAllPlayersC::SelfCheckObjControl:
 00435060  55                        PUSH EBP
 00435061  8B EC                     MOV EBP,ESP
 00435063  83 EC 10                  SUB ESP,0x10

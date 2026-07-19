@@ -50,7 +50,7 @@ undefined4 __fastcall thunk_FUN_004ed210(int *param_1)
     thunk_FUN_004c4550(param_1,(int *)0x0);
   }
   thunk_FUN_004ecea0(param_1);
-  thunk_FUN_004cabb0(0);
+  TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,0);
   return 0;
 }
 

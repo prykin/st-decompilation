@@ -38,7 +38,7 @@ STGroupBoatC::GetDepotForAttack
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_14 = this;
-  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
@@ -47,7 +47,9 @@ STGroupBoatC::GetDepotForAttack
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1708);
       iVar2 = extraout_EAX;
     }
-    this_00 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)iVar2 >> 8),pSVar5[0x24]),param_1,1);
+    this_00 = (void *)STAllPlayersC::GetObjPtr
+                                (DAT_007fa174,CONCAT31((int3)((uint)iVar2 >> 8),pSVar5[0x24]),
+                                 param_1,1);
     thunk_FUN_004162b0(this_00,&local_10,&local_e,&local_c);
     uVar4 = 0;
     local_1c = *(int *)(*(int *)(pSVar5 + 0x20e) + 0xc);
@@ -56,8 +58,9 @@ STGroupBoatC::GetDepotForAttack
       do {
         FUN_006acc70(*(int *)(pSVar5 + 0x20e),uVar4,(undefined4 *)&local_24);
         if (sStack_22 != -1) {
-          this_01 = (int *)thunk_FUN_0042b620(CONCAT22(sStack_22,CONCAT11(cStack_23,local_24)),
-                                              CONCAT22(uStack_20,sStack_22),(int)cStack_23);
+          this_01 = (int *)STAllPlayersC::GetObjPtr
+                                     (DAT_007fa174,CONCAT22(sStack_22,CONCAT11(cStack_23,local_24)),
+                                      CONCAT22(uStack_20,sStack_22),(int)cStack_23);
           iVar3 = (**(code **)(*this_01 + 0x2c))();
           if ((iVar3 == 0x3b) ||
              (iVar3 = (**(code **)(*this_01 + 0x2c))(), pSVar5 = local_14, iVar3 == 0x60)) {

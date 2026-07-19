@@ -1,5 +1,5 @@
 
-undefined4 * thunk_FUN_00555fe0(uint *param_1)
+undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *param_1)
 
 {
   code *pcVar1;
@@ -12,7 +12,7 @@ undefined4 * thunk_FUN_00555fe0(uint *param_1)
   void *unaff_EDI;
   undefined4 *puVar6;
   InternalExceptionFrame IStack_58;
-  int iStack_14;
+  TraksClassTy *pTStack_14;
   uint uStack_10;
   undefined4 *puStack_c;
   undefined4 *puStack_8;
@@ -22,16 +22,17 @@ undefined4 * thunk_FUN_00555fe0(uint *param_1)
   uStack_10 = 0;
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
-  errorCode = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pTStack_14 = this;
+  errorCode = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar5 = uStack_10;
   if (errorCode == 0) {
     *param_1 = uStack_10 + 0x5d;
-    puStack_8 = FUN_006aac10(uStack_10 + 0x5d);
+    puStack_8 = Library::DKW::LIB::FUN_006aac10(uStack_10 + 0x5d);
     *puStack_8 = 0x46;
     puStack_8[1] = 0xff;
     puStack_8[2] = 2;
     puStack_8[5] = 1;
-    puStack_8[6] = *(undefined4 *)(iStack_14 + 0x1c);
+    puStack_8[6] = *(undefined4 *)(pTStack_14 + 0x1c);
     *(bool *)(puStack_8 + 7) = puStack_c != (undefined4 *)0x0;
     if (puStack_c != (undefined4 *)0x0) {
       puVar3 = puStack_c;

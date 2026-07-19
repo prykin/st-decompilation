@@ -10,6 +10,12 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
   TradePanelTy *pTVar2;
   int errorCode;
   int iVar3;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *extraout_ECX_02;
+  ccFntTy *extraout_ECX_03;
+  ccFntTy *this_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
@@ -18,27 +24,32 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar2 = local_8;
   if (errorCode == 0) {
+    this_00 = extraout_ECX;
     if (*(uint *)(local_8 + 0x1c0) != 0) {
       FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x1c0));
+      this_00 = extraout_ECX_00;
     }
     *(undefined4 *)(pTVar2 + 0x1c0) = 0;
     if (*(uint *)(pTVar2 + 0x1c4) != 0) {
       FUN_006e56b0(*(void **)(pTVar2 + 0xc),*(uint *)(pTVar2 + 0x1c4));
+      this_00 = extraout_ECX_01;
     }
     *(undefined4 *)(pTVar2 + 0x1c4) = 0;
     if (*(uint *)(pTVar2 + 0x1c8) != 0) {
       FUN_006e56b0(*(void **)(pTVar2 + 0xc),*(uint *)(pTVar2 + 0x1c8));
+      this_00 = extraout_ECX_02;
     }
     *(undefined4 *)(pTVar2 + 0x1c8) = 0;
     if (*(uint *)(pTVar2 + 0x1cc) != 0) {
       FUN_006e56b0(*(void **)(pTVar2 + 0xc),*(uint *)(pTVar2 + 0x1cc));
+      this_00 = extraout_ECX_03;
     }
     *(undefined4 *)(pTVar2 + 0x1cc) = 0;
     if (*(uint **)(pTVar2 + 0x1dd) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pTVar2 + 0x1dd));
+      ccFntTy::operator(this_00,*(uint **)(pTVar2 + 0x1dd));
       *(undefined4 *)(pTVar2 + 0x1dd) = 0;
     }
     *(undefined4 *)(pTVar2 + 0x1d9) = 0;

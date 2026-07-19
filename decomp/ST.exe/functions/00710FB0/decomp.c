@@ -9,10 +9,10 @@ void __thiscall FUN_00710fb0(void *this,byte *param_1)
   
   local_8 = (uint)*param_1;
   if (*(int *)((int)this + 0x96) == 1) {
-    local_8 = FUN_00734030(local_8);
+    local_8 = Library::MSVCRT::FUN_00734030(local_8);
   }
   else if (*(int *)((int)this + 0x96) == 2) {
-    local_8 = FUN_007306e0(local_8);
+    local_8 = Library::MSVCRT::FUN_007306e0(local_8);
   }
   if (((*(int *)((int)this + 0xa0) != 0) && (*(int *)((int)this + 0xa8) != 0)) &&
      (*(int *)((int)this + 0xac) != *(int *)(*(int *)((int)this + 0xa8) + 0xac))) {

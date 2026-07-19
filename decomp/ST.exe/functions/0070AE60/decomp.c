@@ -23,14 +23,14 @@ FUN_0070ae60(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *p
   local_8 = (char *)0x0;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   local_10 = iVar2;
   if (iVar2 == 0) {
-    local_c = FUN_006f1ce0(0xb,param_2,(int *)0x0,param_6);
+    local_c = cMf32::RecGet(param_1,0xb,param_2,(int *)0x0,param_6);
     if (local_c == (ushort *)0x0) {
       RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x1b0);
     }
-    local_8 = (char *)FUN_006aac10(*(short *)((int)local_c + 0x23) * 4 + 0x34);
+    local_8 = (char *)Library::DKW::LIB::FUN_006aac10(*(short *)((int)local_c + 0x23) * 4 + 0x34);
     puVar4 = local_c;
     pcVar5 = local_8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {

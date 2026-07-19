@@ -19,7 +19,7 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (local_8 == (AiBossClassTy *)0x0) {
       pAVar5 = (AiBossClassTy *)0x0;

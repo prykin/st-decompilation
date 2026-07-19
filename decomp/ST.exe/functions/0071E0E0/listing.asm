@@ -1,4 +1,4 @@
-FUN_0071e0e0:
+RadioClassTy::GetMessage:
 0071E0E0  55                        PUSH EBP
 0071E0E1  8B EC                     MOV EBP,ESP
 0071E0E3  83 EC 70                  SUB ESP,0x70

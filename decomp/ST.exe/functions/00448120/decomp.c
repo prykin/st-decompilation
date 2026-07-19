@@ -1,9 +1,13 @@
 
 /* WARNING: Type propagation algorithm not settling */
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::PutOnPlaceGuardBoats */
 
 void __thiscall
-FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4,uint param_5,
-            int param_6,undefined4 param_7,int param_8)
+STAllPlayersC::PutOnPlaceGuardBoats
+          (STAllPlayersC *this,uint param_1,uint param_2,int param_3,undefined2 param_4,uint param_5
+          ,int param_6,undefined4 param_7,int param_8)
 
 {
   code *pcVar1;
@@ -12,7 +16,7 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
   short sVar4;
   int iVar5;
   uint uVar6;
-  void *pvVar7;
+  STBoatC *pSVar7;
   short sVar8;
   int iVar9;
   short sVar10;
@@ -70,8 +74,8 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
   undefined2 local_6e;
   undefined2 local_6c;
   short local_6a [33];
-  void *local_28;
-  void *local_24;
+  STAllPlayersC *local_28;
+  STBoatC *local_24;
   uint local_20;
   uint local_1c;
   undefined4 local_18;
@@ -204,7 +208,7 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
     local_20 = iVar15;
     if (iVar5 < 0x88) {
       if (iVar5 == 0x87) {
-        local_24 = (void *)((iVar15 + -1) / 10);
+        local_24 = (STBoatC *)((iVar15 + -1) / 10);
         iVar15 = 0;
         if (-1 < (int)local_24) {
           local_1c = 0;
@@ -220,8 +224,8 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
               do {
                 psVar12 = psVar12 + 3;
                 FUN_006acc70(param_8,local_8,&param_5);
-                pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                if (pvVar7 == (void *)0x0) {
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                if (pSVar7 == (STBoatC *)0x0) {
                   iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d64,0,0,
                                               &DAT_007a4ccc,
                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a8574);
@@ -243,12 +247,12 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                 }
                 local_10 = CONCAT22(sVar10,(undefined2)local_10);
                 local_c = CONCAT22(psVar12[1],sVar4);
-                iVar5 = thunk_FUN_0045ff10((int)pvVar7);
+                iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
-                  thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                  STBoatC::CmdToObj(pSVar7,5,&local_18);
                 }
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
@@ -265,7 +269,7 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
         switch(iVar5) {
         case 0:
           local_20 = (iVar15 + -1) / 0xf;
-          local_24 = (void *)0x0;
+          local_24 = (STBoatC *)0x0;
           if (-1 < (int)local_20) {
             local_8 = 0;
             do {
@@ -279,8 +283,8 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                 uVar13 = local_8;
                 do {
                   FUN_006acc70(param_8,uVar13,&param_5);
-                  pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                  if (pvVar7 == (void *)0x0) {
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                  if (pSVar7 == (STBoatC *)0x0) {
                     iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d83,0,0,
                                                 &DAT_007a4ccc,
                                                 s_STAllPlayersC__PutOnPlaceGuardBo_007a8630);
@@ -293,19 +297,19 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                   }
                   local_10 = CONCAT22((short)local_24 + 3 + sVar3,(undefined2)local_10);
                   local_c = CONCAT22(*puVar11,puVar11[-1] + sVar2);
-                  iVar15 = thunk_FUN_0045ff10((int)pvVar7);
+                  iVar15 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar15 == 5) {
-                    thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                   }
                   else {
-                    thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                    STBoatC::CmdToObj(pSVar7,5,&local_18);
                   }
                   param_6 = param_6 + 1;
                   uVar13 = uVar13 + 1;
                   puVar11 = puVar11 + 3;
                 } while (param_6 < _param_4);
               }
-              local_24 = (void *)((int)local_24 + 1);
+              local_24 = (STBoatC *)((int)local_24 + 1);
               local_8 = local_8 + 0xf;
               local_1c = local_1c + -0xf;
             } while ((int)local_24 <= (int)local_20);
@@ -313,7 +317,7 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
           }
           break;
         case 0x2d:
-          local_24 = (void *)((iVar15 + -1) / 10);
+          local_24 = (STBoatC *)((iVar15 + -1) / 10);
           iVar15 = 0;
           if (-1 < (int)local_24) {
             local_1c = 0;
@@ -329,8 +333,8 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                 do {
                   psVar12 = psVar12 + 3;
                   FUN_006acc70(param_8,local_8,&param_5);
-                  pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                  if (pvVar7 == (void *)0x0) {
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                  if (pSVar7 == (STBoatC *)0x0) {
                     iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d45,0,0,
                                                 &DAT_007a4ccc,
                                                 s_STAllPlayersC__PutOnPlaceGuardBo_007a8668);
@@ -352,12 +356,12 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                   }
                   local_10 = CONCAT22(sVar10 + sVar3,(undefined2)local_10);
                   local_c = CONCAT22(psVar12[1],sVar4);
-                  iVar5 = thunk_FUN_0045ff10((int)pvVar7);
+                  iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar5 == 5) {
-                    thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                   }
                   else {
-                    thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                    STBoatC::CmdToObj(pSVar7,5,&local_18);
                   }
                   param_6 = param_6 + 1;
                   local_8 = local_8 + 1;
@@ -372,7 +376,7 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
           break;
         case 0x5a:
           local_20 = (iVar15 + -1) / 0xf;
-          local_24 = (void *)0x0;
+          local_24 = (STBoatC *)0x0;
           if (-1 < (int)local_20) {
             local_1c = 0;
             local_8 = iVar15;
@@ -387,8 +391,8 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                 uVar13 = local_1c;
                 do {
                   FUN_006acc70(param_8,uVar13,&param_5);
-                  pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                  if (pvVar7 == (void *)0x0) {
+                  pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                  if (pSVar7 == (STBoatC *)0x0) {
                     iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d2c,0,0,
                                                 &DAT_007a4ccc,
                                                 s_STAllPlayersC__PutOnPlaceGuardBo_007a86a4);
@@ -401,19 +405,19 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
                   }
                   local_10 = CONCAT22(puVar11[-1] + sVar3,(undefined2)local_10);
                   local_c = CONCAT22(*puVar11,(sVar2 - (short)local_24) + -3);
-                  iVar15 = thunk_FUN_0045ff10((int)pvVar7);
+                  iVar15 = thunk_FUN_0045ff10((int)pSVar7);
                   if (iVar15 == 5) {
-                    thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                   }
                   else {
-                    thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                    STBoatC::CmdToObj(pSVar7,5,&local_18);
                   }
                   param_6 = param_6 + 1;
                   uVar13 = uVar13 + 1;
                   puVar11 = puVar11 + 3;
                 } while (param_6 < _param_4);
               }
-              local_24 = (void *)((int)local_24 + 1);
+              local_24 = (STBoatC *)((int)local_24 + 1);
               local_1c = local_1c + 0xf;
               local_8 = local_8 + -0xf;
             } while ((int)local_24 <= (int)local_20);
@@ -442,8 +446,8 @@ FUN_00448120(void *this,uint param_1,uint param_2,int param_3,undefined2 param_4
               if (0 < _param_4) {
                 do {
                   FUN_006acc70(param_8,uVar13,&param_5);
-                  local_24 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                  if (local_24 == (void *)0x0) {
+                  local_24 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                  if (local_24 == (STBoatC *)0x0) {
                     iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2e0b,0,0,
                                                 &DAT_007a4ccc,
                                                 s_STAllPlayersC__PutOnPlaceGuardBo_007a85b0);
@@ -556,14 +560,14 @@ LAB_00448bc0:
                     }
                     local_c = CONCAT22(sVar10,sVar4);
                   }
-                  pvVar7 = local_24;
+                  pSVar7 = local_24;
                   iVar15 = thunk_FUN_0045ff10((int)local_24);
-                  if (((iVar15 == 5) && (uVar6 = thunk_FUN_0045f400(pvVar7,3), uVar6 == 1)) ||
-                     (iVar15 = thunk_FUN_0045ff10((int)pvVar7), iVar15 != 5)) {
-                    thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                  if (((iVar15 == 5) && (uVar6 = STBoatC::CheckPBoxCmd(pSVar7,3), uVar6 == 1)) ||
+                     (iVar15 = thunk_FUN_0045ff10((int)pSVar7), iVar15 != 5)) {
+                    STBoatC::CmdToObj(pSVar7,5,&local_18);
                   }
                   else {
-                    thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                    thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                   }
                   param_6 = param_6 + 1;
                   uVar13 = uVar13 + 1;
@@ -584,7 +588,7 @@ LAB_00448bc0:
       switch(iVar5) {
       case 0xb4:
         local_20 = (iVar15 + -1) / 0xf;
-        local_24 = (void *)0x0;
+        local_24 = (STBoatC *)0x0;
         if (-1 < (int)local_20) {
           local_8 = 0;
           do {
@@ -598,8 +602,8 @@ LAB_00448bc0:
               uVar13 = local_8;
               do {
                 FUN_006acc70(param_8,uVar13,&param_5);
-                pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                if (pvVar7 == (void *)0x0) {
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                if (pSVar7 == (STBoatC *)0x0) {
                   iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2d9b,0,0,
                                               &DAT_007a4ccc,
                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a8538);
@@ -612,19 +616,19 @@ LAB_00448bc0:
                 }
                 local_10 = CONCAT22((sVar3 - (short)local_24) + -3,(undefined2)local_10);
                 local_c = CONCAT22(*puVar11,puVar11[-1] + sVar2);
-                iVar15 = thunk_FUN_0045ff10((int)pvVar7);
+                iVar15 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar15 == 5) {
-                  thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                  STBoatC::CmdToObj(pSVar7,5,&local_18);
                 }
                 param_6 = param_6 + 1;
                 uVar13 = uVar13 + 1;
                 puVar11 = puVar11 + 3;
               } while (param_6 < _param_4);
             }
-            local_24 = (void *)((int)local_24 + 1);
+            local_24 = (STBoatC *)((int)local_24 + 1);
             local_8 = local_8 + 0xf;
             local_1c = local_1c + -0xf;
           } while ((int)local_24 <= (int)local_20);
@@ -632,7 +636,7 @@ LAB_00448bc0:
         }
         break;
       case 0xe1:
-        local_24 = (void *)((iVar15 + -1) / 0x14);
+        local_24 = (STBoatC *)((iVar15 + -1) / 0x14);
         iVar15 = 0;
         if (-1 < (int)local_24) {
           local_1c = 0;
@@ -648,8 +652,8 @@ LAB_00448bc0:
               do {
                 psVar12 = psVar12 + 3;
                 FUN_006acc70(param_8,local_8,&param_5);
-                pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                if (pvVar7 == (void *)0x0) {
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                if (pSVar7 == (STBoatC *)0x0) {
                   iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2dd2,0,0,
                                               &DAT_007a4ccc,
                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a84c0);
@@ -672,12 +676,12 @@ LAB_00448bc0:
                   local_c = CONCAT22(psVar12[1],(sVar4 - *psVar12) + 2 + sVar2);
                 }
                 local_10 = CONCAT22(sVar10,(undefined2)local_10);
-                iVar5 = thunk_FUN_0045ff10((int)pvVar7);
+                iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
-                  thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                  STBoatC::CmdToObj(pSVar7,5,&local_18);
                 }
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;
@@ -692,7 +696,7 @@ LAB_00448bc0:
         break;
       case 0x10e:
         local_20 = (iVar15 + -1) / 0xf;
-        local_24 = (void *)0x0;
+        local_24 = (STBoatC *)0x0;
         if (-1 < (int)local_20) {
           local_8 = 0;
           do {
@@ -706,8 +710,8 @@ LAB_00448bc0:
               uVar13 = local_8;
               do {
                 FUN_006acc70(param_8,uVar13,&param_5);
-                pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                if (pvVar7 == (void *)0x0) {
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                if (pSVar7 == (STBoatC *)0x0) {
                   iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2df1,0,0,
                                               &DAT_007a4ccc,
                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a8484);
@@ -720,19 +724,19 @@ LAB_00448bc0:
                 }
                 local_10 = CONCAT22(puVar11[-1] + sVar3,(undefined2)local_10);
                 local_c = CONCAT22(*puVar11,(short)local_24 + 3 + sVar2);
-                iVar15 = thunk_FUN_0045ff10((int)pvVar7);
+                iVar15 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar15 == 5) {
-                  thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                  STBoatC::CmdToObj(pSVar7,5,&local_18);
                 }
                 param_6 = param_6 + 1;
                 uVar13 = uVar13 + 1;
                 puVar11 = puVar11 + 3;
               } while (param_6 < _param_4);
             }
-            local_24 = (void *)((int)local_24 + 1);
+            local_24 = (STBoatC *)((int)local_24 + 1);
             local_8 = local_8 + 0xf;
             local_1c = local_1c + -0xf;
           } while ((int)local_24 <= (int)local_20);
@@ -740,7 +744,7 @@ LAB_00448bc0:
         }
         break;
       case 0x13b:
-        local_24 = (void *)((iVar15 + -1) / 0x14);
+        local_24 = (STBoatC *)((iVar15 + -1) / 0x14);
         iVar15 = 0;
         if (-1 < (int)local_24) {
           local_1c = 0;
@@ -756,8 +760,8 @@ LAB_00448bc0:
               do {
                 psVar12 = psVar12 + 3;
                 FUN_006acc70(param_8,local_8,&param_5);
-                pvVar7 = (void *)thunk_FUN_0042b620(param_1,param_5,1);
-                if (pvVar7 == (void *)0x0) {
+                pSVar7 = (STBoatC *)GetObjPtr(local_28,param_1,param_5,1);
+                if (pSVar7 == (STBoatC *)0x0) {
                   iVar15 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2db3,0,0,
                                               &DAT_007a4ccc,
                                               s_STAllPlayersC__PutOnPlaceGuardBo_007a84fc);
@@ -779,12 +783,12 @@ LAB_00448bc0:
                 }
                 local_10 = CONCAT22(sVar10 + sVar3,(undefined2)local_10);
                 local_c = CONCAT22(psVar12[1],sVar4);
-                iVar5 = thunk_FUN_0045ff10((int)pvVar7);
+                iVar5 = thunk_FUN_0045ff10((int)pSVar7);
                 if (iVar5 == 5) {
-                  thunk_FUN_00490cd0(pvVar7,local_18,local_14,local_10,local_c);
+                  thunk_FUN_00490cd0(pSVar7,local_18,local_14,local_10,local_c);
                 }
                 else {
-                  thunk_FUN_0045ef00(pvVar7,5,&local_18);
+                  STBoatC::CmdToObj(pSVar7,5,&local_18);
                 }
                 param_6 = param_6 + 1;
                 local_8 = local_8 + 1;

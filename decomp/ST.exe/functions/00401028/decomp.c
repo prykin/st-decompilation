@@ -6,7 +6,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   code *pcVar1;
   STAllPlayersC *this_00;
   int iVar2;
-  void *pvVar3;
+  STBoatC *pSVar3;
   int iVar4;
   uint uVar5;
   undefined4 unaff_ESI;
@@ -27,7 +27,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
   iStack_18 = *(int *)((int)&DAT_007f5816 + (char)param_1 * 0xa62);
   g_currentExceptionFrame = &IStack_68;
   pSStack_14 = this;
-  iVar2 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar4 = iStack_18;
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_68.previous;
@@ -60,9 +60,9 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
             FUN_006acc70((int)pbStack_20,uVar6,&uStack_8);
             if ((short)uStack_8 == param_2) {
               FUN_006b0c70((int)pbStack_20,uVar6);
-              pvVar3 = (void *)thunk_FUN_0042b620(param_1,uStack_8,1);
+              pSVar3 = (STBoatC *)GetObjPtr(pSStack_14,param_1,uStack_8,1);
               uStack_10 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-              thunk_FUN_0045ef00(pvVar3,0x21,&uStack_10);
+              STBoatC::CmdToObj(pSVar3,0x21,&uStack_10);
               break;
             }
             uVar6 = uVar6 + 1;
@@ -111,8 +111,8 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
           if (0 < iVar4) {
             do {
               FUN_006acc70((int)pbStack_20,uVar7,&uStack_8);
-              pvVar3 = (void *)thunk_FUN_0042b620(param_1,uStack_8,1);
-              if (pvVar3 == (void *)0x0) {
+              pSVar3 = (STBoatC *)GetObjPtr(pSStack_14,param_1,uStack_8,1);
+              if (pSVar3 == (STBoatC *)0x0) {
                 iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2955,0,0,
                                            &DAT_007a4ccc,s_STAllPlayersC__DeleteGuardBoat_N_007a83e0
                                           );
@@ -124,7 +124,7 @@ STAllPlayersC::DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,in
               }
               else {
                 uStack_10 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-                thunk_FUN_0045ef00(pvVar3,0x21,&uStack_10);
+                STBoatC::CmdToObj(pSVar3,0x21,&uStack_10);
               }
               uVar7 = uVar7 + 1;
             } while ((int)uVar7 < iVar4);

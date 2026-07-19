@@ -44,12 +44,13 @@ void __cdecl FUN_006ad2a0(byte *param_1)
       pcVar6 = pcVar6 + 1;
     } while (cVar1 != '\0');
     if (0x40 < (int)(~uVar4 - 1)) {
-      _strncpy(acStack_14d + ~uVar4,&DAT_007c7274,3);
+      Library::MSVCRT::_strncpy(acStack_14d + ~uVar4,&DAT_007c7274,3);
     }
   }
   local_30c[0] = '\0';
   if ((param_1 != (byte *)0x0) &&
-     (iVar3 = FUN_007300e0(local_30c,0x200,param_1,(undefined4 *)&stack0x00000008), iVar3 < 0)) {
+     (iVar3 = Library::MSVCRT::FUN_007300e0(local_30c,0x200,param_1,(undefined4 *)&stack0x00000008),
+     iVar3 < 0)) {
     uVar4 = 0xffffffff;
     pcVar6 = s_User_message_too_long_007ed7b4;
     do {

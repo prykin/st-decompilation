@@ -56,7 +56,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
   IStack_1d0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_1d0;
   pPStack_10 = this;
-  iVar3 = __setjmp3(IStack_1d0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_1d0.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = pPStack_10;
   if (iVar3 == 0) {
     piVar6 = aiStack_18c;
@@ -67,7 +67,7 @@ PanelTy::CreateBut(PanelTy *this,undefined4 param_1,int param_2,int param_3,int 
     aiStack_18c[1] = param_1;
     aiStack_18c[0] = param_2;
     wsprintfA((LPSTR)(pPVar2 + 0x6c),&DAT_007c181c,param_8);
-    puStack_c = FUN_006f1ce0(param_7,(char *)(pPVar2 + 0x6c),(int *)0x0,1);
+    puStack_c = cMf32::RecGet(DAT_00806790,param_7,(char *)(pPVar2 + 0x6c),(int *)0x0,1);
     uStack_17c = *(undefined4 *)(puStack_c + 2);
     uStack_178 = *(undefined4 *)(puStack_c + 4);
     if ((param_5 == 0) || (aiStack_18c[2] = DAT_00806730, *(int *)(pPVar2 + 0x5c) != 0)) {

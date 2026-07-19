@@ -10,7 +10,7 @@ byte * FUN_00717680(int param_1,byte *param_2,int param_3,int param_4,byte param
   uint uVar6;
   
   uVar6 = param_3 * param_4;
-  pbVar2 = (byte *)FUN_006aac70(uVar6);
+  pbVar2 = (byte *)Library::DKW::LIB::FUN_006aac70(uVar6);
   pbVar4 = pbVar2;
   for (uVar3 = uVar6 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
     *(undefined4 *)pbVar4 = *(undefined4 *)param_2;

@@ -13,7 +13,7 @@ void __fastcall thunk_FUN_0062fe00(void *param_1)
   do {
     if (*piVar5 != 0) {
       if (*(int *)(*piVar5 + 0x10) == 0) {
-        puVar1 = (undefined4 *)FUN_0072e530(0x40);
+        puVar1 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
         if (puVar1 == (undefined4 *)0x0) {
           uVar2 = 0;
         }

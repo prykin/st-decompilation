@@ -1,11 +1,14 @@
 
-void thunk_FUN_0042d190(uint param_1,int param_2,int param_3,uint param_4,int param_5)
+void __thiscall
+STAllPlayersC::ResetActivityFromObjs
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,uint param_4,int param_5)
 
 {
   code *pcVar1;
-  int *piVar2;
+  STGameObjC *pSVar2;
   int iVar3;
   uint uVar4;
+  int unaff_EDI;
   undefined4 uVar5;
   
   if (param_2 < 0x19b) {
@@ -19,9 +22,9 @@ LAB_0042d1f8:
       do {
         FUN_006acc70(param_3,uVar4,&param_4);
         if ((((short)param_4 != -1) &&
-            (piVar2 = (int *)thunk_FUN_0042b620(param_1,param_4,1), piVar2 != (int *)0x0)) &&
-           ((**(code **)(*piVar2 + 0xe8))(0), param_5 != 0)) {
-          thunk_FUN_0041a680((int)piVar2);
+            (pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,1), pSVar2 != (STGameObjC *)0x0))
+           && ((**(code **)(*(int *)pSVar2 + 0xe8))(0), param_5 != 0)) {
+          STGameObjC::ResetSelfCheckFlag(pSVar2,unaff_EDI);
         }
         uVar4 = uVar4 + 1;
       } while ((int)uVar4 < iVar3);
@@ -31,11 +34,12 @@ LAB_0042d1f8:
       if (param_2 == 0x5a) {
         uVar5 = 4;
 LAB_0042d1c3:
-        piVar2 = (int *)thunk_FUN_0042b620(param_1,param_4,uVar5);
-        if (piVar2 == (int *)0x0) {
+        pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,uVar5);
+        if (pSVar2 == (STGameObjC *)0x0) {
           return;
         }
-        (**(code **)(*piVar2 + 0xe8))(0);
+        iVar3 = 0;
+        (**(code **)(*(int *)pSVar2 + 0xe8))();
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -58,15 +62,16 @@ LAB_0042d270:
   }
   else {
     if (param_2 == 0x1a4) {
-      piVar2 = (int *)thunk_FUN_0042b620(param_1,param_4,5);
-      if (piVar2 == (int *)0x0) {
+      pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,5);
+      if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
-      (**(code **)(*piVar2 + 0xe8))(0);
+      iVar3 = 0;
+      (**(code **)(*(int *)pSVar2 + 0xe8))();
       if (param_5 == 0) {
         return;
       }
-      thunk_FUN_0041a680((int)piVar2);
+      STGameObjC::ResetSelfCheckFlag(pSVar2,iVar3);
       return;
     }
     if (param_2 == 0x1ae) {
@@ -76,14 +81,15 @@ LAB_0042d270:
       if (param_2 != 0x1b8) goto LAB_0042d270;
       uVar5 = 6;
     }
-    piVar2 = (int *)thunk_FUN_0042b620(param_1,param_4,uVar5);
-    if (piVar2 == (int *)0x0) {
+    pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,uVar5);
+    if (pSVar2 == (STGameObjC *)0x0) {
       return;
     }
-    (**(code **)(*piVar2 + 0xe8))(0);
+    iVar3 = 0;
+    (**(code **)(*(int *)pSVar2 + 0xe8))();
 LAB_0042d2c3:
     if (param_5 != 0) {
-      thunk_FUN_0041a680((int)piVar2);
+      STGameObjC::ResetSelfCheckFlag(pSVar2,iVar3);
       return;
     }
   }

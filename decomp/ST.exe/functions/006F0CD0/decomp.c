@@ -1,5 +1,5 @@
 
-ushort * __cdecl FUN_006f0cd0(undefined4 param_1,char *param_2,int param_3)
+ushort * __cdecl FUN_006f0cd0(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;
@@ -12,9 +12,9 @@ ushort * __cdecl FUN_006f0cd0(undefined4 param_1,char *param_2,int param_3)
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  errorCode = __setjmp3(local_44,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
-    puVar2 = FUN_006f1ce0(0x1b,param_2,(int *)0x0,param_3);
+    puVar2 = cMf32::RecGet(param_1,0x1b,param_2,(int *)0x0,param_3);
     g_currentExceptionFrame = pIVar4;
     return puVar2;
   }

@@ -88,8 +88,8 @@ thunk_FUN_00427f20(void *this,float param_1,float param_2,float param_3,int para
   puVar2 = puStack_1c;
   if (iVar4 == 0) goto LAB_004286d0;
   dVar1 = (double)(param_1 / (float)*(double *)((int)this + 0x368));
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar12 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar12 = Library::MSVCRT::__ftol();
   DAT_007f4d7c = (int)lVar12;
   iVar4 = -param_4;
   iStack_34 = param_4;
@@ -101,8 +101,8 @@ thunk_FUN_00427f20(void *this,float param_1,float param_2,float param_3,int para
     iStack_2c = -DAT_007f4d7c;
   }
   dVar1 = (double)(param_2 / (float)*(double *)((int)this + 0x368));
-  FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
-  lVar12 = __ftol();
+  Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+  lVar12 = Library::MSVCRT::__ftol();
   DAT_007f4d80 = (int)lVar12;
   iVar3 = param_4;
   if (*(int *)((int)this + 0x370) <= DAT_007f4d80 + param_4) {
@@ -114,13 +114,14 @@ thunk_FUN_00427f20(void *this,float param_1,float param_2,float param_3,int para
   puVar2 = puStack_1c;
   if ((iStack_34 == iStack_2c || iStack_34 - iStack_2c < 0) || (iVar3 == iVar4 || iVar3 - iVar4 < 0)
      ) goto LAB_004286d0;
-  FUN_0072e150(SUB84((double)(param_3 * _DAT_00790538),0),
-               (uint)((ulonglong)(double)(param_3 * _DAT_00790538) >> 0x20));
+  Library::MSVCRT::FUN_0072e150
+            (SUB84((double)(param_3 * _DAT_00790538),0),
+             (uint)((ulonglong)(double)(param_3 * _DAT_00790538) >> 0x20));
   uStack_8 = 0;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   piStack_38 = (int *)&stack0xffffff3c;
   puStack_1c = &stack0xffffff3c;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   piVar5 = piStack_38;
   uStack_8 = 0xffffffff;
   DAT_007f4d74 = (int *)(&stack0xffffff3c + param_4 * 0x10);

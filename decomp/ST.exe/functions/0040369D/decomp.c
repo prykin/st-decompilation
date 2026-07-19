@@ -12,6 +12,7 @@ short thunk_FUN_00435b90(uint param_1,int param_2,undefined4 param_3,int *param_
   int *piVar7;
   int iVar8;
   int iVar9;
+  STAllPlayersC *in_ECX;
   uint uVar10;
   byte bVar11;
   bool bVar12;
@@ -39,7 +40,7 @@ short thunk_FUN_00435b90(uint param_1,int param_2,undefined4 param_3,int *param_
       param_4 = (int *)((int)param_4 + 1);
     } while ((int)param_4 < iVar9);
     if (iStack_c == 1) {
-      piVar7 = (int *)thunk_FUN_0042b620(uVar4,uStack_10,1);
+      piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,uStack_10,1);
       sVar6 = (**(code **)(*piVar7 + 0x28))(param_3,piVar5,param_5,param_6);
       return sVar6;
     }
@@ -55,7 +56,7 @@ short thunk_FUN_00435b90(uint param_1,int param_2,undefined4 param_3,int *param_
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
           if (sVar6 == 5) {
             return 5;
@@ -72,7 +73,7 @@ short thunk_FUN_00435b90(uint param_1,int param_2,undefined4 param_3,int *param_
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
           if (sVar6 == 0x1e) {
             return 0x1e;
@@ -122,7 +123,7 @@ LAB_004366b0:
             do {
               FUN_006acc70(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
-                piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+                piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
                 sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
                 if (sVar6 == 0x18) {
                   return 0x18;
@@ -137,7 +138,7 @@ LAB_004366b0:
             do {
               FUN_006acc70(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
-                piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+                piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
                 sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
                 if (sVar6 == 0x1d) {
                   return 0x1d;
@@ -154,7 +155,7 @@ LAB_004366b0:
             do {
               FUN_006acc70(param_2,(uint)param_4,&param_1);
               if ((short)param_1 != -1) {
-                piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+                piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
                 sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
                 if (sVar6 == 0x12) {
                   return 0x12;
@@ -174,7 +175,7 @@ LAB_004366b0:
         do {
           FUN_006acc70(param_2,(uint)param_4,&param_1);
           if ((short)param_1 != -1) {
-            piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+            piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
             sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
             if (sVar6 == 0x17) {
               return 0x17;
@@ -196,7 +197,7 @@ LAB_004366b0:
         do {
           FUN_006acc70(param_2,(uint)param_4,&param_1);
           if ((short)param_1 != -1) {
-            piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+            piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
             sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
             if (sVar6 == 7) {
               return 7;
@@ -216,7 +217,7 @@ LAB_004366b0:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0,piVar5,param_5,param_6);
           if (sVar6 == 7) {
             return 7;
@@ -235,7 +236,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(2,piVar5,param_5,param_6);
           if (sVar6 == 6) {
             return 6;
@@ -256,7 +257,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(param_3,piVar5,param_5,param_6);
           if (sVar6 == 7) {
             return 7;
@@ -278,7 +279,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(4,piVar5,param_5,param_6);
           if (sVar6 == 0x18) {
             return 0x18;
@@ -298,7 +299,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(5,piVar5,param_5,param_6);
           if (sVar6 == 0xd) {
             return 0xd;
@@ -315,7 +316,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(6,piVar5,param_5,param_6);
           if (sVar6 == 0xf) {
             return 0xf;
@@ -335,7 +336,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(7,piVar5,param_5,param_6);
           if (sVar6 == 9) {
             return 9;
@@ -357,7 +358,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(8,piVar5,param_5,param_6);
           if (sVar6 == 0x11) {
             return 0x11;
@@ -374,7 +375,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(9,piVar5,param_5,param_6);
           if (sVar6 == 8) {
             return 8;
@@ -394,7 +395,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(10,piVar5,param_5,param_6);
           if (sVar6 == 0xc) {
             return 0xc;
@@ -410,7 +411,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           if (piVar5 == piVar7) {
             return 0;
           }
@@ -432,7 +433,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           if (piVar5 == piVar7) {
             return 0;
           }
@@ -454,7 +455,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0x10,piVar5,param_5,param_6);
           if (sVar6 == 0x16) {
             return 0x16;
@@ -474,7 +475,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0x11,piVar5,param_5,param_6);
           if (sVar6 == 0x12) {
             return 0x12;
@@ -494,7 +495,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0x12,piVar5,param_5,param_6);
           if (sVar6 == 0x13) {
             return 0x13;
@@ -514,7 +515,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           if (piVar5 == piVar7) {
             return 0;
           }
@@ -536,7 +537,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           if (piVar5 == piVar7) {
             return 0;
           }
@@ -558,7 +559,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0x2d,piVar5,param_5,param_6);
           if (sVar6 == 0x10) {
             return 0x10;
@@ -578,7 +579,7 @@ switchD_00435c5c_caseD_1:
       do {
         FUN_006acc70(param_2,(uint)param_4,&param_1);
         if ((short)param_1 != -1) {
-          piVar7 = (int *)thunk_FUN_0042b620(uVar4,param_1,1);
+          piVar7 = (int *)STAllPlayersC::GetObjPtr(in_ECX,uVar4,param_1,1);
           sVar6 = (**(code **)(*piVar7 + 0x28))(0x4d,piVar5,param_5,param_6);
           if (sVar6 == 0x1d) {
             return 0x1d;

@@ -26,7 +26,7 @@ ccFntTy::CreateSurf(ccFntTy *this,int param_1,uint param_2,int param_3,int param
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -70,7 +70,7 @@ LAB_00710c1d:
     RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x49d);
   }
   if (param_7 == 0) {
-    FUN_006b55f0(puVar4,0,0,0,param_1,local_10,param_3,param_4,local_8,local_c);
+    Library::DKW::WGR::FUN_006b55f0(puVar4,0,0,0,param_1,local_10,param_3,param_4,local_8,local_c);
   }
   else {
     local_10 = puVar4[5];

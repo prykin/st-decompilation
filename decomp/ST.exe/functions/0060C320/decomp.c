@@ -96,7 +96,7 @@ int __fastcall FUN_0060c320(void *param_1)
   }
   local_8 = 0;
   ExceptionList = &local_14;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   local_68 = &stack0xffffff60;
   puVar10 = &stack0xffffff60;

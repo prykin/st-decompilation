@@ -31,7 +31,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
   local_ac.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ac;
   local_c = this;
-  iVar5 = __setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_ac.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_ac.previous;
@@ -58,7 +58,7 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
     *(int *)pCVar8 = 0;
     pCVar8 = pCVar8 + 4;
   }
-  thunk_FUN_0043beb0(DAT_007fa174,2,(int *)pCVar1);
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,(int *)pCVar1);
   if (local_63 == this_00[0xb9e]) {
     switch(this_00[0xb9e]) {
     case (CPanelTy)0x1:
@@ -100,8 +100,9 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
             g_currentExceptionFrame = local_ac.previous;
             return;
           }
-          FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x154),0xffffffff,*(uint *)(this_00 + 0x48),
-                       *(uint *)(this_00 + 0xa0));
+          Library::DKW::DDX::FUN_006b3640
+                    (DAT_008075a8,*(uint *)(this_00 + 0x154),0xffffffff,*(uint *)(this_00 + 0x48),
+                     *(uint *)(this_00 + 0xa0));
           g_currentExceptionFrame = local_ac.previous;
           return;
         default:
@@ -163,8 +164,9 @@ switchD_005030a2_caseD_1a:
     g_currentExceptionFrame = local_ac.previous;
     return;
   }
-  FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x154),0xffffffff,*(uint *)(this_00 + 0x48),
-               *(uint *)(this_00 + 0xa0));
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(this_00 + 0x154),0xffffffff,*(uint *)(this_00 + 0x48),
+             *(uint *)(this_00 + 0xa0));
   g_currentExceptionFrame = local_ac.previous;
   return;
 }

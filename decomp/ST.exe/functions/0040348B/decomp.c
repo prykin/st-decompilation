@@ -22,7 +22,7 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pSStack_10 = this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_10;
   if (iVar2 == 0) {
     if (*(int *)(pSStack_10 + 0x212) == 0) {
@@ -39,10 +39,10 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
       do {
         FUN_006acc70(*(int *)(this_00 + 0x20e),uVar6,(undefined4 *)acStack_8);
         if (((sStack_6 != -1) && (acStack_8[0] == param_1)) && (sStack_6 == param_2)) {
-          puVar3 = FUN_006ae290((uint *)0x0,1,4,1);
+          puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           uStack_c = 0xffff;
           uStack_a = (undefined2)uVar6;
-          FUN_006ae1c0(puVar3,(undefined4 *)&uStack_c);
+          Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&uStack_c);
           ReMakePVecAndTgtList(this_00,(int)puVar3);
           FUN_006ae110((byte *)puVar3);
           break;

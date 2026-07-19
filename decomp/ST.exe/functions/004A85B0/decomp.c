@@ -1,5 +1,9 @@
 
-void __fastcall FUN_004a85b0(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_grpb.cpp
+   STGroupBoatC::StartReceiveOrderSound */
+
+void __thiscall STGroupBoatC::StartReceiveOrderSound(STGroupBoatC *this,int param_1)
 
 {
   uint uVar1;
@@ -12,14 +16,15 @@ void __fastcall FUN_004a85b0(int param_1)
   uint local_8;
   
   uVar6 = 0;
-  uVar1 = *(uint *)(*(int *)(param_1 + 0x29) + 0xc);
+  uVar1 = *(uint *)(*(int *)(this + 0x29) + 0xc);
   if (uVar1 != 0) {
     uVar5 = 0;
     do {
-      FUN_006acc70(*(int *)(param_1 + 0x29),uVar5,&local_8);
+      FUN_006acc70(*(int *)(this + 0x29),uVar5,&local_8);
       if ((short)local_8 != -1) {
-        piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                    *(undefined1 *)(param_1 + 0x24)),local_8,1);
+        piVar3 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),this[0x24])
+                                   ,local_8,1);
         if (piVar3 == (int *)0x0) {
           iVar4 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x172d,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__StartReceiveOrderS_007ac50c);

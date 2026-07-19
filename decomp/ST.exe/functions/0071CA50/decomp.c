@@ -1,16 +1,21 @@
 
-undefined4 FUN_0071ca50(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Sinput.cpp
+   InputClassTy::GetMessage */
+
+undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
 
 {
   undefined4 *puVar1;
   uint uVar2;
   code *pcVar3;
-  int iVar4;
-  byte *pbVar5;
-  BOOL BVar6;
+  InputClassTy *pIVar4;
+  int iVar5;
+  byte *pbVar6;
+  BOOL BVar7;
   DWORD exceptionCode;
-  int iVar7;
-  undefined4 uVar8;
+  int iVar8;
+  undefined4 uVar9;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char *sourceFile;
@@ -20,24 +25,26 @@ undefined4 FUN_0071ca50(int param_1)
   
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  iVar4 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar4 != 0) {
+  local_8 = this;
+  iVar5 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pIVar4 = local_8;
+  if (iVar5 != 0) {
     g_currentExceptionFrame = local_5c.previous;
-    iVar7 = ReportDebugMessage(s_E__Ourlib_Sinput_cpp_007f092c,0x2f1,0,iVar4,
+    iVar8 = ReportDebugMessage(s_E__Ourlib_Sinput_cpp_007f092c,0x2f1,0,iVar5,
                                s_InputClassTy__GetMessage_error__M_007f09d8,
                                *(undefined4 *)(param_1 + 0x10));
-    if (iVar7 != 0) {
+    if (iVar8 != 0) {
       pcVar3 = (code *)swi(3);
-      uVar8 = (*pcVar3)();
-      return uVar8;
+      uVar9 = (*pcVar3)();
+      return uVar9;
     }
-    RaiseInternalException(iVar4,0,s_E__Ourlib_Sinput_cpp_007f092c,0x2f2);
+    RaiseInternalException(iVar5,0,s_E__Ourlib_Sinput_cpp_007f092c,0x2f2);
     return 0xffff;
   }
   switch(*(undefined4 *)(param_1 + 0x10)) {
   case 0:
     if (DAT_00856d74 != 0) {
-      FUN_0071b9c0();
+      None(local_8);
       g_currentExceptionFrame = local_5c.previous;
       return 0;
     }
@@ -46,44 +53,44 @@ undefined4 FUN_0071ca50(int param_1)
     FUN_006e5fd0();
     break;
   case 2:
-    FUN_0071b220();
+    Create(local_8);
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 3:
-    InputClassTy::Done(local_8);
+    Done(local_8);
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 4:
-    iVar4 = **(int **)(local_8 + 0x1c);
+    iVar5 = **(int **)(local_8 + 0x1c);
     if ((*(byte *)(param_1 + 0x14) & 3) == 0) {
-      (**(code **)(iVar4 + 0x20))();
-      *(undefined4 *)(local_8 + 0x60) = 0;
-      (**(code **)(**(int **)(local_8 + 0x20) + 0x20))(*(int **)(local_8 + 0x20));
-      *(undefined4 *)(local_8 + 100) = 0;
+      (**(code **)(iVar5 + 0x20))();
+      *(undefined4 *)(pIVar4 + 0x60) = 0;
+      (**(code **)(**(int **)(pIVar4 + 0x20) + 0x20))(*(int **)(pIVar4 + 0x20));
+      *(undefined4 *)(pIVar4 + 100) = 0;
       g_currentExceptionFrame = local_5c.previous;
       return 0;
     }
-    iVar4 = (**(code **)(iVar4 + 0x1c))(*(int **)(local_8 + 0x1c));
-    *(uint *)(local_8 + 0x60) = (uint)(-1 < iVar4);
-    iVar4 = (**(code **)(**(int **)(local_8 + 0x20) + 0x1c))(*(int **)(local_8 + 0x20));
-    *(uint *)(local_8 + 100) = (uint)(-1 < iVar4);
+    iVar5 = (**(code **)(iVar5 + 0x1c))(*(int **)(local_8 + 0x1c));
+    *(uint *)(pIVar4 + 0x60) = (uint)(-1 < iVar5);
+    iVar5 = (**(code **)(**(int **)(pIVar4 + 0x20) + 0x1c))(*(int **)(pIVar4 + 0x20));
+    *(uint *)(pIVar4 + 100) = (uint)(-1 < iVar5);
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x10:
-    FUN_0071c1d0(*(uint **)(param_1 + 0x14));
+    AddAcc(local_8,*(uint **)(param_1 + 0x14));
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x11:
-    FUN_0071c530(*(byte **)(param_1 + 0x14));
+    DelAcc(local_8,*(byte **)(param_1 + 0x14));
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x12:
-    uVar8 = FUN_0071c7c0(local_8,*(int **)(param_1 + 0x14));
-    *(undefined4 *)(param_1 + 0x18) = uVar8;
+    uVar9 = FUN_0071c7c0(local_8,*(int **)(param_1 + 0x14));
+    *(undefined4 *)(param_1 + 0x18) = uVar9;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x13:
-    FUN_0071c8c0(*(int *)(param_1 + 0x14),*(uint *)(param_1 + 0x18));
+    AddToMouse(local_8,*(int *)(param_1 + 0x14),*(uint *)(param_1 + 0x18));
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x14:
@@ -118,57 +125,57 @@ undefined4 FUN_0071ca50(int param_1)
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x1a:
-    pbVar5 = *(byte **)(local_8 + 0x28);
-    uVar8 = *(undefined4 *)(pbVar5 + 4);
+    pbVar6 = *(byte **)(local_8 + 0x28);
+    uVar9 = *(undefined4 *)(pbVar6 + 4);
     do {
-      pbVar5[4] = 0;
-      pbVar5[5] = 0;
-      pbVar5[6] = 0;
-      pbVar5[7] = 0;
+      pbVar6[4] = 0;
+      pbVar6[5] = 0;
+      pbVar6[6] = 0;
+      pbVar6[7] = 0;
       do {
-        iVar4 = *(int *)(local_8 + 0x28);
-        uVar2 = *(uint *)(iVar4 + 4);
-        if (uVar2 < *(uint *)(iVar4 + 0xc)) {
-          pbVar5 = (byte *)(*(int *)(iVar4 + 8) * uVar2 + *(int *)(iVar4 + 0x1c));
-          *(uint *)(iVar4 + 4) = uVar2 + 1;
+        iVar5 = *(int *)(local_8 + 0x28);
+        uVar2 = *(uint *)(iVar5 + 4);
+        if (uVar2 < *(uint *)(iVar5 + 0xc)) {
+          pbVar6 = (byte *)(*(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c));
+          *(uint *)(iVar5 + 4) = uVar2 + 1;
         }
         else {
-          pbVar5 = (byte *)0x0;
+          pbVar6 = (byte *)0x0;
         }
-        if (pbVar5 == (byte *)0x0) {
-          *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = uVar8;
+        if (pbVar6 == (byte *)0x0) {
+          *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = uVar9;
           g_currentExceptionFrame = local_5c.previous;
           return 0;
         }
-      } while ((*pbVar5 & 1) != 0);
+      } while ((*pbVar6 & 1) != 0);
     } while( true );
   case 0x1b:
-    uVar8 = *(undefined4 *)(*(int *)(local_8 + 0x28) + 4);
+    uVar9 = *(undefined4 *)(*(int *)(local_8 + 0x28) + 4);
     *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = 0;
     while( true ) {
-      iVar4 = *(int *)(local_8 + 0x28);
-      uVar2 = *(uint *)(iVar4 + 4);
-      if (uVar2 < *(uint *)(iVar4 + 0xc)) {
-        iVar7 = *(int *)(iVar4 + 8) * uVar2 + *(int *)(iVar4 + 0x1c);
-        *(uint *)(iVar4 + 4) = uVar2 + 1;
+      iVar5 = *(int *)(local_8 + 0x28);
+      uVar2 = *(uint *)(iVar5 + 4);
+      if (uVar2 < *(uint *)(iVar5 + 0xc)) {
+        iVar8 = *(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c);
+        *(uint *)(iVar5 + 4) = uVar2 + 1;
       }
       else {
-        iVar7 = 0;
+        iVar8 = 0;
       }
-      if (iVar7 == 0) break;
-      *(undefined4 *)(iVar7 + 4) = 1;
+      if (iVar8 == 0) break;
+      *(undefined4 *)(iVar8 + 4) = 1;
     }
-    *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = uVar8;
+    *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = uVar9;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x65:
     *(undefined4 *)(param_1 + 0x14) = 0;
-    iVar4 = *(int *)(local_8 + 0x24);
-    if (iVar4 != 0) {
-      uVar2 = *(uint *)(iVar4 + 0xc);
+    iVar5 = *(int *)(local_8 + 0x24);
+    if (iVar5 != 0) {
+      uVar2 = *(uint *)(iVar5 + 0xc);
       if (uVar2 - 1 < uVar2) {
         *(undefined4 *)(param_1 + 0x14) =
-             *(undefined4 *)((uVar2 - 1) * *(int *)(iVar4 + 8) + *(int *)(iVar4 + 0x1c) + 8);
+             *(undefined4 *)((uVar2 - 1) * *(int *)(iVar5 + 8) + *(int *)(iVar5 + 0x1c) + 8);
         g_currentExceptionFrame = local_5c.previous;
         return 0;
       }
@@ -178,13 +185,13 @@ undefined4 FUN_0071ca50(int param_1)
     }
     break;
   case 0x66:
-    BVar6 = GetClientRect(DAT_00856d78,&local_18);
-    if (BVar6 == 0) {
-      iVar7 = 0x2ca;
+    BVar7 = GetClientRect(DAT_00856d78,&local_18);
+    if (BVar7 == 0) {
+      iVar8 = 0x2ca;
       sourceFile = s_E__Ourlib_Sinput_cpp_007f092c;
-      iVar4 = DAT_007ed77c;
+      iVar5 = DAT_007ed77c;
       exceptionCode = GetLastError();
-      RaiseInternalException(exceptionCode,iVar4,sourceFile,iVar7);
+      RaiseInternalException(exceptionCode,iVar5,sourceFile,iVar8);
     }
     *(LONG *)(local_8 + 0x3c) = local_18.right - local_18.left;
     *(LONG *)(local_8 + 0x34) = local_18.left;

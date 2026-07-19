@@ -41,7 +41,7 @@ void __fastcall FUN_005de670(int param_1)
   }
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
-  iVar2 = __setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_68.previous;
     if (local_14 != (HANDLE)0xffffffff) {
@@ -58,7 +58,7 @@ void __fastcall FUN_005de670(int param_1)
     *(undefined4 *)(local_1c + 0x69e) = 0;
     return;
   }
-  FUN_0072e730(&DAT_0080ed16,local_478,local_374,local_16c,(byte *)0x0);
+  Library::MSVCRT::FUN_0072e730(&DAT_0080ed16,local_478,local_374,local_16c,(byte *)0x0);
   local_18 = 0xffffffff;
   pbVar8 = local_16c;
   do {
@@ -68,7 +68,8 @@ void __fastcall FUN_005de670(int param_1)
     pbVar8 = pbVar8 + 1;
   } while (bVar1 != 0);
   local_18 = ~local_18;
-  __makepath(local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c0);
+  Library::MSVCRT::__makepath
+            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c0);
   pvVar3 = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_14 = pvVar3;
   if (pvVar3 == (HANDLE)0xffffffff) {
@@ -80,7 +81,8 @@ void __fastcall FUN_005de670(int param_1)
   if (DVar4 == 0xffffffff) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x415);
   }
-  __makepath(local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
+  Library::MSVCRT::__makepath
+            (local_270,(char *)local_478,(char *)local_374,(char *)local_16c,PTR_DAT_0079c1c4);
   hFile = CreateFileA(local_270,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,(HANDLE)0x0);
   local_10 = hFile;
   if (hFile == (HANDLE)0xffffffff) {
@@ -91,7 +93,8 @@ void __fastcall FUN_005de670(int param_1)
   if (DVar4 == 0xffffffff) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41c);
   }
-  local_c = (LPVOID)FUN_006aac70(*(int *)(iVar2 + 0x6ae) + local_18 + *(int *)(iVar2 + 0x6b2));
+  local_c = (LPVOID)Library::DKW::LIB::FUN_006aac70
+                              (*(int *)(iVar2 + 0x6ae) + local_18 + *(int *)(iVar2 + 0x6b2));
   if (local_c == (LPVOID)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_startsys_cpp_007cd718,0x41e);
   }

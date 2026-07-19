@@ -43,10 +43,10 @@ undefined4 thunk_FUN_00497370(int param_1,int param_2,uint param_3,undefined4 pa
   uStack_8 = 0;
   ExceptionList = &pvStack_14;
   iStack_44 = iVar2;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puStack_38 = &stack0xffffff90;
   puStack_1c = &stack0xffffff90;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   uStack_8 = 0xffffffff;
   iStack_30 = 0;
   iStack_40 = 0;

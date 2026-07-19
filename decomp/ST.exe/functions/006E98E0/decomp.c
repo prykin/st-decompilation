@@ -15,7 +15,7 @@ FUN_006e98e0(void *this,uint param_1,uint param_2,undefined4 param_3,int param_4
       return 0;
     }
     if (puVar1[0x28] == 0) {
-      puVar3 = FUN_006aac10(puVar1[0x25] * 8);
+      puVar3 = Library::DKW::LIB::FUN_006aac10(puVar1[0x25] * 8);
       puVar1[0x28] = (uint)puVar3;
       if (puVar3 == (undefined4 *)0x0) {
         return 0xfffffffe;

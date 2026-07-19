@@ -19,7 +19,7 @@ void __thiscall FUN_006e56b0(void *this,uint param_1)
   iVar3 = FUN_006e5360(this,uVar2,(int *)&param_1,&local_8);
   if (iVar3 == 0) {
     FUN_006b0c70(*(int *)((int)this + 0x10),param_1);
-    FUN_006e3970(uVar2);
+    AppClassTy::DeleteObject(*(AppClassTy **)((int)this + 0x18),uVar2);
     for (puVar1 = *(undefined4 **)((int)this + 0xc); puVar1 != (undefined4 *)0x0;
         puVar1 = (undefined4 *)*puVar1) {
       uVar2 = puVar1[1];

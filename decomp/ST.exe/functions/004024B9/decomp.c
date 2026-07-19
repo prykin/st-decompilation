@@ -15,7 +15,7 @@ undefined4 __cdecl thunk_FUN_006809f0(uint *param_1)
   uStack_c = 0;
   pbStack_8 = (byte *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
-  iStack_14 = __setjmp3(auStack_58,0,unaff_ESI,pIVar1);
+  iStack_14 = Library::MSVCRT::__setjmp3(auStack_58,0,unaff_ESI,pIVar1);
   if (iStack_14 == 0) {
     uStack_18 = param_1[2];
     iStack_10 = iStack_14;

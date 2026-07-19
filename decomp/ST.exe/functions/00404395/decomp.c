@@ -16,7 +16,7 @@ undefined4 thunk_FUN_004d0f00(void)
   auStack_20[2] = 2;
   auStack_20[1] = 0xff;
   auStack_20[0] = 0x3ea;
-  thunk_FUN_0054cc20(0x3ea,0,0,auStack_20,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x3ea,0,0,auStack_20,0);
   return 0;
 }
 

@@ -48,8 +48,9 @@ LAB_006e6a01:
   fVar3 = fVar3 / (float)*(double *)((int)this + 200);
   if (_DAT_0079034c <= fVar3) {
     if (fVar3 < (float)iVar7) {
-      FUN_0072e150(SUB84((double)fVar3,0),(uint)((ulonglong)(double)fVar3 >> 0x20));
-      lVar9 = __ftol();
+      Library::MSVCRT::FUN_0072e150(SUB84((double)fVar3,0),(uint)((ulonglong)(double)fVar3 >> 0x20))
+      ;
+      lVar9 = Library::MSVCRT::__ftol();
       *param_3 = (int)lVar9;
     }
     else {
@@ -65,8 +66,9 @@ LAB_006e6a01:
   if (_DAT_0079034c <= local_8) {
     iVar6 = (int)*(short *)(*(int *)((int)this + 0x280) + 2);
     if (local_8 < (float)iVar6) {
-      FUN_0072e150(SUB84((double)local_8,0),(uint)((ulonglong)(double)local_8 >> 0x20));
-      lVar9 = __ftol();
+      Library::MSVCRT::FUN_0072e150
+                (SUB84((double)local_8,0),(uint)((ulonglong)(double)local_8 >> 0x20));
+      lVar9 = Library::MSVCRT::__ftol();
       *param_4 = (int)lVar9;
       return uVar8;
     }

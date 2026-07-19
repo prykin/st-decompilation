@@ -1,4 +1,4 @@
-FUN_0048a670:
+STBoatC::_SetSpeedFireLife:
 0048A670  56                        PUSH ESI
 0048A671  8B F1                     MOV ESI,ECX
 0048A673  57                        PUSH EDI

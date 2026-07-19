@@ -22,7 +22,7 @@ void __thiscall FUN_00709670(void *this,uint param_1,int param_2,int param_3,und
     local_8 = 0;
     uVar4 = puVar1[0x25];
     ExceptionList = &local_14;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     puVar6 = (undefined4 *)&stack0xffffffc4;
     for (uVar4 = uVar4 & 0x3fffffff; uVar4 != 0; uVar4 = uVar4 - 1) {

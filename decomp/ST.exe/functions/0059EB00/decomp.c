@@ -90,7 +90,7 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar7 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar7 == 0) {
     if (*(int *)(local_8 + 0x1e8e) != 0) {
@@ -105,17 +105,17 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     uVar3 = FUN_006b50c0(0x174,0x175,(uint)*(ushort *)(*(int *)(this_00 + 0x5d) + 0xe),uVar2,puVar8,
                          iVar7);
     *(undefined4 *)(this_00 + 0x1e8e) = uVar3;
-    ptVar4 = FUN_006c4880(DAT_0080759c,0x199,0x5e,0x174,0x175,8);
+    ptVar4 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x199,0x5e,0x174,0x175,8);
     *(LPBITMAPINFO *)(this_00 + 0x1e92) = ptVar4;
-    ptVar4 = FUN_006c4880(DAT_0080759c,0x13,0x5e,0x174,0x175,8);
+    ptVar4 = Library::DKW::DDX::FUN_006c4880(DAT_0080759c,0x13,0x5e,0x174,0x175,8);
     *(LPBITMAPINFO *)(this_00 + 0x1e9a) = ptVar4;
-    puVar5 = FUN_006b54f0((uint *)0x0,1,1);
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(this_00 + 0x1ae8) = puVar5;
-    FUN_006b5aa0((int)puVar5,&DAT_008016a0);
-    puVar5 = FUN_006b54f0((uint *)0x0,1,1);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     *(uint **)(this_00 + 0x1aec) = puVar5;
-    FUN_006b5aa0((int)puVar5,&DAT_008016a0);
-    puVar5 = FUN_006ae290((uint *)0x0,0x14,0x25c,10);
+    Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x14,0x25c,10);
     *(uint **)(this_00 + 0x1ebe) = puVar5;
     local_520[4] = 0x15b - *(int *)(this_00 + 0x1cff);
     local_4f8 = *(undefined4 *)(this_00 + 8);
@@ -177,16 +177,19 @@ void __thiscall FSGSTy::JoinGameCtrls(FSGSTy *this)
     local_a0 = local_4f8;
     (**(code **)(**(int **)(this_00 + 0xc) + 8))(7,(MMObjTy *)(this_00 + 0x1b20),0,local_520,0);
     if (*(uint *)(this_00 + 0x1cdf) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(this_00 + 0x1d23),*(uint *)(this_00 + 0x1cdf),0xfffffffe,
-                   *(uint *)(this_00 + 0x1cf7),*(uint *)(this_00 + 0x1cfb));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(this_00 + 0x1d23),*(uint *)(this_00 + 0x1cdf),0xfffffffe,
+                 *(uint *)(this_00 + 0x1cf7),*(uint *)(this_00 + 0x1cfb));
     }
     if (*(uint *)(this_00 + 0x1d70) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(this_00 + 0x1db4),*(uint *)(this_00 + 0x1d70),0xfffffffe,
-                   *(uint *)(this_00 + 0x1d88),*(uint *)(this_00 + 0x1d8c));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(this_00 + 0x1db4),*(uint *)(this_00 + 0x1d70),0xfffffffe,
+                 *(uint *)(this_00 + 0x1d88),*(uint *)(this_00 + 0x1d8c));
     }
     if (*(uint *)(this_00 + 0x1e01) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(this_00 + 0x1e45),*(uint *)(this_00 + 0x1e01),0xfffffffe,
-                   *(uint *)(this_00 + 0x1e19),*(uint *)(this_00 + 0x1e1d));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(this_00 + 0x1e45),*(uint *)(this_00 + 0x1e01),0xfffffffe,
+                 *(uint *)(this_00 + 0x1e19),*(uint *)(this_00 + 0x1e1d));
     }
     local_dac[8] = *(undefined4 *)(this_00 + 0x1ae8);
     puVar8 = local_dac;

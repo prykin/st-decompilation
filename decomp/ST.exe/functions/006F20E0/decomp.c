@@ -17,7 +17,7 @@ void __thiscall cMf32::RecMemFree(cMf32 *this,uint *param_1)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar4;
     iVar3 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x237,0,iVar2,&DAT_007a4ccc,

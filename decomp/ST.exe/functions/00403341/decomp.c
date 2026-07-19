@@ -20,7 +20,7 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   puStack_8 = (undefined4 *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   pAStack_14 = this;
-  errorCode = __setjmp3(auStack_54,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_54,0,unaff_ESI,pIVar5);
   pAVar4 = pAStack_14;
   if (errorCode == 0) {
     puStack_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)(pAStack_14 + 0x1c),&uStack_10);

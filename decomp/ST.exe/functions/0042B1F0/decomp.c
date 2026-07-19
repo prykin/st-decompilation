@@ -38,7 +38,7 @@ STAllPlayersC::GetGObjFromBox
   local_1c = param_7 + -1 + local_18;
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  iVar4 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_70.previous;
     if (iVar4 != -0x5001fff7) {
@@ -87,11 +87,11 @@ STAllPlayersC::GetGObjFromBox
     }
   }
   else if (*param_8 == 0) {
-    puVar5 = FUN_006ae290((uint *)0x0,7,2,5);
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,2,5);
     *param_8 = (int)puVar5;
   }
   if ((param_9 != (int *)0x0) && (*param_9 == 0)) {
-    puVar5 = FUN_006ae290((uint *)0x0,7,2,5);
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,2,5);
     *param_9 = (int)puVar5;
   }
   if (param_10 != (int *)0x0) {
@@ -124,14 +124,16 @@ STAllPlayersC::GetGObjFromBox
                 if (iVar7 == 0x14) {
                   piVar3 = param_10;
                   if (param_8 != (int *)0x0) {
-                    FUN_006ae1c0((uint *)*param_8,(undefined4 *)((int)piVar1 + 0x32));
+                    Library::DKW::TBL::FUN_006ae1c0
+                              ((uint *)*param_8,(undefined4 *)((int)piVar1 + 0x32));
                   }
                 }
                 else {
                   if ((iVar7 != 1000) && (iVar7 != 0x3e9)) goto LAB_0042b469;
                   piVar3 = param_11;
                   if (param_9 != (int *)0x0) {
-                    FUN_006ae1c0((uint *)*param_9,(undefined4 *)((int)piVar1 + 0x32));
+                    Library::DKW::TBL::FUN_006ae1c0
+                              ((uint *)*param_9,(undefined4 *)((int)piVar1 + 0x32));
                   }
                 }
                 if (piVar3 != (int *)0x0) {

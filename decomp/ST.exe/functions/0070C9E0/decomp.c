@@ -38,7 +38,7 @@ undefined4 * __cdecl FUN_0070c9e0(int param_1,char param_2,uint *param_3)
     iVar2 = local_c + 8 + ((int)(local_c + 8) >> 0x1f & 7U);
   }
   uVar6 = (iVar2 >> 3) * local_10;
-  puVar3 = FUN_006aac10(uVar6);
+  puVar3 = Library::DKW::LIB::FUN_006aac10(uVar6);
   if (puVar3 == (undefined4 *)0x0) {
     return (undefined4 *)0x0;
   }

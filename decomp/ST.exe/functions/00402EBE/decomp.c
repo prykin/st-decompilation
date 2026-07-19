@@ -30,7 +30,7 @@ undefined * thunk_FUN_006a3b20(int param_1)
     if (BVar1 != 0) {
       return &DAT_00854970;
     }
-    iVar2 = FUN_00730c40(DAT_008549f0,0x7ec1c8);
+    iVar2 = Library::MSVCRT::FUN_00730c40(DAT_008549f0,0x7ec1c8);
     DAT_008549f0 = DAT_008549f0 + iVar2;
     iVar3 = iVar3 + 1;
     lp_00 = (undefined4 *)*lp_00;

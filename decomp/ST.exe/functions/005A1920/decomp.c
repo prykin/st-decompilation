@@ -43,7 +43,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;
     local_c = this;
-    iVar4 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pFVar12 = local_c;
     if (iVar4 == 0) {
       if ((param_3 == 1) || (param_3 == 8)) {
@@ -59,9 +59,9 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         local_8 = (int *)0x0;
         local_9c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_9c;
-        iVar4 = __setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
         if (iVar4 == 0) {
-          piVar7 = FUN_006c7c50(param_5,param_4);
+          piVar7 = Library::DKW::GPC::FUN_006c7c50(param_5,param_4);
           pFVar12 = local_c;
           local_8 = piVar7;
           if (piVar7 != (int *)0x0) {
@@ -87,7 +87,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
             FUN_006b0a20(DAT_0080759c,(int)local_860,0x20,0x40,0);
             piVar7 = local_8;
             FUN_006c7b90(local_8,0x4e,9);
-            FUN_006c79a0(piVar7,*(undefined4 **)(pFVar12 + 0x1a97),0);
+            Library::DKW::GPC::FUN_006c79a0(piVar7,*(undefined4 **)(pFVar12 + 0x1a97),0);
             FUN_006c7980(piVar7);
           }
           g_currentExceptionFrame = local_9c.previous;
@@ -105,10 +105,10 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
         *(undefined4 *)(pFVar12 + 0x1aa3) = 0;
         local_e0.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_e0;
-        iVar4 = __setjmp3(local_e0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        iVar4 = Library::MSVCRT::__setjmp3(local_e0.jumpBuffer,0,unaff_EDI,unaff_ESI);
         pFVar12 = local_c;
         if (iVar4 == 0) {
-          puVar5 = (undefined4 *)FUN_006aac70(param_4);
+          puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_4);
           pFVar12 = local_c;
           *(undefined4 **)(local_c + 0x1a9b) = puVar5;
           if (puVar5 != (undefined4 *)0x0) {
@@ -122,7 +122,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
               param_5 = (undefined4 *)((int)param_5 + 1);
               puVar5 = (undefined4 *)((int)puVar5 + 1);
             }
-            puVar5 = FUN_006c7dc0(*(undefined4 *)(local_c + 0x1a9b));
+            puVar5 = Library::DKW::GPC::FUN_006c7dc0(*(undefined4 *)(local_c + 0x1a9b));
             *(undefined4 **)(pFVar12 + 0x1a9f) = puVar5;
             if (puVar5 != (undefined4 *)0x0) {
               puVar14 = &local_4e0;
@@ -146,7 +146,8 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
               } while (local_8 != (int *)0x0);
               FUN_006b0a20(DAT_0080759c,(int)local_460,0x20,0x40,0);
               FUN_006c7d00(*(undefined4 **)(pFVar12 + 0x1a9f),0x4e,9);
-              FUN_006c7070(*(int **)(pFVar12 + 0x1a9f),*(undefined4 **)(pFVar12 + 0x1a97),0);
+              Library::DKW::GPC::FUN_006c7070
+                        (*(int **)(pFVar12 + 0x1a9f),*(undefined4 **)(pFVar12 + 0x1a97),0);
               iVar4 = FUN_006c7000(*(int *)(pFVar12 + 0x1a9f));
               *(int *)(pFVar12 + 0x1aa3) = iVar4;
               if (iVar4 < 1) {
@@ -193,7 +194,7 @@ LAB_005a1cfd:
           cVar2 = *pcVar8;
           pcVar8 = pcVar8 + 1;
         } while (cVar2 != '\0');
-        pcVar8 = (char *)FUN_006aac70(~uVar10);
+        pcVar8 = (char *)Library::DKW::LIB::FUN_006aac70(~uVar10);
         *(char **)(pFVar12 + 0x1aab) = pcVar8;
         if (pcVar8 != (char *)0x0) {
           uVar10 = 0xffffffff;

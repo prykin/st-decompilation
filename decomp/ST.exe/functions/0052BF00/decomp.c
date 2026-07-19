@@ -18,6 +18,10 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
   MoneyTy *pMVar9;
   undefined4 uVar10;
   int iVar11;
+  ccFntTy *this_01;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *this_02;
   MoneyTy MVar12;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -44,7 +48,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
   local_bc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_bc;
   local_10 = this;
-  iVar5 = __setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar5 == 0) {
     switch(*(undefined4 *)(param_1 + 0x10)) {
@@ -260,11 +264,11 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
       *(int *)(local_10 + 0x38) = DAT_00806730 + -99;
       *(int *)(local_10 + 0x3c) = DAT_00806734 + -0x16;
       local_10[0x69] = (MoneyTy)(((DAT_0080874e == '\x03') - 1U & 0xc3) + 0x3d);
-      puVar6 = FUN_0070ceb0(0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+      puVar6 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
       *(undefined4 **)(this_00 + 0x6a) = puVar6;
       puVar6[0x16] = 1;
       puVar6[0x17] = 0;
-      puVar6 = FUN_0070ceb0(0x19d,DAT_00806790,s_TIME_FONT_007c212c,0);
+      puVar6 = ccFntTy::operator(this_01,0x19d,DAT_00806790,s_TIME_FONT_007c212c,0);
       *(undefined4 **)(this_00 + 0x6e) = puVar6;
       puVar6[0x16] = 1;
       puVar6[0x17] = 0;
@@ -402,18 +406,21 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
       if (*(int *)(this_00 + 0x7a) != 0) {
         FUN_006ab060((undefined4 *)(this_00 + 0x7a));
       }
+      this_02 = (ccFntTy *)0x0;
       if (*(int *)(this_00 + 0x7e) != 0) {
         FUN_006ab060((undefined4 *)(this_00 + 0x7e));
+        this_02 = extraout_ECX;
       }
       if (*(int *)(this_00 + 0x82) != 0) {
         *(undefined4 *)(this_00 + 0x82) = 0;
       }
       if (*(uint **)(this_00 + 0x6a) != (uint *)0x0) {
-        FUN_00710560(*(uint **)(this_00 + 0x6a));
+        ccFntTy::operator(this_02,*(uint **)(this_00 + 0x6a));
         *(undefined4 *)(this_00 + 0x6a) = 0;
+        this_02 = extraout_ECX_00;
       }
       if (*(uint **)(this_00 + 0x6e) != (uint *)0x0) {
-        FUN_00710560(*(uint **)(this_00 + 0x6e));
+        ccFntTy::operator(this_02,*(uint **)(this_00 + 0x6e));
         *(undefined4 *)(this_00 + 0x6e) = 0;
       }
       break;

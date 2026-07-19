@@ -1,4 +1,4 @@
-FUN_00581ac0:
+STJellyManC::Error:
 00581AC0  55                        PUSH EBP
 00581AC1  8B EC                     MOV EBP,ESP
 00581AC3  8B 81 0F 02 00 00         MOV EAX,dword ptr [ECX + 0x20f]

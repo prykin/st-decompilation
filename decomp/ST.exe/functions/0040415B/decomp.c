@@ -33,7 +33,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
     IStack_68.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_68;
     pCStack_24 = this;
-    iVar3 = __setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pCStack_24;
     if (iVar3 == 0) {
       pCStack_c = (CPanelTy *)(param_1 & 0xff);
@@ -47,8 +47,8 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       }
       pCStack_18 = pCVar8;
       *(undefined2 *)pCVar9 = *(undefined2 *)pCVar7;
-      thunk_FUN_0043beb0(DAT_007fa174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),
-                         (int *)pCVar8);
+      STAllPlayersC::GetPanelInfo
+                (DAT_007fa174,CONCAT31((int3)(param_1 >> 8),(char)param_1 + '\x0e'),(int *)pCVar8);
       pCVar8 = pCStack_c;
       uStack_1c = uStack_1c & 0xffffff00;
       bVar2 = ((DAT_00806730 != 0x400) - 1U & 0xfc) + 6;
@@ -88,9 +88,10 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             if (bVar6 < 0xb) {
               uVar11 = (uint)bVar6;
               if (-1 < (int)*(uint *)(this_00 + uVar11 * 4 + 0x148)) {
-                FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + uVar11 * 4 + 0x148),0xffffffff,
-                             *(uint *)(this_00 + uVar11 * 4 + 0x3c),
-                             *(uint *)(this_00 + uVar11 * 4 + 0x94));
+                Library::DKW::DDX::FUN_006b3640
+                          (DAT_008075a8,*(uint *)(this_00 + uVar11 * 4 + 0x148),0xffffffff,
+                           *(uint *)(this_00 + uVar11 * 4 + 0x3c),
+                           *(uint *)(this_00 + uVar11 * 4 + 0x94));
                 bVar2 = bStack_5;
               }
             }

@@ -29,7 +29,7 @@ VisibleClassTy::SetZoneTsh
     if (*(int *)(this + param_4 * 4 + 0x94) == 0) {
       IStack_60.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &IStack_60;
-      iVar4 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+      iVar4 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this = pVStack_14;
       if (iVar4 != 0) {
         g_currentExceptionFrame = IStack_60.previous;
@@ -42,7 +42,8 @@ VisibleClassTy::SetZoneTsh
         (*pcVar2)();
         return;
       }
-      puVar5 = FUN_006aac10(*(int *)(pVStack_14 + 0x24) * *(int *)(pVStack_14 + 0x20));
+      puVar5 = Library::DKW::LIB::FUN_006aac10
+                         (*(int *)(pVStack_14 + 0x24) * *(int *)(pVStack_14 + 0x20));
       *(undefined4 **)(this + param_4 * 4 + 0x94) = puVar5;
       g_currentExceptionFrame = IStack_60.previous;
     }

@@ -1,4 +1,4 @@
-FUN_006e51f0:
+SystemClassTy::InitSystem:
 006E51F0  55                        PUSH EBP
 006E51F1  8B EC                     MOV EBP,ESP
 006E51F3  83 EC 48                  SUB ESP,0x48

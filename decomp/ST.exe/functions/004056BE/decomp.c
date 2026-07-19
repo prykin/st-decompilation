@@ -16,7 +16,7 @@ int __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,undefined4 *para
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pAStack_8 = this;
-  iVar4 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = pAStack_8;
   if (iVar4 == 0) {
     param_1[0xb] = 0;
@@ -32,7 +32,7 @@ int __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,undefined4 *para
     *(short *)((int)param_1 + 6) =
          *(short *)((int)param_1 + 6) + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     *(undefined4 *)((int)param_1 + 0x3a) = *(undefined4 *)(pAVar3 + 300);
-    FUN_006ae1c0(*(uint **)(pAVar3 + 0xbd),param_1);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pAVar3 + 0xbd),param_1);
     thunk_FUN_00676c40(*(int *)(pAVar3 + 0xbd),&LAB_0040242d);
     g_currentExceptionFrame = IStack_4c.previous;
     return 0;

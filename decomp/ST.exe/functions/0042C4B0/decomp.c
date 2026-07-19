@@ -23,7 +23,7 @@ STAllPlayersC::DelObjsFromTmp
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_c = this;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (param_4 == 0) {
       RaiseInternalException

@@ -20,10 +20,11 @@ undefined4 __fastcall thunk_FUN_00492b20(int param_1)
   short sStack_8;
   short sStack_6;
   
-  this = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)param_1 >> 8),
-                                            *(undefined1 *)(param_1 + 0x5fc)),
-                                   CONCAT22((short)((uint)in_EAX >> 0x10),
-                                            *(undefined2 *)(param_1 + 0x5fd)),1);
+  this = (int *)STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,
+                           CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x5fc)),
+                           CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0x5fd)),
+                           1);
   if ((((((this != (int *)0x0) && (this[6] == *(int *)(param_1 + 0x5ff))) &&
         (iVar1 = (**(code **)(*this + 0x108))(*(undefined4 *)(param_1 + 0x24)), iVar1 != 0)) &&
        ((thunk_FUN_004162b0(this,&sStack_8,&sStack_6,asStack_c), -1 < sStack_8 &&

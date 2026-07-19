@@ -39,7 +39,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
   if (local_1c != 0) {
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
-    iVar2 = __setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       local_18 = *(uint *)(local_1c + 0xc);
       iVar2 = local_1c;
@@ -79,7 +79,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                     if (0 < *(int *)(local_48 + 0xc)) {
                       do {
                         FUN_006acc70((int)local_48,uVar7,(undefined4 *)&local_12);
-                        FUN_006ae1c0(local_38,(undefined4 *)&local_12);
+                        Library::DKW::TBL::FUN_006ae1c0(local_38,(undefined4 *)&local_12);
                         uVar7 = uVar7 + 1;
                       } while ((int)uVar7 < *(int *)(local_48 + 0xc));
                     }
@@ -122,7 +122,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
       }
       FUN_006acc70(iVar2,0,&local_3c);
       uVar7 = *(uint *)(local_3c + 0xc);
-      puVar3 = FUN_006ae290((uint *)0x0,uVar7,10,1);
+      puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,uVar7,10,1);
       *(uint **)((int)&DAT_007f581a + param_1 * 0xa62) = puVar3;
       local_10 = 0;
       local_c = 0;
@@ -131,10 +131,10 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
         do {
           FUN_006acc70(local_3c,local_c,(undefined4 *)&local_6);
           local_28 = local_6;
-          local_26 = FUN_006ae290((uint *)0x0,1,4,1);
+          local_26 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           local_22 = 0;
-          FUN_006ae1c0(local_26,&local_10);
-          FUN_006ae1c0(puVar3,(undefined4 *)&local_28);
+          Library::DKW::TBL::FUN_006ae1c0(local_26,&local_10);
+          Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&local_28);
           local_c = local_c + 1;
         } while ((int)local_c < (int)uVar7);
       }
@@ -152,7 +152,7 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
                 do {
                   FUN_006acc70((int)puVar3,uVar4,(undefined4 *)&local_28);
                   if (local_28 == local_6) {
-                    FUN_006ae1c0(local_26,&local_c);
+                    Library::DKW::TBL::FUN_006ae1c0(local_26,&local_c);
                     break;
                   }
                   uVar4 = uVar4 + 1;
@@ -160,10 +160,10 @@ void __thiscall STAllPlayersC::OptimizeGuardBoats(STAllPlayersC *this,char param
               }
               if (uVar4 == uVar7) {
                 local_28 = local_6;
-                local_26 = FUN_006ae290((uint *)0x0,1,4,1);
+                local_26 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
                 local_22 = 0;
-                FUN_006ae1c0(local_26,&local_c);
-                FUN_006ae1c0(puVar3,(undefined4 *)&local_28);
+                Library::DKW::TBL::FUN_006ae1c0(local_26,&local_c);
+                Library::DKW::TBL::FUN_006ae1c0(puVar3,(undefined4 *)&local_28);
               }
               local_10 = local_10 + 1;
             } while ((int)local_10 < local_2c);

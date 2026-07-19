@@ -20,7 +20,7 @@ CursorClassTy::SetImages
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar3 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
@@ -38,12 +38,14 @@ CursorClassTy::SetImages
   *(undefined4 *)(local_8 + 0xa9) = param_1;
   *(uint *)(local_8 + 0xbd) = -param_5;
   (**(code **)(*(int *)(local_8 + 0x18) + 4))(DAT_00806784,7,0,param_2,0xffffffff);
-  FUN_006b85d0(*(uint **)(pCVar2 + 0xad),(int)*(short *)(*(int *)(pCVar2 + 0x69) + 0x23),
-               (BITMAPINFO *)(*(int *)(pCVar2 + 0x69) + 0x2d),0x8000000,0,param_4,param_5);
+  Library::DKW::DDX::FUN_006b85d0
+            (*(uint **)(pCVar2 + 0xad),(int)*(short *)(*(int *)(pCVar2 + 0x69) + 0x23),
+             (BITMAPINFO *)(*(int *)(pCVar2 + 0x69) + 0x2d),0x8000000,0,param_4,param_5);
   *(undefined4 *)(pCVar2 + 0x58) = param_3;
   if (*(uint *)(pCVar2 + 0x1c) != 0xffffffff) {
-    FUN_006b34d0(*(uint **)(pCVar2 + 0x60),*(uint *)(pCVar2 + 0x1c),0xfffffffe,
-                 *(uint *)(pCVar2 + 0x34),*(uint *)(pCVar2 + 0x38));
+    Library::DKW::DDX::FUN_006b34d0
+              (*(uint **)(pCVar2 + 0x60),*(uint *)(pCVar2 + 0x1c),0xfffffffe,
+               *(uint *)(pCVar2 + 0x34),*(uint *)(pCVar2 + 0x38));
   }
   if (param_6 < 0) {
     *(int *)(pCVar2 + 0xb1) = *(int *)(pCVar2 + 0x3c) - (int)param_4;

@@ -113,7 +113,7 @@ void FUN_00754b80(int param_1,ushort *param_2,int param_3,int *param_4,undefined
     }
     if (*(uint *)(param_1 + 0x84) < *(uint *)(param_1 + 0x6c)) {
       while (param_6 != 0) {
-        FUN_007568d0(param_1,param_4,1);
+        Library::DKW::JPG::FUN_007568d0(param_1,param_4,1);
         iVar12 = 0;
         puVar9 = param_2;
         if (0 < *(int *)(param_1 + 0x68)) {
@@ -141,7 +141,7 @@ void FUN_00754b80(int param_1,ushort *param_2,int param_3,int *param_4,undefined
         if (param_6 == 0) {
           return;
         }
-        FUN_007568d0(iVar12,param_4,1);
+        Library::DKW::JPG::FUN_007568d0(iVar12,param_4,1);
         piVar11 = (int *)*param_4;
         param_1 = 0;
         if (0 < *(int *)(iVar12 + 0x68)) {

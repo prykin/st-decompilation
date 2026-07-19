@@ -20,7 +20,7 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
   pIVar6 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar6);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar6);
   pAVar2 = local_8;
   if (errorCode == 0) {
     if (local_8 == (AiEventClassTy *)0x0) {

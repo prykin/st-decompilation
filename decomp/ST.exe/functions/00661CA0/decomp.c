@@ -32,13 +32,13 @@ void __fastcall FUN_00661ca0(int param_1,undefined4 param_2,int param_3)
   uint local_c;
   undefined2 local_6;
   
-  if ((DAT_007fa174 != 0) &&
+  if ((DAT_007fa174 != (STAllPlayersC *)0x0) &&
      (local_14 = param_1,
-     this = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)param_2 >> 8),
-                                               *(undefined1 *)(param_1 + 0x24)),
-                                      CONCAT22((short)((uint)in_EAX >> 0x10),
-                                               *(undefined2 *)(param_3 + 0x16)),1),
-     this != (int *)0x0)) {
+     this = (int *)STAllPlayersC::GetObjPtr
+                             (DAT_007fa174,
+                              CONCAT31((int3)((uint)param_2 >> 8),*(undefined1 *)(param_1 + 0x24)),
+                              CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_3 + 0x16)
+                                      ),1), this != (int *)0x0)) {
     local_10 = this;
     local_20 = thunk_FUN_004357f0(*(char *)(param_1 + 0x24));
     uVar4 = (**(code **)(*this + 0x2c))();

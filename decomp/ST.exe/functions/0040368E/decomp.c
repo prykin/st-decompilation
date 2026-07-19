@@ -17,12 +17,12 @@ undefined4 __thiscall STTorpC::SetDangerous(STTorpC *this,undefined4 param_1,uin
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffac;
   pSStack_8 = this;
-  errorCode = __setjmp3(auStack_50,0,unaff_ESI,pIVar5);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_50,0,unaff_ESI,pIVar5);
   if (errorCode == 0) {
     if (*param_2 == 0xffffffff) {
       uStack_10 = param_1;
       uStack_c = 1;
-      uVar2 = FUN_006ae1c0(*(uint **)(pSStack_8 + 0x241),&uStack_10);
+      uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSStack_8 + 0x241),&uStack_10);
       *param_2 = uVar2;
     }
     g_currentExceptionFrame = pIVar5;

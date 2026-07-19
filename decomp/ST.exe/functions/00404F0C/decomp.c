@@ -56,9 +56,9 @@ OptPanelTy::PaintDblBut
     IStack_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_60;
     pOStack_1c = this;
-    iVar3 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
-      puStack_8 = FUN_006f1ce0(1,param_2,(int *)0x0,1);
+      puStack_8 = cMf32::RecGet(DAT_00806790,1,param_2,(int *)0x0,1);
       iVar8 = iStack_14;
       iVar3 = iStack_18;
       pOVar2 = pOStack_1c;
@@ -71,7 +71,7 @@ OptPanelTy::PaintDblBut
       iVar7 = 1;
       pCVar5 = thunk_FUN_00571240(s_BUT_SWITCH_007c71d0,0);
       pCVar5 = FUN_006f2c00(pCVar5,iVar7,uVar4);
-      puStack_8 = FUN_006f1ce0(1,pCVar5,piVar9,iVar10);
+      puStack_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar9,iVar10);
       if (param_6 == 0) {
         iVar7 = piStack_10[3];
       }
@@ -100,8 +100,9 @@ OptPanelTy::PaintDblBut
       iVar3 = 0;
       puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
       ccFntTy::WrTxt(*(ccFntTy **)(pOVar2 + 0x180),puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
-      FUN_006b3640(DAT_008075a8,*(uint *)(pOVar2 + 0x60),0xffffffff,*(uint *)(pOVar2 + 0x3c),
-                   *(uint *)(pOVar2 + 0x44));
+      Library::DKW::DDX::FUN_006b3640
+                (DAT_008075a8,*(uint *)(pOVar2 + 0x60),0xffffffff,*(uint *)(pOVar2 + 0x3c),
+                 *(uint *)(pOVar2 + 0x44));
       g_currentExceptionFrame = IStack_60.previous;
       return;
     }

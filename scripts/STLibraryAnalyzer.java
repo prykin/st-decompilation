@@ -32,6 +32,11 @@ public class STLibraryAnalyzer extends GhidraScript {
         "(?i)^(?:_*Crt.*|_*(?:setjmp3|longjmp|exit|ftol|purecall|amsg_exit|initterm|except_handler3)|" +
         "_*(?:malloc|calloc|realloc|free|memcpy|memmove|memset|memcmp|strlen|strcpy|strncpy|" +
         "strcmp|strncmp|strcat|strchr|strrchr|sprintf|vsprintf|printf|fprintf|fopen|fclose))$");
+    private static final Pattern DKW_PATH = Pattern.compile(
+        "(?i)(?:[A-Z]:\\\\)?D?KW\\\\([A-Z0-9_]+)\\\\");
+    // Confirmed contiguous VC6 CRT block in this ST.exe image; end is exclusive.
+    private static final String CRT_START = "0072D7F0";
+    private static final String CRT_END = "00746BAB";
 
     @Override
     protected void run() throws Exception {
@@ -59,14 +64,27 @@ public class STLibraryAnalyzer extends GhidraScript {
             }
         }
 
-        // Named CRT functions can be classified without a source-path reference.
+        // The linked VC6 runtime is contiguous. Names outside it are only hints.
         for (Function function : currentProgram.getFunctionManager().getFunctions(true)) {
             monitor.checkCancelled();
-            if (function.isExternal() || !CRT_NAME.matcher(function.getName()).matches()) continue;
-            Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
-                ignored -> new Evidence(function));
-            evidence.add(new Classification("MSVCRT", "Library::MSVCRT"),
-                "known CRT symbol: " + function.getName(), function.getEntryPoint());
+            if (function.isExternal()) continue;
+            String address = addr(function.getEntryPoint());
+            boolean inCrtBlock = address.compareTo(CRT_START) >= 0 && address.compareTo(CRT_END) < 0;
+            boolean knownCrtName = CRT_NAME.matcher(function.getName()).matches();
+            if (inCrtBlock || knownCrtName) {
+                Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
+                    ignored -> new Evidence(function));
+                evidence.add(new Classification("MSVCRT", "Library::MSVCRT"),
+                    inCrtBlock ? "confirmed contiguous ST.exe VC6 CRT block " + CRT_START + ".." + CRT_END :
+                        "known CRT symbol: " + function.getName(), function.getEntryPoint(), true);
+            }
+            else if (function.getParentNamespace().isGlobal() && function.getName().startsWith("_")) {
+                Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
+                    ignored -> new Evidence(function));
+                evidence.add(new Classification("MSVCRT", "Library::MSVCRT"),
+                    "global underscore-prefixed symbol: " + function.getName(),
+                    function.getEntryPoint(), false);
+            }
         }
 
         List<Proposal> proposals = new ArrayList<>();
@@ -80,7 +98,8 @@ public class STLibraryAnalyzer extends GhidraScript {
             String library = evidence.libraries.iterator().next();
             String namespace = evidence.namespaces.iterator().next();
             proposals.add(new Proposal(evidence.function, library, namespace,
-                String.join(" | ", evidence.sources), String.join(" | ", evidence.references)));
+                String.join(" | ", evidence.sources), String.join(" | ", evidence.references),
+                evidence.highConfidence));
         }
         proposals.sort(Comparator.comparing(p -> p.function.getEntryPoint()));
 
@@ -102,10 +121,12 @@ public class STLibraryAnalyzer extends GhidraScript {
 
     private Classification classifyPath(String value) {
         String path = value.replace('/', '\\').toLowerCase(Locale.ROOT);
-        if (path.contains("\\dkw\\lib\\")) return new Classification("DKW_LIB", "Library::DKW::LIB");
-        if (path.contains("\\dkw\\tbl\\")) return new Classification("DKW_TBL", "Library::DKW::TBL");
-        if (path.contains("\\dkw\\snd\\")) return new Classification("DKW_SND", "Library::DKW::SND");
         if (path.contains("\\__titans\\crt\\")) return new Classification("MSVCRT", "Library::MSVCRT");
+        java.util.regex.Matcher dkw = DKW_PATH.matcher(value.replace('/', '\\'));
+        if (dkw.find()) {
+            String module = dkw.group(1).toUpperCase(Locale.ROOT);
+            return new Classification("DKW_" + module, "Library::DKW::" + module);
+        }
         return null;
     }
 
@@ -120,8 +141,8 @@ public class STLibraryAnalyzer extends GhidraScript {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\taddress\told_name\tlibrary\tnamespace\tconfidence\tevidence\treferences\n");
             for (Proposal p : proposals) {
-                out.write("1\t" + addr(p.function.getEntryPoint()) + "\t" + tsv(p.function.getName(true)) +
-                    "\t" + p.library + "\t" + p.namespace + "\thigh\t" + tsv(p.evidence) +
+                out.write((p.apply ? "1" : "0") + "\t" + addr(p.function.getEntryPoint()) + "\t" + tsv(p.function.getName(true)) +
+                    "\t" + p.library + "\t" + p.namespace + "\t" + (p.apply ? "high" : "medium") + "\t" + tsv(p.evidence) +
                     "\t" + tsv(p.references) + "\n");
             }
         }
@@ -130,9 +151,9 @@ public class STLibraryAnalyzer extends GhidraScript {
     private void writeJsonl(Path path, List<Proposal> proposals) throws Exception {
         List<String> rows = new ArrayList<>();
         for (Proposal p : proposals) {
-            rows.add("{\"apply\":true,\"address\":" + q(addr(p.function.getEntryPoint())) +
+            rows.add("{\"apply\":" + p.apply + ",\"address\":" + q(addr(p.function.getEntryPoint())) +
                 ",\"old_name\":" + q(p.function.getName(true)) + ",\"library\":" + q(p.library) +
-                ",\"namespace\":" + q(p.namespace) + ",\"confidence\":\"high\",\"evidence\":" +
+                ",\"namespace\":" + q(p.namespace) + ",\"confidence\":" + q(p.apply ? "high" : "medium") + ",\"evidence\":" +
                 q(p.evidence) + ",\"references\":" + q(p.references) + "}");
         }
         Files.write(path, rows, StandardCharsets.UTF_8);
@@ -163,17 +184,24 @@ public class STLibraryAnalyzer extends GhidraScript {
         final Function function;
         final Set<String> libraries = new TreeSet<>(), namespaces = new TreeSet<>();
         final Set<String> sources = new TreeSet<>(), references = new TreeSet<>();
+        boolean highConfidence;
         Evidence(Function function) { this.function = function; }
         void add(Classification c, String source, Address reference) {
+            add(c, source, reference, true);
+        }
+        void add(Classification c, String source, Address reference, boolean high) {
             libraries.add(c.library); namespaces.add(c.namespace); sources.add(source);
             references.add(addr(reference));
+            highConfidence |= high;
         }
     }
     private static class Proposal {
         final Function function; final String library, namespace, evidence, references;
-        Proposal(Function function, String library, String namespace, String evidence, String references) {
+        final boolean apply;
+        Proposal(Function function, String library, String namespace, String evidence,
+                String references, boolean apply) {
             this.function = function; this.library = library; this.namespace = namespace;
-            this.evidence = evidence; this.references = references;
+            this.evidence = evidence; this.references = references; this.apply = apply;
         }
     }
 }

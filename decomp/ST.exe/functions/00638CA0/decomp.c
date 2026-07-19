@@ -27,7 +27,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,int param_1)
     if (uVar5 != 0x10f) {
       return 0;
     }
-    local_8 = (byte *)FUN_006aac70(0x7a);
+    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(0x7a);
     thunk_FUN_00639bf0(this,(undefined4 *)local_8);
     STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)((int)this + 0x18),local_8,0x7a);
     FUN_006ab060(&local_8);

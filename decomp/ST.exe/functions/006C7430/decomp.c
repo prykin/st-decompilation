@@ -38,7 +38,8 @@ void FUN_006c7430(int *param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   ExceptionList = &local_14;
-  local_8 = __setjmp3(local_70.jumpBuffer,2,FUN_0072da21,0xffffffff);
+  local_8 = Library::MSVCRT::__setjmp3
+                      (local_70.jumpBuffer,2,Library::MSVCRT::FUN_0072da21,0xffffffff);
   local_1c = &stack0xffffff7c;
   if (local_8 == 0) {
     if (*(int *)((int)param_1 + 0x72) == 0) {
@@ -47,8 +48,9 @@ void FUN_006c7430(int *param_1)
     }
     else {
       local_1c = &stack0xffffff7c;
-      FUN_006b55f0(*(undefined4 **)((int)param_1 + 0x3a),*(int *)((int)param_1 + 0x3e),local_20,
-                   local_24,*(int *)((int)param_1 + 0x72),0,0,0,local_28,local_2c);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)((int)param_1 + 0x3a),*(int *)((int)param_1 + 0x3e),local_20,
+                 local_24,*(int *)((int)param_1 + 0x72),0,0,0,local_28,local_2c);
     }
     g_currentExceptionFrame = local_70.previous;
     ExceptionList = local_14;

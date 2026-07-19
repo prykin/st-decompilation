@@ -55,9 +55,9 @@ FUN_00728da0(void *this,int param_1,int param_2,short *param_3,uint param_4,int 
   if (2 < (int)param_4) {
     local_8 = 0;
     ExceptionList = &local_14;
-    FUN_0072da40();
-    FUN_0072da40();
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     DAT_0085710c = 1;
     uVar2 = *(undefined4 *)param_3;
@@ -303,7 +303,7 @@ LAB_007292a6:
       }
       else {
         local_8 = 1;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         local_8 = 0xffffffff;
         *(undefined1 **)(&stack0xffffff44 + local_94 * 8) = &stack0xffffff40;
         local_6c = local_94;
@@ -329,7 +329,7 @@ LAB_007292a6:
       }
       else {
         local_8 = 2;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         local_8 = 0xffffffff;
         *(undefined1 **)(&stack0xffffff44 + local_94 * 8) = &stack0xffffff40;
         puVar6 = (undefined4 *)&stack0xffffff40;

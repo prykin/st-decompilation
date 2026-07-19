@@ -1,4 +1,4 @@
-FUN_006e4fc0:
+AppClassTy::RunApp:
 006E4FC0  55                        PUSH EBP
 006E4FC1  8B EC                     MOV EBP,ESP
 006E4FC3  83 EC 68                  SUB ESP,0x68

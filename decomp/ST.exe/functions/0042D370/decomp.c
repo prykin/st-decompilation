@@ -1,5 +1,11 @@
 
-void FUN_0042d370(uint param_1,int param_2,int param_3,uint param_4)
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\to_allpl.cpp
+   STAllPlayersC::SetActivityToObjs */
+
+void __thiscall
+STAllPlayersC::SetActivityToObjs
+          (STAllPlayersC *this,uint param_1,int param_2,int param_3,uint param_4)
 
 {
   code *pcVar1;
@@ -12,7 +18,7 @@ void FUN_0042d370(uint param_1,int param_2,int param_3,uint param_4)
   uVar2 = param_1;
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
-      piVar3 = (int *)thunk_FUN_0042b620(param_1,param_4,5);
+      piVar3 = (int *)GetObjPtr(this,param_1,param_4,5);
       if (piVar3 == (int *)0x0) {
         return;
       }
@@ -38,7 +44,7 @@ LAB_0042d3b2:
     do {
       FUN_006acc70(param_3,uVar5,&param_1);
       if (((short)param_1 != -1) &&
-         (piVar3 = (int *)thunk_FUN_0042b620(uVar2,param_1,1), piVar3 != (int *)0x0)) {
+         (piVar3 = (int *)GetObjPtr(this,uVar2,param_1,1), piVar3 != (int *)0x0)) {
         (**(code **)(*piVar3 + 0xe8))(1);
       }
       uVar5 = uVar5 + 1;
@@ -49,7 +55,7 @@ LAB_0042d3b2:
     if (param_2 == 0x5a) {
       uVar6 = 4;
 LAB_0042d44c:
-      piVar3 = (int *)thunk_FUN_0042b620(param_1,param_4,uVar6);
+      piVar3 = (int *)GetObjPtr(this,param_1,param_4,uVar6);
       if (piVar3 == (int *)0x0) {
         return;
       }

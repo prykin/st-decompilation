@@ -35,7 +35,7 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar5 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_58.previous;
@@ -77,8 +77,9 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
   if (*(uint *)(this_00 + 0x19c) != 0) {
     FUN_006e56b0(*(void **)(this_00 + 0xc),*(uint *)(this_00 + 0x19c));
   }
-  FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
-               0x1b8,0x118);
+  Library::DKW::WGR::FUN_006b55f0
+            (*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
+             0x1b8,0x118);
   if (param_1 == 1) {
     local_8 = (byte *)((uint)local_8._1_3_ << 8);
     UVar12 = 0x5604;
@@ -176,11 +177,12 @@ LAB_00516776:
             iVar5 / (int)(uint)*(ushort *)(this_00 + 0x1b1);
   }
   CreateSlider(this_00,iVar5);
-  FUN_006b5110(*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
-               *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff
-              );
-  FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-               *(uint *)(this_00 + 0x44));
+  Library::DKW::WGR::FUN_006b5110
+            (*(int *)(this_00 + 0x68),0,0x21,*(ushort *)(this_00 + 0x1af) + 0x16,
+             *(int *)(this_00 + 0x218),0,0,0,0x19c,0x117 - (uint)*(ushort *)(this_00 + 0x1af),0xff);
+  Library::DKW::DDX::FUN_006b3640
+            (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
+             *(uint *)(this_00 + 0x44));
   g_currentExceptionFrame = local_58.previous;
   return;
 }

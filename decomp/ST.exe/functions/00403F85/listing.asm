@@ -1,2 +1,2 @@
-thunk_FUN_00474810:
+STBoatC::BackLoadObj:
 00403F85  E9 86 08 07 00            JMP 0x00474810

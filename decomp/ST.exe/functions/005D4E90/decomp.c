@@ -26,7 +26,7 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar6 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_14;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_58.previous;

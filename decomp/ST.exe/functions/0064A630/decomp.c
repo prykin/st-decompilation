@@ -11,9 +11,9 @@ int * __cdecl FUN_0064a630(int param_1)
   pIVar1 = g_currentExceptionFrame;
   local_8 = (int *)0x0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  exceptionCode = __setjmp3(local_48,0,unaff_ESI,pIVar1);
+  exceptionCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar1);
   if (exceptionCode == 0) {
-    local_8 = FUN_006aac10(0x10);
+    local_8 = Library::DKW::LIB::FUN_006aac10(0x10);
     thunk_FUN_0064a6f0(local_8,param_1);
     g_currentExceptionFrame = pIVar1;
     return local_8;

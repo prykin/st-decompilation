@@ -1,4 +1,4 @@
-FUN_006e4650:
+AppClassTy::AddSystem:
 006E4650  55                        PUSH EBP
 006E4651  8B EC                     MOV EBP,ESP
 006E4653  83 EC 74                  SUB ESP,0x74

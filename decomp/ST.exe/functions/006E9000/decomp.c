@@ -8,11 +8,11 @@ FUN_006e9000(void *this,undefined4 param_1,undefined2 param_2,undefined2 param_3
   int iVar2;
   longlong lVar3;
   
-  puVar1 = FUN_006aac10(0x2c);
+  puVar1 = Library::DKW::LIB::FUN_006aac10(0x2c);
   puVar1[2] = param_4;
   puVar1[3] = param_5;
   puVar1[4] = param_6;
-  lVar3 = __ftol();
+  lVar3 = Library::MSVCRT::__ftol();
   puVar1[6] = (int)lVar3;
   *(undefined2 *)((int)puVar1 + 0x1e) = param_3;
   *(undefined2 *)(puVar1 + 7) = param_2;

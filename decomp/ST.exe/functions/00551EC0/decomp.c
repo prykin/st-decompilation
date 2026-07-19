@@ -29,7 +29,7 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar6 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar5 = local_10;
   if (iVar6 == 0) {
     pTVar1 = local_10 + 0x18d;

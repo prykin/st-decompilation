@@ -14,7 +14,7 @@ void __thiscall MMsgTy::DoneMMsg(MMsgTy *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pMStack_8 = (MMObjTy *)this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pMVar2 = pMStack_8;
   if (errorCode == 0) {
     MMObjTy::DoneMMObj(pMStack_8);

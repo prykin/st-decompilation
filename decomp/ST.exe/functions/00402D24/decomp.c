@@ -30,7 +30,7 @@ void thunk_FUN_004969f0(undefined4 param_1,undefined4 param_2,undefined4 param_3
   uStack_8 = param_6;
   uStack_1c = param_1;
   uStack_18 = param_2;
-  FUN_006ae1c0(DAT_007fb270,&uStack_1c);
+  Library::DKW::TBL::FUN_006ae1c0(DAT_007fb270,&uStack_1c);
   return;
 }
 

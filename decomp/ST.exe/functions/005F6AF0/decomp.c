@@ -22,7 +22,7 @@ undefined4 __thiscall STColl3C::LoadImagSpr(STColl3C *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_8 = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_8;
   if (iVar2 == 0) {
     this_00 = (STT3DSprC *)(local_8 + 0x1d5);

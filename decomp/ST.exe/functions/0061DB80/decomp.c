@@ -23,13 +23,13 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 == 0) {
     puVar3 = FUN_00709af0(DAT_00806774,0,(&PTR_s_light01_007d0164)[*(int *)(local_c + 0x3c)],
                           0xffffffff,0,1,0,(undefined4 *)0x0);
     thunk_FUN_0061d9c0(this_00,(undefined4 *)puVar3,(int *)&local_8,0);
-    puVar4 = (undefined4 *)FUN_006aac70(*(int *)(this_00 + 0x93) << 4);
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(this_00 + 0x93) << 4);
     *(undefined4 **)(this_00 + 0x57) = puVar4;
     for (iVar2 = (*(uint *)(this_00 + 0x93) & 0xfffffff) << 2; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
@@ -50,7 +50,7 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
     }
     **(undefined4 **)(this_00 + 0x57) = 0;
     *(undefined4 *)(*(int *)(this_00 + 0x57) + *(int *)(this_00 + 0x93) * 0xc) = 0;
-    puVar5 = FUN_006ae290((uint *)0x0,local_8,0x30,10);
+    puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_8,0x30,10);
     *(uint **)(this_00 + 0xa3) = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return 1;

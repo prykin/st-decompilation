@@ -29,11 +29,11 @@ FUN_00695c10(void *this,undefined4 param_1,undefined4 param_2,int param_3,undefi
   local_1b = param_4;
   local_17 = param_5;
   if (*(int *)((int)this + 0x5853) == 0) {
-    puVar1 = FUN_006ae290((uint *)0x0,10,0x1d,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1d,10);
     *(uint **)((int)this + 0x5853) = puVar1;
   }
   if (*(uint **)((int)this + 0x5853) != (uint *)0x0) {
-    uVar2 = FUN_006ae1c0(*(uint **)((int)this + 0x5853),&local_24);
+    uVar2 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x5853),&local_24);
     return uVar2;
   }
   return 0xffffffff;

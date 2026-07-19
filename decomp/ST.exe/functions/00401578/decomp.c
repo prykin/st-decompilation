@@ -30,7 +30,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
     IStack_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_58;
     pSStack_14 = this;
-    iVar4 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b13e0(DAT_008075a8);
       pIVar7 = g_currentExceptionFrame;
@@ -76,15 +76,16 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
           }
           g_currentExceptionFrame = &IStack_bc;
           IStack_bc.previous = pIVar7;
-          iVar4 = __setjmp3(IStack_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar4 = Library::MSVCRT::__setjmp3(IStack_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
           uVar8 = uStack_c;
           if (iVar4 == 0) {
-            DVar5 = FUN_006b9b40(DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,DAT_00806738,
-                                 DAT_00806730,DAT_00806734,(int)auStack_4bc,0,0x100);
+            DVar5 = Library::DKW::DDX::FUN_006b9b40
+                              (DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,DAT_00806738,
+                               DAT_00806730,DAT_00806734,(int)auStack_4bc,0,0x100);
             uStack_c = (uint)(DVar5 == 0);
             MoveWindow(DAT_00856d78,0,0,DAT_00806730,DAT_00806734,1);
             uStack_68 = 0x66;
-            FUN_006e3dd0(3,1,(int)auStack_78);
+            AppClassTy::SendMessage((AppClassTy *)pSStack_14,3,1,(int)auStack_78);
             uVar8 = (uint)(DVar5 == 0);
           }
           pIVar7 = IStack_bc.previous;
@@ -96,8 +97,8 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
       if (iStack_8 < 0) {
         RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x442);
       }
-      FUN_006b1470(DAT_008075a8);
-      FUN_006b1680(DAT_008075a8,(int)DAT_0080759c);
+      Library::DKW::DDX::FUN_006b1470(DAT_008075a8);
+      Library::DKW::DDX::FUN_006b1680(DAT_008075a8,(int)DAT_0080759c);
       FUN_006b1980(DAT_008075a8,2,-1,(&DAT_00807568)[iVar4 * 4],(&DAT_0080756c)[iVar4 * 4],
                    (&DAT_00807570)[iVar4 * 4],(&DAT_00807574)[iVar4 * 4]);
       FUN_006b1cc0((int)DAT_008075a8,2,(&DAT_00807568)[iVar4 * 4],(&DAT_0080756c)[iVar4 * 4],

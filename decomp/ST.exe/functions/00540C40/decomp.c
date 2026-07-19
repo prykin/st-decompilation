@@ -58,7 +58,7 @@ undefined4 * __cdecl FUN_00540c40(void *param_1,uint *param_2,uint *param_3,int 
         puVar8 = (uint *)((int)puVar8 + 1);
         iVar2 = iVar5 + local_8;
       }
-      _strncpy((char *)&DAT_008016f0,(char *)param_2,local_c - 1);
+      Library::MSVCRT::_strncpy((char *)&DAT_008016f0,(char *)param_2,local_c - 1);
       uVar3 = 0xffffffff;
       *(undefined1 *)((int)&DAT_008016ec + local_c + 3) = 0;
       do {

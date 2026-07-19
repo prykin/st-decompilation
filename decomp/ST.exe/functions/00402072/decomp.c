@@ -127,9 +127,9 @@ LAB_0061eb1a:
                       *(float *)(param_1 + 0x6b);
           if (((fStack_70 < _DAT_0079034c) || (fStack_6c < _DAT_0079034c)) ||
              ((fStack_68 < _DAT_0079034c ||
-              (((lVar16 = __ftol(), DAT_007fb240 <= (short)lVar16 ||
-                (lVar16 = __ftol(), DAT_007fb242 <= (short)lVar16)) ||
-               (lVar16 = __ftol(), DAT_007fb244 <= (short)lVar16)))))) {
+              (((lVar16 = Library::MSVCRT::__ftol(), DAT_007fb240 <= (short)lVar16 ||
+                (lVar16 = Library::MSVCRT::__ftol(), DAT_007fb242 <= (short)lVar16)) ||
+               (lVar16 = Library::MSVCRT::__ftol(), DAT_007fb244 <= (short)lVar16)))))) {
             *(undefined4 *)(*(int *)(param_1 + 0x57) + iStack_c * 4) = 0xfffffffe;
             iVar15 = 0;
             if (*(int *)(param_1 + 0x53) < 1) goto LAB_0061f035;
@@ -144,17 +144,17 @@ LAB_0061eb1a:
             iVar18 = 0x32;
             uVar5 = uVar14;
             uVar21 = uVar14;
-            lVar16 = __ftol();
+            lVar16 = Library::MSVCRT::__ftol();
             iVar7 = (int)lVar16;
-            lVar16 = __ftol();
+            lVar16 = Library::MSVCRT::__ftol();
             iVar8 = (int)lVar16;
-            lVar16 = __ftol();
+            lVar16 = Library::MSVCRT::__ftol();
             iVar9 = (int)lVar16;
-            lVar16 = __ftol();
+            lVar16 = Library::MSVCRT::__ftol();
             iVar10 = (int)lVar16;
-            lVar16 = __ftol();
+            lVar16 = Library::MSVCRT::__ftol();
             iVar11 = (int)lVar16;
-            lVar16 = __ftol();
+            lVar16 = Library::MSVCRT::__ftol();
             thunk_FUN_00601500((void *)(param_1 + 0xb0),(int)lVar16,iVar11,iVar10,iVar9,iVar8,iVar7,
                                iVar17,iVar18,iVar15,uVar19,iVar20,uVar5,uVar21);
           }
@@ -193,27 +193,27 @@ LAB_0061eefe:
             uStack_51 = 1;
             if (DAT_00802a88 != (void *)0x0) {
               if (fStack_74 < _DAT_0079034c) {
-                lVar16 = __ftol();
+                lVar16 = Library::MSVCRT::__ftol();
                 iStack_20 = (short)lVar16 + -1;
               }
               else {
-                lVar16 = __ftol();
+                lVar16 = Library::MSVCRT::__ftol();
                 iStack_20 = (int)(short)lVar16;
               }
               if (fStack_78 < _DAT_0079034c) {
-                lVar16 = __ftol();
+                lVar16 = Library::MSVCRT::__ftol();
                 uStack_34 = (int)(short)lVar16 - 1;
               }
               else {
-                lVar16 = __ftol();
+                lVar16 = Library::MSVCRT::__ftol();
                 uStack_34 = (uint)(short)lVar16;
               }
               if (fStack_7c < _DAT_0079034c) {
-                lVar16 = __ftol();
+                lVar16 = Library::MSVCRT::__ftol();
                 iVar15 = (short)lVar16 + -1;
               }
               else {
-                lVar16 = __ftol();
+                lVar16 = Library::MSVCRT::__ftol();
                 iVar15 = (int)(short)lVar16;
               }
               if (((((DAT_0080874d != -1) && (*(int *)((int)this + 0xf8) != 0)) &&
@@ -228,7 +228,7 @@ LAB_0061eefe:
                            iStack_38) == '\0')) goto LAB_0061eefe;
             }
           }
-          FUN_006ae1c0(*(uint **)(param_1 + 0xa3),&uStack_80);
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(param_1 + 0xa3),&uStack_80);
           if (iStack_14 == *(int *)(*(int *)(param_1 + 0x9b) + uVar14 * 4) + -2) {
             *(undefined4 *)(*(int *)(param_1 + 0x57) + iStack_c * 4) = 0xfffffffe;
             iVar15 = 0;

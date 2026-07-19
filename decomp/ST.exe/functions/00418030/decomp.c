@@ -52,7 +52,7 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
   }
   local_9c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_9c;
-  iVar4 = __setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_58;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_9c.previous;
@@ -80,7 +80,7 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
     }
     if (iVar4 == 0) {
       *(undefined4 *)((int)local_58 + 0x9b) = 2;
-      puVar6 = FUN_006aac10(0x10);
+      puVar6 = Library::DKW::LIB::FUN_006aac10(0x10);
       *(undefined4 **)((int)this_00 + 0x97) = puVar6;
       *(short *)(puVar6 + 2) = param_1;
       *(short *)(*(int *)((int)this_00 + 0x97) + 10) = param_2;
@@ -93,7 +93,7 @@ undefined4 __thiscall FUN_00418030(void *this,short param_1,short param_2,short 
     }
   }
   local_44 = (short *)0x3;
-  local_14 = (short *)FUN_006aac10(0x2ae);
+  local_14 = (short *)Library::DKW::LIB::FUN_006aac10(0x2ae);
   sVar3 = *(short *)((int)this_00 + 0x47);
   local_54 = local_14 + 0xab;
   iVar4 = 2;
@@ -211,12 +211,13 @@ LAB_004183b8:
   local_50 = (short *)(int)param_2;
   psVar8 = local_44;
   local_44 = (short *)(int)param_3;
-  psVar8 = FUN_006ae7d0((int)DAT_007fb280,(int)DAT_007fb278,(short *)(int)DAT_007fb27a,
-                        (short *)(int)DAT_007fb27c,(short *)(int)*(short *)((int)this_00 + 0x47),
-                        (short *)(int)*(short *)((int)this_00 + 0x49),
-                        (short *)(int)*(short *)((int)this_00 + 0x4b),local_2c,local_50,
-                        (short *)(int)param_3,(int *)((int)this_00 + 0x9b),(undefined4 *)local_14,
-                        psVar8);
+  psVar8 = Library::DKW::WAY::FUN_006ae7d0
+                     ((int)DAT_007fb280,(int)DAT_007fb278,(short *)(int)DAT_007fb27a,
+                      (short *)(int)DAT_007fb27c,(short *)(int)*(short *)((int)this_00 + 0x47),
+                      (short *)(int)*(short *)((int)this_00 + 0x49),
+                      (short *)(int)*(short *)((int)this_00 + 0x4b),local_2c,local_50,
+                      (short *)(int)param_3,(int *)((int)this_00 + 0x9b),(undefined4 *)local_14,
+                      psVar8);
   *(short **)((int)this_00 + 0x97) = psVar8;
   if (psVar8 == (short *)0x0) {
     iVar4 = (int)DAT_007fb27e;
@@ -268,11 +269,12 @@ LAB_004183b8:
         local_c = psVar15;
       } while ((int)psVar13 <= (int)local_24);
     }
-    psVar8 = FUN_006afba0((int)DAT_007fb238,(int)DAT_007fb230,(short *)(int)DAT_007fb232,
-                          (short *)(int)DAT_007fb234,(short *)(int)*(short *)((int)this_00 + 0x47),
-                          (short *)(int)*(short *)((int)this_00 + 0x49),
-                          (short *)(int)*(short *)((int)this_00 + 0x4b),local_2c,local_50,local_44,
-                          (int *)((int)this_00 + 0x9b),0);
+    psVar8 = Library::DKW::WAY::FUN_006afba0
+                       ((int)DAT_007fb238,(int)DAT_007fb230,(short *)(int)DAT_007fb232,
+                        (short *)(int)DAT_007fb234,(short *)(int)*(short *)((int)this_00 + 0x47),
+                        (short *)(int)*(short *)((int)this_00 + 0x49),
+                        (short *)(int)*(short *)((int)this_00 + 0x4b),local_2c,local_50,local_44,
+                        (int *)((int)this_00 + 0x9b),0);
     *(short **)((int)this_00 + 0x97) = psVar8;
   }
   FUN_006ab060(&local_14);

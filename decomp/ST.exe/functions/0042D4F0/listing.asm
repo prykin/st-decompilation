@@ -1,4 +1,4 @@
-FUN_0042d4f0:
+STAllPlayersC::ResetActivityFromTmp:
 0042D4F0  55                        PUSH EBP
 0042D4F1  8B EC                     MOV EBP,ESP
 0042D4F3  53                        PUSH EBX

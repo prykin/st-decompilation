@@ -15,7 +15,7 @@ undefined4 __thiscall FUN_00749be1(void *this,undefined4 param_1,undefined4 para
   iVar2 = *(int *)((int)this + 0x50);
   if (iVar2 == 0) {
     local_8 = (void *)0x0;
-    this_00 = (void *)FUN_0072e530(0x50);
+    this_00 = (void *)Library::MSVCRT::FUN_0072e530(0x50);
     if (this_00 == (void *)0x0) {
       puVar3 = (undefined4 *)0x0;
     }

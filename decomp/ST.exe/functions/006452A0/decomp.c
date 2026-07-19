@@ -20,7 +20,7 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_8 = this;
-  errorCode = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (errorCode != 0) {
     g_currentExceptionFrame = local_54.previous;
@@ -37,14 +37,14 @@ undefined4 __thiscall STTorpC::ClearDangerous(STTorpC *this,int param_1,uint par
   if (param_2 == 0xffffffff) {
     local_10[0] = param_1;
     local_10[1] = 0;
-    FUN_006ae1c0(*(uint **)(local_8 + 0x241),local_10);
+    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x241),local_10);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
   FUN_006acc70(*(int *)(local_8 + 0x241),param_2,local_10);
   if (local_10[0] == param_1) {
     local_10[1] = 0;
-    FUN_006ae140(*(uint **)(pSVar2 + 0x241),param_2,local_10);
+    Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar2 + 0x241),param_2,local_10);
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }

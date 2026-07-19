@@ -62,7 +62,7 @@ void __thiscall CPanelTy::SetControlObj(CPanelTy *this,char param_1)
   IStack_10c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_10c;
   pCStack_20 = this;
-  iVar4 = __setjmp3(IStack_10c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_10c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = IStack_10c.previous;
     iVar10 = ReportDebugMessage(s_E____titans_Andrey_cpanel4_cpp_007c2700,0x53e,0,iVar4,

@@ -19,7 +19,7 @@ void __thiscall FUN_0054b700(void *this,int param_1)
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  iVar2 = __setjmp3(local_48,0,unaff_ESI,pIVar7);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar7);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar7;
     return;

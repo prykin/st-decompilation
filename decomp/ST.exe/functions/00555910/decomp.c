@@ -1,7 +1,10 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\grig\traks.cpp
+   TraksClassTy::DrawTrakSprite */
 
-void FUN_00555910(int param_1)
+void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
 
 {
   undefined2 uVar1;
@@ -18,11 +21,12 @@ void FUN_00555910(int param_1)
   int local_14;
   int local_10;
   int local_c;
-  int local_8;
+  TraksClassTy *local_8;
   
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  iVar3 = __setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     sVar4 = *(short *)(param_1 + 0x22);
     local_20 = (int)sVar4;

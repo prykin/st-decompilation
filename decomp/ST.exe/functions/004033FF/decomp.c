@@ -23,7 +23,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pAStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar2 = pAStack_c;
   if (iVar3 == 0) {
     if (pAStack_c == (AiPlrClassTy *)0x0) {
@@ -57,11 +57,11 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (*(int *)(pAVar2 + 0x6a1) == 0) {
-      puVar5 = FUN_006ae290((uint *)0x0,10,0x12,5);
+      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x12,5);
       *(uint **)(pAVar2 + 0x6a1) = puVar5;
     }
     if (*(int *)(pAVar2 + 0x6ad) == 0) {
-      puVar5 = FUN_006ae290((uint *)0x0,10,0x1c,5);
+      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1c,5);
       *(uint **)(pAVar2 + 0x6ad) = puVar5;
     }
     uVar9 = 0;
@@ -77,7 +77,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
         }
         if (puVar11[1] == 0) {
           iVar3 = puVar11[2];
-          puVar6 = FUN_006aac10(puVar11[3]);
+          puVar6 = Library::DKW::LIB::FUN_006aac10(puVar11[3]);
           uVar8 = puVar11[3];
           *puVar11 = puVar6;
           puVar11 = (undefined4 *)(iVar3 + 0x12a + (int)param_1);

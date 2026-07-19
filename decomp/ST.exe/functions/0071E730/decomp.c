@@ -1,50 +1,57 @@
 
-int FUN_0071e730(void)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\_sviewer.cpp
+   ViewerClassTy::_Draw */
+
+int __thiscall ViewerClassTy::_Draw(ViewerClassTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  ViewerClassTy *pVVar2;
+  int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int iVar3;
+  int iVar4;
   InternalExceptionFrame local_4c;
-  int *local_8;
+  ViewerClassTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar2 != 0) {
+  local_8 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pVVar2 = local_8;
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
-    iVar3 = ReportDebugMessage(s_E__Ourlib__sviewer_cpp_007f0a68,0x16,0,iVar2,&DAT_007a4ccc,
+    iVar4 = ReportDebugMessage(s_E__Ourlib__sviewer_cpp_007f0a68,0x16,0,iVar3,&DAT_007a4ccc,
                                s_ViewerClassTy___Draw_error___007f0a80);
-    if (iVar3 != 0) {
+    if (iVar4 != 0) {
       pcVar1 = (code *)swi(3);
-      iVar2 = (*pcVar1)();
-      return iVar2;
+      iVar3 = (*pcVar1)();
+      return iVar3;
     }
-    RaiseInternalException(iVar2,0,s_E__Ourlib__sviewer_cpp_007f0a68,0x17);
-    return iVar2;
+    RaiseInternalException(iVar3,0,s_E__Ourlib__sviewer_cpp_007f0a68,0x17);
+    return iVar3;
   }
-  if ((*(byte *)(local_8 + 8) & 2) != 0) {
-    (**(code **)(*local_8 + 8))(local_8[0x7b],local_8[0x7c],0,0);
+  if (((byte)local_8[0x20] & 2) != 0) {
+    (**(code **)(*(int *)local_8 + 8))(*(int *)(local_8 + 0x1ec),*(int *)(local_8 + 0x1f0),0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  iVar2 = 0;
-  if (0 < local_8[0x78]) {
+  iVar3 = 0;
+  if (0 < *(int *)(local_8 + 0x1e0)) {
     do {
-      iVar3 = 0;
-      if (0 < local_8[0x77]) {
+      iVar4 = 0;
+      if (0 < *(int *)(pVVar2 + 0x1dc)) {
         do {
-          (**(code **)(*local_8 + 8))
-                    (local_8[0x7b] + iVar3,local_8[0x7c] + iVar2,
-                     (local_8[0x75] + local_8[0x79]) * iVar3,(local_8[0x76] + local_8[0x7a]) * iVar2
-                    );
-          iVar3 = iVar3 + 1;
-        } while (iVar3 < local_8[0x77]);
+          (**(code **)(*(int *)pVVar2 + 8))
+                    (*(int *)(pVVar2 + 0x1ec) + iVar4,*(int *)(pVVar2 + 0x1f0) + iVar3,
+                     (*(int *)(pVVar2 + 0x1d4) + *(int *)(pVVar2 + 0x1e4)) * iVar4,
+                     (*(int *)(pVVar2 + 0x1d8) + *(int *)(pVVar2 + 0x1e8)) * iVar3);
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < *(int *)(pVVar2 + 0x1dc));
       }
-      iVar2 = iVar2 + 1;
-    } while (iVar2 < local_8[0x78]);
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < *(int *)(pVVar2 + 0x1e0));
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

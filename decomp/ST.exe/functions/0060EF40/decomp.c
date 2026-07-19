@@ -113,7 +113,7 @@ int __thiscall FUN_0060ef40(void *this,int param_1)
   local_8c = (local_94 - local_38) * local_9c;
   local_8 = 0;
   uVar10 = local_8c * 10;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   puVar11 = (undefined4 *)&stack0xffffff38;
   local_1c = &stack0xffffff38;
   for (uVar5 = uVar10 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
@@ -190,17 +190,18 @@ LAB_0060f230:
     }
     iVar6 = iVar6 + 1;
   } while (iVar6 < 3);
-  local_6c = FUN_006afba0((int)local_54,local_84 - iVar2,(short *)(local_94 - local_38),(short *)0x5
-                          ,(short *)(local_3c - iVar2),(short *)(local_48 - local_38),local_40,
-                          (short *)(local_80 - iVar2),(short *)(local_b0 - local_38),local_34,
-                          local_68,2);
+  local_6c = Library::DKW::WAY::FUN_006afba0
+                       ((int)local_54,local_84 - iVar2,(short *)(local_94 - local_38),(short *)0x5,
+                        (short *)(local_3c - iVar2),(short *)(local_48 - local_38),local_40,
+                        (short *)(local_80 - iVar2),(short *)(local_b0 - local_38),local_34,local_68
+                        ,2);
   if (local_6c == (short *)0x0) {
     local_68[0] = 0;
   }
   else {
     piVar8 = (int *)((int)this + 0x2dd);
     if (*piVar8 == 0) {
-      iVar2 = FUN_006aac70((local_68[0] + 1) * 0x1c);
+      iVar2 = Library::DKW::LIB::FUN_006aac70((local_68[0] + 1) * 0x1c);
       *piVar8 = iVar2;
     }
     else {

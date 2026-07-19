@@ -27,7 +27,7 @@ CPanelTy::SetButStruct
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     puVar7 = param_1;
     for (iVar4 = 0x5f; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -68,7 +68,7 @@ CPanelTy::SetButStruct
     param_1[0x42] = 1;
     param_1[0x43] = 1;
     wsprintfA((LPSTR)pCVar1,&DAT_007c181c,param_7);
-    local_8 = FUN_006f1ce0(param_6,(char *)pCVar1,(int *)0x0,1);
+    local_8 = cMf32::RecGet(DAT_00806790,param_6,(char *)pCVar1,(int *)0x0,1);
     param_1[4] = *(undefined4 *)(local_8 + 2);
     param_1[5] = *(undefined4 *)(local_8 + 4);
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);

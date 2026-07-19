@@ -58,7 +58,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar10 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar10 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar8 = local_c;
   if (iVar10 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -170,7 +170,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     *(undefined4 *)(pMVar8 + 0x6c2) = 0;
     *(undefined4 *)(pMVar8 + 0x8b9) = 1;
     *(undefined4 *)(pMVar8 + 0x8bd) = 0x7102;
-    FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
+    Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar19 = 0;
     pvVar20 = *(void **)(DAT_0081176c + 0x30);
     uVar14 = 0xffffffff;
@@ -306,7 +306,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     if (*(MMsgTy **)(iVar10 + 0x2e6) != (MMsgTy *)0x0) {
       MMsgTy::SetPanel(*(MMsgTy **)(iVar10 + 0x2e6),0,(int)&local_24c,0,0);
     }
-    FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
+    Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar19 = 0;
     pvVar20 = *(void **)(DAT_0081176c + 0x30);
     uVar14 = 0xffffffff;
@@ -322,7 +322,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     goto LAB_005b44f1;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-  FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
+  Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
   if (pMVar8[0x1ee3] == (MainMenuTy)0x0) {
     pvVar20 = *(void **)(DAT_0081176c + 0x30);
     UVar15 = 0x26ac;

@@ -40,7 +40,7 @@ void __fastcall thunk_FUN_00521cf0(int param_1)
     IStack_60.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_60;
     iStack_14 = param_1;
-    iVar4 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       if (DAT_00808783 == '\x03') {
         uStack_10 = 1;
@@ -75,7 +75,7 @@ void __fastcall thunk_FUN_00521cf0(int param_1)
         }
         FUN_006b77e0(pcVar14,(byte *)pcVar14);
         FUN_006b7780(pcVar14,pcVar14);
-        iVar4 = _strncmp(pcVar14,s__WAITING_007c4124,8);
+        iVar4 = Library::MSVCRT::_strncmp(pcVar14,s__WAITING_007c4124,8);
         uVar9 = uStack_10;
         if ((iVar4 == 0) && (uVar9 = 0, DAT_00802a38 != 0)) {
           *(uint *)(DAT_00802a38 + 0xf0) = (uint)(*(int *)(DAT_00802a38 + 0xf0) == 0);
@@ -91,7 +91,7 @@ void __fastcall thunk_FUN_00521cf0(int param_1)
             }
           }
         }
-        iVar4 = _strncmp(pcVar14,s__FIXNETERRORS_007c410c,0xd);
+        iVar4 = Library::MSVCRT::_strncmp(pcVar14,s__FIXNETERRORS_007c410c,0xd);
         if (iVar4 == 0) {
           DAT_0080735e = DAT_0080735e == '\0';
           uVar9 = 0;
@@ -108,7 +108,7 @@ void __fastcall thunk_FUN_00521cf0(int param_1)
             thunk_FUN_0052d320(DAT_008016d8,(char *)&DAT_0080f33a,uVar10);
           }
         }
-        iVar4 = _strncmp(pcVar14,s__NETGUARANTEE_007c40fc,0xd);
+        iVar4 = Library::MSVCRT::_strncmp(pcVar14,s__NETGUARANTEE_007c40fc,0xd);
         if (iVar4 == 0) {
           DAT_0080733c = (uint)(DAT_0080733c == 0);
           uVar9 = 0;
@@ -131,15 +131,15 @@ void __fastcall thunk_FUN_00521cf0(int param_1)
         if (uVar9 != 0) {
           uStack_c = uStack_c & 0xffffff00;
           cStack_5 = '\0';
-          iVar4 = _strncmp(pcVar14,&DAT_007c40f4,4);
+          iVar4 = Library::MSVCRT::_strncmp(pcVar14,&DAT_007c40f4,4);
           if (iVar4 == 0) {
             uStack_c = CONCAT31(uStack_c._1_3_,1);
           }
-          iVar4 = _strncmp(pcVar14,s__EALL_007c40ec,5);
+          iVar4 = Library::MSVCRT::_strncmp(pcVar14,s__EALL_007c40ec,5);
           if (iVar4 == 0) {
             uStack_c = CONCAT31(uStack_c._1_3_,2);
           }
-          iVar7 = _strncmp(pcVar14,s__AALL_007c40e4,5);
+          iVar7 = Library::MSVCRT::_strncmp(pcVar14,s__AALL_007c40e4,5);
           iVar4 = iStack_14;
           if (iVar7 == 0) {
             uStack_c = CONCAT31(uStack_c._1_3_,3);

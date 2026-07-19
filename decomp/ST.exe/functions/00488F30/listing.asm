@@ -1,4 +1,4 @@
-FUN_00488f30:
+STBoatC::GetInfo16:
 00488F30  55                        PUSH EBP
 00488F31  8B EC                     MOV EBP,ESP
 00488F33  53                        PUSH EBX

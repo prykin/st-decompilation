@@ -30,11 +30,11 @@ FUN_00753f10(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_
     puVar1[0xf] = 0;
     FUN_00754185(extraout_ECX,(int)((ulonglong)uVar2 >> 0x20));
     _Value = puVar1[0xf];
-    thunk_FUN_006a4950(*(undefined4 **)(puVar3 + -4));
+    Library::MSVCRT::thunk_FUN_006a4950(*(undefined4 **)(puVar3 + -4));
   }
   if ((_Value < 0) && (g_currentExceptionFrame != (InternalExceptionFrame *)0x0)) {
                     /* WARNING: Subroutine does not return */
-    _longjmp(g_currentExceptionFrame->jumpBuffer,_Value);
+    Library::MSVCRT::_longjmp(g_currentExceptionFrame->jumpBuffer,_Value);
   }
   return _Value;
 }

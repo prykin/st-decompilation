@@ -19,7 +19,7 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (iVar4 != -0x5001fff7) {
@@ -76,7 +76,7 @@ LAB_00438f65:
     *piVar1 = iVar5;
     piVar1[1] = piVar3[1];
     *(undefined2 *)((int)piVar1 + 0xe) = *(undefined2 *)((int)piVar3 + 0xe);
-    FUN_006afe40((int *)((int)piVar1 + 10),*(uint **)((int)piVar3 + 10));
+    Library::DKW::TBL::FUN_006afe40((int *)((int)piVar1 + 10),*(uint **)((int)piVar3 + 10));
     g_currentExceptionFrame = local_50.previous;
     return;
   }

@@ -1,4 +1,4 @@
-FUN_004749c0:
+STBoatC::WaitLoad:
 004749C0  55                        PUSH EBP
 004749C1  8B EC                     MOV EBP,ESP
 004749C3  83 EC 48                  SUB ESP,0x48

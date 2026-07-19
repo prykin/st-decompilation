@@ -42,7 +42,7 @@ uint __fastcall FUN_006d5ed0(int param_1)
       if (*(int *)(*(int *)(param_1 + 0x5c) + 0x310) == 0) {
         local_5c.previous = g_currentExceptionFrame;
         g_currentExceptionFrame = &local_5c;
-        uVar2 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+        uVar2 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
         param_1 = local_c;
         iVar4 = local_10;
         iVar5 = local_14;
@@ -53,9 +53,10 @@ uint __fastcall FUN_006d5ed0(int param_1)
         }
         if (*(int *)(local_c + 0x70) == 0) {
           uVar2 = (int)*(uint *)(local_14 + 8) >> 0x1f;
-          FUN_006c4350(*(int *)(local_10 + 0x28),(undefined4 *)(local_c + 100),
-                       *(undefined4 *)(local_14 + 4),(*(uint *)(local_14 + 8) ^ uVar2) - uVar2,0,
-                       *(uint *)(local_10 + 4) & 0xc);
+          Library::DKW::DDX::FUN_006c4350
+                    (*(int *)(local_10 + 0x28),(undefined4 *)(local_c + 100),
+                     *(undefined4 *)(local_14 + 4),(*(uint *)(local_14 + 8) ^ uVar2) - uVar2,0,
+                     *(uint *)(local_10 + 4) & 0xc);
         }
         g_currentExceptionFrame = local_5c.previous;
       }
@@ -63,7 +64,7 @@ uint __fastcall FUN_006d5ed0(int param_1)
         *(undefined4 *)(param_1 + 100) = *(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x40);
       }
       *(uint *)(iVar4 + 4) = *(uint *)(iVar4 + 4) | 0x2000000;
-      this = (void *)FUN_0072e530(0x48);
+      this = (void *)Library::MSVCRT::FUN_0072e530(0x48);
       if (this == (void *)0x0) {
         puVar3 = (undefined4 *)0x0;
       }

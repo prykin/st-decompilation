@@ -103,7 +103,7 @@ LAB_00698a36:
                 bVar7 = uVar2 < uVar4;
               } while ((int)uVar2 < (int)uVar4);
             }
-            uVar2 = FUN_0072e6c0();
+            uVar2 = Library::MSVCRT::FUN_0072e6c0();
             uVar2 = uVar2 & 0x80000001;
             if ((int)uVar2 < 0) {
               uVar2 = (uVar2 - 1 | 0xfffffffe) + 1;
@@ -130,14 +130,14 @@ LAB_00698a36:
                     local_20 = *(int *)(pbVar3 + 2) % *(int *)((int)param_1 + 0x5833);
                     piVar5 = local_8;
                     if (((*pbVar3 & 2) != 0) &&
-                       (uVar2 = FUN_0072e6c0(), piVar5 = local_8, (int)uVar2 % (local_c + 1) == 1))
-                    {
-                      uVar2 = FUN_0072e6c0();
+                       (uVar2 = Library::MSVCRT::FUN_0072e6c0(), piVar5 = local_8,
+                       (int)uVar2 % (local_c + 1) == 1)) {
+                      uVar2 = Library::MSVCRT::FUN_0072e6c0();
                       uVar2 = uVar2 & 0x80000001;
                       if ((int)uVar2 < 0) {
                         uVar2 = (uVar2 - 1 | 0xfffffffe) + 1;
                       }
-                      uVar4 = FUN_0072e6c0();
+                      uVar4 = Library::MSVCRT::FUN_0072e6c0();
                       iVar1 = thunk_FUN_006a1370(*(int **)((int)param_1 + 8),local_20,local_24,
                                                  local_28,local_3c);
                       piVar5 = local_8;

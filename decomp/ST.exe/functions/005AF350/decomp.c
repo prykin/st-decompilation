@@ -25,7 +25,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar6 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x3ea,0,iVar2,&DAT_007a4ccc
@@ -40,7 +40,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   }
   if (DAT_00802a30 != 0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -63,10 +63,10 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   *(undefined4 *)(this_00 + 0x1a6c) = 0;
   if (*(HoloTy **)(this_00 + 0x20b8) != (HoloTy *)0x0) {
     HoloTy::Done(*(HoloTy **)(this_00 + 0x20b8));
-    FUN_0072e2b0(*(undefined4 **)(this_00 + 0x20b8));
+    Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x20b8));
     *(undefined4 *)(this_00 + 0x20b8) = 0;
   }
-  puVar3 = (undefined1 *)FUN_0072e530(0x33);
+  puVar3 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
   if (puVar3 == (undefined1 *)0x0) {
     puVar3 = (undefined1 *)0x0;
   }
@@ -92,14 +92,14 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     cVar8 = '\x01';
     uVar7 = 0x10;
     iVar6 = 1;
-    iVar2 = FUN_006bf9f0(DAT_008075a8,0x112,0x38,0x204,0x19d);
+    iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x112,0x38,0x204,0x19d);
     uVar7 = HoloTy::Init(*(HoloTy **)(this_00 + 0x20b8),2,0x112,0x38,iVar2,iVar6,uVar7,cVar8,uVar9);
     if (uVar7 != 0) {
       iVar2 = *(int *)(this_00 + 0x20b8);
       *(undefined1 *)(iVar2 + 2) = 0;
       *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
       if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x20b8) + 3)) {
-        FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x20b8) + 3));
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x20b8) + 3));
       }
       HoloTy::NextFas(*(HoloTy **)(this_00 + 0x20b8));
     }
@@ -137,14 +137,14 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     if (*(byte **)(DAT_0081176c + 0x548) != (byte *)0x0) {
       FUN_006b5570(*(byte **)(DAT_0081176c + 0x548));
     }
-    puVar4 = FUN_006b54f0((uint *)0x0,10,10);
+    puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     *(uint **)(DAT_0081176c + 0x548) = puVar4;
     if (*(HoloTy **)(this_00 + 0x20bc) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(this_00 + 0x20bc));
-      FUN_0072e2b0(*(undefined4 **)(this_00 + 0x20bc));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x20bc));
       *(undefined4 *)(this_00 + 0x20bc) = 0;
     }
-    puVar3 = (undefined1 *)FUN_0072e530(0x33);
+    puVar3 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar3 == (undefined1 *)0x0) {
       puVar3 = (undefined1 *)0x0;
     }
@@ -170,14 +170,14 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       cVar8 = '\x01';
       uVar7 = 0x10;
       iVar6 = 1;
-      iVar2 = FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x121);
+      iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x121);
       uVar7 = HoloTy::Init(*(HoloTy **)(this_00 + 0x20bc),4,10,0xb4,iVar2,iVar6,uVar7,cVar8,uVar9);
       if (uVar7 != 0) {
         iVar2 = *(int *)(this_00 + 0x20bc);
         *(undefined1 *)(iVar2 + 2) = 0;
         *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
         if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x20bc) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x20bc) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x20bc) + 3));
         }
         HoloTy::NextFas(*(HoloTy **)(this_00 + 0x20bc));
       }
@@ -218,10 +218,10 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
     }
     if (*(HoloTy **)(this_00 + 0x20c0) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(this_00 + 0x20c0));
-      FUN_0072e2b0(*(undefined4 **)(this_00 + 0x20c0));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x20c0));
       *(undefined4 *)(this_00 + 0x20c0) = 0;
     }
-    puVar3 = (undefined1 *)FUN_0072e530(0x33);
+    puVar3 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar3 == (undefined1 *)0x0) {
       puVar3 = (undefined1 *)0x0;
     }
@@ -247,7 +247,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
       cVar8 = '\x01';
       uVar7 = 0x10;
       iVar6 = 1;
-      iVar2 = FUN_006bf9f0(DAT_008075a8,200,0x1f1,400,0x62);
+      iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,200,0x1f1,400,0x62);
       uVar7 = HoloTy::Init(*(HoloTy **)(this_00 + 0x20c0),1,200,0x1f1,iVar2,iVar6,uVar7,cVar8,uVar9)
       ;
       if (uVar7 != 0) {
@@ -255,7 +255,7 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
         *(undefined1 *)(iVar2 + 2) = 0;
         *(undefined4 *)(iVar2 + 0x17) = 0xffffffff;
         if (-1 < (int)*(uint *)(*(int *)(this_00 + 0x20c0) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x20c0) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(this_00 + 0x20c0) + 3));
         }
         HoloTy::NextFas(*(HoloTy **)(this_00 + 0x20c0));
       }
@@ -274,11 +274,12 @@ void __thiscall ChooseMapTy::DeleteCtrls(ChooseMapTy *this)
   }
   if (DAT_00802a30 != 0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
-                   *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
+                 *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
       g_currentExceptionFrame = local_50.previous;
       return;
     }

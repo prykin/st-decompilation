@@ -20,7 +20,7 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
   uint local_8;
   
   local_14 = this;
-  puVar3 = (undefined4 *)FUN_006aac70(0xc2);
+  puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xc2);
   pSVar2 = local_14;
   if (this == (void *)0x0) {
     puVar9 = (undefined4 *)0x0;
@@ -39,7 +39,7 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
   local_18 = STT3DSprC::SaveSpr((STT3DSprC *)(local_14 + 0x1d5),&local_c);
   local_1c = STAllPlayersC::SaveGObjData(pSVar2,(int *)&local_10);
   local_8 = local_10 + 0xca + local_c;
-  puVar4 = (undefined4 *)FUN_006acf50(puVar3,local_8);
+  puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar3,local_8);
   *(uint *)((int)puVar4 + 0xc2) = local_c;
   puVar3 = local_18;
   puVar9 = (undefined4 *)((int)puVar4 + 0xc6);
@@ -78,7 +78,7 @@ undefined4 * __thiscall FUN_005f66f0(void *this,uint *param_1)
     }
     uVar1 = local_8 + 0x6c + uVar7;
     local_8 = uVar1;
-    puVar5 = (undefined4 *)FUN_006acf50(puVar4,uVar1);
+    puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(puVar4,uVar1);
     puVar3 = (undefined4 *)((uVar1 - uVar7) + -0x6c + (int)puVar5);
     puVar9 = *(undefined4 **)(pSVar2 + 0x2e6);
     puVar4 = puVar3;

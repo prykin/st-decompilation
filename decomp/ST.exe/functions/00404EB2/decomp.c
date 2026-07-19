@@ -27,7 +27,7 @@ undefined4 __thiscall thunk_FUN_0065f5c0(void *this,short *param_1)
       bVar4 = uVar3 < *(uint *)(iVar2 + 0xc);
     } while ((int)uVar3 < (int)*(uint *)(iVar2 + 0xc));
   }
-  FUN_006ae1c0(*(uint **)((int)this + 0x223),(undefined4 *)param_1);
+  Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x223),(undefined4 *)param_1);
   return 1;
 }
 

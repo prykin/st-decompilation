@@ -24,7 +24,7 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pAStack_8 = this;
-  errorCode = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if ((param_1 != 0) && (uVar1 = *(uint *)(param_1 + 0xc), uVar7 = extraout_EDX, uVar1 != 0)) {
       while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
@@ -34,12 +34,13 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
         else {
           puVar4 = (undefined2 *)0x0;
         }
-        if (DAT_007fa174 == 0) {
+        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
           piVar5 = (int *)0x0;
         }
         else {
-          piVar5 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)uVar7 >> 8),pAStack_8[0x24]),
-                                             CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),1);
+          piVar5 = (int *)STAllPlayersC::GetObjPtr
+                                    (DAT_007fa174,CONCAT31((int3)((uint)uVar7 >> 8),pAStack_8[0x24])
+                                     ,CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),1);
           uVar7 = extraout_EDX_00;
         }
         if (piVar5 != (int *)0x0) {

@@ -23,7 +23,7 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -94,9 +94,9 @@ switchD_005944a8_caseD_4:
     *(undefined4 *)(this_00 + 0xbc) = *(undefined4 *)(param_1 + 0x14);
     FUN_006e5fe0(this_00,(undefined4 *)(this_00 + 0xa8));
     iVar3 = *(int *)(this_00 + 0x104);
-    FUN_006b55f0(*(undefined4 **)(this_00 + 0xfc),0,*(ushort *)(param_1 + 0x18) + 5,
-                 *(ushort *)(param_1 + 0x1a) + 5,iVar3,0,0,0,*(int *)(iVar3 + 4),*(int *)(iVar3 + 8)
-                );
+    Library::DKW::WGR::FUN_006b55f0
+              (*(undefined4 **)(this_00 + 0xfc),0,*(ushort *)(param_1 + 0x18) + 5,
+               *(ushort *)(param_1 + 0x1a) + 5,iVar3,0,0,0,*(int *)(iVar3 + 4),*(int *)(iVar3 + 8));
     goto switchD_005944a8_caseD_4;
   case 0x10002:
     if (*(int *)(local_c + 0x110) == 0) goto switchD_005944a8_caseD_4;

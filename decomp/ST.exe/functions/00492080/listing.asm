@@ -1,4 +1,4 @@
-FUN_00492080:
+STBoatC::NotReadyForLoading:
 00492080  55                        PUSH EBP
 00492081  8B EC                     MOV EBP,ESP
 00492083  83 EC 10                  SUB ESP,0x10

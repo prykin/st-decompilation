@@ -56,7 +56,7 @@ AiEventClassTy::__CreateObjPl
   local_e8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e8;
   local_38 = this;
-  iVar3 = __setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_e8.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_event_cpp_007d2a34,0xcb,0,iVar3,&DAT_007a4ccc,
@@ -134,7 +134,7 @@ AiEventClassTy::__CreateObjPl
       if (param_8 == (char *)0x0) {
         _Source = &DAT_008016a0;
       }
-      _strncpy(local_6e,_Source,0xe);
+      Library::MSVCRT::_strncpy(local_6e,_Source,0xe);
       local_7e = param_9;
       local_72 = 1;
       local_5f = param_10;

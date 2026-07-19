@@ -39,7 +39,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_10 = this;
-  iVar4 = __setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_6c.previous;
@@ -72,7 +72,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             if (local_18 != 0) {
               thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_18 + 8));
               local_18 = 0;
-              FUN_006ae140(puVar6,uVar11,&local_18);
+              Library::DKW::TBL::FUN_006ae140(puVar6,uVar11,&local_18);
             }
             uVar11 = uVar11 + 1;
           } while ((int)uVar11 < (int)local_24);
@@ -85,7 +85,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
             if (local_8 != 0) {
               thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_8 + 8));
               local_8 = 0;
-              FUN_006ae140(puVar2,uVar10,&local_8);
+              Library::DKW::TBL::FUN_006ae140(puVar2,uVar10,&local_8);
             }
             uVar10 = uVar10 + 1;
           } while ((int)uVar10 < (int)uVar11);
@@ -105,7 +105,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           if (local_8 != 0) {
             thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            FUN_006ae140(puVar2,uVar11,&local_8);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < iVar4);
@@ -118,7 +118,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           if (local_8 != 0) {
             thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            FUN_006ae140(puVar2,uVar11,&local_8);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < iVar4);
@@ -131,7 +131,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           if (local_8 != 0) {
             thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            FUN_006ae140(puVar2,uVar11,&local_8);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < iVar4);
@@ -144,7 +144,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           if (local_8 != 0) {
             thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            FUN_006ae140(puVar2,uVar11,&local_8);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < iVar4);
@@ -157,7 +157,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
           if (local_8 != 0) {
             thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_8 + 8));
             local_8 = 0;
-            FUN_006ae140(puVar2,uVar11,&local_8);
+            Library::DKW::TBL::FUN_006ae140(puVar2,uVar11,&local_8);
           }
           uVar11 = uVar11 + 1;
         } while ((int)uVar11 < iVar4);
@@ -259,12 +259,12 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         *puVar9 = uVar1;
         puVar9 = puVar9 + 0xa62;
       } while ((int)puVar5 < 0x808a70);
-      DAT_007fa154 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
-      DAT_007fa158 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
-      DAT_007fa15c = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
-      DAT_007fa160 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
-      DAT_007fa164 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
-      DAT_007fa130 = FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
+      DAT_007fa154 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
+      DAT_007fa158 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
+      DAT_007fa15c = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
+      DAT_007fa160 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
+      DAT_007fa164 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
+      DAT_007fa130 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa134 = 0;
       if (DAT_00806754 != (cMf32 *)0x0) {
         local_c = FUN_006f2d90(DAT_00806754,s_allplsave_007a67d8,0,0);
@@ -274,9 +274,9 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         pcVar12 = &DAT_008087e9;
         puVar13 = (undefined4 *)((int)&DAT_007f4e24 + 1);
         do {
-          puVar6 = FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+          puVar6 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
           puVar13[1] = puVar6;
-          puVar6 = FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+          puVar6 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
           *puVar13 = puVar6;
           if (*pcVar12 != -1) {
             thunk_FUN_004e5140((int)piVar14);
@@ -295,7 +295,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
         } while ((int)puVar13 < 0x7fa135);
         thunk_FUN_004d8110(0);
         thunk_FUN_004d8760(DAT_00808a90 & 0xff);
-        DAT_007fa168 = (undefined4 *)FUN_006aac70((int)DAT_007fb246);
+        DAT_007fa168 = (undefined4 *)Library::DKW::LIB::FUN_006aac70((int)DAT_007fb246);
         uVar10 = (uint)DAT_007fb246;
         puVar13 = DAT_007fa168;
         for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
@@ -312,9 +312,9 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       cVar15 = '\0';
       puVar13 = (undefined4 *)((int)&DAT_007f4e24 + 1);
       do {
-        puVar6 = FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+        puVar6 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
         puVar13[1] = puVar6;
-        puVar6 = FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
+        puVar6 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0xf,4,5,0x40307b);
         *puVar13 = puVar6;
         thunk_FUN_004b6fc0(cVar15);
         puVar13 = (undefined4 *)((int)puVar13 + 0xa62);

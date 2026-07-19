@@ -15,7 +15,7 @@ uint * __cdecl FUN_0067e200(int param_1,int param_2,uint param_3)
   local_8 = (byte *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     if (((param_1 == 0) || (param_2 < 0)) || (7 < param_2)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x1ad);

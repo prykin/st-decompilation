@@ -19,6 +19,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   short *psVar12;
   uint uVar13;
   CPanelTy *pCVar14;
+  ccFntTy *this_01;
+  ccFntTy *this_02;
+  ccFntTy *this_03;
   CPanelTy *pCVar15;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -52,7 +55,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
   IStack_78.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_78;
   pCStack_18 = this;
-  iVar3 = __setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_78.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_18;
   if (iVar3 == 0) {
     DAT_00801688 = pCStack_18;
@@ -97,23 +100,23 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     *(undefined4 *)(iVar3 + 0x58) = 1;
     *(undefined4 *)(iVar3 + 0x5c) = 0;
     *(undefined4 *)(*(int *)(this_00 + 0x1b8) + 0x96) = 1;
-    puVar5 = FUN_0070ceb0(0x19d,DAT_00806790,s_TIME_FONT_007c212c,0);
+    puVar5 = ccFntTy::operator(this_01,0x19d,DAT_00806790,s_TIME_FONT_007c212c,0);
     *(undefined4 **)(this_00 + 0x1bc) = puVar5;
     puVar5[0x16] = 1;
     puVar5[0x17] = 0;
-    puVar5 = FUN_0070ceb0(0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
+    puVar5 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
     *(undefined4 **)(this_00 + 0x1c0) = puVar5;
     puVar5[0x16] = 0;
     puVar5[0x17] = 0;
-    puVar5 = FUN_0070ceb0(0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+    puVar5 = ccFntTy::operator(this_02,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
     *(undefined4 **)(this_00 + 0x1c4) = puVar5;
     puVar5[0x16] = 1;
     puVar5[0x17] = 0;
-    puVar5 = FUN_0070ceb0(0x19d,DAT_00806790,s_TIMER_FONT_007c210c,0);
+    puVar5 = ccFntTy::operator(this_03,0x19d,DAT_00806790,s_TIMER_FONT_007c210c,0);
     *(undefined4 **)(this_00 + 0x1cc) = puVar5;
     puVar5[0x16] = 1;
     puVar5[0x17] = 0;
-    puVar5 = FUN_0070ceb0(0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
+    puVar5 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
     *(undefined4 **)(this_00 + 0x1c8) = puVar5;
     puVar5[0x16] = 1;
     puVar5[0x17] = 0;
@@ -163,9 +166,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar6 = thunk_FUN_00571240(s_BK_BRIEF_007c20f4,0);
     uVar7 = FUN_0070a9f0(DAT_00806790,pCVar6,bVar2,iVar3);
     *(undefined4 *)(this_00 + 0x1b4) = uVar7;
-    puVar8 = FUN_006f1ce0(1,s_INF_LIFELEV_007c20e4,(int *)0x0,1);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_INF_LIFELEV_007c20e4,(int *)0x0,1);
     *(ushort **)(this_00 + 0x286) = puVar8;
-    puVar8 = FUN_006f1ce0(1,s_INF_LIFELEVU_007c20d4,(int *)0x0,1);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_INF_LIFELEVU_007c20d4,(int *)0x0,1);
     *(ushort **)(this_00 + 0x28a) = puVar8;
     puVar8 = FUN_00709af0(DAT_00806794,0xb,(byte *)s_IND_BKG_007c20c8,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
@@ -271,33 +274,33 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     iVar3 = 1;
     piVar21 = (int *)0x0;
     pCVar6 = thunk_FUN_00571240(s_INF_BKLUINF_007c1ffc,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0x954) = puVar8;
     pCVar6 = thunk_FUN_00571240(s_INF_BKLDINF_007c1fec,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0x958) = puVar8;
     *(undefined4 *)(this_00 + 0x2e2) = 0;
     pCVar6 = thunk_FUN_00571240(s_CP2_CLEAR_007c1fe0,1);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     *(ushort **)(this_00 + 0x974) = puVar8;
     iVar3 = 1;
     piVar21 = (int *)0x0;
     if (DAT_0080874e == '\x03') {
-      puVar8 = FUN_006f1ce0(6,s_CP2_CLEARUP1_007c1f68,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP2_CLEARUP1_007c1f68,(int *)0x0,1);
       *(ushort **)(this_00 + 0x978) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP2_CLEARUP2_007c1f58,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP2_CLEARUP2_007c1f58,(int *)0x0,1);
       *(ushort **)(this_00 + 0x97c) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP2_CTRLUP1_007c1f48,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP2_CTRLUP1_007c1f48,(int *)0x0,1);
       *(ushort **)(this_00 + 0x980) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP2_CTRLUP2_007c1f38,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP2_CTRLUP2_007c1f38,(int *)0x0,1);
       *(ushort **)(this_00 + 0x984) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_CP2_CTRLDN1_007c1f28,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP2_CTRLDN1_007c1f28,(int *)0x0,1);
       *(ushort **)(this_00 + 0x988) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP2_CTRLUP3_007c1f18,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP2_CTRLUP3_007c1f18,(int *)0x0,1);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       pcVar10 = s_CP2_CTRLUP4_007c1f08;
@@ -306,44 +309,44 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     }
     else {
       pCVar6 = thunk_FUN_00571240(s_CP2_1ROW_007c1fd4,1);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x978) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_CP2_2ROW_007c1fc8,1);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x97c) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_CP2_2ROWC_007c1fbc,1);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x980) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BUT_BKGSHOWUPD_007c1fa8,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x984) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BUT_BKGRETREP_007c1f98,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x988) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_BOAT_BLD_007c1f88,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x98c) = puVar8;
       pcVar10 = thunk_FUN_00571240(s_BK_BOAT_TRTXT_007c1f78,0);
       bVar2 = 1;
     }
-    puVar8 = FUN_006f1ce0(bVar2,pcVar10,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,bVar2,pcVar10,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0x990) = puVar8;
     pCVar6 = thunk_FUN_00571240(s_INF_BKMAP_007c1efc,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     *(ushort **)(this_00 + 0x994) = puVar8;
     pCStack_10 = this_00 + 0x227;
     pCStack_8 = (CPanelTy *)0x3b60;
@@ -398,7 +401,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       piVar21 = (int *)0x0;
       *(ushort **)pCVar14 = puVar8 + 0x18;
       pCVar6 = FUN_006f2c00(s_SM_CROSS__007c1ee0,1,iVar3);
-      puVar8 = FUN_006f1ce0(6,pCVar6,piVar21,iVar20);
+      puVar8 = cMf32::RecGet(DAT_00806780,6,pCVar6,piVar21,iVar20);
       *(ushort **)(pCVar14 + -8) = puVar8;
       iVar3 = iVar3 + 1;
       pCVar14 = pCVar14 + 4;
@@ -407,32 +410,32 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     iVar3 = 1;
     piVar21 = (int *)0x0;
     pCVar6 = thunk_FUN_00571240(s_CP4_CLEAR_007c1ed4,1);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     *(ushort **)(this_00 + 0x9d9) = puVar8;
     iVar3 = 1;
     piVar21 = (int *)0x0;
     if (DAT_0080874e == '\x03') {
-      puVar8 = FUN_006f1ce0(1,s_CP4_CTRLDN1_007c1dfc,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP4_CTRLDN1_007c1dfc,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9dd) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_CP4_CTRLDN2_007c1dec,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP4_CTRLDN2_007c1dec,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9e1) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_CP4_CTRLDN3_007c1ddc,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP4_CTRLDN3_007c1ddc,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9e5) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_CP4_CTRLDN4_007c1dcc,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP4_CTRLDN4_007c1dcc,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9e9) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_CP4_CTRLDN5_007c1dbc,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP4_CTRLDN5_007c1dbc,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9ed) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_CP4_CTRLDN6_007c1dac,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_CP4_CTRLDN6_007c1dac,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9f5) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP4_CLEARUP1_007c1d9c,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP4_CLEARUP1_007c1d9c,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9f9) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP4_CLEARUP2_007c1d8c,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP4_CLEARUP2_007c1d8c,(int *)0x0,1);
       *(ushort **)(this_00 + 0x9fd) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP4_CTRLUP1_007c1d7c,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP4_CTRLUP1_007c1d7c,(int *)0x0,1);
       *(ushort **)(this_00 + 0xa01) = puVar8;
-      puVar8 = FUN_006f1ce0(6,s_CP4_CTRLUP2_007c1d6c,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,6,s_CP4_CTRLUP2_007c1d6c,(int *)0x0,1);
       *(ushort **)(this_00 + 0xa05) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_BK_RC_SI_007c1d60,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_BK_RC_SI_007c1d60,(int *)0x0,1);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0xa09) = puVar8;
@@ -440,80 +443,80 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     }
     else {
       pCVar6 = thunk_FUN_00571240(s_CP4_ROW1_007c1ec8,1);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9dd) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_CP4_ROW2_007c1ebc,1);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9e1) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_CP4_ROW3_007c1eb0,1);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9e5) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BKBUT_007c1ea0,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9e9) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BLDREP_007c1e90,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9ed) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BKIND_007c1e80,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9f5) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BKMFACT1_007c1e6c,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9f9) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BKRDOCK_007c1e58,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0x9fd) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BKPLASM1_007c1e44,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0xa01) = puVar8;
       pCVar6 = thunk_FUN_00571240(s_BK_OBJ_BKMFACT2_007c1e30,0);
-      puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
       *(ushort **)(this_00 + 0xa05) = puVar8;
-      puVar8 = FUN_006f1ce0(1,s_BK_OBJ_BKPLASM2_007c1e1c,(int *)0x0,1);
+      puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_BK_OBJ_BKPLASM2_007c1e1c,(int *)0x0,1);
       iVar3 = 1;
       piVar21 = (int *)0x0;
       *(ushort **)(this_00 + 0xa09) = puVar8;
       pcVar10 = thunk_FUN_00571240(s_BK_ARTEFACT_007c1e0c,0);
     }
-    puVar8 = FUN_006f1ce0(1,pcVar10,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pcVar10,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0xa11) = puVar8;
     pCVar6 = thunk_FUN_00571240(s_BK_OBJ_STRING_007c1d40,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0x9f1) = puVar8;
     pCVar6 = thunk_FUN_00571240(s_PROC_CRAK_007c1d34,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0xa0d) = puVar8;
     pCVar6 = thunk_FUN_00571240(s_INF_BKRUINF_007c1d24,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     iVar3 = 1;
     piVar21 = (int *)0x0;
     *(ushort **)(this_00 + 0xb43) = puVar8;
     pCVar6 = thunk_FUN_00571240(s_INF_BKRDINF_007c1d14,0);
-    puVar8 = FUN_006f1ce0(1,pCVar6,piVar21,iVar3);
+    puVar8 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar21,iVar3);
     *(ushort **)(this_00 + 0xb47) = puVar8;
     *(undefined4 *)(this_00 + 0x2e6) = 0;
     if (((byte)_DAT_00807348 != 0) && ((byte)_DAT_00807348 < 3)) {
@@ -522,22 +525,22 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       iVar3 = 1;
       pCVar6 = FUN_006f2c00(s_BK_HIGHRES_007c1d04,1,_DAT_00807348 & 0xff);
       pCVar6 = thunk_FUN_00571240(pCVar6,iVar3);
-      FUN_006f1ce0(1,pCVar6,(int *)pCVar14,iVar20);
+      cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,(int *)pCVar14,iVar20);
       pCVar14 = this_00 + 0x1a8;
       iVar20 = 0;
       iVar3 = 1;
       pCVar6 = FUN_006f2c00(s_BK_HIGHRES_007c1d04,1,_DAT_00807348 & 0xff);
       pCVar6 = thunk_FUN_00571240(pCVar6,iVar3);
-      FUN_006f1ce0(1,pCVar6,(int *)pCVar14,iVar20);
+      cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,(int *)pCVar14,iVar20);
     }
-    puVar11 = FUN_006ae290((uint *)0x0,10,9,10);
+    puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,9,10);
     *(uint **)(this_00 + 0xb95) = puVar11;
-    thunk_FUN_0043beb0(DAT_007fa174,1,(int *)(this_00 + 0xb63));
-    thunk_FUN_0043beb0(DAT_007fa174,2,(int *)(this_00 + 0xb99));
-    thunk_FUN_0043beb0(DAT_007fa174,4,(int *)(this_00 + 0xbf5));
-    thunk_FUN_0043beb0(DAT_007fa174,5,(int *)(this_00 + 0xc51));
-    thunk_FUN_0043beb0(DAT_007fa174,0xe,(int *)(this_00 + 0xc87));
-    thunk_FUN_0043beb0(DAT_007fa174,0xf,(int *)(this_00 + 0xcc9));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,1,(int *)(this_00 + 0xb63));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,2,(int *)(this_00 + 0xb99));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,4,(int *)(this_00 + 0xbf5));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,5,(int *)(this_00 + 0xc51));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0xe,(int *)(this_00 + 0xc87));
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0xf,(int *)(this_00 + 0xcc9));
     puVar5 = (undefined4 *)0x0;
     iVar20 = 0;
     iVar3 = 1;
@@ -681,8 +684,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar14,5,0x40402a,*(uint *)(this_00 + 0xf4),
                  *(uint *)(this_00 + 0xf8),*(uint *)(this_00 + 0x1ac));
     FUN_006b1b10((int)DAT_008075a8,*(uint *)pCVar14,3);
-    FUN_006b3640(DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(this_00 + 0xec),
-                 *(uint *)(this_00 + 0xf0));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(this_00 + 0xec),
+               *(uint *)(this_00 + 0xf0));
     pCVar14 = this_00 + 0x178;
     *(int *)(this_00 + 0xfc) =
          (*(int *)(this_00 + 0x124) - *(int *)(this_00 + 0x104)) + *(int *)(this_00 + 0x11c);
@@ -690,8 +694,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar14,6,0x40402a,*(uint *)(this_00 + 0x104),
                  *(uint *)(this_00 + 0x108),*(uint *)(this_00 + 0x1b0));
     FUN_006b1b10((int)DAT_008075a8,*(uint *)pCVar14,3);
-    FUN_006b3640(DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(this_00 + 0xfc),
-                 *(uint *)(this_00 + 0x100));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(this_00 + 0xfc),
+               *(uint *)(this_00 + 0x100));
     FUN_006b3af0(DAT_008075a8,*(uint *)pCVar14);
     *(undefined4 *)(this_00 + 0x114) = *(undefined4 *)(*(int *)(this_00 + 0x1b4) + 4);
     *(undefined4 *)(this_00 + 0x118) = *(undefined4 *)(*(int *)(this_00 + 0x1b4) + 8);
@@ -702,8 +707,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     FUN_006b2330((uint)DAT_008075a8,(uint *)pCVar14,6,0x401988,*(uint *)(this_00 + 0x114),
                  *(uint *)(this_00 + 0x118),*(uint *)(this_00 + 0x1b4));
     FUN_006b1b10((int)DAT_008075a8,*(uint *)pCVar14,3);
-    FUN_006b3640(DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(this_00 + 0x10c),
-                 *(uint *)(this_00 + 0x110));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(this_00 + 0x10c),
+               *(uint *)(this_00 + 0x110));
     FUN_006b3af0(DAT_008075a8,*(uint *)pCVar14);
     iVar3 = 1;
     bVar19 = 0;
@@ -719,8 +725,9 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     pCVar14 = this_00 + 0x148;
     do {
       if (-1 < (int)*(uint *)pCVar14) {
-        FUN_006b3640(DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(pCVar14 + -0x10c),
-                     *(uint *)(pCVar14 + -0xb4));
+        Library::DKW::DDX::FUN_006b3640
+                  (DAT_008075a8,*(uint *)pCVar14,0xffffffff,*(uint *)(pCVar14 + -0x10c),
+                   *(uint *)(pCVar14 + -0xb4));
       }
       bVar2 = bVar2 + 1;
       pCVar14 = pCVar14 + 4;

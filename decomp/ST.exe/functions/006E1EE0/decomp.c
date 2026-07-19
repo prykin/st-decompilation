@@ -144,8 +144,9 @@ bool __thiscall FUN_006e1ee0(void *this,int param_1,undefined4 *param_2,int para
                   ((int)param_2[(uint)*(byte *)(iVar4 + 2) * 4 + 2] < iVar2)) ||
                  ((int)param_2[(uint)*(byte *)(iVar4 + 3) * 4 + 2] < iVar2)) {
                 if (iVar3 < local_28) {
-                  FUN_0072da70((undefined4 *)(iVar3 + 1 + param_3),(undefined4 *)(iVar3 + param_3),
-                               local_28 - iVar3);
+                  Library::MSVCRT::FUN_0072da70
+                            ((undefined4 *)(iVar3 + 1 + param_3),(undefined4 *)(iVar3 + param_3),
+                             local_28 - iVar3);
                   *(undefined1 *)(iVar3 + param_3) = (undefined1)local_48;
                   goto LAB_006e22a2;
                 }

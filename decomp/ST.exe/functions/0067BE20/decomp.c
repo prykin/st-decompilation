@@ -23,9 +23,11 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,int param_3)
     if ((uVar1 < *(uint *)(param_3 + 0xc)) &&
        (puVar3 = (undefined2 *)(*(int *)(param_3 + 8) * uVar1 + *(int *)(param_3 + 0x1c)),
        puVar3 != (undefined2 *)0x0)) {
-      pvVar2 = (void *)thunk_FUN_0042b620(CONCAT31((int3)((uint)param_2 >> 8),
-                                                   *(undefined1 *)(local_8 + 0x640)),
-                                          CONCAT22((short)((uint)in_EAX >> 0x10),*puVar3),1);
+      pvVar2 = (void *)STAllPlayersC::GetObjPtr
+                                 (DAT_007fa174,
+                                  CONCAT31((int3)((uint)param_2 >> 8),
+                                           *(undefined1 *)(local_8 + 0x640)),
+                                  CONCAT22((short)((uint)in_EAX >> 0x10),*puVar3),1);
       if (pvVar2 == (void *)0x0) {
         in_EAX = FUN_006b0c70(param_3,uVar1);
         param_2 = extraout_EDX;

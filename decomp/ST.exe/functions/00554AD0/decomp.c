@@ -19,7 +19,7 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
   thunk_FUN_00555570((int)this);
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   pcVar2 = local_8;
   if (errorCode == 0) {
     FUN_006b4170(*(int *)(local_8 + 4),0,*(int *)(local_8 + 0x14) + *(int *)(local_8 + 0xc),
@@ -27,17 +27,19 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
                  *(int *)(local_8 + 0x34),0);
     ccFntTy::WrStr(*(ccFntTy **)(pcVar2 + 8),param_1,*(int *)(pcVar2 + 0xc),*(int *)(pcVar2 + 0x10),
                    *(undefined4 *)(pcVar2 + 0x24));
-    FUN_006b42d0((uint)DAT_0080759c,*(int *)(pcVar2 + 0xc) + *(int *)(pcVar2 + 0x14),
-                 *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)pcVar2,
-                 (uint *)0x0,*(int *)(pcVar2 + 0xc) + *(int *)(pcVar2 + 0x14),
-                 *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
-                 *(DWORD *)(pcVar2 + 0x34));
-    FUN_006b4680(DAT_0080759c,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-                 *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)(pcVar2 + 4),
-                 (uint *)0x0,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-                 *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
-                 *(DWORD *)(pcVar2 + 0x34),0);
-    FUN_006bb370((int)DAT_0080759c,0,0);
+    Library::DKW::DDX::FUN_006b42d0
+              ((uint)DAT_0080759c,*(int *)(pcVar2 + 0xc) + *(int *)(pcVar2 + 0x14),
+               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)pcVar2,(uint *)0x0,
+               *(int *)(pcVar2 + 0xc) + *(int *)(pcVar2 + 0x14),
+               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
+               *(DWORD *)(pcVar2 + 0x34));
+    Library::DKW::DDX::FUN_006b4680
+              (DAT_0080759c,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
+               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)(pcVar2 + 4),
+               (uint *)0x0,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
+               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
+               *(DWORD *)(pcVar2 + 0x34),0);
+    Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
     if (*(code **)(pcVar2 + 0x58) != (code *)0x0) {
       (**(code **)(pcVar2 + 0x58))(*(undefined4 *)(pcVar2 + 0x54));
     }

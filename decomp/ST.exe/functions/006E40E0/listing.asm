@@ -1,4 +1,4 @@
-FUN_006e40e0:
+AppClassTy::SendMessageToAllChild:
 006E40E0  55                        PUSH EBP
 006E40E1  8B EC                     MOV EBP,ESP
 006E40E3  83 EC 4C                  SUB ESP,0x4c

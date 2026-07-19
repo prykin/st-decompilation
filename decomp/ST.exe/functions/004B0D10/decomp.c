@@ -18,7 +18,7 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar5 = ReportDebugMessage(s_E____titans_Artem_TLO_ai_cpp_007ac758,0x313,0,iVar3,&DAT_007a4ccc,

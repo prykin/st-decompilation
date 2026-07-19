@@ -18,7 +18,7 @@ int __thiscall SystemWithNamedObjClassTy::SendMessage(SystemWithNamedObjClassTy 
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
   local_c = this;
-  iVar2 = __setjmp3(local_4c,0,unaff_ESI,pIVar4);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar4);
   if (iVar2 != 0) {
     g_currentExceptionFrame = pIVar4;
     iVar3 = ReportDebugMessage(s_E__Ourlib_Sapp_cpp_007ee78c,0x534,0,iVar2,&DAT_007a4ccc,

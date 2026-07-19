@@ -13,9 +13,9 @@ undefined4 * __cdecl thunk_FUN_00648530(undefined4 *param_1)
   puStack_8 = (undefined4 *)0x0;
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
-  iVar1 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar1 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar1 == 0) {
-    puStack_8 = FUN_006aac10(0x85);
+    puStack_8 = Library::DKW::LIB::FUN_006aac10(0x85);
     puVar2 = param_1;
     puVar3 = puStack_8;
     for (iVar1 = 0x21; iVar1 != 0; iVar1 = iVar1 + -1) {

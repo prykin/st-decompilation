@@ -67,7 +67,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
     }
     local_68 = *(int *)(&DAT_007a4bf8 + param_5 * 4);
     ExceptionList = &local_14;
-    local_58 = (char *)FUN_006aac70(local_68 << 5);
+    local_58 = (char *)Library::DKW::LIB::FUN_006aac70(local_68 << 5);
     local_34 = FUN_00411cf0(local_58,local_68);
     local_40 = (int)(local_34 * param_6 + 0xb4) / 0x168;
     if (local_40 == local_34) {
@@ -88,7 +88,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
         if (local_60 < (int)local_24) {
           local_60 = local_24 * 2;
           local_8 = 0;
-          FUN_0072da40();
+          Library::MSVCRT::FUN_0072da40();
           local_8 = 0xffffffff;
           local_28 = &stack0xffffff3c;
           local_1c = &stack0xffffff3c;
@@ -242,7 +242,7 @@ int FUN_00411e50(int param_1,int param_2,int param_3,int param_4,int param_5,uin
           local_64 = param_3;
           local_68 = local_68 + 1;
           uVar3 = uVar3 + 0x20;
-          local_58 = (char *)FUN_006acf50((undefined4 *)local_58,uVar3);
+          local_58 = (char *)Library::DKW::LIB::FUN_006acf50((undefined4 *)local_58,uVar3);
           local_34 = FUN_00411cf0(local_58,local_68);
           local_40 = (int)(local_34 * param_6 + 0xb4) / 0x168;
           if (local_40 == local_34) {

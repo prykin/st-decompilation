@@ -51,7 +51,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   }
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
-  errorCode = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar4 = iStack_10;
   pBVar3 = pBStack_14;
   iVar7 = iStack_18;
@@ -62,8 +62,9 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
                                     9 - (uint)(*(char *)(puStack_8 + 2) != '\0'));
       thunk_FUN_00540760(*(undefined4 **)(pBVar3 + 0x68),iVar7,iVar4,'\x06',pbVar6);
     }
-    FUN_006b3640(DAT_008075a8,*(uint *)(pBVar3 + 0x60),0xffffffff,*(uint *)(pBVar3 + 0x3c),
-                 *(uint *)(pBVar3 + 0x44));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pBVar3 + 0x60),0xffffffff,*(uint *)(pBVar3 + 0x3c),
+               *(uint *)(pBVar3 + 0x44));
     g_currentExceptionFrame = IStack_5c.previous;
     return;
   }

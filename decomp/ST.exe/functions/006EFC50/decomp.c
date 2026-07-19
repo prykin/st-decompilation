@@ -18,13 +18,13 @@ FUN_006efc50(int param_1,int param_2,int param_3,int param_4,undefined1 param_5)
   local_8 = (undefined4 *)0x0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  iVar2 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((param_3 == 0) || (param_4 == 0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x11b);
     }
     iVar2 = (param_1 / 2) * (param_2 / 2);
-    local_8 = FUN_006aac10(iVar2 * 0x18 + 0x45d);
+    local_8 = Library::DKW::LIB::FUN_006aac10(iVar2 * 0x18 + 0x45d);
     *(short *)local_8 = (short)param_1;
     *(short *)((int)local_8 + 2) = (short)param_2;
     *(undefined1 *)(local_8 + 1) = param_5;

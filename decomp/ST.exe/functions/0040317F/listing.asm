@@ -1,2 +1,2 @@
-thunk_FUN_0044b030:
+STAllPlayersC::ActivateTV:
 0040317F  E9 AC 7E 04 00            JMP 0x0044b030

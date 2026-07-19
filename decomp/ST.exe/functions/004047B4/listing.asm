@@ -1,2 +1,2 @@
-thunk_FUN_006a4160:
+Library::MSVCRT::thunk_FUN_006a4160:
 004047B4  E9 A7 F9 29 00            JMP 0x006a4160

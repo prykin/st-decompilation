@@ -1,4 +1,4 @@
-FUN_004919c0:
+STBoatC::GetCellForLoading:
 004919C0  55                        PUSH EBP
 004919C1  8B EC                     MOV EBP,ESP
 004919C3  83 EC 64                  SUB ESP,0x64

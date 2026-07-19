@@ -41,7 +41,7 @@ void __thiscall CPanelTy::PaintCtrlObjSI(CPanelTy *this)
   IStack_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_64;
   pCStack_1c = this;
-  iVar5 = __setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(IStack_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_1c;
   if (iVar5 != 0) {
     g_currentExceptionFrame = IStack_64.previous;
@@ -265,8 +265,8 @@ LAB_0050a4e4:
         pCVar16 = pCVar16 + 1;
         pCVar14 = pCVar14 + 1;
       }
-      for (puVar10 = FUN_0072e560((uint *)(this_00 + 0x1e1),'\n'); puVar10 != (uint *)0x0;
-          puVar10 = FUN_0072e560(puVar10,'\n')) {
+      for (puVar10 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e1),'\n');
+          puVar10 != (uint *)0x0; puVar10 = Library::MSVCRT::FUN_0072e560(puVar10,'\n')) {
         *(undefined1 *)puVar10 = 0x20;
       }
 LAB_0050af64:
@@ -435,8 +435,8 @@ LAB_0050b38b:
         pCVar16 = pCVar16 + 1;
         pCVar14 = pCVar14 + 1;
       }
-      for (puVar10 = FUN_0072e560((uint *)(this_00 + 0x1e1),'\n'); puVar10 != (uint *)0x0;
-          puVar10 = FUN_0072e560(puVar10,'\n')) {
+      for (puVar10 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e1),'\n');
+          puVar10 != (uint *)0x0; puVar10 = Library::MSVCRT::FUN_0072e560(puVar10,'\n')) {
         *(undefined1 *)puVar10 = 0x20;
       }
       goto LAB_0050af64;
@@ -658,8 +658,8 @@ LAB_0050b386:
       pCVar16 = pCVar16 + 1;
       pCVar14 = pCVar14 + 1;
     }
-    for (puVar10 = FUN_0072e560((uint *)(this_00 + 0x1e1),'\n'); puVar10 != (uint *)0x0;
-        puVar10 = FUN_0072e560(puVar10,'\n')) {
+    for (puVar10 = Library::MSVCRT::FUN_0072e560((uint *)(this_00 + 0x1e1),'\n');
+        puVar10 != (uint *)0x0; puVar10 = Library::MSVCRT::FUN_0072e560(puVar10,'\n')) {
       *(undefined1 *)puVar10 = 0x20;
     }
     ccFntTy::WrTxt(*(ccFntTy **)(this_00 + 0x1b8),(uint *)(this_00 + 0x1e1),-2,-1,5,-1,-1);
@@ -870,8 +870,9 @@ switchD_0050a9c9_caseD_5f:
   PaintIDSObj(this_00);
 switchD_0050a52e_caseD_df:
   if (-1 < (int)*(uint *)(this_00 + 0x15c)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
-                 *(uint *)(this_00 + 0xa8));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(this_00 + 0x15c),0xffffffff,*(uint *)(this_00 + 0x50),
+               *(uint *)(this_00 + 0xa8));
   }
   g_currentExceptionFrame = IStack_64.previous;
   return;

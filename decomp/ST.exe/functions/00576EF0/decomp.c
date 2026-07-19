@@ -8,7 +8,7 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
 {
   code *pcVar1;
   short *psVar2;
-  GameSystemC *pGVar3;
+  SystemClassTy *pSVar3;
   int iVar4;
   undefined4 *puVar5;
   void *pvVar6;
@@ -19,12 +19,12 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
   InternalExceptionFrame *in_stack_ffffff70;
   undefined4 local_8c [16];
   InternalExceptionFrame local_4c;
-  GameSystemC *local_8;
+  SystemClassTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = this;
-  iVar4 = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,in_stack_ffffff70);
+  local_8 = (SystemClassTy *)this;
+  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,in_stack_ffffff70);
   if (iVar4 == 0) {
     DAT_00806750 = thunk_FUN_0042a290(DAT_00806754,s_3D_MAP_007ca1e4);
     puVar5 = FUN_006b04d0(0x4f2);
@@ -40,19 +40,19 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     iVar4 = (int)*psVar2 / 2;
     *(int *)((int)pvVar6 + 0x284) = iVar4;
     *(int *)((int)pvVar6 + 0x288) = iVar4 * iVar4;
-    FUN_006e51f0();
+    SystemClassTy::InitSystem(local_8);
     FUN_006e8580(DAT_00807598,DAT_008075a8);
     pcVar9 = s_scmask_007cac10;
     pvVar6 = DAT_00806770;
     DAT_00806724 = FUN_0070ae60(DAT_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff70;
-    iVar4 = __setjmp3(local_8c,0,pvVar6,pcVar9);
-    pGVar3 = local_8;
+    iVar4 = Library::MSVCRT::__setjmp3(local_8c,0,pvVar6,pcVar9);
+    pSVar3 = local_8;
     if (iVar4 == 0) {
       puVar5 = FUN_00725550(DAT_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
-      *(undefined4 **)(pGVar3 + 0x431) = puVar5;
+      *(undefined4 **)((int)&pSVar3[0x21].objects + 1) = puVar5;
     }
-    *(undefined4 *)(pGVar3 + 0x42c) = DAT_00808784;
+    pSVar3[0x21].objectLock = DAT_00808784;
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

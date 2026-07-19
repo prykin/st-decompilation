@@ -72,12 +72,12 @@ STPlaySystemC::SetCtrlCmd
   g_currentExceptionFrame = &IStack_54;
   uStack_c = param_5;
   pSStack_8 = this;
-  iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   uVar7 = uStack_c;
   if (iVar3 == 0) {
     iVar3 = uStack_c + param_7;
     iStack_10 = iVar3;
-    puVar4 = FUN_006aac10(iVar3 + 0x1b);
+    puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
     puVar4[1] = *(undefined4 *)(pSStack_8 + 0xe4);
     *(undefined1 *)(puVar4 + 2) = param_1;
     *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)(DAT_00802a30 + 0x4ae);

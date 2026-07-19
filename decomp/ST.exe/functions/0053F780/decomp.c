@@ -34,7 +34,7 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
-    iVar5 = __setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pPVar6 = local_8;
     if (iVar5 == 0) {
       if (*(int *)(local_8 + 0x180) != 0) {

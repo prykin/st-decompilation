@@ -29,12 +29,12 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   IStack_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_74;
   pSStack_c = this;
-  iVar4 = __setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   piVar3 = piStack_8;
   pSVar2 = pSStack_c;
   if (iVar4 == 0) {
     if (*(int *)(pSStack_c + *piStack_8 * 4 + 0x30) == 0) {
-      puVar5 = FUN_006ae290((uint *)0x0,10,0x20,10);
+      puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x20,10);
       *(uint **)(pSVar2 + *piVar3 * 4 + 0x30) = puVar5;
     }
     if (*(int *)(pSVar2 + *piVar3 * 4 + 0x30) != 0) {
@@ -49,7 +49,7 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
       aiStack_30[1] = piVar3[1];
       aiStack_30[2] = piVar3[2];
       aiStack_30[3] = piVar3[3];
-      uVar6 = FUN_006ae1c0(*(uint **)(pSVar2 + *piVar3 * 4 + 0x30),aiStack_30);
+      uVar6 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + *piVar3 * 4 + 0x30),aiStack_30);
       g_currentExceptionFrame = IStack_74.previous;
       return uVar6;
     }

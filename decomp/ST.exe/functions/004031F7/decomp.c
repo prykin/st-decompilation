@@ -21,7 +21,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pPStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
     iVar7 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x279,0,iVar3,&DAT_007a4ccc
@@ -36,7 +36,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   }
   if (DAT_00802a30 != 0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
       FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
@@ -52,10 +52,10 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     FUN_006b5f80(DAT_008075a8,0x79,0x51,0x22e,0x145);
     if (*(HoloTy **)(pPVar2 + 0x1c96) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pPVar2 + 0x1c96));
-      FUN_0072e2b0(*(undefined4 **)(pPVar2 + 0x1c96));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pPVar2 + 0x1c96));
       *(undefined4 *)(pPVar2 + 0x1c96) = 0;
     }
-    puVar4 = (undefined1 *)FUN_0072e530(0x33);
+    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
       puVar4 = (undefined1 *)0x0;
     }
@@ -81,7 +81,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       cVar9 = '\x01';
       uVar8 = 0x10;
       iVar7 = 1;
-      iVar3 = FUN_006bf9f0(DAT_008075a8,0x79,0x51,0x22e,0x145);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x51,0x22e,0x145);
       uVar8 = HoloTy::Init(*(HoloTy **)(pPVar2 + 0x1c96),2,0x79,0x51,iVar3,iVar7,uVar8,cVar9,uVar10)
       ;
       if (uVar8 != 0) {
@@ -89,7 +89,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
         if (-1 < (int)*(uint *)(*(int *)(pPVar2 + 0x1c96) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pPVar2 + 0x1c96) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pPVar2 + 0x1c96) + 3));
         }
         HoloTy::NextFas(*(HoloTy **)(pPVar2 + 0x1c96));
       }
@@ -134,10 +134,10 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
     FUN_006b5f80(DAT_008075a8,0x79,0x197,0x22e,0x2e);
     if (*(HoloTy **)(pPVar2 + 0x1c9a) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pPVar2 + 0x1c9a));
-      FUN_0072e2b0(*(undefined4 **)(pPVar2 + 0x1c9a));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pPVar2 + 0x1c9a));
       *(undefined4 *)(pPVar2 + 0x1c9a) = 0;
     }
-    puVar4 = (undefined1 *)FUN_0072e530(0x33);
+    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
       puVar4 = (undefined1 *)0x0;
     }
@@ -163,7 +163,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
       cVar9 = '\x01';
       uVar8 = 0x10;
       iVar7 = 1;
-      iVar3 = FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
+      iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
       uVar8 = HoloTy::Init(*(HoloTy **)(pPVar2 + 0x1c9a),1,0x79,0x197,iVar3,iVar7,uVar8,cVar9,uVar10
                           );
       if (uVar8 != 0) {
@@ -171,7 +171,7 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
         if (-1 < (int)*(uint *)(*(int *)(pPVar2 + 0x1c9a) + 3)) {
-          FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pPVar2 + 0x1c9a) + 3));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pPVar2 + 0x1c9a) + 3));
         }
         HoloTy::NextFas(*(HoloTy **)(pPVar2 + 0x1c9a));
       }
@@ -182,11 +182,12 @@ void __thiscall PrividerTy::DeleteCtrls(PrividerTy *this,char param_1)
   }
   if (DAT_00802a30 != 0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
-      FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
+      Library::DKW::DDX::FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));
     }
     else if (*(uint *)(DAT_00802a30 + 0x1c) != 0xffffffff) {
-      FUN_006b34d0(*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
-                   *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
+      Library::DKW::DDX::FUN_006b34d0
+                (*(uint **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c),0xfffffffe,
+                 *(uint *)(DAT_00802a30 + 0x34),*(uint *)(DAT_00802a30 + 0x38));
       g_currentExceptionFrame = IStack_50.previous;
       return;
     }

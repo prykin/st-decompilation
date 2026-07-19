@@ -1,4 +1,4 @@
-FUN_0043beb0:
+STAllPlayersC::GetPanelInfo:
 0043BEB0  55                        PUSH EBP
 0043BEB1  8B EC                     MOV EBP,ESP
 0043BEB3  83 EC 68                  SUB ESP,0x68

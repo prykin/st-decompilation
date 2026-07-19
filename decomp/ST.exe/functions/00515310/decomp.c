@@ -31,7 +31,7 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pHVar3 = local_c;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -50,8 +50,9 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   }
   *(undefined4 *)(*(int *)(pHVar3 + 0x1d7) + 0xc) = 0;
   pHVar3[0x1db] = (HelpPanelTy)0x0;
-  FUN_006b55f0(*(undefined4 **)(pHVar3 + 0x68),0,0x21,0x16,*(int *)(pHVar3 + 0x1dc),0,0x21,0x16,
-               0x1b8,0x118);
+  Library::DKW::WGR::FUN_006b55f0
+            (*(undefined4 **)(pHVar3 + 0x68),0,0x21,0x16,*(int *)(pHVar3 + 0x1dc),0,0x21,0x16,0x1b8,
+             0x118);
   iVar4 = local_8;
   ccFntTy::SetSurf(*(ccFntTy **)(pHVar3 + 0x1e4),*(int *)(pHVar3 + 0x68),0,0x21,local_8,0x19c,0x14);
   if (DAT_0080874e == '\x03') {
@@ -110,8 +111,8 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
       pcVar7 = pcVar7 + 1;
       pcVar12 = pcVar12 + 1;
     }
-    for (puVar6 = FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
-        puVar6 = FUN_0072e560(puVar6,'\n')) {
+    for (puVar6 = Library::MSVCRT::FUN_0072e560(&DAT_0080f33a,'\n'); puVar6 != (uint *)0x0;
+        puVar6 = Library::MSVCRT::FUN_0072e560(puVar6,'\n')) {
       *(undefined1 *)puVar6 = 0x20;
     }
     ccFntTy::WrStr(*(ccFntTy **)(pHVar3 + 0x1e0),&DAT_0080f33a,-1,-1,

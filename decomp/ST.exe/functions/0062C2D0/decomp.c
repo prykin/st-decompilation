@@ -34,30 +34,30 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
                         (param_3 - param_1[1]) * (param_3 - param_1[1]))) - (float)param_1[3];
     if ((float)-param_1[3] < fVar1) {
       iVar2 = param_1[5];
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       param_1[5] = (int)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar7;
       fVar6 = (float10)*(int *)((int)param_1 + 0x41) + (float10)*(float *)((int)param_1 + 0x45);
       *(float *)((int)param_1 + 0x45) = (float)fVar6;
       fVar6 = fVar6 * (float10)_DAT_0079d078;
       fcos(fVar6);
       fsin(fVar6);
-      lVar7 = __ftol();
-      lVar8 = __ftol();
-      lVar9 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
+      lVar8 = Library::MSVCRT::__ftol();
+      lVar9 = Library::MSVCRT::__ftol();
       param_1[6] = (int)lVar7;
       param_1[7] = (int)lVar8;
       param_1[8] = (int)lVar9;
-      lVar10 = __ftol();
-      lVar11 = __ftol();
-      lVar12 = __ftol();
+      lVar10 = Library::MSVCRT::__ftol();
+      lVar11 = Library::MSVCRT::__ftol();
+      lVar12 = Library::MSVCRT::__ftol();
       param_1[0xb] = (int)lVar12;
       param_1[9] = (int)lVar10;
       param_1[10] = (int)lVar11;
-      thunk_FUN_00556760(DAT_00802a7c,3,1,0,*param_1 + (int)lVar7,param_1[1] + (int)lVar8,
-                         param_1[2] + (int)lVar9,(short)lVar10,(short)lVar11,(short)lVar12,0,0,0,-1,
-                         0,0);
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,3,1,0,*param_1 + (int)lVar7,param_1[1] + (int)lVar8,
+                 param_1[2] + (int)lVar9,(short)lVar10,(short)lVar11,(short)lVar12,0,0,0,-1,0,0);
       if ((float)iVar2 == _DAT_0079034c) {
         return true;
       }
@@ -72,19 +72,20 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
               + (float10)iVar4) * (float10)_DAT_0079d078;
       fcos(fVar6);
       fsin(fVar6);
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar15 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar14 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar13 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar2 = (int)lVar7 + param_1[2];
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar3 = (int)lVar7 + param_1[1];
-      lVar7 = __ftol();
-      thunk_FUN_00556760(DAT_00802a7c,3,1,3,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,
-                         sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
+      lVar7 = Library::MSVCRT::__ftol();
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,3,1,3,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,sVar16,
+                 sVar17,sVar18,iVar19,sVar20,bVar21);
       fVar6 = (((float10)*(float *)((int)param_1 + 0x45) - (float10)iVar4) * (float10)_DAT_00790784
               + (float10)iVar4) * (float10)_DAT_0079d078;
       fcos(fVar6);
@@ -95,19 +96,20 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
       sVar18 = 0;
       sVar17 = 0;
       sVar16 = 0;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar15 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar14 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar13 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar2 = (int)lVar7 + param_1[2];
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar3 = (int)lVar7 + param_1[1];
-      lVar7 = __ftol();
-      thunk_FUN_00556760(DAT_00802a7c,3,1,2,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,
-                         sVar16,sVar17,sVar18,iVar19,sVar20,bVar21);
+      lVar7 = Library::MSVCRT::__ftol();
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,3,1,2,(int)lVar7 + *param_1,iVar3,iVar2,sVar13,sVar14,sVar15,sVar16,
+                 sVar17,sVar18,iVar19,sVar20,bVar21);
       bVar21 = 0;
       sVar20 = 0;
       iVar3 = -1;
@@ -118,19 +120,20 @@ bool __cdecl FUN_0062c2d0(int *param_1,int param_2,int param_3,int param_4)
               + (float10)iVar4) * (float10)_DAT_0079d078;
       fcos(fVar6);
       fsin(fVar6);
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar15 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar14 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       sVar13 = (short)lVar7;
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar2 = (int)lVar7 + param_1[2];
-      lVar7 = __ftol();
+      lVar7 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar7 + param_1[1];
-      lVar7 = __ftol();
-      thunk_FUN_00556760(DAT_00802a7c,3,1,1,(int)lVar7 + *param_1,iVar4,iVar2,sVar13,sVar14,sVar15,
-                         sVar16,sVar17,sVar18,iVar3,sVar20,bVar21);
+      lVar7 = Library::MSVCRT::__ftol();
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,3,1,1,(int)lVar7 + *param_1,iVar4,iVar2,sVar13,sVar14,sVar15,sVar16,
+                 sVar17,sVar18,iVar3,sVar20,bVar21);
     }
   }
   return bVar5;

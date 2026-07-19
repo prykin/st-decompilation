@@ -25,7 +25,7 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   IStack_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_54;
   pCStack_10 = this;
-  iVar2 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pCStack_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_54.previous;
@@ -66,10 +66,10 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
     pCVar6 = pCVar6 + 1;
     pCVar8 = pCVar8 + 1;
   }
-  FUN_006f13f0(0,PTR_s_TITLE_MISSION_0079d838,(byte *)(this_00 + 0x55fb),0x104,(undefined4 *)0x0,
-               '\0',(uint *)0x0);
-  FUN_006f13f0(0,PTR_s_TEXTURE_0079d83c,(byte *)(this_00 + 0x53f3),0x104,(undefined4 *)0x0,'\0',
-               (uint *)0x0);
+  cMf32::RecPut(*(cMf32 **)(this_00 + 0x18),0,PTR_s_TITLE_MISSION_0079d838,
+                (byte *)(this_00 + 0x55fb),0x104,(undefined4 *)0x0,'\0',(uint *)0x0);
+  cMf32::RecPut(*(cMf32 **)(this_00 + 0x18),0,PTR_s_TEXTURE_0079d83c,(byte *)(this_00 + 0x53f3),
+                0x104,(undefined4 *)0x0,'\0',(uint *)0x0);
   iVar2 = FUN_006f0c00(*(short **)(this_00 + 0xc),*(int **)(this_00 + 8));
   if (iVar2 != 0) {
     iStack_8 = 0;
@@ -91,7 +91,8 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
   cVar10 = '\0';
   puVar9 = (undefined4 *)0x0;
   uVar4 = FUN_006b5050((int)pbStack_c);
-  FUN_006f13f0(0xc,PTR_s_SMALL_MAP_0079d840,pbStack_c,uVar4,puVar9,cVar10,puVar11);
+  cMf32::RecPut(*(cMf32 **)(this_00 + 0x18),0xc,PTR_s_SMALL_MAP_0079d840,pbStack_c,uVar4,puVar9,
+                cVar10,puVar11);
   if (pbStack_c != (byte *)0x0) {
     FUN_006ab060(&pbStack_c);
   }

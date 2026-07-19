@@ -43,10 +43,10 @@ undefined4 __fastcall thunk_FUN_00639990(void *param_1)
     STT3DSprC::StartShow(pSVar1,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
     *(undefined1 *)((int)param_1 + 0x271) = 1;
     if (*(int *)((int)param_1 + 0x292) != 0) {
-      thunk_FUN_004abe40(pSVar1,'\r',*(int *)((int)param_1 + 0x292));
+      STT3DSprC::SetCurFase(pSVar1,'\r',*(int *)((int)param_1 + 0x292));
     }
     if (*(int *)((int)param_1 + 0x292) != 0) {
-      thunk_FUN_004abe40(pSVar1,'\x0e',*(int *)((int)param_1 + 0x292));
+      STT3DSprC::SetCurFase(pSVar1,'\x0e',*(int *)((int)param_1 + 0x292));
     }
     thunk_FUN_00416240(param_1,*(undefined2 *)((int)param_1 + 0x27a),
                        *(undefined2 *)((int)param_1 + 0x27e),*(undefined2 *)((int)param_1 + 0x282));

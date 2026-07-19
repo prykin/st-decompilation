@@ -27,18 +27,18 @@ void __cdecl FUN_006a5be0(int param_1)
       uVar4 = *(ushort *)(PTR_DAT_007f1280 + (uint)bVar2 * 2) & 0x157;
     }
     else {
-      uVar4 = FUN_00730610((uint)bVar2,0x157);
+      uVar4 = Library::MSVCRT::FUN_00730610((uint)bVar2,0x157);
     }
     if (uVar4 == 0) {
       bVar2 = 0x20;
     }
     local_1c[iVar6] = bVar2;
-    FUN_00730c40(puVar5,0x7eca88);
+    Library::MSVCRT::FUN_00730c40(puVar5,0x7eca88);
     iVar6 = iVar6 + 1;
     puVar5 = puVar5 + 3;
   }
   local_1c[iVar6] = 0;
-  iVar6 = FUN_00730fa0(0,0,0,0,(byte *)s_Data__<_s>__s_007eca74);
+  iVar6 = Library::MSVCRT::FUN_00730fa0(0,0,0,0,(byte *)s_Data__<_s>__s_007eca74);
   if (iVar6 == 1) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();

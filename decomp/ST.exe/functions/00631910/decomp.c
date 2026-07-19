@@ -31,11 +31,11 @@ FUN_00631910(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
   local_10 = param_7;
   local_8 = 0;
   if (*(int *)((int)this + 0x69) == 0) {
-    puVar1 = FUN_006ae290((uint *)0x0,10,0x24,10);
+    puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x24,10);
     *(uint **)((int)this + 0x69) = puVar1;
   }
   if (*(uint **)((int)this + 0x69) != (uint *)0x0) {
-    uVar3 = FUN_006ae1c0(*(uint **)((int)this + 0x69),local_28);
+    uVar3 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x69),local_28);
     if ((int)uVar3 < 0) goto LAB_006319a2;
   }
   thunk_FUN_00631c20(this,param_5,param_6,(byte)param_2,param_1,param_3,uVar3);

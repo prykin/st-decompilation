@@ -1,4 +1,4 @@
-FUN_00710560:
+ccFntTy::operator:
 00710560  55                        PUSH EBP
 00710561  8B EC                     MOV EBP,ESP
 00710563  83 EC 48                  SUB ESP,0x48

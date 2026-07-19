@@ -18,7 +18,7 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
     IStack_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_50;
     pHStack_c = this;
-    iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pHStack_c;
     if (iVar3 == 0) {
       if (*(int *)(pHStack_c + 0x178) != 0) {
@@ -45,8 +45,9 @@ void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
       }
       this_00[0x1a1] = HVar1;
       *(undefined4 *)(this_00 + 0x1a3) = uStack_8;
-      FUN_006b55f0(*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,
-                   0x16,0x1b8,0x118);
+      Library::DKW::WGR::FUN_006b55f0
+                (*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
+                 0x1b8,0x118);
       CreateList(this_00);
       if (this_00[0x1a2] == (HelpPanelTy)0x0) {
         uStack_8 = *(undefined4 *)(this_00 + 0x1b7);

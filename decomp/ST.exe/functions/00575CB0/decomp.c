@@ -64,7 +64,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,int param_1)
   local_a4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a4;
   local_2c = this;
-  iVar7 = __setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar17 = local_2c;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_a4.previous;
@@ -107,7 +107,7 @@ int __thiscall STAlgaC::GetMessage(STAlgaC *this,int param_1)
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_Object_To_alga_cpp_007cab24,0x66);
       return extraout_EAX;
     }
-    puVar9 = FUN_006ae290((uint *)0x0,10,0x24,10);
+    puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x24,10);
     local_14 = puVar9;
     local_18 = 0;
     if (0 < (int)local_20) {
@@ -170,7 +170,7 @@ LAB_005761a6:
 LAB_005761b9:
           local_e8.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_e8;
-          iVar7 = __setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+          iVar7 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
           pbVar16 = local_10;
           if (iVar7 == 0) {
             local_8 = (byte *)((int)local_10 + 6);
@@ -204,8 +204,9 @@ LAB_005761b9:
             piVar19 = &local_60;
             local_60 = *(int *)(local_2c + 0x30);
             if (*(int *)(local_2c + 0x34) <= local_60) {
-              iVar7 = FUN_006acf50(*(undefined4 **)(local_2c + 0x38),
-                                   *(int *)(local_2c + 0x34) * 8 + 0x50);
+              iVar7 = Library::DKW::LIB::FUN_006acf50
+                                (*(undefined4 **)(local_2c + 0x38),
+                                 *(int *)(local_2c + 0x34) * 8 + 0x50);
               *(int *)(pSVar17 + 0x38) = iVar7;
               *(int *)(pSVar17 + 0x34) = *(int *)(pSVar17 + 0x34) + 10;
             }
@@ -214,7 +215,7 @@ LAB_005761b9:
             pcVar11 = FUN_006c49b0((char *)pbVar16);
             puVar9 = local_14;
             *(char **)(*(int *)(pSVar17 + 0x38) + 4 + *(int *)(pSVar17 + 0x30) * 8) = pcVar11;
-            FUN_006ae1c0(local_14,&local_60);
+            Library::DKW::TBL::FUN_006ae1c0(local_14,&local_60);
             *(int *)(pSVar17 + 0x30) = *(int *)(pSVar17 + 0x30) + 1;
             goto LAB_00576308;
           }
@@ -229,7 +230,8 @@ LAB_00576308:
           iVar7 = *(int *)((int)local_10 + 0x86);
           if (iVar7 < 0) {
             if (local_28 <= *(int *)(pSVar17 + 0x44)) {
-              iVar7 = FUN_006acf50(*(undefined4 **)(pSVar17 + 0x48),(local_28 * 5 + 0x32) * 4);
+              iVar7 = Library::DKW::LIB::FUN_006acf50
+                                (*(undefined4 **)(pSVar17 + 0x48),(local_28 * 5 + 0x32) * 4);
               *(int *)(pSVar17 + 0x48) = iVar7;
               local_28 = iVar6 + 10;
             }
@@ -243,11 +245,11 @@ LAB_00576308:
             piVar1[3] = (int)((float)(int)*(short *)((int)local_10 + 4) * _DAT_00790504 *
                               (float)_DAT_0079b168 + (float)_DAT_0079b158);
             *(short *)((int)piVar1 + 0x12) = (short)piVar19[7];
-            uVar12 = FUN_0072e6c0();
+            uVar12 = Library::MSVCRT::FUN_0072e6c0();
             uVar13 = 0;
             local_34 = (int)uVar12 % piVar19[1];
             local_3c = *(int *)piVar19[2];
-            lVar26 = __ftol();
+            lVar26 = Library::MSVCRT::__ftol();
             FUN_006e8660(DAT_00807598,(int *)&local_c,(piVar19[4] != 0) + 1,0,
                          *(uint *)(local_3c + 4),*(uint *)(local_3c + 8),piVar19[5],
                          piVar19[6] - (int)lVar26,uVar13);
@@ -275,7 +277,8 @@ LAB_00576308:
           }
           else if ((iVar7 < piVar19[1]) && ((piVar19[4] == 0 || (iVar7 < piVar19[3])))) {
             if (local_30 <= *(int *)(pSVar17 + 0x3c)) {
-              iVar7 = FUN_006acf50(*(undefined4 **)(pSVar17 + 0x40),(local_30 * 0xb + 0x6e) * 4);
+              iVar7 = Library::DKW::LIB::FUN_006acf50
+                                (*(undefined4 **)(pSVar17 + 0x40),(local_30 * 0xb + 0x6e) * 4);
               *(int *)(pSVar17 + 0x40) = iVar7;
               local_30 = iVar24 + 10;
             }
@@ -307,7 +310,7 @@ LAB_00576308:
             }
             else {
               local_24 = FUN_006db610(iVar7 * 0x10000,-*(int *)((int)DAT_00807598 + 0x108));
-              lVar26 = __ftol();
+              lVar26 = Library::MSVCRT::__ftol();
               puVar21[6] = (int)lVar26;
             }
             *(int *)(pSVar17 + 0x3c) = *(int *)(pSVar17 + 0x3c) + 1;
@@ -363,7 +366,7 @@ LAB_00576308:
   }
   else if ((iVar7 == 0x10f) && (0 < *(int *)(pSVar17 + 0x3c) + *(int *)(pSVar17 + 0x44))) {
     local_20 = (*(int *)(pSVar17 + 0x3c) + *(int *)(pSVar17 + 0x44)) * 0x92 + 0x18;
-    local_1c = (byte *)FUN_006aac10(local_20);
+    local_1c = (byte *)Library::DKW::LIB::FUN_006aac10(local_20);
     pSVar18 = pSVar17 + 0x1c;
     pbVar16 = local_1c;
     for (iVar7 = 5; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -383,12 +386,12 @@ LAB_00576308:
       do {
         piVar19 = (int *)((int)local_14 + *(int *)(pSVar17 + 0x48));
         local_8 = (byte *)piVar19;
-        lVar26 = __ftol();
+        lVar26 = Library::MSVCRT::__ftol();
         pbVar16 = local_10;
         *(short *)local_10 = (short)lVar26;
-        lVar26 = __ftol();
+        lVar26 = Library::MSVCRT::__ftol();
         *(short *)(pbVar16 + 2) = (short)lVar26;
-        lVar26 = __ftol();
+        lVar26 = Library::MSVCRT::__ftol();
         *(short *)(pbVar16 + 4) = (short)lVar26;
         pbVar16[0x8a] = 0;
         pbVar16[0x8b] = 0;
@@ -462,12 +465,12 @@ LAB_00576308:
       do {
         iVar7 = *(int *)(pSVar17 + 0x40) + (int)local_14;
         local_38 = iVar7;
-        lVar26 = __ftol();
+        lVar26 = Library::MSVCRT::__ftol();
         pbVar16 = local_10;
         *(short *)local_10 = (short)lVar26;
-        lVar26 = __ftol();
+        lVar26 = Library::MSVCRT::__ftol();
         *(short *)(pbVar16 + 2) = (short)lVar26;
-        lVar26 = __ftol();
+        lVar26 = Library::MSVCRT::__ftol();
         *(short *)(pbVar16 + 4) = (short)lVar26;
         *(undefined4 *)(pbVar16 + 0x8a) = *(undefined4 *)(iVar7 + 0x14);
         uVar12 = 0xffffffff;

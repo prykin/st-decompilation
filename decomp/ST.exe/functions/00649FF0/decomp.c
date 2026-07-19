@@ -161,7 +161,8 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
         else {
           pcVar5 = (char *)0x0;
         }
-        if (((*pcVar5 != '\0') && (iVar7 = __strcmpi((char *)&DAT_008117c0,pcVar5), iVar7 != 0)) ||
+        if (((*pcVar5 != '\0') &&
+            (iVar7 = Library::MSVCRT::__strcmpi((char *)&DAT_008117c0,pcVar5), iVar7 != 0)) ||
            (uVar10 != *(uint *)(pcVar5 + 0x104))) {
           FUN_006b0c70((int)puVar6,uVar8);
         }

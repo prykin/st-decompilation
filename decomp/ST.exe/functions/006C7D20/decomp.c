@@ -9,7 +9,7 @@ int FUN_006c7d20(int param_1,int param_2,int *param_3)
   int iVar5;
   int iVar6;
   
-  uVar2 = FUN_006d80c0(param_1);
+  uVar2 = Library::DKW::GPC::FUN_006d80c0(param_1);
   if ((uVar2 != 0) && (uVar2 != 0xffffffff)) {
     return 0;
   }
@@ -21,7 +21,7 @@ int FUN_006c7d20(int param_1,int param_2,int *param_3)
   }
   iVar5 = 1 << (cVar1 + 1U & 0x1f);
   if (param_2 == 0) {
-    param_2 = FUN_006aac70(iVar5 * 4);
+    param_2 = Library::DKW::LIB::FUN_006aac70(iVar5 * 4);
     if (param_2 == 0) {
       return 0;
     }

@@ -31,14 +31,14 @@ LAB_004e9090:
     *(int *)(param_1 + 0x4d0) = iVar2;
     if ((99 < iVar2) && (*(int *)(param_1 + 0x4f4) == 0)) {
       *(undefined4 *)(param_1 + 0x4f4) = 1;
-      thunk_FUN_004cabb0(1);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,1);
     }
   }
   if ((*(int *)(param_1 + 0x4d0) < 100) && (*(int *)(param_1 + 0x4f4) != 0)) {
     iVar2 = thunk_FUN_004ac910((void *)(param_1 + 0x1d5),'\f');
     if (iVar2 == *(int *)(*(int *)(param_1 + 0x1f5) + 0x1c4)) {
       *(undefined4 *)(param_1 + 0x4f4) = 0;
-      thunk_FUN_004cabb0(1);
+      TLOBaseTy::RotateSpr((TLOBaseTy *)param_1,1);
     }
   }
 LAB_004e914a:

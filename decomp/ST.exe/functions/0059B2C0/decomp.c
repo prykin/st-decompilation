@@ -32,7 +32,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
     local_8c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_8c;
     local_10 = this;
-    iVar4 = __setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
       pFVar2 = local_10;
@@ -88,7 +88,7 @@ void __thiscall FSGSTy::PaintLadder(FSGSTy *this,int param_1)
             StartServTy::WrTextDDX
                       (this_01,0,600,(int)pSVar3,0x30,0x10,(uint *)local_48,0xffffffff,0xffffffff,
                        *(void **)(pFVar2 + 0x1a7f),0);
-            ptVar6 = _gmtime((time_t *)(piVar9 + -3));
+            ptVar6 = Library::MSVCRT::_gmtime((time_t *)(piVar9 + -3));
             wsprintfA((LPSTR)local_48,s__2d____2d____4d_007cc27c,ptVar6->tm_mday,ptVar6->tm_mon + 1,
                       ptVar6->tm_year + 0x76c);
             StartServTy::WrTextDDX

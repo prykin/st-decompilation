@@ -50,7 +50,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
   IStack_1c8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_1c8;
   pIStack_8 = this;
-  iVar4 = __setjmp3(IStack_1c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(IStack_1c8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pIVar3 = pIStack_8;
   if (iVar4 == 0) {
     if (DAT_0080874e == '\x01') {

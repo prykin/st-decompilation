@@ -30,7 +30,7 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
       }
     }
     else {
-      uVar4 = FUN_006acf50((undefined4 *)puVar1[0x29],param_2 * 4);
+      uVar4 = Library::DKW::LIB::FUN_006acf50((undefined4 *)puVar1[0x29],param_2 * 4);
       puVar1[0x29] = uVar4;
       if (uVar4 == 0) {
         return 0xfffffffe;
@@ -48,7 +48,7 @@ FUN_006e9af0(void *this,uint param_1,uint param_2,uint param_3,uint param_4,uint
         }
       }
       if (((*puVar1 & 0x100) != 0) && ((undefined4 *)puVar1[0x2a] != (undefined4 *)0x0)) {
-        uVar4 = FUN_006acf50((undefined4 *)puVar1[0x2a],param_2 * 8);
+        uVar4 = Library::DKW::LIB::FUN_006acf50((undefined4 *)puVar1[0x2a],param_2 * 8);
         puVar1[0x2a] = uVar4;
         if (uVar4 == 0) {
           return 0xfffffffe;

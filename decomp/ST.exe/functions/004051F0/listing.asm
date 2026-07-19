@@ -1,2 +1,2 @@
-thunk_FUN_005585f0:
+Visible::PrepareAfterSave:
 004051F0  E9 FB 33 15 00            JMP 0x005585f0

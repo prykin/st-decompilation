@@ -43,10 +43,10 @@ undefined4 FUN_00497370(int param_1,int param_2,uint param_3,undefined4 param_4,
   local_8 = 0;
   ExceptionList = &local_14;
   local_44 = iVar2;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_38 = &stack0xffffff90;
   local_1c = &stack0xffffff90;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   local_30 = 0;
   local_40 = 0;

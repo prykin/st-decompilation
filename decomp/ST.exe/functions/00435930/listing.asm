@@ -1,4 +1,4 @@
-FUN_00435930:
+STAllPlayersC::GetCursorType:
 00435930  55                        PUSH EBP
 00435931  8B EC                     MOV EBP,ESP
 00435933  83 EC 0C                  SUB ESP,0xc

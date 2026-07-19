@@ -30,7 +30,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
     pOStack_8 = this;
-    iVar5 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pOVar6 = pOStack_8;
     if (iVar5 == 0) {
       iVar5 = 10;

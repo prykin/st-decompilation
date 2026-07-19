@@ -28,7 +28,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
   local_8 = (SpecPanelTy *)this;
-  iVar3 = __setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;

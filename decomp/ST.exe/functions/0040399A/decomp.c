@@ -11,7 +11,7 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
     return -(uint)(iVar2 != 0);
   }
   if (iVar2 == 2) {
-    iVar2 = thunk_FUN_004758e0(this,(undefined4 *)0x2);
+    iVar2 = UnLoadObj(this,(undefined4 *)0x2);
     return iVar2;
   }
   if (iVar2 == 5) {

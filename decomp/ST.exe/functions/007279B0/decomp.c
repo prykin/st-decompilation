@@ -118,7 +118,7 @@ void __thiscall FUN_007279b0(void *this,int param_1,int param_2,int param_3)
   if ((DAT_00857064 < DAT_008570ec) && (DAT_00857060 < DAT_008570e8)) {
     local_8 = 0;
     ExceptionList = &local_14;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_8 = 0xffffffff;
     FUN_00726d80((int *)&stack0xffffffc4,local_20);
     FUN_00727230((int *)&stack0xffffffc4);

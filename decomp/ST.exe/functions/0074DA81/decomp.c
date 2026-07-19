@@ -40,10 +40,10 @@ undefined8 FUN_0074da81(uint param_1,uint param_2,uint param_3,uint param_4,uint
     bVar1 = 0;
   }
   bVar11 = (bool)((int)param_3 < 0 ^ bVar1);
-  local_14 = __allmul(param_1,0,uVar7,0);
+  local_14 = Library::MSVCRT::__allmul(param_1,0,uVar7,0);
   uVar5 = 0;
   if (uVar6 != 0) {
-    lVar13 = __allmul(uVar6,0,uVar7,0);
+    lVar13 = Library::MSVCRT::__allmul(uVar6,0,uVar7,0);
     lVar13 = lVar13 + (local_14 >> 0x20);
     uVar5 = (uint)((ulonglong)lVar13 >> 0x20);
     local_14 = CONCAT44((int)lVar13,(uint)local_14);

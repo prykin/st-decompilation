@@ -6,7 +6,7 @@ void FUN_00759d90(int *param_1)
   
   iVar1 = 1;
   do {
-    FUN_00759ca0(param_1,iVar1);
+    Library::DKW::JPG::FUN_00759ca0(param_1,iVar1);
     iVar1 = iVar1 + -1;
   } while (-1 < iVar1);
   FUN_00760300(param_1,(undefined4 *)*param_1);

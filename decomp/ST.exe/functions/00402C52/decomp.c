@@ -1,5 +1,5 @@
 
-undefined4 __cdecl thunk_FUN_006a4f20(int param_1,int param_2)
+undefined4 __cdecl Library::MSVCRT::thunk_FUN_006a4f20(int param_1,int param_2)
 
 {
   uint uVar1;

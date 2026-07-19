@@ -10,7 +10,7 @@ int __cdecl thunk_FUN_0064a6f0(int *param_1,int param_2)
   
   pIVar2 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  exceptionCode = __setjmp3(auStack_44,0,unaff_ESI,pIVar2);
+  exceptionCode = Library::MSVCRT::__setjmp3(auStack_44,0,unaff_ESI,pIVar2);
   if (exceptionCode == 0) {
     if (param_1 == (int *)0x0) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_erc_cpp_007d2a04,0x25);
@@ -20,7 +20,7 @@ int __cdecl thunk_FUN_0064a6f0(int *param_1,int param_2)
       param_2 = 10;
     }
     *param_1 = param_2;
-    puVar1 = FUN_006aac10(param_2 * 5);
+    puVar1 = Library::DKW::LIB::FUN_006aac10(param_2 * 5);
     param_1[2] = (int)puVar1;
     g_currentExceptionFrame = pIVar2;
     return 0;

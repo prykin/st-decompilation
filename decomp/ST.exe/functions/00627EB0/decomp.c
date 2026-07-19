@@ -40,7 +40,7 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
   local_10 = this;
-  iVar5 = __setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar5 = Library::MSVCRT::__setjmp3(local_7c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_7c.previous;
@@ -264,8 +264,9 @@ LAB_00628286:
       else {
         iVar5 = *(int *)(this_00 + 0x4e);
       }
-      thunk_FUN_00556760(DAT_00802a7c,1,0,0,*(int *)(this_00 + 0x46),*(int *)(this_00 + 0x4a),iVar5,
-                         0,0,0,0,0,0,-1,0,0);
+      TraksClassTy::TraksCreate
+                (DAT_00802a7c,1,0,0,*(int *)(this_00 + 0x46),*(int *)(this_00 + 0x4a),iVar5,0,0,0,0,
+                 0,0,-1,0,0);
     }
 LAB_0062838a:
     if (uVar6 < 0x19) {

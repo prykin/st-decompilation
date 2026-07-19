@@ -18,7 +18,7 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pHStack_8 = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pHStack_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;

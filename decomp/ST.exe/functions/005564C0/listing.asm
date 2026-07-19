@@ -1,4 +1,4 @@
-FUN_005564c0:
+TraksClassTy::GetMessage:
 005564C0  55                        PUSH EBP
 005564C1  8B EC                     MOV EBP,ESP
 005564C3  83 EC 54                  SUB ESP,0x54

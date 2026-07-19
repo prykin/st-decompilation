@@ -10,6 +10,18 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   CPanelTy *this_00;
   int iVar2;
   int iVar3;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *extraout_ECX_02;
+  ccFntTy *extraout_ECX_03;
+  ccFntTy *extraout_ECX_04;
+  ccFntTy *extraout_ECX_05;
+  ccFntTy *extraout_ECX_06;
+  ccFntTy *extraout_ECX_07;
+  ccFntTy *extraout_ECX_08;
+  ccFntTy *extraout_ECX_09;
+  ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   CPanelTy *pCVar4;
@@ -21,7 +33,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 == 0) {
     pCVar5 = local_c + 0x18;
@@ -225,48 +237,59 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     *(undefined4 *)(this_00 + 0x296) = 0;
     *(undefined4 *)(this_00 + 0x292) = 0;
     *(undefined4 *)(this_00 + 0x28e) = 0;
+    this_01 = extraout_ECX;
     if (*(byte **)(this_00 + 0x24b) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(this_00 + 0x24b));
+      this_01 = extraout_ECX_00;
     }
     *(undefined4 *)(this_00 + 0x24b) = 0;
     if (*(byte **)(this_00 + 0xb4b) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(this_00 + 0xb4b));
+      this_01 = extraout_ECX_01;
     }
     *(undefined4 *)(this_00 + 0xb4b) = 0;
     if (*(byte **)(this_00 + 0xb95) != (byte *)0x0) {
       FUN_006ae110(*(byte **)(this_00 + 0xb95));
+      this_01 = extraout_ECX_02;
     }
     *(undefined4 *)(this_00 + 0xb95) = 0;
     if (*(uint **)(this_00 + 0x1cc) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1cc));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1cc));
       *(undefined4 *)(this_00 + 0x1cc) = 0;
+      this_01 = extraout_ECX_03;
     }
     if (*(uint **)(this_00 + 0x1d0) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1d0));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1d0));
       *(undefined4 *)(this_00 + 0x1d0) = 0;
+      this_01 = extraout_ECX_04;
     }
     if (*(uint **)(this_00 + 0x1d4) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1d4));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1d4));
       *(undefined4 *)(this_00 + 0x1d4) = 0;
+      this_01 = extraout_ECX_05;
     }
     if (*(uint **)(this_00 + 0x1c8) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1c8));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1c8));
       *(undefined4 *)(this_00 + 0x1c8) = 0;
+      this_01 = extraout_ECX_06;
     }
     if (*(uint **)(this_00 + 0x1c4) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1c4));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1c4));
       *(undefined4 *)(this_00 + 0x1c4) = 0;
+      this_01 = extraout_ECX_07;
     }
     if (*(uint **)(this_00 + 0x1c0) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1c0));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1c0));
       *(undefined4 *)(this_00 + 0x1c0) = 0;
+      this_01 = extraout_ECX_08;
     }
     if (*(uint **)(this_00 + 0x1bc) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1bc));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1bc));
       *(undefined4 *)(this_00 + 0x1bc) = 0;
+      this_01 = extraout_ECX_09;
     }
     if (*(uint **)(this_00 + 0x1b8) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(this_00 + 0x1b8));
+      ccFntTy::operator(this_01,*(uint **)(this_00 + 0x1b8));
       *(undefined4 *)(this_00 + 0x1b8) = 0;
     }
     if (*(int *)(this_00 + 0x1ac) != 0) {
@@ -289,7 +312,7 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     } while (local_8 != 0);
     if (*(int **)(this_00 + 0x1d8) != (int *)0x0) {
       FUN_00714060(*(int **)(this_00 + 0x1d8));
-      FUN_0072e2b0(*(undefined4 **)(this_00 + 0x1d8));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(this_00 + 0x1d8));
       *(undefined4 *)(this_00 + 0x1d8) = 0;
     }
     if (*(int *)(this_00 + 0x25b) != 0) {

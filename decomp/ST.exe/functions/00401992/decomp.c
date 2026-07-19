@@ -22,7 +22,7 @@ MMObjTy::InitSprBut(MMObjTy *this,undefined4 *param_1,undefined4 param_2,int par
   
   IStack_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_48;
-  iVar2 = __setjmp3(IStack_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar4 = (undefined4 *)((int)param_1 + 0x21);
     for (iVar2 = 9; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -42,7 +42,8 @@ MMObjTy::InitSprBut(MMObjTy *this,undefined4 *param_1,undefined4 param_2,int par
     param_1[0x1a] = param_4;
     param_1[0x14] = 0;
     if (param_1[0x13] != 0xffffffff) {
-      FUN_006b3730((uint *)param_1[0x24],param_1[0x13],param_1[0x14],param_1[0x19],param_1[0x1a]);
+      Library::DKW::DDX::FUN_006b3730
+                ((uint *)param_1[0x24],param_1[0x13],param_1[0x14],param_1[0x19],param_1[0x1a]);
     }
     if (param_12 == 0) {
       *(undefined1 *)((int)param_1 + 0x47) = 0;

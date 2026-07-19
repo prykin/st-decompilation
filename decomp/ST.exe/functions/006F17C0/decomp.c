@@ -1,5 +1,9 @@
 
-undefined4 FUN_006f17c0(byte param_1,char *param_2)
+/* Recovered from embedded debug metadata:
+   E:\Ourlib\Mf32int.cpp
+   cMf32::RecDel */
+
+undefined4 __thiscall cMf32::RecDel(cMf32 *this,byte param_1,char *param_2)
 
 {
   char cVar1;
@@ -15,19 +19,20 @@ undefined4 FUN_006f17c0(byte param_1,char *param_2)
   ushort *puVar9;
   CHAR local_154 [260];
   InternalExceptionFrame local_50;
-  undefined4 *local_c;
+  cMf32 *local_c;
   ushort *local_8;
   
   local_8 = (ushort *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_c = this;
+  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_50.previous;
     if (local_8 != (ushort *)0x0) {
       FUN_006ab060(&local_8);
     }
-    wsprintfA(local_154,s_cMf32__RecDel_File___s__Sect__s_N_007efb40,(int)local_c + 0x231,
+    wsprintfA(local_154,s_cMf32__RecDel_File___s__Sect__s_N_007efb40,local_c + 0x231,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
     iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x144,0,iVar4,&DAT_007a4ccc,
                                local_154);
@@ -47,7 +52,7 @@ undefined4 FUN_006f17c0(byte param_1,char *param_2)
     cVar1 = *pcVar8;
     pcVar8 = pcVar8 + 1;
   } while (cVar1 != '\0');
-  local_8 = (ushort *)FUN_006aac10(~uVar7 + 0x17);
+  local_8 = (ushort *)Library::DKW::LIB::FUN_006aac10(~uVar7 + 0x17);
   *(byte *)local_8 = param_1;
   iVar4 = -1;
   pcVar8 = param_2;
@@ -70,7 +75,7 @@ undefined4 FUN_006f17c0(byte param_1,char *param_2)
     param_2 = param_2 + 1;
     puVar9 = (ushort *)((int)puVar9 + 1);
   }
-  FUN_00751100((uint *)*local_c,local_8);
+  FUN_00751100(*(uint **)local_c,local_8);
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }

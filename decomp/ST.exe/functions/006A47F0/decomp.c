@@ -32,7 +32,7 @@ undefined * FUN_006a47f0(int param_1)
     DAT_00854a43 = 0;
     return &DAT_008549f4;
   }
-  _strncpy(&DAT_008549f4,*(char **)(param_1 + 8),0x4f);
+  Library::MSVCRT::_strncpy(&DAT_008549f4,*(char **)(param_1 + 8),0x4f);
   DAT_00854a43 = 0;
   return &DAT_008549f4;
 }

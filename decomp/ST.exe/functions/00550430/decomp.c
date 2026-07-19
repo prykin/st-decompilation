@@ -22,7 +22,7 @@ void __thiscall FUN_00550430(void *this,int param_1,int param_2)
       *(undefined4 *)((int)this + 0xf4) = 0;
       DAT_00808788 = 0;
       *(undefined4 *)((int)this + 0xd0) = 0xa106;
-      FUN_006e3dd0(3,0x101,(int)this + 0xc0);
+      AppClassTy::SendMessage((AppClassTy *)&DAT_00807620,3,0x101,(int)this + 0xc0);
     }
   }
   return;

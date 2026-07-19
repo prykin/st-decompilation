@@ -17,7 +17,7 @@ void __thiscall MTestTy::PaintMTest(MTestTy *this)
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(local_8 + 0x5d));

@@ -17,7 +17,7 @@ undefined4 __cdecl FUN_00761960(LPCSTR param_1,LPCSTR param_2)
     uVar2 = 0;
   }
   else {
-    __dosmaperr(local_8);
+    Library::MSVCRT::__dosmaperr(local_8);
     uVar2 = 0xffffffff;
   }
   return uVar2;

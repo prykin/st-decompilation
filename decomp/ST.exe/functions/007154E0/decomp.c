@@ -17,7 +17,7 @@ byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_
   local_c = 0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  iVar3 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
     iVar4 = ReportDebugMessage(s_E__ourlib_connect_cpp_007f043c,0x7e,0,iVar3,&DAT_007a4ccc,
@@ -53,7 +53,7 @@ byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_
   }
   else {
     local_c = uVar1;
-    local_8 = (byte *)FUN_006aac10(*(uint *)(param_1 + 5));
+    local_8 = (byte *)Library::DKW::LIB::FUN_006aac10(*(uint *)(param_1 + 5));
     iVar3 = FUN_007519d0((ushort *)(param_1 + 9),local_8);
     if (iVar3 != *(int *)(param_1 + 5)) {
       RaiseInternalException(-0x33,DAT_007ed77c,s_E__ourlib_connect_cpp_007f043c,0x6a);

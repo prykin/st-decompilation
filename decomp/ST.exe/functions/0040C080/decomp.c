@@ -61,12 +61,12 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,int param_2)
   if (iVar9 == 0) {
     ExceptionList = &local_14;
     local_1c = &stack0xffffff34;
-    puVar5 = (undefined4 *)FUN_006aac70(4);
+    puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(4);
     *puVar5 = 0xfffffffc;
   }
   else {
     ExceptionList = &local_14;
-    puVar5 = (undefined4 *)FUN_006aac70(iVar9 * 4);
+    puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(iVar9 * 4);
     if (puVar5 != (undefined4 *)0x0) {
       iVar6 = thunk_FUN_00423e70(this,param_1);
       if (iVar6 == 0) {
@@ -80,7 +80,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,int param_2)
       }
       else {
         local_8 = 0;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         local_8 = 0xffffffff;
         iVar9 = (int)*(short *)(iVar6 + 0x47);
         local_a8 = (int)*(short *)(iVar6 + 0x49);
@@ -179,7 +179,7 @@ undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,int param_2)
         local_68 = (local_30 - local_20) + 1;
         local_64 = local_70 * local_2c;
         local_84 = iVar9;
-        local_54 = (undefined4 *)FUN_006aac70(local_64 * local_68 * 2);
+        local_54 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_64 * local_68 * 2);
         for (local_8c = iVar8; local_8c < local_5c; local_8c = local_8c + 1) {
           iVar8 = DAT_007fb280 + (DAT_007fb27e * local_8c + DAT_007fb278 * local_9c) * 2;
           iVar7 = (int)local_54 + (local_8c - local_20) * local_64 * 2;

@@ -33,13 +33,13 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     *param_3 = *(short *)((int)this + iVar4 * 6 + 0x2ec);
     *param_4 = *(short *)((int)this + (iVar4 * 3 + 0x177) * 2);
     FUN_006dd530(*(void **)((int)this + 0x211),&param_1,&local_8,&local_10);
-    lVar14 = __ftol();
+    lVar14 = Library::MSVCRT::__ftol();
     uVar5 = (uint)(short)lVar14;
-    lVar14 = __ftol();
+    lVar14 = Library::MSVCRT::__ftol();
     uVar6 = (uint)(short)lVar14;
     local_8 = (float)((int)uVar6 >> 0x1f);
     local_c = uVar6;
-    lVar14 = __ftol();
+    lVar14 = Library::MSVCRT::__ftol();
     uVar7 = (uint)(short)lVar14;
     uVar1 = *(uint *)((int)this + 0x27f);
     uVar2 = *(uint *)((int)this + 0x27b);
@@ -54,14 +54,14 @@ FUN_005ee3f0(void *this,float param_1,short *param_2,short *param_3,short *param
     local_8 = (float)((((int)uVar9 >> 0x1f) - (int)local_8) - (uint)(uVar9 < local_c));
     uVar9 = (uint)*param_4;
     iVar11 = (((int)uVar9 >> 0x1f) - ((int)uVar7 >> 0x1f)) - (uint)(uVar9 < uVar7);
-    lVar15 = __allmul(uVar9 - uVar7,iVar11,uVar9 - uVar7,iVar11);
-    lVar16 = __allmul(uVar13,(int)local_8,uVar13,(int)local_8);
-    lVar14 = __allmul(uVar8 - uVar5,(int)local_10,uVar8 - uVar5,(int)local_10);
+    lVar15 = Library::MSVCRT::__allmul(uVar9 - uVar7,iVar11,uVar9 - uVar7,iVar11);
+    lVar16 = Library::MSVCRT::__allmul(uVar13,(int)local_8,uVar13,(int)local_8);
+    lVar14 = Library::MSVCRT::__allmul(uVar8 - uVar5,(int)local_10,uVar8 - uVar5,(int)local_10);
     lVar14 = lVar14 + lVar16 + lVar15;
     param_2 = (short *)lVar14;
-    lVar15 = __allmul(uVar3 - uVar5,iVar10,uVar3 - uVar5,iVar10);
-    lVar16 = __allmul(uVar2 - uVar6,iVar12,uVar2 - uVar6,iVar12);
-    lVar17 = __allmul(uVar1 - uVar7,iVar4,uVar1 - uVar7,iVar4);
+    lVar15 = Library::MSVCRT::__allmul(uVar3 - uVar5,iVar10,uVar3 - uVar5,iVar10);
+    lVar16 = Library::MSVCRT::__allmul(uVar2 - uVar6,iVar12,uVar2 - uVar6,iVar12);
+    lVar17 = Library::MSVCRT::__allmul(uVar1 - uVar7,iVar4,uVar1 - uVar7,iVar4);
     if (lVar16 + lVar15 + lVar17 <= CONCAT44((int)((ulonglong)lVar14 >> 0x20),param_2)) {
       *param_5 = 1;
       return 0;

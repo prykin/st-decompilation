@@ -32,8 +32,10 @@ void __thiscall thunk_FUN_00424620(void *this,uint param_1)
     do {
       FUN_006acc70(*(int *)((int)this + 0x29),uVar4,&param_1);
       if ((short)param_1 != -1) {
-        piVar3 = (int *)thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                    *(undefined1 *)((int)this + 0x24)),param_1,1);
+        piVar3 = (int *)STAllPlayersC::GetObjPtr
+                                  (DAT_007fa174,
+                                   CONCAT31((int3)((uint)extraout_EDX >> 8),
+                                            *(undefined1 *)((int)this + 0x24)),param_1,1);
         (**(code **)(*piVar3 + 0x104))(uVar2);
       }
       uVar5 = uVar5 + 1;

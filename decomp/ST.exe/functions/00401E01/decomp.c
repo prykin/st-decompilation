@@ -18,7 +18,7 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pPStack_8 = this;
-  iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pPStack_8;
   if (iVar2 == 0) {
     iVar2 = 1;
@@ -46,8 +46,9 @@ void __thiscall PanelTy::InitPanel(PanelTy *this)
     FUN_006b2330((uint)DAT_008075a8,(uint *)pPVar7,*(uint *)(this_00 + 100),0x4057ea,
                  *(uint *)(this_00 + 0x40),*(uint *)(this_00 + 0x48),*(uint *)(this_00 + 0x68));
     FUN_006b1b10((int)DAT_008075a8,*(uint *)pPVar7,3);
-    FUN_006b3640(DAT_008075a8,*(uint *)pPVar7,0xffffffff,*(uint *)(this_00 + 0x3c),
-                 *(uint *)(this_00 + 0x44));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)pPVar7,0xffffffff,*(uint *)(this_00 + 0x3c),
+               *(uint *)(this_00 + 0x44));
     pPVar7 = this_00 + 0x18;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
       *(undefined4 *)pPVar7 = 0;

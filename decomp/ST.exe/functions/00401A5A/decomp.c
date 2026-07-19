@@ -45,7 +45,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
     IStack_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_5c;
     pMStack_18 = this;
-    iVar4 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
       iVar4 = *param_1;
       uVar9 = *(uint *)(iVar4 + 0x14);

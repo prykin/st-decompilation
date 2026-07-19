@@ -31,7 +31,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pSStack_10 = this;
-  iVar2 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_58.previous;
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x27df,0,iVar2,&DAT_007a4ccc
@@ -107,7 +107,7 @@ uint __thiscall STAllPlayersC::CreateBoat(STAllPlayersC *this,undefined4 *param_
                 (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x27d8);
     }
   }
-  thunk_FUN_0054cc20(0x14,0,&iStack_c,param_1,0);
+  STPlaySystemC::CreateGameObject(DAT_00802a38,0x14,0,&iStack_c,param_1,0);
   iVar2 = iStack_c;
   if (iStack_c == 0) {
     RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x27db)

@@ -47,10 +47,10 @@ undefined4 __thiscall thunk_FUN_0063d660(void *this,char param_1)
           fVar7 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
           puVar6[10] = (float)fVar7;
           fcos(fVar7);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           fsin(extraout_ST0_06);
           puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           _param_1 = uVar4 + 1;
           puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
           puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
@@ -87,10 +87,10 @@ undefined4 __thiscall thunk_FUN_0063d660(void *this,char param_1)
            puVar6 != (undefined4 *)0x0)) {
           puVar6[10] = (float)((float10)(int)_param_1 * fVar7);
           fcos((float10)(int)_param_1 * fVar7);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           fsin(extraout_ST0_00);
           puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
           puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
           puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
@@ -119,10 +119,10 @@ undefined4 __thiscall thunk_FUN_0063d660(void *this,char param_1)
           fVar8 = (float10)(int)_param_1 * fVar7 + fVar8;
           puVar6[10] = (float)fVar8;
           fcos(fVar8);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           fsin(extraout_ST0_02);
           puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
           puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
           puVar6[5] = *(undefined4 *)((int)this + 0x2a4);
@@ -153,10 +153,10 @@ undefined4 __thiscall thunk_FUN_0063d660(void *this,char param_1)
           fVar8 = (float10)(int)_param_1 * fVar7 + fVar8;
           puVar6[10] = (float)fVar8;
           fcos(fVar8);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           fsin(extraout_ST0_04);
           puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
-          lVar9 = __ftol();
+          lVar9 = Library::MSVCRT::__ftol();
           _param_1 = iVar5 + 1;
           puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
           puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;
@@ -180,7 +180,7 @@ undefined4 __thiscall thunk_FUN_0063d660(void *this,char param_1)
         iVar1 = uStack_8 - 0x3b;
         uStack_8 = uStack_8 + 1;
       } while (iVar1 < 300);
-      puVar6 = (undefined4 *)FUN_006aac70(0x1b);
+      puVar6 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x1b);
       *(undefined4 **)((int)this + 0x37f) = puVar6;
       if (puVar6 != (undefined4 *)0x0) {
         *puVar6 = 0xffffffff;
@@ -211,10 +211,10 @@ undefined4 __thiscall thunk_FUN_0063d660(void *this,char param_1)
             fVar7 = (float10)(int)_param_1 * (float10)(fVar3 / (float)iVar1);
             puVar6[10] = (float)fVar7;
             fcos(fVar7);
-            lVar9 = __ftol();
+            lVar9 = Library::MSVCRT::__ftol();
             fsin(extraout_ST0);
             puVar6[2] = (int)lVar9 + *(int *)((int)this + 0x2a4);
-            lVar9 = __ftol();
+            lVar9 = Library::MSVCRT::__ftol();
             _param_1 = uVar4 + 1;
             puVar6[3] = (int)lVar9 + *(int *)((int)this + 0x2a8);
             puVar6[4] = (float)*(int *)((int)this + 0x2ac) * _DAT_007904f8 * _DAT_007904f0;

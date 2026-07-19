@@ -127,7 +127,7 @@ LAB_004ca835:
   thunk_FUN_004abce0(this_00,bVar5,0,0,'\0');
   uVar7 = 0;
 LAB_004caaa4:
-  thunk_FUN_004abe40(this_00,bVar5,uVar7);
+  STT3DSprC::SetCurFase(this_00,bVar5,uVar7);
   STT3DSprC::StartShow(this_00,bVar5,*(undefined4 *)(DAT_00802a38 + 0xe4));
   return 0;
 }

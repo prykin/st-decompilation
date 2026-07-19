@@ -6,6 +6,10 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   MReportTy *pMVar2;
   int iVar3;
   int iVar4;
+  ccFntTy *extraout_ECX;
+  ccFntTy *extraout_ECX_00;
+  ccFntTy *extraout_ECX_01;
+  ccFntTy *this_00;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   MReportTy *pMVar5;
@@ -15,7 +19,7 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pMStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = pMStack_8;
   if (iVar3 == 0) {
     pMVar5 = pMStack_8 + 0x1d;
@@ -42,12 +46,12 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     } while (iVar3 != 0);
     if (*(HoloTy **)(pMVar2 + 0x453) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x453));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x453));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x453));
       *(undefined4 *)(pMVar2 + 0x453) = 0;
     }
     if (*(HoloTy **)(pMVar2 + 0x457) != (HoloTy *)0x0) {
       HoloTy::Done(*(HoloTy **)(pMVar2 + 0x457));
-      FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x457));
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pMVar2 + 0x457));
       *(undefined4 *)(pMVar2 + 0x457) = 0;
     }
     cMf32::RecMemFree(DAT_00806780,(uint *)(pMVar2 + 0x5d));
@@ -58,25 +62,29 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
     if (*(int *)(pMVar2 + 0x7b) != 0) {
       FUN_006ab060((undefined4 *)(pMVar2 + 0x7b));
     }
+    this_00 = (ccFntTy *)0x0;
     if (*(int *)(pMVar2 + 0x73) != 0) {
       FUN_006ab060((undefined4 *)(pMVar2 + 0x73));
+      this_00 = extraout_ECX;
     }
     if (*(uint **)(pMVar2 + 0x83) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pMVar2 + 0x83));
+      ccFntTy::operator(this_00,*(uint **)(pMVar2 + 0x83));
       *(undefined4 *)(pMVar2 + 0x83) = 0;
+      this_00 = extraout_ECX_00;
     }
     if (*(uint **)(pMVar2 + 0x87) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pMVar2 + 0x87));
+      ccFntTy::operator(this_00,*(uint **)(pMVar2 + 0x87));
       *(undefined4 *)(pMVar2 + 0x87) = 0;
       *(undefined4 *)(DAT_0081176c + 0x38) = 0;
+      this_00 = extraout_ECX_01;
     }
     if (*(uint **)(pMVar2 + 0x8b) != (uint *)0x0) {
-      FUN_00710560(*(uint **)(pMVar2 + 0x8b));
+      ccFntTy::operator(this_00,*(uint **)(pMVar2 + 0x8b));
       *(undefined4 *)(pMVar2 + 0x8b) = 0;
     }
     *(undefined4 *)(pMVar2 + 0x7f) = 0;
     if (*(int *)(pMVar2 + 0x4d) != 0) {
-      FUN_006e3b50((undefined4 *)(pMVar2 + 0x3d));
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(pMVar2 + 0x3d));
     }
     g_currentExceptionFrame = IStack_4c.previous;
     return;

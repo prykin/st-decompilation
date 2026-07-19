@@ -1,4 +1,4 @@
-FUN_00493340:
+STBoatC::CheckForReplenisher:
 00493340  55                        PUSH EBP
 00493341  8B EC                     MOV EBP,ESP
 00493343  83 EC 18                  SUB ESP,0x18

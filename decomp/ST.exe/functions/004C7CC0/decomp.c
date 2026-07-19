@@ -106,7 +106,8 @@ LAB_004c7d8c:
             if (*(int *)((int)this + 0x3d8) <= *(int *)((int)this + 0x3d4) + 1) {
               iVar4 = *(int *)((int)this + 0x3d8) + 0x14;
               *(int *)((int)this + 0x3d8) = iVar4;
-              iVar4 = FUN_006acf50(*(undefined4 **)((int)this + 0x607),iVar4 * 0x27);
+              iVar4 = Library::DKW::LIB::FUN_006acf50
+                                (*(undefined4 **)((int)this + 0x607),iVar4 * 0x27);
               *(int *)((int)this + 0x607) = iVar4;
             }
             *(int *)(*(int *)((int)this + 0x3d4) * 0x27 + *(int *)((int)this + 0x607)) = param_1;
@@ -128,8 +129,9 @@ LAB_004c7d8c:
             *(undefined2 *)(puVar10 + 3) = 0;
             *(undefined1 *)((int)puVar10 + 0xe) = 0;
             if (param_8 != (char *)0x0) {
-              _strncpy((char *)(*(int *)((int)this + 0x3d4) * 0x27 + 0x18 +
-                               *(int *)((int)this + 0x607)),param_8,0xf);
+              Library::MSVCRT::_strncpy
+                        ((char *)(*(int *)((int)this + 0x3d4) * 0x27 + 0x18 +
+                                 *(int *)((int)this + 0x607)),param_8,0xf);
             }
             *(int *)((int)this + 0x3d4) = *(int *)((int)this + 0x3d4) + 1;
             thunk_FUN_004c7460(this);
@@ -159,7 +161,7 @@ LAB_004c7d8c:
           *(undefined2 *)((int)this + 0x389) = 0;
           *(undefined1 *)((int)this + 0x38b) = 0;
           if (param_8 != (char *)0x0) {
-            _strncpy(_Dest,param_8,0xf);
+            Library::MSVCRT::_strncpy(_Dest,param_8,0xf);
           }
           thunk_FUN_004c7260(this,*(undefined4 *)((int)this + 0x361),*(int *)((int)this + 0x369),
                              (undefined4 *)((int)this + 0x398),(undefined4 *)((int)this + 0x39c),
@@ -195,7 +197,7 @@ LAB_004c7d8c:
           thunk_FUN_004e2ad0(this,param_1,param_2);
         }
         thunk_FUN_004c7460(this);
-        thunk_FUN_004cabb0(1);
+        TLOBaseTy::RotateSpr(this,1);
         if (*(int *)(&DAT_00792778 + *(int *)((int)this + 0x235) * 4) != 0) {
           *(undefined4 *)((int)this + 0x261) = 0;
           *(undefined4 *)((int)this + 0x2e1) = 0;

@@ -27,7 +27,7 @@ undefined2 * FUN_0060cbe0(undefined2 *param_1,int *param_2)
   local_1c = iVar2 + -1;
   local_14 = (int)(iVar1 * 3 + (iVar1 * 3 >> 0x1f & 3U)) >> 2;
   local_c = local_14;
-  param_1 = (undefined2 *)FUN_006aac70(iVar2 * 4);
+  param_1 = (undefined2 *)Library::DKW::LIB::FUN_006aac70(iVar2 * 4);
   iVar1 = thunk_FUN_0060e210(&local_2c,&local_18,5,param_1,iVar2);
   if (iVar1 == 0) {
     *param_2 = iVar2;

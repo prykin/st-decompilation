@@ -16,14 +16,15 @@ undefined4 __thiscall FUN_00427090(void *this,int param_1,int param_2,int param_
   
   iVar6 = param_2;
   if (DAT_007f4d84 <= DAT_007f4d78) {
-    puVar2 = (undefined4 *)FUN_006acf50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
+    puVar2 = (undefined4 *)
+             Library::DKW::LIB::FUN_006acf50(DAT_007f4d6c,(DAT_007f4d84 * 3 + 0x1e) * 4);
     if (puVar2 == (undefined4 *)0x0) {
       return 0;
     }
     DAT_007f4d84 = DAT_007f4d84 + 10;
     DAT_007f4d6c = puVar2;
   }
-  iVar3 = FUN_006aac70((param_1 * 0xfffffff + 2 + param_2) * 0x10);
+  iVar3 = Library::DKW::LIB::FUN_006aac70((param_1 * 0xfffffff + 2 + param_2) * 0x10);
   if (iVar3 == 0) {
     return 0;
   }

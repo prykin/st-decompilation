@@ -31,7 +31,7 @@ int thunk_FUN_00566600(int param_1)
   iStack_1c = 0;
   IStack_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_60;
-  iVar2 = __setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(IStack_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = IStack_60.previous;
     thunk_FUN_00566900(iStack_10);
@@ -141,7 +141,7 @@ int thunk_FUN_00566600(int param_1)
     RaiseInternalException(-4,DAT_007ed77c,s_E____titans_snd_mngr_cpp_007c9748,0x25);
   }
   if ((param_1 == 0) || ((param_1 < 0 && (*(int *)(iStack_10 + 0x28) < 1)))) {
-    uVar7 = FUN_0072e6c0();
+    uVar7 = Library::MSVCRT::FUN_0072e6c0();
     *(uint *)(iStack_10 + 0x28) = uVar7 % uVar6 + 1;
   }
   if (0 < param_1) {
@@ -152,7 +152,7 @@ int thunk_FUN_00566600(int param_1)
   pCVar5 = FUN_006f2c00(PTR_s_GM_SET_0079b010,1,*(undefined4 *)(iStack_10 + 0x28));
   puStack_8 = FUN_006f2d90(*(undefined4 *)(iStack_10 + 0x18),pCVar5,bVar12,iVar2);
   if (puStack_8 == (ushort *)0x0) {
-    uVar7 = FUN_0072e6c0();
+    uVar7 = Library::MSVCRT::FUN_0072e6c0();
     iVar13 = 0;
     bVar12 = 0;
     iVar2 = uVar7 % uVar6 + 1;

@@ -45,14 +45,14 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   uint uStack_c;
   AiTactClassTy *pAStack_8;
   
-  if (((*(int *)(this + 0x695) != 0) && (DAT_007fa174 != 0)) &&
+  if (((*(int *)(this + 0x695) != 0) && (DAT_007fa174 != (STAllPlayersC *)0x0)) &&
      ((*(int *)(this + 0x66e) == 0 ||
       ((uint)(*(int *)(this + 0x672) + *(int *)(this + 0x66e)) <= *(uint *)(this + 0x6fe))))) {
     *(undefined4 *)(this + 0x672) = *(undefined4 *)(this + 0x6fe);
     IStack_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_90;
     pAStack_18 = this;
-    iVar4 = __setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(IStack_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pAStack_18;
     if (iVar4 == 0) {
       uStack_10 = 0;
@@ -159,14 +159,15 @@ LAB_0067b724:
             }
             break;
           case 1:
-            if (DAT_007fa174 == 0) {
+            if (DAT_007fa174 == (STAllPlayersC *)0x0) {
               pAStack_8 = (AiTactClassTy *)0x0;
             }
             else {
               pAStack_8 = (AiTactClassTy *)
-                          thunk_FUN_0042b620(CONCAT31((int3)(uVar7 >> 8),this_00[0x5d7]),
-                                             CONCAT22((short)((uint)iVar4 >> 0x10),
-                                                      *(undefined2 *)(iVar8 + 8)),1);
+                          STAllPlayersC::GetObjPtr
+                                    (DAT_007fa174,CONCAT31((int3)(uVar7 >> 8),this_00[0x5d7]),
+                                     CONCAT22((short)((uint)iVar4 >> 0x10),
+                                              *(undefined2 *)(iVar8 + 8)),1);
               uVar7 = extraout_EDX_06;
             }
             if (pAStack_8 == (AiTactClassTy *)0x0) {
@@ -202,7 +203,7 @@ LAB_0067b724:
           bVar10 = uStack_10 < *(uint *)(iVar4 + 0xc);
         } while ((int)uStack_10 < (int)*(uint *)(iVar4 + 0xc));
       }
-      if (((DAT_007fa174 != 0) && (this_00[0x662] == (AiPlrClassTy)0x1)) &&
+      if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (this_00[0x662] == (AiPlrClassTy)0x1)) &&
          (iVar4 = thunk_FUN_0067b1a0(this_00,(int)*(short *)(this_00 + 0x660)),
          iVar4 < (int)((-(uint)(*(short *)(this_00 + 0x5ec) != 3) & 0xfffffffc) + 5))) {
         thunk_FUN_004e7230(*(int *)(this_00 + 0x5d7),(int)*(short *)(this_00 + 0x660),aiStack_c8,

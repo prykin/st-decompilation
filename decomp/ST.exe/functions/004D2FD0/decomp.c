@@ -80,7 +80,7 @@ undefined4 __fastcall FUN_004d2fd0(int param_1)
     } while (iVar2 < 0xc);
   }
   local_c = local_18 + local_4d + local_55 + 0x14f + local_5d;
-  local_8 = (byte *)FUN_006aac70(local_c);
+  local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(local_c);
   puVar1 = &local_17c;
   pbVar5 = local_8;
   for (iVar2 = 0x53; iVar2 != 0; iVar2 = iVar2 + -1) {

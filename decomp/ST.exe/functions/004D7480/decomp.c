@@ -17,7 +17,7 @@ FUN_004d7480(char param_1,int param_2,undefined4 param_3,int param_4,int param_5
   local_10 = param_5;
   local_14 = param_4;
   iVar1 = param_2 * 0x44 + param_1 * 0xa62;
-  FUN_006ae1c0((uint *)(&DAT_007f560e + iVar1),&local_18);
+  Library::DKW::TBL::FUN_006ae1c0((uint *)(&DAT_007f560e + iVar1),&local_18);
   *(int *)(&DAT_007f562e + iVar1) = *(int *)(&DAT_007f562e + iVar1) + param_4;
   *(int *)(&DAT_007f5632 + iVar1) = *(int *)(&DAT_007f5632 + iVar1) + param_5;
   *(int *)(&DAT_007f5636 + iVar1) = *(int *)(&DAT_007f5636 + iVar1) + param_6;

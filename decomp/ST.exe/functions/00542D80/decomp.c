@@ -9,27 +9,26 @@ void FUN_00542d80(void)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
   undefined4 local_64 [16];
-  undefined1 local_24 [16];
-  undefined4 local_14;
+  STMessage local_24;
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff98;
-  errorCode = __setjmp3(local_64,0,unaff_ESI,pIVar3);
+  errorCode = Library::MSVCRT::__setjmp3(local_64,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
-    this = (void *)FUN_0072e530(0x34);
+    this = (void *)Library::MSVCRT::FUN_0072e530(0x34);
     if (this == (void *)0x0) {
-      DAT_00802a28 = (InterSystemC *)0x0;
+      DAT_00802a28 = (SystemClassTy *)0x0;
     }
     else {
-      DAT_00802a28 = (InterSystemC *)thunk_FUN_00542440(this,DAT_00806728);
+      DAT_00802a28 = (SystemClassTy *)thunk_FUN_00542440(this,DAT_00806728);
     }
-    *(int *)(DAT_00802a28 + 0x20) = 0;
-    (*(code *)**(undefined4 **)DAT_00802a28)();
-    FUN_006e4960(DAT_0081163c,(int *)DAT_00802a28,0);
-    InterSystemC::CreateInterfObjects(DAT_00802a28);
-    local_14 = 5;
-    (**(code **)(*(int *)DAT_00802a28 + 0x20))(local_24);
-    *(int *)(DAT_00802a28 + 0x20) = 1;
+    DAT_00802a28[1].vtable = (SystemClassTyVTable *)0x0;
+    (*DAT_00802a28->vtable->InitSystem)(DAT_00802a28);
+    AppClassTy::AddChildSystem((AppClassTy *)&DAT_00807620,DAT_0081163c,DAT_00802a28,0);
+    InterSystemC::CreateInterfObjects((InterSystemC *)DAT_00802a28);
+    local_24.id = 5;
+    (*DAT_00802a28->vtable->GetMessage)(DAT_00802a28,&local_24);
+    DAT_00802a28[1].vtable = (SystemClassTyVTable *)0x1;
     g_currentExceptionFrame = pIVar3;
     return;
   }

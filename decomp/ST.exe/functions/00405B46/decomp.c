@@ -18,7 +18,7 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
     pSStack_8 = (SettMapTy *)this;
-    iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pSStack_8;
     if (iVar2 == 0) {
       iVar2 = *(int *)(pSStack_8 + 0x1f84);

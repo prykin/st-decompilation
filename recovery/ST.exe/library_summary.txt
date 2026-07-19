@@ -1,0 +1,4 @@
+program=ST.exe
+proposals=607
+conflicts=0
+note=Only rows with apply=1 are consumed by STLibraryApplier.

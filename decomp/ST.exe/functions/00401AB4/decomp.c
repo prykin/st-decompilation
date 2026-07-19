@@ -13,7 +13,7 @@ void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
   
   pIVar2 = g_currentExceptionFrame;
   pUStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
     *(undefined4 *)(pUStack_8 + 0x3f3) = 0;
     *(undefined4 *)(pUStack_8 + 0x3ef) = 0;

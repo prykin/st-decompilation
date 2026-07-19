@@ -38,7 +38,8 @@ DWORD FUN_006bfe70(undefined4 *param_1,int param_2,uint param_3)
       if (iVar4 == 0) {
         iVar4 = (-(uint)(*psVar1 != 1) & 0x24) + 0x1a + (int)psVar1;
       }
-      FUN_0072da70(param_1,(undefined4 *)(*(int *)(param_2 + 0x28) + iVar4),param_3);
+      Library::MSVCRT::FUN_0072da70
+                (param_1,(undefined4 *)(*(int *)(param_2 + 0x28) + iVar4),param_3);
     }
     else {
       local_c = FUN_006bfb90(*(HANDLE *)(*(int *)(*(int *)(param_2 + 0x1c) + 4) + 0xc),

@@ -129,13 +129,13 @@ int __fastcall FUN_0060aef0(void *param_1)
   }
   local_8 = 0;
   local_78 = iVar18;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_a8 = &stack0xfffffef8;
   if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
     local_8 = 1;
     local_a8 = &stack0xfffffef8;
     local_1c = &stack0xfffffef8;
-    FUN_0072da40();
+    Library::MSVCRT::FUN_0072da40();
     local_74 = &stack0xfffffef8;
   }
   local_1c = &stack0xfffffef8;
@@ -367,7 +367,7 @@ LAB_0060b649:
   if (*(int *)((int)param_1 + 0x1f5) == 0x43) {
     if (local_4c != 0) {
       local_8 = 2;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       local_8 = 0xffffffff;
       iVar11 = 0;
       local_4c = 0;

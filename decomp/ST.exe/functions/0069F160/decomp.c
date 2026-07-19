@@ -45,11 +45,11 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
     param_4 = 100;
   }
   ExceptionList = &local_14;
-  _DAT_00853dd0 = FUN_0072e6c0();
+  _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
   local_8 = 0;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_1c = &stack0xffffff40;
-  FUN_0072da40();
+  Library::MSVCRT::FUN_0072da40();
   local_8 = 0xffffffff;
   puVar10 = (undefined4 *)&stack0xffffff40;
   local_1c = &stack0xffffff40;
@@ -72,7 +72,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
     puVar10 = (undefined4 *)((int)puVar10 + 1);
   }
   thunk_FUN_006948e0(this,param_1);
-  _DAT_00853dd0 = FUN_0072e6c0();
+  _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
   if (1 < param_3) {
     iVar9 = iVar1 * 2;
     local_98 = param_3 + -1;
@@ -114,7 +114,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
       local_98 = local_98 + -1;
     } while (local_98 != 0);
   }
-  _DAT_00853dd0 = FUN_0072e6c0();
+  _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
   local_74 = 0;
   local_78 = 0;
   iVar9 = (*(int **)((int)this + 8))[1];
@@ -122,10 +122,10 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
   if (0 < param_4) {
     do {
       if (param_4 * 100 <= local_74) break;
-      uVar6 = FUN_0072e6c0();
-      uVar4 = FUN_0072e6c0();
+      uVar6 = Library::MSVCRT::FUN_0072e6c0();
+      uVar4 = Library::MSVCRT::FUN_0072e6c0();
       uVar4 = (int)uVar4 % param_1;
-      local_2c = FUN_0072e6c0();
+      local_2c = Library::MSVCRT::FUN_0072e6c0();
       local_2c = (int)local_2c % param_2;
       local_68 = 0;
       if (0 < param_3) {
@@ -138,7 +138,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
               (*(short *)(DAT_00853dd4 +
                          (uVar4 + uVar6 * iVar9 * iVar13 * 4 +
                          **(int **)((int)this + 8) * local_2c * 2) * 2) == 0)) &&
-             (uVar3 = FUN_0072e6c0(),
+             (uVar3 = Library::MSVCRT::FUN_0072e6c0(),
              1 < (int)uVar3 % (*(short *)(&stack0xffffff40 + iVar12 * 2) + 3))) {
             thunk_FUN_0069f5c0(this,uVar4,local_2c,uVar6);
             *(undefined2 *)(&stack0xffffff40 + iVar12 * 2) = 0xffff;
@@ -156,7 +156,7 @@ int __thiscall FUN_0069f160(void *this,int param_1,int param_2,int param_3,int p
       local_74 = local_74 + 1;
     } while (local_78 < param_4);
   }
-  _DAT_00853dd0 = FUN_0072e6c0();
+  _DAT_00853dd0 = Library::MSVCRT::FUN_0072e6c0();
   ExceptionList = local_14;
   return local_58;
 }

@@ -16,7 +16,7 @@ undefined4 __cdecl FUN_0071a990(int param_1,int param_2,int param_3,undefined1 *
       }
       else {
         piVar3 = *(int **)(*(int *)(param_1 + 0xc) + param_2 * 4);
-        uVar2 = FUN_0072e6c0();
+        uVar2 = Library::MSVCRT::FUN_0072e6c0();
         param_3 = (int)uVar2 % *piVar3;
       }
     }

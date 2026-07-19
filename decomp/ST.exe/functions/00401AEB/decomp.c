@@ -19,7 +19,7 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pCStack_c = this;
-  iVar3 = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_50.previous;
@@ -141,8 +141,9 @@ LAB_00502b3b:
     }
   }
   if (-1 < (int)*(uint *)(pCVar2 + 0x154)) {
-    FUN_006b3640(DAT_008075a8,*(uint *)(pCVar2 + 0x154),0xffffffff,*(uint *)(pCVar2 + 0x48),
-                 *(uint *)(pCVar2 + 0xa0));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,*(uint *)(pCVar2 + 0x154),0xffffffff,*(uint *)(pCVar2 + 0x48),
+               *(uint *)(pCVar2 + 0xa0));
   }
   g_currentExceptionFrame = IStack_50.previous;
   return;

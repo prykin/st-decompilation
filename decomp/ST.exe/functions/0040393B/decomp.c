@@ -17,7 +17,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
     IStack_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_4c;
     pSStack_8 = this;
-    iVar2 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar2 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
         uVar5 = *(uint *)(*(int *)(pSStack_8 + 0x1a5b) + 0x6a6);

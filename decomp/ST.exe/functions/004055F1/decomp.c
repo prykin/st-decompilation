@@ -17,7 +17,7 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
   uStack_8 = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb0;
   pHStack_c = this;
-  iVar3 = __setjmp3(auStack_4c,0,unaff_ESI,pIVar6);
+  iVar3 = Library::MSVCRT::__setjmp3(auStack_4c,0,unaff_ESI,pIVar6);
   if (iVar3 != 0) {
     g_currentExceptionFrame = pIVar6;
     iVar4 = ReportDebugMessage(s_E____titans_Start_hologram_cpp_007cc674,0xc1,0,iVar3,&DAT_007a4ccc,

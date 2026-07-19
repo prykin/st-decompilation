@@ -14,7 +14,7 @@ void __thiscall ProdPanelTy::PreInitProdPanel(ProdPanelTy *this)
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   pPStack_8 = this;
-  errorCode = __setjmp3(auStack_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(auStack_48,0,unaff_ESI,pIVar4);
   pPVar2 = pPStack_8;
   if (errorCode == 0) {
     FUN_006b1a50(DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)(pPStack_8 + 0x4c));

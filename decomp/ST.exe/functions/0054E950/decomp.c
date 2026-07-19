@@ -24,9 +24,9 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
-    iVar4 = __setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
-      puVar5 = FUN_006aac10(param_2 + 8);
+      puVar5 = Library::DKW::LIB::FUN_006aac10(param_2 + 8);
       pSVar3 = local_c;
       puVar5[1] = param_2;
       puVar8 = puVar5 + 2;

@@ -11,7 +11,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   STDcResourcC *this_00;
   bool bVar5;
   int iVar6;
-  STDcResourcC *pSVar7;
+  STT3DSprC *pSVar7;
   byte *pbVar8;
   undefined3 extraout_var;
   int iVar9;
@@ -32,7 +32,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
   IStack_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_5c;
   pSStack_18 = this;
-  iVar6 = __setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(IStack_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_18;
   if (iVar6 != 0) {
     g_currentExceptionFrame = IStack_5c.previous;
@@ -59,26 +59,26 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
           ((-1 < *(int *)(this_00 + 0x249) + iStack_10 && (-1 < *(int *)(this_00 + 0x24d))))) &&
          (*(int *)(this_00 + 0x24d) < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
-          pSVar7 = (STDcResourcC *)0x0;
+          pSVar7 = (STT3DSprC *)0x0;
         }
         else {
-          pSVar7 = this_00 + 0x1d5;
+          pSVar7 = (STT3DSprC *)(this_00 + 0x1d5);
         }
         if ((3 < iStack_14) &&
-           (pSVar7 = (STDcResourcC *)thunk_FUN_0057f580((uint)this_00),
-           pSVar7 == (STDcResourcC *)0x0)) goto LAB_0057faa5;
+           (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 == (STT3DSprC *)0x0))
+        goto LAB_0057faa5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f3a0(this_00,iStack_c,0);
-        iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
         if (iVar10 != 0) goto LAB_0057faa5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f3a0(this_00,iStack_c,1);
-        iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
         if (iVar10 != 0) goto LAB_0057faa5;
-        STT3DSprC::StartShow((STT3DSprC *)pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
         thunk_FUN_004acf50(pSVar7,'\r');
-        STT3DSprC::StartShow((STT3DSprC *)pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
         iVar10 = *(int *)(this_00 + 0x249) + iStack_10;
         iStack_10 = *(int *)(this_00 + 0x245) + iVar6;
         thunk_FUN_004ad3c0(pSVar7,(float)iStack_10 * _DAT_007904f8 + _DAT_007904f4,
@@ -103,26 +103,26 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
          (((-1 < *(int *)(this_00 + 0x249) + iStack_10 && (-1 < *(int *)(this_00 + 0x24d))) &&
           (*(int *)(this_00 + 0x24d) < 5)))) {
         if (this_00 == (STDcResourcC *)0x0) {
-          pSVar7 = (STDcResourcC *)0x0;
+          pSVar7 = (STT3DSprC *)0x0;
         }
         else {
-          pSVar7 = this_00 + 0x1d5;
+          pSVar7 = (STT3DSprC *)(this_00 + 0x1d5);
         }
         if ((3 < iStack_14) &&
-           (pSVar7 = (STDcResourcC *)thunk_FUN_0057f580((uint)this_00),
-           pSVar7 == (STDcResourcC *)0x0)) goto LAB_0057faa5;
+           (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 == (STT3DSprC *)0x0))
+        goto LAB_0057faa5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f2e0(this_00,iStack_c,0);
-        iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
         if (iVar10 != 0) goto LAB_0057faa5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f2e0(this_00,iStack_c,1);
-        iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
+        iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
         if (iVar10 != 0) goto LAB_0057faa5;
-        STT3DSprC::StartShow((STT3DSprC *)pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
         thunk_FUN_004acf50(pSVar7,'\r');
-        STT3DSprC::StartShow((STT3DSprC *)pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+        STT3DSprC::StartShow(pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
         iVar10 = *(int *)(this_00 + 0x249) + iStack_10;
         iStack_10 = *(int *)(this_00 + 0x245) + iVar6;
         thunk_FUN_004ad3c0(pSVar7,(float)iStack_10 * _DAT_007904f8 + _DAT_007904f4,
@@ -149,26 +149,25 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
            ((-1 < *(int *)(this_00 + 0x249) + iStack_10 && (-1 < *(int *)(this_00 + 0x24d))))))) &&
          (*(int *)(this_00 + 0x24d) < 5)) {
         if (this_00 == (STDcResourcC *)0x0) {
-          pSVar7 = (STDcResourcC *)0x0;
+          pSVar7 = (STT3DSprC *)0x0;
         }
         else {
-          pSVar7 = this_00 + 0x1d5;
+          pSVar7 = (STT3DSprC *)(this_00 + 0x1d5);
         }
         if ((iVar6 < 0) ||
-           (pSVar7 = (STDcResourcC *)thunk_FUN_0057f580((uint)this_00),
-           pSVar7 != (STDcResourcC *)0x0)) {
+           (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 != (STT3DSprC *)0x0)) {
           bVar13 = 0x1d;
           pbVar8 = (byte *)thunk_FUN_0057f470(this_00,iVar6,0);
-          iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
+          iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
           if (iVar10 == 0) {
             bVar13 = 0x1d;
             pbVar8 = (byte *)thunk_FUN_0057f470(this_00,iVar6,1);
-            iVar10 = STT3DSprC::LoadSequence((STT3DSprC *)pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
+            iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
             if (iVar10 == 0) {
-              STT3DSprC::StartShow((STT3DSprC *)pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
+              STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
               thunk_FUN_004acef0(pSVar7,DAT_008073cc);
               thunk_FUN_004acf50(pSVar7,'\r');
-              STT3DSprC::StartShow((STT3DSprC *)pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+              STT3DSprC::StartShow(pSVar7,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
               iStack_14 = *(int *)(this_00 + 0x245) + iStack_c;
               thunk_FUN_004ad3c0(pSVar7,(float)iStack_14 * _DAT_007904f8 + _DAT_007904f4,
                                  (float)(*(int *)(this_00 + 0x249) + iStack_10) * _DAT_007904f8 +

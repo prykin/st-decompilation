@@ -36,9 +36,9 @@ void FUN_006da1a0(int param_1,int param_2,int param_3,int param_4,byte *param_5,
     iVar12 = (local_8 + -1) / 2;
     iVar10 = (local_8 + -1) / 2;
     do {
-      uVar3 = FUN_0072e6c0();
+      uVar3 = Library::MSVCRT::FUN_0072e6c0();
       iVar7 = (int)uVar3 % local_8;
-      uVar3 = FUN_0072e6c0();
+      uVar3 = Library::MSVCRT::FUN_0072e6c0();
       piVar2 = local_10;
       local_10 = local_10 + 1;
       *piVar2 = ((int)uVar3 % iVar11 - iVar10) * param_2 + (iVar7 - iVar12);

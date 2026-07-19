@@ -3,12 +3,13 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
 
 {
   STT3DSprC *pSVar1;
-  void *this;
   int iVar2;
   uint uVar3;
   int iVar4;
   uint uVar5;
-  undefined4 uVar6;
+  void *unaff_EDI;
+  void *pvVar6;
+  undefined4 uVar7;
   undefined4 local_2c [2];
   undefined4 local_24;
   undefined4 local_20;
@@ -110,7 +111,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
         iVar2 = param_1[0x12f];
         if (iVar2 == 1) {
           param_1[0x12f] = 2;
-          thunk_FUN_004c9770(param_1);
+          TLOBaseTy::LoadImages((TLOBaseTy *)param_1,unaff_EDI);
           (**(code **)(*param_1 + 0xd8))();
           return 0;
         }
@@ -119,9 +120,10 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
           if ((uint)(*(int *)(&DAT_007e3dc0 +
                              ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
                     param_1[0x12e]) <= *(uint *)((int)DAT_00802a38 + 0xe4)) {
+            pvVar6 = (void *)0x3;
             (**(code **)(*param_1 + 0x90))(3,0x361);
             param_1[0x12f] = 3;
-            thunk_FUN_004c9770(param_1);
+            TLOBaseTy::LoadImages((TLOBaseTy *)param_1,pvVar6);
             (**(code **)(*param_1 + 0x90))(3,0x361);
             (**(code **)(*param_1 + 0xd8))();
             return 0;
@@ -131,7 +133,7 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
         if (iVar2 != 3) goto LAB_004b9130;
       }
       param_1[0x12f] = 4;
-      thunk_FUN_004c9770(param_1);
+      TLOBaseTy::LoadImages((TLOBaseTy *)param_1,unaff_EDI);
       (**(code **)(*param_1 + 0x90))(3,0x362);
 LAB_004b9130:
       (**(code **)(*param_1 + 0xd8))();
@@ -204,7 +206,7 @@ LAB_004b9130:
     uVar3 = uVar3 & 0xff;
     if (uVar3 == 1) {
       iVar2 = *param_1;
-      uVar6 = 0x68;
+      uVar7 = 0x68;
     }
     else {
       if (uVar3 == 2) {
@@ -213,14 +215,14 @@ LAB_004b9130:
       }
       if (uVar3 != 3) goto LAB_004b8f5a;
       iVar2 = *param_1;
-      uVar6 = 0x6a;
+      uVar7 = 0x6a;
     }
-    (**(code **)(iVar2 + 0x90))(6,uVar6);
+    (**(code **)(iVar2 + 0x90))(6,uVar7);
 LAB_004b8f5a:
     *(undefined4 *)((int)param_1 + 0x241) = 0;
     *(undefined4 *)((int)param_1 + 0x5d7) = 0;
     *(undefined4 *)((int)param_1 + 0x5df) = 1;
-    thunk_FUN_004b80d0(1,0);
+    TLOBaseTy::SetState((TLOBaseTy *)param_1,1,0);
     local_18 = param_1[2];
     local_24 = *(undefined4 *)(param_1[3] + 0x14);
     local_20 = 0;
@@ -270,10 +272,10 @@ LAB_004b8f5a:
   }
   local_8 = 1;
 LAB_004b92ee:
-  this = (void *)((int)param_1 + 0x1d5);
-  iVar2 = thunk_FUN_004acd30(this,'\x0e');
-  iVar4 = thunk_FUN_004acd30(this,'\r');
-  if (((iVar4 < iVar2) && (iVar2 = thunk_FUN_004acd30(this,'\r'), 1 < iVar2)) &&
+  pvVar6 = (void *)((int)param_1 + 0x1d5);
+  iVar2 = thunk_FUN_004acd30(pvVar6,'\x0e');
+  iVar4 = thunk_FUN_004acd30(pvVar6,'\r');
+  if (((iVar4 < iVar2) && (iVar2 = thunk_FUN_004acd30(pvVar6,'\r'), 1 < iVar2)) &&
      (iVar2 = thunk_FUN_004cba10(), iVar2 == 2)) {
     iVar2 = *(int *)((int)param_1 + 0x1f5);
     iVar4 = *(int *)(iVar2 + 0x208);
@@ -283,15 +285,15 @@ LAB_004b92ee:
     else {
       iVar4 = iVar4 - *(int *)(iVar2 + 0x210);
     }
-    local_c = thunk_FUN_004acd30(this,'\x0e');
-    iVar2 = thunk_FUN_004acd30(this,'\r');
+    local_c = thunk_FUN_004acd30(pvVar6,'\x0e');
+    iVar2 = thunk_FUN_004acd30(pvVar6,'\r');
     if (((local_c - iVar2) + -1 <= iVar4) && ((*(uint *)((int)param_1 + 0x1f1) & 0x2000) == 0)) {
       thunk_FUN_004ca7b0(param_1,0xd,0);
     }
   }
   if ((local_8 != 0) &&
      (iVar2 = thunk_FUN_004b8c00((int)param_1), iVar2 != *(int *)((int)param_1 + 0x245))) {
-    thunk_FUN_004b80d0(iVar2,1);
+    TLOBaseTy::SetState((TLOBaseTy *)param_1,iVar2,1);
   }
   if ((*(int *)((int)param_1 + 0x5df) != 0) &&
      (param_1[0x133] + 2U <= *(uint *)((int)DAT_00802a38 + 0xe4))) {

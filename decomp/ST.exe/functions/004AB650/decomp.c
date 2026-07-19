@@ -25,9 +25,9 @@ void FUN_004ab650(void)
     _DAT_008073d4 = (float)(int)DAT_00806750[1] * _DAT_007904f8;
   }
   DAT_008073d0 = local_8;
-  lVar2 = __ftol();
+  lVar2 = Library::MSVCRT::__ftol();
   DAT_008073d8 = (int)lVar2;
-  lVar2 = __ftol();
+  lVar2 = Library::MSVCRT::__ftol();
   DAT_008073dc = (int)lVar2;
   DAT_0080674c = 2;
   thunk_FUN_004a8f20(0);

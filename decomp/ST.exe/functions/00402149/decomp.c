@@ -10,12 +10,12 @@ int __cdecl thunk_FUN_0064a830(int *param_1,undefined4 *param_2)
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
-  iVar1 = __setjmp3(auStack_44,0,unaff_ESI,pIVar3);
+  iVar1 = Library::MSVCRT::__setjmp3(auStack_44,0,unaff_ESI,pIVar3);
   if (iVar1 == 0) {
     if (*param_1 <= param_1[1]) {
       iVar1 = *param_1 + 10;
       *param_1 = iVar1;
-      iVar1 = FUN_006acf50((undefined4 *)param_1[2],iVar1 * 5);
+      iVar1 = Library::DKW::LIB::FUN_006acf50((undefined4 *)param_1[2],iVar1 * 5);
       param_1[2] = iVar1;
     }
     puVar2 = (undefined4 *)(param_1[1] * 5 + param_1[2]);

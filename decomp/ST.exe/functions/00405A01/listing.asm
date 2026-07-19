@@ -1,2 +1,2 @@
-thunk_FUN_00579170:
+STCrabC::Bad:
 00405A01  E9 6A 37 17 00            JMP 0x00579170

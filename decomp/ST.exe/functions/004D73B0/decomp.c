@@ -15,7 +15,7 @@ undefined4 FUN_004d73b0(char param_1)
   iVar1 = 6;
   do {
     puVar2[-5] = 100;
-    FUN_006ae290(puVar2,10,0x14,10);
+    Library::DKW::TBL::FUN_006ae290(puVar2,10,0x14,10);
     puVar2 = puVar2 + 0x11;
     iVar1 = iVar1 + -1;
   } while (iVar1 != 0);

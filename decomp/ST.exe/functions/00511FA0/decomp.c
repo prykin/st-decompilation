@@ -22,7 +22,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
   local_8 = this;
-  errorCode = __setjmp3(local_48,0,unaff_ESI,pIVar4);
+  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   this_00 = local_8;
   if (errorCode == 0) {
     local_8[0x1a0] = (HelpPanelTy)param_1;

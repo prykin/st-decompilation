@@ -104,10 +104,10 @@ thunk_FUN_00618240(void *this,int param_1,int param_2,int param_3,undefined4 *pa
       iVar17 = 0;
       uStack_8 = 0;
       ExceptionList = &pvStack_14;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       puStack_60 = &stack0xffffff58;
       puStack_1c = &stack0xffffff58;
-      FUN_0072da40();
+      Library::MSVCRT::FUN_0072da40();
       uStack_8 = 0xffffffff;
       iStack_34 = 0;
       piStack_6c = (int *)&stack0xffffff58;
@@ -236,10 +236,10 @@ LAB_0061856a:
               uStack_48 = *(undefined4 *)(puStack_60 + piVar18[iVar11] * 0x2c + 0x26);
               uStack_44 = (uint)*(ushort *)(puStack_60 + piVar18[iVar11] * 0x2c + 0x2a);
               if (*(int *)((int)this + 0x62) == 0) {
-                puVar9 = FUN_006ae290((uint *)0x0,7,8,10);
+                puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,7,8,10);
                 *(uint **)((int)this + 0x62) = puVar9;
               }
-              uVar8 = FUN_006ae1c0(*(uint **)((int)this + 0x62),&uStack_48);
+              uVar8 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x62),&uStack_48);
               aiStack_58[0] = 0;
               if (-1 < (int)uVar8) goto LAB_0061871c;
             }

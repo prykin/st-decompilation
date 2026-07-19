@@ -1,8 +1,13 @@
 
-undefined4 FUN_00648030(int param_1)
+/* Recovered from embedded debug metadata:
+   E:\__titans\ai\ai_boss.cpp
+   AiBossClassTy::GetMessage */
+
+undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
 
 {
   code *pcVar1;
+  AiBossClassTy *this_00;
   int iVar2;
   undefined4 *puVar3;
   int iVar4;
@@ -22,7 +27,9 @@ undefined4 FUN_00648030(int param_1)
   
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  iVar2 = __setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_10 = this;
+  iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_00 = local_10;
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_54.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0xde,0,iVar2,
@@ -42,7 +49,7 @@ undefined4 FUN_00648030(int param_1)
   if (uVar7 < 0x110) {
     if (uVar7 == 0x10f) {
       local_8 = 0;
-      local_c = (byte *)AiBossClassTy::PrepareToSave(local_10,&local_8);
+      local_c = (byte *)PrepareToSave(local_10,&local_8);
       STPlaySystemC::SaveObjData(DAT_00802a38,PTR_s_AIBOSS_0079d614,local_c,local_8,0xc);
       if (local_c != (byte *)0x0) {
         FUN_006ab060(&local_c);
@@ -56,13 +63,13 @@ undefined4 FUN_00648030(int param_1)
       if (puVar3 == (undefined4 *)0x0) {
         RaiseInternalException(-6,DAT_007ed77c,s_E____titans_ai_ai_boss_cpp_007d2750,0x61);
       }
-      AiBossClassTy::InitData(local_10,puVar3);
-      DAT_008117bc = local_10;
+      InitData(this_00,puVar3);
+      DAT_008117bc = this_00;
       thunk_FUN_0064a450();
     }
     else if (uVar7 == 3) {
       thunk_FUN_0064a580();
-      thunk_FUN_00647ed0((int)local_10);
+      thunk_FUN_00647ed0((int)this_00);
       DAT_008117bc = (AiBossClassTy *)0x0;
     }
   }

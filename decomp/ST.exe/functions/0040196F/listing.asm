@@ -1,2 +1,2 @@
-thunk_FUN_0044ab90:
+STAllPlayersC::CheckTmps:
 0040196F  E9 1C 92 04 00            JMP 0x0044ab90

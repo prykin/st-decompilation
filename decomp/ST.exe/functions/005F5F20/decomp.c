@@ -36,7 +36,7 @@ undefined4 __thiscall STColl3C::GetMessage(STColl3C *this,int param_1)
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
-  iVar6 = __setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_60.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_60.previous;

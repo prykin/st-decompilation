@@ -19,7 +19,7 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  errorCode = __setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
+  errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   pHVar3 = local_8;
   if (errorCode == 0) {
     HVar1 = local_8[0x1a1];

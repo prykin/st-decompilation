@@ -20,15 +20,16 @@ STGroupBoatC::InitWay(STGroupBoatC *this,int param_1,int param_2,int param_3,int
   IStack_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_50;
   pSStack_c = this;
-  errorCode = __setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(IStack_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = pSStack_c;
   if (errorCode == 0) {
     uVar6 = 0;
     if (*(int *)(param_1 + 0xc) != 0) {
       do {
         FUN_006acc70(param_1,uVar6,&uStack_8);
-        uVar3 = thunk_FUN_0042b620(CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),uStack_8,1
-                                  );
+        uVar3 = STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),
+                           uStack_8,1);
         *(undefined4 *)(uVar3 + 0xfd) = 0;
         uVar6 = uVar6 + 1;
       } while (uVar6 < *(uint *)(param_1 + 0xc));

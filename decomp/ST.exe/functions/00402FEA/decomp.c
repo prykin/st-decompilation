@@ -28,7 +28,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
     IStack_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_58;
     pPStack_14 = this;
-    iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar8 = 0xffffffff;
       pcVar6 = param_1;
@@ -38,7 +38,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + 1;
       } while (cVar1 != '\0');
-      puStack_8 = FUN_006aac10(~uVar8 + 4);
+      puStack_8 = Library::DKW::LIB::FUN_006aac10(~uVar8 + 4);
       this_00 = pPStack_14;
       puVar4 = puStack_c;
       if (puStack_8 != (uint *)0x0) {
@@ -66,7 +66,7 @@ void __thiscall PopUpTy::AddStr(PopUpTy *this,char *param_1,uint param_2)
           do {
             pcVar6 = *(char **)(puVar5[5] + iVar3 * 4);
 LAB_0052d48d:
-            iVar7 = FUN_006b5aa0(*(int *)(this_00 + 0x98),pcVar6);
+            iVar7 = Library::DKW::TBL::FUN_006b5aa0(*(int *)(this_00 + 0x98),pcVar6);
             if ((byte)this_00[0x9c] < (byte)DAT_00807346) {
               this_00[0x9c] = (PopUpTy)((char)this_00[0x9c] + 1);
             }
@@ -87,9 +87,11 @@ LAB_0052d48d:
               *(uint *)(this_00 + (uint)(byte)this_00[0x9c] * 4 + 0x50) = uVar8;
               FUN_006b2800((int)DAT_008075a8,
                            *(uint *)(this_00 + (uint)(byte)this_00[0x9c] * 4 + 0x14),uVar8,0x13);
-              FUN_006b3640(DAT_008075a8,*(uint *)(this_00 + (uint)(byte)this_00[0x9c] * 4 + 0x14),
-                           0xffffffff,0xd,(uint)(byte)this_00[0x9c] * 0x13 + 0xb);
-              FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + (uint)(byte)this_00[0x9c] * 4 + 0x14));
+              Library::DKW::DDX::FUN_006b3640
+                        (DAT_008075a8,*(uint *)(this_00 + (uint)(byte)this_00[0x9c] * 4 + 0x14),
+                         0xffffffff,0xd,(uint)(byte)this_00[0x9c] * 0x13 + 0xb);
+              Library::DKW::DDX::FUN_006b3430
+                        (DAT_008075a8,*(uint *)(this_00 + (uint)(byte)this_00[0x9c] * 4 + 0x14));
             }
             iVar3 = iVar3 + 1;
           } while (iVar3 < (int)puVar5[2]);

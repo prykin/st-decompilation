@@ -21,7 +21,7 @@ undefined4 FUN_005f4a30(int param_1,uint param_2,int param_3)
   local_10 = &PTR_s_pics_g_007ce5f8;
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
-  iVar3 = __setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   iVar2 = local_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_58.previous;

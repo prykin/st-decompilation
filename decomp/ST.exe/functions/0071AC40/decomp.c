@@ -12,7 +12,7 @@ void __cdecl FUN_0071ac40(int param_1,int param_2)
   
   local_48.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_48;
-  iVar2 = __setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if ((param_1 != 0) && (param_2 != 0)) {
       *(undefined4 *)(param_2 + 4) = 0;
@@ -26,7 +26,7 @@ void __cdecl FUN_0071ac40(int param_1,int param_2)
           pcVar4 = (char *)0x0;
         }
         if (pcVar4 == (char *)0x0) break;
-        FUN_006b5aa0(param_1,pcVar4);
+        Library::DKW::TBL::FUN_006b5aa0(param_1,pcVar4);
       }
     }
     g_currentExceptionFrame = local_48.previous;

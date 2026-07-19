@@ -1,4 +1,4 @@
-FUN_00721bf0:
+EditorClassTy::SendToSliders:
 00721BF0  55                        PUSH EBP
 00721BF1  8B EC                     MOV EBP,ESP
 00721BF3  83 EC 68                  SUB ESP,0x68

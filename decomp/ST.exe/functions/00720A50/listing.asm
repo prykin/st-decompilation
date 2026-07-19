@@ -1,4 +1,4 @@
-FUN_00720a50:
+EditorClassTy::_Draw:
 00720A50  55                        PUSH EBP
 00720A51  8B EC                     MOV EBP,ESP
 00720A53  83 EC 60                  SUB ESP,0x60

@@ -51,7 +51,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
     IStack_a0.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_a0;
     pHStack_40 = this;
-    iVar5 = __setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar5 = Library::MSVCRT::__setjmp3(IStack_a0.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = pHStack_40;
     if (iVar5 == 0) {
       if (param_3 == '\0') {
@@ -185,7 +185,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         iStack_27 = (-(uint)(param_2 != 3) & 0xfffffffc) + 0xe2;
         uStack_28 = 1;
         uStack_23 = param_2;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
         iStack_8 = iStack_8 + 0x14;
       }
       iStack_14 = iStack_14 + -0x97 + param_2;
@@ -205,7 +205,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uStack_28 = 1;
         iStack_27 = 0xdd;
         uStack_23 = param_2;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
         iStack_8 = iStack_8 + 0x14;
       }
       iVar9 = *(int *)(&DAT_008545ac + iStack_14 * 4);
@@ -224,7 +224,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uStack_28 = 1;
         iStack_27 = 0xdc;
         uStack_23 = param_2;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
         iStack_8 = iStack_8 + 0x14;
       }
       if (iVar9 == 0 && (iVar15 == 0 && iVar5 == 0)) {
@@ -267,7 +267,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
         uStack_4b = (uint)*pbStack_3c;
         uStack_4c = 5;
         uStack_47 = 0;
-        FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_5c);
+        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_5c);
         uStack_10 = uStack_10 + 1;
         iStack_8 = iStack_8 + 5 + *(int *)(pbVar11 + 8);
       } while ((ushort)uStack_10 < 3);
@@ -453,7 +453,7 @@ void __thiscall HelpPanelTy::ObjProc(HelpPanelTy *this,int param_1,uint param_2,
           uStack_28 = 1;
           iStack_27 = 0xde;
           uStack_23 = param_2;
-          FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
+          Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x1d7),&uStack_38);
           iStack_8 = iStack_8 + 0x14;
           iVar15 = iStack_14;
         }

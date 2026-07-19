@@ -14,7 +14,7 @@ undefined4 * __cdecl FUN_0070c390(int param_1)
   if (iVar4 == 0) {
     iVar4 = 0x100;
   }
-  puVar1 = FUN_006aac10(iVar4 * 4);
+  puVar1 = Library::DKW::LIB::FUN_006aac10(iVar4 * 4);
   if (puVar1 == (undefined4 *)0x0) {
     return (undefined4 *)0x0;
   }

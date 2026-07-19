@@ -26,7 +26,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   IStack_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_58;
   pSStack_c = this;
-  iVar3 = __setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = pSStack_c;
   if (iVar3 != 0) {
     g_currentExceptionFrame = IStack_58.previous;
@@ -57,7 +57,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   puVar5 = FUN_00709af0(param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
   *(ushort **)(*(int *)(this_00 + 0x20) + iVar3) = puVar5;
   iVar4 = **(int **)(*(int *)(this_00 + 0x20) + iVar3);
-  iVar6 = FUN_006aac70(iVar4 * 4);
+  iVar6 = Library::DKW::LIB::FUN_006aac70(iVar4 * 4);
   *(int *)(*(int *)(this_00 + 0x20) + 4 + iVar3) = iVar6;
   iVar6 = 0;
   if (0 < iVar4) {
@@ -75,7 +75,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
     bVar1 = *pbVar11;
     pbVar11 = pbVar11 + 1;
   } while (bVar1 != 0);
-  iVar4 = FUN_006aac70(~uVar8);
+  iVar4 = Library::DKW::LIB::FUN_006aac70(~uVar8);
   uVar8 = uStack_14;
   *(int *)(*(int *)(this_00 + 0x20) + 8 + iVar3) = iVar4;
   uVar9 = 0xffffffff;

@@ -29,7 +29,7 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   local_a8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_a8;
   local_8 = this;
-  iVar4 = __setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar4 = Library::MSVCRT::__setjmp3(local_a8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_a8.previous;
@@ -56,7 +56,7 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     *(int *)pCVar6 = 0;
     pCVar6 = pCVar6 + 4;
   }
-  thunk_FUN_0043beb0(DAT_007fa174,2,(int *)pCVar1);
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,(int *)pCVar1);
   if (local_5f != this_00[0xb9e]) {
 LAB_00502155:
     PaintCtrlBoat(this_00);
@@ -114,7 +114,8 @@ LAB_00502155:
     goto switchD_0050207d_default;
   }
   if (-1 < (int)uVar2) {
-    FUN_006b3640(DAT_008075a8,uVar2,0xffffffff,*(uint *)(this_00 + 0x48),*(uint *)(this_00 + 0xa0));
+    Library::DKW::DDX::FUN_006b3640
+              (DAT_008075a8,uVar2,0xffffffff,*(uint *)(this_00 + 0x48),*(uint *)(this_00 + 0xa0));
   }
 switchD_0050207d_default:
   g_currentExceptionFrame = local_a8.previous;

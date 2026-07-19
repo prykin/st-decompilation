@@ -20,7 +20,7 @@ CPanelTy::PaintDamageXY
   IStack_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &IStack_4c;
   pCStack_8 = this;
-  iVar3 = __setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(IStack_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = pCStack_8;
   if (iVar3 == 0) {
     ccFntTy::SetSurf(*(ccFntTy **)(pCStack_8 + 0x1b8),param_1,0,param_2,param_3,0x30,10);

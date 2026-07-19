@@ -144,7 +144,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
     if ((local_44[6] < iVar11) && (local_44[5] != 0)) {
       if (local_24 == (undefined4 *)0x0) {
         local_8 = 0;
-        FUN_0072da40();
+        Library::MSVCRT::FUN_0072da40();
         local_1c = &stack0xfffffec8;
         local_24 = (undefined4 *)&stack0xfffffec8;
         local_8 = 0xffffffff;

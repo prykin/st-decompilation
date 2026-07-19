@@ -31,7 +31,7 @@ void __thiscall AiTactClassTy::GiveObjByFltType(AiTactClassTy *this,int param_1)
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_8 = this;
-  iVar7 = __setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar7 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar6 = local_8;
   if (iVar7 != 0) {
     g_currentExceptionFrame = local_5c.previous;
@@ -70,11 +70,13 @@ joined_r0x0068f3e2:
           puVar8 = (undefined2 *)0x0;
         }
         uVar9 = CONCAT22((short)((uint)puVar8 >> 0x10),*puVar8);
-        if (DAT_007fa174 == 0) {
+        if (DAT_007fa174 == (STAllPlayersC *)0x0) {
           piVar10 = (int *)0x0;
         }
         else {
-          piVar10 = (int *)thunk_FUN_0042b620(CONCAT31((int3)(uVar9 >> 8),pAVar6[0x24]),uVar9,1);
+          piVar10 = (int *)STAllPlayersC::GetObjPtr
+                                     (DAT_007fa174,CONCAT31((int3)(uVar9 >> 8),pAVar6[0x24]),uVar9,1
+                                     );
         }
         pAVar6 = local_8;
       } while (piVar10 == (int *)0x0);

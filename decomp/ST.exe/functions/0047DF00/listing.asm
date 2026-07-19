@@ -1,4 +1,4 @@
-FUN_0047df00:
+STBoatC::Dismant:
 0047DF00  55                        PUSH EBP
 0047DF01  8B EC                     MOV EBP,ESP
 0047DF03  83 EC 28                  SUB ESP,0x28

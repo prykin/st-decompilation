@@ -48,11 +48,11 @@ void __thiscall FUN_006dd050(void *param_1,uint param_2,double param_3,double pa
   case 0:
     dVar1 = (param_3 * _DAT_0079df60 - param_4 * _DAT_0079df60) / *(double *)((int)param_1 + 0xe8) +
             _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     dVar1 = (double)(fVar5 * (float10)*(double *)((int)param_1 + 0xe8));
     dVar3 = ((param_3 + param_4) * _DAT_0079df60) / *(double *)((int)param_1 + 0xf0) + _DAT_0079d1b0
     ;
-    fVar5 = FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
     fVar5 = fVar5 * (float10)*(double *)((int)param_1 + 0xf0);
     param_3 = (double)((fVar5 + (float10)dVar1) * (float10)_DAT_0079df60);
     fVar5 = fVar5 * (float10)_DAT_0079df60 - (float10)dVar1 * (float10)_DAT_0079df60;
@@ -60,11 +60,11 @@ void __thiscall FUN_006dd050(void *param_1,uint param_2,double param_3,double pa
   case 1:
     dVar1 = ((param_3 + param_4) * _DAT_0079df60) / *(double *)((int)param_1 + 0xe8) + _DAT_0079d1b0
     ;
-    fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     dVar1 = (double)(fVar5 * (float10)*(double *)((int)param_1 + 0xe8));
     dVar3 = (param_4 * _DAT_0079df60 - param_3 * _DAT_0079df60) / *(double *)((int)param_1 + 0xf0) +
             _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
     fVar5 = fVar5 * (float10)*(double *)((int)param_1 + 0xf0);
     param_3 = (double)((float10)dVar1 * (float10)_DAT_0079df60 - fVar5 * (float10)_DAT_0079df60);
     fVar5 = (fVar5 + (float10)dVar1) * (float10)_DAT_0079df60;
@@ -72,10 +72,10 @@ void __thiscall FUN_006dd050(void *param_1,uint param_2,double param_3,double pa
   case 2:
     dVar3 = param_4 * _DAT_0079df60;
     dVar1 = (dVar3 - param_3 * _DAT_0079df60) / *(double *)((int)param_1 + 0xe8) + _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     dVar1 = (double)(fVar5 * (float10)*(double *)((int)param_1 + 0xe8));
     dVar3 = (param_3 * _DAT_0079dfc0 - dVar3) / *(double *)((int)param_1 + 0xf0) + _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
     fVar5 = fVar5 * (float10)*(double *)((int)param_1 + 0xf0) * (float10)_DAT_0079df60;
     param_3 = (double)((float10)dVar1 * (float10)_DAT_0079dfc0 - fVar5);
     fVar5 = (float10)dVar1 * (float10)_DAT_0079df60 - fVar5;
@@ -83,20 +83,20 @@ void __thiscall FUN_006dd050(void *param_1,uint param_2,double param_3,double pa
   case 3:
     dVar3 = param_4 * _DAT_0079df60;
     dVar1 = (param_3 * _DAT_0079dfc0 - dVar3) / *(double *)((int)param_1 + 0xe8) + _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     dVar1 = (double)(fVar5 * (float10)*(double *)((int)param_1 + 0xe8));
     dVar3 = (param_3 * _DAT_0079df60 - dVar3) / *(double *)((int)param_1 + 0xf0) + _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar3,0),(uint)((ulonglong)dVar3 >> 0x20));
     fVar5 = fVar5 * (float10)*(double *)((int)param_1 + 0xf0) * (float10)_DAT_0079df60;
     param_3 = (double)(fVar5 - (float10)dVar1 * (float10)_DAT_0079df60);
     fVar5 = (float10)dVar1 * (float10)_DAT_0079dfc0 - fVar5;
     break;
   default:
     dVar1 = param_3 / *(double *)((int)param_1 + 0xe8) + _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     param_3 = (double)(fVar5 * (float10)*(double *)((int)param_1 + 0xe8));
     dVar1 = param_4 / *(double *)((int)param_1 + 0xf0) + _DAT_0079d1b0;
-    fVar5 = FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
+    fVar5 = Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
     fVar5 = fVar5 * (float10)*(double *)((int)param_1 + 0xf0);
   }
   *(double *)((int)param_1 + 0xa0) = (double)fVar5;

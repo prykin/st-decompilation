@@ -27,7 +27,7 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
     iStack_8 = *(int *)(iVar3 + 0x8a);
     IStack_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_54;
-    iVar3 = __setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(IStack_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar2 = pSStack_10;
     if (iVar3 == 0) {
       iVar3 = *(int *)(pSStack_10 + 0x544);

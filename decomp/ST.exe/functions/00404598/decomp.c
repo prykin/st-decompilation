@@ -35,7 +35,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
     IStack_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &IStack_88;
     pAStack_10 = this;
-    iVar8 = __setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar8 = Library::MSVCRT::__setjmp3(IStack_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pAVar6 = pAStack_10;
     if (iVar8 == 0) {
       uStack_8 = 0;

@@ -18,7 +18,7 @@ undefined4 __fastcall thunk_FUN_004dba70(int param_1)
         *(undefined4 *)(iStack_c + 0x4c0) = 0;
         if (*(int **)(iStack_c + 0x61f) != (int *)0x0) {
           thunk_FUN_00635fd0(*(int **)(iStack_c + 0x61f));
-          FUN_0072e2b0(*(undefined4 **)(iVar1 + 0x61f));
+          Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(iVar1 + 0x61f));
           *(undefined4 *)(iVar1 + 0x61f) = 0;
         }
       }

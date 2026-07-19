@@ -1,4 +1,4 @@
-FUN_006e3810:
+AppClassTy::CreateObject:
 006E3810  55                        PUSH EBP
 006E3811  8B EC                     MOV EBP,ESP
 006E3813  83 EC 50                  SUB ESP,0x50
