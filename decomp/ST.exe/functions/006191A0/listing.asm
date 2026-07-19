@@ -76,7 +76,7 @@ FUN_006191a0:
 0061927E  75 07                     JNZ 0x00619287
 LAB_00619280:
 00619280  C7 45 08 00 00 00 00      MOV dword ptr [EBP + 0x8],0x0
-LAB_00619287:
+FUN_006191a0::cf_common_exit_00619287:
 00619287  8A 45 08                  MOV AL,byte ptr [EBP + 0x8]
 0061928A  5F                        POP EDI
 0061928B  5E                        POP ESI

@@ -273,7 +273,7 @@ switchD_005ccf68::caseD_7:
 005CD139  A1 7F 87 80 00            MOV EAX,[0x0080877f]
 005CD13E  3B C8                     CMP ECX,EAX
 005CD140  75 07                     JNZ 0x005cd149
-LAB_005cd142:
+SettMapMTy::SetListCtrls::cf_common_join_005CD142:
 005CD142  C7 47 31 01 00 00 00      MOV dword ptr [EDI + 0x31],0x1
 switchD_005ccf68::caseD_4:
 005CD149  8B 4F 0C                  MOV ECX,dword ptr [EDI + 0xc]

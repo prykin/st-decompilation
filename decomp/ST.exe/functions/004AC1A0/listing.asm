@@ -149,7 +149,7 @@ LAB_004ac320:
 004AC327  8B 4E 3C                  MOV ECX,dword ptr [ESI + 0x3c]
 004AC32A  52                        PUSH EDX
 004AC32B  E8 F0 D1 23 00            CALL 0x006e9520
-LAB_004ac330:
+STT3DSprC::StartShow::cf_common_exit_004AC330:
 004AC330  8B 46 20                  MOV EAX,dword ptr [ESI + 0x20]
 004AC333  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]
 004AC336  89 4C 18 1C               MOV dword ptr [EAX + EBX*0x1 + 0x1c],ECX

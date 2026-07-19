@@ -284,7 +284,7 @@ LAB_0054abf1:
 0054ACF7  8B E5                     MOV ESP,EBP
 0054ACF9  5D                        POP EBP
 0054ACFA  C2 0C 00                  RET 0xc
-LAB_0054acfd:
+FUN_0054a9b0::cf_common_exit_0054ACFD:
 0054ACFD  8B 7D F8                  MOV EDI,dword ptr [EBP + -0x8]
 0054AD00  C7 45 FC FF FF FF FF      MOV dword ptr [EBP + -0x4],0xffffffff
 0054AD07  6A 00                     PUSH 0x0

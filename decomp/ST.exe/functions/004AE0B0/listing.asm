@@ -132,7 +132,7 @@ LAB_004ae24b:
 004AE251  7D 14                     JGE 0x004ae267
 004AE253  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 004AE256  E9 FE FE FF FF            JMP 0x004ae159
-LAB_004ae25b:
+FUN_004ae0b0::cf_break_loop_004AE25B:
 004AE25B  C7 45 E4 00 00 00 00      MOV dword ptr [EBP + -0x1c],0x0
 004AE262  E9 4B 0A 00 00            JMP 0x004aecb2
 LAB_004ae267:
@@ -1005,7 +1005,7 @@ LAB_004aec89:
 004AEC8F  3B 71 0C                  CMP ESI,dword ptr [ECX + 0xc]
 004AEC92  7C 97                     JL 0x004aec2b
 004AEC94  EB 07                     JMP 0x004aec9d
-LAB_004aec96:
+FUN_004ae0b0::cf_break_loop_004AEC96:
 004AEC96  C7 45 F8 00 00 00 00      MOV dword ptr [EBP + -0x8],0x0
 switchD_004ae472::caseD_3:
 004AEC9D  8B 45 EC                  MOV EAX,dword ptr [EBP + -0x14]

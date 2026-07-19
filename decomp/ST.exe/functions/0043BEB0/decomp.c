@@ -69,7 +69,7 @@ void __thiscall STAllPlayersC::GetPanelInfo(STAllPlayersC *this,undefined4 param
       local_c = (uint)(ushort)(&DAT_007f4f8b)[uVar12 * 0x531];
       SVar13 = CASE_3;
       uVar12 = 0xffffffff;
-      goto LAB_0043cb5c;
+      goto cf_common_exit_0043CB5C;
     }
     if ((&DAT_007f4f91)[uVar12 * 0x531] != 1) {
       if ((ushort)(&DAT_007f4f91)[uVar12 * 0x531] < 2) {
@@ -151,7 +151,7 @@ void __thiscall STAllPlayersC::GetPanelInfo(STAllPlayersC *this,undefined4 param
         local_c = (uint)(ushort)(&DAT_007f4f8b)[uVar12 * 0x531];
         SVar13 = CASE_3;
         uVar12 = 0xffffffff;
-        goto LAB_0043ca35;
+        goto cf_common_exit_0043CA35;
       }
       if ((&DAT_007f4f91)[uVar12 * 0x531] == 1) {
         iVar3 = *(int *)((int)&DAT_007f4f8d + iVar2);
@@ -334,15 +334,15 @@ LAB_0043c293:
             switch(uVar8) {
             case 1:
             case 7:
-              goto switchD_0043c594_caseD_1;
+              goto cf_common_exit_0043C94C;
             default:
               return;
             case 3:
-              goto switchD_0043c594_caseD_3;
+              goto cf_common_exit_0043C95B;
             case 0x11:
-              goto switchD_0043c594_caseD_4;
+              goto cf_common_exit_0043C86F;
             case 0x13:
-              goto switchD_0043c594_caseD_2;
+              goto cf_common_exit_0043C862;
             }
           }
           if (GVar6 < 0x20001) {
@@ -352,17 +352,17 @@ LAB_0043c293:
               switch(uVar8) {
               case 1:
               case 7:
-                goto switchD_0043c594_caseD_1;
+                goto cf_common_exit_0043C94C;
               default:
                 return;
               case 3:
-                goto switchD_0043c594_caseD_3;
+                goto cf_common_exit_0043C95B;
               case 8:
-                goto switchD_0043c594_caseD_2;
+                goto cf_common_exit_0043C862;
               case 10:
-                goto switchD_0043c594_caseD_e;
+                goto cf_common_exit_0043C508;
               case 0x11:
-                goto switchD_0043c594_caseD_4;
+                goto cf_common_exit_0043C86F;
               }
             }
             if (GVar6 == 0x2000) {
@@ -371,17 +371,17 @@ LAB_0043c293:
               switch(uVar8) {
               case 1:
               case 7:
-                goto switchD_0043c5d9_caseD_1;
+                goto cf_common_exit_0043C72D;
               case 2:
-                goto switchD_0043c594_caseD_2;
+                goto cf_common_exit_0043C862;
               case 3:
-                goto switchD_0043c594_caseD_3;
+                goto cf_common_exit_0043C95B;
               case 4:
-                goto switchD_0043c594_caseD_4;
+                goto cf_common_exit_0043C86F;
               default:
                 return;
               case 6:
-                goto switchD_0043c594_caseD_e;
+                goto cf_common_exit_0043C508;
               }
             }
             if (GVar6 != 0x10000) {
@@ -392,17 +392,17 @@ LAB_0043c293:
             switch(uVar8) {
             case 1:
             case 7:
-              goto switchD_0043c594_caseD_1;
+              goto cf_common_exit_0043C94C;
             case 2:
-              goto switchD_0043c594_caseD_2;
+              goto cf_common_exit_0043C862;
             case 3:
-              goto switchD_0043c594_caseD_3;
+              goto cf_common_exit_0043C95B;
             default:
               return;
             case 0xf:
-              goto switchD_0043c594_caseD_e;
+              goto cf_common_exit_0043C508;
             case 0x11:
-              goto switchD_0043c594_caseD_4;
+              goto cf_common_exit_0043C86F;
             }
           }
           if (GVar6 == 0x40000) {
@@ -411,15 +411,15 @@ LAB_0043c293:
             switch(uVar8) {
             case 1:
             case 7:
-              goto switchD_0043c594_caseD_1;
+              goto cf_common_exit_0043C94C;
             default:
               return;
             case 3:
-              goto switchD_0043c594_caseD_3;
+              goto cf_common_exit_0043C95B;
             case 9:
-              goto switchD_0043c594_caseD_2;
+              goto cf_common_exit_0043C862;
             case 0x11:
-              goto switchD_0043c594_caseD_4;
+              goto cf_common_exit_0043C86F;
             }
           }
           if (GVar6 != 0x80000) {
@@ -430,15 +430,15 @@ LAB_0043c293:
           switch(uVar8) {
           case 1:
           case 7:
-            goto switchD_0043c594_caseD_1;
+            goto cf_common_exit_0043C94C;
           case 2:
-            goto switchD_0043c594_caseD_2;
+            goto cf_common_exit_0043C862;
           case 3:
-            goto switchD_0043c594_caseD_3;
+            goto cf_common_exit_0043C95B;
           default:
             return;
           case 0x11:
-            goto switchD_0043c594_caseD_4;
+            goto cf_common_exit_0043C86F;
           }
         }
         if (GVar6 < 0x800001) {
@@ -448,15 +448,15 @@ LAB_0043c293:
             switch(uVar8) {
             case 1:
             case 7:
-              goto switchD_0043c594_caseD_1;
+              goto cf_common_exit_0043C94C;
             case 2:
-              goto switchD_0043c594_caseD_2;
+              goto cf_common_exit_0043C862;
             case 3:
-              goto switchD_0043c594_caseD_3;
+              goto cf_common_exit_0043C95B;
             default:
               return;
             case 0x11:
-              goto switchD_0043c594_caseD_4;
+              goto cf_common_exit_0043C86F;
             }
           }
           if (GVar6 == 0x200000) {
@@ -465,16 +465,16 @@ LAB_0043c293:
             switch(uVar8) {
             case 1:
             case 7:
-              goto switchD_0043c594_caseD_1;
+              goto cf_common_exit_0043C94C;
             default:
               return;
             case 3:
-              goto switchD_0043c594_caseD_3;
+              goto cf_common_exit_0043C95B;
             case 0xb:
             case 0xc:
-              goto switchD_0043c594_caseD_2;
+              goto cf_common_exit_0043C862;
             case 0x11:
-              goto switchD_0043c594_caseD_4;
+              goto cf_common_exit_0043C86F;
             }
           }
           if (GVar6 != 0x400000) {
@@ -485,17 +485,17 @@ LAB_0043c293:
           switch(uVar8) {
           case 1:
           case 7:
-            goto switchD_0043c594_caseD_1;
+            goto cf_common_exit_0043C94C;
           case 2:
-            goto switchD_0043c594_caseD_2;
+            goto cf_common_exit_0043C862;
           case 3:
-            goto switchD_0043c594_caseD_3;
+            goto cf_common_exit_0043C95B;
           default:
             return;
           case 0xd:
-            goto switchD_0043c594_caseD_e;
+            goto cf_common_exit_0043C508;
           case 0x11:
-            goto switchD_0043c594_caseD_4;
+            goto cf_common_exit_0043C86F;
           }
         }
         if (GVar6 == 0x1000000) {
@@ -504,13 +504,13 @@ LAB_0043c293:
           switch(uVar8) {
           case 1:
           case 7:
-            goto switchD_0043c594_caseD_1;
+            goto cf_common_exit_0043C94C;
           default:
             return;
           case 3:
-            goto switchD_0043c594_caseD_3;
+            goto cf_common_exit_0043C95B;
           case 0x11:
-            goto switchD_0043c594_caseD_4;
+            goto cf_common_exit_0043C86F;
           }
         }
         if (GVar6 != 0x2000000) {
@@ -521,15 +521,15 @@ LAB_0043c293:
         switch(uVar8) {
         case 1:
         case 7:
-          goto switchD_0043c594_caseD_1;
+          goto cf_common_exit_0043C94C;
         case 2:
-          goto switchD_0043c594_caseD_2;
+          goto cf_common_exit_0043C862;
         case 3:
-          goto switchD_0043c594_caseD_3;
+          goto cf_common_exit_0043C95B;
         default:
           return;
         case 0x11:
-          goto switchD_0043c594_caseD_4;
+          goto cf_common_exit_0043C86F;
         }
       }
       if (GVar6 == 0x1000) goto switchD_0043c4d2_caseD_28;
@@ -541,18 +541,18 @@ LAB_0043c293:
             switch(uVar8) {
             case 1:
             case 7:
-              goto switchD_0043c594_caseD_1;
+              goto cf_common_exit_0043C94C;
             default:
               return;
             case 3:
-              goto switchD_0043c594_caseD_3;
+              goto cf_common_exit_0043C95B;
             case 4:
-              goto switchD_0043c594_caseD_4;
+              goto cf_common_exit_0043C86F;
             case 0xb:
             case 0xc:
-              goto switchD_0043c594_caseD_e;
+              goto cf_common_exit_0043C508;
             case 0x15:
-              goto switchD_0043c594_caseD_2;
+              goto cf_common_exit_0043C862;
             }
           }
           if (GVar6 != 0x800) {
@@ -563,17 +563,17 @@ LAB_0043c293:
           switch(uVar8) {
           case 1:
           case 7:
-            goto switchD_0043c594_caseD_1;
+            goto cf_common_exit_0043C94C;
           default:
             return;
           case 3:
-            goto switchD_0043c594_caseD_3;
+            goto cf_common_exit_0043C95B;
           case 4:
-            goto switchD_0043c594_caseD_4;
+            goto cf_common_exit_0043C86F;
           case 9:
-            goto switchD_0043c594_caseD_2;
+            goto cf_common_exit_0043C862;
           case 0x13:
-            goto switchD_0043c594_caseD_e;
+            goto cf_common_exit_0043C508;
           }
         }
         if (GVar6 == 0x200) {
@@ -582,17 +582,17 @@ LAB_0043c293:
           switch(uVar8) {
           case 1:
           case 7:
-            goto switchD_0043c5d9_caseD_1;
+            goto cf_common_exit_0043C72D;
           default:
             return;
           case 3:
-            goto switchD_0043c594_caseD_3;
+            goto cf_common_exit_0043C95B;
           case 4:
-            goto switchD_0043c594_caseD_4;
+            goto cf_common_exit_0043C86F;
           case 8:
-            goto switchD_0043c594_caseD_2;
+            goto cf_common_exit_0043C862;
           case 10:
-            goto switchD_0043c594_caseD_e;
+            goto cf_common_exit_0043C508;
           }
         }
         if ((GVar6 != 0x80) && (GVar6 != 0x100)) {
@@ -603,11 +603,11 @@ LAB_0043c293:
         switch(uVar8) {
         case 1:
         case 7:
-          goto switchD_0043c5d9_caseD_1;
+          goto cf_common_exit_0043C72D;
         case 2:
-          goto switchD_0043c594_caseD_2;
+          goto cf_common_exit_0043C862;
         case 3:
-          goto switchD_0043c594_caseD_3;
+          goto cf_common_exit_0043C95B;
         default:
           return;
         }
@@ -618,17 +618,17 @@ LAB_0043c293:
         switch(uVar8) {
         case 1:
         case 7:
-          goto switchD_0043c594_caseD_1;
+          goto cf_common_exit_0043C94C;
         case 2:
-          goto switchD_0043c594_caseD_2;
+          goto cf_common_exit_0043C862;
         case 3:
-          goto switchD_0043c594_caseD_3;
+          goto cf_common_exit_0043C95B;
         case 4:
-          goto switchD_0043c594_caseD_4;
+          goto cf_common_exit_0043C86F;
         default:
           return;
         case 0xe:
-          goto switchD_0043c594_caseD_e;
+          goto cf_common_exit_0043C508;
         }
       }
       switch(GVar6) {
@@ -638,15 +638,15 @@ LAB_0043c293:
         switch(uVar8) {
         case 1:
         case 7:
-          goto switchD_0043c594_caseD_1;
+          goto cf_common_exit_0043C94C;
         case 2:
-          goto switchD_0043c594_caseD_2;
+          goto cf_common_exit_0043C862;
         case 3:
-          goto switchD_0043c594_caseD_3;
+          goto cf_common_exit_0043C95B;
         case 4:
-          goto switchD_0043c594_caseD_4;
+          goto cf_common_exit_0043C86F;
         case 0xf:
-switchD_0043c594_caseD_e:
+cf_common_exit_0043C508:
           *(undefined1 *)(piVar9 + 5) = 3;
           return;
         }
@@ -659,15 +659,15 @@ switchD_0043c594_caseD_e:
         switch(uVar8) {
         case 1:
         case 7:
-          goto switchD_0043c594_caseD_1;
+          goto cf_common_exit_0043C94C;
         case 2:
-          goto switchD_0043c594_caseD_2;
+          goto cf_common_exit_0043C862;
         case 3:
-          goto switchD_0043c594_caseD_3;
+          goto cf_common_exit_0043C95B;
         case 4:
-          goto switchD_0043c594_caseD_4;
+          goto cf_common_exit_0043C86F;
         case 0xd:
-          goto switchD_0043c594_caseD_e;
+          goto cf_common_exit_0043C508;
         }
         break;
       case CASE_10:
@@ -676,13 +676,13 @@ switchD_0043c594_caseD_e:
         switch(uVar8) {
         case 1:
         case 7:
-          goto switchD_0043c5d9_caseD_1;
+          goto cf_common_exit_0043C72D;
         case 2:
-          goto switchD_0043c594_caseD_2;
+          goto cf_common_exit_0043C862;
         case 3:
-          goto switchD_0043c594_caseD_3;
+          goto cf_common_exit_0043C95B;
         case 4:
-          goto switchD_0043c594_caseD_4;
+          goto cf_common_exit_0043C86F;
         }
         break;
       case CASE_28:
@@ -692,19 +692,19 @@ switchD_0043c4d2_caseD_28:
         switch(uVar8) {
         case 1:
         case 7:
-switchD_0043c5d9_caseD_1:
+cf_common_exit_0043C72D:
           *(undefined1 *)param_2 = 3;
           return;
         case 2:
-switchD_0043c594_caseD_2:
+cf_common_exit_0043C862:
           *(undefined1 *)(piVar9 + 4) = 3;
           return;
         case 3:
-switchD_0043c594_caseD_3:
+cf_common_exit_0043C95B:
           *(undefined1 *)((int)piVar9 + 0x11) = 3;
           return;
         case 4:
-switchD_0043c594_caseD_4:
+cf_common_exit_0043C86F:
           *(undefined1 *)((int)piVar9 + 0x12) = 3;
           return;
         }
@@ -736,7 +736,7 @@ LAB_0043ca5a:
           SVar13 = CASE_6;
           uVar12 = 0xffffffff;
         }
-        goto LAB_0043ca35;
+        goto cf_common_exit_0043CA35;
       }
       if (iVar2 != 0x19a) {
         if (iVar2 == 0) {
@@ -753,7 +753,7 @@ LAB_0043ca5a:
           SVar13 = CASE_2;
           uVar12 = 0xffffffff;
         }
-        goto LAB_0043ca35;
+        goto cf_common_exit_0043CA35;
       }
       if ((&DAT_007f4fe1)[uVar12 * 0x531] != 1) {
         return;
@@ -773,7 +773,7 @@ LAB_0043ca5a:
       uVar12 = CONCAT31((int3)(local_c >> 8),*(undefined1 *)((int)&DAT_007f4fd7 + uVar12 * 0xa62));
 LAB_0043ca31:
       SVar13 = CASE_1;
-LAB_0043ca35:
+cf_common_exit_0043CA35:
       piVar9 = (int *)GetObjPtr(local_10,uVar12,local_c,SVar13);
       (**(code **)(*piVar9 + 0x34))(param_2);
       return;
@@ -1481,7 +1481,7 @@ LAB_0043cb81:
         SVar13 = CASE_6;
         uVar12 = 0xffffffff;
       }
-      goto LAB_0043cb5c;
+      goto cf_common_exit_0043CB5C;
     }
     if (iVar2 != 0x19a) {
       if (iVar2 == 0) {
@@ -1498,7 +1498,7 @@ LAB_0043cb81:
         SVar13 = CASE_2;
         uVar12 = 0xffffffff;
       }
-      goto LAB_0043cb5c;
+      goto cf_common_exit_0043CB5C;
     }
     if ((&DAT_007f4fe1)[uVar12 * 0x531] != 1) {
       return;
@@ -1518,11 +1518,11 @@ LAB_0043cb81:
     uVar12 = CONCAT31((int3)(local_c >> 8),*(undefined1 *)((int)&DAT_007f4fd7 + uVar12 * 0xa62));
   }
   SVar13 = CASE_1;
-LAB_0043cb5c:
+cf_common_exit_0043CB5C:
   piVar9 = (int *)GetObjPtr(local_10,uVar12,local_c,SVar13);
   (**(code **)(*piVar9 + 0x30))(param_2);
   return;
-switchD_0043c594_caseD_1:
+cf_common_exit_0043C94C:
   *(undefined1 *)param_2 = 3;
   return;
 }

@@ -45,7 +45,7 @@ LAB_004aafb9:
 LAB_004aafbb:
 004AAFBB  8B CE                     MOV ECX,ESI
 004AAFBD  E8 85 8C F5 FF            CALL 0x00403c47
-LAB_004aafc2:
+FUN_004aaf60::cf_common_exit_004AAFC2:
 004AAFC2  A1 3C 74 80 00            MOV EAX,[0x0080743c]
 004AAFC7  25 FF 00 00 00            AND EAX,0xff
 004AAFCC  83 E8 00                  SUB EAX,0x0

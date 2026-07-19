@@ -67,7 +67,7 @@ void __thiscall STAllPlayersC::SaveTmp(STAllPlayersC *this,int param_1)
   }
   iVar5 = *piVar3;
   if (0x19a < iVar5) {
-    if (((iVar5 == 0x1a4) || (iVar5 == 0x1ae)) || (iVar5 == 0x1b8)) goto LAB_00438fe7;
+    if (((iVar5 == 0x1a4) || (iVar5 == 0x1ae)) || (iVar5 == 0x1b8)) goto cf_common_exit_00438FE7;
     goto LAB_00438fb0;
   }
   if (iVar5 == 0x19a) {
@@ -82,7 +82,7 @@ LAB_00438f65:
   }
   if (iVar5 < 0x5b) {
     if (iVar5 == 0x5a) {
-LAB_00438fe7:
+cf_common_exit_00438FE7:
       piVar1 = (int *)((int)&DAT_007f5027 + iVar4 + param_1 * 0x10);
       *piVar1 = iVar5;
       piVar1[1] = piVar3[1];
@@ -96,7 +96,7 @@ LAB_00438fe7:
     }
     if (iVar5 == 0x3c) goto LAB_00438f65;
   }
-  else if (iVar5 == 0x172) goto LAB_00438fe7;
+  else if (iVar5 == 0x172) goto cf_common_exit_00438FE7;
 LAB_00438fb0:
   iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x16f9,0,0,&DAT_007a4ccc,
                              s_STAllPlayersC__SaveTmp_invalid_g_007a7478);

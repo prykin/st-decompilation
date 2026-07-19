@@ -157,7 +157,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       iVar5 = param_2;
     }
     iVar6 = 0;
-    goto LAB_0043bb49;
+    goto cf_common_exit_0043BB49;
   }
   if (param_1 != 1) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1b2b,0,0,&DAT_007a4ccc,
@@ -231,10 +231,10 @@ LAB_0043b0f1:
             DAT_0080745d = 0;
             iVar6 = 1;
             iVar5 = param_2;
-            goto LAB_0043bb49;
+            goto cf_common_exit_0043BB49;
           }
         }
-        goto LAB_0043b686;
+        goto cf_common_exit_0043B686;
       }
       if (iVar6 != 0x172) {
 LAB_0043b0af:
@@ -247,7 +247,7 @@ LAB_0043b0af:
         (*pcVar3)();
         return;
       }
-      if (param_3 != 1) goto LAB_0043b294;
+      if (param_3 != 1) goto cf_common_exit_0043B294;
       SVar12 = CASE_2;
     }
     else {
@@ -257,9 +257,9 @@ LAB_0043b0af:
           SVar12 = CASE_6;
           goto LAB_0043b0f1;
         }
-        goto LAB_0043b686;
+        goto cf_common_exit_0043B686;
       }
-      if (param_3 != 1) goto LAB_0043b294;
+      if (param_3 != 1) goto cf_common_exit_0043B294;
       SVar12 = CASE_5;
     }
     pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
@@ -276,7 +276,7 @@ LAB_0043b0af:
       DAT_0080674c = 2;
       DAT_0080745d = 0;
     }
-LAB_0043b294:
+cf_common_exit_0043B294:
     ActivateTV(this,DAT_0080874d,1,param_2);
     return;
   }
@@ -378,10 +378,10 @@ LAB_0043b4a2:
   bVar4 = DAT_0080874d;
   *(undefined4 *)((int)&DAT_007f5023 + (uint)DAT_0080874d * 0xa62) = 1;
   ResetActivityFromTmp(this,bVar4,0,0,0);
-LAB_0043b686:
+cf_common_exit_0043B686:
   iVar6 = 1;
   iVar5 = param_2;
-LAB_0043bb49:
+cf_common_exit_0043BB49:
   ActivateTV(this,DAT_0080874d,iVar6,iVar5);
   return;
 }

@@ -1497,7 +1497,7 @@ LAB_0047f11c:
 0047F191  6A 00                     PUSH 0x0
 0047F193  8B CE                     MOV ECX,ESI
 0047F195  E8 9A 49 F8 FF            CALL 0x00403b34
-LAB_0047f19a:
+STBoatC::Dismant::cf_common_exit_0047F19A:
 0047F19A  8B 16                     MOV EDX,dword ptr [ESI]
 0047F19C  8B CE                     MOV ECX,ESI
 0047F19E  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]

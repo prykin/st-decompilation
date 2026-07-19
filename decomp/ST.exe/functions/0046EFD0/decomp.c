@@ -76,7 +76,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,undefined4 param_1)
           return iVar5;
         }
         iVar5 = 0x283e;
-        goto LAB_0046f13e;
+        goto cf_error_exit_0046F13E;
       }
       if (iVar5 != 0) {
         iVar5 = (*this->vtable->vfunc_D8)();
@@ -91,7 +91,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,undefined4 param_1)
       if (uVar4 == 0) {
         *(undefined4 *)&this->field_0x550 = 5;
       }
-      goto LAB_0046f0f9;
+      goto cf_common_exit_0046F0F9;
     }
     iVar5 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2829,0,0,&DAT_007a4ccc,
                                s_STBoatC__BackUnLoadRC__UNLOADRC__007aaac0);
@@ -101,12 +101,12 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,undefined4 param_1)
       return iVar5;
     }
     iVar5 = 0x282a;
-    goto LAB_0046f13e;
+    goto cf_error_exit_0046F13E;
   case CASE_5:
     thunk_FUN_0048d930((int)this);
     pSVar6 = (STBoatC *)(*(int *)&this->field_0x548 + 1);
     *(STBoatC **)&this->field_0x548 = pSVar6;
-    if ((int)pSVar6 < 0x47) goto LAB_0046f0f9;
+    if ((int)pSVar6 < 0x47) goto cf_common_exit_0046F0F9;
     *(undefined4 *)&this->field_0x548 = 0;
     this->field_054C = CASE_6;
   case CASE_6:
@@ -129,7 +129,7 @@ int __thiscall STBoatC::BackUnLoadRC(STBoatC *this,undefined4 param_1)
         if (uVar4 == 0) {
           *(undefined4 *)&this->field_0x550 = 2;
         }
-LAB_0046f0f9:
+cf_common_exit_0046F0F9:
         iVar5 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }
@@ -180,7 +180,7 @@ LAB_0046f1fd:
       }
       iVar5 = 0x287d;
     }
-LAB_0046f13e:
+cf_error_exit_0046F13E:
     RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5);
     return 0xffff;
   default:

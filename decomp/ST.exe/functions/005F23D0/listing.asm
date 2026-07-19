@@ -237,7 +237,7 @@ LAB_005f2683:
 005F26A9  8B E5                     MOV ESP,EBP
 005F26AB  5D                        POP EBP
 005F26AC  C2 18 00                  RET 0x18
-LAB_005f26af:
+FUN_005f23d0::cf_common_exit_005F26AF:
 005F26AF  8B 55 14                  MOV EDX,dword ptr [EBP + 0x14]
 005F26B2  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 005F26B5  8B 4D F8                  MOV ECX,dword ptr [EBP + -0x8]

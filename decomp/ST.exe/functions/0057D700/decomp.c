@@ -226,7 +226,7 @@ switchD_0057d76c_default:
     }
     local_18 = local_18 % 5;
   }
-LAB_0057dbe9:
+cf_continue_loop_0057DBE9:
   do {
     sVar2 = (short)uVar11;
     sVar12 = (short)uVar10;
@@ -255,13 +255,13 @@ LAB_0057dbe9:
     if (uVar11 == (int)*(short *)((int)this + 0x47) || bVar1) {
       if (bVar1) {
         uVar11 = uVar11 + 1;
-        goto LAB_0057dbe9;
+        goto cf_continue_loop_0057DBE9;
       }
       bVar1 = (int)(uVar10 - (int)*(short *)((int)this + 0x49)) < 0;
       if (uVar10 == (int)*(short *)((int)this + 0x49) || bVar1) {
         if (!bVar1) goto LAB_0057dd0c;
         uVar10 = uVar10 + 1;
-        goto LAB_0057dbe9;
+        goto cf_continue_loop_0057DBE9;
       }
       uVar10 = uVar10 - 1;
       uVar3 = uVar10;

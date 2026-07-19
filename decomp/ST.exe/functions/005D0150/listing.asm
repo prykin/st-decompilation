@@ -346,7 +346,7 @@ LAB_005d045a:
 LAB_005d0481:
 005D0481  80 F9 02                  CMP CL,0x2
 005D0484  74 3F                     JZ 0x005d04c5
-LAB_005d0486:
+SettMapMTy::CheckPlList::cf_continue_loop_005D0486:
 005D0486  40                        INC EAX
 005D0487  3B C7                     CMP EAX,EDI
 005D0489  72 CF                     JC 0x005d045a

@@ -983,7 +983,7 @@ LAB_00410987:
 00410987  E8 04 E2 FF FF            CALL 0x0040eb90
 LAB_0041098c:
 0041098C  8B 75 B4                  MOV ESI,dword ptr [EBP + -0x4c]
-LAB_0041098f:
+FUN_0040fc40::cf_common_exit_0041098F:
 0041098F  85 F6                     TEST ESI,ESI
 00410991  0F 84 87 00 00 00         JZ 0x00410a1e
 00410997  83 FE FC                  CMP ESI,-0x4

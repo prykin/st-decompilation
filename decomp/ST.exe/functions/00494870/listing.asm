@@ -148,7 +148,7 @@ LAB_00494a2d:
 00494A2D  53                        PUSH EBX
 00494A2E  8B CE                     MOV ECX,ESI
 00494A30  E8 B2 10 F7 FF            CALL 0x00405ae7
-LAB_00494a35:
+FUN_00494870::cf_common_exit_00494A35:
 00494A35  83 BE 5D 04 00 00 14      CMP dword ptr [ESI + 0x45d],0x14
 00494A3C  75 0B                     JNZ 0x00494a49
 00494A3E  83 BE C0 05 00 00 03      CMP dword ptr [ESI + 0x5c0],0x3

@@ -211,7 +211,7 @@ LAB_004eb532:
 004EB532  56                        PUSH ESI
 004EB533  8B CF                     MOV ECX,EDI
 004EB535  E8 D8 8E F1 FF            CALL 0x00404412
-LAB_004eb53a:
+FUN_004eb300::cf_common_exit_004EB53A:
 004EB53A  56                        PUSH ESI
 004EB53B  8B CF                     MOV ECX,EDI
 004EB53D  E8 B4 73 F1 FF            CALL 0x004028f6

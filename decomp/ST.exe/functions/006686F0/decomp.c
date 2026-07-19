@@ -33,7 +33,7 @@ switchD_00668784_caseD_7ee:
     case CASE_7FA:
       return 0xb;
     default:
-      goto switchD_0066872f_caseD_322;
+      goto cf_common_exit_006687E7;
     case CASE_80C:
     case CASE_80D:
     case CASE_810:
@@ -47,11 +47,11 @@ switchD_0066874d_caseD_38f:
     case CASE_817:
     case CASE_818:
     case CASE_848:
-      goto switchD_0066872f_caseD_320;
+      goto cf_common_exit_00668754;
     case CASE_81A:
     case CASE_81D:
     case CASE_82D:
-      goto switchD_0066872f_caseD_388;
+      goto cf_common_exit_00668773;
     case CASE_82B:
     case CASE_82C:
       return 4;
@@ -80,7 +80,7 @@ switchD_006687a8_caseD_7f2:
     case CASE_7E8:
     case CASE_7EA:
     case CASE_7EC:
-      goto switchD_0066872f_caseD_320;
+      goto cf_common_exit_00668754;
     case CASE_7D7:
     case CASE_7DA:
     case CASE_7DC:
@@ -90,9 +90,9 @@ switchD_006687a8_caseD_7f2:
     case CASE_7ED:
       goto switchD_00668784_caseD_7d7;
     default:
-      goto switchD_0066872f_caseD_322;
+      goto cf_common_exit_006687E7;
     case CASE_7E6:
-      goto switchD_0066872f_caseD_388;
+      goto cf_common_exit_00668773;
     case CASE_7EE:
     case CASE_7EF:
     case CASE_7F0:
@@ -105,19 +105,19 @@ switchD_006687a8_caseD_7f2:
         switch(param_1) {
         case CASE_7D1:
         case CASE_7D3:
-          goto switchD_0066872f_caseD_388;
+          goto cf_common_exit_00668773;
         case CASE_7D2:
         case CASE_7D4:
-          goto switchD_0066872f_caseD_320;
+          goto cf_common_exit_00668754;
         default:
-switchD_0066872f_caseD_322:
+cf_common_exit_006687E7:
           return 0xffffffff;
         }
       }
       if (param_1 != 2000) {
         switch(param_1) {
         case CASE_38C:
-          goto switchD_0066872f_caseD_320;
+          goto cf_common_exit_00668754;
         case CASE_38D:
           break;
         case CASE_38E:
@@ -125,10 +125,10 @@ switchD_0066872f_caseD_322:
         case CASE_38F:
           goto switchD_0066874d_caseD_38f;
         default:
-          goto switchD_0066872f_caseD_322;
+          goto cf_common_exit_006687E7;
         }
       }
-switchD_0066872f_caseD_388:
+cf_common_exit_00668773:
       return 2;
     }
     if (param_1 != 0x38b) {
@@ -142,14 +142,14 @@ switchD_0066872f_caseD_388:
       case CASE_38A:
         break;
       default:
-        goto switchD_0066872f_caseD_322;
+        goto cf_common_exit_006687E7;
       case CASE_388:
       case CASE_389:
-        goto switchD_0066872f_caseD_388;
+        goto cf_common_exit_00668773;
       }
     }
   }
-switchD_0066872f_caseD_320:
+cf_common_exit_00668754:
   return 1;
 }
 

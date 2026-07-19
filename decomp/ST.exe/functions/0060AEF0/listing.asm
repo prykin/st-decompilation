@@ -590,7 +590,7 @@ LAB_0060b62f:
 0060B640  83 C4 0C                  ADD ESP,0xc
 LAB_0060b643:
 0060B643  FF 85 7C FF FF FF         INC dword ptr [EBP + 0xffffff7c]
-LAB_0060b649:
+FUN_0060aef0::cf_continue_loop_0060B649:
 0060B649  8B 45 C8                  MOV EAX,dword ptr [EBP + -0x38]
 0060B64C  40                        INC EAX
 0060B64D  89 45 C8                  MOV dword ptr [EBP + -0x38],EAX

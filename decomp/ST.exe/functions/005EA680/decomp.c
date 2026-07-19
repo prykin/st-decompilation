@@ -112,7 +112,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     else if (uVar7 == 0x6334) {
       MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_0x41e,param_1,0);
     }
-    goto LAB_005eab6a;
+    goto cf_common_exit_005EAB6A;
   }
   if (uVar7 < 0x6943) {
     if (uVar7 == 0x6942) {
@@ -138,7 +138,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     else if (uVar7 == 0x6940) {
       thunk_FUN_005e9a40(this_02);
     }
-    goto LAB_005eab6a;
+    goto cf_common_exit_005EAB6A;
   }
   if (uVar7 < 0x6952) {
     if (uVar7 == 0x6951) {
@@ -153,7 +153,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       }
     }
     else {
-      if (uVar7 != 0x694d) goto LAB_005eab6a;
+      if (uVar7 != 0x694d) goto cf_common_exit_005EAB6A;
       thunk_FUN_005b6350(this_02,0x6105,1,0);
       *(undefined4 *)&this_02[0x42].field_0x5a = 0;
       if (DAT_00811768 == '\x01') {
@@ -165,9 +165,9 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }
-    goto LAB_005eab6a;
+    goto cf_common_exit_005EAB6A;
   }
-  if (uVar7 != 0xc0a2) goto LAB_005eab6a;
+  if (uVar7 != 0xc0a2) goto cf_common_exit_005EAB6A;
   iVar5 = thunk_FUN_005ddb40(*(int *)&this_02[0x42].field_0x51);
   if (iVar5 == 0) {
     if (DAT_008067a0 != '\0') {
@@ -267,7 +267,7 @@ LAB_005eab28:
   *(undefined4 *)&this_02->field_0x2d = 0x33;
   *(undefined4 *)&this_02->field_0x31 = *(undefined4 *)(iVar5 + 0x686);
   FUN_006e6080(this_02,2,*(undefined4 *)(iVar5 + 0x54c),(undefined4 *)&this_02->field_0x1d);
-LAB_005eab6a:
+cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
   uVar4 = MMObjTy::GetMessage((MMObjTy *)this_02,param_1);
   return uVar4;

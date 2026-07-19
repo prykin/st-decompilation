@@ -1593,9 +1593,9 @@ LAB_00509179:
 00509186  50                        PUSH EAX
 00509187  A1 A8 75 80 00            MOV EAX,[0x008075a8]
 0050918C  50                        PUSH EAX
-LAB_0050918d:
+CPanelTy::Update4PanelWB::cf_common_exit_0050918D:
 0050918D  E8 AE A4 1A 00            CALL 0x006b3640
-switchD_0050858c::caseD_3b:
+CPanelTy::Update4PanelWB::cf_common_exit_00509192:
 00509192  8B 8B 4D 0C 00 00         MOV ECX,dword ptr [EBX + 0xc4d]
 00509198  8B 45 E0                  MOV EAX,dword ptr [EBP + -0x20]
 0050919B  3B C8                     CMP ECX,EAX
@@ -1610,7 +1610,7 @@ switchD_0050858c::caseD_3b:
 005091B5  8B E5                     MOV ESP,EBP
 005091B7  5D                        POP EBP
 005091B8  C3                        RET
-LAB_005091b9:
+CPanelTy::Update4PanelWB::cf_common_exit_005091B9:
 005091B9  6A 01                     PUSH 0x1
 005091BB  8B CB                     MOV ECX,EBX
 005091BD  E8 FD B4 EF FF            CALL 0x004046bf

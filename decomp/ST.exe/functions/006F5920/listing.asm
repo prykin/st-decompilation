@@ -161,7 +161,7 @@ LAB_006f5ab5:
 006F5AB7  8B 35 24 70 85 00         MOV ESI,dword ptr [0x00857024]
 006F5ABD  50                        PUSH EAX
 006F5ABE  8B 2D 20 70 85 00         MOV EBP,dword ptr [0x00857020]
-LAB_006f5ac4:
+FUN_006f5920::cf_continue_loop_006F5AC4:
 006F5AC4  33 C0                     XOR EAX,EAX
 006F5AC6  8A 06                     MOV AL,byte ptr [ESI]
 006F5AC8  46                        INC ESI

@@ -438,7 +438,7 @@ LAB_005056a7:
 0050570D  8B 7D E0                  MOV EDI,dword ptr [EBP + -0x20]
 00505710  8B 55 DC                  MOV EDX,dword ptr [EBP + -0x24]
 00505713  8A 4D FE                  MOV CL,byte ptr [EBP + -0x2]
-switchD_005052d8::caseD_2:
+CPanelTy::PaintMunition::cf_continue_loop_00505716:
 00505716  FE C1                     INC CL
 00505718  42                        INC EDX
 00505719  83 C7 06                  ADD EDI,0x6

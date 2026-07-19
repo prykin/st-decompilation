@@ -140,11 +140,11 @@ LAB_00465e32:
 00465E3A  8B E5                     MOV ESP,EBP
 00465E3C  5D                        POP EBP
 00465E3D  C2 04 00                  RET 0x4
-LAB_00465e40:
+STBoatC::LoadRC::cf_common_exit_00465E40:
 00465E40  89 BE CD 04 00 00         MOV dword ptr [ESI + 0x4cd],EDI
 00465E46  C7 86 D5 04 00 00 01 00 00 00  MOV dword ptr [ESI + 0x4d5],0x1
 00465E50  C7 86 B7 00 00 00 03 00 00 00  MOV dword ptr [ESI + 0xb7],0x3
-LAB_00465e5a:
+STBoatC::LoadRC::cf_common_exit_00465E5A:
 00465E5A  0F BF 86 9F 04 00 00      MOVSX EAX,word ptr [ESI + 0x49f]
 00465E61  0F BF 8E 9D 04 00 00      MOVSX ECX,word ptr [ESI + 0x49d]
 00465E68  0F BF 96 9B 04 00 00      MOVSX EDX,word ptr [ESI + 0x49b]
@@ -156,7 +156,7 @@ LAB_00465e72:
 00465E73  8B CE                     MOV ECX,ESI
 00465E75  E8 F1 F0 F9 FF            CALL 0x00404f6b
 00465E7A  57                        PUSH EDI
-LAB_00465e7b:
+STBoatC::LoadRC::cf_common_exit_00465E7B:
 00465E7B  8B CE                     MOV ECX,ESI
 00465E7D  E8 5C D3 F9 FF            CALL 0x004031de
 LAB_00465e82:
@@ -345,7 +345,7 @@ LAB_004660de:
 004660DE  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 004660E3  68 3C 9D 7A 00            PUSH 0x7a9d3c
 004660E8  50                        PUSH EAX
-LAB_004660e9:
+STBoatC::LoadRC::cf_error_exit_004660E9:
 004660E9  68 FF FF 00 00            PUSH 0xffff
 004660EE  E8 4D FD 23 00            CALL 0x006a5e40
 004660F3  B8 FF FF 00 00            MOV EAX,0xffff
@@ -2552,7 +2552,7 @@ LAB_00467fd9:
 00467FDB  E8 A4 B1 F9 FF            CALL 0x00403184
 00467FE0  85 C0                     TEST EAX,EAX
 00467FE2  75 18                     JNZ 0x00467ffc
-LAB_00467fe4:
+STBoatC::LoadRC::cf_common_exit_00467FE4:
 00467FE4  8B CE                     MOV ECX,ESI
 00467FE6  E8 6A B8 F9 FF            CALL 0x00403855
 00467FEB  C7 86 D5 04 00 00 00 00 00 00  MOV dword ptr [ESI + 0x4d5],0x0
@@ -3057,11 +3057,11 @@ LAB_0046872c:
 0046872F  0F 85 0B D7 FF FF         JNZ 0x00465e40
 00468735  83 BE AB 04 00 00 FF      CMP dword ptr [ESI + 0x4ab],-0x1
 0046873C  0F 84 40 D7 FF FF         JZ 0x00465e82
-LAB_00468742:
+STBoatC::LoadRC::cf_common_exit_00468742:
 00468742  89 BE CD 04 00 00         MOV dword ptr [ESI + 0x4cd],EDI
 00468748  C7 86 D5 04 00 00 07 00 00 00  MOV dword ptr [ESI + 0x4d5],0x7
 00468752  C7 86 B7 00 00 00 03 00 00 00  MOV dword ptr [ESI + 0xb7],0x3
-LAB_0046875c:
+STBoatC::LoadRC::cf_common_exit_0046875C:
 0046875C  0F BF 86 A9 04 00 00      MOVSX EAX,word ptr [ESI + 0x4a9]
 00468763  0F BF 8E A7 04 00 00      MOVSX ECX,word ptr [ESI + 0x4a7]
 0046876A  0F BF 96 A5 04 00 00      MOVSX EDX,word ptr [ESI + 0x4a5]
@@ -3427,10 +3427,10 @@ LAB_00468c40:
 00468C41  8B CE                     MOV ECX,ESI
 00468C43  E8 23 C3 F9 FF            CALL 0x00404f6b
 00468C48  57                        PUSH EDI
-LAB_00468c49:
+STBoatC::LoadRC::cf_common_exit_00468C49:
 00468C49  8B CE                     MOV ECX,ESI
 00468C4B  E8 8E A5 F9 FF            CALL 0x004031de
-switchD_004660af::caseD_2:
+STBoatC::LoadRC::cf_common_exit_00468C50:
 00468C50  8B 06                     MOV EAX,dword ptr [ESI]
 00468C52  8B CE                     MOV ECX,ESI
 00468C54  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
@@ -4008,7 +4008,7 @@ LAB_004693af:
 004693AF  89 9E CD 04 00 00         MOV dword ptr [ESI + 0x4cd],EBX
 004693B5  C7 86 D5 04 00 00 0D 00 00 00  MOV dword ptr [ESI + 0x4d5],0xd
 004693BF  C7 86 B7 00 00 00 03 00 00 00  MOV dword ptr [ESI + 0xb7],0x3
-LAB_004693c9:
+STBoatC::LoadRC::cf_common_exit_004693C9:
 004693C9  8B 06                     MOV EAX,dword ptr [ESI]
 004693CB  8B CE                     MOV ECX,ESI
 004693CD  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
@@ -4449,7 +4449,7 @@ LAB_00469972:
 00469972  89 9E D5 04 00 00         MOV dword ptr [ESI + 0x4d5],EBX
 LAB_00469978:
 00469978  53                        PUSH EBX
-LAB_00469979:
+STBoatC::LoadRC::cf_common_exit_00469979:
 00469979  8B CE                     MOV ECX,ESI
 0046997B  E8 AB A0 F9 FF            CALL 0x00403a2b
 00469980  40                        INC EAX
@@ -4484,14 +4484,14 @@ LAB_004699c1:
 004699D8  52                        PUSH EDX
 LAB_004699d9:
 004699D9  50                        PUSH EAX
-LAB_004699da:
+STBoatC::LoadRC::cf_common_exit_004699DA:
 004699DA  8B CE                     MOV ECX,ESI
 004699DC  E8 8A B5 F9 FF            CALL 0x00404f6b
 004699E1  53                        PUSH EBX
-LAB_004699e2:
+STBoatC::LoadRC::cf_common_exit_004699E2:
 004699E2  8B CE                     MOV ECX,ESI
 004699E4  E8 F5 97 F9 FF            CALL 0x004031de
-switchD_00466448::caseD_2:
+STBoatC::LoadRC::cf_common_exit_004699E9:
 004699E9  8B 16                     MOV EDX,dword ptr [ESI]
 004699EB  8B CE                     MOV ECX,ESI
 004699ED  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]

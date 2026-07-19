@@ -134,7 +134,7 @@ switchD_004c22b3::caseD_26:
 004C234A  3B C2                     CMP EAX,EDX
 LAB_004c234c:
 004C234C  0F 8D C9 02 00 00         JGE 0x004c261b
-LAB_004c2352:
+FUN_004c21a0::cf_common_exit_004C2352:
 004C2352  BE 01 00 00 00            MOV ESI,0x1
 004C2357  E9 BF 02 00 00            JMP 0x004c261b
 LAB_004c235c:
@@ -361,7 +361,7 @@ LAB_004c2608:
 004C2614  74 05                     JZ 0x004c261b
 LAB_004c2616:
 004C2616  BE 04 00 00 00            MOV ESI,0x4
-switchD_004c22b3::caseD_1:
+FUN_004c21a0::cf_common_exit_004C261B:
 004C261B  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 004C261E  8B 81 20 04 00 00         MOV EAX,dword ptr [ECX + 0x420]
 004C2624  85 C0                     TEST EAX,EAX

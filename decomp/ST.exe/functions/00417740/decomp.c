@@ -20,15 +20,15 @@ undefined4 __thiscall FUN_00417740(void *this,short param_1,short param_2)
   if (param_2 < param_1) {
     if (0xb3 < iVar5 - iVar4) {
       sVar3 = (uVar1 ^ uVar2) - uVar2;
-      goto LAB_004177be;
+      goto cf_common_exit_004177BE;
     }
   }
   else if (iVar4 - iVar5 < 0xb4) {
     sVar3 = (uVar1 ^ uVar2) - uVar2;
-    goto LAB_004177be;
+    goto cf_common_exit_004177BE;
   }
   sVar3 = -((uVar1 ^ uVar2) - uVar2);
-LAB_004177be:
+cf_common_exit_004177BE:
   *(short *)((int)this + 0x86) = sVar3;
   *(undefined4 *)((int)this + 0x88) = 1;
   *(undefined4 *)((int)this + 0xe8) = 1;

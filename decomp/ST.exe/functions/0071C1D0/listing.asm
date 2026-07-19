@@ -172,7 +172,7 @@ LAB_0071c3b9:
 0071C3BC  EB 03                     JMP 0x0071c3c1
 LAB_0071c3be:
 0071C3BE  89 7D C4                  MOV dword ptr [EBP + -0x3c],EDI
-LAB_0071c3c1:
+InputClassTy::AddAcc::cf_common_join_0071C3C1:
 0071C3C1  8B 4B 24                  MOV ECX,dword ptr [EBX + 0x24]
 0071C3C4  8B 51 0C                  MOV EDX,dword ptr [ECX + 0xc]
 LAB_0071c3c7:

@@ -492,7 +492,7 @@ LAB_00434401:
 0043440B  51                        PUSH ECX
 0043440C  52                        PUSH EDX
 0043440D  50                        PUSH EAX
-LAB_0043440e:
+STAllPlayersC::PointPick::cf_common_exit_0043440E:
 0043440E  6A 00                     PUSH 0x0
 00434410  6A 00                     PUSH 0x0
 00434412  53                        PUSH EBX
@@ -1322,9 +1322,9 @@ LAB_00434ca7:
 LAB_00434cb4:
 00434CB4  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 00434CB7  50                        PUSH EAX
-LAB_00434cb8:
+STAllPlayersC::PointPick::cf_common_exit_00434CB8:
 00434CB8  E8 53 94 27 00            CALL 0x006ae110
-LAB_00434cbd:
+STAllPlayersC::PointPick::cf_common_exit_00434CBD:
 00434CBD  8B CF                     MOV ECX,EDI
 00434CBF  E8 1A DB FC FF            CALL 0x004027de
 LAB_00434cc4:

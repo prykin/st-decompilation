@@ -172,7 +172,7 @@ int __thiscall TLOEmbryoTy::Create(TLOEmbryoTy *this,undefined4 *param_1)
     ppSVar15 = &local_8;
     local_8 = this_00;
     puVar5 = *(uint **)(&DAT_007f57f6 + *(int *)(this_00 + 0x24) * 0xa62);
-LAB_004d1763:
+cf_common_join_004D1763:
     Library::DKW::TBL::FUN_006ae1c0(puVar5,ppSVar15);
   }
   else {
@@ -184,7 +184,7 @@ LAB_004d1763:
       ppSVar15 = &local_40;
       local_40 = this_00;
       puVar5 = *(uint **)(&DAT_007f5802 + *(int *)(this_00 + 0x24) * 0xa62);
-      goto LAB_004d1763;
+      goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x43) {
       if (*(int *)(&DAT_007f580e + *(int *)(this_00 + 0x24) * 0xa62) == 0) {
@@ -194,7 +194,7 @@ LAB_004d1763:
       ppSVar15 = &local_44;
       local_44 = this_00;
       puVar5 = *(uint **)(&DAT_007f580e + *(int *)(this_00 + 0x24) * 0xa62);
-      goto LAB_004d1763;
+      goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x73) {
       if (*(int *)(&DAT_007f5812 + *(int *)(this_00 + 0x24) * 0xa62) == 0) {
@@ -204,7 +204,7 @@ LAB_004d1763:
       ppSVar15 = &local_30;
       local_30 = this_00;
       puVar5 = *(uint **)(&DAT_007f5812 + *(int *)(this_00 + 0x24) * 0xa62);
-      goto LAB_004d1763;
+      goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3a) {
       if (DAT_007fa16c == (uint *)0x0) {
@@ -213,7 +213,7 @@ LAB_004d1763:
       ppSVar15 = &local_48;
       local_48 = this_00;
       puVar5 = DAT_007fa16c;
-      goto LAB_004d1763;
+      goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x65) {
       if (*(int *)(&DAT_007f5806 + *(int *)(this_00 + 0x24) * 0xa62) == 0) {
@@ -223,7 +223,7 @@ LAB_004d1763:
       ppSVar15 = &local_34;
       local_34 = this_00;
       puVar5 = *(uint **)(&DAT_007f5806 + *(int *)(this_00 + 0x24) * 0xa62);
-      goto LAB_004d1763;
+      goto cf_common_join_004D1763;
     }
     if (iVar3 == 0x3b) {
       if (*(int *)(&DAT_007f580a + *(int *)(this_00 + 0x24) * 0xa62) == 0) {
@@ -233,7 +233,7 @@ LAB_004d1763:
       ppSVar15 = &local_38;
       local_38 = this_00;
       puVar5 = *(uint **)(&DAT_007f580a + *(int *)(this_00 + 0x24) * 0xa62);
-      goto LAB_004d1763;
+      goto cf_common_join_004D1763;
     }
   }
   if (*(int *)(this_00 + 0x23d) != 1) {

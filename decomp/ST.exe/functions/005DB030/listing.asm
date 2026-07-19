@@ -124,7 +124,7 @@ switchD_005db168::caseD_4:
 005DB1A4  8B 55 F4                  MOV EDX,dword ptr [EBP + -0xc]
 005DB1A7  3B C2                     CMP EAX,EDX
 005DB1A9  75 05                     JNZ 0x005db1b0
-LAB_005db1ab:
+FUN_005db030::cf_common_exit_005DB1AB:
 005DB1AB  B9 01 00 00 00            MOV ECX,0x1
 switchD_005db168::default:
 005DB1B0  85 C9                     TEST ECX,ECX
@@ -144,7 +144,7 @@ switchD_005db168::default:
 005DB1DA  8B CA                     MOV ECX,EDX
 005DB1DC  83 E1 03                  AND ECX,0x3
 005DB1DF  F3 A4                     MOVSB.REP ES:EDI,ESI
-LAB_005db1e1:
+FUN_005db030::cf_common_exit_005DB1E1:
 005DB1E1  53                        PUSH EBX
 005DB1E2  E8 89 5F 11 00            CALL 0x006f1170
 005DB1E7  8B 45 98                  MOV EAX,dword ptr [EBP + -0x68]

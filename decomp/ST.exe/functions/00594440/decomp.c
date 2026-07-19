@@ -41,7 +41,7 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
   if (uVar7 < 0x10000) {
     if (uVar7 == 0xffff) {
       *(undefined4 *)(param_1 + 0x18) = *(undefined4 *)(local_c + 0xcc);
-      goto switchD_005944a8_caseD_4;
+      goto cf_common_exit_00594615;
     }
     switch(uVar7) {
     case 2:
@@ -68,7 +68,7 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
 switchD_005944a8_caseD_64:
       thunk_FUN_005943f0(local_c);
     }
-switchD_005944a8_caseD_4:
+cf_common_exit_00594615:
     g_currentExceptionFrame = local_50.previous;
     uVar5 = FUN_006e5fd0();
     return uVar5;
@@ -97,16 +97,16 @@ switchD_005944a8_caseD_4:
     Library::DKW::WGR::FUN_006b55f0
               (*(undefined4 **)(this_00 + 0xfc),0,*(ushort *)(param_1 + 0x18) + 5,
                *(ushort *)(param_1 + 0x1a) + 5,iVar3,0,0,0,*(int *)(iVar3 + 4),*(int *)(iVar3 + 8));
-    goto switchD_005944a8_caseD_4;
+    goto cf_common_exit_00594615;
   case 0x10002:
-    if (*(int *)(local_c + 0x110) == 0) goto switchD_005944a8_caseD_4;
+    if (*(int *)(local_c + 0x110) == 0) goto cf_common_exit_00594615;
   case 0x10000:
     *(undefined4 *)(local_c + 0x9c) = *(undefined4 *)(param_1 + 0x14);
     break;
   case 0x10003:
     break;
   default:
-    goto switchD_005944a8_caseD_4;
+    goto cf_common_exit_00594615;
   }
   goto switchD_005944a8_caseD_64;
 }

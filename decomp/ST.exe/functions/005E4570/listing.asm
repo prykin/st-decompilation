@@ -1120,7 +1120,7 @@ switchD_005e5007::caseD_6339:
 LAB_005e5255:
 005E5255  52                        PUSH EDX
 005E5256  E8 D5 E4 0C 00            CALL 0x006b3730
-switchD_005e45f7::caseD_1:
+MTaskTy::GetMessage::cf_common_exit_005E525B:
 005E525B  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 005E525E  8B 45 9C                  MOV EAX,dword ptr [EBP + -0x64]
 005E5261  51                        PUSH ECX

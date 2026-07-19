@@ -752,7 +752,7 @@ LAB_00582f6b:
 00582F6B  48                        DEC EAX
 LAB_00582f6c:
 00582F6C  89 86 39 02 00 00         MOV dword ptr [ESI + 0x239],EAX
-LAB_00582f72:
+STJellyGunC::LifeGun::cf_common_exit_00582F72:
 00582F72  8B 86 47 02 00 00         MOV EAX,dword ptr [ESI + 0x247]
 00582F78  8D BE D5 01 00 00         LEA EDI,[ESI + 0x1d5]
 00582F7E  50                        PUSH EAX

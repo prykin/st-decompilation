@@ -51,7 +51,7 @@ LAB_004b77c4:
                   iVar2 = iVar2 + local_14;
                   iVar1 = thunk_FUN_004b71c0(cVar4);
                   if (iVar1 < iVar2) goto LAB_004b78f0;
-                  goto LAB_004b78a7;
+                  goto cf_continue_loop_004B78A7;
                 }
                 iVar1 = *(int *)(&DAT_007f57b2 + iVar6);
                 uVar5 = uVar5 + 1;
@@ -64,7 +64,7 @@ LAB_004b77c4:
             }
           }
         }
-        goto LAB_004b78a7;
+        goto cf_continue_loop_004B78A7;
       }
     }
   }
@@ -80,7 +80,7 @@ LAB_004b78f0:
     iVar1 = *(int *)(*(int *)(&DAT_007f57b2 + iVar6) + 0xc);
     if (iVar1 == 0) break;
   }
-LAB_004b78a7:
+cf_continue_loop_004B78A7:
   iVar1 = *(int *)((int)&DAT_007f4e29 + iVar6);
   local_10 = local_10 + 1;
   if (*(uint *)(iVar1 + 0xc) <= local_10) {

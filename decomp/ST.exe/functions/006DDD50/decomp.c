@@ -296,28 +296,28 @@ void __fastcall FUN_006ddd50(void *param_1)
               if ((int)uVar12 < (int)local_74 - iVar21) {
                 if ((int)ppppuVar9 - iVar21 <= (int)uVar12) {
                   uVar10 = *(undefined1 *)((int)param_1 + 0x439);
-                  goto LAB_006de503;
+                  goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar8 - iVar21 <= (int)uVar12) {
                   uVar10 = *(undefined1 *)((int)param_1 + 0x43a);
-                  goto LAB_006de503;
+                  goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar7 - iVar21 <= (int)uVar12) {
                   uVar10 = *(undefined1 *)((int)param_1 + 0x43b);
-                  goto LAB_006de503;
+                  goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar6 - iVar21 <= (int)uVar12) {
                   uVar10 = *(undefined1 *)((int)param_1 + 0x43c);
-                  goto LAB_006de503;
+                  goto cf_common_join_006DE503;
                 }
                 if ((int)ppppuVar5 - iVar21 <= (int)uVar12) {
                   uVar10 = *(undefined1 *)((int)param_1 + 0x43d);
-                  goto LAB_006de503;
+                  goto cf_common_join_006DE503;
                 }
               }
               else {
                 uVar10 = *(undefined1 *)((int)param_1 + 0x438);
-LAB_006de503:
+cf_common_join_006DE503:
                 *puVar18 = uVar10;
               }
               puVar18 = puVar18 + 1;

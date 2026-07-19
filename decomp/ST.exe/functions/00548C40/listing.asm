@@ -1604,7 +1604,7 @@ LAB_0054a196:
 0054A196  6A 18                     PUSH 0x18
 LAB_0054a198:
 0054A198  8B CE                     MOV ECX,ESI
-LAB_0054a19a:
+CursorClassTy::TakeCmdToRun::cf_common_join_0054A19A:
 0054A19A  E8 94 9A EB FF            CALL 0x00403c33
 switchD_00548db5::caseD_3:
 0054A19F  8B 83 A2 04 00 00         MOV EAX,dword ptr [EBX + 0x4a2]

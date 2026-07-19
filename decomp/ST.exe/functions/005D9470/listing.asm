@@ -732,7 +732,7 @@ LAB_005d9cba:
 LAB_005d9cc4:
 005D9CC4  8B CB                     MOV ECX,EBX
 005D9CC6  E8 09 95 E2 FF            CALL 0x004031d4
-LAB_005d9ccb:
+SIDTy::GetMessage::cf_common_exit_005D9CCB:
 005D9CCB  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 005D9CCE  8B 45 A0                  MOV EAX,dword ptr [EBP + -0x60]
 005D9CD1  51                        PUSH ECX

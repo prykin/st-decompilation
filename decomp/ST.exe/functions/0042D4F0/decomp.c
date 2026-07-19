@@ -37,11 +37,11 @@ STAllPlayersC::ResetActivityFromTmp
       if (iVar2 < 0x5b) {
         if (iVar2 != 0x5a) {
           if (iVar2 == 0) goto LAB_0042d5ff;
-          if (iVar2 != 0x3c) goto LAB_0042d5bc;
+          if (iVar2 != 0x3c) goto cf_common_exit_0042D5BC;
           goto LAB_0042d599;
         }
       }
-      else if (iVar2 != 0x172) goto LAB_0042d5bc;
+      else if (iVar2 != 0x172) goto cf_common_exit_0042D5BC;
       goto LAB_0042d5e8;
     }
 LAB_0042d599:
@@ -50,7 +50,7 @@ LAB_0042d599:
   }
   else {
     if (((iVar2 != 0x1a4) && (iVar2 != 0x1ae)) && (iVar2 != 0x1b8)) {
-LAB_0042d5bc:
+cf_common_exit_0042D5BC:
       iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x45f,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__ResetActivityFrom_007a63dc);
       if (iVar2 == 0) {

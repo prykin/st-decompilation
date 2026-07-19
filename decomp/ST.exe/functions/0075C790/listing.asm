@@ -349,7 +349,7 @@ LAB_0075cad0:
 0075CB05  8B E5                     MOV ESP,EBP
 0075CB07  5D                        POP EBP
 0075CB08  C2 08 00                  RET 0x8
-LAB_0075cb0b:
+FUN_0075c790::cf_break_loop_0075CB0B:
 0075CB0B  8B 4D E0                  MOV ECX,dword ptr [EBP + -0x20]
 0075CB0E  85 C9                     TEST ECX,ECX
 0075CB10  7E 1A                     JLE 0x0075cb2c

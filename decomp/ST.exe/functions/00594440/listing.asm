@@ -149,7 +149,7 @@ LAB_00594596:
 0059460D  6A 00                     PUSH 0x0
 0059460F  51                        PUSH ECX
 00594610  E8 DB 0F 12 00            CALL 0x006b55f0
-switchD_005944a8::caseD_4:
+ComboTy::GetMessage::cf_common_exit_00594615:
 00594615  8B 55 B4                  MOV EDX,dword ptr [EBP + -0x4c]
 00594618  57                        PUSH EDI
 00594619  8B CE                     MOV ECX,ESI

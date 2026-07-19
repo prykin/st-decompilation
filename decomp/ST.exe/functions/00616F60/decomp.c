@@ -25,7 +25,8 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
   iVar6 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x298)) *
           *(int *)((int)this + 0x288);
   local_8 = (float)iVar6 / (float)local_14;
-  if ((local_8 <= _DAT_0079ceb8) && (*(char *)((int)this + 0x29c) == '\0')) goto LAB_00617221;
+  if ((local_8 <= _DAT_0079ceb8) && (*(char *)((int)this + 0x29c) == '\0'))
+  goto cf_common_exit_00617221;
   if (local_8 <= _DAT_0079ceb4) {
     iVar3 = thunk_FUN_00616280(this,(int *)&local_c,&local_10,&local_14);
     if (iVar3 < 0) {
@@ -44,7 +45,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
                            (int)*(short *)((int)this + 0x25c),(int)*(short *)((int)this + 0x25e));
       iVar4 = FUN_006acf0d((int)*(short *)((int)this + 0x260),(int)*(short *)((int)this + 0x262),
                            (int)*(short *)((int)this + 0x264),(int)local_c,local_10,local_14);
-      if ((iVar3 == 0) || (iVar4 == 0)) goto LAB_00617221;
+      if ((iVar3 == 0) || (iVar4 == 0)) goto cf_common_exit_00617221;
       if ((float)(((int)*(short *)((int)this + 0x25a) - (int)*(short *)((int)this + 0x260)) *
                   ((int)local_c - (int)*(short *)((int)this + 0x260)) +
                   ((int)*(short *)((int)this + 0x25c) - (int)*(short *)((int)this + 0x262)) *
@@ -54,7 +55,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
           _DAT_0079ceb0) {
         iVar5 = 1;
         *(undefined1 *)((int)this + 0x29c) = 1;
-        goto LAB_00617221;
+        goto cf_common_exit_00617221;
       }
       iVar5 = thunk_FUN_006173a0(this,iVar6,param_1,param_2,param_3);
       if (0 < iVar5) {
@@ -62,7 +63,7 @@ int __thiscall FUN_00616f60(void *this,int *param_1,int *param_2,int *param_3)
         *(undefined4 *)((int)this + 0x20c) = 3;
         *(undefined4 *)((int)this + 0x294) = *(undefined4 *)(DAT_00802a38 + 0xe4);
         *(undefined4 *)((int)this + 0x298) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-        goto LAB_00617221;
+        goto cf_common_exit_00617221;
       }
     }
   }
@@ -78,12 +79,12 @@ LAB_006171d9:
       *(uint *)((int)this + 0x1c) = uVar2;
       *(uint *)((int)this + 0x294) = (uVar2 >> 0x10) % 0xb + 10 + *(int *)(DAT_00802a38 + 0xe4);
       *(undefined4 *)((int)this + 0x298) = *(undefined4 *)(DAT_00802a38 + 0xe4);
-      goto LAB_00617221;
+      goto cf_common_exit_00617221;
     }
   }
   thunk_FUN_0060ec00(this);
   *(undefined4 *)((int)this + 0x20c) = 9;
-LAB_00617221:
+cf_common_exit_00617221:
   fVar7 = (float10)fcos((float10)local_8);
   local_c = (float)(fVar7 * (float10)*(int *)((int)this + 0x2c1));
   fsin((float10)local_8);

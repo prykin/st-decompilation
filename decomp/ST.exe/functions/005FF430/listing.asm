@@ -425,7 +425,7 @@ LAB_005ffa18:
 005FFA25  F7 F1                     DIV ECX
 005FFA27  66 03 96 1C 02 00 00      ADD DX,word ptr [ESI + 0x21c]
 005FFA2E  81 C2 74 01 00 00         ADD EDX,0x174
-LAB_005ffa34:
+FUN_005ff430::cf_common_exit_005FFA34:
 005FFA34  8B 45 20                  MOV EAX,dword ptr [EBP + 0x20]
 005FFA37  BF 01 00 00 00            MOV EDI,0x1
 005FFA3C  66 89 10                  MOV word ptr [EAX],DX
@@ -463,7 +463,7 @@ LAB_005ffa94:
 005FFAA3  66 8B 86 1C 02 00 00      MOV AX,word ptr [ESI + 0x21c]
 005FFAAA  66 2B C2                  SUB AX,DX
 005FFAAD  2D 74 01 00 00            SUB EAX,0x174
-LAB_005ffab2:
+FUN_005ff430::cf_common_exit_005FFAB2:
 005FFAB2  8B 4D 20                  MOV ECX,dword ptr [EBP + 0x20]
 005FFAB5  BF 01 00 00 00            MOV EDI,0x1
 005FFABA  66 89 01                  MOV word ptr [ECX],AX

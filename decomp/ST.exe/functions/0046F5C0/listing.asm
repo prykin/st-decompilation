@@ -1344,7 +1344,7 @@ LAB_0047077f:
 004707AB  75 0A                     JNZ 0x004707b7
 LAB_004707ad:
 004707AD  C7 86 84 05 00 00 02 00 00 00  MOV dword ptr [ESI + 0x584],0x2
-switchD_0046f604::caseD_2:
+STBoatC::ToDok::cf_common_exit_004707B7:
 004707B7  8B 06                     MOV EAX,dword ptr [ESI]
 004707B9  8B CE                     MOV ECX,ESI
 004707BB  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
@@ -1613,7 +1613,7 @@ LAB_00470aff:
 00470B06  75 0C                     JNZ 0x00470b14
 00470B08  C7 86 80 05 00 00 08 00 00 00  MOV dword ptr [ESI + 0x580],0x8
 00470B12  EB 3A                     JMP 0x00470b4e
-LAB_00470b14:
+STBoatC::ToDok::cf_common_exit_00470B14:
 00470B14  66 8B 46 4B               MOV AX,word ptr [ESI + 0x4b]
 00470B18  66 8B 4E 49               MOV CX,word ptr [ESI + 0x49]
 00470B1C  8D BE 62 05 00 00         LEA EDI,[ESI + 0x562]
@@ -1724,7 +1724,7 @@ LAB_00470c1c:
 00470C40  CC                        INT3
 LAB_00470c41:
 00470C41  68 8C 2A 00 00            PUSH 0x2a8c
-LAB_00470c46:
+STBoatC::ToDok::cf_error_exit_00470C46:
 00470C46  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 00470C4B  68 3C 9D 7A 00            PUSH 0x7a9d3c
 00470C50  50                        PUSH EAX
@@ -1858,10 +1858,10 @@ LAB_00470e23:
 00470E23  8B CE                     MOV ECX,ESI
 00470E25  E8 41 41 F9 FF            CALL 0x00404f6b
 00470E2A  53                        PUSH EBX
-LAB_00470e2b:
+STBoatC::ToDok::cf_common_exit_00470E2B:
 00470E2B  8B CE                     MOV ECX,ESI
 00470E2D  E8 AC 23 F9 FF            CALL 0x004031de
-switchD_0046fd75::caseD_2:
+STBoatC::ToDok::cf_common_exit_00470E32:
 00470E32  8B 16                     MOV EDX,dword ptr [ESI]
 00470E34  8B CE                     MOV ECX,ESI
 00470E36  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]

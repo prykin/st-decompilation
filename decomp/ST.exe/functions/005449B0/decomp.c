@@ -1318,14 +1318,14 @@ switchD_00545816_default:
     }
     if (*(short *)(param_1 + 0x16) == 3) {
       if ((DAT_0081176c == 0) || (*(void **)(DAT_0081176c + 0x38) == (void *)0x0))
-      goto LAB_00545ff6;
+      goto cf_common_exit_00545FF6;
       iVar6 = FUN_00711370(*(void **)(DAT_0081176c + 0x38),local_524);
       *(int *)&this_00[0xc].field_0x1a = iVar6 + 0xc;
       iVar6 = FUN_007113e0(*(void **)(DAT_0081176c + 0x38),local_524);
       iVar6 = iVar6 + 10;
       iVar15 = *(int *)&this_00[0xc].field_0x1a;
       *(int *)((int)&this_00[0xc].field_001C + 2) = iVar6;
-      if ((800 < iVar15) || (0x96 < iVar6)) goto LAB_00545ff6;
+      if ((800 < iVar15) || (0x96 < iVar6)) goto cf_common_exit_00545FF6;
       iVar20 = *(int *)&this_00[1].field_0x51;
       *(int *)((int)&this_00[0xc].field_0010 + 2) =
            *(int *)((int)&this_00[1].field_0060 + 1) + *(int *)&this_00[1].field_0x4d;
@@ -1373,14 +1373,14 @@ switchD_00545816_default:
     }
     else {
       if ((DAT_00802a28 == 0) || (*(void **)(DAT_00802a28 + 0x28) == (void *)0x0))
-      goto LAB_00545ff6;
+      goto cf_common_exit_00545FF6;
       iVar6 = FUN_00711370(*(void **)(DAT_00802a28 + 0x28),local_524);
       *(int *)&this_00[0xc].field_0x1a = iVar6 + 0xc;
       iVar6 = FUN_007113e0(*(void **)(DAT_00802a28 + 0x28),local_524);
       iVar6 = iVar6 + 10;
       iVar15 = *(int *)&this_00[0xc].field_0x1a;
       *(int *)((int)&this_00[0xc].field_001C + 2) = iVar6;
-      if ((800 < iVar15) || (0x96 < iVar6)) goto LAB_00545ff6;
+      if ((800 < iVar15) || (0x96 < iVar6)) goto cf_common_exit_00545FF6;
       iVar20 = *(int *)&this_00[1].field_0x51;
       *(int *)((int)&this_00[0xc].field_0010 + 2) =
            *(int *)((int)&this_00[1].field_0060 + 1) + *(int *)&this_00[1].field_0x4d;
@@ -1428,7 +1428,7 @@ switchD_00545816_default:
     }
     FUN_006b5ee0(*(int *)&this_00[0xc].field_0x22,0,3,3,*(int *)&this_00[0xc].field_0x1a + -6,
                  *(int *)((int)&this_00[0xc].field_001C + 2) + -6,bVar30,0xd);
-LAB_00545ff6:
+cf_common_exit_00545FF6:
     if (800 < (int)*(uint *)&this_00[0xc].field_0x1a) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;

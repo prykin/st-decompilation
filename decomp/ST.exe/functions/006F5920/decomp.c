@@ -87,7 +87,7 @@ uint FUN_006f5920(byte *param_1,int param_2,uint *param_3,int param_4,int param_
               DAT_00857000 = '\x01';
               iVar9 = DAT_00857020;
               pbVar10 = param_6;
-              goto LAB_006f5ac4;
+              goto cf_continue_loop_006F5AC4;
             }
             *param_1 = bVar2;
             DAT_00857024 = DAT_00857024 + 1;
@@ -114,7 +114,7 @@ LAB_006f5a0d:
       return param_9;
     }
   } while( true );
-LAB_006f5ac4:
+cf_continue_loop_006F5AC4:
   do {
     bVar2 = *DAT_00857024;
     DAT_00857024 = DAT_00857024 + 1;
@@ -225,6 +225,6 @@ LAB_006f5b32:
     puVar8 = param_3;
     iVar9 = DAT_00857020;
   } while (uVar7 <= *(uint *)((int)param_3 + -2));
-  goto LAB_006f5ac4;
+  goto cf_continue_loop_006F5AC4;
 }
 

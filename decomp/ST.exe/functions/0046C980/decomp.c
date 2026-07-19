@@ -86,7 +86,7 @@ int __thiscall STBoatC::BackBuild(STBoatC *this,int *param_1,undefined4 param_2,
           return iVar5;
         }
         iVar5 = 0x2555;
-LAB_0046cbe2:
+cf_error_exit_0046CBE2:
         RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar5);
         return 0xffff;
       }
@@ -128,7 +128,7 @@ LAB_0046cbe2:
           return iVar5;
         }
         iVar5 = 0x256e;
-        goto LAB_0046cbe2;
+        goto cf_error_exit_0046CBE2;
       }
       if ((short)uVar3 == 0) {
         *(undefined4 *)&this->field_0x50c = 2;
@@ -153,7 +153,7 @@ LAB_0046cbe2:
           return iVar5;
         }
         iVar5 = 0x2584;
-        goto LAB_0046cbe2;
+        goto cf_error_exit_0046CBE2;
       }
       if ((short)uVar4 == 0) {
         iVar5 = (*this->vtable->vfunc_D8)();

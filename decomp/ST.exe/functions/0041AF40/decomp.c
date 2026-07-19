@@ -230,7 +230,7 @@ undefined4 __thiscall STGameObjC::GetMessage(STGameObjC *this,int param_1)
       *(undefined4 *)psVar14 = *(undefined4 *)psVar21;
       psVar14[2] = psVar21[2];
       GVar25 = CASE_12;
-      goto LAB_0041be5f;
+      goto cf_common_exit_0041BE5F;
     }
     if (uVar5 < 0x173) {
       if (uVar5 != 0x172) {
@@ -550,13 +550,13 @@ LAB_0041b308:
             piVar16 = piVar16 + 1;
           }
           GVar25 = CASE_10;
-          goto LAB_0041be5f;
+          goto cf_common_exit_0041BE5F;
         }
-        if (uVar5 != 0x5a) goto LAB_0041b6c6;
+        if (uVar5 != 0x5a) goto cf_common_exit_0041B6C6;
       }
     }
     else if (uVar5 != 0x1a4) {
-LAB_0041b6c6:
+cf_common_exit_0041B6C6:
       iVar4 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x7e4,0,0,&DAT_007a4ccc,
                                  s_STGameObjC__GetMessagge_MESS_ID__007a4ee8);
       if (iVar4 == 0) {
@@ -631,11 +631,11 @@ LAB_0041bdb3:
       piVar16 = piVar16 + 1;
     }
     GVar25 = CASE_4;
-    goto LAB_0041be5f;
+    goto cf_common_exit_0041BE5F;
   }
   if (uVar5 == 0x1b8) goto LAB_0041bdb3;
   if (uVar5 != 1000) {
-    if (uVar5 != 0x3e9) goto LAB_0041b6c6;
+    if (uVar5 != 0x3e9) goto cf_common_exit_0041B6C6;
     if (DAT_00801688 == (void *)0x0) {
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -699,7 +699,7 @@ LAB_0041bdb3:
     }
     *psVar21 = *psVar14;
     GVar25 = CASE_5;
-    goto LAB_0041be5f;
+    goto cf_common_exit_0041BE5F;
   }
   if (DAT_00801688 == (void *)0x0) {
     g_currentExceptionFrame = local_58.previous;
@@ -827,7 +827,7 @@ LAB_0041b92c:
       Library::DKW::TBL::FUN_006afe40(&pSVar2->field_012D,(uint *)pSVar2->field_0135);
       Library::DKW::TBL::FUN_006afe40(&pSVar2->field_0131,(uint *)pSVar2->field_0139);
       GVar25 = CASE_6;
-      goto LAB_0041be5f;
+      goto cf_common_exit_0041BE5F;
     }
   }
   if (DAT_00801688 == (void *)0x0) {
@@ -958,7 +958,7 @@ LAB_0041bac6:
       Library::DKW::TBL::FUN_006afe40(&pSVar2->field_0145,(uint *)pSVar2->field_0155);
       Library::DKW::TBL::FUN_006afe40(&pSVar2->field_0149,(uint *)pSVar2->field_0159);
       GVar25 = CASE_7;
-      goto LAB_0041be5f;
+      goto cf_common_exit_0041BE5F;
     }
   }
   if (DAT_00801688 == (void *)0x0) {
@@ -1064,7 +1064,7 @@ LAB_0041bcad:
       }
       Library::DKW::TBL::FUN_006afe40((int *)local_c,(uint *)*local_14);
       GVar25 = CASE_C;
-      goto LAB_0041be5f;
+      goto cf_common_exit_0041BE5F;
     }
   }
   if (DAT_00801688 == (void *)0x0) {
@@ -1126,7 +1126,7 @@ LAB_0041bcad:
   *(undefined2 *)(pcVar9 + 8) = *(undefined2 *)(pcVar11 + 8);
   pcVar9[10] = pcVar11[10];
   GVar25 = CASE_F;
-LAB_0041be5f:
+cf_common_exit_0041BE5F:
   thunk_FUN_0043fc50(GVar25,0);
   g_currentExceptionFrame = local_58.previous;
   return 0;

@@ -605,7 +605,7 @@ LAB_0072be4d:
 LAB_0072be83:
 0072BE83  57                        PUSH EDI
 0072BE84  E8 B7 9F F7 FF            CALL 0x006a5e40
-LAB_0072be89:
+ControlClassTy::GetMessage::cf_common_exit_0072BE89:
 0072BE89  8B 55 94                  MOV EDX,dword ptr [EBP + -0x6c]
 0072BE8C  C7 86 D0 00 00 00 01 00 00 00  MOV dword ptr [ESI + 0xd0],0x1
 0072BE96  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX

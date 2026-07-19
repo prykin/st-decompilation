@@ -500,7 +500,7 @@ LAB_00479ba6:
                 *(undefined4 *)((int)&this->field_0666 + 1) = 0;
                 *(undefined4 *)&this->field_0x742 = 0;
               }
-              goto LAB_0047adb5;
+              goto cf_common_exit_0047ADB5;
             }
             if (iVar9 == 5) {
               if (*(int *)((int)&this->field_0666 + 1) == 0) {
@@ -629,7 +629,7 @@ LAB_0047acdc:
                 thunk_FUN_00495010(this,0xaf);
                 return 0;
               }
-              goto LAB_0047adb5;
+              goto cf_common_exit_0047ADB5;
             }
             if (iVar9 != 6) {
               if (iVar9 != 7) {
@@ -699,7 +699,7 @@ LAB_0047acdc:
                                 );
               *(undefined4 *)((int)&this->field_0666 + 1) = 3;
             }
-            if (*(int *)((int)&this->field_0666 + 1) != 3) goto LAB_0047adb5;
+            if (*(int *)((int)&this->field_0666 + 1) != 3) goto cf_common_exit_0047ADB5;
             local_14 = thunk_FUN_00415ed0(this,&local_18,&local_1c);
             uVar11 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
             *(uint *)&this->field_0x1c = uVar11;
@@ -766,7 +766,7 @@ LAB_0047acdc:
               iVar9 = (*pcVar6)();
               return iVar9;
             }
-            if (local_14 != 0) goto LAB_0047adb5;
+            if (local_14 != 0) goto cf_common_exit_0047ADB5;
             sVar18 = this->field_0639;
             iVar9 = 0;
             sVar19 = this->field_063D;
@@ -850,7 +850,7 @@ joined_r0x0047b202:
                                (int)*(short *)&this->field_0x653,(int)*(short *)&this->field_0x655);
             thunk_FUN_00460260(this,0);
             *(undefined4 *)&this->field_0x663 = 7;
-LAB_0047adb5:
+cf_common_exit_0047ADB5:
             iVar9 = (*this->vtable->vfunc_D8)();
             return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
           }
@@ -885,7 +885,7 @@ joined_r0x0047ada9:
             if (uVar11 == 0) {
               *(undefined4 *)((int)&this->field_0666 + 1) = 2;
             }
-            goto LAB_0047adb5;
+            goto cf_common_exit_0047ADB5;
           }
           if (iVar9 == 2) {
             thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
@@ -893,7 +893,7 @@ joined_r0x0047ada9:
                                this->field_063D * 200 + 300,this->field_0x61);
             *(undefined4 *)((int)&this->field_0666 + 1) = 3;
           }
-          if (*(int *)((int)&this->field_0666 + 1) != 3) goto LAB_0047a369;
+          if (*(int *)((int)&this->field_0666 + 1) != 3) goto cf_common_exit_0047A369;
           local_14 = thunk_FUN_00415ed0(this,&local_20,&local_1c);
           uVar11 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
           *(uint *)&this->field_0x1c = uVar11;
@@ -960,7 +960,7 @@ joined_r0x0047ada9:
             iVar9 = (*pcVar6)();
             return iVar9;
           }
-          if (local_14 != 0) goto LAB_0047a369;
+          if (local_14 != 0) goto cf_common_exit_0047A369;
           if (this->field_0635 == 1) {
             sVar18 = this->field_0643;
             sVar19 = this->field_0647;
@@ -1007,12 +1007,12 @@ LAB_0047a385:
                                  (int)*(short *)&this->field_0x659,(int)*psVar1);
               *(undefined4 *)((int)&this->field_0666 + 1) = 0;
               *(uint *)&this->field_0x663 = (this->field_0635 != 1) + 4;
-              goto LAB_0047a369;
+              goto cf_common_exit_0047A369;
             }
             param_1 = *(int *)((int)DAT_00802a38 + 0xe4);
           }
           CmdToObj(this,CASE_3,&param_1);
-LAB_0047a369:
+cf_common_exit_0047A369:
           iVar9 = (*this->vtable->vfunc_D8)();
           return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
         }

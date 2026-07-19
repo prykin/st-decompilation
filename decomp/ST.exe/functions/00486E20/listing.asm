@@ -65,7 +65,7 @@ LAB_00486e87:
 00486ECA  E8 E8 DA F7 FF            CALL 0x004049b7
 00486ECF  3C 02                     CMP AL,0x2
 00486ED1  75 20                     JNZ 0x00486ef3
-LAB_00486ed3:
+FUN_00486e20::cf_common_exit_00486ED3:
 00486ED3  C6 46 05 03               MOV byte ptr [ESI + 0x5],0x3
 00486ED7  5F                        POP EDI
 00486ED8  5E                        POP ESI
@@ -1498,7 +1498,7 @@ LAB_004881a6:
 004881AD  7C 06                     JL 0x004881b5
 004881AF  C6 46 14 01               MOV byte ptr [ESI + 0x14],0x1
 004881B3  EB 04                     JMP 0x004881b9
-LAB_004881b5:
+FUN_00486e20::cf_common_join_004881B5:
 004881B5  C6 46 14 00               MOV byte ptr [ESI + 0x14],0x0
 switchD_00486f27::default:
 004881B9  8A 4B 24                  MOV CL,byte ptr [EBX + 0x24]

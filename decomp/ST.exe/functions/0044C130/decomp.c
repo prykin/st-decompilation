@@ -207,7 +207,7 @@ STAllPlayersC::GetTOBJImage
       GVar7 = GVar7 + 1;
       local_10 = local_10 + 1;
     } while ((int)GVar7 < 0x11);
-    goto LAB_0044c477;
+    goto cf_common_exit_0044C477;
   case CASE_DC:
   case CASE_DD:
   case CASE_DE:
@@ -260,7 +260,7 @@ STAllPlayersC::GetTOBJImage
     thunk_FUN_005fcf50(param_1,SVar2,0xe,&local_c,(char *)local_154,(undefined1 *)&local_8,&param_2)
     ;
 joined_r0x0044c40d:
-    if (local_154[0] == 0) goto LAB_0044c477;
+    if (local_154[0] == 0) goto cf_common_exit_0044C477;
     goto LAB_0044c44d;
   }
   if (local_154[0] != 0) {
@@ -269,7 +269,7 @@ LAB_0044c44d:
                           0xffffffff,0,1,0,(undefined4 *)0x0);
     local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
   }
-LAB_0044c477:
+cf_common_exit_0044C477:
   uVar4 = FUN_00709470(DAT_00807598,local_54,0x11,1,10,0xff);
   return uVar4;
 }

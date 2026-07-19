@@ -294,7 +294,7 @@ LAB_0050af64:
     switch(this_00->field_0xc3c) {
     case 0:
       UVar10 = 0x36bb;
-      goto LAB_0050b38b;
+      goto cf_common_exit_0050B38B;
     case 1:
       thunk_FUN_00540760((undefined4 *)this_00->field_0194,0x27,0x51,'\x01',
                          *(byte **)&this_00->field_0xa0d);
@@ -344,10 +344,10 @@ LAB_0050af64:
       ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1bc,this_00->field_0194,0,0x28,0x79,0x9b,0xf);
       this_01 = *(ccFntTy **)&this_00->field_0x1bc;
       uVar16 = 1;
-      goto LAB_0050bd93;
+      goto cf_common_exit_0050BD93;
     case 3:
       UVar10 = 0x36be;
-LAB_0050b38b:
+cf_common_exit_0050B38B:
       iVar21 = -1;
       iVar20 = -1;
       uVar16 = 5;
@@ -462,7 +462,7 @@ LAB_0050b38b:
       ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1c4,(uint *)&this_00->field_0x1e1,-1,-1,5);
       ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,0x16,0x69,0xc3,0xe);
       UVar10 = 0x273b;
-      goto LAB_0050b38b;
+      goto cf_common_exit_0050B38B;
     }
     break;
   case 0x5d:
@@ -494,7 +494,7 @@ LAB_0050b38b:
     ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1c4,this_00->field_0194,0,0x91,0x73,0x26,0xf);
     uVar16 = 4;
     this_01 = *(ccFntTy **)&this_00->field_0x1c4;
-    goto LAB_0050bd93;
+    goto cf_common_exit_0050BD93;
   case 0x61:
     ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,0x25,0x50,0xa5,0xc);
     uVar16 = 5;
@@ -610,7 +610,7 @@ LAB_0050b38b:
       ;
 LAB_0050b386:
       UVar10 = 0x2713;
-      goto LAB_0050b38b;
+      goto cf_common_exit_0050B38B;
     }
     thunk_FUN_00540760((undefined4 *)this_00->field_0194,0x28,0x50,'\x01',
                        *(byte **)&this_00->field_0xa11);
@@ -832,7 +832,7 @@ LAB_0050b386:
     this_01 = *(ccFntTy **)&this_00->field_0x1b8;
     uVar16 = 5;
     puVar12 = &DAT_0080f33a;
-LAB_0050bd93:
+cf_common_exit_0050BD93:
     ccFntTy::WrStr(this_01,puVar12,-1,-1,uVar16);
     break;
   case 0x70:

@@ -75,7 +75,7 @@ void __fastcall FUN_0058bd90(int *param_1)
   case 3:
     goto switchD_0058bec9_caseD_0;
   default:
-    goto switchD_0058bec9_caseD_1;
+    goto cf_common_exit_0058C391;
   case 2:
     goto switchD_0058bec9_caseD_2;
   case 4:
@@ -107,7 +107,7 @@ switchD_0058bec9_caseD_2:
                  *(int *)((int)param_1 + 0x249) * 2 - *(int *)((int)param_1 + 0x251);
             *(int *)((int)param_1 + 0x255) =
                  *(int *)((int)param_1 + 0x24d) * 2 - *(int *)((int)param_1 + 0x255);
-            goto switchD_0058bec9_caseD_1;
+            goto cf_common_exit_0058C391;
           }
           thunk_FUN_004ace60((void *)((int)param_1 + 0x1d5),'\x0e');
           thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),
@@ -203,7 +203,7 @@ switchD_0058bec9_caseD_0:
         if (iVar5 == 3) {
           thunk_FUN_0058c560(param_1,*(int *)((int)param_1 + 0x249),*(int *)((int)param_1 + 0x24d));
         }
-        goto switchD_0058bec9_caseD_1;
+        goto cf_common_exit_0058C391;
       }
       thunk_FUN_004ace30((void *)((int)param_1 + 0x1d5),*(uint *)(DAT_00806724 + 0x30 + iVar5 * 4),
                          (int)*(short *)(DAT_00806724 + 0x2c));
@@ -228,7 +228,7 @@ LAB_0058c38c:
     *(short *)((int)param_1 + 0x45) = *(short *)((int)param_1 + 0x45) + 0x12;
     *(undefined4 *)((int)param_1 + 0x231) = 6;
   }
-switchD_0058bec9_caseD_1:
+cf_common_exit_0058C391:
   STT3DSprC::ShowCurFase((STT3DSprC *)((int)param_1 + 0x1d5),'\x0e');
   (**(code **)(*param_1 + 0xd8))();
   return;

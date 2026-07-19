@@ -128,7 +128,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       }
       thunk_FUN_00481520(this,(int)local_6,(int)local_8,(int)sVar16);
       thunk_FUN_00460260(this,0);
-      goto LAB_0047405d;
+      goto cf_common_exit_0047405D;
     }
     this->field_0596 = 1;
     uVar3 = extraout_var_08;
@@ -159,14 +159,14 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       if ((((local_c == (int *)0x0) || (local_c[6] != this->field_058E)) &&
           (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&local_c), iVar9 == -4)) ||
          ((iVar9 = (**(code **)(*local_c + 0xa4))(), iVar9 == 1 ||
-          (iVar9 = (**(code **)(*local_c + 0xc0))(), iVar9 == 1)))) goto LAB_004743a5;
+          (iVar9 = (**(code **)(*local_c + 0xc0))(), iVar9 == 1)))) goto cf_common_exit_004743A5;
       thunk_FUN_004162f0(local_c,(undefined2 *)&this->field_0x588,&this->field_058A,
                          &this->field_058C);
       iVar9 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
                                 *(short *)&this->field_0x588,this->field_058A,this->field_058C,
                                 &local_6,&local_8,(undefined2 *)((int)&param_1 + 2),
                                 (short *)&local_18,(short *)&local_14,(undefined2 *)&local_10);
-      if (iVar9 == -2) goto LAB_004743a5;
+      if (iVar9 == -2) goto cf_common_exit_004743A5;
       if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
          (this->field_005F != param_1._2_2_)) {
         if (iVar9 == -1) {
@@ -227,7 +227,7 @@ int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)
       }
       iVar9 = (**(code **)(*local_c + 0xa4))();
       if ((iVar9 == 1) || (iVar9 = (**(code **)(*local_c + 0xc0))(), iVar9 == 1)) {
-LAB_004743a5:
+cf_common_exit_004743A5:
         thunk_FUN_00492420((int *)this);
         return 0;
       }
@@ -237,7 +237,7 @@ LAB_004743a5:
                                 *(short *)&this->field_0x588,this->field_058A,this->field_058C,
                                 &local_6,&local_8,(undefined2 *)((int)&param_1 + 2),
                                 (short *)&local_18,(short *)&local_14,(undefined2 *)&local_10);
-      if (iVar9 == -2) goto LAB_004743a5;
+      if (iVar9 == -2) goto cf_common_exit_004743A5;
       if (((this->field_005B != local_6) || (this->field_005D != local_8)) ||
          (this->field_005F != param_1._2_2_)) {
         this->field_0596 = 0;
@@ -303,7 +303,7 @@ LAB_004736e2:
       iVar9 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar9 != 0);
     }
-LAB_0047405d:
+cf_common_exit_0047405D:
     iVar9 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar9 != 0) & 0xfffffffd) + 2;
   }
@@ -506,7 +506,7 @@ switchD_004734db_caseD_2:
       }
       if (uVar6 == 0) {
         this->field_059A = 7;
-        goto LAB_0047405d;
+        goto cf_common_exit_0047405D;
       }
     }
     if (this->field_059A == 7) {

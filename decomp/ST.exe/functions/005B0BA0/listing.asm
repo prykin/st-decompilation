@@ -173,7 +173,7 @@ LAB_005b0dc0:
 005B0DC6  51                        PUSH ECX
 005B0DC7  8B CB                     MOV ECX,EBX
 005B0DC9  E8 3E 2D E5 FF            CALL 0x00403b0c
-switchD_005b0d25::caseD_3:
+ChooseMapTy::GetMessage::cf_common_exit_005B0DCE:
 005B0DCE  6A FF                     PUSH -0x1
 005B0DD0  6A 01                     PUSH 0x1
 005B0DD2  6A 0A                     PUSH 0xa
@@ -1708,7 +1708,7 @@ LAB_005b2011:
 005B204A  6A 02                     PUSH 0x2
 005B204C  8B CB                     MOV ECX,EBX
 005B204E  E8 2D 40 13 00            CALL 0x006e6080
-switchD_005b0c37::caseD_1:
+ChooseMapTy::GetMessage::cf_common_exit_005B2053:
 005B2053  8B 4D 80                  MOV ECX,dword ptr [EBP + -0x80]
 005B2056  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 005B2059  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

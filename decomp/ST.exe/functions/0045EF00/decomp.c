@@ -59,7 +59,7 @@ STBoatC::CmdToObj(STBoatC *this,STBoatC_CmdToObj_param_1Enum param_1,undefined4 
   case CASE_7:
     this->field_02E4 = 1;
     puVar4 = (undefined4 *)&this->field_0x3d4;
-    goto LAB_0045f1a9;
+    goto cf_common_exit_0045F1A9;
   case CASE_8:
     this->field_02E8 = 1;
     *(undefined4 *)&this->field_0x437 = *param_2;
@@ -85,7 +85,7 @@ LAB_0045f0e0:
   case CASE_B:
     this->field_02F4 = 1;
     puVar4 = (undefined4 *)&this->field_0x41f;
-    goto LAB_0045f1a9;
+    goto cf_common_exit_0045F1A9;
   case CASE_C:
     this->field_02F8 = 1;
     puVar4 = (undefined4 *)&this->field_0x34f;
@@ -98,7 +98,7 @@ LAB_0045f0e0:
   case CASE_D:
     this->field_02FC = 1;
     puVar4 = (undefined4 *)&this->field_0x392;
-LAB_0045f1a9:
+cf_common_exit_0045F1A9:
     *puVar4 = *param_2;
     puVar4[1] = param_2[1];
     *(undefined2 *)(puVar4 + 2) = *(undefined2 *)(param_2 + 2);

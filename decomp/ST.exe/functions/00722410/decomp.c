@@ -495,7 +495,7 @@ LAB_00722e7f:
             bVar6 = true;
           }
         }
-        if (*(int *)(this_00 + 0x1c) != 1) goto switchD_00722eb2_caseD_38;
+        if (*(int *)(this_00 + 0x1c) != 1) goto cf_switch_join_007231FD;
         if (bVar6) break;
         FUN_00721cd0(this_00,1);
       }
@@ -504,12 +504,12 @@ LAB_00722e7f:
     }
   }
   if ((*(int *)(this_00 + 0x1c) != 1) || (*(int *)(this_00 + 0x138) == 0))
-  goto switchD_00722eb2_caseD_38;
+  goto cf_switch_join_007231FD;
   switch(param_1[4]) {
   case 0x34:
     if ((((byte)this_00[0x20] & 4) != 0) ||
        (uVar11 = Library::MSVCRT::FUN_007348d0(param_1[5]), uVar11 != 0))
-    goto switchD_00722eb2_caseD_38;
+    goto cf_switch_join_007231FD;
     this_00[(char)this_00[0x1d7] + 0x1d4] = *(ControlClassTy *)(param_1 + 5);
     CVar2 = this_00[0x1d7];
     this_00[0x1d7] = (ControlClassTy)((char)CVar2 + '\x01');
@@ -518,7 +518,7 @@ LAB_00722e7f:
       BVar8 = IsDBCSLeadByte((BYTE)param_1[5]);
       if (BVar8 != 0) {
         *(undefined4 *)(this_00 + 0x1d8) = 1;
-        goto switchD_00722eb2_caseD_38;
+        goto cf_switch_join_007231FD;
       }
     }
     else {
@@ -546,7 +546,7 @@ LAB_0072300e:
 LAB_0072301d:
       if (iVar7 != 0) {
         local_8 = 0xffff;
-        goto switchD_00722eb2_caseD_38;
+        goto cf_switch_join_007231FD;
       }
     }
     goto LAB_00722fb6;
@@ -559,10 +559,10 @@ LAB_0072301d:
 LAB_00722fb6:
     FUN_00721a20(this_00,1);
   default:
-    goto switchD_00722eb2_caseD_38;
+    goto cf_switch_join_007231FD;
   case 0x39:
     uVar11 = *(uint *)(this_00 + 0x20);
-    if ((uVar11 & 4) != 0) goto switchD_00722eb2_caseD_38;
+    if ((uVar11 & 4) != 0) goto cf_switch_join_007231FD;
     if ((uVar11 & 1) == 0) {
       if (((uVar11 & 2) != 0) || (uVar11 = FUN_00721340((int)this_00), uVar11 == 0)) {
         FUN_00721080(this_00,0xffe,*(int *)(this_00 + 0x20c) + 1);
@@ -571,7 +571,7 @@ LAB_00722fb6:
       }
       goto LAB_007231f1;
     }
-    if (*(int *)(this_00 + 0x19c) == 0) goto switchD_00722eb2_caseD_38;
+    if (*(int *)(this_00 + 0x19c) == 0) goto cf_switch_join_007231FD;
     iVar7 = FUN_006e5fe0(this_00,(undefined4 *)(this_00 + 0x18c));
     goto LAB_007231ed;
   case 0x3a:
@@ -597,7 +597,7 @@ LAB_00722fb6:
     iVar7 = (**(code **)(*(int *)this_00 + 4))();
     if (iVar7 != 0) {
       local_8 = 0xffff;
-      goto switchD_00722eb2_caseD_38;
+      goto cf_switch_join_007231FD;
     }
     goto LAB_0072306b;
   case 0x3c:
@@ -642,10 +642,10 @@ LAB_00722fb6:
     iVar7 = *(int *)(this_00 + 0x1bc);
     *(undefined4 *)(this_00 + 0x1c0) = 1;
 joined_r0x007231dd:
-    if (iVar7 == 0) goto switchD_00722eb2_caseD_38;
+    if (iVar7 == 0) goto cf_switch_join_007231FD;
     iVar7 = FUN_006e6020(this_00,(undefined4 *)(this_00 + 0x1ac));
 LAB_007231ed:
-    if (iVar7 == 0) goto switchD_00722eb2_caseD_38;
+    if (iVar7 == 0) goto cf_switch_join_007231FD;
     goto LAB_007231f1;
   }
   if (iVar7 == 0) {
@@ -656,7 +656,7 @@ LAB_0072306b:
 LAB_007231f1:
     local_8 = 0xffff;
   }
-switchD_00722eb2_caseD_38:
+cf_switch_join_007231FD:
   if (local_8 != 0) {
     RaiseInternalException(local_8,DAT_007ed77c,s_E__Ourlib__sedit_cpp_007f0b08,0x34e);
   }

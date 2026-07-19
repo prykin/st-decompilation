@@ -31,7 +31,7 @@ undefined4 __thiscall FUN_004e2c30(void *this,uint param_1)
   
   uVar1 = thunk_FUN_004e6140(*(int *)((int)this + 0x24),param_1);
   iVar2 = thunk_FUN_004e60d0(*(int *)((int)this + 0x24),param_1);
-  if (CONCAT31(extraout_var,uVar1) <= iVar2) goto LAB_004e2fe4;
+  if (CONCAT31(extraout_var,uVar1) <= iVar2) goto cf_common_exit_004E2FE4;
   iVar2 = thunk_FUN_004ac910((void *)((int)this + 0x1d5),'\f');
   if (iVar2 != *(int *)(*(int *)((int)this + 0x1f5) + 0x1c4)) {
     return 0;
@@ -100,7 +100,7 @@ undefined4 __thiscall FUN_004e2c30(void *this,uint param_1)
     } while ((int)local_10 < 0x9b);
   }
   if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
-  goto LAB_004e2fe4;
+  goto cf_common_exit_004E2FE4;
   thunk_FUN_0052af50(0,*(float *)((int)this + 0x1f9),*(float *)((int)this + 0x1fd));
   piVar11 = &local_c;
   piVar10 = &local_8;
@@ -171,14 +171,14 @@ LAB_004e2f8d:
   else {
     if (uVar5 == 2) {
       (**(code **)(*(int *)this + 0x90))(4,0x2d5);
-      goto LAB_004e2fe4;
+      goto cf_common_exit_004E2FE4;
     }
-    if (uVar5 != 3) goto LAB_004e2fe4;
+    if (uVar5 != 3) goto cf_common_exit_004E2FE4;
     iVar2 = *(int *)this;
     uVar4 = 0x390;
   }
   (**(code **)(iVar2 + 0x90))(4,uVar4);
-LAB_004e2fe4:
+cf_common_exit_004E2FE4:
   *(undefined4 *)((int)this + 0x4d0) = 0;
   TLOBaseTy::RotateSpr(this,1);
   return 1;

@@ -890,7 +890,7 @@ LAB_004afa71:
 004AFA8B  C7 45 D0 01 00 00 00      MOV dword ptr [EBP + -0x30],0x1
 LAB_004afa92:
 004AFA92  8B 5D E8                  MOV EBX,dword ptr [EBP + -0x18]
-LAB_004afa95:
+FUN_004af080::cf_common_join_004AFA95:
 004AFA95  0F BF 05 46 B2 7F 00      MOVSX EAX,word ptr [0x007fb246]
 004AFA9C  0F AF 45 F0               IMUL EAX,dword ptr [EBP + -0x10]
 004AFAA0  8B 4D DC                  MOV ECX,dword ptr [EBP + -0x24]
@@ -1048,7 +1048,7 @@ LAB_004afc0f:
 004AFC29  89 18                     MOV dword ptr [EAX],EBX
 004AFC2B  89 11                     MOV dword ptr [ECX],EDX
 004AFC2D  C7 45 B4 01 00 00 00      MOV dword ptr [EBP + -0x4c],0x1
-LAB_004afc34:
+FUN_004af080::cf_common_join_004AFC34:
 004AFC34  8B 4D EC                  MOV ECX,dword ptr [EBP + -0x14]
 004AFC37  0F BF 05 40 B2 7F 00      MOVSX EAX,word ptr [0x007fb240]
 004AFC3E  41                        INC ECX

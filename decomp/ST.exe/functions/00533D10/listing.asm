@@ -3373,7 +3373,7 @@ LAB_00536434:
 00536436  50                        PUSH EAX
 00536437  68 5A 33 40 00            PUSH 0x40335a
 0053643C  68 F0 3E 00 00            PUSH 0x3ef0
-LAB_00536441:
+OptPanelTy::GetMessage::cf_common_exit_00536441:
 00536441  56                        PUSH ESI
 00536442  68 50 73 7C 00            PUSH 0x7c7350
 00536447  E8 30 F3 EC FF            CALL 0x0040577c
@@ -4209,7 +4209,7 @@ LAB_00536d9f:
 00536DAB  E9 38 01 00 00            JMP 0x00536ee8
 switchD_00536c09::caseD_3:
 00536DB0  68 50 27 00 00            PUSH 0x2750
-LAB_00536db5:
+OptPanelTy::GetMessage::cf_common_exit_00536DB5:
 00536DB5  56                        PUSH ESI
 00536DB6  68 94 38 7C 00            PUSH 0x7c3894
 00536DBB  E8 BC E9 EC FF            CALL 0x0040577c
@@ -4316,7 +4316,7 @@ LAB_00536edc:
 00536EDD  50                        PUSH EAX
 00536EDE  68 5B 23 40 00            PUSH 0x40235b
 00536EE3  68 05 3F 00 00            PUSH 0x3f05
-LAB_00536ee8:
+OptPanelTy::GetMessage::cf_common_exit_00536EE8:
 00536EE8  56                        PUSH ESI
 00536EE9  6A 01                     PUSH 0x1
 00536EEB  56                        PUSH ESI
@@ -4378,10 +4378,10 @@ LAB_00536f77:
 LAB_00536f85:
 00536F85  50                        PUSH EAX
 00536F86  68 87 3E 00 00            PUSH 0x3e87
-LAB_00536f8b:
+OptPanelTy::GetMessage::cf_common_exit_00536F8B:
 00536F8B  8B 83 80 01 00 00         MOV EAX,dword ptr [EBX + 0x180]
 00536F91  50                        PUSH EAX
-LAB_00536f92:
+OptPanelTy::GetMessage::cf_common_exit_00536F92:
 00536F92  56                        PUSH ESI
 00536F93  6A 01                     PUSH 0x1
 00536F95  56                        PUSH ESI
@@ -4396,7 +4396,7 @@ LAB_00536f92:
 00536FAF  6A 01                     PUSH 0x1
 00536FB1  57                        PUSH EDI
 00536FB2  E8 EA AE EC FF            CALL 0x00401ea1
-switchD_005347d0::caseD_c0a7:
+OptPanelTy::GetMessage::cf_common_exit_00536FB7:
 00536FB7  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 00536FBD  33 C0                     XOR EAX,EAX
 00536FBF  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

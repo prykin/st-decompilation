@@ -7,10 +7,10 @@ void __thiscall FUN_0052b760(void *this,int param_1)
   switch(*(undefined1 *)((int)this + 0x68)) {
   case 1:
     *(undefined2 *)(param_1 + 0x14) = 3;
-    goto LAB_0052b7b9;
+    goto cf_common_exit_0052B7B9;
   case 2:
     *(undefined2 *)(param_1 + 0x14) = 2;
-    goto LAB_0052b7b9;
+    goto cf_common_exit_0052B7B9;
   case 3:
     uVar1 = (-(ushort)(DAT_0080874e != '\x03') & 0xfffd) + 4;
     break;
@@ -18,7 +18,7 @@ void __thiscall FUN_0052b760(void *this,int param_1)
     uVar1 = (DAT_0080874e != '\x03') - 1 & 5;
   }
   *(ushort *)(param_1 + 0x14) = uVar1;
-LAB_0052b7b9:
+cf_common_exit_0052B7B9:
   *(undefined2 *)(param_1 + 0x16) = 2;
   switch(*(undefined1 *)((int)this + 0x68)) {
   case 1:

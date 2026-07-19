@@ -75,7 +75,7 @@ LAB_0042d5a8:
 0042D5B5  74 31                     JZ 0x0042d5e8
 0042D5B7  83 EA 0A                  SUB EDX,0xa
 0042D5BA  74 2C                     JZ 0x0042d5e8
-LAB_0042d5bc:
+STAllPlayersC::ResetActivityFromTmp::cf_common_exit_0042D5BC:
 0042D5BC  68 DC 63 7A 00            PUSH 0x7a63dc
 0042D5C1  68 CC 4C 7A 00            PUSH 0x7a4ccc
 0042D5C6  6A 00                     PUSH 0x0

@@ -415,7 +415,7 @@ undefined4 __thiscall STOctopusC::GetMessage(STOctopusC *this,int param_1)
                          (byte *)s_octopus2_007cb9f0,0x1d);
       if (iVar7 != 0) {
         iVar7 = 0xe9;
-LAB_0058a005:
+cf_error_exit_0058A005:
         RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_oct_cpp_007cba18,iVar7);
       }
       break;
@@ -425,7 +425,7 @@ LAB_0058a005:
                          (byte *)s_octopus1_007cb9dc,0x1d);
       if (iVar7 != 0) {
         iVar7 = 0xe4;
-        goto LAB_0058a005;
+        goto cf_error_exit_0058A005;
       }
       break;
     case 0xfa:
@@ -434,7 +434,7 @@ LAB_0058a005:
                          (byte *)s_medusa2_007cb9fc,0x1d);
       if (iVar7 != 0) {
         iVar7 = 0xf3;
-        goto LAB_0058a005;
+        goto cf_error_exit_0058A005;
       }
       break;
     case 0xfb:
@@ -443,7 +443,7 @@ LAB_0058a005:
                          (byte *)s_medusa1_007cb9e8,0x1d);
       if (iVar7 != 0) {
         iVar7 = 0xee;
-        goto LAB_0058a005;
+        goto cf_error_exit_0058A005;
       }
     }
     thunk_FUN_004ac610(&this_00->field_01D5,'\x0e');

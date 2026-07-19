@@ -94,7 +94,7 @@ LAB_004715b6:
 004715E1  85 C0                     TEST EAX,EAX
 004715E3  75 0A                     JNZ 0x004715ef
 004715E5  C7 86 84 05 00 00 05 00 00 00  MOV dword ptr [ESI + 0x584],0x5
-LAB_004715ef:
+STBoatC::BackToDok::cf_common_exit_004715EF:
 004715EF  8B 16                     MOV EDX,dword ptr [ESI]
 004715F1  8B CE                     MOV ECX,ESI
 004715F3  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]

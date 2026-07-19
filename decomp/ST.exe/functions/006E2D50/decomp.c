@@ -21,7 +21,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
           *(short *)param_1 = (short)*param_2 + (short)param_6;
           piVar5 = (int *)((int)param_1 + -2);
           iVar3 = param_4 + -1;
-          if (iVar3 == 0 || param_4 < 1) goto LAB_006e2f66;
+          if (iVar3 == 0 || param_4 < 1) goto cf_continue_loop_006E2F66;
         }
         piVar4 = (int *)((int)piVar4 + -2);
         piVar5 = (int *)((int)piVar5 + -2);
@@ -44,7 +44,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
           *(short *)param_1 = (short)*param_2 + (short)param_6;
           piVar5 = (int *)((int)param_1 + -2);
           iVar3 = param_4 + -1;
-          if (iVar3 == 0 || param_4 < 1) goto LAB_006e2f66;
+          if (iVar3 == 0 || param_4 < 1) goto cf_continue_loop_006E2F66;
         }
         piVar4 = (int *)((int)piVar4 + -2);
         piVar5 = (int *)((int)piVar5 + -2);
@@ -58,7 +58,7 @@ void FUN_006e2d50(int *param_1,int *param_2,int param_3,int param_4,int param_5,
           *(short *)((int)piVar5 + 2) = *(short *)((int)piVar4 + 2) + (short)param_6;
         }
       }
-LAB_006e2f66:
+cf_continue_loop_006E2F66:
       param_2 = (int *)((int)param_2 - param_3);
       param_1 = (int *)((int)param_1 - param_3);
       param_5 = param_5 + -1;
@@ -75,7 +75,7 @@ LAB_006e2f66:
           *(short *)param_1 = (short)*param_2 + (short)param_6;
           piVar5 = (int *)((int)param_1 + 2);
           iVar3 = param_4 + -1;
-          if (iVar3 == 0 || param_4 < 1) goto LAB_006e2e31;
+          if (iVar3 == 0 || param_4 < 1) goto cf_continue_loop_006E2E31;
         }
         while (1 < iVar3) {
           *piVar5 = *piVar4 - CONCAT22(-(short)param_6,-(short)param_6);
@@ -96,7 +96,7 @@ LAB_006e2f66:
           *(short *)param_1 = (short)*param_2 + (short)param_6;
           piVar5 = (int *)((int)param_1 + 2);
           iVar3 = param_4 + -1;
-          if (iVar3 == 0 || param_4 < 1) goto LAB_006e2e31;
+          if (iVar3 == 0 || param_4 < 1) goto cf_continue_loop_006E2E31;
         }
         while (1 < iVar3) {
           *piVar5 = *piVar4 + CONCAT22((short)param_6,(short)param_6);
@@ -108,7 +108,7 @@ LAB_006e2f66:
           *(short *)piVar5 = (short)*piVar4 + (short)param_6;
         }
       }
-LAB_006e2e31:
+cf_continue_loop_006E2E31:
       param_2 = (int *)((int)param_2 + param_3);
       param_1 = (int *)((int)param_1 + param_3);
       param_5 = param_5 + -1;

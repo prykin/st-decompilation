@@ -98,7 +98,7 @@ LAB_0046f0c0:
 0046F0EB  85 C0                     TEST EAX,EAX
 0046F0ED  75 0A                     JNZ 0x0046f0f9
 0046F0EF  C7 86 50 05 00 00 05 00 00 00  MOV dword ptr [ESI + 0x550],0x5
-LAB_0046f0f9:
+STBoatC::BackUnLoadRC::cf_common_exit_0046F0F9:
 0046F0F9  8B 06                     MOV EAX,dword ptr [ESI]
 0046F0FB  8B CE                     MOV ECX,ESI
 0046F0FD  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
@@ -125,7 +125,7 @@ LAB_0046f114:
 0046F138  CC                        INT3
 LAB_0046f139:
 0046F139  68 2A 28 00 00            PUSH 0x282a
-LAB_0046f13e:
+STBoatC::BackUnLoadRC::cf_error_exit_0046F13E:
 0046F13E  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 0046F144  68 3C 9D 7A 00            PUSH 0x7a9d3c
 0046F149  51                        PUSH ECX

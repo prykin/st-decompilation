@@ -52,7 +52,7 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
                                  CONCAT31((int3)(local_14 >> 8),*(undefined1 *)(param_1 + 0x24)),
                                  CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
         if ((this == (int *)0x0) || (iVar8 = (**(code **)(*this + 0xf8))(), iVar8 == 0))
-        goto LAB_0065df91;
+        goto cf_common_join_0065DF91;
         uVar4 = (**(code **)(*this + 0x2c))();
         if (param_4 != 0) {
           if (uVar4 == 0x78) {
@@ -65,7 +65,7 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
                 else {
                   uVar5 = 0;
                 }
-                if ((param_4 & 0x3fffffff) != uVar5) goto LAB_0065df91;
+                if ((param_4 & 0x3fffffff) != uVar5) goto cf_common_join_0065DF91;
               }
               goto LAB_0065de3c;
             }
@@ -73,7 +73,7 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
           else if (((param_4 & 0x40000000) == 0) &&
                   (((param_4 & 0x3fffffff) == 0 || ((param_4 & 0x3fffffff) == uVar4))))
           goto LAB_0065de3c;
-          goto LAB_0065df91;
+          goto cf_common_join_0065DF91;
         }
 LAB_0065de3c:
         if (param_3 == 0x3fffffff) {
@@ -99,7 +99,7 @@ LAB_0065deea:
             } while (bVar1 != 0);
             iVar8 = 0;
 LAB_0065deef:
-            if (iVar8 != 0) goto LAB_0065df91;
+            if (iVar8 != 0) goto cf_common_join_0065DF91;
           }
           if (((param_5 == -1) || (iVar8 = (**(code **)(*this + 0x6c))(), param_5 == iVar8)) &&
              (((param_10 < 1 || ((param_11 < 1 || (param_12 < 1)))) ||
@@ -129,7 +129,7 @@ joined_r0x0065dea0:
           uVar4 = thunk_FUN_00674fb0(uVar4);
           goto joined_r0x0065dea0;
         }
-LAB_0065df91:
+cf_common_join_0065DF91:
         local_14 = local_14 + 1;
         uVar4 = local_1c[3];
         param_1 = local_18;

@@ -48,7 +48,7 @@ int __thiscall AppClassTy::SendMessage(AppClassTy *this,uint param_1,int param_2
   case 0:
     piVar4 = (int *)FUN_006e45a0(local_c,param_2);
     if ((piVar4 == (int *)0x0) || (((param_1 & 0x80000000) == 0 && (*piVar4 != 1))))
-    goto switchD_006e3e37_caseD_4;
+    goto cf_common_exit_006E4031;
     iVar3 = (**(code **)(*(int *)piVar4[1] + 0x20))(param_3);
     break;
   case 1:
@@ -58,7 +58,7 @@ int __thiscall AppClassTy::SendMessage(AppClassTy *this,uint param_1,int param_2
     iVar3 = FUN_006e3a70(local_c,param_2,(int *)0x0,&local_10);
     if ((iVar3 != 0) ||
        (((*(uint *)(param_3 + 0xc) & 0x80000000) == 0 &&
-        (iVar3 = FUN_006e4d40(pAVar2,local_10[3]), iVar3 != 1)))) goto switchD_006e3e37_caseD_4;
+        (iVar3 = FUN_006e4d40(pAVar2,local_10[3]), iVar3 != 1)))) goto cf_common_exit_006E4031;
     iVar3 = (**(code **)*local_10)(param_3);
     break;
   case 3:
@@ -128,7 +128,7 @@ LAB_006e3f72:
       RaiseInternalException(iVar3,0,s_E__Ourlib_Sapp_cpp_007ee78c,0x10b);
     }
   default:
-    goto switchD_006e3e37_caseD_4;
+    goto cf_common_exit_006E4031;
   case 0xf:
     local_8 = 0;
     iVar3 = (*local_c->vtable->vfunc_18)(param_3);
@@ -136,10 +136,10 @@ LAB_006e3f72:
       local_8 = iVar3;
     }
     iVar3 = SendMessageToAllSystemsInArr(pAVar2,pAVar2->field_0010,param_3);
-    if (iVar3 == 0) goto switchD_006e3e37_caseD_4;
+    if (iVar3 == 0) goto cf_common_exit_006E4031;
   }
   local_8 = iVar3;
-switchD_006e3e37_caseD_4:
+cf_common_exit_006E4031:
   iVar3 = local_8;
   if (local_8 == 0xffff) {
     RaiseInternalException(0xffff,DAT_007ed77c,s_E__Ourlib_Sapp_cpp_007ee78c,0x122);

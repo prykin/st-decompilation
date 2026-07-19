@@ -44,7 +44,7 @@ LAB_0074bbef:
         pcVar3 = pcVar3 + 1;
         pcVar4 = pcVar4 + 1;
       } while (bVar5);
-      if (!bVar5) goto LAB_0074bc42;
+      if (!bVar5) goto cf_common_exit_0074BC42;
     }
     iVar2 = 0x10;
     bVar5 = true;
@@ -70,7 +70,7 @@ LAB_0074bbef:
         pcVar4 = pcVar4 + 1;
       } while (bVar5);
       if ((!bVar5) || (iVar2 = *(int *)((int)this + 0x40), iVar2 != *(int *)(param_1 + 0x40)))
-      goto LAB_0074bc42;
+      goto cf_common_exit_0074BC42;
       if (iVar2 != 0) {
         bVar5 = true;
         pcVar3 = *(char **)((int)this + 0x44);
@@ -82,7 +82,7 @@ LAB_0074bbef:
           pcVar3 = pcVar3 + 1;
           pcVar4 = pcVar4 + 1;
         } while (bVar5);
-        if (!bVar5) goto LAB_0074bc42;
+        if (!bVar5) goto cf_common_exit_0074BC42;
       }
     }
     uVar1 = 1;
@@ -100,7 +100,7 @@ LAB_0074bbef:
       pcVar4 = pcVar4 + 1;
     } while (bVar5);
     if (bVar5) goto LAB_0074bbef;
-LAB_0074bc42:
+cf_common_exit_0074BC42:
     uVar1 = 0;
   }
   return uVar1;

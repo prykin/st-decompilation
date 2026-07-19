@@ -40,7 +40,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   if (DAT_0080874e == '\x03') {
     thunk_FUN_00540760((undefined4 *)local_8->field_0194,0xf,0x8d,'\x01',
                        *(byte **)&local_8->field_0x9f1);
-    if (*(int *)&pCVar2->field_0xc4d == 0) goto LAB_00504f81;
+    if (*(int *)&pCVar2->field_0xc4d == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,pCVar2->field_0194,0,0x10,0x8e,
                      *(int *)(*(int *)&pCVar2->field_0x9f1 + 4),0xb);
     UVar6 = *(UINT *)&pCVar2->field_0xc4d;
@@ -48,7 +48,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   else {
     thunk_FUN_00540760((undefined4 *)local_8->field_0194,4,0x89,'\x01',
                        *(byte **)&local_8->field_0x9f1);
-    if (*(int *)&pCVar2->field_0xc4d == 0) goto LAB_00504f81;
+    if (*(int *)&pCVar2->field_0xc4d == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,pCVar2->field_0194,0,6,0x8b,200,0xb);
     UVar6 = *(UINT *)&pCVar2->field_0xc4d;
   }
@@ -59,7 +59,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
   iVar3 = -2;
   puVar4 = (uint *)FUN_006b0140(UVar6,DAT_00807618);
   ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,puVar4,iVar3,iVar5,uVar7,iVar8,iVar9);
-LAB_00504f81:
+cf_common_exit_00504F81:
   if (-1 < (int)*(uint *)&pCVar2->field_0x15c) {
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,*(uint *)&pCVar2->field_0x15c,0xffffffff,*(uint *)&pCVar2->field_0x50,

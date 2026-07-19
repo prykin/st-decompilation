@@ -176,7 +176,7 @@ LAB_005ce9b2:
                              (undefined4 *)0x0,0,0);
         }
         else {
-          if (iVar3 != 1) goto LAB_005cf38c;
+          if (iVar3 != 1) goto cf_continue_loop_005CF38C;
           iVar3 = this_00->field_0061;
           *(int *)&this_00[1].field_0xec = iVar3;
           switch(local_28) {
@@ -551,7 +551,7 @@ LAB_005cef5d:
             FUN_006ab060(&local_c);
           }
         }
-        goto LAB_005cf38c;
+        goto cf_continue_loop_005CF38C;
       }
       if (iVar3 == -0x4d) {
         this_00[1].field_0x108 = 1;
@@ -573,9 +573,9 @@ LAB_005cef5d:
         piVar8 = local_bc;
 LAB_005cf387:
         (*(code *)*puVar5)(piVar8);
-        goto LAB_005cf38c;
+        goto cf_continue_loop_005CF38C;
       }
-      if (iVar3 != 1) goto LAB_005cf38c;
+      if (iVar3 != 1) goto cf_continue_loop_005CF38C;
       switch(local_28) {
       case 0x11:
         DeletePlayer(this_00,local_18);
@@ -700,7 +700,7 @@ LAB_005ce59f:
         }
         break;
       case 0x25:
-        if (local_c == (uint *)0x0) goto LAB_005cf38c;
+        if (local_c == (uint *)0x0) goto cf_continue_loop_005CF38C;
         if (((3 < local_2c) && (DAT_00807361 != '\0')) && (this_00[1].field_0x126 != '\0')) {
           if ((*(int *)(*(int *)&this_00->field_0x1a5b + 0x69a) == 0) &&
              (thunk_FUN_005de670(*(int *)&this_00->field_0x1a5b),
@@ -797,7 +797,7 @@ LAB_005ce8fe:
       if (local_c != (uint *)0x0) {
         FUN_006ab060(&local_c);
       }
-LAB_005cf38c:
+cf_continue_loop_005CF38C:
       local_1c = local_1c + 1;
     } while ((int)local_1c < local_30);
   }

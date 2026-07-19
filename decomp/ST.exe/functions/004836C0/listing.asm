@@ -79,7 +79,7 @@ LAB_004837a4:
 004837CC  5E                        POP ESI
 004837CD  5B                        POP EBX
 004837CE  C3                        RET
-LAB_004837cf:
+FUN_004836c0::cf_common_exit_004837CF:
 004837CF  5F                        POP EDI
 004837D0  5E                        POP ESI
 004837D1  66 33 C0                  XOR AX,AX

@@ -753,7 +753,7 @@ switchD_0051ea9b_caseD_0:
       g_currentExceptionFrame = local_84.previous;
       return 0;
     default:
-      goto switchD_0051e4d9_caseD_7;
+      goto cf_common_exit_0051F19A;
     }
   }
   else {
@@ -787,7 +787,7 @@ switchD_0051ea9b_caseD_0:
       g_currentExceptionFrame = local_84.previous;
       return 0;
     default:
-      goto switchD_0051e4d9_caseD_7;
+      goto cf_common_exit_0051F19A;
     case 0xc0af:
       pcVar9 = s_BUT_HLPHOME_007c3884;
       break;
@@ -814,7 +814,7 @@ switchD_0051ea9b_caseD_0:
     bVar17 = 1;
   }
   UPanelTy::PaintBut((UPanelTy *)this_00,param_1,bVar17,pCVar11,pcVar20);
-switchD_0051e4d9_caseD_7:
+cf_common_exit_0051F19A:
   g_currentExceptionFrame = local_84.previous;
   return 0;
 switchD_0051e4d9_caseD_6:

@@ -440,7 +440,7 @@ LAB_004bef3f:
 004BEF4D  83 BE D0 04 00 00 01      CMP dword ptr [ESI + 0x4d0],0x1
 LAB_004bef54:
 004BEF54  0F 85 1E 13 00 00         JNZ 0x004c0278
-LAB_004bef5a:
+FUN_004bea70::cf_common_join_004BEF5A:
 004BEF5A  B8 01 00 00 00            MOV EAX,0x1
 LAB_004bef5f:
 004BEF5F  88 43 10                  MOV byte ptr [EBX + 0x10],AL
@@ -1422,6 +1422,7 @@ switchD_004bec4d::caseD_64:
 LAB_004bfcaf:
 004BFCAF  8B 86 45 02 00 00         MOV EAX,dword ptr [ESI + 0x245]
 004BFCB5  85 C0                     TEST EAX,EAX
+FUN_004bea70::cf_common_join_004BFCB7:
 004BFCB7  0F 85 BB 05 00 00         JNZ 0x004c0278
 004BFCBD  E9 98 F2 FF FF            JMP 0x004bef5a
 switchD_004bec4d::caseD_5d:
@@ -1809,7 +1810,7 @@ LAB_004c01dc:
 004C01E6  B8 01 00 00 00            MOV EAX,0x1
 004C01EB  88 43 11                  MOV byte ptr [EBX + 0x11],AL
 004C01EE  E9 6F ED FF FF            JMP 0x004bef62
-LAB_004c01f3:
+FUN_004bea70::cf_common_join_004C01F3:
 004C01F3  33 C0                     XOR EAX,EAX
 004C01F5  88 43 11                  MOV byte ptr [EBX + 0x11],AL
 004C01F8  E9 65 ED FF FF            JMP 0x004bef62
@@ -1848,7 +1849,7 @@ LAB_004c0261:
 LAB_004c026f:
 004C026F  83 F8 05                  CMP EAX,0x5
 004C0272  0F 84 E2 EC FF FF         JZ 0x004bef5a
-LAB_004c0278:
+FUN_004bea70::cf_common_join_004C0278:
 004C0278  33 C0                     XOR EAX,EAX
 004C027A  E9 E0 EC FF FF            JMP 0x004bef5f
 LAB_004c027f:
@@ -2882,7 +2883,7 @@ LAB_004c0fbb:
 004C0FBB  B8 AD 8B DB 68            MOV EAX,0x68db8bad
 004C0FC0  F7 E9                     IMUL ECX
 004C0FC2  C1 FA 0B                  SAR EDX,0xb
-LAB_004c0fc5:
+FUN_004bea70::cf_common_join_004C0FC5:
 004C0FC5  8B C2                     MOV EAX,EDX
 004C0FC7  C1 E8 1F                  SHR EAX,0x1f
 004C0FCA  03 D0                     ADD EDX,EAX

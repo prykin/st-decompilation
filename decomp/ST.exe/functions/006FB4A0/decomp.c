@@ -373,7 +373,7 @@ LAB_006fb934:
   }
   uVar4 = uVar4 - local_14;
   pbVar11 = param_6;
-  if ((local_14 < 1) || ((local_10 & 0x80) == 0)) goto LAB_006fbc59;
+  if ((local_14 < 1) || ((local_10 & 0x80) == 0)) goto cf_common_join_006FBC59;
   if ((local_10 & 0x40) == 0) {
     if (0 < iVar6) {
       switch(iVar6) {
@@ -390,7 +390,7 @@ LAB_006fb934:
         param_6 = param_6 + 1;
         local_14 = local_14 + -1;
         pbVar11 = param_6;
-        if (local_14 < 1) goto LAB_006fbc59;
+        if (local_14 < 1) goto cf_common_join_006FBC59;
         break;
       case 2:
         break;
@@ -404,7 +404,7 @@ LAB_006fb934:
       param_6 = param_6 + 1;
       local_14 = local_14 + -1;
       pbVar11 = param_6;
-      if (local_14 < 1) goto LAB_006fbc59;
+      if (local_14 < 1) goto cf_common_join_006FBC59;
 switchD_006fbaf2_caseD_3:
       if (*local_8 < param_5) {
         *puVar12 = *(undefined1 *)((uint)*pbVar10 + param_16);
@@ -418,7 +418,7 @@ switchD_006fbaf2_caseD_3:
       param_6 = param_6 + 1;
       local_14 = local_14 + -1;
       pbVar11 = param_6;
-      if (local_14 < 1) goto LAB_006fbc59;
+      if (local_14 < 1) goto cf_common_join_006FBC59;
 switchD_006fbaf2_caseD_4:
       param_6 = param_6 + 1;
       local_14 = local_14 + -1;
@@ -457,7 +457,7 @@ switchD_006fbaf2_default:
         }
       }
     }
-    goto LAB_006fbc59;
+    goto cf_common_join_006FBC59;
   }
   uVar1 = *(undefined1 *)((uint)*param_6 + param_13);
   pbVar11 = param_6 + 1;
@@ -474,12 +474,12 @@ switchD_006fbaf2_default:
     puVar12 = puVar12 + 1;
     local_c = local_c + 1;
     local_14 = local_14 + -1;
-    if (local_14 < 1) goto LAB_006fbc59;
+    if (local_14 < 1) goto cf_common_join_006FBC59;
     goto LAB_006fba02;
   case 2:
 LAB_006fba02:
     local_14 = local_14 + -1;
-    if (local_14 < 1) goto LAB_006fbc59;
+    if (local_14 < 1) goto cf_common_join_006FBC59;
 LAB_006fba13:
     uVar7 = uVar1;
     if (*local_8 < param_5) {
@@ -489,7 +489,7 @@ LAB_006fba13:
     local_8 = local_8 + 1;
     puVar12 = puVar12 + 1;
     local_c = local_c + 1;
-    if (local_14 + -1 < 1) goto LAB_006fbc59;
+    if (local_14 + -1 < 1) goto cf_common_join_006FBC59;
     local_14 = local_14 + -2;
     break;
   case 3:
@@ -517,7 +517,7 @@ switchD_006fb9b7_default:
       if ((local_14 + -4 < 1) || (local_14 = local_14 + -5, local_14 < 1)) break;
     }
   }
-LAB_006fbc59:
+cf_common_join_006FBC59:
   param_6 = pbVar11;
   iVar6 = (param_7 - param_8) - param_9;
   bVar8 = (byte)local_10;

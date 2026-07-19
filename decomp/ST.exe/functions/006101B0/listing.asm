@@ -105,7 +105,7 @@ LAB_0061033a:
 0061033C  E8 FC 42 DF FF            CALL 0x0040463d
 LAB_00610341:
 00610341  89 9E 0C 02 00 00         MOV dword ptr [ESI + 0x20c],EBX
-LAB_00610347:
+FUN_006101b0::cf_common_join_00610347:
 00610347  39 9E 0C 02 00 00         CMP dword ptr [ESI + 0x20c],EBX
 0061034D  0F 84 D4 23 00 00         JZ 0x00612727
 00610353  8A 86 50 02 00 00         MOV AL,byte ptr [ESI + 0x250]
@@ -2094,7 +2094,7 @@ LAB_00611b9e:
 00611C09  8B C1                     MOV EAX,ECX
 00611C0B  85 C0                     TEST EAX,EAX
 00611C0D  74 27                     JZ 0x00611c36
-LAB_00611c0f:
+FUN_006101b0::cf_common_exit_00611C0F:
 00611C0F  8A 86 50 02 00 00         MOV AL,byte ptr [ESI + 0x250]
 00611C15  84 C0                     TEST AL,AL
 00611C17  0F 85 CF F9 FF FF         JNZ 0x006115ec
@@ -2546,7 +2546,7 @@ LAB_006120ce:
 006121DA  85 C0                     TEST EAX,EAX
 006121DC  89 45 E8                  MOV dword ptr [EBP + -0x18],EAX
 006121DF  7F 1B                     JG 0x006121fc
-LAB_006121e1:
+FUN_006101b0::cf_common_exit_006121E1:
 006121E1  8B CE                     MOV ECX,ESI
 006121E3  E8 55 24 DF FF            CALL 0x0040463d
 006121E8  8B 45 E8                  MOV EAX,dword ptr [EBP + -0x18]

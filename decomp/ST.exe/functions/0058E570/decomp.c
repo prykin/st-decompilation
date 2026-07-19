@@ -62,9 +62,9 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
        (iVar6 = this->field_0241 + -1, this->field_0241 = iVar6, iVar6 < 1)) {
       thunk_FUN_004aceb0(this_00,'\x0e');
     }
-    goto LAB_0058e925;
+    goto cf_common_exit_0058E925;
   }
-  if (*(uint *)(DAT_00802a38 + 0xe4) <= (uint)this->field_024F) goto LAB_0058e925;
+  if (*(uint *)(DAT_00802a38 + 0xe4) <= (uint)this->field_024F) goto cf_common_exit_0058E925;
   switch(this->field_0257) {
   case CASE_0:
     iVar6 = (*this->vtable->slot_20)();
@@ -259,7 +259,7 @@ LAB_0058e87e:
   default:
     goto switchD_0058e67d_default;
   }
-LAB_0058e925:
+cf_common_exit_0058E925:
   if ((this->field_0257 != CASE_4) && (this->field_0257 != (CASE_6|CASE_1))) {
     iVar6 = (0x18 - (int)(short)this->field_006C / 0xf) % 0x18;
     uVar7 = *(uint *)(DAT_00802a38 + 0xe4) % 0x1e;

@@ -240,7 +240,7 @@ LAB_005fe85c:
 005FE85C  C7 45 F8 00 00 00 00      MOV dword ptr [EBP + -0x8],0x0
 LAB_005fe863:
 005FE863  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
-LAB_005fe866:
+FUN_005fe5d0::cf_common_exit_005FE866:
 005FE866  8B 45 E8                  MOV EAX,dword ptr [EBP + -0x18]
 005FE869  8B 15 38 2A 80 00         MOV EDX,dword ptr [0x00802a38]
 005FE86F  8B 88 33 02 00 00         MOV ECX,dword ptr [EAX + 0x233]

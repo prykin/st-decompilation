@@ -384,7 +384,7 @@ LAB_005eab28:
 005EAB61  6A 02                     PUSH 0x2
 005EAB63  8B CB                     MOV ECX,EBX
 005EAB65  E8 16 B5 0F 00            CALL 0x006e6080
-LAB_005eab6a:
+WaitTy::GetMessage::cf_common_exit_005EAB6A:
 005EAB6A  8B 4D B4                  MOV ECX,dword ptr [EBP + -0x4c]
 005EAB6D  56                        PUSH ESI
 005EAB6E  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

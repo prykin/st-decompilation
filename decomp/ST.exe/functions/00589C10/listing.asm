@@ -259,7 +259,7 @@ LAB_00589ff9:
 00589FF9  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 00589FFF  68 18 BA 7C 00            PUSH 0x7cba18
 0058A004  51                        PUSH ECX
-LAB_0058a005:
+STOctopusC::GetMessage::cf_error_exit_0058A005:
 0058A005  6A FF                     PUSH -0x1
 0058A007  E8 34 BE 11 00            CALL 0x006a5e40
 switchD_00589f40::default:

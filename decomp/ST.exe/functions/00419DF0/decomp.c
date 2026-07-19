@@ -64,11 +64,11 @@ void __thiscall STGameObjC::SetSelfCheckFlag(STGameObjC *this,int *param_1)
             iVar4 = Library::DKW::LIB::FUN_006aac70(0x240);
             this->field_01C1 = iVar4;
           }
-          else if (uVar1 != 0x5a) goto LAB_00419f6c;
+          else if (uVar1 != 0x5a) goto cf_common_exit_00419F6C;
         }
       }
       else if (uVar1 != 0x1a4) {
-LAB_00419f6c:
+cf_common_exit_00419F6C:
         iVar4 = ReportDebugMessage(s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x54d,0,0,&DAT_007a4ccc,
                                    s_STGameObjC__SetSelfCheckFlag_unk_007a4e58);
         if (iVar4 == 0) {
@@ -112,7 +112,7 @@ LAB_00419f6c:
         iVar4 = Library::DKW::LIB::FUN_006aac70(0xb);
         this->field_01B9 = iVar4;
       }
-      else if (uVar1 != 0x3e9) goto LAB_00419f6c;
+      else if (uVar1 != 0x3e9) goto cf_common_exit_00419F6C;
     }
   }
   (**(code **)(this->field_0000 + 0x30))(this->field_0121);

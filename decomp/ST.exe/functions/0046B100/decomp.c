@@ -248,7 +248,7 @@ LAB_0046b5ac:
           return -1;
         }
       }
-      goto switchD_0046b287_caseD_1;
+      goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_2) {
       if (*(int *)&this->field_0x50c == 0) {
@@ -276,7 +276,7 @@ LAB_0046b5ac:
             return iVar13;
           }
           iVar13 = 0x23f4;
-          goto LAB_0046c422;
+          goto cf_error_exit_0046C422;
         }
         if (uVar10 == 0) {
           *(undefined4 *)&this->field_0x50c = 2;
@@ -369,7 +369,7 @@ LAB_0046b5ac:
           this->field_0508 = (-(uint)(this->field_06F7 != CASE_19) & 2) + CASE_3;
         }
       }
-      goto switchD_0046b287_caseD_1;
+      goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_3) {
       iVar13 = (int)*(short *)&this->field_0x6c;
@@ -386,7 +386,7 @@ LAB_0046b5ac:
           return iVar13;
         }
         iVar13 = 0x2435;
-        goto LAB_0046c422;
+        goto cf_error_exit_0046C422;
       }
       if (uVar10 == 0) {
         this->field_0508 = CASE_4;
@@ -394,7 +394,7 @@ LAB_0046b5ac:
         iVar13 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
       }
-      goto switchD_0046b287_caseD_1;
+      goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_4) {
       if (*(int *)&this->field_0x50c == 2) {
@@ -537,7 +537,7 @@ LAB_0046b6e2:
           local_50 = 1;
           local_44.id = MESS_HITKILL;
           (*this->vtable->GetMessage)(this,&local_44);
-          goto switchD_0046b287_caseD_1;
+          goto cf_common_exit_0046C3C5;
         }
       }
       else {
@@ -560,7 +560,7 @@ LAB_0046b6e2:
           local_50 = 1;
           local_44.id = MESS_HITKILL;
           (*this->vtable->GetMessage)(this,&local_44);
-          goto switchD_0046b287_caseD_1;
+          goto cf_common_exit_0046C3C5;
         }
       }
       if (this->field_0502 == 1) {
@@ -576,7 +576,7 @@ LAB_0046b6e2:
           return -1;
         }
       }
-LAB_0046c04e:
+cf_common_exit_0046C04E:
       iVar13 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
     }
@@ -605,11 +605,11 @@ LAB_0046c04e:
             return iVar13;
           }
           iVar13 = 0x24c2;
-          goto LAB_0046c422;
+          goto cf_error_exit_0046C422;
         }
         if (uVar10 == 0) {
           *(undefined4 *)&this->field_0x50c = 2;
-          goto LAB_0046c04e;
+          goto cf_common_exit_0046C04E;
         }
       }
       if (*(int *)&this->field_0x50c == 2) {
@@ -706,7 +706,7 @@ LAB_0046c04e:
           }
         }
       }
-      goto LAB_0046c04e;
+      goto cf_common_exit_0046C04E;
     }
     if (SVar4 != CASE_7) {
       iVar13 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2510,0,0,&DAT_007a4ccc,
@@ -728,7 +728,7 @@ LAB_0046c04e:
         return iVar13;
       }
       iVar13 = 0x24fe;
-LAB_0046c422:
+cf_error_exit_0046C422:
       RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar13);
       return 0xffff;
     }
@@ -736,14 +736,14 @@ LAB_0046c422:
       iVar13 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar13 != 0);
     }
-    if (iVar13 != 3) goto switchD_0046b287_caseD_1;
+    if (iVar13 != 3) goto cf_common_exit_0046C3C5;
     thunk_FUN_0048df40((int)this,extraout_EDX_06);
     thunk_FUN_00481520(this,(int)*(short *)&this->field_0x4fc,(int)*(short *)&this->field_0x4fe,
                        (int)*(short *)&this->field_0x500);
 LAB_0046c3be:
     thunk_FUN_0045ff50(this,0);
   }
-switchD_0046b287_caseD_1:
+cf_common_exit_0046C3C5:
   iVar13 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar13 != 0) & 0xfffffffd) + 2;
 }

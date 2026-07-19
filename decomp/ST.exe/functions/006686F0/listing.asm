@@ -27,7 +27,7 @@ LAB_00668736:
 00668747  0F 87 9A 00 00 00         JA 0x006687e7
 switchD_0066874d::switchD:
 0066874D  FF 24 85 64 88 66 00      JMP dword ptr [EAX*0x4 + 0x668864]
-switchD_0066872f::caseD_320:
+FUN_006686f0::cf_common_exit_00668754:
 00668754  B8 01 00 00 00            MOV EAX,0x1
 00668759  5D                        POP EBP
 0066875A  C3                        RET
@@ -41,7 +41,7 @@ LAB_00668762:
 0066876A  77 7B                     JA 0x006687e7
 switchD_0066876c::switchD:
 0066876C  FF 24 85 74 88 66 00      JMP dword ptr [EAX*0x4 + 0x668874]
-switchD_0066872f::caseD_388:
+FUN_006686f0::cf_common_exit_00668773:
 00668773  B8 02 00 00 00            MOV EAX,0x2
 00668778  5D                        POP EBP
 00668779  C3                        RET
@@ -99,7 +99,7 @@ switchD_006687a8::caseD_7f8:
 006687E0  B8 08 00 00 00            MOV EAX,0x8
 006687E5  5D                        POP EBP
 006687E6  C3                        RET
-switchD_0066872f::caseD_322:
+FUN_006686f0::cf_common_exit_006687E7:
 006687E7  83 C8 FF                  OR EAX,0xffffffff
 006687EA  5D                        POP EBP
 006687EB  C3                        RET

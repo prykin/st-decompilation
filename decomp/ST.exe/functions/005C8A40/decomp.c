@@ -87,7 +87,7 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
         *(undefined4 *)&this_00->field_0x2d = 5;
         FUN_006e6080(this_00,2,uVar5,(undefined4 *)&this_00->field_0x1d);
       }
-      goto switchD_005c8bd0_caseD_6120;
+      goto cf_switch_join_005CA971;
     }
     if (uVar14 < 0x6333) {
       if (uVar14 == 0x6332) {
@@ -161,7 +161,7 @@ switchD_005c8bd0_caseD_611f:
           }
         }
       }
-      goto switchD_005c8bd0_caseD_6120;
+      goto cf_switch_join_005CA971;
     }
     if (uVar14 < 0x6504) {
       if (uVar14 == 0x6503) {
@@ -251,38 +251,38 @@ switchD_005c8bd0_caseD_611f:
               FUN_006e6080(this_00,2,uVar5,(undefined4 *)&this_00->field_0x1d);
               FUN_006b35d0(DAT_008075a8,*(uint *)&this_00[0x4f].field_0x55);
             }
-LAB_005c8ecc:
+cf_common_join_005C8ECC:
             *(undefined4 *)&this_00[0x4f].field_0x1c = 0;
           }
           break;
         case 1:
           if (*(int *)(param_1 + 0x14) != -1) {
             this_00[0x4f].field_0x31 = (char)*(int *)(param_1 + 0x14) + '\x02';
-            goto LAB_005c8ecc;
+            goto cf_common_join_005C8ECC;
           }
           break;
         case 2:
           if (*(int *)(param_1 + 0x14) != -1) {
             *(int *)&this_00[0x4f].field_0x2d = *(int *)(param_1 + 0x14);
-            goto LAB_005c8ecc;
+            goto cf_common_join_005C8ECC;
           }
           break;
         case 3:
           if (*(int *)(param_1 + 0x14) != -1) {
             this_00[0x4f].field_0x34 = (char)*(int *)(param_1 + 0x14);
-            goto LAB_005c8ecc;
+            goto cf_common_join_005C8ECC;
           }
           break;
         case 4:
           if (*(int *)(param_1 + 0x14) != -1) {
             this_00[0x4f].field_0x32 = (char)*(int *)(param_1 + 0x14);
-            goto LAB_005c8ecc;
+            goto cf_common_join_005C8ECC;
           }
           break;
         case 5:
           if (*(int *)(param_1 + 0x14) != -1) {
             this_00[0x4f].field_0x33 = (char)*(int *)(param_1 + 0x14);
-            goto LAB_005c8ecc;
+            goto cf_common_join_005C8ECC;
           }
         }
         *(undefined4 *)&this_00->field_0x2d = 5;
@@ -308,7 +308,7 @@ LAB_005c8ecc:
           FUN_006b5ee0(iVar6,0,0,0,*(int *)(iVar6 + 4),*(int *)(iVar6 + 8),0xf,0xd);
         }
       }
-      goto switchD_005c8bd0_caseD_6120;
+      goto cf_switch_join_005CA971;
     }
     switch(uVar14) {
     case 0x6506:
@@ -744,7 +744,7 @@ joined_r0x005c964b:
         goto joined_r0x005c996c;
       }
     }
-    goto switchD_005c8bd0_caseD_6120;
+    goto cf_switch_join_005CA971;
   }
   if (uVar14 < 0x6900) {
     if (uVar14 == 0x68ff) {
@@ -885,7 +885,7 @@ joined_r0x005c964b:
         }
       }
     }
-    goto switchD_005c8bd0_caseD_6120;
+    goto cf_switch_join_005CA971;
   }
   switch(uVar14) {
   case 0x6900:
@@ -1525,7 +1525,7 @@ LAB_005ca73b:
 LAB_005ca964:
     thunk_FUN_005b6730(this_00,9,'\x01',-1);
   }
-switchD_005c8bd0_caseD_6120:
+cf_switch_join_005CA971:
   uVar14 = *(uint *)(param_1 + 0x10);
   if ((uVar14 < 0x657f) || (0x658c < uVar14)) goto LAB_005cae3e;
   piVar16 = *(int **)(param_1 + 0x18);
@@ -1701,14 +1701,14 @@ LAB_005cadd5:
     iVar6 = (local_10 + -0x10) / 2 + local_18;
     puVar17 = *(undefined4 **)&this_00[0x4c].field_0x22;
     iVar11 = (local_14 + -0x11) / 2 + local_1c;
-    goto LAB_005cae0f;
+    goto cf_common_exit_005CAE0F;
   case 0x658a:
     if (DAT_00808a94 != '\0') {
       pbVar10 = (byte *)FUN_0070b3a0(*(int *)&this_00[0x4f].field_0x24,0);
       iVar6 = (local_10 + -0x10) / 2 + local_18;
       iVar11 = (local_14 + -0x11) / 2 + local_1c;
       puVar17 = *(undefined4 **)&this_00[0x4c].field_0x22;
-      goto LAB_005cae0f;
+      goto cf_common_exit_005CAE0F;
     }
     break;
   case 0x658b:
@@ -1719,7 +1719,7 @@ LAB_005cad88:
       iVar6 = (local_10 + -0x10) / 2 + local_18;
       iVar11 = (local_14 + -0x11) / 2 + local_1c;
       puVar17 = *(undefined4 **)&this_00[0x4c].field_0x22;
-LAB_005cae0f:
+cf_common_exit_005CAE0F:
       thunk_FUN_00540760(puVar17,iVar11,iVar6,'\x06',pbVar10);
     }
     break;

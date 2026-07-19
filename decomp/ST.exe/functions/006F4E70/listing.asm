@@ -129,7 +129,7 @@ LAB_006f4f6e:
 006F4F73  49                        DEC ECX
 006F4F74  7F F3                     JG 0x006f4f69
 006F4F76  EB 33                     JMP 0x006f4fab
-LAB_006f4f78:
+FUN_006f4e70::cf_continue_loop_006F4F78:
 006F4F78  83 C3 02                  ADD EBX,0x2
 006F4F7B  47                        INC EDI
 006F4F7C  49                        DEC ECX

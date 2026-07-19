@@ -19,7 +19,7 @@ void FUN_006accd0(undefined4 *param_1,undefined4 *param_2,int param_3,undefined 
     param_2 = &local_fc;
     local_c = local_f8;
     param_1 = (undefined4 *)0x0;
-LAB_006acd0d:
+cf_continue_loop_006ACD0D:
     local_8 = puVar1;
     puVar4 = puVar6;
     puVar5 = local_8;
@@ -27,7 +27,7 @@ LAB_006acd0d:
     if (7 < iVar2) {
       FUN_006ce700(puVar4,(undefined4 *)((iVar2 / 2) * param_3 + (int)puVar4),param_3);
       puVar3 = puVar4;
-LAB_006acd37:
+cf_continue_loop_006ACD37:
       puVar3 = (undefined4 *)((int)puVar3 + param_3);
       if (puVar3 < local_8) goto code_r0x006acd43;
       goto LAB_006acd4f;
@@ -49,13 +49,13 @@ LAB_006acd37:
       local_c = local_c + -2;
       puVar6 = (undefined4 *)*param_2;
       puVar1 = (undefined4 *)*puVar1;
-      goto LAB_006acd0d;
+      goto cf_continue_loop_006ACD0D;
     }
   }
   return;
 code_r0x006acd43:
   iVar2 = (*(code *)param_4)(puVar3,puVar4);
-  if (iVar2 < 1) goto LAB_006acd37;
+  if (iVar2 < 1) goto cf_continue_loop_006ACD37;
 LAB_006acd4f:
   do {
     puVar5 = (undefined4 *)((int)puVar5 - param_3);
@@ -64,7 +64,7 @@ LAB_006acd4f:
   } while (-1 < iVar2);
   if (puVar3 <= puVar5) {
     FUN_006ce700(puVar3,puVar5,param_3);
-    goto LAB_006acd37;
+    goto cf_continue_loop_006ACD37;
   }
   FUN_006ce700(puVar4,puVar5,param_3);
   puVar6 = puVar4;
@@ -89,6 +89,6 @@ LAB_006acd4f:
       puVar1 = local_8;
     }
   }
-  goto LAB_006acd0d;
+  goto cf_continue_loop_006ACD0D;
 }
 

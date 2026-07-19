@@ -110,7 +110,7 @@ STAllPlayersC::GetGObjFromZone2
             piVar6 = param_16;
 LAB_0042b01f:
             puVar4 = (uint *)*piVar6;
-            goto LAB_0042b022;
+            goto cf_common_join_0042B022;
           }
         }
         else if (uVar1 == 0x14) {
@@ -127,7 +127,7 @@ LAB_0042b01f:
             if (param_6 != (int *)0x0) {
               piVar7 = (int *)((int)piVar7 + 0x32);
               puVar4 = (uint *)*param_6;
-              goto LAB_0042b022;
+              goto cf_common_join_0042B022;
             }
           }
         }
@@ -137,7 +137,7 @@ LAB_0042b01f:
              (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             puVar4 = (uint *)*param_14;
-            goto LAB_0042b022;
+            goto cf_common_join_0042B022;
           }
         }
         else if (((uVar1 == 0x172) && (param_15 != (int *)0x0)) &&
@@ -152,7 +152,7 @@ LAB_0042b01f:
           if ((param_17 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             puVar4 = (uint *)*param_17;
-            goto LAB_0042b022;
+            goto cf_common_join_0042B022;
           }
         }
         else if (uVar1 == 0x1ae) {
@@ -160,7 +160,7 @@ LAB_0042b01f:
             if ((param_12 != (int *)0x0) && (iVar5 = (**(code **)(*piVar7 + 0xec))(), iVar5 == 1)) {
               piVar7 = (int *)((int)piVar7 + 0x32);
               puVar4 = (uint *)*param_12;
-LAB_0042b022:
+cf_common_join_0042B022:
               Library::DKW::TBL::FUN_006ae1c0(puVar4,piVar7);
             }
           }
@@ -168,7 +168,7 @@ LAB_0042b022:
                   ) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             puVar4 = (uint *)*param_13;
-            goto LAB_0042b022;
+            goto cf_common_join_0042B022;
           }
         }
       }
@@ -178,7 +178,7 @@ LAB_0042b022:
           if (param_9 != (int *)0x0) {
             piVar7 = (int *)((int)piVar7 + 0x32);
             puVar4 = (uint *)*param_9;
-            goto LAB_0042b022;
+            goto cf_common_join_0042B022;
           }
         }
         else {

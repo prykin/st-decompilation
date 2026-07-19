@@ -185,7 +185,7 @@ LAB_00510987:
 00510998  8A 91 24 0B 51 00         MOV DL,byte ptr [ECX + 0x510b24]
 switchD_0051099e::switchD:
 0051099E  FF 24 95 FC 0A 51 00      JMP dword ptr [EDX*0x4 + 0x510afc]
-switchD_005108d5::caseD_b10c:
+FrmPanelTy::GetMessage::cf_common_exit_005109A5:
 005109A5  33 C9                     XOR ECX,ECX
 005109A7  05 F8 4E FF FF            ADD EAX,0xffff4ef8
 005109AC  89 4D E8                  MOV dword ptr [EBP + -0x18],ECX

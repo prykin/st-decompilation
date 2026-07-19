@@ -20,7 +20,7 @@ void FUN_004aaf60(int param_1)
     if (param_1 != 2) {
       return;
     }
-    goto LAB_004aafc2;
+    goto cf_common_exit_004AAFC2;
   }
 LAB_004aafa0:
   uVar1 = DAT_0080743c & 0xff;
@@ -31,11 +31,11 @@ LAB_004aafa0:
     if (uVar1 == 1) {
       return;
     }
-    if (uVar1 != 2) goto LAB_004aafc2;
+    if (uVar1 != 2) goto cf_common_exit_004AAFC2;
     iVar2 = 0;
   }
   thunk_FUN_004a9c80(iVar2);
-LAB_004aafc2:
+cf_common_exit_004AAFC2:
   if ((DAT_0080743c & 0xff) == 0) {
     thunk_FUN_004a9c80(1);
     thunk_FUN_004a9c80(1);

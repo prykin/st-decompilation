@@ -1024,7 +1024,7 @@ LAB_0047a360:
 0047A360  6A 03                     PUSH 0x3
 0047A362  8B CE                     MOV ECX,ESI
 0047A364  E8 BD 7D F8 FF            CALL 0x00402126
-LAB_0047a369:
+STBoatC::Teleport::cf_common_exit_0047A369:
 0047A369  8B 16                     MOV EDX,dword ptr [ESI]
 0047A36B  8B CE                     MOV ECX,ESI
 0047A36D  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
@@ -1814,7 +1814,7 @@ LAB_0047ad81:
 0047ADA9  75 0A                     JNZ 0x0047adb5
 LAB_0047adab:
 0047ADAB  C7 86 67 06 00 00 02 00 00 00  MOV dword ptr [ESI + 0x667],0x2
-LAB_0047adb5:
+STBoatC::Teleport::cf_common_exit_0047ADB5:
 0047ADB5  8B 06                     MOV EAX,dword ptr [ESI]
 0047ADB7  8B CE                     MOV ECX,ESI
 0047ADB9  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

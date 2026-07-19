@@ -196,7 +196,7 @@ LAB_006b9691:
 006B96B2  89 45 10                  MOV dword ptr [EBP + 0x10],EAX
 006B96B5  89 55 18                  MOV dword ptr [EBP + 0x18],EDX
 006B96B8  7C D4                     JL 0x006b968e
-LAB_006b96ba:
+FUN_006b94e0::cf_common_exit_006B96BA:
 006B96BA  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 006B96BD  52                        PUSH EDX
 006B96BE  56                        PUSH ESI

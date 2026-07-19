@@ -32,7 +32,7 @@ STAllPlayersC::SetActivityToObjs
       if (param_2 != 0x1b8) goto LAB_0042d41b;
       SVar6 = CASE_6;
     }
-    goto LAB_0042d44c;
+    goto cf_common_exit_0042D44C;
   }
   if (param_2 == 0x19a) {
 LAB_0042d3b2:
@@ -54,7 +54,7 @@ LAB_0042d3b2:
   if (param_2 < 0x5b) {
     if (param_2 == 0x5a) {
       SVar6 = CASE_4;
-LAB_0042d44c:
+cf_common_exit_0042D44C:
       piVar3 = (int *)GetObjPtr(this,param_1,param_4,SVar6);
       if (piVar3 == (int *)0x0) {
         return;
@@ -69,7 +69,7 @@ LAB_0042d44c:
   }
   else if (param_2 == 0x172) {
     SVar6 = CASE_2;
-    goto LAB_0042d44c;
+    goto cf_common_exit_0042D44C;
   }
 LAB_0042d41b:
   iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x43d,0,0,&DAT_007a4ccc,

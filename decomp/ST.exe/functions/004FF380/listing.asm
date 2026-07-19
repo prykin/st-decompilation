@@ -722,7 +722,7 @@ LAB_004ffb78:
 004FFB86  A1 A8 75 80 00            MOV EAX,[0x008075a8]
 004FFB8B  50                        PUSH EAX
 004FFB8C  E8 AF 3A 1B 00            CALL 0x006b3640
-LAB_004ffb91:
+CPanelTy::Update1Panel::cf_common_exit_004FFB91:
 004FFB91  B9 05 00 00 00            MOV ECX,0x5
 004FFB96  8D BB 8D 0B 00 00         LEA EDI,[EBX + 0xb8d]
 004FFB9C  8D 75 E6                  LEA ESI,[EBP + -0x1a]

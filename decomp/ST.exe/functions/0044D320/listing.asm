@@ -715,7 +715,7 @@ LAB_0044ddc0:
 0044DDC7  7C 06                     JL 0x0044ddcf
 LAB_0044ddc9:
 0044DDC9  66 C7 47 0A 01 18         MOV word ptr [EDI + 0xa],0x1801
-switchD_0044d78f::caseD_3:
+FUN_0044d320::cf_continue_loop_0044DDCF:
 0044DDCF  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 0044DDD2  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 0044DDD5  40                        INC EAX

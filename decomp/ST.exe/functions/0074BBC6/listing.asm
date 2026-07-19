@@ -61,7 +61,7 @@ LAB_0074bc0c:
 0074BC3C  33 C0                     XOR EAX,EAX
 0074BC3E  F3 A6                     CMPSB.REPE ES:EDI,ESI
 0074BC40  74 04                     JZ 0x0074bc46
-LAB_0074bc42:
+FUN_0074bbc6::cf_common_exit_0074BC42:
 0074BC42  33 C0                     XOR EAX,EAX
 0074BC44  EB 03                     JMP 0x0074bc49
 LAB_0074bc46:

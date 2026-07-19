@@ -177,7 +177,7 @@ int __fastcall FUN_0060aef0(void *param_1)
                     iVar11 = iVar11 + 1;
                   } while (iVar11 < local_a4);
                 }
-                if (bVar19) goto LAB_0060b649;
+                if (bVar19) goto cf_continue_loop_0060B649;
                 *(int *)(local_a8 + local_a4 * 4) = piVar17[6];
                 local_a4 = local_a4 + 1;
               }
@@ -305,7 +305,7 @@ LAB_0060b48b:
                       thunk_FUN_0060bdd0(param_1,piVar17);
                       goto LAB_0060b643;
                     }
-                    goto LAB_0060b649;
+                    goto cf_continue_loop_0060B649;
                   }
                 }
                 if (*(int *)((int)param_1 + 0x1f5) == 0x4c) {
@@ -356,7 +356,7 @@ LAB_0060b643:
                 }
               }
             }
-LAB_0060b649:
+cf_continue_loop_0060B649:
             local_3c = local_3c + 1;
           } while (local_3c < 5);
           local_98 = local_98 + 1;

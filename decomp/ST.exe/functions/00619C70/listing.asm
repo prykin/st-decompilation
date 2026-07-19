@@ -652,7 +652,7 @@ switchD_0061a1b7::default:
 0061A55A  50                        PUSH EAX
 0061A55B  51                        PUSH ECX
 0061A55C  52                        PUSH EDX
-LAB_0061a55d:
+FUN_00619c70::cf_common_exit_0061A55D:
 0061A55D  6A 01                     PUSH 0x1
 0061A55F  8B CE                     MOV ECX,ESI
 0061A561  E8 07 99 DE FF            CALL 0x00403e6d
@@ -1152,7 +1152,7 @@ LAB_0061ab0b:
 0061AB33  50                        PUSH EAX
 0061AB34  51                        PUSH ECX
 0061AB35  E9 23 FA FF FF            JMP 0x0061a55d
-switchD_0061aa5c::caseD_4:
+FUN_00619c70::cf_common_exit_0061AB3A:
 0061AB3A  8B 86 97 00 00 00         MOV EAX,dword ptr [ESI + 0x97]
 0061AB40  85 C0                     TEST EAX,EAX
 0061AB42  7C 13                     JL 0x0061ab57

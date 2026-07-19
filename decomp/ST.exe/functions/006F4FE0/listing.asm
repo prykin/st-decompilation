@@ -148,7 +148,7 @@ LAB_006f5142:
 006F5144  8B 35 E0 6F 85 00         MOV ESI,dword ptr [0x00856fe0]
 006F514A  50                        PUSH EAX
 006F514B  8B 2D 10 70 85 00         MOV EBP,dword ptr [0x00857010]
-LAB_006f5151:
+FUN_006f4fe0::cf_continue_loop_006F5151:
 006F5151  33 C0                     XOR EAX,EAX
 006F5153  8A 06                     MOV AL,byte ptr [ESI]
 006F5155  46                        INC ESI

@@ -130,7 +130,7 @@ uint * __cdecl FUN_0068cec0(byte *param_1,char *param_2,int *param_3,undefined *
       Library::DKW::TBL::FUN_006b5aa0((int)puVar13,s_include<[_inc_path]_AiScript_dfn_007d56b4);
       Library::DKW::TBL::FUN_006b5aa0((int)puVar13,s_include<[_inc_path]_AiScript_mcr_007d5688);
       Library::DKW::TBL::FUN_006b5aa0((int)puVar13,&DAT_008016a0);
-LAB_0068d1eb:
+cf_continue_loop_0068D1EB:
       iVar14 = 0x68d1f0;
       iVar4 = thunk_FUN_006736f0();
       if (iVar4 < 0) {
@@ -246,7 +246,7 @@ LAB_0068d1eb:
           Library::MSVCRT::_strncat(local_10bc,DAT_0085755c + DAT_00857544,0x1000);
           iVar17 = 0x3b9;
           pvVar16 = DAT_00857554;
-          goto LAB_0068d1eb;
+          goto cf_continue_loop_0068D1EB;
         }
         break;
       case 0x3ba:
@@ -299,7 +299,7 @@ LAB_0068d1eb:
           Library::DKW::TBL::FUN_006b5aa0((int)puVar13,&DAT_008016a0);
           iVar17 = 0;
           pvVar16 = (void *)0xffffffff;
-          goto LAB_0068d1eb;
+          goto cf_continue_loop_0068D1EB;
         }
         break;
       case 0x44c:
@@ -351,7 +351,7 @@ LAB_0068d1eb:
           Library::MSVCRT::_strncat(local_10bc,DAT_0085755c + DAT_00857544,0x1002 - DAT_00857544);
           iVar17 = 0x44c;
           pvVar16 = DAT_00857554;
-          goto LAB_0068d1eb;
+          goto cf_continue_loop_0068D1EB;
         }
         break;
       case 0x44d:
@@ -436,14 +436,14 @@ LAB_0068d1eb:
         Library::DKW::TBL::FUN_006b5aa0((int)puVar13,&DAT_008016a0);
         iVar17 = 0;
         pvVar16 = (void *)0xffffffff;
-        goto LAB_0068d1eb;
+        goto cf_continue_loop_0068D1EB;
       }
       if ((-1 < (int)pvVar16) && ((int)pvVar16 < (int)DAT_00857554)) {
         Library::DKW::TBL::FUN_006b5aa0((int)puVar13,local_10bc);
         Library::MSVCRT::_strncpy(local_10bc,DAT_0085755c,0x1000);
         pvVar16 = DAT_00857554;
       }
-      goto LAB_0068d1eb;
+      goto cf_continue_loop_0068D1EB;
     }
     g_currentExceptionFrame = local_74;
     if (param_3 != (int *)0x0) {

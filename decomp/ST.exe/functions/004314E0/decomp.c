@@ -132,7 +132,7 @@ STAllPlayersC::FramePick
       if (iVar5 == 0) {
 LAB_00431886:
         iVar5 = CheckTmps(param_1,0,0x3c,cVar7,local_10,0);
-        if (iVar5 < 1) goto LAB_004318a9;
+        if (iVar5 < 1) goto cf_error_exit_004318A9;
         ActivateTV(this,cVar7,0,iVar5);
 LAB_004318b5:
         *(undefined4 *)((int)&DAT_007f4f83 + iVar2) = 0x3c;
@@ -161,7 +161,7 @@ LAB_004318b5:
               else {
                 ResetActivityFromTmp(this,cVar7,0,1,0);
               }
-              goto LAB_004318a9;
+              goto cf_error_exit_004318A9;
             }
           }
           else {
@@ -175,7 +175,7 @@ LAB_004318b5:
           if (iVar5 < 1) {
             PushTV(cVar7,0);
             ResetActivityFromTmp(this,cVar7,0,1,0);
-            goto LAB_004318a9;
+            goto cf_error_exit_004318A9;
           }
           ActivateTV(this,cVar7,0,iVar5);
         }
@@ -200,7 +200,7 @@ LAB_004318b5:
           iVar5 = CheckTmps(param_1,0,0x3c,cVar7,local_10,0);
           if (iVar5 < 0) {
             PushTV(cVar7,0);
-LAB_004318a9:
+cf_error_exit_004318A9:
             AddObjsToTmp(this,param_1,0,0,(int)local_10);
             goto LAB_004318b5;
           }
@@ -210,7 +210,7 @@ LAB_004318a9:
           iVar5 = CheckTmps(param_1,0,0x3c,cVar7,local_10,0);
           if (iVar5 < 1) {
             PushTV(cVar7,0);
-            goto LAB_004318a9;
+            goto cf_error_exit_004318A9;
           }
           ActivateTV(this,cVar7,0,iVar5);
         }
@@ -256,7 +256,7 @@ LAB_004318a9:
         iVar2 = CheckTmps(param_1,0,*(int *)(uVar3 + 0x20),*(char *)(uVar3 + 0x24),(uint *)0x0,
                           local_8);
         if (iVar2 < 1) {
-LAB_00431a49:
+cf_error_exit_00431A49:
           AddObjToTmp2(this,cVar7,0,0,*(int *)(uVar3 + 0x20),
                        CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24)),local_8);
         }
@@ -271,7 +271,7 @@ LAB_00431a49:
 LAB_00431c38:
           PushTV(cVar7,0);
           iVar2 = ResetActivityFromTmp(this,cVar7,0,1,0);
-          goto LAB_00431a49;
+          goto cf_error_exit_00431A49;
         }
         ActivateTV(this,cVar7,0,iVar2);
       }
@@ -302,7 +302,7 @@ LAB_00431c38:
       if (iVar2 == 0) {
         iVar2 = CheckTmps(param_1,0,*(int *)(uVar3 + 0x20),*(char *)(uVar3 + 0x24),(uint *)0x0,
                           local_8);
-        if (iVar2 < 1) goto LAB_00431a49;
+        if (iVar2 < 1) goto cf_error_exit_00431A49;
         ActivateTV(this,cVar7,0,iVar2);
       }
       else if (iVar2 == 0x3c) {
@@ -311,7 +311,7 @@ LAB_00431c38:
         if (iVar2 < 1) {
 LAB_00431a3f:
           iVar2 = PushTV(cVar7,0);
-          goto LAB_00431a49;
+          goto cf_error_exit_00431A49;
         }
         ActivateTV(this,cVar7,0,iVar2);
       }
@@ -619,7 +619,7 @@ LAB_0043206e:
             goto LAB_00432582;
           }
           PushTV(cVar7,1);
-LAB_0043256b:
+cf_error_exit_0043256B:
           AddObjToTmp(this,cVar7,1,0,param_1,local_8);
         }
         else {
@@ -628,7 +628,7 @@ LAB_0043256b:
             goto LAB_0043250f;
           }
           iVar5 = CheckTmps(param_1,1,0x19a,cVar7,local_14,0);
-          if (iVar5 < 1) goto LAB_0043256b;
+          if (iVar5 < 1) goto cf_error_exit_0043256B;
           ActivateTV(this,cVar7,1,iVar5);
         }
 LAB_00432578:
@@ -639,7 +639,7 @@ LAB_00432536:
         iVar5 = CheckTmps(param_1,1,0x19a,cVar7,local_14,0);
         if (iVar5 < 1) {
           PushTV(cVar7,1);
-          goto LAB_0043256b;
+          goto cf_error_exit_0043256B;
         }
         ActivateTV(this,cVar7,1,iVar5);
       }
@@ -670,7 +670,7 @@ LAB_0043250f:
               else {
                 ResetActivityFromTmp(this,cVar7,1,1,0);
               }
-              goto LAB_0043256b;
+              goto cf_error_exit_0043256B;
             }
           }
           else {
@@ -684,7 +684,7 @@ LAB_0043250f:
               ActivateTV(this,cVar7,1,iVar5);
               goto LAB_00432578;
             }
-            goto LAB_0043256b;
+            goto cf_error_exit_0043256B;
           }
           if ((iVar5 == 0x5a) || (iVar5 == 0x172)) goto LAB_0043240a;
 LAB_004323dc:
@@ -704,7 +704,7 @@ LAB_0043240a:
         if (iVar5 < 1) {
           PushTV(cVar7,1);
           ResetActivityFromTmp(this,cVar7,1,1,0);
-          goto LAB_0043256b;
+          goto cf_error_exit_0043256B;
         }
         ActivateTV(this,cVar7,1,iVar5);
       }
@@ -995,7 +995,7 @@ LAB_00432a32:
 LAB_00432e7f:
         iVar5 = CheckTmps(param_1,0,0x3c,(char)local_c,local_18,0);
         if (iVar5 < 1) {
-LAB_00432eae:
+cf_error_exit_00432EAE:
           AddObjToTmp(this,cVar7,0,0,local_c,local_8);
         }
         else {
@@ -1009,7 +1009,7 @@ LAB_00432eae:
           if (iVar5 < 0) {
             PushTV(cVar7,0);
             ResetActivityFromTmp(this,cVar7,0,1,0);
-            goto LAB_00432eae;
+            goto cf_error_exit_00432EAE;
           }
         }
         else {
@@ -1021,7 +1021,7 @@ LAB_00432eae:
         if (iVar5 < 1) {
           PushTV(cVar7,0);
           ResetActivityFromTmp(this,cVar7,0,1,0);
-          goto LAB_00432eae;
+          goto cf_error_exit_00432EAE;
         }
         ActivateTV(this,cVar7,0,iVar5);
       }
@@ -1044,7 +1044,7 @@ LAB_00432eae:
         iVar5 = CheckTmps(param_1,0,0x3c,(char)local_c,local_18,0);
         if (iVar5 < 0) {
           PushTV(cVar7,0);
-          goto LAB_00432eae;
+          goto cf_error_exit_00432EAE;
         }
         ActivateTV(this,cVar7,0,iVar5);
       }
@@ -1052,7 +1052,7 @@ LAB_00432eae:
         iVar5 = CheckTmps(param_1,0,0x3c,(char)local_c,local_18,0);
         if (iVar5 < 1) {
           PushTV(cVar7,0);
-          goto LAB_00432eae;
+          goto cf_error_exit_00432EAE;
         }
         ActivateTV(this,cVar7,0,iVar5);
       }
@@ -1097,7 +1097,7 @@ LAB_00432eae:
         iVar2 = CheckTmps(param_1,0,*(int *)(uVar3 + 0x20),*(char *)(uVar3 + 0x24),(uint *)0x0,
                           local_8);
         if (iVar2 < 1) {
-LAB_00433050:
+cf_error_exit_00433050:
           AddObjToTmp2(this,cVar7,0,0,*(int *)(uVar3 + 0x20),
                        CONCAT31((int3)((uint)iVar2 >> 8),*(undefined1 *)(uVar3 + 0x24)),local_8);
         }
@@ -1112,7 +1112,7 @@ LAB_00433050:
 LAB_0043322b:
           PushTV(cVar7,0);
           iVar2 = ResetActivityFromTmp(this,cVar7,0,1,0);
-          goto LAB_00433050;
+          goto cf_error_exit_00433050;
         }
         ActivateTV(this,cVar7,0,iVar2);
       }
@@ -1143,7 +1143,7 @@ LAB_0043322b:
       if (iVar2 == 0) {
         iVar2 = CheckTmps(param_1,0,*(int *)(uVar3 + 0x20),*(char *)(uVar3 + 0x24),(uint *)0x0,
                           local_8);
-        if (iVar2 < 1) goto LAB_00433050;
+        if (iVar2 < 1) goto cf_error_exit_00433050;
         ActivateTV(this,cVar7,0,iVar2);
       }
       else if (iVar2 == 0x3c) {
@@ -1152,7 +1152,7 @@ LAB_0043322b:
         if (iVar2 < 1) {
 LAB_00433046:
           iVar2 = PushTV(cVar7,0);
-          goto LAB_00433050;
+          goto cf_error_exit_00433050;
         }
         ActivateTV(this,cVar7,0,iVar2);
       }
@@ -1187,7 +1187,7 @@ LAB_00433046:
     }
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xd6c);
   }
-  if (local_1c[3] == 0) goto LAB_004334f5;
+  if (local_1c[3] == 0) goto cf_error_exit_004334F5;
   if (param_6 == 1) {
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xd70);
   }
@@ -1207,7 +1207,7 @@ LAB_00433046:
         (*pcVar1)();
         return;
       }
-      goto LAB_004334f5;
+      goto cf_error_exit_004334F5;
     }
     iVar5 = *(int *)((int)&DAT_007f4fd3 + iVar2);
     if (iVar5 < 0x19b) {
@@ -1215,12 +1215,12 @@ LAB_00433046:
         iVar5 = CheckTmps(param_1,1,0x19a,(char)local_c,local_1c,0);
         if (0 < iVar5) {
           ActivateTV(this,cVar7,1,iVar5);
-          goto LAB_004334f5;
+          goto cf_error_exit_004334F5;
         }
-        if (-1 < iVar5) goto LAB_004334f5;
+        if (-1 < iVar5) goto cf_error_exit_004334F5;
         PushTV(cVar7,1);
         ResetActivityFromTmp(this,cVar7,1,1,0);
-        goto LAB_004334df;
+        goto cf_error_exit_004334DF;
       }
       if (iVar5 == 0) goto LAB_004333f5;
       if ((iVar5 == 0x5a) || (iVar5 == 0x172)) goto LAB_00433363;
@@ -1230,11 +1230,11 @@ LAB_00433363:
       iVar5 = CheckTmps(param_1,1,0x19a,(char)local_c,local_1c,0);
       if (0 < iVar5) {
         ActivateTV(this,cVar7,1,iVar5);
-        goto LAB_004334f5;
+        goto cf_error_exit_004334F5;
       }
       PushTV(cVar7,1);
       ResetActivityFromTmp(this,cVar7,1,1,0);
-      goto LAB_004334df;
+      goto cf_error_exit_004334DF;
     }
     iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xd9d,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__FramePick_GAMETYP_007a684c);
@@ -1243,7 +1243,7 @@ LAB_00433363:
       (*pcVar1)();
       return;
     }
-    goto LAB_004334f5;
+    goto cf_error_exit_004334F5;
   }
   *(undefined4 *)((int)&DAT_007f5023 + iVar2) = 1;
   ResetActivityFromTmp(this,cVar7,0,0,0);
@@ -1253,10 +1253,10 @@ LAB_00433363:
       iVar5 = CheckTmps(param_1,1,0x19a,(char)local_c,local_1c,0);
       if (-1 < iVar5) {
         ActivateTV(this,cVar7,1,iVar5);
-        goto LAB_004334f5;
+        goto cf_error_exit_004334F5;
       }
       PushTV(cVar7,1);
-      goto LAB_004334df;
+      goto cf_error_exit_004334DF;
     }
     if (iVar5 != 0) {
       if ((iVar5 == 0x5a) || (iVar5 == 0x172)) goto LAB_004334a3;
@@ -1264,7 +1264,7 @@ LAB_00433363:
     }
 LAB_004333f5:
     iVar5 = CheckTmps(param_1,1,0x19a,(char)local_c,local_1c,0);
-    if (iVar5 < 1) goto LAB_004334df;
+    if (iVar5 < 1) goto cf_error_exit_004334DF;
     ActivateTV(this,cVar7,1,iVar5);
   }
   else {
@@ -1277,20 +1277,20 @@ LAB_0043347c:
         (*pcVar1)();
         return;
       }
-      goto LAB_004334f5;
+      goto cf_error_exit_004334F5;
     }
 LAB_004334a3:
     iVar5 = CheckTmps(param_1,1,0x19a,(char)local_c,local_1c,0);
     if (0 < iVar5) {
       ActivateTV(this,cVar7,1,iVar5);
-      goto LAB_004334f5;
+      goto cf_error_exit_004334F5;
     }
     PushTV(cVar7,1);
-LAB_004334df:
+cf_error_exit_004334DF:
     AddObjToTmp(this,cVar7,1,0,local_c,local_8);
   }
   *(undefined4 *)((int)&DAT_007f4fd3 + iVar2) = 0x19a;
-LAB_004334f5:
+cf_error_exit_004334F5:
   RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xdce);
   g_currentExceptionFrame = local_90.previous;
   return;

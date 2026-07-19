@@ -425,12 +425,12 @@ LAB_00673b91:
 00673B9C  83 3D 18 2D 7D 00 1D      CMP dword ptr [0x007d2d18],0x1d
 00673BA3  75 EC                     JNZ 0x00673b91
 00673BA5  EB 0C                     JMP 0x00673bb3
-LAB_00673ba7:
+FUN_006736f0::cf_common_exit_00673BA7:
 00673BA7  BB FA FF FF FF            MOV EBX,0xfffffffa
 00673BAC  EB 05                     JMP 0x00673bb3
 LAB_00673bae:
 00673BAE  BB FE FF FF FF            MOV EBX,0xfffffffe
-LAB_00673bb3:
+FUN_006736f0::cf_common_exit_00673BB3:
 00673BB3  A1 24 2D 7D 00            MOV EAX,[0x007d2d24]
 00673BB8  8B 7D F4                  MOV EDI,dword ptr [EBP + -0xc]
 00673BBB  8B D0                     MOV EDX,EAX

@@ -475,7 +475,7 @@ LAB_00462802:
 0046281A  77 1B                     JA 0x00462837
 switchD_0046281c::switchD:
 0046281C  FF 24 8D 3C 49 46 00      JMP dword ptr [ECX*0x4 + 0x46493c]
-switchD_004627fb::caseD_0:
+FUN_00462180::cf_common_exit_00462823:
 00462823  C7 86 36 08 00 00 FF FF FF FF  MOV dword ptr [ESI + 0x836],0xffffffff
 0046282D  C7 86 2E 08 00 00 00 00 00 00  MOV dword ptr [ESI + 0x82e],0x0
 switchD_004627fb::default:
@@ -953,7 +953,7 @@ LAB_00462e27:
 00462E2D  52                        PUSH EDX
 00462E2E  51                        PUSH ECX
 00462E2F  0F BF D0                  MOVSX EDX,AX
-LAB_00462e32:
+FUN_00462180::cf_common_exit_00462E32:
 00462E32  52                        PUSH EDX
 00462E33  8B CE                     MOV ECX,ESI
 00462E35  E8 31 21 FA FF            CALL 0x00404f6b
@@ -1507,9 +1507,9 @@ LAB_00463471:
 0046350D  C2 04 00                  RET 0x4
 LAB_00463510:
 00463510  C7 86 B7 00 00 00 00 00 00 00  MOV dword ptr [ESI + 0xb7],0x0
-switchD_00462373::caseD_4:
+FUN_00462180::cf_common_exit_0046351A:
 0046351A  33 C0                     XOR EAX,EAX
-switchD_004627fb::caseD_ffffffff:
+FUN_00462180::cf_common_exit_0046351C:
 0046351C  5F                        POP EDI
 0046351D  5E                        POP ESI
 0046351E  5B                        POP EBX
@@ -2358,7 +2358,7 @@ LAB_00463fbc:
 00463FD2  0F BF 08                  MOVSX ECX,word ptr [EAX]
 LAB_00463fd5:
 00463FD5  51                        PUSH ECX
-LAB_00463fd6:
+FUN_00462180::cf_common_exit_00463FD6:
 00463FD6  8B CE                     MOV ECX,ESI
 00463FD8  E8 8E 0F FA FF            CALL 0x00404f6b
 00463FDD  6A 00                     PUSH 0x0
@@ -2384,7 +2384,7 @@ LAB_00463ffd:
 00464012  0F 87 0E 05 00 00         JA 0x00464526
 switchD_00464018::switchD:
 00464018  FF 24 85 8C 49 46 00      JMP dword ptr [EAX*0x4 + 0x46498c]
-switchD_004628af::caseD_ffffffff:
+FUN_00462180::cf_common_exit_0046401F:
 0046401F  83 C8 FF                  OR EAX,0xffffffff
 00464022  5F                        POP EDI
 00464023  5E                        POP ESI
@@ -2538,7 +2538,7 @@ LAB_00464227:
 0046427E  EB 02                     JMP 0x00464282
 LAB_00464280:
 00464280  33 C0                     XOR EAX,EAX
-LAB_00464282:
+FUN_00462180::cf_common_exit_00464282:
 00464282  39 45 F0                  CMP dword ptr [EBP + -0x10],EAX
 00464285  75 18                     JNZ 0x0046429f
 00464287  C7 86 2E 08 00 00 03 00 00 00  MOV dword ptr [ESI + 0x82e],0x3
@@ -2750,7 +2750,7 @@ LAB_004644dc:
 00464518  FF 90 F4 00 00 00         CALL dword ptr [EAX + 0xf4]
 0046451E  85 C0                     TEST EAX,EAX
 00464520  0F 84 F4 EF FF FF         JZ 0x0046351a
-switchD_004628af::caseD_2:
+FUN_00462180::cf_common_exit_00464526:
 00464526  B8 02 00 00 00            MOV EAX,0x2
 0046452B  5F                        POP EDI
 0046452C  5E                        POP ESI
@@ -3016,7 +3016,7 @@ LAB_0046487e:
 00464885  8B 11                     MOV EDX,dword ptr [ECX]
 LAB_00464887:
 00464887  FF 12                     CALL dword ptr [EDX]
-LAB_00464889:
+FUN_00462180::cf_common_exit_00464889:
 00464889  8B 16                     MOV EDX,dword ptr [ESI]
 0046488B  8B CE                     MOV ECX,ESI
 0046488D  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]

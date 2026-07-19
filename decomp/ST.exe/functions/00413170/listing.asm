@@ -202,7 +202,7 @@ LAB_00413369:
 004133A1  89 45 14                  MOV dword ptr [EBP + 0x14],EAX
 004133A4  0F 8E 76 02 00 00         JLE 0x00413620
 004133AA  89 45 E8                  MOV dword ptr [EBP + -0x18],EAX
-LAB_004133ad:
+FUN_00413170::cf_continue_loop_004133AD:
 004133AD  8A 43 03                  MOV AL,byte ptr [EBX + 0x3]
 004133B0  84 C0                     TEST AL,AL
 004133B2  0F 8C 34 01 00 00         JL 0x004134ec
@@ -311,7 +311,7 @@ LAB_00413496:
 LAB_004134e6:
 004134E6  8B 75 08                  MOV ESI,dword ptr [EBP + 0x8]
 004134E9  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]
-LAB_004134ec:
+FUN_00413170::cf_break_loop_004134EC:
 004134EC  A1 20 4D 7F 00            MOV EAX,[0x007f4d20]
 004134F1  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 004134F4  3B C8                     CMP ECX,EAX
@@ -414,7 +414,7 @@ LAB_004135e0:
 00413615  3B C8                     CMP ECX,EAX
 00413617  89 4D 14                  MOV dword ptr [EBP + 0x14],ECX
 0041361A  0F 8C EC FE FF FF         JL 0x0041350c
-LAB_00413620:
+FUN_00413170::cf_common_exit_00413620:
 00413620  8B 55 18                  MOV EDX,dword ptr [EBP + 0x18]
 00413623  5F                        POP EDI
 00413624  5E                        POP ESI

@@ -74,7 +74,7 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
     local_20 = piVar7 + -1;
     local_c = local_c + -1;
     if ((int)local_20 < 0x79aed0) {
-LAB_004c6899:
+cf_common_exit_004C6899:
       if (((*(int *)((int)this + 0x24) != 0) || (*(int *)((int)this + 0x28) != 0)) &&
          (local_28 == 0)) {
         thunk_FUN_004ad430(*(int *)((int)this + 0x2c));
@@ -92,7 +92,7 @@ LAB_004c6899:
          (((((iVar8 < 0x54 || (0x5a < iVar8)) && (iVar8 != 0x61)) &&
            ((iVar8 != 0x65 && (iVar8 != 0x43)))) && (iVar8 != 0x73)))) {
         local_28 = 0;
-        goto LAB_004c6899;
+        goto cf_common_exit_004C6899;
       }
       iVar8 = STT3DSprC::LoadSequence
                         (*(STT3DSprC **)((int)this + 0x2c),0,DAT_0080678c,
@@ -184,6 +184,6 @@ LAB_004c6848:
     *(undefined4 *)((int)this + 0x24) = 1;
     *(undefined4 *)((int)this + 0x28) = 0;
   }
-  goto LAB_004c6899;
+  goto cf_common_exit_004C6899;
 }
 

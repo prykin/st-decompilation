@@ -101,7 +101,7 @@ switchD_0050207d::caseD_2:
 0050214B  8D 83 99 0B 00 00         LEA EAX,[EBX + 0xb99]
 00502151  3B CA                     CMP ECX,EDX
 00502153  74 28                     JZ 0x0050217d
-LAB_00502155:
+CPanelTy::Update2PanelWB::cf_common_exit_00502155:
 00502155  8B CB                     MOV ECX,EBX
 00502157  E8 73 01 F0 FF            CALL 0x004022cf
 0050215C  8B CB                     MOV ECX,EBX

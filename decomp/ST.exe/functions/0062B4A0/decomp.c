@@ -62,7 +62,7 @@ uint __fastcall FUN_0062b4a0(int param_1)
     uVar6 = uVar5;
     if (((uVar5 == 0) || (DAT_00802a88 == (void *)0x0)) ||
        ((DAT_0080874d == -1 || (uVar6 = 0, *(int *)((int)DAT_00802a88 + 0xf8) == 0))))
-    goto LAB_0062b616;
+    goto cf_common_exit_0062B616;
     thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                        local_c,local_8,&local_14,(int *)&local_c);
     uVar6 = local_10;
@@ -74,10 +74,10 @@ uint __fastcall FUN_0062b4a0(int param_1)
          ((*(int *)((int)pvVar4 + 0x4c) == 0 ||
           (uVar6 = (uint)*(byte *)(uVar6 * *(int *)((int)pvVar4 + 0x30) +
                                    *(int *)((int)pvVar4 + 0x4c) + local_14), uVar6 != 0))))))))
-    goto LAB_0062b616;
+    goto cf_common_exit_0062B616;
   }
   uVar5 = 0;
-LAB_0062b616:
+cf_common_exit_0062B616:
   return CONCAT31((int3)(uVar6 >> 8),(char)uVar5);
 }
 

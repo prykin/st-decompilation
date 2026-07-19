@@ -85,7 +85,7 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *param_1,int param_2,int param
             uVar7 = CONCAT22(extraout_var_13,*(undefined2 *)((int)piVar2 + 0x32));
             uVar8 = CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]);
             iVar3 = piVar2[8];
-            goto LAB_0043440e;
+            goto cf_common_exit_0043440E;
           }
           if (iVar3 != 0x1ae) {
             iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1003,0,0,
@@ -110,9 +110,9 @@ STAllPlayersC::PointPick(STAllPlayersC *this,uint *param_1,int param_2,int param
             uVar7 = CONCAT22(extraout_var,*(undefined2 *)((int)piVar2 + 0x32));
             uVar8 = CONCAT31((int3)((uint)extraout_ECX >> 8),(char)piVar2[9]);
             iVar3 = piVar2[8];
-            goto LAB_0043440e;
+            goto cf_common_exit_0043440E;
           }
-          goto LAB_00434cbd;
+          goto cf_common_exit_00434CBD;
         }
         uVar6 = CONCAT22((short)((uint)(cVar11 * 0x29) >> 0x10),*(undefined2 *)((int)piVar2 + 0x32))
         ;
@@ -181,7 +181,7 @@ LAB_004345b4:
       uVar7 = CONCAT22(uVar9,*(undefined2 *)((int)piVar2 + 0x32));
       uVar8 = CONCAT31((int3)((uint)uVar6 >> 8),(char)piVar2[9]);
       iVar3 = piVar2[8];
-LAB_0043440e:
+cf_common_exit_0043440E:
       AddObjToTmp2(this,cVar11,0,0,iVar3,uVar8,uVar7);
       SelfCheckObjControl(this);
       return;
@@ -208,7 +208,7 @@ LAB_0043440e:
           param_1 = puVar4;
           if (-1 < iVar5) {
             ActivateTV(this,cVar11,1,iVar5);
-            goto LAB_00434cb8;
+            goto cf_common_exit_00434CB8;
           }
           goto LAB_00434c88;
         }
@@ -244,7 +244,7 @@ LAB_00434c44:
         param_1 = puVar4;
         if (0 < iVar5) {
           ActivateTV(this,cVar11,1,iVar5);
-          goto LAB_00434cb8;
+          goto cf_common_exit_00434CB8;
         }
 LAB_00434c88:
         iVar5 = PushTV(cVar11,1);
@@ -279,9 +279,9 @@ LAB_00434c92:
         iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
         if (0 < iVar5) {
           ActivateTV(this,cVar11,1,iVar5);
-          goto LAB_00434cb8;
+          goto cf_common_exit_00434CB8;
         }
-        if (-1 < iVar5) goto LAB_00434cb8;
+        if (-1 < iVar5) goto cf_common_exit_00434CB8;
         PushTV(cVar11,1);
         param_1 = puVar4;
         if (*(int *)((int)&DAT_007f4fe7 + iVar3) != piVar2[9]) goto LAB_00434b39;
@@ -311,7 +311,7 @@ LAB_00434ae2:
         iVar5 = CheckTmps(param_1,1,0x19a,(char)piVar2[9],puVar4,0);
         if (0 < iVar5) {
           ActivateTV(this,cVar11,1,iVar5);
-          goto LAB_00434cb8;
+          goto cf_common_exit_00434CB8;
         }
         PushTV(cVar11,1);
         param_1 = puVar4;
@@ -325,9 +325,9 @@ LAB_00434b39:
       *(undefined4 *)((int)&DAT_007f4fd3 + iVar3) = 0x19a;
       puVar4 = param_1;
     }
-LAB_00434cb8:
+cf_common_exit_00434CB8:
     FUN_006ae110((byte *)puVar4);
-    goto LAB_00434cbd;
+    goto cf_common_exit_00434CBD;
   }
   if (uVar7 != 0x1a4) {
     if (uVar7 == 0x14) {
@@ -402,7 +402,7 @@ LAB_0043414f:
             }
             ActivateTV(this,cVar11,0,iVar5);
           }
-          goto LAB_00434cb8;
+          goto cf_common_exit_00434CB8;
         }
 LAB_0043429d:
         puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
@@ -438,7 +438,7 @@ LAB_0043429d:
           param_1 = puVar4;
           if (iVar5 < 0) goto LAB_0043404a;
           ActivateTV(this,cVar11,0,iVar5);
-          goto LAB_00434cb8;
+          goto cf_common_exit_00434CB8;
         }
         if (iVar5 != 0x1ae) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0xf52,0,0,
@@ -456,7 +456,7 @@ LAB_0043429d:
         param_1 = puVar4;
         if (0 < iVar5) {
           ActivateTV(this,cVar11,0,iVar5);
-          goto LAB_00434cb8;
+          goto cf_common_exit_00434CB8;
         }
 LAB_0043404a:
         iVar5 = PushTV(cVar11,0);
@@ -467,7 +467,7 @@ LAB_0043415b:
       }
       *(undefined4 *)((int)&DAT_007f4f83 + iVar3) = 0x3c;
       puVar4 = param_1;
-      goto LAB_00434cb8;
+      goto cf_common_exit_00434CB8;
     }
     if ((uVar7 != 0x5a) && (uVar7 != 0x172)) {
       return;
@@ -535,7 +535,7 @@ LAB_00434715:
         return;
       }
       if (-1 < iVar3) {
-LAB_00434cbd:
+cf_common_exit_00434CBD:
         SelfCheckObjControl(this);
         return;
       }

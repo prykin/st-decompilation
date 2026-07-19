@@ -67,7 +67,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
         }
         if (DAT_0085751c != (code *)0x0) {
           (*DAT_0085751c)(puVar2 + 8,puVar2[4]);
-          goto LAB_006a5b2e;
+          goto cf_continue_loop_006A5B2E;
         }
       }
       else if (puVar2[5] == 1) {
@@ -80,7 +80,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
         }
       }
       else {
-        if (uVar4 != 2) goto LAB_006a5b2e;
+        if (uVar4 != 2) goto cf_continue_loop_006A5B2E;
         iVar3 = Library::MSVCRT::FUN_00730fa0
                           (0,0,0,0,(byte *)s_crt_block_at_0x_08X__subtype__x__007ec980);
         if (iVar3 == 1) {
@@ -91,7 +91,7 @@ void __cdecl FUN_006a5990(undefined4 *param_1)
       }
       FUN_006a5be0((int)puVar2);
     }
-LAB_006a5b2e:
+cf_continue_loop_006A5B2E:
     puVar2 = (undefined4 *)*puVar2;
   } while( true );
 }

@@ -386,7 +386,7 @@ LAB_004c687e:
 LAB_004c688f:
 004C688F  89 5E 24                  MOV dword ptr [ESI + 0x24],EBX
 004C6892  C7 46 28 01 00 00 00      MOV dword ptr [ESI + 0x28],0x1
-LAB_004c6899:
+FUN_004c6440::cf_common_exit_004C6899:
 004C6899  8B 46 24                  MOV EAX,dword ptr [ESI + 0x24]
 004C689C  33 FF                     XOR EDI,EDI
 004C689E  3B C7                     CMP EAX,EDI

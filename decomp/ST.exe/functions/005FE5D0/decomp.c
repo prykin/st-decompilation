@@ -87,7 +87,7 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
             thunk_FUN_005fd6a0(this);
             return false;
           }
-          goto LAB_005fe866;
+          goto cf_common_exit_005FE866;
         }
         if (((iVar3 != local_20) || (iVar7 != local_24)) || (iVar6 != local_28)) {
           sVar8 = (short)iVar3;
@@ -116,12 +116,12 @@ bool __thiscall FUN_005fe5d0(void *this,int param_1,undefined2 *param_2,int para
         *(undefined2 *)(*piVar5 + 4 + iVar3) = (undefined2)local_18;
         if (99 < local_8) {
           local_c = 0;
-          goto LAB_005fe866;
+          goto cf_common_exit_005FE866;
         }
       }
     }
     if (local_c == 0) {
-LAB_005fe866:
+cf_common_exit_005FE866:
       *(undefined4 *)(param_1 * 0x52 + 0x35 + *(int *)((int)this + 0x233)) =
            *(undefined4 *)(DAT_00802a38 + 0xe4);
       if (local_8 != 0) {

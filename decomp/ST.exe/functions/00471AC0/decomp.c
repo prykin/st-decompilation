@@ -112,7 +112,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
         this->field_082E = 0;
       }
       if ((this->field_082E != 1) || (iVar8 = GetDefenceTarget(this,CASE_1), iVar8 != 0))
-      goto switchD_0047251b_caseD_2;
+      goto cf_common_exit_00472CB0;
       pvVar5 = (void *)STAllPlayersC::GetObjPtr
                                  (DAT_007fa174,
                                   CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this->field_0x487),
@@ -180,7 +180,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
       case 6:
       case 7:
       case 8:
-switchD_0047251b_caseD_1:
+cf_common_exit_00472A1F:
         this->field_047F = 0xffffffff;
         break;
       case 9:
@@ -241,13 +241,13 @@ LAB_00472a3a:
                     return -1;
                   }
                   this->field_00B7 = uVar4;
-                  goto switchD_0047251b_caseD_2;
+                  goto cf_common_exit_00472CB0;
                 }
               }
-              else if (iVar8 != 3) goto switchD_0047251b_caseD_2;
+              else if (iVar8 != 3) goto cf_common_exit_00472CB0;
               this->field_0836 = 1;
               this->field_082E = 0;
-              goto switchD_0047251b_caseD_2;
+              goto cf_common_exit_00472CB0;
             }
           }
           return -1;
@@ -263,7 +263,7 @@ LAB_00472a3a:
           this->field_082E = 0;
         }
         if ((this->field_082E != 1) || (iVar8 = GetDefenceTarget(this,CASE_1), iVar8 != 0))
-        goto switchD_0047251b_caseD_2;
+        goto cf_common_exit_00472CB0;
         pvVar5 = (void *)STAllPlayersC::GetObjPtr
                                    (DAT_007fa174,(uint)(byte)this->field_0x487,
                                     CONCAT22(extraout_var_09,*(undefined2 *)&this->field_048B),
@@ -330,11 +330,11 @@ LAB_00472a3a:
         case 6:
         case 7:
         case 8:
-          goto switchD_0047251b_caseD_1;
+          goto cf_common_exit_00472A1F;
         case 9:
           goto switchD_004727e9_caseD_9;
         }
-        goto switchD_0047251b_caseD_2;
+        goto cf_common_exit_00472CB0;
       }
       iVar8 = thunk_FUN_00483f10((int)this);
       if (iVar8 == 1) {
@@ -364,7 +364,7 @@ LAB_00472a3a:
         *(short *)&this->field_0x469 = -*(short *)&this->field_0x469;
       }
       if ((this->field_082E != 2) || (iVar8 = GetDefenceTarget(this,CASE_2), iVar8 != 0))
-      goto switchD_0047251b_caseD_2;
+      goto cf_common_exit_00472CB0;
       pvVar5 = (void *)STAllPlayersC::GetObjPtr
                                  (DAT_007fa174,(uint)(byte)this->field_0x487,
                                   CONCAT22(extraout_var_08,*(undefined2 *)&this->field_048B),
@@ -431,13 +431,13 @@ LAB_00472a3a:
       case 6:
       case 7:
       case 8:
-        goto switchD_0047251b_caseD_1;
+        goto cf_common_exit_00472A1F;
       case 9:
 switchD_004727e9_caseD_9:
         goto LAB_00472a3a;
       }
     }
-switchD_0047251b_caseD_2:
+cf_common_exit_00472CB0:
     iVar8 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar8 != 0) & 0xfffffffd) + 2;
   }

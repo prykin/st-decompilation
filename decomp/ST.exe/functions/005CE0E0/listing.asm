@@ -1542,7 +1542,7 @@ LAB_005cf387:
 005CF387  51                        PUSH ECX
 005CF388  8B CB                     MOV ECX,EBX
 005CF38A  FF 10                     CALL dword ptr [EAX]
-LAB_005cf38c:
+SettMapMTy::NoneSettMap::cf_continue_loop_005CF38C:
 005CF38C  8B 45 E8                  MOV EAX,dword ptr [EBP + -0x18]
 005CF38F  8B 4D D4                  MOV ECX,dword ptr [EBP + -0x2c]
 005CF392  40                        INC EAX

@@ -75,7 +75,7 @@ LAB_0075655e:
 0075655E  B9 01 00 00 00            MOV ECX,0x1
 00756563  89 48 20                  MOV dword ptr [EAX + 0x20],ECX
 00756566  89 48 24                  MOV dword ptr [EAX + 0x24],ECX
-LAB_00756569:
+FUN_00756480::cf_common_exit_00756569:
 00756569  89 58 30                  MOV dword ptr [EAX + 0x30],EBX
 0075656C  89 58 38                  MOV dword ptr [EAX + 0x38],EBX
 0075656F  89 58 3C                  MOV dword ptr [EAX + 0x3c],EBX

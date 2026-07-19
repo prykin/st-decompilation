@@ -76,7 +76,7 @@ LAB_00645925:
 0064594E  7E 03                     JLE 0x00645953
 LAB_00645950:
 00645950  88 5D FE                  MOV byte ptr [EBP + -0x2],BL
-LAB_00645953:
+FUN_00645880::cf_common_exit_00645953:
 00645953  66 8B 4E 08               MOV CX,word ptr [ESI + 0x8]
 00645957  66 8B 56 0A               MOV DX,word ptr [ESI + 0xa]
 0064595B  66 89 4D BC               MOV word ptr [EBP + -0x44],CX

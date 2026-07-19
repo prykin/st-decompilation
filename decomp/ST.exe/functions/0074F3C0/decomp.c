@@ -53,14 +53,14 @@ undefined4 FUN_0074f3c0(int *param_1,uint *param_2,uint param_3,uint *param_4,ui
       uVar3 = param_4[1];
       param_1[8] = param_1[6] + *param_4;
       param_1[9] = param_1[7] + uVar3 + (uint)CARRY4(param_1[6],uVar4);
-      goto LAB_0074f489;
+      goto cf_common_exit_0074F489;
     }
-    if (uVar7 != 2) goto LAB_0074f489;
+    if (uVar7 != 2) goto cf_common_exit_0074F489;
     uVar4 = param_4[1] + param_1[9] + (uint)CARRY4(*param_4,param_1[8]);
     param_1[8] = *param_4 + param_1[8];
   }
   param_1[9] = uVar4;
-LAB_0074f489:
+cf_common_exit_0074F489:
   LeaveCriticalSection(lpCriticalSection);
   uVar5 = 0;
   if (uVar7 != 0) {

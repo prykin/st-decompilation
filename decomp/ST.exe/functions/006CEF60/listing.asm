@@ -835,7 +835,7 @@ LAB_006cf8f5:
 006CF908  FF 92 80 00 00 00         CALL dword ptr [EDX + 0x80]
 LAB_006cf90e:
 006CF90E  8B 7D DC                  MOV EDI,dword ptr [EBP + -0x24]
-LAB_006cf911:
+FUN_006cef60::cf_common_exit_006CF911:
 006CF911  81 FF A0 00 76 88         CMP EDI,0x887600a0
 006CF917  74 1D                     JZ 0x006cf936
 006CF919  81 FF AE 01 76 88         CMP EDI,0x887601ae

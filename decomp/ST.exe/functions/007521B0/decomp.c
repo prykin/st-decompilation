@@ -193,7 +193,7 @@ LAB_007522a2:
                     uVar12 = uVar12 - 1;
                   } while (uVar12 != 0);
                 }
-                if ((int)param_3 < 1) goto LAB_007525e9;
+                if ((int)param_3 < 1) goto cf_continue_loop_007525E9;
               }
               *pbVar10 = (byte)param_3 | 0xc0;
               pbVar10[1] = bVar1;
@@ -307,14 +307,14 @@ LAB_007522a2:
                     uVar12 = uVar12 - 1;
                   } while (uVar12 != 0);
                 }
-                if (iVar7 < 1) goto LAB_007525e9;
+                if (iVar7 < 1) goto cf_continue_loop_007525E9;
               }
               *pbVar10 = (byte)iVar7 | 0xc0;
               pbVar10[1] = (byte)local_10;
               pbVar10 = pbVar10 + 2;
             }
           }
-LAB_007525e9:
+cf_continue_loop_007525E9:
         } while (iVar14 < local_c);
         pbVar6 = pbVar6 + -(local_c + uVar11);
         local_14 = local_14 + 1;

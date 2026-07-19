@@ -271,7 +271,8 @@ LAB_0044326c:
             iVar4 = (**(code **)(*piVar7 + 0x2c))();
             if ((((iVar4 != 8) && (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 != 0x14)) &&
                 (iVar4 = (**(code **)(*piVar7 + 0x2c))(), iVar4 != 0x1a)) ||
-               (iVar4 = thunk_FUN_0045ff10((int)piVar7), iVar4 != 0xc)) goto LAB_004435cd;
+               (iVar4 = thunk_FUN_0045ff10((int)piVar7), iVar4 != 0xc))
+            goto cf_common_join_004435CD;
             uVar9 = 0;
             if (0 < (int)uVar10) {
               do {
@@ -280,7 +281,7 @@ LAB_0044326c:
                 uVar9 = uVar9 + 1;
               } while ((int)uVar9 < (int)uVar10);
             }
-            if ((int)uVar9 < (int)uVar10) goto LAB_004435cd;
+            if ((int)uVar9 < (int)uVar10) goto cf_common_join_004435CD;
             uVar15 = thunk_FUN_0048dc90(piVar7,local_19c);
             iVar4 = (int)((ulonglong)uVar15 >> 0x20);
             psVar11 = (short *)uVar15;
@@ -292,7 +293,7 @@ LAB_0044326c:
             }
             *psVar13 = *psVar11;
             uVar10 = local_3c;
-            if ((local_152 == -1) || (local_148 == -1)) goto LAB_004435cd;
+            if ((local_152 == -1) || (local_148 == -1)) goto cf_common_join_004435CD;
             if ((((local_158[0] < 0) ||
                  ((DAT_007fb240 <= local_158[0] ||
                   (iVar4 = CONCAT22((short)((ulonglong)uVar15 >> 0x30),local_158[1]),
@@ -307,7 +308,7 @@ LAB_0044326c:
               iVar4 = DAT_007fb248;
             }
             uVar8 = (undefined2)((uint)iVar4 >> 0x10);
-            if (local_40 == (int *)0x0) goto LAB_004435cd;
+            if (local_40 == (int *)0x0) goto cf_common_join_004435CD;
             local_8 = CONCAT22((short)((uint)local_40 >> 0x10),*(undefined2 *)((int)local_40 + 0x32)
                               );
             uVar9 = 0;
@@ -332,7 +333,7 @@ LAB_0044326c:
             }
             goto LAB_004434a2;
           }
-          goto LAB_004435cd;
+          goto cf_common_join_004435CD;
         }
 LAB_004435f1:
         FUN_006ae110((byte *)local_48);
@@ -637,7 +638,7 @@ LAB_004434a2:
       } while ((int)uVar9 < (int)uVar10);
     }
   }
-LAB_004435cd:
+cf_common_join_004435CD:
   local_44 = local_44 + 1;
   uVar10 = local_28;
   iVar4 = local_d0[5];
@@ -662,6 +663,6 @@ LAB_004435c8:
     local_e = local_13a;
     Library::DKW::TBL::FUN_006ae140(local_30,uVar9,(undefined4 *)&local_10);
   }
-  goto LAB_004435cd;
+  goto cf_common_join_004435CD;
 }
 

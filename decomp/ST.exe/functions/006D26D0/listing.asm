@@ -155,7 +155,7 @@ LAB_006d27da:
 006D27EA  EB C3                     JMP 0x006d27af
 LAB_006d27ec:
 006D27EC  03 F1                     ADD ESI,ECX
-LAB_006d27ee:
+FUN_006d26d0::cf_continue_loop_006D27EE:
 006D27EE  03 7D 0C                  ADD EDI,dword ptr [EBP + 0xc]
 006D27F1  2B 7D 1C                  SUB EDI,dword ptr [EBP + 0x1c]
 006D27F4  FF 4D 20                  DEC dword ptr [EBP + 0x20]

@@ -478,11 +478,11 @@ LAB_00534016:
             goto LAB_00534654;
           }
           UVar29 = 0x274f;
-          goto LAB_00536db5;
+          goto cf_common_exit_00536DB5;
         }
         if (uVar8 == 0xc002) {
           UVar29 = 0x274e;
-          goto LAB_00536db5;
+          goto cf_common_exit_00536DB5;
         }
         if (0xa106 < uVar8) {
           if (uVar8 != 0xc001) {
@@ -1355,7 +1355,7 @@ switchD_00535190_caseD_3:
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     default:
-      goto switchD_005347d0_caseD_c0a7;
+      goto cf_common_exit_00536FB7;
     case '\x05':
     case '\v':
       if (this_01->field_0x1a9 != '\0') {
@@ -2053,7 +2053,7 @@ LAB_00535ef1:
         }
         UVar29 = 0x3e81;
       }
-      goto LAB_00536f8b;
+      goto cf_common_exit_00536F8B;
     case 2:
       if (DAT_0080874e == '\x03') {
         uVar28 = *(undefined4 *)&this_01->field_0x180;
@@ -2068,12 +2068,12 @@ LAB_00535ef1:
         uVar28 = *(undefined4 *)&this_01->field_0x180;
         UVar29 = 0x3e8b;
       }
-      goto LAB_00536f92;
+      goto cf_common_exit_00536F92;
     default:
-      goto switchD_005347d0_caseD_c0a7;
+      goto cf_common_exit_00536FB7;
     case 5:
       UVar29 = 0x273e;
-      goto LAB_00536db5;
+      goto cf_common_exit_00536DB5;
     case 6:
       if (DAT_0080874e == '\x03') {
         iVar6 = 0;
@@ -2203,7 +2203,7 @@ joined_r0x0053686a:
       }
 LAB_00536434:
       UVar29 = 0x3ef0;
-LAB_00536441:
+cf_common_exit_00536441:
       iVar6 = 1;
       pcVar30 = thunk_FUN_0052a4d0;
       pCVar10 = thunk_FUN_00571240(s_BUT_BUTOPT1_007c7350,0);
@@ -2283,9 +2283,9 @@ LAB_00536441:
         g_currentExceptionFrame = local_8c.previous;
         return 0;
       }
-      goto switchD_005347d0_caseD_c0a7;
+      goto cf_common_exit_00536FB7;
     }
-LAB_00536ee8:
+cf_common_exit_00536EE8:
     uVar28 = 0;
     iVar26 = 1;
     pCVar10 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
@@ -2322,7 +2322,7 @@ LAB_00536ee8:
         }
         UVar29 = 0x3e8a;
       }
-      goto LAB_00536f8b;
+      goto cf_common_exit_00536F8B;
     case 3:
       iVar6 = *(int *)&this_01[1].field_0x2c;
       uVar8 = *(uint *)(iVar6 + 0x14);
@@ -2359,10 +2359,10 @@ LAB_00536ee8:
       g_currentExceptionFrame = local_8c.previous;
       return 0;
     default:
-      goto switchD_005347d0_caseD_c0a7;
+      goto cf_common_exit_00536FB7;
     case 5:
       UVar29 = 0x273f;
-      goto LAB_00536db5;
+      goto cf_common_exit_00536DB5;
     case 6:
       if (DAT_0080874e == '\x03') {
         iVar6 = 0;
@@ -2379,7 +2379,7 @@ LAB_00536ee8:
         pcVar30 = (code *)&LAB_0040235b;
         UVar29 = 0x3efd;
       }
-      goto LAB_00536ee8;
+      goto cf_common_exit_00536EE8;
     case 8:
       iVar6 = **(int **)(param_1 + 0x14);
       if (iVar6 == 1) {
@@ -2394,7 +2394,7 @@ LAB_00536ee8:
           }
           UVar29 = 0x3ef1;
         }
-        goto LAB_00536441;
+        goto cf_common_exit_00536441;
       }
       if (iVar6 != 2) {
         if (iVar6 != 3) {
@@ -2404,7 +2404,7 @@ LAB_00536ee8:
         if (DAT_0080874e == '\x03') {
           puVar12 = &LAB_00405c7c;
           UVar29 = 0x3ef2;
-          goto LAB_00536441;
+          goto cf_common_exit_00536441;
         }
         goto LAB_00536d52;
       }
@@ -2427,11 +2427,11 @@ LAB_00536ee8:
         pcVar30 = (code *)&LAB_0040235b;
         UVar29 = 0x3ef5;
       }
-      goto LAB_00536ee8;
+      goto cf_common_exit_00536EE8;
     case 0xb:
 switchD_00536a2b_caseD_3:
       UVar29 = 0x2751;
-LAB_00536db5:
+cf_common_exit_00536DB5:
       pCVar10 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
       UPanelTy::PaintIBut((UPanelTy *)this_01,param_1,pCVar10,UVar29);
       g_currentExceptionFrame = local_8c.previous;
@@ -2451,7 +2451,7 @@ LAB_00536db5:
         UVar29 = 0x3e93;
       }
     }
-    goto LAB_00536f92;
+    goto cf_common_exit_00536F92;
   case 0xc0b1:
     switch(this_01->field_0x1a4) {
     case 1:
@@ -2468,7 +2468,7 @@ LAB_00536db5:
         uVar28 = *(undefined4 *)&this_01->field_0x180;
         UVar29 = 0x3e83;
       }
-      goto LAB_00536f92;
+      goto cf_common_exit_00536F92;
     case 2:
       if (DAT_0080874e == '\x03') {
         puVar12 = &LAB_00404692;
@@ -2481,12 +2481,12 @@ LAB_00536db5:
         }
         UVar29 = 0x3e8c;
       }
-      goto LAB_00536f8b;
+      goto cf_common_exit_00536F8B;
     case 3:
     case 4:
       goto switchD_00536a2b_caseD_3;
     default:
-      goto switchD_005347d0_caseD_c0a7;
+      goto cf_common_exit_00536FB7;
     case 6:
       if (DAT_0080874e == '\x03') {
         iVar6 = 0;
@@ -2535,7 +2535,7 @@ LAB_00536db5:
           UVar29 = 0x3f03;
         }
       }
-      goto LAB_00536441;
+      goto cf_common_exit_00536441;
     case 9:
       if (DAT_0080874e == '\x03') {
         iVar6 = 0;
@@ -2572,9 +2572,9 @@ LAB_00536db5:
       break;
     case 0xe:
       UVar29 = 0x2752;
-      goto LAB_00536db5;
+      goto cf_common_exit_00536DB5;
     }
-    goto LAB_00536ee8;
+    goto cf_common_exit_00536EE8;
   case 0xc0b2:
     switch(this_01->field_0x1a4) {
     case 1:
@@ -2593,7 +2593,7 @@ LAB_00536db5:
       else {
         UVar29 = 0x3e96 - ((uint)(DAT_00802a38[0x39] - DAT_00802a38[0xd]) < 6000);
       }
-      goto LAB_00536f8b;
+      goto cf_common_exit_00536F8B;
     case 2:
       if (DAT_0080874e == '\x03') {
         uVar28 = *(undefined4 *)&this_01->field_0x180;
@@ -2608,13 +2608,13 @@ LAB_00536db5:
         uVar28 = *(undefined4 *)&this_01->field_0x180;
         UVar29 = 0x3e8d;
       }
-      goto LAB_00536f92;
+      goto cf_common_exit_00536F92;
     case 3:
     case 4:
       UVar29 = 0x2750;
-      goto LAB_00536db5;
+      goto cf_common_exit_00536DB5;
     default:
-      goto switchD_005347d0_caseD_c0a7;
+      goto cf_common_exit_00536FB7;
     case 6:
       if (DAT_0080874e == '\x03') {
         iVar6 = 0;
@@ -2649,12 +2649,12 @@ LAB_00536db5:
           }
           UVar29 = 0x3f06;
         }
-        goto LAB_00536441;
+        goto cf_common_exit_00536441;
       }
       if (DAT_0080874e == '\x03') {
         puVar12 = &LAB_00405c7c;
         UVar29 = 0x3ef2;
-        goto LAB_00536441;
+        goto cf_common_exit_00536441;
       }
 LAB_00536d52:
       puVar12 = &LAB_00402919;
@@ -2662,7 +2662,7 @@ LAB_00536d52:
         puVar12 = &LAB_00405b87;
       }
       UVar29 = 0x3ef2;
-      goto LAB_00536441;
+      goto cf_common_exit_00536441;
     case 9:
       if (DAT_0080874e == '\x03') {
         iVar6 = 0;
@@ -2680,7 +2680,7 @@ LAB_00536d52:
         UVar29 = 0x3ef7;
       }
     }
-    goto LAB_00536ee8;
+    goto cf_common_exit_00536EE8;
   case 0xc0b3:
     cVar1 = this_01->field_0x1a4;
     if (cVar1 != '\x01') {
@@ -2704,7 +2704,7 @@ LAB_00536d52:
           pcVar30 = (code *)&LAB_0040235b;
           UVar29 = 0x3f04;
         }
-        goto LAB_00536ee8;
+        goto cf_common_exit_00536EE8;
       }
       if (DAT_0080874e == '\x03') {
         puVar12 = &LAB_00404692;
@@ -2717,7 +2717,7 @@ LAB_00536d52:
         }
         UVar29 = 0x3e8f;
       }
-      goto LAB_00536f8b;
+      goto cf_common_exit_00536F8B;
     }
     if (DAT_0080874e == '\x03') {
       uVar28 = *(undefined4 *)&this_01->field_0x180;
@@ -2732,7 +2732,7 @@ LAB_00536d52:
       uVar28 = *(undefined4 *)&this_01->field_0x180;
       UVar29 = 0x3e85;
     }
-    goto LAB_00536f92;
+    goto cf_common_exit_00536F92;
   case 0xc0b4:
     if (this_01->field_0x1a4 != '\x01') {
       if (this_01->field_0x1a4 != '\t') {
@@ -2751,7 +2751,7 @@ LAB_00536d52:
       iVar6 = 0;
       pcVar30 = (code *)&LAB_0040235b;
       UVar29 = 0x3f05;
-      goto LAB_00536ee8;
+      goto cf_common_exit_00536EE8;
     }
     if (DAT_0080874e == '\x03') {
       uVar28 = *(undefined4 *)&this_01->field_0x180;
@@ -2766,7 +2766,7 @@ LAB_00536d52:
       uVar28 = *(undefined4 *)&this_01->field_0x180;
       UVar29 = 0x3e86;
     }
-    goto LAB_00536f92;
+    goto cf_common_exit_00536F92;
   case 0xc0b5:
     if (this_01->field_0x1a4 != '\x01') {
       g_currentExceptionFrame = local_8c.previous;
@@ -2782,16 +2782,16 @@ LAB_00536d52:
       }
     }
     UVar29 = 0x3e87;
-LAB_00536f8b:
+cf_common_exit_00536F8B:
     uVar28 = *(undefined4 *)&this_01->field_0x180;
-LAB_00536f92:
+cf_common_exit_00536F92:
     uVar24 = 0;
     iVar6 = 1;
     pCVar10 = thunk_FUN_00571240(s_BUT_BUTOPT_007c7264,0);
     pCVar10 = FUN_006f2c00(pCVar10,iVar6,uVar24);
     UPanelTy::PaintTxtBut((UPanelTy *)this_01,param_1,1,pCVar10,uVar28,UVar29,puVar12);
   }
-switchD_005347d0_caseD_c0a7:
+cf_common_exit_00536FB7:
   g_currentExceptionFrame = local_8c.previous;
   return 0;
 }

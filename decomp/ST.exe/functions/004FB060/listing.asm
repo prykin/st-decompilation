@@ -1013,7 +1013,7 @@ LAB_004fbcd3:
 004FBCE7  68 E4 2B 40 00            PUSH 0x402be4
 004FBCEC  6A 00                     PUSH 0x0
 004FBCEE  68 E4 1C 7C 00            PUSH 0x7c1ce4
-LAB_004fbcf3:
+CPanelTy::GetMessage::cf_common_exit_004FBCF3:
 004FBCF3  E8 84 9A F0 FF            CALL 0x0040577c
 004FBCF8  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 004FBCFB  83 C4 08                  ADD ESP,0x8
@@ -2515,7 +2515,7 @@ LAB_004fcef3:
 004FCF11  D1 E9                     SHR ECX,0x1
 004FCF13  88 4D D7                  MOV byte ptr [EBP + -0x29],CL
 004FCF16  6A 2A                     PUSH 0x2a
-LAB_004fcf18:
+CPanelTy::GetMessage::cf_common_exit_004FCF18:
 004FCF18  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 004FCF1E  E8 10 6D F0 FF            CALL 0x00403c33
 004FCF23  68 AE 00 00 00            PUSH 0xae
@@ -2766,7 +2766,7 @@ LAB_004fd1c8:
 004FD1CE  52                        PUSH EDX
 004FD1CF  6A 00                     PUSH 0x0
 004FD1D1  50                        PUSH EAX
-LAB_004fd1d2:
+CPanelTy::GetMessage::cf_common_exit_004FD1D2:
 004FD1D2  E8 A5 85 F0 FF            CALL 0x0040577c
 004FD1D7  8A 1D 4E 87 80 00         MOV BL,byte ptr [0x0080874e]
 004FD1DD  83 C4 08                  ADD ESP,0x8
@@ -3143,9 +3143,9 @@ LAB_004fd5b3:
 004FD5FF  50                        PUSH EAX
 004FD600  A1 A8 75 80 00            MOV EAX,[0x008075a8]
 004FD605  50                        PUSH EAX
-LAB_004fd606:
+CPanelTy::GetMessage::cf_common_exit_004FD606:
 004FD606  E8 35 60 1B 00            CALL 0x006b3640
-switchD_004fb10b::caseD_1:
+CPanelTy::GetMessage::cf_common_exit_004FD60B:
 004FD60B  8B 8D 34 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff34]
 004FD611  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 004FD614  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

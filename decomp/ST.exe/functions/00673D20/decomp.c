@@ -46,7 +46,7 @@ LAB_00673d71:
   DAT_00857544 = DAT_00811914;
   if ((DAT_007d2d24 & 8) == 0) {
 LAB_00673e66:
-    if ((DAT_007d2d18 != 0x84e) && (DAT_007d2d18 != 0x11)) goto LAB_006743f6;
+    if ((DAT_007d2d18 != 0x84e) && (DAT_007d2d18 != 0x11)) goto cf_common_join_006743F6;
 LAB_00673e7d:
     DAT_00811914 = DAT_0081190c + 1;
     bVar3 = *(byte *)(DAT_0085755c + DAT_0081190c);
@@ -56,7 +56,7 @@ LAB_00673e7d:
 LAB_006741a7:
       if (DAT_007d2d18 != 0x84e) {
 LAB_006741b3:
-        if (DAT_007d2d18 != 0x11) goto LAB_006743f6;
+        if (DAT_007d2d18 != 0x11) goto cf_common_join_006743F6;
       }
 LAB_006741c0:
       DAT_00811914 = DAT_0081190c + 1;
@@ -137,7 +137,7 @@ LAB_006741c0:
          ((*(uint *)(DAT_00811924 + *(char *)(DAT_0085755c + 1 + DAT_0081190c) * 4) & 0x100) == 0)))
         ))) {
       DAT_007d2d18 = 0x22;
-      goto LAB_006743f6;
+      goto cf_common_join_006743F6;
     }
     DAT_00811914 = DAT_0081190c + 1;
     if ((uVar11 & 0x20) == 0) {
@@ -212,7 +212,8 @@ LAB_00674068:
               FUN_006b77e0((char *)DAT_00857528,DAT_00811948);
             }
             else {
-              if ((DAT_00857528 == (byte *)0x0) || (DAT_00811948 == (byte *)0x0)) goto LAB_006743f6;
+              if ((DAT_00857528 == (byte *)0x0) || (DAT_00811948 == (byte *)0x0))
+              goto cf_common_join_006743F6;
               uVar12 = 0xffffffff;
               pbVar15 = DAT_00811948;
               do {
@@ -293,13 +294,13 @@ LAB_00673e50:
       }
       DAT_00811914 = iVar8 + 1;
       DAT_007d2d18 = 0x1d;
-      goto LAB_00674486;
+      goto cf_common_exit_00674486;
     }
     goto LAB_006744b5;
   }
 LAB_00674464:
   DAT_007d2d18 = 0x1d;
-  goto LAB_00674486;
+  goto cf_common_exit_00674486;
 LAB_00674357:
   if (DAT_007d2d18 == 0x11) {
 LAB_00674360:
@@ -311,12 +312,12 @@ LAB_006743cd:
       DAT_007d2d24 = uVar12;
       if (uVar11 == 0) {
         DAT_00811954 = 0x1d;
-        goto LAB_006743ff;
+        goto cf_continue_loop_006743FF;
       }
-      goto LAB_006744a4;
+      goto cf_break_loop_006744A4;
     }
 LAB_0067433f:
-    if ((DAT_007d2d24 & 4) != 0) goto LAB_006744a4;
+    if ((DAT_007d2d24 & 4) != 0) goto cf_break_loop_006744A4;
   }
   else {
     DAT_007d2d18 = *(int *)(puVar13 + 2);
@@ -325,24 +326,24 @@ LAB_00674334:
     if (DAT_007d2d18 == 0x12) {
       if ((DAT_007d2d24 & 4) != 0) {
         DAT_007d2d24 = DAT_007d2d24 | 8;
-        goto LAB_006744a4;
+        goto cf_break_loop_006744A4;
       }
       DAT_00811954 = 0x1d;
       DAT_00811914 = DAT_00857558;
-      goto LAB_006743ff;
+      goto cf_continue_loop_006743FF;
     }
     if (DAT_007d2d18 == 7) {
       uVar12 = DAT_007d2d24 | 8;
       uVar11 = DAT_007d2d24 & 4;
       DAT_007d2d24 = uVar12;
-      if (uVar11 == 0) goto LAB_006743ff;
-      goto LAB_006744a4;
+      if (uVar11 == 0) goto cf_continue_loop_006743FF;
+      goto cf_break_loop_006744A4;
     }
     if (DAT_007d2d18 == 0x1b) goto LAB_006743cd;
   }
-LAB_006743f6:
+cf_common_join_006743F6:
   if ((DAT_007d2d24 & 8) != 0) {
-LAB_006743ff:
+cf_continue_loop_006743FF:
     iVar8 = FUN_00673210(0);
     if (iVar8 < 0) {
       return iVar8;
@@ -351,22 +352,22 @@ LAB_006743ff:
   }
 LAB_0067447d:
   if (DAT_007d2d18 == 0x1d) {
-LAB_00674486:
+cf_common_exit_00674486:
     *DAT_00857528 = 10;
     DAT_00857528[1] = 0;
-    goto LAB_00674540;
+    goto cf_common_exit_00674540;
   }
-LAB_006744a4:
-  if (!bVar7) goto LAB_00674540;
+cf_break_loop_006744A4:
+  if (!bVar7) goto cf_common_exit_00674540;
 LAB_006744b5:
   uVar5 = *(undefined1 *)(DAT_0085755c + DAT_00811914);
   *(undefined1 *)(DAT_0085755c + DAT_00811914) = 0;
   if ((DAT_007d2d24 & 0x100) == 0) {
     FUN_006b77e0((char *)DAT_00857528,(byte *)(DAT_0085755c + DAT_0081190c));
-    goto LAB_00674521;
+    goto cf_common_exit_00674521;
   }
   if ((DAT_00857528 == (byte *)0x0) || ((char *)(DAT_0085755c + DAT_0081190c) == (char *)0x0))
-  goto LAB_00674521;
+  goto cf_common_exit_00674521;
   uVar11 = 0xffffffff;
   pcVar17 = (char *)(DAT_0085755c + DAT_0081190c);
   goto code_r0x006744e7;
@@ -393,10 +394,10 @@ code_r0x006744e7:
     pbVar15 = pbVar15 + 1;
     pbVar16 = pbVar16 + 1;
   }
-LAB_00674521:
+cf_common_exit_00674521:
   DAT_00857528[DAT_00811914 - DAT_0081190c] = 0;
   *(undefined1 *)(DAT_0085755c + DAT_00811914) = uVar5;
-LAB_00674540:
+cf_common_exit_00674540:
   if (local_14 == 0) {
     local_14 = DAT_007d2d18;
   }

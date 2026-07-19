@@ -4154,7 +4154,7 @@ LAB_0068769e:
 0068769E  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 006876A4  75 1B                     JNZ 0x006876c1
 006876A6  68 75 08 00 00            PUSH 0x875
-LAB_006876ab:
+FUN_00683c70::cf_error_exit_006876AB:
 006876AB  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 006876B1  68 04 56 7D 00            PUSH 0x7d5604
 006876B6  51                        PUSH ECX
@@ -4178,7 +4178,7 @@ LAB_006876f1:
 006876F1  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 006876F7  75 1B                     JNZ 0x00687714
 006876F9  68 76 08 00 00            PUSH 0x876
-LAB_006876fe:
+FUN_00683c70::cf_error_exit_006876FE:
 006876FE  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 00687704  68 04 56 7D 00            PUSH 0x7d5604
 00687709  52                        PUSH EDX
@@ -4202,13 +4202,13 @@ LAB_00687743:
 00687743  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00687749  75 1B                     JNZ 0x00687766
 0068774B  68 77 08 00 00            PUSH 0x877
-LAB_00687750:
+FUN_00683c70::cf_error_exit_00687750:
 00687750  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 00687756  68 04 56 7D 00            PUSH 0x7d5604
 0068775B  51                        PUSH ECX
 0068775C  68 71 FF FF FF            PUSH 0xffffff71
 00687761  E8 DA E6 01 00            CALL 0x006a5e40
-LAB_00687766:
+FUN_00683c70::cf_common_join_00687766:
 00687766  6A 03                     PUSH 0x3
 00687768  E9 60 1E 00 00            JMP 0x006895cd
 switchD_006874db::caseD_517:
@@ -4226,13 +4226,13 @@ LAB_00687793:
 00687793  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00687799  75 1B                     JNZ 0x006877b6
 0068779B  68 78 08 00 00            PUSH 0x878
-LAB_006877a0:
+FUN_00683c70::cf_error_exit_006877A0:
 006877A0  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 006877A6  68 04 56 7D 00            PUSH 0x7d5604
 006877AB  52                        PUSH EDX
 006877AC  68 71 FF FF FF            PUSH 0xffffff71
 006877B1  E8 8A E6 01 00            CALL 0x006a5e40
-LAB_006877b6:
+FUN_00683c70::cf_common_join_006877B6:
 006877B6  6A 03                     PUSH 0x3
 006877B8  E9 B1 1D 00 00            JMP 0x0068956e
 switchD_006874db::caseD_518:
@@ -4250,13 +4250,13 @@ LAB_006877e2:
 006877E2  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 006877E8  75 1B                     JNZ 0x00687805
 006877EA  68 79 08 00 00            PUSH 0x879
-LAB_006877ef:
+FUN_00683c70::cf_error_exit_006877EF:
 006877EF  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 006877F5  68 04 56 7D 00            PUSH 0x7d5604
 006877FA  51                        PUSH ECX
 006877FB  68 71 FF FF FF            PUSH 0xffffff71
 00687800  E8 3B E6 01 00            CALL 0x006a5e40
-LAB_00687805:
+FUN_00683c70::cf_common_join_00687805:
 00687805  6A 04                     PUSH 0x4
 00687807  E9 C1 1D 00 00            JMP 0x006895cd
 switchD_006874db::caseD_519:
@@ -4274,13 +4274,13 @@ LAB_00687832:
 00687832  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00687838  75 1B                     JNZ 0x00687855
 0068783A  68 7A 08 00 00            PUSH 0x87a
-LAB_0068783f:
+FUN_00683c70::cf_error_exit_0068783F:
 0068783F  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 00687845  68 04 56 7D 00            PUSH 0x7d5604
 0068784A  52                        PUSH EDX
 0068784B  68 71 FF FF FF            PUSH 0xffffff71
 00687850  E8 EB E5 01 00            CALL 0x006a5e40
-LAB_00687855:
+FUN_00683c70::cf_common_join_00687855:
 00687855  6A 02                     PUSH 0x2
 00687857  E9 12 1D 00 00            JMP 0x0068956e
 switchD_006874db::caseD_51a:
@@ -4298,13 +4298,13 @@ LAB_00687881:
 00687881  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00687887  75 1B                     JNZ 0x006878a4
 00687889  68 7B 08 00 00            PUSH 0x87b
-LAB_0068788e:
+FUN_00683c70::cf_error_exit_0068788E:
 0068788E  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 00687894  68 04 56 7D 00            PUSH 0x7d5604
 00687899  51                        PUSH ECX
 0068789A  68 71 FF FF FF            PUSH 0xffffff71
 0068789F  E8 9C E5 01 00            CALL 0x006a5e40
-LAB_006878a4:
+FUN_00683c70::cf_common_join_006878A4:
 006878A4  6A 02                     PUSH 0x2
 006878A6  E9 22 1D 00 00            JMP 0x006895cd
 switchD_006874db::caseD_51b:
@@ -4396,13 +4396,13 @@ LAB_006879dd:
 006879DD  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 006879E3  75 1B                     JNZ 0x00687a00
 006879E5  68 82 08 00 00            PUSH 0x882
-LAB_006879ea:
+FUN_00683c70::cf_error_exit_006879EA:
 006879EA  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 006879F0  68 04 56 7D 00            PUSH 0x7d5604
 006879F5  52                        PUSH EDX
 006879F6  68 71 FF FF FF            PUSH 0xffffff71
 006879FB  E8 40 E4 01 00            CALL 0x006a5e40
-LAB_00687a00:
+FUN_00683c70::cf_common_join_00687A00:
 00687A00  6A 01                     PUSH 0x1
 00687A02  6A 02                     PUSH 0x2
 00687A04  E8 A6 96 D7 FF            CALL 0x004010af
@@ -4449,7 +4449,7 @@ LAB_00687a90:
 00687A90  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00687A96  75 1B                     JNZ 0x00687ab3
 00687A98  68 84 08 00 00            PUSH 0x884
-LAB_00687a9d:
+FUN_00683c70::cf_error_exit_00687A9D:
 00687A9D  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 00687AA3  68 04 56 7D 00            PUSH 0x7d5604
 00687AA8  52                        PUSH EDX
@@ -4473,7 +4473,7 @@ LAB_00687adf:
 00687ADF  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00687AE5  75 1B                     JNZ 0x00687b02
 00687AE7  68 85 08 00 00            PUSH 0x885
-LAB_00687aec:
+FUN_00683c70::cf_error_exit_00687AEC:
 00687AEC  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 00687AF2  68 04 56 7D 00            PUSH 0x7d5604
 00687AF7  51                        PUSH ECX
@@ -4977,7 +4977,7 @@ LAB_00688212:
 00688212  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00688218  75 1B                     JNZ 0x00688235
 0068821A  68 A3 08 00 00            PUSH 0x8a3
-LAB_0068821f:
+FUN_00683c70::cf_error_exit_0068821F:
 0068821F  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 00688225  68 04 56 7D 00            PUSH 0x7d5604
 0068822A  51                        PUSH ECX
@@ -5033,13 +5033,13 @@ LAB_006882d9:
 006882D9  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 006882DF  75 1B                     JNZ 0x006882fc
 006882E1  68 A7 08 00 00            PUSH 0x8a7
-LAB_006882e6:
+FUN_00683c70::cf_error_exit_006882E6:
 006882E6  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 006882EC  68 04 56 7D 00            PUSH 0x7d5604
 006882F1  52                        PUSH EDX
 006882F2  68 71 FF FF FF            PUSH 0xffffff71
 006882F7  E8 44 DB 01 00            CALL 0x006a5e40
-LAB_006882fc:
+FUN_00683c70::cf_common_join_006882FC:
 006882FC  6A 04                     PUSH 0x4
 006882FE  E9 6B 12 00 00            JMP 0x0068956e
 switchD_00688157::caseD_57a:
@@ -5411,7 +5411,7 @@ LAB_00688832:
 00688832  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 00688838  75 1B                     JNZ 0x00688855
 0068883A  68 BD 08 00 00            PUSH 0x8bd
-LAB_0068883f:
+FUN_00683c70::cf_error_exit_0068883F:
 0068883F  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 00688845  68 04 56 7D 00            PUSH 0x7d5604
 0068884A  51                        PUSH ECX
@@ -6318,7 +6318,7 @@ LAB_00689549:
 00689549  39 1D CC 89 84 00         CMP dword ptr [0x008489cc],EBX
 0068954F  75 1B                     JNZ 0x0068956c
 00689551  68 F5 08 00 00            PUSH 0x8f5
-LAB_00689556:
+FUN_00683c70::cf_error_exit_00689556:
 00689556  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 0068955C  68 04 56 7D 00            PUSH 0x7d5604
 00689561  52                        PUSH EDX
@@ -6326,7 +6326,7 @@ LAB_00689556:
 00689567  E8 D4 C8 01 00            CALL 0x006a5e40
 LAB_0068956c:
 0068956C  6A 06                     PUSH 0x6
-LAB_0068956e:
+FUN_00683c70::cf_common_join_0068956E:
 0068956E  E8 1A 9D D7 FF            CALL 0x0040328d
 LAB_00689573:
 00689573  83 C4 04                  ADD ESP,0x4
@@ -6357,11 +6357,11 @@ LAB_006895b5:
 006895C6  E8 75 C8 01 00            CALL 0x006a5e40
 LAB_006895cb:
 006895CB  6A 07                     PUSH 0x7
-LAB_006895cd:
+FUN_00683c70::cf_common_join_006895CD:
 006895CD  E8 BB 9C D7 FF            CALL 0x0040328d
 LAB_006895d2:
 006895D2  83 C4 04                  ADD ESP,0x4
-LAB_006895d5:
+FUN_00683c70::cf_common_join_006895D5:
 006895D5  85 C0                     TEST EAX,EAX
 006895D7  75 2B                     JNZ 0x00689604
 006895D9  8B 0D B0 88 84 00         MOV ECX,dword ptr [0x008488b0]
@@ -6420,6 +6420,7 @@ LAB_00689687:
 00689689  E8 FF 9B D7 FF            CALL 0x0040328d
 0068968E  83 C4 04                  ADD ESP,0x4
 00689691  85 C0                     TEST EAX,EAX
+FUN_00683c70::cf_common_join_00689693:
 00689693  75 2B                     JNZ 0x006896c0
 LAB_00689695:
 00689695  8B 0D B0 88 84 00         MOV ECX,dword ptr [0x008488b0]
@@ -7346,7 +7347,7 @@ switchD_0068992d::caseD_3:
 0068A223  68 04 56 7D 00            PUSH 0x7d5604
 0068A228  50                        PUSH EAX
 0068A229  6A 97                     PUSH -0x69
-LAB_0068a22b:
+FUN_00683c70::cf_error_exit_0068A22B:
 0068A22B  E8 10 BC 01 00            CALL 0x006a5e40
 LAB_0068a230:
 0068A230  A1 B0 88 84 00            MOV EAX,[0x008488b0]
@@ -7662,7 +7663,7 @@ LAB_0068a66e:
 0068A679  89 1D D8 89 84 00         MOV dword ptr [0x008489d8],EBX
 0068A67F  74 06                     JZ 0x0068a687
 0068A681  C7 00 0A 00 00 00         MOV dword ptr [EAX],0xa
-LAB_0068a687:
+FUN_00683c70::cf_common_join_0068A687:
 0068A687  3B F3                     CMP ESI,EBX
 0068A689  75 1A                     JNZ 0x0068a6a5
 0068A68B  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]

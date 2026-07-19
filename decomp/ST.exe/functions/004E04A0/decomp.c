@@ -103,19 +103,19 @@ LAB_004e05d3:
         iVar3 = **(int **)(*(int *)(param_1 + 0x1f5) + 0x18c) + -1;
         iVar2 = 0;
       }
-      goto LAB_004e068c;
+      goto cf_common_exit_004E068C;
     }
     iVar1 = *(int *)(param_1 + 0x5ac);
     if (((iVar1 != 0x3b) && (iVar1 != 0x60)) && (iVar1 != 0x52)) {
       iVar3 = **(int **)(*(int *)(param_1 + 0x1f5) + 0x18c) + -1;
       iVar2 = 0;
-      goto LAB_004e068c;
+      goto cf_common_exit_004E068C;
     }
     iVar2 = **(int **)(*(int *)(param_1 + 0x1f5) + 0x18c);
   }
   iVar3 = 0;
   iVar2 = iVar2 + -1;
-LAB_004e068c:
+cf_common_exit_004E068C:
   thunk_FUN_004abce0(this,0xb,iVar3,iVar2,'\0');
   STT3DSprC::SetCurFase(this,'\v',iVar3);
   STT3DSprC::StartShow(this,0xb,*(undefined4 *)(DAT_00802a38 + 0xe4));

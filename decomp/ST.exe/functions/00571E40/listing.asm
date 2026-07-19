@@ -520,7 +520,7 @@ LAB_00572375:
 00572387  8B E5                     MOV ESP,EBP
 00572389  5D                        POP EBP
 0057238A  C2 04 00                  RET 0x4
-LAB_0057238d:
+FUN_00571e40::cf_common_exit_0057238D:
 0057238D  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 00572390  50                        PUSH EAX
 00572391  FF 15 68 B9 85 00         CALL dword ptr [0x0085b968]

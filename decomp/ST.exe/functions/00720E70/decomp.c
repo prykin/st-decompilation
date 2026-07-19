@@ -28,7 +28,8 @@ void __thiscall FUN_00720e70(void *this,int param_1,int param_2)
       iVar4 = *(int *)(iVar5 + 4) + 1;
       puVar7 = *(uint **)(*(int *)(iVar5 + 0x14) + -4 + iVar4 * 4);
       *(int *)(iVar5 + 4) = iVar4;
-      if ((puVar7 == (uint *)0x0) || (*(int *)((int)this + 0x30) <= local_c)) goto LAB_00720f4e;
+      if ((puVar7 == (uint *)0x0) || (*(int *)((int)this + 0x30) <= local_c))
+      goto cf_break_loop_00720F4E;
       iVar5 = -1;
       puVar9 = puVar7;
       do {
@@ -47,14 +48,14 @@ void __thiscall FUN_00720e70(void *this,int param_1,int param_2)
       if ((local_c <= param_2) && (param_2 < iVar4 + local_c)) {
         *(int *)((int)this + 0x208) = local_c;
         *(int *)((int)this + 0x20c) = local_8;
-        goto LAB_00720f4e;
+        goto cf_break_loop_00720F4E;
       }
       local_c = local_c + iVar4;
       local_8 = local_8 + 1;
       local_10 = iVar5;
     }
     puVar7 = (uint *)0x0;
-LAB_00720f4e:
+cf_break_loop_00720F4E:
     if (*(int *)((int)this + 0x208) < 0) {
       *(int *)((int)this + 0x208) = local_10;
       param_1 = *(int *)((int)this + 0x2c) + -1;

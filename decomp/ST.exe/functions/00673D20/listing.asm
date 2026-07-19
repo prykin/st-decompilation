@@ -528,10 +528,10 @@ LAB_006743cd:
 006743EF  EB 0E                     JMP 0x006743ff
 LAB_006743f1:
 006743F1  A1 14 19 81 00            MOV EAX,[0x00811914]
-LAB_006743f6:
+FUN_00673d20::cf_common_join_006743F6:
 006743F6  F6 05 24 2D 7D 00 08      TEST byte ptr [0x007d2d24],0x8
 006743FD  74 7E                     JZ 0x0067447d
-LAB_006743ff:
+FUN_00673d20::cf_continue_loop_006743FF:
 006743FF  6A 00                     PUSH 0x0
 00674401  E8 0A EE FF FF            CALL 0x00673210
 00674406  85 C0                     TEST EAX,EAX
@@ -573,7 +573,7 @@ LAB_00674470:
 LAB_0067447d:
 0067447D  83 3D 18 2D 7D 00 1D      CMP dword ptr [0x007d2d18],0x1d
 00674484  75 1E                     JNZ 0x006744a4
-LAB_00674486:
+FUN_00673d20::cf_common_exit_00674486:
 00674486  A1 28 75 85 00            MOV EAX,[0x00857528]
 0067448B  C6 00 0A                  MOV byte ptr [EAX],0xa
 0067448E  8B 0D 28 75 85 00         MOV ECX,dword ptr [0x00857528]
@@ -581,7 +581,7 @@ LAB_00674486:
 00674498  E9 A3 00 00 00            JMP 0x00674540
 LAB_0067449d:
 0067449D  83 0D 24 2D 7D 00 08      OR dword ptr [0x007d2d24],0x8
-LAB_006744a4:
+FUN_00673d20::cf_break_loop_006744A4:
 006744A4  8B 4D EC                  MOV ECX,dword ptr [EBP + -0x14]
 006744A7  85 C9                     TEST ECX,ECX
 006744A9  0F 84 91 00 00 00         JZ 0x00674540
@@ -624,7 +624,7 @@ LAB_00674501:
 00674516  E8 C5 32 04 00            CALL 0x006b77e0
 LAB_0067451b:
 0067451B  8B 15 28 75 85 00         MOV EDX,dword ptr [0x00857528]
-LAB_00674521:
+FUN_00673d20::cf_common_exit_00674521:
 00674521  A1 0C 19 81 00            MOV EAX,[0x0081190c]
 00674526  8B 0D 14 19 81 00         MOV ECX,dword ptr [0x00811914]
 0067452C  2B D0                     SUB EDX,EAX
@@ -632,7 +632,7 @@ LAB_00674521:
 00674532  8B 15 14 19 81 00         MOV EDX,dword ptr [0x00811914]
 00674538  A1 5C 75 85 00            MOV EAX,[0x0085755c]
 0067453D  88 1C 10                  MOV byte ptr [EAX + EDX*0x1],BL
-LAB_00674540:
+FUN_00673d20::cf_common_exit_00674540:
 00674540  8B 15 40 75 85 00         MOV EDX,dword ptr [0x00857540]
 00674546  8B 45 F0                  MOV EAX,dword ptr [EBP + -0x10]
 00674549  42                        INC EDX

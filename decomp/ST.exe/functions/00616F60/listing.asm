@@ -196,7 +196,7 @@ LAB_00617210:
 00617210  8B CE                     MOV ECX,ESI
 00617212  E8 26 D4 DE FF            CALL 0x0040463d
 00617217  C7 86 0C 02 00 00 09 00 00 00  MOV dword ptr [ESI + 0x20c],0x9
-LAB_00617221:
+FUN_00616f60::cf_common_exit_00617221:
 00617221  DB 86 C1 02 00 00         FILD dword ptr [ESI + 0x2c1]
 00617227  D9 45 FC                  FLD float ptr [EBP + -0x4]
 0061722A  D9 FF                     FCOS

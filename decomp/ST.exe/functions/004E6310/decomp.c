@@ -44,7 +44,7 @@ LAB_004e63ab:
             iVar7 = iVar7 + 1;
           } while (*piVar1 != 0);
         }
-        goto LAB_004e643c;
+        goto cf_continue_loop_004E643C;
       }
 LAB_004e645f:
       if (*(int *)(&DAT_007f57ee + iVar10) != 0) {
@@ -95,7 +95,7 @@ LAB_004e645f:
   return;
   while( true ) {
     if (*(int *)((int)&DAT_007f5147 + *puVar5 * 4 + iVar10) < (int)(uint)(byte)puVar5[1])
-    goto LAB_004e643c;
+    goto cf_continue_loop_004E643C;
     piVar1 = (int *)((int)puVar5 + 5);
     puVar5 = (uint *)((int)puVar5 + 5);
     iVar7 = iVar7 + 1;
@@ -106,7 +106,7 @@ LAB_004e63fe:
   uVar9 = *(uint *)(iVar8 + (int)piVar4) ^ 7;
   pbVar3 = (byte *)((int)&DAT_007f511f + ((int)uVar9 >> 3) + iVar10);
   *pbVar3 = *pbVar3 | '\x01' << (uVar9 & 7);
-LAB_004e643c:
+cf_continue_loop_004E643C:
   local_10 = local_10 + 0x19;
   iVar8 = iVar8 + 0x19;
   piVar4 = (int *)(&PTR_DAT_007c0dc8)[bVar2 - 1];

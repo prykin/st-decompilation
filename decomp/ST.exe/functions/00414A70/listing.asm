@@ -459,7 +459,7 @@ LAB_00414e77:
 00414E80  D1 F8                     SAR EAX,0x1
 00414E82  3B F8                     CMP EDI,EAX
 00414E84  0F 8E 46 FC FF FF         JLE 0x00414ad0
-LAB_00414e8a:
+FUN_00414a70::cf_break_loop_00414E8A:
 00414E8A  8B 45 E8                  MOV EAX,dword ptr [EBP + -0x18]
 00414E8D  33 F6                     XOR ESI,ESI
 00414E8F  5F                        POP EDI

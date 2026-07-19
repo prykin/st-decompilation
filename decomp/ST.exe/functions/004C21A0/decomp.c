@@ -45,7 +45,7 @@ FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,flo
     if (param_2 == this) {
       sVar4 = 4;
     }
-    if ((param_2 == (int *)0x0) || (param_2[9] != local_8[9])) goto switchD_004c22b3_caseD_1;
+    if ((param_2 == (int *)0x0) || (param_2[9] != local_8[9])) goto cf_common_exit_004C261B;
     iVar5 = param_2[8];
     if (iVar5 == 0x14) {
       iVar5 = *param_2;
@@ -54,15 +54,15 @@ LAB_004c2260:
       if (iVar5 != 0) {
         sVar4 = 3;
       }
-      goto switchD_004c22b3_caseD_1;
+      goto cf_common_exit_004C261B;
     }
-    if ((iVar5 != 1000) && (iVar5 != 0x3e9)) goto switchD_004c22b3_caseD_1;
+    if ((iVar5 != 1000) && (iVar5 != 0x3e9)) goto cf_common_exit_004C261B;
     iVar5 = (**(code **)(*param_2 + 0xec))();
 joined_r0x004c2294:
-    if (iVar5 == 0) goto switchD_004c22b3_caseD_1;
+    if (iVar5 == 0) goto cf_common_exit_004C261B;
 LAB_004c2616:
     sVar4 = 4;
-    goto switchD_004c22b3_caseD_1;
+    goto cf_common_exit_004C261B;
   }
   switch(param_1) {
   case CASE_0:
@@ -133,7 +133,7 @@ LAB_004c2616:
       sVar4 = 0x1d;
       break;
     }
-    goto LAB_004c2352;
+    goto cf_common_exit_004C2352;
   case CASE_26:
   case CASE_37:
 joined_r0x004c231f:
@@ -143,7 +143,7 @@ joined_r0x004c231f:
     }
     if (((iVar5 < 0) || (DAT_007fb240 <= iVar5)) || ((param_4 < 0 || (DAT_007fb242 <= param_4))))
     break;
-    goto LAB_004c2352;
+    goto cf_common_exit_004C2352;
   case CASE_2A:
   case CASE_43:
     if (((((-1 < iVar5) && (iVar5 < DAT_007fb240)) &&
@@ -159,10 +159,10 @@ joined_r0x004c231f:
       sVar4 = 0x1f;
       break;
     }
-LAB_004c2352:
+cf_common_exit_004C2352:
     sVar4 = 1;
   }
-switchD_004c22b3_caseD_1:
+cf_common_exit_004C261B:
   if (((local_8[0x108] != 0) && (sVar4 != 4)) && (sVar4 != 3)) {
     return 0;
   }

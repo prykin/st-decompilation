@@ -213,7 +213,7 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     pSVar2->field_0207 = iVar3;
     iVar3 = Library::DKW::LIB::FUN_006aac70(pSVar2->field_01FD << 2);
     pSVar2->field_020B = iVar3;
-    if ((pSVar2->field_0207 != 0) && (iVar3 != 0)) goto LAB_00581d62;
+    if ((pSVar2->field_0207 != 0) && (iVar3 != 0)) goto cf_common_exit_00581D62;
     iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x143,0,0,&DAT_007a4ccc,
                                s_Not_enough_memory_007cb3c8);
     if (iVar3 != 0) {
@@ -243,7 +243,7 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     pSVar2->field_0207 = iVar3;
     iVar3 = Library::DKW::LIB::FUN_006aac70(pSVar2->field_01FD << 2);
     pSVar2->field_020B = iVar3;
-    if ((pSVar2->field_0207 != 0) && (iVar3 != 0)) goto LAB_00581d62;
+    if ((pSVar2->field_0207 != 0) && (iVar3 != 0)) goto cf_common_exit_00581D62;
     iVar3 = ReportDebugMessage(s_E____titans_Igor_to_jell_m_cpp_007cb2f0,0x15a,0,0,&DAT_007a4ccc,
                                s_Not_enough_memory_007cb3c8);
     if (iVar3 != 0) {
@@ -254,7 +254,7 @@ undefined4 __thiscall STJellyManC::GetMessage(STJellyManC *this,int param_1)
     iVar3 = 0x15b;
   }
   RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_jell_m_cpp_007cb2f0,iVar3);
-LAB_00581d62:
+cf_common_exit_00581D62:
   puVar9 = (undefined4 *)pSVar2->field_0207;
   for (uVar7 = pSVar2->field_01FD & 0x3fffffff; uVar7 != 0; uVar7 = uVar7 - 1) {
     *puVar9 = 0;

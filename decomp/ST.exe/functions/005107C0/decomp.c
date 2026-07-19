@@ -76,7 +76,7 @@ undefined4 __thiscall FrmPanelTy::GetMessage(FrmPanelTy *this,int param_1)
               return 0;
             }
           }
-switchD_005108d5_caseD_b10c:
+cf_common_exit_005109A5:
           local_18 = 0;
           local_14 = 0;
           local_10 = 0;
@@ -109,7 +109,7 @@ switchD_005108d5_caseD_b10c:
         switch(uVar1) {
         case 0xb10c:
         case 0xb10e:
-          goto switchD_005108d5_caseD_b10c;
+          goto cf_common_exit_005109A5;
         case 0xb10d:
           iVar3 = *(int *)this_00;
           pcVar7 = s_BUT_FRLFT_007c29ac;
@@ -165,7 +165,7 @@ switchD_00510930_default:
   }
   switch(uVar1) {
   case 0xc0a6:
-    goto switchD_005108d5_caseD_b10c;
+    goto cf_common_exit_005109A5;
   default:
     goto switchD_005108d5_default;
   case 0xc0af:

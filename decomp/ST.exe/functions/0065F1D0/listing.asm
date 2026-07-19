@@ -256,7 +256,7 @@ LAB_0065f45f:
 0065F45F  66 2B 46 02               SUB AX,word ptr [ESI + 0x2]
 0065F463  40                        INC EAX
 0065F464  66 89 46 08               MOV word ptr [ESI + 0x8],AX
-LAB_0065f468:
+AiFltClassTy::AppendZone::cf_common_exit_0065F468:
 0065F468  C7 45 EC 00 00 00 00      MOV dword ptr [EBP + -0x14],0x0
 LAB_0065f46f:
 0065F46F  8B 45 EC                  MOV EAX,dword ptr [EBP + -0x14]

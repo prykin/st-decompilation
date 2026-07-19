@@ -103,11 +103,11 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
         if (*(uint *)((int)DAT_00802a38 + 0xe4) <
             (uint)(*(int *)(&DAT_007e3dc0 +
                            ((uVar3 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4) / 3 +
-                  param_1[0x12e])) goto LAB_004b9130;
+                  param_1[0x12e])) goto cf_common_exit_004B9130;
       }
       else {
         iVar2 = thunk_FUN_004ac910((void *)((int)param_1 + 0x1d5),'\x05');
-        if (iVar2 != *(int *)(*(int *)((int)param_1 + 0x1f5) + 200)) goto LAB_004b9130;
+        if (iVar2 != *(int *)(*(int *)((int)param_1 + 0x1f5) + 200)) goto cf_common_exit_004B9130;
         iVar2 = param_1[0x12f];
         if (iVar2 == 1) {
           param_1[0x12f] = 2;
@@ -128,14 +128,14 @@ undefined4 __fastcall FUN_004b8c80(int *param_1)
             (**(code **)(*param_1 + 0xd8))();
             return 0;
           }
-          goto LAB_004b9130;
+          goto cf_common_exit_004B9130;
         }
-        if (iVar2 != 3) goto LAB_004b9130;
+        if (iVar2 != 3) goto cf_common_exit_004B9130;
       }
       param_1[0x12f] = 4;
       TLOBaseTy::LoadImages((TLOBaseTy *)param_1,unaff_EDI);
       (**(code **)(*param_1 + 0x90))(3,0x362);
-LAB_004b9130:
+cf_common_exit_004B9130:
       (**(code **)(*param_1 + 0xd8))();
       return 0;
     }
@@ -160,10 +160,10 @@ LAB_004b9130:
         (**(code **)(*param_1 + 0xd8))();
         return 0;
       }
-      goto LAB_004b9130;
+      goto cf_common_exit_004B9130;
     }
     iVar2 = thunk_FUN_004ac910(pSVar1,'\x04');
-    if (iVar2 != *(int *)(*(int *)((int)param_1 + 0x1f5) + 0xa4)) goto LAB_004b9130;
+    if (iVar2 != *(int *)(*(int *)((int)param_1 + 0x1f5) + 0xa4)) goto cf_common_exit_004B9130;
     if (*(int *)(&DAT_007e1c50 +
                 (*(int *)((int)param_1 + 0x235) * 3 + *(int *)((int)param_1 + 0x239)) * 4) != 0) {
       thunk_FUN_004d88f0((char)param_1[9],
@@ -200,7 +200,7 @@ LAB_004b9130:
     if (param_1[9] == (uint)*(byte *)(param_1[4] + 0x112d)) {
       thunk_FUN_004d8b70((char)param_1[9]);
     }
-    if (param_1[9] != (uint)*(byte *)(param_1[4] + 0x112d)) goto LAB_004b8f5a;
+    if (param_1[9] != (uint)*(byte *)(param_1[4] + 0x112d)) goto cf_common_exit_004B8F5A;
     thunk_FUN_0052af50(0,*(float *)((int)param_1 + 0x1f9),*(float *)((int)param_1 + 0x1fd));
     uVar3 = thunk_FUN_004406c0((char)param_1[9]);
     uVar3 = uVar3 & 0xff;
@@ -211,14 +211,14 @@ LAB_004b9130:
     else {
       if (uVar3 == 2) {
         (**(code **)(*param_1 + 0x90))(6,0x69);
-        goto LAB_004b8f5a;
+        goto cf_common_exit_004B8F5A;
       }
-      if (uVar3 != 3) goto LAB_004b8f5a;
+      if (uVar3 != 3) goto cf_common_exit_004B8F5A;
       iVar2 = *param_1;
       uVar7 = 0x6a;
     }
     (**(code **)(iVar2 + 0x90))(6,uVar7);
-LAB_004b8f5a:
+cf_common_exit_004B8F5A:
     *(undefined4 *)((int)param_1 + 0x241) = 0;
     *(undefined4 *)((int)param_1 + 0x5d7) = 0;
     *(undefined4 *)((int)param_1 + 0x5df) = 1;
@@ -246,14 +246,14 @@ LAB_004b8f5a:
       if (*(int *)(&DAT_00791a10 + *(int *)((int)param_1 + 0x235) * 4) != 0) {
         local_8 = thunk_FUN_004cc130((int)param_1);
       }
-      goto LAB_004b92ee;
+      goto cf_common_join_004B92EE;
     }
-    if (param_1[0xf7] != 0) goto LAB_004b92ee;
+    if (param_1[0xf7] != 0) goto cf_common_join_004B92EE;
   }
   else {
     if (*(uint *)((int)DAT_00802a38 + 0xe4) <
         (uint)(*(int *)(&DAT_00792040 + *(int *)((int)param_1 + 0x235) * 4) +
-              *(int *)((int)param_1 + 0x285))) goto LAB_004b92ee;
+              *(int *)((int)param_1 + 0x285))) goto cf_common_join_004B92EE;
     *(uint *)((int)param_1 + 0x285) = *(uint *)((int)DAT_00802a38 + 0xe4);
     iVar2 = *(int *)((int)param_1 + 0x259) / 0xf;
     if (*(int *)(&DAT_007be8c8 + iVar2 * 0x60) != 0) {
@@ -267,11 +267,11 @@ LAB_004b8f5a:
       else {
         thunk_FUN_004b98e0(param_1,0);
       }
-      goto LAB_004b92ee;
+      goto cf_common_join_004B92EE;
     }
   }
   local_8 = 1;
-LAB_004b92ee:
+cf_common_join_004B92EE:
   pvVar6 = (void *)((int)param_1 + 0x1d5);
   iVar2 = thunk_FUN_004acd30(pvVar6,'\x0e');
   iVar4 = thunk_FUN_004acd30(pvVar6,'\r');

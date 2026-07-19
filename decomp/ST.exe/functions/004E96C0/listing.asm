@@ -141,7 +141,7 @@ LAB_004e9870:
 004E9870  6A 04                     PUSH 0x4
 004E9872  8B CE                     MOV ECX,ESI
 004E9874  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-LAB_004e987a:
+FUN_004e96c0::cf_common_exit_004E987A:
 004E987A  8B 86 DC 04 00 00         MOV EAX,dword ptr [ESI + 0x4dc]
 004E9880  8B 8E EC 04 00 00         MOV ECX,dword ptr [ESI + 0x4ec]
 004E9886  8B 96 E8 04 00 00         MOV EDX,dword ptr [ESI + 0x4e8]

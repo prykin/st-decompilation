@@ -896,7 +896,7 @@ LAB_0054df96:
 0054DFA4  3B F8                     CMP EDI,EAX
 0054DFA6  7C AF                     JL 0x0054df57
 0054DFA8  E9 82 00 00 00            JMP 0x0054e02f
-LAB_0054dfad:
+STPlaySystemC::Life::cf_common_join_0054DFAD:
 0054DFAD  57                        PUSH EDI
 0054DFAE  6A 03                     PUSH 0x3
 0054DFB0  8B CB                     MOV ECX,EBX

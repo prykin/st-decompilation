@@ -65,7 +65,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
   }
   if (pSVar2->field_0x11 == '\0') {
     if (pSVar2->field_0x10 == '\0') {
-      if (*(int *)(*(int *)(pSVar2->field_0020 + iVar3) + 0x29) == 0) goto LAB_004ac330;
+      if (*(int *)(*(int *)(pSVar2->field_0020 + iVar3) + 0x29) == 0) goto cf_common_exit_004AC330;
       pSVar2->field_0x13 = param_1;
       *(undefined4 *)&pSVar2[1].field_0xc = *(undefined4 *)(pSVar2->field_0020 + iVar3 + 0x18);
       puVar8 = &LAB_00404999;
@@ -73,7 +73,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
     else {
       if ((pSVar2[1].field_0014 == 0) ||
          (piVar5 = (int *)(pSVar2->field_0020 + iVar3), *(int *)(*piVar5 + 0x29) == 0))
-      goto LAB_004ac330;
+      goto cf_common_exit_004AC330;
       pSVar2->field_0x13 = param_1;
       *(int *)&pSVar2[1].field_0xc = piVar5[6];
       puVar8 = &LAB_00405b64;
@@ -81,7 +81,7 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
     FUN_006e9520((void *)pSVar2[1].field_0018,pSVar2->field_0018,*(uint *)&pSVar2[1].field_0x10,
                  (uint)puVar8,(uint)pSVar2);
   }
-LAB_004ac330:
+cf_common_exit_004AC330:
   *(undefined4 *)(pSVar2->field_0020 + 0x1c + iVar3) = param_2;
   g_currentExceptionFrame = local_50.previous;
   return 0;

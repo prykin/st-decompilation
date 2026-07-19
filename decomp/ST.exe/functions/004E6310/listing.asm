@@ -102,7 +102,7 @@ LAB_004e641e:
 004E6436  0F AB 11                  BTS [ECX],EDX
 LAB_004e6439:
 004E6439  8B 5D 0C                  MOV EBX,dword ptr [EBP + 0xc]
-LAB_004e643c:
+FUN_004e6310::cf_continue_loop_004E643C:
 004E643C  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 004E643F  8B 4D E8                  MOV ECX,dword ptr [EBP + -0x18]
 004E6442  83 C0 19                  ADD EAX,0x19

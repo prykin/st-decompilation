@@ -1004,7 +1004,7 @@ LAB_0070775e:
 00707772  7F 8E                     JG 0x00707702
 LAB_00707774:
 00707774  8B 5D 44                  MOV EBX,dword ptr [EBP + 0x44]
-LAB_00707777:
+FUN_00706e30::cf_common_join_00707777:
 00707777  8B 75 20                  MOV ESI,dword ptr [EBP + 0x20]
 0070777A  8B 55 24                  MOV EDX,dword ptr [EBP + 0x24]
 0070777D  8B CE                     MOV ECX,ESI

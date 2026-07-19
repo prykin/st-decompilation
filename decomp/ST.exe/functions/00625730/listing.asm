@@ -766,7 +766,7 @@ switchD_00626071::switchD:
 switchD_00626071::caseD_a6:
 00626078  8B CE                     MOV ECX,ESI
 0062607A  E8 DF F1 DD FF            CALL 0x0040525e
-switchD_00626071::caseD_a8:
+FUN_00625730::cf_continue_loop_0062607F:
 0062607F  8B 45 E0                  MOV EAX,dword ptr [EBP + -0x20]
 00626082  8B 4D D8                  MOV ECX,dword ptr [EBP + -0x28]
 00626085  83 C0 06                  ADD EAX,0x6

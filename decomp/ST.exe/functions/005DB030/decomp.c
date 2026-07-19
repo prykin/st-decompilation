@@ -54,31 +54,31 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
   uVar10 = 0x5db113;
   puVar3 = cMf32::RecGet(this,0,PTR_s_DESCRIPTOR_0079c1d8,piVar11,0);
   this_00 = extraout_ECX;
-  if (puVar3 == (ushort *)0x0) goto LAB_005db1e1;
+  if (puVar3 == (ushort *)0x0) goto cf_common_exit_005DB1E1;
   if ((char)*piVar11 == '\x05') {
     iVar2 = 0;
     uVar10 = 0x5db13b;
     puVar3 = cMf32::RecGet(this,0x80,PTR_s_SAVE_PLAYER_0079c1c8,(int *)&stack0xffffffe0,0);
     this_00 = extraout_ECX_00;
-    if (puVar3 == (ushort *)0x0) goto LAB_005db1e1;
+    if (puVar3 == (ushort *)0x0) goto cf_common_exit_005DB1E1;
   }
   bVar4 = false;
   if ((local_1e18 != 0) && (local_1e10 == *(int *)((int)piVar11 + 1))) {
     switch((char)*piVar11) {
     case '\x02':
       if (local_1e14 != iVar2) goto joined_r0x005db18e;
-LAB_005db1ab:
+cf_common_exit_005DB1AB:
       bVar4 = true;
       break;
     case '\x03':
 joined_r0x005db18e:
-      if (local_1e14 == -0x70fffdfb) goto LAB_005db1ab;
+      if (local_1e14 == -0x70fffdfb) goto cf_common_exit_005DB1AB;
       break;
     case '\x04':
-      if (local_1e14 == -0x70fff7fb) goto LAB_005db1ab;
+      if (local_1e14 == -0x70fff7fb) goto cf_common_exit_005DB1AB;
       break;
     case '\x05':
-      if (*(int *)((int)piVar11 + 5) == CONCAT31((int3)uVar10,uVar9)) goto LAB_005db1ab;
+      if (*(int *)((int)piVar11 + 5) == CONCAT31((int3)uVar10,uVar9)) goto cf_common_exit_005DB1AB;
     }
   }
   this_00 = (cMf32 *)0x0;
@@ -108,7 +108,7 @@ joined_r0x005db18e:
       pbVar8 = pbVar8 + 1;
     }
   }
-LAB_005db1e1:
+cf_common_exit_005DB1E1:
   cMf32::delete(this_00,(undefined4 *)this);
   g_currentExceptionFrame = local_6c;
   return uVar12;

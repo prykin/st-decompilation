@@ -206,7 +206,7 @@ LAB_004eb93e:
 004EB942  51                        PUSH ECX
 004EB943  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004EB949  E8 18 78 F1 FF            CALL 0x00403166
-LAB_004eb94e:
+FUN_004eb6d0::cf_common_exit_004EB94E:
 004EB94E  8A 56 24                  MOV DL,byte ptr [ESI + 0x24]
 004EB951  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 004EB957  52                        PUSH EDX

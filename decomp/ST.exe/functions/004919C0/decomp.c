@@ -149,13 +149,13 @@ LAB_00491b42:
                 *(int *)((int)local_48 + iVar10 + 0x14) = iVar12;
                 *(undefined4 *)((int)local_48 + iVar10) = 1;
                 _param_3 = iVar9;
-                goto LAB_00491c1c;
+                goto cf_continue_loop_00491C1C;
               }
               if (*(int *)((int)local_48 + iVar10) != 1) goto LAB_00491c08;
             }
             else {
 LAB_00491c08:
-              if (*(int *)((int)local_48 + iVar10) != 0) goto LAB_00491c1c;
+              if (*(int *)((int)local_48 + iVar10) != 0) goto cf_continue_loop_00491C1C;
             }
             if (iVar9 < _param_3) {
               *(int *)((int)local_48 + iVar10 + 0x14) = iVar12;
@@ -163,7 +163,7 @@ LAB_00491c08:
             }
           }
         }
-LAB_00491c1c:
+cf_continue_loop_00491C1C:
         iVar12 = iVar12 + 1;
         piVar4 = piVar4 + 2;
       } while (iVar12 < 4);

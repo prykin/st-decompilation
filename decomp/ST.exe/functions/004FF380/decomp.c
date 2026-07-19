@@ -312,7 +312,7 @@ LAB_004ff87a:
       }
     }
     GVar1 = *(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xb81;
-    if (GVar1 == 0) goto LAB_004ffb91;
+    if (GVar1 == 0) goto cf_common_exit_004FFB91;
     if (GVar1 != local_2a) {
       uVar5 = thunk_FUN_00526ba0(GVar1,this_00->field_0xb85);
       pbVar13 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2be,uVar5);
@@ -350,7 +350,7 @@ LAB_004ff87a:
          (local_22 == *(short *)&this_00->field_0xb89)) &&
         ((local_2a._2_2_ == *(short *)&this_00->field_0xb83 &&
          (local_24 == *(short *)&this_00->field_0xb87)))) &&
-       (local_20 == *(short *)&this_00->field_0xb8b)) goto LAB_004ffb91;
+       (local_20 == *(short *)&this_00->field_0xb8b)) goto cf_common_exit_004FFB91;
     Library::DKW::WGR::FUN_006b55f0
               ((undefined4 *)this_00->field_0184,0,1,0x2f,*(int *)&this_00->field_0x958,0,1,0x2f,
                0x4e,0x24);
@@ -361,7 +361,7 @@ LAB_004ff87a:
     Library::DKW::DDX::FUN_006b3640
               (DAT_008075a8,uVar5,0xffffffff,this_00->field_0040,this_00->field_0098);
   }
-LAB_004ffb91:
+cf_common_exit_004FFB91:
   iVar4 = 5;
   bVar17 = true;
   pcVar14 = local_1e;

@@ -556,7 +556,7 @@ LAB_0042002f:
 0042003F  51                        PUSH ECX
 00420040  68 0A 00 FE AF            PUSH 0xaffe000a
 00420045  E8 F6 5D 28 00            CALL 0x006a5e40
-LAB_0042004a:
+STSprGameObjC::CheckRay::cf_continue_loop_0042004A:
 0042004A  8B 55 AC                  MOV EDX,dword ptr [EBP + -0x54]
 0042004D  8B 7D E4                  MOV EDI,dword ptr [EBP + -0x1c]
 00420050  8B 45 9C                  MOV EAX,dword ptr [EBP + -0x64]

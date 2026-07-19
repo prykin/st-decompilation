@@ -59,7 +59,7 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
   }
   STAllPlayersC::GetPanelInfo(DAT_007fa174,2,(int *)puVar1);
   if (local_5f != this_00->field_0xb9e) {
-LAB_00502155:
+cf_common_exit_00502155:
     PaintCtrlBoat(this_00);
     SetControlBoat(this_00);
     thunk_FUN_00501a10((int)this_00);
@@ -69,7 +69,7 @@ LAB_00502155:
   switch(this_00->field_0xb9e) {
   case 1:
     if ((local_64 != *(int *)&this_00->field_0xb99) || (local_60 != this_00->field_0xb9d))
-    goto LAB_00502155;
+    goto cf_common_exit_00502155;
     thunk_FUN_00501d00(this_00,(int *)&this_00->field_0xb99,&local_64);
     switch(*(undefined4 *)&this_00->field_0xb99) {
     case 8:
@@ -102,9 +102,9 @@ LAB_00502155:
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
-    goto LAB_00502155;
+    goto cf_common_exit_00502155;
   case 4:
-    if (local_64 != *(int *)&this_00->field_0xb99) goto LAB_00502155;
+    if (local_64 != *(int *)&this_00->field_0xb99) goto cf_common_exit_00502155;
     if (*(int *)&this_00->field_0xb99 != 0xaf) {
       g_currentExceptionFrame = local_a8.previous;
       return;

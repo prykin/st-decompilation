@@ -328,7 +328,7 @@ LAB_00465739:
 0046575D  CC                        INT3
 LAB_0046575e:
 0046575E  68 D8 1B 00 00            PUSH 0x1bd8
-LAB_00465763:
+STBoatC::BackAttack::cf_error_exit_00465763:
 00465763  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 00465768  68 3C 9D 7A 00            PUSH 0x7a9d3c
 0046576D  50                        PUSH EAX

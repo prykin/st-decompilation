@@ -55,7 +55,7 @@ LAB_00675488:
 0067549F  74 07                     JZ 0x006754a8
 006754A1  3D 00 00 02 00            CMP EAX,0x20000
 006754A6  75 2E                     JNZ 0x006754d6
-LAB_006754a8:
+FUN_00675430::cf_common_exit_006754A8:
 006754A8  66 B8 0A 00               MOV AX,0xa
 006754AC  5D                        POP EBP
 006754AD  C3                        RET

@@ -32,24 +32,24 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
     if ((cVar2 == '\0') && ((*(int *)((int)this + 0x2b0) - *(int *)((int)this + 0x2b8)) / 10 == 1))
     {
       *(undefined1 *)((int)this + 0x329) = 5;
-      goto LAB_0063eacd;
+      goto cf_common_join_0063EACD;
     }
-    if (cVar2 == '\0') goto LAB_0063eacd;
+    if (cVar2 == '\0') goto cf_common_join_0063EACD;
     uVar7 = *(uint *)(DAT_00802a38 + 0xe4);
   }
   else {
     if (*(uint *)((int)this + 0x245) == 2) {
       local_18 = 5;
-      goto LAB_0063eacd;
+      goto cf_common_join_0063EACD;
     }
     local_18 = 10;
     cVar2 = *(char *)((int)this + 0x329);
     if ((cVar2 == '\0') && ((*(int *)((int)this + 0x2b0) - *(int *)((int)this + 0x2b8)) / 10 == 1))
     {
       *(undefined1 *)((int)this + 0x329) = 5;
-      goto LAB_0063eacd;
+      goto cf_common_join_0063EACD;
     }
-    if (cVar2 == '\0') goto LAB_0063eacd;
+    if (cVar2 == '\0') goto cf_common_join_0063EACD;
     uVar7 = *(uint *)(DAT_00802a38 + 0xe4);
   }
   local_18 = 10;
@@ -57,7 +57,7 @@ void __thiscall FUN_0063e9c0(void *this,int param_1)
     local_18 = 10;
     *(char *)((int)this + 0x329) = cVar2 + '\x01';
   }
-LAB_0063eacd:
+cf_common_join_0063EACD:
   local_14 = uVar9;
   if ((int)uVar9 < (int)(*(int *)((int)this + 700) + uVar9)) {
     do {

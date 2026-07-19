@@ -1899,7 +1899,7 @@ LAB_0051f192:
 0051F192  56                        PUSH ESI
 0051F193  8B CB                     MOV ECX,EBX
 0051F195  E8 FB 42 EE FF            CALL 0x00403495
-switchD_0051e4d9::caseD_7:
+HelpPanelTy::GetMessage::cf_common_exit_0051F19A:
 0051F19A  8B 55 80                  MOV EDX,dword ptr [EBP + -0x80]
 0051F19D  33 C0                     XOR EAX,EAX
 0051F19F  89 15 F8 8D 85 00         MOV dword ptr [0x00858df8],EDX

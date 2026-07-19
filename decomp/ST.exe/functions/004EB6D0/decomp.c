@@ -55,7 +55,7 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
         thunk_FUN_004e4230(*(int *)((int)this + 0x24),param_3 / param_4);
       }
     }
-    goto LAB_004eb94e;
+    goto cf_common_exit_004EB94E;
   }
   if (param_2 == 0xdd) {
     if (param_1 == 2) {
@@ -87,7 +87,7 @@ undefined4 __thiscall FUN_004eb6d0(void *this,int param_1,int param_2,int param_
       thunk_FUN_004d8a30(*(char *)((int)this + 0x24),param_3);
 LAB_004eb93e:
       thunk_FUN_004d8800(*(char *)((int)this + 0x24),param_3 / param_4);
-      goto LAB_004eb94e;
+      goto cf_common_exit_004EB94E;
     }
     if (param_1 != 3) {
       return 0;
@@ -99,7 +99,7 @@ LAB_004eb93e:
     thunk_FUN_004d8a80(*(char *)((int)this + 0x24),param_3);
   }
   thunk_FUN_004d87b0(*(char *)((int)this + 0x24),param_3 / param_4);
-LAB_004eb94e:
+cf_common_exit_004EB94E:
   thunk_FUN_004d78e0(*(char *)((int)this + 0x24));
   if (*(uint *)((int)this + 0x24) == (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d)) {
     thunk_FUN_004d8b70((char)*(uint *)((int)this + 0x24));

@@ -842,7 +842,7 @@ LAB_0071fe7e:
 LAB_0071fe85:
 0071FE85  85 C0                     TEST EAX,EAX
 0071FE87  74 3B                     JZ 0x0071fec4
-LAB_0071fe89:
+ListClassTy::GetMessage::cf_common_join_0071FE89:
 0071FE89  C7 45 F8 FF FF 00 00      MOV dword ptr [EBP + -0x8],0xffff
 0071FE90  EB 32                     JMP 0x0071fec4
 switchD_0071f403::caseD_27:

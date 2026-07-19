@@ -244,7 +244,7 @@ LAB_0067218b:
 0067219D  50                        PUSH EAX
 0067219E  51                        PUSH ECX
 0067219F  E8 9C 3C 03 00            CALL 0x006a5e40
-LAB_006721a4:
+FUN_00671f10::cf_continue_loop_006721A4:
 006721A4  8B 4D E4                  MOV ECX,dword ptr [EBP + -0x1c]
 006721A7  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
 006721AA  41                        INC ECX

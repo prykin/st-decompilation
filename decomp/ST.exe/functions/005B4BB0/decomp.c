@@ -85,9 +85,9 @@ switchD_005b4c27_default:
       if (this_00[0x14].field_0xe3 == '\0') {
         thunk_FUN_005b4860((int)this_00);
         (**(code **)(**(int **)&this_00->field_0xc + 0x10))(0x309,0);
-        goto switchD_005b4db9_caseD_6904;
+        goto cf_common_exit_005B4EEC;
       }
-      if (this_00[0x14].field_0xe3 != '\x01') goto switchD_005b4db9_caseD_6904;
+      if (this_00[0x14].field_0xe3 != '\x01') goto cf_common_exit_005B4EEC;
       this_00[0x11].field_0xda = 3;
     }
     else {
@@ -104,11 +104,11 @@ switchD_005b4c27_default:
         else if (uVar4 == 3) {
           DoneMainMenu(this_00);
         }
-        goto switchD_005b4db9_caseD_6904;
+        goto cf_common_exit_005B4EEC;
       }
       if (uVar4 == 0x68ff) {
         if (this_00[0x14].field_0xe3 != '\0') {
-          if (this_00[0x14].field_0xe3 != '\x01') goto switchD_005b4db9_caseD_6904;
+          if (this_00[0x14].field_0xe3 != '\x01') goto cf_common_exit_005B4EEC;
           _DAT_0080f32e = 1;
         }
         this_00[0x11].field_0xda = 0;
@@ -116,16 +116,16 @@ switchD_005b4c27_default:
       else if (uVar4 == 0x6900) {
         if ((this_00[0x14].field_0xe3 == '\0') &&
            ((DAT_0081176c == 0 || (*(int *)(DAT_0081176c + 0x68a) == 0))))
-        goto switchD_005b4db9_caseD_6904;
+        goto cf_common_exit_005B4EEC;
         this_00[0x11].field_0xda = 1;
       }
       else {
-        if (uVar4 != 0x6901) goto switchD_005b4db9_caseD_6904;
+        if (uVar4 != 0x6901) goto cf_common_exit_005B4EEC;
         if (this_00[0x14].field_0xe3 == '\0') {
           this_00[0x11].field_0xda = 2;
         }
         else {
-          if (this_00[0x14].field_0xe3 != '\x01') goto switchD_005b4db9_caseD_6904;
+          if (this_00[0x14].field_0xe3 != '\x01') goto cf_common_exit_005B4EEC;
           this_00[0x11].field_0xda = *(char *)(param_1 + 0x10) + '\x01';
         }
       }
@@ -137,7 +137,7 @@ LAB_005b4df8:
     if (this_01 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(this_01,1,0,1);
     }
-    goto switchD_005b4db9_caseD_6904;
+    goto cf_common_exit_005B4EEC;
   }
   switch(uVar4) {
   case 0x6903:
@@ -195,7 +195,7 @@ LAB_005b4df8:
 LAB_005b4ee5:
     SetMode(this_00,cVar8,0);
   }
-switchD_005b4db9_caseD_6904:
+cf_common_exit_005B4EEC:
   g_currentExceptionFrame = local_8c.previous;
   uVar2 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
   return uVar2;

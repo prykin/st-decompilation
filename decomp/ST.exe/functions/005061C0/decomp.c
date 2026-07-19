@@ -333,7 +333,7 @@ switchD_00506214_caseD_2:
           puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
         *(undefined1 *)puVar8 = 0x20;
       }
-      goto LAB_00507034;
+      goto cf_common_exit_00507034;
     }
     goto switchD_00506878_caseD_3b;
   }
@@ -418,7 +418,7 @@ LAB_005070be:
         puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
       *(undefined1 *)puVar8 = 0x20;
     }
-    goto LAB_00507034;
+    goto cf_common_exit_00507034;
   case 0x33:
     iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9f9 + 4)
              ) / 2;
@@ -814,7 +814,7 @@ LAB_00507784:
         puVar8 != (uint *)0x0; puVar8 = Library::MSVCRT::FUN_0072e560(puVar8,'\n')) {
       *(undefined1 *)puVar8 = 0x20;
     }
-LAB_00507034:
+cf_common_exit_00507034:
     ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,(uint *)&this_00->field_0x1e1,-2,-1,0,-1,-1);
     iVar3 = local_8 + 0x41;
     PaintDamageXY(this_00,this_00->field_0194,iVar3,0x5d,

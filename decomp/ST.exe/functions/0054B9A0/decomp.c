@@ -111,16 +111,16 @@ FUN_0054b9a0(void *this,int param_1,int param_2,int param_3,int param_4,int para
       *(undefined1 *)((int)this + 0xd1) = 1;
       return 1;
     }
-    goto LAB_0054ba0c;
+    goto cf_common_exit_0054BA0C;
   }
   if (*(int *)((int)this + 0x496) != 0) {
-    if (*(char *)((int)this + 0xde) == '\0') goto LAB_0054ba0c;
+    if (*(char *)((int)this + 0xde) == '\0') goto cf_common_exit_0054BA0C;
     iVar4 = FUN_00405687((int)this);
-    if (iVar4 != 0) goto LAB_0054ba0c;
+    if (iVar4 != 0) goto cf_common_exit_0054BA0C;
   }
   CursorClassTy::SetGCType
             (this,CASE_0,*(undefined4 *)((int)this + 0x34),*(undefined4 *)((int)this + 0x38));
-LAB_0054ba0c:
+cf_common_exit_0054BA0C:
   *(undefined1 *)((int)this + 0xd1) = 1;
   return 0;
 }

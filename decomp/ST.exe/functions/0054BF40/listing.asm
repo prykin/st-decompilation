@@ -71,7 +71,7 @@ LAB_0054c015:
 0054C019  6A 32                     PUSH 0x32
 LAB_0054c01b:
 0054C01B  50                        PUSH EAX
-LAB_0054c01c:
+CursorClassTy::SetGCType::cf_common_exit_0054C01C:
 0054C01C  6A 01                     PUSH 0x1
 0054C01E  8B CE                     MOV ECX,ESI
 0054C020  E8 4A 77 EB FF            CALL 0x0040376f
@@ -103,7 +103,7 @@ switchD_0054bfbc::caseD_15:
 0054C066  6A 23                     PUSH 0x23
 0054C068  6A 32                     PUSH 0x32
 0054C06A  68 F0 81 7C 00            PUSH 0x7c81f0
-LAB_0054c06f:
+CursorClassTy::SetGCType::cf_common_exit_0054C06F:
 0054C06F  6A 01                     PUSH 0x1
 0054C071  8B CE                     MOV ECX,ESI
 0054C073  E8 F7 76 EB FF            CALL 0x0040376f

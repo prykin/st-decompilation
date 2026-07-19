@@ -1432,7 +1432,7 @@ LAB_0056bfbc:
 0056C02B  EB 07                     JMP 0x0056c034
 LAB_0056c02d:
 0056C02D  C7 45 E8 02 61 00 00      MOV dword ptr [EBP + -0x18],0x6102
-LAB_0056c034:
+STAppC::InitApp::cf_common_exit_0056C034:
 0056C034  8B 13                     MOV EDX,dword ptr [EBX]
 0056C036  8D 45 D8                  LEA EAX,[EBP + -0x28]
 0056C039  50                        PUSH EAX

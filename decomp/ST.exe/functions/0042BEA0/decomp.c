@@ -91,25 +91,25 @@ LAB_0042bf8b:
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
       local_8 = CASE_5;
-      goto LAB_0042c072;
+      goto cf_common_exit_0042C072;
     }
     if (param_4 == 0x5a) {
       local_8 = CASE_4;
-      goto LAB_0042c072;
+      goto cf_common_exit_0042C072;
     }
     if (param_4 == 0x172) {
       local_8 = CASE_2;
-      goto LAB_0042c072;
+      goto cf_common_exit_0042C072;
     }
   }
   else {
     if (param_4 == 0x1ae) {
       local_8 = CASE_3;
-      goto LAB_0042c072;
+      goto cf_common_exit_0042C072;
     }
     if (param_4 == 0x1b8) {
       local_8 = CASE_6;
-      goto LAB_0042c072;
+      goto cf_common_exit_0042C072;
     }
   }
   iVar2 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x249,0,0,&DAT_007a4ccc,
@@ -120,7 +120,7 @@ LAB_0042bf8b:
     return uVar3;
   }
   RaiseInternalException(-0x5001ffff,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x24a);
-LAB_0042c072:
+cf_common_exit_0042C072:
   piVar4 = (int *)GetObjPtr(local_c,param_5,param_6,local_8);
   (**(code **)(*piVar4 + 0xe8))(1);
   g_currentExceptionFrame = local_58.previous;

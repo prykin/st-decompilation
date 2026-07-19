@@ -29,13 +29,13 @@ void __cdecl FUN_005745e0(int param_1,undefined4 *param_2)
     do {
       iVar6 = *(int *)(param_1 + 0x44d);
       uVar7 = *(uint *)(iVar6 + 4);
-      if (*(uint *)(iVar6 + 0xc) <= uVar7) goto LAB_00574651;
+      if (*(uint *)(iVar6 + 0xc) <= uVar7) goto cf_break_loop_00574651;
       piVar5 = (int *)(*(int *)(iVar6 + 8) * uVar7 + *(int *)(iVar6 + 0x1c));
       *(uint *)(iVar6 + 4) = uVar7 + 1;
-      if (piVar5 == (int *)0x0) goto LAB_00574651;
+      if (piVar5 == (int *)0x0) goto cf_break_loop_00574651;
     } while (param_2[10] != *piVar5);
     if (piVar5 == (int *)0x0) {
-LAB_00574651:
+cf_break_loop_00574651:
       local_14 = (int)*(short *)((int)param_2 + 6);
       local_18 = (undefined4 *)(int)*(short *)(param_2 + 1);
       local_10 = (int)*(short *)(param_2 + 2);

@@ -20,7 +20,7 @@ FUN_004ac9e0:
 004ACA13  0F 84 FA 01 00 00         JZ 0x004acc13
 004ACA19  C7 45 E4 01 00 00 00      MOV dword ptr [EBP + -0x1c],0x1
 004ACA20  89 5D DC                  MOV dword ptr [EBP + -0x24],EBX
-LAB_004aca23:
+FUN_004ac9e0::cf_continue_loop_004ACA23:
 004ACA23  3B 5E 14                  CMP EBX,dword ptr [ESI + 0x14]
 004ACA26  0F 8D BF 01 00 00         JGE 0x004acbeb
 004ACA2C  8B 45 E4                  MOV EAX,dword ptr [EBP + -0x1c]

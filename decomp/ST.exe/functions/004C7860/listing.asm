@@ -246,7 +246,7 @@ switchD_004c79ec::caseD_7:
 004C7AFE  8B 86 D0 04 00 00         MOV EAX,dword ptr [ESI + 0x4d0]
 004C7B04  85 C0                     TEST EAX,EAX
 004C7B06  75 05                     JNZ 0x004c7b0d
-switchD_004c79ec::caseD_0:
+FUN_004c7860::cf_common_exit_004C7B08:
 004C7B08  BF 01 00 00 00            MOV EDI,0x1
 switchD_004c79ec::default:
 004C7B0D  8B C7                     MOV EAX,EDI

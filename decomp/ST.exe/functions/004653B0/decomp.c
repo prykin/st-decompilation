@@ -65,7 +65,7 @@ LAB_00465581:
         return iVar3;
       }
       iVar3 = 0x1b8d;
-      goto LAB_00465763;
+      goto cf_error_exit_00465763;
     }
     if (*(int *)&this->field_0x832 != 1) {
       return 2;
@@ -80,7 +80,7 @@ LAB_00465581:
         return iVar3;
       }
       iVar3 = 0x1b9f;
-      goto LAB_00465763;
+      goto cf_error_exit_00465763;
     }
   }
   else {
@@ -132,7 +132,7 @@ LAB_00465581:
         return iVar3;
       }
       iVar3 = 0x1bc6;
-LAB_00465763:
+cf_error_exit_00465763:
       RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar3);
       return 0xffff;
     }
@@ -149,7 +149,7 @@ LAB_00465763:
         return iVar3;
       }
       iVar3 = 0x1bd8;
-      goto LAB_00465763;
+      goto cf_error_exit_00465763;
     }
   }
   if (iVar3 != 0) {

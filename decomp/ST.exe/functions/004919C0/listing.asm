@@ -185,7 +185,7 @@ LAB_00491c15:
 00491C15  89 5C 15 D0               MOV dword ptr [EBP + EDX*0x1 + -0x30],EBX
 LAB_00491c19:
 00491C19  89 4D 10                  MOV dword ptr [EBP + 0x10],ECX
-LAB_00491c1c:
+STBoatC::GetCellForLoading::cf_continue_loop_00491C1C:
 00491C1C  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 00491C1F  43                        INC EBX
 00491C20  83 C0 08                  ADD EAX,0x8

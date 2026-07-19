@@ -688,7 +688,7 @@ LAB_0044bd2f:
 LAB_0044bd39:
 0044BD39  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0044BD3C  51                        PUSH ECX
-LAB_0044bd3d:
+STAllPlayersC::SelectObjects::cf_common_exit_0044BD3D:
 0044BD3D  6A 00                     PUSH 0x0
 0044BD3F  6A 00                     PUSH 0x0
 0044BD41  56                        PUSH ESI
@@ -696,7 +696,7 @@ LAB_0044bd3d:
 0044BD44  E8 75 9E FB FF            CALL 0x00405bbe
 LAB_0044bd49:
 0044BD49  C7 87 83 4F 7F 00 3C 00 00 00  MOV dword ptr [EDI + 0x7f4f83],0x3c
-LAB_0044bd53:
+STAllPlayersC::SelectObjects::cf_common_exit_0044BD53:
 0044BD53  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 0044BD56  52                        PUSH EDX
 0044BD57  E8 B4 23 26 00            CALL 0x006ae110

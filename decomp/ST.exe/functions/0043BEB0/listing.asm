@@ -574,7 +574,7 @@ switchD_0043c4d2::caseD_1:
 0043C4FB  8A 88 40 D9 43 00         MOV CL,byte ptr [EAX + 0x43d940]
 switchD_0043c501::switchD:
 0043C501  FF 24 8D 28 D9 43 00      JMP dword ptr [ECX*0x4 + 0x43d928]
-switchD_0043c594::caseD_e:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043C508:
 0043C508  C6 46 14 03               MOV byte ptr [ESI + 0x14],0x3
 0043C50C  5F                        POP EDI
 0043C50D  5E                        POP ESI
@@ -754,7 +754,7 @@ LAB_0043c706:
 0043C720  0F 87 BA 11 00 00         JA 0x0043d8e0
 switchD_0043c726::switchD:
 0043C726  FF 24 85 A4 DA 43 00      JMP dword ptr [EAX*0x4 + 0x43daa4]
-switchD_0043c5d9::caseD_1:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043C72D:
 0043C72D  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 0043C730  5F                        POP EDI
 0043C731  5E                        POP ESI
@@ -854,7 +854,7 @@ LAB_0043c80d:
 0043C855  8A 88 7C DB 43 00         MOV CL,byte ptr [EAX + 0x43db7c]
 switchD_0043c85b::switchD:
 0043C85B  FF 24 8D 64 DB 43 00      JMP dword ptr [ECX*0x4 + 0x43db64]
-switchD_0043c594::caseD_2:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043C862:
 0043C862  C6 46 10 03               MOV byte ptr [ESI + 0x10],0x3
 0043C866  5F                        POP EDI
 0043C867  5E                        POP ESI
@@ -862,7 +862,7 @@ switchD_0043c594::caseD_2:
 0043C869  8B E5                     MOV ESP,EBP
 0043C86B  5D                        POP EBP
 0043C86C  C2 08 00                  RET 0x8
-switchD_0043c594::caseD_4:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043C86F:
 0043C86F  C6 46 12 03               MOV byte ptr [ESI + 0x12],0x3
 0043C873  5F                        POP EDI
 0043C874  5E                        POP ESI
@@ -938,7 +938,7 @@ LAB_0043c91d:
 0043C93F  8A 88 18 DC 43 00         MOV CL,byte ptr [EAX + 0x43dc18]
 switchD_0043c945::switchD:
 0043C945  FF 24 8D 08 DC 43 00      JMP dword ptr [ECX*0x4 + 0x43dc08]
-switchD_0043c594::caseD_1:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043C94C:
 0043C94C  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]
 0043C94F  5F                        POP EDI
 0043C950  5E                        POP ESI
@@ -947,7 +947,7 @@ switchD_0043c594::caseD_1:
 0043C955  8B E5                     MOV ESP,EBP
 0043C957  5D                        POP EBP
 0043C958  C2 08 00                  RET 0x8
-switchD_0043c594::caseD_3:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043C95B:
 0043C95B  C6 46 11 03               MOV byte ptr [ESI + 0x11],0x3
 0043C95F  5F                        POP EDI
 0043C960  5E                        POP ESI
@@ -1035,7 +1035,7 @@ LAB_0043ca31:
 0043CA31  50                        PUSH EAX
 LAB_0043ca32:
 0043CA32  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
-LAB_0043ca35:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043CA35:
 0043CA35  E8 80 5E FC FF            CALL 0x004028ba
 0043CA3A  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]
 0043CA3D  8B 10                     MOV EDX,dword ptr [EAX]
@@ -1148,7 +1148,7 @@ LAB_0043cb52:
 LAB_0043cb58:
 0043CB58  8B 4D F4                  MOV ECX,dword ptr [EBP + -0xc]
 0043CB5B  50                        PUSH EAX
-LAB_0043cb5c:
+STAllPlayersC::GetPanelInfo::cf_common_exit_0043CB5C:
 0043CB5C  E8 59 5D FC FF            CALL 0x004028ba
 0043CB61  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]
 0043CB64  8B 10                     MOV EDX,dword ptr [EAX]

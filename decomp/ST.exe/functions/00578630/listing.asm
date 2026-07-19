@@ -384,7 +384,7 @@ LAB_00578b51:
 00578B51  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 00578B57  68 4C AD 7C 00            PUSH 0x7cad4c
 00578B5C  52                        PUSH EDX
-LAB_00578b5d:
+STCrabC::GetMessage::cf_error_exit_00578B5D:
 00578B5D  6A FF                     PUSH -0x1
 00578B5F  E8 DC D2 12 00            CALL 0x006a5e40
 switchD_005788e6::default:

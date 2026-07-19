@@ -864,7 +864,7 @@ LAB_006fbc2c:
 006FBC4E  85 FF                     TEST EDI,EDI
 006FBC50  89 4D 1C                  MOV dword ptr [EBP + 0x1c],ECX
 006FBC53  0F 8F 5E FF FF FF         JG 0x006fbbb7
-LAB_006fbc59:
+FUN_006fb4a0::cf_common_join_006FBC59:
 006FBC59  8B 4D 20                  MOV ECX,dword ptr [EBP + 0x20]
 006FBC5C  8B 7D 24                  MOV EDI,dword ptr [EBP + 0x24]
 006FBC5F  8B 75 28                  MOV ESI,dword ptr [EBP + 0x28]

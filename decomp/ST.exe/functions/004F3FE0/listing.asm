@@ -47,7 +47,7 @@ LAB_004f4064:
 004F4064  2B 81 C0 00 00 00         SUB EAX,dword ptr [ECX + 0xc0]
 LAB_004f406a:
 004F406A  2B 05 34 67 80 00         SUB EAX,dword ptr [0x00806734]
-LAB_004f4070:
+CPanelTy::PaintLBut::cf_common_join_004F4070:
 004F4070  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 004F4073  8B 45 1C                  MOV EAX,dword ptr [EBP + 0x1c]
 004F4076  85 C0                     TEST EAX,EAX

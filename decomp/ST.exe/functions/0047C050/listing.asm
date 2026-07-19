@@ -297,7 +297,7 @@ LAB_0047c41a:
 0047C430  8B 81 08 05 00 00         MOV EAX,dword ptr [ECX + 0x508]
 0047C436  85 C0                     TEST EAX,EAX
 0047C438  0F 85 D0 05 00 00         JNZ 0x0047ca0e
-LAB_0047c43e:
+STBoatC::Bring::cf_common_exit_0047C43E:
 0047C43E  0F BF 17                  MOVSX EDX,word ptr [EDI]
 0047C441  0F BF 03                  MOVSX EAX,word ptr [EBX]
 0047C444  0F BF 8E 7D 06 00 00      MOVSX ECX,word ptr [ESI + 0x67d]
@@ -470,7 +470,7 @@ LAB_0047c64e:
 0047C683  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0047C686  56                        PUSH ESI
 0047C687  E8 B7 60 F8 FF            CALL 0x00402743
-LAB_0047c68c:
+STBoatC::Bring::cf_common_exit_0047C68C:
 0047C68C  6A 00                     PUSH 0x0
 0047C68E  8B CE                     MOV ECX,ESI
 0047C690  C7 86 87 06 00 00 01 00 00 00  MOV dword ptr [ESI + 0x687],0x1
@@ -528,7 +528,7 @@ LAB_0047c729:
 0047C73F  FF 92 F8 00 00 00         CALL dword ptr [EDX + 0xf8]
 0047C745  85 C0                     TEST EAX,EAX
 0047C747  0F 85 C1 02 00 00         JNZ 0x0047ca0e
-LAB_0047c74d:
+STBoatC::Bring::cf_common_exit_0047C74D:
 0047C74D  8B CE                     MOV ECX,ESI
 0047C74F  E8 01 71 F8 FF            CALL 0x00403855
 0047C754  5F                        POP EDI
@@ -745,7 +745,7 @@ LAB_0047c9b3:
 0047C9FB  51                        PUSH ECX
 0047C9FC  52                        PUSH EDX
 0047C9FD  50                        PUSH EAX
-LAB_0047c9fe:
+STBoatC::Bring::cf_common_exit_0047C9FE:
 0047C9FE  8B CE                     MOV ECX,ESI
 0047CA00  E8 66 85 F8 FF            CALL 0x00404f6b
 0047CA05  6A 00                     PUSH 0x0

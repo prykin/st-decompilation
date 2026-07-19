@@ -51,7 +51,7 @@ FUN_004db160(void *this,int param_1,undefined4 param_2,int *param_3,int *param_4
       iVar3 = *param_5;
       iVar10 = *param_4;
       iVar9 = *param_3;
-LAB_004db690:
+cf_common_join_004DB690:
       param_1 = iVar9;
       *param_6 = piVar5[9];
       if (param_1 < 0) {
@@ -172,7 +172,7 @@ LAB_004db257:
                   iVar3 = local_8;
                 }
                 local_8 = iVar3;
-                if (iVar11 != 0) goto LAB_004db690;
+                if (iVar11 != 0) goto cf_common_join_004DB690;
               }
 LAB_004db3e4:
               iVar10 = *param_4 + (int)param_5;
@@ -202,7 +202,7 @@ LAB_004db3e4:
                   iVar3 = local_8;
                 }
                 local_8 = iVar3;
-                if (iVar11 != 0) goto LAB_004db690;
+                if (iVar11 != 0) goto cf_common_join_004DB690;
               }
             }
 LAB_004db497:
@@ -240,7 +240,7 @@ LAB_004db497:
                   iVar3 = local_8;
                 }
                 local_8 = iVar3;
-                if (iVar11 != 0) goto LAB_004db690;
+                if (iVar11 != 0) goto cf_common_join_004DB690;
               }
 LAB_004db58d:
               iVar9 = *param_3 + (int)param_5;
@@ -269,7 +269,7 @@ LAB_004db58d:
                   iVar3 = local_8;
                 }
                 local_8 = iVar3;
-                if (iVar11 != 0) goto LAB_004db690;
+                if (iVar11 != 0) goto cf_common_join_004DB690;
               }
             }
 LAB_004db638:

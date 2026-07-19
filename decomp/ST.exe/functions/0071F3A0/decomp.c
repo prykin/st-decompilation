@@ -133,7 +133,7 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
         puVar2[0x56] = 0x2f;
         iVar4 = (**(code **)(**(int **)(local_34 + 0xc) + 8))
                           (puVar2[0x4b],local_34 + 0x1e0,0,puVar2 + 0x4c,0);
-        if (iVar4 != 0) goto LAB_0071fe89;
+        if (iVar4 != 0) goto cf_common_join_0071FE89;
       }
       if (puVar2[0xab] != 0) {
         puVar2[0xb4] = *(undefined4 *)(this_00 + 8);
@@ -141,7 +141,7 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
         puVar2[0xb6] = 0x30;
         iVar4 = (**(code **)(**(int **)(this_00 + 0xc) + 8))
                           (puVar2[0xab],this_00 + 0x1e4,0,puVar2 + 0xac,0);
-        if (iVar4 != 0) goto LAB_0071fe89;
+        if (iVar4 != 0) goto cf_common_join_0071FE89;
       }
       if (puVar2[0x10b] != 0) {
         uVar13 = *(undefined4 *)(this_00 + 8);
@@ -152,7 +152,7 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
         puVar2[0x12f] = *(undefined4 *)(this_00 + 0x138);
         iVar4 = (**(code **)(**(int **)(this_00 + 0xc) + 8))
                           (puVar2[0x10b],this_00 + 0x1e8,0,puVar2 + 0x10c,0);
-        if (iVar4 != 0) goto LAB_0071fe89;
+        if (iVar4 != 0) goto cf_common_join_0071FE89;
       }
       if ((*(int *)(this_00 + 0x1c) == 0) || (*(int *)(this_00 + 0x204) == 0)) {
         local_2c[4] = 0x20;
@@ -161,7 +161,7 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
       }
       break;
     }
-    goto LAB_0071fe89;
+    goto cf_common_join_0071FE89;
   case 3:
     if (*(uint *)(local_34 + 0x1e0) != 0) {
       FUN_006e56b0(*(void **)(local_34 + 0xc),*(uint *)(local_34 + 0x1e0));
@@ -181,7 +181,7 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
       local_2c[3] = 3;
       local_2c[4] = 0x13;
       iVar4 = FUN_006e5fe0(local_34,local_2c);
-      if (iVar4 != 0) goto LAB_0071fe89;
+      if (iVar4 != 0) goto cf_common_join_0071FE89;
       if (((((byte)this_00[0xdc] & 8) != 0) && (*(int *)(this_00 + 0xe0) != 0)) ||
          (this_00[0xe0] != (ControlClassTy)0x0)) {
         *(undefined4 *)(this_00 + 0xf0) = *(undefined4 *)(this_00 + 8);
@@ -190,7 +190,7 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
         local_2c[4] = 0x10;
         local_18 = this_00 + 0xdc;
         iVar4 = FUN_006e5fe0(this_00,local_2c);
-        if (iVar4 != 0) goto LAB_0071fe89;
+        if (iVar4 != 0) goto cf_common_join_0071FE89;
         *(undefined4 *)(this_00 + 0x128) = 1;
       }
       if (((*(uint *)(this_00 + 0x1c) & 0xffffff) == 1) && (*(int *)(this_00 + 0x1b0) != 0)) {
@@ -207,13 +207,13 @@ int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)
       local_2c[3] = 3;
       local_2c[4] = 0x14;
       iVar4 = FUN_006e5fe0(local_34,local_2c);
-      if (iVar4 != 0) goto LAB_0071fe89;
+      if (iVar4 != 0) goto cf_common_join_0071FE89;
       if (((((byte)this_00[0xdc] & 8) != 0) && (*(int *)(this_00 + 0xe0) != 0)) ||
          (this_00[0xe0] != (ControlClassTy)0x0)) {
         local_2c[4] = 0x11;
         local_18 = this_00 + 0xdc;
         iVar4 = FUN_006e5fe0(this_00,local_2c);
-        if (iVar4 != 0) goto LAB_0071fe89;
+        if (iVar4 != 0) goto cf_common_join_0071FE89;
         *(undefined4 *)(this_00 + 0x128) = 0;
       }
     }
@@ -504,7 +504,7 @@ LAB_0071fe7e:
     iVar4 = (**(code **)(*(int *)this_00 + 4))();
 LAB_0071fe85:
     if (iVar4 != 0) {
-LAB_0071fe89:
+cf_common_join_0071FE89:
       local_c = 0xffff;
     }
   }

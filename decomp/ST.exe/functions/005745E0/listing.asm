@@ -38,7 +38,7 @@ LAB_0057461f:
 00574647  75 D6                     JNZ 0x0057461f
 00574649  3B C7                     CMP EAX,EDI
 0057464B  0F 85 08 02 00 00         JNZ 0x00574859
-LAB_00574651:
+FUN_005745e0::cf_break_loop_00574651:
 00574651  0F BF 46 06               MOVSX EAX,word ptr [ESI + 0x6]
 00574655  0F BF 56 04               MOVSX EDX,word ptr [ESI + 0x4]
 00574659  0F BF 4E 08               MOVSX ECX,word ptr [ESI + 0x8]

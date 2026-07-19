@@ -117,7 +117,7 @@ switchD_006226f1::default:
 006227F0  75 07                     JNZ 0x006227f9
 LAB_006227f2:
 006227F2  C7 45 08 00 00 00 00      MOV dword ptr [EBP + 0x8],0x0
-LAB_006227f9:
+FUN_006226c0::cf_common_exit_006227F9:
 006227F9  8A 45 08                  MOV AL,byte ptr [EBP + 0x8]
 006227FC  5F                        POP EDI
 006227FD  5B                        POP EBX

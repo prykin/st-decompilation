@@ -63,7 +63,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
                                     (DAT_007fa174,local_c,
                                      CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
           if ((piVar5 == (int *)0x0) || (iVar9 = (**(code **)(*piVar5 + 0xf8))(), iVar9 == 0))
-          goto LAB_0065e27e;
+          goto cf_continue_loop_0065E27E;
           uVar6 = (**(code **)(*piVar5 + 0x2c))();
           thunk_FUN_004162b0(piVar5,&local_8,&local_6,(undefined2 *)((int)&param_3 + 2));
           if (param_5 != 0) {
@@ -78,7 +78,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
                   else {
                     uVar7 = 0;
                   }
-                  if (uVar10 != uVar7) goto LAB_0065e27e;
+                  if (uVar10 != uVar7) goto cf_continue_loop_0065E27E;
                 }
                 goto LAB_0065e1b6;
               }
@@ -86,7 +86,7 @@ FUN_0065e070(int param_1,undefined4 param_2,uint param_3,uint param_4,uint param
             else if (((param_5 & 0x40000000) == 0) &&
                     (((param_5 & 0x3fffffff) == 0 || ((param_5 & 0x3fffffff) == uVar6))))
             goto LAB_0065e1b6;
-            goto LAB_0065e27e;
+            goto cf_continue_loop_0065E27E;
           }
 LAB_0065e1b6:
           uVar10 = param_4;
@@ -113,7 +113,7 @@ LAB_0065e25c:
               } while (bVar1 != 0);
               iVar9 = 0;
 LAB_0065e261:
-              if (iVar9 != 0) goto LAB_0065e27e;
+              if (iVar9 != 0) goto cf_continue_loop_0065E27E;
             }
             cVar3 = param_6;
             if ((param_6 == -1) || (iVar9 = (**(code **)(*piVar5 + 0x6c))(), cVar3 == iVar9)) {
@@ -138,7 +138,7 @@ joined_r0x0065e216:
             uVar6 = thunk_FUN_00674fb0(uVar6);
             goto joined_r0x0065e216;
           }
-LAB_0065e27e:
+cf_continue_loop_0065E27E:
           local_18 = local_18 + 1;
           bVar12 = local_18 < *(uint *)(local_1c + 0xc);
         } while ((int)local_18 < (int)*(uint *)(local_1c + 0xc));

@@ -219,7 +219,7 @@ LAB_006e5bb3:
 006E5BBD  74 03                     JZ 0x006e5bc2
 LAB_006e5bbf:
 006E5BBF  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
-switchD_006e59d5::caseD_4:
+SystemClassTy::SendMessage::cf_common_exit_006E5BC2:
 006E5BC2  8B 75 FC                  MOV ESI,dword ptr [EBP + -0x4]
 006E5BC5  81 FE FF FF 00 00         CMP ESI,0xffff
 006E5BCB  75 17                     JNZ 0x006e5be4

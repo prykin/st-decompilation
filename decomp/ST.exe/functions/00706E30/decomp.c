@@ -260,7 +260,7 @@ LAB_0070758b:
             param_6 = param_6 + 1;
             param_15 = param_15 + -1;
           }
-          if (param_15 < 1) goto LAB_00707777;
+          if (param_15 < 1) goto cf_common_join_00707777;
           if (param_5 <= *puVar7) {
             piVar11 = local_80 + iVar12;
             iVar12 = iVar12 + 1;
@@ -304,7 +304,7 @@ LAB_0070758b:
           if (iVar10 == 1) {
             param_15 = param_15 + -1;
           }
-          if (param_15 < 1) goto LAB_00707777;
+          if (param_15 < 1) goto cf_common_join_00707777;
           if (param_5 <= *puVar7) {
             piVar11 = local_80 + iVar12;
             iVar12 = iVar12 + 1;
@@ -495,7 +495,7 @@ LAB_0070719b:
             param_6 = param_6 + 1;
             param_15 = param_15 + -1;
           }
-          if (param_15 < 1) goto LAB_00707777;
+          if (param_15 < 1) goto cf_common_join_00707777;
           if (param_5 <= *puVar7) {
             piVar11 = local_80 + iVar12;
             iVar12 = iVar12 + 1;
@@ -539,7 +539,7 @@ LAB_0070719b:
           if (iVar10 == 1) {
             param_15 = param_15 + -1;
           }
-          if (param_15 < 1) goto LAB_00707777;
+          if (param_15 < 1) goto cf_common_join_00707777;
           if (param_5 <= *puVar7) {
             piVar11 = local_80 + iVar12;
             iVar12 = iVar12 + 1;
@@ -576,7 +576,7 @@ LAB_0070719b:
       }
     }
   }
-LAB_00707777:
+cf_common_join_00707777:
   bVar8 = (byte)param_16;
   iVar10 = (param_7 - param_8) - param_11;
   if ((int)uVar2 < iVar10) {

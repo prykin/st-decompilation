@@ -1096,7 +1096,7 @@ LAB_005a5248:
 005A52A2  8B 8E C5 00 00 00         MOV ECX,dword ptr [ESI + 0xc5]
 005A52A8  50                        PUSH EAX
 005A52A9  51                        PUSH ECX
-LAB_005a52aa:
+FSGSTy::GetMessage::cf_common_exit_005A52AA:
 005A52AA  8B CE                     MOV ECX,ESI
 005A52AC  E8 6D D1 E5 FF            CALL 0x0040241e
 005A52B1  C6 86 D2 00 00 00 00      MOV byte ptr [ESI + 0xd2],0x0
@@ -1316,7 +1316,7 @@ LAB_005a561c:
 005A561E  E8 FB CD E5 FF            CALL 0x0040241e
 005A5623  C6 87 D2 00 00 00 00      MOV byte ptr [EDI + 0xd2],0x0
 005A562A  C7 87 DF 04 00 00 FF FF FF FF  MOV dword ptr [EDI + 0x4df],0xffffffff
-LAB_005a5634:
+FSGSTy::GetMessage::cf_common_exit_005A5634:
 005A5634  C7 43 2D 05 00 00 00      MOV dword ptr [EBX + 0x2d],0x5
 005A563B  8B 4E 18                  MOV ECX,dword ptr [ESI + 0x18]
 005A563E  8D 43 1D                  LEA EAX,[EBX + 0x1d]
@@ -4647,7 +4647,7 @@ LAB_005a7e99:
 005A7F2D  8B 8A E6 02 00 00         MOV ECX,dword ptr [EDX + 0x2e6]
 005A7F33  E8 19 CC E5 FF            CALL 0x00404b51
 005A7F38  8D 55 84                  LEA EDX,[EBP + -0x7c]
-LAB_005a7f3b:
+FSGSTy::GetMessage::cf_common_exit_005A7F3B:
 005A7F3B  8B 83 5B 1A 00 00         MOV EAX,dword ptr [EBX + 0x1a5b]
 005A7F41  52                        PUSH EDX
 005A7F42  8B 88 E6 02 00 00         MOV ECX,dword ptr [EAX + 0x2e6]
@@ -5746,7 +5746,7 @@ switchD_005a8ac5::caseD_c0a5:
 005A8C9C  84 C0                     TEST AL,AL
 005A8C9E  0F 94 C2                  SETZ DL
 005A8CA1  88 15 60 73 80 00         MOV byte ptr [0x00807360],DL
-switchD_005a43f5::caseD_1:
+FSGSTy::GetMessage::cf_common_exit_005A8CA7:
 005A8CA7  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 005A8CAA  8B 85 E8 FD FF FF         MOV EAX,dword ptr [EBP + 0xfffffde8]
 005A8CB0  51                        PUSH ECX

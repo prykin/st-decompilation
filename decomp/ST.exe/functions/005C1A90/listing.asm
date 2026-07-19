@@ -673,7 +673,7 @@ LAB_005c22a2:
 005C22A9  56                        PUSH ESI
 005C22AA  8B CB                     MOV ECX,EBX
 005C22AC  E8 BA 36 E4 FF            CALL 0x0040596b
-switchD_005c1b14::caseD_1:
+MReportTy::GetMessage::cf_common_exit_005C22B1:
 005C22B1  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 005C22B4  8B 55 A8                  MOV EDX,dword ptr [EBP + -0x58]
 005C22B7  50                        PUSH EAX

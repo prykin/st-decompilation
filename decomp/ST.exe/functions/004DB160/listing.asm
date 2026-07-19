@@ -461,7 +461,7 @@ LAB_004db683:
 LAB_004db68a:
 004DB68A  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 004DB68D  89 7D 18                  MOV dword ptr [EBP + 0x18],EDI
-LAB_004db690:
+FUN_004db160::cf_common_join_004DB690:
 004DB690  8B 56 24                  MOV EDX,dword ptr [ESI + 0x24]
 004DB693  8B 75 1C                  MOV ESI,dword ptr [EBP + 0x1c]
 004DB696  85 C9                     TEST ECX,ECX

@@ -212,7 +212,7 @@ STAllPlayersC::CmdToPlsObj
     case 0x27:
     case 0x28:
     case 0x2a:
-      goto switchD_0043702c_caseD_8;
+      goto cf_common_exit_00437191;
     default:
       return;
     case 0x14:
@@ -245,11 +245,11 @@ STAllPlayersC::CmdToPlsObj
               (*(int *)(DAT_007fb248 +
                        ((int)DAT_007fb246 * (int)sVar23 +
                        iVar21 + (int)DAT_007fb240 * (int)(short)uVar2) * 8) != 0)) ||
-             (local_28 = local_28 + 1, 4 < (short)local_28)) goto switchD_0043702c_caseD_8;
+             (local_28 = local_28 + 1, 4 < (short)local_28)) goto cf_common_exit_00437191;
         }
         *(int *)(local_68 + 4) = (int)sVar23;
       }
-switchD_0043702c_caseD_8:
+cf_common_exit_00437191:
       local_78 = param_1;
       (**(code **)*local_8)(local_8c);
       return;
@@ -434,7 +434,7 @@ switchD_0043702c_caseD_8:
   STGroupBoatC::StartReceiveOrderSound(this_01,unaff_EDI);
   switch(param_1[0xe]) {
   case 10:
-    goto switchD_004375b6_caseD_a;
+    goto cf_common_exit_0043824D;
   case 0x14:
     iVar21 = STGroupBoatC::IsAgAtt(this_01,unaff_EDI);
     if (iVar21 != 0) {
@@ -695,7 +695,7 @@ switchD_004384bc_default:
       (*this_01->vtable->vfunc_08)(1,&local_4c);
       return;
     case 8:
-switchD_004375b6_caseD_a:
+cf_common_exit_0043824D:
       (*this_01->vtable->vfunc_08)(3,0);
       return;
     case 9:
@@ -835,7 +835,7 @@ switchD_004375b6_caseD_a:
     local_d4 = 0;
     local_28 = 0;
     if ((int)uVar22 < 1) {
-LAB_00437e03:
+cf_common_exit_00437E03:
       iVar21 = *(int *)(param_1 + 0x17);
       local_c0 = *(undefined2 *)(iVar21 + 1);
       local_be = *(undefined2 *)(iVar21 + 3);
@@ -903,9 +903,9 @@ LAB_00437c45:
             iVar21 = 1;
             goto LAB_00437cb5;
           }
-          if (local_3c < (int)local_68) goto LAB_00437e03;
+          if (local_3c < (int)local_68) goto cf_common_exit_00437E03;
         }
-        if ((local_3c < local_d4) || (local_3c < 1)) goto LAB_00437e03;
+        if ((local_3c < local_d4) || (local_3c < 1)) goto cf_common_exit_00437E03;
         iVar21 = 2;
       }
 LAB_00437cb5:
@@ -1012,7 +1012,7 @@ LAB_00437cb5:
       (**(code **)*puVar13)(local_8c);
       return;
     }
-    goto switchD_004375b6_caseD_a;
+    goto cf_common_exit_0043824D;
   case 0x31:
     puVar7 = *(undefined1 **)(param_1 + 0x17);
     switch(*puVar7) {

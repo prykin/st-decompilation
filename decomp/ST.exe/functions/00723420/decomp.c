@@ -78,7 +78,7 @@ int __thiscall TabClassTy::GetMessage(TabClassTy *this,int *param_1)
   case 2:
     local_c = (int *)param_1[5];
     if (local_c == (int *)0x0) {
-LAB_00723d89:
+cf_common_join_00723D89:
       local_8 = 0xffff;
     }
     else {
@@ -168,7 +168,7 @@ LAB_00723d89:
       iVar4 = 0;
       do {
         iVar7 = (**(code **)(*(int *)this_00 + 4))((int)piVar6 + iVar4);
-        if (iVar7 != 0) goto LAB_00723d89;
+        if (iVar7 != 0) goto cf_common_join_00723D89;
         piVar6 = *(int **)(this_00 + 100);
         iVar4 = iVar4 + 0x70;
       } while (*(int *)((int)piVar6 + iVar4) != 0);
@@ -270,13 +270,13 @@ LAB_00723833:
       local_20 = 0x13;
       local_18 = 0;
       iVar4 = FUN_006e6000(this_00,3,1,&local_30);
-      if (iVar4 != 0) goto LAB_00723d89;
+      if (iVar4 != 0) goto cf_common_join_00723D89;
       if (((*(uint *)(this_00 + 0x74) & 0xf0000000) == 0) &&
          (piVar6 = *(int **)(this_00 + 100), *piVar6 != 0)) {
         iVar4 = 0;
         do {
           iVar7 = (**(code **)(*(int *)this_00 + 4))((int)piVar6 + iVar4);
-          if (iVar7 != 0) goto LAB_00723d89;
+          if (iVar7 != 0) goto cf_common_join_00723D89;
           piVar6 = *(int **)(this_00 + 100);
           iVar4 = iVar4 + 0x70;
         } while (*(int *)((int)piVar6 + iVar4) != 0);
@@ -352,7 +352,7 @@ LAB_00723833:
     if (-1 < iVar4) {
       *(undefined4 *)(*(int *)(this_00 + 100) + 4 + iVar4 * 0x70) = 0;
       iVar4 = (**(code **)(*(int *)this_00 + 4))(*(int *)(this_00 + 100) + iVar4 * 0x70);
-      if (iVar4 != 0) goto LAB_00723d89;
+      if (iVar4 != 0) goto cf_common_join_00723D89;
     }
     *(int *)(this_00 + 0x68) = param_1[5];
     iVar4 = FUN_007233f0((int)this_00);
@@ -360,7 +360,7 @@ LAB_00723833:
       iVar4 = iVar4 * 0x70;
       *(undefined4 *)(*(int *)(this_00 + 100) + 4 + iVar4) = 1;
       iVar7 = (**(code **)(*(int *)this_00 + 4))(*(int *)(this_00 + 100) + iVar4);
-      if (iVar7 != 0) goto LAB_00723d89;
+      if (iVar7 != 0) goto cf_common_join_00723D89;
       if ((short)param_1[6] == 0) {
         *(int *)(this_00 + 0x38) = *(int *)(this_00 + 100) + iVar4;
         iVar4 = FUN_006e6020(this_00,(undefined4 *)(this_00 + 0x24));
@@ -484,7 +484,7 @@ LAB_00723833:
     if (-1 < iVar4) {
       *(undefined4 *)(*(int *)(this_00 + 100) + 4 + iVar4 * 0x70) = 0;
       iVar4 = (**(code **)(*(int *)this_00 + 4))(*(int *)(this_00 + 100) + iVar4 * 0x70);
-      if (iVar4 != 0) goto LAB_00723d89;
+      if (iVar4 != 0) goto cf_common_join_00723D89;
     }
     *(int *)(this_00 + 0x68) = param_1[5];
     iVar4 = FUN_007233f0((int)this_00);
@@ -492,7 +492,7 @@ LAB_00723833:
       *(undefined4 *)(*(int *)(this_00 + 100) + 4 + iVar4 * 0x70) = 1;
       iVar4 = (**(code **)(*(int *)this_00 + 4))(*(int *)(this_00 + 100) + iVar4 * 0x70);
 joined_r0x00723c77:
-      if (iVar4 != 0) goto LAB_00723d89;
+      if (iVar4 != 0) goto cf_common_join_00723D89;
     }
   }
   goto switchD_00723488_caseD_4;
@@ -501,7 +501,7 @@ LAB_00723867:
   iVar4 = iVar4 + 0x70;
   if (*(int *)((int)piVar6 + iVar4) == 0) goto switchD_00723488_caseD_4;
   goto LAB_00723833;
-LAB_00724056:
+cf_break_loop_00724056:
   local_8 = 0xffff;
   goto switchD_00723db1_caseD_1;
   while( true ) {
@@ -510,7 +510,7 @@ LAB_00724056:
     if (*(int *)((int)piVar6 + iVar4) == 0) break;
 LAB_00723991:
     iVar7 = (**(code **)(*(int *)this_00 + 4))((int)piVar6 + iVar4);
-    if (iVar7 != 0) goto LAB_00723d89;
+    if (iVar7 != 0) goto cf_common_join_00723D89;
   }
 switchD_00723488_caseD_4:
   if (*(int *)(this_00 + 0x74) == 1) {
@@ -574,7 +574,7 @@ switchD_00723488_caseD_4:
               piVar6[1] = (uint)(*piVar6 == *(int *)(this_00 + 0x68));
               iVar7 = (**(code **)(*(int *)this_00 + 4))(*(int *)(this_00 + 100) + iVar4);
 joined_r0x00723f55:
-              if (iVar7 != 0) goto LAB_00724056;
+              if (iVar7 != 0) goto cf_break_loop_00724056;
             }
           }
           else {
@@ -634,7 +634,7 @@ joined_r0x00723f55:
             if (-1 < iVar4) {
               *(undefined4 *)(iVar4 * 0x70 + 4 + *(int *)(this_00 + 100)) = 0;
               iVar4 = (**(code **)(*(int *)this_00 + 4))(iVar4 * 0x70 + *(int *)(this_00 + 100));
-              if (iVar4 != 0) goto LAB_00724056;
+              if (iVar4 != 0) goto cf_break_loop_00724056;
               iVar7 = local_34 * 0x70;
               *(int *)(this_00 + 0x68) = *(int *)(*(int *)(this_00 + 100) + iVar7);
               ((int *)(*(int *)(this_00 + 100) + iVar7))[1] = 1;

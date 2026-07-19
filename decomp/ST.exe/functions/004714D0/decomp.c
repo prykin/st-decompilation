@@ -74,7 +74,7 @@ int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1,undefined4 param_2,
         iVar5 = 0x2b00;
         goto LAB_0047171f;
       }
-      if (iVar5 != 0) goto LAB_004715ef;
+      if (iVar5 != 0) goto cf_common_exit_004715EF;
       thunk_FUN_0048dba0((int)this);
       goto LAB_004716df;
     }
@@ -94,7 +94,7 @@ int __thiscall STBoatC::BackToDok(STBoatC *this,int *param_1,undefined4 param_2,
     if (uVar4 == 0) {
       *(undefined4 *)&this->field_0x584 = 5;
     }
-    goto LAB_004715ef;
+    goto cf_common_exit_004715EF;
   case CASE_5:
     thunk_FUN_0048dba0((int)this);
     pSVar6 = (STBoatC *)(*(int *)&this->field_0x57c + 1);
@@ -161,7 +161,7 @@ LAB_004716df:
           iVar5 = (*this->vtable->vfunc_D8)();
           return -(uint)(iVar5 != 0);
         }
-LAB_004715ef:
+cf_common_exit_004715EF:
         iVar5 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
       }

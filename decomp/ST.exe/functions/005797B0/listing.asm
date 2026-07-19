@@ -614,7 +614,7 @@ LAB_00579e7b:
 00579E89  8B E5                     MOV ESP,EBP
 00579E8B  5D                        POP EBP
 00579E8C  C2 0C 00                  RET 0xc
-LAB_00579e8f:
+FUN_005797b0::cf_common_exit_00579E8F:
 00579E8F  0F BF 4E 6C               MOVSX ECX,word ptr [ESI + 0x6c]
 00579E93  41                        INC ECX
 00579E94  81 E1 07 00 00 80         AND ECX,0x80000007

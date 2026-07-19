@@ -417,7 +417,7 @@ LAB_0042b017:
 LAB_0042b01f:
 0042B01F  8B 08                     MOV ECX,dword ptr [EAX]
 0042B021  51                        PUSH ECX
-LAB_0042b022:
+STAllPlayersC::GetGObjFromZone2::cf_common_join_0042B022:
 0042B022  E8 99 31 28 00            CALL 0x006ae1c0
 LAB_0042b027:
 0042B027  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]

@@ -175,7 +175,7 @@ LAB_0049a80e:
 0049A82C  8B E5                     MOV ESP,EBP
 0049A82E  5D                        POP EBP
 0049A82F  C2 04 00                  RET 0x4
-LAB_0049a832:
+STGroupBoatC::GrpMove::cf_common_exit_0049A832:
 0049A832  C7 45 FC 02 00 00 00      MOV dword ptr [EBP + -0x4],0x2
 LAB_0049a839:
 0049A839  8B 45 A0                  MOV EAX,dword ptr [EBP + -0x60]

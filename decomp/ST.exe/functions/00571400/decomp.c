@@ -45,7 +45,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
                       (HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     local_8 = 1;
-    goto LAB_00571620;
+    goto cf_common_exit_00571620;
   }
   if ((param_1 != 0) &&
      (((DVar4 = SetFilePointer(hFile,0,(PLONG)0x0,0), DVar4 == 0xffffffff ||
@@ -122,20 +122,20 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
         *(uint *)&pSVar2->field_0x1191 = *(int *)&pSVar2->field_0x1191 + nNumberOfBytesToRead;
         CloseHandle(hFile);
       }
-      goto LAB_00571620;
+      goto cf_common_exit_00571620;
     }
     *(undefined4 *)&pSVar2->field_0x1185 = 0;
     if (DAT_008016d8 != (void *)0x0) {
       thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_commands_has_finished_007ca2bc,8);
       CloseHandle(hFile);
-      goto LAB_00571620;
+      goto cf_common_exit_00571620;
     }
   }
   else {
     local_8 = 1;
   }
   CloseHandle(hFile);
-LAB_00571620:
+cf_common_exit_00571620:
   if ((local_8 != 0) && (*(undefined4 *)&pSVar2->field_0x1185 = 0, DAT_008016d8 != (void *)0x0)) {
     thunk_FUN_0052d320(DAT_008016d8,s_Error_playing_command__007ca2a0,9);
     thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_command_has_turned_of_007ca274,8);

@@ -116,7 +116,7 @@ LAB_004b1801:
 004B180A  E9 F4 FE FF FF            JMP 0x004b1703
 LAB_004b180f:
 004B180F  66 8B 1D 40 B2 7F 00      MOV BX,word ptr [0x007fb240]
-LAB_004b1816:
+FUN_004b1690::cf_break_loop_004B1816:
 004B1816  33 D2                     XOR EDX,EDX
 LAB_004b1818:
 004B1818  8B 45 14                  MOV EAX,dword ptr [EBP + 0x14]

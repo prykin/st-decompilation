@@ -107,11 +107,11 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x638);
             }
             iVar2 = thunk_FUN_0045ff30(uVar7);
-            if (iVar2 != 0) goto LAB_0049a832;
+            if (iVar2 != 0) goto cf_common_exit_0049A832;
             iVar2 = thunk_FUN_0045ff10(uVar7);
-            if (iVar2 == 1) goto LAB_0049a832;
+            if (iVar2 == 1) goto cf_common_exit_0049A832;
             iVar2 = thunk_FUN_0045ff10(uVar7);
-            if (iVar2 == 0) goto LAB_0049a832;
+            if (iVar2 == 0) goto cf_common_exit_0049A832;
           }
           uVar6 = uVar6 + 1;
           uVar7 = uVar6 & 0xffff;
@@ -123,7 +123,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
       }
     }
     else {
-LAB_0049a832:
+cf_common_exit_0049A832:
       local_8 = 2;
     }
   }

@@ -287,7 +287,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   }
   if (DAT_00811768 != '\0') {
     local_1c = 0x6102;
-    goto LAB_0056c034;
+    goto cf_common_exit_0056C034;
   }
   local_1c = 0x6123;
   bVar5 = false;
@@ -309,7 +309,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         DAT_00806740 = puVar9;
       }
     }
-    goto LAB_0056c034;
+    goto cf_common_exit_0056C034;
   }
   switch(pcVar12[1]) {
   case 'A':
@@ -1220,7 +1220,7 @@ switchD_0056b4ce_caseD_57:
   if ((pSVar20->field_0xe26 == '\0') && (local_1c != 0x6104)) {
     local_1c = 0x6123;
   }
-LAB_0056c034:
+cf_common_exit_0056C034:
   (*pSVar20->vtable->GetMessage)(pSVar20,(int)local_2c);
   g_currentExceptionFrame = local_b0.previous;
   return 1;

@@ -163,7 +163,7 @@ LAB_006a5b25:
 006A5B25  56                        PUSH ESI
 006A5B26  E8 B5 00 00 00            CALL 0x006a5be0
 006A5B2B  83 C4 04                  ADD ESP,0x4
-LAB_006a5b2e:
+FUN_006a5990::cf_continue_loop_006A5B2E:
 006A5B2E  8B 36                     MOV ESI,dword ptr [ESI]
 006A5B30  85 F6                     TEST ESI,ESI
 006A5B32  0F 85 93 FE FF FF         JNZ 0x006a59cb

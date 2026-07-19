@@ -68,7 +68,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,uint *param_
   iVar5 = local_38;
   puVar8 = param_5;
   iVar11 = param_4;
-  if (iVar4 == 0) goto LAB_006cf911;
+  if (iVar4 == 0) goto cf_common_exit_006CF911;
   if ((*(int *)(*param_1 + 0x20) == 0x10) && (local_24 = *(int *)(param_4 + 0xb4), local_24 == 0)) {
     local_24 = *(int *)(*param_1 + 0x4c0);
   }
@@ -97,7 +97,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,uint *param_
     if ((iVar5 == -0x7789ff60) || (local_28 = iVar5, iVar5 == -0x7789fe52)) {
       local_28 = 0;
     }
-    goto LAB_006cf911;
+    goto cf_common_exit_006CF911;
   }
   if ((param_12 & 0xc0000000) != 0) {
     if (param_6 == (char *)0x0) {
@@ -110,13 +110,13 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,uint *param_
     local_8 = 0;
     FUN_006cebe0((char *)param_2,-param_3,param_6,uVar7,local_30,(int)local_2c,
                  *(char *)(iVar11 + 0x54));
-    goto LAB_006cf911;
+    goto cf_common_exit_006CF911;
   }
   if ((param_12 & 0x5000000) != 0) {
     local_8c = 0;
     if ((char)param_12 == '\x02') {
       local_28 = FUN_006d9f30(param_1,local_38,local_34,local_30,(int)local_2c);
-      if (local_28 != 0) goto LAB_006cf911;
+      if (local_28 != 0) goto cf_common_exit_006CF911;
       local_4c = 0;
       local_28 = 0;
       do {
@@ -127,7 +127,7 @@ int FUN_006cef60(int *param_1,uint *param_2,int param_3,int param_4,uint *param_
         FUN_006cec40(*param_1);
         local_4c = local_4c + 1;
       } while (local_4c < 2);
-      if (iVar12 != 0) goto LAB_006cf911;
+      if (iVar12 != 0) goto cf_common_exit_006CF911;
     }
 LAB_006cf209:
     local_30 = local_30 + local_38;
@@ -236,12 +236,12 @@ LAB_006cf37b:
       (**(code **)(**(int **)(*param_1 + 0x44) + 0x80))(*(int **)(*param_1 + 0x44),0);
       local_28 = iVar12;
     }
-    goto LAB_006cf911;
+    goto cf_common_exit_006CF911;
   }
   uVar10 = param_12 & 0xff;
   if (uVar10 == 2) {
     local_28 = FUN_006d9f30(param_1,local_38,local_34,local_30,(int)local_2c);
-    if (local_28 != 0) goto LAB_006cf911;
+    if (local_28 != 0) goto cf_common_exit_006CF911;
     local_4c = 0;
     local_28 = 0;
     do {
@@ -252,7 +252,7 @@ LAB_006cf37b:
       FUN_006cec40(*param_1);
       local_4c = local_4c + 1;
     } while (local_4c < 2);
-    if (iVar12 != 0) goto LAB_006cf911;
+    if (iVar12 != 0) goto cf_common_exit_006CF911;
   }
 LAB_006cf695:
   if (*(int *)(*param_1 + 0x20) == 0x10) {
@@ -313,7 +313,7 @@ LAB_006cf8ee:
   if ((char)param_12 == '\x02') {
     (**(code **)(**(int **)(*param_1 + 0x44) + 0x80))(*(int **)(*param_1 + 0x44),0);
   }
-LAB_006cf911:
+cf_common_exit_006CF911:
   if ((local_28 != -0x7789ff60) && (local_28 != -0x7789fe52)) {
     ExceptionList = local_14;
     return local_28;

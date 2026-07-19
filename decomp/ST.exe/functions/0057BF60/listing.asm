@@ -286,7 +286,7 @@ LAB_0057c327:
 0057C327  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 0057C32C  68 44 B0 7C 00            PUSH 0x7cb044
 0057C331  50                        PUSH EAX
-LAB_0057c332:
+STFishC::GetMessage::cf_error_exit_0057C332:
 0057C332  57                        PUSH EDI
 0057C333  E8 08 9B 12 00            CALL 0x006a5e40
 LAB_0057c338:
@@ -330,7 +330,7 @@ LAB_0057c3d3:
 0057C3D3  8B CB                     MOV ECX,EBX
 0057C3D5  E8 E0 6E E8 FF            CALL 0x004032ba
 0057C3DA  C7 83 3B 02 00 00 03 00 00 00  MOV dword ptr [EBX + 0x23b],0x3
-LAB_0057c3e4:
+STFishC::GetMessage::cf_common_exit_0057C3E4:
 0057C3E4  83 BB 3B 02 00 00 06      CMP dword ptr [EBX + 0x23b],0x6
 0057C3EB  0F 84 36 04 00 00         JZ 0x0057c827
 0057C3F1  53                        PUSH EBX

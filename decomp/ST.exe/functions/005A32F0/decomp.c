@@ -68,23 +68,23 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   if (uVar3 < 0x502) {
     if (uVar3 == 0x501) {
       DAT_00803400 = 5;
-      goto LAB_005a33fb;
+      goto cf_common_exit_005A33FB;
     }
     if (uVar3 == 0x200) {
       DAT_00803400 = 0x14;
-      goto LAB_005a33fb;
+      goto cf_common_exit_005A33FB;
     }
     if (uVar3 == 0x400) {
       DAT_00803400 = 0x15;
-      goto LAB_005a33fb;
+      goto cf_common_exit_005A33FB;
     }
   }
   else if (uVar3 == 0x502) {
     DAT_00803400 = 0xc;
-    goto LAB_005a33fb;
+    goto cf_common_exit_005A33FB;
   }
   DAT_00803400 = 4;
-LAB_005a33fb:
+cf_common_exit_005A33FB:
   thunk_FUN_005b6350(local_8,0x611f,0x13,0);
   (**(code **)(*(int *)pFVar6 + 8))();
   pMVar4 = *(MMsgTy **)(*(int *)&pFVar6->field_0x1a5b + 0x2e6);

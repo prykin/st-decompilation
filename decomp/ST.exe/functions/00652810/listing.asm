@@ -194,7 +194,7 @@ switchD_00652a7f::caseD_23:
 00652A92  83 C4 04                  ADD ESP,0x4
 00652A95  85 C0                     TEST EAX,EAX
 00652A97  75 18                     JNZ 0x00652ab1
-LAB_00652a99:
+AiEventClassTy::GetMessage::cf_common_join_00652A99:
 00652A99  6A FF                     PUSH -0x1
 00652A9B  57                        PUSH EDI
 00652A9C  53                        PUSH EBX
@@ -9415,12 +9415,12 @@ LAB_00659a3b:
 LAB_00659a67:
 00659A67  8B 8D A0 FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffea0]
 00659A6D  89 0D 1E C5 80 00         MOV dword ptr [0x0080c51e],ECX
-switchD_00652a7f::caseD_3:
+AiEventClassTy::GetMessage::cf_switch_join_00659A73:
 00659A73  8B 85 94 FE FF FF         MOV EAX,dword ptr [EBP + 0xfffffe94]
 00659A79  40                        INC EAX
 LAB_00659a7a:
 00659A7A  89 85 94 FE FF FF         MOV dword ptr [EBP + 0xfffffe94],EAX
-LAB_00659a80:
+AiEventClassTy::GetMessage::cf_continue_loop_00659A80:
 00659A80  8B 95 8C FE FF FF         MOV EDX,dword ptr [EBP + 0xfffffe8c]
 00659A86  8B 8D 94 FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffe94]
 00659A8C  8B 5A 0F                  MOV EBX,dword ptr [EDX + 0xf]

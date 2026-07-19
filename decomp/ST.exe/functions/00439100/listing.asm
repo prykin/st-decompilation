@@ -1399,7 +1399,7 @@ LAB_0043a0d4:
 0043A0FE  6A 00                     PUSH 0x0
 0043A100  6A 00                     PUSH 0x0
 0043A102  E9 6D 03 00 00            JMP 0x0043a474
-LAB_0043a107:
+STAllPlayersC::RestoreTmp::cf_common_join_0043A107:
 0043A107  C7 45 E0 01 00 00 00      MOV dword ptr [EBP + -0x20],0x1
 0043A10E  E9 69 03 00 00            JMP 0x0043a47c
 LAB_0043a113:
@@ -1735,7 +1735,7 @@ LAB_0043a474:
 0043A474  53                        PUSH EBX
 0043A475  8B CE                     MOV ECX,ESI
 0043A477  E8 B5 99 FC FF            CALL 0x00403e31
-LAB_0043a47c:
+STAllPlayersC::RestoreTmp::cf_common_exit_0043A47C:
 0043A47C  83 7D E0 01               CMP dword ptr [EBP + -0x20],0x1
 0043A480  0F 85 CE 00 00 00         JNZ 0x0043a554
 0043A486  8D 55 E8                  LEA EDX,[EBP + -0x18]

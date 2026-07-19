@@ -289,7 +289,7 @@ undefined4 __thiscall SliderClassTy::GetMessage(SliderClassTy *this,int *param_1
     *(int *)(local_8 + 0x4c) = iVar3;
     *(int *)(local_8 + 0x3c) = iVar3;
     FUN_00724360(local_8);
-    goto LAB_00724bab;
+    goto cf_common_exit_00724BAB;
   case 0x55:
     *(undefined4 *)(local_8 + 0x54) = 1;
     g_currentExceptionFrame = local_74.previous;
@@ -325,7 +325,7 @@ undefined4 __thiscall SliderClassTy::GetMessage(SliderClassTy *this,int *param_1
       FUN_006e6080(pSVar2,2,*(int *)(pSVar2 + 0x24),local_30);
     }
     *(undefined4 *)(pSVar2 + 0x3c) = *(undefined4 *)(pSVar2 + 0x4c);
-    goto LAB_00724bab;
+    goto cf_common_exit_00724BAB;
   case 0x68:
     if (*(int *)(local_8 + 0x50) == 0) {
       g_currentExceptionFrame = local_74.previous;
@@ -353,7 +353,7 @@ undefined4 __thiscall SliderClassTy::GetMessage(SliderClassTy *this,int *param_1
       FUN_006e6080(pSVar2,2,*(int *)(pSVar2 + 0x24),local_30);
     }
     *(undefined4 *)(pSVar2 + 0x3c) = *(undefined4 *)(pSVar2 + 0x4c);
-LAB_00724bab:
+cf_common_exit_00724BAB:
     iVar3 = FUN_006e6020(pSVar2,(undefined4 *)(pSVar2 + 0x28));
 LAB_00724bb2:
     if (iVar3 != 0) {

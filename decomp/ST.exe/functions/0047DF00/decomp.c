@@ -338,7 +338,7 @@ LAB_0047f1f7:
                              *(short *)&this->field_0x6b7 * 200 + 100,this->field_0x61);
           *(undefined4 *)&this->field_0x6c7 = 3;
         }
-        if (*(int *)&this->field_0x6c7 != 3) goto LAB_0047f19a;
+        if (*(int *)&this->field_0x6c7 != 3) goto cf_common_exit_0047F19A;
         local_10 = thunk_FUN_00415ed0(this,&local_18,&local_14);
         local_8 = 0;
         if (this->field_0x2bf != '\0') {
@@ -412,7 +412,7 @@ LAB_0047edd5:
           RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar7);
           return 0xffff;
         }
-        if (local_10 != 0) goto LAB_0047f19a;
+        if (local_10 != 0) goto cf_common_exit_0047F19A;
         sVar15 = this->field_06A9;
         sVar18 = this->field_06AD;
         sVar14 = this->field_06AB;
@@ -430,7 +430,7 @@ LAB_0047edd5:
             (iVar7 = thunk_FUN_004b9d90((int)param_1), iVar7 != 0)))) {
           thunk_FUN_004b9cf0(param_1);
           this->field_06C3 = CASE_4;
-          goto LAB_0047f19a;
+          goto cf_common_exit_0047F19A;
         }
         FUN_006e62d0(DAT_00802a38,this->field_06AF,(int *)&param_1);
         if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
@@ -472,7 +472,7 @@ LAB_0047edd5:
               }
               if (uVar10 == 0) {
                 *(undefined4 *)&this->field_0x6c7 = 2;
-                goto LAB_0047f19a;
+                goto cf_common_exit_0047F19A;
               }
             }
             if (*(int *)&this->field_0x6c7 == 2) {
@@ -619,7 +619,7 @@ LAB_0047edd5:
                                (int)*(short *)&this->field_0x6b5,(int)*(short *)&this->field_0x6b7);
             thunk_FUN_0045ff50(this,0);
           }
-          goto LAB_0047f19a;
+          goto cf_common_exit_0047F19A;
         }
         sVar15 = this->field_06A9;
         sVar18 = this->field_06AD;
@@ -645,7 +645,7 @@ LAB_0047edd5:
               this->field_06C3 = CASE_6;
             }
           }
-          goto LAB_0047f19a;
+          goto cf_common_exit_0047F19A;
         }
         FUN_006e62d0(DAT_00802a38,this->field_06AF,(int *)&param_1);
         iVar7 = extraout_ECX;
@@ -666,12 +666,12 @@ LAB_0047edd5:
           if (iVar7 == -1) {
             return -1;
           }
-          goto LAB_0047f19a;
+          goto cf_common_exit_0047F19A;
         }
       }
       this->field_06C3 = CASE_5;
       *(undefined4 *)&this->field_0x6c7 = 0;
-LAB_0047f19a:
+cf_common_exit_0047F19A:
       iVar7 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
     }

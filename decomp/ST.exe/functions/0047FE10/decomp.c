@@ -101,14 +101,14 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
       if (*(int *)&this->field_0x6d7 <= iVar5) {
         *(int *)&this->field_0x6db = iVar5;
         *(undefined4 *)&this->field_0x6e3 = 2;
-        goto LAB_004800ec;
+        goto cf_common_exit_004800EC;
       }
       break;
     case 2:
       if (*(int *)&this->field_0x6db <= iVar5) {
         *(int *)&this->field_0x6df = iVar5;
         *(undefined4 *)&this->field_0x6e3 = 3;
-        goto LAB_004800ec;
+        goto cf_common_exit_004800EC;
       }
       break;
     case 3:
@@ -128,7 +128,7 @@ int __thiscall STBoatC::Scout(STBoatC *this,int param_1)
     }
     *(int *)&this->field_0x6d7 = iVar5;
     *(undefined4 *)&this->field_0x6e3 = 1;
-LAB_004800ec:
+cf_common_exit_004800EC:
     thunk_FUN_00481520(this,(int)*(short *)&this->field_0x6d1,(int)*(short *)&this->field_0x6d3,
                        (int)*(short *)&this->field_0x6d5);
     iVar5 = thunk_FUN_0045ff50(this,0);
@@ -175,12 +175,12 @@ LAB_0047ff46:
     if (iVar5 < *(int *)&this->field_0x6d7) break;
     *(int *)&this->field_0x6db = iVar5;
     *(undefined4 *)&this->field_0x6e3 = 2;
-    goto LAB_0047feeb;
+    goto cf_common_exit_0047FEEB;
   case 2:
     if (*(int *)&this->field_0x6db <= iVar5) {
       *(int *)&this->field_0x6df = iVar5;
       *(undefined4 *)&this->field_0x6e3 = 3;
-      goto LAB_0047feeb;
+      goto cf_common_exit_0047FEEB;
     }
     break;
   case 3:
@@ -201,7 +201,7 @@ LAB_0047ff46:
   }
   *(int *)&this->field_0x6d7 = iVar5;
   *(undefined4 *)&this->field_0x6e3 = 1;
-LAB_0047feeb:
+cf_common_exit_0047FEEB:
   sVar1 = *(short *)&this->field_0x6cf;
   sVar2 = *(short *)&this->field_0x6cd;
   sVar3 = *(short *)&this->field_0x6cb;

@@ -220,7 +220,7 @@ LAB_006d88c6:
 006D88CE  89 4D 20                  MOV dword ptr [EBP + 0x20],ECX
 006D88D1  46                        INC ESI
 006D88D2  E9 E9 FE FF FF            JMP 0x006d87c0
-LAB_006d88d7:
+FUN_006d86e0::cf_common_join_006D88D7:
 006D88D7  0B D2                     OR EDX,EDX
 006D88D9  0F 8E E7 00 00 00         JLE 0x006d89c6
 006D88DF  2B CA                     SUB ECX,EDX

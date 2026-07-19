@@ -101,7 +101,7 @@ void __thiscall CPanelTy::Update4PanelWB(CPanelTy *this)
   STAllPlayersC::GetPanelInfo(DAT_007fa174,4,(int *)puVar1);
   cVar9 = this_00->field_0xbfa;
   if ((local_77 != cVar9) || (local_76 != this_00->field_0xbfb)) {
-LAB_005091b9:
+cf_common_exit_005091B9:
     PaintCtrlObj(this_00,1);
     SetControlObj(this_00,'\x01');
     thunk_FUN_00506040((int)this_00);
@@ -260,10 +260,10 @@ LAB_005091b9:
         return;
       }
     }
-    goto LAB_005091b9;
+    goto cf_common_exit_005091B9;
   }
   if ((local_7c != *(int *)&this_00->field_0xbf5) || (local_78 != this_00->field_0xbf9))
-  goto LAB_005091b9;
+  goto cf_common_exit_005091B9;
   cVar9 = '\0';
   cVar10 = '\0';
   iVar5 = 0;
@@ -399,7 +399,7 @@ LAB_005091b9:
         }
       }
       if ((*(int *)&this_00->field_0xbf5 != 0x44) || (*(ushort *)&this_00->field_0xc34 == local_3d))
-      goto switchD_0050858c_caseD_3b;
+      goto cf_common_exit_00509192;
       thunk_FUN_00540760((undefined4 *)this_00->field_0194,
                          (((undefined4 *)this_00->field_0194)[1] -
                          *(int *)(*(byte **)&this_00->field_0xa01 + 4)) / 2,0x37,'\x01',
@@ -411,10 +411,10 @@ LAB_005091b9:
       ;
       ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,&DAT_0080f33a,-2,-1,0,-1,-1);
       uVar6 = *(uint *)&this_00->field_0x15c;
-      if ((int)uVar6 < 0) goto switchD_0050858c_caseD_3b;
+      if ((int)uVar6 < 0) goto cf_common_exit_00509192;
       uVar20 = *(uint *)&this_00->field_0xa8;
       uVar19 = *(uint *)&this_00->field_0x50;
-      goto LAB_0050918d;
+      goto cf_common_exit_0050918D;
     }
     iVar5 = 0;
     goto LAB_00508b35;
@@ -472,7 +472,7 @@ LAB_005091b9:
         local_c = local_c + -1;
       } while (local_c != 0);
       local_c = 0;
-      goto switchD_0050858c_caseD_3b;
+      goto cf_common_exit_00509192;
     }
     break;
   case 0x34:
@@ -507,10 +507,10 @@ LAB_005091b9:
       piVar14 = piVar14 + 1;
     } while (iVar5 < 6);
     uVar6 = *(uint *)&this_00->field_0x15c;
-    if ((int)uVar6 < 0) goto switchD_0050858c_caseD_3b;
+    if ((int)uVar6 < 0) goto cf_common_exit_00509192;
     uVar20 = *(uint *)&this_00->field_0xa8;
     uVar19 = *(uint *)&this_00->field_0x50;
-    goto LAB_0050918d;
+    goto cf_common_exit_0050918D;
   case 0x35:
     iVar5 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(int *)&this_00->field_0x9ed + 4)) /
             2;
@@ -529,9 +529,9 @@ LAB_005091b9:
             FUN_006e6080(this_00,2,iVar5,local_e4);
           }
         }
-        goto switchD_0050858c_caseD_3b;
+        goto cf_common_exit_00509192;
       }
-      if (this_00->field_0xc33 == local_3e) goto switchD_0050858c_caseD_3b;
+      if (this_00->field_0xc33 == local_3e) goto cf_common_exit_00509192;
       Library::DKW::WGR::FUN_006b55f0
                 ((undefined4 *)this_00->field_0194,0,iVar5 + 0x39,0x65,*(int *)&this_00->field_0x9ed
                  ,0,0x39,0x15,0x4c,0x1b);
@@ -549,7 +549,7 @@ LAB_005091b9:
   case 0x4d:
   case 0x4e:
   case 0x6f:
-    if (this_00->field_0xc29 == local_48) goto switchD_0050858c_caseD_3b;
+    if (this_00->field_0xc29 == local_48) goto cf_common_exit_00509192;
     iVar5 = (*(int *)(this_00->field_0194 + 4) - *(int *)(*(int *)&this_00->field_0x9f5 + 4)) / 2;
     if (this_00->field_0xc29 == -1) {
       this_00->field_0xc29 = 0;
@@ -590,10 +590,10 @@ joined_r0x00508b00:
 LAB_00509179:
       uVar20 = *(uint *)&this_00->field_0xa8;
       uVar19 = *(uint *)&this_00->field_0x50;
-LAB_0050918d:
+cf_common_exit_0050918D:
       Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar6,0xffffffff,uVar19,uVar20);
     }
-    goto switchD_0050858c_caseD_3b;
+    goto cf_common_exit_00509192;
   case 0x3a:
     iVar5 = (*(int *)(this_00->field_0194 + 4) - *(int *)(*(int *)&this_00->field_0x9ed + 4)) / 2;
     if (this_00->field_0xc3a != local_37) {
@@ -650,7 +650,7 @@ LAB_0050918d:
                    *(uint *)&this_00->field_0x50,*(uint *)&this_00->field_0xa8);
       }
     }
-    if (*(ushort *)&this_00->field_0xc34 == local_3d) goto switchD_0050858c_caseD_3b;
+    if (*(ushort *)&this_00->field_0xc34 == local_3d) goto cf_common_exit_00509192;
     local_8 = (byte *)((uint)local_8 & 0xffffff00);
     local_c = ((uint)*(ushort *)&this_00->field_0xc34 * 0x28) / 400;
     if (local_c != 0) {
@@ -677,7 +677,7 @@ LAB_0050918d:
     uVar6 = *(uint *)&this_00->field_0x15c;
     goto joined_r0x00509177;
   default:
-    goto switchD_0050858c_caseD_3b;
+    goto cf_common_exit_00509192;
   case 0x3c:
     cVar9 = this_00->field_0xc3c;
     local_c = CONCAT31(local_c._1_3_,cVar9);
@@ -685,7 +685,7 @@ LAB_0050918d:
       PaintCtrlObj(this_00,1);
       SetControlObj(this_00,'\x01');
       thunk_FUN_00506040((int)this_00);
-      goto switchD_0050858c_caseD_3b;
+      goto cf_common_exit_00509192;
     }
     iVar5 = *(int *)&this_00->field_0x9ed;
     puVar16 = (undefined4 *)this_00->field_0194;
@@ -730,7 +730,7 @@ LAB_0050918d:
     }
     uVar6 = *(uint *)&this_00->field_0x15c;
 joined_r0x00509177:
-    if ((int)uVar6 < 0) goto switchD_0050858c_caseD_3b;
+    if ((int)uVar6 < 0) goto cf_common_exit_00509192;
     goto LAB_00509179;
   case 0x50:
     iVar5 = 3;
@@ -764,14 +764,14 @@ joined_r0x00509177:
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
     }
-    goto switchD_0050858c_caseD_3b;
+    goto cf_common_exit_00509192;
   }
   iVar5 = 1;
 LAB_00508b35:
   PaintCtrlObj(this_00,iVar5);
   SetControlObj(this_00,'\0');
   thunk_FUN_00506040((int)this_00);
-switchD_0050858c_caseD_3b:
+cf_common_exit_00509192:
   if (*(int *)&this_00->field_0xc4d == local_24) {
     g_currentExceptionFrame = local_c4.previous;
     return;

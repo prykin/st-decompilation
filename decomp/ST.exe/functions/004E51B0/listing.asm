@@ -287,7 +287,7 @@ LAB_004e54f0:
 004E54FC  8B 55 10                  MOV EDX,dword ptr [EBP + 0x10]
 004E54FF  80 F2 07                  XOR DL,0x7
 004E5502  0F B3 11                  BTR [ECX],EDX
-LAB_004e5505:
+FUN_004e51b0::cf_continue_loop_004E5505:
 004E5505  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 004E5508  40                        INC EAX
 004E5509  3D 9B 00 00 00            CMP EAX,0x9b

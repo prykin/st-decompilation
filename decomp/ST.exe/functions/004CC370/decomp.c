@@ -22,25 +22,25 @@ undefined4 __fastcall FUN_004cc370(int *param_1)
       param_1[0x113] = -1;
       param_1[0x114] = *(int *)(DAT_00802a38 + 0xe4);
     }
-    goto LAB_004cc6d2;
+    goto cf_common_exit_004CC6D2;
   }
   iVar2 = (**(code **)(*param_1 + 0x7c))();
   if ((3 < iVar2 / 0x14) && (param_1[0x10f] == 1)) {
     thunk_FUN_004cc900((int)param_1);
-    goto LAB_004cc6d2;
+    goto cf_common_exit_004CC6D2;
   }
   STT3DSprC::UnLoadSequence((STT3DSprC *)((int)param_1 + 0x1d5),6);
   iVar2 = param_1[0x110];
   param_1[0x10f] = iVar2;
   if (*(uint *)(DAT_00802a38 + 0xe4) < param_1[0x114] + (~-(uint)(iVar2 != 1) & DAT_00790c14))
-  goto LAB_004cc6d2;
+  goto cf_common_exit_004CC6D2;
   if (iVar2 == 2) {
     iVar2 = STT3DSprC::LoadSequence
                       (*(STT3DSprC **)((int)param_1 + 0x603),0xe,DAT_0080678c,
                        PTR_s_tlo_capture_00790c28,0x1d);
     if (iVar2 != 0) {
       iVar4 = 0x37c;
-      goto LAB_004cc50a;
+      goto cf_error_exit_004CC50A;
     }
   }
   else if ((iVar2 == 3) || (iVar2 == 4)) {
@@ -49,7 +49,7 @@ undefined4 __fastcall FUN_004cc370(int *param_1)
                        PTR_s_tlo_emb6_00790c20,0x1d);
     if (iVar2 != 0) {
       iVar4 = 0x37f;
-      goto LAB_004cc50a;
+      goto cf_error_exit_004CC50A;
     }
   }
   else {
@@ -58,7 +58,7 @@ undefined4 __fastcall FUN_004cc370(int *param_1)
                        PTR_s_tlo_bubbles_00790c1c,0x1d);
     if (iVar2 != 0) {
       iVar4 = 0x381;
-LAB_004cc50a:
+cf_error_exit_004CC50A:
       RaiseInternalException(iVar2,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,iVar4);
     }
   }
@@ -106,7 +106,7 @@ LAB_004cc50a:
                     (&DAT_00795f18 + ((uVar1 & 0xff) + *(int *)((int)param_1 + 0x235) * 3) * 4));
     }
   }
-LAB_004cc6d2:
+cf_common_exit_004CC6D2:
   thunk_FUN_004ac9e0(*(void **)((int)param_1 + 0x603),*(int *)(DAT_00802a38 + 0xe4));
   return 0;
 }

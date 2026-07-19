@@ -78,7 +78,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
         bVar4 = true;
       }
       if (bVar4) {
-LAB_0065f468:
+cf_common_exit_0065F468:
         local_18 = 0;
         break;
       }
@@ -94,7 +94,7 @@ LAB_0065f468:
       }
       if (bVar4) {
         Library::DKW::TBL::FUN_006ae140(local_28,local_c,(undefined4 *)param_1);
-        goto LAB_0065f468;
+        goto cf_common_exit_0065F468;
       }
       if ((int)*(short *)&local_1c->field_0x170 <= (int)local_c) {
         iVar6 = local_10 / 2 + iVar5;
@@ -139,7 +139,7 @@ LAB_0065f468:
         else {
           psVar9[4] = ((short)local_2c - psVar9[1]) + 1;
         }
-        goto LAB_0065f468;
+        goto cf_common_exit_0065F468;
       }
 LAB_0065f3c9:
       local_c = local_c + 1;
