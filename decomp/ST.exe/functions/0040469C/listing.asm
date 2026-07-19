@@ -1,2 +1,0 @@
-thunk_FUN_004e6c20:
-0040469C  E9 7F 25 0E 00            JMP 0x004e6c20

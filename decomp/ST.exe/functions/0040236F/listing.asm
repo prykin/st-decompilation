@@ -1,2 +1,0 @@
-thunk_FUN_00646db0:
-0040236F  E9 3C 4A 24 00            JMP 0x00646db0

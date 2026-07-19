@@ -1,2 +1,0 @@
-MMMObjTy::OutRGlProc:
-00403099  E9 02 37 1B 00            JMP 0x005b67a0

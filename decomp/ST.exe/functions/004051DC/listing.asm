@@ -1,2 +1,0 @@
-thunk_FUN_006527d0:
-004051DC  E9 EF D5 24 00            JMP 0x006527d0

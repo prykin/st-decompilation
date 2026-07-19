@@ -1,2 +1,0 @@
-thunk_FUN_004f1610:
-00404BA1  E9 6A CA 0E 00            JMP 0x004f1610

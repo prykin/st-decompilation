@@ -1,2 +1,0 @@
-thunk_FUN_004d76e0:
-0040497B  E9 60 2D 0D 00            JMP 0x004d76e0

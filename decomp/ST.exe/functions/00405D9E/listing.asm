@@ -1,2 +1,0 @@
-FrmPanelTy::PaintBut:
-00405D9E  E9 3D A8 10 00            JMP 0x005105e0

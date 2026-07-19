@@ -1,2 +1,0 @@
-SIDTy::PaintSID:
-004029CD  E9 8E 57 1D 00            JMP 0x005d8160

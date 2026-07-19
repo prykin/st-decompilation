@@ -1,2 +1,0 @@
-thunk_FUN_004b7a60:
-00402EB9  E9 A2 4B 0B 00            JMP 0x004b7a60

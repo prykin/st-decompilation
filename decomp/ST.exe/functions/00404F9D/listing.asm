@@ -1,2 +1,0 @@
-thunk_FUN_00551b10:
-00404F9D  E9 6E CB 14 00            JMP 0x00551b10

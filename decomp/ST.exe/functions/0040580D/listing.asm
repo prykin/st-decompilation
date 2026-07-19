@@ -1,2 +1,0 @@
-thunk_FUN_005a07f0:
-0040580D  E9 DE AF 19 00            JMP 0x005a07f0

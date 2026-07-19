@@ -1,2 +1,0 @@
-thunk_FUN_00672ab0:
-004053B2  E9 F9 D6 26 00            JMP 0x00672ab0

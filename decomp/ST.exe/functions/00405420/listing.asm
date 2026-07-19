@@ -1,2 +1,0 @@
-PlaySystemTy::SendClientMail:
-00405420  E9 FB 97 14 00            JMP 0x0054ec20

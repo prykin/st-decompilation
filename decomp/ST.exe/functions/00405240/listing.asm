@@ -1,2 +1,0 @@
-STT3DSprC::StartShow:
-00405240  E9 5B 6F 0A 00            JMP 0x004ac1a0

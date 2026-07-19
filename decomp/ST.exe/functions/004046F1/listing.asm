@@ -1,2 +1,0 @@
-thunk_FUN_005412b0:
-004046F1  E9 BA CB 13 00            JMP 0x005412b0

@@ -1,2 +1,0 @@
-thunk_FUN_004dd880:
-004031AC  E9 CF A6 0D 00            JMP 0x004dd880

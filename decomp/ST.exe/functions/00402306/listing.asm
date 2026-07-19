@@ -1,2 +1,0 @@
-thunk_FUN_005df290:
-00402306  E9 85 CF 1D 00            JMP 0x005df290

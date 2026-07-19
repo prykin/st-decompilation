@@ -1,2 +1,0 @@
-thunk_FUN_0043e460:
-00401E7E  E9 DD C5 03 00            JMP 0x0043e460

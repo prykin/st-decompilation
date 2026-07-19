@@ -1,2 +1,0 @@
-thunk_FUN_004fa870:
-00405D03  E9 68 4B 0F 00            JMP 0x004fa870

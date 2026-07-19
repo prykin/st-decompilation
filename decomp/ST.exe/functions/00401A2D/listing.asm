@@ -1,2 +1,0 @@
-thunk_FUN_00668aa0:
-00401A2D  E9 6E 70 26 00            JMP 0x00668aa0

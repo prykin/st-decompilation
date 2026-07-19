@@ -1,2 +1,0 @@
-thunk_FUN_00680ff0:
-004023BA  E9 31 EC 27 00            JMP 0x00680ff0

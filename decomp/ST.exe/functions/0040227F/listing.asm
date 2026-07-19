@@ -1,2 +1,0 @@
-thunk_FUN_005fd850:
-0040227F  E9 CC B5 1F 00            JMP 0x005fd850

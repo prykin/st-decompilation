@@ -1,2 +1,0 @@
-thunk_FUN_006826a0:
-004059DE  E9 BD CC 27 00            JMP 0x006826a0

@@ -1,2 +1,0 @@
-thunk_FUN_0041d8e0:
-0040338C  E9 4F A5 01 00            JMP 0x0041d8e0

@@ -1,2 +1,0 @@
-thunk_FUN_004f17d0:
-0040313E  E9 8D E6 0E 00            JMP 0x004f17d0

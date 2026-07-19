@@ -1,2 +1,0 @@
-thunk_FUN_005f8d10:
-00401F41  E9 CA 6D 1F 00            JMP 0x005f8d10

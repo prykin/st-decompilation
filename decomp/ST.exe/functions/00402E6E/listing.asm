@@ -1,2 +1,0 @@
-thunk_FUN_0062d230:
-00402E6E  E9 BD A3 22 00            JMP 0x0062d230

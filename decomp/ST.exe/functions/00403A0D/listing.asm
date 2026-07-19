@@ -1,2 +1,0 @@
-thunk_FUN_005530e0:
-00403A0D  E9 CE F6 14 00            JMP 0x005530e0

@@ -1,2 +1,0 @@
-SettMapMTy::PrepareAFT:
-0040393B  E9 50 10 1D 00            JMP 0x005d4990

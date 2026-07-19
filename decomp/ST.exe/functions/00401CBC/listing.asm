@@ -1,2 +1,0 @@
-thunk_FUN_00532ce0:
-00401CBC  E9 1F 10 13 00            JMP 0x00532ce0

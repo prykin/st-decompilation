@@ -1,2 +1,0 @@
-STSprGameObjC::CheckRay:
-00405907  E9 A4 A0 01 00            JMP 0x0041f9b0

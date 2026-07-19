@@ -1,2 +1,0 @@
-thunk_FUN_00604ee0:
-004031BB  E9 20 1D 20 00            JMP 0x00604ee0

@@ -1,2 +1,0 @@
-AiEventClassTy::InitData:
-004054B1  E9 CA 78 24 00            JMP 0x0064cd80

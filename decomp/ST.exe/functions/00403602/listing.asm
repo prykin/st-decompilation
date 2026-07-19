@@ -1,2 +1,0 @@
-CPanelTy::SetControlObjSI:
-00403602  E9 C9 B1 10 00            JMP 0x0050e7d0

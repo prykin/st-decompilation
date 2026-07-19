@@ -1,2 +1,0 @@
-thunk_FUN_004d01f0:
-0040330F  E9 DC CE 0C 00            JMP 0x004d01f0

@@ -1,2 +1,0 @@
-thunk_FUN_0069cb50:
-004030DA  E9 71 9A 29 00            JMP 0x0069cb50

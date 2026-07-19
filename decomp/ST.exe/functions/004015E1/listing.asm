@@ -1,2 +1,0 @@
-thunk_FUN_0065c9e0:
-004015E1  E9 FA B3 25 00            JMP 0x0065c9e0

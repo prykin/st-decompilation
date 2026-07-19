@@ -1,2 +1,0 @@
-STGroupBoatC::GrpRepare:
-00404859  E9 F2 8E 09 00            JMP 0x0049d750

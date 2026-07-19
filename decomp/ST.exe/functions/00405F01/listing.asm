@@ -1,2 +1,0 @@
-thunk_FUN_0064e5c0:
-00405F01  E9 BA 86 24 00            JMP 0x0064e5c0

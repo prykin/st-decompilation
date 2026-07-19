@@ -1,2 +1,0 @@
-thunk_FUN_00674eb0:
-00402CB6  E9 F5 21 27 00            JMP 0x00674eb0

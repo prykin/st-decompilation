@@ -1,2 +1,0 @@
-thunk_FUN_004dd570:
-00402699  E9 D2 AE 0D 00            JMP 0x004dd570

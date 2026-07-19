@@ -1,2 +1,0 @@
-thunk_FUN_004dd240:
-00401AE1  E9 5A B7 0D 00            JMP 0x004dd240

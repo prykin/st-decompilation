@@ -1,2 +1,0 @@
-thunk_FUN_00602be0:
-00402CF2  E9 E9 FE 1F 00            JMP 0x00602be0

@@ -1,2 +1,0 @@
-thunk_FUN_004eb300:
-004034DB  E9 20 7E 0E 00            JMP 0x004eb300

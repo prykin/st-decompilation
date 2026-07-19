@@ -1,2 +1,0 @@
-thunk_FUN_0064ee40:
-00401FE1  E9 5A CE 24 00            JMP 0x0064ee40

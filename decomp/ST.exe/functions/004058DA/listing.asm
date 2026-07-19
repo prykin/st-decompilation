@@ -1,2 +1,0 @@
-thunk_FUN_004ce860:
-004058DA  E9 81 8F 0C 00            JMP 0x004ce860

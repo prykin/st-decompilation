@@ -1,2 +1,0 @@
-thunk_FUN_004f1950:
-00405DEE  E9 5D BB 0E 00            JMP 0x004f1950

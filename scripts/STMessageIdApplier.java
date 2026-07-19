@@ -31,7 +31,7 @@ public class STMessageIdApplier extends GhidraScript {
 
         int tx = currentProgram.startTransaction("Apply recovered message IDs");
         boolean commit = false;
-        int applied = 0, same = 0, skipped = 0, conflicts = 0;
+        int applied = 0, promoted = 0, same = 0, skipped = 0, conflicts = 0;
         try {
             DataType existingType = currentProgram.getDataTypeManager().getDataType(CATEGORY, "STMessageId");
             Enum enumType;
@@ -57,7 +57,18 @@ public class STMessageIdApplier extends GhidraScript {
                     continue;
                 }
                 if (byValue.containsKey(value)) {
-                    printerr(c[2] + " already belongs to " + byValue.get(value) + ", proposed " + name);
+                    String oldName = byValue.get(value);
+                    if (isSyntheticName(oldName, value) && !isSyntheticName(name, value)) {
+                        enumType.remove(oldName);
+                        byName.remove(oldName);
+                        byValue.remove(value);
+                        enumType.add(name, value);
+                        byName.put(name, value);
+                        byValue.put(value, name);
+                        promoted++;
+                        continue;
+                    }
+                    printerr(c[2] + " already belongs to " + oldName + ", proposed " + name);
                     conflicts++; continue;
                 }
                 enumType.add(name, value);
@@ -66,8 +77,14 @@ public class STMessageIdApplier extends GhidraScript {
             commit = true;
         }
         finally { currentProgram.endTransaction(tx, commit); }
-        println("Message IDs applied: " + applied + ", already present: " + same +
+        println("Message IDs applied: " + applied + ", placeholders promoted: " + promoted +
+            ", already present: " + same +
             ", skipped: " + skipped + ", conflicts: " + conflicts);
+    }
+
+    private boolean isSyntheticName(String name, long value) {
+        return name.startsWith("MESS_") &&
+            name.endsWith(String.format("_%04X", value & 0xffff));
     }
 
     private File proposalFile() throws Exception {

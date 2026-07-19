@@ -1,2 +1,0 @@
-STAllPlayersC::GetTOBJList:
-00401415  E9 66 D3 03 00            JMP 0x0043e780

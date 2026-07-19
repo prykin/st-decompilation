@@ -1,2 +1,0 @@
-STGroupBoatC::GetDepotForAttack:
-004019BA  E9 81 69 0A 00            JMP 0x004a8340

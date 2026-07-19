@@ -1,2 +1,0 @@
-thunk_FUN_004b2d10:
-004038B9  E9 52 F4 0A 00            JMP 0x004b2d10

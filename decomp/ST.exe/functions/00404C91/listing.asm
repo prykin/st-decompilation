@@ -1,2 +1,0 @@
-STBoatC::UnLoadRC:
-00404C91  E9 BA 87 06 00            JMP 0x0046d450

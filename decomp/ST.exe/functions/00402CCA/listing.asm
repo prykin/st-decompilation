@@ -1,2 +1,0 @@
-thunk_FUN_004e1690:
-00402CCA  E9 C1 E9 0D 00            JMP 0x004e1690

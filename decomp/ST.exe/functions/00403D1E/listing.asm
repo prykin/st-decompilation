@@ -1,2 +1,0 @@
-thunk_FUN_005738d0:
-00403D1E  E9 AD FB 16 00            JMP 0x005738d0

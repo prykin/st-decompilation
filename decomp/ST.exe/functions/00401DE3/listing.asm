@@ -1,2 +1,0 @@
-thunk_FUN_00584ad0:
-00401DE3  E9 E8 2C 18 00            JMP 0x00584ad0

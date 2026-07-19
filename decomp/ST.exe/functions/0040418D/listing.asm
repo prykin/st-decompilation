@@ -1,2 +1,0 @@
-thunk_FUN_005a0c80:
-0040418D  E9 EE CA 19 00            JMP 0x005a0c80

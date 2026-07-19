@@ -1,2 +1,0 @@
-thunk_FUN_005f6f20:
-004059BB  E9 60 15 1F 00            JMP 0x005f6f20

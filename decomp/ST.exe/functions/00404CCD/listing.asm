@@ -1,2 +1,0 @@
-thunk_FUN_004960d0:
-00404CCD  E9 FE 13 09 00            JMP 0x004960d0

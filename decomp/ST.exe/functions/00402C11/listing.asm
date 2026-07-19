@@ -1,2 +1,0 @@
-thunk_FUN_0067f4b0:
-00402C11  E9 9A C8 27 00            JMP 0x0067f4b0

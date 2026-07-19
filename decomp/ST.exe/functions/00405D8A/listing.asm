@@ -1,2 +1,0 @@
-Library::MSVCRT::thunk_FUN_006a4950:
-00405D8A  E9 C1 EB 29 00            JMP 0x006a4950

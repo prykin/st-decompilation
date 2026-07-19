@@ -1,2 +1,0 @@
-STAppC::OpenGameDBs:
-00403990  E9 DB 99 16 00            JMP 0x0056d370

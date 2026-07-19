@@ -1,2 +1,0 @@
-FSGSTy::PaintGameNew:
-004022C0  E9 7B 83 19 00            JMP 0x0059a640

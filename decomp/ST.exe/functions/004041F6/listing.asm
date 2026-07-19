@@ -1,2 +1,0 @@
-thunk_FUN_00419cf0:
-004041F6  E9 F5 5A 01 00            JMP 0x00419cf0

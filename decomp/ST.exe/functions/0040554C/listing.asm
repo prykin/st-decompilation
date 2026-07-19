@@ -1,2 +1,0 @@
-thunk_FUN_005f4c50:
-0040554C  E9 FF F6 1E 00            JMP 0x005f4c50

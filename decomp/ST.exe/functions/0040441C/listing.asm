@@ -1,2 +1,0 @@
-thunk_FUN_0062d2d0:
-0040441C  E9 AF 8E 22 00            JMP 0x0062d2d0

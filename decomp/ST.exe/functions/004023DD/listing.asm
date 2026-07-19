@@ -1,2 +1,0 @@
-thunk_FUN_00649eb0:
-004023DD  E9 CE 7A 24 00            JMP 0x00649eb0

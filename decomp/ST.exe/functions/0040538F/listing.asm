@@ -1,2 +1,0 @@
-thunk_FUN_004dd070:
-0040538F  E9 DC 7C 0D 00            JMP 0x004dd070

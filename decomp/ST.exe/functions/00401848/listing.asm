@@ -1,2 +1,0 @@
-VisibleClassTy::SetZoneMin2:
-00401848  E9 D3 8D 15 00            JMP 0x0055a620

@@ -1,2 +1,0 @@
-thunk_FUN_00482db0:
-004014BA  E9 F1 18 08 00            JMP 0x00482db0

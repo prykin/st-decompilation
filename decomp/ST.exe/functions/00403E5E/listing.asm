@@ -1,2 +1,0 @@
-thunk_FUN_005da310:
-00403E5E  E9 AD 64 1D 00            JMP 0x005da310

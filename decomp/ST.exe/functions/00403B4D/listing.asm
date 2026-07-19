@@ -1,2 +1,0 @@
-FSGSTy::PaintFSGS:
-00403B4D  E9 6E 31 19 00            JMP 0x00596cc0

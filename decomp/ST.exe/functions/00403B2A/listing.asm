@@ -1,2 +1,0 @@
-thunk_FUN_005718d0:
-00403B2A  E9 A1 DD 16 00            JMP 0x005718d0

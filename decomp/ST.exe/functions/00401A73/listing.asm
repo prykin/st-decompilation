@@ -1,2 +1,0 @@
-ProdPanelTy::SetPanel:
-00401A73  E9 D8 DB 13 00            JMP 0x0053f650

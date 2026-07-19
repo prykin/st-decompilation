@@ -1,2 +1,0 @@
-thunk_FUN_0041dc40:
-0040342C  E9 0F A8 01 00            JMP 0x0041dc40

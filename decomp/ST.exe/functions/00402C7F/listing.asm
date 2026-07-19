@@ -1,2 +1,0 @@
-thunk_FUN_00690a40:
-00402C7F  E9 BC DD 28 00            JMP 0x00690a40

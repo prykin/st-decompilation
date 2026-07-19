@@ -1,2 +1,0 @@
-thunk_FUN_005335e0:
-004058FD  E9 DE DC 12 00            JMP 0x005335e0

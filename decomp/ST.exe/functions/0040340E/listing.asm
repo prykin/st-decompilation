@@ -1,2 +1,0 @@
-STGroupC::AddObj:
-0040340E  E9 3D 04 02 00            JMP 0x00423850

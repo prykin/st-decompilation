@@ -1,2 +1,0 @@
-InterSystemC::CreateInterfObjects:
-00401D02  E9 99 07 14 00            JMP 0x005424a0

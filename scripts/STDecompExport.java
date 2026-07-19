@@ -17,6 +17,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -65,6 +66,12 @@ public class STDecompExport extends GhidraScript {
     private ReferenceManager references;
     private SymbolTable symbols;
     private DecompInterface decompiler;
+    private int programFunctionCount;
+    private int exportedFunctionCount;
+    private int externalFunctionCount;
+    private int libraryFunctionCount;
+    private int thunkFunctionCount;
+    private int bodyFunctionCount;
 
     @Override
     protected void run() throws Exception {
@@ -300,9 +307,21 @@ public class STDecompExport extends GhidraScript {
     private void exportFunctions() throws Exception {
         List<String> indexRows = new ArrayList<>();
         List<String> libraryRows = new ArrayList<>();
+        List<String> thunkRows = new ArrayList<>();
         List<String> graphRows = new ArrayList<>();
+        programFunctionCount = currentProgram.getFunctionManager().getFunctionCount();
+        exportedFunctionCount = 0;
+        FunctionIterator counter = currentProgram.getFunctionManager().getFunctions(true);
+        while (counter.hasNext()) {
+            counter.next();
+            exportedFunctionCount++;
+        }
+        externalFunctionCount = Math.max(0, programFunctionCount - exportedFunctionCount);
+        libraryFunctionCount = 0;
+        thunkFunctionCount = 0;
+        bodyFunctionCount = 0;
         FunctionIterator iterator = currentProgram.getFunctionManager().getFunctions(true);
-        int total = currentProgram.getFunctionManager().getFunctionCount();
+        int total = exportedFunctionCount;
         int number = 0;
         int reused = 0;
         Set<String> liveFunctionIds = new TreeSet<>();
@@ -324,13 +343,20 @@ public class STDecompExport extends GhidraScript {
             function.getTags().forEach(tag -> tags.add(tag.getName()));
             tags.sort(Comparator.naturalOrder());
             boolean library = tags.contains("LIBRARY");
-            if (library) {
+            boolean thunk = function.isThunk();
+            Function thunkTarget = thunk ? function.getThunkedFunction(true) : null;
+            boolean bodyExported = !library && !thunk;
+            if (library) libraryFunctionCount++;
+            if (thunk) thunkFunctionCount++;
+            if (bodyExported) bodyFunctionCount++;
+            if (!bodyExported) {
                 Files.deleteIfExists(dir.resolve("decomp.c"));
                 Files.deleteIfExists(dir.resolve("listing.asm"));
             }
 
             Set<Function> callingFunctions = function.getCallingFunctions(monitor);
-            Set<Function> calledFunctions = function.getCalledFunctions(monitor);
+            Set<Function> calledFunctions = new HashSet<>(function.getCalledFunctions(monitor));
+            if (thunkTarget != null && !thunkTarget.equals(function)) calledFunctions.add(thunkTarget);
             List<String> callers = functionSet(callingFunctions);
             List<String> callees = functionSet(calledFunctions);
             List<String> stringsUsed = new ArrayList<>();
@@ -344,12 +370,14 @@ public class STDecompExport extends GhidraScript {
             String storedFingerprint = Files.exists(fingerprintPath) ?
                 Files.readString(fingerprintPath, StandardCharsets.UTF_8).trim() : "";
             boolean reusable = Files.exists(metaPath) && fingerprint.equals(storedFingerprint) &&
-                (library || (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
+                (!bodyExported ||
+                    (Files.exists(dir.resolve("decomp.c")) && Files.exists(dir.resolve("listing.asm"))));
 
             if (reusable) {
                 String meta = Files.readString(metaPath, StandardCharsets.UTF_8).trim();
                 indexRows.add(meta);
                 if (library) libraryRows.add(meta);
+                if (thunk) thunkRows.add(meta);
                 for (String callee : callees) {
                     graphRows.add(jsonObject(field("from", functionId(function)), field("to", callee)));
                 }
@@ -360,6 +388,9 @@ public class STDecompExport extends GhidraScript {
             String status;
             if (library) {
                 status = "skipped_library";
+            }
+            else if (thunk) {
+                status = "skipped_thunk";
             }
             else {
                 DecompileResults result = decompiler.decompileFunction(
@@ -390,13 +421,14 @@ public class STDecompExport extends GhidraScript {
                 rawField("parameter_count", Integer.toString(function.getParameterCount())),
                 rawField("local_variable_count", Integer.toString(function.getLocalVariables().length)),
                 rawField("stack_frame_size", Integer.toString(function.getStackFrame().getFrameSize())),
-                rawField("thunk", Boolean.toString(function.isThunk())),
+                rawField("thunk", Boolean.toString(thunk)),
+                field("thunk_target", thunkTarget == null ? "" : functionId(thunkTarget)),
                 rawField("external", Boolean.toString(function.isExternal())),
                 rawField("inline", Boolean.toString(function.isInline())),
                 rawField("noreturn", Boolean.toString(function.hasNoReturn())),
                 rawField("varargs", Boolean.toString(function.hasVarArgs())),
                 rawField("library", Boolean.toString(library)),
-                rawField("body_exported", Boolean.toString(!library)),
+                rawField("body_exported", Boolean.toString(bodyExported)),
                 field("decompile_status", status),
                 rawField("tags", jsonStringArray(tags)),
                 rawField("callers", jsonStringArray(callers)),
@@ -411,6 +443,7 @@ public class STDecompExport extends GhidraScript {
             writeText(fingerprintPath, fingerprint + System.lineSeparator());
             indexRows.add(meta);
             if (library) libraryRows.add(meta);
+            if (thunk) thunkRows.add(meta);
 
             for (String callee : callees) {
                 graphRows.add(jsonObject(
@@ -422,6 +455,7 @@ public class STDecompExport extends GhidraScript {
 
         writeJsonArray(programRoot.resolve("functions.json"), indexRows);
         writeJsonArray(programRoot.resolve("library_functions.json"), libraryRows);
+        writeJsonArray(programRoot.resolve("thunk_functions.json"), thunkRows);
         writeJsonArray(programRoot.resolve("callgraph.json"), graphRows);
         pruneStaleFunctionDirectories(liveFunctionIds);
         println("Functions reused without decompilation: " + reused + "/" + total);
@@ -436,6 +470,10 @@ public class STDecompExport extends GhidraScript {
         updateDigest(digest, function.getSignature().getPrototypeString(true));
         updateDigest(digest, nullToEmpty(function.getCallingConventionName()));
         updateDigest(digest, Boolean.toString(function.isThunk()));
+        if (function.isThunk()) {
+            Function target = function.getThunkedFunction(true);
+            updateDigest(digest, target == null ? "" : functionId(target));
+        }
         updateDigest(digest, Boolean.toString(function.hasNoReturn()));
         updateDigest(digest, Boolean.toString(function.hasVarArgs()));
         updateDigest(digest, nullToEmpty(function.getComment()));
@@ -750,7 +788,13 @@ public class STDecompExport extends GhidraScript {
             field("generated_at_utc", Instant.now().toString()),
             field("ghidra_version", applicationVersion()),
             field("program", currentProgram.getName()),
-            rawField("function_count", Integer.toString(currentProgram.getFunctionManager().getFunctionCount())),
+            rawField("function_count", Integer.toString(exportedFunctionCount)),
+            rawField("program_function_count", Integer.toString(programFunctionCount)),
+            rawField("exported_function_count", Integer.toString(exportedFunctionCount)),
+            rawField("external_function_count", Integer.toString(externalFunctionCount)),
+            rawField("library_function_count", Integer.toString(libraryFunctionCount)),
+            rawField("thunk_function_count", Integer.toString(thunkFunctionCount)),
+            rawField("body_function_count", Integer.toString(bodyFunctionCount)),
             field("primary_key", "program + function entry address")
         ));
     }

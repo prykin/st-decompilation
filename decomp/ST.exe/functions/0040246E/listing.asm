@@ -1,2 +1,0 @@
-thunk_FUN_0062dd40:
-0040246E  E9 CD B8 22 00            JMP 0x0062dd40

@@ -1,2 +1,0 @@
-STBoatC::BackBring:
-00401938  E9 E3 B5 07 00            JMP 0x0047cf20

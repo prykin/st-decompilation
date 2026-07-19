@@ -1,2 +1,0 @@
-thunk_FUN_004d32c0:
-004028EC  E9 CF 09 0D 00            JMP 0x004d32c0

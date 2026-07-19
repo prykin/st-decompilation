@@ -1,2 +1,0 @@
-FSGSTy::InfoCtrls:
-00402626  E9 F5 B0 19 00            JMP 0x0059d720

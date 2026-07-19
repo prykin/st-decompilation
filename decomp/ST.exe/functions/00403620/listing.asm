@@ -1,2 +1,0 @@
-thunk_FUN_004ec700:
-00403620  E9 DB 90 0E 00            JMP 0x004ec700

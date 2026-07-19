@@ -1,2 +1,0 @@
-AiTactClassTy::BackFromRepair:
-00405957  E9 D4 A1 28 00            JMP 0x0068fb30

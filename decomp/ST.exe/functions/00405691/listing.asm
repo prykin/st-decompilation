@@ -1,2 +1,0 @@
-thunk_FUN_004e18e0:
-00405691  E9 4A C2 0D 00            JMP 0x004e18e0

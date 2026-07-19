@@ -1,2 +1,0 @@
-thunk_FUN_00580dc0:
-0040583F  E9 7C B5 17 00            JMP 0x00580dc0

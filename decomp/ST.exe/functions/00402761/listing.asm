@@ -1,2 +1,0 @@
-thunk_FUN_004ad070:
-00402761  E9 0A A9 0A 00            JMP 0x004ad070

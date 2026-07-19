@@ -1,2 +1,0 @@
-thunk_FUN_005f05a0:
-00401B7C  E9 1F EA 1E 00            JMP 0x005f05a0

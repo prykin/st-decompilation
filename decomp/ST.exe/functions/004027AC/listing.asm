@@ -1,2 +1,0 @@
-HelpPanelTy::PrepMissObj:
-004027AC  E9 5F 27 11 00            JMP 0x00514f10

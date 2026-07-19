@@ -1,2 +1,0 @@
-UpgPanelTy::DoneUpgPanel:
-00401AB4  E9 77 0F 15 00            JMP 0x00552a30

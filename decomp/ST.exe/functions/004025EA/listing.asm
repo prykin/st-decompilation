@@ -1,2 +1,0 @@
-thunk_FUN_00494ae0:
-004025EA  E9 F1 24 09 00            JMP 0x00494ae0

@@ -1,2 +1,0 @@
-thunk_FUN_0060ca40:
-00402ABD  E9 7E 9F 20 00            JMP 0x0060ca40

@@ -1,2 +1,0 @@
-FSGSTy::CreateGame:
-00403E95  E9 56 F4 19 00            JMP 0x005a32f0

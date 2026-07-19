@@ -1,2 +1,0 @@
-thunk_FUN_00492fc0:
-00405AEC  E9 CF D4 08 00            JMP 0x00492fc0

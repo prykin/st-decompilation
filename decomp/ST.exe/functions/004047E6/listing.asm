@@ -1,2 +1,0 @@
-thunk_FUN_0069f5c0:
-004047E6  E9 D5 AD 29 00            JMP 0x0069f5c0

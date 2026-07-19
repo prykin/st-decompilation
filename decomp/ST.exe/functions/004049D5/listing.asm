@@ -1,2 +1,0 @@
-SettMapTy::PaintSettMap:
-004049D5  E9 46 04 1C 00            JMP 0x005c4e20

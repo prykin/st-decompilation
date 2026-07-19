@@ -1,2 +1,0 @@
-thunk_FUN_006a36e0:
-00403940  E9 9B FD 29 00            JMP 0x006a36e0

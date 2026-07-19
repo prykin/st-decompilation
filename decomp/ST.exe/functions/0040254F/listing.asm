@@ -1,2 +1,0 @@
-MainMenuTy::InitMainMenu:
-0040254F  E9 1C 04 1B 00            JMP 0x005b2970

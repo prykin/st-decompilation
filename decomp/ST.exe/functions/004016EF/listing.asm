@@ -1,2 +1,0 @@
-thunk_FUN_0064f620:
-004016EF  E9 2C DF 24 00            JMP 0x0064f620

@@ -1,2 +1,0 @@
-thunk_FUN_004908a0:
-00405D5D  E9 3E AB 08 00            JMP 0x004908a0

@@ -1,2 +1,0 @@
-thunk_FUN_00542d80:
-00403FA3  E9 D8 ED 13 00            JMP 0x00542d80

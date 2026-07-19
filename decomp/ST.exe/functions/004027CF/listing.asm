@@ -1,2 +1,0 @@
-thunk_FUN_0060c2d0:
-004027CF  E9 FC 9A 20 00            JMP 0x0060c2d0

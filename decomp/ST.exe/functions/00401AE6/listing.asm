@@ -1,2 +1,0 @@
-thunk_FUN_0060bc80:
-00401AE6  E9 95 A1 20 00            JMP 0x0060bc80

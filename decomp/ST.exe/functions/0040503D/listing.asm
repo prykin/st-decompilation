@@ -1,2 +1,0 @@
-thunk_FUN_0041da30:
-0040503D  E9 EE 89 01 00            JMP 0x0041da30

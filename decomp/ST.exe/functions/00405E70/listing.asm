@@ -1,2 +1,0 @@
-thunk_FUN_006a3a00:
-00405E70  E9 8B DB 29 00            JMP 0x006a3a00

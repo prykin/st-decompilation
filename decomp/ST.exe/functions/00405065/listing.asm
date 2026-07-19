@@ -1,2 +1,0 @@
-AiPlrClassTy::ExecTech:
-00405065  E9 B6 64 27 00            JMP 0x0067b520

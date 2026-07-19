@@ -1,2 +1,0 @@
-InfocPanelTy::PaintInfoc:
-00404C69  E9 A2 C0 11 00            JMP 0x00520d10

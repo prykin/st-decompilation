@@ -1,2 +1,0 @@
-CPanelTy::PaintMineInf:
-00403E4F  E9 5C 06 10 00            JMP 0x005044b0

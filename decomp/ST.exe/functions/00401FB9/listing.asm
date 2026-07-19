@@ -1,2 +1,0 @@
-thunk_FUN_0065fe10:
-00401FB9  E9 52 DE 25 00            JMP 0x0065fe10

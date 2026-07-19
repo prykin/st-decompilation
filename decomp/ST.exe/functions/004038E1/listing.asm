@@ -1,2 +1,0 @@
-thunk_FUN_0065fa60:
-004038E1  E9 7A C1 25 00            JMP 0x0065fa60

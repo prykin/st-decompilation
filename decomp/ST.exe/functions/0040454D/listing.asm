@@ -1,2 +1,0 @@
-FSGSTy::InitFSGS:
-0040454D  E9 EE 18 19 00            JMP 0x00595e40

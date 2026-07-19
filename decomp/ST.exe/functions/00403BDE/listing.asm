@@ -1,2 +1,0 @@
-thunk_FUN_006757c0:
-00403BDE  E9 DD 1B 27 00            JMP 0x006757c0

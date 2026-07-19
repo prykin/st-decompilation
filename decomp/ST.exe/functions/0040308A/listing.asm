@@ -1,2 +1,0 @@
-thunk_FUN_006a2e50:
-0040308A  E9 C1 FD 29 00            JMP 0x006a2e50

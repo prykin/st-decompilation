@@ -1,2 +1,0 @@
-thunk_FUN_0065e6c0:
-00401EF1  E9 CA C7 25 00            JMP 0x0065e6c0

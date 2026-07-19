@@ -1,2 +1,0 @@
-thunk_FUN_00572ba0:
-004046B0  E9 EB E4 16 00            JMP 0x00572ba0

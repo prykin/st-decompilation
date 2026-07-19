@@ -1,2 +1,0 @@
-thunk_FUN_005f34b0:
-004023FB  E9 B0 10 1F 00            JMP 0x005f34b0

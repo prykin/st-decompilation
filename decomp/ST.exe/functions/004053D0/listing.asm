@@ -1,2 +1,0 @@
-thunk_FUN_006a57a0:
-004053D0  E9 CB 03 2A 00            JMP 0x006a57a0

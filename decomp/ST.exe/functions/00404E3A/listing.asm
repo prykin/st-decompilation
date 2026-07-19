@@ -1,2 +1,0 @@
-thunk_FUN_0064eb60:
-00404E3A  E9 21 9D 24 00            JMP 0x0064eb60

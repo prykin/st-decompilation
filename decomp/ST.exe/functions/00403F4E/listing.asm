@@ -1,2 +1,0 @@
-thunk_FUN_0065ef70:
-00403F4E  E9 1D B0 25 00            JMP 0x0065ef70

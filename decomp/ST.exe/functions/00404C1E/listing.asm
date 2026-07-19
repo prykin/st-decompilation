@@ -1,2 +1,0 @@
-thunk_FUN_00693ad0:
-00404C1E  E9 AD EE 28 00            JMP 0x00693ad0

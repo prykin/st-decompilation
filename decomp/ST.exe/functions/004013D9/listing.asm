@@ -1,2 +1,0 @@
-CampaignTy::InitCampaign:
-004013D9  E9 62 F7 18 00            JMP 0x00590b40

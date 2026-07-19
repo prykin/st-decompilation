@@ -1,2 +1,0 @@
-MTaskTy::PlayScript:
-00405C18  E9 13 B7 1D 00            JMP 0x005e1330

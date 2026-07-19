@@ -1,2 +1,0 @@
-STBoatC::CheckForReplenisher:
-00401E6F  E9 CC 14 09 00            JMP 0x00493340

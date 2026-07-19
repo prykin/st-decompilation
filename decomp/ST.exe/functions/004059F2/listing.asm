@@ -1,2 +1,0 @@
-thunk_FUN_004ad670:
-004059F2  E9 79 7C 0A 00            JMP 0x004ad670

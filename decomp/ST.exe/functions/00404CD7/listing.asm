@@ -1,2 +1,0 @@
-thunk_FUN_0048fa80:
-00404CD7  E9 A4 AD 08 00            JMP 0x0048fa80

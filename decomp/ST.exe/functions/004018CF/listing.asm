@@ -1,2 +1,0 @@
-thunk_FUN_0065da10:
-004018CF  E9 3C C1 25 00            JMP 0x0065da10

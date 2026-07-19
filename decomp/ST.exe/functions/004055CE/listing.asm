@@ -1,2 +1,0 @@
-thunk_FUN_006a4130:
-004055CE  E9 5D EB 29 00            JMP 0x006a4130

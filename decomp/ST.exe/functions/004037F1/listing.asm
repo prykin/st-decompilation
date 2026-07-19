@@ -1,2 +1,0 @@
-thunk_FUN_004e7e10:
-004037F1  E9 1A 46 0E 00            JMP 0x004e7e10

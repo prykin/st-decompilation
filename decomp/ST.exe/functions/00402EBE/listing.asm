@@ -1,2 +1,0 @@
-thunk_FUN_006a3b20:
-00402EBE  E9 5D 0C 2A 00            JMP 0x006a3b20

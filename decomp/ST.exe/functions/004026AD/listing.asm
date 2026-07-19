@@ -1,2 +1,0 @@
-thunk_FUN_004ab270:
-004026AD  E9 BE 8B 0A 00            JMP 0x004ab270

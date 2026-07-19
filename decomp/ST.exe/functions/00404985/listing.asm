@@ -1,2 +1,0 @@
-STGroupBoatC::ReMakePVecAndTgtList:
-00404985  E9 C6 4D 09 00            JMP 0x00499750

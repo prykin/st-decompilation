@@ -1,2 +1,0 @@
-thunk_FUN_004dc700:
-004053FD  E9 FE 72 0D 00            JMP 0x004dc700

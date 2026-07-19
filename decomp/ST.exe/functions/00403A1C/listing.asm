@@ -1,2 +1,0 @@
-thunk_FUN_00661ca0:
-00403A1C  E9 7F E2 25 00            JMP 0x00661ca0

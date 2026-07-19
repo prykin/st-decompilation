@@ -1,2 +1,0 @@
-thunk_FUN_00651cd0:
-004044C1  E9 0A D8 24 00            JMP 0x00651cd0

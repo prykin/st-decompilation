@@ -1,2 +1,0 @@
-thunk_FUN_00490cd0:
-00401CFD  E9 CE EF 08 00            JMP 0x00490cd0

@@ -1,2 +1,0 @@
-thunk_FUN_0064ea60:
-0040378D  E9 CE B2 24 00            JMP 0x0064ea60

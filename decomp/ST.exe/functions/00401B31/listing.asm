@@ -1,2 +1,0 @@
-thunk_FUN_0064f3b0:
-00401B31  E9 7A D8 24 00            JMP 0x0064f3b0

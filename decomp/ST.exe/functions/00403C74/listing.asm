@@ -1,2 +1,0 @@
-MMMObjTy::OutLstProc:
-00403C74  E9 E7 5B 1B 00            JMP 0x005b9860

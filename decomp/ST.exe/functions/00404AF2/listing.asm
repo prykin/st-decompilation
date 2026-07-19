@@ -1,2 +1,0 @@
-STManRub3C::AddNewRub3:
-00404AF2  E9 99 84 22 00            JMP 0x0062cf90

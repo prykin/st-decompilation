@@ -1,2 +1,0 @@
-thunk_FUN_004ac660:
-00403ED6  E9 85 87 0A 00            JMP 0x004ac660

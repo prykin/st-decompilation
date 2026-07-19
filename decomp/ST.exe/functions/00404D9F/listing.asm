@@ -1,2 +1,0 @@
-thunk_FUN_004d9b20:
-00404D9F  E9 7C 4D 0D 00            JMP 0x004d9b20

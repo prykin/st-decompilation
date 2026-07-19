@@ -1,2 +1,0 @@
-thunk_FUN_004dc760:
-00403B7F  E9 DC 8B 0D 00            JMP 0x004dc760

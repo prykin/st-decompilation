@@ -1,2 +1,0 @@
-thunk_FUN_004cd390:
-004012DF  E9 AC C0 0C 00            JMP 0x004cd390

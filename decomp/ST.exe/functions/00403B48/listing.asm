@@ -1,2 +1,0 @@
-ProdPanelTy::SwitchPanel:
-00403B48  E9 53 B8 13 00            JMP 0x0053f3a0

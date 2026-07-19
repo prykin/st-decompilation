@@ -1,2 +1,0 @@
-STBoatC::Teleport:
-00405880  E9 7B 3D 07 00            JMP 0x00479600

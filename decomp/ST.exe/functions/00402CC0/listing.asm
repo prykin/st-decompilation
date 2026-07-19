@@ -1,2 +1,0 @@
-MAdvTy::DoneMAdv:
-00402CC0  E9 4B D7 18 00            JMP 0x00590410

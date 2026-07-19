@@ -1,2 +1,0 @@
-thunk_FUN_0064f6e0:
-0040570E  E9 CD 9F 24 00            JMP 0x0064f6e0

@@ -1,2 +1,0 @@
-AiTactClassTy::ClaimRestore:
-00403652  E9 E9 B3 28 00            JMP 0x0068ea40

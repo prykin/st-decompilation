@@ -1,2 +1,0 @@
-thunk_FUN_0060c020:
-00401F6E  E9 AD A0 20 00            JMP 0x0060c020

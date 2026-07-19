@@ -1,2 +1,0 @@
-thunk_FUN_004cf410:
-0040475F  E9 AC AC 0C 00            JMP 0x004cf410

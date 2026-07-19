@@ -1,2 +1,0 @@
-thunk_FUN_004e9650:
-00403DBE  E9 8D 58 0E 00            JMP 0x004e9650
