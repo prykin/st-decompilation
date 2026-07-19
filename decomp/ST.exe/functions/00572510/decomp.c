@@ -60,7 +60,7 @@ void __fastcall FUN_00572510(void *param_1)
       g_currentExceptionFrame = &local_58;
       iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,pbVar12,pcVar14);
       if (iVar4 == 0) {
-        this_00 = (cMf32 *)FUN_006f0ec0(0x345,local_15c,0,0,0);
+        this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_15c,0,0,0);
         this = local_10;
         if (this_00 != (cMf32 *)0x0) {
           local_8 = (undefined4 *)&DAT_008072f8;

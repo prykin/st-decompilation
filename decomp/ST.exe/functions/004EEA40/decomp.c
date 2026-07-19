@@ -106,10 +106,12 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
     iVar9 = DAT_0080874d + 1;
   }
   wsprintfA(puVar1,s_BOATS__d_007c1810,iVar9);
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,puVar1,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,puVar1,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BOATS_D_007c1804,0xffffffff,0,1,0,(undefined4 *)0x0
-                  );
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_BOATS_D_007c1804,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_018C = puVar7;
   pCVar6 = thunk_FUN_00571240(s_BKG_BLDBOATBUT_007c1820,0);
   ProdPanelTy::InitProdPanel

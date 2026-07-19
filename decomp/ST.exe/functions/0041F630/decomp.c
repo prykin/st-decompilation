@@ -141,7 +141,8 @@ LAB_0041f793:
     default:
       local_8 = 0xff;
     }
-    FUN_006e6630(*(void **)((int)param_1 + 0x211),*(int *)((int)param_1 + 0x1ed),local_c,local_8,0);
+    Library::Ourlib::ST3DSMAP::FUN_006e6630
+              (*(void **)((int)param_1 + 0x211),*(int *)((int)param_1 + 0x1ed),local_c,local_8,0);
     iVar8 = 0;
     iVar5 = thunk_FUN_004ad650((int)param_1 + 0x1d5);
     FUN_006e6870(*(void **)((int)param_1 + 0x211),iVar5,iVar8);

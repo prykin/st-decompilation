@@ -39,8 +39,8 @@ HelpPanelTy::AddLinks(HelpPanelTy *this,int *param_1,char param_2,int param_3,in
   int *local_c;
   char local_5;
   
-  local_28 = *(undefined4 *)(this->field_024C + 8);
-  local_18 = *(int *)(this->field_024C + 4);
+  local_28 = *(undefined4 *)(this->field_024C + 4);
+  local_18 = *(int *)(this->field_024C + 2);
   local_14 = 1;
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;

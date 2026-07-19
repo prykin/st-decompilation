@@ -96,7 +96,7 @@ cf_common_exit_0065F468:
         Library::DKW::TBL::FUN_006ae140(local_28,local_c,(undefined4 *)param_1);
         goto cf_common_exit_0065F468;
       }
-      if ((int)(short)local_1c->field_0170 <= (int)local_c) {
+      if ((int)local_1c->field_0170 <= (int)local_c) {
         iVar6 = local_10 / 2 + iVar5;
         if ((((iVar6 < iVar7) || (psVar9[3] + iVar7 <= iVar6)) ||
             (iVar6 = local_14 / 2 + local_8, iVar6 < iVar8)) || (psVar9[4] + iVar8 <= iVar6)) {

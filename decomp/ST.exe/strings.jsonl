@@ -1,4 +1,4 @@
-{"address":"00400000","type":"char[2]","length":2,"value":"\"MZ\"","referenced_from":["00400154","0043BEB0 STAllPlayersC::GetPanelInfo","0044CE40 FUN_0044ce40","0044D320 FUN_0044d320","0066ACC0 FUN_0066acc0","00674FB0 FUN_00674fb0","00675430 FUN_00675430","006D4220 Library::DKW::FMM::FUN_006d4220","006D4380 Library::DKW::FMM::FUN_006d4380","006D4510 Library::DKW::FMM::FUN_006d4510","006D46A0 FUN_006d46a0","006F31D0 FUN_006f31d0","0070D1F0 ccFntTy::operator","0070E030 FUN_0070e030","0071B760 FUN_0071b760"]}
+{"address":"00400000","type":"char[2]","length":2,"value":"\"MZ\"","referenced_from":["00400154","0043BEB0 STAllPlayersC::GetPanelInfo","0044CE40 FUN_0044ce40","0044D320 FUN_0044d320","0066ACC0 FUN_0066acc0","00674FB0 FUN_00674fb0","00675430 FUN_00675430","006D4220 Library::DKW::FMM::FUN_006d4220","006D4380 Library::DKW::FMM::FUN_006d4380","006D4510 Library::DKW::FMM::FUN_006d4510","006D46A0 FUN_006d46a0","006F31D0 FUN_006f31d0","0070D1F0 ccFntTy::operator","0070E030 Library::Ourlib::MFCFNT::FUN_0070e030","0071B760 FUN_0071b760"]}
 {"address":"00400120","type":"char[4]","length":4,"value":"\"PE\"","referenced_from":[]}
 {"address":"00400218","type":"char[8]","length":8,"value":"\".text\"","referenced_from":[]}
 {"address":"00400240","type":"char[8]","length":8,"value":"\".rdata\"","referenced_from":[]}
@@ -3475,8 +3475,8 @@
 {"address":"007DE308","type":"string","length":8,"value":"\"coral\"","referenced_from":[]}
 {"address":"007DFA6C","type":"string","length":29,"value":"\"E:\\\\__titans\\\\Maps\\\\map_cnt.cpp\"","referenced_from":["006A2770 FUN_006a2770"]}
 {"address":"007DFAAC","type":"string","length":7,"value":"\"%s%03u\"","referenced_from":["006A2B40 FUN_006a2b40","006A2BB0 FUN_006a2bb0","006A2D00 FUN_006a2d00"]}
-{"address":"007DFAB4","type":"string","length":8,"value":"\"MAPTXTR\"","referenced_from":["006A2B40 FUN_006a2b40","006A2BB0 FUN_006a2bb0","006EF640 mfTMapLoad","006EFF90 mfTMapAddObj"]}
-{"address":"007DFAC0","type":"string","length":8,"value":"\"MAPMESH\"","referenced_from":["006A2D00 FUN_006a2d00","006EF640 mfTMapLoad","006EFF90 mfTMapAddObj"]}
+{"address":"007DFAB4","type":"string","length":8,"value":"\"MAPTXTR\"","referenced_from":["006A2B40 FUN_006a2b40","006A2BB0 FUN_006a2bb0","006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad","006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj"]}
+{"address":"007DFAC0","type":"string","length":8,"value":"\"MAPMESH\"","referenced_from":["006A2D00 FUN_006a2d00","006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad","006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj"]}
 {"address":"007DFACC","type":"string","length":29,"value":"\"E:\\\\__titans\\\\Maps\\\\prepare.cpp\"","referenced_from":["006A2ED0 FUN_006a2ed0"]}
 {"address":"007EC1A4","type":"string","length":7,"value":"\"Client\"","referenced_from":["007EC198"]}
 {"address":"007EC1AC","type":"string","length":7,"value":"\"Ignore\"","referenced_from":["007EC194"]}
@@ -3634,9 +3634,9 @@
 {"address":"007EE2D0","type":"string","length":24,"value":"\"E:\\\\DKW\\\\GPC\\\\C\\\\gifimhdg.c\"","referenced_from":["006D80C0 Library::DKW::GPC::FUN_006d80c0"]}
 {"address":"007EE2E8","type":"string","length":24,"value":"\"E:\\\\DKW\\\\DDX\\\\C\\\\fillpoly.c\"","referenced_from":["006D8260 Library::DKW::DDX::FUN_006d8260"]}
 {"address":"007EE400","type":"string","length":24,"value":"\"E:\\\\DKW\\\\DDX\\\\C\\\\ddbitmpu.c\"","referenced_from":["006DAD00 Library::DKW::DDX::FUN_006dad00"]}
-{"address":"007EE758","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\Strend.cpp\"","referenced_from":["006DD050 FUN_006dd050","006DD660 FUN_006dd660","006DD6E0 FUN_006dd6e0","006E29D0 FUN_006e29d0","006E2F90 FUN_006e2f90","006E3100 FUN_006e3100"]}
+{"address":"007EE758","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\Strend.cpp\"","referenced_from":["006DD050 Library::Ourlib::STREND::FUN_006dd050","006DD660 Library::Ourlib::STREND::FUN_006dd660","006DD6E0 Library::Ourlib::STREND::FUN_006dd6e0","006E29D0 Library::Ourlib::STREND::FUN_006e29d0","006E2F90 Library::Ourlib::STREND::FUN_006e2f90","006E3100 Library::Ourlib::STREND::FUN_006e3100"]}
 {"address":"007EE770","type":"string","length":28,"value":"\"AppClassTy::InitApp Error !\"","referenced_from":["006E3510 AppClassTy::InitApp"]}
-{"address":"007EE78C","type":"string","length":19,"value":"\"E:\\\\Ourlib\\\\Sapp.cpp\"","referenced_from":["006E3510 AppClassTy::InitApp","006E36E0 AppClassTy::DoneApp","006E3810 AppClassTy::CreateObject","006E3970 AppClassTy::DeleteObject","006E3AB0 AppClassTy::PostMessage","006E3B50 AppClassTy::PostNextMessage","006E3BF0 AppClassTy::SendMessageToAllSystemsInArr","006E3DD0 AppClassTy::SendMessage","006E40E0 AppClassTy::SendMessageToAllChild","006E41D0 AppClassTy::AddDecodeMessage","006E4370 AppClassTy::DecodeMessage","006E4650 AppClassTy::AddSystem","006E47E0 AppClassTy::AddSystem","006E4960 AppClassTy::AddChildSystem","006E4D70 AppClassTy::LifeToAllSystem","006E4FC0 AppClassTy::RunApp","006E51F0 SystemClassTy::InitSystem","006E53A0 SystemClassTy::FindFirstObject","006E54B0 SystemClassTy::_CreateObject","006E5580 SystemClassTy::CreateObject","006E5810 SystemClassTy::PostMessage","006E58B0 SystemClassTy::PostNextMessage","006E5970 SystemClassTy::SendMessage","006E5C70 SystemClassTy::GetToAllObjects","006E5D90 SystemClassTy::Life","006E5F00 SystemClassTy::GetMessage","006E6170 SystemWithNamedObjClassTy::CreateObject","006E6200 FUN_006e6200","006E6330 SystemWithNamedObjClassTy::SendMessage"]}
+{"address":"007EE78C","type":"string","length":19,"value":"\"E:\\\\Ourlib\\\\Sapp.cpp\"","referenced_from":["006E3510 AppClassTy::InitApp","006E36E0 AppClassTy::DoneApp","006E3810 AppClassTy::CreateObject","006E3970 AppClassTy::DeleteObject","006E3AB0 AppClassTy::PostMessage","006E3B50 AppClassTy::PostNextMessage","006E3BF0 AppClassTy::SendMessageToAllSystemsInArr","006E3DD0 AppClassTy::SendMessage","006E40E0 AppClassTy::SendMessageToAllChild","006E41D0 AppClassTy::AddDecodeMessage","006E4370 AppClassTy::DecodeMessage","006E4650 AppClassTy::AddSystem","006E47E0 AppClassTy::AddSystem","006E4960 AppClassTy::AddChildSystem","006E4D70 AppClassTy::LifeToAllSystem","006E4FC0 AppClassTy::RunApp","006E51F0 SystemClassTy::InitSystem","006E53A0 SystemClassTy::FindFirstObject","006E54B0 SystemClassTy::_CreateObject","006E5580 SystemClassTy::CreateObject","006E5810 SystemClassTy::PostMessage","006E58B0 SystemClassTy::PostNextMessage","006E5970 SystemClassTy::SendMessage","006E5C70 SystemClassTy::GetToAllObjects","006E5D90 SystemClassTy::Life","006E5F00 SystemClassTy::GetMessage","006E6170 SystemWithNamedObjClassTy::CreateObject","006E6200 Library::Ourlib::SAPP::FUN_006e6200","006E6330 SystemWithNamedObjClassTy::SendMessage"]}
 {"address":"007EE7A0","type":"string","length":25,"value":"\"Two types with id == %lX\"","referenced_from":["006E3510 AppClassTy::InitApp"]}
 {"address":"007EE7BC","type":"string","length":28,"value":"\"AppClassTy::DoneApp Error !\"","referenced_from":["006E36E0 AppClassTy::DoneApp"]}
 {"address":"007EE7D8","type":"string","length":33,"value":"\"AppClassTy::CreateObject Error !\"","referenced_from":["006E3810 AppClassTy::CreateObject"]}
@@ -3665,9 +3665,9 @@
 {"address":"007EEB90","type":"string","length":39,"value":"\"SystemClassTy::GetToAllObjects Error !\"","referenced_from":["006E5C70 SystemClassTy::GetToAllObjects"]}
 {"address":"007EEBB8","type":"string","length":28,"value":"\"SystemClassTy::Life Error !\"","referenced_from":["006E5D90 SystemClassTy::Life"]}
 {"address":"007EEBD4","type":"string","length":34,"value":"\"SystemClassTy::GetMessage Error !\"","referenced_from":["006E5F00 SystemClassTy::GetMessage"]}
-{"address":"007EEBF8","type":"string","length":17,"value":"\"Duplicate name !\"","referenced_from":["006E6200 FUN_006e6200"]}
+{"address":"007EEBF8","type":"string","length":17,"value":"\"Duplicate name !\"","referenced_from":["006E6200 Library::Ourlib::SAPP::FUN_006e6200"]}
 {"address":"007EEC0C","type":"string","length":39,"value":"\"SystemWithNamedObjClassTy::SendMessage\"","referenced_from":["006E6330 SystemWithNamedObjClassTy::SendMessage"]}
-{"address":"007EEC34","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\St3dsmap.cpp\"","referenced_from":["006E6630 FUN_006e6630"]}
+{"address":"007EEC34","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\St3dsmap.cpp\"","referenced_from":["006E6630 Library::Ourlib::ST3DSMAP::FUN_006e6630"]}
 {"address":"007EEC4C","type":"string","length":9,"value":"\"SprClose\"","referenced_from":["006E8BA0 FUN_006e8ba0"]}
 {"address":"007EEC58","type":"string","length":31,"value":"\"%s: error parameter \\\"spr_num\\\"\\n\"","referenced_from":["006E8C50 FUN_006e8c50"]}
 {"address":"007EEC78","type":"string","length":16,"value":"\"SprGlowLineMove\"","referenced_from":["006E8C80 FUN_006e8c80"]}
@@ -3713,29 +3713,29 @@
 {"address":"007EEF24","type":"string","length":8,"value":"\"SprHide\"","referenced_from":["006EAB60 FUN_006eab60"]}
 {"address":"007EEF2C","type":"string","length":14,"value":"\"SprSetVisible\"","referenced_from":["006EABF0 FUN_006eabf0"]}
 {"address":"007EEF3C","type":"string","length":14,"value":"\"SprGetMaxDims\"","referenced_from":["006EACE0 FUN_006eace0"]}
-{"address":"007EEF4C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\St3dspr.cpp\"","referenced_from":["006EAD90 FUN_006ead90","006EAFF0 FUN_006eaff0","006ED100 FUN_006ed100"]}
+{"address":"007EEF4C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\St3dspr.cpp\"","referenced_from":["006EAD90 Library::Ourlib::ST3DSPR::FUN_006ead90","006EAFF0 Library::Ourlib::ST3DSPR::FUN_006eaff0","006ED100 Library::Ourlib::ST3DSPR::FUN_006ed100"]}
 {"address":"007EEF64","type":"string","length":12,"value":"\"SprInRect\"","referenced_from":["006EB230 FUN_006eb230"]}
-{"address":"007EEF88","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\Mfstmap.cpp\"","referenced_from":["006EF300 mfTmapGetParam","006EF440 _mfTMapSetTxtParam","006EF530 _mfTMapSetMeshParam","006EF640 mfTMapLoad","006EF9D0 mfTMapNewTxtr","006EFB70 mfTMapErase","006EFC50 mfTMapCreate","006EFDB0 mfTMapSave","006EFF90 mfTMapAddObj","006F01A0 mfTMapDelObj","006F0360 mfTMapOptimize","006F0620 FUN_006f0620","006F0700 FUN_006f0700","006F0800 FUN_006f0800","006F0A50 FUN_006f0a50","006F0C00 AuxTMapRefreshAll","006F0CD0 FUN_006f0cd0","006F0D70 mf3DXGetParam"]}
-{"address":"007EEFA0","type":"string","length":15,"value":"\"mfTmapGetParam\"","referenced_from":["006EF300 mfTmapGetParam"]}
-{"address":"007EEFB0","type":"string","length":19,"value":"\"_mfTMapSetTxtParam\"","referenced_from":["006EF440 _mfTMapSetTxtParam"]}
-{"address":"007EEFC4","type":"string","length":20,"value":"\"_mfTMapSetMeshParam\"","referenced_from":["006EF530 _mfTMapSetMeshParam"]}
-{"address":"007EEFD8","type":"string","length":11,"value":"\"mfTMapLoad\"","referenced_from":["006EF640 mfTMapLoad"]}
-{"address":"007EEFE4","type":"string","length":8,"value":"\"BRDTXTR\"","referenced_from":["006EF640 mfTMapLoad","006EFC50 mfTMapCreate"]}
-{"address":"007EEFEC","type":"string","length":14,"value":"\"mfTMapNewTxtr\"","referenced_from":["006EF9D0 mfTMapNewTxtr"]}
-{"address":"007EEFFC","type":"string","length":12,"value":"\"mfTMapErase\"","referenced_from":["006EFB70 mfTMapErase"]}
-{"address":"007EF008","type":"string","length":13,"value":"\"mfTMapCreate\"","referenced_from":["006EFC50 mfTMapCreate"]}
-{"address":"007EF018","type":"string","length":11,"value":"\"mfTMapSave\"","referenced_from":["006EFDB0 mfTMapSave"]}
-{"address":"007EF024","type":"string","length":13,"value":"\"mfTMapAddObj\"","referenced_from":["006EFF90 mfTMapAddObj"]}
-{"address":"007EF034","type":"string","length":13,"value":"\"mfTMapDelObj\"","referenced_from":["006F01A0 mfTMapDelObj"]}
-{"address":"007EF044","type":"string","length":15,"value":"\"mfTMapOptimize\"","referenced_from":["006F0360 mfTMapOptimize"]}
-{"address":"007EF054","type":"string","length":14,"value":"\"AuxTMapCreate\"","referenced_from":["006F0620 FUN_006f0620","006F0700 FUN_006f0700"]}
-{"address":"007EF064","type":"string","length":15,"value":"\"AuxTMapRefresh\"","referenced_from":["006F0800 FUN_006f0800","006F0A50 FUN_006f0a50"]}
-{"address":"007EF074","type":"string","length":18,"value":"\"AuxTMapRefreshAll\"","referenced_from":["006F0C00 AuxTMapRefreshAll"]}
-{"address":"007EF088","type":"string","length":10,"value":"\"mf3DXLoad\"","referenced_from":["006F0CD0 FUN_006f0cd0"]}
-{"address":"007EF094","type":"string","length":14,"value":"\"mf3DXGetParam\"","referenced_from":["006F0D70 mf3DXGetParam"]}
+{"address":"007EEF88","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\Mfstmap.cpp\"","referenced_from":["006EF300 Library::Ourlib::MFSTMAP::mfTmapGetParam","006EF440 Library::Ourlib::MFSTMAP::_mfTMapSetTxtParam","006EF530 Library::Ourlib::MFSTMAP::_mfTMapSetMeshParam","006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad","006EF9D0 Library::Ourlib::MFSTMAP::mfTMapNewTxtr","006EFB70 Library::Ourlib::MFSTMAP::mfTMapErase","006EFC50 Library::Ourlib::MFSTMAP::mfTMapCreate","006EFDB0 Library::Ourlib::MFSTMAP::mfTMapSave","006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj","006F01A0 Library::Ourlib::MFSTMAP::mfTMapDelObj","006F0360 Library::Ourlib::MFSTMAP::mfTMapOptimize","006F0620 Library::Ourlib::MFSTMAP::FUN_006f0620","006F0700 Library::Ourlib::MFSTMAP::FUN_006f0700","006F0800 Library::Ourlib::MFSTMAP::FUN_006f0800","006F0A50 Library::Ourlib::MFSTMAP::FUN_006f0a50","006F0C00 Library::Ourlib::MFSTMAP::AuxTMapRefreshAll","006F0CD0 Library::Ourlib::MFSTMAP::FUN_006f0cd0","006F0D70 Library::Ourlib::MFSTMAP::mf3DXGetParam"]}
+{"address":"007EEFA0","type":"string","length":15,"value":"\"mfTmapGetParam\"","referenced_from":["006EF300 Library::Ourlib::MFSTMAP::mfTmapGetParam"]}
+{"address":"007EEFB0","type":"string","length":19,"value":"\"_mfTMapSetTxtParam\"","referenced_from":["006EF440 Library::Ourlib::MFSTMAP::_mfTMapSetTxtParam"]}
+{"address":"007EEFC4","type":"string","length":20,"value":"\"_mfTMapSetMeshParam\"","referenced_from":["006EF530 Library::Ourlib::MFSTMAP::_mfTMapSetMeshParam"]}
+{"address":"007EEFD8","type":"string","length":11,"value":"\"mfTMapLoad\"","referenced_from":["006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad"]}
+{"address":"007EEFE4","type":"string","length":8,"value":"\"BRDTXTR\"","referenced_from":["006EF640 Library::Ourlib::MFSTMAP::mfTMapLoad","006EFC50 Library::Ourlib::MFSTMAP::mfTMapCreate"]}
+{"address":"007EEFEC","type":"string","length":14,"value":"\"mfTMapNewTxtr\"","referenced_from":["006EF9D0 Library::Ourlib::MFSTMAP::mfTMapNewTxtr"]}
+{"address":"007EEFFC","type":"string","length":12,"value":"\"mfTMapErase\"","referenced_from":["006EFB70 Library::Ourlib::MFSTMAP::mfTMapErase"]}
+{"address":"007EF008","type":"string","length":13,"value":"\"mfTMapCreate\"","referenced_from":["006EFC50 Library::Ourlib::MFSTMAP::mfTMapCreate"]}
+{"address":"007EF018","type":"string","length":11,"value":"\"mfTMapSave\"","referenced_from":["006EFDB0 Library::Ourlib::MFSTMAP::mfTMapSave"]}
+{"address":"007EF024","type":"string","length":13,"value":"\"mfTMapAddObj\"","referenced_from":["006EFF90 Library::Ourlib::MFSTMAP::mfTMapAddObj"]}
+{"address":"007EF034","type":"string","length":13,"value":"\"mfTMapDelObj\"","referenced_from":["006F01A0 Library::Ourlib::MFSTMAP::mfTMapDelObj"]}
+{"address":"007EF044","type":"string","length":15,"value":"\"mfTMapOptimize\"","referenced_from":["006F0360 Library::Ourlib::MFSTMAP::mfTMapOptimize"]}
+{"address":"007EF054","type":"string","length":14,"value":"\"AuxTMapCreate\"","referenced_from":["006F0620 Library::Ourlib::MFSTMAP::FUN_006f0620","006F0700 Library::Ourlib::MFSTMAP::FUN_006f0700"]}
+{"address":"007EF064","type":"string","length":15,"value":"\"AuxTMapRefresh\"","referenced_from":["006F0800 Library::Ourlib::MFSTMAP::FUN_006f0800","006F0A50 Library::Ourlib::MFSTMAP::FUN_006f0a50"]}
+{"address":"007EF074","type":"string","length":18,"value":"\"AuxTMapRefreshAll\"","referenced_from":["006F0C00 Library::Ourlib::MFSTMAP::AuxTMapRefreshAll"]}
+{"address":"007EF088","type":"string","length":10,"value":"\"mf3DXLoad\"","referenced_from":["006F0CD0 Library::Ourlib::MFSTMAP::FUN_006f0cd0"]}
+{"address":"007EF094","type":"string","length":14,"value":"\"mf3DXGetParam\"","referenced_from":["006F0D70 Library::Ourlib::MFSTMAP::mf3DXGetParam"]}
 {"address":"007EF0A4","type":"string","length":7,"value":"\"M_ANY \"","referenced_from":["00680890 FUN_00680890","006F13F0 cMf32::RecPut","006F17C0 cMf32::RecDel","006F1B70 cMf32::vmAddrRecGet","006F1CE0 cMf32::RecGet","006F21C0 cMf32::RecChk","006F2310 cMf32::RecGetParam","006F24A0 cMf32::RecGetLen","006F2600 cMf32::RecGetOrigLen"]}
 {"address":"007EF5A4","type":"string","length":8,"value":"\"M_USER\"","referenced_from":[]}
-{"address":"007EFAA4","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\Mf32int.cpp\"","referenced_from":["006F0EC0 FUN_006f0ec0","006F1170 cMf32::delete","006F1220 cMf32::Flush","006F12B0 cMf32::ToBeg","006F1350 cMf32::ToEnd","006F13F0 cMf32::RecPut","006F1700 cMf32::RecPutNoname","006F17C0 cMf32::RecDel","006F1910 cMf32::RecRen","006F1B70 cMf32::vmAddrRecGet","006F1CE0 cMf32::RecGet","006F20E0 cMf32::RecMemFree","006F21C0 cMf32::RecChk","006F2310 cMf32::RecGetParam","006F24A0 cMf32::RecGetLen","006F2600 cMf32::RecGetOrigLen","006F2790 cMf32::RecNameGetNext","006F2860 cMf32::RecKeyGetNext","006F2940 cMf32::RecNameGetPrev","006F2A10 cMf32::RecKeyGetPrev","006F2AF0 cMf32::KeyRecGet"]}
+{"address":"007EFAA4","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\Mf32int.cpp\"","referenced_from":["006F0EC0 Library::Ourlib::MF32INT::FUN_006f0ec0","006F1170 cMf32::delete","006F1220 cMf32::Flush","006F12B0 cMf32::ToBeg","006F1350 cMf32::ToEnd","006F13F0 cMf32::RecPut","006F1700 cMf32::RecPutNoname","006F17C0 cMf32::RecDel","006F1910 cMf32::RecRen","006F1B70 cMf32::vmAddrRecGet","006F1CE0 cMf32::RecGet","006F20E0 cMf32::RecMemFree","006F21C0 cMf32::RecChk","006F2310 cMf32::RecGetParam","006F24A0 cMf32::RecGetLen","006F2600 cMf32::RecGetOrigLen","006F2790 cMf32::RecNameGetNext","006F2860 cMf32::RecKeyGetNext","006F2940 cMf32::RecNameGetPrev","006F2A10 cMf32::RecKeyGetPrev","006F2AF0 cMf32::KeyRecGet"]}
 {"address":"007EFABC","type":"string","length":14,"value":"\"cMf32::delete\"","referenced_from":["006F1170 cMf32::delete"]}
 {"address":"007EFACC","type":"string","length":13,"value":"\"cMf32::Flush\"","referenced_from":["006F1220 cMf32::Flush"]}
 {"address":"007EFADC","type":"string","length":13,"value":"\"cMf32::ToBeg\"","referenced_from":["006F12B0 cMf32::ToBeg"]}
@@ -3756,42 +3756,42 @@
 {"address":"007EFCF8","type":"string","length":22,"value":"\"cMf32::RecNameGetPrev\"","referenced_from":["006F2940 cMf32::RecNameGetPrev"]}
 {"address":"007EFD10","type":"string","length":21,"value":"\"cMf32::RecKeyGetPrev\"","referenced_from":["006F2A10 cMf32::RecKeyGetPrev"]}
 {"address":"007EFD28","type":"string","length":17,"value":"\"cMf32::KeyRecGet\"","referenced_from":["006F2AF0 cMf32::KeyRecGet"]}
-{"address":"007EFD3C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfaobj.cpp\"","referenced_from":["006F2D90 mfAObjLoad","006F2E40 mfAObjEnum","006F2FB0 mfAObjLen","006F3050 mfAObjParam","006F3110 mfAObjSave"]}
-{"address":"007EFD54","type":"string","length":11,"value":"\"mfAObjLoad\"","referenced_from":["006F2D90 mfAObjLoad"]}
-{"address":"007EFD60","type":"string","length":11,"value":"\"mfAObjEnum\"","referenced_from":["006F2E40 mfAObjEnum"]}
-{"address":"007EFD6C","type":"string","length":10,"value":"\"mfAObjLen\"","referenced_from":["006F2FB0 mfAObjLen"]}
-{"address":"007EFD78","type":"string","length":12,"value":"\"mfAObjParam\"","referenced_from":["006F3050 mfAObjParam"]}
-{"address":"007EFD84","type":"string","length":11,"value":"\"mfAObjSave\"","referenced_from":["006F3110 mfAObjSave"]}
+{"address":"007EFD3C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfaobj.cpp\"","referenced_from":["006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad","006F2E40 Library::Ourlib::MFAOBJ::mfAObjEnum","006F2FB0 Library::Ourlib::MFAOBJ::mfAObjLen","006F3050 Library::Ourlib::MFAOBJ::mfAObjParam","006F3110 Library::Ourlib::MFAOBJ::mfAObjSave"]}
+{"address":"007EFD54","type":"string","length":11,"value":"\"mfAObjLoad\"","referenced_from":["006F2D90 Library::Ourlib::MFAOBJ::mfAObjLoad"]}
+{"address":"007EFD60","type":"string","length":11,"value":"\"mfAObjEnum\"","referenced_from":["006F2E40 Library::Ourlib::MFAOBJ::mfAObjEnum"]}
+{"address":"007EFD6C","type":"string","length":10,"value":"\"mfAObjLen\"","referenced_from":["006F2FB0 Library::Ourlib::MFAOBJ::mfAObjLen"]}
+{"address":"007EFD78","type":"string","length":12,"value":"\"mfAObjParam\"","referenced_from":["006F3050 Library::Ourlib::MFAOBJ::mfAObjParam"]}
+{"address":"007EFD84","type":"string","length":11,"value":"\"mfAObjSave\"","referenced_from":["006F3110 Library::Ourlib::MFAOBJ::mfAObjSave"]}
 {"address":"007EFF34","type":"string","length":24,"value":"\"E:\\\\ourlib\\\\St3ds8p.cpp\"","referenced_from":[]}
-{"address":"007EFF4C","type":"string","length":14,"value":"\"mfRLoadCreate\"","referenced_from":["007097C0 mfRLoadCreate"]}
-{"address":"007EFF5C","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\mfrload.cpp\"","referenced_from":["007097C0 mfRLoadCreate","00709AF0 mfRLoad","00709E10 mfRLoadAddReff","00709F40 _mfRLoadAddReff","0070A050 mfRLoadRelease","0070A1B0 _mfRLoadRelease","0070A370 mfRLoadRefreshAll","0070A4A0 mfRLoadRefresh"]}
-{"address":"007EFF74","type":"string","length":8,"value":"\"mfRLoad\"","referenced_from":["00709AF0 mfRLoad"]}
-{"address":"007EFF7C","type":"string","length":15,"value":"\"mfRLoadAddReff\"","referenced_from":["00709E10 mfRLoadAddReff"]}
-{"address":"007EFF8C","type":"string","length":16,"value":"\"_mfRLoadAddReff\"","referenced_from":["00709F40 _mfRLoadAddReff"]}
-{"address":"007EFF9C","type":"string","length":15,"value":"\"mfRLoadRelease\"","referenced_from":["0070A050 mfRLoadRelease"]}
-{"address":"007EFFAC","type":"string","length":16,"value":"\"_mfRLoadRelease\"","referenced_from":["0070A1B0 _mfRLoadRelease"]}
-{"address":"007EFFBC","type":"string","length":18,"value":"\"mfRLoadRefreshAll\"","referenced_from":["0070A370 mfRLoadRefreshAll"]}
-{"address":"007EFFD0","type":"string","length":15,"value":"\"mfRLoadRefresh\"","referenced_from":["0070A4A0 mfRLoadRefresh"]}
-{"address":"007EFFE0","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\Mfimg.cpp\"","referenced_from":["0070A5A0 mfImgLoad","0070A650 mfImgGetLen","0070A6F0 mfImgGetWidth","0070A7B0 mfImgGetHeight","0070A870 mfImgGetTransp","0070A930 mfImgGetNumIms","0070AAD0 mfGifLoadToDib","0070AC10 mfPcxLoadToDib","0070AD60 mfJpgLoadToDib","0070AE60 mfImtLoad","0070B220 mfImtGetNumIms","0070B2E0 mfImtGetModeIms","0070B430 mfQmtLoad","0070B900 imgGetDibFromFile","0070BE80 imgGetSprFromFile","0070BFE0 imgGetPcxGifJpgFromFile","0070C400 FUN_0070c400","0070C4D0 FUN_0070c4d0","0070C690 FUN_0070c690"]}
-{"address":"007EFFF4","type":"string","length":10,"value":"\"mfImgLoad\"","referenced_from":["0070A5A0 mfImgLoad"]}
-{"address":"007F0000","type":"string","length":13,"value":"\"mfImgGetLen \"","referenced_from":["0070A650 mfImgGetLen"]}
-{"address":"007F0010","type":"string","length":15,"value":"\"mfImgGetWidth \"","referenced_from":["0070A6F0 mfImgGetWidth"]}
-{"address":"007F0020","type":"string","length":15,"value":"\"mfImgGetHeight\"","referenced_from":["0070A7B0 mfImgGetHeight"]}
-{"address":"007F0030","type":"string","length":16,"value":"\"mfImgGetTransp \"","referenced_from":["0070A870 mfImgGetTransp"]}
-{"address":"007F0040","type":"string","length":15,"value":"\"mfImgGetNumIms\"","referenced_from":["0070A930 mfImgGetNumIms"]}
-{"address":"007F0050","type":"string","length":15,"value":"\"mfGifLoadToDib\"","referenced_from":["0070AAD0 mfGifLoadToDib"]}
-{"address":"007F0060","type":"string","length":15,"value":"\"mfPcxLoadToDib\"","referenced_from":["0070AC10 mfPcxLoadToDib"]}
-{"address":"007F0070","type":"string","length":15,"value":"\"mfJpgLoadToDib\"","referenced_from":["0070AD60 mfJpgLoadToDib"]}
-{"address":"007F0080","type":"string","length":10,"value":"\"mfImtLoad\"","referenced_from":["0070AE60 mfImtLoad"]}
-{"address":"007F008C","type":"string","length":15,"value":"\"mfImtGetNumIms\"","referenced_from":["0070B220 mfImtGetNumIms"]}
-{"address":"007F009C","type":"string","length":16,"value":"\"mfImtGetModeIms\"","referenced_from":["0070B2E0 mfImtGetModeIms"]}
-{"address":"007F00AC","type":"string","length":10,"value":"\"mfQmtLoad\"","referenced_from":["0070B430 mfQmtLoad"]}
-{"address":"007F00D8","type":"string","length":18,"value":"\"imgGetDibFromFile\"","referenced_from":["0070B900 imgGetDibFromFile"]}
-{"address":"007F00EC","type":"string","length":18,"value":"\"imgGetSprFromFile\"","referenced_from":["0070BE80 imgGetSprFromFile"]}
-{"address":"007F0100","type":"string","length":24,"value":"\"imgGetPcxGifJpgFromFile\"","referenced_from":["0070BFE0 imgGetPcxGifJpgFromFile"]}
-{"address":"007F0118","type":"string","length":46,"value":"\"img=[%d,%d,%d,%d], lx=%d, ly=%d, stretch = %x\"","referenced_from":["0070C4D0 FUN_0070c4d0"]}
+{"address":"007EFF4C","type":"string","length":14,"value":"\"mfRLoadCreate\"","referenced_from":["007097C0 Library::Ourlib::MFRLOAD::mfRLoadCreate"]}
+{"address":"007EFF5C","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\mfrload.cpp\"","referenced_from":["007097C0 Library::Ourlib::MFRLOAD::mfRLoadCreate","00709AF0 Library::Ourlib::MFRLOAD::mfRLoad","00709E10 Library::Ourlib::MFRLOAD::mfRLoadAddReff","00709F40 Library::Ourlib::MFRLOAD::_mfRLoadAddReff","0070A050 Library::Ourlib::MFRLOAD::mfRLoadRelease","0070A1B0 Library::Ourlib::MFRLOAD::_mfRLoadRelease","0070A370 Library::Ourlib::MFRLOAD::mfRLoadRefreshAll","0070A4A0 Library::Ourlib::MFRLOAD::mfRLoadRefresh"]}
+{"address":"007EFF74","type":"string","length":8,"value":"\"mfRLoad\"","referenced_from":["00709AF0 Library::Ourlib::MFRLOAD::mfRLoad"]}
+{"address":"007EFF7C","type":"string","length":15,"value":"\"mfRLoadAddReff\"","referenced_from":["00709E10 Library::Ourlib::MFRLOAD::mfRLoadAddReff"]}
+{"address":"007EFF8C","type":"string","length":16,"value":"\"_mfRLoadAddReff\"","referenced_from":["00709F40 Library::Ourlib::MFRLOAD::_mfRLoadAddReff"]}
+{"address":"007EFF9C","type":"string","length":15,"value":"\"mfRLoadRelease\"","referenced_from":["0070A050 Library::Ourlib::MFRLOAD::mfRLoadRelease"]}
+{"address":"007EFFAC","type":"string","length":16,"value":"\"_mfRLoadRelease\"","referenced_from":["0070A1B0 Library::Ourlib::MFRLOAD::_mfRLoadRelease"]}
+{"address":"007EFFBC","type":"string","length":18,"value":"\"mfRLoadRefreshAll\"","referenced_from":["0070A370 Library::Ourlib::MFRLOAD::mfRLoadRefreshAll"]}
+{"address":"007EFFD0","type":"string","length":15,"value":"\"mfRLoadRefresh\"","referenced_from":["0070A4A0 Library::Ourlib::MFRLOAD::mfRLoadRefresh"]}
+{"address":"007EFFE0","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\Mfimg.cpp\"","referenced_from":["0070A5A0 Library::Ourlib::MFIMG::mfImgLoad","0070A650 Library::Ourlib::MFIMG::mfImgGetLen","0070A6F0 Library::Ourlib::MFIMG::mfImgGetWidth","0070A7B0 Library::Ourlib::MFIMG::mfImgGetHeight","0070A870 Library::Ourlib::MFIMG::mfImgGetTransp","0070A930 Library::Ourlib::MFIMG::mfImgGetNumIms","0070AAD0 Library::Ourlib::MFIMG::mfGifLoadToDib","0070AC10 Library::Ourlib::MFIMG::mfPcxLoadToDib","0070AD60 Library::Ourlib::MFIMG::mfJpgLoadToDib","0070AE60 Library::Ourlib::MFIMG::mfImtLoad","0070B220 Library::Ourlib::MFIMG::mfImtGetNumIms","0070B2E0 Library::Ourlib::MFIMG::mfImtGetModeIms","0070B430 Library::Ourlib::MFIMG::mfQmtLoad","0070B900 Library::Ourlib::MFIMG::imgGetDibFromFile","0070BE80 Library::Ourlib::MFIMG::imgGetSprFromFile","0070BFE0 Library::Ourlib::MFIMG::imgGetPcxGifJpgFromFile","0070C400 Library::Ourlib::MFIMG::FUN_0070c400","0070C4D0 Library::Ourlib::MFIMG::FUN_0070c4d0","0070C690 Library::Ourlib::MFIMG::FUN_0070c690"]}
+{"address":"007EFFF4","type":"string","length":10,"value":"\"mfImgLoad\"","referenced_from":["0070A5A0 Library::Ourlib::MFIMG::mfImgLoad"]}
+{"address":"007F0000","type":"string","length":13,"value":"\"mfImgGetLen \"","referenced_from":["0070A650 Library::Ourlib::MFIMG::mfImgGetLen"]}
+{"address":"007F0010","type":"string","length":15,"value":"\"mfImgGetWidth \"","referenced_from":["0070A6F0 Library::Ourlib::MFIMG::mfImgGetWidth"]}
+{"address":"007F0020","type":"string","length":15,"value":"\"mfImgGetHeight\"","referenced_from":["0070A7B0 Library::Ourlib::MFIMG::mfImgGetHeight"]}
+{"address":"007F0030","type":"string","length":16,"value":"\"mfImgGetTransp \"","referenced_from":["0070A870 Library::Ourlib::MFIMG::mfImgGetTransp"]}
+{"address":"007F0040","type":"string","length":15,"value":"\"mfImgGetNumIms\"","referenced_from":["0070A930 Library::Ourlib::MFIMG::mfImgGetNumIms"]}
+{"address":"007F0050","type":"string","length":15,"value":"\"mfGifLoadToDib\"","referenced_from":["0070AAD0 Library::Ourlib::MFIMG::mfGifLoadToDib"]}
+{"address":"007F0060","type":"string","length":15,"value":"\"mfPcxLoadToDib\"","referenced_from":["0070AC10 Library::Ourlib::MFIMG::mfPcxLoadToDib"]}
+{"address":"007F0070","type":"string","length":15,"value":"\"mfJpgLoadToDib\"","referenced_from":["0070AD60 Library::Ourlib::MFIMG::mfJpgLoadToDib"]}
+{"address":"007F0080","type":"string","length":10,"value":"\"mfImtLoad\"","referenced_from":["0070AE60 Library::Ourlib::MFIMG::mfImtLoad"]}
+{"address":"007F008C","type":"string","length":15,"value":"\"mfImtGetNumIms\"","referenced_from":["0070B220 Library::Ourlib::MFIMG::mfImtGetNumIms"]}
+{"address":"007F009C","type":"string","length":16,"value":"\"mfImtGetModeIms\"","referenced_from":["0070B2E0 Library::Ourlib::MFIMG::mfImtGetModeIms"]}
+{"address":"007F00AC","type":"string","length":10,"value":"\"mfQmtLoad\"","referenced_from":["0070B430 Library::Ourlib::MFIMG::mfQmtLoad"]}
+{"address":"007F00D8","type":"string","length":18,"value":"\"imgGetDibFromFile\"","referenced_from":["0070B900 Library::Ourlib::MFIMG::imgGetDibFromFile"]}
+{"address":"007F00EC","type":"string","length":18,"value":"\"imgGetSprFromFile\"","referenced_from":["0070BE80 Library::Ourlib::MFIMG::imgGetSprFromFile"]}
+{"address":"007F0100","type":"string","length":24,"value":"\"imgGetPcxGifJpgFromFile\"","referenced_from":["0070BFE0 Library::Ourlib::MFIMG::imgGetPcxGifJpgFromFile"]}
+{"address":"007F0118","type":"string","length":46,"value":"\"img=[%d,%d,%d,%d], lx=%d, ly=%d, stretch = %x\"","referenced_from":["0070C4D0 Library::Ourlib::MFIMG::FUN_0070c4d0"]}
 {"address":"007F0178","type":"string","length":24,"value":"\"ccFntTy::operator new\"","referenced_from":["0070CEB0 ccFntTy::operator"]}
-{"address":"007F0190","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfcfnt.cpp\"","referenced_from":["0070CEB0 ccFntTy::operator","0070D1F0 ccFntTy::operator","0070DF00 ccFntTy::operator","0070E030 FUN_0070e030","00710560 ccFntTy::operator","007108B0 ccFntTy::Save","00710A90 ccFntTy::SetSurf","00710BA0 ccFntTy::CreateSurf","00710D80 ccFntTy::GetSurfAsSpr","00710F00 ccFntTy::EraseSufr","007116F0 ccFntTy::WrCh","00711880 ccFntTy::WrChXY","007119C0 ccFntTy::WrStr","00711B70 ccFntTy::WrTxt","00711DA0 ccFntTy::WrArr","00711F70 ccFntTy::WrSarr","007121F0 ccFntTy::FormSarr","007126E0 ccFntTy::FormIndentSarr","007129D0 ccFntTy::SepColorStrInSarr","00712C10 ccFntTy::FormText","00712D30 ccFntTy::FormIndentText","00712E60 ccFntTy::VisLineSarr","00712F80 ccFntTy::_TxtToSarr","00713080 ccFntTy::_SarrToTxt","00713200 ccFntTy::GetFittingStr","00713480 ccFntTy::CreateTypeSSpr","00713B00 cTypingTy::TypingInit","00713F30 cTypingTy::TypingInitSarr"]}
+{"address":"007F0190","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfcfnt.cpp\"","referenced_from":["0070CEB0 ccFntTy::operator","0070D1F0 ccFntTy::operator","0070DF00 ccFntTy::operator","0070E030 Library::Ourlib::MFCFNT::FUN_0070e030","00710560 ccFntTy::operator","007108B0 ccFntTy::Save","00710A90 ccFntTy::SetSurf","00710BA0 ccFntTy::CreateSurf","00710D80 ccFntTy::GetSurfAsSpr","00710F00 ccFntTy::EraseSufr","007116F0 ccFntTy::WrCh","00711880 ccFntTy::WrChXY","007119C0 ccFntTy::WrStr","00711B70 ccFntTy::WrTxt","00711DA0 ccFntTy::WrArr","00711F70 ccFntTy::WrSarr","007121F0 ccFntTy::FormSarr","007126E0 ccFntTy::FormIndentSarr","007129D0 ccFntTy::SepColorStrInSarr","00712C10 ccFntTy::FormText","00712D30 ccFntTy::FormIndentText","00712E60 ccFntTy::VisLineSarr","00712F80 ccFntTy::_TxtToSarr","00713080 ccFntTy::_SarrToTxt","00713200 ccFntTy::GetFittingStr","00713480 ccFntTy::CreateTypeSSpr","00713B00 cTypingTy::TypingInit","00713F30 cTypingTy::TypingInitSarr"]}
 {"address":"007F01A8","type":"string","length":40,"value":"\"ccFntTy::operator new frow Windows Font\"","referenced_from":["0070D1F0 ccFntTy::operator"]}
 {"address":"007F01D0","type":"string","length":37,"value":"\"ccFntTy::operator new for Slave Font\"","referenced_from":["0070DF00 ccFntTy::operator"]}
 {"address":"007F01F8","type":"string","length":25,"value":"\"ccFntTy::operator delete\"","referenced_from":["00710560 ccFntTy::operator"]}
@@ -3818,60 +3818,60 @@
 {"address":"007F03A4","type":"string","length":24,"value":"\"ccFntTy::CreateTypeSSpr\"","referenced_from":["00713480 ccFntTy::CreateTypeSSpr"]}
 {"address":"007F03BC","type":"string","length":22,"value":"\"cTypingTy::TypingInit\"","referenced_from":["00713B00 cTypingTy::TypingInit"]}
 {"address":"007F03D4","type":"string","length":26,"value":"\"cTypingTy::TypingInitSarr\"","referenced_from":["00713F30 cTypingTy::TypingInitSarr"]}
-{"address":"007F03F0","type":"string","length":10,"value":"\"mfDarLoad\"","referenced_from":["00715050 mfDarLoad"]}
-{"address":"007F03FC","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\mfdarr.cpp\"","referenced_from":["00715050 mfDarLoad","00715170 mfDarSave","00715280 mfDarGetNum"]}
-{"address":"007F0414","type":"string","length":10,"value":"\"mfDarSave\"","referenced_from":["00715170 mfDarSave"]}
-{"address":"007F0420","type":"string","length":12,"value":"\"mfDarGetNum\"","referenced_from":["00715280 mfDarGetNum"]}
-{"address":"007F042C","type":"string","length":13,"value":"\"cnUnPackMess\"","referenced_from":["007154E0 cnUnPackMess"]}
-{"address":"007F043C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\connect.cpp\"","referenced_from":["007154E0 cnUnPackMess","00715630 FUN_00715630"]}
+{"address":"007F03F0","type":"string","length":10,"value":"\"mfDarLoad\"","referenced_from":["00715050 Library::Ourlib::MFDARR::mfDarLoad"]}
+{"address":"007F03FC","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\mfdarr.cpp\"","referenced_from":["00715050 Library::Ourlib::MFDARR::mfDarLoad","00715170 Library::Ourlib::MFDARR::mfDarSave","00715280 Library::Ourlib::MFDARR::mfDarGetNum"]}
+{"address":"007F0414","type":"string","length":10,"value":"\"mfDarSave\"","referenced_from":["00715170 Library::Ourlib::MFDARR::mfDarSave"]}
+{"address":"007F0420","type":"string","length":12,"value":"\"mfDarGetNum\"","referenced_from":["00715280 Library::Ourlib::MFDARR::mfDarGetNum"]}
+{"address":"007F042C","type":"string","length":13,"value":"\"cnUnPackMess\"","referenced_from":["007154E0 Library::Ourlib::CONNECT::cnUnPackMess"]}
+{"address":"007F043C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\connect.cpp\"","referenced_from":["007154E0 Library::Ourlib::CONNECT::cnUnPackMess","00715630 Library::Ourlib::CONNECT::FUN_00715630"]}
 {"address":"007F0454","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\Sprite.cpp\"","referenced_from":["007158A0 SpriteClassTy::InitSprite","00715AB0 SpriteClassTy::CloseSprite","00715C60 SpriteClassTy::SetImagesReg","00716040 SpriteClassTy::SetImages","00716480 SpriteClassTy::SetImagesPtr"]}
 {"address":"007F046C","type":"string","length":26,"value":"\"SpriteClassTy::InitSprite\"","referenced_from":["007158A0 SpriteClassTy::InitSprite"]}
 {"address":"007F0488","type":"string","length":27,"value":"\"SpriteClassTy::CloseSprite\"","referenced_from":["00715AB0 SpriteClassTy::CloseSprite"]}
 {"address":"007F04A4","type":"string","length":28,"value":"\"SpriteClassTy::SetImagesReg\"","referenced_from":["00715C60 SpriteClassTy::SetImagesReg"]}
 {"address":"007F04C0","type":"string","length":25,"value":"\"SpriteClassTy::SetImages\"","referenced_from":["00716040 SpriteClassTy::SetImages"]}
 {"address":"007F04DC","type":"string","length":28,"value":"\"SpriteClassTy::SetImagesPtr\"","referenced_from":["00716480 SpriteClassTy::SetImagesPtr"]}
-{"address":"007F04F8","type":"string","length":11,"value":"\"mfTSprLoad\"","referenced_from":["00716850 mfTSprLoad"]}
-{"address":"007F0504","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mftspr.cpp\"","referenced_from":["00716850 mfTSprLoad","00716E60 mfTSprGetNumFas","00716FD0 mfTSprLoadAsSSpr","007171C0 mfRSprLoadAsQSpr"]}
-{"address":"007F051C","type":"string","length":16,"value":"\"mfTSprGetNumFas\"","referenced_from":["00716E60 mfTSprGetNumFas"]}
-{"address":"007F052C","type":"string","length":17,"value":"\"mfTSprLoadAsSSpr\"","referenced_from":["00716FD0 mfTSprLoadAsSSpr"]}
-{"address":"007F0540","type":"string","length":17,"value":"\"mfRSprLoadAsQSpr\"","referenced_from":["007171C0 mfRSprLoadAsQSpr"]}
-{"address":"007F06D4","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\Stdark.cpp\"","referenced_from":["007176F0 FUN_007176f0"]}
-{"address":"007F06EC","type":"string","length":11,"value":"\"mfPltPtrTy\"","referenced_from":["00717FC0 mfPltPtrTy"]}
-{"address":"007F06F8","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfplt.cpp\"","referenced_from":["00717FC0 mfPltPtrTy","00718080 mfPltNum"]}
-{"address":"007F070C","type":"string","length":9,"value":"\"mfPltNum\"","referenced_from":["00718080 mfPltNum"]}
-{"address":"007F0718","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\Palette.cpp\"","referenced_from":["00718500 FUN_00718500","00718780 FUN_00718780","00718A40 FUN_00718a40","00718D50 FUN_00718d50","00718F40 FUN_00718f40","00719080 FUN_00719080","00719190 FUN_00719190","007192D0 FUN_007192d0"]}
-{"address":"007F0730","type":"string","length":26,"value":"\"CreateReplColorTbl error!\"","referenced_from":["00718500 FUN_00718500","00718780 FUN_00718780"]}
-{"address":"007F074C","type":"string","length":28,"value":"\"CreateReplColorTblHi error!\"","referenced_from":["00718A40 FUN_00718a40"]}
-{"address":"007F0768","type":"string","length":15,"value":"\"Memory error !\"","referenced_from":["00718A40 FUN_00718a40"]}
-{"address":"007F0778","type":"string","length":12,"value":"\"Bad color !\"","referenced_from":["00718A40 FUN_00718a40"]}
-{"address":"007F0784","type":"string","length":21,"value":"\"ChangePalette Error!\"","referenced_from":["00718D50 FUN_00718d50"]}
-{"address":"007F079C","type":"string","length":20,"value":"\"LightPalette Error!\"","referenced_from":["00718F40 FUN_00718f40","00719080 FUN_00719080"]}
-{"address":"007F07B0","type":"string","length":19,"value":"\"DarkPalette Error!\"","referenced_from":["00719190 FUN_00719190","007192D0 FUN_007192d0"]}
+{"address":"007F04F8","type":"string","length":11,"value":"\"mfTSprLoad\"","referenced_from":["00716850 Library::Ourlib::MFTSPR::mfTSprLoad"]}
+{"address":"007F0504","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mftspr.cpp\"","referenced_from":["00716850 Library::Ourlib::MFTSPR::mfTSprLoad","00716E60 Library::Ourlib::MFTSPR::mfTSprGetNumFas","00716FD0 Library::Ourlib::MFTSPR::mfTSprLoadAsSSpr","007171C0 Library::Ourlib::MFTSPR::mfRSprLoadAsQSpr"]}
+{"address":"007F051C","type":"string","length":16,"value":"\"mfTSprGetNumFas\"","referenced_from":["00716E60 Library::Ourlib::MFTSPR::mfTSprGetNumFas"]}
+{"address":"007F052C","type":"string","length":17,"value":"\"mfTSprLoadAsSSpr\"","referenced_from":["00716FD0 Library::Ourlib::MFTSPR::mfTSprLoadAsSSpr"]}
+{"address":"007F0540","type":"string","length":17,"value":"\"mfRSprLoadAsQSpr\"","referenced_from":["007171C0 Library::Ourlib::MFTSPR::mfRSprLoadAsQSpr"]}
+{"address":"007F06D4","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\Stdark.cpp\"","referenced_from":["007176F0 Library::Ourlib::STDARK::FUN_007176f0"]}
+{"address":"007F06EC","type":"string","length":11,"value":"\"mfPltPtrTy\"","referenced_from":["00717FC0 Library::Ourlib::MFPLT::mfPltPtrTy"]}
+{"address":"007F06F8","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfplt.cpp\"","referenced_from":["00717FC0 Library::Ourlib::MFPLT::mfPltPtrTy","00718080 Library::Ourlib::MFPLT::mfPltNum"]}
+{"address":"007F070C","type":"string","length":9,"value":"\"mfPltNum\"","referenced_from":["00718080 Library::Ourlib::MFPLT::mfPltNum"]}
+{"address":"007F0718","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\Palette.cpp\"","referenced_from":["00718500 Library::Ourlib::PALETTE::FUN_00718500","00718780 Library::Ourlib::PALETTE::FUN_00718780","00718A40 Library::Ourlib::PALETTE::FUN_00718a40","00718D50 Library::Ourlib::PALETTE::FUN_00718d50","00718F40 Library::Ourlib::PALETTE::FUN_00718f40","00719080 Library::Ourlib::PALETTE::FUN_00719080","00719190 Library::Ourlib::PALETTE::FUN_00719190","007192D0 Library::Ourlib::PALETTE::FUN_007192d0"]}
+{"address":"007F0730","type":"string","length":26,"value":"\"CreateReplColorTbl error!\"","referenced_from":["00718500 Library::Ourlib::PALETTE::FUN_00718500","00718780 Library::Ourlib::PALETTE::FUN_00718780"]}
+{"address":"007F074C","type":"string","length":28,"value":"\"CreateReplColorTblHi error!\"","referenced_from":["00718A40 Library::Ourlib::PALETTE::FUN_00718a40"]}
+{"address":"007F0768","type":"string","length":15,"value":"\"Memory error !\"","referenced_from":["00718A40 Library::Ourlib::PALETTE::FUN_00718a40"]}
+{"address":"007F0778","type":"string","length":12,"value":"\"Bad color !\"","referenced_from":["00718A40 Library::Ourlib::PALETTE::FUN_00718a40"]}
+{"address":"007F0784","type":"string","length":21,"value":"\"ChangePalette Error!\"","referenced_from":["00718D50 Library::Ourlib::PALETTE::FUN_00718d50"]}
+{"address":"007F079C","type":"string","length":20,"value":"\"LightPalette Error!\"","referenced_from":["00718F40 Library::Ourlib::PALETTE::FUN_00718f40","00719080 Library::Ourlib::PALETTE::FUN_00719080"]}
+{"address":"007F07B0","type":"string","length":19,"value":"\"DarkPalette Error!\"","referenced_from":["00719190 Library::Ourlib::PALETTE::FUN_00719190","007192D0 Library::Ourlib::PALETTE::FUN_007192d0"]}
 {"address":"007F07C8","type":"string","length":8,"value":"\"cdaudio\"","referenced_from":["00719410 FUN_00719410"]}
 {"address":"007F07D0","type":"string","length":9,"value":"\"avivideo\"","referenced_from":["00719410 FUN_00719410"]}
 {"address":"007F07DC","type":"string","length":10,"value":"\"sequencer\"","referenced_from":["00719410 FUN_00719410"]}
 {"address":"007F07E8","type":"string","length":10,"value":"\"waveaudio\"","referenced_from":["00719410 FUN_00719410"]}
 {"address":"007F07F4","type":"string","length":10,"value":"\"MCI error\"","referenced_from":["00719C90 FUN_00719c90"]}
-{"address":"007F0800","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfwav.cpp\"","referenced_from":["00719D00 mfWavLoad","00719DF0 mfWavGetType","00719EA0 GetPcmFromWavFile","0071A030 mfWavSave","0071A110 mfWavSaveFile","0071A270 mfSndLibLoad","0071A530 FUN_0071a530","0071A5E0 mfSndTblLoad"]}
-{"address":"007F0814","type":"string","length":10,"value":"\"mfWavLoad\"","referenced_from":["00719D00 mfWavLoad"]}
-{"address":"007F0820","type":"string","length":14,"value":"\"mfWavGetType \"","referenced_from":["00719DF0 mfWavGetType"]}
-{"address":"007F0830","type":"string","length":18,"value":"\"GetPcmFromWavFile\"","referenced_from":["00719EA0 GetPcmFromWavFile"]}
-{"address":"007F0844","type":"string","length":10,"value":"\"mfWavSave\"","referenced_from":["0071A030 mfWavSave"]}
-{"address":"007F0850","type":"string","length":14,"value":"\"mfWavSaveFile\"","referenced_from":["0071A110 mfWavSaveFile"]}
-{"address":"007F0860","type":"string","length":13,"value":"\"mfSndLibLoad\"","referenced_from":["0071A270 mfSndLibLoad"]}
-{"address":"007F0870","type":"string","length":13,"value":"\"mfSndTblLoad\"","referenced_from":["0071A5E0 mfSndTblLoad"]}
-{"address":"007F0880","type":"string","length":12,"value":"\"NO SOUND\"","referenced_from":["0071A5E0 mfSndTblLoad"]}
-{"address":"007F088C","type":"string","length":10,"value":"\"mfSarLoad\"","referenced_from":["0071AA10 mfSarLoad"]}
-{"address":"007F0898","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfsarr.cpp\"","referenced_from":["0071AA10 mfSarLoad","0071AB30 mfSarSave","0071AC40 tSArrCat"]}
-{"address":"007F08B0","type":"string","length":10,"value":"\"mfSarSave\"","referenced_from":["0071AB30 mfSarSave"]}
-{"address":"007F08BC","type":"string","length":9,"value":"\"tSArrCat\"","referenced_from":["0071AC40 tSArrCat"]}
-{"address":"007F08C8","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfany.cpp\"","referenced_from":["0071AD00 mfAnyLoad","0071ADB0 mfAnySave","0071AE80 ReadAllFile","0071B010 mfAnySaveFile"]}
-{"address":"007F08DC","type":"string","length":10,"value":"\"mfAnyLoad\"","referenced_from":["0071AD00 mfAnyLoad"]}
-{"address":"007F08E8","type":"string","length":10,"value":"\"mfAnySave\"","referenced_from":["0071ADB0 mfAnySave"]}
-{"address":"007F08F4","type":"string","length":12,"value":"\"ReadAllFile\"","referenced_from":["0071AE80 ReadAllFile"]}
-{"address":"007F0900","type":"string","length":14,"value":"\"mfAnySaveFile\"","referenced_from":["0071B010 mfAnySaveFile"]}
+{"address":"007F0800","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfwav.cpp\"","referenced_from":["00719D00 Library::Ourlib::MFWAV::mfWavLoad","00719DF0 Library::Ourlib::MFWAV::mfWavGetType","00719EA0 Library::Ourlib::MFWAV::GetPcmFromWavFile","0071A030 Library::Ourlib::MFWAV::mfWavSave","0071A110 Library::Ourlib::MFWAV::mfWavSaveFile","0071A270 Library::Ourlib::MFWAV::mfSndLibLoad","0071A530 Library::Ourlib::MFWAV::FUN_0071a530","0071A5E0 Library::Ourlib::MFWAV::mfSndTblLoad"]}
+{"address":"007F0814","type":"string","length":10,"value":"\"mfWavLoad\"","referenced_from":["00719D00 Library::Ourlib::MFWAV::mfWavLoad"]}
+{"address":"007F0820","type":"string","length":14,"value":"\"mfWavGetType \"","referenced_from":["00719DF0 Library::Ourlib::MFWAV::mfWavGetType"]}
+{"address":"007F0830","type":"string","length":18,"value":"\"GetPcmFromWavFile\"","referenced_from":["00719EA0 Library::Ourlib::MFWAV::GetPcmFromWavFile"]}
+{"address":"007F0844","type":"string","length":10,"value":"\"mfWavSave\"","referenced_from":["0071A030 Library::Ourlib::MFWAV::mfWavSave"]}
+{"address":"007F0850","type":"string","length":14,"value":"\"mfWavSaveFile\"","referenced_from":["0071A110 Library::Ourlib::MFWAV::mfWavSaveFile"]}
+{"address":"007F0860","type":"string","length":13,"value":"\"mfSndLibLoad\"","referenced_from":["0071A270 Library::Ourlib::MFWAV::mfSndLibLoad"]}
+{"address":"007F0870","type":"string","length":13,"value":"\"mfSndTblLoad\"","referenced_from":["0071A5E0 Library::Ourlib::MFWAV::mfSndTblLoad"]}
+{"address":"007F0880","type":"string","length":12,"value":"\"NO SOUND\"","referenced_from":["0071A5E0 Library::Ourlib::MFWAV::mfSndTblLoad"]}
+{"address":"007F088C","type":"string","length":10,"value":"\"mfSarLoad\"","referenced_from":["0071AA10 Library::Ourlib::MFSARR::mfSarLoad"]}
+{"address":"007F0898","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfsarr.cpp\"","referenced_from":["0071AA10 Library::Ourlib::MFSARR::mfSarLoad","0071AB30 Library::Ourlib::MFSARR::mfSarSave","0071AC40 Library::Ourlib::MFSARR::tSArrCat"]}
+{"address":"007F08B0","type":"string","length":10,"value":"\"mfSarSave\"","referenced_from":["0071AB30 Library::Ourlib::MFSARR::mfSarSave"]}
+{"address":"007F08BC","type":"string","length":9,"value":"\"tSArrCat\"","referenced_from":["0071AC40 Library::Ourlib::MFSARR::tSArrCat"]}
+{"address":"007F08C8","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfany.cpp\"","referenced_from":["0071AD00 Library::Ourlib::MFANY::mfAnyLoad","0071ADB0 Library::Ourlib::MFANY::mfAnySave","0071AE80 Library::Ourlib::MFANY::ReadAllFile","0071B010 Library::Ourlib::MFANY::mfAnySaveFile"]}
+{"address":"007F08DC","type":"string","length":10,"value":"\"mfAnyLoad\"","referenced_from":["0071AD00 Library::Ourlib::MFANY::mfAnyLoad"]}
+{"address":"007F08E8","type":"string","length":10,"value":"\"mfAnySave\"","referenced_from":["0071ADB0 Library::Ourlib::MFANY::mfAnySave"]}
+{"address":"007F08F4","type":"string","length":12,"value":"\"ReadAllFile\"","referenced_from":["0071AE80 Library::Ourlib::MFANY::ReadAllFile"]}
+{"address":"007F0900","type":"string","length":14,"value":"\"mfAnySaveFile\"","referenced_from":["0071B010 Library::Ourlib::MFANY::mfAnySaveFile"]}
 {"address":"007F0910","type":"string","length":27,"value":"\"InputClassTy::Create error\"","referenced_from":["0071B220 InputClassTy::Create"]}
-{"address":"007F092C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\Sinput.cpp\"","referenced_from":["0071B220 InputClassTy::Create","0071B520 InputClassTy::Done","0071B630 FUN_0071b630","0071B9C0 InputClassTy::None","0071C1D0 InputClassTy::AddAcc","0071C530 InputClassTy::DelAcc","0071C8C0 InputClassTy::AddToMouse","0071CA50 InputClassTy::GetMessage"]}
+{"address":"007F092C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\Sinput.cpp\"","referenced_from":["0071B220 InputClassTy::Create","0071B520 InputClassTy::Done","0071B630 Library::Ourlib::SINPUT::FUN_0071b630","0071B9C0 InputClassTy::None","0071C1D0 InputClassTy::AddAcc","0071C530 InputClassTy::DelAcc","0071C8C0 InputClassTy::AddToMouse","0071CA50 InputClassTy::GetMessage"]}
 {"address":"007F0944","type":"string","length":19,"value":"\"InputClassTy::Done\"","referenced_from":["0071B520 InputClassTy::Done"]}
 {"address":"007F0958","type":"string","length":25,"value":"\"InputClassTy::None error\"","referenced_from":["0071B9C0 InputClassTy::None"]}
 {"address":"007F0974","type":"string","length":29,"value":"\"InputClassTy::AddAcc Error !\"","referenced_from":["0071C1D0 InputClassTy::AddAcc"]}
@@ -3886,7 +3886,7 @@
 {"address":"007F0AA0","type":"string","length":34,"value":"\"ViewerClassTy::GetMessage error !\"","referenced_from":["0071E8B0 ViewerClassTy::GetMessage"]}
 {"address":"007F0AC4","type":"string","length":32,"value":"\"ListClassTy::GetMessage Error !\"","referenced_from":["0071F3A0 ListClassTy::GetMessage"]}
 {"address":"007F0AE4","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\_slist.cpp\"","referenced_from":["0071F3A0 ListClassTy::GetMessage"]}
-{"address":"007F0B08","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\_sedit.cpp\"","referenced_from":["00720A50 EditorClassTy::_Draw","00721BF0 EditorClassTy::SendToSliders","00721CD0 FUN_00721cd0","00722070 FUN_00722070","00722410 EditorClassTy::GetMessage"]}
+{"address":"007F0B08","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\_sedit.cpp\"","referenced_from":["00720A50 EditorClassTy::_Draw","00721BF0 EditorClassTy::SendToSliders","00721CD0 Library::Ourlib::SEDIT::FUN_00721cd0","00722070 Library::Ourlib::SEDIT::FUN_00722070","00722410 EditorClassTy::GetMessage"]}
 {"address":"007F0B20","type":"string","length":29,"value":"\"EditorClassTy::_Draw Error !\"","referenced_from":["00720A50 EditorClassTy::_Draw"]}
 {"address":"007F0B40","type":"string","length":37,"value":"\"EditorClassTy::SendToSliders error !\"","referenced_from":["00721BF0 EditorClassTy::SendToSliders"]}
 {"address":"007F0B68","type":"string","length":34,"value":"\"EditorClassTy::GetMessage Error !\"","referenced_from":["00722410 EditorClassTy::GetMessage"]}
@@ -3896,25 +3896,25 @@
 {"address":"007F0BD8","type":"string","length":34,"value":"\"SliderClassTy::GetMessage Error !\"","referenced_from":["007244B0 SliderClassTy::GetMessage"]}
 {"address":"007F0BFC","type":"string","length":36,"value":"\"TrackbarClassTy::GetMessage Error !\"","referenced_from":["00725020 TrackbarClassTy::GetMessage"]}
 {"address":"007F0C20","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\_strack.cpp\"","referenced_from":["00725020 TrackbarClassTy::GetMessage"]}
-{"address":"007F0C38","type":"string","length":11,"value":"\"mfPlaPtrTy\"","referenced_from":["00725550 mfPlaPtrTy"]}
-{"address":"007F0C44","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfpla.cpp\"","referenced_from":["00725550 mfPlaPtrTy","007256A0 mfPlaGetClust"]}
-{"address":"007F0C58","type":"string","length":14,"value":"\"mfPlaGetClust\"","referenced_from":["007256A0 mfPlaGetClust"]}
-{"address":"007F0C68","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\St3dpaus.cpp\"","referenced_from":["00725760 FUN_00725760"]}
-{"address":"007F0C80","type":"string","length":11,"value":"\"mfSSprLoad\"","referenced_from":["00725C60 mfSSprLoad"]}
-{"address":"007F0C8C","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfspr.cpp\"","referenced_from":["00725C60 mfSSprLoad","00725E80 mfSSprGetNumFas","00725F50 mfMSprLoad","007262B0 mfMSprGetNumFas","00726390 mfMSprGetNumPl","00726470 mfMSprGetWidth","00726550 mfMSprGetHeigh","00726630 mfUSprLoad","007268C0 mfUSprGetNumFas","007269A0 mfUSprGetSect","00726A80 mfQSprLoad","00726C00 mfQSprGetNumFas"]}
-{"address":"007F0CA0","type":"string","length":16,"value":"\"mfSSprGetNumFas\"","referenced_from":["00725E80 mfSSprGetNumFas"]}
-{"address":"007F0CB0","type":"string","length":12,"value":"\"mfMSprLoad \"","referenced_from":["00725F50 mfMSprLoad"]}
-{"address":"007F0CBC","type":"string","length":17,"value":"\"mfMSprGetNumFas \"","referenced_from":["007262B0 mfMSprGetNumFas"]}
-{"address":"007F0CD0","type":"string","length":15,"value":"\"mfMSprGetNumPl\"","referenced_from":["00726390 mfMSprGetNumPl"]}
-{"address":"007F0CE0","type":"string","length":15,"value":"\"mfMSprGetWidth\"","referenced_from":["00726470 mfMSprGetWidth"]}
-{"address":"007F0CF0","type":"string","length":15,"value":"\"mfMSprGetHeigh\"","referenced_from":["00726550 mfMSprGetHeigh"]}
-{"address":"007F0D00","type":"string","length":11,"value":"\"mfUSprLoad\"","referenced_from":["00726630 mfUSprLoad"]}
-{"address":"007F0D0C","type":"string","length":16,"value":"\"mfUSprGetNumFas\"","referenced_from":["007268C0 mfUSprGetNumFas"]}
-{"address":"007F0D1C","type":"string","length":14,"value":"\"mfUSprGetSect\"","referenced_from":["007269A0 mfUSprGetSect"]}
-{"address":"007F0D2C","type":"string","length":11,"value":"\"mfQSprLoad\"","referenced_from":["00726A80 mfQSprLoad"]}
-{"address":"007F0D38","type":"string","length":16,"value":"\"mfQSprGetNumFas\"","referenced_from":["00726C00 mfQSprGetNumFas"]}
+{"address":"007F0C38","type":"string","length":11,"value":"\"mfPlaPtrTy\"","referenced_from":["00725550 Library::Ourlib::MFPLA::mfPlaPtrTy"]}
+{"address":"007F0C44","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfpla.cpp\"","referenced_from":["00725550 Library::Ourlib::MFPLA::mfPlaPtrTy","007256A0 Library::Ourlib::MFPLA::mfPlaGetClust"]}
+{"address":"007F0C58","type":"string","length":14,"value":"\"mfPlaGetClust\"","referenced_from":["007256A0 Library::Ourlib::MFPLA::mfPlaGetClust"]}
+{"address":"007F0C68","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\St3dpaus.cpp\"","referenced_from":["00725760 Library::Ourlib::ST3DPAUS::FUN_00725760"]}
+{"address":"007F0C80","type":"string","length":11,"value":"\"mfSSprLoad\"","referenced_from":["00725C60 Library::Ourlib::MFSPR::mfSSprLoad"]}
+{"address":"007F0C8C","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfspr.cpp\"","referenced_from":["00725C60 Library::Ourlib::MFSPR::mfSSprLoad","00725E80 Library::Ourlib::MFSPR::mfSSprGetNumFas","00725F50 Library::Ourlib::MFSPR::mfMSprLoad","007262B0 Library::Ourlib::MFSPR::mfMSprGetNumFas","00726390 Library::Ourlib::MFSPR::mfMSprGetNumPl","00726470 Library::Ourlib::MFSPR::mfMSprGetWidth","00726550 Library::Ourlib::MFSPR::mfMSprGetHeigh","00726630 Library::Ourlib::MFSPR::mfUSprLoad","007268C0 Library::Ourlib::MFSPR::mfUSprGetNumFas","007269A0 Library::Ourlib::MFSPR::mfUSprGetSect","00726A80 Library::Ourlib::MFSPR::mfQSprLoad","00726C00 Library::Ourlib::MFSPR::mfQSprGetNumFas"]}
+{"address":"007F0CA0","type":"string","length":16,"value":"\"mfSSprGetNumFas\"","referenced_from":["00725E80 Library::Ourlib::MFSPR::mfSSprGetNumFas"]}
+{"address":"007F0CB0","type":"string","length":12,"value":"\"mfMSprLoad \"","referenced_from":["00725F50 Library::Ourlib::MFSPR::mfMSprLoad"]}
+{"address":"007F0CBC","type":"string","length":17,"value":"\"mfMSprGetNumFas \"","referenced_from":["007262B0 Library::Ourlib::MFSPR::mfMSprGetNumFas"]}
+{"address":"007F0CD0","type":"string","length":15,"value":"\"mfMSprGetNumPl\"","referenced_from":["00726390 Library::Ourlib::MFSPR::mfMSprGetNumPl"]}
+{"address":"007F0CE0","type":"string","length":15,"value":"\"mfMSprGetWidth\"","referenced_from":["00726470 Library::Ourlib::MFSPR::mfMSprGetWidth"]}
+{"address":"007F0CF0","type":"string","length":15,"value":"\"mfMSprGetHeigh\"","referenced_from":["00726550 Library::Ourlib::MFSPR::mfMSprGetHeigh"]}
+{"address":"007F0D00","type":"string","length":11,"value":"\"mfUSprLoad\"","referenced_from":["00726630 Library::Ourlib::MFSPR::mfUSprLoad"]}
+{"address":"007F0D0C","type":"string","length":16,"value":"\"mfUSprGetNumFas\"","referenced_from":["007268C0 Library::Ourlib::MFSPR::mfUSprGetNumFas"]}
+{"address":"007F0D1C","type":"string","length":14,"value":"\"mfUSprGetSect\"","referenced_from":["007269A0 Library::Ourlib::MFSPR::mfUSprGetSect"]}
+{"address":"007F0D2C","type":"string","length":11,"value":"\"mfQSprLoad\"","referenced_from":["00726A80 Library::Ourlib::MFSPR::mfQSprLoad"]}
+{"address":"007F0D38","type":"string","length":16,"value":"\"mfQSprGetNumFas\"","referenced_from":["00726C00 Library::Ourlib::MFSPR::mfQSprGetNumFas"]}
 {"address":"007F1068","type":"string","length":24,"value":"\"E:\\\\ourlib\\\\Drawtexp.cpp\"","referenced_from":[]}
-{"address":"007F1084","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\Ddsprcur.cpp\"","referenced_from":["0072ACA0 FUN_0072aca0"]}
+{"address":"007F1084","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\Ddsprcur.cpp\"","referenced_from":["0072ACA0 Library::Ourlib::DDSPRCUR::FUN_0072aca0"]}
 {"address":"007F109C","type":"string","length":35,"value":"\"ControlClassTy::GetMessage Error !\"","referenced_from":["0072B780 ControlClassTy::GetMessage"]}
 {"address":"007F10C0","type":"string","length":23,"value":"\"E:\\\\Ourlib\\\\Scontrol.cpp\"","referenced_from":["0072B780 ControlClassTy::GetMessage"]}
 {"address":"007F1760","type":"string","length":6,"value":"\" \\t-\\r]\"","referenced_from":["007376E0 Library::MSVCRT::FUN_007376e0"]}

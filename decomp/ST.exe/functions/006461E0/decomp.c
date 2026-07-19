@@ -84,24 +84,24 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           if (local_8->field_0x5c == '\0') {
             if (local_8->field_0061 != 0) {
               FUN_006e9000(DAT_00807598,*(undefined4 *)(*(int *)(local_8->field_0061 + 0x21) + 0xa0)
-                           ,0x5a,0x2f,
-                           (float)(int)local_8->field_0065 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)(int)local_8->field_0069 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)(int)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 +
+                           ,0x5a,0x2f,(float)local_8->field_0065 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)local_8->field_0069 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 +
                            _DAT_007904fc,0);
               this_00->field_0x5c = 1;
               thunk_FUN_006479e0((int)this_00);
               g_currentExceptionFrame = local_54.previous;
               return 0;
             }
-            puVar4 = mfRLoad(DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
-                             (undefined4 *)0x0);
+            puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                               (DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
+                                (undefined4 *)0x0);
             this_00->field_0061 = puVar4;
             if (puVar4 != (ushort *)0x0) {
               FUN_006e9000(DAT_00807598,*(undefined4 *)(*(int *)((int)puVar4 + 0x21) + 0xa0),0x5a,
-                           0x2f,(float)(int)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)(int)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
-                           (float)(int)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 +
+                           0x2f,(float)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 +
                            _DAT_007904fc,0);
               this_00->field_0x5c = 1;
               this_00->field_0061 = 0;

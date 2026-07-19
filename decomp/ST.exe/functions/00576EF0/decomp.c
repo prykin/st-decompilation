@@ -44,12 +44,13 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     FUN_006e8580(DAT_00807598,DAT_008075a8);
     pcVar9 = s_scmask_007cac10;
     pvVar6 = DAT_00806770;
-    DAT_00806724 = mfImtLoad(DAT_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
+    DAT_00806724 = Library::Ourlib::MFIMG::mfImtLoad
+                             (DAT_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff70;
     iVar4 = Library::MSVCRT::__setjmp3(local_8c,0,pvVar6,pcVar9);
     pGVar3 = local_8;
     if (iVar4 == 0) {
-      puVar5 = mfPlaPtrTy(DAT_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
+      puVar5 = Library::Ourlib::MFPLA::mfPlaPtrTy(DAT_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
       pGVar3->field_0431 = puVar5;
     }
     pGVar3->field_042C = DAT_00808784;

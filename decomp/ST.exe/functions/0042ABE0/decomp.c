@@ -96,7 +96,8 @@ STAllPlayersC::GetGObjFromZone2
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,5);
     *param_17 = (int)puVar4;
   }
-  FUN_006ead90(DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+  Library::Ourlib::ST3DSPR::FUN_006ead90
+            (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
   iVar3 = 0;
   if (0 < local_8) {
     local_10 = 0;

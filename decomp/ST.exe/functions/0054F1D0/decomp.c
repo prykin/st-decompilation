@@ -78,7 +78,8 @@ undefined4 * __thiscall STPlaySystemC::PrepareMail(STPlaySystemC *this)
       local_18 = 0;
       if (0 < local_20) {
         do {
-          iVar8 = FUN_00715630(DAT_00811764,-1,&local_14,&local_30,&local_8,(uint *)0x0,-1,0);
+          iVar8 = Library::Ourlib::CONNECT::FUN_00715630
+                            (DAT_00811764,-1,&local_14,&local_30,&local_8,(uint *)0x0,-1,0);
           pSVar21 = local_c;
           if (iVar8 == -0x4d) {
             puVar11 = (undefined4 *)thunk_FUN_00550380(6);
@@ -403,8 +404,9 @@ cf_common_exit_0054F76E:
     FUN_006b6500((int)DAT_00811764,DAT_0080733c);
     *(short *)&pSVar21->field_0x7d = *(short *)&pSVar21->field_0x7d + 1;
   }
-  iVar8 = FUN_00715630(DAT_00811764,0x31,&local_14,(int *)&local_24,&local_8,&local_18,
-                       pSVar21->field_0041,0);
+  iVar8 = Library::Ourlib::CONNECT::FUN_00715630
+                    (DAT_00811764,0x31,&local_14,(int *)&local_24,&local_8,&local_18,
+                     pSVar21->field_0041,0);
   if (pSVar21->field_0075 == 0) {
     if (iVar8 != 1) goto LAB_0054f98b;
   }
@@ -465,13 +467,13 @@ LAB_0054f98b:
       goto cf_common_join_0054FAD8;
     }
     if (iVar8 == 0) {
-      if (60000 < (int)local_2c - pSVar21->field_0083) {
+      if (60000 < (int)((int)local_2c - pSVar21->field_0083)) {
         thunk_FUN_00550380(0xd);
       }
       goto cf_common_join_0054FAD8;
     }
     if (iVar8 != 1) goto cf_common_join_0054FAD8;
-    pSVar21->field_0083 = local_2c;
+    pSVar21->field_0083 = (DWORD)local_2c;
     if (local_14 == 0x31) {
       pSVar21->field_0038 = 0;
     }
@@ -572,8 +574,9 @@ cf_common_join_0054FAD8:
     else {
       iVar8 = 0x31;
     }
-    iVar8 = FUN_00715630(DAT_00811764,iVar8,&local_14,(int *)&local_24,&local_8,&local_18,-1,
-                         (uint)!bVar26);
+    iVar8 = Library::Ourlib::CONNECT::FUN_00715630
+                      (DAT_00811764,iVar8,&local_14,(int *)&local_24,&local_8,&local_18,-1,
+                       (uint)!bVar26);
   } while( true );
 }
 

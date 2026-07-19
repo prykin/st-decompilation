@@ -375,7 +375,8 @@ void __thiscall OptPanelTy::PrepFiles(OptPanelTy *this,uint param_1)
             pbVar15 = pbVar15 + 1;
             pbVar18 = pbVar18 + 1;
           }
-          this_00 = (cMf32 *)FUN_006f0ec0(0x345,&local_10->field_0x6c,0,0,0);
+          this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                       (0x345,&local_10->field_0x6c,0,0,0);
           puVar8 = cMf32::RecGet(this_00,0x80,PTR_s_SAVE_DESC_0079ad04,(int *)&local_1c,0);
           if (puVar8 == (ushort *)0x0) {
             local_8 = 0;

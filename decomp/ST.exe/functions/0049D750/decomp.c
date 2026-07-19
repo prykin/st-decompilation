@@ -40,9 +40,9 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
         FUN_006ae110((byte *)local_14->field_0160);
         this_00->field_0160 = 0;
       }
-      if ((byte *)this_00->field_029F != (byte *)0x0) {
+      if (this_00->field_029F != (uint *)0x0) {
         FUN_006ae110((byte *)this_00->field_029F);
-        this_00->field_029F = 0;
+        this_00->field_029F = (uint *)0x0;
       }
       return 0;
     }
@@ -63,12 +63,12 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       puVar9 = puVar9 + 1;
     }
     local_14->field_0065 = 0;
-    if ((byte *)local_14->field_029F != (byte *)0x0) {
+    if (local_14->field_029F != (uint *)0x0) {
       FUN_006ae110((byte *)local_14->field_029F);
     }
     this_00->field_029B = this_00->field_015C;
-    this_00->field_029F = this_00->field_0160;
-    this_00->field_029F = 0;
+    this_00->field_029F = (uint *)this_00->field_0160;
+    this_00->field_029F = (uint *)0x0;
     if (this_00->field_029B == 0) {
       if ((this_00->field_0160 == 0) ||
          (uVar8 = *(int *)(this_00->field_0160 + 0xc), local_c = uVar8, uVar8 == 0)) {
@@ -88,14 +88,14 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
                                           CONCAT31((int3)((uint)extraout_ECX >> 8),
                                                    this_00->field_0024),local_8,CASE_1),
               piVar4 != (int *)0x0)) && (iVar2 = (**(code **)(*piVar4 + 0x2c))(), iVar2 == 0x33)) {
-            Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_029F,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0(this_00->field_029F,&local_8);
           }
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar8);
       }
       FUN_006ae110((byte *)this_00->field_0160);
       this_00->field_0160 = 0;
-      if (*(int *)(this_00->field_029F + 0xc) == 0) {
+      if (this_00->field_029F[3] == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9c8);
       }
@@ -108,12 +108,12 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9cd);
       }
     }
-    DistributeDock(this_00,1,this_00->field_029F,this_00->field_0029);
+    DistributeDock(this_00,1,(int)this_00->field_029F,this_00->field_0029);
   }
   uVar8 = 0;
   local_10 = 2;
   if (*(uint *)(DAT_00802a38 + 0xe4) % 0x19 == 0) {
-    if ((this_00->field_029F == 0) || (this_00->field_0027 == 0)) {
+    if ((this_00->field_029F == (uint *)0x0) || (this_00->field_0027 == 0)) {
       local_10 = 0;
     }
     else {

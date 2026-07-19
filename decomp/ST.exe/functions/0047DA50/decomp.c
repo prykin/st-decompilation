@@ -125,16 +125,16 @@ LAB_0047ddc3:
             sVar19 = 0;
             bVar20 = 0;
             lVar12 = Library::MSVCRT::__ftol();
-            iVar9 = (int)local_20 + (short)this->field_0045 + local_c + (int)(short)lVar12;
-            iVar10 = (int)(short)this->field_0043 - (int)local_24._2_2_;
-            iVar11 = (int)(short)local_24 + iVar7 + (short)this->field_0041;
+            iVar9 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar12;
+            iVar10 = (int)this->field_0043 - (int)local_24._2_2_;
+            iVar11 = (int)(short)local_24 + iVar7 + this->field_0041;
           }
           else {
-            iVar9 = (int)local_20 + local_c + (short)this->field_0045;
+            iVar9 = (int)local_20 + local_c + this->field_0045;
             local_24._2_2_ = (short)((uint)uVar2 >> 0x10);
-            iVar10 = (int)(short)this->field_0043 - (int)local_24._2_2_;
+            iVar10 = (int)this->field_0043 - (int)local_24._2_2_;
             local_24._0_2_ = (short)uVar2;
-            iVar11 = (int)(short)local_24 + iVar7 + (short)this->field_0041;
+            iVar11 = (int)(short)local_24 + iVar7 + this->field_0041;
           }
           TraksClassTy::TraksCreate
                     (DAT_00802a7c,1,2,7,iVar11,iVar10 + ((uVar5 >> 0x10) % 7 - 3),iVar9,sVar13,

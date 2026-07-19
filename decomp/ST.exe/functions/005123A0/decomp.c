@@ -80,8 +80,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
       FUN_006e56b0((void *)local_8->field_000C,local_8->field_019C);
     }
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0068,0,0x21,0x16,this_00->field_01DC,0,0x21,0x16,0x19c,
-               0x118);
+              ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,0x16,
+               0x19c,0x118);
     local_520[0] = 0;
     local_520[2] = this_00->field_003C + 0x21;
     if (this_00->field_005C == 0) {
@@ -129,7 +129,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_4b8 = local_4f8;
     local_498 = local_4f8;
     local_2cc = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_2c8 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_2c8 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
     local_390 = this_00->field_0008;
     iVar2 = this_00->field_005C;
     local_38c = 2;
@@ -152,7 +152,7 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     }
     local_270[3] = local_270[3] + 0x109;
     local_14c = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_148 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_148 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
     local_e4 = this_00->field_003C + 0x1c3;
     local_208 = 0x8165;
     local_f4 = 3;

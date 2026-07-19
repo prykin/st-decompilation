@@ -22,9 +22,10 @@ void FUN_004a9990(void)
   dVar2 = (double)(_DAT_0080742c * _DAT_00790780 - _DAT_00807455);
   dVar3 = (double)(_DAT_00807428 * _DAT_00790784 - _DAT_00807451);
   dVar4 = (double)(_DAT_0080744d - _DAT_00807428 * _DAT_00790784);
-  FUN_006dd6e0(DAT_00807598,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),
-               (int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),
-               SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
+  Library::Ourlib::STREND::FUN_006dd6e0
+            (DAT_00807598,SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),SUB84(dVar3,0),
+             (int)((ulonglong)dVar3 >> 0x20),SUB84(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),
+             SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
   FUN_006dd530(DAT_00807598,&local_10,&local_c,&local_8);
   FUN_006dd790(DAT_00807598,
                ((local_8 - _DAT_0079077c) * (float)_DAT_00790770 - _DAT_0080742c * _DAT_00790784) -

@@ -28,17 +28,18 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   pSVar2 = local_c;
   if (errorCode == 0) {
     if (local_c->field_033A == -1) {
-      puVar3 = mfRLoad(DAT_00806774,CASE_1D,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
-                       (undefined4 *)0x0);
+      puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806774,CASE_1D,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
+                          (undefined4 *)0x0);
       FUN_006e8660((void *)pSVar2->field_0211,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
       FUN_006e98e0((void *)pSVar2->field_0211,local_8,0,*(undefined4 *)puVar3,
                    *(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270((void *)pSVar2->field_0211,local_8,0,pSVar2->field_033E);
       FUN_006ea960((void *)pSVar2->field_0211,local_8,
-                   (float)(int)pSVar2->field_0266 * _DAT_007904f8 * _DAT_007904f0,
-                   (float)(int)pSVar2->field_026A * _DAT_007904f8 * _DAT_007904f0,
-                   (float)(int)pSVar2->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                   (float)pSVar2->field_0266 * _DAT_007904f8 * _DAT_007904f0,
+                   (float)pSVar2->field_026A * _DAT_007904f8 * _DAT_007904f0,
+                   (float)pSVar2->field_026E * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
       FUN_006eaaa0((void *)pSVar2->field_0211,local_8,0);
       FUN_006eab60((void *)pSVar2->field_0211,local_8);
       pSVar2->field_0346 = 0;
@@ -46,8 +47,9 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
       pSVar2->field_0342 = *(undefined4 *)puVar3;
     }
     if ((pSVar2->field_0353 == -1) && (param_1 != 0)) {
-      puVar3 = mfRLoad(DAT_00806774,CASE_1D,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
-                       (undefined4 *)0x0);
+      puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806774,CASE_1D,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
+                          (undefined4 *)0x0);
       pSVar2->field_034B = puVar3;
       pSVar2->field_034F = 0;
     }

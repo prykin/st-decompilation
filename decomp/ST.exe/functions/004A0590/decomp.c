@@ -7,7 +7,7 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
 
 {
   undefined1 *puVar1;
-  undefined2 *puVar2;
+  short *psVar2;
   code *pcVar3;
   STGroupBoatC *pSVar4;
   int iVar5;
@@ -58,23 +58,22 @@ undefined4 __thiscall STGroupBoatC::Scout(STGroupBoatC *this,int param_1)
         puVar11 = puVar11 + 1;
       }
       local_18->field_0065 = 0;
-      puVar2 = &local_18->field_0302;
+      psVar2 = &local_18->field_0302;
       local_18->field_02FA = local_18->field_01C1;
       *(undefined2 *)&local_18->field_0x2fc = local_18->field_01C3;
       *(undefined2 *)&local_18->field_0x2f8 = *(undefined2 *)&local_18->field_0x1bf;
-      thunk_FUN_0049a500(local_18,&local_18->field_02FE,(undefined2 *)puVar1,puVar2);
+      thunk_FUN_0049a500(local_18,&local_18->field_02FE,(undefined2 *)puVar1,psVar2);
       local_10 = Way3DGrpGetDistrPoint
-                           (pSVar4,pSVar4->field_0029,(int)(short)pSVar4->field_02FE,
-                            (int)*(short *)puVar1,(int)(short)*puVar2,
-                            (int)*(short *)&pSVar4->field_0x2f8,(int)(short)pSVar4->field_02FA,
-                            (int)*(short *)&pSVar4->field_0x2fc);
+                           (pSVar4,pSVar4->field_0029,(int)pSVar4->field_02FE,(int)*(short *)puVar1,
+                            (int)*psVar2,(int)*(short *)&pSVar4->field_0x2f8,(int)pSVar4->field_02FA
+                            ,(int)*(short *)&pSVar4->field_0x2fc);
       if (local_10 == (uint *)0x0) {
         return 0;
       }
       puVar6 = Way3DGrpGetDistrPoint
                          (pSVar4,pSVar4->field_0029,(int)*(short *)&pSVar4->field_0x2f8,
-                          (int)(short)pSVar4->field_02FA,(int)*(short *)&pSVar4->field_0x2fc,
-                          (int)(short)pSVar4->field_02FE,(int)*(short *)puVar1,(int)(short)*puVar2);
+                          (int)pSVar4->field_02FA,(int)*(short *)&pSVar4->field_0x2fc,
+                          (int)pSVar4->field_02FE,(int)*(short *)puVar1,(int)*psVar2);
       local_1c = puVar6;
       if (puVar6 == (uint *)0x0) {
         FUN_006ae110((byte *)local_10);

@@ -47,7 +47,8 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
         bVar9 = 0;
         uVar8 = 0xffffffff;
         pbVar6 = (byte *)thunk_FUN_00571240(s_BKG_AMOUNTRC_007c874c,0);
-        puVar7 = mfRLoad(DAT_00806794,CASE_1,pbVar6,uVar8,bVar9,iVar10,iVar11,puVar12);
+        puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806794,CASE_1,pbVar6,uVar8,bVar9,iVar10,iVar11,puVar12);
         DibPut((undefined4 *)pTVar4->field_0068,iVar5 + -3,0x45,'\x01',(byte *)puVar7);
         bVar9 = pTVar4->field_01D0;
         uVar2 = *(ushort *)((int)&pTVar4->field_01AB + (local_8 + (uint)bVar9 * 2) * 4 + 2);

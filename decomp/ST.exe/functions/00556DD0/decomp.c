@@ -156,7 +156,7 @@ undefined4 __thiscall TraksClassTy::TraksCreateCollection(TraksClassTy *this,int
       iVar4 = 1;
       cVar11 = '\x1d';
       pcVar6 = thunk_FUN_00555840(*param_1);
-      local_38 = mfTSprGetNumFas(iVar3,pcVar6,cVar11,iVar4);
+      local_38 = Library::Ourlib::MFTSPR::mfTSprGetNumFas(iVar3,pcVar6,cVar11,iVar4);
       if (param_1[3] < 0) {
         iVar3 = FUN_006acf0d(0,0,0,(param_1[0x13] * local_38) / 10 +
                                    (param_1[0x16] * local_38 * local_38) / 0x14 + param_1[0x10],

@@ -36,7 +36,7 @@ LAB_0042a7e7:
   }
   FUN_006ae110((byte *)puVar2);
   thunk_FUN_00575460((int *)*param_1);
-  mfTMapErase(param_1);
+  Library::Ourlib::MFSTMAP::mfTMapErase(param_1);
   return;
 }
 

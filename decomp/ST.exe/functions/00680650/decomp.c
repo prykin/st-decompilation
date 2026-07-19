@@ -8,7 +8,7 @@ undefined4 * __cdecl FUN_00680650(byte *param_1,undefined4 param_2)
   byte *pbVar4;
   CHAR local_404 [1024];
   
-  puVar2 = FUN_006f0ec0(0x345,param_1,1,param_2,0);
+  puVar2 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,param_1,1,param_2,0);
   pbVar1 = (byte *)((int)puVar2 + 0x231);
   pbVar4 = pbVar1;
   pCVar3 = (LPCSTR)FUN_006b0140(7000,DAT_00807618);

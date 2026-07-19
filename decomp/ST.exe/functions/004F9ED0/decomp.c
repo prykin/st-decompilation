@@ -92,7 +92,8 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
               bVar10 = 0;
               uVar9 = 6;
               pbVar4 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
-              puVar5 = mfRLoad(DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+              puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                                 (DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
               puVar8[-3] = puVar5;
               puVar7[-2] = 0;
               *puVar7 = 4;
@@ -113,7 +114,8 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
                 bVar10 = 0;
                 uVar9 = 6;
                 pbVar4 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
-                puVar5 = mfRLoad(DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+                puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                                   (DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
                 puVar8[-0x12] = puVar5;
                 puVar7[-0xc] = 0;
                 *puVar7 = 4;

@@ -32,7 +32,8 @@ ushort * FUN_005f1700(int param_1,int param_2,int param_3,int param_4,int param_
     g_currentExceptionFrame = local_5c.previous;
     return local_10;
   }
-  puVar2 = mfRLoad(DAT_00806774,CASE_1D,local_c,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806774,CASE_1D,local_c,0xffffffff,0,1,0,(undefined4 *)0x0);
   if (param_3 != 0) {
     g_currentExceptionFrame = local_5c.previous;
     return puVar2;

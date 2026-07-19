@@ -215,33 +215,44 @@ LAB_00510fa9:
   bVar22 = 0;
   uVar15 = 0xffffffff;
   pbVar9 = (byte *)thunk_FUN_00571240(s_HLPTRACK_007c38e0,0);
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,pbVar9,uVar15,bVar22,iVar3,iVar24,puVar12);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,pbVar9,uVar15,bVar22,iVar3,iVar24,puVar12);
   this_00->field_0220 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BKG_HLPTTREE_007c38d0,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_BKG_HLPTTREE_007c38d0,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_0224 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0230 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0234 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_HLP_UPG_007c38bc,0xffffffff,0,1,0,(undefined4 *)0x0
-                  );
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_HLP_UPG_007c38bc,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_0228 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_HLP_UPGD_007c38b0,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_HLP_UPGD_007c38b0,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_022C = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0238 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_HLP_FRAME_007c38a4,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_HLP_FRAME_007c38a4,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_0248 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BOATS_R_007c206c,0xffffffff,0,1,0,(undefined4 *)0x0
-                  );
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_BOATS_R_007c206c,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_023C = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0240 = puVar7;
-  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_INF_WEAP_007c20bc,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_INF_WEAP_007c20bc,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   pcVar8 = this_00->field_01E4;
   this_00->field_0244 = puVar7;
   if (pcVar8->field_00A0 != 0) {
@@ -249,16 +260,15 @@ LAB_00510fa9:
   }
   iVar3 = *(int *)&pcVar8->field_0x8a;
   iVar24 = 1;
-  puVar12 = (undefined4 *)(this_00->field_01DC + 0x28);
-  uVar15 = FUN_006b4fe0(this_00->field_01DC);
-  uVar10 = FUN_006b50c0(0x19c,iVar3 + 1,(uint)*(ushort *)(this_00->field_01DC + 0xe),uVar15,puVar12,
+  puVar7 = this_00->field_01DC + 0x14;
+  uVar15 = FUN_006b4fe0((int)this_00->field_01DC);
+  uVar10 = FUN_006b50c0(0x19c,iVar3 + 1,(uint)this_00->field_01DC[7],uVar15,(undefined4 *)puVar7,
                         iVar24);
   this_00->field_01EC = uVar10;
   iVar3 = 1;
-  puVar12 = (undefined4 *)(this_00->field_01DC + 0x28);
-  uVar15 = FUN_006b4fe0(this_00->field_01DC);
-  uVar10 = FUN_006b50c0(0x19c,600,(uint)*(ushort *)(this_00->field_01DC + 0xe),uVar15,puVar12,iVar3)
-  ;
+  puVar7 = this_00->field_01DC + 0x14;
+  uVar15 = FUN_006b4fe0((int)this_00->field_01DC);
+  uVar10 = FUN_006b50c0(0x19c,600,(uint)this_00->field_01DC[7],uVar15,(undefined4 *)puVar7,iVar3);
   this_00->field_0218 = uVar10;
   iVar3 = this_00->field_0068;
   uVar15 = *(uint *)(iVar3 + 0x14);

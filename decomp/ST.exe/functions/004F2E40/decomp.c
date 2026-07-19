@@ -89,7 +89,7 @@ CPanelTy::SetButStruct
     if (param_11 != (char *)0x0) {
       uVar5 = FUN_0070aa70(DAT_00806790,param_11,0,1);
       param_1[0x49] = uVar5;
-      iVar4 = mfImgGetWidth(DAT_00806790,0x12,param_11,1);
+      iVar4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_11,1);
       param_1[0x4a] = iVar4;
     }
     g_currentExceptionFrame = local_50.previous;

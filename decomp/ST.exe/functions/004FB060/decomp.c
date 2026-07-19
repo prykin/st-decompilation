@@ -1184,7 +1184,8 @@ LAB_004fbaa0:
               bVar15 = 0;
               uVar8 = 6;
               pbVar6 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
-              puVar7 = mfRLoad(DAT_00806794,CASE_1F,pbVar6,uVar8,bVar15,iVar5,iVar10,puVar26);
+              puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                                 (DAT_00806794,CASE_1F,pbVar6,uVar8,bVar15,iVar5,iVar10,puVar26);
               puVar21[-3] = puVar7;
               puVar17[-2] = (char)*puVar7;
               *puVar17 = 3;
@@ -1205,7 +1206,8 @@ LAB_004fbaa0:
                 bVar15 = 0;
                 uVar8 = 6;
                 pbVar6 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
-                puVar7 = mfRLoad(DAT_00806794,CASE_1F,pbVar6,uVar8,bVar15,iVar5,iVar10,puVar26);
+                puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                                   (DAT_00806794,CASE_1F,pbVar6,uVar8,bVar15,iVar5,iVar10,puVar26);
                 puVar21[-0x12] = puVar7;
                 puVar17[-0xc] = (char)*puVar7;
                 *puVar17 = 3;

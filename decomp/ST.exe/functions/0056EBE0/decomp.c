@@ -58,10 +58,10 @@ void __fastcall FUN_0056ebe0(int param_1)
       pcVar9 = pcVar9 + 1;
       pcVar11 = pcVar11 + 1;
     }
-    puVar2 = mfSarLoad(DAT_0080675c,(char *)(iVar8 + 0x70),0);
+    puVar2 = Library::Ourlib::MFSARR::mfSarLoad(DAT_0080675c,(char *)(iVar8 + 0x70),0);
     *(uint **)(param_1 + 0x4eab) = puVar2;
   }
-  puVar2 = mfSarLoad(DAT_0080675c,PTR_s_DESCRIPTION_0079b074,0);
+  puVar2 = Library::Ourlib::MFSARR::mfSarLoad(DAT_0080675c,PTR_s_DESCRIPTION_0079b074,0);
   *(uint **)(param_1 + 0x4ea7) = puVar2;
   if (puVar2 == (uint *)0x0) {
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);

@@ -13,19 +13,20 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
   CursorClassTy *pCVar5;
   PrividerTy *this_00;
   undefined1 uVar6;
-  undefined4 uVar7;
+  DWORD DVar7;
   int iVar8;
   undefined3 extraout_var;
   HoloTy *pHVar9;
   undefined3 extraout_var_00;
-  int iVar10;
-  MMsgTy *pMVar11;
+  undefined4 uVar10;
+  int iVar11;
+  MMsgTy *pMVar12;
   undefined4 unaff_ESI;
   undefined4 *unaff_EDI;
-  undefined4 *puVar12;
-  uint uVar13;
-  char cVar14;
-  uint uVar15;
+  undefined4 *puVar13;
+  uint uVar14;
+  char cVar15;
+  uint uVar16;
   InternalExceptionFrame local_8c;
   undefined4 local_48;
   undefined4 local_2c;
@@ -40,51 +41,51 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
   uint local_8;
   
   local_c = this;
-  uVar7 = FUN_006e51b0(this->field_0010);
-  this->field_0061 = uVar7;
+  DVar7 = FUN_006e51b0(this->field_0010);
+  this->field_0061 = DVar7;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   iVar8 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar8 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar10 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x34c,0,iVar8,
+    iVar11 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x34c,0,iVar8,
                                 &DAT_007a4ccc,s_PrividerTy__GetMessage_007ccea4);
-    if (iVar10 != 0) {
+    if (iVar11 != 0) {
       pcVar4 = (code *)swi(3);
-      uVar7 = (*pcVar4)();
-      return uVar7;
+      uVar10 = (*pcVar4)();
+      return uVar10;
     }
     RaiseInternalException(iVar8,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x34c);
     return 0xffff;
   }
   thunk_FUN_005b6450(local_c,param_1);
-  uVar13 = *(uint *)(param_1 + 0x10);
-  if (uVar13 < 0x6941) {
-    if (uVar13 == 0x6940) {
+  uVar14 = *(uint *)(param_1 + 0x10);
+  if (uVar14 < 0x6941) {
+    if (uVar14 == 0x6940) {
       thunk_FUN_005bba40((int)this_00);
       goto cf_common_exit_005BCF7F;
     }
-    if (uVar13 < 0x6120) {
-      if (uVar13 != 0x611f) {
-        if (uVar13 < 6) {
-          if (uVar13 == 5) {
+    if (uVar14 < 0x6120) {
+      if (uVar14 != 0x611f) {
+        if (uVar14 < 6) {
+          if (uVar14 == 5) {
             PaintPrivider(this_00,'\0');
           }
-          else if (uVar13 == 0) {
+          else if (uVar14 == 0) {
             NonePrivider(this_00,unaff_EDI);
           }
-          else if (uVar13 == 2) {
+          else if (uVar14 == 2) {
             InitPrivider(this_00,*(char *)(*(int *)(param_1 + 0x14) + 0x14),
                          *(char *)(*(int *)(param_1 + 0x14) + 0x18));
           }
-          else if (uVar13 == 3) {
+          else if (uVar14 == 3) {
             DonePrivider(this_00);
           }
           goto cf_common_exit_005BCF7F;
         }
-        if (uVar13 != 0x6109) {
-          if (uVar13 == 0x610a) {
+        if (uVar14 != 0x6109) {
+          if (uVar14 == 0x610a) {
             this_00->field_0045 = 0x200;
             this_00->field_0049 = 0;
             this_00->field_004D = 0x610a;
@@ -95,9 +96,9 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
       }
     }
     else {
-      if (0x6501 < uVar13) {
-        if (uVar13 != 0x6502) {
-          if (uVar13 == 0x693f) {
+      if (0x6501 < uVar14) {
+        if (uVar14 != 0x6502) {
+          if (uVar14 == 0x693f) {
             thunk_FUN_005bb9f0((int)this_00);
           }
           goto cf_common_exit_005BCF7F;
@@ -126,9 +127,9 @@ LAB_005bccb9:
         (*this_00->vtable->GetMessage)(this_00,(int)&this_00->field_0x3d);
         goto cf_common_exit_005BCF7F;
       }
-      if (uVar13 == 0x6501) goto switchD_005bc9da_caseD_6949;
-      if (uVar13 != 0x6121) {
-        if (uVar13 == 0x631f) {
+      if (uVar14 == 0x6501) goto switchD_005bc9da_caseD_6949;
+      if (uVar14 != 0x6121) {
+        if (uVar14 == 0x631f) {
           FUN_006b4170(this_00->field_1C8E,0,3,0x16,0x22c,0x16,0xff);
           ccFntTy::SetSurf(*(ccFntTy **)((int)DAT_0081176c + 0x30),this_00->field_1C8E,0,5,0x16,
                            0x226,0x16);
@@ -141,7 +142,7 @@ LAB_005bccb9:
           }
           FUN_006b35d0(DAT_008075a8,this_00->field_1C8A);
         }
-        else if (uVar13 == 0x64ff) {
+        else if (uVar14 == 0x64ff) {
           this_00->field_1A71 = 0;
           iVar8 = thunk_FUN_005daa90();
           if (iVar8 == 0) {
@@ -150,8 +151,8 @@ LAB_005bccb9:
             this_00->field_002D = 0x20;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             this_00->field_002D = 0x28;
-            uVar13 = *(uint *)(*(int *)((int)DAT_0081176c + 0x68e) + 4);
-            this_00->field_0031 = uVar13 & ((int)uVar13 < 0) - 1;
+            uVar14 = *(uint *)(*(int *)((int)DAT_0081176c + 0x68e) + 4);
+            this_00->field_0031 = uVar14 & ((int)uVar14 < 0) - 1;
             FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
             if (0 < *(int *)(*(int *)((int)DAT_0081176c + 0x68e) + 4)) {
               this_00->field_002D = 0x20;
@@ -160,12 +161,12 @@ LAB_005bccb9:
             }
             pSVar2 = this_00->field_1A5B;
             if (pSVar2->field_02E6 != (MMsgTy *)0x0) {
-              puVar12 = &local_48;
+              puVar13 = &local_48;
               for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
-                *puVar12 = 0;
-                puVar12 = puVar12 + 1;
+                *puVar13 = 0;
+                puVar13 = puVar13 + 1;
               }
-              *(undefined2 *)puVar12 = 0;
+              *(undefined2 *)puVar13 = 0;
               local_48._2_2_ = ((*(int *)(*(int *)((int)DAT_0081176c + 0x68e) + 4) < 1) - 1 & 2) - 1
               ;
               MMsgTy::StatePanel(pSVar2->field_02E6,(int)&local_48);
@@ -184,8 +185,8 @@ LAB_005bccb9:
     thunk_FUN_005b66e0(this_00);
     goto cf_common_exit_005BCF7F;
   }
-  if (0x8160 < uVar13) {
-    switch(uVar13) {
+  if (0x8160 < uVar14) {
+    switch(uVar14) {
     case 0x8161:
       FUN_006b4170(this_00->field_1C82,0,0,(uint)*(ushort *)(param_1 + 0x1a),
                    *(int *)(this_00->field_1C82 + 4),0x13,0);
@@ -208,9 +209,9 @@ LAB_005bccb9:
                  0x7a,*(ushort *)(param_1 + 0x1a) + 0x67);
       break;
     case 0x8163:
-      uVar7 = *(undefined4 *)(param_1 + 0x14);
+      uVar10 = *(undefined4 *)(param_1 + 0x14);
       this_00->field_1A71 = 0;
-      this_00->field_1A61 = uVar7;
+      this_00->field_1A61 = uVar10;
       break;
     case 0x8164:
       MMMObjTy::PaintSlBut((MMMObjTy *)this_00,(int)&this_00->field_1A77,param_1,0);
@@ -219,21 +220,21 @@ LAB_005bccb9:
       MMMObjTy::PaintSlBut((MMMObjTy *)this_00,(int)&this_00->field_1B08,param_1,0);
       break;
     case 0x8166:
-      uVar13 = *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
-      this_00->field_1BB9 = uVar13;
+      uVar14 = *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
+      this_00->field_1BB9 = uVar14;
       if (this_00->field_1B9D != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
                   ((uint *)this_00->field_1BE1,this_00->field_1B9D,this_00->field_1BA1,
-                   this_00->field_1BB5,uVar13);
+                   this_00->field_1BB5,uVar14);
       }
     }
     goto cf_common_exit_005BCF7F;
   }
-  if (uVar13 == 0x8160) {
+  if (uVar14 == 0x8160) {
     *(undefined4 *)(param_1 + 0x18) = 0x13;
     goto cf_common_exit_005BCF7F;
   }
-  switch(uVar13) {
+  switch(uVar14) {
   case 0x6942:
     this_00->field_0045 = 0x200;
     this_00->field_0049 = 0;
@@ -245,7 +246,7 @@ LAB_005bccb9:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x6942,*(undefined4 *)(param_1 + 0x14),0);
     CloseButtons(this_00,'\x01');
-    pMVar11 = this_00->field_1A5B->field_02E6;
+    pMVar12 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x6949:
 switchD_005bc9da_caseD_6949:
@@ -254,16 +255,16 @@ switchD_005bc9da_caseD_6949:
     iVar8 = thunk_FUN_005da980(this_00->field_1A61);
     if (iVar8 != 0) break;
     if (*(int *)(this_00->field_1C92 + 8) < 1) {
-      uVar7 = 0;
+      uVar10 = 0;
     }
     else {
-      uVar7 = **(undefined4 **)(this_00->field_1C92 + 0x14);
+      uVar10 = **(undefined4 **)(this_00->field_1C92 + 0x14);
     }
-    iVar8 = thunk_FUN_005dab70(0,uVar7);
+    iVar8 = thunk_FUN_005dab70(0,uVar10);
     if (iVar8 != 0) {
-      pMVar11 = this_00->field_1A5B->field_02E6;
-      if (pMVar11 != (MMsgTy *)0x0) {
-        MMsgTy::SetMessage(pMVar11,0x2134,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0
+      pMVar12 = this_00->field_1A5B->field_02E6;
+      if (pMVar12 != (MMsgTy *)0x0) {
+        MMsgTy::SetMessage(pMVar12,0x2134,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0
                            ,0,0);
       }
       break;
@@ -271,7 +272,7 @@ switchD_005bc9da_caseD_6949:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x611f,(-(uint)(*(int *)(param_1 + 0x10) != 0x6501) & 8) + 4,0x11);
     CloseButtons(this_00,'\x01');
-    pMVar11 = this_00->field_1A5B->field_02E6;
+    pMVar12 = this_00->field_1A5B->field_02E6;
     goto cf_common_exit_005BCD75;
   case 0x694e:
     iVar8 = thunk_FUN_005dab70(this_00->field_1A61,&DAT_008016a0);
@@ -281,11 +282,11 @@ switchD_005bc9da_caseD_6949:
       this_00->field_1A6D = 0;
       pCVar5 = DAT_00802a30;
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar7 = DAT_00802a30->field_00C9;
+        uVar10 = DAT_00802a30->field_00C9;
         uVar3 = DAT_00802a30->field_00C5;
         DAT_00802a30->field_0493 = 5;
         pCVar5->field_0494 = 0xffff;
-        CursorClassTy::SetGCType(pCVar5,CASE_0,uVar3,uVar7);
+        CursorClassTy::SetGCType(pCVar5,CASE_0,uVar3,uVar10);
         CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
         pCVar5->field_0xd2 = 0;
         *(undefined4 *)&pCVar5->field_0x4df = 0xffffffff;
@@ -296,10 +297,10 @@ switchD_005bc9da_caseD_6949:
     DAT_0080877e = 1;
     thunk_FUN_005b6350(this_00,0x610a,0,0);
     CloseButtons(this_00,'\x01');
-    pMVar11 = this_00->field_1A5B->field_02E6;
+    pMVar12 = this_00->field_1A5B->field_02E6;
 cf_common_exit_005BCD75:
-    if (pMVar11 != (MMsgTy *)0x0) {
-      MMsgTy::HidePanel(pMVar11,1,0,1);
+    if (pMVar12 != (MMsgTy *)0x0) {
+      MMsgTy::HidePanel(pMVar12,1,0,1);
     }
     break;
   case 0x6952:
@@ -307,11 +308,11 @@ cf_common_exit_005BCD75:
     pCVar5 = DAT_00802a30;
     DAT_0080877e = 1;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar7 = DAT_00802a30->field_00C9;
+      uVar10 = DAT_00802a30->field_00C9;
       uVar3 = DAT_00802a30->field_00C5;
       DAT_00802a30->field_0493 = 1;
       pCVar5->field_0494 = 0xffff;
-      CursorClassTy::SetGCType(pCVar5,CASE_0,uVar3,uVar7);
+      CursorClassTy::SetGCType(pCVar5,CASE_0,uVar3,uVar10);
       CursorClassTy::DrawSprite(pCVar5,pCVar5->field_00C5,pCVar5->field_00C9);
       pCVar5->field_0xd2 = 0;
       *(undefined4 *)&pCVar5->field_0x4df = 0xffffffff;
@@ -319,9 +320,9 @@ cf_common_exit_005BCD75:
     if (this_00->field_1A5F == '\0') {
       thunk_FUN_005b6350(this_00,0x6942,*(undefined4 *)(param_1 + 0x14),0);
       CloseButtons(this_00,'\x01');
-      pMVar11 = this_00->field_1A5B->field_02E6;
-      if (pMVar11 != (MMsgTy *)0x0) {
-        MMsgTy::HidePanel(pMVar11,1,0,1);
+      pMVar12 = this_00->field_1A5B->field_02E6;
+      if (pMVar12 != (MMsgTy *)0x0) {
+        MMsgTy::HidePanel(pMVar12,1,0,1);
       }
     }
     else {
@@ -362,20 +363,20 @@ cf_common_exit_005BCD75:
       }
       this_00->field_1C9A = pHVar9;
       if (pHVar9 != (HoloTy *)0x0) {
-        uVar15 = 0;
-        cVar14 = '\x01';
-        uVar13 = 0x10;
-        iVar10 = 1;
+        uVar16 = 0;
+        cVar15 = '\x01';
+        uVar14 = 0x10;
+        iVar11 = 1;
         iVar8 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x79,0x197,0x22e,0x2e);
-        uVar13 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar8,iVar10,uVar13,cVar14,
-                              uVar15);
-        if (uVar13 != 0) {
+        uVar14 = HoloTy::Init(this_00->field_1C9A,CASE_1,0x79,0x197,iVar8,iVar11,uVar14,cVar15,
+                              uVar16);
+        if (uVar14 != 0) {
           pHVar9 = this_00->field_1C9A;
           pHVar9->field_0002 = 1;
           pHVar9->field_0017 = pHVar9->field_0013;
-          uVar13 = this_00->field_1C9A->field_0003;
-          if (-1 < (int)uVar13) {
-            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar13);
+          uVar14 = this_00->field_1C9A->field_0003;
+          if (-1 < (int)uVar14) {
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar14);
           }
           FUN_006b3af0(DAT_008075a8,this_00->field_1C8A);
         }
@@ -387,7 +388,7 @@ cf_common_exit_005BCD75:
   }
 cf_common_exit_005BCF7F:
   g_currentExceptionFrame = local_8c.previous;
-  uVar7 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
-  return uVar7;
+  uVar10 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
+  return uVar10;
 }
 

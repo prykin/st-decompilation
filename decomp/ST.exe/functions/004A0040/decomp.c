@@ -90,7 +90,7 @@ undefined4 __thiscall STGroupBoatC::GrpDismant(STGroupBoatC *this,int param_1)
                       * 8);
     }
     if (((iVar7 == 0) || (*(int *)(iVar7 + 0x20) != 1000)) ||
-       ((*(int *)(iVar7 + 0x24) != (int)(char)pSVar5->field_0024 ||
+       ((*(int *)(iVar7 + 0x24) != (int)pSVar5->field_0024 ||
         (iVar8 = thunk_FUN_004b9d90(iVar7), iVar8 == 0)))) {
       RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xccc)
       ;

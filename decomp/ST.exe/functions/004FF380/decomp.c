@@ -157,13 +157,13 @@ void __thiscall CPanelTy::Update1Panel(CPanelTy *this)
     uVar6 = FUN_006b5a50(local_16,this_00->field_0B95);
     if (uVar6 != 0) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0184,0,0,0,this_00->field_0958,0,0,0,
-                 *(int *)(this_00->field_0958 + 4),0x3c);
+                ((undefined4 *)this_00->field_0184,0,0,0,(int)this_00->field_0958,0,0,0,
+                 *(int *)(this_00->field_0958 + 2),0x3c);
       uVar19 = *(undefined4 *)(this_00->field_0B95 + 0xc);
       uVar7 = FUN_006b0140(0x36b9,DAT_00807618);
       wsprintfA(*(LPSTR *)&this_00->field_0x213,s__1_s_0_d_007c245c,uVar7,uVar19);
       ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0184,0,2,0xf,
-                       *(int *)(this_00->field_0958 + 4) + -4,0x2d);
+                       *(int *)(this_00->field_0958 + 2) + -4,0x2d);
       ccFntTy::WrTxt(this_00->field_01B8,*(uint **)&this_00->field_0x213,-2,-1,0,-1,-1);
       if (-1 < (int)this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
@@ -243,7 +243,7 @@ LAB_004ff723:
     }
     else {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0184,0,1,0,this_00->field_0958,0,1,0,0x4e,0x20);
+                ((undefined4 *)this_00->field_0184,0,1,0,(int)this_00->field_0958,0,1,0,0x4e,0x20);
       PaintName(this_00,1);
       if (-1 < (int)this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
@@ -273,7 +273,7 @@ LAB_004ff875:
 LAB_004ff87a:
   if (iVar5 != 0) {
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0184,0,1,0,this_00->field_0958,0,1,0,0x4e,0x20);
+              ((undefined4 *)this_00->field_0184,0,1,0,(int)this_00->field_0958,0,1,0,0x4e,0x20);
     PaintName(this_00,1);
     if (-1 < (int)this_00->field_014C) {
       Library::DKW::DDX::FUN_006b3640
@@ -283,7 +283,8 @@ LAB_004ff87a:
   }
   if (local_2d != this_00->field_0B7E) {
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0184,0,1,0x1f,this_00->field_0958,0,1,0x1f,0x4e,0x11);
+              ((undefined4 *)this_00->field_0184,0,1,0x1f,(int)this_00->field_0958,0,1,0x1f,0x4e,
+               0x11);
     PaintLife(this_00,1);
     if (-1 < (int)this_00->field_014C) {
       Library::DKW::DDX::FUN_006b3640
@@ -299,7 +300,8 @@ LAB_004ff87a:
   if (((iVar5 == 7) || (iVar5 == 0x13)) || (iVar5 == 0x1b)) {
     if (this_00->field_0B81 != local_2a) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0184,0,1,0x2f,this_00->field_0958,0,1,0x2f,0x4e,0x24);
+                ((undefined4 *)this_00->field_0184,0,1,0x2f,(int)this_00->field_0958,0,1,0x2f,0x4e,
+                 0x24);
       if (-1 < (int)this_00->field_014C) {
         Library::DKW::DDX::FUN_006b3640
                   (DAT_008075a8,this_00->field_014C,0xffffffff,this_00->field_0040,
@@ -335,8 +337,8 @@ LAB_004ff87a:
     }
     uVar6 = local_8 & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0184,0,0x3c,0x52 - uVar6,this_00->field_028A,0,iVar5,
-               *(int *)(this_00->field_028A + 8) - uVar6,5,uVar6);
+              ((undefined4 *)this_00->field_0184,0,0x3c,0x52 - uVar6,(int)this_00->field_028A,0,
+               iVar5,*(int *)(this_00->field_028A + 4) - uVar6,5,uVar6);
     uVar6 = this_00->field_014C;
   }
   else {
@@ -347,7 +349,8 @@ LAB_004ff87a:
          (local_24 == *(short *)&this_00->field_0xb87)))) &&
        (local_20 == *(short *)&this_00->field_0xb8b)) goto cf_common_exit_004FFB91;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0184,0,1,0x2f,this_00->field_0958,0,1,0x2f,0x4e,0x24);
+              ((undefined4 *)this_00->field_0184,0,1,0x2f,(int)this_00->field_0958,0,1,0x2f,0x4e,
+               0x24);
     PaintWeap(this_00,1);
     uVar6 = this_00->field_014C;
   }

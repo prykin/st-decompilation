@@ -6,7 +6,7 @@ void __fastcall FUN_00694b90(int param_1)
     FUN_006f07e0((int *)(param_1 + 8));
   }
   if (*(int *)(param_1 + 0xc) != 0) {
-    mfTMapErase((int *)(param_1 + 0xc));
+    Library::Ourlib::MFSTMAP::mfTMapErase((int *)(param_1 + 0xc));
   }
   *(int *)(param_1 + 8) = 0;
   *(int *)(param_1 + 0xc) = 0;

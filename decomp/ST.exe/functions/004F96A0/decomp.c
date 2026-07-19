@@ -141,11 +141,11 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                 pcVar7 = (char *)thunk_FUN_005260b0(*(int *)(puVar13 + 5),puVar13[9],0);
                 uVar9 = DAT_00806790;
 LAB_004f9a8a:
-                psVar8 = mfQmtLoad(uVar9,pcVar7,bVar15,bVar14,iVar4);
+                psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(uVar9,pcVar7,bVar15,bVar14,iVar4);
                 *puVar1 = psVar8;
               }
               else {
-                psVar8 = mfQmtLoad(DAT_00806758,local_c,6,0,0);
+                psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806758,local_c,6,0,0);
                 *puVar1 = psVar8;
                 if (psVar8 == (short *)0x0) {
                   bVar15 = 6;
@@ -161,7 +161,7 @@ LAB_004f9a8a:
                 bVar15 = 0;
                 bVar14 = 6;
                 pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
-                psVar8 = mfQmtLoad(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
+                psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
                 *puVar1 = psVar8;
               }
               pCVar3->field_025F = 0;
@@ -172,7 +172,7 @@ LAB_004f9a8a:
               bVar15 = 0;
               bVar14 = 6;
               pcVar7 = (char *)thunk_FUN_005260b0(0,0,1);
-              psVar8 = mfQmtLoad(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
+              psVar8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
               *puVar1 = psVar8;
               pCVar3->field_0260 = 5;
               pCVar3->field_025F = 0;

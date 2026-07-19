@@ -93,8 +93,9 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   pCVar2 = thunk_FUN_00571240(s_BKG_BEHAVIOURW_007c1704,0);
   SpecPanelTy::InitPanel
             ((SpecPanelTy *)this_00,pCVar2,uVar13,uVar15,iVar7,iVar18,UVar19,uVar21,uVar23);
-  puVar3 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BUT_MSK_SI_007c16f4,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_BUT_MSK_SI_007c16f4,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_02B8 = puVar3;
   this_00->field_0x1af = 0x2b;
   this_00->field_01B0 = 0x2c;
@@ -188,7 +189,8 @@ switchD_004ed72f_default:
       pbVar5 = (byte *)FUN_006f2c00(pCVar2,iVar18,uVar13);
       GVar12 = CASE_1;
     }
-    puVar3 = mfRLoad(DAT_00806794,GVar12,pbVar5,uVar17,bVar6,iVar20,iVar22,puVar24);
+    puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,GVar12,pbVar5,uVar17,bVar6,iVar20,iVar22,puVar24);
     iVar7 = *(int *)(puVar3 + 4);
     local_994[uVar8 * 0x5f + 4] = *(int *)(puVar3 + 2);
     local_994[uVar8 * 0x5f + 5] = iVar7;

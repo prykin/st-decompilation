@@ -67,8 +67,9 @@ void __thiscall WaitTy::InitWait(WaitTy *this,undefined4 param_1,undefined4 para
     this_01->field_005D = iVar4;
     FUN_006bc360(iVar4,local_668,(int *)0x0);
     *(undefined4 *)&this_01->field_1A5B->field_0x140 = 0x1f;
-    FUN_00718780((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
-    puVar7 = mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
+    Library::Ourlib::PALETTE::FUN_00718780
+              ((int)local_668,0,0x100,0x8b,0x15,(undefined4 *)&this_01->field_1A5B->field_0x144);
+    puVar7 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
     DibPut(*(undefined4 **)(DAT_0081176c + 0x2f0),0,0,'\x01',(byte *)puVar7);
     iVar4 = *(int *)(DAT_0081176c + 0x544);
     FUN_006b4170(iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8),0xff);

@@ -52,7 +52,8 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
       uVar10 = 6;
       if (DAT_0080731a != 0) {
         pbVar7 = (byte *)thunk_FUN_00526100(local_8,1);
-        puVar8 = mfRLoad(DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
+        puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
         (&this_00->field_02E2)[uVar9] = puVar8;
         (&this_00->field_02EC)[uVar9] = 5;
         (&this_00->field_02EA)[uVar9] = 0;
@@ -63,7 +64,8 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
         return;
       }
       pbVar7 = (byte *)thunk_FUN_00526100(local_8,0);
-      puVar8 = mfRLoad(DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
+      puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
       (&this_00->field_02E2)[uVar9] = puVar8;
       (&this_00->field_02EA)[uVar9] = 0;
       thunk_FUN_004f1890(this_00,(byte)uVar2);

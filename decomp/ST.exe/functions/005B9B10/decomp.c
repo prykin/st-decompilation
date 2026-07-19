@@ -57,7 +57,8 @@ void __thiscall PrividerTy::InitPrivider(PrividerTy *this,char param_1,char para
     this_02->field_005D = iVar3;
     FUN_006bc360(iVar3,local_454,(int *)0x0);
     *(undefined4 *)&this_02->field_1A5B->field_0x140 = 0x1f;
-    FUN_00718780((int)local_454,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
+    Library::Ourlib::PALETTE::FUN_00718780
+              ((int)local_454,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
     if (param_2 != '\0') {
       DarkScreen(DAT_0080759c,1,0);
     }

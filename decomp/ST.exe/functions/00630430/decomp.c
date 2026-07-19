@@ -111,7 +111,7 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
   }
   local_c->field_0071 = local_c->field_0018 * DAT_00808754;
   if (DAT_00806754 != (cMf32 *)0x0) {
-    local_8 = mfAObjLoad(DAT_00806754,PTR_DAT_0079d198,0,0);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_DAT_0079d198,0,0);
   }
   if (local_8 == (ushort *)0x0) {
 LAB_006304e7:

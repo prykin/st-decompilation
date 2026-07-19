@@ -207,10 +207,10 @@ LAB_0067b724:
         } while ((int)local_10 < (int)*(uint *)(iVar4 + 0xc));
       }
       if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (this_00->field_0662 == '\x01')) &&
-         (iVar4 = thunk_FUN_0067b1a0(this_00,(int)(short)this_00->field_0660),
+         (iVar4 = thunk_FUN_0067b1a0(this_00,(int)this_00->field_0660),
          iVar4 < (int)((-(uint)(this_00->field_05EC != 3) & 0xfffffffc) + 5))) {
-        thunk_FUN_004e7230(*(int *)&this_00->field_0x5d7,(int)(short)this_00->field_0660,local_c8,
-                           local_ac);
+        thunk_FUN_004e7230(*(int *)&this_00->field_0x5d7,(int)this_00->field_0660,local_c8,local_ac)
+        ;
         iVar4 = 0;
         do {
           if (*(int *)((int)local_c8 + iVar4) == 0) {
@@ -218,7 +218,7 @@ LAB_0067b724:
             return;
           }
           SetTech(this_00,*(int *)((int)local_c8 + iVar4),*(int *)((int)local_ac + iVar4),
-                  (int)(short)this_00->field_0663,(char)this_00->field_0660);
+                  (int)this_00->field_0663,(char)this_00->field_0660);
           iVar4 = iVar4 + 4;
         } while (iVar4 < 0x1c);
       }

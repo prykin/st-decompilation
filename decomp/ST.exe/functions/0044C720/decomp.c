@@ -71,7 +71,8 @@ LAB_0044cada:
   }
   else {
     if (param_1 < 3) {
-      FUN_006ead90(DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+      Library::Ourlib::ST3DSPR::FUN_006ead90
+                (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3268);
@@ -163,7 +164,8 @@ LAB_0044c94c:
     }
     else {
       if (param_1 != 3) goto LAB_0044cada;
-      FUN_006ead90(DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
+      Library::Ourlib::ST3DSPR::FUN_006ead90
+                (DAT_00807598,param_2,param_3,param_4,param_5,&local_c,&local_8);
       if (local_8 == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x3291);

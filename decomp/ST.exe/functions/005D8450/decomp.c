@@ -104,9 +104,9 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104);
     return;
   }
-  if ((HANDLE)local_8->field_1CC4 != (HANDLE)0x0) {
-    FindCloseChangeNotification((HANDLE)local_8->field_1CC4);
-    this_00->field_1CC4 = 0;
+  if (local_8->field_1CC4 != (HANDLE)0x0) {
+    FindCloseChangeNotification(local_8->field_1CC4);
+    this_00->field_1CC4 = (HANDLE)0x0;
   }
   uVar7 = 0xffffffff;
   pcVar9 = &DAT_00807680;
@@ -169,7 +169,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   pvVar4 = FindFirstChangeNotificationA(lpPathName,0,2);
   this_00->field_1CC4 = pvVar4;
   if (pvVar4 == (HANDLE)0xffffffff) {
-    this_00->field_1CC4 = 0;
+    this_00->field_1CC4 = (HANDLE)0x0;
   }
   puVar12 = local_524;
   for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {

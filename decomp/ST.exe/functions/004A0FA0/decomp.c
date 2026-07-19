@@ -651,7 +651,7 @@ LAB_004a1a74:
     }
   }
   if (this_00->field_01E6 == 4) {
-    DistributeDock(this_00,1,this_00->field_029F,this_00->field_002D);
+    DistributeDock(this_00,1,(int)this_00->field_029F,this_00->field_002D);
     iVar3 = extraout_ECX_15;
   }
   if (this_00->field_01E6 == 5) {
@@ -717,8 +717,7 @@ LAB_004a1a74:
       } while (uVar10 < local_18);
     }
     if (local_e8 != 0xffffffff) {
-      FUN_006acc70(*(int *)((int)&DAT_007f5816 + (char)this_00->field_0024 * 0xa62),local_e8,
-                   local_130);
+      FUN_006acc70(*(int *)((int)&DAT_007f5816 + this_00->field_0024 * 0xa62),local_e8,local_130);
       Library::DKW::TBL::FUN_006afe40((int *)&local_10,local_130[0]);
       STAllPlayersC::RegisterPGPair
                 (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX_22 >> 8),this_00->field_0024),
@@ -1246,18 +1245,18 @@ LAB_004a2897:
   }
   if (this_00->field_01E6 == 0x14) {
     local_28 = Way3DGrpGetDistrPoint
-                         (this_00,this_00->field_002D,(int)(short)this_00->field_02FE,
-                          (int)*(short *)&this_00->field_0x300,(int)(short)this_00->field_0302,
-                          (int)*(short *)&this_00->field_0x2f8,(int)(short)this_00->field_02FA,
+                         (this_00,this_00->field_002D,(int)this_00->field_02FE,
+                          (int)*(short *)&this_00->field_0x300,(int)this_00->field_0302,
+                          (int)*(short *)&this_00->field_0x2f8,(int)this_00->field_02FA,
                           (int)*(short *)&this_00->field_0x2fc);
     if (local_28 == (uint *)0x0) {
       return;
     }
     puVar9 = Way3DGrpGetDistrPoint
                        (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2f8,
-                        (int)(short)this_00->field_02FA,(int)*(short *)&this_00->field_0x2fc,
-                        (int)(short)this_00->field_02FE,(int)*(short *)&this_00->field_0x300,
-                        (int)(short)this_00->field_0302);
+                        (int)this_00->field_02FA,(int)*(short *)&this_00->field_0x2fc,
+                        (int)this_00->field_02FE,(int)*(short *)&this_00->field_0x300,
+                        (int)this_00->field_0302);
     if (puVar9 == (uint *)0x0) {
       FUN_006ae110((byte *)local_28);
       return;

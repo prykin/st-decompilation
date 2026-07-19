@@ -52,7 +52,9 @@ public class STClassLayoutApplier extends GhidraScript {
         requireColumns(classes, "apply", "owner", "type_path", "existing_length",
             "proposed_length", "confidence", "reason");
         requireColumns(fields, "apply", "owner", "offset", "size", "proposed_name",
-            "proposed_type", "reads", "writes", "confidence", "reason");
+            "proposed_type", "type_apply", "inferred_type", "suggested_name",
+            "name_apply", "type_confidence", "name_confidence", "type_evidence",
+            "name_evidence", "reads", "writes", "confidence", "reason");
         Map<String, List<Map<String, String>>> fieldsByOwner = new LinkedHashMap<>();
         for (Map<String, String> row : fields.rows)
             fieldsByOwner.computeIfAbsent(unt(row.get("owner")), ignored -> new ArrayList<>())
@@ -129,7 +131,9 @@ public class STClassLayoutApplier extends GhidraScript {
                     unt(field.get("proposed_type"));
                 DataType fieldType = resolveType(typeSpecification, size);
                 String comment = MARKER + " reads=" + field.get("reads") + ", writes=" +
-                    field.get("writes") + "; " + unt(field.get("reason"));
+                    field.get("writes") + "; type_confidence=" +
+                    field.get("type_confidence") + "; name_confidence=" +
+                    field.get("name_confidence") + "; " + unt(field.get("reason"));
                 String fieldName = unt(field.get("proposed_name"));
                 boolean nameApply = enabled(field.get("name_apply"));
                 String suggestedName = unt(field.get("suggested_name"));

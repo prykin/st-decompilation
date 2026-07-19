@@ -1,4 +1,26 @@
 apply	address	old_name	library	namespace	confidence	evidence	references
+0	004012F8	_EnumPlObj	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumPlObj	004012F8
+0	004013F2	_EnumDest	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumDest	004013F2
+0	004015EB	_CreateStgListByRoot	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _CreateStgListByRoot	004015EB
+0	00402932	_EnumArt	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumArt	00402932
+0	00403445	_GetEmbrGrpTobjGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _GetEmbrGrpTobjGrpExch	00403445
+0	00403675	_EnumMines	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumMines	00403675
+0	00403882	_EnumRCCont	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumRCCont	00403882
+0	00404142	_EnumRCField	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumRCField	00404142
+0	004041D8	_GetEmbrTobjGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _GetEmbrTobjGrpExch	004041D8
+0	00404DA9	_GetStaffGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _GetStaffGrpExch	00404DA9
+0	00675EA0	_AddObjGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _AddObjGrpExch	00675EA0
+0	00675FE0	_AddAllGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _AddAllGrpExch	00675FE0
+0	00676170	_GetStaffGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _GetStaffGrpExch	00676170
+0	00676260	_GetEmbrTobjGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _GetEmbrTobjGrpExch	00676260
+0	006763F0	_GetEmbrGrpTobjGrpExch	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _GetEmbrGrpTobjGrpExch	006763F0
+0	00676D80	_EnumPlObj	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumPlObj	00676D80
+0	00677960	_EnumRCField	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumRCField	00677960
+0	00677BE0	_EnumRCCont	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumRCCont	00677BE0
+0	00677F40	_EnumArt	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumArt	00677F40
+0	00678240	_EnumMines	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumMines	00678240
+0	006785A0	_EnumDest	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _EnumDest	006785A0
+0	0067DC20	_CreateStgListByRoot	MSVCRT	Library::MSVCRT	medium	global underscore-prefixed symbol: _CreateStgListByRoot	0067DC20
 1	006A3C80	Library::MSVCRT::FUN_006a3c80	MSVCRT	Library::MSVCRT	high	E:\\__titans\\Crt\\_Dbgheap.c	006A3CC1
 1	006A3D40	Library::MSVCRT::FUN_006a3d40	MSVCRT	Library::MSVCRT	high	E:\\__titans\\Crt\\_Dbgheap.c	006A3D6A | 006A3FB9
 1	006A4160	Library::MSVCRT::FUN_006a4160	MSVCRT	Library::MSVCRT	high	E:\\__titans\\Crt\\_Dbgheap.c	006A41AC
@@ -142,6 +164,222 @@ apply	address	old_name	library	namespace	confidence	evidence	references
 1	006D8260	Library::DKW::DDX::FUN_006d8260	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\fillpoly.c	006D8298 | 006D8616 | 006D867D
 1	006DAD00	Library::DKW::DDX::FUN_006dad00	DKW_DDX	Library::DKW::DDX	high	E:\\DKW\\DDX\\C\\ddbitmpu.c	006DAE63
 1	006DB640	Library::DKW::STR::FUN_006db640	DKW_STR	Library::DKW::STR	high	KW\\STR\\C\\strtodbl.c	006DB69D
+1	006DD050	FUN_006dd050	OURLIB_STREND	Library::Ourlib::STREND	high	E:\\ourlib\\Strend.cpp	006DD4F7
+1	006DD660	FUN_006dd660	OURLIB_STREND	Library::Ourlib::STREND	high	E:\\ourlib\\Strend.cpp	006DD6CA
+1	006DD6E0	FUN_006dd6e0	OURLIB_STREND	Library::Ourlib::STREND	high	E:\\ourlib\\Strend.cpp	006DD771
+1	006E29D0	FUN_006e29d0	OURLIB_STREND	Library::Ourlib::STREND	high	E:\\ourlib\\Strend.cpp	006E2B34
+1	006E2F90	FUN_006e2f90	OURLIB_STREND	Library::Ourlib::STREND	high	E:\\ourlib\\Strend.cpp	006E30BC
+1	006E3100	FUN_006e3100	OURLIB_STREND	Library::Ourlib::STREND	high	E:\\ourlib\\Strend.cpp	006E31C5
+1	006E3510	AppClassTy::InitApp	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E3572 | 006E358B | 006E3644 | 006E365E
+1	006E36E0	AppClassTy::DoneApp	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E37DD | 006E37F7
+1	006E3810	AppClassTy::CreateObject	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E387C | 006E38A3 | 006E38C0 | 006E392D | 006E394A
+1	006E3970	AppClassTy::DeleteObject	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E3A31 | 006E3A4D
+1	006E3AB0	AppClassTy::PostMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E3B1A | 006E3B36
+1	006E3B50	AppClassTy::PostNextMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E3BBA | 006E3BD6
+1	006E3BF0	AppClassTy::SendMessageToAllSystemsInArr	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E3C96 | 006E3D37 | 006E3D7B | 006E3D97
+1	006E3DD0	AppClassTy::SendMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E3FCB | 006E4047 | 006E407B | 006E4097
+1	006E40E0	AppClassTy::SendMessageToAllChild	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E414F | 006E4195 | 006E41B2
+1	006E41D0	AppClassTy::AddDecodeMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E4255 | 006E4271
+1	006E4370	AppClassTy::DecodeMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E4440 | 006E445D
+1	006E4650	AppClassTy::AddSystem	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E46B2 | 006E4719 | 006E476E | 006E47A2 | 006E47BE
+1	006E47E0	AppClassTy::AddSystem	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E4842 | 006E489A | 006E48EF | 006E4923 | 006E493F
+1	006E4960	AppClassTy::AddChildSystem	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E49C1 | 006E4A80 | 006E4B10 | 006E4B4A | 006E4B67
+1	006E4D70	AppClassTy::LifeToAllSystem	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E4DFD | 006E4E60 | 006E4EA1 | 006E4EBD
+1	006E4FC0	AppClassTy::RunApp	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5110 | 006E5135
+1	006E51F0	SystemClassTy::InitSystem	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5267 | 006E5298 | 006E52B4
+1	006E53A0	SystemClassTy::FindFirstObject	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E547B | 006E5492
+1	006E54B0	SystemClassTy::_CreateObject	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E554A | 006E5561
+1	006E5580	SystemClassTy::CreateObject	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E55FF | 006E5632 | 006E564F
+1	006E5810	SystemClassTy::PostMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5875 | 006E5892
+1	006E58B0	SystemClassTy::PostNextMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5915 | 006E5932
+1	006E5970	SystemClassTy::SendMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5B0B | 006E5B7C | 006E5BD8 | 006E5C0C | 006E5C28
+1	006E5C70	SystemClassTy::GetToAllObjects	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5CF3 | 006E5D5C | 006E5D73
+1	006E5D90	SystemClassTy::Life	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5E02 | 006E5E54 | 006E5EC8 | 006E5EE5
+1	006E5F00	SystemClassTy::GetMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E5F6E | 006E5F8B
+1	006E6170	SystemWithNamedObjClassTy::CreateObject	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E61DA
+1	006E6200	FUN_006e6200	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E622C | 006E629F
+1	006E6330	SystemWithNamedObjClassTy::SendMessage	OURLIB_SAPP	Library::Ourlib::SAPP	high	E:\\Ourlib\\Sapp.cpp	006E63C2 | 006E63DF
+1	006E6630	FUN_006e6630	OURLIB_ST3DSMAP	Library::Ourlib::ST3DSMAP	high	E:\\ourlib\\St3dsmap.cpp	006E6667
+1	006EAD90	FUN_006ead90	OURLIB_ST3DSPR	Library::Ourlib::ST3DSPR	high	E:\\ourlib\\St3dspr.cpp	006EAFCE
+1	006EAFF0	FUN_006eaff0	OURLIB_ST3DSPR	Library::Ourlib::ST3DSPR	high	E:\\ourlib\\St3dspr.cpp	006EB204
+1	006ED100	FUN_006ed100	OURLIB_ST3DSPR	Library::Ourlib::ST3DSPR	high	E:\\ourlib\\St3dspr.cpp	006EF0E2
+1	006EF300	mfTmapGetParam	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EF3A4 | 006EF3BE
+1	006EF440	_mfTMapSetTxtParam	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EF47C | 006EF4F7 | 006EF511
+1	006EF530	_mfTMapSetMeshParam	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EF56E | 006EF609 | 006EF623
+1	006EF640	mfTMapLoad	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EF692 | 006EF7A9 | 006EF980 | 006EF9B5
+1	006EF9D0	mfTMapNewTxtr	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EFA21 | 006EFB30 | 006EFB58
+1	006EFB70	mfTMapErase	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EFC19 | 006EFC35
+1	006EFC50	mfTMapCreate	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EFCA1 | 006EFD6A | 006EFD93
+1	006EFDB0	mfTMapSave	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EFE01 | 006EFE2B | 006EFE79 | 006EFF4E | 006EFF7A
+1	006EFF90	mfTMapAddObj	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006EFFD3 | 006F001C | 006F0169 | 006F0186
+1	006F01A0	mfTMapDelObj	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F01E3 | 006F0223 | 006F029B | 006F02B8
+1	006F0360	mfTMapOptimize	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F05C7 | 006F05EF
+1	006F0620	FUN_006f0620	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F0664 | 006F06BC | 006F06E5
+1	006F0700	FUN_006f0700	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F074C | 006F07A0 | 006F07C9
+1	006F0800	FUN_006f0800	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F084A | 006F08B4 | 006F09AD | 006F0A1B | 006F0A37
+1	006F0A50	FUN_006f0a50	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F0AA6 | 006F0BCE | 006F0BEA
+1	006F0C00	AuxTMapRefreshAll	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F0C46 | 006F0C97 | 006F0CB4
+1	006F0CD0	FUN_006f0cd0	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F0D32 | 006F0D4E
+1	006F0D70	mf3DXGetParam	OURLIB_MFSTMAP	Library::Ourlib::MFSTMAP	high	E:\\ourlib\\Mfstmap.cpp	006F0DE5 | 006F0E02
+1	006F0EC0	FUN_006f0ec0	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F114F
+1	006F1170	cMf32::delete	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F11EA | 006F1207
+1	006F1220	cMf32::Flush	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F127D | 006F1299
+1	006F12B0	cMf32::ToBeg	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F1319 | 006F1335
+1	006F1350	cMf32::ToEnd	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F13B9 | 006F13D5
+1	006F13F0	cMf32::RecPut	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F1451 | 006F146E | 006F16CE | 006F16E5
+1	006F1700	cMf32::RecPutNoname	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F1748 | 006F178A | 006F17A7
+1	006F17C0	cMf32::RecDel	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F18D6 | 006F18ED
+1	006F1910	cMf32::RecRen	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F19BB | 006F1B38 | 006F1B4F
+1	006F1B70	cMf32::vmAddrRecGet	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F1BFE | 006F1C78 | 006F1C8F
+1	006F1CE0	cMf32::RecGet	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F1D7E | 006F1EAE | 006F1FEC | 006F20A6 | 006F20BD
+1	006F20E0	cMf32::RecMemFree	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F2169 | 006F2185
+1	006F21C0	cMf32::RecChk	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F22E0 | 006F22F7
+1	006F2310	cMf32::RecGetParam	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F23B3 | 006F2470 | 006F2487
+1	006F24A0	cMf32::RecGetLen	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F2535 | 006F25BD | 006F25D4
+1	006F2600	cMf32::RecGetOrigLen	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F26AA | 006F274E | 006F2765
+1	006F2790	cMf32::RecNameGetNext	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F2827 | 006F2844
+1	006F2860	cMf32::RecKeyGetNext	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F2903 | 006F2920
+1	006F2940	cMf32::RecNameGetPrev	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F29D7 | 006F29F4
+1	006F2A10	cMf32::RecKeyGetPrev	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F2AB3 | 006F2AD0
+1	006F2AF0	cMf32::KeyRecGet	OURLIB_MF32INT	Library::Ourlib::MF32INT	high	E:\\Ourlib\\Mf32int.cpp	006F2BC5 | 006F2BE1
+1	006F2D90	mfAObjLoad	OURLIB_MFAOBJ	Library::Ourlib::MFAOBJ	high	E:\\Ourlib\\mfaobj.cpp	006F2E07 | 006F2E20
+1	006F2E40	mfAObjEnum	OURLIB_MFAOBJ	Library::Ourlib::MFAOBJ	high	E:\\Ourlib\\mfaobj.cpp	006F2E8A | 006F2F21 | 006F2F65 | 006F2F7F
+1	006F2FB0	mfAObjLen	OURLIB_MFAOBJ	Library::Ourlib::MFAOBJ	high	E:\\Ourlib\\mfaobj.cpp	006F300F | 006F3028
+1	006F3050	mfAObjParam	OURLIB_MFAOBJ	Library::Ourlib::MFAOBJ	high	E:\\Ourlib\\mfaobj.cpp	006F30CE | 006F30E7
+1	006F3110	mfAObjSave	OURLIB_MFAOBJ	Library::Ourlib::MFAOBJ	high	E:\\Ourlib\\mfaobj.cpp	006F318B | 006F31A8
+1	007097C0	mfRLoadCreate	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	00709801 | 00709850 | 00709889
+1	00709AF0	mfRLoad	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	00709B43 | 00709B69 | 00709D23 | 00709D71 | 00709DA7
+1	00709E10	mfRLoadAddReff	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	00709E5F | 00709E88 | 00709F04 | 00709F21
+1	00709F40	_mfRLoadAddReff	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	00709F88 | 00709FB1 | 0070A01A | 0070A036
+1	0070A050	mfRLoadRelease	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	0070A0A0 | 0070A0CA | 0070A171 | 0070A18D
+1	0070A1B0	_mfRLoadRelease	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	0070A1FA | 0070A225 | 0070A2C0 | 0070A2DC
+1	0070A370	mfRLoadRefreshAll	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	0070A42E | 0070A44B
+1	0070A4A0	mfRLoadRefresh	OURLIB_MFRLOAD	Library::Ourlib::MFRLOAD	high	E:\\Ourlib\\mfrload.cpp	0070A569 | 0070A586
+1	0070A5A0	mfImgLoad	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070A619 | 0070A633
+1	0070A650	mfImgGetLen	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070A6B1 | 0070A6CB
+1	0070A6F0	mfImgGetWidth	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070A76F | 0070A788
+1	0070A7B0	mfImgGetHeight	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070A82F | 0070A848
+1	0070A870	mfImgGetTransp	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070A8EF | 0070A908
+1	0070A930	mfImgGetNumIms	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070A9B2 | 0070A9CE
+1	0070AAD0	mfGifLoadToDib	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070AB91 | 0070ABD7
+1	0070AC10	mfPcxLoadToDib	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070ACD9 | 0070AD1D
+1	0070AD60	mfJpgLoadToDib	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070AE0E | 0070AE47
+1	0070AE60	mfImtLoad	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070AEC3 | 0070AF49 | 0070AFA5 | 0070B086 | 0070B194 | 0070B1AB
+1	0070B220	mfImtGetNumIms	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070B29F | 0070B2BC
+1	0070B2E0	mfImtGetModeIms	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070B363 | 0070B380
+1	0070B430	mfQmtLoad	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070B555 | 0070B592 | 0070B5BA
+1	0070B900	imgGetDibFromFile	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070BA20 | 0070BAAD | 0070BB8B | 0070BC18 | 0070BCD3 | 0070BD4C | 0070BDCE
+1	0070BE80	imgGetSprFromFile	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070BF2F | 0070BF5B
+1	0070BFE0	imgGetPcxGifJpgFromFile	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C09C | 0070C10A | 0070C198 | 0070C1EC
+1	0070C400	FUN_0070c400	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C475
+1	0070C4D0	FUN_0070c4d0	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C5AB
+1	0070C690	FUN_0070c690	OURLIB_MFIMG	Library::Ourlib::MFIMG	high	E:\\Ourlib\\Mfimg.cpp	0070C74C
+1	0070CEB0	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070CFB3 | 0070D16A | 0070D1CE
+1	0070D1F0	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070D25C | 0070D49C | 0070D4D1 | 0070D4FC | 0070D562 | 0070D665 | 0070D6A3 | 0070D727 | 0070D784 | 0070D925 | 0070D965 | 0070D9A5 | 0070D9E2 | 0070DA27 | 0070DA91 | 0070DB0E | 0070DD52 | 0070DEE9
+1	0070DF00	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070DF4F | 0070DFF0 | 0070E01A
+1	0070E030	FUN_0070e030	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0070E2A1
+1	00710560	ccFntTy::operator	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710753 | 00710770
+1	007108B0	ccFntTy::Save	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	007109B2 | 007109CF
+1	00710A90	ccFntTy::SetSurf	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710AD5 | 00710B61 | 00710B7E
+1	00710BA0	ccFntTy::CreateSurf	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710C7A | 00710D49 | 00710D65
+1	00710D80	ccFntTy::GetSurfAsSpr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710DE3 | 00710E2F | 00710EA2 | 00710EE5
+1	00710F00	ccFntTy::EraseSufr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00710F74 | 00710F91
+1	007116F0	ccFntTy::WrCh	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00711796 | 00711848 | 00711865
+1	00711880	ccFntTy::WrChXY	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00711986 | 007119A3
+1	007119C0	ccFntTy::WrStr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00711B37 | 00711B54
+1	00711B70	ccFntTy::WrTxt	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00711D59 | 00711D79
+1	00711DA0	ccFntTy::WrArr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00711F32 | 00711F51
+1	00711F70	ccFntTy::WrSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00712153 | 00712172
+1	007121F0	ccFntTy::FormSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	007122B5 | 007122D8 | 007123EF | 00712476 | 007124A5 | 007124E4 | 0071263F | 00712698
+1	007126E0	ccFntTy::FormIndentSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00712974 | 007129B8
+1	007129D0	ccFntTy::SepColorStrInSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00712A29 | 00712BB5 | 00712BF2
+1	00712C10	ccFntTy::FormText	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00712CCD | 00712D18
+1	00712D30	ccFntTy::FormIndentText	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00712DF5 | 00712E41
+1	00712E60	ccFntTy::VisLineSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00712F38 | 00712F55
+1	00712F80	ccFntTy::_TxtToSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00713036 | 00713060
+1	00713080	ccFntTy::_SarrToTxt	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	007131AD | 007131DD
+1	00713200	ccFntTy::GetFittingStr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	0071325E | 007132DD | 00713424 | 00713462
+1	00713480	ccFntTy::CreateTypeSSpr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00713503 | 00713A74 | 00713AC2
+1	00713B00	cTypingTy::TypingInit	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00713B7D | 00713E86 | 00713F01
+1	00713F30	cTypingTy::TypingInitSarr	OURLIB_MFCFNT	Library::Ourlib::MFCFNT	high	E:\\Ourlib\\mfcfnt.cpp	00713F83 | 0071400C | 00714039
+1	00715050	mfDarLoad	OURLIB_MFDARR	Library::Ourlib::MFDARR	high	E:\\ourlib\\mfdarr.cpp	00715099 | 00715113 | 0071514D
+1	00715170	mfDarSave	OURLIB_MFDARR	Library::Ourlib::MFDARR	high	E:\\ourlib\\mfdarr.cpp	007151CC | 0071523B | 00715265
+1	00715280	mfDarGetNum	OURLIB_MFDARR	Library::Ourlib::MFDARR	high	E:\\ourlib\\mfdarr.cpp	007152BA | 007152FC | 00715322 | 0071533B
+1	007154E0	cnUnPackMess	OURLIB_CONNECT	Library::Ourlib::CONNECT	high	E:\\ourlib\\connect.cpp	00715554 | 007155E2 | 00715611
+1	00715630	FUN_00715630	OURLIB_CONNECT	Library::Ourlib::CONNECT	high	E:\\ourlib\\connect.cpp	007156F0 | 0071580A
+1	007158A0	SpriteClassTy::InitSprite	OURLIB_SPRITE	Library::Ourlib::SPRITE	high	E:\\Ourlib\\Sprite.cpp	007159DC | 007159F6
+1	00715AB0	SpriteClassTy::CloseSprite	OURLIB_SPRITE	Library::Ourlib::SPRITE	high	E:\\Ourlib\\Sprite.cpp	00715B9C | 00715BB5
+1	00715C60	SpriteClassTy::SetImagesReg	OURLIB_SPRITE	Library::Ourlib::SPRITE	high	E:\\Ourlib\\Sprite.cpp	00715EEF | 00715F0C
+1	00716040	SpriteClassTy::SetImages	OURLIB_SPRITE	Library::Ourlib::SPRITE	high	E:\\Ourlib\\Sprite.cpp	00716149 | 007161C2 | 0071623F | 00716331 | 00716348
+1	00716480	SpriteClassTy::SetImagesPtr	OURLIB_SPRITE	Library::Ourlib::SPRITE	high	E:\\Ourlib\\Sprite.cpp	007166CB | 007166E8
+1	00716850	mfTSprLoad	OURLIB_MFTSPR	Library::Ourlib::MFTSPR	high	E:\\Ourlib\\mftspr.cpp	0071689A | 007168D2 | 007168FD | 00716A22 | 00716B36 | 00716C29 | 00716C85 | 00716D7E | 00716D95
+1	00716E60	mfTSprGetNumFas	OURLIB_MFTSPR	Library::Ourlib::MFTSPR	high	E:\\Ourlib\\mftspr.cpp	00716EBE | 00716EEB | 00716F3B | 00716F8A | 00716FA1
+1	00716FD0	mfTSprLoadAsSSpr	OURLIB_MFTSPR	Library::Ourlib::MFTSPR	high	E:\\Ourlib\\mftspr.cpp	0071701A | 0071704C | 007170CE | 00717188 | 0071719F
+1	007171C0	mfRSprLoadAsQSpr	OURLIB_MFTSPR	Library::Ourlib::MFTSPR	high	E:\\Ourlib\\mftspr.cpp	00717210 | 00717242 | 00717270 | 00717350 | 00717367
+1	007176F0	FUN_007176f0	OURLIB_STDARK	Library::Ourlib::STDARK	high	E:\\ourlib\\Stdark.cpp	00717853
+1	00717FC0	mfPltPtrTy	OURLIB_MFPLT	Library::Ourlib::MFPLT	high	E:\\ourlib\\mfplt.cpp	00718001 | 00718052 | 0071806C
+1	00718080	mfPltNum	OURLIB_MFPLT	Library::Ourlib::MFPLT	high	E:\\ourlib\\mfplt.cpp	007180EA | 00718104
+1	00718500	FUN_00718500	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	00718746 | 00718763
+1	00718780	FUN_00718780	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	00718A00 | 00718A1C
+1	00718A40	FUN_00718a40	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	00718C9E | 00718CCA | 00718D19 | 00718D36
+1	00718D50	FUN_00718d50	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	00718F00 | 00718F1C
+1	00718F40	FUN_00718f40	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	0071903E | 0071905B
+1	00719080	FUN_00719080	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	00719150 | 0071916C
+1	00719190	FUN_00719190	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	00719292 | 007192AE
+1	007192D0	FUN_007192d0	OURLIB_PALETTE	Library::Ourlib::PALETTE	high	E:\\Ourlib\\Palette.cpp	007193B5 | 007193D2
+1	00719D00	mfWavLoad	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	00719DB7 | 00719DD0
+1	00719DF0	mfWavGetType	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	00719E5F | 00719E79
+1	00719EA0	GetPcmFromWavFile	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	00719FD5 | 0071A00E
+1	0071A030	mfWavSave	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	0071A07A | 0071A0D3 | 0071A0EF
+1	0071A110	mfWavSaveFile	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	0071A168 | 0071A1E8 | 0071A215
+1	0071A270	mfSndLibLoad	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	0071A2BA | 0071A40A | 0071A49A
+1	0071A530	FUN_0071a530	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	0071A5BE
+1	0071A5E0	mfSndTblLoad	OURLIB_MFWAV	Library::Ourlib::MFWAV	high	E:\\Ourlib\\mfwav.cpp	0071A634 | 0071A7EB | 0071A8B2
+1	0071AA10	mfSarLoad	OURLIB_MFSARR	Library::Ourlib::MFSARR	high	E:\\Ourlib\\mfsarr.cpp	0071AA59 | 0071AAD3 | 0071AB0D
+1	0071AB30	mfSarSave	OURLIB_MFSARR	Library::Ourlib::MFSARR	high	E:\\Ourlib\\mfsarr.cpp	0071AB8C | 0071ABFA | 0071AC22
+1	0071AC40	tSArrCat	OURLIB_MFSARR	Library::Ourlib::MFSARR	high	E:\\Ourlib\\mfsarr.cpp	0071ACC5 | 0071ACDE
+1	0071AD00	mfAnyLoad	OURLIB_MFANY	Library::Ourlib::MFANY	high	E:\\Ourlib\\mfany.cpp	0071AD77 | 0071AD90
+1	0071ADB0	mfAnySave	OURLIB_MFANY	Library::Ourlib::MFANY	high	E:\\Ourlib\\mfany.cpp	0071ADFA | 0071AE44 | 0071AE5E
+1	0071AE80	ReadAllFile	OURLIB_MFANY	Library::Ourlib::MFANY	high	E:\\Ourlib\\mfany.cpp	0071AEE6 | 0071AF10 | 0071AF34 | 0071AF65 | 0071AF7E | 0071AFBF | 0071AFF8
+1	0071B010	mfAnySaveFile	OURLIB_MFANY	Library::Ourlib::MFANY	high	E:\\Ourlib\\mfany.cpp	0071B061 | 0071B0B5 | 0071B0DE
+1	0071B220	InputClassTy::Create	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071B27B | 0071B2CF | 0071B31A | 0071B343 | 0071B368 | 0071B393 | 0071B3E0 | 0071B405 | 0071B42E | 0071B455 | 0071B483 | 0071B4EE | 0071B508
+1	0071B520	InputClassTy::Done	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071B5F8 | 0071B611
+1	0071B630	FUN_0071b630	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071B69A
+1	0071B9C0	InputClassTy::None	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071BA5D | 0071C191 | 0071C1AD
+1	0071C1D0	InputClassTy::AddAcc	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071C300 | 0071C37E | 0071C4F4 | 0071C511
+1	0071C530	InputClassTy::DelAcc	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071C66A | 0071C6E3 | 0071C780 | 0071C79C
+1	0071C8C0	InputClassTy::AddToMouse	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071C97B | 0071C9B0 | 0071C9CD
+1	0071CA50	InputClassTy::GetMessage	OURLIB_SINPUT	Library::Ourlib::SINPUT	high	E:\\Ourlib\\Sinput.cpp	0071CC5F | 0071CE76 | 0071CE8D
+1	0071CFD0	ButtonClassTy::GetMessage	OURLIB_SBUTTON	Library::Ourlib::SBUTTON	high	E:\\Ourlib\\_sbutton.cpp	0071DDD2 | 0071DDFC | 0071DE31 | 0071DE4E
+1	0071E0E0	RadioClassTy::GetMessage	OURLIB_SBUTTON	Library::Ourlib::SBUTTON	high	E:\\Ourlib\\_sbutton.cpp	0071E5FA | 0071E617
+1	0071E730	ViewerClassTy::_Draw	OURLIB_SVIEWER	Library::Ourlib::SVIEWER	high	E:\\Ourlib\\_sviewer.cpp	0071E826 | 0071E840
+1	0071E8B0	ViewerClassTy::GetMessage	OURLIB_SVIEWER	Library::Ourlib::SVIEWER	high	E:\\Ourlib\\_sviewer.cpp	0071E919 | 0071F12A | 0071F147
+1	0071F3A0	ListClassTy::GetMessage	OURLIB_SLIST	Library::Ourlib::SLIST	high	E:\\Ourlib\\_slist.cpp	007207BA | 007207E4 | 0072081F | 0072083C
+1	00720A50	EditorClassTy::_Draw	OURLIB_SEDIT	Library::Ourlib::SEDIT	high	E:\\Ourlib\\_sedit.cpp	00720CF2 | 00720D0C
+1	00721BF0	EditorClassTy::SendToSliders	OURLIB_SEDIT	Library::Ourlib::SEDIT	high	E:\\Ourlib\\_sedit.cpp	00721C94 | 00721CB1
+1	00721CD0	FUN_00721cd0	OURLIB_SEDIT	Library::Ourlib::SEDIT	high	E:\\Ourlib\\_sedit.cpp	00721D11 | 00721D99 | 00721DCE | 00721E02 | 00721E37 | 00721E6C | 00721EA0 | 00721ED5 | 00721F10 | 00721F44 | 00721F79 | 00721FAE | 00721FEC | 00722021 | 00722055
+1	00722070	FUN_00722070	OURLIB_SEDIT	Library::Ourlib::SEDIT	high	E:\\Ourlib\\_sedit.cpp	007220B4 | 00722100 | 00722170 | 007221A5 | 007221D9 | 0072220E | 00722243 | 00722277 | 007222AC | 007222E7 | 0072231B | 00722350 | 00722385 | 007223C3 | 007223F8
+1	00722410	EditorClassTy::GetMessage	OURLIB_SEDIT	Library::Ourlib::SEDIT	high	E:\\Ourlib\\_sedit.cpp	0072320F | 00723236 | 00723279 | 00723296
+1	00723420	TabClassTy::GetMessage	OURLIB_STAB	Library::Ourlib::STAB	high	E:\\Ourlib\\_stab.cpp	00724146 | 00724170 | 007241AB | 007241C8
+1	007244B0	SliderClassTy::GetMessage	OURLIB_SSLIDER	Library::Ourlib::SSLIDER	high	E:\\Ourlib\\_sslider.cpp	00724C02 | 00724C1F
+1	00725020	TrackbarClassTy::GetMessage	OURLIB_STRACK	Library::Ourlib::STRACK	high	E:\\Ourlib\\_strack.cpp	007253F4 | 0072541C | 0072544F | 0072546C
+1	00725550	mfPlaPtrTy	OURLIB_MFPLA	Library::Ourlib::MFPLA	high	E:\\ourlib\\mfpla.cpp	00725597 | 0072563C | 00725662
+1	007256A0	mfPlaGetClust	OURLIB_MFPLA	Library::Ourlib::MFPLA	high	E:\\ourlib\\mfpla.cpp	0072571C | 00725736
+1	00725760	FUN_00725760	OURLIB_ST3DPAUS	Library::Ourlib::ST3DPAUS	high	E:\\ourlib\\St3dpaus.cpp	007258D2
+1	00725C60	mfSSprLoad	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00725CBD | 00725D4E | 00725E06 | 00725E1A
+1	00725E80	mfSSprGetNumFas	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00725ECD | 00725F17 | 00725F2B
+1	00725F50	mfMSprLoad	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00725FB9 | 00726015 | 00726100 | 00726227 | 0072623E
+1	007262B0	mfMSprGetNumFas	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00726300 | 0072634D | 00726364
+1	00726390	mfMSprGetNumPl	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	007263E0 | 0072642D | 00726444
+1	00726470	mfMSprGetWidth	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	007264C0 | 0072650D | 00726524
+1	00726550	mfMSprGetHeigh	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	007265A0 | 007265ED | 00726604
+1	00726630	mfUSprLoad	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	0072667A | 007266AB | 0072674E | 00726838 | 0072684F
+1	007268C0	mfUSprGetNumFas	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00726910 | 0072695D | 00726974
+1	007269A0	mfUSprGetSect	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	007269F0 | 00726A3C | 00726A53
+1	00726A80	mfQSprLoad	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00726ADF | 00726BA4 | 00726BBB
+1	00726C00	mfQSprGetNumFas	OURLIB_MFSPR	Library::Ourlib::MFSPR	high	E:\\Ourlib\\mfspr.cpp	00726C50 | 00726C9D | 00726CB4
+1	0072ACA0	FUN_0072aca0	OURLIB_DDSPRCUR	Library::Ourlib::DDSPRCUR	high	E:\\ourlib\\Ddsprcur.cpp	0072ACB8 | 0072AD50 | 0072ADB1
+1	0072B780	ControlClassTy::GetMessage	OURLIB_SCONTROL	Library::Ourlib::SCONTROL	high	E:\\Ourlib\\Scontrol.cpp	0072BE32 | 0072BE7D | 0072BED6 | 0072BF32 | 0072BFB1 | 0072C033 | 0072C1C1 | 0072C1DE
 1	0072D7F0	Library::MSVCRT::__setjmp3	MSVCRT	Library::MSVCRT	high	confirmed contiguous ST.exe VC6 CRT block 0072D7F0..00746BAB	0072D7F0
 1	0072D86C	Library::MSVCRT::__global_unwind2	MSVCRT	Library::MSVCRT	high	confirmed contiguous ST.exe VC6 CRT block 0072D7F0..00746BAB	0072D86C
 1	0072D8AE	Library::MSVCRT::__local_unwind2	MSVCRT	Library::MSVCRT	high	confirmed contiguous ST.exe VC6 CRT block 0072D7F0..00746BAB	0072D8AE

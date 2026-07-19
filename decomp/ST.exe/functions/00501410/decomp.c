@@ -40,8 +40,8 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
     }
     uVar5 = local_8 & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,pCVar3->field_028A,0,
-               iVar4,*(int *)(pCVar3->field_028A + 8) - uVar5,5,uVar5);
+              ((undefined4 *)pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,
+               (int)pCVar3->field_028A,0,iVar4,*(int *)(pCVar3->field_028A + 4) - uVar5,5,uVar5);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

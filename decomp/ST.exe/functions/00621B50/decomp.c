@@ -134,8 +134,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     iVar7 = thunk_FUN_006239a0((int *)this_00);
     if (iVar7 == 0) {
       if ((this_00->field_02AE == 2) && (this_00->field_0353 == '\0')) {
-        uVar9 = thunk_FUN_006226c0(this_00,(int)(short)this_00->field_0047,
-                                   (int)(short)this_00->field_0049);
+        uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
         this_00->field_0353 = (char)uVar9;
         if ((char)uVar9 != '\0') {
           LoadImagMineSet(this_00,0);
@@ -152,8 +151,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
       iVar7 = this_00->field_02AE;
       if (((iVar7 != 2) && (iVar7 != 3)) && ((iVar7 != 4 && (iVar7 != 5)))) {
         if (this_00->field_0353 == '\0') {
-          uVar9 = thunk_FUN_006226c0(this_00,(int)(short)this_00->field_0047,
-                                     (int)(short)this_00->field_0049);
+          uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = (char)uVar9;
           if (((char)uVar9 != '\0') && ((int)this_00->field_02BA < 0)) {
             LoadImagMineSet(this_00,0);
@@ -161,8 +159,7 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
           }
         }
         else if ((*(byte *)&DAT_00802a38->field_00E4 & 3) == 0) {
-          uVar9 = thunk_FUN_006226c0(this_00,(int)(short)this_00->field_0047,
-                                     (int)(short)this_00->field_0049);
+          uVar9 = thunk_FUN_006226c0(this_00,(int)this_00->field_0047,(int)this_00->field_0049);
           this_00->field_0353 = (char)uVar9;
           if (((char)uVar9 == '\0') && (this_00->field_02E9 != '\0')) {
             thunk_FUN_004ad430((int)&this_00->field_01D5);

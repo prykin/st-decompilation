@@ -318,7 +318,7 @@ LAB_00592b82:
       else {
         uVar8 = piVar7[3];
       }
-      if (uVar8 <= (uint)(local_8->field_0061 - piVar7[4])) {
+      if (uVar8 <= local_8->field_0061 - piVar7[4]) {
         pBVar4 = (BITMAPINFO *)FUN_0070b3a0(iVar3,(int)*(short *)(iVar3 + 0x29));
         FUN_006b5f80(DAT_008075a8,*piVar7,piVar7[1],(int)*(short *)(iVar3 + 0x2c),
                      (int)*(short *)(iVar3 + 0x2e));

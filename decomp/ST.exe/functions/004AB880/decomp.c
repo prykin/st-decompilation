@@ -60,7 +60,8 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x24);
     }
   }
-  puVar5 = mfRLoad(param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
   *(ushort **)(this_00->field_0020 + iVar3) = puVar5;
   iVar4 = **(int **)(this_00->field_0020 + iVar3);
   iVar6 = Library::DKW::LIB::FUN_006aac70(iVar4 * 4);

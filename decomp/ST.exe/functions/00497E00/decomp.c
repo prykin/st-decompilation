@@ -186,9 +186,9 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
       FUN_006ae110((byte *)this_00->field_0266);
       this_00->field_0266 = 0;
     }
-    if ((byte *)this_00->field_029F != (byte *)0x0) {
+    if (this_00->field_029F != (uint *)0x0) {
       FUN_006ae110((byte *)this_00->field_029F);
-      this_00->field_029F = 0;
+      this_00->field_029F = (uint *)0x0;
     }
     (*this_00->vtable->vfunc_18)(this_00,0,0,0);
     STGroupC::GetMessage((STGroupC *)this_00,param_1);

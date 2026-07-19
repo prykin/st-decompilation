@@ -56,7 +56,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       bVar14 = 0;
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar10);
-      local_8 = mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
       (&DAT_007c9290)[iVar10] = (int)*(short *)((int)local_8 + 9);
       puVar7 = puVar9 + -0x30;
       (&DAT_007c929c)[iVar10] = (int)*(short *)((int)local_8 + 0xb);
@@ -74,7 +74,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       bVar14 = 0;
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar10);
-      local_8 = mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
+      local_8 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
       puVar7 = (undefined4 *)((int)local_8 + 0x11);
       iVar4 = 0x10;
       do {
@@ -87,9 +87,10 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       FUN_0070b600((int *)&local_8);
       iVar10 = iVar10 + 1;
     } while (iVar10 < 3);
-    FUN_007176f0(DAT_00807598,&this_00->field_003C,this_00->field_0028,this_00->field_002C,
-                 (int)&this_00->field_0118,this_00->field_004C,this_00->field_0030,
-                 this_00->field_0034,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
+    Library::Ourlib::STDARK::FUN_007176f0
+              (DAT_00807598,&this_00->field_003C,this_00->field_0028,this_00->field_002C,
+               (int)&this_00->field_0118,this_00->field_004C,this_00->field_0030,this_00->field_0034
+               ,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
     iVar4 = this_00->field_0110;
     uVar11 = 0;
     if (0 < *(int *)(iVar4 + 0xc)) {

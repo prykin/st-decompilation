@@ -51,7 +51,8 @@ ProdPanelTy::InitProdPanel
     pcVar3->field_0058 = 0;
     pcVar3->field_005C = 0;
     pbVar4 = (byte *)thunk_FUN_00571240(s_FRAMES_007c205c,0);
-    puVar5 = mfRLoad(DAT_00806794,CASE_B,pbVar4,uVar10,bVar11,iVar2,iVar12,puVar13);
+    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar4,uVar10,bVar11,iVar2,iVar12,puVar13);
     this_00->field_0190 = puVar5;
     iVar2 = this_00->field_0068;
     uVar10 = *(uint *)(iVar2 + 0x14);

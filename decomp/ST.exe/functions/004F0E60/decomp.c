@@ -20,7 +20,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   int local_18;
   BldObjPanelTy *local_14;
   int local_10;
-  byte *local_c;
+  ushort *local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
   
   piVar1 = *(int **)(param_1 + 0x18);
@@ -42,7 +42,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   }
   local_14 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
-    local_c = (byte *)this->field_027A;
+    local_c = this->field_027A;
   }
   else {
     if ((char)local_8[2] == 0) {
@@ -52,7 +52,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
       iVar7 = this->field_0188;
     }
     uVar5 = thunk_FUN_00526ba0(*local_8,*(byte *)((int)local_8 + 9));
-    local_c = (byte *)FUN_0070b3a0(iVar7,uVar5);
+    local_c = (ushort *)FUN_0070b3a0(iVar7,uVar5);
   }
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
@@ -61,7 +61,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   pBVar3 = local_14;
   iVar7 = local_18;
   if (errorCode == 0) {
-    DibPut((undefined4 *)local_14->field_0068,local_18,local_10,'\x01',local_c);
+    DibPut((undefined4 *)local_14->field_0068,local_18,local_10,'\x01',(byte *)local_c);
     if ((*(short *)(param_1 + 0x14) == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
       pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
       DibPut((undefined4 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);

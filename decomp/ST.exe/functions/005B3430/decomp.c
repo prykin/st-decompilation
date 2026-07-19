@@ -12,10 +12,11 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   DWORD DVar3;
   int iVar4;
   uint uVar5;
-  int iVar6;
+  DWORD *pDVar6;
+  int iVar7;
   undefined4 unaff_ESI;
-  uint *puVar7;
-  undefined4 *puVar8;
+  uint *puVar8;
+  undefined4 *puVar9;
   void *unaff_EDI;
   InternalExceptionFrame local_54;
   MainMenuTy *local_10;
@@ -32,9 +33,9 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   this_00 = local_10;
   if (iVar4 != 0) {
     g_currentExceptionFrame = local_54.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xd2,0,iVar4,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xd2,0,iVar4,&DAT_007a4ccc,
                                s_MainMenuTy__NoneMainMenu_007cc980);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       pcVar2 = (code *)swi(3);
       (*pcVar2)();
       return;
@@ -48,23 +49,23 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   if (cVar1 == '\x01') {
     iVar4 = 0;
     if (this_00->field_009A != '\0') {
-      puVar7 = (uint *)&this_00->field_0x221;
+      puVar8 = (uint *)&this_00->field_0x221;
       do {
-        if ((*(char *)((int)puVar7 + -0x13f) != '\0') &&
-           (puVar7[9] <= this_00->field_0061 - puVar7[10])) {
-          puVar7[10] = this_00->field_0061;
-          uVar5 = puVar7[-5];
-          puVar7[-5] = uVar5 + 1;
-          if ((int)puVar7[-4] <= (int)(uVar5 + 1)) {
-            puVar7[-5] = 0;
+        if ((*(char *)((int)puVar8 + -0x13f) != '\0') &&
+           (puVar8[9] <= this_00->field_0061 - puVar8[10])) {
+          puVar8[10] = this_00->field_0061;
+          uVar5 = puVar8[-5];
+          puVar8[-5] = uVar5 + 1;
+          if ((int)puVar8[-4] <= (int)(uVar5 + 1)) {
+            puVar8[-5] = 0;
           }
-          if (puVar7[-6] != 0xffffffff) {
+          if (puVar8[-6] != 0xffffffff) {
             Library::DKW::DDX::FUN_006b3730
-                      ((uint *)puVar7[0xb],puVar7[-6],puVar7[-5],*puVar7,puVar7[1]);
+                      ((uint *)puVar8[0xb],puVar8[-6],puVar8[-5],*puVar8,puVar8[1]);
           }
         }
         iVar4 = iVar4 + 1;
-        puVar7 = (uint *)((int)puVar7 + 0x1fb);
+        puVar8 = (uint *)((int)puVar8 + 0x1fb);
       } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
     }
   }
@@ -74,25 +75,25 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
     if (uVar5 != 0) {
       do {
         if (*(int *)((int)&this_00->field_00BC + iVar4 * 0x1fb) != 0) {
-          if ((uint)(this_00->field_0061 - *(int *)((int)&this_00->field_0127 + iVar4 * 0x1fb)) <
+          if (this_00->field_0061 - *(int *)((int)&this_00->field_0127 + iVar4 * 0x1fb) <
               *(uint *)((int)&this_00->field_0123 + iVar4 * 0x1fb)) {
             iVar4 = 0;
             local_8 = 0;
             if (uVar5 != 0) {
-              puVar8 = (undefined4 *)&this_00->field_0x249;
+              pDVar6 = (DWORD *)&this_00->field_0x249;
               do {
-                if (*(char *)((int)puVar8 + -0x167) != '\0') {
-                  *puVar8 = this_00->field_0061;
+                if (*(char *)((int)pDVar6 + -0x167) != '\0') {
+                  *pDVar6 = this_00->field_0061;
                 }
                 iVar4 = iVar4 + 1;
-                puVar8 = (undefined4 *)((int)puVar8 + 0x1fb);
+                pDVar6 = (DWORD *)((int)pDVar6 + 0x1fb);
               } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
             }
           }
           else {
-            iVar6 = *(int *)((int)&this_00->field_00EB + iVar4 * 0x1fb);
-            if (iVar6 < *(int *)(&this_00->field_0xef + iVar4 * 0x1fb) + -1) {
-              if ((iVar6 == 0) &&
+            iVar7 = *(int *)((int)&this_00->field_00EB + iVar4 * 0x1fb);
+            if (iVar7 < *(int *)(&this_00->field_0xef + iVar4 * 0x1fb) + -1) {
+              if ((iVar7 == 0) &&
                  (uVar5 = *(uint *)((int)&this_00->field_00E7 + iVar4 * 0x1fb), uVar5 != 0xffffffff)
                  ) {
                 Library::DKW::DDX::FUN_006b34d0
@@ -113,9 +114,9 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
               local_8 = 0;
             }
             else {
-              iVar6 = *(int *)((int)&this_00->field_017C + iVar4 * 0x1fb);
-              if (iVar6 < *(int *)(&this_00->field_0x180 + iVar4 * 0x1fb) + -3) {
-                if (iVar6 == 0) {
+              iVar7 = *(int *)((int)&this_00->field_017C + iVar4 * 0x1fb);
+              if (iVar7 < *(int *)(&this_00->field_0x180 + iVar4 * 0x1fb) + -3) {
+                if (iVar7 == 0) {
                   uVar5 = *(uint *)((int)&this_00->field_0178 + iVar4 * 0x1fb);
                   if (uVar5 != 0xffffffff) {
                     Library::DKW::DDX::FUN_006b34d0
@@ -159,21 +160,21 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
     if (local_8 != 0) {
       if (this_00->field_009A != '\0') {
         local_c = (int *)&this_00->field_0x66;
-        puVar8 = (undefined4 *)&this_00->field_0xa3;
+        puVar9 = (undefined4 *)&this_00->field_0xa3;
         iVar4 = 0x68ff;
         do {
           if (*local_c == 0) {
-            iVar6 = MMObjTy::CreateSprBut
+            iVar7 = MMObjTy::CreateSprBut
                               ((MMObjTy *)this_00,1,(uint)(*(int *)&this_00->field_0x1edf != 0),
-                               puVar8[0x17] + puVar8[-2],puVar8[0x18] + puVar8[-1],*puVar8,puVar8[1]
+                               puVar9[0x17] + puVar9[-2],puVar9[0x18] + puVar9[-1],*puVar9,puVar9[1]
                                ,iVar4,iVar4 + 0x80);
-            *local_c = iVar6;
+            *local_c = iVar7;
           }
           local_c = local_c + 1;
-          iVar6 = iVar4 + -0x68fe;
-          puVar8 = (undefined4 *)((int)puVar8 + 0x1fb);
+          iVar7 = iVar4 + -0x68fe;
+          puVar9 = (undefined4 *)((int)puVar9 + 0x1fb);
           iVar4 = iVar4 + 1;
-        } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
+        } while (iVar7 < (int)(uint)(byte)this_00->field_009A);
       }
       this_00->field_0065 = 1;
       if (this_00->field_1A6F != 0) {
@@ -187,37 +188,36 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   else if (cVar1 == '\x04') {
     iVar4 = 0;
     if (this_00->field_009A != '\0') {
-      puVar7 = &this_00->field_0178;
+      puVar8 = &this_00->field_0178;
       do {
-        if ((uint)(this_00->field_0061 - *(int *)((int)puVar7 + -0x51)) <
-            *(uint *)((int)puVar7 + -0x55)) {
+        if (this_00->field_0061 - *(int *)((int)puVar8 + -0x51) < *(uint *)((int)puVar8 + -0x55)) {
 LAB_005b353c:
           local_8 = 0;
         }
         else {
-          if (*(char *)((int)puVar7 + -0xbd) != '\0') {
-            if (*puVar7 != 0xffffffff) {
-              FUN_006b3af0((int *)puVar7[0x11],*puVar7);
+          if (*(char *)((int)puVar8 + -0xbd) != '\0') {
+            if (*puVar8 != 0xffffffff) {
+              FUN_006b3af0((int *)puVar8[0x11],*puVar8);
             }
-            if ((*(char *)((int)puVar7 + -0x96) != '\0') &&
-               (*(uint *)((int)puVar7 + 0x91) != 0xffffffff)) {
-              FUN_006b3af0(*(int **)((int)puVar7 + 0xd5),*(uint *)((int)puVar7 + 0x91));
+            if ((*(char *)((int)puVar8 + -0x96) != '\0') &&
+               (*(uint *)((int)puVar8 + 0x91) != 0xffffffff)) {
+              FUN_006b3af0(*(int **)((int)puVar8 + 0xd5),*(uint *)((int)puVar8 + 0x91));
             }
-            *(undefined1 *)((int)puVar7 + -0xbd) = 0;
+            *(undefined1 *)((int)puVar8 + -0xbd) = 0;
           }
-          if (0 < *(int *)((int)puVar7 + -0x8d)) {
-            uVar5 = *(int *)((int)puVar7 + -0x8d) - 1;
-            *(uint *)((int)puVar7 + -0x8d) = uVar5;
-            if (*(uint *)((int)puVar7 + -0x91) != 0xffffffff) {
+          if (0 < *(int *)((int)puVar8 + -0x8d)) {
+            uVar5 = *(int *)((int)puVar8 + -0x8d) - 1;
+            *(uint *)((int)puVar8 + -0x8d) = uVar5;
+            if (*(uint *)((int)puVar8 + -0x91) != 0xffffffff) {
               Library::DKW::DDX::FUN_006b3730
-                        (*(uint **)((int)puVar7 + -0x4d),*(uint *)((int)puVar7 + -0x91),uVar5,
-                         *(uint *)((int)puVar7 + -0x79),*(uint *)((int)puVar7 + -0x75));
+                        (*(uint **)((int)puVar8 + -0x4d),*(uint *)((int)puVar8 + -0x91),uVar5,
+                         *(uint *)((int)puVar8 + -0x79),*(uint *)((int)puVar8 + -0x75));
             }
             goto LAB_005b353c;
           }
         }
         iVar4 = iVar4 + 1;
-        puVar7 = (uint *)((int)puVar7 + 0x1fb);
+        puVar8 = (uint *)((int)puVar8 + 0x1fb);
       } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
     }
     iVar4 = 0;
@@ -228,13 +228,13 @@ LAB_005b353c:
     if (local_8 != 0) {
       this_00->field_0065 = 2;
       if (this_00->field_009A != '\0') {
-        puVar7 = &this_00->field_00E7;
+        puVar8 = &this_00->field_00E7;
         do {
-          if (*puVar7 != 0xffffffff) {
-            FUN_006b3af0((int *)puVar7[0x11],*puVar7);
+          if (*puVar8 != 0xffffffff) {
+            FUN_006b3af0((int *)puVar8[0x11],*puVar8);
           }
           iVar4 = iVar4 + 1;
-          puVar7 = (uint *)((int)puVar7 + 0x1fb);
+          puVar8 = (uint *)((int)puVar8 + 0x1fb);
         } while (iVar4 < (int)(uint)(byte)this_00->field_009A);
       }
       if (*(int *)((int)&this_00->field_00D1 + (uint)(byte)this_00->field_1A5A * 0x1fb) != 0) {

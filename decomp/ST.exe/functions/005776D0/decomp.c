@@ -81,8 +81,9 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         if (piVar3[2] != 0) {
           DAT_00808784 = (void *)piVar3[1];
           this_00[0x21].objectLock = DAT_00808784;
-          FUN_00725760(DAT_00807598,(int)DAT_00808784,
-                       -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
+          Library::Ourlib::ST3DPAUS::FUN_00725760
+                    (DAT_00807598,(int)DAT_00808784,
+                     -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
           if (DAT_008016e0 != (PausePanelTy *)0x0) {
             PausePanelTy::SwitchPausePanel(DAT_008016e0,(int)DAT_00808784);
             g_currentExceptionFrame = local_8c.previous;
@@ -93,8 +94,9 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
       else if (piVar3[2] == 0) {
         if (this_00[0x21].objectLock == (void *)0x0) {
           DAT_00808784 = (void *)piVar3[1];
-          FUN_00725760(DAT_00807598,(int)DAT_00808784,
-                       -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
+          Library::Ourlib::ST3DPAUS::FUN_00725760
+                    (DAT_00807598,(int)DAT_00808784,
+                     -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
           g_currentExceptionFrame = local_8c.previous;
           return 0;
         }
@@ -102,8 +104,9 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
       else {
         if ((DAT_0080878c == 0) && (DAT_00808790 == 0)) {
           DAT_00808784 = (void *)piVar3[1];
-          FUN_00725760(DAT_00807598,(int)DAT_00808784,
-                       -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
+          Library::Ourlib::ST3DPAUS::FUN_00725760
+                    (DAT_00807598,(int)DAT_00808784,
+                     -(uint)(DAT_00808784 != (void *)0x0) & DAT_008032b4);
         }
         pvVar4 = (void *)piVar3[1];
         this_00[0x21].objectLock = pvVar4;
@@ -186,7 +189,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
       iVar6 = Library::MSVCRT::__setjmp3(local_1b0.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar6 == 0) {
         wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
-        puVar12 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+        puVar12 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_48 = 0x577d84;
         puVar13 = CreateOpponentList((int)puVar12,piVar3[1],DAT_0080995c);
         pcVar15 = (cMf32 *)puVar13[3];
@@ -315,7 +318,8 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
           g_currentExceptionFrame = &local_d0;
           iVar8 = Library::MSVCRT::__setjmp3(local_d0.jumpBuffer,0,(void *)0x0,iVar6);
           if (iVar8 == 0) {
-            pcVar9 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080f022,0,0,0);
+            pcVar9 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                        (0x345,(byte *)&DAT_0080f022,0,0,0);
             if (pcVar9 == (cMf32 *)0x0) {
               bVar21 = false;
             }

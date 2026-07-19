@@ -37,7 +37,7 @@ undefined4 __thiscall SettMapSTy::GetMessage(SettMapSTy *this,int param_1)
   char local_164 [64];
   undefined4 local_124;
   undefined4 local_120;
-  undefined4 local_11c;
+  DWORD local_11c;
   InternalExceptionFrame local_c8;
   undefined4 local_84 [2];
   undefined4 local_7c;

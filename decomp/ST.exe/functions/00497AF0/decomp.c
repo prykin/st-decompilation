@@ -58,7 +58,7 @@ undefined4 * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this,undefined4
   *(undefined4 *)&this->field_0x295 = 0;
   this->field_0299 = 0;
   this->field_029B = 0;
-  this->field_029F = 0;
+  this->field_029F = (uint *)0x0;
   *(undefined4 *)&this->field_0x2a3 = 0;
   *(undefined4 *)&this->field_0x2a7 = 0;
   *(undefined2 *)&this->field_0x2ab = 0;

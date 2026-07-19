@@ -29,7 +29,7 @@ public class STLibraryApplier extends GhidraScript {
 
         int transaction = currentProgram.startTransaction("Apply library classifications");
         boolean commit = false;
-        int applied = 0, skipped = 0, failed = 0;
+        int applied = 0, namespaced = 0, ownerPreserved = 0, skipped = 0, failed = 0;
         try {
             for (int i = 1; i < lines.size(); i++) {
                 monitor.checkCancelled();
@@ -48,7 +48,18 @@ public class STLibraryApplier extends GhidraScript {
                         printerr("Name changed since analysis; skipping " + c[1] + ": " + function.getName(true));
                         failed++; continue;
                     }
-                    function.setParentNamespace(getOrCreateNamespace(namespace));
+                    Namespace currentParent = function.getParentNamespace();
+                    if (currentParent.isGlobal() ||
+                            currentParent.getName(true).startsWith("Library::")) {
+                        function.setParentNamespace(getOrCreateNamespace(namespace));
+                        namespaced++;
+                    }
+                    else {
+                        // A source module is orthogonal to a recovered C++ owner.  Keep
+                        // cMf32::RecGet (for example) intact and express the library
+                        // classification through tags/comments instead of flattening it.
+                        ownerPreserved++;
+                    }
                     function.addTag(TAG);
                     function.addTag("LIBRARY_" + library);
                     addComment(function, library, evidence);
@@ -59,7 +70,9 @@ public class STLibraryApplier extends GhidraScript {
             commit = true;
         }
         finally { currentProgram.endTransaction(transaction, commit); }
-        println("Library classifications applied: " + applied + ", skipped: " + skipped + ", failed: " + failed);
+        println("Library classifications applied: " + applied + ", namespaced: " +
+            namespaced + ", class/owner namespaces preserved: " + ownerPreserved +
+            ", skipped: " + skipped + ", failed: " + failed);
     }
 
     private File proposalFile() throws Exception {

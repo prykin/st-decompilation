@@ -163,7 +163,7 @@ LAB_0049f2b2:
                               (DAT_007fa174,CONCAT31((int3)((uint)uVar10 >> 8),pSVar3->field_0x2c3),
                                CONCAT22(uVar11,pSVar3->field_02C4),CASE_1);
     if (((piVar8 == (int *)0x0) || (piVar8[6] != *(int *)&pSVar3->field_0x2c6)) ||
-       (iVar5 = (**(code **)(*piVar8 + 0x108))((int)(char)pSVar3->field_0024), iVar5 == 0)) {
+       (iVar5 = (**(code **)(*piVar8 + 0x108))((int)pSVar3->field_0024), iVar5 == 0)) {
       *(undefined4 *)&pSVar3->field_0x2ca = 1;
       local_10 = 0;
       local_14 = *(undefined4 *)(DAT_00802a38 + 0xe4);

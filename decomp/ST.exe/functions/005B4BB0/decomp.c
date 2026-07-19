@@ -9,38 +9,39 @@ undefined4 __thiscall MainMenuTy::GetMessage(MainMenuTy *this,int param_1)
 {
   code *pcVar1;
   MainMenuTy *this_00;
-  undefined4 uVar2;
+  DWORD DVar2;
   int iVar3;
-  undefined3 uVar6;
+  undefined3 uVar7;
   uint uVar4;
-  int iVar5;
+  undefined4 uVar5;
+  int iVar6;
   undefined4 extraout_ECX;
   MMsgTy *this_01;
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar7;
-  char cVar8;
+  undefined4 *puVar8;
+  char cVar9;
   InternalExceptionFrame local_8c;
   undefined4 local_48 [8];
   undefined4 local_28 [8];
   MainMenuTy *local_8;
   
   local_8 = this;
-  uVar2 = FUN_006e51b0(this->field_0010);
-  this->field_0061 = uVar2;
+  DVar2 = FUN_006e51b0(this->field_0010);
+  this->field_0061 = DVar2;
   local_8c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_8c;
   iVar3 = Library::MSVCRT::__setjmp3(local_8c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_8c.previous;
-    iVar5 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x241,0,iVar3,&DAT_007a4ccc
+    iVar6 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0x241,0,iVar3,&DAT_007a4ccc
                                ,s_MainMenuTy__GetMessage_007cca1c);
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       pcVar1 = (code *)swi(3);
-      uVar2 = (*pcVar1)();
-      return uVar2;
+      uVar5 = (*pcVar1)();
+      return uVar5;
     }
     RaiseInternalException(iVar3,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0x241);
     return 0xffff;
@@ -48,36 +49,36 @@ undefined4 __thiscall MainMenuTy::GetMessage(MainMenuTy *this,int param_1)
   thunk_FUN_005b6450(local_8,param_1);
   uVar4 = *(uint *)(param_1 + 0x10);
   if ((uVar4 < 0x697f) || (0x69fe < uVar4)) goto switchD_005b4c27_default;
-  uVar6 = (undefined3)(uVar4 - 0x697f >> 8);
+  uVar7 = (undefined3)(uVar4 - 0x697f >> 8);
   switch(uVar4 - 0x697f) {
   case 0:
     iVar3 = -2;
-    iVar5 = 1;
-    uVar4 = CONCAT31(uVar6,*(char *)(param_1 + 0x10) + -0x7f);
+    iVar6 = 1;
+    uVar4 = CONCAT31(uVar7,*(char *)(param_1 + 0x10) + -0x7f);
     break;
   case 1:
     iVar3 = -2;
     goto LAB_005b4c5f;
   case 2:
     iVar3 = -2;
-    iVar5 = 2;
+    iVar6 = 2;
     uVar4 = CONCAT31((int3)((uint)extraout_EDX >> 8),*(char *)(param_1 + 0x10) + -0x7f);
     break;
   case 3:
     iVar3 = -2;
-    iVar5 = 0;
-    uVar4 = CONCAT31(uVar6,*(char *)(param_1 + 0x10) + -0x7f);
+    iVar6 = 0;
+    uVar4 = CONCAT31(uVar7,*(char *)(param_1 + 0x10) + -0x7f);
     break;
   case 4:
     iVar3 = -3;
 LAB_005b4c5f:
-    iVar5 = 0;
+    iVar6 = 0;
     uVar4 = CONCAT31((int3)((uint)extraout_ECX >> 8),*(char *)(param_1 + 0x10) + -0x7f);
     break;
   default:
     goto switchD_005b4c27_default;
   }
-  MMObjTy::PaintSprBut((MMObjTy *)this_00,param_1,uVar4,1,iVar5,iVar3);
+  MMObjTy::PaintSprBut((MMObjTy *)this_00,param_1,uVar4,1,iVar6,iVar3);
 switchD_005b4c27_default:
   uVar4 = *(uint *)(param_1 + 0x10);
   if (uVar4 < 0x6903) {
@@ -149,15 +150,15 @@ LAB_005b4df8:
     }
     iVar3 = this_00->field_1A5B;
     if (*(int *)(iVar3 + 0x2e6) == 0) break;
-    puVar7 = local_48;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+    puVar8 = local_48;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
-    puVar7 = local_28;
-    for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
+    puVar8 = local_28;
+    for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
     local_48[2] = this_00->field_0008;
     local_48[3] = 2;
@@ -182,7 +183,7 @@ LAB_005b4df8:
     }
     break;
   case 0x6942:
-    cVar8 = '\0';
+    cVar9 = '\0';
     goto LAB_005b4ee5;
   case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
@@ -190,13 +191,13 @@ LAB_005b4df8:
     this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     goto LAB_005b4df8;
   case 0x6944:
-    cVar8 = '\x01';
+    cVar9 = '\x01';
 LAB_005b4ee5:
-    SetMode(this_00,cVar8,0);
+    SetMode(this_00,cVar9,0);
   }
 cf_common_exit_005B4EEC:
   g_currentExceptionFrame = local_8c.previous;
-  uVar2 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
-  return uVar2;
+  uVar5 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
+  return uVar5;
 }
 

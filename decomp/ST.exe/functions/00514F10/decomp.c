@@ -35,7 +35,7 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_helppan_cpp_007c383c,0x39b);
     return;
   }
-  if ((byte *)local_8->field_01D3 != (byte *)0x0) {
+  if (local_8->field_01D3 != (uint *)0x0) {
     FUN_006b5570((byte *)local_8->field_01D3);
   }
   puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -49,14 +49,14 @@ void __thiscall HelpPanelTy::PrepMissObj(HelpPanelTy *this)
     do {
       pcVar5 = *(char **)(*(int *)(DAT_0080c4cb + 0x14) + iVar3 * 4);
 LAB_00514f85:
-      thunk_FUN_005411a0(this_00->field_01D3,pcVar5,&DAT_007c3b60);
+      thunk_FUN_005411a0((int)this_00->field_01D3,pcVar5,&DAT_007c3b60);
       iVar3 = iVar3 + 1;
     } while (iVar3 < *(int *)(DAT_0080c4cb + 8));
   }
   puVar4 = ccFntTy::FormIndentSarr
-                     (this_00->field_01E4,this_00->field_01D3,(uint *)s________________007c21d8,
-                      (uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
-  if ((byte *)this_00->field_01D3 != (byte *)0x0) {
+                     (this_00->field_01E4,(int)this_00->field_01D3,(uint *)s________________007c21d8
+                      ,(uint *)&DAT_007c21ec,0x19c,0,0xffffffff,(char *)0x0,1);
+  if (this_00->field_01D3 != (uint *)0x0) {
     FUN_006b5570((byte *)this_00->field_01D3);
   }
   this_00->field_01D3 = puVar4;
@@ -65,7 +65,7 @@ LAB_00514f85:
     this_00->field_01D3 = puVar4;
     Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_007c3b5c);
   }
-  puVar4 = (uint *)this_00->field_01D3;
+  puVar4 = this_00->field_01D3;
   if (puVar4[2] != 0) {
     ccFntTy::SepColorStrInSarr(this_00->field_01E4,puVar4,puVar4);
   }
@@ -73,7 +73,7 @@ LAB_00514f85:
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined2 *)&this_00->field_0x2c = 1;
-    this_00->field_002E = *(undefined2 *)(this_00->field_01D3 + 8);
+    this_00->field_002E = (short)this_00->field_01D3[2];
     FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);
     this_00->field_002E = 0;
     *(undefined2 *)&this_00->field_0x2c = 0;

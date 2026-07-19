@@ -22,7 +22,7 @@ FUN_006e1320(void *this,double *param_1,double *param_2,int *param_3,int *param_
   local_1c = 0;
   local_18 = 0;
   FUN_006e25d0(this,&local_40);
-  FUN_006dd050(this,*(uint *)((int)this + 0xa8),*param_1,*param_2);
+  Library::Ourlib::STREND::FUN_006dd050(this,*(uint *)((int)this + 0xa8),*param_1,*param_2);
   dVar1 = local_14;
   *(undefined4 *)param_1 = *(undefined4 *)((int)this + 0x98);
   *(undefined4 *)((int)param_1 + 4) = *(undefined4 *)((int)this + 0x9c);
@@ -34,7 +34,7 @@ FUN_006e1320(void *this,double *param_1,double *param_2,int *param_3,int *param_
   if (param_5 != (int *)0x0) {
     *param_5 = local_28 - local_38;
   }
-  FUN_006dd050(this,*(uint *)((int)this + 0xa8),local_c,dVar1);
+  Library::Ourlib::STREND::FUN_006dd050(this,*(uint *)((int)this + 0xa8),local_c,dVar1);
   return;
 }
 

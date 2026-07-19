@@ -22,7 +22,7 @@ undefined4 __fastcall FUN_00572ba0(int param_1)
   g_currentExceptionFrame = &local_50;
   iVar1 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,pbVar2,pcVar3);
   if (iVar1 == 0) {
-    this = (cMf32 *)FUN_006f0ec0(0x345,local_154,2,0,0);
+    this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_154,2,0,0);
     iVar1 = local_c;
     if (this != (cMf32 *)0x0) {
       cMf32::RecPut(this,0xc,PTR_s_AIKEYS_PLAYER_0079b0dc,(byte *)(local_c + 0xd86),0x28,

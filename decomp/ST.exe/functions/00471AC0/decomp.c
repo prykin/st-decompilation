@@ -39,16 +39,16 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
   undefined4 uVar14;
   int local_64;
   undefined4 local_60;
-  undefined2 local_5c;
-  undefined2 local_5a;
-  undefined2 local_58;
+  short local_5c;
+  short local_5a;
+  short local_58;
   short local_56;
   short local_54;
   short local_52;
   short local_50;
   short local_4e;
   short local_4c;
-  undefined2 local_4a;
+  short local_4a;
   undefined4 local_48;
   undefined2 local_44;
   int local_42;
@@ -227,8 +227,8 @@ LAB_00472a3a:
             this->field_00B7 = uVar4;
             if (iVar8 != -1) {
               if (iVar8 == 0) {
-                iVar8 = FUN_006aadd0((int)(short)this->field_0047,(int)(short)this->field_0049,
-                                     (int)(short)this->field_004B,(int)(short)this->field_0475,
+                iVar8 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,
+                                     (int)this->field_004B,(int)(short)this->field_0475,
                                      (int)(short)this->field_0477,(int)(short)this->field_0479);
                 if (0 < iVar8) {
                   thunk_FUN_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,
@@ -343,8 +343,8 @@ LAB_00472a3a:
                            -sVar3 + this->field_004B);
         if (iVar8 == 1) {
           this->field_082E = 3;
-          thunk_FUN_00481520(this,(int)(short)this->field_0047,(int)(short)this->field_0049,
-                             (int)(short)this->field_0469 + (int)(short)this->field_004B);
+          thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                             (int)(short)this->field_0469 + (int)this->field_004B);
           uVar4 = this->field_00B7;
           this->field_00B7 = 0;
           iVar8 = thunk_FUN_0045ff50(this,0);
@@ -453,8 +453,8 @@ cf_common_exit_00472CB0:
         if (local_20 != (STTorpC *)0x0) {
           iVar11 = iVar11 + -1;
           thunk_FUN_004162b0(local_20,(undefined2 *)((int)&local_10 + 2),&local_c,&local_a);
-          local_2c[0] = FUN_006aadd0((int)(short)this->field_0047,(int)(short)this->field_0049,
-                                     (int)(short)this->field_004B,(int)local_10._2_2_,(int)local_c,
+          local_2c[0] = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,
+                                     (int)this->field_004B,(int)local_10._2_2_,(int)local_c,
                                      (int)local_a);
           if ((local_2c[0] <= (int)this->field_080C / 0xc9 + 1) &&
              (iVar8 = STTorpC::IsDangerous(local_20,this->field_0018,&local_24), iVar8 != 2)) {
@@ -483,9 +483,8 @@ LAB_00471ec9:
                                                          this->field_0049),uVar14);
                     if (iVar8 != 1) break;
                     this->field_082E = 1;
-                    thunk_FUN_00481520(this,(int)(short)this->field_0047,
-                                       (int)(short)this->field_0049,
-                                       (int)(short)this->field_0469 + (int)(short)this->field_004B);
+                    thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                                       (int)(short)this->field_0469 + (int)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar8 = thunk_FUN_0045ff50(this,0);
@@ -498,9 +497,8 @@ LAB_00471ec9:
                                        CONCAT22(extraout_var_03,this->field_0049),3);
                     if (iVar8 != 1) break;
                     this->field_082E = 1;
-                    thunk_FUN_00481520(this,(int)(short)this->field_0047,
-                                       (int)(short)this->field_0049,
-                                       (int)(short)this->field_0469 + (int)(short)this->field_004B);
+                    thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                                       (int)(short)this->field_0469 + (int)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar8 = thunk_FUN_0045ff50(this,0);
@@ -529,9 +527,8 @@ LAB_00471ec9:
                       goto LAB_00471ec9;
                     }
                     this->field_082E = 1;
-                    thunk_FUN_00481520(this,(int)(short)this->field_0047,
-                                       (int)(short)this->field_0049,
-                                       (int)(short)this->field_0469 + (int)(short)this->field_004B);
+                    thunk_FUN_00481520(this,(int)this->field_0047,(int)this->field_0049,
+                                       (int)(short)this->field_0469 + (int)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar8 = thunk_FUN_0045ff50(this,0);
@@ -570,9 +567,9 @@ LAB_00471ec9:
   else {
     iVar8 = GetDefenceTarget(this,CASE_0);
   }
-  iVar11 = FUN_006aadd0((int)(short)this->field_0047,(int)(short)this->field_0049,
-                        (int)(short)this->field_004B,(int)(short)this->field_0475,
-                        (int)(short)this->field_0477,(int)(short)this->field_0479);
+  iVar11 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
+                        (int)(short)this->field_0475,(int)(short)this->field_0477,
+                        (int)(short)this->field_0479);
   if (iVar8 != 0) {
     if (iVar11 < 1) goto switchD_00471fe0_caseD_2;
     this->field_082E = 5;
@@ -710,9 +707,9 @@ switchD_00471fe0_caseD_2:
   if ((this->field_082E == 0) && (this->field_048B == 0xffff)) {
     if ((this->field_0475 != this->field_0047) ||
        ((this->field_0477 != this->field_0049 || (this->field_0479 != this->field_004B)))) {
-      iVar8 = FUN_006aadd0((int)(short)this->field_0047,(int)(short)this->field_0049,
-                           (int)(short)this->field_004B,(int)(short)this->field_0475,
-                           (int)(short)this->field_0477,(int)(short)this->field_0479);
+      iVar8 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
+                           (int)(short)this->field_0475,(int)(short)this->field_0477,
+                           (int)(short)this->field_0479);
       if ((iVar8 != -4) && (iVar8 < 8)) {
         this->field_082E = 4;
         thunk_FUN_00481520(this,(int)(short)this->field_0475,(int)(short)this->field_0477,

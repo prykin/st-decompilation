@@ -40,7 +40,7 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   iVar3 = *(int *)(param_1 + 0x10);
   if (iVar3 == 2) {
     if (DAT_00806754 != (cMf32 *)0x0) {
-      local_8 = mfAObjLoad(DAT_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
+      local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
     }
     if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 6) != 2)) {
       local_c->field_001C = 0;

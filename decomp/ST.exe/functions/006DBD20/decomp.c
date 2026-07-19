@@ -62,9 +62,10 @@ FUN_006dbd20(void *param_1,undefined4 param_2,uint param_3,undefined4 param_4,in
        _DAT_0079df78 / (*(double *)((int)param_1 + 0x11c) - *(double *)((int)param_1 + 0x114));
   lVar6 = Library::MSVCRT::__ftol();
   *(int *)((int)param_1 + 0x2e4) = (int)lVar6;
-  FUN_006dd660(param_1,0,0,param_5,param_6);
-  FUN_006dd6e0(param_1,param_7,param_8,param_9,param_10,param_11._0_4_,param_11._4_4_,param_12._0_4_
-               ,param_12._4_4_);
+  Library::Ourlib::STREND::FUN_006dd660(param_1,0,0,param_5,param_6);
+  Library::Ourlib::STREND::FUN_006dd6e0
+            (param_1,param_7,param_8,param_9,param_10,param_11._0_4_,param_11._4_4_,param_12._0_4_,
+             param_12._4_4_);
   FUN_006dd610(param_1,(-(uint)(*(int *)((int)param_1 + 0x124) != 1) & 0xfffffffc) + 4,
                *(undefined4 *)((int)param_1 + 0x98),*(undefined4 *)((int)param_1 + 0x9c),
                *(undefined4 *)((int)param_1 + 0xa0),*(undefined4 *)((int)param_1 + 0xa4));

@@ -261,7 +261,7 @@ LAB_0058e87e:
   }
 cf_common_exit_0058E925:
   if ((this->field_0257 != CASE_4) && (this->field_0257 != (CASE_6|CASE_1))) {
-    iVar6 = (0x18 - (int)(short)this->field_006C / 0xf) % 0x18;
+    iVar6 = (0x18 - (int)this->field_006C / 0xf) % 0x18;
     uVar7 = *(uint *)(DAT_00802a38 + 0xe4) % 0x1e;
     local_10 = uVar7 + (iVar6 / 3) * 0x1e;
     STT3DSprC::SetCurFase

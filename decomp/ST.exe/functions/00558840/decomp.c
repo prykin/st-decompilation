@@ -88,7 +88,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
       else if (uVar6 == 2) {
         local_8 = (ushort *)0x0;
         if (DAT_00806754 != (cMf32 *)0x0) {
-          local_8 = mfAObjLoad(DAT_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
+          local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_s_VISIBILITY_0079aec4,0,0);
         }
         if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
           InitData(this_00);

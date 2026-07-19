@@ -42,7 +42,7 @@ void __thiscall OpticClassC::InitOptic(OpticClassC *this)
     return;
   }
   if (DAT_00806754 != (cMf32 *)0x0) {
-    local_c = mfAObjLoad(DAT_00806754,s_opticsave_007ac5d4,0,0);
+    local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,s_opticsave_007ac5d4,0,0);
   }
   if (local_c == (ushort *)0x0) {
     DAT_00807400 = DAT_00807568;

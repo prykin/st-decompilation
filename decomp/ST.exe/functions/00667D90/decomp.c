@@ -94,7 +94,7 @@ undefined4 __thiscall AiFltClassTy::GetMessage(AiFltClassTy *this,int param_1)
           this_00->field_0203 = (uVar4 >> 0x10) % 0x1a + 0x19;
           thunk_FUN_00676c40(this_00->field_020B,&LAB_004013cf);
           iVar5 = this_00->field_0223;
-          this_00->field_0170 = *(undefined2 *)(this_00->field_022F + 0xc);
+          this_00->field_0170 = *(short *)(this_00->field_022F + 0xc);
           iVar3 = CONCAT22((short)((uint)this_00->field_022F >> 0x10),*(undefined2 *)(iVar5 + 0xc));
           this_00->field_0127 = *(undefined2 *)(iVar5 + 0xc);
         }

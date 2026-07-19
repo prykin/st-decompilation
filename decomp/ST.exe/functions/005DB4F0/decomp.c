@@ -34,7 +34,8 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
     iVar3 = 0;
     do {
       wsprintfA(&pSVar2->field_0x3c,s_MM_ACC_02d_007cd7a0,iVar3);
-      pcVar4 = mfImtLoad(DAT_00806780,&pSVar2->field_0x3c,0,0,(undefined4 *)0x0,1);
+      pcVar4 = Library::Ourlib::MFIMG::mfImtLoad
+                         (DAT_00806780,&pSVar2->field_0x3c,0,0,(undefined4 *)0x0,1);
       *(char **)(&pSVar2->field_0x244 + iVar3 * 4) = pcVar4;
       switch(iVar3) {
       case 0:
@@ -86,7 +87,7 @@ undefined4 __thiscall StartSystemTy::LoadGraph(StartSystemTy *this)
       iVar3 = iVar3 + 1;
     } while (iVar3 < 6);
     LoadStartPlt(DAT_00806780,0);
-    puVar5 = mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,2,1);
+    puVar5 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,2,1);
     pSVar2->field_02F0 = puVar5;
     iVar3 = thunk_FUN_005da130((int)puVar5,(undefined *)0x0,DAT_00807dd9);
     pSVar2->field_0030 = iVar3;

@@ -6,9 +6,10 @@
 void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,short param_2)
 
 {
-  code *pcVar1;
+  uint uVar1;
+  code *pcVar2;
   STGroupBoatC *this_00;
-  int iVar2;
+  int errorCode;
   int iVar3;
   short *psVar4;
   undefined4 unaff_ESI;
@@ -21,19 +22,19 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
-  if (iVar2 != 0) {
+  if (errorCode != 0) {
     g_currentExceptionFrame = local_50.previous;
-    if (iVar2 != -0x5001fff7) {
-      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1294,0,iVar2,
+    if (errorCode != -0x5001fff7) {
+      iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1294,0,errorCode,
                                  &DAT_007a4ccc,s_STGroupBoatC__ChangeMDNotify_007ac310);
       if (iVar3 != 0) {
-        pcVar1 = (code *)swi(3);
-        (*pcVar1)();
+        pcVar2 = (code *)swi(3);
+        (*pcVar2)();
         return;
       }
-      RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1295);
+      RaiseInternalException(errorCode,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1295);
     }
     return;
   }
@@ -42,33 +43,33 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if (local_c->field_029F == 0) {
+    if (local_c->field_029F == (uint *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    iVar2 = *(int *)(local_c->field_029F + 0xc);
+    uVar1 = local_c->field_029F[3];
     uVar5 = 0;
-    if (0 < iVar2) {
+    if (0 < (int)uVar1) {
       do {
-        FUN_006acc70(this_00->field_029F,uVar5,(undefined4 *)local_8);
+        FUN_006acc70((int)this_00->field_029F,uVar5,(undefined4 *)local_8);
         if (local_8[0] == -1) break;
         uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < iVar2);
+      } while ((int)uVar5 < (int)uVar1);
     }
     psVar4 = &param_2;
 LAB_004a4e27:
-    Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_029F,uVar5,(undefined4 *)psVar4);
+    Library::DKW::TBL::FUN_006ae140(this_00->field_029F,uVar5,(undefined4 *)psVar4);
   }
   else {
-    if (local_c->field_029F == 0) {
+    if (local_c->field_029F == (uint *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    iVar2 = *(int *)(local_c->field_029F + 0xc);
+    uVar1 = local_c->field_029F[3];
     uVar5 = 0;
-    if (0 < iVar2) {
+    if (0 < (int)uVar1) {
       do {
-        FUN_006acc70(this_00->field_029F,uVar5,(undefined4 *)local_8);
+        FUN_006acc70((int)this_00->field_029F,uVar5,(undefined4 *)local_8);
         if (local_8[0] == param_2) {
           local_8[0] = -1;
           local_8[1] = 0;
@@ -76,10 +77,10 @@ LAB_004a4e27:
           goto LAB_004a4e27;
         }
         uVar5 = uVar5 + 1;
-      } while ((int)uVar5 < iVar2);
+      } while ((int)uVar5 < (int)uVar1);
     }
   }
-  DistributeDock(this_00,0,this_00->field_029F,this_00->field_0029);
+  DistributeDock(this_00,0,(int)this_00->field_029F,this_00->field_0029);
   g_currentExceptionFrame = local_50.previous;
   return;
 }

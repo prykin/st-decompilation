@@ -30,9 +30,9 @@ void __thiscall ChooseMapTy::DoneChooseMap(ChooseMapTy *this)
       FUN_00715360(DAT_00811764,0,'\x10',(char *)0x0,0,0,0xffffffff);
       thunk_FUN_005dac60();
     }
-    if ((HANDLE)pCVar3->field_1C8F != (HANDLE)0x0) {
-      FindCloseChangeNotification((HANDLE)pCVar3->field_1C8F);
-      pCVar3->field_1C8F = 0;
+    if (pCVar3->field_1C8F != (HANDLE)0x0) {
+      FindCloseChangeNotification(pCVar3->field_1C8F);
+      pCVar3->field_1C8F = (HANDLE)0x0;
     }
     if (DAT_00802a30 != 0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {

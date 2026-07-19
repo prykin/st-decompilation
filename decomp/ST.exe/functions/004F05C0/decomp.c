@@ -92,9 +92,12 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   wsprintfA(&this_00->field_0x6c,&DAT_007c181c,pCVar4);
   puVar5 = cMf32::RecGet(DAT_00806790,1,&this_00->field_0x6c,(int *)0x0,1);
   this_00->field_027A = puVar5;
-  puVar5 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar5;
-  puVar5 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_00->field_018C = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
   ProdPanelTy::InitProdPanel

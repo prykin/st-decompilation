@@ -71,11 +71,12 @@ void __fastcall FUN_006dcd60(int param_1)
     local_c._0_4_ = SUB84(dVar2,0);
     dVar4 = dVar3 - dVar1;
     dVar1 = -dVar1;
-    FUN_006dd6e0(*(void **)(param_1 + 0x358),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
-                 SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),SUB84(-(dVar3 - dVar2),0),
-                 (int)((ulonglong)-(dVar3 - dVar2) >> 0x20),local_c._0_4_,
-                 (int)((ulonglong)dVar2 >> 0x20));
-    FUN_006dd660(*(void **)(param_1 + 0x358),0,0,iVar6,iVar6);
+    Library::Ourlib::STREND::FUN_006dd6e0
+              (*(void **)(param_1 + 0x358),SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),
+               SUB84(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),SUB84(-(dVar3 - dVar2),0),
+               (int)((ulonglong)-(dVar3 - dVar2) >> 0x20),local_c._0_4_,
+               (int)((ulonglong)dVar2 >> 0x20));
+    Library::Ourlib::STREND::FUN_006dd660(*(void **)(param_1 + 0x358),0,0,iVar6,iVar6);
     *(int *)(*(int *)(param_1 + 0x358) + 0x370) = iVar6;
     *(int *)(param_1 + 0x370) = iVar6;
     *(undefined4 *)(*(int *)(param_1 + 0x358) + 0x134) = 1;

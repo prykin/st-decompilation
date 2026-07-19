@@ -58,7 +58,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     local_14->field_003D = (int)*(short *)&local_14->field_0xdd;
     local_14->field_0045 = (int)*(short *)&local_14->field_0xe1;
     local_14->field_0065 = 0;
-    local_14->field_0041 = (int)(short)local_14->field_00DF;
+    local_14->field_0041 = (int)local_14->field_00DF;
     local_14->field_030E = *(undefined4 *)&local_14->field_0xe3;
     puVar3 = STGroupC::GetGroupContent((STGroupC *)local_14,(int)unaff_EDI);
     InitWay(this_00,(int)puVar3,this_00->field_003D,this_00->field_0041,this_00->field_0045);

@@ -17,7 +17,8 @@ FUN_006e1dd0(void *this,int param_1,int param_2,float *param_3,float *param_4,fl
   if (30000 < CONCAT22(extraout_var,uVar2)) {
     return 0;
   }
-  FUN_006e29d0(this,&local_10,param_1,param_2,CONCAT22(extraout_var,uVar2));
+  Library::Ourlib::STREND::FUN_006e29d0(this,&local_10,param_1,param_2,CONCAT22(extraout_var,uVar2))
+  ;
   dVar1 = *(double *)((int)this + 200) * _DAT_0079b168;
   if ((((local_10 < _DAT_0079034c) ||
        ((double)(int)**(short **)((int)this + 0x280) * *(double *)((int)this + 200) - dVar1 <=

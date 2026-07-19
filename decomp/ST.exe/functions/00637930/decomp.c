@@ -11,8 +11,9 @@ FUN_00637930(uint param_1,int param_2,int param_3,int param_4,int param_5,uint p
   
   uVar1 = thunk_FUN_00635da0(param_3,param_4,param_5);
   if ((((char)uVar1 != '\0') &&
-      (puVar2 = mfRLoad(DAT_0080678c,CASE_1D,(byte *)s_tlo_emb6_007d1c3c,0xffffffff,0,1,0,
-                        (undefined4 *)0x0), puVar2 != (ushort *)0x0)) &&
+      (puVar2 = Library::Ourlib::MFRLOAD::mfRLoad
+                          (DAT_0080678c,CASE_1D,(byte *)s_tlo_emb6_007d1c3c,0xffffffff,0,1,0,
+                           (undefined4 *)0x0), puVar2 != (ushort *)0x0)) &&
      (DAT_00807598 != (void *)0x0)) {
     FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar2 + 9),
                  *(uint *)((int)puVar2 + 0xd),0x10,0x15,0);

@@ -41,7 +41,7 @@ void __thiscall CPanelTy::PaintIDSObj(CPanelTy *this)
     DibPut((undefined4 *)local_8->field_0194,0xf,0x8d,'\x01',(byte *)local_8->field_09F1);
     if (pCVar2->field_0C4D == 0) goto cf_common_exit_00504F81;
     ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0x10,0x8e,
-                     *(int *)(pCVar2->field_09F1 + 4),0xb);
+                     *(int *)(pCVar2->field_09F1 + 2),0xb);
     UVar6 = pCVar2->field_0C4D;
   }
   else {

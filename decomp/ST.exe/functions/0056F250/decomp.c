@@ -91,15 +91,16 @@ LAB_0056f325:
     iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       if ((param_1 == '\0') || (this_00 = extraout_ECX, param_1 == '\x03')) {
-        local_14 = (cMf32 *)FUN_006f0ec0(0x345,local_1a8,1,0,0);
+        local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_1a8,1,0,0);
         this_00 = extraout_ECX_00;
       }
       pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
-        mfTMapSave(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
+        Library::Ourlib::MFSTMAP::mfTMapSave(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
         pvVar2 = local_10;
-        mfAnySave(*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),(int)pcVar7,
-                  PTR_s_TEXTURE_0079b07c,'\x01');
+        Library::Ourlib::MFANY::mfAnySave
+                  (*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),(int)pcVar7,
+                   PTR_s_TEXTURE_0079b07c,'\x01');
         STPlaySystemC::Save(DAT_00802a38,pcVar7);
         cMf32::RecPut(pcVar7,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
@@ -113,12 +114,14 @@ LAB_0056f325:
         pvVar2 = local_10;
         pcVar7 = local_14;
         if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != (uint *)0x0)) {
-          mfSarSave(*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
-                    '\x01');
+          Library::Ourlib::MFSARR::mfSarSave
+                    (*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
+                     '\x01');
         }
         g_currentExceptionFrame = local_60.previous;
         if (*(uint **)((int)pvVar2 + 0x4eab) != (uint *)0x0) {
-          mfSarSave(*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01');
+          Library::Ourlib::MFSARR::mfSarSave
+                    (*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01');
         }
         if (DAT_00807598 != (void *)0x0) {
           iVar3 = 1;

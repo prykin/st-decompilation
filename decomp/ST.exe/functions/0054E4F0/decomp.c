@@ -84,7 +84,8 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
           }
           pSVar11 = local_c;
           DAT_00802a3c = 0;
-          mfAObjEnum(DAT_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
+          Library::Ourlib::MFAOBJ::mfAObjEnum(DAT_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0)
+          ;
           uVar7 = FUN_006b0140(0x4a39,DAT_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,uVar7);
           if (DAT_00802a58 != (cLoadingTy *)0x0) {

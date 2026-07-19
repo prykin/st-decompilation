@@ -267,7 +267,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       DAT_007fa130 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,0,4,1,0x40307b);
       DAT_007fa134 = 0;
       if (DAT_00806754 != (cMf32 *)0x0) {
-        local_c = mfAObjLoad(DAT_00806754,s_allplsave_007a67d8,0,0);
+        local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,s_allplsave_007a67d8,0,0);
       }
       if (local_c == (ushort *)0x0) {
         piVar14 = (int *)0x0;
@@ -340,7 +340,7 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       } while (iVar4 < 8);
     }
     else {
-      local_c = mfAObjLoad(DAT_00806754,s_allplsave_007a67d8,0,0);
+      local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,s_allplsave_007a67d8,0,0);
       if (local_c == (ushort *)0x0) {
         iVar4 = 0;
         do {

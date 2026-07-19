@@ -45,7 +45,8 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
   else {
     pcVar6 = s_ResSmall_007cb100;
   }
-  puVar4 = mfRLoad(DAT_00806774,CASE_1D,(byte *)pcVar6,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806774,CASE_1D,(byte *)pcVar6,0xffffffff,0,1,0,(undefined4 *)0x0);
   if ((puVar4 != (ushort *)0x0) && ((void *)pSVar2->field_0211 != (void *)0x0)) {
     puVar5 = FUN_006e6460((void *)pSVar2->field_0211,*(undefined4 *)((int)puVar4 + 0x21),
                           *(int *)puVar4,(short)(*(int *)((int)puVar4 + 9) / 2),

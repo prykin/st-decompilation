@@ -284,12 +284,10 @@ cf_common_exit_00476DBA:
             lVar18 = Library::MSVCRT::__ftol();
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,
-                       (local_14 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
-                       (int)(short)local_1c,
-                       (((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_1c._2_2_)
-                       + -3,(int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045
-                            + -3 + (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar6,
-                       sVar23,bVar24);
+                       (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
+                       (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_1c._2_2_) + -3,
+                       (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                       (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar6,sVar23,bVar24);
             uVar15 = extraout_var_00;
           }
           else {
@@ -304,11 +302,10 @@ cf_common_exit_00476DBA:
             local_1c._0_2_ = (short)uVar25;
             iVar16 = (int)(short)local_1c;
             TraksClassTy::TraksCreate
-                      (DAT_00802a7c,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 + iVar16,
-                       (((uVar14 >> 0x10) % 7 + (int)(short)this->field_0043) - iVar6) + -3,
-                       (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_18,0,0,
-                       0,0,0,0,-1,0,0);
+                      (DAT_00802a7c,1,2,7,(uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar16
+                       ,(((uVar14 >> 0x10) % 7 + (int)this->field_0043) - iVar6) + -3,
+                       (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_18,0,0,0,0,0,0
+                       ,-1,0,0);
             uVar15 = extraout_var_01;
           }
           iVar6 = param_1 + 1;
@@ -465,13 +462,11 @@ cf_common_exit_00477B2E:
               lVar18 = Library::MSVCRT::__ftol();
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,
-                         (local_14 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
-                         (int)(short)local_1c,
-                         (((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) -
-                         (int)local_1c._2_2_) + -3,
-                         (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 +
-                         -3 + (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar6,sVar23,
-                         bVar24);
+                         (local_14 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_1c,
+                         (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_1c._2_2_) + -3
+                         ,(int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                          (int)local_18,sVar17,sVar19,sVar20,sVar4,sVar21,sVar22,iVar6,sVar23,bVar24
+                        );
               uVar25 = extraout_EDX_02;
             }
             else {
@@ -487,10 +482,10 @@ cf_common_exit_00477B2E:
               iVar16 = (int)(short)local_1c;
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,
-                         (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 + iVar16,
-                         (((uVar14 >> 0x10) % 7 + (int)(short)this->field_0043) - iVar6) + -3,
-                         (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_18,0,
-                         0,0,0,0,0,-1,0,0);
+                         (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar16,
+                         (((uVar14 >> 0x10) % 7 + (int)this->field_0043) - iVar6) + -3,
+                         (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_18,0,0,0,0,0
+                         ,0,-1,0,0);
               uVar25 = extraout_EDX_03;
             }
             param_1 = param_1 + 1;
@@ -525,8 +520,8 @@ cf_common_exit_00477B2E:
                                (uint)*(ushort *)&this->field_0x5fd,CASE_1);
     if (((piVar7 == (int *)0x0) || (piVar7[6] != *(int *)&this->field_0x5ff)) ||
        (iVar6 = (**(code **)(*piVar7 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 == 0)) {
-      if (((int)(short)this->field_0041 == (*(short *)&this->field_0x609 + 1) * 0xc9) &&
-         ((int)(short)this->field_0043 == (*(short *)&this->field_0x60b + 1) * 0xc9)) {
+      if (((int)this->field_0041 == (*(short *)&this->field_0x609 + 1) * 0xc9) &&
+         ((int)this->field_0043 == (*(short *)&this->field_0x60b + 1) * 0xc9)) {
         this->field_0611 = CASE_4;
         *(undefined4 *)&this->field_0x615 = 0;
         iVar6 = (*this->vtable->vfunc_D8)();
@@ -558,8 +553,8 @@ cf_common_exit_00477B2E:
     local_64.id = MESS_TORPHIT;
     (*this->vtable->GetMessage)(this,&local_64);
     iVar6 = (*(short *)&this->field_0x609 + 1) * 0xc9;
-    if (((short)this->field_0041 == iVar6) &&
-       (iVar6 = (*(short *)&this->field_0x60b + 1) * 0xc9, (short)this->field_0043 == iVar6)) {
+    if ((this->field_0041 == iVar6) &&
+       (iVar6 = (*(short *)&this->field_0x60b + 1) * 0xc9, this->field_0043 == iVar6)) {
       this->field_0611 = CASE_4;
       *(undefined4 *)&this->field_0x615 = 0;
     }

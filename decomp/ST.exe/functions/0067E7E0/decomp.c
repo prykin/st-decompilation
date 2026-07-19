@@ -111,7 +111,7 @@ uint * __cdecl CreateArbList(int param_1,int param_2)
       g_currentExceptionFrame = local_a0.previous;
       return local_8;
     }
-    local_c = mfAObjLoad(param_1,pcVar5,0,1);
+    local_c = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar5,0,1);
     if (local_c != (ushort *)0x0) {
       _Source = local_c + 3;
       pcVar14 = local_138;

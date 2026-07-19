@@ -72,12 +72,14 @@ int __thiscall CGenerate::SaveMap(CGenerate *this)
                 (undefined4 *)0x0,'\0',(uint *)0x0);
   cMf32::RecPut(this_00->field_0018,0,PTR_s_TEXTURE_0079d83c,&this_00->field_0x53f3,0x104,
                 (undefined4 *)0x0,'\0',(uint *)0x0);
-  iVar2 = AuxTMapRefreshAll((short *)this_00->field_000C,(int *)this_00->field_0008);
+  iVar2 = Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
+                    ((short *)this_00->field_000C,(int *)this_00->field_0008);
   if (iVar2 != 0) {
     local_8 = 0;
   }
   *(undefined1 *)(this_00->field_000C + 4) = 0x20;
-  iVar2 = mfTMapSave((undefined2 *)this_00->field_000C,(int)this_00->field_0018,s_3D_MAP_007ca1e4,
+  iVar2 = Library::Ourlib::MFSTMAP::mfTMapSave
+                    ((undefined2 *)this_00->field_000C,(int)this_00->field_0018,s_3D_MAP_007ca1e4,
                      '\0');
   if (iVar2 != 0) {
     local_8 = 0;

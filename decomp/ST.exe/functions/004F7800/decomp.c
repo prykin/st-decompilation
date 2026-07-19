@@ -25,9 +25,10 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar5;
-  uint *puVar6;
-  int *piVar7;
+  uint *puVar5;
+  undefined4 *puVar6;
+  ushort **ppuVar7;
+  int *piVar8;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   int local_8;
@@ -41,19 +42,19 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     puVar1 = &local_c->field_0x18;
     local_c->field_0028 = 0x4404;
     FUN_006e6000(local_c,0xf,0,(undefined4 *)puVar1);
-    piVar7 = (int *)&this_00->field_0x217;
+    piVar8 = (int *)&this_00->field_0x217;
     local_8 = 4;
     do {
-      if (*piVar7 != 0) {
-        FUN_006ab060(piVar7);
+      if (*piVar8 != 0) {
+        FUN_006ab060(piVar8);
       }
-      piVar7 = piVar7 + 1;
+      piVar8 = piVar8 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    puVar5 = (undefined4 *)puVar1;
+    puVar6 = (undefined4 *)puVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
     }
     this_00->field_0028 = 0x14;
     *(undefined4 *)&this_00->field_0x2c = this_00->field_0008;
@@ -62,101 +63,101 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       FUN_006e56b0((void *)this_00->field_000C,this_00->field_095C);
     }
     this_00->field_095C = 0;
-    puVar6 = &this_00->field_0308;
+    puVar5 = &this_00->field_0308;
     iVar3 = 2;
     do {
-      if (*(uint *)((int)puVar6 + -10) != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*(uint *)((int)puVar6 + -10));
+      if (*(uint *)((int)puVar5 + -10) != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*(uint *)((int)puVar5 + -10));
       }
-      *(undefined4 *)((int)puVar6 + -10) = 0;
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+      *(undefined4 *)((int)puVar5 + -10) = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
       }
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar6 = &this_00->field_0310;
+    puVar5 = &this_00->field_0310;
     iVar3 = 3;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
       }
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (this_00->field_09D0 != 0) {
       FUN_006e56b0((void *)this_00->field_000C,this_00->field_09D0);
     }
     this_00->field_09D0 = 0;
-    puVar6 = &this_00->field_09A4;
+    puVar5 = &this_00->field_09A4;
     iVar3 = 7;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
-        *puVar6 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
+        *puVar5 = 0;
       }
-      puVar6 = puVar6 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar6 = &this_00->field_09C0;
+    puVar5 = &this_00->field_09C0;
     iVar3 = 2;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
-        *puVar6 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
+        *puVar5 = 0;
       }
-      puVar6 = puVar6 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar6 = &this_00->field_0A15;
+    puVar5 = &this_00->field_0A15;
     iVar3 = 6;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
-        *puVar6 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
+        *puVar5 = 0;
       }
-      puVar6 = puVar6 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar6 = &this_00->field_0B1F;
+    puVar5 = &this_00->field_0B1F;
     iVar3 = 6;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
-        *puVar6 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
+        *puVar5 = 0;
       }
-      puVar6 = puVar6 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (this_00->field_0B37 != 0) {
       FUN_006e56b0((void *)this_00->field_000C,this_00->field_0B37);
     }
     this_00->field_0B37 = 0;
-    puVar6 = &this_00->field_0960;
+    puVar5 = &this_00->field_0960;
     iVar3 = 4;
     do {
-      if (*puVar6 != 0) {
-        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
-        *puVar6 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar5);
+        *puVar5 = 0;
       }
-      puVar6 = puVar6 + 1;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (this_00->field_0970 != 0) {
       FUN_006e56b0((void *)this_00->field_000C,this_00->field_0970);
     }
-    puVar6 = &this_00->field_0148;
+    puVar5 = &this_00->field_0148;
     this_00->field_0970 = 0;
     DAT_00801688 = 0;
     iVar3 = 0xb;
     do {
-      if (-1 < (int)*puVar6) {
-        FUN_006b3bb0(DAT_008075a8,*puVar6);
+      if (-1 < (int)*puVar5) {
+        FUN_006b3bb0(DAT_008075a8,*puVar5);
       }
-      *puVar6 = 0xffffffff;
-      puVar6 = puVar6 + 1;
+      *puVar5 = 0xffffffff;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if (-1 < (int)this_00->field_0174) {
@@ -171,13 +172,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
       FUN_006b3bb0(DAT_008075a8,this_00->field_017C);
     }
     this_00->field_017C = 0xffffffff;
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_0B43);
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_0B47);
-    puVar6 = &this_00->field_09D9;
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0B43);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0B47);
+    ppuVar7 = &this_00->field_09D9;
     iVar3 = 0xf;
     do {
-      cMf32::RecMemFree(DAT_00806790,puVar6);
-      puVar6 = puVar6 + 1;
+      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar7);
+      ppuVar7 = ppuVar7 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     if ((DAT_00807598 != (void *)0x0) && ((int *)this_00->field_0DB3 != (int *)0x0)) {
@@ -187,36 +188,36 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (DAT_00807598 != (void *)0x0) {
       FUN_006e6500(DAT_00807598,(undefined4 *)0x0);
     }
-    piVar7 = &this_00->field_0227;
+    piVar8 = &this_00->field_0227;
     iVar3 = 4;
     do {
-      if (*piVar7 != 0) {
-        FUN_006ab060(piVar7);
+      if (*piVar8 != 0) {
+        FUN_006ab060(piVar8);
       }
-      piVar7 = piVar7 + 1;
+      piVar8 = piVar8 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_0994);
-    puVar5 = &this_00->field_0DBF;
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0994);
+    puVar6 = &this_00->field_0DBF;
     iVar3 = 2;
     do {
-      *(undefined4 *)((int)puVar5 + -0x3f7) = 0;
-      *puVar5 = 0;
-      cMf32::RecMemFree(DAT_00806780,puVar5 + -2);
-      puVar5 = puVar5 + 1;
-      iVar3 = iVar3 + -1;
-    } while (iVar3 != 0);
-    puVar6 = &this_00->field_0974;
-    iVar3 = 8;
-    do {
-      cMf32::RecMemFree(DAT_00806790,puVar6);
+      *(undefined4 *)((int)puVar6 + -0x3f7) = 0;
+      *puVar6 = 0;
+      cMf32::RecMemFree(DAT_00806780,puVar6 + -2);
       puVar6 = puVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_0954);
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_0958);
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_0286);
-    cMf32::RecMemFree(DAT_00806790,&this_00->field_028A);
+    ppuVar7 = &this_00->field_0974;
+    iVar3 = 8;
+    do {
+      cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar7);
+      ppuVar7 = ppuVar7 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0954);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0958);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0286);
+    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_028A);
     this_00->field_077C = 0;
     this_00->field_02DE = 0;
     this_00->field_02DA = 0;
@@ -303,13 +304,13 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
     if (this_00->field_01B4 != 0) {
       FUN_006ab060(&this_00->field_01B4);
     }
-    piVar7 = &this_00->field_0180;
+    piVar8 = &this_00->field_0180;
     local_8 = 0xb;
     do {
-      if (*piVar7 != 0) {
-        FUN_006ab060(piVar7);
+      if (*piVar8 != 0) {
+        FUN_006ab060(piVar8);
       }
-      piVar7 = piVar7 + 1;
+      piVar8 = piVar8 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     if ((int *)this_00->field_01D8 != (int *)0x0) {

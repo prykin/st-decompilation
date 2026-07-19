@@ -318,9 +318,9 @@ LAB_0046b5ac:
               sVar19 = 0;
               this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3
-                       + (int)local_8;
-              iVar16 = ((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
+              iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                       (int)local_8;
+              iVar16 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
               uVar10 = local_24;
             }
             else {
@@ -339,15 +339,15 @@ LAB_0046b5ac:
               sVar19 = 0;
               this->field_001C = uVar15;
               this->field_001C = uVar10;
-              iVar13 = (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_8;
+              iVar13 = (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
-              iVar16 = ((uVar15 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
+              iVar16 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
             }
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
-                       (int)(short)local_c,iVar16 + -3,iVar13,sVar19,sVar20,sVar21,sVar22,sVar23,
-                       sVar24,iVar8,sVar25,bVar26);
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
+                       iVar16 + -3,iVar13,sVar19,sVar20,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,
+                       bVar26);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
           } while (local_20 < (int)(uint)(byte)this->field_0x2bf);
@@ -372,7 +372,7 @@ LAB_0046b5ac:
       goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_3) {
-      iVar13 = (int)(short)this->field_006C;
+      iVar13 = (int)this->field_006C;
       if (0x2d < iVar13 % 0x5a) {
         iVar13 = iVar13 + 0x2d;
       }
@@ -430,9 +430,9 @@ LAB_0046b5ac:
               sVar19 = 0;
               this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3
-                       + (int)local_8;
-              iVar16 = ((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
+              iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                       (int)local_8;
+              iVar16 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
               uVar10 = local_24;
             }
             else {
@@ -451,15 +451,15 @@ LAB_0046b5ac:
               sVar21 = 0;
               sVar20 = 0;
               sVar19 = 0;
-              iVar13 = (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_8;
+              iVar13 = (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
-              iVar16 = ((uVar15 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
+              iVar16 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
             }
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
-                       (int)(short)local_c,iVar16 + -3,iVar13,sVar19,sVar20,sVar21,sVar22,sVar23,
-                       sVar24,iVar8,sVar25,bVar26);
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
+                       iVar16 + -3,iVar13,sVar19,sVar20,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,
+                       bVar26);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
           } while (local_20 < (int)(uint)(byte)this->field_0x2bf);
@@ -500,7 +500,7 @@ LAB_0046b6e2:
       local_a8 = (int)*(short *)&this->field_0x4df;
       local_a4 = (int)*(short *)&this->field_0x4e1;
       local_9c = *(undefined4 *)&this->field_0x4e7;
-      local_6d = (int)(short)this->field_006C;
+      local_6d = (int)this->field_006C;
       local_a0 = (uint)*(ushort *)&this->field_0x4fa;
       local_85 = 100;
       local_81 = 100;
@@ -648,9 +648,9 @@ cf_common_exit_0046C04E:
               sVar19 = 0;
               this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
-              iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3
-                       + (int)local_8;
-              iVar16 = ((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
+              iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                       (int)local_8;
+              iVar16 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
               uVar10 = local_24;
             }
             else {
@@ -669,15 +669,15 @@ cf_common_exit_0046C04E:
               sVar21 = 0;
               sVar20 = 0;
               sVar19 = 0;
-              iVar13 = (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_8;
+              iVar13 = (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_8;
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
-              iVar16 = ((uVar15 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
+              iVar16 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)local_c._2_2_;
             }
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,
-                       (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
-                       (int)(short)local_c,iVar16 + -3,iVar13,sVar19,sVar20,sVar21,sVar22,sVar23,
-                       sVar24,iVar8,sVar25,bVar26);
+                       (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_c,
+                       iVar16 + -3,iVar13,sVar19,sVar20,sVar21,sVar22,sVar23,sVar24,iVar8,sVar25,
+                       bVar26);
             local_20 = local_20 + 1;
             local_10 = (undefined4 *)((int)local_10 + 6);
             uVar7 = extraout_EDX_05;

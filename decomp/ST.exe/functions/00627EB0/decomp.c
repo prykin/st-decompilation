@@ -167,11 +167,11 @@ undefined4 __thiscall STParticleC::GetMessage(STParticleC *this,int param_1)
     FUN_006eaaa0(DAT_00807598,this_00->field_00C6,0);
     this_00->field_00C1 = 1;
     FUN_006ea270(DAT_00807598,this_00->field_00C6,0,this_00->field_00B2);
-    local_c = (float)(int)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
+    local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006A = local_c;
-    local_8 = (float)(int)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
+    local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006E = local_8;
-    fVar4 = (float)(int)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
+    fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar4;
     FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
     pvVar11 = DAT_00802a88;
@@ -286,11 +286,11 @@ LAB_006283bd:
       return 0;
     }
     FUN_006ea270(DAT_00807598,this_00->field_00C6,0,this_00->field_00B2);
-    local_c = (float)(int)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
+    local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006A = local_c;
-    local_8 = (float)(int)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
+    local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006E = local_8;
-    fVar4 = (float)(int)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
+    fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar4;
     FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
     pvVar11 = DAT_00802a88;
@@ -364,11 +364,11 @@ LAB_006282e0:
     }
     if ((int)uVar6 < (int)this_00->field_00B6) {
       FUN_006ea270(DAT_00807598,this_00->field_00C6,0,uVar6);
-      local_c = (float)(int)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
+      local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_006A = local_c;
-      local_8 = (float)(int)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
+      local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_006E = local_8;
-      fVar4 = (float)(int)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
+      fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
       this_00->field_0072 = fVar4;
       FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
       pvVar11 = DAT_00802a88;
@@ -462,11 +462,11 @@ LAB_006282e0:
       return 0;
     }
   case 4:
-    local_c = (float)(int)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
+    local_c = (float)this_00->field_0046 * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006A = local_c;
-    local_8 = (float)(int)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
+    local_8 = (float)this_00->field_004A * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_006E = local_8;
-    fVar4 = (float)(int)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
+    fVar4 = (float)this_00->field_004E * _DAT_007904f8 * _DAT_007904f0;
     this_00->field_0072 = fVar4;
     FUN_006ea960(DAT_00807598,this_00->field_00C6,local_c,local_8,fVar4 + _DAT_007904fc);
     pvVar11 = DAT_00802a88;

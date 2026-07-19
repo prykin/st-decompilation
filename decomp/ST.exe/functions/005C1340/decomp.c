@@ -51,9 +51,12 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     iVar3 = FUN_0070a9f0(DAT_00806780,(char *)&DAT_0080f33a,0,1);
     *puVar7 = iVar3;
     FUN_006bc360(iVar3,local_470,(int *)0x0);
-    FUN_00718780((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)(DAT_0081176c + 0x144));
-    FUN_00718780((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_0xa3);
-    FUN_00718780((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar2->field_0x1a3);
+    Library::Ourlib::PALETTE::FUN_00718780
+              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)(DAT_0081176c + 0x144));
+    Library::Ourlib::PALETTE::FUN_00718780
+              ((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar2->field_0xa3);
+    Library::Ourlib::PALETTE::FUN_00718780
+              ((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar2->field_0x1a3);
     PutDDX(0,0,'\x01',(BITMAPINFO *)*puVar7);
     if (pMVar2->field_0083 != (ccFntTy *)0x0) {
       ccFntTy::operator(this_00,(uint *)pMVar2->field_0083);

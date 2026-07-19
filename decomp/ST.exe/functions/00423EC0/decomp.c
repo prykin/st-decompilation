@@ -48,7 +48,7 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
     iVar2 = *(int *)(param_1 + 0x14);
     if (*(uint *)(iVar2 + 0xc) < 2) {
       this_00->field_0020 = *(undefined4 *)(iVar2 + 0x20);
-      this_00->field_0024 = *(undefined1 *)(iVar2 + 4);
+      this_00->field_0024 = *(char *)(iVar2 + 4);
       this_00->field_0025 = *(undefined2 *)(iVar2 + 0x14);
       this_00->field_0027 = *(undefined2 *)(iVar2 + 0x18);
       puVar3 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,5,2,5,0x4045c5);

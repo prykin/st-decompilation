@@ -77,7 +77,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
   case 1:
     CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
     if (this_02->field_1A5F == '\x06') {
-      if (15000 < (uint)(this_02->field_0061 - *(int *)&this_02->field_0x1eb2)) {
+      if (15000 < this_02->field_0061 - *(int *)&this_02->field_0x1eb2) {
         if ((this_02->field_1A60 == '\0') && (iVar6 = this_02->field_1EA6, iVar6 != 0)) {
           if (1 < *(uint *)(iVar6 + 0xc)) {
             do {
@@ -93,11 +93,10 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
           }
           *(int *)&this_02->field_0x1eae = *(int *)&this_02->field_0x1eae + 1;
         }
-        *(undefined4 *)&this_02->field_0x1eb2 = this_02->field_0061;
+        *(DWORD *)&this_02->field_0x1eb2 = this_02->field_0061;
       }
     }
-    else if ((this_02->field_1A5F == '\b') &&
-            (60000 < (uint)(this_02->field_0061 - this_02->field_1A63))) {
+    else if ((this_02->field_1A5F == '\b') && (60000 < this_02->field_0061 - this_02->field_1A63)) {
       CFsgsConnection::RequestGameList
                 ((CFsgsConnection *)&DAT_00802a90,this_02->field_1EC2,(char *)0x0);
       this_02->field_1A63 = this_02->field_0061;
@@ -165,7 +164,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       pCVar9 = FUN_006f2c00(s_MM_BAN__007cc058,2,this_02->field_1A93);
-      puVar10 = mfImgLoad(DAT_00806780,6,pCVar9,bVar15,iVar6);
+      puVar10 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,6,pCVar9,bVar15,iVar6);
       DibPut((undefined4 *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0(DAT_008075a8,this_02->field_1A8F);
       local_8 = 0;
@@ -245,7 +244,7 @@ void __thiscall FSGSTy::NoneFSGS(FSGSTy *this,int param_1)
     CreateCtrls(this_02);
     switch(this_02->field_1A5F) {
     case 6:
-      *(undefined4 *)&this_02->field_0x1eb2 = this_02->field_0061;
+      *(DWORD *)&this_02->field_0x1eb2 = this_02->field_0061;
       if (this_02->field_1A62 == '\0') {
         thunk_FUN_0055d410((CFsgsConnection *)&DAT_00802a90);
       }
@@ -383,7 +382,7 @@ joined_r0x00597872:
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
       pCVar9 = FUN_006f2c00(s_MM_BAN__007cc058,2,this_02->field_1A93);
-      puVar10 = mfImgLoad(DAT_00806780,6,pCVar9,bVar15,iVar6);
+      puVar10 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,6,pCVar9,bVar15,iVar6);
       DibPut((undefined4 *)this_02->field_1A97,0,0,'\x06',(byte *)puVar10);
       FUN_006b35d0(DAT_008075a8,this_02->field_1A8F);
       local_8 = 0;

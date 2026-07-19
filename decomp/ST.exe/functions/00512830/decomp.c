@@ -89,7 +89,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_30c = 500;
     local_308 = 0x32;
     local_2f8 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_2f4 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_2f4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
     iVar2 = this_00->field_005C;
     local_3b8 = 2;
     local_314 = 1;
@@ -112,7 +112,7 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     }
     local_29c[3] = local_29c[3] + 0x16;
     local_178 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_174 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_174 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
     local_110 = this_00->field_003C + 0x1c3;
     local_234 = 0x8164;
     local_120 = 3;

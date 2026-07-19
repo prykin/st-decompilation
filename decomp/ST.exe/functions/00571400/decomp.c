@@ -13,7 +13,8 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   HANDLE hFile;
   DWORD DVar4;
   BOOL BVar5;
-  int iVar6;
+  LPVOID pvVar6;
+  int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_70;
@@ -31,9 +32,9 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   pSVar2 = local_10;
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_70.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x914,0,iVar3,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_tapp_cpp_007ca0c8,0x914,0,iVar3,&DAT_007a4ccc,
                                s_STAppC__ReadCmdPlay_007ca25c);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
@@ -106,14 +107,13 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
       nNumberOfBytesToRead = iVar3 + 0x1b;
       if ((uint)pSVar2->field_118D < nNumberOfBytesToRead) {
         pSVar2->field_118D = nNumberOfBytesToRead;
-        iVar3 = Library::DKW::LIB::FUN_006acf50
-                          ((undefined4 *)pSVar2->field_1189,nNumberOfBytesToRead);
-        pSVar2->field_1189 = iVar3;
+        pvVar6 = (LPVOID)Library::DKW::LIB::FUN_006acf50(pSVar2->field_1189,nNumberOfBytesToRead);
+        pSVar2->field_1189 = pvVar6;
       }
       DVar4 = SetFilePointer(hFile,pSVar2->field_1191,(PLONG)0x0,0);
       if (((DVar4 == 0xffffffff) ||
-          (BVar5 = ReadFile(hFile,(LPVOID)pSVar2->field_1189,nNumberOfBytesToRead,&local_c,
-                            (LPOVERLAPPED)0x0), BVar5 == 0)) || (local_c != nNumberOfBytesToRead)) {
+          (BVar5 = ReadFile(hFile,pSVar2->field_1189,nNumberOfBytesToRead,&local_c,(LPOVERLAPPED)0x0
+                           ), BVar5 == 0)) || (local_c != nNumberOfBytesToRead)) {
         local_8 = 1;
         CloseHandle(hFile);
       }

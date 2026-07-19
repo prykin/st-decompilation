@@ -103,8 +103,8 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
                                            CONCAT22(uStack_28,uStack_2a),(int)cStack_2b),
                pSVar12 = local_8, piVar8 != (int *)0x0)) &&
               ((iVar6 = (**(code **)(*piVar8 + 0xf8))(), pSVar12 = local_8, iVar6 == 1 &&
-               (iVar6 = (**(code **)(*piVar8 + 0xf4))((int)(char)local_8->field_0024),
-               pSVar12 = local_8, iVar6 == 1)))))) {
+               (iVar6 = (**(code **)(*piVar8 + 0xf4))((int)local_8->field_0024), pSVar12 = local_8,
+               iVar6 == 1)))))) {
             Library::DKW::TBL::FUN_006ae140
                       ((uint *)local_8->field_020E,uVar14,(undefined4 *)&local_2c);
             pSVar12 = local_8;
@@ -130,18 +130,18 @@ undefined4 __thiscall STGroupBoatC::GrpAttack(STGroupBoatC *this,int param_1)
       puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
       pSVar12->field_020E = puVar7;
       local_c = CONCAT22((short)((uint)puVar7 >> 0x10),pSVar12->field_00F3);
-      iVar6 = (int)(short)pSVar12->field_00F3;
+      iVar6 = (int)pSVar12->field_00F3;
       local_18 = 0;
-      if (iVar6 < (short)pSVar12->field_00F9 + iVar6) {
+      if (iVar6 < pSVar12->field_00F9 + iVar6) {
         do {
           sVar5 = pSVar12->field_00F5;
           local_14 = CONCAT22((short)((uint)iVar6 >> 0x10),sVar5);
           iVar6 = local_c;
-          if ((int)sVar5 < (int)(short)pSVar12->field_00FB + (int)sVar5) {
+          if ((int)sVar5 < (int)pSVar12->field_00FB + (int)sVar5) {
             do {
               local_10 = CONCAT22((short)((uint)iVar6 >> 0x10),pSVar12->field_00F7);
-              iVar6 = (int)(short)pSVar12->field_00F7;
-              if (iVar6 < (short)pSVar12->field_00FD + iVar6) {
+              iVar6 = (int)pSVar12->field_00F7;
+              if (iVar6 < pSVar12->field_00FD + iVar6) {
                 do {
                   sVar5 = (short)local_c;
                   if (((sVar5 < 0) || (DAT_007fb240 <= sVar5)) ||
@@ -216,7 +216,7 @@ LAB_0049b073:
                         cStack_2b = '\x03';
                         iVar6 = (**(code **)(*piVar8 + 0xf8))();
                         if ((iVar6 == 1) &&
-                           (iVar6 = (**(code **)(*piVar8 + 0xf4))((int)(char)pSVar12->field_0024),
+                           (iVar6 = (**(code **)(*piVar8 + 0xf4))((int)pSVar12->field_0024),
                            iVar6 == 1)) {
                           local_18 = iVar6;
                           Library::DKW::TBL::FUN_006ae1c0
@@ -272,7 +272,7 @@ LAB_0049aec9:
                         iVar9 = (**(code **)(*piVar8 + 0xf8))();
                         pSVar12 = local_8;
                         if ((iVar9 == 1) &&
-                           (iVar9 = (**(code **)(*piVar8 + 0xf4))((int)(char)local_8->field_0024),
+                           (iVar9 = (**(code **)(*piVar8 + 0xf4))((int)local_8->field_0024),
                            iVar9 == 1)) {
                           local_18 = iVar9;
                           Library::DKW::TBL::FUN_006ae1c0
@@ -286,15 +286,15 @@ LAB_0049aec9:
                   local_10 = local_10 + 1;
                   iVar6 = (int)(short)local_10;
                   pSVar12 = local_8;
-                } while (iVar6 < (int)(short)local_8->field_00F7 + (int)(short)local_8->field_00FD);
+                } while (iVar6 < (int)local_8->field_00F7 + (int)local_8->field_00FD);
               }
               local_14 = local_14 + 1;
               iVar6 = (int)(short)local_14;
-            } while (iVar6 < (int)(short)pSVar12->field_00FB + (int)(short)pSVar12->field_00F5);
+            } while (iVar6 < (int)pSVar12->field_00FB + (int)pSVar12->field_00F5);
           }
           local_c = local_c + 1;
           iVar6 = (int)(short)local_c;
-        } while (iVar6 < (int)(short)pSVar12->field_00F3 + (int)(short)pSVar12->field_00F9);
+        } while (iVar6 < (int)pSVar12->field_00F3 + (int)pSVar12->field_00F9);
       }
       if (local_18 == 0) {
         FUN_006ae110((byte *)pSVar12->field_020E);

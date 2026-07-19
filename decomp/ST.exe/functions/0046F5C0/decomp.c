@@ -28,7 +28,7 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
   undefined2 uVar16;
   undefined2 extraout_var_01;
   uint uVar14;
-  undefined1 *puVar15;
+  short *psVar15;
   undefined2 extraout_var_02;
   undefined2 extraout_var_03;
   undefined2 extraout_var_04;
@@ -102,9 +102,9 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
       return 0;
     }
     this->field_0580 = CASE_0;
-    this->field_0554 = *(undefined2 *)&this->field_0x3a0;
-    this->field_0556 = *(undefined2 *)&this->field_0x3a2;
-    this->field_0558 = *(undefined2 *)&this->field_0x3a4;
+    this->field_0554 = *(short *)&this->field_0x3a0;
+    this->field_0556 = *(short *)&this->field_0x3a2;
+    this->field_0558 = *(short *)&this->field_0x3a4;
     *(undefined4 *)&this->field_0x57c = 0;
     *(undefined4 *)&this->field_0x578 = 0;
     *(undefined4 *)&this->field_0x574 = 0;
@@ -126,9 +126,9 @@ cf_common_exit_00470E32:
     switch(iVar7) {
     case 0:
       if (this->field_0564 == 1) {
-        iVar26 = (int)(short)this->field_0556;
-        iVar7 = (int)(short)this->field_0554;
-        iVar8 = (short)this->field_0558 + 1;
+        iVar26 = (int)this->field_0556;
+        iVar7 = (int)this->field_0554;
+        iVar8 = this->field_0558 + 1;
         this->field_0564 = 0;
         break;
       }
@@ -166,8 +166,8 @@ LAB_0046f888:
           (iVar26 = (**(code **)(*piVar18 + 0x2c))(), iVar7 = extraout_ECX_00,
           uVar6 = extraout_var_05, iVar26 == 0x33)) &&
          (iVar7 = piVar18[9], iVar7 == *(int *)&this->field_0x24)) {
-        iVar26 = thunk_FUN_004e1eb0(piVar18,(int)(short)this->field_0041,
-                                    (int)(short)this->field_0043,(int)(short)this->field_0045);
+        iVar26 = thunk_FUN_004e1eb0(piVar18,(int)this->field_0041,(int)this->field_0043,
+                                    (int)this->field_0045);
         this->field_0568 = iVar26;
         iVar7 = extraout_ECX_01;
         uVar6 = extraout_var_06;
@@ -181,8 +181,8 @@ LAB_0046f888:
                          (int *)CONCAT22(uVar6,this->field_0558 + 1),1,&this->field_055E,
                          &this->field_0560,(short *)&this->field_0x562);
       iVar8 = (int)*(short *)&this->field_0x562;
-      iVar26 = (int)(short)this->field_0560;
-      iVar7 = (int)(short)this->field_055E;
+      iVar26 = (int)this->field_0560;
+      iVar7 = (int)this->field_055E;
       this->field_0580 = CASE_1;
       this->field_00B7 = 0;
       break;
@@ -204,9 +204,9 @@ LAB_0046f888:
       this->field_0564 = 0;
       thunk_FUN_004602b0((int *)this);
     case 3:
-      iVar26 = (int)(short)this->field_0556;
-      iVar7 = (int)(short)this->field_0554;
-      iVar8 = (short)this->field_0558 + 1;
+      iVar26 = (int)this->field_0556;
+      iVar7 = (int)this->field_0554;
+      iVar8 = this->field_0558 + 1;
       break;
     default:
       goto cf_common_exit_004707B7;
@@ -252,8 +252,8 @@ cf_error_exit_00470C46:
                                 (int)sVar20) * 8), piVar18 != (int *)0x0 &&
             (iVar7 = (**(code **)(*piVar18 + 0x2c))(), iVar7 == 0x33)) &&
            (piVar18[9] == *(int *)&this->field_0x24)))))) {
-        iVar7 = thunk_FUN_004e1eb0(piVar18,(int)(short)this->field_0041,(int)(short)this->field_0043
-                                   ,(int)(short)this->field_0045);
+        iVar7 = thunk_FUN_004e1eb0(piVar18,(int)this->field_0041,(int)this->field_0043,
+                                   (int)this->field_0045);
         this->field_0568 = iVar7;
         if (iVar7 == -1) {
           return 2;
@@ -454,16 +454,16 @@ LAB_004707ad:
               sVar27 = 0;
               bVar28 = 0;
               lVar19 = Library::MSVCRT::__ftol();
-              iVar17 = (int)local_1c + (short)this->field_0045 + local_10 + (int)(short)lVar19;
-              iVar8 = (int)(short)this->field_0043 - (int)local_20._2_2_;
-              iVar11 = (int)(short)local_20 + iVar7 + (short)this->field_0041;
+              iVar17 = (int)local_1c + this->field_0045 + local_10 + (int)(short)lVar19;
+              iVar8 = (int)this->field_0043 - (int)local_20._2_2_;
+              iVar11 = (int)(short)local_20 + iVar7 + this->field_0041;
             }
             else {
-              iVar17 = (int)local_1c + local_10 + (short)this->field_0045;
+              iVar17 = (int)local_1c + local_10 + this->field_0045;
               local_20._2_2_ = (short)((uint)uVar3 >> 0x10);
-              iVar8 = (int)(short)this->field_0043 - (int)local_20._2_2_;
+              iVar8 = (int)this->field_0043 - (int)local_20._2_2_;
               local_20._0_2_ = (short)uVar3;
-              iVar11 = (int)(short)local_20 + iVar7 + (short)this->field_0041;
+              iVar11 = (int)(short)local_20 + iVar7 + this->field_0041;
             }
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,iVar11,iVar8 + ((uVar9 >> 0x10) % 7 - 3),iVar17,sVar20,
@@ -529,8 +529,8 @@ LAB_004707ad:
           local_20._0_2_ = (short)uVar3;
           iVar7 = (int)(short)local_20;
           local_20 = uVar3;
-          thunk_FUN_00637930(this->field_01ED,0,(short)this->field_0041 + iVar7,
-                             (short)this->field_0043 + iVar26,(short)this->field_0045 + -0x28,0,0);
+          thunk_FUN_00637930(this->field_01ED,0,this->field_0041 + iVar7,this->field_0043 + iVar26,
+                             this->field_0045 + -0x28,0,0);
           *(undefined4 *)&this->field_0x574 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           uVar9 = this->field_001C * 0x41c64e6d + 0x3039;
           this->field_001C = uVar9;
@@ -691,16 +691,16 @@ LAB_004707ad:
           sVar27 = 0;
           bVar28 = 0;
           lVar19 = Library::MSVCRT::__ftol();
-          iVar17 = (int)local_1c + (short)this->field_0045 + local_18 + (int)(short)lVar19;
-          iVar8 = (int)(short)this->field_0043 - (int)local_20._2_2_;
-          iVar11 = (int)(short)local_20 + iVar7 + (short)this->field_0041;
+          iVar17 = (int)local_1c + this->field_0045 + local_18 + (int)(short)lVar19;
+          iVar8 = (int)this->field_0043 - (int)local_20._2_2_;
+          iVar11 = (int)(short)local_20 + iVar7 + this->field_0041;
         }
         else {
-          iVar17 = (int)local_1c + local_18 + (short)this->field_0045;
+          iVar17 = (int)local_1c + local_18 + this->field_0045;
           local_20._2_2_ = (short)((uint)uVar3 >> 0x10);
-          iVar8 = (int)(short)this->field_0043 - (int)local_20._2_2_;
+          iVar8 = (int)this->field_0043 - (int)local_20._2_2_;
           local_20._0_2_ = (short)uVar3;
-          iVar11 = (int)(short)local_20 + iVar7 + (short)this->field_0041;
+          iVar11 = (int)(short)local_20 + iVar7 + this->field_0041;
         }
         TraksClassTy::TraksCreate
                   (DAT_00802a7c,1,2,7,iVar11,iVar8 + ((uVar9 >> 0x10) % 7 - 3),iVar17,sVar20,sVar21,
@@ -725,35 +725,35 @@ LAB_004707ad:
     sVar20 = this->field_0554;
     iVar7 = 0;
     sVar21 = this->field_0558;
-    puVar15 = (undefined1 *)CONCAT22((short)(uVar14 >> 0x10),sVar21);
+    psVar15 = (short *)CONCAT22((short)(uVar14 >> 0x10),sVar21);
     sVar22 = this->field_0556;
     if ((((sVar20 < 0) || (DAT_007fb240 <= sVar20)) || (sVar22 < 0)) ||
        (((DAT_007fb242 <= sVar22 || (sVar21 < 0)) || (DAT_007fb244 <= sVar21)))) {
 cf_common_exit_00470B14:
       uVar9 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_004B);
-      iVar7 = CONCAT22((short)((uint)puVar15 >> 0x10),this->field_0049);
+      iVar7 = CONCAT22((short)((uint)psVar15 >> 0x10),this->field_0049);
       iVar26 = CONCAT22((short)((uint)&this->field_055E >> 0x10),this->field_0047);
       this->field_0580 = CASE_7;
       thunk_FUN_0048dfd0(iVar26,iVar7,uVar9,iVar26,iVar7,(int *)uVar9,3,&this->field_055E,
                          &this->field_0560,(short *)&this->field_0x562);
     }
     else {
-      puVar15 = (undefined1 *)
-                ((int)sVar21 * (int)DAT_007fb246 + (int)sVar22 * (int)DAT_007fb240 + (int)sVar20);
-      iVar7 = *(int *)(DAT_007fb248 + (int)puVar15 * 8);
+      psVar15 = (short *)((int)sVar21 * (int)DAT_007fb246 + (int)sVar22 * (int)DAT_007fb240 +
+                         (int)sVar20);
+      iVar7 = *(int *)(DAT_007fb248 + (int)psVar15 * 8);
       if ((iVar7 == 0) ||
-         (puVar15 = *(undefined1 **)(iVar7 + 0x18), puVar15 != *(undefined1 **)&this->field_0x55a))
-      goto cf_common_exit_00470B14;
-      puVar15 = (undefined1 *)&this->field_055E;
+         (psVar15 = *(short **)(iVar7 + 0x18),
+         psVar15 != (short *)*(undefined1 **)&this->field_0x55a)) goto cf_common_exit_00470B14;
+      psVar15 = &this->field_055E;
       if (*(int *)(iVar7 + 0x42c) != 0) {
-        if ((undefined2 *)puVar15 != (undefined2 *)0x0) {
+        if (psVar15 != (short *)0x0) {
           uVar3 = *(undefined4 *)(iVar7 + 0x430);
           this->field_055E = (short)uVar3;
           this->field_0560 = (short)((uint)uVar3 >> 0x10);
         }
-        if (&this->field_0560 != (undefined2 *)0x0) {
-          puVar15 = *(undefined1 **)(iVar7 + 0x434);
-          *(undefined1 **)&this->field_0560 = puVar15;
+        if (&this->field_0560 != (short *)0x0) {
+          psVar15 = *(short **)(iVar7 + 0x434);
+          *(short **)&this->field_0560 = psVar15;
         }
         if (&this->field_0x562 != (undefined1 *)0x0) {
           *(undefined4 *)&this->field_0x562 = *(undefined4 *)(iVar7 + 0x438);
@@ -762,7 +762,7 @@ cf_common_exit_00470B14:
       if (*(int *)(iVar7 + 0x42c) != 1) goto cf_common_exit_00470B14;
       this->field_0580 = CASE_8;
     }
-    thunk_FUN_00481520(this,(int)(short)this->field_055E,(int)(short)this->field_0560,
+    thunk_FUN_00481520(this,(int)this->field_055E,(int)this->field_0560,
                        (int)*(short *)&this->field_0x562);
     goto cf_common_exit_00470E2B;
   }
@@ -781,8 +781,8 @@ cf_common_exit_00470B14:
                        (int *)CONCAT22(extraout_var_07,this->field_0558 + 1),1,&this->field_055E,
                        &this->field_0560,(short *)&this->field_0x562);
     iVar8 = (int)*(short *)&this->field_0x562;
-    iVar26 = (int)(short)this->field_0560;
-    iVar7 = (int)(short)this->field_055E;
+    iVar26 = (int)this->field_0560;
+    iVar7 = (int)this->field_055E;
     break;
   case 1:
     if (this->field_0564 == 1) {
@@ -790,8 +790,7 @@ cf_common_exit_00470B14:
       thunk_FUN_004602b0((int *)this);
       this->field_0580 = CASE_0;
       this->field_00B7 = 3;
-      thunk_FUN_00481520(this,(int)(short)this->field_0554,(int)(short)this->field_0556,
-                         (short)this->field_0558 + 1);
+      thunk_FUN_00481520(this,(int)this->field_0554,(int)this->field_0556,this->field_0558 + 1);
       thunk_FUN_00460260(this,0);
       goto cf_common_exit_004707B7;
     }
@@ -805,8 +804,8 @@ cf_common_exit_00470B14:
                              (int)sVar20) * 8), piVar18 == (int *)0x0 ||
          (iVar7 = (**(code **)(*piVar18 + 0x2c))(), iVar7 != 0x33)))) ||
        (piVar18[9] != *(int *)&this->field_0x24)) goto LAB_0046fd37;
-    iVar7 = thunk_FUN_004e1eb0(piVar18,(int)(short)this->field_0041,(int)(short)this->field_0043,
-                               (int)(short)this->field_0045);
+    iVar7 = thunk_FUN_004e1eb0(piVar18,(int)this->field_0041,(int)this->field_0043,
+                               (int)this->field_0045);
     this->field_0568 = iVar7;
     if ((iVar7 == -1) ||
        (bVar5 = thunk_FUN_004908a0(this,piVar18,iVar7), CONCAT31(extraout_var,bVar5) != 1))
@@ -833,7 +832,7 @@ cf_common_exit_00470B14:
                          (int *)CONCAT22(uVar16,this->field_0558 + 1),1,&this->field_055E,
                          &this->field_0560,(short *)&this->field_0x562);
     }
-    thunk_FUN_00481520(this,(int)(short)this->field_055E,(int)(short)this->field_0560,
+    thunk_FUN_00481520(this,(int)this->field_055E,(int)this->field_0560,
                        (int)*(short *)&this->field_0x562);
     thunk_FUN_00460260(this,0);
     goto cf_common_exit_004707B7;

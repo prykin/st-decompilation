@@ -150,7 +150,7 @@ LAB_0049d3ca:
                          (int)sVar1) * 8);
     }
     uVar13 = 0;
-    if (((piVar10 == (int *)0x0) || (piVar10[9] != (int)(char)pSVar6->field_0024)) ||
+    if (((piVar10 == (int *)0x0) || (piVar10[9] != (int)pSVar6->field_0024)) ||
        ((iVar8 = (**(code **)(*piVar10 + 0x2c))(), iVar8 != 0x3b &&
         (iVar8 = (**(code **)(*piVar10 + 0x2c))(), iVar8 != 0x60)))) {
       local_20 = 0;
