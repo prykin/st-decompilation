@@ -194,7 +194,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   STSprGameObjC::GetMessage(local_ec,(int)message);
   SVar9 = message->id;
   if (MESS_ID_ALLCREATE < SVar9) {
-    if (SVar9 < 0x129) {
+    if (SVar9 < (MESS_HITKILL|MESS_CONTROLCLASSTY_0001)) {
       if (SVar9 != MESS_HITKILL) {
         if (SVar9 == 0x121) {
           if (*(int *)(this_00 + 0x6f7) != 0x23) {
@@ -392,7 +392,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       goto LAB_0045ad7b;
     }
-    if (SVar9 != 0x129) {
+    if (SVar9 != (MESS_HITKILL|MESS_CONTROLCLASSTY_0001)) {
       if (SVar9 != 0x4405) {
         g_currentExceptionFrame = local_184.previous;
         return 0;
@@ -444,8 +444,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
     goto LAB_0045aee3;
   }
   if (SVar9 == MESS_ID_ALLCREATE) goto LAB_00450268;
-  if (3 < SVar9) {
-    if (SVar9 == 0x10f) {
+  if (MESS_SHARED_0003 < SVar9) {
+    if (SVar9 == MESS_SHARED_010F) {
       local_44 = (byte *)STT3DSprC::SaveSpr((STT3DSprC *)(this_00 + 0x1d5),&local_38);
       local_3c = (byte *)STAllPlayersC::SaveGObjData((STAllPlayersC *)this_00,(int *)&local_2c);
       local_40 = (byte *)SaveBoatData((STBoatC *)this_00,(int *)&local_34);
@@ -501,7 +501,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    if (SVar9 != 0x110) {
+    if (SVar9 != MESS_SHARED_0110) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
@@ -972,7 +972,7 @@ LAB_00459f59:
     g_currentExceptionFrame = local_184.previous;
     return 0;
   }
-  if (SVar9 == 3) {
+  if (SVar9 == MESS_SHARED_0003) {
     thunk_FUN_0041c5a0((int *)this_00);
     thunk_FUN_0041d590((int)this_00);
     uVar13 = thunk_FUN_004167a0((int)this_00);

@@ -14,6 +14,7 @@ import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.EnumDataType;
+import ghidra.program.model.data.Enum;
 import ghidra.program.model.data.FunctionDefinitionDataType;
 import ghidra.program.model.data.ParameterDefinition;
 import ghidra.program.model.data.ParameterDefinitionImpl;
@@ -72,11 +73,24 @@ public class STRecoveredTypesApplier extends GhidraScript {
     }
 
     private void createMessageTypes() {
-        EnumDataType ids = new EnumDataType(ROOT, "STMessageId", 4);
-        ids.add("MESS_ID_ALLCREATE", 0x111);
-        ids.add("MESS_HITKILL", 0x128);
-        DataType messageId = dtm.resolve(ids, DataTypeConflictHandler.REPLACE_HANDLER);
+        DataType existingIds = dtm.getDataType(ROOT, "STMessageId");
+        Enum ids;
+        if (existingIds instanceof Enum) {
+            ids = (Enum)existingIds;
+        }
+        else {
+            ids = (Enum)dtm.resolve(new EnumDataType(ROOT, "STMessageId", 4),
+                DataTypeConflictHandler.KEEP_HANDLER);
+        }
+        ensureEnumValue(ids, "MESS_ID_ALLCREATE", 0x111);
+        ensureEnumValue(ids, "MESS_HITKILL", 0x128);
+        DataType messageId = ids;
 
+        DataType existingMessage = dtm.getDataType(ROOT, "STMessage");
+        if (existingMessage instanceof Structure) {
+            stMessage = (Structure)existingMessage;
+            return;
+        }
         stMessage = new StructureDataType(ROOT, "STMessage", 0, dtm);
         add(stMessage, uint32, "unknown_00", "Unresolved message header field.");
         add(stMessage, uint32, "unknown_04", "Unresolved message header field.");
@@ -87,6 +101,11 @@ public class STRecoveredTypesApplier extends GhidraScript {
     }
 
     private void createDArrayType() {
+        DataType existing = dtm.getDataType(ROOT, "DArrayTy");
+        if (existing instanceof Structure) {
+            dArray = (Structure)existing;
+            return;
+        }
         dArray = new StructureDataType(ROOT, "DArrayTy", 0, dtm);
         add(dArray, uint32, "flags", "Bit 0x8 owns descriptor; bit 0x100 enables grow callback.");
         add(dArray, uint32, "iteratorIndex", "Cursor used by DArrayGetNext.");
@@ -100,6 +119,13 @@ public class STRecoveredTypesApplier extends GhidraScript {
     }
 
     private void createSystemTypes() throws Exception {
+        DataType existingSystem = dtm.getDataType(ROOT, "SystemClassTy");
+        DataType existingVtable = dtm.getDataType(ROOT, "SystemClassTyVTable");
+        if (existingSystem instanceof Structure && existingVtable instanceof Structure) {
+            system = (Structure)existingSystem;
+            systemVtable = (Structure)existingVtable;
+            return;
+        }
         system = new StructureDataType(ROOT, "SystemClassTy", 0, dtm);
         systemVtable = new StructureDataType(ROOT, "SystemClassTyVTable", 0, dtm);
 
@@ -149,10 +175,21 @@ public class STRecoveredTypesApplier extends GhidraScript {
     }
 
     private void resolveAll() {
-        stMessage = (Structure)dtm.resolve(stMessage, DataTypeConflictHandler.REPLACE_HANDLER);
-        dArray = (Structure)dtm.resolve(dArray, DataTypeConflictHandler.REPLACE_HANDLER);
-        systemVtable = (Structure)dtm.resolve(systemVtable, DataTypeConflictHandler.REPLACE_HANDLER);
-        system = (Structure)dtm.resolve(system, DataTypeConflictHandler.REPLACE_HANDLER);
+        stMessage = (Structure)dtm.resolve(stMessage, DataTypeConflictHandler.KEEP_HANDLER);
+        dArray = (Structure)dtm.resolve(dArray, DataTypeConflictHandler.KEEP_HANDLER);
+        systemVtable = (Structure)dtm.resolve(systemVtable, DataTypeConflictHandler.KEEP_HANDLER);
+        system = (Structure)dtm.resolve(system, DataTypeConflictHandler.KEEP_HANDLER);
+    }
+
+    private void ensureEnumValue(Enum enumType, String name, long value) {
+        for (String existingName : enumType.getNames()) {
+            if (!existingName.equals(name)) continue;
+            if (enumType.getValue(existingName) != value) {
+                printerr(name + " already exists with a different value; keeping existing definition.");
+            }
+            return;
+        }
+        enumType.add(name, value);
     }
 
     private void applyKnownSignatures() throws Exception {
@@ -173,10 +210,24 @@ public class STRecoveredTypesApplier extends GhidraScript {
             printerr("No function at " + addressText);
             return;
         }
+        if (function.getSignatureSource() == SourceType.USER_DEFINED && hasNamedParameters(function)) {
+            println("Preserving manually refined signature at " + addressText + ": " +
+                function.getSignature().getPrototypeString(true));
+            return;
+        }
         List<Variable> args = new ArrayList<>();
         for (Parameter parameter : parameters) args.add(parameter);
         function.updateFunction("__thiscall", new ReturnParameterImpl(returnType, currentProgram), args,
             FunctionUpdateType.DYNAMIC_STORAGE_ALL_PARAMS, true, SourceType.USER_DEFINED);
+    }
+
+    private boolean hasNamedParameters(Function function) {
+        for (Parameter parameter : function.getParameters()) {
+            String name = parameter.getName();
+            if ("this".equals(name)) continue;
+            if (name == null || !name.matches("param_\\d+")) return true;
+        }
+        return false;
     }
 
     private DataType systemType(String name) {

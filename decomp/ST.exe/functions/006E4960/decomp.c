@@ -77,7 +77,7 @@ AppClassTy::AddChildSystem
       local_c = 0;
       Library::DKW::TBL::FUN_006ae1c0(*(uint **)(iVar3 + 8),&local_14);
       local_34.unknown_0c = 0xf;
-      local_34.id = 8;
+      local_34.id = MESS_SHARED_0008;
       iVar3 = (*childSystem->vtable->SendMessage)(childSystem,&local_34);
       if (iVar3 != 0) {
         iVar7 = 0x23d;
@@ -105,7 +105,7 @@ LAB_006e4a7a:
         }
       }
       local_34.unknown_0c = 0xf;
-      local_34.id = 8;
+      local_34.id = MESS_SHARED_0008;
       iVar3 = (*childSystem->vtable->SendMessage)(childSystem,&local_34);
       if (iVar3 != 0) {
         iVar7 = 0x231;

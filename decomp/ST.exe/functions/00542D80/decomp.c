@@ -26,7 +26,7 @@ void FUN_00542d80(void)
     (*DAT_00802a28->vtable->InitSystem)(DAT_00802a28);
     AppClassTy::AddChildSystem((AppClassTy *)&DAT_00807620,DAT_0081163c,DAT_00802a28,0);
     InterSystemC::CreateInterfObjects((InterSystemC *)DAT_00802a28);
-    local_24.id = 5;
+    local_24.id = MESS_SHARED_0005;
     (*DAT_00802a28->vtable->GetMessage)(DAT_00802a28,&local_24);
     DAT_00802a28[1].vtable = (SystemClassTyVTable *)0x1;
     g_currentExceptionFrame = pIVar3;
