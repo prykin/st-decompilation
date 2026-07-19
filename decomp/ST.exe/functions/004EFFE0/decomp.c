@@ -41,7 +41,7 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,int param_1)
   }
   local_10 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
-    local_c = (int)*(short *)(*(int *)&this->field_0x188 + 0x23) - 1;
+    local_c = (int)*(short *)(this->field_0188 + 0x23) - 1;
   }
   else {
     local_c = thunk_FUN_00526ba0(*local_8,'\x03');
@@ -52,22 +52,21 @@ void __thiscall BldLabPanelTy::PaintUpdBut(BldLabPanelTy *this,int param_1)
   pBVar4 = local_10;
   if (iVar5 == 0) {
     if ((local_8 == (Global_sub_00526BA0_param_1Enum *)0x0) || ((char)local_8[2] == 0)) {
-      iVar5 = *(int *)&local_10->field_0x18c;
+      iVar5 = local_10->field_018C;
     }
     else {
-      iVar5 = *(int *)&local_10->field_0x188;
+      iVar5 = local_10->field_0188;
     }
     pbVar6 = (byte *)FUN_0070b3a0(iVar5,local_c);
     iVar7 = local_14;
     iVar5 = local_18;
-    thunk_FUN_00540760(*(undefined4 **)&pBVar4->field_0x68,local_18,local_14,'\x01',pbVar6);
+    DibPut((undefined4 *)pBVar4->field_0068,local_18,local_14,'\x01',pbVar6);
     if ((*(short *)(param_1 + 0x14) == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0(*(int *)&pBVar4->field_0x190,9 - (uint)((char)local_8[2] != 0));
-      thunk_FUN_00540760(*(undefined4 **)&pBVar4->field_0x68,iVar5,iVar7,'\x06',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(pBVar4->field_0190,9 - (uint)((char)local_8[2] != 0));
+      DibPut((undefined4 *)pBVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&pBVar4->field_0x60,0xffffffff,pBVar4->field_003C,
-               pBVar4->field_0044);
+              (DAT_008075a8,pBVar4->field_0060,0xffffffff,pBVar4->field_003C,pBVar4->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

@@ -1,5 +1,10 @@
 
-byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 214 | 245 | 261 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+byte * __cdecl mfSndLibLoad(int param_1,char *param_2,byte param_3,byte param_4)
 
 {
   char cVar1;
@@ -93,7 +98,7 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
   if (pcVar5 != (char *)0x0) {
     local_a = (ushort)param_3;
     do {
-      iVar3 = FUN_00719df0(param_1,pcVar5,1);
+      iVar3 = mfWavGetType(param_1,pcVar5,1);
       if (local_a == (ushort)iVar3) {
         uVar8 = 0xffffffff;
         pcVar10 = pcVar5;
@@ -118,7 +123,7 @@ byte * __cdecl FUN_0071a270(int param_1,char *param_2,byte param_3,byte param_4)
           pcVar10 = pcVar10 + 1;
           pcVar11 = pcVar11 + 1;
         }
-        local_54 = FUN_00719d00(param_1,pcVar5,param_4,1);
+        local_54 = mfWavLoad(param_1,pcVar5,param_4,1);
         Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 5),(undefined4 *)local_254);
         local_54 = (ushort *)0x0;
       }

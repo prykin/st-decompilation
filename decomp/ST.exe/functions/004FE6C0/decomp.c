@@ -51,38 +51,38 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       return;
     }
     if (param_1 == 0) {
-      iVar3 = FUN_0070b3a0(*(int *)&local_10->field_0x2da,2);
+      iVar3 = FUN_0070b3a0(local_10->field_02DA,2);
       iVar6 = local_8;
       FUN_006b5440(local_8,0,199,6,iVar3,0,0xff);
-      iVar4 = FUN_0070b3a0(*(int *)&pCVar2->field_0x2da,3);
+      iVar4 = FUN_0070b3a0(pCVar2->field_02DA,3);
       iVar3 = (int)((local_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
       Library::DKW::WGR::FUN_006b5110
                 (iVar6,0,199,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
-      uVar5 = *(uint *)&pCVar2->field_0x15c;
+      uVar5 = pCVar2->field_015C;
       if ((int)uVar5 < 0) {
         g_currentExceptionFrame = local_54.previous;
         return;
       }
-      uVar10 = *(uint *)&pCVar2->field_0xa8;
-      uVar9 = *(uint *)&pCVar2->field_0x50;
+      uVar10 = pCVar2->field_00A8;
+      uVar9 = pCVar2->field_0050;
     }
     else {
-      iVar3 = FUN_0070b3a0(*(int *)&local_10->field_0x2da,0);
+      iVar3 = FUN_0070b3a0(local_10->field_02DA,0);
       iVar6 = local_8;
       FUN_006b5440(local_8,0,2,6,iVar3,0,0xff);
-      iVar4 = FUN_0070b3a0(*(int *)&pCVar2->field_0x2da,1);
+      iVar4 = FUN_0070b3a0(pCVar2->field_02DA,1);
       iVar3 = (int)((local_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
       Library::DKW::WGR::FUN_006b5110
                 (iVar6,0,2,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
-      uVar5 = *(uint *)&pCVar2->field_0x154;
+      uVar5 = pCVar2->field_0154;
       if ((int)uVar5 < 0) {
         g_currentExceptionFrame = local_54.previous;
         return;
       }
-      uVar10 = *(uint *)&pCVar2->field_0xa0;
-      uVar9 = *(uint *)&pCVar2->field_0x48;
+      uVar10 = pCVar2->field_00A0;
+      uVar9 = pCVar2->field_0048;
     }
     Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar9,uVar10);
     g_currentExceptionFrame = local_54.previous;

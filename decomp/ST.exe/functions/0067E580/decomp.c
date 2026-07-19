@@ -1,5 +1,10 @@
 
-LPSTR __cdecl FUN_0067e580(int param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 488 | 491 | 492 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+LPSTR __cdecl GetAssistantNameDB(int param_1)
 
 {
   code *pcVar1;

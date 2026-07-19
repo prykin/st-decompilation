@@ -58,9 +58,9 @@ int __thiscall ccFntTy::VisLineSarr(ccFntTy *this,int param_1,int param_2)
         local_8 = FUN_007111c0(this_00,puVar3);
         local_8 = iVar2 + local_8;
         if (0 < param_2) {
-          local_8 = local_8 + *(int *)(this_00 + 0x5c);
+          local_8 = local_8 + this_00->field_005C;
         }
-        if (*(int *)(this_00 + 0x6c) < local_8) {
+        if ((int)this_00->field_006C < local_8) {
           g_currentExceptionFrame = local_58.previous;
           return local_c;
         }

@@ -36,7 +36,7 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
     local_24 = 0xf;
     local_20 = 0x10f;
     FUN_006e3db0((int)local_30);
-    pSVar2->field_0024 = 0;
+    pSVar2->field_0024 = (cMf32 *)0x0;
     g_currentExceptionFrame = local_74.previous;
     return 0;
   }

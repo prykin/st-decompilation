@@ -1,6 +1,11 @@
 
-uint * FUN_00565820(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                   uint param_7)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\scoreai.cpp
+   Diagnostic line evidence: 3839 | 3855 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint * AiMinesDistribTgts(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
+                         uint param_7)
 
 {
   byte bVar1;

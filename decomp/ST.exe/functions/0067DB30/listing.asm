@@ -1,4 +1,4 @@
-FUN_0067db30:
+DelPlrEdit:
 0067DB30  55                        PUSH EBP
 0067DB31  8B EC                     MOV EBP,ESP
 0067DB33  83 EC 44                  SUB ESP,0x44

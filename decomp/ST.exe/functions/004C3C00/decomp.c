@@ -81,18 +81,17 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
   *(undefined4 *)((int)ppTVar14 + 0x28d) = 0;
   *(undefined4 *)((int)ppTVar14 + 0x291) = 0;
   if (&stack0x00000000 != (undefined1 *)0x2c) {
-    local_2c = CONCAT22(local_2c._2_2_,*(undefined2 *)&local_60->field_0x41);
+    local_2c = CONCAT22(local_2c._2_2_,local_60->field_0041);
   }
   if (&stack0x00000000 != (undefined1 *)0x34) {
-    local_34 = CONCAT22(local_34._2_2_,*(undefined2 *)&local_60->field_0x43);
+    local_34 = CONCAT22(local_34._2_2_,local_60->field_0043);
   }
   if (&stack0x00000000 != (undefined1 *)0x30) {
-    local_30 = CONCAT22(local_30._2_2_,*(undefined2 *)&local_60->field_0x45);
+    local_30 = CONCAT22(local_30._2_2_,local_60->field_0045);
   }
   local_10 = ppTVar14;
-  if (*(int *)(&DAT_00792a90 + (param_1 + *(int *)&local_60->field_0x235 * 2) * 4) == 1) {
-    local_58 = thunk_FUN_004e81b0(*(int *)&local_60->field_0x24,*(int *)&local_60->field_0x235,
-                                  param_1);
+  if (*(int *)(&DAT_00792a90 + (param_1 + local_60->field_0235 * 2) * 4) == 1) {
+    local_58 = thunk_FUN_004e81b0(*(int *)&local_60->field_0x24,local_60->field_0235,param_1);
     iVar7 = *(int *)&this_00->field_0x5b4 + -8;
     local_18 = iVar7;
     if (iVar7 <= *(int *)&this_00->field_0x5b4 + 8) {
@@ -149,13 +148,10 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                             *(int *)((int)local_10 + 0x281)) {
                           *(undefined4 *)((int)local_10 + 0x295) =
                                *(undefined4 *)((int)DAT_00802a38 + 0xe4);
-                          if ((param_2 == 0) || (*(int *)&this_00->field_0x255 == 0))
-                          goto LAB_004c4080;
+                          if ((param_2 == 0) || (this_00->field_0255 == 0)) goto LAB_004c4080;
                           sVar6 = (*this_00->vtable->slot_10)
-                                            (*(undefined2 *)&local_8->field_0x41,
-                                             *(undefined2 *)&local_8->field_0x43,
-                                             *(undefined2 *)&local_8->field_0x45,local_2c,local_34,
-                                             local_30);
+                                            (local_8->field_0041,local_8->field_0043,
+                                             local_8->field_0045,local_2c,local_34,local_30);
                           iVar8 = ((sVar6 + 0xb4) % 0x168) / 0xf;
                           uVar9 = (int)*(uint *)(&DAT_007be8c8 +
                                                 (*(int *)&this_00->field_0x259 / 0xf + iVar8 * 0x18)
@@ -166,7 +162,7 @@ int __thiscall TLOBaseTy::fireFindCheckTarget(TLOBaseTy *this,int param_1,int pa
                                               (*(int *)&this_00->field_0x259 / 0xf + iVar8 * 0x18) *
                                               4) ^ uVar9) - uVar9) <=
                               *(int *)((int)local_10 + 0x279)) {
-                            iVar11 = param_1 + *(int *)&this_00->field_0x235 * 2;
+                            iVar11 = param_1 + this_00->field_0235 * 2;
                             if ((&DAT_00792ca0)[iVar11 * 3] == 0xb0) {
                               if (iVar8 % 3 == 0) {
 LAB_004c4080:
@@ -183,7 +179,7 @@ LAB_004c4080:
                                 iVar7 = local_18;
                                 iVar15 = local_28;
                                 if ((*(uint *)((int)local_10 + 0x265) & 1) != 0) {
-                                  if (*(int *)&this_00->field_0x420 == 0) {
+                                  if (this_00->field_0420 == 0) {
                                     if ((*(uint *)&local_8->field_0x24 < 8) &&
                                        ((DAT_00802a38 == (void *)0x0 ||
                                         ((byte)(&DAT_008087e9)[*(uint *)&local_8->field_0x24 * 0x51]
@@ -292,9 +288,8 @@ LAB_004c41a5:
                                                       local_64 + (short)local_30,local_40[0],
                                                       local_38[0],local_1c[0],
                                                       (&DAT_00792ca0)
-                                                      [(param_1 + *(int *)&this_00->field_0x235 * 2)
-                                                       * 3],&local_44,*(int *)&this_00->field_0x420)
-                                  ;
+                                                      [(param_1 + this_00->field_0235 * 2) * 3],
+                                                      &local_44,this_00->field_0420);
                                   if ((iVar15 != 0) ||
                                      ((((*(byte *)((int)local_10 + 0x265) & 2) != 0 &&
                                        (local_44 != 0)) &&
@@ -304,7 +299,7 @@ LAB_004c41a5:
                                   }
                                   local_4c = local_4c + 1;
                                   iVar7 = iVar7 + 6;
-                                  iVar11 = (param_1 + *(int *)&this_00->field_0x235 * 2) * 0x16;
+                                  iVar11 = (param_1 + this_00->field_0235 * 2) * 0x16;
                                 } while (local_4c < *(int *)(&DAT_007932d0 + iVar11));
                               }
                               iVar7 = local_18;

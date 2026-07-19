@@ -1,8 +1,13 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 659 | 661 | 662 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl
-FUN_00676d80(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param_5,short param_6,
-            short param_7,short param_8,short param_9,short param_10,short param_11,
-            undefined *param_12,undefined4 param_13,undefined *param_14)
+_EnumPlObj(undefined4 param_1,uint param_2,uint param_3,byte *param_4,char param_5,short param_6,
+          short param_7,short param_8,short param_9,short param_10,short param_11,
+          undefined *param_12,undefined4 param_13,undefined *param_14)
 
 {
   byte bVar1;

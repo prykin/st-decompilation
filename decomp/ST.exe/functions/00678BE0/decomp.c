@@ -32,9 +32,9 @@ undefined4 * __thiscall AiPlrClassTy::PrepareToSave(AiPlrClassTy *this,uint *par
       puVar4 = (undefined4 *)0x0;
     }
     else {
-      puVar4 = (undefined4 *)&pAVar2->field_0x5d3;
+      puVar4 = &pAVar2->field_05D3;
     }
-    local_c = thunk_FUN_0067d3b0(puVar4,local_8,local_10,param_1);
+    local_c = PlrDataPack(puVar4,local_8,local_10,param_1);
     local_c[3] = 1;
     if (local_8 != (undefined4 *)0x0) {
       FUN_006ab060(&local_8);

@@ -32,17 +32,17 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
       }
     }
-    thunk_FUN_0055dbf0(DAT_0080759c,10,2);
+    DarkScreen(DAT_0080759c,10,2);
     thunk_FUN_00568bc0(&g_sound,1);
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
       cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
-    this_00 = *(MMsgTy **)(*(int *)&pCVar2[0x42].field_0x51 + 0x2e6);
+    this_00 = *(MMsgTy **)(pCVar2->field_1A5B + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HideSprites(this_00);
-      *(undefined4 *)(*(int *)(*(int *)&pCVar2[0x42].field_0x51 + 0x2e6) + 0x1cab) = 0;
+      *(undefined4 *)(*(int *)(pCVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
     }
-    puVar4 = (undefined4 *)&pCVar2[0x44].field_0x3f;
+    puVar4 = &pCVar2->field_1B13;
     iVar3 = 3;
     do {
       iVar5 = 0xf;
@@ -61,7 +61,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 4;
-    puVar4 = (undefined4 *)&local_8[0x46].field_0x39;
+    puVar4 = &local_8->field_1BD7;
     do {
       if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
         FUN_006c4a70((undefined4 *)*puVar4);
@@ -73,7 +73,7 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
       puVar4 = puVar4 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (*(int *)&pCVar2->field_0x4d != 0) {
+    if (pCVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;

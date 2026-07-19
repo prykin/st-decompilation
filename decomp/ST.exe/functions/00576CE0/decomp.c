@@ -1,5 +1,10 @@
 
-void FUN_00576ce0(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\tsystem.cpp
+   Diagnostic line evidence: 79 | 80 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void DestroyBaseSystem(void)
 
 {
   code *pcVar1;

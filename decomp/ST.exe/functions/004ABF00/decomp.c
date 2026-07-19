@@ -38,20 +38,20 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,undefin
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xa5);
   }
   if (*(int *)(*(int *)(pSVar2->field_0020 + param_1 * 0x24) + 0x29) != 0) {
-    pSVar2->field_0x13 = param_1;
-    *(undefined4 *)&pSVar2[1].field_0xc = param_2;
-    if (pSVar2->field_0x11 == '\0') {
-      if (pSVar2->field_0x10 == '\0') {
-        uVar6 = *(uint *)&pSVar2[1].field_0x10;
+    pSVar2->field_0013 = param_1;
+    pSVar2->field_0030 = param_2;
+    if (pSVar2->field_0011 == '\0') {
+      if (pSVar2->field_0010 == '\0') {
+        uVar6 = pSVar2->field_0034;
         uVar5 = pSVar2->field_0018;
         puVar7 = &LAB_00404999;
       }
       else {
-        uVar6 = *(uint *)&pSVar2[1].field_0x10;
+        uVar6 = pSVar2->field_0034;
         uVar5 = pSVar2->field_0018;
         puVar7 = &LAB_00405b64;
       }
-      FUN_006e9520((void *)pSVar2[1].field_0018,uVar5,uVar6,(uint)puVar7,(uint)pSVar2);
+      FUN_006e9520((void *)pSVar2->field_003C,uVar5,uVar6,(uint)puVar7,(uint)pSVar2);
     }
     g_currentExceptionFrame = pIVar8;
     return 0;

@@ -3,7 +3,7 @@
    E:\Ourlib\Mf32int.cpp
    cMf32::KeyRecGet */
 
-longlong __thiscall cMf32::KeyRecGet(cMf32 *this,cMf32 param_1,char *param_2,ushort *param_3)
+longlong __thiscall cMf32::KeyRecGet(cMf32 *this,undefined1 param_1,char *param_2,ushort *param_3)
 
 {
   char cVar1;
@@ -11,13 +11,13 @@ longlong __thiscall cMf32::KeyRecGet(cMf32 *this,cMf32 param_1,char *param_2,ush
   int iVar3;
   DWORD DVar4;
   int iVar5;
-  short sVar6;
+  ushort uVar6;
   uint uVar7;
   uint extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   char *pcVar8;
-  cMf32 *pcVar9;
+  ushort *puVar9;
   longlong lVar10;
   InternalExceptionFrame local_4c;
   cMf32 *local_8;
@@ -39,15 +39,16 @@ longlong __thiscall cMf32::KeyRecGet(cMf32 *this,cMf32 param_1,char *param_2,ush
     return (ulonglong)extraout_EDX << 0x20;
   }
   if (param_3 == (ushort *)0x0) {
-    param_3 = (ushort *)(local_8 + 0x18);
+    param_3 = (ushort *)&local_8->field_0018;
   }
-  pcVar9 = (cMf32 *)param_3;
+  puVar9 = param_3;
   for (iVar3 = 0x86; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pcVar9 = 0;
-    pcVar9 = pcVar9 + 4;
+    puVar9[0] = 0;
+    puVar9[1] = 0;
+    puVar9 = puVar9 + 2;
   }
-  *pcVar9 = (cMf32)0x0;
-  *(cMf32 *)param_3 = param_1;
+  *(undefined1 *)puVar9 = 0;
+  *(undefined1 *)param_3 = param_1;
   iVar3 = -1;
   pcVar8 = param_2;
   do {
@@ -56,27 +57,27 @@ longlong __thiscall cMf32::KeyRecGet(cMf32 *this,cMf32 param_1,char *param_2,ush
     cVar1 = *pcVar8;
     pcVar8 = pcVar8 + 1;
   } while (cVar1 != '\0');
-  sVar6 = ~(ushort)iVar3 - 1;
-  *(short *)((int)param_3 + 0x16) = sVar6;
-  pcVar9 = (cMf32 *)((int)param_3 + 0x18);
-  for (uVar7 = (uint)(int)sVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar9 = *(undefined4 *)param_2;
-    param_2 = (char *)(param_2 + 4);
-    pcVar9 = pcVar9 + 4;
+  uVar6 = ~(ushort)iVar3 - 1;
+  param_3[0xb] = uVar6;
+  puVar9 = param_3 + 0xc;
+  for (uVar7 = (uint)(int)(short)uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *(undefined4 *)puVar9 = *(undefined4 *)param_2;
+    param_2 = param_2 + 4;
+    puVar9 = puVar9 + 2;
   }
-  for (uVar7 = (int)sVar6 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *pcVar9 = (cMf32)*param_2;
-    param_2 = (char *)(param_2 + 1);
-    pcVar9 = pcVar9 + 1;
+  for (uVar7 = (int)(short)uVar6 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *(char *)puVar9 = *param_2;
+    param_2 = param_2 + 1;
+    puVar9 = (ushort *)((int)puVar9 + 1);
   }
-  DVar4 = FUN_00751980(*(int **)local_8,param_3,(undefined4 *)0x0,0);
+  DVar4 = FUN_00751980((int *)local_8->field_0000,param_3,(undefined4 *)0x0,0);
   if (DVar4 == 0xfffffffc) {
     g_currentExceptionFrame = local_4c.previous;
     return ZEXT48(local_4c.previous) << 0x20;
   }
   g_currentExceptionFrame = local_4c.previous;
-  sVar6 = *(short *)((int)param_3 + 0x16);
-  *(cMf32 *)((int)param_3 + sVar6 + 0x18) = (cMf32)0x0;
-  return CONCAT44((cMf32 *)((int)param_3 + sVar6 + 0x18),param_3);
+  uVar6 = param_3[0xb];
+  *(undefined1 *)((short)uVar6 + 0x18 + (int)param_3) = 0;
+  return CONCAT44((short)uVar6 + 0x18 + (int)param_3,param_3);
 }
 

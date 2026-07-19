@@ -48,18 +48,18 @@ void __thiscall UPanelTy::PaintIBut(UPanelTy *this,int param_1,char *param_2,UIN
     uVar3 = thunk_FUN_00529fe0(param_1);
     bVar8 = (byte)errorCode;
     pbVar4 = (byte *)FUN_006f2c00(param_2,1,uVar3);
-    puVar5 = FUN_00709af0(DAT_00806794,CASE_1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
+    puVar5 = mfRLoad(DAT_00806794,CASE_1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
     iVar9 = local_8;
-    thunk_FUN_00540760(*(undefined4 **)&pUVar2[1].field_0x8,local_c,local_8,'\x01',(byte *)puVar5);
-    ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)&pUVar2[1].field_0x8,0,local_c,iVar9
-                     ,local_14[2],local_14[3]);
+    DibPut((undefined4 *)pUVar2->field_0068,local_c,local_8,'\x01',(byte *)puVar5);
+    ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),pUVar2->field_0068,0,local_c,iVar9,
+                     local_14[2],local_14[3]);
     uVar3 = thunk_FUN_00529fe0(param_1);
     iVar11 = -1;
     iVar9 = -2;
     puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
     ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar11,uVar3);
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(pUVar2 + 1),0xffffffff,pUVar2->field_003C,pUVar2->field_0044);
+              (DAT_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,pUVar2->field_0044);
     g_currentExceptionFrame = local_58.previous;
     return;
   }

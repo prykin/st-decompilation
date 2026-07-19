@@ -1,4 +1,4 @@
-FUN_007268c0:
+mfUSprGetNumFas:
 007268C0  55                        PUSH EBP
 007268C1  8B EC                     MOV EBP,ESP
 007268C3  83 EC 50                  SUB ESP,0x50

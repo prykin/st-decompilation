@@ -1,4 +1,4 @@
-FUN_006f0d70:
+mf3DXGetParam:
 006F0D70  55                        PUSH EBP
 006F0D71  8B EC                     MOV EBP,ESP
 006F0D73  83 EC 50                  SUB ESP,0x50

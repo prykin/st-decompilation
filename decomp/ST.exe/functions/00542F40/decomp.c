@@ -72,7 +72,7 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
           pCVar4 = thunk_FUN_00571240(s_PANEL_BKGND_007c7cc8,0);
           pCVar4 = FUN_006f2c00(pCVar4,iVar2,uVar3);
           local_c = (BITMAPINFO *)cMf32::RecGet(DAT_00806790,1,pCVar4,piVar11,iVar13);
-          thunk_FUN_005403c0(0,0,'\x01',local_c);
+          PutDDX(0,0,'\x01',local_c);
           cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
           g_currentExceptionFrame = local_50.previous;
           return 0;
@@ -140,13 +140,12 @@ switchD_00543107_caseD_b904:
     iVar2 = 1;
     pCVar4 = thunk_FUN_00571240(pcVar8,0);
     pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-    pBVar7 = (BITMAPINFO *)
-             FUN_00709af0(DAT_00806794,CASE_1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
+    pBVar7 = (BITMAPINFO *)mfRLoad(DAT_00806794,CASE_1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
     iVar2 = piVar11[1];
     iVar13 = *piVar11;
     cVar9 = '\x01';
 LAB_00543291:
-    thunk_FUN_005403c0(iVar13,iVar2,cVar9,pBVar7);
+    PutDDX(iVar13,iVar2,cVar9,pBVar7);
   }
   else {
     switch(uVar3) {
@@ -188,8 +187,7 @@ LAB_00543291:
       iVar2 = 1;
       pCVar4 = thunk_FUN_00571240(s_BUT_OHELP_007c7c90,0);
       pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-      pBVar7 = (BITMAPINFO *)
-               FUN_00709af0(DAT_00806794,CASE_6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
+      pBVar7 = (BITMAPINFO *)mfRLoad(DAT_00806794,CASE_6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
       iVar13 = *piVar11;
       iVar2 = piVar11[1];
       cVar9 = '\x06';

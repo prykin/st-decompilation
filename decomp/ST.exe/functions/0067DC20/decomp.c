@@ -1,5 +1,10 @@
 
-uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 319 | 342 | 344 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint * __cdecl _CreateStgListByRoot(int param_1,int param_2,char *param_3,uint param_4)
 
 {
   char cVar1;
@@ -82,7 +87,7 @@ uint * __cdecl FUN_0067dc20(int param_1,int param_2,char *param_3,uint param_4)
   cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,local_2ec);
   pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   while (pcVar3 != (char *)0x0) {
-    local_8 = FUN_006f2d90(param_1,pcVar3,0,1);
+    local_8 = mfAObjLoad(param_1,pcVar3,0,1);
     uVar7 = *(uint *)(local_8 + 0x85);
     if (uVar7 == 0) {
       uVar7 = 1;

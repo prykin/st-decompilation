@@ -57,10 +57,10 @@ undefined4 __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,int param_1)
       return 0;
     }
     if (uVar1 == 0xb205) {
-      *(undefined1 *)(this_00 + 1) = this_00->field_0278;
+      this_00->field_0279 = this_00->field_0278;
       this_00->field_0278 = **(char **)(param_1 + 0x14) + -1;
       thunk_FUN_005252c0(0xae);
-      (**(code **)(*(int *)this_00 + 0x1c))();
+      (**(code **)(this_00->field_0000 + 0x1c))();
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
@@ -72,7 +72,7 @@ undefined4 __thiscall BldObjPanelTy::GetMessage(BldObjPanelTy *this,int param_1)
     case 0xc0a1:
     case 0xc0a2:
     case 0xc0a3:
-      iVar3 = *(int *)(&this_00[1].field_0x5 + (uint)(byte)this_00->field_0278 * 4);
+      iVar3 = (&this_00->field_027E)[(byte)this_00->field_0278];
       if ((iVar3 == 0) ||
          (iVar5 = uVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar5 - 0xc09fU)) {
         puVar4 = (undefined4 *)0x0;

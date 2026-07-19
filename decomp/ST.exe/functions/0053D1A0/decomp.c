@@ -23,11 +23,11 @@ void __thiscall SAMPanelTy::DoneSAMPanel(SAMPanelTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 7;
-    *(undefined4 *)&local_8[1].field_0x39 = 0;
-    puVar5 = (uint *)&local_8[1].field_0x3d;
+    local_8->field_01B1 = 0;
+    puVar5 = &local_8->field_01B5;
     do {
       if (*puVar5 != 0) {
-        FUN_006e56b0(*(void **)&pSVar2->field_0xc,*puVar5);
+        FUN_006e56b0((void *)pSVar2->field_000C,*puVar5);
         *puVar5 = 0;
       }
       puVar5 = puVar5 + 1;

@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_erc.cpp
+   Diagnostic line evidence: 37 | 42 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl FUN_0064a6f0(int *param_1,int param_2)
 
 {

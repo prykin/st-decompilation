@@ -27,15 +27,12 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
   this_00 = DAT_00802a30;
   local_8 = this;
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    DAT_00802a30[0xb].field_0x47 = 1;
-    *(undefined2 *)&this_00[0xb].field_0x48 = 0xffff;
-    CursorClassTy::SetGCType
-              (this_00,CASE_0,*(undefined4 *)((int)&this_00[1].field_0060 + 1),
-               *(undefined4 *)&this_00[2].field_0x1);
-    CursorClassTy::DrawSprite
-              (this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
-    this_00[2].field_0xa = 0;
-    *(undefined4 *)&this_00[0xc].field_0x2f = 0xffffffff;
+    DAT_00802a30->field_0493 = 1;
+    this_00->field_0494 = 0xffff;
+    CursorClassTy::SetGCType(this_00,CASE_0,this_00->field_00C5,this_00->field_00C9);
+    CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
+    this_00->field_0xd2 = 0;
+    *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
   }
   if (this->field_1A5F == '\t') {
     local_6c.previous = g_currentExceptionFrame;
@@ -47,10 +44,10 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
       if (local_8->field_1EDB != 0) {
         FUN_006ab060(puVar6);
       }
-      *(undefined4 *)(this_01 + 1) = param_2;
-      *(int *)&this_01[1].field_0x4 = param_3;
+      this_01->field_1EDF = param_2;
+      this_01->field_1EE3 = param_3;
       puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(param_3 * 0x24);
-      iVar2 = *(int *)&this_01[1].field_0x4;
+      iVar2 = this_01->field_1EE3;
       *puVar6 = puVar3;
       for (uVar5 = iVar2 * 9 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
         *puVar3 = *param_4;
@@ -69,18 +66,17 @@ FSGSTy::SetLadder(FSGSTy *this,undefined4 param_1,undefined4 param_2,int param_3
         puVar6 = puVar6 + 1;
       }
       local_18 = 0x20;
-      if ((*(int *)(this_01 + 1) == 0) || (local_14 = 1, *(int *)&this_01->field_0x1a6b == 0)) {
+      if ((this_01->field_1EDF == 0) || (local_14 = 1, this_01->field_1A6B == 0)) {
         local_14 = 0;
       }
-      if (*(int *)&this_01->field_0x1ed3 != 0) {
-        FUN_006e6080(this_01,2,*(int *)&this_01->field_0x1ed3,local_28);
+      if (this_01->field_1ED3 != 0) {
+        FUN_006e6080(this_01,2,this_01->field_1ED3,local_28);
       }
-      if ((0xf422f < *(uint *)(this_01 + 1)) || (local_14 = 1, *(int *)&this_01->field_0x1a6b == 0))
-      {
+      if ((0xf422f < (uint)this_01->field_1EDF) || (local_14 = 1, this_01->field_1A6B == 0)) {
         local_14 = 0;
       }
-      if (*(int *)&this_01->field_0x1ed7 != 0) {
-        FUN_006e6080(this_01,2,*(int *)&this_01->field_0x1ed7,local_28);
+      if (this_01->field_1ED7 != 0) {
+        FUN_006e6080(this_01,2,this_01->field_1ED7,local_28);
       }
       g_currentExceptionFrame = local_6c.previous;
       return;

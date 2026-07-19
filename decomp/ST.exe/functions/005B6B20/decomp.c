@@ -22,7 +22,7 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     *(MMsgTy **)(DAT_0081176c + 0x2e6) = local_8;
-    local_8->field_0x9a = 8;
+    local_8->field_009A = 8;
     MMObjTy::InitSprBut((MMObjTy *)local_8,(undefined4 *)&local_8->field_0x9b,s_MM_MBUT12_007ccc10,
                         0x194,0x213,0x24,0x12,0x12,7,0xa0,0x31,0x14,0,0,0,0,0,0x4b,0,0,0,0,0,-1,-1);
     MMObjTy::InitSprBut((MMObjTy *)this_00,(undefined4 *)&this_00->field_0x296,s_MM_MBUT08_007ccc04,
@@ -39,7 +39,7 @@ void __thiscall MMsgTy::InitMMsg(MMsgTy *this)
                         0,0x213,0x34,0x13,0x21,9,0xa0,0x33,0x14,0,0,0,0,0,0x4b,0,0,0,0,0,-1,-1);
     MMObjTy::InitSprBut((MMObjTy *)this_00,(undefined4 *)&this_00->field_0xe78,s_MM_MBUT11_007ccbbc,
                         0xb4,0x213,0x37,0x12,0x26,8,0xa0,0x30,0x14,0,0,0,0,0,0x4b,0,0,0,0,0,-1,-1);
-    MMObjTy::InitSprBut((MMObjTy *)this_00,(undefined4 *)&this_00[1].field_0x5,s_MM_TABLO_007ccbb0,
+    MMObjTy::InitSprBut((MMObjTy *)this_00,(undefined4 *)&this_00->field_0x1caf,s_MM_TABLO_007ccbb0,
                         0x30,0x203,0xb5,0x11,0,0,0,0,0x14,0,0,0,0,0,0x4b,0,0,0,0,0,-1,-1);
     HideSprites(this_00);
     g_currentExceptionFrame = pIVar3;

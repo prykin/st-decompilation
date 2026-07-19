@@ -26,9 +26,8 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
   pCVar2 = local_c;
   if (iVar3 == 0) {
     puVar4 = ccFntTy::FormIndentSarr
-                       (*(ccFntTy **)&local_c->field_0x1d0,*param_1,
-                        (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,
-                        *(int *)&local_c->field_0x104,0,0xffffffff,(char *)0x0,1);
+                       (local_c->field_01D0,*param_1,(uint *)s________________007c21d8,
+                        (uint *)&DAT_007c21ec,local_c->field_0104,0,0xffffffff,(char *)0x0,1);
     if ((byte *)*param_1 != (byte *)0x0) {
       FUN_006b5570((byte *)*param_1);
     }
@@ -39,7 +38,7 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
     else {
       *param_1 = (int)puVar4;
     }
-    iVar3 = *(int *)&pCVar2->field_0x1b0;
+    iVar3 = pCVar2->field_01B0;
     local_8 = *(uint *)(iVar3 + 0x14);
     if (local_8 == 0) {
       local_8 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -54,11 +53,11 @@ void __thiscall CPanelTy::OutText(CPanelTy *this,int *param_1,undefined4 param_2
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    ccFntTy::WrSarr(*(ccFntTy **)&pCVar2->field_0x1d0,*param_1,0,-1,0,0,0);
+    ccFntTy::WrSarr(pCVar2->field_01D0,*param_1,0,-1,0,0,0);
     FUN_006b5570((byte *)*param_1);
-    *(undefined4 *)&pCVar2->field_0x243 = *(undefined4 *)&pCVar2->field_0x9a0;
-    *(undefined4 *)&pCVar2->field_0x247 = param_2;
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&pCVar2->field_0x178);
+    pCVar2->field_0243 = pCVar2->field_09A0;
+    pCVar2->field_0247 = param_2;
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pCVar2->field_0178);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

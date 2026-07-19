@@ -36,11 +36,11 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_frmpanel_cpp_007c2958,0x70);
     return;
   }
-  piVar4 = (int *)&local_8[1].field_0x33;
+  piVar4 = &local_8->field_01AB;
   local_10[0] = *piVar4;
-  local_10[1] = *(int *)&local_8[1].field_0x37;
+  local_10[1] = local_8->field_01AF;
   *piVar4 = 0;
-  *(undefined4 *)&local_8[1].field_0x37 = 0;
+  local_8->field_01AF = 0;
   STAllPlayersC::GetPanelInfo(DAT_007fa174,0x11,piVar4);
   iVar2 = 2;
   bVar6 = true;
@@ -54,7 +54,7 @@ void __thiscall FrmPanelTy::Update(FrmPanelTy *this)
   } while (bVar6);
   if (!bVar6) {
     this_00->field_0028 = 5;
-    piVar4 = (int *)&this_00[1].field_0x3b;
+    piVar4 = &this_00->field_01B3;
     iVar2 = 8;
     do {
       if (*piVar4 != 0) {

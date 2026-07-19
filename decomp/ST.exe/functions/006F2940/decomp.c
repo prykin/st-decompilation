@@ -14,7 +14,6 @@ undefined4 * __thiscall cMf32::RecNameGetPrev(cMf32 *this)
   undefined4 *puVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  cMf32 *pcVar7;
   InternalExceptionFrame local_4c;
   cMf32 *local_8;
   
@@ -35,19 +34,20 @@ undefined4 * __thiscall cMf32::RecNameGetPrev(cMf32 *this)
     RaiseInternalException(iVar3,0,s_E__Ourlib_Mf32int_cpp_007efaa4,0x33d);
     return (undefined4 *)0x0;
   }
-  pcVar7 = local_8 + 0x18;
+  puVar6 = (undefined4 *)&local_8->field_0018;
   for (iVar3 = 0x86; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *(undefined4 *)pcVar7 = 0;
-    pcVar7 = pcVar7 + 4;
+    *puVar6 = 0;
+    puVar6 = puVar6 + 1;
   }
-  *pcVar7 = (cMf32)0x0;
-  DVar4 = FUN_00751bf0(*(int **)local_8,(undefined4 *)(local_8 + 0x18),(undefined4 *)0x0,0);
+  *(undefined1 *)puVar6 = 0;
+  DVar4 = FUN_00751bf0((int *)local_8->field_0000,(undefined4 *)&local_8->field_0018,
+                       (undefined4 *)0x0,0);
   if (DVar4 == 0xfffffffc) {
     g_currentExceptionFrame = local_4c.previous;
     return (undefined4 *)0x0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  pcVar2[*(short *)(pcVar2 + 0x2e) + 0x30] = (cMf32)0x0;
-  return (undefined4 *)(pcVar2 + 0x30);
+  *(undefined1 *)((int)&pcVar2[1].field_0000 + (int)(short)pcVar2->field_002E) = 0;
+  return &pcVar2[1].field_0000;
 }
 

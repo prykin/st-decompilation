@@ -1,4 +1,4 @@
-FUN_00726a80:
+mfQSprLoad:
 00726A80  55                        PUSH EBP
 00726A81  8B EC                     MOV EBP,ESP
 00726A83  83 EC 54                  SUB ESP,0x54

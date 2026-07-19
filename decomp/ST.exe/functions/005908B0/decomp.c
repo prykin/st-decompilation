@@ -29,7 +29,7 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
       NoneMAdv(local_8);
       break;
     case 2:
-      local_8[1].field_0x1 = *(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14);
+      local_8->field_005D = *(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14);
       InitMAdv(local_8);
       break;
     case 3:
@@ -41,14 +41,14 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
     case 0x62:
     case 100:
       thunk_FUN_00590860(local_8);
-      if (pMVar2[1].field_0x1 == '\0') {
-        *(undefined4 *)&pMVar2->field_0x40 = 0x200;
-        *(undefined4 *)&pMVar2->field_0x44 = 0;
-        *(undefined4 *)&pMVar2->field_0x48 = 0x6102;
+      if (pMVar2->field_005D == '\0') {
+        pMVar2->field_0040 = 0x200;
+        pMVar2->field_0044 = 0;
+        pMVar2->field_0048 = 0x6102;
       }
       else {
-        *(undefined4 *)&pMVar2->field_0x44 = 1;
-        *(undefined4 *)&pMVar2->field_0x48 = 0x7102;
+        pMVar2->field_0044 = 1;
+        pMVar2->field_0048 = 0x7102;
       }
     }
     g_currentExceptionFrame = local_4c.previous;

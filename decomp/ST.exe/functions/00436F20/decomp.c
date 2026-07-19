@@ -417,7 +417,7 @@ cf_common_exit_00437191:
   puVar13 = local_30;
   if (((local_30 != (undefined4 *)0x0) &&
       (pSVar14 = (STGroupC *)thunk_FUN_0042b760(CONCAT31((int3)(uVar22 >> 8),param_1[8]),local_1c),
-      pSVar14 != (STGroupC *)0x0)) && (*(int *)&pSVar14->field_0x1c != 0)) {
+      pSVar14 != (STGroupC *)0x0)) && (pSVar14->field_001C != 0)) {
     if ((param_1[0xe] == ')') && (**(char **)(param_1 + 0x17) == '\x01')) {
       return;
     }

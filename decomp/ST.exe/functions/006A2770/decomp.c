@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Maps\map_cnt.cpp
+   Diagnostic line evidence: 767 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __cdecl
 FUN_006a2770(int *param_1,int param_2,int param_3,int param_4,ushort *param_5,undefined *param_6,
             undefined4 param_7)

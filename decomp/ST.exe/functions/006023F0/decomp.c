@@ -14,7 +14,7 @@ undefined4 * __thiscall STDestC::STDestC(STDestC *this,undefined4 *param_1)
   thunk_FUN_004ab810(&this->field_01D5);
   this->field_01D5 = &PTR_LAB_0079cb10;
   this->vtable = &STDestCVTable;
-  puVar2 = (undefined4 *)&this[1].field_0x58;
+  puVar2 = (undefined4 *)&this->field_0x231;
   for (iVar1 = 0x5f; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;

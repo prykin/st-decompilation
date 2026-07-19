@@ -1,4 +1,4 @@
-FUN_0055da40:
+LoadStartPlt:
 0055DA40  55                        PUSH EBP
 0055DA41  8B EC                     MOV EBP,ESP
 0055DA43  83 EC 44                  SUB ESP,0x44

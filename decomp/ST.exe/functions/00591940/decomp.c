@@ -41,23 +41,23 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-  thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
+  PutDDX(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
   pCVar2 = local_8;
   pvVar12 = *(void **)(DAT_0081176c + 0x30);
   uVar10 = 0xffffffff;
   uVar9 = 0xfffffffe;
-  puVar4 = (uint *)FUN_006b0140((-(uint)(*(int *)&local_8[0x51].field_0x7 != 0) & 0xfffffca8) +
-                                0x26b1,DAT_00807618);
+  puVar4 = (uint *)FUN_006b0140((-(uint)(local_8->field_1FFC != 0) & 0xfffffca8) + 0x26b1,
+                                DAT_00807618);
   StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar9,uVar10,pvVar12,iVar3);
   if (*(int *)(DAT_0081176c + 0x28) == 0) {
     iVar3 = 0;
     bVar11 = 0;
     pCVar5 = FUN_006f2c00(s_CMPG_BKG_007cbe10,1,(uint)DAT_0080874e);
     pBVar6 = (BITMAPINFO *)FUN_0070a9f0(DAT_00806780,pCVar5,bVar11,iVar3);
-    thunk_FUN_005403c0(0xa5,0x37,'\x01',pBVar6);
+    PutDDX(0xa5,0x37,'\x01',pBVar6);
   }
   else {
-    piVar7 = (int *)&pCVar2[0x44].field_0x3f;
+    piVar7 = &pCVar2->field_1B13;
     iVar3 = 3;
     do {
       iVar8 = 0xf;
@@ -72,7 +72,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 4;
-    piVar7 = (int *)&local_8[0x46].field_0x39;
+    piVar7 = &local_8->field_1BD7;
     do {
       if (*piVar7 != 0) {
         FUN_006c4aa0(*piVar7);
@@ -81,14 +81,14 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 0;
-    if (pCVar2[1].field_0x35 != '\0') {
-      puVar4 = (uint *)&pCVar2[2].field_0x35;
+    if (pCVar2->field_009A != '\0') {
+      puVar4 = &pCVar2->field_00FF;
       do {
         if (puVar4[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)puVar4[0xb],puVar4[-6],puVar4[-5],*puVar4,puVar4[1]);
         }
-        if ((*(char *)(pCVar2 + 1) == '\x01') && (*(uint *)((int)puVar4 + 0x79) != 0xffffffff)) {
+        if ((pCVar2->field_0065 == '\x01') && (*(uint *)((int)puVar4 + 0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
                     (*(uint **)((int)puVar4 + 0xbd),*(uint *)((int)puVar4 + 0x79),
                      *(uint *)((int)puVar4 + 0x7d),*(uint *)((int)puVar4 + 0x91),
@@ -96,7 +96,7 @@ void __thiscall CampaignTy::PaintCampaign(CampaignTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pCVar2[1].field_0x35);
+      } while (iVar3 < (int)(uint)(byte)pCVar2->field_009A);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

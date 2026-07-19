@@ -6,19 +6,20 @@
 undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
 
 {
-  CGenerate CVar1;
+  char cVar1;
   code *pcVar2;
   CGenerate *pCVar3;
   int iVar4;
-  undefined4 *puVar5;
-  int *piVar6;
-  undefined4 uVar7;
-  uint uVar8;
+  cMf32 *pcVar5;
+  undefined4 *puVar6;
+  int *piVar7;
+  undefined4 uVar8;
   uint uVar9;
+  uint uVar10;
   undefined4 unaff_ESI;
-  CGenerate *pCVar10;
+  char *pcVar11;
   void *unaff_EDI;
-  CGenerate *pCVar11;
+  char *pcVar12;
   InternalExceptionFrame local_64;
   int local_20;
   undefined4 local_1c;
@@ -39,70 +40,69 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
                                s_CGenerate__CreateMap_007d8670);
     if (iVar4 != 0) {
       pcVar2 = (code *)swi(3);
-      uVar7 = (*pcVar2)();
-      return uVar7;
+      uVar8 = (*pcVar2)();
+      return uVar8;
     }
     return 0;
   }
-  *(undefined4 *)(local_10 + 0x53eb) = *(undefined4 *)(local_10 + 0x228);
-  *(undefined4 *)(local_10 + 0x53ef) = *(undefined4 *)(local_10 + 0x22c);
-  uVar8 = 0xffffffff;
-  pCVar10 = local_10 + 0x124;
+  local_10->field_53EB = local_10->field_0228;
+  local_10->field_53EF = local_10->field_022C;
+  uVar9 = 0xffffffff;
+  pcVar11 = &local_10->field_0x124;
   do {
-    pCVar11 = pCVar10;
-    if (uVar8 == 0) break;
-    uVar8 = uVar8 - 1;
-    pCVar11 = pCVar10 + 1;
-    CVar1 = *pCVar10;
-    pCVar10 = pCVar11;
-  } while (CVar1 != (CGenerate)0x0);
-  uVar8 = ~uVar8;
-  pCVar10 = pCVar11 + -uVar8;
-  pCVar11 = local_10 + 0x53f3;
-  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pCVar11 = *(undefined4 *)pCVar10;
-    pCVar10 = pCVar10 + 4;
-    pCVar11 = pCVar11 + 4;
+    pcVar12 = pcVar11;
+    if (uVar9 == 0) break;
+    uVar9 = uVar9 - 1;
+    pcVar12 = pcVar11 + 1;
+    cVar1 = *pcVar11;
+    pcVar11 = pcVar12;
+  } while (cVar1 != '\0');
+  uVar9 = ~uVar9;
+  pcVar11 = pcVar12 + -uVar9;
+  pcVar12 = &local_10->field_0x53f3;
+  for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
+    pcVar11 = pcVar11 + 4;
+    pcVar12 = pcVar12 + 4;
   }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *pCVar11 = *pCVar10;
-    pCVar10 = pCVar10 + 1;
-    pCVar11 = pCVar11 + 1;
+  for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *pcVar12 = *pcVar11;
+    pcVar11 = pcVar11 + 1;
+    pcVar12 = pcVar12 + 1;
   }
   local_8 = (Global_sub_00693710_param_1Enum *)0x0;
-  cMf32::RecGet(*(cMf32 **)(local_10 + 0x234),0xc,s_TEXTURE_DSCR_007cd130,(int *)&local_8,1);
+  cMf32::RecGet(local_10->field_0234,0xc,s_TEXTURE_DSCR_007cd130,(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
-  cMf32::RecMemFree(*(cMf32 **)(pCVar3 + 0x234),(uint *)&local_8);
-  puVar5 = FUN_006f0ec0(0x345,(byte *)(pCVar3 + 0x20),1,0,0);
-  *(undefined4 **)(pCVar3 + 0x18) = puVar5;
+  cMf32::RecMemFree(pCVar3->field_0234,(uint *)&local_8);
+  pcVar5 = (cMf32 *)FUN_006f0ec0(0x345,&pCVar3->field_0x20,1,0,0);
+  pCVar3->field_0018 = pcVar5;
   thunk_FUN_0069ff90((int)pCVar3);
-  puVar5 = FUN_006efc50(*(int *)(pCVar3 + 0x228),*(int *)(pCVar3 + 0x22c),*(int *)(pCVar3 + 0x234),
-                        *(int *)(pCVar3 + 0x239),0x20);
-  *(undefined4 **)(pCVar3 + 0xc) = puVar5;
+  puVar6 = mfTMapCreate(pCVar3->field_0228,pCVar3->field_022C,(int)pCVar3->field_0234,
+                        pCVar3->field_0239,0x20);
+  pCVar3->field_000C = puVar6;
   thunk_FUN_0069ff90((int)pCVar3);
-  piVar6 = FUN_006f0620(*(short **)(pCVar3 + 0xc));
-  *(int **)(pCVar3 + 8) = piVar6;
+  piVar7 = FUN_006f0620((short *)pCVar3->field_000C);
+  pCVar3->field_0008 = piVar7;
   thunk_FUN_0069ff90((int)pCVar3);
-  thunk_FUN_006a2d80(1,*(int **)(pCVar3 + 8));
+  thunk_FUN_006a2d80(1,(int *)pCVar3->field_0008);
   thunk_FUN_0069ff90((int)pCVar3);
-  iVar4 = FUN_006f0c00(*(short **)(pCVar3 + 0xc),*(int **)(pCVar3 + 8));
+  iVar4 = AuxTMapRefreshAll((short *)pCVar3->field_000C,(int *)pCVar3->field_0008);
   if (iVar4 != 0) {
     local_c = 0;
   }
   thunk_FUN_0069ff90((int)pCVar3);
-  iVar4 = thunk_FUN_00693ad0(pCVar3 + 0x24e,(undefined2 *)(pCVar3 + 0x53eb));
+  iVar4 = thunk_FUN_00693ad0(&pCVar3->field_0x24e,(undefined2 *)&pCVar3->field_53EB);
   if (iVar4 == 0) {
     local_c = 0;
   }
   thunk_FUN_0069ff90((int)pCVar3);
-  local_20 = *(int *)(pCVar3 + 0x228);
-  local_1c = *(undefined4 *)(pCVar3 + 0x22c);
+  local_20 = pCVar3->field_0228;
+  local_1c = pCVar3->field_022C;
   local_18 = 6;
   thunk_FUN_0069ff90((int)pCVar3);
-  thunk_FUN_006945c0(pCVar3 + 0x1bef,&local_20);
+  thunk_FUN_006945c0(&pCVar3->field_0x1bef,&local_20);
   thunk_FUN_0069ff90((int)pCVar3);
-  thunk_FUN_00691690(pCVar3 + 0x1c03,*(undefined4 *)(pCVar3 + 0x239),0,0,
-                     *(undefined **)(pCVar3 + 0x24a));
+  thunk_FUN_00691690(&pCVar3->field_0x1c03,pCVar3->field_0239,0,0,(undefined *)pCVar3->field_024A);
   thunk_FUN_0069ff90((int)pCVar3);
   g_currentExceptionFrame = local_64.previous;
   return local_c;

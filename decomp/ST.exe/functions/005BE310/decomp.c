@@ -31,14 +31,14 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)&local_8->field_0x2d = 0x14;
-    *(undefined4 *)&local_8->field_0x31 = *(undefined4 *)&local_8->field_0x8;
+    local_8->field_002D = 0x14;
+    *(undefined4 *)&local_8->field_0x31 = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x1d);
-    thunk_FUN_0055dbf0(DAT_0080759c,10,2);
+    DarkScreen(DAT_0080759c,10,2);
     if (DAT_00802a30 != 0) {
       thunk_FUN_00544940(DAT_00802a30);
     }
-    puVar5 = (undefined4 *)&pMVar2[6].field_0x4d;
+    puVar5 = &pMVar2->field_0347;
     iVar3 = 3;
     do {
       if ((byte *)*puVar5 != (byte *)0x0) {
@@ -48,18 +48,18 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (*(HoloTy **)&pMVar2[8].field_0x5b != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pMVar2[8].field_0x5b);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pMVar2[8].field_0x5b);
-      *(undefined4 *)&pMVar2[8].field_0x5b = 0;
+    if (pMVar2->field_0453 != (HoloTy *)0x0) {
+      HoloTy::Done(pMVar2->field_0453);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pMVar2->field_0453);
+      pMVar2->field_0453 = (HoloTy *)0x0;
     }
-    if (*(HoloTy **)&pMVar2[8].field_0x5f != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pMVar2[8].field_0x5f);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pMVar2[8].field_0x5f);
-      *(undefined4 *)&pMVar2[8].field_0x5f = 0;
+    if (pMVar2->field_0457 != (HoloTy *)0x0) {
+      HoloTy::Done(pMVar2->field_0457);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pMVar2->field_0457);
+      pMVar2->field_0457 = (HoloTy *)0x0;
     }
-    cMf32::RecMemFree(DAT_00806780,(uint *)&pMVar2->field_0x5d);
-    cMf32::RecMemFree(DAT_00806780,(uint *)&pMVar2->field_0x6f);
+    cMf32::RecMemFree(DAT_00806780,&pMVar2->field_005D);
+    cMf32::RecMemFree(DAT_00806780,&pMVar2->field_006F);
     if (pMVar2->field_0077 != 0) {
       FUN_006ab060(&pMVar2->field_0077);
     }
@@ -67,27 +67,27 @@ void __thiscall MReportTy::DoneMReport(MReportTy *this)
       FUN_006ab060(&pMVar2->field_007B);
     }
     this_00 = (ccFntTy *)0x0;
-    if (*(int *)&pMVar2->field_0x73 != 0) {
-      FUN_006ab060((undefined4 *)&pMVar2->field_0x73);
+    if (pMVar2->field_0073 != 0) {
+      FUN_006ab060(&pMVar2->field_0073);
       this_00 = extraout_ECX;
     }
-    if (*(uint **)&pMVar2[1].field_0x4 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pMVar2[1].field_0x4);
-      *(undefined4 *)&pMVar2[1].field_0x4 = 0;
+    if (pMVar2->field_0083 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pMVar2->field_0083);
+      pMVar2->field_0083 = (ccFntTy *)0x0;
       this_00 = extraout_ECX_00;
     }
-    if (*(uint **)&pMVar2[1].field_0x8 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pMVar2[1].field_0x8);
-      *(undefined4 *)&pMVar2[1].field_0x8 = 0;
+    if (pMVar2->field_0087 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pMVar2->field_0087);
+      pMVar2->field_0087 = (ccFntTy *)0x0;
       *(undefined4 *)(DAT_0081176c + 0x38) = 0;
       this_00 = extraout_ECX_01;
     }
-    if (*(uint **)&pMVar2[1].field_0xc != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pMVar2[1].field_0xc);
-      *(undefined4 *)&pMVar2[1].field_0xc = 0;
+    if (pMVar2->field_008B != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pMVar2->field_008B);
+      pMVar2->field_008B = (ccFntTy *)0x0;
     }
-    *(undefined4 *)(pMVar2 + 1) = 0;
-    if (*(int *)&pMVar2->field_0x4d != 0) {
+    pMVar2->field_007F = 0;
+    if (pMVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;

@@ -42,10 +42,10 @@ void FUN_005c7800(void)
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    (*(code *)**(undefined4 **)this_01)();
+    (**(code **)this_01->field_0000)();
     return;
   }
-  (**(code **)(*(int *)this_01 + 0x24))();
+  (**(code **)(this_01->field_0000 + 0x24))();
   if (DAT_00802a30 != 0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
       Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
@@ -64,14 +64,14 @@ void FUN_005c7800(void)
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
   FUN_006b4640(DAT_0080759c,0,0,DAT_00811758,(uint *)0x0);
   Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
-  if (*(undefined4 **)&this_01[0x4f].field_0x14 != (undefined4 *)0x0) {
-    cMf32::delete(this,*(undefined4 **)&this_01[0x4f].field_0x14);
+  if ((undefined4 *)this_01->field_1F3F != (undefined4 *)0x0) {
+    cMf32::delete(this,(undefined4 *)this_01->field_1F3F);
   }
   if (DAT_0080877e == '\0') goto LAB_005c7ae0;
   if ((DAT_008067a0 != '\0') && (DAT_00811764 != (undefined4 *)0x0)) {
-    FUN_006b6160(&this_01[0x42].field_0x55,(int)(DAT_00811764 + 6));
-    *(undefined1 *)&this_01[0x43].field_0010 = 0;
-    CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01[0x42].field_0x55);
+    FUN_006b6160(&this_01->field_0x1a5f,(int)(DAT_00811764 + 6));
+    this_01->field_1A7F = 0;
+    CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01->field_0x1a5f);
   }
   puVar5 = &DAT_00853de0;
   for (iVar3 = 0x8c; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -79,9 +79,9 @@ void FUN_005c7800(void)
     puVar5 = puVar5 + 1;
   }
   *(undefined2 *)puVar5 = 0;
-  DAT_00853de0 = *(undefined4 *)&this_01[0x4f].field_0x28;
-  _DAT_00853ff4 = (uint)(byte)this_01[0x4f].field_0x31;
-  cVar2 = this_01[0x4f].field_0x2c;
+  DAT_00853de0 = this_01->field_1F53;
+  _DAT_00853ff4 = (uint)(byte)this_01->field_1F5C;
+  cVar2 = this_01->field_1F57;
   if (cVar2 == '\0') {
     uVar4 = Library::MSVCRT::FUN_0072e6c0();
     _DAT_00853fec = (uVar4 & 0xf) * 2 + 0x28;
@@ -89,17 +89,17 @@ void FUN_005c7800(void)
   }
   else {
     if (cVar2 == '\x01') {
-      iVar8 = (-(uint)(3 < (byte)this_01[0x4f].field_0x31) & 4) + 0x21;
+      iVar8 = (-(uint)(3 < (byte)this_01->field_1F5C) & 4) + 0x21;
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       iVar3 = 0x2e;
     }
     else {
       if (cVar2 != '\x02') goto LAB_005c7a2c;
-      if ((byte)this_01[0x4f].field_0x31 < 4) {
+      if ((byte)this_01->field_1F5C < 4) {
         iVar8 = 0x2b;
       }
       else {
-        iVar8 = (-(uint)(5 < (byte)this_01[0x4f].field_0x31) & 5) + 0x30;
+        iVar8 = (-(uint)(5 < (byte)this_01->field_1F5C) & 5) + 0x30;
       }
       uVar4 = Library::MSVCRT::FUN_0072e6c0();
       iVar3 = 0x41;
@@ -110,7 +110,7 @@ void FUN_005c7800(void)
 LAB_005c7a2c:
   uVar4 = Library::MSVCRT::FUN_0072e6c0();
   _DAT_00854001 = (uVar4 & 1) + 4;
-  cVar2 = this_01[0x4f].field_0x32;
+  cVar2 = this_01->field_1F5D;
   if (cVar2 == '\0') {
     uVar4 = Library::MSVCRT::FUN_0072e6c0();
     _DAT_00854005 = uVar4 % 0xb + 0x1e;
@@ -123,7 +123,7 @@ LAB_005c7a2c:
     uVar4 = Library::MSVCRT::FUN_0072e6c0();
     _DAT_00854005 = uVar4 % 0xb + 0x32;
   }
-  cVar2 = this_01[0x4f].field_0x33;
+  cVar2 = this_01->field_1F5E;
   if (cVar2 == '\0') {
     uVar4 = Library::MSVCRT::FUN_0072e6c0();
     _DAT_00854009 = (uVar4 & 1) + 2;
@@ -136,11 +136,11 @@ LAB_005c7a2c:
     uVar4 = Library::MSVCRT::FUN_0072e6c0();
     _DAT_00854009 = (uVar4 & 1) + 6;
   }
-  DAT_0085400d = this_01[0x4f].field_0x34;
-  DAT_00853ffc = CONCAT31(DAT_00853ffc._1_3_,this_01[0x4f].field_0x2d);
+  DAT_0085400d = this_01->field_1F5F;
+  DAT_00853ffc = CONCAT31(DAT_00853ffc._1_3_,*(undefined1 *)&this_01->field_1F58);
 LAB_005c7ae0:
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc);
-  iVar3 = *(int *)&this_01[0x4f].field_0x51;
+  iVar3 = this_01->field_1F7C;
   if ((DAT_00853ffc & 0xff) < *(uint *)(iVar3 + 0xc)) {
     pcVar10 = (char *)(*(int *)(iVar3 + 8) * (DAT_00853ffc & 0xff) + *(int *)(iVar3 + 0x1c));
   }
@@ -177,26 +177,25 @@ LAB_005c7ae0:
   if (DAT_00853ff8 != (undefined4 *)0x0) {
     thunk_FUN_0069ffb0(local_5a80);
     DAT_00811754 = timeGetTime();
-    cVar2 = this_01[0x4c].field_0x2a;
+    cVar2 = this_01->field_1E26;
     if ((((cVar2 != '\x06') && (cVar2 != '\x01')) && (cVar2 != '\x02')) && (DAT_0080877e != '\0')) {
       FUN_00715360(DAT_00811764,0,'\x1e',(char *)&DAT_00853de0,0x232,1,0xffffffff);
       local_8c.jumpBuffer[0xf] = 0x5c7c09;
-      FUN_00715360(DAT_00811764,0,' ',&this_01[0x4f].field_0x28,0xd,1,0xffffffff);
+      FUN_00715360(DAT_00811764,0,' ',(char *)&this_01->field_1F53,0xd,1,0xffffffff);
     }
-    thunk_FUN_006952b0(local_5a80,(byte *)&DAT_00853de0,&this_01[0x4f].field_0x28);
+    thunk_FUN_006952b0(local_5a80,(byte *)&DAT_00853de0,(byte *)&this_01->field_1F53);
     thunk_FUN_006a00b0((int)local_5a80);
     cMf32::delete(this_00,DAT_00853ff8);
     thunk_FUN_006a0070((int)local_5a80);
   }
   puVar5 = FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
-  *(undefined4 **)&this_01[0x4f].field_0x14 = puVar5;
+  this_01->field_1F3F = puVar5;
   DAT_008087b6 = 0;
-  if (*(int *)&this_01[0x4f].field_0x14 != 0) {
+  if (this_01->field_1F3F != 0) {
     if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
       FUN_006ab060((undefined4 *)(DAT_0081176c + 0x2f4));
     }
-    puVar6 = FUN_0070a5a0(*(undefined4 *)&this_01[0x4f].field_0x14,0xc,PTR_s_SMALL_MAP_0079c114,2,0)
-    ;
+    puVar6 = mfImgLoad(this_01->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
     *(ushort **)(DAT_0081176c + 0x2f4) = puVar6;
     if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
       FUN_006c7f90(*(int *)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0)
@@ -210,14 +209,14 @@ LAB_005c7ae0:
       puVar5 = puVar5 + 1;
       puVar12 = puVar12 + 1;
     }
-    cMf32::RecGet(*(cMf32 **)&this_01[0x4f].field_0x14,0,PTR_s_DESCRIPTOR_0079c110,
-                  (int *)&stack0xfffffff8,0);
+    cMf32::RecGet((cMf32 *)this_01->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&stack0xfffffff8,0
+                 );
     if (DAT_0080877e == '\0') {
-      *(undefined4 *)((int)&this_01[0x53].field_0061 + 1) = 0xffffffff;
+      *(undefined4 *)&this_01->field_0x2121 = 0xffffffff;
       DAT_00808aab = 0xffffffff;
     }
     else {
-      *(undefined4 *)((int)&this_01[0x53].field_0061 + 1) = 0;
+      *(undefined4 *)&this_01->field_0x2121 = 0;
       DAT_00808aab = 0;
       DAT_00808aa8 = DAT_0080734b;
     }
@@ -233,14 +232,14 @@ LAB_005c7ae0:
     if (DAT_0080c4c7 != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
-    DAT_0080c4c7 = FUN_0071aa10(*(int *)&this_01[0x4f].field_0x14,PTR_s_DESCRIPTION_0079c108,0);
+    DAT_0080c4c7 = mfSarLoad(this_01->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
-    DAT_0080c4cb = FUN_0071aa10(*(int *)&this_01[0x4f].field_0x14,PTR_s_OBJECTIVES_0079c10c,0);
+    DAT_0080c4cb = mfSarLoad(this_01->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
@@ -250,8 +249,7 @@ LAB_005c7ae0:
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    puVar6 = cMf32::RecGet(*(cMf32 **)&this_01[0x4f].field_0x14,0xc,puVar14,(int *)&stack0xfffffff8,
-                           0);
+    puVar6 = cMf32::RecGet((cMf32 *)this_01->field_1F3F,0xc,puVar14,(int *)&stack0xfffffff8,0);
     if ((puVar6 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
       Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_228,(byte *)0x0);
       uVar4 = 0xffffffff;
@@ -278,23 +276,23 @@ LAB_005c7ae0:
         pbVar13 = pbVar13 + 1;
       }
     }
-    *(undefined4 *)&this_01[0x4f].field_0x1c = 1;
+    this_01->field_1F47 = 1;
     if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (DAT_00811764 != (undefined4 *)0x0)) {
-      FUN_006b6160(&this_01[0x42].field_0x55,(int)(DAT_00811764 + 6));
-      *(undefined1 *)&this_01[0x43].field_0010 = 1;
-      *(undefined1 *)((int)&this_01[0x43].field_0010 + 1) = DAT_008087c4._2_1_;
-      *(char *)((int)&this_01[0x43].field_0010 + 2) = (char)(DAT_008087c2 >> 1);
+      FUN_006b6160(&this_01->field_0x1a5f,(int)(DAT_00811764 + 6));
+      this_01->field_1A7F = 1;
+      this_01->field_1A80 = DAT_008087c4._2_1_;
+      this_01->field_1A81 = (char)(DAT_008087c2 >> 1);
       puVar14 = &DAT_007cc584;
       uVar15 = DAT_0080995c;
       wsprintfA(&stack0xffffffe8,&DAT_007cc584);
-      *(undefined **)((int)&this_01[0x43].field_0010 + 3) = puVar14;
-      *(undefined4 *)&this_01[0x43].field_0x17 = uVar15;
-      Library::MSVCRT::_strncpy(&this_01[0x43].field_0x1b,(char *)&DAT_0080c3c3,0x1d5);
-      this_01[0x47].field_0x5b = 0;
-      CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01[0x42].field_0x55);
+      this_01->field_1A82 = puVar14;
+      this_01->field_1A86 = uVar15;
+      Library::MSVCRT::_strncpy(&this_01->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);
+      this_01->field_1C5E = 0;
+      CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01->field_0x1a5f);
     }
   }
-  (**(code **)(*(int *)this_01 + 0x28))();
+  (**(code **)(this_01->field_0000 + 0x28))();
   if (DAT_00811758 != (BITMAPINFO *)0x0) {
     FUN_006ab060(&DAT_00811758);
   }

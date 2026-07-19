@@ -63,11 +63,11 @@ uint * __thiscall STGroupBoatC::Bring(STGroupBoatC *this,int param_1)
     puVar10 = puVar10 + 1;
   }
   uVar11 = 0;
-  *(undefined4 *)&local_20->field_0x65 = 0;
-  local_20->field_02E8 = *(undefined4 *)&local_20->field_0x1b3;
-  local_20->field_02EC = *(undefined2 *)&local_20->field_0x1b7;
-  local_28 = *(undefined2 *)&local_20->field_02E8;
-  local_26 = *(undefined2 *)((int)&local_20->field_02E8 + 2);
+  local_20->field_0065 = 0;
+  *(undefined4 *)&local_20->field_0x2e8 = local_20->field_01B3;
+  local_20->field_02EC = local_20->field_01B7;
+  local_28 = *(undefined2 *)&local_20->field_0x2e8;
+  local_26 = local_20->field_02EA;
   local_2c = *(undefined4 *)(DAT_00802a38 + 0xe4);
   local_24 = local_20->field_02EC;
   local_18 = local_2c;

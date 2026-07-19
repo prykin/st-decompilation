@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Start\sett_obj.cpp
+   Diagnostic line evidence: 1114 | 1141 | 1143 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void FUN_005c8200(void)
 
 {
@@ -34,24 +39,24 @@ void FUN_005c8200(void)
     g_currentExceptionFrame = local_7c.previous;
     if (DAT_0080877e != '\0') {
       DVar5 = timeGetTime();
-      *(DWORD *)&local_c[0x4f].field_0x28 = DVar5;
+      local_c->field_1F53 = DVar5;
       thunk_FUN_005c7800();
       return;
     }
-    (**(code **)(*(int *)local_c + 0x28))();
+    (**(code **)(local_c->field_0000 + 0x28))();
     return;
   }
-  if (*(undefined4 **)&local_c[0x4f].field_0x14 != (undefined4 *)0x0) {
-    cMf32::delete(this,*(undefined4 **)&local_c[0x4f].field_0x14);
+  if ((undefined4 *)local_c->field_1F3F != (undefined4 *)0x0) {
+    cMf32::delete(this,(undefined4 *)local_c->field_1F3F);
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
   puVar3 = FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
-  *(undefined4 **)&local_c[0x4f].field_0x14 = puVar3;
+  local_c->field_1F3F = puVar3;
   if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
     FUN_006ab060((undefined4 *)(DAT_0081176c + 0x2f4));
   }
-  puVar4 = FUN_0070a5a0(*(undefined4 *)&local_c[0x4f].field_0x14,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
+  puVar4 = mfImgLoad(local_c->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
   *(ushort **)(DAT_0081176c + 0x2f4) = puVar4;
   if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
     FUN_006c7f90(*(int *)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
@@ -65,17 +70,17 @@ void FUN_005c8200(void)
     puVar10 = puVar10 + 1;
   }
   local_8 = &DAT_008087b6;
-  puVar4 = cMf32::RecGet(*(cMf32 **)&local_c[0x4f].field_0x14,0,PTR_s_DESCRIPTOR_0079c110,
-                         (int *)&local_8,0);
+  puVar4 = cMf32::RecGet((cMf32 *)local_c->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&local_8,0)
+  ;
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x45a);
   }
   if (DAT_0080877e == '\0') {
-    *(undefined4 *)((int)&local_c[0x53].field_0061 + 1) = 0xffffffff;
+    *(undefined4 *)&local_c->field_0x2121 = 0xffffffff;
     DAT_00808aab = 0xffffffff;
   }
   else {
-    *(undefined4 *)((int)&local_c[0x53].field_0061 + 1) = 0;
+    *(undefined4 *)&local_c->field_0x2121 = 0;
     DAT_00808aab = 0;
     DAT_00808aa8 = DAT_0080734b;
   }
@@ -91,14 +96,14 @@ void FUN_005c8200(void)
   if (DAT_0080c4c7 != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4c7);
   }
-  DAT_0080c4c7 = FUN_0071aa10(*(int *)&local_c[0x4f].field_0x14,PTR_s_DESCRIPTION_0079c108,0);
+  DAT_0080c4c7 = mfSarLoad(local_c->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
   if (DAT_0080c4c7 == (uint *)0x0) {
     DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
   if (DAT_0080c4cb != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4cb);
   }
-  DAT_0080c4cb = FUN_0071aa10(*(int *)&local_c[0x4f].field_0x14,PTR_s_OBJECTIVES_0079c10c,0);
+  DAT_0080c4cb = mfSarLoad(local_c->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
   if (DAT_0080c4cb == (uint *)0x0) {
     DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
@@ -108,7 +113,7 @@ void FUN_005c8200(void)
     puVar3 = puVar3 + 1;
   }
   local_8 = &DAT_0080c3c3;
-  puVar4 = cMf32::RecGet(*(cMf32 **)&local_c[0x4f].field_0x14,0xc,PTR_s_TITLE_MISSION_0079c104,
+  puVar4 = cMf32::RecGet((cMf32 *)local_c->field_1F3F,0xc,PTR_s_TITLE_MISSION_0079c104,
                          (int *)&local_8,0);
   if ((puVar4 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
     Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_218,(byte *)0x0);
@@ -137,35 +142,35 @@ void FUN_005c8200(void)
     }
   }
   local_8 = &DAT_00853de0;
-  puVar4 = cMf32::RecGet(*(cMf32 **)&local_c[0x4f].field_0x14,0xc,PTR_s_GENERATE_RND_0079c0f8,
+  puVar4 = cMf32::RecGet((cMf32 *)local_c->field_1F3F,0xc,PTR_s_GENERATE_RND_0079c0f8,
                          (int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x475);
   }
-  local_8 = (undefined4 *)&local_c[0x4f].field_0x28;
-  puVar4 = cMf32::RecGet(*(cMf32 **)&local_c[0x4f].field_0x14,0xc,PTR_s_INTERFACE_RND_0079c0fc,
+  local_8 = &local_c->field_1F53;
+  puVar4 = cMf32::RecGet((cMf32 *)local_c->field_1F3F,0xc,PTR_s_INTERFACE_RND_0079c0fc,
                          (int *)&local_8,0);
   if (puVar4 == (ushort *)0x0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x477);
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
-  *(undefined4 *)&local_c[0x4f].field_0x1c = 1;
+  local_c->field_1F47 = 1;
   if (((DAT_0080877e != '\0') && (DAT_008067a0 != '\0')) && (DAT_00811764 != 0)) {
-    FUN_006b6160(&local_c[0x42].field_0x55,DAT_00811764 + 0x18);
-    *(undefined1 *)&local_c[0x43].field_0010 = 1;
-    *(undefined1 *)((int)&local_c[0x43].field_0010 + 1) = DAT_008087c4._2_1_;
-    *(char *)((int)&local_c[0x43].field_0010 + 2) = (char)(DAT_008087c2 >> 1);
+    FUN_006b6160(&local_c->field_0x1a5f,DAT_00811764 + 0x18);
+    local_c->field_1A7F = 1;
+    local_c->field_1A80 = DAT_008087c4._2_1_;
+    local_c->field_1A81 = (char)(DAT_008087c2 >> 1);
     wsprintfA((LPSTR)&local_18,&DAT_007cc584,DAT_0080995c);
-    *(undefined4 *)((int)&local_c[0x43].field_0010 + 3) = local_18;
-    *(undefined4 *)&local_c[0x43].field_0x17 = local_14;
-    Library::MSVCRT::_strncpy(&local_c[0x43].field_0x1b,(char *)&DAT_0080c3c3,0x1d5);
-    local_c[0x47].field_0x5b = 0;
-    CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&local_c[0x42].field_0x55);
+    local_c->field_1A82 = local_18;
+    local_c->field_1A86 = local_14;
+    Library::MSVCRT::_strncpy(&local_c->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);
+    local_c->field_1C5E = 0;
+    CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&local_c->field_0x1a5f);
   }
-  (**(code **)(*(int *)local_c + 0x28))();
+  (**(code **)(local_c->field_0000 + 0x28))();
   SettMapTy::PaintSettMap(local_c,'\0');
-  piVar9 = (int *)&local_c[0x4f].field_0x35;
+  piVar9 = &local_c->field_1F60;
   puVar3 = local_38;
   for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar3 = 0;

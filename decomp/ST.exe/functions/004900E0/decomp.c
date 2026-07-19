@@ -40,7 +40,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
     return;
   }
   puVar6 = (undefined4 *)(local_10 + 0x5c);
-  puVar7 = (undefined4 *)&local_8->field_0x6f3;
+  puVar7 = &local_8->field_06F3;
   for (iVar2 = 0x5a; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar7 = *puVar6;
     puVar6 = puVar6 + 1;
@@ -60,9 +60,9 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
   local_8->field_0459 = *(undefined4 *)(local_10 + 0x360);
   local_8->field_045D = *(undefined4 *)(local_10 + 0x364);
   local_8->field_0461 = *(undefined4 *)(local_10 + 0x368);
-  *(undefined2 *)&local_8->field_0x469 = *(undefined2 *)(local_10 + 0x36c);
-  *(undefined2 *)&local_8->field_0x46f = *(undefined2 *)(local_10 + 0x36e);
-  *(undefined4 *)&local_8->field_0x471 = *(undefined4 *)(local_10 + 0x370);
+  local_8->field_0469 = *(undefined2 *)(local_10 + 0x36c);
+  local_8->field_046F = *(undefined2 *)(local_10 + 0x36e);
+  local_8->field_0471 = *(undefined4 *)(local_10 + 0x370);
   local_8->field_0475 = *(undefined2 *)(local_10 + 0x374);
   local_8->field_0477 = *(undefined2 *)(local_10 + 0x376);
   local_8->field_0479 = *(undefined2 *)(local_10 + 0x378);
@@ -193,7 +193,7 @@ void __thiscall STBoatC::RestoreBoatData(STBoatC *this,int param_1)
     puVar6 = puVar6 + 1;
     puVar7 = puVar7 + 1;
   }
-  puVar6 = (undefined4 *)&local_8->field_0x282;
+  puVar6 = &local_8->field_0282;
   local_8->field_06EB = *(undefined4 *)(local_10 + 0x5ee);
   local_8->field_06EF = *(undefined4 *)(local_10 + 0x5f2);
   piVar8 = (int *)(local_10 + 0x14);

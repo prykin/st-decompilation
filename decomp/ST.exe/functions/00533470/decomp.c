@@ -40,7 +40,7 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
     return 0;
   }
   uVar9 = 0;
-  uVar2 = *(uint *)(*(int *)&local_c[1].field_0x30 + 8);
+  uVar2 = *(uint *)(local_c->field_01E9 + 8);
   if (uVar2 == 0) {
     g_currentExceptionFrame = local_54.previous;
     return local_8;
@@ -48,7 +48,7 @@ undefined4 __thiscall OptPanelTy::CheckFiles(OptPanelTy *this,byte *param_1)
   do {
     pbVar8 = param_1;
     if ((int)uVar9 < (int)uVar2) {
-      pbVar5 = *(byte **)(*(int *)(*(int *)&local_c[1].field_0x30 + 0x14) + uVar9 * 4);
+      pbVar5 = *(byte **)(*(int *)(local_c->field_01E9 + 0x14) + uVar9 * 4);
     }
     else {
       pbVar5 = (byte *)0x0;

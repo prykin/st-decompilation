@@ -6,17 +6,17 @@
 void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
 
 {
-  undefined1 *puVar1;
-  char cVar2;
-  byte bVar3;
+  char cVar1;
+  byte bVar2;
+  StartSystemTy *pSVar3;
   MMsgTy *this_00;
-  undefined4 uVar4;
-  code *pcVar5;
+  code *pcVar4;
+  undefined1 uVar5;
+  undefined1 uVar6;
+  undefined1 uVar7;
   WaitTy *this_01;
-  DWORD DVar6;
-  int iVar7;
-  int *piVar8;
-  int *piVar9;
+  DWORD DVar8;
+  int iVar9;
   undefined4 *puVar10;
   LPCSTR pCVar11;
   uint uVar12;
@@ -26,9 +26,12 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   uint uVar16;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  char *pcVar17;
-  UINT UVar18;
-  undefined4 uVar19;
+  undefined4 *puVar17;
+  char *pcVar18;
+  int *piVar19;
+  UINT UVar20;
+  int *piVar21;
+  undefined4 uVar22;
   char local_114 [2];
   undefined1 local_112;
   InternalExceptionFrame local_ec;
@@ -58,56 +61,55 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
   
   local_c = 1;
   local_50 = this;
-  DVar6 = timeGetTime();
-  this->field_0061 = DVar6;
+  DVar8 = timeGetTime();
+  this->field_0061 = DVar8;
   local_ec.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_ec;
-  iVar7 = Library::MSVCRT::__setjmp3(local_ec.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar9 = Library::MSVCRT::__setjmp3(local_ec.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_50;
-  if (iVar7 != 0) {
+  if (iVar9 != 0) {
     g_currentExceptionFrame = local_ec.previous;
-    iVar13 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6,0,iVar7,
+    iVar13 = ReportDebugMessage(s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6,0,iVar9,
                                 &DAT_007a4ccc,s_WaitTy__NoneWait_007cddf4);
     if (iVar13 != 0) {
-      pcVar5 = (code *)swi(3);
-      (*pcVar5)();
+      pcVar4 = (code *)swi(3);
+      (*pcVar4)();
       return;
     }
-    RaiseInternalException(iVar7,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6);
+    RaiseInternalException(iVar9,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6);
     return;
   }
-  if ((*(int *)&local_50[0x43].field_0x18 != 0) &&
-     (0xf9 < (uint)(local_50->field_0061 - *(int *)&local_50[0x43].field_0x1c))) {
+  if ((local_50->field_1A87 != 0) && (0xf9 < (uint)(local_50->field_0061 - local_50->field_1A8B))) {
     ShowDescription(local_50);
-    *(undefined4 *)&this_01[0x43].field_0x18 = 0;
+    this_01->field_1A87 = 0;
   }
-  cVar2 = *(char *)(this_01 + 1);
-  if (cVar2 == '\x01') {
-    if (this_01[0x43].field_0x6 == '\0') {
+  cVar1 = this_01->field_0065;
+  if (cVar1 == '\x01') {
+    if (this_01->field_0x1a75 == '\0') {
       local_14 = (int *)0x0;
-      piVar9 = local_4c;
-      for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *piVar9 = 0;
-        piVar9 = piVar9 + 1;
+      piVar21 = local_4c;
+      for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
+        *piVar21 = 0;
+        piVar21 = piVar21 + 1;
       }
-      if (*(int *)&this_01[0x43].field_0x1 == 0) {
-        pcVar17 = local_114;
-        for (iVar7 = 9; iVar7 != 0; iVar7 = iVar7 + -1) {
-          pcVar17[0] = '\0';
-          pcVar17[1] = '\0';
-          pcVar17[2] = '\0';
-          pcVar17[3] = '\0';
-          pcVar17 = pcVar17 + 4;
+      if (*(int *)&this_01->field_0x1a70 == 0) {
+        pcVar18 = local_114;
+        for (iVar9 = 9; iVar9 != 0; iVar9 = iVar9 + -1) {
+          pcVar18[0] = '\0';
+          pcVar18[1] = '\0';
+          pcVar18[2] = '\0';
+          pcVar18[3] = '\0';
+          pcVar18 = pcVar18 + 4;
         }
-        pcVar17[0] = '\0';
-        pcVar17[1] = '\0';
+        pcVar18[0] = '\0';
+        pcVar18[1] = '\0';
         local_112 = 4;
         FUN_00715360(DAT_00811764,1,'\x1a',local_114,0x26,1,0xffffffff);
       }
-      iVar7 = *(int *)&this_01[0x43].field_0x1 + 1;
-      *(int *)&this_01[0x43].field_0x1 = iVar7;
-      if (iVar7 == 10) {
-        *(undefined4 *)&this_01[0x43].field_0x1 = 0;
+      iVar9 = *(int *)&this_01->field_0x1a70 + 1;
+      *(int *)&this_01->field_0x1a70 = iVar9;
+      if (iVar9 == 10) {
+        *(undefined4 *)&this_01->field_0x1a70 = 0;
       }
       if (DAT_008067a0 != '\0') {
         CFsgsConnection::PumpMessages((CFsgsConnection *)&DAT_00802a90);
@@ -116,37 +118,37 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
       local_1c = 0;
       if (0 < local_24) {
         do {
-          iVar7 = FUN_00715630(DAT_00811764,-1,&local_2c,&local_6c,&local_14,&local_28,-1,0);
-          piVar9 = local_14;
-          if (iVar7 == -0x4d) {
+          iVar9 = FUN_00715630(DAT_00811764,-1,&local_2c,&local_6c,&local_14,&local_28,-1,0);
+          piVar21 = local_14;
+          if (iVar9 == -0x4d) {
 LAB_005e9233:
-            this_01[0x43].field_0x5 = 0;
-            this_01[0x43].field_0x6 = 1;
+            this_01->field_0x1a74 = 0;
+            this_01->field_0x1a75 = 1;
             local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-            if (*(int *)(*(int *)&this_01[0x42].field_0x51 + 0x2e6) == 0) {
-              (*(code *)**(undefined4 **)this_01)(local_4c);
+            if (this_01->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
+              (**(code **)this_01->field_0000)(local_4c);
             }
             else {
-              local_4c[2] = *(int *)&this_01->field_0x8;
+              local_4c[2] = this_01->field_0008;
               local_4c[3] = 2;
-              MMsgTy::SetMessage(*(MMsgTy **)(*(int *)&this_01[0x42].field_0x51 + 0x2e6),0x2525,'\0'
-                                 ,local_4c,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+              MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2525,'\0',local_4c,
+                                 (undefined4 *)0x0,(undefined4 *)0x0,0,0);
             }
           }
-          else if (iVar7 == 0) {
-            if (30000 < (uint)(this_01->field_0061 - *(int *)((int)&this_01[0x42].field_0061 + 1)))
+          else if (iVar9 == 0) {
+            if (30000 < (uint)(this_01->field_0061 - *(int *)&this_01->field_0x1a6c))
             goto LAB_005e9233;
           }
-          else if (iVar7 == 1) {
+          else if (iVar9 == 1) {
             switch(local_2c) {
             case 0x10:
-              if (*(char *)(this_01 + 1) == '\x01') {
+              if (this_01->field_0065 == '\x01') {
                 local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-                if (*(int *)(*(int *)&this_01[0x42].field_0x51 + 0x2e6) == 0) goto LAB_005e91f7;
-                local_4c[2] = *(int *)&this_01->field_0x8;
+                if (this_01->field_1A5B->field_02E6 == (MMsgTy *)0x0) goto LAB_005e91f7;
+                local_4c[2] = this_01->field_0008;
                 local_4c[3] = 2;
-                MMsgTy::SetMessage(*(MMsgTy **)(*(int *)&this_01[0x42].field_0x51 + 0x2e6),0x2524,
-                                   '\0',local_4c,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2524,'\0',local_4c,
+                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
               }
               break;
             case 0x1a:
@@ -154,77 +156,75 @@ LAB_005e9233:
               if ((short)*local_14 == (short)((uint)DAT_00807dd5 >> 0x10)) {
                 local_10 = (int *)((int)local_14 + 2);
                 if (*(char *)local_10 == '\x01') {
-                  pcVar17 = (char *)((int)local_14 + 0xb);
-                  switch(*pcVar17) {
+                  pcVar18 = (char *)((int)local_14 + 0xb);
+                  switch(*pcVar18) {
                   case '\x01':
-                    if (this_01[0x43].field_0x7 != '\0') {
-                      piVar8 = (int *)(*(int *)&this_01[0x42].field_0x51 + 0x69a);
-                      if (*piVar8 != 0) {
-                        FUN_006ab060(piVar8);
+                    if (this_01->field_0x1a76 != '\0') {
+                      puVar17 = &this_01->field_1A5B->field_069A;
+                      if (*puVar17 != 0) {
+                        FUN_006ab060(puVar17);
                       }
-                      this_01[0x43].field_0x7 = 0;
+                      this_01->field_0x1a76 = 0;
                     }
                     local_5 = '\x01';
-                    this_01[0x42].field_0x55 = 0xe;
+                    this_01->field_1A5F = 0xe;
                     break;
                   case '\x02':
                   case '\x03':
                   case '\x04':
-                    if (this_01[0x43].field_0x7 != '\0') {
-                      if (*(int *)&this_01[0x43].field_0x8 != *(int *)((int)local_14 + 3)) {
-                        piVar8 = (int *)(*(int *)&this_01[0x42].field_0x51 + 0x69a);
-                        if (*piVar8 != 0) {
-                          FUN_006ab060(piVar8);
+                    if (this_01->field_0x1a76 != '\0') {
+                      if (*(int *)&this_01->field_0x1a77 != *(int *)((int)local_14 + 3)) {
+                        puVar17 = &this_01->field_1A5B->field_069A;
+                        if (*puVar17 != 0) {
+                          FUN_006ab060(puVar17);
                         }
-                        this_01[0x43].field_0x7 = 0;
+                        this_01->field_0x1a76 = 0;
                       }
-                      if (this_01[0x43].field_0x7 != '\0') break;
+                      if (this_01->field_0x1a76 != '\0') break;
                     }
                     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,
                               PTR_s_CUSTOM__0079c244);
-                    local_5c = *pcVar17;
-                    local_5b = *(undefined4 *)((int)piVar9 + 3);
+                    local_5c = *pcVar18;
+                    local_5b = *(undefined4 *)((int)piVar21 + 3);
                     local_57 = 0;
-                    iVar7 = FUN_00725910((char *)&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,
+                    iVar9 = FUN_00725910((char *)&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,
                                          &local_5c,0);
-                    if (iVar7 == -0x70) {
+                    if (iVar9 == -0x70) {
                       local_5 = '\x01';
                     }
-                    this_01[0x42].field_0x55 = ((*pcVar17 == '\x03') - 1U & 0xfe) + 0xf;
+                    this_01->field_1A5F = ((*pcVar18 == '\x03') - 1U & 0xfe) + 0xf;
                     break;
                   case '\x05':
                     wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s__007cce38,&DAT_00807680,
                               PTR_s_SAVEGAME__0079c240,&DAT_00807ddd);
-                    local_68 = *pcVar17;
-                    local_67 = *(undefined4 *)((int)piVar9 + 3);
-                    local_63 = *(undefined4 *)((int)piVar9 + 7);
-                    iVar7 = FUN_00725910((char *)&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,
+                    local_68 = *pcVar18;
+                    local_67 = *(undefined4 *)((int)piVar21 + 3);
+                    local_63 = *(undefined4 *)((int)piVar21 + 7);
+                    iVar9 = FUN_00725910((char *)&DAT_0080f33a,s___DKD_007cce44,0,&LAB_00404e49,
                                          &local_68,0);
-                    if (iVar7 == -0x70) {
+                    if (iVar9 == -0x70) {
                       local_5 = '\x01';
                     }
-                    this_01[0x42].field_0x55 = 0x10;
+                    this_01->field_1A5F = 0x10;
                   }
                   if (local_5 == '\0') {
-                    if (this_01[0x43].field_0x7 == '\0') {
-                      if ((*(char *)((int)piVar9 + 0xd) == '\0') ||
-                         (((char)*local_10 == '\x01' && (*pcVar17 == '\x05')))) {
-                        this_01[0x43].field_0x5 = 0;
+                    if (this_01->field_0x1a76 == '\0') {
+                      if ((*(char *)((int)piVar21 + 0xd) == '\0') ||
+                         (((char)*local_10 == '\x01' && (*pcVar18 == '\x05')))) {
+                        this_01->field_0x1a74 = 0;
                         thunk_FUN_005dac60();
-                        piVar9 = (int *)0x0;
-                        this_01[0x43].field_0x6 = 1;
-                        UVar18 = 0x2523;
+                        piVar21 = (int *)0x0;
+                        this_01->field_0x1a75 = 1;
+                        UVar20 = 0x2523;
                         goto LAB_005e8ee0;
                       }
-                      uVar19 = this_01->field_0061;
-                      this_01[0x43].field_0x7 = 1;
-                      uVar4 = *(undefined4 *)((int)piVar9 + 3);
-                      *(undefined4 *)&this_01[0x43].field_0xc = uVar19;
-                      iVar7 = *(int *)&this_01[0x42].field_0x51;
-                      *(undefined4 *)&this_01[0x43].field_0x8 = uVar4;
-                      piVar9 = (int *)(iVar7 + 0x69a);
-                      if (*piVar9 != 0) {
-                        FUN_006ab060(piVar9);
+                      this_01->field_0x1a76 = 1;
+                      uVar22 = *(undefined4 *)((int)piVar21 + 3);
+                      *(undefined4 *)&this_01->field_0x1a7b = this_01->field_0061;
+                      *(undefined4 *)&this_01->field_0x1a77 = uVar22;
+                      puVar17 = &this_01->field_1A5B->field_069A;
+                      if (*puVar17 != 0) {
+                        FUN_006ab060(puVar17);
                       }
                       local_18 = -1;
                       FUN_006b6500((int)DAT_00811764,1);
@@ -233,122 +233,119 @@ LAB_005e9233:
                     }
                   }
                   else {
-                    thunk_FUN_005b6350(this_01,0x6121,(uint)(byte)this_01[0x42].field_0x55,0x12);
+                    thunk_FUN_005b6350(this_01,0x6121,(uint)(byte)this_01->field_1A5F,0x12);
                     DAT_0080877e = 0;
-                    if (*pcVar17 == '\x01') {
+                    if (*pcVar18 == '\x01') {
                       DAT_008087be = 0;
                     }
-                    iVar7 = *(int *)this_01;
-                    *(undefined4 *)&this_01[0x42].field_0x5a = 1;
-                    (**(code **)(iVar7 + 8))();
-                    this_00 = *(MMsgTy **)(*(int *)&this_01[0x42].field_0x51 + 0x2e6);
+                    this_01->field_1A64 = 1;
+                    (**(code **)(this_01->field_0000 + 8))();
+                    this_00 = this_01->field_1A5B->field_02E6;
                     if (this_00 != (MMsgTy *)0x0) {
                       MMsgTy::HidePanel(this_00,1,0,1);
                     }
                   }
                 }
                 else if (*(char *)local_10 == '\x03') {
-                  if (this_01[0x43].field_0x7 == '\0') {
+                  if (this_01->field_0x1a76 == '\0') {
                     if (*(int *)((int)local_14 + 3) != DAT_008087be) {
-                      *(int *)&this_01[0x43].field_0x20 = *(int *)((int)local_14 + 3);
-                      this_01[0x43].field_0x24 = *(undefined1 *)((int)local_14 + 0xb);
-                      *(undefined4 *)&this_01[0x43].field_0x18 = 1;
-                      DVar6 = timeGetTime();
-                      *(DWORD *)&this_01[0x43].field_0x1c = DVar6;
+                      this_01->field_1A8F = *(int *)((int)local_14 + 3);
+                      this_01->field_1A93 = *(undefined1 *)((int)local_14 + 0xb);
+                      this_01->field_1A87 = 1;
+                      DVar8 = timeGetTime();
+                      this_01->field_1A8B = DVar8;
                     }
                   }
-                  else if (5000 < (uint)(this_01->field_0061 - *(int *)&this_01[0x43].field_0xc)) {
-                    this_01[0x43].field_0x7 = 0;
+                  else if (5000 < (uint)(this_01->field_0061 - *(int *)&this_01->field_0x1a7b)) {
+                    this_01->field_0x1a76 = 0;
                   }
                 }
               }
               else {
-                this_01[0x43].field_0x5 = 0;
-                piVar9 = local_8c;
-                for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {
-                  *piVar9 = 0;
-                  piVar9 = piVar9 + 1;
+                this_01->field_0x1a74 = 0;
+                piVar21 = local_8c;
+                for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
+                  *piVar21 = 0;
+                  piVar21 = piVar21 + 1;
                 }
-                this_01[0x43].field_0x6 = 1;
-                local_8c[2] = *(int *)&this_01->field_0x8;
-                piVar9 = local_8c;
+                this_01->field_0x1a75 = 1;
+                local_8c[2] = this_01->field_0008;
+                piVar21 = local_8c;
                 local_8c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
                 local_8c[3] = 2;
-                UVar18 = 0x2526;
+                UVar20 = 0x2526;
 LAB_005e8ee0:
-                MMsgTy::SetMessage(*(MMsgTy **)(*(int *)&this_01[0x42].field_0x51 + 0x2e6),UVar18,
-                                   '\0',piVar9,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,UVar20,'\0',piVar21,
+                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
               }
               break;
             case 0x1b:
-              StartSystemTy::AddToChat(*(StartSystemTy **)&this_01[0x42].field_0x51,(int)local_14);
+              StartSystemTy::AddToChat(this_01->field_1A5B,(int)local_14);
               break;
             case 0x26:
-              if ((((this_01[0x43].field_0x7 != '\0') && (local_14 != (int *)0x0)) &&
-                  (*local_14 == *(int *)&this_01[0x43].field_0x8)) &&
+              if ((((this_01->field_0x1a76 != '\0') && (local_14 != (int *)0x0)) &&
+                  (*local_14 == *(int *)&this_01->field_0x1a77)) &&
                  ((local_10 = local_14 + 6, (int)local_28 <= local_14[6] + 0x1c &&
                   (0x1c < (int)local_28)))) {
-                if (*(int *)(*(int *)&this_01[0x42].field_0x51 + 0x69a) == 0) {
-                  piVar8 = local_14 + 3;
-                  iVar7 = Library::DKW::LIB::FUN_006aac70(local_14[3]);
-                  *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x69a) = iVar7;
-                  puVar1 = &this_01[0x43].field_0x14;
-                  *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x69e) = *piVar8;
-                  *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x6ae) = piVar9[4];
-                  *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x6b2) = piVar9[5];
-                  *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x6a2) = *local_10;
-                  *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x6a6) = piVar9[2];
-                  if (*(int *)puVar1 != 0) {
-                    FUN_006ab060((undefined4 *)puVar1);
+                if (this_01->field_1A5B->field_069A == 0) {
+                  piVar19 = local_14 + 3;
+                  iVar9 = Library::DKW::LIB::FUN_006aac70(local_14[3]);
+                  this_01->field_1A5B->field_069A = iVar9;
+                  puVar17 = &this_01->field_1A83;
+                  this_01->field_1A5B->field_069E = *piVar19;
+                  this_01->field_1A5B->field_06AE = piVar21[4];
+                  this_01->field_1A5B->field_06B2 = piVar21[5];
+                  *(int *)&this_01->field_1A5B->field_0x6a2 = *local_10;
+                  *(int *)&this_01->field_1A5B->field_0x6a6 = piVar21[2];
+                  if (*puVar17 != 0) {
+                    FUN_006ab060(puVar17);
                   }
-                  uVar14 = *(uint *)(*(int *)&this_01[0x42].field_0x51 + 0x6a6);
-                  this_01[0x43].field_0010 = uVar14;
+                  uVar14 = *(uint *)&this_01->field_1A5B->field_0x6a6;
+                  *(uint *)&this_01->field_0x1a7f = uVar14;
                   puVar10 = Library::DKW::LIB::FUN_006aac10(uVar14);
-                  *(undefined4 **)puVar1 = puVar10;
-                  uVar19 = 0;
+                  *puVar17 = puVar10;
+                  uVar22 = 0;
                   pCVar11 = (LPCSTR)FUN_006b0140(0x252f,DAT_00807618);
-                  wsprintfA((LPSTR)&DAT_0080f33a,pCVar11,uVar19);
+                  wsprintfA((LPSTR)&DAT_0080f33a,pCVar11,uVar22);
                   AddStr(this_01,&DAT_0080f33a,0);
                 }
-                iVar7 = piVar9[1];
-                if ((uint)(iVar7 * *local_10) < (uint)piVar9[3] ||
-                    iVar7 * *local_10 - piVar9[3] == 0) {
-                  local_10 = (int *)(*(int *)&this_01[0x43].field_0x14 + iVar7);
+                iVar9 = piVar21[1];
+                if ((uint)(iVar9 * *local_10) < (uint)piVar21[3] ||
+                    iVar9 * *local_10 - piVar21[3] == 0) {
+                  local_10 = (int *)(this_01->field_1A83 + iVar9);
                   if ((char)*local_10 == '\0') {
-                    piVar9 = piVar9 + 7;
-                    piVar8 = (int *)(*(int *)(*(int *)&this_01[0x42].field_0x51 + 0x6a2) * iVar7 +
-                                    *(int *)(*(int *)&this_01[0x42].field_0x51 + 0x69a));
+                    piVar21 = piVar21 + 7;
+                    piVar19 = (int *)(*(int *)&this_01->field_1A5B->field_0x6a2 * iVar9 +
+                                     this_01->field_1A5B->field_069A);
                     for (uVar14 = local_28 - 0x1c >> 2; uVar14 != 0; uVar14 = uVar14 - 1) {
-                      *piVar8 = *piVar9;
-                      piVar9 = piVar9 + 1;
-                      piVar8 = piVar8 + 1;
+                      *piVar19 = *piVar21;
+                      piVar21 = piVar21 + 1;
+                      piVar19 = piVar19 + 1;
                     }
                     for (uVar14 = local_28 - 0x1c & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
-                      *(char *)piVar8 = (char)*piVar9;
-                      piVar9 = (int *)((int)piVar9 + 1);
-                      piVar8 = (int *)((int)piVar8 + 1);
+                      *(char *)piVar19 = (char)*piVar21;
+                      piVar21 = (int *)((int)piVar21 + 1);
+                      piVar19 = (int *)((int)piVar19 + 1);
                     }
                     *(char *)local_10 = '\x01';
-                    iVar7 = *(int *)&this_01[0x42].field_0x51;
-                    *(undefined4 *)&this_01[0x43].field_0xc = this_01->field_0061;
-                    this_01[0x43].field_0010 = this_01[0x43].field_0010 + -1;
-                    uVar14 = *(uint *)(iVar7 + 0x6a6);
-                    uVar14 = (uVar14 * 100 + this_01[0x43].field_0010 * -100) / uVar14;
+                    *(undefined4 *)&this_01->field_0x1a7b = this_01->field_0061;
+                    *(int *)&this_01->field_0x1a7f = *(int *)&this_01->field_0x1a7f + -1;
+                    uVar14 = *(uint *)&this_01->field_1A5B->field_0x6a6;
+                    uVar14 = (uVar14 * 100 + *(int *)&this_01->field_0x1a7f * -100) / uVar14;
                     pCVar11 = (LPCSTR)FUN_006b0140(0x252f,DAT_00807618);
                     wsprintfA((LPSTR)&DAT_0080f33a,pCVar11,uVar14);
                     AddStr(this_01,&DAT_0080f33a,1);
                   }
-                  if (this_01[0x43].field_0010 == 0) {
-                    iVar7 = thunk_FUN_005deb90(*(int *)&this_01[0x42].field_0x51);
-                    if (iVar7 == 0) {
-                      this_01[0x43].field_0x5 = 0;
+                  if (*(int *)&this_01->field_0x1a7f == 0) {
+                    iVar9 = thunk_FUN_005deb90((int)this_01->field_1A5B);
+                    if (iVar9 == 0) {
+                      this_01->field_0x1a74 = 0;
                       thunk_FUN_005dac60();
-                      iVar7 = *(int *)&this_01[0x42].field_0x51;
-                      this_01[0x43].field_0x6 = 1;
-                      MMsgTy::SetMessage(*(MMsgTy **)(iVar7 + 0x2e6),0x252e,'\0',(undefined4 *)0x0,
-                                         (undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                      this_01->field_0x1a75 = 1;
+                      MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x252e,'\0',
+                                         (undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
                     }
-                    this_01[0x43].field_0x7 = 0;
+                    this_01->field_0x1a76 = 0;
                   }
                 }
               }
@@ -356,20 +353,20 @@ LAB_005e8ee0:
             case 0x31:
             case 0x33:
             case 0x35:
-              this_01[0x43].field_0x6 = 1;
+              this_01->field_0x1a75 = 1;
               local_4c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-              if (*(int *)(*(int *)&this_01[0x42].field_0x51 + 0x2e6) == 0) {
+              if (this_01->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
 LAB_005e91f7:
-                (*(code *)**(undefined4 **)this_01)(local_4c);
+                (**(code **)this_01->field_0000)(local_4c);
               }
               else {
-                local_4c[2] = *(int *)&this_01->field_0x8;
+                local_4c[2] = this_01->field_0008;
                 local_4c[3] = 2;
-                MMsgTy::SetMessage(*(MMsgTy **)(*(int *)&this_01[0x42].field_0x51 + 0x2e6),0x2522,
-                                   '\0',local_4c,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                MMsgTy::SetMessage(this_01->field_1A5B->field_02E6,0x2522,'\0',local_4c,
+                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
               }
             }
-            *(undefined4 *)((int)&this_01[0x42].field_0061 + 1) = this_01->field_0061;
+            *(undefined4 *)&this_01->field_0x1a6c = this_01->field_0061;
             if (local_14 != (int *)0x0) {
               FUN_006ab060(&local_14);
             }
@@ -377,37 +374,43 @@ LAB_005e91f7:
           local_1c = local_1c + 1;
         } while (local_1c < local_24);
       }
-      if ((((this_01[0x43].field_0x7 != '\0') &&
-           (3000 < (uint)(this_01->field_0061 - *(int *)&this_01[0x43].field_0xc))) &&
-          (this_01[0x43].field_0010 != 0)) && (*(int *)&this_01[0x43].field_0x14 != 0)) {
-        uVar14 = this_01[0x43].field_0010 * 4 + 4;
+      if ((((this_01->field_0x1a76 != '\0') &&
+           (3000 < (uint)(this_01->field_0061 - *(int *)&this_01->field_0x1a7b))) &&
+          (*(int *)&this_01->field_0x1a7f != 0)) && (this_01->field_1A83 != 0)) {
+        uVar14 = *(int *)&this_01->field_0x1a7f * 4 + 4;
         local_20 = (char *)Library::DKW::LIB::FUN_006aac70(uVar14);
-        local_18 = *(int *)&this_01[0x43].field_0x14;
-        *(undefined4 *)local_20 = this_01[0x43].field_0010;
+        local_18 = this_01->field_1A83;
+        uVar5 = this_01->field_0x1a80;
+        uVar6 = this_01->field_0x1a81;
+        uVar7 = this_01->field_0x1a82;
+        local_20[0] = this_01->field_0x1a7f;
+        local_20[1] = uVar5;
+        local_20[2] = uVar6;
+        local_20[3] = uVar7;
         puVar15 = (uint *)(local_20 + 4);
         uVar12 = 0;
         uVar16 = 0;
-        if (*(int *)(*(int *)&this_01[0x42].field_0x51 + 0x6a6) != 0) {
+        if (*(int *)&this_01->field_1A5B->field_0x6a6 != 0) {
           do {
             if (*(char *)(uVar12 + local_18) == '\0') {
               *puVar15 = uVar12;
               puVar15 = puVar15 + 1;
               uVar16 = uVar16 + 1;
-              if ((uint)this_01[0x43].field_0010 <= uVar16) break;
+              if (*(uint *)&this_01->field_0x1a7f <= uVar16) break;
             }
             uVar12 = uVar12 + 1;
-          } while (uVar12 < *(uint *)(*(int *)&this_01[0x42].field_0x51 + 0x6a6));
+          } while (uVar12 < *(uint *)&this_01->field_1A5B->field_0x6a6);
         }
         FUN_006b6500((int)DAT_00811764,1);
         FUN_00715360(DAT_00811764,1,'%',local_20,uVar14,1,0xffffffff);
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
         FUN_006ab060(&local_20);
-        *(undefined4 *)&this_01[0x43].field_0xc = this_01->field_0061;
+        *(undefined4 *)&this_01->field_0x1a7b = this_01->field_0061;
       }
     }
   }
-  else if (cVar2 == '\x03') {
-    if ((*(int *)&this_01[0x42].field_0x5a == 0) &&
+  else if (cVar1 == '\x03') {
+    if ((this_01->field_1A64 == 0) &&
        (*(int *)(DAT_0081176c + 0x300) < *(int *)(DAT_0081176c + 0x304) + -1)) {
       *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + 1;
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
@@ -418,18 +421,17 @@ LAB_005e91f7:
       }
       local_c = 0;
     }
-    if ((*(HoloTy **)&this_01[0x44].field_0x24 != (HoloTy *)0x0) &&
-       (iVar7 = HoloTy::NextFas(*(HoloTy **)&this_01[0x44].field_0x24), iVar7 != 0)) {
+    if ((this_01->field_1AF8 != (HoloTy *)0x0) &&
+       (iVar9 = HoloTy::NextFas(this_01->field_1AF8), iVar9 != 0)) {
       local_c = 0;
     }
-    if ((((*(int *)&this_01[0x42].field_0x5a == 0) || (*(int *)&this_01[0x42].field_0x5e != 0)) &&
-        (*(HoloTy **)&this_01[0x44].field_0x2c != (HoloTy *)0x0)) &&
-       (iVar7 = HoloTy::NextFas(*(HoloTy **)&this_01[0x44].field_0x2c), iVar7 != 0)) {
+    if ((((this_01->field_1A64 == 0) || (this_01->field_1A68 != 0)) &&
+        (this_01->field_1B00 != (HoloTy *)0x0)) &&
+       (iVar9 = HoloTy::NextFas(this_01->field_1B00), iVar9 != 0)) {
       local_c = 0;
     }
-    if (((*(int *)&this_01[0x42].field_0x5a == 0) &&
-        (*(HoloTy **)&this_01[0x44].field_0x28 != (HoloTy *)0x0)) &&
-       (iVar7 = HoloTy::NextFas(*(HoloTy **)&this_01[0x44].field_0x28), iVar7 != 0)) {
+    if (((this_01->field_1A64 == 0) && (this_01->field_1AFC != (HoloTy *)0x0)) &&
+       (iVar9 = HoloTy::NextFas(this_01->field_1AFC), iVar9 != 0)) {
       local_c = 0;
     }
     if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
@@ -437,51 +439,50 @@ LAB_005e91f7:
       local_c = 0;
     }
     if (local_c != 0) {
-      if (*(HoloTy **)&this_01[0x44].field_0x24 != (HoloTy *)0x0) {
-        HoloTy::Done(*(HoloTy **)&this_01[0x44].field_0x24);
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_01[0x44].field_0x24);
-        *(undefined4 *)&this_01[0x44].field_0x24 = 0;
+      if (this_01->field_1AF8 != (HoloTy *)0x0) {
+        HoloTy::Done(this_01->field_1AF8);
+        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_01->field_1AF8);
+        this_01->field_1AF8 = (HoloTy *)0x0;
       }
-      if (*(HoloTy **)&this_01[0x44].field_0x2c != (HoloTy *)0x0) {
-        HoloTy::Done(*(HoloTy **)&this_01[0x44].field_0x2c);
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_01[0x44].field_0x2c);
-        *(undefined4 *)&this_01[0x44].field_0x2c = 0;
+      if (this_01->field_1B00 != (HoloTy *)0x0) {
+        HoloTy::Done(this_01->field_1B00);
+        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_01->field_1B00);
+        this_01->field_1B00 = (HoloTy *)0x0;
       }
-      if (*(HoloTy **)&this_01[0x44].field_0x28 != (HoloTy *)0x0) {
-        HoloTy::Done(*(HoloTy **)&this_01[0x44].field_0x28);
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_01[0x44].field_0x28);
-        *(undefined4 *)&this_01[0x44].field_0x28 = 0;
+      if (this_01->field_1AFC != (HoloTy *)0x0) {
+        HoloTy::Done(this_01->field_1AFC);
+        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_01->field_1AFC);
+        this_01->field_1AFC = (HoloTy *)0x0;
       }
-      iVar7 = *(int *)&this_01[0x42].field_0x5a;
-      *(undefined1 *)(this_01 + 1) = 1;
-      *(undefined4 *)((int)&this_01[0x42].field_0061 + 1) = this_01->field_0061;
-      if (iVar7 == 0) {
+      this_01->field_0065 = 1;
+      *(undefined4 *)&this_01->field_0x1a6c = this_01->field_0061;
+      if (this_01->field_1A64 == 0) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
         if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
           FUN_006b3af0(*(int **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc));
         }
       }
-      thunk_FUN_00540dc0(1,*(undefined4 *)&this_01->field_0x8,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
-      iVar7 = *(int *)&this_01[0x42].field_0x51;
-      if (*(int *)(iVar7 + 0x2e6) != 0) {
-        puVar10 = local_a8;
-        for (iVar13 = 6; iVar13 != 0; iVar13 = iVar13 + -1) {
-          *puVar10 = 0;
-          puVar10 = puVar10 + 1;
+      SetAccelerator(1,this_01->field_0008,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
+      pSVar3 = this_01->field_1A5B;
+      if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
+        puVar17 = local_a8;
+        for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+          *puVar17 = 0;
+          puVar17 = puVar17 + 1;
         }
-        *(undefined2 *)puVar10 = 0;
+        *(undefined2 *)puVar17 = 0;
         local_9c = 1;
         local_9e = 1;
-        MMsgTy::StatePanel(*(MMsgTy **)(iVar7 + 0x2e6),(int)local_a8);
+        MMsgTy::StatePanel(pSVar3->field_02E6,(int)local_a8);
       }
       thunk_FUN_005e9970((int)this_01);
-      puVar15 = (uint *)&this_01[0x43].field_0x25;
-      iVar7 = 0x16;
+      puVar15 = &this_01->field_1A94;
+      iVar9 = 0x16;
       do {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar15);
         puVar15 = puVar15 + 1;
-        iVar7 = iVar7 + -1;
-      } while (iVar7 != 0);
+        iVar9 = iVar9 + -1;
+      } while (iVar9 != 0);
       if (*(uint *)(DAT_0081176c + 0x391) != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   (*(uint **)(DAT_0081176c + 0x3d5),*(uint *)(DAT_0081176c + 0x391),0xfffffffe,
@@ -515,8 +516,8 @@ LAB_005e91f7:
       return;
     }
   }
-  else if (cVar2 == '\x04') {
-    if ((*(int *)&this_01[0x42].field_0x5a == 0) && (0 < *(int *)(DAT_0081176c + 0x300))) {
+  else if (cVar1 == '\x04') {
+    if ((this_01->field_1A64 == 0) && (0 < *(int *)(DAT_0081176c + 0x300))) {
       *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + -1;
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
@@ -526,10 +527,10 @@ LAB_005e91f7:
       }
       local_c = 0;
     }
-    if (*(HoloTy **)&this_01[0x44].field_0x24 != (HoloTy *)0x0) {
-      iVar7 = HoloTy::NextFas(*(HoloTy **)&this_01[0x44].field_0x24);
-      if (iVar7 == 0) {
-        uVar14 = *(uint *)(*(int *)&this_01[0x44].field_0x24 + 3);
+    if (this_01->field_1AF8 != (HoloTy *)0x0) {
+      iVar9 = HoloTy::NextFas(this_01->field_1AF8);
+      if (iVar9 == 0) {
+        uVar14 = this_01->field_1AF8->field_0003;
         if (-1 < (int)uVar14) {
           FUN_006b3af0(DAT_008075a8,uVar14);
         }
@@ -538,11 +539,11 @@ LAB_005e91f7:
         local_c = 0;
       }
     }
-    if (((*(int *)&this_01[0x42].field_0x5a == 0) || (this_01[0x42].field_0x55 == '\x0e')) &&
-       (*(HoloTy **)&this_01[0x44].field_0x2c != (HoloTy *)0x0)) {
-      iVar7 = HoloTy::NextFas(*(HoloTy **)&this_01[0x44].field_0x2c);
-      if (iVar7 == 0) {
-        uVar14 = *(uint *)(*(int *)&this_01[0x44].field_0x2c + 3);
+    if (((this_01->field_1A64 == 0) || (this_01->field_1A5F == '\x0e')) &&
+       (this_01->field_1B00 != (HoloTy *)0x0)) {
+      iVar9 = HoloTy::NextFas(this_01->field_1B00);
+      if (iVar9 == 0) {
+        uVar14 = this_01->field_1B00->field_0003;
         if (-1 < (int)uVar14) {
           FUN_006b3af0(DAT_008075a8,uVar14);
         }
@@ -551,11 +552,10 @@ LAB_005e91f7:
         local_c = 0;
       }
     }
-    if ((*(int *)&this_01[0x42].field_0x5a == 0) &&
-       (*(HoloTy **)&this_01[0x44].field_0x28 != (HoloTy *)0x0)) {
-      iVar7 = HoloTy::NextFas(*(HoloTy **)&this_01[0x44].field_0x28);
-      if (iVar7 == 0) {
-        uVar14 = *(uint *)(*(int *)&this_01[0x44].field_0x28 + 3);
+    if ((this_01->field_1A64 == 0) && (this_01->field_1AFC != (HoloTy *)0x0)) {
+      iVar9 = HoloTy::NextFas(this_01->field_1AFC);
+      if (iVar9 == 0) {
+        uVar14 = this_01->field_1AFC->field_0003;
         if (-1 < (int)uVar14) {
           FUN_006b3af0(DAT_008075a8,uVar14);
         }
@@ -569,12 +569,12 @@ LAB_005e91f7:
       local_c = 0;
     }
     if (local_c != 0) {
-      bVar3 = this_01[0x42].field_0x50;
-      *(undefined1 *)(this_01 + 1) = 2;
-      if ((bVar3 != 0xff) && (*(int *)((int)this_01 + (uint)bVar3 * 0x1fb + 0xd1) != 0)) {
+      bVar2 = this_01->field_1A5A;
+      this_01->field_0065 = 2;
+      if ((bVar2 != 0xff) && (*(int *)(&this_01->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)((int)this_01 + (uint)bVar3 * 0x1fb + 0xc1));
+                   (undefined4 *)(&this_01->field_0xc1 + (uint)bVar2 * 0x1fb));
         g_currentExceptionFrame = local_ec.previous;
         return;
       }

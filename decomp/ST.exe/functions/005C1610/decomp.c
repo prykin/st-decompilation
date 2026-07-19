@@ -61,7 +61,7 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
   FUN_006b5f80(DAT_008075a8,local_44[3],local_44[4],local_44[5],local_44[6]);
   iVar7 = local_40;
   iVar5 = local_48;
-  FUN_006b4170(*(int *)&local_8->field_0x73,0,local_48,local_40,puVar4[5],puVar4[6],0xff);
+  FUN_006b4170(local_8->field_0073,0,local_48,local_40,puVar4[5],puVar4[6],0xff);
   uVar2 = puVar4[1];
   if (uVar2 == 0) {
     local_3c = iVar5 + 5;
@@ -76,8 +76,8 @@ void __thiscall MReportTy::PaintTab(MReportTy *this,int param_1)
     local_10 = (puVar4[6] - 3) + iVar7;
     local_1c = local_34;
     local_14 = local_3c;
-    FUN_006c7ea0(*(undefined4 *)&local_8->field_0x73,0,&local_3c,6,0x4c);
-    FUN_006c7f10(*(int *)&local_8->field_0x73,0,&local_3c,6,0x18);
+    FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
+    FUN_006c7f10(local_8->field_0073,0,&local_3c,6,0x18);
     iVar6 = iVar5 + -1 + puVar4[5];
 LAB_005c17e9:
     bVar11 = 0x18;
@@ -102,14 +102,14 @@ LAB_005c17e9:
     local_18 = (puVar4[6] - 1) + iVar7;
     local_10 = (puVar4[6] - 3) + iVar7;
     local_1c = local_34;
-    FUN_006c7ea0(*(undefined4 *)&local_8->field_0x73,0,&local_3c,6,0x4c);
-    FUN_006c7f10(*(int *)&local_8->field_0x73,0,&local_3c,6,0x18);
+    FUN_006c7ea0(local_8->field_0073,0,&local_3c,6,0x4c);
+    FUN_006c7f10(local_8->field_0073,0,&local_3c,6,0x18);
     bVar11 = 0x4c;
     iVar6 = iVar5 + -1 + puVar4[5];
     iVar1 = puVar4[6] - 2;
     iVar10 = iVar7 + 1;
   }
-  FUN_006b5b10(*(int *)&local_8->field_0x73,0,iVar6,iVar10,iVar6,iVar1 + iVar7,bVar11,0xd);
+  FUN_006b5b10(local_8->field_0073,0,iVar6,iVar10,iVar6,iVar1 + iVar7,bVar11,0xd);
 LAB_005c1806:
   if (puVar4[1] < 2) {
     uVar2 = *puVar4;
@@ -151,15 +151,15 @@ LAB_005c1806:
       default:
         uVar8 = 0xff;
       }
-      FUN_006b4170(*(int *)&local_8->field_0x73,0,
-                   (-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,0xd,uVar8);
-      FUN_006b5ee0(*(int *)&local_8->field_0x73,0,
-                   (-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,iVar7 + 0xb,0x1a,0xd,0,0xd);
+      FUN_006b4170(local_8->field_0073,0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,
+                   iVar7 + 0xb,0x1a,0xd,uVar8);
+      FUN_006b5ee0(local_8->field_0073,0,(-(uint)(puVar4[1] != 0) & 0xfffffffb) + 0xc + iVar5,
+                   iVar7 + 0xb,0x1a,0xd,0,0xd);
     }
   }
   Library::DKW::DDX::FUN_006b48e0
-            (DAT_0080759c,puVar4[3],puVar4[4],*(int *)&local_8->field_0x73,0,iVar5,iVar7,puVar4[5],
-             puVar4[6],(int)&local_8[1].field_0x24,0x4c,0x10000ff);
+            (DAT_0080759c,puVar4[3],puVar4[4],local_8->field_0073,0,iVar5,iVar7,puVar4[5],puVar4[6],
+             (int)&local_8->field_0xa3,0x4c,0x10000ff);
   g_currentExceptionFrame = local_8c.previous;
   return;
 }

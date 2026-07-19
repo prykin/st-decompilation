@@ -43,16 +43,16 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x24f);
     return 0xffff;
   }
-  if (*(int *)(local_c + param_1 * 4 + 0x70) == 0) {
+  if (*(int *)(&local_c->field_0x70 + param_1 * 4) == 0) {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-    *(uint **)(pSVar2 + param_1 * 4 + 0x70) = puVar4;
+    *(uint **)(&pSVar2->field_0x70 + param_1 * 4) = puVar4;
   }
   else {
-    iVar3 = *(int *)(*(int *)(local_c + param_1 * 4 + 0x70) + 0xc);
+    iVar3 = *(int *)(*(int *)(&local_c->field_0x70 + param_1 * 4) + 0xc);
     uVar6 = 0;
     if (0 < iVar3) {
       do {
-        iVar7 = *(int *)(local_c + param_1 * 4 + 0x70);
+        iVar7 = *(int *)(&local_c->field_0x70 + param_1 * 4);
         if (uVar6 < *(uint *)(iVar7 + 0xc)) {
           piVar5 = (int *)(*(int *)(iVar7 + 8) * uVar6 + *(int *)(iVar7 + 0x1c));
         }
@@ -68,7 +68,7 @@ STManRub3C::AddNewColl3(STManRub3C *this,int param_1,int param_2,int param_3,int
       } while ((int)uVar6 < iVar3);
     }
   }
-  puVar4 = *(uint **)(pSVar2 + param_1 * 4 + 0x70);
+  puVar4 = *(uint **)(&pSVar2->field_0x70 + param_1 * 4);
   if ((puVar4 != (uint *)0x0) && (local_8 == 0)) {
     local_1c = param_2;
     local_18 = param_3;

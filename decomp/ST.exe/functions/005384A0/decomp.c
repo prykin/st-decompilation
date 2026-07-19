@@ -31,8 +31,8 @@ undefined4 __thiscall PanelTy::GetMessage(PanelTy *this,int param_1)
     }
     else if (iVar3 == 5) {
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(local_8 + 1),0xffffffff,local_8->field_003C,
-                 *(uint *)&local_8->field_0x44);
+                (DAT_008075a8,local_8->field_0060,0xffffffff,local_8->field_003C,local_8->field_0044
+                );
     }
     g_currentExceptionFrame = local_4c.previous;
     uVar2 = FUN_006e5fd0();

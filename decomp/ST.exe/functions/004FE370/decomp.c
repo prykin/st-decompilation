@@ -32,33 +32,33 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
     else {
       iVar4 = local_8->field_0184;
     }
-    ccFntTy::SetSurf(*(ccFntTy **)&local_8->field_0x1b8,iVar4,0,1,0,0x4e,0x24);
+    ccFntTy::SetSurf(local_8->field_01B8,iVar4,0,1,0,0x4e,0x24);
     if (param_1 == 0) {
-      cVar3 = pCVar2->field_0xc5d;
+      cVar3 = pCVar2->field_0C5D;
     }
     else {
-      cVar3 = pCVar2->field_0xb6f;
+      cVar3 = pCVar2->field_0B6F;
     }
     if (cVar3 == '\0') {
       if (param_1 == 0) {
-        cVar3 = pCVar2->field_0xc58;
-        GVar5 = *(Global_sub_00523410_param_1Enum *)&pCVar2->field_0xc54;
+        cVar3 = pCVar2->field_0C58;
+        GVar5 = pCVar2->field_0C54;
       }
       else {
-        cVar3 = pCVar2->field_0xb6a;
-        GVar5 = *(Global_sub_00523410_param_1Enum *)&pCVar2->field_0xb66;
+        cVar3 = pCVar2->field_0B6A;
+        GVar5 = pCVar2->field_0B66;
       }
       pHVar9 = DAT_00807618;
       UVar6 = thunk_FUN_00523410(GVar5,cVar3,0);
       puVar7 = (uint *)FUN_006b0140(UVar6,pHVar9);
     }
     else if (param_1 == 0) {
-      puVar7 = (uint *)&pCVar2->field_0xc5d;
+      puVar7 = (uint *)&pCVar2->field_0C5D;
     }
     else {
-      puVar7 = (uint *)&pCVar2->field_0xb6f;
+      puVar7 = (uint *)&pCVar2->field_0B6F;
     }
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,puVar7,-2,-1,0,-1,-1);
+    ccFntTy::WrTxt(pCVar2->field_01B8,puVar7,-2,-1,0,-1,-1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

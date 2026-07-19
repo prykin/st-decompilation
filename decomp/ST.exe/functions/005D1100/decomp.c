@@ -49,7 +49,7 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
         ChangePlayerList(this_00,param_1,param_2,param_3,'\0',param_4);
       }
 LAB_005d11ad:
-      if ((DAT_0080877e != '\0') && (this_00->field_0x1e26 == '\f')) {
+      if ((DAT_0080877e != '\0') && (this_00->field_1E26 == '\f')) {
         iVar5 = this_00->field_1F84;
         uVar8 = 0;
         bVar4 = true;

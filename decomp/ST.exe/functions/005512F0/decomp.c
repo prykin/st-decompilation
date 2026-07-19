@@ -28,33 +28,33 @@ void __thiscall TradePanelTy::DoneTradePanel(TradePanelTy *this)
   pTVar2 = local_8;
   if (errorCode == 0) {
     this_00 = extraout_ECX;
-    if (*(uint *)&local_8[1].field_0x4 != 0) {
-      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8[1].field_0x4);
+    if (local_8->field_01C0 != 0) {
+      FUN_006e56b0((void *)local_8->field_000C,local_8->field_01C0);
       this_00 = extraout_ECX_00;
     }
-    *(undefined4 *)&pTVar2[1].field_0x4 = 0;
-    if (*(uint *)&pTVar2[1].field_0x8 != 0) {
-      FUN_006e56b0(*(void **)&pTVar2->field_0xc,*(uint *)&pTVar2[1].field_0x8);
+    pTVar2->field_01C0 = 0;
+    if (pTVar2->field_01C4 != 0) {
+      FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01C4);
       this_00 = extraout_ECX_01;
     }
-    *(undefined4 *)&pTVar2[1].field_0x8 = 0;
-    if (*(uint *)&pTVar2[1].field_0xc != 0) {
-      FUN_006e56b0(*(void **)&pTVar2->field_0xc,*(uint *)&pTVar2[1].field_0xc);
+    pTVar2->field_01C4 = 0;
+    if (pTVar2->field_01C8 != 0) {
+      FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01C8);
       this_00 = extraout_ECX_02;
     }
-    *(undefined4 *)&pTVar2[1].field_0xc = 0;
-    if (*(uint *)&pTVar2[1].field_0x10 != 0) {
-      FUN_006e56b0(*(void **)&pTVar2->field_0xc,*(uint *)&pTVar2[1].field_0x10);
+    pTVar2->field_01C8 = 0;
+    if (pTVar2->field_01CC != 0) {
+      FUN_006e56b0((void *)pTVar2->field_000C,pTVar2->field_01CC);
       this_00 = extraout_ECX_03;
     }
-    *(undefined4 *)&pTVar2[1].field_0x10 = 0;
-    if (*(uint **)&pTVar2[1].field_0x21 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pTVar2[1].field_0x21);
-      *(undefined4 *)&pTVar2[1].field_0x21 = 0;
+    pTVar2->field_01CC = 0;
+    if (pTVar2->field_01DD != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pTVar2->field_01DD);
+      pTVar2->field_01DD = (ccFntTy *)0x0;
     }
-    *(undefined4 *)&pTVar2[1].field_0x1d = 0;
-    *(undefined4 *)&pTVar2[1].field_0x19 = 0;
-    *(undefined4 *)&pTVar2[1].field_0x15 = 0;
+    pTVar2->field_01D9 = 0;
+    pTVar2->field_01D5 = 0;
+    pTVar2->field_01D1 = 0;
     DAT_00802a44 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

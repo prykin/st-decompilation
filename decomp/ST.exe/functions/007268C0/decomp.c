@@ -1,5 +1,10 @@
 
-int __cdecl FUN_007268c0(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 392 | 396 | 398 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfUSprGetNumFas(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

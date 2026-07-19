@@ -189,8 +189,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
       pbVar12 = pbVar12 + 1;
       pbVar14 = pbVar14 + 1;
     }
-    STPlaySystemC::SaveObjData
-              (DAT_00802a38,*(undefined4 *)&this_00->field_0x18,local_c,local_10 + 0x46 + local_8);
+    STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_c,local_10 + 0x46 + local_8);
     FUN_006ab060(&local_14);
     FUN_006ab060(&local_18);
     FUN_006ab060(&local_c);
@@ -202,7 +201,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
     thunk_FUN_00495ff0(*(short *)&this_00->field_0x5b,*(short *)&this_00->field_0x5d,
                        *(short *)&this_00->field_0x5f,
                        CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0x8e),(int)this_00);
-    thunk_FUN_0058d080(*(int *)&this_00->field_0x18);
+    thunk_FUN_0058d080(this_00->field_0018);
     thunk_FUN_004ad310((int)&this_00->field_01D5);
     g_currentExceptionFrame = local_80.previous;
     return 0;

@@ -1,4 +1,4 @@
-FUN_0067dfd0:
+CreateOpponentList:
 0067DFD0  55                        PUSH EBP
 0067DFD1  8B EC                     MOV EBP,ESP
 0067DFD3  83 EC 48                  SUB ESP,0x48

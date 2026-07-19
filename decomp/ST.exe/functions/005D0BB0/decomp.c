@@ -62,8 +62,8 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
               bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
             } while ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc));
           }
-          (**(code **)(*(int *)local_c + 0x2c))();
-          *(int *)&pSVar4[1].field_0x4 = *(int *)&pSVar4[1].field_0x4 + 1;
+          (**(code **)(local_c->field_0000 + 0x2c))();
+          pSVar4->field_2121 = pSVar4->field_2121 + 1;
           g_currentExceptionFrame = local_54.previous;
           return;
         }
@@ -119,7 +119,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
             else {
               thunk_FUN_0056a960(&DAT_00807620,param_3,bVar1);
             }
-            (**(code **)(*(int *)pSVar4 + 0x2c))();
+            (**(code **)(pSVar4->field_0000 + 0x2c))();
             DAT_00808aab = DAT_00808aab + 1;
           }
         }

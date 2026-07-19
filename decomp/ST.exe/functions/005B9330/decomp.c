@@ -90,7 +90,7 @@ switchD_005b939a_default:
   uVar6 = *(uint *)(param_1 + 0x10);
   if ((0x68fe < uVar6) && (uVar6 < 0x697f)) {
     bVar2 = (char)uVar6 + 1;
-    this_00->field_0x1a5a = bVar2;
+    this_00->field_1A5A = bVar2;
     if ((&this_00->field_0xe1)[(uint)bVar2 * 0x1fb] == '\0') {
       if (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0) {
         AppClassTy::PostNextMessage
@@ -99,7 +99,7 @@ switchD_005b939a_default:
       }
     }
     else {
-      (**(code **)(*(int *)this_00 + 8))();
+      (**(code **)(this_00->field_0000 + 8))();
     }
   }
   switch(*(undefined4 *)(param_1 + 0x10)) {

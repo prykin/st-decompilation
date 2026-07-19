@@ -31,13 +31,13 @@ void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
     sVar4 = *(short *)(param_1 + 0x22);
     local_20 = (int)sVar4;
     if (((uint)((int)*(short *)(param_1 + 0x14) + *(int *)(param_1 + 0x24)) <=
-         *(uint *)(local_8 + 0x20)) || (*(short *)(param_1 + 0x3a) != 0)) {
+         (uint)local_8->field_0020) || (*(short *)(param_1 + 0x3a) != 0)) {
       *(short *)(param_1 + 0x22) = sVar4 + 1;
       if (*(short *)(param_1 + 0x36) <= (short)(sVar4 + 1)) {
         *(short *)(param_1 + 0x22) = sVar4;
         *(undefined2 *)(param_1 + 0x38) = 1;
       }
-      *(undefined4 *)(param_1 + 0x24) = *(undefined4 *)(local_8 + 0x20);
+      *(undefined4 *)(param_1 + 0x24) = local_8->field_0020;
     }
     local_c = (int)*(short *)(param_1 + 2);
     local_10 = (int)*(short *)(param_1 + 4);
@@ -46,7 +46,7 @@ void __thiscall TraksClassTy::DrawTrakSprite(TraksClassTy *this,int param_1)
     local_14 = (int)*(short *)(param_1 + 6);
     local_1c = (int)*(short *)(param_1 + 0x20);
     if (*(short *)(param_1 + 0x3a) == 0) {
-      iVar3 = *(int *)(local_8 + 0x20) - *(int *)(param_1 + 0x28);
+      iVar3 = local_8->field_0020 - *(int *)(param_1 + 0x28);
       if (iVar3 == 0) {
         iVar3 = 1;
       }

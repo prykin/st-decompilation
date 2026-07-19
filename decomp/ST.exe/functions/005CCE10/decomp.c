@@ -61,37 +61,36 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_14;
   if (iVar4 == 0) {
-    FUN_006e6080(local_14,2,*(undefined4 *)(local_14 + 1),local_3c);
+    FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
     local_1c = local_28;
   }
-  if ((pSVar3->field_0x1e26 == '\x05') || (pSVar3->field_0x1e26 == '\x0f')) {
-    local_c = *(int *)&pSVar3->field_0x1f3f;
+  if ((pSVar3->field_1E26 == '\x05') || (pSVar3->field_1E26 == '\x0f')) {
+    local_c = pSVar3->field_1F3F;
   }
   else {
-    local_c = *(int *)&pSVar3->field_0x1f43;
+    local_c = pSVar3->field_1F43;
   }
   g_currentExceptionFrame = local_c4.previous;
-  *(undefined4 *)&pSVar3->field_0x29 = 2;
-  *(undefined4 *)&pSVar3->field_0x2d = 0x20;
+  pSVar3->field_0029 = 2;
+  pSVar3->field_002D = 0x20;
   local_10 = 0;
   local_8 = 0x7e3;
   do {
     local_18 = 0;
     uVar8 = local_8;
     do {
-      if (*(int *)(&pSVar3->field_0x0 + (uVar8 + local_18) * 4) != 0) {
+      if ((&pSVar3->field_0000)[uVar8 + local_18] != 0) {
         iVar4 = pSVar3->field_1F84;
-        if ((iVar4 == 0) ||
-           (uVar7 = *(int *)&pSVar3->field_0x1f88 + local_10, *(uint *)(iVar4 + 0xc) <= uVar7)) {
+        if ((iVar4 == 0) || (uVar7 = pSVar3->field_1F88 + local_10, *(uint *)(iVar4 + 0xc) <= uVar7)
+           ) {
           pcVar9 = (char *)0x0;
         }
         else {
           pcVar9 = (char *)(*(int *)(iVar4 + 8) * uVar7 + *(int *)(iVar4 + 0x1c));
         }
-        cVar1 = pSVar3->field_0x1e26;
-        *(undefined4 *)&pSVar3->field_0x25 =
-             *(undefined4 *)(&pSVar3->field_0x0 + (uVar8 + local_18) * 4);
-        *(undefined4 *)&pSVar3->field_0x31 = 0;
+        cVar1 = pSVar3->field_1E26;
+        pSVar3->field_0025 = (&pSVar3->field_0000)[uVar8 + local_18];
+        pSVar3->field_0031 = 0;
         if (((cVar1 != '\f') && (cVar1 != '\x10')) && (pcVar9 != (char *)0x0)) {
           switch(local_18) {
           case 0:
@@ -102,17 +101,17 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
             pcVar9[0x51] = '\0';
             pcVar9[0x52] = '\0';
             pcVar9[0x53] = '\0';
-            switch(pSVar3->field_0x1e26) {
+            switch(pSVar3->field_1E26) {
             case 5:
             case 0xf:
-              puVar5 = thunk_FUN_0067e0e0(local_c,(uint)(byte)pcVar9[2],0xffffffff);
+              puVar5 = CreateStrategList(local_c,(uint)(byte)pcVar9[2],0xffffffff);
               break;
             default:
-              puVar5 = thunk_FUN_0067dfd0(local_c,(uint)(byte)pcVar9[3],DAT_0080995c);
+              puVar5 = CreateOpponentList(local_c,(uint)(byte)pcVar9[3],DAT_0080995c);
               break;
             case 0xc:
             case 0x10:
-              puVar5 = thunk_FUN_0067e200(local_c,(uint)(byte)pcVar9[2],0xffffffff);
+              puVar5 = CreateSaveStrategList(local_c,(uint)(byte)pcVar9[2],0xffffffff);
             }
             *(uint **)(pcVar9 + 0x50) = puVar5;
             if (puVar5[3] <= (uint)(byte)pcVar9[5]) {
@@ -121,8 +120,8 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
             if ((*(int *)(*(int *)(pcVar9 + 0x50) + 0xc) == 0) && (pcVar9[4] == '\x04')) {
               pcVar9[4] = '\x01';
             }
-            if (((*pcVar9 != '\0') && (pSVar3->field_0x1e26 != '\x05')) &&
-               ((pSVar3->field_0x1e26 != '\x0f' && (pcVar9[4] == '\x02')))) {
+            if (((*pcVar9 != '\0') && (pSVar3->field_1E26 != '\x05')) &&
+               ((pSVar3->field_1E26 != '\x0f' && (pcVar9[4] == '\x02')))) {
               bVar11 = *(int *)(pcVar9 + 6) == DAT_0080877f;
 LAB_005cd119:
               if (bVar11) goto cf_common_join_005CD142;
@@ -171,7 +170,7 @@ LAB_005cd10f:
                   goto joined_r0x005cd0bb;
                 }
 cf_common_join_005CD142:
-                *(undefined4 *)&pSVar3->field_0x31 = 1;
+                pSVar3->field_0031 = 1;
               }
             }
             break;
@@ -183,7 +182,7 @@ joined_r0x005cd0bb:
             }
           }
         }
-        (**(code **)(**(int **)&pSVar3->field_0xc + 0x18))(&pSVar3->field_0x1d);
+        (**(code **)(*(int *)pSVar3->field_000C + 0x18))(&pSVar3->field_0x1d);
         uVar8 = local_8;
       }
       local_18 = local_18 + 1;
@@ -203,7 +202,7 @@ joined_r0x005cd0bb:
       g_currentExceptionFrame = &local_108;
       iVar4 = Library::MSVCRT::__setjmp3(local_108.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
-        FUN_006e6080(local_14,2,*(undefined4 *)(local_14 + 1),local_3c);
+        FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
       local_2c = 0x22;
       if (local_8 < 0xb) {
@@ -219,7 +218,7 @@ joined_r0x005cd0bb:
       local_14c.previous = local_108.previous;
       iVar4 = Library::MSVCRT::__setjmp3(local_14c.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
-        FUN_006e6080(local_14,2,*(undefined4 *)(local_14 + 1),local_3c);
+        FUN_006e6080(local_14,2,local_14->field_211D,local_3c);
       }
       g_currentExceptionFrame = local_80.previous;
       return;

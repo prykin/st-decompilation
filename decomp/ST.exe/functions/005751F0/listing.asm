@@ -1,4 +1,4 @@
-FUN_005751f0:
+LandInit:
 005751F0  55                        PUSH EBP
 005751F1  8B EC                     MOV EBP,ESP
 005751F3  83 EC 50                  SUB ESP,0x50

@@ -219,14 +219,14 @@ LAB_00639dab:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)(DAT_00802a88 + 0x10c),
-                            iVar8,iVar7,&local_18,&local_1c), -1 < (int)local_c)) &&
+    if ((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
+        (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_18,&local_1c),
+        -1 < (int)local_c)) &&
        (((((int)local_c < 5 && (-1 < local_18)) &&
-         ((local_18 < *(int *)(pVVar11 + 0x30) &&
+         ((local_18 < (int)pVVar11->field_0030 &&
           ((local_1c = local_1c + (&DAT_0079aed0)[local_c], -1 < local_1c &&
-           (local_1c < *(int *)(pVVar11 + 0x34))))))) && (*(int *)(pVVar11 + 0x4c) != 0)))) {
-      cVar2 = *(char *)(local_1c * *(int *)(pVVar11 + 0x30) + *(int *)(pVVar11 + 0x4c) + local_18);
+           (local_1c < (int)pVVar11->field_0034)))))) && (pVVar11->field_004C != 0)))) {
+      cVar2 = *(char *)(local_1c * pVVar11->field_0030 + pVVar11->field_004C + local_18);
 joined_r0x0063a754:
       if (cVar2 == '\0') {
         if (*(char *)((int)this + 0x29f) == '\0') {
@@ -320,17 +320,15 @@ LAB_0063a27d:
         iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                             (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
       }
-      if (((((DAT_0080874d == -1) || (*(int *)(DAT_00802a88 + 0xf8) == 0)) ||
-           (thunk_FUN_00558c00(DAT_00802a88,
-                               *(Global_sub_00558C00_param_1Enum *)(DAT_00802a88 + 0x10c),iVar8,
-                               iVar7,&local_1c,&local_18), (int)local_c < 0)) ||
+      if (((((DAT_0080874d == -1) || (DAT_00802a88->field_00F8 == 0)) ||
+           (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18
+                              ), (int)local_c < 0)) ||
           (((4 < (int)local_c || (local_1c < 0)) ||
-           ((*(int *)(pVVar11 + 0x30) <= local_1c ||
+           (((int)pVVar11->field_0030 <= local_1c ||
             ((local_18 = local_18 + (&DAT_0079aed0)[local_c], local_18 < 0 ||
-             (*(int *)(pVVar11 + 0x34) <= local_18)))))))) ||
-         ((*(int *)(pVVar11 + 0x4c) == 0 ||
-          (*(char *)(local_18 * *(int *)(pVVar11 + 0x30) + *(int *)(pVVar11 + 0x4c) + local_1c) !=
-           '\0')))) {
+             ((int)pVVar11->field_0034 <= local_18)))))))) ||
+         ((pVVar11->field_004C == 0 ||
+          (*(char *)(local_18 * pVVar11->field_0030 + pVVar11->field_004C + local_1c) != '\0')))) {
         if (*(char *)((int)this + 0x29f) == '\0') {
           thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
           *(undefined1 *)((int)this + 0x29f) = 1;
@@ -436,16 +434,15 @@ LAB_0063a27d:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)(DAT_00802a88 + 0x10c)
-                             ,iVar8,iVar7,&local_1c,&local_18), -1 < (int)local_c)) &&
-        (((int)local_c < 5 && (-1 < local_1c)))) &&
-       (iVar7 = *(int *)(pVVar11 + 0x30), local_1c < iVar7)) {
+    if (((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
+         (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18),
+         -1 < (int)local_c)) && (((int)local_c < 5 && (-1 < local_1c)))) &&
+       (iVar7 = pVVar11->field_0030, local_1c < iVar7)) {
       iVar8 = (&DAT_0079aed0)[local_c];
 LAB_0063a728:
       iVar8 = iVar8 + local_18;
-      if (((-1 < iVar8) && (iVar8 < *(int *)(pVVar11 + 0x34))) && (*(int *)(pVVar11 + 0x4c) != 0)) {
-        cVar2 = *(char *)(iVar8 * iVar7 + local_1c + *(int *)(pVVar11 + 0x4c));
+      if (((-1 < iVar8) && (iVar8 < (int)pVVar11->field_0034)) && (pVVar11->field_004C != 0)) {
+        cVar2 = *(char *)(iVar8 * iVar7 + local_1c + pVVar11->field_004C);
         goto joined_r0x0063a754;
       }
     }
@@ -505,11 +502,11 @@ LAB_0063a728:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if ((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
-        (thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)(DAT_00802a88 + 0x10c),
-                            iVar8,iVar7,&local_1c,&local_18), -1 < (int)local_c)) &&
-       ((((int)local_c < 5 && (-1 < local_1c)) &&
-        (iVar7 = *(int *)(pVVar11 + 0x30), local_1c < iVar7)))) {
+    if ((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
+        (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18),
+        -1 < (int)local_c)) &&
+       ((((int)local_c < 5 && (-1 < local_1c)) && (iVar7 = pVVar11->field_0030, local_1c < iVar7))))
+    {
       iVar8 = (&DAT_0079aed0)[local_c];
       goto LAB_0063a728;
     }
@@ -552,16 +549,15 @@ LAB_0063a728:
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        if ((((DAT_0080874d == -1) || (*(int *)(DAT_00802a88 + 0xf8) == 0)) ||
-            ((thunk_FUN_00558c00(DAT_00802a88,
-                                 *(Global_sub_00558C00_param_1Enum *)(DAT_00802a88 + 0x10c),iVar8,
-                                 iVar7,&local_1c,&local_18), (int)local_c < 0 ||
-             (((4 < (int)local_c || (local_1c < 0)) || (*(int *)(pVVar11 + 0x30) <= local_1c))))))
+        if ((((DAT_0080874d == -1) || (DAT_00802a88->field_00F8 == 0)) ||
+            ((thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,
+                                 &local_18), (int)local_c < 0 ||
+             (((4 < (int)local_c || (local_1c < 0)) || ((int)pVVar11->field_0030 <= local_1c))))))
            || (((local_18 = (&DAT_0079aed0)[local_c] + local_18, local_18 < 0 ||
-                (*(int *)(pVVar11 + 0x34) <= local_18)) ||
-               ((*(int *)(pVVar11 + 0x4c) == 0 ||
-                (*(char *)(local_18 * *(int *)(pVVar11 + 0x30) + local_1c + *(int *)(pVVar11 + 0x4c)
-                          ) != '\0')))))) {
+                ((int)pVVar11->field_0034 <= local_18)) ||
+               ((pVVar11->field_004C == 0 ||
+                (*(char *)(local_18 * pVVar11->field_0030 + local_1c + pVVar11->field_004C) != '\0')
+                ))))) {
           if (*(char *)((int)this + 0x29f) == '\0') {
             thunk_FUN_004ad460((void *)((int)this + 0x1d5),0);
             *(undefined1 *)((int)this + 0x29f) = 1;
@@ -678,11 +674,10 @@ LAB_0063a728:
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar3) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    if (((((DAT_0080874d != -1) && (*(int *)(DAT_00802a88 + 0xf8) != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)(DAT_00802a88 + 0x10c)
-                             ,iVar8,iVar7,&local_1c,&local_18), -1 < (int)local_c)) &&
-        (((int)local_c < 5 && (-1 < local_1c)))) &&
-       (iVar7 = *(int *)(pVVar11 + 0x30), local_1c < iVar7)) {
+    if (((((DAT_0080874d != -1) && (DAT_00802a88->field_00F8 != 0)) &&
+         (thunk_FUN_00558c00(DAT_00802a88,DAT_00802a88->field_010C,iVar8,iVar7,&local_1c,&local_18),
+         -1 < (int)local_c)) && (((int)local_c < 5 && (-1 < local_1c)))) &&
+       (iVar7 = pVVar11->field_0030, local_1c < iVar7)) {
       iVar8 = (&DAT_0079aed0)[local_c];
       goto LAB_0063a728;
     }

@@ -1,4 +1,4 @@
-FUN_0070a5a0:
+mfImgLoad:
 0070A5A0  55                        PUSH EBP
 0070A5A1  8B EC                     MOV EBP,ESP
 0070A5A3  83 EC 48                  SUB ESP,0x48

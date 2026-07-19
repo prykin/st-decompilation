@@ -61,7 +61,7 @@ void __thiscall CPanelTy::PaintLife(CPanelTy *this,int param_1)
         iVar4 = 0;
       }
       Library::DKW::WGR::FUN_006b55f0
-                (local_14,0,5,0x1f,*(int *)&local_18->field_0x286,0,0,iVar4,local_10 & 0xff,6);
+                (local_14,0,5,0x1f,local_18->field_0286,0,0,iVar4,local_10 & 0xff,6);
       if ((param_1 == 0) && (local_5 == '\x02')) {
         UVar8 = 0x36ba;
         uVar7 = local_c;

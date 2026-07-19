@@ -33,7 +33,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
     (*pcVar2)();
     return;
   }
-  sVar1 = *(short *)&local_8->field_0x172;
+  sVar1 = local_8->field_0172;
   if (sVar1 == 1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
@@ -48,7 +48,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
         (**(code **)*DAT_00802a30)(&local_8->field_0x18);
       }
     }
-    (**(code **)(*(int *)pSVar3 + 0x18))(0);
+    (**(code **)(pSVar3->field_0000 + 0x18))(0);
   }
   else {
     if (sVar1 == 2) {
@@ -56,13 +56,13 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      *(undefined2 *)&local_8->field_0x172 = 3;
+      local_8->field_0172 = 3;
       thunk_FUN_005252c0(CASE_AF);
       if (DAT_00801688 == (CPanelTy *)0x0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      CPanelTy::ShiftControls(DAT_00801688,*(int *)&pSVar3->field_0x180,0);
+      CPanelTy::ShiftControls(DAT_00801688,pSVar3->field_0180,0);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
@@ -72,7 +72,7 @@ void __thiscall SpecPanelTy::SwitchPanel(SpecPanelTy *this,int param_1)
     }
   }
   if (param_1 == 0) {
-    *(undefined2 *)&pSVar3->field_0x172 = 4;
+    pSVar3->field_0172 = 4;
     thunk_FUN_005252c0(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;

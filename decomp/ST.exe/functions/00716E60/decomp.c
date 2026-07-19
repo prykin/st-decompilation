@@ -1,5 +1,11 @@
 
-int __cdecl FUN_00716e60(cMf32 *param_1,char *param_2,char param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mftspr.cpp
+   Diagnostic line evidence: 210 | 211 | 216 | 222 | 224 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfTSprGetNumFas(cMf32 *param_1,char *param_2,char param_3,int param_4)
 
 {
   code *pcVar1;

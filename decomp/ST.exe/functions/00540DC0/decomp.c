@@ -1,8 +1,13 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\support.cpp
+   Diagnostic line evidence: 231 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __cdecl
-FUN_00540dc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,uint param_5,
-            undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,
-            undefined4 param_10,undefined4 param_11,undefined4 param_12)
+SetAccelerator(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,uint param_5,
+              undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,
+              undefined4 param_10,undefined4 param_11,undefined4 param_12)
 
 {
   code *pcVar1;

@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_flt.cpp
+   Diagnostic line evidence: 1127 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __thiscall FUN_00660180(void *this,short *param_1,char param_2)
 
 {

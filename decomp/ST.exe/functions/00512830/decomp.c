@@ -63,13 +63,13 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    if (*(uint *)&local_8->field_0x19c != 0) {
-      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8->field_0x19c);
+    if (local_8->field_019C != 0) {
+      FUN_006e56b0((void *)local_8->field_000C,local_8->field_019C);
     }
-    local_7c = *(undefined4 *)&this_00->field_0x8;
+    local_7c = this_00->field_0008;
     local_64 = param_1;
-    local_424[4] = *(int *)&this_00->field_0x3c + 0x1c3;
-    *(undefined4 *)&this_00->field_0x1c3 = 0;
+    local_424[4] = this_00->field_003C + 0x1c3;
+    this_00->field_01C3 = 0;
     local_424[0] = 0;
     local_60 = 0;
     local_78 = 2;
@@ -78,10 +78,10 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_424[2] = 0;
     local_424[3] = 2;
     if (this_00->field_005C == 0) {
-      local_424[5] = -*(int *)&this_00->field_0x48;
+      local_424[5] = -this_00->field_0048;
     }
     else {
-      local_424[5] = *(int *)&this_00->field_0x44;
+      local_424[5] = this_00->field_0044;
     }
     local_424[5] = local_424[5] + 0x109;
     local_40c = 0x11;
@@ -89,13 +89,13 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_30c = 500;
     local_308 = 0x32;
     local_2f8 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_2f4 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_2f4 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
     iVar2 = this_00->field_005C;
     local_3b8 = 2;
     local_314 = 1;
     local_310 = 1;
     local_2a0 = 2;
-    local_3bc = *(undefined4 *)&this_00->field_0x8;
+    local_3bc = this_00->field_0008;
     local_3b4 = 0x8165;
     piVar4 = local_424 + 2;
     piVar5 = local_29c;
@@ -105,27 +105,27 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
       piVar5 = piVar5 + 1;
     }
     if (iVar2 == 0) {
-      local_29c[3] = -*(int *)&this_00->field_0x48;
+      local_29c[3] = -this_00->field_0048;
     }
     else {
-      local_29c[3] = *(int *)&this_00->field_0x44;
+      local_29c[3] = this_00->field_0044;
     }
     local_29c[3] = local_29c[3] + 0x16;
     local_178 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_174 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
-    local_110 = *(int *)&this_00->field_0x3c + 0x1c3;
+    local_174 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_110 = this_00->field_003C + 0x1c3;
     local_234 = 0x8164;
     local_120 = 3;
     local_11c = 1;
     local_114 = 0;
     if (this_00->field_005C == 0) {
-      local_10c = -*(int *)&this_00->field_0x48;
+      local_10c = -this_00->field_0048;
     }
     else {
-      local_10c = *(int *)&this_00->field_0x44;
+      local_10c = this_00->field_0044;
     }
     local_10c = local_10c + 0x3d;
-    local_cc = *(undefined4 *)&this_00->field_0x8;
+    local_cc = this_00->field_0008;
     local_108 = 0x11;
     local_104 = 0xc9;
     local_100 = 0x15;
@@ -133,8 +133,8 @@ void __thiscall HelpPanelTy::CreateSlider(HelpPanelTy *this,int param_1)
     local_c4 = 0x8166;
     local_8c = 1;
     local_88 = 1;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(4,&this_00->field_0x19c,0,local_424,0);
-    iVar2 = *(int *)&this_00->field_0x19c;
+    (**(code **)(*(int *)this_00->field_000C + 8))(4,&this_00->field_019C,0,local_424,0);
+    iVar2 = this_00->field_019C;
     if ((iVar2 != 0) && (param_1 != 0)) {
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;

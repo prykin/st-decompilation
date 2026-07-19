@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_vqb.cpp
+   Diagnostic line evidence: 63 | 88 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 undefined4 __fastcall FUN_004ecea0(int *param_1)
 

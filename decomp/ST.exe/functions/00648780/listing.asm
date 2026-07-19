@@ -1,4 +1,4 @@
-FUN_00648780:
+LoadBossEdit:
 00648780  55                        PUSH EBP
 00648781  8B EC                     MOV EBP,ESP
 00648783  83 EC 4C                  SUB ESP,0x4c

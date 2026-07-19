@@ -27,7 +27,7 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
     }
   }
 LAB_005ef720:
-  if ((this_00 != (STBoatC *)0x0) && (*(int *)&this_00->field_0x20 == 0x14)) {
+  if ((this_00 != (STBoatC *)0x0) && (this_00->field_0020 == 0x14)) {
     if (param_1 == 1) {
       STBoatC::ReadyForLoading(this_00,*(void **)((int)this + 0x18));
     }

@@ -23,31 +23,30 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
   pMVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 0xd;
-    puVar5 = (uint *)&local_8->field_0x66;
+    puVar5 = &local_8->field_0066;
     do {
       if (*puVar5 != 0) {
-        FUN_006e56b0(*(void **)&pMVar2->field_0xc,*puVar5);
+        FUN_006e56b0((void *)pMVar2->field_000C,*puVar5);
       }
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    *(undefined4 *)&pMVar2[1].field_0x55 = 0;
-    if (*(uint *)&pMVar2[1].field_0x51 != 0xffffffff) {
+    pMVar2->field_1CFF = 0;
+    if (pMVar2->field_1CFB != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)&pMVar2[1].field_0x95,*(uint *)&pMVar2[1].field_0x51,
-                 *(uint *)&pMVar2[1].field_0x55,*(uint *)&pMVar2[1].field_0x69,
-                 *(uint *)&pMVar2[1].field_0x6d);
+                ((uint *)pMVar2->field_1D3F,pMVar2->field_1CFB,pMVar2->field_1CFF,pMVar2->field_1D13
+                 ,pMVar2->field_1D17);
     }
-    if (*(uint *)&pMVar2[1].field_0x51 != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pMVar2[1].field_0x95,*(uint *)&pMVar2[1].field_0x51);
+    if (pMVar2->field_1CFB != 0xffffffff) {
+      FUN_006b3af0((int *)pMVar2->field_1D3F,pMVar2->field_1CFB);
     }
-    if (*(uint *)&pMVar2[1].field_0xe2 != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pMVar2[1].field_0x126,*(uint *)&pMVar2[1].field_0xe2);
+    if (pMVar2->field_1D8C != 0xffffffff) {
+      FUN_006b3af0((int *)pMVar2->field_1DD0,pMVar2->field_1D8C);
     }
     iVar3 = 0;
-    if (pMVar2->field_0x9a != '\0') {
-      puVar5 = (uint *)&pMVar2->field_0xe7;
+    if (pMVar2->field_009A != '\0') {
+      puVar5 = &pMVar2->field_00E7;
       do {
         puVar5[1] = 0;
         if (*puVar5 != 0xffffffff) {
@@ -66,7 +65,7 @@ void __thiscall MMsgTy::HideSprites(MMsgTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar5 = (uint *)((int)puVar5 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pMVar2->field_0x9a);
+      } while (iVar3 < (int)(uint)(byte)pMVar2->field_009A);
     }
     pMVar2->field_0065 = 2;
     g_currentExceptionFrame = local_4c.previous;

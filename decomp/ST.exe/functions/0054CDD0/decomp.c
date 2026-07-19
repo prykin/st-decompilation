@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\tplaysys.cpp
+   Diagnostic line evidence: 296 | 297 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int FUN_0054cdd0(undefined4 *param_1,int param_2,undefined4 *param_3,int *param_4,undefined4 param_5
                 ,undefined4 param_6)
 

@@ -29,15 +29,15 @@ void __thiscall HelpPanelTy::PutToSHlp(HelpPanelTy *this,int param_1)
     iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pHVar2 = local_8;
     if (iVar3 == 0) {
-      iVar3 = *(int *)&local_8->field_0x1cf;
+      iVar3 = local_8->field_01CF;
       while (-1 < iVar3) {
         iVar4 = *(int *)(pHVar2->field_01CB + 0xc);
         if (iVar4 + -1 <= iVar3) break;
         FUN_006b0c70(pHVar2->field_01CB,iVar4 - 1);
-        iVar3 = *(int *)&pHVar2->field_0x1cf;
+        iVar3 = pHVar2->field_01CF;
       }
-      uVar5 = *(int *)&pHVar2->field_0x1cf + 1;
-      *(uint *)&pHVar2->field_0x1cf = uVar5;
+      uVar5 = pHVar2->field_01CF + 1;
+      pHVar2->field_01CF = uVar5;
       Library::DKW::TBL::FUN_006ae140((uint *)pHVar2->field_01CB,uVar5,(undefined4 *)&local_14);
       g_currentExceptionFrame = local_58.previous;
       return;

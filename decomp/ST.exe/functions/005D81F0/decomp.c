@@ -38,12 +38,12 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     (*pcVar1)();
     return;
   }
-  if (((*(char *)(local_c + 1) == '\x01') && (*(HANDLE *)&local_c[0x48].field_0x5c != (HANDLE)0x0))
-     && (DVar2 = WaitForSingleObject(*(HANDLE *)&local_c[0x48].field_0x5c,0), DVar2 == 0)) {
-    FindNextChangeNotification(*(HANDLE *)&this_00[0x48].field_0x5c);
+  if (((local_c->field_0065 == '\x01') && ((HANDLE)local_c->field_1CC4 != (HANDLE)0x0)) &&
+     (DVar2 = WaitForSingleObject((HANDLE)local_c->field_1CC4,0), DVar2 == 0)) {
+    FindNextChangeNotification((HANDLE)this_00->field_1CC4);
     PrepFiles(this_00);
-    *(undefined4 *)&this_00->field_0x2d = 5;
-    piVar5 = (int *)&this_00[0x44].field_0x1d;
+    this_00->field_002D = 5;
+    piVar5 = &this_00->field_1AF1;
     iVar3 = 2;
     do {
       if (*piVar5 != 0) {
@@ -53,38 +53,36 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
   }
-  if (*(char *)(this_00 + 1) == '\x03') {
-    if (*(int *)&this_00[0x42].field_0x5e < *(int *)((int)&this_00[0x42].field_0061 + 1) + -1) {
-      *(int *)&this_00[0x42].field_0x5e = *(int *)&this_00[0x42].field_0x5e + 1;
-      if (*(uint *)&this_00[0x42].field_0x5a != 0xffffffff) {
+  if (this_00->field_0065 == '\x03') {
+    if ((int)this_00->field_1A68 < *(int *)&this_00->field_0x1a6c + -1) {
+      this_00->field_1A68 = this_00->field_1A68 + 1;
+      if (this_00->field_1A64 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&this_00[0x43].field_0x39,*(uint *)&this_00[0x42].field_0x5a,
-                   *(uint *)&this_00[0x42].field_0x5e,*(uint *)&this_00[0x43].field_0xd,
-                   *(uint *)((int)&this_00[0x43].field_0010 + 1));
+                  ((uint *)this_00->field_1AA8,this_00->field_1A64,this_00->field_1A68,
+                   this_00->field_1A7C,this_00->field_1A80);
       }
       local_8 = 0;
     }
     if (local_8 != 0) {
-      *(undefined1 *)(this_00 + 1) = 1;
+      this_00->field_0065 = 1;
       CreateCtrls(this_00);
     }
   }
-  else if (*(char *)(this_00 + 1) == '\x04') {
-    if (0 < *(int *)&this_00[0x42].field_0x5e) {
-      *(int *)&this_00[0x42].field_0x5e = *(int *)&this_00[0x42].field_0x5e + -1;
-      if (*(uint *)&this_00[0x42].field_0x5a != 0xffffffff) {
+  else if (this_00->field_0065 == '\x04') {
+    if (0 < (int)this_00->field_1A68) {
+      this_00->field_1A68 = this_00->field_1A68 + -1;
+      if (this_00->field_1A64 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&this_00[0x43].field_0x39,*(uint *)&this_00[0x42].field_0x5a,
-                   *(uint *)&this_00[0x42].field_0x5e,*(uint *)&this_00[0x43].field_0xd,
-                   *(uint *)((int)&this_00[0x43].field_0010 + 1));
+                  ((uint *)this_00->field_1AA8,this_00->field_1A64,this_00->field_1A68,
+                   this_00->field_1A7C,this_00->field_1A80);
       }
       local_8 = 0;
     }
     if (local_8 != 0) {
-      *(undefined1 *)(this_00 + 1) = 2;
-      *(undefined4 *)&this_00->field_0x45 = 0x200;
-      *(undefined4 *)&this_00->field_0x49 = 0;
-      *(undefined4 *)&this_00->field_0x4d = 0x693f;
+      this_00->field_0065 = 2;
+      this_00->field_0045 = 0x200;
+      this_00->field_0049 = 0;
+      this_00->field_004D = 0x693f;
       thunk_FUN_005b66e0(this_00);
       g_currentExceptionFrame = local_50.previous;
       return;

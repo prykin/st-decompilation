@@ -74,7 +74,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
     local_10 = local_10 & 0xffffff00;
     local_5 = '\0';
     if (*(uint *)sizeHelp_exref != 0) {
-      piVar9 = *(int **)&this_00->field_0x1c7;
+      piVar9 = (int *)this_00->field_01C7;
       do {
         if ((*piVar9 == *piVar10) && (piVar9[1] == piVar10[1])) {
           local_1c = uVar8;
@@ -92,7 +92,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
       iVar12 = iVar6 * 0x11;
       do {
         if (iVar7 == 0) break;
-        piVar10 = (int *)(*(int *)&this_00->field_0x1c7 + iVar12);
+        piVar10 = (int *)(this_00->field_01C7 + iVar12);
         if (*piVar10 == iVar7) {
           local_d0[local_10 & 0xff] = iVar7;
           iVar7 = piVar10[1];
@@ -109,8 +109,8 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
       uVar11 = local_24 * 0x11;
       local_c = uVar11;
       do {
-        iVar6 = *(int *)(*(int *)&this_00->field_0x1c7 + 4 + uVar11);
-        puVar13 = (undefined4 *)(*(int *)&this_00->field_0x1c7 + uVar11);
+        iVar6 = *(int *)(this_00->field_01C7 + 4 + uVar11);
+        puVar13 = (undefined4 *)(this_00->field_01C7 + uVar11);
         local_c = uVar11;
         if (iVar6 == *local_14) {
           local_3c = *puVar13;
@@ -121,7 +121,7 @@ void __thiscall HelpPanelTy::ChangeTree(HelpPanelTy *this,int *param_1,int param
           local_2b = *(char *)((int)local_14 + 0x11) + '\x01';
           local_2a = 0;
           local_29 = 0;
-          Library::DKW::TBL::FUN_006b11d0(*(uint **)&this_00->field_0x1b3,uVar8 & 0xffff,&local_3c);
+          Library::DKW::TBL::FUN_006b11d0((uint *)this_00->field_01B3,uVar8 & 0xffff,&local_3c);
           uVar8 = uVar8 + 1;
           local_5 = '\x01';
           local_18 = uVar8;
@@ -153,7 +153,7 @@ LAB_00513233:
     }
     piVar10 = local_14;
     if (local_5 != '\0') {
-      iVar6 = *(int *)&this_00->field_0x1b3;
+      iVar6 = this_00->field_01B3;
       if ((uVar8 & 0xffff) - 1 < *(uint *)(iVar6 + 0xc)) {
         iVar6 = ((uVar8 & 0xffff) - 1) * *(int *)(iVar6 + 8) + *(int *)(iVar6 + 0x1c);
       }
@@ -166,40 +166,40 @@ LAB_00513233:
     }
   }
   else {
-    iVar6 = *(int *)&local_20->field_0x1b3;
+    iVar6 = local_20->field_01B3;
     uVar8 = param_2 + 1;
     uVar11 = *(uint *)(iVar6 + 0xc);
     while (((uVar8 < uVar11 &&
             (iVar7 = *(int *)(iVar6 + 8) * uVar8 + *(int *)(iVar6 + 0x1c), iVar7 != 0)) &&
            (*(byte *)((int)piVar10 + 0x11) < *(byte *)(iVar7 + 0x11)))) {
       FUN_006b0c70(iVar6,uVar8);
-      iVar6 = *(int *)&this_00->field_0x1b3;
+      iVar6 = this_00->field_01B3;
       uVar11 = *(uint *)(iVar6 + 0xc);
     }
   }
   *(bool *)((int)piVar10 + 0x12) = *(char *)((int)piVar10 + 0x12) == '\0';
-  if ((*(int *)&this_00->field_0x19c != 0) && (this_00->field_01A1 == '\0')) {
+  if ((this_00->field_019C != 0) && (this_00->field_01A1 == '\0')) {
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)&this_00->field_0x68,0,0x21,0x16,*(int *)&this_00->field_0x1dc,0,0x21
-               ,0x16,0x19c,0x118);
+              ((undefined4 *)this_00->field_0068,0,0x21,0x16,this_00->field_01DC,0,0x21,0x16,0x19c,
+               0x118);
     puVar1 = &this_00->field_0x18;
     puVar13 = (undefined4 *)puVar1;
     for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
       *puVar13 = 0;
       puVar13 = puVar13 + 1;
     }
-    uVar2 = *(undefined4 *)&this_00->field_0x1b7;
+    uVar2 = this_00->field_01B7;
     this_00->field_0028 = 0x28;
-    *(undefined2 *)&this_00->field_0x2c = *(undefined2 *)(*(int *)&this_00->field_0x1b3 + 0xc);
+    *(undefined2 *)&this_00->field_0x2c = *(undefined2 *)(this_00->field_01B3 + 0xc);
     *(undefined2 *)&this_00->field_0x30 = 1;
-    FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x19c,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);
     *(undefined2 *)&this_00->field_0x30 = 1;
-    *(undefined2 *)&this_00->field_0x32 = 1;
+    this_00->field_0032 = 1;
     this_00->field_0028 = 0x22;
     *(short *)&this_00->field_0x2c = (short)uVar2;
-    FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x19c,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);
     this_00->field_0028 = 5;
-    FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x19c,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)puVar1);
   }
   g_currentExceptionFrame = local_80.previous;
   return;

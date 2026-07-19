@@ -1,4 +1,4 @@
-FUN_005404f0:
+TransPutDDX:
 005404F0  55                        PUSH EBP
 005404F1  8B EC                     MOV EBP,ESP
 005404F3  83 EC 44                  SUB ESP,0x44

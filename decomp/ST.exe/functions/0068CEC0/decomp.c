@@ -1,5 +1,11 @@
 
 /* WARNING: Removing unreachable block (ram,0x0068d7c3) */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_script.cpp
+   Diagnostic line evidence: 2617 | 2645 | 2646 | 2647 | 2648 | 2649 | 2650 | 2651 | 2655 | 2656 |
+   2664 | 2676 | 2682 | 2693 | 2714 | 2725 | 2754 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
 
 uint * __cdecl FUN_0068cec0(byte *param_1,char *param_2,int *param_3,undefined *param_4)
 

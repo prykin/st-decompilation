@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_boss_d.cpp
+   Diagnostic line evidence: 69 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl FUN_00648530(undefined4 *param_1)
 
 {

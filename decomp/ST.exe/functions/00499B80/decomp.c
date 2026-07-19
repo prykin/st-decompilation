@@ -31,19 +31,19 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    if (*(int *)&local_8->field_0x20e == 0) {
+    if (local_8->field_020E == 0) {
       RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x52e)
       ;
     }
-    if (*(int *)&pSVar3->field_0x21e != 0) {
-      FUN_006ab060((undefined4 *)&pSVar3->field_0x21e);
+    if (pSVar3->field_021E != 0) {
+      FUN_006ab060(&pSVar3->field_021E);
     }
-    uVar9 = *(uint *)(*(int *)&pSVar3->field_0x20e + 0xc);
-    *(uint *)&pSVar3->field_0x21a = uVar9;
+    uVar9 = *(uint *)(pSVar3->field_020E + 0xc);
+    pSVar3->field_021A = uVar9;
     local_c = uVar9;
     puVar5 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar9 * 8);
     uVar2 = local_c;
-    *(undefined4 **)&pSVar3->field_0x21e = puVar5;
+    pSVar3->field_021E = puVar5;
     for (iVar4 = (uVar9 & 0x1fffffff) << 1; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
@@ -53,30 +53,27 @@ undefined4 __thiscall STGroupBoatC::MakePVec(STGroupBoatC *this)
       *(undefined1 *)puVar5 = 0;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    *(undefined4 *)&pSVar3->field_0x216 = 0;
+    pSVar3->field_0216 = 0;
     if (0 < (int)local_c) {
       do {
-        FUN_006acc70(*(int *)&pSVar3->field_0x20e,uVar9,(undefined4 *)&local_14);
+        FUN_006acc70(pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
         uVar6 = STAllPlayersC::GetObjPtr
                           (DAT_007fa174,CONCAT22(uStack_12,CONCAT11(cStack_13,local_14)),
                            CONCAT22(uStack_10,uStack_12),(int)cStack_13);
         if (uVar6 == 0) {
           uStack_12 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140
-                    (*(uint **)&pSVar3->field_0x20e,uVar9,(undefined4 *)&local_14);
-          *(undefined4 *)(*(int *)&pSVar3->field_0x21e + uVar9 * 8) = 0xffffffff;
+          Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_020E,uVar9,(undefined4 *)&local_14);
+          *(undefined4 *)(pSVar3->field_021E + uVar9 * 8) = 0xffffffff;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            *(undefined4 *)(*(int *)&pSVar3->field_0x21e + 8 + uVar9 * 8) =
-                 *(undefined4 *)&pSVar3->field_0x216;
+            *(undefined4 *)(pSVar3->field_021E + 8 + uVar9 * 8) = pSVar3->field_0216;
           }
         }
         else {
           iVar4 = *(int *)(uVar6 + 0x219) + *(int *)(uVar6 + 0x215);
-          *(int *)&pSVar3->field_0x216 = *(int *)&pSVar3->field_0x216 + iVar4;
-          *(int *)(*(int *)&pSVar3->field_0x21e + 4 + uVar9 * 8) = iVar4;
+          pSVar3->field_0216 = pSVar3->field_0216 + iVar4;
+          *(int *)(pSVar3->field_021E + 4 + uVar9 * 8) = iVar4;
           if ((int)uVar9 < (int)(uVar2 - 1)) {
-            *(undefined4 *)(*(int *)&pSVar3->field_0x21e + 8 + uVar9 * 8) =
-                 *(undefined4 *)&pSVar3->field_0x216;
+            *(undefined4 *)(pSVar3->field_021E + 8 + uVar9 * 8) = pSVar3->field_0216;
           }
         }
         uVar9 = uVar9 + 1;

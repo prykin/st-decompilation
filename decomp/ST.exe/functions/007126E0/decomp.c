@@ -68,8 +68,8 @@ ccFntTy::FormIndentSarr
             pcVar4 = local_18;
             while (local_1c = param_5, local_18 = pcVar4, cVar1 != '\0') {
               if (local_10 == 0) {
-                iVar5 = FUN_0070cd90((char *)(pcVar4 + 0x9e),puVar7);
-                if ((iVar5 != 0) || (*(int *)(pcVar4 + 0x7e) == 0)) goto LAB_007128c7;
+                iVar5 = FUN_0070cd90(&pcVar4->field_0x9e,puVar7);
+                if ((iVar5 != 0) || (pcVar4->field_007E == 0)) goto LAB_007128c7;
                 local_10 = 1;
               }
               else {
@@ -96,7 +96,7 @@ LAB_007128c7:
                         uVar2 = puVar6[2];
                       }
                     }
-                    FUN_0071ac40((int)local_8,(int)puVar8);
+                    tSArrCat((int)local_8,(int)puVar8);
                     if (puVar8 != (uint *)0x0) {
                       FUN_006b5570((byte *)puVar8);
                       local_c = (uint *)0x0;
@@ -129,7 +129,7 @@ LAB_007128c7:
               uVar2 = puVar6[2];
             }
           }
-          FUN_0071ac40((int)local_8,(int)puVar7);
+          tSArrCat((int)local_8,(int)puVar7);
           if (puVar7 != (uint *)0x0) {
             FUN_006b5570((byte *)puVar7);
             local_c = (uint *)0x0;

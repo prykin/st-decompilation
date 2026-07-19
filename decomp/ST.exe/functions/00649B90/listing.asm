@@ -1,4 +1,4 @@
-FUN_00649b90:
+CreateBossData:
 00649B90  55                        PUSH EBP
 00649B91  8B EC                     MOV EBP,ESP
 00649B93  81 EC 90 04 00 00         SUB ESP,0x490

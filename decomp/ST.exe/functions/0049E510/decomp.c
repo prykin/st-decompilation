@@ -66,13 +66,13 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  local_30 = *(undefined2 *)&local_28->field_0x17c;
-  *(undefined4 *)&local_28->field_0x65 = 0;
+  local_30 = local_28->field_017C;
+  local_28->field_0065 = 0;
   *(undefined2 *)&local_28->field_0x2ad = local_30;
-  local_2e = *(undefined2 *)&local_28->field_0x17e;
-  *(undefined2 *)&local_28->field_0x2af = local_2e;
-  local_2c = *(undefined2 *)&local_28->field_0x180;
-  *(undefined2 *)&local_28->field_0x2b1 = local_2c;
+  local_2e = local_28->field_017E;
+  local_28->field_02AF = local_2e;
+  local_2c = local_28->field_0180;
+  local_28->field_02B1 = local_2c;
   local_34 = *(undefined4 *)(DAT_00802a38 + 0xe4);
   local_20 = 0;
   local_18 = local_34;
@@ -95,8 +95,8 @@ uint * __thiscall STGroupBoatC::GrpUnLoadObj(STGroupBoatC *this,int param_1)
           if ((((iVar3 == 7) || (iVar3 == 0x13)) || (iVar3 == 0x1b)) &&
              (iVar3 = thunk_FUN_00492370((int)pSVar4), iVar3 != 0)) {
             STBoatC::CmdToObj(pSVar4,CASE_10,&local_34);
-            if (((*(short *)&pSVar2->field_0x2ad != -1) || (*(short *)&pSVar2->field_0x2af != -1))
-               || (*(short *)&pSVar2->field_0x2b1 != -1)) {
+            if (((*(short *)&pSVar2->field_0x2ad != -1) || (pSVar2->field_02AF != -1)) ||
+               (pSVar2->field_02B1 != -1)) {
               puVar5 = local_10;
               if (local_10 == (uint *)0x0) {
                 puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
@@ -111,9 +111,8 @@ LAB_0049e6f6:
             if (iVar3 == 0) {
               STBoatC::CmdToObj(pSVar4,CASE_3,&local_18);
             }
-            else if (((*(short *)&pSVar2->field_0x2ad != -1) ||
-                     (*(short *)&pSVar2->field_0x2af != -1)) ||
-                    (*(short *)&pSVar2->field_0x2b1 != -1)) {
+            else if (((*(short *)&pSVar2->field_0x2ad != -1) || (pSVar2->field_02AF != -1)) ||
+                    (pSVar2->field_02B1 != -1)) {
               puVar5 = local_c;
               if (local_c == (uint *)0x0) {
                 puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);

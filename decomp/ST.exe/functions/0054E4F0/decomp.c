@@ -84,7 +84,7 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
           }
           pSVar11 = local_c;
           DAT_00802a3c = 0;
-          FUN_006f2e40(DAT_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
+          mfAObjEnum(DAT_00806754,PTR_DAT_007c83b0,&LAB_00403535,local_c,0);
           uVar7 = FUN_006b0140(0x4a39,DAT_00807618);
           wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,DAT_00802a3c,uVar7);
           if (DAT_00802a58 != (cLoadingTy *)0x0) {
@@ -108,7 +108,7 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
         local_2c[4] = 0x111;
         (*pSVar2->SendMessage)((SystemWithNamedObjClassTy *)pSVar11,(int)local_2c);
         if (DAT_00808783 == '\x03') {
-          pSVar11->field_0x38 = 1;
+          pSVar11->field_0038 = 1;
           if (DAT_00811764 != (undefined4 *)0x0) {
             FUN_006b6500((int)DAT_00811764,DAT_0080733c);
           }
@@ -126,9 +126,9 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
           }
         }
         DVar8 = timeGetTime();
-        *(DWORD *)&pSVar11->field_0xbc = DVar8;
-        *(DWORD *)&pSVar11->field_0x7f = DVar8;
-        *(DWORD *)&pSVar11->field_0x83 = DVar8;
+        pSVar11->field_00BC = DVar8;
+        pSVar11->field_007F = DVar8;
+        pSVar11->field_0083 = DVar8;
       }
       else if (*(int *)(param_1 + 0x10) == 0x44ff) {
         uVar10 = 0;
@@ -137,14 +137,13 @@ undefined4 __thiscall STPlaySystemC::GetMessage(STPlaySystemC *this,int param_1)
           pcVar12 = &DAT_00808af6;
           do {
             puVar5 = DAT_00811764;
-            if ((*(int *)(pcVar12 + -6) == *(int *)&pSVar11[1].field_0xc) && (*pcVar12 != '\0')) {
+            if ((*(int *)(pcVar12 + -6) == pSVar11->field_00F4) && (*pcVar12 != '\0')) {
               *pcVar12 = '\0';
               FUN_006b6500((int)puVar5,1);
-              FUN_00715360(DAT_00811764,*(int *)&pSVar11[1].field_0xc,'7',(char *)0x0,0,0,0xffffffff
-                          );
+              FUN_00715360(DAT_00811764,pSVar11->field_00F4,'7',(char *)0x0,0,0,0xffffffff);
               FUN_006b6500((int)DAT_00811764,DAT_0080733c);
-              thunk_FUN_005508f0(pSVar11,*(int *)&pSVar11[1].field_0xc);
-              *(undefined4 *)&pSVar11[1].field_0xc = 0;
+              thunk_FUN_005508f0(pSVar11,pSVar11->field_00F4);
+              pSVar11->field_00F4 = 0;
             }
             uVar10 = uVar10 + 1;
             pcVar12 = pcVar12 + 0x9c;

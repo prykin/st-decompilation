@@ -1,5 +1,10 @@
 
-int __cdecl FUN_00718080(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\mfplt.cpp
+   Diagnostic line evidence: 52 | 54 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfPltNum(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

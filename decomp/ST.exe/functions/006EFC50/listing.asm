@@ -1,4 +1,4 @@
-FUN_006efc50:
+mfTMapCreate:
 006EFC50  55                        PUSH EBP
 006EFC51  8B EC                     MOV EBP,ESP
 006EFC53  83 EC 48                  SUB ESP,0x48

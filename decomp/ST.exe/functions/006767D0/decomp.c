@@ -29,7 +29,7 @@ int FUN_006767d0(void)
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  cMf32::delete((cMf32 *)local_4c.previous,(undefined4 *)local_8);
+  cMf32::delete((cMf32 *)local_4c.previous,&local_8->field_0000);
   if (iVar1 < 0) {
     return iVar1;
   }

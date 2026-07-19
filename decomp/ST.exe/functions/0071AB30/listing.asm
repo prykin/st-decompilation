@@ -1,4 +1,4 @@
-FUN_0071ab30:
+mfSarSave:
 0071AB30  55                        PUSH EBP
 0071AB31  8B EC                     MOV EBP,ESP
 0071AB33  83 EC 58                  SUB ESP,0x58

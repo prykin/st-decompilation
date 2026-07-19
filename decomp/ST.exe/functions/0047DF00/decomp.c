@@ -346,26 +346,26 @@ LAB_0047f1f7:
           do {
             puVar11 = (undefined4 *)
                       thunk_FUN_0041dc40(local_2c,*local_c,*(undefined2 *)(local_c + 1),
-                                         *(short *)&this->field_0x6c);
+                                         this->field_006C);
             uVar13 = *puVar11;
             local_20 = *(short *)(puVar11 + 1);
             local_24 = uVar13;
             if (DAT_0080732c == 1) {
               bVar23 = 0;
               sVar22 = 0;
-              uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+              uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar7 = -1;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar21 = 0;
               sVar20 = 0;
               uVar12 = uVar10 * 0x41c64e6d + 0x3039;
               sVar6 = 0;
-              *(uint *)&this->field_0x1c = uVar12;
+              this->field_001C = uVar12;
               sVar14 = 0;
               sVar18 = 0;
               local_1c = uVar12 * 0x41c64e6d + 0x3039;
               sVar15 = 0;
-              *(uint *)&this->field_0x1c = local_1c;
+              this->field_001C = local_1c;
               lVar19 = Library::MSVCRT::__ftol();
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,
@@ -378,12 +378,12 @@ LAB_0047f1f7:
                          bVar23);
             }
             else {
-              uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar12;
+              uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+              this->field_001C = uVar12;
               uVar16 = uVar12 * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar16;
+              this->field_001C = uVar16;
               uVar10 = uVar16 * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               local_24._2_2_ = (short)((uint)uVar13 >> 0x10);
               iVar7 = (int)local_24._2_2_;
               local_24._0_2_ = (short)uVar13;
@@ -491,24 +491,24 @@ LAB_0047edd5:
                 do {
                   puVar11 = (undefined4 *)
                             thunk_FUN_0041dc40(local_2c,*local_c,*(undefined2 *)(local_c + 1),
-                                               *(short *)&this->field_0x6c);
+                                               this->field_006C);
                   local_24 = *puVar11;
                   local_20 = *(short *)(puVar11 + 1);
                   if (DAT_0080732c == 1) {
                     bVar23 = 0;
                     sVar22 = 0;
                     iVar8 = -1;
-                    uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+                    uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
                     sVar21 = 0;
-                    *(uint *)&this->field_0x1c = uVar10;
+                    this->field_001C = uVar10;
                     sVar20 = 0;
                     sVar6 = 0;
                     uVar12 = uVar10 * 0x41c64e6d + 0x3039;
                     sVar14 = 0;
-                    *(uint *)&this->field_0x1c = uVar12;
+                    this->field_001C = uVar12;
                     local_1c = uVar12 * 0x41c64e6d + 0x3039;
                     sVar18 = 0;
-                    *(uint *)&this->field_0x1c = local_1c;
+                    this->field_001C = local_1c;
                     sVar15 = 0;
                     lVar19 = Library::MSVCRT::__ftol();
                     iVar7 = (int)(short)lVar19 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045
@@ -518,14 +518,14 @@ LAB_0047edd5:
                     uVar10 = local_1c;
                   }
                   else {
-                    uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+                    uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
                     bVar23 = 0;
-                    *(uint *)&this->field_0x1c = uVar12;
+                    this->field_001C = uVar12;
                     uVar16 = uVar12 * 0x41c64e6d + 0x3039;
                     sVar22 = 0;
-                    *(uint *)&this->field_0x1c = uVar16;
+                    this->field_001C = uVar16;
                     uVar10 = uVar16 * 0x41c64e6d + 0x3039;
-                    *(uint *)&this->field_0x1c = uVar10;
+                    this->field_001C = uVar10;
                     iVar8 = -1;
                     sVar21 = 0;
                     sVar20 = 0;

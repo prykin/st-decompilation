@@ -9,7 +9,7 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
   code *pcVar1;
   FSGSTy *pFVar2;
   int iVar3;
-  undefined1 *puVar4;
+  HoloTy *pHVar4;
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -57,441 +57,425 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       thunk_FUN_005a0590((int)local_8);
     }
   case 1:
-    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
-      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
+    if (pFVar2->field_1F23 != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      pFVar2->field_1F23 = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
-    if (puVar4 != (undefined1 *)0x0) {
+    pFVar2->field_1F23 = pHVar4;
+    if (pHVar4 != (HoloTy *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0xb4,0xaa,0x1b8,0x106);
-      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0xb4,0xaa,iVar3,iVar5,uVar6,cVar7,
-                           uVar9);
+      uVar6 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0xb4,0xaa,iVar3,iVar5,uVar6,cVar7,uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)&pFVar2[1].field_0x44;
-        *(undefined1 *)(iVar3 + 2) = 0;
-        *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+        pHVar4 = pFVar2->field_1F23;
+        pHVar4->field_0002 = 0;
+        pHVar4->field_0017 = 0xffffffff;
+        uVar6 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
+        HoloTy::NextFas(pFVar2->field_1F23);
       }
       FUN_006b5f80(DAT_008075a8,0xb4,0xaa,0x1b8,0x106);
-      thunk_FUN_00540620(0xb4,0xaa,0xb4,0xaa,0x1b8,(byte *)0x106,'\x01',
-                         *(BITMAPINFO **)&pFVar2->field_0x5d);
+      PutDDXClip(0xb4,0xaa,0xb4,0xaa,0x1b8,(byte *)0x106,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
   case 3:
     thunk_FUN_005a0590((int)local_8);
-    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
-      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
+    if (pFVar2->field_1F23 != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      pFVar2->field_1F23 = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
-    if (puVar4 == (undefined1 *)0x0) goto switchD_0059f6f7_default;
+    pFVar2->field_1F23 = pHVar4;
+    if (pHVar4 == (HoloTy *)0x0) goto switchD_0059f6f7_default;
     uVar9 = 0;
     cVar7 = '\x01';
     uVar6 = 0x10;
     iVar5 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x22,0x72,0x2e1,0x14c);
-    uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0x22,0x72,iVar3,iVar5,uVar6,cVar7,uVar9
-                        );
+    uVar6 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0x22,0x72,iVar3,iVar5,uVar6,cVar7,uVar9);
     if (uVar6 != 0) {
-      iVar3 = *(int *)&pFVar2[1].field_0x44;
-      *(undefined1 *)(iVar3 + 2) = 0;
-      *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-      uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+      pHVar4 = pFVar2->field_1F23;
+      pHVar4->field_0002 = 0;
+      pHVar4->field_0017 = 0xffffffff;
+      uVar6 = pFVar2->field_1F23->field_0003;
       if (-1 < (int)uVar6) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
       }
-      HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
+      HoloTy::NextFas(pFVar2->field_1F23);
     }
     FUN_006b5f80(DAT_008075a8,0x22,0x72,0x2e1,0x14c);
-    thunk_FUN_00540620(0x22,0x72,0x22,0x72,0x2e1,(byte *)0x14c,'\x01',
-                       *(BITMAPINFO **)&pFVar2->field_0x5d);
-    if (*(uint *)&pFVar2->field_0x1b2c != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pFVar2->field_0x1b70,*(uint *)&pFVar2->field_0x1b2c);
+    PutDDXClip(0x22,0x72,0x22,0x72,0x2e1,(byte *)0x14c,'\x01',(BITMAPINFO *)pFVar2->field_005D);
+    if (pFVar2->field_1B2C != 0xffffffff) {
+      FUN_006b3af0((int *)pFVar2->field_1B70,pFVar2->field_1B2C);
     }
-    if (*(uint *)&pFVar2->field_0x1bbd != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pFVar2->field_0x1c01,*(uint *)&pFVar2->field_0x1bbd);
+    if (pFVar2->field_1BBD != 0xffffffff) {
+      FUN_006b3af0((int *)pFVar2->field_1C01,pFVar2->field_1BBD);
     }
-    uVar6 = *(uint *)&pFVar2->field_0x1c4e;
+    uVar6 = pFVar2->field_1C4E;
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
-    piVar8 = *(int **)&pFVar2->field_0x1c92;
+    piVar8 = (int *)pFVar2->field_1C92;
     break;
   case 6:
     thunk_FUN_005a07f0((int)local_8);
-    if (*(HoloTy **)&pFVar2[1].field_0x48 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x48);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x48);
-      *(undefined4 *)&pFVar2[1].field_0x48 = 0;
+    if (pFVar2->field_1F27 != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F27);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F27);
+      pFVar2->field_1F27 = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x48 = puVar4;
-    if (puVar4 != (undefined1 *)0x0) {
+    pFVar2->field_1F27 = pHVar4;
+    if (pHVar4 != (HoloTy *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x13,0x5e,0x1bf,0x175);
-      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x48,4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,
-                           uVar9);
+      uVar6 = HoloTy::Init(pFVar2->field_1F27,CASE_4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)&pFVar2[1].field_0x48;
-        *(undefined1 *)(iVar3 + 2) = 0;
-        *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x48 + 3);
+        pHVar4 = pFVar2->field_1F27;
+        pHVar4->field_0002 = 0;
+        pHVar4->field_0017 = 0xffffffff;
+        uVar6 = pFVar2->field_1F27->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x48);
+        HoloTy::NextFas(pFVar2->field_1F27);
       }
       FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x1bf,0x175);
-      thunk_FUN_00540620(0x13,0x5e,0x13,0x5e,0x1bf,(byte *)0x175,'\x01',
-                         *(BITMAPINFO **)&pFVar2->field_0x5d);
-      if (*(uint *)&pFVar2->field_0x1b2c != 0xffffffff) {
-        FUN_006b3af0(*(int **)&pFVar2->field_0x1b70,*(uint *)&pFVar2->field_0x1b2c);
+      PutDDXClip(0x13,0x5e,0x13,0x5e,0x1bf,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
+      if (pFVar2->field_1B2C != 0xffffffff) {
+        FUN_006b3af0((int *)pFVar2->field_1B70,pFVar2->field_1B2C);
       }
-      if (*(uint *)&pFVar2->field_0x1bbd != 0xffffffff) {
-        FUN_006b3af0(*(int **)&pFVar2->field_0x1c01,*(uint *)&pFVar2->field_0x1bbd);
+      if (pFVar2->field_1BBD != 0xffffffff) {
+        FUN_006b3af0((int *)pFVar2->field_1C01,pFVar2->field_1BBD);
       }
-      if (*(uint *)&pFVar2->field_0x1c4e != 0xffffffff) {
-        FUN_006b3af0(*(int **)&pFVar2->field_0x1c92,*(uint *)&pFVar2->field_0x1c4e);
+      if (pFVar2->field_1C4E != 0xffffffff) {
+        FUN_006b3af0((int *)pFVar2->field_1C92,pFVar2->field_1C4E);
       }
     }
-    if (*(HoloTy **)&pFVar2[1].field_0x4c != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x4c);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x4c);
-      *(undefined4 *)&pFVar2[1].field_0x4c = 0;
+    if (pFVar2->field_1F2B != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F2B);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F2B);
+      pFVar2->field_1F2B = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x4c = puVar4;
-    if (puVar4 == (undefined1 *)0x0) goto switchD_0059f6f7_default;
+    pFVar2->field_1F2B = pHVar4;
+    if (pHVar4 == (HoloTy *)0x0) goto switchD_0059f6f7_default;
     uVar9 = 0;
     cVar7 = '\x01';
     uVar6 = 0x10;
     iVar5 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x1e9,0x5e,0x124,0x175);
-    uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x4c,2,0x1e9,0x5e,iVar3,iVar5,uVar6,cVar7,
-                         uVar9);
+    uVar6 = HoloTy::Init(pFVar2->field_1F2B,CASE_2,0x1e9,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
     if (uVar6 != 0) {
-      iVar3 = *(int *)&pFVar2[1].field_0x4c;
-      *(undefined1 *)(iVar3 + 2) = 0;
-      *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-      uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x4c + 3);
+      pHVar4 = pFVar2->field_1F2B;
+      pHVar4->field_0002 = 0;
+      pHVar4->field_0017 = 0xffffffff;
+      uVar6 = pFVar2->field_1F2B->field_0003;
       if (-1 < (int)uVar6) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
       }
-      HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x4c);
+      HoloTy::NextFas(pFVar2->field_1F2B);
     }
     FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0x175);
-    thunk_FUN_00540620(0x1e9,0x5e,0x1e9,0x5e,0x124,(byte *)0x175,'\x01',
-                       *(BITMAPINFO **)&pFVar2->field_0x5d);
-    if (*(uint *)&pFVar2->field_0x1cdf != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pFVar2->field_0x1d23,*(uint *)&pFVar2->field_0x1cdf);
+    PutDDXClip(0x1e9,0x5e,0x1e9,0x5e,0x124,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
+    if (pFVar2->field_1CDF != 0xffffffff) {
+      FUN_006b3af0((int *)pFVar2->field_1D23,pFVar2->field_1CDF);
     }
-    if (*(uint *)&pFVar2->field_0x1d70 != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pFVar2->field_0x1db4,*(uint *)&pFVar2->field_0x1d70);
+    if (pFVar2->field_1D70 != 0xffffffff) {
+      FUN_006b3af0((int *)pFVar2->field_1DB4,pFVar2->field_1D70);
     }
-    uVar6 = *(uint *)&pFVar2->field_0x1e01;
+    uVar6 = pFVar2->field_1E01;
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
-    piVar8 = *(int **)&pFVar2->field_0x1e45;
+    piVar8 = (int *)pFVar2->field_1E45;
     break;
   case 8:
     thunk_FUN_005a0af0((int)local_8);
-    if (*(HoloTy **)&pFVar2[1].field_0x50 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x50);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x50);
-      *(undefined4 *)&pFVar2[1].field_0x50 = 0;
+    if (pFVar2->field_1F2F != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F2F);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F2F);
+      pFVar2->field_1F2F = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x50 = puVar4;
-    if (puVar4 != (undefined1 *)0x0) {
+    pFVar2->field_1F2F = pHVar4;
+    if (pHVar4 != (HoloTy *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x199,0x5e,0x174,0x175);
-      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x50,2,0x199,0x5e,iVar3,iVar5,uVar6,cVar7,
-                           uVar9);
+      uVar6 = HoloTy::Init(pFVar2->field_1F2F,CASE_2,0x199,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)&pFVar2[1].field_0x50;
-        *(undefined1 *)(iVar3 + 2) = 0;
-        *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x50 + 3);
+        pHVar4 = pFVar2->field_1F2F;
+        pHVar4->field_0002 = 0;
+        pHVar4->field_0017 = 0xffffffff;
+        uVar6 = pFVar2->field_1F2F->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x50);
+        HoloTy::NextFas(pFVar2->field_1F2F);
       }
       FUN_006b5f80(DAT_008075a8,0x199,0x5e,0x174,0x175);
-      thunk_FUN_00540620(0x199,0x5e,0x199,0x5e,0x174,(byte *)0x175,'\x01',
-                         *(BITMAPINFO **)&pFVar2->field_0x5d);
+      PutDDXClip(0x199,0x5e,0x199,0x5e,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
-    if (*(HoloTy **)&pFVar2[1].field_0x4c != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x4c);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x4c);
-      *(undefined4 *)&pFVar2[1].field_0x4c = 0;
+    if (pFVar2->field_1F2B != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F2B);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F2B);
+      pFVar2->field_1F2B = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x4c = puVar4;
-    if (puVar4 == (undefined1 *)0x0) goto switchD_0059f6f7_default;
+    pFVar2->field_1F2B = pHVar4;
+    if (pHVar4 == (HoloTy *)0x0) goto switchD_0059f6f7_default;
     uVar9 = 0;
     cVar7 = '\x01';
     uVar6 = 0x10;
     iVar5 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x13,0x5e,0x174,0x175);
-    uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x4c,4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9
-                        );
+    uVar6 = HoloTy::Init(pFVar2->field_1F2B,CASE_4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
     if (uVar6 != 0) {
-      iVar3 = *(int *)&pFVar2[1].field_0x4c;
-      *(undefined1 *)(iVar3 + 2) = 0;
-      *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-      uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x4c + 3);
+      pHVar4 = pFVar2->field_1F2B;
+      pHVar4->field_0002 = 0;
+      pHVar4->field_0017 = 0xffffffff;
+      uVar6 = pFVar2->field_1F2B->field_0003;
       if (-1 < (int)uVar6) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
       }
-      HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x4c);
+      HoloTy::NextFas(pFVar2->field_1F2B);
     }
     FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x174,0x175);
-    thunk_FUN_00540620(0x13,0x5e,0x13,0x5e,0x174,(byte *)0x175,'\x01',
-                       *(BITMAPINFO **)&pFVar2->field_0x5d);
-    if (*(uint *)&pFVar2->field_0x1cdf != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pFVar2->field_0x1d23,*(uint *)&pFVar2->field_0x1cdf);
+    PutDDXClip(0x13,0x5e,0x13,0x5e,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
+    if (pFVar2->field_1CDF != 0xffffffff) {
+      FUN_006b3af0((int *)pFVar2->field_1D23,pFVar2->field_1CDF);
     }
-    if (*(uint *)&pFVar2->field_0x1d70 != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pFVar2->field_0x1db4,*(uint *)&pFVar2->field_0x1d70);
+    if (pFVar2->field_1D70 != 0xffffffff) {
+      FUN_006b3af0((int *)pFVar2->field_1DB4,pFVar2->field_1D70);
     }
-    uVar6 = *(uint *)&pFVar2->field_0x1e01;
+    uVar6 = pFVar2->field_1E01;
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
-    piVar8 = *(int **)&pFVar2->field_0x1e45;
+    piVar8 = (int *)pFVar2->field_1E45;
     break;
   case 9:
     thunk_FUN_005a0c80((int)local_8);
-    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
-      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
+    if (pFVar2->field_1F23 != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      pFVar2->field_1F23 = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
-    if (puVar4 != (undefined1 *)0x0) {
+    pFVar2->field_1F23 = pHVar4;
+    if (pHVar4 != (HoloTy *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
-      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0x22,0x5e,iVar3,iVar5,uVar6,cVar7,
-                           uVar9);
+      uVar6 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0x22,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)&pFVar2[1].field_0x44;
-        *(undefined1 *)(iVar3 + 2) = 0;
-        *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+        pHVar4 = pFVar2->field_1F23;
+        pHVar4->field_0002 = 0;
+        pHVar4->field_0017 = 0xffffffff;
+        uVar6 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
+        HoloTy::NextFas(pFVar2->field_1F23);
       }
       FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
-      thunk_FUN_00540620(0x22,0x5e,0x22,0x5e,0x2e1,(byte *)0x175,'\x01',
-                         *(BITMAPINFO **)&pFVar2->field_0x5d);
+      PutDDXClip(0x22,0x5e,0x22,0x5e,0x2e1,(byte *)0x175,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
   case 10:
     thunk_FUN_005a0590((int)local_8);
-    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
-      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
+    if (pFVar2->field_1F23 != (HoloTy *)0x0) {
+      HoloTy::Done(pFVar2->field_1F23);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)pFVar2->field_1F23);
+      pFVar2->field_1F23 = (HoloTy *)0x0;
     }
-    puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
-    if (puVar4 == (undefined1 *)0x0) {
-      puVar4 = (undefined1 *)0x0;
+    pHVar4 = (HoloTy *)Library::MSVCRT::FUN_0072e530(0x33);
+    if (pHVar4 == (HoloTy *)0x0) {
+      pHVar4 = (HoloTy *)0x0;
     }
     else {
-      puVar4[2] = 1;
-      *puVar4 = 0;
-      *(undefined4 *)(puVar4 + 3) = 0xffffffff;
-      puVar4[1] = 2;
-      *(undefined4 *)(puVar4 + 7) = 0;
-      *(undefined4 *)(puVar4 + 0xb) = 0;
-      *(undefined4 *)(puVar4 + 0xf) = 0;
-      *(undefined4 *)(puVar4 + 0x1b) = 1;
-      *(undefined4 *)(puVar4 + 0x13) = 1;
-      *(undefined4 *)(puVar4 + 0x17) = 0xffffffff;
-      *(undefined4 *)(puVar4 + 0x27) = 0;
-      *(undefined4 *)(puVar4 + 0x23) = 0;
-      *(undefined4 *)(puVar4 + 0x2f) = 1;
-      *(undefined4 *)(puVar4 + 0x2b) = 1;
+      pHVar4->field_0002 = 1;
+      pHVar4->field_0000 = 0;
+      pHVar4->field_0003 = 0xffffffff;
+      pHVar4->field_0001 = 2;
+      pHVar4->field_0007 = 0;
+      pHVar4->field_000B = 0;
+      *(undefined4 *)&pHVar4->field_0xf = 0;
+      *(undefined4 *)&pHVar4->field_0x1b = 1;
+      pHVar4->field_0013 = 1;
+      pHVar4->field_0017 = 0xffffffff;
+      pHVar4->field_0027 = 0;
+      pHVar4->field_0023 = 0;
+      pHVar4->field_002F = 1;
+      pHVar4->field_002B = 1;
     }
-    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
-    if (puVar4 != (undefined1 *)0x0) {
+    pFVar2->field_1F23 = pHVar4;
+    if (pHVar4 != (HoloTy *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0xb4,0x5e,0x1b8,0x17a);
-      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0xb4,0x5e,iVar3,iVar5,uVar6,cVar7,
-                           uVar9);
+      uVar6 = HoloTy::Init(pFVar2->field_1F23,CASE_4,0xb4,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)&pFVar2[1].field_0x44;
-        *(undefined1 *)(iVar3 + 2) = 0;
-        *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+        pHVar4 = pFVar2->field_1F23;
+        pHVar4->field_0002 = 0;
+        pHVar4->field_0017 = 0xffffffff;
+        uVar6 = pFVar2->field_1F23->field_0003;
         if (-1 < (int)uVar6) {
           Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
+        HoloTy::NextFas(pFVar2->field_1F23);
       }
       FUN_006b5f80(DAT_008075a8,0xb4,0x5e,0x1b8,0x17a);
-      thunk_FUN_00540620(0xb4,0x5e,0xb4,0x5e,0x1b8,(byte *)0x17a,'\x01',
-                         *(BITMAPINFO **)&pFVar2->field_0x5d);
+      PutDDXClip(0xb4,0x5e,0xb4,0x5e,0x1b8,(byte *)0x17a,'\x01',(BITMAPINFO *)pFVar2->field_005D);
     }
     uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;

@@ -1,7 +1,13 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 845 | 856 | 863 | 874 | 888 | 903 | 912 (metadata/report site, not the
+   function definition)
+   [STSourceProvenanceApplier end] */
+
 int * __cdecl
-FUN_0070b900(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,int param_7,
-            uint *param_8,int param_9)
+imgGetDibFromFile(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint param_6,
+                 int param_7,uint *param_8,int param_9)
 
 {
   code *pcVar1;

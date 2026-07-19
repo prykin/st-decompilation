@@ -7,7 +7,7 @@
 undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
 
 {
-  HoloTy *pHVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   HoloTy *pHVar3;
   MTestTy *pMVar4;
@@ -46,9 +46,9 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
       PaintMTest(local_c);
       break;
     case 0x62:
-      if (local_c[1].field_0xe == '\0') {
+      if (local_c->field_00B3 == '\0') {
         _DAT_00811774 = FUN_006e51b0(local_c->field_0010);
-        pMVar4[1].field_0xe = 1;
+        pMVar4->field_00B3 = 1;
         if (DAT_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(DAT_00811778);
           Library::MSVCRT::FUN_0072e2b0((undefined4 *)DAT_00811778);
@@ -61,20 +61,20 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           DAT_00811778 = (HoloTy *)0x0;
         }
         else {
-          DAT_00811778[2] = (HoloTy)0x1;
-          *DAT_00811778 = (HoloTy)0x0;
-          *(undefined4 *)(DAT_00811778 + 3) = 0xffffffff;
-          DAT_00811778[1] = (HoloTy)0x2;
-          *(undefined4 *)(DAT_00811778 + 7) = 0;
-          *(undefined4 *)(DAT_00811778 + 0xb) = 0;
-          *(undefined4 *)(DAT_00811778 + 0xf) = 0;
-          *(undefined4 *)(DAT_00811778 + 0x1b) = 1;
-          *(undefined4 *)(DAT_00811778 + 0x13) = 1;
-          *(undefined4 *)(DAT_00811778 + 0x17) = 0xffffffff;
-          *(undefined4 *)(DAT_00811778 + 0x27) = 0;
-          *(undefined4 *)(DAT_00811778 + 0x23) = 0;
-          *(undefined4 *)(DAT_00811778 + 0x2f) = 1;
-          *(undefined4 *)(DAT_00811778 + 0x2b) = 1;
+          DAT_00811778->field_0002 = 1;
+          DAT_00811778->field_0000 = 0;
+          DAT_00811778->field_0003 = 0xffffffff;
+          DAT_00811778->field_0001 = 2;
+          DAT_00811778->field_0007 = 0;
+          DAT_00811778->field_000B = 0;
+          *(undefined4 *)&DAT_00811778->field_0xf = 0;
+          *(undefined4 *)&DAT_00811778->field_0x1b = 1;
+          DAT_00811778->field_0013 = 1;
+          DAT_00811778->field_0017 = 0xffffffff;
+          DAT_00811778->field_0027 = 0;
+          DAT_00811778->field_0023 = 0;
+          DAT_00811778->field_002F = 1;
+          DAT_00811778->field_002B = 1;
         }
         if (DAT_00811778 != (HoloTy *)0x0) {
           uVar10 = 0;
@@ -82,13 +82,13 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           uVar8 = 0x10;
           iVar7 = 1;
           iVar6 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
-          HoloTy::Init(DAT_00811778,4,10,0xb4,iVar6,iVar7,uVar8,cVar9,uVar10);
+          HoloTy::Init(DAT_00811778,CASE_4,10,0xb4,iVar6,iVar7,uVar8,cVar9,uVar10);
           pHVar3 = DAT_00811778;
-          pHVar1 = DAT_00811778 + 0x13;
-          DAT_00811778[2] = (HoloTy)0x1;
-          *(undefined4 *)(pHVar3 + 0x17) = *(undefined4 *)pHVar1;
-          if (-1 < (int)*(uint *)(DAT_00811778 + 3)) {
-            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
+          puVar1 = &DAT_00811778->field_0013;
+          DAT_00811778->field_0002 = 1;
+          pHVar3->field_0017 = *puVar1;
+          if (-1 < (int)DAT_00811778->field_0003) {
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,DAT_00811778->field_0003);
           }
         }
         if (local_8 != 0xffffffff) {
@@ -96,9 +96,9 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           local_8 = 0xffffffff;
         }
       }
-      else if (local_c[1].field_0xe == '\x04') {
+      else if (local_c->field_00B3 == '\x04') {
         _DAT_00811774 = FUN_006e51b0(local_c->field_0010);
-        pMVar4[1].field_0xe = 5;
+        pMVar4->field_00B3 = 5;
         if (DAT_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(DAT_00811778);
           Library::MSVCRT::FUN_0072e2b0((undefined4 *)DAT_00811778);
@@ -109,20 +109,20 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           DAT_00811778 = (HoloTy *)0x0;
         }
         else {
-          DAT_00811778[2] = (HoloTy)0x1;
-          *DAT_00811778 = (HoloTy)0x0;
-          *(undefined4 *)(DAT_00811778 + 3) = 0xffffffff;
-          DAT_00811778[1] = (HoloTy)0x2;
-          *(undefined4 *)(DAT_00811778 + 7) = 0;
-          *(undefined4 *)(DAT_00811778 + 0xb) = 0;
-          *(undefined4 *)(DAT_00811778 + 0xf) = 0;
-          *(undefined4 *)(DAT_00811778 + 0x1b) = 1;
-          *(undefined4 *)(DAT_00811778 + 0x13) = 1;
-          *(undefined4 *)(DAT_00811778 + 0x17) = 0xffffffff;
-          *(undefined4 *)(DAT_00811778 + 0x27) = 0;
-          *(undefined4 *)(DAT_00811778 + 0x23) = 0;
-          *(undefined4 *)(DAT_00811778 + 0x2f) = 1;
-          *(undefined4 *)(DAT_00811778 + 0x2b) = 1;
+          DAT_00811778->field_0002 = 1;
+          DAT_00811778->field_0000 = 0;
+          DAT_00811778->field_0003 = 0xffffffff;
+          DAT_00811778->field_0001 = 2;
+          DAT_00811778->field_0007 = 0;
+          DAT_00811778->field_000B = 0;
+          *(undefined4 *)&DAT_00811778->field_0xf = 0;
+          *(undefined4 *)&DAT_00811778->field_0x1b = 1;
+          DAT_00811778->field_0013 = 1;
+          DAT_00811778->field_0017 = 0xffffffff;
+          DAT_00811778->field_0027 = 0;
+          DAT_00811778->field_0023 = 0;
+          DAT_00811778->field_002F = 1;
+          DAT_00811778->field_002B = 1;
         }
         if (DAT_00811778 != (HoloTy *)0x0) {
           FUN_006b5f80(DAT_008075a8,10,0xb4,0xf9,0x121);
@@ -134,23 +134,22 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           uVar8 = 0x10;
           iVar7 = 1;
           iVar6 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,10,0xb4,0xf9,0x123);
-          HoloTy::Init(DAT_00811778,4,10,0xb4,iVar6,iVar7,uVar8,cVar9,uVar10);
-          pHVar1 = DAT_00811778;
-          DAT_00811778[2] = (HoloTy)0x0;
-          *(undefined4 *)(pHVar1 + 0x17) = 0xffffffff;
-          if (-1 < (int)*(uint *)(DAT_00811778 + 3)) {
-            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
+          HoloTy::Init(DAT_00811778,CASE_4,10,0xb4,iVar6,iVar7,uVar8,cVar9,uVar10);
+          pHVar3 = DAT_00811778;
+          DAT_00811778->field_0002 = 0;
+          pHVar3->field_0017 = 0xffffffff;
+          if (-1 < (int)DAT_00811778->field_0003) {
+            Library::DKW::DDX::FUN_006b3430(DAT_008075a8,DAT_00811778->field_0003);
           }
           FUN_006b5f80(DAT_008075a8,10,0xb4,0xf9,0x121);
-          thunk_FUN_00540620(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',
-                             *(BITMAPINFO **)&pMVar4->field_0x5d);
+          PutDDXClip(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',(BITMAPINFO *)pMVar4->field_005D);
         }
       }
       break;
     case 100:
       thunk_FUN_005e5f60(local_c);
-      *(undefined4 *)&pMVar4->field_0x8d = 1;
-      *(undefined4 *)&pMVar4->field_0x91 = 0x7102;
+      pMVar4->field_008D = 1;
+      pMVar4->field_0091 = 0x7102;
     }
     g_currentExceptionFrame = local_50.previous;
     uVar5 = FUN_006e5fd0();

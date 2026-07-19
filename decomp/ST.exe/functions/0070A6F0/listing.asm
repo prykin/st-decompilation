@@ -1,4 +1,4 @@
-FUN_0070a6f0:
+mfImgGetWidth:
 0070A6F0  55                        PUSH EBP
 0070A6F1  8B EC                     MOV EBP,ESP
 0070A6F3  83 EC 50                  SUB ESP,0x50

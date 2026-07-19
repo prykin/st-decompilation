@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\St3dsmap.cpp
+   Diagnostic line evidence: 121 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __thiscall
 FUN_006e6630(void *this,int param_1,undefined1 param_2,undefined1 param_3,undefined1 param_4)
 

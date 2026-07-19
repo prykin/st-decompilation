@@ -91,14 +91,14 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     *(undefined1 *)puVar6 = 0xff;
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
-  ccFntTy::SetSurf(*(ccFntTy **)&pFVar3->field_0x1a73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
+  ccFntTy::SetSurf(pFVar3->field_1A73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
   iVar14 = -1;
   iVar13 = -1;
   uVar12 = 2;
   iVar11 = -1;
   iVar4 = -2;
   puVar7 = (uint *)FUN_006b0140(0x25bd,DAT_00807618);
-  ccFntTy::WrTxt(*(ccFntTy **)&pFVar3->field_0x1a73,puVar7,iVar4,iVar11,uVar12,iVar13,iVar14);
+  ccFntTy::WrTxt(pFVar3->field_1A73,puVar7,iVar4,iVar11,uVar12,iVar13,iVar14);
   FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
   puVar6 = local_2c;
   for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -110,19 +110,19 @@ void __thiscall FSGSTy::CheckUpdate(FSGSTy *this)
     *puVar6 = 0;
     puVar6 = puVar6 + 1;
   }
-  local_4c[2] = *(undefined4 *)&pFVar3->field_0x8;
+  local_4c[2] = pFVar3->field_0008;
   local_2c[3] = 2;
   local_2c[4] = 0x6957;
   local_4c[3] = 2;
   local_4c[4] = 0x6956;
-  this_00 = *(MMsgTy **)(*(int *)&pFVar3->field_0x1a5b + 0x2e6);
+  this_00 = pFVar3->field_1A5B->field_02E6;
   local_2c[2] = local_4c[2];
   if (this_00 != (MMsgTy *)0x0) {
     MMsgTy::SetMessage(this_00,0x25b7,'\x01',local_2c,local_4c,(undefined4 *)0x0,local_8,0x25b8);
     g_currentExceptionFrame = local_90.previous;
     return;
   }
-  (*(code *)**(undefined4 **)pFVar3)(local_2c);
+  (**(code **)pFVar3->field_0000)(local_2c);
   g_currentExceptionFrame = local_90.previous;
   return;
 }

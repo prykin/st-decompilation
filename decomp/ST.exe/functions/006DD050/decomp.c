@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Strend.cpp
+   Diagnostic line evidence: 812 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 void __thiscall FUN_006dd050(void *param_1,uint param_2,double param_3,double param_4)
 

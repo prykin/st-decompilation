@@ -45,9 +45,9 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
           }
         }
         *(undefined4 *)(iVar4 + 0x4b) = param_2;
-        iVar3 = (uVar5 - *(int *)&local_8->field_0x1f88) * 0x20;
+        iVar3 = (uVar5 - local_8->field_1F88) * 0x20;
         if (*(int *)(iVar3 + 0x1fa4 + (int)local_8) != 0) {
-          *(undefined4 *)&local_8->field_0x2d = 5;
+          local_8->field_002D = 5;
           FUN_006e6080(local_8,2,*(undefined4 *)(iVar3 + 0x1fa4 + (int)local_8),
                        (undefined4 *)&local_8->field_0x1d);
         }

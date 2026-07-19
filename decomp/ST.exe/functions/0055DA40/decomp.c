@@ -1,5 +1,10 @@
 
-int __cdecl FUN_0055da40(int param_1,byte param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\pal_tbl.CPP
+   Diagnostic line evidence: 123 | 125 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl LoadStartPlt(int param_1,byte param_2)
 
 {
   code *pcVar1;
@@ -13,10 +18,10 @@ int __cdecl FUN_0055da40(int param_1,byte param_2)
   g_currentExceptionFrame = &local_48;
   iVar2 = Library::MSVCRT::__setjmp3(local_48.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
-    DAT_008032a4 = FUN_00717fc0(param_1,PTR_s_PLT_MMGLASS_0079af6c,param_2,1);
-    DAT_008032a8 = FUN_00717fc0(param_1,PTR_s_PLT_MMSHAD_0079af88,param_2,1);
-    DAT_008032ac = FUN_00717fc0(param_1,PTR_s_PLT_FSGSGLASS_0079af98,param_2,1);
-    DAT_008032b0 = FUN_00717fc0(param_1,PTR_s_PLT_FSGSSHAD_0079af9c,param_2,1);
+    DAT_008032a4 = mfPltPtrTy(param_1,PTR_s_PLT_MMGLASS_0079af6c,param_2,1);
+    DAT_008032a8 = mfPltPtrTy(param_1,PTR_s_PLT_MMSHAD_0079af88,param_2,1);
+    DAT_008032ac = mfPltPtrTy(param_1,PTR_s_PLT_FSGSGLASS_0079af98,param_2,1);
+    DAT_008032b0 = mfPltPtrTy(param_1,PTR_s_PLT_FSGSSHAD_0079af9c,param_2,1);
     g_currentExceptionFrame = local_48.previous;
     return 0;
   }

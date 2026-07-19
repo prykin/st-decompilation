@@ -1,4 +1,4 @@
-FUN_0067dc20:
+_CreateStgListByRoot:
 0067DC20  55                        PUSH EBP
 0067DC21  8B EC                     MOV EBP,ESP
 0067DC23  81 EC E8 02 00 00         SUB ESP,0x2e8

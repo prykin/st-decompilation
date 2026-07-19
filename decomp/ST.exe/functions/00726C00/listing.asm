@@ -1,4 +1,4 @@
-FUN_00726c00:
+mfQSprGetNumFas:
 00726C00  55                        PUSH EBP
 00726C01  8B EC                     MOV EBP,ESP
 00726C03  83 EC 50                  SUB ESP,0x50

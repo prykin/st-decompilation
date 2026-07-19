@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\Grpway3d.cpp
+   Diagnostic line evidence: 563 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __thiscall FUN_0040c080(void *this,uint param_1,int param_2)
 
 {

@@ -32,8 +32,8 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_68.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar5 = local_18;
   if (iVar2 == 0) {
-    if (*(int *)(local_18 + 0x11) == 3) {
-      iVar2 = *(int *)(local_18 + 0x25);
+    if (local_18->field_0011 == 3) {
+      iVar2 = local_18->field_0025;
       if (iVar2 < 4) {
         pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806764;
@@ -42,21 +42,21 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806774;
       }
-      local_10 = FUN_00709af0(piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
-      iVar2 = *(int *)(pSVar5 + 0x29);
+      local_10 = mfRLoad(piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
+      iVar2 = pSVar5->field_0029;
       if (iVar2 < 4) {
-        local_14 = FUN_00709af0(DAT_00806764,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,
-                                0,(undefined4 *)0x0);
+        local_14 = mfRLoad(DAT_00806764,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,0,
+                           (undefined4 *)0x0);
         puVar3 = local_8;
       }
       else {
-        local_14 = FUN_00709af0(DAT_00806774,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,
-                                0,(undefined4 *)0x0);
+        local_14 = mfRLoad(DAT_00806774,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,0,
+                           (undefined4 *)0x0);
         puVar3 = local_8;
       }
     }
     else {
-      iVar2 = *(int *)(local_18 + 0xd);
+      iVar2 = local_18->field_000D;
       if (iVar2 < 4) {
         pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806764;
@@ -65,25 +65,25 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806774;
       }
-      puVar3 = FUN_00709af0(piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
+      puVar3 = mfRLoad(piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
       local_8 = puVar3;
-      if (*(int *)(pSVar5 + 0x11) == 1) {
-        local_10 = FUN_00709af0(DAT_00806774,CASE_1D,PTR_s_starR_007d1bcc,0xffffffff,0,1,0,
-                                (undefined4 *)0x0);
+      if (pSVar5->field_0011 == 1) {
+        local_10 = mfRLoad(DAT_00806774,CASE_1D,PTR_s_starR_007d1bcc,0xffffffff,0,1,0,
+                           (undefined4 *)0x0);
       }
-      if (*(int *)(pSVar5 + 0x11) == 4) {
-        local_10 = FUN_00709af0(DAT_00806774,CASE_1D,PTR_s_starF_007d1bd0,0xffffffff,0,1,0,
-                                (undefined4 *)0x0);
+      if (pSVar5->field_0011 == 4) {
+        local_10 = mfRLoad(DAT_00806774,CASE_1D,PTR_s_starF_007d1bd0,0xffffffff,0,1,0,
+                           (undefined4 *)0x0);
         local_14 = puVar3;
       }
     }
-    if (*(int *)pSVar5 != 0) {
-      local_20 = *(int *)(pSVar5 + 0x19);
-      local_24 = *(int *)(*(int *)pSVar5 + 0xc);
+    if (pSVar5->field_0000 != 0) {
+      local_20 = pSVar5->field_0019;
+      local_24 = *(int *)(pSVar5->field_0000 + 0xc);
       local_1c = 0;
       if (0 < local_24) {
         do {
-          iVar2 = *(int *)pSVar5;
+          iVar2 = pSVar5->field_0000;
           if (local_1c < *(uint *)(iVar2 + 0xc)) {
             piVar6 = (int *)(*(int *)(iVar2 + 8) * local_1c + *(int *)(iVar2 + 0x1c));
           }
@@ -91,8 +91,8 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
             piVar6 = (int *)0x0;
           }
           if (piVar6 != (int *)0x0) {
-            if (*(int *)(pSVar5 + 0x11) == 3) {
-              if (*(int *)(pSVar5 + 0x25) == *piVar6) {
+            if (pSVar5->field_0011 == 3) {
+              if (pSVar5->field_0025 == *piVar6) {
                 local_8 = local_10;
                 *(undefined4 *)((int)piVar6 + 0x1d) = *(undefined4 *)local_10;
                 puVar3 = local_10;
@@ -102,15 +102,15 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
                 puVar3 = local_14;
               }
             }
-            if ((*(int *)(pSVar5 + 0x11) == 1) && (local_20 <= (int)local_1c)) {
+            if ((pSVar5->field_0011 == 1) && (local_20 <= (int)local_1c)) {
               local_8 = local_10;
               *(undefined4 *)((int)piVar6 + 0x1d) = *(undefined4 *)local_10;
               puVar3 = local_10;
             }
-            if ((*(int *)(pSVar5 + 0x11) == 4) &&
-               (((int)local_1c < *(int *)(pSVar5 + 0x1d) ||
-                (puVar3 = local_10, local_8 = local_10, *(int *)(pSVar5 + 0x1d) * 2 <= (int)local_1c
-                )))) {
+            if ((pSVar5->field_0011 == 4) &&
+               (((int)local_1c < (int)pSVar5->field_001D ||
+                (puVar3 = local_10, local_8 = local_10, pSVar5->field_001D * 2 <= (int)local_1c))))
+            {
               puVar3 = local_14;
               local_8 = local_14;
             }
@@ -129,7 +129,7 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
             piVar6[1] = local_c;
             *(undefined1 *)(piVar6 + 3) = 0;
             pSVar5 = local_18;
-            if (*(int *)(local_18 + 0x15) != 0) {
+            if (local_18->field_0015 != 0) {
               *(undefined4 *)((int)piVar6 + 0x1d) = *(undefined4 *)puVar3;
             }
           }

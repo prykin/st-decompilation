@@ -1,4 +1,4 @@
-FUN_00725550:
+mfPlaPtrTy:
 00725550  55                        PUSH EBP
 00725551  8B EC                     MOV EBP,ESP
 00725553  83 EC 4C                  SUB ESP,0x4c

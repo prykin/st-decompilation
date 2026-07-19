@@ -58,25 +58,23 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
     RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x24e);
     return;
   }
-  if (((local_20->field_0x65 == '\x01') && (*(HANDLE *)&local_20[1].field_0x22f != (HANDLE)0x0)) &&
-     (DVar6 = WaitForSingleObject(*(HANDLE *)&local_20[1].field_0x22f,0), DVar6 == 0)) {
-    FindNextChangeNotification(*(HANDLE *)&this_00[1].field_0x22f);
-    PrepFiles(this_00,*(uint *)&this_00[1].field_0x233);
-    iVar7 = *(int *)&this_00[1].field_0xc;
-    *(undefined4 *)&this_00->field_0x2d = 5;
-    if (iVar7 != 0) {
-      FUN_006e6080(this_00,2,iVar7,(undefined4 *)&this_00->field_0x1d);
+  if (((local_20->field_0065 == '\x01') && ((HANDLE)local_20->field_1C8F != (HANDLE)0x0)) &&
+     (DVar6 = WaitForSingleObject((HANDLE)local_20->field_1C8F,0), DVar6 == 0)) {
+    FindNextChangeNotification((HANDLE)this_00->field_1C8F);
+    PrepFiles(this_00,this_00->field_1C93);
+    this_00->field_002D = 5;
+    if (this_00->field_1A6C != 0) {
+      FUN_006e6080(this_00,2,this_00->field_1A6C,(undefined4 *)&this_00->field_0x1d);
     }
     if (*(int *)(DAT_0081176c + 0x389) != 0) {
       FUN_006e6080(this_00,2,*(int *)(DAT_0081176c + 0x389),(undefined4 *)&this_00->field_0x1d);
     }
   }
-  if ((*(int *)&this_00[1].field_0x4 != 0) &&
-     (0xf9 < (uint)(this_00->field_0061 - *(int *)&this_00[1].field_0x8))) {
-    ShowDescription(this_00,*(uint *)&this_00[1].field_0x233);
-    *(undefined4 *)&this_00[1].field_0x4 = 0;
+  if ((this_00->field_1A64 != 0) && (0xf9 < (uint)(this_00->field_0061 - this_00->field_1A68))) {
+    ShowDescription(this_00,this_00->field_1C93);
+    this_00->field_1A64 = 0;
   }
-  cVar1 = this_00->field_0x65;
+  cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
     if (DAT_0080877e != '\0') {
       switch(this_00->field_1A5F) {
@@ -100,14 +98,14 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
                 piVar10 = piVar10 + 1;
               }
               local_6c[4] = (-(uint)(DAT_008067a0 != '\0') & 4) + 0x694d;
-              if (*(int *)(*(int *)&this_00->field_0x1a5b + 0x2e6) == 0) {
-                (*(code *)**(undefined4 **)this_00)(local_6c);
+              if (this_00->field_1A5B->field_02E6 == (MMsgTy *)0x0) {
+                (**(code **)this_00->field_0000)(local_6c);
               }
               else {
-                local_6c[2] = *(int *)&this_00->field_0x8;
+                local_6c[2] = this_00->field_0008;
                 local_6c[3] = 2;
-                MMsgTy::SetMessage(*(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6),0x2522,'\0',
-                                   local_6c,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
+                MMsgTy::SetMessage(this_00->field_1A5B->field_02E6,0x2522,'\0',local_6c,
+                                   (undefined4 *)0x0,(undefined4 *)0x0,0,0);
               }
             }
             else if (iVar7 == 1) {
@@ -153,7 +151,7 @@ switchD_005adb01_caseD_c:
                 }
               }
               else if (local_18 == 0x1b) {
-                StartSystemTy::AddToChat(*(StartSystemTy **)&this_00->field_0x1a5b,local_c);
+                StartSystemTy::AddToChat(this_00->field_1A5B,local_c);
               }
               if (local_c != 0) {
                 FUN_006ab060(&local_c);
@@ -166,7 +164,7 @@ switchD_005adb01_caseD_c:
     }
   }
   else if (cVar1 == '\x03') {
-    if ((this_00[1].field_0x655 != '\0') &&
+    if ((this_00->field_20B5 != '\0') &&
        (*(int *)(DAT_0081176c + 0x300) < *(int *)(DAT_0081176c + 0x304) + -1)) {
       *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + 1;
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
@@ -177,16 +175,16 @@ switchD_005adb01_caseD_c:
       }
       local_8 = 0;
     }
-    if (((this_00[1].field_0x653 != '\0') && (*(HoloTy **)&this_00[1].field_0x658 != (HoloTy *)0x0))
-       && (iVar7 = HoloTy::NextFas(*(HoloTy **)&this_00[1].field_0x658), iVar7 != 0)) {
+    if (((this_00->field_0x20b3 != '\0') && (this_00->field_20B8 != (HoloTy *)0x0)) &&
+       (iVar7 = HoloTy::NextFas(this_00->field_20B8), iVar7 != 0)) {
       local_8 = 0;
     }
-    if (((this_00[1].field_0x654 != '\0') && (*(HoloTy **)&this_00[1].field_0x65c != (HoloTy *)0x0))
-       && (iVar7 = HoloTy::NextFas(*(HoloTy **)&this_00[1].field_0x65c), iVar7 != 0)) {
+    if (((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) &&
+       (iVar7 = HoloTy::NextFas(this_00->field_20BC), iVar7 != 0)) {
       local_8 = 0;
     }
-    if (((this_00[1].field_0x657 != '\0') && (*(HoloTy **)&this_00[1].field_0x660 != (HoloTy *)0x0))
-       && (iVar7 = HoloTy::NextFas(*(HoloTy **)&this_00[1].field_0x660), iVar7 != 0)) {
+    if (((this_00->field_20B7 != '\0') && (this_00->field_20C0 != (HoloTy *)0x0)) &&
+       (iVar7 = HoloTy::NextFas(this_00->field_20C0), iVar7 != 0)) {
       local_8 = 0;
     }
     if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
@@ -194,49 +192,45 @@ switchD_005adb01_caseD_c:
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if ((this_00[1].field_0x653 != '\0') && (*(HoloTy **)&this_00[1].field_0x658 != (HoloTy *)0x0)
-         ) {
-        HoloTy::Done(*(HoloTy **)&this_00[1].field_0x658);
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_00[1].field_0x658);
-        *(undefined4 *)&this_00[1].field_0x658 = 0;
+      if ((this_00->field_0x20b3 != '\0') && (this_00->field_20B8 != (HoloTy *)0x0)) {
+        HoloTy::Done(this_00->field_20B8);
+        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20B8);
+        this_00->field_20B8 = (HoloTy *)0x0;
       }
-      if ((this_00[1].field_0x654 != '\0') && (*(HoloTy **)&this_00[1].field_0x65c != (HoloTy *)0x0)
-         ) {
-        HoloTy::Done(*(HoloTy **)&this_00[1].field_0x65c);
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_00[1].field_0x65c);
-        *(undefined4 *)&this_00[1].field_0x65c = 0;
+      if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
+        HoloTy::Done(this_00->field_20BC);
+        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20BC);
+        this_00->field_20BC = (HoloTy *)0x0;
       }
-      if ((this_00[1].field_0x657 != '\0') && (*(HoloTy **)&this_00[1].field_0x660 != (HoloTy *)0x0)
-         ) {
-        HoloTy::Done(*(HoloTy **)&this_00[1].field_0x660);
-        Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_00[1].field_0x660);
-        *(undefined4 *)&this_00[1].field_0x660 = 0;
+      if ((this_00->field_20B7 != '\0') && (this_00->field_20C0 != (HoloTy *)0x0)) {
+        HoloTy::Done(this_00->field_20C0);
+        Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_20C0);
+        this_00->field_20C0 = (HoloTy *)0x0;
       }
-      cVar1 = this_00[1].field_0x655;
-      this_00->field_0x65 = 1;
-      if (cVar1 != '\0') {
+      this_00->field_0065 = 1;
+      if (this_00->field_20B5 != '\0') {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
         if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
           FUN_006b3af0(*(int **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc));
         }
       }
       CreateCtrls(this_00,'\x01');
-      if (*(uint *)&this_00[1].field_0x14 != 0xffffffff) {
+      if (this_00->field_1A74 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)&this_00[1].field_0x58,*(uint *)&this_00[1].field_0x14,0xfffffffe,
-                   *(uint *)&this_00[1].field_0x2c,*(uint *)&this_00[1].field_0x30);
+                  ((uint *)this_00->field_1AB8,this_00->field_1A74,0xfffffffe,this_00->field_1A8C,
+                   this_00->field_1A90);
       }
-      if (*(uint *)&this_00[1].field_0xa5 != 0xffffffff) {
+      if (this_00->field_1B05 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)&this_00[1].field_0xe9,*(uint *)&this_00[1].field_0xa5,0xfffffffe,
-                   *(uint *)&this_00[1].field_0xbd,*(uint *)&this_00[1].field_0xc1);
+                  ((uint *)this_00->field_1B49,this_00->field_1B05,0xfffffffe,this_00->field_1B1D,
+                   this_00->field_1B21);
       }
-      if (*(uint *)&this_00[1].field_0x136 != 0xffffffff) {
+      if (this_00->field_1B96 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
-                  (*(uint **)&this_00[1].field_0x17a,*(uint *)&this_00[1].field_0x136,0xfffffffe,
-                   *(uint *)&this_00[1].field_0x14e,*(uint *)&this_00[1].field_0x152);
+                  ((uint *)this_00->field_1BDA,this_00->field_1B96,0xfffffffe,this_00->field_1BAE,
+                   this_00->field_1BB2);
       }
-      puVar9 = (uint *)&this_00[1].field_0x1c3;
+      puVar9 = &this_00->field_1C23;
       iVar7 = 0x16;
       do {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*puVar9);
@@ -280,7 +274,7 @@ switchD_005adb01_caseD_c:
     }
   }
   else if (cVar1 == '\x04') {
-    if ((this_00[1].field_0x655 != '\0') && (0 < *(int *)(DAT_0081176c + 0x300))) {
+    if ((this_00->field_20B5 != '\0') && (0 < *(int *)(DAT_0081176c + 0x300))) {
       *(int *)(DAT_0081176c + 0x300) = *(int *)(DAT_0081176c + 0x300) + -1;
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
@@ -290,11 +284,10 @@ switchD_005adb01_caseD_c:
       }
       local_8 = 0;
     }
-    if ((this_00[1].field_0x653 != '\0') && (*(HoloTy **)&this_00[1].field_0x658 != (HoloTy *)0x0))
-    {
-      iVar7 = HoloTy::NextFas(*(HoloTy **)&this_00[1].field_0x658);
+    if ((this_00->field_0x20b3 != '\0') && (this_00->field_20B8 != (HoloTy *)0x0)) {
+      iVar7 = HoloTy::NextFas(this_00->field_20B8);
       if (iVar7 == 0) {
-        uVar4 = *(uint *)(*(int *)&this_00[1].field_0x658 + 3);
+        uVar4 = this_00->field_20B8->field_0003;
         if (-1 < (int)uVar4) {
           FUN_006b3af0(DAT_008075a8,uVar4);
         }
@@ -303,11 +296,10 @@ switchD_005adb01_caseD_c:
         local_8 = 0;
       }
     }
-    if ((this_00[1].field_0x654 != '\0') && (*(HoloTy **)&this_00[1].field_0x65c != (HoloTy *)0x0))
-    {
-      iVar7 = HoloTy::NextFas(*(HoloTy **)&this_00[1].field_0x65c);
+    if ((this_00->field_20B4 != '\0') && (this_00->field_20BC != (HoloTy *)0x0)) {
+      iVar7 = HoloTy::NextFas(this_00->field_20BC);
       if (iVar7 == 0) {
-        uVar4 = *(uint *)(*(int *)&this_00[1].field_0x65c + 3);
+        uVar4 = this_00->field_20BC->field_0003;
         if (-1 < (int)uVar4) {
           FUN_006b3af0(DAT_008075a8,uVar4);
         }
@@ -316,11 +308,10 @@ switchD_005adb01_caseD_c:
         local_8 = 0;
       }
     }
-    if ((this_00[1].field_0x657 != '\0') && (*(HoloTy **)&this_00[1].field_0x660 != (HoloTy *)0x0))
-    {
-      iVar7 = HoloTy::NextFas(*(HoloTy **)&this_00[1].field_0x660);
+    if ((this_00->field_20B7 != '\0') && (this_00->field_20C0 != (HoloTy *)0x0)) {
+      iVar7 = HoloTy::NextFas(this_00->field_20C0);
       if (iVar7 == 0) {
-        uVar4 = *(uint *)(*(int *)&this_00[1].field_0x660 + 3);
+        uVar4 = this_00->field_20C0->field_0003;
         if (-1 < (int)uVar4) {
           FUN_006b3af0(DAT_008075a8,uVar4);
         }
@@ -334,8 +325,8 @@ switchD_005adb01_caseD_c:
       local_8 = 0;
     }
     if (local_8 != 0) {
-      bVar2 = this_00->field_0x1a5a;
-      this_00->field_0x65 = 2;
+      bVar2 = this_00->field_1A5A;
+      this_00->field_0065 = 2;
       if ((bVar2 != 0xff) && (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0)) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,

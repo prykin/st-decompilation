@@ -23,9 +23,9 @@ void __thiscall HelpPanelTy::FwdBut(HelpPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     iVar3 = local_8->field_01CB;
-    if (*(int *)&local_8->field_0x1cf < *(int *)(iVar3 + 0xc) + -1) {
-      uVar5 = *(int *)&local_8->field_0x1cf + 1;
-      *(uint *)&local_8->field_0x1cf = uVar5;
+    if ((int)local_8->field_01CF < *(int *)(iVar3 + 0xc) + -1) {
+      uVar5 = local_8->field_01CF + 1;
+      local_8->field_01CF = uVar5;
       if (uVar5 < *(uint *)(iVar3 + 0xc)) {
         puVar6 = (undefined1 *)(*(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c));
       }

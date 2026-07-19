@@ -1,4 +1,4 @@
-FUN_0070ad60:
+mfJpgLoadToDib:
 0070AD60  55                        PUSH EBP
 0070AD61  8B EC                     MOV EBP,ESP
 0070AD63  83 EC 4C                  SUB ESP,0x4c

@@ -1,4 +1,4 @@
-FUN_00648620:
+BossDataPack:
 00648620  55                        PUSH EBP
 00648621  8B EC                     MOV EBP,ESP
 00648623  83 EC 48                  SUB ESP,0x48

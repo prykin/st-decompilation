@@ -35,27 +35,24 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_01 = local_c;
   if (iVar4 == 0) {
-    if (local_c[1].field_0010 != 0) {
-      FUN_006e56b0(*(void **)&local_c->field_0xc,local_c[1].field_0010);
-      this_01[1].field_0010 = 0;
+    if (local_c->field_008F != 0) {
+      FUN_006e56b0((void *)local_c->field_000C,local_c->field_008F);
+      this_01->field_008F = 0;
       FUN_006b5f80(DAT_008075a8,0x262,0x226,0x91,0x28);
-      thunk_FUN_00540620(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',
-                         *(BITMAPINFO **)&this_01->field_0x5d);
+      PutDDXClip(0x262,0x226,0x262,0x226,0x91,(byte *)0x28,'\x01',(BITMAPINFO *)this_01->field_005D)
+      ;
     }
-    if (*(uint *)&this_01[1].field_0x1c != 0) {
-      FUN_006e56b0(*(void **)&this_01->field_0xc,*(uint *)&this_01[1].field_0x1c);
-      *(undefined4 *)&this_01[1].field_0x1c = 0;
+    if (this_01->field_009B != 0) {
+      FUN_006e56b0((void *)this_01->field_000C,this_01->field_009B);
+      this_01->field_009B = 0;
       FUN_006b5f80(DAT_008075a8,0x1e,0x1ea,300,0x1e);
-      thunk_FUN_00540620(0x1e,0x1ea,0x1e,0x1ea,300,(byte *)0x1e,'\x01',
-                         *(BITMAPINFO **)&this_01->field_0x5d);
+      PutDDXClip(0x1e,0x1ea,0x1e,0x1ea,300,(byte *)0x1e,'\x01',(BITMAPINFO *)this_01->field_005D);
     }
     FUN_006b5f80(DAT_008075a8,0x174,0x1a9,400,0x32);
-    thunk_FUN_00540620(0x174,0x1a9,0x174,0x1a9,400,(byte *)0x32,'\x01',
-                       *(BITMAPINFO **)&this_01->field_0x5d);
+    PutDDXClip(0x174,0x1a9,0x174,0x1a9,400,(byte *)0x32,'\x01',(BITMAPINFO *)this_01->field_005D);
     if ((this_01->field_0066 == '\x01') &&
-       (this_01->field_0x67 = 0,
-       *(int *)(*(int *)(&this_01[6].field_0x4d + (uint)(byte)this_01->field_006A * 4) + 0xc) != 0))
-    {
+       (this_01->field_0067 = 0,
+       *(int *)((&this_01->field_0347)[(byte)this_01->field_006A] + 0xc) != 0)) {
       pcVar11 = s__s_s_s__s_007ca1ec;
       puVar10 = &DAT_0080f33a;
       local_8 = (cMf32 *)0x0;
@@ -72,10 +69,10 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       g_currentExceptionFrame = local_98.previous;
       if (local_8 != (cMf32 *)0x0) {
         local_10 = &DAT_0080c522;
-        iVar4 = *(int *)(&local_c[6].field_0x4d + (uint)(byte)local_c->field_006A * 4);
-        if (*(uint *)&local_c->field_0x6b < *(uint *)(iVar4 + 0xc)) {
+        iVar4 = (&local_c->field_0347)[(byte)local_c->field_006A];
+        if ((uint)local_c->field_006B < *(uint *)(iVar4 + 0xc)) {
           puVar10 = (undefined4 *)
-                    (*(int *)(iVar4 + 8) * *(uint *)&local_c->field_0x6b + *(int *)(iVar4 + 0x1c));
+                    (*(int *)(iVar4 + 8) * local_c->field_006B + *(int *)(iVar4 + 0x1c));
         }
         else {
           puVar10 = (undefined4 *)0x0;
@@ -85,7 +82,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
         puVar5 = cMf32::RecGet(this_02,0xc,(char *)&DAT_0080f33a,(int *)&local_10,0);
         this_00 = extraout_ECX;
         if (puVar5 != (ushort *)0x0) {
-          this_01->field_0x67 = 1;
+          this_01->field_0067 = 1;
           puVar10 = &DAT_0080c967;
           puVar9 = &DAT_008087b6;
           for (iVar4 = 0x666; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -97,7 +94,7 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
           this_00 = (cMf32 *)0x0;
           this_02 = local_8;
         }
-        cMf32::delete(this_00,(undefined4 *)this_02);
+        cMf32::delete(this_00,&this_02->field_0000);
       }
     }
     puVar1 = &this_01->field_0x1d;
@@ -106,57 +103,55 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       *puVar10 = 0;
       puVar10 = puVar10 + 1;
     }
-    *(undefined4 *)&this_01->field_0x2d = 0x23;
+    this_01->field_002D = 0x23;
     iVar4 = 0;
     do {
       *(short *)&this_01->field_0x31 = (short)iVar4 + 1;
       if (iVar4 == 0) {
         sVar3 = 1;
       }
-      else if (this_01->field_0x67 == '\0') {
+      else if (this_01->field_0067 == '\0') {
         sVar3 = 2;
       }
       else {
         sVar3 = (((int)(DAT_0080c83e + 2) <= iVar4) - 1 & 0xfffe) + 2;
       }
-      uVar6 = *(undefined4 *)&this_01[1].field_0x20;
-      *(short *)&this_01->field_0x33 = sVar3;
-      FUN_006e6080(this_01,2,uVar6,(undefined4 *)puVar1);
+      this_01->field_0033 = sVar3;
+      FUN_006e6080(this_01,2,this_01->field_009F,(undefined4 *)puVar1);
       iVar4 = iVar4 + 1;
     } while (iVar4 < 9);
-    if (this_01->field_0x67 == '\0') {
-      uVar6 = this_01[1].field_0010;
-      *(undefined4 *)&this_01->field_0x2d = 0x20;
+    if (this_01->field_0067 == '\0') {
+      this_01->field_002D = 0x20;
       *(undefined4 *)&this_01->field_0x31 = 0;
-      FUN_006e6080(this_01,2,uVar6,(undefined4 *)puVar1);
+      FUN_006e6080(this_01,2,this_01->field_008F,(undefined4 *)puVar1);
     }
     else {
       iVar4 = 0;
-      this_01->field_0x69 = 0;
-      *(undefined4 *)&this_01[5].field_0x28 = 0;
+      this_01->field_0069 = 0;
+      this_01->field_02A3 = 0;
       if (DAT_0080c83e != 0) {
         piVar8 = &DAT_0080c947;
         do {
-          if (*(int *)&this_01[5].field_0x28 < *piVar8) {
-            *(int *)&this_01[5].field_0x28 = *piVar8;
+          if ((int)this_01->field_02A3 < *piVar8) {
+            this_01->field_02A3 = *piVar8;
           }
           iVar4 = iVar4 + 1;
           piVar8 = piVar8 + 1;
         } while (iVar4 < (int)(uint)DAT_0080c83e);
       }
-      if (*(int *)&this_01[5].field_0x28 < DAT_0080c963) {
-        *(int *)&this_01[5].field_0x28 = DAT_0080c963;
+      if ((int)this_01->field_02A3 < DAT_0080c963) {
+        this_01->field_02A3 = DAT_0080c963;
       }
       uVar6 = CreateBut(this_01,1,1,0x262,0x226,0x91,0x28,0x6200,0x6212);
-      this_01[1].field_0010 = uVar6;
+      this_01->field_008F = uVar6;
       if (this_01->field_0066 == '\x01') {
         uVar6 = CreateBut(this_01,1,1,0x1e,0x1ea,300,0x1e,0x6203,0x6215);
-        *(undefined4 *)&this_01[1].field_0x1c = uVar6;
+        this_01->field_009B = uVar6;
       }
     }
-    this_01->field_0x68 = 1;
+    this_01->field_0068 = 1;
     SetCtrl(this_01,1);
-    *(undefined4 *)&this_01->field_0x2d = 5;
+    this_01->field_002D = 5;
     FUN_006e6080(this_01,0xf,0,(undefined4 *)&this_01->field_0x1d);
     g_currentExceptionFrame = local_54.previous;
     return;

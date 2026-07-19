@@ -1,4 +1,4 @@
-FUN_0070a870:
+mfImgGetTransp:
 0070A870  55                        PUSH EBP
 0070A871  8B EC                     MOV EBP,ESP
 0070A873  83 EC 50                  SUB ESP,0x50

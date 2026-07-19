@@ -1,4 +1,4 @@
-FUN_006efb70:
+mfTMapErase:
 006EFB70  55                        PUSH EBP
 006EFB71  8B EC                     MOV EBP,ESP
 006EFB73  83 EC 44                  SUB ESP,0x44

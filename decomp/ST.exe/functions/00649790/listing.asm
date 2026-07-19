@@ -1,4 +1,4 @@
-FUN_00649790:
+CreatePlrDataForBO:
 00649790  55                        PUSH EBP
 00649791  8B EC                     MOV EBP,ESP
 00649793  81 EC 90 04 00 00         SUB ESP,0x490

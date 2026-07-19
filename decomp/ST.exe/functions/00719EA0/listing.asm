@@ -1,4 +1,4 @@
-FUN_00719ea0:
+GetPcmFromWavFile:
 00719EA0  55                        PUSH EBP
 00719EA1  8B EC                     MOV EBP,ESP
 00719EA3  81 EC 8C 00 00 00         SUB ESP,0x8c

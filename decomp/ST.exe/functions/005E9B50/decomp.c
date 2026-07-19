@@ -13,8 +13,8 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar6;
-  undefined4 local_8d8 [6];
+  ccFntTy **ppcVar6;
+  ccFntTy *local_8d8 [6];
   undefined4 local_8c0;
   undefined4 local_8bc;
   undefined4 local_8b8;
@@ -28,35 +28,35 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   InternalExceptionFrame local_4c;
   WaitTy *local_8;
   
-  puVar6 = local_8d8;
+  ppcVar6 = local_8d8;
   local_8 = this;
   for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = 0;
-    puVar6 = puVar6 + 1;
+    *ppcVar6 = (ccFntTy *)0x0;
+    ppcVar6 = ppcVar6 + 1;
   }
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pWVar3 = local_8;
   if (iVar5 == 0) {
-    if (*(int *)&local_8[0x42].field_0x5a == 0) {
+    if (local_8->field_1A64 == 0) {
       StartSystemTy::CreateBinDesc(DAT_0081176c);
       StartSystemTy::CreateChatView(DAT_0081176c);
-      puVar6 = local_8d8;
+      ppcVar6 = local_8d8;
       for (iVar5 = 0x223; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *puVar6 = 0;
-        puVar6 = puVar6 + 1;
+        *ppcVar6 = (ccFntTy *)0x0;
+        ppcVar6 = ppcVar6 + 1;
       }
-      local_8d8[0] = 1;
-      local_8d8[1] = 9;
+      local_8d8[0] = (ccFntTy *)0x1;
+      local_8d8[1] = (ccFntTy *)0x9;
       local_8d8[2] = DAT_0081176c->field_0034;
-      local_8d8[3] = 0xcb;
-      local_8d8[4] = 0x23f;
-      local_8d8[5] = *(undefined4 *)(DAT_0081176c->field_0682 + 4);
+      local_8d8[3] = (ccFntTy *)0xcb;
+      local_8d8[4] = (ccFntTy *)0x23f;
+      local_8d8[5] = *(ccFntTy **)(DAT_0081176c->field_0682 + 4);
       local_8c0 = *(undefined4 *)(DAT_0081176c->field_0682 + 8);
       local_8bc = 0x104;
       local_8b8 = DAT_0081176c->field_0686;
-      piVar1 = *(int **)&pWVar3->field_0xc;
+      piVar1 = (int *)pWVar3->field_000C;
       local_74 = 0x100;
       local_88c = piVar1[5];
       local_888 = 0;

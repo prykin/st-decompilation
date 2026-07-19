@@ -29,22 +29,22 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
       cVar1 = local_c->field_01A1;
       if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
         local_c->field_01A2 = cVar1;
-        *(undefined4 *)&local_c->field_0x1ab = local_c->field_01A3;
+        local_c->field_01AB = local_c->field_01A3;
       }
       else {
         local_c->field_01A2 = 0;
-        *(undefined4 *)&local_c->field_0x1ab = 0;
+        local_c->field_01AB = 0;
       }
       local_c->field_01A1 = 0xc;
       local_c->field_01A3 = param_1;
       local_c->field_01A7 = 0;
-      *(undefined2 *)&local_c->field_0x1af = 0x23;
-      *(undefined2 *)&local_c->field_0x1b1 = 5;
-      if (*(int *)&local_c->field_0x178 != 0) {
+      local_c->field_01AF = 0x23;
+      local_c->field_01B1 = 5;
+      if (local_c->field_0178 != 0) {
         local_c->field_0028 = 0x4202;
         *(undefined2 *)&local_c->field_0x2c = 0;
         local_c->field_002E = 2;
-        *(int *)&local_c->field_0x30 = *(int *)&local_c->field_0x178;
+        *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
         if (DAT_00802a30 != (undefined4 *)0x0) {
           (**(code **)*DAT_00802a30)(&local_c->field_0x18);
         }

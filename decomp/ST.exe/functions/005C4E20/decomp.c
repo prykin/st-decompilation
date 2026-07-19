@@ -34,40 +34,40 @@ void __thiscall SettMapTy::PaintSettMap(SettMapTy *this,char param_1)
   if (errorCode == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pSVar3 = local_8;
-    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)&local_8->field_0x5d);
-    cVar1 = pSVar3[0x4c].field_0x2a;
+    PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005D);
+    cVar1 = pSVar3->field_1E26;
     pCVar7 = extraout_ECX;
     if (((cVar1 == '\x06') || (cVar1 == '\a')) || (cVar1 == '\x0e')) {
-      if ((*(int *)&pSVar3[0x56].field_0x2 == 0) && (param_1 == '\0')) {
+      if ((pSVar3->field_21F0 == (HoloTy *)0x0) && (param_1 == '\0')) {
         MMMObjTy::OutRGlProc
                   (DAT_0080759c,(int)DAT_0080759c,0,0,10,0xb4,0xf9,0x123,
-                   (undefined4 *)(*(int *)&pSVar3[0x42].field_0x51 + 0x140));
+                   (undefined4 *)(pSVar3->field_1A5B + 0x140));
         pCVar7 = extraout_ECX_01;
       }
     }
-    else if (((*(int *)((int)&pSVar3[0x55].field_0061 + 2) == 0) && (param_1 == '\0')) ||
-            ((param_1 != '\0' && (pSVar3[0x55].field_0x59 == '\0')))) {
-      pMVar6 = (MMMObjTy *)(*(int *)&pSVar3[0x42].field_0x51 + 0x140);
+    else if (((pSVar3->field_21EC == (HoloTy *)0x0) && (param_1 == '\0')) ||
+            ((param_1 != '\0' && (pSVar3->field_0x21e2 == '\0')))) {
+      pMVar6 = (MMMObjTy *)(pSVar3->field_1A5B + 0x140);
       MMMObjTy::OutBSlProc(pMVar6,(int)DAT_0080759c,0,0,10,0xb4,0xf9,0x121,(undefined4 *)pMVar6);
       pCVar7 = extraout_ECX_00;
     }
-    cVar1 = pSVar3[0x4c].field_0x2a;
+    cVar1 = pSVar3->field_1E26;
     if ((((cVar1 != '\x06') && (cVar1 != '\x01')) && (cVar1 != '\x02')) &&
-       (((*(int *)&pSVar3[0x56].field_0xa == 0 && (param_1 == '\0')) ||
-        ((param_1 != '\0' && (pSVar3[0x55].field_0x5d == '\0')))))) {
+       (((pSVar3->field_21F8 == (HoloTy *)0x0 && (param_1 == '\0')) ||
+        ((param_1 != '\0' && (pSVar3->field_0x21e6 == '\0')))))) {
       ChatGlassTy::OutChGlProc
                 (pCVar7,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,
-                 (undefined4 *)(*(int *)&pSVar3[0x42].field_0x51 + 0x140));
+                 (undefined4 *)(pSVar3->field_1A5B + 0x140));
     }
-    if ((*(int *)&pSVar3[0x55].field_0x5f == 0) && (param_1 == '\0')) {
-      pMVar6 = (MMMObjTy *)(*(int *)&pSVar3[0x42].field_0x51 + 0x140);
+    if ((pSVar3->field_21E8 == (HoloTy *)0x0) && (param_1 == '\0')) {
+      pMVar6 = (MMMObjTy *)(pSVar3->field_1A5B + 0x140);
       MMMObjTy::OutBSlProc(pMVar6,(int)DAT_0080759c,0,0,0x112,0x38,0x205,0x104,(undefined4 *)pMVar6)
       ;
     }
-    if ((*(int *)&pSVar3[0x56].field_0x6 == 0) && (param_1 == '\0')) {
+    if ((pSVar3->field_21F4 == (HoloTy *)0x0) && (param_1 == '\0')) {
       MMMObjTy::OutRGlProc
                 (DAT_0080759c,(int)DAT_0080759c,0,0,0x112,0x149,0x205,0x8c,
-                 (undefined4 *)(*(int *)&pSVar3[0x42].field_0x51 + 0x140));
+                 (undefined4 *)(pSVar3->field_1A5B + 0x140));
     }
     uVar11 = 0;
     pvVar10 = *(void **)(DAT_0081176c + 0x30);

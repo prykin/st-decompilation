@@ -34,8 +34,8 @@ void __thiscall SpecPanelTy::ShiftControls(SpecPanelTy *this,int param_1)
     local_8 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
-      if (*(int *)&local_8->field_0x17c != 0) {
-        FUN_006e6080(local_8,2,*(int *)&local_8->field_0x17c,(undefined4 *)&local_8->field_0x18);
+      if (local_8->field_017C != 0) {
+        FUN_006e6080(local_8,2,local_8->field_017C,(undefined4 *)&local_8->field_0x18);
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

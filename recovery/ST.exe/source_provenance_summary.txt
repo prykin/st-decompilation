@@ -1,0 +1,10 @@
+program=ST.exe
+functions_with_source_evidence=1258
+source_auto_apply=282
+functions_with_free_name_candidates=147
+free_name_auto_apply=141
+source_already_documented=976
+source_conflicts=0
+note=Source comments and function names have independent apply flags.
+note_lines=Diagnostic lines identify metadata/report sites, not function definitions.
+note_names=Automatic names require one strict mixed-case identifier near one source path.

@@ -254,8 +254,7 @@ undefined4 __thiscall STMBombC::GetMessage(STMBombC *this,int param_1)
       pbVar11 = pbVar11 + 1;
       pbVar13 = pbVar13 + 1;
     }
-    STPlaySystemC::SaveObjData
-              (DAT_00802a38,*(undefined4 *)&this_00->field_0x18,local_14,local_18 + 0x87 + local_10)
+    STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_14,local_18 + 0x87 + local_10)
     ;
     FUN_006ab060(&local_20);
     FUN_006ab060(&local_1c);

@@ -60,8 +60,8 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
       if (bVar2 != 0) {
         local_20 = local_ac;
         local_c = local_18;
-        local_10 = &this_00->field_0xd3b + (int)piVar8 * 6;
-        local_14 = (undefined4 *)(&this_00->field_0xd53 + (int)piVar8 * 0x18);
+        local_10 = &this_00->field_0D3B + (int)piVar8 * 6;
+        local_14 = &this_00->field_0D53 + (int)piVar8 * 6;
         do {
           iVar3 = 0xb;
           bVar10 = true;
@@ -81,7 +81,7 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             bVar2 = 0;
             uVar11 = 6;
             pbVar4 = (byte *)thunk_FUN_004f1d20((undefined1 *)local_c);
-            puVar5 = FUN_00709af0(DAT_00806794,CASE_1F,pbVar4,uVar11,bVar2,iVar3,iVar12,puVar13);
+            puVar5 = mfRLoad(DAT_00806794,CASE_1F,pbVar4,uVar11,bVar2,iVar3,iVar12,puVar13);
             local_14[-0x12] = puVar5;
             *local_10 = 0;
             *local_14 = this_00->field_0038;
@@ -91,10 +91,10 @@ void __thiscall CPanelTy::UpdateStackPanel(CPanelTy *this,uint param_1)
             bVar2 = local_5;
             if (bVar6 < 0xb) {
               uVar11 = (uint)bVar6;
-              if (-1 < (int)*(uint *)(&this_00->field_0x148 + uVar11 * 4)) {
+              if (-1 < (int)(&this_00->field_0148)[uVar11]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,*(uint *)(&this_00->field_0x148 + uVar11 * 4),0xffffffff,
-                           *(uint *)(&this_00->field_0x3c + uVar11 * 4),
+                          (DAT_008075a8,(&this_00->field_0148)[uVar11],0xffffffff,
+                           (&this_00->field_003C)[uVar11],
                            *(uint *)(&this_00->field_0x94 + uVar11 * 4));
                 bVar2 = local_5;
               }

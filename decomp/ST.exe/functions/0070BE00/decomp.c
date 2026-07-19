@@ -13,7 +13,8 @@ FUN_0070be00(byte *param_1,int param_2,int param_3,int param_4,int param_5,uint 
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
   iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffbc,0,pIVar3,in_stack_ffffffbc);
   if (iVar1 == 0) {
-    piVar2 = FUN_0070b900(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,param_9);
+    piVar2 = imgGetDibFromFile(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
+                               param_9);
     g_currentExceptionFrame = pIVar3;
     return piVar2;
   }

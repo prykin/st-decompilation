@@ -91,7 +91,7 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
     param_2 = param_2 + 1;
     puVar13 = (ushort *)((int)puVar13 + 1);
   }
-  DVar5 = FUN_00751980(*(int **)local_14,local_8,(undefined4 *)0x0,0);
+  DVar5 = FUN_00751980((int *)local_14->field_0000,local_8,(undefined4 *)0x0,0);
   if (DVar5 == 0xfffffffc) {
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x163);
   }
@@ -146,11 +146,12 @@ cMf32::RecRen(cMf32 *this,undefined1 param_1,char *param_2,char *param_3,int par
   *(undefined4 *)(local_c + 5) = *(undefined4 *)(local_8 + 5);
   *(undefined4 *)(local_c + 7) = *(undefined4 *)(local_8 + 7);
   *(undefined4 *)(local_c + 9) = *(undefined4 *)(local_8 + 9);
-  FUN_00751100(*(uint **)this_00,local_8);
+  FUN_00751100((uint *)this_00->field_0000,local_8);
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }
-  Library::DKW::DB::FUN_00751050(*(uint **)this_00,local_c,local_10,*(uint *)((int)local_c + 1));
+  Library::DKW::DB::FUN_00751050
+            ((uint *)this_00->field_0000,local_c,local_10,*(uint *)((int)local_c + 1));
   if (local_c != (ushort *)0x0) {
     FUN_006ab060(&local_c);
   }

@@ -28,19 +28,17 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 == 0) {
-    PaintDamageXY(local_c,local_c->field_0194,param_1 + 0x39,0x65,(uint)(byte)local_c->field_0xc33,
+    PaintDamageXY(local_c,local_c->field_0194,param_1 + 0x39,0x65,(uint)(byte)local_c->field_0C33,
                   0x2714);
-    PaintCostsXY(this_00,this_00->field_0194,param_1 + 0x39,0x70,*(ushort *)&this_00->field_0xc1c,
-                 0xffff,3,0);
+    PaintCostsXY(this_00,this_00->field_0194,param_1 + 0x39,0x70,this_00->field_0C1C,0xffff,3,0);
     local_8 = local_8 & 0xffffff00;
-    local_10 = ((uint)(byte)this_00->field_0xc33 * 0x28) / 100;
-    uVar4 = (uint)(byte)this_00->field_0xc33 * -0x33333328;
+    local_10 = ((uint)(byte)this_00->field_0C33 * 0x28) / 100;
+    uVar4 = (uint)(byte)this_00->field_0C33 * -0x33333328;
     if (local_10 != 0) {
       uVar7 = 0;
       do {
-        pbVar3 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,3);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,'\x01',
-                           pbVar3);
+        pbVar3 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
+        DibPut((undefined4 *)this_00->field_0194,param_1 + 0xb + uVar7 * 4,0x5c,'\x01',pbVar3);
         bVar5 = (byte)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar5);
         uVar7 = (uint)bVar5;
@@ -51,8 +49,8 @@ uint __thiscall CPanelTy::PaintPerRes(CPanelTy *this,int param_1)
       iVar2 = param_1 + 0xb + (local_8 & 0xff) * 4;
       iVar6 = 0x28 - (local_8 & 0xff);
       do {
-        pbVar3 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-        uVar4 = thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3);
+        pbVar3 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+        uVar4 = DibPut((undefined4 *)this_00->field_0194,iVar2,0x5c,'\x01',pbVar3);
         iVar2 = iVar2 + 4;
         iVar6 = iVar6 + -1;
       } while (iVar6 != 0);

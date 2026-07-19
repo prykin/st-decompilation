@@ -1,4 +1,4 @@
-FUN_0071a030:
+mfWavSave:
 0071A030  55                        PUSH EBP
 0071A031  8B EC                     MOV EBP,ESP
 0071A033  83 EC 50                  SUB ESP,0x50

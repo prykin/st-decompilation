@@ -32,7 +32,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
     local_c = local_14[1] - this->field_0044;
   }
   uVar4 = this->field_0199 + -0xc0af + *(int *)(param_1 + 0x10);
-  iVar7 = *(int *)(&this[1].field_0x1 + (uint)(byte)this->field_0278 * 4);
+  iVar7 = (&this->field_027A)[(byte)this->field_0278];
   if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar4)) {
     local_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
   }
@@ -42,7 +42,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
   }
   local_18 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
-    local_10 = *(byte **)&this[1].field_0x15;
+    local_10 = (byte *)this->field_028E;
   }
   else {
     if ((char)local_8[2] == 0) {
@@ -72,8 +72,8 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
     RaiseInternalException(iVar5,0,s_E____titans_Andrey_bldboat_cpp_007c17b4,0x9e);
     return;
   }
-  FUN_006b4170(*(int *)&local_18->field_0x68,0,local_1c,local_c,local_14[2],local_14[3],0);
-  thunk_FUN_00540760(*(undefined4 **)&pBVar2->field_0x68,iVar7 + 1,iVar3 + 1,'\x01',local_10);
+  FUN_006b4170(local_18->field_0068,0,local_1c,local_c,local_14[2],local_14[3],0);
+  DibPut((undefined4 *)pBVar2->field_0068,iVar7 + 1,iVar3 + 1,'\x01',local_10);
   if (*(short *)(param_1 + 0x14) == 3) {
     if (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0) goto LAB_004ef4e9;
     iVar5 = (-(uint)((char)local_8[2] != 0) & 2) + 3;
@@ -81,19 +81,17 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
   else {
     iVar5 = 4;
   }
-  pbVar6 = (byte *)FUN_0070b3a0(*(int *)&pBVar2->field_0x190,iVar5);
-  thunk_FUN_00540760(*(undefined4 **)&pBVar2->field_0x68,iVar7,iVar3,'\x06',pbVar6);
+  pbVar6 = (byte *)FUN_0070b3a0(pBVar2->field_0190,iVar5);
+  DibPut((undefined4 *)pBVar2->field_0068,iVar7,iVar3,'\x06',pbVar6);
   if ((((local_8 != (Global_sub_00526BA0_param_1Enum *)0x0) && (local_8[1] != 0)) &&
       ((char)local_8[2] != 0)) && (*(short *)(param_1 + 0x14) != 0)) {
     wsprintfA(&pBVar2->field_0x6c,&DAT_007c1890,local_8[1]);
-    ccFntTy::SetSurf(*(ccFntTy **)&pBVar2[1].field_0x11,*(int *)&pBVar2->field_0x68,0,iVar7,iVar3,
-                     local_14[2],local_14[3]);
-    ccFntTy::WrStr(*(ccFntTy **)&pBVar2[1].field_0x11,(uint *)&pBVar2->field_0x6c,-2,-1,0);
+    ccFntTy::SetSurf(pBVar2->field_028A,pBVar2->field_0068,0,iVar7,iVar3,local_14[2],local_14[3]);
+    ccFntTy::WrStr(pBVar2->field_028A,(uint *)&pBVar2->field_0x6c,-2,-1,0);
   }
 LAB_004ef4e9:
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,*(uint *)&pBVar2->field_0x60,0xffffffff,pBVar2->field_003C,
-             pBVar2->field_0044);
+            (DAT_008075a8,pBVar2->field_0060,0xffffffff,pBVar2->field_003C,pBVar2->field_0044);
   g_currentExceptionFrame = local_60.previous;
   return;
 }

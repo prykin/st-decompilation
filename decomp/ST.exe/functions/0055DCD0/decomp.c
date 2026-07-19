@@ -1,6 +1,11 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\paltool.cpp
+   Diagnostic line evidence: 75 | 77 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __cdecl
-FUN_0055dcd0(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int param_5,int param_6)
+SetPalette(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int param_5,int param_6)
 
 {
   code *pcVar1;

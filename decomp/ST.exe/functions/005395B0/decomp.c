@@ -33,7 +33,7 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_pause_cpp_007c7490,0x54);
     return;
   }
-  switch(*(undefined2 *)&local_8->field_0x172) {
+  switch(local_8->field_0172) {
   case 1:
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
@@ -42,7 +42,7 @@ void __thiscall PausePanelTy::SwitchPausePanel(PausePanelTy *this,int param_1)
     ShiftControls(local_8,0);
 switchD_005395f3_caseD_3:
     if (param_1 == 0) {
-      *(undefined2 *)&pPVar2->field_0x172 = 4;
+      pPVar2->field_0172 = 4;
       GVar4 = CASE_B0;
 LAB_0053962f:
       thunk_FUN_005252c0(GVar4);
@@ -56,7 +56,7 @@ switchD_005395f3_default:
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    *(undefined2 *)&local_8->field_0x172 = 3;
+    local_8->field_0172 = 3;
     GVar4 = CASE_AF;
     goto LAB_0053962f;
   case 3:

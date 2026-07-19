@@ -23,8 +23,8 @@ void __thiscall MMsgTy::DoneMMsg(MMsgTy *this)
   if (errorCode == 0) {
     MMObjTy::DoneMMObj((MMObjTy *)local_8);
     *(undefined4 *)(DAT_0081176c + 0x2e6) = 0;
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2[1].field_0x4d);
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2[1].field_0xde);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2->field_0x1cf7);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2->field_1D88);
     g_currentExceptionFrame = pIVar4;
     return;
   }

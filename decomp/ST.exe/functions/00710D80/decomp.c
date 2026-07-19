@@ -28,16 +28,16 @@ ccFntTy::GetSurfAsSpr(ccFntTy *this,byte param_1,int param_2,int param_3,int par
   iVar3 = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar5);
   pcVar2 = local_14;
   if (iVar3 == 0) {
-    if ((*(int *)(local_14 + 0x72) == 0) || (*(int *)(local_14 + 0x76) == 0)) {
+    if ((local_14->field_0072 == 0) || (local_14->field_0076 == 0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x4bc);
     }
     if ((param_4 < 1) || (param_5 < 1)) {
-      iVar3 = *(int *)(pcVar2 + 0x76);
+      iVar3 = pcVar2->field_0076;
     }
     else {
       local_8 = Library::DKW::WGR::FUN_006b55f0
-                          ((undefined4 *)0x0,0,0,0,*(int *)(pcVar2 + 0x72),*(int *)(pcVar2 + 0x76),
-                           param_2,param_3,param_4,param_5);
+                          ((undefined4 *)0x0,0,0,0,pcVar2->field_0072,pcVar2->field_0076,param_2,
+                           param_3,param_4,param_5);
       if (local_8 == (undefined4 *)0x0) {
         RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x4c3);
       }

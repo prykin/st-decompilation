@@ -238,7 +238,7 @@ LAB_0055c9c5:
       if (DAT_0081174c != (FSGSTy *)0x0) {
         *(undefined4 *)((int)this + 0x1b) = 0x6156;
         *(Global_sub_0055C830_param_1Enum *)((int)this + 0x1f) = param_1;
-        (*(code *)**(undefined4 **)DAT_0081174c)((int)this + 0xb);
+        (**(code **)DAT_0081174c->field_0000)((int)this + 0xb);
       }
       break;
     case CASE_10:

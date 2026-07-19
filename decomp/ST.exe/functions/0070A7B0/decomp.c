@@ -1,5 +1,10 @@
 
-int __cdecl FUN_0070a7b0(cMf32 *param_1,byte param_2,char *param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 101 | 103 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfImgGetHeight(cMf32 *param_1,byte param_2,char *param_3,int param_4)
 
 {
   code *pcVar1;

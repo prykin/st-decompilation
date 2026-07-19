@@ -21,15 +21,15 @@ void __thiscall HoloTy::Done(HoloTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   pHVar2 = local_8;
   if (errorCode == 0) {
-    if (-1 < (int)*(uint *)(local_8 + 3)) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)(local_8 + 3));
+    if (-1 < (int)local_8->field_0003) {
+      FUN_006b3bb0(DAT_008075a8,local_8->field_0003);
     }
-    *(undefined4 *)(pHVar2 + 3) = 0xffffffff;
-    if (*(int *)(pHVar2 + 0xb) != 0) {
-      FUN_006ab060((undefined4 *)(pHVar2 + 0xb));
+    pHVar2->field_0003 = 0xffffffff;
+    if (pHVar2->field_000B != 0) {
+      FUN_006ab060(&pHVar2->field_000B);
     }
-    if (*(int *)(pHVar2 + 7) != 0) {
-      FUN_006ab060((undefined4 *)(pHVar2 + 7));
+    if (pHVar2->field_0007 != 0) {
+      FUN_006ab060(&pHVar2->field_0007);
     }
     g_currentExceptionFrame = pIVar4;
     return;

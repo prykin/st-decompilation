@@ -21,25 +21,25 @@ void __thiscall CursorClassTy::DoneCursor(CursorClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_8;
   if (errorCode == 0) {
-    if (-1 < (int)*(uint *)&local_8[0xc].field_0x26) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&local_8[0xc].field_0x26);
+    if (-1 < (int)local_8->field_04D6) {
+      FUN_006b3bb0(DAT_008075a8,local_8->field_04D6);
     }
-    *(undefined4 *)&pCVar2[0xc].field_0x26 = 0xffffffff;
-    if (*(int *)&pCVar2[0xc].field_0x22 != 0) {
-      FUN_006ab060((undefined4 *)&pCVar2[0xc].field_0x22);
+    pCVar2->field_04D6 = 0xffffffff;
+    if (pCVar2->field_04D2 != 0) {
+      FUN_006ab060(&pCVar2->field_04D2);
     }
-    *(undefined4 *)&pCVar2[0xc].field_0x33 = 0;
-    *(undefined4 *)&pCVar2[0xc].field_0x37 = 0;
-    if (*(SpriteClassTy **)&pCVar2[0xc].field_0x3b != (SpriteClassTy *)0x0) {
-      SpriteClassTy::CloseSprite(*(SpriteClassTy **)&pCVar2[0xc].field_0x3b);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pCVar2[0xc].field_0x3b);
-      *(undefined4 *)&pCVar2[0xc].field_0x3b = 0;
+    pCVar2->field_04E3 = 0;
+    pCVar2->field_04E7 = 0;
+    if (pCVar2->field_04EB != (SpriteClassTy *)0x0) {
+      SpriteClassTy::CloseSprite(pCVar2->field_04EB);
+      Library::MSVCRT::FUN_0072e2b0(&pCVar2->field_04EB->vtable);
+      pCVar2->field_04EB = (SpriteClassTy *)0x0;
     }
-    if (*(int **)&pCVar2[1].field_0x49 != (int *)0x0) {
-      FUN_006b8a30(*(int **)&pCVar2[1].field_0x49);
+    if ((int *)pCVar2->field_00AD != (int *)0x0) {
+      FUN_006b8a30((int *)pCVar2->field_00AD);
     }
-    *(undefined4 *)&pCVar2[1].field_0x49 = 0;
-    SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar2->field_0x18);
+    pCVar2->field_00AD = 0;
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pCVar2->field_0018);
     DAT_00802a30 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -41,43 +41,43 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
     (*pcVar3)();
     return;
   }
-  if (local_14->field_0x1e26 == '\x02') {
-    local_8 = *(int *)&local_14->field_0x1f3f;
+  if (local_14->field_1E26 == '\x02') {
+    local_8 = local_14->field_1F3F;
   }
   else {
-    local_8 = *(int *)&local_14->field_0x1f43;
+    local_8 = local_14->field_1F43;
   }
-  *(undefined4 *)&local_14->field_0x29 = 2;
-  *(undefined4 *)&local_14->field_0x2d = 0x20;
+  local_14->field_0029 = 2;
+  local_14->field_002D = 0x20;
   local_c = 0;
   local_10 = 0x7e3;
   do {
     iVar9 = 0;
     iVar6 = local_10;
     do {
-      if (*(int *)(&pSVar5->field_0x0 + (iVar6 + iVar9) * 4) != 0) {
-        iVar1 = *(int *)&pSVar5->field_0x1f84;
-        if ((iVar1 == 0) ||
-           (uVar8 = *(int *)&pSVar5->field_0x1f88 + local_c, *(uint *)(iVar1 + 0xc) <= uVar8)) {
+      if ((&pSVar5->field_0000)[iVar6 + iVar9] != 0) {
+        iVar1 = pSVar5->field_1F84;
+        if ((iVar1 == 0) || (uVar8 = pSVar5->field_1F88 + local_c, *(uint *)(iVar1 + 0xc) <= uVar8))
+        {
           pcVar10 = (char *)0x0;
         }
         else {
           pcVar10 = (char *)(*(int *)(iVar1 + 8) * uVar8 + *(int *)(iVar1 + 0x1c));
         }
-        uVar2 = *(undefined4 *)(&pSVar5->field_0x0 + (iVar6 + iVar9) * 4);
-        *(undefined4 *)&pSVar5->field_0x31 = 0;
-        *(undefined4 *)&pSVar5->field_0x25 = uVar2;
+        uVar2 = (&pSVar5->field_0000)[iVar6 + iVar9];
+        pSVar5->field_0031 = 0;
+        pSVar5->field_0025 = uVar2;
         if (pcVar10 != (char *)0x0) {
           switch(iVar9) {
           case 0:
             if (*(byte **)(pcVar10 + 0x50) != (byte *)0x0) {
               FUN_006ae110(*(byte **)(pcVar10 + 0x50));
             }
-            if (pSVar5->field_0x1e26 == '\x02') {
-              puVar7 = thunk_FUN_0067e0e0(local_8,(uint)(byte)pcVar10[2],0xffffffff);
+            if (pSVar5->field_1E26 == '\x02') {
+              puVar7 = CreateStrategList(local_8,(uint)(byte)pcVar10[2],0xffffffff);
             }
             else {
-              puVar7 = thunk_FUN_0067dfd0(local_8,(uint)(byte)pcVar10[3],DAT_0080995c);
+              puVar7 = CreateOpponentList(local_8,(uint)(byte)pcVar10[3],DAT_0080995c);
             }
             *(uint **)(pcVar10 + 0x50) = puVar7;
             if (puVar7[3] <= (uint)(byte)pcVar10[5]) {
@@ -89,22 +89,22 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
             break;
           case 1:
           case 2:
-            if ((pSVar5->field_0x1e26 != '\x02') && (*pcVar10 != '\0')) {
+            if ((pSVar5->field_1E26 != '\x02') && (*pcVar10 != '\0')) {
               cVar4 = pcVar10[4];
 joined_r0x005d502e:
               if (cVar4 != '\0') goto LAB_005d5030;
             }
             break;
           case 3:
-            if (((pSVar5->field_0x1e26 != '\x02') || (pcVar10[4] != '\x02')) &&
+            if (((pSVar5->field_1E26 != '\x02') || (pcVar10[4] != '\x02')) &&
                (*(int *)(*(int *)(pcVar10 + 0x50) + 0xc) != 0)) {
 LAB_005d5030:
-              *(undefined4 *)&pSVar5->field_0x31 = 1;
+              pSVar5->field_0031 = 1;
             }
             break;
           case 5:
             if ((((DAT_0080874d != -1) && (*pcVar10 != '\0')) && (pcVar10[4] != '\0')) &&
-               (pSVar5->field_0x1e26 != '\x02')) {
+               (pSVar5->field_1E26 != '\x02')) {
               if ((pcVar10[4] == '\x02') &&
                  (cVar4 = DAT_00808a8f, *(int *)(pcVar10 + 6) == DAT_0080877f))
               goto joined_r0x005d502e;
@@ -112,7 +112,7 @@ LAB_005d5030:
             }
           }
         }
-        (**(code **)(**(int **)&pSVar5->field_0xc + 0x18))(&pSVar5->field_0x1d);
+        (**(code **)(*(int *)pSVar5->field_000C + 0x18))(&pSVar5->field_0x1d);
         iVar6 = local_10;
       }
       iVar9 = iVar9 + 1;

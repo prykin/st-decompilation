@@ -1,5 +1,10 @@
 
-void __cdecl FUN_00675fe0(uint param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 280 | 281 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl _AddAllGrpExch(uint param_1)
 
 {
   uint uVar1;

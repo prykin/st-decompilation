@@ -1,4 +1,4 @@
-FUN_00718080:
+mfPltNum:
 00718080  55                        PUSH EBP
 00718081  8B EC                     MOV EBP,ESP
 00718083  83 EC 50                  SUB ESP,0x50

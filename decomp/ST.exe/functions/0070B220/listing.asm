@@ -1,4 +1,4 @@
-FUN_0070b220:
+mfImtGetNumIms:
 0070B220  55                        PUSH EBP
 0070B221  8B EC                     MOV EBP,ESP
 0070B223  83 EC 50                  SUB ESP,0x50

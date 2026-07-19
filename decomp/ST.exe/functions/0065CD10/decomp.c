@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_0065cd10(undefined4 *param_1,uint *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_event_d.cpp
+   Diagnostic line evidence: 137 | 138 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl EventDataPack(undefined4 *param_1,uint *param_2)
 
 {
   code *pcVar1;

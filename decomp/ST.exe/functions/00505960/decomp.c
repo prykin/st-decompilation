@@ -61,7 +61,7 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
     local_14 = 0;
     local_2c = local_20 & 0xff;
     local_1c = 0x54;
-    local_18 = &pCVar2->field_0xc11 + local_2c * 6;
+    local_18 = &pCVar2->field_0C11 + local_2c * 6;
     local_24 = (uint)bVar6;
     do {
       if (*local_18 == '\0') {
@@ -70,15 +70,14 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
       else {
         uVar4 = ((uint)*(ushort *)(local_18 + 2) * 10) / (uint)*(ushort *)(local_18 + 4);
       }
-      pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b2,5);
-      thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
+      pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,5);
+      DibPut((undefined4 *)pCVar2->field_0194,0x74,local_1c,'\x01',pbVar5);
       local_10 = local_10 & 0xffffff00;
       if (uVar4 != 0) {
         uVar7 = 0;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,1);
-          thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,uVar7 * 4 + 0x76,local_1c + 2,'\x01',
-                             pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,1);
+          DibPut((undefined4 *)pCVar2->field_0194,uVar7 * 4 + 0x76,local_1c + 2,'\x01',pbVar5);
           bVar6 = (byte)local_10 + 1;
           local_10 = CONCAT31(local_10._1_3_,bVar6);
           uVar7 = (uint)bVar6;
@@ -88,17 +87,16 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         iVar8 = 10 - (local_10 & 0xff);
         iVar3 = (local_10 & 0xff) * 4 + 0x76;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,0);
-          thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
+          DibPut((undefined4 *)pCVar2->field_0194,iVar3,local_1c + 2,'\x01',pbVar5);
           iVar3 = iVar3 + 4;
           iVar8 = iVar8 + -1;
         } while (iVar8 != 0);
       }
       wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1aa4,(uint)*(ushort *)(local_18 + 2));
       iVar3 = local_1c;
-      ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc
-                      );
-      ccFntTy::WrStr(*(ccFntTy **)&pCVar2->field_0x1b8,(uint *)&pCVar2->field_0x1e1,-3,-1,5);
+      ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,0xa2,local_1c,0x15,0xc);
+      ccFntTy::WrStr(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,5);
       if ((char)local_20 == '\0') {
         if (iVar3 < 0x76) {
                     /* WARNING: Could not recover jumptable at 0x00505bca. Too many branches */
@@ -114,15 +112,15 @@ void __thiscall CPanelTy::PaintArsenal(CPanelTy *this)
         return;
       }
       if (*local_18 == '\0') {
-        iVar8 = *(int *)&pCVar2->field_0x292;
+        iVar8 = pCVar2->field_0292;
       }
       else {
-        iVar8 = *(int *)&pCVar2->field_0x28e;
+        iVar8 = pCVar2->field_028E;
       }
       pbVar5 = (byte *)FUN_0070b3a0(iVar8,(-(uint)(*local_18 != '\0') & 0x14) + 0xb + local_14 +
                                           local_2c);
       if (pbVar5 != (byte *)0x0) {
-        thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
+        DibPut((undefined4 *)pCVar2->field_0194,local_c,local_8,'\x06',pbVar5);
       }
       local_14 = local_14 + 1;
       local_18 = local_18 + 6;

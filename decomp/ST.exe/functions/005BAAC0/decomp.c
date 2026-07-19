@@ -6,13 +6,14 @@
 void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
 
 {
-  code *pcVar1;
+  StartSystemTy *pSVar1;
+  code *pcVar2;
   PrividerTy *this_00;
-  int iVar2;
   int iVar3;
+  int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar4;
+  undefined4 *puVar5;
   undefined4 local_264;
   undefined4 local_257;
   undefined4 local_253;
@@ -46,30 +47,30 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  if (iVar2 == 0) {
-    puVar4 = &local_264;
-    for (iVar2 = 0x7e; this_00 = local_8, iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar4 = 0;
-      puVar4 = puVar4 + 1;
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  if (iVar3 == 0) {
+    puVar5 = &local_264;
+    for (iVar3 = 0x7e; this_00 = local_8, iVar3 != 0; iVar3 = iVar3 + -1) {
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    *(undefined2 *)puVar4 = 0;
-    this_00->field_0x1a5f = param_1;
-    *(undefined1 *)((int)puVar4 + 2) = 0;
+    *(undefined2 *)puVar5 = 0;
+    this_00->field_1A5F = param_1;
+    *(undefined1 *)((int)puVar5 + 2) = 0;
     if (param_1 == '\x01') {
       local_1a1 = 0x2340;
-      if ((this_00->field_0x65 != '\x05') || (local_19d = 0, this_00->field_0x1a72 != '\0')) {
+      if ((this_00->field_0065 != '\x05') || (local_19d = 0, this_00->field_1A72 != '\0')) {
         local_19d = 1;
       }
-      local_194 = *(undefined4 *)&this_00->field_0x8;
+      local_194 = this_00->field_0008;
       local_190 = 2;
       local_18c = 0x6943;
     }
     local_17a = 0x24bc;
-    if ((this_00->field_0x65 != '\x05') || (local_176 = 0, this_00->field_0x1a72 != '\0')) {
+    if ((this_00->field_0065 != '\x05') || (local_176 = 0, this_00->field_1A72 != '\0')) {
       local_176 = 1;
     }
-    local_230 = *(undefined4 *)&this_00->field_0x8;
+    local_230 = this_00->field_0008;
     local_169 = 2;
     local_165 = 0x6952;
     if (param_1 == '\x01') {
@@ -94,21 +95,21 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     }
     local_205 = 2;
     local_22c = 2;
-    iVar2 = *(int *)&this_00->field_0x1a5b;
+    pSVar1 = this_00->field_1A5B;
     local_209 = local_230;
     local_16d = local_230;
-    if (*(int *)(iVar2 + 0x2e6) != 0) {
-      puVar4 = local_68;
+    if (pSVar1->field_02E6 != (MMsgTy *)0x0) {
+      puVar5 = local_68;
       for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar4 = 0xffffffff;
-        puVar4 = puVar4 + 1;
+        *puVar5 = 0xffffffff;
+        puVar5 = puVar5 + 1;
       }
-      *(undefined2 *)puVar4 = 0xffff;
-      MMsgTy::SetPanel(*(MMsgTy **)(iVar2 + 0x2e6),0,(int)&local_264,0,0);
-      MMsgTy::StatePanel(*(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6),(int)local_68);
+      *(undefined2 *)puVar5 = 0xffff;
+      MMsgTy::SetPanel(pSVar1->field_02E6,0,(int)&local_264,0,0);
+      MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)local_68);
     }
     PaintPrivider(this_00,param_2);
-    this_00->field_0x65 = 3;
+    this_00->field_0065 = 3;
     thunk_FUN_00568bc0(&g_sound,0);
     if ((DAT_00807300._1_1_ & 8) != 0) {
       thunk_FUN_0056a130(&g_sound,0x14,'\x02',0,(uint *)0x0);
@@ -118,14 +119,14 @@ void __thiscall PrividerTy::SetMode(PrividerTy *this,char param_1,char param_2)
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e,0,iVar2,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e,0,iVar3,&DAT_007a4ccc,
                              s_PrividerTy__SetMode_007cce00);
-  if (iVar3 != 0) {
-    pcVar1 = (code *)swi(3);
-    (*pcVar1)();
+  if (iVar4 != 0) {
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e);
+  RaiseInternalException(iVar3,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x11e);
   return;
 }
 

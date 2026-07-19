@@ -64,15 +64,14 @@ void __thiscall CursorClassTy::GCGameState(CursorClassTy *this,int param_1)
   }
   bVar4 = thunk_FUN_00544990((int)local_18);
   if ((CONCAT31(extraout_var,bVar4) != 0) &&
-     ((((this_00[2].field_0x16 == '\x02' || (this_00[2].field_0x16 == '\x04')) &&
-       (iVar6 = FUN_00405687((int)this_00), iVar6 == 0)) || (*(int *)&this_00[0xb].field_0x4a == 0))
-     )) {
+     ((((this_00->field_00DE == '\x02' || (this_00->field_00DE == '\x04')) &&
+       (iVar6 = FUN_00405687((int)this_00), iVar6 == 0)) || (this_00->field_0496 == 0)))) {
     thunk_FUN_0054b700(this_00,-1);
     if ((DAT_00801690 == (void *)0x0) || (*(short *)((int)DAT_00801690 + 0x172) == 2))
     goto LAB_0054b372;
 LAB_0054b019:
-    uVar19 = *(undefined4 *)&this_00->field_0x38;
-    uVar17 = *(undefined4 *)&this_00->field_0x34;
+    uVar19 = this_00->field_0038;
+    uVar17 = this_00->field_0034;
     CVar5 = (CursorClassTy_SetGCType_param_1Enum)*(byte *)((int)DAT_00801690 + 0x1db);
     goto cf_common_exit_0054B368;
   }
@@ -84,14 +83,14 @@ LAB_0054b019:
   if ((DAT_007fa174 == (STAllPlayersC *)0x0) || (DAT_00808784 != 0)) {
 LAB_0054b335:
     if ((DAT_00801690 == (void *)0x0) || (*(short *)((int)DAT_00801690 + 0x172) == 2)) {
-      uVar19 = *(undefined4 *)&this_00->field_0x38;
-      uVar17 = *(undefined4 *)&this_00->field_0x34;
+      uVar19 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
 LAB_0054b366:
       CVar5 = CASE_0;
     }
     else {
-      uVar19 = *(undefined4 *)&this_00->field_0x38;
-      uVar17 = *(undefined4 *)&this_00->field_0x34;
+      uVar19 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
       CVar5 = (CursorClassTy_SetGCType_param_1Enum)*(byte *)((int)DAT_00801690 + 0x1db);
     }
   }
@@ -108,20 +107,16 @@ LAB_0054b366:
        ((DAT_008016dc != 0 && (*(short *)(DAT_008016dc + 0x172) != 2)))) {
       if ((DAT_00801690 != (void *)0x0) && (*(short *)((int)DAT_00801690 + 0x172) != 2))
       goto LAB_0054b019;
-      uVar19 = *(undefined4 *)&this_00->field_0x38;
-      uVar17 = *(undefined4 *)&this_00->field_0x34;
+      uVar19 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
       goto LAB_0054b366;
     }
-    this_01 = (void *)thunk_FUN_00435820(*(int *)((int)&this_00[1].field_0060 + 1) -
-                                         *(int *)&this_00[0xc].field_0x2,
-                                         *(int *)&this_00[2].field_0x1 -
-                                         *(int *)&this_00[0xc].field_0x6);
-    *(void **)&this_00[0xb].field_0x4e = this_01;
+    this_01 = (void *)thunk_FUN_00435820(this_00->field_00C5 - this_00->field_04B2,
+                                         this_00->field_00C9 - this_00->field_04B6);
+    this_00->field_049A = this_01;
     if (this_01 == (void *)0x0) {
-      FUN_006e1dd0(DAT_00807598,
-                   *(int *)((int)&this_00[1].field_0060 + 1) - *(int *)&this_00[0xc].field_0x2,
-                   *(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6,(float *)0x0,
-                   (float *)0x0,&local_10);
+      FUN_006e1dd0(DAT_00807598,this_00->field_00C5 - this_00->field_04B2,
+                   this_00->field_00C9 - this_00->field_04B6,(float *)0x0,(float *)0x0,&local_10);
       lVar16 = Library::MSVCRT::__ftol();
       local_c = (undefined4)lVar16;
     }
@@ -132,20 +127,19 @@ LAB_0054b366:
       local_c = 4;
     }
     thunk_FUN_0054b700(this_00,(int)(short)local_c);
-    if (*(int **)&this_00[0xb].field_0x4e == (int *)0x0) {
-      if ((*(int *)&this_00[0xb].field_0x52 != 0) &&
-         (*(undefined4 *)&this_00[0xb].field_0x52 = 0, DAT_00801694 != (void *)0x0)) {
+    if ((int *)this_00->field_049A == (int *)0x0) {
+      if ((this_00->field_049E != 0) && (this_00->field_049E = 0, DAT_00801694 != (void *)0x0)) {
         thunk_FUN_0051fac0(DAT_00801694,(char *)0x0,0,'\x01',0xfffffc18);
       }
-      if (this_00[0xc].field_0x2e == '\0') goto LAB_0054b2a9;
-      uVar19 = *(undefined4 *)&this_00->field_0x38;
-      uVar17 = *(undefined4 *)&this_00->field_0x34;
+      if (this_00->field_04DE == '\0') goto LAB_0054b2a9;
+      uVar19 = this_00->field_0038;
+      uVar17 = this_00->field_0034;
       CVar5 = CASE_47;
     }
     else {
-      (**(code **)(**(int **)&this_00[0xb].field_0x4e + 0x68))(&local_30);
-      if (*(int *)&this_00[0xb].field_0x52 != local_30) {
-        *(int *)&this_00[0xb].field_0x52 = local_30;
+      (**(code **)(*(int *)this_00->field_049A + 0x68))(&local_30);
+      if (this_00->field_049E != local_30) {
+        this_00->field_049E = local_30;
         pHVar18 = DAT_00807618;
         UVar7 = thunk_FUN_00523410(local_2c,(char)local_28,0);
         pcVar8 = (char *)FUN_006b0140(UVar7,pHVar18);
@@ -186,46 +180,41 @@ LAB_0054b366:
           thunk_FUN_0051fac0(DAT_00801694,(char *)local_d8,0,'\x01',0xfffffc18);
         }
       }
-      if (this_00[0xc].field_0x2e == '\0') {
+      if (this_00->field_04DE == '\0') {
 LAB_0054b2a9:
         CVar5 = STAllPlayersC::GetCursorType
-                          (DAT_007fa174,*(undefined4 *)&this_00[0xb].field_0x56,
-                           *(undefined4 *)&this_00[0xb].field_0x4e,
-                           *(int *)((int)&this_00[1].field_0060 + 1) -
-                           *(int *)&this_00[0xc].field_0x2,
-                           (int *)(*(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6),
-                           unaff_EDI,unaff_ESI);
+                          (DAT_007fa174,this_00->field_04A2,this_00->field_049A,
+                           this_00->field_00C5 - this_00->field_04B2,
+                           (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI);
         while (CVar5 == (CASE_40|CASE_18)) {
           thunk_FUN_0054a8d0(this_00);
           CVar5 = STAllPlayersC::GetCursorType
-                            (DAT_007fa174,*(undefined4 *)&this_00[0xb].field_0x56,
-                             *(undefined4 *)&this_00[0xb].field_0x4e,
-                             *(int *)((int)&this_00[1].field_0060 + 1) -
-                             *(int *)&this_00[0xc].field_0x2,
-                             (int *)(*(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6
-                                    ),unaff_EDI,unaff_ESI);
+                            (DAT_007fa174,this_00->field_04A2,this_00->field_049A,
+                             this_00->field_00C5 - this_00->field_04B2,
+                             (int *)(this_00->field_00C9 - this_00->field_04B6),unaff_EDI,unaff_ESI)
+          ;
         }
-        uVar19 = *(undefined4 *)&this_00->field_0x38;
-        uVar17 = *(undefined4 *)&this_00->field_0x34;
+        uVar19 = this_00->field_0038;
+        uVar17 = this_00->field_0034;
       }
       else {
-        piVar2 = *(int **)&this_00[0xb].field_0x4e;
+        piVar2 = (int *)this_00->field_049A;
         iVar6 = (**(code **)(*piVar2 + 0x2c))();
         if (iVar6 == 0x78) {
-          iVar6 = *(int *)(*(int *)&this_00[0xb].field_0x4e + 0x259);
+          iVar6 = *(int *)(this_00->field_049A + 0x259);
         }
         if (DAT_00801690 != (void *)0x0) {
           iVar10 = (**(code **)(*piVar2 + 0xc))();
           iVar6 = thunk_FUN_005121f0(DAT_00801690,iVar6,iVar10);
           if (iVar6 != 0) {
-            uVar19 = *(undefined4 *)&this_00->field_0x38;
-            uVar17 = *(undefined4 *)&this_00->field_0x34;
+            uVar19 = this_00->field_0038;
+            uVar17 = this_00->field_0034;
             CVar5 = CASE_48;
             goto cf_common_exit_0054B368;
           }
         }
-        uVar19 = *(undefined4 *)&this_00->field_0x38;
-        uVar17 = *(undefined4 *)&this_00->field_0x34;
+        uVar19 = this_00->field_0038;
+        uVar17 = this_00->field_0034;
         CVar5 = CASE_47;
       }
     }
@@ -234,7 +223,7 @@ cf_common_exit_0054B368:
   local_8 = SetGCType(this_00,CVar5,uVar17,uVar19);
 LAB_0054b372:
   if ((param_1 != 0) && (local_8 != 0)) {
-    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+    DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   }
   g_currentExceptionFrame = local_74.previous;
   return;

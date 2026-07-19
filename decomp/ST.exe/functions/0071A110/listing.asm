@@ -1,4 +1,4 @@
-FUN_0071a110:
+mfWavSaveFile:
 0071A110  55                        PUSH EBP
 0071A111  8B EC                     MOV EBP,ESP
 0071A113  83 EC 4C                  SUB ESP,0x4c

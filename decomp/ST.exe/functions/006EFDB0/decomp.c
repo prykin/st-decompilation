@@ -1,5 +1,11 @@
 
-int __cdecl FUN_006efdb0(undefined2 *param_1,int param_2,char *param_3,char param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 324 | 326 | 334 | 358 | 362 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfTMapSave(undefined2 *param_1,int param_2,char *param_3,char param_4)
 
 {
   code *pcVar1;

@@ -1,5 +1,10 @@
 
-int __cdecl FUN_007256a0(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\mfpla.cpp
+   Diagnostic line evidence: 70 | 72 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfPlaGetClust(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

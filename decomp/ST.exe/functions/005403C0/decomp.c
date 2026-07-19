@@ -1,5 +1,10 @@
 
-void __cdecl FUN_005403c0(int param_1,int param_2,char param_3,BITMAPINFO *param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\support.cpp
+   Diagnostic line evidence: 20 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl PutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4)
 
 {
   code *pcVar1;

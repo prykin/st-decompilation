@@ -1,4 +1,4 @@
-FUN_00716e60:
+mfTSprGetNumFas:
 00716E60  55                        PUSH EBP
 00716E61  8B EC                     MOV EBP,ESP
 00716E63  83 EC 54                  SUB ESP,0x54

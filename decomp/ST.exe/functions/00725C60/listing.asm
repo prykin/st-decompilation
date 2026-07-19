@@ -1,4 +1,4 @@
-FUN_00725c60:
+mfSSprLoad:
 00725C60  55                        PUSH EBP
 00725C61  8B EC                     MOV EBP,ESP
 00725C63  83 EC 4C                  SUB ESP,0x4c

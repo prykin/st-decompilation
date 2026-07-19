@@ -1,4 +1,4 @@
-FUN_00648c10:
+StartStrateg:
 00648C10  55                        PUSH EBP
 00648C11  8B EC                     MOV EBP,ESP
 00648C13  83 EC 4C                  SUB ESP,0x4c

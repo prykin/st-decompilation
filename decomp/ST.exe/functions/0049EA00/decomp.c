@@ -47,12 +47,12 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
         puVar8 = puVar8 + 1;
       }
       uVar9 = 0;
-      *(undefined4 *)&local_1c->field_0x65 = 0;
-      local_1c->field_02B3 = *(undefined4 *)&local_1c->field_0x182;
-      local_1c->field_02B7 = *(undefined4 *)&local_1c->field_0x186;
-      local_1c->field_02BB = *(undefined2 *)&local_1c->field_0x18a;
-      local_24 = *(undefined2 *)&local_1c->field_02B3;
-      local_22 = *(undefined2 *)((int)&local_1c->field_02B3 + 2);
+      local_1c->field_0065 = 0;
+      *(undefined4 *)&local_1c->field_0x2b3 = local_1c->field_0182;
+      *(undefined4 *)&local_1c->field_0x2b7 = local_1c->field_0186;
+      *(undefined2 *)&local_1c->field_0x2bb = local_1c->field_018A;
+      local_24 = *(undefined2 *)&local_1c->field_0x2b3;
+      local_22 = local_1c->field_02B5;
       local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
       local_10 = local_28;
       if (0 < local_c) {
@@ -68,8 +68,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xb1f);
             }
-            iVar3 = *(int *)((int)&pSVar2->field_02B7 + 2);
-            if (iVar3 == -1) {
+            if (*(int *)&pSVar2->field_0x2b9 == -1) {
               if (*(int *)&pSVar4->field_0x7b6 == 0) goto LAB_0049eb44;
 LAB_0049eb2a:
               if (*(int *)&pSVar4->field_0x7be < 1) goto LAB_0049eb44;
@@ -78,7 +77,7 @@ LAB_0049eb2a:
               SVar10 = CASE_7;
             }
             else {
-              if (*(int *)&pSVar4->field_0x7b6 == iVar3) goto LAB_0049eb2a;
+              if (*(int *)&pSVar4->field_0x7b6 == *(int *)&pSVar2->field_0x2b9) goto LAB_0049eb2a;
 LAB_0049eb44:
               puVar8 = &local_10;
               SVar10 = CASE_3;

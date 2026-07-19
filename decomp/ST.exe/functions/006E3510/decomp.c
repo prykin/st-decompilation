@@ -43,7 +43,7 @@ undefined4 __thiscall AppClassTy::InitApp(AppClassTy *this,undefined4 param_1)
   do {
     if (iVar3 == 0) {
       DVar6 = timeGetTime();
-      *(DWORD *)&pAVar2->field_0x18 = DVar6;
+      pAVar2->field_0018 = DVar6;
       DAT_00856d70 = param_1;
       FUN_006e4290(0x1c,4,1,DAT_00856d6c);
       puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0xc,5);

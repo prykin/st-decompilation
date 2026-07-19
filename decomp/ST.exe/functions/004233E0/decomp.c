@@ -32,8 +32,7 @@ uint * __thiscall STGroupC::GetGroupContent(STGroupC *this,int param_1)
   local_10 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    local_c = Library::DKW::TBL::FUN_006ae290
-                        ((uint *)0x0,(uint)*(ushort *)&local_10->field_0x27,2,1);
+    local_c = Library::DKW::TBL::FUN_006ae290((uint *)0x0,(uint)(ushort)local_10->field_0027,2,1);
     uVar2 = local_18;
     if (local_18 != 0) {
       uVar5 = 0;

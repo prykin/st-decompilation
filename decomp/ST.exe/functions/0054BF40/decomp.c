@@ -48,17 +48,17 @@ CursorClassTy::SetGCType
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8f0);
     return local_10;
   }
-  if (*(CursorClassTy_SetGCType_param_1Enum *)&local_14[0xb].field_0x48 == param_1) {
+  if (local_14->field_0494 == param_1) {
 switchD_0054bfbc_caseD_20:
     g_currentExceptionFrame = pIVar8;
     return local_10;
   }
-  *(CursorClassTy_SetGCType_param_1Enum *)&local_14[0xb].field_0x48 = param_1;
-  *(undefined4 *)((int)&local_14[1].field_0060 + 1) = param_2;
-  *(undefined4 *)&local_14[2].field_0x1 = param_3;
+  local_14->field_0494 = param_1;
+  local_14->field_00C5 = param_2;
+  local_14->field_00C9 = param_3;
   switch((uint)param_1) {
   case 0:
-    switch(local_14[0xb].field_0x47) {
+    switch(local_14->field_0493) {
     case 1:
       pcVar5 = s_CUR_MENU_007c7dd4;
       break;
@@ -76,7 +76,7 @@ switchD_0054bfbc_caseD_20:
     }
     iVar3 = -1;
     iVar2 = -1;
-    if (local_14[0xb].field_0x47 == '\x05') {
+    if (local_14->field_0493 == '\x05') {
       uVar7 = 0x12;
       pBVar6 = (BITMAPINFO *)0xd;
       uVar4 = 1000;
@@ -317,7 +317,7 @@ switchD_0054bfbc_caseD_20:
     pcVar5 = s_CUR_SLD_007c8190;
 cf_common_exit_0054C06F:
     SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
-    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+    DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x39:
@@ -329,7 +329,7 @@ cf_common_exit_0054C06F:
     pcVar5 = s_CUR_SRD_007c8184;
 cf_common_exit_0054C01C:
     SetImages(local_14,1,pcVar5,uVar4,pBVar6,uVar7,iVar2,iVar3);
-    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+    DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x3c:
@@ -383,12 +383,12 @@ switchD_0054c0ac_default:
     break;
   case 0x46:
     SetImages(local_14,1,s_CUR_HYPER_007c8030,0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
-    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+    DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x47:
     SetImages(local_14,1,s_CUR_HELPNO_007c8020,0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
-    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+    DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x48:
@@ -399,7 +399,7 @@ switchD_0054c0ac_default:
     uVar7 = 0x12;
   }
   SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
-  DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+  DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   g_currentExceptionFrame = pIVar8;
   return 0;
 }

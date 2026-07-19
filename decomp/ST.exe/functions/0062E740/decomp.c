@@ -56,7 +56,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
     }
     else if (uVar4 == 0x10f) {
       local_10 = (byte *)thunk_FUN_0062f940(this_00,&local_c);
-      STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)&this_00->field_0x18,local_10,local_c);
+      STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_10,local_c);
       FUN_006ab060(&local_10);
       g_currentExceptionFrame = local_58.previous;
       return 0;
@@ -72,8 +72,8 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
   if (uVar4 == 0) {
     if (this_00->field_01FA == 1) {
       if ((this_00->field_01F9 == '\0') &&
-         (iVar7 = thunk_FUN_0062fea0(this_00,this_00->field_01D5,this_00->field_01D9), iVar7 != 0))
-      {
+         (iVar7 = thunk_FUN_0062fea0(this_00,*(int *)&this_00->field_0x1d5,
+                                     *(int *)&this_00->field_0x1d9), iVar7 != 0)) {
         thunk_FUN_0062fe00(this_00);
         this_00->field_01F9 = 1;
       }
@@ -105,8 +105,8 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  if ((((int)this_00->field_01D5 < 0) || ((int)this_00->field_01D9 < 0)) ||
-     ((int)this_00->field_01DD < 0)) {
+  if (((*(int *)&this_00->field_0x1d5 < 0) || (*(int *)&this_00->field_0x1d9 < 0)) ||
+     (*(int *)&this_00->field_0x1dd < 0)) {
     iVar8 = *(int *)(iVar7 + 0x14);
     sVar1 = (short)(iVar8 >> 0x1f);
     if (iVar8 < 0) {
@@ -117,7 +117,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar1) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    this_00->field_01D5 = iVar8;
+    *(int *)&this_00->field_0x1d5 = iVar8;
     iVar8 = *(int *)(iVar7 + 0x18);
     sVar1 = (short)(iVar8 >> 0x1f);
     if (iVar8 < 0) {
@@ -128,7 +128,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
       iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar1) -
                           (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
     }
-    this_00->field_01D9 = iVar8;
+    *(int *)&this_00->field_0x1d9 = iVar8;
     iVar8 = *(int *)(iVar7 + 0x1c);
     if (iVar8 < 0) {
       iVar8 = (short)(iVar8 / 200) + -1;
@@ -136,13 +136,13 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
     else {
       iVar8 = (int)(short)(iVar8 / 200);
     }
-    this_00->field_01DD = iVar8;
-    bVar6 = thunk_FUN_004961b0(*(short *)&this_00->field_01D5,*(short *)&this_00->field_01D9,
+    *(int *)&this_00->field_0x1dd = iVar8;
+    bVar6 = thunk_FUN_004961b0(*(short *)&this_00->field_0x1d5,*(short *)&this_00->field_0x1d9,
                                (short)iVar8);
     if (CONCAT31(extraout_var,bVar6) != 0) {
-      sVar1 = *(short *)&this_00->field_01D5;
-      sVar2 = *(short *)&this_00->field_01DD;
-      sVar3 = *(short *)&this_00->field_01D9;
+      sVar1 = *(short *)&this_00->field_0x1d5;
+      sVar2 = *(short *)&this_00->field_0x1dd;
+      sVar3 = *(short *)&this_00->field_0x1d9;
       if ((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) ||
           ((sVar3 < 0 || ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))))) || (DAT_007fb244 <= sVar2)) {
         iVar8 = 0;
@@ -155,9 +155,10 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
       }
       if ((iVar8 == 0) &&
          (iVar8 = DumpClassC::WritePtr
-                            ((short)this_00->field_01D5,(short)this_00->field_01D9,
-                             (short)this_00->field_01DD,1,(int)this_00), iVar7 = local_8, iVar8 == 0
-         )) {
+                            ((short)*(undefined4 *)&this_00->field_0x1d5,
+                             (short)*(undefined4 *)&this_00->field_0x1d9,
+                             (short)*(undefined4 *)&this_00->field_0x1dd,1,(int)this_00),
+         iVar7 = local_8, iVar8 == 0)) {
         iVar8 = *(int *)(local_8 + 0x14);
         sVar1 = (short)(iVar8 >> 0x1f);
         if (iVar8 < 0) {
@@ -168,7 +169,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
           iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar1) -
                               (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
         }
-        this_00->field_01D5 = iVar8;
+        *(int *)&this_00->field_0x1d5 = iVar8;
         iVar11 = *(int *)(local_8 + 0x18);
         sVar1 = (short)(iVar11 >> 0x1f);
         if (iVar11 < 0) {
@@ -179,7 +180,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
           iVar11 = (int)(short)(((short)(iVar11 / 0xc9) + sVar1) -
                                (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
         }
-        this_00->field_01D9 = iVar11;
+        *(int *)&this_00->field_0x1d9 = iVar11;
         iVar9 = *(int *)(local_8 + 0x1c);
         sVar1 = (short)(iVar9 >> 0x1f);
         if (iVar9 < 0) {
@@ -190,7 +191,7 @@ undefined4 __thiscall STRubbishC::GetMessage(STRubbishC *this,int param_1)
           iVar9 = (int)(short)(((short)(iVar9 / 200) + sVar1) -
                               (short)((longlong)iVar9 * 0x51eb851f >> 0x3f));
         }
-        this_00->field_01DD = iVar9;
+        *(int *)&this_00->field_0x1dd = iVar9;
         iVar8 = thunk_FUN_0062fea0(this_00,iVar8,iVar11);
         this_00->field_01F9 = (char)iVar8;
         goto LAB_0062ea02;

@@ -1,4 +1,4 @@
-FUN_0055f410:
+AiCalcDispositionAreas:
 0055F410  55                        PUSH EBP
 0055F411  8B EC                     MOV EBP,ESP
 0055F413  6A FF                     PUSH -0x1

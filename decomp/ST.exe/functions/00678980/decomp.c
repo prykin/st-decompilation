@@ -34,7 +34,7 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
       puVar11 = (undefined4 *)0x0;
     }
     else {
-      puVar11 = (undefined4 *)&local_c->field_0x5d3;
+      puVar11 = &local_c->field_05D3;
     }
     puVar6 = param_1;
     for (iVar3 = 0x4a; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -44,11 +44,11 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
     }
     *(undefined2 *)puVar11 = *(undefined2 *)puVar6;
     *(undefined1 *)((int)puVar11 + 2) = *(undefined1 *)((int)puVar6 + 2);
-    *(undefined4 *)&local_c->field_0x5d3 = 0x398;
-    local_c->field_0x5eb = 1;
+    local_c->field_05D3 = 0x398;
+    local_c->field_05EB = 1;
     AiEventClassTy::InitData
               ((AiEventClassTy *)&local_c->field_0x1c,
-               (int *)(*(int *)&local_c->field_0x6d1 + 0x12a + (int)param_1));
+               (int *)(local_c->field_06D1 + 0x12a + (int)param_1));
     piVar10 = &pAVar2->field_0695;
     iVar3 = 5;
     local_8 = piVar10;
@@ -60,13 +60,13 @@ int __thiscall AiPlrClassTy::InitData(AiPlrClassTy *this,undefined4 *param_1)
       piVar10 = piVar10 + 3;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (*(int *)&pAVar2->field_0x6a1 == 0) {
+    if (pAVar2->field_06A1 == 0) {
       puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x12,5);
-      *(uint **)&pAVar2->field_0x6a1 = puVar5;
+      pAVar2->field_06A1 = puVar5;
     }
-    if (*(int *)&pAVar2->field_0x6ad == 0) {
+    if (pAVar2->field_06AD == 0) {
       puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x1c,5);
-      *(uint **)&pAVar2->field_0x6ad = puVar5;
+      pAVar2->field_06AD = puVar5;
     }
     uVar9 = 0;
     iVar3 = *local_8;

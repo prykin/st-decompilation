@@ -32,7 +32,7 @@ undefined4 __thiscall cMf32::RecDel(cMf32 *this,byte param_1,char *param_2)
     if (local_8 != (ushort *)0x0) {
       FUN_006ab060(&local_8);
     }
-    wsprintfA(local_154,s_cMf32__RecDel_File___s__Sect__s_N_007efb40,local_c + 0x231,
+    wsprintfA(local_154,s_cMf32__RecDel_File___s__Sect__s_N_007efb40,&local_c[0xb].field_0x21,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
     iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x144,0,iVar4,&DAT_007a4ccc,
                                local_154);
@@ -75,7 +75,7 @@ undefined4 __thiscall cMf32::RecDel(cMf32 *this,byte param_1,char *param_2)
     param_2 = param_2 + 1;
     puVar9 = (ushort *)((int)puVar9 + 1);
   }
-  FUN_00751100(*(uint **)local_c,local_8);
+  FUN_00751100((uint *)local_c->field_0000,local_8);
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }

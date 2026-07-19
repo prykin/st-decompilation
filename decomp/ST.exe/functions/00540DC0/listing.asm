@@ -1,4 +1,4 @@
-FUN_00540dc0:
+SetAccelerator:
 00540DC0  55                        PUSH EBP
 00540DC1  8B EC                     MOV EBP,ESP
 00540DC3  81 EC FC 00 00 00         SUB ESP,0xfc

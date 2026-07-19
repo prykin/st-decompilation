@@ -50,8 +50,8 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
     DAT_008067a0 = '\0';
   }
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    if (*(int *)&DAT_00802a30[1].field_0x45 == 0) {
-      Library::DKW::DDX::FUN_006b8b10(*(int **)&DAT_00802a30[1].field_0x49);
+    if (DAT_00802a30->field_00A9 == 0) {
+      Library::DKW::DDX::FUN_006b8b10((int *)DAT_00802a30->field_00AD);
     }
     else if (DAT_00802a30->field_001C != 0xffffffff) {
       FUN_006b3af0((int *)DAT_00802a30->field_0060,DAT_00802a30->field_001C);
@@ -59,12 +59,12 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   }
   this_02 = local_8;
   if (*(int *)(DAT_0081176c + 0x28) != 0) {
-    puVar5 = (undefined4 *)&local_8[0x11].field_0xff;
+    puVar5 = &local_8->field_1A7F;
     do {
       iVar2 = 0;
       bVar8 = 0;
       pCVar3 = FUN_006f2c00(s_MM_FLC_007cc938,2,iVar7);
-      puVar4 = FUN_0071ad00(DAT_00806780,pCVar3,bVar8,iVar2);
+      puVar4 = mfAnyLoad(DAT_00806780,pCVar3,bVar8,iVar2);
       *puVar5 = puVar4;
       iVar7 = iVar7 + 1;
       puVar5 = puVar5 + 1;
@@ -72,9 +72,9 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
   }
   iVar2 = 0;
   do {
-    if (*(int *)(&this_02[0x11].field_0xff + iVar2 * 4) != 0) {
-      puVar5 = Library::DKW::FLC::FUN_006c4a20(*(int *)(&this_02[0x11].field_0xff + iVar2 * 4));
-      *(undefined4 **)(&this_02[0x11].field_0x127 + iVar2 * 4) = puVar5;
+    if ((&this_02->field_1A7F)[iVar2] != 0) {
+      puVar5 = Library::DKW::FLC::FUN_006c4a20((&this_02->field_1A7F)[iVar2]);
+      (&this_02->field_1AA7)[iVar2] = puVar5;
       if (puVar5 != (undefined4 *)0x0) {
         switch(iVar2) {
         case 0:
@@ -128,41 +128,38 @@ switchD_005b2a8d_default:
     if (9 < iVar2) {
       MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x9b,s_MM_MBUT00_007cbd98
                           ,0xf2,0x13a,7,8,0,0,0x9d,0x38,0x33,0x7cbda4,6,8,9,6,0x28,0,0,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02[1].field_0x116,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x296,
                           s_MM_MBUT01_007cbd7c,0x191,0x13a,9,8,0,0,0x9d,0x38,0x33,0x7cbd88,8,8,8,6,
                           0x32,0,0,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)((int)&this_02[3].field_0010 + 1),
+      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x491,
                           s_MM_MBUT02_007cbd60,0xf2,0x173,8,6,0,0,0x9d,0x38,0x33,0x7cbd6c,8,7,10,5,
                           0x28,0,0,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02[4].field_0x8c,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x68c,
                           s_MM_MBUT03_007cbd44,0x191,0x173,8,6,0,0,0x9d,0x38,0x33,0x7cbd50,8,7,8,5,
                           0x32,0,0,0,0,0,-1,-1);
-      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02[5].field_0x107,
+      MMObjTy::InitSprBut((MMObjTy *)this_02,(undefined4 *)&this_02->field_0x887,
                           s_MM_MBUT04_007cbd28,0x143,0x1ac,7,8,0,0,0x9d,0x38,0x33,0x7cbd34,8,9,9,6,
                           0x32,0,0,0,0,0,-1,-1);
       uVar6 = FUN_0070a9f0(DAT_00806780,s_MM_BKG_007cc930,0,1);
       *(undefined4 *)(DAT_0081176c + 0x2c) = uVar6;
-      thunk_FUN_0055dbf0(DAT_0080759c,1,0);
-      this_00 = *(MMsgTy **)(*(int *)&this_02[0x11].field_0xdb + 0x2e6);
+      DarkScreen(DAT_0080759c,1,0);
+      this_00 = *(MMsgTy **)(this_02->field_1A5B + 0x2e6);
       if (this_00 != (MMsgTy *)0x0) {
         MMsgTy::HidePanel(this_00,0,0,1);
-        MMsgTy::ShowSprites(*(MMsgTy **)(*(int *)&this_02[0x11].field_0xdb + 0x2e6));
-        *(undefined4 *)(*(int *)(*(int *)&this_02[0x11].field_0xdb + 0x2e6) + 0x1cab) =
-             *(undefined4 *)&this_02->field_0x8;
+        MMsgTy::ShowSprites(*(MMsgTy **)(this_02->field_1A5B + 0x2e6));
+        *(undefined4 *)(*(int *)(this_02->field_1A5B + 0x2e6) + 0x1cab) = this_02->field_0008;
       }
-      FUN_006bc360(*(int *)(DAT_0081176c + 0x2c),(undefined4 *)&this_02[0x11].field_0x15f,(int *)0x0
-                  );
+      FUN_006bc360(*(int *)(DAT_0081176c + 0x2c),(undefined4 *)&this_02->field_0x1adf,(int *)0x0);
       this_01 = DAT_00802a30;
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar6 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
-        uVar9 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
-        DAT_00802a30[0xb].field_0x47 = 1;
-        *(undefined2 *)&this_01[0xb].field_0x48 = 0xffff;
+        uVar6 = DAT_00802a30->field_00C9;
+        uVar9 = DAT_00802a30->field_00C5;
+        DAT_00802a30->field_0493 = 1;
+        this_01->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_01,CASE_0,uVar9,uVar6);
-        CursorClassTy::DrawSprite
-                  (this_01,*(int *)((int)&this_01[1].field_0060 + 1),*(int *)&this_01[2].field_0x1);
-        this_01[2].field_0xa = 0;
-        *(undefined4 *)&this_01[0xc].field_0x2f = 0xffffffff;
+        CursorClassTy::DrawSprite(this_01,this_01->field_00C5,this_01->field_00C9);
+        this_01->field_0xd2 = 0;
+        *(undefined4 *)&this_01->field_0x4df = 0xffffffff;
       }
       SetMode(this_02,param_1,1);
       thunk_FUN_00568bc0(&g_sound,0);
@@ -170,10 +167,9 @@ switchD_005b2a8d_default:
         thunk_FUN_0056a130(&g_sound,0x10,'\x02',0,(uint *)0x0);
       }
       if (DAT_00808446 == '\0') {
-        uVar6 = *(undefined4 *)&this_02->field_0x8;
-        *(undefined4 *)&this_02[0x11].field_0xeb = 2;
-        *(undefined4 *)&this_02[0x11].field_0xe7 = uVar6;
-        *(undefined4 *)&this_02[0x11].field_0xef = 0x6902;
+        this_02->field_1A6B = 2;
+        this_02->field_1A67 = this_02->field_0008;
+        this_02->field_1A6F = 0x6902;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

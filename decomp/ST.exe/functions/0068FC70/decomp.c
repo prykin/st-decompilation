@@ -14,7 +14,7 @@ undefined4 __thiscall FUN_0068fc70(void *this,uint *param_1,short param_2)
     do {
       if ((((bVar3) && (iVar1 = *(int *)(iVar1 + 8) * uVar2 + *(int *)(iVar1 + 0x1c), iVar1 != 0))
           && (this_00 = *(AiFltClassTy **)(iVar1 + 4), this_00 != (AiFltClassTy *)0x0)) &&
-         ((uint)*(ushort *)&this_00->field_0x7d == (int)param_2)) {
+         ((uint)(ushort)this_00->field_007D == (int)param_2)) {
         AiFltClassTy::GetAiMess(this_00,param_1);
       }
       iVar1 = *(int *)((int)this + 0xa5);

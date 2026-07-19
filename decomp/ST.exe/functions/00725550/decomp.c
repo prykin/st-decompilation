@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_00725550(int param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\mfpla.cpp
+   Diagnostic line evidence: 24 | 39 | 43 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl mfPlaPtrTy(int param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;
@@ -33,7 +38,7 @@ undefined4 * __cdecl FUN_00725550(int param_1,char *param_2,int param_3)
   if (param_1 == 0) {
     RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_mfpla_cpp_007f0c44,0x18);
   }
-  iVar2 = FUN_007256a0(param_1,param_2,param_3);
+  iVar2 = mfPlaGetClust(param_1,param_2,param_3);
   if (-1 < iVar2) {
     cMf32::RecGet((cMf32 *)param_1,0xd,param_2,(int *)&local_8,param_3);
     if (local_8 != (undefined4 *)0x0) {

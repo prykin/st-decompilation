@@ -26,19 +26,18 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar3 = local_8;
   if (iVar4 == 0) {
-    iVar4 = *(int *)&local_8->field_0x21d;
+    iVar4 = local_8->field_021D;
     thunk_FUN_0041dd00(local_8,param_1);
-    if ((((*(int *)&pTVar3->field_0x21d != 0) && (iVar4 == 0)) &&
+    if ((((pTVar3->field_021D != 0) && (iVar4 == 0)) &&
         (uVar5 = thunk_FUN_004406c0(pTVar3->field_023D),
-        *(int *)(&DAT_00795c00 + ((uVar5 & 0xff) + *(int *)&pTVar3->field_0x235 * 3) * 4) != 0)) &&
-       (*(uint *)&pTVar3->field_0x24 == (uint)*(byte *)(*(int *)&pTVar3->field_0x10 + 0x112d))) {
+        *(int *)(&DAT_00795c00 + ((uVar5 & 0xff) + pTVar3->field_0235 * 3) * 4) != 0)) &&
+       (*(uint *)&pTVar3->field_0x24 == (uint)*(byte *)(pTVar3->field_0010 + 0x112d))) {
       pTVar1 = pTVar3->vtable;
       uVar5 = thunk_FUN_004406c0(pTVar3->field_023D);
       (*pTVar1->slot_90)(4,*(undefined4 *)
-                            (&DAT_00795c00 + ((uVar5 & 0xff) + *(int *)&pTVar3->field_0x235 * 3) * 4
-                            ));
+                            (&DAT_00795c00 + ((uVar5 & 0xff) + pTVar3->field_0235 * 3) * 4));
     }
-    if (*(int *)(&DAT_00794d94 + *(int *)&pTVar3->field_0x235 * 4) != 0) {
+    if (*(int *)(&DAT_00794d94 + pTVar3->field_0235 * 4) != 0) {
       thunk_FUN_004c2f70((int)pTVar3);
     }
     g_currentExceptionFrame = local_4c.previous;

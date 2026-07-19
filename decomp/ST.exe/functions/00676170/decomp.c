@@ -1,5 +1,10 @@
 
-uint * __cdecl FUN_00676170(undefined4 param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 293 | 294 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint * __cdecl _GetStaffGrpExch(undefined4 param_1)
 
 {
   code *pcVar1;

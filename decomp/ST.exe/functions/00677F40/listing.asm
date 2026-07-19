@@ -1,4 +1,4 @@
-FUN_00677f40:
+_EnumArt:
 00677F40  55                        PUSH EBP
 00677F41  8B EC                     MOV EBP,ESP
 00677F43  83 EC 68                  SUB ESP,0x68

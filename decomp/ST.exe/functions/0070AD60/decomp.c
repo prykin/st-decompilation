@@ -1,7 +1,12 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 400 | 405 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __cdecl
-FUN_0070ad60(cMf32 *param_1,char *param_2,int param_3,uint param_4,uint *param_5,int param_6,
-            int param_7)
+mfJpgLoadToDib(cMf32 *param_1,char *param_2,int param_3,uint param_4,uint *param_5,int param_6,
+              int param_7)
 
 {
   code *pcVar1;

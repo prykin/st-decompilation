@@ -7,7 +7,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
 
 {
   code *pcVar1;
-  SpecPanelTy *pSVar2;
+  SAMPanelTy *pSVar2;
   int iVar3;
   byte *pbVar4;
   ushort *puVar5;
@@ -30,28 +30,29 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   undefined4 uVar20;
   undefined4 uVar21;
   InternalExceptionFrame local_5c;
-  SpecPanelTy *local_14;
+  SAMPanelTy *local_14;
   int local_10;
   undefined4 *local_c;
   int local_8;
   
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
-  local_14 = (SpecPanelTy *)this;
+  local_14 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_5c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_14;
   if (iVar3 == 0) {
     DAT_008016ec = local_14;
-    SpecPanelTy::InitPanel(local_14,s_BKG_SETANYW_007c77ec,0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
+    SpecPanelTy::InitPanel
+              ((SpecPanelTy *)local_14,s_BKG_SETANYW_007c77ec,0x2f,2,0xc6,0xc,0x2735,0xc9,0x77);
     puVar19 = (undefined4 *)0x0;
     iVar16 = 0;
     iVar3 = 1;
     bVar13 = 0;
     uVar11 = 0xffffffff;
     pbVar4 = (byte *)thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
-    puVar5 = FUN_00709af0(DAT_00806794,CASE_B,pbVar4,uVar11,bVar13,iVar3,iVar16,puVar19);
-    local_c = (undefined4 *)&pSVar2[1].field_0x30;
-    *(ushort **)&pSVar2[1].field_0x2c = puVar5;
+    puVar5 = mfRLoad(DAT_00806794,CASE_B,pbVar4,uVar11,bVar13,iVar3,iVar16,puVar19);
+    local_c = &pSVar2->field_01B5;
+    pSVar2->field_01B1 = puVar5;
     iVar3 = 0xb4ff;
     local_8 = 0x17;
     local_10 = 6;
@@ -59,7 +60,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       uVar20 = 1;
       uVar17 = 0;
       uVar15 = 0;
-      iVar18 = *(int *)pSVar2;
+      iVar18 = pSVar2->field_0000;
       uVar14 = 0;
       iVar16 = iVar3 + 0x10;
       uVar12 = 0;
@@ -73,16 +74,16 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
                         (0,1,0x24,local_8 + 1,0,1,1,pCVar6,iVar10,iVar16,uVar12,uVar14,uVar15,uVar17
                          ,uVar20);
       *local_c = uVar9;
-      pbVar4 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&pSVar2[1].field_0x4,*(int *)(pSVar2 + 1),0,
-                                           0x37,iVar8,0xd2,0xc,0);
+      pbVar4 = (byte *)ccFntTy::CreateSurf(pSVar2->field_0189,pSVar2->field_0185,0,0x37,iVar8,0xd2,
+                                           0xc,0);
       if (pbVar4 != (byte *)0x0) {
         uVar9 = 0;
         iVar18 = -1;
         iVar16 = 0;
         puVar7 = (uint *)FUN_006b0140(iVar3 - 0x842b,DAT_00807618);
-        ccFntTy::WrStr(*(ccFntTy **)&pSVar2[1].field_0x4,puVar7,iVar16,iVar18,uVar9);
-        thunk_FUN_00540760(*(undefined4 **)&pSVar2->field_0x68,0x37,local_8,'\x01',pbVar4);
-        ccFntTy::EraseSufr(*(ccFntTy **)&pSVar2[1].field_0x4);
+        ccFntTy::WrStr(pSVar2->field_0189,puVar7,iVar16,iVar18,uVar9);
+        DibPut((undefined4 *)pSVar2->field_0068,0x37,local_8,'\x01',pbVar4);
+        ccFntTy::EraseSufr(pSVar2->field_0189);
       }
       iVar3 = iVar3 + 1;
       local_c = local_c + 1;
@@ -90,7 +91,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       local_10 = local_10 + -1;
     } while (local_10 != 0);
     uVar21 = 1;
-    iVar3 = *(int *)pSVar2;
+    iVar3 = pSVar2->field_0000;
     uVar20 = 0;
     uVar17 = 0;
     uVar15 = 0;
@@ -100,7 +101,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     pCVar6 = thunk_FUN_00571240(s_BUT_BIG_007c77e0,0);
     uVar9 = (**(code **)(iVar3 + 4))
                       (0,1,0xa0,0x5c,0,1,1,pCVar6,uVar9,uVar12,uVar14,uVar15,uVar17,uVar20,uVar21);
-    *(undefined4 *)&pSVar2[1].field_0x48 = uVar9;
+    pSVar2->field_01CD = uVar9;
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

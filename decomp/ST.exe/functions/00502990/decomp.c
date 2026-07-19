@@ -36,80 +36,71 @@ void __thiscall CPanelTy::PaintCtrlBoatSI(CPanelTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel2_cpp_007c2524,0x1ed);
     return;
   }
-  switch(local_c->field_0xb9e) {
+  switch(local_c->field_0B9E) {
   case 0:
-    thunk_FUN_00540760((undefined4 *)local_c->field_018C,0,0x46,'\x01',
-                       *(byte **)&local_c->field_0x974);
-    thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,0x31,0,'\x06',*(byte **)&pCVar2->field_0x97c
-                      );
+    DibPut((undefined4 *)local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974);
+    DibPut((undefined4 *)pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_097C);
     break;
   case 1:
-    thunk_FUN_00540760((undefined4 *)local_c->field_018C,0,0x46,'\x01',
-                       *(byte **)&local_c->field_0x988);
-    if (*(int *)&pCVar2->field_0xb99 == 0xbd) {
-      pbVar4 = *(byte **)&pCVar2->field_0x97c;
+    DibPut((undefined4 *)local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0988);
+    if (pCVar2->field_0B99 == 0xbd) {
+      pbVar4 = (byte *)pCVar2->field_097C;
 LAB_00502b2d:
       puVar7 = (undefined4 *)pCVar2->field_018C;
     }
     else {
-      pbVar4 = *(byte **)&pCVar2->field_0x98c;
+      pbVar4 = (byte *)pCVar2->field_098C;
       puVar7 = (undefined4 *)pCVar2->field_018C;
     }
     goto LAB_00502b3b;
   case 2:
-    thunk_FUN_00540760((undefined4 *)local_c->field_018C,0,0x46,'\x01',
-                       *(byte **)&local_c->field_0x988);
-    thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,0x31,0,'\x06',*(byte **)&pCVar2->field_0x98c
-                      );
+    DibPut((undefined4 *)local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0988);
+    DibPut((undefined4 *)pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_098C);
     break;
   case 3:
-    thunk_FUN_00540760((undefined4 *)local_c->field_018C,0,0x46,'\x01',
-                       *(byte **)&local_c->field_0x974);
-    switch(*(undefined4 *)&pCVar2->field_0xb99) {
+    DibPut((undefined4 *)local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974);
+    switch(pCVar2->field_0B99) {
     case 9:
     case 0x15:
     case 0xa6:
     case 0xa7:
     case 0xaf:
     case 0xbd:
-      pbVar4 = *(byte **)&pCVar2->field_0x97c;
+      pbVar4 = (byte *)pCVar2->field_097C;
       puVar7 = (undefined4 *)pCVar2->field_018C;
       break;
     default:
-      pbVar4 = *(byte **)&pCVar2->field_0x990;
+      pbVar4 = (byte *)pCVar2->field_0990;
       goto LAB_00502b2d;
     }
 LAB_00502b3b:
-    thunk_FUN_00540760(puVar7,0x31,0,'\x06',pbVar4);
+    DibPut(puVar7,0x31,0,'\x06',pbVar4);
     break;
   case 4:
-    thunk_FUN_00540760((undefined4 *)local_c->field_018C,0,0x46,'\x01',
-                       *(byte **)&local_c->field_0x974);
-    thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,0x31,0,'\x06',*(byte **)&pCVar2->field_0x97c
-                      );
+    DibPut((undefined4 *)local_c->field_018C,0,0x46,'\x01',(byte *)local_c->field_0974);
+    DibPut((undefined4 *)pCVar2->field_018C,0x31,0,'\x06',(byte *)pCVar2->field_097C);
   }
-  if (pCVar2->field_0xb9e == '\x01') {
-    switch(*(undefined4 *)&pCVar2->field_0xb99) {
+  if (pCVar2->field_0B9E == '\x01') {
+    switch(pCVar2->field_0B99) {
     case 0x1a:
-      pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b2,3);
-      thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,0x3c,0x84,'\x01',pbVar4);
+      pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,3);
+      DibPut((undefined4 *)pCVar2->field_018C,0x3c,0x84,'\x01',pbVar4);
       bVar6 = 0;
       local_8 = local_8 & 0xffffff00;
-      if ((pCVar2->field_0xbb6 & 0xfe) != 0) {
+      if ((pCVar2->field_0BB6 & 0xfe) != 0) {
         do {
-          pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,3);
-          thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
-                             '\x01',pbVar4);
+          pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,3);
+          DibPut((undefined4 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar4);
           bVar6 = bVar6 + 1;
           local_8 = CONCAT31(local_8._1_3_,bVar6);
-        } while (bVar6 < (byte)pCVar2->field_0xbb6 >> 1);
+        } while (bVar6 < (byte)pCVar2->field_0BB6 >> 1);
       }
       if (bVar6 < 0x14) {
         iVar5 = 0x14 - (local_8 & 0xff);
         iVar3 = (local_8 & 0xff) * 4 + 0x3f;
         do {
-          pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,0);
-          thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,iVar3,0x87,'\x01',pbVar4);
+          pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
+          DibPut((undefined4 *)pCVar2->field_018C,iVar3,0x87,'\x01',pbVar4);
           iVar3 = iVar3 + 4;
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);
@@ -119,26 +110,25 @@ LAB_00502b3b:
     case 0x1d:
     case 0x23:
     case 0x24:
-      if (pCVar2->field_0xbcd != -1) {
-        pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b2,3);
-        thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,0x3c,0x84,'\x01',pbVar4);
+      if (pCVar2->field_0BCD != -1) {
+        pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,3);
+        DibPut((undefined4 *)pCVar2->field_018C,0x3c,0x84,'\x01',pbVar4);
         bVar6 = 0;
         local_8 = local_8 & 0xffffff00;
-        if (pCVar2->field_0xbcd != '\0') {
+        if (pCVar2->field_0BCD != '\0') {
           do {
-            pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,1);
-            thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
-                               '\x01',pbVar4);
+            pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,1);
+            DibPut((undefined4 *)pCVar2->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar4);
             bVar6 = bVar6 + 1;
             local_8 = CONCAT31(local_8._1_3_,bVar6);
-          } while (bVar6 < (byte)pCVar2->field_0xbcd);
+          } while (bVar6 < (byte)pCVar2->field_0BCD);
         }
         if (bVar6 < 0x14) {
           iVar5 = 0x14 - (local_8 & 0xff);
           iVar3 = (local_8 & 0xff) * 4 + 0x3f;
           do {
-            pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,0);
-            thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,iVar3,0x87,'\x01',pbVar4);
+            pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
+            DibPut((undefined4 *)pCVar2->field_018C,iVar3,0x87,'\x01',pbVar4);
             iVar3 = iVar3 + 4;
             iVar5 = iVar5 + -1;
           } while (iVar5 != 0);
@@ -146,10 +136,9 @@ LAB_00502b3b:
       }
     }
   }
-  if (-1 < (int)*(uint *)&pCVar2->field_0x154) {
+  if (-1 < (int)pCVar2->field_0154) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&pCVar2->field_0x154,0xffffffff,*(uint *)&pCVar2->field_0x48,
-               *(uint *)&pCVar2->field_0xa0);
+              (DAT_008075a8,pCVar2->field_0154,0xffffffff,pCVar2->field_0048,pCVar2->field_00A0);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

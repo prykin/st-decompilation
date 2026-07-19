@@ -1,5 +1,10 @@
 
-int __cdecl FUN_00726470(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 265 | 269 | 271 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfMSprGetWidth(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

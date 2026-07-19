@@ -1,5 +1,10 @@
 
-ushort * __cdecl FUN_00719d00(cMf32 *param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 32 | 34 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+ushort * __cdecl mfWavLoad(cMf32 *param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;
@@ -27,7 +32,7 @@ ushort * __cdecl FUN_00719d00(cMf32 *param_1,char *param_2,byte param_3,int para
     }
     local_c = cMf32::RecGet(param_1,2,param_2,(int *)ppuVar5,param_4);
     if (local_c != (ushort *)0x0) {
-      iVar2 = FUN_00719df0(param_1,param_2,param_4);
+      iVar2 = mfWavGetType(param_1,param_2,param_4);
       if (((short)iVar2 == 1) && (local_5 != 0)) {
         *(uint *)(local_c + 0xb) = (-(uint)(*local_c != 1) & 0x24) + 0x1a + (int)local_c;
       }

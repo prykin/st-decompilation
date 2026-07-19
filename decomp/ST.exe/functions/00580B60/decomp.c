@@ -36,18 +36,18 @@ undefined4 * __thiscall STFieldC::CreateField(STFieldC *this,int param_1,int par
     puVar5 = (undefined4 *)(*pcVar1)();
     return puVar5;
   }
-  if (*(int *)(local_c + 0x255) == 0xdd) {
+  if (local_c->field_0255 == 0xdd) {
     pcVar6 = s_ResSmall_007cb100;
   }
-  else if (*(int *)(local_c + 0x255) == 0xde) {
+  else if (local_c->field_0255 == 0xde) {
     pcVar6 = s_ResSmallM_007cb10c;
   }
   else {
     pcVar6 = s_ResSmall_007cb100;
   }
-  puVar4 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)pcVar6,0xffffffff,0,1,0,(undefined4 *)0x0);
-  if ((puVar4 != (ushort *)0x0) && (*(void **)(pSVar2 + 0x211) != (void *)0x0)) {
-    puVar5 = FUN_006e6460(*(void **)(pSVar2 + 0x211),*(undefined4 *)((int)puVar4 + 0x21),
+  puVar4 = mfRLoad(DAT_00806774,CASE_1D,(byte *)pcVar6,0xffffffff,0,1,0,(undefined4 *)0x0);
+  if ((puVar4 != (ushort *)0x0) && ((void *)pSVar2->field_0211 != (void *)0x0)) {
+    puVar5 = FUN_006e6460((void *)pSVar2->field_0211,*(undefined4 *)((int)puVar4 + 0x21),
                           *(int *)puVar4,(short)(*(int *)((int)puVar4 + 9) / 2),
                           (short)(*(int *)((int)puVar4 + 0xd) / 2),1,1);
     local_8 = (undefined4 *)0x0;

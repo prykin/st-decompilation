@@ -29,7 +29,7 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
     local_10 = piVar6[1] - DAT_00806734;
   }
   else {
-    local_10 = piVar6[1] - *(int *)&this->field_0x44;
+    local_10 = piVar6[1] - this->field_0044;
   }
   local_8 = 0;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
@@ -63,11 +63,10 @@ void __thiscall FrmPanelTy::PaintBut(FrmPanelTy *this,int param_1,char *param_2)
   piVar6 = (int *)0x0;
   pCVar4 = FUN_006f2c00(param_2,1,local_8);
   local_c = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar6,iVar3);
-  thunk_FUN_00540760(*(undefined4 **)&pFVar2->field_0x68,local_18,local_10,'\x01',(byte *)local_c);
+  DibPut((undefined4 *)pFVar2->field_0068,local_18,local_10,'\x01',(byte *)local_c);
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,*(uint *)&pFVar2->field_0x60,0xffffffff,pFVar2->field_003C,
-             *(uint *)&pFVar2->field_0x44);
+            (DAT_008075a8,pFVar2->field_0060,0xffffffff,pFVar2->field_003C,pFVar2->field_0044);
   g_currentExceptionFrame = pIVar7;
   return;
 }

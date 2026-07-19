@@ -1,5 +1,11 @@
 
-undefined4 * __cdecl FUN_00716fd0(int param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mftspr.cpp
+   Diagnostic line evidence: 247 | 249 | 260 | 276 | 278 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl mfTSprLoadAsSSpr(int param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;

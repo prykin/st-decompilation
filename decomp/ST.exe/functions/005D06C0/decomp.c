@@ -58,8 +58,8 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
             bVar7 = uVar6 < *(uint *)(iVar3 + 0xc);
           } while ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc));
         }
-        (**(code **)(*(int *)local_8 + 0x2c))();
-        *(int *)&pSVar2[1].field_0x4 = *(int *)&pSVar2[1].field_0x4 + 1;
+        (**(code **)(local_8->field_0000 + 0x2c))();
+        pSVar2->field_2121 = pSVar2->field_2121 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

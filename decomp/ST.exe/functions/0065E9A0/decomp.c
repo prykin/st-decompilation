@@ -39,8 +39,8 @@ FUN_0065e9a0(void *this,uint param_1,short *param_2,uint param_3,uint param_4,by
     else if (((char)param_6 < '\0') || ('\b' < (char)param_6)) {
       param_6 = CONCAT31(param_6._1_3_,0xff);
     }
-    thunk_FUN_00676d80(uVar4,param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,&LAB_0040559c,
-                       local_8,(undefined *)(~-(uint)(param_7 != 0) & 0x404935));
+    _EnumPlObj(uVar4,param_3,param_4,param_5,(char)param_6,0,0,0,-1,-1,-1,&LAB_0040559c,local_8,
+               (undefined *)(~-(uint)(param_7 != 0) & 0x404935));
     if (DAT_00811900 != 0) {
       iVar3 = thunk_FUN_00423220((void *)((int)local_10 + 0x1c),local_8,DAT_00811900);
       if ((void *)local_8[iVar3 * 0xb + 3] != (void *)0x0) {

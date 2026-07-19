@@ -41,9 +41,8 @@ LAB_005a2c91:
           uVar5 = uVar5 + 1;
         } while (uVar5 < uVar1);
       }
-      *(undefined4 *)&local_8->field_0x2d = 5;
-      FUN_006e6080(local_8,2,*(undefined4 *)&local_8->field_0x1b20,
-                   (undefined4 *)&local_8->field_0x1d);
+      local_8->field_002D = 5;
+      FUN_006e6080(local_8,2,local_8->field_1B20,(undefined4 *)&local_8->field_0x1d);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

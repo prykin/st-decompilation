@@ -34,7 +34,7 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
     if (DAT_00806794 != 0) {
       FUN_0070a300(&DAT_00806794);
     }
-    cMf32::delete(DAT_00806790,(undefined4 *)DAT_00806790);
+    cMf32::delete(DAT_00806790,&DAT_00806790->field_0000);
     DAT_00806790 = (cMf32 *)0x0;
     pcVar3 = extraout_ECX_01;
     if (DAT_0080677c != 0) {
@@ -53,7 +53,7 @@ void __thiscall STAppC::CloseGameDBs(STAppC *this)
     if (DAT_0080676c != 0) {
       FUN_0070a300(&DAT_0080676c);
     }
-    cMf32::delete(DAT_00806768,(undefined4 *)DAT_00806768);
+    cMf32::delete(DAT_00806768,&DAT_00806768->field_0000);
     DAT_00806768 = (cMf32 *)0x0;
     g_currentExceptionFrame = local_48.previous;
     return;

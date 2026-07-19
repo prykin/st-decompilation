@@ -42,7 +42,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  if (*(short *)&local_8->field_0x7d == -2) {
+  if (local_8->field_007D == -2) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -78,7 +78,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
     }
     STAllPlayersC::AddObjsToGroup
               (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pAVar3->field_0x24),
-               *(ushort *)&pAVar3->field_0x7d,(int)puVar6,(undefined2 *)0x0);
+               pAVar3->field_007D,(int)puVar6,(undefined2 *)0x0);
     FUN_006ae110((byte *)puVar6);
     g_currentExceptionFrame = local_4c.previous;
     return;

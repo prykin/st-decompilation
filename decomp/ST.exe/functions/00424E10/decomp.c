@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\Td3dshad.cpp
+   Diagnostic line evidence: 1376 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 int __thiscall
 FUN_00424e10(void *this,int param_1,float param_2,float param_3,float param_4,int param_5,

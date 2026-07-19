@@ -34,32 +34,31 @@ CursorClassTy::SetImages
     RaiseInternalException(-0x34,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xa9);
     return;
   }
-  *(int *)&local_8[1].field_0x55 = -(int)param_4;
-  *(undefined4 *)&local_8[1].field_0x45 = param_1;
-  iVar3 = *(int *)&local_8->field_0x18;
-  *(uint *)&local_8[1].field_0x59 = -param_5;
-  (**(code **)(iVar3 + 4))(DAT_00806784,7,0,param_2,0xffffffff);
+  local_8->field_00B9 = -(int)param_4;
+  local_8->field_00A9 = param_1;
+  local_8->field_00BD = -param_5;
+  (**(code **)(local_8->field_0018 + 4))(DAT_00806784,7,0,param_2,0xffffffff);
   Library::DKW::DDX::FUN_006b85d0
-            (*(uint **)&pCVar2[1].field_0x49,(int)*(short *)(*(int *)&pCVar2[1].field_0x5 + 0x23),
-             (BITMAPINFO *)(*(int *)&pCVar2[1].field_0x5 + 0x2d),0x8000000,0,param_4,param_5);
-  *(undefined4 *)&pCVar2->field_0x58 = param_3;
+            ((uint *)pCVar2->field_00AD,(int)*(short *)(pCVar2->field_0069 + 0x23),
+             (BITMAPINFO *)(pCVar2->field_0069 + 0x2d),0x8000000,0,param_4,param_5);
+  pCVar2->field_0058 = param_3;
   if (pCVar2->field_001C != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)pCVar2->field_0060,pCVar2->field_001C,0xfffffffe,*(uint *)&pCVar2->field_0x34
-               ,*(uint *)&pCVar2->field_0x38);
+              ((uint *)pCVar2->field_0060,pCVar2->field_001C,0xfffffffe,pCVar2->field_0034,
+               pCVar2->field_0038);
   }
   if (param_6 < 0) {
-    *(int *)&pCVar2[1].field_0x4d = *(int *)&pCVar2->field_0x3c - (int)param_4;
+    pCVar2->field_00B1 = pCVar2->field_003C - (int)param_4;
   }
   else {
-    *(int *)&pCVar2[1].field_0x4d = param_6 - (int)param_4;
+    pCVar2->field_00B1 = param_6 - (int)param_4;
   }
   if (param_7 < 0) {
-    *(uint *)&pCVar2[1].field_0x51 = *(int *)&pCVar2->field_0x40 - param_5;
+    pCVar2->field_00B5 = pCVar2->field_0040 - param_5;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  *(uint *)&pCVar2[1].field_0x51 = param_7 - param_5;
+  pCVar2->field_00B5 = param_7 - param_5;
   g_currentExceptionFrame = local_4c.previous;
   return;
 }

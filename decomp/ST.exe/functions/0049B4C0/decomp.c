@@ -57,8 +57,8 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
       puVar7 = puVar7 + 1;
     }
     uVar8 = 0;
-    *(undefined4 *)&local_1c->field_0x222 = *(undefined4 *)&local_1c->field_0xff;
-    *(undefined4 *)&local_1c->field_0x65 = 0;
+    local_1c->field_0222 = local_1c->field_00FF;
+    local_1c->field_0065 = 0;
     if (local_18 != 0) {
       uVar6 = 0;
       do {
@@ -74,7 +74,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x720);
           }
           thunk_FUN_004162b0(this_00,&local_8,&local_6,&local_a);
-          thunk_FUN_00481520(this_00,(int)local_8,(int)local_6,*(undefined4 *)&pSVar2->field_0x222);
+          thunk_FUN_00481520(this_00,(int)local_8,(int)local_6,pSVar2->field_0222);
           local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           local_24 = 0xffff;
           local_22 = 0xffff;

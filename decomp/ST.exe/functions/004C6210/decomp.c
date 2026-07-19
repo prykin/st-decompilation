@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_BldMark.cpp
+   Diagnostic line evidence: 72 | 73 | 76 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __thiscall FUN_004c6210(void *this,undefined4 param_1,undefined4 param_2)
 
 {

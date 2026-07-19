@@ -27,28 +27,28 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)&local_8->field_0xcc = 0xf;
-    *(undefined4 *)&local_8->field_0xd0 = 0x7106;
+    local_8->field_00CC = 0xf;
+    local_8->field_00D0 = 0x7106;
     (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
-    if (*(int *)&pSVar2->field_0x39 != 0) {
-      FUN_006b9890((int *)&pSVar2->field_0x39);
+    if (pSVar2->field_0039 != 0) {
+      FUN_006b9890(&pSVar2->field_0039);
     }
-    if (*(int *)&pSVar2->field_0x4f != 0) {
-      FUN_006ab060((undefined4 *)&pSVar2->field_0x4f);
+    if (pSVar2->field_004F != 0) {
+      FUN_006ab060(&pSVar2->field_004F);
     }
     if (pSVar2->field_003D != 0) {
       FUN_006ab060(&pSVar2->field_003D);
     }
-    *(undefined4 *)&pSVar2->field_0x41 = 0;
-    *(undefined4 *)&pSVar2->field_0x45 = 0;
-    *(undefined4 *)&pSVar2->field_0x53 = 0;
-    if (*(int *)&pSVar2->field_0x65 != 0) {
-      FUN_006b9890((int *)&pSVar2->field_0x65);
+    pSVar2->field_0041 = 0;
+    pSVar2->field_0045 = 0;
+    pSVar2->field_0053 = 0;
+    if (pSVar2->field_0065 != 0) {
+      FUN_006b9890(&pSVar2->field_0065);
     }
-    *(undefined4 *)&pSVar2->field_0x69 = 0;
-    *(undefined4 *)&pSVar2->field_0x6d = 0;
-    *(undefined4 *)&pSVar2->field_0x71 = 0;
-    *(undefined4 *)&pSVar2->field_0x75 = 0;
+    pSVar2->field_0069 = 0;
+    pSVar2->field_006D = 0;
+    pSVar2->field_0071 = 0;
+    pSVar2->field_0075 = 0;
     FUN_006e52d0((int)pSVar2);
     g_currentExceptionFrame = local_4c.previous;
     return;

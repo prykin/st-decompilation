@@ -1,4 +1,4 @@
-FUN_0070b900:
+imgGetDibFromFile:
 0070B900  55                        PUSH EBP
 0070B901  8B EC                     MOV EBP,ESP
 0070B903  81 EC F4 00 00 00         SUB ESP,0xf4

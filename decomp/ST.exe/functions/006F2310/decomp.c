@@ -42,7 +42,7 @@ cMf32::RecGetParam(cMf32 *this,byte param_1,char *param_2,undefined4 *param_3,in
       FUN_006ab060(&local_8);
     }
     if ((param_4 != 0) || (iVar4 != -4)) {
-      wsprintfA(local_378,s_cMf32__RecGetParam_File___s__Sec_007efc28,local_c + 0x231,
+      wsprintfA(local_378,s_cMf32__RecGetParam_File___s__Sec_007efc28,&local_c[0xb].field_0x21,
                 s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
       iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x296,0,iVar4,&DAT_007a4ccc,
                                  local_378);
@@ -76,7 +76,7 @@ cMf32::RecGetParam(cMf32 *this,byte param_1,char *param_2,undefined4 *param_3,in
     param_2 = param_2 + 1;
     pcVar8 = pcVar8 + 1;
   }
-  iVar4 = Library::DKW::DB::FUN_00751b60(**(int **)pcVar3,(ushort *)local_274,&local_10);
+  iVar4 = Library::DKW::DB::FUN_00751b60(*(int *)pcVar3->field_0000,(ushort *)local_274,&local_10);
   if (iVar4 == -4) {
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x284);
   }

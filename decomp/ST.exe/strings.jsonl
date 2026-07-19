@@ -295,8 +295,8 @@
 {"address":"007A51A4","type":"string","length":19,"value":"\"STGroupC::SetAVPar\"","referenced_from":["004247B0 STGroupC::SetAVPar"]}
 {"address":"007A5208","type":"string","length":30,"value":"\"E:\\\\__titans\\\\wlad\\\\Td3dshad.cpp\"","referenced_from":["00424E10 FUN_00424e10","00427F20 FUN_00427f20"]}
 {"address":"007A522C","type":"string","length":12,"value":"\"MAPMESH000\"","referenced_from":[]}
-{"address":"007A5FDC","type":"string","length":22,"value":"\"E:\\\\__titans\\\\tload.cpp\"","referenced_from":["00428E50 FUN_00428e50","0042A290 FUN_0042a290","0042A860 FUN_0042a860"]}
-{"address":"007A5FF8","type":"string","length":9,"value":"\"LoadLand\"","referenced_from":["0042A290 FUN_0042a290"]}
+{"address":"007A5FDC","type":"string","length":22,"value":"\"E:\\\\__titans\\\\tload.cpp\"","referenced_from":["00428E50 FUN_00428e50","0042A290 LoadLand","0042A860 FUN_0042a860"]}
+{"address":"007A5FF8","type":"string","length":9,"value":"\"LoadLand\"","referenced_from":["0042A290 LoadLand"]}
 {"address":"007A6004","type":"string","length":30,"value":"\"E:\\\\__titans\\\\wlad\\\\to_allpl.cpp\"","referenced_from":["0042AB00 STAllPlayersC::GetGObjFromZone","0042ABE0 STAllPlayersC::GetGObjFromZone2","0042B1F0 STAllPlayersC::GetGObjFromBox","0042B620 STAllPlayersC::GetObjPtr","0042B7D0 STAllPlayersC::AddObjsToGroup","0042BB30 STAllPlayersC::AddObjToTmp","0042BEA0 STAllPlayersC::AddObjToTmp2","0042C1C0 STAllPlayersC::AddObjsToTmp","0042C300 FUN_0042c300","0042C4B0 STAllPlayersC::DelObjsFromTmp","0042C5F0 STAllPlayersC::DelObjFromTmps","0042CDE0 STAllPlayersC::PushTV","0042CEF0 STAllPlayersC::DelObjFromSaveTmps","0042D190 STAllPlayersC::ResetActivityFromObjs","0042D370 STAllPlayersC::SetActivityToObjs","0042D4F0 STAllPlayersC::ResetActivityFromTmp","0042D6B0 STAllPlayersC::RemoveActiveTV","0042D980 STAllPlayersC::GetActiveCenter","0042DFE0 STAllPlayersC::PrepareToCmd","0042E210 STAllPlayersC::RegisterObject","0042EFD0 STAllPlayersC::RegisterGroup","0042F140 STAllPlayersC::UnRegisterGroup","0042F2B0 STAllPlayersC::UnRegisterObject","00430470 STAllPlayersC::RegisterTorpedo","00430620 STAllPlayersC::IsTorpLive","00430750 FUN_00430750","00430960 STAllPlayersC::UnRegisterTorpedo","00430A90 STAllPlayersC::GetMessage","004314E0 STAllPlayersC::FramePick","00433E90 STAllPlayersC::PointPick","00435060 STAllPlayersC::SelfCheckObjControl","004354E0 STAllPlayersC::ReplaceObject","00435930 STAllPlayersC::GetCursorType","00436F20 STAllPlayersC::CmdToPlsObj","00438E30 STAllPlayersC::SaveTmp","00439100 STAllPlayersC::RestoreTmp","0043AAF0 STAllPlayersC::GetCamPoint","0043AE40 STAllPlayersC::SetActivePanel","0043BEB0 STAllPlayersC::GetPanelInfo","0043E4E0 STAllPlayersC::GetObjsList","0043E780 STAllPlayersC::GetTOBJList","0043EED0 STAllPlayersC::GetTOBJListFromDArr","0043F200 STAllPlayersC::GetTOBJList","00440600 STAllPlayersC::GetNInTmp","00440860 STAllPlayersC::_ChangeMD","00440990 STAllPlayersC::_ChangeDock","00440AA0 STAllPlayersC::_AssignDocks","00441CE0 STAllPlayersC::_MakeMDPairs","00442300 STAllPlayersC::_AddMDPairs","00442B40 STAllPlayersC::_SubMDObject","00442E50 STAllPlayersC::_AssignMDPairs","00443F30 STAllPlayersC::SaveAllPlData","004455C0 STAllPlayersC::CreateBoat","004458D0 STAllPlayersC::GetBoatWeaponInfo","00445A40 STAllPlayersC::RegisterPGPair","004461B0 STAllPlayersC::_DeleteGuardBoat","00446520 STAllPlayersC::DeleteGuardBoat","00446910 STAllPlayersC::DeletePGPairs","00446AA0 STAllPlayersC::OptimizeGuardBoats","00446F80 STAllPlayersC::DistributeGuardBoats","00448120 STAllPlayersC::PutOnPlaceGuardBoats","00449B60 STAllPlayersC::DestroyObjectMsg","00449CE0 STAllPlayersC::RegisterArtefact","00449E60 STAllPlayersC::UnRegisterArtefact","00449FD0 STAllPlayersC::RegisterMine","0044A150 STAllPlayersC::UnRegisterMine","0044A2C0 STAllPlayersC::RegisterDeposit","0044A440 STAllPlayersC::UnRegisterDeposit","0044A5B0 STAllPlayersC::RegisterContainer","0044A730 STAllPlayersC::UnRegisterContainer","0044A8A0 STAllPlayersC::RegisterBlot","0044AA20 STAllPlayersC::UnRegisterBlot","0044AB90 STAllPlayersC::CheckTmps","0044AF50 STAllPlayersC::PushTV","0044B030 STAllPlayersC::ActivateTV","0044B280 STAllPlayersC::CalibrateTmp","0044B5F0 STAllPlayersC::SelectObjects","0044C130 STAllPlayersC::GetTOBJImage","0044C720 STAllPlayersC::GetScrObjList"]}
 {"address":"007A6028","type":"string","length":31,"value":"\"STAllPlayersC::GetGObjFromZone\"","referenced_from":["0042AB00 STAllPlayersC::GetGObjFromZone"]}
 {"address":"007A6050","type":"string","length":32,"value":"\"STAllPlayersC::GetGObjFromZone2\"","referenced_from":["0042ABE0 STAllPlayersC::GetGObjFromZone2"]}
@@ -1660,9 +1660,9 @@
 {"address":"007C65D4","type":"string","length":12,"value":"\"Right Click\"","referenced_from":[]}
 {"address":"007C65E8","type":"string","length":12,"value":"\"Left Click\"","referenced_from":[]}
 {"address":"007C6EDC","type":"string","length":7,"value":"\"%s%s%s\"","referenced_from":["0052A970 FUN_0052a970","005325B0 OptPanelTy::PrepAsses","00533D10 OptPanelTy::GetMessage","0055C590 FUN_0055c590","0056ADC0 STAppC::InitApp","0056DB80 STAppC::StartGame","00572510 FUN_00572510","00572920 FUN_00572920","005738D0 FUN_005738d0","00575A10 FUN_00575a10","005776D0 GameSystemC::GetMessage","005A1160 FSGSTy::CheckUpdate","005A4350 FSGSTy::GetMessage","005C29B0 FUN_005c29b0","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005D9470 SIDTy::GetMessage","006803B0 FUN_006803b0","006F2C00 FUN_006f2c00"]}
-{"address":"007C6EF0","type":"string","length":14,"value":"\"CreateMiniMap\"","referenced_from":["0052AB40 FUN_0052ab40"]}
-{"address":"007C6F00","type":"string","length":31,"value":"\"E:\\\\__titans\\\\Andrey\\\\minimap.cpp\"","referenced_from":["0052AB40 FUN_0052ab40"]}
-{"address":"007C6F28","type":"string","length":22,"value":"\"Preparing mini-map...\"","referenced_from":["0052AB40 FUN_0052ab40"]}
+{"address":"007C6EF0","type":"string","length":14,"value":"\"CreateMiniMap\"","referenced_from":["0052AB40 CreateMiniMap"]}
+{"address":"007C6F00","type":"string","length":31,"value":"\"E:\\\\__titans\\\\Andrey\\\\minimap.cpp\"","referenced_from":["0052AB40 CreateMiniMap"]}
+{"address":"007C6F28","type":"string","length":22,"value":"\"Preparing mini-map...\"","referenced_from":["0052AB40 CreateMiniMap"]}
 {"address":"007C6F48","type":"string","length":29,"value":"\"E:\\\\__titans\\\\Andrey\\\\money.cpp\"","referenced_from":["0052BF00 MoneyTy::GetMessage"]}
 {"address":"007C6F6C","type":"string","length":20,"value":"\"MoneyTy::GetMessage\"","referenced_from":["0052BF00 MoneyTy::GetMessage"]}
 {"address":"007C6F84","type":"string","length":30,"value":"\"E:\\\\__titans\\\\Andrey\\\\mpopup.cpp\"","referenced_from":["0052D0A0 PopUpTy::OutProc","0052D200 PopUpTy::OutStr","0052D370 PopUpTy::AddStr","0052D690 PopUpTy::ChangeNumStr","0052D980 PopUpTy::ChangeState","0052DB90 PopUpTy::Clear","0052DD20 PopUpTy::GetMessage"]}
@@ -1777,20 +1777,20 @@
 {"address":"007C7AF4","type":"string","length":11,"value":"\"BUT_BLDTAB\"","referenced_from":["0053FCD0 ProdPanelTy::PaintTab"]}
 {"address":"007C7B04","type":"string","length":24,"value":"\"ProdPanelTy::GetMessage\"","referenced_from":["005400F0 ProdPanelTy::GetMessage"]}
 {"address":"007C7B20","type":"string","length":9,"value":"\"BUT_SLRT\"","referenced_from":["005400F0 ProdPanelTy::GetMessage"]}
-{"address":"007C7B2C","type":"string","length":31,"value":"\"E:\\\\__titans\\\\Andrey\\\\support.cpp\"","referenced_from":["005403C0 FUN_005403c0","005404F0 FUN_005404f0","00540620 FUN_00540620","00540760 FUN_00540760","00540890 StartServTy::WrTextDDX","00540A60 StartServTy::WrSarrDDX","00540DC0 FUN_00540dc0","00541030 FUN_00541030"]}
-{"address":"007C7B54","type":"string","length":7,"value":"\"PutDDX\"","referenced_from":["005403C0 FUN_005403c0"]}
-{"address":"007C7B5C","type":"string","length":12,"value":"\"TransPutDDX\"","referenced_from":["005404F0 FUN_005404f0"]}
-{"address":"007C7B6C","type":"string","length":11,"value":"\"PutDDXClip\"","referenced_from":["00540620 FUN_00540620"]}
-{"address":"007C7B7C","type":"string","length":7,"value":"\"DibPut\"","referenced_from":["00540760 FUN_00540760"]}
+{"address":"007C7B2C","type":"string","length":31,"value":"\"E:\\\\__titans\\\\Andrey\\\\support.cpp\"","referenced_from":["005403C0 PutDDX","005404F0 TransPutDDX","00540620 PutDDXClip","00540760 DibPut","00540890 StartServTy::WrTextDDX","00540A60 StartServTy::WrSarrDDX","00540DC0 SetAccelerator","00541030 DelAllAccelerators"]}
+{"address":"007C7B54","type":"string","length":7,"value":"\"PutDDX\"","referenced_from":["005403C0 PutDDX"]}
+{"address":"007C7B5C","type":"string","length":12,"value":"\"TransPutDDX\"","referenced_from":["005404F0 TransPutDDX"]}
+{"address":"007C7B6C","type":"string","length":11,"value":"\"PutDDXClip\"","referenced_from":["00540620 PutDDXClip"]}
+{"address":"007C7B7C","type":"string","length":7,"value":"\"DibPut\"","referenced_from":["00540760 DibPut"]}
 {"address":"007C7B84","type":"string","length":23,"value":"\"StartServTy::WrTextDDX\"","referenced_from":["00540890 StartServTy::WrTextDDX"]}
 {"address":"007C7BA0","type":"string","length":23,"value":"\"StartServTy::WrSarrDDX\"","referenced_from":["00540A60 StartServTy::WrSarrDDX"]}
-{"address":"007C7BBC","type":"string","length":15,"value":"\"SetAccelerator\"","referenced_from":["00540DC0 FUN_00540dc0"]}
-{"address":"007C7BD0","type":"string","length":19,"value":"\"DelAllAccelerators\"","referenced_from":["00541030 FUN_00541030"]}
-{"address":"007C7BE8","type":"string","length":33,"value":"\"E:\\\\__titans\\\\Andrey\\\\tintersys.cpp\"","referenced_from":["005424A0 InterSystemC::CreateInterfObjects","00542D80 FUN_00542d80","00542F40 InterSystemC::GetMessage"]}
+{"address":"007C7BBC","type":"string","length":15,"value":"\"SetAccelerator\"","referenced_from":["00540DC0 SetAccelerator"]}
+{"address":"007C7BD0","type":"string","length":19,"value":"\"DelAllAccelerators\"","referenced_from":["00541030 DelAllAccelerators"]}
+{"address":"007C7BE8","type":"string","length":33,"value":"\"E:\\\\__titans\\\\Andrey\\\\tintersys.cpp\"","referenced_from":["005424A0 InterSystemC::CreateInterfObjects","00542D80 CreateInterSystem","00542F40 InterSystemC::GetMessage"]}
 {"address":"007C7C10","type":"string","length":34,"value":"\"InterSystemC::CreateInterfObjects\"","referenced_from":["005424A0 InterSystemC::CreateInterfObjects"]}
 {"address":"007C7C38","type":"string","length":13,"value":"\"BUT_OHELPMSK\"","referenced_from":["005424A0 InterSystemC::CreateInterfObjects"]}
 {"address":"007C7C48","type":"string","length":12,"value":"\"BUT_FILEOPT\"","referenced_from":["005424A0 InterSystemC::CreateInterfObjects","00542F40 InterSystemC::GetMessage"]}
-{"address":"007C7C58","type":"string","length":18,"value":"\"CreateInterSystem\"","referenced_from":["00542D80 FUN_00542d80"]}
+{"address":"007C7C58","type":"string","length":18,"value":"\"CreateInterSystem\"","referenced_from":["00542D80 CreateInterSystem"]}
 {"address":"007C7C70","type":"string","length":25,"value":"\"InterSystemC::GetMessage\"","referenced_from":["00542F40 InterSystemC::GetMessage"]}
 {"address":"007C7C90","type":"string","length":10,"value":"\"BUT_OHELP\"","referenced_from":["00542F40 InterSystemC::GetMessage"]}
 {"address":"007C7C9C","type":"string","length":11,"value":"\"BUT_SETOPT\"","referenced_from":["00542F40 InterSystemC::GetMessage"]}
@@ -1865,9 +1865,9 @@
 {"address":"007C820C","type":"string","length":10,"value":"\"CUR_CLOCK\"","referenced_from":["0054BF40 CursorClassTy::SetGCType"]}
 {"address":"007C8218","type":"string","length":11,"value":"\"CUR_REPORT\"","referenced_from":["0054BF40 CursorClassTy::SetGCType"]}
 {"address":"007C8228","type":"string","length":9,"value":"\"CUR_TASK\"","referenced_from":["0054BF40 CursorClassTy::SetGCType"]}
-{"address":"007C8410","type":"string","length":10,"value":"\"LAST_NAME\"","referenced_from":["0054C740 FUN_0054c740","0054D2F0 STPlaySystemC::Save","0079AE2C"]}
-{"address":"007C841C","type":"string","length":17,"value":"\"CreatePlaySystem\"","referenced_from":["0054C740 FUN_0054c740"]}
-{"address":"007C8430","type":"string","length":32,"value":"\"E:\\\\__titans\\\\Andrey\\\\tplaysys.cpp\"","referenced_from":["0054C740 FUN_0054c740","0054CC20 STPlaySystemC::CreateGameObject","0054CDD0 FUN_0054cdd0","0054CFC0 STPlaySystemC::InitSystem","0054D180 STPlaySystemC::DoneSystem","0054D2F0 STPlaySystemC::Save","0054D430 STPlaySystemC::SaveObjData","0054D550 STPlaySystemC::SaveObjData","0054D640 STPlaySystemC::Life","0054E4F0 STPlaySystemC::GetMessage","0054E950 STPlaySystemC::AddToRep","0054EC20 PlaySystemTy::SendClientMail","0054EEE0 STPlaySystemC::SetCtrlCmd","0054F1D0 STPlaySystemC::PrepareMail","00550250 STPlaySystemC::SendMail"]}
+{"address":"007C8410","type":"string","length":10,"value":"\"LAST_NAME\"","referenced_from":["0054C740 CreatePlaySystem","0054D2F0 STPlaySystemC::Save","0079AE2C"]}
+{"address":"007C841C","type":"string","length":17,"value":"\"CreatePlaySystem\"","referenced_from":["0054C740 CreatePlaySystem"]}
+{"address":"007C8430","type":"string","length":32,"value":"\"E:\\\\__titans\\\\Andrey\\\\tplaysys.cpp\"","referenced_from":["0054C740 CreatePlaySystem","0054CC20 STPlaySystemC::CreateGameObject","0054CDD0 FUN_0054cdd0","0054CFC0 STPlaySystemC::InitSystem","0054D180 STPlaySystemC::DoneSystem","0054D2F0 STPlaySystemC::Save","0054D430 STPlaySystemC::SaveObjData","0054D550 STPlaySystemC::SaveObjData","0054D640 STPlaySystemC::Life","0054E4F0 STPlaySystemC::GetMessage","0054E950 STPlaySystemC::AddToRep","0054EC20 PlaySystemTy::SendClientMail","0054EEE0 STPlaySystemC::SetCtrlCmd","0054F1D0 STPlaySystemC::PrepareMail","00550250 STPlaySystemC::SendMail"]}
 {"address":"007C8458","type":"string","length":40,"value":"\"STPlaySystemC::CreateGameObject error !\"","referenced_from":["0054CC20 STPlaySystemC::CreateGameObject"]}
 {"address":"007C8488","type":"string","length":39,"value":"\"Not found system type for game type %d\"","referenced_from":["0054CC20 STPlaySystemC::CreateGameObject","0054CDD0 FUN_0054cdd0"]}
 {"address":"007C84B8","type":"string","length":26,"value":"\"STPlaySystemC::InitSystem\"","referenced_from":["0054CFC0 STPlaySystemC::InitSystem"]}
@@ -1944,29 +1944,29 @@
 {"address":"007C94B8","type":"string","length":7,"value":"\"ST.INF\"","referenced_from":["0055C590 FUN_0055c590","005A1160 FSGSTy::CheckUpdate","0079AEF4","0079C024"]}
 {"address":"007C94C0","type":"string","length":9,"value":"\"UPDATES\\\\\"","referenced_from":["0055C590 FUN_0055c590","00575A10 FUN_00575a10","005A1160 FSGSTy::CheckUpdate","005A4350 FSGSTy::GetMessage","0079AEF0","0079B114","0079C020"]}
 {"address":"007C94D0","type":"string","length":12,"value":"\"%4s%d%d%d%d\"","referenced_from":["0055C830 FUN_0055c830"]}
-{"address":"007C94E0","type":"string","length":13,"value":"\"PLT_FSGSSHAD\"","referenced_from":["0055DA40 FUN_0055da40","0079AF9C"]}
-{"address":"007C94F0","type":"string","length":14,"value":"\"PLT_FSGSGLASS\"","referenced_from":["0055DA40 FUN_0055da40","0079AF98"]}
-{"address":"007C9500","type":"string","length":8,"value":"\"PLT_DKD\"","referenced_from":["0055D730 FUN_0055d730","0079AF94"]}
-{"address":"007C950C","type":"string","length":9,"value":"\"PLT_GLOW\"","referenced_from":["0055D730 FUN_0055d730","0079AF90"]}
-{"address":"007C9518","type":"string","length":9,"value":"\"PLT_NUCL\"","referenced_from":["0055D730 FUN_0055d730","0079AF8C"]}
-{"address":"007C9524","type":"string","length":11,"value":"\"PLT_MMSHAD\"","referenced_from":["0055DA40 FUN_0055da40","0079AF88"]}
-{"address":"007C9534","type":"string","length":8,"value":"\"PLT_FOG\"","referenced_from":["0055D730 FUN_0055d730","0079AF84"]}
-{"address":"007C9540","type":"string","length":11,"value":"\"PLT_SHAD60\"","referenced_from":["0055D730 FUN_0055d730","0079AF80"]}
-{"address":"007C9550","type":"string","length":11,"value":"\"PLT_SHAD40\"","referenced_from":["0055D730 FUN_0055d730","0079AF7C"]}
-{"address":"007C9560","type":"string","length":11,"value":"\"PLT_SHAD30\"","referenced_from":["0055D730 FUN_0055d730","0079AF78"]}
-{"address":"007C9570","type":"string","length":12,"value":"\"PLT_EXPLITE\"","referenced_from":["0055D730 FUN_0055d730","0079AF74"]}
-{"address":"007C9580","type":"string","length":10,"value":"\"PLT_PAUSE\"","referenced_from":["0055D730 FUN_0055d730","0079AF70"]}
-{"address":"007C958C","type":"string","length":12,"value":"\"PLT_MMGLASS\"","referenced_from":["0055DA40 FUN_0055da40","0079AF6C"]}
-{"address":"007C959C","type":"string","length":24,"value":"\"E:\\\\__titans\\\\pal_tbl.CPP\"","referenced_from":["0055D730 FUN_0055d730","0055DA40 FUN_0055da40"]}
-{"address":"007C95B8","type":"string","length":12,"value":"\"LoadGamePlt\"","referenced_from":["0055D730 FUN_0055d730"]}
-{"address":"007C95C8","type":"string","length":13,"value":"\"LoadStartPlt\"","referenced_from":["0055DA40 FUN_0055da40"]}
-{"address":"007C95D8","type":"string","length":24,"value":"\"E:\\\\__titans\\\\paltool.cpp\"","referenced_from":["0055DBF0 FUN_0055dbf0","0055DCD0 FUN_0055dcd0"]}
-{"address":"007C95F4","type":"string","length":11,"value":"\"DarkScreen\"","referenced_from":["0055DBF0 FUN_0055dbf0"]}
-{"address":"007C9604","type":"string","length":11,"value":"\"SetPalette\"","referenced_from":["0055DCD0 FUN_0055dcd0"]}
-{"address":"007C96B0","type":"string","length":24,"value":"\"E:\\\\__titans\\\\scoreai.cpp\"","referenced_from":["0055F410 FUN_0055f410","00561670 FUN_00561670","00562F50 FUN_00562f50","00565820 FUN_00565820"]}
-{"address":"007C96CC","type":"string","length":23,"value":"\"AiCalcDispositionAreas\"","referenced_from":["0055F410 FUN_0055f410"]}
-{"address":"007C96E8","type":"string","length":20,"value":"\"AiAiCalcMinesFields\"","referenced_from":["00562F50 FUN_00562f50"]}
-{"address":"007C9700","type":"string","length":19,"value":"\"AiMinesDistribTgts\"","referenced_from":["00565820 FUN_00565820"]}
+{"address":"007C94E0","type":"string","length":13,"value":"\"PLT_FSGSSHAD\"","referenced_from":["0055DA40 LoadStartPlt","0079AF9C"]}
+{"address":"007C94F0","type":"string","length":14,"value":"\"PLT_FSGSGLASS\"","referenced_from":["0055DA40 LoadStartPlt","0079AF98"]}
+{"address":"007C9500","type":"string","length":8,"value":"\"PLT_DKD\"","referenced_from":["0055D730 LoadGamePlt","0079AF94"]}
+{"address":"007C950C","type":"string","length":9,"value":"\"PLT_GLOW\"","referenced_from":["0055D730 LoadGamePlt","0079AF90"]}
+{"address":"007C9518","type":"string","length":9,"value":"\"PLT_NUCL\"","referenced_from":["0055D730 LoadGamePlt","0079AF8C"]}
+{"address":"007C9524","type":"string","length":11,"value":"\"PLT_MMSHAD\"","referenced_from":["0055DA40 LoadStartPlt","0079AF88"]}
+{"address":"007C9534","type":"string","length":8,"value":"\"PLT_FOG\"","referenced_from":["0055D730 LoadGamePlt","0079AF84"]}
+{"address":"007C9540","type":"string","length":11,"value":"\"PLT_SHAD60\"","referenced_from":["0055D730 LoadGamePlt","0079AF80"]}
+{"address":"007C9550","type":"string","length":11,"value":"\"PLT_SHAD40\"","referenced_from":["0055D730 LoadGamePlt","0079AF7C"]}
+{"address":"007C9560","type":"string","length":11,"value":"\"PLT_SHAD30\"","referenced_from":["0055D730 LoadGamePlt","0079AF78"]}
+{"address":"007C9570","type":"string","length":12,"value":"\"PLT_EXPLITE\"","referenced_from":["0055D730 LoadGamePlt","0079AF74"]}
+{"address":"007C9580","type":"string","length":10,"value":"\"PLT_PAUSE\"","referenced_from":["0055D730 LoadGamePlt","0079AF70"]}
+{"address":"007C958C","type":"string","length":12,"value":"\"PLT_MMGLASS\"","referenced_from":["0055DA40 LoadStartPlt","0079AF6C"]}
+{"address":"007C959C","type":"string","length":24,"value":"\"E:\\\\__titans\\\\pal_tbl.CPP\"","referenced_from":["0055D730 LoadGamePlt","0055DA40 LoadStartPlt"]}
+{"address":"007C95B8","type":"string","length":12,"value":"\"LoadGamePlt\"","referenced_from":["0055D730 LoadGamePlt"]}
+{"address":"007C95C8","type":"string","length":13,"value":"\"LoadStartPlt\"","referenced_from":["0055DA40 LoadStartPlt"]}
+{"address":"007C95D8","type":"string","length":24,"value":"\"E:\\\\__titans\\\\paltool.cpp\"","referenced_from":["0055DBF0 DarkScreen","0055DCD0 SetPalette"]}
+{"address":"007C95F4","type":"string","length":11,"value":"\"DarkScreen\"","referenced_from":["0055DBF0 DarkScreen"]}
+{"address":"007C9604","type":"string","length":11,"value":"\"SetPalette\"","referenced_from":["0055DCD0 SetPalette"]}
+{"address":"007C96B0","type":"string","length":24,"value":"\"E:\\\\__titans\\\\scoreai.cpp\"","referenced_from":["0055F410 AiCalcDispositionAreas","00561670 FUN_00561670","00562F50 AiAiCalcMinesFields","00565820 AiMinesDistribTgts"]}
+{"address":"007C96CC","type":"string","length":23,"value":"\"AiCalcDispositionAreas\"","referenced_from":["0055F410 AiCalcDispositionAreas"]}
+{"address":"007C96E8","type":"string","length":20,"value":"\"AiAiCalcMinesFields\"","referenced_from":["00562F50 AiAiCalcMinesFields"]}
+{"address":"007C9700","type":"string","length":19,"value":"\"AiMinesDistribTgts\"","referenced_from":["00565820 AiMinesDistribTgts"]}
 {"address":"007C9718","type":"string","length":7,"value":"\"GM_WAR\"","referenced_from":["00566970 FUN_00566970","0079B01C"]}
 {"address":"007C9720","type":"string","length":8,"value":"\"GM_PWAR\"","referenced_from":["00566970 FUN_00566970","0079B018"]}
 {"address":"007C972C","type":"string","length":9,"value":"\"GM_PEACE\"","referenced_from":["00566970 FUN_00566970","0079B014"]}
@@ -1986,7 +1986,7 @@
 {"address":"007C9FBC","type":"string","length":10,"value":"\"SMALL_MAP\"","referenced_from":["0056F250 FUN_0056f250","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005DC050 StartSystemTy::LoadMapData","006A0740 CGenerate::SaveMap","0079B084","0079C114","0079C1DC","0079D840"]}
 {"address":"007C9FC8","type":"string","length":11,"value":"\"DESCRIPTOR\"","referenced_from":["0056ADC0 STAppC::InitApp","0056DB80 STAppC::StartGame","0056F250 FUN_0056f250","005776D0 GameSystemC::GetMessage","005AFD00 ChooseMapTy::PrepFiles","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005DB030 FUN_005db030","005DC050 StartSystemTy::LoadMapData","006939F0 FUN_006939f0","00693D00 FUN_00693d00","006942A0 FUN_006942a0","0079B080","0079B1A4","0079C078","0079C110","0079C1D8","0079D770"]}
 {"address":"007C9FD8","type":"string","length":8,"value":"\"TEXTURE\"","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250","006A0740 CGenerate::SaveMap","0079B07C","0079D83C"]}
-{"address":"007C9FE4","type":"string","length":12,"value":"\"OBJECTIVES\"","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 FUN_0056e9e0","0056F250 FUN_0056f250","005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005DC050 StartSystemTy::LoadMapData","005DFA30 MTaskTy::InitMTask","0067DC20 FUN_0067dc20","0067E7E0 FUN_0067e7e0","0079B078","0079C074","0079C10C","0079C1D4","0079C220","0079D718"]}
+{"address":"007C9FE4","type":"string","length":12,"value":"\"OBJECTIVES\"","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 FUN_0056e9e0","0056F250 FUN_0056f250","005AE050 ChooseMapTy::ShowDescription","005AFD00 ChooseMapTy::PrepFiles","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005DC050 StartSystemTy::LoadMapData","005DFA30 MTaskTy::InitMTask","0067DC20 _CreateStgListByRoot","0067E7E0 CreateArbList","0079B078","0079C074","0079C10C","0079C1D4","0079C220","0079D718"]}
 {"address":"007C9FF4","type":"string","length":12,"value":"\"DESCRIPTION\"","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 FUN_0056e9e0","0056EBE0 FUN_0056ebe0","0056F250 FUN_0056f250","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005DC050 StartSystemTy::LoadMapData","005DC730 StartSystemTy::SetObjectives","005DFA30 MTaskTy::InitMTask","0079B074","0079C108","0079C1D0","0079C21C"]}
 {"address":"007CA004","type":"string","length":14,"value":"\"TITLE_MISSION\"","referenced_from":["0056DB80 STAppC::StartGame","0056E9E0 FUN_0056e9e0","0056F250 FUN_0056f250","005C7800 FUN_005c7800","005C8200 FUN_005c8200","005DC050 StartSystemTy::LoadMapData","005DFA30 MTaskTy::InitMTask","006A0740 CGenerate::SaveMap","0079B070","0079C104","0079C1CC","0079C218","0079D838"]}
 {"address":"007CA014","type":"string","length":14,"value":"\"BRIEFING_GAME\"","referenced_from":["0056DB80 STAppC::StartGame","0056F250 FUN_0056f250","0079B06C"]}
@@ -2054,9 +2054,9 @@
 {"address":"007CA67C","type":"string","length":7,"value":"\"PL_LOG\"","referenced_from":["00572510 FUN_00572510","00572920 FUN_00572920","00572BA0 FUN_00572ba0","005BD7A0 MReportTy::InitMReport","005C0E00 MReportTy::SetCtrl","005D8BF0 SIDTy::PrepFiles","006767D0 FUN_006767d0","0079B0D0","0079C0D8","0079C1A0","0079D6C4"]}
 {"address":"007CA685","type":"string","length":7,"value":"\"OCDKEY\"","referenced_from":["00571CD0 FUN_00571cd0","00571E40 FUN_00571e40","005734C0 FUN_005734c0"]}
 {"address":"007CA6B0","type":"string","length":28,"value":"\"_LandSetShTex: shadow mask\"","referenced_from":[]}
-{"address":"007CA6D0","type":"string","length":25,"value":"\"E:\\\\__titans\\\\tinittxt.cpp\"","referenced_from":["005751F0 FUN_005751f0"]}
+{"address":"007CA6D0","type":"string","length":25,"value":"\"E:\\\\__titans\\\\tinittxt.cpp\"","referenced_from":["005751F0 LandInit"]}
 {"address":"007CA6F0","type":"string","length":32,"value":"\"_LandSetShTex: texture format\"","referenced_from":[]}
-{"address":"007CA714","type":"string","length":9,"value":"\"LandInit\"","referenced_from":["005751F0 FUN_005751f0"]}
+{"address":"007CA714","type":"string","length":9,"value":"\"LandInit\"","referenced_from":["005751F0 LandInit"]}
 {"address":"007CAAC4","type":"string","length":15,"value":"\"%ssteditor.exe\"","referenced_from":["00575A10 FUN_00575a10"]}
 {"address":"007CAAD8","type":"string","length":15,"value":"\"Internal error\"","referenced_from":["00575A10 FUN_00575a10"]}
 {"address":"007CAAEC","type":"string","length":12,"value":"\"dbg_msg.rpt\"","referenced_from":["00575A10 FUN_00575a10"]}
@@ -2064,15 +2064,15 @@
 {"address":"007CAB0C","type":"string","length":20,"value":"\"STAlgaC::GetMessage\"","referenced_from":["00575CB0 STAlgaC::GetMessage"]}
 {"address":"007CAB24","type":"string","length":31,"value":"\"E:\\\\__titans\\\\Object\\\\To_alga.cpp\"","referenced_from":["00575CB0 STAlgaC::GetMessage"]}
 {"address":"007CAB4C","type":"string","length":13,"value":"\"ANIM_PALETTE\"","referenced_from":["00576EF0 GameSystemC::InitSystem","0079B1A8"]}
-{"address":"007CAB5C","type":"string","length":24,"value":"\"E:\\\\__titans\\\\tsystem.cpp\"","referenced_from":["00576AD0 BaseSystemC::CreateSystemObjects","00576BB0 FUN_00576bb0","00576CE0 FUN_00576ce0","00576E10 GameSystemC::CreateSystemObjects","00576EF0 GameSystemC::InitSystem","005770D0 GameSystemC::DoneSystem","00577280 FUN_00577280","005776D0 GameSystemC::GetMessage","00578200 DebugSystemC::CreateSystemObjects"]}
+{"address":"007CAB5C","type":"string","length":24,"value":"\"E:\\\\__titans\\\\tsystem.cpp\"","referenced_from":["00576AD0 BaseSystemC::CreateSystemObjects","00576BB0 CreateBaseSystem","00576CE0 DestroyBaseSystem","00576E10 GameSystemC::CreateSystemObjects","00576EF0 GameSystemC::InitSystem","005770D0 GameSystemC::DoneSystem","00577280 CreateGameSystem","005776D0 GameSystemC::GetMessage","00578200 DebugSystemC::CreateSystemObjects"]}
 {"address":"007CAB78","type":"string","length":33,"value":"\"BaseSystemC::CreateSystemObjects\"","referenced_from":["00576AD0 BaseSystemC::CreateSystemObjects"]}
-{"address":"007CABA0","type":"string","length":17,"value":"\"CreateBaseSystem\"","referenced_from":["00576BB0 FUN_00576bb0"]}
-{"address":"007CABB4","type":"string","length":18,"value":"\"DestroyBaseSystem\"","referenced_from":["00576CE0 FUN_00576ce0"]}
+{"address":"007CABA0","type":"string","length":17,"value":"\"CreateBaseSystem\"","referenced_from":["00576BB0 CreateBaseSystem"]}
+{"address":"007CABB4","type":"string","length":18,"value":"\"DestroyBaseSystem\"","referenced_from":["00576CE0 DestroyBaseSystem"]}
 {"address":"007CABCC","type":"string","length":33,"value":"\"GameSystemC::CreateSystemObjects\"","referenced_from":["00576E10 GameSystemC::CreateSystemObjects"]}
 {"address":"007CABF4","type":"string","length":24,"value":"\"GameSystemC::InitSystem\"","referenced_from":["00576EF0 GameSystemC::InitSystem"]}
 {"address":"007CAC10","type":"string","length":7,"value":"\"scmask\"","referenced_from":["00576EF0 GameSystemC::InitSystem"]}
 {"address":"007CAC18","type":"string","length":24,"value":"\"GameSystemC::DoneSystem\"","referenced_from":["005770D0 GameSystemC::DoneSystem"]}
-{"address":"007CAC34","type":"string","length":17,"value":"\"CreateGameSystem\"","referenced_from":["00577280 FUN_00577280"]}
+{"address":"007CAC34","type":"string","length":17,"value":"\"CreateGameSystem\"","referenced_from":["00577280 CreateGameSystem"]}
 {"address":"007CAC48","type":"string","length":24,"value":"\"GameSystemC::GetMessage\"","referenced_from":["005776D0 GameSystemC::GetMessage"]}
 {"address":"007CAC64","type":"string","length":16,"value":"\"%s%s%s\\\\%s%s%d%s\"","referenced_from":["005776D0 GameSystemC::GetMessage"]}
 {"address":"007CAC78","type":"string","length":14,"value":"\"%s%s%s\\\\%s%s%s\"","referenced_from":["005776D0 GameSystemC::GetMessage"]}
@@ -3031,32 +3031,32 @@
 {"address":"007D26E4","type":"string","length":29,"value":"\"E:\\\\__titans\\\\nick\\\\to_volc.cpp\"","referenced_from":["006461E0 STVolcanoC::GetMessage","006474E0 STVolcanoC::LoadImagVolcano"]}
 {"address":"007D2708","type":"string","length":23,"value":"\"STVolcanoC::GetMessage\"","referenced_from":["006461E0 STVolcanoC::GetMessage"]}
 {"address":"007D2724","type":"string","length":28,"value":"\"STVolcanoC::LoadImagVolcano\"","referenced_from":["006474E0 STVolcanoC::LoadImagVolcano"]}
-{"address":"007D2748","type":"string","length":8,"value":"\"AIBOSS\"","referenced_from":["00648030 AiBossClassTy::GetMessage","00648E70 FUN_00648e70","0067E7E0 FUN_0067e7e0","0079D614","0079D664","0079D720"]}
+{"address":"007D2748","type":"string","length":8,"value":"\"AIBOSS\"","referenced_from":["00648030 AiBossClassTy::GetMessage","00648E70 CreateArbiter","0067E7E0 CreateArbList","0079D614","0079D664","0079D720"]}
 {"address":"007D2750","type":"string","length":27,"value":"\"E:\\\\__titans\\\\ai\\\\ai_boss.cpp\"","referenced_from":["00647DC0 AiBossClassTy::InitData","00647EF0 AiBossClassTy::PrepareToSave","00648030 AiBossClassTy::GetMessage"]}
 {"address":"007D2770","type":"string","length":24,"value":"\"AiBossClassTy::InitData\"","referenced_from":["00647DC0 AiBossClassTy::InitData"]}
 {"address":"007D278C","type":"string","length":29,"value":"\"AiBossClassTy::PrepareToSave\"","referenced_from":["00647EF0 AiBossClassTy::PrepareToSave"]}
 {"address":"007D27B0","type":"string","length":56,"value":"\"AiBossClassTy::GetMessage error mess->id == %lX Name=%d\"","referenced_from":["00648030 AiBossClassTy::GetMessage"]}
-{"address":"007D27F4","type":"string","length":29,"value":"\"E:\\\\__titans\\\\ai\\\\ai_boss_d.cpp\"","referenced_from":["00648400 FUN_00648400","00648530 FUN_00648530","00648620 FUN_00648620","00648780 FUN_00648780","006488C0 FUN_006488c0"]}
-{"address":"007D2818","type":"string","length":13,"value":"\"BossDataPack\"","referenced_from":["00648620 FUN_00648620"]}
-{"address":"007D2828","type":"string","length":13,"value":"\"LoadBossEdit\"","referenced_from":["00648780 FUN_00648780"]}
-{"address":"007D2838","type":"string","length":13,"value":"\"SaveBossEdit\"","referenced_from":["006488C0 FUN_006488c0"]}
-{"address":"007D2848","type":"string","length":8,"value":"\"STRATEG\"","referenced_from":["00648FE0 FUN_00648fe0","0067E0E0 FUN_0067e0e0","0067E320 FUN_0067e320","0067E4A0 FUN_0067e4a0","0079D668","0079D72C"]}
-{"address":"007D2854","type":"string","length":9,"value":"\"AIPLAYER\"","referenced_from":["00648FE0 FUN_00648fe0","0067C7E0 AiPlrClassTy::GetMessage","0067E200 FUN_0067e200","0079D660","0079D6D0","0079D71C"]}
-{"address":"007D2861","type":"string","length":7,"value":"\"DITOR\\\\\"","referenced_from":["006494C0 FUN_006494c0","00649790 FUN_00649790","00649B90 FUN_00649b90","00649FF0 FUN_00649ff0"]}
-{"address":"007D286C","type":"string","length":16,"value":"\"LoadStrategData\"","referenced_from":["00648AB0 FUN_00648ab0"]}
-{"address":"007D2880","type":"string","length":28,"value":"\"E:\\\\__titans\\\\ai\\\\ai_creat.cpp\"","referenced_from":["00648AB0 FUN_00648ab0","00648C10 FUN_00648c10","00648E70 FUN_00648e70","00648FE0 FUN_00648fe0","006494C0 FUN_006494c0","00649790 FUN_00649790","00649A60 FUN_00649a60","00649B90 FUN_00649b90","00649EB0 FUN_00649eb0"]}
-{"address":"007D28A4","type":"string","length":13,"value":"\"StartStrateg\"","referenced_from":["00648C10 FUN_00648c10"]}
-{"address":"007D28B4","type":"string","length":14,"value":"\"CreateArbiter\"","referenced_from":["00648E70 FUN_00648e70"]}
-{"address":"007D28C4","type":"string","length":9,"value":"\"CreateAi\"","referenced_from":["00648FE0 FUN_00648fe0"]}
-{"address":"007D28D0","type":"string","length":19,"value":"\"CreatePlrDataForWS\"","referenced_from":["006494C0 FUN_006494c0"]}
-{"address":"007D28E8","type":"string","length":20,"value":"\"WS_Opponent_00.stg\"","referenced_from":["006494C0 FUN_006494c0"]}
-{"address":"007D2900","type":"string","length":19,"value":"\"CreatePlrDataForBO\"","referenced_from":["00649790 FUN_00649790"]}
-{"address":"007D2918","type":"string","length":20,"value":"\"BO_Opponent_00.stg\"","referenced_from":["00649790 FUN_00649790"]}
-{"address":"007D2930","type":"string","length":14,"value":"\"CreatePlrData\"","referenced_from":["00649A60 FUN_00649a60"]}
-{"address":"007D2940","type":"string","length":15,"value":"\"CreateBossData\"","referenced_from":["00649B90 FUN_00649b90"]}
-{"address":"007D2954","type":"string","length":20,"value":"\"Arbiter_battle.arb\"","referenced_from":["00649B90 FUN_00649b90"]}
-{"address":"007D296C","type":"string","length":22,"value":"\"CreateDefaultBossData\"","referenced_from":["00649EB0 FUN_00649eb0"]}
-{"address":"007D2988","type":"string","length":16,"value":"\"Default Arbiter\"","referenced_from":["00649EB0 FUN_00649eb0"]}
+{"address":"007D27F4","type":"string","length":29,"value":"\"E:\\\\__titans\\\\ai\\\\ai_boss_d.cpp\"","referenced_from":["00648400 FUN_00648400","00648530 FUN_00648530","00648620 BossDataPack","00648780 LoadBossEdit","006488C0 SaveBossEdit"]}
+{"address":"007D2818","type":"string","length":13,"value":"\"BossDataPack\"","referenced_from":["00648620 BossDataPack"]}
+{"address":"007D2828","type":"string","length":13,"value":"\"LoadBossEdit\"","referenced_from":["00648780 LoadBossEdit"]}
+{"address":"007D2838","type":"string","length":13,"value":"\"SaveBossEdit\"","referenced_from":["006488C0 SaveBossEdit"]}
+{"address":"007D2848","type":"string","length":8,"value":"\"STRATEG\"","referenced_from":["00648FE0 CreateAi","0067E0E0 CreateStrategList","0067E320 GetStrategNameDB","0067E4A0 GetStrategName","0079D668","0079D72C"]}
+{"address":"007D2854","type":"string","length":9,"value":"\"AIPLAYER\"","referenced_from":["00648FE0 CreateAi","0067C7E0 AiPlrClassTy::GetMessage","0067E200 CreateSaveStrategList","0079D660","0079D6D0","0079D71C"]}
+{"address":"007D2861","type":"string","length":7,"value":"\"DITOR\\\\\"","referenced_from":["006494C0 CreatePlrDataForWS","00649790 CreatePlrDataForBO","00649B90 CreateBossData","00649FF0 FUN_00649ff0"]}
+{"address":"007D286C","type":"string","length":16,"value":"\"LoadStrategData\"","referenced_from":["00648AB0 LoadStrategData"]}
+{"address":"007D2880","type":"string","length":28,"value":"\"E:\\\\__titans\\\\ai\\\\ai_creat.cpp\"","referenced_from":["00648AB0 LoadStrategData","00648C10 StartStrateg","00648E70 CreateArbiter","00648FE0 CreateAi","006494C0 CreatePlrDataForWS","00649790 CreatePlrDataForBO","00649A60 CreatePlrData","00649B90 CreateBossData","00649EB0 CreateDefaultBossData"]}
+{"address":"007D28A4","type":"string","length":13,"value":"\"StartStrateg\"","referenced_from":["00648C10 StartStrateg"]}
+{"address":"007D28B4","type":"string","length":14,"value":"\"CreateArbiter\"","referenced_from":["00648E70 CreateArbiter"]}
+{"address":"007D28C4","type":"string","length":9,"value":"\"CreateAi\"","referenced_from":["00648FE0 CreateAi"]}
+{"address":"007D28D0","type":"string","length":19,"value":"\"CreatePlrDataForWS\"","referenced_from":["006494C0 CreatePlrDataForWS"]}
+{"address":"007D28E8","type":"string","length":20,"value":"\"WS_Opponent_00.stg\"","referenced_from":["006494C0 CreatePlrDataForWS"]}
+{"address":"007D2900","type":"string","length":19,"value":"\"CreatePlrDataForBO\"","referenced_from":["00649790 CreatePlrDataForBO"]}
+{"address":"007D2918","type":"string","length":20,"value":"\"BO_Opponent_00.stg\"","referenced_from":["00649790 CreatePlrDataForBO"]}
+{"address":"007D2930","type":"string","length":14,"value":"\"CreatePlrData\"","referenced_from":["00649A60 CreatePlrData"]}
+{"address":"007D2940","type":"string","length":15,"value":"\"CreateBossData\"","referenced_from":["00649B90 CreateBossData"]}
+{"address":"007D2954","type":"string","length":20,"value":"\"Arbiter_battle.arb\"","referenced_from":["00649B90 CreateBossData"]}
+{"address":"007D296C","type":"string","length":22,"value":"\"CreateDefaultBossData\"","referenced_from":["00649EB0 CreateDefaultBossData"]}
+{"address":"007D2988","type":"string","length":16,"value":"\"Default Arbiter\"","referenced_from":["00649EB0 CreateDefaultBossData"]}
 {"address":"007D299C","type":"string","length":65,"value":"\"\\r\\n=========== Start in [%02d/%02d/%02d, %02d:%02d:%02d] ========\"","referenced_from":["0064A450 FUN_0064a450"]}
 {"address":"007D29EC","type":"string","length":15,"value":"\"%sAIScript.dbg\"","referenced_from":["0064A450 FUN_0064a450"]}
 {"address":"007D2A04","type":"string","length":26,"value":"\"E:\\\\__titans\\\\ai\\\\ai_erc.cpp\"","referenced_from":["0064A630 FUN_0064a630","0064A6F0 FUN_0064a6f0","0064A830 FUN_0064a830","0064A970 FUN_0064a970"]}
@@ -3069,8 +3069,8 @@
 {"address":"007D2AE4","type":"string","length":27,"value":"\"AiEventClassTy::_CreateArt\"","referenced_from":["0064DB00 AiEventClassTy::_CreateArt"]}
 {"address":"007D2B04","type":"string","length":28,"value":"\"AiEventClassTy::_CreateDest\"","referenced_from":["0064DDA0 AiEventClassTy::_CreateDest"]}
 {"address":"007D2B28","type":"string","length":28,"value":"\"AiEventClassTy::_CreateMine\"","referenced_from":["0064DFA0 AiEventClassTy::_CreateMine"]}
-{"address":"007D2B4C","type":"string","length":30,"value":"\"E:\\\\__titans\\\\ai\\\\ai_event_d.cpp\"","referenced_from":["0065C9E0 FUN_0065c9e0","0065CB00 FUN_0065cb00","0065CD10 FUN_0065cd10","0065D120 FUN_0065d120"]}
-{"address":"007D2B70","type":"string","length":14,"value":"\"EventDataPack\"","referenced_from":["0065CD10 FUN_0065cd10"]}
+{"address":"007D2B4C","type":"string","length":30,"value":"\"E:\\\\__titans\\\\ai\\\\ai_event_d.cpp\"","referenced_from":["0065C9E0 FUN_0065c9e0","0065CB00 FUN_0065cb00","0065CD10 EventDataPack","0065D120 FUN_0065d120"]}
+{"address":"007D2B70","type":"string","length":14,"value":"\"EventDataPack\"","referenced_from":["0065CD10 EventDataPack"]}
 {"address":"007D2B80","type":"string","length":26,"value":"\"E:\\\\__titans\\\\ai\\\\ai_flt.cpp\"","referenced_from":["0065D2A0 AiFltClassTy::InitData","0065D4B0 AiFltClassTy::PrepareToSave","0065D760 AiFltClassTy::_AddObjFlt","0065F1D0 AiFltClassTy::AppendZone","0065F660 AiFltClassTy::AppendPoint","00660180 FUN_00660180","006618E0 AiFltClassTy::GoToRepair","00662240 AiFltClassTy::GetAiMess","00667D90 AiFltClassTy::GetMessage"]}
 {"address":"007D2BA0","type":"string","length":23,"value":"\"AiFltClassTy::InitData\"","referenced_from":["0065D2A0 AiFltClassTy::InitData"]}
 {"address":"007D2BBC","type":"string","length":28,"value":"\"AiFltClassTy::PrepareToSave\"","referenced_from":["0065D4B0 AiFltClassTy::PrepareToSave"]}
@@ -3080,23 +3080,23 @@
 {"address":"007D2C40","type":"string","length":25,"value":"\"AiFltClassTy::GoToRepair\"","referenced_from":["006618E0 AiFltClassTy::GoToRepair"]}
 {"address":"007D2C60","type":"string","length":24,"value":"\"AiFltClassTy::GetAiMess\"","referenced_from":["00662240 AiFltClassTy::GetAiMess"]}
 {"address":"007D2C7C","type":"string","length":55,"value":"\"AiFltClassTy::GetMessage error mess->id == %lX Name=%d\"","referenced_from":["00667D90 AiFltClassTy::GetMessage"]}
-{"address":"007D2CC0","type":"string","length":28,"value":"\"E:\\\\__titans\\\\ai\\\\ai_flt_d.cpp\"","referenced_from":["00668180 FUN_00668180","00668330 FUN_00668330","006684E0 FUN_006684e0"]}
-{"address":"007D2CE4","type":"string","length":12,"value":"\"FltDataPack\"","referenced_from":["006684E0 FUN_006684e0"]}
+{"address":"007D2CC0","type":"string","length":28,"value":"\"E:\\\\__titans\\\\ai\\\\ai_flt_d.cpp\"","referenced_from":["00668180 FUN_00668180","00668330 FUN_00668330","006684E0 FltDataPack"]}
+{"address":"007D2CE4","type":"string","length":12,"value":"\"FltDataPack\"","referenced_from":["006684E0 FltDataPack"]}
 {"address":"007D2CF4","type":"string","length":29,"value":"\"E:\\\\__titans\\\\ai\\\\ai_interp.cpp\"","referenced_from":["0066ACC0 FUN_0066acc0","00671F10 FUN_00671f10"]}
 {"address":"007D2D2C","type":"string","length":24,"value":"\"E:\\\\__titans\\\\ai\\\\Ai_lex.c\"","referenced_from":["00672B60 FUN_00672b60"]}
-{"address":"007D2D58","type":"string","length":27,"value":"\"E:\\\\__titans\\\\ai\\\\ai_mdef.cpp\"","referenced_from":["00675EA0 FUN_00675ea0","00675FE0 FUN_00675fe0","00676170 FUN_00676170","00676260 FUN_00676260","006763F0 FUN_006763f0","00676D80 FUN_00676d80","00677290 FUN_00677290","006773B0 FUN_006773b0","006774C0 FUN_006774c0","006775E0 FUN_006775e0","00677960 FUN_00677960","00677BE0 FUN_00677be0","00677F40 FUN_00677f40","00678240 FUN_00678240","006785A0 FUN_006785a0"]}
-{"address":"007D2D78","type":"string","length":15,"value":"\"_AddObjGrpExch\"","referenced_from":["00675EA0 FUN_00675ea0"]}
-{"address":"007D2D8C","type":"string","length":15,"value":"\"_AddAllGrpExch\"","referenced_from":["00675FE0 FUN_00675fe0"]}
-{"address":"007D2DA0","type":"string","length":17,"value":"\"_GetStaffGrpExch\"","referenced_from":["00676170 FUN_00676170"]}
-{"address":"007D2DB4","type":"string","length":20,"value":"\"_GetEmbrTobjGrpExch\"","referenced_from":["00676260 FUN_00676260"]}
-{"address":"007D2DCC","type":"string","length":23,"value":"\"_GetEmbrGrpTobjGrpExch\"","referenced_from":["006763F0 FUN_006763f0"]}
+{"address":"007D2D58","type":"string","length":27,"value":"\"E:\\\\__titans\\\\ai\\\\ai_mdef.cpp\"","referenced_from":["00675EA0 _AddObjGrpExch","00675FE0 _AddAllGrpExch","00676170 _GetStaffGrpExch","00676260 _GetEmbrTobjGrpExch","006763F0 _GetEmbrGrpTobjGrpExch","00676D80 _EnumPlObj","00677290 FUN_00677290","006773B0 FUN_006773b0","006774C0 FUN_006774c0","006775E0 FUN_006775e0","00677960 _EnumRCField","00677BE0 _EnumRCCont","00677F40 _EnumArt","00678240 _EnumMines","006785A0 _EnumDest"]}
+{"address":"007D2D78","type":"string","length":15,"value":"\"_AddObjGrpExch\"","referenced_from":["00675EA0 _AddObjGrpExch"]}
+{"address":"007D2D8C","type":"string","length":15,"value":"\"_AddAllGrpExch\"","referenced_from":["00675FE0 _AddAllGrpExch"]}
+{"address":"007D2DA0","type":"string","length":17,"value":"\"_GetStaffGrpExch\"","referenced_from":["00676170 _GetStaffGrpExch"]}
+{"address":"007D2DB4","type":"string","length":20,"value":"\"_GetEmbrTobjGrpExch\"","referenced_from":["00676260 _GetEmbrTobjGrpExch"]}
+{"address":"007D2DCC","type":"string","length":23,"value":"\"_GetEmbrGrpTobjGrpExch\"","referenced_from":["006763F0 _GetEmbrGrpTobjGrpExch"]}
 {"address":"007D2DE8","type":"string","length":9,"value":"\"%s%d%02d\"","referenced_from":["006767D0 FUN_006767d0"]}
-{"address":"007D2DF4","type":"string","length":11,"value":"\"_EnumPlObj\"","referenced_from":["00676D80 FUN_00676d80"]}
-{"address":"007D2E04","type":"string","length":13,"value":"\"_EnumRCField\"","referenced_from":["00677960 FUN_00677960"]}
-{"address":"007D2E14","type":"string","length":12,"value":"\"_EnumRCCont\"","referenced_from":["00677BE0 FUN_00677be0"]}
-{"address":"007D2E24","type":"string","length":9,"value":"\"_EnumArt\"","referenced_from":["00677F40 FUN_00677f40"]}
-{"address":"007D2E30","type":"string","length":11,"value":"\"_EnumMines\"","referenced_from":["00678240 FUN_00678240"]}
-{"address":"007D2E40","type":"string","length":10,"value":"\"_EnumDest\"","referenced_from":["006785A0 FUN_006785a0"]}
+{"address":"007D2DF4","type":"string","length":11,"value":"\"_EnumPlObj\"","referenced_from":["00676D80 _EnumPlObj"]}
+{"address":"007D2E04","type":"string","length":13,"value":"\"_EnumRCField\"","referenced_from":["00677960 _EnumRCField"]}
+{"address":"007D2E14","type":"string","length":12,"value":"\"_EnumRCCont\"","referenced_from":["00677BE0 _EnumRCCont"]}
+{"address":"007D2E24","type":"string","length":9,"value":"\"_EnumArt\"","referenced_from":["00677F40 _EnumArt"]}
+{"address":"007D2E30","type":"string","length":11,"value":"\"_EnumMines\"","referenced_from":["00678240 _EnumMines"]}
+{"address":"007D2E40","type":"string","length":10,"value":"\"_EnumDest\"","referenced_from":["006785A0 _EnumDest"]}
 {"address":"007D2E4C","type":"string","length":26,"value":"\"E:\\\\__titans\\\\ai\\\\ai_plr.cpp\"","referenced_from":["00678980 AiPlrClassTy::InitData","00678BE0 AiPlrClassTy::PrepareToSave","00679300 AiPlrClassTy::CloseTactByTitle","00679470 AiPlrClassTy::CloseAllTact","0067B3C0 AiPlrClassTy::SetTech","0067B520 AiPlrClassTy::ExecTech","0067C180 AiPlrClassTy::Offensive","0067C7E0 AiPlrClassTy::GetMessage"]}
 {"address":"007D2E6C","type":"string","length":23,"value":"\"AiPlrClassTy::InitData\"","referenced_from":["00678980 AiPlrClassTy::InitData"]}
 {"address":"007D2E88","type":"string","length":28,"value":"\"AiPlrClassTy::PrepareToSave\"","referenced_from":["00678BE0 AiPlrClassTy::PrepareToSave"]}
@@ -3106,23 +3106,23 @@
 {"address":"007D2F10","type":"string","length":23,"value":"\"AiPlrClassTy::ExecTech\"","referenced_from":["0067B520 AiPlrClassTy::ExecTech"]}
 {"address":"007D2F2C","type":"string","length":24,"value":"\"AiPlrClassTy::Offensive\"","referenced_from":["0067C180 AiPlrClassTy::Offensive"]}
 {"address":"007D2F48","type":"string","length":56,"value":"\"AiPlrClassTy::GetMessage error mess->id == %lX Name=%d \"","referenced_from":["0067C7E0 AiPlrClassTy::GetMessage"]}
-{"address":"007D2F8C","type":"string","length":9,"value":"\"OPPONENT\"","referenced_from":["0067DFD0 FUN_0067dfd0","0067E6B0 FUN_0067e6b0","0079D728"]}
-{"address":"007D2F98","type":"string","length":10,"value":"\"ASSISTANT\"","referenced_from":["0067DEC0 FUN_0067dec0","0067E580 FUN_0067e580","0079D724"]}
-{"address":"007D2FA4","type":"string","length":28,"value":"\"E:\\\\__titans\\\\ai\\\\ai_plr_d.cpp\"","referenced_from":["0067CF30 FUN_0067cf30","0067D1D0 FUN_0067d1d0","0067D3B0 FUN_0067d3b0","0067D880 FUN_0067d880","0067D9C0 FUN_0067d9c0","0067DB30 FUN_0067db30","0067DC20 FUN_0067dc20","0067DEC0 FUN_0067dec0","0067DFD0 FUN_0067dfd0","0067E0E0 FUN_0067e0e0","0067E200 FUN_0067e200","0067E320 FUN_0067e320","0067E4A0 FUN_0067e4a0","0067E580 FUN_0067e580","0067E6B0 FUN_0067e6b0","0067E7E0 FUN_0067e7e0"]}
-{"address":"007D2FC8","type":"string","length":12,"value":"\"PlrDataPack\"","referenced_from":["0067D3B0 FUN_0067d3b0"]}
-{"address":"007D2FD8","type":"string","length":12,"value":"\"LoadPlrEdit\"","referenced_from":["0067D880 FUN_0067d880"]}
-{"address":"007D2FE8","type":"string","length":12,"value":"\"SavePlrEdit\"","referenced_from":["0067D9C0 FUN_0067d9c0"]}
-{"address":"007D2FF8","type":"string","length":11,"value":"\"DelPlrEdit\"","referenced_from":["0067DB30 FUN_0067db30"]}
-{"address":"007D3008","type":"string","length":21,"value":"\"_CreateStgListByRoot\"","referenced_from":["0067DC20 FUN_0067dc20"]}
-{"address":"007D3024","type":"string","length":20,"value":"\"CreateAssistantList\"","referenced_from":["0067DEC0 FUN_0067dec0"]}
-{"address":"007D303C","type":"string","length":19,"value":"\"CreateOpponentList\"","referenced_from":["0067DFD0 FUN_0067dfd0"]}
-{"address":"007D3054","type":"string","length":18,"value":"\"CreateStrategList\"","referenced_from":["0067E0E0 FUN_0067e0e0"]}
-{"address":"007D306C","type":"string","length":22,"value":"\"CreateSaveStrategList\"","referenced_from":["0067E200 FUN_0067e200"]}
-{"address":"007D3088","type":"string","length":17,"value":"\"GetStrategNameDB\"","referenced_from":["0067E320 FUN_0067e320"]}
-{"address":"007D309C","type":"string","length":15,"value":"\"GetStrategName\"","referenced_from":["0067E4A0 FUN_0067e4a0"]}
-{"address":"007D30B0","type":"string","length":19,"value":"\"GetAssistantNameDB\"","referenced_from":["0067E580 FUN_0067e580"]}
-{"address":"007D30C8","type":"string","length":18,"value":"\"GetOpponentNameDB\"","referenced_from":["0067E6B0 FUN_0067e6b0"]}
-{"address":"007D30E0","type":"string","length":14,"value":"\"CreateArbList\"","referenced_from":["0067E7E0 FUN_0067e7e0"]}
+{"address":"007D2F8C","type":"string","length":9,"value":"\"OPPONENT\"","referenced_from":["0067DFD0 CreateOpponentList","0067E6B0 GetOpponentNameDB","0079D728"]}
+{"address":"007D2F98","type":"string","length":10,"value":"\"ASSISTANT\"","referenced_from":["0067DEC0 CreateAssistantList","0067E580 GetAssistantNameDB","0079D724"]}
+{"address":"007D2FA4","type":"string","length":28,"value":"\"E:\\\\__titans\\\\ai\\\\ai_plr_d.cpp\"","referenced_from":["0067CF30 FUN_0067cf30","0067D1D0 FUN_0067d1d0","0067D3B0 PlrDataPack","0067D880 LoadPlrEdit","0067D9C0 SavePlrEdit","0067DB30 DelPlrEdit","0067DC20 _CreateStgListByRoot","0067DEC0 CreateAssistantList","0067DFD0 CreateOpponentList","0067E0E0 CreateStrategList","0067E200 CreateSaveStrategList","0067E320 GetStrategNameDB","0067E4A0 GetStrategName","0067E580 GetAssistantNameDB","0067E6B0 GetOpponentNameDB","0067E7E0 CreateArbList"]}
+{"address":"007D2FC8","type":"string","length":12,"value":"\"PlrDataPack\"","referenced_from":["0067D3B0 PlrDataPack"]}
+{"address":"007D2FD8","type":"string","length":12,"value":"\"LoadPlrEdit\"","referenced_from":["0067D880 LoadPlrEdit"]}
+{"address":"007D2FE8","type":"string","length":12,"value":"\"SavePlrEdit\"","referenced_from":["0067D9C0 SavePlrEdit"]}
+{"address":"007D2FF8","type":"string","length":11,"value":"\"DelPlrEdit\"","referenced_from":["0067DB30 DelPlrEdit"]}
+{"address":"007D3008","type":"string","length":21,"value":"\"_CreateStgListByRoot\"","referenced_from":["0067DC20 _CreateStgListByRoot"]}
+{"address":"007D3024","type":"string","length":20,"value":"\"CreateAssistantList\"","referenced_from":["0067DEC0 CreateAssistantList"]}
+{"address":"007D303C","type":"string","length":19,"value":"\"CreateOpponentList\"","referenced_from":["0067DFD0 CreateOpponentList"]}
+{"address":"007D3054","type":"string","length":18,"value":"\"CreateStrategList\"","referenced_from":["0067E0E0 CreateStrategList"]}
+{"address":"007D306C","type":"string","length":22,"value":"\"CreateSaveStrategList\"","referenced_from":["0067E200 CreateSaveStrategList"]}
+{"address":"007D3088","type":"string","length":17,"value":"\"GetStrategNameDB\"","referenced_from":["0067E320 GetStrategNameDB"]}
+{"address":"007D309C","type":"string","length":15,"value":"\"GetStrategName\"","referenced_from":["0067E4A0 GetStrategName"]}
+{"address":"007D30B0","type":"string","length":19,"value":"\"GetAssistantNameDB\"","referenced_from":["0067E580 GetAssistantNameDB"]}
+{"address":"007D30C8","type":"string","length":18,"value":"\"GetOpponentNameDB\"","referenced_from":["0067E6B0 GetOpponentNameDB"]}
+{"address":"007D30E0","type":"string","length":14,"value":"\"CreateArbList\"","referenced_from":["0067E7E0 CreateArbList"]}
 {"address":"007D42B4","type":"string","length":6,"value":"\"_PS%d\"","referenced_from":["0067FFF0 FUN_0067fff0","0079D750"]}
 {"address":"007D42BC","type":"string","length":6,"value":"\"_PI%d\"","referenced_from":["0067FFA0 FUN_0067ffa0","0079D74C"]}
 {"address":"007D42C4","type":"string","length":6,"value":"\"_GL%d\"","referenced_from":["0067FF50 FUN_0067ff50","0079D748"]}
@@ -3431,8 +3431,8 @@
 {"address":"007D5874","type":"string","length":25,"value":"\"AiTactClassTy::GetAiMess\"","referenced_from":["0068FD00 AiTactClassTy::GetAiMess"]}
 {"address":"007D5894","type":"string","length":28,"value":"\"AiTactClassTy::HelpOrganize\"","referenced_from":["00690650 AiTactClassTy::HelpOrganize"]}
 {"address":"007D58B8","type":"string","length":56,"value":"\"AiTactClassTy::GetMessage error mess->id == %lX Name=%d\"","referenced_from":["00690B90 AiTactClassTy::GetMessage"]}
-{"address":"007D58FC","type":"string","length":29,"value":"\"E:\\\\__titans\\\\ai\\\\ai_tact_d.cpp\"","referenced_from":["00690E90 FUN_00690e90","00690FC0 FUN_00690fc0","00691190 FUN_00691190"]}
-{"address":"007D5920","type":"string","length":13,"value":"\"TactDataPack\"","referenced_from":["00691190 FUN_00691190"]}
+{"address":"007D58FC","type":"string","length":29,"value":"\"E:\\\\__titans\\\\ai\\\\ai_tact_d.cpp\"","referenced_from":["00690E90 FUN_00690e90","00690FC0 FUN_00690fc0","00691190 TactDataPack"]}
+{"address":"007D5920","type":"string","length":13,"value":"\"TactDataPack\"","referenced_from":["00691190 TactDataPack"]}
 {"address":"007D5968","type":"string","length":6,"value":"\"CRACK\"","referenced_from":["00691690 FUN_00691690"]}
 {"address":"007D5970","type":"string","length":7,"value":"\"%s%u%u\"","referenced_from":["00691690 FUN_00691690"]}
 {"address":"007D5978","type":"string","length":6,"value":"\"STONE\"","referenced_from":["00691690 FUN_00691690"]}
@@ -3475,8 +3475,8 @@
 {"address":"007DE308","type":"string","length":8,"value":"\"coral\"","referenced_from":[]}
 {"address":"007DFA6C","type":"string","length":29,"value":"\"E:\\\\__titans\\\\Maps\\\\map_cnt.cpp\"","referenced_from":["006A2770 FUN_006a2770"]}
 {"address":"007DFAAC","type":"string","length":7,"value":"\"%s%03u\"","referenced_from":["006A2B40 FUN_006a2b40","006A2BB0 FUN_006a2bb0","006A2D00 FUN_006a2d00"]}
-{"address":"007DFAB4","type":"string","length":8,"value":"\"MAPTXTR\"","referenced_from":["006A2B40 FUN_006a2b40","006A2BB0 FUN_006a2bb0","006EF640 FUN_006ef640","006EFF90 FUN_006eff90"]}
-{"address":"007DFAC0","type":"string","length":8,"value":"\"MAPMESH\"","referenced_from":["006A2D00 FUN_006a2d00","006EF640 FUN_006ef640","006EFF90 FUN_006eff90"]}
+{"address":"007DFAB4","type":"string","length":8,"value":"\"MAPTXTR\"","referenced_from":["006A2B40 FUN_006a2b40","006A2BB0 FUN_006a2bb0","006EF640 mfTMapLoad","006EFF90 mfTMapAddObj"]}
+{"address":"007DFAC0","type":"string","length":8,"value":"\"MAPMESH\"","referenced_from":["006A2D00 FUN_006a2d00","006EF640 mfTMapLoad","006EFF90 mfTMapAddObj"]}
 {"address":"007DFACC","type":"string","length":29,"value":"\"E:\\\\__titans\\\\Maps\\\\prepare.cpp\"","referenced_from":["006A2ED0 FUN_006a2ed0"]}
 {"address":"007EC1A4","type":"string","length":7,"value":"\"Client\"","referenced_from":["007EC198"]}
 {"address":"007EC1AC","type":"string","length":7,"value":"\"Ignore\"","referenced_from":["007EC194"]}
@@ -3715,24 +3715,24 @@
 {"address":"007EEF3C","type":"string","length":14,"value":"\"SprGetMaxDims\"","referenced_from":["006EACE0 FUN_006eace0"]}
 {"address":"007EEF4C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\St3dspr.cpp\"","referenced_from":["006EAD90 FUN_006ead90","006EAFF0 FUN_006eaff0","006ED100 FUN_006ed100"]}
 {"address":"007EEF64","type":"string","length":12,"value":"\"SprInRect\"","referenced_from":["006EB230 FUN_006eb230"]}
-{"address":"007EEF88","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\Mfstmap.cpp\"","referenced_from":["006EF300 FUN_006ef300","006EF440 FUN_006ef440","006EF530 FUN_006ef530","006EF640 FUN_006ef640","006EF9D0 FUN_006ef9d0","006EFB70 FUN_006efb70","006EFC50 FUN_006efc50","006EFDB0 FUN_006efdb0","006EFF90 FUN_006eff90","006F01A0 FUN_006f01a0","006F0360 FUN_006f0360","006F0620 FUN_006f0620","006F0700 FUN_006f0700","006F0800 FUN_006f0800","006F0A50 FUN_006f0a50","006F0C00 FUN_006f0c00","006F0CD0 FUN_006f0cd0","006F0D70 FUN_006f0d70"]}
-{"address":"007EEFA0","type":"string","length":15,"value":"\"mfTmapGetParam\"","referenced_from":["006EF300 FUN_006ef300"]}
-{"address":"007EEFB0","type":"string","length":19,"value":"\"_mfTMapSetTxtParam\"","referenced_from":["006EF440 FUN_006ef440"]}
-{"address":"007EEFC4","type":"string","length":20,"value":"\"_mfTMapSetMeshParam\"","referenced_from":["006EF530 FUN_006ef530"]}
-{"address":"007EEFD8","type":"string","length":11,"value":"\"mfTMapLoad\"","referenced_from":["006EF640 FUN_006ef640"]}
-{"address":"007EEFE4","type":"string","length":8,"value":"\"BRDTXTR\"","referenced_from":["006EF640 FUN_006ef640","006EFC50 FUN_006efc50"]}
-{"address":"007EEFEC","type":"string","length":14,"value":"\"mfTMapNewTxtr\"","referenced_from":["006EF9D0 FUN_006ef9d0"]}
-{"address":"007EEFFC","type":"string","length":12,"value":"\"mfTMapErase\"","referenced_from":["006EFB70 FUN_006efb70"]}
-{"address":"007EF008","type":"string","length":13,"value":"\"mfTMapCreate\"","referenced_from":["006EFC50 FUN_006efc50"]}
-{"address":"007EF018","type":"string","length":11,"value":"\"mfTMapSave\"","referenced_from":["006EFDB0 FUN_006efdb0"]}
-{"address":"007EF024","type":"string","length":13,"value":"\"mfTMapAddObj\"","referenced_from":["006EFF90 FUN_006eff90"]}
-{"address":"007EF034","type":"string","length":13,"value":"\"mfTMapDelObj\"","referenced_from":["006F01A0 FUN_006f01a0"]}
-{"address":"007EF044","type":"string","length":15,"value":"\"mfTMapOptimize\"","referenced_from":["006F0360 FUN_006f0360"]}
+{"address":"007EEF88","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\Mfstmap.cpp\"","referenced_from":["006EF300 mfTmapGetParam","006EF440 _mfTMapSetTxtParam","006EF530 _mfTMapSetMeshParam","006EF640 mfTMapLoad","006EF9D0 mfTMapNewTxtr","006EFB70 mfTMapErase","006EFC50 mfTMapCreate","006EFDB0 mfTMapSave","006EFF90 mfTMapAddObj","006F01A0 mfTMapDelObj","006F0360 mfTMapOptimize","006F0620 FUN_006f0620","006F0700 FUN_006f0700","006F0800 FUN_006f0800","006F0A50 FUN_006f0a50","006F0C00 AuxTMapRefreshAll","006F0CD0 FUN_006f0cd0","006F0D70 mf3DXGetParam"]}
+{"address":"007EEFA0","type":"string","length":15,"value":"\"mfTmapGetParam\"","referenced_from":["006EF300 mfTmapGetParam"]}
+{"address":"007EEFB0","type":"string","length":19,"value":"\"_mfTMapSetTxtParam\"","referenced_from":["006EF440 _mfTMapSetTxtParam"]}
+{"address":"007EEFC4","type":"string","length":20,"value":"\"_mfTMapSetMeshParam\"","referenced_from":["006EF530 _mfTMapSetMeshParam"]}
+{"address":"007EEFD8","type":"string","length":11,"value":"\"mfTMapLoad\"","referenced_from":["006EF640 mfTMapLoad"]}
+{"address":"007EEFE4","type":"string","length":8,"value":"\"BRDTXTR\"","referenced_from":["006EF640 mfTMapLoad","006EFC50 mfTMapCreate"]}
+{"address":"007EEFEC","type":"string","length":14,"value":"\"mfTMapNewTxtr\"","referenced_from":["006EF9D0 mfTMapNewTxtr"]}
+{"address":"007EEFFC","type":"string","length":12,"value":"\"mfTMapErase\"","referenced_from":["006EFB70 mfTMapErase"]}
+{"address":"007EF008","type":"string","length":13,"value":"\"mfTMapCreate\"","referenced_from":["006EFC50 mfTMapCreate"]}
+{"address":"007EF018","type":"string","length":11,"value":"\"mfTMapSave\"","referenced_from":["006EFDB0 mfTMapSave"]}
+{"address":"007EF024","type":"string","length":13,"value":"\"mfTMapAddObj\"","referenced_from":["006EFF90 mfTMapAddObj"]}
+{"address":"007EF034","type":"string","length":13,"value":"\"mfTMapDelObj\"","referenced_from":["006F01A0 mfTMapDelObj"]}
+{"address":"007EF044","type":"string","length":15,"value":"\"mfTMapOptimize\"","referenced_from":["006F0360 mfTMapOptimize"]}
 {"address":"007EF054","type":"string","length":14,"value":"\"AuxTMapCreate\"","referenced_from":["006F0620 FUN_006f0620","006F0700 FUN_006f0700"]}
 {"address":"007EF064","type":"string","length":15,"value":"\"AuxTMapRefresh\"","referenced_from":["006F0800 FUN_006f0800","006F0A50 FUN_006f0a50"]}
-{"address":"007EF074","type":"string","length":18,"value":"\"AuxTMapRefreshAll\"","referenced_from":["006F0C00 FUN_006f0c00"]}
+{"address":"007EF074","type":"string","length":18,"value":"\"AuxTMapRefreshAll\"","referenced_from":["006F0C00 AuxTMapRefreshAll"]}
 {"address":"007EF088","type":"string","length":10,"value":"\"mf3DXLoad\"","referenced_from":["006F0CD0 FUN_006f0cd0"]}
-{"address":"007EF094","type":"string","length":14,"value":"\"mf3DXGetParam\"","referenced_from":["006F0D70 FUN_006f0d70"]}
+{"address":"007EF094","type":"string","length":14,"value":"\"mf3DXGetParam\"","referenced_from":["006F0D70 mf3DXGetParam"]}
 {"address":"007EF0A4","type":"string","length":7,"value":"\"M_ANY \"","referenced_from":["00680890 FUN_00680890","006F13F0 cMf32::RecPut","006F17C0 cMf32::RecDel","006F1B70 cMf32::vmAddrRecGet","006F1CE0 cMf32::RecGet","006F21C0 cMf32::RecChk","006F2310 cMf32::RecGetParam","006F24A0 cMf32::RecGetLen","006F2600 cMf32::RecGetOrigLen"]}
 {"address":"007EF5A4","type":"string","length":8,"value":"\"M_USER\"","referenced_from":[]}
 {"address":"007EFAA4","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\Mf32int.cpp\"","referenced_from":["006F0EC0 FUN_006f0ec0","006F1170 cMf32::delete","006F1220 cMf32::Flush","006F12B0 cMf32::ToBeg","006F1350 cMf32::ToEnd","006F13F0 cMf32::RecPut","006F1700 cMf32::RecPutNoname","006F17C0 cMf32::RecDel","006F1910 cMf32::RecRen","006F1B70 cMf32::vmAddrRecGet","006F1CE0 cMf32::RecGet","006F20E0 cMf32::RecMemFree","006F21C0 cMf32::RecChk","006F2310 cMf32::RecGetParam","006F24A0 cMf32::RecGetLen","006F2600 cMf32::RecGetOrigLen","006F2790 cMf32::RecNameGetNext","006F2860 cMf32::RecKeyGetNext","006F2940 cMf32::RecNameGetPrev","006F2A10 cMf32::RecKeyGetPrev","006F2AF0 cMf32::KeyRecGet"]}
@@ -3756,39 +3756,39 @@
 {"address":"007EFCF8","type":"string","length":22,"value":"\"cMf32::RecNameGetPrev\"","referenced_from":["006F2940 cMf32::RecNameGetPrev"]}
 {"address":"007EFD10","type":"string","length":21,"value":"\"cMf32::RecKeyGetPrev\"","referenced_from":["006F2A10 cMf32::RecKeyGetPrev"]}
 {"address":"007EFD28","type":"string","length":17,"value":"\"cMf32::KeyRecGet\"","referenced_from":["006F2AF0 cMf32::KeyRecGet"]}
-{"address":"007EFD3C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfaobj.cpp\"","referenced_from":["006F2D90 FUN_006f2d90","006F2E40 FUN_006f2e40","006F2FB0 FUN_006f2fb0","006F3050 FUN_006f3050","006F3110 FUN_006f3110"]}
-{"address":"007EFD54","type":"string","length":11,"value":"\"mfAObjLoad\"","referenced_from":["006F2D90 FUN_006f2d90"]}
-{"address":"007EFD60","type":"string","length":11,"value":"\"mfAObjEnum\"","referenced_from":["006F2E40 FUN_006f2e40"]}
-{"address":"007EFD6C","type":"string","length":10,"value":"\"mfAObjLen\"","referenced_from":["006F2FB0 FUN_006f2fb0"]}
-{"address":"007EFD78","type":"string","length":12,"value":"\"mfAObjParam\"","referenced_from":["006F3050 FUN_006f3050"]}
-{"address":"007EFD84","type":"string","length":11,"value":"\"mfAObjSave\"","referenced_from":["006F3110 FUN_006f3110"]}
+{"address":"007EFD3C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfaobj.cpp\"","referenced_from":["006F2D90 mfAObjLoad","006F2E40 mfAObjEnum","006F2FB0 mfAObjLen","006F3050 mfAObjParam","006F3110 mfAObjSave"]}
+{"address":"007EFD54","type":"string","length":11,"value":"\"mfAObjLoad\"","referenced_from":["006F2D90 mfAObjLoad"]}
+{"address":"007EFD60","type":"string","length":11,"value":"\"mfAObjEnum\"","referenced_from":["006F2E40 mfAObjEnum"]}
+{"address":"007EFD6C","type":"string","length":10,"value":"\"mfAObjLen\"","referenced_from":["006F2FB0 mfAObjLen"]}
+{"address":"007EFD78","type":"string","length":12,"value":"\"mfAObjParam\"","referenced_from":["006F3050 mfAObjParam"]}
+{"address":"007EFD84","type":"string","length":11,"value":"\"mfAObjSave\"","referenced_from":["006F3110 mfAObjSave"]}
 {"address":"007EFF34","type":"string","length":24,"value":"\"E:\\\\ourlib\\\\St3ds8p.cpp\"","referenced_from":[]}
-{"address":"007EFF4C","type":"string","length":14,"value":"\"mfRLoadCreate\"","referenced_from":["007097C0 FUN_007097c0"]}
-{"address":"007EFF5C","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\mfrload.cpp\"","referenced_from":["007097C0 FUN_007097c0","00709AF0 FUN_00709af0","00709E10 FUN_00709e10","00709F40 FUN_00709f40","0070A050 FUN_0070a050","0070A1B0 FUN_0070a1b0","0070A370 FUN_0070a370","0070A4A0 FUN_0070a4a0"]}
-{"address":"007EFF74","type":"string","length":8,"value":"\"mfRLoad\"","referenced_from":["00709AF0 FUN_00709af0"]}
-{"address":"007EFF7C","type":"string","length":15,"value":"\"mfRLoadAddReff\"","referenced_from":["00709E10 FUN_00709e10"]}
-{"address":"007EFF8C","type":"string","length":16,"value":"\"_mfRLoadAddReff\"","referenced_from":["00709F40 FUN_00709f40"]}
-{"address":"007EFF9C","type":"string","length":15,"value":"\"mfRLoadRelease\"","referenced_from":["0070A050 FUN_0070a050"]}
-{"address":"007EFFAC","type":"string","length":16,"value":"\"_mfRLoadRelease\"","referenced_from":["0070A1B0 FUN_0070a1b0"]}
-{"address":"007EFFBC","type":"string","length":18,"value":"\"mfRLoadRefreshAll\"","referenced_from":["0070A370 FUN_0070a370"]}
-{"address":"007EFFD0","type":"string","length":15,"value":"\"mfRLoadRefresh\"","referenced_from":["0070A4A0 FUN_0070a4a0"]}
-{"address":"007EFFE0","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\Mfimg.cpp\"","referenced_from":["0070A5A0 FUN_0070a5a0","0070A650 FUN_0070a650","0070A6F0 FUN_0070a6f0","0070A7B0 FUN_0070a7b0","0070A870 FUN_0070a870","0070A930 FUN_0070a930","0070AAD0 FUN_0070aad0","0070AC10 FUN_0070ac10","0070AD60 FUN_0070ad60","0070AE60 FUN_0070ae60","0070B220 FUN_0070b220","0070B2E0 FUN_0070b2e0","0070B430 FUN_0070b430","0070B900 FUN_0070b900","0070BE80 FUN_0070be80","0070BFE0 FUN_0070bfe0","0070C400 FUN_0070c400","0070C4D0 FUN_0070c4d0","0070C690 FUN_0070c690"]}
-{"address":"007EFFF4","type":"string","length":10,"value":"\"mfImgLoad\"","referenced_from":["0070A5A0 FUN_0070a5a0"]}
-{"address":"007F0000","type":"string","length":13,"value":"\"mfImgGetLen \"","referenced_from":["0070A650 FUN_0070a650"]}
-{"address":"007F0010","type":"string","length":15,"value":"\"mfImgGetWidth \"","referenced_from":["0070A6F0 FUN_0070a6f0"]}
-{"address":"007F0020","type":"string","length":15,"value":"\"mfImgGetHeight\"","referenced_from":["0070A7B0 FUN_0070a7b0"]}
-{"address":"007F0030","type":"string","length":16,"value":"\"mfImgGetTransp \"","referenced_from":["0070A870 FUN_0070a870"]}
-{"address":"007F0040","type":"string","length":15,"value":"\"mfImgGetNumIms\"","referenced_from":["0070A930 FUN_0070a930"]}
-{"address":"007F0050","type":"string","length":15,"value":"\"mfGifLoadToDib\"","referenced_from":["0070AAD0 FUN_0070aad0"]}
-{"address":"007F0060","type":"string","length":15,"value":"\"mfPcxLoadToDib\"","referenced_from":["0070AC10 FUN_0070ac10"]}
-{"address":"007F0070","type":"string","length":15,"value":"\"mfJpgLoadToDib\"","referenced_from":["0070AD60 FUN_0070ad60"]}
-{"address":"007F0080","type":"string","length":10,"value":"\"mfImtLoad\"","referenced_from":["0070AE60 FUN_0070ae60"]}
-{"address":"007F008C","type":"string","length":15,"value":"\"mfImtGetNumIms\"","referenced_from":["0070B220 FUN_0070b220"]}
-{"address":"007F009C","type":"string","length":16,"value":"\"mfImtGetModeIms\"","referenced_from":["0070B2E0 FUN_0070b2e0"]}
-{"address":"007F00AC","type":"string","length":10,"value":"\"mfQmtLoad\"","referenced_from":["0070B430 FUN_0070b430"]}
-{"address":"007F00D8","type":"string","length":18,"value":"\"imgGetDibFromFile\"","referenced_from":["0070B900 FUN_0070b900"]}
-{"address":"007F00EC","type":"string","length":18,"value":"\"imgGetSprFromFile\"","referenced_from":["0070BE80 FUN_0070be80"]}
-{"address":"007F0100","type":"string","length":24,"value":"\"imgGetPcxGifJpgFromFile\"","referenced_from":["0070BFE0 FUN_0070bfe0"]}
+{"address":"007EFF4C","type":"string","length":14,"value":"\"mfRLoadCreate\"","referenced_from":["007097C0 mfRLoadCreate"]}
+{"address":"007EFF5C","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\mfrload.cpp\"","referenced_from":["007097C0 mfRLoadCreate","00709AF0 mfRLoad","00709E10 mfRLoadAddReff","00709F40 _mfRLoadAddReff","0070A050 mfRLoadRelease","0070A1B0 _mfRLoadRelease","0070A370 mfRLoadRefreshAll","0070A4A0 mfRLoadRefresh"]}
+{"address":"007EFF74","type":"string","length":8,"value":"\"mfRLoad\"","referenced_from":["00709AF0 mfRLoad"]}
+{"address":"007EFF7C","type":"string","length":15,"value":"\"mfRLoadAddReff\"","referenced_from":["00709E10 mfRLoadAddReff"]}
+{"address":"007EFF8C","type":"string","length":16,"value":"\"_mfRLoadAddReff\"","referenced_from":["00709F40 _mfRLoadAddReff"]}
+{"address":"007EFF9C","type":"string","length":15,"value":"\"mfRLoadRelease\"","referenced_from":["0070A050 mfRLoadRelease"]}
+{"address":"007EFFAC","type":"string","length":16,"value":"\"_mfRLoadRelease\"","referenced_from":["0070A1B0 _mfRLoadRelease"]}
+{"address":"007EFFBC","type":"string","length":18,"value":"\"mfRLoadRefreshAll\"","referenced_from":["0070A370 mfRLoadRefreshAll"]}
+{"address":"007EFFD0","type":"string","length":15,"value":"\"mfRLoadRefresh\"","referenced_from":["0070A4A0 mfRLoadRefresh"]}
+{"address":"007EFFE0","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\Mfimg.cpp\"","referenced_from":["0070A5A0 mfImgLoad","0070A650 mfImgGetLen","0070A6F0 mfImgGetWidth","0070A7B0 mfImgGetHeight","0070A870 mfImgGetTransp","0070A930 mfImgGetNumIms","0070AAD0 mfGifLoadToDib","0070AC10 mfPcxLoadToDib","0070AD60 mfJpgLoadToDib","0070AE60 mfImtLoad","0070B220 mfImtGetNumIms","0070B2E0 mfImtGetModeIms","0070B430 mfQmtLoad","0070B900 imgGetDibFromFile","0070BE80 imgGetSprFromFile","0070BFE0 imgGetPcxGifJpgFromFile","0070C400 FUN_0070c400","0070C4D0 FUN_0070c4d0","0070C690 FUN_0070c690"]}
+{"address":"007EFFF4","type":"string","length":10,"value":"\"mfImgLoad\"","referenced_from":["0070A5A0 mfImgLoad"]}
+{"address":"007F0000","type":"string","length":13,"value":"\"mfImgGetLen \"","referenced_from":["0070A650 mfImgGetLen"]}
+{"address":"007F0010","type":"string","length":15,"value":"\"mfImgGetWidth \"","referenced_from":["0070A6F0 mfImgGetWidth"]}
+{"address":"007F0020","type":"string","length":15,"value":"\"mfImgGetHeight\"","referenced_from":["0070A7B0 mfImgGetHeight"]}
+{"address":"007F0030","type":"string","length":16,"value":"\"mfImgGetTransp \"","referenced_from":["0070A870 mfImgGetTransp"]}
+{"address":"007F0040","type":"string","length":15,"value":"\"mfImgGetNumIms\"","referenced_from":["0070A930 mfImgGetNumIms"]}
+{"address":"007F0050","type":"string","length":15,"value":"\"mfGifLoadToDib\"","referenced_from":["0070AAD0 mfGifLoadToDib"]}
+{"address":"007F0060","type":"string","length":15,"value":"\"mfPcxLoadToDib\"","referenced_from":["0070AC10 mfPcxLoadToDib"]}
+{"address":"007F0070","type":"string","length":15,"value":"\"mfJpgLoadToDib\"","referenced_from":["0070AD60 mfJpgLoadToDib"]}
+{"address":"007F0080","type":"string","length":10,"value":"\"mfImtLoad\"","referenced_from":["0070AE60 mfImtLoad"]}
+{"address":"007F008C","type":"string","length":15,"value":"\"mfImtGetNumIms\"","referenced_from":["0070B220 mfImtGetNumIms"]}
+{"address":"007F009C","type":"string","length":16,"value":"\"mfImtGetModeIms\"","referenced_from":["0070B2E0 mfImtGetModeIms"]}
+{"address":"007F00AC","type":"string","length":10,"value":"\"mfQmtLoad\"","referenced_from":["0070B430 mfQmtLoad"]}
+{"address":"007F00D8","type":"string","length":18,"value":"\"imgGetDibFromFile\"","referenced_from":["0070B900 imgGetDibFromFile"]}
+{"address":"007F00EC","type":"string","length":18,"value":"\"imgGetSprFromFile\"","referenced_from":["0070BE80 imgGetSprFromFile"]}
+{"address":"007F0100","type":"string","length":24,"value":"\"imgGetPcxGifJpgFromFile\"","referenced_from":["0070BFE0 imgGetPcxGifJpgFromFile"]}
 {"address":"007F0118","type":"string","length":46,"value":"\"img=[%d,%d,%d,%d], lx=%d, ly=%d, stretch = %x\"","referenced_from":["0070C4D0 FUN_0070c4d0"]}
 {"address":"007F0178","type":"string","length":24,"value":"\"ccFntTy::operator new\"","referenced_from":["0070CEB0 ccFntTy::operator"]}
 {"address":"007F0190","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfcfnt.cpp\"","referenced_from":["0070CEB0 ccFntTy::operator","0070D1F0 ccFntTy::operator","0070DF00 ccFntTy::operator","0070E030 FUN_0070e030","00710560 ccFntTy::operator","007108B0 ccFntTy::Save","00710A90 ccFntTy::SetSurf","00710BA0 ccFntTy::CreateSurf","00710D80 ccFntTy::GetSurfAsSpr","00710F00 ccFntTy::EraseSufr","007116F0 ccFntTy::WrCh","00711880 ccFntTy::WrChXY","007119C0 ccFntTy::WrStr","00711B70 ccFntTy::WrTxt","00711DA0 ccFntTy::WrArr","00711F70 ccFntTy::WrSarr","007121F0 ccFntTy::FormSarr","007126E0 ccFntTy::FormIndentSarr","007129D0 ccFntTy::SepColorStrInSarr","00712C10 ccFntTy::FormText","00712D30 ccFntTy::FormIndentText","00712E60 ccFntTy::VisLineSarr","00712F80 ccFntTy::_TxtToSarr","00713080 ccFntTy::_SarrToTxt","00713200 ccFntTy::GetFittingStr","00713480 ccFntTy::CreateTypeSSpr","00713B00 cTypingTy::TypingInit","00713F30 cTypingTy::TypingInitSarr"]}
@@ -3818,27 +3818,27 @@
 {"address":"007F03A4","type":"string","length":24,"value":"\"ccFntTy::CreateTypeSSpr\"","referenced_from":["00713480 ccFntTy::CreateTypeSSpr"]}
 {"address":"007F03BC","type":"string","length":22,"value":"\"cTypingTy::TypingInit\"","referenced_from":["00713B00 cTypingTy::TypingInit"]}
 {"address":"007F03D4","type":"string","length":26,"value":"\"cTypingTy::TypingInitSarr\"","referenced_from":["00713F30 cTypingTy::TypingInitSarr"]}
-{"address":"007F03F0","type":"string","length":10,"value":"\"mfDarLoad\"","referenced_from":["00715050 FUN_00715050"]}
-{"address":"007F03FC","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\mfdarr.cpp\"","referenced_from":["00715050 FUN_00715050","00715170 FUN_00715170","00715280 FUN_00715280"]}
-{"address":"007F0414","type":"string","length":10,"value":"\"mfDarSave\"","referenced_from":["00715170 FUN_00715170"]}
-{"address":"007F0420","type":"string","length":12,"value":"\"mfDarGetNum\"","referenced_from":["00715280 FUN_00715280"]}
-{"address":"007F042C","type":"string","length":13,"value":"\"cnUnPackMess\"","referenced_from":["007154E0 FUN_007154e0"]}
-{"address":"007F043C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\connect.cpp\"","referenced_from":["007154E0 FUN_007154e0","00715630 FUN_00715630"]}
+{"address":"007F03F0","type":"string","length":10,"value":"\"mfDarLoad\"","referenced_from":["00715050 mfDarLoad"]}
+{"address":"007F03FC","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\mfdarr.cpp\"","referenced_from":["00715050 mfDarLoad","00715170 mfDarSave","00715280 mfDarGetNum"]}
+{"address":"007F0414","type":"string","length":10,"value":"\"mfDarSave\"","referenced_from":["00715170 mfDarSave"]}
+{"address":"007F0420","type":"string","length":12,"value":"\"mfDarGetNum\"","referenced_from":["00715280 mfDarGetNum"]}
+{"address":"007F042C","type":"string","length":13,"value":"\"cnUnPackMess\"","referenced_from":["007154E0 cnUnPackMess"]}
+{"address":"007F043C","type":"string","length":22,"value":"\"E:\\\\ourlib\\\\connect.cpp\"","referenced_from":["007154E0 cnUnPackMess","00715630 FUN_00715630"]}
 {"address":"007F0454","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\Sprite.cpp\"","referenced_from":["007158A0 SpriteClassTy::InitSprite","00715AB0 SpriteClassTy::CloseSprite","00715C60 SpriteClassTy::SetImagesReg","00716040 SpriteClassTy::SetImages","00716480 SpriteClassTy::SetImagesPtr"]}
 {"address":"007F046C","type":"string","length":26,"value":"\"SpriteClassTy::InitSprite\"","referenced_from":["007158A0 SpriteClassTy::InitSprite"]}
 {"address":"007F0488","type":"string","length":27,"value":"\"SpriteClassTy::CloseSprite\"","referenced_from":["00715AB0 SpriteClassTy::CloseSprite"]}
 {"address":"007F04A4","type":"string","length":28,"value":"\"SpriteClassTy::SetImagesReg\"","referenced_from":["00715C60 SpriteClassTy::SetImagesReg"]}
 {"address":"007F04C0","type":"string","length":25,"value":"\"SpriteClassTy::SetImages\"","referenced_from":["00716040 SpriteClassTy::SetImages"]}
 {"address":"007F04DC","type":"string","length":28,"value":"\"SpriteClassTy::SetImagesPtr\"","referenced_from":["00716480 SpriteClassTy::SetImagesPtr"]}
-{"address":"007F04F8","type":"string","length":11,"value":"\"mfTSprLoad\"","referenced_from":["00716850 FUN_00716850"]}
-{"address":"007F0504","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mftspr.cpp\"","referenced_from":["00716850 FUN_00716850","00716E60 FUN_00716e60","00716FD0 FUN_00716fd0","007171C0 FUN_007171c0"]}
-{"address":"007F051C","type":"string","length":16,"value":"\"mfTSprGetNumFas\"","referenced_from":["00716E60 FUN_00716e60"]}
-{"address":"007F052C","type":"string","length":17,"value":"\"mfTSprLoadAsSSpr\"","referenced_from":["00716FD0 FUN_00716fd0"]}
-{"address":"007F0540","type":"string","length":17,"value":"\"mfRSprLoadAsQSpr\"","referenced_from":["007171C0 FUN_007171c0"]}
+{"address":"007F04F8","type":"string","length":11,"value":"\"mfTSprLoad\"","referenced_from":["00716850 mfTSprLoad"]}
+{"address":"007F0504","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mftspr.cpp\"","referenced_from":["00716850 mfTSprLoad","00716E60 mfTSprGetNumFas","00716FD0 mfTSprLoadAsSSpr","007171C0 mfRSprLoadAsQSpr"]}
+{"address":"007F051C","type":"string","length":16,"value":"\"mfTSprGetNumFas\"","referenced_from":["00716E60 mfTSprGetNumFas"]}
+{"address":"007F052C","type":"string","length":17,"value":"\"mfTSprLoadAsSSpr\"","referenced_from":["00716FD0 mfTSprLoadAsSSpr"]}
+{"address":"007F0540","type":"string","length":17,"value":"\"mfRSprLoadAsQSpr\"","referenced_from":["007171C0 mfRSprLoadAsQSpr"]}
 {"address":"007F06D4","type":"string","length":21,"value":"\"E:\\\\ourlib\\\\Stdark.cpp\"","referenced_from":["007176F0 FUN_007176f0"]}
-{"address":"007F06EC","type":"string","length":11,"value":"\"mfPltPtrTy\"","referenced_from":["00717FC0 FUN_00717fc0"]}
-{"address":"007F06F8","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfplt.cpp\"","referenced_from":["00717FC0 FUN_00717fc0","00718080 FUN_00718080"]}
-{"address":"007F070C","type":"string","length":9,"value":"\"mfPltNum\"","referenced_from":["00718080 FUN_00718080"]}
+{"address":"007F06EC","type":"string","length":11,"value":"\"mfPltPtrTy\"","referenced_from":["00717FC0 mfPltPtrTy"]}
+{"address":"007F06F8","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfplt.cpp\"","referenced_from":["00717FC0 mfPltPtrTy","00718080 mfPltNum"]}
+{"address":"007F070C","type":"string","length":9,"value":"\"mfPltNum\"","referenced_from":["00718080 mfPltNum"]}
 {"address":"007F0718","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\Palette.cpp\"","referenced_from":["00718500 FUN_00718500","00718780 FUN_00718780","00718A40 FUN_00718a40","00718D50 FUN_00718d50","00718F40 FUN_00718f40","00719080 FUN_00719080","00719190 FUN_00719190","007192D0 FUN_007192d0"]}
 {"address":"007F0730","type":"string","length":26,"value":"\"CreateReplColorTbl error!\"","referenced_from":["00718500 FUN_00718500","00718780 FUN_00718780"]}
 {"address":"007F074C","type":"string","length":28,"value":"\"CreateReplColorTblHi error!\"","referenced_from":["00718A40 FUN_00718a40"]}
@@ -3852,24 +3852,24 @@
 {"address":"007F07DC","type":"string","length":10,"value":"\"sequencer\"","referenced_from":["00719410 FUN_00719410"]}
 {"address":"007F07E8","type":"string","length":10,"value":"\"waveaudio\"","referenced_from":["00719410 FUN_00719410"]}
 {"address":"007F07F4","type":"string","length":10,"value":"\"MCI error\"","referenced_from":["00719C90 FUN_00719c90"]}
-{"address":"007F0800","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfwav.cpp\"","referenced_from":["00719D00 FUN_00719d00","00719DF0 FUN_00719df0","00719EA0 FUN_00719ea0","0071A030 FUN_0071a030","0071A110 FUN_0071a110","0071A270 FUN_0071a270","0071A530 FUN_0071a530","0071A5E0 FUN_0071a5e0"]}
-{"address":"007F0814","type":"string","length":10,"value":"\"mfWavLoad\"","referenced_from":["00719D00 FUN_00719d00"]}
-{"address":"007F0820","type":"string","length":14,"value":"\"mfWavGetType \"","referenced_from":["00719DF0 FUN_00719df0"]}
-{"address":"007F0830","type":"string","length":18,"value":"\"GetPcmFromWavFile\"","referenced_from":["00719EA0 FUN_00719ea0"]}
-{"address":"007F0844","type":"string","length":10,"value":"\"mfWavSave\"","referenced_from":["0071A030 FUN_0071a030"]}
-{"address":"007F0850","type":"string","length":14,"value":"\"mfWavSaveFile\"","referenced_from":["0071A110 FUN_0071a110"]}
-{"address":"007F0860","type":"string","length":13,"value":"\"mfSndLibLoad\"","referenced_from":["0071A270 FUN_0071a270"]}
-{"address":"007F0870","type":"string","length":13,"value":"\"mfSndTblLoad\"","referenced_from":["0071A5E0 FUN_0071a5e0"]}
-{"address":"007F0880","type":"string","length":12,"value":"\"NO SOUND\"","referenced_from":["0071A5E0 FUN_0071a5e0"]}
-{"address":"007F088C","type":"string","length":10,"value":"\"mfSarLoad\"","referenced_from":["0071AA10 FUN_0071aa10"]}
-{"address":"007F0898","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfsarr.cpp\"","referenced_from":["0071AA10 FUN_0071aa10","0071AB30 FUN_0071ab30","0071AC40 FUN_0071ac40"]}
-{"address":"007F08B0","type":"string","length":10,"value":"\"mfSarSave\"","referenced_from":["0071AB30 FUN_0071ab30"]}
-{"address":"007F08BC","type":"string","length":9,"value":"\"tSArrCat\"","referenced_from":["0071AC40 FUN_0071ac40"]}
-{"address":"007F08C8","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfany.cpp\"","referenced_from":["0071AD00 FUN_0071ad00","0071ADB0 FUN_0071adb0","0071AE80 FUN_0071ae80","0071B010 FUN_0071b010"]}
-{"address":"007F08DC","type":"string","length":10,"value":"\"mfAnyLoad\"","referenced_from":["0071AD00 FUN_0071ad00"]}
-{"address":"007F08E8","type":"string","length":10,"value":"\"mfAnySave\"","referenced_from":["0071ADB0 FUN_0071adb0"]}
-{"address":"007F08F4","type":"string","length":12,"value":"\"ReadAllFile\"","referenced_from":["0071AE80 FUN_0071ae80"]}
-{"address":"007F0900","type":"string","length":14,"value":"\"mfAnySaveFile\"","referenced_from":["0071B010 FUN_0071b010"]}
+{"address":"007F0800","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfwav.cpp\"","referenced_from":["00719D00 mfWavLoad","00719DF0 mfWavGetType","00719EA0 GetPcmFromWavFile","0071A030 mfWavSave","0071A110 mfWavSaveFile","0071A270 mfSndLibLoad","0071A530 FUN_0071a530","0071A5E0 mfSndTblLoad"]}
+{"address":"007F0814","type":"string","length":10,"value":"\"mfWavLoad\"","referenced_from":["00719D00 mfWavLoad"]}
+{"address":"007F0820","type":"string","length":14,"value":"\"mfWavGetType \"","referenced_from":["00719DF0 mfWavGetType"]}
+{"address":"007F0830","type":"string","length":18,"value":"\"GetPcmFromWavFile\"","referenced_from":["00719EA0 GetPcmFromWavFile"]}
+{"address":"007F0844","type":"string","length":10,"value":"\"mfWavSave\"","referenced_from":["0071A030 mfWavSave"]}
+{"address":"007F0850","type":"string","length":14,"value":"\"mfWavSaveFile\"","referenced_from":["0071A110 mfWavSaveFile"]}
+{"address":"007F0860","type":"string","length":13,"value":"\"mfSndLibLoad\"","referenced_from":["0071A270 mfSndLibLoad"]}
+{"address":"007F0870","type":"string","length":13,"value":"\"mfSndTblLoad\"","referenced_from":["0071A5E0 mfSndTblLoad"]}
+{"address":"007F0880","type":"string","length":12,"value":"\"NO SOUND\"","referenced_from":["0071A5E0 mfSndTblLoad"]}
+{"address":"007F088C","type":"string","length":10,"value":"\"mfSarLoad\"","referenced_from":["0071AA10 mfSarLoad"]}
+{"address":"007F0898","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\mfsarr.cpp\"","referenced_from":["0071AA10 mfSarLoad","0071AB30 mfSarSave","0071AC40 tSArrCat"]}
+{"address":"007F08B0","type":"string","length":10,"value":"\"mfSarSave\"","referenced_from":["0071AB30 mfSarSave"]}
+{"address":"007F08BC","type":"string","length":9,"value":"\"tSArrCat\"","referenced_from":["0071AC40 tSArrCat"]}
+{"address":"007F08C8","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfany.cpp\"","referenced_from":["0071AD00 mfAnyLoad","0071ADB0 mfAnySave","0071AE80 ReadAllFile","0071B010 mfAnySaveFile"]}
+{"address":"007F08DC","type":"string","length":10,"value":"\"mfAnyLoad\"","referenced_from":["0071AD00 mfAnyLoad"]}
+{"address":"007F08E8","type":"string","length":10,"value":"\"mfAnySave\"","referenced_from":["0071ADB0 mfAnySave"]}
+{"address":"007F08F4","type":"string","length":12,"value":"\"ReadAllFile\"","referenced_from":["0071AE80 ReadAllFile"]}
+{"address":"007F0900","type":"string","length":14,"value":"\"mfAnySaveFile\"","referenced_from":["0071B010 mfAnySaveFile"]}
 {"address":"007F0910","type":"string","length":27,"value":"\"InputClassTy::Create error\"","referenced_from":["0071B220 InputClassTy::Create"]}
 {"address":"007F092C","type":"string","length":21,"value":"\"E:\\\\Ourlib\\\\Sinput.cpp\"","referenced_from":["0071B220 InputClassTy::Create","0071B520 InputClassTy::Done","0071B630 FUN_0071b630","0071B9C0 InputClassTy::None","0071C1D0 InputClassTy::AddAcc","0071C530 InputClassTy::DelAcc","0071C8C0 InputClassTy::AddToMouse","0071CA50 InputClassTy::GetMessage"]}
 {"address":"007F0944","type":"string","length":19,"value":"\"InputClassTy::Done\"","referenced_from":["0071B520 InputClassTy::Done"]}
@@ -3896,23 +3896,23 @@
 {"address":"007F0BD8","type":"string","length":34,"value":"\"SliderClassTy::GetMessage Error !\"","referenced_from":["007244B0 SliderClassTy::GetMessage"]}
 {"address":"007F0BFC","type":"string","length":36,"value":"\"TrackbarClassTy::GetMessage Error !\"","referenced_from":["00725020 TrackbarClassTy::GetMessage"]}
 {"address":"007F0C20","type":"string","length":22,"value":"\"E:\\\\Ourlib\\\\_strack.cpp\"","referenced_from":["00725020 TrackbarClassTy::GetMessage"]}
-{"address":"007F0C38","type":"string","length":11,"value":"\"mfPlaPtrTy\"","referenced_from":["00725550 FUN_00725550"]}
-{"address":"007F0C44","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfpla.cpp\"","referenced_from":["00725550 FUN_00725550","007256A0 FUN_007256a0"]}
-{"address":"007F0C58","type":"string","length":14,"value":"\"mfPlaGetClust\"","referenced_from":["007256A0 FUN_007256a0"]}
+{"address":"007F0C38","type":"string","length":11,"value":"\"mfPlaPtrTy\"","referenced_from":["00725550 mfPlaPtrTy"]}
+{"address":"007F0C44","type":"string","length":20,"value":"\"E:\\\\ourlib\\\\mfpla.cpp\"","referenced_from":["00725550 mfPlaPtrTy","007256A0 mfPlaGetClust"]}
+{"address":"007F0C58","type":"string","length":14,"value":"\"mfPlaGetClust\"","referenced_from":["007256A0 mfPlaGetClust"]}
 {"address":"007F0C68","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\St3dpaus.cpp\"","referenced_from":["00725760 FUN_00725760"]}
-{"address":"007F0C80","type":"string","length":11,"value":"\"mfSSprLoad\"","referenced_from":["00725C60 FUN_00725c60"]}
-{"address":"007F0C8C","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfspr.cpp\"","referenced_from":["00725C60 FUN_00725c60","00725E80 FUN_00725e80","00725F50 FUN_00725f50","007262B0 FUN_007262b0","00726390 FUN_00726390","00726470 FUN_00726470","00726550 FUN_00726550","00726630 FUN_00726630","007268C0 FUN_007268c0","007269A0 FUN_007269a0","00726A80 FUN_00726a80","00726C00 FUN_00726c00"]}
-{"address":"007F0CA0","type":"string","length":16,"value":"\"mfSSprGetNumFas\"","referenced_from":["00725E80 FUN_00725e80"]}
-{"address":"007F0CB0","type":"string","length":12,"value":"\"mfMSprLoad \"","referenced_from":["00725F50 FUN_00725f50"]}
-{"address":"007F0CBC","type":"string","length":17,"value":"\"mfMSprGetNumFas \"","referenced_from":["007262B0 FUN_007262b0"]}
-{"address":"007F0CD0","type":"string","length":15,"value":"\"mfMSprGetNumPl\"","referenced_from":["00726390 FUN_00726390"]}
-{"address":"007F0CE0","type":"string","length":15,"value":"\"mfMSprGetWidth\"","referenced_from":["00726470 FUN_00726470"]}
-{"address":"007F0CF0","type":"string","length":15,"value":"\"mfMSprGetHeigh\"","referenced_from":["00726550 FUN_00726550"]}
-{"address":"007F0D00","type":"string","length":11,"value":"\"mfUSprLoad\"","referenced_from":["00726630 FUN_00726630"]}
-{"address":"007F0D0C","type":"string","length":16,"value":"\"mfUSprGetNumFas\"","referenced_from":["007268C0 FUN_007268c0"]}
-{"address":"007F0D1C","type":"string","length":14,"value":"\"mfUSprGetSect\"","referenced_from":["007269A0 FUN_007269a0"]}
-{"address":"007F0D2C","type":"string","length":11,"value":"\"mfQSprLoad\"","referenced_from":["00726A80 FUN_00726a80"]}
-{"address":"007F0D38","type":"string","length":16,"value":"\"mfQSprGetNumFas\"","referenced_from":["00726C00 FUN_00726c00"]}
+{"address":"007F0C80","type":"string","length":11,"value":"\"mfSSprLoad\"","referenced_from":["00725C60 mfSSprLoad"]}
+{"address":"007F0C8C","type":"string","length":20,"value":"\"E:\\\\Ourlib\\\\mfspr.cpp\"","referenced_from":["00725C60 mfSSprLoad","00725E80 mfSSprGetNumFas","00725F50 mfMSprLoad","007262B0 mfMSprGetNumFas","00726390 mfMSprGetNumPl","00726470 mfMSprGetWidth","00726550 mfMSprGetHeigh","00726630 mfUSprLoad","007268C0 mfUSprGetNumFas","007269A0 mfUSprGetSect","00726A80 mfQSprLoad","00726C00 mfQSprGetNumFas"]}
+{"address":"007F0CA0","type":"string","length":16,"value":"\"mfSSprGetNumFas\"","referenced_from":["00725E80 mfSSprGetNumFas"]}
+{"address":"007F0CB0","type":"string","length":12,"value":"\"mfMSprLoad \"","referenced_from":["00725F50 mfMSprLoad"]}
+{"address":"007F0CBC","type":"string","length":17,"value":"\"mfMSprGetNumFas \"","referenced_from":["007262B0 mfMSprGetNumFas"]}
+{"address":"007F0CD0","type":"string","length":15,"value":"\"mfMSprGetNumPl\"","referenced_from":["00726390 mfMSprGetNumPl"]}
+{"address":"007F0CE0","type":"string","length":15,"value":"\"mfMSprGetWidth\"","referenced_from":["00726470 mfMSprGetWidth"]}
+{"address":"007F0CF0","type":"string","length":15,"value":"\"mfMSprGetHeigh\"","referenced_from":["00726550 mfMSprGetHeigh"]}
+{"address":"007F0D00","type":"string","length":11,"value":"\"mfUSprLoad\"","referenced_from":["00726630 mfUSprLoad"]}
+{"address":"007F0D0C","type":"string","length":16,"value":"\"mfUSprGetNumFas\"","referenced_from":["007268C0 mfUSprGetNumFas"]}
+{"address":"007F0D1C","type":"string","length":14,"value":"\"mfUSprGetSect\"","referenced_from":["007269A0 mfUSprGetSect"]}
+{"address":"007F0D2C","type":"string","length":11,"value":"\"mfQSprLoad\"","referenced_from":["00726A80 mfQSprLoad"]}
+{"address":"007F0D38","type":"string","length":16,"value":"\"mfQSprGetNumFas\"","referenced_from":["00726C00 mfQSprGetNumFas"]}
 {"address":"007F1068","type":"string","length":24,"value":"\"E:\\\\ourlib\\\\Drawtexp.cpp\"","referenced_from":[]}
 {"address":"007F1084","type":"string","length":23,"value":"\"E:\\\\ourlib\\\\Ddsprcur.cpp\"","referenced_from":["0072ACA0 FUN_0072aca0"]}
 {"address":"007F109C","type":"string","length":35,"value":"\"ControlClassTy::GetMessage Error !\"","referenced_from":["0072B780 ControlClassTy::GetMessage"]}

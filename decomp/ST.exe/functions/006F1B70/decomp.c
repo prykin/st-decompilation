@@ -29,7 +29,7 @@ DWORD __thiscall cMf32::vmAddrRecGet(cMf32 *this,byte param_1,char *param_2,int 
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_4c.previous;
     if ((param_3 != 0) || (iVar3 != -4)) {
-      wsprintfA(local_150,s_cMf32__vmAddrRecGet_File___s__Se_007efb80,local_8 + 0x231,
+      wsprintfA(local_150,s_cMf32__vmAddrRecGet_File___s__Se_007efb80,&local_8[0xb].field_0x21,
                 s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
       iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x1aa,0,iVar3,&DAT_007a4ccc,
                                  local_150);
@@ -63,7 +63,7 @@ DWORD __thiscall cMf32::vmAddrRecGet(cMf32 *this,byte param_1,char *param_2,int 
     param_2 = param_2 + 1;
     pcVar7 = pcVar7 + 1;
   }
-  DVar4 = FUN_00751980(*(int **)local_8,(ushort *)local_36c,(undefined4 *)0x0,0);
+  DVar4 = FUN_00751980((int *)local_8->field_0000,(ushort *)local_36c,(undefined4 *)0x0,0);
   if (DVar4 == 0xfffffffc) {
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x1a4);
   }

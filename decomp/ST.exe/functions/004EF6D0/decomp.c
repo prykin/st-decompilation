@@ -65,10 +65,10 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
       return 0;
     }
     if (uVar1 == 0xb201) {
-      *(undefined1 *)(this_00 + 1) = this_00->field_0278;
+      this_00->field_0279 = this_00->field_0278;
       this_00->field_0278 = **(char **)(param_1 + 0x14) + -1;
       thunk_FUN_005252c0(0xae);
-      (**(code **)(*(int *)this_00 + 0x1c))();
+      (**(code **)(this_00->field_0000 + 0x1c))();
       g_currentExceptionFrame = local_58.previous;
       return 0;
     }
@@ -80,7 +80,7 @@ undefined4 __thiscall BldBoatPanelTy::GetMessage(BldBoatPanelTy *this,int param_
     case 0xc0a1:
     case 0xc0a2:
     case 0xc0a3:
-      iVar4 = *(int *)(&this_00[1].field_0x1 + (uint)(byte)this_00->field_0278 * 4);
+      iVar4 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar4 == 0) ||
          (iVar6 = uVar1 + this_00->field_0199, *(uint *)(iVar4 + 0xc) <= iVar6 - 0xc09fU)) {
         puVar5 = (undefined4 *)0x0;

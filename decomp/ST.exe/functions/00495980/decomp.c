@@ -106,7 +106,7 @@ LAB_00495c27:
     DAT_007fb270 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x18,10);
     thunk_FUN_00495e50();
     g_currentExceptionFrame = local_4c.previous;
-    FUN_006e4d40(*(void **)(local_8 + 0x10),*(int *)(local_8 + 0xc));
+    FUN_006e4d40((void *)local_8->field_0010,local_8->field_000C);
     break;
   case 3:
     local_90.previous = g_currentExceptionFrame;
@@ -139,7 +139,7 @@ LAB_00495c27:
     if (DAT_007fb270 != (uint *)0x0) {
       FUN_006ae110((byte *)DAT_007fb270);
     }
-    iVar3 = FUN_006e4d40(*(void **)(pDVar2 + 0x10),*(int *)(pDVar2 + 0xc));
+    iVar3 = FUN_006e4d40((void *)pDVar2->field_0010,pDVar2->field_000C);
     if (iVar3 == 1) {
       g_currentExceptionFrame = local_90.previous;
       return 0;

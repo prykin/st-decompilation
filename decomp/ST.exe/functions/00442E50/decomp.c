@@ -247,7 +247,7 @@ LAB_00442f1f:
       uVar9 = local_24;
       FUN_006acc70(iVar4,local_24,&local_1c);
       if ((local_1c != (STGroupC *)0x0) &&
-         (iVar6 = (**(code **)(*(int *)local_1c + 0xc))(), iVar6 == 8)) {
+         (iVar6 = (**(code **)(local_1c->field_0000 + 0xc))(), iVar6 == 8)) {
         local_48 = STGroupC::GetGroupContent(local_1c,(int)unaff_EDI);
         local_b8 = local_48[3];
         if ((local_b8 != 0) && (local_44 = 0, 0 < (int)local_b8)) {

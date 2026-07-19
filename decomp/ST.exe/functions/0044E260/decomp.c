@@ -40,7 +40,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
           FUN_006acc70((int)puVar3,uVar11,&local_2c);
           local_14 = (STGroupC *)STAllPlayersC::GetObjPtr(in_ECX,param_1,local_2c,CASE_1);
           if ((local_14 == (STGroupC *)0x0) ||
-             (iVar4 = (**(code **)(*(int *)local_14 + 0xf8))(), iVar4 == 0)) {
+             (iVar4 = (**(code **)(local_14->field_0000 + 0xf8))(), iVar4 == 0)) {
             FUN_006b0c70((int)puVar3,uVar11);
             param_2 = param_2 - 1;
             uVar11 = uVar11 - 1;
@@ -62,7 +62,7 @@ void FUN_0044e260(uint param_1,uint param_2,uint param_3,int *param_4)
         pSVar12 = local_14;
         if (0 < (int)param_2) {
           do {
-            iVar10 = *(int *)pSVar12;
+            iVar10 = pSVar12->field_0000;
             iVar4 = *(int *)(iVar10 + 0x101);
             iVar5 = *(short *)(iVar10 + 0x5b) - iVar4;
             if (iVar5 < local_8) {

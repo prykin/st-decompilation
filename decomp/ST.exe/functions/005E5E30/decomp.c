@@ -22,20 +22,20 @@ void __thiscall MTestTy::NoneMTest(MTestTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    if (local_8[1].field_0xe == '\x01') {
+    if (local_8->field_00B3 == '\x01') {
       if (DAT_00811778 != (HoloTy *)0x0) {
         iVar3 = HoloTy::NextFas(DAT_00811778);
         if (iVar3 == 0) {
-          pMVar2[1].field_0xe = 4;
+          pMVar2->field_00B3 = 4;
         }
       }
     }
-    else if ((local_8[1].field_0xe == '\x05') && (DAT_00811778 != (HoloTy *)0x0)) {
+    else if ((local_8->field_00B3 == '\x05') && (DAT_00811778 != (HoloTy *)0x0)) {
       iVar3 = HoloTy::NextFas(DAT_00811778);
       if (iVar3 == 0) {
-        pMVar2[1].field_0xe = 0;
-        if (-1 < (int)*(uint *)(DAT_00811778 + 3)) {
-          FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_00811778 + 3));
+        pMVar2->field_00B3 = 0;
+        if (-1 < (int)DAT_00811778->field_0003) {
+          FUN_006b3af0(DAT_008075a8,DAT_00811778->field_0003);
         }
       }
     }

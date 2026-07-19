@@ -1,4 +1,4 @@
-FUN_00540760:
+DibPut:
 00540760  55                        PUSH EBP
 00540761  8B EC                     MOV EBP,ESP
 00540763  83 EC 44                  SUB ESP,0x44

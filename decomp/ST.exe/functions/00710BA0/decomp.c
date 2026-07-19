@@ -41,11 +41,11 @@ ccFntTy::CreateSurf(ccFntTy *this,int param_1,uint param_2,int param_3,int param
     return puVar4;
   }
   if (param_1 == 0) {
-    if (((*(int *)(local_14 + 0xa0) != 0) && (*(int *)(local_14 + 0xa8) != 0)) &&
-       (*(int *)(local_14 + 0xac) != *(int *)(*(int *)(local_14 + 0xa8) + 0xac))) {
+    if (((local_14->field_00A0 != 0) && (local_14->field_00A8 != 0)) &&
+       (local_14->field_00AC != *(int *)(local_14->field_00A8 + 0xac))) {
       FUN_00710790((int)local_14);
     }
-    param_1 = *(int *)(this_00 + 4);
+    param_1 = this_00->field_0004;
   }
   else if (param_2 != 0) goto LAB_00710c1d;
   param_2 = FUN_006b4fa0(param_1);
@@ -89,16 +89,16 @@ LAB_00710c1d:
     }
   }
   EraseSufr(this_00);
-  *(undefined4 **)(this_00 + 0x72) = puVar4;
+  this_00->field_0072 = puVar4;
   iVar2 = FUN_006b4fa0((int)puVar4);
-  *(int *)(this_00 + 0x76) = iVar2;
-  *(int *)(this_00 + 0x68) = local_8;
-  *(undefined4 *)(this_00 + 0x7a) = 1;
-  *(undefined4 *)(this_00 + 0x60) = 0;
-  *(undefined4 *)(this_00 + 100) = 0;
-  *(int *)(this_00 + 0x6c) = local_c;
-  *(undefined4 *)(this_00 + 0x50) = 0;
-  *(undefined4 *)(this_00 + 0x54) = 0;
+  this_00->field_0076 = iVar2;
+  this_00->field_0068 = local_8;
+  this_00->field_007A = 1;
+  this_00->field_0060 = 0;
+  this_00->field_0064 = 0;
+  this_00->field_006C = local_c;
+  this_00->field_0050 = 0;
+  this_00->field_0054 = 0;
   g_currentExceptionFrame = local_58.previous;
   return puVar4;
 }

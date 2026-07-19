@@ -60,7 +60,7 @@ STAllPlayersC::AddObjsToGroup
         iVar4 = thunk_FUN_00423d80(local_c,param_3);
         if (iVar4 == 1) {
           local_5 = 0;
-          (**(code **)(*(int *)local_c + 8))(0x65,&local_5);
+          (**(code **)(local_c->field_0000 + 8))(0x65,&local_5);
         }
         if (uVar8 == param_2) {
           local_20 = 1;
@@ -93,7 +93,7 @@ STAllPlayersC::AddObjsToGroup
       Library::DKW::TBL::FUN_006ae140(puVar2,uVar8 & 0xffff,&local_10);
       STGroupC::AddObjs(local_10,param_3,0);
       local_5 = 2;
-      (**(code **)(*(int *)local_10 + 8))(0x65,&local_5);
+      (**(code **)(local_10->field_0000 + 8))(0x65,&local_5);
       if (param_4 != (undefined2 *)0x0) {
         *param_4 = (short)uVar8;
       }
@@ -102,7 +102,7 @@ STAllPlayersC::AddObjsToGroup
       FUN_006acc70((int)local_14,(uint)param_2,&local_c);
       STGroupC::AddObjs(local_c,param_3,1);
       local_5 = 1;
-      (**(code **)(*(int *)local_c + 8))(0x65,&local_5);
+      (**(code **)(local_c->field_0000 + 8))(0x65,&local_5);
     }
     uVar7 = puVar2[3];
     uVar8 = 0;
@@ -110,7 +110,7 @@ STAllPlayersC::AddObjsToGroup
     if (0 < (int)uVar7) {
       do {
         FUN_006acc70((int)puVar2,uVar8,&local_c);
-        if (((local_c != (STGroupC *)0x0) && (*(short *)&local_c->field_0x27 == 0)) &&
+        if (((local_c != (STGroupC *)0x0) && (local_c->field_0027 == 0)) &&
            (iVar4 = thunk_FUN_004233a0((int)local_c), iVar4 == 0)) {
           thunk_FUN_0054cf70(DAT_00802a38,*(uint *)&local_c->field_0x8);
           local_c = (STGroupC *)0x0;

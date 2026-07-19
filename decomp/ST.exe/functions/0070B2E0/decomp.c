@@ -1,5 +1,10 @@
 
-uint __cdecl FUN_0070b2e0(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 533 | 535 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint __cdecl mfImtGetModeIms(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

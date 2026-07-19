@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
 
 {
-  undefined1 *puVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   CPanelTy *pCVar3;
   int iVar4;
@@ -39,18 +39,16 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
     if (iVar4 == 0) {
       iVar4 = local_10->field_024B;
       uVar11 = *(uint *)(iVar4 + 0xc);
-      if (*(uint *)&local_10->field_0x24f < uVar11) {
+      if ((uint)local_10->field_024F < uVar11) {
         do {
-          if (*(uint *)&pCVar3->field_0x24f < uVar11) {
+          if ((uint)pCVar3->field_024F < uVar11) {
             puVar13 = (undefined1 *)
-                      (*(int *)(iVar4 + 8) * *(uint *)&pCVar3->field_0x24f + *(int *)(iVar4 + 0x1c))
-            ;
+                      (*(int *)(iVar4 + 8) * pCVar3->field_024F + *(int *)(iVar4 + 0x1c));
           }
           else {
             puVar13 = (undefined1 *)0x0;
           }
-          if ((uint)(*(int *)&pCVar3->field_0x253 - *(int *)&pCVar3->field_0x257) <
-              *(uint *)(puVar13 + 1)) {
+          if ((uint)(pCVar3->field_0253 - pCVar3->field_0257) < *(uint *)(puVar13 + 1)) {
             g_currentExceptionFrame = local_54.previous;
             return;
           }
@@ -61,12 +59,12 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                        (SoundPosition *)0x0,0);
             break;
           case 2:
-            if (*(int **)&pCVar3->field_0x1d8 != (int *)0x0) {
-              FUN_00714060(*(int **)&pCVar3->field_0x1d8);
-              Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pCVar3->field_0x1d8);
-              *(undefined4 *)&pCVar3->field_0x1d8 = 0;
+            if ((int *)pCVar3->field_01D8 != (int *)0x0) {
+              FUN_00714060((int *)pCVar3->field_01D8);
+              Library::MSVCRT::FUN_0072e2b0((undefined4 *)pCVar3->field_01D8);
+              pCVar3->field_01D8 = 0;
             }
-            FUN_006b4170(*(int *)&pCVar3->field_0x1b4,0,100,5,0x226,0x55,0);
+            FUN_006b4170(pCVar3->field_01B4,0,100,5,0x226,0x55,0);
             local_8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
             if (*(int *)(puVar13 + 10) < 1) {
               local_c = *(char **)(DAT_0080c4c7 + 8);
@@ -88,9 +86,8 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
               } while (iVar4 < (int)local_c);
             }
             puVar5 = ccFntTy::FormIndentSarr
-                               (*(ccFntTy **)&pCVar3->field_0x1d4,(int)local_8,
-                                (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,0x226,0,
-                                0xffffffff,(char *)0x0,1);
+                               (pCVar3->field_01D4,(int)local_8,(uint *)s________________007c21d8,
+                                (uint *)&DAT_007c21ec,0x226,0,0xffffffff,(char *)0x0,1);
             if (local_8 != (uint *)0x0) {
               FUN_006b5570((byte *)local_8);
             }
@@ -99,13 +96,12 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
             }
             local_8 = puVar5;
             if (puVar13[5] == '\0') {
-              pbVar6 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&pCVar3->field_0x1d4,
-                                                   *(int *)&pCVar3->field_0x1b4,0,100,5,0x226,0x55,0
-                                                  );
+              pbVar6 = (byte *)ccFntTy::CreateSurf(pCVar3->field_01D4,pCVar3->field_01B4,0,100,5,
+                                                   0x226,0x55,0);
               if (pbVar6 != (byte *)0x0) {
-                ccFntTy::WrSarr(*(ccFntTy **)&pCVar3->field_0x1d4,(int)local_8,0,-1,0,0,0);
-                thunk_FUN_00540760(*(undefined4 **)&pCVar3->field_0x1b4,100,5,'\x01',pbVar6);
-                ccFntTy::EraseSufr(*(ccFntTy **)&pCVar3->field_0x1d4);
+                ccFntTy::WrSarr(pCVar3->field_01D4,(int)local_8,0,-1,0,0,0);
+                DibPut((undefined4 *)pCVar3->field_01B4,100,5,'\x01',pbVar6);
+                ccFntTy::EraseSufr(pCVar3->field_01D4);
                 if (puVar13[0xe] != '\0') {
                   thunk_FUN_005252c0(0x1e);
                 }
@@ -113,29 +109,28 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
               FUN_006b5570((byte *)local_8);
             }
             else {
-              ccFntTy::SetSurf(*(ccFntTy **)&pCVar3->field_0x1d4,*(int *)&pCVar3->field_0x1b4,0,100,
-                               5,0x226,0x55);
+              ccFntTy::SetSurf(pCVar3->field_01D4,pCVar3->field_01B4,0,100,5,0x226,0x55);
               this_00 = (cTypingTy *)Library::MSVCRT::FUN_0072e530(0xb4);
               if (this_00 == (cTypingTy *)0x0) {
                 this_00 = (cTypingTy *)0x0;
               }
               else {
-                *(undefined4 *)(this_00 + 0x58) = 0;
-                *(undefined4 *)(this_00 + 0x88) = 0;
+                this_00->field_0058 = 0;
+                this_00->field_0088 = 0;
               }
-              *(cTypingTy **)&pCVar3->field_0x1d8 = this_00;
+              pCVar3->field_01D8 = this_00;
               iVar4 = cTypingTy::TypingInitSarr
-                                (this_00,(int)local_8,*(void **)&pCVar3->field_0x1d4,0,0,0,0x226,
-                                 0x55,0,0,0,1,2,0xff);
-              *(int *)&pCVar3->field_0x1dc = iVar4;
-              pCVar3->field_0x1e0 = puVar13[0xe];
+                                (this_00,(int)local_8,pCVar3->field_01D4,0,0,0,0x226,0x55,0,0,0,1,2,
+                                 0xff);
+              pCVar3->field_01DC = iVar4;
+              pCVar3->field_01E0 = puVar13[0xe];
               FUN_006b5570((byte *)local_8);
             }
             break;
           case 3:
-            puVar1 = &pCVar3->field_0x25b;
-            if (*(int *)&pCVar3->field_0x25b != 0) {
-              FUN_0070b600((int *)puVar1);
+            puVar1 = &pCVar3->field_025B;
+            if (pCVar3->field_025B != 0) {
+              FUN_0070b600(puVar1);
             }
             if (DAT_0080731a == 0) {
               local_c = puVar13 + 10;
@@ -146,12 +141,12 @@ void __thiscall CPanelTy::PlayBrief(CPanelTy *this,int param_1)
                 pcVar7 = (char *)thunk_FUN_005260b0(*(int *)(puVar13 + 5),puVar13[9],0);
                 uVar9 = DAT_00806790;
 LAB_004f9a8a:
-                psVar8 = FUN_0070b430(uVar9,pcVar7,bVar15,bVar14,iVar4);
-                *(short **)puVar1 = psVar8;
+                psVar8 = mfQmtLoad(uVar9,pcVar7,bVar15,bVar14,iVar4);
+                *puVar1 = psVar8;
               }
               else {
-                psVar8 = FUN_0070b430(DAT_00806758,local_c,6,0,0);
-                *(short **)puVar1 = psVar8;
+                psVar8 = mfQmtLoad(DAT_00806758,local_c,6,0,0);
+                *puVar1 = psVar8;
                 if (psVar8 == (short *)0x0) {
                   bVar15 = 6;
                   bVar14 = 0;
@@ -161,15 +156,15 @@ LAB_004f9a8a:
                   goto LAB_004f9a8a;
                 }
               }
-              if (*(int *)puVar1 == 0) {
+              if (*puVar1 == 0) {
                 iVar4 = 1;
                 bVar15 = 0;
                 bVar14 = 6;
                 pcVar7 = (char *)thunk_FUN_005260b0(0,0,0);
-                psVar8 = FUN_0070b430(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
-                *(short **)puVar1 = psVar8;
+                psVar8 = mfQmtLoad(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
+                *puVar1 = psVar8;
               }
-              pCVar3->field_0x25f = 0;
+              pCVar3->field_025F = 0;
               thunk_FUN_004f1950((int)pCVar3);
             }
             else {
@@ -177,21 +172,21 @@ LAB_004f9a8a:
               bVar15 = 0;
               bVar14 = 6;
               pcVar7 = (char *)thunk_FUN_005260b0(0,0,1);
-              psVar8 = FUN_0070b430(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
-              *(short **)puVar1 = psVar8;
-              pCVar3->field_0x260 = 5;
-              pCVar3->field_0x25f = 0;
+              psVar8 = mfQmtLoad(DAT_00806790,pcVar7,bVar14,bVar15,iVar4);
+              *puVar1 = psVar8;
+              pCVar3->field_0260 = 5;
+              pCVar3->field_025F = 0;
               _Count = 0x1f;
               if (puVar13[10] == '\0') {
                 pcVar7 = (char *)thunk_FUN_005260b0(*(int *)(puVar13 + 5),puVar13[9],0);
                 Library::MSVCRT::_strncpy(&pCVar3->field_0x265,pcVar7,_Count);
-                pCVar3->field_0x285 = 1;
+                pCVar3->field_0285 = 1;
               }
               else {
                 Library::MSVCRT::_strncpy(&pCVar3->field_0x265,puVar13 + 10,0x1f);
-                pCVar3->field_0x285 = 0;
+                pCVar3->field_0285 = 0;
               }
-              pCVar3->field_0x284 = 0;
+              pCVar3->field_0284 = 0;
               thunk_FUN_005252c0(0xb3);
             }
             break;
@@ -201,12 +196,12 @@ LAB_004f9a8a:
             if (DAT_008117bc != (undefined4 *)0x0) {
               (**(code **)*DAT_008117bc)(&pCVar3->field_0x18);
             }
-            pCVar3->field_0x260 = 4;
+            pCVar3->field_0260 = 4;
             DAT_0080c4f7 = 4;
           }
           iVar4 = pCVar3->field_024B;
-          uVar12 = *(int *)&pCVar3->field_0x24f + 1;
-          *(uint *)&pCVar3->field_0x24f = uVar12;
+          uVar12 = pCVar3->field_024F + 1;
+          pCVar3->field_024F = uVar12;
           uVar11 = *(uint *)(iVar4 + 0xc);
         } while (uVar12 < uVar11);
       }

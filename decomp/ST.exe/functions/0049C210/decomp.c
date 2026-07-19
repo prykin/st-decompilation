@@ -72,21 +72,21 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
   if (iVar3 != 0) {
     g_currentExceptionFrame = local_bc.previous;
     if (iVar3 == -0x5001fff7) {
-      if (*(byte **)&local_20->field_0x10f != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&local_20->field_0x10f);
-        *(undefined4 *)&this_00->field_0x10f = 0;
+      if ((byte *)local_20->field_010F != (byte *)0x0) {
+        FUN_006ae110((byte *)local_20->field_010F);
+        this_00->field_010F = 0;
       }
-      if (*(byte **)&this_00->field_0x127 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x127);
-        *(undefined4 *)&this_00->field_0x127 = 0;
+      if ((byte *)this_00->field_0127 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0127);
+        this_00->field_0127 = 0;
       }
-      if (*(byte **)&this_00->field_0x24e != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x24e);
-        *(undefined4 *)&this_00->field_0x24e = 0;
+      if ((byte *)this_00->field_024E != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_024E);
+        this_00->field_024E = 0;
       }
-      if (*(byte **)&this_00->field_0x266 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x266);
-        *(undefined4 *)&this_00->field_0x266 = 0;
+      if ((byte *)this_00->field_0266 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0266);
+        this_00->field_0266 = 0;
       }
       return 0;
     }
@@ -106,34 +106,34 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       *puVar11 = 0;
       puVar11 = puVar11 + 1;
     }
-    *(undefined4 *)&local_20->field_0x65 = 0;
-    if (*(byte **)&local_20->field_0x24e != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&local_20->field_0x24e);
+    local_20->field_0065 = 0;
+    if ((byte *)local_20->field_024E != (byte *)0x0) {
+      FUN_006ae110((byte *)local_20->field_024E);
     }
-    if (*(byte **)&this_00->field_0x266 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x266);
+    if ((byte *)this_00->field_0266 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0266);
     }
-    puVar11 = (undefined4 *)&this_00->field_0x10b;
-    puVar13 = (undefined4 *)&this_00->field_0x24a;
+    puVar11 = &this_00->field_010B;
+    puVar13 = &this_00->field_024A;
     for (iVar3 = 0xb; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar13 = *puVar11;
       puVar11 = puVar11 + 1;
       puVar13 = puVar13 + 1;
     }
-    *(undefined4 *)&this_00->field_0x24e = 0;
-    *(undefined4 *)&this_00->field_0x266 = 0;
-    if (*(int *)&this_00->field_0x10b == 0) {
-      if ((*(int *)&this_00->field_0x10f == 0) ||
-         (local_c = *(uint *)(*(int *)&this_00->field_0x10f + 0xc), local_c == 0)) {
+    this_00->field_024E = 0;
+    this_00->field_0266 = 0;
+    if (this_00->field_010B == 0) {
+      if ((this_00->field_010F == 0) ||
+         (local_c = *(uint *)(this_00->field_010F + 0xc), local_c == 0)) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x81d);
       }
       puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-      *(uint **)&this_00->field_0x24e = puVar4;
+      this_00->field_024E = puVar4;
       uVar14 = 0;
       if (0 < (int)local_c) {
         do {
-          FUN_006acc70(*(int *)&this_00->field_0x10f,uVar14,&local_8);
+          FUN_006acc70(this_00->field_010F,uVar14,&local_8);
           if (((short)local_8 != -1) &&
              (piVar5 = (int *)STAllPlayersC::GetObjPtr
                                         (DAT_007fa174,
@@ -150,37 +150,34 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                 piVar10 = piVar10 + 1;
               } while (iVar9 < local_14);
             }
-            if (((iVar9 != local_14) && (iVar3 == *(int *)&this_00->field_0x25e)) &&
+            if (((iVar9 != local_14) && (iVar3 == this_00->field_025E)) &&
                (iVar3 = (**(code **)(*piVar5 + 0x88))(local_18), 0 < iVar3)) {
-              Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x24e,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_024E,&local_8);
             }
           }
           uVar14 = uVar14 + 1;
         } while ((int)uVar14 < (int)local_c);
       }
-      FUN_006ae110(*(byte **)&this_00->field_0x10f);
-      *(undefined4 *)&this_00->field_0x10f = 0;
-      if (*(int *)(*(int *)&this_00->field_0x24e + 0xc) == 0) {
+      FUN_006ae110((byte *)this_00->field_010F);
+      this_00->field_010F = 0;
+      if (*(int *)(this_00->field_024E + 0xc) == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x834);
       }
     }
     else {
-      puVar4 = thunk_FUN_0043ec20(this_00->field_0024,
-                                  *(Global_sub_0043EC20_param_2Enum *)&this_00->field_0x25e,
-                                  *(short *)&this_00->field_0x252,*(short *)&this_00->field_0x254,
-                                  *(short *)&this_00->field_0x256,*(short *)&this_00->field_0x258,
-                                  *(short *)&this_00->field_0x25a,*(short *)&this_00->field_0x25c,1,
-                                  -1);
+      puVar4 = thunk_FUN_0043ec20(this_00->field_0024,this_00->field_025E,this_00->field_0252,
+                                  this_00->field_0254,this_00->field_0256,this_00->field_0258,
+                                  this_00->field_025A,this_00->field_025C,1,-1);
       if (puVar4 == (uint *)0x0) {
         puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        *(uint **)&this_00->field_0x24e = puVar4;
+        this_00->field_024E = puVar4;
         local_8 = 0xffff;
         Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_8);
       }
       else {
         puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        *(uint **)&this_00->field_0x24e = puVar6;
+        this_00->field_024E = puVar6;
         local_c = puVar4[3];
         uVar14 = 0;
         if (0 < (int)local_c) {
@@ -192,31 +189,31 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                                                 this_00->field_0024),local_8,CASE_1);
             if ((piVar5 != (int *)0x0) &&
                (iVar3 = (**(code **)(*piVar5 + 0x88))(local_18), 0 < iVar3)) {
-              Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x24e,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_024E,&local_8);
             }
             uVar14 = uVar14 + 1;
           } while ((int)uVar14 < (int)local_c);
         }
-        if ((*(uint **)&this_00->field_0x24e)[3] == 0) {
+        if (((uint *)this_00->field_024E)[3] == 0) {
           local_8 = 0xffff;
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x24e,&local_8);
+          Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_024E,&local_8);
         }
         FUN_006ae110((byte *)puVar4);
       }
     }
-    if (*(int *)&this_00->field_0x262 == 0) {
-      if ((*(int *)&this_00->field_0x127 == 0) ||
-         (uVar14 = *(uint *)(*(int *)&this_00->field_0x127 + 0xc), local_c = uVar14, uVar14 == 0)) {
+    if (this_00->field_0262 == 0) {
+      if ((this_00->field_0127 == 0) ||
+         (uVar14 = *(uint *)(this_00->field_0127 + 0xc), local_c = uVar14, uVar14 == 0)) {
         uVar14 = local_c;
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x855);
       }
       puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
       uVar12 = 0;
-      *(uint **)&this_00->field_0x266 = puVar4;
+      this_00->field_0266 = puVar4;
       if (0 < (int)uVar14) {
         do {
-          FUN_006acc70(*(int *)&this_00->field_0x127,uVar12,&local_8);
+          FUN_006acc70(this_00->field_0127,uVar12,&local_8);
           if ((((short)local_8 != -1) &&
               (piVar5 = (int *)STAllPlayersC::GetObjPtr
                                          (DAT_007fa174,
@@ -224,50 +221,50 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                                                    this_00->field_0024),local_8,CASE_1),
               piVar5 != (int *)0x0)) &&
              ((iVar3 = (**(code **)(*piVar5 + 0x2c))(), iVar3 == 0x3b || (iVar3 == 0x60)))) {
-            Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x266,&local_8);
+            Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_0266,&local_8);
           }
           uVar12 = uVar12 + 1;
         } while ((int)uVar12 < (int)uVar14);
       }
-      FUN_006ae110(*(byte **)&this_00->field_0x127);
-      *(undefined4 *)&this_00->field_0x127 = 0;
-      if (*(int *)(*(int *)&this_00->field_0x266 + 0xc) == 0) {
+      FUN_006ae110((byte *)this_00->field_0127);
+      this_00->field_0127 = 0;
+      if (*(int *)(this_00->field_0266 + 0xc) == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x866);
       }
     }
-    if (*(int *)&this_00->field_0x262 == 2) {
+    if (this_00->field_0262 == 2) {
       iVar3 = thunk_FUN_004406c0(this_00->field_0024);
       if ((char)iVar3 == '\x03') {
-        sVar23 = *(short *)&this_00->field_0x274;
-        sVar22 = *(short *)&this_00->field_0x272;
-        sVar21 = *(short *)&this_00->field_0x270;
-        sVar20 = *(short *)&this_00->field_0x26e;
-        sVar19 = *(short *)&this_00->field_0x26c;
-        sVar18 = *(short *)&this_00->field_0x26a;
+        sVar23 = this_00->field_0274;
+        sVar22 = this_00->field_0272;
+        sVar21 = this_00->field_0270;
+        sVar20 = this_00->field_026E;
+        sVar19 = this_00->field_026C;
+        sVar18 = this_00->field_026A;
         cVar16 = this_00->field_0024;
         GVar17 = 0x60;
       }
       else {
-        sVar23 = *(short *)&this_00->field_0x274;
-        sVar22 = *(short *)&this_00->field_0x272;
-        sVar21 = *(short *)&this_00->field_0x270;
-        sVar20 = *(short *)&this_00->field_0x26e;
-        sVar19 = *(short *)&this_00->field_0x26c;
-        sVar18 = *(short *)&this_00->field_0x26a;
+        sVar23 = this_00->field_0274;
+        sVar22 = this_00->field_0272;
+        sVar21 = this_00->field_0270;
+        sVar20 = this_00->field_026E;
+        sVar19 = this_00->field_026C;
+        sVar18 = this_00->field_026A;
         cVar16 = this_00->field_0024;
         GVar17 = 0x3b;
       }
       puVar4 = thunk_FUN_0043ec20(cVar16,GVar17,sVar18,sVar19,sVar20,sVar21,sVar22,sVar23,0,-1);
       if (puVar4 == (uint *)0x0) {
         puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        *(uint **)&this_00->field_0x266 = puVar4;
+        this_00->field_0266 = puVar4;
         local_8 = 0xffff;
         Library::DKW::TBL::FUN_006ae1c0(puVar4,&local_8);
       }
       else {
         puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        *(uint **)&this_00->field_0x266 = puVar6;
+        this_00->field_0266 = puVar6;
         local_c = puVar4[3];
         uVar14 = 0;
         if (0 < (int)local_c) {
@@ -278,7 +275,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                                 CONCAT31((int3)((uint)extraout_EDX_01 >> 8),this_00->field_0024),
                                 local_8,CASE_1);
             if (uVar12 != 0) {
-              Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x266,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_0266,&local_8);
             }
             uVar14 = uVar14 + 1;
           } while ((int)uVar14 < (int)local_c);
@@ -286,7 +283,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
         FUN_006ae110((byte *)puVar4);
       }
     }
-    if (*(int *)&this_00->field_0x262 == 1) {
+    if (this_00->field_0262 == 1) {
       iVar3 = thunk_FUN_004406c0(this_00->field_0024);
       if ((char)iVar3 == '\x03') {
         cVar16 = this_00->field_0024;
@@ -299,13 +296,13 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       puVar4 = STAllPlayersC::GetTOBJList(DAT_007fa174,cVar16,SVar24,0,-1);
       if (puVar4[3] == 0) {
         puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        *(uint **)&this_00->field_0x266 = puVar6;
+        this_00->field_0266 = puVar6;
         local_8 = 0xffff;
         Library::DKW::TBL::FUN_006ae1c0(puVar6,&local_8);
       }
       else {
         puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-        *(uint **)&this_00->field_0x266 = puVar6;
+        this_00->field_0266 = puVar6;
         local_c = puVar4[3];
         uVar14 = 0;
         if (0 < (int)local_c) {
@@ -316,7 +313,7 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
                                 CONCAT31((int3)((uint)extraout_EDX_02 >> 8),this_00->field_0024),
                                 local_8,CASE_1);
             if (uVar12 != 0) {
-              Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x266,&local_8);
+              Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_0266,&local_8);
             }
             uVar14 = uVar14 + 1;
           } while ((int)uVar14 < (int)local_c);
@@ -324,12 +321,11 @@ undefined4 __thiscall STGroupBoatC::GrpLoadRC(STGroupBoatC *this,int param_1)
       }
       FUN_006ae110((byte *)puVar4);
     }
-    DistributeMD(this_00,1,*(int *)&this_00->field_0x24e,*(int *)&this_00->field_0x266,
-                 this_00->field_0029);
+    DistributeMD(this_00,1,this_00->field_024E,this_00->field_0266,this_00->field_0029);
   }
   local_34[4] = 2;
   if ((*(uint *)(DAT_00802a38 + 0xe4) % 100 == 0) &&
-     ((*(int *)&this_00->field_0x24a == 0 || (*(int *)&this_00->field_0x262 == 0)))) {
+     ((this_00->field_024A == 0 || (this_00->field_0262 == 0)))) {
     local_10 = 0;
     local_c = *(uint *)(this_00->field_0029 + 0xc);
     if (0 < (int)local_c) {

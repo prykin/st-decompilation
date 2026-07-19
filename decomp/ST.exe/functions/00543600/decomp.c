@@ -6,7 +6,7 @@
 void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1)
 
 {
-  undefined1 *puVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   CursorClassTy *this_00;
   int iVar3;
@@ -26,29 +26,28 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
   this_00 = local_c;
   if (iVar3 == 0) {
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&local_c->field_0x18,DAT_008075a8,0,'\a',(undefined4 *)0x0,0,0);
+              ((SpriteClassTy *)&local_c->field_0018,DAT_008075a8,0,'\a',(undefined4 *)0x0,0,0);
     Library::DKW::DDX::FUN_006b88d0
-              ((undefined4 *)&this_00[1].field_0x49,DAT_0080759c,0,(BITMAPINFO *)0x0,0x8000000,0,
-               (BITMAPINFO *)0x0,0);
+              (&this_00->field_00AD,DAT_0080759c,0,(BITMAPINFO *)0x0,0x8000000,0,(BITMAPINFO *)0x0,0
+              );
     SetImages(this_00,param_1,s_CUR_MENU_007c7dd4,0x32,(BITMAPINFO *)0x0,0,-1,-1);
-    puVar4 = FUN_00709af0(DAT_00806784,CASE_B,(byte *)s_INF_DEEPS_007c7dc8,0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
-    *(ushort **)&this_00[0xc].field_0x33 = puVar4;
-    puVar4 = FUN_00709af0(DAT_00806784,CASE_13,(byte *)s_CUR_CONFIRM_007c7db8,0xffffffff,0,1,0,
-                          (undefined4 *)0x0);
-    *(ushort **)&this_00[0xc].field_0x37 = puVar4;
+    puVar4 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_INF_DEEPS_007c7dc8,0xffffffff,0,1,0,
+                     (undefined4 *)0x0);
+    this_00->field_04E3 = puVar4;
+    puVar4 = mfRLoad(DAT_00806784,CASE_13,(byte *)s_CUR_CONFIRM_007c7db8,0xffffffff,0,1,0,
+                     (undefined4 *)0x0);
+    this_00->field_04E7 = puVar4;
     local_8 = cMf32::RecGet(DAT_00806780,1,s_CURSOR_PAL_007c7da8,(int *)0x0,1);
     puVar4 = local_8 + 0x14;
     iVar3 = 1;
     uVar5 = FUN_006b4fe0((int)local_8);
     uVar6 = FUN_006b50c0(800,0x96,(uint)local_8[7],uVar5,(undefined4 *)puVar4,iVar3);
-    *(undefined4 *)&this_00[0xc].field_0x22 = uVar6;
+    this_00->field_04D2 = uVar6;
     cMf32::RecMemFree(DAT_00806780,(uint *)&local_8);
-    puVar1 = &this_00[0xc].field_0x26;
-    FUN_006b2330((uint)DAT_008075a8,(uint *)puVar1,1,0x4047ff,0,0,*(uint *)&this_00[0xc].field_0x22)
-    ;
-    FUN_006b28c0((int)DAT_008075a8,*(uint *)puVar1,1);
-    FUN_006b3af0(DAT_008075a8,*(uint *)puVar1);
+    puVar1 = &this_00->field_04D6;
+    FUN_006b2330((uint)DAT_008075a8,puVar1,1,0x4047ff,0,0,this_00->field_04D2);
+    FUN_006b28c0((int)DAT_008075a8,*puVar1,1);
+    FUN_006b3af0(DAT_008075a8,*puVar1);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

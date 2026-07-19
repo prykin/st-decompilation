@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\scoreai.cpp
+   Diagnostic line evidence: 600 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl FUN_00561670(int param_1,int param_2,int param_3,int *param_4,int param_5)
 
 {

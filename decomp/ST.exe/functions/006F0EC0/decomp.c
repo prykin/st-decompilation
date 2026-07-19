@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mf32int.cpp
+   Diagnostic line evidence: 119 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl
 FUN_006f0ec0(uint param_1,byte *param_2,int param_3,undefined4 param_4,undefined4 param_5)
 

@@ -1,5 +1,11 @@
 
-int __cdecl FUN_006f01a0(short *param_1,int param_2,int param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 420 | 421 | 431 | 433 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfTMapDelObj(short *param_1,int param_2,int param_3,int param_4)
 
 {
   code *pcVar1;

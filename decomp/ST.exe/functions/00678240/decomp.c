@@ -1,8 +1,13 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 1055 | 1081 | 1082 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl
-FUN_00678240(int param_1,short param_2,char param_3,byte *param_4,short param_5,short param_6,
-            short param_7,short param_8,short param_9,short param_10,undefined *param_11,
-            undefined4 param_12)
+_EnumMines(int param_1,short param_2,char param_3,byte *param_4,short param_5,short param_6,
+          short param_7,short param_8,short param_9,short param_10,undefined *param_11,
+          undefined4 param_12)
 
 {
   byte bVar1;

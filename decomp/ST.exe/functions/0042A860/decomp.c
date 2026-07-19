@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\tload.cpp
+   Diagnostic line evidence: 1334 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void FUN_0042a860(void)
 
 {

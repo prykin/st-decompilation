@@ -32,7 +32,7 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
     this_00 = local_8;
     if (iVar3 == 0) {
       iVar3 = 8;
-      piVar5 = (int *)&local_8[1].field_0x3b;
+      piVar5 = &local_8->field_01B3;
       do {
         if (*piVar5 != 0) {
           FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);
@@ -40,7 +40,7 @@ void __thiscall FrmPanelTy::ShiftControls(FrmPanelTy *this,int param_1)
         piVar5 = piVar5 + 1;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
-      piVar5 = (int *)&this_00[1].field_0x5b;
+      piVar5 = &this_00->field_01D3;
       iVar3 = 4;
       do {
         if (*piVar5 != 0) {

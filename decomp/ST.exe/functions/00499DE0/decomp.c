@@ -82,7 +82,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
     RaiseInternalException(iVar2,0,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x5ec);
     return 0xffffffff;
   }
-  if (*(int *)&local_60->field_0x20e == 0) {
+  if (local_60->field_020E == 0) {
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x55a);
   }
   Library::DKW::TBL::FUN_006afe40((int *)&local_10,param_1);
@@ -126,8 +126,8 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
           STBoatC::CmdToObj(pSVar3,CASE_3,&local_20);
           break;
         default:
-          if ((*(int *)&this_00->field_0x20a == 1) &&
-             (iVar2 = (*pSVar3->vtable->vfunc_2C)(), iVar2 != 0x17)) {
+          if ((this_00->field_020A == 1) && (iVar2 = (*pSVar3->vtable->vfunc_2C)(), iVar2 != 0x17))
+          {
             FUN_006b0c70((int)local_10,uVar11);
             uVar11 = uVar11 - 1;
             local_14 = local_14 + -1;
@@ -144,21 +144,21 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
   iVar2 = local_14;
   uVar11 = 0;
   if (local_14 != 0) {
-    iVar7 = *(int *)&this_00->field_0x20e;
-    *(undefined4 *)&this_00->field_0x212 = 0;
+    iVar7 = this_00->field_020E;
+    this_00->field_0212 = 0;
     uVar12 = 0;
     if (*(int *)(iVar7 + 0xc) != 0) {
       do {
         FUN_006acc70(iVar7,uVar11,&local_1c);
         if (local_1c._2_2_ != -1) {
-          *(int *)&this_00->field_0x212 = *(int *)&this_00->field_0x212 + 1;
+          this_00->field_0212 = this_00->field_0212 + 1;
         }
-        iVar7 = *(int *)&this_00->field_0x20e;
+        iVar7 = this_00->field_020E;
         uVar12 = uVar12 + 1;
         uVar11 = uVar12 & 0xffff;
       } while (uVar11 < *(uint *)(iVar7 + 0xc));
     }
-    if (*(int *)&this_00->field_0x212 == 0) {
+    if (this_00->field_0212 == 0) {
       RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x58f)
       ;
     }
@@ -182,7 +182,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
               local_20 = *(undefined4 *)(DAT_00802a38 + 0xe4);
             }
             else {
-              local_44 = *(undefined4 *)&this_00->field_0x20a;
+              local_44 = this_00->field_020A;
               local_3b = local_16;
               puVar16 = &local_48;
               local_40 = local_5;
@@ -192,16 +192,16 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
             }
           }
           else {
-            local_5c = *(int *)&this_00->field_0x216 + 1;
+            local_5c = this_00->field_0216 + 1;
             local_50 = 0;
             local_4c = 2;
             do {
-              uVar11 = *(int *)&this_00->field_0x31 * 0x41c64e6d + 0x3039;
-              *(uint *)&this_00->field_0x31 = uVar11;
+              uVar11 = this_00->field_0031 * 0x41c64e6d + 0x3039;
+              this_00->field_0031 = uVar11;
               local_54 = (uVar11 >> 0x10) % local_5c;
               iVar2 = 0;
-              if (0 < *(int *)&this_00->field_0x21a) {
-                piVar5 = *(int **)&this_00->field_0x21e;
+              if (0 < (int)this_00->field_021A) {
+                piVar5 = (int *)this_00->field_021E;
                 piVar9 = piVar5;
                 uVar11 = local_54;
                 do {
@@ -216,15 +216,15 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
                   }
                   iVar2 = iVar2 + 1;
                   piVar9 = piVar9 + 2;
-                } while (iVar2 < *(int *)&this_00->field_0x21a);
+                } while (iVar2 < (int)this_00->field_021A);
               }
               local_4c = local_4c + -1;
             } while (local_4c != 0);
             sVar13 = (short)local_58;
-            FUN_006acc70(*(int *)&this_00->field_0x20e,(int)sVar13,&local_1c);
+            FUN_006acc70(this_00->field_020E,(int)sVar13,&local_1c);
             local_48 = *(undefined4 *)(DAT_00802a38 + 0xe4);
             local_40 = (undefined1)local_1c;
-            local_44 = *(undefined4 *)&this_00->field_0x20a;
+            local_44 = this_00->field_020A;
             local_3b = local_1c._2_2_;
             cVar8 = (char)((uint)local_1c >> 8);
             local_3f = (int)cVar8;
@@ -242,7 +242,7 @@ undefined4 __thiscall STGroupBoatC::DistributeTargets(STGroupBoatC *this,uint *p
         uVar11 = local_24 & 0xffff;
       } while ((int)uVar11 < local_14);
     }
-    if (*(int *)&this_00->field_0x20a == 1) {
+    if (this_00->field_020A == 1) {
       local_14 = *(int *)(this_00->field_0029 + 0xc);
       uVar11 = 0;
       local_24 = 0;

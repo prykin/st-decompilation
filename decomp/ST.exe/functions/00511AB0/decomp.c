@@ -31,12 +31,11 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
       iVar8 = 1;
       iVar4 = local_c->field_0218;
       puVar1 = &local_c->field_0218;
-      puVar6 = (undefined4 *)(*(int *)&local_c->field_0x1dc + 0x28);
-      uVar5 = FUN_006b4fe0(*(int *)&local_c->field_0x1dc);
+      puVar6 = (undefined4 *)(local_c->field_01DC + 0x28);
+      uVar5 = FUN_006b4fe0(local_c->field_01DC);
       puVar6 = (undefined4 *)
                FUN_006b50c0(*(int *)(iVar4 + 4),*(int *)(iVar4 + 8) + 0x32,
-                            (uint)*(ushort *)(*(int *)&pHVar3->field_0x1dc + 0xe),uVar5,puVar6,iVar8
-                           );
+                            (uint)*(ushort *)(pHVar3->field_01DC + 0xe),uVar5,puVar6,iVar8);
       local_8 = puVar6[5];
       if (local_8 == 0) {
         local_8 = ((uint)*(ushort *)((int)puVar6 + 0xe) * puVar6[1] + 0x1f >> 3 & 0x1ffffffc) *

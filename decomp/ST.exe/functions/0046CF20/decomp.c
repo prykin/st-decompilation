@@ -87,17 +87,16 @@ LAB_0046d1e2:
     }
     if (iVar7 == 0) {
       uVar10 = 0;
-      if ((*(int *)&this->field_0x524 != 0) &&
-         (iVar7 = FUN_006e62d0(DAT_00802a38,*(int *)&this->field_0x524,(int *)&local_8), iVar7 != -4
-         )) {
+      if ((this->field_0524 != 0) &&
+         (iVar7 = FUN_006e62d0(DAT_00802a38,this->field_0524,(int *)&local_8), iVar7 != -4)) {
         thunk_FUN_004cf3e0(local_8,this->field_0018);
-        FUN_006ea2f0(*(void **)&this->field_0x211,*(uint *)&this->field_0x1ed);
+        FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
       }
       iVar7 = thunk_FUN_0048fa80((int)this);
       if (iVar7 == 1) {
-        if ((((*(short *)&this->field_0x51c < 0) || (*(short *)&this->field_0x51e < 0)) ||
-            (sVar2 = *(short *)&this->field_0x51c, sVar3 = *(short *)&this->field_0x51e,
-            sVar4 = *(short *)&this->field_0x520, *(short *)&this->field_0x520 < 0)) &&
+        if (((((short)this->field_051C < 0) || ((short)this->field_051E < 0)) ||
+            (sVar2 = this->field_051C, sVar3 = this->field_051E, sVar4 = this->field_0520,
+            (short)this->field_0520 < 0)) &&
            (iVar7 = CONCAT22(extraout_var,this->field_0512),
            iVar8 = CONCAT22(extraout_var_00,this->field_0510),
            iVar7 = thunk_FUN_0048dfd0(iVar8,iVar7,(uint)(ushort)this->field_0514,iVar8,iVar7,

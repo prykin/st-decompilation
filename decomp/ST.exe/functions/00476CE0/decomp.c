@@ -261,26 +261,26 @@ cf_common_exit_00476DBA:
                     thunk_FUN_0041dc40(local_24,*(undefined4 *)
                                                  (&this->field_0x2b3 + (short)param_1 * 6),
                                        *(undefined2 *)(&this->field_0x2b7 + (short)param_1 * 6),
-                                       *(short *)&this->field_0x6c);
+                                       this->field_006C);
           uVar25 = *puVar11;
           local_18 = *(short *)(puVar11 + 1);
           local_1c = uVar25;
           if (DAT_0080732c == 1) {
             bVar24 = 0;
             sVar23 = 0;
-            uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+            uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
             iVar6 = -1;
-            *(uint *)&this->field_0x1c = uVar10;
+            this->field_001C = uVar10;
             sVar22 = 0;
             sVar21 = 0;
             uVar12 = uVar10 * 0x41c64e6d + 0x3039;
             sVar4 = 0;
-            *(uint *)&this->field_0x1c = uVar12;
+            this->field_001C = uVar12;
             sVar20 = 0;
             sVar19 = 0;
             local_14 = uVar12 * 0x41c64e6d + 0x3039;
             sVar17 = 0;
-            *(uint *)&this->field_0x1c = local_14;
+            this->field_001C = local_14;
             lVar18 = Library::MSVCRT::__ftol();
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,
@@ -293,12 +293,12 @@ cf_common_exit_00476DBA:
             uVar15 = extraout_var_00;
           }
           else {
-            uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar12;
+            uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar12;
             uVar14 = uVar12 * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar14;
+            this->field_001C = uVar14;
             uVar10 = uVar14 * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar10;
+            this->field_001C = uVar10;
             local_1c._2_2_ = (short)((uint)uVar25 >> 0x10);
             iVar6 = (int)local_1c._2_2_;
             local_1c._0_2_ = (short)uVar25;
@@ -442,26 +442,26 @@ cf_common_exit_00477B2E:
                       thunk_FUN_0041dc40(local_24,*(undefined4 *)
                                                    (&this->field_0x2b3 + (short)param_1 * 6),
                                          *(undefined2 *)(&this->field_0x2b7 + (short)param_1 * 6),
-                                         *(short *)&this->field_0x6c);
+                                         this->field_006C);
             uVar25 = *puVar11;
             local_18 = *(short *)(puVar11 + 1);
             local_1c = uVar25;
             if (DAT_0080732c == 1) {
               bVar24 = 0;
               sVar23 = 0;
-              uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+              uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar6 = -1;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar22 = 0;
               sVar21 = 0;
               uVar12 = uVar10 * 0x41c64e6d + 0x3039;
               sVar4 = 0;
-              *(uint *)&this->field_0x1c = uVar12;
+              this->field_001C = uVar12;
               sVar20 = 0;
               sVar19 = 0;
               local_14 = uVar12 * 0x41c64e6d + 0x3039;
               sVar17 = 0;
-              *(uint *)&this->field_0x1c = local_14;
+              this->field_001C = local_14;
               lVar18 = Library::MSVCRT::__ftol();
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,
@@ -475,12 +475,12 @@ cf_common_exit_00477B2E:
               uVar25 = extraout_EDX_02;
             }
             else {
-              uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar12;
+              uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+              this->field_001C = uVar12;
               uVar14 = uVar12 * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar14;
+              this->field_001C = uVar14;
               uVar10 = uVar14 * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               local_1c._2_2_ = (short)((uint)uVar25 >> 0x10);
               iVar6 = (int)local_1c._2_2_;
               local_1c._0_2_ = (short)uVar25;
@@ -545,8 +545,7 @@ cf_common_exit_00477B2E:
         (**(code **)*DAT_008117bc)(local_44);
       }
       (**(code **)(*piVar7 + 0x10c))();
-      (**(code **)(*piVar7 + 0x110))
-                (*(undefined4 *)&this->field_0x24,*(undefined4 *)&this->field_0x6f3);
+      (**(code **)(*piVar7 + 0x110))(*(undefined4 *)&this->field_0x24,this->field_06F3);
     }
     else if (iVar6 != 2) goto cf_common_exit_0047746B;
     uVar10 = thunk_FUN_004406c0((char)piVar7[9]);

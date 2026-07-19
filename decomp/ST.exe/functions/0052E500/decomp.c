@@ -22,8 +22,8 @@ void __thiscall OptPanelTy::PreInitOptPanel(OptPanelTy *this)
   pOVar2 = local_8;
   if (errorCode == 0) {
     FUN_006b1a50(DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
-    pOVar2->field_0044 = *(int *)&pOVar2->field_0x50 - pOVar2->field_0048;
-    pOVar2->field_0174 = pOVar2->field_0048 + *(int *)&pOVar2->field_0x50;
+    pOVar2->field_0044 = pOVar2->field_0050 - pOVar2->field_0048;
+    pOVar2->field_0174 = pOVar2->field_0048 + pOVar2->field_0050;
     g_currentExceptionFrame = pIVar4;
     return;
   }

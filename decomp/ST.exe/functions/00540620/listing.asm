@@ -1,4 +1,4 @@
-FUN_00540620:
+PutDDXClip:
 00540620  55                        PUSH EBP
 00540621  8B EC                     MOV EBP,ESP
 00540623  83 EC 44                  SUB ESP,0x44

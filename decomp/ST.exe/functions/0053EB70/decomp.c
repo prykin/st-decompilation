@@ -39,49 +39,48 @@ undefined4 __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,int param_1)
   }
   if (*(int *)(param_1 + 0x10) == 2) {
     FUN_006b1a50((int)DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
-    iVar3 = *(int *)&this_00->field_0x50 + *(int *)&this_00->field_0x58;
-    *(int *)&this_00->field_0x44 = iVar3;
-    this_00->field_0174 = (*(int *)&this_00->field_0x48 - iVar3) + DAT_00806734;
+    iVar3 = this_00->field_0050 + this_00->field_0058;
+    this_00->field_0044 = iVar3;
+    this_00->field_0174 = (this_00->field_0048 - iVar3) + DAT_00806734;
   }
   PanelTy::GetMessage((PanelTy *)this_00,param_1);
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 0xc000) {
     if (uVar1 == 0xbfff) {
-      (**(code **)(*(int *)this_00 + 0x1c))(0);
+      (**(code **)(this_00->field_0000 + 0x1c))(0);
       thunk_FUN_005252c0(0xae);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     if (uVar1 == 0) {
-      if (*(short *)&this_00->field_0x172 == 3) {
-        iVar3 = *(int *)&this_00->field_0x50 +
-                (*(int *)&this_00->field_0x58 - *(int *)&this_00->field_0x48);
-        if (iVar3 < *(int *)&this_00->field_0x44) {
-          *(int *)&this_00->field_0x44 = *(int *)&this_00->field_0x44 + -0xf;
+      if (this_00->field_0172 == 3) {
+        iVar3 = this_00->field_0050 + (this_00->field_0058 - this_00->field_0048);
+        if (iVar3 < (int)this_00->field_0044) {
+          this_00->field_0044 = this_00->field_0044 + -0xf;
         }
-        if (*(int *)&this_00->field_0x44 <= iVar3) {
-          *(int *)&this_00->field_0x44 = iVar3;
-          *(undefined2 *)&this_00->field_0x172 = 1;
-          (**(code **)(*(int *)this_00 + 0x18))(1);
+        if ((int)this_00->field_0044 <= iVar3) {
+          this_00->field_0044 = iVar3;
+          this_00->field_0172 = 1;
+          (**(code **)(this_00->field_0000 + 0x18))(1);
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
-                   *(uint *)&this_00->field_0x3c,*(uint *)&this_00->field_0x44);
+                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
+                   this_00->field_0044);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (*(short *)&this_00->field_0x172 == 4) {
-        iVar3 = *(int *)&this_00->field_0x50 + *(int *)&this_00->field_0x58;
-        if (*(int *)&this_00->field_0x44 < iVar3) {
-          *(int *)&this_00->field_0x44 = *(int *)&this_00->field_0x44 + 0xf;
+      if (this_00->field_0172 == 4) {
+        iVar3 = this_00->field_0050 + this_00->field_0058;
+        if ((int)this_00->field_0044 < iVar3) {
+          this_00->field_0044 = this_00->field_0044 + 0xf;
         }
-        if (iVar3 <= *(int *)&this_00->field_0x44) {
-          *(int *)&this_00->field_0x44 = iVar3;
-          *(undefined2 *)&this_00->field_0x172 = 2;
+        if (iVar3 <= (int)this_00->field_0044) {
+          this_00->field_0044 = iVar3;
+          this_00->field_0172 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
-                   *(uint *)&this_00->field_0x3c,*(uint *)&this_00->field_0x44);
+                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
+                   this_00->field_0044);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
@@ -93,7 +92,7 @@ undefined4 __thiscall SpecPanelTy::GetMessage(SpecPanelTy *this,int param_1)
     }
   }
   else if (uVar1 == 0xc000) {
-    iVar3 = *(int *)this_00;
+    iVar3 = this_00->field_0000;
     uVar8 = 1;
     uVar7 = 0;
     uVar6 = 0x274e;

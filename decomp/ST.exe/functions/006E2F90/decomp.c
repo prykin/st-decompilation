@@ -1,5 +1,9 @@
 
 /* WARNING: Removing unreachable block (ram,0x006e30b7) */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Strend.cpp
+   Diagnostic line evidence: 3389 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 undefined4 __thiscall
 FUN_006e2f90(void *this,int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,

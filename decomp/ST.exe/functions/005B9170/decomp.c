@@ -31,28 +31,28 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
     MMObjTy::CloseButtons((MMObjTy *)local_10);
     bVar4 = 0;
     local_8 = local_8 & 0xffffff00;
-    if (this_00->field_0x9a != '\0') {
+    if (this_00->field_009A != '\0') {
       do {
         uVar2 = local_8 & 0xff;
-        *(undefined4 *)(&this_00->field_0x127 + uVar2 * 0x1fb) = this_00->field_0061;
-        *(uint *)(&this_00->field_0x123 + uVar2 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
+        *(undefined4 *)((int)&this_00->field_0127 + uVar2 * 0x1fb) = this_00->field_0061;
+        *(uint *)((int)&this_00->field_0123 + uVar2 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
         if (*(int *)(&this_00->field_0xbc + uVar2 * 0x1fb) != 0) {
           local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
         }
         bVar4 = bVar4 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar4);
-      } while (bVar4 < (byte)this_00->field_0x9a);
+      } while (bVar4 < (byte)this_00->field_009A);
     }
     local_8 = local_8 & 0xffffff00;
-    if (this_00->field_0x9a != '\0') {
+    if (this_00->field_009A != '\0') {
       do {
-        if (*(uint *)(&this_00->field_0x178 + (local_8 & 0xff) * 0x1fb) != 0xffffffff) {
-          FUN_006b3af0(*(int **)(&this_00->field_0x1bc + (local_8 & 0xff) * 0x1fb),
-                       *(uint *)(&this_00->field_0x178 + (local_8 & 0xff) * 0x1fb));
+        uVar2 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
+        if (uVar2 != 0xffffffff) {
+          FUN_006b3af0(*(int **)((int)&this_00->field_01BC + (local_8 & 0xff) * 0x1fb),uVar2);
         }
         bVar5 = bVar5 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar5);
-      } while (bVar5 < (byte)this_00->field_0x9a);
+      } while (bVar5 < (byte)this_00->field_009A);
     }
     HidePanel(this_00,1,1,1);
     g_currentExceptionFrame = local_54.previous;

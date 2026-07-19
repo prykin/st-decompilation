@@ -31,7 +31,7 @@ undefined4 __thiscall STGameObjC::MoveStep(STGameObjC *this,int *param_1)
     iVar5 = (**(code **)(this->field_0000 + 0x18))(local_10,local_c,local_8);
     if (iVar5 != 1) {
       *(short *)&this->field_0xfa = *(short *)&this->field_0xfa + 1;
-      if (*(short *)&this->field_0xfa <= *(short *)&this->field_0xf8) {
+      if (*(short *)&this->field_0xfa <= (short)this->field_00F8) {
         return 0;
       }
       *(int *)&this->field_0xd7 = (int)(short)local_10;

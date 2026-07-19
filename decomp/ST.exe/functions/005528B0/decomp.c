@@ -7,7 +7,7 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
 
 {
   code *pcVar1;
-  SpecPanelTy *this_00;
+  UpgPanelTy *this_00;
   int iVar2;
   LPSTR pCVar3;
   ushort *puVar4;
@@ -24,11 +24,11 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
   undefined4 *puVar14;
   InternalExceptionFrame *pIVar15;
   undefined4 local_48 [16];
-  SpecPanelTy *local_8;
+  UpgPanelTy *local_8;
   
   pIVar15 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = (SpecPanelTy *)this;
+  local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar15);
   this_00 = local_8;
   if (iVar2 == 0) {
@@ -41,19 +41,20 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     uVar6 = 0x31;
     DAT_00802a48 = local_8;
     pCVar3 = thunk_FUN_00571240(s_BKG_UPDATESW_007c8800,0);
-    SpecPanelTy::InitPanel(this_00,pCVar3,uVar6,uVar7,iVar2,iVar10,UVar11,uVar12,uVar13);
-    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)&this_00[2].field_0xe1 = puVar4;
-    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)&this_00[2].field_0xe5 = puVar4;
+    SpecPanelTy::InitPanel
+              ((SpecPanelTy *)this_00,pCVar3,uVar6,uVar7,iVar2,iVar10,UVar11,uVar12,uVar13);
+    puVar4 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+    this_00->field_03EB = puVar4;
+    puVar4 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+    this_00->field_03EF = puVar4;
     puVar14 = (undefined4 *)0x0;
     iVar10 = 0;
     iVar2 = 1;
     bVar9 = 0;
     uVar8 = 0xffffffff;
     pbVar5 = (byte *)thunk_FUN_00571240(s_FRAMES_007c205c,0);
-    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,pbVar5,uVar8,bVar9,iVar2,iVar10,puVar14);
-    *(ushort **)&this_00[2].field_0xe9 = puVar4;
+    puVar4 = mfRLoad(DAT_00806794,CASE_B,pbVar5,uVar8,bVar9,iVar2,iVar10,puVar14);
+    this_00->field_03F3 = puVar4;
     g_currentExceptionFrame = pIVar15;
     return;
   }

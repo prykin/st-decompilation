@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Ddsprcur.cpp
+   Diagnostic line evidence: 78 | 93 | 99 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 DWORD FUN_0072aca0(int *param_1,uint *param_2,int param_3,int param_4,int param_5)
 
 {

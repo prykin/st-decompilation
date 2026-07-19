@@ -1,4 +1,4 @@
-FUN_00726550:
+mfMSprGetHeigh:
 00726550  55                        PUSH EBP
 00726551  8B EC                     MOV EBP,ESP
 00726553  83 EC 50                  SUB ESP,0x50

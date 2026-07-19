@@ -1,5 +1,10 @@
 
-int __cdecl FUN_00719df0(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 57 | 59 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfWavGetType(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

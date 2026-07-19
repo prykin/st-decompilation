@@ -1,6 +1,11 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 283 | 297 | 301 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl
-FUN_006efc50(int param_1,int param_2,int param_3,int param_4,undefined1 param_5)
+mfTMapCreate(int param_1,int param_2,int param_3,int param_4,undefined1 param_5)
 
 {
   code *pcVar1;
@@ -51,7 +56,7 @@ FUN_006efc50(int param_1,int param_2,int param_3,int param_4,undefined1 param_5)
     puVar5 = (undefined4 *)(*pcVar1)();
     return puVar5;
   }
-  FUN_006efb70((int *)&local_8);
+  mfTMapErase((int *)&local_8);
   RaiseInternalException(iVar2,0,s_E__ourlib_Mfstmap_cpp_007eef88,0x12d);
   return (undefined4 *)0x0;
 }

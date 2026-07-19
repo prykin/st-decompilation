@@ -38,13 +38,13 @@ PanelTy::PaintTxtBut
 LAB_00538bd9:
   local_10 = local_10 - iVar3;
   if (param_8 == 0) {
-    local_c = local_18[1] - *(int *)&this->field_0x44;
+    local_c = local_18[1] - this->field_0044;
   }
   else if (this->field_005C == 0) {
     local_c = local_18[1] - DAT_00806734;
   }
   else {
-    local_c = local_18[1] - *(int *)&this->field_0x44;
+    local_c = local_18[1] - this->field_0044;
   }
   if (param_6 != (undefined *)0x0) {
     local_5c.previous = g_currentExceptionFrame;
@@ -56,18 +56,16 @@ LAB_00538bd9:
       iVar6 = local_c;
       iVar3 = local_10;
       pPVar2 = local_14;
-      thunk_FUN_00540760(*(undefined4 **)&local_14[1].field_0x8,local_10,local_c,param_2,
-                         (byte *)local_8);
+      DibPut((undefined4 *)local_14->field_0068,local_10,local_c,param_2,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(param_4,*(int *)&pPVar2[1].field_0x8,0,iVar3,iVar6,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(param_4,pPVar2->field_0068,0,iVar3,iVar6,local_18[2],local_18[3]);
       uVar4 = (*(code *)param_6)(param_1);
       iVar6 = -1;
       iVar3 = -2;
       puVar5 = (uint *)FUN_006b0140(param_5,DAT_00807618);
       ccFntTy::WrStr(param_4,puVar5,iVar3,iVar6,uVar4);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pPVar2 + 1),0xffffffff,pPVar2->field_003C,
-                 *(uint *)&pPVar2->field_0x44);
+                (DAT_008075a8,pPVar2->field_0060,0xffffffff,pPVar2->field_003C,pPVar2->field_0044);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

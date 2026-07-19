@@ -1,4 +1,4 @@
-FUN_006ef640:
+mfTMapLoad:
 006EF640  55                        PUSH EBP
 006EF641  8B EC                     MOV EBP,ESP
 006EF643  83 EC 60                  SUB ESP,0x60

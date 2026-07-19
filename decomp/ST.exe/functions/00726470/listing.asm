@@ -1,4 +1,4 @@
-FUN_00726470:
+mfMSprGetWidth:
 00726470  55                        PUSH EBP
 00726471  8B EC                     MOV EBP,ESP
 00726473  83 EC 50                  SUB ESP,0x50

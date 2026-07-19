@@ -62,18 +62,18 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
     return;
   }
   if (param_1 == 0) goto switchD_00506214_caseD_2;
-  switch(local_20->field_0xbfa) {
+  switch(local_20->field_0BFA) {
   case 0:
   case 3:
   case 4:
-    pbVar5 = *(byte **)&local_20->field_0x9d9;
+    pbVar5 = (byte *)local_20->field_09D9;
     puVar17 = (undefined4 *)local_20->field_0194;
     iVar10 = 0;
     iVar3 = 0;
     goto LAB_0050633b;
   case 1:
-    if (local_20->field_0xbfb == '\x02') {
-      pbVar5 = *(byte **)&local_20->field_0x9dd;
+    if (local_20->field_0BFB == '\x02') {
+      pbVar5 = (byte *)local_20->field_09DD;
       puVar17 = (undefined4 *)local_20->field_0194;
       iVar10 = 0;
       iVar3 = 0;
@@ -83,7 +83,7 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   default:
     goto switchD_00506214_caseD_2;
   }
-  switch(*(undefined4 *)&local_20->field_0xbf5) {
+  switch(local_20->field_0BF5) {
   case 0x32:
   case 0x3c:
   case 0x3e:
@@ -97,7 +97,7 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   case 0x4e:
   case 0x51:
   case 0x52:
-    pbVar5 = *(byte **)&local_20->field_0x9e5;
+    pbVar5 = (byte *)local_20->field_09E5;
     goto LAB_005062d5;
   case 0x33:
   case 0x35:
@@ -108,7 +108,7 @@ void __thiscall CPanelTy::PaintCtrlObj(CPanelTy *this,int param_1)
   case 0x44:
   case 0x45:
   case 0x4c:
-    pbVar5 = *(byte **)&local_20->field_0x9e1;
+    pbVar5 = (byte *)local_20->field_09E1;
 LAB_005062d5:
     puVar17 = (undefined4 *)local_20->field_0194;
     break;
@@ -123,29 +123,29 @@ LAB_005062d5:
   case 0x4f:
   case 0x50:
   case 0x6f:
-    pbVar5 = *(byte **)&local_20->field_0x9dd;
+    pbVar5 = (byte *)local_20->field_09DD;
     puVar17 = (undefined4 *)local_20->field_0194;
     break;
   case 0x36:
-    if (local_20->field_0xbf9 == '\x01') {
-      pbVar5 = *(byte **)&local_20->field_0x9e5;
+    if (local_20->field_0BF9 == '\x01') {
+      pbVar5 = (byte *)local_20->field_09E5;
       puVar17 = (undefined4 *)local_20->field_0194;
     }
     else {
-      if (local_20->field_0xbf9 != '\x02') goto switchD_00506270_caseD_53;
-      pbVar5 = *(byte **)&local_20->field_0x9e1;
+      if (local_20->field_0BF9 != '\x02') goto switchD_00506270_caseD_53;
+      pbVar5 = (byte *)local_20->field_09E1;
       puVar17 = (undefined4 *)local_20->field_0194;
     }
     break;
   default:
     goto switchD_00506270_caseD_53;
   }
-  thunk_FUN_00540760(puVar17,0,0,'\x01',pbVar5);
+  DibPut(puVar17,0,0,'\x01',pbVar5);
 switchD_00506270_caseD_53:
-  switch(*(undefined4 *)&this_00->field_0xbf5) {
+  switch(this_00->field_0BF5) {
   case 0x36:
-    if (this_00->field_0xbf9 == '\x01') {
-      pbVar5 = *(byte **)&this_00->field_0x9e9;
+    if (this_00->field_0BF9 == '\x01') {
+      pbVar5 = (byte *)this_00->field_09E9;
       puVar17 = (undefined4 *)this_00->field_0194;
       iVar10 = 0x35;
       iVar3 = 0xc;
@@ -160,53 +160,50 @@ switchD_00506270_caseD_53:
   case 0x4a:
   case 0x4b:
   case 0x51:
-    pbVar5 = *(byte **)&this_00->field_0x9e9;
+    pbVar5 = (byte *)this_00->field_09E9;
     puVar17 = (undefined4 *)this_00->field_0194;
     iVar10 = 0x35;
     iVar3 = 0xc;
 LAB_0050633b:
-    thunk_FUN_00540760(puVar17,iVar3,iVar10,'\x01',pbVar5);
+    DibPut(puVar17,iVar3,iVar10,'\x01',pbVar5);
   }
 switchD_00506214_caseD_2:
-  if (this_00->field_0xbfa != '\x01') {
-    if (this_00->field_0xbfa == '\x04') {
-      switch(*(undefined4 *)&this_00->field_0xbf5) {
+  if (this_00->field_0BFA != '\x01') {
+    if (this_00->field_0BFA == '\x04') {
+      switch(this_00->field_0BF5) {
       case 0xdd:
       case 0xde:
       case 0xe0:
       case 0xfe:
-        iVar3 = (((undefined4 *)this_00->field_0194)[1] -
-                *(int *)(*(byte **)&this_00->field_0x9ed + 4)) / 2;
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',
-                           *(byte **)&this_00->field_0x9ed);
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2d2,(uint)(byte)this_00->field_0xc11
-                                     );
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 3,0x53,'\x01',pbVar5);
-        pbVar5 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&this_00->field_0x1b8,
-                                             *(int *)&this_00->field_0x9ed,0,0x49,7,0x67,0xc,0);
+        iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4))
+                / 2;
+        DibPut((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',(byte *)this_00->field_09ED);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02D2,(uint)(byte)this_00->field_0C11);
+        DibPut((undefined4 *)this_00->field_0194,iVar3 + 3,0x53,'\x01',pbVar5);
+        pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09ED,0,0x49,7,0x67,
+                                             0xc,0);
         if (pbVar5 != (byte *)0x0) {
-          if (*(Global_sub_005293F0_param_1Enum *)&this_00->field_0xbf5 == 0xfe) {
-            local_8 = thunk_FUN_00529480(this_00->field_0xc11);
+          if (this_00->field_0BF5 == 0xfe) {
+            local_8 = thunk_FUN_00529480(this_00->field_0C11);
           }
           else {
-            local_8 = thunk_FUN_005293f0(*(Global_sub_005293F0_param_1Enum *)&this_00->field_0xbf5);
+            local_8 = thunk_FUN_005293f0(this_00->field_0BF5);
           }
           bVar2 = thunk_FUN_00529500(local_8);
           uVar14 = CONCAT31(extraout_var,bVar2);
           iVar18 = -1;
           iVar10 = -1;
           puVar8 = (uint *)FUN_006b0140(local_8,DAT_00807618);
-          ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar10,iVar18,uVar14);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 0x49,0x57,'\x01',pbVar5);
-          ccFntTy::EraseSufr(*(ccFntTy **)&this_00->field_0x1b8);
+          ccFntTy::WrStr(this_00->field_01B8,puVar8,iVar10,iVar18,uVar14);
+          DibPut((undefined4 *)this_00->field_0194,iVar3 + 0x49,0x57,'\x01',pbVar5);
+          ccFntTy::EraseSufr(this_00->field_01B8);
         }
-        local_1c = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&this_00->field_0x1c4,
-                                               *(int *)&this_00->field_0x9ed,0,100,0x14,0x3c,0x14,0)
-        ;
+        local_1c = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09ED,0,100,0x14,
+                                               0x3c,0x14,0);
         if (local_1c != (byte *)0x0) {
           uVar14 = 0;
           wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c2744,*(undefined4 *)&this_00->field_0xc12);
-          switch(this_00->field_0xc11) {
+          switch(this_00->field_0C11) {
           case 0:
             uVar14 = 0;
             break;
@@ -222,25 +219,24 @@ switchD_00506214_caseD_2:
           case 4:
             uVar14 = 3;
           }
-          ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1c4,&DAT_0080f33a,-1,-1,uVar14);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 100,100,'\x01',local_1c);
-          ccFntTy::EraseSufr(*(ccFntTy **)&this_00->field_0x1c4);
+          ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,uVar14);
+          DibPut((undefined4 *)this_00->field_0194,iVar3 + 100,100,'\x01',local_1c);
+          ccFntTy::EraseSufr(this_00->field_01C4);
         }
         break;
       case 0xfd:
-        iVar3 = (((undefined4 *)this_00->field_0194)[1] -
-                *(int *)(*(byte **)&this_00->field_0xa11 + 4)) / 2;
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x3f,'\x01',
-                           *(byte **)&this_00->field_0xa11);
-        bVar2 = this_00->field_0xc11;
+        iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_0A11 + 4))
+                / 2;
+        DibPut((undefined4 *)this_00->field_0194,iVar3,0x3f,'\x01',(byte *)this_00->field_0A11);
+        bVar2 = this_00->field_0C11;
         if ((bVar2 != 0) && (bVar2 < 0x16)) {
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ce,bVar2 - 1);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 6,0x44,'\x01',pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02CE,bVar2 - 1);
+          DibPut((undefined4 *)this_00->field_0194,iVar3 + 6,0x44,'\x01',pbVar5);
         }
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ca,10);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 4,0x42,'\x06',pbVar5);
-        pbVar5 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&this_00->field_0x1b8,
-                                             *(int *)&this_00->field_0xa11,0,0x38,4,0x7b,0x19,0);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02CA,10);
+        DibPut((undefined4 *)this_00->field_0194,iVar3 + 4,0x42,'\x06',pbVar5);
+        pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_0A11,0,0x38,4,0x7b,
+                                             0x19,0);
         if (pbVar5 != (byte *)0x0) {
           iVar20 = -1;
           iVar19 = -1;
@@ -248,40 +244,36 @@ switchD_00506214_caseD_2:
           iVar18 = -1;
           iVar10 = -2;
           pHVar16 = DAT_00807618;
-          UVar6 = thunk_FUN_00525290(CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0xc11))
-          ;
+          UVar6 = thunk_FUN_00525290(CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0C11));
           puVar8 = (uint *)FUN_006b0140(UVar6,pHVar16);
-          ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar10,iVar18,uVar14,iVar19,
-                         iVar20);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 0x38,0x43,'\x01',pbVar5);
-          ccFntTy::EraseSufr(*(ccFntTy **)&this_00->field_0x1b8);
+          ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
+          DibPut((undefined4 *)this_00->field_0194,iVar3 + 0x38,0x43,'\x01',pbVar5);
+          ccFntTy::EraseSufr(this_00->field_01B8);
         }
-        pbVar5 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&this_00->field_0x1b8,
-                                             *(int *)&this_00->field_0xa11,0,2,0x1e,0xb2,0x22,0);
+        pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_0A11,0,2,0x1e,0xb2,
+                                             0x22,0);
         if (pbVar5 != (byte *)0x0) {
-          ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,*(uint **)&this_00->field_0xc16,-2,-1,1,
-                         -1,-1);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 2,0x5d,'\x01',pbVar5);
-          ccFntTy::EraseSufr(*(ccFntTy **)&this_00->field_0x1b8);
+          ccFntTy::WrTxt(this_00->field_01B8,(uint *)this_00->field_0C16,-2,-1,1,-1,-1);
+          DibPut((undefined4 *)this_00->field_0194,iVar3 + 2,0x5d,'\x01',pbVar5);
+          ccFntTy::EraseSufr(this_00->field_01B8);
         }
       }
     }
     goto switchD_00506377_caseD_df;
   }
-  if (this_00->field_0xbfb == '\x02') {
-    GVar13 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9ed + 4)
-             ) / 2;
+  if (this_00->field_0BFB == '\x02') {
+    GVar13 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4)) /
+             2;
     local_8 = GVar13;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13,0x50,'\x01',
-                       *(byte **)&this_00->field_0x9ed);
+    DibPut((undefined4 *)this_00->field_0194,GVar13,0x50,'\x01',(byte *)this_00->field_09ED);
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != 0) {
       uVar4 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
-                                 this_00->field_0xc1a);
-      pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2c2,uVar4);
-      thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',pbVar5);
+                                 this_00->field_0C1A);
+      pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02C2,uVar4);
+      DibPut((undefined4 *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',pbVar5);
       FUN_006b4170(this_00->field_0194,0,GVar13 + 0x36,0x5d,7,0x21,0);
       GVar13 = local_8;
-      bVar2 = this_00->field_0xc24;
+      bVar2 = this_00->field_0C24;
       local_1c = (byte *)CONCAT31(local_1c._1_3_,bVar2);
       cVar12 = (char)(((uint)bVar2 * 0x21) / 100);
       local_10 = (Global_sub_00526BA0_param_1Enum *)CONCAT31(local_10._1_3_,cVar12);
@@ -296,16 +288,14 @@ switchD_00506214_caseD_2:
       }
       uVar4 = (uint)local_10 & 0xff;
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar4,
-                 *(int *)&this_00->field_0x28a,0,iVar3,
-                 *(int *)(*(int *)&this_00->field_0x28a + 8) - uVar4,5,uVar4);
-      pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ca,1);
-      thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',pbVar5);
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2
-                       ,10);
+                ((undefined4 *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar4,this_00->field_028A
+                 ,0,iVar3,*(int *)(this_00->field_028A + 8) - uVar4,5,uVar4);
+      pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02CA,1);
+      DibPut((undefined4 *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',pbVar5);
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,10);
       pHVar16 = DAT_00807618;
       UVar6 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
-                                 this_00->field_0xc1a,0);
+                                 this_00->field_0C1A,0);
       pcVar7 = (char *)FUN_006b0140(UVar6,pHVar16);
       uVar4 = 0xffffffff;
       do {
@@ -337,37 +327,34 @@ switchD_00506214_caseD_2:
     }
     goto switchD_00506878_caseD_3b;
   }
-  switch(*(undefined4 *)&this_00->field_0xbf5) {
+  switch(this_00->field_0BF5) {
   case 0x32:
   case 0x40:
   case 0x49:
-    GVar13 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9ed + 4)
-             ) / 2;
+    GVar13 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4)) /
+             2;
     local_8 = GVar13;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13,0x50,'\x01',
-                       *(byte **)&this_00->field_0x9ed);
+    DibPut((undefined4 *)this_00->field_0194,GVar13,0x50,'\x01',(byte *)this_00->field_09ED);
     if (*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 == 0) {
 LAB_0050709d:
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2
-                       ,0x2f);
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,0x2f);
 LAB_005070be:
       uVar14 = 0;
       UVar6 = 0x2713;
       goto LAB_0050777e;
     }
     uVar4 = thunk_FUN_00526ba0(*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12,
-                               this_00->field_0xc1a);
-    pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ba,uVar4);
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',pbVar5);
-    if (this_00->field_0xc26 != 0) {
-      wsprintfA(&this_00->field_0x1e1,&DAT_007c1890,(uint)(byte)this_00->field_0xc26);
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1c8,this_00->field_0194,0,GVar13 + 6,0x5d,0x30
-                       ,0x21);
-      ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1c8,(uint *)&this_00->field_0x1e1,-2,-1,0);
+                               this_00->field_0C1A);
+    pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02BA,uVar4);
+    DibPut((undefined4 *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',pbVar5);
+    if (this_00->field_0C26 != 0) {
+      wsprintfA(&this_00->field_0x1e1,&DAT_007c1890,(uint)(byte)this_00->field_0C26);
+      ccFntTy::SetSurf(this_00->field_01C8,this_00->field_0194,0,GVar13 + 6,0x5d,0x30,0x21);
+      ccFntTy::WrStr(this_00->field_01C8,(uint *)&this_00->field_0x1e1,-2,-1,0);
     }
     FUN_006b4170(this_00->field_0194,0,GVar13 + 0x36,0x5d,7,0x21,0);
     GVar13 = local_8;
-    bVar2 = this_00->field_0xc24;
+    bVar2 = this_00->field_0C24;
     cVar12 = (char)(((uint)bVar2 * 0x21) / 100);
     local_1c = (byte *)CONCAT31(local_1c._1_3_,cVar12);
     if ((bVar2 != 0) && (cVar12 == '\0')) {
@@ -381,16 +368,14 @@ LAB_005070be:
     }
     uVar4 = (uint)local_1c & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar4,
-               *(int *)&this_00->field_0x28a,0,iVar3,
-               *(int *)(*(int *)&this_00->field_0x28a + 8) - uVar4,5,uVar4);
-    pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ca,1);
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',pbVar5);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,
-                     10);
+              ((undefined4 *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar4,this_00->field_028A,0
+               ,iVar3,*(int *)(this_00->field_028A + 8) - uVar4,5,uVar4);
+    pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02CA,1);
+    DibPut((undefined4 *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',pbVar5);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,10);
     pHVar16 = DAT_00807618;
     UVar6 = thunk_FUN_00523410(*(Global_sub_00523410_param_1Enum *)&this_00->field_0xc12,
-                               this_00->field_0xc1a,0);
+                               this_00->field_0C1A,0);
     pcVar7 = (char *)FUN_006b0140(UVar6,pHVar16);
     uVar4 = 0xffffffff;
     do {
@@ -420,35 +405,31 @@ LAB_005070be:
     }
     goto cf_common_exit_00507034;
   case 0x33:
-    iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9f9 + 4)
-             ) / 2;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10,0x36,'\x01',
-                       *(byte **)&this_00->field_0x9f9);
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10 + 5,0x39,'\x01',
-                       *(byte **)&this_00->field_0x9fd);
-    local_c = (ushort *)&this_00->field_0xc1c;
+    iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09F9 + 4)) /
+             2;
+    DibPut((undefined4 *)this_00->field_0194,iVar10,0x36,'\x01',(byte *)this_00->field_09F9);
+    DibPut((undefined4 *)this_00->field_0194,iVar10 + 5,0x39,'\x01',(byte *)this_00->field_09FD);
+    local_c = &this_00->field_0C1C;
     local_10 = (Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12;
     local_8 = 0;
     iVar3 = 0x3a;
     do {
       if (*local_10 == 0) {
-        ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar10 + 2,
-                         iVar3 + -2,0xb2,0x2f);
+        ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar10 + 2,iVar3 + -2,0xb2,0x2f);
         iVar21 = -1;
         iVar20 = -1;
         uVar14 = 0;
         iVar19 = -1;
         iVar18 = -2;
         puVar8 = (uint *)FUN_006b0140(0x2713,DAT_00807618);
-        ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar18,iVar19,uVar14,iVar20,iVar21)
-        ;
+        ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar18,iVar19,uVar14,iVar20,iVar21);
       }
       else {
-        uVar4 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0xc1a)[local_8]);
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ba,uVar4);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10 + 6,iVar3,'\x01',pbVar5);
+        uVar4 = thunk_FUN_00526ba0(*local_10,(&this_00->field_0C1A)[local_8]);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02BA,uVar4);
+        DibPut((undefined4 *)this_00->field_0194,iVar10 + 6,iVar3,'\x01',pbVar5);
         FUN_006b4170(this_00->field_0194,0,iVar10 + 0x36,iVar3,7,0x21,0);
-        bVar2 = (&this_00->field_0xc24)[local_8];
+        bVar2 = (&this_00->field_0C24)[local_8];
         local_14 = CONCAT31(local_14._1_3_,bVar2);
         cVar12 = (char)(((uint)bVar2 * 0x21) / 100);
         local_18 = CONCAT31(local_18._1_3_,cVar12);
@@ -464,13 +445,13 @@ LAB_005070be:
         uVar4 = local_18 & 0xff;
         Library::DKW::WGR::FUN_006b55f0
                   ((undefined4 *)this_00->field_0194,0,iVar10 + 0x37,(iVar3 - uVar4) + 0x21,
-                   *(int *)&this_00->field_0x28a,0,(int)local_1c,
-                   *(int *)(*(int *)&this_00->field_0x28a + 8) - uVar4,5,uVar4);
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ca,1);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10 + 5,iVar3 + -1,'\x06',pbVar5);
+                   this_00->field_028A,0,(int)local_1c,*(int *)(this_00->field_028A + 8) - uVar4,5,
+                   uVar4);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02CA,1);
+        DibPut((undefined4 *)this_00->field_0194,iVar10 + 5,iVar3 + -1,'\x06',pbVar5);
         PaintDamageXY(this_00,this_00->field_0194,iVar10 + 0x41,iVar3,
                       CONCAT31((int3)((uint)extraout_ECX_00 >> 8),
-                               'd' - (&this_00->field_0xc24)[local_8]),0x36b1);
+                               'd' - (&this_00->field_0C24)[local_8]),0x36b1);
         PaintCostsXY(this_00,this_00->field_0194,iVar10 + 0x41,iVar3 + 0xb,*local_c,local_c[2],4,2);
       }
       iVar3 = iVar3 + 0x23;
@@ -481,26 +462,23 @@ LAB_005070be:
     break;
   case 0x34:
     iVar3 = ((undefined4 *)this_00->field_0194)[1];
-    iVar10 = *(int *)(*(int *)&this_00->field_0x9f9 + 4);
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,0x60,0x1f,'\x01',
-                       *(byte **)&this_00->field_0xa05);
+    iVar10 = *(int *)(this_00->field_09F9 + 4);
+    DibPut((undefined4 *)this_00->field_0194,0x60,0x1f,'\x01',(byte *)this_00->field_0A05);
     PaintMunition(this_00,(iVar3 - iVar10) / 2);
     break;
   case 0x35:
-    iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9ed + 4))
-            / 2;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',
-                       *(byte **)&this_00->field_0x9ed);
-    if (this_00->field_0xc31 != '\0') {
+    iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4)) / 2
+    ;
+    DibPut((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',(byte *)this_00->field_09ED);
+    if (this_00->field_0C31 != '\0') {
       PaintNameRes(this_00,iVar3);
       PaintPerRes(this_00,iVar3);
       break;
     }
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3 + 2,0x52,0xb2,
-                     0x2f);
-    if (*(short *)&this_00->field_0xc2f == 0) goto LAB_005070be;
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3 + 2,0x52,0xb2,0x2f);
+    if (this_00->field_0C2F == 0) goto LAB_005070be;
     uVar14 = FUN_006b0140(0x273c,DAT_00807618);
-    wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,(uint)*(ushort *)&this_00->field_0xc2f,uVar14);
+    wsprintfA((LPSTR)&DAT_0080f33a,s__d__s_007c2864,(uint)(ushort)this_00->field_0C2F,uVar14);
     iVar19 = -1;
     iVar18 = -1;
     uVar14 = 0;
@@ -517,45 +495,42 @@ LAB_005070be:
   case 0x4d:
   case 0x4e:
   case 0x6f:
-    iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9f5 + 4))
-            / 2;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x67,'\x01',
-                       *(byte **)&this_00->field_0x9f5);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3 + 2,0x69,0xa7,
-                     0xc);
+    iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09F5 + 4)) / 2
+    ;
+    DibPut((undefined4 *)this_00->field_0194,iVar3,0x67,'\x01',(byte *)this_00->field_09F5);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3 + 2,0x69,0xa7,0xc);
     iVar20 = -1;
     iVar19 = -1;
     uVar14 = 0;
     iVar18 = -1;
     iVar10 = -2;
     pHVar16 = DAT_00807618;
-    UVar6 = thunk_FUN_00525890(*(Global_sub_00525890_param_1Enum *)&this_00->field_0xbf5);
+    UVar6 = thunk_FUN_00525890(this_00->field_0BF5);
     puVar8 = (uint *)FUN_006b0140(UVar6,pHVar16);
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
-    if (this_00->field_0xc29 != 0xff) {
-      if (0x28 < (byte)this_00->field_0xc29) {
-        this_00->field_0xc29 = 0x28;
+    ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
+    if (this_00->field_0C29 != 0xff) {
+      if (0x28 < (byte)this_00->field_0C29) {
+        this_00->field_0C29 = 0x28;
       }
       local_8 = local_8 & 0xffffff00;
-      if (this_00->field_0xc29 != '\0') {
+      if (this_00->field_0C29 != '\0') {
         do {
-          if ((*(int *)&this_00->field_0xbf5 != 0x4d) || (iVar10 = 4, this_00->field_0xc28 == '\0'))
-          {
+          if ((this_00->field_0BF5 != 0x4d) || (iVar10 = 4, this_00->field_0C28 == '\0')) {
             iVar10 = 3;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,iVar10);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 6 + (local_8 & 0xff) * 4,0x75
-                             ,'\x01',pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,iVar10);
+          DibPut((undefined4 *)this_00->field_0194,iVar3 + 6 + (local_8 & 0xff) * 4,0x75,'\x01',
+                 pbVar5);
           bVar2 = (undefined1)local_8 + 1;
           local_8 = CONCAT31(local_8._1_3_,bVar2);
-        } while (bVar2 < (byte)this_00->field_0xc29);
+        } while (bVar2 < (byte)this_00->field_0C29);
       }
       if ((byte)(undefined1)local_8 < 0x28) {
         iVar10 = 0x28 - (local_8 & 0xff);
         iVar3 = iVar3 + 6 + (local_8 & 0xff) * 4;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x75,'\x01',pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+          DibPut((undefined4 *)this_00->field_0194,iVar3,0x75,'\x01',pbVar5);
           iVar3 = iVar3 + 4;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -565,87 +540,85 @@ LAB_005070be:
   case 0x38:
   case 0x39:
   case 0x4f:
-    PaintMineInf(this_00,(*(int *)(this_00->field_0194 + 4) -
-                         *(int *)(*(int *)&this_00->field_0x9ed + 4)) / 2);
+    PaintMineInf(this_00,(*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09ED + 4)) / 2
+                );
     break;
   case 0x3a:
-    iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9ed + 4)
-             ) / 2;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10,0x50,'\x01',
-                       *(byte **)&this_00->field_0x9ed);
+    iVar10 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4)) /
+             2;
+    DibPut((undefined4 *)this_00->field_0194,iVar10,0x50,'\x01',(byte *)this_00->field_09ED);
     iVar3 = iVar10 + 2;
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3,0x52,0x69,0xc);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x52,0x69,0xc);
     iVar21 = -1;
     iVar20 = -1;
     uVar14 = 1;
     iVar19 = -1;
     iVar18 = -3;
     puVar8 = (uint *)FUN_006b0140(0x36b7,DAT_00807618);
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar18,iVar19,uVar14,iVar20,iVar21);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3,0x5d,0x69,0xc);
+    ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar18,iVar19,uVar14,iVar20,iVar21);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x5d,0x69,0xc);
     iVar21 = -1;
     iVar20 = -1;
     uVar14 = 1;
     iVar19 = -1;
     iVar18 = -3;
     puVar8 = (uint *)FUN_006b0140(0x36b8,DAT_00807618);
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar18,iVar19,uVar14,iVar20,iVar21);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3,0x69,0xb2,0xc);
+    ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar18,iVar19,uVar14,iVar20,iVar21);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x69,0xb2,0xc);
     iVar20 = -1;
     iVar19 = -1;
     uVar14 = 1;
     iVar18 = -1;
     iVar3 = -2;
     puVar8 = (uint *)FUN_006b0140(0x36b6,DAT_00807618);
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar3,iVar18,uVar14,iVar19,iVar20);
+    ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar3,iVar18,uVar14,iVar19,iVar20);
     local_8 = local_8 & 0xffffff00;
-    if (this_00->field_0xc3a != '\0') {
+    if (this_00->field_0C3A != '\0') {
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,3);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10 + 0x70 + (local_8 & 0xff) * 4,
-                           0x54,'\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
+        DibPut((undefined4 *)this_00->field_0194,iVar10 + 0x70 + (local_8 & 0xff) * 4,0x54,'\x01',
+               pbVar5);
         bVar2 = (undefined1)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar2);
-      } while (bVar2 < (byte)this_00->field_0xc3a);
+      } while (bVar2 < (byte)this_00->field_0C3A);
     }
     if ((byte)(undefined1)local_8 < 0xf) {
       local_1c = (byte *)(0xf - (local_8 & 0xff));
       iVar3 = iVar10 + 0x70 + (local_8 & 0xff) * 4;
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x54,'\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+        DibPut((undefined4 *)this_00->field_0194,iVar3,0x54,'\x01',pbVar5);
         iVar3 = iVar3 + 4;
         local_1c = local_1c + -1;
       } while (local_1c != (byte *)0x0);
     }
     local_8 = local_8 & 0xffffff00;
-    if (this_00->field_0xc3b != '\0') {
+    if (this_00->field_0C3B != '\0') {
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,3);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10 + 0x70 + (local_8 & 0xff) * 4,
-                           0x5f,'\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
+        DibPut((undefined4 *)this_00->field_0194,iVar10 + 0x70 + (local_8 & 0xff) * 4,0x5f,'\x01',
+               pbVar5);
         bVar2 = (undefined1)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar2);
-      } while (bVar2 < (byte)this_00->field_0xc3b);
+      } while (bVar2 < (byte)this_00->field_0C3B);
     }
     if ((byte)(undefined1)local_8 < 0xf) {
       local_1c = (byte *)(0xf - (local_8 & 0xff));
       iVar3 = iVar10 + 0x70 + (local_8 & 0xff) * 4;
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x5f,'\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+        DibPut((undefined4 *)this_00->field_0194,iVar3,0x5f,'\x01',pbVar5);
         iVar3 = iVar3 + 4;
         local_1c = (byte *)((int)local_1c + -1);
       } while (local_1c != (byte *)0x0);
     }
     local_8 = local_8 & 0xffffff00;
-    local_1c = (byte *)(((uint)*(ushort *)&this_00->field_0xc34 * 0x28) / 400);
+    local_1c = (byte *)(((uint)(ushort)this_00->field_0C34 * 0x28) / 400);
     if (local_1c != (byte *)0x0) {
       pbVar5 = (byte *)0x0;
       do {
-        pbVar9 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,2);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10 + 0xb + (int)pbVar5 * 4,0x76,
-                           '\x01',pbVar9);
+        pbVar9 = (byte *)FUN_0070b3a0(this_00->field_02B6,2);
+        DibPut((undefined4 *)this_00->field_0194,iVar10 + 0xb + (int)pbVar5 * 4,0x76,'\x01',pbVar9);
         bVar2 = (undefined1)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar2);
         pbVar5 = (byte *)(uint)bVar2;
@@ -655,38 +628,34 @@ LAB_005070be:
       iVar18 = 0x28 - (local_8 & 0xff);
       iVar3 = iVar10 + 0xb + (local_8 & 0xff) * 4;
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-        thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x76,'\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+        DibPut((undefined4 *)this_00->field_0194,iVar3,0x76,'\x01',pbVar5);
         iVar3 = iVar3 + 4;
         iVar18 = iVar18 + -1;
       } while (iVar18 != 0);
     }
     break;
   case 0x3c:
-    iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9ed + 4))
-            / 2;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',
-                       *(byte **)&this_00->field_0x9ed);
-    switch(this_00->field_0xc3c) {
+    iVar3 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4)) / 2
+    ;
+    DibPut((undefined4 *)this_00->field_0194,iVar3,0x50,'\x01',(byte *)this_00->field_09ED);
+    switch(this_00->field_0C3C) {
     case 0:
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3,0x50,
-                       *(int *)(*(int *)&this_00->field_0x9ed + 4),
-                       *(int *)(*(int *)&this_00->field_0x9ed + 8));
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x50,
+                       *(int *)(this_00->field_09ED + 4),*(int *)(this_00->field_09ED + 8));
       uVar14 = 1;
       UVar6 = 0x36bb;
       goto LAB_0050777e;
     case 1:
-      thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3 + 5,0x65,'\x01',
-                         *(byte **)&this_00->field_0xa0d);
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3 + 2,0x52,0xb2,
-                       10);
+      DibPut((undefined4 *)this_00->field_0194,iVar3 + 5,0x65,'\x01',(byte *)this_00->field_0A0D);
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3 + 2,0x52,0xb2,10);
       iVar20 = -1;
       iVar19 = -1;
       uVar14 = 0;
       iVar18 = -1;
       iVar10 = -2;
       puVar8 = (uint *)FUN_006b0140(0x36bd,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
+      ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
       PaintDamageXY(this_00,this_00->field_0194,iVar3 + 0x39,0x65,
                     CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_0xc3d),0x2714);
       uVar4 = (uint)(*(int *)&this_00->field_0xc3d * 0x28) / 100;
@@ -696,8 +665,8 @@ LAB_005070be:
         local_1c = (byte *)uVar4;
         local_18 = uVar4;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,3);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar10,0x5c,'\x01',pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
+          DibPut((undefined4 *)this_00->field_0194,iVar10,0x5c,'\x01',pbVar5);
           iVar10 = iVar10 + 4;
           local_1c = (byte *)((int)local_1c - 1);
         } while (local_1c != (byte *)0x0);
@@ -707,33 +676,31 @@ LAB_005070be:
         iVar3 = iVar3 + 0xb + local_18 * 4;
         iVar10 = 0x28 - local_18;
         do {
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-          thunk_FUN_00540760((undefined4 *)this_00->field_0194,iVar3,0x5c,'\x01',pbVar5);
+          pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+          DibPut((undefined4 *)this_00->field_0194,iVar3,0x5c,'\x01',pbVar5);
           iVar3 = iVar3 + 4;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
       }
       break;
     case 2:
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3,0x54,
-                       *(int *)(*(int *)&this_00->field_0x9ed + 4),0x21);
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x54,
+                       *(int *)(this_00->field_09ED + 4),0x21);
       iVar20 = -1;
       iVar19 = -1;
       uVar14 = 1;
       iVar18 = -1;
       iVar10 = -2;
       puVar8 = (uint *)FUN_006b0140(0x36bc,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
+      ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar10,iVar18,uVar14,iVar19,iVar20);
       wsprintfA(&this_00->field_0x1e1,&DAT_007c1ae4,*(undefined4 *)&this_00->field_0xc3d);
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1bc,this_00->field_0194,0,iVar3,0x71,
-                       *(int *)(*(int *)&this_00->field_0x9ed + 4),
-                       *(int *)(*(int *)&this_00->field_0x9ed + 8) + -0x21);
-      ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1bc,(uint *)&this_00->field_0x1e1,-1,-1,0);
+      ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,iVar3,0x71,
+                       *(int *)(this_00->field_09ED + 4),*(int *)(this_00->field_09ED + 8) + -0x21);
+      ccFntTy::WrStr(this_00->field_01BC,(uint *)&this_00->field_0x1e1,-1,-1,0);
       break;
     case 3:
-      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,iVar3,0x50,
-                       *(int *)(*(int *)&this_00->field_0x9ed + 4),
-                       *(int *)(*(int *)&this_00->field_0x9ed + 8));
+      ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,iVar3,0x50,
+                       *(int *)(this_00->field_09ED + 4),*(int *)(this_00->field_09ED + 8));
       uVar14 = 1;
       UVar6 = 0x36be;
 LAB_0050777e:
@@ -743,30 +710,27 @@ LAB_0050777e:
       iVar3 = -2;
       puVar8 = (uint *)FUN_006b0140(UVar6,DAT_00807618);
 LAB_00507784:
-      ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,puVar8,iVar3,iVar10,uVar14,iVar18,iVar19);
+      ccFntTy::WrTxt(this_00->field_01B8,puVar8,iVar3,iVar10,uVar14,iVar18,iVar19);
     }
     break;
   case 0x44:
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,
-                       (((undefined4 *)this_00->field_0194)[1] -
-                       *(int *)(*(byte **)&this_00->field_0xa01 + 4)) / 2,0x37,'\x01',
-                       *(byte **)&this_00->field_0xa01);
-    GVar13 = (((undefined4 *)this_00->field_0194)[1] - *(int *)(*(byte **)&this_00->field_0x9ed + 4)
-             ) / 2;
+    DibPut((undefined4 *)this_00->field_0194,
+           (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_0A01 + 4)) / 2,
+           0x37,'\x01',(byte *)this_00->field_0A01);
+    GVar13 = (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09ED + 4)) /
+             2;
     local_8 = GVar13;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13,0x50,'\x01',
-                       *(byte **)&this_00->field_0x9ed);
-    uVar4 = (uint)*(ushort *)&this_00->field_0xc34;
+    DibPut((undefined4 *)this_00->field_0194,GVar13,0x50,'\x01',(byte *)this_00->field_09ED);
+    uVar4 = (uint)(ushort)this_00->field_0C34;
     uVar14 = FUN_006b0140(0x2725,DAT_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,s__1_s__0_d_007c286c,uVar14,uVar4);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,&DAT_0080f33a,-2,-1,0,-1,-1);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,0x56,0x39,0x6d,0x15);
+    ccFntTy::WrTxt(this_00->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
     if (*(int *)&this_00->field_0xc12 == 0) goto LAB_0050709d;
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',
-                       *(byte **)&this_00->field_0xa09);
+    DibPut((undefined4 *)this_00->field_0194,GVar13 + 6,0x5d,'\x01',(byte *)this_00->field_0A09);
     FUN_006b4170(this_00->field_0194,0,GVar13 + 0x36,0x5d,7,0x21,0);
     GVar13 = local_8;
-    bVar2 = this_00->field_0xc24;
+    bVar2 = this_00->field_0C24;
     cVar12 = (char)(((uint)bVar2 * 0x21) / 100);
     local_1c = (byte *)CONCAT31(local_1c._1_3_,cVar12);
     if ((bVar2 != 0) && (cVar12 == '\0')) {
@@ -780,13 +744,11 @@ LAB_00507784:
     }
     uVar4 = (uint)local_1c & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              ((undefined4 *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar4,
-               *(int *)&this_00->field_0x28a,0,iVar3,
-               *(int *)(*(int *)&this_00->field_0x28a + 8) - uVar4,5,uVar4);
-    pbVar5 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2ca,1);
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',pbVar5);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1b8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,
-                     10);
+              ((undefined4 *)this_00->field_0194,0,local_8 + 0x37,0x7e - uVar4,this_00->field_028A,0
+               ,iVar3,*(int *)(this_00->field_028A + 8) - uVar4,5,uVar4);
+    pbVar5 = (byte *)FUN_0070b3a0(this_00->field_02CA,1);
+    DibPut((undefined4 *)this_00->field_0194,GVar13 + 5,0x5c,'\x06',pbVar5);
+    ccFntTy::SetSurf(this_00->field_01B8,this_00->field_0194,0,GVar13 + 2,0x52,0xb2,10);
     pcVar7 = (char *)FUN_006b0140(0x2b2c,DAT_00807618);
     uVar4 = 0xffffffff;
     do {
@@ -815,26 +777,24 @@ LAB_00507784:
       *(undefined1 *)puVar8 = 0x20;
     }
 cf_common_exit_00507034:
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1b8,(uint *)&this_00->field_0x1e1,-2,-1,0,-1,-1);
+    ccFntTy::WrTxt(this_00->field_01B8,(uint *)&this_00->field_0x1e1,-2,-1,0,-1,-1);
     iVar3 = local_8 + 0x41;
     PaintDamageXY(this_00,this_00->field_0194,iVar3,0x5d,
-                  CONCAT31((int3)((uint)extraout_ECX_01 >> 8),this_00->field_0xc24),0x2714);
-    PaintCostsXY(this_00,this_00->field_0194,iVar3,0x68,*(ushort *)&this_00->field_0xc1c,
-                 *(ushort *)&this_00->field_0xc20,4,2);
+                  CONCAT31((int3)((uint)extraout_ECX_01 >> 8),this_00->field_0C24),0x2714);
+    PaintCostsXY(this_00,this_00->field_0194,iVar3,0x68,this_00->field_0C1C,this_00->field_0C20,4,2)
+    ;
     break;
   case 0x50:
-    thunk_FUN_00540760((undefined4 *)this_00->field_0194,
-                       (((undefined4 *)this_00->field_0194)[1] -
-                       *(int *)(*(byte **)&this_00->field_0x9f9 + 4)) / 2,0x36,'\x01',
-                       *(byte **)&this_00->field_0x9f9);
+    DibPut((undefined4 *)this_00->field_0194,
+           (((undefined4 *)this_00->field_0194)[1] - *(int *)((byte *)this_00->field_09F9 + 4)) / 2,
+           0x36,'\x01',(byte *)this_00->field_09F9);
   }
 switchD_00506878_caseD_3b:
   PaintIDSObj(this_00);
 switchD_00506377_caseD_df:
-  if (-1 < (int)*(uint *)&this_00->field_0x15c) {
+  if (-1 < (int)this_00->field_015C) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&this_00->field_0x15c,0xffffffff,*(uint *)&this_00->field_0x50,
-               *(uint *)&this_00->field_0xa8);
+              (DAT_008075a8,this_00->field_015C,0xffffffff,this_00->field_0050,this_00->field_00A8);
   }
   g_currentExceptionFrame = local_64.previous;
   return;

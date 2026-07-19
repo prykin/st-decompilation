@@ -1,4 +1,4 @@
-FUN_00719df0:
+mfWavGetType:
 00719DF0  55                        PUSH EBP
 00719DF1  8B EC                     MOV EBP,ESP
 00719DF3  83 EC 50                  SUB ESP,0x50

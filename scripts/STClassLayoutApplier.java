@@ -80,9 +80,12 @@ public class STClassLayoutApplier extends GhidraScript {
         long preserved = report.stream().filter(row -> row.status.equals("preserved")).count();
         long disabled = report.stream().filter(row -> row.status.equals("disabled")).count();
         long conflicts = report.stream().filter(row -> row.status.equals("conflict")).count();
+        long typed = report.stream().mapToLong(row -> row.typedFields).sum();
+        long named = report.stream().mapToLong(row -> row.namedFields).sum();
         println("Class layouts: applied=" + applied + ", updated=" + updated +
             ", unchanged=" + unchanged + ", preserved=" + preserved +
-            ", conflicts=" + conflicts + ", disabled=" + disabled);
+            ", conflicts=" + conflicts + ", disabled=" + disabled +
+            ", typed_fields=" + typed + ", named_fields=" + named);
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
     }
 
@@ -114,16 +117,27 @@ public class STClassLayoutApplier extends GhidraScript {
                 .filter(field -> enabled(field.get("apply")))
                 .sorted(Comparator.comparingLong(field -> Long.parseLong(field.get("offset"))))
                 .toList();
-            int installed = 0;
+            int installed = 0, typed = 0, named = 0;
             for (Map<String, String> field : selected) {
                 int offset = Integer.parseInt(field.get("offset"));
                 int size = Integer.parseInt(field.get("size"));
                 if (offset < 0 || size < 1 || offset + size > length)
                     throw new IllegalArgumentException("field outside structure: " + offset + "+" + size);
-                DataType fieldType = resolveType(unt(field.get("proposed_type")), size);
+                boolean typeApply = enabled(field.get("type_apply"));
+                String inferredType = unt(field.get("inferred_type"));
+                String typeSpecification = typeApply && !inferredType.isBlank() ? inferredType :
+                    unt(field.get("proposed_type"));
+                DataType fieldType = resolveType(typeSpecification, size);
                 String comment = MARKER + " reads=" + field.get("reads") + ", writes=" +
                     field.get("writes") + "; " + unt(field.get("reason"));
                 String fieldName = unt(field.get("proposed_name"));
+                boolean nameApply = enabled(field.get("name_apply"));
+                String suggestedName = unt(field.get("suggested_name"));
+                if (nameApply && !suggestedName.isBlank()) fieldName = suggestedName;
+                String typeEvidence = unt(field.get("type_evidence"));
+                String nameEvidence = unt(field.get("name_evidence"));
+                if (!typeEvidence.isBlank()) comment += "; type_evidence=" + typeEvidence;
+                if (!nameEvidence.isBlank()) comment += "; name_evidence=" + nameEvidence;
                 DataTypeComponent enriched = existing.getComponentAt(offset);
                 if (enriched != null && enriched.getOffset() == offset &&
                         enriched.getDataType() instanceof Enum && enriched.getLength() == size &&
@@ -135,6 +149,8 @@ public class STClassLayoutApplier extends GhidraScript {
                 }
                 desired.replaceAtOffset(offset, fieldType, size, fieldName, comment);
                 installed++;
+                if (typeApply && !inferredType.isBlank()) typed++;
+                if (nameApply && !suggestedName.isBlank()) named++;
             }
             String desiredHash = layoutHash(desired);
             String description = MARKER + " Generated conservative layout for " + owner +
@@ -147,13 +163,13 @@ public class STClassLayoutApplier extends GhidraScript {
             if (!safety.placeholder && currentHash.equals(desiredHash)) {
                 existing.setDescription(desired.getDescription());
                 report.add(new ReportRow(owner, path, "unchanged", installed +
-                    " fields; length=" + length));
+                    " fields; length=" + length, typed, named));
                 return;
             }
             existing.replaceWith(desired);
             existing.setDescription(desired.getDescription());
             report.add(new ReportRow(owner, path, safety.placeholder ? "applied" : "updated",
-                installed + " fields; length=" + length + "; " + safety.reason));
+                installed + " fields; length=" + length + "; " + safety.reason, typed, named));
         }
         catch (Exception exception) {
             report.add(new ReportRow(owner, path, "conflict", message(exception)));
@@ -269,9 +285,10 @@ public class STClassLayoutApplier extends GhidraScript {
 
     private void writeReport(Path path) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
-            out.write("owner\ttype_path\tstatus\tdetail\n");
+            out.write("owner\ttype_path\tstatus\ttyped_fields\tnamed_fields\tdetail\n");
             for (ReportRow row : report) out.write(tsv(row.owner) + "\t" + tsv(row.path) +
-                "\t" + row.status + "\t" + tsv(row.detail) + "\n");
+                "\t" + row.status + "\t" + row.typedFields + "\t" + row.namedFields +
+                "\t" + tsv(row.detail) + "\n");
         }
     }
 
@@ -322,8 +339,14 @@ public class STClassLayoutApplier extends GhidraScript {
     }
     private static class ReportRow {
         final String owner, path, status, detail;
+        final int typedFields, namedFields;
         ReportRow(String owner, String path, String status, String detail) {
+            this(owner, path, status, detail, 0, 0);
+        }
+        ReportRow(String owner, String path, String status, String detail,
+                int typedFields, int namedFields) {
             this.owner = owner; this.path = path; this.status = status; this.detail = detail;
+            this.typedFields = typedFields; this.namedFields = namedFields;
         }
     }
 }

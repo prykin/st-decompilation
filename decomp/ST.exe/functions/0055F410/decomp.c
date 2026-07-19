@@ -1,8 +1,13 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\scoreai.cpp
+   Diagnostic line evidence: 2390 | 2408 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
-void FUN_0055f410(uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,
-                 int param_7,int param_8,int param_9,uint param_10)
+void AiCalcDispositionAreas
+               (uint param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7
+               ,int param_8,int param_9,uint param_10)
 
 {
   char cVar1;

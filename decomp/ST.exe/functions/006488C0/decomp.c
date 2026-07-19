@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006488c0(int param_1,char *param_2,undefined4 *param_3,char param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_boss_d.cpp
+   Diagnostic line evidence: 156 | 163 | 166 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char param_4)
 
 {
   code *pcVar1;
@@ -22,10 +27,10 @@ int __cdecl FUN_006488c0(int param_1,char *param_2,undefined4 *param_3,char para
     if (((param_1 == 0) || (param_2 == (char *)0x0)) || (*(char *)((int)param_3 + 5) != '\x02')) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x9c);
     }
-    local_c = thunk_FUN_0065cd10(*(undefined4 **)((int)param_3 + 0x4e),&local_14);
-    local_8 = (byte *)thunk_FUN_00648620(param_3,local_c,local_14,&local_10);
+    local_c = EventDataPack(*(undefined4 **)((int)param_3 + 0x4e),&local_14);
+    local_8 = (byte *)BossDataPack(param_3,local_c,local_14,&local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
-    FUN_006f3110(param_1,param_2,local_8,local_10,param_4);
+    mfAObjSave(param_1,param_2,local_8,local_10,param_4);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;

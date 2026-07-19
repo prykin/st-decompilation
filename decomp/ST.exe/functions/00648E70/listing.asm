@@ -1,4 +1,4 @@
-FUN_00648e70:
+CreateArbiter:
 00648E70  55                        PUSH EBP
 00648E71  8B EC                     MOV EBP,ESP
 00648E73  83 EC 48                  SUB ESP,0x48

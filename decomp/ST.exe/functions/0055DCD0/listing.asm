@@ -1,4 +1,4 @@
-FUN_0055dcd0:
+SetPalette:
 0055DCD0  55                        PUSH EBP
 0055DCD1  8B EC                     MOV EBP,ESP
 0055DCD3  81 EC 48 04 00 00         SUB ESP,0x448

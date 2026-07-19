@@ -37,11 +37,11 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
   piVar3 = local_8;
   pSVar2 = local_c;
   if (iVar4 == 0) {
-    if (*(int *)(local_c + *local_8 * 4 + 0x30) == 0) {
+    if (*(int *)(&local_c->field_0x30 + *local_8 * 4) == 0) {
       puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x20,10);
-      *(uint **)(pSVar2 + *piVar3 * 4 + 0x30) = puVar5;
+      *(uint **)(&pSVar2->field_0x30 + *piVar3 * 4) = puVar5;
     }
-    if (*(int *)(pSVar2 + *piVar3 * 4 + 0x30) != 0) {
+    if (*(int *)(&pSVar2->field_0x30 + *piVar3 * 4) != 0) {
       piVar8 = local_30;
       for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
         *piVar8 = 0;
@@ -53,7 +53,8 @@ uint __thiscall STManRub3C::AddNewRub3(STManRub3C *this,int *param_1)
       local_30[1] = piVar3[1];
       local_30[2] = piVar3[2];
       local_30[3] = piVar3[3];
-      uVar6 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + *piVar3 * 4 + 0x30),local_30);
+      uVar6 = Library::DKW::TBL::FUN_006ae1c0
+                        (*(uint **)(&pSVar2->field_0x30 + *piVar3 * 4),local_30);
       g_currentExceptionFrame = local_74.previous;
       return uVar6;
     }

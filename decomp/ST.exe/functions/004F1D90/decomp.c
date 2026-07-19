@@ -27,25 +27,25 @@ CPanelTy::PaintDamageXY
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_8;
   if (iVar3 == 0) {
-    ccFntTy::SetSurf(*(ccFntTy **)&local_8->field_0x1b8,param_1,0,param_2,param_3,0x30,10);
+    ccFntTy::SetSurf(local_8->field_01B8,param_1,0,param_2,param_3,0x30,10);
     iVar8 = -1;
     iVar7 = -1;
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = 0;
     puVar4 = (uint *)FUN_006b0140(param_5,DAT_00807618);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+    ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1890,param_4 & 0xff);
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,param_1,0,param_2 + 0x30,param_3,0x11,10);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,param_1,0,param_2 + 0x42,param_3,10,10);
+    ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x30,param_3,0x11,10);
+    ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
+    ccFntTy::SetSurf(pCVar2->field_01B8,param_1,0,param_2 + 0x42,param_3,10,10);
     iVar8 = -1;
     iVar7 = -1;
     uVar6 = 1;
     iVar5 = -1;
     iVar3 = -1;
     puVar4 = (uint *)FUN_006b0140(0x36b2,DAT_00807618);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+    ccFntTy::WrTxt(pCVar2->field_01B8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

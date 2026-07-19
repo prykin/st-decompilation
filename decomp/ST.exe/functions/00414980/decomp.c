@@ -1,4 +1,10 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\Grpway3d.cpp
+   Diagnostic line evidence: 1373 | 1374 | 1382 | 1383 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
 void FUN_00414980(int param_1)
 
 {

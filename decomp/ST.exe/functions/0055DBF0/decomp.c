@@ -1,5 +1,10 @@
 
-void __cdecl FUN_0055dbf0(undefined4 *param_1,int param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\paltool.cpp
+   Diagnostic line evidence: 29 | 31 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl DarkScreen(undefined4 *param_1,int param_2,int param_3)
 
 {
   code *pcVar1;

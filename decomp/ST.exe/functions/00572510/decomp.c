@@ -149,7 +149,7 @@ LAB_005727f1:
             DAT_00807300._0_1_ = '\x01';
           }
           thunk_FUN_00573240();
-          cMf32::delete(this_01,(undefined4 *)this_00);
+          cMf32::delete(this_01,&this_00->field_0000);
         }
         g_currentExceptionFrame = local_58.previous;
         local_10 = this;

@@ -1,4 +1,4 @@
-FUN_0067e320:
+GetStrategNameDB:
 0067E320  55                        PUSH EBP
 0067E321  8B EC                     MOV EBP,ESP
 0067E323  81 EC 84 00 00 00         SUB ESP,0x84

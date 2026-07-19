@@ -1,7 +1,12 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\support.cpp
+   Diagnostic line evidence: 58 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __cdecl
-FUN_00540620(int param_1,int param_2,int param_3,int param_4,uint param_5,byte *param_6,char param_7
-            ,BITMAPINFO *param_8)
+PutDDXClip(int param_1,int param_2,int param_3,int param_4,uint param_5,byte *param_6,char param_7,
+          BITMAPINFO *param_8)
 
 {
   code *pcVar1;

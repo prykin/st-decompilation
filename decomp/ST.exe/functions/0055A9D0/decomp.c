@@ -29,14 +29,14 @@ VisibleClassTy::VisHoleCreate
   uint local_8;
   
   local_8 = 0xffffffff;
-  if ((*(int *)(this + 0x114) != 0) && (-1 < (int)param_5)) {
+  if ((this->field_0114 != 0) && (-1 < (int)param_5)) {
     local_6c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_6c;
     local_c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
     if (iVar3 == 0) {
-      puVar1 = *(uint **)(local_c + 0xf4);
+      puVar1 = (uint *)local_c->field_00F4;
       if (puVar1 != (uint *)0x0) {
         piVar6 = local_28;
         for (iVar3 = 7; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -49,7 +49,7 @@ VisibleClassTy::VisHoleCreate
         local_20 = param_3;
         local_10 = param_6;
         local_1c = param_5;
-        local_14 = *(undefined4 *)(this_00 + 0x108);
+        local_14 = this_00->field_0108;
         local_8 = Library::DKW::TBL::FUN_006ae1c0(puVar1,local_28);
         thunk_FUN_00558dc0(this_00,local_28[0],local_28[1],local_20,local_18,local_1c,-6,0xffffffff)
         ;

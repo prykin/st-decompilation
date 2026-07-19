@@ -1,5 +1,10 @@
 
-void __cdecl FUN_0071ac40(int param_1,int param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfsarr.cpp
+   Diagnostic line evidence: 89 | 91 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl tSArrCat(int param_1,int param_2)
 
 {
   code *pcVar1;

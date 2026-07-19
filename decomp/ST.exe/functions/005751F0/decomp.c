@@ -1,5 +1,10 @@
 
-void __cdecl FUN_005751f0(short *param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\tinittxt.cpp
+   Diagnostic line evidence: 352 | 379 | 380 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl LandInit(short *param_1)
 
 {
   short sVar1;

@@ -30,25 +30,25 @@ undefined4 * __thiscall ccFntTy::Save(ccFntTy *this,undefined4 *param_1)
         puVar4 = puVar4 + 1;
       }
     }
-    *param_1 = *(undefined4 *)(local_8 + 0x44);
-    param_1[1] = *(undefined4 *)(local_8 + 0x48);
-    param_1[2] = *(undefined4 *)(local_8 + 0x4c);
-    param_1[3] = *(undefined4 *)(local_8 + 0x50);
-    param_1[4] = *(undefined4 *)(local_8 + 0x54);
-    param_1[5] = *(undefined4 *)(local_8 + 0x58);
-    param_1[6] = *(undefined4 *)(local_8 + 0x5c);
-    param_1[7] = *(undefined4 *)(local_8 + 0x60);
-    param_1[8] = *(undefined4 *)(local_8 + 100);
-    param_1[9] = *(undefined4 *)(local_8 + 0x68);
-    param_1[10] = *(undefined4 *)(local_8 + 0x6c);
-    *(undefined2 *)(param_1 + 0xb) = *(undefined2 *)(local_8 + 0x70);
-    *(undefined4 *)((int)param_1 + 0x2e) = *(undefined4 *)(local_8 + 0x72);
-    *(undefined4 *)((int)param_1 + 0x32) = *(undefined4 *)(local_8 + 0x76);
-    *(undefined4 *)((int)param_1 + 0x36) = *(undefined4 *)(local_8 + 0x7a);
-    *(undefined4 *)((int)param_1 + 0x3a) = *(undefined4 *)(local_8 + 0x7e);
-    *(undefined2 *)((int)param_1 + 0x3e) = *(undefined2 *)(local_8 + 0x9e);
-    param_1[0x10] = *(undefined4 *)(local_8 + 0x82);
-    param_1[0x11] = *(undefined4 *)(local_8 + 0x96);
+    *param_1 = local_8->field_0044;
+    param_1[1] = local_8->field_0048;
+    param_1[2] = local_8->field_004C;
+    param_1[3] = local_8->field_0050;
+    param_1[4] = local_8->field_0054;
+    param_1[5] = local_8->field_0058;
+    param_1[6] = local_8->field_005C;
+    param_1[7] = local_8->field_0060;
+    param_1[8] = local_8->field_0064;
+    param_1[9] = local_8->field_0068;
+    param_1[10] = local_8->field_006C;
+    *(undefined2 *)(param_1 + 0xb) = local_8->field_0070;
+    *(undefined4 *)((int)param_1 + 0x2e) = local_8->field_0072;
+    *(undefined4 *)((int)param_1 + 0x32) = local_8->field_0076;
+    *(undefined4 *)((int)param_1 + 0x36) = local_8->field_007A;
+    *(undefined4 *)((int)param_1 + 0x3a) = local_8->field_007E;
+    *(undefined2 *)((int)param_1 + 0x3e) = *(undefined2 *)&local_8->field_0x9e;
+    param_1[0x10] = local_8->field_0082;
+    param_1[0x11] = local_8->field_0096;
     g_currentExceptionFrame = local_4c.previous;
     return param_1;
   }

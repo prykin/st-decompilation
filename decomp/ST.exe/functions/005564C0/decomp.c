@@ -39,7 +39,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
     RaiseInternalException(errorCode,0,s_E____titans_grig_traks_cpp_007c9104,0x152);
     return 0xffff;
   }
-  *(undefined4 *)(local_14 + 0x20) = DAT_00802a38->field_00E4;
+  local_14->field_0020 = DAT_00802a38->field_00E4;
   FUN_006e5fd0();
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {
@@ -57,12 +57,12 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
     if (uVar1 == 2) {
       local_8 = (ushort *)0x0;
       if (DAT_00806754 != (cMf32 *)0x0) {
-        local_8 = FUN_006f2d90(DAT_00806754,PTR_s_TRACKS_0079aebc,0,0);
+        local_8 = mfAObjLoad(DAT_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
         puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
-        *(uint **)(this_00 + 0x24) = puVar3;
-        *(int *)(this_00 + 0x1c) = DAT_00808754 * 0x7d;
+        this_00->field_0024 = puVar3;
+        this_00->field_001C = DAT_00808754 * 0x7d;
       }
       else {
         PrepareAfterSave(this_00,(int)local_8);

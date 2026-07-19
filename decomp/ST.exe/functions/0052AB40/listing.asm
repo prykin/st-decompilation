@@ -1,4 +1,4 @@
-FUN_0052ab40:
+CreateMiniMap:
 0052AB40  55                        PUSH EBP
 0052AB41  8B EC                     MOV EBP,ESP
 0052AB43  83 EC 64                  SUB ESP,0x64

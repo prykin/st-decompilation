@@ -1,4 +1,4 @@
-FUN_0071ae80:
+ReadAllFile:
 0071AE80  55                        PUSH EBP
 0071AE81  8B EC                     MOV EBP,ESP
 0071AE83  83 EC 50                  SUB ESP,0x50

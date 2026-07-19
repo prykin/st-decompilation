@@ -32,7 +32,7 @@ undefined4 * __thiscall STBoatC::STBoatC(STBoatC *this,undefined4 *param_1)
   this->field_045D = 0;
   this->field_0461 = 0;
   this->field_0465 = 0;
-  puVar2 = (undefined4 *)&this->field_0x469;
+  puVar2 = (undefined4 *)&this->field_0469;
   for (iVar1 = 9; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
@@ -130,7 +130,7 @@ undefined4 * __thiscall STBoatC::STBoatC(STBoatC *this,undefined4 *param_1)
   this->field_06EB = 0;
   this->field_06EF = 0;
   this->field_045D = 3;
-  puVar2 = (undefined4 *)&this->field_0x6f3;
+  puVar2 = &this->field_06F3;
   for (iVar1 = 0x5a; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;

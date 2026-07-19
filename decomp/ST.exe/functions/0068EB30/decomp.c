@@ -31,13 +31,13 @@ int __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,undefined4 *para
       uVar5 = thunk_FUN_0068e220(local_8,*(short *)(param_1 + 3));
     }
     param_1[0xc] = uVar5;
-    sVar1 = *(short *)&pAVar3->field_0x7c;
+    sVar1 = pAVar3->field_007C;
     param_1[0xd] = 0xffffffff;
     *(short *)((int)param_1 + 6) =
          *(short *)((int)param_1 + 6) + (param_2 + (sVar1 + 1) * 0x14) * 0x32;
     *(undefined4 *)((int)param_1 + 0x3a) = pAVar3->field_012C;
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)&pAVar3->field_0xbd,param_1);
-    thunk_FUN_00676c40(*(int *)&pAVar3->field_0xbd,&LAB_0040242d);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar3->field_00BD,param_1);
+    thunk_FUN_00676c40(pAVar3->field_00BD,&LAB_0040242d);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

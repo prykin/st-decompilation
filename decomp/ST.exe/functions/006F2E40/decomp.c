@@ -1,6 +1,11 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfaobj.cpp
+   Diagnostic line evidence: 55 | 63 | 69 | 71 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl
-FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,byte param_5)
+mfAObjEnum(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,byte param_5)
 
 {
   char cVar1;
@@ -67,7 +72,7 @@ FUN_006f2e40(cMf32 *param_1,char *param_2,undefined *param_3,undefined4 param_4,
   cMf32::ToBeg(param_1,FUN_006f2d10,&local_250);
   pcVar4 = (char *)cMf32::RecNameGetNext(param_1);
   while (pcVar4 != (char *)0x0) {
-    puVar5 = FUN_006f2d90(param_1,pcVar4,param_5,1);
+    puVar5 = mfAObjLoad(param_1,pcVar4,param_5,1);
     iVar3 = cMf32::RecGetOrigLen(param_1,0xc,pcVar4,(undefined1 *)0x0,1);
     iVar3 = (*(code *)param_3)(puVar5,iVar3,param_1,pcVar4,param_4);
     if (iVar3 != 0) {

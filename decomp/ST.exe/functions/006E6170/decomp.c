@@ -5,7 +5,12 @@
    Slots: 0x8
    Anchor: 006E5580 SystemClassTy::CreateObject
    Evidence: unique_named_method_in_slot_family; unique_owner_for_target;
-   signature_anchor=SystemClassTy::CreateObject */
+   signature_anchor=SystemClassTy::CreateObject
+   
+   [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Sapp.cpp
+   Diagnostic line evidence: 1283 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 int __thiscall
 SystemWithNamedObjClassTy::CreateObject

@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfcfnt.cpp
+   Diagnostic line evidence: 558 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 uint FUN_0070e030(int *param_1,uint param_2,int param_3)
 
 {

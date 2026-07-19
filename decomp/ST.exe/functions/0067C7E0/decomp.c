@@ -49,8 +49,7 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
     g_currentExceptionFrame = local_b0.previous;
     iVar8 = ReportDebugMessage(s_E____titans_ai_ai_plr_cpp_007d2e4c,0x655,0,iVar4,
                                s_AiPlrClassTy__GetMessage_error_m_007d2f48,
-                               *(undefined4 *)(param_1 + 0x10),*(undefined4 *)&local_10->field_0x18)
-    ;
+                               *(undefined4 *)(param_1 + 0x10),local_10->field_0018);
     if (iVar8 != 0) {
       pcVar3 = (code *)swi(3);
       uVar9 = (*pcVar3)();
@@ -137,11 +136,11 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
             *piVar7 = 0;
             piVar7 = piVar7 + 1;
           }
-          local_38[2] = (*(SystemClassTy **)&this_00->field_0xc)->systemId;
+          local_38[2] = this_00->field_000C->systemId;
           local_38[3] = 0;
-          local_24 = *(undefined4 *)&this_00->field_0x8;
+          local_24 = this_00->field_0008;
           local_38[4] = 10;
-          SystemClassTy::PostMessage(*(SystemClassTy **)&this_00->field_0xc,local_38);
+          SystemClassTy::PostMessage(this_00->field_000C,local_38);
         }
       }
       else if (uVar10 == 2) {

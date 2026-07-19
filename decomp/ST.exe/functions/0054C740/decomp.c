@@ -1,5 +1,10 @@
 
-void FUN_0054c740(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\tplaysys.cpp
+   Diagnostic line evidence: 125 | 176 | 177 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void CreatePlaySystem(void)
 
 {
   code *pcVar1;
@@ -46,7 +51,7 @@ void FUN_0054c740(void)
         local_8 = (SystemClassTyVTable *)CONCAT31(local_8._1_3_,bVar3);
       } while (bVar3 < 8);
     }
-    thunk_FUN_00648fe0();
+    CreateAi();
     if (DAT_00806754 != (cMf32 *)0x0) {
       local_c = &local_8;
       local_8 = (SystemClassTyVTable *)0x32;

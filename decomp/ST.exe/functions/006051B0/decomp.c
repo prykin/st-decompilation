@@ -15,10 +15,11 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   int iVar5;
   undefined4 uVar6;
   undefined4 *puVar7;
-  int iVar8;
+  STT3DSprC *pSVar8;
+  int iVar9;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  bool bVar9;
+  bool bVar10;
   InternalExceptionFrame local_68;
   undefined4 local_24;
   int local_20;
@@ -29,7 +30,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   int local_c;
   byte *local_8;
   
-  local_c = *(int *)(this + 0x1e9);
+  local_c = this->field_01E9;
   local_10 = (&PTR_s_expl_bm0_007ced98)[local_c];
   local_8 = (&PTR_s_expl_bt0_007ced70)[local_c];
   local_24 = 0;
@@ -40,9 +41,9 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
   pSVar4 = local_18;
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_68.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x38c,0,iVar5,&DAT_007a4ccc,
+    iVar9 = ReportDebugMessage(s_E____titans_nick_to_Expl_cpp_007cf630,0x38c,0,iVar5,&DAT_007a4ccc,
                                s_STExplosionC__LoadImagSpr_007cf6b0);
-    if (iVar8 == 0) {
+    if (iVar9 == 0) {
       RaiseInternalException(iVar5,0,s_E____titans_nick_to_Expl_cpp_007cf630,0x38e);
       return 0xffff;
     }
@@ -50,66 +51,63 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
     uVar6 = (*pcVar1)();
     return uVar6;
   }
-  if ((param_3 != '\0') && (*(STT3DSprC **)(local_18 + 0x2af) != (STT3DSprC *)0x0)) {
+  if ((param_3 != '\0') && (local_18->field_02AF != (STT3DSprC *)0x0)) {
     local_8 = (&PTR_s_expl_bbt0_007cedc0)[local_c];
-    iVar5 = STT3DSprC::LoadSequence(*(STT3DSprC **)(local_18 + 0x2af),0xf,DAT_00806774,local_8,0x1d)
-    ;
+    iVar5 = STT3DSprC::LoadSequence(local_18->field_02AF,0xf,DAT_00806774,local_8,0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
-    STT3DSprC::SetCurFase(*(STT3DSprC **)(pSVar4 + 0x2af),'\x0f',*(undefined4 *)(pSVar4 + 0x29f));
-    thunk_FUN_004ac610(*(void **)(pSVar4 + 0x2af),'\x0f');
-    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x2af),0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
-    uVar6 = thunk_FUN_004acd30(*(void **)(pSVar4 + 0x2af),'\x0f');
-    *(undefined4 *)(pSVar4 + 0x2a3) = uVar6;
+    STT3DSprC::SetCurFase(pSVar4->field_02AF,'\x0f',pSVar4->field_029F);
+    thunk_FUN_004ac610(pSVar4->field_02AF,'\x0f');
+    STT3DSprC::StartShow(pSVar4->field_02AF,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    uVar6 = thunk_FUN_004acd30(pSVar4->field_02AF,'\x0f');
+    pSVar4->field_02A3 = uVar6;
     g_currentExceptionFrame = local_68.previous;
     return local_24;
   }
-  if (*(int *)(local_18 + 0x2af) == 0) {
+  if (local_18->field_02AF == (STT3DSprC *)0x0) {
     puVar7 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
     if (puVar7 == (undefined4 *)0x0) {
-      uVar6 = 0;
+      pSVar8 = (STT3DSprC *)0x0;
     }
     else {
-      uVar6 = thunk_FUN_004ab810(puVar7);
+      pSVar8 = (STT3DSprC *)thunk_FUN_004ab810(puVar7);
     }
-    *(undefined4 *)(pSVar4 + 0x2af) = uVar6;
+    pSVar4->field_02AF = pSVar8;
   }
   if ((&DAT_007cede8)[local_c] == '\0') {
-    iVar5 = STT3DSprC::Init(*(STT3DSprC **)(pSVar4 + 0x2af),DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11)
-    ;
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x5a,0x45,0,0xb4,0x8c,0x11);
     if (iVar5 != 0) {
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_Expl_cpp_007cf630,0x36a);
       return 0xffff;
     }
   }
   else {
-    iVar5 = STT3DSprC::Init(*(STT3DSprC **)(pSVar4 + 0x2af),DAT_008073cc,0x78,0x56,0,0xf0,0xbe,0x11)
-    ;
+    iVar5 = STT3DSprC::Init(pSVar4->field_02AF,DAT_008073cc,0x78,0x56,0,0xf0,0xbe,0x11);
     if (iVar5 != 0) {
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_nick_to_Expl_cpp_007cf630,0x370);
       return 0xffff;
     }
-    FUN_006e9210(DAT_00807598,*(uint *)(*(int *)(pSVar4 + 0x2af) + 0x18));
+    FUN_006e9210(DAT_00807598,pSVar4->field_02AF->field_0018);
   }
-  iVar5 = STT3DSprC::LoadSequence(*(STT3DSprC **)(pSVar4 + 0x2af),0xd,DAT_00806774,local_8,0x1d);
+  iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xd,DAT_00806774,local_8,0x1d);
   if (iVar5 == 0) {
-    iVar5 = STT3DSprC::LoadSequence(*(STT3DSprC **)(pSVar4 + 0x2af),0xe,DAT_00806774,local_10,0x1d);
+    iVar5 = STT3DSprC::LoadSequence(pSVar4->field_02AF,0xe,DAT_00806774,local_10,0x1d);
     if (iVar5 != 0) {
       return 0xffff;
     }
-    STT3DSprC::SetCurFase(*(STT3DSprC **)(pSVar4 + 0x2af),'\r',*(undefined4 *)(pSVar4 + 0x296));
-    thunk_FUN_004ad3c0(*(void **)(pSVar4 + 0x2af),
-                       (float)*(int *)(pSVar4 + 0x28a) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)(pSVar4 + 0x28e) * _DAT_007904f8 * _DAT_007904f0,
-                       (float)*(int *)(pSVar4 + 0x292) * _DAT_007904f8 * _DAT_007904f0 +
+    STT3DSprC::SetCurFase(pSVar4->field_02AF,'\r',*(undefined4 *)&pSVar4->field_0x296);
+    thunk_FUN_004ad3c0(pSVar4->field_02AF,
+                       (float)*(int *)&pSVar4->field_0x28a * _DAT_007904f8 * _DAT_007904f0,
+                       (float)*(int *)&pSVar4->field_0x28e * _DAT_007904f8 * _DAT_007904f0,
+                       (float)*(int *)&pSVar4->field_0x292 * _DAT_007904f8 * _DAT_007904f0 +
                        _DAT_007904fc);
-    thunk_FUN_004ac610(*(void **)(pSVar4 + 0x2af),'\r');
-    STT3DSprC::StartShow(*(STT3DSprC **)(pSVar4 + 0x2af),0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
-    *(undefined4 *)(pSVar4 + 0x286) = 1;
+    thunk_FUN_004ac610(pSVar4->field_02AF,'\r');
+    STT3DSprC::StartShow(pSVar4->field_02AF,0xd,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    *(undefined4 *)&pSVar4->field_0x286 = 1;
     pvVar3 = DAT_00802a88;
     if (DAT_00802a88 != (void *)0x0) {
-      iVar5 = *(int *)(pSVar4 + 0x292);
+      iVar5 = *(int *)&pSVar4->field_0x292;
       sVar2 = (short)(iVar5 >> 0x1f);
       if (iVar5 < 0) {
         local_14 = (short)(((short)(iVar5 / 200) + sVar2) -
@@ -119,7 +117,7 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         local_14 = (int)(short)(((short)(iVar5 / 200) + sVar2) -
                                (short)((longlong)iVar5 * 0x51eb851f >> 0x3f));
       }
-      iVar5 = *(int *)(pSVar4 + 0x28e);
+      iVar5 = *(int *)&pSVar4->field_0x28e;
       sVar2 = (short)(iVar5 >> 0x1f);
       if (iVar5 < 0) {
         iVar5 = (short)(((short)(iVar5 / 0xc9) + sVar2) -
@@ -129,42 +127,42 @@ STExplosionC::LoadImagSpr(STExplosionC *this,undefined4 param_1,undefined4 param
         iVar5 = (int)(short)(((short)(iVar5 / 0xc9) + sVar2) -
                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
       }
-      iVar8 = *(int *)(pSVar4 + 0x28a);
-      sVar2 = (short)(iVar8 >> 0x1f);
-      if (iVar8 < 0) {
-        iVar8 = (short)(((short)(iVar8 / 0xc9) + sVar2) -
-                       (short)((longlong)iVar8 * 0x28c1979 >> 0x3f)) + -1;
+      iVar9 = *(int *)&pSVar4->field_0x28a;
+      sVar2 = (short)(iVar9 >> 0x1f);
+      if (iVar9 < 0) {
+        iVar9 = (short)(((short)(iVar9 / 0xc9) + sVar2) -
+                       (short)((longlong)iVar9 * 0x28c1979 >> 0x3f)) + -1;
       }
       else {
-        iVar8 = (int)(short)(((short)(iVar8 / 0xc9) + sVar2) -
-                            (short)((longlong)iVar8 * 0x28c1979 >> 0x3f));
+        iVar9 = (int)(short)(((short)(iVar9 / 0xc9) + sVar2) -
+                            (short)((longlong)iVar9 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
           (thunk_FUN_00558c00(DAT_00802a88,
-                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar8,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar9,
                               iVar5,&local_1c,&local_20), local_14 < 0)) || (4 < local_14)) {
-        bVar9 = true;
+        bVar10 = true;
       }
       else {
         if (((local_1c < 0) || (*(int *)((int)pvVar3 + 0x30) <= local_1c)) ||
            (((&DAT_0079aed0)[local_14] + local_20 < 0 ||
             (*(int *)((int)pvVar3 + 0x34) <= (&DAT_0079aed0)[local_14] + local_20)))) {
-          bVar9 = false;
+          bVar10 = false;
         }
         else {
-          bVar9 = true;
+          bVar10 = true;
         }
-        if ((bVar9) && (*(int *)((int)pvVar3 + 0x4c) != 0)) {
-          bVar9 = *(char *)(((&DAT_0079aed0)[local_14] + local_20) * *(int *)((int)pvVar3 + 0x30) +
-                            *(int *)((int)pvVar3 + 0x4c) + local_1c) != '\0';
+        if ((bVar10) && (*(int *)((int)pvVar3 + 0x4c) != 0)) {
+          bVar10 = *(char *)(((&DAT_0079aed0)[local_14] + local_20) * *(int *)((int)pvVar3 + 0x30) +
+                             *(int *)((int)pvVar3 + 0x4c) + local_1c) != '\0';
         }
         else {
-          bVar9 = true;
+          bVar10 = true;
         }
       }
-      if (!bVar9) {
-        thunk_FUN_004ad430(*(int *)(pSVar4 + 0x2af));
-        *(undefined4 *)(pSVar4 + 0x286) = 0;
+      if (!bVar10) {
+        thunk_FUN_004ad430((int)pSVar4->field_02AF);
+        *(undefined4 *)&pSVar4->field_0x286 = 0;
       }
       g_currentExceptionFrame = local_68.previous;
       return local_24;

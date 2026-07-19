@@ -32,24 +32,23 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar5 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
-        uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
-        DAT_00802a30[0xb].field_0x47 = 1;
-        *(undefined2 *)&this_00[0xb].field_0x48 = 0xffff;
+        uVar5 = DAT_00802a30->field_00C9;
+        uVar2 = DAT_00802a30->field_00C5;
+        DAT_00802a30->field_0493 = 1;
+        this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar5);
-        CursorClassTy::DrawSprite
-                  (this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
-        this_00[2].field_0xa = 0;
-        *(undefined4 *)&this_00[0xc].field_0x2f = 0xffffffff;
+        CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
+        this_00->field_0xd2 = 0;
+        *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
       }
       this_01 = local_c;
-      *(undefined4 *)(*(int *)&local_c->field_0x1eaa + 0xc) = 0;
+      *(undefined4 *)(local_c->field_1EAA + 0xc) = 0;
       for (; param_1 != 0; param_1 = param_1 + -1) {
-        Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_01->field_0x1eaa,param_2);
+        Library::DKW::TBL::FUN_006ae1c0((uint *)this_01->field_1EAA,param_2);
         param_2 = param_2 + 0x1a;
       }
       do {
-        iVar4 = *(int *)&this_01->field_0x1eaa;
+        iVar4 = this_01->field_1EAA;
         local_8 = 0;
         uVar7 = *(uint *)(iVar4 + 0xc);
         uVar8 = 0;
@@ -70,34 +69,30 @@ void __thiscall FSGSTy::SetChannelList(FSGSTy *this,int param_1,undefined4 *para
             }
             iVar4 = Library::MSVCRT::__strcmpi(_Str1,_Str2);
             if (0 < iVar4) {
-              FUN_006b0cd0(*(int *)&this_01->field_0x1eaa,uVar8,uVar1);
+              FUN_006b0cd0(this_01->field_1EAA,uVar8,uVar1);
               local_8 = 1;
             }
-            iVar4 = *(int *)&this_01->field_0x1eaa;
+            iVar4 = this_01->field_1EAA;
             uVar7 = *(uint *)(iVar4 + 0xc);
             uVar8 = uVar1;
           } while (uVar1 < uVar7 - 1);
         }
       } while (local_8 != 0);
       FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
-      thunk_FUN_00540620(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',
-                         *(BITMAPINFO **)&this_01->field_0x1e9a);
-      *(undefined4 *)&this_01->field_0x2d = 0x28;
-      *(undefined4 *)&this_01->field_0x31 = *(undefined4 *)(*(int *)&this_01->field_0x1eaa + 0xc);
+      PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',(BITMAPINFO *)this_01->field_1E9A);
+      this_01->field_002D = 0x28;
+      *(undefined4 *)&this_01->field_0x31 = *(undefined4 *)(this_01->field_1EAA + 0xc);
       *(undefined2 *)&this_01->field_0x35 = 1;
-      FUN_006e6080(this_01,2,*(undefined4 *)&this_01->field_0x1b20,
-                   (undefined4 *)&this_01->field_0x1d);
-      *(undefined4 *)&this_01->field_0x2d = 0x20;
-      if ((*(int *)(*(int *)&this_01->field_0x1eaa + 0xc) == 0) ||
-         (*(int *)&this_01->field_0x1a6b == 0)) {
+      FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
+      this_01->field_002D = 0x20;
+      if ((*(int *)(this_01->field_1EAA + 0xc) == 0) || (this_01->field_1A6B == 0)) {
         uVar5 = 0;
       }
       else {
         uVar5 = 1;
       }
       *(undefined4 *)&this_01->field_0x31 = uVar5;
-      FUN_006e6080(this_01,2,*(undefined4 *)&this_01->field_0x1b20,
-                   (undefined4 *)&this_01->field_0x1d);
+      FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

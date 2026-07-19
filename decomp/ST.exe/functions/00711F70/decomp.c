@@ -44,7 +44,7 @@ ccFntTy::WrSarr(ccFntTy *this,int param_1,int param_2,int param_3,int param_4,in
         iVar4 = ReportDebugMessage(s_E__Ourlib_mfcfnt_cpp_007f0190,0x752,0,iVar2,&DAT_007a4ccc,
                                    s_ccFntTy__WrSarr_007f02c8);
         if (iVar4 == 0) {
-          *(undefined4 *)(local_18 + 0x4c) = 1;
+          local_18->field_004C = 1;
           RaiseInternalException(iVar2,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x756);
           return iVar2;
         }
@@ -55,23 +55,23 @@ ccFntTy::WrSarr(ccFntTy *this,int param_1,int param_2,int param_3,int param_4,in
       local_c = FUN_00711670(local_18,param_1,param_2,param_3);
       iVar2 = FUN_007115e0(this_00,param_1,param_2,param_3);
       if ((((param_4 < 0) && (param_4 != -3)) && (param_4 != -2)) &&
-         (*(int *)(this_00 + 0x68) < local_c)) {
+         ((int)this_00->field_0068 < local_c)) {
         param_4 = 0;
       }
-      if ((param_5 < 0) && (*(int *)(this_00 + 0x6c) < iVar2)) {
+      if ((param_5 < 0) && ((int)this_00->field_006C < iVar2)) {
         param_5 = 0;
       }
       local_14 = param_4;
       if (((param_4 < 0) && (param_4 != -3)) && ((param_4 != -2 && (param_4 != -4)))) {
-        local_14 = (*(int *)(this_00 + 0x68) - local_c) / 2;
+        local_14 = (this_00->field_0068 - local_c) / 2;
       }
       if (param_5 < 0) {
-        param_5 = (*(int *)(this_00 + 0x6c) - iVar2) / 2;
+        param_5 = (this_00->field_006C - iVar2) / 2;
       }
       iVar2 = 0;
-      *(undefined4 *)(this_00 + 0x44) = param_6;
-      *(undefined4 *)(this_00 + 0x48) = param_6;
-      *(undefined4 *)(this_00 + 0x4c) = 0;
+      this_00->field_0044 = param_6;
+      this_00->field_0048 = param_6;
+      this_00->field_004C = 0;
       local_1c = param_3 + param_2;
       local_10 = param_2;
       local_8 = param_5;
@@ -84,28 +84,28 @@ ccFntTy::WrSarr(ccFntTy *this,int param_1,int param_2,int param_3,int param_4,in
             puVar5 = (uint *)0x0;
           }
           if (param_4 == -4) {
-            uVar6 = *(undefined4 *)(this_00 + 0x44);
+            uVar6 = this_00->field_0044;
             iVar3 = local_8 + iVar2;
             iVar4 = FUN_00711110(this_00,puVar5);
-            iVar4 = (*(int *)(this_00 + 0x68) + local_c) / 2 - iVar4;
+            iVar4 = (this_00->field_0068 + local_c) / 2 - iVar4;
           }
           else if (param_4 == -2) {
-            uVar6 = *(undefined4 *)(this_00 + 0x44);
+            uVar6 = this_00->field_0044;
             iVar3 = local_8 + iVar2;
             iVar4 = -1;
           }
           else {
-            uVar6 = *(undefined4 *)(this_00 + 0x44);
+            uVar6 = this_00->field_0044;
             iVar3 = local_8 + iVar2;
             iVar4 = local_14;
           }
           WrStr(this_00,puVar5,iVar4,iVar3,uVar6);
           iVar4 = FUN_007111c0(this_00,puVar5);
-          iVar2 = iVar2 + iVar4 + *(int *)(this_00 + 0x5c);
+          iVar2 = iVar2 + iVar4 + this_00->field_005C;
           local_10 = local_10 + 1;
         } while (local_10 < local_1c);
       }
-      *(undefined4 *)(this_00 + 0x4c) = 1;
+      this_00->field_004C = 1;
       g_currentExceptionFrame = local_60.previous;
     }
   }

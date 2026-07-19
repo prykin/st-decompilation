@@ -1,4 +1,10 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_embryo.cpp
+   Diagnostic line evidence: 606 | 623 | 627 | 641 | 649 | 719 | 721 | 725 | 820 | 826 | 834
+   (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __fastcall FUN_004d32c0(int *param_1)
 
 {
@@ -37,7 +43,7 @@ undefined4 __fastcall FUN_004d32c0(int *param_1)
   iVar10 = 0;
   if (param_1[0xa8] == 0) {
     pSVar12 = (STT3DSprC *)param_1[0xd7];
-    if ((*(uint *)&pSVar12->field_0x1c & 0x4000) != 0) {
+    if ((pSVar12->field_001C & 0x4000) != 0) {
       iVar4 = *(int *)(pSVar12->field_0020 + 0x210);
       if (iVar4 == 0x15) {
         if (((*(uint *)((int)param_1 + 0x1f1) & 0x4000) == 0) && (param_1[0xbb] == 2)) {

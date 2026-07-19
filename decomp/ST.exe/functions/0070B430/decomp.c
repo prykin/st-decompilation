@@ -1,5 +1,10 @@
 
-short * __cdecl FUN_0070b430(cMf32 *param_1,char *param_2,byte param_3,byte param_4,int param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 642 | 647 | 651 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+short * __cdecl mfQmtLoad(cMf32 *param_1,char *param_2,byte param_3,byte param_4,int param_5)
 
 {
   code *pcVar1;
@@ -43,8 +48,7 @@ short * __cdecl FUN_0070b430(cMf32 *param_1,char *param_2,byte param_3,byte para
     *(byte *)(local_8 + 4) = param_3;
     *(undefined2 *)((int)local_8 + 9) = local_14;
     *(undefined2 *)((int)local_8 + 0xb) = local_12;
-    puVar4 = FUN_0070a5a0(*(undefined4 *)(local_8 + 1),*(byte *)(local_8 + 4),param_2,param_4,
-                          param_5);
+    puVar4 = mfImgLoad(*(undefined4 *)(local_8 + 1),*(byte *)(local_8 + 4),param_2,param_4,param_5);
     iVar2 = 0;
     *(ushort **)((int)local_8 + 0xd) = puVar4;
     piVar7 = *(int **)((int)local_8 + 0xd);

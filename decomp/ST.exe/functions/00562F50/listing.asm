@@ -1,4 +1,4 @@
-FUN_00562f50:
+AiAiCalcMinesFields:
 00562F50  55                        PUSH EBP
 00562F51  8B EC                     MOV EBP,ESP
 00562F53  6A FF                     PUSH -0x1

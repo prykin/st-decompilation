@@ -1,5 +1,10 @@
 
-void __cdecl FUN_00540760(undefined4 *param_1,int param_2,int param_3,char param_4,byte *param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\support.cpp
+   Diagnostic line evidence: 79 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl DibPut(undefined4 *param_1,int param_2,int param_3,char param_4,byte *param_5)
 
 {
   code *pcVar1;

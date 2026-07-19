@@ -16,7 +16,7 @@ void FUN_005c2760(void)
   if ((DAT_0081175c != 0) && (99 < DVar2 - DAT_00811754)) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pBVar3 = (BITMAPINFO *)FUN_0070b3a0(DAT_0081175c,(int)*(short *)(DAT_0081175c + 0x29));
-    thunk_FUN_005403c0(0x15,0x14,'\x06',pBVar3);
+    PutDDX(0x15,0x14,'\x06',pBVar3);
     Library::DKW::DDX::FUN_006bb370(DAT_0080759c,0,0);
     *(short *)(DAT_0081175c + 0x29) = *(short *)(DAT_0081175c + 0x29) + 1;
     if (*(short *)(DAT_0081175c + 0x23) <= *(short *)(DAT_0081175c + 0x29)) {

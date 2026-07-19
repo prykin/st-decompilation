@@ -1,4 +1,4 @@
-FUN_00726630:
+mfUSprLoad:
 00726630  55                        PUSH EBP
 00726631  8B EC                     MOV EBP,ESP
 00726633  83 EC 58                  SUB ESP,0x58

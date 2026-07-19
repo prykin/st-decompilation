@@ -71,16 +71,15 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  *(undefined4 *)&local_30->field_0x65 = 0;
-  iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)&local_30->field_0x178,(int *)&local_8);
+  local_30->field_0065 = 0;
+  iVar3 = FUN_006e62d0(DAT_00802a38,local_30->field_0178,(int *)&local_8);
   if (iVar3 == -4) {
     return 0;
   }
-  thunk_FUN_004162f0(local_8,(undefined2 *)&pSVar2->field_02A3,
-                     (undefined2 *)((int)&pSVar2->field_02A3 + 2),(undefined2 *)&pSVar2->field_02A7)
-  ;
+  thunk_FUN_004162f0(local_8,(undefined2 *)&pSVar2->field_0x2a3,&pSVar2->field_02A5,
+                     (undefined2 *)&pSVar2->field_0x2a7);
   local_20 = 0;
-  *(undefined4 *)((int)&pSVar2->field_02A7 + 2) = local_8->field_0018;
+  *(undefined4 *)&pSVar2->field_0x2a9 = local_8->field_0018;
   local_40 = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
   pSVar9 = local_8;
   puVar5 = local_24;
@@ -108,10 +107,10 @@ undefined4 __thiscall STGroupBoatC::GrpLoadObj(STGroupBoatC *this,int param_1)
               STBoatC::CmdToObj(local_8,CASE_3,&local_1c);
               goto LAB_0049e1aa;
             }
-            local_3c = *(undefined2 *)&pSVar2->field_02A3;
-            local_3a = *(undefined2 *)((int)&pSVar2->field_02A3 + 2);
-            local_38 = *(undefined2 *)&pSVar2->field_02A7;
-            local_36 = *(undefined4 *)((int)&pSVar2->field_02A7 + 2);
+            local_3c = *(undefined2 *)&pSVar2->field_0x2a3;
+            local_3a = pSVar2->field_02A5;
+            local_38 = *(undefined2 *)&pSVar2->field_0x2a7;
+            local_36 = *(undefined4 *)&pSVar2->field_0x2a9;
             STBoatC::CmdToObj(local_8,CASE_F,&local_40);
             puVar4 = local_14;
             if (local_14 == (uint *)0x0) {
@@ -199,7 +198,7 @@ LAB_0049e26d:
               (iVar3 == 0x1b)))) {
             local_28 = 1;
             iVar3 = thunk_FUN_00492370((int)local_8);
-            if (iVar3 == *(int *)((int)&pSVar2->field_02A7 + 2)) {
+            if (iVar3 == *(int *)&pSVar2->field_0x2a9) {
               local_18 = 0;
               RaiseInternalException
                         (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xa95);

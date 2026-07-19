@@ -1,5 +1,10 @@
 
-void FUN_00542d80(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\tintersys.cpp
+   Diagnostic line evidence: 202 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void CreateInterSystem(void)
 
 {
   code *pcVar1;

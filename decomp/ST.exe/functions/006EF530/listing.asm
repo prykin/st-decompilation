@@ -1,4 +1,4 @@
-FUN_006ef530:
+_mfTMapSetMeshParam:
 006EF530  55                        PUSH EBP
 006EF531  8B EC                     MOV EBP,ESP
 006EF533  83 EC 44                  SUB ESP,0x44

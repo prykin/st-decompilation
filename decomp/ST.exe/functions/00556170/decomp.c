@@ -33,17 +33,17 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar2 = local_c;
   if (iVar3 == 0) {
-    *(undefined4 *)(local_c + 0x1c) = *(undefined4 *)(param_1 + 0x18);
+    local_c->field_001C = *(undefined4 *)(param_1 + 0x18);
     if (*(char *)(param_1 + 0x1c) == '\0') {
       puVar6 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);
-      *(uint **)(pTVar2 + 0x24) = puVar6;
+      pTVar2->field_0024 = puVar6;
     }
     else {
       iVar3 = FUN_006b0060((uint *)0x0,(uint *)(param_1 + 0x5c));
-      *(int *)(pTVar2 + 0x24) = iVar3;
+      pTVar2->field_0024 = iVar3;
       *(undefined4 *)(iVar3 + 4) = 0;
       while( true ) {
-        iVar3 = *(int *)(pTVar2 + 0x24);
+        iVar3 = pTVar2->field_0024;
         uVar9 = *(uint *)(iVar3 + 4);
         if (uVar9 < *(uint *)(iVar3 + 0xc)) {
           psVar7 = (short *)(*(int *)(iVar3 + 8) * uVar9 + *(int *)(iVar3 + 0x1c));
@@ -63,7 +63,7 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,int param_1)
         bVar10 = 0;
         uVar9 = 0xffffffff;
         pbVar4 = thunk_FUN_00555840((int)*psVar7);
-        puVar5 = FUN_00709af0(piVar8,CASE_1D,pbVar4,uVar9,bVar10,iVar3,iVar11,puVar12);
+        puVar5 = mfRLoad(piVar8,CASE_1D,pbVar4,uVar9,bVar10,iVar3,iVar11,puVar12);
         psVar7[0x1b] = *puVar5;
         iVar3 = *psVar7 * 0x18;
         FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),
@@ -90,7 +90,7 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,int param_1)
                      (float)(int)psVar7[2] * _DAT_007904f8 * _DAT_007904f0,
                      (float)(int)psVar7[3] * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
         FUN_006eaaa0(DAT_00807598,*(uint *)(psVar7 + 0x19),0);
-        *(undefined4 *)(psVar7 + 0x12) = *(undefined4 *)(pTVar2 + 0x20);
+        *(undefined4 *)(psVar7 + 0x12) = pTVar2->field_0020;
       }
     }
     g_currentExceptionFrame = local_54.previous;

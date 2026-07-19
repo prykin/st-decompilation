@@ -23,19 +23,18 @@ void __thiscall ResearchPanelTy::Update(ResearchPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (errorCode == 0) {
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,6,(int *)&local_8[1].field_0x1);
-    if (*(int *)(&this_00[1].field_0x1 + (uint)*(byte *)(this_00 + 1) * 4) == 0) {
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,6,&local_8->field_027A);
+    if ((&this_00->field_027A)[(byte)this_00->field_0279] == 0) {
       uVar4 = 0;
     }
     else {
-      uVar4 = *(uint *)(*(int *)(&this_00[1].field_0x1 + (uint)*(byte *)(this_00 + 1) * 4) + 0xc);
+      uVar4 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0279] + 0xc);
     }
-    if (*(int *)(&this_00[1].field_0x1 + (uint)(byte)this_00->field_0278 * 4) == 0) {
+    if ((&this_00->field_027A)[(byte)this_00->field_0278] == 0) {
       uVar2 = 0;
     }
     else {
-      uVar2 = *(uint *)(*(int *)(&this_00[1].field_0x1 + (uint)(byte)this_00->field_0278 * 4) + 0xc)
-      ;
+      uVar2 = *(uint *)((&this_00->field_027A)[(byte)this_00->field_0278] + 0xc);
     }
     thunk_FUN_0053f510(this_00,uVar2,uVar4);
     thunk_FUN_0053c620(this_00);

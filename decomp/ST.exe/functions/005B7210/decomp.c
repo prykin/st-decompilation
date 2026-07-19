@@ -22,14 +22,14 @@ void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    if (*(uint *)&local_8[1].field_0x51 != 0xffffffff) {
+    if (local_8->field_1CFB != 0xffffffff) {
       Library::DKW::DDX::FUN_006b34d0
-                (*(uint **)&local_8[1].field_0x95,*(uint *)&local_8[1].field_0x51,0xfffffffe,
-                 *(uint *)&local_8[1].field_0x69,*(uint *)&local_8[1].field_0x6d);
+                ((uint *)local_8->field_1D3F,local_8->field_1CFB,0xfffffffe,local_8->field_1D13,
+                 local_8->field_1D17);
     }
     iVar3 = 0;
-    if (pMVar2->field_0x9a != '\0') {
-      puVar5 = (uint *)&pMVar2->field_0xe7;
+    if (pMVar2->field_009A != '\0') {
+      puVar5 = &pMVar2->field_00E7;
       do {
         if (*puVar5 != 0xffffffff) {
           Library::DKW::DDX::FUN_006b34d0
@@ -37,7 +37,7 @@ void __thiscall MMsgTy::ShowSprites(MMsgTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar5 = (uint *)((int)puVar5 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pMVar2->field_0x9a);
+      } while (iVar3 < (int)(uint)(byte)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

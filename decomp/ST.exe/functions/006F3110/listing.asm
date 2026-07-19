@@ -1,4 +1,4 @@
-FUN_006f3110:
+mfAObjSave:
 006F3110  55                        PUSH EBP
 006F3111  8B EC                     MOV EBP,ESP
 006F3113  83 EC 50                  SUB ESP,0x50

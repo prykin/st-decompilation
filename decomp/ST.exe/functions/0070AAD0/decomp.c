@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_0070aad0(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 283 | 289 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl mfGifLoadToDib(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

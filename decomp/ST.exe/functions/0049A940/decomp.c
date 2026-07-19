@@ -38,7 +38,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
         puVar7 = puVar7 + 1;
       }
       uVar8 = 0;
-      *(undefined4 *)&local_14->field_0x65 = 0;
+      local_14->field_0065 = 0;
       local_8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
       if (local_10 != 0) {
         uVar6 = 0;

@@ -135,7 +135,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
             if (*(int *)&this->field_0x7a2 < 1) break;
             puVar6 = (undefined4 *)
                      thunk_FUN_0041dc40(local_3c,*(undefined4 *)(puVar12 + -1),puVar12[1],
-                                        *(short *)&this->field_0x6c);
+                                        this->field_006C);
             uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
             local_56 = this->field_0041 + (short)*puVar6;
             local_54 = this->field_0043 - uStack_32;
@@ -143,8 +143,7 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
             uStack_32 = *puVar12;
             local_34 = 0;
             puVar6 = (undefined4 *)
-                     thunk_FUN_0041dc40(local_2c,(uint)uStack_32 << 0x10,0,
-                                        *(short *)&this->field_0x6c);
+                     thunk_FUN_0041dc40(local_2c,(uint)uStack_32 << 0x10,0,this->field_006C);
             local_34 = (short)*puVar6;
             uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
             local_30 = *(undefined2 *)(puVar6 + 1);
@@ -159,12 +158,12 @@ int __thiscall STBoatC::Guard(STBoatC *this,int param_1)
             else {
               local_60 = this->field_079A;
             }
-            local_4a = *(undefined2 *)&this->field_0x6c;
+            local_4a = this->field_006C;
             local_48 = this->field_0018;
             local_44 = this->field_0032;
             thunk_FUN_00645880(&local_64);
             if (iVar8 == 10) {
-              *(undefined4 *)&this->field_0x72a = 0;
+              this->field_072A = 0;
             }
             else {
               this->field_07AA = 0;
@@ -285,7 +284,7 @@ LAB_00472a3a:
               if (*(int *)&this->field_0x7a2 < 1) break;
               puVar6 = (undefined4 *)
                        thunk_FUN_0041dc40(local_3c,*(undefined4 *)(puVar12 + -1),puVar12[1],
-                                          *(short *)&this->field_0x6c);
+                                          this->field_006C);
               uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
               local_56 = this->field_0041 + (short)*puVar6;
               local_54 = this->field_0043 - uStack_32;
@@ -293,8 +292,7 @@ LAB_00472a3a:
               uStack_32 = *puVar12;
               local_34 = 0;
               puVar6 = (undefined4 *)
-                       thunk_FUN_0041dc40(local_2c,(uint)uStack_32 << 0x10,0,
-                                          *(short *)&this->field_0x6c);
+                       thunk_FUN_0041dc40(local_2c,(uint)uStack_32 << 0x10,0,this->field_006C);
               local_34 = (short)*puVar6;
               uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
               local_30 = *(undefined2 *)(puVar6 + 1);
@@ -309,12 +307,12 @@ LAB_00472a3a:
               else {
                 local_60 = this->field_079A;
               }
-              local_4a = *(undefined2 *)&this->field_0x6c;
+              local_4a = this->field_006C;
               local_48 = this->field_0018;
               local_44 = this->field_0032;
               thunk_FUN_00645880(&local_64);
               if (iVar8 == 10) {
-                *(undefined4 *)&this->field_0x72a = 0;
+                this->field_072A = 0;
               }
               else {
                 this->field_07AA = 0;
@@ -338,15 +336,15 @@ LAB_00472a3a:
       }
       iVar8 = thunk_FUN_00483f10((int)this);
       if (iVar8 == 1) {
-        sVar3 = *(short *)&this->field_0x469;
-        *(short *)&this->field_0x469 = -sVar3;
+        sVar3 = this->field_0469;
+        this->field_0469 = -sVar3;
         iVar8 = (*this->vtable->vfunc_18)
                           (CONCAT22(extraout_var_06,this->field_0047),this->field_0049,
                            -sVar3 + this->field_004B);
         if (iVar8 == 1) {
           this->field_082E = 3;
           thunk_FUN_00481520(this,(int)(short)this->field_0047,(int)(short)this->field_0049,
-                             (int)*(short *)&this->field_0x469 + (int)(short)this->field_004B);
+                             (int)(short)this->field_0469 + (int)(short)this->field_004B);
           uVar4 = this->field_00B7;
           this->field_00B7 = 0;
           iVar8 = thunk_FUN_0045ff50(this,0);
@@ -357,11 +355,11 @@ LAB_00472a3a:
           if ((iVar8 != 0) && (iVar8 != 3)) {
             return 2;
           }
-          *(undefined2 *)&this->field_0x469 = 0;
+          this->field_0469 = 0;
           this->field_082E = 0;
           return 2;
         }
-        *(short *)&this->field_0x469 = -*(short *)&this->field_0x469;
+        this->field_0469 = -this->field_0469;
       }
       if ((this->field_082E != 2) || (iVar8 = GetDefenceTarget(this,CASE_2), iVar8 != 0))
       goto cf_common_exit_00472CB0;
@@ -386,7 +384,7 @@ LAB_00472a3a:
             if (*(int *)&this->field_0x7a2 < 1) break;
             puVar6 = (undefined4 *)
                      thunk_FUN_0041dc40(local_3c,*(undefined4 *)(puVar12 + -1),puVar12[1],
-                                        *(short *)&this->field_0x6c);
+                                        this->field_006C);
             uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
             local_56 = this->field_0041 + (short)*puVar6;
             local_54 = this->field_0043 - uStack_32;
@@ -394,8 +392,7 @@ LAB_00472a3a:
             uStack_32 = *puVar12;
             local_34 = 0;
             puVar6 = (undefined4 *)
-                     thunk_FUN_0041dc40(local_2c,(uint)uStack_32 << 0x10,0,
-                                        *(short *)&this->field_0x6c);
+                     thunk_FUN_0041dc40(local_2c,(uint)uStack_32 << 0x10,0,this->field_006C);
             local_34 = (short)*puVar6;
             uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
             local_30 = *(undefined2 *)(puVar6 + 1);
@@ -410,12 +407,12 @@ LAB_00472a3a:
             else {
               local_60 = this->field_079A;
             }
-            local_4a = *(undefined2 *)&this->field_0x6c;
+            local_4a = this->field_006C;
             local_48 = this->field_0018;
             local_44 = this->field_0032;
             thunk_FUN_00645880(&local_64);
             if (iVar8 == 10) {
-              *(undefined4 *)&this->field_0x72a = 0;
+              this->field_072A = 0;
             }
             else {
               this->field_07AA = 0;
@@ -469,15 +466,15 @@ LAB_00471cbd:
                 iVar8 = thunk_FUN_00483e30(this,(int)local_20);
                 if (iVar8 == 1) {
                   STTorpC::ClearDangerous(local_20,this->field_0018,local_24);
-                  *(STTorpC **)&this->field_0x46b = local_20;
-                  *(undefined2 *)&this->field_0x46f = *(undefined2 *)(local_20 + 0x26e);
-                  uVar4 = *(undefined4 *)(local_20 + 0x18);
-                  *(undefined4 *)&this->field_0x471 = uVar4;
+                  this->field_046B = local_20;
+                  this->field_046F = local_20->field_026E;
+                  uVar4 = *(undefined4 *)&local_20->field_0x18;
+                  this->field_0471 = uVar4;
                   sVar3 = this->field_004B;
                   uVar4 = CONCAT22((short)((uint)uVar4 >> 0x10),sVar3);
                   if (sVar3 == 0) {
                     pSVar9 = this->vtable;
-                    *(undefined2 *)&this->field_0x469 = 1;
+                    this->field_0469 = 1;
                     uVar7 = extraout_var_03;
                     uVar14 = 1;
 LAB_00471ec9:
@@ -488,15 +485,14 @@ LAB_00471ec9:
                     this->field_082E = 1;
                     thunk_FUN_00481520(this,(int)(short)this->field_0047,
                                        (int)(short)this->field_0049,
-                                       (int)*(short *)&this->field_0x469 +
-                                       (int)(short)this->field_004B);
+                                       (int)(short)this->field_0469 + (int)(short)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar8 = thunk_FUN_0045ff50(this,0);
                     this->field_00B7 = uVar4;
                   }
                   else if (sVar3 == 4) {
-                    *(undefined2 *)&this->field_0x469 = 0xffff;
+                    this->field_0469 = 0xffff;
                     iVar8 = (*this->vtable->vfunc_18)
                                       (CONCAT22(extraout_var_07,this->field_0047),
                                        CONCAT22(extraout_var_03,this->field_0049),3);
@@ -504,30 +500,29 @@ LAB_00471ec9:
                     this->field_082E = 1;
                     thunk_FUN_00481520(this,(int)(short)this->field_0047,
                                        (int)(short)this->field_0049,
-                                       (int)*(short *)&this->field_0x469 +
-                                       (int)(short)this->field_004B);
+                                       (int)(short)this->field_0469 + (int)(short)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar8 = thunk_FUN_0045ff50(this,0);
                     this->field_00B7 = uVar4;
                   }
                   else {
-                    iVar11 = *(int *)&this->field_0x1c * 0x41c64e6d;
+                    iVar11 = this->field_001C * 0x41c64e6d;
                     uVar10 = iVar11 + 0x3039;
-                    *(uint *)&this->field_0x1c = uVar10;
-                    *(ushort *)&this->field_0x469 = (ushort)(uVar10 >> 0x10) & 1;
+                    this->field_001C = uVar10;
+                    this->field_0469 = (ushort)(uVar10 >> 0x10) & 1;
                     iVar8 = (-(uint)((uVar10 & 0x10000) != 0) & 2) - 1;
                     sVar3 = (short)iVar8;
-                    *(short *)&this->field_0x469 = sVar3;
+                    this->field_0469 = sVar3;
                     uVar7 = (undefined2)((uint)iVar8 >> 0x10);
                     iVar8 = (*this->vtable->vfunc_18)
                                       (CONCAT22(uVar7,this->field_0047),
                                        CONCAT22((short)((uint)iVar11 >> 0x10),this->field_0049),
                                        CONCAT22(uVar7,sVar3 + this->field_004B));
                     if (iVar8 != 1) {
-                      sVar3 = *(short *)&this->field_0x469;
+                      sVar3 = this->field_0469;
                       pSVar9 = this->vtable;
-                      *(short *)&this->field_0x469 = -sVar3;
+                      this->field_0469 = -sVar3;
                       uVar4 = CONCAT22((short)((uint)iVar8 >> 0x10),-sVar3 + this->field_004B);
                       uVar7 = extraout_var_04;
                       uVar14 = uVar4;
@@ -536,8 +531,7 @@ LAB_00471ec9:
                     this->field_082E = 1;
                     thunk_FUN_00481520(this,(int)(short)this->field_0047,
                                        (int)(short)this->field_0049,
-                                       (int)*(short *)&this->field_0x469 +
-                                       (int)(short)this->field_004B);
+                                       (int)(short)this->field_0469 + (int)(short)this->field_004B);
                     uVar4 = this->field_00B7;
                     this->field_00B7 = 0;
                     iVar8 = thunk_FUN_0045ff50(this,0);
@@ -547,7 +541,7 @@ LAB_00471ec9:
                     return -1;
                   }
                   if ((iVar8 == 0) || (iVar8 == 3)) {
-                    *(undefined2 *)&this->field_0x469 = 0;
+                    this->field_0469 = 0;
                     this->field_082E = 0;
                   }
                   break;
@@ -569,8 +563,8 @@ LAB_00471ec9:
   if (this->field_0836 == 2) {
     this->field_047F = 0xffffffff;
     iVar8 = GetDefenceTarget(this,CASE_0);
-    uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-    *(uint *)&this->field_0x1c = uVar10;
+    uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
+    this->field_001C = uVar10;
     this->field_047F = (uVar10 >> 0x10) % 0x15;
   }
   else {
@@ -622,7 +616,7 @@ LAB_00471ec9:
         if (*(int *)&this->field_0x7a2 < 1) break;
         puVar6 = (undefined4 *)
                  thunk_FUN_0041dc40(local_2c,*(undefined4 *)(puVar12 + -1),puVar12[1],
-                                    *(short *)&this->field_0x6c);
+                                    this->field_006C);
         uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
         local_56 = this->field_0041 + (short)*puVar6;
         local_54 = this->field_0043 - uStack_32;
@@ -630,7 +624,7 @@ LAB_00471ec9:
         uStack_32 = *puVar12;
         local_34 = 0;
         puVar6 = (undefined4 *)
-                 thunk_FUN_0041dc40(local_3c,(uint)uStack_32 << 0x10,0,*(short *)&this->field_0x6c);
+                 thunk_FUN_0041dc40(local_3c,(uint)uStack_32 << 0x10,0,this->field_006C);
         local_34 = (short)*puVar6;
         uStack_32 = (ushort)((uint)*puVar6 >> 0x10);
         local_30 = *(undefined2 *)(puVar6 + 1);
@@ -645,12 +639,12 @@ LAB_00471ec9:
         else {
           local_60 = this->field_079A;
         }
-        local_4a = *(undefined2 *)&this->field_0x6c;
+        local_4a = this->field_006C;
         local_48 = this->field_0018;
         local_44 = this->field_0032;
         thunk_FUN_00645880(&local_64);
         if (iVar8 == 10) {
-          *(undefined4 *)&this->field_0x72a = 0;
+          this->field_072A = 0;
         }
         else {
           this->field_07AA = 0;

@@ -10,6 +10,7 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
   SoundClassTy *pSVar2;
   int iVar3;
   DWORD DVar4;
+  uint uVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_50;
@@ -32,30 +33,29 @@ void __thiscall SoundClassTy::CheckFader(SoundClassTy *this)
     }
     return;
   }
-  if (*(int *)(local_8 + 0xdfb) == 0) {
-    if (-1 < *(int *)(local_8 + 0xe03)) {
-      FUN_006c1ba0(*(int *)(local_8 + 0xe03));
+  if (local_8->field_0DFB == 0) {
+    if (-1 < (int)local_8->field_0E03) {
+      FUN_006c1ba0(local_8->field_0E03);
     }
-    *(undefined4 *)(pSVar2 + 0xe03) = 0xffffffff;
+    pSVar2->field_0E03 = 0xffffffff;
   }
-  if (-1 < *(int *)(pSVar2 + 0xe03)) {
-    FUN_006c1f00(*(int *)(pSVar2 + 0xe03),&local_c,(uint *)0x0);
+  if (-1 < (int)pSVar2->field_0E03) {
+    FUN_006c1f00(pSVar2->field_0E03,&local_c,(uint *)0x0);
     if (local_c == 1) {
       DVar4 = timeGetTime();
-      if (*(uint *)(pSVar2 + 0xdfb) < DVar4 - *(int *)(pSVar2 + 0xdff)) {
-        FUN_006c1ba0(*(int *)(pSVar2 + 0xe03));
+      uVar5 = DVar4 - pSVar2->field_0DFF;
+      if ((uint)pSVar2->field_0DFB < uVar5) {
+        FUN_006c1ba0(pSVar2->field_0E03);
         g_currentExceptionFrame = local_50.previous;
         return;
       }
       Library::DKW::SND::FUN_006c1ce0
-                (*(int *)(pSVar2 + 0xe03),
-                 DAT_0080730a -
-                 (int)((DAT_0080730a + 4000) * (DVar4 - *(int *)(pSVar2 + 0xdff))) /
-                 (int)*(uint *)(pSVar2 + 0xdfb));
+                (pSVar2->field_0E03,
+                 DAT_0080730a - (int)((DAT_0080730a + 4000) * uVar5) / (int)pSVar2->field_0DFB);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    *(undefined4 *)(pSVar2 + 0xe03) = 0xffffffff;
+    pSVar2->field_0E03 = 0xffffffff;
   }
   g_currentExceptionFrame = local_50.previous;
   return;

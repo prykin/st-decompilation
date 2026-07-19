@@ -32,7 +32,7 @@ void __thiscall SAMPanelTy::ShiftControls(SAMPanelTy *this,int param_1)
     this_00 = local_8;
     if (iVar3 == 0) {
       iVar3 = 7;
-      piVar5 = (int *)&local_8[1].field_0x3d;
+      piVar5 = &local_8->field_01B5;
       do {
         if (*piVar5 != 0) {
           FUN_006e6080(this_00,2,*piVar5,(undefined4 *)&this_00->field_0x18);

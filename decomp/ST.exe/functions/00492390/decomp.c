@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\To_boat.cpp
+   Diagnostic line evidence: 20736 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __fastcall FUN_00492390(int *param_1)
 
 {

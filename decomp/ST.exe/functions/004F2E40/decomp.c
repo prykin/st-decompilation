@@ -36,7 +36,7 @@ CPanelTy::SetButStruct
     }
     *param_1 = param_3;
     uVar3 = (uint)param_2;
-    param_1[2] = *(int *)(&local_c->field_0x3c + uVar3 * 4) + param_4;
+    param_1[2] = (&local_c->field_003C)[uVar3] + param_4;
     iVar4 = local_c->field_0130;
     switch(uVar3) {
     case 0:
@@ -89,7 +89,7 @@ CPanelTy::SetButStruct
     if (param_11 != (char *)0x0) {
       uVar5 = FUN_0070aa70(DAT_00806790,param_11,0,1);
       param_1[0x49] = uVar5;
-      iVar4 = FUN_0070a6f0(DAT_00806790,0x12,param_11,1);
+      iVar4 = mfImgGetWidth(DAT_00806790,0x12,param_11,1);
       param_1[0x4a] = iVar4;
     }
     g_currentExceptionFrame = local_50.previous;

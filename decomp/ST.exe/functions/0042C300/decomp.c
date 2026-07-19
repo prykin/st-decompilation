@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\to_allpl.cpp
+   Diagnostic line evidence: 655 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 FUN_0042c300(undefined4 param_1,uint param_2,int param_3,uint param_4,uint param_5)
 
 {

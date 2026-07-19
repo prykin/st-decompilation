@@ -1,4 +1,4 @@
-FUN_006488c0:
+SaveBossEdit:
 006488C0  55                        PUSH EBP
 006488C1  8B EC                     MOV EBP,ESP
 006488C3  83 EC 54                  SUB ESP,0x54

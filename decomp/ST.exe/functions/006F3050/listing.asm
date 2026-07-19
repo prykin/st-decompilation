@@ -1,4 +1,4 @@
-FUN_006f3050:
+mfAObjParam:
 006F3050  55                        PUSH EBP
 006F3051  8B EC                     MOV EBP,ESP
 006F3053  83 EC 50                  SUB ESP,0x50

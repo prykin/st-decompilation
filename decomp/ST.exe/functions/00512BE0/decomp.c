@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\helppan.cpp
+   Diagnostic line evidence: 544 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void FUN_00512be0(int param_1)
 
 {
@@ -109,7 +114,7 @@ void FUN_00512be0(int param_1)
     local_7a0 = 0x8165;
     local_7a8 = local_88c;
     local_6e4 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_6e0 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_6e0 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
     iVar2 = *(int *)((int)local_8 + 0x5c);
     local_700 = 1;
     local_6fc = 1;
@@ -130,7 +135,7 @@ void FUN_00512be0(int param_1)
     local_688[3] = local_688[3] + 0x16;
     local_620 = 0x8164;
     local_564 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_560 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_560 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
     local_4fc = *(int *)((int)local_8 + 0x3c) + 0x1c3;
     local_50c = 3;
     local_508 = 1;

@@ -44,7 +44,7 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
   this_00 = local_10;
   if (iVar5 == 0) {
     uVar9 = local_c & 0xff;
-    if ((&local_10->field_0x2ec)[uVar9] == '\x01') {
+    if ((&local_10->field_02EC)[uVar9] == '\x01') {
       puVar12 = (undefined4 *)0x0;
       iVar11 = 0;
       iVar5 = 1;
@@ -52,10 +52,10 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
       uVar10 = 6;
       if (DAT_0080731a != 0) {
         pbVar7 = (byte *)thunk_FUN_00526100(local_8,1);
-        puVar8 = FUN_00709af0(DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
-        *(ushort **)(&this_00->field_0x2e2 + uVar9 * 4) = puVar8;
-        (&this_00->field_0x2ec)[uVar9] = 5;
-        (&this_00->field_0x2ea)[uVar9] = 0;
+        puVar8 = mfRLoad(DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
+        (&this_00->field_02E2)[uVar9] = puVar8;
+        (&this_00->field_02EC)[uVar9] = 5;
+        (&this_00->field_02EA)[uVar9] = 0;
         pcVar6 = thunk_FUN_00526100(puVar3,0);
         *(char **)(&this_00->field_0x2f6 + uVar9 * 4) = pcVar6;
         thunk_FUN_005252c0(0xb3);
@@ -63,23 +63,22 @@ void __thiscall CPanelTy::SwitchTV(CPanelTy *this,int param_1)
         return;
       }
       pbVar7 = (byte *)thunk_FUN_00526100(local_8,0);
-      puVar8 = FUN_00709af0(DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
-      *(ushort **)(&this_00->field_0x2e2 + uVar9 * 4) = puVar8;
-      (&this_00->field_0x2ea)[uVar9] = 0;
+      puVar8 = mfRLoad(DAT_00806794,CASE_1F,pbVar7,uVar10,bVar4,iVar5,iVar11,puVar12);
+      (&this_00->field_02E2)[uVar9] = puVar8;
+      (&this_00->field_02EA)[uVar9] = 0;
       thunk_FUN_004f1890(this_00,(byte)uVar2);
       bVar4 = (-(param_1 != 0) & 0xf8U) + 8;
       _local_14 = CONCAT31(uStack_13,bVar4);
       if (bVar4 < 0xb) {
         uVar2 = (uint)bVar4;
-        if (-1 < (int)*(uint *)(&this_00->field_0x148 + uVar2 * 4)) {
+        if (-1 < (int)(&this_00->field_0148)[uVar2]) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,*(uint *)(&this_00->field_0x148 + uVar2 * 4),0xffffffff,
-                     *(uint *)(&this_00->field_0x3c + uVar2 * 4),
-                     *(uint *)(&this_00->field_0x94 + uVar2 * 4));
+                    (DAT_008075a8,(&this_00->field_0148)[uVar2],0xffffffff,
+                     (&this_00->field_003C)[uVar2],*(uint *)(&this_00->field_0x94 + uVar2 * 4));
         }
       }
     }
-    else if ((&local_10->field_0x2ec)[uVar9] == '\x05') {
+    else if ((&local_10->field_02EC)[uVar9] == '\x05') {
       pcVar6 = thunk_FUN_00526100(local_8,0);
       *(char **)(&this_00->field_0x2f6 + uVar9 * 4) = pcVar6;
       g_currentExceptionFrame = local_58.previous;

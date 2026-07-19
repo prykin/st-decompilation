@@ -44,7 +44,7 @@ cMf32::RecPut(cMf32 *this,byte param_1,char *param_2,byte *param_3,uint param_4,
     if ((local_c != (byte *)0x0) && (local_10 != 0)) {
       FUN_006ab060(&local_c);
     }
-    wsprintfA(local_1a4,s_cMf32__RecPut_File___s__Sect__s_N_007efafc,local_18 + 0x231,
+    wsprintfA(local_1a4,s_cMf32__RecPut_File___s__Sect__s_N_007efafc,&local_18[0xb].field_0x21,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
     iVar7 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x106,0,iVar6,&DAT_007a4ccc,
                                local_1a4);
@@ -132,7 +132,7 @@ cMf32::RecPut(cMf32 *this,byte param_1,char *param_2,byte *param_3,uint param_4,
     param_2 = param_2 + 1;
     puVar10 = (ushort *)((int)puVar10 + 1);
   }
-  FUN_00751100(*(uint **)local_18,local_8);
+  FUN_00751100((uint *)local_18->field_0000,local_8);
   *(uint *)((int)local_8 + 1) = uVar5;
   *(char *)((int)local_8 + 5) = param_6;
   *(uint *)(local_8 + 3) = param_4;
@@ -141,7 +141,8 @@ cMf32::RecPut(cMf32 *this,byte param_1,char *param_2,byte *param_3,uint param_4,
     *(undefined4 *)(local_8 + 7) = param_5[1];
     *(undefined4 *)(local_8 + 9) = param_5[2];
   }
-  uVar8 = Library::DKW::DB::FUN_00751050(*(uint **)pcVar4,local_8,(undefined4 *)local_c,uVar5);
+  uVar8 = Library::DKW::DB::FUN_00751050
+                    ((uint *)pcVar4->field_0000,local_8,(undefined4 *)local_c,uVar5);
   if (param_7 != (uint *)0x0) {
     *param_7 = uVar5;
   }
@@ -152,6 +153,6 @@ cMf32::RecPut(cMf32 *this,byte param_1,char *param_2,byte *param_3,uint param_4,
     FUN_006ab060(&local_c);
   }
   g_currentExceptionFrame = local_5c.previous;
-  return *(int *)(*(int *)(*(int *)pcVar4 + 4) + 0x34) + uVar8;
+  return *(int *)(*(int *)(pcVar4->field_0000 + 4) + 0x34) + uVar8;
 }
 

@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_creat.cpp
+   Diagnostic line evidence: 157 | 266 | 268 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
-void FUN_00648fe0(void)
+void CreateAi(void)
 
 {
   char cVar1;
@@ -125,7 +129,7 @@ void FUN_00648fe0(void)
   }
   iVar3 = local_c;
   if (local_c != 0) {
-    thunk_FUN_00648e70(local_c,(char *)&DAT_00809960);
+    CreateArbiter(local_c,(char *)&DAT_00809960);
     local_1c = 0;
     local_18 = (char *)((int)&DAT_008087c4 + 3);
     do {
@@ -163,7 +167,7 @@ LAB_00649255:
           local_10 = FUN_006f2c00(pCVar4,iVar12,uVar6);
         }
         if ((local_10 != (char *)0x0) &&
-           (local_8 = thunk_FUN_00648ab0(iVar3,local_10,(int *)0x0), local_8 != (ushort *)0x0)) {
+           (local_8 = LoadStrategData(iVar3,local_10,(int *)0x0), local_8 != (ushort *)0x0)) {
           local_14 = 0;
           if (DAT_00808aaf != 0) {
             pcVar7 = &DAT_00808af6;
@@ -200,7 +204,7 @@ LAB_00649255:
               pcVar9 = local_18;
             } while (local_14 < (int)(uint)DAT_00808aaf);
           }
-          thunk_FUN_00648c10((int)local_8,uVar5);
+          StartStrateg((int)local_8,uVar5);
           FUN_006ab060(&local_8);
         }
       }

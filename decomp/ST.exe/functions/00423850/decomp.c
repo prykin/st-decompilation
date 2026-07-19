@@ -60,19 +60,19 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
                                (DAT_007fa174,
                                 CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),param_1
                                 ,CASE_1);
-    thunk_FUN_00419c30(this_00,*(undefined2 *)&pSVar2->field_0x25);
-    *(short *)&pSVar2->field_0x27 = *(short *)&pSVar2->field_0x27 + 1;
+    thunk_FUN_00419c30(this_00,pSVar2->field_0025);
+    pSVar2->field_0027 = pSVar2->field_0027 + 1;
     if (param_2 == 1) {
-      if (*(int *)&pSVar2->field_0x2d == 0) {
+      if (pSVar2->field_002D == 0) {
         puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,2,5);
-        *(uint **)&pSVar2->field_0x2d = puVar3;
+        pSVar2->field_002D = puVar3;
       }
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)&pSVar2->field_0x2d,&param_1);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar2->field_002D,&param_1);
       local_5 = 0xff;
-      (**(code **)(*(int *)pSVar2 + 8))(0x65,&local_5);
+      (**(code **)(pSVar2->field_0000 + 8))(0x65,&local_5);
     }
     uVar4 = thunk_FUN_00423120((int)this_00);
-    uVar6 = *(uint *)&pSVar2->field_0x35;
+    uVar6 = pSVar2->field_0035;
     if ((uVar6 & 1) == 0) {
       if ((uVar4 & 1) != 0) {
         local_10 = local_10 | 1;
@@ -122,12 +122,12 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
     if (this_00[8] == 0x14) {
       thunk_FUN_004956c0(this_00,pSVar2->field_0039);
     }
-    if (*(undefined4 **)&pSVar2->field_0x1c != (undefined4 *)0x0) {
+    if ((undefined4 *)pSVar2->field_001C != (undefined4 *)0x0) {
       local_2c = 0x5d96;
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00[6];
-      (**(code **)**(undefined4 **)&pSVar2->field_0x1c)(local_3c);
+      (*(code *)**(undefined4 **)pSVar2->field_001C)(local_3c);
     }
     g_currentExceptionFrame = local_80.previous;
     return uVar7;

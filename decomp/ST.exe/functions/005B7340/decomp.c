@@ -22,21 +22,19 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    if (*(uint *)&local_8[1].field_0x51 != 0xffffffff) {
+    if (local_8->field_1CFB != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)&local_8[1].field_0x95,*(uint *)&local_8[1].field_0x51,
-                 *(uint *)&local_8[1].field_0x55,*(uint *)&local_8[1].field_0x69,
-                 *(uint *)&local_8[1].field_0x6d);
+                ((uint *)local_8->field_1D3F,local_8->field_1CFB,local_8->field_1CFF,
+                 local_8->field_1D13,local_8->field_1D17);
     }
-    if (*(uint *)&pMVar2[1].field_0xe2 != 0xffffffff) {
+    if (pMVar2->field_1D8C != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)&pMVar2[1].field_0x126,*(uint *)&pMVar2[1].field_0xe2,
-                 *(uint *)&pMVar2[1].field_0xe6,*(uint *)&pMVar2[1].field_0xfa,
-                 *(uint *)&pMVar2[1].field_0xfe);
+                ((uint *)pMVar2->field_1DD0,pMVar2->field_1D8C,pMVar2->field_1D90,pMVar2->field_1DA4
+                 ,pMVar2->field_1DA8);
     }
     iVar3 = 0;
-    if (pMVar2->field_0x9a != '\0') {
-      puVar5 = (uint *)&pMVar2->field_0xff;
+    if (pMVar2->field_009A != '\0') {
+      puVar5 = &pMVar2->field_00FF;
       do {
         if (puVar5[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
@@ -57,7 +55,7 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar5 = (uint *)((int)puVar5 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pMVar2->field_0x9a);
+      } while (iVar3 < (int)(uint)(byte)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

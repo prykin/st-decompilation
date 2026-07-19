@@ -1,5 +1,11 @@
 
-int * __cdecl FUN_00726630(int param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 322 | 324 | 337 | 355 | 357 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+int * __cdecl mfUSprLoad(int param_1,char *param_2,byte param_3,int param_4)
 
 {
   int iVar1;
@@ -41,8 +47,8 @@ int * __cdecl FUN_00726630(int param_1,char *param_2,byte param_3,int param_4)
     if (0 < *local_8) {
       iVar7 = 0;
       do {
-        puVar5 = FUN_0070a5a0(param_1,*(byte *)(iVar7 + (int)local_c),
-                              (char *)(iVar7 + 1 + (int)local_c),param_3,param_4);
+        puVar5 = mfImgLoad(param_1,*(byte *)(iVar7 + (int)local_c),
+                           (char *)(iVar7 + 1 + (int)local_c),param_3,param_4);
         *(ushort **)(*(int *)((int)local_8 + 0x11) + iVar3 * 4) = puVar5;
         if (*(int *)(*(int *)((int)local_8 + 0x11) + iVar3 * 4) == 0) {
           RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_mfspr_cpp_007f0c8c,0x151);
@@ -53,9 +59,9 @@ int * __cdecl FUN_00726630(int param_1,char *param_2,byte param_3,int param_4)
         *(undefined4 *)((int)local_8 + iVar3 * 4 + 0x11) = *(undefined4 *)(iVar1 + (int)local_c);
       } while (iVar3 < *local_8);
     }
-    iVar3 = FUN_0070a6f0(param_1,(byte)*local_c,(char *)((int)local_c + 1),1);
+    iVar3 = mfImgGetWidth(param_1,(byte)*local_c,(char *)((int)local_c + 1),1);
     *(int *)((int)local_8 + 9) = iVar3;
-    iVar3 = FUN_0070a7b0(param_1,(byte)*local_c,(char *)((int)local_c + 1),1);
+    iVar3 = mfImgGetHeight(param_1,(byte)*local_c,(char *)((int)local_c + 1),1);
     *(int *)((int)local_8 + 0xd) = iVar3;
     g_currentExceptionFrame = local_5c.previous;
     cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_c);

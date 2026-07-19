@@ -52,21 +52,20 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
   uVar7 = *(uint *)(param_1 + 0x10);
   if (uVar7 < 0x6336) {
     if (uVar7 == 0x6335) {
-      *(uint *)&DAT_0081176c->field_0x4cf =
+      DAT_0081176c->field_04CF =
            *(int *)(*(int *)(param_1 + 0x18) + 4) + (uint)*(ushort *)(param_1 + 0x16);
-      if (*(uint *)&DAT_0081176c->field_0x4b3 != 0xffffffff) {
+      if (DAT_0081176c->field_04B3 != 0xffffffff) {
         Library::DKW::DDX::FUN_006b3730
-                  (*(uint **)&DAT_0081176c->field_0x4f7,*(uint *)&DAT_0081176c->field_0x4b3,
-                   *(uint *)&DAT_0081176c->field_0x4b7,*(uint *)&DAT_0081176c->field_0x4cb,
-                   *(uint *)&DAT_0081176c->field_0x4cf);
+                  ((uint *)DAT_0081176c->field_04F7,DAT_0081176c->field_04B3,
+                   DAT_0081176c->field_04B7,DAT_0081176c->field_04CB,DAT_0081176c->field_04CF);
       }
     }
     else if (uVar7 < 0x610b) {
       if (uVar7 == 0x610a) {
-        *(undefined4 *)&this_02->field_0x45 = 0x200;
-        *(undefined4 *)&this_02->field_0x49 = 0;
-        *(undefined4 *)&this_02->field_0x4d = *(undefined4 *)(param_1 + 0x10);
-        *(undefined4 *)&this_02->field_0x51 = 8;
+        this_02->field_0045 = 0x200;
+        this_02->field_0049 = 0;
+        this_02->field_004D = *(undefined4 *)(param_1 + 0x10);
+        this_02->field_0051 = 8;
         thunk_FUN_005b66e0(this_02);
       }
       else if (uVar7 < 4) {
@@ -85,24 +84,24 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
         PaintWait(this_02,'\0');
       }
       else if (uVar7 == 0x6105) {
-        *(undefined4 *)&this_02->field_0x45 = 0x200;
-        *(undefined4 *)&this_02->field_0x49 = 0;
-        *(undefined4 *)&this_02->field_0x4d = *(undefined4 *)(param_1 + 0x10);
-        *(undefined4 *)&this_02->field_0x51 = *(undefined4 *)(param_1 + 0x14);
-        *(undefined4 *)&this_02->field_0x55 = 0;
+        this_02->field_0045 = 0x200;
+        this_02->field_0049 = 0;
+        this_02->field_004D = *(undefined4 *)(param_1 + 0x10);
+        this_02->field_0051 = *(undefined4 *)(param_1 + 0x14);
+        this_02->field_0055 = 0;
         thunk_FUN_005b66e0(this_02);
       }
     }
     else if (uVar7 < 0x6334) {
       if (uVar7 == 0x6333) {
-        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_0x38d,param_1,0);
+        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_038D,param_1,0);
       }
       else if (uVar7 == 0x6121) {
-        *(undefined4 *)&this_02->field_0x45 = 0x200;
-        *(undefined4 *)&this_02->field_0x49 = 0;
-        *(undefined4 *)&this_02->field_0x4d = *(undefined4 *)(param_1 + 0x10);
-        *(undefined4 *)&this_02->field_0x51 = *(undefined4 *)(param_1 + 0x14);
-        *(undefined4 *)&this_02->field_0x55 = *(undefined4 *)(param_1 + 0x18);
+        this_02->field_0045 = 0x200;
+        this_02->field_0049 = 0;
+        this_02->field_004D = *(undefined4 *)(param_1 + 0x10);
+        this_02->field_0051 = *(undefined4 *)(param_1 + 0x14);
+        this_02->field_0055 = *(undefined4 *)(param_1 + 0x18);
         thunk_FUN_005b66e0(this_02);
       }
       else if (uVar7 == 0x6332) {
@@ -110,16 +109,16 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       }
     }
     else if (uVar7 == 0x6334) {
-      MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_0x41e,param_1,0);
+      MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&DAT_0081176c->field_041E,param_1,0);
     }
     goto cf_common_exit_005EAB6A;
   }
   if (uVar7 < 0x6943) {
     if (uVar7 == 0x6942) {
-      *(undefined4 *)&this_02->field_0x45 = 0x200;
-      *(undefined4 *)&this_02->field_0x49 = 0;
-      *(undefined4 *)&this_02->field_0x4d = 0x6102;
-      *(undefined4 *)&this_02->field_0x51 = *(undefined4 *)(param_1 + 0x14);
+      this_02->field_0045 = 0x200;
+      this_02->field_0049 = 0;
+      this_02->field_004D = 0x6102;
+      this_02->field_0051 = *(undefined4 *)(param_1 + 0x14);
       thunk_FUN_005b66e0(this_02);
     }
     else if (uVar7 < 0x6940) {
@@ -127,12 +126,10 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
         thunk_FUN_005e9970((int)this_02);
       }
       else if (uVar7 == 0x6340) {
-        MMMObjTy::PaintSlBut
-                  ((MMMObjTy *)this_02,*(int *)&this_02[0x42].field_0x51 + 0x55c,param_1,0);
+        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&this_02->field_1A5B->field_055C,param_1,0);
       }
       else if (uVar7 == 0x6341) {
-        MMMObjTy::PaintSlBut
-                  ((MMMObjTy *)this_02,*(int *)&this_02[0x42].field_0x51 + 0x5ed,param_1,0);
+        MMMObjTy::PaintSlBut((MMMObjTy *)this_02,(int)&this_02->field_1A5B->field_05ED,param_1,0);
       }
     }
     else if (uVar7 == 0x6940) {
@@ -143,11 +140,11 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
   if (uVar7 < 0x6952) {
     if (uVar7 == 0x6951) {
       thunk_FUN_005b6350(this_02,0x610a,0,0);
-      *(undefined4 *)&this_02[0x42].field_0x5a = 0;
+      this_02->field_1A64 = 0;
     }
     else if (uVar7 == 0x6943) {
       thunk_FUN_005b6350(this_02,0x6942,*(undefined4 *)(param_1 + 0x14),0);
-      *(undefined4 *)&this_02[0x42].field_0x5a = 0;
+      this_02->field_1A64 = 0;
       if (DAT_00811768 == '\x01') {
         DAT_00811768 = '\x02';
       }
@@ -155,23 +152,23 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     else {
       if (uVar7 != 0x694d) goto cf_common_exit_005EAB6A;
       thunk_FUN_005b6350(this_02,0x6105,1,0);
-      *(undefined4 *)&this_02[0x42].field_0x5a = 0;
+      this_02->field_1A64 = 0;
       if (DAT_00811768 == '\x01') {
         DAT_00811768 = '\x02';
       }
     }
-    (**(code **)(*(int *)this_02 + 8))();
-    this_00 = *(MMsgTy **)(*(int *)&this_02[0x42].field_0x51 + 0x2e6);
+    (**(code **)(this_02->field_0000 + 8))();
+    this_00 = this_02->field_1A5B->field_02E6;
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(this_00,1,0,1);
     }
     goto cf_common_exit_005EAB6A;
   }
   if (uVar7 != 0xc0a2) goto cf_common_exit_005EAB6A;
-  iVar5 = thunk_FUN_005ddb40(*(int *)&this_02[0x42].field_0x51);
+  iVar5 = thunk_FUN_005ddb40((int)this_02->field_1A5B);
   if (iVar5 == 0) {
     if (DAT_008067a0 != '\0') {
-      iVar5 = *(int *)(*(int *)&this_02[0x42].field_0x51 + 0x686);
+      iVar5 = this_02->field_1A5B->field_0686;
       if (*(int *)(iVar5 + 8) < 1) {
         pcVar9 = (char *)0x0;
       }
@@ -180,7 +177,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       }
       bVar3 = thunk_FUN_005717e0(pcVar9);
       if (CONCAT31(extraout_var,bVar3) != 0) {
-        iVar5 = *(int *)(*(int *)&this_02[0x42].field_0x51 + 0x686);
+        iVar5 = this_02->field_1A5B->field_0686;
         if (*(int *)(iVar5 + 8) < 1) {
           CFsgsConnection::SendChatMessage((CFsgsConnection *)&DAT_00802a90,(char *)0x0);
         }
@@ -214,7 +211,7 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
       pcVar9 = pcVar10;
     } while (cVar1 != '\0');
     uVar7 = ~uVar7;
-    this_01 = *(StartSystemTy **)&this_02[0x42].field_0x51;
+    this_01 = this_02->field_1A5B;
     pcVar9 = pcVar10 + -uVar7;
     pcVar10 = local_4a4;
     for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
@@ -261,12 +258,10 @@ undefined4 __thiscall WaitTy::GetMessage(WaitTy *this,int param_1)
     FUN_00715360(DAT_00811764,0,'\x1b',local_4a4,0x451,1,0xffffffff);
   }
 LAB_005eab28:
-  Library::DKW::TBL::FUN_006b6020
-            (*(int *)(*(int *)&this_02[0x42].field_0x51 + 0x686),0,&DAT_008016a0);
-  iVar5 = *(int *)&this_02[0x42].field_0x51;
-  *(undefined4 *)&this_02->field_0x2d = 0x33;
-  *(undefined4 *)&this_02->field_0x31 = *(undefined4 *)(iVar5 + 0x686);
-  FUN_006e6080(this_02,2,*(undefined4 *)(iVar5 + 0x54c),(undefined4 *)&this_02->field_0x1d);
+  Library::DKW::TBL::FUN_006b6020(this_02->field_1A5B->field_0686,0,&DAT_008016a0);
+  this_02->field_002D = 0x33;
+  *(undefined4 *)&this_02->field_0x31 = this_02->field_1A5B->field_0686;
+  FUN_006e6080(this_02,2,this_02->field_1A5B->field_054C,(undefined4 *)&this_02->field_0x1d);
 cf_common_exit_005EAB6A:
   g_currentExceptionFrame = local_50.previous;
   uVar4 = MMObjTy::GetMessage((MMObjTy *)this_02,param_1);

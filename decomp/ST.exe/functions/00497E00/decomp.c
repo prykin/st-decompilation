@@ -101,53 +101,53 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     return 0;
   }
   if (uVar6 == 3) {
-    if (*(byte **)&this_00->field_0xef != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0xef);
-      *(undefined4 *)&this_00->field_0xef = 0;
+    if ((byte *)this_00->field_00EF != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_00EF);
+      this_00->field_00EF = 0;
     }
-    if (*(byte **)&this_00->field_0x103 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x103);
-      *(undefined4 *)&this_00->field_0x103 = 0;
+    if ((byte *)this_00->field_0103 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0103);
+      this_00->field_0103 = 0;
     }
-    if (*(byte **)&this_00->field_0x10f != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x10f);
-      *(undefined4 *)&this_00->field_0x10f = 0;
+    if ((byte *)this_00->field_010F != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_010F);
+      this_00->field_010F = 0;
     }
-    if (*(byte **)&this_00->field_0x127 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x127);
-      *(undefined4 *)&this_00->field_0x127 = 0;
+    if ((byte *)this_00->field_0127 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0127);
+      this_00->field_0127 = 0;
     }
-    if (*(byte **)&this_00->field_0x160 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x160);
-      *(undefined4 *)&this_00->field_0x160 = 0;
+    if ((byte *)this_00->field_0160 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0160);
+      this_00->field_0160 = 0;
     }
-    if (*(byte **)&this_00->field_0x168 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x168);
-      *(undefined4 *)&this_00->field_0x168 = 0;
+    if ((byte *)this_00->field_0168 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0168);
+      this_00->field_0168 = 0;
     }
-    if (*(byte **)&this_00->field_0x1ca != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x1ca);
-      *(undefined4 *)&this_00->field_0x1ca = 0;
+    if ((byte *)this_00->field_01CA != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_01CA);
+      this_00->field_01CA = 0;
     }
-    if (*(byte **)&this_00->field_0x1ce != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x1ce);
-      *(undefined4 *)&this_00->field_0x1ce = 0;
+    if ((byte *)this_00->field_01CE != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_01CE);
+      this_00->field_01CE = 0;
     }
-    if (*(byte **)&this_00->field_0x1d2 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x1d2);
-      *(undefined4 *)&this_00->field_0x1d2 = 0;
+    if ((byte *)this_00->field_01D2 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_01D2);
+      this_00->field_01D2 = 0;
     }
-    if (*(byte **)&this_00->field_0x1d6 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x1d6);
-      *(undefined4 *)&this_00->field_0x1d6 = 0;
+    if ((byte *)this_00->field_01D6 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_01D6);
+      this_00->field_01D6 = 0;
     }
-    if (*(byte **)&this_00->field_0x1da != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x1da);
-      *(undefined4 *)&this_00->field_0x1da = 0;
+    if ((byte *)this_00->field_01DA != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_01DA);
+      this_00->field_01DA = 0;
     }
-    if (*(byte **)&this_00->field_0x1de != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x1de);
-      *(undefined4 *)&this_00->field_0x1de = 0;
+    if ((byte *)this_00->field_01DE != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_01DE);
+      this_00->field_01DE = 0;
     }
     uVar6 = *(uint *)(this_00->field_0029 + 0xc);
     if ((uVar6 != 0) && (uVar7 = 0, uVar6 != 0)) {
@@ -159,12 +159,12 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
         uVar7 = uVar7 + 1;
       } while ((uVar7 & 0xffff) < uVar6);
     }
-    if (*(int *)&this_00->field_0x21e != 0) {
-      FUN_006ab060((undefined4 *)&this_00->field_0x21e);
+    if (this_00->field_021E != 0) {
+      FUN_006ab060(&this_00->field_021E);
     }
-    if (*(byte **)&this_00->field_0x20e != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x20e);
-      *(undefined4 *)&this_00->field_0x20e = 0;
+    if ((byte *)this_00->field_020E != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_020E);
+      this_00->field_020E = 0;
     }
     if ((byte *)this_00->field_0226 != (byte *)0x0) {
       FUN_006ae110((byte *)this_00->field_0226);
@@ -178,13 +178,13 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
       FUN_006ae110((byte *)this_00->field_022E);
       this_00->field_022E = 0;
     }
-    if (*(byte **)&this_00->field_0x24e != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x24e);
-      *(undefined4 *)&this_00->field_0x24e = 0;
+    if ((byte *)this_00->field_024E != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_024E);
+      this_00->field_024E = 0;
     }
-    if (*(byte **)&this_00->field_0x266 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0x266);
-      *(undefined4 *)&this_00->field_0x266 = 0;
+    if ((byte *)this_00->field_0266 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0266);
+      this_00->field_0266 = 0;
     }
     if ((byte *)this_00->field_029F != (byte *)0x0) {
       FUN_006ae110((byte *)this_00->field_029F);
@@ -214,7 +214,7 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
-  if (*(int *)&this_00->field_0x5d == 1) {
+  if (this_00->field_005D == 1) {
     local_2c = *(undefined4 *)&this_00->field_0x8;
     local_30 = 10;
     local_34 = 0;
@@ -223,17 +223,17 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     g_currentExceptionFrame = local_84.previous;
     return 0;
   }
-  if (*(int *)&this_00->field_0x61 == 1) {
+  if (this_00->field_0061 == 1) {
     uVar6 = 0;
-    *(undefined4 *)&this_00->field_0x61 = 0;
+    this_00->field_0061 = 0;
     if (*(int *)&this_00->field_0x81 == 1) {
-      iVar2 = *(int *)&this_00->field_0x1da;
+      iVar2 = this_00->field_01DA;
       *(undefined4 *)&this_00->field_0x81 = 0;
       if (0 < *(int *)(iVar2 + 0xc)) {
         do {
           FUN_006acc70(iVar2,uVar6,&local_14);
           (*this_00->vtable->vfunc_04)(local_14);
-          iVar2 = *(int *)&this_00->field_0x1da;
+          iVar2 = this_00->field_01DA;
           uVar6 = uVar6 + 1;
         } while ((int)uVar6 < *(int *)(iVar2 + 0xc));
       }
@@ -242,10 +242,10 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
         thunk_FUN_004a7e30(this_00,1);
       }
       if ((this_00->field_0027 == 0) && (*(int *)&this_00->field_0x20 == 0)) {
-        *(undefined4 *)&this_00->field_0x5d = 1;
+        this_00->field_005D = 1;
       }
-      FUN_006ae110(*(byte **)&this_00->field_0x1da);
-      *(undefined4 *)&this_00->field_0x1da = 0;
+      FUN_006ae110((byte *)this_00->field_01DA);
+      this_00->field_01DA = 0;
     }
     if ((*(int *)&this_00->field_0x6d == 1) &&
        (*(undefined4 *)&this_00->field_0x6d = 0, this_00->field_002D != 0)) {
@@ -255,28 +255,28 @@ undefined4 __thiscall STGroupBoatC::GetMessage(STGroupBoatC *this,int param_1)
     }
     if (*(int *)&this_00->field_0x71 == 1) {
       *(undefined4 *)&this_00->field_0x71 = 0;
-      FUN_006ae110(*(byte **)&this_00->field_0x1ca);
-      *(undefined4 *)&this_00->field_0x1ca = 0;
+      FUN_006ae110((byte *)this_00->field_01CA);
+      this_00->field_01CA = 0;
     }
     if (*(int *)&this_00->field_0x75 == 1) {
       *(undefined4 *)&this_00->field_0x75 = 0;
-      ReMakePVecAndTgtList(this_00,*(int *)&this_00->field_0x1ce);
-      DistributeTargets(this_00,*(uint **)&this_00->field_0x1ce);
-      FUN_006ae110(*(byte **)&this_00->field_0x1ce);
-      *(undefined4 *)&this_00->field_0x1ce = 0;
+      ReMakePVecAndTgtList(this_00,this_00->field_01CE);
+      DistributeTargets(this_00,(uint *)this_00->field_01CE);
+      FUN_006ae110((byte *)this_00->field_01CE);
+      this_00->field_01CE = 0;
     }
     if (*(int *)&this_00->field_0x79 == 1) {
       *(undefined4 *)&this_00->field_0x79 = 0;
-      FUN_006ae110(*(byte **)&this_00->field_0x1d2);
-      *(undefined4 *)&this_00->field_0x1d2 = 0;
+      FUN_006ae110((byte *)this_00->field_01D2);
+      this_00->field_01D2 = 0;
     }
     if (*(int *)&this_00->field_0x7d == 1) {
       *(undefined4 *)&this_00->field_0x7d = 0;
-      FUN_006ae110(*(byte **)&this_00->field_0x1d6);
-      *(undefined4 *)&this_00->field_0x1d6 = 0;
+      FUN_006ae110((byte *)this_00->field_01D6);
+      this_00->field_01D6 = 0;
     }
   }
-  if (*(int *)&this_00->field_0x65 != 1) {
+  if (this_00->field_0065 != 1) {
 LAB_004984d0:
     switch(this_00->field_01E6) {
     case 1:

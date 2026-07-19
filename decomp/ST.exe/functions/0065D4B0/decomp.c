@@ -26,12 +26,12 @@ undefined4 * __thiscall AiFltClassTy::PrepareToSave(AiFltClassTy *this,uint *par
       puVar3 = (undefined4 *)0x0;
     }
     else {
-      puVar3 = (undefined4 *)&local_8->field_0x20;
+      puVar3 = &local_8->field_0020;
     }
-    puVar3 = thunk_FUN_006684e0(puVar3,param_1);
+    puVar3 = FltDataPack(puVar3,param_1);
     *puVar3 = 900;
     puVar3[3] = 1;
-    *(undefined4 *)((int)puVar3 + 0x66) = *(undefined4 *)&pAVar2->field_0x1c;
+    *(undefined4 *)((int)puVar3 + 0x66) = pAVar2->field_001C;
     g_currentExceptionFrame = pIVar5;
     return puVar3;
   }

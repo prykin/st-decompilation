@@ -29,7 +29,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
   if (iVar2 == 0) {
     ShiftControls(local_8,1,param_1);
     ShiftControls(this_00,0,param_1);
-    piVar5 = (int *)&this_00->field_0x9a4;
+    piVar5 = &this_00->field_09A4;
     iVar2 = 7;
     do {
       if (*piVar5 != 0) {
@@ -38,7 +38,7 @@ undefined4 __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1)
       piVar5 = piVar5 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
-    piVar5 = (int *)&this_00->field_0x9c0;
+    piVar5 = &this_00->field_09C0;
     iVar2 = 2;
     do {
       if (*piVar5 != 0) {

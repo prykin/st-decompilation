@@ -22,7 +22,7 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
-    if (*(int *)&this_00[0x42].field_0x5a == 0) {
+    if (this_00->field_1A64 == 0) {
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),0xfffffffe,
@@ -30,7 +30,7 @@ void __thiscall WaitTy::CloseButtons(WaitTy *this)
       }
       FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
     }
-    *(undefined1 *)(this_00 + 1) = 4;
+    this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     DeleteCtrls(this_00);
     g_currentExceptionFrame = pIVar3;

@@ -31,7 +31,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
     local_14 = piVar2[1] - this->field_0044;
   }
   uVar1 = this->field_0199 + -0xc0af + *(int *)(param_1 + 0x10);
-  iVar5 = *(int *)(&this[1].field_0x1 + (uint)(byte)this->field_0278 * 4);
+  iVar5 = (&this->field_027A)[(byte)this->field_0278];
   if ((iVar5 == 0) || (*(uint *)(iVar5 + 0xc) <= uVar1)) {
     local_8 = (Global_sub_005276E0_param_1Enum *)0x0;
   }
@@ -41,7 +41,7 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
   }
   local_10 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_005276E0_param_1Enum *)0x0)) {
-    local_c = (int)*(short *)(*(int *)&this->field_0x188 + 0x23) - ((DAT_0080874e != '\x03') + 1);
+    local_c = (int)*(short *)(this->field_0188 + 0x23) - ((DAT_0080874e != '\x03') + 1);
   }
   else {
     local_c = thunk_FUN_005276e0(*local_8,(byte)((uint)*(undefined4 *)local_8 >> 0x10));
@@ -52,23 +52,22 @@ void __thiscall ResearchPanelTy::PaintUpdBut(ResearchPanelTy *this,int param_1)
   pRVar4 = local_10;
   if (iVar5 == 0) {
     if ((local_8 == (Global_sub_005276E0_param_1Enum *)0x0) || (local_8[8] == ~(CASE_80|CASE_7F))) {
-      iVar5 = *(int *)&local_10->field_0x18c;
+      iVar5 = local_10->field_018C;
     }
     else {
-      iVar5 = *(int *)&local_10->field_0x188;
+      iVar5 = local_10->field_0188;
     }
     pbVar6 = (byte *)FUN_0070b3a0(iVar5,local_c);
     iVar7 = local_14;
     iVar5 = local_18;
-    thunk_FUN_00540760(*(undefined4 **)&pRVar4->field_0x68,local_18,local_14,'\x01',pbVar6);
+    DibPut((undefined4 *)pRVar4->field_0068,local_18,local_14,'\x01',pbVar6);
     if ((*(short *)(param_1 + 0x14) == 3) && (local_8 != (Global_sub_005276E0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0(*(int *)&pRVar4->field_0x190,
-                                    7 - (uint)(local_8[8] != ~(CASE_80|CASE_7F)));
-      thunk_FUN_00540760(*(undefined4 **)&pRVar4->field_0x68,iVar5,iVar7,'\x06',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(pRVar4->field_0190,7 - (uint)(local_8[8] != ~(CASE_80|CASE_7F)))
+      ;
+      DibPut((undefined4 *)pRVar4->field_0068,iVar5,iVar7,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&pRVar4->field_0x60,0xffffffff,pRVar4->field_003C,
-               pRVar4->field_0044);
+              (DAT_008075a8,pRVar4->field_0060,0xffffffff,pRVar4->field_003C,pRVar4->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

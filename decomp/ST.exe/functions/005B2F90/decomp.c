@@ -32,16 +32,16 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
         FUN_006b3af0(*(int **)(DAT_00802a30 + 0x60),*(uint *)(DAT_00802a30 + 0x1c));
       }
     }
-    thunk_FUN_0055dbf0(DAT_0080759c,10,2);
+    DarkScreen(DAT_0080759c,10,2);
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
       cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
-    this_00 = *(MMsgTy **)(*(int *)&pMVar2[0x11].field_0xdb + 0x2e6);
+    this_00 = *(MMsgTy **)(pMVar2->field_1A5B + 0x2e6);
     if (this_00 != (MMsgTy *)0x0) {
       MMsgTy::HideSprites(this_00);
-      *(undefined4 *)(*(int *)(*(int *)&pMVar2[0x11].field_0xdb + 0x2e6) + 0x1cab) = 0;
+      *(undefined4 *)(*(int *)(pMVar2->field_1A5B + 0x2e6) + 0x1cab) = 0;
     }
-    puVar5 = (undefined4 *)&pMVar2[0x11].field_0x127;
+    puVar5 = &pMVar2->field_1AA7;
     iVar3 = 10;
     do {
       if ((undefined4 *)*puVar5 != (undefined4 *)0x0) {
@@ -54,7 +54,7 @@ void __thiscall MainMenuTy::DoneMainMenu(MainMenuTy *this)
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (*(int *)&pMVar2->field_0x4d != 0) {
+    if (pMVar2->field_004D != 0) {
       AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pMVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;

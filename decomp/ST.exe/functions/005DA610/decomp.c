@@ -12,22 +12,22 @@ undefined4 * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefin
   undefined4 *puVar2;
   
   SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,0x200);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x2f8,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x38d,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x41e,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x4af,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x55c,unaff_EDI);
-  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x5ed,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_02F8,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_038D,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_041E,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_04AF,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_055C,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_05ED,unaff_EDI);
   this->vtable = &StartSystemTyVTable;
   DAT_0081176c = this;
   this->field_0028 = DAT_00807332;
   this->field_02EA = 1;
   this->field_02EB = 1;
-  this->field_02E6 = 0;
+  this->field_02E6 = (MMsgTy *)0x0;
   this->field_0020 = 0;
   this->field_002C = 0;
   this->field_0038 = 0;
-  this->field_0034 = 0;
+  this->field_0034 = (ccFntTy *)0x0;
   this->field_0030 = 0;
   this->field_02F4 = 0;
   this->field_02EC = 0xffffffff;
@@ -48,7 +48,7 @@ undefined4 * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefin
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  puVar2 = (undefined4 *)&this->field_0x25c;
+  puVar2 = &this->field_025C;
   for (iVar1 = 0x22; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;

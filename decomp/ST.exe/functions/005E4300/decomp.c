@@ -75,7 +75,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
       FUN_006c7570(*param_1,0,0,0,local_c,(int)puVar3,iVar4,(byte)_local_8);
       pMVar2 = local_18;
       if (param_2 != 0) {
-        ccFntTy::SetSurf(*(ccFntTy **)&local_18[1].field_0x1c,*param_1,0,0,0,0,0);
+        ccFntTy::SetSurf(local_18->field_0089,*param_1,0,0,0,0,0);
         if (param_5 == 3) {
           iVar4 = (-(uint)((char)param_1[2] != '\x01') & 0xfffffffe) + 3;
         }
@@ -85,7 +85,7 @@ MTaskTy::PaintBut(MTaskTy *this,int *param_1,UINT param_2,int param_3,int param_
         iVar11 = -1;
         iVar10 = -1;
         puVar6 = (uint *)FUN_006b0140(param_2,DAT_00807618);
-        ccFntTy::WrStr(*(ccFntTy **)&pMVar2[1].field_0x1c,puVar6,iVar10,iVar11,iVar4);
+        ccFntTy::WrStr(pMVar2->field_0089,puVar6,iVar10,iVar11,iVar4);
       }
       g_currentExceptionFrame = local_5c.previous;
       return;

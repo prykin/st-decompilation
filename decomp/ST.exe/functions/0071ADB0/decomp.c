@@ -1,5 +1,10 @@
 
-undefined4 __cdecl FUN_0071adb0(byte *param_1,uint param_2,int param_3,char *param_4,char param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfany.cpp
+   Diagnostic line evidence: 45 | 49 | 51 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 __cdecl mfAnySave(byte *param_1,uint param_2,int param_3,char *param_4,char param_5)
 
 {
   code *pcVar1;

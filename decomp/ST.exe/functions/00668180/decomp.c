@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_flt_d.cpp
+   Diagnostic line evidence: 42 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl
 FUN_00668180(char *param_1,undefined2 param_2,undefined2 param_3,undefined2 param_4,
             undefined1 param_5)

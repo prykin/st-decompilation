@@ -34,7 +34,7 @@ cLoadingTy::SetState
   
   local_8 = this;
   thunk_FUN_00555570((int)this);
-  if (*(int *)(this + 0x3c) < -1) {
+  if ((int)this->field_003C < -1) {
     return;
   }
   local_50.previous = g_currentExceptionFrame;
@@ -171,17 +171,17 @@ cLoadingTy::SetState
       pcVar5 = pcVar5 + 1;
       pcVar13 = pcVar13 + 1;
     }
-    if (*(int *)(local_8 + 0x3c) == 0) {
-      uVar8 = *(uint *)(local_8 + 0x40);
+    if (local_8->field_003C == 0) {
+      uVar8 = local_8->field_0040;
       if (uVar8 < param_2) {
         param_2 = uVar8;
       }
     }
     else {
       DVar4 = timeGetTime();
-      uVar8 = *(uint *)(pcVar10 + 0x40);
-      param_2 = DVar4 - *(int *)(pcVar10 + 0x44);
-      if (uVar8 < DVar4 - *(int *)(pcVar10 + 0x44)) {
+      uVar8 = pcVar10->field_0040;
+      param_2 = DVar4 - pcVar10->field_0044;
+      if (uVar8 < param_2) {
         param_2 = uVar8;
       }
     }
@@ -189,7 +189,7 @@ cLoadingTy::SetState
       param_2 = 1;
     }
     uVar8 = (param_2 * 100) / uVar8;
-    if (uVar8 != *(uint *)(pcVar10 + 0x50)) {
+    if (uVar8 != pcVar10->field_0050) {
       if (0 < (int)uVar8) {
         local_c = uVar8;
         do {
@@ -232,18 +232,18 @@ cLoadingTy::SetState
         } while (uVar7 != 0);
       }
       DrawLine(pcVar10,local_450);
-      *(uint *)(pcVar10 + 0x50) = uVar8;
+      pcVar10->field_0050 = uVar8;
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if (*(code **)(pcVar10 + 0x58) != (code *)0x0) {
-      (**(code **)(pcVar10 + 0x58))(*(undefined4 *)(pcVar10 + 0x54));
+    if ((code *)pcVar10->field_0058 != (code *)0x0) {
+      (*(code *)pcVar10->field_0058)(pcVar10->field_0054);
       g_currentExceptionFrame = local_50.previous;
       return;
     }
     break;
   case CASE_2:
-    *(undefined4 *)(local_8 + 0x3c) = 0xffffffff;
+    local_8->field_003C = 0xffffffff;
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -302,7 +302,7 @@ cLoadingTy::SetState
     }
     goto joined_r0x00555393;
   case CASE_3:
-    *(undefined4 *)(local_8 + 0x3c) = 0xffffffff;
+    local_8->field_003C = 0xffffffff;
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -398,8 +398,8 @@ joined_r0x00555393:
     g_currentExceptionFrame = local_50.previous;
     return;
   default:
-    if (*(code **)(local_8 + 0x58) != (code *)0x0) {
-      (**(code **)(local_8 + 0x58))(*(undefined4 *)(local_8 + 0x54));
+    if ((code *)local_8->field_0058 != (code *)0x0) {
+      (*(code *)local_8->field_0058)(local_8->field_0054);
     }
   }
   g_currentExceptionFrame = local_50.previous;

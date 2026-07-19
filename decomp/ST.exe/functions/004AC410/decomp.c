@@ -39,20 +39,20 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x100);
   }
   uVar5 = 1 << (param_1 & 0x1f);
-  if ((uVar5 & *(uint *)&pSVar2->field_0x1c) == 0) {
+  if ((uVar5 & pSVar2->field_001C) == 0) {
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  FUN_006e9d40((void *)pSVar2[1].field_0018,(uint *)pSVar2->field_0018,(int)(char)param_1);
-  *(uint *)&pSVar2->field_0x1c = *(uint *)&pSVar2->field_0x1c & ~uVar5;
+  FUN_006e9d40((void *)pSVar2->field_003C,(uint *)pSVar2->field_0018,(int)(char)param_1);
+  pSVar2->field_001C = pSVar2->field_001C & ~uVar5;
   if (param_1 == 0xe) {
-    if (pSVar2->field_0x11 == '\x01') {
+    if (pSVar2->field_0011 == '\x01') {
       thunk_FUN_004ad5e0((int)pSVar2);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     thunk_FUN_004ad5e0((int)pSVar2);
-    pSVar2->field_0x11 = 0;
+    pSVar2->field_0011 = 0;
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

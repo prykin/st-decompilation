@@ -1,5 +1,10 @@
 
-int __cdecl FUN_0070a650(cMf32 *param_1,byte param_2,char *param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 55 | 57 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfImgGetLen(cMf32 *param_1,byte param_2,char *param_3,int param_4)
 
 {
   code *pcVar1;

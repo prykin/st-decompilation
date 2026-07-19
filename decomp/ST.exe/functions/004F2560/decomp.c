@@ -91,17 +91,17 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
   if (*(Global_sub_005259B0_param_1Enum *)(local_18 + 0x20) != 0) {
     uVar7 = thunk_FUN_005259b0(*(Global_sub_005259B0_param_1Enum *)(local_18 + 0x20),
                                *(ushort *)(local_18 + 0x24),'\0');
-    local_10 = (byte *)FUN_0070b3a0(*(int *)&pCVar5->field_0x28e,uVar7);
+    local_10 = (byte *)FUN_0070b3a0(pCVar5->field_028E,uVar7);
     iVar6 = local_30;
     local_1c = -(uint)(puVar14[7] != '\x03') & 5;
     local_34 = local_1c + local_14;
-    thunk_FUN_00540760(local_20,local_30,local_34,'\x06',local_10);
+    DibPut(local_20,local_30,local_34,'\x06',local_10);
     uVar2 = *(ushort *)(puVar14 + 0x28);
     if (uVar2 != 0xffff) {
       wsprintfA(&pCVar5->field_0x1e1,&DAT_007c1890,(uint)uVar2);
-      ccFntTy::SetSurf(*(ccFntTy **)&pCVar5->field_0x1b8,(int)local_20,0,iVar6 + 0x2f,
+      ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar6 + 0x2f,
                        (*(int *)(local_10 + 8) + -0xc) / 2 + local_1c + local_14,0x11,0xc);
-      ccFntTy::WrTxt(*(ccFntTy **)&pCVar5->field_0x1b8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
+      ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
       piVar12 = (int *)(local_24 + (local_c & 0xff) * 0x1c);
       *piVar12 = iVar6 + 0x2f + local_28;
       piVar12[1] = local_34 + local_2c;
@@ -127,16 +127,16 @@ void __thiscall CPanelTy::PaintWeap(CPanelTy *this,int param_1)
     return;
   }
   if (GVar3 == 0xdd) {
-    iVar8 = *(int *)&pCVar5->field_0x2d6;
+    iVar8 = pCVar5->field_02D6;
     iVar11 = 0;
   }
   else {
     if (GVar3 != 0xde) {
       uVar7 = thunk_FUN_005259b0(GVar3,*(ushort *)(local_18 + 0x22),'\0');
-      local_10 = (byte *)FUN_0070b3a0(*(int *)&pCVar5->field_0x28e,uVar7);
+      local_10 = (byte *)FUN_0070b3a0(pCVar5->field_028E,uVar7);
       goto LAB_004f27ff;
     }
-    iVar8 = *(int *)&pCVar5->field_0x2d6;
+    iVar8 = pCVar5->field_02D6;
     iVar11 = 1;
   }
   local_10 = (byte *)FUN_0070b3a0(iVar8,iVar11);
@@ -160,9 +160,9 @@ LAB_004f27ff:
     iVar11 = local_1c + local_14;
     iVar8 = iVar6;
   }
-  thunk_FUN_00540760(local_20,iVar8,iVar11,'\x06',local_10);
+  DibPut(local_20,iVar8,iVar11,'\x06',local_10);
   if (*(short *)(puVar14 + 0x1e) == 0xff) {
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar5->field_0x1b8,(int)local_20,0,iVar6 + 1,local_14 + 2,
+    ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar6 + 1,local_14 + 2,
                      *(int *)(local_10 + 4),*(int *)(local_10 + 8));
     iVar19 = -1;
     iVar18 = -1;
@@ -170,7 +170,7 @@ LAB_004f27ff:
     iVar11 = -1;
     iVar8 = -2;
     puVar9 = (uint *)FUN_006b0140(0x2715,DAT_00807618);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar5->field_0x1b8,puVar9,iVar8,iVar11,uVar17,iVar18,iVar19);
+    ccFntTy::WrTxt(pCVar5->field_01B8,puVar9,iVar8,iVar11,uVar17,iVar18,iVar19);
   }
   local_5 = '\x01';
   if (*(short *)(puVar14 + 0x26) == -1) {
@@ -216,9 +216,9 @@ LAB_004f27ff:
     if ((0x9b < *(ushort *)(puVar14 + 0x1e)) && (*(ushort *)(puVar14 + 0x1e) < 0x9f)) {
       local_34 = 4;
     }
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar5->field_0x1b8,(int)local_20,0,iVar6 + 0x2f,
+    ccFntTy::SetSurf(pCVar5->field_01B8,(int)local_20,0,iVar6 + 0x2f,
                      (*(int *)(local_10 + 8) + -0xc) / 2 + local_34 + local_1c + local_14,0x11,0xc);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar5->field_0x1b8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
+    ccFntTy::WrTxt(pCVar5->field_01B8,(uint *)&pCVar5->field_0x1e1,-3,-1,0,-1,-1);
     piVar12 = (int *)(local_24 + (local_c & 0xff) * 0x1c);
     *piVar12 = iVar6 + 0x2f + local_28;
     piVar12[1] = (*(int *)(local_10 + 8) + -0xc) / 2 + local_34 + local_1c + local_14 + local_2c;

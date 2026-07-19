@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\Grpway3d.cpp
+   Diagnostic line evidence: 2635 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6)
 
 {

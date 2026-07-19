@@ -1,4 +1,4 @@
-FUN_0070be80:
+imgGetSprFromFile:
 0070BE80  55                        PUSH EBP
 0070BE81  8B EC                     MOV EBP,ESP
 0070BE83  83 EC 4C                  SUB ESP,0x4c

@@ -298,25 +298,25 @@ LAB_0046b5ac:
           do {
             puVar11 = (undefined4 *)
                       thunk_FUN_0041dc40(local_4c,*local_10,*(undefined2 *)(local_10 + 1),
-                                         *(short *)&this->field_0x6c);
+                                         this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
             if (DAT_0080732c == 1) {
               bVar26 = 0;
               sVar25 = 0;
-              uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+              uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar8 = -1;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar24 = 0;
               sVar23 = 0;
               uVar12 = uVar10 * 0x41c64e6d + 0x3039;
               sVar22 = 0;
-              *(uint *)&this->field_0x1c = uVar12;
+              this->field_001C = uVar12;
               sVar21 = 0;
               sVar20 = 0;
               local_24 = uVar12 * 0x41c64e6d + 0x3039;
               sVar19 = 0;
-              *(uint *)&this->field_0x1c = local_24;
+              this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
               iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3
                        + (int)local_8;
@@ -324,7 +324,7 @@ LAB_0046b5ac:
               uVar10 = local_24;
             }
             else {
-              uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+              uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
               bVar26 = 0;
               sVar25 = 0;
               uVar15 = uVar12 * 0x41c64e6d + 0x3039;
@@ -334,11 +334,11 @@ LAB_0046b5ac:
               sVar22 = 0;
               sVar21 = 0;
               sVar20 = 0;
-              *(uint *)&this->field_0x1c = uVar12;
+              this->field_001C = uVar12;
               uVar10 = uVar15 * 0x41c64e6d + 0x3039;
               sVar19 = 0;
-              *(uint *)&this->field_0x1c = uVar15;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar15;
+              this->field_001C = uVar10;
               iVar13 = (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_8;
               local_c._2_2_ = (short)((uint)local_c >> 0x10);
               iVar16 = ((uVar15 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_c._2_2_;
@@ -372,7 +372,7 @@ LAB_0046b5ac:
       goto cf_common_exit_0046C3C5;
     }
     if (SVar4 == CASE_3) {
-      iVar13 = (int)*(short *)&this->field_0x6c;
+      iVar13 = (int)(short)this->field_006C;
       if (0x2d < iVar13 % 0x5a) {
         iVar13 = iVar13 + 0x2d;
       }
@@ -410,25 +410,25 @@ LAB_0046b5ac:
           do {
             puVar11 = (undefined4 *)
                       thunk_FUN_0041dc40(local_4c,*local_10,*(undefined2 *)(local_10 + 1),
-                                         *(short *)&this->field_0x6c);
+                                         this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
             if (DAT_0080732c == 1) {
               bVar26 = 0;
               sVar25 = 0;
-              uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+              uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar8 = -1;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar24 = 0;
               sVar23 = 0;
               uVar12 = uVar10 * 0x41c64e6d + 0x3039;
               sVar22 = 0;
-              *(uint *)&this->field_0x1c = uVar12;
+              this->field_001C = uVar12;
               sVar21 = 0;
               sVar20 = 0;
               local_24 = uVar12 * 0x41c64e6d + 0x3039;
               sVar19 = 0;
-              *(uint *)&this->field_0x1c = local_24;
+              this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
               iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3
                        + (int)local_8;
@@ -436,13 +436,13 @@ LAB_0046b5ac:
               uVar10 = local_24;
             }
             else {
-              uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar12;
+              uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+              this->field_001C = uVar12;
               uVar15 = uVar12 * 0x41c64e6d + 0x3039;
               bVar26 = 0;
-              *(uint *)&this->field_0x1c = uVar15;
+              this->field_001C = uVar15;
               uVar10 = uVar15 * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar25 = 0;
               iVar8 = -1;
               sVar24 = 0;
@@ -500,7 +500,7 @@ LAB_0046b6e2:
       local_a8 = (int)*(short *)&this->field_0x4df;
       local_a4 = (int)*(short *)&this->field_0x4e1;
       local_9c = *(undefined4 *)&this->field_0x4e7;
-      local_6d = (int)*(short *)&this->field_0x6c;
+      local_6d = (int)(short)this->field_006C;
       local_a0 = (uint)*(ushort *)&this->field_0x4fa;
       local_85 = 100;
       local_81 = 100;
@@ -628,25 +628,25 @@ cf_common_exit_0046C04E:
           do {
             puVar11 = (undefined4 *)
                       thunk_FUN_0041dc40(local_4c,*local_10,*(undefined2 *)(local_10 + 1),
-                                         *(short *)&this->field_0x6c);
+                                         this->field_006C);
             local_c = *puVar11;
             local_8 = *(short *)(puVar11 + 1);
             if (DAT_0080732c == 1) {
               bVar26 = 0;
               sVar25 = 0;
-              uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+              uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
               iVar8 = -1;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar24 = 0;
               sVar23 = 0;
               uVar12 = uVar10 * 0x41c64e6d + 0x3039;
               sVar22 = 0;
-              *(uint *)&this->field_0x1c = uVar12;
+              this->field_001C = uVar12;
               sVar21 = 0;
               sVar20 = 0;
               local_24 = uVar12 * 0x41c64e6d + 0x3039;
               sVar19 = 0;
-              *(uint *)&this->field_0x1c = local_24;
+              this->field_001C = local_24;
               lVar18 = Library::MSVCRT::__ftol();
               iVar13 = (int)(short)lVar18 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3
                        + (int)local_8;
@@ -654,13 +654,13 @@ cf_common_exit_0046C04E:
               uVar10 = local_24;
             }
             else {
-              uVar12 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar12;
+              uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
+              this->field_001C = uVar12;
               uVar15 = uVar12 * 0x41c64e6d + 0x3039;
               bVar26 = 0;
-              *(uint *)&this->field_0x1c = uVar15;
+              this->field_001C = uVar15;
               uVar10 = uVar15 * 0x41c64e6d + 0x3039;
-              *(uint *)&this->field_0x1c = uVar10;
+              this->field_001C = uVar10;
               sVar25 = 0;
               iVar8 = -1;
               sVar24 = 0;

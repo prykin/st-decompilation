@@ -56,7 +56,7 @@ LAB_0054b7e0:
     iVar2 = *(int *)((int)pvVar1 + 0x4df) * -0x13 + 0x136;
     iVar4 = DAT_00806730 + -0x15;
   }
-  thunk_FUN_005403c0(iVar4,iVar2,'\x06',pBVar3);
+  PutDDX(iVar4,iVar2,'\x06',pBVar3);
 LAB_0054b81b:
   *(int *)((int)pvVar1 + 0x4df) = param_1;
   if (-1 < param_1) {
@@ -79,7 +79,7 @@ LAB_0054b81b:
       iVar4 = *(int *)((int)pvVar1 + 0x4df) * -0x13 + 0x136;
       iVar2 = DAT_00806730 + -0x15;
     }
-    thunk_FUN_005403c0(iVar2,iVar4,'\x06',pBVar3);
+    PutDDX(iVar2,iVar4,'\x06',pBVar3);
   }
   g_currentExceptionFrame = pIVar7;
   return;

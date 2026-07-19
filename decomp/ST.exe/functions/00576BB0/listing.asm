@@ -1,4 +1,4 @@
-FUN_00576bb0:
+CreateBaseSystem:
 00576BB0  55                        PUSH EBP
 00576BB1  8B EC                     MOV EBP,ESP
 00576BB3  83 EC 44                  SUB ESP,0x44

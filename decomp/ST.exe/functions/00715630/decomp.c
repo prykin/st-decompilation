@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\connect.cpp
+   Diagnostic line evidence: 151 | 187 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __cdecl
 FUN_00715630(int *param_1,int param_2,uint *param_3,int *param_4,undefined4 *param_5,uint *param_6,
             int param_7,int param_8)
@@ -56,7 +61,7 @@ FUN_00715630(int *param_1,int param_2,uint *param_3,int *param_4,undefined4 *par
     RaiseInternalException(-0x4d,0,s_E__ourlib_connect_cpp_007f043c,0x97);
   }
   if (local_14 == 0) {
-    local_c = FUN_007154e0(local_8,local_18,(byte *)&local_20,(int *)&local_10,&local_1c);
+    local_c = cnUnPackMess(local_8,local_18,(byte *)&local_20,(int *)&local_10,&local_1c);
     if (param_5 != (undefined4 *)0x0) {
       *param_5 = 0;
     }

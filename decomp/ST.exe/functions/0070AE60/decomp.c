@@ -1,6 +1,12 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 432 | 444 | 446 | 456 | 472 | 474 (metadata/report site, not the
+   function definition)
+   [STSourceProvenanceApplier end] */
+
 char * __cdecl
-FUN_0070ae60(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *param_5,int param_6)
+mfImtLoad(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *param_5,int param_6)
 
 {
   code *pcVar1;
@@ -49,7 +55,7 @@ FUN_0070ae60(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *p
           bVar8 = param_3;
           pCVar3 = FUN_006f2c00(local_8,(uint)(byte)local_8[0x20],*(short *)(local_8 + 0x21) + iVar2
                                );
-          puVar4 = FUN_0070a5a0(param_1,local_8[0x2b],pCVar3,bVar8,iVar7);
+          puVar4 = mfImgLoad(param_1,local_8[0x2b],pCVar3,bVar8,iVar7);
           *(ushort **)(local_8 + iVar2 * 4 + 0x30) = puVar4;
           if (*(int *)(local_8 + iVar2 * 4 + 0x30) == 0) {
             RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x1c8);
@@ -58,12 +64,12 @@ FUN_0070ae60(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *p
             iVar7 = 1;
             pCVar3 = FUN_006f2c00(local_8,(uint)(byte)local_8[0x20],(int)*(short *)(local_8 + 0x21))
             ;
-            iVar7 = FUN_0070a6f0(param_1,local_8[0x2b],pCVar3,iVar7);
+            iVar7 = mfImgGetWidth(param_1,local_8[0x2b],pCVar3,iVar7);
             *(short *)(local_8 + 0x2c) = (short)iVar7;
             iVar7 = 1;
             pCVar3 = FUN_006f2c00(local_8,(uint)(byte)local_8[0x20],(int)*(short *)(local_8 + 0x21))
             ;
-            iVar7 = FUN_0070a7b0(param_1,local_8[0x2b],pCVar3,iVar7);
+            iVar7 = mfImgGetHeight(param_1,local_8[0x2b],pCVar3,iVar7);
             *(short *)(local_8 + 0x2e) = (short)iVar7;
           }
           iVar2 = iVar2 + 1;
@@ -81,7 +87,7 @@ FUN_0070ae60(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *p
           iVar7 = param_6;
           bVar8 = param_3;
           pCVar3 = FUN_006f2c00(local_8,(uint)(byte)local_8[0x20],param_5[local_10]);
-          puVar4 = FUN_0070a5a0(param_1,local_8[0x2b],pCVar3,bVar8,iVar7);
+          puVar4 = mfImgLoad(param_1,local_8[0x2b],pCVar3,bVar8,iVar7);
           *(ushort **)(local_8 + iVar2 * 4 + 0x30) = puVar4;
           if (*(int *)(local_8 + iVar2 * 4 + 0x30) == 0) {
             RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mfimg_cpp_007effe0,0x1be);
@@ -90,11 +96,11 @@ FUN_0070ae60(cMf32 *param_1,char *param_2,byte param_3,int param_4,undefined4 *p
           if (local_10 == 0) {
             iVar7 = 1;
             pCVar3 = FUN_006f2c00(local_8,(uint)(byte)local_8[0x20],*param_5);
-            iVar7 = FUN_0070a6f0(param_1,local_8[0x2b],pCVar3,iVar7);
+            iVar7 = mfImgGetWidth(param_1,local_8[0x2b],pCVar3,iVar7);
             *(short *)(local_8 + 0x2c) = (short)iVar7;
             iVar7 = 1;
             pCVar3 = FUN_006f2c00(local_8,(uint)(byte)local_8[0x20],*param_5);
-            iVar7 = FUN_0070a7b0(param_1,local_8[0x2b],pCVar3,iVar7);
+            iVar7 = mfImgGetHeight(param_1,local_8[0x2b],pCVar3,iVar7);
             *(short *)(local_8 + 0x2e) = (short)iVar7;
           }
           local_10 = iVar2 + 1;

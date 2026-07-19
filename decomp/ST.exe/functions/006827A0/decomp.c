@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_script.cpp
+   Diagnostic line evidence: 437 | 438 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void FUN_006827a0(void)
 
 {

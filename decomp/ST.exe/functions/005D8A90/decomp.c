@@ -23,24 +23,24 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 4;
-    puVar5 = (uint *)&local_8[0x44].field_0x1d;
+    puVar5 = &local_8->field_1AF1;
     do {
       if (*puVar5 != 0) {
-        FUN_006e56b0(*(void **)&pSVar2->field_0xc,*puVar5);
+        FUN_006e56b0((void *)pSVar2->field_000C,*puVar5);
       }
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    FUN_006b3af0(DAT_008075a8,*(uint *)&pSVar2[0x48].field_0x4c);
-    if (*(uint *)&pSVar2[0x44].field_0x31 != 0xffffffff) {
-      FUN_006b3af0((int *)pSVar2[0x45].field_0010,*(uint *)&pSVar2[0x44].field_0x31);
+    FUN_006b3af0(DAT_008075a8,pSVar2->field_1CB4);
+    if (pSVar2->field_1B05 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar2->field_1B49,pSVar2->field_1B05);
     }
-    if (*(uint *)&pSVar2[0x45].field_0x5d != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pSVar2[0x46].field_0x3c,*(uint *)&pSVar2[0x45].field_0x5d);
+    if (pSVar2->field_1B96 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar2->field_1BDA,pSVar2->field_1B96);
     }
-    if (*(uint *)&pSVar2[0x47].field_0x24 != 0xffffffff) {
-      FUN_006b3af0(*(int **)&pSVar2[0x48].field_0x3,*(uint *)&pSVar2[0x47].field_0x24);
+    if (pSVar2->field_1C27 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar2->field_1C6B,pSVar2->field_1C27);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -1,4 +1,4 @@
-FUN_006f01a0:
+mfTMapDelObj:
 006F01A0  55                        PUSH EBP
 006F01A1  8B EC                     MOV EBP,ESP
 006F01A3  83 EC 44                  SUB ESP,0x44

@@ -8,10 +8,9 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
 {
   undefined1 *puVar1;
   code *pcVar2;
-  undefined2 uVar3;
   CPanelTy *this_00;
+  int iVar3;
   int iVar4;
-  int iVar5;
   ccFntTy *extraout_ECX;
   ccFntTy *extraout_ECX_00;
   ccFntTy *extraout_ECX_01;
@@ -26,9 +25,9 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar6;
-  uint *puVar7;
-  int *piVar8;
+  undefined4 *puVar5;
+  uint *puVar6;
+  int *piVar7;
   InternalExceptionFrame local_50;
   CPanelTy *local_c;
   int local_8;
@@ -36,305 +35,303 @@ void __thiscall CPanelTy::DoneCPanel(CPanelTy *this)
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
-  if (iVar4 == 0) {
+  if (iVar3 == 0) {
     puVar1 = &local_c->field_0x18;
     local_c->field_0028 = 0x4404;
     FUN_006e6000(local_c,0xf,0,(undefined4 *)puVar1);
-    piVar8 = (int *)&this_00->field_0x217;
+    piVar7 = (int *)&this_00->field_0x217;
     local_8 = 4;
     do {
-      if (*piVar8 != 0) {
-        FUN_006ab060(piVar8);
+      if (*piVar7 != 0) {
+        FUN_006ab060(piVar7);
       }
-      piVar8 = piVar8 + 1;
+      piVar7 = piVar7 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    puVar6 = (undefined4 *)puVar1;
-    for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *puVar6 = 0;
-      puVar6 = puVar6 + 1;
+    puVar5 = (undefined4 *)puVar1;
+    for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
     this_00->field_0028 = 0x14;
-    uVar3 = *(undefined2 *)&this_00->field_0xa;
-    *(undefined2 *)&this_00->field_0x2c = *(undefined2 *)&this_00->field_0x8;
-    this_00->field_002E = uVar3;
+    *(undefined4 *)&this_00->field_0x2c = this_00->field_0008;
     FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
-    if (*(uint *)&this_00->field_0x95c != 0) {
-      FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)&this_00->field_0x95c);
+    if (this_00->field_095C != 0) {
+      FUN_006e56b0((void *)this_00->field_000C,this_00->field_095C);
     }
-    *(undefined4 *)&this_00->field_0x95c = 0;
-    puVar7 = (uint *)&this_00->field_0x308;
-    iVar4 = 2;
+    this_00->field_095C = 0;
+    puVar6 = &this_00->field_0308;
+    iVar3 = 2;
     do {
-      if (*(uint *)((int)puVar7 + -10) != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)((int)puVar7 + -10));
+      if (*(uint *)((int)puVar6 + -10) != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*(uint *)((int)puVar6 + -10));
       }
-      *(undefined4 *)((int)puVar7 + -10) = 0;
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
+      *(undefined4 *)((int)puVar6 + -10) = 0;
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
       }
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    puVar7 = (uint *)&this_00->field_0x310;
-    iVar4 = 3;
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    puVar6 = &this_00->field_0310;
+    iVar3 = 3;
     do {
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
       }
-      *puVar7 = 0;
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    if (*(uint *)&this_00->field_0x9d0 != 0) {
-      FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)&this_00->field_0x9d0);
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    if (this_00->field_09D0 != 0) {
+      FUN_006e56b0((void *)this_00->field_000C,this_00->field_09D0);
     }
-    *(undefined4 *)&this_00->field_0x9d0 = 0;
-    puVar7 = (uint *)&this_00->field_0x9a4;
-    iVar4 = 7;
+    this_00->field_09D0 = 0;
+    puVar6 = &this_00->field_09A4;
+    iVar3 = 7;
     do {
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    puVar7 = (uint *)&this_00->field_0x9c0;
-    iVar4 = 2;
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    puVar6 = &this_00->field_09C0;
+    iVar3 = 2;
     do {
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    puVar7 = (uint *)&this_00->field_0xa15;
-    iVar4 = 6;
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    puVar6 = &this_00->field_0A15;
+    iVar3 = 6;
     do {
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    puVar7 = (uint *)&this_00->field_0xb1f;
-    iVar4 = 6;
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    puVar6 = &this_00->field_0B1F;
+    iVar3 = 6;
     do {
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    if (*(uint *)&this_00->field_0xb37 != 0) {
-      FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)&this_00->field_0xb37);
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    if (this_00->field_0B37 != 0) {
+      FUN_006e56b0((void *)this_00->field_000C,this_00->field_0B37);
     }
-    *(undefined4 *)&this_00->field_0xb37 = 0;
-    puVar7 = (uint *)&this_00->field_0x960;
-    iVar4 = 4;
+    this_00->field_0B37 = 0;
+    puVar6 = &this_00->field_0960;
+    iVar3 = 4;
     do {
-      if (*puVar7 != 0) {
-        FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar7);
-        *puVar7 = 0;
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)this_00->field_000C,*puVar6);
+        *puVar6 = 0;
       }
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    if (*(uint *)&this_00->field_0x970 != 0) {
-      FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)&this_00->field_0x970);
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    if (this_00->field_0970 != 0) {
+      FUN_006e56b0((void *)this_00->field_000C,this_00->field_0970);
     }
-    puVar7 = (uint *)&this_00->field_0x148;
-    *(undefined4 *)&this_00->field_0x970 = 0;
+    puVar6 = &this_00->field_0148;
+    this_00->field_0970 = 0;
     DAT_00801688 = 0;
-    iVar4 = 0xb;
+    iVar3 = 0xb;
     do {
-      if (-1 < (int)*puVar7) {
-        FUN_006b3bb0(DAT_008075a8,*puVar7);
+      if (-1 < (int)*puVar6) {
+        FUN_006b3bb0(DAT_008075a8,*puVar6);
       }
-      *puVar7 = 0xffffffff;
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    if (-1 < (int)*(uint *)&this_00->field_0x174) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00->field_0x174);
+      *puVar6 = 0xffffffff;
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    if (-1 < (int)this_00->field_0174) {
+      FUN_006b3bb0(DAT_008075a8,this_00->field_0174);
     }
-    *(undefined4 *)&this_00->field_0x174 = 0xffffffff;
-    if (-1 < (int)*(uint *)&this_00->field_0x178) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00->field_0x178);
+    this_00->field_0174 = 0xffffffff;
+    if (-1 < (int)this_00->field_0178) {
+      FUN_006b3bb0(DAT_008075a8,this_00->field_0178);
     }
-    *(undefined4 *)&this_00->field_0x178 = 0xffffffff;
-    if (-1 < (int)*(uint *)&this_00->field_0x17c) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00->field_0x17c);
+    this_00->field_0178 = 0xffffffff;
+    if (-1 < (int)this_00->field_017C) {
+      FUN_006b3bb0(DAT_008075a8,this_00->field_017C);
     }
-    *(undefined4 *)&this_00->field_0x17c = 0xffffffff;
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0xb43);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0xb47);
-    puVar7 = (uint *)&this_00->field_0x9d9;
-    iVar4 = 0xf;
+    this_00->field_017C = 0xffffffff;
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_0B43);
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_0B47);
+    puVar6 = &this_00->field_09D9;
+    iVar3 = 0xf;
     do {
-      cMf32::RecMemFree(DAT_00806790,puVar7);
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    if ((DAT_00807598 != (void *)0x0) && (*(int **)&this_00->field_0xdb3 != (int *)0x0)) {
-      FUN_006e6580(DAT_00807598,*(int **)&this_00->field_0xdb3);
+      cMf32::RecMemFree(DAT_00806790,puVar6);
+      puVar6 = puVar6 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    if ((DAT_00807598 != (void *)0x0) && ((int *)this_00->field_0DB3 != (int *)0x0)) {
+      FUN_006e6580(DAT_00807598,(int *)this_00->field_0DB3);
     }
-    *(undefined4 *)&this_00->field_0xdb3 = 0;
+    this_00->field_0DB3 = 0;
     if (DAT_00807598 != (void *)0x0) {
       FUN_006e6500(DAT_00807598,(undefined4 *)0x0);
     }
-    piVar8 = (int *)&this_00->field_0x227;
-    iVar4 = 4;
+    piVar7 = &this_00->field_0227;
+    iVar3 = 4;
     do {
-      if (*piVar8 != 0) {
-        FUN_006ab060(piVar8);
+      if (*piVar7 != 0) {
+        FUN_006ab060(piVar7);
       }
-      piVar8 = piVar8 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0x994);
-    puVar6 = (undefined4 *)&this_00->field_0xdbf;
-    iVar4 = 2;
+      piVar7 = piVar7 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_0994);
+    puVar5 = &this_00->field_0DBF;
+    iVar3 = 2;
     do {
-      *(undefined4 *)((int)puVar6 + -0x3f7) = 0;
-      *puVar6 = 0;
-      cMf32::RecMemFree(DAT_00806780,puVar6 + -2);
+      *(undefined4 *)((int)puVar5 + -0x3f7) = 0;
+      *puVar5 = 0;
+      cMf32::RecMemFree(DAT_00806780,puVar5 + -2);
+      puVar5 = puVar5 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    puVar6 = &this_00->field_0974;
+    iVar3 = 8;
+    do {
+      cMf32::RecMemFree(DAT_00806790,puVar6);
       puVar6 = puVar6 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    puVar7 = (uint *)&this_00->field_0x974;
-    iVar4 = 8;
-    do {
-      cMf32::RecMemFree(DAT_00806790,puVar7);
-      puVar7 = puVar7 + 1;
-      iVar4 = iVar4 + -1;
-    } while (iVar4 != 0);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0x954);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0x958);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0x286);
-    cMf32::RecMemFree(DAT_00806790,(uint *)&this_00->field_0x28a);
-    *(undefined4 *)&this_00->field_0x77c = 0;
-    *(undefined4 *)&this_00->field_0x2de = 0;
-    *(undefined4 *)&this_00->field_0x2da = 0;
-    *(undefined4 *)&this_00->field_0xb1b = 0;
-    *(undefined4 *)&this_00->field_0x9d5 = 0;
-    *(undefined4 *)&this_00->field_0xb17 = 0;
-    *(undefined4 *)&this_00->field_0x2d6 = 0;
-    *(undefined4 *)&this_00->field_0x2d2 = 0;
-    *(undefined4 *)&this_00->field_0x2ce = 0;
-    *(undefined4 *)&this_00->field_0x2ca = 0;
-    *(undefined4 *)&this_00->field_0x2c6 = 0;
-    *(undefined4 *)&this_00->field_0x2c2 = 0;
-    *(undefined4 *)&this_00->field_0x2be = 0;
-    *(undefined4 *)&this_00->field_0x2ba = 0;
-    *(undefined4 *)&this_00->field_0x2b2 = 0;
-    *(undefined4 *)&this_00->field_0x2b6 = 0;
-    *(undefined4 *)&this_00->field_0x2a2 = 0;
-    *(undefined4 *)&this_00->field_0x29e = 0;
-    *(undefined4 *)&this_00->field_0x29a = 0;
-    *(undefined4 *)&this_00->field_0x296 = 0;
-    *(undefined4 *)&this_00->field_0x292 = 0;
-    *(undefined4 *)&this_00->field_0x28e = 0;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_0954);
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_0958);
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_0286);
+    cMf32::RecMemFree(DAT_00806790,&this_00->field_028A);
+    this_00->field_077C = 0;
+    this_00->field_02DE = 0;
+    this_00->field_02DA = 0;
+    this_00->field_0B1B = 0;
+    this_00->field_09D5 = 0;
+    this_00->field_0B17 = 0;
+    this_00->field_02D6 = 0;
+    this_00->field_02D2 = 0;
+    this_00->field_02CE = 0;
+    this_00->field_02CA = 0;
+    this_00->field_02C6 = 0;
+    this_00->field_02C2 = 0;
+    this_00->field_02BE = 0;
+    this_00->field_02BA = 0;
+    this_00->field_02B2 = 0;
+    this_00->field_02B6 = 0;
+    this_00->field_02A2 = 0;
+    this_00->field_029E = 0;
+    this_00->field_029A = 0;
+    this_00->field_0296 = 0;
+    this_00->field_0292 = 0;
+    this_00->field_028E = 0;
     this_01 = extraout_ECX;
     if ((byte *)this_00->field_024B != (byte *)0x0) {
       FUN_006ae110((byte *)this_00->field_024B);
       this_01 = extraout_ECX_00;
     }
     this_00->field_024B = 0;
-    if (*(byte **)&this_00->field_0xb4b != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0xb4b);
+    if ((byte *)this_00->field_0B4B != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0B4B);
       this_01 = extraout_ECX_01;
     }
-    *(undefined4 *)&this_00->field_0xb4b = 0;
-    if (*(byte **)&this_00->field_0xb95 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&this_00->field_0xb95);
+    this_00->field_0B4B = 0;
+    if ((byte *)this_00->field_0B95 != (byte *)0x0) {
+      FUN_006ae110((byte *)this_00->field_0B95);
       this_01 = extraout_ECX_02;
     }
-    *(undefined4 *)&this_00->field_0xb95 = 0;
-    if (*(uint **)&this_00->field_0x1cc != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1cc);
-      *(undefined4 *)&this_00->field_0x1cc = 0;
+    this_00->field_0B95 = 0;
+    if (this_00->field_01CC != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01CC);
+      this_00->field_01CC = (ccFntTy *)0x0;
       this_01 = extraout_ECX_03;
     }
-    if (*(uint **)&this_00->field_0x1d0 != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1d0);
-      *(undefined4 *)&this_00->field_0x1d0 = 0;
+    if (this_00->field_01D0 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01D0);
+      this_00->field_01D0 = (ccFntTy *)0x0;
       this_01 = extraout_ECX_04;
     }
-    if (*(uint **)&this_00->field_0x1d4 != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1d4);
-      *(undefined4 *)&this_00->field_0x1d4 = 0;
+    if (this_00->field_01D4 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01D4);
+      this_00->field_01D4 = (ccFntTy *)0x0;
       this_01 = extraout_ECX_05;
     }
-    if (*(uint **)&this_00->field_0x1c8 != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1c8);
-      *(undefined4 *)&this_00->field_0x1c8 = 0;
+    if (this_00->field_01C8 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01C8);
+      this_00->field_01C8 = (ccFntTy *)0x0;
       this_01 = extraout_ECX_06;
     }
-    if (*(uint **)&this_00->field_0x1c4 != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1c4);
-      *(undefined4 *)&this_00->field_0x1c4 = 0;
+    if (this_00->field_01C4 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01C4);
+      this_00->field_01C4 = (ccFntTy *)0x0;
       this_01 = extraout_ECX_07;
     }
-    if (*(uint **)&this_00->field_0x1c0 != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1c0);
-      *(undefined4 *)&this_00->field_0x1c0 = 0;
+    if ((uint *)this_00->field_01C0 != (uint *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01C0);
+      this_00->field_01C0 = 0;
       this_01 = extraout_ECX_08;
     }
-    if (*(uint **)&this_00->field_0x1bc != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1bc);
-      *(undefined4 *)&this_00->field_0x1bc = 0;
+    if (this_00->field_01BC != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01BC);
+      this_00->field_01BC = (ccFntTy *)0x0;
       this_01 = extraout_ECX_09;
     }
-    if (*(uint **)&this_00->field_0x1b8 != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)&this_00->field_0x1b8);
-      *(undefined4 *)&this_00->field_0x1b8 = 0;
+    if (this_00->field_01B8 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_01,(uint *)this_00->field_01B8);
+      this_00->field_01B8 = (ccFntTy *)0x0;
     }
-    if (*(int *)&this_00->field_0x1ac != 0) {
-      FUN_006ab060((undefined4 *)&this_00->field_0x1ac);
+    if (this_00->field_01AC != 0) {
+      FUN_006ab060(&this_00->field_01AC);
     }
-    if (*(int *)&this_00->field_0x1b0 != 0) {
-      FUN_006ab060((undefined4 *)&this_00->field_0x1b0);
+    if (this_00->field_01B0 != 0) {
+      FUN_006ab060(&this_00->field_01B0);
     }
-    if (*(int *)&this_00->field_0x1b4 != 0) {
-      FUN_006ab060((undefined4 *)&this_00->field_0x1b4);
+    if (this_00->field_01B4 != 0) {
+      FUN_006ab060(&this_00->field_01B4);
     }
-    piVar8 = (int *)&this_00->field_0x180;
+    piVar7 = &this_00->field_0180;
     local_8 = 0xb;
     do {
-      if (*piVar8 != 0) {
-        FUN_006ab060(piVar8);
+      if (*piVar7 != 0) {
+        FUN_006ab060(piVar7);
       }
-      piVar8 = piVar8 + 1;
+      piVar7 = piVar7 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    if (*(int **)&this_00->field_0x1d8 != (int *)0x0) {
-      FUN_00714060(*(int **)&this_00->field_0x1d8);
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&this_00->field_0x1d8);
-      *(undefined4 *)&this_00->field_0x1d8 = 0;
+    if ((int *)this_00->field_01D8 != (int *)0x0) {
+      FUN_00714060((int *)this_00->field_01D8);
+      Library::MSVCRT::FUN_0072e2b0((undefined4 *)this_00->field_01D8);
+      this_00->field_01D8 = 0;
     }
-    if (*(int *)&this_00->field_0x25b != 0) {
-      FUN_0070b600((int *)&this_00->field_0x25b);
+    if (this_00->field_025B != 0) {
+      FUN_0070b600(&this_00->field_025B);
     }
     g_currentExceptionFrame = local_50.previous;
     return;
   }
   g_currentExceptionFrame = local_50.previous;
-  iVar5 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x213,0,iVar4,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x213,0,iVar3,&DAT_007a4ccc,
                              s_CPanelTy__DoneCPanel_007c2138);
-  if (iVar5 != 0) {
+  if (iVar4 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x213);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x213);
   return;
 }
 

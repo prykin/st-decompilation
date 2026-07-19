@@ -1,5 +1,10 @@
 
-uint * __cdecl FUN_0071aa10(int param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfsarr.cpp
+   Diagnostic line evidence: 21 | 30 | 35 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint * __cdecl mfSarLoad(int param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

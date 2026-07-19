@@ -1,5 +1,10 @@
 
-undefined4 __cdecl FUN_0071ab30(uint *param_1,int param_2,char *param_3,char param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfsarr.cpp
+   Diagnostic line evidence: 57 | 68 | 72 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 __cdecl mfSarSave(uint *param_1,int param_2,char *param_3,char param_4)
 
 {
   code *pcVar1;

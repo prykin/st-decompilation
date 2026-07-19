@@ -34,23 +34,23 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,undefined
     return;
   }
   if (param_1 == '\n') {
-    *(undefined4 *)&local_8->field_0x1a5 = 0x4271;
-    local_8->field_0x1ac = param_2;
+    local_8->field_01A5 = 0x4271;
+    local_8->field_01AC = param_2;
   }
   else if (param_1 == '\v') {
-    *(undefined4 *)&local_8->field_0x1a5 = 0x4270;
+    local_8->field_01A5 = 0x4270;
   }
   else {
     if (param_1 != '\f') {
       g_currentExceptionFrame = pIVar4;
       return;
     }
-    *(undefined4 *)&local_8->field_0x1a5 = 0x4276;
+    local_8->field_01A5 = 0x4276;
   }
-  local_8->field_0x1ab = param_1;
-  *(undefined4 *)&local_8->field_0x1a0 = 0;
-  local_8->field_0x1a9 = 0;
-  local_8->field_0x1a4 = 0xb;
+  local_8->field_01AB = param_1;
+  local_8->field_01A0 = 0;
+  local_8->field_01A9 = 0;
+  local_8->field_01A4 = 0xb;
   SetOptControls(local_8);
   sVar1 = this_00->field_0172;
   if ((sVar1 == 2) || (sVar1 == 4)) {

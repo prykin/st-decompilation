@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 727 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 uint * __cdecl
 FUN_006773b0(undefined4 param_1,uint param_2,char param_3,short param_4,short param_5,short param_6,
             short param_7,short param_8,short param_9,int param_10)
@@ -23,8 +28,8 @@ FUN_006773b0(undefined4 param_1,uint param_2,char param_3,short param_4,short pa
       puVar2 = &LAB_00403490;
     }
     local_8 = puVar1;
-    thunk_FUN_00676d80(param_1,0,param_2,(byte *)0x0,param_3,param_4,param_5,param_6,param_7,param_8
-                       ,param_9,puVar2,puVar1,(undefined *)0x0);
+    _EnumPlObj(param_1,0,param_2,(byte *)0x0,param_3,param_4,param_5,param_6,param_7,param_8,param_9
+               ,puVar2,puVar1,(undefined *)0x0);
     g_currentExceptionFrame = pIVar3;
     return puVar1;
   }

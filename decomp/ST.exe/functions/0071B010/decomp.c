@@ -1,5 +1,10 @@
 
-undefined4 __cdecl FUN_0071b010(LPCSTR param_1,int param_2,char *param_3,char param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfany.cpp
+   Diagnostic line evidence: 111 | 116 | 120 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 __cdecl mfAnySaveFile(LPCSTR param_1,int param_2,char *param_3,char param_4)
 
 {
   code *pcVar1;
@@ -20,8 +25,8 @@ undefined4 __cdecl FUN_0071b010(LPCSTR param_1,int param_2,char *param_3,char pa
     if (((param_2 == 0) || (param_1 == (LPCSTR)0x0)) || (param_3 == (char *)0x0)) {
       RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfany_cpp_007f08c8,0x6f);
     }
-    local_8 = (byte *)FUN_0071ae80(param_1,&local_c);
-    FUN_0071adb0(local_8,local_c,param_2,param_3,param_4);
+    local_8 = (byte *)ReadAllFile(param_1,&local_c);
+    mfAnySave(local_8,local_c,param_2,param_3,param_4);
     g_currentExceptionFrame = local_50.previous;
     return 1;
   }

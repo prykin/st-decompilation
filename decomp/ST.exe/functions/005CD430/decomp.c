@@ -58,12 +58,12 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
     RaiseInternalException(iVar4,0,s_E____titans_Start_settmobj_cpp_007cd258,0x1cb);
     return;
   }
-  cVar1 = local_10->field_0x1e26;
+  cVar1 = local_10->field_1E26;
   if ((((cVar1 == '\x05') || (cVar1 == '\x0f')) || (cVar1 == '\f')) || (cVar1 == '\x10')) {
-    local_8 = *(int *)&local_10->field_0x1f3f;
+    local_8 = local_10->field_1F3F;
   }
   else {
-    local_8 = *(int *)&local_10->field_0x1f43;
+    local_8 = local_10->field_1F43;
   }
   iVar4 = local_10->field_1F84;
   if (iVar4 != 0) {
@@ -89,7 +89,7 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
   }
   puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
   pSVar10->field_1F84 = puVar5;
-  if ((pSVar10->field_0x1e26 != '\f') && (pSVar10->field_0x1e26 != '\x10')) {
+  if ((pSVar10->field_1E26 != '\f') && (pSVar10->field_1E26 != '\x10')) {
     DAT_0080874d = -1;
     DAT_0080874e = '\0';
   }
@@ -113,24 +113,25 @@ void __thiscall SettMapMTy::PrepPlList(SettMapMTy *this,int *param_1)
           local_74._3_1_ = *pcVar7;
         }
         local_74._2_1_ = cVar1;
-        switch(pSVar10->field_0x1e26) {
+        switch(pSVar10->field_1E26) {
         case 5:
         case 0xf:
-          local_24 = thunk_FUN_0067e0e0(local_8,CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) &
-                                                0xff,0xffffffff);
+          local_24 = CreateStrategList(local_8,CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) &
+                                               0xff,0xffffffff);
           break;
         default:
-          local_24 = thunk_FUN_0067dfd0(local_8,CONCAT12(uStack_6f,
+          local_24 = CreateOpponentList(local_8,CONCAT12(uStack_6f,
                                                          CONCAT11(uStack_70,local_74._3_1_)) & 0xff,
                                         DAT_0080995c);
           break;
         case 0xc:
         case 0x10:
-          local_24 = thunk_FUN_0067e200(local_8,CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) &
-                                                0xff,0xffffffff);
+          local_24 = CreateSaveStrategList
+                               (local_8,CONCAT12(uStack_70,CONCAT11(local_74._3_1_,cVar1)) & 0xff,
+                                0xffffffff);
         }
         if (pcVar7[-0x21] == '\x01') {
-          cVar1 = pSVar10->field_0x1e26;
+          cVar1 = pSVar10->field_1E26;
           if (((cVar1 == '\x05') || (cVar1 == '\f')) || (cVar1 == '\x10')) {
             uStack_70 = 4;
             uVar11 = 0;
@@ -192,7 +193,7 @@ LAB_005cd675:
       }
       local_c = pcVar7 + 0x51;
     } while ((int)local_c < 0x808a70);
-    if (pSVar10->field_0x1e26 == '\f') {
+    if (pSVar10->field_1E26 == '\f') {
       iVar4 = pSVar10->field_1F84;
       uVar9 = 0;
       uVar11 = *(uint *)(iVar4 + 0xc);
@@ -251,7 +252,7 @@ LAB_005cd675:
   }
 LAB_005cd7f2:
   SettMapTy::PaintSC((SettMapTy *)pSVar10);
-  (**(code **)(*(int *)pSVar10 + 0x20))();
+  (**(code **)(pSVar10->field_0000 + 0x20))();
   g_currentExceptionFrame = local_b8.previous;
   return;
   while( true ) {

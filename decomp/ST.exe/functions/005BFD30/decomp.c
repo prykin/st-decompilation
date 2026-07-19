@@ -29,19 +29,17 @@ void __thiscall MReportTy::PaintMainScore(MReportTy *this,int param_1,uint param
       local_10 = param_3 * 0x26 + 0x38;
       local_8 = uVar4;
       do {
-        thunk_FUN_00540760(*(undefined4 **)&pMVar2->field_0x73,iVar3,local_10,'\x06',
-                           *(byte **)&pMVar2->field_0x6f);
+        DibPut((undefined4 *)pMVar2->field_0073,iVar3,local_10,'\x06',(byte *)pMVar2->field_006F);
         iVar3 = iVar3 + 6;
         local_8 = local_8 - 1;
       } while (local_8 != 0);
     }
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007cd004,param_1);
     iVar3 = param_3 * 0x26 + 0x30;
-    FUN_006b4170(*(int *)&pMVar2->field_0x73,0,0x280,iVar3,0x50,0x1c,0);
-    FUN_006b5ee0(*(int *)&pMVar2->field_0x73,0,0x280,iVar3,0x50,0x1c,0x18,0xd);
-    ccFntTy::SetSurf(*(ccFntTy **)&pMVar2[1].field_0xc,*(int *)&pMVar2->field_0x73,0,0x280,iVar3,
-                     0x50,0x1c);
-    ccFntTy::WrStr(*(ccFntTy **)&pMVar2[1].field_0xc,&DAT_0080f33a,-1,-1,8);
+    FUN_006b4170(pMVar2->field_0073,0,0x280,iVar3,0x50,0x1c,0);
+    FUN_006b5ee0(pMVar2->field_0073,0,0x280,iVar3,0x50,0x1c,0x18,0xd);
+    ccFntTy::SetSurf(pMVar2->field_008B,pMVar2->field_0073,0,0x280,iVar3,0x50,0x1c);
+    ccFntTy::WrStr(pMVar2->field_008B,&DAT_0080f33a,-1,-1,8);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

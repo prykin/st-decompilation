@@ -1,4 +1,4 @@
-FUN_0071ad00:
+mfAnyLoad:
 0071AD00  55                        PUSH EBP
 0071AD01  8B EC                     MOV EBP,ESP
 0071AD03  83 EC 48                  SUB ESP,0x48

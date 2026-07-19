@@ -1,4 +1,4 @@
-FUN_00691190:
+TactDataPack:
 00691190  55                        PUSH EBP
 00691191  8B EC                     MOV EBP,ESP
 00691193  83 EC 64                  SUB ESP,0x64

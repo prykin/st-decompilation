@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\tload.cpp
+   Diagnostic line evidence: 589 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 void __cdecl FUN_00428e50(short *param_1)
 

@@ -72,12 +72,12 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
         if (bVar10 != 0xff) {
           if (DAT_0080874e == '\x03') {
             if (param_1 == 0) {
-              uVar7 = (uint)(byte)local_10->field_0x2a8;
+              uVar7 = (uint)(byte)local_10->field_02A8;
               if ((&local_10->field_0xb8d)[uVar7] == '\0') {
                 uVar7 = uVar7 + 5;
               }
-              uVar9 = (uint)(byte)local_10->field_0x2a8;
-              pbVar6 = (byte *)FUN_0070b3a0(*(int *)&local_10->field_0x2a2,uVar7);
+              uVar9 = (uint)(byte)local_10->field_02A8;
+              pbVar6 = (byte *)FUN_0070b3a0(local_10->field_02A2,uVar7);
               iVar5 = (5 - uVar9) * 0xb;
               puVar11 = (undefined4 *)pCVar4->field_018C;
             }
@@ -90,48 +90,45 @@ void __thiscall CPanelTy::SetNewDeep(CPanelTy *this,byte param_1,undefined1 para
                 iVar5 = uVar7 + 0x19;
               }
               uVar9 = (uint)*(byte *)((int)(puVar11 + 0xaa) + (int)local_10);
-              pbVar6 = (byte *)FUN_0070b3a0(*(int *)&local_10->field_0x2a2,iVar5);
+              pbVar6 = (byte *)FUN_0070b3a0(local_10->field_02A2,iVar5);
               puVar11 = (undefined4 *)pCVar4->field_0194;
               iVar5 = uVar9 * 0xb + 0x87;
             }
-            thunk_FUN_00540760(puVar11,iVar5,uVar9 * 0xb + 0xb,'\x06',pbVar6);
+            DibPut(puVar11,iVar5,uVar9 * 0xb + 0xb,'\x06',pbVar6);
             bVar10 = (-(param_1 != 0) & 2U) + 3;
             _local_14 = CONCAT31(uStack_13,bVar10);
             puVar11 = local_c;
             if (bVar10 < 0xb) {
               uVar7 = (uint)bVar10;
-              if (-1 < (int)*(uint *)(&pCVar4->field_0x148 + uVar7 * 4)) {
+              if (-1 < (int)(&pCVar4->field_0148)[uVar7]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,*(uint *)(&pCVar4->field_0x148 + uVar7 * 4),0xffffffff,
-                           *(uint *)(&pCVar4->field_0x3c + uVar7 * 4),
-                           *(uint *)(&pCVar4->field_0x94 + uVar7 * 4));
+                          (DAT_008075a8,(&pCVar4->field_0148)[uVar7],0xffffffff,
+                           (&pCVar4->field_003C)[uVar7],*(uint *)(&pCVar4->field_0x94 + uVar7 * 4));
                 puVar11 = local_c;
               }
             }
           }
           else {
             if (param_1 == 0) {
-              cVar1 = (&local_10->field_0xb8d)[(byte)local_10->field_0x2a8];
-              local_c = *(undefined4 **)&local_10->field_0x188;
+              cVar1 = (&local_10->field_0xb8d)[(byte)local_10->field_02A8];
+              local_c = (undefined4 *)local_10->field_0188;
             }
             else {
               cVar1 = (&local_10->field_0xc7b)[bVar10];
-              local_c = *(undefined4 **)&local_10->field_0x198;
+              local_c = (undefined4 *)local_10->field_0198;
             }
-            pbVar6 = (byte *)FUN_0070b3a0(*(int *)&local_10->field_0x2a2,
+            pbVar6 = (byte *)FUN_0070b3a0(local_10->field_02A2,
                                           (-(uint)(cVar1 != '\0') & 0xfffffffe) + 2);
-            thunk_FUN_00540760(local_c,7,
-                               (uint)*(byte *)((int)(puVar11 + 0xaa) + (int)pCVar4) * 0x1d + 6,
-                               '\x01',pbVar6);
+            DibPut(local_c,7,(uint)*(byte *)((int)(puVar11 + 0xaa) + (int)pCVar4) * 0x1d + 6,'\x01',
+                   pbVar6);
             bVar10 = (-(param_1 != 0) & 4U) + 2;
             _local_14 = CONCAT31(uStack_13,bVar10);
             if (bVar10 < 0xb) {
               uVar7 = (uint)bVar10;
-              if (-1 < (int)*(uint *)(&pCVar4->field_0x148 + uVar7 * 4)) {
+              if (-1 < (int)(&pCVar4->field_0148)[uVar7]) {
                 Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,*(uint *)(&pCVar4->field_0x148 + uVar7 * 4),0xffffffff,
-                           *(uint *)(&pCVar4->field_0x3c + uVar7 * 4),
-                           *(uint *)(&pCVar4->field_0x94 + uVar7 * 4));
+                          (DAT_008075a8,(&pCVar4->field_0148)[uVar7],0xffffffff,
+                           (&pCVar4->field_003C)[uVar7],*(uint *)(&pCVar4->field_0x94 + uVar7 * 4));
               }
             }
           }

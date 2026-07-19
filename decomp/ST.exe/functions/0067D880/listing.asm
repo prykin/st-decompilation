@@ -1,4 +1,4 @@
-FUN_0067d880:
+LoadPlrEdit:
 0067D880  55                        PUSH EBP
 0067D881  8B EC                     MOV EBP,ESP
 0067D883  83 EC 4C                  SUB ESP,0x4c

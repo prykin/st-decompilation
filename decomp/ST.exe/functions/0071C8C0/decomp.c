@@ -38,18 +38,18 @@ int __thiscall InputClassTy::AddToMouse(InputClassTy *this,int param_1,uint para
     return iVar3;
   }
   if (param_1 != 0) {
-    iVar3 = FUN_006e3a90(*(void **)(local_c + 0x10),param_1,&local_8);
+    iVar3 = FUN_006e3a90((void *)local_c->field_0010,param_1,&local_8);
     if (iVar3 == 0) {
-      if (*(int *)(pIVar2 + 0x28) == 0) {
+      if (pIVar2->field_0028 == 0) {
         puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xc,10);
-        *(uint **)(pIVar2 + 0x28) = puVar4;
+        pIVar2->field_0028 = puVar4;
       }
       local_1c[2] = local_8;
       local_1c[1] = 1;
       local_1c[0] = param_2;
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pIVar2 + 0x28),local_1c);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)pIVar2->field_0028,local_1c);
       if ((param_2 & 2) != 0) {
-        *(undefined4 *)(pIVar2 + 0x58) = 1;
+        pIVar2->field_0058 = 1;
         g_currentExceptionFrame = local_60.previous;
         return local_10;
       }

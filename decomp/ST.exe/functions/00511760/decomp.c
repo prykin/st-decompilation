@@ -37,53 +37,53 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
   pHVar2 = local_c;
   if (errorCode == 0) {
     this_00 = extraout_ECX;
-    if (*(uint *)&local_c->field_0x17c != 0) {
-      FUN_006e56b0(*(void **)&local_c->field_0xc,*(uint *)&local_c->field_0x17c);
+    if (local_c->field_017C != 0) {
+      FUN_006e56b0((void *)local_c->field_000C,local_c->field_017C);
       this_00 = extraout_ECX_00;
     }
-    *(undefined4 *)&pHVar2->field_0x17c = 0;
-    puVar4 = (uint *)&pHVar2->field_0x180;
+    pHVar2->field_017C = 0;
+    puVar4 = &pHVar2->field_0180;
     local_8 = 7;
     do {
       if (*puVar4 != 0) {
-        FUN_006e56b0(*(void **)&pHVar2->field_0xc,*puVar4);
+        FUN_006e56b0((void *)pHVar2->field_000C,*puVar4);
         *puVar4 = 0;
         this_00 = extraout_ECX_01;
       }
       puVar4 = puVar4 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    if (*(uint *)&pHVar2->field_0x19c != 0) {
-      FUN_006e56b0(*(void **)&pHVar2->field_0xc,*(uint *)&pHVar2->field_0x19c);
+    if (pHVar2->field_019C != 0) {
+      FUN_006e56b0((void *)pHVar2->field_000C,pHVar2->field_019C);
       this_00 = extraout_ECX_02;
     }
-    *(undefined4 *)&pHVar2->field_0x19c = 0;
-    if (*(byte **)&pHVar2->field_0x1b3 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pHVar2->field_0x1b3);
+    pHVar2->field_019C = 0;
+    if ((byte *)pHVar2->field_01B3 != (byte *)0x0) {
+      FUN_006ae110((byte *)pHVar2->field_01B3);
       this_00 = extraout_ECX_03;
     }
-    *(undefined4 *)&pHVar2->field_0x1b3 = 0;
-    if (*(byte **)&pHVar2->field_0x1bb != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pHVar2->field_0x1bb);
+    pHVar2->field_01B3 = 0;
+    if ((byte *)pHVar2->field_01BB != (byte *)0x0) {
+      FUN_006ae110((byte *)pHVar2->field_01BB);
       this_00 = extraout_ECX_04;
     }
-    *(undefined4 *)&pHVar2->field_0x1bb = 0;
+    pHVar2->field_01BB = 0;
     if ((byte *)pHVar2->field_01CB != (byte *)0x0) {
       FUN_006ae110((byte *)pHVar2->field_01CB);
       this_00 = extraout_ECX_05;
     }
     pHVar2->field_01CB = 0;
-    if (*(byte **)&pHVar2->field_0x1d7 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pHVar2->field_0x1d7);
+    if ((byte *)pHVar2->field_01D7 != (byte *)0x0) {
+      FUN_006ae110((byte *)pHVar2->field_01D7);
       this_00 = extraout_ECX_06;
     }
-    *(undefined4 *)&pHVar2->field_0x1d7 = 0;
-    if (*(byte **)&pHVar2->field_0x1d3 != (byte *)0x0) {
-      FUN_006b5570(*(byte **)&pHVar2->field_0x1d3);
+    pHVar2->field_01D7 = 0;
+    if ((byte *)pHVar2->field_01D3 != (byte *)0x0) {
+      FUN_006b5570((byte *)pHVar2->field_01D3);
       this_00 = extraout_ECX_07;
     }
-    *(undefined4 *)&pHVar2->field_0x1d3 = 0;
-    puVar4 = (uint *)&pHVar2->field_0x1f0;
+    pHVar2->field_01D3 = 0;
+    puVar4 = &pHVar2->field_01F0;
     local_8 = 10;
     do {
       if (*puVar4 != 0) {
@@ -93,45 +93,45 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       puVar4 = puVar4 + 1;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    *(undefined4 *)&pHVar2->field_0x238 = 0;
+    pHVar2->field_0238 = 0;
     pHVar2->field_0248 = 0;
-    *(undefined4 *)&pHVar2->field_0x22c = 0;
-    *(undefined4 *)&pHVar2->field_0x228 = 0;
-    *(undefined4 *)&pHVar2->field_0x234 = 0;
-    *(undefined4 *)&pHVar2->field_0x230 = 0;
-    *(undefined4 *)&pHVar2->field_0x224 = 0;
-    *(undefined4 *)&pHVar2->field_0x220 = 0;
-    *(undefined4 *)&pHVar2->field_0x244 = 0;
-    *(undefined4 *)&pHVar2->field_0x240 = 0;
-    *(undefined4 *)&pHVar2->field_0x23c = 0;
-    if (*(uint **)&pHVar2->field_0x1e0 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pHVar2->field_0x1e0);
-      *(undefined4 *)&pHVar2->field_0x1e0 = 0;
+    pHVar2->field_022C = 0;
+    pHVar2->field_0228 = 0;
+    pHVar2->field_0234 = 0;
+    pHVar2->field_0230 = 0;
+    pHVar2->field_0224 = 0;
+    pHVar2->field_0220 = 0;
+    pHVar2->field_0244 = 0;
+    pHVar2->field_0240 = 0;
+    pHVar2->field_023C = 0;
+    if (pHVar2->field_01E0 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pHVar2->field_01E0);
+      pHVar2->field_01E0 = (ccFntTy *)0x0;
       this_00 = extraout_ECX_09;
     }
-    if (*(uint **)&pHVar2->field_0x1e4 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pHVar2->field_0x1e4);
-      *(undefined4 *)&pHVar2->field_0x1e4 = 0;
+    if (pHVar2->field_01E4 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pHVar2->field_01E4);
+      pHVar2->field_01E4 = (ccFntTy *)0x0;
       this_00 = extraout_ECX_10;
     }
-    if (*(uint **)&pHVar2->field_0x1e8 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pHVar2->field_0x1e8);
-      *(undefined4 *)&pHVar2->field_0x1e8 = 0;
+    if (pHVar2->field_01E8 != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pHVar2->field_01E8);
+      pHVar2->field_01E8 = (ccFntTy *)0x0;
     }
     if (pHVar2->field_0218 != 0) {
       FUN_006ab060(&pHVar2->field_0218);
     }
-    if (*(int *)&pHVar2->field_0x1ec != 0) {
-      FUN_006ab060((undefined4 *)&pHVar2->field_0x1ec);
+    if (pHVar2->field_01EC != 0) {
+      FUN_006ab060(&pHVar2->field_01EC);
     }
     if (pHVar2->field_024C != 0) {
       cMf32::RecMemFree(DAT_00806790,&pHVar2->field_024C);
     }
-    if (*(int *)&pHVar2->field_0x1dc != 0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_0x1dc);
+    if (pHVar2->field_01DC != 0) {
+      cMf32::RecMemFree(DAT_00806790,&pHVar2->field_01DC);
     }
-    if (*(int *)&pHVar2->field_0x21c != 0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_0x21c);
+    if (pHVar2->field_021C != 0) {
+      cMf32::RecMemFree(DAT_00806790,&pHVar2->field_021C);
     }
     DAT_00801690 = 0;
     g_currentExceptionFrame = local_50.previous;

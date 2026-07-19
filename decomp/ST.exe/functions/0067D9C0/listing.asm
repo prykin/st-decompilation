@@ -1,4 +1,4 @@
-FUN_0067d9c0:
+SavePlrEdit:
 0067D9C0  55                        PUSH EBP
 0067D9C1  8B EC                     MOV EBP,ESP
 0067D9C3  83 EC 54                  SUB ESP,0x54

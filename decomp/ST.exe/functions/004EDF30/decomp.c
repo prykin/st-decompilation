@@ -24,23 +24,23 @@ void __thiscall BehPanelTy::ShiftControls(BehPanelTy *this,int param_1)
     if (param_1 != 0) {
       sVar2 = -sVar2;
     }
-    this->field_002E = sVar2;
+    *(short *)&this->field_0x2e = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (errorCode == 0) {
-      if (*(int *)&local_8[1].field_0x46 != 0) {
-        FUN_006e6080(local_8,2,*(int *)&local_8[1].field_0x46,(undefined4 *)&local_8->field_0x18);
+      if (local_8->field_01BE != 0) {
+        FUN_006e6080(local_8,2,local_8->field_01BE,(undefined4 *)&local_8->field_0x18);
       }
-      if (*(int *)&this_00[1].field_0x4a != 0) {
-        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x4a,(undefined4 *)&this_00->field_0x18);
+      if (this_00->field_01C2 != 0) {
+        FUN_006e6080(this_00,2,this_00->field_01C2,(undefined4 *)&this_00->field_0x18);
       }
-      if (*(int *)&this_00[1].field_0x4e != 0) {
-        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x4e,(undefined4 *)&this_00->field_0x18);
+      if (this_00->field_01C6 != 0) {
+        FUN_006e6080(this_00,2,this_00->field_01C6,(undefined4 *)&this_00->field_0x18);
       }
-      if (*(int *)&this_00[1].field_0x52 != 0) {
-        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x52,(undefined4 *)&this_00->field_0x18);
+      if (this_00->field_01CA != 0) {
+        FUN_006e6080(this_00,2,this_00->field_01CA,(undefined4 *)&this_00->field_0x18);
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

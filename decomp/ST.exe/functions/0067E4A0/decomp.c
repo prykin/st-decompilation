@@ -1,5 +1,10 @@
 
-LPSTR __cdecl FUN_0067e4a0(undefined4 param_1,undefined4 param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 473 | 474 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+LPSTR __cdecl GetStrategName(undefined4 param_1,undefined4 param_2)
 
 {
   code *pcVar1;

@@ -25,9 +25,9 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
   if (iVar2 == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     iVar2 = 0;
-    if (this_00[1].field_0x35 != '\0') {
+    if (this_00->field_009A != '\0') {
       iVar5 = 0x96;
-      piVar4 = (int *)&this_00[2].field_0x59;
+      piVar4 = &this_00->field_0123;
       do {
         DVar3 = timeGetTime();
         piVar4[1] = DVar3;
@@ -37,9 +37,9 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
         iVar5 = iVar5 + 0x96;
         piVar4 = (int *)((int)piVar4 + 0x1fb);
         this_00 = local_8;
-      } while (iVar2 < (int)(uint)(byte)local_8[1].field_0x35);
+      } while (iVar2 < (int)(uint)(byte)local_8->field_009A);
     }
-    *(undefined1 *)(this_00 + 1) = 4;
+    this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,2,'\x01',-1);
     g_currentExceptionFrame = local_4c.previous;
     return;

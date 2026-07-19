@@ -80,19 +80,18 @@ LAB_00475068:
         iVar10 = (*pcVar4)();
         return iVar10;
       }
-      if ((*(int *)&this->field_0x5a6 == 0) &&
-         (iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&this->field_0x5a6),
-         iVar10 == -4)) {
+      if ((this->field_05A6 == 0) &&
+         (iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,&this->field_05A6), iVar10 == -4)) {
         RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fea);
       }
-      if ((*(int *)(*(int *)&this->field_0x5a6 + 0x7ce) != 0) &&
+      if ((*(int *)(this->field_05A6 + 0x7ce) != 0) &&
          ((int)this->field_0716 < (int)this->field_0712)) {
         uVar3 = ZEXT48(DAT_00802a38[7].messages) % 0x19;
         if ((int)uVar3 == 0) {
           iVar10 = this->field_06F7 - CASE_1;
           if ((int)((uVar3 << 0x20 | ZEXT48(DAT_00802a38[7].messages)) % 100) == 0) {
             (*this->vtable->vfunc_90)(3,0x363);
-            thunk_FUN_00637930(*(uint *)&this->field_0x1ed,1,-100,-100,-100,0,0);
+            thunk_FUN_00637930(this->field_01ED,1,-100,-100,-100,0,0);
           }
           iVar6 = this->field_0712;
           iVar12 = (iVar6 * 0x19) / (int)(&DAT_007e04a0)[iVar10];
@@ -108,7 +107,7 @@ LAB_00475068:
             thunk_FUN_004d7c10(this->field_0x24,4,this->field_0018,(int)local_8);
             thunk_FUN_004d7e50(this->field_0x24,4,this->field_0018,iVar6);
             this->field_0716 = this->field_0716 + iVar12;
-            if (*(uint *)&this->field_0x24 == (uint)*(byte *)(*(int *)&this->field_0x10 + 0x112d)) {
+            if (*(uint *)&this->field_0x24 == (uint)*(byte *)(this->field_0010 + 0x112d)) {
               thunk_FUN_004d8b70((char)*(uint *)&this->field_0x24);
             }
           }
@@ -147,7 +146,7 @@ switchD_00474a47_caseD_2:
             this->field_05C4 = 3;
             return 2;
           }
-          this->field_05C4 = 6 - (uint)(*(short *)&this->field_0x6c != this->field_05B0);
+          this->field_05C4 = 6 - (uint)(this->field_006C != this->field_05B0);
           return 2;
         }
         this->field_05C4 = 1;
@@ -222,13 +221,13 @@ switchD_00474a47_caseD_2:
     iVar10 = this->field_05C4;
     if (iVar10 == 4) {
       local_1c = thunk_FUN_00415ed0(this,&local_18,&local_14);
-      uVar7 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&this->field_0x1c = uVar7;
+      uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar7;
       iVar10 = (uVar7 >> 0x10) % 7 - 3;
-      uVar7 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&this->field_0x1c = uVar7;
-      uVar1 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-      *(uint *)&this->field_0x1c = uVar1;
+      uVar7 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar7;
+      uVar1 = this->field_001C * 0x41c64e6d + 0x3039;
+      this->field_001C = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
       if (((int)this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
          (local_10 = 0, this->field_0x2bf != '\0')) {
@@ -236,7 +235,7 @@ switchD_00474a47_caseD_2:
         do {
           puVar8 = (undefined4 *)
                    thunk_FUN_0041dc40(local_2c,*local_8,*(undefined2 *)(local_8 + 1),
-                                      *(short *)&this->field_0x6c);
+                                      this->field_006C);
           uVar2 = *puVar8;
           bVar22 = 0;
           sVar21 = 0;
@@ -288,7 +287,7 @@ switchD_00474a47_caseD_2:
         return iVar10;
       }
       if (local_1c == 0) {
-        this->field_05C4 = 6 - (uint)(*(short *)&this->field_0x6c != this->field_05B0);
+        this->field_05C4 = 6 - (uint)(this->field_006C != this->field_05B0);
       }
       iVar10 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
@@ -312,7 +311,7 @@ switchD_00474a47_caseD_2:
     }
     else {
       if (iVar10 == 6) {
-        if (*(short *)&this->field_0x6e == 0x2f) {
+        if (this->field_006E == 0x2f) {
           this->field_0076 = 0;
           iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&param_1);
           if (iVar10 == -4) {

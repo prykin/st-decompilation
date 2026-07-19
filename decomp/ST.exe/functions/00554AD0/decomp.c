@@ -8,53 +8,51 @@ void __thiscall cLoadingTy::DrawLine(cLoadingTy *this,uint *param_1)
 {
   code *pcVar1;
   cLoadingTy *pcVar2;
-  int errorCode;
   int iVar3;
+  int iVar4;
   void *unaff_ESI;
-  InternalExceptionFrame *pIVar4;
+  InternalExceptionFrame *pIVar5;
   undefined4 local_48 [16];
   cLoadingTy *local_8;
   
   local_8 = this;
   thunk_FUN_00555570((int)this);
-  pIVar4 = g_currentExceptionFrame;
+  pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
+  iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pcVar2 = local_8;
-  if (errorCode == 0) {
-    FUN_006b4170(*(int *)(local_8 + 4),0,*(int *)(local_8 + 0x14) + *(int *)(local_8 + 0xc),
-                 *(int *)(local_8 + 0x10) + *(int *)(local_8 + 0x18),*(int *)(local_8 + 0x1c),
-                 *(int *)(local_8 + 0x34),0);
-    ccFntTy::WrStr(*(ccFntTy **)(pcVar2 + 8),param_1,*(int *)(pcVar2 + 0xc),*(int *)(pcVar2 + 0x10),
-                   *(undefined4 *)(pcVar2 + 0x24));
+  if (iVar3 == 0) {
+    FUN_006b4170(local_8->field_0004,0,local_8->field_0014 + local_8->field_000C,
+                 local_8->field_0010 + local_8->field_0018,local_8->field_001C,local_8->field_0034,0
+                );
+    ccFntTy::WrStr(pcVar2->field_0008,param_1,pcVar2->field_000C,pcVar2->field_0010,
+                   pcVar2->field_0024);
+    iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
+    iVar4 = pcVar2->field_000C + pcVar2->field_0014;
     Library::DKW::DDX::FUN_006b42d0
-              ((uint)DAT_0080759c,*(int *)(pcVar2 + 0xc) + *(int *)(pcVar2 + 0x14),
-               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)pcVar2,(uint *)0x0,
-               *(int *)(pcVar2 + 0xc) + *(int *)(pcVar2 + 0x14),
-               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
-               *(DWORD *)(pcVar2 + 0x34));
+              ((uint)DAT_0080759c,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,iVar4,
+               iVar3,pcVar2->field_001C,pcVar2->field_0034);
+    iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
+    iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
     Library::DKW::DDX::FUN_006b4680
-              (DAT_0080759c,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)(pcVar2 + 4),
-               (uint *)0x0,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
-               *(DWORD *)(pcVar2 + 0x34),0);
+              (DAT_0080759c,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0004,(uint *)0x0,iVar4,iVar3,
+               pcVar2->field_001C,pcVar2->field_0034,0);
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
-    if (*(code **)(pcVar2 + 0x58) != (code *)0x0) {
-      (**(code **)(pcVar2 + 0x58))(*(undefined4 *)(pcVar2 + 0x54));
+    if ((code *)pcVar2->field_0058 != (code *)0x0) {
+      (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }
-    g_currentExceptionFrame = pIVar4;
+    g_currentExceptionFrame = pIVar5;
     return;
   }
-  g_currentExceptionFrame = pIVar4;
-  iVar3 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0xcc,0,errorCode,&DAT_007a4ccc,
+  g_currentExceptionFrame = pIVar5;
+  iVar4 = ReportDebugMessage(s_E____titans_grig_loading_cpp_007c8f0c,0xcc,0,iVar3,&DAT_007a4ccc,
                              s_cLoadingTy__DrawLine_007c8f7c);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  RaiseInternalException(errorCode,0,s_E____titans_grig_loading_cpp_007c8f0c,0xcd);
+  RaiseInternalException(iVar3,0,s_E____titans_grig_loading_cpp_007c8f0c,0xcd);
   return;
 }
 

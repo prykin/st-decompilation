@@ -22,9 +22,9 @@ void __thiscall OptPanelTy::SwitchOptPanelOff(OptPanelTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     if ((local_8->field_0172 == 1) || (local_8->field_0172 == 3)) {
-      local_8->field_0x1aa = 0;
-      local_8->field_0x1a9 = 0;
-      local_8->field_0x1a4 = 1;
+      local_8->field_01AA = 0;
+      local_8->field_01A9 = 0;
+      local_8->field_01A4 = 1;
       SetOptControls(local_8);
       if (this_00->field_0172 == 1) {
         ShiftControls(this_00,0);

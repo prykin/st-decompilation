@@ -41,9 +41,9 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
   if (pSVar3->field_0020 != 0) {
     iVar4 = (char)param_1 * 0x24;
     if (*(int *)(iVar4 + pSVar3->field_0020) != 0) {
-      FUN_006e98e0((void *)pSVar3[1].field_0018,pSVar3->field_0018,(int)(char)param_1,0,0,1);
+      FUN_006e98e0((void *)pSVar3->field_003C,pSVar3->field_0018,(int)(char)param_1,0,0,1);
       piVar1 = (int *)(pSVar3->field_0020 + 4 + iVar4);
-      *(uint *)&pSVar3->field_0x1c = *(uint *)&pSVar3->field_0x1c & ~(1 << (param_1 & 0x1f));
+      pSVar3->field_001C = pSVar3->field_001C & ~(1 << (param_1 & 0x1f));
       if (*piVar1 != 0) {
         FUN_006ab060(piVar1);
       }

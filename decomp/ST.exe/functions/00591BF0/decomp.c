@@ -59,11 +59,11 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
   }
   LightPalette(local_c);
   AnimationCampaign(this_00);
-  cVar1 = *(char *)(this_00 + 1);
+  cVar1 = this_00->field_0065;
   if (cVar1 == '\x01') {
     iVar6 = 0;
-    if (this_00[1].field_0x35 != '\0') {
-      puVar11 = (uint *)&this_00[5].field_0x28;
+    if (this_00->field_009A != '\0') {
+      puVar11 = (uint *)&this_00->field_0x221;
       do {
         if (((*(int *)((int)puVar11 + -0x165) != 0) && (*(char *)((int)puVar11 + -0x13f) != '\0'))
            && (puVar11[9] <= this_00->field_0061 - puVar11[10])) {
@@ -80,81 +80,82 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
         }
         iVar6 = iVar6 + 1;
         puVar11 = (uint *)((int)puVar11 + 0x1fb);
-      } while (iVar6 < (int)(uint)(byte)this_00[1].field_0x35);
+      } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
     }
   }
   else if (cVar1 == '\x03') {
     iVar6 = 0;
-    uVar7 = (uint)(byte)this_00[1].field_0x35;
+    uVar7 = (uint)(byte)this_00->field_009A;
     if (uVar7 != 0) {
       do {
-        if (*(int *)((int)this_00 + iVar6 * 0x1fb + 0xbc) != 0) {
-          if ((uint)(this_00->field_0061 - *(int *)((int)this_00 + iVar6 * 0x1fb + 0x127)) <
-              *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x123)) {
+        if (*(int *)(&this_00->field_0xbc + iVar6 * 0x1fb) != 0) {
+          if ((uint)(this_00->field_0061 - *(int *)((int)&this_00->field_0127 + iVar6 * 0x1fb)) <
+              *(uint *)((int)&this_00->field_0123 + iVar6 * 0x1fb)) {
             iVar6 = 0;
             local_8 = 0;
             if (uVar7 != 0) {
-              puVar8 = (undefined4 *)&this_00[5].field_0x50;
+              puVar8 = (undefined4 *)&this_00->field_0x249;
               do {
                 if (*(char *)((int)puVar8 + -0x167) != '\0') {
                   *puVar8 = this_00->field_0061;
                 }
                 iVar6 = iVar6 + 1;
                 puVar8 = (undefined4 *)((int)puVar8 + 0x1fb);
-              } while (iVar6 < (int)(uint)(byte)this_00[1].field_0x35);
+              } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
             }
           }
           else {
-            iVar10 = *(int *)((int)this_00 + iVar6 * 0x1fb + 0xeb);
-            if (iVar10 < *(int *)((int)this_00 + iVar6 * 0x1fb + 0xef) + -1) {
+            iVar10 = *(int *)((int)&this_00->field_00EB + iVar6 * 0x1fb);
+            if (iVar10 < *(int *)(&this_00->field_0xef + iVar6 * 0x1fb) + -1) {
               if ((iVar10 == 0) &&
-                 (uVar7 = *(uint *)((int)this_00 + iVar6 * 0x1fb + 0xe7), uVar7 != 0xffffffff)) {
+                 (uVar7 = *(uint *)((int)&this_00->field_00E7 + iVar6 * 0x1fb), uVar7 != 0xffffffff)
+                 ) {
                 Library::DKW::DDX::FUN_006b34d0
-                          (*(uint **)((int)this_00 + iVar6 * 0x1fb + 299),uVar7,0xfffffffe,
-                           *(uint *)((int)this_00 + iVar6 * 0x1fb + 0xff),
-                           *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x103));
+                          (*(uint **)((int)&this_00->field_012B + iVar6 * 0x1fb),uVar7,0xfffffffe,
+                           *(uint *)((int)&this_00->field_00FF + iVar6 * 0x1fb),
+                           *(uint *)((int)&this_00->field_0103 + iVar6 * 0x1fb));
               }
-              *(int *)((int)this_00 + iVar6 * 0x1fb + 0xeb) =
-                   *(int *)((int)this_00 + iVar6 * 0x1fb + 0xeb) + 1;
-              uVar7 = *(uint *)((int)this_00 + iVar6 * 0x1fb + 0xe7);
+              *(int *)((int)&this_00->field_00EB + iVar6 * 0x1fb) =
+                   *(int *)((int)&this_00->field_00EB + iVar6 * 0x1fb) + 1;
+              uVar7 = *(uint *)((int)&this_00->field_00E7 + iVar6 * 0x1fb);
               if (uVar7 != 0xffffffff) {
                 Library::DKW::DDX::FUN_006b3730
-                          (*(uint **)((int)this_00 + iVar6 * 0x1fb + 299),uVar7,
-                           *(uint *)((int)this_00 + iVar6 * 0x1fb + 0xeb),
-                           *(uint *)((int)this_00 + iVar6 * 0x1fb + 0xff),
-                           *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x103));
+                          (*(uint **)((int)&this_00->field_012B + iVar6 * 0x1fb),uVar7,
+                           *(uint *)((int)&this_00->field_00EB + iVar6 * 0x1fb),
+                           *(uint *)((int)&this_00->field_00FF + iVar6 * 0x1fb),
+                           *(uint *)((int)&this_00->field_0103 + iVar6 * 0x1fb));
               }
               local_8 = 0;
             }
             else {
-              iVar10 = *(int *)((int)this_00 + iVar6 * 0x1fb + 0x17c);
-              if (iVar10 < *(int *)((int)this_00 + iVar6 * 0x1fb + 0x180) + -3) {
+              iVar10 = *(int *)((int)&this_00->field_017C + iVar6 * 0x1fb);
+              if (iVar10 < *(int *)(&this_00->field_0x180 + iVar6 * 0x1fb) + -3) {
                 if (iVar10 == 0) {
-                  uVar7 = *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x178);
+                  uVar7 = *(uint *)((int)&this_00->field_0178 + iVar6 * 0x1fb);
                   if (uVar7 != 0xffffffff) {
                     Library::DKW::DDX::FUN_006b34d0
-                              (*(uint **)((int)this_00 + iVar6 * 0x1fb + 0x1bc),uVar7,0xfffffffe,
-                               *(uint *)((int)this_00 + iVar6 * 0x1fb + 400),
-                               *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x194));
+                              (*(uint **)((int)&this_00->field_01BC + iVar6 * 0x1fb),uVar7,
+                               0xfffffffe,*(uint *)((int)&this_00->field_0190 + iVar6 * 0x1fb),
+                               *(uint *)((int)&this_00->field_0194 + iVar6 * 0x1fb));
                   }
-                  if ((*(char *)((int)this_00 + iVar6 * 0x1fb + 0xe2) != '\0') &&
-                     (uVar7 = *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x209), uVar7 != 0xffffffff))
-                  {
+                  if (((&this_00->field_00E2)[iVar6 * 0x1fb] != '\0') &&
+                     (uVar7 = *(uint *)((int)&this_00->field_0209 + iVar6 * 0x1fb),
+                     uVar7 != 0xffffffff)) {
                     Library::DKW::DDX::FUN_006b34d0
-                              (*(uint **)((int)this_00 + iVar6 * 0x1fb + 0x24d),uVar7,0xfffffffe,
-                               *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x221),
-                               *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x225));
+                              (*(uint **)((int)&this_00->field_024D + iVar6 * 0x1fb),uVar7,
+                               0xfffffffe,*(uint *)(&this_00->field_0x221 + iVar6 * 0x1fb),
+                               *(uint *)(&this_00->field_0x225 + iVar6 * 0x1fb));
                   }
                 }
-                *(int *)((int)this_00 + iVar6 * 0x1fb + 0x17c) =
-                     *(int *)((int)this_00 + iVar6 * 0x1fb + 0x17c) + 1;
-                uVar7 = *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x178);
+                *(int *)((int)&this_00->field_017C + iVar6 * 0x1fb) =
+                     *(int *)((int)&this_00->field_017C + iVar6 * 0x1fb) + 1;
+                uVar7 = *(uint *)((int)&this_00->field_0178 + iVar6 * 0x1fb);
                 if (uVar7 != 0xffffffff) {
                   Library::DKW::DDX::FUN_006b3730
-                            (*(uint **)((int)this_00 + iVar6 * 0x1fb + 0x1bc),uVar7,
-                             *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x17c),
-                             *(uint *)((int)this_00 + iVar6 * 0x1fb + 400),
-                             *(uint *)((int)this_00 + iVar6 * 0x1fb + 0x194));
+                            (*(uint **)((int)&this_00->field_01BC + iVar6 * 0x1fb),uVar7,
+                             *(uint *)((int)&this_00->field_017C + iVar6 * 0x1fb),
+                             *(uint *)((int)&this_00->field_0190 + iVar6 * 0x1fb),
+                             *(uint *)((int)&this_00->field_0194 + iVar6 * 0x1fb));
                 }
                 thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
                 local_8 = 0;
@@ -163,7 +164,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
           }
         }
         iVar6 = iVar6 + 1;
-        uVar7 = (uint)(byte)this_00[1].field_0x35;
+        uVar7 = (uint)(byte)this_00->field_009A;
       } while (iVar6 < (int)uVar7);
     }
     if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
@@ -184,7 +185,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
       }
       puVar8 = local_284 + 1;
       iVar6 = 3;
-      piVar9 = (int *)&this_00[0xb].field_0x3a;
+      piVar9 = (int *)&this_00->field_0x491;
       do {
         iVar2 = piVar9[0x19];
         puVar8[-1] = iVar10;
@@ -199,7 +200,7 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
         iVar6 = iVar6 + -1;
         piVar9 = (int *)((int)piVar9 + 0x1fb);
       } while (iVar6 != 0);
-      local_70 = *(undefined4 *)&this_00->field_0x8;
+      local_70 = this_00->field_0008;
       local_34 = (uint)DAT_0080874e;
       local_38 = local_284;
       local_6c = 2;
@@ -208,8 +209,8 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
       local_68 = 0x68ff;
       local_48 = 0x697f;
       local_50 = local_70;
-      (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x1,0,local_80,0);
-      iVar6 = *(int *)&this_00[0x42].field_0x51;
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00->field_0x66,0,local_80,0);
+      iVar6 = this_00->field_1A5B;
       if (*(int *)(iVar6 + 0x2e6) != 0) {
         puVar8 = &local_28;
         for (iVar10 = 6; iVar10 != 0; iVar10 = iVar10 + -1) {
@@ -222,15 +223,15 @@ void __thiscall CampaignTy::NoneCampaign(CampaignTy *this,void *param_1)
         local_28._2_2_ = 1;
         MMsgTy::StatePanel(*(MMsgTy **)(iVar6 + 0x2e6),(int)&local_28);
       }
-      *(undefined1 *)(this_00 + 1) = 1;
+      this_00->field_0065 = 1;
       g_currentExceptionFrame = local_c4.previous;
       return;
     }
   }
   else if (cVar1 == '\x04') {
     iVar6 = 0;
-    if (this_00[1].field_0x35 != '\0') {
-      puVar11 = (uint *)&this_00[3].field_0x49;
+    if (this_00->field_009A != '\0') {
+      puVar11 = &this_00->field_0178;
       do {
         if ((uint)(this_00->field_0061 - *(int *)((int)puVar11 + -0x51)) <
             *(uint *)((int)puVar11 + -0x55)) {
@@ -261,7 +262,7 @@ LAB_00591d08:
         }
         iVar6 = iVar6 + 1;
         puVar11 = (uint *)((int)puVar11 + 0x1fb);
-      } while (iVar6 < (int)(uint)(byte)this_00[1].field_0x35);
+      } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
     }
     iVar6 = 0;
     if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
@@ -269,23 +270,21 @@ LAB_00591d08:
       local_8 = 0;
     }
     if (local_8 != 0) {
-      cVar1 = this_00[1].field_0x35;
-      *(undefined1 *)(this_00 + 1) = 2;
-      if (cVar1 != '\0') {
-        puVar11 = (uint *)&this_00[2].field_0x1d;
+      this_00->field_0065 = 2;
+      if (this_00->field_009A != '\0') {
+        puVar11 = &this_00->field_00E7;
         do {
           if (*puVar11 != 0xffffffff) {
             FUN_006b3af0((int *)puVar11[0x11],*puVar11);
           }
           iVar6 = iVar6 + 1;
           puVar11 = (uint *)((int)puVar11 + 0x1fb);
-        } while (iVar6 < (int)(uint)(byte)this_00[1].field_0x35);
+        } while (iVar6 < (int)(uint)(byte)this_00->field_009A);
       }
-      if (*(int *)((int)this_00 + (uint)(byte)this_00[0x42].field_0x50 * 0x1fb + 0xd1) != 0) {
+      if (*(int *)(&this_00->field_0xd1 + (uint)(byte)this_00->field_1A5A * 0x1fb) != 0) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)
-                   ((int)this_00 + (uint)(byte)this_00[0x42].field_0x50 * 0x1fb + 0xc1));
+                   (undefined4 *)(&this_00->field_0xc1 + (uint)(byte)this_00->field_1A5A * 0x1fb));
         g_currentExceptionFrame = local_c4.previous;
         return;
       }

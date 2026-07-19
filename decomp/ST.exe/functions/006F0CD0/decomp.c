@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 700 | 702 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 ushort * __cdecl FUN_006f0cd0(cMf32 *param_1,char *param_2,int param_3)
 
 {

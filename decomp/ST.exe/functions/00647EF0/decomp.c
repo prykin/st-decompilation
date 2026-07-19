@@ -7,10 +7,10 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
 
 {
   code *pcVar1;
+  AiBossClassTy *pAVar2;
   int errorCode;
-  int iVar2;
-  undefined4 *puVar3;
-  AiBossClassTy *pAVar4;
+  int iVar3;
+  undefined4 *puVar4;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar5;
   undefined4 local_54 [16];
@@ -25,16 +25,16 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_54,0,unaff_ESI,pIVar5);
-  pAVar4 = local_14;
+  pAVar2 = local_14;
   if (errorCode == 0) {
-    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)(local_14 + 0x1c),&local_10);
-    if (pAVar4 == (AiBossClassTy *)0x0) {
-      pAVar4 = (AiBossClassTy *)0x0;
+    local_8 = AiEventClassTy::PrepareToSave((AiEventClassTy *)&local_14->field_0x1c,&local_10);
+    if (pAVar2 == (AiBossClassTy *)0x0) {
+      puVar4 = (undefined4 *)0x0;
     }
     else {
-      pAVar4 = pAVar4 + 0x5d3;
+      puVar4 = (undefined4 *)&pAVar2->field_0x5d3;
     }
-    local_c = thunk_FUN_00648620((undefined4 *)pAVar4,local_8,local_10,param_1);
+    local_c = BossDataPack(puVar4,local_8,local_10,param_1);
     *(undefined1 *)local_c = 1;
     if (local_8 != (undefined4 *)0x0) {
       FUN_006ab060(&local_8);
@@ -49,12 +49,12 @@ undefined4 * __thiscall AiBossClassTy::PrepareToSave(AiBossClassTy *this,uint *p
   if (local_c != (undefined4 *)0x0) {
     FUN_006ab060(&local_c);
   }
-  iVar2 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0x4c,0,errorCode,&DAT_007a4ccc,
+  iVar3 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0x4c,0,errorCode,&DAT_007a4ccc,
                              s_AiBossClassTy__PrepareToSave_007d278c);
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
     pcVar1 = (code *)swi(3);
-    puVar3 = (undefined4 *)(*pcVar1)();
-    return puVar3;
+    puVar4 = (undefined4 *)(*pcVar1)();
+    return puVar4;
   }
   RaiseInternalException(errorCode,0,s_E____titans_ai_ai_boss_cpp_007d2750,0x4d);
   return (undefined4 *)0x0;

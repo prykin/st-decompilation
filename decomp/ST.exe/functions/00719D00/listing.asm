@@ -1,4 +1,4 @@
-FUN_00719d00:
+mfWavLoad:
 00719D00  55                        PUSH EBP
 00719D01  8B EC                     MOV EBP,ESP
 00719D03  83 EC 4C                  SUB ESP,0x4c

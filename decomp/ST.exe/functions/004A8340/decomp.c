@@ -42,7 +42,7 @@ STGroupBoatC::GetDepotForAttack
   pSVar5 = local_14;
   if (iVar2 == 0) {
     *param_3 = -1;
-    if ((local_14->field_01E6 != 2) || (iVar2 = *(int *)&local_14->field_0x20e, iVar2 == 0)) {
+    if ((local_14->field_01E6 != 2) || (iVar2 = local_14->field_020E, iVar2 == 0)) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1708);
       iVar2 = extraout_EAX;
@@ -52,11 +52,11 @@ STGroupBoatC::GetDepotForAttack
                                  param_1,CASE_1);
     thunk_FUN_004162b0(this_00,&local_10,&local_e,&local_c);
     uVar4 = 0;
-    local_1c = *(int *)(*(int *)&pSVar5->field_0x20e + 0xc);
+    local_1c = *(int *)(pSVar5->field_020E + 0xc);
     iVar2 = local_18;
     if (0 < local_1c) {
       do {
-        FUN_006acc70(*(int *)&pSVar5->field_0x20e,uVar4,(undefined4 *)&local_24);
+        FUN_006acc70(pSVar5->field_020E,uVar4,(undefined4 *)&local_24);
         if (sStack_22 != -1) {
           this_01 = (int *)STAllPlayersC::GetObjPtr
                                      (DAT_007fa174,CONCAT22(sStack_22,CONCAT11(cStack_23,local_24)),

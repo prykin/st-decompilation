@@ -73,7 +73,7 @@ ProdPanelTy::CreateSlider
       piVar7 = piVar7 + 1;
     }
     local_6c = param_7;
-    local_84 = *(undefined4 *)&this_00->field_0x8;
+    local_84 = this_00->field_0008;
     local_68 = param_8;
     local_42c[0] = param_6;
     local_80 = 2;
@@ -102,11 +102,11 @@ ProdPanelTy::CreateSlider
     local_42c[4] = iVar2 + param_3;
     iVar4 = DAT_00806734;
     if (iVar8 != 0) {
-      iVar4 = *(int *)&this_00->field_0x44;
+      iVar4 = this_00->field_0044;
     }
     local_3c0 = 2;
     local_42c[5] = iVar4 + param_4;
-    local_3c4 = *(undefined4 *)&this_00->field_0x8;
+    local_3c4 = this_00->field_0008;
     local_38c = 0;
     local_380 = 0x101;
     local_3a4 = 0x101;
@@ -134,13 +134,13 @@ ProdPanelTy::CreateSlider
     local_2a4[2] = iVar2 + param_1;
     local_2a4[3] = DAT_00806734;
     if (iVar8 != 0) {
-      local_2a4[3] = *(int *)&this_00->field_0x44;
+      local_2a4[3] = this_00->field_0044;
     }
     local_2a4[3] = local_2a4[3] + param_2;
     local_23c = 0xc006;
     local_1f0 = 0x272f;
     local_214 = 0x272f;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(4,&local_8,0,local_42c,0);
+    (**(code **)(*(int *)this_00->field_000C + 8))(4,&local_8,0,local_42c,0);
     if ((this_00->field_005C == 0) || (uVar6 = 0x55, DAT_0080734c == '\0')) {
       uVar6 = 0x56;
     }

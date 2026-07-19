@@ -71,8 +71,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepSub(STGroupBoatC *this,int param_1)
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  *(undefined4 *)&local_30->field_0x65 = 0;
-  iVar3 = FUN_006e62d0(DAT_00802a38,*(int *)&local_30->field_0x1c5,(int *)&local_8);
+  local_30->field_0065 = 0;
+  iVar3 = FUN_006e62d0(DAT_00802a38,local_30->field_01C5,(int *)&local_8);
   if (iVar3 == -4) {
     return 0;
   }

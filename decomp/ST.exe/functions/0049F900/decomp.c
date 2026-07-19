@@ -47,19 +47,19 @@ undefined4 __thiscall STGroupBoatC::Teleport(STGroupBoatC *this,int param_1)
         *puVar9 = 0;
         puVar9 = puVar9 + 1;
       }
-      *(undefined4 *)&local_14->field_0x65 = 0;
-      local_14->field_02D8 = *(undefined4 *)&local_14->field_0x1a3;
-      local_14->field_02DC = *(undefined4 *)&local_14->field_0x1a7;
-      local_14->field_02E0 = *(undefined4 *)&local_14->field_0x1ab;
-      local_14->field_02E4 = *(undefined4 *)&local_14->field_0x1af;
+      local_14->field_0065 = 0;
+      local_14->field_02D8 = local_14->field_01A3;
+      *(undefined4 *)&local_14->field_0x2dc = local_14->field_01A7;
+      *(undefined4 *)&local_14->field_0x2e0 = local_14->field_01AB;
+      *(undefined4 *)&local_14->field_0x2e4 = local_14->field_01AF;
       local_24 = local_14->field_02D8;
       local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-      local_20 = *(undefined2 *)&local_14->field_02DC;
-      local_1c = *(undefined2 *)&local_14->field_02E0;
-      local_16 = *(undefined2 *)((int)&local_14->field_02E4 + 2);
-      local_1e = *(undefined2 *)((int)&local_14->field_02DC + 2);
-      local_1a = *(undefined2 *)((int)&local_14->field_02E0 + 2);
-      local_18 = *(undefined2 *)&local_14->field_02E4;
+      local_20 = *(undefined2 *)&local_14->field_0x2dc;
+      local_1c = *(undefined2 *)&local_14->field_0x2e0;
+      local_16 = local_14->field_02E6;
+      local_1e = local_14->field_02DE;
+      local_1a = local_14->field_02E2;
+      local_18 = *(undefined2 *)&local_14->field_0x2e4;
       if (0 < (int)local_8) {
         do {
           FUN_006acc70(pSVar2->field_0029,uVar8,&local_c);

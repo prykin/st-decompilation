@@ -25,18 +25,18 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
   pPVar2 = local_8;
   if (errorCode == 0) {
     this_00 = extraout_ECX;
-    if (*(uint *)&local_8[1].field_0xc != 0) {
-      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8[1].field_0xc);
+    if (local_8->field_0184 != 0) {
+      FUN_006e56b0((void *)local_8->field_000C,local_8->field_0184);
       this_00 = extraout_ECX_00;
     }
-    *(undefined4 *)&pPVar2[1].field_0xc = 0;
+    pPVar2->field_0184 = 0;
     DAT_008016e0 = 0;
-    if (*(uint **)&pPVar2[1].field_0x4 != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)&pPVar2[1].field_0x4);
-      *(undefined4 *)&pPVar2[1].field_0x4 = 0;
+    if (pPVar2->field_017C != (ccFntTy *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pPVar2->field_017C);
+      pPVar2->field_017C = (ccFntTy *)0x0;
     }
-    if (*(int *)&pPVar2[1].field_0x8 != 0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)&pPVar2[1].field_0x8);
+    if (pPVar2->field_0180 != 0) {
+      cMf32::RecMemFree(DAT_00806790,&pPVar2->field_0180);
     }
     g_currentExceptionFrame = pIVar4;
     return;

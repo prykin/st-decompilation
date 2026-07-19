@@ -26,31 +26,29 @@ MReportTy::PaintObjScore(MReportTy *this,int param_1,undefined4 param_2,int para
   pMVar3 = local_c;
   if (errorCode == 0) {
     if (param_1 != -1) {
-      cVar1 = *(char *)((int)&DAT_0080c83a + (byte)local_c->field_0x69 + 3);
+      cVar1 = *(char *)((int)&DAT_0080c83a + (byte)local_c->field_0069 + 3);
       local_8 = CONCAT31(local_8._1_3_,cVar1);
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c28fc,param_1);
-      ccFntTy::SetSurf(*(ccFntTy **)&pMVar3[1].field_0xc,*(int *)&pMVar3->field_0x73,0,param_3 + 8,
-                       param_4 + 5,0x36,0x14);
+      ccFntTy::SetSurf(pMVar3->field_008B,pMVar3->field_0073,0,param_3 + 8,param_4 + 5,0x36,0x14);
       if (cVar1 == -1) {
         uVar4 = 8;
       }
       else {
         uVar4 = local_8 & 0xff;
       }
-      ccFntTy::WrStr(*(ccFntTy **)&pMVar3[1].field_0xc,&DAT_0080f33a,-1,-1,uVar4);
+      ccFntTy::WrStr(pMVar3->field_008B,&DAT_0080f33a,-1,-1,uVar4);
     }
     cVar1 = DAT_0080c846;
     local_8 = CONCAT31(local_8._1_3_,DAT_0080c846);
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c28fc,param_2);
-    ccFntTy::SetSurf(*(ccFntTy **)&pMVar3[1].field_0xc,*(int *)&pMVar3->field_0x73,0,param_3 + 0x4c,
-                     param_4 + 5,0x36,0x14);
+    ccFntTy::SetSurf(pMVar3->field_008B,pMVar3->field_0073,0,param_3 + 0x4c,param_4 + 5,0x36,0x14);
     if (cVar1 == -1) {
       uVar4 = 8;
     }
     else {
       uVar4 = local_8 & 0xff;
     }
-    ccFntTy::WrStr(*(ccFntTy **)&pMVar3[1].field_0xc,&DAT_0080f33a,-1,-1,uVar4);
+    ccFntTy::WrStr(pMVar3->field_008B,&DAT_0080f33a,-1,-1,uVar4);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

@@ -1,4 +1,4 @@
-FUN_0071a270:
+mfSndLibLoad:
 0071A270  55                        PUSH EBP
 0071A271  8B EC                     MOV EBP,ESP
 0071A273  81 EC 54 04 00 00         SUB ESP,0x454

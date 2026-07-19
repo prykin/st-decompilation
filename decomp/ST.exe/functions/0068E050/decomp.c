@@ -26,12 +26,12 @@ undefined4 * __thiscall AiTactClassTy::PrepareToSave(AiTactClassTy *this,uint *p
       puVar3 = (undefined4 *)0x0;
     }
     else {
-      puVar3 = (undefined4 *)&local_8->field_0x20;
+      puVar3 = &local_8->field_0020;
     }
-    puVar3 = thunk_FUN_00691190(puVar3,param_1);
+    puVar3 = TactDataPack(puVar3,param_1);
     *puVar3 = 0x38e;
     puVar3[3] = 1;
-    *(undefined4 *)((int)puVar3 + 0x5e) = *(undefined4 *)&pAVar2->field_0x1c;
+    *(undefined4 *)((int)puVar3 + 0x5e) = pAVar2->field_001C;
     *(undefined2 *)((int)puVar3 + 0x105) = 0;
     g_currentExceptionFrame = pIVar5;
     return puVar3;

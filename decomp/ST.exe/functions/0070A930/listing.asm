@@ -1,4 +1,4 @@
-FUN_0070a930:
+mfImgGetNumIms:
 0070A930  55                        PUSH EBP
 0070A931  8B EC                     MOV EBP,ESP
 0070A933  83 EC 50                  SUB ESP,0x50

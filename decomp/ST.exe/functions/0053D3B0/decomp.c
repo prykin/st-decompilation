@@ -24,11 +24,11 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    local_10 = *(undefined4 *)&local_8[1].field_0x33;
-    local_c = *(undefined2 *)&local_8[1].field_0x37;
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x12,(int *)&local_8[1].field_0x33);
+    local_10 = local_8->field_01AB;
+    local_c = local_8->field_01AF;
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x12,&local_8->field_01AB);
     this_00->field_0028 = 5;
-    piVar4 = (int *)&this_00[1].field_0x3d;
+    piVar4 = &this_00->field_01B5;
     iVar2 = 6;
     do {
       if (*piVar4 != 0) {

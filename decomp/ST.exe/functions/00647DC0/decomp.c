@@ -10,9 +10,9 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
   int iVar2;
   int iVar3;
   undefined4 unaff_ESI;
-  AiBossClassTy *pAVar4;
+  undefined4 *puVar4;
   void *unaff_EDI;
-  AiBossClassTy *pAVar5;
+  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   AiBossClassTy *local_8;
   
@@ -22,22 +22,22 @@ int __thiscall AiBossClassTy::InitData(AiBossClassTy *this,undefined4 *param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (local_8 == (AiBossClassTy *)0x0) {
-      pAVar5 = (AiBossClassTy *)0x0;
+      puVar5 = (undefined4 *)0x0;
     }
     else {
-      pAVar5 = local_8 + 0x5d3;
+      puVar5 = (undefined4 *)&local_8->field_0x5d3;
     }
-    pAVar4 = (AiBossClassTy *)param_1;
+    puVar4 = param_1;
     for (iVar2 = 0x21; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pAVar5 = *(undefined4 *)pAVar4;
-      pAVar4 = pAVar4 + 4;
-      pAVar5 = pAVar5 + 4;
+      *puVar5 = *puVar4;
+      puVar4 = puVar4 + 1;
+      puVar5 = puVar5 + 1;
     }
-    *pAVar5 = *pAVar4;
-    local_8[0x5d8] = (AiBossClassTy)0x1;
+    *(undefined1 *)puVar5 = *(undefined1 *)puVar4;
+    local_8->field_05D8 = 1;
     AiEventClassTy::InitData
-              ((AiEventClassTy *)(local_8 + 0x1c),
-               (int *)(*(int *)(local_8 + 0x619) + 0x84 + (int)param_1));
+              ((AiEventClassTy *)&local_8->field_0x1c,
+               (int *)(local_8->field_0619 + 0x84 + (int)param_1));
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
