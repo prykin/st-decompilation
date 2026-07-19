@@ -20,7 +20,7 @@ undefined4 * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this,undefined4
   this->field_004D = 0;
   this->field_0049 = 0;
   this->field_0059 = 0;
-  puVar2 = (undefined4 *)&this->field_0x5d;
+  puVar2 = &this->field_005D;
   for (iVar1 = 0x61; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
@@ -31,7 +31,7 @@ undefined4 * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this,undefined4
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  puVar2 = (undefined4 *)&this->field_0x20a;
+  puVar2 = &this->field_020A;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
@@ -43,49 +43,49 @@ undefined4 * __thiscall STGroupBoatC::STGroupBoatC(STGroupBoatC *this,undefined4
   }
   this->field_0232 = 0xffffffff;
   this->field_0236 = 1;
-  puVar2 = (undefined4 *)&this->field_0x24a;
+  puVar2 = &this->field_024A;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  puVar2 = (undefined4 *)&this->field_0x276;
+  puVar2 = (undefined4 *)&this->field_0276;
   for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
   *(undefined2 *)puVar2 = 0;
   *(undefined1 *)((int)puVar2 + 2) = 0;
-  this->field_0295 = 0;
+  *(undefined4 *)&this->field_0x295 = 0;
   this->field_0299 = 0;
   this->field_029B = 0;
   this->field_029F = 0;
-  this->field_02A3 = 0;
-  this->field_02A7 = 0;
-  this->field_02AB = 0;
-  this->field_02B3 = 0;
-  this->field_02B7 = 0;
-  this->field_02BB = 0;
-  this->field_02BD = 0;
+  *(undefined4 *)&this->field_0x2a3 = 0;
+  *(undefined4 *)&this->field_0x2a7 = 0;
+  *(undefined2 *)&this->field_0x2ab = 0;
+  *(undefined4 *)&this->field_0x2b3 = 0;
+  *(undefined4 *)&this->field_0x2b7 = 0;
+  *(undefined2 *)&this->field_0x2bb = 0;
+  *(undefined4 *)&this->field_0x2bd = 0;
   this->field_02C1 = 0;
-  this->field_02C3 = 0;
-  this->field_02C7 = 0;
-  this->field_02CB = 0;
-  this->field_02CD = 0;
+  *(undefined4 *)&this->field_0x2c3 = 0;
+  *(undefined4 *)&this->field_0x2c7 = 0;
+  *(undefined2 *)&this->field_0x2cb = 0;
+  this->field_0x2cd = 0;
   this->field_02CE = 0;
-  this->field_02D2 = 0;
+  *(undefined4 *)&this->field_0x2d2 = 0;
   this->field_02D6 = 0;
   this->field_02D8 = 0;
-  this->field_02DC = 0;
-  this->field_02E0 = 0;
-  this->field_02E4 = 0;
-  this->field_02E8 = 0;
+  *(undefined4 *)&this->field_0x2dc = 0;
+  *(undefined4 *)&this->field_0x2e0 = 0;
+  *(undefined4 *)&this->field_0x2e4 = 0;
+  *(undefined4 *)&this->field_0x2e8 = 0;
   this->field_02EC = 0;
-  this->field_02EE = 0;
-  this->field_02F2 = 0;
-  this->field_02F6 = 0;
-  this->field_02F8 = 0;
-  this->field_02FC = 0;
-  this->field_0300 = 0;
+  *(undefined4 *)&this->field_0x2ee = 0;
+  *(undefined4 *)&this->field_0x2f2 = 0;
+  *(undefined2 *)&this->field_0x2f6 = 0;
+  *(undefined4 *)&this->field_0x2f8 = 0;
+  *(undefined4 *)&this->field_0x2fc = 0;
+  *(undefined4 *)&this->field_0x300 = 0;
   this->field_0304 = 0;
   this->field_0308 = 0;
   this->field_030C = 0;

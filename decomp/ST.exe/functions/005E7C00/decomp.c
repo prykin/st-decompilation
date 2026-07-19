@@ -30,18 +30,17 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
     pWVar2 = local_c;
     if (iVar3 == 0) {
       if (param_2 != 0) {
-        iVar3 = *(int *)&local_c[0x44].field_0x1c;
-        uVar8 = *(uint *)&local_c[0x44].field_0x20;
+        iVar3 = local_c->field_1AF0;
+        uVar8 = local_c->field_1AF4;
         if ((int)uVar8 < *(int *)(iVar3 + 8)) {
           do {
             FUN_006b7830(iVar3,uVar8);
-            iVar3 = *(int *)&pWVar2[0x44].field_0x1c;
-            uVar8 = *(uint *)&pWVar2[0x44].field_0x20;
+            iVar3 = pWVar2->field_1AF0;
+            uVar8 = pWVar2->field_1AF4;
           } while ((int)uVar8 < *(int *)(iVar3 + 8));
         }
-        FUN_006b4170(*(int *)&pWVar2[0x44].field_0x18,0,0,*(int *)&pWVar2[0x44].field_0x20 * 0x13,
-                     *(int *)(*(int *)&pWVar2[0x44].field_0x18 + 4),
-                     (0x16 - *(int *)&pWVar2[0x44].field_0x20) * 0x13,0);
+        FUN_006b4170(pWVar2->field_1AEC,0,0,pWVar2->field_1AF4 * 0x13,
+                     *(int *)(pWVar2->field_1AEC + 4),(0x16 - pWVar2->field_1AF4) * 0x13,0);
       }
       puVar4 = ccFntTy::_TxtToSarr(*(ccFntTy **)(DAT_0081176c + 0x30),param_1);
       puVar5 = local_10;
@@ -51,8 +50,7 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
         local_10 = puVar5;
         FUN_006b5570((byte *)puVar4);
       }
-      *(undefined4 *)&pWVar2[0x44].field_0x20 =
-           *(undefined4 *)(*(int *)&pWVar2[0x44].field_0x1c + 8);
+      pWVar2->field_1AF4 = *(undefined4 *)(pWVar2->field_1AF0 + 8);
       if (puVar5 != (uint *)0x0) {
         iVar3 = 0;
         if (0 < (int)puVar5[2]) {
@@ -63,24 +61,24 @@ void __thiscall WaitTy::AddStr(WaitTy *this,uint *param_1,int param_2)
           do {
             pcVar6 = *(char **)(puVar5[5] + iVar3 * 4);
 LAB_005e7d14:
-            Library::DKW::TBL::FUN_006b5aa0(*(int *)&pWVar2[0x44].field_0x1c,pcVar6);
+            Library::DKW::TBL::FUN_006b5aa0(pWVar2->field_1AF0,pcVar6);
             iVar3 = iVar3 + 1;
           } while (iVar3 < (int)puVar5[2]);
         }
         FUN_006b5570((byte *)puVar5);
       }
-      iVar3 = *(int *)(*(int *)&pWVar2[0x44].field_0x1c + 8);
+      iVar3 = *(int *)(pWVar2->field_1AF0 + 8);
       if (iVar3 < 0x16) {
         iVar9 = iVar3 + -1;
       }
       else if (iVar3 < 0x2c) {
-        puVar7 = *(undefined4 **)&pWVar2[0x44].field_0x18;
+        puVar7 = (undefined4 *)pWVar2->field_1AEC;
         iVar9 = 0x2c - iVar3;
         Library::DKW::WGR::FUN_006b55f0
                   (puVar7,0,0,0,(int)puVar7,0,0,iVar3 * 0x13 + -0x1a2,puVar7[1],iVar9 * 0x13);
       }
       else {
-        iVar3 = *(int *)&pWVar2[0x44].field_0x18;
+        iVar3 = pWVar2->field_1AEC;
         iVar9 = 0;
         local_8 = *(uint **)(iVar3 + 0x14);
         if (local_8 == (uint *)0x0) {
@@ -97,22 +95,21 @@ LAB_005e7d14:
           puVar7 = (undefined4 *)((int)puVar7 + 1);
         }
       }
-      for (iVar3 = *(int *)(*(int *)&pWVar2[0x44].field_0x1c + 8); 0x15 < iVar3;
-          iVar3 = *(int *)(iVar3 + -0x10)) {
-        FUN_006b7830(*(int *)&pWVar2[0x44].field_0x1c,0);
-        iVar3 = *(int *)&pWVar2[0x44].field_0x1c;
-        *(int *)&pWVar2[0x44].field_0x1c = iVar3 + -0x18;
+      for (iVar3 = *(int *)(pWVar2->field_1AF0 + 8); 0x15 < iVar3; iVar3 = *(int *)(iVar3 + -0x10))
+      {
+        FUN_006b7830(pWVar2->field_1AF0,0);
+        iVar3 = pWVar2->field_1AF0;
+        pWVar2->field_1AF0 = iVar3 + -0x18;
       }
-      if (iVar9 <= *(int *)(*(int *)&pWVar2[0x44].field_0x1c + 8) + -1) {
-        local_8 = (uint *)(&pWVar2[0x43].field_0x25 + iVar9 * 4);
+      if (iVar9 <= *(int *)(pWVar2->field_1AF0 + 8) + -1) {
+        local_8 = &pWVar2->field_1A94 + iVar9;
         iVar3 = iVar9 * 0x13;
         do {
-          FUN_006b4170(*(int *)&pWVar2[0x44].field_0x18,0,0,iVar3,
-                       *(int *)(*(int *)&pWVar2[0x44].field_0x18 + 4),0x13,0);
-          ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x30),*(int *)&pWVar2[0x44].field_0x18,0,2,
-                           iVar3,*(int *)(*(int *)&pWVar2[0x44].field_0x18 + 4) + -4,0x13);
-          if (iVar9 < *(int *)(*(int *)&pWVar2[0x44].field_0x1c + 8)) {
-            puVar5 = *(uint **)(*(int *)(*(int *)&pWVar2[0x44].field_0x1c + 0x14) + iVar9 * 4);
+          FUN_006b4170(pWVar2->field_1AEC,0,0,iVar3,*(int *)(pWVar2->field_1AEC + 4),0x13,0);
+          ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x30),pWVar2->field_1AEC,0,2,iVar3,
+                           *(int *)(pWVar2->field_1AEC + 4) + -4,0x13);
+          if (iVar9 < *(int *)(pWVar2->field_1AF0 + 8)) {
+            puVar5 = *(uint **)(*(int *)(pWVar2->field_1AF0 + 0x14) + iVar9 * 4);
           }
           else {
             puVar5 = (uint *)0x0;
@@ -122,7 +119,7 @@ LAB_005e7d14:
           iVar9 = iVar9 + 1;
           local_8 = local_8 + 1;
           iVar3 = iVar3 + 0x13;
-        } while (iVar9 <= *(int *)(*(int *)&pWVar2[0x44].field_0x1c + 8) + -1);
+        } while (iVar9 <= *(int *)(pWVar2->field_1AF0 + 8) + -1);
       }
       g_currentExceptionFrame = local_54.previous;
       return;

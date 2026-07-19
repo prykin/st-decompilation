@@ -66,7 +66,7 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   }
   iVar7 = 2;
   DAT_008016e8 = local_10;
-  puVar6 = (undefined4 *)&local_10[1].field_0x1;
+  puVar6 = &local_10->field_027A;
   do {
     puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x28,0x30,10);
     *puVar6 = puVar3;
@@ -78,11 +78,11 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   this_00->field_003C = this_00->field_003C + (DAT_00806730 + -800) / 2;
   pCVar4 = thunk_FUN_00571240(s_BKG_RESEARCHW_007c7724,0);
   puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar11,iVar7);
-  *(ushort **)&this_00->field_0x184 = puVar5;
-  puVar5 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
-  *(ushort **)&this_00->field_0x188 = puVar5;
-  puVar5 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
-  *(ushort **)&this_00->field_0x18c = puVar5;
+  this_00->field_0184 = puVar5;
+  puVar5 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+  this_00->field_0188 = puVar5;
+  puVar5 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+  this_00->field_018C = puVar5;
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,
              s_UPG_00_007c771c);
@@ -131,7 +131,7 @@ LAB_0053c30d:
       iVar7 = iVar7 + 1;
     } while (local_8 != 0);
     local_20 = local_1fc;
-    local_58 = *(undefined4 *)&this_00->field_0x8;
+    local_58 = this_00->field_0008;
     local_1c = (byte)this_00->field_0278 + 1;
     local_68[0] = 1;
     local_68[1] = 1;
@@ -142,7 +142,7 @@ LAB_0053c30d:
     local_34 = 2;
     local_30 = 0xc0b4;
     local_38 = local_58;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x9,0,local_68,0);
+    (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00[1].field_0x4,0,local_68,0);
   }
   g_currentExceptionFrame = local_ac.previous;
   return;

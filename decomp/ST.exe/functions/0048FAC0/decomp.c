@@ -46,7 +46,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   }
   local_1c = (uint *)0x9;
   *param_1 = 0x606;
-  puVar6 = (undefined4 *)&local_14->field_0x282;
+  puVar6 = &local_14->field_0282;
   do {
     if ((uint *)*puVar6 != (uint *)0x0) {
       local_c = (undefined4 *)FUN_006b0020((uint *)*puVar6,(int *)&local_8);
@@ -62,12 +62,12 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
     *param_1 = *param_1 + local_8;
   }
   puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*param_1);
-  *puVar3 = *(undefined4 *)&pSVar4->field_0x20;
+  *puVar3 = pSVar4->field_0020;
   puVar3[1] = *(undefined4 *)&pSVar4->field_0x24;
-  puVar3[2] = *(undefined4 *)&pSVar4->field_0x28;
+  puVar3[2] = pSVar4->field_0028;
   puVar3[3] = 2;
-  puVar3[4] = *(undefined4 *)&pSVar4->field_0x2c;
-  puVar6 = (undefined4 *)&pSVar4->field_0x6f3;
+  puVar3[4] = pSVar4->field_002C;
+  puVar6 = &pSVar4->field_06F3;
   puVar9 = puVar3 + 0x17;
   for (iVar2 = 0x5a; iVar2 != 0; iVar2 = iVar2 + -1) {
     *puVar9 = *puVar6;
@@ -88,9 +88,9 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   puVar3[0xd8] = local_14->field_0459;
   puVar3[0xd9] = local_14->field_045D;
   puVar3[0xda] = local_14->field_0461;
-  *(undefined2 *)(puVar3 + 0xdb) = *(undefined2 *)&local_14->field_0x469;
-  *(undefined2 *)((int)puVar3 + 0x36e) = *(undefined2 *)&local_14->field_0x46f;
-  puVar3[0xdc] = *(undefined4 *)&local_14->field_0x471;
+  *(undefined2 *)(puVar3 + 0xdb) = local_14->field_0469;
+  *(undefined2 *)((int)puVar3 + 0x36e) = local_14->field_046F;
+  puVar3[0xdc] = local_14->field_0471;
   *(undefined2 *)(puVar3 + 0xdd) = local_14->field_0475;
   *(undefined2 *)((int)puVar3 + 0x376) = local_14->field_0477;
   *(undefined2 *)(puVar3 + 0xde) = local_14->field_0479;
@@ -224,7 +224,7 @@ undefined4 * __thiscall STBoatC::SaveBoatData(STBoatC *this,int *param_1)
   *(undefined4 *)((int)puVar3 + 0x5ee) = local_14->field_06EB;
   *(undefined4 *)((int)puVar3 + 0x5f2) = local_14->field_06EF;
   local_1c = puVar3 + 6;
-  local_18 = (undefined4 *)&local_14->field_0x282;
+  local_18 = &local_14->field_0282;
   local_10 = 0x606;
   local_20 = 9;
   pSVar4 = local_14;

@@ -1,6 +1,13 @@
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_erc.cpp
+   Diagnostic line evidence: 129 | 130 | 138 | 142 | 159 | 160 | 161 | 173 | 192 | 205 | 223 | 248 |
+   284 | 294 | 305 | 313 | 323 | 338 | 346 | 356 | 369 | 386 | 399 | 402 | 413 | 416 | 428 | 443 |
+   458 | 472 | 486 | 500 | 518 | 536 | 538 | 544 | 576 | 591 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
 
 float * FUN_0064a970(char *param_1,int param_2,int *param_3)
 

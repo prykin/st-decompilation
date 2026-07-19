@@ -1,4 +1,4 @@
-FUN_00726390:
+mfMSprGetNumPl:
 00726390  55                        PUSH EBP
 00726391  8B EC                     MOV EBP,ESP
 00726393  83 EC 50                  SUB ESP,0x50

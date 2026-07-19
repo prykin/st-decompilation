@@ -1,4 +1,4 @@
-FUN_006ef440:
+_mfTMapSetTxtParam:
 006EF440  55                        PUSH EBP
 006EF441  8B EC                     MOV EBP,ESP
 006EF443  83 EC 44                  SUB ESP,0x44

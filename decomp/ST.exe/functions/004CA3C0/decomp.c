@@ -29,7 +29,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
   pTVar3 = local_18;
   if (iVar4 == 0) {
     if (local_18->field_05F3 != 0) {
-      iVar4 = *(int *)&local_18->field_0x1f5;
+      iVar4 = local_18->field_01F5;
       puVar1 = &local_18->field_01D5;
       local_10 = *(int *)(iVar4 + 0x1e4);
       local_14 = *(int *)(iVar4 + 0x1e8);
@@ -49,8 +49,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
           } while (iVar6 < iVar4);
         }
       }
-      wsprintfA((LPSTR)local_15c,s__s_1i_007ac908,pTVar3->field_05F3,
-                *(undefined4 *)&pTVar3->field_0x5c0);
+      wsprintfA((LPSTR)local_15c,s__s_1i_007ac908,pTVar3->field_05F3,pTVar3->field_05C0);
       iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,0xd,DAT_0080678c,local_15c,0x1d);
       if (iVar4 != 0) {
         RaiseInternalException(iVar4,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xd3);
@@ -68,9 +67,9 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
       }
       FUN_006ab060(&local_8);
     }
-    if (((*(int *)(&DAT_00791a10 + *(int *)&pTVar3->field_0x235 * 4) != 0) &&
-        (*(int *)&pTVar3->field_0x5ac != 0x40)) && (*(int *)&pTVar3->field_0x5ac != 0x49)) {
-      iVar4 = *(int *)&pTVar3->field_0x1f5;
+    if (((*(int *)(&DAT_00791a10 + pTVar3->field_0235 * 4) != 0) && (pTVar3->field_05AC != 0x40)) &&
+       (pTVar3->field_05AC != 0x49)) {
+      iVar4 = pTVar3->field_01F5;
       puVar1 = &pTVar3->field_01D5;
       local_10 = *(int *)(iVar4 + 0x130);
       local_14 = *(int *)(iVar4 + 0x134);
@@ -90,8 +89,7 @@ int __thiscall TLOBaseTy::ReloadLogoPlane(TLOBaseTy *this)
           } while (iVar6 < iVar4);
         }
       }
-      wsprintfA((LPSTR)local_15c,s__s_cover_1i_007ac8ec,pTVar3->field_05F3,
-                *(undefined4 *)&pTVar3->field_0x5c0);
+      wsprintfA((LPSTR)local_15c,s__s_cover_1i_007ac8ec,pTVar3->field_05F3,pTVar3->field_05C0);
       iVar4 = STT3DSprC::LoadSequence((STT3DSprC *)puVar1,8,DAT_0080678c,local_15c,0x1d);
       if (iVar4 != 0) {
         RaiseInternalException(iVar4,DAT_007ed77c,s_E____titans_Artem_TLO_bspr_cpp_007ad4d0,0xea);

@@ -60,22 +60,22 @@ void __thiscall HelpPanelTy::TipProc(HelpPanelTy *this,void *param_1,int param_2
   cVar1 = local_10->field_01A1;
   if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
     local_10->field_01A2 = cVar1;
-    *(undefined4 *)&local_10->field_0x1ab = local_10->field_01A3;
+    local_10->field_01AB = local_10->field_01A3;
   }
   else {
     local_10->field_01A2 = 0;
-    *(undefined4 *)&local_10->field_0x1ab = 0;
+    local_10->field_01AB = 0;
   }
   local_10->field_01A1 = 8;
   local_10->field_01A3 = param_1;
   local_10->field_01A7 = param_2;
-  *(undefined2 *)&local_10->field_0x1af = 0x14;
-  *(undefined2 *)&local_10->field_0x1b1 = 5;
-  if (*(int *)&local_10->field_0x178 != 0) {
+  local_10->field_01AF = 0x14;
+  local_10->field_01B1 = 5;
+  if (local_10->field_0178 != 0) {
     local_10->field_0028 = 0x4202;
     *(undefined2 *)&local_10->field_0x2c = 0;
     local_10->field_002E = 2;
-    *(int *)&local_10->field_0x30 = *(int *)&local_10->field_0x178;
+    *(undefined4 *)&local_10->field_0x30 = local_10->field_0178;
     if (DAT_00802a30 != (undefined4 *)0x0) {
       (**(code **)*DAT_00802a30)(&local_10->field_0x18);
     }
@@ -121,14 +121,13 @@ LAB_0051d689:
       pcVar11 = pcVar11 + 1;
     }
     ccFntTy::FormIndentText
-              (*(ccFntTy **)&this_00->field_0x1e0,(char *)&DAT_0080f33a,&DAT_0080f33a,
+              (this_00->field_01E0,(char *)&DAT_0080f33a,&DAT_0080f33a,
                (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
-    uVar9 = FUN_007113e0(*(void **)&this_00->field_0x1e0,&DAT_0080f33a);
+    uVar9 = FUN_007113e0(this_00->field_01E0,&DAT_0080f33a);
     local_c = uVar9;
     CheckBkView(this_00,0,uVar9);
-    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1e0,this_00->field_0218,0,0,0,0x19c,uVar9 + 2);
-    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1e0,&DAT_0080f33a,1,-1,
-                   (DAT_0080874e != '\x03') - 1 & 5,-1,-1);
+    ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,0,0,0x19c,uVar9 + 2);
+    ccFntTy::WrTxt(this_00->field_01E0,&DAT_0080f33a,1,-1,(DAT_0080874e != '\x03') - 1 & 5,-1,-1);
   }
   CheckBkView(this_00,uVar9,0x1e);
   iVar8 = 1;
@@ -139,37 +138,36 @@ LAB_0051d689:
   pCVar5 = FUN_006f2c00(pCVar5,iVar3,uVar10);
   local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar13,iVar8);
   iVar3 = uVar9 + 10;
-  thunk_FUN_00540760((undefined4 *)this_00->field_0218,0x50,iVar3,'\x01',(byte *)local_8);
+  DibPut((undefined4 *)this_00->field_0218,0x50,iVar3,'\x01',(byte *)local_8);
   local_18 = *(int *)(local_8 + 2);
-  ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1e0,this_00->field_0218,0,local_18 + 0x5f,iVar3,
-                   0x13d - local_18,0xf);
+  ccFntTy::SetSurf(this_00->field_01E0,this_00->field_0218,0,local_18 + 0x5f,iVar3,0x13d - local_18,
+                   0xf);
   uVar10 = (DAT_0080874e != '\x03') - 1 & 5;
   iVar14 = -1;
   iVar8 = 1;
   puVar6 = (uint *)FUN_006b0140(0x5c93,DAT_00807618);
-  ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1e0,puVar6,iVar8,iVar14,uVar10);
+  ccFntTy::WrStr(this_00->field_01E0,puVar6,iVar8,iVar14,uVar10);
   local_34[0] = 0x50;
   local_34[2] = local_18;
   local_34[3] = *(int *)(local_8 + 4);
   local_34[1] = iVar3;
-  Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x1d7,local_34);
+  Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01D7,local_34);
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
   CheckBkView(this_00,uVar9 + 0x1e,10);
   local_c = (uVar9 / 10 + 1) * 10;
-  iVar3 = (*(ushort *)&this_00->field_0x1af - 0x118) + local_c;
+  iVar3 = ((ushort)this_00->field_01AF - 0x118) + local_c;
   if (iVar3 < 1) {
     iVar3 = 0;
   }
   else {
-    iVar3 = iVar3 / (int)(uint)*(ushort *)&this_00->field_0x1b1 + 1;
+    iVar3 = iVar3 / (int)(uint)(ushort)this_00->field_01B1 + 1;
   }
   CreateSlider(this_00,iVar3);
   Library::DKW::WGR::FUN_006b5110
-            (*(int *)&this_00->field_0x68,0,0x21,*(ushort *)&this_00->field_0x1af + 0x16,
-             this_00->field_0218,0,0,0,0x19c,0x117 - (uint)*(ushort *)&this_00->field_0x1af,0xff);
+            (this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,this_00->field_0218,0,0,0
+             ,0x19c,0x117 - (uint)(ushort)this_00->field_01AF,0xff);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,*(uint *)&this_00->field_0x3c,
-             *(uint *)&this_00->field_0x44);
+            (DAT_008075a8,this_00->field_0060,0xffffffff,this_00->field_003C,this_00->field_0044);
   g_currentExceptionFrame = local_78.previous;
   return;
 }

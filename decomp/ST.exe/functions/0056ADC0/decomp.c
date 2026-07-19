@@ -137,7 +137,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   DAT_00856d78 = DAT_00806748;
   ShowWindow(DAT_00806748,param_4);
   UpdateWindow(DAT_00806748);
-  local_34 = (undefined4 *)&local_c->field_0x38;
+  local_34 = &local_c->field_0038;
   local_40 = DAT_00806748;
   local_138.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_138;
@@ -155,7 +155,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     g_currentExceptionFrame = local_138.previous;
     *local_34 = 0;
   }
-  iVar8 = thunk_FUN_00571e40(&local_c->field_0x38,1);
+  iVar8 = thunk_FUN_00571e40(&local_c->field_0038,1);
   if (iVar8 == 0) {
     RaiseInternalException(-0x5001fff6,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x159);
   }
@@ -165,19 +165,19 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   pSVar20 = local_c;
   if (iVar8 == 0) {
     puVar1 = &local_c->field_0x60;
-    puVar2 = &local_c[1].field_0x2e1c;
+    puVar2 = &local_c->field_7D1A;
     wsprintfA(puVar2,s__s_s_s_007c6edc,puVar1,PTR_s_SYSTEM__0079b030,s_INTER_007ca0c0);
     DAT_00806780 = FUN_006f0ec0(0x345,puVar2,0,0,0);
-    DAT_00806784 = FUN_007097c0((int)DAT_00806780);
+    DAT_00806784 = mfRLoadCreate((int)DAT_00806780);
     wsprintfA(puVar2,&DAT_007c6ee4,&pSVar20->field_0x470,PTR_s_TASKS_0079b048);
     DAT_00806798 = FUN_006f0ec0(0x345,puVar2,0,0,0);
     wsprintfA(puVar2,s__s_s_s_007c6edc,puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
     DAT_0080675c = FUN_006f0ec0(0x345,puVar2,0,0,0);
-    puVar9 = thunk_FUN_0067e7e0((int)DAT_0080675c,0);
-    *(uint **)&pSVar20->field_0x4ee2 = puVar9;
-    puVar9 = thunk_FUN_0067e7e0((int)DAT_0080675c,1);
-    *(uint **)&pSVar20->field_0x4ee6 = puVar9;
-    if ((*(int *)(*(int *)&pSVar20->field_0x4ee2 + 0xc) == 0) || (puVar9[3] == 0)) {
+    puVar9 = CreateArbList((int)DAT_0080675c,0);
+    pSVar20->field_4EE2 = puVar9;
+    puVar9 = CreateArbList((int)DAT_0080675c,1);
+    pSVar20->field_4EE6 = puVar9;
+    if ((*(int *)(pSVar20->field_4EE2 + 0xc) == 0) || (puVar9[3] == 0)) {
       RaiseInternalException(-0x5001fff3,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x167);
     }
     g_currentExceptionFrame = local_248.previous;
@@ -198,7 +198,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   _DAT_0080758c = 0x1e;
   _DAT_00807590 = 0x4d8;
   _DAT_00807594 = 0x3c2;
-  FUN_006b9b20(&DAT_0080759c,DAT_00806748,(int *)&pSVar20->field_0x115a);
+  FUN_006b9b20(&DAT_0080759c,DAT_00806748,&pSVar20->field_115A);
   Library::DKW::DDX::FUN_006b9b40
             (DAT_0080759c,0x10000001,DAT_00806730,DAT_00806734,DAT_00806738,DAT_00806730,
              DAT_00806734,0,0,0x100);
@@ -220,7 +220,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   FUN_006ad270(DAT_0080759c);
   DVar10 = timeGetTime();
   Library::MSVCRT::FUN_0072e6b0(DVar10);
-  thunk_FUN_005672a0(&local_c->field_0x38,DAT_00856d78);
+  thunk_FUN_005672a0(&local_c->field_0038,DAT_00856d78);
   local_f4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_f4;
   iVar8 = Library::MSVCRT::__setjmp3(local_f4.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -228,7 +228,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
   if ((iVar8 == 0) && (iVar8 = Library::DKW::DDX::FUN_006b6d50(&DAT_00811764,0x20), iVar8 == 0)) {
     DAT_00811768 = '\x01';
     pcVar12 = &pSVar20->field_0x7bd;
-    *(undefined4 *)&pSVar20->field_0x115f = *(undefined4 *)(DAT_00811764 + 0x38);
+    pSVar20->field_115F = *(undefined4 *)(DAT_00811764 + 0x38);
     puVar24 = (undefined4 *)pcVar12;
     for (iVar8 = 0x10; iVar8 != 0; iVar8 = iVar8 + -1) {
       *puVar24 = 0;
@@ -271,15 +271,15 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     }
   }
   g_currentExceptionFrame = local_f4.previous;
-  thunk_FUN_00572510(&pSVar20->field_0x38);
-  if (((DAT_00811768 != '\0') && (pSVar20->field_0xe26 == '\0')) &&
-     (iVar8 = thunk_FUN_005738d0(&pSVar20->field_0x38), iVar8 == 0)) {
+  thunk_FUN_00572510(&pSVar20->field_0038);
+  if (((DAT_00811768 != '\0') && (pSVar20->field_0E26 == '\0')) &&
+     (iVar8 = thunk_FUN_005738d0(&pSVar20->field_0038), iVar8 == 0)) {
     DAT_00811768 = '\0';
   }
   FUN_006c18b0((uint)DAT_00807363);
-  thunk_FUN_00576bb0();
+  CreateBaseSystem();
   puVar9 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-  *(uint **)&pSVar20->field_0x4eda = puVar9;
+  pSVar20->field_4EDA = puVar9;
   puVar24 = local_2c;
   for (iVar8 = 8; iVar8 != 0; iVar8 = iVar8 + -1) {
     *puVar24 = 0;
@@ -299,10 +299,10 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         *puVar24 = 0;
         puVar24 = puVar24 + 1;
       }
-      wsprintfA(&pSVar20[1].field_0x2e1c,&DAT_007c6ee4,&pSVar20->field_0x164,
-                PTR_s_STARTUP_VPS_0079b040);
-      puVar9 = thunk_FUN_00683c70((uint *)&pSVar20[1].field_0x2e1c,&stack0xfffffaa0,&local_38,
-                                  (int *)0x0,(undefined *)0x0);
+      wsprintfA(&pSVar20->field_7D1A,&DAT_007c6ee4,&pSVar20->field_0x164,PTR_s_STARTUP_VPS_0079b040)
+      ;
+      puVar9 = thunk_FUN_00683c70((uint *)&pSVar20->field_7D1A,&stack0xfffffaa0,&local_38,(int *)0x0
+                                  ,(undefined *)0x0);
       if ((local_38 == 0x40) && (puVar9 != (uint *)0x0)) {
         local_1c = 0x7101;
         local_18 = 1;
@@ -341,7 +341,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         pcVar12 = pcVar21;
       } while (cVar3 != '\0');
       uVar18 = ~uVar18;
-      puVar1 = &pSVar20[1].field_0x2c08;
+      puVar1 = &pSVar20->field_0x7b06;
       pcVar12 = pcVar21 + -uVar18;
       pcVar21 = puVar1;
       for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
@@ -355,7 +355,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         pcVar21 = pcVar21 + 1;
       }
       FUN_006b60b0(puVar1,puVar1);
-      pcVar12 = &pSVar20[1].field_0x2c08;
+      pcVar12 = &pSVar20->field_0x7b06;
       FUN_006c2980(pcVar12,pcVar12);
       iVar8 = -1;
       do {
@@ -377,7 +377,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar12 = pcVar21 + -uVar18;
-        pcVar21 = &pSVar20[1].field_0x27f8;
+        pcVar21 = &pSVar20->field_0x76f6;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
           pcVar12 = pcVar12 + 4;
@@ -400,7 +400,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -433,7 +433,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -454,7 +454,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar12 = pcVar12 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        FUN_006b8280(&pSVar20[1].field_0x27f8,&pSVar20[1].field_0x27f8);
+        FUN_006b8280(&pSVar20->field_0x76f6,&pSVar20->field_0x76f6);
         uVar18 = 0xffffffff;
         pcVar12 = PTR_DAT_0079b050;
         do {
@@ -467,7 +467,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -489,7 +489,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar21 = pcVar21 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar12 = &pSVar20[1].field_0x2c08;
+        pcVar12 = &pSVar20->field_0x7b06;
         do {
           pcVar21 = pcVar12;
           if (uVar18 == 0) break;
@@ -500,7 +500,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -522,7 +522,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar21 = pcVar21 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar21 = pcVar12;
           if (uVar18 == 0) break;
@@ -533,7 +533,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar12 = pcVar21 + -uVar18;
-        pcVar21 = &pSVar20[1].field_0x2c08;
+        pcVar21 = &pSVar20->field_0x7b06;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
           pcVar12 = pcVar12 + 4;
@@ -556,7 +556,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x2c08;
+        pcVar12 = &pSVar20->field_0x7b06;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -577,9 +577,9 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           pcVar12 = pcVar12 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        *(undefined4 *)&pSVar20->field_0x1185 = 1;
+        pSVar20->field_1185 = 1;
         ReadCmdPlay(pSVar20,1);
-        if (*(int *)&pSVar20->field_0x1185 != 0) {
+        if (pSVar20->field_1185 != 0) {
           if (*(char *)(*(int *)(DAT_00857168 + 4) + 1) != 'd') {
             bVar5 = true;
             goto switchD_0056b4ce_caseD_57;
@@ -596,7 +596,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           pcVar12 = pcVar21 + -uVar18;
-          pcVar21 = &pSVar20[1].field_0x2a00;
+          pcVar21 = &pSVar20->field_0x78fe;
           for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
             *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
             pcVar12 = pcVar12 + 4;
@@ -619,7 +619,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           iVar8 = -1;
-          pcVar12 = &pSVar20[1].field_0x2a00;
+          pcVar12 = &pSVar20->field_0x78fe;
           do {
             pcVar23 = pcVar12;
             if (iVar8 == 0) break;
@@ -640,7 +640,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
             pcVar12 = pcVar12 + 1;
             pcVar21 = pcVar21 + 1;
           }
-          FUN_006b8280(&pSVar20[1].field_0x2a00,&pSVar20[1].field_0x2a00);
+          FUN_006b8280(&pSVar20->field_0x78fe,&pSVar20->field_0x78fe);
           uVar18 = 0xffffffff;
           pcVar12 = PTR_DAT_0079b050;
           do {
@@ -653,7 +653,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           iVar8 = -1;
-          pcVar12 = &pSVar20[1].field_0x2a00;
+          pcVar12 = &pSVar20->field_0x78fe;
           do {
             pcVar23 = pcVar12;
             if (iVar8 == 0) break;
@@ -675,7 +675,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
             pcVar21 = pcVar21 + 1;
           }
           uVar18 = 0xffffffff;
-          pcVar12 = &pSVar20[1].field_0x2c08;
+          pcVar12 = &pSVar20->field_0x7b06;
           do {
             pcVar21 = pcVar12;
             if (uVar18 == 0) break;
@@ -686,7 +686,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           } while (cVar3 != '\0');
           uVar18 = ~uVar18;
           iVar8 = -1;
-          pcVar12 = &pSVar20[1].field_0x2a00;
+          pcVar12 = &pSVar20->field_0x78fe;
           do {
             pcVar23 = pcVar12;
             if (iVar8 == 0) break;
@@ -714,18 +714,18 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
           (**(code **)*DAT_0081176c)();
           AppClassTy::AddSystem((AppClassTy *)pSVar20,DAT_0081176c,0);
           local_1c = 0x60ff;
-          *(undefined4 *)&pSVar20[1].field_0x2e10 = 1;
-          *(undefined4 *)&pSVar20->field_0x117c = 1;
-          pSVar20->field_0x1163 = 1;
+          pSVar20->field_7D0E = 1;
+          pSVar20->field_117C = 1;
+          pSVar20->field_1163 = 1;
           if (*(undefined1 **)(DAT_00857168 + 0xc) != (undefined1 *)0x0) {
             switch(**(undefined1 **)(DAT_00857168 + 0xc)) {
             case 0x4d:
             case 0x6d:
-              pSVar20->field_0x1163 = 3;
+              pSVar20->field_1163 = 3;
               break;
             case 0x53:
             case 0x73:
-              pSVar20->field_0x1163 = 2;
+              pSVar20->field_1163 = 2;
             }
           }
         }
@@ -744,19 +744,19 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     if (((4 < ~uVar18 - 1) && (*(int *)(DAT_00857168 + 8) != 0)) &&
        (*(int *)(DAT_00857168 + 0xc) != 0)) {
       local_1c = 0x6104;
-      *(undefined4 *)&pSVar20[1].field_0x3650 = 1;
+      pSVar20->field_854E = 1;
       local_18 = 1;
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),2);
       bVar6 = *pcVar12 - 0x30;
-      pSVar20->field_0x112e = bVar6;
+      pSVar20->field_112E = bVar6;
       if ((bVar6 == 0) || (3 < bVar6)) {
-        pSVar20->field_0x112e = 1;
+        pSVar20->field_112E = 1;
       }
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),3);
-      *(int *)&pSVar20[1].field_0x3654 = *pcVar12 + -0x30;
+      pSVar20->field_8552 = *pcVar12 + -0x30;
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),4);
-      wsprintfA(&pSVar20[1].field_0x10,&DAT_007a4ccc,pcVar12);
-      wsprintfA(&pSVar20[1].field_0x27f8,&DAT_007c6ee4,&pSVar20->field_0x60,&pSVar20[1].field_0x10);
+      wsprintfA(&pSVar20->field_0x4f0e,&DAT_007a4ccc,pcVar12);
+      wsprintfA(&pSVar20->field_0x76f6,&DAT_007c6ee4,&pSVar20->field_0x60,&pSVar20->field_0x4f0e);
       uVar18 = 0xffffffff;
       pcVar12 = *(char **)(DAT_00857168 + 8);
       do {
@@ -769,7 +769,7 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
       } while (cVar3 != '\0');
       uVar18 = ~uVar18;
       pcVar12 = pcVar21 + -uVar18;
-      pcVar21 = &pSVar20[1].field_0x1de5;
+      pcVar21 = &pSVar20->field_0x6ce3;
       for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
         *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
         pcVar12 = pcVar12 + 4;
@@ -799,18 +799,17 @@ switchD_0056b4ce_caseD_47:
     } while (cVar3 != '\0');
     if (6 < ~uVar18 - 1) {
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),6);
-      wsprintfA(&pSVar20[1].field_0x2a00,&DAT_007a4ccc,pcVar12);
-      wsprintfA(&pSVar20[1].field_0x27f8,&DAT_007c6ee4,&pSVar20->field_0x60,&pSVar20[1].field_0x2a00
-               );
-      pSVar20->field_0x1195 = 1;
+      wsprintfA(&pSVar20->field_0x78fe,&DAT_007a4ccc,pcVar12);
+      wsprintfA(&pSVar20->field_0x76f6,&DAT_007c6ee4,&pSVar20->field_0x60,&pSVar20->field_0x78fe);
+      pSVar20->field_1195 = 1;
       DAT_00807340 = *(char *)(*(int *)(DAT_00857168 + 4) + 3) - 0x30;
       if (3 < DAT_00807340) {
         DAT_00807340 = 3;
       }
-      *(int *)&pSVar20[1].field_0x3654 = *(char *)(*(int *)(DAT_00857168 + 4) + 5) + -0x30;
+      pSVar20->field_8552 = *(char *)(*(int *)(DAT_00857168 + 4) + 5) + -0x30;
       cVar3 = *(char *)(*(int *)(DAT_00857168 + 4) + 4);
-      pSVar20->field_0x1180 = 8;
-      pSVar20->field_0x112d = cVar3 + -0x30;
+      pSVar20->field_1180 = 8;
+      pSVar20->field_112D = cVar3 + -0x30;
       iVar8 = thunk_FUN_0056e9e0(pSVar20,1);
       if (iVar8 == 0) {
         RaiseInternalException(local_30,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,600);
@@ -819,19 +818,19 @@ switchD_0056b4ce_caseD_47:
         switch(*(undefined1 *)(*(int *)(DAT_00857168 + 4) + 2)) {
         case 0x41:
         case 0x61:
-          pSVar20->field_0x1180 = 3;
-          pSVar20->field_0x1163 = 2;
+          pSVar20->field_1180 = 3;
+          pSVar20->field_1163 = 2;
           break;
         case 0x42:
         case 0x62:
-          pSVar20->field_0x1180 = 1;
-          pSVar20->field_0x1163 = 2;
+          pSVar20->field_1180 = 1;
+          pSVar20->field_1163 = 2;
           local_204.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_204;
           iVar8 = Library::MSVCRT::__setjmp3(local_204.jumpBuffer,0,unaff_EDI,unaff_ESI);
           pSVar20 = local_c;
           if (iVar8 == 0) {
-            pcVar11 = (cMf32 *)FUN_006f0ec0(0x345,&local_c[1].field_0x27f8,0,0,0);
+            pcVar11 = (cMf32 *)FUN_006f0ec0(0x345,&local_c->field_0x76f6,0,0,0);
             local_3c = &pSVar20->field_0x1196;
             cMf32::RecGet(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_3c,0);
             cMf32::delete(this_01,(undefined4 *)pcVar11);
@@ -844,22 +843,22 @@ switchD_0056b4ce_caseD_47:
           thunk_FUN_0056ef50((int)pSVar20);
           thunk_FUN_0056f040((int)pSVar20);
           thunk_FUN_0056ebe0((int)pSVar20);
-          *(undefined4 *)&pSVar20[1].field_0x2e10 = 0;
+          pSVar20->field_7D0E = 0;
           break;
         default:
           RaiseInternalException(local_30,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x24c);
           break;
         case 0x4d:
         case 0x6d:
-          pSVar20->field_0x1180 = 8;
-          pSVar20->field_0x1163 = 1;
+          pSVar20->field_1180 = 8;
+          pSVar20->field_1163 = 1;
           break;
         case 0x53:
         case 0x73:
-          pSVar20->field_0x1180 = 2;
-          pSVar20->field_0x1163 = 2;
+          pSVar20->field_1180 = 2;
+          pSVar20->field_1163 = 2;
         }
-        puVar24 = (undefined4 *)&pSVar20[1].field_0x4;
+        puVar24 = &pSVar20->field_4F02;
         for (iVar8 = 0x9fc; iVar8 != 0; iVar8 = iVar8 + -1) {
           *puVar24 = 0;
           puVar24 = puVar24 + 1;
@@ -902,19 +901,19 @@ switchD_0056b4ce_caseD_47:
       pcVar12 = pcVar12 + 1;
     } while (cVar3 != '\0');
     if (4 < ~uVar18 - 1) {
-      *(undefined4 *)&pSVar20[1].field_0x3650 = 1;
+      pSVar20->field_854E = 1;
       local_1c = 0x6104;
       local_18 = 0;
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),2);
       bVar6 = *pcVar12 - 0x30;
-      pSVar20->field_0x112e = bVar6;
+      pSVar20->field_112E = bVar6;
       if ((bVar6 == 0) || (3 < bVar6)) {
-        pSVar20->field_0x112e = 1;
+        pSVar20->field_112E = 1;
       }
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),3);
-      *(int *)&pSVar20[1].field_0x3654 = *pcVar12 + -0x30;
+      pSVar20->field_8552 = *pcVar12 + -0x30;
       pcVar12 = FUN_006b8240(*(char **)(DAT_00857168 + 4),4);
-      wsprintfA(&pSVar20[1].field_0x27f8,&DAT_007c6ee4,&pSVar20->field_0x60,pcVar12);
+      wsprintfA(&pSVar20->field_0x76f6,&DAT_007c6ee4,&pSVar20->field_0x60,pcVar12);
     }
     break;
   case 'R':
@@ -947,7 +946,7 @@ switchD_0056b4ce_caseD_57:
         pcVar12 = pcVar21;
       } while (cVar3 != '\0');
       uVar18 = ~uVar18;
-      puVar1 = &pSVar20[1].field_0x2c08;
+      puVar1 = &pSVar20->field_0x7b06;
       pcVar12 = pcVar21 + -uVar18;
       pcVar21 = puVar1;
       for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
@@ -961,7 +960,7 @@ switchD_0056b4ce_caseD_57:
         pcVar21 = pcVar21 + 1;
       }
       FUN_006b60b0(puVar1,puVar1);
-      pcVar12 = &pSVar20[1].field_0x2c08;
+      pcVar12 = &pSVar20->field_0x7b06;
       FUN_006c2980(pcVar12,pcVar12);
       iVar8 = -1;
       do {
@@ -983,7 +982,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar12 = pcVar21 + -uVar18;
-        pcVar21 = &pSVar20[1].field_0x27f8;
+        pcVar21 = &pSVar20->field_0x76f6;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
           pcVar12 = pcVar12 + 4;
@@ -1006,7 +1005,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -1039,7 +1038,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -1060,7 +1059,7 @@ switchD_0056b4ce_caseD_57:
           pcVar12 = pcVar12 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        FUN_006b8280(&pSVar20[1].field_0x27f8,&pSVar20[1].field_0x27f8);
+        FUN_006b8280(&pSVar20->field_0x76f6,&pSVar20->field_0x76f6);
         uVar18 = 0xffffffff;
         pcVar12 = PTR_DAT_0079b050;
         do {
@@ -1073,7 +1072,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -1095,7 +1094,7 @@ switchD_0056b4ce_caseD_57:
           pcVar21 = pcVar21 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar12 = &pSVar20[1].field_0x2c08;
+        pcVar12 = &pSVar20->field_0x7b06;
         do {
           pcVar21 = pcVar12;
           if (uVar18 == 0) break;
@@ -1106,7 +1105,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -1128,7 +1127,7 @@ switchD_0056b4ce_caseD_57:
           pcVar21 = pcVar21 + 1;
         }
         uVar18 = 0xffffffff;
-        pcVar12 = &pSVar20[1].field_0x27f8;
+        pcVar12 = &pSVar20->field_0x76f6;
         do {
           pcVar21 = pcVar12;
           if (uVar18 == 0) break;
@@ -1139,7 +1138,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         pcVar12 = pcVar21 + -uVar18;
-        pcVar21 = &pSVar20[1].field_0x2c08;
+        pcVar21 = &pSVar20->field_0x7b06;
         for (uVar19 = uVar18 >> 2; uVar19 != 0; uVar19 = uVar19 - 1) {
           *(undefined4 *)pcVar21 = *(undefined4 *)pcVar12;
           pcVar12 = pcVar12 + 4;
@@ -1162,7 +1161,7 @@ switchD_0056b4ce_caseD_57:
         } while (cVar3 != '\0');
         uVar18 = ~uVar18;
         iVar8 = -1;
-        pcVar12 = &pSVar20[1].field_0x2c08;
+        pcVar12 = &pSVar20->field_0x7b06;
         do {
           pcVar23 = pcVar12;
           if (iVar8 == 0) break;
@@ -1183,13 +1182,13 @@ switchD_0056b4ce_caseD_57:
           pcVar12 = pcVar12 + 1;
           pcVar21 = pcVar21 + 1;
         }
-        hFile = CreateFileA(&pSVar20[1].field_0x2c08,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
+        hFile = CreateFileA(&pSVar20->field_0x7b06,0x40000000,1,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,
                             (HANDLE)0x0);
         if ((hFile != (HANDLE)0xffffffff) &&
            (DVar10 = SetFilePointer(hFile,0,(PLONG)0x0,2), DVar10 != 0xffffffff)) {
-          WriteFile(hFile,&pSVar20->field_0x1134,4,&local_44,(LPOVERLAPPED)0x0);
+          WriteFile(hFile,&pSVar20->field_1134,4,&local_44,(LPOVERLAPPED)0x0);
           CloseHandle(hFile);
-          *(undefined4 *)&pSVar20->field_0x1181 = 1;
+          pSVar20->field_1181 = 1;
           goto switchD_0056b4ce_caseD_47;
         }
       }
@@ -1197,7 +1196,7 @@ switchD_0056b4ce_caseD_57:
     break;
   case '~':
     if (*(int *)(DAT_00857168 + 8) != 0) {
-      pvVar25 = &pSVar20[1].field_0x27f8;
+      pvVar25 = &pSVar20->field_0x76f6;
       puVar26 = &DAT_007c6ee4;
       wsprintfA(pvVar25,&DAT_007c6ee4,&pSVar20->field_0x60,*(int *)(DAT_00857168 + 8));
       local_17c.previous = g_currentExceptionFrame;
@@ -1205,10 +1204,10 @@ switchD_0056b4ce_caseD_57:
       iVar8 = Library::MSVCRT::__setjmp3(local_17c.jumpBuffer,0,pvVar25,puVar26);
       pSVar20 = local_c;
       if (iVar8 == 0) {
-        pcVar11 = (cMf32 *)FUN_006f0ec0(0x345,&local_c[1].field_0x27f8,2,0,0);
+        pcVar11 = (cMf32 *)FUN_006f0ec0(0x345,&local_c->field_0x76f6,2,0,0);
         local_8 = &pSVar20->field_0x1196;
         cMf32::RecGet(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_8,0);
-        *(undefined4 *)&pSVar20->field_0x119a = 0x8f000805;
+        pSVar20->field_119A = 0x8f000805;
         cMf32::RecPut(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,&pSVar20->field_0x1196,0x1999,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
         cMf32::delete(this_00,(undefined4 *)pcVar11);
@@ -1217,7 +1216,7 @@ switchD_0056b4ce_caseD_57:
       RaiseInternalException(-0x5001fff4,DAT_007ed77c,s_E____titans_tapp_cpp_007ca0c8,0x1e5);
     }
   }
-  if ((pSVar20->field_0xe26 == '\0') && (local_1c != 0x6104)) {
+  if ((pSVar20->field_0E26 == '\0') && (local_1c != 0x6104)) {
     local_1c = 0x6123;
   }
 cf_common_exit_0056C034:

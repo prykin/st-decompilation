@@ -31,7 +31,7 @@ void __thiscall cMf32::RecMemFree(cMf32 *this,uint *param_1)
     return;
   }
   if (*param_1 != 0) {
-    iVar2 = FUN_00751b10(*(int **)local_8,*param_1);
+    iVar2 = FUN_00751b10((int *)local_8->field_0000,*param_1);
     if (iVar2 == 0) {
       FUN_006ab060(param_1);
       g_currentExceptionFrame = pIVar4;

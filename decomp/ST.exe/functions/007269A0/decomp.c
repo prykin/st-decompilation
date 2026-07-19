@@ -1,5 +1,10 @@
 
-uint __cdecl FUN_007269a0(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 417 | 421 | 423 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint __cdecl mfUSprGetSect(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

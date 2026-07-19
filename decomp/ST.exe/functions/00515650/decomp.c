@@ -35,9 +35,9 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
         local_c = *(int *)(local_8 + 8);
         iVar3 = (0x19c - local_14) / 2;
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,*(int *)&pHVar2->field_0x21c,0,
-                   (*(int *)(*(int *)&pHVar2->field_0x21c + 4) - local_14) / 2,
-                   (*(int *)(*(int *)&pHVar2->field_0x21c + 8) - local_c) / 2,local_14,local_c);
+                  ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,pHVar2->field_021C,0,
+                   (*(int *)(pHVar2->field_021C + 4) - local_14) / 2,
+                   (*(int *)(pHVar2->field_021C + 8) - local_c) / 2,local_14,local_c);
         FUN_006b5440(pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);
         FUN_006b5ee0(pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,local_14 + 4,local_c + 4,0x6f,0xd
                     );
@@ -50,9 +50,9 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
       local_8 = (byte *)FUN_0070b3a0(param_4,uVar4);
       if (local_8 != (byte *)0x0) {
         iVar3 = (0x19c - *(int *)(local_8 + 4)) / 2;
-        thunk_FUN_00540760((undefined4 *)pHVar2->field_0218,iVar3,*param_1,'\x01',local_8);
+        DibPut((undefined4 *)pHVar2->field_0218,iVar3,*param_1,'\x01',local_8);
         pbVar5 = (byte *)FUN_0070b3a0(pHVar2->field_0248,4);
-        thunk_FUN_00540760((undefined4 *)pHVar2->field_0218,iVar3 + -2,*param_1 + -2,'\x06',pbVar5);
+        DibPut((undefined4 *)pHVar2->field_0218,iVar3 + -2,*param_1 + -2,'\x06',pbVar5);
         iVar3 = FUN_0070b3a0(pHVar2->field_0248,4);
         *param_1 = *param_1 + *(int *)(iVar3 + 8);
       }

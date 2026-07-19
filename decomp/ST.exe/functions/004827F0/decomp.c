@@ -40,10 +40,10 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
     (*pcVar2)();
     return;
   }
-  if (((int)local_c < 0) || ((int)((byte)local_8->field_0x281 - 1) < (int)local_c)) {
+  if (((int)local_c < 0) || ((int)((byte)local_8->field_0281 - 1) < (int)local_c)) {
     RaiseInternalException(-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d71);
   }
-  puVar1 = *(uint **)(&local_8->field_0x282 + uVar6 * 4);
+  puVar1 = (uint *)(&local_8->field_0282)[uVar6];
   if (puVar1 == (uint *)0x0) {
     RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d72);
   }
@@ -69,8 +69,8 @@ void __thiscall STBoatC::ExpIsOver(STBoatC *this,uint param_1)
   pSVar4 = local_8;
   uVar6 = local_c;
   if (bVar3) {
-    FUN_006ae110(*(byte **)(&local_8->field_0x282 + local_c * 4));
-    *(undefined4 *)(&pSVar4->field_0x282 + uVar6 * 4) = 0;
+    FUN_006ae110((byte *)(&local_8->field_0282)[local_c]);
+    (&pSVar4->field_0282)[uVar6] = 0;
   }
   g_currentExceptionFrame = local_5c.previous;
   return;

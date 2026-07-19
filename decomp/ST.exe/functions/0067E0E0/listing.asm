@@ -1,4 +1,4 @@
-FUN_0067e0e0:
+CreateStrategList:
 0067E0E0  55                        PUSH EBP
 0067E0E1  8B EC                     MOV EBP,ESP
 0067E0E3  83 EC 48                  SUB ESP,0x48

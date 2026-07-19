@@ -82,15 +82,13 @@ CPanelTy::PaintBut(CPanelTy *this,byte param_1,int param_2,byte param_3,char *pa
 LAB_004f3636:
     iVar7 = iVar7 - local_8->field_00C0;
   }
-  thunk_FUN_00540760(*(undefined4 **)(&local_8->field_0x180 + uVar2 * 4),
-                     *local_10 - *(int *)(&local_8->field_0x3c + uVar2 * 4),iVar7 - iVar6,param_3,
-                     (byte *)local_c);
+  DibPut((undefined4 *)(&local_8->field_0180)[uVar2],*local_10 - (&local_8->field_003C)[uVar2],
+         iVar7 - iVar6,param_3,(byte *)local_c);
   cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
-  if ((param_1 < 0xb) && (-1 < (int)*(uint *)(&pCVar3->field_0x148 + uVar2 * 4))) {
+  if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(&pCVar3->field_0x148 + uVar2 * 4),0xffffffff,
-               *(uint *)(&pCVar3->field_0x3c + uVar2 * 4),*(uint *)(&pCVar3->field_0x94 + uVar2 * 4)
-              );
+              (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2],
+               *(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
   }
   g_currentExceptionFrame = local_54.previous;
   return;

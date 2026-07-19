@@ -1,4 +1,4 @@
-FUN_006763f0:
+_GetEmbrGrpTobjGrpExch:
 006763F0  55                        PUSH EBP
 006763F1  8B EC                     MOV EBP,ESP
 006763F3  83 EC 4C                  SUB ESP,0x4c

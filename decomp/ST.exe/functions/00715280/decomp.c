@@ -1,5 +1,10 @@
 
-int __cdecl FUN_00715280(int param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\mfdarr.cpp
+   Diagnostic line evidence: 91 | 96 | 99 | 103 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfDarGetNum(int param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

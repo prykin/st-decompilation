@@ -1,4 +1,4 @@
-FUN_006efdb0:
+mfTMapSave:
 006EFDB0  55                        PUSH EBP
 006EFDB1  8B EC                     MOV EBP,ESP
 006EFDB3  83 EC 60                  SUB ESP,0x60

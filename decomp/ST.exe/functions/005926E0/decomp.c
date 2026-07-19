@@ -40,9 +40,9 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
     return;
   }
   if (*(int *)(DAT_0081176c + 0x28) == 0) goto LAB_00592b82;
-  if (local_8[0x46].field_0x49 != '\0') goto LAB_00592b7c;
-  local_24[5] = *(int *)&local_8[0x46].field_0x4a;
-  puVar6 = (undefined4 *)&local_8[0x46].field_0x39;
+  if (local_8->field_1BE7 != '\0') goto LAB_00592b7c;
+  local_24[5] = local_8->field_1BE8;
+  puVar6 = &local_8->field_1BD7;
   iVar3 = 4;
   do {
     if ((int *)*puVar6 != (int *)0x0) {
@@ -51,7 +51,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
     puVar6 = puVar6 + 1;
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
-  uVar1 = *(undefined4 *)&this_00[0x46].field_0x4a;
+  uVar1 = this_00->field_1BE8;
   switch(uVar1) {
   case 0:
   case 3:
@@ -106,8 +106,7 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   case 8:
     iVar3 = 2;
   }
-  if (*(int *)(&this_00[0x44].field_0x3f + (local_24[2] + iVar3 * 0xf) * 4) == 0)
-  goto switchD_00592962_caseD_1;
+  if ((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] == 0) goto switchD_00592962_caseD_1;
   switch(uVar1) {
   default:
     iVar3 = 0;
@@ -136,8 +135,8 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   case 8:
     iVar5 = 2;
   }
-  if (*(int *)(*(int *)(&this_00[0x44].field_0x3f + (local_24[2] + iVar3 * 0xf) * 4) + 0x14) -
-      *(int *)(*(int *)(&this_00[0x44].field_0x3f + (local_24[2] + iVar5 * 0xf) * 4) + 0x18) != 1)
+  if (*(int *)((&this_00->field_1B13)[local_24[2] + iVar3 * 0xf] + 0x14) -
+      *(int *)((&this_00->field_1B13)[local_24[2] + iVar5 * 0xf] + 0x18) != 1)
   goto switchD_00592962_caseD_1;
   switch(uVar1) {
   case 0:
@@ -149,17 +148,17 @@ void __thiscall CampaignTy::AnimationCampaign(CampaignTy *this)
   case 8:
     iVar3 = (uint)DAT_0080874e * 3 + -3;
 LAB_00592933:
-    *(int *)&this_00[0x46].field_0x4a = iVar3;
+    this_00->field_1BE8 = iVar3;
     break;
   case 3:
   case 4:
-    *(uint *)&this_00[0x46].field_0x4a = (DAT_0080874e != 2) + 4;
+    this_00->field_1BE8 = (DAT_0080874e != 2) + 4;
     break;
   case 6:
   case 7:
-    *(uint *)&this_00[0x46].field_0x4a = (DAT_0080874e != 3) + 7;
+    this_00->field_1BE8 = (DAT_0080874e != 3) + 7;
   }
-  switch(*(undefined4 *)&this_00[0x46].field_0x4a) {
+  switch(this_00->field_1BE8) {
   case 0:
   case 2:
   case 3:
@@ -168,7 +167,7 @@ LAB_00592933:
   case 8:
     thunk_FUN_00568bc0(&g_sound,1);
   }
-  switch(*(undefined4 *)&this_00[0x46].field_0x4a) {
+  switch(this_00->field_1BE8) {
   case 0:
     thunk_FUN_005b6730(this_00,0x15,'\0',1);
     iVar3 = 1;
@@ -206,8 +205,8 @@ LAB_00592933:
   }
   thunk_FUN_005b6730(this_00,uVar8,cVar9,iVar3);
 switchD_00592962_caseD_1:
-  if (local_24[5] != *(int *)&this_00[0x46].field_0x4a) {
-    piVar7 = (int *)&this_00[0x44].field_0x3f;
+  if (local_24[5] != this_00->field_1BE8) {
+    piVar7 = &this_00->field_1B13;
     local_24[5] = 3;
     do {
       iVar3 = 0xf;
@@ -220,7 +219,7 @@ switchD_00592962_caseD_1:
       } while (iVar3 != 0);
       local_24[5] = local_24[5] + -1;
     } while (local_24[5] != 0);
-    switch(*(undefined4 *)&this_00[0x46].field_0x4a) {
+    switch(this_00->field_1BE8) {
     case 0:
     case 3:
     case 6:
@@ -264,7 +263,7 @@ switchD_00592962_caseD_1:
   piVar7 = local_24;
   local_24[5] = 5;
   do {
-    switch(*(undefined4 *)&this_00[0x46].field_0x4a) {
+    switch(this_00->field_1BE8) {
     default:
       iVar3 = 0;
       break;
@@ -278,8 +277,8 @@ switchD_00592962_caseD_1:
     case 8:
       iVar3 = 2;
     }
-    if (*(int *)(&this_00[0x44].field_0x3f + (*piVar7 + iVar3 * 0xf) * 4) != 0) {
-      switch(*(undefined4 *)&this_00[0x46].field_0x4a) {
+    if ((&this_00->field_1B13)[*piVar7 + iVar3 * 0xf] != 0) {
+      switch(this_00->field_1BE8) {
       default:
         iVar3 = 0;
         break;
@@ -293,19 +292,19 @@ switchD_00592962_caseD_1:
       case 8:
         iVar3 = 2;
       }
-      thunk_FUN_005926a0(*(int **)(&this_00[0x44].field_0x3f + (*piVar7 + iVar3 * 0xf) * 4));
+      thunk_FUN_005926a0((int *)(&this_00->field_1B13)[*piVar7 + iVar3 * 0xf]);
     }
     piVar7 = piVar7 + 1;
     local_24[5] = local_24[5] + -1;
   } while (local_24[5] != 0);
-  if (*(int *)&this_00[0x46].field_0x4a == 1) {
-    this_00[0x46].field_0x49 = 4;
+  if (this_00->field_1BE8 == 1) {
+    this_00->field_1BE7 = 4;
   }
   else {
-    this_00[0x46].field_0x49 = 3;
+    this_00->field_1BE7 = 3;
   }
 LAB_00592b7c:
-  this_00[0x46].field_0x49 = this_00[0x46].field_0x49 + -1;
+  this_00->field_1BE7 = this_00->field_1BE7 + -1;
 LAB_00592b82:
   local_24[5] = 0x2e;
   local_24[6] = 0x24c;
@@ -323,7 +322,7 @@ LAB_00592b82:
         pBVar4 = (BITMAPINFO *)FUN_0070b3a0(iVar3,(int)*(short *)(iVar3 + 0x29));
         FUN_006b5f80(DAT_008075a8,*piVar7,piVar7[1],(int)*(short *)(iVar3 + 0x2c),
                      (int)*(short *)(iVar3 + 0x2e));
-        thunk_FUN_005403c0(*piVar7,piVar7[1],'\x01',pBVar4);
+        PutDDX(*piVar7,piVar7[1],'\x01',pBVar4);
         if ((char)piVar7[5] != '\0') {
           *(undefined1 *)(piVar7 + 5) = 0;
         }

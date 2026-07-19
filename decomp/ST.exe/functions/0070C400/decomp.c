@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 1153 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl FUN_0070c400(byte *param_1,int param_2)
 
 {
@@ -20,7 +25,7 @@ undefined4 * __cdecl FUN_0070c400(byte *param_1,int param_2)
     }
     return (undefined4 *)0x0;
   }
-  local_8 = FUN_0070b900(param_1,0,0,0,0,0x1010101,8,(uint *)0x0,0);
+  local_8 = imgGetDibFromFile(param_1,0,0,0,0,0x1010101,8,(uint *)0x0,0);
   if (param_2 == 0) {
     puVar2 = FUN_0070c390((int)local_8);
   }

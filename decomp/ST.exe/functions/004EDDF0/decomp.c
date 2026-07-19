@@ -21,23 +21,23 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pBVar2 = local_8;
   if (errorCode == 0) {
-    if (*(uint *)&local_8[1].field_0x46 != 0) {
-      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8[1].field_0x46);
+    if (local_8->field_01BE != 0) {
+      FUN_006e56b0((void *)local_8->field_000C,local_8->field_01BE);
     }
-    *(undefined4 *)&pBVar2[1].field_0x46 = 0;
-    if (*(uint *)&pBVar2[1].field_0x4a != 0) {
-      FUN_006e56b0(*(void **)&pBVar2->field_0xc,*(uint *)&pBVar2[1].field_0x4a);
+    pBVar2->field_01BE = 0;
+    if (pBVar2->field_01C2 != 0) {
+      FUN_006e56b0((void *)pBVar2->field_000C,pBVar2->field_01C2);
     }
-    *(undefined4 *)&pBVar2[1].field_0x4a = 0;
-    if (*(uint *)&pBVar2[1].field_0x4e != 0) {
-      FUN_006e56b0(*(void **)&pBVar2->field_0xc,*(uint *)&pBVar2[1].field_0x4e);
+    pBVar2->field_01C2 = 0;
+    if (pBVar2->field_01C6 != 0) {
+      FUN_006e56b0((void *)pBVar2->field_000C,pBVar2->field_01C6);
     }
-    *(undefined4 *)&pBVar2[1].field_0x4e = 0;
-    if (*(uint *)&pBVar2[1].field_0x52 != 0) {
-      FUN_006e56b0(*(void **)&pBVar2->field_0xc,*(uint *)&pBVar2[1].field_0x52);
+    pBVar2->field_01C6 = 0;
+    if (pBVar2->field_01CA != 0) {
+      FUN_006e56b0((void *)pBVar2->field_000C,pBVar2->field_01CA);
     }
-    *(undefined4 *)&pBVar2[1].field_0x52 = 0;
-    *(undefined4 *)&pBVar2[1].field_0x140 = 0;
+    pBVar2->field_01CA = 0;
+    pBVar2->field_02B8 = 0;
     DAT_00801678 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

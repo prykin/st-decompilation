@@ -25,13 +25,13 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pTVar2 = local_c;
   if (errorCode == 0) {
-    switch(*(undefined4 *)&local_c->field_0x361) {
+    switch(local_c->field_0361) {
     case 1:
-      uVar5 = thunk_FUN_004ceb00(local_c,*(undefined4 *)&local_c->field_0x369);
+      uVar5 = thunk_FUN_004ceb00(local_c,local_c->field_0369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     case 2:
-      uVar5 = thunk_FUN_004e2c30(local_c,*(uint *)&local_c->field_0x369);
+      uVar5 = thunk_FUN_004e2c30(local_c,local_c->field_0369);
       g_currentExceptionFrame = local_50.previous;
       return uVar5;
     case 3:
@@ -46,7 +46,7 @@ undefined4 __thiscall TLOBaseTy::procResult(TLOBaseTy *this)
       local_8 = 1;
       uVar3 = thunk_FUN_004406c0(local_c->field_023D);
       *(undefined4 *)&pTVar2->field_0x241 =
-           *(undefined4 *)(&DAT_007e4178 + ((uVar3 & 0xff) + *(int *)&pTVar2->field_0x235 * 3) * 4);
+           *(undefined4 *)(&DAT_007e4178 + ((uVar3 & 0xff) + pTVar2->field_0235 * 3) * 4);
       thunk_FUN_004cc900((int)pTVar2);
       g_currentExceptionFrame = local_50.previous;
       return 1;

@@ -50,7 +50,7 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
     iVar2 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar2 != 0) & 0xfffffffd) + 2;
   }
-  FUN_006ea2f0(*(void **)&this->field_0x211,*(uint *)&this->field_0x1ed);
+  FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
   iVar2 = (*this->vtable->vfunc_D8)();
   return -(uint)(iVar2 != 0);
 }

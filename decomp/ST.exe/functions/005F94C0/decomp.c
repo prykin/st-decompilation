@@ -23,12 +23,12 @@ int __thiscall STColl3C::CreateAddSpr(STColl3C *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x6c);
-    *(undefined4 **)&local_8[1].field_0x2b = puVar3;
+    local_8->field_02E6 = puVar3;
     for (iVar2 = 0x1b; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar3 = 0;
       puVar3 = puVar3 + 1;
     }
-    *(undefined4 *)(*(int *)&local_8[1].field_0x2b + 4) = 0xffffffff;
+    *(undefined4 *)(local_8->field_02E6 + 4) = 0xffffffff;
     g_currentExceptionFrame = local_50.previous;
     return local_c + 2;
   }

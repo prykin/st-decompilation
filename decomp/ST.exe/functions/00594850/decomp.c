@@ -11,7 +11,7 @@ void __cdecl FUN_00594850(int param_1,undefined *param_2,BYTE param_3)
   char *pcVar7;
   CHAR *pCVar8;
   LOGFONTA local_b0;
-  ccFntTy local_74;
+  undefined1 local_74;
   undefined1 local_73;
   undefined1 local_72;
   undefined1 local_71;
@@ -162,7 +162,7 @@ void __cdecl FUN_00594850(int param_1,undefined *param_2,BYTE param_3)
   local_1c[0x12] = 0xf6;
   local_1c[0x13] = 0x1a;
   local_1c[0x14] = 0xf7;
-  local_74 = (ccFntTy)0x20;
+  local_74 = 0x20;
   local_73 = 0x21;
   local_72 = 0x22;
   local_71 = 0x23;
@@ -249,8 +249,8 @@ void __cdecl FUN_00594850(int param_1,undefined *param_2,BYTE param_3)
   local_20 = 0x7a;
   local_1f = 0x7c;
   local_1e = 0x7e;
-  ccFntTy::operator(&local_74,0x19d,&local_b0,(uint *)0x0,(byte *)&local_74,param_1,local_1c,10,2,1,
-                    0,0x20001c,param_2);
+  ccFntTy::operator((ccFntTy *)&local_74,0x19d,&local_b0,(uint *)0x0,(byte *)&local_74,param_1,
+                    local_1c,10,2,1,0,0x20001c,param_2);
   return;
 }
 

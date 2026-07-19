@@ -1,5 +1,10 @@
 
-int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 328 | 367 | 391 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int * __cdecl mfSndTblLoad(int param_1,char *param_2,byte param_3)
 
 {
   byte bVar1;
@@ -90,7 +95,7 @@ int * __cdecl FUN_0071a5e0(int param_1,char *param_2,byte param_3)
   }
   local_8 = Library::DKW::LIB::FUN_006aac10(0x10);
   *local_8 = param_1;
-  puVar4 = FUN_0071aa10(param_1,param_2,1);
+  puVar4 = mfSarLoad(param_1,param_2,1);
   local_8[1] = (int)puVar4;
   local_8[2] = *(int *)(local_8[1] + 8);
   puVar5 = Library::DKW::LIB::FUN_006aac10(local_8[2] << 2);
@@ -127,7 +132,7 @@ LAB_0071a6d3:
 LAB_0071a6d8:
         piVar9 = local_8;
         if (iVar12 != 0) {
-          puVar4 = FUN_0071aa10(param_1,(char *)pbVar6,1);
+          puVar4 = mfSarLoad(param_1,(char *)pbVar6,1);
           local_c = puVar4;
           puVar5 = Library::DKW::LIB::FUN_006aac10(puVar4[2] * 5 + 9);
           *(undefined4 **)(local_8[3] + iVar3 * 4) = puVar5;
@@ -144,13 +149,13 @@ LAB_0071a6d8:
             }
             if (pcVar14 == (char *)0x0) break;
             piVar9 = *(int **)(local_8[3] + iVar3 * 4);
-            puVar8 = FUN_00719d00(param_1,pcVar14,param_3,0);
+            puVar8 = mfWavLoad(param_1,pcVar14,param_3,0);
             *(ushort **)((int)piVar9 + (*piVar9 + 1) * 5) = puVar8;
             piVar9 = *(int **)(local_8[3] + iVar3 * 4);
             puVar4 = local_c;
             if (*(int *)((int)piVar9 + (*piVar9 + 1) * 5) != 0) {
               piVar9 = *(int **)(local_8[3] + iVar3 * 4);
-              iVar12 = FUN_00719df0(param_1,pcVar14,0);
+              iVar12 = mfWavGetType(param_1,pcVar14,0);
               *(char *)(*piVar9 * 5 + 4 + (int)piVar9) = (char)iVar12;
               piVar9 = *(int **)(local_8[3] + iVar3 * 4);
               *piVar9 = *piVar9 + 1;

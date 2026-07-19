@@ -1,4 +1,10 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\_sedit.cpp
+   Diagnostic line evidence: 452 | 459 | 465 | 466 | 467 | 468 | 469 | 470 | 471 | 472 | 473 | 474 |
+   475 | 477 | 478 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __thiscall FUN_00722070(void *this,int param_1)
 
 {

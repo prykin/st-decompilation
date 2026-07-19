@@ -1,5 +1,11 @@
 
-short * __cdecl FUN_007171c0(int param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mftspr.cpp
+   Diagnostic line evidence: 303 | 305 | 307 | 329 | 331 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+short * __cdecl mfRSprLoadAsQSpr(int param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;

@@ -1,4 +1,4 @@
-FUN_0067dec0:
+CreateAssistantList:
 0067DEC0  55                        PUSH EBP
 0067DEC1  8B EC                     MOV EBP,ESP
 0067DEC3  83 EC 48                  SUB ESP,0x48

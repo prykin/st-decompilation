@@ -110,7 +110,7 @@ LAB_00690763:
         }
         uVar8 = thunk_FUN_00690550(this_01,*(short *)(iVar7 + 0x7d),sVar6);
         if ((int)uVar8 < 0) {
-          iVar10 = *(int *)&this_01->field_0xa5;
+          iVar10 = this_01->field_00A5;
           local_8 = 0;
           if (0 < *(int *)(iVar10 + 0xc)) {
             bVar12 = *(int *)(iVar10 + 0xc) != 0;
@@ -142,13 +142,13 @@ LAB_00690763:
                                        *(undefined2 *)(*(int *)(iVar10 + 4) + 0x7d));
                   local_18 = CONCAT22(*(undefined2 *)(iVar7 + 0x7b),(short)local_10);
                   Library::DKW::TBL::FUN_006ae1c0
-                            (*(uint **)&local_c->field_0xc9,(undefined4 *)&local_1c);
+                            ((uint *)local_c->field_00C9,(undefined4 *)&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;
                 }
               }
               local_8 = local_8 + 1;
-              iVar10 = *(int *)&local_c->field_0xa5;
+              iVar10 = local_c->field_00A5;
               bVar12 = local_8 < *(uint *)(iVar10 + 0xc);
               if ((int)*(uint *)(iVar10 + 0xc) <= (int)local_8) {
                 g_currentExceptionFrame = local_98.previous;

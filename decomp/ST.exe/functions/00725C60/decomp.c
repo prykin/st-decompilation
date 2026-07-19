@@ -1,5 +1,10 @@
 
-char * __cdecl FUN_00725c60(cMf32 *param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 28 | 39 | 62 | 64 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+char * __cdecl mfSSprLoad(cMf32 *param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;

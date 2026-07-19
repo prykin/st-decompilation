@@ -1,5 +1,10 @@
 
-undefined4 __cdecl FUN_0070a370(int param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfrload.cpp
+   Diagnostic line evidence: 397 | 399 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 __cdecl mfRLoadRefreshAll(int param_1)
 
 {
   code *pcVar1;

@@ -79,9 +79,9 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
       RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_Igor_To_shark_cpp_007cbb7c,0x2dd);
     }
     else if (iVar6 == 1) {
-      SVar10 = thunk_FUN_0058f1e0(this,(uint)(0x1d < *(int *)&this->field_0x253));
+      SVar10 = thunk_FUN_0058f1e0(this,(uint)(0x1d < (int)this->field_0253));
       this->field_0257 = SVar10;
-      *(int *)&this->field_0x253 = *(int *)&this->field_0x253 + 1;
+      this->field_0253 = this->field_0253 + 1;
     }
     break;
   case CASE_1:
@@ -91,15 +91,15 @@ void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)
     if (iVar6 == 0) {
 LAB_0058ea68:
       if (this->field_023D == 0) {
-        if (*(int *)&this->field_0x253 < 0x1f) {
+        if ((int)this->field_0253 < 0x1f) {
           if (iVar6 == 2) {
-            *(int *)&this->field_0x253 = *(int *)&this->field_0x253 + 1;
+            this->field_0253 = this->field_0253 + 1;
           }
         }
         else {
           iVar6 = (*this->vtable->slot_20)();
           if (iVar6 == 1) {
-            *(undefined4 *)&this->field_0x253 = 0;
+            this->field_0253 = 0;
             SVar10 = thunk_FUN_0058f1e0(this,1);
             this->field_0257 = SVar10;
           }
@@ -246,7 +246,7 @@ LAB_0058e87e:
       iVar6 = thunk_FUN_0058ff70((int)this);
       this->field_0257 = CASE_0;
       this->field_024F = iVar6;
-      *(undefined4 *)&this->field_0x253 = 0xf;
+      this->field_0253 = 0xf;
       return;
     }
     if (((iVar6 < 2) || (3 < iVar6)) &&

@@ -31,12 +31,12 @@ CursorClassTy::CursDrawInit(CursorClassTy *this,int param_1,int param_2,int para
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xd9);
     return;
   }
-  if (*(int *)&local_8[1].field_0x45 != 0) {
+  if (local_8->field_00A9 != 0) {
     FUN_006b5f80(DAT_008075a8,param_1,param_2,param_3,param_4);
     g_currentExceptionFrame = pIVar3;
     return;
   }
-  Library::DKW::DDX::FUN_006b8d50(*(int **)&local_8[1].field_0x49,param_1,param_2,param_3,param_4);
+  Library::DKW::DDX::FUN_006b8d50((int *)local_8->field_00AD,param_1,param_2,param_3,param_4);
   g_currentExceptionFrame = pIVar3;
   return;
 }

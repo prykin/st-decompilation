@@ -1,4 +1,4 @@
-FUN_0065cd10:
+EventDataPack:
 0065CD10  55                        PUSH EBP
 0065CD11  8B EC                     MOV EBP,ESP
 0065CD13  83 EC 4C                  SUB ESP,0x4c

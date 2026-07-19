@@ -49,7 +49,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
     RaiseInternalException(iVar6,0,s_E____titans_Igor_To_gold_cpp_007cb19c,0x2b4);
     return 0xffff;
   }
-  switch(*(undefined4 *)&local_18->field_0x255) {
+  switch(local_18->field_0255) {
   case 0xdc:
     local_c = -1;
     local_14 = 0;
@@ -88,7 +88,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                            (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
                            (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
                            _DAT_007904fc);
-        FUN_006ea3e0(*(void **)&this_00->field_0x211,pSVar7->field_0018,-1);
+        FUN_006ea3e0((void *)this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -132,7 +132,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                            (float)iVar10 * _DAT_007904f8 + _DAT_007904f4,
                            (float)*(int *)&this_00->field_0x24d * _DAT_00790504 + _DAT_00790500 +
                            _DAT_007904fc);
-        FUN_006ea3e0(*(void **)&this_00->field_0x211,pSVar7->field_0018,-1);
+        FUN_006ea3e0((void *)this_00->field_0211,pSVar7->field_0018,-1);
       }
       local_14 = local_14 + 4;
       local_c = local_c + 1;
@@ -177,7 +177,7 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
                                  _DAT_007904f4,
                                  (float)*(int *)&this_00->field_0x24d * _DAT_00790504 +
                                  _DAT_00790500 + _DAT_007904fc);
-              FUN_006ea3e0(*(void **)&this_00->field_0x211,pSVar7->field_0018,-1);
+              FUN_006ea3e0((void *)this_00->field_0211,pSVar7->field_0018,-1);
               goto LAB_0057fc59;
             }
           }
@@ -231,7 +231,7 @@ LAB_0057fd72:
   if (local_8 != 0) {
     iVar6 = thunk_FUN_004ab050();
     local_c = 0;
-    if (0 < (int)this_00[1].vtable) {
+    if (0 < (int)this_00->field_0265) {
       iVar10 = iVar6 * 2 + 1;
       local_10 = iVar6 * 8 + -0x1c;
       iVar6 = iVar10 * 4;
@@ -241,7 +241,7 @@ LAB_0057fd72:
           iVar9 = local_10;
         }
         local_14 = *(int *)((int)&DAT_007cb0b8 + iVar9) + *(int *)&this_00->field_0x245;
-        thunk_FUN_004ad3c0(*(void **)(*(int *)&this_00[1].field_0x8 + local_c * 4),
+        thunk_FUN_004ad3c0(*(void **)(this_00->field_026D + local_c * 4),
                            (float)local_14 * _DAT_007904f8 + _DAT_007904f4,
                            (float)(*(int *)((int)&DAT_007cb0dc + iVar9) +
                                   *(int *)&this_00->field_0x249) * _DAT_007904f8 + _DAT_007904f4,
@@ -250,7 +250,7 @@ LAB_0057fd72:
         iVar11 = iVar6 + 4;
         iVar12 = iVar10 + 1;
         iVar9 = local_10 + 4;
-        if (*(int *)&this_00->field_0x255 == 0xde) {
+        if (this_00->field_0255 == 0xde) {
           iVar11 = iVar6 + 8;
           iVar12 = iVar10 + 2;
           iVar9 = local_10 + 8;
@@ -259,7 +259,7 @@ LAB_0057fd72:
         local_c = local_c + 1;
         iVar6 = iVar11;
         iVar10 = iVar12;
-      } while (local_c < (int)this_00[1].vtable);
+      } while (local_c < (int)this_00->field_0265);
     }
   }
   g_currentExceptionFrame = local_5c.previous;

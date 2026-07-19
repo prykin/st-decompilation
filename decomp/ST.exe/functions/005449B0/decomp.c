@@ -7,7 +7,7 @@
 undefined4 __thiscall CursorClassTy::GetMessage(CursorClassTy *this,int param_1)
 
 {
-  int *piVar1;
+  undefined4 *puVar1;
   char cVar2;
   ushort uVar3;
   undefined1 *puVar4;
@@ -82,7 +82,7 @@ undefined4 __thiscall CursorClassTy::GetMessage(CursorClassTy *this,int param_1)
   undefined1 *local_8;
   
   local_44 = this;
-  local_1c = FUN_006e51b0(this->field_0010);
+  local_1c = FUN_006e51b0((int)this->field_0010);
   local_e0.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_e0;
   iVar6 = Library::MSVCRT::__setjmp3(local_e0.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -102,24 +102,24 @@ undefined4 __thiscall CursorClassTy::GetMessage(CursorClassTy *this,int param_1)
   FUN_006e5fd0();
   switch(*(undefined4 *)(param_1 + 0x10)) {
   case 0xa110:
-    this_00[2].field_0xc = 1;
+    this_00->field_00D4 = 1;
     break;
   case 0xa111:
-    this_00[2].field_0xc = 0;
+    this_00->field_00D4 = 0;
     break;
   case 0xa112:
-    this_00[2].field_0xb = 1;
+    this_00->field_00D3 = 1;
     break;
   case 0xa113:
-    this_00[2].field_0xb = 0;
+    this_00->field_00D3 = 0;
     break;
   case 0xa114:
-    this_00[2].field_0xd = 1;
+    this_00->field_00D5 = 1;
     break;
   case 0xa115:
-    this_00[2].field_0xd = 0;
+    this_00->field_00D5 = 0;
   }
-  if (((this_00[0xb].field_0x47 != '\x02') && (0xa0ff < *(uint *)(param_1 + 0x10))) &&
+  if (((this_00->field_0493 != '\x02') && (0xa0ff < *(uint *)(param_1 + 0x10))) &&
      (*(uint *)(param_1 + 0x10) < 0xb100)) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;
@@ -132,23 +132,21 @@ undefined4 __thiscall CursorClassTy::GetMessage(CursorClassTy *this,int param_1)
   uVar18 = *(uint *)(param_1 + 0x10);
   if (uVar18 < 0x61) {
     if (uVar18 == 0x60) {
-      *(uint *)&this_00[2].field_0x1 = (uint)*(ushort *)(param_1 + 0x1a);
+      this_00->field_00C9 = (uint)*(ushort *)(param_1 + 0x1a);
       uVar3 = *(ushort *)(param_1 + 0x18);
-      *(uint *)((int)&this_00[1].field_0060 + 1) = (uint)uVar3;
-      DrawSprite(this_00,(uint)uVar3,*(int *)&this_00[2].field_0x1);
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      if ((*(int *)&this_00[0xc].field_0x2 <= iVar6) &&
-         (iVar6 < *(int *)&this_00[0xc].field_0xa + *(int *)&this_00[0xc].field_0x2)) {
-        if ((*(int *)&this_00[0xc].field_0x6 <= *(int *)&this_00[2].field_0x1) &&
-           (*(int *)&this_00[2].field_0x1 <
-            *(int *)&this_00[0xc].field_0xe + *(int *)&this_00[0xc].field_0x6)) {
+      this_00->field_00C5 = (uint)uVar3;
+      DrawSprite(this_00,(uint)uVar3,this_00->field_00C9);
+      if (((int)this_00->field_04B2 <= (int)this_00->field_00C5) &&
+         ((int)this_00->field_00C5 < *(int *)&this_00->field_0x4ba + this_00->field_04B2)) {
+        if (((int)this_00->field_04B6 <= (int)this_00->field_00C9) &&
+           ((int)this_00->field_00C9 < *(int *)&this_00->field_0x4be + this_00->field_04B6)) {
           uVar8 = 1;
           goto LAB_0054532f;
         }
       }
       uVar8 = 0;
 LAB_0054532f:
-      *(undefined4 *)&this_00[0xb].field_0x4a = uVar8;
+      this_00->field_0496 = uVar8;
       bVar5 = thunk_FUN_00544990((int)this_00);
       if (CONCAT31(extraout_var_01,bVar5) == 0) {
         g_currentExceptionFrame = local_e0.previous;
@@ -158,15 +156,13 @@ LAB_0054532f:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((*(int *)&this_00[0xb].field_0x4a != 0) && (*(int *)&this_00[0xb].field_0x56 == 0xe)) {
+      if ((this_00->field_0496 != 0) && (this_00->field_04A2 == 0xe)) {
         if (*(int *)((int)DAT_007fb2ac + 0x18) != 0) {
-          thunk_FUN_004c6210(DAT_007fb2ac,*(undefined4 *)&this_00[0xb].field_0x5e,0);
+          thunk_FUN_004c6210(DAT_007fb2ac,*(undefined4 *)&this_00->field_0x4aa,0);
         }
-        thunk_FUN_004c6440(DAT_007fb2ac,
-                           (float)(*(int *)((int)&this_00[1].field_0060 + 1) -
-                                  *(int *)&this_00[0xc].field_0x2),
-                           *(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6,
-                           (int *)0x0,(int *)0x0,(int *)0x0);
+        thunk_FUN_004c6440(DAT_007fb2ac,(float)(this_00->field_00C5 - this_00->field_04B2),
+                           this_00->field_00C9 - this_00->field_04B6,(int *)0x0,(int *)0x0,
+                           (int *)0x0);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -180,19 +176,18 @@ LAB_0054532f:
     }
     switch(uVar18) {
     case 0:
-      switch(this_00[2].field_0x16) {
+      switch(this_00->field_00DE) {
       case 0:
         bVar5 = thunk_FUN_00544990((int)this_00);
         if (CONCAT31(extraout_var_00,bVar5) == 0) break;
-        if (-1 < (int)*(uint *)&this_00[2].field_0x43) {
-          FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00[2].field_0x43);
-          *(undefined4 *)&this_00[2].field_0x43 = 0xffffffff;
+        if (-1 < (int)*(uint *)&this_00->field_0x10b) {
+          FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00->field_0x10b);
+          *(undefined4 *)&this_00->field_0x10b = 0xffffffff;
         }
-        switch(*(undefined4 *)&this_00[2].field_0x5) {
+        switch(*(undefined4 *)&this_00->field_0xcd) {
         case 0:
-          thunk_FUN_0054b9a0(this_00,0,0,DAT_00806730,DAT_00806734,
-                             *(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1
-                             ,1);
+          thunk_FUN_0054b9a0(this_00,0,0,DAT_00806730,DAT_00806734,this_00->field_00C5,
+                             this_00->field_00C9,1);
           break;
         case 1:
           iVar6 = 100;
@@ -213,176 +208,165 @@ LAB_005450ca:
         break;
       case 1:
         if (DAT_00807598 != (void *)0x0) {
-          local_7c = *(undefined4 *)&this_00[2].field_0x27;
-          local_78 = *(undefined4 *)&this_00[2].field_0x2b;
+          local_7c = this_00->field_00EF;
+          local_78 = this_00->field_00F3;
           local_74 = 0;
           FUN_006e25d0(DAT_00807598,&local_9c);
-          *(int *)&this_00[2].field_0x17 = local_9c >> 0x10;
-          *(int *)&this_00[2].field_0x1b = local_98 >> 0x10;
+          this_00->field_00DF = local_9c >> 0x10;
+          this_00->field_00E3 = local_98 >> 0x10;
         }
-        iVar6 = *(int *)&this_00[0xc].field_0x6;
-        iVar15 = *(int *)&this_00[2].field_0x1b;
-        iVar20 = *(int *)&this_00[2].field_0x1;
-        uVar18 = (*(int *)((int)&this_00[1].field_0060 + 1) - *(int *)&this_00[0xc].field_0x2) -
-                 *(int *)&this_00[2].field_0x17;
-        *(uint *)((int)&this_00[2].field_001C + 3) = uVar18;
-        uVar19 = (iVar20 - iVar6) - iVar15;
-        *(uint *)&this_00[2].field_0x23 = uVar19;
+        uVar18 = (this_00->field_00C5 - this_00->field_04B2) - this_00->field_00DF;
+        this_00->field_00E7 = uVar18;
+        uVar19 = (this_00->field_00C9 - this_00->field_04B6) - this_00->field_00E3;
+        this_00->field_00EB = uVar19;
         if ((5 < (int)((uVar18 ^ (int)uVar18 >> 0x1f) - ((int)uVar18 >> 0x1f))) ||
            (5 < (int)((uVar19 ^ (int)uVar19 >> 0x1f) - ((int)uVar19 >> 0x1f)))) {
-          puVar4 = &this_00[2].field_0x43;
-          this_00[2].field_0x16 = 2;
-          if (-1 < (int)*(uint *)&this_00[2].field_0x43) {
-            FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00[2].field_0x43);
+          puVar4 = &this_00->field_0x10b;
+          this_00->field_00DE = 2;
+          if (-1 < (int)*(uint *)&this_00->field_0x10b) {
+            FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00->field_0x10b);
           }
           iVar6 = 0x20;
-          puVar11 = (uint *)&this_00[2].field_0x4b;
+          puVar11 = (uint *)&this_00->field_0x113;
           do {
             iVar6 = iVar6 + -1;
-            *puVar11 = (-(uint)(*(int *)&this_00[0xb].field_0x56 != 0) & 0x49) + 0x45 | 0x1000000;
+            *puVar11 = (-(uint)(this_00->field_04A2 != 0) & 0x49) + 0x45 | 0x1000000;
             puVar11 = puVar11 + 7;
           } while (iVar6 != 0);
-          FUN_006b96f0(DAT_008075a8,(uint *)puVar4,10,0x20,(uint)&this_00[2].field_0x4b);
+          FUN_006b96f0(DAT_008075a8,(uint *)puVar4,10,0x20,(uint)&this_00->field_0x113);
           FUN_006b1b10((int)DAT_008075a8,*(uint *)puVar4,2);
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,*(uint *)puVar4,0xffffffff,*(uint *)&this_00[2].field_0x17,
-                     *(uint *)&this_00[2].field_0x1b);
-          FUN_006b2800((int)DAT_008075a8,*(uint *)puVar4,*(uint *)((int)&this_00[2].field_001C + 3),
-                       *(uint *)&this_00[2].field_0x23);
+                    (DAT_008075a8,*(uint *)puVar4,0xffffffff,this_00->field_00DF,this_00->field_00E3
+                    );
+          FUN_006b2800((int)DAT_008075a8,*(uint *)puVar4,this_00->field_00E7,this_00->field_00EB);
           iVar6 = FUN_00405687((int)this_00);
           if (iVar6 == 0) {
-            SetGCType(this_00,CASE_0,*(undefined4 *)&this_00->field_0x34,
-                      *(undefined4 *)&this_00->field_0x38);
+            SetGCType(this_00,CASE_0,this_00->field_0034,this_00->field_0038);
           }
         }
         break;
       case 2:
         local_8 = (undefined1 *)0xfffffffe;
         local_c = 1.4013e-45;
-        switch(*(undefined4 *)&this_00[2].field_0x5) {
+        switch(*(undefined4 *)&this_00->field_0xcd) {
         case 1:
-          iVar7 = *(int *)&this_00[0xc].field_0x6;
-          iVar20 = *(int *)&this_00[0xc].field_0x2;
+          iVar7 = this_00->field_04B6;
+          iVar20 = this_00->field_04B2;
           iVar6 = iVar7 + 100;
           iVar15 = iVar20;
           goto LAB_00544d9b;
         case 2:
-          iVar7 = *(int *)&this_00[0xc].field_0x6;
-          iVar28 = *(int *)&this_00[0xc].field_0xa;
-          iVar20 = *(int *)&this_00[0xc].field_0x2;
+          iVar7 = this_00->field_04B6;
+          iVar28 = *(int *)&this_00->field_0x4ba;
+          iVar20 = this_00->field_04B2;
           iVar6 = iVar7 + 100;
           iVar15 = iVar28 + -1 + iVar20;
-          iVar29 = *(int *)&this_00[0xc].field_0xe;
+          iVar29 = *(int *)&this_00->field_0x4be;
           break;
         case 3:
-          iVar20 = *(int *)&this_00[0xc].field_0x2;
-          iVar7 = *(int *)&this_00[0xc].field_0x6;
+          iVar20 = this_00->field_04B2;
+          iVar7 = this_00->field_04B6;
           iVar15 = iVar20 + 100;
           iVar6 = iVar7;
 LAB_00544d9b:
-          iVar29 = *(int *)&this_00[0xc].field_0xe;
-          iVar28 = *(int *)&this_00[0xc].field_0xa;
+          iVar29 = *(int *)&this_00->field_0x4be;
+          iVar28 = *(int *)&this_00->field_0x4ba;
           break;
         case 4:
-          iVar29 = *(int *)&this_00[0xc].field_0xe;
-          iVar7 = *(int *)&this_00[0xc].field_0x6;
-          iVar20 = *(int *)&this_00[0xc].field_0x2;
+          iVar29 = *(int *)&this_00->field_0x4be;
+          iVar7 = this_00->field_04B6;
+          iVar20 = this_00->field_04B2;
           iVar6 = iVar29 + -1 + iVar7;
           iVar15 = iVar20 + 100;
-          iVar28 = *(int *)&this_00[0xc].field_0xa;
+          iVar28 = *(int *)&this_00->field_0x4ba;
           break;
         default:
           goto switchD_00544d44_default;
         }
         thunk_FUN_0054b9a0(this_00,iVar20,iVar7,iVar28,iVar29,iVar15,iVar6,0);
 switchD_00544d44_default:
-        local_70 = *(undefined4 *)&this_00[2].field_0x27;
-        local_6c = *(undefined4 *)&this_00[2].field_0x2b;
+        local_70 = this_00->field_00EF;
+        local_6c = this_00->field_00F3;
         local_68 = 0;
         FUN_006e25d0(DAT_00807598,&local_8c);
-        *(int *)&this_00[2].field_0x1b = local_88 >> 0x10;
-        *(int *)&this_00[2].field_0x17 = local_8c >> 0x10;
-        if (*(int *)&this_00[2].field_0x5 == 0) {
-          puVar4 = &this_00[2].field_0x1;
-          piVar1 = (int *)((int)&this_00[1].field_0060 + 1);
-          bVar5 = thunk_FUN_0054bdf0(*(int *)&this_00[0xc].field_0x2,*(int *)&this_00[0xc].field_0x6
-                                     ,*(int *)&this_00[0xc].field_0xa,
-                                     *(int *)&this_00[0xc].field_0xe,piVar1,(int *)puVar4);
+        this_00->field_00E3 = local_88 >> 0x10;
+        this_00->field_00DF = local_8c >> 0x10;
+        if (*(int *)&this_00->field_0xcd == 0) {
+          puVar13 = &this_00->field_00C9;
+          puVar1 = &this_00->field_00C5;
+          bVar5 = thunk_FUN_0054bdf0(this_00->field_04B2,this_00->field_04B6,
+                                     *(int *)&this_00->field_0x4ba,*(int *)&this_00->field_0x4be,
+                                     puVar1,puVar13);
           if (CONCAT31(extraout_var,bVar5) != 0) {
-            local_28 = *(undefined2 *)piVar1;
-            local_26 = *(undefined2 *)puVar4;
+            local_28 = *(undefined2 *)puVar1;
+            local_26 = *(undefined2 *)puVar13;
             local_40[4] = 0x16;
             FUN_006e6000(this_00,3,1,local_40);
           }
           iVar6 = FUN_00405687((int)this_00);
-          iVar6 = thunk_FUN_0054b9a0(this_00,*(int *)&this_00[0xc].field_0x2,
-                                     *(int *)&this_00[0xc].field_0x6,*(int *)&this_00[0xc].field_0xa
-                                     ,*(int *)&this_00[0xc].field_0xe,*piVar1,*(int *)puVar4,
-                                     (uint)(iVar6 == 0));
+          iVar6 = thunk_FUN_0054b9a0(this_00,this_00->field_04B2,this_00->field_04B6,
+                                     *(int *)&this_00->field_0x4ba,*(int *)&this_00->field_0x4be,
+                                     *puVar1,*puVar13,(uint)(iVar6 == 0));
           if (iVar6 != 0) {
             FUN_006e1440(DAT_00807598);
-            iVar6 = *(int *)puVar4;
-            uVar18 = (*piVar1 - *(int *)&this_00[2].field_0x17) - *(int *)&this_00[0xc].field_0x2;
-            *(uint *)((int)&this_00[2].field_001C + 3) = uVar18;
+            iVar6 = *puVar13;
+            uVar18 = (*puVar1 - this_00->field_00DF) - this_00->field_04B2;
+            this_00->field_00E7 = uVar18;
             goto LAB_00544e8f;
           }
-          local_14 = *(cMf32 **)&this_00[2].field_0x23;
-          uVar19 = *(uint *)((int)&this_00[2].field_001C + 3);
-          uVar18 = (*piVar1 - *(int *)&this_00[2].field_0x17) - *(int *)&this_00[0xc].field_0x2;
-          uVar17 = (*(int *)puVar4 - *(int *)&this_00[0xc].field_0x6) -
-                   *(int *)&this_00[2].field_0x1b;
-          *(uint *)((int)&this_00[2].field_001C + 3) = uVar18;
-          *(uint *)&this_00[2].field_0x23 = uVar17;
+          local_14 = (cMf32 *)this_00->field_00EB;
+          uVar19 = this_00->field_00E7;
+          uVar18 = (*puVar1 - this_00->field_00DF) - this_00->field_04B2;
+          uVar17 = (*puVar13 - this_00->field_04B6) - this_00->field_00E3;
+          this_00->field_00E7 = uVar18;
+          this_00->field_00EB = uVar17;
           if ((uVar19 == uVar18) && (local_14 == (cMf32 *)uVar17)) {
             local_c = 0.0;
           }
         }
         else {
           FUN_006e1440(DAT_00807598);
-          iVar6 = *(int *)&this_00[2].field_0x1;
-          uVar18 = (*(int *)((int)&this_00[1].field_0060 + 1) - *(int *)&this_00[0xc].field_0x2) -
-                   *(int *)&this_00[2].field_0x17;
-          *(uint *)((int)&this_00[2].field_001C + 3) = uVar18;
+          iVar6 = this_00->field_00C9;
+          uVar18 = (this_00->field_00C5 - this_00->field_04B2) - this_00->field_00DF;
+          this_00->field_00E7 = uVar18;
 LAB_00544e8f:
-          uVar17 = (iVar6 - *(int *)&this_00[0xc].field_0x6) - *(int *)&this_00[2].field_0x1b;
-          *(uint *)&this_00[2].field_0x23 = uVar17;
+          uVar17 = (iVar6 - this_00->field_04B6) - this_00->field_00E3;
+          this_00->field_00EB = uVar17;
         }
-        if (0x31 < (uint)(local_1c - *(int *)&this_00[2].field_0x47)) {
-          *(int *)&this_00[2].field_0x47 = local_1c;
+        if (0x31 < (uint)(local_1c - *(int *)&this_00->field_0x10f)) {
+          *(int *)&this_00->field_0x10f = local_1c;
           local_8 = (undefined1 *)0xffffffff;
         }
         if (local_c != 0.0) {
-          FUN_006b2800((int)DAT_008075a8,*(uint *)&this_00[2].field_0x43,uVar18,uVar17);
+          FUN_006b2800((int)DAT_008075a8,*(uint *)&this_00->field_0x10b,uVar18,uVar17);
         }
         if ((local_c != 0.0) || ((int)local_8 < 0)) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,*(uint *)&this_00[2].field_0x43,(uint)local_8,
-                     *(uint *)&this_00[2].field_0x17,*(uint *)&this_00[2].field_0x1b);
+                    (DAT_008075a8,*(uint *)&this_00->field_0x10b,(uint)local_8,this_00->field_00DF,
+                     this_00->field_00E3);
         }
         break;
       case 3:
-        uVar18 = *(uint *)&this_00[2].field_0x43;
+        uVar18 = *(uint *)&this_00->field_0x10b;
         if (-1 < (int)uVar18) goto LAB_0054505c;
         goto LAB_0054506b;
       case 4:
-        uVar18 = *(uint *)&this_00[2].field_0x43;
+        uVar18 = *(uint *)&this_00->field_0x10b;
 LAB_0054505c:
         FUN_006b3bb0(DAT_008075a8,uVar18);
-        *(undefined4 *)&this_00[2].field_0x43 = 0xffffffff;
+        *(undefined4 *)&this_00->field_0x10b = 0xffffffff;
 LAB_0054506b:
-        this_00[2].field_0x16 = 0;
+        this_00->field_00DE = 0;
         break;
       case 5:
         if (DAT_00807598 != (void *)0x0) {
-          FUN_006e1c20(DAT_00807598,
-                       (float)(*(int *)((int)&this_00[1].field_0060 + 1) -
-                              *(int *)&this_00[0xc].field_0x2),
-                       *(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6,
-                       *(float *)&this_00[2].field_0x3f,(float *)&local_8,&local_c);
+          FUN_006e1c20(DAT_00807598,(float)(this_00->field_00C5 - this_00->field_04B2),
+                       this_00->field_00C9 - this_00->field_04B6,(float)this_00->field_0107,
+                       (float *)&local_8,&local_c);
           lVar27 = Library::MSVCRT::__ftol();
-          *(int *)&this_00[2].field_0x33 = (int)lVar27;
+          *(int *)&this_00->field_00FB = (int)lVar27;
           if ((int)lVar27 < 1) {
-            *(undefined4 *)&this_00[2].field_0x33 = 1;
+            *(undefined4 *)&this_00->field_00FB = 1;
           }
           lVar27 = Library::MSVCRT::__ftol();
           iVar6 = (int)(short)lVar27;
@@ -392,14 +376,13 @@ LAB_0054506b:
           iVar20 = (int)(short)lVar27;
           lVar27 = Library::MSVCRT::__ftol();
           iVar6 = FUN_006db910((int)(short)lVar27,iVar20,iVar15,iVar6);
-          *(int *)&this_00[2].field_0x2f = iVar6;
-          FUN_006e8df0(DAT_00807598,*(uint *)&this_00[2].field_0x43,
-                       *(undefined4 *)&this_00[2].field_0x37,*(undefined4 *)&this_00[2].field_0x3b,
-                       *(undefined4 *)&this_00[2].field_0x3f,iVar6,*(int *)&this_00[2].field_0x33,1)
+          this_00->field_00F7 = iVar6;
+          FUN_006e8df0(DAT_00807598,*(uint *)&this_00->field_0x10b,this_00->field_00FF,
+                       this_00->field_0103,this_00->field_0107,iVar6,*(int *)&this_00->field_00FB,1)
           ;
         }
       }
-      if ((*(int *)&this_00[0xb].field_0x5a != 0) && (*(int *)&this_00[0xb].field_0x56 != 0)) {
+      if ((this_00->field_04A6 != 0) && (this_00->field_04A2 != 0)) {
         thunk_FUN_0054a8d0(this_00);
       }
       GCGameState(this_00,1);
@@ -414,16 +397,16 @@ LAB_0054506b:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 8:
-      if (*(int *)&this_00[1].field_0x5d == 0) {
-        *(undefined4 *)&this_00[1].field_0x5d = 1;
+      if (*(int *)&this_00->field_0xc1 == 0) {
+        *(undefined4 *)&this_00->field_0xc1 = 1;
         AddSysAcc(this_00);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
       break;
     case 9:
-      if (*(int *)&this_00[1].field_0x5d != 0) {
-        *(undefined4 *)&this_00[1].field_0x5d = 0;
+      if (*(int *)&this_00->field_0xc1 != 0) {
+        *(undefined4 *)&this_00->field_0xc1 = 0;
         DelSysAcc(this_00);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -495,23 +478,23 @@ LAB_0054506b:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa12f:
-          *(undefined4 *)&this_00[2].field_0x5 = 3;
+          *(undefined4 *)&this_00->field_0xcd = 3;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa130:
-          *(undefined4 *)&this_00[2].field_0x5 = 4;
+          *(undefined4 *)&this_00->field_0xcd = 4;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa131:
-          *(undefined4 *)&this_00[2].field_0x5 = 2;
+          *(undefined4 *)&this_00->field_0xcd = 2;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa132:
-          *(undefined4 *)&this_00[2].field_0x5 = 1;
+          *(undefined4 *)&this_00->field_0xcd = 1;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         case 0xa133:
-          *(undefined4 *)&this_00[2].field_0x5 = 0;
+          *(undefined4 *)&this_00->field_0xcd = 0;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -673,7 +656,7 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        (*(code *)**(undefined4 **)DAT_008016dc)(param_1);
+        (**(code **)DAT_008016dc->field_0000)(param_1);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       default:
@@ -872,7 +855,7 @@ switchD_0054679d_default:
             _DAT_0080f32e = 1;
             local_40[3] = 1;
             local_40[4] = 0x6100;
-            AppClassTy::PostNextMessage((AppClassTy *)local_44->field_0010,local_40);
+            AppClassTy::PostNextMessage(local_44->field_0010,local_40);
             this_02 = local_124.previous;
           }
         }
@@ -882,7 +865,7 @@ switchD_0054679d_default:
         return 0;
       }
       g_currentExceptionFrame = local_124.previous;
-      cMf32::delete((cMf32 *)this_02,(undefined4 *)this_01);
+      cMf32::delete((cMf32 *)this_02,&this_01->field_0000);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -949,13 +932,13 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)(param_1 + 0x18) != *(int *)&this_00[0xc].field_0x2a) {
+      if (*(int *)(param_1 + 0x18) != *(int *)&this_00->field_0x4da) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      *(undefined4 *)&this_00[0xc].field_0x2a = 0;
-      FUN_006b2800((int)DAT_008075a8,*(uint *)&this_00[0xc].field_0x26,0,0);
-      FUN_006b3af0(DAT_008075a8,*(uint *)&this_00[0xc].field_0x26);
+      *(undefined4 *)&this_00->field_0x4da = 0;
+      FUN_006b2800((int)DAT_008075a8,this_00->field_04D6,0,0);
+      FUN_006b3af0(DAT_008075a8,this_00->field_04D6);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -1028,7 +1011,7 @@ switchD_0054679d_default:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if (this_00[2].field_0xa == '\0') {
+        if (this_00->field_0xd2 == '\0') {
           thunk_FUN_004ab070(DAT_007fb2a0,CASE_3,0.0,0,1);
           g_currentExceptionFrame = local_e0.previous;
           return 0;
@@ -1108,7 +1091,7 @@ switchD_0054679d_default:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (this_00[2].field_0xa == '\0') {
+      if (this_00->field_0xd2 == '\0') {
         thunk_FUN_004ab070(DAT_007fb2a0,CASE_4,0.0,0,1);
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -1123,7 +1106,7 @@ switchD_0054679d_default:
       return 0;
     }
     UVar12 = *(UINT *)(param_1 + 0x18);
-    if (UVar12 == *(UINT *)&this_00[0xc].field_0x2a) {
+    if (UVar12 == *(UINT *)&this_00->field_0x4da) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -1131,15 +1114,15 @@ switchD_0054679d_default:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (this_00[2].field_0x16 == '\x05') {
+    if (this_00->field_00DE == '\x05') {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (this_00[2].field_0x16 == '\x02') {
+    if (this_00->field_00DE == '\x02') {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    *(UINT *)&this_00[0xc].field_0x2a = UVar12;
+    *(UINT *)&this_00->field_0x4da = UVar12;
     uVar3 = *(ushort *)(param_1 + 0x16);
     if (uVar3 == 1) {
       puVar4 = *(undefined1 **)(param_1 + 0x18);
@@ -1309,7 +1292,7 @@ switchD_00545816_default:
     }
     else if ((&stack0x00000000 != (undefined1 *)0x524) &&
             (iVar6 = FUN_006b0140(UVar12,DAT_00807618), iVar6 != 0)) {
-      UVar12 = *(UINT *)&this_00[0xc].field_0x2a;
+      UVar12 = *(UINT *)&this_00->field_0x4da;
       goto LAB_005458df;
     }
     if (local_c == 0.0) {
@@ -1320,32 +1303,29 @@ switchD_00545816_default:
       if ((DAT_0081176c == 0) || (*(void **)(DAT_0081176c + 0x38) == (void *)0x0))
       goto cf_common_exit_00545FF6;
       iVar6 = FUN_00711370(*(void **)(DAT_0081176c + 0x38),local_524);
-      *(int *)&this_00[0xc].field_0x1a = iVar6 + 0xc;
+      *(int *)&this_00->field_0x4ca = iVar6 + 0xc;
       iVar6 = FUN_007113e0(*(void **)(DAT_0081176c + 0x38),local_524);
       iVar6 = iVar6 + 10;
-      iVar15 = *(int *)&this_00[0xc].field_0x1a;
-      *(int *)((int)&this_00[0xc].field_001C + 2) = iVar6;
-      if ((800 < iVar15) || (0x96 < iVar6)) goto cf_common_exit_00545FF6;
-      iVar20 = *(int *)&this_00[1].field_0x51;
-      *(int *)((int)&this_00[0xc].field_0010 + 2) =
-           *(int *)((int)&this_00[1].field_0060 + 1) + *(int *)&this_00[1].field_0x4d;
-      iVar20 = *(int *)&this_00[2].field_0x1 + iVar20;
-      *(int *)&this_00[0xc].field_0x16 = iVar20;
-      iVar15 = (DAT_00806730 - iVar15) + -0x28;
-      if (iVar15 < *(int *)((int)&this_00[0xc].field_0010 + 2)) {
-        *(int *)((int)&this_00[0xc].field_0010 + 2) = iVar15;
+      *(int *)&this_00->field_0x4ce = iVar6;
+      if ((800 < *(int *)&this_00->field_0x4ca) || (0x96 < iVar6)) goto cf_common_exit_00545FF6;
+      *(undefined4 *)&this_00->field_0x4c2 = this_00->field_00C5 + this_00->field_00B1;
+      iVar20 = this_00->field_00C9 + this_00->field_00B5;
+      *(int *)&this_00->field_0x4c6 = iVar20;
+      iVar15 = (DAT_00806730 - *(int *)&this_00->field_0x4ca) + -0x28;
+      if (iVar15 < *(int *)&this_00->field_0x4c2) {
+        *(int *)&this_00->field_0x4c2 = iVar15;
       }
-      if (*(int *)((int)&this_00[0xc].field_0010 + 2) < 0) {
-        *(undefined4 *)((int)&this_00[0xc].field_0010 + 2) = 0;
+      if (*(int *)&this_00->field_0x4c2 < 0) {
+        *(undefined4 *)&this_00->field_0x4c2 = 0;
       }
       iVar6 = (DAT_00806734 - iVar6) + -0x14;
       if (iVar6 < iVar20) {
-        *(int *)&this_00[0xc].field_0x16 = iVar6;
+        *(int *)&this_00->field_0x4c6 = iVar6;
       }
-      if (*(int *)&this_00[0xc].field_0x16 < 0) {
-        *(undefined4 *)&this_00[0xc].field_0x16 = 0;
+      if (*(int *)&this_00->field_0x4c6 < 0) {
+        *(undefined4 *)&this_00->field_0x4c6 = 0;
       }
-      iVar6 = *(int *)&this_00[0xc].field_0x22;
+      iVar6 = this_00->field_04D2;
       uVar18 = *(uint *)(iVar6 + 0x14);
       if (uVar18 == 0) {
         uVar18 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -1360,47 +1340,43 @@ switchD_00545816_default:
         *(undefined1 *)puVar13 = 0x22;
         puVar13 = (undefined4 *)((int)puVar13 + 1);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x38),*(int *)&this_00[0xc].field_0x22,0,5,5,
-                       *(int *)&this_00[0xc].field_0x1a + -10,
-                       *(int *)((int)&this_00[0xc].field_001C + 2) + -10);
+      ccFntTy::SetSurf(*(ccFntTy **)(DAT_0081176c + 0x38),this_00->field_04D2,0,5,5,
+                       *(int *)&this_00->field_0x4ca + -10,*(int *)&this_00->field_0x4ce + -10);
       ccFntTy::WrTxt(*(ccFntTy **)(DAT_0081176c + 0x38),local_524,-2,-1,
                      (uint)*(ushort *)(param_1 + 0x14),-1,-1);
-      FUN_006b5ee0(*(int *)&this_00[0xc].field_0x22,0,0,0,*(int *)&this_00[0xc].field_0x1a,
-                   *(int *)((int)&this_00[0xc].field_001C + 2),0x18,0xd);
-      FUN_006b5ee0(*(int *)&this_00[0xc].field_0x22,0,1,1,*(int *)&this_00[0xc].field_0x1a + -2,
-                   *(int *)((int)&this_00[0xc].field_001C + 2) + -2,0x1d,0xd);
+      FUN_006b5ee0(this_00->field_04D2,0,0,0,*(int *)&this_00->field_0x4ca,
+                   *(int *)&this_00->field_0x4ce,0x18,0xd);
+      FUN_006b5ee0(this_00->field_04D2,0,1,1,*(int *)&this_00->field_0x4ca + -2,
+                   *(int *)&this_00->field_0x4ce + -2,0x1d,0xd);
       bVar30 = 0x18;
     }
     else {
       if ((DAT_00802a28 == 0) || (*(void **)(DAT_00802a28 + 0x28) == (void *)0x0))
       goto cf_common_exit_00545FF6;
       iVar6 = FUN_00711370(*(void **)(DAT_00802a28 + 0x28),local_524);
-      *(int *)&this_00[0xc].field_0x1a = iVar6 + 0xc;
+      *(int *)&this_00->field_0x4ca = iVar6 + 0xc;
       iVar6 = FUN_007113e0(*(void **)(DAT_00802a28 + 0x28),local_524);
       iVar6 = iVar6 + 10;
-      iVar15 = *(int *)&this_00[0xc].field_0x1a;
-      *(int *)((int)&this_00[0xc].field_001C + 2) = iVar6;
-      if ((800 < iVar15) || (0x96 < iVar6)) goto cf_common_exit_00545FF6;
-      iVar20 = *(int *)&this_00[1].field_0x51;
-      *(int *)((int)&this_00[0xc].field_0010 + 2) =
-           *(int *)((int)&this_00[1].field_0060 + 1) + *(int *)&this_00[1].field_0x4d;
-      iVar20 = *(int *)&this_00[2].field_0x1 + iVar20;
-      *(int *)&this_00[0xc].field_0x16 = iVar20;
-      iVar15 = (DAT_00806730 - iVar15) + -0x28;
-      if (iVar15 < *(int *)((int)&this_00[0xc].field_0010 + 2)) {
-        *(int *)((int)&this_00[0xc].field_0010 + 2) = iVar15;
+      *(int *)&this_00->field_0x4ce = iVar6;
+      if ((800 < *(int *)&this_00->field_0x4ca) || (0x96 < iVar6)) goto cf_common_exit_00545FF6;
+      *(undefined4 *)&this_00->field_0x4c2 = this_00->field_00C5 + this_00->field_00B1;
+      iVar20 = this_00->field_00C9 + this_00->field_00B5;
+      *(int *)&this_00->field_0x4c6 = iVar20;
+      iVar15 = (DAT_00806730 - *(int *)&this_00->field_0x4ca) + -0x28;
+      if (iVar15 < *(int *)&this_00->field_0x4c2) {
+        *(int *)&this_00->field_0x4c2 = iVar15;
       }
-      if (*(int *)((int)&this_00[0xc].field_0010 + 2) < 0) {
-        *(undefined4 *)((int)&this_00[0xc].field_0010 + 2) = 0;
+      if (*(int *)&this_00->field_0x4c2 < 0) {
+        *(undefined4 *)&this_00->field_0x4c2 = 0;
       }
       iVar6 = (DAT_00806734 - iVar6) + -0x14;
       if (iVar6 < iVar20) {
-        *(int *)&this_00[0xc].field_0x16 = iVar6;
+        *(int *)&this_00->field_0x4c6 = iVar6;
       }
-      if (*(int *)&this_00[0xc].field_0x16 < 0) {
-        *(undefined4 *)&this_00[0xc].field_0x16 = 0;
+      if (*(int *)&this_00->field_0x4c6 < 0) {
+        *(undefined4 *)&this_00->field_0x4c6 = 0;
       }
-      iVar6 = *(int *)&this_00[0xc].field_0x22;
+      iVar6 = this_00->field_04D2;
       uVar18 = *(uint *)(iVar6 + 0x14);
       if (uVar18 == 0) {
         uVar18 = ((uint)*(ushort *)(iVar6 + 0xe) * *(int *)(iVar6 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -1415,35 +1391,33 @@ switchD_00545816_default:
         *(undefined1 *)puVar13 = 0x3a;
         puVar13 = (undefined4 *)((int)puVar13 + 1);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x28),*(int *)&this_00[0xc].field_0x22,0,5,5,
-                       *(int *)&this_00[0xc].field_0x1a + -10,
-                       *(int *)((int)&this_00[0xc].field_001C + 2) + -10);
+      ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x28),this_00->field_04D2,0,5,5,
+                       *(int *)&this_00->field_0x4ca + -10,*(int *)&this_00->field_0x4ce + -10);
       ccFntTy::WrTxt(*(ccFntTy **)(DAT_00802a28 + 0x28),local_524,-2,-1,
                      (uint)*(ushort *)(param_1 + 0x14),-1,-1);
-      FUN_006b5ee0(*(int *)&this_00[0xc].field_0x22,0,0,0,*(int *)&this_00[0xc].field_0x1a,
-                   *(int *)((int)&this_00[0xc].field_001C + 2),0x6f,0xd);
-      FUN_006b5ee0(*(int *)&this_00[0xc].field_0x22,0,1,1,*(int *)&this_00[0xc].field_0x1a + -2,
-                   *(int *)((int)&this_00[0xc].field_001C + 2) + -2,0xb3,0xd);
+      FUN_006b5ee0(this_00->field_04D2,0,0,0,*(int *)&this_00->field_0x4ca,
+                   *(int *)&this_00->field_0x4ce,0x6f,0xd);
+      FUN_006b5ee0(this_00->field_04D2,0,1,1,*(int *)&this_00->field_0x4ca + -2,
+                   *(int *)&this_00->field_0x4ce + -2,0xb3,0xd);
       bVar30 = 0x6f;
     }
-    FUN_006b5ee0(*(int *)&this_00[0xc].field_0x22,0,3,3,*(int *)&this_00[0xc].field_0x1a + -6,
-                 *(int *)((int)&this_00[0xc].field_001C + 2) + -6,bVar30,0xd);
+    FUN_006b5ee0(this_00->field_04D2,0,3,3,*(int *)&this_00->field_0x4ca + -6,
+                 *(int *)&this_00->field_0x4ce + -6,bVar30,0xd);
 cf_common_exit_00545FF6:
-    if (800 < (int)*(uint *)&this_00[0xc].field_0x1a) {
+    if (800 < (int)*(uint *)&this_00->field_0x4ca) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    uVar18 = *(uint *)((int)&this_00[0xc].field_001C + 2);
-    if (0x96 < (int)uVar18) {
+    if (0x96 < (int)*(uint *)&this_00->field_0x4ce) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    FUN_006b2800((int)DAT_008075a8,*(uint *)&this_00[0xc].field_0x26,
-                 *(uint *)&this_00[0xc].field_0x1a,uVar18);
+    FUN_006b2800((int)DAT_008075a8,this_00->field_04D6,*(uint *)&this_00->field_0x4ca,
+                 *(uint *)&this_00->field_0x4ce);
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&this_00[0xc].field_0x26,0xffffffff,
-               *(uint *)((int)&this_00[0xc].field_0010 + 2),*(uint *)&this_00[0xc].field_0x16);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&this_00[0xc].field_0x26);
+              (DAT_008075a8,this_00->field_04D6,0xffffffff,*(uint *)&this_00->field_0x4c2,
+               *(uint *)&this_00->field_0x4c6);
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_04D6);
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
@@ -1485,33 +1459,31 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      if (iVar6 < *(int *)&this_00[0xc].field_0x2) {
+      if ((int)this_00->field_00C5 < (int)this_00->field_04B2) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xa + *(int *)&this_00[0xc].field_0x2 <= iVar6) {
+      if (*(int *)&this_00->field_0x4ba + this_00->field_04B2 <= (int)this_00->field_00C5) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[2].field_0x1 < *(int *)&this_00[0xc].field_0x6) {
+      if ((int)this_00->field_00C9 < (int)this_00->field_04B6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + *(int *)&this_00[0xc].field_0x6 <=
-          *(int *)&this_00[2].field_0x1) {
+      if (*(int *)&this_00->field_0x4be + this_00->field_04B6 <= (int)this_00->field_00C9) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e != 0) {
+      if (this_00->field_049A != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1537,35 +1509,35 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      iVar15 = *(int *)&this_00[0xc].field_0x2;
+      iVar6 = this_00->field_00C5;
+      iVar15 = this_00->field_04B2;
       if (iVar6 < iVar15) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xa + iVar15 <= iVar6) {
+      if (*(int *)&this_00->field_0x4ba + iVar15 <= iVar6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar20 = *(int *)&this_00[2].field_0x1;
-      iVar7 = *(int *)&this_00[0xc].field_0x6;
+      iVar20 = this_00->field_00C9;
+      iVar7 = this_00->field_04B6;
       if (iVar20 < iVar7) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + iVar7 <= iVar20) {
+      if (*(int *)&this_00->field_0x4be + iVar7 <= iVar20) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e != 0) {
+      if (this_00->field_049A != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1598,37 +1570,35 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      if (iVar6 < *(int *)&this_00[0xc].field_0x2) {
+      if ((int)this_00->field_00C5 < (int)this_00->field_04B2) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xa + *(int *)&this_00[0xc].field_0x2 <= iVar6) {
+      if (*(int *)&this_00->field_0x4ba + this_00->field_04B2 <= (int)this_00->field_00C5) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[2].field_0x1 < *(int *)&this_00[0xc].field_0x6) {
+      if ((int)this_00->field_00C9 < (int)this_00->field_04B6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + *(int *)&this_00[0xc].field_0x6 <=
-          *(int *)&this_00[2].field_0x1) {
+      if (*(int *)&this_00->field_0x4be + this_00->field_04B6 <= (int)this_00->field_00C9) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) != (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) != (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1654,39 +1624,39 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      local_8 = *(undefined1 **)&this_00[0xc].field_0x2;
+      iVar6 = this_00->field_00C5;
+      local_8 = (undefined1 *)this_00->field_04B2;
       if (iVar6 < (int)local_8) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((int)(local_8 + *(int *)&this_00[0xc].field_0xa) <= iVar6) {
+      if ((int)(local_8 + *(int *)&this_00->field_0x4ba) <= iVar6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar15 = *(int *)&this_00[2].field_0x1;
-      iVar20 = *(int *)&this_00[0xc].field_0x6;
+      iVar15 = this_00->field_00C9;
+      iVar20 = this_00->field_04B6;
       if (iVar15 < iVar20) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + iVar20 <= iVar15) {
+      if (*(int *)&this_00->field_0x4be + iVar20 <= iVar15) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) != (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) != (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1719,39 +1689,39 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      local_8 = *(undefined1 **)&this_00[0xc].field_0x2;
+      iVar6 = this_00->field_00C5;
+      local_8 = (undefined1 *)this_00->field_04B2;
       if (iVar6 < (int)local_8) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((int)(local_8 + *(int *)&this_00[0xc].field_0xa) <= iVar6) {
+      if ((int)(local_8 + *(int *)&this_00->field_0x4ba) <= iVar6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar15 = *(int *)&this_00[2].field_0x1;
-      iVar20 = *(int *)&this_00[0xc].field_0x6;
+      iVar15 = this_00->field_00C9;
+      iVar20 = this_00->field_04B6;
       if (iVar15 < iVar20) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + iVar20 <= iVar15) {
+      if (*(int *)&this_00->field_0x4be + iVar20 <= iVar15) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) != (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) != (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1784,39 +1754,39 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      iVar15 = *(int *)&this_00[0xc].field_0x2;
+      iVar6 = this_00->field_00C5;
+      iVar15 = this_00->field_04B2;
       if (iVar6 < iVar15) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xa + iVar15 <= iVar6) {
+      if (*(int *)&this_00->field_0x4ba + iVar15 <= iVar6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar20 = *(int *)&this_00[2].field_0x1;
-      iVar7 = *(int *)&this_00[0xc].field_0x6;
+      iVar20 = this_00->field_00C9;
+      iVar7 = this_00->field_04B6;
       if (iVar20 < iVar7) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + iVar7 <= iVar20) {
+      if (*(int *)&this_00->field_0x4be + iVar7 <= iVar20) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) != (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) != (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1847,39 +1817,39 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      iVar15 = *(int *)&this_00[0xc].field_0x2;
+      iVar6 = this_00->field_00C5;
+      iVar15 = this_00->field_04B2;
       if (iVar6 < iVar15) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xa + iVar15 <= iVar6) {
+      if (*(int *)&this_00->field_0x4ba + iVar15 <= iVar6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar20 = *(int *)&this_00[2].field_0x1;
-      iVar7 = *(int *)&this_00[0xc].field_0x6;
+      iVar20 = this_00->field_00C9;
+      iVar7 = this_00->field_04B6;
       if (iVar20 < iVar7) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + iVar7 <= iVar20) {
+      if (*(int *)&this_00->field_0x4be + iVar7 <= iVar20) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) != (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) != (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1910,37 +1880,35 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      if (iVar6 < *(int *)&this_00[0xc].field_0x2) {
+      if ((int)this_00->field_00C5 < (int)this_00->field_04B2) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xa + *(int *)&this_00[0xc].field_0x2 <= iVar6) {
+      if (*(int *)&this_00->field_0x4ba + this_00->field_04B2 <= (int)this_00->field_00C5) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[2].field_0x1 < *(int *)&this_00[0xc].field_0x6) {
+      if ((int)this_00->field_00C9 < (int)this_00->field_04B6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + *(int *)&this_00[0xc].field_0x6 <=
-          *(int *)&this_00[2].field_0x1) {
+      if (*(int *)&this_00->field_0x4be + this_00->field_04B6 <= (int)this_00->field_00C9) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) == (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) == (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -1966,39 +1934,39 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-      local_8 = *(undefined1 **)&this_00[0xc].field_0x2;
+      iVar6 = this_00->field_00C5;
+      local_8 = (undefined1 *)this_00->field_04B2;
       if (iVar6 < (int)local_8) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((int)(local_8 + *(int *)&this_00[0xc].field_0xa) <= iVar6) {
+      if ((int)(local_8 + *(int *)&this_00->field_0x4ba) <= iVar6) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      iVar15 = *(int *)&this_00[2].field_0x1;
-      iVar20 = *(int *)&this_00[0xc].field_0x6;
+      iVar15 = this_00->field_00C9;
+      iVar20 = this_00->field_04B6;
       if (iVar15 < iVar20) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xc].field_0xe + iVar20 <= iVar15) {
+      if (*(int *)&this_00->field_0x4be + iVar20 <= iVar15) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if ((this_00[2].field_0x16 != '\0') && (this_00[2].field_0x16 != '\x03')) {
+      if ((this_00->field_00DE != '\0') && (this_00->field_00DE != '\x03')) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e == 0) {
+      if (this_00->field_049A == 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(uint *)(*(int *)&this_00[0xb].field_0x4e + 0x24) == (uint)DAT_0080874d) {
+      if (*(uint *)(this_00->field_049A + 0x24) == (uint)DAT_0080874d) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
@@ -2011,7 +1979,7 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      this_00[2].field_0xa = this_00[2].field_0xa == '\0';
+      this_00->field_0xd2 = this_00->field_0xd2 == '\0';
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 10:
@@ -2019,9 +1987,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      thunk_FUN_004fad60(DAT_00801688,
-                         CONCAT22(uVar16,*(undefined2 *)((int)&this_00[1].field_0060 + 1)),
-                         (uint)*(ushort *)&this_00[2].field_0x1);
+      thunk_FUN_004fad60(DAT_00801688,CONCAT22(uVar16,*(undefined2 *)&this_00->field_00C5),
+                         (uint)*(ushort *)&this_00->field_00C9);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 0xb:
@@ -2037,9 +2004,8 @@ LAB_00547c2d:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      thunk_FUN_004fae90(DAT_00801688,
-                         CONCAT22(uVar16,*(undefined2 *)((int)&this_00[1].field_0060 + 1)),
-                         (uint)*(ushort *)&this_00[2].field_0x1);
+      thunk_FUN_004fae90(DAT_00801688,CONCAT22(uVar16,*(undefined2 *)&this_00->field_00C5),
+                         (uint)*(ushort *)&this_00->field_00C9);
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     case 0xd:
@@ -2130,58 +2096,54 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-    if (iVar6 < *(int *)&this_00[0xc].field_0x2) {
+    if ((int)this_00->field_00C5 < (int)this_00->field_04B2) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (*(int *)&this_00[0xc].field_0xa + *(int *)&this_00[0xc].field_0x2 <= iVar6) {
+    if (*(int *)&this_00->field_0x4ba + this_00->field_04B2 <= (int)this_00->field_00C5) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (*(int *)&this_00[2].field_0x1 < *(int *)&this_00[0xc].field_0x6) {
+    if ((int)this_00->field_00C9 < (int)this_00->field_04B6) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (*(int *)&this_00[0xc].field_0xe + *(int *)&this_00[0xc].field_0x6 <=
-        *(int *)&this_00[2].field_0x1) {
+    if (*(int *)&this_00->field_0x4be + this_00->field_04B6 <= (int)this_00->field_00C9) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
     if (*(int *)(param_1 + 0x10) != 0xa501) {
-      if (*(int *)&this_00[0xb].field_0x56 != 0) {
+      if (this_00->field_04A2 != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      if (*(int *)&this_00[0xb].field_0x4e != 0) {
+      if (this_00->field_049A != 0) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      this_00[2].field_0x16 = 1;
-      *(int *)&this_00[2].field_0x17 =
-           *(int *)((int)&this_00[1].field_0060 + 1) - *(int *)&this_00[0xc].field_0x2;
-      iVar6 = *(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6;
-      *(int *)&this_00[2].field_0x1b = iVar6;
-      FUN_006e1c20(DAT_00807598,*(float *)&this_00[2].field_0x17,iVar6,0.0,
-                   (float *)&this_00[2].field_0x27,(float *)&this_00[2].field_0x2b);
-      *(int *)&this_00[2].field_0x47 = local_1c;
+      this_00->field_00DE = 1;
+      this_00->field_00DF = this_00->field_00C5 - this_00->field_04B2;
+      iVar6 = this_00->field_00C9 - this_00->field_04B6;
+      this_00->field_00E3 = iVar6;
+      FUN_006e1c20(DAT_00807598,(float)this_00->field_00DF,iVar6,0.0,(float *)&this_00->field_00EF,
+                   (float *)&this_00->field_00F3);
+      *(int *)&this_00->field_0x10f = local_1c;
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
     iVar6 = thunk_FUN_00548b90((int)this_00);
     if (iVar6 != 0) {
-      this_00[2].field_0x16 = 1;
-      *(int *)&this_00[2].field_0x17 =
-           *(int *)((int)&this_00[1].field_0060 + 1) - *(int *)&this_00[0xc].field_0x2;
-      iVar6 = *(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6;
-      *(int *)&this_00[2].field_0x1b = iVar6;
-      FUN_006e1c20(DAT_00807598,*(float *)&this_00[2].field_0x17,iVar6,0.0,
-                   (float *)&this_00[2].field_0x27,(float *)&this_00[2].field_0x2b);
-      *(int *)&this_00[2].field_0x47 = local_1c;
+      this_00->field_00DE = 1;
+      this_00->field_00DF = this_00->field_00C5 - this_00->field_04B2;
+      iVar6 = this_00->field_00C9 - this_00->field_04B6;
+      this_00->field_00E3 = iVar6;
+      FUN_006e1c20(DAT_00807598,(float)this_00->field_00DF,iVar6,0.0,(float *)&this_00->field_00EF,
+                   (float *)&this_00->field_00F3);
+      *(int *)&this_00->field_0x10f = local_1c;
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    if (*(int *)&this_00[0xb].field_0x56 != 0x4e) {
+    if (this_00->field_04A2 != 0x4e) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2189,26 +2151,23 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    iVar6 = FUN_006e1dd0(DAT_00807598,
-                         *(int *)((int)&this_00[1].field_0060 + 1) - *(int *)&this_00[0xc].field_0x2
-                         ,*(int *)&this_00[2].field_0x1 - *(int *)&this_00[0xc].field_0x6,
-                         (float *)&this_00[2].field_0x37,(float *)&this_00[2].field_0x3b,
-                         (float *)&this_00[2].field_0x3f);
+    iVar6 = FUN_006e1dd0(DAT_00807598,this_00->field_00C5 - this_00->field_04B2,
+                         this_00->field_00C9 - this_00->field_04B6,(float *)&this_00->field_00FF,
+                         (float *)&this_00->field_0103,(float *)&this_00->field_0107);
     if (iVar6 == 0) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    puVar4 = &this_00[2].field_0x43;
-    this_00[2].field_0x16 = 5;
-    if ((-1 < (int)*(uint *)&this_00[2].field_0x43) && (DAT_00807598 != (void *)0x0)) {
-      FUN_006e8ba0(DAT_00807598,*(uint *)&this_00[2].field_0x43);
+    puVar4 = &this_00->field_0x10b;
+    this_00->field_00DE = 5;
+    if ((-1 < (int)*(uint *)&this_00->field_0x10b) && (DAT_00807598 != (void *)0x0)) {
+      FUN_006e8ba0(DAT_00807598,*(uint *)&this_00->field_0x10b);
     }
-    FUN_006e89b0(DAT_00807598,(int *)puVar4,&DAT_007c7cd8,8,2,0x45,
-                 *(undefined4 *)&this_00[2].field_0x37,*(undefined4 *)&this_00[2].field_0x3b,
-                 *(undefined4 *)&this_00[2].field_0x3f,0,1,1);
+    FUN_006e89b0(DAT_00807598,(int *)puVar4,&DAT_007c7cd8,8,2,0x45,this_00->field_00FF,
+                 this_00->field_0103,this_00->field_0107,0,1,1);
     FUN_006eaaa0(DAT_00807598,*(uint *)puVar4,0);
     FUN_006ea460(DAT_00807598,*(uint *)puVar4,-1);
-    if (*(int *)&this_00[1].field_0x45 != 0) {
+    if (this_00->field_00A9 != 0) {
       if (this_00->field_001C == 0xffffffff) {
         g_currentExceptionFrame = local_e0.previous;
         return 0;
@@ -2217,13 +2176,13 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    Library::DKW::DDX::FUN_006b8b10(*(int **)&this_00[1].field_0x49);
+    Library::DKW::DDX::FUN_006b8b10((int *)this_00->field_00AD);
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
   if (uVar18 < 0xa501) {
     if (uVar18 == 0xa500) {
-      *(undefined4 *)((int)&this_00[0xb].field_0060 + 2) = 0;
+      *(undefined4 *)&this_00->field_0x4ae = 0;
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2232,7 +2191,7 @@ switchD_00546ac9_caseD_a506:
         g_currentExceptionFrame = local_e0.previous;
         return 0;
       }
-      *(undefined4 *)((int)&this_00[0xb].field_0060 + 2) = 1;
+      *(undefined4 *)&this_00->field_0x4ae = 1;
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
@@ -2276,8 +2235,8 @@ switchD_00546ac9_caseD_a506:
       g_currentExceptionFrame = local_e0.previous;
       return 0;
     }
-    *(undefined4 *)&this_00[0xb].field_0x5a = 1;
-    this_00[0xc].field_0x2e = 0;
+    this_00->field_04A6 = 1;
+    this_00->field_04DE = 0;
     if (DAT_00801688 == (CPanelTy *)0x0) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;
@@ -2287,15 +2246,13 @@ switchD_00546ac9_caseD_a506:
     return 0;
   }
 switchD_00546ac9_caseD_a505:
-  iVar6 = *(int *)((int)&this_00[1].field_0060 + 1);
-  if ((*(int *)&this_00[0xc].field_0x2 <= iVar6) &&
-     (iVar6 < *(int *)&this_00[0xc].field_0xa + *(int *)&this_00[0xc].field_0x2)) {
-    if ((*(int *)&this_00[0xc].field_0x6 <= *(int *)&this_00[2].field_0x1) &&
-       (*(int *)&this_00[2].field_0x1 <
-        *(int *)&this_00[0xc].field_0xe + *(int *)&this_00[0xc].field_0x6)) {
-      switch(this_00[2].field_0x16) {
+  if (((int)this_00->field_04B2 <= (int)this_00->field_00C5) &&
+     ((int)this_00->field_00C5 < *(int *)&this_00->field_0x4ba + this_00->field_04B2)) {
+    if (((int)this_00->field_04B6 <= (int)this_00->field_00C9) &&
+       ((int)this_00->field_00C9 < *(int *)&this_00->field_0x4be + this_00->field_04B6)) {
+      switch(this_00->field_00DE) {
       case 1:
-        this_00[2].field_0x16 = 3;
+        this_00->field_00DE = 3;
       case 0:
         if (*(int *)(param_1 + 0x10) != 0xa502) {
           g_currentExceptionFrame = local_e0.previous;
@@ -2319,7 +2276,7 @@ switchD_00546ac9_caseD_a505:
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if ((*(int *)&this_00[0xb].field_0x56 == 0) && (this_00[0xc].field_0x2e == '\0')) {
+        if ((this_00->field_04A2 == 0) && (this_00->field_04DE == '\0')) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -2346,18 +2303,17 @@ switchD_00546ac9_caseD_a505:
           return 0;
         }
         if (uVar18 != 0xa502) {
-          if (*(int *)&this_00[0xb].field_0x56 == 0) {
-            iVar6 = *(int *)((int)&this_00[2].field_001C + 3);
+          if (this_00->field_04A2 == 0) {
             STAllPlayersC::FramePick
-                      (DAT_007fa174,CONCAT31((int3)((uint)iVar6 >> 8),DAT_0080874d),
-                       *(int *)&this_00[2].field_0x17,*(int *)&this_00[2].field_0x1b,iVar6,
-                       *(int *)&this_00[2].field_0x23,(uint)(uVar18 == 0xa507));
+                      (DAT_007fa174,CONCAT31((int3)((uint)this_00->field_00E7 >> 8),DAT_0080874d),
+                       this_00->field_00DF,this_00->field_00E3,this_00->field_00E7,
+                       this_00->field_00EB,(uint)(uVar18 == 0xa507));
           }
-          this_00[2].field_0x16 = 4;
+          this_00->field_00DE = 4;
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
-        if (*(int *)&this_00[0xb].field_0x56 == 0) {
+        if (this_00->field_04A2 == 0) {
           g_currentExceptionFrame = local_e0.previous;
           return 0;
         }
@@ -2371,15 +2327,15 @@ switchD_00546ac9_caseD_a505:
       }
     }
   }
-  cVar2 = this_00[2].field_0x16;
+  cVar2 = this_00->field_00DE;
   if (cVar2 == '\x01') {
-    this_00[2].field_0x16 = 3;
+    this_00->field_00DE = 3;
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
   if (cVar2 == '\x02') {
 LAB_00546f1c:
-    this_00[2].field_0x16 = 4;
+    this_00->field_00DE = 4;
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
@@ -2391,25 +2347,24 @@ LAB_00546f1c:
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
-  if (*(int *)&this_00[1].field_0x45 == 0) {
-    Library::DKW::DDX::FUN_006b8a60(*(byte **)&this_00[1].field_0x49);
+  if (this_00->field_00A9 == 0) {
+    Library::DKW::DDX::FUN_006b8a60((byte *)this_00->field_00AD);
   }
   else if (this_00->field_001C != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)this_00->field_0060,this_00->field_001C,0xfffffffe,
-               *(uint *)&this_00->field_0x34,*(uint *)&this_00->field_0x38);
+              ((uint *)this_00->field_0060,this_00->field_001C,0xfffffffe,this_00->field_0034,
+               this_00->field_0038);
   }
-  DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+  DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   if (DAT_00807598 != (void *)0x0) {
-    uVar18 = *(uint *)&this_00[2].field_0x43;
+    uVar18 = *(uint *)&this_00->field_0x10b;
 LAB_0054708b:
     FUN_006e8ba0(DAT_00807598,uVar18);
   }
 LAB_00547090:
-  this_00[2].field_0x16 = 0;
-  iVar6 = *(int *)&this_00[0xb].field_0x56;
-  *(undefined4 *)&this_00[2].field_0x43 = 0xffffffff;
-  if (iVar6 != 0x4e) {
+  this_00->field_00DE = 0;
+  *(undefined4 *)&this_00->field_0x10b = 0xffffffff;
+  if (this_00->field_04A2 != 0x4e) {
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
@@ -2423,17 +2378,17 @@ switchD_00546e07_caseD_5:
     g_currentExceptionFrame = local_e0.previous;
     return 0;
   }
-  if (*(int *)&this_00[1].field_0x45 == 0) {
-    Library::DKW::DDX::FUN_006b8a60(*(byte **)&this_00[1].field_0x49);
+  if (this_00->field_00A9 == 0) {
+    Library::DKW::DDX::FUN_006b8a60((byte *)this_00->field_00AD);
   }
   else if (this_00->field_001C != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)this_00->field_0060,this_00->field_001C,0xfffffffe,
-               *(uint *)&this_00->field_0x34,*(uint *)&this_00->field_0x38);
+              ((uint *)this_00->field_0060,this_00->field_001C,0xfffffffe,this_00->field_0034,
+               this_00->field_0038);
   }
-  DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+  DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
   if (DAT_00807598 != (void *)0x0) {
-    uVar18 = *(uint *)&this_00[2].field_0x43;
+    uVar18 = *(uint *)&this_00->field_0x10b;
     goto LAB_0054708b;
   }
   goto LAB_00547090;

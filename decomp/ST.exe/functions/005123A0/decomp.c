@@ -76,34 +76,34 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    if (*(uint *)&local_8->field_0x19c != 0) {
-      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8->field_0x19c);
+    if (local_8->field_019C != 0) {
+      FUN_006e56b0((void *)local_8->field_000C,local_8->field_019C);
     }
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)&this_00->field_0x68,0,0x21,0x16,*(int *)&this_00->field_0x1dc,0,0x21
-               ,0x16,0x19c,0x118);
+              ((undefined4 *)this_00->field_0068,0,0x21,0x16,this_00->field_01DC,0,0x21,0x16,0x19c,
+               0x118);
     local_520[0] = 0;
-    local_520[2] = *(int *)&this_00->field_0x3c + 0x21;
+    local_520[2] = this_00->field_003C + 0x21;
     if (this_00->field_005C == 0) {
-      local_520[3] = -*(int *)&this_00->field_0x48;
+      local_520[3] = -this_00->field_0048;
     }
     else {
-      local_520[3] = *(int *)&this_00->field_0x44;
+      local_520[3] = this_00->field_0044;
     }
     local_520[3] = local_520[3] + 0x16;
     local_510 = 0x19c;
     local_50c = 0x118;
     if (this_00->field_01A1 == '\0') {
-      iVar2 = *(int *)&this_00->field_0x1b3;
+      iVar2 = this_00->field_01B3;
     }
     else {
-      iVar2 = *(int *)&this_00->field_0x1bb;
+      iVar2 = this_00->field_01BB;
     }
     local_508 = *(undefined4 *)(iVar2 + 0xc);
     local_504 = 0;
-    local_4f8 = *(undefined4 *)&this_00->field_0x8;
+    local_4f8 = this_00->field_0008;
     local_3f0[0] = 0;
-    local_3f0[2] = *(int *)&this_00->field_0x3c + 0x1c3;
+    local_3f0[2] = this_00->field_003C + 0x1c3;
     local_4f4 = 2;
     local_4f0 = 0x8160;
     local_4d4 = 2;
@@ -117,10 +117,10 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_2e8 = 1;
     local_2e4 = 1;
     if (this_00->field_005C == 0) {
-      local_3f0[3] = -*(int *)&this_00->field_0x48;
+      local_3f0[3] = -this_00->field_0048;
     }
     else {
-      local_3f0[3] = *(int *)&this_00->field_0x44;
+      local_3f0[3] = this_00->field_0044;
     }
     local_3f0[3] = local_3f0[3] + 0x16;
     local_3e0 = 0x11;
@@ -129,8 +129,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_4b8 = local_4f8;
     local_498 = local_4f8;
     local_2cc = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_2c8 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
-    local_390 = *(undefined4 *)&this_00->field_0x8;
+    local_2c8 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_390 = this_00->field_0008;
     iVar2 = this_00->field_005C;
     local_38c = 2;
     local_274 = 2;
@@ -145,26 +145,26 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
       piVar5 = piVar5 + 1;
     }
     if (iVar2 == 0) {
-      local_270[3] = -*(int *)&this_00->field_0x48;
+      local_270[3] = -this_00->field_0048;
     }
     else {
-      local_270[3] = *(int *)&this_00->field_0x44;
+      local_270[3] = this_00->field_0044;
     }
     local_270[3] = local_270[3] + 0x109;
     local_14c = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_148 = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
-    local_e4 = *(int *)&this_00->field_0x3c + 0x1c3;
+    local_148 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_e4 = this_00->field_003C + 0x1c3;
     local_208 = 0x8165;
     local_f4 = 3;
     local_f0 = 1;
     local_e8 = 0;
     if (this_00->field_005C == 0) {
-      local_e0 = -*(int *)&this_00->field_0x48;
+      local_e0 = -this_00->field_0048;
     }
     else {
-      local_e0 = *(int *)&this_00->field_0x44;
+      local_e0 = this_00->field_0044;
     }
-    local_a0 = *(undefined4 *)&this_00->field_0x8;
+    local_a0 = this_00->field_0008;
     local_e0 = local_e0 + 0x3d;
     local_dc = 0x11;
     local_d8 = 0xc9;
@@ -173,8 +173,8 @@ void __thiscall HelpPanelTy::CreateList(HelpPanelTy *this)
     local_98 = 0x8166;
     local_60 = 1;
     local_5c = 1;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(7,&this_00->field_0x19c,0,local_520,0);
-    iVar2 = *(int *)&this_00->field_0x19c;
+    (**(code **)(*(int *)this_00->field_000C + 8))(7,&this_00->field_019C,0,local_520,0);
+    iVar2 = this_00->field_019C;
     if (iVar2 != 0) {
       this_00->field_0028 = 0x20;
       *(undefined4 *)&this_00->field_0x2c = 1;

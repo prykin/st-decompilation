@@ -1,5 +1,10 @@
 
-LPSTR __cdecl FUN_0067e320(int param_1,int param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 451 | 455 | 456 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+LPSTR __cdecl GetStrategNameDB(int param_1,int param_2)
 
 {
   char cVar1;

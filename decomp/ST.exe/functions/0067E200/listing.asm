@@ -1,4 +1,4 @@
-FUN_0067e200:
+CreateSaveStrategList:
 0067E200  55                        PUSH EBP
 0067E201  8B EC                     MOV EBP,ESP
 0067E203  83 EC 48                  SUB ESP,0x48

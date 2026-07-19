@@ -32,9 +32,9 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     uVar7 = local_8;
     if (0 < (int)local_8) {
       do {
-        FUN_006ae110(*(byte **)(pSVar2 + 0x234));
+        FUN_006ae110((byte *)pSVar2->field_0234);
         uVar7 = uVar7 - 1;
-        *(undefined4 *)(pSVar2 + 0x234) = 0;
+        pSVar2->field_0234 = 0;
       } while (uVar7 != 0);
     }
     iVar5 = ReportDebugMessage(s_E____titans_nick_to_field_cpp_007cf850,0x1e5,0,iVar3,&DAT_007a4ccc,
@@ -47,11 +47,11 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     uVar7 = (*pcVar1)();
     return uVar7;
   }
-  if (*(int *)(local_c + 0x234) == 0) {
+  if (local_c->field_0234 == 0) {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1,0x40,10);
-    *(uint **)(pSVar2 + 0x234) = puVar4;
+    pSVar2->field_0234 = puVar4;
   }
-  if ((*(int *)(pSVar2 + 0x234) != 0) && (param_1 != 0)) {
+  if ((pSVar2->field_0234 != 0) && (param_1 != 0)) {
     puVar6 = local_90;
     for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = 0;
@@ -60,7 +60,7 @@ uint __thiscall STFieldC::CreateField(STFieldC *this,uint param_1)
     local_54 = 0xffffffff;
     if (0 < (int)param_1) {
       do {
-        local_8 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + 0x234),local_90);
+        local_8 = Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar2->field_0234,local_90);
         param_1 = param_1 - 1;
       } while (param_1 != 0);
     }

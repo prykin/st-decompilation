@@ -1,4 +1,4 @@
-FUN_006ef9d0:
+mfTMapNewTxtr:
 006EF9D0  55                        PUSH EBP
 006EF9D1  8B EC                     MOV EBP,ESP
 006EF9D3  83 EC 50                  SUB ESP,0x50

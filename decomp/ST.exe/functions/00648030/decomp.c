@@ -34,7 +34,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
     g_currentExceptionFrame = local_54.previous;
     iVar4 = ReportDebugMessage(s_E____titans_ai_ai_boss_cpp_007d2750,0xde,0,iVar2,
                                s_AiBossClassTy__GetMessage_error_m_007d27b0,
-                               *(undefined4 *)(param_1 + 0x10),*(undefined4 *)(local_10 + 0x18));
+                               *(undefined4 *)(param_1 + 0x10),local_10->field_0018);
     if (iVar4 == 0) {
       RaiseInternalException(iVar2,0,s_E____titans_ai_ai_boss_cpp_007d2750,0xdf);
       return 0xffff;
@@ -44,7 +44,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
     return uVar5;
   }
   uVar6 = DAT_00802a38->field_00E4;
-  *(uint *)(local_10 + 0x658) = uVar6;
+  local_10->field_0658 = uVar6;
   uVar7 = *(uint *)(param_1 + 0x10);
   if (uVar7 < 0x110) {
     if (uVar7 == 0x10f) {
@@ -56,7 +56,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
       }
     }
     else if (uVar7 == 0) {
-      AiEventClassTy::GetMessage((AiEventClassTy *)(local_10 + 0x1c),(STMessage *)param_1);
+      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_0x1c,(STMessage *)param_1);
     }
     else if (uVar7 == 2) {
       puVar3 = *(undefined4 **)(param_1 + 0x14);
@@ -76,10 +76,10 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
   else if (uVar7 < 0x5ded) {
     if ((0x5dcf < uVar7) || ((0x5dc4 < uVar7 && (uVar7 < 0x5dc7)))) {
       if (uVar7 == 0x5dd5) {
-        if (uVar6 < *(int *)(local_10 + 0x629) + 5U) goto LAB_00648291;
-        *(uint *)(local_10 + 0x629) = uVar6;
+        if (uVar6 < local_10->field_0629 + 5) goto LAB_00648291;
+        local_10->field_0629 = uVar6;
       }
-      AiEventClassTy::GetMessage((AiEventClassTy *)(local_10 + 0x1c),(STMessage *)param_1);
+      AiEventClassTy::GetMessage((AiEventClassTy *)&local_10->field_0x1c,(STMessage *)param_1);
       if (DAT_007fa174 != 0) {
         cVar9 = '\0';
         pcVar8 = &DAT_008087e9;

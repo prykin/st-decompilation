@@ -1,5 +1,10 @@
 
-void FUN_00577280(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\tsystem.cpp
+   Diagnostic line evidence: 177 | 187 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void CreateGameSystem(void)
 
 {
   undefined4 uVar1;
@@ -32,15 +37,14 @@ void FUN_00577280(void)
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,DAT_0081163c,0);
     DAT_0081163c[0x10a] = 1;
     this = DAT_00802a30;
-    uVar1 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
-    uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
-    DAT_00802a30[0xb].field_0x47 = 2;
-    *(undefined2 *)&this[0xb].field_0x48 = 0xffff;
+    uVar1 = DAT_00802a30->field_00C9;
+    uVar2 = DAT_00802a30->field_00C5;
+    DAT_00802a30->field_0493 = 2;
+    this->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this,CASE_0,uVar2,uVar1);
-    CursorClassTy::DrawSprite
-              (this,*(int *)((int)&this[1].field_0060 + 1),*(int *)&this[2].field_0x1);
-    this[2].field_0xa = 0;
-    *(undefined4 *)&this[0xc].field_0x2f = 0xffffffff;
+    CursorClassTy::DrawSprite(this,this->field_00C5,this->field_00C9);
+    this->field_0xd2 = 0;
+    *(undefined4 *)&this->field_0x4df = 0xffffffff;
     g_currentExceptionFrame = pIVar5;
     return;
   }

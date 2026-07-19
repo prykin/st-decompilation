@@ -28,8 +28,7 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
       g_currentExceptionFrame = pIVar4;
       return 0;
     }
-    if ((*(int *)&local_8->field_0x4ef6 != 0) &&
-       (DAT_0080673c = DAT_0080673c + -1, DAT_0080673c < 1)) {
+    if ((local_8->field_4EF6 != 0) && (DAT_0080673c = DAT_0080673c + -1, DAT_0080673c < 1)) {
       DAT_0080673c = *(int *)(s_FrmPanelTy__GetMessage_007c2ae0 + (uint)DAT_0080733b * 0x18 + 0x10);
       if ((DAT_00802a30 != 0) && (*(int *)(DAT_00802a30 + 0xa9) == 0)) {
         Library::DKW::DDX::FUN_006b8d50(*(int **)(DAT_00802a30 + 0xad),0,0,0,0);

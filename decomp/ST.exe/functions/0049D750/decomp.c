@@ -36,9 +36,9 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_58.previous;
     if (iVar2 == -0x5001fff7) {
-      if (*(byte **)&local_14->field_0x160 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&local_14->field_0x160);
-        *(undefined4 *)&this_00->field_0x160 = 0;
+      if ((byte *)local_14->field_0160 != (byte *)0x0) {
+        FUN_006ae110((byte *)local_14->field_0160);
+        this_00->field_0160 = 0;
       }
       if ((byte *)this_00->field_029F != (byte *)0x0) {
         FUN_006ae110((byte *)this_00->field_029F);
@@ -62,16 +62,16 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       *puVar9 = 0;
       puVar9 = puVar9 + 1;
     }
-    *(undefined4 *)&local_14->field_0x65 = 0;
+    local_14->field_0065 = 0;
     if ((byte *)local_14->field_029F != (byte *)0x0) {
       FUN_006ae110((byte *)local_14->field_029F);
     }
-    this_00->field_029B = *(undefined4 *)&this_00->field_0x15c;
-    this_00->field_029F = *(undefined4 *)&this_00->field_0x160;
+    this_00->field_029B = this_00->field_015C;
+    this_00->field_029F = this_00->field_0160;
     this_00->field_029F = 0;
     if (this_00->field_029B == 0) {
-      if ((*(int *)&this_00->field_0x160 == 0) ||
-         (uVar8 = *(int *)(*(int *)&this_00->field_0x160 + 0xc), local_c = uVar8, uVar8 == 0)) {
+      if ((this_00->field_0160 == 0) ||
+         (uVar8 = *(int *)(this_00->field_0160 + 0xc), local_c = uVar8, uVar8 == 0)) {
         uVar8 = local_c;
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9b7);
@@ -81,7 +81,7 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
       this_00->field_029F = puVar3;
       if (0 < (int)uVar8) {
         do {
-          FUN_006acc70(*(int *)&this_00->field_0x160,uVar10,&local_8);
+          FUN_006acc70(this_00->field_0160,uVar10,&local_8);
           if ((((short)local_8 != -1) &&
               (piVar4 = (int *)STAllPlayersC::GetObjPtr
                                          (DAT_007fa174,
@@ -93,8 +93,8 @@ undefined4 __thiscall STGroupBoatC::GrpRepare(STGroupBoatC *this,int param_1)
           uVar10 = uVar10 + 1;
         } while ((int)uVar10 < (int)uVar8);
       }
-      FUN_006ae110(*(byte **)&this_00->field_0x160);
-      *(undefined4 *)&this_00->field_0x160 = 0;
+      FUN_006ae110((byte *)this_00->field_0160);
+      this_00->field_0160 = 0;
       if (*(int *)(this_00->field_029F + 0xc) == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x9c8);

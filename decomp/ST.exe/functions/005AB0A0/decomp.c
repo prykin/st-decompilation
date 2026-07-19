@@ -34,18 +34,18 @@ undefined4 __thiscall HoloTy::NextFas(HoloTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Start_hologram_cpp_007cc674,0xc1);
     return local_8;
   }
-  uVar1 = *(uint *)(local_c + 3);
+  uVar1 = local_c->field_0003;
   if (-1 < (int)uVar1) {
-    iVar3 = *(int *)(local_c + 0x17);
-    if (local_c[2] == (HoloTy)0x0) {
-      if (iVar3 < *(int *)(local_c + 0x13) + -2) {
-        *(int *)(local_c + 0x17) = iVar3 + 1;
+    iVar3 = local_c->field_0017;
+    if (local_c->field_0002 == '\0') {
+      if (iVar3 < local_c->field_0013 + -2) {
+        local_c->field_0017 = iVar3 + 1;
         local_8 = 1;
         FUN_006b35d0(DAT_008075a8,uVar1);
       }
     }
     else if (0 < iVar3) {
-      *(int *)(local_c + 0x17) = iVar3 + -1;
+      local_c->field_0017 = iVar3 + -1;
       local_8 = 1;
       FUN_006b35d0(DAT_008075a8,uVar1);
       g_currentExceptionFrame = pIVar6;

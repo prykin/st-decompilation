@@ -32,7 +32,7 @@ int __thiscall cMf32::RecChk(cMf32 *this,byte param_1,char *param_2)
     if (local_8 != (ushort *)0x0) {
       FUN_006ab060(&local_8);
     }
-    wsprintfA(local_158,s_cMf32__RecChk_File___s__Sect__s_N_007efbf8,local_10 + 0x231,
+    wsprintfA(local_158,s_cMf32__RecChk_File___s__Sect__s_N_007efbf8,&local_10[0xb].field_0x21,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
     iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x261,0,iVar4,&DAT_007a4ccc,
                                local_158);
@@ -75,7 +75,7 @@ int __thiscall cMf32::RecChk(cMf32 *this,byte param_1,char *param_2)
     param_2 = param_2 + 1;
     puVar8 = (ushort *)((int)puVar8 + 1);
   }
-  iVar4 = Library::DKW::DB::FUN_00751b60(**(int **)local_10,local_8,&local_c);
+  iVar4 = Library::DKW::DB::FUN_00751b60(*(int *)local_10->field_0000,local_8,&local_c);
   if (local_8 != (ushort *)0x0) {
     FUN_006ab060(&local_8);
   }

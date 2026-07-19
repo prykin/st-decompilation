@@ -61,9 +61,9 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
             bVar6 = uVar4 < *(uint *)(iVar2 + 0xc);
           } while ((int)uVar4 < (int)*(uint *)(iVar2 + 0xc));
         }
-        (**(code **)(*(int *)this_00 + 0x2c))();
+        (**(code **)(this_00->field_0000 + 0x2c))();
         SettMapTy::PaintSC((SettMapTy *)this_00);
-        *(int *)&this_00[1].field_0x4 = *(int *)&this_00[1].field_0x4 + 1;
+        this_00->field_2121 = this_00->field_2121 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

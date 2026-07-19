@@ -160,8 +160,7 @@ undefined4 __thiscall STTorpC::GetMessage(STTorpC *this,int param_1)
         return 0;
       }
       local_4c = (byte *)SaveTorpData((STTorpC *)this_00,(int *)&local_90);
-      STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)&this_00->field_0x18,local_4c,local_90)
-      ;
+      STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_4c,local_90);
       FUN_006ab060(&local_4c);
       g_currentExceptionFrame = local_28c.previous;
       return 0;
@@ -346,15 +345,15 @@ LAB_00642c6e:
         uVar6 = thunk_FUN_00430750(GVar3);
       }
       thunk_FUN_00417ff0(this_00,uVar6);
-      uVar16 = thunk_FUN_004406c0(this_00->field_0x24);
+      uVar16 = thunk_FUN_004406c0(this_00->field_0024);
       if ((uVar16 & 0xff) == 1) {
-        iVar10 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x24,0x99);
+        iVar10 = thunk_FUN_004e60d0(*(int *)&this_00->field_0024,0x99);
         if (iVar10 != 0) {
           this_00->field_0x61 = ((byte)this_00->field_0x61 >> 1) + this_00->field_0x61;
         }
       }
       else if (((uVar16 & 0xff) == 2) &&
-              (iVar10 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x24,0x96), iVar10 != 0)) {
+              (iVar10 = thunk_FUN_004e60d0(*(int *)&this_00->field_0024,0x96), iVar10 != 0)) {
         this_00->field_0x61 = ((byte)this_00->field_0x61 >> 1) + this_00->field_0x61;
       }
       break;
@@ -469,7 +468,7 @@ switchD_00640ad9_caseD_a2:
     if (this_00->field_0259 == 0x97) {
       local_4c = (byte *)STAllPlayersC::GetObjPtr
                                    (DAT_007fa174,
-                                    CONCAT31((int3)((uint)piVar12 >> 8),this_00->field_0x24),
+                                    CONCAT31((int3)((uint)piVar12 >> 8),this_00->field_0024),
                                     CONCAT22((short)((uint)uVar15 >> 0x10),
                                              *(undefined2 *)&this_00->field_0x262),CASE_1);
       if ((local_4c != (byte *)0x0) &&
@@ -632,11 +631,11 @@ switchD_00640c2d_caseD_a2:
         bVar23 = *(char *)(DAT_007fb240 * iVar11 + DAT_007fb26c + iVar10) != '\0';
       }
       if (bVar23) {
-        if ((&DAT_007fb24c)[*(int *)&this_00->field_0x24] == 0) {
+        if ((&DAT_007fb24c)[*(int *)&this_00->field_0024] == 0) {
           bVar23 = false;
         }
         else {
-          bVar23 = *(char *)(DAT_007fb240 * iVar11 + (&DAT_007fb24c)[*(int *)&this_00->field_0x24] +
+          bVar23 = *(char *)(DAT_007fb240 * iVar11 + (&DAT_007fb24c)[*(int *)&this_00->field_0024] +
                             iVar10) != '\0';
         }
         if (bVar23) {
@@ -744,12 +743,12 @@ switchD_00640c2d_caseD_a2:
     }
     if (this_00->field_0x27c == '\x05') {
       if (this_00->field_0x288 == '\x02') {
-        uVar16 = thunk_FUN_00645d30(*(int *)&this_00->field_0x24,this_00->field_0259);
+        uVar16 = thunk_FUN_00645d30(*(int *)&this_00->field_0024,this_00->field_0259);
         this_00->field_0x25d = (char)uVar16;
         local_c4 = *(int *)(&DAT_007e6468 + (this_00->field_0259 * 5 + -0x2ee + (uVar16 & 0xff)) * 4
                            );
         thunk_FUN_006383e0((int)*(short *)&this_00->field_0x41,(int)*(short *)&this_00->field_0x43,
-                           (int)*(short *)&this_00->field_0x45,*(undefined4 *)&this_00->field_0x24,
+                           (int)*(short *)&this_00->field_0x45,*(undefined4 *)&this_00->field_0024,
                            (short)*(undefined4 *)&this_00->field_0x25e,
                            *(undefined2 *)&this_00->field_0x262,this_00->field_0259,local_c4 / 2,1);
       }
@@ -760,7 +759,7 @@ switchD_00640c2d_caseD_a2:
           g_currentExceptionFrame = local_28c.previous;
           return 0;
         }
-        uVar16 = thunk_FUN_00645d30(*(int *)&this_00->field_0x24,this_00->field_0259);
+        uVar16 = thunk_FUN_00645d30(*(int *)&this_00->field_0024,this_00->field_0259);
         this_00->field_0x25d = (char)uVar16;
         iVar10 = this_00->field_0259;
         if (iVar10 == 0x9a) {
@@ -778,7 +777,7 @@ switchD_00640c2d_caseD_a2:
         else {
           local_b4 = 0;
         }
-        local_bc = *(undefined4 *)&this_00->field_0x24;
+        local_bc = *(undefined4 *)&this_00->field_0024;
         local_b8 = *(undefined2 *)&this_00->field_0x262;
         local_c0 = this_00->field_0259;
         local_b6 = *(undefined2 *)&this_00->field_0x25e;
@@ -914,11 +913,11 @@ switchD_00640c2d_caseD_a2:
     }
     iVar17 = local_34;
     if (bVar23) {
-      if ((&DAT_007fb24c)[*(int *)&this_00->field_0x24] == 0) {
+      if ((&DAT_007fb24c)[*(int *)&this_00->field_0024] == 0) {
         bVar23 = false;
       }
       else {
-        bVar23 = *(char *)(DAT_007fb240 * iVar10 + (&DAT_007fb24c)[*(int *)&this_00->field_0x24] +
+        bVar23 = *(char *)(DAT_007fb240 * iVar10 + (&DAT_007fb24c)[*(int *)&this_00->field_0024] +
                           iVar11) != '\0';
       }
       if ((!bVar23) || (this_00->field_0x286 == '\0')) {
@@ -929,14 +928,14 @@ switchD_00640c2d_caseD_a2:
     }
     if (1 < iVar17) {
       if ((this_00->field_0259 == 0xad) &&
-         (iVar10 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x24,0x7e), iVar10 != 0)) {
+         (iVar10 = thunk_FUN_004e60d0(*(int *)&this_00->field_0024,0x7e), iVar10 != 0)) {
         iVar10 = 0x1389;
       }
       else {
         iVar10 = *(int *)(&DAT_007e6468 + (this_00->field_0259 + -0x96) * 0x14);
       }
       uVar16 = thunk_FUN_00497030((int)*(short *)&this_00->field_0x47,
-                                  (int)*(short *)&this_00->field_0x49,*(int *)&this_00->field_0x24,1
+                                  (int)*(short *)&this_00->field_0x49,*(int *)&this_00->field_0024,1
                                   ,iVar10);
       if ((int)uVar16 < 0) {
         local_18 = 0;
@@ -971,7 +970,7 @@ switchD_00640c2d_caseD_a2:
   if ((byte)this_00->field_0x27d < 9) {
     local_4c = (byte *)STAllPlayersC::GetObjPtr
                                  (DAT_007fa174,
-                                  CONCAT31((int3)((uint)iVar10 >> 8),this_00->field_0x24),
+                                  CONCAT31((int3)((uint)iVar10 >> 8),this_00->field_0024),
                                   CONCAT22(sVar9 >> 0xf,*(undefined2 *)&this_00->field_0x262),CASE_1
                                  );
     if ((local_4c == (byte *)0x0) || (this_00->field_0x27d == '\b')) {
@@ -1089,7 +1088,7 @@ cf_common_exit_00642C8B:
   if (this_00->field_0259 == 0x99) {
     piVar12 = (int *)STAllPlayersC::GetObjPtr
                                (DAT_007fa174,
-                                CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00->field_0x24),
+                                CONCAT31((int3)((uint)extraout_EDX_00 >> 8),this_00->field_0024),
                                 CONCAT22(extraout_var_01,*(undefined2 *)&this_00->field_0x262),
                                 CASE_1);
     if (piVar12 == (int *)0x0) {

@@ -1,4 +1,4 @@
-FUN_0071ac40:
+tSArrCat:
 0071AC40  55                        PUSH EBP
 0071AC41  8B EC                     MOV EBP,ESP
 0071AC43  83 EC 44                  SUB ESP,0x44

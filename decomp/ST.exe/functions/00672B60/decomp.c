@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\Ai_lex.c
+   Diagnostic line evidence: 231 | 253 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int FUN_00672b60(char *param_1,undefined4 *param_2)
 
 {

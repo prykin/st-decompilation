@@ -26,7 +26,7 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,int param_2,byte param_3,char *pa
   uVar2 = (uint)param_1;
   local_8 = (ushort *)0x0;
   local_c = *(int *)(*(int *)(param_2 + 0x14) + 0x10);
-  local_10 = *(int *)(*(int *)(param_2 + 0x14) + 0xc) - *(int *)(&this->field_0x3c + uVar2 * 4);
+  local_10 = *(int *)(*(int *)(param_2 + 0x14) + 0xc) - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
     iVar4 = this->field_0134;
@@ -71,20 +71,17 @@ cf_common_join_004F4331:
       local_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar6,(int *)0x0,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      thunk_FUN_00540760(*(undefined4 **)(&local_14->field_0x180 + uVar2 * 4),local_10,local_c,
-                         param_3,(byte *)local_8);
+      DibPut((undefined4 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if ((*(int *)(*(int *)(param_2 + 0x14) + 4) == 3) && (param_5 != (char *)0x0)) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_5,(int *)0x0,1);
-        thunk_FUN_00540760(*(undefined4 **)(&pCVar3->field_0x180 + uVar2 * 4),local_10,local_c,
-                           '\x06',(byte *)local_8);
+        DibPut((undefined4 *)(&pCVar3->field_0180)[uVar2],local_10,local_c,'\x06',(byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
-      if ((param_1 < 0xb) && (-1 < (int)*(uint *)(&pCVar3->field_0x148 + uVar2 * 4))) {
+      if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(&pCVar3->field_0x148 + uVar2 * 4),0xffffffff,
-                   *(uint *)(&pCVar3->field_0x3c + uVar2 * 4),
-                   *(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
+                  (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
+                   ,*(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
       }
       g_currentExceptionFrame = local_58.previous;
       return;

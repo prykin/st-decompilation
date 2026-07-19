@@ -1,4 +1,4 @@
-FUN_0070ac10:
+mfPcxLoadToDib:
 0070AC10  55                        PUSH EBP
 0070AC11  8B EC                     MOV EBP,ESP
 0070AC13  83 EC 50                  SUB ESP,0x50

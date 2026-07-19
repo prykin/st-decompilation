@@ -1,5 +1,10 @@
 
-undefined4 __cdecl FUN_0071a110(LPCSTR param_1,byte param_2,int param_3,char *param_4,char param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 151 | 162 | 166 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 __cdecl mfWavSaveFile(LPCSTR param_1,byte param_2,int param_3,char *param_4,char param_5)
 
 {
   code *pcVar1;
@@ -21,12 +26,12 @@ undefined4 __cdecl FUN_0071a110(LPCSTR param_1,byte param_2,int param_3,char *pa
       RaiseInternalException(-6,DAT_007ed77c,s_E__Ourlib_mfwav_cpp_007f0800,0x97);
     }
     if (param_2 == 0) {
-      local_8 = (byte *)FUN_0071ae80(param_1,&local_c);
+      local_8 = (byte *)ReadAllFile(param_1,&local_c);
     }
     else {
-      local_8 = (byte *)FUN_00719ea0(param_1,(int *)&local_c);
+      local_8 = (byte *)GetPcmFromWavFile(param_1,(int *)&local_c);
     }
-    FUN_0071a030(local_8,local_c,param_2,param_3,param_4,param_5);
+    mfWavSave(local_8,local_c,param_2,param_3,param_4,param_5);
     if (local_8 != (byte *)0x0) {
       FUN_006ab060(&local_8);
     }

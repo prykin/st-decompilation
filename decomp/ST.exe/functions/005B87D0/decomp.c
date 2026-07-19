@@ -49,13 +49,13 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       MMObjTy::CloseButtons((MMObjTy *)local_14);
       HidePanel(this_00,0,0,1);
       if (param_1 == 0) {
-        *(undefined4 *)&this_00[1].field_0x26 = 0;
+        this_00->field_1CD0 = 0;
       }
       else {
-        *(UINT *)&this_00[1].field_0x26 = param_1;
+        this_00->field_1CD0 = param_1;
         if (param_3 == 0) {
           uVar6 = 0xffffffff;
-          local_8 = *(uint *)&this_00[1].field_0xde;
+          local_8 = this_00->field_1D88;
           uVar5 = 7;
           iVar18 = -1;
           iVar15 = -1;
@@ -69,24 +69,24 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
                              (*(ccFntTy **)(DAT_0081176c + 0x30),puVar8,iVar4,iVar9,cVar16,uVar10,
                               iVar14,iVar15,iVar18);
           (**(code **)(local_8 + 8))(puVar7,uVar5,uVar6);
-          *(undefined4 *)&this_00[1].field_0xe6 = 0;
+          this_00->field_1D90 = 0;
         }
         else {
           uVar5 = FUN_006b0140(param_4,DAT_00807618);
           uVar6 = FUN_006b0140(param_1,DAT_00807618);
           wsprintfA((LPSTR)local_478,s__s___s__li__007ccca4,uVar6,uVar5,param_3);
-          iVar4 = *(int *)&this_00[1].field_0xde;
+          iVar4 = this_00->field_1D88;
           uVar6 = 0xffffffff;
           uVar5 = 7;
           puVar7 = ccFntTy::CreateTypeSSpr
                              (*(ccFntTy **)(DAT_0081176c + 0x30),local_478,0x158,0x39,CASE_FFFFFFFE,
                               0xffffffff,1,-1,-1);
           (**(code **)(iVar4 + 8))(puVar7,uVar5,uVar6);
-          *(undefined4 *)&this_00[1].field_0xe6 = 0;
+          this_00->field_1D90 = 0;
         }
       }
       local_8 = local_8 & 0xffffff00;
-      if (this_00->field_0x9a != '\0') {
+      if (this_00->field_009A != '\0') {
         do {
           uVar10 = local_8 & 0xff;
           local_10 = (UINT *)(uVar10 * 0x27 + param_2);
@@ -118,8 +118,8 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
             (**(code **)(iVar4 + 8))(puVar7,uVar5,uVar6);
             if ((*local_10 == *(UINT *)(&this_00->field_0xbc + iVar9)) &&
                ((char)local_10[1] == '\0')) {
-              *(int *)(&this_00->field_0x17c + iVar9) = *(int *)(&this_00->field_0x180 + iVar9) + -3
-              ;
+              *(int *)((int)&this_00->field_017C + iVar9) =
+                   *(int *)(&this_00->field_0x180 + iVar9) + -3;
               pUVar11 = local_10;
               pUVar12 = (UINT *)(&this_00->field_0xbc + iVar9);
               for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -131,7 +131,7 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
               *(undefined1 *)((int)pUVar12 + 2) = *(undefined1 *)((int)pUVar11 + 2);
             }
             else {
-              *(undefined4 *)(&this_00->field_0x17c + iVar9) = 0;
+              *(undefined4 *)((int)&this_00->field_017C + iVar9) = 0;
               pUVar11 = local_10;
               pUVar12 = (UINT *)(&this_00->field_0xbc + iVar9);
               for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -145,21 +145,21 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
           }
           bVar3 = (char)local_8 + 1;
           local_8 = CONCAT31(local_8._1_3_,bVar3);
-        } while (bVar3 < (byte)this_00->field_0x9a);
+        } while (bVar3 < (byte)this_00->field_009A);
       }
       bVar3 = 0;
       local_8 = local_8 & 0xffffff00;
-      if (this_00->field_0x9a != '\0') {
+      if (this_00->field_009A != '\0') {
         do {
           uVar10 = local_8 & 0xff;
-          *(undefined4 *)(&this_00->field_0x127 + uVar10 * 0x1fb) = this_00->field_0061;
-          *(uint *)(&this_00->field_0x123 + uVar10 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
+          *(undefined4 *)((int)&this_00->field_0127 + uVar10 * 0x1fb) = this_00->field_0061;
+          *(uint *)((int)&this_00->field_0123 + uVar10 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
           if (*(int *)(&this_00->field_0xbc + uVar10 * 0x1fb) != 0) {
             local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
           }
           bVar3 = bVar3 + 1;
           local_8 = CONCAT31(local_8._1_3_,bVar3);
-        } while (bVar3 < (byte)this_00->field_0x9a);
+        } while (bVar3 < (byte)this_00->field_009A);
       }
       puVar7 = (undefined4 *)&this_00->field_0x1c82;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -168,14 +168,14 @@ MMsgTy::SetPanel(MMsgTy *this,UINT param_1,int param_2,int param_3,UINT param_4)
       }
       *(undefined2 *)puVar7 = 0;
       *(undefined4 *)&this_00->field_0x1c9c = 0x1010101;
-      *(undefined4 *)&this_00->field_0x1ca0 = 0x1010101;
-      *(undefined4 *)&this_00->field_0x1ca4 = 0x1010101;
-      this_00->field_0x1ca8 = 1;
+      this_00->field_1CA0 = 0x1010101;
+      this_00->field_1CA4 = 0x1010101;
+      this_00->field_1CA8 = 1;
       this_00->field_0065 = 3;
       thunk_FUN_005b6730(this_00,5,'\0',-1);
-      iVar4 = *(int *)&this_00[1].field_0x1;
+      iVar4 = this_00->field_1CAB;
       if (iVar4 != 0) {
-        piVar1 = *(int **)&this_00->field_0xc;
+        piVar1 = (int *)this_00->field_000C;
         piVar13 = local_34;
         for (iVar9 = 8; iVar9 != 0; iVar9 = iVar9 + -1) {
           *piVar13 = 0;

@@ -69,14 +69,14 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
               {
                 iVar5 = (**(code **)(*this_00 + 0x2c))();
                 uVar7 = thunk_FUN_00674fb0(iVar5);
-                if ((*(uint *)&pAVar3->field_0x17f & uVar7) != 0) {
-                  if (*(short *)&pAVar3->field_0x39 == 3) {
+                if ((pAVar3->field_017F & uVar7) != 0) {
+                  if (pAVar3->field_0039 == 3) {
                     iVar5 = (**(code **)(*this_00 + 0xc4))();
                   }
                   else {
                     iVar5 = (**(code **)(*this_00 + 0x7c))();
                   }
-                  if (iVar5 < *(short *)&pAVar3->field_0x177) {
+                  if (iVar5 < (short)pAVar3->field_0177) {
                     iVar5 = (**(code **)(*this_00 + 0x2c))();
                     if ((iVar5 < 0x32) || (0x73 < iVar5)) {
                       bVar2 = false;
@@ -85,7 +85,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
                       bVar2 = true;
                     }
                     if (bVar2) {
-                      if (*(short *)&pAVar3->field_0x39 == 3) {
+                      if (pAVar3->field_0039 == 3) {
 LAB_00661a96:
                         bVar2 = false;
                       }
@@ -98,8 +98,8 @@ LAB_00661a96:
                         bVar2 = true;
                       }
                       if (!bVar2) {
-                        if ((local_18 != 0) || (*(short *)&pAVar3->field_0x39 != 3)) {
-                          if (*(short *)&pAVar3->field_0x39 == 3) {
+                        if ((local_18 != 0) || (pAVar3->field_0039 != 3)) {
+                          if (pAVar3->field_0039 == 3) {
                             thunk_FUN_004d7270(this_00);
                           }
                           else {

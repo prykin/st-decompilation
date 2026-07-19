@@ -1,4 +1,4 @@
-FUN_0067e4a0:
+GetStrategName:
 0067E4A0  55                        PUSH EBP
 0067E4A1  8B EC                     MOV EBP,ESP
 0067E4A3  83 EC 44                  SUB ESP,0x44

@@ -91,7 +91,7 @@ STBoatC::PrepareForLoading
         this->field_05C4 = 3;
         return;
       }
-      if (*(short *)&this->field_0x6c == this->field_05B0) {
+      if (this->field_006C == this->field_05B0) {
         this->field_05C4 = 6;
         return;
       }

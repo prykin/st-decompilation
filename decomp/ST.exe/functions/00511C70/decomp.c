@@ -37,10 +37,10 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
     iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar4 == 0) {
-      if (*(int *)&local_8->field_0x17c != 0) {
-        FUN_006e6080(local_8,2,*(int *)&local_8->field_0x17c,(undefined4 *)&local_8->field_0x18);
+      if (local_8->field_017C != 0) {
+        FUN_006e6080(local_8,2,local_8->field_017C,(undefined4 *)&local_8->field_0x18);
       }
-      piVar5 = (int *)&this_00->field_0x180;
+      piVar5 = &this_00->field_0180;
       iVar4 = 7;
       do {
         if (*piVar5 != 0) {
@@ -49,8 +49,8 @@ void __thiscall HelpPanelTy::ShiftControls(HelpPanelTy *this,int param_1)
         piVar5 = piVar5 + 1;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
-      if (*(int *)&this_00->field_0x19c != 0) {
-        FUN_006e6080(this_00,2,*(int *)&this_00->field_0x19c,(undefined4 *)&this_00->field_0x18);
+      if (this_00->field_019C != 0) {
+        FUN_006e6080(this_00,2,this_00->field_019C,(undefined4 *)&this_00->field_0x18);
         puVar6 = (undefined4 *)&this_00->field_0x18;
         for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
           *puVar6 = 0;

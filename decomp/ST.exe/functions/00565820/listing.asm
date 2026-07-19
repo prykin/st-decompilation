@@ -1,4 +1,4 @@
-FUN_00565820:
+AiMinesDistribTgts:
 00565820  55                        PUSH EBP
 00565821  8B EC                     MOV EBP,ESP
 00565823  81 EC D4 00 00 00         SUB ESP,0xd4
@@ -917,7 +917,7 @@ LAB_00566218:
 LAB_0056623c:
 0056623C  4B                        DEC EBX
 0056623D  75 D9                     JNZ 0x00566218
-FUN_00565820::cf_common_exit_0056623F:
+AiMinesDistribTgts::cf_common_exit_0056623F:
 0056623F  8B 55 E0                  MOV EDX,dword ptr [EBP + -0x20]
 00566242  52                        PUSH EDX
 00566243  E8 C8 7E 14 00            CALL 0x006ae110

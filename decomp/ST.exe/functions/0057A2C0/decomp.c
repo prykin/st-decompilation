@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Igor\to_etorp.cpp
+   Diagnostic line evidence: 76 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __cdecl
 FUN_0057a2c0(int *param_1,uint param_2,int *param_3,int param_4,int param_5,undefined4 param_6,
             int param_7)

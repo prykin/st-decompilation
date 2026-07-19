@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\wlad\Grpway3d.cpp
+   Diagnostic line evidence: 371 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __thiscall
 FUN_0040bc90(void *this,uint param_1,short *param_2,short *param_3,short *param_4,char param_5)
 

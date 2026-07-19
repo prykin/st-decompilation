@@ -1,4 +1,4 @@
-FUN_005403c0:
+PutDDX:
 005403C0  55                        PUSH EBP
 005403C1  8B EC                     MOV EBP,ESP
 005403C3  83 EC 44                  SUB ESP,0x44

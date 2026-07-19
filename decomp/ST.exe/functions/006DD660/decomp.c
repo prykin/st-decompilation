@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Strend.cpp
+   Diagnostic line evidence: 986 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __thiscall FUN_006dd660(void *this,int param_1,int param_2,int param_3,int param_4)
 
 {

@@ -1,4 +1,4 @@
-FUN_007171c0:
+mfRSprLoadAsQSpr:
 007171C0  55                        PUSH EBP
 007171C1  8B EC                     MOV EBP,ESP
 007171C3  83 EC 58                  SUB ESP,0x58

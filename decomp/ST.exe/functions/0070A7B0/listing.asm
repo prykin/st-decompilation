@@ -1,4 +1,4 @@
-FUN_0070a7b0:
+mfImgGetHeight:
 0070A7B0  55                        PUSH EBP
 0070A7B1  8B EC                     MOV EBP,ESP
 0070A7B3  83 EC 50                  SUB ESP,0x50

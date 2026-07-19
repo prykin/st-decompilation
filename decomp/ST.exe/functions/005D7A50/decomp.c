@@ -6,17 +6,15 @@
 void __thiscall SIDTy::InitSID(SIDTy *this)
 
 {
-  undefined1 *puVar1;
-  code *pcVar2;
-  SIDTy *pSVar3;
+  code *pcVar1;
   SIDTy *this_00;
-  int iVar4;
-  uint uVar5;
-  undefined4 *puVar6;
-  uint *puVar7;
-  undefined4 uVar8;
-  int iVar9;
-  uint uVar10;
+  int iVar2;
+  uint uVar3;
+  undefined4 *puVar4;
+  uint *puVar5;
+  undefined4 uVar6;
+  int iVar7;
+  uint uVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
@@ -25,145 +23,136 @@ void __thiscall SIDTy::InitSID(SIDTy *this)
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
-  if (iVar4 == 0) {
-    pSVar3 = local_8 + 0x42;
-    SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&pSVar3->field_0x56,DAT_008075a8,0x2f,'\a',(undefined4 *)0x0,0,0);
-    (**(code **)(*(int *)&pSVar3->field_0x56 + 4))(DAT_00806784,7,0,s_MM_SID_007cd620,0xffffffff);
-    *(undefined4 *)&this_00[0x43].field_0xd = 0x2e;
-    *(undefined4 *)((int)&this_00[0x43].field_0010 + 1) = 0x193;
-    *(undefined4 *)&this_00[0x42].field_0x5e = 0;
-    if (*(uint *)&this_00[0x42].field_0x5a != 0xffffffff) {
+  if (iVar2 == 0) {
+    puVar4 = &local_8->field_1A60;
+    SpriteClassTy::InitSprite((SpriteClassTy *)puVar4,DAT_008075a8,0x2f,'\a',(undefined4 *)0x0,0,0);
+    (**(code **)(*puVar4 + 4))(DAT_00806784,7,0,s_MM_SID_007cd620,0xffffffff);
+    this_00->field_1A7C = 0x2e;
+    this_00->field_1A80 = 0x193;
+    this_00->field_1A68 = 0;
+    if (this_00->field_1A64 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)&this_00[0x43].field_0x39,*(uint *)&this_00[0x42].field_0x5a,
-                 *(uint *)&this_00[0x42].field_0x5e,*(uint *)&this_00[0x43].field_0xd,
-                 *(uint *)((int)&this_00[0x43].field_0010 + 1));
+                ((uint *)this_00->field_1AA8,this_00->field_1A64,this_00->field_1A68,
+                 this_00->field_1A7C,this_00->field_1A80);
     }
-    iVar4 = 1;
-    puVar6 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
-    uVar5 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
-    iVar4 = FUN_006b50c0(0x15e,0xa5,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar5,
-                         puVar6,iVar4);
-    *(int *)&this_00[0x48].field_0x50 = iVar4;
-    uVar5 = *(uint *)(iVar4 + 0x14);
-    if (uVar5 == 0) {
-      uVar5 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(iVar4 + 8);
+    iVar2 = 1;
+    puVar4 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
+    uVar3 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
+    iVar2 = FUN_006b50c0(0x15e,0xa5,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar3,
+                         puVar4,iVar2);
+    this_00->field_1CB8 = iVar2;
+    uVar3 = *(uint *)(iVar2 + 0x14);
+    if (uVar3 == 0) {
+      uVar3 = ((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(iVar2 + 8);
     }
-    puVar6 = (undefined4 *)FUN_006b4fa0(iVar4);
-    for (uVar10 = uVar5 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *puVar6 = 0xffffffff;
-      puVar6 = puVar6 + 1;
+    puVar4 = (undefined4 *)FUN_006b4fa0(iVar2);
+    for (uVar8 = uVar3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
-    iVar4 = 1;
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)puVar6 = 0xff;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+    iVar2 = 1;
+    for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+      *(undefined1 *)puVar4 = 0xff;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    puVar6 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
-    uVar5 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
-    iVar4 = FUN_006b50c0(0x13e,0xe,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar5,
-                         puVar6,iVar4);
-    *(int *)&this_00[0x48].field_0x54 = iVar4;
-    uVar5 = *(uint *)(iVar4 + 0x14);
-    if (uVar5 == 0) {
-      uVar5 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(iVar4 + 8);
+    puVar4 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
+    uVar3 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
+    iVar2 = FUN_006b50c0(0x13e,0xe,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar3,
+                         puVar4,iVar2);
+    this_00->field_1CBC = iVar2;
+    uVar3 = *(uint *)(iVar2 + 0x14);
+    if (uVar3 == 0) {
+      uVar3 = ((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(iVar2 + 8);
     }
-    puVar6 = (undefined4 *)FUN_006b4fa0(iVar4);
-    for (uVar10 = uVar5 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *puVar6 = 0xffffffff;
-      puVar6 = puVar6 + 1;
+    puVar4 = (undefined4 *)FUN_006b4fa0(iVar2);
+    for (uVar8 = uVar3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
-    iVar4 = 1;
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)puVar6 = 0xff;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+    iVar2 = 1;
+    for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+      *(undefined1 *)puVar4 = 0xff;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    puVar6 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
-    uVar5 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
-    iVar4 = FUN_006b50c0(0x104,0x28,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar5,
-                         puVar6,iVar4);
-    *(int *)&this_00[0x48].field_0x58 = iVar4;
-    uVar5 = *(uint *)(iVar4 + 0x14);
-    if (uVar5 == 0) {
-      uVar5 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-              *(int *)(iVar4 + 8);
+    puVar4 = (undefined4 *)(*(int *)(DAT_0081176c + 0x2c) + 0x28);
+    uVar3 = FUN_006b4fe0(*(int *)(DAT_0081176c + 0x2c));
+    iVar2 = FUN_006b50c0(0x104,0x28,(uint)*(ushort *)(*(int *)(DAT_0081176c + 0x2c) + 0xe),uVar3,
+                         puVar4,iVar2);
+    this_00->field_1CC0 = iVar2;
+    uVar3 = *(uint *)(iVar2 + 0x14);
+    if (uVar3 == 0) {
+      uVar3 = ((uint)*(ushort *)(iVar2 + 0xe) * *(int *)(iVar2 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+              *(int *)(iVar2 + 8);
     }
-    puVar6 = (undefined4 *)FUN_006b4fa0(iVar4);
-    for (uVar10 = uVar5 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *puVar6 = 0xffffffff;
-      puVar6 = puVar6 + 1;
+    puVar4 = (undefined4 *)FUN_006b4fa0(iVar2);
+    for (uVar8 = uVar3 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      *puVar4 = 0xffffffff;
+      puVar4 = puVar4 + 1;
     }
-    for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(undefined1 *)puVar6 = 0xff;
-      puVar6 = (undefined4 *)((int)puVar6 + 1);
+    for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
+      *(undefined1 *)puVar4 = 0xff;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
     PaintExplanation(this_00);
-    uVar5 = *(uint *)&this_00[0x48].field_0x50;
-    puVar1 = &this_00[0x48].field_0x4c;
-    FUN_006b2330((uint)DAT_008075a8,(uint *)puVar1,0x2e,0x4023f6,*(uint *)(uVar5 + 4),
-                 *(uint *)(uVar5 + 8),uVar5);
-    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*(uint *)puVar1,0xffffffff,0xe1,0x1a9);
-    FUN_006b3af0(DAT_008075a8,*(uint *)puVar1);
+    uVar3 = this_00->field_1CB8;
+    puVar4 = &this_00->field_1CB4;
+    FUN_006b2330((uint)DAT_008075a8,puVar4,0x2e,0x4023f6,*(uint *)(uVar3 + 4),*(uint *)(uVar3 + 8),
+                 uVar3);
+    Library::DKW::DDX::FUN_006b3640(DAT_008075a8,*puVar4,0xffffffff,0xe1,0x1a9);
+    FUN_006b3af0(DAT_008075a8,*puVar4);
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&this_00[0x44].field_0x2d,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0
-               ,0);
-    (**(code **)(*(int *)&this_00[0x44].field_0x2d + 4))
-              (DAT_00806784,7,0,s_SID_SLDUP_007cd614,0xffffffff);
-    *(undefined4 *)&this_00[0x44].field_0x49 = 0x22b;
-    *(undefined4 *)&this_00[0x44].field_0x4d = 0x1be;
-    *(undefined4 *)&this_00[0x44].field_0x35 = 0;
-    if (*(uint *)&this_00[0x44].field_0x31 != 0xffffffff) {
-      FUN_006b3af0((int *)this_00[0x45].field_0010,*(uint *)&this_00[0x44].field_0x31);
+              ((SpriteClassTy *)&this_00->field_1B01,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
+    (**(code **)(this_00->field_1B01 + 4))(DAT_00806784,7,0,s_SID_SLDUP_007cd614,0xffffffff);
+    this_00->field_1B1D = 0x22b;
+    this_00->field_1B21 = 0x1be;
+    this_00->field_1B09 = 0;
+    if (this_00->field_1B05 != 0xffffffff) {
+      FUN_006b3af0((int *)this_00->field_1B49,this_00->field_1B05);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&this_00[0x45].field_0x59,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0
-               ,0);
-    (**(code **)(*(int *)&this_00[0x45].field_0x59 + 4))
-              (DAT_00806784,7,0,s_SID_SLDDN_007cd608,0xffffffff);
-    this_00[0x46].field_0010 = 0x22b;
-    *(undefined4 *)&this_00[0x46].field_0x14 = 0x211;
-    this_00[0x45].field_0061 = 0;
-    if (*(uint *)&this_00[0x45].field_0x5d != 0xffffffff) {
-      FUN_006b3af0(*(int **)&this_00[0x46].field_0x3c,*(uint *)&this_00[0x45].field_0x5d);
+              ((SpriteClassTy *)&this_00->field_1B92,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
+    (**(code **)(this_00->field_1B92 + 4))(DAT_00806784,7,0,s_SID_SLDDN_007cd608,0xffffffff);
+    this_00->field_1BAE = 0x22b;
+    this_00->field_1BB2 = 0x211;
+    this_00->field_1B9A = 0;
+    if (this_00->field_1B96 != 0xffffffff) {
+      FUN_006b3af0((int *)this_00->field_1BDA,this_00->field_1B96);
     }
     SpriteClassTy::InitSprite
-              ((SpriteClassTy *)&this_00[0x47].field_0x20,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0
-               ,0);
-    (**(code **)(*(int *)&this_00[0x47].field_0x20 + 4))
-              (DAT_00806784,7,0,s_SID_SLDT_007cd5fc,0xffffffff);
-    *(undefined4 *)&this_00[0x47].field_0x3c = 0x22f;
-    *(undefined4 *)&this_00[0x47].field_0x40 = 0x1d3;
-    *(undefined4 *)&this_00[0x47].field_0x28 = 0;
-    if (*(uint *)&this_00[0x47].field_0x24 != 0xffffffff) {
-      FUN_006b3af0(*(int **)&this_00[0x48].field_0x3,*(uint *)&this_00[0x47].field_0x24);
+              ((SpriteClassTy *)&this_00->field_1C23,DAT_008075a8,0x2d,'\a',(undefined4 *)0x0,0,0);
+    (**(code **)(this_00->field_1C23 + 4))(DAT_00806784,7,0,s_SID_SLDT_007cd5fc,0xffffffff);
+    this_00->field_1C3F = 0x22f;
+    this_00->field_1C43 = 0x1d3;
+    this_00->field_1C2B = 0;
+    if (this_00->field_1C27 != 0xffffffff) {
+      FUN_006b3af0((int *)this_00->field_1C6B,this_00->field_1C27);
     }
-    puVar7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)&this_00[0x49].field_0x3 = puVar7;
-    Library::DKW::TBL::FUN_006b6020((int)puVar7,0,&DAT_008016a0);
-    iVar4 = 1;
-    puVar6 = (undefined4 *)(*(int *)&this_00[0x48].field_0x50 + 0x28);
-    uVar5 = FUN_006b4fe0(*(int *)&this_00[0x48].field_0x50);
-    uVar8 = FUN_006b50c0(0x156,0xe,(uint)*(ushort *)(*(int *)&this_00[0x48].field_0x50 + 0xe),uVar5,
-                         puVar6,iVar4);
-    *(undefined4 *)&this_00[0x48].field_0x60 = uVar8;
-    *(undefined1 *)(this_00 + 1) = 3;
+    puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
+    this_00->field_1CD0 = puVar5;
+    Library::DKW::TBL::FUN_006b6020((int)puVar5,0,&DAT_008016a0);
+    iVar2 = 1;
+    puVar4 = (undefined4 *)(this_00->field_1CB8 + 0x28);
+    uVar3 = FUN_006b4fe0(this_00->field_1CB8);
+    uVar6 = FUN_006b50c0(0x156,0xe,(uint)*(ushort *)(this_00->field_1CB8 + 0xe),uVar3,puVar4,iVar2);
+    this_00->field_1CC8 = uVar6;
+    this_00->field_0065 = 3;
     thunk_FUN_005b6730(this_00,1,'\0',-1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar9 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x49,0,iVar4,&DAT_007a4ccc,
+  iVar7 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x49,0,iVar2,&DAT_007a4ccc,
                              s_SIDTy__InitSID_007cd5e8);
-  if (iVar9 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+  if (iVar7 != 0) {
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
-  RaiseInternalException(iVar4,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x49);
+  RaiseInternalException(iVar2,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x49);
   return;
 }
 

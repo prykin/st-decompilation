@@ -14,7 +14,7 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
   undefined4 unaff_ESI;
   undefined4 *puVar6;
   void *unaff_EDI;
-  STTorpC *pSVar7;
+  undefined4 *puVar7;
   InternalExceptionFrame local_50;
   STTorpC *local_c;
   int local_8;
@@ -27,18 +27,18 @@ void __thiscall STTorpC::RestoreTorpData(STTorpC *this,int param_1)
   pSVar2 = local_c;
   if (iVar3 == 0) {
     puVar6 = (undefined4 *)(local_8 + 0x14);
-    pSVar7 = local_c + 0x245;
+    puVar7 = (undefined4 *)&local_c->field_0x245;
     for (iVar3 = 0x11; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pSVar7 = *puVar6;
+      *puVar7 = *puVar6;
       puVar6 = puVar6 + 1;
-      pSVar7 = pSVar7 + 4;
+      puVar7 = puVar7 + 1;
     }
-    *(undefined4 *)(local_c + 0x231) = *(undefined4 *)(local_8 + 0x58);
-    *(undefined4 *)(local_c + 0x235) = *(undefined4 *)(local_8 + 0x5c);
-    *(undefined4 *)(local_c + 0x239) = *(undefined4 *)(local_8 + 0x60);
-    *(undefined4 *)(local_c + 0x23d) = *(undefined4 *)(local_8 + 100);
+    *(undefined4 *)&local_c->field_0x231 = *(undefined4 *)(local_8 + 0x58);
+    local_c->field_0235 = *(undefined4 *)(local_8 + 0x5c);
+    local_c->field_0239 = *(undefined4 *)(local_8 + 0x60);
+    local_c->field_023D = *(undefined4 *)(local_8 + 100);
     uVar4 = FUN_006b0060((uint *)0x0,(uint *)(*(int *)(local_8 + 0x68) + local_8));
-    *(undefined4 *)(pSVar2 + 0x241) = uVar4;
+    pSVar2->field_0241 = uVar4;
     g_currentExceptionFrame = local_50.previous;
     return;
   }

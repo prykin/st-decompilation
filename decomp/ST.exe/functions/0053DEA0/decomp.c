@@ -10,8 +10,8 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
                    undefined4 param_14)
 
 {
-  code *pcVar1;
-  UPanelTy *pUVar2;
+  UPanelTy *pUVar1;
+  code *pcVar2;
   UPanelTy *pUVar3;
   int iVar4;
   int iVar5;
@@ -66,9 +66,9 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
     if (param_6 != 0) {
-      pUVar2 = local_10 + 1;
-      wsprintfA(&pUVar2->field_0xc,&DAT_007c181c,param_6);
-      local_8 = cMf32::RecGet(DAT_00806790,param_5,&pUVar2->field_0xc,(int *)0x0,1);
+      pUVar1 = local_10 + 1;
+      wsprintfA((LPSTR)pUVar1,&DAT_007c181c,param_6);
+      local_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)pUVar1,(int *)0x0,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
       local_1c0 = *(undefined4 *)(local_8 + 2);
@@ -89,7 +89,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     if (local_8 != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
     }
-    local_1b0 = *(undefined4 *)&pUVar3->field_0x8;
+    local_1b0 = pUVar3->field_0008;
     local_168 = param_8;
     local_c8 = 1;
     local_c4 = 1;
@@ -115,9 +115,9 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_170 = local_1b0;
     if (param_12 != (char *)0x0) {
       local_ac = FUN_0070aa70(DAT_00806790,param_12,0,1);
-      local_a8 = FUN_0070a6f0(DAT_00806790,0x12,param_12,1);
+      local_a8 = mfImgGetWidth(DAT_00806790,0x12,param_12,1);
     }
-    (**(code **)(**(int **)&pUVar3->field_0xc + 8))(2,&local_c,0,local_1d0,0);
+    (**(code **)(*(int *)pUVar3->field_000C + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }
@@ -128,8 +128,8 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xb1);
     return 0;
   }
-  pcVar1 = (code *)swi(3);
-  uVar6 = (*pcVar1)();
+  pcVar2 = (code *)swi(3);
+  uVar6 = (*pcVar2)();
   return uVar6;
 }
 

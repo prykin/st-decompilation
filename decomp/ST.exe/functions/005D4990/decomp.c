@@ -24,7 +24,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar2 == 0) {
       if (*param_2 != 0xffffffff) {
-        uVar5 = *(uint *)(*(int *)&local_8->field_0x1a5b + 0x6a6);
+        uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
         puVar6 = *(undefined4 **)(param_1 + 8);
         for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
           *puVar6 = 0;
@@ -41,7 +41,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
         if (uVar5 != 0) {
           do {
             param_2 = param_2 + 1;
-            if (*param_2 < *(uint *)(*(int *)&local_8->field_0x1a5b + 0x6a6)) {
+            if (*param_2 < *(uint *)&local_8->field_1A5B->field_0x6a6) {
               *(undefined1 *)(*param_2 + iVar2) = 1;
             }
             uVar4 = uVar4 + 1;
@@ -50,7 +50,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      uVar5 = *(uint *)(*(int *)&local_8->field_0x1a5b + 0x6a6);
+      uVar5 = *(uint *)&local_8->field_1A5B->field_0x6a6;
       puVar6 = *(undefined4 **)(param_1 + 8);
       for (uVar4 = uVar5 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
         *puVar6 = 0x1010101;
@@ -60,7 +60,7 @@ void __thiscall SettMapMTy::PrepareAFT(SettMapMTy *this,int param_1,uint *param_
         *(undefined1 *)puVar6 = 1;
         puVar6 = (undefined4 *)((int)puVar6 + 1);
       }
-      *(undefined4 *)(param_1 + 4) = *(undefined4 *)(*(int *)&local_8->field_0x1a5b + 0x6a6);
+      *(undefined4 *)(param_1 + 4) = *(undefined4 *)&local_8->field_1A5B->field_0x6a6;
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

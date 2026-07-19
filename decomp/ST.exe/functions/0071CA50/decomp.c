@@ -61,19 +61,19 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 4:
-    iVar5 = **(int **)(local_8 + 0x1c);
+    iVar5 = *(int *)local_8->field_001C;
     if ((*(byte *)(param_1 + 0x14) & 3) == 0) {
       (**(code **)(iVar5 + 0x20))();
-      *(undefined4 *)(pIVar4 + 0x60) = 0;
-      (**(code **)(**(int **)(pIVar4 + 0x20) + 0x20))(*(int **)(pIVar4 + 0x20));
-      *(undefined4 *)(pIVar4 + 100) = 0;
+      pIVar4->field_0060 = 0;
+      (**(code **)(*(int *)pIVar4->field_0020 + 0x20))((int *)pIVar4->field_0020);
+      pIVar4->field_0064 = 0;
       g_currentExceptionFrame = local_5c.previous;
       return 0;
     }
-    iVar5 = (**(code **)(iVar5 + 0x1c))(*(int **)(local_8 + 0x1c));
-    *(uint *)(pIVar4 + 0x60) = (uint)(-1 < iVar5);
-    iVar5 = (**(code **)(**(int **)(pIVar4 + 0x20) + 0x1c))(*(int **)(pIVar4 + 0x20));
-    *(uint *)(pIVar4 + 100) = (uint)(-1 < iVar5);
+    iVar5 = (**(code **)(iVar5 + 0x1c))((int *)local_8->field_001C);
+    pIVar4->field_0060 = (uint)(-1 < iVar5);
+    iVar5 = (**(code **)(*(int *)pIVar4->field_0020 + 0x1c))((int *)pIVar4->field_0020);
+    pIVar4->field_0064 = (uint)(-1 < iVar5);
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x10:
@@ -98,22 +98,22 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x15:
-    *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)(local_8 + 0x2c);
-    *(undefined2 *)(param_1 + 0x1a) = *(undefined2 *)(local_8 + 0x30);
+    *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)&local_8->field_0x2c;
+    *(undefined2 *)(param_1 + 0x1a) = *(undefined2 *)&local_8->field_0x30;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x16:
-    *(uint *)(local_8 + 0x2c) = (uint)*(ushort *)(param_1 + 0x18);
-    *(uint *)(local_8 + 0x30) = (uint)*(ushort *)(param_1 + 0x1a);
-    *(undefined4 *)(local_8 + 0x54) = 1;
+    *(uint *)&local_8->field_0x2c = (uint)*(ushort *)(param_1 + 0x18);
+    *(uint *)&local_8->field_0x30 = (uint)*(ushort *)(param_1 + 0x1a);
+    local_8->field_0054 = 1;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x17:
     puVar1 = *(undefined4 **)(param_1 + 0x14);
-    *(undefined4 *)(local_8 + 0x34) = *puVar1;
-    *(undefined4 *)(local_8 + 0x38) = puVar1[1];
-    *(undefined4 *)(local_8 + 0x3c) = puVar1[2];
-    *(undefined4 *)(local_8 + 0x40) = puVar1[3];
+    local_8->field_0034 = *puVar1;
+    local_8->field_0038 = puVar1[1];
+    local_8->field_003C = puVar1[2];
+    local_8->field_0040 = puVar1[3];
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x18:
@@ -125,7 +125,7 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x1a:
-    pbVar6 = *(byte **)(local_8 + 0x28);
+    pbVar6 = (byte *)local_8->field_0028;
     uVar9 = *(undefined4 *)(pbVar6 + 4);
     do {
       pbVar6[4] = 0;
@@ -133,7 +133,7 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
       pbVar6[6] = 0;
       pbVar6[7] = 0;
       do {
-        iVar5 = *(int *)(local_8 + 0x28);
+        iVar5 = local_8->field_0028;
         uVar2 = *(uint *)(iVar5 + 4);
         if (uVar2 < *(uint *)(iVar5 + 0xc)) {
           pbVar6 = (byte *)(*(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c));
@@ -143,17 +143,17 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
           pbVar6 = (byte *)0x0;
         }
         if (pbVar6 == (byte *)0x0) {
-          *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = uVar9;
+          *(undefined4 *)(local_8->field_0028 + 4) = uVar9;
           g_currentExceptionFrame = local_5c.previous;
           return 0;
         }
       } while ((*pbVar6 & 1) != 0);
     } while( true );
   case 0x1b:
-    uVar9 = *(undefined4 *)(*(int *)(local_8 + 0x28) + 4);
-    *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = 0;
+    uVar9 = *(undefined4 *)(local_8->field_0028 + 4);
+    *(undefined4 *)(local_8->field_0028 + 4) = 0;
     while( true ) {
-      iVar5 = *(int *)(local_8 + 0x28);
+      iVar5 = local_8->field_0028;
       uVar2 = *(uint *)(iVar5 + 4);
       if (uVar2 < *(uint *)(iVar5 + 0xc)) {
         iVar8 = *(int *)(iVar5 + 8) * uVar2 + *(int *)(iVar5 + 0x1c);
@@ -165,12 +165,12 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
       if (iVar8 == 0) break;
       *(undefined4 *)(iVar8 + 4) = 1;
     }
-    *(undefined4 *)(*(int *)(local_8 + 0x28) + 4) = uVar9;
+    *(undefined4 *)(local_8->field_0028 + 4) = uVar9;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   case 0x65:
     *(undefined4 *)(param_1 + 0x14) = 0;
-    iVar5 = *(int *)(local_8 + 0x24);
+    iVar5 = local_8->field_0024;
     if (iVar5 != 0) {
       uVar2 = *(uint *)(iVar5 + 0xc);
       if (uVar2 - 1 < uVar2) {
@@ -193,13 +193,13 @@ undefined4 __thiscall InputClassTy::GetMessage(InputClassTy *this,int param_1)
       exceptionCode = GetLastError();
       RaiseInternalException(exceptionCode,iVar5,sourceFile,iVar8);
     }
-    *(LONG *)(local_8 + 0x3c) = local_18.right - local_18.left;
-    *(LONG *)(local_8 + 0x34) = local_18.left;
-    *(LONG *)(local_8 + 0x38) = local_18.top;
-    *(int *)(local_8 + 0x2c) = (local_18.right - local_18.left) / 2 + local_18.left;
-    *(LONG *)(local_8 + 0x40) = local_18.bottom - local_18.top;
-    *(undefined4 *)(local_8 + 0x54) = 1;
-    *(int *)(local_8 + 0x30) = (local_18.bottom - local_18.top) / 2 + local_18.top;
+    local_8->field_003C = local_18.right - local_18.left;
+    local_8->field_0034 = local_18.left;
+    local_8->field_0038 = local_18.top;
+    *(int *)&local_8->field_0x2c = (local_18.right - local_18.left) / 2 + local_18.left;
+    local_8->field_0040 = local_18.bottom - local_18.top;
+    local_8->field_0054 = 1;
+    *(int *)&local_8->field_0x30 = (local_18.bottom - local_18.top) / 2 + local_18.top;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   }

@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\St3dspr.cpp
+   Diagnostic line evidence: 4201 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 int __fastcall FUN_006ed100(undefined4 *param_1)
 

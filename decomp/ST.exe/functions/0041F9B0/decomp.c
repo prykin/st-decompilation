@@ -206,7 +206,7 @@ LAB_0041fe0d:
             }
             if (((iVar7 != 0) && (*(uint *)(iVar7 + 0x24) < 8)) &&
                (((DAT_00802a38 == 0 || ((byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51] < 8))
-                && (*(int *)&local_1c->field_0x18 != *(int *)(iVar7 + 0x18))))) {
+                && (local_1c->field_0018 != *(int *)(iVar7 + 0x18))))) {
               if ((*(byte *)(iVar7 + 0x1d1) & 0x10) != 0) {
                 if (param_8 != (int *)0x0) {
                   *param_8 = iVar7;
@@ -220,7 +220,7 @@ LAB_0041fe0d:
                     (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51]))))
                 goto cf_continue_loop_0042004A;
                 bVar6 = *(byte *)(iVar7 + 0x24);
-                bVar1 = local_1c->field_0x24;
+                bVar1 = local_1c->field_0024;
                 _local_38 = CONCAT31(uStack_37,bVar6);
                 _local_3c = CONCAT31(uStack_3b,bVar1);
                 if (DAT_00808a8f == '\0') {
@@ -267,7 +267,7 @@ LAB_0041fffd:
                         (-0x5001fff6,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb93);
             }
           }
-          else if (*(int *)&local_1c->field_0x18 != *(int *)(iVar13 + 0x18)) {
+          else if (local_1c->field_0018 != *(int *)(iVar13 + 0x18)) {
             if (param_8 != (int *)0x0) {
               *param_8 = iVar13;
             }
@@ -280,7 +280,7 @@ LAB_0041fffd:
                  ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51])
                   ))) goto cf_continue_loop_0042004A;
               bVar6 = *(byte *)(iVar13 + 0x24);
-              bVar1 = local_1c->field_0x24;
+              bVar1 = local_1c->field_0024;
               _local_40 = CONCAT31(uStack_3f,bVar6);
               _local_34 = CONCAT31(uStack_33,bVar1);
               if (DAT_00808a8f == '\0') {

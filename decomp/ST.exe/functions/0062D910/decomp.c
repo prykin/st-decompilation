@@ -49,16 +49,16 @@ STManRub3C::AddNewDock
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_rab3m_cpp_007d13ec,0x1ca);
     return 0xffff;
   }
-  if (*(int *)(local_8 + param_1 * 4 + 0x50) == 0) {
+  if (*(int *)(&local_8->field_0x50 + param_1 * 4) == 0) {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x28,10);
-    *(uint **)(pSVar2 + param_1 * 4 + 0x50) = puVar4;
+    *(uint **)(&pSVar2->field_0x50 + param_1 * 4) = puVar4;
   }
   else {
-    local_c = *(int *)(*(int *)(local_8 + param_1 * 4 + 0x50) + 0xc);
+    local_c = *(int *)(*(int *)(&local_8->field_0x50 + param_1 * 4) + 0xc);
     uVar6 = 0;
     if (0 < local_c) {
       do {
-        iVar3 = *(int *)(local_8 + param_1 * 4 + 0x50);
+        iVar3 = *(int *)(&local_8->field_0x50 + param_1 * 4);
         if (uVar6 < *(uint *)(iVar3 + 0xc)) {
           piVar5 = (int *)(*(int *)(iVar3 + 8) * uVar6 + *(int *)(iVar3 + 0x1c));
         }
@@ -78,7 +78,7 @@ STManRub3C::AddNewDock
       } while ((int)uVar6 < local_c);
     }
   }
-  puVar4 = *(uint **)(pSVar2 + param_1 * 4 + 0x50);
+  puVar4 = *(uint **)(&pSVar2->field_0x50 + param_1 * 4);
   if ((puVar4 != (uint *)0x0) && (*param_7 == 0)) {
     piVar5 = &local_38;
     for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {

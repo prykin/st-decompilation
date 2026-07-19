@@ -104,9 +104,9 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104);
     return;
   }
-  if (*(HANDLE *)&local_8[0x48].field_0x5c != (HANDLE)0x0) {
-    FindCloseChangeNotification(*(HANDLE *)&local_8[0x48].field_0x5c);
-    *(undefined4 *)&this_00[0x48].field_0x5c = 0;
+  if ((HANDLE)local_8->field_1CC4 != (HANDLE)0x0) {
+    FindCloseChangeNotification((HANDLE)local_8->field_1CC4);
+    this_00->field_1CC4 = 0;
   }
   uVar7 = 0xffffffff;
   pcVar9 = &DAT_00807680;
@@ -120,7 +120,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   } while (cVar1 != '\0');
   uVar7 = ~uVar7;
   pcVar9 = pcVar11 + -uVar7;
-  pcVar11 = &this_00[0x49].field_0x7;
+  pcVar11 = &this_00->field_1CD4;
   for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
     *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
     pcVar9 = pcVar9 + 4;
@@ -143,7 +143,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   } while (cVar1 != '\0');
   uVar7 = ~uVar7;
   iVar3 = -1;
-  pcVar9 = &this_00[0x49].field_0x7;
+  pcVar9 = &this_00->field_1CD4;
   do {
     pcVar10 = pcVar9;
     if (iVar3 == 0) break;
@@ -164,12 +164,12 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
     pcVar9 = pcVar9 + 1;
     pcVar11 = pcVar11 + 1;
   }
-  lpPathName = &this_00[0x49].field_0x7;
+  lpPathName = &this_00->field_1CD4;
   FUN_006b78c0(lpPathName,lpPathName);
   pvVar4 = FindFirstChangeNotificationA(lpPathName,0,2);
-  *(HANDLE *)&this_00[0x48].field_0x5c = pvVar4;
+  this_00->field_1CC4 = pvVar4;
   if (pvVar4 == (HANDLE)0xffffffff) {
-    *(undefined4 *)&this_00[0x48].field_0x5c = 0;
+    this_00->field_1CC4 = 0;
   }
   puVar12 = local_524;
   for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -186,23 +186,23 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   if (DAT_0080734c != '\0') {
     local_54 = 1;
   }
-  local_3ec = *(undefined4 *)&this_00[0x44].field_0x49;
+  local_3ec = this_00->field_1B1D;
   local_2ec = 1;
-  local_3e8 = *(undefined4 *)&this_00[0x44].field_0x4d;
-  local_3e4 = *(undefined4 *)&this_00[0x44].field_0x51;
-  local_3e0 = *(undefined4 *)&this_00[0x44].field_0x55;
-  local_26c = this_00[0x46].field_0010;
-  local_268 = *(undefined4 *)&this_00[0x46].field_0x14;
+  local_3e8 = this_00->field_1B21;
+  local_3e4 = this_00->field_1B25;
+  local_3e0 = this_00->field_1B29;
+  local_26c = this_00->field_1BAE;
+  local_268 = this_00->field_1BB2;
   local_2e8 = 1;
   local_16c = 1;
   local_168 = 1;
-  local_264 = *(undefined4 *)&this_00[0x46].field_0x18;
+  local_264 = this_00->field_1BB6;
   local_f4 = 1;
-  local_e8 = *(undefined4 *)&this_00[0x47].field_0x3c;
-  local_4fc = *(undefined4 *)&this_00->field_0x8;
-  local_260 = *(undefined4 *)&this_00[0x46].field_0x1c;
-  local_e4 = *(undefined4 *)&this_00[0x47].field_0x40;
-  local_e0 = *(undefined4 *)&this_00[0x47].field_0x44;
+  local_e8 = this_00->field_1C3F;
+  local_4fc = this_00->field_0008;
+  local_260 = this_00->field_1BBA;
+  local_e4 = this_00->field_1C43;
+  local_e0 = this_00->field_1C47;
   local_3f4 = 0;
   local_274 = 0;
   local_ec = 0;
@@ -237,7 +237,7 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_394 = local_4fc;
   local_214 = local_4fc;
   local_a4 = local_4fc;
-  (**(code **)(**(int **)&this_00->field_0xc + 8))(7,&this_00[0x44].field_0x1d,0,local_524,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(7,&this_00->field_1AF1,0,local_524,0);
   puVar12 = local_db0;
   for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar12 = 0;
@@ -246,8 +246,8 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_db0[0] = 0;
   local_db0[1] = 9;
   local_db0[2] = *(undefined4 *)(DAT_0081176c + 0x34);
-  local_db0[8] = *(undefined4 *)&this_00[0x49].field_0x3;
-  local_d64 = *(undefined4 *)&this_00->field_0x8;
+  local_db0[8] = this_00->field_1CD0;
+  local_d64 = this_00->field_0008;
   local_db0[3] = 0xe4;
   local_db0[4] = 0x1aa;
   local_db0[5] = 0x156;
@@ -260,27 +260,27 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d20 = 2;
   local_d1c = 0x68ff;
   local_d24 = local_d64;
-  (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00[0x44].field_0x21,0,local_db0,1);
+  (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_1AF5,0,local_db0,1);
   uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
-  *(undefined4 *)&this_00[0x44].field_0x25 = uVar5;
+  this_00->field_1AF9 = uVar5;
   uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
-  *(undefined4 *)&this_00[0x44].field_0x29 = uVar5;
+  this_00->field_1AFD = uVar5;
   PrepFiles(this_00);
-  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&this_00[0x48].field_0x4c);
-  if (*(uint *)&this_00[0x44].field_0x31 != 0xffffffff) {
+  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,this_00->field_1CB4);
+  if (this_00->field_1B05 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              ((uint *)this_00[0x45].field_0010,*(uint *)&this_00[0x44].field_0x31,0xfffffffe,
-               *(uint *)&this_00[0x44].field_0x49,*(uint *)&this_00[0x44].field_0x4d);
+              ((uint *)this_00->field_1B49,this_00->field_1B05,0xfffffffe,this_00->field_1B1D,
+               this_00->field_1B21);
   }
-  if (*(uint *)&this_00[0x45].field_0x5d != 0xffffffff) {
+  if (this_00->field_1B96 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)&this_00[0x46].field_0x3c,*(uint *)&this_00[0x45].field_0x5d,0xfffffffe,
-               this_00[0x46].field_0010,*(uint *)&this_00[0x46].field_0x14);
+              ((uint *)this_00->field_1BDA,this_00->field_1B96,0xfffffffe,this_00->field_1BAE,
+               this_00->field_1BB2);
   }
-  if (*(uint *)&this_00[0x47].field_0x24 != 0xffffffff) {
+  if (this_00->field_1C27 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)&this_00[0x48].field_0x3,*(uint *)&this_00[0x47].field_0x24,0xfffffffe,
-               *(uint *)&this_00[0x47].field_0x3c,*(uint *)&this_00[0x47].field_0x40);
+              ((uint *)this_00->field_1C6B,this_00->field_1C27,0xfffffffe,this_00->field_1C3F,
+               this_00->field_1C43);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

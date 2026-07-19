@@ -19,7 +19,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
   int local_c;
   int local_8;
   
-  local_c = *(int *)(*(int *)(this + 0x241) + 0xc);
+  local_c = *(int *)(this->field_0241 + 0xc);
   local_5c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_5c;
   local_10 = this;
@@ -34,7 +34,7 @@ int __thiscall STTorpC::IsDangerous(STTorpC *this,int param_1,uint *param_2)
     local_8 = 0;
     *param_2 = 0xffffffff;
     if (0 < iVar2) {
-      while (FUN_006acc70(*(int *)(local_10 + 0x241),uVar3,&local_18), local_18 != param_1) {
+      while (FUN_006acc70(local_10->field_0241,uVar3,&local_18), local_18 != param_1) {
         uVar3 = uVar3 + 1;
         if (iVar2 <= (int)uVar3) {
           g_currentExceptionFrame = local_5c.previous;

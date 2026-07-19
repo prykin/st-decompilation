@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Palette.cpp
+   Diagnostic line evidence: 220 | 221 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 undefined4 * __cdecl
 FUN_00718780(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 *param_6)

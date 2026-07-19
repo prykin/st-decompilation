@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_0070ac10(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 331 | 337 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl mfPcxLoadToDib(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;
@@ -45,7 +50,7 @@ undefined4 * __cdecl FUN_0070ac10(cMf32 *param_1,char *param_2,int param_3)
     g_currentExceptionFrame = local_54.previous;
     return (undefined4 *)0x0;
   }
-  uVar2 = FUN_0070a650(param_1,4,param_2,param_3);
+  uVar2 = mfImgGetLen(param_1,4,param_2,param_3);
   piVar3 = Library::DKW::GPC::FUN_006c7c50(local_8,uVar2);
   local_10 = piVar3;
   local_c = Library::DKW::GPC::FUN_006c79a0(piVar3,(undefined4 *)0x0,0);

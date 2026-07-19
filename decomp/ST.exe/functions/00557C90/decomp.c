@@ -13,9 +13,9 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
   int iVar4;
   LPSTR pCVar5;
   undefined4 *puVar6;
-  undefined1 *puVar7;
-  VisibleClassTy *pVVar8;
-  VisibleClassTy *pVVar9;
+  undefined4 *puVar7;
+  undefined1 *puVar8;
+  undefined4 *puVar9;
   undefined4 unaff_ESI;
   int iVar10;
   uint uVar11;
@@ -48,25 +48,25 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
     (*pcVar2)();
     return;
   }
-  DAT_00802a50 = -(uint)(*(int *)(local_10 + 0x114) != 0) & 0x403765;
-  if (*(int *)(local_10 + 0x114) != 0) {
-    pVVar9 = local_10 + 0x1d8;
+  DAT_00802a50 = -(uint)(local_10->field_0114 != 0) & 0x403765;
+  if (local_10->field_0114 != 0) {
+    puVar9 = &local_10->field_01D8;
     do {
       iVar4 = 1;
       bVar14 = 0;
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aec8,1,iVar10);
-      local_8 = FUN_0070b430(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
+      local_8 = mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
       (&DAT_007c9290)[iVar10] = (int)*(short *)((int)local_8 + 9);
-      pVVar8 = pVVar9 + -0xc0;
+      puVar7 = puVar9 + -0x30;
       (&DAT_007c929c)[iVar10] = (int)*(short *)((int)local_8 + 0xb);
       puVar6 = (undefined4 *)((int)local_8 + 0x11);
       local_c = 0x10;
       do {
         uVar1 = *puVar6;
         puVar6 = puVar6 + 1;
-        *(undefined4 *)pVVar8 = uVar1;
-        pVVar8 = pVVar8 + 4;
+        *puVar7 = uVar1;
+        puVar7 = puVar7 + 1;
         local_c = local_c + -1;
       } while (local_c != 0);
       FUN_0070b600((int *)&local_8);
@@ -74,73 +74,72 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       bVar14 = 0;
       bVar13 = 0x1c;
       pCVar5 = FUN_006f2c00(PTR_DAT_0079aecc,1,iVar10);
-      local_8 = FUN_0070b430(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
-      puVar6 = (undefined4 *)((int)local_8 + 0x11);
+      local_8 = mfQmtLoad(DAT_00806770,pCVar5,bVar13,bVar14,iVar4);
+      puVar7 = (undefined4 *)((int)local_8 + 0x11);
       iVar4 = 0x10;
       do {
-        uVar1 = *puVar6;
-        puVar6 = puVar6 + 1;
-        *(undefined4 *)pVVar9 = uVar1;
-        pVVar9 = pVVar9 + 4;
+        uVar1 = *puVar7;
+        puVar7 = puVar7 + 1;
+        *puVar9 = uVar1;
+        puVar9 = puVar9 + 1;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
       FUN_0070b600((int *)&local_8);
       iVar10 = iVar10 + 1;
     } while (iVar10 < 3);
-    FUN_007176f0(DAT_00807598,(undefined4 *)(this_00 + 0x3c),*(int *)(this_00 + 0x28),
-                 *(int *)(this_00 + 0x2c),(int)(this_00 + 0x118),*(int *)(this_00 + 0x4c),
-                 *(undefined4 *)(this_00 + 0x30),*(undefined4 *)(this_00 + 0x34),
-                 (int)(this_00 + 0x1d8),3,0x10,&DAT_007c9290,&DAT_007c929c);
-    iVar4 = *(int *)(this_00 + 0x110);
+    FUN_007176f0(DAT_00807598,&this_00->field_003C,this_00->field_0028,this_00->field_002C,
+                 (int)&this_00->field_0118,this_00->field_004C,this_00->field_0030,
+                 this_00->field_0034,(int)&this_00->field_01D8,3,0x10,&DAT_007c9290,&DAT_007c929c);
+    iVar4 = this_00->field_0110;
     uVar11 = 0;
     if (0 < *(int *)(iVar4 + 0xc)) {
       bVar12 = *(int *)(iVar4 + 0xc) != 0;
       do {
         if (bVar12) {
-          puVar7 = (undefined1 *)(*(int *)(iVar4 + 8) * uVar11 + *(int *)(iVar4 + 0x1c));
+          puVar8 = (undefined1 *)(*(int *)(iVar4 + 8) * uVar11 + *(int *)(iVar4 + 0x1c));
         }
         else {
-          puVar7 = (undefined1 *)0x0;
+          puVar8 = (undefined1 *)0x0;
         }
-        switch(*puVar7) {
+        switch(*puVar8) {
         case 0:
-          thunk_FUN_00558dc0(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),
-                             (undefined *)(int)(char)puVar7[6],(uint)(byte)puVar7[1],
-                             (undefined *)(uint)(byte)puVar7[7],*(int *)(puVar7 + 8),0x4001);
+          thunk_FUN_00558dc0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
+                             (undefined *)(int)(char)puVar8[6],(uint)(byte)puVar8[1],
+                             (undefined *)(uint)(byte)puVar8[7],*(int *)(puVar8 + 8),0x4001);
           break;
         case 1:
-          thunk_FUN_005594a0(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),
-                             puVar7[6],(undefined *)(uint)(byte)puVar7[1],(uint)(byte)puVar7[7],
-                             *(undefined4 *)(puVar7 + 8),2);
+          thunk_FUN_005594a0(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),
+                             puVar8[6],(undefined *)(uint)(byte)puVar8[1],(uint)(byte)puVar8[7],
+                             *(undefined4 *)(puVar8 + 8),2);
           break;
         case 2:
-          SetZoneDes(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
-                     (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),4);
+          SetZoneDes(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
+                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),4);
           break;
         case 3:
-          SetZoneAst(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
-                     (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),8);
+          SetZoneAst(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
+                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),8);
           break;
         case 4:
-          SetZoneTsh(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
-                     (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),0x10);
+          SetZoneTsh(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
+                     (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x10);
           break;
         case 5:
-          SetZoneMin1(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
-                      (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),0x20);
+          SetZoneMin1(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
+                      (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x20);
           break;
         case 6:
-          SetZoneMin2(this_00,(int)*(short *)(puVar7 + 2),(int)*(short *)(puVar7 + 4),puVar7[6],
-                      (uint)(byte)puVar7[1],(uint)(byte)puVar7[7],*(undefined4 *)(puVar7 + 8),0x40);
+          SetZoneMin2(this_00,(int)*(short *)(puVar8 + 2),(int)*(short *)(puVar8 + 4),puVar8[6],
+                      (uint)(byte)puVar8[1],(uint)(byte)puVar8[7],*(undefined4 *)(puVar8 + 8),0x40);
         }
-        iVar4 = *(int *)(this_00 + 0x110);
+        iVar4 = this_00->field_0110;
         uVar11 = uVar11 + 1;
         bVar12 = uVar11 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar11 < (int)*(uint *)(iVar4 + 0xc));
     }
     pvVar3 = DAT_00807598;
-    if (*(int *)(this_00 + 0x114) != 0) {
-      if (*(int *)(this_00 + 0xf8) != 0) {
+    if (this_00->field_0114 != 0) {
+      if (this_00->field_00F8 != 0) {
         *(undefined4 *)((int)DAT_00807598 + 0x466) = 1;
         *(undefined4 *)((int)pvVar3 + 0x2d8) = 1;
         g_currentExceptionFrame = local_54.previous;
@@ -149,7 +148,7 @@ void __thiscall VisibleClassTy::Init(VisibleClassTy *this)
       goto LAB_00557fbb;
     }
   }
-  *(undefined4 *)(this_00 + 0xf8) = 0;
+  this_00->field_00F8 = 0;
 LAB_00557fbb:
   pvVar3 = DAT_00807598;
   *(undefined4 *)((int)DAT_00807598 + 0x466) = 0;

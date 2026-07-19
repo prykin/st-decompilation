@@ -1,4 +1,4 @@
-FUN_006f2fb0:
+mfAObjLen:
 006F2FB0  55                        PUSH EBP
 006F2FB1  8B EC                     MOV EBP,ESP
 006F2FB3  83 EC 44                  SUB ESP,0x44

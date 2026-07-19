@@ -55,9 +55,8 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     (*pcVar1)();
     return;
   }
-  thunk_FUN_00540760((undefined4 *)local_2c->field_0194,param_1,0x36,'\x01',
-                     *(byte **)&local_2c->field_0x9f9);
-  pcVar9 = &pCVar2->field_0xc11;
+  DibPut((undefined4 *)local_2c->field_0194,param_1,0x36,'\x01',(byte *)local_2c->field_09F9);
+  pcVar9 = &pCVar2->field_0C11;
   local_6 = 0;
   local_28 = -1;
   do {
@@ -115,7 +114,7 @@ LAB_0050530c:
         local_c = 0xe;
         if (*pcVar9 == '\0') {
 LAB_005053b0:
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 1;
         }
         else {
@@ -128,28 +127,28 @@ LAB_005053b0:
           }
           iVar4 = thunk_FUN_004e60d0((uint)DAT_0080874d,iVar4);
           iVar4 = iVar4 + 5;
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
         }
         break;
       case 1:
         local_10 = 0xf;
         local_c = 0x1a;
         if (*pcVar9 == '\0') {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 2;
         }
         else if (DAT_0080874e == '\x01') {
           iVar4 = thunk_FUN_004e60d0((uint)DAT_0080874d,6);
           iVar4 = iVar4 + 10;
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
         }
         else if (DAT_0080874e == '\x02') {
           iVar4 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x83);
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
           iVar4 = iVar4 + 10;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 2;
         }
         break;
@@ -159,10 +158,10 @@ LAB_005053b0:
         if (*pcVar9 == '\0') {
           iVar4 = 9;
 LAB_00505581:
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
           iVar4 = 0x1d;
         }
         break;
@@ -170,11 +169,11 @@ LAB_00505581:
         local_10 = 0x1d;
         local_c = 0x31;
         if (*pcVar9 == '\0') {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 4;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
           iVar4 = 0x10;
         }
         break;
@@ -182,11 +181,11 @@ LAB_00505581:
         local_10 = 0x1b;
         local_c = 0x25;
         if (*pcVar9 == '\0') {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 6;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
           iVar4 = 0x17;
         }
         break;
@@ -197,18 +196,18 @@ LAB_00505581:
           iVar4 = 5;
           goto LAB_00505581;
         }
-        iVar6 = *(int *)&pCVar2->field_0x28e;
+        iVar6 = pCVar2->field_028E;
         iVar4 = 0x19;
         break;
       case 6:
         local_10 = 0x1f;
         local_c = 0x22;
         if (*pcVar9 == '\0') {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 7;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
           iVar4 = 0x18;
         }
         break;
@@ -216,11 +215,11 @@ LAB_00505581:
         local_10 = 0x1e;
         local_c = 0x3b;
         if (*pcVar9 == '\0') {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 8;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
           iVar4 = 0x16;
         }
         break;
@@ -231,7 +230,7 @@ LAB_00505581:
           iVar4 = 3;
           goto LAB_00505581;
         }
-        iVar6 = *(int *)&pCVar2->field_0x28e;
+        iVar6 = pCVar2->field_028E;
         iVar4 = 0xf;
         break;
       case -1:
@@ -239,14 +238,14 @@ LAB_00505581:
         local_c = 4;
         if (DAT_0080874e == '\x01') {
           iVar4 = thunk_FUN_004e60d0((uint)DAT_0080874d,6);
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
         }
         else if (DAT_0080874e == '\x02') {
           iVar4 = thunk_FUN_004e60d0((uint)DAT_0080874d,0x83);
-          iVar6 = *(int *)&pCVar2->field_0x28e;
+          iVar6 = pCVar2->field_028E;
         }
         else {
-          iVar6 = *(int *)&pCVar2->field_0x292;
+          iVar6 = pCVar2->field_0292;
           iVar4 = 0;
         }
         break;
@@ -257,8 +256,8 @@ LAB_00505581:
     }
 switchD_00505324_default:
     if (pbVar5 != (byte *)0x0) {
-      thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,local_10 + 0xf + param_1,local_c + 0x36,
-                         '\x06',pbVar5);
+      DibPut((undefined4 *)pCVar2->field_0194,local_10 + 0xf + param_1,local_c + 0x36,'\x06',pbVar5)
+      ;
     }
     uVar3 = local_14;
     if (*pcVar9 == '\0') {
@@ -272,9 +271,8 @@ switchD_00505324_default:
       uVar8 = 0;
       local_20 = (local_14 & 0xff) * 0xb + 0x3b;
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,3);
-        thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20,
-                           '\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,3);
+        DibPut((undefined4 *)pCVar2->field_0194,param_1 + 0x4d + uVar8 * 4,local_20,'\x01',pbVar5);
         bVar7 = (byte)local_18 + 1;
         local_18 = CONCAT31(local_18._1_3_,bVar7);
         uVar8 = (uint)bVar7;
@@ -285,16 +283,16 @@ switchD_00505324_default:
       iVar4 = 0xf - (local_18 & 0xff);
       local_1c = param_1 + 0x4d + (local_18 & 0xff) * 4;
       do {
-        pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,0);
-        thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
+        pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,0);
+        DibPut((undefined4 *)pCVar2->field_0194,local_1c,local_20,'\x01',pbVar5);
         local_1c = local_1c + 4;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
     }
     wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1890,(uint)*(ushort *)(local_24 + 2));
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,pCVar2->field_0194,0,param_1 + 0x8f,
+    ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,param_1 + 0x8f,
                      (uVar3 & 0xff) * 0xb + 0x39,0x23,0xc);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
+    ccFntTy::WrTxt(pCVar2->field_01B8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
     pcVar9 = local_24;
 cf_continue_loop_00505716:
     local_6 = local_6 + 1;

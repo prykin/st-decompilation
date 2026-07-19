@@ -1,7 +1,11 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\minimap.cpp
+   Diagnostic line evidence: 22 | 47 | 58 | 66 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
-void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4)
+void __cdecl CreateMiniMap(short *param_1,int *param_2,uint param_3,byte *param_4)
 
 {
   double dVar1;

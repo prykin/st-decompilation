@@ -110,8 +110,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
         pbVar17 = pbVar17 + 1;
         pbVar20 = pbVar20 + 1;
       }
-      STPlaySystemC::SaveObjData
-                (DAT_00802a38,*(undefined4 *)&this_00->field_0x18,local_c,local_8 + 0x46);
+      STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_c,local_8 + 0x46);
       FUN_006ab060(&local_10);
       FUN_006ab060(&local_c);
       g_currentExceptionFrame = local_68.previous;

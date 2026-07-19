@@ -1,4 +1,4 @@
-FUN_0067e580:
+GetAssistantNameDB:
 0067E580  55                        PUSH EBP
 0067E581  8B EC                     MOV EBP,ESP
 0067E583  83 EC 44                  SUB ESP,0x44

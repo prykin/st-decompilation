@@ -13,7 +13,7 @@ void __fastcall FUN_006a00b0(int param_1)
     this = extraout_ECX;
   }
   if (*(int *)(param_1 + 0xc) != 0) {
-    FUN_006efb70((int *)(param_1 + 0xc));
+    mfTMapErase((int *)(param_1 + 0xc));
     this = extraout_ECX_00;
   }
   if (*(int *)(param_1 + 0x56ff) != 0) {

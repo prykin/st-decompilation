@@ -56,7 +56,7 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
         return 0;
       }
       if (uVar1 == 3) {
-        puVar7 = (undefined4 *)&this_00[1].field_0x1;
+        puVar7 = &this_00->field_027A;
         do {
           if ((byte *)*puVar7 != (byte *)0x0) {
             FUN_006ae110((byte *)*puVar7);
@@ -65,25 +65,25 @@ undefined4 __thiscall ResearchPanelTy::GetMessage(ResearchPanelTy *this,int para
           puVar7 = puVar7 + 1;
           iVar3 = iVar3 + -1;
         } while (iVar3 != 0);
-        if (*(uint *)&this_00[1].field_0x9 != 0) {
-          FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)&this_00[1].field_0x9);
+        if (*(uint *)&this_00[1].field_0x4 != 0) {
+          FUN_006e56b0((void *)this_00->field_000C,*(uint *)&this_00[1].field_0x4);
         }
-        *(undefined4 *)&this_00[1].field_0x9 = 0;
+        *(undefined4 *)&this_00[1].field_0x4 = 0;
         DAT_008016e8 = 0;
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
       if (uVar1 == 0xb207) {
-        *(undefined1 *)(this_00 + 1) = this_00->field_0278;
+        this_00->field_0279 = this_00->field_0278;
         this_00->field_0278 = **(char **)(param_1 + 0x14) + -1;
         thunk_FUN_005252c0(0xae);
-        (**(code **)(*(int *)this_00 + 0x1c))();
+        (**(code **)(this_00->field_0000 + 0x1c))();
         g_currentExceptionFrame = local_58.previous;
         return 0;
       }
     }
     else {
-      iVar3 = *(int *)(&this_00[1].field_0x1 + (uint)(byte)this_00->field_0278 * 4);
+      iVar3 = (&this_00->field_027A)[(byte)this_00->field_0278];
       if ((iVar3 == 0) ||
          (iVar4 = uVar1 + this_00->field_0199, *(uint *)(iVar3 + 0xc) <= iVar4 - 0xc09fU)) {
         puVar5 = (undefined1 *)0x0;

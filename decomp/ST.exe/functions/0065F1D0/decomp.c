@@ -48,7 +48,7 @@ int __thiscall AiFltClassTy::AppendZone(AiFltClassTy *this,short *param_1)
     return iVar5;
   }
   local_c = 0;
-  local_28 = *(uint **)&local_1c->field_0x22f;
+  local_28 = (uint *)local_1c->field_022F;
   local_24 = local_28[3];
   if (0 < (int)local_24) {
     sVar2 = param_1[1];
@@ -96,7 +96,7 @@ cf_common_exit_0065F468:
         Library::DKW::TBL::FUN_006ae140(local_28,local_c,(undefined4 *)param_1);
         goto cf_common_exit_0065F468;
       }
-      if ((int)*(short *)&local_1c->field_0x170 <= (int)local_c) {
+      if ((int)(short)local_1c->field_0170 <= (int)local_c) {
         iVar6 = local_10 / 2 + iVar5;
         if ((((iVar6 < iVar7) || (psVar9[3] + iVar7 <= iVar6)) ||
             (iVar6 = local_14 / 2 + local_8, iVar6 < iVar8)) || (psVar9[4] + iVar8 <= iVar6)) {
@@ -146,7 +146,7 @@ LAB_0065f3c9:
     } while ((int)local_c < (int)local_24);
   }
   if (local_18 != 0) {
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)&local_1c->field_0x22f,(undefined4 *)param_1);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)local_1c->field_022F,(undefined4 *)param_1);
   }
   g_currentExceptionFrame = local_74.previous;
   return 0;

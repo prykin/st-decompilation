@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_dock.cpp
+   Diagnostic line evidence: 761 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __thiscall
 FUN_004d0970(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3)
 

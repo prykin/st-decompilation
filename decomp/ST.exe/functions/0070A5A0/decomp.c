@@ -1,5 +1,10 @@
 
-ushort * __cdecl FUN_0070a5a0(cMf32 *param_1,byte param_2,char *param_3,byte param_4,int param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 31 | 33 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+ushort * __cdecl mfImgLoad(cMf32 *param_1,byte param_2,char *param_3,byte param_4,int param_5)
 
 {
   code *pcVar1;

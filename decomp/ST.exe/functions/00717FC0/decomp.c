@@ -1,5 +1,10 @@
 
-ushort * __cdecl FUN_00717fc0(int param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\mfplt.cpp
+   Diagnostic line evidence: 23 | 28 | 30 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+ushort * __cdecl mfPltPtrTy(int param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;

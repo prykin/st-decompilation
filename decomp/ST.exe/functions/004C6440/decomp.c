@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_BldMark.cpp
+   Diagnostic line evidence: 119 | 130 | 152 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 undefined4 __thiscall
 FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int *param_5)

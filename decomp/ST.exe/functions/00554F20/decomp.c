@@ -24,17 +24,17 @@ cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int par
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   this_00 = local_8;
   if (errorCode == 0) {
-    if (-1 < *(int *)(local_8 + 0x3c)) {
+    if (-1 < (int)local_8->field_003C) {
       SetState(local_8,CASE_2,0,(char *)0x0);
     }
-    *(undefined4 *)(this_00 + 0x3c) = param_1;
+    this_00->field_003C = param_1;
     DVar2 = timeGetTime();
-    *(DWORD *)(this_00 + 0x44) = DVar2;
-    *(int *)(this_00 + 0x40) = param_3;
+    this_00->field_0044 = DVar2;
+    this_00->field_0040 = param_3;
     if (param_3 == 0) {
-      *(undefined4 *)(this_00 + 0x40) = 1;
+      this_00->field_0040 = 1;
     }
-    *(undefined4 *)(this_00 + 0x50) = 0xffffffff;
+    this_00->field_0050 = 0xffffffff;
     DrawLineCR(this_00,param_2);
     g_currentExceptionFrame = pIVar4;
     return;

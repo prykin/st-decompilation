@@ -7,7 +7,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
 
 {
   code *pcVar1;
-  SpecPanelTy *this_00;
+  BehPanelTy *this_00;
   char cVar2;
   int iVar3;
   char *pcVar4;
@@ -23,11 +23,11 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
   InternalExceptionFrame local_70;
   char local_2c [29];
   uint local_f;
-  SpecPanelTy *local_8;
+  BehPanelTy *local_8;
   
   local_70.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_70;
-  local_8 = (SpecPanelTy *)this;
+  local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 != 0) {
@@ -42,18 +42,17 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_behpanel_cpp_007c1694,0xf3);
     return 0xffff;
   }
-  SpecPanelTy::GetMessage(local_8,param_1);
+  SpecPanelTy::GetMessage((SpecPanelTy *)local_8,param_1);
   uVar6 = *(uint *)(param_1 + 0x10);
   if (uVar6 < 0xb20f) {
     if (uVar6 == 0xb20e) {
-      iVar3 = *(int *)this_00;
+      iVar3 = this_00->field_0000;
       uVar10 = 1;
       uVar9 = 0;
       puVar8 = &LAB_0040420f;
       iVar7 = 0;
-      pcVar4 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
-                                   ((int)&this_00[1].field_0028 + *(ushort *)(param_1 + 0x16) + 2),
-                                  *(int *)&this_00[1].field_0x26);
+      pcVar4 = thunk_FUN_00529590((&this_00->field_0x1af)[*(ushort *)(param_1 + 0x16)],
+                                  this_00->field_01AB);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar7);
       (**(code **)(iVar3 + 8))(param_1,6,pCVar5,puVar8,uVar9,uVar10);
       g_currentExceptionFrame = local_70.previous;
@@ -64,14 +63,13 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
-      iVar3 = *(int *)this_00;
+      iVar3 = this_00->field_0000;
       uVar10 = 1;
       uVar9 = 0;
       puVar8 = &LAB_0040420f;
       iVar7 = 0;
-      pcVar4 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
-                                   ((int)&this_00[1].field_0028 + *(ushort *)(param_1 + 0x16) + 2),
-                                  *(int *)&this_00[1].field_0x26);
+      pcVar4 = thunk_FUN_00529590((&this_00->field_0x1af)[*(ushort *)(param_1 + 0x16)],
+                                  this_00->field_01AB);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar7);
       (**(code **)(iVar3 + 8))(param_1,1,pCVar5,puVar8,uVar9,uVar10);
       g_currentExceptionFrame = local_70.previous;
@@ -83,11 +81,10 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
         return 0;
       }
       thunk_FUN_005252c0(0xae);
-      thunk_FUN_0054b630(DAT_00802a30,
-                         (uint)*(byte *)((int)&this_00[1].field_0028 + *(int *)(param_1 + 0x14) + 2)
-                         ,0);
+      thunk_FUN_0054b630(DAT_00802a30,(uint)(byte)(&this_00->field_0x1af)[*(int *)(param_1 + 0x14)],
+                         0);
       this_00->field_0028 = 0xbfff;
-      (*(code *)**(undefined4 **)this_00)(&this_00->field_0x18);
+      (**(code **)this_00->field_0000)(&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -96,11 +93,11 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
-      DoneBehPanel((BehPanelTy *)this_00);
+      DoneBehPanel(this_00);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
-    InitBehPanel((BehPanelTy *)this_00);
+    InitBehPanel(this_00);
     g_currentExceptionFrame = local_70.previous;
     return 0;
   }
@@ -125,15 +122,15 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
     *pcVar4 = '\0';
     if (iVar3 == 0xc09f) {
       local_2c[0] = '\x15';
-      cVar2 = this_00[1].field_0x36;
+      cVar2 = this_00->field_0x1bb;
     }
     else {
       local_2c[0] = (iVar3 != 0xc0a0) + '\x16';
       if (iVar3 == 0xc0a0) {
-        cVar2 = this_00[1].field_0x37;
+        cVar2 = this_00->field_01BC;
       }
       else {
-        cVar2 = this_00[1].field_0x38;
+        cVar2 = this_00->field_01BD;
       }
     }
     local_f = (uint)(cVar2 == '\x03');
@@ -143,19 +140,19 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
   default:
     goto switchD_004ee68c_caseD_c0a2;
   case 0xc0af:
-    uVar6 = CONCAT31((int3)(uVar6 - 0xc09f >> 8),this_00[1].field_0x36 == '\x03');
+    uVar6 = CONCAT31((int3)(uVar6 - 0xc09f >> 8),this_00->field_0x1bb == '\x03');
     pcVar4 = s_BUT_BLOCK_007c17a8;
     break;
   case 0xc0b0:
-    uVar6 = (uint)(this_00[1].field_0x37 == '\x03');
+    uVar6 = (uint)(this_00->field_01BC == '\x03');
     pcVar4 = s_BUT_BHOLD_007c16e8;
     break;
   case 0xc0b1:
-    uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[1].field_0x38 == '\x03');
+    uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_01BD == '\x03');
     pcVar4 = s_BUT_BAGR_007c16dc;
   }
   pCVar5 = thunk_FUN_00571240(pcVar4,0);
-  PaintBBut((BehPanelTy *)this_00,param_1,pCVar5,uVar6);
+  PaintBBut(this_00,param_1,pCVar5,uVar6);
 switchD_004ee68c_caseD_c0a2:
   g_currentExceptionFrame = local_70.previous;
   return 0;

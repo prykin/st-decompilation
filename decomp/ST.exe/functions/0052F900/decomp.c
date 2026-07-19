@@ -31,7 +31,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    *(short *)&this->field_0x2e = sVar2;
+    this->field_002E = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
@@ -47,7 +47,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
         piVar6 = piVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
-      piVar6 = (int *)&this_00->field_0x1ad;
+      piVar6 = &this_00->field_01AD;
       iVar5 = 2;
       do {
         if (*piVar6 != 0) {
@@ -56,7 +56,7 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
         piVar6 = piVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
-      switch(this_00->field_0x1a4) {
+      switch(this_00->field_01A4) {
       case 3:
       case 4:
       case 0xc:

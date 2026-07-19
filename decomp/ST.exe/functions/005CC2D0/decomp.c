@@ -33,12 +33,12 @@ void __thiscall SettMapMTy::DoneSettMap(SettMapMTy *this)
     RaiseInternalException(iVar2,0,s_E____titans_Start_settmobj_cpp_007cd258,0x65);
     return;
   }
-  if (*(int *)&local_8[1].field_0xe7 != 0) {
-    FUN_006ab060((undefined4 *)&local_8[1].field_0xe7);
+  if (local_8->field_2204 != 0) {
+    FUN_006ab060(&local_8->field_2204);
   }
-  FUN_006b3bb0(DAT_008075a8,*(uint *)&this_00[1].field_0xe3);
-  iVar2 = *(int *)&this_00[1].field_0x11a;
-  *(undefined4 *)&this_00[1].field_0xe3 = 0xffffffff;
+  FUN_006b3bb0(DAT_008075a8,this_00->field_2200);
+  iVar2 = this_00->field_2237;
+  this_00->field_2200 = 0xffffffff;
   if (iVar2 != 0) {
     uVar4 = 0;
     if (*(int *)(iVar2 + 0xc) != 0) {
@@ -52,12 +52,12 @@ LAB_005cc360:
         if ((iVar2 != 0) && (*(int *)(iVar2 + 8) != 0)) {
           FUN_006ab060((undefined4 *)(iVar2 + 8));
         }
-        iVar2 = *(int *)&this_00[1].field_0x11a;
+        iVar2 = this_00->field_2237;
         uVar4 = uVar4 + 1;
       } while (uVar4 < *(uint *)(iVar2 + 0xc));
     }
-    FUN_006ae110(*(byte **)&this_00[1].field_0x11a);
-    *(undefined4 *)&this_00[1].field_0x11a = 0;
+    FUN_006ae110((byte *)this_00->field_2237);
+    this_00->field_2237 = 0;
   }
   SettMapTy::DoneSettMap((SettMapTy *)this_00);
   g_currentExceptionFrame = local_4c.previous;

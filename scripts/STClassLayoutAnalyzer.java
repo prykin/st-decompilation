@@ -24,6 +24,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import ghidra.app.script.GhidraScript;
+import ghidra.program.model.address.Address;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeManager;
@@ -128,8 +129,10 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     }
 
     private void analyzeFunction(Function function, ClassEvidence owner) {
-        Map<String, Long> aliases = new HashMap<>();
-        aliases.put("ECX", 0L);
+        Map<String, RegisterValue> registers = new HashMap<>();
+        registers.put("ECX", RegisterValue.thisAddress(0));
+        Map<Long, RegisterValue> stackValues = new HashMap<>();
+        List<PushEvidence> pendingPushes = new ArrayList<>();
         InstructionIterator instructions = currentProgram.getListing()
             .getInstructions(function.getBody(), true);
         while (instructions.hasNext()) {
@@ -142,11 +145,11 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 int size = accessSize(text, operands);
                 for (int operandIndex = 0; operandIndex < operands.length; operandIndex++) {
                     MemoryExpr memory = memoryExpr(operands[operandIndex]);
-                    if (memory == null || !aliases.containsKey(memory.register)) continue;
-                    long offset = aliases.get(memory.register) + memory.displacement;
+                    RegisterValue base = memory == null ? null : registers.get(memory.register);
+                    if (base == null || base.kind != ValueKind.THIS_ADDRESS) continue;
+                    long offset = base.offset + memory.displacement;
                     if (offset < 0 || offset >= MAX_CLASS_SIZE || size <= 0 || size > 8) continue;
-                    FieldEvidence field = owner.fields.computeIfAbsent(offset,
-                        ignored -> new FieldEvidence(offset));
+                    FieldEvidence field = field(owner, offset);
                     field.sizes.merge(size, 1, Integer::sum);
                     boolean write = operandIndex == 0 && isWriteMnemonic(mnemonic);
                     if (write) field.writes++;
@@ -157,13 +160,111 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             }
 
             if ("CALL".equals(mnemonic)) {
-                aliases.remove("EAX");
-                aliases.remove("ECX");
-                aliases.remove("EDX");
+                Function called = calledFunction(instruction);
+                if (called != null) {
+                    inferThisReceiver(owner, function, called, registers.get("ECX"));
+                    inferStackArguments(owner, function, called, pendingPushes);
+                }
+                registers.remove("EAX");
+                registers.remove("ECX");
+                registers.remove("EDX");
+                pendingPushes.clear();
+                String returnPointer = called == null ? "" : structurePointer(called.getReturnType());
+                if (!returnPointer.isBlank()) {
+                    registers.put("EAX", RegisterValue.typedPointer(returnPointer,
+                        addr(function.getEntryPoint()) + " return from " + called.getName(true)));
+                }
                 continue;
             }
-            updateAliases(mnemonic, operands, aliases);
+            if ("PUSH".equals(mnemonic)) {
+                pendingPushes.add(pushEvidence(operands, registers));
+            }
+            if ("MOV".equals(mnemonic) && operands.length >= 2 &&
+                    "EBP".equals(cleanRegister(operands[0])) &&
+                    "ESP".equals(cleanRegister(operands[1]))) {
+                pendingPushes.clear(); // Discard callee-save pushes from the function prologue.
+            }
+            if (instruction.getFlowType().isJump() || instruction.getFlowType().isTerminal()) {
+                pendingPushes.clear();
+            }
+            updateRegisters(owner, function, mnemonic, operands, registers, stackValues);
         }
+    }
+
+    private FieldEvidence field(ClassEvidence owner, long offset) {
+        return owner.fields.computeIfAbsent(offset, ignored -> new FieldEvidence(offset));
+    }
+
+    private void inferThisReceiver(ClassEvidence owner, Function containing, Function called,
+            RegisterValue receiver) {
+        if (receiver == null || receiver.kind != ValueKind.FIELD_VALUE ||
+                !"__thiscall".equals(called.getCallingConventionName())) return;
+        String calledOwner = ownerOf(called);
+        DataType ownerType = findOwnerType(calledOwner);
+        if (!(ownerType instanceof Structure)) return;
+        String specification = "pointer:" + ownerType.getPathName();
+        field(owner, receiver.offset).addType(specification,
+            addr(containing.getEntryPoint()) + " [this+" + hex(receiver.offset) +
+            "] used as receiver of " + called.getName(true));
+    }
+
+    private void inferStackArguments(ClassEvidence owner, Function containing, Function called,
+            List<PushEvidence> pushes) {
+        String convention = called.getCallingConventionName();
+        if (!("__cdecl".equals(convention) || "__stdcall".equals(convention) ||
+                "__thiscall".equals(convention))) return;
+        List<Parameter> parameters = new ArrayList<>();
+        for (Parameter parameter : called.getParameters()) {
+            if (!parameter.isAutoParameter()) parameters.add(parameter);
+        }
+        if (parameters.isEmpty() || parameters.size() != pushes.size()) return;
+        for (int index = 0; index < parameters.size(); index++) {
+            Parameter parameter = parameters.get(index);
+            PushEvidence pushed = pushes.get(pushes.size() - 1 - index);
+            if (pushed == null || pushed.kind != ValueKind.FIELD_VALUE) continue;
+            String pointer = structurePointer(parameter.getDataType());
+            if (pointer.isBlank()) continue;
+            FieldEvidence field = field(owner, pushed.offset);
+            field.addType(pointer, addr(containing.getEntryPoint()) + " [this+" +
+                hex(pushed.offset) + "] passed to " + called.getName(true) + " parameter " +
+                parameter.getName());
+            if (meaningfulParameterName(parameter.getName())) {
+                field.addName(parameter.getName(), addr(containing.getEntryPoint()) + " -> " +
+                    called.getName(true));
+            }
+        }
+    }
+
+    private Function calledFunction(Instruction instruction) {
+        for (Address flow : instruction.getFlows()) {
+            Function function = currentProgram.getFunctionManager().getFunctionAt(flow);
+            if (function == null) continue;
+            if (function.isThunk()) {
+                Function target = function.getThunkedFunction(true);
+                if (target != null) function = target;
+            }
+            return function;
+        }
+        return null;
+    }
+
+    private String structurePointer(DataType type) {
+        if (!(type instanceof Pointer pointer)) return "";
+        DataType pointed = pointer.getDataType();
+        if (!(pointed instanceof Structure)) return "";
+        return "pointer:" + pointed.getPathName();
+    }
+
+    private PushEvidence pushEvidence(String[] operands, Map<String, RegisterValue> registers) {
+        if (operands.length < 1) return PushEvidence.unknown();
+        String register = cleanRegister(operands[0]);
+        if (register != null) return PushEvidence.from(registers.get(register));
+        MemoryExpr memory = memoryExpr(operands[0]);
+        RegisterValue base = memory == null ? null : registers.get(memory.register);
+        if (base != null && base.kind == ValueKind.THIS_ADDRESS) {
+            return new PushEvidence(ValueKind.FIELD_VALUE, base.offset + memory.displacement);
+        }
+        return PushEvidence.unknown();
     }
 
     private List<FieldProposal> makeFields(ClassEvidence evidence, Structure structure,
@@ -178,6 +279,12 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 String.format("field_%04X", field.offset);
             String type = field.offset == 0 && vtableType != null ? "pointer:" + vtableType :
                 "/undefined" + size;
+            String inferredType = field.uniqueType();
+            boolean typeApply = !inferredType.isBlank() && size ==
+                currentProgram.getDefaultPointerSize();
+            String suggestedName = field.uniqueName();
+            boolean nameApply = typeApply && !suggestedName.isBlank() &&
+                field.nameCount(suggestedName) >= 2;
             DataTypeComponent existing = field.offset <= Integer.MAX_VALUE ?
                 structure.getComponentAt((int)field.offset) : null;
             if (existing != null && existing.getOffset() == field.offset &&
@@ -187,23 +294,58 @@ public class STClassLayoutAnalyzer extends GhidraScript {
                 type = existing.getDataType().getPathName();
                 if (existing.getFieldName() != null) name = existing.getFieldName();
             }
+            else if (existing != null && existing.getOffset() == field.offset &&
+                    existing.getLength() == size && existing.getComment() != null &&
+                    existing.getComment().contains(MARKER) &&
+                    !isUndefined(existing.getDataType())) {
+                type = typeSpecification(existing.getDataType());
+                if (existing.getFieldName() != null) name = existing.getFieldName();
+            }
             boolean apply = consistent && field.offset + size <= proposedSize;
             String reason = !consistent ? "conflicting_access_widths=" + field.sizeText() :
                 field.offset == 0 && vtableType != null ? "owner_vtable_pointer" :
                 "consistent_this_relative_access";
+            if (field.inferredTypes.size() > 1)
+                reason += "; inferred_type_conflict=" + String.join("|", field.inferredTypes.keySet());
+            else if (typeApply) reason += "; unique_typed_call_evidence";
             result.add(new FieldProposal(evidence.owner, field.offset, size, name, type,
-                field.reads, field.writes, field.functions, apply,
+                inferredType, typeApply, suggestedName, nameApply, field.typeEvidenceText(),
+                field.nameEvidenceText(), field.reads, field.writes, field.functions, apply,
                 apply ? "high" : "conflict", reason));
         }
+        disableDuplicateSuggestedNames(result);
         // A high-confidence owner vtable is direct layout evidence even when none of the
         // currently named methods happens to dereference [this] itself.
         if (!hasOffsetZero && vtableType != null && proposedSize >= 4) {
             result.add(new FieldProposal(evidence.owner, 0, 4, "vtable",
-                "pointer:" + vtableType, 0, 0, Set.of(), true, "high",
-                "owner_vtable_pointer"));
+                "pointer:" + vtableType, "", false, "", false, "", "", 0, 0,
+                Set.of(), true, "high", "owner_vtable_pointer"));
         }
         result.sort(Comparator.comparingLong(field -> field.offset));
         return result;
+    }
+
+    private void disableDuplicateSuggestedNames(List<FieldProposal> fields) {
+        Map<String, Integer> counts = new HashMap<>();
+        for (FieldProposal field : fields) {
+            if (field.nameApply) counts.merge(field.suggestedName, 1, Integer::sum);
+        }
+        for (FieldProposal field : fields) {
+            if (field.nameApply && counts.getOrDefault(field.suggestedName, 0) > 1) {
+                field.nameApply = false;
+                field.reason += "; duplicate_suggested_field_name";
+            }
+        }
+    }
+
+    private boolean isUndefined(DataType type) {
+        return type.getPathName().matches("/undefined(?:1|2|4|8)?");
+    }
+
+    private String typeSpecification(DataType type) {
+        if (type instanceof Pointer pointer && pointer.getDataType() != null)
+            return "pointer:" + pointer.getDataType().getPathName();
+        return type.getPathName();
     }
 
     private void markOverlaps(List<FieldProposal> fields) {
@@ -302,33 +444,88 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             description.contains("generated_layout_sha256=");
     }
 
-    private void updateAliases(String mnemonic, String[] operands, Map<String, Long> aliases) {
+    private void updateRegisters(ClassEvidence owner, Function function, String mnemonic,
+            String[] operands, Map<String, RegisterValue> registers,
+            Map<Long, RegisterValue> stackValues) {
         if (operands.length == 0) return;
         String destination = cleanRegister(operands[0]);
         if ("MOV".equals(mnemonic) && destination != null && operands.length >= 2) {
             String sourceRegister = cleanRegister(operands[1]);
-            Long source = sourceRegister == null ? null : aliases.get(sourceRegister);
-            if (source == null) aliases.remove(destination);
-            else aliases.put(destination, source);
+            if (sourceRegister != null) {
+                RegisterValue source = registers.get(sourceRegister);
+                if (source == null) registers.remove(destination);
+                else registers.put(destination, source);
+                return;
+            }
+            MemoryExpr sourceMemory = memoryExpr(operands[1]);
+            RegisterValue base = sourceMemory == null ? null : registers.get(sourceMemory.register);
+            if (base != null && base.kind == ValueKind.THIS_ADDRESS) {
+                registers.put(destination, RegisterValue.fieldValue(
+                    base.offset + sourceMemory.displacement));
+            }
+            else if (sourceMemory != null && "EBP".equals(sourceMemory.register)) {
+                RegisterValue source = stackValues.get(sourceMemory.displacement);
+                if (source == null) registers.remove(destination);
+                else registers.put(destination, source);
+            }
+            else registers.remove(destination);
+            return;
+        }
+        if ("MOV".equals(mnemonic) && destination == null && operands.length >= 2) {
+            MemoryExpr destinationMemory = memoryExpr(operands[0]);
+            RegisterValue base = destinationMemory == null ? null :
+                registers.get(destinationMemory.register);
+            String sourceRegister = cleanRegister(operands[1]);
+            RegisterValue source = sourceRegister == null ? null : registers.get(sourceRegister);
+            if (destinationMemory != null && "EBP".equals(destinationMemory.register)) {
+                if (source == null) stackValues.remove(destinationMemory.displacement);
+                else stackValues.put(destinationMemory.displacement, source);
+                return;
+            }
+            if (base != null && base.kind == ValueKind.THIS_ADDRESS && source != null &&
+                    source.kind == ValueKind.TYPED_POINTER) {
+                long offset = base.offset + destinationMemory.displacement;
+                field(owner, offset).addType(source.type,
+                    addr(function.getEntryPoint()) + " [this+" + hex(offset) +
+                    "] assigned " + source.evidence);
+            }
             return;
         }
         if ("LEA".equals(mnemonic) && destination != null && operands.length >= 2) {
             MemoryExpr sourceMemory = memoryExpr(operands[1]);
-            Long source = sourceMemory == null ? null : aliases.get(sourceMemory.register);
-            if (source == null) aliases.remove(destination);
-            else aliases.put(destination, source + sourceMemory.displacement);
+            RegisterValue source = sourceMemory == null ? null : registers.get(sourceMemory.register);
+            if (source == null || source.kind != ValueKind.THIS_ADDRESS)
+                registers.remove(destination);
+            else registers.put(destination,
+                RegisterValue.thisAddress(source.offset + sourceMemory.displacement));
             return;
         }
         if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && destination != null &&
-                aliases.containsKey(destination) && operands.length >= 2) {
+                registers.containsKey(destination) && operands.length >= 2) {
+            RegisterValue original = registers.get(destination);
             Long value = immediate(operands[1]);
-            if (value == null) aliases.remove(destination);
-            else aliases.put(destination, aliases.get(destination) +
-                ("SUB".equals(mnemonic) ? -value : value));
+            if (value == null || original.kind != ValueKind.THIS_ADDRESS)
+                registers.remove(destination);
+            else registers.put(destination, RegisterValue.thisAddress(original.offset +
+                ("SUB".equals(mnemonic) ? -value : value)));
             return;
         }
         if (destination != null && !Set.of("CMP", "TEST", "PUSH", "JMP", "RET")
-                .contains(mnemonic)) aliases.remove(destination);
+                .contains(mnemonic)) registers.remove(destination);
+    }
+
+    private boolean meaningfulParameterName(String value) {
+        if (value == null || value.isBlank()) return false;
+        return value.matches("[A-Za-z_][A-Za-z0-9_]*") &&
+            !value.matches("(?i)(?:this|param_?\\d+|arg_?\\d+|unknown_?.*|value|data|ptr|p)");
+    }
+
+    private static String addr(Address address) {
+        return address.toString().toUpperCase(Locale.ROOT);
+    }
+
+    private static String hex(long value) {
+        return String.format("0x%X", value);
     }
 
     private boolean isWriteMnemonic(String mnemonic) {
@@ -360,7 +557,8 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private MemoryExpr memoryExpr(String operand) {
         int open = operand.indexOf('['), close = operand.lastIndexOf(']');
         if (open < 0 || close <= open) return null;
-        String expression = operand.substring(open, close + 1).replace(" ", "");
+        String expression = operand.substring(open, close + 1).replace(" ", "")
+            .replace("+-", "-").replace("-+", "-");
         Matcher matcher = MEMORY.matcher(expression);
         if (!matcher.matches()) return null; // Indexed accesses are deliberately excluded.
         long displacement = 0;
@@ -422,10 +620,15 @@ public class STClassLayoutAnalyzer extends GhidraScript {
     private void writeFields(Path path, List<FieldProposal> rows) throws Exception {
         try (BufferedWriter out = Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
             out.write("apply\towner\toffset\toffset_hex\tsize\tproposed_name\t" +
-                "proposed_type\treads\twrites\tconfidence\treason\tevidence_functions\n");
+                "proposed_type\ttype_apply\tinferred_type\tsuggested_name\tname_apply\t" +
+                "type_evidence\tname_evidence\treads\twrites\tconfidence\treason\t" +
+                "evidence_functions\n");
             for (FieldProposal row : rows) out.write(bit(row.apply) + "\t" + tsv(row.owner) +
                 "\t" + row.offset + "\t" + String.format("0x%X", row.offset) + "\t" +
-                row.size + "\t" + row.name + "\t" + tsv(row.type) + "\t" + row.reads +
+                row.size + "\t" + row.name + "\t" + tsv(row.type) + "\t" +
+                bit(row.typeApply) + "\t" + tsv(row.inferredType) + "\t" +
+                tsv(row.suggestedName) + "\t" + bit(row.nameApply) + "\t" +
+                tsv(row.typeEvidence) + "\t" + tsv(row.nameEvidence) + "\t" + row.reads +
                 "\t" + row.writes + "\t" + row.confidence + "\t" + row.reason + "\t" +
                 tsv(String.join(" | ", row.functions)) + "\n");
         }
@@ -439,7 +642,13 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             "field_proposals=" + fields.size(),
             "field_auto_apply=" + fields.stream().filter(row -> row.apply).count(),
             "field_conflicts=" + fields.stream().filter(row -> !row.apply).count(),
+            "field_type_auto_apply=" + fields.stream().filter(row -> row.typeApply).count(),
+            "field_name_auto_apply=" + fields.stream().filter(row -> row.nameApply).count(),
+            "field_type_conflicts=" + fields.stream()
+                .filter(row -> row.reason.contains("inferred_type_conflict")).count(),
             "note=Only exact register-plus-constant accesses derived from incoming ECX are used.",
+            "note_types=Pointer types require one unambiguous typed receiver/argument/return flow.",
+            "note_names=Field names require at least two agreeing typed parameter-name observations.",
             "note_manual=Non-placeholder structures and generated structures whose current layout " +
                 "cannot be verified are never auto-applied."), StandardCharsets.UTF_8);
     }
@@ -510,6 +719,33 @@ public class STClassLayoutAnalyzer extends GhidraScript {
             this.register = register; this.displacement = displacement;
         }
     }
+    private enum ValueKind { THIS_ADDRESS, FIELD_VALUE, TYPED_POINTER, UNKNOWN }
+    private static class RegisterValue {
+        final ValueKind kind;
+        final long offset;
+        final String type, evidence;
+        RegisterValue(ValueKind kind, long offset, String type, String evidence) {
+            this.kind = kind; this.offset = offset; this.type = type; this.evidence = evidence;
+        }
+        static RegisterValue thisAddress(long offset) {
+            return new RegisterValue(ValueKind.THIS_ADDRESS, offset, "", "");
+        }
+        static RegisterValue fieldValue(long offset) {
+            return new RegisterValue(ValueKind.FIELD_VALUE, offset, "", "");
+        }
+        static RegisterValue typedPointer(String type, String evidence) {
+            return new RegisterValue(ValueKind.TYPED_POINTER, 0, type, evidence);
+        }
+    }
+    private static class PushEvidence {
+        final ValueKind kind;
+        final long offset;
+        PushEvidence(ValueKind kind, long offset) { this.kind = kind; this.offset = offset; }
+        static PushEvidence from(RegisterValue value) {
+            return value == null ? unknown() : new PushEvidence(value.kind, value.offset);
+        }
+        static PushEvidence unknown() { return new PushEvidence(ValueKind.UNKNOWN, 0); }
+    }
     private static class ClassEvidence {
         final String owner;
         final Map<Long, FieldEvidence> fields = new TreeMap<>();
@@ -520,8 +756,33 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         final long offset;
         final Map<Integer, Integer> sizes = new TreeMap<>();
         final Set<String> functions = new TreeSet<>();
+        final Map<String, Set<String>> inferredTypes = new TreeMap<>();
+        final Map<String, Set<String>> inferredNames = new TreeMap<>();
         int reads, writes;
         FieldEvidence(long offset) { this.offset = offset; }
+        void addType(String type, String evidence) {
+            inferredTypes.computeIfAbsent(type, ignored -> new TreeSet<>()).add(evidence);
+        }
+        void addName(String name, String evidence) {
+            inferredNames.computeIfAbsent(name, ignored -> new TreeSet<>()).add(evidence);
+        }
+        String uniqueType() {
+            return inferredTypes.size() == 1 ? inferredTypes.keySet().iterator().next() : "";
+        }
+        String uniqueName() {
+            return inferredNames.size() == 1 ? inferredNames.keySet().iterator().next() : "";
+        }
+        int nameCount(String name) {
+            return inferredNames.getOrDefault(name, Set.of()).size();
+        }
+        String typeEvidenceText() { return evidenceText(inferredTypes); }
+        String nameEvidenceText() { return evidenceText(inferredNames); }
+        private String evidenceText(Map<String, Set<String>> values) {
+            List<String> result = new ArrayList<>();
+            for (Map.Entry<String, Set<String>> entry : values.entrySet())
+                result.add(entry.getKey() + " <= " + String.join("; ", entry.getValue()));
+            return String.join(" | ", result);
+        }
         int dominantSize() {
             return sizes.entrySet().stream().max(Comparator
                 .<Map.Entry<Integer, Integer>>comparingInt(Map.Entry::getValue)
@@ -553,17 +814,23 @@ public class STClassLayoutAnalyzer extends GhidraScript {
         }
     }
     private static class FieldProposal {
-        final String owner, name, type;
+        final String owner, name, type, inferredType, suggestedName, typeEvidence, nameEvidence;
         final long offset;
         final int size, reads, writes;
         final Set<String> functions;
-        boolean apply;
+        final boolean typeApply;
+        boolean apply, nameApply;
         String confidence, reason;
         FieldProposal(String owner, long offset, int size, String name, String type,
-                int reads, int writes, Set<String> functions, boolean apply,
-                String confidence, String reason) {
+                String inferredType, boolean typeApply, String suggestedName,
+                boolean nameApply, String typeEvidence, String nameEvidence, int reads,
+                int writes, Set<String> functions, boolean apply, String confidence,
+                String reason) {
             this.owner = owner; this.offset = offset; this.size = size; this.name = name;
-            this.type = type; this.reads = reads; this.writes = writes;
+            this.type = type; this.inferredType = inferredType; this.typeApply = typeApply;
+            this.suggestedName = suggestedName; this.nameApply = nameApply;
+            this.typeEvidence = typeEvidence; this.nameEvidence = nameEvidence;
+            this.reads = reads; this.writes = writes;
             this.functions = new TreeSet<>(functions); this.apply = apply;
             this.confidence = confidence; this.reason = reason;
         }

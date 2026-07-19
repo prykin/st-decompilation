@@ -143,8 +143,9 @@ switchD_0066104e_caseD_9:
               *(undefined2 *)(param_1 + 4) = (undefined2)local_18;
               *(undefined2 *)((int)param_1 + 0x12) = (undefined2)local_1c;
             }
-            iVar6 = thunk_FUN_006763f0(*(uint *)((int)this + 0x24),*local_8,
-                                       (uint)*(ushort *)((int)this + 0x7d));
+            iVar6 = _GetEmbrGrpTobjGrpExch
+                              (*(uint *)((int)this + 0x24),*local_8,
+                               (uint)*(ushort *)((int)this + 0x7d));
             if (0 < iVar6) {
               return;
             }

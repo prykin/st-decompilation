@@ -1,5 +1,10 @@
 
-void __cdecl FUN_005404f0(int param_1,int param_2,char param_3,BITMAPINFO *param_4,uint param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\support.cpp
+   Diagnostic line evidence: 38 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl TransPutDDX(int param_1,int param_2,char param_3,BITMAPINFO *param_4,uint param_5)
 
 {
   code *pcVar1;

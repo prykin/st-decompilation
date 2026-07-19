@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006ef530(int param_1,int param_2,char *param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 102 | 112 | 114 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl _mfTMapSetMeshParam(int param_1,int param_2,char *param_3)
 
 {
   code *pcVar1;

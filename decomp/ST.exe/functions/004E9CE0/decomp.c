@@ -45,24 +45,24 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     iVar4 = (*pcVar2)();
     return iVar4;
   }
-  switch(*(undefined4 *)&local_20->field_0x46c) {
+  switch(local_20->field_046C) {
   case 1:
-    if (*(int *)&local_20->field_0x3dc == 0) {
-      if (((*(int *)&local_20->field_0x5b0 == *(int *)&local_20->field_0x474) &&
-          (*(int *)&local_20->field_0x5b4 == *(int *)&local_20->field_0x478)) &&
-         (*(int *)&local_20->field_0x5b8 == *(int *)&local_20->field_0x47c + 1)) {
+    if (local_20->field_03DC == 0) {
+      if (((*(int *)&local_20->field_0x5b0 == local_20->field_0474) &&
+          (*(int *)&local_20->field_0x5b4 == local_20->field_0478)) &&
+         (*(int *)&local_20->field_0x5b8 == local_20->field_047C + 1)) {
         bVar3 = true;
       }
       else {
         bVar3 = false;
       }
       if (bVar3) {
-        *(undefined4 *)&local_20->field_0x46c = 2;
+        local_20->field_046C = 2;
         g_currentExceptionFrame = local_64.previous;
         return 0;
       }
-      thunk_FUN_004c6c70(local_20,*(int *)&local_20->field_0x474,
-                         *(undefined4 *)&local_20->field_0x478,*(int *)&local_20->field_0x47c + 1);
+      thunk_FUN_004c6c70(local_20,local_20->field_0474,local_20->field_0478,local_20->field_047C + 1
+                        );
       g_currentExceptionFrame = local_64.previous;
       return 0;
     }
@@ -77,12 +77,12 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     iVar4 = thunk_FUN_004e91e0(local_8,(int *)this_00);
     if (iVar4 != 0) {
       *(undefined4 *)&this_00->field_0x48c = 1;
-      *(undefined4 *)&this_00->field_0x46c = 3;
+      this_00->field_046C = 3;
       thunk_FUN_00416270(this_00,local_14,local_10,local_c);
       thunk_FUN_00415b30(this_00,local_14[0],local_10[0],local_c[0],
-                         *(short *)&this_00->field_0x474 * 0xc9 + 200,
-                         *(short *)&this_00->field_0x478 * 0xc9 + 200,
-                         (*(short *)&this_00->field_0x47c + 1) * 200,this_00->field_0x62);
+                         *(short *)&this_00->field_0474 * 0xc9 + 200,
+                         *(short *)&this_00->field_0478 * 0xc9 + 200,
+                         (*(short *)&this_00->field_047C + 1) * 200,this_00->field_0x62);
       thunk_FUN_004e9650(local_8,(undefined4 *)&this_00->field_0x480,
                          (undefined4 *)&this_00->field_0x484,(undefined4 *)&this_00->field_0x488);
       thunk_FUN_004e96c0(local_8,*(int **)&this_00->field_0x18);
@@ -111,14 +111,14 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
       return iVar4;
     }
     if (iVar4 == 0) {
-      iVar8 = (int)*(short *)&this_00->field_0x45;
-      *(undefined4 *)&this_00->field_0x46c = 4;
+      iVar8 = (int)(short)this_00->field_0045;
+      this_00->field_046C = 4;
       uVar10 = 0;
       uVar1 = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
       *(undefined4 *)&this_00->field_0x490 = 0;
-      iVar4 = (int)*(short *)&this_00->field_0x43;
+      iVar4 = (int)(short)this_00->field_0043;
       *(undefined4 *)&this_00->field_0x49c = uVar1;
-      iVar7 = (int)*(short *)&this_00->field_0x41;
+      iVar7 = (int)(short)this_00->field_0041;
       iVar9 = 0;
       *(undefined4 *)&this_00->field_0x498 = 0;
       uVar5 = thunk_FUN_004ad650((int)&this_00->field_01D5);
@@ -133,16 +133,16 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
     if ((iVar4 + 0x15U <= uVar5) && (*(int *)&local_20->field_0x490 == 0)) {
       iVar4 = 0;
       uVar5 = thunk_FUN_004ad650((int)&local_20->field_01D5);
-      FUN_006eabf0(*(void **)&this_00->field_0x211,uVar5,iVar4);
+      FUN_006eabf0((void *)this_00->field_0211,uVar5,iVar4);
       if (this_00->field_05FF != 0) {
         iVar4 = 0;
         uVar5 = thunk_FUN_004ad650(this_00->field_05FF);
-        FUN_006eabf0(*(void **)&this_00->field_0x211,uVar5,iVar4);
+        FUN_006eabf0((void *)this_00->field_0211,uVar5,iVar4);
       }
       if (this_00->field_0603 != 0) {
         iVar4 = 0;
         uVar5 = thunk_FUN_004ad650(this_00->field_0603);
-        FUN_006eabf0(*(void **)&this_00->field_0x211,uVar5,iVar4);
+        FUN_006eabf0((void *)this_00->field_0211,uVar5,iVar4);
       }
       *(undefined4 *)&this_00->field_0x490 = 1;
       g_currentExceptionFrame = local_64.previous;
@@ -180,28 +180,28 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
                          *(short *)&this_00->field_0x5b8);
       iVar4 = 1;
       uVar5 = thunk_FUN_004ad650((int)&this_00->field_01D5);
-      FUN_006eabf0(*(void **)&this_00->field_0x211,uVar5,iVar4);
+      FUN_006eabf0((void *)this_00->field_0211,uVar5,iVar4);
       if (this_00->field_05FF != 0) {
         iVar4 = 1;
         uVar5 = thunk_FUN_004ad650(this_00->field_05FF);
-        FUN_006eabf0(*(void **)&this_00->field_0x211,uVar5,iVar4);
+        FUN_006eabf0((void *)this_00->field_0211,uVar5,iVar4);
       }
       if (this_00->field_0603 != 0) {
         iVar4 = 1;
         uVar5 = thunk_FUN_004ad650(this_00->field_0603);
-        FUN_006eabf0(*(void **)&this_00->field_0x211,uVar5,iVar4);
+        FUN_006eabf0((void *)this_00->field_0211,uVar5,iVar4);
       }
-      if ((*(int *)(&DAT_00792778 + *(int *)&this_00->field_0x235 * 4) == 0) ||
-         (iVar4 = thunk_FUN_004e81b0(*(int *)&this_00->field_0x24,*(int *)&this_00->field_0x235,0),
-         iVar4 == 0)) {
+      if ((*(int *)(&DAT_00792778 + this_00->field_0235 * 4) == 0) ||
+         (iVar4 = thunk_FUN_004e81b0(*(int *)&this_00->field_0x24,this_00->field_0235,0), iVar4 == 0
+         )) {
         puVar6 = (undefined *)0x5;
       }
       else {
-        puVar6 = (undefined *)
-                 thunk_FUN_004e81b0(*(int *)&this_00->field_0x24,*(int *)&this_00->field_0x235,0);
+        puVar6 = (undefined *)thunk_FUN_004e81b0(*(int *)&this_00->field_0x24,this_00->field_0235,0)
+        ;
       }
       thunk_FUN_0041c3f0(this_00,puVar6);
-      *(undefined4 *)&this_00->field_0x46c = 5;
+      this_00->field_046C = 5;
       uVar1 = *(undefined4 *)((int)DAT_00802a38 + 0xe4);
       *(undefined4 *)&this_00->field_0x490 = 0;
       *(undefined4 *)&this_00->field_0x49c = uVar1;
@@ -215,7 +215,7 @@ int __thiscall TLOBaseTy::teleNone(TLOBaseTy *this)
        iVar4 == 0)) {
       thunk_FUN_004e95c0(local_8,(int)this_00);
     }
-    *(undefined4 *)&this_00->field_0x46c = 0;
+    this_00->field_046C = 0;
     *(undefined4 *)&this_00->field_0x470 = 0;
     *(undefined4 *)&this_00->field_0x48c = 0;
   }

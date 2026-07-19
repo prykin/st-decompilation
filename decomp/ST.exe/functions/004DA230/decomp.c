@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_htech.cpp
+   Diagnostic line evidence: 141 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __fastcall FUN_004da230(int param_1)
 
 {

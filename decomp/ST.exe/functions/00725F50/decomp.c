@@ -1,5 +1,11 @@
 
-short * __cdecl FUN_00725f50(cMf32 *param_1,char *param_2,uint param_3,byte param_4,int param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 136 | 142 | 159 | 182 | 184 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+short * __cdecl mfMSprLoad(cMf32 *param_1,char *param_2,uint param_3,byte param_4,int param_5)
 
 {
   code *pcVar1;
@@ -47,8 +53,8 @@ short * __cdecl FUN_00725f50(cMf32 *param_1,char *param_2,uint param_3,byte para
     if (iVar2 < 1) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfspr_cpp_007f0c8c,0x88);
     }
-    local_10 = FUN_007262b0(param_1,param_2,1);
-    iVar7 = FUN_00726390(param_1,param_2,1);
+    local_10 = mfMSprGetNumFas(param_1,param_2,1);
+    iVar7 = mfMSprGetNumPl(param_1,param_2,1);
     if (iVar7 < iVar2) {
       iVar2 = iVar7;
       local_14 = iVar7;
@@ -61,9 +67,9 @@ short * __cdecl FUN_00725f50(cMf32 *param_1,char *param_2,uint param_3,byte para
     local_8 = (short *)Library::DKW::LIB::FUN_006aac10(local_10 * iVar2 * 10 + 0x16);
     local_8[1] = (short)local_10;
     *local_8 = (short)iVar2;
-    iVar4 = FUN_00726470(param_1,param_2,1);
+    iVar4 = mfMSprGetWidth(param_1,param_2,1);
     local_8[2] = (short)iVar4;
-    iVar4 = FUN_00726550(param_1,param_2,1);
+    iVar4 = mfMSprGetHeigh(param_1,param_2,1);
     local_1c = 1;
     local_8[3] = (short)iVar4;
     *(cMf32 **)(local_8 + 4) = param_1;

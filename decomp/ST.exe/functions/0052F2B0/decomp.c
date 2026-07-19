@@ -58,16 +58,16 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     case '\x02':
     case '\f':
     case '\x0e':
-      local_c->field_0x1a9 = 1;
+      local_c->field_01A9 = 1;
     case '\x01':
       if (param_1 == '\x01') {
-        local_c->field_0x1a9 = 0;
+        local_c->field_01A9 = 0;
       }
-      if (param_1 == local_c->field_0x1a4) {
+      if (param_1 == local_c->field_01A4) {
         g_currentExceptionFrame = local_5c.previous;
         return;
       }
-      local_c->field_0x1a4 = param_1;
+      local_c->field_01A4 = param_1;
       SetOptControls(local_c);
       g_currentExceptionFrame = local_5c.previous;
       return;
@@ -87,7 +87,7 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
       }
       this_00->field_0172 = 4;
       DAT_00808788 = 0;
-      if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)&DAT_00801688->field_0x23f == 1)) {
+      if ((DAT_00801688 != (CPanelTy *)0x0) && (DAT_00801688->field_023F == 1)) {
         CPanelTy::ShiftControls(DAT_00801688,1);
       }
       GVar14 = CASE_B0;
@@ -164,16 +164,16 @@ void __thiscall OptPanelTy::SwitchOptPanel(OptPanelTy *this,char param_1)
     case '\x02':
     case '\f':
     case '\x0e':
-      this_00->field_0x1a9 = 1;
+      this_00->field_01A9 = 1;
       break;
     default:
       goto switchD_0052f589_caseD_3;
     }
     if (param_1 == '\x01') {
-      this_00->field_0x1a9 = 0;
+      this_00->field_01A9 = 0;
     }
-    if (param_1 != this_00->field_0x1a4) {
-      this_00->field_0x1a4 = param_1;
+    if (param_1 != this_00->field_01A4) {
+      this_00->field_01A4 = param_1;
       SetOptControls(this_00);
       goto switchD_0052f30f_caseD_4;
     }
@@ -189,13 +189,13 @@ switchD_0052f589_caseD_3:
   case '\x02':
   case '\f':
   case '\x0e':
-    this_00->field_0x1a9 = 1;
+    this_00->field_01A9 = 1;
   case '\x01':
     if (param_1 == '\x01') {
-      this_00->field_0x1a9 = 0;
+      this_00->field_01A9 = 0;
     }
-    if (param_1 != this_00->field_0x1a4) {
-      this_00->field_0x1a4 = param_1;
+    if (param_1 != this_00->field_01A4) {
+      this_00->field_01A4 = param_1;
       SetOptControls(this_00);
     }
   default:

@@ -46,12 +46,12 @@ void __thiscall InputClassTy::DelAcc(InputClassTy *this,byte *param_1)
     RaiseInternalException(iVar2,0,s_E__Ourlib_Sinput_cpp_007f092c,0x233);
     return;
   }
-  if (*(int *)(local_20 + 0x24) == 0) {
+  if (local_20->field_0024 == 0) {
     g_currentExceptionFrame = local_74.previous;
     return;
   }
-  *(undefined4 *)(*(int *)(local_20 + 0x24) + 4) = 0;
-  local_c = FUN_006b1190(*(int *)(local_20 + 0x24),local_d8);
+  *(undefined4 *)(local_20->field_0024 + 4) = 0;
+  local_c = FUN_006b1190(local_20->field_0024,local_d8);
   while (-1 < (int)local_c) {
     iVar2 = 0x13;
     bVar8 = true;
@@ -65,12 +65,12 @@ void __thiscall InputClassTy::DelAcc(InputClassTy *this,byte *param_1)
       pbVar7 = pbVar7 + 4;
     } while (bVar8);
     if (bVar8) {
-      *(undefined4 *)(this_00 + 0x70) = 1;
+      this_00->field_0070 = 1;
       uVar3 = local_c;
       if ((*param_1 & 2) != 0) goto joined_r0x0071c5de;
       goto cf_common_exit_0071C735;
     }
-    local_c = FUN_006b1190(*(int *)(this_00 + 0x24),local_d8);
+    local_c = FUN_006b1190(this_00->field_0024,local_d8);
   }
   goto LAB_0071c742;
 joined_r0x0071c5de:
@@ -78,7 +78,7 @@ joined_r0x0071c5de:
     do {
       local_18 = uVar3 - 1;
       if ((int)local_18 < 0) goto cf_common_exit_0071C735;
-      iVar2 = *(int *)(this_00 + 0x24);
+      iVar2 = this_00->field_0024;
       if (local_18 < *(uint *)(iVar2 + 0xc)) {
         puVar6 = (uint *)(*(int *)(iVar2 + 8) * local_18 + *(int *)(iVar2 + 0x1c));
       }
@@ -93,9 +93,9 @@ joined_r0x0071c5de:
     puVar6[0x13] = 0;
     puVar6[0x14] = 0;
     if ((*puVar6 & 8) == 0) {
-      if (*(int *)(this_00 + 0x60) != 0) {
-        iVar2 = (**(code **)(**(int **)(this_00 + 0x1c) + 0x24))
-                          (*(int **)(this_00 + 0x1c),0x100,local_1d8);
+      if (this_00->field_0060 != 0) {
+        iVar2 = (**(code **)(*(int *)this_00->field_001C + 0x24))
+                          ((int *)this_00->field_001C,0x100,local_1d8);
         if (iVar2 != 0) {
           RaiseInternalException(iVar2,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x222);
         }
@@ -106,9 +106,9 @@ joined_r0x0071c5de:
         goto LAB_0071c71d;
       }
     }
-    else if ((*(int *)(this_00 + 0x60) != 0) && (*(int *)(this_00 + 100) != 0)) {
-      iVar2 = (**(code **)(**(int **)(this_00 + 0x1c) + 0x24))
-                        (*(int **)(this_00 + 0x1c),0x100,local_1d8);
+    else if ((this_00->field_0060 != 0) && (this_00->field_0064 != 0)) {
+      iVar2 = (**(code **)(*(int *)this_00->field_001C + 0x24))
+                        ((int *)this_00->field_001C,0x100,local_1d8);
       if (iVar2 != 0) {
         RaiseInternalException(iVar2,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x21b);
       }
@@ -127,11 +127,11 @@ LAB_0071c71d:
     uVar3 = local_18;
   } while ((*puVar6 & 2) == 0);
 cf_common_exit_0071C735:
-  FUN_006b0c70(*(int *)(this_00 + 0x24),local_c);
+  FUN_006b0c70(this_00->field_0024,local_c);
 LAB_0071c742:
-  if (*(int *)(*(byte **)(this_00 + 0x24) + 0xc) == 0) {
-    FUN_006ae110(*(byte **)(this_00 + 0x24));
-    *(undefined4 *)(this_00 + 0x24) = 0;
+  if (*(int *)((byte *)this_00->field_0024 + 0xc) == 0) {
+    FUN_006ae110((byte *)this_00->field_0024);
+    this_00->field_0024 = 0;
   }
   g_currentExceptionFrame = local_74.previous;
   return;

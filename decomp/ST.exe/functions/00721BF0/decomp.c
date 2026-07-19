@@ -29,11 +29,11 @@ int __thiscall EditorClassTy::SendToSliders(EditorClassTy *this,int *param_1)
         param_1 = param_1 + 1;
         piVar4 = piVar4 + 1;
       }
-      local_28[2] = *(int *)(local_8 + 0x1fc);
+      local_28[2] = local_8->field_01FC;
       if (local_28[2] != 0) {
         FUN_006e6060(local_8,local_28);
       }
-      local_28[2] = *(int *)(this_00 + 0x200);
+      local_28[2] = this_00->field_0200;
       if (local_28[2] != 0) {
         FUN_006e6060(this_00,local_28);
       }

@@ -1,6 +1,12 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 1025 | 1036 | 1054 | 1061 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl
-FUN_0070bfe0(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_4)
+imgGetPcxGifJpgFromFile(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_4)
 
 {
   code *pcVar1;
@@ -74,7 +80,7 @@ FUN_0070bfe0(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_
         if (param_3 != (undefined2 *)0x0) {
           *param_3 = 10;
         }
-        puVar3 = FUN_0071ae80((LPCSTR)param_1,param_4);
+        puVar3 = ReadAllFile((LPCSTR)param_1,param_4);
         g_currentExceptionFrame = local_58.previous;
         return puVar3;
       }
@@ -100,7 +106,7 @@ FUN_0070bfe0(byte *param_1,undefined2 *param_2,undefined2 *param_3,DWORD *param_
   }
   _lclose(hFile);
   local_8 = 0xffffffff;
-  puVar3 = FUN_0071ae80((LPCSTR)param_1,param_4);
+  puVar3 = ReadAllFile((LPCSTR)param_1,param_4);
   g_currentExceptionFrame = local_58.previous;
   return puVar3;
 }

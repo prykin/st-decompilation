@@ -14,7 +14,7 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
   int iVar3;
   uint *puVar4;
   int iVar5;
-  ccFntTy *pcVar6;
+  char *pcVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_80;
@@ -75,16 +75,16 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
               iVar5 = 0;
             }
             if (iVar5 != 0) {
-              if (*(int *)(this_00 + 0x7e) == 0) {
-                pcVar6 = (ccFntTy *)0x0;
+              if (this_00->field_007E == 0) {
+                pcVar6 = (char *)0x0;
               }
               else {
-                pcVar6 = this_00 + 0x9e;
+                pcVar6 = &this_00->field_0x9e;
               }
-              puVar4 = (uint *)FUN_00714fb0(&local_3c,iVar5,param_2,(char *)pcVar6);
+              puVar4 = (uint *)FUN_00714fb0(&local_3c,iVar5,param_2,pcVar6);
               while (puVar4 != (uint *)0x0) {
                 iVar5 = FUN_00711110(this_00,puVar4);
-                if (param_3 < *(int *)(this_00 + 0x58) + iVar5 + iVar3) {
+                if (param_3 < this_00->field_0058 + iVar5 + iVar3) {
                   if ((char)*local_30 != '\0') {
                     if (local_14 == 0) {
                       FUN_006b60b0((char *)local_30,(char *)local_30);
@@ -112,13 +112,13 @@ ccFntTy::FormSarr(ccFntTy *this,int param_1,uint *param_2,int param_3,int param_
                   RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_mfcfnt_cpp_007f0190,0x795);
                 }
                 iVar3 = FUN_00711110(this_00,local_30);
-                if (*(int *)(this_00 + 0x7e) == 0) {
-                  pcVar6 = (ccFntTy *)0x0;
+                if (this_00->field_007E == 0) {
+                  pcVar6 = (char *)0x0;
                 }
                 else {
-                  pcVar6 = this_00 + 0x9e;
+                  pcVar6 = &this_00->field_0x9e;
                 }
-                puVar4 = (uint *)FUN_00714fb0(&local_3c,0,param_2,(char *)pcVar6);
+                puVar4 = (uint *)FUN_00714fb0(&local_3c,0,param_2,pcVar6);
               }
               if ((local_18 < local_20 + -1) &&
                  (iVar5 = FUN_007121a0(param_1,local_18 + 1,local_1c), iVar5 != 0)) {

@@ -38,8 +38,8 @@ FUN_0065eb70(void *this,uint param_1,int param_2,uint *param_3,uint param_4,uint
         else if (((char)param_7 < '\0') || ('\b' < (char)param_7)) {
           param_7 = CONCAT31(param_7._1_3_,0xff);
         }
-        thunk_FUN_00676d80(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,
-                           &LAB_0040559c,local_c,(undefined *)0x0);
+        _EnumPlObj(param_1,param_4,param_5,param_6,(char)param_7,0,0,0,-1,-1,-1,&LAB_0040559c,
+                   local_c,(undefined *)0x0);
         if (DAT_00811900 == 0) {
           local_8 = 0;
         }

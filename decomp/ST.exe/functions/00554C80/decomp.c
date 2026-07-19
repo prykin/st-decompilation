@@ -23,49 +23,45 @@ void __thiscall cLoadingTy::DrawLineCR(cLoadingTy *this,uint *param_1)
   pcVar2 = local_8;
   if (iVar3 == 0) {
     thunk_FUN_00555680(local_8,(char *)param_1);
-    FUN_006b4170(*(int *)(pcVar2 + 4),0,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-                 *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(int *)(pcVar2 + 0x1c),
-                 *(int *)(pcVar2 + 0x34),0);
-    ccFntTy::WrStr(*(ccFntTy **)(pcVar2 + 8),param_1,*(int *)(pcVar2 + 0xc),*(int *)(pcVar2 + 0x10),
-                   *(undefined4 *)(pcVar2 + 0x24));
+    FUN_006b4170(pcVar2->field_0004,0,pcVar2->field_0014 + pcVar2->field_000C,
+                 pcVar2->field_0010 + pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0034,0);
+    ccFntTy::WrStr(pcVar2->field_0008,param_1,pcVar2->field_000C,pcVar2->field_0010,
+                   pcVar2->field_0024);
+    iVar3 = pcVar2->field_0018 + pcVar2->field_0010;
+    iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
     Library::DKW::DDX::FUN_006b42d0
-              ((uint)DAT_0080759c,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-               *(int *)(pcVar2 + 0x18) + *(int *)(pcVar2 + 0x10),*(BITMAPINFO **)pcVar2,(uint *)0x0,
-               *(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-               *(int *)(pcVar2 + 0x18) + *(int *)(pcVar2 + 0x10),*(DWORD *)(pcVar2 + 0x1c),
-               *(DWORD *)(pcVar2 + 0x34));
+              ((uint)DAT_0080759c,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,iVar4,
+               iVar3,pcVar2->field_001C,pcVar2->field_0034);
+    iVar3 = pcVar2->field_0010 + pcVar2->field_0018;
+    iVar4 = pcVar2->field_0014 + pcVar2->field_000C;
     Library::DKW::DDX::FUN_006b4680
-              (DAT_0080759c,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(BITMAPINFO **)(pcVar2 + 4),
-               (uint *)0x0,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-               *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),
-               *(DWORD *)(pcVar2 + 0x34),0);
-    iVar3 = *(int *)(pcVar2 + 0x38);
-    *(int *)(pcVar2 + 0x38) = iVar3 + 1;
-    if (iVar3 + 1 < *(int *)(pcVar2 + 0x30)) {
-      *(int *)(pcVar2 + 0x10) = *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x34);
+              (DAT_0080759c,iVar4,iVar3,(BITMAPINFO *)pcVar2->field_0004,(uint *)0x0,iVar4,iVar3,
+               pcVar2->field_001C,pcVar2->field_0034,0);
+    iVar3 = pcVar2->field_0038 + 1;
+    pcVar2->field_0038 = iVar3;
+    if (iVar3 < (int)pcVar2->field_0030) {
+      pcVar2->field_0010 = pcVar2->field_0010 + pcVar2->field_0034;
     }
     else {
       Library::DKW::WGR::FUN_006b55f0
-                (*(undefined4 **)(pcVar2 + 4),0,*(int *)(pcVar2 + 0x14),*(int *)(pcVar2 + 0x18),
-                 (int)*(undefined4 **)(pcVar2 + 4),0,*(int *)(pcVar2 + 0x14),
-                 *(int *)(pcVar2 + 0x34) + *(int *)(pcVar2 + 0x18),*(int *)(pcVar2 + 0x1c),
-                 *(int *)(pcVar2 + 0x20) - *(int *)(pcVar2 + 0x34));
-      FUN_006b4170(*(int *)(pcVar2 + 4),0,*(int *)(pcVar2 + 0x14) + *(int *)(pcVar2 + 0xc),
-                   *(int *)(pcVar2 + 0x10) + *(int *)(pcVar2 + 0x18),*(int *)(pcVar2 + 0x1c),
-                   *(int *)(pcVar2 + 0x34),0);
+                ((undefined4 *)pcVar2->field_0004,0,pcVar2->field_0014,pcVar2->field_0018,
+                 (int)pcVar2->field_0004,0,pcVar2->field_0014,
+                 pcVar2->field_0034 + pcVar2->field_0018,pcVar2->field_001C,
+                 pcVar2->field_0020 - pcVar2->field_0034);
+      FUN_006b4170(pcVar2->field_0004,0,pcVar2->field_0014 + pcVar2->field_000C,
+                   pcVar2->field_0010 + pcVar2->field_0018,pcVar2->field_001C,pcVar2->field_0034,0);
       Library::DKW::DDX::FUN_006b42d0
-                ((uint)DAT_0080759c,*(int *)(pcVar2 + 0x14),*(int *)(pcVar2 + 0x18),
-                 *(BITMAPINFO **)pcVar2,(uint *)0x0,*(int *)(pcVar2 + 0x14),*(int *)(pcVar2 + 0x18),
-                 *(DWORD *)(pcVar2 + 0x1c),*(DWORD *)(pcVar2 + 0x20));
+                ((uint)DAT_0080759c,pcVar2->field_0014,pcVar2->field_0018,
+                 (BITMAPINFO *)pcVar2->field_0000,(uint *)0x0,pcVar2->field_0014,pcVar2->field_0018,
+                 pcVar2->field_001C,pcVar2->field_0020);
       Library::DKW::DDX::FUN_006b4680
-                (DAT_0080759c,*(int *)(pcVar2 + 0x14),*(int *)(pcVar2 + 0x18),
-                 *(BITMAPINFO **)(pcVar2 + 4),(uint *)0x0,*(int *)(pcVar2 + 0x14),
-                 *(int *)(pcVar2 + 0x18),*(DWORD *)(pcVar2 + 0x1c),*(DWORD *)(pcVar2 + 0x20),0);
+                (DAT_0080759c,pcVar2->field_0014,pcVar2->field_0018,(BITMAPINFO *)pcVar2->field_0004
+                 ,(uint *)0x0,pcVar2->field_0014,pcVar2->field_0018,pcVar2->field_001C,
+                 pcVar2->field_0020,0);
     }
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
-    if (*(code **)(pcVar2 + 0x58) != (code *)0x0) {
-      (**(code **)(pcVar2 + 0x58))(*(undefined4 *)(pcVar2 + 0x54));
+    if ((code *)pcVar2->field_0058 != (code *)0x0) {
+      (*(code *)pcVar2->field_0058)(pcVar2->field_0054);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

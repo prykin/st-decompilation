@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
 
 {
-  undefined1 *puVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   CPanelTy *pCVar3;
   int iVar4;
@@ -26,7 +26,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (DAT_00806758 != 0) {
-      iVar4 = FUN_00715050(DAT_00806758,param_1,0);
+      iVar4 = mfDarLoad(DAT_00806758,param_1,0);
       if (iVar4 != 0) {
         Library::MSVCRT::_strncpy(&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = local_8;
@@ -35,25 +35,25 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
           FUN_006ae110((byte *)local_8->field_024B);
         }
         pCVar3->field_024B = iVar4;
-        puVar1 = &pCVar3->field_0x25b;
-        *(undefined4 *)&pCVar3->field_0x257 = *(undefined4 *)&pCVar3->field_0x253;
-        *(undefined4 *)&pCVar3->field_0x24f = 0;
-        if (*(int *)puVar1 != 0) {
-          FUN_0070b600((int *)puVar1);
+        puVar1 = &pCVar3->field_025B;
+        pCVar3->field_0257 = pCVar3->field_0253;
+        pCVar3->field_024F = 0;
+        if (*puVar1 != 0) {
+          FUN_0070b600(puVar1);
         }
         iVar4 = 1;
         bVar9 = 0;
         bVar8 = 6;
         pcVar5 = (char *)thunk_FUN_005260b0(0,0,0);
-        psVar6 = FUN_0070b430(DAT_00806790,pcVar5,bVar8,bVar9,iVar4);
-        *(short **)puVar1 = psVar6;
-        pCVar3->field_0x260 = 1;
-        pCVar3->field_0x25f = 0;
-        FUN_006b4170(*(int *)&pCVar3->field_0x1b4,0,100,5,0x226,0x55,0);
+        psVar6 = mfQmtLoad(DAT_00806790,pcVar5,bVar8,bVar9,iVar4);
+        *puVar1 = psVar6;
+        pCVar3->field_0260 = 1;
+        pCVar3->field_025F = 0;
+        FUN_006b4170(pCVar3->field_01B4,0,100,5,0x226,0x55,0);
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
-          pCVar3->field_0x260 = 3;
+          pCVar3->field_0260 = 3;
           DAT_0080c4f7 = 3;
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&pCVar3->field_0x17c);
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pCVar3->field_017C);
         }
       }
     }

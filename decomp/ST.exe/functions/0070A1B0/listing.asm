@@ -1,4 +1,4 @@
-FUN_0070a1b0:
+_mfRLoadRelease:
 0070A1B0  55                        PUSH EBP
 0070A1B1  8B EC                     MOV EBP,ESP
 0070A1B3  83 EC 4C                  SUB ESP,0x4c

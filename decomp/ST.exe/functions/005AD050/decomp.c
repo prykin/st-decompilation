@@ -14,7 +14,7 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
   uint *puVar5;
   int iVar6;
   MMMObjTy *this_00;
-  MMMObjTy *this_01;
+  undefined1 *this_01;
   StartServTy *this_02;
   undefined4 unaff_EBX;
   void *unaff_ESI;
@@ -42,25 +42,26 @@ void __thiscall ChooseMapTy::PaintChooseMap(ChooseMapTy *this,char param_1)
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-  thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
+  PutDDX(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
   pCVar3 = local_8;
-  if ((*(int *)&local_8[1].field_0x658 == 0) && (param_1 == '\0')) {
+  if ((local_8->field_20B8 == (HoloTy *)0x0) && (param_1 == '\0')) {
     MMMObjTy::OutBSlProc
               (this_00,(int)DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,
-               (undefined4 *)(*(int *)&local_8->field_0x1a5b + 0x140));
+               (undefined4 *)&local_8->field_1A5B->field_0x140);
   }
-  if (((*(int *)&pCVar3[1].field_0x65c == 0) && (param_1 == '\0')) ||
-     ((param_1 != '\0' && (pCVar3[1].field_0x654 == '\0')))) {
-    this_01 = (MMMObjTy *)(*(int *)&pCVar3->field_0x1a5b + 0x140);
-    MMMObjTy::OutBSlProc(this_01,(int)DAT_0080759c,0,0,10,0xb4,0xf9,0x121,(undefined4 *)this_01);
+  if (((pCVar3->field_20BC == (HoloTy *)0x0) && (param_1 == '\0')) ||
+     ((param_1 != '\0' && (pCVar3->field_20B4 == '\0')))) {
+    this_01 = &pCVar3->field_1A5B->field_0x140;
+    MMMObjTy::OutBSlProc
+              ((MMMObjTy *)this_01,(int)DAT_0080759c,0,0,10,0xb4,0xf9,0x121,(undefined4 *)this_01);
   }
   CVar1 = pCVar3->field_1A5F;
   if (((((CVar1 == CASE_C) || (CVar1 == CASE_4)) || (CVar1 == CASE_5)) || (CVar1 == CASE_13)) &&
-     (((*(int *)&pCVar3[1].field_0x660 == 0 && (param_1 == '\0')) ||
-      ((param_1 != '\0' && (pCVar3[1].field_0x657 == '\0')))))) {
+     (((pCVar3->field_20C0 == (HoloTy *)0x0 && (param_1 == '\0')) ||
+      ((param_1 != '\0' && (pCVar3->field_20B7 == '\0')))))) {
     ChatGlassTy::OutChGlProc
               (DAT_0080759c,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,
-               (undefined4 *)(*(int *)&pCVar3->field_0x1a5b + 0x140));
+               (undefined4 *)&pCVar3->field_1A5B->field_0x140);
   }
   switch(pCVar3->field_1A5F) {
   case CASE_1:

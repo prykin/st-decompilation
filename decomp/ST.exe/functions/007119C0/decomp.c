@@ -42,28 +42,28 @@ ccFntTy::WrStr(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
   }
   iVar3 = FUN_00711110(local_c,param_1);
   local_10 = FUN_007111c0(this_00,param_1);
-  if ((param_2 < 0) && (*(int *)(this_00 + 0x68) < iVar3)) {
+  if ((param_2 < 0) && ((int)this_00->field_0068 < iVar3)) {
     param_2 = 0;
   }
-  if ((param_3 < 0) && (*(int *)(this_00 + 0x6c) < local_10)) {
+  if ((param_3 < 0) && ((int)this_00->field_006C < local_10)) {
     param_3 = 0;
   }
   if (param_2 < 0) {
     if (param_2 == -3) {
-      param_2 = *(int *)(this_00 + 0x68) - iVar3;
+      param_2 = this_00->field_0068 - iVar3;
     }
     else {
-      param_2 = (*(int *)(this_00 + 0x68) - iVar3) / 2;
+      param_2 = (this_00->field_0068 - iVar3) / 2;
     }
   }
   if (param_3 < 0) {
-    param_3 = (*(int *)(this_00 + 0x6c) - local_10) / 2;
+    param_3 = (this_00->field_006C - local_10) / 2;
   }
-  *(int *)(this_00 + 0x54) = param_3;
-  *(int *)(this_00 + 0x50) = param_2;
-  if (*(int *)(this_00 + 0x4c) != 0) {
-    *(undefined4 *)(this_00 + 0x44) = param_4;
-    *(undefined4 *)(this_00 + 0x48) = param_4;
+  this_00->field_0054 = param_3;
+  this_00->field_0050 = param_2;
+  if (this_00->field_004C != 0) {
+    this_00->field_0044 = param_4;
+    this_00->field_0048 = param_4;
   }
   cVar1 = (char)*param_1;
   iVar3 = local_8;
@@ -73,8 +73,8 @@ ccFntTy::WrStr(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
       return 0;
     }
     if (iVar3 == 0) {
-      iVar3 = FUN_0070cd90((char *)(this_00 + 0x9e),param_1);
-      if ((iVar3 != 0) || (*(int *)(this_00 + 0x7e) == 0)) goto LAB_00711afb;
+      iVar3 = FUN_0070cd90(&this_00->field_0x9e,param_1);
+      if ((iVar3 != 0) || (this_00->field_007E == 0)) goto LAB_00711afb;
       iVar3 = 1;
       local_8 = 1;
     }
@@ -85,18 +85,18 @@ ccFntTy::WrStr(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
       if (iVar4 < 0) {
 LAB_00711afb:
         iVar3 = 0;
-        WrCh(this_00,(byte *)param_1,*(uint *)(this_00 + 0x44));
+        WrCh(this_00,(byte *)param_1,this_00->field_0044);
       }
-      else if (*(int *)(this_00 + 0x82) < 0) {
+      else if ((int)this_00->field_0082 < 0) {
         if (iVar4 < 0xf) {
-          *(int *)(this_00 + 0x44) = iVar4;
+          this_00->field_0044 = iVar4;
         }
         else {
-          *(undefined4 *)(this_00 + 0x44) = *(undefined4 *)(this_00 + 0x48);
+          this_00->field_0044 = this_00->field_0048;
         }
       }
       else {
-        *(int *)(this_00 + 0x44) = *(int *)(this_00 + 0x82);
+        this_00->field_0044 = this_00->field_0082;
       }
     }
     cVar1 = *(char *)((int)param_1 + 1);

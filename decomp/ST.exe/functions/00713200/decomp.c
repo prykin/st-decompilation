@@ -74,8 +74,8 @@ ccFntTy::GetFittingStr
     local_10 = param_2;
     while (cVar1 != '\0') {
       if (local_14 == 0) {
-        iVar5 = FUN_0070cd90((char *)(this_00 + 0x9e),puVar10);
-        if ((iVar5 == 0) && (*(int *)(this_00 + 0x7e) != 0)) {
+        iVar5 = FUN_0070cd90(&this_00->field_0x9e,puVar10);
+        if ((iVar5 == 0) && (this_00->field_007E != 0)) {
           local_14 = 1;
         }
         puVar4 = puVar10;

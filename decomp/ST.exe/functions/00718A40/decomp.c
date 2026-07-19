@@ -6,6 +6,11 @@
 /* WARNING: Removing unreachable block (ram,0x00718c35) */
 /* WARNING: Removing unreachable block (ram,0x00718c61) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Palette.cpp
+   Diagnostic line evidence: 266 | 269 | 274 | 275 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
 
 undefined4 * __cdecl
 FUN_00718a40(int param_1,int param_2,int param_3,uint param_4,byte param_5,byte param_6,

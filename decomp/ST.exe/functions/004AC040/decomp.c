@@ -31,7 +31,7 @@ undefined4 __thiscall STT3DSprC::ShowCurFase(STT3DSprC *this,char param_1)
     if (*(int *)(pSVar2->field_0020 + iVar3) == 0) {
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xbc);
     }
-    FUN_006ea270((void *)pSVar2[1].field_0018,pSVar2->field_0018,(int)param_1,
+    FUN_006ea270((void *)pSVar2->field_003C,pSVar2->field_0018,(int)param_1,
                  *(uint *)(pSVar2->field_0020 + 0x18 + iVar3));
     g_currentExceptionFrame = local_4c.previous;
     return 0;

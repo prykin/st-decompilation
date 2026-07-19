@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_tact_d.cpp
+   Diagnostic line evidence: 33 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl FUN_00690e90(char *param_1,undefined2 param_2,undefined2 param_3)
 
 {

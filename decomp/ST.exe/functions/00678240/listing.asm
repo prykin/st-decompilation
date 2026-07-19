@@ -1,4 +1,4 @@
-FUN_00678240:
+_EnumMines:
 00678240  55                        PUSH EBP
 00678241  8B EC                     MOV EBP,ESP
 00678243  83 EC 68                  SUB ESP,0x68

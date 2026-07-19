@@ -26,11 +26,11 @@ undefined4 * __thiscall AiEventClassTy::PrepareToSave(AiEventClassTy *this,uint 
       puVar3 = (undefined4 *)0x0;
     }
     else {
-      puVar3 = (undefined4 *)&local_8->field_0x8c;
+      puVar3 = (undefined4 *)&local_8->field_008C;
     }
-    puVar3 = thunk_FUN_0065cd10(puVar3,param_1);
+    puVar3 = EventDataPack(puVar3,param_1);
     *(undefined1 *)puVar3 = 1;
-    *(undefined4 *)((int)puVar3 + 0x4e) = *(undefined4 *)&pAVar2->field_0x88;
+    *(undefined4 *)((int)puVar3 + 0x4e) = pAVar2->field_0088;
     g_currentExceptionFrame = pIVar5;
     return puVar3;
   }

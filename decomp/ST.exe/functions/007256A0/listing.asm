@@ -1,4 +1,4 @@
-FUN_007256a0:
+mfPlaGetClust:
 007256A0  55                        PUSH EBP
 007256A1  8B EC                     MOV EBP,ESP
 007256A3  83 EC 50                  SUB ESP,0x50

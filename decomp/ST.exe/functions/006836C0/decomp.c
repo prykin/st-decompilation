@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_script.cpp
+   Diagnostic line evidence: 906 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl FUN_006836c0(int param_1,byte *param_2)
 
 {

@@ -1,5 +1,10 @@
 
-int * __cdecl FUN_00719ea0(LPCSTR param_1,int *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 97 | 102 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int * __cdecl GetPcmFromWavFile(LPCSTR param_1,int *param_2)
 
 {
   code *pcVar1;
@@ -25,7 +30,7 @@ int * __cdecl FUN_00719ea0(LPCSTR param_1,int *param_2)
   g_currentExceptionFrame = &local_90;
   errorCode = Library::MSVCRT::__setjmp3(local_90.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    local_c = FUN_0071ae80(param_1,(DWORD *)0x0);
+    local_c = ReadAllFile(param_1,(DWORD *)0x0);
     Library::DKW::SND::FUN_00752e40(local_4c,local_c);
     local_8 = Library::DKW::LIB::FUN_006aac10
                         ((-(uint)((short)local_4c[0] != 1) & 0x24) + 0x1a + local_3a);

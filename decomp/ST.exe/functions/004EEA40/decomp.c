@@ -11,7 +11,7 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   BldBoatPanelTy *this_00;
   byte bVar3;
   uint *puVar4;
-  undefined4 *puVar5;
+  ccFntTy *pcVar5;
   LPSTR pCVar6;
   ushort *puVar7;
   int iVar8;
@@ -20,8 +20,9 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   undefined4 uVar11;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  bool bVar12;
-  int *piVar13;
+  undefined4 *puVar12;
+  bool bVar13;
+  int *piVar14;
   int local_2e8 [11];
   undefined4 auStack_2bc [3];
   undefined4 auStack_2b0 [4];
@@ -47,16 +48,16 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   int local_c;
   uint local_8;
   
-  puVar5 = local_74;
+  puVar12 = local_74;
   local_1c = this;
   for (iVar9 = 0x16; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
-  piVar13 = local_2e8;
+  piVar14 = local_2e8;
   for (iVar9 = 0x8c; iVar9 != 0; iVar9 = iVar9 + -1) {
-    *piVar13 = 0;
-    piVar13 = piVar13 + 1;
+    *piVar14 = 0;
+    piVar14 = piVar14 + 1;
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
@@ -76,28 +77,28 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
   }
   iVar9 = 4;
   DAT_0080167c = local_1c;
-  puVar5 = (undefined4 *)&local_1c[1].field_0x1;
+  puVar12 = &local_1c->field_027A;
   do {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
-    *puVar5 = puVar4;
-    puVar5 = puVar5 + 1;
+    *puVar12 = puVar4;
+    puVar12 = puVar12 + 1;
     iVar9 = iVar9 + -1;
   } while (iVar9 != 0);
   this_00->field_003C = this_00->field_003C + (DAT_00806730 + -800) / 2;
-  puVar5 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
-  *(undefined4 **)&this_00[1].field_0x11 = puVar5;
-  puVar5[0x16] = 1;
-  puVar5[0x17] = 0;
+  pcVar5 = (ccFntTy *)ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_HOLD_FONT_007c1844,0);
+  this_00->field_028A = pcVar5;
+  pcVar5->field_0058 = 1;
+  pcVar5->field_005C = 0;
   iVar9 = 1;
-  piVar13 = (int *)0x0;
+  piVar14 = (int *)0x0;
   pCVar6 = thunk_FUN_00571240(s_BKG_BLDBOATW_007c1834,0);
-  puVar7 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar13,iVar9);
-  *(ushort **)&this_00->field_0x184 = puVar7;
+  puVar7 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar6,piVar14,iVar9);
+  this_00->field_0184 = puVar7;
   puVar1 = &this_00->field_0x6c;
   pCVar6 = thunk_FUN_00571240(s_BKG_BLDBOATBUT_007c1820,0);
   wsprintfA(puVar1,&DAT_007c181c,pCVar6);
   puVar7 = cMf32::RecGet((cMf32 *)DAT_00806790,1,puVar1,(int *)0x0,1);
-  *(ushort **)&this_00[1].field_0x15 = puVar7;
+  this_00->field_028E = puVar7;
   if (DAT_0080874d == 0xff) {
     iVar9 = 1;
   }
@@ -105,10 +106,10 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
     iVar9 = DAT_0080874d + 1;
   }
   wsprintfA(puVar1,s_BOATS__d_007c1810,iVar9);
-  puVar7 = FUN_00709af0(DAT_00806794,CASE_B,puVar1,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar7 = mfRLoad(DAT_00806794,CASE_B,puVar1,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar7;
-  puVar7 = FUN_00709af0(DAT_00806794,CASE_B,(byte *)s_BOATS_D_007c1804,0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+  puVar7 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BOATS_D_007c1804,0xffffffff,0,1,0,(undefined4 *)0x0
+                  );
   this_00->field_018C = puVar7;
   pCVar6 = thunk_FUN_00571240(s_BKG_BLDBOATBUT_007c1820,0);
   ProdPanelTy::InitProdPanel
@@ -126,10 +127,10 @@ void __thiscall BldBoatPanelTy::InitBldBoatPanel(BldBoatPanelTy *this)
       local_2e8[uVar10 * 0x1c] = uVar10 + 1;
       local_2e8[uVar10 * 0x1c + 1] = 0;
       local_2e8[uVar10 * 0x1c + 3] = iVar9 + uVar10 * 0x2c + local_18;
-      bVar12 = local_c != 0;
+      bVar13 = local_c != 0;
       local_2e8[uVar10 * 0x1c + 5] = 0x2b;
       iVar9 = DAT_00806734;
-      if (bVar12) {
+      if (bVar13) {
         iVar9 = this_00->field_0044;
       }
       local_2e8[uVar10 * 0x1c + 4] = iVar9 + 0x3d;
@@ -171,7 +172,7 @@ switchD_004eed0b_default:
   }
   local_2c = local_2e8;
   local_28 = (byte)this_00->field_0278 + 1;
-  local_64 = *(undefined4 *)&this_00->field_0x8;
+  local_64 = this_00->field_0008;
   local_60 = 2;
   local_40 = 2;
   local_74[0] = 1;
@@ -181,7 +182,7 @@ switchD_004eed0b_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
-  (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x19,0,local_74,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(5,this_00 + 1,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

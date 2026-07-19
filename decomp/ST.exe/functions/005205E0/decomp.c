@@ -28,8 +28,8 @@ void __thiscall InfocPanelTy::ShiftControls(InfocPanelTy *this,int param_1)
     g_currentExceptionFrame = &local_4c;
     errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {
-      if (*(int *)&local_8[2].field_0xe0 != 0) {
-        FUN_006e6080(local_8,2,*(int *)&local_8[2].field_0xe0,(undefined4 *)&local_8->field_0x18);
+      if (local_8->field_03D0 != 0) {
+        FUN_006e6080(local_8,2,local_8->field_03D0,(undefined4 *)&local_8->field_0x18);
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

@@ -88,11 +88,11 @@ AiEventClassTy::__CreateObjPl
       local_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
                           *(short *)((int)&DAT_008087ef + uVar5 * 0x51) + -3);
       thunk_FUN_006756d0((short *)&local_20,(short *)&local_30,local_28,local_1c);
-      *(int *)&local_38->field_0x88 = *(int *)&local_38->field_0x88 * 0x41c64e6d + 0x3039;
-      local_18 = *(int *)&local_38->field_0x88 * 0x41c64e6d + 0x3039;
-      *(uint *)&local_38->field_0x88 = local_18;
+      local_38->field_0088 = local_38->field_0088 * 0x41c64e6d + 0x3039;
+      local_18 = local_38->field_0088 * 0x41c64e6d + 0x3039;
+      local_38->field_0088 = local_18;
       iVar3 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
-                                 (*(uint *)&local_38->field_0x88 >> 0x10) % (uint)(int)local_1c[0] +
+                                 ((uint)local_38->field_0088 >> 0x10) % (uint)(int)local_1c[0] +
                                  (int)(short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }

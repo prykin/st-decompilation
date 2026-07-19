@@ -1,4 +1,4 @@
-FUN_0067e7e0:
+CreateArbList:
 0067E7E0  55                        PUSH EBP
 0067E7E1  8B EC                     MOV EBP,ESP
 0067E7E3  81 EC 38 03 00 00         SUB ESP,0x338

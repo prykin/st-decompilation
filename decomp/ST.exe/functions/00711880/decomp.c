@@ -28,22 +28,22 @@ int __thiscall ccFntTy::WrChXY(ccFntTy *this,byte *param_1,int param_2,int param
     if (param_2 < 0) {
       if (param_2 == -3) {
         uVar3 = FUN_00710fb0(local_8,param_1);
-        param_2 = *(int *)(this_00 + 0x68) -
-                  (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10);
+        param_2 = this_00->field_0068 -
+                  (int)*(short *)(this_00->field_009A + 0x6a + (uVar3 & 0xffff) * 10);
       }
       else {
         uVar3 = FUN_00710fb0(local_8,param_1);
-        param_2 = (*(int *)(this_00 + 0x68) -
-                  (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6a + (uVar3 & 0xffff) * 10)) / 2;
+        param_2 = (this_00->field_0068 -
+                  (int)*(short *)(this_00->field_009A + 0x6a + (uVar3 & 0xffff) * 10)) / 2;
       }
     }
     if (param_3 < 0) {
       uVar3 = FUN_00710fb0(this_00,param_1);
-      param_3 = (*(int *)(this_00 + 0x6c) -
-                (int)*(short *)(*(int *)(this_00 + 0x9a) + 0x6c + (uVar3 & 0xffff) * 10)) / 2;
+      param_3 = (this_00->field_006C -
+                (int)*(short *)(this_00->field_009A + 0x6c + (uVar3 & 0xffff) * 10)) / 2;
     }
-    *(int *)(this_00 + 0x54) = param_3;
-    *(int *)(this_00 + 0x50) = param_2;
+    this_00->field_0054 = param_3;
+    this_00->field_0050 = param_2;
     WrCh(this_00,param_1,param_4);
     g_currentExceptionFrame = local_4c.previous;
     return 0;

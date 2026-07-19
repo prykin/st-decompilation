@@ -6,11 +6,11 @@
 undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
 
 {
-  ComboTy CVar1;
+  undefined1 uVar1;
   code *pcVar2;
   ComboTy *this_00;
   int iVar3;
-  ComboTy *pCVar4;
+  undefined4 *puVar4;
   undefined4 uVar5;
   int iVar6;
   uint uVar7;
@@ -40,7 +40,7 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
   uVar7 = *(uint *)(param_1 + 0x10);
   if (uVar7 < 0x10000) {
     if (uVar7 == 0xffff) {
-      *(undefined4 *)(param_1 + 0x18) = *(undefined4 *)(local_c + 0xcc);
+      *(undefined4 *)(param_1 + 0x18) = local_c->field_00CC;
       goto cf_common_exit_00594615;
     }
     switch(uVar7) {
@@ -51,14 +51,13 @@ undefined4 __thiscall ComboTy::GetMessage(ComboTy *this,int param_1)
       DoneCombo(local_c);
       break;
     case 5:
-      FUN_006b35d0(DAT_008075a8,*(uint *)(local_c + 0x108));
+      FUN_006b35d0(DAT_008075a8,local_c->field_0108);
       break;
     case 0x62:
-      if (((*(int *)(local_c + 0xec) <= (int)(uint)*(ushort *)(param_1 + 0x18)) &&
-          ((int)(uint)*(ushort *)(param_1 + 0x18) <
-           *(int *)(local_c + 0xf4) + *(int *)(local_c + 0xec))) &&
-         (*(int *)(local_c + 0xf0) <= (int)(uint)*(ushort *)(param_1 + 0x1a))) {
-        if (*(int *)(local_c + 0xf8) + *(int *)(local_c + 0xf0) <=
+      if ((((int)local_c->field_00EC <= (int)(uint)*(ushort *)(param_1 + 0x18)) &&
+          ((int)(uint)*(ushort *)(param_1 + 0x18) < (int)(local_c->field_00F4 + local_c->field_00EC)
+          )) && ((int)local_c->field_00F0 <= (int)(uint)*(ushort *)(param_1 + 0x1a))) {
+        if ((int)(local_c->field_00F8 + local_c->field_00F0) <=
             (int)(uint)*(ushort *)(param_1 + 0x1a)) {
           thunk_FUN_005943f0(local_c);
         }
@@ -75,33 +74,33 @@ cf_common_exit_00594615:
   }
   switch(uVar7) {
   case 0x10001:
-    iVar3 = *(int *)(local_c + 0x104);
+    iVar3 = local_c->field_0104;
     local_8 = *(uint *)(iVar3 + 0x14);
     if (local_8 == 0) {
       local_8 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
                 *(int *)(iVar3 + 8);
     }
-    CVar1 = local_c[0xd8];
-    pCVar4 = (ComboTy *)FUN_006b4fa0(iVar3);
+    uVar1 = local_c->field_00D8;
+    puVar4 = (undefined4 *)FUN_006b4fa0(iVar3);
     for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *(uint *)pCVar4 = CONCAT22(CONCAT11(CVar1,CVar1),CONCAT11(CVar1,CVar1));
-      pCVar4 = pCVar4 + 4;
+      *puVar4 = CONCAT22(CONCAT11(uVar1,uVar1),CONCAT11(uVar1,uVar1));
+      puVar4 = puVar4 + 1;
     }
     for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *pCVar4 = CVar1;
-      pCVar4 = pCVar4 + 1;
+      *(undefined1 *)puVar4 = uVar1;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    *(undefined4 *)(this_00 + 0xbc) = *(undefined4 *)(param_1 + 0x14);
-    FUN_006e5fe0(this_00,(undefined4 *)(this_00 + 0xa8));
-    iVar3 = *(int *)(this_00 + 0x104);
+    this_00->field_00BC = *(undefined4 *)(param_1 + 0x14);
+    FUN_006e5fe0(this_00,(undefined4 *)&this_00->field_0xa8);
+    iVar3 = this_00->field_0104;
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)(this_00 + 0xfc),0,*(ushort *)(param_1 + 0x18) + 5,
+              ((undefined4 *)this_00->field_00FC,0,*(ushort *)(param_1 + 0x18) + 5,
                *(ushort *)(param_1 + 0x1a) + 5,iVar3,0,0,0,*(int *)(iVar3 + 4),*(int *)(iVar3 + 8));
     goto cf_common_exit_00594615;
   case 0x10002:
-    if (*(int *)(local_c + 0x110) == 0) goto cf_common_exit_00594615;
+    if (local_c->field_0110 == 0) goto cf_common_exit_00594615;
   case 0x10000:
-    *(undefined4 *)(local_c + 0x9c) = *(undefined4 *)(param_1 + 0x14);
+    local_c->field_009C = *(undefined4 *)(param_1 + 0x14);
     break;
   case 0x10003:
     break;

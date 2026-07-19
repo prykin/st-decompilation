@@ -22,9 +22,9 @@ void __thiscall ProdPanelTy::PreInitProdPanel(ProdPanelTy *this)
   pPVar2 = local_8;
   if (iVar3 == 0) {
     FUN_006b1a50(DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x4c);
-    iVar3 = *(int *)&pPVar2->field_0x50 + *(int *)&pPVar2->field_0x58;
-    *(int *)&pPVar2->field_0x44 = iVar3;
-    pPVar2->field_0174 = (*(int *)&pPVar2->field_0x48 - iVar3) + DAT_00806734;
+    iVar3 = pPVar2->field_0050 + pPVar2->field_0058;
+    pPVar2->field_0044 = iVar3;
+    pPVar2->field_0174 = (pPVar2->field_0048 - iVar3) + DAT_00806734;
     g_currentExceptionFrame = pIVar5;
     return;
   }

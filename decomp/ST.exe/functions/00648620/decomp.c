@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_00648620(undefined4 *param_1,undefined4 *param_2,int param_3,uint *param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_boss_d.cpp
+   Diagnostic line evidence: 107 | 108 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl BossDataPack(undefined4 *param_1,undefined4 *param_2,int param_3,uint *param_4)
 
 {
   code *pcVar1;

@@ -3,7 +3,11 @@
 /* [STSwitchEnumApplier] Switch target param_1 uses
    /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum. Cases:
    CASE_A=10;CASE_14=20;CASE_32=50;CASE_5A=90;CASE_8C=140;CASE_10E=270;CASE_118=280;CASE_122=290;CASE_12C=300;CASE_172=370;CASE_BBE=3006;CASE_BBF=3007;CASE_BC0=3008;CASE_BC1=3009;CASE_BC3=3011
-    */
+   
+   [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Maps\DefObj.cpp
+   Diagnostic line evidence: 442 | 448 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 uint * __cdecl
 FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *param_3,

@@ -27,13 +27,13 @@ undefined4 __thiscall ProdPanelTy::SetPanel(ProdPanelTy *this,char param_1)
   if (iVar2 == 0) {
     local_8->field_0194 = param_1;
     if (param_1 == '\0') {
-      if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)&DAT_00801688->field_0x23f == 1)) {
-        CPanelTy::ShiftControls(DAT_00801688,*(int *)(local_8 + 1),1);
+      if ((DAT_00801688 != (CPanelTy *)0x0) && (DAT_00801688->field_023F == 1)) {
+        CPanelTy::ShiftControls(DAT_00801688,local_8->field_0195,1);
       }
       iVar2 = 0;
     }
     else {
-      (**(code **)(*(int *)local_8 + 0x1c))();
+      (**(code **)(local_8->field_0000 + 0x1c))();
       iVar2 = 1;
     }
     SwitchPanel(this_00,iVar2);

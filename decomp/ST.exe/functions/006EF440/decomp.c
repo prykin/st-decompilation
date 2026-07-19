@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006ef440(int param_1,int param_2,char *param_3,char *param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 74 | 83 | 84 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl _mfTMapSetTxtParam(int param_1,int param_2,char *param_3,char *param_4)
 
 {
   code *pcVar1;
@@ -24,7 +29,7 @@ int __cdecl FUN_006ef440(int param_1,int param_2,char *param_3,char *param_4)
     if (param_4 != (char *)0x0) {
       uVar3 = FUN_0070aa30(*(undefined4 *)(param_1 + 5),param_4,0,1);
       *(undefined4 *)(param_2 + 0x14) = uVar3;
-      iVar2 = FUN_0070a870(*(undefined4 *)(param_1 + 5),0x1c,param_4,1);
+      iVar2 = mfImgGetTransp(*(undefined4 *)(param_1 + 5),0x1c,param_4,1);
       *(char *)(param_2 + 10) = (char)iVar2;
     }
     g_currentExceptionFrame = local_48.previous;

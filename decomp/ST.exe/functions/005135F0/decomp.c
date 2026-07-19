@@ -35,35 +35,35 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
     cVar1 = local_c->field_01A1;
     if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
       local_c->field_01A2 = cVar1;
-      *(undefined4 *)&local_c->field_0x1ab = local_c->field_01A3;
+      local_c->field_01AB = local_c->field_01A3;
     }
     else {
       local_c->field_01A2 = 0;
-      *(undefined4 *)&local_c->field_0x1ab = 0;
+      local_c->field_01AB = 0;
     }
     local_c->field_01A1 = 0;
     local_c->field_01A3 = 0;
-    if (*(int *)&local_c->field_0x178 != 0) {
+    if (local_c->field_0178 != 0) {
       local_c->field_0028 = 0x4202;
       *(undefined2 *)&local_c->field_0x2c = 0;
       local_c->field_002E = 2;
-      *(int *)&local_c->field_0x30 = *(int *)&local_c->field_0x178;
+      *(undefined4 *)&local_c->field_0x30 = local_c->field_0178;
       if (DAT_00802a30 != (undefined4 *)0x0) {
         (**(code **)*DAT_00802a30)(&local_c->field_0x18);
       }
     }
-    *(undefined4 *)&this_00->field_0x1cf = 0xffffffff;
+    this_00->field_01CF = 0xffffffff;
     *(undefined4 *)(this_00->field_01CB + 0xc) = 0;
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)&this_00->field_0x68,0,0x21,0x16,*(int *)&this_00->field_0x1dc,0,0x21
-               ,0x16,0x1b8,0x118);
+              ((undefined4 *)this_00->field_0068,0,0x21,0x16,this_00->field_01DC,0,0x21,0x16,0x1b8,
+               0x118);
     local_8 = 0;
-    *(undefined4 *)(*(int *)&this_00->field_0x1b3 + 0xc) = 0;
-    *(undefined4 *)&this_00->field_0x1b7 = 0;
+    *(undefined4 *)(this_00->field_01B3 + 0xc) = 0;
+    this_00->field_01B7 = 0;
     if (*(int *)sizeHelp_exref != 0) {
       iVar3 = 0;
       do {
-        puVar4 = (undefined4 *)(*(int *)&this_00->field_0x1c7 + iVar3);
+        puVar4 = (undefined4 *)(this_00->field_01C7 + iVar3);
         if (puVar4[1] == 0) {
           local_20 = *puVar4;
           local_1c = puVar4[1];
@@ -73,7 +73,7 @@ void __thiscall HelpPanelTy::HomeBut(HelpPanelTy *this)
           local_f = 0;
           local_e = 0;
           local_d = 0;
-          Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x1b3,&local_20);
+          Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_01B3,&local_20);
         }
         local_8 = local_8 + 1;
         iVar3 = iVar3 + 0x11;

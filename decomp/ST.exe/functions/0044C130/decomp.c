@@ -81,8 +81,8 @@ STAllPlayersC::GetTOBJImage
               ((STBoatC *)local_154,param_1,SVar2,0xe,&local_c,(char *)local_154,
                (undefined1 *)&local_8,&param_2);
     if (local_154[0] != 0) {
-      puVar3 = FUN_00709af0((int *)local_c,(Global_sub_00709AF0_param_2Enum)local_8,local_154,
-                            0xffffffff,0,1,0,(undefined4 *)0x0);
+      puVar3 = mfRLoad((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0
+                       ,(undefined4 *)0x0);
       local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     local_c = (STBoatCVTable *)0x0;
@@ -93,8 +93,8 @@ STAllPlayersC::GetTOBJImage
               ((STBoatC *)&local_8,param_1,SVar2,0xd,&local_c,(char *)local_154,
                (undefined1 *)&local_8,&param_2);
     if (local_154[0] != 0) {
-      puVar3 = FUN_00709af0((int *)local_c,(Global_sub_00709AF0_param_2Enum)local_8,local_154,
-                            0xffffffff,0,1,0,(undefined4 *)0x0);
+      puVar3 = mfRLoad((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0
+                       ,(undefined4 *)0x0);
       local_54[0xd] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     local_c = (STBoatCVTable *)0x0;
@@ -105,8 +105,8 @@ STAllPlayersC::GetTOBJImage
               ((STBoatC *)&local_c,param_1,SVar2,0xc,(undefined4 *)&local_c,(char *)local_154,
                (undefined1 *)&local_8,&param_2);
     if (local_154[0] != 0) {
-      puVar3 = FUN_00709af0((int *)local_c,(Global_sub_00709AF0_param_2Enum)local_8,local_154,
-                            0xffffffff,0,1,0,(undefined4 *)0x0);
+      puVar3 = mfRLoad((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0
+                       ,(undefined4 *)0x0);
       local_54[0xc] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
     }
     uVar4 = FUN_00709470(DAT_00807598,local_54,0x11,1,10,0xff);
@@ -197,8 +197,8 @@ STAllPlayersC::GetTOBJImage
       thunk_FUN_004c2950(param_1,SVar2,GVar7,&local_c,(char *)local_154,(undefined1 *)&local_8,
                          &param_2);
       if (local_154[0] != 0) {
-        puVar3 = FUN_00709af0((int *)local_c,(Global_sub_00709AF0_param_2Enum)local_8,local_154,
-                              0xffffffff,0,1,0,(undefined4 *)0x0);
+        puVar3 = mfRLoad((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1
+                         ,0,(undefined4 *)0x0);
         if ((int)(*(int *)puVar3 - CASE_1) < (int)param_2) {
           param_2 = *(int *)puVar3 - CASE_1;
         }
@@ -265,8 +265,8 @@ joined_r0x0044c40d:
   }
   if (local_154[0] != 0) {
 LAB_0044c44d:
-    puVar3 = FUN_00709af0((int *)local_c,(Global_sub_00709AF0_param_2Enum)local_8,local_154,
-                          0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar3 = mfRLoad((int *)local_c,(Global_mfRLoad_param_2Enum)local_8,local_154,0xffffffff,0,1,0,
+                     (undefined4 *)0x0);
     local_54[0xe] = *(undefined4 *)(*(int *)((int)puVar3 + 0x21) + param_2 * 4);
   }
 cf_common_exit_0044C477:

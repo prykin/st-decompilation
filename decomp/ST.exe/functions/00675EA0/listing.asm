@@ -1,4 +1,4 @@
-FUN_00675ea0:
+_AddObjGrpExch:
 00675EA0  55                        PUSH EBP
 00675EA1  8B EC                     MOV EBP,ESP
 00675EA3  83 EC 44                  SUB ESP,0x44

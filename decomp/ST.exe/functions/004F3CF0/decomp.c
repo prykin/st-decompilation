@@ -33,7 +33,7 @@ CPanelTy::PaintTxtBut
   local_18 = *(int **)(param_2 + 0x18);
   local_8 = (ushort *)0x0;
   local_c = local_18[1];
-  local_10 = *local_18 - *(int *)(&this->field_0x3c + uVar2 * 4);
+  local_10 = *local_18 - (&this->field_003C)[uVar2];
   switch(uVar2) {
   case 1:
     iVar9 = this->field_0134;
@@ -79,11 +79,10 @@ cf_common_join_004F3D83:
       local_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar5,errorCode,iVar9);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      thunk_FUN_00540760(*(undefined4 **)(&local_14->field_0x180 + uVar2 * 4),local_10,local_c,
-                         param_3,(byte *)local_8);
+      DibPut((undefined4 *)(&local_14->field_0180)[uVar2],local_10,local_c,param_3,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)(&pCVar3->field_0x180 + uVar2 * 4)
-                       ,0,local_10,local_c,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),(&pCVar3->field_0180)[uVar2],0,local_10,
+                       local_c,local_18[2],local_18[3]);
       iVar10 = -1;
       iVar8 = -1;
       uVar4 = (*(code *)param_6)(param_2);
@@ -91,11 +90,10 @@ cf_common_join_004F3D83:
       iVar9 = -2;
       puVar6 = (uint *)FUN_006b0140(param_5,DAT_00807618);
       ccFntTy::WrTxt(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar7,uVar4,iVar8,iVar10);
-      if ((param_1 < 0xb) && (-1 < (int)*(uint *)(&pCVar3->field_0x148 + uVar2 * 4))) {
+      if ((param_1 < 0xb) && (-1 < (int)(&pCVar3->field_0148)[uVar2])) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(&pCVar3->field_0x148 + uVar2 * 4),0xffffffff,
-                   *(uint *)(&pCVar3->field_0x3c + uVar2 * 4),
-                   *(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
+                  (DAT_008075a8,(&pCVar3->field_0148)[uVar2],0xffffffff,(&pCVar3->field_003C)[uVar2]
+                   ,*(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
       }
       g_currentExceptionFrame = local_5c.previous;
       return;

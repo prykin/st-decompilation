@@ -1,4 +1,4 @@
-FUN_007097c0:
+mfRLoadCreate:
 007097C0  55                        PUSH EBP
 007097C1  8B EC                     MOV EBP,ESP
 007097C3  83 EC 48                  SUB ESP,0x48

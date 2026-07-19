@@ -90,14 +90,14 @@ undefined4 __thiscall STGameObjC::GetMessage(STGameObjC *this,int param_1)
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0x678);
     }
     pSVar2->field_0020 = *puVar8;
-    *(undefined4 *)&pSVar2->field_0x24 = puVar8[1];
-    *(undefined4 *)&pSVar2->field_0x2c = puVar8[4];
-    *(undefined4 *)&pSVar2->field_0x28 = puVar8[2];
-    iVar4 = *(int *)&pSVar2->field_0x18 * DAT_00808754;
-    *(int *)&pSVar2->field_0x1c = iVar4;
+    pSVar2->field_0024 = puVar8[1];
+    pSVar2->field_002C = puVar8[4];
+    pSVar2->field_0028 = puVar8[2];
+    iVar4 = pSVar2->field_0018 * DAT_00808754;
+    pSVar2->field_001C = iVar4;
     uVar5 = iVar4 * 0x41c64e6d + 0x3039;
-    *(uint *)&pSVar2->field_0x1c = uVar5;
-    *(short *)&pSVar2->field_0xf8 = (short)((ulonglong)(uVar5 >> 0x10) % 0x1f) + 0x1e;
+    pSVar2->field_001C = uVar5;
+    pSVar2->field_00F8 = (short)((ulonglong)(uVar5 >> 0x10) % 0x1f) + 0x1e;
     (**(code **)(pSVar2->field_0000 + 0xcc))();
     g_currentExceptionFrame = local_58.previous;
     return 0;

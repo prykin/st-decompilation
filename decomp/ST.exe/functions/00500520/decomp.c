@@ -67,7 +67,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
             if (*pcVar7 != '\0') {
               iVar9 = local_28;
             }
-            pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2a2,(int)(pcVar7 + iVar9));
+            pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,(int)(pcVar7 + iVar9));
             cVar3 = '\x06';
             iVar9 = local_10;
             goto LAB_00500689;
@@ -76,10 +76,10 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           if (*pcVar7 == '\0') {
             iVar9 = local_2c;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2a2,(int)(pcVar7 + iVar9));
+          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,(int)(pcVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          puVar8 = *(undefined4 **)(&pCVar2->field_0x180 + (local_8 & 0xff) * 4);
+          puVar8 = (undefined4 *)(&pCVar2->field_0180)[local_8 & 0xff];
         }
         else {
           if (*pcVar7 == '\0') {
@@ -88,14 +88,14 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           else {
             uVar6 = -(uint)(local_c[2] != '\x01') & 3;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2a2,uVar6);
+          pbVar5 = (byte *)FUN_0070b3a0(pCVar2->field_02A2,uVar6);
           cVar3 = '\x01';
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          puVar8 = *(undefined4 **)(&pCVar2->field_0x180 + (local_8 & 0xff) * 4);
+          puVar8 = (undefined4 *)(&pCVar2->field_0180)[local_8 & 0xff];
         }
-        thunk_FUN_00540760(puVar8,iVar9,iVar10,cVar3,pbVar5);
+        DibPut(puVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;
         iVar4 = iVar4 + 0xb;
         pcVar7 = pcVar7 + 1;

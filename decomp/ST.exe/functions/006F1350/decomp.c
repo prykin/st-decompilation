@@ -19,7 +19,7 @@ void __thiscall cMf32::ToEnd(cMf32 *this,undefined4 param_1,undefined4 param_2)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
-    FUN_00750fb0(**(int **)local_8,param_1,param_2);
+    FUN_00750fb0(*(int *)local_8->field_0000,param_1,param_2);
     g_currentExceptionFrame = pIVar3;
     return;
   }

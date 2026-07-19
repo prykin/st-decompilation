@@ -23,7 +23,7 @@ void __thiscall PrividerTy::CloseButtons(PrividerTy *this,char param_1)
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     DeleteCtrls(this_00,param_1);
-    this_00->field_0x65 = 4;
+    this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     g_currentExceptionFrame = pIVar3;
     return;

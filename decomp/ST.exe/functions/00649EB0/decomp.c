@@ -1,5 +1,10 @@
 
-undefined4 * FUN_00649eb0(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_creat.cpp
+   Diagnostic line evidence: 449 | 450 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * CreateDefaultBossData(void)
 
 {
   code *pcVar1;
@@ -23,8 +28,8 @@ undefined4 * FUN_00649eb0(void)
   errorCode = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar4);
   if (errorCode == 0) {
     local_8 = thunk_FUN_00648400(s_Default_Arbiter_007d2988,1);
-    local_10 = thunk_FUN_0065cd10(*(undefined4 **)((int)local_8 + 0x4e),&local_14);
-    local_c = thunk_FUN_00648620(local_8,local_10,local_14,&local_18);
+    local_10 = EventDataPack(*(undefined4 **)((int)local_8 + 0x4e),&local_14);
+    local_c = BossDataPack(local_8,local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = pIVar4;

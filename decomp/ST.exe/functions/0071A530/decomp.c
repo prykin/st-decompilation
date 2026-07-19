@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 305 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __cdecl FUN_0071a530(int param_1,byte *param_2,int param_3)
 
 {

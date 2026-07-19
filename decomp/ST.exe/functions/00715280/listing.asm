@@ -1,4 +1,4 @@
-FUN_00715280:
+mfDarGetNum:
 00715280  55                        PUSH EBP
 00715281  8B EC                     MOV EBP,ESP
 00715283  83 EC 50                  SUB ESP,0x50

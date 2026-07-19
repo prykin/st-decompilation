@@ -1,4 +1,25 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_script.cpp
+   Diagnostic line evidence: 1082 | 1127 | 1128 | 1129 | 1130 | 1131 | 1132 | 1133 | 1137 | 1138 |
+   1143 | 1162 | 1172 | 1183 | 1211 | 1215 | 1219 | 1223 | 1228 | 1441 | 1442 | 1466 | 1500 | 1501 |
+   1516 | 1517 | 1532 | 1533 | 1543 | 1548 | 1549 | 1562 | 1575 | 1585 | 1624 | 1644 | 1688 | 1690 |
+   1710 | 1711 | 1765 | 1770 | 1788 | 1795 | 1806 | 1811 | 1838 | 1843 | 1868 | 1873 | 1893 | 1908 |
+   1914 | 1916 | 1933 | 1949 | 1955 | 1969 | 1977 | 1985 | 2000 | 2012 | 2023 | 2033 | 2046 | 2056 |
+   2066 | 2072 | 2077 | 2079 | 2091 | 2106 | 2111 | 2113 | 2125 | 2139 | 2144 | 2159 | 2165 | 2166 |
+   2167 | 2168 | 2169 | 2170 | 2171 | 2172 | 2174 | 2175 | 2176 | 2178 | 2179 | 2180 | 2181 | 2182 |
+   2183 | 2185 | 2186 | 2187 | 2188 | 2189 | 2190 | 2191 | 2192 | 2193 | 2195 | 2196 | 2197 | 2198 |
+   2199 | 2200 | 2201 | 2202 | 2203 | 2204 | 2205 | 2206 | 2207 | 2208 | 2209 | 2210 | 2211 | 2212 |
+   2214 | 2215 | 2216 | 2217 | 2219 | 2220 | 2221 | 2222 | 2223 | 2224 | 2225 | 2226 | 2227 | 2228 |
+   2229 | 2230 | 2231 | 2232 | 2233 | 2234 | 2235 | 2236 | 2237 | 2238 | 2239 | 2241 | 2242 | 2243 |
+   2244 | 2245 | 2246 | 2247 | 2248 | 2249 | 2250 | 2251 | 2253 | 2254 | 2255 | 2256 | 2257 | 2258 |
+   2260 | 2261 | 2262 | 2263 | 2264 | 2265 | 2266 | 2267 | 2268 | 2269 | 2270 | 2271 | 2272 | 2273 |
+   2274 | 2275 | 2276 | 2277 | 2278 | 2279 | 2280 | 2281 | 2282 | 2283 | 2284 | 2285 | 2286 | 2287 |
+   2288 | 2289 | 2290 | 2291 | 2292 | 2293 | 2294 | 2296 | 2301 | 2310 | 2339 | 2343 | 2360 | 2361 |
+   2362 | 2376 | 2380 | 2387 | 2394 | 2401 | 2404 | 2405 | 2409 | 2414 | 2423 | 2424 | 2471 | 2472 |
+   2504 | 2512 | 2513 | 2525 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 uint * FUN_00683c70(uint *param_1,char *param_2,undefined4 *param_3,int *param_4,undefined *param_5)
 
 {
@@ -2262,10 +2283,8 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_c = (byte *)thunk_FUN_0065cd10(*(undefined4 **)((int)DAT_008489b4 + 0x4e),&local_18)
-          ;
-          local_20 = (byte *)thunk_FUN_00648620(DAT_008489b4,(undefined4 *)local_c,local_18,
-                                                &local_10);
+          local_c = (byte *)EventDataPack(*(undefined4 **)((int)DAT_008489b4 + 0x4e),&local_18);
+          local_20 = (byte *)BossDataPack(DAT_008489b4,(undefined4 *)local_c,local_18,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
           thunk_FUN_006484f0((int *)&DAT_008489b4);
           thunk_FUN_006809b0(local_20,local_10);
@@ -2302,10 +2321,8 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_c = (byte *)thunk_FUN_0065cd10(*(undefined4 **)((int)DAT_008489b8 + 0x106),&local_18
-                                              );
-          local_28 = (byte *)thunk_FUN_0067d3b0(DAT_008489b8,(undefined4 *)local_c,local_18,
-                                                &local_10);
+          local_c = (byte *)EventDataPack(*(undefined4 **)((int)DAT_008489b8 + 0x106),&local_18);
+          local_28 = (byte *)PlrDataPack(DAT_008489b8,(undefined4 *)local_c,local_18,&local_10);
           thunk_FUN_0065d0f0((int *)&local_c);
           thunk_FUN_0067d160((int *)&DAT_008489b8);
           thunk_FUN_006809b0(local_28,local_10);
@@ -2375,7 +2392,7 @@ cf_common_join_006895D5:
               }
               goto cf_common_join_0068A687;
             }
-            local_24 = (byte *)thunk_FUN_00691190(DAT_008489c8,&local_10);
+            local_24 = (byte *)TactDataPack(DAT_008489c8,&local_10);
             thunk_FUN_00691540((int *)&DAT_008489c8);
             thunk_FUN_006809b0(local_24,local_10);
             thunk_FUN_00691540((int *)&local_24);
@@ -2409,7 +2426,7 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_2c = (byte *)thunk_FUN_006684e0(DAT_008489c4,&local_10);
+          local_2c = (byte *)FltDataPack(DAT_008489c4,&local_10);
           thunk_FUN_006686c0((int *)&DAT_008489c4);
           thunk_FUN_006809b0(local_2c,local_10);
           thunk_FUN_006686c0((int *)&local_2c);
@@ -2725,7 +2742,7 @@ cf_common_join_006895D5:
             }
             goto cf_common_join_0068A687;
           }
-          local_c = (byte *)thunk_FUN_0065cd10(DAT_008489bc,&local_18);
+          local_c = (byte *)EventDataPack(DAT_008489bc,&local_18);
           thunk_FUN_0065d0f0((int *)&DAT_008489bc);
           thunk_FUN_006809b0(local_c,local_18);
           thunk_FUN_0065d0f0((int *)&local_c);

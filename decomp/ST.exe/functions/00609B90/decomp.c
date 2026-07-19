@@ -23,10 +23,10 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    if ((*(int *)(local_8 + 0x234) != 0) &&
-       (iVar2 = *(int *)(*(int *)(local_8 + 0x234) + 0xc), uVar5 = 0, 0 < iVar2)) {
+    if ((local_8->field_0234 != 0) &&
+       (iVar2 = *(int *)(local_8->field_0234 + 0xc), uVar5 = 0, 0 < iVar2)) {
       do {
-        iVar3 = *(int *)(this_00 + 0x234);
+        iVar3 = this_00->field_0234;
         if (uVar5 < *(uint *)(iVar3 + 0xc)) {
           iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
         }
@@ -34,7 +34,7 @@ undefined4 __thiscall STFieldC::InitSprSistem(STFieldC *this,int param_1)
           iVar3 = 0;
         }
         if (iVar3 != 0) {
-          if ((*(int *)(this_00 + 0x1f5) == 0x4d) && (param_1 != 0)) {
+          if ((this_00->field_01F5 == 0x4d) && (param_1 != 0)) {
             *(undefined4 *)(iVar3 + 4) = 0;
           }
           if (*(int *)(iVar3 + 0x3c) < 0) {

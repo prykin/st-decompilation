@@ -76,7 +76,7 @@ SpriteClassTy::SetImagesReg
   switch(param_2) {
   case CASE_7:
   case CASE_81:
-    puVar6 = FUN_00709af0(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
+    puVar6 = mfRLoad(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
     pSVar4->field_0051 = puVar6;
     Library::DKW::DDX::FUN_006b2930
               ((int *)pSVar4->field_0048,pSVar4->field_0004,0,
@@ -88,7 +88,7 @@ SpriteClassTy::SetImagesReg
     pSVar4->field_0028 = (int)*(short *)(iVar5 + 0x2b);
     break;
   case CASE_8:
-    puVar6 = FUN_00709af0(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
+    puVar6 = mfRLoad(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
     pSVar4->field_0059 = puVar6;
     Library::DKW::DDX::FUN_006b2930
               ((int *)pSVar4->field_0048,pSVar4->field_0004,(int)(short)*puVar6,
@@ -102,7 +102,7 @@ SpriteClassTy::SetImagesReg
     pSVar4->field_004D = param_3;
     break;
   case CASE_1E:
-    puVar6 = FUN_00709af0(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
+    puVar6 = mfRLoad(param_1,param_2,param_4,param_3,0,1,0,(undefined4 *)0x0);
     pSVar4->field_0055 = puVar6;
     Library::DKW::DDX::FUN_006b2930
               ((int *)pSVar4->field_0048,pSVar4->field_0004,0,(undefined4 *)(int)(short)*puVar6,

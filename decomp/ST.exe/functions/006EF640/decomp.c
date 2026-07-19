@@ -1,5 +1,11 @@
 
-short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,undefined *param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 139 | 158 | 186 | 191 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+short * __cdecl mfTMapLoad(int param_1,char *param_2,int param_3,int param_4,undefined *param_5)
 
 {
   byte *pbVar1;
@@ -44,7 +50,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
     if (param_4 == 0) {
       param_4 = param_3;
     }
-    iVar5 = FUN_006ef300(param_1,param_2,&local_a,&local_8,(undefined1 *)0x0,&local_6,&local_5);
+    iVar5 = mfTmapGetParam(param_1,param_2,&local_a,&local_8,(undefined1 *)0x0,&local_6,&local_5);
     local_20 = iVar5;
     if (param_5 != (undefined *)0x0) {
       (*(code *)param_5)(-iVar5);
@@ -104,9 +110,9 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
         else {
           pcVar8 = FUN_006f2c00(s_MAPTXTR_007dfab4,3,uVar3 & 0x7fff);
         }
-        FUN_006ef440((int)local_10,iVar10,pcVar8,pCVar6);
+        _mfTMapSetTxtParam((int)local_10,iVar10,pcVar8,pCVar6);
         pCVar6 = FUN_006f2c00(s_MAPMESH_007dfac0,3,*(ushort *)(iVar5 + 7 + (int)local_14) & 0x7fff);
-        FUN_006ef530((int)local_10,iVar10,pCVar6);
+        _mfTMapSetMeshParam((int)local_10,iVar10,pCVar6);
         if (param_5 != (undefined *)0x0) {
           (*(code *)param_5)(local_18);
         }
@@ -127,7 +133,7 @@ short * __cdecl FUN_006ef640(int param_1,char *param_2,int param_3,int param_4,u
     return psVar9;
   }
   cMf32::RecMemFree((cMf32 *)param_1,(uint *)&local_14);
-  FUN_006efb70((int *)&local_10);
+  mfTMapErase((int *)&local_10);
   RaiseInternalException(iVar5,0,s_E__ourlib_Mfstmap_cpp_007eef88,0xbf);
   return (short *)0x0;
 }

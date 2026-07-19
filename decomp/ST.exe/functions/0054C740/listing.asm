@@ -1,4 +1,4 @@
-FUN_0054c740:
+CreatePlaySystem:
 0054C740  55                        PUSH EBP
 0054C741  8B EC                     MOV EBP,ESP
 0054C743  83 EC 4C                  SUB ESP,0x4c

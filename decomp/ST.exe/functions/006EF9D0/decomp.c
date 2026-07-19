@@ -1,5 +1,10 @@
 
-short * __cdecl FUN_006ef9d0(short *param_1,int param_2,int param_3,undefined *param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 212 | 229 | 233 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+short * __cdecl mfTMapNewTxtr(short *param_1,int param_2,int param_3,undefined *param_4)
 
 {
   code *pcVar1;
@@ -40,7 +45,7 @@ short * __cdecl FUN_006ef9d0(short *param_1,int param_2,int param_3,undefined *p
       }
       (*(code *)param_4)(-local_8);
     }
-    local_c = (short *)FUN_006efc50((int)*param_1,(int)param_1[1],param_2,param_3,(char)param_1[2]);
+    local_c = (short *)mfTMapCreate((int)*param_1,(int)param_1[1],param_2,param_3,(char)param_1[2]);
     iVar2 = 0;
     local_8 = 0;
     if (0 < *(int *)((int)param_1 + 0x455)) {
@@ -48,7 +53,7 @@ short * __cdecl FUN_006ef9d0(short *param_1,int param_2,int param_3,undefined *p
       do {
         iVar4 = *local_10;
         if (iVar4 != 0) {
-          FUN_006eff90(local_c,(int)*(short *)(iVar4 + 4),(int)*(short *)(iVar4 + 6),
+          mfTMapAddObj(local_c,(int)*(short *)(iVar4 + 4),(int)*(short *)(iVar4 + 6),
                        (int)*(short *)(iVar4 + 8),*(uint *)(iVar4 + 0x4a),*(ushort *)(iVar4 + 0x4e))
           ;
           if (param_4 != (undefined *)0x0) {
@@ -67,7 +72,7 @@ short * __cdecl FUN_006ef9d0(short *param_1,int param_2,int param_3,undefined *p
   iVar4 = ReportDebugMessage(s_E__ourlib_Mfstmap_cpp_007eef88,0xe5,0,iVar2,&DAT_007a4ccc,
                              s_mfTMapNewTxtr_007eefec);
   if (iVar4 == 0) {
-    FUN_006efb70((int *)&local_c);
+    mfTMapErase((int *)&local_c);
     RaiseInternalException(iVar2,0,s_E__ourlib_Mfstmap_cpp_007eef88,0xe9);
     return (short *)0x0;
   }

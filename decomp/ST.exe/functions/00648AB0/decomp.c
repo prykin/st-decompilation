@@ -1,5 +1,10 @@
 
-ushort * __cdecl FUN_00648ab0(int param_1,char *param_2,int *param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_creat.cpp
+   Diagnostic line evidence: 41 | 55 | 58 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+ushort * __cdecl LoadStrategData(int param_1,char *param_2,int *param_3)
 
 {
   code *pcVar1;
@@ -21,9 +26,9 @@ ushort * __cdecl FUN_00648ab0(int param_1,char *param_2,int *param_3)
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_creat_cpp_007d2880,0x29);
     }
-    local_c = FUN_006f2d90(param_1,param_2,1,0);
+    local_c = mfAObjLoad(param_1,param_2,1,0);
     if ((local_c != (ushort *)0x0) && (local_8 = local_c, param_3 != (int *)0x0)) {
-      iVar2 = FUN_006f2fb0(param_1,param_2,1);
+      iVar2 = mfAObjLen(param_1,param_2,1);
       *param_3 = iVar2;
     }
     g_currentExceptionFrame = local_50.previous;

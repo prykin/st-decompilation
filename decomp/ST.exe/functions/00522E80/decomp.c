@@ -7,17 +7,16 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
 
 {
   ushort uVar1;
-  undefined4 uVar2;
-  code *pcVar3;
-  PanelTy *this_00;
-  int iVar4;
-  undefined4 *puVar5;
-  undefined4 uVar6;
-  int iVar7;
-  uint uVar8;
+  code *pcVar2;
+  IntercomPanelTy *this_00;
+  int iVar3;
+  undefined4 *puVar4;
+  undefined4 uVar5;
+  int iVar6;
+  uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar9;
+  int *piVar8;
   int local_8dc [4];
   int local_8cc;
   int local_8c8;
@@ -36,63 +35,63 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
   undefined4 local_80;
   undefined4 local_7c;
   InternalExceptionFrame local_50;
-  PanelTy *local_c;
+  IntercomPanelTy *local_c;
   uint local_8;
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_c = (PanelTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_c = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x197,0,iVar4,
+    iVar6 = ReportDebugMessage(s_E____titans_Andrey_intercom_cpp_007c401c,0x197,0,iVar3,
                                &DAT_007a4ccc,s_IntercomPanelTy__GetMessage_007c41a0);
-    if (iVar7 == 0) {
-      RaiseInternalException(iVar4,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x197);
+    if (iVar6 == 0) {
+      RaiseInternalException(iVar3,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x197);
       return 0xffff;
     }
-    pcVar3 = (code *)swi(3);
-    uVar6 = (*pcVar3)();
-    return uVar6;
+    pcVar2 = (code *)swi(3);
+    uVar5 = (*pcVar2)();
+    return uVar5;
   }
   if (*(int *)(param_1 + 0x10) == 2) {
-    PreInitIntercomPanel((IntercomPanelTy *)local_c);
+    PreInitIntercomPanel(local_c);
   }
-  PanelTy::GetMessage(this_00,param_1);
-  uVar8 = *(uint *)(param_1 + 0x10);
-  if (uVar8 < 0xc0a0) {
-    if (uVar8 != 0xc09f) {
-      if (uVar8 == 0) {
-        if (*(short *)&this_00[3].field_0x52 == 3) {
-          iVar4 = *(int *)&this_00[4].field_0xc;
-          if (*(int *)&this_00->field_0x44 < iVar4) {
-            *(int *)&this_00->field_0x44 = *(int *)&this_00->field_0x44 + 5;
+  PanelTy::GetMessage((PanelTy *)this_00,param_1);
+  uVar7 = *(uint *)(param_1 + 0x10);
+  if (uVar7 < 0xc0a0) {
+    if (uVar7 != 0xc09f) {
+      if (uVar7 == 0) {
+        if (this_00->field_0172 == 3) {
+          iVar3 = this_00->field_018C;
+          if ((int)this_00->field_0044 < iVar3) {
+            this_00->field_0044 = this_00->field_0044 + 5;
           }
-          if (iVar4 <= *(int *)&this_00->field_0x44) {
-            piVar9 = local_8dc;
-            for (iVar7 = 0x223; iVar7 != 0; iVar7 = iVar7 + -1) {
-              *piVar9 = 0;
-              piVar9 = piVar9 + 1;
+          if (iVar3 <= (int)this_00->field_0044) {
+            piVar8 = local_8dc;
+            for (iVar6 = 0x223; iVar6 != 0; iVar6 = iVar6 + -1) {
+              *piVar8 = 0;
+              piVar8 = piVar8 + 1;
             }
-            iVar7 = *(int *)(this_00 + 4);
-            *(int *)&this_00->field_0x44 = iVar4;
-            *(undefined2 *)&this_00[3].field_0x52 = 1;
+            iVar6 = this_00->field_0180;
+            this_00->field_0044 = iVar3;
+            this_00->field_0172 = 1;
             local_8dc[0] = 1;
             local_8dc[1] = 9;
-            local_8dc[2] = iVar7;
-            if (*(int *)(iVar7 + 0xa0) != 0) {
-              FUN_00710790(iVar7);
+            local_8dc[2] = iVar6;
+            if (*(int *)(iVar6 + 0xa0) != 0) {
+              FUN_00710790(iVar6);
             }
-            local_8c4 = *(int *)(iVar7 + 0x8a) + 1;
+            local_8c4 = *(int *)(iVar6 + 0x8a) + 1;
             local_8dc[3] = (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e +
-                           this_00->field_003C;
+                           *(int *)&this_00->field_0x3c;
             local_7c = 1;
             local_80 = 1;
-            local_8cc = (0x14 - local_8c4) / 2 + 5 + *(int *)&this_00->field_0x44;
+            local_8cc = (0x14 - local_8c4) / 2 + 5 + this_00->field_0044;
             local_8b0 = *(undefined4 *)&this_00->field_0x8;
             local_8c8 = (-(uint)(DAT_0080874e != '\x03') & 0x32) + 700;
-            local_8bc = *(undefined4 *)&this_00[4].field_0x18;
+            local_8bc = this_00->field_0198;
             local_8ac = 2;
             local_88c = 2;
             local_84c = 2;
@@ -102,97 +101,93 @@ undefined4 __thiscall IntercomPanelTy::GetMessage(IntercomPanelTy *this,int para
             local_848 = 0xc09f;
             local_890 = local_8b0;
             local_850 = local_8b0;
-            (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00[4].field_0x20,0,local_8dc,1)
-            ;
+            (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_01A0,0,local_8dc,1);
           }
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,*(uint *)(this_00 + 1),0xffffffff,this_00->field_003C,
-                     *(uint *)&this_00->field_0x44);
+                    (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
+                     *(uint *)&this_00->field_0x3c,this_00->field_0044);
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        if (*(short *)&this_00[3].field_0x52 != 4) {
+        if (this_00->field_0172 != 4) {
           g_currentExceptionFrame = local_50.previous;
           return 0;
         }
-        iVar4 = *(int *)&this_00[4].field_0xc - *(int *)&this_00->field_0x48;
-        if (iVar4 < *(int *)&this_00->field_0x44) {
-          *(int *)&this_00->field_0x44 = *(int *)&this_00->field_0x44 + -5;
+        iVar3 = this_00->field_018C - this_00->field_0048;
+        if (iVar3 < (int)this_00->field_0044) {
+          this_00->field_0044 = this_00->field_0044 + -5;
         }
-        if (*(int *)&this_00->field_0x44 <= iVar4) {
-          *(int *)&this_00->field_0x44 = iVar4;
-          *(undefined2 *)&this_00[3].field_0x52 = 2;
-          this_00[3].field_005C = 0;
+        if ((int)this_00->field_0044 <= iVar3) {
+          this_00->field_0044 = iVar3;
+          this_00->field_0172 = 2;
+          *(undefined4 *)&this_00->field_0x17c = 0;
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(this_00 + 1),0xffffffff,this_00->field_003C,
-                   *(uint *)&this_00->field_0x44);
+                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
+                   *(uint *)&this_00->field_0x3c,this_00->field_0044);
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      if (uVar8 == 2) {
-        InitIntercomPanel((IntercomPanelTy *)this_00);
+      if (uVar7 == 2) {
+        InitIntercomPanel(this_00);
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      if (uVar8 != 3) {
+      if (uVar7 != 3) {
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }
-      DoneIntercomPanel((IntercomPanelTy *)this_00);
+      DoneIntercomPanel(this_00);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
     thunk_FUN_00521cf0((int)this_00);
-    Library::DKW::TBL::FUN_006b6020(*(int *)&this_00[4].field_0x18,0,&DAT_008016a0);
-    uVar6 = *(undefined4 *)&this_00[4].field_0x20;
-    uVar2 = *(undefined4 *)&this_00[4].field_0x18;
+    Library::DKW::TBL::FUN_006b6020(this_00->field_0198,0,&DAT_008016a0);
     *(undefined4 *)&this_00->field_0x28 = 0x33;
-    *(undefined4 *)&this_00->field_0x2c = uVar2;
-    FUN_006e6080(this_00,2,uVar6,(undefined4 *)&this_00->field_0x18);
+    *(undefined4 *)&this_00->field_0x2c = this_00->field_0198;
+    FUN_006e6080(this_00,2,this_00->field_01A0,(undefined4 *)&this_00->field_0x18);
   }
-  else if (uVar8 != 0xc0a0) {
-    if (uVar8 != 0xc0af) {
+  else if (uVar7 != 0xc0a0) {
+    if (uVar7 != 0xc0af) {
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
-    iVar4 = *(int *)&this_00[4].field_0x1c;
-    local_8 = *(uint *)(iVar4 + 0x14);
+    iVar3 = this_00->field_019C;
+    local_8 = *(uint *)(iVar3 + 0x14);
     if (local_8 == 0) {
-      local_8 = ((uint)*(ushort *)(iVar4 + 0xe) * *(int *)(iVar4 + 4) + 0x1f >> 3 & 0x1ffffffc) *
-                *(int *)(iVar4 + 8);
+      local_8 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
+                *(int *)(iVar3 + 8);
     }
-    puVar5 = (undefined4 *)FUN_006b4fa0(iVar4);
-    for (uVar8 = local_8 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+    puVar4 = (undefined4 *)FUN_006b4fa0(iVar3);
+    for (uVar7 = local_8 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+      *puVar4 = 0;
+      puVar4 = puVar4 + 1;
     }
-    for (uVar8 = local_8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-      *(undefined1 *)puVar5 = 0;
-      puVar5 = (undefined4 *)((int)puVar5 + 1);
+    for (uVar7 = local_8 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+      *(undefined1 *)puVar4 = 0;
+      puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 4),*(int *)&this_00[4].field_0x1c,0,0,0,0,0);
-    ccFntTy::WrStr(*(ccFntTy **)(this_00 + 4),(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,0);
+    ccFntTy::SetSurf((ccFntTy *)this_00->field_0180,this_00->field_019C,0,0,0,0,0);
+    ccFntTy::WrStr((ccFntTy *)this_00->field_0180,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,0);
     uVar1 = *(ushort *)(param_1 + 0x18);
     if ((uVar1 != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {
-      FUN_006b5b10(*(int *)&this_00[4].field_0x1c,0,(uint)uVar1,*(ushort *)(param_1 + 0x1a) + 1,
-                   (uint)uVar1,
-                   *(int *)(*(int *)&this_00[4].field_0x1c + 8) + -3 +
-                   (uint)*(ushort *)(param_1 + 0x1a),0x6c,0xd);
+      FUN_006b5b10(this_00->field_019C,0,(uint)uVar1,*(ushort *)(param_1 + 0x1a) + 1,(uint)uVar1,
+                   *(int *)(this_00->field_019C + 8) + -3 + (uint)*(ushort *)(param_1 + 0x1a),0x6c,
+                   0xd);
     }
-    iVar4 = *(int *)&this_00[4].field_0x1c;
+    iVar3 = this_00->field_019C;
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)&this_00[1].field_0x8,0,
-               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,iVar4,0,0,0,
-               *(int *)(iVar4 + 4),*(int *)(iVar4 + 8));
+              ((undefined4 *)this_00->field_0068,0,
+               (-(uint)(DAT_0080874e != '\x03') & 0xffffffe7) + 0x1e,5,iVar3,0,0,0,
+               *(int *)(iVar3 + 4),*(int *)(iVar3 + 8));
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(this_00 + 1),0xffffffff,this_00->field_003C,
-               *(uint *)&this_00->field_0x44);
+              (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,*(uint *)&this_00->field_0x3c,
+               this_00->field_0044);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }
-  if (*(short *)&this_00[3].field_0x52 == 1) {
-    SwitchIntercomPanel((IntercomPanelTy *)this_00,0);
+  if (this_00->field_0172 == 1) {
+    SwitchIntercomPanel(this_00,0);
   }
   g_currentExceptionFrame = local_50.previous;
   return 0;

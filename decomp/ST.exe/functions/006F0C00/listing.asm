@@ -1,4 +1,4 @@
-FUN_006f0c00:
+AuxTMapRefreshAll:
 006F0C00  55                        PUSH EBP
 006F0C01  8B EC                     MOV EBP,ESP
 006F0C03  83 EC 44                  SUB ESP,0x44

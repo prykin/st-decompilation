@@ -1,4 +1,4 @@
-FUN_00649a60:
+CreatePlrData:
 00649A60  55                        PUSH EBP
 00649A61  8B EC                     MOV EBP,ESP
 00649A63  83 EC 48                  SUB ESP,0x48

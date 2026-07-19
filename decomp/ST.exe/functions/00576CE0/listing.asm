@@ -1,4 +1,4 @@
-FUN_00576ce0:
+DestroyBaseSystem:
 00576CE0  55                        PUSH EBP
 00576CE1  8B EC                     MOV EBP,ESP
 00576CE3  83 EC 44                  SUB ESP,0x44

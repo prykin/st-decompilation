@@ -1,5 +1,10 @@
 
-int __cdecl FUN_00726550(cMf32 *param_1,char *param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfspr.cpp
+   Diagnostic line evidence: 290 | 294 | 296 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfMSprGetHeigh(cMf32 *param_1,char *param_2,int param_3)
 
 {
   code *pcVar1;

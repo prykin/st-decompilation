@@ -124,13 +124,13 @@ STPlaySystemC::SetCtrlCmd
         bVar2 = false;
       }
       if (bVar2) {
-        FUN_006b9910((undefined4 *)&local_8->field_0x39,puVar4);
+        FUN_006b9910(&local_8->field_0039,puVar4);
         PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,(int)unaff_EDI);
         g_currentExceptionFrame = local_54.previous;
         return;
       }
     }
-    FUN_006b9910((undefined4 *)&local_8->field_0x39,puVar4);
+    FUN_006b9910(&local_8->field_0039,puVar4);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

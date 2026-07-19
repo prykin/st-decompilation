@@ -22,10 +22,10 @@ void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    if (0 < *(int *)&local_8->field_0x1cf) {
+    if (0 < (int)local_8->field_01CF) {
       iVar3 = local_8->field_01CB;
-      uVar4 = *(int *)&local_8->field_0x1cf - 1;
-      *(uint *)&local_8->field_0x1cf = uVar4;
+      uVar4 = local_8->field_01CF - 1;
+      local_8->field_01CF = uVar4;
       if (uVar4 < *(uint *)(iVar3 + 0xc)) {
         puVar6 = (undefined1 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
       }

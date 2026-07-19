@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Igor\to_sat.cpp
+   Diagnostic line evidence: 283 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __thiscall FUN_0058c560(void *this,int param_1,int param_2)
 
 {

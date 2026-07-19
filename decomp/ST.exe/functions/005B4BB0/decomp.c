@@ -82,13 +82,13 @@ switchD_005b4c27_default:
   uVar4 = *(uint *)(param_1 + 0x10);
   if (uVar4 < 0x6903) {
     if (uVar4 == 0x6902) {
-      if (this_00[0x14].field_0xe3 == '\0') {
+      if (this_00->field_1EE3 == '\0') {
         thunk_FUN_005b4860((int)this_00);
-        (**(code **)(**(int **)&this_00->field_0xc + 0x10))(0x309,0);
+        (**(code **)(*(int *)this_00->field_000C + 0x10))(0x309,0);
         goto cf_common_exit_005B4EEC;
       }
-      if (this_00[0x14].field_0xe3 != '\x01') goto cf_common_exit_005B4EEC;
-      this_00[0x11].field_0xda = 3;
+      if (this_00->field_1EE3 != '\x01') goto cf_common_exit_005B4EEC;
+      this_00->field_1A5A = 3;
     }
     else {
       if (uVar4 < 6) {
@@ -107,32 +107,32 @@ switchD_005b4c27_default:
         goto cf_common_exit_005B4EEC;
       }
       if (uVar4 == 0x68ff) {
-        if (this_00[0x14].field_0xe3 != '\0') {
-          if (this_00[0x14].field_0xe3 != '\x01') goto cf_common_exit_005B4EEC;
+        if (this_00->field_1EE3 != '\0') {
+          if (this_00->field_1EE3 != '\x01') goto cf_common_exit_005B4EEC;
           _DAT_0080f32e = 1;
         }
-        this_00[0x11].field_0xda = 0;
+        this_00->field_1A5A = 0;
       }
       else if (uVar4 == 0x6900) {
-        if ((this_00[0x14].field_0xe3 == '\0') &&
+        if ((this_00->field_1EE3 == '\0') &&
            ((DAT_0081176c == 0 || (*(int *)(DAT_0081176c + 0x68a) == 0))))
         goto cf_common_exit_005B4EEC;
-        this_00[0x11].field_0xda = 1;
+        this_00->field_1A5A = 1;
       }
       else {
         if (uVar4 != 0x6901) goto cf_common_exit_005B4EEC;
-        if (this_00[0x14].field_0xe3 == '\0') {
-          this_00[0x11].field_0xda = 2;
+        if (this_00->field_1EE3 == '\0') {
+          this_00->field_1A5A = 2;
         }
         else {
-          if (this_00[0x14].field_0xe3 != '\x01') goto cf_common_exit_005B4EEC;
-          this_00[0x11].field_0xda = *(char *)(param_1 + 0x10) + '\x01';
+          if (this_00->field_1EE3 != '\x01') goto cf_common_exit_005B4EEC;
+          this_00->field_1A5A = *(char *)(param_1 + 0x10) + '\x01';
         }
       }
     }
 LAB_005b4de5:
-    (**(code **)(*(int *)this_00 + 8))();
-    this_01 = *(MMsgTy **)(*(int *)&this_00[0x11].field_0xdb + 0x2e6);
+    (**(code **)(this_00->field_0000 + 8))();
+    this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
 LAB_005b4df8:
     if (this_01 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(this_01,1,0,1);
@@ -141,13 +141,13 @@ LAB_005b4df8:
   }
   switch(uVar4) {
   case 0x6903:
-    if (this_00[0x14].field_0xe3 != '\0') {
-      if (this_00[0x14].field_0xe3 != '\x01') break;
+    if (this_00->field_1EE3 != '\0') {
+      if (this_00->field_1EE3 != '\x01') break;
       _DAT_0080f32e = 1;
-      this_00[0x11].field_0xda = 4;
+      this_00->field_1A5A = 4;
       goto LAB_005b4de5;
     }
-    iVar3 = *(int *)&this_00[0x11].field_0xdb;
+    iVar3 = this_00->field_1A5B;
     if (*(int *)(iVar3 + 0x2e6) == 0) break;
     puVar7 = local_48;
     for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
@@ -159,7 +159,7 @@ LAB_005b4df8:
       *puVar7 = 0;
       puVar7 = puVar7 + 1;
     }
-    local_48[2] = *(undefined4 *)&this_00->field_0x8;
+    local_48[2] = this_00->field_0008;
     local_48[3] = 2;
     local_28[3] = 2;
     local_48[4] = 0x6941;
@@ -175,11 +175,10 @@ LAB_005b4df8:
     thunk_FUN_005b47e0((int)this_00);
     break;
   case 0x6941:
-    if (this_00[0x14].field_0xe3 == '\0') {
+    if (this_00->field_1EE3 == '\0') {
       thunk_FUN_005b47e0((int)this_00);
-      iVar3 = *(int *)this_00;
-      this_00[0x11].field_0xda = 4;
-      (**(code **)(iVar3 + 8))();
+      this_00->field_1A5A = 4;
+      (**(code **)(this_00->field_0000 + 8))();
     }
     break;
   case 0x6942:
@@ -187,8 +186,8 @@ LAB_005b4df8:
     goto LAB_005b4ee5;
   case 0x6943:
     thunk_FUN_005b6350(this_00,0x6942,0,0);
-    (**(code **)(*(int *)this_00 + 8))();
-    this_01 = *(MMsgTy **)(*(int *)&this_00[0x11].field_0xdb + 0x2e6);
+    (**(code **)(this_00->field_0000 + 8))();
+    this_01 = *(MMsgTy **)(this_00->field_1A5B + 0x2e6);
     goto LAB_005b4df8;
   case 0x6944:
     cVar8 = '\x01';

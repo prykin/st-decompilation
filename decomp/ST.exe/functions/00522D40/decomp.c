@@ -3,7 +3,7 @@
    E:\__titans\Andrey\intercom.cpp
    IntercomPanelTy::SwitchIntercomPanel */
 
-void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,IntercomPanelTy param_1)
+void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,undefined1 param_1)
 
 {
   short sVar1;
@@ -34,11 +34,11 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,Inter
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_intercom_cpp_007c401c,0x13b);
     return;
   }
-  sVar1 = *(short *)(local_8 + 0x172);
+  sVar1 = local_8->field_0172;
   if (sVar1 != 1) {
     if (sVar1 == 2) {
-      *(undefined2 *)(local_8 + 0x172) = 3;
-      local_8[0x1a4] = param_1;
+      local_8->field_0172 = 3;
+      *(undefined1 *)(local_8 + 1) = param_1;
       GVar5 = CASE_AF;
       goto LAB_00522dd6;
     }
@@ -47,11 +47,11 @@ void __thiscall IntercomPanelTy::SwitchIntercomPanel(IntercomPanelTy *this,Inter
       return;
     }
   }
-  *(undefined2 *)(local_8 + 0x172) = 4;
-  if (*(uint *)(local_8 + 0x1a0) != 0) {
-    FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x1a0));
+  local_8->field_0172 = 4;
+  if (local_8->field_01A0 != 0) {
+    FUN_006e56b0((void *)local_8->field_000C,local_8->field_01A0);
   }
-  *(undefined4 *)(pIVar3 + 0x1a0) = 0;
+  pIVar3->field_01A0 = 0;
   GVar5 = CASE_B0;
 LAB_00522dd6:
   thunk_FUN_005252c0(GVar5);

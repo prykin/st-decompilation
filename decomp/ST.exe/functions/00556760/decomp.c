@@ -67,7 +67,7 @@ TraksClassTy::TraksCreate
   if (((param_15 & 1) == 0) && (DAT_0080731e == 0)) {
     return 0;
   }
-  if (*(int *)(this + 0x24) == 0) {
+  if (this->field_0024 == 0) {
     return 0;
   }
   if (param_4 < 0) {
@@ -194,7 +194,7 @@ LAB_0055693a:
   local_2a = local_54;
   local_28 = local_52;
   pbVar4 = thunk_FUN_00555840((int)param_1);
-  puVar5 = FUN_00709af0(piVar7,CASE_1D,pbVar4,uVar11,bVar12,iVar3,iVar13,puVar14);
+  puVar5 = mfRLoad(piVar7,CASE_1D,pbVar4,uVar11,bVar12,iVar3,iVar13,puVar14);
   local_22 = *puVar5;
   iVar3 = local_58 * 0x18;
   FUN_006e8660(DAT_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),
@@ -222,7 +222,7 @@ LAB_0055693a:
                (float)(int)local_52 * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
   FUN_006eaaa0(DAT_00807598,local_26,0);
   local_36 = (undefined2)param_3;
-  local_34 = *(undefined4 *)(local_60 + 0x20);
+  local_34 = local_60->field_0020;
   if (iVar8 != 0) {
     uVar11 = thunk_FUN_00555d90(local_60,(undefined4 *)&local_58);
     g_currentExceptionFrame = local_a8.previous;

@@ -1,5 +1,11 @@
 
-undefined4 * __cdecl FUN_0071ae80(LPCSTR param_1,DWORD *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfany.cpp
+   Diagnostic line evidence: 72 | 73 | 74 | 78 | 79 | 85 | 90 (metadata/report site, not the
+   function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl ReadAllFile(LPCSTR param_1,DWORD *param_2)
 
 {
   code *pcVar1;

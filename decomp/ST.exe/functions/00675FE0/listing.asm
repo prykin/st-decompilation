@@ -1,4 +1,4 @@
-FUN_00675fe0:
+_AddAllGrpExch:
 00675FE0  55                        PUSH EBP
 00675FE1  8B EC                     MOV EBP,ESP
 00675FE3  83 EC 44                  SUB ESP,0x44

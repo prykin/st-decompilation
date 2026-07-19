@@ -1,4 +1,4 @@
-FUN_006f2d90:
+mfAObjLoad:
 006F2D90  55                        PUSH EBP
 006F2D91  8B EC                     MOV EBP,ESP
 006F2D93  83 EC 48                  SUB ESP,0x48

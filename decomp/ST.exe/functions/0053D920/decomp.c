@@ -43,18 +43,16 @@ UPanelTy::PaintTxtBut
       iVar6 = local_c;
       pUVar2 = local_10;
       iVar3 = local_14;
-      thunk_FUN_00540760(*(undefined4 **)&local_10[1].field_0x8,local_14,local_c,param_2,
-                         (byte *)local_8);
+      DibPut((undefined4 *)local_10->field_0068,local_14,local_c,param_2,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(param_4,*(int *)&pUVar2[1].field_0x8,0,iVar3,iVar6,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(param_4,pUVar2->field_0068,0,iVar3,iVar6,local_18[2],local_18[3]);
       uVar4 = (*(code *)param_6)(param_1);
       iVar6 = -1;
       iVar3 = -2;
       puVar5 = (uint *)FUN_006b0140(param_5,DAT_00807618);
       ccFntTy::WrStr(param_4,puVar5,iVar3,iVar6,uVar4);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pUVar2 + 1),0xffffffff,pUVar2->field_003C,pUVar2->field_0044
-                );
+                (DAT_008075a8,pUVar2->field_0060,0xffffffff,pUVar2->field_003C,pUVar2->field_0044);
       g_currentExceptionFrame = local_5c.previous;
       return;
     }

@@ -1,4 +1,4 @@
-FUN_006eff90:
+mfTMapAddObj:
 006EFF90  55                        PUSH EBP
 006EFF91  8B EC                     MOV EBP,ESP
 006EFF93  83 EC 4C                  SUB ESP,0x4c

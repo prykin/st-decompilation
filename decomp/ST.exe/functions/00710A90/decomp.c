@@ -27,22 +27,22 @@ ccFntTy::SetSurf(ccFntTy *this,int param_1,int param_2,undefined4 param_3,undefi
     }
     pcVar2 = local_8;
     EraseSufr(local_8);
-    *(int *)(pcVar2 + 0x72) = param_1;
+    pcVar2->field_0072 = param_1;
     if (param_2 == 0) {
       param_2 = FUN_006b4fa0(param_1);
     }
-    *(int *)(pcVar2 + 0x76) = param_2;
-    *(undefined4 *)(pcVar2 + 0x7a) = 0;
+    pcVar2->field_0076 = param_2;
+    pcVar2->field_007A = 0;
     if ((param_5 < 1) || (param_6 < 1)) {
       param_5 = *(int *)(param_1 + 4);
       param_6 = *(int *)(param_1 + 8);
     }
-    *(int *)(pcVar2 + 0x68) = param_5;
-    *(undefined4 *)(pcVar2 + 0x60) = param_3;
-    *(int *)(pcVar2 + 0x6c) = param_6;
-    *(undefined4 *)(pcVar2 + 100) = param_4;
-    *(undefined4 *)(pcVar2 + 0x50) = 0;
-    *(undefined4 *)(pcVar2 + 0x54) = 0;
+    pcVar2->field_0068 = param_5;
+    pcVar2->field_0060 = param_3;
+    pcVar2->field_006C = param_6;
+    pcVar2->field_0064 = param_4;
+    pcVar2->field_0050 = 0;
+    pcVar2->field_0054 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

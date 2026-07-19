@@ -44,7 +44,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
         *(undefined1 *)puVar5 = 0xff;
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)&pFVar3->field_0x1a73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
+      ccFntTy::SetSurf(pFVar3->field_1A73,pFVar3->field_1AC0,0,0,0x16,0x1b8,0xf0);
       if (param_1 < param_2) {
         iVar4 = (param_1 * 100) / param_2;
         uVar6 = FUN_006b0140(0x2571,DAT_00807618);
@@ -75,7 +75,7 @@ void __thiscall FSGSTy::ConnectProc(FSGSTy *this,int param_1,int param_2)
           pcVar11 = pcVar11 + 1;
         }
       }
-      ccFntTy::WrTxt(*(ccFntTy **)&pFVar3->field_0x1a73,&DAT_0080f33a,-1,-1,2,-1,-1);
+      ccFntTy::WrTxt(pFVar3->field_1A73,&DAT_0080f33a,-1,-1,2,-1,-1);
       FUN_006b35d0(DAT_008075a8,pFVar3->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;

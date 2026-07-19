@@ -1,4 +1,4 @@
-FUN_0042a290:
+LoadLand:
 0042A290  55                        PUSH EBP
 0042A291  8B EC                     MOV EBP,ESP
 0042A293  81 EC F0 00 00 00         SUB ESP,0xf0

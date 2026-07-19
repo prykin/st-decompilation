@@ -8,10 +8,11 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
 {
   undefined4 uVar1;
   undefined4 uVar2;
-  code *pcVar3;
+  StartSystemTy *pSVar3;
+  code *pcVar4;
   CursorClassTy *this_00;
-  FSGSTy *pFVar4;
-  int iVar5;
+  FSGSTy *pFVar5;
+  int errorCode;
   int iVar6;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar7;
@@ -25,43 +26,42 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   pIVar7 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa4;
   local_8 = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar7);
+  errorCode = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar7);
   this_00 = DAT_00802a30;
-  if (iVar5 == 0) {
+  if (errorCode == 0) {
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar1 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
-      uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
-      DAT_00802a30[0xb].field_0x47 = 1;
-      *(undefined2 *)&this_00[0xb].field_0x48 = 0xffff;
+      uVar1 = DAT_00802a30->field_00C9;
+      uVar2 = DAT_00802a30->field_00C5;
+      DAT_00802a30->field_0493 = 1;
+      this_00->field_0494 = 0xffff;
       CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar1);
-      CursorClassTy::DrawSprite
-                (this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
-      this_00[2].field_0xa = 0;
-      *(undefined4 *)&this_00[0xc].field_0x2f = 0xffffffff;
+      CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
+      this_00->field_0xd2 = 0;
+      *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
     }
-    pFVar4 = local_8;
-    (**(code **)(*(int *)local_8 + 8))();
-    pFVar4->field_0x1a61 = 2;
-    iVar5 = *(int *)&pFVar4->field_0x1a5b;
-    if (*(int *)(iVar5 + 0x2e6) != 0) {
+    pFVar5 = local_8;
+    (**(code **)(local_8->field_0000 + 8))();
+    pFVar5->field_1A61 = 2;
+    pSVar3 = pFVar5->field_1A5B;
+    if (pSVar3->field_02E6 != (MMsgTy *)0x0) {
       local_18 = 0;
       local_14 = 0;
       local_10 = 0;
       local_c = 0;
-      thunk_FUN_005b8f40(*(void **)(iVar5 + 0x2e6),&local_18);
+      thunk_FUN_005b8f40(pSVar3->field_02E6,&local_18);
     }
     g_currentExceptionFrame = pIVar7;
     return;
   }
   g_currentExceptionFrame = pIVar7;
-  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918,0,iVar5,&DAT_007a4ccc,
-                             s_FSGSTy__DoLogon_007cc3f4);
+  iVar6 = ReportDebugMessage(s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918,0,errorCode,
+                             &DAT_007a4ccc,s_FSGSTy__DoLogon_007cc3f4);
   if (iVar6 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+    pcVar4 = (code *)swi(3);
+    (*pcVar4)();
     return;
   }
-  RaiseInternalException(iVar5,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918);
+  RaiseInternalException(errorCode,0,s_E____titans_Start_fsgs_obj_cpp_007cbf70,0x918);
   return;
 }
 

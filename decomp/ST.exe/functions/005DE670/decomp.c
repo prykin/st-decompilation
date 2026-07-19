@@ -1,4 +1,10 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Start\startsys.cpp
+   Diagnostic line evidence: 1043 | 1045 | 1050 | 1052 | 1054 | 1057 | 1058 | 1061 | 1062
+   (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __fastcall FUN_005de670(int param_1)
 
 {

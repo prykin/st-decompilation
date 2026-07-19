@@ -38,13 +38,13 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
     iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar5 == 0) {
-      if (*(int *)&local_8->field_0x180 != 0) {
-        FUN_006e6080(local_8,2,*(int *)&local_8->field_0x180,(undefined4 *)&local_8->field_0x18);
+      if (local_8->field_0180 != 0) {
+        FUN_006e6080(local_8,2,local_8->field_0180,(undefined4 *)&local_8->field_0x18);
       }
-      if (*(int *)&this_00[1].field_0x8 != 0) {
-        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x8,(undefined4 *)&this_00->field_0x18);
+      if (this_00->field_019D != 0) {
+        FUN_006e6080(this_00,2,this_00->field_019D,(undefined4 *)&this_00->field_0x18);
       }
-      piVar7 = (int *)&this_00[1].field_0xc;
+      piVar7 = &this_00->field_01A1;
       iVar5 = 5;
       do {
         if (*piVar7 != 0) {
@@ -57,8 +57,8 @@ void __thiscall ProdPanelTy::ShiftControls(ProdPanelTy *this,int param_1)
         uVar3 = 0x56;
       }
       this_00->field_0028 = uVar3;
-      if (*(int *)&this_00[1].field_0x8 != 0) {
-        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x8,(undefined4 *)&this_00->field_0x18);
+      if (this_00->field_019D != 0) {
+        FUN_006e6080(this_00,2,this_00->field_019D,(undefined4 *)&this_00->field_0x18);
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

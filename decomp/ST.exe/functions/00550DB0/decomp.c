@@ -7,29 +7,29 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
 
 {
   undefined1 *puVar1;
-  undefined1 *puVar2;
-  code *pcVar3;
+  code *pcVar2;
   TradePanelTy *this_00;
-  undefined4 *puVar4;
-  LPSTR pCVar5;
-  undefined4 *puVar6;
-  ushort *puVar7;
-  byte *pbVar8;
-  byte bVar9;
-  int iVar10;
+  undefined4 *puVar3;
+  LPSTR pCVar4;
+  ccFntTy *pcVar5;
+  ushort *puVar6;
+  byte *pbVar7;
+  byte bVar8;
+  int iVar9;
   undefined4 unaff_ESI;
-  uint *puVar11;
+  uint *puVar10;
   void *unaff_EDI;
-  uint uVar12;
-  int *piVar13;
-  bool bVar14;
-  undefined4 uVar15;
-  int *piVar16;
-  undefined4 uVar17;
-  int iVar18;
-  uint uVar19;
-  int iVar20;
-  UINT UVar21;
+  uint uVar11;
+  int *piVar12;
+  bool bVar13;
+  undefined4 uVar14;
+  int *piVar15;
+  undefined4 uVar16;
+  int iVar17;
+  uint uVar18;
+  int iVar19;
+  UINT UVar20;
+  undefined4 *puVar21;
   undefined4 uVar22;
   undefined4 *puVar23;
   uint local_5e0 [84];
@@ -71,81 +71,80 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
   uint local_c;
   byte local_5;
   
-  puVar4 = local_74;
+  puVar3 = local_74;
   local_14 = this;
-  for (iVar10 = 0x16; iVar10 != 0; iVar10 = iVar10 + -1) {
-    *puVar4 = 0;
-    puVar4 = puVar4 + 1;
+  for (iVar9 = 0x16; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *puVar3 = 0;
+    puVar3 = puVar3 + 1;
   }
-  puVar11 = local_5e0;
-  for (iVar10 = 0x54; iVar10 != 0; iVar10 = iVar10 + -1) {
-    *puVar11 = 0;
-    puVar11 = puVar11 + 1;
+  puVar10 = local_5e0;
+  for (iVar9 = 0x54; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *puVar10 = 0;
+    puVar10 = puVar10 + 1;
   }
-  piVar16 = local_490;
-  for (iVar10 = 0xf6; iVar10 != 0; iVar10 = iVar10 + -1) {
-    *piVar16 = 0;
-    piVar16 = piVar16 + 1;
+  piVar15 = local_490;
+  for (iVar9 = 0xf6; iVar9 != 0; iVar9 = iVar9 + -1) {
+    *piVar15 = 0;
+    piVar15 = piVar15 + 1;
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  puVar4 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  puVar3 = (undefined4 *)Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
-  if (puVar4 == (undefined4 *)0x0) {
+  if (puVar3 == (undefined4 *)0x0) {
     uVar22 = 0x77;
     DAT_00802a44 = local_14;
-    iVar10 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffa) + 0xde;
-    UVar21 = 0x36c0;
-    iVar20 = 0xb;
-    iVar18 = 0xbf;
-    uVar17 = 3;
-    uVar15 = 0x40;
-    pCVar5 = thunk_FUN_00571240(s_BKG_TRADECENTERW_007c8680,0);
+    iVar9 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffa) + 0xde;
+    UVar20 = 0x36c0;
+    iVar19 = 0xb;
+    iVar17 = 0xbf;
+    uVar16 = 3;
+    uVar14 = 0x40;
+    pCVar4 = thunk_FUN_00571240(s_BKG_TRADECENTERW_007c8680,0);
     SpecPanelTy::InitPanel
-              ((SpecPanelTy *)this_00,pCVar5,uVar15,uVar17,iVar18,iVar20,UVar21,iVar10,uVar22);
-    puVar6 = ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
-    uVar12 = 1;
-    *(undefined4 **)&this_00[1].field_0x21 = puVar6;
-    puVar6[0x16] = 1;
-    puVar6[0x17] = 0;
-    puVar7 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)&this_00[1].field_0x15 = puVar7;
-    puVar7 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)&this_00[1].field_0x19 = puVar7;
-    iVar10 = 1;
-    uVar19 = 0xffffffff;
-    puVar6 = puVar4;
-    puVar23 = puVar4;
-    pbVar8 = (byte *)thunk_FUN_00571240(s_TRADE_RATE_007c8670,0);
-    puVar7 = FUN_00709af0(DAT_00806794,CASE_B,pbVar8,uVar19,(byte)puVar4,iVar10,(int)puVar6,puVar23)
-    ;
-    local_5 = this_00[1].field_0x14;
-    *(ushort **)&this_00[1].field_0x1d = puVar7;
+              ((SpecPanelTy *)this_00,pCVar4,uVar14,uVar16,iVar17,iVar19,UVar20,iVar9,uVar22);
+    pcVar5 = (ccFntTy *)ccFntTy::operator(DAT_00806790,0x19d,DAT_00806790,s_MONEY_FONT_007c211c,0);
+    uVar11 = 1;
+    this_00->field_01DD = pcVar5;
+    pcVar5->field_0058 = 1;
+    pcVar5->field_005C = 0;
+    puVar6 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
+    this_00->field_01D1 = puVar6;
+    puVar6 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
+    this_00->field_01D5 = puVar6;
+    iVar9 = 1;
+    uVar18 = 0xffffffff;
+    puVar21 = puVar3;
+    puVar23 = puVar3;
+    pbVar7 = (byte *)thunk_FUN_00571240(s_TRADE_RATE_007c8670,0);
+    puVar6 = mfRLoad(DAT_00806794,CASE_B,pbVar7,uVar18,(byte)puVar3,iVar9,(int)puVar21,puVar23);
+    local_5 = this_00->field_01D0;
+    this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;
-    bVar9 = 0;
+    bVar8 = 0;
     local_10 = (DAT_0080874e != '\x03') + 0x3b;
-    puVar11 = local_5e0 + 1;
-    local_c = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 0x22 + *(int *)&this_00->field_0x3c;
+    puVar10 = local_5e0 + 1;
+    local_c = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 0x22 + this_00->field_003C;
     do {
-      iVar18 = local_1c;
-      bVar14 = bVar9 == local_5;
-      puVar11[-1] = uVar12;
-      *puVar11 = (uint)bVar14;
-      puVar11[2] = local_c;
-      puVar11[4] = 0x3a;
-      iVar10 = DAT_00806734;
-      if (iVar18 != 0) {
-        iVar10 = *(int *)&this_00->field_0x44;
+      iVar17 = local_1c;
+      bVar13 = bVar8 == local_5;
+      puVar10[-1] = uVar11;
+      *puVar10 = (uint)bVar13;
+      puVar10[2] = local_c;
+      puVar10[4] = 0x3a;
+      iVar9 = DAT_00806734;
+      if (iVar17 != 0) {
+        iVar9 = this_00->field_0044;
       }
-      bVar9 = bVar9 + 1;
-      puVar11[3] = iVar10 + 0x17;
-      iVar10 = local_10;
-      puVar11[5] = 0x13;
-      uVar12 = uVar12 + 1;
-      local_c = local_c + iVar10;
-      puVar11 = puVar11 + 0x1c;
-    } while (bVar9 < 2);
-    local_64 = *(undefined4 *)&this_00->field_0x8;
+      bVar8 = bVar8 + 1;
+      puVar10[3] = iVar9 + 0x17;
+      iVar9 = local_10;
+      puVar10[5] = 0x13;
+      uVar11 = uVar11 + 1;
+      local_c = local_c + iVar9;
+      puVar10 = puVar10 + 0x1c;
+    } while (bVar8 < 2);
+    local_64 = this_00->field_0008;
     local_2c = local_5e0;
     local_74[0] = 1;
     local_74[1] = 1;
@@ -157,12 +156,12 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_24 = 1;
     local_20 = 1;
     local_44 = local_64;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x8,0,local_74,0);
-    local_e8 = *(undefined4 *)&this_00->field_0x8;
-    iVar18 = 1;
-    piVar16 = (int *)0x0;
-    uVar15 = 0;
-    iVar10 = 1;
+    (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00->field_01C4,0,local_74,0);
+    local_e8 = this_00->field_0008;
+    iVar17 = 1;
+    piVar15 = (int *)0x0;
+    uVar14 = 0;
+    iVar9 = 1;
     local_490[0] = 0;
     local_e4 = 2;
     local_e0 = 0xb20c;
@@ -172,68 +171,65 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     local_380 = 1;
     local_490[2] = 0;
     local_490[3] = 2;
-    pCVar5 = thunk_FUN_00571240(s_BUT_TBUP_007c22d8,0);
-    pCVar5 = FUN_006f2c00(pCVar5,iVar10,uVar15);
-    local_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar5,piVar16,iVar18);
+    pCVar4 = thunk_FUN_00571240(s_BUT_TBUP_007c22d8,0);
+    pCVar4 = FUN_006f2c00(pCVar4,iVar9,uVar14);
+    local_18 = cMf32::RecGet((cMf32 *)DAT_00806790,1,pCVar4,piVar15,iVar17);
     local_478 = *(undefined4 *)(local_18 + 2);
     local_474 = *(undefined4 *)(local_18 + 4);
     cMf32::RecMemFree((cMf32 *)DAT_00806790,(uint *)&local_18);
-    iVar10 = this_00->field_005C;
-    local_490[4] = *(int *)&this_00->field_0x3c + 0x69;
-    iVar18 = DAT_00806734;
-    if (iVar10 != 0) {
-      iVar18 = *(int *)&this_00->field_0x44;
+    iVar9 = this_00->field_005C;
+    local_490[4] = this_00->field_003C + 0x69;
+    iVar17 = DAT_00806734;
+    if (iVar9 != 0) {
+      iVar17 = this_00->field_0044;
     }
     local_424 = 2;
-    local_490[5] = iVar18 + 0x46;
-    local_428 = *(undefined4 *)&this_00->field_0x8;
+    local_490[5] = iVar17 + 0x46;
+    local_428 = this_00->field_0008;
     local_420 = 0xc005;
     local_378 = 500;
     local_374 = 0x28;
-    piVar16 = local_490 + 2;
-    piVar13 = local_308;
-    for (iVar18 = 0x5f; iVar18 != 0; iVar18 = iVar18 + -1) {
-      *piVar13 = *piVar16;
-      piVar16 = piVar16 + 1;
-      piVar13 = piVar13 + 1;
+    piVar15 = local_490 + 2;
+    piVar12 = local_308;
+    for (iVar17 = 0x5f; iVar17 != 0; iVar17 = iVar17 + -1) {
+      *piVar12 = *piVar15;
+      piVar15 = piVar15 + 1;
+      piVar12 = piVar12 + 1;
     }
     local_308[3] = DAT_00806734;
-    if (iVar10 != 0) {
-      local_308[3] = *(int *)&this_00->field_0x44;
+    if (iVar9 != 0) {
+      local_308[3] = this_00->field_0044;
     }
     local_308[3] = local_308[3] + 0x57;
-    puVar2 = &this_00[1].field_0x4;
+    puVar3 = &this_00->field_01C0;
     local_2a0 = 0xc006;
     local_c4 = 1;
     local_c0 = 0x14;
     local_bc = 10;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(4,puVar2,0,local_490,0);
-    uVar15 = *(undefined4 *)puVar2;
+    (**(code **)(*(int *)this_00->field_000C + 8))(4,puVar3,0,local_490,0);
     puVar1 = &this_00->field_0x18;
     this_00->field_0028 = 0x28;
     *(undefined4 *)&this_00->field_0x2c = 0x186a1;
-    FUN_006e6080(this_00,2,uVar15,(undefined4 *)puVar1);
-    uVar15 = *(undefined4 *)puVar2;
-    bVar9 = this_00[1].field_0x14;
+    FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     this_00->field_0028 = 0x22;
-    *(uint *)&this_00->field_0x2c = (uint)*(ushort *)(&this_00[1].field_0x0 + (uint)bVar9 * 2);
-    FUN_006e6080(this_00,2,uVar15,(undefined4 *)puVar1);
-    uVar15 = *(undefined4 *)puVar2;
+    *(uint *)&this_00->field_0x2c =
+         (uint)*(ushort *)(&this_00->field_0x1bc + (uint)(byte)this_00->field_01D0 * 2);
+    FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 1;
-    FUN_006e6080(this_00,2,uVar15,(undefined4 *)puVar1);
+    FUN_006e6080(this_00,2,*puVar3,(undefined4 *)puVar1);
     g_currentExceptionFrame = local_b8.previous;
     return;
   }
   g_currentExceptionFrame = local_b8.previous;
-  iVar10 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x53,0,(int)puVar4,
-                              &DAT_007a4ccc,s_TradePanelTy__InitTradePanel_007c864c);
-  if (iVar10 != 0) {
-    pcVar3 = (code *)swi(3);
-    (*pcVar3)();
+  iVar9 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x53,0,(int)puVar3,
+                             &DAT_007a4ccc,s_TradePanelTy__InitTradePanel_007c864c);
+  if (iVar9 != 0) {
+    pcVar2 = (code *)swi(3);
+    (*pcVar2)();
     return;
   }
-  RaiseInternalException((int)puVar4,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x53);
+  RaiseInternalException((int)puVar3,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x53);
   return;
 }
 

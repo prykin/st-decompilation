@@ -44,15 +44,15 @@ undefined4 __thiscall STGroupBoatC::Recharge(STGroupBoatC *this,int param_1)
         *puVar9 = 0;
         puVar9 = puVar9 + 1;
       }
-      *(undefined4 *)&local_14->field_0x65 = 0;
-      local_14->field_02CE = *(undefined4 *)&local_14->field_0x199;
-      local_14->field_02D2 = *(undefined4 *)&local_14->field_0x19d;
-      local_14->field_02D6 = *(undefined2 *)&local_14->field_0x1a1;
+      local_14->field_0065 = 0;
+      local_14->field_02CE = local_14->field_0199;
+      *(undefined4 *)&local_14->field_0x2d2 = local_14->field_019D;
+      local_14->field_02D6 = local_14->field_01A1;
       local_20 = local_14->field_02CE;
       local_24 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-      local_1c = *(undefined2 *)&local_14->field_02D2;
+      local_1c = *(undefined2 *)&local_14->field_0x2d2;
       local_18 = local_14->field_02D6;
-      local_1a = *(undefined2 *)((int)&local_14->field_02D2 + 2);
+      local_1a = local_14->field_02D4;
       if (0 < (int)local_8) {
         do {
           FUN_006acc70(pSVar2->field_0029,uVar8,&local_c);

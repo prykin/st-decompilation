@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  undefined4 *puVar1;
   uint uVar2;
   code *pcVar3;
   CPanelTy *this_00;
@@ -44,21 +44,21 @@ void __thiscall CPanelTy::Update2PanelWB(CPanelTy *this)
     (*pcVar3)();
     return;
   }
-  puVar1 = &local_8->field_0xb99;
-  piVar6 = (int *)puVar1;
+  puVar1 = &local_8->field_0B99;
+  piVar6 = puVar1;
   piVar7 = &local_64;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
     *piVar7 = *piVar6;
     piVar6 = piVar6 + 1;
     piVar7 = piVar7 + 1;
   }
-  puVar8 = (undefined4 *)puVar1;
+  puVar8 = puVar1;
   for (iVar4 = 0x17; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar8 = 0;
     puVar8 = puVar8 + 1;
   }
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,(int *)puVar1);
-  if (local_5f != this_00->field_0xb9e) {
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,puVar1);
+  if (local_5f != this_00->field_0B9E) {
 cf_common_exit_00502155:
     PaintCtrlBoat(this_00);
     SetControlBoat(this_00);
@@ -66,59 +66,58 @@ cf_common_exit_00502155:
     g_currentExceptionFrame = local_a8.previous;
     return;
   }
-  switch(this_00->field_0xb9e) {
+  switch(this_00->field_0B9E) {
   case 1:
-    if ((local_64 != *(int *)&this_00->field_0xb99) || (local_60 != this_00->field_0xb9d))
+    if ((local_64 != this_00->field_0B99) || (local_60 != this_00->field_0B9D))
     goto cf_common_exit_00502155;
-    thunk_FUN_00501d00(this_00,(int *)&this_00->field_0xb99,&local_64);
-    switch(*(undefined4 *)&this_00->field_0xb99) {
+    thunk_FUN_00501d00(this_00,&this_00->field_0B99,&local_64);
+    switch(this_00->field_0B99) {
     case 8:
     case 0x14:
-      if (((this_00->field_0xbb6 == local_47) && (this_00->field_0xbb5 == local_48)) &&
-         (this_00->field_0xbb7 == local_46)) {
+      if (((this_00->field_0BB6 == local_47) && (this_00->field_0BB5 == local_48)) &&
+         (this_00->field_0BB7 == local_46)) {
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
       PaintBCapacity(this_00);
-      uVar2 = *(uint *)&this_00->field_0x154;
+      uVar2 = this_00->field_0154;
       break;
     default:
       goto switchD_0050207d_default;
     case 0x16:
     case 0x17:
     case 0x25:
-      if (this_00->field_0xbcd == local_30) {
+      if (this_00->field_0BCD == local_30) {
         g_currentExceptionFrame = local_a8.previous;
         return;
       }
       PaintBEnergy(this_00);
-      uVar2 = *(uint *)&this_00->field_0x154;
+      uVar2 = this_00->field_0154;
     }
     break;
   case 2:
   case 3:
-    if (local_64 == *(int *)&this_00->field_0xb99) {
-      thunk_FUN_00501d00(this_00,(int *)&this_00->field_0xb99,&local_64);
+    if (local_64 == this_00->field_0B99) {
+      thunk_FUN_00501d00(this_00,&this_00->field_0B99,&local_64);
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
     goto cf_common_exit_00502155;
   case 4:
-    if (local_64 != *(int *)&this_00->field_0xb99) goto cf_common_exit_00502155;
-    if (*(int *)&this_00->field_0xb99 != 0xaf) {
+    if (local_64 != this_00->field_0B99) goto cf_common_exit_00502155;
+    if (this_00->field_0B99 != 0xaf) {
       g_currentExceptionFrame = local_a8.previous;
       return;
     }
     PaintBEnergy(this_00);
-    uVar2 = *(uint *)&this_00->field_0x154;
+    uVar2 = this_00->field_0154;
     break;
   default:
     goto switchD_0050207d_default;
   }
   if (-1 < (int)uVar2) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,uVar2,0xffffffff,*(uint *)&this_00->field_0x48,
-               *(uint *)&this_00->field_0xa0);
+              (DAT_008075a8,uVar2,0xffffffff,this_00->field_0048,this_00->field_00A0);
   }
 switchD_0050207d_default:
   g_currentExceptionFrame = local_a8.previous;

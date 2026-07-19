@@ -26,7 +26,7 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
     iVar3 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e;
     FUN_006b5f80(DAT_008075a8,iVar3,DAT_00806734 + -0x1a,(DAT_00806730 - iVar3) + -0x87,0x12);
     pHVar2 = local_8;
-    iVar3 = *(int *)(local_8 + 0x12a);
+    iVar3 = local_8->field_012A;
     uVar7 = *(uint *)(iVar3 + 0x14);
     if (uVar7 == 0) {
       uVar7 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -41,13 +41,13 @@ void __thiscall HelpStringTy::OutStr(HelpStringTy *this)
       *(undefined1 *)puVar4 = 0;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    if (pHVar2[0x18] != (HelpStringTy)0x0) {
-      ccFntTy::SetSurf(*(ccFntTy **)(pHVar2 + 0x11e),*(int *)(pHVar2 + 0x12a),0,0,0,0,0);
-      ccFntTy::WrStr(*(ccFntTy **)(pHVar2 + 0x11e),(uint *)(pHVar2 + 0x18),0,-1,
-                     (uint)(byte)pHVar2[0x11d]);
+    if (pHVar2->field_0018 != '\0') {
+      ccFntTy::SetSurf(pHVar2->field_011E,pHVar2->field_012A,0,0,0,0,0);
+      ccFntTy::WrStr(pHVar2->field_011E,(uint *)&pHVar2->field_0018,0,-1,
+                     (uint)(byte)pHVar2->field_011D);
     }
-    thunk_FUN_005403c0((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e,DAT_00806734 + -0x1a,
-                       '\x01',*(BITMAPINFO **)(pHVar2 + 0x12a));
+    PutDDX((-(uint)(DAT_0080874e != '\x03') & 0xfffffff6) + 0x1e,DAT_00806734 + -0x1a,'\x01',
+           (BITMAPINFO *)pHVar2->field_012A);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

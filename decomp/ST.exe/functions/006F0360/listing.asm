@@ -1,4 +1,4 @@
-FUN_006f0360:
+mfTMapOptimize:
 006F0360  55                        PUSH EBP
 006F0361  8B EC                     MOV EBP,ESP
 006F0363  83 EC 5C                  SUB ESP,0x5c

@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_00691190(undefined4 *param_1,uint *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_tact_d.cpp
+   Diagnostic line evidence: 140 | 141 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl TactDataPack(undefined4 *param_1,uint *param_2)
 
 {
   uint *puVar1;
@@ -97,7 +102,7 @@ undefined4 * __cdecl FUN_00691190(undefined4 *param_1,uint *param_2)
             puVar5 = (undefined4 *)(*(int *)(iVar9 + 4) + 0x20);
           }
           if (puVar5 != (undefined4 *)0x0) {
-            local_1c = thunk_FUN_006684e0(puVar5,&local_10);
+            local_1c = FltDataPack(puVar5,&local_10);
             local_8 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_8,local_8[5] + local_10);
             puVar5 = local_1c;
             puVar8 = (undefined4 *)(iVar4 + 0x10b + (int)local_8);

@@ -7,11 +7,12 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
 
 {
   code *pcVar1;
+  FSGSTy *this_00;
   int errorCode;
   int iVar2;
-  FSGSTy *this_00;
+  FSGSTy *this_01;
   FSGSTy *pFVar3;
-  FSGSTy *pFVar4;
+  undefined1 *this_02;
   FSGSTy *extraout_ECX;
   undefined4 unaff_EBX;
   void *unaff_ESI;
@@ -37,9 +38,9 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-  pFVar4 = local_c;
-  thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)&local_c->field_0x5d);
-  switch(pFVar4->field_1A5F) {
+  this_00 = local_c;
+  PutDDX(0,0,'\x01',(BITMAPINFO *)local_c->field_005D);
+  switch(this_00->field_1A5F) {
   case 1:
     if (local_8 == 0) {
       local_8 = 0x2563;
@@ -54,7 +55,7 @@ LAB_00596d58:
     }
     break;
   case 3:
-    if (*(int *)&pFVar4[1].field_0x44 != 0) {
+    if (this_00->field_1F23 != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -64,7 +65,7 @@ LAB_00596d58:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x72,0x2e1,0x14c,
-               (undefined4 *)(*(int *)&pFVar4->field_0x1a5b + 0x140));
+               (undefined4 *)&this_00->field_1A5B->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case 4:
@@ -82,11 +83,11 @@ LAB_00596d7a:
     }
     break;
   case 6:
-    if ((*(int *)&pFVar4[1].field_0x48 == 0) && (param_1 == '\0')) {
-      OutChSlProc(this_00,(int)DAT_0080759c,0,0,0x13,0x5e,0x1bf,0x175,
-                  (undefined4 *)(*(int *)&pFVar4->field_0x1a5b + 0x140));
+    if ((this_00->field_1F27 == (HoloTy *)0x0) && (param_1 == '\0')) {
+      OutChSlProc(this_01,(int)DAT_0080759c,0,0,0x13,0x5e,0x1bf,0x175,
+                  (undefined4 *)&this_00->field_1A5B->field_0x140);
     }
-    if (*(int *)&pFVar4[1].field_0x4c != 0) {
+    if (this_00->field_1F2B != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -94,8 +95,8 @@ LAB_00596d7a:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    pFVar4 = (FSGSTy *)(*(int *)&pFVar4->field_0x1a5b + 0x140);
-    OutTRGlProc(pFVar4,(int)DAT_0080759c,0,0,0x1e9,0x5e,0x124,0x175,(int)pFVar4);
+    this_02 = &this_00->field_1A5B->field_0x140;
+    OutTRGlProc((FSGSTy *)this_02,(int)DAT_0080759c,0,0,0x1e9,0x5e,0x124,0x175,(int)this_02);
     g_currentExceptionFrame = local_50.previous;
     return;
   case 7:
@@ -106,13 +107,13 @@ LAB_00596d8b:
     }
     break;
   case 8:
-    pFVar3 = this_00;
-    if ((*(int *)&pFVar4[1].field_0x50 == 0) && (param_1 == '\0')) {
+    pFVar3 = this_01;
+    if ((this_00->field_1F2F == (HoloTy *)0x0) && (param_1 == '\0')) {
       OutSGlProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x199,0x5e,0x174,0x175,
-                 *(int *)&pFVar4->field_0x1a5b + 0x140);
+                 (int)&this_00->field_1A5B->field_0x140);
       pFVar3 = extraout_ECX;
     }
-    if (*(int *)&pFVar4[1].field_0x4c != 0) {
+    if (this_00->field_1F2B != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -122,11 +123,11 @@ LAB_00596d8b:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)pFVar3,(int)DAT_0080759c,0,0,0x13,0x5e,0x174,0x175,
-               (undefined4 *)(*(int *)&pFVar4->field_0x1a5b + 0x140));
+               (undefined4 *)&this_00->field_1A5B->field_0x140);
     g_currentExceptionFrame = local_50.previous;
     return;
   case 9:
-    if (*(int *)&pFVar4[1].field_0x44 != 0) {
+    if (this_00->field_1F23 != (HoloTy *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -135,7 +136,7 @@ LAB_00596d8b:
       return;
     }
     OutLadProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x5e,0x2e1,0x175);
-    PaintLadder(pFVar4,(int)unaff_ESI);
+    PaintLadder(this_00,(int)unaff_ESI);
     g_currentExceptionFrame = local_50.previous;
     return;
   case 10:
@@ -147,11 +148,11 @@ LAB_00596d9c:
   default:
     goto switchD_00596d3d_default;
   }
-  if ((*(int *)&pFVar4[1].field_0x44 == 0) && (param_1 == '\0')) {
-    pFVar3 = (FSGSTy *)((-(uint)(pFVar4->field_0x1abb != '\0') & 0x74) + 0x106);
+  if ((this_00->field_1F23 == (HoloTy *)0x0) && (param_1 == '\0')) {
+    pFVar3 = (FSGSTy *)((-(uint)(this_00->field_1ABB != '\0') & 0x74) + 0x106);
     OutTRGlProc(pFVar3,(int)DAT_0080759c,0,0,0xb4,
-                (-(uint)(pFVar4->field_0x1abb != '\0') & 0xffffffb4) + 0xaa,0x1b8,(int)pFVar3,
-                local_8);
+                (-(uint)(this_00->field_1ABB != '\0') & 0xffffffb4) + 0xaa,0x1b8,(int)pFVar3,local_8
+               );
     g_currentExceptionFrame = local_50.previous;
     return;
   }

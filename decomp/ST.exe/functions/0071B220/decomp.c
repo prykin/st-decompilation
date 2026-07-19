@@ -6,8 +6,8 @@
 int __thiscall InputClassTy::Create(InputClassTy *this)
 
 {
-  InputClassTy *pIVar1;
-  InputClassTy *pIVar2;
+  undefined4 *puVar1;
+  undefined4 *puVar2;
   code *pcVar3;
   InputClassTy *pIVar4;
   int iVar5;
@@ -39,32 +39,32 @@ int __thiscall InputClassTy::Create(InputClassTy *this)
       RaiseInternalException(DVar7,iVar5,pcVar8,iVar9);
     }
     pIVar4 = local_8;
-    *(LONG *)(local_8 + 0x34) = local_18.left;
-    pIVar1 = local_8 + 0x18;
-    *(LONG *)(local_8 + 0x38) = local_18.top;
-    *(LONG *)(local_8 + 0x3c) = local_18.right - local_18.left;
-    *(LONG *)(local_8 + 0x40) = local_18.bottom - local_18.top;
-    iVar5 = DirectInputCreateA(DAT_00856d70,0x700,pIVar1,0);
+    local_8->field_0034 = local_18.left;
+    puVar1 = &local_8->field_0018;
+    local_8->field_0038 = local_18.top;
+    local_8->field_003C = local_18.right - local_18.left;
+    local_8->field_0040 = local_18.bottom - local_18.top;
+    iVar5 = DirectInputCreateA(DAT_00856d70,0x700,puVar1,0);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x32);
     }
-    *(int *)(pIVar4 + 0x2c) = *(int *)(pIVar4 + 0x3c) / 2 + *(int *)(pIVar4 + 0x34);
-    pIVar2 = pIVar4 + 0x20;
-    *(int *)(pIVar4 + 0x30) = *(int *)(pIVar4 + 0x40) / 2 + *(int *)(pIVar4 + 0x38);
-    iVar5 = (**(code **)(**(int **)pIVar1 + 0xc))(*(int **)pIVar1,&DAT_0079eeb8,pIVar2,0);
+    *(int *)&pIVar4->field_0x2c = (int)pIVar4->field_003C / 2 + pIVar4->field_0034;
+    puVar2 = &pIVar4->field_0020;
+    *(int *)&pIVar4->field_0x30 = (int)pIVar4->field_0040 / 2 + pIVar4->field_0038;
+    iVar5 = (**(code **)(*(int *)*puVar1 + 0xc))((int *)*puVar1,&DAT_0079eeb8,puVar2,0);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x36);
     }
-    iVar5 = (**(code **)(**(int **)pIVar2 + 0x34))(*(int **)pIVar2,DAT_00856d78,5);
+    iVar5 = (**(code **)(*(int *)*puVar2 + 0x34))((int *)*puVar2,DAT_00856d78,5);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x3c);
     }
-    iVar5 = (**(code **)(**(int **)pIVar2 + 0x2c))(*(int **)pIVar2,&DAT_0079e390);
+    iVar5 = (**(code **)(*(int *)*puVar2 + 0x2c))((int *)*puVar2,&DAT_0079e390);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x3e);
     }
     local_44 = 0x2c;
-    iVar5 = (**(code **)(**(int **)pIVar2 + 0xc))(*(int **)pIVar2,&local_44);
+    iVar5 = (**(code **)(*(int *)*puVar2 + 0xc))((int *)*puVar2,&local_44);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x42);
     }
@@ -72,25 +72,25 @@ int __thiscall InputClassTy::Create(InputClassTy *this)
     if (((local_40 & 1) == 0) || (local_38 < 3)) {
       iVar5 = 0;
     }
-    *(int *)(pIVar4 + 0x5c) = iVar5;
+    pIVar4->field_005C = iVar5;
     if (iVar5 != 0) {
-      *(int *)(pIVar4 + 0x44) = local_34 + -1;
+      pIVar4->field_0044 = local_34 + -1;
     }
-    pIVar2 = pIVar4 + 0x1c;
-    iVar5 = (**(code **)(**(int **)pIVar1 + 0xc))(*(int **)pIVar1,&DAT_0079eea8,pIVar2,0);
+    puVar2 = &pIVar4->field_001C;
+    iVar5 = (**(code **)(*(int *)*puVar1 + 0xc))((int *)*puVar1,&DAT_0079eea8,puVar2,0);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x48);
     }
-    iVar5 = (**(code **)(**(int **)pIVar2 + 0x2c))(*(int **)pIVar2,&DAT_0079e378);
+    iVar5 = (**(code **)(*(int *)*puVar2 + 0x2c))((int *)*puVar2,&DAT_0079e378);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x49);
     }
-    iVar5 = (**(code **)(**(int **)pIVar2 + 0x34))(*(int **)pIVar2,DAT_00856d78,6);
+    iVar5 = (**(code **)(*(int *)*puVar2 + 0x34))((int *)*puVar2,DAT_00856d78,6);
     if (iVar5 != 0) {
       RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x4a);
     }
-    pIVar1 = pIVar4 + 0x68;
-    BVar6 = SystemParametersInfoA(0x16,0,pIVar1,0);
+    puVar1 = &pIVar4->field_0068;
+    BVar6 = SystemParametersInfoA(0x16,0,puVar1,0);
     if (BVar6 == 0) {
       iVar9 = 0x4d;
       pcVar8 = s_E__Ourlib_Sinput_cpp_007f092c;
@@ -98,8 +98,8 @@ int __thiscall InputClassTy::Create(InputClassTy *this)
       DVar7 = GetLastError();
       RaiseInternalException(DVar7,iVar5,pcVar8,iVar9);
     }
-    pIVar2 = pIVar4 + 0x6c;
-    BVar6 = SystemParametersInfoA(10,0,pIVar2,0);
+    puVar2 = &pIVar4->field_006C;
+    BVar6 = SystemParametersInfoA(10,0,puVar2,0);
     if (BVar6 == 0) {
       iVar9 = 0x4e;
       pcVar8 = s_E__Ourlib_Sinput_cpp_007f092c;
@@ -107,9 +107,9 @@ int __thiscall InputClassTy::Create(InputClassTy *this)
       DVar7 = GetLastError();
       RaiseInternalException(DVar7,iVar5,pcVar8,iVar9);
     }
-    *(int *)pIVar1 = (*(int *)pIVar1 + 1) * 0xfa;
-    *(int *)pIVar2 = (int)(1000 / (ulonglong)(*(int *)pIVar2 + 1));
-    FUN_006e4290(6,4,2,*(undefined4 *)(pIVar4 + 8));
+    *puVar1 = (*puVar1 + 1) * 0xfa;
+    *puVar2 = (int)(1000 / (ulonglong)(*puVar2 + 1));
+    FUN_006e4290(6,4,2,pIVar4->field_0008);
     g_currentExceptionFrame = local_88.previous;
     return 0;
   }

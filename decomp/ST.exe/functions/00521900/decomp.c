@@ -21,10 +21,10 @@ void __thiscall IntercomPanelTy::PreInitIntercomPanel(IntercomPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pIVar2 = local_8;
   if (iVar3 == 0) {
-    FUN_006b1a50(DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)(local_8 + 0x188));
-    iVar3 = *(int *)(pIVar2 + 0x18c) - *(int *)(pIVar2 + 0x48);
-    *(int *)(pIVar2 + 0x44) = iVar3;
-    *(int *)(pIVar2 + 0x174) = iVar3 + *(int *)(pIVar2 + 0x48);
+    FUN_006b1a50(DAT_008075a8,3,(undefined4 *)0x0,(undefined4 *)&local_8->field_0x188);
+    iVar3 = pIVar2->field_018C - pIVar2->field_0048;
+    pIVar2->field_0044 = iVar3;
+    pIVar2->field_0174 = iVar3 + pIVar2->field_0048;
     g_currentExceptionFrame = pIVar5;
     return;
   }

@@ -1,4 +1,4 @@
-FUN_00676d80:
+_EnumPlObj:
 00676D80  55                        PUSH EBP
 00676D81  8B EC                     MOV EBP,ESP
 00676D83  83 EC 6C                  SUB ESP,0x6c

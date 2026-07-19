@@ -27,16 +27,15 @@ void __thiscall PanelTy::DonePanel(PanelTy *this)
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)&local_8->field_0x28 = 0x14;
-    *(undefined4 *)&local_8->field_0x2c = *(undefined4 *)&local_8->field_0x8;
+    local_8->field_0028 = 0x14;
+    local_8->field_002C = local_8->field_0008;
     FUN_006e6000(local_8,3,1,(undefined4 *)&local_8->field_0x18);
-    if (-1 < (int)*(uint *)(pPVar2 + 1)) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)(pPVar2 + 1));
+    if (-1 < (int)pPVar2->field_0060) {
+      FUN_006b3bb0(DAT_008075a8,pPVar2->field_0060);
     }
-    iVar3 = *(int *)&pPVar2[1].field_0x8;
-    *(undefined4 *)(pPVar2 + 1) = 0xffffffff;
-    if (iVar3 != 0) {
-      FUN_006ab060((undefined4 *)&pPVar2[1].field_0x8);
+    pPVar2->field_0060 = 0xffffffff;
+    if (pPVar2->field_0068 != 0) {
+      FUN_006ab060(&pPVar2->field_0068);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

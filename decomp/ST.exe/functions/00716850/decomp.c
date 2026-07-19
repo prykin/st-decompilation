@@ -1,5 +1,11 @@
 
-int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,int param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mftspr.cpp
+   Diagnostic line evidence: 49 | 52 | 54 | 82 | 109 | 130 | 134 | 154 | 156 (metadata/report site,
+   not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int * __cdecl mfTSprLoad(int param_1,char *param_2,char param_3,byte param_4,int param_5)
 
 {
   int iVar1;
@@ -57,9 +63,9 @@ int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,i
       *(undefined4 **)((int)local_8 + 0x21) = puVar5;
       puVar5 = Library::DKW::LIB::FUN_006aac10(*local_8 << 2);
       *(undefined4 **)((int)local_8 + 0x29) = puVar5;
-      iVar4 = FUN_0070a6f0(param_1,6,(char *)local_c,param_5);
+      iVar4 = mfImgGetWidth(param_1,6,(char *)local_c,param_5);
       *(int *)((int)local_8 + 9) = iVar4;
-      iVar4 = FUN_0070a7b0(param_1,6,(char *)local_c,param_5);
+      iVar4 = mfImgGetHeight(param_1,6,(char *)local_c,param_5);
       *(int *)((int)local_8 + 0xd) = iVar4;
       *(int *)((int)local_8 + 0x1d) = (int)local_20;
       *(uint *)((int)local_8 + 0x19) = CONCAT22(uStack_1c,local_1e);
@@ -174,9 +180,9 @@ int * __cdecl FUN_00716850(int param_1,char *param_2,char param_3,byte param_4,i
           iVar4 = iVar4 + 0x44;
         } while (iVar9 < *local_8);
       }
-      iVar4 = FUN_0070a6f0(param_1,6,(char *)local_10,param_5);
+      iVar4 = mfImgGetWidth(param_1,6,(char *)local_10,param_5);
       *(int *)((int)local_8 + 9) = iVar4;
-      iVar4 = FUN_0070a7b0(param_1,6,(char *)local_10,param_5);
+      iVar4 = mfImgGetHeight(param_1,6,(char *)local_10,param_5);
       *(int *)((int)local_8 + 0xd) = iVar4;
       piVar10 = local_8;
     }

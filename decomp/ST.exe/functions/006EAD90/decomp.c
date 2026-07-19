@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\St3dspr.cpp
+   Diagnostic line evidence: 1775 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __thiscall
 FUN_006ead90(void *this,int param_1,int param_2,int param_3,int param_4,undefined4 *param_5,
             int *param_6)

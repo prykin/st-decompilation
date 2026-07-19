@@ -1,4 +1,4 @@
-FUN_00677960:
+_EnumRCField:
 00677960  55                        PUSH EBP
 00677961  8B EC                     MOV EBP,ESP
 00677963  83 EC 58                  SUB ESP,0x58

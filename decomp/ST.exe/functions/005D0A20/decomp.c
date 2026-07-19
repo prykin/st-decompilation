@@ -55,8 +55,8 @@ void __thiscall SettMapMTy::ChangePlayerState(SettMapMTy *this,uint param_1)
           pcVar7[1] = '\0';
           thunk_FUN_005d00b0(local_8,(int)pcVar7,param_1 + 1);
         }
-        (**(code **)(*(int *)pSVar3 + 0x2c))();
-        *(int *)&pSVar3[1].field_0x4 = *(int *)&pSVar3[1].field_0x4 + 1;
+        (**(code **)(pSVar3->field_0000 + 0x2c))();
+        pSVar3->field_2121 = pSVar3->field_2121 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

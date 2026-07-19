@@ -1,6 +1,12 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 379 | 380 | 400 | 402 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl
-FUN_006eff90(short *param_1,int param_2,int param_3,int param_4,uint param_5,ushort param_6)
+mfTMapAddObj(short *param_1,int param_2,int param_3,int param_4,uint param_5,ushort param_6)
 
 {
   code *pcVar1;
@@ -27,7 +33,7 @@ FUN_006eff90(short *param_1,int param_2,int param_3,int param_4,uint param_5,ush
     {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__ourlib_Mfstmap_cpp_007eef88,0x17c);
     }
-    FUN_006f01a0(param_1,param_2,param_3,param_4);
+    mfTMapDelObj(param_1,param_2,param_3,param_4);
     local_8 = param_2 / 2;
     puVar3 = Library::DKW::LIB::FUN_006aac10(0x50);
     *(undefined4 **)
@@ -53,9 +59,9 @@ FUN_006eff90(short *param_1,int param_2,int param_3,int param_4,uint param_5,ush
     else {
       pcVar5 = FUN_006f2c00(s_MAPTXTR_007dfab4,3,param_5 & 0x7fff);
     }
-    FUN_006ef440((int)param_1,iVar2,pcVar5,pCVar4);
+    _mfTMapSetTxtParam((int)param_1,iVar2,pcVar5,pCVar4);
     pCVar4 = FUN_006f2c00(s_MAPMESH_007dfac0,3,param_6 & 0x7fff);
-    FUN_006ef530((int)param_1,iVar2,pCVar4);
+    _mfTMapSetMeshParam((int)param_1,iVar2,pCVar4);
     g_currentExceptionFrame = local_50.previous;
     return 0;
   }

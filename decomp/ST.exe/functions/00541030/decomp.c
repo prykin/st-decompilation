@@ -1,5 +1,10 @@
 
-void FUN_00541030(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Andrey\support.cpp
+   Diagnostic line evidence: 253 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void DelAllAccelerators(void)
 
 {
   code *pcVar1;

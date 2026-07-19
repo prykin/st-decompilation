@@ -1,4 +1,4 @@
-FUN_00648fe0:
+CreateAi:
 00648FE0  55                        PUSH EBP
 00648FE1  8B EC                     MOV EBP,ESP
 00648FE3  83 EC 60                  SUB ESP,0x60

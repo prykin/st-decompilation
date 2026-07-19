@@ -25,22 +25,22 @@ void __thiscall HelpPanelTy::IndexBut(HelpPanelTy *this)
     cVar1 = local_8->field_01A1;
     if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
       local_8->field_01A2 = cVar1;
-      *(undefined4 *)&local_8->field_0x1ab = local_8->field_01A3;
+      local_8->field_01AB = local_8->field_01A3;
     }
     else {
       local_8->field_01A2 = 0;
-      *(undefined4 *)&local_8->field_0x1ab = 0;
+      local_8->field_01AB = 0;
     }
     local_8->field_01A1 = 10;
     local_8->field_01A3 = 0;
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)&local_8->field_0x68,0,0x21,0x16,*(int *)&local_8->field_0x1dc,0,0x21
-               ,0x16,0x1b8,0x118);
-    if (*(int *)&this_00->field_0x178 != 0) {
+              ((undefined4 *)local_8->field_0068,0,0x21,0x16,local_8->field_01DC,0,0x21,0x16,0x1b8,
+               0x118);
+    if (this_00->field_0178 != 0) {
       this_00->field_0028 = 0x4202;
       *(undefined2 *)&this_00->field_0x2c = 0;
       this_00->field_002E = 2;
-      *(int *)&this_00->field_0x30 = *(int *)&this_00->field_0x178;
+      *(undefined4 *)&this_00->field_0x30 = this_00->field_0178;
       if (DAT_00802a30 != (undefined4 *)0x0) {
         (**(code **)*DAT_00802a30)(&this_00->field_0x18);
       }

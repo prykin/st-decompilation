@@ -40,14 +40,14 @@ undefined4 __thiscall STManRub3C::GetMessage(STManRub3C *this,int param_1)
   iVar3 = *(int *)(param_1 + 0x10);
   if (iVar3 == 2) {
     if (DAT_00806754 != (cMf32 *)0x0) {
-      local_8 = FUN_006f2d90(DAT_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
+      local_8 = mfAObjLoad(DAT_00806754,PTR_s_RUBBISH_3_0079d080,0,0);
     }
     if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 6) != 2)) {
-      *(undefined4 *)(local_c + 0x1c) = 0;
-      *(undefined4 *)(local_c + 0x28) = 1;
-      *(undefined4 *)(local_c + 0x24) = 1;
-      *(undefined4 *)(local_c + 0x20) = 0xff;
-      *(undefined4 *)(local_c + 0xb4) = DAT_00808754;
+      local_c->field_001C = 0;
+      local_c->field_0028 = 1;
+      local_c->field_0024 = 1;
+      local_c->field_0020 = 0xff;
+      local_c->field_00B4 = DAT_00808754;
     }
     else {
       thunk_FUN_0062d840(local_c,(undefined4 *)local_8);

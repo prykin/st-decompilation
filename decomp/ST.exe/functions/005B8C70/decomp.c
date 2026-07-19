@@ -6,15 +6,16 @@
 void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param_3)
 
 {
-  code *pcVar1;
+  uint uVar1;
+  code *pcVar2;
   MMsgTy *this_00;
-  int iVar2;
   int iVar3;
-  byte bVar4;
+  int iVar4;
+  byte bVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint *puVar5;
-  int *piVar6;
+  uint *puVar6;
+  int *piVar7;
   InternalExceptionFrame local_70;
   int local_2c [8];
   MMsgTy *local_c;
@@ -24,38 +25,38 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
     local_c = this;
-    iVar2 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
+    iVar3 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
-    if (iVar2 == 0) {
-      iVar2 = 0xd;
-      puVar5 = (uint *)&local_c->field_0x66;
+    if (iVar3 == 0) {
+      iVar3 = 0xd;
+      puVar6 = &local_c->field_0066;
       do {
-        if (*puVar5 != 0) {
-          FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar5);
+        if (*puVar6 != 0) {
+          FUN_006e56b0((void *)this_00->field_000C,*puVar6);
         }
-        *puVar5 = 0;
-        puVar5 = puVar5 + 1;
-        iVar2 = iVar2 + -1;
-      } while (iVar2 != 0);
+        *puVar6 = 0;
+        puVar6 = puVar6 + 1;
+        iVar3 = iVar3 + -1;
+      } while (iVar3 != 0);
       if (param_2 == 0) {
-        *(undefined1 *)(this_00 + 1) = 0;
+        this_00->field_1CAA = 0;
         this_00->field_1CA9 = 0;
-        this_00->field_0x1a5a = 0xff;
+        this_00->field_1A5A = 0xff;
       }
-      if (*(uint *)&this_00[1].field_0xe2 != 0xffffffff) {
-        FUN_006b3af0(*(int **)&this_00[1].field_0x126,*(uint *)&this_00[1].field_0xe2);
+      if (this_00->field_1D8C != 0xffffffff) {
+        FUN_006b3af0((int *)this_00->field_1DD0,this_00->field_1D8C);
       }
-      iVar2 = *(int *)&this_00[1].field_0x1;
-      if (iVar2 != 0) {
-        piVar6 = local_2c;
-        for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *piVar6 = 0;
-          piVar6 = piVar6 + 1;
+      iVar3 = this_00->field_1CAB;
+      if (iVar3 != 0) {
+        piVar7 = local_2c;
+        for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
+          *piVar7 = 0;
+          piVar7 = piVar7 + 1;
         }
         local_2c[3] = 2;
         local_2c[4] = 0x6940;
-        local_2c[2] = iVar2;
-        (**(code **)(**(int **)&this_00->field_0xc + 0x18))(local_2c);
+        local_2c[2] = iVar3;
+        (**(code **)(*(int *)this_00->field_000C + 0x18))(local_2c);
       }
       if (param_1 == 0) {
         this_00->field_0065 = 2;
@@ -64,38 +65,38 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
         return;
       }
       if (param_3 == 0) {
-        bVar4 = 0;
+        bVar5 = 0;
         local_8 = (uint)local_8._1_3_ << 8;
-        if (this_00->field_0x9a != '\0') {
+        if (this_00->field_009A != '\0') {
           do {
             if ((&this_00->field_0x1c9c)[local_8 & 0xff] != '\0') {
-              iVar2 = (local_8 & 0xff) * 0x1fb;
-              if (*(uint *)(&this_00->field_0x178 + iVar2) != 0xffffffff) {
-                FUN_006b3af0(*(int **)(&this_00->field_0x1bc + iVar2),
-                             *(uint *)(&this_00->field_0x178 + iVar2));
+              iVar3 = (local_8 & 0xff) * 0x1fb;
+              uVar1 = *(uint *)((int)&this_00->field_0178 + iVar3);
+              if (uVar1 != 0xffffffff) {
+                FUN_006b3af0(*(int **)((int)&this_00->field_01BC + iVar3),uVar1);
               }
             }
-            bVar4 = bVar4 + 1;
-            local_8 = CONCAT31(local_8._1_3_,bVar4);
-          } while (bVar4 < (byte)this_00->field_0x9a);
+            bVar5 = bVar5 + 1;
+            local_8 = CONCAT31(local_8._1_3_,bVar5);
+          } while (bVar5 < (byte)this_00->field_009A);
         }
       }
       else {
-        bVar4 = 0;
+        bVar5 = 0;
         *(undefined4 *)&this_00->field_0x1c9c = 0x1010101;
         local_8 = (uint)local_8._1_3_ << 8;
-        *(undefined4 *)&this_00->field_0x1ca0 = 0x1010101;
-        *(undefined4 *)&this_00->field_0x1ca4 = 0x1010101;
-        this_00->field_0x1ca8 = 1;
-        if (this_00->field_0x9a != '\0') {
+        this_00->field_1CA0 = 0x1010101;
+        this_00->field_1CA4 = 0x1010101;
+        this_00->field_1CA8 = 1;
+        if (this_00->field_009A != '\0') {
           do {
-            if (*(uint *)(&this_00->field_0x178 + (local_8 & 0xff) * 0x1fb) != 0xffffffff) {
-              FUN_006b3af0(*(int **)(&this_00->field_0x1bc + (local_8 & 0xff) * 0x1fb),
-                           *(uint *)(&this_00->field_0x178 + (local_8 & 0xff) * 0x1fb));
+            uVar1 = *(uint *)((int)&this_00->field_0178 + (local_8 & 0xff) * 0x1fb);
+            if (uVar1 != 0xffffffff) {
+              FUN_006b3af0(*(int **)((int)&this_00->field_01BC + (local_8 & 0xff) * 0x1fb),uVar1);
             }
-            bVar4 = bVar4 + 1;
-            local_8 = CONCAT31(local_8._1_3_,bVar4);
-          } while (bVar4 < (byte)this_00->field_0x9a);
+            bVar5 = bVar5 + 1;
+            local_8 = CONCAT31(local_8._1_3_,bVar5);
+          } while (bVar5 < (byte)this_00->field_009A);
         }
       }
       this_00->field_0065 = 4;
@@ -104,14 +105,14 @@ void __thiscall MMsgTy::HidePanel(MMsgTy *this,int param_1,int param_2,int param
       return;
     }
     g_currentExceptionFrame = local_70.previous;
-    iVar3 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4,0,iVar2,&DAT_007a4ccc
+    iVar4 = ReportDebugMessage(s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4,0,iVar3,&DAT_007a4ccc
                                ,s_MMsgTy__HidePanel_007cccc8);
-    if (iVar3 != 0) {
-      pcVar1 = (code *)swi(3);
-      (*pcVar1)();
+    if (iVar4 != 0) {
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    RaiseInternalException(iVar2,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_mmsg_obj_cpp_007ccb74,0x1a4);
   }
   return;
 }

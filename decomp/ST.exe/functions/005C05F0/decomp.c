@@ -71,7 +71,8 @@ void __fastcall FUN_005c05f0(int param_1)
     uVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x47,0x46,0x2bd,0x15e);
-    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x453),2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,uVar7);
+    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x453),CASE_2,0x47,0x46,iVar2,iVar4,uVar5,cVar6,
+                         uVar7);
     if (uVar5 != 0) {
       iVar2 = *(int *)(param_1 + 0x453);
       *(undefined1 *)(iVar2 + 2) = 0;
@@ -111,7 +112,8 @@ void __fastcall FUN_005c05f0(int param_1)
     uVar5 = 0x10;
     iVar4 = 1;
     iVar2 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x1a,10,0x2e9,0x32);
-    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x457),3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7);
+    uVar5 = HoloTy::Init(*(HoloTy **)(param_1 + 0x457),CASE_3,0x1a,10,iVar2,iVar4,uVar5,cVar6,uVar7)
+    ;
     if (uVar5 != 0) {
       iVar2 = *(int *)(param_1 + 0x457);
       *(undefined1 *)(iVar2 + 2) = 0;
@@ -124,7 +126,7 @@ void __fastcall FUN_005c05f0(int param_1)
     }
     HoloTy::NextFas(*(HoloTy **)(param_1 + 0x457));
   }
-  thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(param_1 + 0x5d));
+  PutDDX(0,0,'\x01',*(BITMAPINFO **)(param_1 + 0x5d));
   if (DAT_00802a30 != 0) {
     if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
       Library::DKW::DDX::FUN_006b8a60(*(byte **)(DAT_00802a30 + 0xad));

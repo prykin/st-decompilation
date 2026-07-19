@@ -34,9 +34,8 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
     iVar4 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
     if (iVar4 == 0) {
-      *(undefined4 *)&local_c->field_0x2d = 0x26;
-      FUN_006e6080(local_c,2,*(undefined4 *)&local_c->field_0x1b20,
-                   (undefined4 *)&local_c->field_0x1d);
+      local_c->field_002D = 0x26;
+      FUN_006e6080(local_c,2,local_c->field_1B20,(undefined4 *)&local_c->field_0x1d);
       puVar2 = (uint *)this_00->field_1EA6;
       if ((uint)*(ushort *)&this_00->field_0x31 < puVar2[3]) {
         local_8 = (undefined4 *)(puVar2[2] * (uint)*(ushort *)&this_00->field_0x31 + puVar2[7]);
@@ -64,23 +63,20 @@ void __thiscall FSGSTy::AddPlayer(FSGSTy *this,undefined4 *param_1)
       local_f = 0;
       Library::DKW::TBL::FUN_006ae1c0(puVar2,local_3c);
       FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0xf3);
-      thunk_FUN_00540620(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',
-                         *(BITMAPINFO **)&this_00->field_0x1e9a);
-      *(undefined4 *)&this_00->field_0x2d = 0x28;
+      PutDDXClip(0x1e9,0x5e,0,0,0x124,(byte *)0xf3,'\x01',(BITMAPINFO *)this_00->field_1E9A);
+      this_00->field_002D = 0x28;
       *(undefined4 *)&this_00->field_0x31 = *(undefined4 *)(this_00->field_1EA6 + 0xc);
       *(undefined2 *)&this_00->field_0x35 = 1;
-      FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1b20,
-                   (undefined4 *)&this_00->field_0x1d);
-      *(undefined4 *)&this_00->field_0x2d = 0x20;
-      if ((*(int *)(this_00->field_1EA6 + 0xc) == 0) || (*(int *)&this_00->field_0x1a6b == 0)) {
+      FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
+      this_00->field_002D = 0x20;
+      if ((*(int *)(this_00->field_1EA6 + 0xc) == 0) || (this_00->field_1A6B == 0)) {
         uVar5 = 0;
       }
       else {
         uVar5 = 1;
       }
       *(undefined4 *)&this_00->field_0x31 = uVar5;
-      FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1b20,
-                   (undefined4 *)&this_00->field_0x1d);
+      FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
       if (local_8 != (undefined4 *)0x0) {
         uVar7 = 0;
         local_8 = *(undefined4 **)(this_00->field_1EA6 + 0xc);
@@ -116,9 +112,8 @@ LAB_005a2562:
                 *(short *)&this_00->field_0x31 = (short)uVar7;
                 *(undefined2 *)&this_00->field_0x37 = 1;
                 *(undefined2 *)&this_00->field_0x35 = 1;
-                *(undefined4 *)&this_00->field_0x2d = 0x22;
-                FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1b20,
-                             (undefined4 *)&this_00->field_0x1d);
+                this_00->field_002D = 0x22;
+                FUN_006e6080(this_00,2,this_00->field_1B20,(undefined4 *)&this_00->field_0x1d);
                 g_currentExceptionFrame = local_80.previous;
                 return;
               }

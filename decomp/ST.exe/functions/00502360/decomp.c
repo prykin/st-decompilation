@@ -79,27 +79,27 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
   }
   thunk_FUN_0054a8d0(DAT_00802a30);
   this_00 = local_1c;
-  if (*(uint *)&local_1c->field_0x2fe != 0) {
-    FUN_006e56b0(*(void **)&local_1c->field_0xc,*(uint *)&local_1c->field_0x2fe);
+  if (local_1c->field_02FE != 0) {
+    FUN_006e56b0((void *)local_1c->field_000C,local_1c->field_02FE);
   }
-  *(undefined4 *)&this_00->field_0x2fe = 0;
-  puVar9 = (uint *)&this_00->field_0x960;
+  this_00->field_02FE = 0;
+  puVar9 = &this_00->field_0960;
   iVar6 = 4;
   do {
     if (*puVar9 != 0) {
-      FUN_006e56b0(*(void **)&this_00->field_0xc,*puVar9);
+      FUN_006e56b0((void *)this_00->field_000C,*puVar9);
       *puVar9 = 0;
     }
     puVar9 = puVar9 + 1;
     iVar6 = iVar6 + -1;
   } while (iVar6 != 0);
-  if (*(uint *)&this_00->field_0x970 != 0) {
-    FUN_006e56b0(*(void **)&this_00->field_0xc,*(uint *)&this_00->field_0x970);
+  if (this_00->field_0970 != 0) {
+    FUN_006e56b0((void *)this_00->field_000C,this_00->field_0970);
   }
-  cVar1 = this_00->field_0xb9e;
-  *(undefined4 *)&this_00->field_0x970 = 0;
+  cVar1 = this_00->field_0B9E;
+  this_00->field_0970 = 0;
   if (((cVar1 == '\0') || (cVar1 == '\x04')) || (cVar1 == '\x03')) {
-    iVar6 = *(int *)&this_00->field_0x9c0;
+    iVar6 = this_00->field_09C0;
     if (iVar6 == 0) goto LAB_00502622;
     this_00->field_0028 = 0x20;
     *(undefined4 *)&this_00->field_0x2c = 0;
@@ -112,7 +112,7 @@ void __thiscall CPanelTy::SetControlBoat(CPanelTy *this)
       puVar10 = puVar10 + 1;
     }
     local_8 = &this_00->field_0x780;
-    local_14 = &this_00->field_0xba2;
+    local_14 = &this_00->field_0BA2;
     iVar6 = -0xba3 - (int)this_00;
     local_18 = iVar6;
     do {
@@ -137,7 +137,7 @@ switchD_0050248c_caseD_2:
         iVar8 = 0x29;
       }
       thunk_FUN_004f17d0(this_00,1,(byte)local_c);
-      if (this_00->field_0xba0 == '\0') {
+      if (this_00->field_0BA0 == '\0') {
         local_10 = 0;
       }
       else {
@@ -148,7 +148,7 @@ switchD_0050248c_caseD_2:
       uVar15 = 1;
       iVar6 = 0;
       puVar18 = local_8;
-      pcVar3 = thunk_FUN_00529590(*local_14,*(int *)&this_00->field_0xb99);
+      pcVar3 = thunk_FUN_00529590(*local_14,this_00->field_0B99);
       pCVar4 = thunk_FUN_00571240(pcVar3,iVar6);
       SetButStruct(this_00,local_bb0 + local_24 * 0x5f,3,local_10,iVar11,iVar8,1,pCVar4,uVar15,
                    uVar16,puVar18,pcVar20);
@@ -162,7 +162,7 @@ LAB_0050254c:
       local_14 = local_14 + 1;
       local_c = (undefined4 *)CONCAT31(local_c._1_3_,bVar7);
     } while (bVar7 < 6);
-    local_5c = *(undefined4 *)&this_00->field_0x8;
+    local_5c = this_00->field_0008;
     local_20 = local_bb0;
     local_6c[0] = 1;
     local_6c[1] = 0xffffffff;
@@ -171,23 +171,23 @@ LAB_0050254c:
     local_38 = 2;
     local_34 = 0xb200;
     local_3c = local_5c;
-    (**(code **)(**(int **)&this_00->field_0xc + 8))(9,&this_00->field_0x2fe,0,local_6c,0);
+    (**(code **)(*(int *)this_00->field_000C + 8))(9,&this_00->field_02FE,0,local_6c,0);
     thunk_FUN_004f1610(this_00,'\x01');
-    iVar6 = *(int *)&this_00->field_0x9c0;
+    iVar6 = this_00->field_09C0;
     if (iVar6 == 0) goto LAB_00502622;
     this_00->field_0028 = 0x20;
-    if (this_00->field_0xba0 == '\0') {
+    if (this_00->field_0BA0 == '\0') {
       *(undefined4 *)&this_00->field_0x2c = 0;
     }
     else {
-      *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0xbae;
+      *(uint *)&this_00->field_0x2c = (uint)(byte)this_00->field_0BAE;
     }
   }
   FUN_006e6080(this_00,2,iVar6,(undefined4 *)&this_00->field_0x18);
 LAB_00502622:
-  if (((((this_00->field_0xb9e == '\x01') || (this_00->field_0xb9e == '\x03')) &&
-       ((iVar6 = *(int *)&this_00->field_0xb99, iVar6 != 9 && ((iVar6 != 0x15 && (iVar6 != 0xbd)))))
-       ) && (iVar6 != 0xa7)) && ((iVar6 != 0xa6 && (iVar6 != 0xaf)))) {
+  if (((((this_00->field_0B9E == '\x01') || (this_00->field_0B9E == '\x03')) &&
+       ((iVar6 = this_00->field_0B99, iVar6 != 9 && ((iVar6 != 0x15 && (iVar6 != 0xbd)))))) &&
+      (iVar6 != 0xa7)) && ((iVar6 != 0xa6 && (iVar6 != 0xaf)))) {
     uVar21 = 0;
     uVar19 = 0;
     iVar8 = 0;
@@ -198,11 +198,11 @@ LAB_00502622:
     uVar13 = 0xb118;
     uVar12 = 0xb117;
     pCVar4 = thunk_FUN_00571240(s_BUT_SHOWUPD_007c23a4,0);
-    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0xba0 != '\0'),0x4a,100,1,(int)pCVar4,
-                       uVar12,uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
-    *(undefined4 *)&this_00->field_0x970 = uVar12;
+    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,(int)pCVar4,uVar12
+                       ,uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
+    this_00->field_0970 = uVar12;
   }
-  if (this_00->field_0xb9e == '\x02') {
+  if (this_00->field_0B9E == '\x02') {
     uVar21 = 0;
     uVar19 = 0;
     iVar8 = 0;
@@ -213,20 +213,20 @@ LAB_00502622:
     uVar13 = 0xb11a;
     uVar12 = 0xb119;
     pCVar4 = thunk_FUN_00571240(s_BUT_SHOWFRM_007c2394,0);
-    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0xba0 != '\0'),0x4a,100,1,(int)pCVar4,
-                       uVar12,uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
-    *(undefined4 *)&this_00->field_0x970 = uVar12;
+    uVar12 = CreateBut(this_00,3,0,(uint)(this_00->field_0BA0 != '\0'),0x4a,100,1,(int)pCVar4,uVar12
+                       ,uVar13,sVar14,uVar15,iVar6,pcVar3,iVar8,uVar19,uVar21);
+    this_00->field_0970 = uVar12;
   }
-  if ((((this_00->field_0xb9e == '\x01') && (*(int *)&this_00->field_0xb99 != 9)) &&
-      (*(int *)&this_00->field_0xb99 != 0x15)) ||
-     (((this_00->field_0xb9e == '\x02' && (*(int *)&this_00->field_0xb99 != 9)) &&
-      (*(int *)&this_00->field_0xb99 != 0x15)))) {
-    local_c = (undefined4 *)&this_00->field_0x960;
+  if ((((this_00->field_0B9E == '\x01') && (this_00->field_0B99 != 9)) &&
+      (this_00->field_0B99 != 0x15)) ||
+     (((this_00->field_0B9E == '\x02' && (this_00->field_0B99 != 9)) &&
+      (this_00->field_0B99 != 0x15)))) {
+    local_c = &this_00->field_0960;
     bVar7 = 0;
     iVar6 = 0xb230;
     local_8 = (undefined1 *)0xf;
     do {
-      if (this_00->field_0xba0 == '\0') {
+      if (this_00->field_0BA0 == '\0') {
         local_10 = 0;
       }
       else {

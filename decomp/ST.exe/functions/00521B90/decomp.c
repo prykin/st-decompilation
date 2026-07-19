@@ -26,26 +26,26 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
   pIVar2 = local_8;
   if (errorCode == 0) {
     this_00 = extraout_ECX;
-    if (*(byte **)(local_8 + 0x198) != (byte *)0x0) {
-      FUN_006b5570(*(byte **)(local_8 + 0x198));
-      *(undefined4 *)(pIVar2 + 0x198) = 0;
+    if ((byte *)local_8->field_0198 != (byte *)0x0) {
+      FUN_006b5570((byte *)local_8->field_0198);
+      pIVar2->field_0198 = 0;
       this_00 = extraout_ECX_00;
     }
-    if (*(uint *)(pIVar2 + 0x1a0) != 0) {
-      FUN_006e56b0(*(void **)(pIVar2 + 0xc),*(uint *)(pIVar2 + 0x1a0));
+    if (pIVar2->field_01A0 != 0) {
+      FUN_006e56b0((void *)pIVar2->field_000C,pIVar2->field_01A0);
       this_00 = extraout_ECX_01;
     }
-    *(undefined4 *)(pIVar2 + 0x1a0) = 0;
+    pIVar2->field_01A0 = 0;
     DAT_0080169c = 0;
-    if (*(uint **)(pIVar2 + 0x180) != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)(pIVar2 + 0x180));
-      *(undefined4 *)(pIVar2 + 0x180) = 0;
+    if ((uint *)pIVar2->field_0180 != (uint *)0x0) {
+      ccFntTy::operator(this_00,(uint *)pIVar2->field_0180);
+      pIVar2->field_0180 = 0;
     }
-    if (*(int *)(pIVar2 + 0x184) != 0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)(pIVar2 + 0x184));
+    if (pIVar2->field_0184 != 0) {
+      cMf32::RecMemFree(DAT_00806790,&pIVar2->field_0184);
     }
-    if (*(int *)(pIVar2 + 0x19c) != 0) {
-      cMf32::RecMemFree(DAT_00806790,(uint *)(pIVar2 + 0x19c));
+    if (pIVar2->field_019C != 0) {
+      cMf32::RecMemFree(DAT_00806790,&pIVar2->field_019C);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

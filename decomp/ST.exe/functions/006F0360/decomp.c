@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006f0360(short *param_1,undefined *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 498 | 500 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfTMapOptimize(short *param_1,undefined *param_2)
 
 {
   ushort uVar1;

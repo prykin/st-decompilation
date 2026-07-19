@@ -44,7 +44,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
   if (99 < *param_1) {
     switch(*param_1) {
     case 0x6a:
-      *(uint *)&local_8->field_0x9d = param_1[2];
+      local_8->field_009D = param_1[2];
       thunk_FUN_00690230(local_8,param_1);
       g_currentExceptionFrame = local_80.previous;
       return 0;
@@ -80,7 +80,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
       return 0;
     case 0x70:
       uVar5 = 0;
-      iVar3 = *(int *)&local_8->field_0xa5;
+      iVar3 = local_8->field_00A5;
       if (0 < *(int *)(iVar3 + 0xc)) {
         bVar7 = *(int *)(iVar3 + 0xc) != 0;
         do {
@@ -109,7 +109,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
               return 0;
             }
           }
-          iVar3 = *(int *)&this_00->field_0xa5;
+          iVar3 = this_00->field_00A5;
           uVar5 = uVar5 + 1;
           bVar7 = uVar5 < *(uint *)(iVar3 + 0xc);
           if ((int)*(uint *)(iVar3 + 0xc) <= (int)uVar5) {
@@ -120,10 +120,10 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
       }
       break;
     case 0x71:
-      uVar5 = *(int *)(*(int *)&local_8->field_0xa5 + 0xc) - 1;
+      uVar5 = *(int *)(local_8->field_00A5 + 0xc) - 1;
       if (-1 < (int)uVar5) {
         do {
-          iVar3 = *(int *)&this_00->field_0xa5;
+          iVar3 = this_00->field_00A5;
           if (uVar5 < *(uint *)(iVar3 + 0xc)) {
             iVar3 = *(int *)(iVar3 + 8) * uVar5 + *(int *)(iVar3 + 0x1c);
           }
@@ -133,7 +133,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
           if ((iVar3 != 0) && (*(AiFltClassTy **)(iVar3 + 4) != (AiFltClassTy *)0x0)) {
             AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar3 + 4),param_1);
             thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(*(int *)(iVar3 + 4) + 8));
-            FUN_006b0c70(*(int *)&this_00->field_0xa5,uVar5);
+            FUN_006b0c70(this_00->field_00A5,uVar5);
           }
           uVar5 = uVar5 - 1;
         } while (-1 < (int)uVar5);
@@ -161,7 +161,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
       break;
     case 0x73:
       uVar5 = 0;
-      iVar3 = *(int *)&local_8->field_0xa5;
+      iVar3 = local_8->field_00A5;
       if (0 < *(int *)(iVar3 + 0xc)) {
         bVar7 = *(int *)(iVar3 + 0xc) != 0;
         do {
@@ -177,7 +177,7 @@ int __thiscall AiTactClassTy::GetAiMess(AiTactClassTy *this,uint *param_1)
             g_currentExceptionFrame = local_80.previous;
             return 0;
           }
-          iVar3 = *(int *)&this_00->field_0xa5;
+          iVar3 = this_00->field_00A5;
           uVar5 = uVar5 + 1;
           bVar7 = uVar5 < *(uint *)(iVar3 + 0xc);
         } while ((int)uVar5 < (int)*(uint *)(iVar3 + 0xc));

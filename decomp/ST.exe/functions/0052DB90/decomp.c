@@ -15,7 +15,6 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   uint uVar7;
   undefined4 unaff_ESI;
   uint uVar8;
-  PopUpTy *pPVar9;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   PopUpTy *local_8;
@@ -26,13 +25,13 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pPVar2 = local_8;
   if (iVar3 == 0) {
-    if (local_8[0x9c] != (PopUpTy)0x0) {
-      if (*(byte **)(local_8 + 0x98) != (byte *)0x0) {
-        FUN_006b5570(*(byte **)(local_8 + 0x98));
+    if (local_8->field_009C != '\0') {
+      if ((byte *)local_8->field_0098 != (byte *)0x0) {
+        FUN_006b5570((byte *)local_8->field_0098);
       }
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-      *(uint **)(pPVar2 + 0x98) = puVar4;
-      iVar3 = *(int *)(pPVar2 + 0x90);
+      pPVar2->field_0098 = puVar4;
+      iVar3 = pPVar2->field_0090;
       uVar8 = *(uint *)(iVar3 + 0x14);
       if (uVar8 == 0) {
         uVar8 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -43,20 +42,20 @@ void __thiscall PopUpTy::Clear(PopUpTy *this)
         *puVar5 = 0x89898989;
         puVar5 = puVar5 + 1;
       }
-      pPVar9 = pPVar2 + 0x18;
+      puVar4 = &pPVar2->field_0018;
       for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
         *(undefined1 *)puVar5 = 0x89;
         puVar5 = (undefined4 *)((int)puVar5 + 1);
       }
       iVar3 = 0xf;
       do {
-        *(uint *)(pPVar9 + 0x3c) = 0;
-        FUN_006b2800((int)DAT_008075a8,*(uint *)pPVar9,0,0x13);
-        FUN_006b3af0(DAT_008075a8,*(uint *)pPVar9);
-        pPVar9 = pPVar9 + 4;
+        puVar4[0xf] = 0;
+        FUN_006b2800((int)DAT_008075a8,*puVar4,0,0x13);
+        FUN_006b3af0(DAT_008075a8,*puVar4);
+        puVar4 = puVar4 + 1;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
-      pPVar2[0x9c] = (PopUpTy)0x0;
+      pPVar2->field_009C = 0;
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

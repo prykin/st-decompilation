@@ -1,5 +1,11 @@
 
-int __cdecl FUN_0070a050(int param_1,char param_2,byte *param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfrload.cpp
+   Diagnostic line evidence: 294 | 295 | 307 | 309 (metadata/report site, not the function
+   definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfRLoadRelease(int param_1,char param_2,byte *param_3,int param_4)
 
 {
   code *pcVar1;

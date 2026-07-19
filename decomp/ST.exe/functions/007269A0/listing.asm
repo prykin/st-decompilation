@@ -1,4 +1,4 @@
-FUN_007269a0:
+mfUSprGetSect:
 007269A0  55                        PUSH EBP
 007269A1  8B EC                     MOV EBP,ESP
 007269A3  83 EC 50                  SUB ESP,0x50

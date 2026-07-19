@@ -1,4 +1,4 @@
-FUN_0067e6b0:
+GetOpponentNameDB:
 0067E6B0  55                        PUSH EBP
 0067E6B1  8B EC                     MOV EBP,ESP
 0067E6B3  83 EC 44                  SUB ESP,0x44

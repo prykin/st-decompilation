@@ -1,4 +1,4 @@
-FUN_0070a370:
+mfRLoadRefreshAll:
 0070A370  55                        PUSH EBP
 0070A371  8B EC                     MOV EBP,ESP
 0070A373  83 EC 74                  SUB ESP,0x74

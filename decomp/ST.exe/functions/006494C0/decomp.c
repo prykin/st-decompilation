@@ -1,5 +1,10 @@
 
-undefined4 * FUN_006494c0(void)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_creat.cpp
+   Diagnostic line evidence: 307 | 313 | 314 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * CreatePlrDataForWS(void)
 
 {
   char cVar1;
@@ -206,8 +211,8 @@ undefined4 * FUN_006494c0(void)
   }
   local_8 = thunk_FUN_00683c70(local_17c,&stack0xfffffb6c,&local_1c,local_34,(undefined *)0x0);
   if (local_8 != (uint *)0x0) {
-    local_10 = thunk_FUN_0065cd10(*(undefined4 **)((int)local_8 + 0x106),&local_14);
-    local_c = thunk_FUN_0067d3b0(local_8,local_10,local_14,&local_18);
+    local_10 = EventDataPack(*(undefined4 **)((int)local_8 + 0x106),&local_14);
+    local_c = PlrDataPack(local_8,local_10,local_14,&local_18);
     thunk_FUN_0065d0f0((int *)&local_10);
     thunk_FUN_0067d160((int *)&local_8);
     g_currentExceptionFrame = local_78.previous;

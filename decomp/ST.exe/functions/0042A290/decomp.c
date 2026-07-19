@@ -1,5 +1,10 @@
 
-short * __cdecl FUN_0042a290(int param_1,char *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\tload.cpp
+   Diagnostic line evidence: 1166 | 1282 | 1283 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+short * __cdecl LoadLand(int param_1,char *param_2)
 
 {
   int *piVar1;
@@ -38,7 +43,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
   g_currentExceptionFrame = &local_74;
   iVar3 = Library::MSVCRT::__setjmp3(local_74.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    psVar4 = FUN_006ef640(param_1,param_2,DAT_00806760,DAT_00806760,&LAB_00403dff);
+    psVar4 = mfTMapLoad(param_1,param_2,DAT_00806760,DAT_00806760,&LAB_00403dff);
     local_1c = psVar4;
     if (DAT_00802a58 != (cLoadingTy *)0x0) {
       iVar3 = DAT_007f4e00;
@@ -159,7 +164,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
     }
     FUN_006ae110((byte *)local_c);
     thunk_FUN_00428e50(psVar4);
-    thunk_FUN_005751f0(psVar4);
+    LandInit(psVar4);
     if (DAT_00802a58 != (cLoadingTy *)0x0) {
       cLoadingTy::SetState(DAT_00802a58,CASE_2,0,(char *)0x0);
     }

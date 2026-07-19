@@ -1,4 +1,4 @@
-FUN_0055dbf0:
+DarkScreen:
 0055DBF0  55                        PUSH EBP
 0055DBF1  8B EC                     MOV EBP,ESP
 0055DBF3  81 EC 44 04 00 00         SUB ESP,0x444

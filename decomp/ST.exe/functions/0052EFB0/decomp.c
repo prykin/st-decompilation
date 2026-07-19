@@ -66,8 +66,7 @@ OptPanelTy::PaintDblBut
       iVar8 = local_14;
       iVar3 = local_18;
       pOVar2 = local_1c;
-      thunk_FUN_00540760(*(undefined4 **)&local_1c->field_0x68,local_18,local_14,'\x01',
-                         (byte *)local_8);
+      DibPut((undefined4 *)local_1c->field_0068,local_18,local_14,'\x01',(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = (int *)0x0;
@@ -82,8 +81,8 @@ OptPanelTy::PaintDblBut
       else {
         iVar7 = *(int *)(local_c + 0x18);
       }
-      thunk_FUN_00540760(*(undefined4 **)&pOVar2->field_0x68,iVar3 + 5,
-                         (iVar7 - *(int *)(local_8 + 4)) / 2 + 1 + iVar8,'\x01',(byte *)local_8);
+      DibPut((undefined4 *)pOVar2->field_0068,iVar3 + 5,
+             (iVar7 - *(int *)(local_8 + 4)) / 2 + 1 + iVar8,'\x01',(byte *)local_8);
       iVar3 = *(int *)(local_8 + 2);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (param_6 == 0) {
@@ -94,18 +93,17 @@ OptPanelTy::PaintDblBut
         iVar7 = *(int *)(local_c + 0x18);
         iVar10 = *(int *)(local_c + 0x14);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)&pOVar2->field_0x180,*(int *)&pOVar2->field_0x68,0,
-                       iVar3 + 10 + local_18,iVar8,(iVar10 - iVar3) + -10,iVar7);
+      ccFntTy::SetSurf(pOVar2->field_0180,pOVar2->field_0068,0,iVar3 + 10 + local_18,iVar8,
+                       (iVar10 - iVar3) + -10,iVar7);
       iVar10 = -1;
       iVar7 = -1;
       uVar4 = (*(code *)param_5)(param_1);
       iVar8 = -1;
       iVar3 = 0;
       puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)&pOVar2->field_0x180,puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
+      ccFntTy::WrTxt(pOVar2->field_0180,puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)&pOVar2->field_0x60,0xffffffff,pOVar2->field_003C,
-                 pOVar2->field_0044);
+                (DAT_008075a8,pOVar2->field_0060,0xffffffff,pOVar2->field_003C,pOVar2->field_0044);
       g_currentExceptionFrame = local_60.previous;
       return;
     }

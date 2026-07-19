@@ -48,38 +48,38 @@ undefined4 __thiscall STT3DSprC::StartShow(STT3DSprC *this,byte param_1,undefine
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd0);
   }
   local_c = 1 << (param_1 & 0x1f);
-  if ((*(uint *)&pSVar2->field_0x1c & local_c) != 0) {
+  if ((pSVar2->field_001C & local_c) != 0) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xd1);
   }
-  FUN_006e9cb0((void *)pSVar2[1].field_0018,(uint *)pSVar2->field_0018,uVar7);
-  *(uint *)&pSVar2->field_0x1c = *(uint *)&pSVar2->field_0x1c | local_c;
+  FUN_006e9cb0((void *)pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
+  pSVar2->field_001C = pSVar2->field_001C | local_c;
   iVar4 = pSVar2->field_0020 + iVar3;
   if (*(int *)(iVar4 + 0x20) == 0) {
-    FUN_006ea270((void *)pSVar2[1].field_0018,pSVar2->field_0018,uVar7,*(uint *)(iVar4 + 0x18));
+    FUN_006ea270((void *)pSVar2->field_003C,pSVar2->field_0018,uVar7,*(uint *)(iVar4 + 0x18));
   }
   else {
-    FUN_006e9d40((void *)pSVar2[1].field_0018,(uint *)pSVar2->field_0018,uVar7);
+    FUN_006e9d40((void *)pSVar2->field_003C,(uint *)pSVar2->field_0018,uVar7);
   }
-  if (pSVar2->field_0x12 == '\0') {
-    FUN_006eaaa0((void *)pSVar2[1].field_0018,pSVar2->field_0018,0);
+  if (pSVar2->field_0012 == '\0') {
+    FUN_006eaaa0((void *)pSVar2->field_003C,pSVar2->field_0018,0);
   }
-  if (pSVar2->field_0x11 == '\0') {
-    if (pSVar2->field_0x10 == '\0') {
+  if (pSVar2->field_0011 == '\0') {
+    if (pSVar2->field_0010 == '\0') {
       if (*(int *)(*(int *)(pSVar2->field_0020 + iVar3) + 0x29) == 0) goto cf_common_exit_004AC330;
-      pSVar2->field_0x13 = param_1;
-      *(undefined4 *)&pSVar2[1].field_0xc = *(undefined4 *)(pSVar2->field_0020 + iVar3 + 0x18);
+      pSVar2->field_0013 = param_1;
+      pSVar2->field_0030 = *(undefined4 *)(pSVar2->field_0020 + iVar3 + 0x18);
       puVar8 = &LAB_00404999;
     }
     else {
-      if ((pSVar2[1].field_0014 == 0) ||
+      if ((pSVar2->field_0038 == 0) ||
          (piVar5 = (int *)(pSVar2->field_0020 + iVar3), *(int *)(*piVar5 + 0x29) == 0))
       goto cf_common_exit_004AC330;
-      pSVar2->field_0x13 = param_1;
-      *(int *)&pSVar2[1].field_0xc = piVar5[6];
+      pSVar2->field_0013 = param_1;
+      pSVar2->field_0030 = piVar5[6];
       puVar8 = &LAB_00405b64;
     }
-    FUN_006e9520((void *)pSVar2[1].field_0018,pSVar2->field_0018,*(uint *)&pSVar2[1].field_0x10,
-                 (uint)puVar8,(uint)pSVar2);
+    FUN_006e9520((void *)pSVar2->field_003C,pSVar2->field_0018,pSVar2->field_0034,(uint)puVar8,
+                 (uint)pSVar2);
   }
 cf_common_exit_004AC330:
   *(undefined4 *)(pSVar2->field_0020 + 0x1c + iVar3) = param_2;

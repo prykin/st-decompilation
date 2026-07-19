@@ -138,7 +138,7 @@ undefined4 * __thiscall STAllPlayersC::SaveAllPlData(STAllPlayersC *this,int *pa
     local_28 = iVar2 + DAT_007fb246;
     puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(local_28);
     puVar4 = puVar3 + 2;
-    *puVar3 = *(undefined4 *)(local_44 + 0x1c);
+    *puVar3 = local_44->field_001C;
     piVar8 = &DAT_007f4e29;
     do {
       local_10 = (uint *)0x5;

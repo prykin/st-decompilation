@@ -1,5 +1,10 @@
 
-ushort * __cdecl FUN_0071ad00(cMf32 *param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfany.cpp
+   Diagnostic line evidence: 25 | 27 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+ushort * __cdecl mfAnyLoad(cMf32 *param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;

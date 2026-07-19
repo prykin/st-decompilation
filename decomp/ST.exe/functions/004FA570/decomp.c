@@ -64,10 +64,10 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
     return;
   }
   if (param_1 == 0) {
-    if (*(int *)&local_8->field_0x9d0 != 0) {
-      FUN_006e6080(local_8,2,*(int *)&local_8->field_0x9d0,(undefined4 *)&local_8->field_0x18);
+    if (local_8->field_09D0 != 0) {
+      FUN_006e6080(local_8,2,local_8->field_09D0,(undefined4 *)&local_8->field_0x18);
     }
-    piVar6 = (int *)&this_00->field_0xa15;
+    piVar6 = &this_00->field_0A15;
     iVar4 = 6;
     do {
       if (*piVar6 != 0) {
@@ -76,7 +76,7 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
       piVar6 = piVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    piVar6 = (int *)&this_00->field_0xb1f;
+    piVar6 = &this_00->field_0B1F;
     iVar4 = 6;
     do {
       if (*piVar6 != 0) {
@@ -85,13 +85,13 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
       piVar6 = piVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    iVar4 = *(int *)&this_00->field_0xb37;
+    iVar4 = this_00->field_0B37;
   }
   else {
-    if (*(int *)&local_8->field_0x95c != 0) {
-      FUN_006e6080(local_8,2,*(int *)&local_8->field_0x95c,(undefined4 *)&local_8->field_0x18);
+    if (local_8->field_095C != 0) {
+      FUN_006e6080(local_8,2,local_8->field_095C,(undefined4 *)&local_8->field_0x18);
     }
-    piVar6 = (int *)&this_00->field_0x960;
+    piVar6 = &this_00->field_0960;
     iVar4 = 4;
     do {
       if (*piVar6 != 0) {
@@ -100,31 +100,26 @@ void __thiscall CPanelTy::ShiftControls(CPanelTy *this,int param_1,int param_2)
       piVar6 = piVar6 + 1;
       iVar4 = iVar4 + -1;
     } while (iVar4 != 0);
-    iVar4 = *(int *)&this_00->field_0x970;
+    iVar4 = this_00->field_0970;
   }
   if (iVar4 != 0) {
     FUN_006e6080(this_00,2,iVar4,(undefined4 *)&this_00->field_0x18);
   }
   uVar7 = local_c & 0xff;
-  if (*(int *)(&this_00->field_0x9c0 + uVar7 * 4) != 0) {
-    FUN_006e6080(this_00,2,*(int *)(&this_00->field_0x9c0 + uVar7 * 4),
-                 (undefined4 *)&this_00->field_0x18);
+  if ((&this_00->field_09C0)[uVar7] != 0) {
+    FUN_006e6080(this_00,2,(&this_00->field_09C0)[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if (*(int *)(&this_00->field_0x2fe + uVar7 * 4) != 0) {
-    FUN_006e6080(this_00,2,*(int *)(&this_00->field_0x2fe + uVar7 * 4),
-                 (undefined4 *)&this_00->field_0x18);
+  if ((&this_00->field_02FE)[uVar7] != 0) {
+    FUN_006e6080(this_00,2,(&this_00->field_02FE)[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if (*(int *)(&this_00->field_0x308 + uVar7 * 4) != 0) {
-    FUN_006e6080(this_00,2,*(int *)(&this_00->field_0x308 + uVar7 * 4),
-                 (undefined4 *)&this_00->field_0x18);
+  if ((&this_00->field_0308)[uVar7] != 0) {
+    FUN_006e6080(this_00,2,(&this_00->field_0308)[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if (*(int *)(&this_00->field_0x310 + uVar7 * 4) != 0) {
-    FUN_006e6080(this_00,2,*(int *)(&this_00->field_0x310 + uVar7 * 4),
-                 (undefined4 *)&this_00->field_0x18);
+  if ((&this_00->field_0310)[uVar7] != 0) {
+    FUN_006e6080(this_00,2,(&this_00->field_0310)[uVar7],(undefined4 *)&this_00->field_0x18);
   }
-  if (((char)local_c != '\0') && (*(int *)(&this_00->field_0x314 + uVar7 * 4) != 0)) {
-    FUN_006e6080(this_00,2,*(int *)(&this_00->field_0x314 + uVar7 * 4),
-                 (undefined4 *)&this_00->field_0x18);
+  if (((char)local_c != '\0') && ((&this_00->field_0314)[uVar7] != 0)) {
+    FUN_006e6080(this_00,2,(&this_00->field_0314)[uVar7],(undefined4 *)&this_00->field_0x18);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

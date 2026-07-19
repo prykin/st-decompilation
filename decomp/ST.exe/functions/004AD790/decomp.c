@@ -82,18 +82,18 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
     puVar6 = (undefined4 *)((int)puVar6 + 1);
   }
   pcVar10 = (char *)(local_14 + 9);
-  *local_14 = *(undefined4 *)&this_00->field_0x4;
-  local_14[1] = *(undefined4 *)&this_00->field_0x8;
-  *(undefined1 *)(local_14 + 2) = this_00->field_0x10;
-  *(undefined1 *)((int)local_14 + 9) = this_00->field_0x11;
-  *(undefined1 *)((int)local_14 + 10) = this_00->field_0x12;
-  *(undefined4 *)((int)local_14 + 0xb) = *(undefined4 *)&this_00->field_0xc;
+  *local_14 = this_00->field_0004;
+  local_14[1] = this_00->field_0008;
+  *(undefined1 *)(local_14 + 2) = this_00->field_0010;
+  *(undefined1 *)((int)local_14 + 9) = this_00->field_0011;
+  *(undefined1 *)((int)local_14 + 10) = this_00->field_0012;
+  *(undefined4 *)((int)local_14 + 0xb) = this_00->field_000C;
   *(undefined4 *)((int)local_14 + 0xf) = this_00->field_0014;
-  *(undefined4 *)((int)local_14 + 0x13) = *(undefined4 *)(this_00 + 1);
-  *(undefined4 *)((int)local_14 + 0x17) = *(undefined4 *)&this_00[1].field_0x4;
-  *(undefined4 *)((int)local_14 + 0x1b) = *(undefined4 *)&this_00[1].field_0x8;
-  *(undefined1 *)((int)local_14 + 0x1f) = this_00->field_0x13;
-  local_14[8] = *(undefined4 *)&this_00[1].field_0xc;
+  *(undefined4 *)((int)local_14 + 0x13) = this_00->field_0024;
+  *(undefined4 *)((int)local_14 + 0x17) = this_00->field_0028;
+  *(undefined4 *)((int)local_14 + 0x1b) = this_00->field_002C;
+  *(undefined1 *)((int)local_14 + 0x1f) = this_00->field_0013;
+  local_14[8] = this_00->field_0030;
   local_8 = 0;
   if (0 < (int)this_00->field_0014) {
     iVar3 = 0;
@@ -104,7 +104,7 @@ undefined4 * __thiscall STT3DSprC::SaveSpr(STT3DSprC *this,uint *param_1)
       *(undefined4 *)pcVar11 = uVar5;
       pcVar10 = pcVar11 + 0x24;
       pcVar11[4] = *(char *)(iVar3 + 0xc + this_00->field_0020);
-      pcVar11[5] = (byte)(*(uint *)&this_00->field_0x1c >> ((byte)local_8 & 0x1f)) & 1;
+      pcVar11[5] = (byte)((uint)this_00->field_001C >> ((byte)local_8 & 0x1f)) & 1;
       pcVar11[6] = *(byte *)(iVar3 + 0xe + this_00->field_0020) & 1;
       pcVar11[7] = *(char *)(iVar3 + 0xd + this_00->field_0020);
       pcVar11[8] = *(byte *)(iVar3 + 0xe + this_00->field_0020) >> 1 & 1;

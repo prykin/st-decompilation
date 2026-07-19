@@ -96,12 +96,12 @@ SettMapMTy::ChangePlayerList
           pcVar8[1] = '\x01';
         }
         CheckPlList(local_8,unaff_EDI);
-        if ((pSVar3->field_0x1e26 != '\f') && (pSVar3->field_0x1e26 != '\x10')) {
+        if ((pSVar3->field_1E26 != '\f') && (pSVar3->field_1E26 != '\x10')) {
           thunk_FUN_005d1380((int)pSVar3);
         }
-        (**(code **)(*(int *)pSVar3 + 0x2c))();
+        (**(code **)(pSVar3->field_0000 + 0x2c))();
         SettMapTy::PaintSC((SettMapTy *)pSVar3);
-        *(int *)&pSVar3[1].field_0x4 = *(int *)&pSVar3[1].field_0x4 + 1;
+        pSVar3->field_2121 = pSVar3->field_2121 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_0067d880(int param_1,char *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 238 | 245 | 247 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl LoadPlrEdit(int param_1,char *param_2)
 
 {
   code *pcVar1;
@@ -21,7 +26,7 @@ undefined4 * __cdecl FUN_0067d880(int param_1,char *param_2)
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0xee);
     }
-    local_8 = FUN_006f2d90(param_1,param_2,1,0);
+    local_8 = mfAObjLoad(param_1,param_2,1,0);
     if (local_8 != (ushort *)0x0) {
       local_c = thunk_FUN_0067d1d0((undefined4 *)local_8);
       thunk_FUN_0067d160((int *)&local_8);

@@ -7,7 +7,7 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,int param_1)
 
 {
   ushort uVar1;
-  int iVar2;
+  ccFntTy *pcVar2;
   code *pcVar3;
   StartSystemTy *this_00;
   undefined4 *puVar4;
@@ -52,14 +52,14 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,int param_1)
   if (iVar6 == 0x633f) {
     if ((((local_8->field_067E != 0) && (DAT_0080c4fa != 0)) && (-1 < (int)local_8->field_0558)) &&
        ((param_1 != 0 && (iVar6 = *(int *)(param_1 + 0x1c), iVar6 != 0)))) {
-      iVar5 = local_8->field_0034;
+      pcVar2 = local_8->field_0034;
       local_10 = iVar6;
-      if (*(int *)(iVar5 + 0xa0) != 0) {
-        FUN_00710790(iVar5);
+      if (pcVar2->field_00A0 != 0) {
+        FUN_00710790((int)pcVar2);
       }
-      iVar2 = this_00->field_067E;
-      local_c = *(int *)(iVar5 + 0x8a);
-      FUN_006b4170(iVar2,0,0,0,*(int *)(iVar2 + 4),*(int *)(iVar2 + 8),0xff);
+      iVar5 = this_00->field_067E;
+      local_c = *(int *)&pcVar2->field_0x8a;
+      FUN_006b4170(iVar5,0,0,0,*(int *)(iVar5 + 4),*(int *)(iVar5 + 8),0xff);
       uVar7 = (uint)*(ushort *)(param_1 + 0x16);
       iVar5 = DAT_0080c4fa;
       uVar8 = uVar7;
@@ -72,9 +72,9 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,int param_1)
             puVar9 = (uint *)0x0;
           }
           if (puVar9 != (uint *)0x0) {
-            ccFntTy::SetSurf((ccFntTy *)this_00->field_0034,this_00->field_067E,0,0,
-                             (uVar8 - uVar7) * local_c,*(int *)(this_00->field_067E + 4),local_c);
-            ccFntTy::WrStr((ccFntTy *)this_00->field_0034,puVar9,0,-1,0);
+            ccFntTy::SetSurf(this_00->field_0034,this_00->field_067E,0,0,(uVar8 - uVar7) * local_c,
+                             *(int *)(this_00->field_067E + 4),local_c);
+            ccFntTy::WrStr(this_00->field_0034,puVar9,0,-1,0);
             iVar5 = DAT_0080c4fa;
           }
           uVar8 = uVar8 + 1;
@@ -101,10 +101,9 @@ void __thiscall StartSystemTy::ChatMessage(StartSystemTy *this,int param_1)
         *(undefined1 *)puVar4 = 0xff;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      ccFntTy::SetSurf((ccFntTy *)this_00->field_0034,this_00->field_0682,0,0,0,0,0);
+      ccFntTy::SetSurf(this_00->field_0034,this_00->field_0682,0,0,0,0,0);
       if (*(undefined4 **)(param_1 + 0x14) != (undefined4 *)0x0) {
-        ccFntTy::WrStr((ccFntTy *)this_00->field_0034,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1
-                       ,2);
+        ccFntTy::WrStr(this_00->field_0034,(uint *)**(undefined4 **)(param_1 + 0x14),0,-1,2);
       }
       uVar1 = *(ushort *)(param_1 + 0x18);
       if ((uVar1 != 0xffff) || (*(short *)(param_1 + 0x1a) != -1)) {

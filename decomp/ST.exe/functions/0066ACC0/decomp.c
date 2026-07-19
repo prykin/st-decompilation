@@ -1,5 +1,9 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_interp.cpp
+   Diagnostic line evidence: 338 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
 
 uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
 
@@ -234,8 +238,8 @@ uint * FUN_0066acc0(char *param_1,int param_2,int *param_3)
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)(*local_64 + 8))(local_28,uVar19);
           sVar6 = (**(code **)*local_64)(local_c,uVar19);
-          thunk_FUN_00677be0(*(short *)ppAVar24,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
-                             puVar27,uVar29);
+          _EnumRCCont(*(short *)ppAVar24,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar27,
+                      uVar29);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1061,8 +1065,8 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           uVar11 = (**(code **)*local_64)(local_c,0x3fffffff,0,uVar19);
-          thunk_FUN_00676d80(*ppAVar24,uVar11,(uint)pcVar22,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,
-                             sVar3,sVar9,puVar27,uVar29,puVar28);
+          _EnumPlObj(*ppAVar24,uVar11,(uint)pcVar22,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
+                     sVar9,puVar27,uVar29,puVar28);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1129,8 +1133,8 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           uVar11 = (**(code **)*local_64)(local_c,0,uVar19);
-          thunk_FUN_00676d80(*ppAVar24,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
-                             puVar27,uVar29,puVar28);
+          _EnumPlObj(*ppAVar24,0,uVar11,pbVar14,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,puVar27,
+                     uVar29,puVar28);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1217,8 +1221,8 @@ LAB_0066bff3:
           uVar19 = (**(code **)*local_64)(local_30,uVar19);
           uVar19 = (**(code **)*local_64)(local_28,uVar19);
           pbVar15 = (byte *)(**(code **)(*local_64 + 8))(local_c,uVar19);
-          thunk_FUN_00676d80(*ppAVar24,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,
-                             sVar9,puVar27,uVar29,puVar28);
+          _EnumPlObj(*ppAVar24,0,0x3fffffff,pbVar15,cVar2,sVar5,sVar6,sVar4,sVar8,sVar3,sVar9,
+                     puVar27,uVar29,puVar28);
           ppAVar24 = ppAVar24 + 1;
           iVar10 = iVar10 + -1;
         } while (iVar10 != 0);
@@ -1724,8 +1728,8 @@ cf_continue_loop_0066CFCA:
         uVar19 = (**(code **)*local_64)(local_30,uVar19);
         uVar19 = (**(code **)(*local_64 + 8))(local_28,uVar19);
         sVar6 = (**(code **)*local_64)(local_c,uVar19);
-        thunk_FUN_00677be0(*(short *)ppAVar24,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
-                           puVar27,uVar29);
+        _EnumRCCont(*(short *)ppAVar24,sVar6,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar27,
+                    uVar29);
         ppAVar24 = ppAVar24 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
@@ -1777,7 +1781,7 @@ cf_continue_loop_0066CFCA:
     sVar3 = sVar3 + 5;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
     sVar7 = (**(code **)*local_64)(param_1);
-    thunk_FUN_00677f40(sVar7,pbVar15,sVar3,sVar9,sVar5,sVar8,sVar4,sVar6,pcVar22,uVar19);
+    _EnumArt(sVar7,pbVar15,sVar3,sVar9,sVar5,sVar8,sVar4,sVar6,pcVar22,uVar19);
     goto cf_common_exit_0066DCED;
   case 0x7f9:
     if ((*param_1 != '\x04') && (*param_1 != '\x01')) {
@@ -1826,7 +1830,7 @@ cf_continue_loop_0066CFCA:
     cVar2 = (**(code **)*local_64)();
     sVar9 = (short)pcVar21;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-    thunk_FUN_006785a0(pbVar15,cVar2,sVar9,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar22,uVar19);
+    _EnumDest(pbVar15,cVar2,sVar9,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar22,uVar19);
     goto cf_common_exit_0066DCED;
   case 0x7fa:
     local_8 = (AiFltClassTy *)0x0;
@@ -1909,8 +1913,8 @@ cf_continue_loop_0066CFCA:
         uVar19 = (**(code **)(*local_64 + 8))(local_30,uVar19);
         uVar19 = (**(code **)*local_64)(local_28,uVar19);
         sVar6 = (**(code **)*local_64)(local_c,uVar19);
-        thunk_FUN_00678240((int)*ppAVar24,sVar6,cVar2,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,
-                           puVar27,uVar29);
+        _EnumMines((int)*ppAVar24,sVar6,cVar2,pbVar15,sVar5,sVar8,sVar4,sVar9,sVar3,sVar7,puVar27,
+                   uVar29);
         ppAVar24 = ppAVar24 + 1;
         iVar10 = iVar10 + -1;
       } while (iVar10 != 0);
@@ -1944,7 +1948,7 @@ cf_continue_loop_0066CFCA:
     sVar3 = sVar3 + 5;
     sVar8 = (**(code **)*local_64)();
     sVar9 = (**(code **)*local_64)();
-    thunk_FUN_00677960(sVar9,(short)param_1,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar22,uVar19);
+    _EnumRCField(sVar9,(short)param_1,sVar8,sVar3,sVar6,sVar4,sVar5,pcVar22,uVar19);
 cf_common_exit_0066DCED:
     local_14 = Library::DKW::LIB::FUN_006aac10(4);
     *local_14 = DAT_00811980;
@@ -2140,8 +2144,8 @@ cf_common_exit_0066DCED:
       sVar3 = 0;
       cVar2 = -1;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-      iVar10 = thunk_FUN_00676d80(local_50[0],0,0x3fffffff,pbVar15,cVar2,sVar3,sVar4,sVar5,sVar6,
-                                  sVar8,sVar9,puVar27,uVar19,puVar28);
+      iVar10 = _EnumPlObj(local_50[0],0,0x3fffffff,pbVar15,cVar2,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9
+                          ,puVar27,uVar19,puVar28);
       if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
         local_10 = (char *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);
@@ -2229,8 +2233,8 @@ cf_common_exit_0066DCED:
       sVar4 = 0;
       sVar3 = 0;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-      iVar10 = thunk_FUN_00677be0((short)local_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,
-                                  puVar27,uVar19);
+      iVar10 = _EnumRCCont((short)local_50[0],0,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
+                           uVar19);
       if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
         local_10 = (char *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);
@@ -2299,8 +2303,7 @@ cf_common_exit_0066DCED:
     sVar3 = 0;
     pcVar22 = param_1;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
-    iVar10 = thunk_FUN_00677f40(0,pbVar15,(short)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,puVar27,
-                                puVar30);
+    iVar10 = _EnumArt(0,pbVar15,(short)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,puVar27,puVar30);
     if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
       local_10 = (char *)0x1;
       iVar10 = (**(code **)*local_64)(param_1 + 5,uVar19);
@@ -2358,8 +2361,7 @@ cf_common_exit_0066DCED:
     sVar3 = -1;
     pcVar22 = param_1;
     pbVar15 = (byte *)(**(code **)(*local_64 + 8))();
-    iVar10 = thunk_FUN_006785a0(pbVar15,(char)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
-                                puVar30);
+    iVar10 = _EnumDest(pbVar15,(char)pcVar22,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,puVar30);
     if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
       local_10 = (char *)0x1;
       iVar10 = (**(code **)*local_64)(param_1 + 5,uVar19);
@@ -2436,8 +2438,8 @@ cf_common_exit_0066DCED:
       sVar4 = 0;
       sVar3 = 0;
       pbVar15 = (byte *)(**(code **)(*local_64 + 8))(param_1 + 5);
-      iVar10 = thunk_FUN_00678240((int)local_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,
-                                  puVar27,uVar19);
+      iVar10 = _EnumMines((int)local_50[0],0,-1,pbVar15,sVar3,sVar4,sVar5,sVar6,sVar8,sVar9,puVar27,
+                          uVar19);
       if ((iVar10 == -1) && (DAT_00811984 != (int *)0x0)) {
         local_1c = (byte *)0x1;
         iVar10 = (**(code **)*local_64)(param_1 + 10);

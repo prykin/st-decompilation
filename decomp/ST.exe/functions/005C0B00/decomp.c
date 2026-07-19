@@ -74,7 +74,7 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
         param_5 = (uint *)FUN_006b0140(param_2,DAT_00807618);
       }
       local_18 = param_5;
-      ccFntTy::SetSurf(*(ccFntTy **)&local_c[1].field_0x4,iVar7,0,0,0,0,0);
+      ccFntTy::SetSurf(local_c->field_0083,iVar7,0,0,0,0,0);
       sVar1 = *(short *)(param_1 + 0x14);
       if ((sVar1 == 1) || (sVar1 == 2)) {
         iVar5 = (-(uint)(param_4 != '\0') & 0xfffffffe) + 2;
@@ -85,15 +85,15 @@ MReportTy::PaintBut(MReportTy *this,int param_1,UINT param_2,int param_3,char pa
       else {
         iVar5 = 4;
       }
-      ccFntTy::WrStr(*(ccFntTy **)&local_c[1].field_0x4,local_18,-1,-1,iVar5);
+      ccFntTy::WrStr(local_c->field_0083,local_18,-1,-1,iVar5);
     }
     piVar3 = local_20;
     FUN_006b5f80(DAT_008075a8,*local_20,local_20[1],(int)local_8,(int)pbVar4);
-    thunk_FUN_00540620(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)local_8,pbVar4,'\x01',
-                       *(BITMAPINFO **)&local_c->field_0x5d);
+    PutDDXClip(*piVar3,piVar3[1],*piVar3,piVar3[1],(uint)local_8,pbVar4,'\x01',
+               (BITMAPINFO *)local_c->field_005D);
     Library::DKW::DDX::FUN_006b48e0
               (DAT_0080759c,*piVar3,piVar3[1],iVar7,0,0,0,(uint)local_8,(int)pbVar4,
-               (int)&local_c[1].field_0x24,0x4c,0x10000ff);
+               (int)&local_c->field_0xa3,0x4c,0x10000ff);
     g_currentExceptionFrame = local_64.previous;
     return;
   }

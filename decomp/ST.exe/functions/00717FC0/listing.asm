@@ -1,4 +1,4 @@
-FUN_00717fc0:
+mfPltPtrTy:
 00717FC0  55                        PUSH EBP
 00717FC1  8B EC                     MOV EBP,ESP
 00717FC3  83 EC 48                  SUB ESP,0x48

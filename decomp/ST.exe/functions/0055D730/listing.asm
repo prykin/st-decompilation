@@ -1,4 +1,4 @@
-FUN_0055d730:
+LoadGamePlt:
 0055D730  55                        PUSH EBP
 0055D731  8B EC                     MOV EBP,ESP
 0055D733  83 EC 44                  SUB ESP,0x44

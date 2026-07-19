@@ -1,4 +1,4 @@
-FUN_0070bfe0:
+imgGetPcxGifJpgFromFile:
 0070BFE0  55                        PUSH EBP
 0070BFE1  8B EC                     MOV EBP,ESP
 0070BFE3  81 EC DC 00 00 00         SUB ESP,0xdc

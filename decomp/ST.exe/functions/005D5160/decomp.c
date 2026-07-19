@@ -21,7 +21,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   byte *pbVar12;
   void *unaff_EDI;
   char *pcVar13;
-  SettMapSTy *this_00;
+  SettMapTy *this_00;
   bool bVar14;
   InternalExceptionFrame local_b8;
   undefined1 local_74;
@@ -42,12 +42,12 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   byte *local_14;
   int local_10;
   char *local_c;
-  SettMapSTy *local_8;
+  SettMapTy *local_8;
   
   this->field_211C = DAT_008087c4._2_1_;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
-  local_8 = this;
+  local_8 = (SettMapTy *)this;
   iVar4 = Library::MSVCRT::__setjmp3(local_b8.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar4 != 0) {
@@ -62,13 +62,13 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     (*pcVar3)();
     return;
   }
-  if (local_8->field_0x1e26 == '\x02') {
-    local_10 = *(int *)&local_8->field_0x1f3f;
+  if (local_8->field_1E26 == '\x02') {
+    local_10 = local_8->field_1F3F;
   }
   else {
-    local_10 = *(int *)&local_8->field_0x1f43;
+    local_10 = local_8->field_1F43;
   }
-  iVar4 = *(int *)&local_8->field_0x1f84;
+  iVar4 = local_8->field_1F84;
   if (iVar4 != 0) {
     uVar10 = 0;
     if (0 < *(int *)(iVar4 + 0xc)) {
@@ -83,15 +83,15 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
         if ((iVar4 != 0) && (*(byte **)(iVar4 + 0x50) != (byte *)0x0)) {
           FUN_006ae110(*(byte **)(iVar4 + 0x50));
         }
-        iVar4 = *(int *)&this_00->field_0x1f84;
+        iVar4 = this_00->field_1F84;
         uVar10 = uVar10 + 1;
         bVar14 = uVar10 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar10 < (int)*(uint *)(iVar4 + 0xc));
     }
-    FUN_006ae110(*(byte **)&this_00->field_0x1f84);
+    FUN_006ae110((byte *)this_00->field_1F84);
   }
   puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
-  *(uint **)&this_00->field_0x1f84 = puVar5;
+  this_00->field_1F84 = puVar5;
   local_c = &DAT_008087e8;
   do {
     pcVar9 = local_c;
@@ -106,12 +106,12 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
         cStack_71 = *local_c;
       }
       local_72 = cVar1;
-      if (this_00->field_0x1e26 == '\x02') {
-        local_24 = thunk_FUN_0067e0e0(local_10,CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,
-                                      0xffffffff);
+      if (this_00->field_1E26 == '\x02') {
+        local_24 = CreateStrategList(local_10,CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,
+                                     0xffffffff);
       }
       else {
-        local_24 = thunk_FUN_0067dfd0(local_10,CONCAT12(uStack_6f,CONCAT11(uStack_70,cStack_71)) &
+        local_24 = CreateOpponentList(local_10,CONCAT12(uStack_6f,CONCAT11(uStack_70,cStack_71)) &
                                                0xff,DAT_0080995c);
       }
       uVar10 = 0xffffffff;
@@ -144,7 +144,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
       else {
         uStack_70 = 4;
         uStack_6f = 0;
-        if (local_8->field_0x1e26 == '\x02') {
+        if (local_8->field_1E26 == '\x02') {
           uVar8 = 0;
           uVar10 = local_24[3];
           if (0 < (int)uVar10) {
@@ -192,12 +192,12 @@ LAB_005d5350:
       local_18 = *(undefined4 *)(pcVar9 + 0xb);
       local_29 = 0;
       local_25 = 1;
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)&local_8->field_0x1f84,(undefined4 *)&local_74);
+      Library::DKW::TBL::FUN_006ae1c0((uint *)local_8->field_1F84,(undefined4 *)&local_74);
       this_00 = local_8;
     }
     local_c = pcVar9 + 0x51;
   } while ((int)local_c < 0x808a70);
-  iVar4 = *(int *)&this_00->field_0x1f84;
+  iVar4 = this_00->field_1F84;
   uVar8 = 0;
   uVar10 = *(uint *)(iVar4 + 0xc);
   if (0 < (int)uVar10) {
@@ -246,8 +246,8 @@ code_r0x005d540b:
     pcVar11 = pcVar11 + 1;
   }
 LAB_005d5426:
-  SettMapTy::PaintSC((SettMapTy *)this_00);
-  (**(code **)(*(int *)this_00 + 0x20))();
+  SettMapTy::PaintSC(this_00);
+  (**(code **)(this_00->field_0000 + 0x20))();
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

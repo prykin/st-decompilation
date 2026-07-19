@@ -1,6 +1,11 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfwav.cpp
+   Diagnostic line evidence: 123 | 128 | 130 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __cdecl
-FUN_0071a030(byte *param_1,uint param_2,byte param_3,int param_4,char *param_5,char param_6)
+mfWavSave(byte *param_1,uint param_2,byte param_3,int param_4,char *param_5,char param_6)
 
 {
   code *pcVar1;

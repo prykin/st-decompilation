@@ -71,9 +71,9 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
       *puVar14 = 0;
       puVar14 = puVar14 + 1;
     }
-    *(undefined4 *)&local_24->field_0x65 = 0;
-    puVar14 = (undefined4 *)&local_24->field_0x137;
-    puVar15 = (undefined4 *)&local_24->field_0x276;
+    local_24->field_0065 = 0;
+    puVar14 = (undefined4 *)&local_24->field_0137;
+    puVar15 = (undefined4 *)&local_24->field_0276;
     for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
       *puVar15 = *puVar14;
       puVar14 = puVar14 + 1;
@@ -82,13 +82,13 @@ undefined4 __thiscall STGroupBoatC::GrpBuild(STGroupBoatC *this,int param_1)
     *(undefined2 *)puVar15 = *(undefined2 *)puVar14;
     *(undefined1 *)((int)puVar15 + 2) = *(undefined1 *)((int)puVar14 + 2);
     local_20 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_44 = *(undefined2 *)&local_24->field_0x137;
+    local_44 = local_24->field_0137;
     local_48 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_42 = *(undefined2 *)&local_24->field_0x139;
-    local_3e = *(undefined4 *)&local_24->field_0x13d;
-    local_27 = *(undefined2 *)&local_24->field_0x154;
-    local_40 = *(undefined2 *)&local_24->field_0x13b;
-    local_3a = *(undefined4 *)&local_24->field_0x141;
+    local_42 = local_24->field_0139;
+    local_3e = local_24->field_013D;
+    local_27 = local_24->field_0154;
+    local_40 = local_24->field_013B;
+    local_3a = local_24->field_0141;
     Library::MSVCRT::_strncpy(local_36,&local_24->field_0x145,0xe);
     uVar12 = 0;
     local_28 = 0;
@@ -150,9 +150,9 @@ LAB_0049cf10:
   uVar12 = 0;
   local_c = 2;
   if (*(uint *)(DAT_00802a38 + 0xe4) % 0x32 == 0) {
-    sVar6 = *(short *)&pSVar4->field_0x276;
-    sVar1 = *(short *)&pSVar4->field_0x27a;
-    sVar2 = *(short *)&pSVar4->field_0x278;
+    sVar6 = pSVar4->field_0276;
+    sVar1 = pSVar4->field_027A;
+    sVar2 = pSVar4->field_0278;
     if ((((sVar6 < 0) || (DAT_007fb240 <= sVar6)) ||
         ((sVar2 < 0 || ((DAT_007fb242 <= sVar2 || (sVar1 < 0)))))) || (DAT_007fb244 <= sVar1)) {
       sVar6 = -1;

@@ -1,4 +1,4 @@
-FUN_006785a0:
+_EnumDest:
 006785A0  55                        PUSH EBP
 006785A1  8B EC                     MOV EBP,ESP
 006785A3  83 EC 68                  SUB ESP,0x68

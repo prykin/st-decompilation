@@ -51,19 +51,19 @@ undefined4 __thiscall STManBasisC::GetMessage(STManBasisC *this,int param_1)
       return 0;
     }
     if (uVar1 == 2) {
-      *(int *)(local_c + 0x1c) = *(int *)(local_c + 0x18) * DAT_00808754;
+      local_c->field_001C = local_c->field_0018 * DAT_00808754;
       if (DAT_00806754 != (cMf32 *)0x0) {
-        local_8 = FUN_006f2d90(DAT_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
+        local_8 = mfAObjLoad(DAT_00806754,PTR_s_BASIS_MAN_0079c57c,0,0);
       }
       if (local_8 == (ushort *)0x0) {
-        *(undefined4 *)(this_00 + 0x20) = 0;
-        *(undefined4 *)(this_00 + 0x24) = 0xff;
-        *(undefined4 *)(this_00 + 0x28) = 1;
-        *(undefined4 *)(this_00 + 0x2c) = 1;
+        this_00->field_0020 = 0;
+        this_00->field_0024 = 0xff;
+        this_00->field_0028 = 1;
+        this_00->field_002C = 1;
       }
       else if (*(int *)(local_8 + 6) == 2) {
         thunk_FUN_005f2110(this_00,(undefined4 *)local_8);
-        *(undefined4 *)(this_00 + 0x1c) = *(undefined4 *)(this_00 + 0x44);
+        this_00->field_001C = this_00->field_0044;
         thunk_FUN_005f21d0((int)this_00);
       }
       else {

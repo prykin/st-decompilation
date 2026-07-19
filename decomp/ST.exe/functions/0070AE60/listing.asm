@@ -1,4 +1,4 @@
-FUN_0070ae60:
+mfImtLoad:
 0070AE60  55                        PUSH EBP
 0070AE61  8B EC                     MOV EBP,ESP
 0070AE63  83 EC 50                  SUB ESP,0x50

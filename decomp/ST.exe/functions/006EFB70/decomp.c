@@ -1,5 +1,10 @@
 
-void __cdecl FUN_006efb70(int *param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 263 | 265 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl mfTMapErase(int *param_1)
 
 {
   code *pcVar1;

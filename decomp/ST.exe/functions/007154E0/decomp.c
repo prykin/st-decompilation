@@ -1,5 +1,10 @@
 
-byte * __cdecl FUN_007154e0(byte *param_1,uint param_2,byte *param_3,int *param_4,uint *param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\connect.cpp
+   Diagnostic line evidence: 106 | 126 | 130 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+byte * __cdecl cnUnPackMess(byte *param_1,uint param_2,byte *param_3,int *param_4,uint *param_5)
 
 {
   uint uVar1;

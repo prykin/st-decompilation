@@ -6,14 +6,14 @@
 void __thiscall ComboTy::DoneCombo(ComboTy *this)
 
 {
-  ComboTy *pCVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   ComboTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  ComboTy *pCVar5;
+  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   ComboTy *local_8;
   
@@ -23,56 +23,56 @@ void __thiscall ComboTy::DoneCombo(ComboTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 == 0) {
-    if (*(uint *)(local_8 + 0x10c) != 0) {
-      FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x10c));
+    if (local_8->field_010C != 0) {
+      FUN_006e56b0((void *)local_8->field_000C,local_8->field_010C);
     }
-    pCVar1 = this_00 + 0x18;
-    *(undefined4 *)(this_00 + 0x10c) = 0;
-    pCVar5 = pCVar1;
+    puVar1 = &this_00->field_0x18;
+    this_00->field_010C = 0;
+    puVar5 = (undefined4 *)puVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pCVar5 = 0;
-      pCVar5 = pCVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)(this_00 + 0x28) = 0x11;
-    *(ComboTy **)(this_00 + 0x2c) = this_00 + 0x38;
-    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
-    pCVar5 = pCVar1;
+    this_00->field_0028 = 0x11;
+    this_00->field_002C = &this_00->field_0038;
+    FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
+    puVar5 = (undefined4 *)puVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pCVar5 = 0;
-      pCVar5 = pCVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)(this_00 + 0x2c) = *(undefined4 *)(this_00 + 8);
-    *(undefined4 *)(this_00 + 0x28) = 0x14;
-    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
-    pCVar5 = pCVar1;
+    this_00->field_002C = this_00->field_0008;
+    this_00->field_0028 = 0x14;
+    FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
+    puVar5 = (undefined4 *)puVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pCVar5 = 0;
-      pCVar5 = pCVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)(this_00 + 0x28) = 0x19;
-    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
-    pCVar5 = pCVar1;
+    this_00->field_0028 = 0x19;
+    FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
+    puVar5 = (undefined4 *)puVar1;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pCVar5 = 0;
-      pCVar5 = pCVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    *(undefined4 *)(this_00 + 0x28) = 0x1b;
-    FUN_006e6000(this_00,3,1,(undefined4 *)pCVar1);
-    if (*(uint *)(this_00 + 0x108) != 0xffffffff) {
-      FUN_006b3bb0(DAT_008075a8,*(uint *)(this_00 + 0x108));
+    this_00->field_0028 = 0x1b;
+    FUN_006e6000(this_00,3,1,(undefined4 *)puVar1);
+    if (this_00->field_0108 != 0xffffffff) {
+      FUN_006b3bb0(DAT_008075a8,this_00->field_0108);
     }
-    *(undefined4 *)(this_00 + 0x108) = 0xffffffff;
-    if (*(int *)(this_00 + 0xfc) != 0) {
-      FUN_006ab060((undefined4 *)(this_00 + 0xfc));
+    this_00->field_0108 = 0xffffffff;
+    if (this_00->field_00FC != 0) {
+      FUN_006ab060(&this_00->field_00FC);
     }
-    if (*(int *)(this_00 + 0x100) != 0) {
-      FUN_006ab060((undefined4 *)(this_00 + 0x100));
+    if (this_00->field_0100 != 0) {
+      FUN_006ab060(&this_00->field_0100);
     }
-    if (*(int *)(this_00 + 0x104) != 0) {
-      FUN_006ab060((undefined4 *)(this_00 + 0x104));
+    if (this_00->field_0104 != 0) {
+      FUN_006ab060(&this_00->field_0104);
     }
-    if (*(int *)(this_00 + 0x98) != 0) {
-      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(this_00 + 0x88));
+    if (this_00->field_0098 != 0) {
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&this_00->field_0x88);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

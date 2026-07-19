@@ -9,7 +9,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   code *pcVar1;
   undefined1 *puVar2;
   int iVar3;
-  STExplosionC *pSVar4;
+  undefined4 *puVar4;
   uint *puVar5;
   int iVar6;
   undefined4 *puVar7;
@@ -18,7 +18,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
   uint *puVar10;
   uint *puVar11;
   uint *puVar12;
-  STExplosionC *local_b4;
+  int *local_b4;
   InternalExceptionFrame local_8c;
   undefined4 *local_48;
   uint *local_44;
@@ -50,33 +50,33 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     local_1c = &stack0xffffff40;
     local_48 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xe2);
     *param_1 = 0xe2;
-    *(undefined4 *)(this + 0x1e1) = 1;
-    pSVar4 = this + 0x1d5;
-    puVar7 = local_48;
+    this->field_01E1 = 1;
+    puVar7 = (undefined4 *)&this->field_0x1d5;
+    puVar4 = local_48;
     for (iVar3 = 0x10; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = *(undefined4 *)pSVar4;
-      pSVar4 = pSVar4 + 4;
+      *puVar4 = *puVar7;
       puVar7 = puVar7 + 1;
+      puVar4 = puVar4 + 1;
     }
-    local_48[0x10] = *(undefined4 *)(this + 0x215);
-    pSVar4 = this + 0x219;
-    puVar7 = local_48 + 0x11;
+    local_48[0x10] = this->field_0215;
+    puVar7 = &this->field_0219;
+    puVar4 = local_48 + 0x11;
     for (iVar3 = 0x14; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = *(undefined4 *)pSVar4;
-      pSVar4 = pSVar4 + 4;
+      *puVar4 = *puVar7;
       puVar7 = puVar7 + 1;
+      puVar4 = puVar4 + 1;
     }
-    local_48[0x25] = *(undefined4 *)(this + 0x269);
-    *(STExplosionC *)(local_48 + 0x26) = this[0x26d];
-    *(undefined4 *)((int)local_48 + 0x99) = *(undefined4 *)(this + 0x26e);
-    *(undefined4 *)((int)local_48 + 0xde) = *(undefined4 *)(this + 0x2b7);
-    *(undefined4 *)((int)local_48 + 0x9d) = *(undefined4 *)(this + 0x272);
-    *(undefined4 *)((int)local_48 + 0xa1) = *(undefined4 *)(this + 0x276);
-    *(undefined4 *)((int)local_48 + 0xa5) = *(undefined4 *)(this + 0x27a);
-    *(undefined4 *)((int)local_48 + 0xa9) = *(undefined4 *)(this + 0x27e);
-    if (*(uint **)(this + 0x215) != (uint *)0x0) {
+    local_48[0x25] = this->field_0269;
+    *(undefined1 *)(local_48 + 0x26) = this->field_026D;
+    *(undefined4 *)((int)local_48 + 0x99) = this->field_026E;
+    *(undefined4 *)((int)local_48 + 0xde) = this->field_02B7;
+    *(undefined4 *)((int)local_48 + 0x9d) = this->field_0272;
+    *(undefined4 *)((int)local_48 + 0xa1) = this->field_0276;
+    *(undefined4 *)((int)local_48 + 0xa5) = this->field_027A;
+    *(undefined4 *)((int)local_48 + 0xa9) = this->field_027E;
+    if ((uint *)this->field_0215 != (uint *)0x0) {
       local_3c[0] = (uint *)0x0;
-      local_3c[0] = (uint *)FUN_006b0020(*(uint **)(this + 0x215),(int *)&local_20);
+      local_3c[0] = (uint *)FUN_006b0020((uint *)this->field_0215,(int *)&local_20);
       uVar9 = *param_1 + local_20 + 4;
       *param_1 = uVar9;
       local_48 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_48,uVar9);
@@ -97,7 +97,7 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
     }
     puVar7 = (undefined4 *)&stack0xffffff40;
     iVar3 = 0;
-    iVar6 = *(int *)(this + 0x269);
+    iVar6 = this->field_0269;
     if (iVar6 != 0) {
       local_8 = 0;
       Library::MSVCRT::FUN_0072da40();
@@ -106,31 +106,31 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
       local_24 = &stack0xffffff40;
       local_1c = &stack0xffffff40;
       if (0 < iVar6) {
-        pSVar4 = this + 0x219;
+        puVar4 = &this->field_0219;
         local_24 = &stack0xffffff40;
         local_1c = &stack0xffffff40;
         do {
-          if (*(void **)pSVar4 != (void *)0x0) {
-            local_3c[0] = (uint *)thunk_FUN_0062af40(*(void **)pSVar4,local_2c);
+          if ((void *)*puVar4 != (void *)0x0) {
+            local_3c[0] = (uint *)thunk_FUN_0062af40((void *)*puVar4,local_2c);
             iVar3 = iVar3 + 4 + local_2c[0];
             puVar7[1] = local_2c[0];
             *puVar7 = local_3c[0];
           }
           local_30 = local_30 + 1;
-          pSVar4 = pSVar4 + 4;
+          puVar4 = puVar4 + 1;
           puVar7 = puVar7 + 2;
-        } while (local_30 < *(int *)(this + 0x269));
+        } while (local_30 < (int)this->field_0269);
       }
       uVar9 = *param_1;
       *param_1 = uVar9 + iVar3;
       local_48 = (undefined4 *)Library::DKW::LIB::FUN_006acf50(local_48,uVar9 + iVar3);
       local_44 = (uint *)((*param_1 - iVar3) + (int)local_48);
       local_30 = 0;
-      if (0 < *(int *)(this + 0x269)) {
+      if (0 < (int)this->field_0269) {
         puVar5 = (uint *)(local_24 + 4);
-        local_b4 = this + 0x219;
+        local_b4 = &this->field_0219;
         do {
-          if (*(int *)local_b4 != 0) {
+          if (*local_b4 != 0) {
             *local_44 = *puVar5;
             puVar10 = local_44 + 1;
             local_3c[0] = (uint *)puVar5[-1];
@@ -151,9 +151,9 @@ undefined4 * __thiscall STExplosionC::SaveObj(STExplosionC *this,uint *param_1)
             local_44 = (uint *)((int)puVar10 + *local_44);
           }
           local_30 = local_30 + 1;
-          local_b4 = local_b4 + 4;
+          local_b4 = local_b4 + 1;
           puVar5 = puVar5 + 2;
-        } while (local_30 < *(int *)(this + 0x269));
+        } while (local_30 < (int)this->field_0269);
       }
     }
     g_currentExceptionFrame = local_8c.previous;

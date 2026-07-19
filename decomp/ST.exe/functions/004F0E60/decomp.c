@@ -32,7 +32,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
     local_10 = piVar1[1] - this->field_0044;
   }
   uVar5 = this->field_0199 + -0xc0af + *(int *)(param_1 + 0x10);
-  iVar7 = *(int *)(&this[1].field_0x5 + (uint)(byte)this->field_0278 * 4);
+  iVar7 = (&this->field_027E)[(byte)this->field_0278];
   if ((iVar7 == 0) || (*(uint *)(iVar7 + 0xc) <= uVar5)) {
     local_8 = (Global_sub_00526BA0_param_1Enum *)0x0;
   }
@@ -42,7 +42,7 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   }
   local_14 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
-    local_c = *(byte **)&this[1].field_0x1;
+    local_c = (byte *)this->field_027A;
   }
   else {
     if ((char)local_8[2] == 0) {
@@ -61,14 +61,13 @@ void __thiscall BldObjPanelTy::PaintBldBut(BldObjPanelTy *this,int param_1)
   pBVar3 = local_14;
   iVar7 = local_18;
   if (errorCode == 0) {
-    thunk_FUN_00540760(*(undefined4 **)&local_14->field_0x68,local_18,local_10,'\x01',local_c);
+    DibPut((undefined4 *)local_14->field_0068,local_18,local_10,'\x01',local_c);
     if ((*(short *)(param_1 + 0x14) == 3) && (local_8 != (Global_sub_00526BA0_param_1Enum *)0x0)) {
-      pbVar6 = (byte *)FUN_0070b3a0(*(int *)&pBVar3->field_0x190,9 - (uint)((char)local_8[2] != 0));
-      thunk_FUN_00540760(*(undefined4 **)&pBVar3->field_0x68,iVar7,iVar4,'\x06',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(pBVar3->field_0190,9 - (uint)((char)local_8[2] != 0));
+      DibPut((undefined4 *)pBVar3->field_0068,iVar7,iVar4,'\x06',pbVar6);
     }
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)&pBVar3->field_0x60,0xffffffff,pBVar3->field_003C,
-               pBVar3->field_0044);
+              (DAT_008075a8,pBVar3->field_0060,0xffffffff,pBVar3->field_003C,pBVar3->field_0044);
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

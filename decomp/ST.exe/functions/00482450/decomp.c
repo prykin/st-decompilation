@@ -57,15 +57,14 @@ STBoatC::GetExplosionInfo
     return uVar9;
   }
   iVar3 = local_20._4_4_;
-  if (((longlong)local_20 < 0) || ((int)((byte)local_24->field_0x281 - 1) < local_20._4_4_)) {
+  if (((longlong)local_20 < 0) || ((int)((byte)local_24->field_0281 - 1) < local_20._4_4_)) {
     RaiseInternalException(-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d4f);
   }
-  uVar4 = FUN_006acc70(*(int *)(&pSVar2->field_0x282 + iVar3 * 4),local_28,&local_34);
+  uVar4 = FUN_006acc70((&pSVar2->field_0282)[iVar3],local_28,&local_34);
   if (uVar4 == 0xfffffffc) {
     RaiseInternalException(-0x5001fff5,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3d50);
   }
-  puVar5 = (undefined4 *)
-           thunk_FUN_0041dc40(&local_3c,local_34,local_30,*(short *)&pSVar2->field_0x6c);
+  puVar5 = (undefined4 *)thunk_FUN_0041dc40(&local_3c,local_34,local_30,pSVar2->field_006C);
   uVar9 = *puVar5;
   local_30 = *(short *)(puVar5 + 1);
   *param_2 = pSVar2->field_0041 + (short)uVar9;
@@ -73,7 +72,7 @@ STBoatC::GetExplosionInfo
   *param_3 = pSVar2->field_0043 - local_34._2_2_;
   *param_4 = pSVar2->field_0045 + local_30;
   local_34 = uVar9;
-  FUN_006dd530(*(void **)&pSVar2->field_0x211,local_14,&local_c,&local_8);
+  FUN_006dd530((void *)pSVar2->field_0211,local_14,&local_c,&local_8);
   lVar11 = Library::MSVCRT::__ftol();
   local_3c = (uint)(short)lVar11;
   local_38 = (int)local_3c >> 0x1f;

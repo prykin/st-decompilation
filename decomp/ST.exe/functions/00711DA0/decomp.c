@@ -35,36 +35,36 @@ int __thiscall ccFntTy::WrArr(ccFntTy *this,int *param_1,int param_2,int param_3
     local_18 = iVar3;
     iVar4 = FUN_00711580(this_00,param_1);
     if ((((param_2 < 0) && (param_2 != -3)) && (param_2 != -2)) &&
-       (*(int *)(this_00 + 0x68) < iVar3)) {
+       ((int)this_00->field_0068 < iVar3)) {
       param_2 = 0;
     }
-    if ((param_3 < 0) && (*(int *)(this_00 + 0x6c) < iVar4)) {
+    if ((param_3 < 0) && ((int)this_00->field_006C < iVar4)) {
       param_3 = 0;
     }
     local_c = param_2;
     if (((param_2 < 0) && (param_2 != -3)) && ((param_2 != -2 && (param_2 != -4)))) {
-      local_c = (*(int *)(this_00 + 0x68) - iVar3) / 2;
+      local_c = (this_00->field_0068 - iVar3) / 2;
     }
     if (param_3 < 0) {
-      param_3 = (*(int *)(this_00 + 0x6c) - iVar4) / 2;
+      param_3 = (this_00->field_006C - iVar4) / 2;
     }
     iVar4 = 0;
-    *(undefined4 *)(this_00 + 0x44) = param_4;
-    *(undefined4 *)(this_00 + 0x48) = param_4;
-    *(undefined4 *)(this_00 + 0x4c) = 0;
+    this_00->field_0044 = param_4;
+    this_00->field_0048 = param_4;
+    this_00->field_004C = 0;
     iVar3 = *param_1;
     local_10 = param_1;
     local_8 = param_3;
     while (iVar3 != 0) {
       puVar1 = (uint *)*local_10;
       if (param_2 == -4) {
-        uVar6 = *(undefined4 *)(this_00 + 0x44);
+        uVar6 = this_00->field_0044;
         iVar5 = local_8 + iVar4;
         iVar3 = FUN_00711110(this_00,puVar1);
-        iVar3 = (*(int *)(this_00 + 0x68) + local_18) / 2 - iVar3;
+        iVar3 = (this_00->field_0068 + local_18) / 2 - iVar3;
       }
       else {
-        uVar6 = *(undefined4 *)(this_00 + 0x44);
+        uVar6 = this_00->field_0044;
         if (param_2 == -2) {
           iVar5 = local_8 + iVar4;
           iVar3 = -1;
@@ -76,11 +76,11 @@ int __thiscall ccFntTy::WrArr(ccFntTy *this,int *param_1,int param_2,int param_3
       }
       WrStr(this_00,puVar1,iVar3,iVar5,uVar6);
       iVar3 = FUN_007111c0(this_00,puVar1);
-      iVar4 = iVar4 + iVar3 + *(int *)(this_00 + 0x5c);
+      iVar4 = iVar4 + iVar3 + this_00->field_005C;
       local_10 = local_10 + 1;
       iVar3 = *local_10;
     }
-    *(undefined4 *)(this_00 + 0x4c) = 1;
+    this_00->field_004C = 1;
     g_currentExceptionFrame = local_5c.previous;
     return 0;
   }
@@ -92,7 +92,7 @@ int __thiscall ccFntTy::WrArr(ccFntTy *this,int *param_1,int param_2,int param_3
     iVar3 = (*pcVar2)();
     return iVar3;
   }
-  *(undefined4 *)(local_14 + 0x4c) = 1;
+  local_14->field_004C = 1;
   RaiseInternalException(iVar3,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x720);
   return iVar3;
 }

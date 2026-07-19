@@ -29,21 +29,20 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_10;
   if (iVar3 == 0) {
-    thunk_FUN_00540760((undefined4 *)local_10->field_0194,param_1,0x50,'\x01',
-                       *(byte **)&local_10->field_0x9ed);
-    if (*(int *)&pCVar2->field_0xbf5 == 0x38) {
+    DibPut((undefined4 *)local_10->field_0194,param_1,0x50,'\x01',(byte *)local_10->field_09ED);
+    if (pCVar2->field_0BF5 == 0x38) {
       local_c = (undefined1 *)CONCAT31(local_c._1_3_,2);
     }
     else {
-      local_c = (undefined1 *)CONCAT31(local_c._1_3_,*(int *)&pCVar2->field_0xbf5 == 0x4f);
+      local_c = (undefined1 *)CONCAT31(local_c._1_3_,pCVar2->field_0BF5 == 0x4f);
     }
-    pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2d2,(uint)local_c & 0xff);
-    thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',pbVar4);
-    if (*(int *)&pCVar2->field_0xbf5 == 0x38) {
+    pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02D2,(uint)local_c & 0xff);
+    DibPut((undefined4 *)pCVar2->field_0194,param_1 + 3,0x53,'\x01',pbVar4);
+    if (pCVar2->field_0BF5 == 0x38) {
       local_c = &DAT_007aa024;
       local_8 = 0x271c;
     }
-    else if (*(int *)&pCVar2->field_0xbf5 == 0x4f) {
+    else if (pCVar2->field_0BF5 == 0x4f) {
       local_c = &DAT_007aa020;
       local_8 = 0x271e;
     }
@@ -63,21 +62,21 @@ void __thiscall CPanelTy::PaintMineInf(CPanelTy *this,int param_1)
     uVar6 = FUN_006b0140(local_8,DAT_00807618);
     wsprintfA((LPSTR)&DAT_0080f33a,s___s_s__1_s_007c274c,local_c,uVar6,_Dest);
     iVar3 = param_1 + 0x40;
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,pCVar2->field_0194,0,iVar3,0x57,0x75,0x16);
-    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,&DAT_0080f33a,-2,-1,0,-1,-1);
-    pbVar4 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&pCVar2->field_0x1c4,pCVar2->field_0194,0,
-                                         iVar3,0x6d,0x75,0xe,0);
+    ccFntTy::SetSurf(pCVar2->field_01B8,pCVar2->field_0194,0,iVar3,0x57,0x75,0x16);
+    ccFntTy::WrTxt(pCVar2->field_01B8,&DAT_0080f33a,-2,-1,0,-1,-1);
+    pbVar4 = (byte *)ccFntTy::CreateSurf(pCVar2->field_01C4,pCVar2->field_0194,0,iVar3,0x6d,0x75,0xe
+                                         ,0);
     if (pbVar4 != (byte *)0x0) {
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c2744,(uint)*(ushort *)&pCVar2->field_0xc34);
-      if (*(int *)&pCVar2->field_0xbf5 == 0x38) {
+      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c2744,(uint)(ushort)pCVar2->field_0C34);
+      if (pCVar2->field_0BF5 == 0x38) {
         iVar7 = 1;
       }
       else {
-        iVar7 = (-(uint)(*(int *)&pCVar2->field_0xbf5 != 0x4f) & 0xfffffffe) + 2;
+        iVar7 = (-(uint)(pCVar2->field_0BF5 != 0x4f) & 0xfffffffe) + 2;
       }
-      ccFntTy::WrStr(*(ccFntTy **)&pCVar2->field_0x1c4,&DAT_0080f33a,-1,-1,iVar7);
-      thunk_FUN_00540760((undefined4 *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
-      ccFntTy::EraseSufr(*(ccFntTy **)&pCVar2->field_0x1c4);
+      ccFntTy::WrStr(pCVar2->field_01C4,&DAT_0080f33a,-1,-1,iVar7);
+      DibPut((undefined4 *)pCVar2->field_0194,iVar3,0x6f,'\x01',pbVar4);
+      ccFntTy::EraseSufr(pCVar2->field_01C4);
     }
     g_currentExceptionFrame = local_54.previous;
     return;

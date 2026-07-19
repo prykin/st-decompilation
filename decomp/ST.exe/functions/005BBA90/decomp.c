@@ -106,7 +106,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
     RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d);
     return;
   }
-  local_5 = local_10->field_0x1a5f;
+  local_5 = local_10->field_1A5F;
   if (local_5 == '\0') {
     if (*(int *)(DAT_0081176c + 0x68a) != 0) {
       local_c = *(uint *)(*(int *)(DAT_0081176c + 0x68a) + 4);
@@ -122,11 +122,11 @@ LAB_005bbb22:
   local_544[6] = ((int)local_c < 0) - 1 & local_c;
   if (param_1 == '\0') {
     if (local_5 == '\0') {
-      local_d84 = *(undefined4 *)&local_10->field_0x8;
+      local_d84 = local_10->field_0008;
       local_dd0[0] = 0;
       local_dd0[1] = 9;
       local_dd0[2] = *(undefined4 *)(DAT_0081176c + 0x30);
-      local_dd0[8] = *(undefined4 *)&local_10->field_0x1c92;
+      local_dd0[8] = local_10->field_1C92;
       local_dd0[3] = 0x7d;
       local_dd0[4] = 0x1af;
       local_dd0[5] = 0x226;
@@ -134,13 +134,12 @@ LAB_005bbb22:
       local_dd0[7] = 0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
-      (**(code **)(**(int **)&local_10->field_0xc + 8))(6,&local_10->field_0x1c86,0,local_dd0,0);
-      *(undefined4 *)&this_00->field_0x2d = 0x20;
-      *(undefined4 *)&this_00->field_0x31 = 1;
-      FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,
-                   (undefined4 *)&this_00->field_0x1d);
+      (**(code **)(*(int *)local_10->field_000C + 8))(6,&local_10->field_1C86,0,local_dd0,0);
+      this_00->field_002D = 0x20;
+      this_00->field_0031 = 1;
+      FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)&this_00->field_0x1d);
     }
-    if (*(int *)(*(int *)&this_00->field_0x1a5b + 0x2e6) != 0) {
+    if (this_00->field_1A5B->field_02E6 != (MMsgTy *)0x0) {
       puVar6 = &local_2c;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
         *puVar6 = 0;
@@ -153,11 +152,11 @@ LAB_005bbb22:
       local_22 = 1;
       local_28 = 1;
       local_2c._0_2_ = 1;
-      MMsgTy::StatePanel(*(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6),(int)&local_2c);
+      MMsgTy::StatePanel(this_00->field_1A5B->field_02E6,(int)&local_2c);
     }
   }
   else {
-    local_51c = *(undefined4 *)&local_10->field_0x8;
+    local_51c = local_10->field_0008;
     local_544[0] = 0;
     local_544[2] = 0x7a;
     local_544[3] = 0x67;
@@ -175,18 +174,18 @@ LAB_005bbb22:
     if (DAT_0080734c != '\0') {
       local_74 = 1;
     }
-    local_408 = *(undefined4 *)&local_10->field_0x1a97;
-    local_40c = *(undefined4 *)&local_10->field_0x1a93;
-    local_400 = *(undefined4 *)&local_10->field_0x1a9f;
-    local_28c = *(undefined4 *)&local_10->field_0x1b24;
-    local_288 = *(undefined4 *)&local_10->field_0x1b28;
-    local_284 = *(undefined4 *)&local_10->field_0x1b2c;
-    local_404 = *(undefined4 *)&local_10->field_0x1a9b;
-    local_280 = *(undefined4 *)&local_10->field_0x1b30;
-    local_100 = *(undefined4 *)&local_10->field_0x1bbd;
+    local_408 = local_10->field_1A97;
+    local_40c = local_10->field_1A93;
+    local_400 = local_10->field_1A9F;
+    local_28c = local_10->field_1B24;
+    local_288 = local_10->field_1B28;
+    local_284 = local_10->field_1B2C;
+    local_404 = local_10->field_1A9B;
+    local_280 = local_10->field_1B30;
+    local_100 = local_10->field_1BBD;
     local_300 = 0x32;
     local_180 = 0x32;
-    local_108 = *(undefined4 *)&local_10->field_0x1bb5;
+    local_108 = local_10->field_1BB5;
     local_418 = 2;
     local_414 = 0;
     local_410 = 2;
@@ -213,19 +212,19 @@ LAB_005bbb22:
     local_3b4 = local_51c;
     local_234 = local_51c;
     local_c4 = local_51c;
-    (**(code **)(**(int **)&local_10->field_0xc + 8))(7,&local_10->field_0x1a73,0,local_544,0);
+    (**(code **)(*(int *)local_10->field_000C + 8))(7,&local_10->field_1A73,0,local_544,0);
   }
-  *(undefined4 *)&this_00->field_0x31 = 0;
+  this_00->field_0031 = 0;
   puVar1 = &this_00->field_0x1d;
-  *(undefined4 *)&this_00->field_0x2d = 0x20;
-  FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,(undefined4 *)puVar1);
-  *(uint *)&this_00->field_0x31 = ((int)local_c < 1) - 1 & local_c;
-  *(undefined4 *)&this_00->field_0x2d = 0x28;
-  FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,(undefined4 *)puVar1);
+  this_00->field_002D = 0x20;
+  FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
+  this_00->field_0031 = ((int)local_c < 1) - 1 & local_c;
+  this_00->field_002D = 0x28;
+  FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
   if (0 < (int)local_c) {
-    *(undefined4 *)&this_00->field_0x2d = 0x20;
-    *(undefined4 *)&this_00->field_0x31 = 1;
-    FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,(undefined4 *)puVar1);
+    this_00->field_002D = 0x20;
+    this_00->field_0031 = 1;
+    FUN_006e6080(this_00,2,this_00->field_1A73,(undefined4 *)puVar1);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

@@ -29,19 +29,19 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_10;
   if (iVar2 == 0) {
-    if (*(int *)&local_10->field_0x212 == 0) {
+    if (local_10->field_0212 == 0) {
       RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x509)
       ;
     }
-    if (*(int *)&this_00->field_0x20e == 0) {
+    if (this_00->field_020E == 0) {
       RaiseInternalException(-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x50b)
       ;
     }
     uVar6 = 0;
-    iVar2 = *(int *)(*(int *)&this_00->field_0x20e + 0xc);
+    iVar2 = *(int *)(this_00->field_020E + 0xc);
     if (0 < iVar2) {
       do {
-        FUN_006acc70(*(int *)&this_00->field_0x20e,uVar6,(undefined4 *)local_8);
+        FUN_006acc70(this_00->field_020E,uVar6,(undefined4 *)local_8);
         if (((local_6 != -1) && (local_8[0] == param_1)) && (local_6 == param_2)) {
           puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,4,1);
           local_c = 0xffff;
@@ -70,6 +70,6 @@ STGroupBoatC::ReMakePVecAndTgtListExt(STGroupBoatC *this,char param_1,short para
       return uVar5;
     }
   }
-  return *(undefined4 *)&this_00->field_0x212;
+  return this_00->field_0212;
 }
 

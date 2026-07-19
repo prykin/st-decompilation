@@ -66,7 +66,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     else {
       iVar3 = thunk_FUN_005421d0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
     }
-    *(int *)&this_00->field_0x24 = iVar3;
+    this_00->field_0024 = iVar3;
     *(undefined4 *)(iVar3 + 0x58) = 1;
     *(undefined4 *)(iVar3 + 0x5c) = 0;
     iVar3 = thunk_FUN_005412b0(DAT_0080679c,(undefined *)0x0,DAT_00807dd9);
@@ -98,10 +98,10 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_184[0] = 1;
     pCVar4 = thunk_FUN_00571240(s_BUT_FILEOPT_007c7c48,0);
     pbVar5 = (byte *)FUN_006f2c00(pCVar4,iVar3,uVar9);
-    puVar6 = FUN_00709af0(DAT_00806794,CASE_1,pbVar5,uVar10,bVar11,iVar12,iVar13,puVar14);
+    puVar6 = mfRLoad(DAT_00806794,CASE_1,pbVar5,uVar10,bVar11,iVar12,iVar13,puVar14);
     local_184[2] = (-(uint)(DAT_0080874e != '\x03') & 5) + 0x26;
     local_174 = *(undefined4 *)(puVar6 + 2);
-    local_164 = *(undefined4 *)&this_00->field_0x14;
+    local_164 = this_00->field_0014;
     local_184[3] = (DAT_0080874e != '\x03') + 7;
     local_170 = *(undefined4 *)(puVar6 + 4);
     local_e0 = 0x101;
@@ -172,7 +172,7 @@ undefined4 __thiscall InterSystemC::CreateInterfObjects(InterSystemC *this)
     local_170 = 0x12;
     if (DAT_0080874e == '\x03') {
       local_60 = FUN_0070aa70(DAT_00806790,s_BUT_OHELPMSK_007c7c38,0,1);
-      local_5c = FUN_0070a6f0(DAT_00806790,0x12,s_BUT_OHELPMSK_007c7c38,1);
+      local_5c = mfImgGetWidth(DAT_00806790,0x12,s_BUT_OHELPMSK_007c7c38,1);
     }
     local_d0 = 0x2739;
     local_f4 = 0x2739;

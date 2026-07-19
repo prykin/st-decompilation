@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int param_3,uint *param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 218 | 219 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl PlrDataPack(undefined4 *param_1,undefined4 *param_2,int param_3,uint *param_4)
 
 {
   int iVar1;
@@ -54,7 +59,7 @@ undefined4 * __cdecl FUN_0067d3b0(undefined4 *param_1,undefined4 *param_2,int pa
           iVar7 = *piVar3;
           if ((iVar7 != 0) && (*(char *)(iVar7 + 0x18) == '\x02')) {
             local_c[uVar13] = iVar7;
-            puVar4 = thunk_FUN_00691190((undefined4 *)local_c[uVar13],(uint *)(piVar3 + 3));
+            puVar4 = TactDataPack((undefined4 *)local_c[uVar13],(uint *)(piVar3 + 3));
             *piVar3 = (int)puVar4;
           }
           uVar13 = uVar13 + 1;

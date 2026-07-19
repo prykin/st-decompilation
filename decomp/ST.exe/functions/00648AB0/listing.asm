@@ -1,4 +1,4 @@
-FUN_00648ab0:
+LoadStrategData:
 00648AB0  55                        PUSH EBP
 00648AB1  8B EC                     MOV EBP,ESP
 00648AB3  83 EC 4C                  SUB ESP,0x4c

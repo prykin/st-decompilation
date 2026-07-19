@@ -1,4 +1,4 @@
-FUN_00677be0:
+_EnumRCCont:
 00677BE0  55                        PUSH EBP
 00677BE1  8B EC                     MOV EBP,ESP
 00677BE3  83 EC 6C                  SUB ESP,0x6c

@@ -50,7 +50,7 @@ void __fastcall FUN_0067a390(void *param_1)
       local_68 = (undefined4 *)0x50;
       local_74[1] = uVar2;
       thunk_FUN_0067a020(param_1,local_74,-1);
-      iVar4 = thunk_FUN_00676260(*(uint *)((int)param_1 + 0x5d7),0x50);
+      iVar4 = _GetEmbrTobjGrpExch(*(uint *)((int)param_1 + 0x5d7),0x50);
       if ((int)(iVar4 + local_74[2]) < iVar5 / 0x28 + 1) {
         puVar7 = local_40;
         for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
@@ -111,7 +111,7 @@ void __fastcall FUN_0067a390(void *param_1)
       local_74[0] = 0x6f;
       local_68 = (undefined4 *)0x34;
       thunk_FUN_0067a020(param_1,local_74,-1);
-      iVar4 = thunk_FUN_00676260(*(uint *)((int)param_1 + 0x5d7),0x34);
+      iVar4 = _GetEmbrTobjGrpExch(*(uint *)((int)param_1 + 0x5d7),0x34);
       if ((int)(iVar4 + local_74[2]) < (int)((uint)uVar3 + local_10)) {
         local_74[1] = *(undefined4 *)((int)param_1 + 0x6fe);
         puVar7 = local_40;
@@ -173,7 +173,7 @@ void __fastcall FUN_0067a390(void *param_1)
       local_74[0] = 0x6f;
       local_68 = (undefined4 *)0x48;
       thunk_FUN_0067a020(param_1,local_74,-1);
-      iVar4 = thunk_FUN_00676260(*(uint *)((int)param_1 + 0x5d7),0x48);
+      iVar4 = _GetEmbrTobjGrpExch(*(uint *)((int)param_1 + 0x5d7),0x48);
       if ((int)(iVar4 + local_74[2]) < (int)((uint)uVar3 + local_10)) {
         local_74[1] = *(undefined4 *)((int)param_1 + 0x6fe);
         puVar7 = local_40;

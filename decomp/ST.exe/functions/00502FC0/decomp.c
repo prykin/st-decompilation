@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
 
 {
-  undefined1 *puVar1;
+  undefined4 *puVar1;
   char cVar2;
   code *pcVar3;
   CPanelTy *this_00;
@@ -46,63 +46,63 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
     (*pcVar3)();
     return;
   }
-  puVar1 = &local_c->field_0xb99;
-  piVar8 = (int *)puVar1;
+  puVar1 = &local_c->field_0B99;
+  piVar8 = puVar1;
   piVar9 = &local_68;
   for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
     *piVar9 = *piVar8;
     piVar8 = piVar8 + 1;
     piVar9 = piVar9 + 1;
   }
-  puVar10 = (undefined4 *)puVar1;
+  puVar10 = puVar1;
   for (iVar5 = 0x17; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,(int *)puVar1);
-  if (local_63 == this_00->field_0xb9e) {
-    switch(this_00->field_0xb9e) {
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,2,puVar1);
+  if (local_63 == this_00->field_0B9E) {
+    switch(this_00->field_0B9E) {
     case 1:
-      if ((local_68 == *(int *)&this_00->field_0xb99) && (local_64 == this_00->field_0xb9d)) {
-        thunk_FUN_00501d00(this_00,(int *)&this_00->field_0xb99,&local_68);
-        switch(*(undefined4 *)&this_00->field_0xb99) {
+      if ((local_68 == this_00->field_0B99) && (local_64 == this_00->field_0B9D)) {
+        thunk_FUN_00501d00(this_00,&this_00->field_0B99,&local_68);
+        switch(this_00->field_0B99) {
         case 0x1a:
           goto switchD_005030a2_caseD_1a;
         case 0x1b:
         case 0x1d:
         case 0x23:
         case 0x24:
-          cVar2 = this_00->field_0xbcd;
+          cVar2 = this_00->field_0BCD;
           if (cVar2 == local_34) {
             g_currentExceptionFrame = local_ac.previous;
             return;
           }
           if ((cVar2 != -1) && (local_8 = (uint)local_8._1_3_ << 8, cVar2 != '\0')) {
             do {
-              pbVar6 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,1);
-              thunk_FUN_00540760((undefined4 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,
-                                 '\x01',pbVar6);
+              pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,1);
+              DibPut((undefined4 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
+                     pbVar6);
               bVar4 = (byte)local_8 + 1;
               local_8 = CONCAT31(local_8._1_3_,bVar4);
-            } while (bVar4 < (byte)this_00->field_0xbcd);
+            } while (bVar4 < (byte)this_00->field_0BCD);
           }
           if ((byte)local_8 < 0x14) {
             iVar7 = 0x14 - (local_8 & 0xff);
             iVar5 = (local_8 & 0xff) * 4 + 0x3f;
             do {
-              pbVar6 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-              thunk_FUN_00540760((undefined4 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
+              pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+              DibPut((undefined4 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
               iVar5 = iVar5 + 4;
               iVar7 = iVar7 + -1;
             } while (iVar7 != 0);
           }
-          if ((int)*(uint *)&this_00->field_0x154 < 0) {
+          if ((int)this_00->field_0154 < 0) {
             g_currentExceptionFrame = local_ac.previous;
             return;
           }
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,*(uint *)&this_00->field_0x154,0xffffffff,
-                     *(uint *)&this_00->field_0x48,*(uint *)&this_00->field_0xa0);
+                    (DAT_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,
+                     this_00->field_00A0);
           g_currentExceptionFrame = local_ac.previous;
           return;
         default:
@@ -113,14 +113,14 @@ void __thiscall CPanelTy::Update2PanelSI(CPanelTy *this)
       break;
     case 2:
     case 3:
-      if ((local_68 == *(int *)&this_00->field_0xb99) && (local_64 == this_00->field_0xb9d)) {
-        thunk_FUN_00501d00(this_00,(int *)&this_00->field_0xb99,&local_68);
+      if ((local_68 == this_00->field_0B99) && (local_64 == this_00->field_0B9D)) {
+        thunk_FUN_00501d00(this_00,&this_00->field_0B99,&local_68);
         g_currentExceptionFrame = local_ac.previous;
         return;
       }
       break;
     case 4:
-      if (local_68 == *(int *)&this_00->field_0xb99) {
+      if (local_68 == this_00->field_0B99) {
         g_currentExceptionFrame = local_ac.previous;
         return;
       }
@@ -136,37 +136,35 @@ switchD_00503051_default:
   g_currentExceptionFrame = local_ac.previous;
   return;
 switchD_005030a2_caseD_1a:
-  if (this_00->field_0xbb6 == local_4b) {
+  if (this_00->field_0BB6 == local_4b) {
     g_currentExceptionFrame = local_ac.previous;
     return;
   }
   local_8 = (uint)local_8._1_3_ << 8;
-  if ((this_00->field_0xbb6 & 0xfe) != 0) {
+  if ((this_00->field_0BB6 & 0xfe) != 0) {
     do {
-      pbVar6 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,3);
-      thunk_FUN_00540760((undefined4 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',
-                         pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,3);
+      DibPut((undefined4 *)this_00->field_018C,(local_8 & 0xff) * 4 + 0x3f,0x87,'\x01',pbVar6);
       bVar4 = (byte)local_8 + 1;
       local_8 = CONCAT31(local_8._1_3_,bVar4);
-    } while (bVar4 < (byte)this_00->field_0xbb6 >> 1);
+    } while (bVar4 < (byte)this_00->field_0BB6 >> 1);
   }
   if ((byte)local_8 < 0x14) {
     iVar7 = 0x14 - (local_8 & 0xff);
     iVar5 = (local_8 & 0xff) * 4 + 0x3f;
     do {
-      pbVar6 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x2b6,0);
-      thunk_FUN_00540760((undefined4 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
+      pbVar6 = (byte *)FUN_0070b3a0(this_00->field_02B6,0);
+      DibPut((undefined4 *)this_00->field_018C,iVar5,0x87,'\x01',pbVar6);
       iVar5 = iVar5 + 4;
       iVar7 = iVar7 + -1;
     } while (iVar7 != 0);
   }
-  if ((int)*(uint *)&this_00->field_0x154 < 0) {
+  if ((int)this_00->field_0154 < 0) {
     g_currentExceptionFrame = local_ac.previous;
     return;
   }
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,*(uint *)&this_00->field_0x154,0xffffffff,*(uint *)&this_00->field_0x48,
-             *(uint *)&this_00->field_0xa0);
+            (DAT_008075a8,this_00->field_0154,0xffffffff,this_00->field_0048,this_00->field_00A0);
   g_currentExceptionFrame = local_ac.previous;
   return;
 }

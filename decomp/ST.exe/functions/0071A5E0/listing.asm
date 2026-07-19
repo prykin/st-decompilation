@@ -1,4 +1,4 @@
-FUN_0071a5e0:
+mfSndTblLoad:
 0071A5E0  55                        PUSH EBP
 0071A5E1  8B EC                     MOV EBP,ESP
 0071A5E3  83 EC 54                  SUB ESP,0x54

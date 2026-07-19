@@ -25,9 +25,9 @@ void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
   if (iVar2 == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
     iVar2 = 0;
-    if (this_00->field_0x9a != '\0') {
+    if (this_00->field_009A != '\0') {
       iVar5 = 0x96;
-      piVar4 = (int *)&this_00->field_0x123;
+      piVar4 = &this_00->field_0123;
       do {
         DVar3 = timeGetTime();
         piVar4[1] = DVar3;
@@ -37,9 +37,9 @@ void __thiscall MainMenuTy::CloseButtons(MainMenuTy *this)
         iVar5 = iVar5 + 0x96;
         piVar4 = (int *)((int)piVar4 + 0x1fb);
         this_00 = local_8;
-      } while (iVar2 < (int)(uint)(byte)local_8->field_0x9a);
+      } while (iVar2 < (int)(uint)(byte)local_8->field_009A);
     }
-    this_00->field_0x65 = 4;
+    this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,2,'\x01',-1);
     g_currentExceptionFrame = local_4c.previous;
     return;

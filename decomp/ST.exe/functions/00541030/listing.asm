@@ -1,4 +1,4 @@
-FUN_00541030:
+DelAllAccelerators:
 00541030  55                        PUSH EBP
 00541031  8B EC                     MOV EBP,ESP
 00541033  81 EC B0 00 00 00         SUB ESP,0xb0

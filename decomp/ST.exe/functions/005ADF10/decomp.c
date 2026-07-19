@@ -22,7 +22,7 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
   this_00 = local_8;
   if (errorCode == 0) {
     MMObjTy::CloseButtons((MMObjTy *)local_8);
-    if (this_00[1].field_0x655 != '\0') {
+    if (this_00->field_20B5 != '\0') {
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),0xfffffffe,
@@ -30,7 +30,7 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
       }
       FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
     }
-    this_00->field_0x65 = 4;
+    this_00->field_0065 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     DeleteCtrls(this_00);
     g_currentExceptionFrame = pIVar3;

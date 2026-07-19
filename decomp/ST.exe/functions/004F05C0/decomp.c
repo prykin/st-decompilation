@@ -75,7 +75,7 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   }
   iVar7 = 5;
   DAT_00801684 = local_1c;
-  puVar10 = (undefined4 *)&local_1c[1].field_0x5;
+  puVar10 = &local_1c->field_027E;
   do {
     puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
     *puVar10 = puVar3;
@@ -87,15 +87,14 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   piVar12 = (int *)0x0;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJW_007c19e0,0);
   puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar12,iVar7);
-  *(ushort **)&this_00->field_0x184 = puVar5;
+  this_00->field_0184 = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
   wsprintfA(&this_00->field_0x6c,&DAT_007c181c,pCVar4);
   puVar5 = cMf32::RecGet(DAT_00806790,1,&this_00->field_0x6c,(int *)0x0,1);
-  *(ushort **)&this_00[1].field_0x1 = puVar5;
-  puVar5 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+  this_00->field_027A = puVar5;
+  puVar5 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar5;
-  puVar5 = FUN_00709af0(DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+  puVar5 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_018C = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
   ProdPanelTy::InitProdPanel
@@ -161,7 +160,7 @@ switchD_004f0850_default:
   }
   local_2c = local_358;
   local_28 = (byte)this_00->field_0278 + 1;
-  local_64 = *(undefined4 *)&this_00->field_0x8;
+  local_64 = this_00->field_0008;
   local_74[0] = 1;
   local_74[1] = 1;
   local_60 = 2;
@@ -171,7 +170,7 @@ switchD_004f0850_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
-  (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x19,0,local_74,0);
+  (**(code **)(*(int *)this_00->field_000C + 8))(5,&this_00[1].field_0x10,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

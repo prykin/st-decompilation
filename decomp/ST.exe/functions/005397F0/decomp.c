@@ -44,34 +44,34 @@ undefined4 __thiscall PausePanelTy::GetMessage(PausePanelTy *this,int param_1)
       return 0;
     }
     if (uVar1 == 0) {
-      if (*(short *)&this_00->field_0x172 == 3) {
+      if (this_00->field_0172 == 3) {
         iVar3 = *(int *)&this_00->field_0x54 + -0x174 + *(int *)&this_00->field_0x4c;
-        if (iVar3 < *(int *)&this_00->field_0x3c) {
-          *(int *)&this_00->field_0x3c = *(int *)&this_00->field_0x3c + -0x1e;
+        if (iVar3 < (int)this_00->field_003C) {
+          this_00->field_003C = this_00->field_003C + -0x1e;
         }
-        if (*(int *)&this_00->field_0x3c <= iVar3) {
-          *(int *)&this_00->field_0x3c = iVar3;
-          *(undefined2 *)&this_00->field_0x172 = 1;
+        if ((int)this_00->field_003C <= iVar3) {
+          this_00->field_003C = iVar3;
+          this_00->field_0172 = 1;
           ShiftControls(this_00,1);
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
-                   *(uint *)&this_00->field_0x3c,*(uint *)&this_00->field_0x44);
+                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
+                   *(uint *)&this_00->field_0x44);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }
-      if (*(short *)&this_00->field_0x172 == 4) {
+      if (this_00->field_0172 == 4) {
         iVar3 = *(int *)&this_00->field_0x54 + *(int *)&this_00->field_0x4c;
-        if (*(int *)&this_00->field_0x3c < iVar3) {
-          *(int *)&this_00->field_0x3c = *(int *)&this_00->field_0x3c + 0x1e;
+        if ((int)this_00->field_003C < iVar3) {
+          this_00->field_003C = this_00->field_003C + 0x1e;
         }
-        if (iVar3 <= *(int *)&this_00->field_0x3c) {
-          *(int *)&this_00->field_0x3c = iVar3;
-          *(undefined2 *)&this_00->field_0x172 = 2;
+        if (iVar3 <= (int)this_00->field_003C) {
+          this_00->field_003C = iVar3;
+          this_00->field_0172 = 2;
         }
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,
-                   *(uint *)&this_00->field_0x3c,*(uint *)&this_00->field_0x44);
+                  (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,this_00->field_003C,
+                   *(uint *)&this_00->field_0x44);
         g_currentExceptionFrame = local_4c.previous;
         return 0;
       }

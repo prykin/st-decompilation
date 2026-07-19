@@ -38,19 +38,18 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
     return;
   }
   if (DAT_00802a30 != (CursorClassTy *)0x0) {
-    uVar1 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
-    uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
-    DAT_00802a30[0xb].field_0x47 = 1;
-    *(undefined2 *)&this_00[0xb].field_0x48 = 0xffff;
+    uVar1 = DAT_00802a30->field_00C9;
+    uVar2 = DAT_00802a30->field_00C5;
+    DAT_00802a30->field_0493 = 1;
+    this_00->field_0494 = 0xffff;
     CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar1);
-    CursorClassTy::DrawSprite
-              (this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
-    this_00[2].field_0xa = 0;
-    *(undefined4 *)&this_00[0xc].field_0x2f = 0xffffffff;
+    CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
+    this_00->field_0xd2 = 0;
+    *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
   }
   pFVar6 = local_8;
   if (param_1 != 0) {
-    pMVar4 = *(MMsgTy **)(*(int *)&local_8->field_0x1a5b + 0x2e6);
+    pMVar4 = local_8->field_1A5B->field_02E6;
     if (pMVar4 == (MMsgTy *)0x0) {
       g_currentExceptionFrame = pIVar8;
       return;
@@ -62,9 +61,9 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   }
   DAT_0080877f = *(undefined4 *)(DAT_00811764 + 0x38);
   DAT_0080877e = 1;
-  local_8->field_0x1a61 = 0;
+  local_8->field_1A61 = 0;
   DAT_008067a0 = 1;
-  uVar3 = *(uint *)&local_8->field_0x1ec2;
+  uVar3 = local_8->field_1EC2;
   if (uVar3 < 0x502) {
     if (uVar3 == 0x501) {
       DAT_00803400 = 5;
@@ -86,8 +85,8 @@ void __thiscall FSGSTy::CreateGame(FSGSTy *this,int param_1)
   DAT_00803400 = 4;
 cf_common_exit_005A33FB:
   thunk_FUN_005b6350(local_8,0x611f,0x13,0);
-  (**(code **)(*(int *)pFVar6 + 8))();
-  pMVar4 = *(MMsgTy **)(*(int *)&pFVar6->field_0x1a5b + 0x2e6);
+  (**(code **)(pFVar6->field_0000 + 8))();
+  pMVar4 = pFVar6->field_1A5B->field_02E6;
   if (pMVar4 == (MMsgTy *)0x0) {
     g_currentExceptionFrame = pIVar8;
     return;

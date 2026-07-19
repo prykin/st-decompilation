@@ -8,17 +8,17 @@ undefined4 * __thiscall STSharkC::STSharkC(STSharkC *this,undefined4 *param_1)
 
 {
   int iVar1;
-  STSharkC *pSVar2;
+  undefined4 *puVar2;
   
   thunk_FUN_004158e0(&this->vtable);
   thunk_FUN_004ab810(&this->field_01D5);
   this->field_01D5 = &PTR_LAB_0079bfe0;
   this->vtable = &STSharkCVTable;
   this->field_0257 = CASE_0;
-  pSVar2 = this + 1;
+  puVar2 = (undefined4 *)&this->field_0x25b;
   for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pSVar2->vtable = (STSharkCVTable *)0x0;
-    pSVar2 = (STSharkC *)&pSVar2->field_0x4;
+    *puVar2 = 0;
+    puVar2 = puVar2 + 1;
   }
   this->field_023D = 0;
   *(undefined4 *)&this->field_0x249 = 0xff;

@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Sapp.cpp
+   Diagnostic line evidence: 1294 | 1304 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __thiscall
 FUN_006e6200(void *this,int param_1,undefined4 *param_2,undefined4 *param_3,int *param_4,
             undefined4 param_5,undefined4 param_6)

@@ -23,20 +23,20 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
   pFVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 8;
-    puVar5 = (uint *)&local_8[1].field_0x3b;
+    puVar5 = &local_8->field_01B3;
     do {
       if (*puVar5 != 0) {
-        FUN_006e56b0(*(void **)&pFVar2->field_0xc,*puVar5);
+        FUN_006e56b0((void *)pFVar2->field_000C,*puVar5);
         *puVar5 = 0;
       }
       puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = (uint *)&pFVar2[1].field_0x5b;
+    puVar5 = &pFVar2->field_01D3;
     iVar3 = 4;
     do {
       if (*puVar5 != 0) {
-        FUN_006e56b0(*(void **)&pFVar2->field_0xc,*puVar5);
+        FUN_006e56b0((void *)pFVar2->field_000C,*puVar5);
         *puVar5 = 0;
       }
       puVar5 = puVar5 + 1;

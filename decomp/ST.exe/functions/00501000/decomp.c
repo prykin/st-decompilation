@@ -24,24 +24,24 @@ void __thiscall CPanelTy::PaintBEnergy(CPanelTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar2 = local_c;
   if (iVar3 == 0) {
-    iVar3 = FUN_0070b3a0(*(int *)&local_c->field_0x2b2,0);
+    iVar3 = FUN_0070b3a0(local_c->field_02B2,0);
     iVar3 = (*(int *)(pCVar2->field_018C + 4) - *(int *)(iVar3 + 4)) / 2;
-    pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b2,-(uint)(DAT_0080874e != '\x01') & 6);
-    thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,iVar3,0x50,'\x01',pbVar4);
-    if (pCVar2->field_0xbcd != 0xff) {
-      if (0x28 < (byte)pCVar2->field_0xbcd) {
-        pCVar2->field_0xbcd = 0x28;
+    pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B2,-(uint)(DAT_0080874e != '\x01') & 6);
+    DibPut((undefined4 *)pCVar2->field_018C,iVar3,0x50,'\x01',pbVar4);
+    if (pCVar2->field_0BCD != 0xff) {
+      if (0x28 < (byte)pCVar2->field_0BCD) {
+        pCVar2->field_0BCD = 0x28;
       }
       bVar6 = 0;
       local_8 = local_8 & 0xffffff00;
-      if (pCVar2->field_0xbcd != '\0') {
+      if (pCVar2->field_0BCD != '\0') {
         do {
-          pbVar4 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2b6,3);
-          thunk_FUN_00540760((undefined4 *)pCVar2->field_018C,iVar3 + 3 + (local_8 & 0xff) * 4,0x53,
-                             '\x01',pbVar4);
+          pbVar4 = (byte *)FUN_0070b3a0(pCVar2->field_02B6,3);
+          DibPut((undefined4 *)pCVar2->field_018C,iVar3 + 3 + (local_8 & 0xff) * 4,0x53,'\x01',
+                 pbVar4);
           bVar6 = bVar6 + 1;
           local_8 = CONCAT31(local_8._1_3_,bVar6);
-        } while (bVar6 < (byte)pCVar2->field_0xbcd);
+        } while (bVar6 < (byte)pCVar2->field_0BCD);
       }
     }
     g_currentExceptionFrame = local_50.previous;

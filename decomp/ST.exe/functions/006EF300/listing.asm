@@ -1,4 +1,4 @@
-FUN_006ef300:
+mfTmapGetParam:
 006EF300  55                        PUSH EBP
 006EF301  8B EC                     MOV EBP,ESP
 006EF303  83 EC 50                  SUB ESP,0x50

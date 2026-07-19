@@ -75,17 +75,17 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     (*pcVar1)();
     return;
   }
-  local_c[0x14].field_0xe3 = param_1;
+  local_c->field_1EE3 = param_1;
   if (param_1 == '\0') {
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
     iVar17 = -1;
     iVar16 = 1;
-    local_c->field_0x9a = 5;
+    local_c->field_009A = 5;
     uVar14 = 0xffffffff;
     local_c->field_00BC = 0x2334;
-    iVar10 = *(int *)&local_c->field_0x174;
+    iVar10 = local_c->field_0174;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -100,8 +100,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar17 = -1;
     iVar16 = 1;
     uVar14 = 0xffffffff;
-    *(undefined4 *)&this_01[1].field_0x137 = 0x2335;
-    iVar10 = *(int *)&this_01[2].field_0x6f;
+    this_01->field_02B7 = 0x2335;
+    iVar10 = this_01->field_036F;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -113,11 +113,11 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
-    iVar10 = *(int *)&this_01[3].field_0xea;
+    iVar10 = this_01->field_056A;
     iVar17 = -1;
     iVar16 = 1;
     uVar14 = 0xffffffff;
-    *(undefined4 *)&this_01[3].field_0x32 = 0x2332;
+    this_01->field_04B2 = 0x2332;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -126,7 +126,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
                        (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar16,
                         iVar17,iVar18);
     (**(code **)(iVar10 + 8))(puVar8,uVar20,uVar22);
-    iVar10 = *(int *)&this_01[4].field_0x165;
+    iVar10 = this_01->field_0765;
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
@@ -134,7 +134,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar16 = 1;
     uVar14 = 0xffffffff;
     cVar13 = CASE_FFFFFFFE;
-    *(undefined4 *)&this_01[4].field_0xad = 0x2333;
+    this_01->field_06AD = 0x2333;
     iVar12 = 0x28;
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x2333,DAT_00807618);
@@ -145,11 +145,11 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
-    iVar10 = *(int *)&this_01[6].field_0x60;
+    iVar10 = this_01->field_0960;
     iVar17 = -1;
     iVar16 = 1;
     uVar14 = 0xffffffff;
-    *(undefined4 *)&this_01[5].field_0x128 = 0x2336;
+    this_01->field_08A8 = 0x2336;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -158,21 +158,21 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
                        (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar16,
                         iVar17,iVar18);
     (**(code **)(iVar10 + 8))(puVar8,uVar20,uVar22);
-    *(undefined4 *)&this_01->field_0xc9 = *(undefined4 *)&this_01->field_0x8;
-    *(undefined4 *)&this_01->field_0xcd = 2;
-    *(undefined4 *)&this_01->field_0xd1 = 0x6944;
-    *(undefined4 *)&this_01[1].field_0x144 = 0x200;
-    *(undefined4 *)&this_01[1].field_0x148 = 0;
-    *(undefined4 *)&this_01[1].field_0x14c = 0x6105;
-    *(undefined4 *)&this_01[1].field_0x150 = 0;
-    *(undefined4 *)&this_01[1].field_0x154 = 1;
-    *(undefined4 *)&this_01[3].field_0x3f = 0x200;
-    *(undefined4 *)&this_01[3].field_0x43 = 0;
-    *(undefined4 *)&this_01[3].field_0x47 = 0x6103;
-    *(undefined4 *)&this_01[3].field_0x4b = 1;
-    *(undefined4 *)&this_01[4].field_0xc2 = 0;
-    *(undefined4 *)&this_01[5].field_0x139 = 1;
-    *(undefined4 *)&this_01[5].field_0x13d = 0x7102;
+    this_01->field_00C9 = this_01->field_0008;
+    this_01->field_00CD = 2;
+    this_01->field_00D1 = 0x6944;
+    this_01->field_02C4 = 0x200;
+    this_01->field_02C8 = 0;
+    this_01->field_02CC = 0x6105;
+    this_01->field_02D0 = 0;
+    this_01->field_02D4 = 1;
+    this_01->field_04BF = 0x200;
+    this_01->field_04C3 = 0;
+    this_01->field_04C7 = 0x6103;
+    this_01->field_04CB = 1;
+    this_01->field_06C2 = 0;
+    this_01->field_08B9 = 1;
+    this_01->field_08BD = 0x7102;
     Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
     uVar20 = 0;
     pvVar21 = *(void **)(DAT_0081176c + 0x30);
@@ -184,8 +184,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar19 = DAT_00807dd5 & 0xffff;
     uVar14 = DAT_00807dd5 >> 0x18;
     pCVar3 = (LPCSTR)FUN_006b0140(0x2329,DAT_00807618);
-    wsprintfA((LPSTR)(*(int *)&this_01[0x11].field_0xdb + 0x3c),pCVar3,uVar14,uVar9,uVar19);
-    pSVar6 = (StartServTy *)(*(int *)&this_01[0x11].field_0xdb + 0x3c);
+    wsprintfA((LPSTR)(this_01->field_1A5B + 0x3c),pCVar3,uVar14,uVar9,uVar19);
+    pSVar6 = (StartServTy *)(this_01->field_1A5B + 0x3c);
     StartServTy::WrTextDDX
               (pSVar6,0,0,0x240,800,0x18,(uint *)pSVar6,0xfffffffe,0xffffffff,
                *(void **)(DAT_0081176c + 0x34),0);
@@ -196,10 +196,10 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar18 = -1;
     iVar17 = -1;
     iVar16 = 1;
-    local_c->field_0x9a = 5;
+    local_c->field_009A = 5;
     uVar14 = 0xffffffff;
     local_c->field_00BC = 0x233c;
-    iVar10 = *(int *)&local_c->field_0x174;
+    iVar10 = local_c->field_0174;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -214,8 +214,8 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar17 = -1;
     iVar16 = 1;
     uVar14 = 0xffffffff;
-    *(undefined4 *)&this_01[1].field_0x137 = 0x233d;
-    iVar10 = *(int *)&this_01[2].field_0x6f;
+    this_01->field_02B7 = 0x233d;
+    iVar10 = this_01->field_036F;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -227,11 +227,11 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
-    iVar10 = *(int *)&this_01[3].field_0xea;
+    iVar10 = this_01->field_056A;
     iVar17 = -1;
     iVar16 = 1;
     uVar14 = 0xffffffff;
-    *(undefined4 *)&this_01[3].field_0x32 = 0x233e;
+    this_01->field_04B2 = 0x233e;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -240,7 +240,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
                        (*(ccFntTy **)(DAT_0081176c + 0x30),puVar2,iVar5,iVar12,cVar13,uVar14,iVar16,
                         iVar17,iVar18);
     (**(code **)(iVar10 + 8))(puVar8,uVar20,uVar22);
-    iVar10 = *(int *)&this_01[4].field_0x165;
+    iVar10 = this_01->field_0765;
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
@@ -248,7 +248,7 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     iVar16 = 1;
     uVar14 = 0xffffffff;
     cVar13 = CASE_FFFFFFFE;
-    *(undefined4 *)&this_01[4].field_0xad = 0x233f;
+    this_01->field_06AD = 0x233f;
     iVar12 = 0x28;
     iVar5 = 0x8c;
     puVar2 = (uint *)FUN_006b0140(0x233f,DAT_00807618);
@@ -259,11 +259,11 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     uVar22 = 0xffffffff;
     uVar20 = 7;
     iVar18 = -1;
-    iVar10 = *(int *)&this_01[6].field_0x60;
+    iVar10 = this_01->field_0960;
     iVar17 = -1;
     iVar16 = 1;
     uVar14 = 0xffffffff;
-    *(undefined4 *)&this_01[5].field_0x128 = 0x2359;
+    this_01->field_08A8 = 0x2359;
     cVar13 = CASE_FFFFFFFE;
     iVar12 = 0x28;
     iVar5 = 0x8c;
@@ -274,34 +274,34 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
     (**(code **)(iVar10 + 8))(puVar8,uVar20,uVar22);
     bVar7 = 0;
     local_8 = local_8 & 0xffffff00;
-    if (this_01->field_0x9a != '\0') {
+    if (this_01->field_009A != '\0') {
       do {
         uVar14 = local_8 & 0xff;
         bVar7 = bVar7 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar7);
-        *(undefined4 *)((int)this_01 + uVar14 * 0x1fb + 0xc9) = 0x200;
-        *(undefined4 *)((int)this_01 + uVar14 * 0x1fb + 0xcd) = 0;
-      } while (bVar7 < (byte)this_01->field_0x9a);
+        *(undefined4 *)((int)&this_01->field_00C9 + uVar14 * 0x1fb) = 0x200;
+        *(undefined4 *)((int)&this_01->field_00CD + uVar14 * 0x1fb) = 0;
+      } while (bVar7 < (byte)this_01->field_009A);
     }
-    *(undefined4 *)&this_01->field_0xd1 = 0x6122;
-    *(undefined4 *)&this_01[1].field_0x14c = 0x611f;
-    *(undefined4 *)&this_01[3].field_0x47 = 0x611f;
-    *(undefined4 *)&this_01[4].field_0xc2 = 0x611f;
-    *(undefined4 *)&this_01[5].field_0x13d = 0x6122;
+    this_01->field_00D1 = 0x6122;
+    this_01->field_02CC = 0x611f;
+    this_01->field_04C7 = 0x611f;
+    this_01->field_06C2 = 0x611f;
+    this_01->field_08BD = 0x6122;
     puVar8 = &local_24c;
     for (iVar10 = 0x7e; iVar10 != 0; iVar10 = iVar10 + -1) {
       *puVar8 = 0;
       puVar8 = puVar8 + 1;
     }
-    iVar10 = *(int *)&this_01[0x11].field_0xdb;
+    iVar10 = this_01->field_1A5B;
     *(undefined2 *)puVar8 = 0;
     *(undefined1 *)((int)puVar8 + 2) = 0;
-    local_155 = *(undefined4 *)&this_01->field_0x8;
-    *(undefined4 *)&this_01->field_0xd5 = 0;
-    *(undefined4 *)&this_01[1].field_0x150 = 2;
-    *(undefined4 *)&this_01[3].field_0x4b = 9;
-    *(undefined4 *)&this_01[4].field_0xc6 = 3;
-    *(undefined4 *)&this_01[5].field_0x141 = 1;
+    local_155 = this_01->field_0008;
+    this_01->field_00D5 = 0;
+    this_01->field_02D0 = 2;
+    this_01->field_04CB = 9;
+    this_01->field_06C6 = 3;
+    this_01->field_08C1 = 1;
     local_162 = 0x24bc;
     local_13d = 1;
     local_151 = 2;
@@ -320,15 +320,14 @@ void __thiscall MainMenuTy::SetMode(MainMenuTy *this,char param_1,int param_2)
   }
   if (param_2 != 0) {
     PaintMainMenu(this_01);
-    uVar20 = this_01->field_0061;
-    *(undefined4 *)&this_01[0x11].field_0x153 = 1;
-    *(undefined4 *)&this_01[0x11].field_0x15b = 0;
-    *(undefined4 *)&this_01[0x11].field_0x157 = uVar20;
+    this_01->field_1AD3 = 1;
+    this_01->field_1ADB = 0;
+    this_01->field_1AD7 = this_01->field_0061;
     goto LAB_005b44f1;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
   Library::DKW::DDX::FUN_006ba9e0(DAT_0080759c,0xe9,0x14,0x14c,0x18,0);
-  if (this_01[0x14].field_0xe3 == '\0') {
+  if (this_01->field_1EE3 == '\0') {
     pvVar21 = *(void **)(DAT_0081176c + 0x30);
     UVar15 = 0x26ac;
 LAB_005b4465:
@@ -338,7 +337,7 @@ LAB_005b4465:
     puVar2 = (uint *)FUN_006b0140(UVar15,DAT_00807618);
     StartServTy::WrTextDDX(this_04,0,0xe9,0x14,0x14c,0x18,puVar2,uVar14,uVar19,pvVar21,uVar20);
   }
-  else if (this_01[0x14].field_0xe3 == '\x01') {
+  else if (this_01->field_1EE3 == '\x01') {
     pvVar21 = *(void **)(DAT_0081176c + 0x30);
     UVar15 = 0x26b0;
     goto LAB_005b4465;
@@ -347,25 +346,25 @@ LAB_005b4465:
   uVar19 = DAT_00807dd5 & 0xffff;
   uVar14 = DAT_00807dd5 >> 0x18;
   pCVar3 = (LPCSTR)FUN_006b0140(0x2329,DAT_00807618);
-  wsprintfA((LPSTR)(*(int *)&this_01[0x11].field_0xdb + 0x3c),pCVar3,uVar14,uVar9,uVar19);
-  pSVar6 = (StartServTy *)(*(int *)&this_01[0x11].field_0xdb + 0x3c);
+  wsprintfA((LPSTR)(this_01->field_1A5B + 0x3c),pCVar3,uVar14,uVar9,uVar19);
+  pSVar6 = (StartServTy *)(this_01->field_1A5B + 0x3c);
   StartServTy::WrTextDDX
             (pSVar6,0,0,0x240,800,0x18,(uint *)pSVar6,0xfffffffe,0xffffffff,
              *(void **)(DAT_0081176c + 0x34),0);
 LAB_005b44f1:
   local_8 = local_8 & 0xffffff00;
-  if (this_01->field_0x9a != '\0') {
+  if (this_01->field_009A != '\0') {
     do {
       uVar14 = local_8 & 0xff;
       DVar4 = timeGetTime();
-      *(DWORD *)((int)this_01 + uVar14 * 0x1fb + 0x127) = DVar4;
-      *(uint *)((int)this_01 + uVar14 * 0x1fb + 0x123) = uVar14 * 0x96;
-      *(undefined1 *)((int)this_01 + uVar14 * 0x1fb + 0xbb) = 1;
+      *(DWORD *)((int)&this_01->field_0127 + uVar14 * 0x1fb) = DVar4;
+      *(uint *)((int)&this_01->field_0123 + uVar14 * 0x1fb) = uVar14 * 0x96;
+      (&this_01->field_00BB)[uVar14 * 0x1fb] = 1;
       bVar7 = (char)local_8 + 1;
       local_8 = CONCAT31(local_8._1_3_,bVar7);
-    } while (bVar7 < (byte)this_01->field_0x9a);
+    } while (bVar7 < (byte)this_01->field_009A);
   }
-  this_01->field_0x65 = 3;
+  this_01->field_0065 = 3;
   thunk_FUN_005b6730(this_01,1,'\0',-1);
   g_currentExceptionFrame = local_50.previous;
   return;

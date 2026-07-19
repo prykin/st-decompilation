@@ -1,4 +1,4 @@
-FUN_00577280:
+CreateGameSystem:
 00577280  55                        PUSH EBP
 00577281  8B EC                     MOV EBP,ESP
 00577283  83 EC 44                  SUB ESP,0x44

@@ -25,30 +25,30 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
     cVar1 = local_8->field_01A1;
     if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
       local_8->field_01A2 = cVar1;
-      *(undefined4 *)&local_8->field_0x1ab = local_8->field_01A3;
+      local_8->field_01AB = local_8->field_01A3;
     }
     else {
       local_8->field_01A2 = 0;
-      *(undefined4 *)&local_8->field_0x1ab = 0;
+      local_8->field_01AB = 0;
     }
     local_8->field_01A1 = 7;
     local_8->field_01A7 = 0;
     local_8->field_01A3 = 0;
-    *(undefined2 *)&local_8->field_0x1af = 0;
-    *(undefined2 *)&local_8->field_0x1b1 = 0;
-    if (*(int *)&local_8->field_0x178 != 0) {
+    local_8->field_01AF = 0;
+    local_8->field_01B1 = 0;
+    if (local_8->field_0178 != 0) {
       local_8->field_0028 = 0x4202;
       *(undefined2 *)&local_8->field_0x2c = 0;
       local_8->field_002E = 2;
-      *(int *)&local_8->field_0x30 = *(int *)&local_8->field_0x178;
+      *(undefined4 *)&local_8->field_0x30 = local_8->field_0178;
       if (DAT_00802a30 != (undefined4 *)0x0) {
         (**(code **)*DAT_00802a30)(&local_8->field_0x18);
       }
     }
-    if (*(uint *)&pHVar3->field_0x19c != 0) {
-      FUN_006e56b0(*(void **)&pHVar3->field_0xc,*(uint *)&pHVar3->field_0x19c);
+    if (pHVar3->field_019C != 0) {
+      FUN_006e56b0((void *)pHVar3->field_000C,pHVar3->field_019C);
     }
-    thunk_FUN_00512be0(*(int *)&pHVar3->field_0x1d3);
+    thunk_FUN_00512be0(pHVar3->field_01D3);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

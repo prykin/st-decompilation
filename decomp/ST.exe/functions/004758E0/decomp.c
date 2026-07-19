@@ -154,7 +154,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
         (**(code **)(*local_c + 0xb8))();
         DumpClassC::WritePtr
                   (this->field_05D0,*(short *)&this->field_0x5d2,this->field_05D4,0,(int)this);
-        thunk_FUN_0041c3f0(this,*(undefined **)&this->field_0x70a);
+        thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
         this->field_07CA = 0;
         *(undefined4 *)&this->field_0x7c6 = 0;
       }
@@ -183,25 +183,25 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
       param_1 = (undefined4 *)&this->field_0x2b3;
       do {
         puVar9 = (undefined4 *)
-                 thunk_FUN_0041dc40(local_30,*param_1,*(undefined2 *)(param_1 + 1),
-                                    *(short *)&this->field_0x6c);
+                 thunk_FUN_0041dc40(local_30,*param_1,*(undefined2 *)(param_1 + 1),this->field_006C)
+        ;
         local_28 = *puVar9;
         local_24 = *(short *)(puVar9 + 1);
         if (DAT_0080732c == 1) {
           bVar23 = 0;
           sVar22 = 0;
           iVar12 = -1;
-          uVar8 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+          uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
           sVar21 = 0;
-          *(uint *)&this->field_0x1c = uVar8;
+          this->field_001C = uVar8;
           sVar20 = 0;
           sVar19 = 0;
           uVar10 = uVar8 * 0x41c64e6d + 0x3039;
           sVar18 = 0;
-          *(uint *)&this->field_0x1c = uVar10;
+          this->field_001C = uVar10;
           local_1c = uVar10 * 0x41c64e6d + 0x3039;
           sVar17 = 0;
-          *(uint *)&this->field_0x1c = local_1c;
+          this->field_001C = local_1c;
           sVar5 = 0;
           lVar16 = Library::MSVCRT::__ftol();
           iVar6 = (int)(short)lVar16 + (uVar8 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
@@ -210,14 +210,14 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
           uVar8 = local_1c;
         }
         else {
-          uVar10 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+          uVar10 = this->field_001C * 0x41c64e6d + 0x3039;
           bVar23 = 0;
-          *(uint *)&this->field_0x1c = uVar10;
+          this->field_001C = uVar10;
           uVar13 = uVar10 * 0x41c64e6d + 0x3039;
           sVar22 = 0;
-          *(uint *)&this->field_0x1c = uVar13;
+          this->field_001C = uVar13;
           uVar8 = uVar13 * 0x41c64e6d + 0x3039;
-          *(uint *)&this->field_0x1c = uVar8;
+          this->field_001C = uVar8;
           iVar12 = -1;
           sVar21 = 0;
           sVar20 = 0;
@@ -248,7 +248,7 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
       return -1;
     }
     if (local_20 == 0) {
-      FUN_006ea2f0(*(void **)&this->field_0x211,*(uint *)&this->field_0x1ed);
+      FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
       iVar6 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar6 != 0);
     }

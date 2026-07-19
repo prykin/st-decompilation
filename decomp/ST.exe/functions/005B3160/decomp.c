@@ -31,9 +31,9 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
+    PutDDX(0,0,'\x01',*(BITMAPINFO **)(DAT_0081176c + 0x2c));
     pMVar2 = local_8;
-    if (local_8[0x14].field_0xe3 == '\0') {
+    if (local_8->field_1EE3 == '\0') {
       uVar12 = 0;
       pvVar11 = *(void **)(DAT_0081176c + 0x30);
       uVar10 = 0xffffffff;
@@ -44,19 +44,19 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       uVar7 = DAT_00807dd5 & 0xffff;
       uVar9 = DAT_00807dd5 >> 0x18;
       pCVar5 = (LPCSTR)FUN_006b0140(0x2329,DAT_00807618);
-      wsprintfA((LPSTR)(*(int *)&pMVar2[0x11].field_0xdb + 0x3c),pCVar5,uVar9,uVar10,uVar7);
+      wsprintfA((LPSTR)(pMVar2->field_1A5B + 0x3c),pCVar5,uVar9,uVar10,uVar7);
       StartServTy::WrTextDDX
-                (DAT_0081176c,0,0,0x240,800,0x18,(uint *)(*(int *)&pMVar2[0x11].field_0xdb + 0x3c),
-                 0xfffffffe,0xffffffff,*(void **)(DAT_0081176c + 0x34),0);
+                (DAT_0081176c,0,0,0x240,800,0x18,(uint *)(pMVar2->field_1A5B + 0x3c),0xfffffffe,
+                 0xffffffff,*(void **)(DAT_0081176c + 0x34),0);
     }
-    else if (local_8[0x14].field_0xe3 == '\x01') {
+    else if (local_8->field_1EE3 == '\x01') {
       pvVar11 = *(void **)(DAT_0081176c + 0x30);
       uVar10 = 0xffffffff;
       uVar9 = 0xfffffffe;
       puVar4 = (uint *)FUN_006b0140(0x26b0,DAT_00807618);
       StartServTy::WrTextDDX(this_00,0,0xe9,0x14,0x14c,0x18,puVar4,uVar9,uVar10,pvVar11,iVar3);
     }
-    piVar8 = (int *)&pMVar2[0x11].field_0x127;
+    piVar8 = &pMVar2->field_1AA7;
     iVar3 = 10;
     do {
       if (*piVar8 != 0) {
@@ -66,14 +66,14 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 0;
-    if (pMVar2->field_0x9a != '\0') {
-      puVar4 = (uint *)&pMVar2->field_0xff;
+    if (pMVar2->field_009A != '\0') {
+      puVar4 = &pMVar2->field_00FF;
       do {
         if (puVar4[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
                     ((uint *)puVar4[0xb],puVar4[-6],puVar4[-5],*puVar4,puVar4[1]);
         }
-        if ((pMVar2->field_0x65 == '\x01') && (*(uint *)((int)puVar4 + 0x79) != 0xffffffff)) {
+        if ((pMVar2->field_0065 == '\x01') && (*(uint *)((int)puVar4 + 0x79) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
                     (*(uint **)((int)puVar4 + 0xbd),*(uint *)((int)puVar4 + 0x79),
                      *(uint *)((int)puVar4 + 0x7d),*(uint *)((int)puVar4 + 0x91),
@@ -81,7 +81,7 @@ void __thiscall MainMenuTy::PaintMainMenu(MainMenuTy *this)
         }
         iVar3 = iVar3 + 1;
         puVar4 = (uint *)((int)puVar4 + 0x1fb);
-      } while (iVar3 < (int)(uint)(byte)pMVar2->field_0x9a);
+      } while (iVar3 < (int)(uint)(byte)pMVar2->field_009A);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

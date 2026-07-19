@@ -211,65 +211,65 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      if (*(byte **)&this_00->field_0x135 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x135);
+      if ((byte *)this_00->field_0135 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0135);
       }
-      if (*(byte **)&this_00->field_0x139 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x139);
+      if ((byte *)this_00->field_0139 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0139);
       }
-      *(undefined4 *)&this_00->field_0x135 = 0;
-      *(undefined4 *)&this_00->field_0x139 = 0;
-      if (*(byte **)&this_00->field_0x12d != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x12d);
+      this_00->field_0135 = 0;
+      this_00->field_0139 = 0;
+      if ((byte *)this_00->field_012D != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_012D);
       }
-      if (*(byte **)&this_00->field_0x131 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x131);
+      if ((byte *)this_00->field_0131 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0131);
       }
-      *(undefined4 *)&this_00->field_0x12d = 0;
-      *(undefined4 *)&this_00->field_0x131 = 0;
-      if (*(byte **)&this_00->field_0x14d != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x14d);
+      this_00->field_012D = 0;
+      this_00->field_0131 = 0;
+      if ((byte *)this_00->field_014D != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_014D);
       }
-      if (*(byte **)&this_00->field_0x151 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x151);
+      if ((byte *)this_00->field_0151 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0151);
       }
-      if (*(byte **)&this_00->field_0x155 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x155);
+      if ((byte *)this_00->field_0155 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0155);
       }
-      if (*(byte **)&this_00->field_0x159 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x159);
+      if ((byte *)this_00->field_0159 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0159);
       }
-      *(undefined4 *)&this_00->field_0x14d = 0;
-      *(undefined4 *)&this_00->field_0x151 = 0;
-      *(undefined4 *)&this_00->field_0x155 = 0;
-      *(undefined4 *)&this_00->field_0x159 = 0;
-      if (*(byte **)&this_00->field_0x13d != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x13d);
+      this_00->field_014D = 0;
+      this_00->field_0151 = 0;
+      this_00->field_0155 = 0;
+      this_00->field_0159 = 0;
+      if ((byte *)this_00->field_013D != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_013D);
       }
-      if (*(byte **)&this_00->field_0x141 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x141);
+      if ((byte *)this_00->field_0141 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0141);
       }
-      if (*(byte **)&this_00->field_0x145 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x145);
+      if ((byte *)this_00->field_0145 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0145);
       }
-      if (*(byte **)&this_00->field_0x149 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x149);
+      if ((byte *)this_00->field_0149 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_0149);
       }
-      *(undefined4 *)&this_00->field_0x13d = 0;
-      *(undefined4 *)&this_00->field_0x141 = 0;
-      *(undefined4 *)&this_00->field_0x145 = 0;
-      *(undefined4 *)&this_00->field_0x149 = 0;
+      this_00->field_013D = 0;
+      this_00->field_0141 = 0;
+      this_00->field_0145 = 0;
+      this_00->field_0149 = 0;
       FUN_006ab060((undefined4 *)&this_00->field_0x185);
       FUN_006ab060((undefined4 *)&this_00->field_0x189);
       FUN_006ab060((undefined4 *)&this_00->field_0x18d);
       FUN_006ab060((undefined4 *)&this_00->field_0x191);
-      if (*(byte **)&this_00->field_0x1a1 != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x1a1);
-        *(undefined4 *)&this_00->field_0x1a1 = 0;
+      if ((byte *)this_00->field_01A1 != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_01A1);
+        this_00->field_01A1 = 0;
       }
-      if (*(byte **)&this_00->field_0x19d != (byte *)0x0) {
-        FUN_006ae110(*(byte **)&this_00->field_0x19d);
-        *(undefined4 *)&this_00->field_0x19d = 0;
+      if ((byte *)this_00->field_019D != (byte *)0x0) {
+        FUN_006ae110((byte *)this_00->field_019D);
+        this_00->field_019D = 0;
       }
       FUN_006ab060((undefined4 *)&this_00->field_0x1a5);
       FUN_006ab060((undefined4 *)&this_00->field_0x1a9);
@@ -339,11 +339,11 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  if (7 < *(uint *)&this_00->field_0x24) {
+  if (7 < *(uint *)&this_00->field_0024) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[*(uint *)&this_00->field_0x24 * 0x51])) {
+  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[*(uint *)&this_00->field_0024 * 0x51])) {
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
@@ -355,7 +355,7 @@ undefined4 __thiscall STSprGameObjC::GetMessage(STSprGameObjC *this,int param_1)
     g_currentExceptionFrame = local_54.previous;
     return 0;
   }
-  local_5 = this_00->field_0x24;
+  local_5 = this_00->field_0024;
   if (DAT_00808a8f == '\0') {
     if (DAT_0080874d == local_5) {
 LAB_0041ebc0:

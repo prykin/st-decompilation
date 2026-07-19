@@ -1,5 +1,10 @@
 
-undefined4 * __cdecl FUN_00649a60(int param_1)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_creat.cpp
+   Diagnostic line evidence: 373 | 376 | 377 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+undefined4 * __cdecl CreatePlrData(int param_1)
 
 {
   code *pcVar1;
@@ -33,11 +38,11 @@ undefined4 * __cdecl FUN_00649a60(int param_1)
       g_currentExceptionFrame = pIVar4;
       return local_8;
     }
-    puVar2 = thunk_FUN_00649790();
+    puVar2 = CreatePlrDataForBO();
     g_currentExceptionFrame = pIVar4;
     return puVar2;
   }
-  puVar2 = thunk_FUN_006494c0();
+  puVar2 = CreatePlrDataForWS();
   g_currentExceptionFrame = pIVar4;
   return puVar2;
 }

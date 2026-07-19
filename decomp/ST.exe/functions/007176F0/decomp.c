@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Stdark.cpp
+   Diagnostic line evidence: 233 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 void __thiscall
 FUN_007176f0(void *this,undefined4 *param_1,int param_2,int param_3,int param_4,int param_5,
             undefined4 param_6,undefined4 param_7,int param_8,undefined4 param_9,undefined4 param_10

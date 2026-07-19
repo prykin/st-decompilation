@@ -1,5 +1,10 @@
 
-void __cdecl FUN_00648c10(int param_1,uint param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_creat.cpp
+   Diagnostic line evidence: 73 | 95 | 97 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl StartStrateg(int param_1,uint param_2)
 
 {
   code *pcVar1;

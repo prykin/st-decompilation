@@ -40,20 +40,18 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
     this_00 = DAT_00802a30;
     if (iVar4 == 0) {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
-        uVar5 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
-        uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
-        DAT_00802a30[0xb].field_0x47 = 1;
-        *(undefined2 *)&this_00[0xb].field_0x48 = 0xffff;
+        uVar5 = DAT_00802a30->field_00C9;
+        uVar2 = DAT_00802a30->field_00C5;
+        DAT_00802a30->field_0493 = 1;
+        this_00->field_0494 = 0xffff;
         CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar5);
-        CursorClassTy::DrawSprite
-                  (this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
-        this_00[2].field_0xa = 0;
-        *(undefined4 *)&this_00[0xc].field_0x2f = 0xffffffff;
+        CursorClassTy::DrawSprite(this_00,this_00->field_00C5,this_00->field_00C9);
+        this_00->field_0xd2 = 0;
+        *(undefined4 *)&this_00->field_0x4df = 0xffffffff;
       }
       this_01 = local_10;
-      *(undefined4 *)&local_10->field_0x2d = 0x26;
-      FUN_006e6080(local_10,2,*(undefined4 *)&local_10->field_0x1b20,
-                   (undefined4 *)&local_10->field_0x1d);
+      local_10->field_002D = 0x26;
+      FUN_006e6080(local_10,2,local_10->field_1B20,(undefined4 *)&local_10->field_0x1d);
       iVar4 = this_01->field_1EBE;
       if ((uint)*(ushort *)&this_01->field_0x31 < *(uint *)(iVar4 + 0xc)) {
         local_c = (undefined4 *)
@@ -76,23 +74,20 @@ void __thiscall FSGSTy::SetGameList(FSGSTy *this,int param_1,int *param_2)
       do {
         if (param_1 == 0) {
           FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x174,0x175);
-          thunk_FUN_00540620(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',
-                             *(BITMAPINFO **)&this_01->field_0x1e9a);
-          *(undefined4 *)&this_01->field_0x2d = 0x28;
+          PutDDXClip(0x13,0x5e,0,0,0x174,(byte *)0x175,'\x01',(BITMAPINFO *)this_01->field_1E9A);
+          this_01->field_002D = 0x28;
           *(undefined4 *)&this_01->field_0x31 = *(undefined4 *)(this_01->field_1EBE + 0xc);
           *(undefined2 *)&this_01->field_0x35 = 1;
-          FUN_006e6080(this_01,2,*(undefined4 *)&this_01->field_0x1b20,
-                       (undefined4 *)&this_01->field_0x1d);
-          *(undefined4 *)&this_01->field_0x2d = 0x20;
-          if ((*(int *)(this_01->field_1EBE + 0xc) == 0) || (*(int *)&this_01->field_0x1a6b == 0)) {
+          FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
+          this_01->field_002D = 0x20;
+          if ((*(int *)(this_01->field_1EBE + 0xc) == 0) || (this_01->field_1A6B == 0)) {
             uVar5 = 0;
           }
           else {
             uVar5 = 1;
           }
           *(undefined4 *)&this_01->field_0x31 = uVar5;
-          FUN_006e6080(this_01,2,*(undefined4 *)&this_01->field_0x1b20,
-                       (undefined4 *)&this_01->field_0x1d);
+          FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
           if (local_c != (undefined4 *)0x0) {
             uVar7 = 0;
             local_8 = *(uint *)(this_01->field_1EBE + 0xc);
@@ -129,9 +124,8 @@ LAB_005a3810:
                     *(short *)&this_01->field_0x31 = (short)uVar7;
                     *(undefined2 *)&this_01->field_0x37 = 1;
                     *(undefined2 *)&this_01->field_0x35 = 1;
-                    *(undefined4 *)&this_01->field_0x2d = 0x22;
-                    FUN_006e6080(this_01,2,*(undefined4 *)&this_01->field_0x1b20,
-                                 (undefined4 *)&this_01->field_0x1d);
+                    this_01->field_002D = 0x22;
+                    FUN_006e6080(this_01,2,this_01->field_1B20,(undefined4 *)&this_01->field_0x1d);
                     g_currentExceptionFrame = local_60.previous;
                     return;
                   }
@@ -147,7 +141,7 @@ LAB_005a3810:
           g_currentExceptionFrame = local_60.previous;
           return;
         }
-        iVar4 = *(int *)&this_01->field_0x1ec2;
+        iVar4 = this_01->field_1EC2;
         if (iVar4 == 0) {
           if (*param_2 == 4) {
             puVar13 = (uint *)this_01->field_1EBE;
@@ -156,12 +150,12 @@ LAB_005a3810:
         }
         else if ((param_2[2] == iVar4) && (*param_2 == 4)) {
           if (iVar4 == 0x100) {
-            if (*(int *)&this_01->field_0x1ec6 != -1) {
+            if (this_01->field_1EC6 != -1) {
               if ((char)param_2[0x1f] != '\0') {
                 Library::MSVCRT::_strncpy(local_1c,(char *)((int)param_2 + 0x7f),8);
                 local_14 = 0;
                 Library::MSVCRT::FUN_0072ee80(local_1c,&DAT_007cc584);
-                if (local_8 == *(int *)&this_01->field_0x1ec6) {
+                if (local_8 == this_01->field_1EC6) {
                   puVar13 = (uint *)this_01->field_1EBE;
                   goto LAB_005a36e9;
                 }

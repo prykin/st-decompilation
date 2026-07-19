@@ -188,19 +188,19 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
         wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
         puVar12 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
         local_48 = 0x577d84;
-        puVar13 = thunk_FUN_0067dfd0((int)puVar12,piVar3[1],DAT_0080995c);
+        puVar13 = CreateOpponentList((int)puVar12,piVar3[1],DAT_0080995c);
         pcVar15 = (cMf32 *)puVar13[3];
         pcVar9 = extraout_ECX_02;
         if (pcVar15 != (cMf32 *)0x0) {
-          pcVar9 = pcVar15 + -1;
+          pcVar9 = (cMf32 *)((int)&pcVar15[-1].field_002E + 1);
           if (pcVar9 < pcVar15) {
-            pcVar19 = (char *)((int)(pcVar15 + -1) * puVar13[2] + puVar13[7]);
+            pcVar19 = (char *)((int)((int)&pcVar15[-1].field_002E + 1) * puVar13[2] + puVar13[7]);
           }
           else {
             pcVar19 = (char *)0x0;
           }
           if ((pcVar19 + 0x4c != (char *)0x0) &&
-             (puVar10 = thunk_FUN_00648ab0((int)puVar12,pcVar19 + 0x4c,(int *)0x0),
+             (puVar10 = LoadStrategData((int)puVar12,pcVar19 + 0x4c,(int *)0x0),
              pcVar9 = extraout_ECX_03, puVar10 != (ushort *)0x0)) {
             uVar16 = 0xffffffff;
             do {
@@ -245,7 +245,7 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
               }
             }
             puVar12 = (undefined4 *)0x577e83;
-            thunk_FUN_00648c10((int)puVar10,piVar3[2]);
+            StartStrateg((int)puVar10,piVar3[2]);
             *(undefined1 *)((int)&DAT_008087c4 + piVar3[2] * 0x51 + 3) = 1;
             puVar13 = (uint *)0x577e9d;
             FUN_006ab060((undefined4 *)&stack0xffffffdc);
@@ -320,14 +320,14 @@ undefined4 __thiscall GameSystemC::GetMessage(GameSystemC *this,int param_1)
               bVar21 = false;
             }
             else {
-              puVar10 = cMf32::RecGet(pcVar9,(byte)SUB41(local_1d90,0),PTR_s_DESCRIPTOR_0079b1a4,
+              puVar10 = cMf32::RecGet(pcVar9,(byte)local_1d90,PTR_s_DESCRIPTOR_0079b1a4,
                                       (int *)&stack0xffffffe0,0);
               pcVar15 = extraout_ECX_00;
               if (puVar10 != (ushort *)0x0) {
                 pcVar23 = (cMf32 *)&stack0xffffffe0;
                 puVar22 = PTR_s_SAVE_DESC_0079b1a0;
-                puVar10 = cMf32::RecGet(pcVar9,(byte)SUB41(&stack0xfffffff0,0),
-                                        PTR_s_SAVE_DESC_0079b1a0,(int *)pcVar23,0);
+                puVar10 = cMf32::RecGet(pcVar9,(byte)&stack0xfffffff0,PTR_s_SAVE_DESC_0079b1a0,
+                                        (int *)pcVar23,0);
                 pcVar15 = extraout_ECX_01;
                 if ((puVar10 != (ushort *)0x0) &&
                    ((pcVar15 = extraout_ECX_01, puVar22 != puVar24 ||
@@ -355,7 +355,7 @@ LAB_00577956:
         return 0;
       }
       thunk_FUN_00648dd0(uVar16);
-      thunk_FUN_00648c10((int)(pcVar19 + 2),uVar16);
+      StartStrateg((int)(pcVar19 + 2),uVar16);
     }
     if (DAT_008016dc != (void *)0x0) {
       thunk_FUN_00532ce0(DAT_008016dc);

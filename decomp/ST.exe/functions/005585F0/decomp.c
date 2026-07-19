@@ -7,100 +7,99 @@ void __thiscall Visible::PrepareAfterSave(Visible *this,int param_1)
 
 {
   code *pcVar1;
-  int iVar2;
+  Visible *pVVar2;
+  int errorCode;
   uint uVar3;
   uint *puVar4;
   undefined4 *puVar5;
   undefined4 uVar6;
+  uint uVar7;
   undefined4 unaff_ESI;
-  uint *puVar7;
-  Visible *pVVar8;
+  uint *puVar8;
+  int *piVar9;
   void *unaff_EDI;
-  int iVar9;
+  int iVar10;
   InternalExceptionFrame local_58;
   Visible *local_14;
   int local_10;
-  Visible *local_c;
+  undefined4 *local_c;
   uint *local_8;
   
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pVVar8 = local_14;
-  if (iVar2 == 0) {
-    *(undefined4 *)(local_14 + 0x20) = *(undefined4 *)(param_1 + 0x18);
-    *(undefined4 *)(local_14 + 0x24) = *(undefined4 *)(param_1 + 0x1c);
-    *(undefined4 *)(local_14 + 0x28) = *(undefined4 *)(param_1 + 0x20);
-    *(undefined4 *)(local_14 + 0x2c) = *(undefined4 *)(param_1 + 0x24);
-    *(undefined4 *)(local_14 + 0x30) = *(undefined4 *)(param_1 + 0x28);
-    *(undefined4 *)(local_14 + 0x34) = *(undefined4 *)(param_1 + 0x2c);
-    *(undefined4 *)(local_14 + 0x1c) = *(undefined4 *)(param_1 + 0x30);
-    *(undefined4 *)(local_14 + 0x114) = *(undefined4 *)(param_1 + 0x40);
-    *(undefined4 *)(local_14 + 0xf8) = *(undefined4 *)(param_1 + 0x44);
-    *(undefined4 *)(local_14 + 0xfc) = *(undefined4 *)(param_1 + 0x48);
-    *(undefined4 *)(local_14 + 0x100) = *(undefined4 *)(param_1 + 0x4c);
-    if (*(int *)(local_14 + 0x114) != 0) {
-      local_c = local_14 + 0x3c;
-      uVar3 = *(int *)(local_14 + 0x2c) * *(int *)(local_14 + 0x28);
+  errorCode = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pVVar2 = local_14;
+  if (errorCode == 0) {
+    local_14->field_0020 = *(undefined4 *)(param_1 + 0x18);
+    local_14->field_0024 = *(undefined4 *)(param_1 + 0x1c);
+    local_14->field_0028 = *(undefined4 *)(param_1 + 0x20);
+    local_14->field_002C = *(undefined4 *)(param_1 + 0x24);
+    local_14->field_0030 = *(undefined4 *)(param_1 + 0x28);
+    local_14->field_0034 = *(undefined4 *)(param_1 + 0x2c);
+    local_14->field_001C = *(undefined4 *)(param_1 + 0x30);
+    local_14->field_0114 = *(undefined4 *)(param_1 + 0x40);
+    local_14->field_00F8 = *(undefined4 *)(param_1 + 0x44);
+    local_14->field_00FC = *(undefined4 *)(param_1 + 0x48);
+    local_14->field_0100 = *(undefined4 *)(param_1 + 0x4c);
+    if (local_14->field_0114 != 0) {
+      local_c = &local_14->field_003C;
+      uVar3 = local_14->field_002C * local_14->field_0028;
       local_10 = 4;
       local_8 = (uint *)(param_1 + 0x80);
       do {
         puVar4 = Library::DKW::LIB::FUN_006aac10(uVar3);
-        *(uint **)local_c = puVar4;
-        iVar2 = *(int *)(pVVar8 + 0x2c);
-        iVar9 = *(int *)(pVVar8 + 0x28);
-        local_c = local_c + 4;
-        puVar7 = local_8;
-        for (uVar3 = (uint)(iVar2 * iVar9) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *puVar4 = *puVar7;
-          puVar7 = puVar7 + 1;
+        *local_c = puVar4;
+        uVar7 = pVVar2->field_002C * pVVar2->field_0028;
+        local_c = local_c + 1;
+        puVar8 = local_8;
+        for (uVar3 = uVar7 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
+          *puVar4 = *puVar8;
+          puVar8 = puVar8 + 1;
           puVar4 = puVar4 + 1;
         }
-        for (uVar3 = iVar2 * iVar9 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *(char *)puVar4 = (char)*puVar7;
-          puVar7 = (uint *)((int)puVar7 + 1);
+        for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+          *(char *)puVar4 = (char)*puVar8;
+          puVar8 = (uint *)((int)puVar8 + 1);
           puVar4 = (uint *)((int)puVar4 + 1);
         }
-        uVar3 = *(int *)(pVVar8 + 0x2c) * *(int *)(pVVar8 + 0x28);
-        puVar7 = (uint *)((int)local_8 + uVar3);
+        uVar3 = pVVar2->field_002C * pVVar2->field_0028;
+        puVar8 = (uint *)((int)local_8 + uVar3);
         local_10 = local_10 + -1;
-        local_8 = puVar7;
+        local_8 = puVar8;
       } while (local_10 != 0);
-      puVar5 = Library::DKW::LIB::FUN_006aac10
-                         (*(int *)(pVVar8 + 0x20) * *(int *)(pVVar8 + 0x24) * 2);
-      *(undefined4 **)(pVVar8 + 0x38) = puVar5;
-      puVar5 = Library::DKW::LIB::FUN_006aac10(*(int *)(pVVar8 + 0x30) * *(int *)(pVVar8 + 0x34));
-      *(undefined4 **)(pVVar8 + 0x4c) = puVar5;
-      puVar5 = Library::DKW::LIB::FUN_006aac10
-                         (*(int *)(pVVar8 + 0x30) * *(int *)(pVVar8 + 0x34) * 2);
-      *(undefined4 **)(pVVar8 + 0x50) = puVar5;
-      uVar6 = FUN_006b0060((uint *)0x0,puVar7);
-      *(undefined4 *)(pVVar8 + 0xf4) = uVar6;
-      uVar6 = FUN_006b0060((uint *)0x0,(uint *)((int)puVar7 + *(int *)(param_1 + 0x38)));
-      *(undefined4 *)(pVVar8 + 0x110) = uVar6;
+      puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0020 * pVVar2->field_0024 * 2);
+      pVVar2->field_0038 = puVar5;
+      puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0030 * pVVar2->field_0034);
+      pVVar2->field_004C = puVar5;
+      puVar5 = Library::DKW::LIB::FUN_006aac10(pVVar2->field_0030 * pVVar2->field_0034 * 2);
+      pVVar2->field_0050 = puVar5;
+      uVar6 = FUN_006b0060((uint *)0x0,puVar8);
+      pVVar2->field_00F4 = uVar6;
+      uVar6 = FUN_006b0060((uint *)0x0,(uint *)((int)puVar8 + *(int *)(param_1 + 0x38)));
+      pVVar2->field_0110 = uVar6;
     }
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar9 = 4;
-  pVVar8 = local_14 + 0x3c;
+  iVar10 = 4;
+  piVar9 = &local_14->field_003C;
   do {
-    if (*(int *)pVVar8 != 0) {
-      FUN_006ab060((undefined4 *)pVVar8);
+    if (*piVar9 != 0) {
+      FUN_006ab060(piVar9);
     }
-    pVVar8 = pVVar8 + 4;
-    iVar9 = iVar9 + -1;
-  } while (iVar9 != 0);
-  iVar9 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x132,0,iVar2,&DAT_007a4ccc,
-                             s_Visible__PrepareAfterSave_error_007c9358);
-  if (iVar9 != 0) {
+    piVar9 = piVar9 + 1;
+    iVar10 = iVar10 + -1;
+  } while (iVar10 != 0);
+  iVar10 = ReportDebugMessage(s_E____titans_grig_visible_cpp_007c92cc,0x132,0,errorCode,
+                              &DAT_007a4ccc,s_Visible__PrepareAfterSave_error_007c9358);
+  if (iVar10 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  RaiseInternalException(iVar2,0,s_E____titans_grig_visible_cpp_007c92cc,0x133);
+  RaiseInternalException(errorCode,0,s_E____titans_grig_visible_cpp_007c92cc,0x133);
   return;
 }
 

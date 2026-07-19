@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 633 | 651 | 653 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl
 FUN_006f0a50(short *param_1,int *param_2,int param_3,int param_4,int param_5,int param_6,int param_7
             )
@@ -42,12 +47,12 @@ FUN_006f0a50(short *param_1,int *param_2,int param_3,int param_4,int param_5,int
               iVar4 = (param_2[1] * param_7 + iVar5) * *param_2 + param_3;
               uVar2 = *(ushort *)((int)param_2 + (iVar4 * 3 + 6) * 2);
               if ((uVar2 == 0) || ((uVar2 & 0xf00) == 0)) {
-                FUN_006f01a0(param_1,local_c,local_8,param_7);
+                mfTMapDelObj(param_1,local_c,local_8,param_7);
                 param_3 = local_10;
               }
               else {
                 puVar1 = (uint *)((int)param_2 + iVar4 * 6 + 8);
-                FUN_006eff90(param_1,local_c,local_8,param_7,*puVar1,(ushort)puVar1[1]);
+                mfTMapAddObj(param_1,local_c,local_8,param_7,*puVar1,(ushort)puVar1[1]);
                 param_3 = local_10;
               }
             }

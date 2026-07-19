@@ -38,9 +38,9 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
     RaiseInternalException(iVar3,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x4a8);
     return 0xffff;
   }
-  if (*(int *)(local_c + 0x336) == 0) {
+  if (local_c->field_0336 == 0) {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1,0x3c,10);
-    *(uint **)(pSVar2 + 0x336) = puVar4;
+    pSVar2->field_0336 = puVar4;
     if (puVar4 == (uint *)0x0) {
       g_currentExceptionFrame = local_50.previous;
       return local_8;
@@ -55,8 +55,8 @@ uint __thiscall STTmMineC::CreatePart(STTmMineC *this,uint param_1)
     }
     if (0 < (int)param_1) {
       do {
-        local_8 = Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + 0x336),local_8c);
-        iVar3 = *(int *)(pSVar2 + 0x336);
+        local_8 = Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar2->field_0336,local_8c);
+        iVar3 = pSVar2->field_0336;
         if (uVar6 < *(uint *)(iVar3 + 0xc)) {
           iVar3 = *(int *)(iVar3 + 8) * uVar6 + *(int *)(iVar3 + 0x1c);
         }

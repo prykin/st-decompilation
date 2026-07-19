@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Mfimg.cpp
+   Diagnostic line evidence: 1191 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * __cdecl
 FUN_0070c4d0(int param_1,int param_2,int param_3,int param_4,int param_5,uint param_6)
 

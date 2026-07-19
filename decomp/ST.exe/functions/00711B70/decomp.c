@@ -43,7 +43,7 @@ ccFntTy::WrTxt(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
       iVar3 = (*pcVar2)();
       return iVar3;
     }
-    *(undefined4 *)(local_18 + 0x4c) = 1;
+    local_18->field_004C = 1;
     RaiseInternalException(iVar3,0,s_E__Ourlib_mfcfnt_cpp_007f0190,0x6f0);
     return iVar3;
   }
@@ -54,24 +54,24 @@ ccFntTy::WrTxt(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
   iVar3 = FUN_007113e0(this_00,param_1);
   local_1c = FUN_00711470(param_1);
   if ((((param_2 < 0) && (param_2 != -3)) && (param_2 != -2)) &&
-     (*(int *)(this_00 + 0x68) < local_10)) {
+     ((int)this_00->field_0068 < local_10)) {
     param_2 = 0;
   }
-  if ((param_3 < 0) && (*(int *)(this_00 + 0x6c) < iVar3)) {
+  if ((param_3 < 0) && ((int)this_00->field_006C < iVar3)) {
     param_3 = 0;
   }
   local_14 = param_2;
   if (((param_2 < 0) && (param_2 != -3)) && ((param_2 != -2 && (param_2 != -4)))) {
-    local_14 = (*(int *)(this_00 + 0x68) - local_10) / 2;
+    local_14 = (this_00->field_0068 - local_10) / 2;
   }
   local_c = param_3;
   if (param_3 < 0) {
-    local_c = (*(int *)(this_00 + 0x6c) - iVar3) / 2;
+    local_c = (this_00->field_006C - iVar3) / 2;
   }
   iVar3 = 0;
-  *(undefined4 *)(this_00 + 0x44) = param_4;
-  *(undefined4 *)(this_00 + 0x48) = param_4;
-  *(undefined4 *)(this_00 + 0x4c) = 0;
+  this_00->field_0044 = param_4;
+  this_00->field_0048 = param_4;
+  this_00->field_004C = 0;
   local_10 = 0;
   cVar1 = (char)*param_1;
   while (cVar1 != '\0') {
@@ -82,13 +82,13 @@ ccFntTy::WrTxt(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
     }
     if ((param_5 < 0) || (local_10 != local_1c + -1)) {
       if (param_2 == -4) {
-        uVar6 = *(undefined4 *)(this_00 + 0x44);
+        uVar6 = this_00->field_0044;
         iVar5 = local_c + iVar3;
         iVar4 = FUN_00711110(this_00,param_1);
-        iVar4 = (*(int *)(this_00 + 0x68) + param_6) / 2 - iVar4;
+        iVar4 = (this_00->field_0068 + param_6) / 2 - iVar4;
       }
       else {
-        uVar6 = *(undefined4 *)(this_00 + 0x44);
+        uVar6 = this_00->field_0044;
         if (param_2 == -2) {
           iVar5 = local_c + iVar3;
           iVar4 = -1;
@@ -100,20 +100,20 @@ ccFntTy::WrTxt(ccFntTy *this,uint *param_1,int param_2,int param_3,undefined4 pa
       }
     }
     else {
-      uVar6 = *(undefined4 *)(this_00 + 0x44);
+      uVar6 = this_00->field_0044;
       iVar5 = local_c + iVar3;
       iVar4 = param_5;
     }
     WrStr(this_00,param_1,iVar4,iVar5,uVar6);
     iVar4 = FUN_007111c0(this_00,param_1);
-    iVar3 = iVar3 + iVar4 + *(int *)(this_00 + 0x5c);
+    iVar3 = iVar3 + iVar4 + this_00->field_005C;
     local_10 = local_10 + 1;
     if (local_20 == (uint *)0x0) break;
     *(undefined1 *)local_20 = local_5;
     param_1 = (uint *)((int)local_20 + 1);
     cVar1 = *(char *)((int)local_20 + 1);
   }
-  *(undefined4 *)(this_00 + 0x4c) = 1;
+  this_00->field_004C = 1;
   g_currentExceptionFrame = local_64.previous;
   return 0;
 }

@@ -17,7 +17,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
   undefined4 unaff_ESI;
   undefined4 *puVar7;
   void *unaff_EDI;
-  STVolcanoC *pSVar8;
+  undefined4 *puVar8;
   InternalExceptionFrame local_54;
   byte *local_10;
   uint local_c;
@@ -48,143 +48,142 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
       return 0;
     }
     if (uVar1 == 0) {
-      switch(*(undefined4 *)(local_8 + 0xa9)) {
+      switch(local_8->field_00A9) {
       case 1:
-        if (*(uint *)(local_8 + 0xa4) < (uint)DAT_00802a38->field_00E4) {
-          *(undefined4 *)(local_8 + 0x9c) = DAT_00802a38->field_00E4;
+        if (*(uint *)&local_8->field_0xa4 < (uint)DAT_00802a38->field_00E4) {
+          *(undefined4 *)&local_8->field_0x9c = DAT_00802a38->field_00E4;
           thunk_FUN_00647370((int)local_8);
-          iVar3 = thunk_FUN_00646e00(*(int *)(this_00 + 0x65),*(int *)(this_00 + 0x69),
-                                     *(int *)(this_00 + 0x6d));
+          iVar3 = thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
           if (iVar3 != 0) {
-            this_00[0xa8] = (STVolcanoC)0x1;
+            this_00->field_00A8 = 1;
           }
-          *(undefined4 *)(this_00 + 0x71) = 0x29;
-          *(undefined4 *)(this_00 + 0x75) = 0x2e;
-          *(undefined4 *)(this_00 + 0x8a) = 10;
-          *(undefined4 *)(this_00 + 0x8e) = 0xf;
-          if (this_00[0xa8] != (STVolcanoC)0x0) {
+          this_00->field_0071 = 0x29;
+          *(undefined4 *)&this_00->field_0x75 = 0x2e;
+          this_00->field_008A = 10;
+          *(undefined4 *)&this_00->field_0x8e = 0xf;
+          if (this_00->field_00A8 != '\0') {
             LoadImagVolcano(this_00,0);
           }
-          *(undefined4 *)(this_00 + 0xa9) = 4;
+          this_00->field_00A9 = 4;
           thunk_FUN_00647a60(this_00,0x4b5);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         break;
       case 2:
-        if ((((*(uint *)(local_8 + 0x58) & 1) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) &&
-           (iVar3 = *(int *)(local_8 + 0x71), *(int *)(local_8 + 0x71) = iVar3 + 1,
-           *(int *)(local_8 + 0x75) <= iVar3 + 1)) {
-          *(undefined4 *)(local_8 + 0x71) = 0;
-          *(undefined4 *)(local_8 + 0x75) = 10;
-          *(undefined4 *)(local_8 + 0xa9) = 1;
-          uVar1 = *(int *)(local_8 + 0xb1) * 0x41c64e6d + 0x3039;
-          *(uint *)(local_8 + 0xb1) = uVar1;
-          *(uint *)(local_8 + 0xa4) = (uVar1 >> 0x10) % 0x2711 + 20000 + DAT_00802a38->field_00E4;
-          if (local_8[0x5c] == (STVolcanoC)0x0) {
-            if (*(int *)(local_8 + 0x61) != 0) {
-              FUN_006e9000(DAT_00807598,
-                           *(undefined4 *)(*(int *)(*(int *)(local_8 + 0x61) + 0x21) + 0xa0),0x5a,
-                           0x2f,(float)*(int *)(local_8 + 0x65) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(local_8 + 0x69) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(local_8 + 0x6d) * _DAT_007904f8 * _DAT_007904f0 +
+        if ((((*(uint *)&local_8->field_0x58 & 1) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)
+            ) && (iVar3 = local_8->field_0071 + 1, local_8->field_0071 = iVar3,
+                 *(int *)&local_8->field_0x75 <= iVar3)) {
+          local_8->field_0071 = 0;
+          *(undefined4 *)&local_8->field_0x75 = 10;
+          local_8->field_00A9 = 1;
+          uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
+          local_8->field_00B1 = uVar1;
+          *(uint *)&local_8->field_0xa4 =
+               (uVar1 >> 0x10) % 0x2711 + 20000 + DAT_00802a38->field_00E4;
+          if (local_8->field_0x5c == '\0') {
+            if (local_8->field_0061 != 0) {
+              FUN_006e9000(DAT_00807598,*(undefined4 *)(*(int *)(local_8->field_0061 + 0x21) + 0xa0)
+                           ,0x5a,0x2f,
+                           (float)(int)local_8->field_0065 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)(int)local_8->field_0069 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)(int)local_8->field_006D * _DAT_007904f8 * _DAT_007904f0 +
                            _DAT_007904fc,0);
-              this_00[0x5c] = (STVolcanoC)0x1;
+              this_00->field_0x5c = 1;
               thunk_FUN_006479e0((int)this_00);
               g_currentExceptionFrame = local_54.previous;
               return 0;
             }
-            puVar4 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
-                                  (undefined4 *)0x0);
-            *(ushort **)(this_00 + 0x61) = puVar4;
+            puVar4 = mfRLoad(DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
+                             (undefined4 *)0x0);
+            this_00->field_0061 = puVar4;
             if (puVar4 != (ushort *)0x0) {
               FUN_006e9000(DAT_00807598,*(undefined4 *)(*(int *)((int)puVar4 + 0x21) + 0xa0),0x5a,
-                           0x2f,(float)*(int *)(this_00 + 0x65) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(this_00 + 0x69) * _DAT_007904f8 * _DAT_007904f0,
-                           (float)*(int *)(this_00 + 0x6d) * _DAT_007904f8 * _DAT_007904f0 +
+                           0x2f,(float)(int)this_00->field_0065 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)(int)this_00->field_0069 * _DAT_007904f8 * _DAT_007904f0,
+                           (float)(int)this_00->field_006D * _DAT_007904f8 * _DAT_007904f0 +
                            _DAT_007904fc,0);
-              this_00[0x5c] = (STVolcanoC)0x1;
-              *(undefined4 *)(this_00 + 0x61) = 0;
+              this_00->field_0x5c = 1;
+              this_00->field_0061 = 0;
             }
           }
           thunk_FUN_006479e0((int)this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        if (((*(uint *)(local_8 + 0x58) & 2) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) {
-          iVar3 = *(int *)(local_8 + 0x7e);
-          *(int *)(local_8 + 0x7e) = iVar3 + 1;
-          if (*(int *)(local_8 + 0x82) <= iVar3 + 1) {
-            *(undefined4 *)(local_8 + 0x7e) = 0;
-            FUN_006eab60(DAT_00807598,*(uint *)(local_8 + 0x7a));
+        if (((*(uint *)&local_8->field_0x58 & 2) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0))
+        {
+          iVar3 = local_8->field_007E + 1;
+          local_8->field_007E = iVar3;
+          if (*(int *)&local_8->field_0x82 <= iVar3) {
+            local_8->field_007E = 0;
+            FUN_006eab60(DAT_00807598,local_8->field_007A);
           }
-          iVar3 = *(int *)(this_00 + 0x8a);
-          *(int *)(this_00 + 0x8a) = iVar3 + 1;
-          if (*(int *)(this_00 + 0x8e) <= iVar3 + 1) {
-            *(undefined4 *)(this_00 + 0x8a) = 0;
-            FUN_006eab60(DAT_00807598,*(uint *)(this_00 + 0x86));
+          iVar3 = this_00->field_008A + 1;
+          this_00->field_008A = iVar3;
+          if (*(int *)&this_00->field_0x8e <= iVar3) {
+            this_00->field_008A = 0;
+            FUN_006eab60(DAT_00807598,this_00->field_0086);
           }
         }
-        if ((((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) && (2 < *(int *)(this_00 + 0x71))) &&
-           ((*(int *)(this_00 + 0x71) < (*(int *)(this_00 + 0x75) << 1) / 3 &&
-            (uVar1 = *(int *)(this_00 + 0xb1) * 0x41c64e6d + 0x3039,
-            *(uint *)(this_00 + 0xb1) = uVar1, (uVar1 & 0x70000) == 0x10000)))) {
+        if ((((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) && (2 < (int)this_00->field_0071)) &&
+           (((int)this_00->field_0071 < (*(int *)&this_00->field_0x75 << 1) / 3 &&
+            (uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039, this_00->field_00B1 = uVar1,
+            (uVar1 & 0x70000) == 0x10000)))) {
           thunk_FUN_006473e0(this_00,0);
         }
-        if (this_00[0xa8] == (STVolcanoC)0x0) {
-          iVar3 = thunk_FUN_00646e00(*(int *)(this_00 + 0x65),*(int *)(this_00 + 0x69),
-                                     *(int *)(this_00 + 0x6d));
+        if (this_00->field_00A8 == '\0') {
+          iVar3 = thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
           if (iVar3 != 0) {
-            this_00[0xa8] = (STVolcanoC)0x1;
+            this_00->field_00A8 = 1;
             LoadImagVolcano(this_00,2);
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
         }
-        else if (*(int *)(this_00 + 0xa9) == 2) {
+        else if (this_00->field_00A9 == 2) {
           thunk_FUN_00647960((int)this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
         break;
       case 3:
-        if ((((byte)local_8[0x58] & 1) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) {
-          iVar3 = *(int *)(local_8 + 0x71);
-          *(int *)(local_8 + 0x71) = iVar3 + 1;
-          if ((*(int *)(local_8 + 0x75) <= iVar3 + 1) &&
-             (*(undefined4 *)(local_8 + 0x71) = 0,
-             *(uint *)(local_8 + 0xa4) < (uint)DAT_00802a38->field_00E4)) {
-            *(undefined4 *)(local_8 + 0xa9) = 2;
+        if (((local_8->field_0x58 & 1) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) {
+          iVar3 = local_8->field_0071 + 1;
+          local_8->field_0071 = iVar3;
+          if ((*(int *)&local_8->field_0x75 <= iVar3) &&
+             (local_8->field_0071 = 0,
+             *(uint *)&local_8->field_0xa4 < (uint)DAT_00802a38->field_00E4)) {
+            local_8->field_00A9 = 2;
             thunk_FUN_00647a60(local_8,0x4b6);
-            if (this_00[0xa8] != (STVolcanoC)0x0) {
+            if (this_00->field_00A8 != '\0') {
               LoadImagVolcano(this_00,1);
             }
-            *(undefined4 *)(this_00 + 0x71) = 10;
-            *(undefined4 *)(this_00 + 0x75) = 0x29;
-            *(uint *)(this_00 + 0x58) = *(uint *)(this_00 + 0x58) | 3;
-            *(undefined4 *)(this_00 + 0x7e) = 0;
-            *(undefined4 *)(this_00 + 0x82) = 0x1f;
+            this_00->field_0071 = 10;
+            *(undefined4 *)&this_00->field_0x75 = 0x29;
+            *(uint *)&this_00->field_0x58 = *(uint *)&this_00->field_0x58 | 3;
+            this_00->field_007E = 0;
+            *(undefined4 *)&this_00->field_0x82 = 0x1f;
           }
-          iVar3 = *(int *)(this_00 + 0x8a);
-          *(int *)(this_00 + 0x8a) = iVar3 + 1;
-          if (*(int *)(this_00 + 0x8e) <= iVar3 + 1) {
-            *(undefined4 *)(this_00 + 0x8a) = 0;
+          iVar3 = this_00->field_008A + 1;
+          this_00->field_008A = iVar3;
+          if (*(int *)&this_00->field_0x8e <= iVar3) {
+            this_00->field_008A = 0;
           }
         }
-        uVar1 = *(int *)(this_00 + 0xb1) * 0x41c64e6d + 0x3039;
-        *(uint *)(this_00 + 0xb1) = uVar1;
+        uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
+        this_00->field_00B1 = uVar1;
         if ((uVar1 & 0xf0000) == 0x10000) {
           thunk_FUN_006473e0(this_00,1);
         }
-        if (this_00[0xa8] != (STVolcanoC)0x0) {
+        if (this_00->field_00A8 != '\0') {
           thunk_FUN_00647960((int)this_00);
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        iVar3 = thunk_FUN_00646e00(*(int *)(this_00 + 0x65),*(int *)(this_00 + 0x69),
-                                   *(int *)(this_00 + 0x6d));
+        iVar3 = thunk_FUN_00646e00(this_00->field_0065,this_00->field_0069,this_00->field_006D);
         if (iVar3 != 0) {
-          this_00[0xa8] = (STVolcanoC)0x1;
+          this_00->field_00A8 = 1;
           LoadImagVolcano(this_00,0);
           g_currentExceptionFrame = local_54.previous;
           return 0;
@@ -192,34 +191,33 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         break;
       case 4:
         if ((uint)DAT_00802a38->field_00E4 % 5 == 0) {
-          iVar3 = *(int *)(local_8 + 0x71);
-          *(int *)(local_8 + 0x71) = iVar3 + 1;
-          if (*(int *)(local_8 + 0x75) <= iVar3 + 1) {
-            uVar1 = *(int *)(local_8 + 0xb1) * 0x41c64e6d + 0x3039;
-            *(uint *)(local_8 + 0xb1) = uVar1;
+          iVar3 = local_8->field_0071 + 1;
+          local_8->field_0071 = iVar3;
+          if (*(int *)&local_8->field_0x75 <= iVar3) {
+            uVar1 = local_8->field_00B1 * 0x41c64e6d + 0x3039;
+            local_8->field_00B1 = uVar1;
             iVar3 = DAT_00802a38->field_00E4;
-            *(undefined4 *)(local_8 + 0xa9) = 3;
-            *(uint *)(local_8 + 0x58) = *(uint *)(local_8 + 0x58) | 1;
-            *(undefined4 *)(local_8 + 0x71) = 0;
-            *(undefined4 *)(local_8 + 0x75) = 10;
-            *(undefined4 *)(local_8 + 0x8a) = 0;
-            *(undefined4 *)(local_8 + 0x8e) = 10;
-            *(uint *)(local_8 + 0xa4) = (uVar1 >> 0x10) % 0x1f5 + 500 + iVar3;
+            local_8->field_00A9 = 3;
+            *(uint *)&local_8->field_0x58 = *(uint *)&local_8->field_0x58 | 1;
+            local_8->field_0071 = 0;
+            *(undefined4 *)&local_8->field_0x75 = 10;
+            local_8->field_008A = 0;
+            *(undefined4 *)&local_8->field_0x8e = 10;
+            *(uint *)&local_8->field_0xa4 = (uVar1 >> 0x10) % 0x1f5 + 500 + iVar3;
           }
-          iVar3 = *(int *)(local_8 + 0x8a);
-          *(int *)(local_8 + 0x8a) = iVar3 + 1;
-          if (*(int *)(local_8 + 0x8e) <= iVar3 + 1) {
-            *(undefined4 *)(local_8 + 0x8a) = 0;
+          iVar3 = local_8->field_008A + 1;
+          local_8->field_008A = iVar3;
+          if (*(int *)&local_8->field_0x8e <= iVar3) {
+            local_8->field_008A = 0;
           }
-          if (local_8[0xa8] != (STVolcanoC)0x0) {
+          if (local_8->field_00A8 != '\0') {
             thunk_FUN_00647960((int)local_8);
             g_currentExceptionFrame = local_54.previous;
             return 0;
           }
-          iVar3 = thunk_FUN_00646e00(*(int *)(local_8 + 0x65),*(int *)(local_8 + 0x69),
-                                     *(int *)(local_8 + 0x6d));
+          iVar3 = thunk_FUN_00646e00(local_8->field_0065,local_8->field_0069,local_8->field_006D);
           if (iVar3 != 0) {
-            this_00[0xa8] = (STVolcanoC)0x1;
+            this_00->field_00A8 = 1;
             LoadImagVolcano(this_00,0);
             g_currentExceptionFrame = local_54.previous;
             return 0;
@@ -231,7 +229,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         g_currentExceptionFrame = local_54.previous;
         return 0;
       case 6:
-        *(undefined4 *)(local_8 + 0xa9) = 1;
+        local_8->field_00A9 = 1;
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -240,24 +238,24 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
       puVar7 = *(undefined4 **)(param_1 + 0x14);
       if (puVar7[3] == 2) {
         thunk_FUN_00646db0(local_8,puVar7);
-        *(undefined4 *)(this_00 + 0xb1) = *(undefined4 *)(this_00 + 0xad);
-        this_00[0xa8] = (STVolcanoC)0x0;
+        this_00->field_00B1 = this_00->field_00AD;
+        this_00->field_00A8 = 0;
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
-      pSVar8 = local_8 + 0x1c;
+      puVar8 = (undefined4 *)&local_8->field_0x1c;
       for (iVar3 = 0xe; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(undefined4 *)pSVar8 = *puVar7;
+        *puVar8 = *puVar7;
         puVar7 = puVar7 + 1;
-        pSVar8 = pSVar8 + 4;
+        puVar8 = puVar8 + 1;
       }
-      *(undefined4 *)(local_8 + 0xb1) = DAT_00808754;
+      local_8->field_00B1 = DAT_00808754;
       iVar3 = thunk_FUN_006472b0((int)local_8);
       if (iVar3 != 0) {
-        uVar1 = *(int *)(this_00 + 0xb1) * 0x41c64e6d + 0x3039;
-        *(uint *)(this_00 + 0xb1) = uVar1;
-        *(undefined4 *)(this_00 + 0xa9) = 6;
-        *(uint *)(this_00 + 0xa4) = (uVar1 >> 0x10) % 0x2711 + 20000;
+        uVar1 = this_00->field_00B1 * 0x41c64e6d + 0x3039;
+        this_00->field_00B1 = uVar1;
+        this_00->field_00A9 = 6;
+        *(uint *)&this_00->field_0xa4 = (uVar1 >> 0x10) % 0x2711 + 20000;
         g_currentExceptionFrame = local_54.previous;
         return 0;
       }
@@ -268,7 +266,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
   }
   else if (uVar1 == 0x10f) {
     local_10 = (byte *)thunk_FUN_00646d40(local_8,&local_c);
-    STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_10,local_c);
+    STPlaySystemC::SaveObjData(DAT_00802a38,this_00->field_0018,local_10,local_c);
     FUN_006ab060(&local_10);
   }
   g_currentExceptionFrame = local_54.previous;

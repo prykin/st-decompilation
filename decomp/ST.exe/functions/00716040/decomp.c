@@ -66,7 +66,7 @@ SpriteClassTy::SetImages
     switch(param_2) {
     case CASE_7:
     case CASE_81:
-      pcVar5 = FUN_00725c60(param_1,param_4,0,param_6);
+      pcVar5 = mfSSprLoad(param_1,param_4,0,param_6);
       pSVar3->field_0051 = pcVar5;
       if (pcVar5 == (char *)0x0) {
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xe4);
@@ -82,7 +82,7 @@ SpriteClassTy::SetImages
       pSVar3->field_0028 = (int)*(short *)(iVar4 + 0x2b);
       break;
     case CASE_8:
-      psVar6 = FUN_00725f50(param_1,param_4,param_3,0,param_6);
+      psVar6 = mfMSprLoad(param_1,param_4,param_3,0,param_6);
       pSVar3->field_0059 = psVar6;
       if (psVar6 == (short *)0x0) {
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xf8);
@@ -100,7 +100,7 @@ SpriteClassTy::SetImages
       pSVar3->field_004D = param_3;
       break;
     case CASE_1E:
-      psVar6 = FUN_00726a80(param_1,param_4,0,param_6);
+      psVar6 = mfQSprLoad(param_1,param_4,0,param_6);
       pSVar3->field_0055 = psVar6;
       if (psVar6 == (short *)0x0) {
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xee);

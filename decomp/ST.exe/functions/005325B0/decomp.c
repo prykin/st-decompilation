@@ -55,17 +55,17 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
     RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad);
     return;
   }
-  if (*(byte **)&local_8[1].field_0x144 != (byte *)0x0) {
-    FUN_006ae110(*(byte **)&local_8[1].field_0x144);
+  if ((byte *)local_8->field_02FD != (byte *)0x0) {
+    FUN_006ae110((byte *)local_8->field_02FD);
   }
-  *(undefined4 *)&pOVar12[1].field_0x144 = 0;
+  pOVar12->field_02FD = 0;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
   iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
     puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x98,1);
-    *(uint **)&local_8[1].field_0x144 = puVar7;
+    local_8->field_02FD = puVar7;
     pOVar12 = local_8;
     goto LAB_00532758;
   }
@@ -98,7 +98,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case (cMf32 *)0xd:
   case (cMf32 *)0xe:
   case (cMf32 *)0x13:
-    puVar7 = thunk_FUN_0067dec0((int)puVar6,(uint)DAT_0080874e,DAT_0080995c);
+    puVar7 = CreateAssistantList((int)puVar6,(uint)DAT_0080874e,DAT_0080995c);
     this_00 = extraout_ECX;
     break;
   case (cMf32 *)0x2:
@@ -106,13 +106,13 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case (cMf32 *)0x5:
   case (cMf32 *)0x8:
   case (cMf32 *)0xf:
-    puVar7 = thunk_FUN_0067e0e0((int)puVar6,(uint)DAT_0080874d,0xffffffff);
+    puVar7 = CreateStrategList((int)puVar6,(uint)DAT_0080874d,0xffffffff);
     this_00 = extraout_ECX_00;
     break;
   default:
     goto switchD_005326e6_caseD_9;
   }
-  *(uint **)&pOVar12[1].field_0x144 = puVar7;
+  pOVar12->field_02FD = puVar7;
 switchD_005326e6_caseD_9:
   cMf32::delete(this_00,puVar6);
   g_currentExceptionFrame = local_94.previous;
@@ -144,11 +144,10 @@ LAB_00532758:
     }
   }
   local_c0 = 1;
-  Library::DKW::TBL::FUN_006b11d0(*(uint **)&pOVar12[1].field_0x144,0,(undefined4 *)local_12c);
-  iVar5 = *(int *)&pOVar12[1].field_0x144;
+  Library::DKW::TBL::FUN_006b11d0((uint *)pOVar12->field_02FD,0,(undefined4 *)local_12c);
   pOVar12->field_0028 = 0x28;
   puVar1 = &pOVar12->field_0x18;
-  *(undefined4 *)&pOVar12->field_0x2c = *(undefined4 *)(iVar5 + 0xc);
+  *(undefined4 *)&pOVar12->field_0x2c = *(undefined4 *)(pOVar12->field_02FD + 0xc);
   FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
   pOVar12->field_0028 = 0x20;
   *(undefined4 *)&pOVar12->field_0x2c = 1;
@@ -160,7 +159,7 @@ LAB_00532758:
     FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
   }
   else {
-    iVar5 = *(int *)&pOVar12[1].field_0x144;
+    iVar5 = pOVar12->field_02FD;
     local_c = 0;
     if (*(int *)(iVar5 + 0xc) != 0) {
       if (*(int *)(iVar5 + 0xc) == 0) {
@@ -193,7 +192,7 @@ LAB_00532883:
           pOVar12->field_0028 = 0x22;
           FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)&pOVar12->field_0x18);
         }
-        iVar5 = *(int *)&pOVar12[1].field_0x144;
+        iVar5 = pOVar12->field_02FD;
         local_c = local_c + 1;
         if (*(uint *)(iVar5 + 0xc) <= local_c) {
           g_currentExceptionFrame = local_50.previous;

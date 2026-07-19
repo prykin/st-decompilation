@@ -21,9 +21,9 @@ int __thiscall ccFntTy::EraseSufr(ccFntTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pcVar2 = local_8;
   if (iVar3 == 0) {
-    if ((*(int *)(local_8 + 0x72) != 0) && (*(int *)(local_8 + 0x7a) != 0)) {
-      FUN_006ab060((undefined4 *)(local_8 + 0x72));
-      *(undefined4 *)(pcVar2 + 0x76) = 0;
+    if ((local_8->field_0072 != 0) && (local_8->field_007A != 0)) {
+      FUN_006ab060(&local_8->field_0072);
+      pcVar2->field_0076 = 0;
     }
     g_currentExceptionFrame = pIVar5;
     return 0;

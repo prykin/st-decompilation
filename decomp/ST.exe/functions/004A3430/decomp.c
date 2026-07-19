@@ -236,7 +236,7 @@ LAB_004a35b6:
   }
   puVar7 = STAllPlayersC::_AssignMDPairs
                      (DAT_007fa174,CONCAT31((int3)((uint)local_28 >> 8),pSVar2->field_0024),
-                      *(int *)&pSVar2->field_0x25e,(int)local_2c,(int)local_28,(int)local_1c);
+                      pSVar2->field_025E,(int)local_2c,(int)local_28,(int)local_1c);
   local_40 = puVar7;
   if (puVar7 == (uint *)0x0) {
     iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x113f,0,0,&DAT_007a4ccc,

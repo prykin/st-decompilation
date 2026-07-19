@@ -32,26 +32,27 @@ int __thiscall ViewerClassTy::_Draw(ViewerClassTy *this)
     RaiseInternalException(iVar3,0,s_E__Ourlib__sviewer_cpp_007f0a68,0x17);
     return iVar3;
   }
-  if (((byte)local_8[0x20] & 2) != 0) {
-    (**(code **)(*(int *)local_8 + 8))(*(int *)(local_8 + 0x1ec),*(int *)(local_8 + 0x1f0),0,0);
+  if ((local_8->field_0x20 & 2) != 0) {
+    (**(code **)(local_8->field_0000 + 8))
+              (*(undefined4 *)&local_8->field_0x1ec,*(undefined4 *)&local_8->field_0x1f0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   iVar3 = 0;
-  if (0 < *(int *)(local_8 + 0x1e0)) {
+  if (0 < (int)local_8->field_01E0) {
     do {
       iVar4 = 0;
-      if (0 < *(int *)(pVVar2 + 0x1dc)) {
+      if (0 < (int)pVVar2->field_01DC) {
         do {
-          (**(code **)(*(int *)pVVar2 + 8))
-                    (*(int *)(pVVar2 + 0x1ec) + iVar4,*(int *)(pVVar2 + 0x1f0) + iVar3,
-                     (*(int *)(pVVar2 + 0x1d4) + *(int *)(pVVar2 + 0x1e4)) * iVar4,
-                     (*(int *)(pVVar2 + 0x1d8) + *(int *)(pVVar2 + 0x1e8)) * iVar3);
+          (**(code **)(pVVar2->field_0000 + 8))
+                    (*(int *)&pVVar2->field_0x1ec + iVar4,*(int *)&pVVar2->field_0x1f0 + iVar3,
+                     (pVVar2->field_01D4 + pVVar2->field_01E4) * iVar4,
+                     (pVVar2->field_01D8 + pVVar2->field_01E8) * iVar3);
           iVar4 = iVar4 + 1;
-        } while (iVar4 < *(int *)(pVVar2 + 0x1dc));
+        } while (iVar4 < (int)pVVar2->field_01DC);
       }
       iVar3 = iVar3 + 1;
-    } while (iVar3 < *(int *)(pVVar2 + 0x1e0));
+    } while (iVar3 < (int)pVVar2->field_01E0);
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

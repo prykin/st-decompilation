@@ -36,12 +36,12 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x1d6);
     return;
   }
-  *(undefined4 *)&local_c->field_0x20 = *(undefined4 *)(local_8 + 0x14);
+  local_c->field_0020 = *(undefined4 *)(local_8 + 0x14);
   local_c->field_0024 = *(undefined1 *)(local_8 + 4);
-  *(undefined2 *)&local_c->field_0x25 = *(undefined2 *)(local_8 + 0x18);
-  *(undefined2 *)&local_c->field_0x27 = *(undefined2 *)(local_8 + 0x1a);
-  *(undefined4 *)&local_c->field_0x31 = *(undefined4 *)(local_8 + 0x2c);
-  *(undefined4 *)&local_c->field_0x35 = *(undefined4 *)(local_8 + 0x30);
+  local_c->field_0025 = *(undefined2 *)(local_8 + 0x18);
+  local_c->field_0027 = *(undefined2 *)(local_8 + 0x1a);
+  local_c->field_0031 = *(undefined4 *)(local_8 + 0x2c);
+  local_c->field_0035 = *(undefined4 *)(local_8 + 0x30);
   local_c->field_0039 = *(undefined4 *)(local_8 + 0x34);
   if (*(int *)(local_8 + 0x1c) == -1) {
     local_c->field_0029 = 0;
@@ -53,11 +53,11 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
   iVar3 = *(int *)(iVar5 + 0x24);
   if (iVar3 != -1) {
     puVar4 = FUN_006b00c0((uint *)0x0,(uint *)(iVar3 + iVar5),&LAB_004045c5);
-    *(uint **)&pSVar2->field_0x2d = puVar4;
+    pSVar2->field_002D = puVar4;
     g_currentExceptionFrame = local_50.previous;
     return;
   }
-  *(undefined4 *)&pSVar2->field_0x2d = 0;
+  pSVar2->field_002D = 0;
   g_currentExceptionFrame = local_50.previous;
   return;
 }

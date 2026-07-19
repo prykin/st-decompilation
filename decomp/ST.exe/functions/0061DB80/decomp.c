@@ -26,12 +26,12 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (iVar2 == 0) {
-    puVar3 = FUN_00709af0(DAT_00806774,CASE_0,(&PTR_s_light01_007d0164)[*(int *)(local_c + 0x3c)],
-                          0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar3 = mfRLoad(DAT_00806774,CASE_0,(&PTR_s_light01_007d0164)[local_c->field_003C],0xffffffff,0
+                     ,1,0,(undefined4 *)0x0);
     thunk_FUN_0061d9c0(this_00,(undefined4 *)puVar3,(int *)&local_8,0);
-    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(this_00 + 0x93) << 4);
-    *(undefined4 **)(this_00 + 0x57) = puVar4;
-    for (iVar2 = (*(uint *)(this_00 + 0x93) & 0xfffffff) << 2; iVar2 != 0; iVar2 = iVar2 + -1) {
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(this_00->field_0093 << 4);
+    this_00->field_0057 = puVar4;
+    for (iVar2 = (this_00->field_0093 & 0xfffffff) << 2; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
@@ -40,18 +40,18 @@ undefined4 __thiscall STLightC::LoadNextLight(STLightC *this)
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
     iVar2 = 0;
-    if (0 < *(int *)(this_00 + 0x93)) {
+    if (0 < (int)this_00->field_0093) {
       do {
-        *(undefined4 *)(*(int *)(this_00 + 0x57) + iVar2 * 4) = 0xffffffff;
-        iVar6 = iVar2 + *(int *)(this_00 + 0x93) * 3;
+        *(undefined4 *)(this_00->field_0057 + iVar2 * 4) = 0xffffffff;
+        iVar6 = iVar2 + this_00->field_0093 * 3;
         iVar2 = iVar2 + 1;
-        *(undefined4 *)(*(int *)(this_00 + 0x57) + iVar6 * 4) = 0xffffffff;
-      } while (iVar2 < *(int *)(this_00 + 0x93));
+        *(undefined4 *)(this_00->field_0057 + iVar6 * 4) = 0xffffffff;
+      } while (iVar2 < (int)this_00->field_0093);
     }
-    **(undefined4 **)(this_00 + 0x57) = 0;
-    *(undefined4 *)(*(int *)(this_00 + 0x57) + *(int *)(this_00 + 0x93) * 0xc) = 0;
+    *(undefined4 *)this_00->field_0057 = 0;
+    *(undefined4 *)(this_00->field_0057 + this_00->field_0093 * 0xc) = 0;
     puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,local_8,0x30,10);
-    *(uint **)(this_00 + 0xa3) = puVar5;
+    this_00->field_00A3 = puVar5;
     g_currentExceptionFrame = local_50.previous;
     return 1;
   }

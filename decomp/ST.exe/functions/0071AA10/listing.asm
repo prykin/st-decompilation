@@ -1,4 +1,4 @@
-FUN_0071aa10:
+mfSarLoad:
 0071AA10  55                        PUSH EBP
 0071AA11  8B EC                     MOV EBP,ESP
 0071AA13  83 EC 4C                  SUB ESP,0x4c

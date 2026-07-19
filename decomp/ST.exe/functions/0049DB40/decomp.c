@@ -62,18 +62,16 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
       *puVar10 = 0;
       puVar10 = puVar10 + 1;
     }
-    *(undefined4 *)&local_30->field_0x65 = 0;
+    local_30->field_0065 = 0;
     local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
-    if (*(int *)&pSVar2->field_0x164 == 0) {
-      Library::DKW::TBL::FUN_006afe40((int *)&local_8,*(uint **)&pSVar2->field_0x168);
+    if (pSVar2->field_0164 == 0) {
+      Library::DKW::TBL::FUN_006afe40((int *)&local_8,(uint *)pSVar2->field_0168);
     }
-    if (*(int *)&pSVar2->field_0x164 == 1) {
+    if (pSVar2->field_0164 == 1) {
       STAllPlayersC::GetGObjFromBox
-                (DAT_007fa174,pSVar2->field_0024,*(short *)&pSVar2->field_0x16c,
-                 *(short *)&pSVar2->field_0x16e,*(short *)&pSVar2->field_0x170,
-                 *(short *)&pSVar2->field_0x172,*(short *)&pSVar2->field_0x174,
-                 *(short *)&pSVar2->field_0x176,(int *)&local_1c,(int *)&local_10,&local_14,
-                 &local_18);
+                (DAT_007fa174,pSVar2->field_0024,pSVar2->field_016C,pSVar2->field_016E,
+                 pSVar2->field_0170,pSVar2->field_0172,pSVar2->field_0174,pSVar2->field_0176,
+                 (int *)&local_1c,(int *)&local_10,&local_14,&local_18);
       if (0 < local_14) {
         Library::DKW::TBL::FUN_006afe40((int *)&local_8,local_1c);
       }
@@ -130,9 +128,9 @@ undefined4 __thiscall STGroupBoatC::GrpGuard(STGroupBoatC *this,int param_1)
     if (puVar4 != (uint *)0x0) {
       FUN_006ae110((byte *)puVar4);
     }
-    if (*(byte **)&pSVar2->field_0x168 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pSVar2->field_0x168);
-      *(undefined4 *)&pSVar2->field_0x168 = 0;
+    if ((byte *)pSVar2->field_0168 != (byte *)0x0) {
+      FUN_006ae110((byte *)pSVar2->field_0168);
+      pSVar2->field_0168 = 0;
     }
   }
   else if (*(uint *)(DAT_00802a38 + 0xe4) % 5 != 0) {

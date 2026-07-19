@@ -60,7 +60,7 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x24);
     }
   }
-  puVar5 = FUN_00709af0(param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar5 = mfRLoad(param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
   *(ushort **)(this_00->field_0020 + iVar3) = puVar5;
   iVar4 = **(int **)(this_00->field_0020 + iVar3);
   iVar6 = Library::DKW::LIB::FUN_006aac70(iVar4 * 4);
@@ -113,13 +113,13 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   puVar12[5] = *(int *)*puVar12 + -1;
   *(undefined4 *)(this_00->field_0020 + 0x20 + local_8) = 0;
   puVar12 = *(undefined4 **)(this_00->field_0020 + local_8);
-  FUN_006e98e0((void *)this_00[1].field_0018,this_00->field_0018,local_14,*puVar12,
+  FUN_006e98e0((void *)this_00->field_003C,this_00->field_0018,local_14,*puVar12,
                *(int *)((int)puVar12 + 0x21),0);
   puVar5 = (ushort *)(this_00->field_0020 + 0xe + local_8);
   *puVar5 = *puVar5 & 0xfe37;
   pbVar13 = (byte *)(this_00->field_0020 + 0xe + local_8);
   *pbVar13 = *pbVar13 | 0x20;
-  *(uint *)&this_00->field_0x1c = *(uint *)&this_00->field_0x1c & ~(1 << ((byte)uVar9 & 0x1f));
+  this_00->field_001C = this_00->field_001C & ~(1 << ((byte)uVar9 & 0x1f));
   g_currentExceptionFrame = local_58.previous;
   return 0;
 }

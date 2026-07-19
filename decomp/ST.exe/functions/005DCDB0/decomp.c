@@ -21,7 +21,7 @@ void __fastcall FUN_005dcdb0(void *param_1)
   if (*(int *)((int)param_1 + 0x69a) != 0) {
     FUN_006ab060((undefined4 *)((int)param_1 + 0x69a));
   }
-  thunk_FUN_00541030();
+  DelAllAccelerators();
   thunk_FUN_005db2a0((int)param_1);
   DAT_0080c50a = 1;
   thunk_FUN_005daf20((int)param_1);

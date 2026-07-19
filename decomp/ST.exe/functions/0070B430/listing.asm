@@ -1,4 +1,4 @@
-FUN_0070b430:
+mfQmtLoad:
 0070B430  55                        PUSH EBP
 0070B431  8B EC                     MOV EBP,ESP
 0070B433  83 EC 54                  SUB ESP,0x54

@@ -382,7 +382,7 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
                     (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xe8c);
         }
         thunk_FUN_004162b0(pSVar5,&local_20,&local_1e,&local_22);
-        thunk_FUN_00481520(pSVar5,(int)local_20,(int)local_1e,*(undefined4 *)&this_00->field_0x222);
+        thunk_FUN_00481520(pSVar5,(int)local_20,(int)local_1e,this_00->field_0222);
         STBoatC::CmdToObj(pSVar5,CASE_1,&local_44);
         uVar11 = uVar11 + 1;
         uVar10 = uVar11 & 0xffff;
@@ -465,25 +465,24 @@ void __thiscall STGroupBoatC::RechargeNewCmd(STGroupBoatC *this,void *param_1)
     if (puVar9 != (uint *)0x0) {
       FUN_006ae110((byte *)puVar9);
     }
-    DistributeMD(this_00,1,*(int *)&this_00->field_0x24e,*(int *)&this_00->field_0x266,
-                 this_00->field_002D);
+    DistributeMD(this_00,1,this_00->field_024E,this_00->field_0266,this_00->field_002D);
     iVar3 = extraout_ECX_06;
   }
   if (this_00->field_01E6 == 9) {
     uVar11 = 0;
     local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
     local_154 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_150 = *(undefined2 *)&this_00->field_0x276;
-    local_14e = *(undefined2 *)&this_00->field_0x278;
-    local_14a = *(undefined4 *)&this_00->field_0x27c;
-    local_14c = *(undefined2 *)&this_00->field_0x27a;
-    local_146 = *(undefined4 *)&this_00->field_0x280;
-    local_133 = *(undefined2 *)&this_00->field_0x293;
-    local_142 = *(undefined4 *)&this_00->field_0x284;
-    local_13e = *(undefined4 *)&this_00->field_0x288;
-    local_13a = *(undefined4 *)&this_00->field_0x28c;
-    local_136 = *(undefined2 *)&this_00->field_0x290;
-    local_134 = this_00->field_0x292;
+    local_150 = this_00->field_0276;
+    local_14e = this_00->field_0278;
+    local_14a = this_00->field_027C;
+    local_14c = this_00->field_027A;
+    local_146 = this_00->field_0280;
+    local_133 = this_00->field_0293;
+    local_142 = this_00->field_0284;
+    local_13e = this_00->field_0288;
+    local_13a = this_00->field_028C;
+    local_136 = this_00->field_0290;
+    local_134 = this_00->field_0292;
     if (local_14 != 0) {
       uVar10 = 0;
       do {
@@ -568,8 +567,8 @@ LAB_004a1878:
     uVar11 = 0;
     local_1c = *(undefined4 *)(DAT_00802a38 + 0xe4);
     local_64 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_60 = *(undefined2 *)&this_00->field_0295;
-    local_5e = *(undefined2 *)((int)&this_00->field_0295 + 2);
+    local_60 = *(undefined2 *)&this_00->field_0x295;
+    local_5e = this_00->field_0297;
     local_5c = this_00->field_0299;
     if (local_14 != 0) {
       uVar10 = 0;
@@ -767,10 +766,10 @@ LAB_004a1a74:
                 iVar3 = extraout_ECX_28;
                 goto LAB_004a1ea4;
               }
-              local_d4 = *(undefined2 *)&this_00->field_02A3;
-              local_d2 = *(undefined2 *)((int)&this_00->field_02A3 + 2);
-              local_d0 = *(undefined2 *)&this_00->field_02A7;
-              local_ce = *(undefined4 *)((int)&this_00->field_02A7 + 2);
+              local_d4 = *(undefined2 *)&this_00->field_0x2a3;
+              local_d2 = this_00->field_02A5;
+              local_d0 = *(undefined2 *)&this_00->field_0x2a7;
+              local_ce = *(undefined4 *)&this_00->field_0x2a9;
               STBoatC::CmdToObj(pSVar5,CASE_F,&local_d8);
               puVar8 = local_10;
               if (local_10 == (uint *)0x0) {
@@ -855,9 +854,8 @@ LAB_004a1ede:
             if ((((iVar3 == 7) || (iVar3 == 0x13)) || (iVar3 == 0x1b)) &&
                (iVar3 = thunk_FUN_00492370((int)pSVar5), iVar3 != 0)) {
               STBoatC::CmdToObj(pSVar5,CASE_10,local_e4);
-              if (((*(short *)&this_00->field_0x2ad != -1) ||
-                  (*(short *)&this_00->field_0x2af != -1)) ||
-                 (*(short *)&this_00->field_0x2b1 != -1)) {
+              if (((*(short *)&this_00->field_0x2ad != -1) || (this_00->field_02AF != -1)) ||
+                 (this_00->field_02B1 != -1)) {
                 puVar9 = local_10;
                 if (local_10 == (uint *)0x0) {
                   puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
@@ -872,9 +870,8 @@ LAB_004a2089:
               if (iVar3 == 0) {
                 STBoatC::CmdToObj(pSVar5,CASE_3,&local_1c);
               }
-              else if (((*(short *)&this_00->field_0x2ad != -1) ||
-                       (*(short *)&this_00->field_0x2af != -1)) ||
-                      (*(short *)&this_00->field_0x2b1 != -1)) {
+              else if (((*(short *)&this_00->field_0x2ad != -1) || (this_00->field_02AF != -1)) ||
+                      (this_00->field_02B1 != -1)) {
                 puVar9 = local_c;
                 if (local_c == (uint *)0x0) {
                   puVar9 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,2,1);
@@ -924,11 +921,11 @@ LAB_004a20d0:
     }
   }
   if (this_00->field_01E6 == 0xd) {
-    local_52 = *(undefined2 *)((int)&this_00->field_02B3 + 2);
+    local_52 = this_00->field_02B5;
     uVar11 = 0;
     local_58 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_50 = *(undefined2 *)&this_00->field_02B7;
-    local_54 = *(undefined2 *)&this_00->field_02B3;
+    local_50 = *(undefined2 *)&this_00->field_0x2b7;
+    local_54 = *(undefined2 *)&this_00->field_0x2b3;
     local_1c = local_58;
     if (0 < (int)local_14) {
       uVar10 = 0;
@@ -944,8 +941,7 @@ LAB_004a20d0:
             RaiseInternalException
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0xfc2);
           }
-          iVar3 = *(int *)((int)&this_00->field_02B7 + 2);
-          if (iVar3 == -1) {
+          if (*(int *)&this_00->field_0x2b9 == -1) {
             if ((*(int *)&pSVar5->field_0x7b6 == 0) || (*(int *)&pSVar5->field_0x7be < 1)) {
 LAB_004a221d:
               puVar13 = &local_1c;
@@ -957,8 +953,8 @@ LAB_004a221d:
             }
           }
           else {
-            if ((*(int *)&pSVar5->field_0x7b6 != iVar3) || (*(int *)&pSVar5->field_0x7be < 1))
-            goto LAB_004a221d;
+            if ((*(int *)&pSVar5->field_0x7b6 != *(int *)&this_00->field_0x2b9) ||
+               (*(int *)&pSVar5->field_0x7be < 1)) goto LAB_004a221d;
             puVar13 = &local_58;
             SVar12 = CASE_7;
           }
@@ -970,11 +966,11 @@ LAB_004a221d:
     }
   }
   if (this_00->field_01E6 == 0xe) {
-    local_78 = *(undefined2 *)&this_00->field_02BD;
+    local_78 = *(undefined2 *)&this_00->field_0x2bd;
     uVar11 = 0;
     local_7c = *(undefined4 *)(DAT_00802a38 + 0xe4);
     local_74 = this_00->field_02C1;
-    local_76 = *(undefined2 *)((int)&this_00->field_02BD + 2);
+    local_76 = this_00->field_02BF;
     local_1c = local_7c;
     if (0 < (int)local_14) {
       uVar10 = 0;
@@ -1006,11 +1002,11 @@ LAB_004a221d:
     }
   }
   if (this_00->field_01E6 == 0xf) {
-    local_83 = *(undefined2 *)((int)&this_00->field_02C3 + 1);
+    local_83 = this_00->field_02C4;
     uVar11 = 0;
     local_88 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_81 = *(undefined4 *)((int)&this_00->field_02C3 + 3);
-    local_84 = *(undefined1 *)&this_00->field_02C3;
+    local_81 = *(undefined4 *)&this_00->field_0x2c6;
+    local_84 = this_00->field_0x2c3;
     local_1c = local_88;
     if (0 < (int)local_14) {
       uVar10 = 0;
@@ -1046,8 +1042,8 @@ LAB_004a221d:
     local_c4 = this_00->field_02CE;
     uVar11 = 0;
     local_c8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_c0 = *(undefined2 *)&this_00->field_02D2;
-    local_be = *(undefined2 *)((int)&this_00->field_02D2 + 2);
+    local_c0 = *(undefined2 *)&this_00->field_0x2d2;
+    local_be = this_00->field_02D4;
     local_bc = this_00->field_02D6;
     if (0 < (int)local_14) {
       uVar10 = 0;
@@ -1074,12 +1070,12 @@ LAB_004a221d:
     local_f8 = this_00->field_02D8;
     uVar11 = 0;
     local_fc = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_f4 = *(undefined2 *)&this_00->field_02DC;
-    local_f0 = *(undefined2 *)&this_00->field_02E0;
-    local_ea = *(undefined2 *)((int)&this_00->field_02E4 + 2);
-    local_f2 = *(undefined2 *)((int)&this_00->field_02DC + 2);
-    local_ee = *(undefined2 *)((int)&this_00->field_02E0 + 2);
-    local_ec = *(undefined2 *)&this_00->field_02E4;
+    local_f4 = *(undefined2 *)&this_00->field_0x2dc;
+    local_f0 = *(undefined2 *)&this_00->field_0x2e0;
+    local_ea = this_00->field_02E6;
+    local_f2 = this_00->field_02DE;
+    local_ee = this_00->field_02E2;
+    local_ec = *(undefined2 *)&this_00->field_0x2e4;
     if (0 < (int)local_14) {
       uVar10 = 0;
       do {
@@ -1102,9 +1098,9 @@ LAB_004a221d:
     }
   }
   if (this_00->field_01E6 == 0x12) {
-    local_6c = *(undefined2 *)&this_00->field_02E8;
+    local_6c = *(undefined2 *)&this_00->field_0x2e8;
     local_70 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_6a = *(undefined2 *)((int)&this_00->field_02E8 + 2);
+    local_6a = this_00->field_02EA;
     local_68 = this_00->field_02EC;
     uVar11 = 0;
     local_18 = 0;
@@ -1187,13 +1183,13 @@ LAB_004a26f5:
     }
   }
   if (this_00->field_01E6 == 0x13) {
-    local_b2 = *(undefined2 *)((int)&this_00->field_02EE + 2);
+    local_b2 = this_00->field_02F0;
     uVar10 = 0;
     local_b8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-    local_b0 = *(undefined2 *)&this_00->field_02F2;
+    local_b0 = *(undefined2 *)&this_00->field_0x2f2;
     uVar11 = CONCAT22((short)((uint)DAT_00802a38 >> 0x10),local_b0);
-    local_b4 = *(undefined2 *)&this_00->field_02EE;
-    local_ae = *(undefined4 *)((int)&this_00->field_02F2 + 2);
+    local_b4 = *(undefined2 *)&this_00->field_0x2ee;
+    local_ae = *(undefined4 *)&this_00->field_0x2f4;
     local_1c = local_b8;
     if (0 < (int)local_14) {
       uVar11 = 0;
@@ -1250,22 +1246,18 @@ LAB_004a2897:
   }
   if (this_00->field_01E6 == 0x14) {
     local_28 = Way3DGrpGetDistrPoint
-                         (this_00,this_00->field_002D,(int)*(short *)((int)&this_00->field_02FC + 2)
-                          ,(int)*(short *)&this_00->field_0300,
-                          (int)*(short *)((int)&this_00->field_0300 + 2),
-                          (int)*(short *)&this_00->field_02F8,
-                          (int)*(short *)((int)&this_00->field_02F8 + 2),
-                          (int)*(short *)&this_00->field_02FC);
+                         (this_00,this_00->field_002D,(int)(short)this_00->field_02FE,
+                          (int)*(short *)&this_00->field_0x300,(int)(short)this_00->field_0302,
+                          (int)*(short *)&this_00->field_0x2f8,(int)(short)this_00->field_02FA,
+                          (int)*(short *)&this_00->field_0x2fc);
     if (local_28 == (uint *)0x0) {
       return;
     }
     puVar9 = Way3DGrpGetDistrPoint
-                       (this_00,this_00->field_002D,(int)*(short *)&this_00->field_02F8,
-                        (int)*(short *)((int)&this_00->field_02F8 + 2),
-                        (int)*(short *)&this_00->field_02FC,
-                        (int)*(short *)((int)&this_00->field_02FC + 2),
-                        (int)*(short *)&this_00->field_0300,
-                        (int)*(short *)((int)&this_00->field_0300 + 2));
+                       (this_00,this_00->field_002D,(int)*(short *)&this_00->field_0x2f8,
+                        (int)(short)this_00->field_02FA,(int)*(short *)&this_00->field_0x2fc,
+                        (int)(short)this_00->field_02FE,(int)*(short *)&this_00->field_0x300,
+                        (int)(short)this_00->field_0302);
     if (puVar9 == (uint *)0x0) {
       FUN_006ae110((byte *)local_28);
       return;

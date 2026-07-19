@@ -11,16 +11,16 @@ function_address	enum_name	status	detail
 0041F630	Global_sub_0041F630_switch_0Enum	disabled	apply=0
 0041F630	Global_sub_0041F630_switch_1Enum	disabled	apply=0
 0041F630	Global_sub_0041F630_switch_2Enum	disabled	apply=0
-0041F9B0	STSprGameObjC_CheckRay_param_7Enum	applied	created /SubmarineTitans/Recovered/Enums/STSprGameObjC_CheckRay_param_7Enum; parameter param_7 -> /SubmarineTitans/Recovered/Enums/STSprGameObjC_CheckRay_param_7Enum
+0041F9B0	STSprGameObjC_CheckRay_param_7Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSprGameObjC_CheckRay_param_7Enum; parameter already uses enum
 00420340	STSprGameObjC_LoadActFrame_switch_0Enum	disabled	apply=0
 00420340	STSprGameObjC_LoadActFrame_switch_1Enum	disabled	apply=0
 00420AE0	STSprGameObjC_LoadLifeFrame_switch_0Enum	disabled	apply=0
-004248D0	Global_sub_004248D0_param_5Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_5Enum; parameter param_5 -> /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_5Enum
-004248D0	Global_sub_004248D0_param_6Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum; parameter param_6 -> /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum
+004248D0	Global_sub_004248D0_param_5Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_5Enum; parameter already uses enum
+004248D0	Global_sub_004248D0_param_6Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004248D0_param_6Enum; parameter already uses enum
 00424E10	Global_sub_00424E10_switch_0Enum	disabled	apply=0
-0042B620	STAllPlayersC_GetObjPtr_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum
-00430750	Global_sub_00430750_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00430750_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00430750_param_1Enum
-00435B90	Global_sub_00435B90_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum
+0042B620	STAllPlayersC_GetObjPtr_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum; parameter already uses enum
+00430750	Global_sub_00430750_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00430750_param_1Enum; parameter already uses enum
+00435B90	Global_sub_00435B90_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00435B90_param_3Enum; parameter already uses enum
 00436F20	STAllPlayersC_CmdToPlsObj_switch_0Enum	disabled	apply=0
 00436F20	STAllPlayersC_CmdToPlsObj_switch_1Enum	disabled	apply=0
 00436F20	STAllPlayersC_CmdToPlsObj_switch_2Enum	disabled	apply=0
@@ -44,25 +44,25 @@ function_address	enum_name	status	detail
 0043BEB0	STAllPlayersC_GetPanelInfo_switch_7Enum	disabled	apply=0
 0043BEB0	STAllPlayersC_GetPanelInfo_switch_8Enum	disabled	apply=0
 0043BEB0	STAllPlayersC_GetPanelInfo_switch_9Enum	disabled	apply=0
-0043E640	Global_sub_0043E640_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0043E640_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_0043E640_param_2Enum
-0043E780	STAllPlayersC_GetTOBJList_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJList_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJList_param_2Enum
-0043E9A0	Global_sub_0043E9A0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0043E9A0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_0043E9A0_param_2Enum
-0043EC20	Global_sub_0043EC20_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0043EC20_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_0043EC20_param_2Enum
-0043EED0	STAllPlayersC_GetTOBJListFromDArr_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJListFromDArr_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJListFromDArr_param_3Enum
-0043FC50	Global_sub_0043FC50_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0043FC50_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_0043FC50_param_1Enum
-004458D0	STAllPlayersC_GetBoatWeaponInfo_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetBoatWeaponInfo_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetBoatWeaponInfo_param_1Enum
+0043E640	Global_sub_0043E640_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043E640_param_2Enum; parameter already uses enum
+0043E780	STAllPlayersC_GetTOBJList_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJList_param_2Enum; parameter already uses enum
+0043E9A0	Global_sub_0043E9A0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043E9A0_param_2Enum; parameter already uses enum
+0043EC20	Global_sub_0043EC20_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043EC20_param_2Enum; parameter already uses enum
+0043EED0	STAllPlayersC_GetTOBJListFromDArr_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJListFromDArr_param_3Enum; parameter already uses enum
+0043FC50	Global_sub_0043FC50_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0043FC50_param_1Enum; parameter already uses enum
+004458D0	STAllPlayersC_GetBoatWeaponInfo_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetBoatWeaponInfo_param_1Enum; parameter already uses enum
 00448120	STAllPlayersC_PutOnPlaceGuardBoats_switch_0Enum	disabled	apply=0
 00448120	STAllPlayersC_PutOnPlaceGuardBoats_switch_1Enum	disabled	apply=0
-00449B60	STAllPlayersC_DestroyObjectMsg_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_DestroyObjectMsg_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_DestroyObjectMsg_param_3Enum
-0044B5F0	STAllPlayersC_SelectObjects_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_SelectObjects_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_SelectObjects_param_1Enum
-0044C130	STAllPlayersC_GetTOBJImage_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJImage_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJImage_param_2Enum
+00449B60	STAllPlayersC_DestroyObjectMsg_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_DestroyObjectMsg_param_3Enum; parameter already uses enum
+0044B5F0	STAllPlayersC_SelectObjects_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_SelectObjects_param_1Enum; parameter already uses enum
+0044C130	STAllPlayersC_GetTOBJImage_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetTOBJImage_param_2Enum; parameter already uses enum
 0044CE40	Global_sub_0044CE40_switch_0Enum	disabled	apply=0
 0044D320	Global_sub_0044D320_switch_1Enum	disabled	apply=0
 0044D320	Global_sub_0044D320_switch_2Enum	disabled	apply=0
-0044D320	Global_sub_0044D320_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_1Enum
-0044E980	STBoatC_GetVisualInfo_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum
-0045EF00	STBoatC_CmdToObj_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_CmdToObj_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/STBoatC_CmdToObj_param_1Enum
-0045F400	STBoatC_CheckPBoxCmd_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_CheckPBoxCmd_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/STBoatC_CheckPBoxCmd_param_1Enum
+0044D320	Global_sub_0044D320_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_1Enum; parameter already uses enum
+0044E980	STBoatC_GetVisualInfo_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum; parameter already uses enum
+0045EF00	STBoatC_CmdToObj_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_CmdToObj_param_1Enum; parameter already uses enum
+0045F400	STBoatC_CheckPBoxCmd_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_CheckPBoxCmd_param_1Enum; parameter already uses enum
 0045F980	Global_sub_0045F980_switch_0Enum	disabled	apply=0
 0045FF50	Global_sub_0045FF50_switch_0Enum	disabled	apply=0
 0045FF50	Global_sub_0045FF50_switch_1Enum	disabled	apply=0
@@ -86,17 +86,17 @@ function_address	enum_name	status	detail
 00465C60	STBoatC_LoadRC_switch_5Enum	disabled	apply=0
 00465C60	STBoatC_LoadRC_switch_6Enum	disabled	apply=0
 00465C60	STBoatC_LoadRC_switch_7Enum	disabled	apply=0
-0046AA50	STBoatC_field_04D5State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_04D5State; field field_04D5 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_04D5State
+0046AA50	STBoatC_field_04D5State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_04D5State; field already uses enum
 0046B100	STBoatC_Build_switch_0Enum	disabled	apply=0
-0046C980	STBoatC_field_0508State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_0508State; field field_0508 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_0508State
+0046C980	STBoatC_field_0508State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0508State; field already uses enum
 0046D450	STBoatC_UnLoadRC_switch_0Enum	disabled	apply=0
 0046D450	STBoatC_UnLoadRC_switch_1Enum	disabled	apply=0
 0046D450	STBoatC_UnLoadRC_switch_2Enum	disabled	apply=0
-0046EFD0	STBoatC_field_054CState	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_054CState; field field_054C -> /SubmarineTitans/Recovered/Enums/STBoatC_field_054CState
+0046EFD0	STBoatC_field_054CState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_054CState; field already uses enum
 0046F5C0	STBoatC_ToDok_switch_0Enum	disabled	apply=0
 0046F5C0	STBoatC_ToDok_switch_1Enum	disabled	apply=0
 0046F5C0	STBoatC_ToDok_switch_2Enum	disabled	apply=0
-004714D0	STBoatC_field_0580State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_0580State; field field_0580 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_0580State
+004714D0	STBoatC_field_0580State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0580State; field already uses enum
 00471AC0	STBoatC_Guard_switch_0Enum	disabled	apply=0
 00471AC0	STBoatC_Guard_switch_1Enum	disabled	apply=0
 00471AC0	STBoatC_Guard_switch_2Enum	disabled	apply=0
@@ -105,7 +105,7 @@ function_address	enum_name	status	detail
 004749C0	STBoatC_WaitLoad_switch_0Enum	disabled	apply=0
 004761B0	STBoatC_SetMine_switch_0Enum	disabled	apply=0
 00476CE0	STBoatC_Capture_switch_0Enum	disabled	apply=0
-00478030	STBoatC_field_0611State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_0611State; field field_0611 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_0611State
+00478030	STBoatC_field_0611State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0611State; field already uses enum
 00478640	STBoatC_Recharge_switch_0Enum	disabled	apply=0
 00478640	STBoatC_Recharge_switch_1Enum	disabled	apply=0
 00479600	STBoatC_Teleport_switch_0Enum	disabled	apply=0
@@ -113,44 +113,44 @@ function_address	enum_name	status	detail
 0047BF70	STBoatC_BackTeleport_switch_0Enum	disabled	apply=0
 0047C050	STBoatC_Bring_switch_0Enum	disabled	apply=0
 0047C050	STBoatC_Bring_switch_1Enum	disabled	apply=0
-0047CF20	STBoatC_field_0687State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State; field field_0687 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State
+0047CF20	STBoatC_field_0687State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State; field already uses enum
 0047DF00	STBoatC_Dismant_switch_0Enum	disabled	apply=0
 0047DF00	STBoatC_Dismant_switch_1Enum	disabled	apply=0
-0047FAD0	STBoatC_field_06C3State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State; field field_06C3 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State
+0047FAD0	STBoatC_field_06C3State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State; field already uses enum
 0047FE10	STBoatC_Scout_switch_0Enum	disabled	apply=0
 0047FE10	STBoatC_Scout_switch_1Enum	disabled	apply=0
 00480600	Global_sub_00480600_switch_0Enum	disabled	apply=0
 00482A00	STBoatC_ChangeActivity_switch_0Enum	disabled	apply=0
-004845E0	Global_sub_004845E0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum
+004845E0	Global_sub_004845E0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004845E0_param_1Enum; parameter already uses enum
 00486B60	Global_sub_00486B60_switch_0Enum	disabled	apply=0
 00486E20	Global_sub_00486E20_switch_0Enum	disabled	apply=0
 00486E20	Global_sub_00486E20_switch_1Enum	disabled	apply=0
 00488890	Global_sub_00488890_switch_0Enum	disabled	apply=0
 00488D10	Global_sub_00488D10_switch_0Enum	disabled	apply=0
-00488F30	STBoatC_field_06F7State	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State; field field_06F7 -> /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State
-004899A0	STBoatC_GetDefenceTarget_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_GetDefenceTarget_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/STBoatC_GetDefenceTarget_param_1Enum
+00488F30	STBoatC_field_06F7State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_field_06F7State; field already uses enum
+004899A0	STBoatC_GetDefenceTarget_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetDefenceTarget_param_1Enum; parameter already uses enum
 0048A910	Global_sub_0048A910_switch_0Enum	disabled	apply=0
 00491240	STBoatC_PrepareForLoading_switch_0Enum	disabled	apply=0
-004919C0	STBoatC_GetCellForLoading_param_6Enum	applied	created /SubmarineTitans/Recovered/Enums/STBoatC_GetCellForLoading_param_6Enum; parameter param_6 -> /SubmarineTitans/Recovered/Enums/STBoatC_GetCellForLoading_param_6Enum
+004919C0	STBoatC_GetCellForLoading_param_6Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STBoatC_GetCellForLoading_param_6Enum; parameter already uses enum
 00493D10	Global_sub_00493D10_switch_0Enum	disabled	apply=0
 00496250	Global_sub_00496250_switch_0Enum	disabled	apply=0
 00496250	Global_sub_00496250_switch_1Enum	disabled	apply=0
 00497E00	STGroupBoatC_GetMessage_switch_0Enum	disabled	apply=0
-00498D20	Global_sub_00498D20_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum
+00498D20	Global_sub_00498D20_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum; parameter already uses enum
 00499DE0	STGroupBoatC_DistributeTargets_switch_0Enum	disabled	apply=0
 00499DE0	STGroupBoatC_DistributeTargets_switch_1Enum	disabled	apply=0
 004A8920	OpticClassC_GetMessage_switch_0Enum	disabled	apply=0
 004A8E00	Global_sub_004A8E00_DAT_008073fcEnum	disabled	apply=0
-004AB070	Global_sub_004AB070_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum
+004AB070	Global_sub_004AB070_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum; parameter already uses enum
 004AB300	Global_sub_004AB300_switch_0Enum	disabled	apply=0
-004AE0B0	Global_sub_004AE0B0_param_4Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004AE0B0_param_4Enum; parameter param_4 -> /SubmarineTitans/Recovered/Enums/Global_sub_004AE0B0_param_4Enum
-004AFFA0	Global_sub_004AFFA0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004AFFA0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004AFFA0_param_2Enum
-004B1120	Global_sub_004B1120_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum
-004B1FB0	Global_sub_004B1FB0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004B1FB0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004B1FB0_param_1Enum
+004AE0B0	Global_sub_004AE0B0_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004AE0B0_param_4Enum; parameter already uses enum
+004AFFA0	Global_sub_004AFFA0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004AFFA0_param_2Enum; parameter already uses enum
+004B1120	Global_sub_004B1120_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum; parameter already uses enum
+004B1FB0	Global_sub_004B1FB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B1FB0_param_1Enum; parameter already uses enum
 004B33D0	Global_sub_004B33D0_switch_0Enum	disabled	apply=0
-004B6E30	Global_sub_004B6E30_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum
-004B7350	Global_sub_004B7350_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004B7350_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004B7350_param_2Enum
-004B7520	Global_sub_004B7520_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum
+004B6E30	Global_sub_004B6E30_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum; parameter already uses enum
+004B7350	Global_sub_004B7350_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B7350_param_2Enum; parameter already uses enum
+004B7520	Global_sub_004B7520_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004B7520_param_2Enum; parameter already uses enum
 004B7F90	Global_sub_004B7F90_switch_0Enum	disabled	apply=0
 004B80D0	TLOBaseTy_SetState_switch_0Enum	disabled	apply=0
 004B80D0	TLOBaseTy_SetState_switch_1Enum	disabled	apply=0
@@ -167,13 +167,13 @@ function_address	enum_name	status	detail
 004BEA70	Global_sub_004BEA70_switch_2Enum	disabled	apply=0
 004BEA70	Global_sub_004BEA70_switch_3Enum	disabled	apply=0
 004BEA70	Global_sub_004BEA70_switch_4Enum	disabled	apply=0
-004C21A0	Global_sub_004C21A0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004C21A0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004C21A0_param_1Enum
+004C21A0	Global_sub_004C21A0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004C21A0_param_1Enum; parameter already uses enum
 004C28B0	Global_sub_004C28B0_switch_0Enum	disabled	apply=0
-004C2950	Global_sub_004C2950_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004C2950_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/Global_sub_004C2950_param_3Enum
+004C2950	Global_sub_004C2950_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004C2950_param_3Enum; parameter already uses enum
 004C2E60	Global_sub_004C2E60_switch_0Enum	disabled	apply=0
 004C4550	Global_sub_004C4550_switch_0Enum	disabled	apply=0
-004C7260	Global_sub_004C7260_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004C7260_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004C7260_param_1Enum
-004C7730	Global_sub_004C7730_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004C7730_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004C7730_param_1Enum
+004C7260	Global_sub_004C7260_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004C7260_param_1Enum; parameter already uses enum
+004C7730	Global_sub_004C7730_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004C7730_param_1Enum; parameter already uses enum
 004C7860	Global_sub_004C7860_switch_0Enum	disabled	apply=0
 004C7860	Global_sub_004C7860_switch_1Enum	disabled	apply=0
 004C7CC0	Global_sub_004C7CC0_switch_0Enum	disabled	apply=0
@@ -183,7 +183,7 @@ function_address	enum_name	status	detail
 004CABB0	TLOBaseTy_RotateSpr_switch_0Enum	disabled	apply=0
 004CAFC0	Global_sub_004CAFC0_switch_1Enum	disabled	apply=0
 004CAFC0	Global_sub_004CAFC0_switch_2Enum	disabled	apply=0
-004CAFC0	Global_sub_004CAFC0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004CAFC0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004CAFC0_param_1Enum
+004CAFC0	Global_sub_004CAFC0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CAFC0_param_1Enum; parameter already uses enum
 004CBC10	TLOBaseTy_AddSprInit_switch_0Enum	disabled	apply=0
 004CBE10	Global_sub_004CBE10_switch_0Enum	disabled	apply=0
 004CBFB0	Global_sub_004CBFB0_switch_0Enum	disabled	apply=0
@@ -192,8 +192,8 @@ function_address	enum_name	status	detail
 004CE9E0	Global_sub_004CE9E0_switch_0Enum	disabled	apply=0
 004CEB00	Global_sub_004CEB00_switch_0Enum	disabled	apply=0
 004CF640	Global_sub_004CF640_switch_0Enum	disabled	apply=0
-004CFA00	Global_sub_004CFA00_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004CFA00_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004CFA00_param_1Enum
-004CFBE0	Global_sub_004CFBE0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004CFBE0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004CFBE0_param_1Enum
+004CFA00	Global_sub_004CFA00_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CFA00_param_1Enum; parameter already uses enum
+004CFBE0	Global_sub_004CFBE0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004CFBE0_param_1Enum; parameter already uses enum
 004D0310	Global_sub_004D0310_switch_0Enum	disabled	apply=0
 004D0670	Global_sub_004D0670_switch_0Enum	disabled	apply=0
 004D32C0	Global_sub_004D32C0_switch_0Enum	disabled	apply=0
@@ -205,8 +205,8 @@ function_address	enum_name	status	detail
 004DA230	Global_sub_004DA230_switch_0Enum	disabled	apply=0
 004DA2B0	Global_sub_004DA2B0_switch_0Enum	disabled	apply=0
 004DC4B0	Global_sub_004DC4B0_switch_0Enum	disabled	apply=0
-004DE1E0	Global_sub_004DE1E0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004DE1E0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004DE1E0_param_1Enum
-004DE300	Global_sub_004DE300_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004DE300_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004DE300_param_1Enum
+004DE1E0	Global_sub_004DE1E0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004DE1E0_param_1Enum; parameter already uses enum
+004DE300	Global_sub_004DE300_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004DE300_param_1Enum; parameter already uses enum
 004DEC10	Global_sub_004DEC10_switch_0Enum	disabled	apply=0
 004DEEB0	Global_sub_004DEEB0_switch_0Enum	disabled	apply=0
 004E0040	Global_sub_004E0040_switch_0Enum	disabled	apply=0
@@ -220,14 +220,14 @@ function_address	enum_name	status	detail
 004E16D0	Global_sub_004E16D0_switch_0Enum	disabled	apply=0
 004E1930	Global_sub_004E1930_switch_0Enum	disabled	apply=0
 004E4B60	Global_sub_004E4B60_switch_0Enum	disabled	apply=0
-004E80F0	Global_sub_004E80F0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004E80F0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004E80F0_param_2Enum
+004E80F0	Global_sub_004E80F0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004E80F0_param_2Enum; parameter already uses enum
 004E9CE0	TLOBaseTy_teleNone_switch_0Enum	disabled	apply=0
 004EAA20	Global_sub_004EAA20_switch_0Enum	disabled	apply=0
 004EAF90	Global_sub_004EAF90_switch_0Enum	disabled	apply=0
 004EC0F0	Global_sub_004EC0F0_switch_0Enum	disabled	apply=0
 004EC2A0	Global_sub_004EC2A0_switch_0Enum	disabled	apply=0
-004EC700	Global_sub_004EC700_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004EC700_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004EC700_param_1Enum
-004EC900	Global_sub_004EC900_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004EC900_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004EC900_param_1Enum
+004EC700	Global_sub_004EC700_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004EC700_param_1Enum; parameter already uses enum
+004EC900	Global_sub_004EC900_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004EC900_param_1Enum; parameter already uses enum
 004ECEA0	Global_sub_004ECEA0_switch_0Enum	disabled	apply=0
 004ED430	Global_sub_004ED430_switch_0Enum	disabled	apply=0
 004ED4B0	Global_sub_004ED4B0_switch_0Enum	disabled	apply=0
@@ -240,7 +240,7 @@ function_address	enum_name	status	detail
 004EF6D0	BldBoatPanelTy_GetMessage_switch_0Enum	disabled	apply=0
 004F05C0	BldObjPanelTy_InitBldObjPanel_switch_0Enum	disabled	apply=0
 004F1080	BldObjPanelTy_GetMessage_switch_0Enum	disabled	apply=0
-004F19D0	Global_sub_004F19D0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum
+004F19D0	Global_sub_004F19D0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004F19D0_param_2Enum; parameter already uses enum
 004F2560	CPanelTy_PaintWeap_switch_0Enum	disabled	apply=0
 004F2560	CPanelTy_PaintWeap_switch_1Enum	disabled	apply=0
 004F2560	CPanelTy_PaintWeap_switch_2Enum	disabled	apply=0
@@ -256,8 +256,8 @@ function_address	enum_name	status	detail
 004F80A0	CPanelTy_PaintTV_switch_1Enum	disabled	apply=0
 004F96A0	CPanelTy_PlayBrief_switch_0Enum	disabled	apply=0
 004F9ED0	CPanelTy_SwitchCPanel_switch_0Enum	disabled	apply=0
-004FA870	Global_sub_004FA870_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum
-004FAB10	Global_sub_004FAB10_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_004FAB10_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_004FAB10_param_1Enum
+004FA870	Global_sub_004FA870_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum; parameter already uses enum
+004FAB10	Global_sub_004FAB10_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_004FAB10_param_1Enum; parameter already uses enum
 004FB060	CPanelTy_GetMessage_switch_0Enum	disabled	apply=0
 004FB060	CPanelTy_GetMessage_switch_1Enum	disabled	apply=0
 004FB060	CPanelTy_GetMessage_switch_2Enum	disabled	apply=0
@@ -277,7 +277,7 @@ function_address	enum_name	status	detail
 00503450	CPanelTy_SetControlBoatSI_switch_0Enum	disabled	apply=0
 00503450	CPanelTy_SetControlBoatSI_switch_1Enum	disabled	apply=0
 00503BB0	CPanelTy_SetCmdBoat_switch_0Enum	disabled	apply=0
-005050B0	Global_sub_005050B0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005050B0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005050B0_param_1Enum
+005050B0	Global_sub_005050B0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005050B0_param_1Enum; parameter already uses enum
 00505230	CPanelTy_PaintMunition_switch_0Enum	disabled	apply=0
 00505230	CPanelTy_PaintMunition_switch_1Enum	disabled	apply=0
 00505230	CPanelTy_PaintMunition_switch_2Enum	disabled	apply=0
@@ -312,25 +312,25 @@ function_address	enum_name	status	detail
 0051DDD0	HelpPanelTy_GetMessage_switch_3Enum	disabled	apply=0
 0051FBA0	HelpStringTy_GetMessage_switch_0Enum	disabled	apply=0
 005206F0	InfocPanelTy_Update_switch_0Enum	disabled	apply=0
-00523410	Global_sub_00523410_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00523410_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00523410_param_1Enum
-00524FE0	Global_sub_00524FE0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00524FE0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00524FE0_param_1Enum
-005252C0	Global_sub_005252C0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005252C0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005252C0_param_1Enum
-00525390	Global_sub_00525390_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00525390_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00525390_param_1Enum
-00525890	Global_sub_00525890_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00525890_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00525890_param_1Enum
-005259B0	Global_sub_005259B0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005259B0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005259B0_param_1Enum
-00525CA0	Global_sub_00525CA0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00525CA0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00525CA0_param_1Enum
-00525EF0	Global_sub_00525EF0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00525EF0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00525EF0_param_1Enum
+00523410	Global_sub_00523410_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00523410_param_1Enum; parameter already uses enum
+00524FE0	Global_sub_00524FE0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00524FE0_param_1Enum; parameter already uses enum
+005252C0	Global_sub_005252C0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005252C0_param_1Enum; parameter already uses enum
+00525390	Global_sub_00525390_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00525390_param_1Enum; parameter already uses enum
+00525890	Global_sub_00525890_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00525890_param_1Enum; parameter already uses enum
+005259B0	Global_sub_005259B0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005259B0_param_1Enum; parameter already uses enum
+00525CA0	Global_sub_00525CA0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00525CA0_param_1Enum; parameter already uses enum
+00525EF0	Global_sub_00525EF0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00525EF0_param_1Enum; parameter already uses enum
 00526100	Global_sub_00526100_switch_0Enum	disabled	apply=0
-00526BA0	Global_sub_00526BA0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00526BA0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00526BA0_param_1Enum
-005272B0	Global_sub_005272B0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005272B0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005272B0_param_1Enum
-005276E0	Global_sub_005276E0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005276E0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005276E0_param_1Enum
-00528060	Global_sub_00528060_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00528060_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00528060_param_1Enum
-00528A30	Global_sub_00528A30_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00528A30_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00528A30_param_1Enum
-005293F0	Global_sub_005293F0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005293F0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005293F0_param_1Enum
-00529480	Global_sub_00529480_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00529480_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00529480_param_1Enum
-00529500	Global_sub_00529500_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00529500_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00529500_param_1Enum
-00529590	Global_sub_00529590_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00529590_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00529590_param_1Enum
-00529D80	Global_sub_00529D80_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00529D80_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00529D80_param_1Enum
+00526BA0	Global_sub_00526BA0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00526BA0_param_1Enum; parameter already uses enum
+005272B0	Global_sub_005272B0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005272B0_param_1Enum; parameter already uses enum
+005276E0	Global_sub_005276E0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005276E0_param_1Enum; parameter already uses enum
+00528060	Global_sub_00528060_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00528060_param_1Enum; parameter already uses enum
+00528A30	Global_sub_00528A30_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00528A30_param_1Enum; parameter already uses enum
+005293F0	Global_sub_005293F0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005293F0_param_1Enum; parameter already uses enum
+00529480	Global_sub_00529480_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00529480_param_1Enum; parameter already uses enum
+00529500	Global_sub_00529500_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00529500_param_1Enum; parameter already uses enum
+00529590	Global_sub_00529590_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00529590_param_1Enum; parameter already uses enum
+00529D80	Global_sub_00529D80_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00529D80_param_1Enum; parameter already uses enum
 00529F90	Global_sub_00529F90_switch_0Enum	disabled	apply=0
 00529FE0	Global_sub_00529FE0_switch_0Enum	disabled	apply=0
 0052A030	Global_sub_0052A030_switch_0Enum	disabled	apply=0
@@ -382,54 +382,54 @@ function_address	enum_name	status	detail
 005449B0	CursorClassTy_GetMessage_switch_9Enum	disabled	apply=0
 00548BC0	Global_sub_00548BC0_switch_0Enum	disabled	apply=0
 00548C40	CursorClassTy_TakeCmdToRun_switch_0Enum	disabled	apply=0
-0054BF40	CursorClassTy_SetGCType_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum
+0054BF40	CursorClassTy_SetGCType_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum; parameter already uses enum
 0054CA10	Global_sub_0054CA10_switch_0Enum	disabled	apply=0
 0054D640	STPlaySystemC_Life_switch_0Enum	disabled	apply=0
 0054D640	STPlaySystemC_Life_switch_1Enum	disabled	apply=0
 0054F1D0	STPlaySystemC_PrepareMail_switch_0Enum	disabled	apply=0
 0054F1D0	STPlaySystemC_PrepareMail_switch_1Enum	disabled	apply=0
-005532F0	Global_sub_005532F0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005532F0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005532F0_param_1Enum
+005532F0	Global_sub_005532F0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005532F0_param_1Enum; parameter already uses enum
 00553480	Global_sub_00553480_switch_0Enum	disabled	apply=0
-00555040	cLoadingTy_SetState_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/cLoadingTy_SetState_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/cLoadingTy_SetState_param_1Enum
+00555040	cLoadingTy_SetState_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/cLoadingTy_SetState_param_1Enum; parameter already uses enum
 00557C90	VisibleClassTy_Init_switch_0Enum	disabled	apply=0
-00558C00	Global_sub_00558C00_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00558C00_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00558C00_param_1Enum
-0055C830	Global_sub_0055C830_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0055C830_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_0055C830_param_1Enum
-00562F50	Global_sub_00562F50_switch_0Enum	disabled	apply=0
+00558C00	Global_sub_00558C00_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00558C00_param_1Enum; parameter already uses enum
+0055C830	Global_sub_0055C830_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0055C830_param_1Enum; parameter already uses enum
+00562F50	Global_AiAiCalcMinesFields_switch_0Enum	disabled	apply=0
 00566970	Global_sub_00566970_switch_0Enum	disabled	apply=0
 00566AA0	Global_sub_00566AA0_switch_0Enum	disabled	apply=0
 00567510	Global_sub_00567510_switch_0Enum	disabled	apply=0
-00568010	Global_sub_00568010_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum
-00568940	Global_sub_00568940_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum
+00568010	Global_sub_00568010_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00568010_param_1Enum; parameter already uses enum
+00568940	Global_sub_00568940_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum; parameter already uses enum
 00568DD0	SoundClassTy_PlaySound_modeEnum	disabled	apply=0
 0056ADC0	STAppC_InitApp_switch_0Enum	disabled	apply=0
 0056ADC0	STAppC_InitApp_switch_1Enum	disabled	apply=0
-0056CBD0	STAppC_MainWindowProc_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum
+0056CBD0	STAppC_MainWindowProc_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum; parameter already uses enum
 0056F040	Global_sub_0056F040_switch_0Enum	disabled	apply=0
 0056FA60	STAppC_GetMessage_switch_0Enum	disabled	apply=0
 00571400	STAppC_ReadCmdPlay_switch_0Enum	disabled	apply=0
 005776D0	GameSystemC_GetMessage_switch_0Enum	disabled	apply=0
 00578630	STCrabC_GetMessage_switch_0Enum	disabled	apply=0
 005797B0	Global_sub_005797B0_switch_0Enum	disabled	apply=0
-0057A140	Global_sub_0057A140_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0057A140_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_0057A140_param_2Enum
+0057A140	Global_sub_0057A140_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0057A140_param_2Enum; parameter already uses enum
 0057BD70	Global_sub_0057BD70_switch_0Enum	disabled	apply=0
 0057BF60	STFishC_GetMessage_switch_0Enum	disabled	apply=0
 0057BF60	STFishC_GetMessage_switch_1Enum	disabled	apply=0
-0057CBF0	Global_sub_0057CBF0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0057CBF0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_0057CBF0_param_1Enum
-0057CC90	Global_sub_0057CC90_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0057CC90_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_0057CC90_param_1Enum
-0057CD70	STFishC_field_0267State	applied	created /SubmarineTitans/Recovered/Enums/STFishC_field_0267State; field field_0267 -> /SubmarineTitans/Recovered/Enums/STFishC_field_0267State
+0057CBF0	Global_sub_0057CBF0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0057CBF0_param_1Enum; parameter already uses enum
+0057CC90	Global_sub_0057CC90_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0057CC90_param_1Enum; parameter already uses enum
+0057CD70	STFishC_field_0267State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STFishC_field_0267State; field already uses enum
 0057D700	Global_sub_0057D700_switch_0Enum	disabled	apply=0
 0057D700	Global_sub_0057D700_switch_1Enum	disabled	apply=0
 0057F6E0	STDcResourcC_CreateRes_switch_0Enum	disabled	apply=0
 00580780	Global_sub_00580780_switch_0Enum	disabled	apply=0
-00580910	Global_sub_00580910_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00580910_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00580910_param_2Enum
-005825C0	STJellyGunC_field_0235State	applied	created /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State; field field_0235 -> /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State
+00580910	Global_sub_00580910_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00580910_param_2Enum; parameter already uses enum
+005825C0	STJellyGunC_field_0235State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STJellyGunC_field_0235State; field already uses enum
 00586AF0	Global_sub_00586AF0_switch_0Enum	disabled	apply=0
 00586AF0	Global_sub_00586AF0_switch_1Enum	disabled	apply=0
 00589C10	STOctopusC_GetMessage_switch_0Enum	disabled	apply=0
 0058B190	Global_sub_0058B190_switch_0Enum	disabled	apply=0
 0058BD90	Global_sub_0058BD90_switch_0Enum	disabled	apply=0
 0058D7C0	STSharkC_GetMessage_switch_0Enum	disabled	apply=0
-0058E570	STSharkC_field_0257State	applied	created /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State; field field_0257 -> /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State
+0058E570	STSharkC_field_0257State	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STSharkC_field_0257State; field already uses enum
 0058F1E0	Global_sub_0058F1E0_switch_0Enum	disabled	apply=0
 0058F680	Global_sub_0058F680_switch_0Enum	disabled	apply=0
 005908B0	MAdvTy_GetMessage_switch_0Enum	disabled	apply=0
@@ -465,12 +465,14 @@ function_address	enum_name	status	detail
 005A4350	FSGSTy_GetMessage_switch_5Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_6Enum	disabled	apply=0
 005A4350	FSGSTy_GetMessage_switch_7Enum	disabled	apply=0
+005AACB0	HoloTy_Init_switch_1Enum	disabled	apply=0
+005AACB0	HoloTy_Init_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/HoloTy_Init_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/HoloTy_Init_param_1Enum
 005AB300	ChooseMapTy_InitChooseMap_switch_0Enum	disabled	apply=0
 005AB300	ChooseMapTy_InitChooseMap_switch_1Enum	disabled	apply=0
 005AD050	ChooseMapTy_PaintChooseMap_switch_0Enum	disabled	apply=0
 005AD390	ChooseMapTy_NoneChooseMap_switch_0Enum	disabled	apply=0
 005AEAB0	ChooseMapTy_CreateCtrls_switch_0Enum	disabled	apply=0
-005AFD00	ChooseMapTy_field_1A5FState	applied	created /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState; field field_1A5F -> /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState
+005AFD00	ChooseMapTy_field_1A5FState	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/ChooseMapTy_field_1A5FState; field already uses enum
 005AFD00	ChooseMapTy_PrepFiles_switch_1Enum	disabled	apply=0
 005B0BA0	ChooseMapTy_GetMessage_switch_0Enum	disabled	apply=0
 005B0BA0	ChooseMapTy_GetMessage_switch_1Enum	disabled	apply=0
@@ -538,18 +540,18 @@ function_address	enum_name	status	detail
 005FB640	STContainerC_GetMessage_switch_0Enum	disabled	apply=0
 005FE990	Global_sub_005FE990_switch_0Enum	disabled	apply=0
 005FF430	Global_sub_005FF430_switch_0Enum	disabled	apply=0
-005FF430	Global_sub_005FF430_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_005FF430_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_005FF430_param_1Enum
+005FF430	Global_sub_005FF430_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_005FF430_param_1Enum; parameter already uses enum
 00600750	Global_sub_00600750_switch_0Enum	disabled	apply=0
-00601DB0	Global_sub_00601DB0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00601DB0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00601DB0_param_1Enum
+00601DB0	Global_sub_00601DB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00601DB0_param_1Enum; parameter already uses enum
 00603740	STExplosion_GetMessage_switch_0Enum	disabled	apply=0
 00606050	Global_sub_00606050_switch_0Enum	disabled	apply=0
 00606050	Global_sub_00606050_switch_1Enum	disabled	apply=0
-00606A50	Global_sub_00606A50_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00606A50_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00606A50_param_1Enum
-00606CD0	Global_sub_00606CD0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00606CD0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00606CD0_param_1Enum
-00606FD0	Global_sub_00606FD0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00606FD0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00606FD0_param_1Enum
+00606A50	Global_sub_00606A50_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00606A50_param_1Enum; parameter already uses enum
+00606CD0	Global_sub_00606CD0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00606CD0_param_1Enum; parameter already uses enum
+00606FD0	Global_sub_00606FD0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00606FD0_param_1Enum; parameter already uses enum
 00607200	Global_sub_00607200_switch_0Enum	disabled	apply=0
 00607A60	Global_sub_00607A60_switch_0Enum	disabled	apply=0
-00607EE0	Global_sub_00607EE0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00607EE0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00607EE0_param_1Enum
+00607EE0	Global_sub_00607EE0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00607EE0_param_1Enum; parameter already uses enum
 00608E90	Global_sub_00608E90_switch_0Enum	disabled	apply=0
 00608E90	Global_sub_00608E90_switch_1Enum	disabled	apply=0
 00608E90	Global_sub_00608E90_switch_2Enum	disabled	apply=0
@@ -558,20 +560,20 @@ function_address	enum_name	status	detail
 0060AA00	Global_sub_0060AA00_switch_0Enum	disabled	apply=0
 0060BDD0	Global_sub_0060BDD0_switch_0Enum	disabled	apply=0
 006101B0	Global_sub_006101B0_switch_0Enum	disabled	apply=0
-006141B0	Global_sub_006141B0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006141B0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_006141B0_param_2Enum
-00615BB0	Global_sub_00615BB0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00615BB0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00615BB0_param_1Enum
+006141B0	Global_sub_006141B0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006141B0_param_2Enum; parameter already uses enum
+00615BB0	Global_sub_00615BB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00615BB0_param_1Enum; parameter already uses enum
 00619C70	Global_sub_00619C70_switch_0Enum	disabled	apply=0
-0061BDB0	Global_sub_0061BDB0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0061BDB0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_0061BDB0_param_1Enum
+0061BDB0	Global_sub_0061BDB0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0061BDB0_param_1Enum; parameter already uses enum
 00621780	Global_sub_00621780_switch_0Enum	disabled	apply=0
 006226C0	Global_sub_006226C0_switch_0Enum	disabled	apply=0
 006239A0	Global_sub_006239A0_switch_0Enum	disabled	apply=0
-00624570	Global_sub_00624570_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00624570_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00624570_param_1Enum
-00624920	Global_sub_00624920_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00624920_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00624920_param_1Enum
+00624570	Global_sub_00624570_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00624570_param_1Enum; parameter already uses enum
+00624920	Global_sub_00624920_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00624920_param_1Enum; parameter already uses enum
 00625730	Global_sub_00625730_switch_0Enum	disabled	apply=0
-006263B0	Global_sub_006263B0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006263B0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_006263B0_param_1Enum
-00626B50	Global_sub_00626B50_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00626B50_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00626B50_param_1Enum
+006263B0	Global_sub_006263B0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006263B0_param_1Enum; parameter already uses enum
+00626B50	Global_sub_00626B50_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00626B50_param_1Enum; parameter already uses enum
 00626EC0	Global_sub_00626EC0_switch_0Enum	disabled	apply=0
-00626F10	Global_sub_00626F10_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00626F10_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00626F10_param_1Enum
+00626F10	Global_sub_00626F10_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00626F10_param_1Enum; parameter already uses enum
 00627670	Global_sub_00627670_switch_0Enum	disabled	apply=0
 00627AA0	Global_sub_00627AA0_switch_0Enum	disabled	apply=0
 00627EB0	STParticleC_GetMessage_switch_0Enum	disabled	apply=0
@@ -582,10 +584,10 @@ function_address	enum_name	status	detail
 0062AF90	Global_sub_0062AF90_switch_0Enum	disabled	apply=0
 0062B300	Global_sub_0062B300_switch_0Enum	disabled	apply=0
 0062D840	Global_sub_0062D840_switch_0Enum	disabled	apply=0
-0062F3B0	STRubbishC_LoadImagSpr_param_4Enum	applied	created /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum; parameter param_4 -> /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum
-00632030	Global_sub_00632030_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00632030_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00632030_param_1Enum
-006324C0	Global_sub_006324C0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006324C0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_006324C0_param_1Enum
-00632650	Global_sub_00632650_param_4Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00632650_param_4Enum; parameter param_4 -> /SubmarineTitans/Recovered/Enums/Global_sub_00632650_param_4Enum
+0062F3B0	STRubbishC_LoadImagSpr_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum; parameter already uses enum
+00632030	Global_sub_00632030_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00632030_param_1Enum; parameter already uses enum
+006324C0	Global_sub_006324C0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006324C0_param_1Enum; parameter already uses enum
+00632650	Global_sub_00632650_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00632650_param_4Enum; parameter already uses enum
 00632E30	Global_sub_00632E30_switch_0Enum	disabled	apply=0
 00633770	Global_sub_00633770_switch_0Enum	disabled	apply=0
 00636060	Global_sub_00636060_switch_0Enum	disabled	apply=0
@@ -601,10 +603,10 @@ function_address	enum_name	status	detail
 006406D0	STTorpC_GetMessage_switch_6Enum	disabled	apply=0
 006406D0	STTorpC_GetMessage_switch_7Enum	disabled	apply=0
 00645880	Global_sub_00645880_switch_0Enum	disabled	apply=0
-00645D30	Global_sub_00645D30_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00645D30_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00645D30_param_2Enum
+00645D30	Global_sub_00645D30_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00645D30_param_2Enum; parameter already uses enum
 006461E0	STVolcanoC_GetMessage_switch_0Enum	disabled	apply=0
-00648FE0	Global_sub_00648FE0_switch_0Enum	disabled	apply=0
-00648FE0	Global_sub_00648FE0_switch_1Enum	disabled	apply=0
+00648FE0	Global_CreateAi_switch_0Enum	disabled	apply=0
+00648FE0	Global_CreateAi_switch_1Enum	disabled	apply=0
 0064A970	Global_sub_0064A970_switch_0Enum	disabled	apply=0
 0064A970	Global_sub_0064A970_switch_1Enum	disabled	apply=0
 0064A970	Global_sub_0064A970_switch_2Enum	disabled	apply=0
@@ -612,16 +614,16 @@ function_address	enum_name	status	detail
 0065BD70	Global_sub_0065BD70_switch_1Enum	disabled	apply=0
 0065BD70	Global_sub_0065BD70_switch_2Enum	disabled	apply=0
 0065E450	Global_sub_0065E450_switch_1Enum	disabled	apply=0
-0065E450	Global_sub_0065E450_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum
+0065E450	Global_sub_0065E450_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0065E450_param_3Enum; parameter already uses enum
 00660F70	Global_sub_00660F70_switch_0Enum	disabled	apply=0
 00662240	AiFltClassTy_GetAiMess_switch_0Enum	disabled	apply=0
 00664960	Global_sub_00664960_switch_0Enum	disabled	apply=0
 00664960	Global_sub_00664960_switch_1Enum	disabled	apply=0
 00664960	Global_sub_00664960_switch_2Enum	disabled	apply=0
 00664960	Global_sub_00664960_switch_3Enum	disabled	apply=0
-006686F0	Global_sub_006686F0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum
-00668AA0	Global_sub_00668AA0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_1Enum
-00668AA0	Global_sub_00668AA0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_2Enum
+006686F0	Global_sub_006686F0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006686F0_param_1Enum; parameter already uses enum
+00668AA0	Global_sub_00668AA0_param_1Enum	unchanged	updated generated /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_1Enum; parameter already uses enum
+00668AA0	Global_sub_00668AA0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00668AA0_param_2Enum; parameter already uses enum
 0066ACC0	Global_sub_0066ACC0_switch_0Enum	disabled	apply=0
 0066ACC0	Global_sub_0066ACC0_switch_1Enum	disabled	apply=0
 0066ACC0	Global_sub_0066ACC0_switch_2Enum	disabled	apply=0
@@ -629,10 +631,10 @@ function_address	enum_name	status	detail
 00672440	Global_sub_00672440_switch_0Enum	disabled	apply=0
 00673D20	Global_sub_00673D20_DAT_00811954Enum	disabled	apply=0
 00673D20	Global_sub_00673D20_switch_0Enum	disabled	apply=0
-006753A0	Global_sub_006753A0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006753A0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_006753A0_param_1Enum
-00675430	Global_sub_00675430_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00675430_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00675430_param_1Enum
-00677700	Global_sub_00677700_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00677700_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00677700_param_2Enum
-006777D0	Global_sub_006777D0_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006777D0_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_006777D0_param_1Enum
+006753A0	Global_sub_006753A0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006753A0_param_1Enum; parameter already uses enum
+00675430	Global_sub_00675430_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00675430_param_1Enum; parameter already uses enum
+00677700	Global_sub_00677700_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00677700_param_2Enum; parameter already uses enum
+006777D0	Global_sub_006777D0_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006777D0_param_1Enum; parameter already uses enum
 0067B520	AiPlrClassTy_ExecTech_switch_0Enum	disabled	apply=0
 0067C7E0	AiPlrClassTy_GetMessage_switch_0Enum	disabled	apply=0
 006829B0	Global_sub_006829B0_switch_0Enum	disabled	apply=0
@@ -645,22 +647,22 @@ function_address	enum_name	status	detail
 00683C70	Global_sub_00683C70_switch_5Enum	disabled	apply=0
 00683C70	Global_sub_00683C70_switch_6Enum	disabled	apply=0
 00683C70	Global_sub_00683C70_switch_7Enum	disabled	apply=0
-0068CDA0	Global_sub_0068CDA0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_0068CDA0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_0068CDA0_param_2Enum
+0068CDA0	Global_sub_0068CDA0_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_0068CDA0_param_2Enum; parameter already uses enum
 0068EC70	AiTactClassTy_ExecClaim_switch_0Enum	disabled	apply=0
 0068FD00	AiTactClassTy_GetAiMess_switch_0Enum	disabled	apply=0
-00692C10	Global_sub_00692C10_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum
-00693560	Global_sub_00693560_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00693560_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00693560_param_1Enum
-00693710	Global_sub_00693710_param_1Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00693710_param_1Enum; parameter param_1 -> /SubmarineTitans/Recovered/Enums/Global_sub_00693710_param_1Enum
+00692C10	Global_sub_00692C10_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum; parameter already uses enum
+00693560	Global_sub_00693560_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00693560_param_1Enum; parameter already uses enum
+00693710	Global_sub_00693710_param_1Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00693710_param_1Enum; parameter already uses enum
 0069ECE0	Global_sub_0069ECE0_switch_0Enum	disabled	apply=0
 006A5210	Global_sub_006A5210_switch_0Enum	disabled	apply=0
 006A6360	Global_sub_006A6360_switch_0Enum	disabled	apply=0
 006AAEF0	Global_sub_006AAEF0_switch_0Enum	disabled	apply=0
-006AD020	Global_sub_006AD020_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006AD020_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/Global_sub_006AD020_param_3Enum
+006AD020	Global_sub_006AD020_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006AD020_param_3Enum; parameter already uses enum
 006BEA40	Global_sub_006BEA40_switch_0Enum	disabled	apply=0
 006BEA40	Global_sub_006BEA40_switch_1Enum	disabled	apply=0
 006BEA40	Global_sub_006BEA40_switch_2Enum	disabled	apply=0
 006BEA40	Global_sub_006BEA40_switch_3Enum	disabled	apply=0
-006C8EC0	Global_sub_006C8EC0_param_3Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_006C8EC0_param_3Enum; parameter param_3 -> /SubmarineTitans/Recovered/Enums/Global_sub_006C8EC0_param_3Enum
+006C8EC0	Global_sub_006C8EC0_param_3Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_006C8EC0_param_3Enum; parameter already uses enum
 006DC320	Global_sub_006DC320_switch_0Enum	disabled	apply=0
 006DC320	Global_sub_006DC320_switch_1Enum	disabled	apply=0
 006DC320	Global_sub_006DC320_switch_2Enum	disabled	apply=0
@@ -756,21 +758,21 @@ function_address	enum_name	status	detail
 00707810	Global_sub_00707810_switch_5Enum	disabled	apply=0
 00707810	Global_sub_00707810_switch_6Enum	disabled	apply=0
 00707810	Global_sub_00707810_switch_7Enum	disabled	apply=0
-00709A10	Global_sub_00709A10_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00709A10_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00709A10_param_2Enum
-00709AF0	Global_sub_00709AF0_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00709AF0_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00709AF0_param_2Enum
-0070B900	Global_sub_0070B900_switch_0Enum	disabled	apply=0
-00713480	ccFntTy_CreateTypeSSpr_param_4Enum	applied	created /SubmarineTitans/Recovered/Enums/ccFntTy_CreateTypeSSpr_param_4Enum; parameter param_4 -> /SubmarineTitans/Recovered/Enums/ccFntTy_CreateTypeSSpr_param_4Enum
+00709A10	Global_sub_00709A10_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00709A10_param_2Enum; parameter already uses enum
+00709AF0	Global_mfRLoad_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_mfRLoad_param_2Enum
+0070B900	Global_imgGetDibFromFile_switch_0Enum	disabled	apply=0
+00713480	ccFntTy_CreateTypeSSpr_param_4Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/ccFntTy_CreateTypeSSpr_param_4Enum; parameter already uses enum
 007140E0	Global_sub_007140E0_switch_0Enum	disabled	apply=0
 007140E0	Global_sub_007140E0_switch_1Enum	disabled	apply=0
 00715AB0	SpriteClassTy_CloseSprite_switch_0Enum	disabled	apply=0
 00715C60	SpriteClassTy_SetImagesReg_switch_0Enum	disabled	apply=0
-00715C60	SpriteClassTy_SetImagesReg_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesReg_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesReg_param_2Enum
+00715C60	SpriteClassTy_SetImagesReg_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesReg_param_2Enum; parameter already uses enum
 00716040	SpriteClassTy_SetImages_switch_0Enum	disabled	apply=0
-00716040	SpriteClassTy_SetImages_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImages_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImages_param_2Enum
+00716040	SpriteClassTy_SetImages_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImages_param_2Enum; parameter already uses enum
 00716480	SpriteClassTy_SetImagesPtr_switch_0Enum	disabled	apply=0
-00716480	SpriteClassTy_SetImagesPtr_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesPtr_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesPtr_param_2Enum
+00716480	SpriteClassTy_SetImagesPtr_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImagesPtr_param_2Enum; parameter already uses enum
 00717970	Global_sub_00717970_switch_0Enum	disabled	apply=0
-00719410	Global_sub_00719410_param_2Enum	applied	created /SubmarineTitans/Recovered/Enums/Global_sub_00719410_param_2Enum; parameter param_2 -> /SubmarineTitans/Recovered/Enums/Global_sub_00719410_param_2Enum
+00719410	Global_sub_00719410_param_2Enum	unchanged	used equivalent /SubmarineTitans/Recovered/Enums/Global_sub_00719410_param_2Enum; parameter already uses enum
 0071B760	Global_sub_0071B760_switch_0Enum	disabled	apply=0
 0071CA50	InputClassTy_GetMessage_switch_0Enum	disabled	apply=0
 0071CFD0	ButtonClassTy_GetMessage_switch_0Enum	disabled	apply=0

@@ -1,4 +1,4 @@
-FUN_00716fd0:
+mfTSprLoadAsSSpr:
 00716FD0  55                        PUSH EBP
 00716FD1  8B EC                     MOV EBP,ESP
 00716FD3  83 EC 58                  SUB ESP,0x58

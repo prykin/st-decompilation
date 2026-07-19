@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006f0c00(short *param_1,int *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 669 | 673 | 675 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl AuxTMapRefreshAll(short *param_1,int *param_2)
 
 {
   code *pcVar1;

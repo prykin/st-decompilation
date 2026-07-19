@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_event_d.cpp
+   Diagnostic line evidence: 183 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 * FUN_0065d120(void)
 
 {

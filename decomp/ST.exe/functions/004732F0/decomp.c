@@ -322,8 +322,7 @@ cf_common_exit_0047405D:
                         ((int)sVar17 * (int)DAT_007fb246 + (int)sVar18 * (int)DAT_007fb240 +
                         (int)sVar16) * 8);
       }
-      FUN_006ea3e0(*(void **)&this->field_0x211,*(uint *)&this->field_0x1ed,*(int *)(iVar9 + 0x1ed))
-      ;
+      FUN_006ea3e0((void *)this->field_0211,this->field_01ED,*(int *)(iVar9 + 0x1ed));
       iVar9 = CONCAT22(extraout_var,this->field_058C * 200) + 100;
       iVar11 = CONCAT22(extraout_var_04,this->field_058A * 0xc9) + 100;
       iVar5 = CONCAT22((short)((uint)iVar9 >> 0x10),*(short *)&this->field_0x588 * 0xc9) + 100;
@@ -375,24 +374,24 @@ cf_common_exit_0047405D:
         do {
           puVar7 = (undefined4 *)
                    thunk_FUN_0041dc40(local_40,*local_20,*(undefined2 *)(local_20 + 1),
-                                      *(short *)&this->field_0x6c);
+                                      this->field_006C);
           local_38 = *puVar7;
           local_34 = *(short *)(puVar7 + 1);
           if (DAT_0080732c == 1) {
             bVar23 = 0;
             sVar22 = 0;
             iVar11 = -1;
-            uVar6 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+            uVar6 = this->field_001C * 0x41c64e6d + 0x3039;
             sVar21 = 0;
-            *(uint *)&this->field_0x1c = uVar6;
+            this->field_001C = uVar6;
             sVar20 = 0;
             sVar19 = 0;
             uVar8 = uVar6 * 0x41c64e6d + 0x3039;
             sVar18 = 0;
-            *(uint *)&this->field_0x1c = uVar8;
+            this->field_001C = uVar8;
             local_30 = uVar8 * 0x41c64e6d + 0x3039;
             sVar17 = 0;
-            *(uint *)&this->field_0x1c = local_30;
+            this->field_001C = local_30;
             sVar16 = 0;
             lVar15 = Library::MSVCRT::__ftol();
             iVar9 = (int)(short)lVar15 + (uVar6 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
@@ -401,14 +400,14 @@ cf_common_exit_0047405D:
             uVar6 = local_30;
           }
           else {
-            uVar8 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+            uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
             bVar23 = 0;
-            *(uint *)&this->field_0x1c = uVar8;
+            this->field_001C = uVar8;
             uVar12 = uVar8 * 0x41c64e6d + 0x3039;
             sVar22 = 0;
-            *(uint *)&this->field_0x1c = uVar12;
+            this->field_001C = uVar12;
             uVar6 = uVar12 * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar6;
+            this->field_001C = uVar6;
             iVar11 = -1;
             sVar21 = 0;
             sVar20 = 0;
@@ -446,7 +445,7 @@ cf_common_exit_0047405D:
         this->field_059A = 4;
       }
     }
-    if ((this->field_059A == 4) && (*(short *)&this->field_0x6e == 0x2f)) {
+    if ((this->field_059A == 4) && (this->field_006E == 0x2f)) {
       sVar16 = *(short *)&this->field_0x588;
       sVar17 = this->field_058C;
       sVar18 = this->field_058A;
@@ -469,7 +468,7 @@ cf_common_exit_0047405D:
         thunk_FUN_00495ff0(this->field_005B,this->field_005D,this->field_005F,0,(int)this);
         DumpClassC::WritePtr
                   (*(short *)&this->field_0x588,this->field_058A,this->field_058C,0,(int)this);
-        thunk_FUN_0041c3f0(this,*(undefined **)&this->field_0x70a);
+        thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
         iVar9 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar9 != 0);
       }
@@ -523,25 +522,25 @@ switchD_004734db_caseD_2:
         do {
           puVar7 = (undefined4 *)
                    thunk_FUN_0041dc40(local_40,*local_20,*(undefined2 *)(local_20 + 1),
-                                      *(short *)&this->field_0x6c);
+                                      this->field_006C);
           local_38 = *puVar7;
           local_34 = *(short *)(puVar7 + 1);
           if (DAT_0080732c == 1) {
             bVar23 = 0;
             sVar22 = 0;
-            uVar6 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+            uVar6 = this->field_001C * 0x41c64e6d + 0x3039;
             iVar11 = -1;
-            *(uint *)&this->field_0x1c = uVar6;
+            this->field_001C = uVar6;
             sVar21 = 0;
             sVar20 = 0;
             uVar8 = uVar6 * 0x41c64e6d + 0x3039;
             sVar19 = 0;
-            *(uint *)&this->field_0x1c = uVar8;
+            this->field_001C = uVar8;
             sVar18 = 0;
             sVar17 = 0;
             local_30 = uVar8 * 0x41c64e6d + 0x3039;
             sVar16 = 0;
-            *(uint *)&this->field_0x1c = local_30;
+            this->field_001C = local_30;
             lVar15 = Library::MSVCRT::__ftol();
             iVar9 = (int)(short)lVar15 + (uVar6 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
                     (int)local_34;
@@ -549,13 +548,13 @@ switchD_004734db_caseD_2:
             uVar6 = local_30;
           }
           else {
-            uVar8 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar8;
+            uVar8 = this->field_001C * 0x41c64e6d + 0x3039;
+            this->field_001C = uVar8;
             uVar12 = uVar8 * 0x41c64e6d + 0x3039;
             bVar23 = 0;
-            *(uint *)&this->field_0x1c = uVar12;
+            this->field_001C = uVar12;
             uVar6 = uVar12 * 0x41c64e6d + 0x3039;
-            *(uint *)&this->field_0x1c = uVar6;
+            this->field_001C = uVar6;
             sVar22 = 0;
             iVar11 = -1;
             sVar21 = 0;
@@ -588,7 +587,7 @@ switchD_004734db_caseD_2:
         return -1;
       }
       if (local_24 == 0) {
-        FUN_006ea2f0(*(void **)&this->field_0x211,*(uint *)&this->field_0x1ed);
+        FUN_006ea2f0((void *)this->field_0211,this->field_01ED);
         iVar9 = (*this->vtable->vfunc_D8)();
         return -(uint)(iVar9 != 0);
       }

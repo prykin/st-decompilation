@@ -5,8 +5,8 @@ void __cdecl FUN_00637d80(uint param_1,int param_2)
   ushort *puVar1;
   uint local_8;
   
-  puVar1 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_mstarR_007d1c60,0xffffffff,0,1,0,
-                        (undefined4 *)0x0);
+  puVar1 = mfRLoad(DAT_00806774,CASE_1D,(byte *)s_mstarR_007d1c60,0xffffffff,0,1,0,(undefined4 *)0x0
+                  );
   if ((puVar1 != (ushort *)0x0) && (DAT_00807598 != (void *)0x0)) {
     FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
                  *(uint *)((int)puVar1 + 0xd),0x5a,0x45,0);

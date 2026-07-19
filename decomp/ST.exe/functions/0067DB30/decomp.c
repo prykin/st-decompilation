@@ -1,5 +1,10 @@
 
-int __cdecl FUN_0067db30(int param_1,char *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 291 | 294 | 295 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl DelPlrEdit(int param_1,char *param_2)
 
 {
   code *pcVar1;

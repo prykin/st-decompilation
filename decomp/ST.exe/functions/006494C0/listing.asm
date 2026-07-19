@@ -1,4 +1,4 @@
-FUN_006494c0:
+CreatePlrDataForWS:
 006494C0  55                        PUSH EBP
 006494C1  8B EC                     MOV EBP,ESP
 006494C3  81 EC 90 04 00 00         SUB ESP,0x490

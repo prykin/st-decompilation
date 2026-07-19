@@ -51,10 +51,10 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
     iVar3 = (*pcVar2)();
     return iVar3;
   }
-  iVar3 = *(int *)(local_1c + 0x24);
+  iVar3 = local_1c->field_0024;
   if (iVar3 == 0) {
     puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,100,10);
-    *(uint **)(this_00 + 0x24) = puVar4;
+    this_00->field_0024 = puVar4;
   }
   else if ((*param_1 & 4) != 0) {
     uVar8 = 0;
@@ -71,7 +71,7 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
           local_14 = 0;
           break;
         }
-        iVar3 = *(int *)(this_00 + 0x24);
+        iVar3 = this_00->field_0024;
         uVar8 = uVar8 + 1;
         bVar9 = uVar8 < *(uint *)(iVar3 + 0xc);
       } while ((int)uVar8 < (int)*(uint *)(iVar3 + 0xc));
@@ -81,7 +81,7 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
     g_currentExceptionFrame = local_d4.previous;
     return 0;
   }
-  *(undefined4 *)(this_00 + 0x70) = 1;
+  this_00->field_0070 = 1;
   puVar4 = local_90;
   for (iVar3 = 0x19; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
@@ -98,9 +98,9 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
   local_34 = 1;
   local_40 = 0;
   if ((local_90[0] & 8) == 0) {
-    if (*(int *)(this_00 + 0x60) == 0) goto cf_common_join_0071C3C1;
-    iVar3 = (**(code **)(**(int **)(this_00 + 0x1c) + 0x24))
-                      (*(int **)(this_00 + 0x1c),0x100,local_1d4);
+    if (this_00->field_0060 == 0) goto cf_common_join_0071C3C1;
+    iVar3 = (**(code **)(*(int *)this_00->field_001C + 0x24))
+                      ((int *)this_00->field_001C,0x100,local_1d4);
     if (iVar3 != 0) {
       RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x1d4);
     }
@@ -111,10 +111,9 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
     }
   }
   else {
-    if ((*(int *)(this_00 + 0x60) == 0) || (*(int *)(this_00 + 100) == 0))
-    goto cf_common_join_0071C3C1;
-    iVar3 = (**(code **)(**(int **)(this_00 + 0x1c) + 0x24))
-                      (*(int **)(this_00 + 0x1c),0x100,local_1d4);
+    if ((this_00->field_0060 == 0) || (this_00->field_0064 == 0)) goto cf_common_join_0071C3C1;
+    iVar3 = (**(code **)(*(int *)this_00->field_001C + 0x24))
+                      ((int *)this_00->field_001C,0x100,local_1d4);
     if (iVar3 != 0) {
       RaiseInternalException(iVar3,DAT_007ed77c,s_E__Ourlib_Sinput_cpp_007f092c,0x1cd);
     }
@@ -127,7 +126,7 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
   }
   local_40 = 0;
 cf_common_join_0071C3C1:
-  iVar3 = *(int *)(this_00 + 0x24);
+  iVar3 = this_00->field_0024;
   uVar1 = *(uint *)(iVar3 + 0xc);
   while( true ) {
     if (uVar8 < uVar1) {
@@ -153,13 +152,13 @@ cf_common_join_0071C3C1:
         local_34 = 0;
         local_44 = 0;
       }
-      iVar3 = *(int *)(this_00 + 0x24);
+      iVar3 = this_00->field_0024;
       uVar6 = uVar6 + 1;
       bVar9 = uVar6 < *(uint *)(iVar3 + 0xc);
     } while ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc));
   }
   if (0 < (int)uVar8) {
-    iVar3 = *(int *)(this_00 + 0x24);
+    iVar3 = this_00->field_0024;
     if (uVar8 - 1 < *(uint *)(iVar3 + 0xc)) {
       iVar3 = *(int *)(iVar3 + 8) * (uVar8 - 1) + *(int *)(iVar3 + 0x1c);
     }
@@ -170,7 +169,7 @@ cf_common_join_0071C3C1:
       local_30 = *(undefined4 *)(iVar3 + 0x60);
     }
   }
-  Library::DKW::TBL::FUN_006b11d0(*(uint **)(this_00 + 0x24),uVar8,local_90);
+  Library::DKW::TBL::FUN_006b11d0((uint *)this_00->field_0024,uVar8,local_90);
   if ((local_90[0] & 2) != 0) {
     do {
       do {
@@ -179,7 +178,7 @@ cf_common_join_0071C3C1:
           g_currentExceptionFrame = local_d4.previous;
           return 0;
         }
-        iVar3 = *(int *)(this_00 + 0x24);
+        iVar3 = this_00->field_0024;
         if (uVar8 < *(uint *)(iVar3 + 0xc)) {
           puVar4 = (uint *)(*(int *)(iVar3 + 8) * uVar8 + *(int *)(iVar3 + 0x1c));
         }

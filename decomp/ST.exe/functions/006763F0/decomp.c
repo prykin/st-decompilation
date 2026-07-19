@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006763f0(uint param_1,int param_2,int param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 336 | 337 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl _GetEmbrGrpTobjGrpExch(uint param_1,int param_2,int param_3)
 
 {
   code *pcVar1;

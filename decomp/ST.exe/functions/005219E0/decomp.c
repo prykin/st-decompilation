@@ -32,7 +32,7 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     DAT_0080169c = local_8;
     puVar4 = ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x30),0x19d,
                                (int)*(ccFntTy **)(DAT_00802a28 + 0x30));
-    *(undefined4 **)(pIVar2 + 0x180) = puVar4;
+    pIVar2->field_0180 = puVar4;
     puVar4[0x16] = 0;
     puVar4[0x17] = 0;
     iVar3 = 1;
@@ -41,15 +41,15 @@ void __thiscall IntercomPanelTy::InitIntercomPanel(IntercomPanelTy *this)
     puVar6 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar11,iVar3);
     puVar12 = puVar6 + 0x14;
     iVar3 = 1;
-    *(ushort **)(pIVar2 + 0x184) = puVar6;
+    pIVar2->field_0184 = puVar6;
     uVar7 = FUN_006b4fe0((int)puVar6);
     uVar8 = FUN_006b50c0((-(uint)(DAT_0080874e != '\x03') & 0x32) + 700,0x14,
-                         (uint)*(ushort *)(*(int *)(pIVar2 + 0x184) + 0xe),uVar7,
-                         (undefined4 *)puVar12,iVar3);
-    *(undefined4 *)(pIVar2 + 0x19c) = uVar8;
-    thunk_FUN_00540760(*(undefined4 **)(pIVar2 + 0x68),0,0,'\x01',*(byte **)(pIVar2 + 0x184));
+                         (uint)*(ushort *)(pIVar2->field_0184 + 0xe),uVar7,(undefined4 *)puVar12,
+                         iVar3);
+    pIVar2->field_019C = uVar8;
+    DibPut((undefined4 *)pIVar2->field_0068,0,0,'\x01',(byte *)pIVar2->field_0184);
     puVar9 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)(pIVar2 + 0x198) = puVar9;
+    pIVar2->field_0198 = puVar9;
     Library::DKW::TBL::FUN_006b6020((int)puVar9,0,&DAT_008016a0);
     g_currentExceptionFrame = pIVar13;
     return;

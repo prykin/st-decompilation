@@ -1,4 +1,4 @@
-FUN_007262b0:
+mfMSprGetNumFas:
 007262B0  55                        PUSH EBP
 007262B1  8B EC                     MOV EBP,ESP
 007262B3  83 EC 50                  SUB ESP,0x50

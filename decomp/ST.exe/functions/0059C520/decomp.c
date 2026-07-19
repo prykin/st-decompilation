@@ -24,7 +24,7 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
     switch(local_8->field_1A5F) {
     case 2:
       LoginCtrls(local_8);
-      pFVar2->field_0x1a62 = 1;
+      pFVar2->field_1A62 = 1;
       g_currentExceptionFrame = pIVar4;
       return;
     case 3:

@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\Artem\TLO_shark.cpp
+   Diagnostic line evidence: 24 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 undefined4 __fastcall FUN_004e3880(int param_1)
 
 {

@@ -1,5 +1,10 @@
 
-ushort * __cdecl FUN_006f2d90(cMf32 *param_1,char *param_2,byte param_3,int param_4)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfaobj.cpp
+   Diagnostic line evidence: 27 | 29 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+ushort * __cdecl mfAObjLoad(cMf32 *param_1,char *param_2,byte param_3,int param_4)
 
 {
   code *pcVar1;

@@ -24,16 +24,16 @@ void __thiscall PopUpTy::OutStr(PopUpTy *this,uint param_1)
   pPVar2 = local_8;
   if (iVar3 == 0) {
     uVar5 = param_1 & 0xff;
-    ccFntTy::SetSurf(*(ccFntTy **)(local_8 + 0x94),*(int *)(local_8 + 0x90),0,0,uVar5 * 0x13,
-                     *(int *)(*(int *)(local_8 + 0x90) + 4),0x13);
-    iVar3 = *(int *)(pPVar2 + 0x98);
+    ccFntTy::SetSurf(local_8->field_0094,local_8->field_0090,0,0,uVar5 * 0x13,
+                     *(int *)(local_8->field_0090 + 4),0x13);
+    iVar3 = pPVar2->field_0098;
     if ((int)uVar5 < *(int *)(iVar3 + 8)) {
       puVar6 = *(uint **)(*(int *)(iVar3 + 0x14) + uVar5 * 4);
     }
     else {
       puVar6 = (uint *)0x0;
     }
-    ccFntTy::WrStr(*(ccFntTy **)(pPVar2 + 0x94),puVar6,0,0,0);
+    ccFntTy::WrStr(pPVar2->field_0094,puVar6,0,0,0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

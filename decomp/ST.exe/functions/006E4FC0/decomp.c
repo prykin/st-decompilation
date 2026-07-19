@@ -33,7 +33,7 @@ WPARAM __thiscall AppClassTy::RunApp(AppClassTy *this)
           GetAsyncKeyState(0x13);
           if (this_00->field_0020 == 0) {
             DVar4 = timeGetTime();
-            iVar5 = (this_00->field_0034 - DVar4) + *(int *)&this_00->field_0x18;
+            iVar5 = (this_00->field_0034 - DVar4) + this_00->field_0018;
             if ((0 < iVar5) && (*(int *)(this_00->field_002C + 0xc) == 0)) {
               (*this_00->vtable->vfunc_10)(iVar5);
             }
@@ -41,7 +41,7 @@ WPARAM __thiscall AppClassTy::RunApp(AppClassTy *this)
               iVar5 = 0;
             }
             DVar4 = timeGetTime();
-            *(DWORD *)&this_00->field_0x18 = DVar4 + iVar5;
+            this_00->field_0018 = DVar4 + iVar5;
             local_28.wParam = FUN_006e4ee0((int *)this_00);
           }
         }

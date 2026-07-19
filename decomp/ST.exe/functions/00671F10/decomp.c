@@ -1,4 +1,10 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_interp.cpp
+   Diagnostic line evidence: 1342 | 1356 | 1369 | 1374 | 1388 | 1392 | 1413 | 1419 (metadata/report
+   site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 float * FUN_00671f10(int param_1,int *param_2,int *param_3)
 
 {

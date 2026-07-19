@@ -27,27 +27,26 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   this_00 = local_c;
   if (errorCode == 0) {
     local_8 = local_8 & 0xffffff00;
-    if (local_c->field_0x9a != '\0') {
+    if (local_c->field_009A != '\0') {
       do {
         uVar4 = local_8 & 0xff;
-        if ((*(int *)(&this_00->field_0x66 + uVar4 * 4) == 0) ||
+        if (((&this_00->field_0066)[uVar4] == 0) ||
            (sVar1 = *(short *)(param_1 + uVar4 * 2), sVar1 == 0)) {
           *(undefined2 *)(&this_00->field_0x1c82 + uVar4 * 2) = *(undefined2 *)(param_1 + uVar4 * 2)
           ;
         }
         else {
           if (sVar1 < 1) {
-            *(undefined4 *)&this_00->field_0x31 = 0;
+            this_00->field_0031 = 0;
           }
           else {
-            *(undefined4 *)&this_00->field_0x31 = 1;
+            this_00->field_0031 = 1;
           }
-          FUN_006e6080(this_00,2,*(undefined4 *)(&this_00->field_0x66 + uVar4 * 4),
-                       (undefined4 *)&this_00->field_0x1d);
+          FUN_006e6080(this_00,2,(&this_00->field_0066)[uVar4],(undefined4 *)&this_00->field_0x1d);
         }
         bVar3 = (char)local_8 + 1;
         local_8 = CONCAT31(local_8._1_3_,bVar3);
-      } while (bVar3 < (byte)this_00->field_0x9a);
+      } while (bVar3 < (byte)this_00->field_009A);
     }
     g_currentExceptionFrame = local_50.previous;
     return;

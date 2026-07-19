@@ -33,7 +33,7 @@ int __thiscall cMf32::RecGetLen(cMf32 *this,byte param_1,char *param_2,int param
     if ((param_3 == 0) && (iVar4 == -4)) {
       return -4;
     }
-    wsprintfA(local_154,s_cMf32__RecGetLen_File___s__Sect__007efc5c,local_8 + 0x231,
+    wsprintfA(local_154,s_cMf32__RecGetLen_File___s__Sect__007efc5c,&local_8[0xb].field_0x21,
               s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
     iVar5 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x2bd,0,iVar4,&DAT_007a4ccc,
                                local_154);
@@ -69,7 +69,7 @@ int __thiscall cMf32::RecGetLen(cMf32 *this,byte param_1,char *param_2,int param
     param_2 = param_2 + 1;
     pcVar7 = pcVar7 + 1;
   }
-  iVar4 = Library::DKW::DB::FUN_00751b60(**(int **)pcVar3,(ushort *)&local_370,&local_c);
+  iVar4 = Library::DKW::DB::FUN_00751b60(*(int *)pcVar3->field_0000,(ushort *)&local_370,&local_c);
   if (iVar4 == -4) {
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x2b6);
   }

@@ -1,4 +1,4 @@
-FUN_0070a650:
+mfImgGetLen:
 0070A650  55                        PUSH EBP
 0070A651  8B EC                     MOV EBP,ESP
 0070A653  83 EC 44                  SUB ESP,0x44

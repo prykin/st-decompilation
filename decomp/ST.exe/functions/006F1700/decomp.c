@@ -23,7 +23,8 @@ uint __thiscall cMf32::RecPutNoname(cMf32 *this,undefined4 *param_1,uint param_2
     if ((param_1 == (undefined4 *)0x0) || (param_2 == 0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x11b);
     }
-    uVar2 = Library::DKW::DB::FUN_00751050(*(uint **)local_8,(ushort *)0x0,param_1,param_2);
+    uVar2 = Library::DKW::DB::FUN_00751050
+                      ((uint *)local_8->field_0000,(ushort *)0x0,param_1,param_2);
     g_currentExceptionFrame = local_4c.previous;
     return uVar2;
   }

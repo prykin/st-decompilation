@@ -12,7 +12,7 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   uint *puVar3;
   int iVar4;
   ChatGlassTy *extraout_ECX;
-  MMMObjTy *this_00;
+  undefined1 *this_00;
   ChatGlassTy *extraout_ECX_00;
   ChatGlassTy *extraout_ECX_01;
   ChatGlassTy *this_01;
@@ -33,27 +33,27 @@ void __thiscall WaitTy::PaintWait(WaitTy *this,char param_1)
   if (errorCode == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pWVar2 = local_8;
-    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)&local_8->field_0x5d);
+    PutDDX(0,0,'\x01',(BITMAPINFO *)local_8->field_005D);
     this_01 = extraout_ECX;
-    if ((*(int *)&pWVar2[0x44].field_0x24 == 0) && (param_1 == '\0')) {
-      this_00 = (MMMObjTy *)(*(int *)&pWVar2[0x42].field_0x51 + 0x140);
+    if ((pWVar2->field_1AF8 == (HoloTy *)0x0) && (param_1 == '\0')) {
+      this_00 = &pWVar2->field_1A5B->field_0x140;
       MMMObjTy::OutRGlProc
-                (this_00,(int)DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,(undefined4 *)this_00);
+                ((MMMObjTy *)this_00,(int)DAT_0080759c,0,0,0x112,0x38,0x204,0x19d,
+                 (undefined4 *)this_00);
       this_01 = extraout_ECX_00;
     }
-    if (((*(int *)&pWVar2[0x44].field_0x2c == 0) && (param_1 == '\0')) ||
-       ((param_1 != '\0' &&
-        ((*(int *)&pWVar2[0x42].field_0x5a != 0 && (*(int *)&pWVar2[0x42].field_0x5e == 0)))))) {
+    if (((pWVar2->field_1B00 == (HoloTy *)0x0) && (param_1 == '\0')) ||
+       ((param_1 != '\0' && ((pWVar2->field_1A64 != 0 && (pWVar2->field_1A68 == 0)))))) {
       MMMObjTy::OutBSlProc
                 (DAT_0080759c,(int)DAT_0080759c,0,0,10,0xb4,0xf9,0x121,
-                 (undefined4 *)(*(int *)&pWVar2[0x42].field_0x51 + 0x140));
+                 (undefined4 *)&pWVar2->field_1A5B->field_0x140);
       this_01 = extraout_ECX_01;
     }
-    if (((*(int *)&pWVar2[0x44].field_0x28 == 0) && (param_1 == '\0')) ||
-       ((param_1 != '\0' && (*(int *)&pWVar2[0x42].field_0x5a != 0)))) {
+    if (((pWVar2->field_1AFC == (HoloTy *)0x0) && (param_1 == '\0')) ||
+       ((param_1 != '\0' && (pWVar2->field_1A64 != 0)))) {
       ChatGlassTy::OutChGlProc
                 (this_01,(int)DAT_0080759c,0,0,200,0x1f1,400,0x62,
-                 (undefined4 *)(*(int *)&pWVar2[0x42].field_0x51 + 0x140));
+                 (undefined4 *)&pWVar2->field_1A5B->field_0x140);
     }
     uVar8 = 0;
     pvVar7 = *(void **)(DAT_0081176c + 0x30);

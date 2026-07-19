@@ -96,10 +96,10 @@ LAB_0056f325:
       }
       pcVar7 = local_14;
       if ((param_1 == '\0') || (param_1 == '\x03')) {
-        FUN_006efdb0(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
+        mfTMapSave(DAT_00806750,(int)local_14,s_3D_MAP_007ca1e4,'\x01');
         pvVar2 = local_10;
-        FUN_0071adb0(*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),
-                     (int)pcVar7,PTR_s_TEXTURE_0079b07c,'\x01');
+        mfAnySave(*(byte **)((int)local_10 + 0x7d12),*(uint *)((int)local_10 + 0x7d16),(int)pcVar7,
+                  PTR_s_TEXTURE_0079b07c,'\x01');
         STPlaySystemC::Save(DAT_00802a38,pcVar7);
         cMf32::RecPut(pcVar7,0xc,PTR_s_RND_INIT_0079b05c,(byte *)((int)pvVar2 + 0x1134),4,
                       (undefined4 *)0x0,'\0',(uint *)0x0);
@@ -113,13 +113,12 @@ LAB_0056f325:
         pvVar2 = local_10;
         pcVar7 = local_14;
         if ((iVar3 == 0) && (*(uint **)((int)local_10 + 0x4ea7) != (uint *)0x0)) {
-          FUN_0071ab30(*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
-                       '\x01');
+          mfSarSave(*(uint **)((int)local_10 + 0x4ea7),(int)local_14,PTR_s_DESCRIPTION_0079b074,
+                    '\x01');
         }
         g_currentExceptionFrame = local_60.previous;
         if (*(uint **)((int)pvVar2 + 0x4eab) != (uint *)0x0) {
-          FUN_0071ab30(*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01'
-                      );
+          mfSarSave(*(uint **)((int)pvVar2 + 0x4eab),(int)pcVar7,PTR_s_OBJECTIVES_0079b078,'\x01');
         }
         if (DAT_00807598 != (void *)0x0) {
           iVar3 = 1;
@@ -164,7 +163,7 @@ LAB_0056f325:
                       ,(uint *)0x0);
         this_00 = extraout_ECX_01;
       }
-      cMf32::delete(this_00,(undefined4 *)pcVar7);
+      cMf32::delete(this_00,&pcVar7->field_0000);
       g_currentExceptionFrame = local_a4.previous;
       return;
     }

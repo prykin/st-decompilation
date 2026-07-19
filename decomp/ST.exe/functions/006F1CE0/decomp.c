@@ -49,12 +49,12 @@ ushort * __thiscall cMf32::RecGet(cMf32 *this,byte param_1,char *param_2,int *pa
     if ((param_3 != (int *)0x0) && (iVar6 != 0)) {
       *param_3 = 0;
     }
-    if (((*(uint *)(*(int *)(*(int *)local_18 + 4) + 8) & 0x100000) != 0) &&
+    if (((*(uint *)(*(int *)(local_18->field_0000 + 4) + 8) & 0x100000) != 0) &&
        (local_c != (ushort *)0x0)) {
       FUN_006ab060(&local_c);
     }
     if ((param_4 != 0) || (errorCode != -4)) {
-      wsprintfA(local_37c,s_cMf32__RecGet_File___s__Sect__s_N_007efbb4,pcVar3 + 0x231,
+      wsprintfA(local_37c,s_cMf32__RecGet_File___s__Sect__s_N_007efbb4,&pcVar3[0xb].field_0x21,
                 s_M_ANY_007ef0a4 + (uint)param_1 * 10,param_2);
       iVar6 = ReportDebugMessage(s_E__Ourlib_Mf32int_cpp_007efaa4,0x221,0,errorCode,&DAT_007a4ccc,
                                  local_37c);
@@ -88,11 +88,11 @@ ushort * __thiscall cMf32::RecGet(cMf32 *this,byte param_1,char *param_2,int *pa
     param_2 = param_2 + 1;
     pcVar8 = pcVar8 + 1;
   }
-  DVar4 = FUN_00751980(*(int **)local_18,(ushort *)&local_278,(undefined4 *)0x0,0);
+  DVar4 = FUN_00751980((int *)local_18->field_0000,(ushort *)&local_278,(undefined4 *)0x0,0);
   if (DVar4 == 0xfffffffc) {
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Mf32int_cpp_007efaa4,0x1db);
   }
-  if ((*(uint *)(*(int *)(*(int *)pcVar3 + 4) + 8) & 0x100000) == 0) {
+  if ((*(uint *)(*(int *)(pcVar3->field_0000 + 4) + 8) & 0x100000) == 0) {
     local_c = (ushort *)FUN_006f1cb0(pcVar3,DVar4);
     if (((char)local_273 != '\x01') && ((char)local_273 != '\x02')) {
       if (param_3 == (int *)0x0) {
@@ -158,12 +158,12 @@ ushort * __thiscall cMf32::RecGet(cMf32 *this,byte param_1,char *param_2,int *pa
         }
       }
       local_8 = puVar5;
-      FUN_00751980(*(int **)pcVar3,(ushort *)&local_278,(undefined4 *)local_8,local_277);
+      FUN_00751980((int *)pcVar3->field_0000,(ushort *)&local_278,(undefined4 *)local_8,local_277);
       g_currentExceptionFrame = local_5c.previous;
       return local_8;
     }
     local_c = (ushort *)Library::DKW::LIB::FUN_006aac10(local_277);
-    FUN_00751980(*(int **)pcVar3,(ushort *)&local_278,(undefined4 *)local_c,local_277);
+    FUN_00751980((int *)pcVar3->field_0000,(ushort *)&local_278,(undefined4 *)local_c,local_277);
     if (param_3 == (int *)0x0) {
       puVar5 = (ushort *)Library::DKW::LIB::FUN_006aac10(CONCAT13(uStack_26f,local_273._1_3_));
       local_10 = 1;

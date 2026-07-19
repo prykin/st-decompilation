@@ -24,7 +24,7 @@ undefined4 * FUN_00602e90(void)
     else {
       pbVar2 = (&PTR_s_Dest1_0_007cebec)[*(int *)(local_c + 0x372)];
     }
-    puVar3 = FUN_00709af0(DAT_00806774,CASE_1D,pbVar2,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar3 = mfRLoad(DAT_00806774,CASE_1D,pbVar2,0xffffffff,0,1,0,(undefined4 *)0x0);
     if (puVar3 != (ushort *)0x0) {
       if (*(int *)(local_c + 0x241) == 0) {
         local_8 = FUN_006e9000(*(void **)(local_c + 0x211),**(undefined4 **)((int)puVar3 + 0x21),

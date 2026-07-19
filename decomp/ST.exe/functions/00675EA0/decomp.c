@@ -1,5 +1,10 @@
 
-void __cdecl FUN_00675ea0(uint param_1,int *param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_mdef.cpp
+   Diagnostic line evidence: 257 | 258 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+void __cdecl _AddObjGrpExch(uint param_1,int *param_2)
 
 {
   code *pcVar1;

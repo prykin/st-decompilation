@@ -1,5 +1,10 @@
 
-uint * __cdecl FUN_0067e0e0(int param_1,int param_2,uint param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 407 | 410 | 412 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint * __cdecl CreateStrategList(int param_1,int param_2,uint param_3)
 
 {
   code *pcVar1;
@@ -21,7 +26,7 @@ uint * __cdecl FUN_0067e0e0(int param_1,int param_2,uint param_3)
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_plr_d_cpp_007d2fa4,0x197);
     }
     pCVar2 = FUN_006f2c00(PTR_s_STRATEG_0079d72c,1,param_2);
-    puVar3 = thunk_FUN_0067dc20(param_1,0,pCVar2,param_3);
+    puVar3 = _CreateStgListByRoot(param_1,0,pCVar2,param_3);
     g_currentExceptionFrame = local_4c.previous;
     return puVar3;
   }

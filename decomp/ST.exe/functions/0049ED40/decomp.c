@@ -52,14 +52,14 @@ undefined4 __thiscall STGroupBoatC::DCBomb(STGroupBoatC *this,int param_1)
         *puVar10 = 0;
         puVar10 = puVar10 + 1;
       }
-      *(undefined4 *)&local_28->field_0x65 = 0;
+      local_28->field_0065 = 0;
       local_20 = 0;
-      local_28->field_02BD = *(undefined4 *)&local_28->field_0x18c;
-      local_28->field_02C1 = *(undefined2 *)&local_28->field_0x190;
-      local_30 = *(undefined2 *)&local_28->field_02BD;
+      *(undefined4 *)&local_28->field_0x2bd = local_28->field_018C;
+      local_28->field_02C1 = local_28->field_0190;
+      local_30 = *(undefined2 *)&local_28->field_0x2bd;
       local_34 = *(undefined4 *)(DAT_00802a38 + 0xe4);
       local_2c = local_28->field_02C1;
-      local_2e = *(undefined2 *)((int)&local_28->field_02BD + 2);
+      local_2e = local_28->field_02BF;
       puVar6 = local_14;
       local_1c = local_34;
       if (0 < local_10) {

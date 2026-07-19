@@ -20,7 +20,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   cMf32 *extraout_ECX_04;
   cMf32 *pcVar6;
   undefined4 unaff_ESI;
-  undefined1 *this_01;
+  undefined4 *this_01;
   void *unaff_EDI;
   InternalExceptionFrame local_94;
   InternalExceptionFrame local_50;
@@ -33,10 +33,10 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    if (*(int *)&local_8->field_0x1189 != 0) {
-      FUN_006ab060((undefined4 *)&local_8->field_0x1189);
+    if (local_8->field_1189 != 0) {
+      FUN_006ab060(&local_8->field_1189);
     }
-    *(undefined4 *)&pSVar3->field_0x118d = 0;
+    pSVar3->field_118D = 0;
     if (DAT_00806740 != (byte *)0x0) {
       FUN_006ae110(DAT_00806740);
     }
@@ -44,15 +44,15 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     thunk_FUN_005711d0(pSVar3,&DAT_0081163c);
     thunk_FUN_005711d0(pSVar3,&DAT_0081176c);
     CloseGameDBs(pSVar3);
-    thunk_FUN_00576ce0();
-    if (*(byte **)&pSVar3->field_0x4ee2 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pSVar3->field_0x4ee2);
+    DestroyBaseSystem();
+    if ((byte *)pSVar3->field_4EE2 != (byte *)0x0) {
+      FUN_006ae110((byte *)pSVar3->field_4EE2);
     }
-    *(undefined4 *)&pSVar3->field_0x4ee2 = 0;
-    if (*(byte **)&pSVar3->field_0x4ee6 != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pSVar3->field_0x4ee6);
+    pSVar3->field_4EE2 = 0;
+    if ((byte *)pSVar3->field_4EE6 != (byte *)0x0) {
+      FUN_006ae110((byte *)pSVar3->field_4EE6);
     }
-    *(undefined4 *)&pSVar3->field_0x4ee6 = 0;
+    pSVar3->field_4EE6 = 0;
     if (DAT_008075a0 != (int *)0x0) {
       FUN_006c3aa0(DAT_008075a0);
       DAT_008075a0 = (int *)0x0;
@@ -82,7 +82,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
         FUN_0070a300(&DAT_00806764);
         pcVar6 = extraout_ECX_00;
       }
-      cMf32::delete(pcVar6,(undefined4 *)DAT_00806760);
+      cMf32::delete(pcVar6,&DAT_00806760->field_0000);
       DAT_00806760 = (cMf32 *)0x0;
       pcVar6 = extraout_ECX_01;
     }
@@ -104,36 +104,35 @@ void __thiscall STAppC::DoneApp(STAppC *this)
       cMf32::delete(pcVar6,DAT_0080675c);
     }
     DAT_0080675c = (undefined4 *)0x0;
-    if (*(byte **)&pSVar3->field_0x4ede != (byte *)0x0) {
-      FUN_006ae110(*(byte **)&pSVar3->field_0x4ede);
+    if ((byte *)pSVar3->field_4EDE != (byte *)0x0) {
+      FUN_006ae110((byte *)pSVar3->field_4EDE);
     }
-    *(undefined4 *)&pSVar3->field_0x4ede = 0;
-    if (*(byte **)&pSVar3->field_0x4ea7 != (byte *)0x0) {
-      FUN_006b5570(*(byte **)&pSVar3->field_0x4ea7);
+    pSVar3->field_4EDE = 0;
+    if ((byte *)pSVar3->field_4EA7 != (byte *)0x0) {
+      FUN_006b5570((byte *)pSVar3->field_4EA7);
     }
-    *(undefined4 *)&pSVar3->field_0x4ea7 = 0;
-    if (*(byte **)&pSVar3->field_0x4eab != (byte *)0x0) {
-      FUN_006b5570(*(byte **)&pSVar3->field_0x4eab);
+    pSVar3->field_4EA7 = 0;
+    if ((byte *)pSVar3->field_4EAB != (byte *)0x0) {
+      FUN_006b5570((byte *)pSVar3->field_4EAB);
     }
-    *(undefined4 *)&pSVar3->field_0x4eab = 0;
-    if (*(byte **)&pSVar3->field_0x4eda != (byte *)0x0) {
-      FUN_006b5570(*(byte **)&pSVar3->field_0x4eda);
+    pSVar3->field_4EAB = 0;
+    if ((byte *)pSVar3->field_4EDA != (byte *)0x0) {
+      FUN_006b5570((byte *)pSVar3->field_4EDA);
     }
-    iVar4 = *(int *)&pSVar3[1].field_0x2e14;
-    *(undefined4 *)&pSVar3->field_0x4eda = 0;
-    if (iVar4 != 0) {
-      FUN_006ab060((undefined4 *)&pSVar3[1].field_0x2e14);
+    pSVar3->field_4EDA = 0;
+    if (pSVar3->field_7D12 != 0) {
+      FUN_006ab060(&pSVar3->field_7D12);
     }
-    if (*(int *)&pSVar3[1].field_0x27f4 != 0) {
-      FUN_006ab060((undefined4 *)&pSVar3[1].field_0x27f4);
+    if (pSVar3->field_76F2 != 0) {
+      FUN_006ab060(&pSVar3->field_76F2);
     }
     thunk_FUN_005713b0((int)pSVar3);
-    this_01 = &pSVar3->field_0x38;
+    this_01 = &pSVar3->field_0038;
     thunk_FUN_00572920(this_01,1);
     thunk_FUN_005672e0((int)this_01);
     local_94.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_94;
-    local_c = (int *)this_01;
+    local_c = this_01;
     iVar4 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
     piVar2 = local_c;
     if ((iVar4 == 0) && (*local_c != 0)) {
@@ -145,8 +144,8 @@ void __thiscall STAppC::DoneApp(STAppC *this)
     DAT_00806748 = (HWND)0x0;
     UnregisterClassA(s_STWindowClass_007c9e3c,DAT_00856d70);
     pSVar3 = local_8;
-    if (*(int *)&local_8->field_0x115a != 0) {
-      FUN_006ab060((undefined4 *)&local_8->field_0x115a);
+    if (local_8->field_115A != 0) {
+      FUN_006ab060(&local_8->field_115A);
     }
     AppClassTy::DoneApp((AppClassTy *)pSVar3);
     if (DAT_008030d4 != 0) {

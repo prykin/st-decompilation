@@ -43,76 +43,76 @@ undefined4 __thiscall STMineSetC::LoadImagMineSet(STMineSetC *this,int param_1)
   if (param_1 == 0) {
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,0xe,DAT_00806774,
-                       (&PTR_DAT_007d02c4)[(byte)pSVar2->field_0x2ad],0x1d);
+                       (&PTR_DAT_007d02c4)[(byte)pSVar2->field_02AD],0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
     thunk_FUN_004ad380(this_00,0x5a,0x45);
     thunk_FUN_004ac610(this_00,'\x0e');
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(undefined4 *)&pSVar2[1].field_0x10);
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(undefined4 *)&pSVar2->field_0x2ce);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
     uVar4 = thunk_FUN_004acd30(this_00,'\x0e');
-    *(undefined4 *)&pSVar2[1].field_0x14 = uVar4;
-    if (pSVar2[1].field_0x94 != '\0') {
+    *(undefined4 *)&pSVar2->field_0x2d2 = uVar4;
+    if (pSVar2->field_0x352 != '\0') {
       iVar3 = STT3DSprC::LoadSequence
                         ((STT3DSprC *)this_00,0xc,DAT_00806774,
                          (&PTR_s_mine0_007d02d4)
-                         [*(int *)&pSVar2->field_0x262 + (uint)(byte)pSVar2->field_0x2ad * 8],0x1d);
+                         [*(int *)&pSVar2->field_0x262 + (uint)(byte)pSVar2->field_02AD * 8],0x1d);
       if (iVar3 != 0) {
         return local_8;
       }
-      STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\f',*(undefined4 *)&pSVar2[1].field_0x10);
+      STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\f',*(undefined4 *)&pSVar2->field_0x2ce);
       thunk_FUN_004ac610(this_00,'\f');
       STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\f');
       STT3DSprC::StartShow((STT3DSprC *)this_00,0xc,*(undefined4 *)(DAT_00802a38 + 0xe4));
     }
     if (DAT_00807326 != '\0') {
-      STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',(uint)(byte)pSVar2[1].field_0x18);
+      STT3DSprC::SetCurShad((STT3DSprC *)this_00,'\x0e',(uint)(byte)pSVar2->field_0x2d6);
     }
   }
   else {
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,0xe,DAT_00806774,
-                       (&PTR_s_expdeep_007d0354)[(byte)pSVar2->field_0x2ad],0x1d);
+                       (&PTR_s_expdeep_007d0354)[(byte)pSVar2->field_02AD],0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
     thunk_FUN_004ac610(this_00,'\x0e');
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(undefined4 *)&pSVar2[1].field_0x10);
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\x0e',*(undefined4 *)&pSVar2->field_0x2ce);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\x0e');
     STT3DSprC::StartShow((STT3DSprC *)this_00,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,10,DAT_00806774,
-                       (&PTR_DAT_007d0364)[(byte)pSVar2->field_0x2ad],0x1d);
+                       (&PTR_DAT_007d0364)[(byte)pSVar2->field_02AD],0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
     thunk_FUN_004ac610(this_00,'\n');
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\n',*(undefined4 *)&pSVar2[1].field_0x23);
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\n',*(undefined4 *)&pSVar2->field_0x2e1);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\n');
     thunk_FUN_004acf20(this_00,DAT_008032b8,0x10);
     thunk_FUN_004acfe0(this_00,'\n');
     STT3DSprC::StartShow((STT3DSprC *)this_00,10,*(undefined4 *)(DAT_00802a38 + 0xe4));
-    pSVar2[1].field_0x22 = 1;
+    pSVar2->field_0x2e0 = 1;
     iVar3 = STT3DSprC::LoadSequence
                       ((STT3DSprC *)this_00,9,DAT_00806764,
-                       (&PTR_DAT_007d0374)[(byte)pSVar2->field_0x2ad],0x1d);
+                       (&PTR_DAT_007d0374)[(byte)pSVar2->field_02AD],0x1d);
     if (iVar3 != 0) {
       return local_8;
     }
     thunk_FUN_004ac610(this_00,'\t');
-    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\t',*(undefined4 *)&pSVar2[1].field_0x1d);
+    STT3DSprC::SetCurFase((STT3DSprC *)this_00,'\t',*(undefined4 *)&pSVar2->field_0x2db);
     STT3DSprC::ShowCurFase((STT3DSprC *)this_00,'\t');
     STT3DSprC::StartShow((STT3DSprC *)this_00,9,*(undefined4 *)(DAT_00802a38 + 0xe4));
     thunk_FUN_004ad070(this_00,9);
-    pSVar2[1].field_0x21 = 1;
+    pSVar2->field_0x2df = 1;
   }
-  thunk_FUN_004ad3c0(this_00,(float)*(int *)&pSVar2[1].field_0x4 * _DAT_007904f8 * _DAT_007904f0,
-                     (float)*(int *)&pSVar2[1].field_0x8 * _DAT_007904f8 * _DAT_007904f0,
-                     (float)*(int *)&pSVar2[1].field_0xc * _DAT_007904f8 * _DAT_007904f0 +
+  thunk_FUN_004ad3c0(this_00,(float)*(int *)&pSVar2->field_0x2c2 * _DAT_007904f8 * _DAT_007904f0,
+                     (float)*(int *)&pSVar2->field_0x2c6 * _DAT_007904f8 * _DAT_007904f0,
+                     (float)*(int *)&pSVar2->field_0x2ca * _DAT_007904f8 * _DAT_007904f0 +
                      _DAT_007904fc);
-  pSVar2[1].field_0x2b = 1;
+  pSVar2->field_02E9 = 1;
   g_currentExceptionFrame = local_50.previous;
   return 1;
 }

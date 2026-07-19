@@ -19,31 +19,31 @@ void __thiscall VisibleClassTy::VisHoleExec(VisibleClassTy *this,void *param_1)
   VisibleClassTy *local_c;
   uint local_8;
   
-  if (*(int *)(this + 0x114) != 0) {
+  if (this->field_0114 != 0) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
     if (iVar3 == 0) {
-      local_8 = *(uint *)(*(int *)(local_c + 0xf4) + 0xc);
+      local_8 = *(uint *)(local_c->field_00F4 + 0xc);
       while (local_8 = local_8 - 1, -1 < (int)local_8) {
-        iVar3 = *(int *)(this_00 + 0xf4);
+        iVar3 = this_00->field_00F4;
         if (local_8 < *(uint *)(iVar3 + 0xc)) {
           piVar6 = (int *)(*(int *)(iVar3 + 8) * local_8 + *(int *)(iVar3 + 0x1c));
         }
         else {
           piVar6 = (int *)0x0;
         }
-        if (((uint)(piVar6[5] + piVar6[6]) <= *(uint *)(this_00 + 0x108)) &&
-           (((*(uint *)(this_00 + 0x108) - piVar6[5]) - piVar6[6]) % 7 == 0)) {
+        if (((uint)(piVar6[5] + piVar6[6]) <= (uint)this_00->field_0108) &&
+           ((uint)((this_00->field_0108 - piVar6[5]) - piVar6[6]) % 7 == 0)) {
           thunk_FUN_00559110(this_00,*piVar6,(undefined *)piVar6[1],piVar6[2],piVar6[4],piVar6[3],-6
                              ,0xffffffff);
           uVar2 = local_8;
           puVar4 = (undefined *)(piVar6[3] + -1);
           piVar6[3] = (int)puVar4;
           if ((int)puVar4 < 0) {
-            FUN_006b0c70(*(int *)(this_00 + 0xf4),local_8);
+            FUN_006b0c70(this_00->field_00F4,local_8);
             local_8 = uVar2;
           }
           else {

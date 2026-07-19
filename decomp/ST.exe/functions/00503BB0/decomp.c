@@ -54,11 +54,11 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   }
   thunk_FUN_005252c0(0xae);
   pCVar4 = local_10;
-  *(undefined4 *)&local_10->field_0x12c = 0;
-  if (local_10->field_0xb64 == '\0') {
+  local_10->field_012C = 0;
+  if (local_10->field_0B64 == '\0') {
     thunk_FUN_004f8020(local_10,'\x01',0);
   }
-  *(undefined4 *)&pCVar4->field_0x12c = 1;
+  pCVar4->field_012C = 1;
   if (DAT_008016e8 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(DAT_008016e8,'\0');
   }
@@ -90,7 +90,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
   thunk_FUN_0054a8d0(DAT_00802a30);
-  bVar1 = (&pCVar4->field_0xba2)[param_1 & 0xff];
+  bVar1 = (&pCVar4->field_0BA2)[param_1 & 0xff];
   switch((uint)bVar1) {
   case 1:
     local_5 = 0;
@@ -133,7 +133,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
-    if ((DAT_00801684 != (ProdPanelTy *)0x0) && (*(short *)&DAT_00801684->field_0x172 == 2)) {
+    if ((DAT_00801684 != (ProdPanelTy *)0x0) && (DAT_00801684->field_0172 == 2)) {
       ProdPanelTy::SetPanel(DAT_00801684,'\x01');
     }
     break;

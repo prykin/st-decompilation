@@ -27,8 +27,8 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar7 = local_8;
   if (iVar3 == 0) {
-    if (*(int *)&local_8[0x11].field_0x14f != 0) {
-      piVar8 = (int *)&local_8[0x11].field_0x127;
+    if (local_8->field_1ACF != 0) {
+      piVar8 = &local_8->field_1AA7;
       iVar3 = 10;
       do {
         piVar1 = (int *)*piVar8;
@@ -40,7 +40,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
     }
-    *(uint *)&pMVar7[0x11].field_0x14f = (uint)(*(int *)&pMVar7[0x11].field_0x14f == 0);
+    pMVar7->field_1ACF = (uint)(pMVar7->field_1ACF == 0);
     local_10 = 0;
     local_c = 0x244;
     do {
@@ -57,7 +57,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
           pBVar5 = (BITMAPINFO *)FUN_0070b3a0(iVar3,(int)*(short *)(iVar3 + 0x29));
           FUN_006b5f80(DAT_008075a8,*piVar8,piVar8[1],(int)*(short *)(iVar3 + 0x2c),
                        (int)*(short *)(iVar3 + 0x2e));
-          thunk_FUN_005403c0(*piVar8,piVar8[1],'\x01',pBVar5);
+          PutDDX(*piVar8,piVar8[1],'\x01',pBVar5);
           if ((char)piVar8[5] != '\0') {
             *(undefined1 *)(piVar8 + 5) = 0;
           }

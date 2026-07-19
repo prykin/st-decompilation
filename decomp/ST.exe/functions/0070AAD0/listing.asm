@@ -1,4 +1,4 @@
-FUN_0070aad0:
+mfGifLoadToDib:
 0070AAD0  55                        PUSH EBP
 0070AAD1  8B EC                     MOV EBP,ESP
 0070AAD3  83 EC 50                  SUB ESP,0x50

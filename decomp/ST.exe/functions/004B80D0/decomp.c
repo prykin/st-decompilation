@@ -52,37 +52,33 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       thunk_FUN_004cc810((int)this_01);
     }
     LoadImages(this_01,unaff_EDI);
-    if (*(int *)(&DAT_00791a10 + *(int *)&this_01->field_0x235 * 4) != 0) {
+    if (*(int *)(&DAT_00791a10 + this_01->field_0235 * 4) != 0) {
       AddSprInit(this_01);
     }
     if (param_2 != 0) {
       iVar6 = this_01->field_0245;
       if (iVar6 == 1) {
         uVar7 = thunk_FUN_004406c0(this_01->field_023D);
-        if (*(int *)(&DAT_007955d0 + ((uVar7 & 0xff) + *(int *)&this_01->field_0x235 * 3) * 4) != 0)
-        {
+        if (*(int *)(&DAT_007955d0 + ((uVar7 & 0xff) + this_01->field_0235 * 3) * 4) != 0) {
           pTVar2 = this_01->vtable;
           uVar7 = thunk_FUN_004406c0(this_01->field_023D);
           (*pTVar2->slot_90)(3,*(undefined4 *)
-                                (&DAT_007955d0 +
-                                ((uVar7 & 0xff) + *(int *)&this_01->field_0x235 * 3) * 4));
+                                (&DAT_007955d0 + ((uVar7 & 0xff) + this_01->field_0235 * 3) * 4));
         }
       }
       else if (iVar6 == 2) {
-        (*this_01->vtable->slot_90)
-                  (3,*(undefined4 *)(&DAT_007958ec + *(int *)&this_01->field_0x235 * 4));
+        (*this_01->vtable->slot_90)(3,*(undefined4 *)(&DAT_007958ec + this_01->field_0235 * 4));
       }
       else if (iVar6 == 3) {
-        (*this_01->vtable->slot_90)
-                  (3,*(undefined4 *)(&DAT_007959f4 + *(int *)&this_01->field_0x235 * 4));
+        (*this_01->vtable->slot_90)(3,*(undefined4 *)(&DAT_007959f4 + this_01->field_0235 * 4));
       }
     }
     switch(this_01->field_0245) {
     case 0:
-      if (*(int *)(&DAT_00792778 + *(int *)&this_01->field_0x235 * 4) != 0) {
-        *(undefined4 *)&this_01->field_0x275 = 1;
-        *(undefined4 *)&this_01->field_0x2b5 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-        if (*(int *)&this_01->field_0x361 == 0) {
+      if (*(int *)(&DAT_00792778 + this_01->field_0235 * 4) != 0) {
+        this_01->field_0275 = 1;
+        this_01->field_02B5 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+        if (this_01->field_0361 == 0) {
           *(undefined4 *)&this_01->field_0x261 = 1;
         }
       }
@@ -100,7 +96,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       if (sVar5 == 0) {
         local_8 = *(int *)&this_01->field_0x5b4;
-        iVar6 = 2 - (uint)(*(int *)(&DAT_00791e30 + *(int *)&this_01->field_0x235 * 4) != 1);
+        iVar6 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
         if (local_8 < local_8 + iVar6) {
           do {
             iVar9 = *(int *)&this_01->field_0x5b0;
@@ -140,7 +136,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       }
       if (sVar5 != 0) {
         local_8 = *(int *)&this_01->field_0x5b4;
-        iVar6 = 2 - (uint)(*(int *)(&DAT_00791e30 + *(int *)&this_01->field_0x235 * 4) != 1);
+        iVar6 = 2 - (uint)(*(int *)(&DAT_00791e30 + this_01->field_0235 * 4) != 1);
         if (local_8 < local_8 + iVar6) {
           do {
             iVar9 = *(int *)&this_01->field_0x5b0;
@@ -160,7 +156,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         }
         this_01->field_0251 = 0;
       }
-      iVar6 = *(int *)&this_01->field_0x5ac;
+      iVar6 = this_01->field_05AC;
       if (iVar6 - 0x32U < 0x42) {
         switch(iVar6) {
         case 0x32:
@@ -243,7 +239,7 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
           thunk_FUN_004d8d40((int)this_01);
         }
       }
-      if (*(int *)(&DAT_00794d94 + *(int *)&this_01->field_0x235 * 4) != 0) {
+      if (*(int *)(&DAT_00794d94 + this_01->field_0235 * 4) != 0) {
         thunk_FUN_004c3000((int)this_01);
       }
       thunk_FUN_004e9c20(this_01);
@@ -253,8 +249,8 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       STT3DSprC::StopShow((STT3DSprC *)this_00,0);
       STT3DSprC::StopShow((STT3DSprC *)this_00,1);
     default:
-      if (*(int *)(&DAT_00792778 + *(int *)&this_01->field_0x235 * 4) != 0) {
-        *(undefined4 *)&this_01->field_0x275 = 0;
+      if (*(int *)(&DAT_00792778 + this_01->field_0235 * 4) != 0) {
+        this_01->field_0275 = 0;
         *(undefined4 *)&this_01->field_0x261 = 0;
       }
       break;
@@ -278,15 +274,15 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
         }
         this_01->field_0251 = 0;
       }
-      if (*(int *)(&DAT_00792778 + *(int *)&this_01->field_0x235 * 4) != 0) {
-        *(undefined4 *)&this_01->field_0x275 = 0;
+      if (*(int *)(&DAT_00792778 + this_01->field_0235 * 4) != 0) {
+        this_01->field_0275 = 0;
         *(undefined4 *)&this_01->field_0x261 = 0;
       }
       break;
     case 6:
-      *(undefined4 *)&this_01->field_0x458 = 0xfe;
+      this_01->field_0458 = 0xfe;
     }
-    switch(*(undefined4 *)&this_01->field_0x5ac) {
+    switch(this_01->field_05AC) {
     case 0x36:
     case 0x3d:
     case 0x5d:
@@ -310,14 +306,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
     case 0x72:
       thunk_FUN_004ecdf0((int)this_01);
     }
-    if (*(int *)(&DAT_00794d94 + *(int *)&this_01->field_0x235 * 4) != 0) {
+    if (*(int *)(&DAT_00794d94 + this_01->field_0235 * 4) != 0) {
       thunk_FUN_004c2e60((int)this_01);
     }
     thunk_FUN_004ea6c0((int)this_01);
     RotateSpr(this_01,1);
   }
   else {
-    iVar6 = *(int *)&this_01->field_0x46c;
+    iVar6 = this_01->field_046C;
     if ((iVar6 == 0) || ((iVar6 == 1 || (iVar6 == 2)))) {
       bVar4 = true;
     }
@@ -336,15 +332,14 @@ int __thiscall TLOBaseTy::SetState(TLOBaseTy *this,int param_1,int param_2)
       else {
         this_01->field_0249 = param_1;
       }
-      if (((*(int *)&this_01->field_0x255 != 0) && (iVar6 == 0)) &&
-         ((this_01->field_0249 == 2 &&
-          (*(int *)(&DAT_00792778 + *(int *)&this_01->field_0x235 * 4) != 0)))) {
-        *(undefined4 *)&this_01->field_0x275 = 0;
+      if (((this_01->field_0255 != 0) && (iVar6 == 0)) &&
+         ((this_01->field_0249 == 2 && (*(int *)(&DAT_00792778 + this_01->field_0235 * 4) != 0)))) {
+        this_01->field_0275 = 0;
       }
-      if (((iVar6 == 4) && (*(int *)&this_01->field_0x3dc != 0)) &&
+      if (((iVar6 == 4) && (this_01->field_03DC != 0)) &&
          (iVar6 = thunk_FUN_004ea620((int)this_01), iVar6 != 0)) {
-        *(undefined4 *)&this_01->field_0x3fc = 1;
-        *(undefined4 *)&this_01->field_0x400 = 0;
+        this_01->field_03FC = 1;
+        this_01->field_0400 = 0;
         g_currentExceptionFrame = local_50.previous;
         return 0;
       }

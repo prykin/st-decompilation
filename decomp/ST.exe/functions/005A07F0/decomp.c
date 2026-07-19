@@ -2,9 +2,9 @@
 void __fastcall FUN_005a07f0(int param_1)
 
 {
-  thunk_FUN_00540dc0(0,*(undefined4 *)(param_1 + 8),2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
-  thunk_FUN_00540dc0(0,*(undefined4 *)(param_1 + 8),2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
-  thunk_FUN_00540dc0(0,*(undefined4 *)(param_1 + 8),2,0xc0a1,2,0x1c,0,0,0,0,0,0);
+  SetAccelerator(0,*(undefined4 *)(param_1 + 8),2,0xc0a5,2,0x4000002f,0,0,0,0,0,0);
+  SetAccelerator(0,*(undefined4 *)(param_1 + 8),2,0xc0a4,2,0x8000031,0,0,0,0,0,0);
+  SetAccelerator(0,*(undefined4 *)(param_1 + 8),2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   if (*(uint *)(param_1 + 0x1b10) != 0) {
     FUN_006e56b0(*(void **)(param_1 + 0xc),*(uint *)(param_1 + 0x1b10));
   }

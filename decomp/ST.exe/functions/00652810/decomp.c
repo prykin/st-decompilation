@@ -196,7 +196,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
       this_00 = local_188;
       if (iVar5 == 0) {
         local_14 = 0;
-        iVar5 = *(int *)&local_188->field_0x4ee;
+        iVar5 = local_188->field_04EE;
         bVar30 = *(int *)(iVar5 + 0xc) != 0;
         if (0 < *(int *)(iVar5 + 0xc)) {
           do {
@@ -214,11 +214,11 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                   thunk_FUN_0065bd70(this_00,(int)message,1);
                   local_198 = 1;
                 }
-                iVar5 = thunk_FUN_00672440((int)&this_00->field_0x4fa,(int)*(short *)(pcVar23 + 9),
+                iVar5 = thunk_FUN_00672440((int)&this_00->field_04FA,(int)*(short *)(pcVar23 + 9),
                                            local_16c);
                 uVar31 = uVar27;
                 if (iVar5 < 0) {
-                  iVar32 = *(int *)&this_00->field_0x84;
+                  iVar32 = this_00->field_0084;
                   pcVar7 = &this_00->field_0x4;
                 }
                 else {
@@ -242,7 +242,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                           else {
                             psVar8 = (short *)0x0;
                           }
-                          iVar5 = thunk_FUN_00672440((int)&this_00->field_0x4fa,(int)*psVar8,
+                          iVar5 = thunk_FUN_00672440((int)&this_00->field_04FA,(int)*psVar8,
                                                      local_16c);
                           if (iVar5 < 0) {
                             thunk_FUN_0064d0e0(this_00,iVar5,&this_00->field_0x4,uVar27,-1);
@@ -394,8 +394,7 @@ void __thiscall AiEventClassTy::GetMessage(AiEventClassTy *this,STMessage *messa
                                               }
                                               else {
                                                 local_c = (AiFltClassTy *)
-                                                          thunk_FUN_00676170(*(uint *******)local_10
-                                                                            );
+                                                          _GetStaffGrpExch(*(uint *******)local_10);
                                                 if (local_c != (AiFltClassTy *)0x0) {
                                                   thunk_FUN_0065d940(local_17c,(int)local_c,0);
                                                   FUN_006ae110((byte *)local_c);
@@ -2521,8 +2520,8 @@ LAB_00659a1c:
                               iVar32 = thunk_FUN_0064feb0((int)local_16c);
                               if (iVar32 == 0) break;
                               if (local_160 != (AiFltClassTy *)0x0) {
-                                thunk_FUN_00677f40(0,(byte *)local_164,0,0,0,-1,-1,-1,&LAB_004012cb,
-                                                   local_160);
+                                _EnumArt(0,(byte *)local_164,0,0,0,-1,-1,-1,&LAB_004012cb,local_160)
+                                ;
                               }
                               goto cf_switch_join_00659A73;
                             case 0x595:
@@ -2551,17 +2550,17 @@ LAB_00659a1c:
                               iVar32 = thunk_FUN_0064ff70(local_16c);
                               if (iVar32 == 0) break;
                               DAT_008118fc = 0;
-                              thunk_FUN_00677960((short)local_164,(short)local_160,(short)local_15c,
-                                                 (short)local_158,(short)local_154,(short)local_150,
-                                                 (short)local_14c,&LAB_004047e1,&local_148);
+                              _EnumRCField((short)local_164,(short)local_160,(short)local_15c,
+                                           (short)local_158,(short)local_154,(short)local_150,
+                                           (short)local_14c,&LAB_004047e1,&local_148);
                               goto cf_switch_join_00659A73;
                             case 0x597:
                               iVar32 = thunk_FUN_00650090(local_16c);
                               if (iVar32 == 0) break;
-                              thunk_FUN_00677960((short)local_15c,(short)local_158,(short)local_154,
-                                                 (short)local_150,(short)local_14c,(short)local_148,
-                                                 (short)local_144,&LAB_00405b6e,
-                                                 (int)local_160 << 0x10 | (uint)local_164 & 0xffff);
+                              _EnumRCField((short)local_15c,(short)local_158,(short)local_154,
+                                           (short)local_150,(short)local_14c,(short)local_148,
+                                           (short)local_144,&LAB_00405b6e,
+                                           (int)local_160 << 0x10 | (uint)local_164 & 0xffff);
                               goto cf_switch_join_00659A73;
                             case 0x598:
                               iVar32 = thunk_FUN_006501a0(local_16c);
@@ -2577,17 +2576,16 @@ LAB_00659a1c:
                               iVar32 = thunk_FUN_00650240(local_16c);
                               if (iVar32 == 0) break;
                               DAT_008118fc = 0;
-                              thunk_FUN_006785a0((byte *)local_160,(char)local_164,(short)local_15c,
-                                                 (short)local_158,(short)local_154,(short)local_150,
-                                                 (short)local_14c,(short)local_148,&LAB_0040191a,
-                                                 &local_144);
+                              _EnumDest((byte *)local_160,(char)local_164,(short)local_15c,
+                                        (short)local_158,(short)local_154,(short)local_150,
+                                        (short)local_14c,(short)local_148,&LAB_0040191a,&local_144);
                               goto cf_switch_join_00659A73;
                             case 0x59a:
                               iVar32 = thunk_FUN_00650370((int)local_16c);
                               if (iVar32 == 0) break;
                               if (local_160 != (AiFltClassTy *)0x0) {
-                                thunk_FUN_006785a0((byte *)local_164,-1,0,0,0,-1,-1,-1,&LAB_00403e18
-                                                   ,local_160);
+                                _EnumDest((byte *)local_164,-1,0,0,0,-1,-1,-1,&LAB_00403e18,
+                                          local_160);
                               }
                               goto cf_switch_join_00659A73;
                             case 0x59b:
@@ -2635,11 +2633,11 @@ LAB_00659a1c:
                                     local_c = pAVar10;
                                     do {
                                       DAT_008118fc = 0;
-                                      thunk_FUN_00678240((int)*pppppppuVar24,(short)local_15c,
-                                                         (char)local_158,local_154,(short)local_150,
-                                                         (short)local_14c,(short)local_148,
-                                                         (short)local_144,(short)local_140,
-                                                         (short)local_13c,&LAB_004037d8,&local_138);
+                                      _EnumMines((int)*pppppppuVar24,(short)local_15c,
+                                                 (char)local_158,local_154,(short)local_150,
+                                                 (short)local_14c,(short)local_148,(short)local_144,
+                                                 (short)local_140,(short)local_13c,&LAB_004037d8,
+                                                 &local_138);
                                       pppppppuVar24 = pppppppuVar24 + 1;
                                       local_c = (AiFltClassTy *)((int)&local_c[-1].field_0284 + 3);
                                     } while (local_c != (AiFltClassTy *)0x0);
@@ -2661,11 +2659,11 @@ LAB_00659a1c:
                                     local_c = pAVar10;
                                     do {
                                       DAT_008118fc = 0;
-                                      thunk_FUN_00678240((int)*pppppppuVar24,(short)local_158,
-                                                         (char)local_154,local_150,(short)local_14c,
-                                                         (short)local_148,(short)local_144,
-                                                         (short)local_140,(short)local_13c,
-                                                         (short)local_138,&LAB_004035fd,local_15c);
+                                      _EnumMines((int)*pppppppuVar24,(short)local_158,
+                                                 (char)local_154,local_150,(short)local_14c,
+                                                 (short)local_148,(short)local_144,(short)local_140,
+                                                 (short)local_13c,(short)local_138,&LAB_004035fd,
+                                                 local_15c);
                                       pppppppuVar24 = pppppppuVar24 + 1;
                                       local_c = (AiFltClassTy *)((int)&local_c[-1].field_0284 + 3);
                                     } while (local_c != (AiFltClassTy *)0x0);
@@ -3169,10 +3167,9 @@ LAB_00659a1c:
                             }
                             else {
                               DAT_008118fc = 0;
-                              thunk_FUN_00677f40((short)local_164,(byte *)local_160,(short)local_15c
-                                                 ,(short)local_158,(short)local_154,(short)local_150
-                                                 ,(short)local_14c,(short)local_148,&LAB_004022f2,
-                                                 &local_144);
+                              _EnumArt((short)local_164,(byte *)local_160,(short)local_15c,
+                                       (short)local_158,(short)local_154,(short)local_150,
+                                       (short)local_14c,(short)local_148,&LAB_004022f2,&local_144);
                             }
                             goto cf_switch_join_00659A73;
                           }
@@ -3224,7 +3221,8 @@ LAB_00659a1c:
                                   thunk_FUN_0064d0e0(this_00,-0x7d,pcVar23,uVar31,iVar5);
                                 }
                                 else {
-                                  (&this_00[1].field_0000)[(int)local_164] = local_160;
+                                  *(AiFltClassTy **)(&this_00->field_0x52f + (int)local_164 * 4) =
+                                       local_160;
                                 }
                                 goto cf_switch_join_00659A73;
                               }
@@ -3276,7 +3274,7 @@ LAB_00659a1c:
                                             do {
                                               if (local_10 != (AiFltClassTy *)0x0) {
                                                 puVar9 = (undefined1 *)
-                                                         thunk_FUN_0064e510(&local_10->field_0x1c,
+                                                         thunk_FUN_0064e510(&local_10->field_001C,
                                                                             (int)pppppppuVar24);
                                                 if (puVar9 != (undefined1 *)0x0) {
                                                   *puVar9 = 0;
@@ -3376,7 +3374,7 @@ LAB_00659a1c:
                                           do {
                                             if (local_10 != (AiFltClassTy *)0x0) {
                                               puVar9 = (undefined1 *)
-                                                       thunk_FUN_0064e510(&local_10->field_0x1c,
+                                                       thunk_FUN_0064e510(&local_10->field_001C,
                                                                           (int)pppppppuVar24);
                                               if (puVar9 != (undefined1 *)0x0) {
                                                 *puVar9 = 1;
@@ -3548,20 +3546,22 @@ switchD_00652b42_switchD:
                                   if (iVar32 == 0) goto cf_common_join_00652A99;
                                   switch(iVar5) {
                                   case 2:
-                                    (&this_00[1].field_0000)[(int)local_164] =
+                                    *(char **)(&this_00->field_0x52f + (int)local_164 * 4) =
                                          (char *)((int)&local_160->field_0x0 +
-                                                 (&this_00[1].field_0000)[(int)local_164]);
+                                                 *(int *)(&this_00->field_0x52f + (int)local_164 * 4
+                                                         ));
                                     break;
                                   case 5:
-                                    (&this_00[1].field_0000)[(int)local_164] = local_160;
+                                    *(AiFltClassTy **)(&this_00->field_0x52f + (int)local_164 * 4) =
+                                         local_160;
                                     break;
                                   case 0x17:
                                     if (local_160 == (AiFltClassTy *)0x0) {
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar27,-1);
                                     }
                                     else {
-                                      (&this_00[1].field_0000)[(int)local_164] =
-                                           (int)(&this_00[1].field_0000)[(int)local_164] /
+                                      *(int *)(&this_00->field_0x52f + (int)local_164 * 4) =
+                                           *(int *)(&this_00->field_0x52f + (int)local_164 * 4) /
                                            (int)local_160;
                                     }
                                     break;
@@ -3570,18 +3570,20 @@ switchD_00652b42_switchD:
                                       thunk_FUN_0064d0e0(this_00,-0x67,&DAT_008016a0,uVar27,-1);
                                     }
                                     else {
-                                      (&this_00[1].field_0000)[(int)local_164] =
-                                           (int)(&this_00[1].field_0000)[(int)local_164] %
+                                      *(int *)(&this_00->field_0x52f + (int)local_164 * 4) =
+                                           *(int *)(&this_00->field_0x52f + (int)local_164 * 4) %
                                            (int)local_160;
                                     }
                                     break;
                                   case 0x31:
-                                    (&this_00[1].field_0000)[(int)local_164] =
-                                         (&this_00[1].field_0000)[(int)local_164] * (int)local_160;
+                                    *(int *)(&this_00->field_0x52f + (int)local_164 * 4) =
+                                         *(int *)(&this_00->field_0x52f + (int)local_164 * 4) *
+                                         (int)local_160;
                                     break;
                                   case 0x3e:
-                                    (&this_00[1].field_0000)[(int)local_164] =
-                                         (&this_00[1].field_0000)[(int)local_164] - (int)local_160;
+                                    *(int *)(&this_00->field_0x52f + (int)local_164 * 4) =
+                                         *(int *)(&this_00->field_0x52f + (int)local_164 * 4) -
+                                         (int)local_160;
                                   }
                                   break;
                                 case (uint ******)0x3:
@@ -3589,8 +3591,8 @@ switchD_00652b42_switchD:
                                   if (iVar32 == 0) goto cf_common_join_00652A99;
                                   if (iVar5 == 5) {
                                     Library::DKW::TBL::FUN_006b6020
-                                              (*(int *)&this_00[1].field_0x84,(uint)local_164,
-                                               (char *)local_160);
+                                              (this_00->field_05B3,(uint)local_164,(char *)local_160
+                                              );
                                   }
                                 }
                                 goto cf_switch_join_00659A73;
@@ -3634,8 +3636,7 @@ switchD_00652b42_switchD:
                               iVar32 = thunk_FUN_0064e9a0((int)local_16c);
                               if (iVar32 == 0) goto cf_common_join_00652A99;
                               Library::DKW::TBL::FUN_006b6020
-                                        (*(int *)&this_00[1].field_0x84,(uint)local_164,
-                                         (char *)local_160);
+                                        (this_00->field_05B3,(uint)local_164,(char *)local_160);
                               break;
                             case 0x528:
                               bVar30 = thunk_FUN_0064eb20((int)local_16c);
@@ -3940,11 +3941,11 @@ LAB_00653778:
                                     do {
                                       if (*pppppppuVar24 == (uint ******)(uint)DAT_0080874d) {
                                         if (DAT_00802a88 == (VisibleClassTy *)0x0) break;
-                                        if (*(int *)(DAT_00802a88 + 0x114) == 0) {
-                                          *(undefined4 *)(DAT_00802a88 + 0xf8) = 0;
+                                        if (DAT_00802a88->field_0114 == 0) {
+                                          DAT_00802a88->field_00F8 = 0;
                                         }
                                         else {
-                                          *(uint *)(DAT_00802a88 + 0xf8) = (uint)(iVar5 == 0x547);
+                                          DAT_00802a88->field_00F8 = (uint)(iVar5 == 0x547);
                                           iVar32 = DAT_00807598;
                                           if ((iVar5 == 0x547) != 0) {
                                             *(undefined4 *)(DAT_00807598 + 0x466) = 1;
@@ -5036,8 +5037,8 @@ LAB_00655871:
                                                  );
                             }
                             else if (local_154 == (byte *)0x2) {
-                              iVar5 = thunk_FUN_006785a0((byte *)0x0,-1,sVar18,sVar16,sVar4,1,1,1,
-                                                         &LAB_00404c73,0);
+                              iVar5 = _EnumDest((byte *)0x0,-1,sVar18,sVar16,sVar4,1,1,1,
+                                                &LAB_00404c73,0);
                               if ((iVar5 == -1) && (DAT_00811984 != (int *)0x0)) {
                                 piVar25 = DAT_00811984;
                               }
@@ -5126,8 +5127,8 @@ LAB_006559e3:
                                   local_10 = (AiFltClassTy *)local_34;
                                   local_c = (AiFltClassTy *)iVar5;
                                   do {
-                                    local_8 = (uint ******)
-                                              thunk_FUN_00676170(*(uint *******)local_10);
+                                    local_8 = (uint ******)_GetStaffGrpExch(*(uint *******)local_10)
+                                    ;
                                     if ((uint *******)local_8 != (uint *******)0x0) {
                                       ppppppuVar26 = (uint ******)0x0;
                                       ppppppuVar11 = (uint ******)local_8[3];
@@ -5275,11 +5276,10 @@ LAB_006559e3:
                                   local_c = pAVar10;
                                   do {
                                     DAT_008118fc = 0;
-                                    thunk_FUN_00677be0(*(short *)pppppppuVar24,(short)local_15c,
-                                                       (byte *)local_158,(short)local_154,
-                                                       (short)local_150,(short)local_14c,
-                                                       (short)local_148,(short)local_144,
-                                                       (short)local_140,&LAB_004050a1,&local_13c);
+                                    _EnumRCCont(*(short *)pppppppuVar24,(short)local_15c,
+                                                (byte *)local_158,(short)local_154,(short)local_150,
+                                                (short)local_14c,(short)local_148,(short)local_144,
+                                                (short)local_140,&LAB_004050a1,&local_13c);
                                     pppppppuVar24 = pppppppuVar24 + 1;
                                     local_c = (AiFltClassTy *)((int)&local_c[-1].field_0284 + 3);
                                   } while (local_c != (AiFltClassTy *)0x0);
@@ -5339,7 +5339,7 @@ cf_continue_loop_00659A80:
               *(int *)(pcVar23 + 0xb) = *(int *)(pcVar23 + 0xb) + -1;
             }
 LAB_00659aae:
-            iVar5 = *(int *)&this_00->field_0x4ee;
+            iVar5 = this_00->field_04EE;
             local_14 = uVar27 + 1;
             bVar30 = local_14 < *(uint *)(iVar5 + 0xc);
           } while ((int)local_14 < (int)*(uint *)(iVar5 + 0xc));
@@ -5353,7 +5353,7 @@ LAB_00659aae:
           iVar32 = *(int *)(iVar5 + 8);
         }
         if (local_194 == 0x456) {
-          *(int *)&this_00->field_0xd6 = *(int *)&this_00->field_0xd6 + 1;
+          this_00->field_00D6 = this_00->field_00D6 + 1;
         }
         g_currentExceptionFrame = local_284.previous;
         return;

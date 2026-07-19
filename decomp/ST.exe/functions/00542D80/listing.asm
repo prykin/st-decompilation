@@ -1,4 +1,4 @@
-FUN_00542d80:
+CreateInterSystem:
 00542D80  55                        PUSH EBP
 00542D81  8B EC                     MOV EBP,ESP
 00542D83  83 EC 64                  SUB ESP,0x64

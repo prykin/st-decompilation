@@ -36,7 +36,7 @@ undefined4 * __thiscall TraksClassTy::PrepareToSave(TraksClassTy *this,uint *par
     local_8[1] = 0xff;
     local_8[2] = 2;
     local_8[5] = 1;
-    local_8[6] = *(undefined4 *)(local_14 + 0x1c);
+    local_8[6] = local_14->field_001C;
     *(bool *)(local_8 + 7) = local_c != (undefined4 *)0x0;
     if (local_c != (undefined4 *)0x0) {
       puVar3 = local_c;

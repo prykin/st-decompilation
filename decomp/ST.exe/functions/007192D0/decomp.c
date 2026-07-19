@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\Palette.cpp
+   Diagnostic line evidence: 399 | 400 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int __cdecl
 FUN_007192d0(undefined4 *param_1,undefined4 *param_2,uint param_3,UINT param_4,int param_5,
             int param_6)

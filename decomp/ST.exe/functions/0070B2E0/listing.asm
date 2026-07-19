@@ -1,4 +1,4 @@
-FUN_0070b2e0:
+mfImtGetModeIms:
 0070B2E0  55                        PUSH EBP
 0070B2E1  8B EC                     MOV EBP,ESP
 0070B2E3  83 EC 50                  SUB ESP,0x50

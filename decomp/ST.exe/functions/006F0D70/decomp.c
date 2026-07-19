@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006f0d70(cMf32 *param_1,char *param_2,undefined2 *param_3)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 724 | 726 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mf3DXGetParam(cMf32 *param_1,char *param_2,undefined2 *param_3)
 
 {
   code *pcVar1;

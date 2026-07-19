@@ -1,4 +1,4 @@
-FUN_006f2e40:
+mfAObjEnum:
 006F2E40  55                        PUSH EBP
 006F2E41  8B EC                     MOV EBP,ESP
 006F2E43  81 EC 4C 02 00 00         SUB ESP,0x24c

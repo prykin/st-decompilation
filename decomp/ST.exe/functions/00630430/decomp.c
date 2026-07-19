@@ -17,7 +17,7 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
   uint uVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STManRuinC *pSVar9;
+  undefined4 *puVar9;
   InternalExceptionFrame local_58;
   byte *local_14;
   uint local_10;
@@ -60,10 +60,9 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
     return 0;
   }
   if (uVar1 == 0) {
-    if ((*(int *)(local_c + 0x3c) != 0) &&
-       (uVar1 = *(uint *)(*(int *)(local_c + 0x3c) + 0xc), uVar1 != 0)) {
+    if ((local_c->field_003C != 0) && (uVar1 = *(uint *)(local_c->field_003C + 0xc), uVar1 != 0)) {
       while (uVar1 = uVar1 - 1, -1 < (int)uVar1) {
-        iVar3 = *(int *)(this_00 + 0x3c);
+        iVar3 = this_00->field_003C;
         if (uVar1 < *(uint *)(iVar3 + 0xc)) {
           puVar4 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));
         }
@@ -96,7 +95,7 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
             }
             if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(puVar4 + 8)) {
               FUN_006e8ba0(DAT_00807598,*(uint *)((int)puVar4 + 0x21));
-              FUN_006b0c70(*(int *)(this_00 + 0x3c),uVar1);
+              FUN_006b0c70(this_00->field_003C,uVar1);
             }
           }
         }
@@ -110,37 +109,37 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
     g_currentExceptionFrame = local_58.previous;
     return 0;
   }
-  *(int *)(local_c + 0x71) = *(int *)(local_c + 0x18) * DAT_00808754;
+  local_c->field_0071 = local_c->field_0018 * DAT_00808754;
   if (DAT_00806754 != (cMf32 *)0x0) {
-    local_8 = FUN_006f2d90(DAT_00806754,PTR_DAT_0079d198,0,0);
+    local_8 = mfAObjLoad(DAT_00806754,PTR_DAT_0079d198,0,0);
   }
   if (local_8 == (ushort *)0x0) {
 LAB_006304e7:
-    *(undefined4 *)(this_00 + 0x1c) = 0;
-    *(undefined4 *)(this_00 + 0x20) = 0xff;
-    *(undefined4 *)(this_00 + 0x24) = 1;
-    *(undefined4 *)(this_00 + 0x28) = 1;
+    this_00->field_001C = 0;
+    this_00->field_0020 = 0xff;
+    this_00->field_0024 = 1;
+    this_00->field_0028 = 1;
   }
   else {
     if (*(int *)(local_8 + 6) == 2) {
       thunk_FUN_00631390(this_00,(undefined4 *)local_8);
-      *(undefined4 *)(this_00 + 0x71) = *(undefined4 *)(this_00 + 0x65);
+      this_00->field_0071 = this_00->field_0065;
       thunk_FUN_00631450(this_00);
       goto LAB_00630558;
     }
     if (local_8 == (ushort *)0x0) goto LAB_006304e7;
     puVar4 = *(undefined4 **)(param_1 + 0x14);
-    pSVar9 = this_00 + 0x1c;
+    puVar9 = &this_00->field_001C;
     for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pSVar9 = *puVar4;
+      *puVar9 = *puVar4;
       puVar4 = puVar4 + 1;
-      pSVar9 = pSVar9 + 4;
+      puVar9 = puVar9 + 1;
     }
   }
-  if (*(int *)(this_00 + 0x34) == 0) {
+  if (this_00->field_0034 == 0) {
     uVar1 = (int)DAT_007fb240 * (int)DAT_007fb242 * 5;
     puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(uVar1);
-    *(undefined4 **)(this_00 + 0x34) = puVar4;
+    this_00->field_0034 = puVar4;
     if (puVar4 == (undefined4 *)0x0) {
       thunk_FUN_006308b0(this_00);
     }
@@ -153,7 +152,7 @@ LAB_006304e7:
         *(undefined1 *)puVar4 = 0;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      *(uint *)(this_00 + 0x30) = uVar1;
+      this_00->field_0030 = uVar1;
     }
   }
 LAB_00630558:

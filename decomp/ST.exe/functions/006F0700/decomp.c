@@ -1,4 +1,9 @@
 
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\ourlib\Mfstmap.cpp
+   Diagnostic line evidence: 547 | 553 | 557 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
 int * __cdecl FUN_006f0700(int param_1,int param_2)
 
 {

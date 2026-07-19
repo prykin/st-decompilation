@@ -44,7 +44,7 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     RaiseInternalException(errorCode,0,s_E____titans_Andrey_cpanel_cpp_007c1bd8,0x2fc);
     return extraout_EAX;
   }
-  if ((uint)(local_8->field_0038 - *(int *)&local_8->field_0x998) < 100) {
+  if ((uint)(local_8->field_0038 - local_8->field_0998) < 100) {
     if ((*(int *)((int)DAT_00807598 + 0x442) == 0) && (*(int *)((int)DAT_00807598 + 0x446) == 0)) {
       uVar5 = 0;
     }
@@ -60,10 +60,9 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       return uVar5;
     }
   }
-  *(undefined4 *)&local_8->field_0x998 = local_8->field_0038;
+  local_8->field_0998 = local_8->field_0038;
   thunk_FUN_0052b330((int)local_8);
-  FUN_006e6fb0(DAT_00807598,*(int *)&pCVar4->field_0x190,5,7,
-               (uint)(*(short *)&pCVar4->field_0x23f != 2));
+  FUN_006e6fb0(DAT_00807598,pCVar4->field_0190,5,7,(uint)(pCVar4->field_023F != 2));
   uVar5 = *(uint *)(DAT_00802a38 + 0xe4) * 0x51eb851f;
   uVar9 = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
   if (300 < uVar9 - DAT_0080c4cf) {
@@ -71,13 +70,13 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
     DAT_00808794 = uVar5;
     DAT_0080c4cf = uVar9;
   }
-  if (uVar9 != *(uint *)&pCVar4->field_0x9a0) {
-    *(uint *)&pCVar4->field_0x9a0 = uVar9;
-    ccFntTy::SetSurf(*(ccFntTy **)&pCVar4->field_0x1bc,*(int *)&pCVar4->field_0x190,0,
-                     (DAT_0080874e == '\x03') + 7,0x10,0x28,0xb);
+  if (uVar9 != pCVar4->field_09A0) {
+    pCVar4->field_09A0 = uVar9;
+    ccFntTy::SetSurf(pCVar4->field_01BC,pCVar4->field_0190,0,(DAT_0080874e == '\x03') + 7,0x10,0x28,
+                     0xb);
     uVar5 = (uint)DAT_0080874d;
     if ((&DAT_008087f7)[uVar5 * 0x51] == '\0') {
-      uVar9 = *(int *)(&DAT_008087f8 + uVar5 * 0x51) + *(int *)&pCVar4->field_0x9a0;
+      uVar9 = *(int *)(&DAT_008087f8 + uVar5 * 0x51) + pCVar4->field_09A0;
       uVar5 = uVar9 / 0xe10;
       cVar8 = (char)uVar5;
       _local_c = CONCAT31(uStack_b,cVar8);
@@ -93,11 +92,11 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
       wsprintfA(puVar1,pCVar12,puVar7);
       uVar2 = (ulonglong)uVar9 % 0xe10;
       wsprintfA(puVar1,s__s_02d__02d_007c2184,puVar1,(int)(uVar2 / 0x3c),(int)(uVar2 % 0x3c));
-      uVar5 = ccFntTy::WrTxt(*(ccFntTy **)&pCVar4->field_0x1bc,(uint *)puVar1,0,0,
-                             (uint)(DAT_0080874e == '\x03'),-1,-1);
+      uVar5 = ccFntTy::WrTxt(pCVar4->field_01BC,(uint *)puVar1,0,0,(uint)(DAT_0080874e == '\x03'),-1
+                             ,-1);
     }
     else {
-      uVar9 = *(int *)&pCVar4->field_0x9a0 - *(int *)(&DAT_008087fc + uVar5 * 0x51);
+      uVar9 = pCVar4->field_09A0 - *(int *)(&DAT_008087fc + uVar5 * 0x51);
       if (uVar9 < *(uint *)(&DAT_008087f8 + uVar5 * 0x51)) {
         uVar9 = *(uint *)(&DAT_008087f8 + uVar5 * 0x51) - uVar9;
         uVar5 = uVar9 / 0xe10;
@@ -141,22 +140,19 @@ uint __thiscall CPanelTy::PaintSMap(CPanelTy *this)
           pcVar11 = pcVar11 + 1;
         }
       }
-      uVar5 = ccFntTy::WrTxt(*(ccFntTy **)&pCVar4->field_0x1bc,(uint *)&pCVar4->field_0x1e1,0,0,
+      uVar5 = ccFntTy::WrTxt(pCVar4->field_01BC,(uint *)&pCVar4->field_0x1e1,0,0,
                              (DAT_0080874e == '\x03') + 2,-1,-1);
       if (DAT_0080c4d3 != 2) {
-        ccFntTy::WrTxt(*(ccFntTy **)&pCVar4->field_0x1cc,(uint *)&pCVar4->field_0x1e1,0xd,10,0,-1,-1
-                      );
+        ccFntTy::WrTxt(pCVar4->field_01CC,(uint *)&pCVar4->field_0x1e1,0xd,10,0,-1,-1);
         uVar5 = Library::DKW::DDX::FUN_006b3640
-                          (DAT_008075a8,*(uint *)&pCVar4->field_0x174,0xffffffff,
-                           *(uint *)&pCVar4->field_0xec,*(uint *)&pCVar4->field_0xf0);
+                          (DAT_008075a8,pCVar4->field_0174,0xffffffff,pCVar4->field_00EC,
+                           pCVar4->field_00F0);
       }
     }
   }
-  if ((*(short *)&pCVar4->field_0x23f != 2) &&
-     (uVar5 = *(uint *)&pCVar4->field_0x158, -1 < (int)uVar5)) {
+  if ((pCVar4->field_023F != 2) && (uVar5 = pCVar4->field_0158, -1 < (int)uVar5)) {
     uVar5 = Library::DKW::DDX::FUN_006b3640
-                      (DAT_008075a8,uVar5,0xffffffff,*(uint *)&pCVar4->field_0x4c,
-                       *(uint *)&pCVar4->field_0xa4);
+                      (DAT_008075a8,uVar5,0xffffffff,pCVar4->field_004C,pCVar4->field_00A4);
   }
   g_currentExceptionFrame = local_50.previous;
   return uVar5;

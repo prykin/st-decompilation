@@ -1,5 +1,10 @@
 
-int __cdecl FUN_006f3110(cMf32 *param_1,char *param_2,byte *param_3,uint param_4,char param_5)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\Ourlib\mfaobj.cpp
+   Diagnostic line evidence: 142 | 144 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+int __cdecl mfAObjSave(cMf32 *param_1,char *param_2,byte *param_3,uint param_4,char param_5)
 
 {
   code *pcVar1;

@@ -41,10 +41,10 @@ void __thiscall MTaskTy::NoneMTask(MTaskTy *this)
     (*pcVar3)();
     return;
   }
-  if ((*(char *)(local_c + 1) == '\x03') || (*(char *)(local_c + 1) == '\x05')) {
+  if ((local_c->field_006D == '\x03') || (local_c->field_006D == '\x05')) {
     PlayScript(local_c);
   }
-  iVar4 = *(int *)&this_00[0xe].field_0x51;
+  iVar4 = this_00->field_0647;
   if (iVar4 != 0) {
     uVar8 = 0;
     if (*(int *)(iVar4 + 0xc) != 0) {
@@ -87,12 +87,12 @@ LAB_005e0b38:
             }
           }
         }
-        iVar4 = *(int *)&this_00[0xe].field_0x51;
+        iVar4 = this_00->field_0647;
         uVar8 = uVar8 + 1;
       } while (uVar8 < *(uint *)(iVar4 + 0xc));
     }
   }
-  iVar4 = *(int *)&this_00[0xe].field_0x59;
+  iVar4 = this_00->field_064F;
   if (iVar4 != 0) {
     uVar8 = 0;
     if (*(int *)(iVar4 + 0xc) != 0) {
@@ -115,12 +115,12 @@ LAB_005e0ca3:
             TTaskItemClose(this_00,puVar9);
           }
         }
-        iVar4 = *(int *)&this_00[0xe].field_0x59;
+        iVar4 = this_00->field_064F;
         uVar8 = uVar8 + 1;
       } while (uVar8 < *(uint *)(iVar4 + 0xc));
     }
   }
-  iVar4 = *(int *)&this_00[0xe].field_0x55;
+  iVar4 = this_00->field_064B;
   if (iVar4 != 0) {
     local_8 = 0;
     if (*(int *)(iVar4 + 0xc) != 0) {
@@ -218,7 +218,7 @@ LAB_005e0edd:
             uVar7 = local_8;
           }
         }
-        iVar4 = *(int *)&this_00[0xe].field_0x55;
+        iVar4 = this_00->field_064B;
         local_8 = uVar7 + 1;
       } while (local_8 < *(uint *)(iVar4 + 0xc));
     }

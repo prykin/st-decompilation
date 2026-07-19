@@ -1,5 +1,10 @@
 
-uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
+/* [STSourceProvenanceApplier begin]
+   Recovered source file: E:\__titans\ai\ai_plr_d.cpp
+   Diagnostic line evidence: 534 | 581 | 584 (metadata/report site, not the function definition)
+   [STSourceProvenanceApplier end] */
+
+uint * __cdecl CreateArbList(int param_1,int param_2)
 
 {
   char cVar1;
@@ -70,7 +75,7 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
   }
   local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x98,5);
   if (param_2 != 0) {
-    local_10 = thunk_FUN_0067dfd0(param_1,0,0xffffffff);
+    local_10 = CreateOpponentList(param_1,0,0xffffffff);
   }
   uVar8 = 0xffffffff;
   local_33c[0] = 0xc;
@@ -106,7 +111,7 @@ uint * __cdecl FUN_0067e7e0(int param_1,int param_2)
       g_currentExceptionFrame = local_a0.previous;
       return local_8;
     }
-    local_c = FUN_006f2d90(param_1,pcVar5,0,1);
+    local_c = mfAObjLoad(param_1,pcVar5,0,1);
     if (local_c != (ushort *)0x0) {
       _Source = local_c + 3;
       pcVar14 = local_138;

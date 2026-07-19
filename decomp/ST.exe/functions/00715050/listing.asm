@@ -1,4 +1,4 @@
-FUN_00715050:
+mfDarLoad:
 00715050  55                        PUSH EBP
 00715051  8B EC                     MOV EBP,ESP
 00715053  83 EC 4C                  SUB ESP,0x4c
