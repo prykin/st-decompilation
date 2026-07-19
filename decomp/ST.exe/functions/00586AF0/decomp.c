@@ -124,7 +124,7 @@ void __fastcall FUN_00586af0(int *param_1)
                                  CONCAT31((int3)((uint)iVar9 >> 8),
                                           *(undefined1 *)((int)param_1 + 0x26f)),
                                  CONCAT22((short)((uint)iVar7 >> 0x10),
-                                          *(undefined2 *)((int)param_1 + 0x273)),1);
+                                          *(undefined2 *)((int)param_1 + 0x273)),CASE_1);
     if (local_44 == (int *)0x0) {
 LAB_00587844:
       local_44 = thunk_FUN_00586320((int)param_1);
@@ -907,7 +907,7 @@ LAB_00587761:
       puVar11 = (undefined4 *)
                 STAllPlayersC::GetObjPtr
                           (DAT_007fa174,*(uint *)((int)param_1 + 0x26f),
-                           CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x273)),1);
+                           CONCAT22(extraout_var_00,*(undefined2 *)((int)param_1 + 0x273)),CASE_1);
       if (puVar11 != (undefined4 *)0x0) {
         puVar18 = &DAT_008116f0;
         for (iVar7 = 7; iVar7 != 0; iVar7 = iVar7 + -1) {
@@ -967,7 +967,7 @@ LAB_00587761:
        (piVar10 = (int *)STAllPlayersC::GetObjPtr
                                    (DAT_007fa174,*(uint *)((int)param_1 + 0x26f),
                                     CONCAT22(extraout_var_01,*(undefined2 *)((int)param_1 + 0x273)),
-                                    1), piVar10 != (int *)0x0)) {
+                                    CASE_1), piVar10 != (int *)0x0)) {
       (**(code **)(*piVar10 + 0xe0))(param_1[0x9e],local_28,local_2c,local_30,&local_24);
       thunk_FUN_00416240(param_1,local_28[0],local_2c[0],local_30[0]);
       (**(code **)(*param_1 + 0xd8))();

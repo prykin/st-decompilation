@@ -8,11 +8,11 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
 {
   code *pcVar1;
   CPanelTy *pCVar2;
-  CPanelTy CVar3;
+  char cVar3;
   int iVar4;
-  undefined4 uVar5;
+  Global_sub_00523410_param_1Enum GVar5;
   UINT UVar6;
-  CPanelTy *pCVar7;
+  uint *puVar7;
   int iVar8;
   undefined4 unaff_ESI;
   void *unaff_EDI;
@@ -27,38 +27,38 @@ void __thiscall CPanelTy::PaintName(CPanelTy *this,int param_1)
   pCVar2 = local_8;
   if (iVar4 == 0) {
     if (param_1 == 0) {
-      iVar4 = *(int *)(local_8 + 0x19c);
+      iVar4 = local_8->field_019C;
     }
     else {
-      iVar4 = *(int *)(local_8 + 0x184);
+      iVar4 = local_8->field_0184;
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(local_8 + 0x1b8),iVar4,0,1,0,0x4e,0x24);
+    ccFntTy::SetSurf(*(ccFntTy **)&local_8->field_0x1b8,iVar4,0,1,0,0x4e,0x24);
     if (param_1 == 0) {
-      CVar3 = pCVar2[0xc5d];
+      cVar3 = pCVar2->field_0xc5d;
     }
     else {
-      CVar3 = pCVar2[0xb6f];
+      cVar3 = pCVar2->field_0xb6f;
     }
-    if (CVar3 == (CPanelTy)0x0) {
+    if (cVar3 == '\0') {
       if (param_1 == 0) {
-        CVar3 = pCVar2[0xc58];
-        uVar5 = *(undefined4 *)(pCVar2 + 0xc54);
+        cVar3 = pCVar2->field_0xc58;
+        GVar5 = *(Global_sub_00523410_param_1Enum *)&pCVar2->field_0xc54;
       }
       else {
-        CVar3 = pCVar2[0xb6a];
-        uVar5 = *(undefined4 *)(pCVar2 + 0xb66);
+        cVar3 = pCVar2->field_0xb6a;
+        GVar5 = *(Global_sub_00523410_param_1Enum *)&pCVar2->field_0xb66;
       }
       pHVar9 = DAT_00807618;
-      UVar6 = thunk_FUN_00523410(uVar5,(char)CVar3,0);
-      pCVar7 = (CPanelTy *)FUN_006b0140(UVar6,pHVar9);
+      UVar6 = thunk_FUN_00523410(GVar5,cVar3,0);
+      puVar7 = (uint *)FUN_006b0140(UVar6,pHVar9);
     }
     else if (param_1 == 0) {
-      pCVar7 = pCVar2 + 0xc5d;
+      puVar7 = (uint *)&pCVar2->field_0xc5d;
     }
     else {
-      pCVar7 = pCVar2 + 0xb6f;
+      puVar7 = (uint *)&pCVar2->field_0xb6f;
     }
-    ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),(uint *)pCVar7,-2,-1,0,-1,-1);
+    ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,puVar7,-2,-1,0,-1,-1);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

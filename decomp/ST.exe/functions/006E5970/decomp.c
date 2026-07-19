@@ -51,7 +51,7 @@ int __thiscall SystemClassTy::SendMessage(SystemClassTy *this,uint param_1,int p
     iVar3 = (*local_c->vtable[8])(param_3);
     break;
   case 1:
-    iVar3 = (**(code **)(*(int *)local_c->app + 0x18))(param_3);
+    iVar3 = (*local_c->app->vtable->vfunc_18)(param_3);
     break;
   case 2:
     iVar3 = FUN_006e5360(local_c,param_2,(int *)0x0,&local_10);

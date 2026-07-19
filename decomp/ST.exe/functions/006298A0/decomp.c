@@ -52,7 +52,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
   if (3 < (byte)local_18[0x14]) {
     pbVar8 = PTR_s_expl_sb0_007d0c40;
   }
-  puVar9 = FUN_00709af0(DAT_00806764,0x1d,pbVar8,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar9 = FUN_00709af0(DAT_00806764,CASE_1D,pbVar8,0xffffffff,0,1,0,(undefined4 *)0x0);
   *(undefined4 *)(pSVar6 + 0xb6) = *(undefined4 *)puVar9;
   if (param_1 != 0) {
     pSVar1 = pSVar6 + 0xc6;
@@ -110,8 +110,10 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
                              (short)((longlong)iVar10 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-          (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar10,iVar7,
-                              &local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c)) {
+          (thunk_FUN_00558c00(DAT_00802a88,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar10
+                              ,iVar7,&local_14,&local_10), (int)local_c < 0)) || (4 < (int)local_c))
+      {
         bVar12 = true;
       }
       else {
@@ -144,7 +146,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       }
     }
     if ((byte)pSVar6[0x14] < 4) {
-      puVar9 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_s1_007d0c48,0xffffffff,0,1,0,
+      puVar9 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_s1_007d0c48,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       if (0xe < *(int *)(pSVar6 + 0xb2)) {
         local_8 = *(int *)(pSVar6 + 0xb2) + 3;
@@ -155,7 +157,7 @@ undefined4 __thiscall STParticleC::InitVisibelDeton(STParticleC *this,int param_
       puVar13 = *(uint **)pSVar1;
     }
     else {
-      puVar9 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_s0_007d0c50,0xffffffff,0,1,0,
+      puVar9 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_s0_007d0c50,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       if (0xe < *(int *)(pSVar6 + 0xb2)) {
         local_8 = *(int *)(pSVar6 + 0xb2) - 0xf;

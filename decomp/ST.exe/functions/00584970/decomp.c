@@ -1,32 +1,37 @@
 
-undefined4 * __fastcall FUN_00584970(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079B8F0 (store 00584999)
+   Evidence: final_vptr=0079B8F0; returns_this=true; calls_before=2; field_writes_after=12;
+   table_confidence=high */
+
+undefined4 * __thiscall STLBombC::STLBombC(STLBombC *this,undefined4 *param_1)
 
 {
   int iVar1;
-  undefined4 *puVar2;
+  STLBombC *pSVar2;
   
-  thunk_FUN_004158e0(param_1);
-  thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_0079ba50;
-  *param_1 = &STLBombCVTable;
-  *(undefined4 *)((int)param_1 + 0x231) = 2;
-  *(undefined4 *)((int)param_1 + 0x235) = 0;
-  *(undefined4 *)((int)param_1 + 0x239) = 0;
-  *(undefined4 *)((int)param_1 + 0x23d) = 0;
-  *(undefined4 *)((int)param_1 + 0x241) = 0;
-  *(undefined4 *)((int)param_1 + 0x245) = 0;
-  *(undefined4 *)((int)param_1 + 0x249) = 0;
-  *(undefined4 *)((int)param_1 + 0x24d) = 0;
-  *(undefined4 *)((int)param_1 + 0x251) = 0;
-  *(undefined1 *)((int)param_1 + 0x255) = 0;
-  *(undefined1 *)((int)param_1 + 0x256) = 0;
-  *(undefined1 *)((int)param_1 + 599) = 0;
-  puVar2 = param_1 + 0x96;
+  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004ab810(&this->field_01D5);
+  this->field_01D5 = &PTR_LAB_0079ba50;
+  this->vtable = &STLBombCVTable;
+  this->field_0231 = 2;
+  this->field_0235 = 0;
+  this->field_0239 = 0;
+  this->field_023D = 0;
+  this->field_0241 = 0;
+  this->field_0245 = 0;
+  this->field_0249 = 0;
+  this->field_024D = 0;
+  this->field_0251 = 0;
+  this->field_0255 = 0;
+  this->field_0256 = 0;
+  this->field_0257 = 0;
+  pSVar2 = this + 1;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0;
-    puVar2 = puVar2 + 1;
+    pSVar2->vtable = (STLBombCVTable *)0x0;
+    pSVar2 = (STLBombC *)&pSVar2->field_0x4;
   }
-  *(undefined2 *)puVar2 = 0;
-  return param_1;
+  *(undefined2 *)&pSVar2->vtable = 0;
+  return &this->vtable;
 }
 

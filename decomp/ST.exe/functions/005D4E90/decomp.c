@@ -13,9 +13,10 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   SettMapSTy *pSVar5;
   int iVar6;
   uint *puVar7;
-  int iVar8;
+  uint uVar8;
+  int iVar9;
   undefined4 unaff_ESI;
-  char *pcVar9;
+  char *pcVar10;
   void *unaff_EDI;
   InternalExceptionFrame local_58;
   SettMapSTy *local_14;
@@ -30,9 +31,9 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
   pSVar5 = local_14;
   if (iVar6 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar8 = ReportDebugMessage(s_E____titans_Start_settsobj_cpp_007cd544,0x3b,0,iVar6,&DAT_007a4ccc,
+    iVar9 = ReportDebugMessage(s_E____titans_Start_settsobj_cpp_007cd544,0x3b,0,iVar6,&DAT_007a4ccc,
                                s_SettMapSTy__SetListCtrls_007cd56c);
-    if (iVar8 == 0) {
+    if (iVar9 == 0) {
       RaiseInternalException(iVar6,0,s_E____titans_Start_settsobj_cpp_007cd544,0x3b);
       return;
     }
@@ -40,83 +41,82 @@ void __thiscall SettMapSTy::SetListCtrls(SettMapSTy *this)
     (*pcVar3)();
     return;
   }
-  if (local_14[0x1e26] == (SettMapSTy)0x2) {
-    local_8 = *(int *)(local_14 + 7999);
+  if (local_14->field_0x1e26 == '\x02') {
+    local_8 = *(int *)&local_14->field_0x1f3f;
   }
   else {
-    local_8 = *(int *)(local_14 + 0x1f43);
+    local_8 = *(int *)&local_14->field_0x1f43;
   }
-  *(undefined4 *)(local_14 + 0x29) = 2;
-  *(undefined4 *)(local_14 + 0x2d) = 0x20;
+  *(undefined4 *)&local_14->field_0x29 = 2;
+  *(undefined4 *)&local_14->field_0x2d = 0x20;
   local_c = 0;
   local_10 = 0x7e3;
   do {
-    iVar8 = 0;
+    iVar9 = 0;
     iVar6 = local_10;
     do {
-      if (*(int *)(pSVar5 + (iVar6 + iVar8) * 4) != 0) {
-        iVar1 = *(int *)(pSVar5 + 0x1f84);
-        if ((iVar1 == 0) || (*(uint *)(iVar1 + 0xc) <= (uint)(*(int *)(pSVar5 + 0x1f88) + local_c)))
-        {
-          pcVar9 = (char *)0x0;
+      if (*(int *)(&pSVar5->field_0x0 + (iVar6 + iVar9) * 4) != 0) {
+        iVar1 = *(int *)&pSVar5->field_0x1f84;
+        if ((iVar1 == 0) ||
+           (uVar8 = *(int *)&pSVar5->field_0x1f88 + local_c, *(uint *)(iVar1 + 0xc) <= uVar8)) {
+          pcVar10 = (char *)0x0;
         }
         else {
-          pcVar9 = (char *)(*(int *)(iVar1 + 8) * (*(int *)(pSVar5 + 0x1f88) + local_c) +
-                           *(int *)(iVar1 + 0x1c));
+          pcVar10 = (char *)(*(int *)(iVar1 + 8) * uVar8 + *(int *)(iVar1 + 0x1c));
         }
-        uVar2 = *(undefined4 *)(pSVar5 + (iVar6 + iVar8) * 4);
-        *(undefined4 *)(pSVar5 + 0x31) = 0;
-        *(undefined4 *)(pSVar5 + 0x25) = uVar2;
-        if (pcVar9 != (char *)0x0) {
-          switch(iVar8) {
+        uVar2 = *(undefined4 *)(&pSVar5->field_0x0 + (iVar6 + iVar9) * 4);
+        *(undefined4 *)&pSVar5->field_0x31 = 0;
+        *(undefined4 *)&pSVar5->field_0x25 = uVar2;
+        if (pcVar10 != (char *)0x0) {
+          switch(iVar9) {
           case 0:
-            if (*(byte **)(pcVar9 + 0x50) != (byte *)0x0) {
-              FUN_006ae110(*(byte **)(pcVar9 + 0x50));
+            if (*(byte **)(pcVar10 + 0x50) != (byte *)0x0) {
+              FUN_006ae110(*(byte **)(pcVar10 + 0x50));
             }
-            if (pSVar5[0x1e26] == (SettMapSTy)0x2) {
-              puVar7 = thunk_FUN_0067e0e0(local_8,(uint)(byte)pcVar9[2],0xffffffff);
+            if (pSVar5->field_0x1e26 == '\x02') {
+              puVar7 = thunk_FUN_0067e0e0(local_8,(uint)(byte)pcVar10[2],0xffffffff);
             }
             else {
-              puVar7 = thunk_FUN_0067dfd0(local_8,(uint)(byte)pcVar9[3],DAT_0080995c);
+              puVar7 = thunk_FUN_0067dfd0(local_8,(uint)(byte)pcVar10[3],DAT_0080995c);
             }
-            *(uint **)(pcVar9 + 0x50) = puVar7;
-            if (puVar7[3] <= (uint)(byte)pcVar9[5]) {
-              pcVar9[5] = (char)puVar7[3];
+            *(uint **)(pcVar10 + 0x50) = puVar7;
+            if (puVar7[3] <= (uint)(byte)pcVar10[5]) {
+              pcVar10[5] = (char)puVar7[3];
             }
-            if ((puVar7[3] == 0) && (pcVar9[4] == '\x04')) {
-              pcVar9[4] = '\x01';
+            if ((puVar7[3] == 0) && (pcVar10[4] == '\x04')) {
+              pcVar10[4] = '\x01';
             }
             break;
           case 1:
           case 2:
-            if ((pSVar5[0x1e26] != (SettMapSTy)0x2) && (*pcVar9 != '\0')) {
-              cVar4 = pcVar9[4];
+            if ((pSVar5->field_0x1e26 != '\x02') && (*pcVar10 != '\0')) {
+              cVar4 = pcVar10[4];
 joined_r0x005d502e:
               if (cVar4 != '\0') goto LAB_005d5030;
             }
             break;
           case 3:
-            if (((pSVar5[0x1e26] != (SettMapSTy)0x2) || (pcVar9[4] != '\x02')) &&
-               (*(int *)(*(int *)(pcVar9 + 0x50) + 0xc) != 0)) {
+            if (((pSVar5->field_0x1e26 != '\x02') || (pcVar10[4] != '\x02')) &&
+               (*(int *)(*(int *)(pcVar10 + 0x50) + 0xc) != 0)) {
 LAB_005d5030:
-              *(undefined4 *)(pSVar5 + 0x31) = 1;
+              *(undefined4 *)&pSVar5->field_0x31 = 1;
             }
             break;
           case 5:
-            if ((((DAT_0080874d != -1) && (*pcVar9 != '\0')) && (pcVar9[4] != '\0')) &&
-               (pSVar5[0x1e26] != (SettMapSTy)0x2)) {
-              if ((pcVar9[4] == '\x02') &&
-                 (cVar4 = DAT_00808a8f, *(int *)(pcVar9 + 6) == DAT_0080877f))
+            if ((((DAT_0080874d != -1) && (*pcVar10 != '\0')) && (pcVar10[4] != '\0')) &&
+               (pSVar5->field_0x1e26 != '\x02')) {
+              if ((pcVar10[4] == '\x02') &&
+                 (cVar4 = DAT_00808a8f, *(int *)(pcVar10 + 6) == DAT_0080877f))
               goto joined_r0x005d502e;
               goto LAB_005d5030;
             }
           }
         }
-        (**(code **)(**(int **)(pSVar5 + 0xc) + 0x18))(pSVar5 + 0x1d);
+        (**(code **)(**(int **)&pSVar5->field_0xc + 0x18))(&pSVar5->field_0x1d);
         iVar6 = local_10;
       }
-      iVar8 = iVar8 + 1;
-    } while (iVar8 < 8);
+      iVar9 = iVar9 + 1;
+    } while (iVar9 < 8);
     local_10 = iVar6 + 8;
     local_c = local_c + 1;
     if (0x832 < local_10) {

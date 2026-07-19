@@ -30,7 +30,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
   pSVar2 = local_14;
   if (errorCode == 0) {
     if ((param_1 == 0) || (param_1 == 2)) {
-      puVar3 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x5a,0x2f,0);
@@ -44,7 +44,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
       FUN_006eaaa0(DAT_00807598,local_8,0);
       *(ushort **)(pSVar2 + 0x61) = puVar3;
       *(uint *)(pSVar2 + 0x5d) = local_8;
-      puVar3 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_vob_007d26c8,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_vob_007d26c8,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(DAT_00807598,(int *)&local_c,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x40,0x6a,0);
@@ -59,7 +59,7 @@ undefined4 __thiscall STVolcanoC::LoadImagVolcano(STVolcanoC *this,int param_1)
       *(uint *)(pSVar2 + 0x86) = local_c;
     }
     if ((param_1 != 0) && (*(int *)(pSVar2 + 0x7a) < 0)) {
-      puVar3 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_vop_007d26bc,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_vop_007d26bc,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(DAT_00807598,(int *)&local_10,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x4b,0x7e,0);

@@ -110,9 +110,9 @@ STAllPlayersC::AddObjsToGroup
     if (0 < (int)uVar7) {
       do {
         FUN_006acc70((int)puVar2,uVar8,&local_c);
-        if (((local_c != (STGroupC *)0x0) && (*(short *)(local_c + 0x27) == 0)) &&
+        if (((local_c != (STGroupC *)0x0) && (*(short *)&local_c->field_0x27 == 0)) &&
            (iVar4 = thunk_FUN_004233a0((int)local_c), iVar4 == 0)) {
-          thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(local_c + 8));
+          thunk_FUN_0054cf70(DAT_00802a38,*(uint *)&local_c->field_0x8);
           local_c = (STGroupC *)0x0;
           Library::DKW::TBL::FUN_006ae140(puVar2,uVar8,&local_c);
         }

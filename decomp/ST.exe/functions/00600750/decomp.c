@@ -69,9 +69,10 @@ undefined4 __fastcall FUN_00600750(void *param_1)
                                     (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
               }
               if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-                  (((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
-                                        iVar4,iVar5,&local_1c,&local_24), local_10 < 0 ||
-                    ((4 < local_10 || (local_1c < 0)))) ||
+                  (((thunk_FUN_00558c00(DAT_00802a88,
+                                        *(Global_sub_00558C00_param_1Enum *)
+                                         ((int)DAT_00802a88 + 0x10c),iVar4,iVar5,&local_1c,&local_24
+                                       ), local_10 < 0 || ((4 < local_10 || (local_1c < 0)))) ||
                    (*(int *)((int)pvVar2 + 0x30) <= local_1c)))) ||
                  ((((iVar4 = local_24 + (&DAT_0079aed0)[local_10], iVar4 < 0 ||
                     (*(int *)((int)pvVar2 + 0x34) <= iVar4)) || (*(int *)((int)pvVar2 + 0x4c) == 0))
@@ -240,8 +241,9 @@ LAB_00600928:
                                   (short)((longlong)(int)sVar1 * 0x28c1979 >> 0x3f));
             }
             if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-                 (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,
-                                     iVar6,&local_20,&local_2c), local_10 < 0)) ||
+                 (thunk_FUN_00558c00(DAT_00802a88,
+                                     *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c)
+                                     ,iVar4,iVar6,&local_20,&local_2c), local_10 < 0)) ||
                 (((4 < local_10 || (local_20 < 0)) ||
                  ((*(int *)((int)pvVar2 + 0x30) <= local_20 ||
                   ((iVar4 = (&DAT_0079aed0)[local_10] + local_2c, iVar4 < 0 ||

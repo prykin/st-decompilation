@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
 
 {
-  CPanelTy CVar1;
+  byte bVar1;
   code *pcVar2;
   bool bVar3;
   CPanelTy *pCVar4;
@@ -72,11 +72,11 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   }
   thunk_FUN_005252c0(0xae);
   pCVar4 = local_44;
-  *(undefined4 *)(local_44 + 300) = 0;
-  if (local_44[0xc52] == (CPanelTy)0x0) {
+  *(undefined4 *)&local_44->field_0x12c = 0;
+  if (local_44->field_0xc52 == '\0') {
     thunk_FUN_004f8020(local_44,'\0',0);
   }
-  *(undefined4 *)(pCVar4 + 300) = 1;
+  *(undefined4 *)&pCVar4->field_0x12c = 1;
   if (DAT_008016e8 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(DAT_008016e8,'\0');
   }
@@ -108,8 +108,8 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
   thunk_FUN_0054a8d0(DAT_00802a30);
-  CVar1 = pCVar4[(param_1 & 0xff) + 0xbfe];
-  switch((uint)(byte)CVar1) {
+  bVar1 = (&pCVar4->field_0xbfe)[param_1 & 0xff];
+  switch((uint)bVar1) {
   case 1:
     pcVar7 = local_8 + 2;
     local_8[2] = 0;
@@ -127,14 +127,14 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   case 0x37:
   case 0x42:
   case 0x43:
-    thunk_FUN_0054b630(DAT_00802a30,(uint)(byte)CVar1,0);
+    thunk_FUN_0054b630(DAT_00802a30,(uint)bVar1,0);
     g_currentExceptionFrame = local_e8.previous;
     return;
   default:
     goto switchD_0050f5b2_caseD_4;
   case 0x15:
   case 0x16:
-    local_8[3] = CVar1 != (CPanelTy)0x15;
+    local_8[3] = bVar1 != 0x15;
     pcVar7 = local_8 + 3;
     puVar9 = (undefined4 *)0x28;
     break;
@@ -170,7 +170,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     break;
   case 0x1d:
   case 0x3d:
-    if ((DAT_0080167c != (ProdPanelTy *)0x0) && (*(short *)(DAT_0080167c + 0x172) == 2)) {
+    if ((DAT_0080167c != (ProdPanelTy *)0x0) && (*(short *)&DAT_0080167c->field_0x172 == 2)) {
       ProdPanelTy::SetPanel(DAT_0080167c,'\x01');
     }
     thunk_FUN_004fad20(pCVar4);
@@ -179,7 +179,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
   case 0x1e:
   case 0x1f:
     pcVar7 = &local_14;
-    _local_14 = CONCAT31((-(uint3)(CVar1 != (CPanelTy)0x1e) & 0xc) + 9,1);
+    _local_14 = CONCAT31((-(uint3)(bVar1 != 0x1e) & 0xc) + 9,1);
     local_10 = 0;
     uStack_f = 1;
     uStack_d = 0xff;
@@ -195,7 +195,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     break;
   case 0x21:
   case 0x41:
-    if ((DAT_008016e8 != (ProdPanelTy *)0x0) && (*(short *)(DAT_008016e8 + 0x172) == 2)) {
+    if ((DAT_008016e8 != (ProdPanelTy *)0x0) && (*(short *)&DAT_008016e8->field_0x172 == 2)) {
       ProdPanelTy::SetPanel(DAT_008016e8,'\x01');
     }
     thunk_FUN_004fad20(pCVar4);
@@ -242,7 +242,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     *pcVar8 = '\0';
     local_a4[0] = '\b';
     puVar9 = (undefined4 *)0x17;
-    local_87 = (uint)(CVar1 == (CPanelTy)0x24);
+    local_87 = (uint)(bVar1 == 0x24);
     break;
   case 0x27:
   case 0x32:
@@ -262,7 +262,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     }
     *pcVar7 = '\0';
     pcVar7 = local_178;
-    local_178[0] = (CVar1 != (CPanelTy)0x28) + '\f';
+    local_178[0] = (bVar1 != 0x28) + '\f';
     puVar9 = (undefined4 *)0x17;
     break;
   case 0x30:
@@ -308,7 +308,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     *pcVar8 = '\0';
     local_80[0] = '\x1a';
     puVar9 = (undefined4 *)0x17;
-    local_63 = (uint)(CVar1 != (CPanelTy)0x38);
+    local_63 = (uint)(bVar1 != 0x38);
     break;
   case 0x39:
   case 0x46:
@@ -323,14 +323,14 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     pcVar7 = local_19c;
     *pcVar8 = '\0';
     puVar9 = (undefined4 *)0x17;
-    local_19c[0] = (CVar1 != (CPanelTy)0x39) + '\f';
+    local_19c[0] = (bVar1 != 0x39) + '\f';
     break;
   case 0x3e:
     thunk_FUN_0054b630(DAT_00802a30,0xe,0x6c);
     g_currentExceptionFrame = local_e8.previous;
     return;
   case 0x44:
-    if ((DAT_00801680 != (ProdPanelTy *)0x0) && (*(short *)(DAT_00801680 + 0x172) == 2)) {
+    if ((DAT_00801680 != (ProdPanelTy *)0x0) && (*(short *)&DAT_00801680->field_0x172 == 2)) {
       ProdPanelTy::SetPanel(DAT_00801680,'\x01');
     }
     thunk_FUN_004fad20(pCVar4);
@@ -363,7 +363,7 @@ void __thiscall CPanelTy::SetCmdObj(CPanelTy *this,uint param_1)
     }
     *pcVar7 = '\0';
     pcVar7 = local_154;
-    local_154[0] = (CVar1 != (CPanelTy)0x50) + '\x1b';
+    local_154[0] = (bVar1 != 0x50) + '\x1b';
     puVar9 = (undefined4 *)0x17;
     break;
   case 0x52:

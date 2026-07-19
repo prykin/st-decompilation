@@ -31,37 +31,37 @@ CPanelTy::PaintTxtBut
   local_18 = *(int **)(param_2 + 0x18);
   local_8 = (ushort *)0x0;
   local_14 = local_18[1];
-  local_c = *local_18 - *(int *)(this + uVar2 * 4 + 0x3c);
+  local_c = *local_18 - *(int *)(&this->field_0x3c + uVar2 * 4);
   switch(uVar2) {
   case 1:
-    iVar4 = *(int *)(this + 0x134);
+    iVar4 = this->field_0134;
     goto LAB_004f3aaa;
   default:
-    if (*(int *)(this + 0x130) != 0) {
-      local_14 = local_14 - *(int *)(this + uVar2 * 4 + 0x94);
+    if (this->field_0130 != 0) {
+      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f3ac3;
     }
     break;
   case 3:
-    if (*(int *)(this + 0x134) != 0) {
-      local_14 = local_14 - *(int *)(this + uVar2 * 4 + 0x94);
+    if (this->field_0134 != 0) {
+      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f3ac3;
     }
     break;
   case 5:
-    if (*(int *)(this + 0x138) != 0) {
-      local_14 = local_14 - *(int *)(this + uVar2 * 4 + 0x94);
+    if (this->field_0138 != 0) {
+      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f3ac3;
     }
     break;
   case 7:
-    iVar4 = *(int *)(this + 0x138);
+    iVar4 = this->field_0138;
 LAB_004f3aaa:
     if (iVar4 != 0) {
-      local_14 = local_14 - *(int *)(this + uVar2 * 4 + 0x94);
+      local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f3ac3;
     }
-    local_14 = local_14 - *(int *)(this + 0xc0);
+    local_14 = local_14 - this->field_00C0;
   }
   local_14 = local_14 - DAT_00806734;
 LAB_004f3ac3:
@@ -75,22 +75,23 @@ LAB_004f3ac3:
       pCVar3 = local_10;
       iVar4 = local_14;
       uVar2 = (uint)param_1;
-      thunk_FUN_00540760(*(undefined4 **)(local_10 + uVar2 * 4 + 0x180),local_c,local_14,param_3,
-                         (byte *)local_8);
+      thunk_FUN_00540760(*(undefined4 **)(&local_10->field_0x180 + uVar2 * 4),local_c,local_14,
+                         param_3,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
-      ccFntTy::SetSurf(*(ccFntTy **)(pCVar3 + 0x1b8),*(int *)(pCVar3 + uVar2 * 4 + 0x180),0,local_c,
-                       iVar4,local_18[2],local_18[3]);
+      ccFntTy::SetSurf(*(ccFntTy **)&pCVar3->field_0x1b8,*(int *)(&pCVar3->field_0x180 + uVar2 * 4),
+                       0,local_c,iVar4,local_18[2],local_18[3]);
       iVar9 = -1;
       iVar8 = -1;
       uVar5 = (*(code *)param_6)(param_2);
       iVar7 = -1;
       iVar4 = -2;
       puVar6 = (uint *)FUN_006b0140(param_5,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)(pCVar3 + 0x1b8),puVar6,iVar4,iVar7,uVar5,iVar8,iVar9);
-      if ((param_1 < 0xb) && (-1 < (int)*(uint *)(pCVar3 + uVar2 * 4 + 0x148))) {
+      ccFntTy::WrTxt(*(ccFntTy **)&pCVar3->field_0x1b8,puVar6,iVar4,iVar7,uVar5,iVar8,iVar9);
+      if ((param_1 < 0xb) && (-1 < (int)*(uint *)(&pCVar3->field_0x148 + uVar2 * 4))) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
-                   *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
+                  (DAT_008075a8,*(uint *)(&pCVar3->field_0x148 + uVar2 * 4),0xffffffff,
+                   *(uint *)(&pCVar3->field_0x3c + uVar2 * 4),
+                   *(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
       }
       g_currentExceptionFrame = local_5c.previous;
       return;

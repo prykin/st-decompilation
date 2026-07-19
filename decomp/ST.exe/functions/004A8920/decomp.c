@@ -15,6 +15,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
   void *unaff_EDI;
   longlong lVar5;
   InternalExceptionFrame local_6c;
+  undefined1 local_28 [12];
   undefined4 local_1c;
   undefined4 local_18;
   undefined4 local_14;
@@ -109,7 +110,7 @@ undefined4 __thiscall OpticClassC::GetMessage(OpticClassC *this,int param_1)
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = 0;
-    (**(code **)(*(int *)DAT_00802a38 + 0x18))();
+    (*DAT_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)DAT_00802a38,(int)local_28);
 LAB_004a8b47:
     uVar3 = DAT_0080743c & 0xff;
   }
@@ -154,7 +155,7 @@ LAB_004a8c23:
     local_1c = 0xf;
     local_18 = 0x108;
     local_14 = uVar4;
-    (**(code **)(*(int *)DAT_00802a38 + 0x18))();
+    (*DAT_00802a38->vtable->SendMessage)((SystemWithNamedObjClassTy *)DAT_00802a38,(int)local_28);
 LAB_004a8c49:
     uVar3 = DAT_0080743c & 0xff;
   }

@@ -1,4 +1,4 @@
-FUN_005781c0:
+DebugSystemC::DebugSystemC:
 005781C0  55                        PUSH EBP
 005781C1  8B EC                     MOV EBP,ESP
 005781C3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

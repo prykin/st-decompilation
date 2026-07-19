@@ -11,10 +11,11 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   int iVar3;
   int *this_00;
   int iVar4;
-  uint uVar5;
+  int iVar5;
+  uint uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint *puVar6;
+  uint *puVar7;
   InternalExceptionFrame local_68;
   uint local_24;
   uint local_20;
@@ -25,7 +26,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   short local_8;
   short local_6;
   
-  local_14 = (int)*(short *)(this + 0x816) * (int)*(short *)(this + 0x816) * 0x9dd1;
+  local_14 = (int)(short)this->field_0816 * (int)(short)this->field_0816 * 0x9dd1;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_10 = this;
@@ -43,50 +44,47 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bb5);
     return;
   }
-  iVar3 = *(int *)(local_10 + 0x47b);
-  if ((iVar3 != 0) && (uVar5 = 0, 0 < *(int *)(iVar3 + 0xc))) {
+  iVar3 = local_10->field_047B;
+  if ((iVar3 != 0) && (uVar6 = 0, 0 < *(int *)(iVar3 + 0xc))) {
     do {
-      FUN_006acc70(iVar3,uVar5,&local_24);
+      FUN_006acc70(iVar3,uVar6,&local_24);
       if ((short)local_20 != -1) {
         local_1a = local_1a - param_1;
         if (local_1a < 1) {
-          puVar6 = *(uint **)(pSVar2 + 0x47b);
+          puVar7 = (uint *)pSVar2->field_047B;
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
         else {
-          this_00 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,local_24,local_20,1);
+          this_00 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,local_24,local_20,CASE_1);
           if (this_00 != (int *)0x0) {
             iVar3 = (**(code **)(*this_00 + 0xf8))();
             if (iVar3 == 1) {
               iVar3 = (**(code **)(*this_00 + 0xf0))();
               if (iVar3 == 1) {
-                iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)(pSVar2 + 0x24));
+                iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)&pSVar2->field_0x24);
                 if (iVar3 == 1) {
                   thunk_FUN_00416270(this_00,&local_a,&local_8,&local_6);
-                  if (local_14 <
-                      (uint)(((int)*(short *)(pSVar2 + 0x43) - (int)local_8) *
-                             ((int)*(short *)(pSVar2 + 0x43) - (int)local_8) +
-                             ((int)*(short *)(pSVar2 + 0x41) - (int)local_a) *
-                             ((int)*(short *)(pSVar2 + 0x41) - (int)local_a) +
-                            ((int)*(short *)(pSVar2 + 0x45) - (int)local_6) *
-                            ((int)*(short *)(pSVar2 + 0x45) - (int)local_6))) {
+                  iVar3 = (int)(short)pSVar2->field_0041 - (int)local_a;
+                  iVar4 = (int)(short)pSVar2->field_0043 - (int)local_8;
+                  iVar5 = (int)(short)pSVar2->field_0045 - (int)local_6;
+                  if (local_14 < (uint)(iVar4 * iVar4 + iVar3 * iVar3 + iVar5 * iVar5)) {
                     local_20 = CONCAT22(local_20._2_2_,0xffff);
                   }
-                  puVar6 = *(uint **)(pSVar2 + 0x47b);
+                  puVar7 = (uint *)pSVar2->field_047B;
                   goto LAB_0048d016;
                 }
               }
             }
           }
-          puVar6 = *(uint **)(pSVar2 + 0x47b);
+          puVar7 = (uint *)pSVar2->field_047B;
           local_20 = CONCAT22(local_20._2_2_,0xffff);
         }
 LAB_0048d016:
-        Library::DKW::TBL::FUN_006ae140(puVar6,uVar5,&local_24);
+        Library::DKW::TBL::FUN_006ae140(puVar7,uVar6,&local_24);
       }
-      iVar3 = *(int *)(pSVar2 + 0x47b);
-      uVar5 = uVar5 + 1;
-    } while ((int)uVar5 < *(int *)(iVar3 + 0xc));
+      iVar3 = pSVar2->field_047B;
+      uVar6 = uVar6 + 1;
+    } while ((int)uVar6 < *(int *)(iVar3 + 0xc));
   }
   g_currentExceptionFrame = local_68.previous;
   return;

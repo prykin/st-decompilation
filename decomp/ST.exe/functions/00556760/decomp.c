@@ -114,8 +114,8 @@ LAB_00556926:
     bVar10 = true;
   }
   else {
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),(int)(short)local_10,
-                       (int)sVar6,&local_5c,&local_8);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       (int)(short)local_10,(int)sVar6,&local_5c,&local_8);
     if ((iVar8 < 0) || (4 < iVar8)) goto LAB_00556926;
     if (((local_5c < 0) || (*(int *)((int)pvVar2 + 0x30) <= local_5c)) ||
        (((&DAT_0079aed0)[iVar8] + local_8 < 0 ||
@@ -194,7 +194,7 @@ LAB_0055693a:
   local_2a = local_54;
   local_28 = local_52;
   pbVar4 = thunk_FUN_00555840((int)param_1);
-  puVar5 = FUN_00709af0(piVar7,0x1d,pbVar4,uVar11,bVar12,iVar3,iVar13,puVar14);
+  puVar5 = FUN_00709af0(piVar7,CASE_1D,pbVar4,uVar11,bVar12,iVar3,iVar13,puVar14);
   local_22 = *puVar5;
   iVar3 = local_58 * 0x18;
   FUN_006e8660(DAT_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),

@@ -81,7 +81,7 @@ undefined4 __thiscall FUN_006264d0(void *this,int *param_1,int param_2)
   iVar16 = (int)sVar14;
   iVar7 = FUN_006acf0d((int)sVar9,iVar16,iVar13,(int)(short)local_28,(int)(short)local_24,
                        (int)(short)local_38);
-  bVar6 = thunk_FUN_00430750(0x9b);
+  bVar6 = thunk_FUN_00430750(CASE_9B);
   local_10 = iVar7 / (int)(uint)bVar6;
   if (local_10 < 1) {
     local_10 = 1;

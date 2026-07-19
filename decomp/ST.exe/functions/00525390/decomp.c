@@ -1,9 +1,14 @@
 
-int __cdecl FUN_00525390(undefined1 param_1,int param_2)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00525390_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82
+    */
+
+int __cdecl FUN_00525390(Global_sub_00525390_param_1Enum param_1,int param_2)
 
 {
   switch(param_1) {
-  case 1:
+  case CASE_1:
     switch(param_2) {
     case 9:
     case 0x15:
@@ -20,159 +25,159 @@ int __cdecl FUN_00525390(undefined1 param_1,int param_2)
     default:
       return 0x4e3d;
     }
-  case 2:
+  case CASE_2:
     return 0x4e21;
-  case 3:
+  case CASE_3:
     return 0x4e22;
-  case 4:
+  case CASE_4:
     return 0x4e24;
-  case 5:
+  case CASE_5:
     return 0x4e25;
-  case 6:
+  case CASE_6:
     return 0x4e26;
-  case 7:
+  case CASE_7:
     return 0x4e27;
-  case 8:
+  case CASE_8:
     break;
-  case 9:
+  case CASE_9:
     return 0x4e28;
-  case 10:
+  case CASE_A:
     return 0x4e29;
-  case 0xb:
-  case 0xc:
+  case CASE_B:
+  case CASE_C:
     return 0x4e37;
-  case 0xd:
+  case CASE_D:
     return 0x4e2d;
-  case 0xe:
+  case CASE_E:
     return 0x4e2e;
-  case 0xf:
+  case CASE_F:
     return 0x4e2f;
-  case 0x10:
+  case CASE_10:
     return 0x4e30;
-  case 0x11:
+  case CASE_11:
     return 0x4e31;
-  case 0x12:
+  case CASE_12:
     return 0x4e32;
-  case 0x13:
+  case CASE_13:
     return 0x4e33;
-  case 0x14:
+  case CASE_14:
     return 0x4e34;
-  case 0x15:
+  case CASE_15:
     return 0x4e3e;
-  case 0x16:
+  case CASE_16:
     return 0x4e3f;
-  case 0x17:
+  case CASE_17:
     return 0x4e40;
-  case 0x18:
+  case CASE_18:
     return 0x4e41;
-  case 0x19:
+  case CASE_19:
     return 0x4e42;
-  case 0x1a:
+  case CASE_1A:
     return 0x4e43;
-  case 0x1b:
+  case CASE_1B:
     return 0x4e4c;
-  case 0x1c:
+  case CASE_1C:
     return 0x4e4d;
-  case 0x1d:
-  case 0x3d:
+  case CASE_1D:
+  case CASE_3D:
     return 0x4e44;
-  case 0x1e:
+  case CASE_1E:
     return 0x4e45;
-  case 0x1f:
+  case CASE_1F:
     return 0x4e46;
-  case 0x20:
+  case CASE_20:
     return 0x4e47;
-  case 0x21:
-  case 0x41:
+  case CASE_21:
+  case CASE_41:
     return 0x4e48;
-  case 0x22:
+  case CASE_22:
     return 0x4e49;
-  case 0x23:
+  case CASE_23:
     return 0x4e4a;
-  case 0x24:
+  case CASE_24:
     return 0x4e4b;
-  case 0x25:
+  case CASE_25:
     return 0x4e4f;
-  case 0x26:
-  case 0x37:
+  case CASE_26:
+  case CASE_37:
     return 0x4e4e;
-  case 0x27:
+  case CASE_27:
     return 0x4e50;
-  case 0x28:
-  case 0x39:
+  case CASE_28:
+  case CASE_39:
     return 0x4e51;
-  case 0x29:
-  case 0x46:
+  case CASE_29:
+  case CASE_46:
     return 0x4e52;
-  case 0x2a:
-  case 0x43:
+  case CASE_2A:
+  case CASE_43:
     return 0x4e53;
-  case 0x2b:
+  case CASE_2B:
     return 0x4e54;
-  case 0x2c:
+  case CASE_2C:
     return 0x4e55;
-  case 0x2d:
+  case CASE_2D:
     return 0x4e56;
-  case 0x2e:
+  case CASE_2E:
     return 0x4e57;
-  case 0x2f:
+  case CASE_2F:
     return 0x4e58;
-  case 0x30:
+  case CASE_30:
     return 0x4e59;
-  case 0x31:
+  case CASE_31:
     return 0x2b46;
-  case 0x32:
+  case CASE_32:
     return 0x4e5e;
-  case 0x33:
-  case 0x48:
+  case CASE_33:
+  case CASE_48:
     return 0x4e5f;
-  case 0x34:
+  case CASE_34:
     return 0x4e60;
-  case 0x35:
+  case CASE_35:
     return 0x4e61;
-  case 0x36:
+  case CASE_36:
     return 0x4e62;
-  case 0x38:
+  case CASE_38:
     return 0x4e63;
-  case 0x3a:
+  case CASE_3A:
     return 0x4e64;
-  case 0x3b:
+  case CASE_3B:
     return 0x4e65;
-  case 0x3c:
+  case CASE_3C:
     return 0x4e66;
-  case 0x3e:
+  case CASE_3E:
     return 0x4e67;
-  case 0x3f:
+  case CASE_3F:
     return 0x4e68;
-  case 0x40:
+  case CASE_40:
     return 0x4e69;
-  case 0x42:
+  case CASE_42:
     return 0x4e6a;
-  case 0x44:
+  case CASE_44:
     return 0x4e6b;
-  case 0x45:
+  case CASE_45:
     return 0x4e6c;
-  case 0x47:
+  case CASE_47:
     return 0x4e6d;
-  case 0x49:
+  case CASE_49:
     return 0x4e6e;
-  case 0x4a:
+  case CASE_4A:
     return 0x4e6f;
-  case 0x4b:
+  case CASE_4B:
     return 0x4e70;
-  case 0x4c:
+  case CASE_4C:
     return 0x4e71;
-  case 0x4d:
+  case CASE_4D:
     return 0x4e72;
   default:
     return 10000;
-  case 0x4f:
+  case CASE_4F:
     return 0x4e73;
-  case 0x50:
+  case CASE_50:
     return 0x4e74;
-  case 0x51:
+  case CASE_51:
     return 0x4e75;
-  case 0x52:
+  case CASE_52:
     return 0x4e76;
   }
   if (param_2 == 5) {

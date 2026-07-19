@@ -1,4 +1,4 @@
-FUN_005823d0:
+STJellyGunC::STJellyGunC:
 005823D0  56                        PUSH ESI
 005823D1  57                        PUSH EDI
 005823D2  8B F1                     MOV ESI,ECX

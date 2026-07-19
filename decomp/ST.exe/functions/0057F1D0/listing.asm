@@ -1,4 +1,4 @@
-FUN_0057f1d0:
+STDcResourcC::STDcResourcC:
 0057F1D0  56                        PUSH ESI
 0057F1D1  57                        PUSH EDI
 0057F1D2  8B F1                     MOV ESI,ECX

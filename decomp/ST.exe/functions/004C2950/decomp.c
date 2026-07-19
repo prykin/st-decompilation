@@ -1,7 +1,11 @@
 
+/* [STSwitchEnumApplier] Switch target param_3 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004C2950_param_3Enum. Cases:
+   CASE_8=8;CASE_9=9;CASE_C=12;CASE_D=13;CASE_E=14 */
+
 void __cdecl
-FUN_004c2950(int param_1,int param_2,undefined4 param_3,undefined4 *param_4,char *param_5,
-            undefined1 *param_6,undefined4 *param_7)
+FUN_004c2950(int param_1,int param_2,Global_sub_004C2950_param_3Enum param_3,undefined4 *param_4,
+            char *param_5,undefined1 *param_6,undefined4 *param_7)
 
 {
   int iVar1;
@@ -14,7 +18,7 @@ FUN_004c2950(int param_1,int param_2,undefined4 param_3,undefined4 *param_4,char
   *param_4 = 0;
   *param_5 = '\0';
   switch(param_3) {
-  case 8:
+  case CASE_8:
     if (*(int *)(&DAT_00791948 + param_2 * 4) == 0) {
       return;
     }
@@ -32,7 +36,7 @@ FUN_004c2950(int param_1,int param_2,undefined4 param_3,undefined4 *param_4,char
     *param_4 = DAT_0080678c;
     *param_6 = 0x1d;
     goto LAB_004c2b44;
-  case 9:
+  case CASE_9:
     if (*(int *)(&DAT_00791948 + param_2 * 4) != 0) {
       iVar1 = param_1 + -0x97 + param_2 * 3;
       if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc) != 0) {
@@ -44,7 +48,7 @@ FUN_004c2950(int param_1,int param_2,undefined4 param_3,undefined4 *param_4,char
       }
     }
     break;
-  case 0xc:
+  case CASE_C:
     iVar1 = param_1 + -0x97 + param_2 * 3;
     if (*(char **)(PTR_PTR_007bb198 + iVar1 * 0xc + 8) != (char *)0x0) {
       uVar3 = 0xffffffff;
@@ -75,7 +79,7 @@ FUN_004c2950(int param_1,int param_2,undefined4 param_3,undefined4 *param_4,char
       return;
     }
     break;
-  case 0xd:
+  case CASE_D:
     iVar1 = param_1 + -0x97 + param_2 * 3;
     if (*(int *)(PTR_PTR_007bb198 + iVar1 * 0xc + 4) == 0) {
       return;
@@ -90,7 +94,7 @@ FUN_004c2950(int param_1,int param_2,undefined4 param_3,undefined4 *param_4,char
 LAB_004c2b44:
     *param_7 = *(undefined4 *)(PTR_DAT_007b5170 + iVar1 * 0x20);
     break;
-  case 0xe:
+  case CASE_E:
     iVar1 = param_1 + -0x97 + param_2 * 3;
     if (*(char **)(PTR_PTR_007bb198 + iVar1 * 0xc) != (char *)0x0) {
       uVar3 = 0xffffffff;

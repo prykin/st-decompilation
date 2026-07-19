@@ -40,7 +40,7 @@ FUN_0065e700(int param_1,undefined4 param_2,int *param_3,int *param_4,int *param
       this = (void *)STAllPlayersC::GetObjPtr
                                (DAT_007fa174,
                                 CONCAT31((int3)((uint)piVar3 >> 8),*(undefined1 *)(param_1 + 0x24)),
-                                CONCAT22((short)((uint)iVar4 >> 0x10),(short)*piVar2),1);
+                                CONCAT22((short)((uint)iVar4 >> 0x10),(short)*piVar2),CASE_1);
       piVar3 = extraout_ECX;
       iVar4 = extraout_EDX_00;
       if (this != (void *)0x0) {

@@ -8,7 +8,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
 {
   code *pcVar1;
   SpecPanelTy *this_00;
-  SpecPanelTy SVar2;
+  char cVar2;
   int iVar3;
   char *pcVar4;
   LPSTR pCVar5;
@@ -51,8 +51,9 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
       uVar9 = 0;
       puVar8 = &LAB_0040420f;
       iVar7 = 0;
-      pcVar4 = thunk_FUN_00529590(this_00[*(ushort *)(param_1 + 0x16) + 0x1af],
-                                  *(int *)(this_00 + 0x1ab));
+      pcVar4 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
+                                   ((int)&this_00[1].field_0028 + *(ushort *)(param_1 + 0x16) + 2),
+                                  *(int *)&this_00[1].field_0x26);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar7);
       (**(code **)(iVar3 + 8))(param_1,6,pCVar5,puVar8,uVar9,uVar10);
       g_currentExceptionFrame = local_70.previous;
@@ -68,22 +69,25 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
       uVar9 = 0;
       puVar8 = &LAB_0040420f;
       iVar7 = 0;
-      pcVar4 = thunk_FUN_00529590(this_00[*(ushort *)(param_1 + 0x16) + 0x1af],
-                                  *(int *)(this_00 + 0x1ab));
+      pcVar4 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
+                                   ((int)&this_00[1].field_0028 + *(ushort *)(param_1 + 0x16) + 2),
+                                  *(int *)&this_00[1].field_0x26);
       pCVar5 = thunk_FUN_00571240(pcVar4,iVar7);
       (**(code **)(iVar3 + 8))(param_1,1,pCVar5,puVar8,uVar9,uVar10);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
     if (uVar6 == 0xb1ff) {
-      if (*(short *)(this_00 + 0x172) != 1) {
+      if (*(short *)&this_00->field_0x172 != 1) {
         g_currentExceptionFrame = local_70.previous;
         return 0;
       }
       thunk_FUN_005252c0(0xae);
-      thunk_FUN_0054b630(DAT_00802a30,(uint)(byte)this_00[*(int *)(param_1 + 0x14) + 0x1af],0);
-      *(undefined4 *)(this_00 + 0x28) = 0xbfff;
-      (*(code *)**(undefined4 **)this_00)(this_00 + 0x18);
+      thunk_FUN_0054b630(DAT_00802a30,
+                         (uint)*(byte *)((int)&this_00[1].field_0028 + *(int *)(param_1 + 0x14) + 2)
+                         ,0);
+      this_00->field_0028 = 0xbfff;
+      (*(code *)**(undefined4 **)this_00)(&this_00->field_0x18);
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -104,7 +108,7 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
   case 0xc09f:
   case 0xc0a0:
   case 0xc0a1:
-    if (*(short *)(this_00 + 0x172) != 1) {
+    if (*(short *)&this_00->field_0x172 != 1) {
       g_currentExceptionFrame = local_70.previous;
       return 0;
     }
@@ -121,33 +125,33 @@ undefined4 __thiscall BehPanelTy::GetMessage(BehPanelTy *this,int param_1)
     *pcVar4 = '\0';
     if (iVar3 == 0xc09f) {
       local_2c[0] = '\x15';
-      SVar2 = this_00[0x1bb];
+      cVar2 = this_00[1].field_0x36;
     }
     else {
       local_2c[0] = (iVar3 != 0xc0a0) + '\x16';
       if (iVar3 == 0xc0a0) {
-        SVar2 = this_00[0x1bc];
+        cVar2 = this_00[1].field_0x37;
       }
       else {
-        SVar2 = this_00[0x1bd];
+        cVar2 = this_00[1].field_0x38;
       }
     }
-    local_f = (uint)(SVar2 == (SpecPanelTy)0x3);
+    local_f = (uint)(cVar2 == '\x03');
     thunk_FUN_0054edf0((undefined4 *)0x17,(undefined4 *)local_2c,0,0xffffffff);
     g_currentExceptionFrame = local_70.previous;
     return 0;
   default:
     goto switchD_004ee68c_caseD_c0a2;
   case 0xc0af:
-    uVar6 = CONCAT31((int3)(uVar6 - 0xc09f >> 8),this_00[0x1bb] == (SpecPanelTy)0x3);
+    uVar6 = CONCAT31((int3)(uVar6 - 0xc09f >> 8),this_00[1].field_0x36 == '\x03');
     pcVar4 = s_BUT_BLOCK_007c17a8;
     break;
   case 0xc0b0:
-    uVar6 = (uint)(this_00[0x1bc] == (SpecPanelTy)0x3);
+    uVar6 = (uint)(this_00[1].field_0x37 == '\x03');
     pcVar4 = s_BUT_BHOLD_007c16e8;
     break;
   case 0xc0b1:
-    uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[0x1bd] == (SpecPanelTy)0x3);
+    uVar6 = CONCAT31((int3)((uint)extraout_EDX >> 8),this_00[1].field_0x38 == '\x03');
     pcVar4 = s_BUT_BAGR_007c16dc;
   }
   pCVar5 = thunk_FUN_00571240(pcVar4,0);

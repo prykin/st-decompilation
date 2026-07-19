@@ -14,7 +14,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
   int iVar6;
   MainMenuTy *pMVar7;
   undefined4 unaff_ESI;
-  MainMenuTy *pMVar8;
+  int *piVar8;
   void *unaff_EDI;
   InternalExceptionFrame local_54;
   int local_10;
@@ -27,70 +27,70 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar7 = local_8;
   if (iVar3 == 0) {
-    if (*(int *)(local_8 + 0x1acf) != 0) {
-      pMVar8 = local_8 + 0x1aa7;
+    if (*(int *)&local_8[0x11].field_0x14f != 0) {
+      piVar8 = (int *)&local_8[0x11].field_0x127;
       iVar3 = 10;
       do {
-        piVar1 = *(int **)pMVar8;
+        piVar1 = (int *)*piVar8;
         if (piVar1 != (int *)0x0) {
           FUN_006b5f80(DAT_008075a8,*piVar1,piVar1[1],piVar1[2],piVar1[3]);
-          Library::DKW::FLC::FUN_006c4ac0(*(int **)pMVar8);
+          Library::DKW::FLC::FUN_006c4ac0((int *)*piVar8);
         }
-        pMVar8 = pMVar8 + 4;
+        piVar8 = piVar8 + 1;
         iVar3 = iVar3 + -1;
       } while (iVar3 != 0);
     }
-    *(uint *)(pMVar7 + 0x1acf) = (uint)(*(int *)(pMVar7 + 0x1acf) == 0);
+    *(uint *)&pMVar7[0x11].field_0x14f = (uint)(*(int *)&pMVar7[0x11].field_0x14f == 0);
     local_10 = 0;
     local_c = 0x244;
     do {
       iVar3 = *(int *)(local_c + DAT_0081176c);
       if (iVar3 != 0) {
-        piVar1 = (int *)(local_10 + 0x25c + DAT_0081176c);
+        piVar8 = (int *)(local_10 + 0x25c + DAT_0081176c);
         if (*(char *)(local_10 + 0x270 + DAT_0081176c) == '\0') {
-          uVar4 = piVar1[2];
+          uVar4 = piVar8[2];
         }
         else {
-          uVar4 = piVar1[3];
+          uVar4 = piVar8[3];
         }
-        if (uVar4 <= (uint)(*(int *)(pMVar7 + 0x61) - piVar1[4])) {
+        if (uVar4 <= (uint)(pMVar7->field_0061 - piVar8[4])) {
           pBVar5 = (BITMAPINFO *)FUN_0070b3a0(iVar3,(int)*(short *)(iVar3 + 0x29));
-          FUN_006b5f80(DAT_008075a8,*piVar1,piVar1[1],(int)*(short *)(iVar3 + 0x2c),
+          FUN_006b5f80(DAT_008075a8,*piVar8,piVar8[1],(int)*(short *)(iVar3 + 0x2c),
                        (int)*(short *)(iVar3 + 0x2e));
-          thunk_FUN_005403c0(*piVar1,piVar1[1],'\x01',pBVar5);
-          if ((char)piVar1[5] != '\0') {
-            *(undefined1 *)(piVar1 + 5) = 0;
+          thunk_FUN_005403c0(*piVar8,piVar8[1],'\x01',pBVar5);
+          if ((char)piVar8[5] != '\0') {
+            *(undefined1 *)(piVar8 + 5) = 0;
           }
-          piVar1[4] = *(int *)(local_8 + 0x61);
-          switch(*(undefined2 *)((int)piVar1 + 0x15)) {
+          piVar8[4] = local_8->field_0061;
+          switch(*(undefined2 *)((int)piVar8 + 0x15)) {
           case 0:
             *(short *)(iVar3 + 0x29) = *(short *)(iVar3 + 0x29) + 1;
             if (*(short *)(iVar3 + 0x23) <= *(short *)(iVar3 + 0x29)) {
               *(undefined2 *)(iVar3 + 0x29) = 0;
-              *(undefined1 *)(piVar1 + 5) = 1;
+              *(undefined1 *)(piVar8 + 5) = 1;
             }
             break;
           case 1:
             *(short *)(iVar3 + 0x29) = *(short *)(iVar3 + 0x29) + -1;
             if (*(short *)(iVar3 + 0x29) < 0) {
               *(short *)(iVar3 + 0x29) = *(short *)(iVar3 + 0x23) + -1;
-              *(undefined1 *)(piVar1 + 5) = 1;
+              *(undefined1 *)(piVar8 + 5) = 1;
             }
             break;
           case 2:
             *(short *)(iVar3 + 0x29) = *(short *)(iVar3 + 0x29) + 1;
             if (*(short *)(iVar3 + 0x23) <= *(short *)(iVar3 + 0x29)) {
               *(short *)(iVar3 + 0x29) = *(short *)(iVar3 + 0x23) + -1;
-              *(undefined1 *)(piVar1 + 5) = 1;
-              *(undefined2 *)((int)piVar1 + 0x15) = 3;
+              *(undefined1 *)(piVar8 + 5) = 1;
+              *(undefined2 *)((int)piVar8 + 0x15) = 3;
             }
             break;
           case 3:
             *(short *)(iVar3 + 0x29) = *(short *)(iVar3 + 0x29) + -1;
             if (*(short *)(iVar3 + 0x29) < 0) {
               *(undefined2 *)(iVar3 + 0x29) = 0;
-              *(undefined1 *)(piVar1 + 5) = 1;
-              *(undefined2 *)((int)piVar1 + 0x15) = 2;
+              *(undefined1 *)(piVar8 + 5) = 1;
+              *(undefined2 *)((int)piVar8 + 0x15) = 2;
             }
           }
         }

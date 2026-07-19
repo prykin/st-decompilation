@@ -5,6 +5,8 @@ undefined4 * FUN_005aa2c0(void)
   undefined4 *puVar1;
   int iVar2;
   undefined4 *puVar3;
+  undefined4 *unaff_EDI;
+  SpriteClassTy *this;
   undefined4 *puVar4;
   int local_8;
   
@@ -25,13 +27,13 @@ undefined4 * FUN_005aa2c0(void)
       puVar3 = puVar3 + 1;
     }
     DAT_0080879c = 0;
-    puVar3 = puVar1 + 0x5d;
+    this = (SpriteClassTy *)(puVar1 + 0x5d);
     local_8 = 0xd;
     do {
-      FUN_00715820((undefined4 *)((int)puVar3 + -0x91));
-      FUN_00715820(puVar3);
-      FUN_00715820((undefined4 *)((int)puVar3 + 0x91));
-      puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
+      SpriteClassTy::SpriteClassTy(this + -1,unaff_EDI);
+      SpriteClassTy::SpriteClassTy(this,unaff_EDI);
+      SpriteClassTy::SpriteClassTy(this + 1,unaff_EDI);
+      this = (SpriteClassTy *)&this[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     *puVar1 = &MMObjTyVTable;
@@ -55,12 +57,12 @@ undefined4 * FUN_005aa2c0(void)
       local_8 = local_8 + -1;
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
     } while (local_8 != 0);
-    FUN_00715820(puVar1 + 0x6ca);
-    FUN_00715820((undefined4 *)((int)puVar1 + 0x1bb9));
-    FUN_00715820((undefined4 *)((int)puVar1 + 0x1c4a));
-    FUN_00715820((undefined4 *)((int)puVar1 + 0x1cdb));
-    FUN_00715820(puVar1 + 0x75b);
-    FUN_00715820((undefined4 *)((int)puVar1 + 0x1dfd));
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)(puVar1 + 0x6ca),unaff_EDI);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)puVar1 + 0x1bb9),unaff_EDI);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)puVar1 + 0x1c4a),unaff_EDI);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)puVar1 + 0x1cdb),unaff_EDI);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)(puVar1 + 0x75b),unaff_EDI);
+    SpriteClassTy::SpriteClassTy((SpriteClassTy *)((int)puVar1 + 0x1dfd),unaff_EDI);
     *puVar1 = &PTR_LAB_0079c02c;
     *(undefined4 *)((int)puVar1 + 0x1a6b) = 1;
     *(undefined1 *)((int)puVar1 + 0x65) = 1;

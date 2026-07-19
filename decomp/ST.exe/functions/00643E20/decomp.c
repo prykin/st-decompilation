@@ -65,8 +65,9 @@ LAB_00643f4a:
       }
     }
     else {
-      uVar10 = thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),uVar4,
-                                  iVar7,(int *)&local_1c,&local_20);
+      uVar10 = thunk_FUN_00558c00(DAT_00802a88,
+                                  *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                  uVar4,iVar7,(int *)&local_1c,&local_20);
       uVar11 = uVar10;
       if ((iVar9 < 0) ||
          (((4 < iVar9 || (uVar11 = CONCAT44(local_1c,(int)uVar10), (int)local_1c < 0)) ||
@@ -93,7 +94,7 @@ LAB_00643f4a:
       local_c = STAllPlayersC::GetObjPtr
                           (DAT_007fa174,
                            CONCAT31((int3)((uint)in_EAX >> 8),*(undefined1 *)(param_1 + 0x24)),
-                           CONCAT22(uVar8,*(undefined2 *)(param_1 + 0x262)),1);
+                           CONCAT22(uVar8,*(undefined2 *)(param_1 + 0x262)),CASE_1);
     }
     uVar4 = local_c;
     if (((*(char *)(param_1 + 0x27d) == '\0') && (*(int *)(param_1 + 0x259) != 10)) &&

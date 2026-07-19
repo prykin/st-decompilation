@@ -15,7 +15,7 @@ FUN_006a0ae0(void *this,int param_1,int param_2,undefined4 param_3,int param_4,u
   undefined4 local_8;
   
   local_8 = 0;
-  puVar1 = thunk_FUN_00692c10(10,param_4,&local_8,0,param_5);
+  puVar1 = thunk_FUN_00692c10(CASE_A,param_4,&local_8,0,param_5);
   puVar1 = puVar1 + 5;
   puVar6 = &local_9c;
   for (iVar3 = 0x24; iVar3 != 0; iVar3 = iVar3 + -1) {

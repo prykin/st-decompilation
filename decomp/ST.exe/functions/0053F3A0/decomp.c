@@ -33,7 +33,7 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
     (*pcVar2)();
     return;
   }
-  sVar1 = *(short *)(local_8 + 0x172);
+  sVar1 = *(short *)&local_8->field_0x172;
   if (sVar1 == 1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
@@ -47,13 +47,13 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      *(undefined2 *)(local_8 + 0x172) = 3;
-      thunk_FUN_005252c0(0xaf);
+      *(undefined2 *)&local_8->field_0x172 = 3;
+      thunk_FUN_005252c0(CASE_AF);
       if (DAT_00801688 == (CPanelTy *)0x0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      CPanelTy::ShiftControls(DAT_00801688,*(int *)(pPVar3 + 0x195),0);
+      CPanelTy::ShiftControls(DAT_00801688,*(int *)(pPVar3 + 1),0);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
@@ -63,8 +63,8 @@ void __thiscall ProdPanelTy::SwitchPanel(ProdPanelTy *this,int param_1)
     }
   }
   if (param_1 == 0) {
-    *(undefined2 *)(pPVar3 + 0x172) = 4;
-    thunk_FUN_005252c0(0xb0);
+    *(undefined2 *)&pPVar3->field_0x172 = 4;
+    thunk_FUN_005252c0(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

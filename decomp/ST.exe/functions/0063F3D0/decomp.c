@@ -29,7 +29,7 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
   pSVar3 = local_c;
   if (errorCode == 0) {
     if (*(int *)(local_c + 0x33a) == -1) {
-      puVar4 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expl_vc0_007d201c,0xffffffff,0,1,0,
+      puVar4 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expl_vc0_007d201c,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(*(void **)(pSVar3 + 0x211),(int *)&local_8,1,0,*(uint *)((int)puVar4 + 9),
                    *(uint *)((int)puVar4 + 0xd),(int)*(uint *)((int)puVar4 + 9) / 2,0xa9,0);
@@ -46,14 +46,14 @@ undefined4 __thiscall STTmMineC::LoadImagVacuum(STTmMineC *this,int param_1)
       *(undefined4 *)(pSVar3 + 0x342) = *(undefined4 *)puVar4;
     }
     if ((*(int *)(pSVar3 + 0x353) == -1) && (param_1 != 0)) {
-      puVar4 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
+      puVar4 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       *(ushort **)(pSVar3 + 0x34b) = puVar4;
       *(undefined4 *)(pSVar3 + 0x34f) = 0;
     }
     pSVar1 = pSVar3 + 0x363;
     if ((*(int *)(pSVar3 + 0x363) == -1) && (param_1 != 0)) {
-      puVar4 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expl_vc1_007d2028,0xffffffff,0,1,0,
+      puVar4 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expl_vc1_007d2028,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       *(ushort **)(pSVar3 + 0x35f) = puVar4;
       FUN_006e8660(*(void **)(pSVar3 + 0x211),(int *)pSVar1,1,0,*(uint *)((int)puVar4 + 9),

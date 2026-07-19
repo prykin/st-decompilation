@@ -15,12 +15,12 @@ STAllPlayersC::AddObjToTmp2
   undefined4 unaff_ESI;
   int *piVar4;
   void *unaff_EDI;
-  undefined1 uVar5;
+  Global_sub_0043FC50_param_1Enum GVar5;
   InternalExceptionFrame local_58;
   int local_14;
   undefined4 local_10;
   STAllPlayersC *local_c;
-  undefined4 local_8;
+  STAllPlayersC_GetObjPtr_param_3Enum local_8;
   
   local_10 = 0;
   local_58.previous = g_currentExceptionFrame;
@@ -56,17 +56,17 @@ STAllPlayersC::AddObjToTmp2
   if (param_2 == 0) {
     local_14 = (int)&DAT_007f4f83 + param_1 * 0xa62;
     if (param_3 == 0) {
-      thunk_FUN_0043fc50(1,0);
-      uVar5 = 2;
+      thunk_FUN_0043fc50(CASE_1,0);
+      GVar5 = CASE_2;
 LAB_0042bf8b:
-      thunk_FUN_0043fc50(uVar5,param_3);
+      thunk_FUN_0043fc50(GVar5,param_3);
     }
   }
   else if (param_2 == 1) {
     local_14 = (int)&DAT_007f4fd3 + param_1 * 0xa62;
     if (param_3 == 0) {
-      thunk_FUN_0043fc50(4,0);
-      uVar5 = 5;
+      thunk_FUN_0043fc50(CASE_4,0);
+      GVar5 = CASE_5;
       goto LAB_0042bf8b;
     }
   }
@@ -90,25 +90,25 @@ LAB_0042bf8b:
   *(short *)(piVar4 + 2) = (short)param_6;
   if (param_4 < 0x1a5) {
     if (param_4 == 0x1a4) {
-      local_8 = 5;
+      local_8 = CASE_5;
       goto LAB_0042c072;
     }
     if (param_4 == 0x5a) {
-      local_8 = 4;
+      local_8 = CASE_4;
       goto LAB_0042c072;
     }
     if (param_4 == 0x172) {
-      local_8 = 2;
+      local_8 = CASE_2;
       goto LAB_0042c072;
     }
   }
   else {
     if (param_4 == 0x1ae) {
-      local_8 = 3;
+      local_8 = CASE_3;
       goto LAB_0042c072;
     }
     if (param_4 == 0x1b8) {
-      local_8 = 6;
+      local_8 = CASE_6;
       goto LAB_0042c072;
     }
   }

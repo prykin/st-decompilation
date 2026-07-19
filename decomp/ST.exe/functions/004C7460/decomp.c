@@ -54,8 +54,8 @@ undefined4 __fastcall FUN_004c7460(void *param_1)
       iVar2 = *(int *)((int)param_1 + 0x607);
       iVar3 = 0;
       do {
-        thunk_FUN_004c7260(param_1,*(undefined4 *)(iVar3 + iVar2),*(int *)(iVar3 + 4 + iVar2),
-                           &local_1c,&local_20,&local_24,&local_28);
+        thunk_FUN_004c7260(param_1,*(Global_sub_004C7260_param_1Enum *)(iVar3 + iVar2),
+                           *(int *)(iVar3 + 4 + iVar2),&local_1c,&local_20,&local_24,&local_28);
         iVar2 = *(int *)((int)param_1 + 0x607);
         iVar1 = *(int *)(iVar3 + 8 + iVar2);
         iVar3 = iVar3 + 0x27;

@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
 
 {
-  CPanelTy CVar1;
+  char cVar1;
   code *pcVar2;
   CPanelTy *this_00;
   int iVar3;
@@ -35,61 +35,62 @@ void __thiscall CPanelTy::PaintInfoObj(CPanelTy *this)
     RaiseInternalException(iVar3,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0xb5);
     return;
   }
-  thunk_FUN_00540760(*(undefined4 **)(local_8 + 0x1a0),0,0,'\x01',*(byte **)(local_8 + 0xb43));
-  thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x19c),0,0,'\x01',*(byte **)(this_00 + 0xb47));
-  if (*(int *)(this_00 + 0x2e6) != 0) {
+  thunk_FUN_00540760(*(undefined4 **)&local_8->field_0x1a0,0,0,'\x01',
+                     *(byte **)&local_8->field_0xb43);
+  thunk_FUN_00540760((undefined4 *)this_00->field_019C,0,0,'\x01',*(byte **)&this_00->field_0xb47);
+  if (*(int *)&this_00->field_0x2e6 != 0) {
     thunk_FUN_004f1890(this_00,1);
   }
-  if (this_00[0xc51] == (CPanelTy)0x0) {
+  if (this_00->field_0C51 == '\0') {
     if (DAT_0080874e == '\x03') {
-      thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),0x73,0,'\x06',*(byte **)(this_00 + 0x9f9)
-                        );
+      thunk_FUN_00540760((undefined4 *)this_00->field_0194,0x73,0,'\x06',
+                         *(byte **)&this_00->field_0x9f9);
       goto LAB_004fef26;
     }
-    pbVar4 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x29e),1);
-    puVar6 = *(undefined4 **)(this_00 + 0x198);
+    pbVar4 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x29e,1);
+    puVar6 = *(undefined4 **)&this_00->field_0x198;
   }
   else {
     if (DAT_0080874e == '\x03') {
-      thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x194),0x73,0,'\x06',*(byte **)(this_00 + 0xa01)
-                        );
+      thunk_FUN_00540760((undefined4 *)this_00->field_0194,0x73,0,'\x06',
+                         *(byte **)&this_00->field_0xa01);
       goto LAB_004fef26;
     }
-    pbVar4 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x29e),0);
-    puVar6 = *(undefined4 **)(this_00 + 0x198);
+    pbVar4 = (byte *)FUN_0070b3a0(*(int *)&this_00->field_0x29e,0);
+    puVar6 = *(undefined4 **)&this_00->field_0x198;
   }
   thunk_FUN_00540760(puVar6,0,0,'\x01',pbVar4);
 LAB_004fef26:
   PaintDeep(this_00,0);
-  CVar1 = this_00[0xc51];
-  if (((CVar1 == (CPanelTy)0x1) || (CVar1 == (CPanelTy)0x4)) || (CVar1 == (CPanelTy)0x3)) {
+  cVar1 = this_00->field_0C51;
+  if (((cVar1 == '\x01') || (cVar1 == '\x04')) || (cVar1 == '\x03')) {
     PaintName(this_00,0);
-    iVar3 = *(int *)(this_00 + 0xc54);
+    iVar3 = *(int *)&this_00->field_0xc54;
     if (((iVar3 != 0xdd) && (iVar3 != 0xde)) && (iVar3 != 0xe0)) {
       PaintLife(this_00,0);
     }
-    iVar3 = *(int *)(this_00 + 0xc54);
+    iVar3 = *(int *)&this_00->field_0xc54;
     if (((iVar3 != 0xdd) && (iVar3 != 0xde)) && (iVar3 != 0xe0)) {
       PaintWeap(this_00,0);
     }
-    if ((DAT_0080874e == '\x03') && (this_00[0xc58] == (CPanelTy)0x3)) {
+    if ((DAT_0080874e == '\x03') && (this_00->field_0xc58 == '\x03')) {
       PaintEnergy(this_00,0);
     }
   }
-  if (-1 < (int)*(uint *)(this_00 + 0x168)) {
+  if (-1 < (int)*(uint *)&this_00->field_0x168) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(this_00 + 0x168),0xffffffff,*(uint *)(this_00 + 0x5c),
-               *(uint *)(this_00 + 0xb4));
+              (DAT_008075a8,*(uint *)&this_00->field_0x168,0xffffffff,*(uint *)&this_00->field_0x5c,
+               *(uint *)&this_00->field_0xb4);
   }
-  if (-1 < (int)*(uint *)(this_00 + 0x164)) {
+  if (-1 < (int)*(uint *)&this_00->field_0x164) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
-               *(uint *)(this_00 + 0xb0));
+              (DAT_008075a8,*(uint *)&this_00->field_0x164,0xffffffff,this_00->field_0058,
+               this_00->field_00B0);
   }
-  if ((DAT_0080874e != '\x03') && (-1 < (int)*(uint *)(this_00 + 0x160))) {
+  if ((DAT_0080874e != '\x03') && (-1 < (int)*(uint *)&this_00->field_0x160)) {
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(this_00 + 0x160),0xffffffff,*(uint *)(this_00 + 0x54),
-               *(uint *)(this_00 + 0xac));
+              (DAT_008075a8,*(uint *)&this_00->field_0x160,0xffffffff,*(uint *)&this_00->field_0x54,
+               *(uint *)&this_00->field_0xac);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

@@ -32,7 +32,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   short local_8;
   undefined1 local_5;
   
-  local_18 = *(uint *)(*(int *)(this + 0x29) + 0xc);
+  local_18 = *(uint *)(this->field_0029 + 0xc);
   local_c = 0;
   local_10 = 0;
   local_80.previous = g_currentExceptionFrame;
@@ -45,7 +45,7 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
   uVar6 = local_18;
   if (errorCode == 0) {
     while (uVar6 = uVar6 - 1, -1 < (int)uVar6) {
-      FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,(undefined4 *)&local_8);
+      FUN_006acc70(pSVar2->field_0029,uVar6,(undefined4 *)&local_8);
       if (local_8 == -1) {
         uVar7 = uVar6;
         local_14 = uVar6;
@@ -55,23 +55,24 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
         ;
       }
     }
-    Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar2 + 0x29),uVar7,&param_1);
+    Library::DKW::TBL::FUN_006ae140((uint *)pSVar2->field_0029,uVar7,&param_1);
     this_00 = (int *)STAllPlayersC::GetObjPtr
-                               (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
-                                param_1,1);
-    thunk_FUN_00419c30(this_00,*(undefined2 *)(pSVar2 + 0x25));
-    *(short *)(pSVar2 + 0x27) = *(short *)(pSVar2 + 0x27) + 1;
+                               (DAT_007fa174,
+                                CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),param_1
+                                ,CASE_1);
+    thunk_FUN_00419c30(this_00,*(undefined2 *)&pSVar2->field_0x25);
+    *(short *)&pSVar2->field_0x27 = *(short *)&pSVar2->field_0x27 + 1;
     if (param_2 == 1) {
-      if (*(int *)(pSVar2 + 0x2d) == 0) {
+      if (*(int *)&pSVar2->field_0x2d == 0) {
         puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,2,5);
-        *(uint **)(pSVar2 + 0x2d) = puVar3;
+        *(uint **)&pSVar2->field_0x2d = puVar3;
       }
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar2 + 0x2d),&param_1);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)&pSVar2->field_0x2d,&param_1);
       local_5 = 0xff;
       (**(code **)(*(int *)pSVar2 + 8))(0x65,&local_5);
     }
     uVar4 = thunk_FUN_00423120((int)this_00);
-    uVar6 = *(uint *)(pSVar2 + 0x35);
+    uVar6 = *(uint *)&pSVar2->field_0x35;
     if ((uVar6 & 1) == 0) {
       if ((uVar4 & 1) != 0) {
         local_10 = local_10 | 1;
@@ -119,14 +120,14 @@ uint __thiscall STGroupC::AddObj(STGroupC *this,uint param_1,int param_2)
       (**(code **)(*this_00 + 0x104))(local_10);
     }
     if (this_00[8] == 0x14) {
-      thunk_FUN_004956c0(this_00,*(undefined4 *)(pSVar2 + 0x39));
+      thunk_FUN_004956c0(this_00,pSVar2->field_0039);
     }
-    if (*(undefined4 **)(pSVar2 + 0x1c) != (undefined4 *)0x0) {
+    if (*(undefined4 **)&pSVar2->field_0x1c != (undefined4 *)0x0) {
       local_2c = 0x5d96;
       local_28 = 0;
       local_26 = (short)param_1;
       local_24 = this_00[6];
-      (**(code **)**(undefined4 **)(pSVar2 + 0x1c))(local_3c);
+      (**(code **)**(undefined4 **)&pSVar2->field_0x1c)(local_3c);
     }
     g_currentExceptionFrame = local_80.previous;
     return uVar7;

@@ -33,19 +33,19 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
     (*pcVar2)();
     return;
   }
-  sVar1 = *(short *)(local_8 + 0x172);
+  sVar1 = *(short *)&local_8->field_0x172;
   if (sVar1 == 1) {
     if (param_1 != 0) {
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    if (*(int *)(local_8 + 0x178) != 0) {
-      *(undefined4 *)(local_8 + 0x28) = 0x4202;
-      *(undefined2 *)(local_8 + 0x2c) = 0;
-      *(undefined2 *)(local_8 + 0x2e) = 2;
-      *(int *)(local_8 + 0x30) = *(int *)(local_8 + 0x178);
+    if (*(int *)&local_8->field_0x178 != 0) {
+      local_8->field_0028 = 0x4202;
+      *(undefined2 *)&local_8->field_0x2c = 0;
+      local_8->field_002E = 2;
+      *(int *)&local_8->field_0x30 = *(int *)&local_8->field_0x178;
       if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)(local_8 + 0x18);
+        (**(code **)*DAT_00802a30)(&local_8->field_0x18);
       }
     }
     ShiftControls(this_00,0);
@@ -56,8 +56,8 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
         g_currentExceptionFrame = local_4c.previous;
         return;
       }
-      *(undefined2 *)(local_8 + 0x172) = 3;
-      thunk_FUN_005252c0(0xaf);
+      *(undefined2 *)&local_8->field_0x172 = 3;
+      thunk_FUN_005252c0(CASE_AF);
       if (DAT_00801688 == (CPanelTy *)0x0) {
         g_currentExceptionFrame = local_4c.previous;
         return;
@@ -72,8 +72,8 @@ void __thiscall HelpPanelTy::SwitchOptPanel(HelpPanelTy *this,int param_1)
     }
   }
   if (param_1 == 0) {
-    *(undefined2 *)(this_00 + 0x172) = 4;
-    thunk_FUN_005252c0(0xb0);
+    *(undefined2 *)&this_00->field_0x172 = 4;
+    thunk_FUN_005252c0(CASE_B0);
   }
   g_currentExceptionFrame = local_4c.previous;
   return;

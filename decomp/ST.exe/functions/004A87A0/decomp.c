@@ -16,15 +16,15 @@ undefined4 __thiscall STGroupBoatC::IsAgAtt(STGroupBoatC *this,int param_1)
   uint local_8;
   
   uVar6 = 0;
-  uVar1 = *(uint *)(*(int *)(this + 0x29) + 0xc);
+  uVar1 = *(uint *)(this->field_0029 + 0xc);
   if (uVar1 != 0) {
     uVar5 = 0;
     do {
-      FUN_006acc70(*(int *)(this + 0x29),uVar5,&local_8);
+      FUN_006acc70(this->field_0029,uVar5,&local_8);
       if ((short)local_8 != -1) {
         uVar5 = STAllPlayersC::GetObjPtr
-                          (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),this[0x24]),local_8
-                           ,1);
+                          (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),this->field_0024),
+                           local_8,CASE_1);
         if (uVar5 == 0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1758,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__IsAgAtt_007ac564);

@@ -8,9 +8,9 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
 {
   code *pcVar1;
   int iVar2;
-  STBoatC *pSVar3;
+  int *piVar3;
   
-  if (*(int *)(this + 0x7c2) < 1) {
+  if ((int)this->field_07C2 < 1) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4f96,0,0,&DAT_007a4ccc,
                                s_STBoatC__ReleaseLoad_data_lload<_007aba78);
     if (iVar2 != 0) {
@@ -20,28 +20,28 @@ void __thiscall STBoatC::ReleaseLoad(STBoatC *this,undefined4 param_1)
     }
   }
   else {
-    iVar2 = *(int *)(this + 0x7c2) + -1;
-    *(int *)(this + 0x7c2) = iVar2;
+    iVar2 = this->field_07C2 + -1;
+    this->field_07C2 = iVar2;
     if (iVar2 == 0) {
-      *(undefined4 *)(this + 0x5a2) = 0;
-      pSVar3 = this + 0x2cc;
+      this->field_05A2 = 0;
+      piVar3 = &this->field_02CC;
       iVar2 = 0;
       do {
-        if (*(int *)pSVar3 == 1) break;
+        if (*piVar3 == 1) break;
         iVar2 = iVar2 + 1;
-        pSVar3 = pSVar3 + 4;
+        piVar3 = piVar3 + 1;
       } while (iVar2 < 0x17);
-      if ((*(int *)(this + 0x45d) == 0x14) && (iVar2 == 0x17)) {
+      if ((this->field_045D == 0x14) && (iVar2 == 0x17)) {
         param_1 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-        CmdToObj(this,3,&param_1);
+        CmdToObj(this,CASE_3,&param_1);
       }
-      *(undefined4 *)(this + 0x314) = 0;
-      *(undefined4 *)(this + 0x76) = 1;
+      this->field_0314 = 0;
+      this->field_0076 = 1;
       return;
     }
-    iVar2 = (**(code **)(*(int *)this + 0xac))(param_1);
+    iVar2 = (*this->vtable->vfunc_AC)(param_1);
     if (iVar2 == 1) {
-      *(undefined4 *)(this + 0x5c0) = 2;
+      this->field_05C0 = 2;
     }
   }
   return;

@@ -39,7 +39,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
   if (iVar4 == 0) {
     if ((param_1 != 0) && (*(int *)(param_1 + 0xc) != 0)) {
       ClaimSave(local_8);
-      iVar4 = *(int *)(this_00 + 0xa5);
+      iVar4 = *(int *)&this_00->field_0xa5;
       if (0 < *(int *)(iVar4 + 0xc)) {
         bVar10 = *(int *)(iVar4 + 0xc) != 0;
         uVar9 = 0;
@@ -53,12 +53,12 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
           if ((iVar4 != 0) && (*(int *)(iVar4 + 4) != 0)) {
             thunk_FUN_00660d40(*(int *)(iVar4 + 4));
           }
-          iVar4 = *(int *)(this_00 + 0xa5);
+          iVar4 = *(int *)&this_00->field_0xa5;
           uVar9 = uVar9 + 1;
           bVar10 = uVar9 < *(uint *)(iVar4 + 0xc);
         } while ((int)uVar9 < (int)*(uint *)(iVar4 + 0xc));
       }
-      thunk_FUN_00676c40(*(int *)(this_00 + 0xbd),&LAB_0040242d);
+      thunk_FUN_00676c40(*(int *)&this_00->field_0xbd,&LAB_0040242d);
       local_c = *(uint *)(param_1 + 0xc);
       uVar8 = extraout_EDX;
       while (local_c = local_c - 1, -1 < (int)local_c) {
@@ -73,8 +73,9 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
         }
         else {
           piVar6 = (int *)STAllPlayersC::GetObjPtr
-                                    (DAT_007fa174,CONCAT31((int3)((uint)uVar8 >> 8),this_00[0x24]),
-                                     CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),1);
+                                    (DAT_007fa174,
+                                     CONCAT31((int3)((uint)uVar8 >> 8),this_00->field_0x24),
+                                     CONCAT22((short)((uint)puVar5 >> 0x10),*puVar5),CASE_1);
           uVar8 = extraout_EDX_00;
         }
         if (piVar6 != (int *)0x0) {
@@ -91,7 +92,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
             if ((iVar4 != 0) &&
                (uVar9 = thunk_FUN_0068e8c0(this_00,iVar4), uVar8 = extraout_EDX_01,
                this_00 = local_8, -1 < (int)uVar9)) {
-              iVar4 = *(int *)(local_8 + 0xbd);
+              iVar4 = *(int *)&local_8->field_0xbd;
               if (uVar9 < *(uint *)(iVar4 + 0xc)) {
                 iVar4 = *(int *)(iVar4 + 8) * uVar9 + *(int *)(iVar4 + 0x1c);
               }
@@ -106,7 +107,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
                 }
                 FUN_006b0c70(param_1,local_c);
               }
-              FUN_006b0c70(*(int *)(local_8 + 0xbd),uVar9);
+              FUN_006b0c70(*(int *)&local_8->field_0xbd,uVar9);
               uVar8 = extraout_EDX_02;
               this_00 = local_8;
             }
@@ -115,7 +116,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
             uVar9 = thunk_FUN_0068e8c0(this_00,iVar4);
             uVar8 = extraout_EDX_03;
             if (-1 < (int)uVar9) {
-              iVar4 = *(int *)(this_00 + 0xbd);
+              iVar4 = *(int *)&this_00->field_0xbd;
               if (uVar9 < *(uint *)(iVar4 + 0xc)) {
                 iVar4 = *(int *)(iVar4 + 8) * uVar9 + *(int *)(iVar4 + 0x1c);
               }
@@ -123,7 +124,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
                 iVar4 = 0;
               }
               if ((iVar4 != 0) && (uVar2 = *(uint *)(iVar4 + 0x30), -1 < (int)uVar2)) {
-                iVar4 = *(int *)(this_00 + 0xa5);
+                iVar4 = *(int *)&this_00->field_0xa5;
                 if ((iVar4 == 0) ||
                    (((int)uVar2 < 0 || ((int)*(uint *)(iVar4 + 0xc) <= (int)uVar2)))) {
                   this_01 = (AiFltClassTy *)0x0;
@@ -138,7 +139,7 @@ void __thiscall AiTactClassTy::GiveObjByClaim(AiTactClassTy *this,int param_1)
                 AiFltClassTy::_AddObjFlt(this_01,piVar6,0);
                 FUN_006b0c70(param_1,local_c);
               }
-              FUN_006b0c70(*(int *)(this_00 + 0xbd),uVar9);
+              FUN_006b0c70(*(int *)&this_00->field_0xbd,uVar9);
               uVar8 = extraout_EDX_04;
             }
           }

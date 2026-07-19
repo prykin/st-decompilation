@@ -37,7 +37,7 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    local_14 = *(undefined4 **)(this_00 + 8);
+    local_14 = *(undefined4 **)&this_00->field_0x8;
     local_18 = 0x14;
     FUN_006e6000(this_00,3,1,local_28);
     puVar4 = local_74;
@@ -45,7 +45,7 @@ void __thiscall CursorClassTy::DelSysAcc(CursorClassTy *this)
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    local_60 = *(undefined4 *)(this_00 + 8);
+    local_60 = *(undefined4 *)&this_00->field_0x8;
     local_5c = 2;
     local_3c = 2;
     local_74[0] = 8;

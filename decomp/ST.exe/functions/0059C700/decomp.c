@@ -41,10 +41,10 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
   if (iVar5 == 0) {
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00 = local_8;
-    *(uint **)(local_8 + 0x1ae8) = puVar2;
+    *(uint **)&local_8->field_0x1ae8 = puVar2;
     Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)(this_00 + 0x1aec) = puVar2;
+    *(uint **)&this_00->field_0x1aec = puVar2;
     pcVar6 = (char *)&DAT_00807e5d;
     if (DAT_0080735f == '\0') {
       pcVar6 = &DAT_008016a0;
@@ -55,9 +55,9 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
       *puVar7 = 0;
       puVar7 = puVar7 + 1;
     }
-    local_8d8[2] = *(undefined4 *)(this_00 + 0x1a73);
-    local_8d8[8] = *(undefined4 *)(this_00 + 0x1ae8);
-    local_8ac = *(undefined4 *)(this_00 + 8);
+    local_8d8[2] = *(undefined4 *)&this_00->field_0x1a73;
+    local_8d8[8] = *(undefined4 *)&this_00->field_0x1ae8;
+    local_8ac = *(undefined4 *)&this_00->field_0x8;
     local_64 = 2;
     local_8a8 = 2;
     local_888 = 2;
@@ -73,19 +73,19 @@ void __thiscall FSGSTy::LoginCtrls(FSGSTy *this)
     local_60 = 0x6955;
     local_88c = local_8ac;
     local_68 = local_8ac;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,(MMObjTy *)(this_00 + 0x1ac4),0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)(this_00 + 0x1aec);
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ac4,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)&this_00->field_0x1aec;
     local_8d8[1] = 0xa9;
     local_8d8[4] = 0x13d;
     local_8d8[5] = 0xaa;
     local_8d8[6] = 0x14;
     local_8d8[7] = 0x10;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,(MMObjTy *)(this_00 + 0x1ac8),0,local_8d8,0);
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ac8,0,local_8d8,0);
     uVar3 = MMObjTy::CreateSprBut((MMObjTy *)this_00,3,1,0x19a,0x13d,0x16,0x14,0x6900,0x6980);
-    *(undefined4 *)(this_00 + 0x1ad0) = uVar3;
-    *(undefined4 *)(this_00 + 0x2d) = 0x61;
-    *(undefined4 *)(this_00 + 0x35) = 0;
-    FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
+    *(undefined4 *)&this_00->field_0x1ad0 = uVar3;
+    *(undefined4 *)&this_00->field_0x2d = 0x61;
+    *(undefined4 *)&this_00->field_0x35 = 0;
+    FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

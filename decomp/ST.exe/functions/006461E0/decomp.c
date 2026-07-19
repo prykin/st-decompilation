@@ -50,8 +50,8 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
     if (uVar1 == 0) {
       switch(*(undefined4 *)(local_8 + 0xa9)) {
       case 1:
-        if (*(uint *)(local_8 + 0xa4) < *(uint *)(DAT_00802a38 + 0xe4)) {
-          *(uint *)(local_8 + 0x9c) = *(uint *)(DAT_00802a38 + 0xe4);
+        if (*(uint *)(local_8 + 0xa4) < (uint)DAT_00802a38->field_00E4) {
+          *(undefined4 *)(local_8 + 0x9c) = DAT_00802a38->field_00E4;
           thunk_FUN_00647370((int)local_8);
           iVar3 = thunk_FUN_00646e00(*(int *)(this_00 + 0x65),*(int *)(this_00 + 0x69),
                                      *(int *)(this_00 + 0x6d));
@@ -72,7 +72,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         }
         break;
       case 2:
-        if ((((*(uint *)(local_8 + 0x58) & 1) != 0) && (*(uint *)(DAT_00802a38 + 0xe4) % 3 == 0)) &&
+        if ((((*(uint *)(local_8 + 0x58) & 1) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) &&
            (iVar3 = *(int *)(local_8 + 0x71), *(int *)(local_8 + 0x71) = iVar3 + 1,
            *(int *)(local_8 + 0x75) <= iVar3 + 1)) {
           *(undefined4 *)(local_8 + 0x71) = 0;
@@ -80,8 +80,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           *(undefined4 *)(local_8 + 0xa9) = 1;
           uVar1 = *(int *)(local_8 + 0xb1) * 0x41c64e6d + 0x3039;
           *(uint *)(local_8 + 0xb1) = uVar1;
-          *(uint *)(local_8 + 0xa4) =
-               (uVar1 >> 0x10) % 0x2711 + 20000 + *(int *)(DAT_00802a38 + 0xe4);
+          *(uint *)(local_8 + 0xa4) = (uVar1 >> 0x10) % 0x2711 + 20000 + DAT_00802a38->field_00E4;
           if (local_8[0x5c] == (STVolcanoC)0x0) {
             if (*(int *)(local_8 + 0x61) != 0) {
               FUN_006e9000(DAT_00807598,
@@ -95,7 +94,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
               g_currentExceptionFrame = local_54.previous;
               return 0;
             }
-            puVar4 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
+            puVar4 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_vol_007d26b0,0xffffffff,0,1,0,
                                   (undefined4 *)0x0);
             *(ushort **)(this_00 + 0x61) = puVar4;
             if (puVar4 != (ushort *)0x0) {
@@ -112,7 +111,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
           g_currentExceptionFrame = local_54.previous;
           return 0;
         }
-        if (((*(uint *)(local_8 + 0x58) & 2) != 0) && (*(uint *)(DAT_00802a38 + 0xe4) % 3 == 0)) {
+        if (((*(uint *)(local_8 + 0x58) & 2) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) {
           iVar3 = *(int *)(local_8 + 0x7e);
           *(int *)(local_8 + 0x7e) = iVar3 + 1;
           if (*(int *)(local_8 + 0x82) <= iVar3 + 1) {
@@ -126,7 +125,7 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
             FUN_006eab60(DAT_00807598,*(uint *)(this_00 + 0x86));
           }
         }
-        if (((((byte)DAT_00802a38[0xe4] & 1) == 0) && (2 < *(int *)(this_00 + 0x71))) &&
+        if ((((*(byte *)&DAT_00802a38->field_00E4 & 1) == 0) && (2 < *(int *)(this_00 + 0x71))) &&
            ((*(int *)(this_00 + 0x71) < (*(int *)(this_00 + 0x75) << 1) / 3 &&
             (uVar1 = *(int *)(this_00 + 0xb1) * 0x41c64e6d + 0x3039,
             *(uint *)(this_00 + 0xb1) = uVar1, (uVar1 & 0x70000) == 0x10000)))) {
@@ -149,12 +148,12 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         }
         break;
       case 3:
-        if ((((byte)local_8[0x58] & 1) != 0) && (*(uint *)(DAT_00802a38 + 0xe4) % 3 == 0)) {
+        if ((((byte)local_8[0x58] & 1) != 0) && ((uint)DAT_00802a38->field_00E4 % 3 == 0)) {
           iVar3 = *(int *)(local_8 + 0x71);
           *(int *)(local_8 + 0x71) = iVar3 + 1;
           if ((*(int *)(local_8 + 0x75) <= iVar3 + 1) &&
              (*(undefined4 *)(local_8 + 0x71) = 0,
-             *(uint *)(local_8 + 0xa4) < *(uint *)(DAT_00802a38 + 0xe4))) {
+             *(uint *)(local_8 + 0xa4) < (uint)DAT_00802a38->field_00E4)) {
             *(undefined4 *)(local_8 + 0xa9) = 2;
             thunk_FUN_00647a60(local_8,0x4b6);
             if (this_00[0xa8] != (STVolcanoC)0x0) {
@@ -192,13 +191,13 @@ undefined4 __thiscall STVolcanoC::GetMessage(STVolcanoC *this,int param_1)
         }
         break;
       case 4:
-        if (*(uint *)(DAT_00802a38 + 0xe4) % 5 == 0) {
+        if ((uint)DAT_00802a38->field_00E4 % 5 == 0) {
           iVar3 = *(int *)(local_8 + 0x71);
           *(int *)(local_8 + 0x71) = iVar3 + 1;
           if (*(int *)(local_8 + 0x75) <= iVar3 + 1) {
             uVar1 = *(int *)(local_8 + 0xb1) * 0x41c64e6d + 0x3039;
             *(uint *)(local_8 + 0xb1) = uVar1;
-            iVar3 = *(int *)(DAT_00802a38 + 0xe4);
+            iVar3 = DAT_00802a38->field_00E4;
             *(undefined4 *)(local_8 + 0xa9) = 3;
             *(uint *)(local_8 + 0x58) = *(uint *)(local_8 + 0x58) | 1;
             *(undefined4 *)(local_8 + 0x71) = 0;

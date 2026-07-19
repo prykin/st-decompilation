@@ -24,12 +24,12 @@ void __thiscall AiTactClassTy::ClaimSave(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = local_8;
   if (errorCode == 0) {
-    pAVar1 = local_8 + 0x130;
-    if (*(int *)(local_8 + 0x130) != 0) {
+    pAVar1 = local_8 + 1;
+    if (*(int *)(local_8 + 1) != 0) {
       FUN_006ab060((undefined4 *)pAVar1);
     }
-    if (*(uint **)(pAVar3 + 0xbd) != (uint *)0x0) {
-      uVar4 = FUN_006b0020(*(uint **)(pAVar3 + 0xbd),&local_c);
+    if (*(uint **)&pAVar3->field_0xbd != (uint *)0x0) {
+      uVar4 = FUN_006b0020(*(uint **)&pAVar3->field_0xbd,&local_c);
       *(undefined4 *)pAVar1 = uVar4;
     }
     g_currentExceptionFrame = local_50.previous;

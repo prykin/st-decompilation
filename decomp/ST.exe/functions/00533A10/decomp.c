@@ -3,7 +3,7 @@
    E:\__titans\Andrey\optpanel.cpp
    OptPanelTy::Notification */
 
-void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,OptPanelTy param_2)
+void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,undefined1 param_2)
 
 {
   short sVar1;
@@ -34,25 +34,25 @@ void __thiscall OptPanelTy::Notification(OptPanelTy *this,char param_1,OptPanelT
     return;
   }
   if (param_1 == '\n') {
-    *(undefined4 *)(local_8 + 0x1a5) = 0x4271;
-    local_8[0x1ac] = param_2;
+    *(undefined4 *)&local_8->field_0x1a5 = 0x4271;
+    local_8->field_0x1ac = param_2;
   }
   else if (param_1 == '\v') {
-    *(undefined4 *)(local_8 + 0x1a5) = 0x4270;
+    *(undefined4 *)&local_8->field_0x1a5 = 0x4270;
   }
   else {
     if (param_1 != '\f') {
       g_currentExceptionFrame = pIVar4;
       return;
     }
-    *(undefined4 *)(local_8 + 0x1a5) = 0x4276;
+    *(undefined4 *)&local_8->field_0x1a5 = 0x4276;
   }
-  local_8[0x1ab] = (OptPanelTy)param_1;
-  *(undefined4 *)(local_8 + 0x1a0) = 0;
-  local_8[0x1a9] = (OptPanelTy)0x0;
-  local_8[0x1a4] = (OptPanelTy)0xb;
+  local_8->field_0x1ab = param_1;
+  *(undefined4 *)&local_8->field_0x1a0 = 0;
+  local_8->field_0x1a9 = 0;
+  local_8->field_0x1a4 = 0xb;
   SetOptControls(local_8);
-  sVar1 = *(short *)(this_00 + 0x172);
+  sVar1 = this_00->field_0172;
   if ((sVar1 == 2) || (sVar1 == 4)) {
     SwitchOptPanel(this_00,-1);
   }

@@ -1,4 +1,4 @@
-FUN_00576aa0:
+BaseSystemC::BaseSystemC:
 00576AA0  55                        PUSH EBP
 00576AA1  8B EC                     MOV EBP,ESP
 00576AA3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

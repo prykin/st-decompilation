@@ -17,14 +17,14 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if (*(int *)(this + 0x1f84) != 0) {
+  if (this->field_1F84 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar5 = 0;
-      iVar3 = *(int *)(local_8 + 0x1f84);
+      iVar3 = local_8->field_1F84;
       uVar1 = *(uint *)(iVar3 + 0xc);
       if (0 < (int)uVar1) {
         bVar6 = uVar1 != 0;
@@ -45,11 +45,11 @@ void __thiscall SettMapMTy::UpdatePing(SettMapMTy *this,int param_1,undefined4 p
           }
         }
         *(undefined4 *)(iVar4 + 0x4b) = param_2;
-        iVar3 = (uVar5 - *(int *)(local_8 + 0x1f88)) * 0x20;
-        if (*(int *)(local_8 + iVar3 + 0x1fa4) != 0) {
-          *(undefined4 *)(local_8 + 0x2d) = 5;
-          FUN_006e6080(local_8,2,*(undefined4 *)(local_8 + iVar3 + 0x1fa4),
-                       (undefined4 *)(local_8 + 0x1d));
+        iVar3 = (uVar5 - *(int *)&local_8->field_0x1f88) * 0x20;
+        if (*(int *)(iVar3 + 0x1fa4 + (int)local_8) != 0) {
+          *(undefined4 *)&local_8->field_0x2d = 5;
+          FUN_006e6080(local_8,2,*(undefined4 *)(iVar3 + 0x1fa4 + (int)local_8),
+                       (undefined4 *)&local_8->field_0x1d);
         }
       }
       g_currentExceptionFrame = local_4c.previous;

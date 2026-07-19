@@ -6,8 +6,8 @@
 void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
 
 {
-  MainMenuTy *pMVar1;
-  code *pcVar2;
+  code *pcVar1;
+  MainMenuTy *pMVar2;
   MainMenuTy *pMVar3;
   int iVar4;
   int iVar5;
@@ -22,13 +22,14 @@ void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_8;
   if (iVar4 == 0) {
-    if (*(int *)(local_8 + 0x1ad3) != 0) {
-      pMVar1 = local_8 + 0x1adf;
-      iVar4 = FUN_00718f40(DAT_0080759c,(undefined4 *)pMVar1,0,0x100,5,(int *)(local_8 + 0x1adb),1,
-                           *(uint *)(local_8 + 0x61),(uint *)(local_8 + 0x1ad7));
+    if (*(int *)&local_8[0x11].field_0x153 != 0) {
+      pMVar2 = local_8 + 0x11;
+      iVar4 = FUN_00718f40(DAT_0080759c,(undefined4 *)&pMVar2->field_0x15f,0,0x100,5,
+                           (int *)&local_8[0x11].field_0x15b,1,local_8->field_0061,
+                           (uint *)&local_8[0x11].field_0x157);
       if (iVar4 == -4) {
-        FUN_006b0a20(DAT_0080759c,(int)pMVar1,0,0x100,0);
-        *(undefined4 *)(pMVar3 + 0x1ad3) = 0;
+        FUN_006b0a20(DAT_0080759c,(int)&pMVar2->field_0x15f,0,0x100,0);
+        *(undefined4 *)&pMVar3[0x11].field_0x153 = 0;
       }
     }
     g_currentExceptionFrame = local_4c.previous;
@@ -38,8 +39,8 @@ void __thiscall MainMenuTy::LightPalette(MainMenuTy *this)
   iVar5 = ReportDebugMessage(s_E____titans_Start_main_obj_cpp_007cc8e8,0xe8,0,iVar4,&DAT_007a4ccc,
                              s_MainMenuTy__LightPalette_007cc9a0);
   if (iVar5 != 0) {
-    pcVar2 = (code *)swi(3);
-    (*pcVar2)();
+    pcVar1 = (code *)swi(3);
+    (*pcVar1)();
     return;
   }
   RaiseInternalException(iVar4,0,s_E____titans_Start_main_obj_cpp_007cc8e8,0xe8);

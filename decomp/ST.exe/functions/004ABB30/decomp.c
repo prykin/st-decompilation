@@ -32,26 +32,26 @@ undefined4 __thiscall STT3DSprC::UnLoadSequence(STT3DSprC *this,byte param_1)
     }
     return 0xffffffff;
   }
-  if (*(int *)(local_8 + 0x18) == -1) {
+  if (local_8->field_0018 == -1) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x49);
   }
-  if (((char)param_1 < '\0') || (*(int *)(pSVar3 + 0x14) + -1 < (int)(char)param_1)) {
+  if (((char)param_1 < '\0') || (pSVar3->field_0014 + -1 < (int)(char)param_1)) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x4a);
   }
-  if (*(int *)(pSVar3 + 0x20) != 0) {
+  if (pSVar3->field_0020 != 0) {
     iVar4 = (char)param_1 * 0x24;
-    if (*(int *)(iVar4 + *(int *)(pSVar3 + 0x20)) != 0) {
-      FUN_006e98e0(*(void **)(pSVar3 + 0x3c),*(uint *)(pSVar3 + 0x18),(int)(char)param_1,0,0,1);
-      piVar1 = (int *)(*(int *)(pSVar3 + 0x20) + 4 + iVar4);
-      *(uint *)(pSVar3 + 0x1c) = *(uint *)(pSVar3 + 0x1c) & ~(1 << (param_1 & 0x1f));
+    if (*(int *)(iVar4 + pSVar3->field_0020) != 0) {
+      FUN_006e98e0((void *)pSVar3[1].field_0018,pSVar3->field_0018,(int)(char)param_1,0,0,1);
+      piVar1 = (int *)(pSVar3->field_0020 + 4 + iVar4);
+      *(uint *)&pSVar3->field_0x1c = *(uint *)&pSVar3->field_0x1c & ~(1 << (param_1 & 0x1f));
       if (*piVar1 != 0) {
         FUN_006ab060(piVar1);
       }
-      if (*(int *)(*(int *)(pSVar3 + 0x20) + 8 + iVar4) != 0) {
-        FUN_006ab060((undefined4 *)(*(int *)(pSVar3 + 0x20) + 8 + iVar4));
+      if (*(int *)(pSVar3->field_0020 + 8 + iVar4) != 0) {
+        FUN_006ab060((undefined4 *)(pSVar3->field_0020 + 8 + iVar4));
       }
-      *(undefined4 *)(*(int *)(pSVar3 + 0x20) + iVar4) = 0;
-      *(undefined1 *)(*(int *)(pSVar3 + 0x20) + 0xc + iVar4) = 0;
+      *(undefined4 *)(pSVar3->field_0020 + iVar4) = 0;
+      *(undefined1 *)(pSVar3->field_0020 + 0xc + iVar4) = 0;
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }

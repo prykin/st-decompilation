@@ -25,8 +25,8 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
   
   local_8 = 0xffffffff;
   local_c = this;
-  uVar5 = FUN_006e51b0(*(int *)(this + 0x10));
-  *(undefined4 *)(this + 0xa1) = uVar5;
+  uVar5 = FUN_006e51b0(this->field_0010);
+  this->field_00A1 = uVar5;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar6 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -46,9 +46,9 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
       PaintMTest(local_c);
       break;
     case 0x62:
-      if (local_c[0xb3] == (MTestTy)0x0) {
-        _DAT_00811774 = FUN_006e51b0(*(int *)(local_c + 0x10));
-        pMVar4[0xb3] = (MTestTy)0x1;
+      if (local_c[1].field_0xe == '\0') {
+        _DAT_00811774 = FUN_006e51b0(local_c->field_0010);
+        pMVar4[1].field_0xe = 1;
         if (DAT_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(DAT_00811778);
           Library::MSVCRT::FUN_0072e2b0((undefined4 *)DAT_00811778);
@@ -96,9 +96,9 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           local_8 = 0xffffffff;
         }
       }
-      else if (local_c[0xb3] == (MTestTy)0x4) {
-        _DAT_00811774 = FUN_006e51b0(*(int *)(local_c + 0x10));
-        pMVar4[0xb3] = (MTestTy)0x5;
+      else if (local_c[1].field_0xe == '\x04') {
+        _DAT_00811774 = FUN_006e51b0(local_c->field_0010);
+        pMVar4[1].field_0xe = 5;
         if (DAT_00811778 != (HoloTy *)0x0) {
           HoloTy::Done(DAT_00811778);
           Library::MSVCRT::FUN_0072e2b0((undefined4 *)DAT_00811778);
@@ -143,14 +143,14 @@ undefined4 __thiscall MTestTy::GetMessage(MTestTy *this,int param_1)
           }
           FUN_006b5f80(DAT_008075a8,10,0xb4,0xf9,0x121);
           thunk_FUN_00540620(10,0xb4,10,0xb4,0xf9,(byte *)0x123,'\x01',
-                             *(BITMAPINFO **)(pMVar4 + 0x5d));
+                             *(BITMAPINFO **)&pMVar4->field_0x5d);
         }
       }
       break;
     case 100:
       thunk_FUN_005e5f60(local_c);
-      *(undefined4 *)(pMVar4 + 0x8d) = 1;
-      *(undefined4 *)(pMVar4 + 0x91) = 0x7102;
+      *(undefined4 *)&pMVar4->field_0x8d = 1;
+      *(undefined4 *)&pMVar4->field_0x91 = 0x7102;
     }
     g_currentExceptionFrame = local_50.previous;
     uVar5 = FUN_006e5fd0();

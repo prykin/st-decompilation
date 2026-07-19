@@ -13,7 +13,7 @@ STAllPlayersC::ResetActivityFromObjs
   int iVar3;
   uint uVar4;
   int unaff_EDI;
-  undefined4 uVar5;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar5;
   
   if (param_2 < 0x19b) {
     if (param_2 == 0x19a) {
@@ -26,8 +26,9 @@ LAB_0042d1f8:
       do {
         FUN_006acc70(param_3,uVar4,&param_4);
         if ((((short)param_4 != -1) &&
-            (pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,1), pSVar2 != (STGameObjC *)0x0))
-           && ((**(code **)(*(int *)pSVar2 + 0xe8))(0), param_5 != 0)) {
+            (pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,CASE_1),
+            pSVar2 != (STGameObjC *)0x0)) &&
+           ((**(code **)(pSVar2->field_0000 + 0xe8))(0), param_5 != 0)) {
           STGameObjC::ResetSelfCheckFlag(pSVar2,unaff_EDI);
         }
         uVar4 = uVar4 + 1;
@@ -36,14 +37,14 @@ LAB_0042d1f8:
     }
     if (param_2 < 0x5b) {
       if (param_2 == 0x5a) {
-        uVar5 = 4;
+        SVar5 = CASE_4;
 LAB_0042d1c3:
-        pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,uVar5);
+        pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,SVar5);
         if (pSVar2 == (STGameObjC *)0x0) {
           return;
         }
         iVar3 = 0;
-        (**(code **)(*(int *)pSVar2 + 0xe8))();
+        (**(code **)(pSVar2->field_0000 + 0xe8))();
         goto LAB_0042d2c3;
       }
       if (param_2 == 0) {
@@ -52,7 +53,7 @@ LAB_0042d1c3:
       if (param_2 == 0x3c) goto LAB_0042d1f8;
     }
     else if (param_2 == 0x172) {
-      uVar5 = 2;
+      SVar5 = CASE_2;
       goto LAB_0042d1c3;
     }
 LAB_0042d270:
@@ -66,12 +67,12 @@ LAB_0042d270:
   }
   else {
     if (param_2 == 0x1a4) {
-      pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,5);
+      pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,CASE_5);
       if (pSVar2 == (STGameObjC *)0x0) {
         return;
       }
       iVar3 = 0;
-      (**(code **)(*(int *)pSVar2 + 0xe8))();
+      (**(code **)(pSVar2->field_0000 + 0xe8))();
       if (param_5 == 0) {
         return;
       }
@@ -79,18 +80,18 @@ LAB_0042d270:
       return;
     }
     if (param_2 == 0x1ae) {
-      uVar5 = 3;
+      SVar5 = CASE_3;
     }
     else {
       if (param_2 != 0x1b8) goto LAB_0042d270;
-      uVar5 = 6;
+      SVar5 = CASE_6;
     }
-    pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,uVar5);
+    pSVar2 = (STGameObjC *)GetObjPtr(this,param_1,param_4,SVar5);
     if (pSVar2 == (STGameObjC *)0x0) {
       return;
     }
     iVar3 = 0;
-    (**(code **)(*(int *)pSVar2 + 0xe8))();
+    (**(code **)(pSVar2->field_0000 + 0xe8))();
 LAB_0042d2c3:
     if (param_5 != 0) {
       STGameObjC::ResetSelfCheckFlag(pSVar2,iVar3);

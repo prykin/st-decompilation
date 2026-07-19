@@ -8,7 +8,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
 {
   code *pcVar1;
   int iVar2;
-  STRubbishC *pSVar3;
+  int *piVar3;
   undefined4 *puVar4;
   undefined4 uVar5;
   int iVar6;
@@ -35,14 +35,14 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
     iVar2 = (*pcVar1)();
     return iVar2;
   }
-  pSVar3 = local_c + 0x1e5;
+  piVar3 = &local_c->field_01E5;
   iVar2 = 0;
   iVar6 = local_8;
   do {
-    if (*(int *)pSVar3 == 0) {
+    if (*piVar3 == 0) {
       local_8 = iVar6;
       puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x3e);
-      *(undefined4 **)(local_c + iVar2 * 4 + 0x1e5) = puVar4;
+      (&local_c->field_01E5)[iVar2] = puVar4;
       if (puVar4 != (undefined4 *)0x0) {
         for (iVar6 = 0xf; iVar6 != 0; iVar6 = iVar6 + -1) {
           *puVar4 = 0;
@@ -50,7 +50,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
         }
         *(undefined2 *)puVar4 = 0;
         iVar6 = iVar2;
-        if (local_c[0x1f9] != (STRubbishC)0x0) {
+        if (local_c->field_01F9 != '\0') {
           puVar4 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x40);
           if (puVar4 == (undefined4 *)0x0) {
             uVar5 = 0;
@@ -58,7 +58,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
           else {
             uVar5 = thunk_FUN_004ab810(puVar4);
           }
-          *(undefined4 *)(*(int *)(local_c + iVar2 * 4 + 0x1e5) + 0x10) = uVar5;
+          *(undefined4 *)((&local_c->field_01E5)[iVar2] + 0x10) = uVar5;
         }
       }
       g_currentExceptionFrame = local_50.previous;
@@ -66,7 +66,7 @@ int __thiscall STRubbishC::RubbishCreatePart(STRubbishC *this)
     }
     iVar6 = 5;
     iVar2 = iVar2 + 1;
-    pSVar3 = pSVar3 + 4;
+    piVar3 = piVar3 + 1;
   } while (iVar2 < 5);
   g_currentExceptionFrame = local_50.previous;
   return 5;

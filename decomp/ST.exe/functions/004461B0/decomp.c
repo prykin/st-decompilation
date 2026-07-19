@@ -66,9 +66,9 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,i
             FUN_006acc70((int)local_24,uVar6,&local_c);
             if ((short)local_c == param_2) {
               FUN_006b0c70((int)local_24,uVar6);
-              pSVar2 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,1);
+              pSVar2 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,CASE_1);
               local_14 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-              STBoatC::CmdToObj(pSVar2,0x21,&local_14);
+              STBoatC::CmdToObj(pSVar2,CASE_21,&local_14);
               break;
             }
             uVar6 = uVar6 + 1;
@@ -114,9 +114,9 @@ STAllPlayersC::_DeleteGuardBoat(STAllPlayersC *this,uint param_1,short param_2,i
             if (0 < iVar3) {
               do {
                 FUN_006acc70((int)local_24,uVar7,&local_c);
-                pSVar2 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,1);
+                pSVar2 = (STBoatC *)GetObjPtr(local_1c,param_1,local_c,CASE_1);
                 local_14 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-                STBoatC::CmdToObj(pSVar2,0x21,&local_14);
+                STBoatC::CmdToObj(pSVar2,CASE_21,&local_14);
                 uVar7 = uVar7 + 1;
               } while ((int)uVar7 < iVar3);
             }

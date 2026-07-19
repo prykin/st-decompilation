@@ -30,15 +30,15 @@ uint __thiscall STGroupC::GetTOBJQty(STGroupC *this,int param_1)
   pSVar2 = local_10;
   if (iVar3 == 0) {
     local_8 = 0;
-    local_14 = *(int *)(*(int *)(local_10 + 0x29) + 0xc);
+    local_14 = *(int *)(local_10->field_0029 + 0xc);
     if (0 < local_14) {
       do {
-        FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&local_c);
+        FUN_006acc70(pSVar2->field_0029,uVar6,&local_c);
         if ((short)local_c != -1) {
           piVar4 = (int *)STAllPlayersC::GetObjPtr
                                     (DAT_007fa174,
-                                     CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),local_c,
-                                     1);
+                                     CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),
+                                     local_c,CASE_1);
           if (piVar4 == (int *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_tc_grp_cpp_007a50a4,0x66);

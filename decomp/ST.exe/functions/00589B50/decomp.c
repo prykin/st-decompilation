@@ -19,15 +19,15 @@ void __thiscall STOctopusC::SetSprRange(STOctopusC *this,uint param_1)
     }
     param_1 = 0;
   }
-  if ((*(int *)(this + 0x2a5) != 0xf8) && (*(int *)(this + 0x2a5) != 0xf9)) {
+  if ((this->field_02A5 != 0xf8) && (this->field_02A5 != 0xf9)) {
     iVar2 = param_1 * 6;
-    *(short *)(this + 0x6c) = (short)iVar2;
-    thunk_FUN_004abce0(this + 0x1d5,0xe,iVar2,iVar2 + 5,'\0');
+    this->field_006C = (short)iVar2;
+    thunk_FUN_004abce0(&this->field_01D5,0xe,iVar2,iVar2 + 5,'\0');
     return;
   }
   iVar2 = param_1 * 8;
-  *(short *)(this + 0x6c) = (short)iVar2;
-  thunk_FUN_004abce0(this + 0x1d5,0xe,iVar2,iVar2 + 7,'\0');
+  this->field_006C = (short)iVar2;
+  thunk_FUN_004abce0(&this->field_01D5,0xe,iVar2,iVar2 + 7,'\0');
   return;
 }
 

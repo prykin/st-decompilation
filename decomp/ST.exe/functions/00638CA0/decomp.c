@@ -62,7 +62,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,int param_1)
         puVar9 = puVar9 + 1;
       }
       *(undefined2 *)puVar9 = *(undefined2 *)puVar8;
-      thunk_FUN_00639500(this,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      thunk_FUN_00639500(this,DAT_00802a38->field_00E4);
     }
     if (*(char *)((int)this + 0x270) == '\0') {
       return 0;
@@ -78,7 +78,7 @@ undefined4 __thiscall FUN_00638ca0(void *this,int param_1)
     if (*(char *)((int)this + 0x270) == '\0') {
       thunk_FUN_00639990(this);
     }
-    uVar5 = thunk_FUN_00639670(this,*(int *)(DAT_00802a38 + 0xe4));
+    uVar5 = thunk_FUN_00639670(this,DAT_00802a38->field_00E4);
     if (0 < (int)uVar5) {
       iVar4 = *(int *)((int)this + 0x2bf);
       if (iVar4 != 0) {
@@ -141,8 +141,9 @@ undefined4 __thiscall FUN_00638ca0(void *this,int param_1)
                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar6,iVar4,
-                             &local_c,&local_10), -1 < param_1)) &&
+         (thunk_FUN_00558c00(DAT_00802a88,
+                             *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar6,
+                             iVar4,&local_c,&local_10), -1 < param_1)) &&
         (((param_1 < 5 && (-1 < local_c)) &&
          ((local_c < *(int *)((int)pvVar3 + 0x30) &&
           ((local_10 = local_10 + (&DAT_0079aed0)[param_1], -1 < local_10 &&
@@ -162,12 +163,12 @@ joined_r0x00639236:
     }
     break;
   case 1:
-    if ((uint)(*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x2a3)) <
+    if ((uint)(DAT_00802a38->field_00E4 - *(int *)((int)this + 0x2a3)) <
         *(uint *)((int)this + 0x251)) {
       return 0;
     }
     *(undefined1 *)((int)this + 0x26f) = 0;
-    uVar10 = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    uVar10 = DAT_00802a38->field_00E4;
     *(undefined4 *)((int)this + 0x251) = 0;
     *(undefined4 *)((int)this + 0x2a3) = uVar10;
     if (*(char *)((int)this + 0x270) == '\0') {
@@ -190,7 +191,7 @@ joined_r0x00639236:
       }
     }
     if ((iVar4 == 0x17) && (*(char *)((int)this + 0x270) != '\0')) {
-      STT3DSprC::StartShow(this_00,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow(this_00,0xf,DAT_00802a38->field_00E4);
     }
     iVar4 = thunk_FUN_004acd30(this_00,'\r');
     iVar6 = thunk_FUN_004ac910(this_00,'\r');
@@ -238,8 +239,9 @@ joined_r0x00639236:
                           (short)((longlong)iVar6 * 0x28c1979 >> 0x3f));
     }
     if ((((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-          (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar6,iVar4,
-                              &local_10,&local_c), -1 < param_1)) &&
+          (thunk_FUN_00558c00(DAT_00802a88,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar6,
+                              iVar4,&local_10,&local_c), -1 < param_1)) &&
          ((param_1 < 5 && (-1 < local_10)))) &&
         ((local_10 < *(int *)((int)pvVar3 + 0x30) &&
          ((local_c = local_c + (&DAT_0079aed0)[param_1], -1 < local_c &&

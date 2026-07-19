@@ -7,23 +7,23 @@ void __thiscall PrividerTy::CloseButtons(PrividerTy *this,char param_1)
 
 {
   code *pcVar1;
-  MMObjTy *this_00;
+  PrividerTy *this_00;
   int errorCode;
   int iVar2;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
   undefined4 local_48 [16];
-  MMObjTy *local_8;
+  PrividerTy *local_8;
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   this_00 = local_8;
   if (errorCode == 0) {
-    MMObjTy::CloseButtons(local_8);
-    DeleteCtrls((PrividerTy *)this_00,param_1);
-    this_00[0x65] = (MMObjTy)0x4;
+    MMObjTy::CloseButtons((MMObjTy *)local_8);
+    DeleteCtrls(this_00,param_1);
+    this_00->field_0x65 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
     g_currentExceptionFrame = pIVar3;
     return;

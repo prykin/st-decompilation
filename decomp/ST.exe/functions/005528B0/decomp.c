@@ -42,18 +42,18 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     DAT_00802a48 = local_8;
     pCVar3 = thunk_FUN_00571240(s_BKG_UPDATESW_007c8800,0);
     SpecPanelTy::InitPanel(this_00,pCVar3,uVar6,uVar7,iVar2,iVar10,UVar11,uVar12,uVar13);
-    puVar4 = FUN_00709af0(DAT_00806794,0xb,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)(this_00 + 0x3eb) = puVar4;
-    puVar4 = FUN_00709af0(DAT_00806794,0xb,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)(this_00 + 0x3ef) = puVar4;
+    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+    *(ushort **)&this_00[2].field_0xe1 = puVar4;
+    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+    *(ushort **)&this_00[2].field_0xe5 = puVar4;
     puVar14 = (undefined4 *)0x0;
     iVar10 = 0;
     iVar2 = 1;
     bVar9 = 0;
     uVar8 = 0xffffffff;
     pbVar5 = (byte *)thunk_FUN_00571240(s_FRAMES_007c205c,0);
-    puVar4 = FUN_00709af0(DAT_00806794,0xb,pbVar5,uVar8,bVar9,iVar2,iVar10,puVar14);
-    *(ushort **)(this_00 + 0x3f3) = puVar4;
+    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,pbVar5,uVar8,bVar9,iVar2,iVar10,puVar14);
+    *(ushort **)&this_00[2].field_0xe9 = puVar4;
     g_currentExceptionFrame = pIVar15;
     return;
   }

@@ -58,8 +58,8 @@ int __fastcall FUN_00636fc0(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return local_8;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,iVar5,&local_10
-                       ,&local_14);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       iVar4,iVar5,&local_10,&local_14);
     if (local_c < 0) {
       return local_8;
     }

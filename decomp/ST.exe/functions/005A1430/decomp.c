@@ -20,15 +20,14 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
   InternalExceptionFrame local_4c;
   FSGSTy *local_8;
   
-  if (((this[0x1a5f] == (FSGSTy)0x1) && (*(int *)(this + 0x1ac0) != 0)) &&
-     (-1 < *(int *)(this + 0x1abc))) {
+  if (((this->field_1A5F == '\x01') && (this->field_1AC0 != 0)) && (-1 < (int)this->field_1ABC)) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pFVar2 = local_8;
     if (iVar3 == 0) {
-      iVar3 = *(int *)(local_8 + 0x1ac0);
+      iVar3 = local_8->field_1AC0;
       uVar9 = *(uint *)(iVar3 + 0x14);
       if (uVar9 == 0) {
         uVar9 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -43,13 +42,12 @@ void __thiscall FSGSTy::Download(FSGSTy *this,undefined4 param_1,undefined4 para
         *(undefined1 *)puVar4 = 0xff;
         puVar4 = (undefined4 *)((int)puVar4 + 1);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)(pFVar2 + 0x1a73),*(int *)(pFVar2 + 0x1ac0),0,0,0x16,0x1b8,0xf0)
-      ;
+      ccFntTy::SetSurf(*(ccFntTy **)&pFVar2->field_0x1a73,pFVar2->field_1AC0,0,0,0x16,0x1b8,0xf0);
       uVar5 = FUN_006b0140(0x25bb,DAT_00807618);
       uVar6 = FUN_006b0140(0x25ba,DAT_00807618);
       wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_____d__s__007cc434,uVar6,param_1,param_2,uVar5);
-      ccFntTy::WrTxt(*(ccFntTy **)(pFVar2 + 0x1a73),&DAT_0080f33a,-2,-1,2,-1,-1);
-      FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
+      ccFntTy::WrTxt(*(ccFntTy **)&pFVar2->field_0x1a73,&DAT_0080f33a,-2,-1,2,-1,-1);
+      FUN_006b35d0(DAT_008075a8,pFVar2->field_1ABC);
       g_currentExceptionFrame = local_4c.previous;
       return;
     }

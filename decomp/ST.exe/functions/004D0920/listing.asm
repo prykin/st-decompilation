@@ -1,4 +1,4 @@
-FUN_004d0920:
+TLOFakeTy::TLOFakeTy:
 004D0920  56                        PUSH ESI
 004D0921  57                        PUSH EDI
 004D0922  8B F1                     MOV ESI,ECX

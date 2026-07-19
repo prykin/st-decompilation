@@ -78,7 +78,7 @@ uint __thiscall STAllPlayersC::PrepareToCmd(STAllPlayersC *this,undefined4 *para
           FUN_006acc70(iVar4,uVar5,&param_2);
           if (((short)param_2 != -1) &&
              (uVar6 = GetObjPtr(this,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                (uint)param_2,1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {
+                                (uint)param_2,CASE_1), (*(byte *)(uVar6 + 0x1d1) & 4) == 0)) {
             local_c = 1;
             local_10 = param_2;
             break;

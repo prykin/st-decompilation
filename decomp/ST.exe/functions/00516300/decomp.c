@@ -6,7 +6,7 @@
 void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
 
 {
-  HelpPanelTy HVar1;
+  char cVar1;
   code *pcVar2;
   HelpPanelTy *pHVar3;
   int errorCode;
@@ -22,34 +22,33 @@ void __thiscall HelpPanelTy::MObjProc(HelpPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   pHVar3 = local_8;
   if (errorCode == 0) {
-    HVar1 = local_8[0x1a1];
-    if (((HVar1 == (HelpPanelTy)0x0) || (HVar1 == (HelpPanelTy)0x6)) || (HVar1 == (HelpPanelTy)0xa))
-    {
-      local_8[0x1a2] = HVar1;
-      *(undefined4 *)(local_8 + 0x1ab) = *(undefined4 *)(local_8 + 0x1a3);
+    cVar1 = local_8->field_01A1;
+    if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
+      local_8->field_01A2 = cVar1;
+      *(undefined4 *)&local_8->field_0x1ab = local_8->field_01A3;
     }
     else {
-      local_8[0x1a2] = (HelpPanelTy)0x0;
-      *(undefined4 *)(local_8 + 0x1ab) = 0;
+      local_8->field_01A2 = 0;
+      *(undefined4 *)&local_8->field_0x1ab = 0;
     }
-    local_8[0x1a1] = (HelpPanelTy)0x7;
-    *(undefined4 *)(local_8 + 0x1a7) = 0;
-    *(undefined4 *)(local_8 + 0x1a3) = 0;
-    *(undefined2 *)(local_8 + 0x1af) = 0;
-    *(undefined2 *)(local_8 + 0x1b1) = 0;
-    if (*(int *)(local_8 + 0x178) != 0) {
-      *(undefined4 *)(local_8 + 0x28) = 0x4202;
-      *(undefined2 *)(local_8 + 0x2c) = 0;
-      *(undefined2 *)(local_8 + 0x2e) = 2;
-      *(int *)(local_8 + 0x30) = *(int *)(local_8 + 0x178);
+    local_8->field_01A1 = 7;
+    local_8->field_01A7 = 0;
+    local_8->field_01A3 = 0;
+    *(undefined2 *)&local_8->field_0x1af = 0;
+    *(undefined2 *)&local_8->field_0x1b1 = 0;
+    if (*(int *)&local_8->field_0x178 != 0) {
+      local_8->field_0028 = 0x4202;
+      *(undefined2 *)&local_8->field_0x2c = 0;
+      local_8->field_002E = 2;
+      *(int *)&local_8->field_0x30 = *(int *)&local_8->field_0x178;
       if (DAT_00802a30 != (undefined4 *)0x0) {
-        (**(code **)*DAT_00802a30)(local_8 + 0x18);
+        (**(code **)*DAT_00802a30)(&local_8->field_0x18);
       }
     }
-    if (*(uint *)(pHVar3 + 0x19c) != 0) {
-      FUN_006e56b0(*(void **)(pHVar3 + 0xc),*(uint *)(pHVar3 + 0x19c));
+    if (*(uint *)&pHVar3->field_0x19c != 0) {
+      FUN_006e56b0(*(void **)&pHVar3->field_0xc,*(uint *)&pHVar3->field_0x19c);
     }
-    thunk_FUN_00512be0(*(int *)(pHVar3 + 0x1d3));
+    thunk_FUN_00512be0(*(int *)&pHVar3->field_0x1d3);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

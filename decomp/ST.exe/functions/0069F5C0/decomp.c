@@ -19,7 +19,7 @@ void __thiscall FUN_0069f5c0(void *this,uint param_1,uint param_2,uint param_3)
     uVar2 = (int)uVar2 % 0xb;
   }
   param_3 = 0;
-  puVar3 = thunk_FUN_00692c10(*(uint *)(&DAT_007d7f90 + uVar2 * 8),
+  puVar3 = thunk_FUN_00692c10(*(Global_sub_00692C10_param_1Enum *)(&DAT_007d7f90 + uVar2 * 8),
                               *(int *)(&DAT_007d7f94 + uVar2 * 8),&param_3,uVar1,0);
   puVar3[5] = param_1;
   puVar3[6] = param_2;

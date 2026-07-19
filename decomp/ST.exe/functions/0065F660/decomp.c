@@ -56,23 +56,23 @@ int __thiscall AiFltClassTy::AppendPoint(AiFltClassTy *this,short *param_1,int p
       sVar1 = param_1[1];
       sVar2 = param_1[4];
       if (sVar1 < 0) {
-        iVar6 = *(int *)(this_00 + 0x1c);
+        iVar6 = *(int *)&this_00->field_0x1c;
       }
       else {
-        iVar6 = *(int *)(this_00 + 0x1c);
+        iVar6 = *(int *)&this_00->field_0x1c;
       }
       uVar7 = iVar6 * 0x41c64e6d + 0x3039;
-      *(uint *)(this_00 + 0x1c) = uVar7;
+      *(uint *)&this_00->field_0x1c = uVar7;
       sVar3 = param_1[3];
       sVar4 = *param_1;
       if (sVar4 < 0) {
-        iVar6 = *(int *)(this_00 + 0x1c);
+        iVar6 = *(int *)&this_00->field_0x1c;
       }
       else {
-        iVar6 = *(int *)(this_00 + 0x1c);
+        iVar6 = *(int *)&this_00->field_0x1c;
       }
       uVar8 = iVar6 * 0x41c64e6d + 0x3039;
-      *(uint *)(this_00 + 0x1c) = uVar8;
+      *(uint *)&this_00->field_0x1c = uVar8;
       iVar6 = thunk_FUN_00675950((uVar8 >> 0x10) % (uint)(int)sVar3 + (int)sVar4,
                                  (uVar7 >> 0x10) % (uint)(int)sVar2 + (int)sVar1,2,local_20,
                                  local_20 + 1,local_20 + 2,0);

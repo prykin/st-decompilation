@@ -1,4 +1,4 @@
-FUN_00622600:
+STMineSetC::STMineSetC:
 00622600  56                        PUSH ESI
 00622601  57                        PUSH EDI
 00622602  8B F1                     MOV ESI,ECX

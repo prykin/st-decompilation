@@ -137,24 +137,25 @@ LAB_005a1fc3:
       local_5 = '\0';
       Library::DKW::TBL::FUN_006b5aa0((int)puVar6,(char *)local_c);
       this_00 = local_14;
-      puVar7 = ccFntTy::FormSarr(*(ccFntTy **)(local_14 + 0x1a77),(int)puVar6,
+      puVar7 = ccFntTy::FormSarr(*(ccFntTy **)&local_14->field_0x1a77,(int)puVar6,
                                  (uint *)s________________007c21d8,
-                                 0x1a6 - *(int *)(local_14 + 0x1b4c),0,0xffffffff,1);
-      if (this_00[0x1a5f] == (FSGSTy)0x6) {
-        *(undefined4 *)(this_00 + 0x2d) = 0x26;
-        FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1b14),(undefined4 *)(this_00 + 0x1d));
-        local_10 = (uint)*(ushort *)(this_00 + 0x33);
-        if (*(int *)(*(int *)(this_00 + 0x1e9e) + 8) + -0x19 <= (int)local_10) {
+                                 0x1a6 - *(int *)&local_14->field_0x1b4c,0,0xffffffff,1);
+      if (this_00->field_1A5F == '\x06') {
+        *(undefined4 *)&this_00->field_0x2d = 0x26;
+        FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1b14,
+                     (undefined4 *)&this_00->field_0x1d);
+        local_10 = (uint)*(ushort *)&this_00->field_0x33;
+        if (*(int *)(*(int *)&this_00->field_0x1e9e + 8) + -0x19 <= (int)local_10) {
           local_5 = '\x01';
         }
       }
       if (puVar7 != (uint *)0x0) {
-        ccFntTy::SepColorStrInSarr(*(ccFntTy **)(this_00 + 0x1a77),puVar7,puVar7);
-        iVar5 = *(int *)(this_00 + 0x1e9e);
+        ccFntTy::SepColorStrInSarr(*(ccFntTy **)&this_00->field_0x1a77,puVar7,puVar7);
+        iVar5 = *(int *)&this_00->field_0x1e9e;
         iVar12 = *(int *)(iVar5 + 8) + puVar7[2];
         while (499 < iVar12) {
           FUN_006b7830(iVar5,0);
-          iVar5 = *(int *)(this_00 + 0x1e9e);
+          iVar5 = *(int *)&this_00->field_0x1e9e;
           iVar12 = *(int *)(iVar5 + 8) + puVar7[2];
         }
         iVar5 = 0;
@@ -166,7 +167,7 @@ LAB_005a1fc3:
           do {
             pcVar8 = *(char **)(puVar7[5] + iVar5 * 4);
 LAB_005a2188:
-            Library::DKW::TBL::FUN_006b5aa0(*(int *)(this_00 + 0x1e9e),pcVar8);
+            Library::DKW::TBL::FUN_006b5aa0(*(int *)&this_00->field_0x1e9e,pcVar8);
             iVar5 = iVar5 + 1;
           } while (iVar5 < (int)puVar7[2]);
         }
@@ -174,24 +175,29 @@ LAB_005a2188:
         puVar6 = local_18;
       }
       FUN_006b5570((byte *)puVar6);
-      if (this_00[0x1a5f] == (FSGSTy)0x6) {
-        *(undefined4 *)(this_00 + 0x2d) = 0x28;
-        *(undefined2 *)(this_00 + 0x31) = 1;
-        *(undefined2 *)(this_00 + 0x33) = *(undefined2 *)(*(int *)(this_00 + 0x1e9e) + 8);
-        FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1b14),(undefined4 *)(this_00 + 0x1d));
-        *(undefined4 *)(this_00 + 0x2d) = 0x22;
-        *(undefined2 *)(this_00 + 0x31) = 0;
+      if (this_00->field_1A5F == '\x06') {
+        *(undefined4 *)&this_00->field_0x2d = 0x28;
+        *(undefined2 *)&this_00->field_0x31 = 1;
+        *(undefined2 *)&this_00->field_0x33 = *(undefined2 *)(*(int *)&this_00->field_0x1e9e + 8);
+        FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1b14,
+                     (undefined4 *)&this_00->field_0x1d);
+        *(undefined4 *)&this_00->field_0x2d = 0x22;
+        *(undefined2 *)&this_00->field_0x31 = 0;
         if (local_5 == '\0') {
           sVar4 = (short)local_10;
         }
-        else if (*(int *)(*(int *)(this_00 + 0x1e9e) + 8) < 0x19) {
-          sVar4 = 0;
-        }
         else {
-          sVar4 = (short)*(int *)(*(int *)(this_00 + 0x1e9e) + 8) + -0x19;
+          iVar5 = *(int *)(*(int *)&this_00->field_0x1e9e + 8);
+          if (iVar5 < 0x19) {
+            sVar4 = 0;
+          }
+          else {
+            sVar4 = (short)iVar5 + -0x19;
+          }
         }
-        *(short *)(this_00 + 0x33) = sVar4;
-        FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1b14),(undefined4 *)(this_00 + 0x1d));
+        *(short *)&this_00->field_0x33 = sVar4;
+        FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1b14,
+                     (undefined4 *)&this_00->field_0x1d);
       }
     }
     FUN_006ab060(&local_c);

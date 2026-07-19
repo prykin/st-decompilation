@@ -17,7 +17,7 @@ STAllPlayersC::DelObjFromTmps
   undefined4 uVar7;
   int iVar8;
   uint uVar9;
-  undefined1 uVar10;
+  Global_sub_0043FC50_param_1Enum GVar10;
   undefined4 local_c;
   undefined4 local_8;
   
@@ -30,19 +30,19 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1a4) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,5);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_5);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
           if (iVar8 == 0) {
-            thunk_FUN_0043fc50(4,0);
-            uVar10 = 5;
+            thunk_FUN_0043fc50(CASE_4,0);
+            GVar10 = CASE_5;
           }
           else {
-            uVar10 = 0xf;
+            GVar10 = CASE_F;
           }
-          thunk_FUN_0043fc50(uVar10,0);
+          thunk_FUN_0043fc50(GVar10,0);
           local_c = 0;
         }
         iVar8 = iVar8 + 1;
@@ -62,7 +62,7 @@ STAllPlayersC::DelObjFromTmps
             do {
               FUN_006acc70((int)puVar2,uVar9,&local_8);
               if ((short)local_8 == (short)param_4) {
-                piVar6 = (int *)GetObjPtr(this,param_3,param_4,1);
+                piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_1);
                 (**(code **)(*piVar6 + 0xe8))(0);
                 local_8 = 0xffff;
                 Library::DKW::TBL::FUN_006ae140(puVar2,uVar9,&local_8);
@@ -73,13 +73,13 @@ STAllPlayersC::DelObjFromTmps
                   *puVar1 = 0;
                 }
                 if (param_2 == 0) {
-                  thunk_FUN_0043fc50(1,0);
-                  uVar10 = 2;
+                  thunk_FUN_0043fc50(CASE_1,0);
+                  GVar10 = CASE_2;
                 }
                 else {
-                  uVar10 = 0xe;
+                  GVar10 = CASE_E;
                 }
-                thunk_FUN_0043fc50(uVar10,0);
+                thunk_FUN_0043fc50(GVar10,0);
                 local_c = 0;
                 break;
               }
@@ -99,19 +99,19 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x5a) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,4);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_4);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
           if (iVar8 == 0) {
-            thunk_FUN_0043fc50(4,0);
-            uVar10 = 5;
+            thunk_FUN_0043fc50(CASE_4,0);
+            GVar10 = CASE_5;
           }
           else {
-            uVar10 = 0xf;
+            GVar10 = CASE_F;
           }
-          thunk_FUN_0043fc50(uVar10,0);
+          thunk_FUN_0043fc50(GVar10,0);
           local_c = 0;
         }
         iVar8 = iVar8 + 1;
@@ -124,19 +124,19 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x172) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,2);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_2);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
           if (iVar8 == 0) {
-            thunk_FUN_0043fc50(4,0);
-            uVar10 = 5;
+            thunk_FUN_0043fc50(CASE_4,0);
+            GVar10 = CASE_5;
           }
           else {
-            uVar10 = 0xf;
+            GVar10 = CASE_F;
           }
-          thunk_FUN_0043fc50(uVar10,0);
+          thunk_FUN_0043fc50(GVar10,0);
           local_c = 0;
         }
         iVar8 = iVar8 + 1;
@@ -151,19 +151,19 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4fd3 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1b8) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,6);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_6);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
           if (iVar8 == 0) {
-            thunk_FUN_0043fc50(4,0);
-            uVar10 = 5;
+            thunk_FUN_0043fc50(CASE_4,0);
+            GVar10 = CASE_5;
           }
           else {
-            uVar10 = 0xf;
+            GVar10 = CASE_F;
           }
-          thunk_FUN_0043fc50(uVar10,0);
+          thunk_FUN_0043fc50(GVar10,0);
           local_c = 0;
         }
         iVar8 = iVar8 + 1;
@@ -176,19 +176,19 @@ STAllPlayersC::DelObjFromTmps
         puVar1 = (undefined4 *)((int)&DAT_007f4f83 + iVar8 * 0x10 + param_1 * 0xa62);
         if (((*(int *)((int)&DAT_007f4f83 + iVar8 * 0x10 + param_1 * 0xa62) == 0x1ae) &&
             (puVar1[1] == (int)cVar5)) && (*(short *)(puVar1 + 2) == (short)param_4)) {
-          piVar6 = (int *)GetObjPtr(this,param_3,param_4,3);
+          piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_3);
           (**(code **)(*piVar6 + 0xe8))(0);
           *puVar1 = 0;
           puVar1[1] = 0xff;
           *(undefined2 *)(puVar1 + 2) = 0;
           if (iVar8 == 0) {
-            thunk_FUN_0043fc50(1,0);
-            uVar10 = 2;
+            thunk_FUN_0043fc50(CASE_1,0);
+            GVar10 = CASE_2;
           }
           else {
-            uVar10 = 0xe;
+            GVar10 = CASE_E;
           }
-          thunk_FUN_0043fc50(uVar10,0);
+          thunk_FUN_0043fc50(GVar10,0);
           local_c = 0;
         }
         iVar8 = iVar8 + 1;
@@ -209,7 +209,7 @@ STAllPlayersC::DelObjFromTmps
           do {
             FUN_006acc70((int)puVar2,uVar9,&local_8);
             if ((short)local_8 == (short)param_4) {
-              piVar6 = (int *)GetObjPtr(this,param_3,param_4,1);
+              piVar6 = (int *)GetObjPtr(this,param_3,param_4,CASE_1);
               (**(code **)(*piVar6 + 0xe8))(0);
               local_8 = 0xffff;
               Library::DKW::TBL::FUN_006ae140(puVar2,uVar9,&local_8);
@@ -220,13 +220,13 @@ STAllPlayersC::DelObjFromTmps
                 *puVar1 = 0;
               }
               if (param_2 == 0) {
-                thunk_FUN_0043fc50(4,0);
-                uVar10 = 5;
+                thunk_FUN_0043fc50(CASE_4,0);
+                GVar10 = CASE_5;
               }
               else {
-                uVar10 = 0xf;
+                GVar10 = CASE_F;
               }
-              thunk_FUN_0043fc50(uVar10,0);
+              thunk_FUN_0043fc50(GVar10,0);
               local_c = 0;
               break;
             }

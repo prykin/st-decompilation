@@ -6,7 +6,7 @@
 void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
 
 {
-  STT3DSprC *this_00;
+  undefined4 *this_00;
   char cVar1;
   code *pcVar2;
   byte bVar3;
@@ -93,17 +93,17 @@ void __thiscall STSprGameObjC::LoadActFrame(STSprGameObjC *this,int *param_1)
   }
   bVar3 = thunk_FUN_004ab030();
   Library::MSVCRT::__itoa((uint)bVar3,pcVar10,iVar6);
-  iVar6 = *(int *)(this + 0x20);
+  iVar6 = this->field_0020;
   if ((((iVar6 != 0x1ae) && (iVar6 != 0x172)) && (iVar6 != 0x5a)) &&
      ((iVar6 != 0x1a4 && (iVar6 != 0x1b8)))) {
     if ((iVar6 == 0x14) || (iVar6 == 1000)) {
-      uVar4 = (**(code **)(*(int *)this + 0x2c))();
+      uVar4 = (*this->vtable->slot_2C)();
     }
     else {
       if (iVar6 != 0x3e9) {
         return;
       }
-      uVar4 = *(undefined4 *)(this + 0x259);
+      uVar4 = this->field_0259;
     }
     switch(uVar4) {
     case 1:
@@ -461,37 +461,37 @@ LAB_00420678:
       pbVar9 = pbVar9 + 1;
       pbVar12 = pbVar12 + 1;
     }
-    this_00 = (STT3DSprC *)(this + 0x1d5);
-    iVar6 = STT3DSprC::LoadSequence(this_00,0xf,DAT_00806774,local_24,0x1d);
+    this_00 = &this->field_01D5;
+    iVar6 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0xf,DAT_00806774,local_24,0x1d);
     if (iVar6 != 0) {
       RaiseInternalException(-0x5001fff8,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xc4a)
       ;
     }
-    iVar6 = STT3DSprC::LoadSequence(this_00,0,DAT_00806774,local_24,0x1d);
+    iVar6 = STT3DSprC::LoadSequence((STT3DSprC *)this_00,0,DAT_00806774,local_24,0x1d);
     if (iVar6 != 0) {
       RaiseInternalException(-0x5001fff8,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xc4b)
       ;
     }
-    FUN_006ea5e0(*(void **)(this + 0x211),*(uint *)(this + 0x1ed),0xf,0);
-    FUN_006ea5e0(*(void **)(this + 0x211),*(uint *)(this + 0x1ed),0,0);
+    FUN_006ea5e0((void *)this->field_0211,this->field_01ED,0xf,0);
+    FUN_006ea5e0((void *)this->field_0211,this->field_01ED,0,0);
     if (DAT_0080732c != 1) {
-      STT3DSprC::StopShow(this_00,0xf);
-      STT3DSprC::StopShow(this_00,0);
+      STT3DSprC::StopShow((STT3DSprC *)this_00,0xf);
+      STT3DSprC::StopShow((STT3DSprC *)this_00,0);
       thunk_FUN_004abce0(this_00,0,0,0,'\0');
       thunk_FUN_004abce0(this_00,0xf,0x14,0x14,'\0');
-      STT3DSprC::StartShow(this_00,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
-      STT3DSprC::StartShow(this_00,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
+      STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
       return;
     }
     thunk_FUN_004abce0(this_00,0,0,0x13,'\0');
     thunk_FUN_004abce0(this_00,0xf,0x14,0x27,'\0');
     thunk_FUN_004acd60(this_00,'\0',*(uint *)(DAT_00802a38 + 0xe4) & 1);
     thunk_FUN_004acd60(this_00,'\x0f',*(uint *)(DAT_00802a38 + 0xe4) & 1);
-    STT3DSprC::StartShow(this_00,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
-    STT3DSprC::StartShow(this_00,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow((STT3DSprC *)this_00,0,*(undefined4 *)(DAT_00802a38 + 0xe4));
+    STT3DSprC::StartShow((STT3DSprC *)this_00,0xf,*(undefined4 *)(DAT_00802a38 + 0xe4));
     return;
   }
-  uVar4 = (**(code **)(*(int *)this + 0x2c))();
+  uVar4 = (*this->vtable->slot_2C)();
   switch(uVar4) {
   case 0xa6:
   case 0xa7:

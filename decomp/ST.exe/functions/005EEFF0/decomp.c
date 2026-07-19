@@ -58,8 +58,9 @@ void __thiscall FUN_005eeff0(void *this,int param_1)
                           (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
     }
     if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,iVar5,
-                             &local_8,&local_c), param_1 < 0)) ||
+         (thunk_FUN_00558c00(DAT_00802a88,
+                             *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar4,
+                             iVar5,&local_8,&local_c), param_1 < 0)) ||
         (((4 < param_1 || (local_8 < 0)) ||
          ((*(int *)((int)pvVar3 + 0x30) <= local_8 ||
           ((local_c = (&DAT_0079aed0)[param_1] + local_c, local_c < 0 ||
@@ -123,12 +124,13 @@ joined_r0x005ef316:
                           (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
     }
     if (((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-           (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,iVar5,
-                               &local_c,&local_8), param_1 < 0)) || ((4 < param_1 || (local_c < 0)))
-          ) || ((*(int *)((int)pvVar3 + 0x30) <= local_c ||
-                ((local_8 = (&DAT_0079aed0)[param_1] + local_8, local_8 < 0 ||
-                 (*(int *)((int)pvVar3 + 0x34) <= local_8)))))) ||
-        (*(int *)((int)pvVar3 + 0x4c) == 0)) ||
+           (thunk_FUN_00558c00(DAT_00802a88,
+                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar4
+                               ,iVar5,&local_c,&local_8), param_1 < 0)) ||
+          ((4 < param_1 || (local_c < 0)))) ||
+         ((*(int *)((int)pvVar3 + 0x30) <= local_c ||
+          ((local_8 = (&DAT_0079aed0)[param_1] + local_8, local_8 < 0 ||
+           (*(int *)((int)pvVar3 + 0x34) <= local_8)))))) || (*(int *)((int)pvVar3 + 0x4c) == 0)) ||
        (*(char *)(local_8 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_c)
         != '\0')) {
       (**(code **)(*(int *)this + 0xd8))();

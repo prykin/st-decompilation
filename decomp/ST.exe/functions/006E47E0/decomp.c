@@ -53,7 +53,7 @@ int __thiscall AppClassTy::AddSystem(AppClassTy *this,int *param_1,int param_2)
     local_14 = 1;
     local_10 = param_1;
     local_c = 0;
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x10),&local_14);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_0010,&local_14);
     local_28 = 0xf;
     local_24 = 8;
     iVar2 = (**(code **)(*param_1 + 0x18))(local_34);

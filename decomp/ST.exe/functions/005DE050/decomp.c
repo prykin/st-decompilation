@@ -20,10 +20,9 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
   int local_c;
   int local_8;
   
-  if ((((*(int *)(this + 0x544) != 0) && (*(int *)(this + 0x548) != 0)) &&
-      (-1 < *(int *)(this + 0x540))) &&
+  if ((((this->field_0544 != 0) && (this->field_0548 != 0)) && (-1 < (int)this->field_0540)) &&
      ((param_1 != 0 && (local_c = *(int *)(param_1 + 0x1c), local_c != 0)))) {
-    iVar3 = *(int *)(this + 0x34);
+    iVar3 = this->field_0034;
     local_10 = this;
     if (*(int *)(iVar3 + 0xa0) != 0) {
       FUN_00710790(iVar3);
@@ -34,29 +33,28 @@ void __thiscall StartSystemTy::PaintBinDesc(StartSystemTy *this,int param_1)
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar2 = local_10;
     if (iVar3 == 0) {
-      iVar3 = *(int *)(local_10 + 0x544);
+      iVar3 = local_10->field_0544;
       FUN_006b4170(iVar3,0,0,0,*(int *)(iVar3 + 4),*(int *)(iVar3 + 8),0xff);
       uVar4 = (uint)*(ushort *)(param_1 + 0x16);
       uVar7 = uVar4;
       if ((int)uVar4 < (int)(*(int *)(local_c + 0x1e0) + uVar4)) {
         do {
-          if ((int)uVar7 < *(int *)(*(int *)(pSVar2 + 0x548) + 8)) {
-            puVar6 = *(uint **)(*(int *)(*(int *)(pSVar2 + 0x548) + 0x14) + uVar7 * 4);
+          if ((int)uVar7 < *(int *)(pSVar2->field_0548 + 8)) {
+            puVar6 = *(uint **)(*(int *)(pSVar2->field_0548 + 0x14) + uVar7 * 4);
           }
           else {
             puVar6 = (uint *)0x0;
           }
           if (puVar6 != (uint *)0x0) {
-            ccFntTy::SetSurf(*(ccFntTy **)(pSVar2 + 0x34),*(int *)(pSVar2 + 0x544),0,0,
-                             (uVar7 - uVar4) * local_8,*(int *)(*(int *)(pSVar2 + 0x544) + 4),
-                             local_8);
-            ccFntTy::WrStr(*(ccFntTy **)(pSVar2 + 0x34),puVar6,0,-1,0);
+            ccFntTy::SetSurf((ccFntTy *)pSVar2->field_0034,pSVar2->field_0544,0,0,
+                             (uVar7 - uVar4) * local_8,*(int *)(pSVar2->field_0544 + 4),local_8);
+            ccFntTy::WrStr((ccFntTy *)pSVar2->field_0034,puVar6,0,-1,0);
           }
           uVar7 = uVar7 + 1;
           uVar4 = (uint)*(ushort *)(param_1 + 0x16);
         } while ((int)uVar7 < (int)(*(int *)(local_c + 0x1e0) + uVar4));
       }
-      FUN_006b35d0(DAT_008075a8,*(uint *)(pSVar2 + 0x540));
+      FUN_006b35d0(DAT_008075a8,pSVar2->field_0540);
       g_currentExceptionFrame = local_54.previous;
       return;
     }

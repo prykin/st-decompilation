@@ -25,7 +25,7 @@ cLoadingTy::SetProcess(cLoadingTy *this,undefined4 param_1,uint *param_2,int par
   this_00 = local_8;
   if (errorCode == 0) {
     if (-1 < *(int *)(local_8 + 0x3c)) {
-      SetState(local_8,2,0,(char *)0x0);
+      SetState(local_8,CASE_2,0,(char *)0x0);
     }
     *(undefined4 *)(this_00 + 0x3c) = param_1;
     DVar2 = timeGetTime();

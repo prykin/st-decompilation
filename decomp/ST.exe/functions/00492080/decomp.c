@@ -15,8 +15,8 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
   short local_8;
   short local_6;
   
-  if ((((*(int *)(this + 0x45d) != 0xf) && (*(int *)(this + 0x45d) != 0xe)) ||
-      (*(int *)(this + 0x58e) != param_1)) || (*(int *)(this + 0x596) != 2)) {
+  if ((((this->field_045D != 0xf) && (this->field_045D != 0xe)) || (this->field_058E != param_1)) ||
+     (this->field_0596 != 2)) {
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50db,0,0,&DAT_007a4ccc,
                                s_STBoatC__NotReadyForLoading_inco_007abb58);
     if (iVar2 == 0) {
@@ -26,18 +26,17 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
     (*pcVar1)();
     return;
   }
-  iVar2 = FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x58e),(int *)&local_14);
+  iVar2 = FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&local_14);
   if (iVar2 != -4) {
-    (**(code **)(*local_14 + 0xac))(*(undefined4 *)(this + 0x18));
-    thunk_FUN_004162f0(local_14,(undefined2 *)(this + 0x588),(undefined2 *)(this + 0x58a),
-                       (undefined2 *)(this + 0x58c));
-    iVar2 = GetCellForLoading(this,*(short *)(this + 0x5b),*(short *)(this + 0x5d),
-                              *(short *)(this + 0x5f),*(short *)(this + 0x588),
-                              *(short *)(this + 0x58a),*(short *)(this + 0x58c),&local_6,
-                              (undefined2 *)((int)&param_1 + 2),&local_8,&local_e,&local_c,&local_a)
-    ;
+    (**(code **)(*local_14 + 0xac))(this->field_0018);
+    thunk_FUN_004162f0(local_14,(undefined2 *)&this->field_0x588,&this->field_058A,&this->field_058C
+                      );
+    iVar2 = GetCellForLoading(this,this->field_005B,this->field_005D,this->field_005F,
+                              *(short *)&this->field_0x588,this->field_058A,this->field_058C,
+                              &local_6,(undefined2 *)((int)&param_1 + 2),&local_8,&local_e,&local_c,
+                              &local_a);
     if (iVar2 != -2) {
-      *(undefined4 *)(this + 0x596) = 0;
+      this->field_0596 = 0;
       if (iVar2 != -1) {
         local_e = local_6;
         local_c = param_1._2_2_;
@@ -47,15 +46,15 @@ void __thiscall STBoatC::NotReadyForLoading(STBoatC *this,int param_1)
       thunk_FUN_00460260(this,0);
       return;
     }
-    *(undefined4 *)(this + 0x596) = 1;
-    *(undefined4 *)(this + 0x592) = 0;
+    this->field_0596 = 1;
+    this->field_0592 = 0;
     return;
   }
   iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x50c8,0,0,&DAT_007a4ccc,
                              s_STBoatC__NotReadyForLoading_it_s_007abb8c);
   if (iVar2 == 0) {
-    *(undefined4 *)(this + 0x596) = 1;
-    *(undefined4 *)(this + 0x592) = 0;
+    this->field_0596 = 1;
+    this->field_0592 = 0;
     return;
   }
   pcVar1 = (code *)swi(3);

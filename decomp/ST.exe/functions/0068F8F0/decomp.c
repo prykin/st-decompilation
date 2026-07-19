@@ -33,7 +33,7 @@ undefined4 __thiscall FUN_0068f8f0(void *this,short param_1)
           iVar2 = 0;
         }
         this_00 = *(AiFltClassTy **)(iVar2 + 4);
-        if ((this_00 != (AiFltClassTy *)0x0) && (*(short *)(this_00 + 0x7b) == -0x8000)) {
+        if ((this_00 != (AiFltClassTy *)0x0) && (this_00->field_007B == -0x8000)) {
           puVar4 = local_38;
           for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
             *puVar4 = 0;

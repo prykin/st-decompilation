@@ -1,5 +1,12 @@
 
-void __thiscall FUN_004cafc0(void *this,int param_1,uint param_2,uint *param_3,uint *param_4)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004CAFC0_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_7=7;CASE_8=8;CASE_9=9;CASE_C=12;CASE_D=13;CASE_E=14;CASE_33=51;CASE_35=53;CASE_38=56;CASE_39=57;CASE_45=69;CASE_4E=78;CASE_4F=79;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5E=94;CASE_70=112
+    */
+
+void __thiscall
+FUN_004cafc0(void *this,Global_sub_004CAFC0_param_1Enum param_1,uint param_2,uint *param_3,
+            uint *param_4)
 
 {
   uint uVar1;
@@ -67,7 +74,7 @@ void __thiscall FUN_004cafc0(void *this,int param_1,uint param_2,uint *param_3,u
     iVar4 = 4;
   }
   switch(param_1) {
-  case 7:
+  case CASE_7:
     if (iVar3 == 0x4e) {
       switch(*(undefined4 *)((int)this + 0x4d0)) {
       case 0:
@@ -119,12 +126,12 @@ void __thiscall FUN_004cafc0(void *this,int param_1,uint param_2,uint *param_3,u
     default:
       return;
     }
-  case 8:
-  case 9:
+  case CASE_8:
+  case CASE_9:
     goto switchD_004cb1d7_caseD_8;
   default:
     goto switchD_004cb1d7_caseD_a;
-  case 0xc:
+  case CASE_C:
     switch(iVar3) {
     case 0x33:
       if (*(int *)((int)this + 0x520) == 0) {
@@ -220,9 +227,9 @@ switchD_004cb5c6_caseD_5:
     *param_4 = *(uint *)((&PTR_DAT_007b8310)[iVar4] +
                         (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
     return;
-  case 0xd:
+  case CASE_D:
     break;
-  case 0xe:
+  case CASE_E:
     goto switchD_004cb1d7_caseD_e;
   }
   if ((iVar3 == 0x4f) &&

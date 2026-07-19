@@ -1,4 +1,4 @@
-FUN_005785e0:
+STCrabC::STCrabC:
 005785E0  56                        PUSH ESI
 005785E1  57                        PUSH EDI
 005785E2  8B F1                     MOV ESI,ECX

@@ -82,7 +82,7 @@ STPlaySystemC::SetCtrlCmd
     iVar3 = local_c + param_7;
     local_10 = iVar3;
     puVar4 = Library::DKW::LIB::FUN_006aac10(iVar3 + 0x1b);
-    puVar4[1] = *(undefined4 *)(local_8 + 0xe4);
+    puVar4[1] = local_8->field_00E4;
     *(undefined1 *)(puVar4 + 2) = param_1;
     *(char *)((int)puVar4 + 9) = (char)*(undefined4 *)(DAT_00802a30 + 0x4ae);
     *(undefined4 *)((int)puVar4 + 10) = param_2;
@@ -124,13 +124,13 @@ STPlaySystemC::SetCtrlCmd
         bVar2 = false;
       }
       if (bVar2) {
-        FUN_006b9910((undefined4 *)(local_8 + 0x39),puVar4);
+        FUN_006b9910((undefined4 *)&local_8->field_0x39,puVar4);
         PlaySystemTy::SendClientMail((PlaySystemTy *)local_8,(int)unaff_EDI);
         g_currentExceptionFrame = local_54.previous;
         return;
       }
     }
-    FUN_006b9910((undefined4 *)(local_8 + 0x39),puVar4);
+    FUN_006b9910((undefined4 *)&local_8->field_0x39,puVar4);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

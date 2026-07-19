@@ -1,12 +1,17 @@
 
-undefined4 * __thiscall FUN_00542440(void *this,undefined4 param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079ADB8 (store 00542453)
+   Evidence: final_vptr=0079ADB8; returns_this=true; calls_before=1; field_writes_after=3;
+   table_confidence=high */
+
+undefined4 * __thiscall InterSystemC::InterSystemC(InterSystemC *this,undefined4 param_1)
 
 {
-  FUN_006e51c0(this,param_1,5);
-  *(InterSystemCVTable **)this = &InterSystemCVTable;
-  *(undefined4 *)((int)this + 0x30) = 0;
-  *(undefined4 *)((int)this + 0x2c) = 0;
-  *(undefined4 *)((int)this + 0x28) = 0;
-  return this;
+  SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,5);
+  this->vtable = &InterSystemCVTable;
+  this->field_0030 = 0;
+  this->field_002C = 0;
+  this->field_0028 = 0;
+  return &this->vtable;
 }
 

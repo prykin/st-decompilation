@@ -85,7 +85,7 @@ LAB_004e3526:
             local_40 = '\0';
             if (CONCAT31(extraout_var_06,bVar2) != 0) goto LAB_004e3526;
           }
-          thunk_FUN_004c7260(this,2,(int)puVar7,&local_8,&local_c,&local_10,&local_14);
+          thunk_FUN_004c7260(this,CASE_2,(int)puVar7,&local_8,&local_c,&local_10,&local_14);
           local_3a = (undefined2)local_8;
           local_3e = (undefined2)local_c;
           iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
@@ -142,7 +142,7 @@ LAB_004e336e:
             local_40 = '\x01';
             if (CONCAT31(extraout_var_02,bVar2) == 0) goto LAB_004e336e;
           }
-          thunk_FUN_004c7260(this,2,*puVar4,&local_8,&local_c,&local_10,&local_14);
+          thunk_FUN_004c7260(this,CASE_2,*puVar4,&local_8,&local_c,&local_10,&local_14);
           local_3e = (undefined2)local_c;
           local_3a = (undefined2)local_8;
           iVar5 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));

@@ -79,25 +79,28 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
       param_3 = (int)DAT_007fb240;
     }
     if ((((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-          ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,iVar5,
-                               &local_c,&local_10), pvVar3 = DAT_00802a88, -1 < param_1 &&
+          ((thunk_FUN_00558c00(DAT_00802a88,
+                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar4
+                               ,iVar5,&local_c,&local_10), pvVar3 = DAT_00802a88, -1 < param_1 &&
            ((((param_1 < 5 && (-1 < local_c)) && (local_c < *(int *)((int)pvVar2 + 0x30))) &&
             ((iVar5 = (&DAT_0079aed0)[param_1] + local_10, -1 < iVar5 &&
              (iVar5 < *(int *)((int)pvVar2 + 0x34))))))))) && (*(int *)((int)pvVar2 + 0x4c) != 0))
         && ((*(char *)(iVar5 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) + local_c
                       ) == '\0' && (DAT_0080874d != -1)))) &&
        (((((*(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-           (((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),param_2,
-                                 iVar6,&local_10,&local_c), pvVar2 = DAT_00802a88, -1 < local_10 &&
-             (local_10 < *(int *)((int)pvVar3 + 0x30))) &&
+           (((thunk_FUN_00558c00(DAT_00802a88,
+                                 *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                 param_2,iVar6,&local_10,&local_c), pvVar2 = DAT_00802a88,
+             -1 < local_10 && (local_10 < *(int *)((int)pvVar3 + 0x30))) &&
             (iVar5 = (&DAT_0079aed0)[param_1] + local_c, -1 < iVar5)))) &&
           (((iVar5 < *(int *)((int)pvVar3 + 0x34) && (*(int *)((int)pvVar3 + 0x4c) != 0)) &&
            (*(char *)(iVar5 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_10
                      ) == '\0')))) &&
          ((((DAT_0080874d != -1 && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-           ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),param_3,
-                                iVar6,&local_10,&local_c), iVar5 = local_8, pvVar3 = DAT_00802a88,
-            -1 < local_10 &&
+           ((thunk_FUN_00558c00(DAT_00802a88,
+                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                param_3,iVar6,&local_10,&local_c), iVar5 = local_8,
+            pvVar3 = DAT_00802a88, -1 < local_10 &&
             (((local_10 < *(int *)((int)pvVar2 + 0x30) &&
               (local_c = (&DAT_0079aed0)[param_1] + local_c, -1 < local_c)) &&
              (local_c < *(int *)((int)pvVar2 + 0x34))))))) &&
@@ -106,8 +109,9 @@ int FUN_00646e00(int param_1,int param_2,int param_3)
                      local_10) == '\0')))))) &&
         ((DAT_0080874d != -1 &&
          (((*(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-           (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),param_2,
-                               local_8,&param_2,&local_10), -1 < param_2)) &&
+           (thunk_FUN_00558c00(DAT_00802a88,
+                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                               param_2,local_8,&param_2,&local_10), -1 < param_2)) &&
           ((param_2 < *(int *)((int)pvVar3 + 0x30) &&
            ((((local_10 = (&DAT_0079aed0)[param_1] + local_10, -1 < local_10 &&
               (local_10 < *(int *)((int)pvVar3 + 0x34))) && (*(int *)((int)pvVar3 + 0x4c) != 0)) &&

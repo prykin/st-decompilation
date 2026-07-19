@@ -12,7 +12,7 @@ undefined4 __fastcall FUN_004cc370(int *param_1)
     return 0;
   }
   if (-1 < param_1[0x113]) {
-    iVar2 = *(int *)(*(STT3DSprC **)((int)param_1 + 0x603) + 0x20);
+    iVar2 = (*(STT3DSprC **)((int)param_1 + 0x603))->field_0020;
     if (*(int *)(iVar2 + 0x20c) <= *(int *)(iVar2 + 0x210)) {
       STT3DSprC::StopShow(*(STT3DSprC **)((int)param_1 + 0x603),0xe);
       thunk_FUN_004ad430(*(int *)((int)param_1 + 0x603));

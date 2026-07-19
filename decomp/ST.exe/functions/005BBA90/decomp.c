@@ -6,7 +6,7 @@
 void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
 
 {
-  PrividerTy *pPVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   PrividerTy *this_00;
   int iVar3;
@@ -77,7 +77,7 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
   undefined2 local_1e;
   PrividerTy *local_10;
   uint local_c;
-  PrividerTy local_5;
+  char local_5;
   
   puVar5 = local_544;
   local_10 = this;
@@ -106,8 +106,8 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
     RaiseInternalException(iVar4,0,s_E____titans_Start_prov_obj_cpp_007ccd28,0x24d);
     return;
   }
-  local_5 = local_10[0x1a5f];
-  if (local_5 == (PrividerTy)0x0) {
+  local_5 = local_10->field_0x1a5f;
+  if (local_5 == '\0') {
     if (*(int *)(DAT_0081176c + 0x68a) != 0) {
       local_c = *(uint *)(*(int *)(DAT_0081176c + 0x68a) + 4);
       goto LAB_005bbb22;
@@ -121,12 +121,12 @@ void __thiscall PrividerTy::CreateCtrls(PrividerTy *this,char param_1)
 LAB_005bbb22:
   local_544[6] = ((int)local_c < 0) - 1 & local_c;
   if (param_1 == '\0') {
-    if (local_5 == (PrividerTy)0x0) {
-      local_d84 = *(undefined4 *)(local_10 + 8);
+    if (local_5 == '\0') {
+      local_d84 = *(undefined4 *)&local_10->field_0x8;
       local_dd0[0] = 0;
       local_dd0[1] = 9;
       local_dd0[2] = *(undefined4 *)(DAT_0081176c + 0x30);
-      local_dd0[8] = *(undefined4 *)(local_10 + 0x1c92);
+      local_dd0[8] = *(undefined4 *)&local_10->field_0x1c92;
       local_dd0[3] = 0x7d;
       local_dd0[4] = 0x1af;
       local_dd0[5] = 0x226;
@@ -134,12 +134,13 @@ LAB_005bbb22:
       local_dd0[7] = 0x104;
       local_d80 = 2;
       local_d7c = 0x631f;
-      (**(code **)(**(int **)(local_10 + 0xc) + 8))(6,local_10 + 0x1c86,0,local_dd0,0);
-      *(undefined4 *)(this_00 + 0x2d) = 0x20;
-      *(undefined4 *)(this_00 + 0x31) = 1;
-      FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1a73),(undefined4 *)(this_00 + 0x1d));
+      (**(code **)(**(int **)&local_10->field_0xc + 8))(6,&local_10->field_0x1c86,0,local_dd0,0);
+      *(undefined4 *)&this_00->field_0x2d = 0x20;
+      *(undefined4 *)&this_00->field_0x31 = 1;
+      FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,
+                   (undefined4 *)&this_00->field_0x1d);
     }
-    if (*(int *)(*(int *)(this_00 + 0x1a5b) + 0x2e6) != 0) {
+    if (*(int *)(*(int *)&this_00->field_0x1a5b + 0x2e6) != 0) {
       puVar6 = &local_2c;
       for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
         *puVar6 = 0;
@@ -152,11 +153,11 @@ LAB_005bbb22:
       local_22 = 1;
       local_28 = 1;
       local_2c._0_2_ = 1;
-      MMsgTy::StatePanel(*(MMsgTy **)(*(int *)(this_00 + 0x1a5b) + 0x2e6),(int)&local_2c);
+      MMsgTy::StatePanel(*(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6),(int)&local_2c);
     }
   }
   else {
-    local_51c = *(undefined4 *)(local_10 + 8);
+    local_51c = *(undefined4 *)&local_10->field_0x8;
     local_544[0] = 0;
     local_544[2] = 0x7a;
     local_544[3] = 0x67;
@@ -174,18 +175,18 @@ LAB_005bbb22:
     if (DAT_0080734c != '\0') {
       local_74 = 1;
     }
-    local_408 = *(undefined4 *)(local_10 + 0x1a97);
-    local_40c = *(undefined4 *)(local_10 + 0x1a93);
-    local_400 = *(undefined4 *)(local_10 + 0x1a9f);
-    local_28c = *(undefined4 *)(local_10 + 0x1b24);
-    local_288 = *(undefined4 *)(local_10 + 0x1b28);
-    local_284 = *(undefined4 *)(local_10 + 0x1b2c);
-    local_404 = *(undefined4 *)(local_10 + 0x1a9b);
-    local_280 = *(undefined4 *)(local_10 + 0x1b30);
-    local_100 = *(undefined4 *)(local_10 + 0x1bbd);
+    local_408 = *(undefined4 *)&local_10->field_0x1a97;
+    local_40c = *(undefined4 *)&local_10->field_0x1a93;
+    local_400 = *(undefined4 *)&local_10->field_0x1a9f;
+    local_28c = *(undefined4 *)&local_10->field_0x1b24;
+    local_288 = *(undefined4 *)&local_10->field_0x1b28;
+    local_284 = *(undefined4 *)&local_10->field_0x1b2c;
+    local_404 = *(undefined4 *)&local_10->field_0x1a9b;
+    local_280 = *(undefined4 *)&local_10->field_0x1b30;
+    local_100 = *(undefined4 *)&local_10->field_0x1bbd;
     local_300 = 0x32;
     local_180 = 0x32;
-    local_108 = *(undefined4 *)(local_10 + 0x1bb5);
+    local_108 = *(undefined4 *)&local_10->field_0x1bb5;
     local_418 = 2;
     local_414 = 0;
     local_410 = 2;
@@ -212,19 +213,19 @@ LAB_005bbb22:
     local_3b4 = local_51c;
     local_234 = local_51c;
     local_c4 = local_51c;
-    (**(code **)(**(int **)(local_10 + 0xc) + 8))(7,local_10 + 0x1a73,0,local_544,0);
+    (**(code **)(**(int **)&local_10->field_0xc + 8))(7,&local_10->field_0x1a73,0,local_544,0);
   }
-  *(undefined4 *)(this_00 + 0x31) = 0;
-  pPVar1 = this_00 + 0x1d;
-  *(undefined4 *)(this_00 + 0x2d) = 0x20;
-  FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1a73),(undefined4 *)pPVar1);
-  *(uint *)(this_00 + 0x31) = ((int)local_c < 1) - 1 & local_c;
-  *(undefined4 *)(this_00 + 0x2d) = 0x28;
-  FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1a73),(undefined4 *)pPVar1);
+  *(undefined4 *)&this_00->field_0x31 = 0;
+  puVar1 = &this_00->field_0x1d;
+  *(undefined4 *)&this_00->field_0x2d = 0x20;
+  FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,(undefined4 *)puVar1);
+  *(uint *)&this_00->field_0x31 = ((int)local_c < 1) - 1 & local_c;
+  *(undefined4 *)&this_00->field_0x2d = 0x28;
+  FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,(undefined4 *)puVar1);
   if (0 < (int)local_c) {
-    *(undefined4 *)(this_00 + 0x2d) = 0x20;
-    *(undefined4 *)(this_00 + 0x31) = 1;
-    FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1a73),(undefined4 *)pPVar1);
+    *(undefined4 *)&this_00->field_0x2d = 0x20;
+    *(undefined4 *)&this_00->field_0x31 = 1;
+    FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x1a73,(undefined4 *)puVar1);
   }
   g_currentExceptionFrame = local_70.previous;
   return;

@@ -1,11 +1,16 @@
 
-char * __cdecl FUN_00529590(undefined1 param_1,int param_2)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00529590_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_29=41;CASE_2A=42;CASE_2B=43;CASE_2C=44;CASE_2D=45;CASE_2E=46;CASE_2F=47;CASE_30=48;CASE_31=49;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82
+    */
+
+char * __cdecl FUN_00529590(Global_sub_00529590_param_1Enum param_1,int param_2)
 
 {
   char *pcVar1;
   
   switch(param_1) {
-  case 1:
+  case CASE_1:
     if (DAT_0080874e == '\x03') {
       return s_BUT_SISTOP_007c5200;
     }
@@ -29,7 +34,7 @@ char * __cdecl FUN_00529590(undefined1 param_1,int param_2)
     case 0x51:
       return s_BUT_STOPCONSTR_007c51cc;
     }
-  case 2:
+  case CASE_2:
     if (DAT_0080874e == '\x03') {
       return s_BUT_SIMOVE_007c51ac;
     }
@@ -54,7 +59,7 @@ char * __cdecl FUN_00529590(undefined1 param_1,int param_2)
   default:
     pcVar1 = s_BUT_MOVEBOAT_007c4aa4;
     break;
-  case 3:
+  case CASE_3:
     if (DAT_0080874e == '\x03') {
       return s_BUT_SIATTACK_007c5168;
     }
@@ -62,27 +67,27 @@ char * __cdecl FUN_00529590(undefined1 param_1,int param_2)
       return s_BUT_ATTACK_007c5158;
     }
     return s_BUT_ATTACKWORM_007c5144;
-  case 4:
+  case CASE_4:
     return s_BUT_RETREPAIR_007c5134;
-  case 5:
+  case CASE_5:
     pcVar1 = s_BUT_SIGUARD_007c5124;
     if (DAT_0080874e != '\x03') {
       return s_BUT_GUARD_007c5118;
     }
     break;
-  case 6:
+  case CASE_6:
     pcVar1 = s_BUT_SIPATROL_007c5108;
     if (DAT_0080874e != '\x03') {
       return s_BUT_PATROL_007c50f8;
     }
     break;
-  case 7:
+  case CASE_7:
     pcVar1 = s_BUT_SICAPTURE_007c50e8;
     if (DAT_0080874e != '\x03') {
       return s_BUT_CAPTURE_007c50d8;
     }
     break;
-  case 8:
+  case CASE_8:
     if (param_2 == 5) {
       return s_BUT_SETMINE_007c5088;
     }
@@ -93,207 +98,207 @@ char * __cdecl FUN_00529590(undefined1 param_1,int param_2)
       return s_BUT_SETSNARE_007c50a8;
     }
     return s_BUT_SETLIGHT_007c5098;
-  case 9:
+  case CASE_9:
     return s_BUT_ATTACKDC_007c50c8;
-  case 10:
+  case CASE_A:
     pcVar1 = s_BUT_SIPARSHELL_007c5074;
     if (DAT_0080874e != '\x03') {
       return s_BUT_ATTACKRAYS_007c5060;
     }
     break;
-  case 0xb:
+  case CASE_B:
     return s_BUT_PHANTOMON_007c5050;
-  case 0xc:
+  case CASE_C:
     return s_BUT_PHANTOMOFF_007c503c;
-  case 0xd:
+  case CASE_D:
     return s_BUT_REPSUBM_007c502c;
-  case 0xe:
+  case CASE_E:
     pcVar1 = s_BUT_SIBUILD_007c501c;
     if (DAT_0080874e != '\x03') {
       return s_BUT_BUILD_007c5010;
     }
     break;
-  case 0xf:
+  case CASE_F:
     return s_BUT_COMPLETEBUILD_007c4ff8;
-  case 0x10:
+  case CASE_10:
     return s_BUT_DISMANTLING_007c4fe4;
-  case 0x11:
+  case CASE_11:
     pcVar1 = s_BUT_SIRCLOAD_007c4fd4;
     if (DAT_0080874e != '\x03') {
       return s_BUT_RCLOAD_007c4fc4;
     }
     break;
-  case 0x12:
+  case CASE_12:
     pcVar1 = s_BUT_SIRCUNLOAD_007c4fb0;
     if (DAT_0080874e != '\x03') {
       return s_BUT_RCUNLOAD_007c4fa0;
     }
     break;
-  case 0x13:
+  case CASE_13:
     pcVar1 = s_BUT_SIREPLOAD_007c4f90;
     if (DAT_0080874e != '\x03') {
       return s_BUT_REPLOAD_007c4f80;
     }
     break;
-  case 0x14:
+  case CASE_14:
     pcVar1 = s_BUT_SIREPUNLOAD_007c4f6c;
     if (DAT_0080874e != '\x03') {
       return s_BUT_REPUNLOAD_007c4f5c;
     }
     break;
-  case 0x15:
+  case CASE_15:
     return s_BUT_RISE_007c4f50;
-  case 0x16:
+  case CASE_16:
     return s_BUT_FALL_007c4f44;
-  case 0x17:
+  case CASE_17:
     return s_BUT_TELEOBJ_007c4f34;
-  case 0x18:
+  case CASE_18:
     pcVar1 = s_BUT_SITELEPORT_007c4f20;
     if (DAT_0080874e != '\x03') goto switchD_005295a5_caseD_4d;
     break;
-  case 0x19:
+  case CASE_19:
     return s_BUT_ATTACKLBOMB_007c4efc;
-  case 0x1a:
+  case CASE_1A:
     return s_BUT_ATTACKTLS_007c4eec;
-  case 0x1b:
+  case CASE_1B:
     return s_BUT_BLDMISSILE_007c4ed8;
-  case 0x1c:
+  case CASE_1C:
     return s_BUT_BLDLASBOMB_007c4ec4;
-  case 0x1d:
+  case CASE_1D:
     return s_BUT_BLDBOAT_007c4eb4;
-  case 0x1e:
+  case CASE_1E:
     return s_BUT_BLDWORM_007c4ea4;
-  case 0x1f:
+  case CASE_1F:
     return s_BUT_BLDDOLPH_007c4e94;
-  case 0x20:
+  case CASE_20:
     return s_BUT_SELFREP_007c4e84;
-  case 0x21:
+  case CASE_21:
     return s_BUT_RESEARCH_007c4e74;
-  case 0x22:
+  case CASE_22:
     return s_BUT_TRGOLD_007c4e64;
-  case 0x23:
+  case CASE_23:
     return s_BUT_ACTPSIHO_007c4e54;
-  case 0x24:
+  case CASE_24:
     return s_BUT_ACTISO_007c4e44;
-  case 0x25:
+  case CASE_25:
     return s_BUT_STOPISO_007c4e34;
-  case 0x26:
+  case CASE_26:
     return s_BUT_SETDESTINATION_007c4e1c;
-  case 0x27:
+  case CASE_27:
     pcVar1 = s_BUT_SIDISSASSEMBLE_007c4e04;
     if (DAT_0080874e != '\x03') {
       return s_BUT_BREAKBUILD_007c4df0;
     }
     break;
-  case 0x28:
+  case CASE_28:
     return s_BUT_CRACKINFO_007c4de0;
-  case 0x29:
+  case CASE_29:
     return s_BUT_GETINFO_007c4dd0;
-  case 0x2a:
+  case CASE_2A:
     return s_BUT_VIEWZONE_007c4dc0;
-  case 0x2b:
+  case CASE_2B:
     pcVar1 = s_BUT_SIATTACKZONE_007c4dac;
     if (DAT_0080874e != '\x03') {
       return s_BUT_ATTACKZONE_007c4d98;
     }
     break;
-  case 0x2c:
+  case CASE_2C:
     pcVar1 = s_BUT_SIGUARDZONE_007c4d84;
     if (DAT_0080874e != '\x03') {
       return s_BUT_GUARDZONE_007c4d74;
     }
     break;
-  case 0x2d:
+  case CASE_2D:
     pcVar1 = s_BUT_SISCOUT_007c4d64;
     if (DAT_0080874e != '\x03') {
       return s_BUT_SCOUT_007c4d58;
     }
     break;
-  case 0x2e:
+  case CASE_2E:
     return s_BUT_BREAKAWAY_007c4d48;
-  case 0x2f:
+  case CASE_2F:
     pcVar1 = s_BUT_SIAI_007c4d3c;
     if (DAT_0080874e != '\x03') {
       return s_BUT_BEHAVIOUR_007c4d2c;
     }
     break;
-  case 0x30:
+  case CASE_30:
     return s_BUT_TRADE_007c4d20;
-  case 0x31:
+  case CASE_31:
     return s_BUT_CONTAINER_007c4d10;
-  case 0x32:
+  case CASE_32:
 switchD_005295a5_caseD_32:
     return s_BUT_BREAK_007c4ab4;
-  case 0x33:
+  case CASE_33:
     return s_BUT_REPLINISH_007c4d00;
-  case 0x34:
+  case CASE_34:
     return s_BUT_ATTACKTRG_007c4cf0;
-  case 0x35:
+  case CASE_35:
     return s_BUT_ENGACTIVEMODE_007c4cd8;
-  case 0x36:
+  case CASE_36:
     return s_BUT_SATELLITE_007c4cc8;
-  case 0x37:
+  case CASE_37:
     return s_BUT_SIDESTINATION_007c4cb0;
-  case 0x38:
+  case CASE_38:
     return s_BUT_IFIELDOFF1_007c4c9c;
-  case 0x39:
+  case CASE_39:
     return s_BUT_SICRACKINFO_007c4c88;
-  case 0x3a:
+  case CASE_3A:
     return s_BUT_TODIMENSION_007c4c74;
-  case 0x3b:
+  case CASE_3B:
     return s_BUT_GIVEENERGY_007c4c60;
-  case 0x3c:
+  case CASE_3C:
     return s_BUT_PRIORESTORATION_007c4c48;
-  case 0x3d:
+  case CASE_3D:
     return s_BUT_SIBUILDSUB_007c4c34;
-  case 0x3e:
+  case CASE_3E:
     return s_BUT_CREATEGATE_007c4c20;
-  case 0x3f:
+  case CASE_3F:
     return s_BUT_RCTOENERGY_007c4c0c;
-  case 0x40:
+  case CASE_40:
     return s_BUT_SIGIVERC_007c4bfc;
-  case 0x41:
+  case CASE_41:
     return s_BUT_SIRESEARCH_007c4be8;
-  case 0x42:
+  case CASE_42:
     return s_BUT_IFIELDON_007c4bd8;
-  case 0x43:
+  case CASE_43:
     return s_BUT_SIVIEWZONE_007c4bc4;
-  case 0x44:
+  case CASE_44:
     return s_BUT_BUILDLAB_007c4bb4;
-  case 0x45:
+  case CASE_45:
     return s_BUT_IFIELDOFF2_007c4ba0;
-  case 0x46:
+  case CASE_46:
     return s_BUT_SIGETINFO_007c4b90;
-  case 0x47:
+  case CASE_47:
     return s_BUT_FROMDIMENSION_007c4b78;
-  case 0x48:
+  case CASE_48:
     return s_BUT_SIREPLINISH_007c4b64;
-  case 0x49:
+  case CASE_49:
     return s_BUT_SINENGSHIELD_007c4b50;
-  case 0x4a:
+  case CASE_4A:
     return s_BUT_SIREPLPRIOR_007c4b3c;
-  case 0x4b:
+  case CASE_4B:
     return s_BUT_SIGHOST_007c4b2c;
-  case 0x4c:
+  case CASE_4C:
     return s_BUT_AMINE_007c4b20;
-  case 0x4d:
+  case CASE_4D:
 switchD_005295a5_caseD_4d:
     return s_BUT_TELETO_007c4f10;
-  case 0x4f:
+  case CASE_4F:
     return s_BUT_VQB_007c4b14;
-  case 0x50:
+  case CASE_50:
     pcVar1 = s_BUT_SIHOLD_007c4b04;
     if (DAT_0080874e != '\x03') {
       return s_BUT_HOLDBUILD_007c4af4;
     }
     break;
-  case 0x51:
+  case CASE_51:
     pcVar1 = s_BUT_SIUNHOLD_007c4ae4;
     if (DAT_0080874e != '\x03') {
       return s_BUT_UNHOLDBUILD_007c4ad0;
     }
     break;
-  case 0x52:
+  case CASE_52:
     pcVar1 = s_BUT_SISFIRE_007c4ac0;
     if (DAT_0080874e != '\x03') goto switchD_005295a5_caseD_32;
   }

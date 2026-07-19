@@ -9,7 +9,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   short sVar1;
   code *pcVar2;
   MMsgTy *this_00;
-  MMsgTy MVar3;
+  byte bVar3;
   int errorCode;
   uint uVar4;
   int iVar5;
@@ -19,7 +19,7 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   MMsgTy *local_c;
   uint local_8;
   
-  *(undefined4 *)(this + 0x2d) = 0x20;
+  this->field_002D = 0x20;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = this;
@@ -27,26 +27,27 @@ void __thiscall MMsgTy::StatePanel(MMsgTy *this,int param_1)
   this_00 = local_c;
   if (errorCode == 0) {
     local_8 = local_8 & 0xffffff00;
-    if (local_c[0x9a] != (MMsgTy)0x0) {
+    if (local_c->field_0x9a != '\0') {
       do {
         uVar4 = local_8 & 0xff;
-        if ((*(int *)(this_00 + uVar4 * 4 + 0x66) == 0) ||
+        if ((*(int *)(&this_00->field_0x66 + uVar4 * 4) == 0) ||
            (sVar1 = *(short *)(param_1 + uVar4 * 2), sVar1 == 0)) {
-          *(undefined2 *)(this_00 + uVar4 * 2 + 0x1c82) = *(undefined2 *)(param_1 + uVar4 * 2);
+          *(undefined2 *)(&this_00->field_0x1c82 + uVar4 * 2) = *(undefined2 *)(param_1 + uVar4 * 2)
+          ;
         }
         else {
           if (sVar1 < 1) {
-            *(undefined4 *)(this_00 + 0x31) = 0;
+            *(undefined4 *)&this_00->field_0x31 = 0;
           }
           else {
-            *(undefined4 *)(this_00 + 0x31) = 1;
+            *(undefined4 *)&this_00->field_0x31 = 1;
           }
-          FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + uVar4 * 4 + 0x66),
-                       (undefined4 *)(this_00 + 0x1d));
+          FUN_006e6080(this_00,2,*(undefined4 *)(&this_00->field_0x66 + uVar4 * 4),
+                       (undefined4 *)&this_00->field_0x1d);
         }
-        MVar3 = (MMsgTy)((char)local_8 + 1);
-        local_8 = CONCAT31(local_8._1_3_,MVar3);
-      } while ((byte)MVar3 < (byte)this_00[0x9a]);
+        bVar3 = (char)local_8 + 1;
+        local_8 = CONCAT31(local_8._1_3_,bVar3);
+      } while (bVar3 < (byte)this_00->field_0x9a);
     }
     g_currentExceptionFrame = local_50.previous;
     return;

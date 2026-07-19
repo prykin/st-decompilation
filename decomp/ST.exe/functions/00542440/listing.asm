@@ -1,4 +1,4 @@
-FUN_00542440:
+InterSystemC::InterSystemC:
 00542440  55                        PUSH EBP
 00542441  8B EC                     MOV EBP,ESP
 00542443  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

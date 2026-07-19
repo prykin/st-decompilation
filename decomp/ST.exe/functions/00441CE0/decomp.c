@@ -212,7 +212,7 @@ LAB_00441e92:
                       local_30 = 100;
                     }
                     else {
-                      bVar2 = thunk_FUN_00430750(8);
+                      bVar2 = thunk_FUN_00430750(CASE_8);
                       local_6c = (uint)bVar2;
                       local_38 = ((((local_38 * 0xc9) / 3) / (int)local_6c) * 0xc) / 10 + 800;
                       local_30 = (undefined4)(40000 / (longlong)local_38);

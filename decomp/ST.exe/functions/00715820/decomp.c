@@ -1,37 +1,42 @@
 
-void __fastcall FUN_00715820(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079E21C (store 00715827)
+   Evidence: final_vptr=0079E21C; returns_this=true; calls_before=0; field_writes_after=29;
+   table_confidence=high */
+
+void __thiscall SpriteClassTy::SpriteClassTy(SpriteClassTy *this,undefined4 *param_1)
 
 {
-  *param_1 = &SpriteClassTyVTable;
-  *(undefined1 *)(param_1 + 0x13) = 0xff;
-  *(undefined4 *)((int)param_1 + 0x51) = 0;
-  *(undefined4 *)((int)param_1 + 0x55) = 0;
-  *(undefined4 *)((int)param_1 + 0x59) = 0;
-  param_1[0x12] = 0;
-  *(undefined4 *)((int)param_1 + 0x5d) = 0;
-  *(undefined4 *)((int)param_1 + 0x61) = 0;
-  param_1[1] = 0xffffffff;
-  param_1[2] = 0;
-  param_1[3] = 0;
-  param_1[4] = 0;
-  param_1[5] = 0;
-  param_1[6] = 0;
-  param_1[7] = 0;
-  param_1[8] = 0;
-  param_1[9] = 0;
-  param_1[10] = 0;
-  param_1[0x10] = 0;
-  param_1[0x11] = 0;
-  *(undefined4 *)((int)param_1 + 0x4d) = 0;
-  *(undefined1 *)((int)param_1 + 0x65) = 0;
-  *(undefined4 *)((int)param_1 + 0x85) = 0;
-  *(undefined4 *)((int)param_1 + 0x89) = 0;
-  *(undefined4 *)((int)param_1 + 0x8d) = 0;
-  param_1[0xb] = 0;
-  param_1[0xc] = 0;
-  param_1[0xd] = 0;
-  param_1[0xe] = 0;
-  param_1[0xf] = 0;
+  this->vtable = &SpriteClassTyVTable;
+  this->field_004C = 0xff;
+  this->field_0051 = 0;
+  this->field_0055 = 0;
+  this->field_0059 = 0;
+  this->field_0048 = 0;
+  this->field_005D = 0;
+  this->field_0061 = 0;
+  this->field_0004 = 0xffffffff;
+  this->field_0008 = 0;
+  this->field_000C = 0;
+  this->field_0010 = 0;
+  this->field_0014 = 0;
+  this->field_0018 = 0;
+  this->field_001C = 0;
+  this->field_0020 = 0;
+  this->field_0024 = 0;
+  this->field_0028 = 0;
+  this->field_0040 = 0;
+  this->field_0044 = 0;
+  this->field_004D = 0;
+  this->field_0065 = 0;
+  this->field_0085 = 0;
+  this->field_0089 = 0;
+  this->field_008D = 0;
+  this->field_002C = 0;
+  this->field_0030 = 0;
+  this->field_0034 = 0;
+  this->field_0038 = 0;
+  this->field_003C = 0;
   return;
 }
 

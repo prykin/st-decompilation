@@ -20,8 +20,8 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
   undefined4 local_c;
   undefined4 local_8;
   
-  local_c = *(undefined4 *)(this + 0xe4);
-  local_8 = *(undefined4 *)(this + 0x20);
+  local_c = this->field_00E4;
+  local_8 = this->field_0020;
   local_74.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_74;
   local_10 = this;
@@ -32,11 +32,11 @@ int __thiscall STPlaySystemC::Save(STPlaySystemC *this,cMf32 *param_1)
     cMf32::RecPut(param_1,0xc,PTR_s_LAST_NAME_0079ae2c,(byte *)&local_8,4,(undefined4 *)0x0,'\0',
                   (uint *)0x0);
     pSVar2 = local_10;
-    *(cMf32 **)(local_10 + 0x24) = param_1;
+    local_10->field_0024 = param_1;
     local_24 = 0xf;
     local_20 = 0x10f;
     FUN_006e3db0((int)local_30);
-    *(undefined4 *)(pSVar2 + 0x24) = 0;
+    pSVar2->field_0024 = 0;
     g_currentExceptionFrame = local_74.previous;
     return 0;
   }

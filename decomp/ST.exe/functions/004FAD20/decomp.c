@@ -13,8 +13,8 @@ void __fastcall FUN_004fad20(void *param_1)
     puVar1 = puVar1 + 1;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  thunk_FUN_004fa870(param_1,2);
-  thunk_FUN_004fa870(param_1,4);
+  thunk_FUN_004fa870(param_1,CASE_2);
+  thunk_FUN_004fa870(param_1,CASE_4);
   return;
 }
 

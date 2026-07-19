@@ -1,7 +1,11 @@
 
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00580910_param_2Enum. Cases:
+   CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_E0=224 */
+
 void __cdecl
-FUN_00580910(undefined4 param_1,undefined4 param_2,int param_3,undefined4 *param_4,char *param_5,
-            undefined1 *param_6,undefined4 *param_7)
+FUN_00580910(undefined4 param_1,Global_sub_00580910_param_2Enum param_2,int param_3,
+            undefined4 *param_4,char *param_5,undefined1 *param_6,undefined4 *param_7)
 
 {
   char cVar1;
@@ -16,14 +20,14 @@ FUN_00580910(undefined4 param_1,undefined4 param_2,int param_3,undefined4 *param
   *param_7 = 0;
   if ((param_3 == 0xe) || (param_3 == 0xc)) {
     switch(param_2) {
-    case 0xdc:
+    case CASE_DC:
       *param_4 = 0;
       return;
-    case 0xdd:
+    case CASE_DD:
       pcVar4 = s_rc276_c0_007cb2b4;
       break;
-    case 0xde:
-    case 0xe0:
+    case CASE_DE:
+    case CASE_E0:
       pcVar4 = &DAT_007cb2a8;
       break;
     default:

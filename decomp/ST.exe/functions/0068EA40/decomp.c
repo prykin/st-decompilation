@@ -22,10 +22,10 @@ void __thiscall AiTactClassTy::ClaimRestore(AiTactClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   pAVar2 = local_8;
   if (errorCode == 0) {
-    if ((*(int *)(local_8 + 0x130) != 0) && (*(byte **)(local_8 + 0xbd) != (byte *)0x0)) {
-      FUN_006ae110(*(byte **)(local_8 + 0xbd));
-      uVar3 = FUN_006b0060((uint *)0x0,*(uint **)(pAVar2 + 0x130));
-      *(undefined4 *)(pAVar2 + 0xbd) = uVar3;
+    if ((*(int *)(local_8 + 1) != 0) && (*(byte **)&local_8->field_0xbd != (byte *)0x0)) {
+      FUN_006ae110(*(byte **)&local_8->field_0xbd);
+      uVar3 = FUN_006b0060((uint *)0x0,*(uint **)(pAVar2 + 1));
+      *(undefined4 *)&pAVar2->field_0xbd = uVar3;
     }
     g_currentExceptionFrame = pIVar5;
     return;

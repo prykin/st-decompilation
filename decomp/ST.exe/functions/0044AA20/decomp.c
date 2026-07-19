@@ -27,7 +27,7 @@ undefined4 __thiscall STAllPlayersC::UnRegisterBlot(STAllPlayersC *this,uint par
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (errorCode == 0) {
-    uVar2 = GetObjPtr(local_c,0xffffffff,param_1,6);
+    uVar2 = GetObjPtr(local_c,0xffffffff,param_1,CASE_6);
     uVar4 = extraout_ECX;
     if (uVar2 != param_2) {
       RaiseInternalException

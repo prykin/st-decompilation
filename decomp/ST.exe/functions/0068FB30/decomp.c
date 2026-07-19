@@ -32,7 +32,7 @@ void __thiscall AiTactClassTy::BackFromRepair(AiTactClassTy *this,short param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 == 0) {
-    local_3c[1] = *(uint *)(local_8 + 300);
+    local_3c[1] = local_8->field_012C;
     local_3c[0] = 0x76;
     local_33 = param_1;
     local_31 = 0;

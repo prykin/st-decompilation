@@ -1,12 +1,17 @@
 
-undefined4 * __fastcall FUN_004d0920(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00797560 (store 004D093C)
+   Evidence: final_vptr=00797560; returns_this=true; calls_before=2; field_writes_after=1;
+   table_confidence=high */
+
+undefined4 * __thiscall TLOFakeTy::TLOFakeTy(TLOFakeTy *this,undefined4 *param_1)
 
 {
-  thunk_FUN_004158e0(param_1);
-  thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_007976c0;
-  *param_1 = &TLOFakeTyVTable;
-  *(undefined4 *)((int)param_1 + 0x24d) = 0;
-  return param_1;
+  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004ab810(&this->field_01D5);
+  this->field_01D5 = &PTR_LAB_007976c0;
+  this->vtable = &TLOFakeTyVTable;
+  this->field_024D = 0;
+  return &this->vtable;
 }
 

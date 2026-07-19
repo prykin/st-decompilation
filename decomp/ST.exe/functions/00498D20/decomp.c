@@ -1,5 +1,10 @@
 
-void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00498D20_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106
+    */
+
+void __thiscall FUN_00498d20(void *this,Global_sub_00498D20_param_1Enum param_1,int *param_2)
 
 {
   undefined4 *puVar1;
@@ -13,12 +18,12 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
   undefined4 local_8;
   
   switch(param_1) {
-  case 1:
+  case CASE_1:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0x89) = 1;
     piVar4 = (int *)((int)this + 0xdd);
     goto LAB_00499129;
-  case 2:
+  case CASE_2:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0x8d) = 1;
     piVar4 = (int *)((int)this + 0xe7);
@@ -43,11 +48,11 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
       }
     }
     break;
-  case 3:
+  case CASE_3:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0x91) = 1;
     return;
-  case 4:
+  case CASE_4:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0x95) = 1;
     *(int *)((int)this + 0x15c) = *param_2;
@@ -69,7 +74,7 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
       }
     }
     break;
-  case 5:
+  case CASE_5:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0x99) = 1;
     piVar4 = (int *)((int)this + 0x164);
@@ -95,7 +100,7 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
       }
     }
     break;
-  case 6:
+  case CASE_6:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0x9d) = 1;
     piVar4 = (int *)((int)this + 0x103);
@@ -122,12 +127,12 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
       return;
     }
     break;
-  case 7:
+  case CASE_7:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xa1) = 1;
     *(int *)((int)this + 0xff) = *param_2;
     return;
-  case 8:
+  case CASE_8:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xa5) = 1;
     piVar4 = (int *)((int)this + 0x10b);
@@ -168,7 +173,7 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
       }
     }
     break;
-  case 9:
+  case CASE_9:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xa9) = 1;
     piVar4 = (int *)((int)this + 0x137);
@@ -180,24 +185,24 @@ void __thiscall FUN_00498d20(void *this,undefined4 param_1,int *param_2)
     *(short *)piVar4 = (short)*param_2;
     *(undefined1 *)((int)piVar4 + 2) = *(undefined1 *)((int)param_2 + 2);
     return;
-  case 10:
+  case CASE_A:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xad) = 1;
     *(int *)((int)this + 0x156) = *param_2;
     *(short *)((int)this + 0x15a) = (short)param_2[1];
     return;
-  case 0xb:
+  case CASE_B:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xb1) = 1;
     *(int *)((int)this + 0x178) = *param_2;
     return;
-  case 0xc:
+  case CASE_C:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xb5) = 1;
     *(int *)((int)this + 0x17c) = *param_2;
     *(short *)((int)this + 0x180) = (short)param_2[1];
     return;
-  case 0xd:
+  case CASE_D:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xb9) = 1;
     piVar4 = (int *)((int)this + 0x182);
@@ -206,20 +211,20 @@ LAB_00499129:
     piVar4[1] = param_2[1];
     *(short *)(piVar4 + 2) = (short)param_2[2];
     return;
-  case 0xe:
+  case CASE_E:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xbd) = 1;
     *(int *)((int)this + 0x18c) = *param_2;
     *(short *)((int)this + 400) = (short)param_2[1];
     return;
-  case 0xf:
+  case CASE_F:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xc1) = 1;
     *(int *)((int)this + 0x192) = *param_2;
     *(short *)((int)this + 0x196) = (short)param_2[1];
     *(undefined1 *)((int)this + 0x198) = *(undefined1 *)((int)param_2 + 6);
     return;
-  case 0x10:
+  case CASE_10:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xc5) = 1;
     *(int *)((int)this + 0x1a3) = *param_2;
@@ -227,42 +232,42 @@ LAB_00499129:
     *(int *)((int)this + 0x1ab) = param_2[2];
     *(int *)((int)this + 0x1af) = param_2[3];
     return;
-  case 0x11:
+  case CASE_11:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xc9) = 1;
     *(int *)((int)this + 0x199) = *param_2;
     *(int *)((int)this + 0x19d) = param_2[1];
     *(short *)((int)this + 0x1a1) = (short)param_2[2];
     return;
-  case 0x12:
+  case CASE_12:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xcd) = 1;
     *(int *)((int)this + 0x1b3) = *param_2;
     *(short *)((int)this + 0x1b7) = (short)param_2[1];
     return;
-  case 0x13:
+  case CASE_13:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xd1) = 1;
     *(int *)((int)this + 0x1b9) = *param_2;
     *(short *)((int)this + 0x1bd) = (short)param_2[1];
     return;
-  case 0x14:
+  case CASE_14:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xd5) = 1;
     *(int *)((int)this + 0x1bf) = *param_2;
     *(short *)((int)this + 0x1c3) = (short)param_2[1];
     return;
-  case 0x15:
+  case CASE_15:
     *(undefined4 *)((int)this + 0x65) = 1;
     *(undefined4 *)((int)this + 0xd9) = 1;
     *(int *)((int)this + 0x1c5) = *param_2;
     return;
-  case 0x65:
+  case CASE_65:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x6d) = 1;
     *(char *)((int)this + 0x1c9) = (char)*param_2;
     return;
-  case 0x66:
+  case CASE_66:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x71) = 1;
     if (*(int *)((int)this + 0x1ca) == 0) {
@@ -271,7 +276,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ca),param_2);
     return;
-  case 0x67:
+  case CASE_67:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x75) = 1;
     if (*(int *)((int)this + 0x1ce) == 0) {
@@ -280,7 +285,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1ce),param_2);
     return;
-  case 0x68:
+  case CASE_68:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x79) = 1;
     if (*(int *)((int)this + 0x1d2) == 0) {
@@ -289,7 +294,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d2),param_2);
     return;
-  case 0x69:
+  case CASE_69:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x7d) = 1;
     if (*(int *)((int)this + 0x1d6) == 0) {
@@ -298,7 +303,7 @@ LAB_00499129:
     }
     Library::DKW::TBL::FUN_006ae1c0(*(uint **)((int)this + 0x1d6),param_2);
     return;
-  case 0x6a:
+  case CASE_6A:
     *(undefined4 *)((int)this + 0x61) = 1;
     *(undefined4 *)((int)this + 0x81) = 1;
     if (*(int *)((int)this + 0x1da) == 0) {

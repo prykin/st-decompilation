@@ -9,22 +9,22 @@ void __thiscall STBoatC::CancelLoading(STBoatC *this,int param_1)
   code *pcVar1;
   int iVar2;
   
-  iVar2 = *(int *)(this + 0x45d);
-  if ((((iVar2 == 0xf) || (iVar2 == 0xe)) && (*(int *)(this + 0x58e) == param_1)) &&
-     (*(int *)(this + 0x596) == 2)) {
-    *(undefined4 *)(this + 0x596) = 1;
-    *(undefined4 *)(this + 0x592) = 0;
+  iVar2 = this->field_045D;
+  if ((((iVar2 == 0xf) || (iVar2 == 0xe)) && (this->field_058E == param_1)) &&
+     (this->field_0596 == 2)) {
+    this->field_0596 = 1;
+    this->field_0592 = 0;
     return;
   }
   if (((iVar2 == 0xf) || (iVar2 == 0xe)) &&
-     ((*(int *)(this + 0x58e) == param_1 && (*(int *)(this + 0x596) == 3)))) {
-    iVar2 = *(int *)(this + 0x59a);
+     ((this->field_058E == param_1 && (this->field_0596 == 3)))) {
+    iVar2 = this->field_059A;
     if (((iVar2 == 0) || (iVar2 == 1)) || (iVar2 == 2)) {
-      *(undefined4 *)(this + 0x59a) = 9;
+      this->field_059A = 9;
       return;
     }
     if ((iVar2 == 3) || (iVar2 == 4)) {
-      *(undefined4 *)(this + 0x59a) = 5;
+      this->field_059A = 5;
       return;
     }
   }

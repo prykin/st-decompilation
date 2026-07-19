@@ -60,8 +60,9 @@ void __fastcall FUN_005f5440(int param_1)
                                   (short)((longlong)iVar4 * 0x28c1979 >> 0x3f));
             }
             if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-                ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,
-                                     iVar5,&local_10,&local_14), local_8 < 0 ||
+                ((thunk_FUN_00558c00(DAT_00802a88,
+                                     *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c)
+                                     ,iVar4,iVar5,&local_10,&local_14), local_8 < 0 ||
                  ((4 < local_8 || (local_10 < 0)))))) ||
                ((*(int *)((int)pvVar3 + 0x30) <= local_10 ||
                 ((((iVar5 = (&DAT_0079aed0)[local_8] + local_14, iVar5 < 0 ||

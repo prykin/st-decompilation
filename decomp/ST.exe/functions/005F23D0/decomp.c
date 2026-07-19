@@ -39,27 +39,30 @@ LAB_005f26af:
   else {
     if ((char)param_4 == '\x01') {
       if ((((((DAT_0080874d != -1) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-            ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar5,iVar4
-                                 ,&param_6,&param_3), pvVar2 = DAT_00802a88, -1 < param_6 &&
-             (((param_6 < *(int *)((int)pvVar1 + 0x30) &&
-               (iVar4 = param_3 + DAT_0079aed0, -1 < iVar4)) &&
-              (iVar4 < *(int *)((int)pvVar1 + 0x34))))))) &&
+            ((thunk_FUN_00558c00(DAT_00802a88,
+                                 *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                 iVar5,iVar4,&param_6,&param_3), pvVar2 = DAT_00802a88, -1 < param_6
+             && (((param_6 < *(int *)((int)pvVar1 + 0x30) &&
+                  (iVar4 = param_3 + DAT_0079aed0, -1 < iVar4)) &&
+                 (iVar4 < *(int *)((int)pvVar1 + 0x34))))))) &&
            ((*(int *)((int)pvVar1 + 0x4c) != 0 &&
             (*(char *)(iVar4 * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) + param_6
                       ) == '\0')))) && (DAT_0080874d != -1)) &&
          ((((*(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-            (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar5 + 1,
-                                param_2,&param_5,&local_10), pvVar1 = DAT_00802a88, -1 < param_5))
-           && ((param_5 < *(int *)((int)pvVar2 + 0x30) &&
-               (((local_10 = local_10 + DAT_0079aed0, -1 < local_10 &&
-                 (local_10 < *(int *)((int)pvVar2 + 0x34))) && (*(int *)((int)pvVar2 + 0x4c) != 0)))
-               ))) &&
-          (((*(char *)(local_10 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) +
-                      param_5) == '\0' && (DAT_0080874d != -1)) &&
-           (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))))) {
+            (thunk_FUN_00558c00(DAT_00802a88,
+                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                iVar5 + 1,param_2,&param_5,&local_10), pvVar1 = DAT_00802a88,
+            -1 < param_5)) &&
+           ((param_5 < *(int *)((int)pvVar2 + 0x30) &&
+            (((local_10 = local_10 + DAT_0079aed0, -1 < local_10 &&
+              (local_10 < *(int *)((int)pvVar2 + 0x34))) && (*(int *)((int)pvVar2 + 0x4c) != 0))))))
+          && (((*(char *)(local_10 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) +
+                         param_5) == '\0' && (DAT_0080874d != -1)) &&
+              (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))))) {
         iVar4 = param_2 + 1;
-        thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar5,iVar4,
-                           &local_14,&local_18);
+        thunk_FUN_00558c00(DAT_00802a88,
+                           *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar5,
+                           iVar4,&local_14,&local_18);
         iVar3 = param_1;
         pvVar2 = DAT_00802a88;
         if (((((-1 < local_14) && (local_14 < *(int *)((int)pvVar1 + 0x30))) &&
@@ -68,8 +71,9 @@ LAB_005f26af:
                 (*(char *)(local_18 * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) +
                           local_14) == '\0')) &&
                ((DAT_0080874d != -1 && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))))))) &&
-            ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),param_1 + 1
-                                 ,iVar4,&param_1,&local_1c), -1 < param_1 &&
+            ((thunk_FUN_00558c00(DAT_00802a88,
+                                 *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                 param_1 + 1,iVar4,&param_1,&local_1c), -1 < param_1 &&
              ((param_1 < *(int *)((int)pvVar2 + 0x30) &&
               (local_1c = DAT_0079aed0 + local_1c, -1 < local_1c)))))) &&
            ((local_1c < *(int *)((int)pvVar2 + 0x34) &&

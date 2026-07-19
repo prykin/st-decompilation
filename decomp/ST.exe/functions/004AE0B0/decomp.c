@@ -1,7 +1,11 @@
 
+/* [STSwitchEnumApplier] Switch target param_4 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004AE0B0_param_4Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94;CASE_61=97 */
+
 undefined4 __cdecl
-FUN_004ae0b0(int param_1,int param_2,int param_3,int param_4,int param_5,undefined4 *param_6,
-            int *param_7,int *param_8,int param_9,int *param_10)
+FUN_004ae0b0(int param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4Enum param_4,int param_5
+            ,undefined4 *param_6,int *param_7,int *param_8,int param_9,int *param_10)
 
 {
   int *piVar1;
@@ -130,11 +134,11 @@ LAB_004ae37e:
   }
 LAB_004ae41c:
   switch(param_4) {
-  case 0x38:
-  case 0x39:
-  case 0x4f:
-  case 0x5e:
-  case 0x61:
+  case CASE_38:
+  case CASE_39:
+  case CASE_4F:
+  case CASE_5E:
+  case CASE_61:
     local_c = 0;
     local_10 = thunk_FUN_004d85e0(param_1,param_2,param_3);
     if (local_10 != (int *)0x0) {
@@ -188,7 +192,7 @@ LAB_004ae41c:
         }
       }
     }
-    if ((param_4 < 0x54) || (0x5a < param_4)) {
+    if (((int)param_4 < 0x54) || (0x5a < (int)param_4)) {
       if (param_4 == 100) {
         iVar11 = *(int *)(&DAT_007f57f6 + param_5 * 0xa62);
         if ((iVar11 != 0) && (uVar17 = 0, 0 < *(int *)(iVar11 + 0xc))) {

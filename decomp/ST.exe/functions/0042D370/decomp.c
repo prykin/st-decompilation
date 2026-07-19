@@ -13,12 +13,12 @@ STAllPlayersC::SetActivityToObjs
   int *piVar3;
   int iVar4;
   uint uVar5;
-  undefined4 uVar6;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar6;
   
   uVar2 = param_1;
   if (0x19a < param_2) {
     if (param_2 == 0x1a4) {
-      piVar3 = (int *)GetObjPtr(this,param_1,param_4,5);
+      piVar3 = (int *)GetObjPtr(this,param_1,param_4,CASE_5);
       if (piVar3 == (int *)0x0) {
         return;
       }
@@ -26,11 +26,11 @@ STAllPlayersC::SetActivityToObjs
       return;
     }
     if (param_2 == 0x1ae) {
-      uVar6 = 3;
+      SVar6 = CASE_3;
     }
     else {
       if (param_2 != 0x1b8) goto LAB_0042d41b;
-      uVar6 = 6;
+      SVar6 = CASE_6;
     }
     goto LAB_0042d44c;
   }
@@ -44,7 +44,7 @@ LAB_0042d3b2:
     do {
       FUN_006acc70(param_3,uVar5,&param_1);
       if (((short)param_1 != -1) &&
-         (piVar3 = (int *)GetObjPtr(this,uVar2,param_1,1), piVar3 != (int *)0x0)) {
+         (piVar3 = (int *)GetObjPtr(this,uVar2,param_1,CASE_1), piVar3 != (int *)0x0)) {
         (**(code **)(*piVar3 + 0xe8))(1);
       }
       uVar5 = uVar5 + 1;
@@ -53,9 +53,9 @@ LAB_0042d3b2:
   }
   if (param_2 < 0x5b) {
     if (param_2 == 0x5a) {
-      uVar6 = 4;
+      SVar6 = CASE_4;
 LAB_0042d44c:
-      piVar3 = (int *)GetObjPtr(this,param_1,param_4,uVar6);
+      piVar3 = (int *)GetObjPtr(this,param_1,param_4,SVar6);
       if (piVar3 == (int *)0x0) {
         return;
       }
@@ -68,7 +68,7 @@ LAB_0042d44c:
     if (param_2 == 0x3c) goto LAB_0042d3b2;
   }
   else if (param_2 == 0x172) {
-    uVar6 = 2;
+    SVar6 = CASE_2;
     goto LAB_0042d44c;
   }
 LAB_0042d41b:

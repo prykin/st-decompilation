@@ -39,7 +39,7 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
   iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pWVar3 = local_8;
   if (iVar5 == 0) {
-    if (*(int *)(local_8 + 0x1a64) == 0) {
+    if (*(int *)&local_8[0x42].field_0x5a == 0) {
       StartSystemTy::CreateBinDesc(DAT_0081176c);
       StartSystemTy::CreateChatView(DAT_0081176c);
       puVar6 = local_8d8;
@@ -49,14 +49,14 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       }
       local_8d8[0] = 1;
       local_8d8[1] = 9;
-      local_8d8[2] = *(undefined4 *)(DAT_0081176c + 0x34);
+      local_8d8[2] = DAT_0081176c->field_0034;
       local_8d8[3] = 0xcb;
       local_8d8[4] = 0x23f;
-      local_8d8[5] = *(undefined4 *)(*(int *)(DAT_0081176c + 0x682) + 4);
-      local_8c0 = *(undefined4 *)(*(int *)(DAT_0081176c + 0x682) + 8);
+      local_8d8[5] = *(undefined4 *)(DAT_0081176c->field_0682 + 4);
+      local_8c0 = *(undefined4 *)(DAT_0081176c->field_0682 + 8);
       local_8bc = 0x104;
-      local_8b8 = *(undefined4 *)(DAT_0081176c + 0x686);
-      piVar1 = *(int **)(pWVar3 + 0xc);
+      local_8b8 = DAT_0081176c->field_0686;
+      piVar1 = *(int **)&pWVar3->field_0xc;
       local_74 = 0x100;
       local_88c = piVar1[5];
       local_888 = 0;
@@ -64,8 +64,8 @@ void __thiscall WaitTy::CreateCtrls(WaitTy *this)
       local_84c = piVar1[5];
       local_848 = 0;
       local_844 = 0xc0a2;
-      (**(code **)(*piVar1 + 8))(6,DAT_0081176c + 0x54c,0,local_8d8,0);
-      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+      (**(code **)(*piVar1 + 8))(6,&DAT_0081176c->field_054C,0,local_8d8,0);
+      Library::DKW::DDX::FUN_006b3430(DAT_008075a8,DAT_0081176c->field_0554);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

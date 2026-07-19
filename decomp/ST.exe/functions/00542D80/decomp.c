@@ -4,31 +4,33 @@ void FUN_00542d80(void)
 {
   code *pcVar1;
   int errorCode;
-  void *this;
+  InterSystemC *this;
   int iVar2;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
   undefined4 local_64 [16];
-  STMessage local_24;
+  undefined1 local_24 [16];
+  undefined4 local_14;
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff98;
   errorCode = Library::MSVCRT::__setjmp3(local_64,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
-    this = (void *)Library::MSVCRT::FUN_0072e530(0x34);
-    if (this == (void *)0x0) {
-      DAT_00802a28 = (SystemClassTy *)0x0;
+    this = (InterSystemC *)Library::MSVCRT::FUN_0072e530(0x34);
+    if (this == (InterSystemC *)0x0) {
+      DAT_00802a28 = (InterSystemC *)0x0;
     }
     else {
-      DAT_00802a28 = (SystemClassTy *)thunk_FUN_00542440(this,DAT_00806728);
+      DAT_00802a28 = (InterSystemC *)InterSystemC::InterSystemC(this,DAT_00806728);
     }
-    DAT_00802a28[1].vtable = (SystemClassTyVTable *)0x0;
-    (*DAT_00802a28->vtable->InitSystem)(DAT_00802a28);
-    AppClassTy::AddChildSystem((AppClassTy *)&DAT_00807620,DAT_0081163c,DAT_00802a28,0);
-    InterSystemC::CreateInterfObjects((InterSystemC *)DAT_00802a28);
-    local_24.id = MESS_SHARED_0005;
-    (*DAT_00802a28->vtable->GetMessage)(DAT_00802a28,&local_24);
-    DAT_00802a28[1].vtable = (SystemClassTyVTable *)0x1;
+    *(undefined4 *)&DAT_00802a28->field_0x20 = 0;
+    (*DAT_00802a28->vtable->InitSystem)((SystemClassTy *)DAT_00802a28);
+    AppClassTy::AddChildSystem
+              ((AppClassTy *)&DAT_00807620,DAT_0081163c,(SystemClassTy *)DAT_00802a28,0);
+    InterSystemC::CreateInterfObjects(DAT_00802a28);
+    local_14 = 5;
+    (*DAT_00802a28->vtable->GetMessage)(DAT_00802a28,(int)local_24);
+    *(undefined4 *)&DAT_00802a28->field_0x20 = 1;
     g_currentExceptionFrame = pIVar3;
     return;
   }

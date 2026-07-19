@@ -1,5 +1,11 @@
 
-undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_3,uint param_4)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_0061BDB0_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+
+undefined4 __thiscall
+FUN_0061bdb0(void *this,Global_sub_0061BDB0_param_1Enum param_1,int param_2,int param_3,uint param_4
+            )
 
 {
   short sVar1;
@@ -15,7 +21,7 @@ undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_
   iVar5 = param_2;
   local_8 = 0;
   switch(param_1) {
-  case 0:
+  case CASE_0:
     iVar5 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),
                          *(int *)((int)this + 0xa7),param_2,param_3,param_4);
     *(undefined4 *)((int)this + 0x10f) = 3;
@@ -31,7 +37,7 @@ undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_
     *(undefined4 *)((int)this + 0xd3) = *(undefined4 *)((int)this + 0xa3);
     *(undefined4 *)((int)this + 0x11b) = *(undefined4 *)(DAT_00802a38 + 0xe4);
     return 1;
-  case 1:
+  case CASE_1:
     if ((*(char *)((int)this + 0x14b) != '\0') && (*(void **)((int)this + 0x7d) != (void *)0x0)) {
       thunk_FUN_00618900(*(void **)((int)this + 0x7d),*(int *)((int)this + 0x145),0);
       *(undefined1 *)((int)this + 0x14b) = 0;
@@ -56,7 +62,7 @@ undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_
     FUN_006e3310(DAT_00807598,
                  (*(int *)((int)this + 0x9f) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9,
                  (int *)((*(int *)((int)this + 0xa3) * *(int *)((int)DAT_00807598 + 0x380)) / 0xc9),
-                 iVar5,&param_1);
+                 iVar5,(int *)&param_1);
     lVar6 = Library::MSVCRT::__ftol();
     if (*(int *)((int)this + 0xd7) < (int)(short)lVar6) {
       *(int *)((int)this + 0xd7) = (int)(short)lVar6;
@@ -68,7 +74,7 @@ undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_
       goto LAB_0061c0e4;
     }
     break;
-  case 2:
+  case CASE_2:
     iVar5 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),
                          *(int *)((int)this + 0xa7),param_2,param_3,param_4);
     *(undefined4 *)((int)this + 0x10f) = 0;
@@ -88,7 +94,7 @@ undefined4 __thiscall FUN_0061bdb0(void *this,int param_1,int param_2,int param_
 LAB_0061c0e4:
     *(undefined4 *)((int)this + 0x11b) = *(undefined4 *)(DAT_00802a38 + 0xe4);
     return 1;
-  case 3:
+  case CASE_3:
     param_3 = FUN_006acf0d(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),
                            *(int *)((int)this + 0xa7),param_2,param_3,param_4);
     param_2 = FUN_006aced8(*(int *)((int)this + 0x9f),*(int *)((int)this + 0xa3),iVar5,iVar4);

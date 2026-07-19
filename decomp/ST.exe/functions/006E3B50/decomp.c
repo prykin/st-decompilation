@@ -19,8 +19,8 @@ int __thiscall AppClassTy::PostNextMessage(AppClassTy *this,undefined4 *param_1)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    if (*(uint **)(local_8 + 0x2c) != (uint *)0x0) {
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x2c),param_1);
+    if ((uint *)local_8->field_002C != (uint *)0x0) {
+      Library::DKW::TBL::FUN_006ae1c0((uint *)local_8->field_002C,param_1);
     }
     g_currentExceptionFrame = pIVar4;
     return 0;

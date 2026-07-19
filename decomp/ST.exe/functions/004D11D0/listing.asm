@@ -1,4 +1,4 @@
-FUN_004d11d0:
+TLOEmbryoTy::Create:
 004D11D0  55                        PUSH EBP
 004D11D1  8B EC                     MOV EBP,ESP
 004D11D3  81 EC C8 00 00 00         SUB ESP,0xc8

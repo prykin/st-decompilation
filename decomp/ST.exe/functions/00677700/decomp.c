@@ -1,5 +1,9 @@
 
-int __cdecl FUN_00677700(int param_1,undefined4 param_2)
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00677700_param_2Enum. Cases:
+   CASE_DC=220;CASE_DD=221;CASE_DE=222;CASE_DF=223;CASE_E2=226;CASE_E3=227 */
+
+int __cdecl FUN_00677700(int param_1,Global_sub_00677700_param_2Enum param_2)
 
 {
   int iVar1;
@@ -12,23 +16,23 @@ int __cdecl FUN_00677700(int param_1,undefined4 param_2)
   }
   cVar3 = (char)param_1;
   switch(param_2) {
-  case 0xdc:
+  case CASE_DC:
     iVar1 = thunk_FUN_004d8870(cVar3);
     return iVar1;
-  case 0xdd:
+  case CASE_DD:
     iVar1 = thunk_FUN_004d89b0(cVar3);
     return iVar1;
-  case 0xde:
+  case CASE_DE:
     iVar1 = thunk_FUN_004d8af0(cVar3);
     return iVar1;
-  case 0xdf:
+  case CASE_DF:
     iVar1 = thunk_FUN_004b72b0(cVar3);
     iVar2 = thunk_FUN_004b71c0(cVar3);
     return iVar2 - iVar1;
-  case 0xe2:
+  case CASE_E2:
     iVar1 = thunk_FUN_004e4410(param_1);
     return iVar1;
-  case 0xe3:
+  case CASE_E3:
     iVar1 = thunk_FUN_004e41c0(param_1);
   }
   return iVar1;

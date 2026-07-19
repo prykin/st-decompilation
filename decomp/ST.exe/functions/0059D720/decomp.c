@@ -32,7 +32,7 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
   FSGSTy *local_c;
   int local_8;
   
-  pbVar3 = *(byte **)(this + 0x1b0c);
+  pbVar3 = (byte *)this->field_1B0C;
   if (pbVar3 != (byte *)0x0) {
     pbVar7 = &DAT_00807e1d;
     puVar8 = local_8dc;
@@ -64,16 +64,16 @@ LAB_0059d780:
     if (iVar6 == 0) {
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
       this_00 = local_c;
-      *(uint **)(local_c + 0x1af8) = puVar4;
+      *(uint **)&local_c->field_0x1af8 = puVar4;
       Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-      *(uint **)(this_00 + 0x1afc) = puVar4;
+      *(uint **)&this_00->field_0x1afc = puVar4;
       Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-      *(uint **)(this_00 + 0x1b00) = puVar4;
+      *(uint **)&this_00->field_0x1b00 = puVar4;
       Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar4 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-      *(uint **)(this_00 + 0x1b04) = puVar4;
+      *(uint **)&this_00->field_0x1b04 = puVar4;
       Library::DKW::TBL::FUN_006b5aa0((int)puVar4,&DAT_008016a0);
       puVar8 = local_8dc;
       for (iVar6 = 0x223; iVar5 = local_8, iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -85,9 +85,9 @@ LAB_0059d780:
       if (local_8 != 0) {
         local_8dc[1] = 0x99;
       }
-      local_8dc[2] = *(undefined4 *)(this_00 + 0x1a73);
-      local_8dc[8] = *(undefined4 *)(this_00 + 0x1af8);
-      local_8b0 = *(undefined4 *)(this_00 + 8);
+      local_8dc[2] = *(undefined4 *)&this_00->field_0x1a73;
+      local_8dc[8] = *(undefined4 *)&this_00->field_0x1af8;
+      local_8b0 = *(undefined4 *)&this_00->field_0x8;
       local_68 = 2;
       local_8ac = 2;
       local_88c = 2;
@@ -101,27 +101,27 @@ LAB_0059d780:
       local_64 = 0x6955;
       local_890 = local_8b0;
       local_6c = local_8b0;
-      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ad8,0,local_8dc,0);
-      local_8dc[8] = *(undefined4 *)(this_00 + 0x1afc);
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ad8,0,local_8dc,0);
+      local_8dc[8] = *(undefined4 *)&this_00->field_0x1afc;
       local_8dc[3] = 0x15e;
-      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1adc,0,local_8dc,0);
-      local_8dc[8] = *(undefined4 *)(this_00 + 0x1b00);
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1adc,0,local_8dc,0);
+      local_8dc[8] = *(undefined4 *)&this_00->field_0x1b00;
       local_8dc[3] = 0x1ea;
-      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ae0,0,local_8dc,0);
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ae0,0,local_8dc,0);
       local_8dc[1] = 200;
       if (iVar5 != 0) {
         local_8dc[1] = 0xcc;
       }
-      local_8dc[8] = *(undefined4 *)(this_00 + 0x1b04);
+      local_8dc[8] = *(undefined4 *)&this_00->field_0x1b04;
       local_8dc[3] = 0xd2;
       local_8dc[4] = 0xdd;
       local_8dc[5] = 0x17c;
       local_8dc[6] = 0x4b;
       local_888 = 0x6981;
-      (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ae4,0,local_8dc,0);
-      *(undefined4 *)(this_00 + 0x2d) = 0x61;
-      *(undefined4 *)(this_00 + 0x35) = 0;
-      FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ae4,0,local_8dc,0);
+      *(undefined4 *)&this_00->field_0x2d = 0x61;
+      *(undefined4 *)&this_00->field_0x35 = 0;
+      FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
       g_currentExceptionFrame = local_50.previous;
       return;
     }

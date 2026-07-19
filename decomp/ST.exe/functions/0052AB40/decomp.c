@@ -90,7 +90,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
     do {
       uVar9 = local_1c;
       if (DAT_00802a58 != (cLoadingTy *)0x0) {
-        cLoadingTy::SetState(DAT_00802a58,1,local_14,(char *)0x0);
+        cLoadingTy::SetState(DAT_00802a58,CASE_1,local_14,(char *)0x0);
       }
       local_14 = local_14 + 1;
       local_18 = (int)*param_1;
@@ -158,7 +158,7 @@ void __cdecl FUN_0052ab40(short *param_1,int *param_2,uint param_3,byte *param_4
     RaiseInternalException(iVar7,DAT_007ed77c,s_E____titans_Andrey_minimap_cpp_007c6f00,0x42);
   }
   if (DAT_00802a58 != (cLoadingTy *)0x0) {
-    cLoadingTy::SetState(DAT_00802a58,2,0,(char *)0x0);
+    cLoadingTy::SetState(DAT_00802a58,CASE_2,0,(char *)0x0);
   }
   return;
 }

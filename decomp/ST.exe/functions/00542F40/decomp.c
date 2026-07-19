@@ -25,11 +25,11 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
   undefined4 *puVar14;
   InternalExceptionFrame local_50;
   BITMAPINFO *local_c;
-  SystemClassTy *local_8;
+  InterSystemC *local_8;
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_8 = (SystemClassTy *)this;
+  local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 != 0) {
     g_currentExceptionFrame = local_50.previous;
@@ -43,7 +43,7 @@ undefined4 __thiscall InterSystemC::GetMessage(InterSystemC *this,int param_1)
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_tintersys_cpp_007c7be8,0x11f);
     return 0xffff;
   }
-  SystemClassTy::GetMessage(local_8,param_1);
+  SystemClassTy::GetMessage((SystemClassTy *)local_8,param_1);
   uVar3 = *(uint *)(param_1 + 0x10);
   if (uVar3 < 0xb904) {
     if (uVar3 == 0xb903) {
@@ -140,7 +140,8 @@ switchD_00543107_caseD_b904:
     iVar2 = 1;
     pCVar4 = thunk_FUN_00571240(pcVar8,0);
     pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-    pBVar7 = (BITMAPINFO *)FUN_00709af0(DAT_00806794,1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
+    pBVar7 = (BITMAPINFO *)
+             FUN_00709af0(DAT_00806794,CASE_1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
     iVar2 = piVar11[1];
     iVar13 = *piVar11;
     cVar9 = '\x01';
@@ -187,7 +188,8 @@ LAB_00543291:
       iVar2 = 1;
       pCVar4 = thunk_FUN_00571240(s_BUT_OHELP_007c7c90,0);
       pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-      pBVar7 = (BITMAPINFO *)FUN_00709af0(DAT_00806794,6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
+      pBVar7 = (BITMAPINFO *)
+               FUN_00709af0(DAT_00806794,CASE_6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
       iVar13 = *piVar11;
       iVar2 = piVar11[1];
       cVar9 = '\x06';

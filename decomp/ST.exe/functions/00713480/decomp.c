@@ -1,12 +1,18 @@
 
 /* Recovered from embedded debug metadata:
    E:\Ourlib\mfcfnt.cpp
-   ccFntTy::CreateTypeSSpr */
+   ccFntTy::CreateTypeSSpr
+   
+   [STSwitchEnumApplier] Switch target param_4 uses
+   /SubmarineTitans/Recovered/Enums/ccFntTy_CreateTypeSSpr_param_4Enum. Cases:
+   CASE_FFFFFFF9=4294967289;CASE_FFFFFFFC=4294967292;CASE_FFFFFFFD=4294967293;CASE_FFFFFFFE=4294967294
+    */
 
 undefined4 * __thiscall
 ccFntTy::CreateTypeSSpr
-          (ccFntTy *this,uint *param_1,int param_2,int param_3,uint param_4,uint param_5,int param_6
-          ,int param_7,int param_8)
+          (ccFntTy *this,uint *param_1,int param_2,int param_3,
+          ccFntTy_CreateTypeSSpr_param_4Enum param_4,uint param_5,int param_6,int param_7,
+          int param_8)
 
 {
   char cVar1;
@@ -14,7 +20,7 @@ ccFntTy::CreateTypeSSpr
   code *pcVar3;
   ccFntTy *pcVar4;
   size_t sVar5;
-  uint uVar6;
+  ccFntTy_CreateTypeSSpr_param_4Enum cVar6;
   int iVar7;
   int iVar8;
   undefined4 *puVar9;
@@ -46,7 +52,7 @@ ccFntTy::CreateTypeSSpr
   int local_24;
   int local_20;
   uint *local_1c;
-  uint local_18;
+  ccFntTy_CreateTypeSSpr_param_4Enum local_18;
   size_t local_14;
   undefined4 *local_10;
   uint *local_c;
@@ -104,7 +110,7 @@ ccFntTy::CreateTypeSSpr
   pcVar4[0x9e] = DAT_007cc854;
   local_40 = FUN_00711370(pcVar4,param_1);
   iVar8 = FUN_007113e0(pcVar4,param_1);
-  iVar7 = (((int)param_4 < 1) - 1 & param_4) + local_40;
+  iVar7 = (((int)param_4 < 1) - ~CASE_FFFFFFFE & param_4) + local_40;
   if (local_20 < iVar7) {
     local_20 = iVar7;
   }
@@ -115,8 +121,8 @@ ccFntTy::CreateTypeSSpr
   if (((int)local_28 < 0) && (local_28 = (local_38 - iVar8) / 2, (int)local_28 < 0)) {
     local_28 = 0;
   }
-  if (((local_18 == 0xfffffffb) || (local_18 == 0xfffffffa)) || (local_18 == 0xfffffff9)) {
-    local_18 = local_18 + 3;
+  if (((local_18 == 0xfffffffb) || (local_18 == 0xfffffffa)) || (local_18 == CASE_FFFFFFF9)) {
+    local_18 = local_18 + ~CASE_FFFFFFFC;
   }
   if ((int)local_18 < -7) {
     local_18 = 0xffffffff;
@@ -147,7 +153,7 @@ ccFntTy::CreateTypeSSpr
                  puVar9[2];
       }
       puVar9 = (undefined4 *)FUN_006b4fa0((int)puVar9);
-      uVar6 = local_18;
+      cVar6 = local_18;
       puVar11 = local_1c;
       uVar13 = local_28;
       sVar5 = local_3c;
@@ -289,10 +295,10 @@ ccFntTy::CreateTypeSSpr
         iVar7 = -1;
         local_24 = -1;
         switch(param_4) {
-        case 0xfffffff9:
+        case CASE_FFFFFFF9:
           local_24 = local_40;
           break;
-        case 0xfffffffc:
+        case CASE_FFFFFFFC:
           puVar11 = Library::MSVCRT::FUN_00730590(puVar16,&DAT_007c8ff4);
           if (puVar11 != (uint *)0x0) {
             local_5 = (undefined1)*puVar11;
@@ -305,7 +311,7 @@ ccFntTy::CreateTypeSSpr
           }
           local_24 = local_40;
           break;
-        case 0xfffffffd:
+        case CASE_FFFFFFFD:
           puVar11 = Library::MSVCRT::FUN_00730590(puVar16,&DAT_007c8ff4);
           if (puVar11 != (uint *)0x0) {
             local_5 = (undefined1)*puVar11;
@@ -317,7 +323,7 @@ ccFntTy::CreateTypeSSpr
             *(undefined1 *)puVar11 = local_5;
           }
           break;
-        case 0xfffffffe:
+        case CASE_FFFFFFFE:
           puVar11 = Library::MSVCRT::FUN_00730590(puVar16,&DAT_007c8ff4);
           if (puVar11 != (uint *)0x0) {
             local_5 = (undefined1)*puVar11;
@@ -337,11 +343,11 @@ ccFntTy::CreateTypeSSpr
         }
         if (local_2c == *(short *)((int)local_10 + 0x23) + -2) {
           *(int *)(pcVar4 + 0x82) = param_7;
-          WrTxt(pcVar4,param_1,uVar6,uVar13,param_7,-1,-1);
+          WrTxt(pcVar4,param_1,cVar6,uVar13,param_7,-1,-1);
         }
         if (local_2c == *(short *)((int)local_10 + 0x23) + -1) {
           *(int *)(pcVar4 + 0x82) = param_8;
-          WrTxt(pcVar4,param_1,uVar6,uVar13,param_8,-1,-1);
+          WrTxt(pcVar4,param_1,cVar6,uVar13,param_8,-1,-1);
         }
         *(undefined4 *)(pcVar4 + 0x82) = 0xffffffff;
       }

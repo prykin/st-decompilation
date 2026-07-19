@@ -1,61 +1,67 @@
 
-undefined4 * __thiscall FUN_005da610(void *this,undefined4 param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079C1E8 (store 005DA668)
+   Evidence: final_vptr=0079C1E8; returns_this=true; calls_before=7; field_writes_after=31;
+   table_confidence=high */
+
+undefined4 * __thiscall StartSystemTy::StartSystemTy(StartSystemTy *this,undefined4 param_1)
 
 {
   int iVar1;
+  undefined4 *unaff_EDI;
   undefined4 *puVar2;
   
-  FUN_006e51c0(this,param_1,0x200);
-  FUN_00715820((undefined4 *)((int)this + 0x2f8));
-  FUN_00715820((undefined4 *)((int)this + 0x38d));
-  FUN_00715820((undefined4 *)((int)this + 0x41e));
-  FUN_00715820((undefined4 *)((int)this + 0x4af));
-  FUN_00715820((undefined4 *)((int)this + 0x55c));
-  FUN_00715820((undefined4 *)((int)this + 0x5ed));
-  *(StartSystemTyVTable **)this = &StartSystemTyVTable;
+  SystemClassTy::SystemClassTy((SystemClassTy *)this,param_1,0x200);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x2f8,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x38d,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x41e,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x4af,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x55c,unaff_EDI);
+  SpriteClassTy::SpriteClassTy((SpriteClassTy *)&this->field_0x5ed,unaff_EDI);
+  this->vtable = &StartSystemTyVTable;
   DAT_0081176c = this;
-  *(undefined4 *)((int)this + 0x28) = DAT_00807332;
-  *(undefined1 *)((int)this + 0x2ea) = 1;
-  *(undefined1 *)((int)this + 0x2eb) = 1;
-  *(undefined4 *)((int)this + 0x2e6) = 0;
-  *(undefined4 *)((int)this + 0x20) = 0;
-  *(undefined4 *)((int)this + 0x2c) = 0;
-  *(undefined4 *)((int)this + 0x38) = 0;
-  *(undefined4 *)((int)this + 0x34) = 0;
-  *(undefined4 *)((int)this + 0x30) = 0;
-  *(undefined4 *)((int)this + 0x2f4) = 0;
-  *(undefined4 *)((int)this + 0x2ec) = 0xffffffff;
-  *(undefined4 *)((int)this + 0x2f0) = 0;
-  *(undefined4 *)((int)this + 0x389) = 0;
-  *(undefined4 *)((int)this + 0x540) = 0xffffffff;
-  *(undefined4 *)((int)this + 0x544) = 0;
-  *(undefined4 *)((int)this + 0x548) = 0;
-  *(undefined4 *)((int)this + 0x550) = 0;
-  *(undefined4 *)((int)this + 0x54c) = 0;
-  *(undefined4 *)((int)this + 0x558) = 0xffffffff;
-  *(undefined4 *)((int)this + 0x554) = 0xffffffff;
-  *(undefined4 *)((int)this + 0x682) = 0;
-  *(undefined4 *)((int)this + 0x67e) = 0;
-  *(undefined4 *)((int)this + 0x686) = 0;
-  puVar2 = (undefined4 *)((int)this + 0x244);
+  this->field_0028 = DAT_00807332;
+  this->field_02EA = 1;
+  this->field_02EB = 1;
+  this->field_02E6 = 0;
+  this->field_0020 = 0;
+  this->field_002C = 0;
+  this->field_0038 = 0;
+  this->field_0034 = 0;
+  this->field_0030 = 0;
+  this->field_02F4 = 0;
+  this->field_02EC = 0xffffffff;
+  this->field_02F0 = 0;
+  this->field_0389 = 0;
+  this->field_0540 = 0xffffffff;
+  this->field_0544 = 0;
+  this->field_0548 = 0;
+  this->field_0550 = 0;
+  this->field_054C = 0;
+  this->field_0558 = 0xffffffff;
+  this->field_0554 = 0xffffffff;
+  this->field_0682 = 0;
+  this->field_067E = 0;
+  this->field_0686 = 0;
+  puVar2 = (undefined4 *)&this->field_0x244;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
-  puVar2 = (undefined4 *)((int)this + 0x25c);
+  puVar2 = (undefined4 *)&this->field_0x25c;
   for (iVar1 = 0x22; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
   *(undefined2 *)puVar2 = 0;
-  *(undefined4 *)((int)this + 0x68a) = 0;
-  *(undefined4 *)((int)this + 0x68e) = 0;
-  *(undefined4 *)((int)this + 0x692) = 0xffffffff;
-  *(undefined4 *)((int)this + 0x696) = 0;
-  *(undefined4 *)((int)this + 0x69a) = 0;
-  *(undefined4 *)((int)this + 0x6b2) = 0;
-  *(undefined4 *)((int)this + 0x6ae) = 0;
-  *(undefined4 *)((int)this + 0x69e) = 0;
-  return this;
+  this->field_068A = 0;
+  this->field_068E = 0;
+  this->field_0692 = 0xffffffff;
+  this->field_0696 = 0;
+  this->field_069A = 0;
+  this->field_06B2 = 0;
+  this->field_06AE = 0;
+  this->field_069E = 0;
+  return &this->vtable;
 }
 

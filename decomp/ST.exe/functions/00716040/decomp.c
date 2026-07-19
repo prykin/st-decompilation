@@ -1,12 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\Ourlib\Sprite.cpp
-   SpriteClassTy::SetImages */
+   SpriteClassTy::SetImages
+   
+   [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/SpriteClassTy_SetImages_param_2Enum. Cases:
+   CASE_7=7;CASE_8=8;CASE_1E=30;CASE_81=129 */
 
 undefined4 __thiscall
 SpriteClassTy::SetImages
-          (SpriteClassTy *this,undefined4 param_1,SpriteClassTy param_2,uint param_3,char *param_4,
-          uint param_5,int param_6)
+          (SpriteClassTy *this,undefined4 param_1,SpriteClassTy_SetImages_param_2Enum param_2,
+          uint param_3,char *param_4,uint param_5,int param_6)
 
 {
   char cVar1;
@@ -20,18 +24,17 @@ SpriteClassTy::SetImages
   uint uVar9;
   uint uVar10;
   undefined4 unaff_ESI;
-  SpriteClassTy *pSVar11;
   void *unaff_EDI;
-  SpriteClassTy *pSVar12;
+  char *pcVar11;
   InternalExceptionFrame local_50;
   SpriteClassTy *local_c;
   undefined4 local_8;
   
   local_8 = 0;
-  if (*(int *)(this + 4) == -1) {
+  if (this->field_0004 == -1) {
     return 0;
   }
-  if (this[0x4c] == (SpriteClassTy)0x80) {
+  if (this->field_004C == -0x80) {
     return 0;
   }
   local_50.previous = g_currentExceptionFrame;
@@ -40,87 +43,87 @@ SpriteClassTy::SetImages
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_c;
   if (iVar4 == 0) {
-    *(undefined4 *)(local_c + 0x4d) = 0;
-    if (*(int *)(local_c + 0x61) == 0) {
-      switch(local_c[0x4c]) {
-      case (SpriteClassTy)0x7:
-      case (SpriteClassTy)0x81:
-        if (*(int *)(local_c + 0x51) != 0) {
-          FUN_00725e30((int *)(local_c + 0x51));
+    local_c->field_004D = 0;
+    if (local_c->field_0061 == 0) {
+      switch(local_c->field_004C) {
+      case 7:
+      case 0x81:
+        if (local_c->field_0051 != 0) {
+          FUN_00725e30(&local_c->field_0051);
         }
         break;
-      case (SpriteClassTy)0x8:
-        if (*(int *)(local_c + 0x59) != 0) {
-          FUN_00726260((undefined4 *)(local_c + 0x59));
+      case 8:
+        if (local_c->field_0059 != 0) {
+          FUN_00726260(&local_c->field_0059);
         }
         break;
-      case (SpriteClassTy)0x1e:
-        if (*(int *)(local_c + 0x55) != 0) {
-          FUN_00726bd0((int *)(local_c + 0x55));
+      case 0x1e:
+        if (local_c->field_0055 != 0) {
+          FUN_00726bd0(&local_c->field_0055);
         }
       }
     }
     switch(param_2) {
-    case (SpriteClassTy)0x7:
-    case (SpriteClassTy)0x81:
+    case CASE_7:
+    case CASE_81:
       pcVar5 = FUN_00725c60(param_1,param_4,0,param_6);
-      *(char **)(pSVar3 + 0x51) = pcVar5;
+      pSVar3->field_0051 = pcVar5;
       if (pcVar5 == (char *)0x0) {
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xe4);
       }
-      iVar4 = *(int *)(pSVar3 + 0x51);
+      iVar4 = pSVar3->field_0051;
       Library::DKW::DDX::FUN_006b2930
-                (*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,
+                ((int *)pSVar3->field_0048,pSVar3->field_0004,0,
                  (undefined4 *)(int)*(short *)(iVar4 + 0x23),(int *)(iVar4 + 0x2d),0x8000000,
                  (int)*(short *)(iVar4 + 0x29),(int)*(short *)(iVar4 + 0x2b));
-      iVar4 = *(int *)(pSVar3 + 0x51);
-      *(int *)(pSVar3 + 0xc) = (int)*(short *)(iVar4 + 0x23);
-      *(int *)(pSVar3 + 0x24) = (int)*(short *)(iVar4 + 0x29);
-      *(int *)(pSVar3 + 0x28) = (int)*(short *)(iVar4 + 0x2b);
+      iVar4 = pSVar3->field_0051;
+      pSVar3->field_000C = (int)*(short *)(iVar4 + 0x23);
+      pSVar3->field_0024 = (int)*(short *)(iVar4 + 0x29);
+      pSVar3->field_0028 = (int)*(short *)(iVar4 + 0x2b);
       break;
-    case (SpriteClassTy)0x8:
+    case CASE_8:
       psVar6 = FUN_00725f50(param_1,param_4,param_3,0,param_6);
-      *(short **)(pSVar3 + 0x59) = psVar6;
+      pSVar3->field_0059 = psVar6;
       if (psVar6 == (short *)0x0) {
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xf8);
       }
-      psVar6 = *(short **)(pSVar3 + 0x59);
+      psVar6 = (short *)pSVar3->field_0059;
       Library::DKW::DDX::FUN_006b2930
-                (*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),(int)*psVar6,
+                ((int *)pSVar3->field_0048,pSVar3->field_0004,(int)*psVar6,
                  (undefined4 *)(int)psVar6[1],(int *)(psVar6 + 6),0x4000000,(int)psVar6[2],
                  (int)psVar6[3]);
-      psVar6 = *(short **)(pSVar3 + 0x59);
-      *(int *)(pSVar3 + 0xc) = (int)psVar6[1];
-      *(int *)(pSVar3 + 0x18) = (int)*psVar6;
-      *(int *)(pSVar3 + 0x24) = (int)psVar6[2];
-      *(int *)(pSVar3 + 0x28) = (int)psVar6[3];
-      *(uint *)(pSVar3 + 0x4d) = param_3;
+      psVar6 = (short *)pSVar3->field_0059;
+      pSVar3->field_000C = (int)psVar6[1];
+      pSVar3->field_0018 = (int)*psVar6;
+      pSVar3->field_0024 = (int)psVar6[2];
+      pSVar3->field_0028 = (int)psVar6[3];
+      pSVar3->field_004D = param_3;
       break;
-    case (SpriteClassTy)0x1e:
+    case CASE_1E:
       psVar6 = FUN_00726a80(param_1,param_4,0,param_6);
-      *(short **)(pSVar3 + 0x55) = psVar6;
+      pSVar3->field_0055 = psVar6;
       if (psVar6 == (short *)0x0) {
         RaiseInternalException(0,DAT_007ed77c,s_E__Ourlib_Sprite_cpp_007f0454,0xee);
       }
-      psVar6 = *(short **)(pSVar3 + 0x55);
+      psVar6 = (short *)pSVar3->field_0055;
       Library::DKW::DDX::FUN_006b2930
-                (*(int **)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),0,(undefined4 *)(int)*psVar6,
+                ((int *)pSVar3->field_0048,pSVar3->field_0004,0,(undefined4 *)(int)*psVar6,
                  (int *)(psVar6 + 5),0x8000000,(int)psVar6[3],(int)psVar6[4]);
-      psVar6 = *(short **)(pSVar3 + 0x55);
-      *(int *)(pSVar3 + 0xc) = (int)*psVar6;
-      *(int *)(pSVar3 + 0x24) = (int)psVar6[3];
-      *(int *)(pSVar3 + 0x28) = (int)psVar6[4];
+      psVar6 = (short *)pSVar3->field_0055;
+      pSVar3->field_000C = (int)*psVar6;
+      pSVar3->field_0024 = (int)psVar6[3];
+      pSVar3->field_0028 = (int)psVar6[4];
     }
-    pSVar3[0x4c] = param_2;
-    iVar4 = *(int *)(pSVar3 + 0xc);
+    pSVar3->field_004C = param_2;
+    iVar4 = pSVar3->field_000C;
     if (iVar4 < 1) {
       iVar8 = iVar4 + -1;
     }
     else {
       iVar8 = 0;
     }
-    *(int *)(pSVar3 + 0x10) = iVar8;
-    *(int *)(pSVar3 + 0x14) = iVar4 + -1;
+    pSVar3->field_0010 = iVar8;
+    pSVar3->field_0014 = iVar4 + -1;
     uVar9 = 0xffffffff;
     do {
       pcVar5 = param_4;
@@ -131,23 +134,23 @@ SpriteClassTy::SetImages
       param_4 = pcVar5;
     } while (cVar1 != '\0');
     uVar9 = ~uVar9;
-    pSVar11 = (SpriteClassTy *)(pcVar5 + -uVar9);
-    pSVar12 = pSVar3 + 0x65;
+    pcVar5 = pcVar5 + -uVar9;
+    pcVar11 = &pSVar3->field_0065;
     for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-      *(undefined4 *)pSVar12 = *(undefined4 *)pSVar11;
-      pSVar11 = pSVar11 + 4;
-      pSVar12 = pSVar12 + 4;
+      *(undefined4 *)pcVar11 = *(undefined4 *)pcVar5;
+      pcVar5 = pcVar5 + 4;
+      pcVar11 = pcVar11 + 4;
     }
     for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-      *pSVar12 = *pSVar11;
-      pSVar11 = pSVar11 + 1;
-      pSVar12 = pSVar12 + 1;
+      *pcVar11 = *pcVar5;
+      pcVar5 = pcVar5 + 1;
+      pcVar11 = pcVar11 + 1;
     }
     if (param_5 != 0xffffffff) {
-      FUN_006b3020(*(int *)(pSVar3 + 0x48),*(uint *)(pSVar3 + 4),param_5);
-      *(uint *)(pSVar3 + 0x5d) = param_5;
+      FUN_006b3020(pSVar3->field_0048,pSVar3->field_0004,param_5);
+      pSVar3->field_005D = param_5;
     }
-    *(undefined4 *)(pSVar3 + 0x61) = 0;
+    pSVar3->field_0061 = 0;
     g_currentExceptionFrame = local_50.previous;
   }
   else {

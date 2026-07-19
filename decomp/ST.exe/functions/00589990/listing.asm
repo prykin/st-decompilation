@@ -1,4 +1,4 @@
-FUN_00589990:
+STOctopusC::STOctopusC:
 00589990  56                        PUSH ESI
 00589991  57                        PUSH EDI
 00589992  8B F1                     MOV ESI,ECX

@@ -84,7 +84,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
     do {
       FUN_006acc70((int)local_18,uVar9,&local_8);
       this_01 = local_34;
-      piVar4 = (int *)GetObjPtr(local_34,param_1,local_8,1);
+      piVar4 = (int *)GetObjPtr(local_34,param_1,local_8,CASE_1);
       if ((piVar4 == (int *)0x0) || (iVar3 = (**(code **)(*piVar4 + 0xf8))(), iVar3 == 0)) {
         FUN_006b0c70((int)local_18,uVar9);
         uVar8 = uVar8 - 1;
@@ -102,7 +102,7 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
   if (0 < (int)local_c) {
     do {
       FUN_006acc70((int)local_14,uVar8,&local_8);
-      piVar4 = (int *)GetObjPtr(this_01,param_1,local_8,1);
+      piVar4 = (int *)GetObjPtr(this_01,param_1,local_8,CASE_1);
       if (((piVar4 == (int *)0x0) || (iVar3 = thunk_FUN_00490d90((int)piVar4), iVar3 == 0)) ||
          ((iVar3 = (**(code **)(*piVar4 + 0xf8))(), iVar3 == 0 || ((short)piVar4[0xc] == -1)))) {
         FUN_006b0c70((int)local_14,uVar8);
@@ -157,9 +157,9 @@ STAllPlayersC::RegisterPGPair(STAllPlayersC *this,uint param_1,uint *param_2,uin
       local_24 = (int *)((int)&DAT_007f5816 + cVar7 * 0xa62);
       do {
         FUN_006acc70((int)puVar5,local_20,&local_8);
-        this_00 = (STBoatC *)GetObjPtr(this_01,param_1,local_8,1);
+        this_00 = (STBoatC *)GetObjPtr(this_01,param_1,local_8,CASE_1);
         local_2c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-        STBoatC::CmdToObj(this_00,0x21,&local_2c);
+        STBoatC::CmdToObj(this_00,CASE_21,&local_2c);
         if ((*local_24 != 0) &&
            (iVar3 = _DeleteGuardBoat(this_01,param_1,(short)local_8,1), iVar3 == -1)) {
           _DeleteGuardBoat(this_01,param_1,(short)local_8,0);

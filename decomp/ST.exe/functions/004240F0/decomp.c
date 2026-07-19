@@ -29,34 +29,34 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
   pSVar5 = local_10;
   if (iVar2 == 0) {
     *param_1 = 0x40;
-    if (*(uint **)(local_10 + 0x29) != (uint *)0x0) {
-      local_c = (undefined4 *)FUN_006b0020(*(uint **)(local_10 + 0x29),(int *)&local_8);
+    if ((uint *)local_10->field_0029 != (uint *)0x0) {
+      local_c = (undefined4 *)FUN_006b0020((uint *)local_10->field_0029,(int *)&local_8);
       FUN_006ab060(&local_c);
       *param_1 = *param_1 + local_8;
     }
-    if (*(uint **)(pSVar5 + 0x2d) != (uint *)0x0) {
-      local_c = (undefined4 *)FUN_006b0020(*(uint **)(pSVar5 + 0x2d),(int *)&local_8);
+    if (*(uint **)&pSVar5->field_0x2d != (uint *)0x0) {
+      local_c = (undefined4 *)FUN_006b0020(*(uint **)&pSVar5->field_0x2d,(int *)&local_8);
       FUN_006ab060(&local_c);
       *param_1 = *param_1 + local_8;
     }
     iVar2 = Library::DKW::LIB::FUN_006aac70(*param_1);
     local_8 = 0;
-    *(int *)(iVar2 + 4) = (int)(char)pSVar5[0x24];
+    *(int *)(iVar2 + 4) = (int)(char)pSVar5->field_0024;
     *(undefined4 *)(iVar2 + 0xc) = 2;
-    *(undefined4 *)(iVar2 + 0x14) = *(undefined4 *)(pSVar5 + 0x20);
-    *(undefined2 *)(iVar2 + 0x18) = *(undefined2 *)(pSVar5 + 0x25);
-    *(undefined2 *)(iVar2 + 0x1a) = *(undefined2 *)(pSVar5 + 0x27);
-    *(undefined4 *)(iVar2 + 0x2c) = *(undefined4 *)(pSVar5 + 0x31);
-    *(undefined4 *)(iVar2 + 0x30) = *(undefined4 *)(pSVar5 + 0x35);
-    *(undefined4 *)(iVar2 + 0x34) = *(undefined4 *)(pSVar5 + 0x39);
+    *(undefined4 *)(iVar2 + 0x14) = *(undefined4 *)&pSVar5->field_0x20;
+    *(undefined2 *)(iVar2 + 0x18) = *(undefined2 *)&pSVar5->field_0x25;
+    *(undefined2 *)(iVar2 + 0x1a) = *(undefined2 *)&pSVar5->field_0x27;
+    *(undefined4 *)(iVar2 + 0x2c) = *(undefined4 *)&pSVar5->field_0x31;
+    *(undefined4 *)(iVar2 + 0x30) = *(undefined4 *)&pSVar5->field_0x35;
+    *(undefined4 *)(iVar2 + 0x34) = pSVar5->field_0039;
     local_18 = iVar2;
-    if (*(uint **)(pSVar5 + 0x29) == (uint *)0x0) {
+    if ((uint *)pSVar5->field_0029 == (uint *)0x0) {
       local_8 = 0;
       *(undefined4 *)(iVar2 + 0x1c) = 0xffffffff;
       *(undefined4 *)(iVar2 + 0x20) = 0;
     }
     else {
-      local_c = (undefined4 *)FUN_006b0020(*(uint **)(pSVar5 + 0x29),(int *)&local_8);
+      local_c = (undefined4 *)FUN_006b0020((uint *)pSVar5->field_0029,(int *)&local_8);
       puVar6 = local_c;
       puVar7 = (undefined4 *)(iVar2 + 0x40);
       for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
@@ -75,13 +75,13 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
       pSVar5 = local_10;
     }
     iVar3 = local_8 + 0x40;
-    if (*(uint **)(pSVar5 + 0x2d) == (uint *)0x0) {
+    if (*(uint **)&pSVar5->field_0x2d == (uint *)0x0) {
       *(undefined4 *)(iVar2 + 0x24) = 0xffffffff;
       *(uint *)(iVar2 + 0x28) = local_8;
     }
     else {
       local_14 = iVar3;
-      local_c = (undefined4 *)FUN_006b0020(*(uint **)(pSVar5 + 0x2d),(int *)&local_8);
+      local_c = (undefined4 *)FUN_006b0020(*(uint **)&pSVar5->field_0x2d,(int *)&local_8);
       puVar6 = local_c;
       puVar7 = (undefined4 *)(iVar3 + iVar2);
       for (uVar4 = local_8 >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {

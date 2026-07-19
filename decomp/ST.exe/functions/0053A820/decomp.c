@@ -17,7 +17,7 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
   PlayPanelTy *local_8;
   
   pIVar5 = g_currentExceptionFrame;
-  if (this[0x180] == (PlayPanelTy)param_1) {
+  if (this->field_0180 == param_1) {
     return 0;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
@@ -25,9 +25,9 @@ undefined4 __thiscall PlayPanelTy::SetPanel(PlayPanelTy *this,char param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (iVar2 == 0) {
-    local_8[0x180] = (PlayPanelTy)param_1;
+    local_8->field_0180 = param_1;
     if (param_1 == '\0') {
-      if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)(DAT_00801688 + 0x23f) == 1)) {
+      if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)&DAT_00801688->field_0x23f == 1)) {
         CPanelTy::ShiftControls(DAT_00801688,1);
       }
       iVar2 = 0;

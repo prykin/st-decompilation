@@ -6,12 +6,12 @@
 void __thiscall STAppC::OpenGameDBs(STAppC *this)
 
 {
-  STAppC *pSVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   int errorCode;
   int iVar3;
   undefined4 unaff_ESI;
-  STAppC *pSVar4;
+  undefined1 *puVar4;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   STAppC *local_8;
@@ -21,22 +21,22 @@ void __thiscall STAppC::OpenGameDBs(STAppC *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    pSVar1 = local_8 + 0x470;
-    pSVar4 = local_8 + 0x7d1a;
-    wsprintfA((LPSTR)pSVar4,&DAT_007c6ee4,pSVar1,s_NATURE_007ca16c);
-    DAT_00806768 = FUN_006f0ec0(0x345,(byte *)pSVar4,0,0,0);
+    puVar1 = &local_8->field_0x470;
+    puVar4 = &local_8[1].field_0x2e1c;
+    wsprintfA(puVar4,&DAT_007c6ee4,puVar1,s_NATURE_007ca16c);
+    DAT_00806768 = FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080676c = FUN_007097c0((int)DAT_00806768);
-    wsprintfA((LPSTR)pSVar4,&DAT_007c6ee4,pSVar1,s_OTHER_007ca164);
-    DAT_00806770 = FUN_006f0ec0(0x345,(byte *)pSVar4,0,0,0);
+    wsprintfA(puVar4,&DAT_007c6ee4,puVar1,s_OTHER_007ca164);
+    DAT_00806770 = FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_00806774 = FUN_007097c0((int)DAT_00806770);
-    wsprintfA((LPSTR)pSVar4,&DAT_007c6ee4,pSVar1,&DAT_007ca15c);
-    DAT_00806778 = FUN_006f0ec0(0x345,(byte *)pSVar4,0,0,0);
+    wsprintfA(puVar4,&DAT_007c6ee4,puVar1,&DAT_007ca15c);
+    DAT_00806778 = FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080677c = FUN_007097c0((int)DAT_00806778);
-    wsprintfA((LPSTR)pSVar4,&DAT_007c6ee4,pSVar1,s_CONTROLG_007ca150);
-    DAT_00806790 = FUN_006f0ec0(0x345,(byte *)pSVar4,0,0,0);
+    wsprintfA(puVar4,&DAT_007c6ee4,puVar1,s_CONTROLG_007ca150);
+    DAT_00806790 = FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_00806794 = FUN_007097c0((int)DAT_00806790);
-    wsprintfA((LPSTR)pSVar4,&DAT_007c6ee4,pSVar1,s_OBJECT_007ca148);
-    DAT_00806788 = FUN_006f0ec0(0x345,(byte *)pSVar4,0,0,0);
+    wsprintfA(puVar4,&DAT_007c6ee4,puVar1,s_OBJECT_007ca148);
+    DAT_00806788 = FUN_006f0ec0(0x345,puVar4,0,0,0);
     DAT_0080678c = FUN_007097c0((int)DAT_00806788);
     g_currentExceptionFrame = local_4c.previous;
     return;

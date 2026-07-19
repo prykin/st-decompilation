@@ -72,8 +72,8 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_18c[1] = param_2;
     local_18c[0] = param_3;
     if (param_7 != 0) {
-      wsprintfA((LPSTR)(pCVar3 + 0x1e1),&DAT_007c181c,param_7);
-      local_8 = cMf32::RecGet(DAT_00806790,param_6,(char *)(pCVar3 + 0x1e1),(int *)0x0,1);
+      wsprintfA(&pCVar3->field_0x1e1,&DAT_007c181c,param_7);
+      local_8 = cMf32::RecGet(DAT_00806790,param_6,&pCVar3->field_0x1e1,(int *)0x0,1);
     }
     if (param_6 == 1) {
       local_17c = *(int *)(local_8 + 2);
@@ -88,27 +88,27 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       }
     }
     if (param_4 < 0) {
-      param_4 = (*(int *)(pCVar3 + (uint)param_1 * 4 + 0x68) - local_17c) / 2;
+      param_4 = (*(int *)(&pCVar3->field_0x68 + (uint)param_1 * 4) - local_17c) / 2;
     }
     uVar2 = (uint)param_1;
-    local_18c[2] = *(int *)(pCVar3 + uVar2 * 4 + 0x3c) + param_4;
-    iVar4 = *(int *)(pCVar3 + 0x130);
+    local_18c[2] = *(int *)(&pCVar3->field_0x3c + uVar2 * 4) + param_4;
+    iVar4 = pCVar3->field_0130;
     switch(uVar2) {
     case 0:
     case 1:
     case 2:
     case 3:
-      iVar4 = *(int *)(pCVar3 + 0x134);
+      iVar4 = pCVar3->field_0134;
       break;
     case 5:
     case 6:
     case 7:
     case 8:
-      iVar4 = *(int *)(pCVar3 + 0x138);
+      iVar4 = pCVar3->field_0138;
     }
     if (iVar4 == 0) {
       if ((param_1 == 1) || (param_1 == 7)) {
-        local_18c[3] = *(int *)(pCVar3 + 0xc0);
+        local_18c[3] = pCVar3->field_00C0;
       }
       else {
         local_18c[3] = 0;
@@ -116,13 +116,13 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_18c[3] = local_18c[3] + DAT_00806734;
     }
     else {
-      local_18c[3] = *(int *)(pCVar3 + uVar2 * 4 + 0x94);
+      local_18c[3] = *(int *)(&pCVar3->field_0x94 + uVar2 * 4);
     }
     local_18c[3] = local_18c[3] + param_5;
     if (local_8 != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
     }
-    local_16c = *(undefined4 *)(pCVar3 + 8);
+    local_16c = *(undefined4 *)&pCVar3->field_0x8;
     local_124 = param_9;
     local_164 = param_8;
     local_168 = 2;
@@ -157,7 +157,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
       local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
       local_64 = FUN_0070a6f0(DAT_00806790,0x12,param_13,1);
     }
-    (**(code **)(**(int **)(pCVar3 + 0xc) + 8))(2,&local_c,0,local_18c,0);
+    (**(code **)(**(int **)&pCVar3->field_0xc + 8))(2,&local_c,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;
     return local_c;
   }

@@ -17,7 +17,7 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
   STPlaySystemC *local_c;
   uint local_8;
   
-  if ((*(int *)(this + 0x3d) != 0) && (*(short *)(*(int *)(this + 0x3d) + 5) != 0)) {
+  if ((this->field_003D != 0) && (*(short *)(this->field_003D + 5) != 0)) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
@@ -25,17 +25,17 @@ void __thiscall STPlaySystemC::SendMail(STPlaySystemC *this,void *param_1)
     this_00 = local_c;
     if (iVar2 == 0) {
       local_8 = 0;
-      puVar4 = (undefined1 *)(*(int *)(local_c + 0x3d) + 7);
-      if (*(short *)(*(int *)(local_c + 0x3d) + 5) != 0) {
+      puVar4 = (undefined1 *)(local_c->field_003D + 7);
+      if (*(short *)(local_c->field_003D + 5) != 0) {
         do {
           iVar2 = *(int *)(puVar4 + 0x13);
           iVar3 = *(int *)(puVar4 + 0xf);
           thunk_FUN_005501d0(this_00,puVar4);
           local_8 = local_8 + 1;
           puVar4 = puVar4 + iVar2 + iVar3 + 0x1b;
-        } while (local_8 < *(ushort *)(*(int *)(this_00 + 0x3d) + 5));
+        } while (local_8 < *(ushort *)(this_00->field_003D + 5));
       }
-      *(undefined2 *)(*(int *)(this_00 + 0x3d) + 5) = 0;
+      *(undefined2 *)(this_00->field_003D + 5) = 0;
       g_currentExceptionFrame = local_50.previous;
       return;
     }

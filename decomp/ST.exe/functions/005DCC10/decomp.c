@@ -12,22 +12,22 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
   int iVar4;
   undefined4 uVar5;
   void *unaff_ESI;
-  SystemClassTy *this_00;
+  StartSystemTy *this_00;
   InternalExceptionFrame *in_stack_ffffff70;
   InternalExceptionFrame *pIVar6;
   undefined4 local_8c [16];
   InternalExceptionFrame local_4c;
-  SystemClassTy *local_8;
+  StartSystemTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (SystemClassTy *)this;
+  local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,in_stack_ffffff70);
   this_00 = local_8;
   if (iVar2 == 0) {
-    SystemClassTy::InitSystem(local_8);
+    SystemClassTy::InitSystem((SystemClassTy *)local_8);
     pIVar6 = g_currentExceptionFrame;
-    if (this_00[1].nextMessages != (void *)0x0) {
+    if (this_00->field_0028 != 0) {
       g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff70;
       iVar2 = Library::MSVCRT::__setjmp3(local_8c,0,unaff_ESI,pIVar6);
       if (iVar2 == 0) {
@@ -36,17 +36,17 @@ undefined4 __thiscall StartSystemTy::InitSystem(StartSystemTy *this)
         g_currentExceptionFrame = pIVar6;
         this_00 = local_8;
         if (iVar2 != 0) {
-          local_8[1].nextMessages = (void *)0x0;
+          local_8->field_0028 = 0;
         }
       }
       else {
         g_currentExceptionFrame = pIVar6;
-        local_8[1].nextMessages = (void *)0x0;
+        local_8->field_0028 = 0;
         this_00 = local_8;
       }
     }
     thunk_FUN_005da7a0();
-    LoadGraph((StartSystemTy *)this_00);
+    LoadGraph(this_00);
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

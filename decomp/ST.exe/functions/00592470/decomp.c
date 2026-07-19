@@ -10,36 +10,36 @@ void __thiscall CampaignTy::CloseButtons(CampaignTy *this)
   int iVar2;
   DWORD DVar3;
   undefined4 unaff_ESI;
-  MMObjTy *pMVar4;
-  MMObjTy *this_00;
+  int *piVar4;
+  CampaignTy *this_00;
   void *unaff_EDI;
   int iVar5;
   InternalExceptionFrame local_4c;
-  MMObjTy *local_8;
+  CampaignTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    MMObjTy::CloseButtons(local_8);
+    MMObjTy::CloseButtons((MMObjTy *)local_8);
     iVar2 = 0;
-    if (this_00[0x9a] != (MMObjTy)0x0) {
+    if (this_00[1].field_0x35 != '\0') {
       iVar5 = 0x96;
-      pMVar4 = this_00 + 0x123;
+      piVar4 = (int *)&this_00[2].field_0x59;
       do {
         DVar3 = timeGetTime();
-        *(DWORD *)(pMVar4 + 4) = DVar3;
-        *(int *)pMVar4 = iVar5;
-        pMVar4[-0x68] = (MMObjTy)0x1;
+        piVar4[1] = DVar3;
+        *piVar4 = iVar5;
+        *(undefined1 *)(piVar4 + -0x1a) = 1;
         iVar2 = iVar2 + 1;
         iVar5 = iVar5 + 0x96;
-        pMVar4 = pMVar4 + 0x1fb;
+        piVar4 = (int *)((int)piVar4 + 0x1fb);
         this_00 = local_8;
-      } while (iVar2 < (int)(uint)(byte)local_8[0x9a]);
+      } while (iVar2 < (int)(uint)(byte)local_8[1].field_0x35);
     }
-    this_00[0x65] = (MMObjTy)0x4;
+    *(undefined1 *)(this_00 + 1) = 4;
     thunk_FUN_005b6730(this_00,2,'\x01',-1);
     g_currentExceptionFrame = local_4c.previous;
     return;

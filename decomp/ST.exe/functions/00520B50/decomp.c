@@ -23,11 +23,11 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pIVar2 = local_8;
   if (errorCode == 0) {
-    if ((local_8[0x3d4] == (InfocPanelTy)0xff) && (param_1 == 0xffff)) {
-      wsprintfA((LPSTR)(local_8 + 0x18d),s_______d_007c3fc0,param_2 & 0xffff);
+    if ((local_8[2].field_0xe4 == -1) && (param_1 == 0xffff)) {
+      wsprintfA(&local_8[1].field_0x15,s_______d_007c3fc0,param_2 & 0xffff);
     }
     else {
-      wsprintfA((LPSTR)(local_8 + 0x18d),s__d__d_007c3fb8,param_1,param_2 & 0xffff);
+      wsprintfA(&local_8[1].field_0x15,s__d__d_007c3fb8,param_1,param_2 & 0xffff);
     }
     if (DAT_0080874e == '\x03') {
       cVar3 = 's';
@@ -35,10 +35,10 @@ InfocPanelTy::PaintInfocObj(InfocPanelTy *this,ushort param_1,uint param_2,int p
     else {
       cVar3 = (-(DAT_0080874e != '\x01') & 0x89U) + 0x3a;
     }
-    FUN_006b4170(*(int *)(pIVar2 + 0x68),0,param_3,param_4,0x2d,0xc,cVar3);
-    ccFntTy::SetSurf(*(ccFntTy **)(pIVar2 + 0x189),*(int *)(pIVar2 + 0x68),0,param_3,param_4,0x2d,
-                     0xc);
-    ccFntTy::WrStr(*(ccFntTy **)(pIVar2 + 0x189),(uint *)(pIVar2 + 0x18d),-1,-1,
+    FUN_006b4170(*(int *)&pIVar2->field_0x68,0,param_3,param_4,0x2d,0xc,cVar3);
+    ccFntTy::SetSurf(*(ccFntTy **)&pIVar2[1].field_0x11,*(int *)&pIVar2->field_0x68,0,param_3,
+                     param_4,0x2d,0xc);
+    ccFntTy::WrStr(*(ccFntTy **)&pIVar2[1].field_0x11,(uint *)&pIVar2[1].field_0x15,-1,-1,
                    (DAT_0080874e != '\x03') - 1 & 5);
     g_currentExceptionFrame = local_4c.previous;
     return;

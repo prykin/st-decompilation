@@ -21,7 +21,7 @@ undefined4 FUN_005f35f0(int param_1)
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar2 == 0) {
     if (param_1 == 1) {
-      puVar3 = FUN_00709af0(DAT_00806774,0x1d,local_c[*(int *)(local_8 + 0x87)],0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806774,CASE_1D,local_c[*(int *)(local_8 + 0x87)],0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       puVar1 = (uint *)(local_8 + 0x8f);
       FUN_006e8660(DAT_00807598,(int *)puVar1,1,0,*(uint *)((int)puVar3 + 9),
@@ -39,13 +39,13 @@ undefined4 FUN_005f35f0(int param_1)
         FUN_006e9520(DAT_00807598,*(uint *)(local_8 + 0x8f),0,0,local_8);
         FUN_006e8ba0(DAT_00807598,*puVar1);
       }
-      puVar3 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expl_i13_007ce618,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expl_i13_007ce618,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(DAT_00807598,(int *)puVar1,3,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x5a,0x45,0);
       FUN_006e98e0(DAT_00807598,*puVar1,0,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(DAT_00807598,*puVar1,0,*(uint *)(local_8 + 0xab));
-      puVar3 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_expl_s0_007ce610,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_expl_s0_007ce610,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e98e0(DAT_00807598,*puVar1,2,*(undefined4 *)puVar3,*(int *)((int)puVar3 + 0x21),1);
       FUN_006ea270(DAT_00807598,*puVar1,2,*(uint *)(local_8 + 0xc0));

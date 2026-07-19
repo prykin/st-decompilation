@@ -1,4 +1,4 @@
-FUN_00478640:
+STBoatC::Recharge:
 00478640  55                        PUSH EBP
 00478641  8B EC                     MOV EBP,ESP
 00478643  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

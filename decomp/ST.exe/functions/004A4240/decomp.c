@@ -56,74 +56,78 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
     return;
   }
   this_01 = (int *)STAllPlayersC::GetObjPtr
-                             (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),local_24[0x24]),
-                              param_2,1);
+                             (DAT_007fa174,
+                              CONCAT31((int3)((uint)extraout_ECX >> 8),local_24->field_0024),param_2
+                              ,CASE_1);
   local_18 = this_01;
   if (param_1 == 1) {
     iVar2 = (**(code **)(*this_01 + 0x2c))();
     if ((iVar2 == 0x3b) || (iVar2 = (**(code **)(*this_01 + 0x2c))(), iVar2 == 0x60)) {
-      if ((*(int *)(this_00 + 0x262) == 1) || (*(int *)(this_00 + 0x262) == 0)) {
-        if (*(int *)(this_00 + 0x266) == 0) {
+      if ((*(int *)&this_00->field_0x262 == 1) || (*(int *)&this_00->field_0x262 == 0)) {
+        if (*(int *)&this_00->field_0x266 == 0) {
           RaiseInternalException
                     (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11f2);
         }
         uVar7 = 0;
-        iVar2 = *(int *)(*(int *)(this_00 + 0x266) + 0xc);
+        iVar2 = *(int *)(*(int *)&this_00->field_0x266 + 0xc);
         if (0 < iVar2) {
           do {
-            FUN_006acc70(*(int *)(this_00 + 0x266),uVar7,&local_10);
+            FUN_006acc70(*(int *)&this_00->field_0x266,uVar7,&local_10);
             if ((short)local_10 == -1) break;
             uVar7 = uVar7 + 1;
           } while ((int)uVar7 < iVar2);
         }
-        Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x266),uVar7,&param_2);
-        DistributeMD(this_00,0,*(int *)(this_00 + 0x24e),*(int *)(this_00 + 0x266),
-                     *(int *)(this_00 + 0x29));
+        Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x266,uVar7,&param_2);
+        DistributeMD(this_00,0,*(int *)&this_00->field_0x24e,*(int *)&this_00->field_0x266,
+                     this_00->field_0029);
         this_01 = local_18;
       }
-      if (*(int *)(this_00 + 0x262) != 2) {
+      if (*(int *)&this_00->field_0x262 != 2) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
       thunk_FUN_004162b0(this_01,&local_a,&local_8,&local_6);
-      if (local_a < *(short *)(this_00 + 0x26a)) {
+      if (local_a < *(short *)&this_00->field_0x26a) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(short *)(this_00 + 0x270) + -1 + (int)*(short *)(this_00 + 0x26a) < (int)local_a) {
+      if (*(short *)&this_00->field_0x270 + -1 + (int)*(short *)&this_00->field_0x26a < (int)local_a
+         ) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (local_8 < *(short *)(this_00 + 0x26c)) {
+      if (local_8 < *(short *)&this_00->field_0x26c) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(short *)(this_00 + 0x272) + -1 + (int)*(short *)(this_00 + 0x26c) < (int)local_8) {
+      if (*(short *)&this_00->field_0x272 + -1 + (int)*(short *)&this_00->field_0x26c < (int)local_8
+         ) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (local_6 < *(short *)(this_00 + 0x26e)) {
+      if (local_6 < *(short *)&this_00->field_0x26e) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(short *)(this_00 + 0x274) + -1 + (int)*(short *)(this_00 + 0x26e) < (int)local_6) {
+      if (*(short *)&this_00->field_0x274 + -1 + (int)*(short *)&this_00->field_0x26e < (int)local_6
+         ) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(int *)(this_00 + 0x266) == 0) {
+      if (*(int *)&this_00->field_0x266 == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x11fe);
       }
       uVar7 = 0;
-      iVar2 = *(int *)(*(int *)(this_00 + 0x266) + 0xc);
+      iVar2 = *(int *)(*(int *)&this_00->field_0x266 + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(*(int *)(this_00 + 0x266),uVar7,&local_10);
+          FUN_006acc70(*(int *)&this_00->field_0x266,uVar7,&local_10);
           if ((short)local_10 == -1) break;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
       }
-      puVar5 = *(uint **)(this_00 + 0x266);
+      puVar5 = *(uint **)&this_00->field_0x266;
     }
     else {
       iVar2 = 0;
@@ -148,12 +152,12 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         RaiseInternalException
                   (-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x120b);
       }
-      if (*(int *)(this_00 + 0x24a) != 2) {
+      if (*(int *)&this_00->field_0x24a != 2) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
       iVar2 = (**(code **)(*this_01 + 0x2c))();
-      if (iVar2 != *(int *)(this_00 + 0x25e)) {
+      if (iVar2 != *(int *)&this_00->field_0x25e) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -163,117 +167,123 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         return;
       }
       thunk_FUN_004162b0(this_01,&local_a,&local_8,&local_6);
-      if (local_a < *(short *)(this_00 + 0x252)) {
+      if (local_a < *(short *)&this_00->field_0x252) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(short *)(this_00 + 600) + -1 + (int)*(short *)(this_00 + 0x252) < (int)local_a) {
+      if (*(short *)&this_00->field_0x258 + -1 + (int)*(short *)&this_00->field_0x252 < (int)local_a
+         ) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (local_8 < *(short *)(this_00 + 0x254)) {
+      if (local_8 < *(short *)&this_00->field_0x254) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(short *)(this_00 + 0x25a) + -1 + (int)*(short *)(this_00 + 0x254) < (int)local_8) {
+      if (*(short *)&this_00->field_0x25a + -1 + (int)*(short *)&this_00->field_0x254 < (int)local_8
+         ) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (local_6 < *(short *)(this_00 + 0x256)) {
+      if (local_6 < *(short *)&this_00->field_0x256) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(short *)(this_00 + 0x25c) + -1 + (int)*(short *)(this_00 + 0x256) < (int)local_6) {
+      if (*(short *)&this_00->field_0x25c + -1 + (int)*(short *)&this_00->field_0x256 < (int)local_6
+         ) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if (*(int *)(this_00 + 0x24e) == 0) {
+      if (*(int *)&this_00->field_0x24e == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1215);
       }
       uVar7 = 0;
-      iVar2 = *(int *)(*(int *)(this_00 + 0x24e) + 0xc);
+      iVar2 = *(int *)(*(int *)&this_00->field_0x24e + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(*(int *)(this_00 + 0x24e),uVar7,&local_10);
+          FUN_006acc70(*(int *)&this_00->field_0x24e,uVar7,&local_10);
           if ((short)local_10 == -1) break;
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
       }
-      puVar5 = *(uint **)(this_00 + 0x24e);
+      puVar5 = *(uint **)&this_00->field_0x24e;
     }
     Library::DKW::TBL::FUN_006ae140(puVar5,uVar7,&param_2);
-    iVar2 = *(int *)(this_00 + 0x29);
-    iVar3 = *(int *)(this_00 + 0x266);
-    iVar4 = *(int *)(this_00 + 0x24e);
+    iVar2 = this_00->field_0029;
+    iVar3 = *(int *)&this_00->field_0x266;
+    iVar4 = *(int *)&this_00->field_0x24e;
     goto LAB_004a4aab;
   }
   iVar2 = (**(code **)(*this_01 + 0x2c))();
   if ((iVar2 == 0x3b) || (iVar3 = (**(code **)(*this_01 + 0x2c))(), iVar2 = local_1c, iVar3 == 0x60)
      ) {
-    if ((*(int *)(this_00 + 0x262) == 1) || (*(int *)(this_00 + 0x262) == 0)) {
-      if (*(int *)(this_00 + 0x266) == 0) {
+    if ((*(int *)&this_00->field_0x262 == 1) || (*(int *)&this_00->field_0x262 == 0)) {
+      if (*(int *)&this_00->field_0x266 == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1226);
       }
       uVar7 = 0;
-      iVar2 = *(int *)(*(int *)(this_00 + 0x266) + 0xc);
+      iVar2 = *(int *)(*(int *)&this_00->field_0x266 + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(*(int *)(this_00 + 0x266),uVar7,&local_10);
+          FUN_006acc70(*(int *)&this_00->field_0x266,uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x266),uVar7,&local_10);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x266,uVar7,&local_10);
             break;
           }
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
       }
-      DistributeMD(this_00,0,*(int *)(this_00 + 0x24e),*(int *)(this_00 + 0x266),
-                   *(int *)(this_00 + 0x29));
+      DistributeMD(this_00,0,*(int *)&this_00->field_0x24e,*(int *)&this_00->field_0x266,
+                   this_00->field_0029);
       this_01 = local_18;
     }
-    if (*(int *)(this_00 + 0x262) != 2) {
+    if (*(int *)&this_00->field_0x262 != 2) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
     thunk_FUN_004162b0(this_01,&local_a,&local_8,&local_6);
-    if (local_a < *(short *)(this_00 + 0x26a)) {
+    if (local_a < *(short *)&this_00->field_0x26a) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(short *)(this_00 + 0x270) + -1 + (int)*(short *)(this_00 + 0x26a) < (int)local_a) {
+    if (*(short *)&this_00->field_0x270 + -1 + (int)*(short *)&this_00->field_0x26a < (int)local_a)
+    {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (local_8 < *(short *)(this_00 + 0x26c)) {
+    if (local_8 < *(short *)&this_00->field_0x26c) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(short *)(this_00 + 0x272) + -1 + (int)*(short *)(this_00 + 0x26c) < (int)local_8) {
+    if (*(short *)&this_00->field_0x272 + -1 + (int)*(short *)&this_00->field_0x26c < (int)local_8)
+    {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (local_6 < *(short *)(this_00 + 0x26e)) {
+    if (local_6 < *(short *)&this_00->field_0x26e) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(short *)(this_00 + 0x274) + -1 + (int)*(short *)(this_00 + 0x26e) < (int)local_6) {
+    if (*(short *)&this_00->field_0x274 + -1 + (int)*(short *)&this_00->field_0x26e < (int)local_6)
+    {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(int *)(this_00 + 0x266) == 0) {
+    if (*(int *)&this_00->field_0x266 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1234);
     }
     uVar8 = 0;
-    uVar7 = *(uint *)(*(int *)(this_00 + 0x266) + 0xc);
+    uVar7 = *(uint *)(*(int *)&this_00->field_0x266 + 0xc);
     if (0 < (int)uVar7) {
       do {
-        FUN_006acc70(*(int *)(this_00 + 0x266),uVar8,&local_10);
+        FUN_006acc70(*(int *)&this_00->field_0x266,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x266),uVar8,&local_10);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x266,uVar8,&local_10);
           break;
         }
         uVar8 = uVar8 + 1;
@@ -313,68 +323,71 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       RaiseInternalException
                 (-0x5001fffe,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1247);
     }
-    if (*(int *)(this_00 + 0x24a) == 0) {
-      if (*(int *)(this_00 + 0x24e) == 0) {
+    if (*(int *)&this_00->field_0x24a == 0) {
+      if (*(int *)&this_00->field_0x24e == 0) {
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x124b);
       }
       uVar7 = 0;
-      iVar2 = *(int *)(*(int *)(this_00 + 0x24e) + 0xc);
+      iVar2 = *(int *)(*(int *)&this_00->field_0x24e + 0xc);
       if (0 < iVar2) {
         do {
-          FUN_006acc70(*(int *)(this_00 + 0x24e),uVar7,&local_10);
+          FUN_006acc70(*(int *)&this_00->field_0x24e,uVar7,&local_10);
           if ((short)local_10 == (short)param_2) {
             local_10 = 0xffff;
-            Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x24e),uVar7,&local_10);
+            Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x24e,uVar7,&local_10);
             break;
           }
           uVar7 = uVar7 + 1;
         } while ((int)uVar7 < iVar2);
       }
-      DistributeMD(this_00,0,*(int *)(this_00 + 0x24e),*(int *)(this_00 + 0x266),
-                   *(int *)(this_00 + 0x29));
+      DistributeMD(this_00,0,*(int *)&this_00->field_0x24e,*(int *)&this_00->field_0x266,
+                   this_00->field_0029);
     }
-    if (*(int *)(this_00 + 0x24a) != 2) {
+    if (*(int *)&this_00->field_0x24a != 2) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
     thunk_FUN_004162b0(local_18,&local_a,&local_8,&local_6);
-    if (local_a < *(short *)(this_00 + 0x252)) {
+    if (local_a < *(short *)&this_00->field_0x252) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(short *)(this_00 + 600) + -1 + (int)*(short *)(this_00 + 0x252) < (int)local_a) {
+    if (*(short *)&this_00->field_0x258 + -1 + (int)*(short *)&this_00->field_0x252 < (int)local_a)
+    {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (local_8 < *(short *)(this_00 + 0x254)) {
+    if (local_8 < *(short *)&this_00->field_0x254) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(short *)(this_00 + 0x25a) + -1 + (int)*(short *)(this_00 + 0x254) < (int)local_8) {
+    if (*(short *)&this_00->field_0x25a + -1 + (int)*(short *)&this_00->field_0x254 < (int)local_8)
+    {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (local_6 < *(short *)(this_00 + 0x256)) {
+    if (local_6 < *(short *)&this_00->field_0x256) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(short *)(this_00 + 0x25c) + -1 + (int)*(short *)(this_00 + 0x256) < (int)local_6) {
+    if (*(short *)&this_00->field_0x25c + -1 + (int)*(short *)&this_00->field_0x256 < (int)local_6)
+    {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if (*(int *)(this_00 + 0x24e) == 0) {
+    if (*(int *)&this_00->field_0x24e == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1259);
     }
     uVar8 = 0;
-    uVar7 = *(uint *)(*(int *)(this_00 + 0x24e) + 0xc);
+    uVar7 = *(uint *)(*(int *)&this_00->field_0x24e + 0xc);
     if (0 < (int)uVar7) {
       do {
-        FUN_006acc70(*(int *)(this_00 + 0x24e),uVar8,&local_10);
+        FUN_006acc70(*(int *)&this_00->field_0x24e,uVar8,&local_10);
         if ((short)local_10 == (short)param_2) {
           local_10 = 0xffff;
-          Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x24e),uVar8,&local_10);
+          Library::DKW::TBL::FUN_006ae140(*(uint **)&this_00->field_0x24e,uVar8,&local_10);
           break;
         }
         uVar8 = uVar8 + 1;
@@ -394,9 +407,9 @@ LAB_004a4a83:
       ;
     }
   }
-  iVar2 = *(int *)(this_00 + 0x29);
-  iVar3 = *(int *)(this_00 + 0x266);
-  iVar4 = *(int *)(this_00 + 0x24e);
+  iVar2 = this_00->field_0029;
+  iVar3 = *(int *)&this_00->field_0x266;
+  iVar4 = *(int *)&this_00->field_0x24e;
 LAB_004a4aab:
   DistributeMD(this_00,0,iVar4,iVar3,iVar2);
   g_currentExceptionFrame = local_78.previous;

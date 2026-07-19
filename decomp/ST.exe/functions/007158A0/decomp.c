@@ -28,35 +28,35 @@ SpriteClassTy::InitSprite
     switch(param_3) {
     case '\a':
     case '\x1e':
-      FUN_006b21e0((uint)param_1,(uint *)(local_8 + 4),param_2,0,(int *)0x0,0x8000000,0xffffffff,
+      FUN_006b21e0((uint)param_1,&local_8->field_0004,param_2,0,(int *)0x0,0x8000000,0xffffffff,
                    0xffffffff,0);
       break;
     case '\b':
       Library::DKW::DDX::FUN_006b2220
-                (param_1,(uint *)(local_8 + 4),param_2,0,(undefined4 *)0x0,(int *)0x0,0xffffffff,
+                (param_1,&local_8->field_0004,param_2,0,(undefined4 *)0x0,(int *)0x0,0xffffffff,
                  0xffffffff);
       break;
     case -0x80:
-      *(undefined4 *)(local_8 + 0x2c) = 0;
-      *(undefined4 *)(local_8 + 0x30) = 0;
-      *(undefined4 *)(local_8 + 0x34) = 0;
-      *(undefined4 *)(local_8 + 0x38) = 0;
-      *(undefined4 *)(local_8 + 0x3c) = 0;
-      *(undefined4 *)(local_8 + 0x24) = 1;
-      *(undefined4 *)(local_8 + 0x28) = 1;
+      local_8->field_002C = 0;
+      local_8->field_0030 = 0;
+      local_8->field_0034 = 0;
+      local_8->field_0038 = 0;
+      local_8->field_003C = 0;
+      local_8->field_0024 = 1;
+      local_8->field_0028 = 1;
       if (param_4 != (undefined4 *)0x0) {
-        *(undefined4 *)(local_8 + 0x24) = *param_4;
-        *(undefined4 *)(local_8 + 0x28) = param_4[1];
+        local_8->field_0024 = *param_4;
+        local_8->field_0028 = param_4[1];
       }
-      FUN_006b2330((uint)param_1,(uint *)(local_8 + 4),param_2,0x752e10,*(uint *)(local_8 + 0x24),
-                   *(uint *)(local_8 + 0x28),(uint)(local_8 + 0x2c));
+      FUN_006b2330((uint)param_1,&local_8->field_0004,param_2,0x752e10,local_8->field_0024,
+                   local_8->field_0028,(uint)&local_8->field_002C);
       break;
     case -0x7f:
-      FUN_0072aca0(param_1,(uint *)(local_8 + 4),param_5,param_6,(int)param_4);
+      FUN_0072aca0(param_1,&local_8->field_0004,param_5,param_6,(int)param_4);
     }
-    pSVar2[0x4c] = (SpriteClassTy)param_3;
-    *(int **)(pSVar2 + 0x48) = param_1;
-    *(uint *)(pSVar2 + 0x5d) = -(uint)(param_3 != -0x7f) & param_2;
+    pSVar2->field_004C = param_3;
+    pSVar2->field_0048 = param_1;
+    pSVar2->field_005D = -(uint)(param_3 != -0x7f) & param_2;
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

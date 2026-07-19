@@ -1,4 +1,4 @@
-FUN_00497af0:
+STGroupBoatC::STGroupBoatC:
 00497AF0  56                        PUSH ESI
 00497AF1  57                        PUSH EDI
 00497AF2  8B F1                     MOV ESI,ECX

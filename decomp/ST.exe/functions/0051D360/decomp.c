@@ -6,7 +6,7 @@
 void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
 
 {
-  HelpPanelTy HVar1;
+  char cVar1;
   code *pcVar2;
   HelpPanelTy *this_00;
   int errorCode;
@@ -26,28 +26,27 @@ void __thiscall HelpPanelTy::NatProc(HelpPanelTy *this,int param_1,char param_2)
   this_00 = local_c;
   if (errorCode == 0) {
     if (param_2 == '\0') {
-      HVar1 = local_c[0x1a1];
-      if (((HVar1 == (HelpPanelTy)0x0) || (HVar1 == (HelpPanelTy)0x6)) ||
-         (HVar1 == (HelpPanelTy)0xa)) {
-        local_c[0x1a2] = HVar1;
-        *(undefined4 *)(local_c + 0x1ab) = *(undefined4 *)(local_c + 0x1a3);
+      cVar1 = local_c->field_01A1;
+      if (((cVar1 == '\0') || (cVar1 == '\x06')) || (cVar1 == '\n')) {
+        local_c->field_01A2 = cVar1;
+        *(undefined4 *)&local_c->field_0x1ab = local_c->field_01A3;
       }
       else {
-        local_c[0x1a2] = (HelpPanelTy)0x0;
-        *(undefined4 *)(local_c + 0x1ab) = 0;
+        local_c->field_01A2 = 0;
+        *(undefined4 *)&local_c->field_0x1ab = 0;
       }
-      local_c[0x1a1] = (HelpPanelTy)0xc;
-      *(int *)(local_c + 0x1a3) = param_1;
-      *(undefined4 *)(local_c + 0x1a7) = 0;
-      *(undefined2 *)(local_c + 0x1af) = 0x23;
-      *(undefined2 *)(local_c + 0x1b1) = 5;
-      if (*(int *)(local_c + 0x178) != 0) {
-        *(undefined4 *)(local_c + 0x28) = 0x4202;
-        *(undefined2 *)(local_c + 0x2c) = 0;
-        *(undefined2 *)(local_c + 0x2e) = 2;
-        *(int *)(local_c + 0x30) = *(int *)(local_c + 0x178);
+      local_c->field_01A1 = 0xc;
+      local_c->field_01A3 = param_1;
+      local_c->field_01A7 = 0;
+      *(undefined2 *)&local_c->field_0x1af = 0x23;
+      *(undefined2 *)&local_c->field_0x1b1 = 5;
+      if (*(int *)&local_c->field_0x178 != 0) {
+        local_c->field_0028 = 0x4202;
+        *(undefined2 *)&local_c->field_0x2c = 0;
+        local_c->field_002E = 2;
+        *(int *)&local_c->field_0x30 = *(int *)&local_c->field_0x178;
         if (DAT_00802a30 != (undefined4 *)0x0) {
-          (**(code **)*DAT_00802a30)(local_c + 0x18);
+          (**(code **)*DAT_00802a30)(&local_c->field_0x18);
         }
       }
     }

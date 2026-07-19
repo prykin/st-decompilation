@@ -18,7 +18,8 @@ void __fastcall FUN_00623600(int *param_1)
   else {
     iVar6 = (int)*(short *)((int)param_1 + 0x4b);
     if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+         (thunk_FUN_00558c00(DAT_00802a88,
+                             *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                              (int)*(short *)((int)param_1 + 0x47),
                              (int)*(short *)((int)param_1 + 0x49),&local_8,&local_c), iVar6 < 0)) ||
         ((((4 < iVar6 || (local_8 < 0)) ||

@@ -34,31 +34,32 @@ CursorClassTy::SetImages
     RaiseInternalException(-0x34,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0xa9);
     return;
   }
-  *(int *)(local_8 + 0xb9) = -(int)param_4;
-  *(undefined4 *)(local_8 + 0xa9) = param_1;
-  *(uint *)(local_8 + 0xbd) = -param_5;
-  (**(code **)(*(int *)(local_8 + 0x18) + 4))(DAT_00806784,7,0,param_2,0xffffffff);
+  *(int *)&local_8[1].field_0x55 = -(int)param_4;
+  *(undefined4 *)&local_8[1].field_0x45 = param_1;
+  iVar3 = *(int *)&local_8->field_0x18;
+  *(uint *)&local_8[1].field_0x59 = -param_5;
+  (**(code **)(iVar3 + 4))(DAT_00806784,7,0,param_2,0xffffffff);
   Library::DKW::DDX::FUN_006b85d0
-            (*(uint **)(pCVar2 + 0xad),(int)*(short *)(*(int *)(pCVar2 + 0x69) + 0x23),
-             (BITMAPINFO *)(*(int *)(pCVar2 + 0x69) + 0x2d),0x8000000,0,param_4,param_5);
-  *(undefined4 *)(pCVar2 + 0x58) = param_3;
-  if (*(uint *)(pCVar2 + 0x1c) != 0xffffffff) {
+            (*(uint **)&pCVar2[1].field_0x49,(int)*(short *)(*(int *)&pCVar2[1].field_0x5 + 0x23),
+             (BITMAPINFO *)(*(int *)&pCVar2[1].field_0x5 + 0x2d),0x8000000,0,param_4,param_5);
+  *(undefined4 *)&pCVar2->field_0x58 = param_3;
+  if (pCVar2->field_001C != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(pCVar2 + 0x60),*(uint *)(pCVar2 + 0x1c),0xfffffffe,
-               *(uint *)(pCVar2 + 0x34),*(uint *)(pCVar2 + 0x38));
+              ((uint *)pCVar2->field_0060,pCVar2->field_001C,0xfffffffe,*(uint *)&pCVar2->field_0x34
+               ,*(uint *)&pCVar2->field_0x38);
   }
   if (param_6 < 0) {
-    *(int *)(pCVar2 + 0xb1) = *(int *)(pCVar2 + 0x3c) - (int)param_4;
+    *(int *)&pCVar2[1].field_0x4d = *(int *)&pCVar2->field_0x3c - (int)param_4;
   }
   else {
-    *(int *)(pCVar2 + 0xb1) = param_6 - (int)param_4;
+    *(int *)&pCVar2[1].field_0x4d = param_6 - (int)param_4;
   }
   if (param_7 < 0) {
-    *(uint *)(pCVar2 + 0xb5) = *(int *)(pCVar2 + 0x40) - param_5;
+    *(uint *)&pCVar2[1].field_0x51 = *(int *)&pCVar2->field_0x40 - param_5;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  *(uint *)(pCVar2 + 0xb5) = param_7 - param_5;
+  *(uint *)&pCVar2[1].field_0x51 = param_7 - param_5;
   g_currentExceptionFrame = local_4c.previous;
   return;
 }

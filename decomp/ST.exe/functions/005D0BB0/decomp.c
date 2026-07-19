@@ -27,14 +27,14 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
   SettMapMTy *local_c;
   uint local_8;
   
-  if ((*(int *)(this + 0x1f84) != 0) && (DAT_00808a8f == param_2)) {
+  if ((this->field_1F84 != 0) && (DAT_00808a8f == param_2)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_c = this;
     iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar4 = local_c;
     if (iVar5 == 0) {
-      iVar5 = *(int *)(local_c + 0x1f84);
+      iVar5 = local_c->field_1F84;
       if (param_1 < *(uint *)(iVar5 + 0xc)) {
         iVar5 = *(int *)(iVar5 + 8) * param_1 + *(int *)(iVar5 + 0x1c);
       }
@@ -45,7 +45,7 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
         if (param_2 != 0) {
           uVar11 = param_1 + 1;
           *(byte *)(iVar5 + 0x4a) = (byte)param_3;
-          iVar5 = *(int *)(local_c + 0x1f84);
+          iVar5 = local_c->field_1F84;
           bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
           if ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc)) {
             do {
@@ -57,13 +57,13 @@ SettMapMTy::ChangePlayerTeam(SettMapMTy *this,uint param_1,uint param_2,uint par
               }
               if ((pcVar6 == (char *)0x0) || (*pcVar6 != '\0')) break;
               pcVar6[0x4a] = (byte)param_3;
-              iVar5 = *(int *)(local_c + 0x1f84);
+              iVar5 = local_c->field_1F84;
               uVar11 = uVar11 + 1;
               bVar12 = uVar11 < *(uint *)(iVar5 + 0xc);
             } while ((int)uVar11 < (int)*(uint *)(iVar5 + 0xc));
           }
           (**(code **)(*(int *)local_c + 0x2c))();
-          *(int *)(pSVar4 + 0x2121) = *(int *)(pSVar4 + 0x2121) + 1;
+          *(int *)&pSVar4[1].field_0x4 = *(int *)&pSVar4[1].field_0x4 + 1;
           g_currentExceptionFrame = local_54.previous;
           return;
         }

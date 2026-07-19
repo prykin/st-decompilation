@@ -31,20 +31,21 @@ undefined4 __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,int param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar4 == 0) {
-    *(undefined4 *)(local_14 + 300) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    local_14->field_012C = DAT_00802a38->field_00E4;
     uVar1 = *(uint *)(param_1 + 0x10);
     if (uVar1 < 0x110) {
       if (uVar1 == 0x10f) {
         local_c = 0;
         local_10 = (byte *)PrepareToSave(local_14,&local_c);
-        STPlaySystemC::SaveObjData(DAT_00802a38,*(undefined4 *)(this_00 + 0x18),local_10,local_c);
+        STPlaySystemC::SaveObjData
+                  (DAT_00802a38,*(undefined4 *)&this_00->field_0x18,local_10,local_c);
         if (local_10 != (byte *)0x0) {
           FUN_006ab060(&local_10);
         }
       }
       else if (uVar1 == 0) {
-        if (*(int *)(local_14 + 0x99) == 0) {
-          *(undefined4 *)(local_14 + 0x99) = 1;
+        if (*(int *)&local_14->field_0x99 == 0) {
+          *(undefined4 *)&local_14->field_0x99 = 1;
           thunk_FUN_00690a40((int)local_14);
         }
         else {
@@ -59,10 +60,10 @@ undefined4 __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,int param_1)
         }
         InitData(this_00,puVar2);
         if (puVar2[3] == 0) {
-          *(undefined4 *)(this_00 + 0x1c) = DAT_00808754;
+          *(undefined4 *)&this_00->field_0x1c = DAT_00808754;
         }
         else {
-          *(undefined4 *)(this_00 + 0x1c) = *(undefined4 *)(this_00 + 0x7e);
+          *(undefined4 *)&this_00->field_0x1c = *(undefined4 *)&this_00->field_0x7e;
         }
         if (puVar2[3] == 0) {
           InitDistrObj(this_00);
@@ -73,7 +74,7 @@ undefined4 __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,int param_1)
       }
     }
     else if (uVar1 == 0x111) {
-      iVar4 = *(int *)(local_14 + 0xa5);
+      iVar4 = *(int *)&local_14->field_0xa5;
       if (0 < *(int *)(iVar4 + 0xc)) {
         bVar9 = *(int *)(iVar4 + 0xc) != 0;
         do {
@@ -93,7 +94,7 @@ undefined4 __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,int param_1)
             piVar8[1] = local_8;
             *(AiTactClassTy **)(local_8 + 0x284) = this_00;
           }
-          iVar4 = *(int *)(this_00 + 0xa5);
+          iVar4 = *(int *)&this_00->field_0xa5;
           uVar7 = uVar7 + 1;
           bVar9 = uVar7 < *(uint *)(iVar4 + 0xc);
         } while ((int)uVar7 < (int)*(uint *)(iVar4 + 0xc));
@@ -109,7 +110,7 @@ undefined4 __thiscall AiTactClassTy::GetMessage(AiTactClassTy *this,int param_1)
   g_currentExceptionFrame = local_58.previous;
   iVar5 = ReportDebugMessage(s_E____titans_ai_ai_tact_cpp_007d56e0,0x4ad,0,iVar4,
                              s_AiTactClassTy__GetMessage_error_m_007d58b8,
-                             *(undefined4 *)(param_1 + 0x10),*(undefined4 *)(local_14 + 0x18));
+                             *(undefined4 *)(param_1 + 0x10),*(undefined4 *)&local_14->field_0x18);
   if (iVar5 == 0) {
     RaiseInternalException(iVar4,0,s_E____titans_ai_ai_tact_cpp_007d56e0,0x4ae);
     return 0xffff;

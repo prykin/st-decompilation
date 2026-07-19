@@ -35,11 +35,11 @@ void __thiscall MAdvTy::PaintMAdv(MAdvTy *this)
   if (iVar3 == 0) {
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     pMVar2 = local_8;
-    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(local_8 + 0x5e));
+    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)&local_8[1].field_0x2);
     pvVar10 = *(void **)(DAT_0081176c + 0x30);
     uVar11 = 1;
     uVar9 = 0xffffffff;
-    if (pMVar2[0x5d] == (MAdvTy)0x0) {
+    if (pMVar2[1].field_0x1 == '\0') {
       uVar8 = 0xfffffffe;
       puVar4 = (uint *)FUN_006b0140(0x25e4,DAT_00807618);
       StartServTy::WrTextDDX(this_02,0,0,0x1b8,800,0x14,puVar4,uVar8,uVar9,pvVar10,uVar11);

@@ -7,12 +7,12 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
 
 {
   code *pcVar1;
-  FSGSTy *this_00;
   int errorCode;
   int iVar2;
-  FSGSTy *this_01;
+  FSGSTy *this_00;
   FSGSTy *pFVar3;
-  MMMObjTy *extraout_ECX;
+  FSGSTy *pFVar4;
+  FSGSTy *extraout_ECX;
   undefined4 unaff_EBX;
   void *unaff_ESI;
   InternalExceptionFrame local_50;
@@ -37,24 +37,24 @@ void __thiscall FSGSTy::PaintFSGS(FSGSTy *this,char param_1)
     return;
   }
   FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
-  this_00 = local_c;
-  thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)(local_c + 0x5d));
-  switch(this_00[0x1a5f]) {
-  case (FSGSTy)0x1:
+  pFVar4 = local_c;
+  thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)&local_c->field_0x5d);
+  switch(pFVar4->field_1A5F) {
+  case 1:
     if (local_8 == 0) {
       local_8 = 0x2563;
       goto LAB_00596d58;
     }
     break;
-  case (FSGSTy)0x2:
+  case 2:
 LAB_00596d58:
     if (local_8 == 0) {
       local_8 = 0x2553;
       goto LAB_00596d69;
     }
     break;
-  case (FSGSTy)0x3:
-    if (*(int *)(this_00 + 0x1f23) != 0) {
+  case 3:
+    if (*(int *)&pFVar4[1].field_0x44 != 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -63,30 +63,30 @@ LAB_00596d58:
       return;
     }
     MMMObjTy::OutBSlProc
-              (DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x72,0x2e1,0x14c,
-               (undefined4 *)(*(int *)(this_00 + 0x1a5b) + 0x140));
+              ((MMMObjTy *)DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x72,0x2e1,0x14c,
+               (undefined4 *)(*(int *)&pFVar4->field_0x1a5b + 0x140));
     g_currentExceptionFrame = local_50.previous;
     return;
-  case (FSGSTy)0x4:
+  case 4:
 LAB_00596d69:
     if (local_8 == 0) {
       local_8 = 0x2552;
       goto LAB_00596d7a;
     }
     break;
-  case (FSGSTy)0x5:
+  case 5:
 LAB_00596d7a:
     if (local_8 == 0) {
       local_8 = 0x2562;
       goto LAB_00596d8b;
     }
     break;
-  case (FSGSTy)0x6:
-    if ((*(int *)(this_00 + 0x1f27) == 0) && (param_1 == '\0')) {
-      OutChSlProc(this_01,(int)DAT_0080759c,0,0,0x13,0x5e,0x1bf,0x175,
-                  (undefined4 *)(*(int *)(this_00 + 0x1a5b) + 0x140));
+  case 6:
+    if ((*(int *)&pFVar4[1].field_0x48 == 0) && (param_1 == '\0')) {
+      OutChSlProc(this_00,(int)DAT_0080759c,0,0,0x13,0x5e,0x1bf,0x175,
+                  (undefined4 *)(*(int *)&pFVar4->field_0x1a5b + 0x140));
     }
-    if (*(int *)(this_00 + 0x1f2b) != 0) {
+    if (*(int *)&pFVar4[1].field_0x4c != 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -94,25 +94,25 @@ LAB_00596d7a:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    OutTRGlProc((FSGSTy *)(*(int *)(this_00 + 0x1a5b) + 0x140),(int)DAT_0080759c,0,0,0x1e9,0x5e,
-                0x124,0x175,*(int *)(this_00 + 0x1a5b) + 0x140);
+    pFVar4 = (FSGSTy *)(*(int *)&pFVar4->field_0x1a5b + 0x140);
+    OutTRGlProc(pFVar4,(int)DAT_0080759c,0,0,0x1e9,0x5e,0x124,0x175,(int)pFVar4);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case (FSGSTy)0x7:
+  case 7:
 LAB_00596d8b:
     if (local_8 == 0) {
       local_8 = 0x255b;
       goto LAB_00596d9c;
     }
     break;
-  case (FSGSTy)0x8:
-    pFVar3 = this_01;
-    if ((*(int *)(this_00 + 0x1f2f) == 0) && (param_1 == '\0')) {
-      OutSGlProc((FSGSTy *)DAT_0080759c,(int)DAT_0080759c,0,0,0x199,0x5e,0x174,0x175,
-                 *(int *)(this_00 + 0x1a5b) + 0x140);
-      pFVar3 = (FSGSTy *)extraout_ECX;
+  case 8:
+    pFVar3 = this_00;
+    if ((*(int *)&pFVar4[1].field_0x50 == 0) && (param_1 == '\0')) {
+      OutSGlProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x199,0x5e,0x174,0x175,
+                 *(int *)&pFVar4->field_0x1a5b + 0x140);
+      pFVar3 = extraout_ECX;
     }
-    if (*(int *)(this_00 + 0x1f2b) != 0) {
+    if (*(int *)&pFVar4[1].field_0x4c != 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -122,11 +122,11 @@ LAB_00596d8b:
     }
     MMMObjTy::OutBSlProc
               ((MMMObjTy *)pFVar3,(int)DAT_0080759c,0,0,0x13,0x5e,0x174,0x175,
-               (undefined4 *)(*(int *)(this_00 + 0x1a5b) + 0x140));
+               (undefined4 *)(*(int *)&pFVar4->field_0x1a5b + 0x140));
     g_currentExceptionFrame = local_50.previous;
     return;
-  case (FSGSTy)0x9:
-    if (*(int *)(this_00 + 0x1f23) != 0) {
+  case 9:
+    if (*(int *)&pFVar4[1].field_0x44 != 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
@@ -134,11 +134,11 @@ LAB_00596d8b:
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    OutLadProc((FSGSTy *)DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x5e,0x2e1,0x175);
-    PaintLadder(this_00,(int)unaff_ESI);
+    OutLadProc(DAT_0080759c,(int)DAT_0080759c,0,0,0x22,0x5e,0x2e1,0x175);
+    PaintLadder(pFVar4,(int)unaff_ESI);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case (FSGSTy)0xa:
+  case 10:
 LAB_00596d9c:
     if (local_8 == 0) {
       local_8 = 0x259c;
@@ -147,10 +147,10 @@ LAB_00596d9c:
   default:
     goto switchD_00596d3d_default;
   }
-  if ((*(int *)(this_00 + 0x1f23) == 0) && (param_1 == '\0')) {
-    pFVar3 = (FSGSTy *)((-(uint)(this_00[0x1abb] != (FSGSTy)0x0) & 0x74) + 0x106);
+  if ((*(int *)&pFVar4[1].field_0x44 == 0) && (param_1 == '\0')) {
+    pFVar3 = (FSGSTy *)((-(uint)(pFVar4->field_0x1abb != '\0') & 0x74) + 0x106);
     OutTRGlProc(pFVar3,(int)DAT_0080759c,0,0,0xb4,
-                (-(uint)(this_00[0x1abb] != (FSGSTy)0x0) & 0xffffffb4) + 0xaa,0x1b8,(int)pFVar3,
+                (-(uint)(pFVar4->field_0x1abb != '\0') & 0xffffffb4) + 0xaa,0x1b8,(int)pFVar3,
                 local_8);
     g_currentExceptionFrame = local_50.previous;
     return;

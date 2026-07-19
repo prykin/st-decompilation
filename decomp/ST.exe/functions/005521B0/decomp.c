@@ -13,7 +13,7 @@ void __thiscall TradePanelTy::Update(TradePanelTy *this)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
   undefined4 local_58 [16];
-  int local_18;
+  undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
   undefined4 local_c;
@@ -25,11 +25,11 @@ void __thiscall TradePanelTy::Update(TradePanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_58,0,unaff_ESI,pIVar3);
   this_00 = local_8;
   if (errorCode == 0) {
-    local_18 = *(int *)(local_8 + 0x1ab);
-    local_14 = *(undefined4 *)(local_8 + 0x1af);
-    local_10 = *(undefined4 *)(local_8 + 0x1b3);
-    local_c = *(undefined4 *)(local_8 + 0x1b7);
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,10,(int *)(local_8 + 0x1ab));
+    local_18 = *(undefined4 *)&local_8->field_0x1ab;
+    local_14 = *(undefined4 *)&local_8->field_0x1af;
+    local_10 = *(undefined4 *)&local_8->field_0x1b3;
+    local_c = *(undefined4 *)&local_8->field_0x1b7;
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,10,(int *)&local_8->field_0x1ab);
     thunk_FUN_00551b10(this_00);
     PaintPanel(this_00);
     g_currentExceptionFrame = pIVar3;

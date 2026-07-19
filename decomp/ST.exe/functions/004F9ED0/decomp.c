@@ -14,9 +14,9 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
   ushort *puVar5;
   int iVar6;
   undefined4 unaff_ESI;
-  CPanelTy *pCVar7;
+  undefined1 *puVar7;
+  undefined4 *puVar8;
   void *unaff_EDI;
-  CPanelTy *pCVar8;
   uint uVar9;
   byte bVar10;
   undefined4 *puVar11;
@@ -39,11 +39,11 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
       iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
       this_00 = local_10;
       if (iVar3 == 0) {
-        switch(*(undefined2 *)(local_10 + 0x23f)) {
+        switch(*(undefined2 *)&local_10->field_0x23f) {
         case 1:
-          thunk_FUN_004a9b60(*(int *)(local_10 + 0x11c),*(int *)(local_10 + 0x120),
-                             *(int *)(local_10 + 0x124),*(int *)(local_10 + 0x128));
-          *(undefined2 *)(this_00 + 0x23f) = 6;
+          thunk_FUN_004a9b60(*(int *)&local_10->field_0x11c,*(int *)&local_10->field_0x120,
+                             *(int *)&local_10->field_0x124,*(int *)&local_10->field_0x128);
+          *(undefined2 *)&this_00->field_0x23f = 6;
           if (DAT_008016e8 != (ProdPanelTy *)0x0) {
             ProdPanelTy::SetPanel(DAT_008016e8,'\0');
           }
@@ -82,8 +82,8 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
           }
           ShiftControls(this_00,0);
           if (DAT_0080731a != 0) {
-            pCVar7 = this_00 + 0x2ec;
-            pCVar8 = this_00 + 0x2ee;
+            puVar7 = &this_00->field_0x2ec;
+            puVar8 = (undefined4 *)&this_00->field_0x2ee;
             local_8 = 2;
             do {
               puVar11 = (undefined4 *)0x0;
@@ -92,17 +92,17 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
               bVar10 = 0;
               uVar9 = 6;
               pbVar4 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
-              puVar5 = FUN_00709af0(DAT_00806794,0x1f,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
-              *(ushort **)(pCVar8 + -0xc) = puVar5;
-              pCVar7[-2] = (CPanelTy)0x0;
-              *pCVar7 = (CPanelTy)0x4;
-              *(undefined4 *)pCVar8 = *(undefined4 *)(this_00 + 0x38);
-              pCVar7 = pCVar7 + 1;
-              pCVar8 = pCVar8 + 4;
+              puVar5 = FUN_00709af0(DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+              puVar8[-3] = puVar5;
+              puVar7[-2] = 0;
+              *puVar7 = 4;
+              *puVar8 = this_00->field_0038;
+              puVar7 = puVar7 + 1;
+              puVar8 = puVar8 + 1;
               local_8 = local_8 + -1;
             } while (local_8 != 0);
-            pCVar7 = this_00 + 0xd53;
-            pCVar8 = this_00 + 0xd47;
+            puVar8 = (undefined4 *)&this_00->field_0xd53;
+            puVar7 = &this_00->field_0xd47;
             local_c = 2;
             do {
               local_8 = 6;
@@ -113,13 +113,13 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
                 bVar10 = 0;
                 uVar9 = 6;
                 pbVar4 = (byte *)thunk_FUN_00526100((undefined1 *)0x0,0);
-                puVar5 = FUN_00709af0(DAT_00806794,0x1f,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
-                *(ushort **)(pCVar7 + -0x48) = puVar5;
-                pCVar8[-0xc] = (CPanelTy)0x0;
-                *pCVar8 = (CPanelTy)0x4;
-                *(undefined4 *)pCVar7 = *(undefined4 *)(this_00 + 0x38);
-                pCVar7 = pCVar7 + 4;
-                pCVar8 = pCVar8 + 1;
+                puVar5 = FUN_00709af0(DAT_00806794,CASE_1F,pbVar4,uVar9,bVar10,iVar3,iVar6,puVar11);
+                puVar8[-0x12] = puVar5;
+                puVar7[-0xc] = 0;
+                *puVar7 = 4;
+                *puVar8 = this_00->field_0038;
+                puVar8 = puVar8 + 1;
+                puVar7 = puVar7 + 1;
                 local_8 = local_8 + -1;
               } while (local_8 != 0);
               local_c = local_c + -1;
@@ -128,14 +128,14 @@ void __thiscall CPanelTy::SwitchCPanel(CPanelTy *this)
             return;
           }
 switchD_004f9f52_caseD_3:
-          *(undefined2 *)(this_00 + 0x23f) = 4;
-          thunk_FUN_005252c0(0xb0);
+          *(undefined2 *)&this_00->field_0x23f = 4;
+          thunk_FUN_005252c0(CASE_B0);
           g_currentExceptionFrame = local_54.previous;
           return;
         case 2:
         case 4:
-          *(undefined2 *)(local_10 + 0x23f) = 3;
-          thunk_FUN_005252c0(0xaf);
+          *(undefined2 *)&local_10->field_0x23f = 3;
+          thunk_FUN_005252c0(CASE_AF);
           if (DAT_008016e8 != (ProdPanelTy *)0x0) {
             ProdPanelTy::SetPanel(DAT_008016e8,'\0');
           }

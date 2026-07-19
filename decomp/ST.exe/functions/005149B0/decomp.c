@@ -45,8 +45,8 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
     do {
       pHVar3 = local_8;
       iVar7 = uVar6 * 0x11;
-      cVar1 = *(char *)(*(int *)(pHVar9 + 0x1c7) + 8 + iVar7);
-      iVar4 = *(int *)(pHVar9 + 0x1c7) + iVar7;
+      cVar1 = *(char *)(*(int *)&pHVar9->field_0x1c7 + 8 + iVar7);
+      iVar4 = *(int *)&pHVar9->field_0x1c7 + iVar7;
       switch(cVar1) {
       case '\x01':
       case '\x02':
@@ -58,7 +58,7 @@ void __thiscall HelpPanelTy::LinkAct(HelpPanelTy *this,int param_1,int param_2)
            (((cVar1 != '\x03' && (cVar1 != '\f')) && (*(int *)(iVar4 + 0xd) != param_2))))
         goto switchD_00514a29_caseD_5;
         thunk_FUN_005148a0(local_8,uVar6);
-        iVar4 = *(int *)(pHVar3 + 0x1b3);
+        iVar4 = *(int *)&pHVar3->field_0x1b3;
         uVar8 = 0;
         uVar6 = *(uint *)(iVar4 + 0xc);
         if (uVar6 == 0) {
@@ -68,7 +68,7 @@ LAB_00514ab9:
           local_c = uVar6;
         }
         else {
-          local_10 = (int *)(iVar7 + *(int *)(pHVar3 + 0x1c7));
+          local_10 = (int *)(iVar7 + *(int *)&pHVar3->field_0x1c7);
           if (uVar6 == 0) {
             piVar5 = (int *)0x0;
             goto LAB_00514a8f;
@@ -77,7 +77,7 @@ LAB_00514ab9:
             piVar5 = (int *)(*(int *)(iVar4 + 8) * uVar8 + *(int *)(iVar4 + 0x1c));
 LAB_00514a8f:
             if ((*piVar5 == *local_10) && (piVar5[1] == local_10[1])) {
-              *(uint *)(pHVar3 + 0x1b7) = uVar8;
+              *(uint *)&pHVar3->field_0x1b7 = uVar8;
               goto LAB_00514ab9;
             }
             uVar8 = uVar8 + 1;

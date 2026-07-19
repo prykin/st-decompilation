@@ -8,15 +8,16 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
 {
   code *pcVar1;
   UpgPanelTy *pUVar2;
-  int iVar3;
-  uint uVar4;
-  byte *pbVar5;
-  int iVar6;
+  UpgPanelTy *pUVar3;
+  int iVar4;
+  uint uVar5;
+  byte *pbVar6;
+  int iVar7;
   undefined4 unaff_ESI;
-  UpgPanelTy *pUVar7;
-  UpgPanelTy *pUVar8;
+  int *piVar8;
+  Global_sub_005276E0_param_1Enum *pGVar9;
   void *unaff_EDI;
-  int *piVar9;
+  int *piVar10;
   int local_298 [144];
   InternalExceptionFrame local_58;
   UpgPanelTy *local_14;
@@ -27,88 +28,88 @@ void __thiscall UpgPanelTy::Update(UpgPanelTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
-  iVar3 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pUVar2 = local_14;
-  if (iVar3 == 0) {
-    pUVar8 = local_14 + 0x1ab;
-    pUVar7 = pUVar8;
-    piVar9 = local_298;
-    for (iVar3 = 0x90; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *piVar9 = *(int *)pUVar7;
-      pUVar7 = pUVar7 + 4;
-      piVar9 = piVar9 + 1;
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pUVar3 = local_14;
+  if (iVar4 == 0) {
+    pUVar2 = local_14 + 1;
+    piVar8 = (int *)&pUVar2->field_0x33;
+    piVar10 = local_298;
+    for (iVar4 = 0x90; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *piVar10 = *piVar8;
+      piVar8 = piVar8 + 1;
+      piVar10 = piVar10 + 1;
     }
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x10,(int *)pUVar8);
-    iVar3 = 0x19;
-    pUVar8 = pUVar2 + 0x1ab;
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x10,(int *)&pUVar2->field_0x33);
+    iVar4 = 0x19;
+    pGVar9 = &pUVar3[1].field_0x33;
     local_8 = 3;
     do {
-      uVar4 = thunk_FUN_005276e0(*pUVar8,(byte)((uint)*(undefined4 *)pUVar8 >> 0x10));
-      if (pUVar8[8] == (UpgPanelTy)0x0) {
-        iVar6 = *(int *)(pUVar2 + 0x3ef);
+      uVar5 = thunk_FUN_005276e0(*pGVar9,(byte)((uint)*(undefined4 *)pGVar9 >> 0x10));
+      if (pGVar9[8] == ~(CASE_80|CASE_7F)) {
+        iVar7 = *(int *)&pUVar3[2].field_0xff;
       }
       else {
-        iVar6 = *(int *)(pUVar2 + 0x3eb);
+        iVar7 = *(int *)&pUVar3[2].field_0xfb;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(iVar6,uVar4);
-      thunk_FUN_00540760(*(undefined4 **)(pUVar2 + 0x68),0x24,iVar3,'\x01',pbVar5);
-      pUVar8 = pUVar8 + 0x30;
-      iVar3 = iVar3 + 0x1b;
+      pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
+      thunk_FUN_00540760(*(undefined4 **)&pUVar3->field_0x68,0x24,iVar4,'\x01',pbVar6);
+      pGVar9 = pGVar9 + 0x30;
+      iVar4 = iVar4 + 0x1b;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     local_8 = 0x5e;
-    pUVar8 = pUVar2 + 0x23b;
+    pGVar9 = &pUVar3[1].field_0xc3;
     local_c = 2;
     do {
-      iVar3 = 0x19;
+      iVar4 = 0x19;
       local_10 = 3;
       do {
-        uVar4 = thunk_FUN_005276e0(*pUVar8,(byte)((uint)*(undefined4 *)pUVar8 >> 0x10));
-        if (pUVar8[8] == (UpgPanelTy)0x0) {
-          iVar6 = *(int *)(pUVar2 + 0x3ef);
+        uVar5 = thunk_FUN_005276e0(*pGVar9,(byte)((uint)*(undefined4 *)pGVar9 >> 0x10));
+        if (pGVar9[8] == ~(CASE_80|CASE_7F)) {
+          iVar7 = *(int *)&pUVar3[2].field_0xff;
         }
         else {
-          iVar6 = *(int *)(pUVar2 + 0x3eb);
+          iVar7 = *(int *)&pUVar3[2].field_0xfb;
         }
-        pbVar5 = (byte *)FUN_0070b3a0(iVar6,uVar4);
-        thunk_FUN_00540760(*(undefined4 **)(pUVar2 + 0x68),local_8,iVar3,'\x01',pbVar5);
-        pUVar8 = pUVar8 + 0x30;
-        iVar3 = iVar3 + 0x1b;
+        pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
+        thunk_FUN_00540760(*(undefined4 **)&pUVar3->field_0x68,local_8,iVar4,'\x01',pbVar6);
+        pGVar9 = pGVar9 + 0x30;
+        iVar4 = iVar4 + 0x1b;
         local_10 = local_10 + -1;
       } while (local_10 != 0);
       local_8 = local_8 + 0x33;
       local_c = local_c + -1;
     } while (local_c != 0);
-    iVar3 = 0x19;
-    pUVar8 = pUVar2 + 0x35b;
+    iVar4 = 0x19;
+    pGVar9 = &pUVar3[2].field_0x6b;
     local_c = 3;
     local_10 = 0;
     do {
-      uVar4 = thunk_FUN_005276e0(*pUVar8,(byte)((uint)*(undefined4 *)pUVar8 >> 0x10));
-      if (pUVar8[8] == (UpgPanelTy)0x0) {
-        iVar6 = *(int *)(pUVar2 + 0x3ef);
+      uVar5 = thunk_FUN_005276e0(*pGVar9,(byte)((uint)*(undefined4 *)pGVar9 >> 0x10));
+      if (pGVar9[8] == ~(CASE_80|CASE_7F)) {
+        iVar7 = *(int *)&pUVar3[2].field_0xff;
       }
       else {
-        iVar6 = *(int *)(pUVar2 + 0x3eb);
+        iVar7 = *(int *)&pUVar3[2].field_0xfb;
       }
-      pbVar5 = (byte *)FUN_0070b3a0(iVar6,uVar4);
-      thunk_FUN_00540760(*(undefined4 **)(pUVar2 + 0x68),0xd3,iVar3,'\x01',pbVar5);
-      pUVar8 = pUVar8 + 0x30;
-      iVar3 = iVar3 + 0x1b;
+      pbVar6 = (byte *)FUN_0070b3a0(iVar7,uVar5);
+      thunk_FUN_00540760(*(undefined4 **)&pUVar3->field_0x68,0xd3,iVar4,'\x01',pbVar6);
+      pGVar9 = pGVar9 + 0x30;
+      iVar4 = iVar4 + 0x1b;
       local_c = local_c + -1;
     } while (local_c != 0);
     g_currentExceptionFrame = local_58.previous;
     return;
   }
   g_currentExceptionFrame = local_58.previous;
-  iVar6 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54,0,iVar3,&DAT_007a4ccc,
+  iVar7 = ReportDebugMessage(s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54,0,iVar4,&DAT_007a4ccc,
                              s_UpgPanelTy__Update_007c8850);
-  if (iVar6 != 0) {
+  if (iVar7 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  RaiseInternalException(iVar3,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54);
+  RaiseInternalException(iVar4,0,s_E____titans_Andrey_upginfo_cpp_007c87b8,0x54);
   return;
 }
 

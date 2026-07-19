@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
 
 {
-  CPanelTy CVar1;
+  byte bVar1;
   code *pcVar2;
   CPanelTy *pCVar3;
   int iVar4;
@@ -25,24 +25,24 @@ void __thiscall CPanelTy::PaintBRLife(CPanelTy *this,int param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pCVar3 = local_c;
   if (iVar4 == 0) {
-    FUN_006b4170(*(int *)(local_c + 0x18c),0,param_1 + 0x35,0x70,7,0x21,0);
-    CVar1 = pCVar3[0xbc8];
-    cVar7 = (char)(((uint)(byte)CVar1 * 0x21) / 100);
+    FUN_006b4170(local_c->field_018C,0,param_1 + 0x35,0x70,7,0x21,0);
+    bVar1 = pCVar3->field_0xbc8;
+    cVar7 = (char)(((uint)bVar1 * 0x21) / 100);
     local_8 = CONCAT31(local_8._1_3_,cVar7);
-    if ((CVar1 != (CPanelTy)0x0) && (cVar7 == '\0')) {
+    if ((bVar1 != 0) && (cVar7 == '\0')) {
       local_8 = CONCAT31(local_8._1_3_,1);
     }
-    if ((byte)CVar1 < 0x46) {
-      iVar4 = (-(uint)((byte)CVar1 < 0x14) & 5) + 5;
+    if (bVar1 < 0x46) {
+      iVar4 = (-(uint)(bVar1 < 0x14) & 5) + 5;
     }
     else {
       iVar4 = 0;
     }
     uVar5 = local_8 & 0xff;
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)(pCVar3 + 0x18c),0,param_1 + 0x36,0x91 - uVar5,
-               *(int *)(pCVar3 + 0x28a),0,iVar4,*(int *)(*(int *)(pCVar3 + 0x28a) + 8) - uVar5,5,
-               uVar5);
+              ((undefined4 *)pCVar3->field_018C,0,param_1 + 0x36,0x91 - uVar5,
+               *(int *)&pCVar3->field_0x28a,0,iVar4,
+               *(int *)(*(int *)&pCVar3->field_0x28a + 8) - uVar5,5,uVar5);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

@@ -9,7 +9,8 @@ void __thiscall FUN_004f1c80(void *this,uint param_1,uint param_2)
   
   uVar2 = param_2;
   uVar1 = param_1;
-  iVar3 = thunk_FUN_004f19d0((char)param_1,(byte)param_2,&param_1,&param_2);
+  iVar3 = thunk_FUN_004f19d0((char)param_1,(Global_sub_004F19D0_param_2Enum)param_2,&param_1,
+                             &param_2);
   if (iVar3 != 0) {
     iVar3 = (uVar2 & 0xff) + (uVar1 & 0xff) * 6;
     pbVar4 = (byte *)FUN_0070b650(*(short **)((int)this + iVar3 * 4 + 0xd0b),

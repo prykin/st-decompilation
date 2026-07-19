@@ -1,9 +1,14 @@
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004C21A0_param_1Enum. Cases:
+   CASE_0=0;CASE_2=2;CASE_3=3;CASE_E=14;CASE_17=23;CASE_19=25;CASE_1A=26;CASE_26=38;CASE_2A=42;CASE_34=52;CASE_37=55;CASE_42=66;CASE_43=67
+    */
 
 undefined4 __thiscall
-FUN_004c21a0(void *this,undefined4 param_1,int *param_2,float param_3,int param_4)
+FUN_004c21a0(void *this,Global_sub_004C21A0_param_1Enum param_1,int *param_2,float param_3,
+            int param_4)
 
 {
   int *piVar1;
@@ -60,7 +65,7 @@ LAB_004c2616:
     goto switchD_004c22b3_caseD_1;
   }
   switch(param_1) {
-  case 0:
+  case CASE_0:
     if (param_2 != local_8) {
       if (param_2 == (int *)0x0) {
         if (*(int *)((int)local_8 + 0x245) == 4) {
@@ -99,12 +104,12 @@ LAB_004c2616:
       goto joined_r0x004c2294;
     }
     goto LAB_004c2616;
-  case 2:
+  case CASE_2:
     goto joined_r0x004c231f;
-  case 3:
-  case 0x19:
-  case 0x1a:
-  case 0x34:
+  case CASE_3:
+  case CASE_19:
+  case CASE_1A:
+  case CASE_34:
     if (param_2 == local_8) {
       sVar4 = 0;
     }
@@ -114,13 +119,13 @@ LAB_004c2616:
       sVar4 = (-(ushort)(uVar2 != 0) & 6) + 1;
     }
     break;
-  case 0xe:
+  case CASE_E:
     sVar4 = 0x15;
     if ((DAT_007fb2ac != 0) && (*(int *)(DAT_007fb2ac + 0x24) != 0)) {
       sVar4 = 0x14;
     }
     break;
-  case 0x17:
+  case CASE_17:
     if (((param_2 != (int *)0x0) && (*(int *)((int)local_8 + 0x245) == 4)) &&
        (((iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x37 ||
          (iVar5 = (**(code **)(*param_2 + 0x2c))(), iVar5 == 0x6c)) &&
@@ -129,8 +134,8 @@ LAB_004c2616:
       break;
     }
     goto LAB_004c2352;
-  case 0x26:
-  case 0x37:
+  case CASE_26:
+  case CASE_37:
 joined_r0x004c231f:
     if (param_2 == (int *)0x0) {
       sVar4 = 6;
@@ -139,8 +144,8 @@ joined_r0x004c231f:
     if (((iVar5 < 0) || (DAT_007fb240 <= iVar5)) || ((param_4 < 0 || (DAT_007fb242 <= param_4))))
     break;
     goto LAB_004c2352;
-  case 0x2a:
-  case 0x43:
+  case CASE_2A:
+  case CASE_43:
     if (((((-1 < iVar5) && (iVar5 < DAT_007fb240)) &&
          ((-1 < param_4 && ((param_4 < DAT_007fb242 && (DAT_00802a88 != (void *)0x0)))))) &&
         (0x27 < local_8[0x135])) &&
@@ -148,7 +153,7 @@ joined_r0x004c231f:
       sVar4 = 0x19;
     }
     break;
-  case 0x42:
+  case CASE_42:
     if ((((param_2 != (int *)0x0) && (param_2[9] == local_8[9])) && (param_2[8] == 1000)) &&
        (iVar5 = thunk_FUN_004dbb10(local_8,(int)param_2), iVar5 != 0)) {
       sVar4 = 0x1f;

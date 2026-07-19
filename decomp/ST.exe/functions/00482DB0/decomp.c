@@ -131,7 +131,8 @@ LAB_00482fa9:
           iVar5 = STSprGameObjC::CheckRay
                             ((STSprGameObjC *)param_1,(short)uVar2 + sVar1,sVar11,(short)local_24,
                              sVar3,sVar8,*(short *)((int)local_8 + 0x45),
-                             *(int *)((int)param_1 + 0x79a),(int *)&local_14,0);
+                             *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
+                             (int *)&local_14,0);
           if (iVar5 == 0) {
             return -(local_8 != local_14) & 8;
           }

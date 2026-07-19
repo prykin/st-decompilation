@@ -26,7 +26,7 @@ void __thiscall StartSystemTy::InitChat(StartSystemTy *this)
       FUN_006b5570((byte *)DAT_0080c4fa);
     }
     DAT_0080c4fa = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,100,0x14);
-    iVar2 = *(int *)(local_8 + 0x67e);
+    iVar2 = local_8->field_067E;
     if (iVar2 != 0) {
       uVar6 = *(uint *)(iVar2 + 0x14);
       if (uVar6 == 0) {

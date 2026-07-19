@@ -91,7 +91,7 @@ undefined4 __thiscall STManRuinC::GetMessage(STManRuinC *this,int param_1)
                            *(uint *)(DAT_00806724 + 0x30 + (uint)*(byte *)(puVar4 + 8) * 4),
                            (int)*(short *)(DAT_00806724 + 0x2c));
             }
-            if (*(uint *)(DAT_00802a38 + 0xe4) % 6 == 0) {
+            if ((uint)DAT_00802a38->field_00E4 % 6 == 0) {
               *(char *)(puVar4 + 8) = *(char *)(puVar4 + 8) + '\x01';
             }
             if (*(short *)(DAT_00806724 + 0x23) <= (short)(ushort)*(byte *)(puVar4 + 8)) {

@@ -64,18 +64,18 @@ void __thiscall STAllPlayersC::ActivateTV(STAllPlayersC *this,char param_1,int p
                     *(int *)((int)piVar8 + 10),uVar6);
   SelfCheckObjControl(this);
   if (param_2 == 0) {
-    thunk_FUN_0043fc50(1,0);
-    thunk_FUN_0043fc50(2,0);
+    thunk_FUN_0043fc50(CASE_1,0);
+    thunk_FUN_0043fc50(CASE_2,0);
     if (0 < param_3) {
-      thunk_FUN_0043fc50(0xe,0);
+      thunk_FUN_0043fc50(CASE_E,0);
       return;
     }
   }
   else if (param_2 == 1) {
-    thunk_FUN_0043fc50(5,0);
-    thunk_FUN_0043fc50(4,0);
+    thunk_FUN_0043fc50(CASE_5,0);
+    thunk_FUN_0043fc50(CASE_4,0);
     if (0 < param_3) {
-      thunk_FUN_0043fc50(0xf,0);
+      thunk_FUN_0043fc50(CASE_F,0);
     }
   }
   return;

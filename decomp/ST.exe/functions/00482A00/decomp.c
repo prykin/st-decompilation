@@ -16,133 +16,133 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
   InternalExceptionFrame local_4c;
   STBoatC *local_8;
   
-  if (*(int *)(this + 0x455) != 1) {
+  if (this->field_0455 != 1) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar2 == 0) {
-      if ((param_1 == 1) && (*(uint *)(local_8 + 0x24) == (uint)DAT_0080874d)) {
-        switch(*(undefined4 *)(local_8 + 0x6f7)) {
-        case 1:
+      if ((param_1 == 1) && (*(uint *)&local_8->field_0x24 == (uint)DAT_0080874d)) {
+        switch(local_8->field_06F7) {
+        case CASE_1:
           uVar4 = 0xc9;
           break;
-        case 2:
+        case CASE_2:
           uVar4 = 0xcf;
           break;
-        case 3:
+        case CASE_3:
           uVar4 = 0xd5;
           break;
-        case 4:
+        case CASE_4:
           uVar4 = 0xdb;
           break;
-        case 5:
+        case CASE_5:
           uVar4 = 0xe1;
           break;
-        case 6:
+        case CASE_6:
           uVar4 = 0xe8;
           break;
-        case 7:
+        case CASE_7:
           uVar4 = 0xef;
           break;
-        case 8:
+        case CASE_8:
           uVar4 = 0xf6;
           break;
-        case 9:
+        case CASE_9:
           uVar4 = 0xfe;
           break;
-        case 10:
+        case CASE_A:
           uVar4 = 0x103;
           break;
-        case 0xb:
+        case CASE_B:
           uVar4 = 0x109;
           break;
-        case 0xc:
+        case CASE_C:
           uVar4 = 0x10f;
           break;
-        case 0xd:
+        case CASE_D:
           uVar4 = 0x12d;
           break;
-        case 0xe:
+        case CASE_E:
           uVar4 = 0x133;
           break;
-        case 0xf:
+        case CASE_F:
           uVar4 = 0x139;
           break;
-        case 0x10:
+        case CASE_10:
           uVar4 = 0x13f;
           break;
-        case 0x11:
+        case CASE_11:
           uVar4 = 0x145;
           break;
-        case 0x12:
+        case CASE_12:
           uVar4 = 0x14c;
           break;
-        case 0x13:
+        case CASE_13:
           uVar4 = 0x153;
           break;
-        case 0x14:
+        case CASE_14:
           uVar4 = 0x15a;
           break;
-        case 0x15:
+        case CASE_15:
           uVar4 = 0x162;
           break;
-        case 0x16:
+        case CASE_16:
           uVar4 = 0x167;
           break;
-        case 0x17:
+        case CASE_17:
           uVar4 = 0x16f;
           break;
-        case 0x18:
+        case CASE_18:
           uVar4 = 0x175;
           break;
-        case 0x19:
+        case CASE_19:
           uVar4 = 0x191;
           break;
-        case 0x1a:
+        case CASE_1A:
           uVar4 = 0x199;
           break;
-        case 0x1b:
+        case CASE_1B:
           uVar4 = 0x1a1;
           break;
-        case 0x1c:
+        case CASE_1C:
           uVar4 = 0x1a7;
           break;
-        case 0x1d:
+        case CASE_1D:
           uVar4 = 0x1ad;
           break;
-        case 0x1e:
+        case CASE_1E:
           uVar4 = 0x1b4;
           break;
-        case 0x1f:
+        case CASE_1F:
           uVar4 = 0x1ba;
           break;
-        case 0x20:
+        case CASE_20:
           uVar4 = 0x1c0;
           break;
-        case 0x21:
+        case CASE_21:
           uVar4 = 0x1c6;
           break;
-        case 0x22:
+        case CASE_22:
           uVar4 = 0x1cd;
           break;
-        case 0x23:
+        case CASE_23:
           uVar4 = 0x1d4;
           break;
-        case 0x24:
+        case CASE_24:
           uVar4 = 0x1da;
           break;
-        case 0x25:
+        case CASE_25:
           uVar4 = 0x17b;
           break;
-        case 0x26:
+        case CASE_26:
           uVar4 = 0x115;
           break;
-        case 0x27:
+        case CASE_27:
           uVar4 = 0x181;
           break;
-        case 0x28:
+        case CASE_28:
           uVar4 = 0x1e0;
           break;
         default:
@@ -150,7 +150,7 @@ void __thiscall STBoatC::ChangeActivity(STBoatC *this,int param_1)
         }
         iVar2 = thunk_FUN_00493cd0((int)local_8);
         if (iVar2 == 0) {
-          (**(code **)(*(int *)this_00 + 0x90))(4,uVar4);
+          (*this_00->vtable->vfunc_90)(4,uVar4);
         }
       }
       thunk_FUN_0041dd00(this_00,param_1);

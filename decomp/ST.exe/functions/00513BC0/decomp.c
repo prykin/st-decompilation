@@ -36,8 +36,8 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
     (*pcVar2)();
     return;
   }
-  iVar5 = *(int *)(local_8 + 0x1b7);
-  iVar3 = *(int *)(local_8 + 0x1b3);
+  iVar5 = *(int *)&local_8->field_0x1b7;
+  iVar3 = *(int *)&local_8->field_0x1b3;
   if (iVar5 == 0) {
     iVar5 = *(int *)(iVar3 + 0xc);
     if (iVar5 == 0) {
@@ -70,10 +70,10 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
     }
     local_c = uVar6;
     if ((char)piVar4[2] != '\0') {
-      *(uint *)(local_8 + 0x1b7) = uVar6;
-      local_8[0x1a1] = (HelpPanelTy)0x0;
-      *(undefined4 *)(local_8 + 0x1a7) = 0;
-      *(undefined4 *)(local_8 + 0x1a3) = 0;
+      *(uint *)&local_8->field_0x1b7 = uVar6;
+      local_8->field_01A1 = 0;
+      local_8->field_01A7 = 0;
+      local_8->field_01A3 = 0;
       uVar6 = *(uint *)((int)piVar4 + 0xd);
       pvVar1 = *(void **)((int)piVar4 + 9);
       switch((char)piVar4[2]) {
@@ -137,12 +137,12 @@ void __thiscall HelpPanelTy::PrevBut(HelpPanelTy *this)
     }
     iVar5 = *(uint *)(iVar3 + 0xc) - iVar5;
     if (*(char *)((int)piVar4 + 0x12) != '\0') {
-      *(uint *)(local_8 + 0x1b7) = uVar6;
+      *(uint *)&local_8->field_0x1b7 = uVar6;
       goto LAB_00513e3e;
     }
   }
   ChangeTree(local_8,piVar4,uVar6);
-  *(int *)(this_00 + 0x1b7) = *(int *)(*(int *)(this_00 + 0x1b3) + 0xc) - iVar5;
+  *(int *)&this_00->field_0x1b7 = *(int *)(*(int *)&this_00->field_0x1b3 + 0xc) - iVar5;
 LAB_00513e3e:
   PrevBut(this_00);
   g_currentExceptionFrame = local_50.previous;

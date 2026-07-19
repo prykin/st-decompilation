@@ -1,4 +1,4 @@
-FUN_0057bd20:
+STFishC::STFishC:
 0057BD20  56                        PUSH ESI
 0057BD21  57                        PUSH EDI
 0057BD22  8B F1                     MOV ESI,ECX

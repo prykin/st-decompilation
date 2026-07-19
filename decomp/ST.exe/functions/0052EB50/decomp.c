@@ -60,7 +60,7 @@ OptPanelTy::CreateSlider
     piVar9 = (int *)0x0;
     uVar8 = 0;
     local_6c = param_6;
-    local_84 = *(undefined4 *)(pOVar2 + 8);
+    local_84 = *(undefined4 *)&pOVar2->field_0x8;
     local_68 = param_7;
     iVar3 = 1;
     local_42c[0] = (uint)(param_8 != 0);
@@ -78,18 +78,18 @@ OptPanelTy::CreateSlider
     local_414 = *(undefined4 *)(local_c + 2);
     local_410 = *(undefined4 *)(local_c + 4);
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_c);
-    iVar3 = *(int *)(pOVar2 + 0x3c);
+    iVar3 = pOVar2->field_003C;
     local_42c[4] = iVar3 + param_3;
-    iVar10 = *(int *)(pOVar2 + 0x5c);
+    iVar10 = pOVar2->field_005C;
     if (iVar10 == 0) {
-      iVar5 = -*(int *)(pOVar2 + 0x48);
+      iVar5 = -pOVar2->field_0048;
     }
     else {
-      iVar5 = *(int *)(pOVar2 + 0x44);
+      iVar5 = pOVar2->field_0044;
     }
     local_3c0 = 2;
     local_42c[5] = iVar5 + param_4;
-    local_3c4 = *(undefined4 *)(pOVar2 + 8);
+    local_3c4 = *(undefined4 *)&pOVar2->field_0x8;
     local_3bc = 0xc005;
     local_314 = 500;
     local_310 = 0x32;
@@ -102,14 +102,14 @@ OptPanelTy::CreateSlider
     }
     local_2a4[2] = iVar3 + param_1;
     if (iVar10 == 0) {
-      iVar3 = -*(int *)(pOVar2 + 0x48);
+      iVar3 = -pOVar2->field_0048;
     }
     else {
-      iVar3 = *(int *)(pOVar2 + 0x44);
+      iVar3 = pOVar2->field_0044;
     }
     local_2a4[3] = iVar3 + param_2;
     local_23c = 0xc006;
-    (**(code **)(**(int **)(pOVar2 + 0xc) + 8))(4,&local_8,0,local_42c,0);
+    (**(code **)(**(int **)&pOVar2->field_0xc + 8))(4,&local_8,0,local_42c,0);
     g_currentExceptionFrame = local_54.previous;
     return local_8;
   }

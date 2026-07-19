@@ -1,0 +1,2 @@
+apply	base_owner	derived_owner	base_table	derived_table	evidence_functions	confidence	reason
+1	MMObjTy	PrividerTy	0079C008	0079C0C4	005BD2E0	high	same_object_vptr_store_order

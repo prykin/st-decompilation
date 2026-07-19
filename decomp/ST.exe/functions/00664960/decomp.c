@@ -1078,7 +1078,7 @@ joined_r0x00666ceb:
                                           (DAT_007fa174,
                                            CONCAT31((int3)((uint)local_10 >> 8),
                                                     *(undefined1 *)((int)param_1 + 0x24)),
-                                           CONCAT22((short)(local_c >> 0x10),*puVar14),1);
+                                           CONCAT22((short)(local_c >> 0x10),*puVar14),CASE_1);
               local_48 = pvVar12;
               switch(*(undefined4 *)((int)param_1 + 0xc3)) {
               case 0xa3:

@@ -26,19 +26,19 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
   iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    uVar5 = *(int *)(*(int *)(local_8 + 0x1f84) + 0xc) * 0x60;
+    uVar5 = *(int *)(local_8->field_1F84 + 0xc) * 0x60;
     uVar6 = uVar5 + 9;
     local_c = uVar6;
-    if (*(uint *)(local_8 + 0x222a) < uVar6) {
-      iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)(local_8 + 0x2226),uVar6);
-      *(int *)(pSVar2 + 0x2226) = iVar3;
-      *(uint *)(pSVar2 + 0x222a) = uVar6;
+    if (*(uint *)&local_8[1].field_0x10d < uVar6) {
+      iVar3 = Library::DKW::LIB::FUN_006acf50(*(undefined4 **)&local_8[1].field_0x109,uVar6);
+      *(int *)&pSVar2[1].field_0x109 = iVar3;
+      *(uint *)&pSVar2[1].field_0x10d = uVar6;
     }
-    puVar8 = *(undefined4 **)(pSVar2 + 0x2226);
-    *puVar8 = *(undefined4 *)(pSVar2 + 0x2121);
+    puVar8 = *(undefined4 **)&pSVar2[1].field_0x109;
+    *puVar8 = *(undefined4 *)&pSVar2[1].field_0x4;
     puVar8[1] = DAT_00808aab;
-    *(SettMapMTy *)(puVar8 + 2) = pSVar2[0x1e26];
-    puVar7 = *(undefined4 **)(*(int *)(pSVar2 + 0x1f84) + 0x1c);
+    *(undefined1 *)(puVar8 + 2) = pSVar2->field_0x1e26;
+    puVar7 = *(undefined4 **)(pSVar2->field_1F84 + 0x1c);
     puVar8 = (undefined4 *)((int)puVar8 + 9);
     for (uVar5 = uVar5 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
       *puVar8 = *puVar7;
@@ -50,7 +50,7 @@ void __thiscall SettMapMTy::SendPlList(SettMapMTy *this,int param_1)
       puVar7 = (undefined4 *)((int)puVar7 + 1);
       puVar8 = (undefined4 *)((int)puVar8 + 1);
     }
-    FUN_00715360(DAT_00811764,param_1,'\"',*(char **)(pSVar2 + 0x2226),local_c,1,0xffffffff);
+    FUN_00715360(DAT_00811764,param_1,'\"',*(char **)&pSVar2[1].field_0x109,local_c,1,0xffffffff);
     g_currentExceptionFrame = local_50.previous;
     return;
   }

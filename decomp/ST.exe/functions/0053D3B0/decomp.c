@@ -12,9 +12,9 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   int iVar3;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  SAMPanelTy *pSVar4;
+  int *piVar4;
   InternalExceptionFrame local_54;
-  int local_10;
+  undefined4 local_10;
   undefined2 local_c;
   SAMPanelTy *local_8;
   
@@ -24,17 +24,17 @@ void __thiscall SAMPanelTy::Update(SAMPanelTy *this)
   iVar2 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar2 == 0) {
-    local_10 = *(int *)(local_8 + 0x1ab);
-    local_c = *(undefined2 *)(local_8 + 0x1af);
-    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x12,(int *)(local_8 + 0x1ab));
-    *(undefined4 *)(this_00 + 0x28) = 5;
-    pSVar4 = this_00 + 0x1b5;
+    local_10 = *(undefined4 *)&local_8[1].field_0x33;
+    local_c = *(undefined2 *)&local_8[1].field_0x37;
+    STAllPlayersC::GetPanelInfo(DAT_007fa174,0x12,(int *)&local_8[1].field_0x33);
+    this_00->field_0028 = 5;
+    piVar4 = (int *)&this_00[1].field_0x3d;
     iVar2 = 6;
     do {
-      if (*(int *)pSVar4 != 0) {
-        FUN_006e6080(this_00,2,*(int *)pSVar4,(undefined4 *)(this_00 + 0x18));
+      if (*piVar4 != 0) {
+        FUN_006e6080(this_00,2,*piVar4,(undefined4 *)&this_00->field_0x18);
       }
-      pSVar4 = pSVar4 + 4;
+      piVar4 = piVar4 + 1;
       iVar2 = iVar2 + -1;
     } while (iVar2 != 0);
     g_currentExceptionFrame = local_54.previous;

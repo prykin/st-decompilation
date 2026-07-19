@@ -86,7 +86,7 @@ int __thiscall FUN_00462180(void *this,int param_1)
     piVar11 = (int *)STAllPlayersC::GetObjPtr
                                (DAT_007fa174,(uint)*(byte *)((int)this + 0x33a),
                                 (uint)*(ushort *)((int)this + 0x33f),
-                                *(undefined4 *)((int)this + 0x33b));
+                                *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)this + 0x33b));
     if (((piVar11 != (int *)0x0) && (piVar11 != this)) &&
        ((*(int *)((int)this + 0x6f7) != 9 ||
         ((iVar16 = (**(code **)(*piVar11 + 0x2c))(), iVar16 == 0x3b ||

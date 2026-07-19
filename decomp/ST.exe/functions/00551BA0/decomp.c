@@ -30,41 +30,43 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
   this_00 = local_10;
   if (iVar2 == 0) {
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)(local_10 + 0x68),0,0x1f,0x31,*(int *)(local_10 + 0x185),0,0x1f,0x31,
-               0x44,0x39);
+              (*(undefined4 **)&local_10->field_0x68,0,0x1f,0x31,*(int *)&local_10->field_0x185,0,
+               0x1f,0x31,0x44,0x39);
     bVar8 = 0x3a;
     iVar6 = 0;
-    iVar2 = FUN_0070b3a0(*(int *)(this_00 + 0x1d1),(uint)(byte)this_00[0x1d0]);
-    FUN_006b5440(*(int *)(this_00 + 0x68),0,0x22,0x38,iVar2,iVar6,bVar8);
+    iVar2 = FUN_0070b3a0(*(int *)&this_00[1].field_0x15,(uint)(byte)this_00[1].field_0x14);
+    FUN_006b5440(*(int *)&this_00->field_0x68,0,0x22,0x38,iVar2,iVar6,bVar8);
     Library::DKW::WGR::FUN_006b55f0
-              (*(undefined4 **)(this_00 + 0x68),0,0xa6,0x31,*(int *)(this_00 + 0x185),0,0xa6,0x31,
-               0x77,0x26);
-    if (this_00[0x1bb] == (TradePanelTy)0x0) {
+              (*(undefined4 **)&this_00->field_0x68,0,0xa6,0x31,*(int *)&this_00->field_0x185,0,0xa6
+               ,0x31,0x77,0x26);
+    if (this_00->field_01BB == '\0') {
       bVar8 = 0x3a;
       iVar6 = 0;
-      iVar2 = FUN_0070b3a0(*(int *)(this_00 + 0x1d5),
+      iVar2 = FUN_0070b3a0(*(int *)&this_00[1].field_0x19,
                            (-(uint)(DAT_0080874e != '\x03') & 0xfffffffe) + 4);
-      FUN_006b5440(*(int *)(this_00 + 0x68),0,0xd9,0x34,iVar2,iVar6,bVar8);
+      FUN_006b5440(*(int *)&this_00->field_0x68,0,0xd9,0x34,iVar2,iVar6,bVar8);
       if (DAT_0080874e != '\x03') {
         iVar6 = 0;
         iVar2 = 0xb5;
         local_8 = 0xa9;
         local_c = 2;
         do {
-          if (*(ushort *)(this_00 + (iVar6 + (uint)(byte)this_00[0x1d0] * 2) * 4 + 0x1ab) != 0) {
-            pbVar4 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x1d9),
+          if (*(ushort *)
+               (&this_00->field_0x1ab + (iVar6 + (uint)(byte)this_00[1].field_0x14 * 2) * 4) != 0) {
+            pbVar4 = (byte *)FUN_0070b3a0(*(int *)&this_00[1].field_0x1d,
                                           *(ushort *)
-                                           (this_00 +
-                                           (iVar6 + (uint)(byte)this_00[0x1d0] * 2) * 4 + 0x1ab) - 1
-                                         );
-            thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),local_8,0x39,'\x01',pbVar4);
+                                           (&this_00->field_0x1ab +
+                                           (iVar6 + (uint)(byte)this_00[1].field_0x14 * 2) * 4) - 1)
+            ;
+            thunk_FUN_00540760(*(undefined4 **)&this_00->field_0x68,local_8,0x39,'\x01',pbVar4);
           }
-          wsprintfA((LPSTR)(this_00 + 0x18d),&DAT_007c8720,
+          wsprintfA(&this_00->field_0x18d,&DAT_007c8720,
                     (uint)*(ushort *)
-                           (this_00 + (iVar6 + (uint)(byte)this_00[0x1d0] * 2) * 4 + 0x1ad));
-          ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x189),*(int *)(this_00 + 0x68),0,iVar2,0x36,0x22
-                           ,0xc);
-          ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x189),(uint *)(this_00 + 0x18d),-1,-1,1);
+                           (&this_00->field_0x1ad +
+                           (iVar6 + (uint)(byte)this_00[1].field_0x14 * 2) * 4));
+          ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x189,*(int *)&this_00->field_0x68,0,iVar2,
+                           0x36,0x22,0xc);
+          ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x189,(uint *)&this_00->field_0x18d,-1,-1,1);
           iVar6 = iVar6 + 1;
           local_8 = local_8 + 0x68;
           iVar2 = iVar2 + 0x39;
@@ -73,15 +75,15 @@ void __thiscall TradePanelTy::PaintPanel(TradePanelTy *this)
       }
     }
     else {
-      ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x189),*(int *)(this_00 + 0x68),0,0xa6,0x31,0x77,0x26
-                      );
+      ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x189,*(int *)&this_00->field_0x68,0,0xa6,0x31,
+                       0x77,0x26);
       iVar9 = -1;
       iVar7 = -1;
       iVar2 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5;
       iVar5 = -1;
       iVar6 = -2;
       puVar3 = (uint *)FUN_006b0140(0x4e5b,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)(this_00 + 0x189),puVar3,iVar6,iVar5,iVar2,iVar7,iVar9);
+      ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x189,puVar3,iVar6,iVar5,iVar2,iVar7,iVar9);
     }
     PaintIndicators(this_00);
     g_currentExceptionFrame = local_54.previous;

@@ -9,10 +9,10 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
   code *pcVar1;
   int iVar2;
   undefined4 *puVar3;
-  undefined1 uVar4;
+  Global_sub_0043FC50_param_1Enum GVar4;
   
   if (param_2 == 0) {
-    uVar4 = 0xe;
+    GVar4 = CASE_E;
     puVar3 = (undefined4 *)((int)&DAT_007f4f83 + param_1 * 0xa62);
   }
   else {
@@ -26,10 +26,10 @@ void STAllPlayersC::PushTV(char param_1,int param_2)
       (*pcVar1)();
       return;
     }
-    uVar4 = 0xf;
+    GVar4 = CASE_F;
     puVar3 = (undefined4 *)((int)&DAT_007f4fd3 + param_1 * 0xa62);
   }
-  thunk_FUN_0043fc50(uVar4,0);
+  thunk_FUN_0043fc50(GVar4,0);
   if (*(byte **)((int)puVar3 + 0x4a) != (byte *)0x0) {
     FUN_006ae110(*(byte **)((int)puVar3 + 0x4a));
     *(undefined4 *)((int)puVar3 + 0x4a) = 0;

@@ -7,7 +7,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
 
 {
   code *pcVar1;
-  STGroupC *this_00;
+  STGroupBoatC *this_00;
   int iVar2;
   uint *puVar3;
   STBoatC *this_01;
@@ -19,22 +19,22 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   uint uVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STGroupC *pSVar8;
+  undefined4 *puVar8;
   InternalExceptionFrame local_64;
   undefined4 local_20;
   undefined2 local_1c;
   undefined2 local_1a;
   undefined2 local_18;
-  STGroupC *local_14;
+  STGroupBoatC *local_14;
   uint local_10;
   uint local_c;
   undefined4 local_8;
   
-  local_10 = *(uint *)(*(int *)(this + 0x29) + 0xc);
+  local_10 = *(uint *)(this->field_0029 + 0xc);
   uVar7 = 0;
   local_64.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_64;
-  local_14 = (STGroupC *)this;
+  local_14 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_64.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 != 0) {
@@ -50,19 +50,18 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     return 0xffffffff;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
-    pSVar8 = local_14 + 0x89;
+    puVar8 = (undefined4 *)&local_14->field_0x89;
     for (iVar2 = 0x15; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *(undefined4 *)pSVar8 = 0;
-      pSVar8 = pSVar8 + 4;
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
-    *(int *)(local_14 + 0x3d) = (int)*(short *)(local_14 + 0xdd);
-    *(int *)(local_14 + 0x45) = (int)*(short *)(local_14 + 0xe1);
-    *(undefined4 *)(local_14 + 0x65) = 0;
-    *(int *)(local_14 + 0x41) = (int)*(short *)(local_14 + 0xdf);
-    *(undefined4 *)(local_14 + 0x30e) = *(undefined4 *)(local_14 + 0xe3);
-    puVar3 = STGroupC::GetGroupContent(local_14,(int)unaff_EDI);
-    InitWay((STGroupBoatC *)this_00,(int)puVar3,*(int *)(this_00 + 0x3d),*(int *)(this_00 + 0x41),
-            *(int *)(this_00 + 0x45));
+    local_14->field_003D = (int)*(short *)&local_14->field_0xdd;
+    local_14->field_0045 = (int)*(short *)&local_14->field_0xe1;
+    *(undefined4 *)&local_14->field_0x65 = 0;
+    local_14->field_0041 = (int)*(short *)&local_14->field_0xdf;
+    local_14->field_030E = *(undefined4 *)&local_14->field_0xe3;
+    puVar3 = STGroupC::GetGroupContent((STGroupC *)local_14,(int)unaff_EDI);
+    InitWay(this_00,(int)puVar3,this_00->field_003D,this_00->field_0041,this_00->field_0045);
     FUN_006ae110((byte *)puVar3);
     local_20 = *(undefined4 *)(DAT_00802a38 + 0xe4);
     local_1c = 0xffff;
@@ -71,17 +70,18 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
     if (local_10 != 0) {
       uVar6 = 0;
       do {
-        FUN_006acc70(*(int *)(this_00 + 0x29),uVar6,&local_c);
+        FUN_006acc70(this_00->field_0029,uVar6,&local_c);
         if ((short)local_c != -1) {
           this_01 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),this_00[0x24]),
-                               local_c,1);
+                              (DAT_007fa174,
+                               CONCAT31((int3)((uint)extraout_ECX >> 8),this_00->field_0024),local_c
+                               ,CASE_1);
           if (this_01 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x629);
           }
-          STBoatC::CmdToObj(this_01,1,&local_20);
+          STBoatC::CmdToObj(this_01,CASE_1,&local_20);
         }
         uVar7 = uVar7 + 1;
         uVar6 = uVar7 & 0xffff;
@@ -96,12 +96,12 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
       uVar7 = 0;
       if (local_10 != 0) {
         do {
-          FUN_006acc70(*(int *)(this_00 + 0x29),uVar7,&local_c);
+          FUN_006acc70(this_00->field_0029,uVar7,&local_c);
           if ((short)local_c != -1) {
             uVar7 = STAllPlayersC::GetObjPtr
                               (DAT_007fa174,
-                               CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00[0x24]),local_c,1)
-            ;
+                               CONCAT31((int3)((uint)extraout_ECX_00 >> 8),this_00->field_0024),
+                               local_c,CASE_1);
             if (uVar7 == 0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x638);

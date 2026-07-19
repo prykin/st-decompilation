@@ -87,7 +87,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
       *(float *)((int)this + 0xde2) = fVar3;
       *(float *)((int)this + 0xdea) = fVar3 * _DAT_0079acb8;
       FUN_006e6540((int)puVar6,local_8,fVar2,-1);
-      thunk_FUN_005252c0((*(char *)((int)this + 0xdcc) != '\0') + 0xb8);
+      thunk_FUN_005252c0((*(char *)((int)this + 0xdcc) != '\0') + CASE_B8);
       return;
     }
   }
@@ -95,7 +95,7 @@ void __thiscall FUN_0052afe0(void *this,byte param_1,float param_2,float param_3
     FUN_006e65c0(DAT_00807598,*(undefined4 *)((int)this + (uint)param_1 * 4 + 0xdbf),
                  (char)*(undefined2 *)(*(int *)((int)this + (uint)param_1 * 4 + 0x9c8) + 0x23),
                  param_2,param_3,5,5,1);
-    thunk_FUN_005252c0((param_1 != 0) + 0xb6);
+    thunk_FUN_005252c0((param_1 != 0) + CASE_B6);
   }
   return;
 }

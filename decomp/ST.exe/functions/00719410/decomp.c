@@ -1,5 +1,10 @@
 
-undefined4 __cdecl FUN_00719410(undefined4 param_1,byte param_2,undefined4 param_3)
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00719410_param_2Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+
+undefined4 __cdecl
+FUN_00719410(undefined4 param_1,Global_sub_00719410_param_2Enum param_2,undefined4 param_3)
 
 {
   MCIERROR MVar1;
@@ -17,24 +22,24 @@ undefined4 __cdecl FUN_00719410(undefined4 param_1,byte param_2,undefined4 param
   local_c = 0;
   local_8 = 0;
   switch(param_2) {
-  case 0:
+  case CASE_0:
     local_10 = s_sequencer_007f07dc;
     break;
-  case 1:
+  case CASE_1:
     local_10 = s_waveaudio_007f07e8;
     break;
-  case 2:
+  case CASE_2:
     local_10 = s_avivideo_007f07d0;
     break;
-  case 3:
+  case CASE_3:
     local_10 = s_cdaudio_007f07c8;
     local_c = param_3;
   }
-  if (param_2 < 3) {
+  if (param_2 < CASE_3) {
     local_c = param_1;
     dwParam1 = 0x2202;
   }
-  else if (param_2 == 3) {
+  else if (param_2 == CASE_3) {
     dwParam1 = 0x2300;
   }
   MVar1 = mciSendCommandA(0,0x803,dwParam1,(DWORD_PTR)&local_18);

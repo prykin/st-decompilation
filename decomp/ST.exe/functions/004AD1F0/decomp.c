@@ -8,6 +8,7 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
                uint param_5,uint param_6,uint param_7)
 
 {
+  void *this_00;
   code *pcVar1;
   STT3DSprC *pSVar2;
   int iVar3;
@@ -25,15 +26,15 @@ STT3DSprC::Init(STT3DSprC *this,undefined4 param_1,uint param_2,uint param_3,uin
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    *(undefined4 *)(local_8 + 0x34) = param_1;
-    *(uint *)(local_8 + 8) = param_3;
-    *(uint *)(local_8 + 4) = param_2;
-    *(uint *)(local_8 + 0x14) = param_7;
-    FUN_006e8660(*(void **)(local_8 + 0x3c),(int *)(local_8 + 0x18),param_7,0,param_5,param_6,
-                 param_2,param_3,param_4);
-    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar2 + 0x14) * 0x24);
-    *(undefined4 **)(pSVar2 + 0x20) = puVar4;
-    for (uVar6 = *(int *)(pSVar2 + 0x14) * 9 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
+    *(undefined4 *)&local_8[1].field_0x10 = param_1;
+    *(uint *)&local_8->field_0x8 = param_3;
+    *(uint *)&local_8->field_0x4 = param_2;
+    this_00 = (void *)local_8[1].field_0018;
+    local_8->field_0014 = param_7;
+    FUN_006e8660(this_00,&local_8->field_0018,param_7,0,param_5,param_6,param_2,param_3,param_4);
+    puVar4 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(pSVar2->field_0014 * 0x24);
+    pSVar2->field_0020 = puVar4;
+    for (uVar6 = pSVar2->field_0014 * 9 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }

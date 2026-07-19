@@ -39,7 +39,7 @@ int __cdecl FUN_0054ca10(int *param_1,undefined4 param_2,cMf32 *param_3,int para
            Library::DKW::STR::FUN_006b9770((byte *)((~uVar5 - 1) + param_4),(int *)0x0,10);
   DAT_00802a3c = DAT_00802a3c + 1;
   if (DAT_00802a58 != (cLoadingTy *)0x0) {
-    cLoadingTy::SetState(DAT_00802a58,1,DAT_00802a3c,(char *)0x0);
+    cLoadingTy::SetState(DAT_00802a58,CASE_1,DAT_00802a3c,(char *)0x0);
   }
   iVar4 = thunk_FUN_0054cdd0(puVar3,*piVar2,(undefined4 *)0x0,(int *)0x0,param_1,0);
   if (param_1 != (int *)0x0) {

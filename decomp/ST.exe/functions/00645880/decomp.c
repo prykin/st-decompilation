@@ -7,6 +7,7 @@ void __cdecl FUN_00645880(int *param_1)
   undefined4 uVar3;
   int iVar4;
   int *piVar5;
+  Global_sub_00645D30_param_2Enum GVar6;
   undefined4 local_c4;
   int local_c0;
   undefined4 local_bc;
@@ -191,15 +192,15 @@ LAB_00645953:
   local_5c[2] = 1;
   uVar1 = thunk_FUN_004406c0((char)local_5c[1]);
   if ((uVar1 & 0xff) == 1) {
-    iVar2 = param_1[1];
-    iVar4 = *param_1;
+    GVar6 = param_1[1];
+    iVar2 = *param_1;
   }
   else {
     if ((uVar1 & 0xff) != 2) goto LAB_006459df;
-    iVar2 = param_1[1];
-    iVar4 = *param_1;
+    GVar6 = param_1[1];
+    iVar2 = *param_1;
   }
-  uVar3 = thunk_FUN_00645d30(iVar4,iVar2);
+  uVar3 = thunk_FUN_00645d30(iVar2,GVar6);
   local_30 = (undefined1)uVar3;
 LAB_006459df:
   local_2f = param_1[7];

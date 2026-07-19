@@ -1,4 +1,4 @@
-FUN_00715820:
+SpriteClassTy::SpriteClassTy:
 00715820  8B C1                     MOV EAX,ECX
 00715822  33 C9                     XOR ECX,ECX
 00715824  8D 50 2C                  LEA EDX,[EAX + 0x2c]

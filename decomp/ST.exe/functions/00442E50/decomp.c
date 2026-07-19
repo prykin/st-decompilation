@@ -255,7 +255,7 @@ LAB_0044326c:
           uVar10 = local_38;
           FUN_006acc70((int)local_48,local_44,&local_8);
           if ((short)local_8 != -1) {
-            piVar7 = (int *)GetObjPtr(local_8c,param_1,local_8,1);
+            piVar7 = (int *)GetObjPtr(local_8c,param_1,local_8,CASE_1);
             local_40 = piVar7;
             if (piVar7 == (int *)0x0) {
               iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x2539,0,0,
@@ -555,7 +555,7 @@ LAB_004436f7:
         do {
           FUN_006acc70((int)puVar5,uVar10,&local_8);
           if ((short)local_8 != -1) {
-            local_40 = (int *)GetObjPtr(local_8c,param_1,local_8,1);
+            local_40 = (int *)GetObjPtr(local_8c,param_1,local_8,CASE_1);
             thunk_FUN_004162b0(local_40,&local_18,&local_14,&local_16);
             iVar6 = FUN_006aadd0((int)local_18,(int)local_14,(int)local_16,(int)local_70,
                                  (int)local_6e,(int)local_6c);

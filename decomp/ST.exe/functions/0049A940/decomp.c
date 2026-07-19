@@ -16,7 +16,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STGroupBoatC *pSVar7;
+  undefined4 *puVar7;
   uint uVar8;
   InternalExceptionFrame local_58;
   STGroupBoatC *local_14;
@@ -24,7 +24,7 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   uint local_c;
   undefined4 local_8;
   
-  local_10 = *(uint *)(*(int *)(this + 0x29) + 0xc);
+  local_10 = *(uint *)(this->field_0029 + 0xc);
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_14 = this;
@@ -32,28 +32,29 @@ undefined4 __thiscall STGroupBoatC::GrpMove(STGroupBoatC *this,int param_1)
   pSVar2 = local_14;
   if (iVar3 == 0) {
     if ((param_1 == 0) || (param_1 == 1)) {
-      pSVar7 = local_14 + 0x89;
+      puVar7 = (undefined4 *)&local_14->field_0x89;
       for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(undefined4 *)pSVar7 = 0;
-        pSVar7 = pSVar7 + 4;
+        *puVar7 = 0;
+        puVar7 = puVar7 + 1;
       }
       uVar8 = 0;
-      *(undefined4 *)(local_14 + 0x65) = 0;
+      *(undefined4 *)&local_14->field_0x65 = 0;
       local_8 = *(undefined4 *)(DAT_00802a38 + 0xe4);
       if (local_10 != 0) {
         uVar6 = 0;
         do {
-          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&local_c);
+          FUN_006acc70(pSVar2->field_0029,uVar6,&local_c);
           if ((short)local_c != -1) {
             this_00 = (STBoatC *)
                       STAllPlayersC::GetObjPtr
-                                (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24])
-                                 ,local_c,1);
+                                (DAT_007fa174,
+                                 CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),
+                                 local_c,CASE_1);
             if (this_00 == (STBoatC *)0x0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x65e);
             }
-            STBoatC::CmdToObj(this_00,3,&local_8);
+            STBoatC::CmdToObj(this_00,CASE_3,&local_8);
           }
           uVar8 = uVar8 + 1;
           uVar6 = uVar8 & 0xffff;

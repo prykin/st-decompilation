@@ -13,7 +13,7 @@ void __cdecl FUN_0070a300(int *param_1)
       iVar1 = FUN_006b1190(*(int *)(*param_1 + 4),local_34);
       while (-1 < iVar1) {
         if (local_b != 0) {
-          FUN_00709a10(*param_1,(char)local_34[0],&local_b);
+          FUN_00709a10(*param_1,(Global_sub_00709A10_param_2Enum)local_34[0],&local_b);
         }
         iVar1 = FUN_006b1190(*(int *)(*param_1 + 4),local_34);
       }

@@ -1,6 +1,12 @@
 
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_0055C830_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_9=9;CASE_A=10;CASE_D=13;CASE_F=15;CASE_10=16;CASE_12=18;CASE_13=19;CASE_17=23;CASE_FF=255
+    */
+
 void __thiscall
-FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param_4,char *param_5)
+FUN_0055c830(void *this,Global_sub_0055C830_param_1Enum param_1,byte *param_2,undefined4 param_3,
+            byte *param_4,char *param_5)
 
 {
   byte bVar1;
@@ -28,8 +34,8 @@ FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param
   pbVar9 = param_4;
   if (*(char *)((int)this + 8) != '\0') {
     switch(param_1) {
-    case 1:
-    case 2:
+    case CASE_1:
+    case CASE_2:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
@@ -45,7 +51,7 @@ FUN_0055c830(void *this,int param_1,byte *param_2,undefined4 param_3,byte *param
           bVar1 = *pbVar10;
           pbVar10 = pbVar10 + 1;
         } while (bVar1 != 0);
-        if (((~uVar7 < 100) && (DAT_00807360 != '\0')) && (param_1 == 2)) {
+        if (((~uVar7 < 100) && (DAT_00807360 != '\0')) && (param_1 == CASE_2)) {
           uVar5 = FUN_006b0140(0x259a,DAT_00807618);
           wsprintfA(local_688,s__s__s_007c411c,pbVar9,uVar5);
 LAB_0055cf74:
@@ -54,7 +60,7 @@ LAB_0055cf74:
         }
       }
       break;
-    case 3:
+    case CASE_3:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
@@ -74,9 +80,9 @@ LAB_0055cf74:
         }
       }
       break;
-    case 4:
-    case 10:
-      pcVar3 = (char *)FUN_006b0140((-(uint)(param_1 != 4) & 2) + 0x2575,DAT_00807618);
+    case CASE_4:
+    case CASE_A:
+      pcVar3 = (char *)FUN_006b0140((-(uint)(param_1 != CASE_4) & 2) + 0x2575,DAT_00807618);
       uVar7 = 0xffffffff;
       pcVar4 = pcVar3;
       do {
@@ -126,7 +132,7 @@ LAB_0055cf74:
         return;
       }
       break;
-    case 5:
+    case CASE_5:
       pbVar9 = (byte *)((int)this + 0x2c);
       pbVar10 = param_4;
       do {
@@ -158,7 +164,7 @@ LAB_0055c9c5:
         return;
       }
       break;
-    case 6:
+    case CASE_6:
       pcVar4 = (char *)FUN_006b0140(0x2576,DAT_00807618);
       pbVar9 = param_4;
       uVar7 = 0xffffffff;
@@ -210,14 +216,14 @@ LAB_0055c9c5:
         return;
       }
       break;
-    case 7:
+    case CASE_7:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         FSGSTy::AddMessage(DAT_0081174c,1,&DAT_008016a0,param_5,5);
         FSGSTy::JoinChannel(DAT_0081174c,unaff_EDI);
         return;
       }
       break;
-    case 9:
+    case CASE_9:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         Library::MSVCRT::_strncpy((char *)local_34,(char *)param_4,0x10);
         local_25 = 0;
@@ -227,15 +233,15 @@ LAB_0055c9c5:
         return;
       }
       break;
-    case 0xd:
-    case 0xf:
+    case CASE_D:
+    case CASE_F:
       if (DAT_0081174c != (FSGSTy *)0x0) {
         *(undefined4 *)((int)this + 0x1b) = 0x6156;
-        *(int *)((int)this + 0x1f) = param_1;
+        *(Global_sub_0055C830_param_1Enum *)((int)this + 0x1f) = param_1;
         (*(code *)**(undefined4 **)DAT_0081174c)((int)this + 0xb);
       }
       break;
-    case 0x10:
+    case CASE_10:
       if (*(char *)((int)this + 9) != '\0') {
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
@@ -262,7 +268,7 @@ LAB_0055c9c5:
         return;
       }
       break;
-    case 0x12:
+    case CASE_12:
       if (*(char *)((int)this + 9) != '\0') {
         thunk_FUN_0055bdd0((char *)param_4,param_5);
         return;
@@ -289,7 +295,7 @@ LAB_0055c9c5:
         return;
       }
       break;
-    case 0x13:
+    case CASE_13:
       if (*(char *)((int)this + 9) != '\0') {
         thunk_FUN_0055bdd0((char *)0x0,param_5);
         return;
@@ -337,13 +343,13 @@ LAB_0055c9c5:
         return;
       }
       break;
-    case 0x17:
+    case CASE_17:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         FSGSTy::AddMessage(DAT_0081174c,7,param_4,param_5,5);
         return;
       }
       break;
-    case 0xff:
+    case CASE_FF:
       if ((*(char *)((int)this + 9) == '\0') && (DAT_0081174c != (FSGSTy *)0x0)) {
         FSGSTy::AddMessage(DAT_0081174c,4,param_4,param_5,5);
         return;

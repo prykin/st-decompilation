@@ -1,4 +1,4 @@
-FUN_0046cf20:
+STBoatC::CreateGame:
 0046CF20  55                        PUSH EBP
 0046CF21  8B EC                     MOV EBP,ESP
 0046CF23  83 EC 18                  SUB ESP,0x18

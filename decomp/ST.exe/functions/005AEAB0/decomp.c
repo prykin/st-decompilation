@@ -6,19 +6,18 @@
 void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
 
 {
-  StartSystemTy SVar1;
-  code *pcVar2;
+  code *pcVar1;
   ChooseMapTy *this_00;
-  int iVar3;
+  int iVar2;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
-  int iVar6;
-  uint uVar7;
-  char cVar8;
+  int iVar5;
+  uint uVar6;
+  char cVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  int *piVar9;
-  undefined4 *puVar10;
+  int *piVar8;
+  undefined4 *puVar9;
   undefined4 local_fe4 [6];
   undefined4 local_fcc;
   undefined4 local_fc8;
@@ -97,96 +96,96 @@ void __thiscall ChooseMapTy::CreateCtrls(ChooseMapTy *this,char param_1)
   ChooseMapTy *local_c;
   uint local_8;
   
-  puVar10 = local_598;
+  puVar9 = local_598;
   local_c = this;
-  for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  for (iVar2 = 0x135; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar9 = 0;
+    puVar9 = puVar9 + 1;
   }
-  puVar10 = local_fe4;
-  for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  puVar9 = local_fe4;
+  for (iVar2 = 0x223; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar9 = 0;
+    puVar9 = puVar9 + 1;
   }
-  puVar10 = local_80;
-  for (iVar3 = 0x16; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar10 = 0;
-    puVar10 = puVar10 + 1;
+  puVar9 = local_80;
+  for (iVar2 = 0x16; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar9 = 0;
+    puVar9 = puVar9 + 1;
   }
-  piVar9 = local_758;
-  for (iVar3 = 0x70; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *piVar9 = 0;
-    piVar9 = piVar9 + 1;
+  piVar8 = local_758;
+  for (iVar2 = 0x70; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *piVar8 = 0;
+    piVar8 = piVar8 + 1;
   }
   local_c4.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_c4;
-  iVar3 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar2 = Library::MSVCRT::__setjmp3(local_c4.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
-  if (iVar3 != 0) {
+  if (iVar2 != 0) {
     g_currentExceptionFrame = local_c4.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x39f,0,iVar3,&DAT_007a4ccc
+    iVar5 = ReportDebugMessage(s_E____titans_Start_load_obj_cpp_007cc728,0x39f,0,iVar2,&DAT_007a4ccc
                                ,s_ChooseMapTy__CreateCtrls_007cc858);
-    if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+    if (iVar5 != 0) {
+      pcVar1 = (code *)swi(3);
+      (*pcVar1)();
       return;
     }
-    RaiseInternalException(iVar3,0,s_E____titans_Start_load_obj_cpp_007cc728,0x39f);
+    RaiseInternalException(iVar2,0,s_E____titans_Start_load_obj_cpp_007cc728,0x39f);
     return;
   }
-  uVar7 = 0;
-  switch(local_c[0x1a5f]) {
-  case (ChooseMapTy)0x1:
-  case (ChooseMapTy)0x2:
-    local_34 = (uint)(byte)DAT_0081176c[0x2eb];
-    uVar7 = 2;
-    local_c[0x1a5f] = (ChooseMapTy)((local_34 != 1) + '\x01');
+  uVar6 = 0;
+  switch(local_c->field_1A5F) {
+  case CASE_1:
+  case CASE_2:
+    local_34 = (uint)(byte)DAT_0081176c->field_02EB;
+    uVar6 = 2;
+    local_c->field_1A5F = (local_34 != 1) + CASE_1;
     goto LAB_005aebde;
-  case (ChooseMapTy)0x4:
-  case (ChooseMapTy)0x5:
-    uVar7 = 2;
-    local_34 = (uint)(byte)DAT_0081176c[0x2eb];
-    local_c[0x1a5f] = (ChooseMapTy)((local_34 != 1) + '\x04');
+  case CASE_4:
+  case CASE_5:
+    uVar6 = 2;
+    local_34 = (uint)(byte)DAT_0081176c->field_02EB;
+    local_c->field_1A5F = (local_34 != 1) + CASE_4;
     break;
-  case (ChooseMapTy)0x9:
-  case (ChooseMapTy)0xa:
-  case (ChooseMapTy)0xb:
-    uVar7 = 3;
-    local_34 = (uint)(byte)DAT_0081176c[0x2ea];
-    SVar1 = DAT_0081176c[0x2ea];
-    if (SVar1 == (StartSystemTy)0x1) {
-      local_c[0x1a5f] = (ChooseMapTy)0x9;
+  case CASE_9:
+  case CASE_A:
+  case CASE_B:
+    uVar6 = 3;
+    local_34 = (uint)(byte)DAT_0081176c->field_02EA;
+    cVar7 = DAT_0081176c->field_02EA;
+    if (cVar7 == '\x01') {
+      local_c->field_1A5F = CASE_9;
     }
-    else if (SVar1 == (StartSystemTy)0x2) {
-      local_c[0x1a5f] = (ChooseMapTy)0xa;
+    else if (cVar7 == '\x02') {
+      local_c->field_1A5F = CASE_A;
     }
-    else if (SVar1 == (StartSystemTy)0x3) {
-      local_c[0x1a5f] = (ChooseMapTy)0xb;
+    else if (cVar7 == '\x03') {
+      local_c->field_1A5F = CASE_B;
     }
   }
 LAB_005aebde:
-  if (uVar7 == 0) {
+  if (uVar6 == 0) {
 LAB_005aecc2:
     if (param_1 != '\0') goto LAB_005aef44;
   }
   else if (param_1 != '\0') {
-    cVar8 = '\0';
-    if (uVar7 != 0) {
-      uVar4 = 0;
+    cVar7 = '\0';
+    if (uVar6 != 0) {
+      uVar3 = 0;
       do {
-        local_758[uVar4 * 0x1c] = uVar4 + 1;
-        cVar8 = cVar8 + '\x01';
-        local_758[uVar4 * 0x1c + 1] = 0;
-        local_8 = CONCAT31(local_8._1_3_,cVar8);
-        local_758[uVar4 * 0x1c + 3] = uVar4 * 0x7c + 0x112;
-        uVar5 = local_8 & 0xff;
-        local_758[uVar4 * 0x1c + 5] = 0x7a;
-        local_758[uVar4 * 0x1c + 4] = 0x1d4;
-        local_758[uVar4 * 0x1c + 6] = 0x18;
-        uVar4 = uVar5;
-      } while (uVar5 < uVar7);
+        local_758[uVar3 * 0x1c] = uVar3 + 1;
+        cVar7 = cVar7 + '\x01';
+        local_758[uVar3 * 0x1c + 1] = 0;
+        local_8 = CONCAT31(local_8._1_3_,cVar7);
+        local_758[uVar3 * 0x1c + 3] = uVar3 * 0x7c + 0x112;
+        uVar4 = local_8 & 0xff;
+        local_758[uVar3 * 0x1c + 5] = 0x7a;
+        local_758[uVar3 * 0x1c + 4] = 0x1d4;
+        local_758[uVar3 * 0x1c + 6] = 0x18;
+        uVar3 = uVar4;
+      } while (uVar4 < uVar6);
     }
-    local_70 = *(undefined4 *)(this_00 + 8);
+    local_70 = *(undefined4 *)&this_00->field_0x8;
     local_38 = local_758;
     local_80[0] = 1;
     local_6c = 2;
@@ -194,11 +193,11 @@ LAB_005aecc2:
     local_4c = 2;
     local_48 = 0x6327;
     local_50 = local_70;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(5,this_00 + 0x1c83,0,local_80,0);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1c87));
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x223,0,local_80,0);
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&this_00[1].field_0x227);
     goto LAB_005aecc2;
   }
-  local_570 = *(undefined4 *)(this_00 + 8);
+  local_570 = *(undefined4 *)&this_00->field_0x8;
   local_598[0] = 0;
   local_598[2] = 0x114;
   local_598[3] = 0x3f;
@@ -217,23 +216,23 @@ LAB_005aecc2:
   if (DAT_0080734c != '\0') {
     local_c8 = 1;
   }
-  local_460 = *(undefined4 *)(this_00 + 0x1a8c);
-  local_45c = *(undefined4 *)(this_00 + 0x1a90);
+  local_460 = *(undefined4 *)&this_00[1].field_0x2c;
+  local_45c = *(undefined4 *)&this_00[1].field_0x30;
   local_468 = 0;
   local_2e8 = 0;
-  local_2e0 = *(undefined4 *)(this_00 + 0x1b1d);
-  local_458 = *(undefined4 *)(this_00 + 0x1a94);
-  local_2dc = *(undefined4 *)(this_00 + 0x1b21);
-  local_454 = *(undefined4 *)(this_00 + 0x1a98);
-  local_2d8 = *(undefined4 *)(this_00 + 0x1b25);
+  local_2e0 = *(undefined4 *)&this_00[1].field_0xbd;
+  local_458 = *(undefined4 *)&this_00[1].field_0x34;
+  local_2dc = *(undefined4 *)&this_00[1].field_0xc1;
+  local_454 = *(undefined4 *)&this_00[1].field_0x38;
+  local_2d8 = *(undefined4 *)&this_00[1].field_0xc5;
   local_358 = 500;
   local_1d8 = 500;
-  local_15c = *(undefined4 *)(this_00 + 0x1bae);
-  local_2d4 = *(undefined4 *)(this_00 + 0x1b29);
-  local_154 = *(undefined4 *)(this_00 + 0x1bb6);
+  local_15c = *(undefined4 *)&this_00[1].field_0x14e;
+  local_2d4 = *(undefined4 *)&this_00[1].field_0xc9;
+  local_154 = *(undefined4 *)&this_00[1].field_0x156;
   local_354 = 0x32;
   local_1d4 = 0x32;
-  local_158 = *(undefined4 *)(this_00 + 0x1bb2);
+  local_158 = *(undefined4 *)&this_00[1].field_0x152;
   local_46c = 2;
   local_464 = 2;
   local_404 = 2;
@@ -255,75 +254,75 @@ LAB_005aecc2:
   local_408 = local_570;
   local_288 = local_570;
   local_118 = local_570;
-  (**(code **)(**(int **)(this_00 + 0xc) + 8))(7,this_00 + 0x1a6c,0,local_598,0);
-  if (*(uint *)(this_00 + 0x1a74) != 0xffffffff) {
+  (**(code **)(**(int **)&this_00->field_0xc + 8))(7,&this_00[1].field_0xc,0,local_598,0);
+  if (*(uint *)&this_00[1].field_0x14 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(this_00 + 0x1ab8),*(uint *)(this_00 + 0x1a74),0xfffffffe,
-               *(uint *)(this_00 + 0x1a8c),*(uint *)(this_00 + 0x1a90));
+              (*(uint **)&this_00[1].field_0x58,*(uint *)&this_00[1].field_0x14,0xfffffffe,
+               *(uint *)&this_00[1].field_0x2c,*(uint *)&this_00[1].field_0x30);
   }
-  if (*(uint *)(this_00 + 0x1b05) != 0xffffffff) {
+  if (*(uint *)&this_00[1].field_0xa5 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(this_00 + 0x1b49),*(uint *)(this_00 + 0x1b05),0xfffffffe,
-               *(uint *)(this_00 + 0x1b1d),*(uint *)(this_00 + 0x1b21));
+              (*(uint **)&this_00[1].field_0xe9,*(uint *)&this_00[1].field_0xa5,0xfffffffe,
+               *(uint *)&this_00[1].field_0xbd,*(uint *)&this_00[1].field_0xc1);
   }
-  if (*(uint *)(this_00 + 0x1b96) != 0xffffffff) {
+  if (*(uint *)&this_00[1].field_0x136 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),0xfffffffe,
-               *(uint *)(this_00 + 0x1bae),*(uint *)(this_00 + 0x1bb2));
+              (*(uint **)&this_00[1].field_0x17a,*(uint *)&this_00[1].field_0x136,0xfffffffe,
+               *(uint *)&this_00[1].field_0x14e,*(uint *)&this_00[1].field_0x152);
   }
 LAB_005aef44:
-  if ((this_00[0x20b4] == (ChooseMapTy)0x0) || (param_1 != '\0')) {
-    if (*(int *)(DAT_0081176c + 0x389) != 0) {
-      *(undefined4 *)(this_00 + 0x2d) = 0x20;
-      *(undefined4 *)(this_00 + 0x31) = 0;
-      FUN_006e6080(this_00,2,*(undefined4 *)(DAT_0081176c + 0x389),(undefined4 *)(this_00 + 0x1d));
+  if ((this_00[1].field_0x654 == '\0') || (param_1 != '\0')) {
+    if (DAT_0081176c->field_0389 != 0) {
+      *(undefined4 *)&this_00->field_0x2d = 0x20;
+      *(undefined4 *)&this_00->field_0x31 = 0;
+      FUN_006e6080(this_00,2,DAT_0081176c->field_0389,(undefined4 *)&this_00->field_0x1d);
     }
   }
   else {
     StartSystemTy::CreateBinDesc(DAT_0081176c);
   }
-  if ((this_00[0x20b7] != (ChooseMapTy)0x0) && (param_1 == '\0')) {
+  if ((this_00[1].field_0x657 != '\0') && (param_1 == '\0')) {
     StartSystemTy::CreateChatView(DAT_0081176c);
-    puVar10 = local_fe4;
-    for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
+    puVar9 = local_fe4;
+    for (iVar2 = 0x223; iVar2 != 0; iVar2 = iVar2 + -1) {
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
     local_fe4[0] = 1;
     local_fe4[1] = 9;
-    local_fe4[2] = *(undefined4 *)(DAT_0081176c + 0x34);
+    local_fe4[2] = DAT_0081176c->field_0034;
     local_fe4[3] = 0xcb;
     local_fe4[4] = 0x23f;
-    local_fe4[5] = *(undefined4 *)(*(int *)(DAT_0081176c + 0x682) + 4);
-    local_fcc = *(undefined4 *)(*(int *)(DAT_0081176c + 0x682) + 8);
+    local_fe4[5] = *(undefined4 *)(DAT_0081176c->field_0682 + 4);
+    local_fcc = *(undefined4 *)(DAT_0081176c->field_0682 + 8);
     local_fc8 = 0x104;
-    local_fc4 = *(undefined4 *)(DAT_0081176c + 0x686);
-    piVar9 = *(int **)(this_00 + 0xc);
+    local_fc4 = DAT_0081176c->field_0686;
+    piVar8 = *(int **)&this_00->field_0xc;
     local_780 = 0x100;
-    local_f98 = piVar9[5];
+    local_f98 = piVar8[5];
     local_f90 = 0xc0a0;
     local_f94 = 0;
-    local_f58 = piVar9[5];
+    local_f58 = piVar8[5];
     local_f54 = 0;
     local_f50 = 0xc0a2;
-    (**(code **)(*piVar9 + 8))(6,DAT_0081176c + 0x54c,0,local_fe4,0);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x554));
+    (**(code **)(*piVar8 + 8))(6,&DAT_0081176c->field_054C,0,local_fe4,0);
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,DAT_0081176c->field_0554);
   }
-  iVar3 = *(int *)(this_00 + 0x1a5b);
-  if (*(int *)(iVar3 + 0x2e6) != 0) {
-    puVar10 = &local_28;
-    for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar10 = 0;
-      puVar10 = puVar10 + 1;
+  iVar2 = *(int *)&this_00->field_0x1a5b;
+  if (*(int *)(iVar2 + 0x2e6) != 0) {
+    puVar9 = &local_28;
+    for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *puVar9 = 0;
+      puVar9 = puVar9 + 1;
     }
-    *(undefined2 *)puVar10 = 0;
+    *(undefined2 *)puVar9 = 0;
     local_1c = 1;
     local_1e = 1;
     local_24 = 1;
-    MMsgTy::StatePanel(*(MMsgTy **)(iVar3 + 0x2e6),(int)&local_28);
+    MMsgTy::StatePanel(*(MMsgTy **)(iVar2 + 0x2e6),(int)&local_28);
   }
   if (param_1 != '\0') {
-    thunk_FUN_00540dc0(1,*(undefined4 *)(this_00 + 8),2,0xc0a1,2,0x1c,0,0,0,0,0,0);
+    thunk_FUN_00540dc0(1,*(undefined4 *)&this_00->field_0x8,2,0xc0a1,2,0x1c,0,0,0,0,0,0);
   }
   g_currentExceptionFrame = local_c4.previous;
   return;

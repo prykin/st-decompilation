@@ -26,37 +26,37 @@ CPanelTy::PaintTab(CPanelTy *this,byte param_1,int param_2,byte param_3,char *pa
   uVar2 = (uint)param_1;
   local_8 = (ushort *)0x0;
   local_c = *(int *)(*(int *)(param_2 + 0x14) + 0x10);
-  local_10 = *(int *)(*(int *)(param_2 + 0x14) + 0xc) - *(int *)(this + uVar2 * 4 + 0x3c);
+  local_10 = *(int *)(*(int *)(param_2 + 0x14) + 0xc) - *(int *)(&this->field_0x3c + uVar2 * 4);
   switch(uVar2) {
   case 1:
-    iVar4 = *(int *)(this + 0x134);
+    iVar4 = this->field_0134;
     goto LAB_004f4318;
   default:
-    if (*(int *)(this + 0x130) != 0) {
-      local_c = local_c - *(int *)(this + uVar2 * 4 + 0x94);
+    if (this->field_0130 != 0) {
+      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f4331;
     }
     break;
   case 3:
-    if (*(int *)(this + 0x134) != 0) {
-      local_c = local_c - *(int *)(this + uVar2 * 4 + 0x94);
+    if (this->field_0134 != 0) {
+      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f4331;
     }
     break;
   case 5:
-    if (*(int *)(this + 0x138) != 0) {
-      local_c = local_c - *(int *)(this + uVar2 * 4 + 0x94);
+    if (this->field_0138 != 0) {
+      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f4331;
     }
     break;
   case 7:
-    iVar4 = *(int *)(this + 0x138);
+    iVar4 = this->field_0138;
 LAB_004f4318:
     if (iVar4 != 0) {
-      local_c = local_c - *(int *)(this + uVar2 * 4 + 0x94);
+      local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
       goto LAB_004f4331;
     }
-    local_c = local_c - *(int *)(this + 0xc0);
+    local_c = local_c - this->field_00C0;
   }
   local_c = local_c - DAT_00806734;
 LAB_004f4331:
@@ -71,19 +71,20 @@ LAB_004f4331:
       local_8 = cMf32::RecGet(DAT_00806790,param_3,pCVar6,(int *)0x0,1);
       pCVar3 = local_14;
       uVar2 = (uint)param_1;
-      thunk_FUN_00540760(*(undefined4 **)(local_14 + uVar2 * 4 + 0x180),local_10,local_c,param_3,
-                         (byte *)local_8);
+      thunk_FUN_00540760(*(undefined4 **)(&local_14->field_0x180 + uVar2 * 4),local_10,local_c,
+                         param_3,(byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if ((*(int *)(*(int *)(param_2 + 0x14) + 4) == 3) && (param_5 != (char *)0x0)) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_5,(int *)0x0,1);
-        thunk_FUN_00540760(*(undefined4 **)(pCVar3 + uVar2 * 4 + 0x180),local_10,local_c,'\x06',
-                           (byte *)local_8);
+        thunk_FUN_00540760(*(undefined4 **)(&pCVar3->field_0x180 + uVar2 * 4),local_10,local_c,
+                           '\x06',(byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
-      if ((param_1 < 0xb) && (-1 < (int)*(uint *)(pCVar3 + uVar2 * 4 + 0x148))) {
+      if ((param_1 < 0xb) && (-1 < (int)*(uint *)(&pCVar3->field_0x148 + uVar2 * 4))) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(pCVar3 + uVar2 * 4 + 0x148),0xffffffff,
-                   *(uint *)(pCVar3 + uVar2 * 4 + 0x3c),*(uint *)(pCVar3 + uVar2 * 4 + 0x94));
+                  (DAT_008075a8,*(uint *)(&pCVar3->field_0x148 + uVar2 * 4),0xffffffff,
+                   *(uint *)(&pCVar3->field_0x3c + uVar2 * 4),
+                   *(uint *)(&pCVar3->field_0x94 + uVar2 * 4));
       }
       g_currentExceptionFrame = local_58.previous;
       return;

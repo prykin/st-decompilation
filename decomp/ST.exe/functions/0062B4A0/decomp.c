@@ -63,8 +63,8 @@ uint __fastcall FUN_0062b4a0(int param_1)
     if (((uVar5 == 0) || (DAT_00802a88 == (void *)0x0)) ||
        ((DAT_0080874d == -1 || (uVar6 = 0, *(int *)((int)DAT_00802a88 + 0xf8) == 0))))
     goto LAB_0062b616;
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_c,local_8,
-                       &local_14,(int *)&local_c);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       local_c,local_8,&local_14,(int *)&local_c);
     uVar6 = local_10;
     if ((((int)local_10 < 0) || (4 < (int)local_10)) ||
        ((local_14 < 0 ||

@@ -9,8 +9,8 @@ int __thiscall STBoatC::BackTeleport(STBoatC *this,int *param_1)
   code *pcVar1;
   int iVar2;
   
-  *(undefined4 *)(this + 0xb7) = 0;
-  switch(*(undefined4 *)(this + 0x663)) {
+  this->field_00B7 = 0;
+  switch(*(undefined4 *)&this->field_0x663) {
   case 0:
   case 1:
   case 7:

@@ -28,7 +28,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   undefined4 local_3c;
   short local_38 [6];
   undefined4 local_2c;
-  uint local_28;
+  Global_sub_00675430_param_1Enum local_28;
   undefined2 local_24;
   AiPlrClassTy *local_20;
   int local_1c;
@@ -39,19 +39,19 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
   uint local_8;
   
   local_c = (uint *)0x0;
-  if ((((this[0x676] != (AiPlrClassTy)0x0) && (*(int *)(this + 0x640) != 0xff)) &&
-      (*(int *)(this + 0x695) != 0)) && (DAT_007fa174 != 0)) {
+  if ((((this->field_0676 != '\0') && (this->field_0640 != 0xff)) && (this->field_0695 != 0)) &&
+     (DAT_007fa174 != 0)) {
     local_80.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_80;
     local_20 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_80.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_20;
     if (iVar3 == 0) {
-      iVar3 = *(int *)(local_20 + 0x681);
-      if (*(int *)(local_20 + 0x689) == 0) {
+      iVar3 = *(int *)&local_20->field_0x681;
+      if (*(int *)&local_20->field_0x689 == 0) {
         if ((iVar3 == 0) ||
-           ((uint)(iVar3 * 3 + *(int *)(local_20 + 0x685)) <= *(uint *)(local_20 + 0x6fe))) {
-          *(undefined4 *)(local_20 + 0x685) = *(undefined4 *)(local_20 + 0x6fe);
+           ((uint)(iVar3 * 3 + *(int *)&local_20->field_0x685) <= (uint)local_20->field_06FE)) {
+          *(undefined4 *)&local_20->field_0x685 = local_20->field_06FE;
           puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
           local_c = puVar4;
           thunk_FUN_0067a240(this_00,&LAB_00403544,puVar4);
@@ -79,9 +79,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
               local_1c = iVar3;
             } while ((int)uVar13 < (int)uVar8);
           }
-          if ((((*(short *)(this_00 + 0x677) <= local_1c) && (0 < (int)uVar8)) && (0 < local_1c)) &&
-             ((0 < local_10 &&
-              (iVar3 = thunk_FUN_0042a990((char)this_00[0x640]), local_18 = iVar3, iVar3 != 0)))) {
+          if ((((*(short *)&this_00->field_0x677 <= local_1c) && (0 < (int)uVar8)) && (0 < local_1c)
+              ) && ((0 < local_10 &&
+                    (iVar3 = thunk_FUN_0042a990(*(char *)&this_00->field_0640), local_18 = iVar3,
+                    iVar3 != 0)))) {
             bVar14 = *(int *)(iVar3 + 0xc) != 0;
             local_14 = 0;
             local_8 = 0;
@@ -108,10 +109,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                 puVar4 = local_c;
               } while ((int)local_8 < (int)*(uint *)(iVar3 + 0xc));
             }
-            if (((*(short *)(this_00 + 0x679) <= local_1c) || (local_14 < 1)) ||
-               ((int)*(short *)(this_00 + 0x67b) < (local_10 * 100) / local_14)) {
+            if (((*(short *)&this_00->field_0x679 <= local_1c) || (local_14 < 1)) ||
+               ((int)*(short *)&this_00->field_0x67b < (local_10 * 100) / local_14)) {
               local_8 = 0;
-              *(undefined4 *)(*(int *)(this_00 + 0x6ad) + 0xc) = 0;
+              *(undefined4 *)(*(int *)&this_00->field_0x6ad + 0xc) = 0;
               bVar14 = *(int *)(iVar3 + 0xc) != 0;
               if (0 < *(int *)(iVar3 + 0xc)) {
                 do {
@@ -136,7 +137,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                     local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                     uVar10 = thunk_FUN_00675430(local_28);
                     local_24 = (undefined2)uVar10;
-                    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x6ad),&local_3c);
+                    Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x6ad,&local_3c);
                     iVar3 = local_18;
                   }
                   local_8 = local_8 + 1;
@@ -144,10 +145,10 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                   puVar4 = local_c;
                 } while ((int)local_8 < (int)*(uint *)(iVar3 + 0xc));
               }
-              thunk_FUN_00676c40(*(int *)(this_00 + 0x6ad),&LAB_004026fd);
+              thunk_FUN_00676c40(*(int *)&this_00->field_0x6ad,&LAB_004026fd);
               thunk_FUN_00676c40((int)puVar4,&LAB_004029b4);
-              thunk_FUN_0067bfd0(this_00,(int)puVar4,*(int *)(this_00 + 0x6ad));
-              *(undefined4 *)(this_00 + 0x689) = 1;
+              thunk_FUN_0067bfd0(this_00,(int)puVar4,*(int *)&this_00->field_0x6ad);
+              *(undefined4 *)&this_00->field_0x689 = 1;
             }
           }
 LAB_0067c61b:
@@ -161,10 +162,10 @@ LAB_0067c61b:
       else {
         uVar8 = extraout_EDX;
         if ((iVar3 == 0) ||
-           (uVar8 = *(int *)(local_20 + 0x685) + iVar3, uVar8 <= *(uint *)(local_20 + 0x6fe))) {
-          *(undefined4 *)(local_20 + 0x685) = *(undefined4 *)(local_20 + 0x6fe);
-          thunk_FUN_0067be20((int)local_20,uVar8,*(int *)(local_20 + 0x6ad));
-          iVar3 = thunk_FUN_0067bd50(*(int *)(this_00 + 0x6ad));
+           (uVar8 = *(int *)&local_20->field_0x685 + iVar3, uVar8 <= (uint)local_20->field_06FE)) {
+          *(undefined4 *)&local_20->field_0x685 = local_20->field_06FE;
+          thunk_FUN_0067be20((int)local_20,uVar8,*(int *)&local_20->field_0x6ad);
+          iVar3 = thunk_FUN_0067bd50(*(int *)&this_00->field_0x6ad);
           puVar11 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,5,0x10,5);
           local_c = puVar11;
           thunk_FUN_0067a240(this_00,&LAB_00403544,puVar11);
@@ -176,8 +177,8 @@ LAB_0067c61b:
           else {
             puVar4 = local_c;
             if (0 < (int)puVar11[3]) {
-              if (*(int *)(*(int *)(this_00 + 0x6ad) + 0xc) < iVar3) {
-                iVar3 = thunk_FUN_0042a990((char)this_00[0x640]);
+              if (*(int *)(*(int *)&this_00->field_0x6ad + 0xc) < iVar3) {
+                iVar3 = thunk_FUN_0042a990(*(char *)&this_00->field_0640);
                 local_18 = iVar3;
                 if (iVar3 != 0) {
                   local_8 = 0;
@@ -195,7 +196,7 @@ LAB_0067c61b:
                       piVar6 = (int *)*puVar9;
                       if (((piVar6 != (int *)0x0) &&
                           (iVar7 = (**(code **)(*piVar6 + 0xf8))(), iVar3 = local_18, iVar7 != 0))
-                         && (puVar12 = thunk_FUN_0067bd00(*(int *)(this_00 + 0x6ad),uVar8),
+                         && (puVar12 = thunk_FUN_0067bd00(*(int *)&this_00->field_0x6ad,uVar8),
                             iVar3 = local_18, puVar12 == (ushort *)0x0)) {
                         uVar2 = (undefined2)local_8;
                         puVar9 = &local_3c;
@@ -210,7 +211,7 @@ LAB_0067c61b:
                         local_28 = thunk_FUN_00674fb0((int)local_3c._2_2_);
                         uVar10 = thunk_FUN_00675430(local_28);
                         local_24 = (undefined2)uVar10;
-                        Library::DKW::TBL::FUN_006ae1c0(*(uint **)(this_00 + 0x6ad),&local_3c);
+                        Library::DKW::TBL::FUN_006ae1c0(*(uint **)&this_00->field_0x6ad,&local_3c);
                         iVar3 = local_18;
                         uVar8 = local_8;
                       }
@@ -219,14 +220,14 @@ LAB_0067c61b:
                     } while ((int)local_8 < (int)*(uint *)(iVar3 + 0xc));
                   }
                 }
-                thunk_FUN_00676c40(*(int *)(this_00 + 0x6ad),&LAB_004026fd);
+                thunk_FUN_00676c40(*(int *)&this_00->field_0x6ad,&LAB_004026fd);
               }
-              if (*(int *)(*(int *)(this_00 + 0x6ad) + 0xc) == 0) {
+              if (*(int *)(*(int *)&this_00->field_0x6ad + 0xc) == 0) {
                 thunk_FUN_0067c110(this_00);
                 puVar4 = local_c;
               }
               else {
-                thunk_FUN_0067bfd0(this_00,(int)local_c,*(int *)(this_00 + 0x6ad));
+                thunk_FUN_0067bfd0(this_00,(int)local_c,*(int *)&this_00->field_0x6ad);
                 puVar4 = local_c;
               }
             }

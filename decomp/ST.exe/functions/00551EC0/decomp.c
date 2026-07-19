@@ -6,21 +6,20 @@
 void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
 
 {
-  TradePanelTy *pTVar1;
-  TradePanelTy TVar2;
-  ushort uVar3;
-  code *pcVar4;
-  TradePanelTy *pTVar5;
-  int iVar6;
-  byte *pbVar7;
-  ushort *puVar8;
+  undefined1 *puVar1;
+  ushort uVar2;
+  code *pcVar3;
+  TradePanelTy *pTVar4;
+  int iVar5;
+  byte *pbVar6;
+  ushort *puVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  uint uVar9;
-  byte bVar10;
+  uint uVar8;
+  byte bVar9;
+  int iVar10;
   int iVar11;
-  int iVar12;
-  undefined4 *puVar13;
+  undefined4 *puVar12;
   InternalExceptionFrame local_54;
   TradePanelTy *local_10;
   int local_c;
@@ -29,47 +28,49 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   local_10 = this;
-  iVar6 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pTVar5 = local_10;
-  if (iVar6 == 0) {
-    pTVar1 = local_10 + 0x18d;
-    wsprintfA((LPSTR)pTVar1,&DAT_007c28fc,
-              (uint)*(ushort *)(local_10 + (uint)(byte)local_10[0x1d0] * 2 + 0x1bc));
-    ccFntTy::SetSurf(*(ccFntTy **)(pTVar5 + 0x1dd),*(int *)(pTVar5 + 0x68),0,0x67,0x36,0x23,0xc);
-    ccFntTy::WrStr(*(ccFntTy **)(pTVar5 + 0x1dd),(uint *)pTVar1,-1,-1,
-                   -(uint)(pTVar5[0x1d0] != (TradePanelTy)0x0) & 2);
-    if (pTVar5[0x1bb] == (TradePanelTy)0x0) {
+  iVar5 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pTVar4 = local_10;
+  if (iVar5 == 0) {
+    puVar1 = &local_10->field_0x18d;
+    wsprintfA(puVar1,&DAT_007c28fc,
+              (uint)*(ushort *)(&local_10[1].field_0x0 + (uint)(byte)local_10[1].field_0x14 * 2));
+    ccFntTy::SetSurf(*(ccFntTy **)&pTVar4[1].field_0x21,*(int *)&pTVar4->field_0x68,0,0x67,0x36,0x23
+                     ,0xc);
+    ccFntTy::WrStr(*(ccFntTy **)&pTVar4[1].field_0x21,(uint *)puVar1,-1,-1,
+                   -(uint)(pTVar4[1].field_0x14 != '\0') & 2);
+    if (pTVar4->field_01BB == '\0') {
       local_8 = 0;
-      iVar6 = 0xb4;
+      iVar5 = 0xb4;
       local_c = 2;
       do {
-        puVar13 = (undefined4 *)0x0;
-        iVar12 = 0;
-        iVar11 = 1;
-        bVar10 = 0;
-        uVar9 = 0xffffffff;
-        pbVar7 = (byte *)thunk_FUN_00571240(s_BKG_AMOUNTRC_007c874c,0);
-        puVar8 = FUN_00709af0(DAT_00806794,1,pbVar7,uVar9,bVar10,iVar11,iVar12,puVar13);
-        thunk_FUN_00540760(*(undefined4 **)(pTVar5 + 0x68),iVar6 + -3,0x45,'\x01',(byte *)puVar8);
-        TVar2 = pTVar5[0x1d0];
-        uVar3 = *(ushort *)(pTVar5 + (local_8 + (uint)(byte)TVar2 * 2) * 4 + 0x1ad);
-        if (uVar3 == 0) {
-          iVar11 = 0;
+        puVar12 = (undefined4 *)0x0;
+        iVar11 = 0;
+        iVar10 = 1;
+        bVar9 = 0;
+        uVar8 = 0xffffffff;
+        pbVar6 = (byte *)thunk_FUN_00571240(s_BKG_AMOUNTRC_007c874c,0);
+        puVar7 = FUN_00709af0(DAT_00806794,CASE_1,pbVar6,uVar8,bVar9,iVar10,iVar11,puVar12);
+        thunk_FUN_00540760(*(undefined4 **)&pTVar4->field_0x68,iVar5 + -3,0x45,'\x01',(byte *)puVar7
+                          );
+        bVar9 = pTVar4[1].field_0x14;
+        uVar2 = *(ushort *)(&pTVar4->field_0x1ad + (local_8 + (uint)bVar9 * 2) * 4);
+        if (uVar2 == 0) {
+          iVar10 = 0;
         }
-        else if ((DAT_0080874e == '\x03') && (TVar2 == (TradePanelTy)0x0)) {
-          iVar11 = (uint)*(ushort *)(pTVar5 + 0x1bc) * (uint)uVar3;
+        else if ((DAT_0080874e == '\x03') && (bVar9 == 0)) {
+          iVar10 = (uint)*(ushort *)(pTVar4 + 1) * (uint)uVar2;
         }
         else {
-          iVar11 = (int)((ulonglong)*(ushort *)(pTVar5 + (uint)(byte)TVar2 * 2 + 0x1bc) /
-                        (ulonglong)(longlong)(int)(uint)uVar3);
+          iVar10 = (int)((ulonglong)*(ushort *)(&pTVar4[1].field_0x0 + (uint)bVar9 * 2) /
+                        (ulonglong)(longlong)(int)(uint)uVar2);
         }
-        wsprintfA((LPSTR)pTVar1,&DAT_007c28fc,iVar11);
-        ccFntTy::SetSurf(*(ccFntTy **)(pTVar5 + 0x1dd),*(int *)(pTVar5 + 0x68),0,iVar6,0x48,0x23,0xc
-                        );
-        ccFntTy::WrStr(*(ccFntTy **)(pTVar5 + 0x1dd),(uint *)pTVar1,-1,-1,
+        wsprintfA(puVar1,&DAT_007c28fc,iVar10);
+        ccFntTy::SetSurf(*(ccFntTy **)&pTVar4[1].field_0x21,*(int *)&pTVar4->field_0x68,0,iVar5,0x48
+                         ,0x23,0xc);
+        ccFntTy::WrStr(*(ccFntTy **)&pTVar4[1].field_0x21,(uint *)puVar1,-1,-1,
                        (-(uint)(DAT_0080874e != '\x03') & 0xfffffffc) + 5);
         local_8 = local_8 + 1;
-        iVar6 = iVar6 + 0x39;
+        iVar5 = iVar5 + 0x39;
         local_c = local_c + -1;
       } while (local_c != 0);
     }
@@ -77,14 +78,14 @@ void __thiscall TradePanelTy::PaintIndicators(TradePanelTy *this)
     return;
   }
   g_currentExceptionFrame = local_54.previous;
-  iVar11 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x111,0,iVar6,&DAT_007a4ccc
+  iVar10 = ReportDebugMessage(s_E____titans_Andrey_tradecen_cpp_007c8624,0x111,0,iVar5,&DAT_007a4ccc
                               ,s_TradePanelTy__PaintIndicators_007c8728);
-  if (iVar11 != 0) {
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+  if (iVar10 != 0) {
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  RaiseInternalException(iVar6,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x111);
+  RaiseInternalException(iVar5,0,s_E____titans_Andrey_tradecen_cpp_007c8624,0x111);
   return;
 }
 

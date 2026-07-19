@@ -6,7 +6,7 @@ void __fastcall FUN_00627170(void *param_1)
   
   if ((*(int *)((int)param_1 + 0x35a) == 0x15) && ((*(byte *)((int)param_1 + 0x355) & 1) != 0)) {
     if ((ushort)*(byte *)((int)param_1 + 0x35e) != *(ushort *)((int)param_1 + 0x4b)) {
-      iVar1 = thunk_FUN_00624570(param_1,3,(int)*(short *)((int)param_1 + 0x3a),
+      iVar1 = thunk_FUN_00624570(param_1,CASE_3,(int)*(short *)((int)param_1 + 0x3a),
                                  (int)*(short *)((int)param_1 + 0x3c),
                                  (short)((ushort)*(byte *)((int)param_1 + 0x35e) * 200 + 100) +
                                  -0x32);

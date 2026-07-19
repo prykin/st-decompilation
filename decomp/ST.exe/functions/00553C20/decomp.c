@@ -11,7 +11,7 @@ FUN_00553c20(int param_1,int param_2,int param_3,uint param_4,int param_5,undefi
   int iVar6;
   
   if (param_3 != 0) {
-    puVar3 = thunk_FUN_005532f0((int)param_6);
+    puVar3 = thunk_FUN_005532f0((Global_sub_005532F0_param_1Enum)param_6);
     iVar2 = (int)param_6 * 2 + 1;
     iVar5 = param_1 - (int)param_6;
     iVar4 = param_2 - (int)param_6;

@@ -1,23 +1,30 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::SelectObjects */
+   STAllPlayersC::SelectObjects
+   
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/STAllPlayersC_SelectObjects_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7 */
 
 void __thiscall
-STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2,uint param_3)
+STAllPlayersC::SelectObjects
+          (STAllPlayersC *this,STAllPlayersC_SelectObjects_param_1Enum param_1,uint param_2,
+          uint param_3)
 
 {
   code *pcVar1;
   byte bVar2;
   uint uVar3;
   int iVar4;
+  STAllPlayersC_GetTOBJListFromDArr_param_3Enum SVar5;
   STGroupC *this_00;
-  int *piVar5;
-  int iVar6;
+  int *piVar6;
   int iVar7;
+  int iVar8;
   int unaff_EDI;
-  uint uVar8;
-  char cVar9;
+  uint uVar9;
+  char cVar10;
   uint local_14;
   byte *local_10;
   byte *local_c;
@@ -30,35 +37,35 @@ STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2
   local_c = (byte *)0x0;
   local_8 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0,2,1);
   switch(param_1) {
-  case 0:
+  case CASE_0:
     param_3 = 0;
-    iVar6 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
-    iVar7 = *(int *)(iVar6 + 0xc);
-    if (0 < iVar7) {
+    iVar7 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
+    iVar8 = *(int *)(iVar7 + 0xc);
+    if (0 < iVar8) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar6 + 0x1c) + param_3 * 4);
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-            (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
-          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar5 + 0x32));
+        piVar6 = *(int **)(*(int *)(iVar7 + 0x1c) + param_3 * 4);
+        if (((piVar6 != (int *)0x0) && (piVar6[8] == 0x14)) &&
+           ((iVar4 = (**(code **)(*piVar6 + 0xf8))(), iVar4 == 1 &&
+            (iVar4 = (**(code **)(*piVar6 + 0xec))(), iVar4 == 1)))) {
+          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar6 + 0x32));
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar7);
+      } while ((int)param_3 < iVar8);
     }
     break;
-  case 1:
+  case CASE_1:
     GetGObjFromZone(this,bVar2,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_8,
                     (int *)0x0);
     param_3 = 0;
     param_2 = local_8[3];
     if (0 < (int)param_2) {
       do {
-        piVar5 = (int *)GetObjPtr(this,uVar3,
+        piVar6 = (int *)GetObjPtr(this,uVar3,
                                   CONCAT22((short)((uint)local_8 >> 0x10),
-                                           *(undefined2 *)(local_8[7] + param_3 * 2)),1);
-        if ((((piVar5 == (int *)0x0) || (piVar5[8] != 0x14)) ||
-            (iVar6 = (**(code **)(*piVar5 + 0xf8))(), iVar6 == 0)) ||
-           (iVar6 = (**(code **)(*piVar5 + 0xec))(), iVar6 == 0)) {
+                                           *(undefined2 *)(local_8[7] + param_3 * 2)),CASE_1);
+        if ((((piVar6 == (int *)0x0) || (piVar6[8] != 0x14)) ||
+            (iVar7 = (**(code **)(*piVar6 + 0xf8))(), iVar7 == 0)) ||
+           (iVar7 = (**(code **)(*piVar6 + 0xec))(), iVar7 == 0)) {
           FUN_006b0c70((int)local_8,param_3);
           param_2 = param_2 - 1;
           param_3 = param_3 - 1;
@@ -67,102 +74,102 @@ STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2
       } while ((int)param_3 < (int)param_2);
     }
     break;
-  case 2:
+  case CASE_2:
     param_3 = 0;
-    iVar6 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
-    iVar7 = *(int *)(iVar6 + 0xc);
-    if (0 < iVar7) {
+    iVar7 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
+    iVar8 = *(int *)(iVar7 + 0xc);
+    if (0 < iVar8) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar6 + 0x1c) + param_3 * 4);
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           (((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+        piVar6 = *(int **)(*(int *)(iVar7 + 0x1c) + param_3 * 4);
+        if (((piVar6 != (int *)0x0) && (piVar6[8] == 0x14)) &&
+           (((iVar4 = (**(code **)(*piVar6 + 0x2c))(),
              (*(uint *)(&DAT_00800f10 + (iVar4 + 0x41U >> 5) * 4) &
              1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 ||
-             (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+             (iVar4 = (**(code **)(*piVar6 + 0x2c))(),
              ((&DAT_00800f00)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
-            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
-          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar5 + 0x32));
+            ((iVar4 = (**(code **)(*piVar6 + 0xf8))(), iVar4 == 1 &&
+             (iVar4 = (**(code **)(*piVar6 + 0xec))(), iVar4 == 1)))))) {
+          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar6 + 0x32));
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar7);
+      } while ((int)param_3 < iVar8);
     }
     break;
-  case 3:
+  case CASE_3:
     param_3 = 0;
-    iVar6 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
-    iVar7 = *(int *)(iVar6 + 0xc);
-    if (0 < iVar7) {
+    iVar7 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
+    iVar8 = *(int *)(iVar7 + 0xc);
+    if (0 < iVar8) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar6 + 0x1c) + param_3 * 4);
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+        piVar6 = *(int **)(*(int *)(iVar7 + 0x1c) + param_3 * 4);
+        if (((piVar6 != (int *)0x0) && (piVar6[8] == 0x14)) &&
+           ((iVar4 = (**(code **)(*piVar6 + 0x2c))(),
             ((&DAT_00801000)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
-            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
-          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar5 + 0x32));
+            ((iVar4 = (**(code **)(*piVar6 + 0xf8))(), iVar4 == 1 &&
+             (iVar4 = (**(code **)(*piVar6 + 0xec))(), iVar4 == 1)))))) {
+          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar6 + 0x32));
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar7);
+      } while ((int)param_3 < iVar8);
     }
     break;
-  case 4:
+  case CASE_4:
     param_3 = 0;
-    iVar6 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
-    iVar7 = *(int *)(iVar6 + 0xc);
-    if (0 < iVar7) {
+    iVar7 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
+    iVar8 = *(int *)(iVar7 + 0xc);
+    if (0 < iVar8) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar6 + 0x1c) + param_3 * 4);
-        if ((((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-            (iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+        piVar6 = *(int **)(*(int *)(iVar7 + 0x1c) + param_3 * 4);
+        if ((((piVar6 != (int *)0x0) && (piVar6[8] == 0x14)) &&
+            (iVar4 = (**(code **)(*piVar6 + 0x2c))(),
             ((&DAT_00800fa0)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0)) &&
-           ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-            (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))) {
-          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar5 + 0x32));
+           ((iVar4 = (**(code **)(*piVar6 + 0xf8))(), iVar4 == 1 &&
+            (iVar4 = (**(code **)(*piVar6 + 0xec))(), iVar4 == 1)))) {
+          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar6 + 0x32));
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar7);
+      } while ((int)param_3 < iVar8);
     }
     break;
-  case 5:
+  case CASE_5:
     param_3 = 0;
-    iVar6 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
-    iVar7 = *(int *)(iVar6 + 0xc);
-    if (0 < iVar7) {
+    iVar7 = *(int *)((int)&DAT_007f4e29 + uVar3 * 0xa62);
+    iVar8 = *(int *)(iVar7 + 0xc);
+    if (0 < iVar8) {
       do {
-        piVar5 = *(int **)(*(int *)(iVar6 + 0x1c) + param_3 * 4);
-        if (((piVar5 != (int *)0x0) && (piVar5[8] == 0x14)) &&
-           ((iVar4 = (**(code **)(*piVar5 + 0x2c))(),
+        piVar6 = *(int **)(*(int *)(iVar7 + 0x1c) + param_3 * 4);
+        if (((piVar6 != (int *)0x0) && (piVar6[8] == 0x14)) &&
+           ((iVar4 = (**(code **)(*piVar6 + 0x2c))(),
             ((&DAT_00801010)[iVar4 + 0x41U >> 5] & 1 << ((byte)(iVar4 + 0x41U) & 0x1f)) != 0 &&
-            ((iVar4 = (**(code **)(*piVar5 + 0xf8))(), iVar4 == 1 &&
-             (iVar4 = (**(code **)(*piVar5 + 0xec))(), iVar4 == 1)))))) {
-          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar5 + 0x32));
+            ((iVar4 = (**(code **)(*piVar6 + 0xf8))(), iVar4 == 1 &&
+             (iVar4 = (**(code **)(*piVar6 + 0xec))(), iVar4 == 1)))))) {
+          Library::DKW::TBL::FUN_006ae1c0(local_8,(undefined4 *)((int)piVar6 + 0x32));
         }
         param_3 = param_3 + 1;
-      } while ((int)param_3 < iVar7);
+      } while ((int)param_3 < iVar8);
     }
     break;
-  case 6:
-    piVar5 = (int *)FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
-    if (((piVar5 != (int *)0x0) && (piVar5[9] == uVar3)) && (piVar5[8] == 0x14)) {
+  case CASE_6:
+    piVar6 = (int *)FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
+    if (((piVar6 != (int *)0x0) && (piVar6[9] == uVar3)) && (piVar6[8] == 0x14)) {
       FUN_006ae110((byte *)local_8);
       GetGObjFromZone(this,bVar2,DAT_00807410,DAT_00807414,DAT_00807418,DAT_0080741c,(int *)&local_c
                       ,(int *)0x0);
-      cVar9 = -1;
+      cVar10 = -1;
       iVar7 = 0;
-      iVar6 = (**(code **)(*piVar5 + 0x2c))();
-      local_8 = GetTOBJListFromDArr(this,uVar3,(int)local_c,iVar6,iVar7,cVar9);
+      SVar5 = (**(code **)(*piVar6 + 0x2c))();
+      local_8 = GetTOBJListFromDArr(this,uVar3,(int)local_c,SVar5,iVar7,cVar10);
       FUN_006ae110(local_c);
       param_3 = 0;
       param_2 = local_8[3];
       if (0 < (int)param_2) {
         do {
-          piVar5 = (int *)GetObjPtr(this,uVar3,
+          piVar6 = (int *)GetObjPtr(this,uVar3,
                                     CONCAT22((short)((uint)local_8 >> 0x10),
-                                             *(undefined2 *)(local_8[7] + param_3 * 2)),1);
-          if ((((piVar5 == (int *)0x0) || (piVar5[8] != 0x14)) ||
-              (iVar6 = (**(code **)(*piVar5 + 0xf8))(), iVar6 == 0)) ||
-             (iVar6 = (**(code **)(*piVar5 + 0xec))(), iVar6 == 0)) {
+                                             *(undefined2 *)(local_8[7] + param_3 * 2)),CASE_1);
+          if ((((piVar6 == (int *)0x0) || (piVar6[8] != 0x14)) ||
+              (iVar7 = (**(code **)(*piVar6 + 0xf8))(), iVar7 == 0)) ||
+             (iVar7 = (**(code **)(*piVar6 + 0xec))(), iVar7 == 0)) {
             FUN_006b0c70((int)local_8,param_3);
             param_2 = param_2 - 1;
             param_3 = param_3 - 1;
@@ -172,37 +179,37 @@ STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2
       }
     }
     break;
-  case 7:
-    iVar6 = FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
-    if ((((iVar6 != 0) && (*(uint *)(iVar6 + 0x24) == uVar3)) && (*(int *)(iVar6 + 0x20) == 0x14))
-       && ((*(short *)(iVar6 + 0x30) != -1 &&
+  case CASE_7:
+    iVar7 = FUN_006eb350(DAT_00807598,param_2,param_3,0xe,1);
+    if ((((iVar7 != 0) && (*(uint *)(iVar7 + 0x24) == uVar3)) && (*(int *)(iVar7 + 0x20) == 0x14))
+       && ((*(short *)(iVar7 + 0x30) != -1 &&
            (this_00 = (STGroupC *)
-                      thunk_FUN_0042b760(uVar3,CONCAT22((short)((uint)iVar6 >> 0x10),
-                                                        *(short *)(iVar6 + 0x30))),
+                      thunk_FUN_0042b760(uVar3,CONCAT22((short)((uint)iVar7 >> 0x10),
+                                                        *(short *)(iVar7 + 0x30))),
            this_00 != (STGroupC *)0x0)))) {
       FUN_006ae110((byte *)local_8);
       local_8 = STGroupC::GetGroupContent(this_00,unaff_EDI);
       param_2 = local_8[3];
-      uVar8 = 0;
+      uVar9 = 0;
       if (0 < (int)param_2) {
         do {
-          FUN_006acc70((int)local_8,uVar8,&local_14);
-          piVar5 = (int *)GetObjPtr(this,uVar3,local_14,1);
-          iVar6 = (**(code **)(*piVar5 + 0xec))();
-          if (iVar6 == 0) {
-            FUN_006b0c70((int)local_8,uVar8);
+          FUN_006acc70((int)local_8,uVar9,&local_14);
+          piVar6 = (int *)GetObjPtr(this,uVar3,local_14,CASE_1);
+          iVar7 = (**(code **)(*piVar6 + 0xec))();
+          if (iVar7 == 0) {
+            FUN_006b0c70((int)local_8,uVar9);
             param_2 = param_2 - 1;
-            uVar8 = uVar8 - 1;
+            uVar9 = uVar9 - 1;
           }
-          uVar8 = uVar8 + 1;
-        } while ((int)uVar8 < (int)param_2);
+          uVar9 = uVar9 + 1;
+        } while ((int)uVar9 < (int)param_2);
       }
     }
     break;
   default:
-    iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3123,0,0,&DAT_007a4ccc,
+    iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3123,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC__SelectObjects_inv_007a8a58);
-    if (iVar6 != 0) {
+    if (iVar7 != 0) {
       pcVar1 = (code *)swi(3);
       (*pcVar1)();
       return;
@@ -212,19 +219,19 @@ STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2
     FUN_006ae110((byte *)local_8);
     return;
   }
-  iVar6 = uVar3 * 0xa62;
-  if (*(int *)((int)&DAT_007f5023 + iVar6) == 0) {
-    iVar7 = *(int *)((int)&DAT_007f4f83 + iVar6);
-    if (iVar7 != 0) {
-      if (iVar7 == 0x3c) {
-        iVar7 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-        if (0 < iVar7) {
-          ActivateTV(this,bVar2,0,iVar7);
+  iVar7 = uVar3 * 0xa62;
+  if (*(int *)((int)&DAT_007f5023 + iVar7) == 0) {
+    iVar8 = *(int *)((int)&DAT_007f4f83 + iVar7);
+    if (iVar8 != 0) {
+      if (iVar8 == 0x3c) {
+        iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
+        if (0 < iVar8) {
+          ActivateTV(this,bVar2,0,iVar8);
           goto LAB_0044bd53;
         }
-        if (-1 < iVar7) goto LAB_0044bd53;
+        if (-1 < iVar8) goto LAB_0044bd53;
         PushTV(bVar2,0);
-        if (*(uint *)((int)&DAT_007f4f97 + iVar6) == uVar3) {
+        if (*(uint *)((int)&DAT_007f4f97 + iVar7) == uVar3) {
           CalibrateTmp(this,bVar2,0,1,local_8,(int *)&local_10,(int *)0x0,(int *)0x0);
           ResetActivityFromObjs(this,uVar3,0x3c,(int)local_10,0,0);
           FUN_006ae110(local_10);
@@ -234,19 +241,19 @@ STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2
         }
       }
       else {
-        if (iVar7 != 0x1ae) {
-          iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3152,0,0,
+        if (iVar8 != 0x1ae) {
+          iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3152,0,0,
                                      &DAT_007a4ccc,s_STAllPlayersC__SelectObjects_GAM_007a898c);
-          if (iVar6 != 0) {
+          if (iVar7 != 0) {
             pcVar1 = (code *)swi(3);
             (*pcVar1)();
             return;
           }
           goto LAB_0044bd53;
         }
-        iVar7 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-        if (0 < iVar7) {
-          ActivateTV(this,bVar2,0,iVar7);
+        iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
+        if (0 < iVar8) {
+          ActivateTV(this,bVar2,0,iVar8);
           goto LAB_0044bd53;
         }
         PushTV(bVar2,0);
@@ -254,53 +261,53 @@ STAllPlayersC::SelectObjects(STAllPlayersC *this,undefined4 param_1,uint param_2
       }
       goto LAB_0044bd3d;
     }
-    iVar7 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-    if (iVar7 < 1) goto LAB_0044bd3d;
-    ActivateTV(this,bVar2,0,iVar7);
+    iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
+    if (iVar8 < 1) goto LAB_0044bd3d;
+    ActivateTV(this,bVar2,0,iVar8);
   }
   else {
-    if (*(int *)((int)&DAT_007f5023 + iVar6) != 1) {
-      iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x317d,0,0,&DAT_007a4ccc,
+    if (*(int *)((int)&DAT_007f5023 + iVar7) != 1) {
+      iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x317d,0,0,&DAT_007a4ccc,
                                  s_STAllPlayersC__SelectObjects_GAM_007a8a0c);
-      if (iVar6 != 0) {
+      if (iVar7 != 0) {
         pcVar1 = (code *)swi(3);
         (*pcVar1)();
         return;
       }
       goto LAB_0044bd53;
     }
-    *(undefined4 *)((int)&DAT_007f5023 + iVar6) = 0;
+    *(undefined4 *)((int)&DAT_007f5023 + iVar7) = 0;
     ResetActivityFromTmp(this,bVar2,1,0,0);
-    iVar7 = *(int *)((int)&DAT_007f4f83 + iVar6);
-    if (iVar7 == 0) {
-      iVar7 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-      if (0 < iVar7) {
-        ActivateTV(this,bVar2,0,iVar7);
+    iVar8 = *(int *)((int)&DAT_007f4f83 + iVar7);
+    if (iVar8 == 0) {
+      iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
+      if (0 < iVar8) {
+        ActivateTV(this,bVar2,0,iVar8);
         goto LAB_0044bd49;
       }
     }
-    else if (iVar7 == 0x3c) {
-      iVar7 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-      if (-1 < iVar7) {
-        ActivateTV(this,bVar2,0,iVar7);
+    else if (iVar8 == 0x3c) {
+      iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
+      if (-1 < iVar8) {
+        ActivateTV(this,bVar2,0,iVar8);
         goto LAB_0044bd53;
       }
       PushTV(bVar2,0);
     }
     else {
-      if (iVar7 != 0x1ae) {
-        iVar6 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3179,0,0,&DAT_007a4ccc
+      if (iVar8 != 0x1ae) {
+        iVar7 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x3179,0,0,&DAT_007a4ccc
                                    ,s_STAllPlayersC__SelectObjects_GAM_007a89cc);
-        if (iVar6 != 0) {
+        if (iVar7 != 0) {
           pcVar1 = (code *)swi(3);
           (*pcVar1)();
           return;
         }
         goto LAB_0044bd53;
       }
-      iVar7 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-      if (0 < iVar7) {
-        ActivateTV(this,bVar2,0,iVar7);
+      iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
+      if (0 < iVar8) {
+        ActivateTV(this,bVar2,0,iVar8);
         goto LAB_0044bd53;
       }
       PushTV(bVar2,0);
@@ -309,7 +316,7 @@ LAB_0044bd3d:
     AddObjsToTmp(this,uVar3,0,0,(int)local_8);
   }
 LAB_0044bd49:
-  *(undefined4 *)((int)&DAT_007f4f83 + iVar6) = 0x3c;
+  *(undefined4 *)((int)&DAT_007f4f83 + iVar7) = 0x3c;
 LAB_0044bd53:
   FUN_006ae110((byte *)local_8);
   SelfCheckObjControl(this);

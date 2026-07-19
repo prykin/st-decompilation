@@ -74,7 +74,7 @@ LAB_0052b581:
                (char)*(undefined2 *)
                       (*(int *)(param_1 + 0x9c8 + (uint)*(byte *)(param_1 + 0xdcc) * 4) + 0x23),
                *(undefined4 *)(param_1 + 0xdd6),*(undefined4 *)(param_1 + 0xdda),5,5,1);
-  thunk_FUN_005252c0((*(char *)(param_1 + 0xdcc) != '\0') + 0xb6);
+  thunk_FUN_005252c0((*(char *)(param_1 + 0xdcc) != '\0') + CASE_B6);
   return 0;
 }
 

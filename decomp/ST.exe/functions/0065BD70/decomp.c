@@ -178,7 +178,7 @@ int __thiscall FUN_0065bd70(void *this,int param_1,int param_2)
         piVar2 = (int *)STAllPlayersC::GetObjPtr
                                   (DAT_007fa174,(uint)uVar1,
                                    CONCAT22((short)((uint)(iVar8 * 9) >> 0x10),
-                                            *(undefined2 *)(param_1 + 0x16)),1);
+                                            *(undefined2 *)(param_1 + 0x16)),CASE_1);
         iVar8 = extraout_EDX;
         if (piVar2 != (int *)0x0) {
           uVar3 = (**(code **)(*piVar2 + 0x2c))();
@@ -211,7 +211,8 @@ LAB_0065c021:
   case 0x5dd9:
   case 0x5dda:
     piVar2 = (int *)STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),5);
+                              (DAT_007fa174,0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),CASE_5
+                              );
     uVar4 = extraout_var;
     if (piVar2 != (int *)0x0) {
       uVar3 = (**(code **)(*piVar2 + 300))();
@@ -250,7 +251,8 @@ LAB_0065c021:
   case 0x5ddd:
   case 0x5dde:
     piVar2 = (int *)STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),2);
+                              (DAT_007fa174,0,CONCAT22(uVar4,*(undefined2 *)(param_1 + 0x16)),CASE_2
+                              );
     uVar4 = extraout_var_01;
     if (piVar2 != (int *)0x0) {
       *(undefined4 *)((int)this + 0x52f) = 0;
@@ -312,7 +314,7 @@ LAB_0065c021:
         piVar2 = (int *)STAllPlayersC::GetObjPtr
                                   (DAT_007fa174,0,
                                    CONCAT22((short)((uint)(iVar5 * 9) >> 0x10),
-                                            *(undefined2 *)(param_1 + 0x16)),3);
+                                            *(undefined2 *)(param_1 + 0x16)),CASE_3);
         iVar8 = extraout_EDX_01;
         if (piVar2 != (int *)0x0) {
           uVar3 = (**(code **)(*piVar2 + 0x2c))();
@@ -384,8 +386,8 @@ LAB_0065c570:
     uVar9 = CONCAT22(uVar11,*(undefined2 *)(param_1 + 0x16));
 LAB_0065c4bb:
     if (((short)uVar9 == -1) ||
-       (piVar2 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,uVar12,uVar9,1), piVar2 == (int *)0x0)
-       ) {
+       (piVar2 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,uVar12,uVar9,CASE_1),
+       piVar2 == (int *)0x0)) {
       *(undefined4 *)((int)this + 0x563) = 0;
       goto switchD_0065bf29_caseD_5dc7;
     }

@@ -63,7 +63,7 @@ void __thiscall TraksClassTy::PrepareAfterSave(TraksClassTy *this,int param_1)
         bVar10 = 0;
         uVar9 = 0xffffffff;
         pbVar4 = thunk_FUN_00555840((int)*psVar7);
-        puVar5 = FUN_00709af0(piVar8,0x1d,pbVar4,uVar9,bVar10,iVar3,iVar11,puVar12);
+        puVar5 = FUN_00709af0(piVar8,CASE_1D,pbVar4,uVar9,bVar10,iVar3,iVar11,puVar12);
         psVar7[0x1b] = *puVar5;
         iVar3 = *psVar7 * 0x18;
         FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)(&DAT_007c9000 + iVar3),

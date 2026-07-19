@@ -54,7 +54,7 @@ void __thiscall STAppC::ChangeResolution(STAppC *this,int param_1)
         }
         iVar4 = 0;
         local_10 = 0;
-        piVar2 = *(int **)(local_14 + 0x115a);
+        piVar2 = *(int **)&local_14->field_0x115a;
         piVar1 = piVar2 + 1;
         if (0 < *piVar1) {
           do {

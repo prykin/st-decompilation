@@ -37,7 +37,7 @@ int __thiscall AppClassTy::CreateObject(AppClassTy *this,int param_1,undefined4 
     RaiseInternalException(-2,0,s_E__Ourlib_Sapp_cpp_007ee78c,0x8d);
     return 0;
   }
-  piVar2 = *(int **)(local_8 + 8);
+  piVar2 = (int *)local_8->field_0008;
   if (piVar2 == (int *)0x0) {
     RaiseInternalException(-4,DAT_007ed77c,s_E__Ourlib_Sapp_cpp_007ee78c,0x7e);
   }
@@ -69,11 +69,11 @@ int __thiscall AppClassTy::CreateObject(AppClassTy *this,int param_1,undefined4 
   if (*(int *)(local_c + 8) == 0) {
     local_10 = param_2;
     *(int *)(local_c + 4) = param_1;
-    *(undefined4 *)(local_c + 8) = *(undefined4 *)(pAVar4 + 4);
-    *(int *)(pAVar4 + 4) = *(int *)(pAVar4 + 4) + 1;
+    *(undefined4 *)(local_c + 8) = pAVar4->field_0004;
+    pAVar4->field_0004 = pAVar4->field_0004 + 1;
     *(AppClassTy **)(local_c + 0x10) = pAVar4;
   }
-  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pAVar4 + 0xc),&local_10);
+  Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar4->field_000C,&local_10);
   g_currentExceptionFrame = local_54.previous;
   return local_c;
 }

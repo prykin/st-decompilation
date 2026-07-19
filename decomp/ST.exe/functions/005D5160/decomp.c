@@ -44,7 +44,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
   char *local_c;
   SettMapSTy *local_8;
   
-  this[0x211c] = DAT_008087c4._2_1_;
+  this->field_211C = DAT_008087c4._2_1_;
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
   local_8 = this;
@@ -62,13 +62,13 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
     (*pcVar3)();
     return;
   }
-  if (local_8[0x1e26] == (SettMapSTy)0x2) {
-    local_10 = *(int *)(local_8 + 7999);
+  if (local_8->field_0x1e26 == '\x02') {
+    local_10 = *(int *)&local_8->field_0x1f3f;
   }
   else {
-    local_10 = *(int *)(local_8 + 0x1f43);
+    local_10 = *(int *)&local_8->field_0x1f43;
   }
-  iVar4 = *(int *)(local_8 + 0x1f84);
+  iVar4 = *(int *)&local_8->field_0x1f84;
   if (iVar4 != 0) {
     uVar10 = 0;
     if (0 < *(int *)(iVar4 + 0xc)) {
@@ -83,15 +83,15 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
         if ((iVar4 != 0) && (*(byte **)(iVar4 + 0x50) != (byte *)0x0)) {
           FUN_006ae110(*(byte **)(iVar4 + 0x50));
         }
-        iVar4 = *(int *)(this_00 + 0x1f84);
+        iVar4 = *(int *)&this_00->field_0x1f84;
         uVar10 = uVar10 + 1;
         bVar14 = uVar10 < *(uint *)(iVar4 + 0xc);
       } while ((int)uVar10 < (int)*(uint *)(iVar4 + 0xc));
     }
-    FUN_006ae110(*(byte **)(this_00 + 0x1f84));
+    FUN_006ae110(*(byte **)&this_00->field_0x1f84);
   }
   puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,8,0x60,8);
-  *(uint **)(this_00 + 0x1f84) = puVar5;
+  *(uint **)&this_00->field_0x1f84 = puVar5;
   local_c = &DAT_008087e8;
   do {
     pcVar9 = local_c;
@@ -106,7 +106,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
         cStack_71 = *local_c;
       }
       local_72 = cVar1;
-      if (this_00[0x1e26] == (SettMapSTy)0x2) {
+      if (this_00->field_0x1e26 == '\x02') {
         local_24 = thunk_FUN_0067e0e0(local_10,CONCAT12(uStack_70,CONCAT11(cStack_71,cVar1)) & 0xff,
                                       0xffffffff);
       }
@@ -144,7 +144,7 @@ void __thiscall SettMapSTy::PrepPlList(SettMapSTy *this,int *param_1)
       else {
         uStack_70 = 4;
         uStack_6f = 0;
-        if (local_8[0x1e26] == (SettMapSTy)0x2) {
+        if (local_8->field_0x1e26 == '\x02') {
           uVar8 = 0;
           uVar10 = local_24[3];
           if (0 < (int)uVar10) {
@@ -192,12 +192,12 @@ LAB_005d5350:
       local_18 = *(undefined4 *)(pcVar9 + 0xb);
       local_29 = 0;
       local_25 = 1;
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x1f84),(undefined4 *)&local_74);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)&local_8->field_0x1f84,(undefined4 *)&local_74);
       this_00 = local_8;
     }
     local_c = pcVar9 + 0x51;
   } while ((int)local_c < 0x808a70);
-  iVar4 = *(int *)(this_00 + 0x1f84);
+  iVar4 = *(int *)&this_00->field_0x1f84;
   uVar8 = 0;
   uVar10 = *(uint *)(iVar4 + 0xc);
   if (0 < (int)uVar10) {

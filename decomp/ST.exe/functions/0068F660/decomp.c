@@ -43,8 +43,9 @@ void __thiscall AiTactClassTy::GiveObjByGrpNum(AiTactClassTy *this,int param_1)
         }
         else {
           piVar5 = (int *)STAllPlayersC::GetObjPtr
-                                    (DAT_007fa174,CONCAT31((int3)((uint)uVar7 >> 8),local_8[0x24]),
-                                     CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),1);
+                                    (DAT_007fa174,
+                                     CONCAT31((int3)((uint)uVar7 >> 8),local_8->field_0x24),
+                                     CONCAT22((short)((uint)puVar4 >> 0x10),*puVar4),CASE_1);
           uVar7 = extraout_EDX_00;
         }
         if (piVar5 != (int *)0x0) {

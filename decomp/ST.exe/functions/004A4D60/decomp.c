@@ -38,37 +38,37 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,shor
     return;
   }
   if (param_1 == 1) {
-    if (*(int *)(local_c + 0x29b) != 1) {
+    if (local_c->field_029B != 1) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    if (*(int *)(local_c + 0x29f) == 0) {
+    if (local_c->field_029F == 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    iVar2 = *(int *)(*(int *)(local_c + 0x29f) + 0xc);
+    iVar2 = *(int *)(local_c->field_029F + 0xc);
     uVar5 = 0;
     if (0 < iVar2) {
       do {
-        FUN_006acc70(*(int *)(this_00 + 0x29f),uVar5,(undefined4 *)local_8);
+        FUN_006acc70(this_00->field_029F,uVar5,(undefined4 *)local_8);
         if (local_8[0] == -1) break;
         uVar5 = uVar5 + 1;
       } while ((int)uVar5 < iVar2);
     }
     psVar4 = &param_2;
 LAB_004a4e27:
-    Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x29f),uVar5,(undefined4 *)psVar4);
+    Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_029F,uVar5,(undefined4 *)psVar4);
   }
   else {
-    if (*(int *)(local_c + 0x29f) == 0) {
+    if (local_c->field_029F == 0) {
       g_currentExceptionFrame = local_50.previous;
       return;
     }
-    iVar2 = *(int *)(*(int *)(local_c + 0x29f) + 0xc);
+    iVar2 = *(int *)(local_c->field_029F + 0xc);
     uVar5 = 0;
     if (0 < iVar2) {
       do {
-        FUN_006acc70(*(int *)(this_00 + 0x29f),uVar5,(undefined4 *)local_8);
+        FUN_006acc70(this_00->field_029F,uVar5,(undefined4 *)local_8);
         if (local_8[0] == param_2) {
           local_8[0] = -1;
           local_8[1] = 0;
@@ -79,7 +79,7 @@ LAB_004a4e27:
       } while ((int)uVar5 < iVar2);
     }
   }
-  DistributeDock(this_00,0,*(int *)(this_00 + 0x29f),*(int *)(this_00 + 0x29));
+  DistributeDock(this_00,0,this_00->field_029F,this_00->field_0029);
   g_currentExceptionFrame = local_50.previous;
   return;
 }

@@ -1,10 +1,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\Andrey\to_cursor.cpp
-   CursorClassTy::SetGCType */
+   CursorClassTy::SetGCType
+   
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/CursorClassTy_SetGCType_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_46=70;CASE_47=71;CASE_48=72
+    */
 
 undefined4 __thiscall
-CursorClassTy::SetGCType(CursorClassTy *this,ushort param_1,undefined4 param_2,undefined4 param_3)
+CursorClassTy::SetGCType
+          (CursorClassTy *this,CursorClassTy_SetGCType_param_1Enum param_1,undefined4 param_2,
+          undefined4 param_3)
 
 {
   code *pcVar1;
@@ -41,35 +48,35 @@ CursorClassTy::SetGCType(CursorClassTy *this,ushort param_1,undefined4 param_2,u
     RaiseInternalException(iVar2,0,s_E____titans_Andrey_to_cursor_cpp_007c7d60,0x8f0);
     return local_10;
   }
-  if (*(ushort *)(local_14 + 0x494) == param_1) {
+  if (*(CursorClassTy_SetGCType_param_1Enum *)&local_14[0xb].field_0x48 == param_1) {
 switchD_0054bfbc_caseD_20:
     g_currentExceptionFrame = pIVar8;
     return local_10;
   }
-  *(ushort *)(local_14 + 0x494) = param_1;
-  *(undefined4 *)(local_14 + 0xc5) = param_2;
-  *(undefined4 *)(local_14 + 0xc9) = param_3;
+  *(CursorClassTy_SetGCType_param_1Enum *)&local_14[0xb].field_0x48 = param_1;
+  *(undefined4 *)((int)&local_14[1].field_0060 + 1) = param_2;
+  *(undefined4 *)&local_14[2].field_0x1 = param_3;
   switch((uint)param_1) {
   case 0:
-    switch(local_14[0x493]) {
-    case (CursorClassTy)0x1:
+    switch(local_14[0xb].field_0x47) {
+    case 1:
       pcVar5 = s_CUR_MENU_007c7dd4;
       break;
     default:
       pcVar5 = s_CUR_ARROW_007c8200;
       break;
-    case (CursorClassTy)0x3:
+    case 3:
       pcVar5 = s_CUR_TASK_007c8228;
       break;
-    case (CursorClassTy)0x4:
+    case 4:
       pcVar5 = s_CUR_REPORT_007c8218;
       break;
-    case (CursorClassTy)0x5:
+    case 5:
       pcVar5 = s_CUR_CLOCK_007c820c;
     }
     iVar3 = -1;
     iVar2 = -1;
-    if (local_14[0x493] == (CursorClassTy)0x5) {
+    if (local_14[0xb].field_0x47 == '\x05') {
       uVar7 = 0x12;
       pBVar6 = (BITMAPINFO *)0xd;
       uVar4 = 1000;
@@ -310,7 +317,7 @@ switchD_0054bfbc_caseD_20:
     pcVar5 = s_CUR_SLD_007c8190;
 LAB_0054c06f:
     SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
-    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
+    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x39:
@@ -322,7 +329,7 @@ LAB_0054c06f:
     pcVar5 = s_CUR_SRD_007c8184;
 LAB_0054c01c:
     SetImages(local_14,1,pcVar5,uVar4,pBVar6,uVar7,iVar2,iVar3);
-    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
+    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x3c:
@@ -376,12 +383,12 @@ switchD_0054c0ac_default:
     break;
   case 0x46:
     SetImages(local_14,1,s_CUR_HYPER_007c8030,0x32,(BITMAPINFO *)0xd,0,0x1b,0xf);
-    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
+    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x47:
     SetImages(local_14,1,s_CUR_HELPNO_007c8020,0x32,(BITMAPINFO *)0x1,1,0x1d,0x30);
-    DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
+    DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
     g_currentExceptionFrame = pIVar8;
     return 0;
   case 0x48:
@@ -392,7 +399,7 @@ switchD_0054c0ac_default:
     uVar7 = 0x12;
   }
   SetImages(local_14,1,pcVar5,0x32,pBVar6,uVar7,iVar2,iVar3);
-  DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
+  DrawSprite(this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
   g_currentExceptionFrame = pIVar8;
   return 0;
 }

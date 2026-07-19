@@ -278,7 +278,7 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
       bVar14 = 0;
       uVar13 = 0xffffffff;
       pbVar7 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
-      puVar8 = FUN_00709af0(DAT_00806794,0xb,pbVar7,uVar13,bVar14,iVar5,iVar11,puVar6);
+      puVar8 = FUN_00709af0(DAT_00806794,CASE_B,pbVar7,uVar13,bVar14,iVar5,iVar11,puVar6);
       *(ushort **)(this_00 + 0x82) = puVar8;
       puVar6 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar5 = 1;

@@ -22,10 +22,10 @@ void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
   local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar3 == 0) {
-    if (0 < *(int *)(local_8 + 0x1cf)) {
-      iVar3 = *(int *)(local_8 + 0x1cb);
-      uVar4 = *(int *)(local_8 + 0x1cf) - 1;
-      *(uint *)(local_8 + 0x1cf) = uVar4;
+    if (0 < *(int *)&local_8->field_0x1cf) {
+      iVar3 = local_8->field_01CB;
+      uVar4 = *(int *)&local_8->field_0x1cf - 1;
+      *(uint *)&local_8->field_0x1cf = uVar4;
       if (uVar4 < *(uint *)(iVar3 + 0xc)) {
         puVar6 = (undefined1 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
       }
@@ -33,9 +33,9 @@ void __thiscall HelpPanelTy::BwdBut(HelpPanelTy *this)
         puVar6 = (undefined1 *)0x0;
       }
       if (puVar6 != (undefined1 *)0x0) {
-        local_8[0x1a1] = (HelpPanelTy)0x0;
-        *(undefined4 *)(local_8 + 0x1a7) = 0;
-        *(undefined4 *)(local_8 + 0x1a3) = 0;
+        local_8->field_01A1 = 0;
+        local_8->field_01A7 = 0;
+        local_8->field_01A3 = 0;
         uVar4 = *(uint *)(puVar6 + 5);
         pvVar1 = *(void **)(puVar6 + 1);
         switch(*puVar6) {

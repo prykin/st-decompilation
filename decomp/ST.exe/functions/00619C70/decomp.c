@@ -90,7 +90,7 @@ int __fastcall FUN_00619c70(void *param_1)
           thunk_FUN_00618900(*(void **)((int)param_1 + 0x7d),*(int *)((int)param_1 + 0x145),0);
         }
         *(undefined1 *)((int)param_1 + 0x14b) = 1;
-        iVar10 = thunk_FUN_0061bdb0(param_1,2,*(int *)((int)param_1 + 0x127),
+        iVar10 = thunk_FUN_0061bdb0(param_1,CASE_2,*(int *)((int)param_1 + 0x127),
                                     *(int *)((int)param_1 + 299),*(uint *)((int)param_1 + 0x12f));
         if (iVar10 == 0) {
           return 1;
@@ -106,7 +106,7 @@ int __fastcall FUN_00619c70(void *param_1)
         return 1;
       }
       *(undefined1 *)((int)param_1 + 0x14b) = 1;
-      iVar10 = thunk_FUN_0061bdb0(param_1,2,*(int *)((int)param_1 + 0x127),
+      iVar10 = thunk_FUN_0061bdb0(param_1,CASE_2,*(int *)((int)param_1 + 0x127),
                                   *(int *)((int)param_1 + 299),*(uint *)((int)param_1 + 0x12f));
       if (iVar10 == 0) {
         return 1;
@@ -193,7 +193,7 @@ LAB_00619e5f:
       iVar10 = thunk_FUN_0061c5f0(param_1,&local_30);
       if ((iVar10 < 1) || (299 < *(int *)((int)param_1 + 0x141))) {
         if (iVar10 == 0) {
-          iVar10 = thunk_FUN_0061bdb0(param_1,1,*(int *)((int)param_1 + 0x9f),
+          iVar10 = thunk_FUN_0061bdb0(param_1,CASE_1,*(int *)((int)param_1 + 0x9f),
                                       *(int *)((int)param_1 + 0xa3),*(uint *)((int)param_1 + 0xa7));
           if (iVar10 == 0) {
 LAB_0061a4f4:
@@ -206,13 +206,13 @@ LAB_0061a4f4:
         else {
 LAB_0061a4fd:
           if (local_30 != 0) {
-            thunk_FUN_0061bdb0(param_1,2,*(int *)((int)param_1 + 0x127),*(int *)((int)param_1 + 299)
-                               ,*(uint *)((int)param_1 + 0x12f));
+            thunk_FUN_0061bdb0(param_1,CASE_2,*(int *)((int)param_1 + 0x127),
+                               *(int *)((int)param_1 + 299),*(uint *)((int)param_1 + 0x12f));
           }
         }
       }
       else {
-        iVar10 = thunk_FUN_0061bdb0(param_1,3,*(int *)((int)param_1 + 0x127),
+        iVar10 = thunk_FUN_0061bdb0(param_1,CASE_3,*(int *)((int)param_1 + 0x127),
                                     *(int *)((int)param_1 + 299),*(uint *)((int)param_1 + 0x12f));
         if (iVar10 != 0) {
           *(undefined4 *)((int)param_1 + 0x93) = 3;
@@ -247,13 +247,13 @@ LAB_0061a4fd:
         iVar10 = thunk_FUN_0061c5f0(param_1,&local_30);
         if ((iVar10 < 1) || (299 < *(int *)((int)param_1 + 0x141))) {
           if (iVar10 != 0) goto LAB_0061a4fd;
-          iVar10 = thunk_FUN_0061bdb0(param_1,1,*(int *)((int)param_1 + 0x9f),
+          iVar10 = thunk_FUN_0061bdb0(param_1,CASE_1,*(int *)((int)param_1 + 0x9f),
                                       *(int *)((int)param_1 + 0xa3),*(uint *)((int)param_1 + 0xa7));
           if (iVar10 == 0) goto LAB_0061a4f4;
           *(undefined4 *)((int)param_1 + 0x93) = 1;
         }
         else {
-          iVar10 = thunk_FUN_0061bdb0(param_1,3,*(int *)((int)param_1 + 0x127),
+          iVar10 = thunk_FUN_0061bdb0(param_1,CASE_3,*(int *)((int)param_1 + 0x127),
                                       *(int *)((int)param_1 + 299),*(uint *)((int)param_1 + 0x12f));
           if (iVar10 != 0) {
             *(undefined4 *)((int)param_1 + 0x93) = 3;
@@ -472,7 +472,7 @@ LAB_0061a4fd:
       break;
     case 1:
     case 2:
-      thunk_FUN_0061bdb0(param_1,1,*(int *)((int)param_1 + 0x9f),*(int *)((int)param_1 + 0xa3),
+      thunk_FUN_0061bdb0(param_1,CASE_1,*(int *)((int)param_1 + 0x9f),*(int *)((int)param_1 + 0xa3),
                          *(uint *)((int)param_1 + 0xa7));
     default:
       if (local_28 == 4) {
@@ -497,7 +497,7 @@ LAB_0061a4fd:
     iVar11 = *(int *)((int)param_1 + 0x9f);
 LAB_0061a55d:
     local_2c = 1;
-    iVar10 = thunk_FUN_0061bdb0(param_1,1,iVar11,iVar10,uVar9);
+    iVar10 = thunk_FUN_0061bdb0(param_1,CASE_1,iVar11,iVar10,uVar9);
     if (iVar10 != 0) {
       *(undefined4 *)((int)param_1 + 0x93) = 1;
       return local_2c;
@@ -559,7 +559,8 @@ LAB_0061acc2:
     if (DAT_00802a88 != (void *)0x0) {
       iVar10 = (int)*(short *)((int)param_1 + 0xcd);
       if ((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-            (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+            (thunk_FUN_00558c00(DAT_00802a88,
+                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                                 (int)*(short *)((int)param_1 + 0xc9),
                                 (int)*(short *)((int)param_1 + 0xcb),&local_28,&local_24),
             iVar10 < 0)) || ((4 < iVar10 || (local_28 < 0)))) ||

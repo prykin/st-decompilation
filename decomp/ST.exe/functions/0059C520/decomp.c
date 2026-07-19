@@ -21,40 +21,40 @@ void __thiscall FSGSTy::CreateCtrls(FSGSTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   pFVar2 = local_8;
   if (errorCode == 0) {
-    switch(local_8[0x1a5f]) {
-    case (FSGSTy)0x2:
+    switch(local_8->field_1A5F) {
+    case 2:
       LoginCtrls(local_8);
-      pFVar2[0x1a62] = (FSGSTy)0x1;
+      pFVar2->field_0x1a62 = 1;
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x3:
+    case 3:
       LicCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x4:
+    case 4:
       NewIDCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x5:
+    case 5:
       PswCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x6:
+    case 6:
       ChatCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x7:
+    case 7:
       NewGameCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x8:
+    case 8:
       JoinGameCtrls(local_8);
       g_currentExceptionFrame = pIVar4;
       return;
-    case (FSGSTy)0x9:
+    case 9:
       LadderCtrls(local_8);
       break;
-    case (FSGSTy)0xa:
+    case 10:
       InfoCtrls(local_8,unaff_ESI);
       g_currentExceptionFrame = pIVar4;
       return;

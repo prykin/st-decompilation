@@ -17,7 +17,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   undefined4 extraout_EDX;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STGroupBoatC *pSVar7;
+  undefined4 *puVar7;
   uint uVar8;
   InternalExceptionFrame local_6c;
   undefined4 local_28;
@@ -32,7 +32,7 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
   short local_8;
   short local_6;
   
-  local_18 = *(uint *)(*(int *)(this + 0x29) + 0xc);
+  local_18 = *(uint *)(this->field_0029 + 0xc);
   local_6c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_6c;
   local_1c = this;
@@ -51,34 +51,35 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
     return uVar5;
   }
   if ((param_1 == 0) || (param_1 == 1)) {
-    pSVar7 = local_1c + 0x89;
+    puVar7 = (undefined4 *)&local_1c->field_0x89;
     for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(undefined4 *)pSVar7 = 0;
-      pSVar7 = pSVar7 + 4;
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
     }
     uVar8 = 0;
-    *(undefined4 *)(local_1c + 0x222) = *(undefined4 *)(local_1c + 0xff);
-    *(undefined4 *)(local_1c + 0x65) = 0;
+    *(undefined4 *)&local_1c->field_0x222 = *(undefined4 *)&local_1c->field_0xff;
+    *(undefined4 *)&local_1c->field_0x65 = 0;
     if (local_18 != 0) {
       uVar6 = 0;
       do {
-        FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar6,&local_14);
+        FUN_006acc70(pSVar2->field_0029,uVar6,&local_14);
         if ((short)local_14 != -1) {
           this_00 = (STBoatC *)
                     STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),
-                               local_14,1);
+                              (DAT_007fa174,
+                               CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_14
+                               ,CASE_1);
           if (this_00 == (STBoatC *)0x0) {
             RaiseInternalException
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x720);
           }
           thunk_FUN_004162b0(this_00,&local_8,&local_6,&local_a);
-          thunk_FUN_00481520(this_00,(int)local_8,(int)local_6,*(undefined4 *)(pSVar2 + 0x222));
+          thunk_FUN_00481520(this_00,(int)local_8,(int)local_6,*(undefined4 *)&pSVar2->field_0x222);
           local_28 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           local_24 = 0xffff;
           local_22 = 0xffff;
           local_20 = 0xffff;
-          STBoatC::CmdToObj(this_00,1,&local_28);
+          STBoatC::CmdToObj(this_00,CASE_1,&local_28);
         }
         uVar8 = uVar8 + 1;
         uVar6 = uVar8 & 0xffff;
@@ -95,11 +96,12 @@ undefined4 __thiscall STGroupBoatC::GrpGoToDeep(STGroupBoatC *this,int param_1)
       uVar5 = 0;
       if (local_18 != 0) {
         do {
-          FUN_006acc70(*(int *)(pSVar2 + 0x29),uVar8,&local_14);
+          FUN_006acc70(pSVar2->field_0029,uVar8,&local_14);
           if ((short)local_14 != -1) {
             uVar8 = STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
-                               local_14,1);
+                              (DAT_007fa174,
+                               CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),local_14
+                               ,CASE_1);
             if (uVar8 == 0) {
               RaiseInternalException
                         (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x732);

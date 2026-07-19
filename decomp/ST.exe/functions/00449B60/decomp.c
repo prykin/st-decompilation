@@ -1,12 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::DestroyObjectMsg */
+   STAllPlayersC::DestroyObjectMsg
+   
+   [STSwitchEnumApplier] Switch target param_3 uses
+   /SubmarineTitans/Recovered/Enums/STAllPlayersC_DestroyObjectMsg_param_3Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 undefined4 __thiscall
 STAllPlayersC::DestroyObjectMsg
-          (STAllPlayersC *this,undefined4 *param_1,uint param_2,undefined4 param_3,
-          undefined4 param_4)
+          (STAllPlayersC *this,undefined4 *param_1,uint param_2,
+          STAllPlayersC_DestroyObjectMsg_param_3Enum param_3,undefined4 param_4)
 
 {
   code *pcVar1;
@@ -28,22 +32,22 @@ STAllPlayersC::DestroyObjectMsg
   
   uVar2 = param_2;
   switch(param_3) {
-  case 1:
+  case CASE_1:
     iVar4 = *(int *)((int)&DAT_007f4e29 + (char)param_1 * 0xa62);
     break;
-  case 2:
+  case CASE_2:
     iVar4 = DAT_007fa154;
     break;
-  case 3:
+  case CASE_3:
     iVar4 = DAT_007fa158;
     break;
-  case 4:
+  case CASE_4:
     iVar4 = DAT_007fa15c;
     break;
-  case 5:
+  case CASE_5:
     iVar4 = DAT_007fa160;
     break;
-  case 6:
+  case CASE_6:
     iVar4 = DAT_007fa164;
     break;
   default:

@@ -19,9 +19,8 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar10;
-  ProdPanelTy *pPVar11;
-  bool bVar12;
-  int *piVar13;
+  bool bVar11;
+  int *piVar12;
   int local_358 [11];
   undefined4 auStack_32c [3];
   undefined4 auStack_320 [4];
@@ -53,10 +52,10 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     *puVar10 = 0;
     puVar10 = puVar10 + 1;
   }
-  piVar13 = local_358;
+  piVar12 = local_358;
   for (iVar7 = 0xa8; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *piVar13 = 0;
-    piVar13 = piVar13 + 1;
+    *piVar12 = 0;
+    piVar12 = piVar12 + 1;
   }
   local_b8.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_b8;
@@ -75,29 +74,29 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
     return;
   }
   iVar7 = 5;
-  DAT_00801684 = (ProdPanelTy *)local_1c;
-  pPVar11 = (ProdPanelTy *)(local_1c + 0x27e);
+  DAT_00801684 = local_1c;
+  puVar10 = (undefined4 *)&local_1c[1].field_0x5;
   do {
     puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x30,5);
-    *(uint **)pPVar11 = puVar3;
-    pPVar11 = pPVar11 + 4;
+    *puVar10 = puVar3;
+    puVar10 = puVar10 + 1;
     iVar7 = iVar7 + -1;
   } while (iVar7 != 0);
   iVar7 = 1;
-  *(int *)(this_00 + 0x3c) = *(int *)(this_00 + 0x3c) + (DAT_00806730 + -800) / 2;
-  piVar13 = (int *)0x0;
+  this_00->field_003C = this_00->field_003C + (DAT_00806730 + -800) / 2;
+  piVar12 = (int *)0x0;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJW_007c19e0,0);
-  puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar13,iVar7);
-  *(ushort **)(this_00 + 0x184) = puVar5;
+  puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar12,iVar7);
+  *(ushort **)&this_00->field_0x184 = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
-  wsprintfA((LPSTR)(this_00 + 0x6c),&DAT_007c181c,pCVar4);
-  puVar5 = cMf32::RecGet(DAT_00806790,1,(char *)(this_00 + 0x6c),(int *)0x0,1);
-  *(ushort **)(this_00 + 0x27a) = puVar5;
-  puVar5 = FUN_00709af0(DAT_00806794,0xb,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
-  *(ushort **)(this_00 + 0x188) = puVar5;
-  puVar5 = FUN_00709af0(DAT_00806794,0xb,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,(undefined4 *)0x0
-                       );
-  *(ushort **)(this_00 + 0x18c) = puVar5;
+  wsprintfA(&this_00->field_0x6c,&DAT_007c181c,pCVar4);
+  puVar5 = cMf32::RecGet(DAT_00806790,1,&this_00->field_0x6c,(int *)0x0,1);
+  *(ushort **)&this_00[1].field_0x1 = puVar5;
+  puVar5 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+  this_00->field_0188 = puVar5;
+  puVar5 = FUN_00709af0(DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
+  this_00->field_018C = puVar5;
   pCVar4 = thunk_FUN_00571240(s_BKG_BLDOBJBUT_007c19d0,0);
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2724,0x36,2,0xc1,0xc,0x79,99,0x5b,0xb7,99,0x1c,
@@ -105,8 +104,8 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
   local_8 = local_8 & 0xffffff00;
   local_10 = (DAT_0080874e != '\x03') + 4;
   if (local_10 != 0) {
-    local_18 = *(int *)(this_00 + 0x3c);
-    local_c = *(int *)(this_00 + 0x5c);
+    local_18 = this_00->field_003C;
+    local_c = this_00->field_005C;
     local_14 = (-(uint)(DAT_0080874e != '\x03') & 0xffffffeb) + 0x3d;
     uVar8 = 0;
     do {
@@ -114,11 +113,11 @@ void __thiscall BldObjPanelTy::InitBldObjPanel(BldObjPanelTy *this)
       local_358[uVar8 * 0x1c] = uVar8 + 1;
       local_358[uVar8 * 0x1c + 1] = 0;
       local_358[uVar8 * 0x1c + 3] = iVar7 + uVar8 * 0x2c + local_18;
-      bVar12 = local_c != 0;
+      bVar11 = local_c != 0;
       local_358[uVar8 * 0x1c + 5] = 0x2b;
       iVar7 = DAT_00806734;
-      if (bVar12) {
-        iVar7 = *(int *)(this_00 + 0x44);
+      if (bVar11) {
+        iVar7 = this_00->field_0044;
       }
       local_358[uVar8 * 0x1c + 4] = iVar7 + 0x3d;
       local_358[uVar8 * 0x1c + 6] = 0x1b;
@@ -161,8 +160,8 @@ switchD_004f0850_default:
     } while ((int)uVar8 < local_10);
   }
   local_2c = local_358;
-  local_28 = (byte)*(ProdPanelTy *)(this_00 + 0x278) + 1;
-  local_64 = *(undefined4 *)(this_00 + 8);
+  local_28 = (byte)this_00->field_0278 + 1;
+  local_64 = *(undefined4 *)&this_00->field_0x8;
   local_74[0] = 1;
   local_74[1] = 1;
   local_60 = 2;
@@ -172,7 +171,7 @@ switchD_004f0850_default:
   local_24 = 1;
   local_20 = 1;
   local_44 = local_64;
-  (**(code **)(**(int **)(this_00 + 0xc) + 8))(5,(ProdPanelTy *)(this_00 + 0x292),0,local_74,0);
+  (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x19,0,local_74,0);
   g_currentExceptionFrame = local_b8.previous;
   return;
 }

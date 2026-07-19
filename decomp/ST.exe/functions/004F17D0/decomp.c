@@ -16,9 +16,10 @@ void __thiscall FUN_004f17d0(void *this,int param_1,byte param_2)
     uVar2 = (uint)param_2;
     iVar1 = uVar2 + (uint)(param_1 == 0) * 6;
     *(undefined1 *)((int)this + iVar1 * 0x27 + 0x780) = 1;
-    iVar3 = thunk_FUN_00525390(*(undefined1 *)(uVar2 + 9 + (int)piVar5),*piVar5);
+    iVar3 = thunk_FUN_00525390(*(Global_sub_00525390_param_1Enum *)(uVar2 + 9 + (int)piVar5),*piVar5
+                              );
     *(int *)((int)this + iVar1 * 0x27 + 0x781) = iVar3;
-    uVar4 = thunk_FUN_005272b0(*(undefined1 *)(uVar2 + 9 + (int)piVar5));
+    uVar4 = thunk_FUN_005272b0(*(Global_sub_005272B0_param_1Enum *)(uVar2 + 9 + (int)piVar5));
     *(undefined4 *)((int)this + iVar1 * 0x27 + 0x789) = uVar4;
     *(undefined1 *)((int)this + iVar1 * 0x27 + 0x78d) = 3;
   }

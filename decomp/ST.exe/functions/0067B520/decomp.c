@@ -49,10 +49,10 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
   uint local_c;
   AiTactClassTy *local_8;
   
-  if (((*(int *)(this + 0x695) != 0) && (DAT_007fa174 != (STAllPlayersC *)0x0)) &&
-     ((*(int *)(this + 0x66e) == 0 ||
-      ((uint)(*(int *)(this + 0x672) + *(int *)(this + 0x66e)) <= *(uint *)(this + 0x6fe))))) {
-    *(undefined4 *)(this + 0x672) = *(undefined4 *)(this + 0x6fe);
+  if (((this->field_0695 != 0) && (DAT_007fa174 != (STAllPlayersC *)0x0)) &&
+     ((this->field_066E == 0 ||
+      ((uint)(this->field_0672 + this->field_066E) <= (uint)this->field_06FE)))) {
+    this->field_0672 = this->field_06FE;
     local_90.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_90;
     local_18 = this;
@@ -60,7 +60,7 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
     this_00 = local_18;
     if (iVar4 == 0) {
       local_10 = 0;
-      iVar4 = *(int *)(local_18 + 0x6a1);
+      iVar4 = *(int *)&local_18->field_0x6a1;
       if (0 < *(int *)(iVar4 + 0xc)) {
         bVar10 = *(int *)(iVar4 + 0xc) != 0;
         uVar7 = extraout_EDX;
@@ -75,37 +75,37 @@ void __thiscall AiPlrClassTy::ExecTech(AiPlrClassTy *this,void *param_1)
           switch(*(undefined1 *)(iVar8 + 7)) {
           case 0:
             sVar1 = *(short *)(iVar8 + 3);
-            iVar4 = thunk_FUN_004e60d0(*(int *)(this_00 + 0x5d7),(int)*(short *)(iVar8 + 1));
+            iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)*(short *)(iVar8 + 1));
             if (iVar4 < sVar1) {
-              bVar10 = thunk_FUN_004e5f90(*(int *)(this_00 + 0x5d7),(int)*(short *)(iVar8 + 1));
+              bVar10 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,(int)*(short *)(iVar8 + 1));
               uVar7 = extraout_EDX_01;
               if (CONCAT31(extraout_var,bVar10) == 0) {
                 pAVar9 = (AiTactClassTy *)(int)*(short *)(iVar8 + 1);
                 local_14 = (int)*(short *)(iVar8 + 3);
                 local_8 = pAVar9;
-                bVar10 = thunk_FUN_004e5910(*(int *)(this_00 + 0x5d7),(uint)pAVar9);
+                bVar10 = thunk_FUN_004e5910(*(int *)&this_00->field_0x5d7,(uint)pAVar9);
                 uVar7 = extraout_EDX_02;
                 if ((CONCAT31(extraout_var_00,bVar10) == 0) ||
-                   (bVar10 = thunk_FUN_004e5c40(*(int *)(this_00 + 0x5d7),(uint)pAVar9),
+                   (bVar10 = thunk_FUN_004e5c40(*(int *)&this_00->field_0x5d7,(uint)pAVar9),
                    uVar7 = extraout_EDX_03, CONCAT31(extraout_var_01,bVar10) == 0)) {
 LAB_0067b6db:
                   bVar10 = false;
                 }
                 else {
-                  uVar3 = thunk_FUN_004e6140(*(int *)(this_00 + 0x5d7),(int)pAVar9);
+                  uVar3 = thunk_FUN_004e6140(*(int *)&this_00->field_0x5d7,(int)pAVar9);
                   local_c = CONCAT31(extraout_var_02,uVar3);
-                  iVar4 = thunk_FUN_004e60d0(*(int *)(this_00 + 0x5d7),(int)pAVar9);
+                  iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pAVar9);
                   uVar7 = local_c;
                   if (((int)local_c <= iVar4) ||
-                     ((iVar4 = thunk_FUN_004e60d0(*(int *)(this_00 + 0x5d7),(int)pAVar9),
+                     ((iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)pAVar9),
                       uVar7 = extraout_EDX_04, iVar4 != local_14 + -1 ||
-                      (bVar10 = thunk_FUN_004e5f90(*(int *)(this_00 + 0x5d7),(uint)pAVar9),
+                      (bVar10 = thunk_FUN_004e5f90(*(int *)&this_00->field_0x5d7,(uint)pAVar9),
                       uVar7 = extraout_EDX_05, CONCAT31(extraout_var_03,bVar10) != 0))))
                   goto LAB_0067b6db;
                   bVar10 = true;
                 }
                 if (bVar10) {
-                  iVar4 = *(int *)(this_00 + 0x695);
+                  iVar4 = this_00->field_0695;
                   uVar7 = 0;
                   local_c = 0;
                   uVar5 = *(uint *)(iVar4 + 0xc);
@@ -132,7 +132,7 @@ LAB_0067b724:
                           *puVar6 = 0;
                           puVar6 = puVar6 + 1;
                         }
-                        local_4c[1] = *(uint *)(this_00 + 0x6fe);
+                        local_4c[1] = this_00->field_06FE;
                         local_4c[0] = 0x73;
                         local_43 = 1;
                         local_42 = iVar8;
@@ -147,7 +147,7 @@ LAB_0067b724:
                           break;
                         }
                       }
-                      iVar4 = *(int *)(this_00 + 0x695);
+                      iVar4 = this_00->field_0695;
                       uVar7 = uVar7 + 1;
                       uVar5 = *(uint *)(iVar4 + 0xc);
                       local_c = uVar7;
@@ -168,9 +168,9 @@ LAB_0067b724:
             else {
               local_8 = (AiTactClassTy *)
                         STAllPlayersC::GetObjPtr
-                                  (DAT_007fa174,CONCAT31((int3)(uVar7 >> 8),this_00[0x5d7]),
+                                  (DAT_007fa174,CONCAT31((int3)(uVar7 >> 8),this_00->field_0x5d7),
                                    CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)(iVar8 + 8))
-                                   ,1);
+                                   ,CASE_1);
               uVar7 = extraout_EDX_06;
             }
             if (local_8 == (AiTactClassTy *)0x0) {
@@ -179,7 +179,7 @@ LAB_0067b724:
             }
             else {
               sVar1 = *(short *)(iVar8 + 3);
-              iVar4 = thunk_FUN_004e60d0(*(int *)(this_00 + 0x5d7),(int)*(short *)(iVar8 + 1));
+              iVar4 = thunk_FUN_004e60d0(*(int *)&this_00->field_0x5d7,(int)*(short *)(iVar8 + 1));
               if (iVar4 < sVar1) {
                 iVar4 = thunk_FUN_004e3800(local_8,(int)*(short *)(iVar8 + 1),
                                            (int)*(short *)(iVar8 + 3));
@@ -201,16 +201,16 @@ LAB_0067b724:
             local_10 = uVar5 - 1;
             uVar7 = extraout_EDX_09;
           }
-          iVar4 = *(int *)(this_00 + 0x6a1);
+          iVar4 = *(int *)&this_00->field_0x6a1;
           local_10 = local_10 + 1;
           bVar10 = local_10 < *(uint *)(iVar4 + 0xc);
         } while ((int)local_10 < (int)*(uint *)(iVar4 + 0xc));
       }
-      if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (this_00[0x662] == (AiPlrClassTy)0x1)) &&
-         (iVar4 = thunk_FUN_0067b1a0(this_00,(int)*(short *)(this_00 + 0x660)),
-         iVar4 < (int)((-(uint)(*(short *)(this_00 + 0x5ec) != 3) & 0xfffffffc) + 5))) {
-        thunk_FUN_004e7230(*(int *)(this_00 + 0x5d7),(int)*(short *)(this_00 + 0x660),local_c8,
-                           local_ac);
+      if (((DAT_007fa174 != (STAllPlayersC *)0x0) && (this_00->field_0x662 == '\x01')) &&
+         (iVar4 = thunk_FUN_0067b1a0(this_00,(int)*(short *)&this_00->field_0x660),
+         iVar4 < (int)((-(uint)(*(short *)&this_00->field_0x5ec != 3) & 0xfffffffc) + 5))) {
+        thunk_FUN_004e7230(*(int *)&this_00->field_0x5d7,(int)*(short *)&this_00->field_0x660,
+                           local_c8,local_ac);
         iVar4 = 0;
         do {
           if (*(int *)((int)local_c8 + iVar4) == 0) {
@@ -218,7 +218,7 @@ LAB_0067b724:
             return;
           }
           SetTech(this_00,*(int *)((int)local_c8 + iVar4),*(int *)((int)local_ac + iVar4),
-                  (int)*(short *)(this_00 + 0x663),(char)*(undefined2 *)(this_00 + 0x660));
+                  (int)*(short *)&this_00->field_0x663,(char)*(undefined2 *)&this_00->field_0x660);
           iVar4 = iVar4 + 4;
         } while (iVar4 < 0x1c);
       }

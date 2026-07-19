@@ -1,7 +1,12 @@
 
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_0057A140_param_2Enum. Cases:
+   CASE_E6=230;CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235;CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251
+    */
+
 void __cdecl
-FUN_0057a140(undefined4 param_1,undefined4 param_2,int param_3,undefined4 *param_4,char *param_5,
-            undefined1 *param_6,undefined4 *param_7)
+FUN_0057a140(undefined4 param_1,Global_sub_0057A140_param_2Enum param_2,int param_3,
+            undefined4 *param_4,char *param_5,undefined1 *param_6,undefined4 *param_7)
 
 {
   char cVar1;
@@ -16,42 +21,42 @@ FUN_0057a140(undefined4 param_1,undefined4 param_2,int param_3,undefined4 *param
   *param_7 = 0;
   if ((param_3 == 0xe) || (param_3 == 0xc)) {
     switch(param_2) {
-    case 0xe6:
+    case CASE_E6:
       pcVar4 = s_shark1_007cae70;
       break;
-    case 0xe7:
+    case CASE_E7:
       pcVar4 = s_fish1_007cae68;
       break;
-    case 0xe8:
+    case CASE_E8:
       pcVar4 = s_fish_b_007cae60;
       break;
-    case 0xe9:
+    case CASE_E9:
       pcVar4 = s_fish_gr_007cae54;
       break;
-    case 0xea:
+    case CASE_EA:
       pcVar4 = &DAT_007cae4c;
       break;
-    case 0xeb:
+    case CASE_EB:
       pcVar4 = &DAT_007cae44;
       break;
     default:
       goto switchD_0057a18b_caseD_ec;
-    case 0xf2:
-    case 0xf3:
-    case 0xf4:
-    case 0xf5:
+    case CASE_F2:
+    case CASE_F3:
+    case CASE_F4:
+    case CASE_F5:
       pcVar4 = s_crab2b_007cae3c;
       break;
-    case 0xf6:
-    case 0xf7:
+    case CASE_F6:
+    case CASE_F7:
       pcVar4 = s_langus1_007cae24;
       break;
-    case 0xf8:
-    case 0xf9:
+    case CASE_F8:
+    case CASE_F9:
       pcVar4 = s_octopus1_007cae30;
       break;
-    case 0xfa:
-    case 0xfb:
+    case CASE_FA:
+    case CASE_FB:
       pcVar4 = &DAT_007cae18;
     }
     uVar2 = 0xffffffff;

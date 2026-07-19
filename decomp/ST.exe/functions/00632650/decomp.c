@@ -1,8 +1,12 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSwitchEnumApplier] Switch target param_4 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00632650_param_4Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 undefined4 __thiscall
-FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int param_4,undefined4 *param_5)
+FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,
+            Global_sub_00632650_param_4Enum param_4,undefined4 *param_5)
 
 {
   uint *puVar1;
@@ -27,19 +31,19 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int param_4,
   *(undefined1 *)puVar6 = 0;
   uVar5 = 0;
   switch(param_4) {
-  case 0:
-  case 2:
-  case 4:
+  case CASE_0:
+  case CASE_2:
+  case CASE_4:
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1 * param_2,0x39,10);
     *(uint **)this = puVar1;
     uVar5 = param_1 * param_2;
     break;
-  case 1:
+  case CASE_1:
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,param_1 + param_2,0x39,10);
     *(uint **)this = puVar1;
     uVar5 = param_1;
     break;
-  case 3:
+  case CASE_3:
     puVar1 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,(param_1 + 4) * param_2 + 1,0x39,10);
     *(uint **)this = puVar1;
     uVar5 = param_1 * param_2;
@@ -50,10 +54,10 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int param_4,
   }
   else {
     switch(param_4) {
-    case 0:
-    case 1:
+    case CASE_0:
+    case CASE_1:
       uVar5 = (param_1 - 1) + param_2;
-      if (param_4 != 1) {
+      if (param_4 != CASE_1) {
         uVar5 = param_1 - 1;
       }
       Library::DKW::TBL::FUN_006ae140(puVar1,uVar5,local_40);
@@ -62,13 +66,13 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int param_4,
       *(undefined1 *)((int)this + 4) = 1;
       *(uint *)((int)this + 0x19) = param_1;
       *(int *)((int)this + 0x1d) = param_2;
-      *(int *)((int)this + 0x11) = param_4;
+      *(Global_sub_00632650_param_4Enum *)((int)this + 0x11) = param_4;
       *(undefined4 *)((int)this + 0xa1) = param_5[4];
       *(undefined4 *)((int)this + 0xa5) = param_5[5];
       *(undefined4 *)((int)this + 0xa9) = param_5[6];
       *(undefined4 *)((int)this + 0x15) = param_5[0x12];
       break;
-    case 2:
+    case CASE_2:
       Library::DKW::TBL::FUN_006ae140(puVar1,param_1 * param_2 - 1,local_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
       *(int *)((int)this + 0x1d) = param_2;
@@ -82,7 +86,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int param_4,
       *(undefined4 *)((int)this + 0xad) = param_5[0x13];
       *(undefined4 *)((int)this + 0x15) = param_5[0x12];
       break;
-    case 3:
+    case CASE_3:
       uVar5 = (param_1 + 4) * param_2 + 1;
       *(uint *)((int)this + 0x21) = uVar5;
       *(undefined4 *)((int)this + 0x11) = 3;
@@ -105,7 +109,7 @@ FUN_00632650(void *this,uint param_1,int param_2,undefined4 param_3,int param_4,
       *(undefined4 *)((int)this + 0x61) = param_5[7];
       *(undefined4 *)((int)this + 0x65) = param_5[8];
       break;
-    case 4:
+    case CASE_4:
       Library::DKW::TBL::FUN_006ae140(puVar1,param_1 * param_2 - 1,local_40);
       uVar5 = *(uint *)(*(int *)this + 0xc);
       *(int *)((int)this + 0x1d) = param_2;

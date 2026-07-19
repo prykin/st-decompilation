@@ -361,7 +361,7 @@ LAB_0042f547:
     }
   }
   this_00 = local_18;
-  piVar7 = (int *)GetObjPtr(local_18,param_1,param_3,1);
+  piVar7 = (int *)GetObjPtr(local_18,param_1,param_3,CASE_1);
   if (piVar7 != param_4) {
     RaiseInternalException(-0x5001fff9,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x7a3);
   }

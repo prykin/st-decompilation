@@ -48,7 +48,7 @@ void __thiscall FUN_00694cd0(void *this,int param_1)
                     ((int)psVar8[2] * iVar3 * iVar4 * 4 +
                      (int)psVar8[1] * **(int **)((int)this + 8) * 2 + (int)*psVar8) * 2) == 0) {
         local_10 = 0;
-        puVar7 = thunk_FUN_00692c10(0x5a,*(int *)(psVar8 + 5),&local_10,(int)psVar8[2],0);
+        puVar7 = thunk_FUN_00692c10(CASE_5A,*(int *)(psVar8 + 5),&local_10,(int)psVar8[2],0);
         puVar7[5] = (int)*psVar8;
         puVar7[6] = (int)psVar8[1];
         cVar1 = (char)psVar8[7];

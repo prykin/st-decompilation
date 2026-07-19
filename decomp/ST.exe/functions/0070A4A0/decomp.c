@@ -40,7 +40,7 @@ undefined4 __cdecl FUN_0070a4a0(int param_1,char param_2,char *param_3)
         bVar2 = FUN_0070a460(auStack_33,param_3);
         if (CONCAT31(extraout_var,bVar2) == 0) goto LAB_0070a537;
         if (local_b != 0) {
-          FUN_00709a10(param_1,(char)_local_34,&local_b);
+          FUN_00709a10(param_1,(Global_sub_00709A10_param_2Enum)_local_34,&local_b);
         }
         FUN_006b0c70(*(int *)(param_1 + 4),uVar6);
       }

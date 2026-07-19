@@ -60,12 +60,12 @@ undefined4 __thiscall FUN_0061f290(void *this,int param_1)
                 iVar2 = (int)(short)lVar5;
               }
               if ((((((DAT_0080874d == -1) || (*(int *)((int)this_00 + 0xf8) == 0)) ||
-                    (thunk_FUN_00558c00(this_00,*(undefined4 *)((int)this_00 + 0x10c),iVar2,local_8,
-                                        &local_18,&local_1c), iVar3 < 0)) ||
-                   ((4 < iVar3 || (local_18 < 0)))) ||
-                  ((*(int *)((int)this_00 + 0x30) <= local_18 ||
-                   ((iVar3 = (&DAT_0079aed0)[iVar3] + local_1c, iVar3 < 0 ||
-                    (*(int *)((int)this_00 + 0x34) <= iVar3)))))) ||
+                    (thunk_FUN_00558c00(this_00,*(Global_sub_00558C00_param_1Enum *)
+                                                 ((int)this_00 + 0x10c),iVar2,local_8,&local_18,
+                                        &local_1c), iVar3 < 0)) || ((4 < iVar3 || (local_18 < 0))))
+                  || ((*(int *)((int)this_00 + 0x30) <= local_18 ||
+                      ((iVar3 = (&DAT_0079aed0)[iVar3] + local_1c, iVar3 < 0 ||
+                       (*(int *)((int)this_00 + 0x34) <= iVar3)))))) ||
                  ((*(int *)((int)this_00 + 0x4c) == 0 ||
                   (*(char *)(iVar3 * *(int *)((int)this_00 + 0x30) + *(int *)((int)this_00 + 0x4c) +
                             local_18) != '\0')))) {

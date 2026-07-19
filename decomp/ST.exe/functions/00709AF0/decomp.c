@@ -1,7 +1,12 @@
 
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00709AF0_param_2Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_B=11;CASE_E=14;CASE_12=18;CASE_13=19;CASE_15=21;CASE_16=22;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31
+    */
+
 ushort * __cdecl
-FUN_00709af0(int *param_1,byte param_2,byte *param_3,uint param_4,byte param_5,int param_6,
-            int param_7,undefined4 *param_8)
+FUN_00709af0(int *param_1,Global_sub_00709AF0_param_2Enum param_2,byte *param_3,uint param_4,
+            byte param_5,int param_6,int param_7,undefined4 *param_8)
 
 {
   byte bVar1;
@@ -17,7 +22,7 @@ FUN_00709af0(int *param_1,byte param_2,byte *param_3,uint param_4,byte param_5,i
   void *unaff_EDI;
   byte *pbVar9;
   InternalExceptionFrame local_88;
-  byte local_44;
+  Global_sub_00709AF0_param_2Enum local_44;
   byte local_43 [32];
   uint local_23;
   undefined4 local_1f;
@@ -58,45 +63,45 @@ FUN_00709af0(int *param_1,byte param_2,byte *param_3,uint param_4,byte param_5,i
   local_8 = (ushort *)FUN_007098a0((int)param_1,param_2,param_3,param_4,&local_c,&local_10);
   if (local_8 == (ushort *)0x0) {
     switch(param_2) {
-    case 0:
+    case CASE_0:
       puVar5 = FUN_0071ad00(*param_1,(char *)param_3,param_5,param_6);
       break;
-    case 1:
-    case 4:
-    case 5:
-    case 6:
-    case 0xe:
-    case 0x12:
-    case 0x16:
-    case 0x1c:
+    case CASE_1:
+    case CASE_4:
+    case CASE_5:
+    case CASE_6:
+    case CASE_E:
+    case CASE_12:
+    case CASE_16:
+    case CASE_1C:
       puVar5 = FUN_0070a5a0(*param_1,param_2,(char *)param_3,param_5,param_6);
       break;
-    case 2:
+    case CASE_2:
       puVar5 = FUN_00719d00(*param_1,(char *)param_3,param_5,param_6);
       break;
     default:
       RaiseInternalException(-0x34,DAT_007ed77c,s_E__Ourlib_mfrload_cpp_007eff5c,0xb2);
       return (ushort *)0x0;
-    case 7:
+    case CASE_7:
       puVar5 = (ushort *)FUN_00725c60(*param_1,(char *)param_3,param_5,param_6);
       break;
-    case 8:
+    case CASE_8:
       puVar5 = (ushort *)FUN_00725f50(*param_1,(char *)param_3,param_4,param_5,param_6);
       break;
-    case 0xb:
+    case CASE_B:
       puVar5 = (ushort *)FUN_0070ae60(*param_1,(char *)param_3,param_5,param_7,param_8,param_6);
       break;
-    case 0x13:
-    case 0x1d:
+    case CASE_13:
+    case CASE_1D:
       puVar5 = (ushort *)FUN_00716850(*param_1,(char *)param_3,param_2,param_5,param_6);
       break;
-    case 0x15:
+    case CASE_15:
       puVar5 = (ushort *)FUN_00726630(*param_1,(char *)param_3,param_5,param_6);
       break;
-    case 0x1e:
+    case CASE_1E:
       puVar5 = (ushort *)FUN_00726a80(*param_1,(char *)param_3,param_5,param_6);
       break;
-    case 0x1f:
+    case CASE_1F:
       puVar5 = (ushort *)FUN_0070b430(*param_1,(char *)param_3,(byte)param_4,param_5,param_6);
     }
     local_8 = (ushort *)0x0;

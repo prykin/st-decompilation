@@ -6,8 +6,8 @@
 void __thiscall AiTactClassTy::HelpOrganize(AiTactClassTy *this,int param_1)
 
 {
-  AiTactClassTy AVar1;
-  AiTactClassTy AVar2;
+  byte bVar1;
+  byte bVar2;
   char cVar3;
   AiFltClassTy *this_00;
   code *pcVar4;
@@ -36,7 +36,7 @@ void __thiscall AiTactClassTy::HelpOrganize(AiTactClassTy *this,int param_1)
   undefined2 local_1c;
   undefined2 uStack_1a;
   undefined4 local_18;
-  AiTactClassTy local_14;
+  byte local_14;
   undefined3 uStack_13;
   uint local_10;
   AiTactClassTy *local_c;
@@ -44,30 +44,30 @@ void __thiscall AiTactClassTy::HelpOrganize(AiTactClassTy *this,int param_1)
   
   local_10 = CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0x16));
   local_20 = CONCAT22((short)((uint)unaff_EDI >> 0x10),*(short *)(param_1 + 0x1a));
-  AVar1 = *(AiTactClassTy *)(param_1 + 0x18);
-  _local_14 = CONCAT31(uStack_13,AVar1);
-  if (7 < (byte)AVar1) {
+  bVar1 = *(byte *)(param_1 + 0x18);
+  _local_14 = CONCAT31(uStack_13,bVar1);
+  if (7 < bVar1) {
     return;
   }
-  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[(char)AVar1 * 0x51])) {
+  if ((DAT_00802a38 != 0) && (7 < (byte)(&DAT_008087e9)[(char)bVar1 * 0x51])) {
     return;
   }
-  if ((int)(char)AVar1 == *(int *)(this + 0x24)) {
+  if ((int)(char)bVar1 == *(int *)&this->field_0x24) {
     return;
   }
-  AVar2 = this[0x24];
-  local_8 = CONCAT31(local_8._1_3_,AVar2);
+  bVar2 = this->field_0x24;
+  local_8 = CONCAT31(local_8._1_3_,bVar2);
   if (DAT_00808a8f != '\0') {
-    bVar12 = (&DAT_008087ea)[(uint)(byte)AVar2 * 0x51] != (&DAT_008087ea)[(uint)(byte)AVar1 * 0x51];
+    bVar12 = (&DAT_008087ea)[(uint)bVar2 * 0x51] != (&DAT_008087ea)[(uint)bVar1 * 0x51];
     goto LAB_00690763;
   }
-  if (AVar1 == AVar2) {
+  if (bVar1 == bVar2) {
 LAB_00690758:
     iVar7 = 0;
   }
   else {
-    uVar8 = (uint)(byte)AVar1;
-    uVar5 = (uint)(byte)AVar2;
+    uVar8 = (uint)bVar1;
+    uVar5 = (uint)bVar2;
     cVar3 = *(char *)((int)&DAT_00808a4f + uVar8 * 8 + uVar5);
     if ((cVar3 == '\0') && (*(char *)((int)&DAT_00808a4f + uVar5 * 8 + uVar8) == '\0')) {
       iVar7 = -2;
@@ -97,7 +97,8 @@ LAB_00690763:
         uVar8 = 0;
       }
       else {
-        uVar8 = STAllPlayersC::GetObjPtr(DAT_007fa174,(uint)(byte)local_c[0x24],local_10,1);
+        uVar8 = STAllPlayersC::GetObjPtr
+                          (DAT_007fa174,(uint)(byte)local_c->field_0x24,local_10,CASE_1);
       }
       if ((uVar8 != 0) && (iVar7 = thunk_FUN_0068e290(this_01,*(short *)(uVar8 + 0x30)), iVar7 != 0)
          ) {
@@ -109,7 +110,7 @@ LAB_00690763:
         }
         uVar8 = thunk_FUN_00690550(this_01,*(short *)(iVar7 + 0x7d),sVar6);
         if ((int)uVar8 < 0) {
-          iVar10 = *(int *)(this_01 + 0xa5);
+          iVar10 = *(int *)&this_01->field_0xa5;
           local_8 = 0;
           if (0 < *(int *)(iVar10 + 0xc)) {
             bVar12 = *(int *)(iVar10 + 0xc) != 0;
@@ -129,7 +130,7 @@ LAB_00690763:
                 }
                 local_54[0] = 100;
                 local_4b = 1;
-                local_54[1] = *(uint *)(local_c + 300);
+                local_54[1] = local_c->field_012C;
                 local_48 = *(undefined2 *)(iVar7 + 0x7d);
                 local_4a = (undefined2)local_10;
                 local_46 = *(undefined2 *)(iVar7 + 0x7b);
@@ -141,13 +142,13 @@ LAB_00690763:
                                        *(undefined2 *)(*(int *)(iVar10 + 4) + 0x7d));
                   local_18 = CONCAT22(*(undefined2 *)(iVar7 + 0x7b),(short)local_10);
                   Library::DKW::TBL::FUN_006ae1c0
-                            (*(uint **)(local_c + 0xc9),(undefined4 *)&local_1c);
+                            (*(uint **)&local_c->field_0xc9,(undefined4 *)&local_1c);
                   g_currentExceptionFrame = local_98.previous;
                   return;
                 }
               }
               local_8 = local_8 + 1;
-              iVar10 = *(int *)(local_c + 0xa5);
+              iVar10 = *(int *)&local_c->field_0xa5;
               bVar12 = local_8 < *(uint *)(iVar10 + 0xc);
               if ((int)*(uint *)(iVar10 + 0xc) <= (int)local_8) {
                 g_currentExceptionFrame = local_98.previous;

@@ -1,4 +1,4 @@
-FUN_004761b0:
+STBoatC::SetMine:
 004761B0  55                        PUSH EBP
 004761B1  8B EC                     MOV EBP,ESP
 004761B3  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

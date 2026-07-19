@@ -1,0 +1,8 @@
+program=ST.exe
+classes_with_this_accesses=88
+class_auto_apply=74
+field_proposals=813
+field_auto_apply=790
+field_conflicts=23
+note=Only exact register-plus-constant accesses derived from incoming ECX are used.
+note_manual=Non-placeholder structures and generated structures whose current layout cannot be verified are never auto-applied.

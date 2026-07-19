@@ -1,12 +1,17 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::GetVisualInfo */
+   STBoatC::GetVisualInfo
+   
+   [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_GetVisualInfo_param_2Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40
+    */
 
 void __thiscall
 STBoatC::GetVisualInfo
-          (STBoatC *this,undefined4 param_1,int param_2,int param_3,undefined4 *param_4,
-          char *param_5,undefined1 *param_6,undefined4 *param_7)
+          (STBoatC *this,undefined4 param_1,STBoatC_GetVisualInfo_param_2Enum param_2,int param_3,
+          undefined4 *param_4,char *param_5,undefined1 *param_6,undefined4 *param_7)
 
 {
   char cVar1;
@@ -23,7 +28,7 @@ STBoatC::GetVisualInfo
   *param_7 = 0;
   if ((param_3 != 0xe) && (param_3 != 0xc)) {
     if (param_3 == 0xd) {
-      if (param_2 == 0xb) {
+      if (param_2 == CASE_B) {
         uVar4 = 0xffffffff;
         pcVar7 = &DAT_007a9e94;
         do {
@@ -48,7 +53,7 @@ STBoatC::GetVisualInfo
         }
         return;
       }
-      if (param_2 == 0x16) {
+      if (param_2 == CASE_16) {
         uVar4 = 0xffffffff;
         pcVar7 = &DAT_007a9e9c;
         do {
@@ -73,7 +78,7 @@ STBoatC::GetVisualInfo
         }
         return;
       }
-      if (param_2 == 0x23) {
+      if (param_2 == CASE_23) {
         uVar4 = 0xffffffff;
         pcVar7 = &DAT_007a9ea4;
         do {
@@ -103,124 +108,124 @@ STBoatC::GetVisualInfo
     return;
   }
   switch(param_2) {
-  case 1:
+  case CASE_1:
     pcVar7 = &DAT_007a9e8c;
     break;
-  case 2:
+  case CASE_2:
     pcVar7 = &DAT_007a9e84;
     break;
-  case 3:
+  case CASE_3:
     pcVar7 = &DAT_007a9e7c;
     break;
-  case 4:
+  case CASE_4:
     pcVar7 = &DAT_007a9e74;
     break;
-  case 5:
+  case CASE_5:
     pcVar7 = &DAT_007a9e6c;
     break;
-  case 6:
+  case CASE_6:
     pcVar7 = &DAT_007a9e64;
     break;
-  case 7:
+  case CASE_7:
     pcVar7 = &DAT_007a9e5c;
     break;
-  case 8:
+  case CASE_8:
     pcVar7 = &DAT_007a9e54;
     break;
-  case 9:
+  case CASE_9:
     pcVar7 = &DAT_007a9e50;
     break;
-  case 10:
+  case CASE_A:
     pcVar7 = &DAT_007a9e48;
     break;
-  case 0xb:
+  case CASE_B:
     pcVar7 = &DAT_007a9e40;
     break;
-  case 0xc:
+  case CASE_C:
     pcVar7 = &DAT_007a9e38;
     break;
-  case 0xd:
+  case CASE_D:
     pcVar7 = &DAT_007a9e30;
     break;
-  case 0xe:
+  case CASE_E:
     pcVar7 = &DAT_007a9e28;
     break;
-  case 0xf:
+  case CASE_F:
     pcVar7 = &DAT_007a9e20;
     break;
-  case 0x10:
+  case CASE_10:
     pcVar7 = &DAT_007a9e18;
     break;
-  case 0x11:
+  case CASE_11:
     pcVar7 = &DAT_007a9e10;
     break;
-  case 0x12:
+  case CASE_12:
     pcVar7 = &DAT_007a9e08;
     break;
-  case 0x13:
+  case CASE_13:
     pcVar7 = &DAT_007a9e00;
     break;
-  case 0x14:
+  case CASE_14:
     pcVar7 = &DAT_007a9df8;
     break;
-  case 0x15:
+  case CASE_15:
     pcVar7 = &DAT_007a9df4;
     break;
-  case 0x16:
+  case CASE_16:
     pcVar7 = &DAT_007a9dec;
     break;
-  case 0x17:
+  case CASE_17:
     pcVar7 = &DAT_007a9de4;
     break;
-  case 0x18:
+  case CASE_18:
     pcVar7 = &DAT_007a9ddc;
     break;
-  case 0x19:
+  case CASE_19:
     pcVar7 = &DAT_007a9dd8;
     break;
-  case 0x1a:
+  case CASE_1A:
     pcVar7 = &DAT_007a9dd4;
     break;
-  case 0x1b:
+  case CASE_1B:
     pcVar7 = &DAT_007a9dd0;
     break;
-  case 0x1c:
+  case CASE_1C:
     pcVar7 = &DAT_007a9dcc;
     break;
-  case 0x1d:
+  case CASE_1D:
     pcVar7 = &DAT_007a9dc8;
     break;
-  case 0x1e:
+  case CASE_1E:
     pcVar7 = &DAT_007a9dc4;
     break;
-  case 0x1f:
+  case CASE_1F:
     pcVar7 = &DAT_007a9dc0;
     break;
-  case 0x20:
+  case CASE_20:
     pcVar7 = &DAT_007a9dbc;
     break;
-  case 0x21:
+  case CASE_21:
     pcVar7 = &DAT_007a9db8;
     break;
-  case 0x22:
+  case CASE_22:
     pcVar7 = &DAT_007a9db4;
     break;
-  case 0x23:
+  case CASE_23:
     pcVar7 = &DAT_007a9db0;
     break;
-  case 0x24:
+  case CASE_24:
     pcVar7 = &DAT_007a9dac;
     break;
-  case 0x25:
+  case CASE_25:
     pcVar7 = &DAT_007a9da4;
     break;
-  case 0x26:
+  case CASE_26:
     pcVar7 = &DAT_007a9d9c;
     break;
-  case 0x27:
+  case CASE_27:
     pcVar7 = &DAT_007a9d94;
     break;
-  case 0x28:
+  case CASE_28:
     pcVar7 = &DAT_007a9d8c;
     break;
   default:

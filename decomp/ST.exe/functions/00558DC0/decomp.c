@@ -14,8 +14,9 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,uint param_4,
   undefined *puVar8;
   undefined *puVar9;
   int iVar10;
-  int iVar11;
-  int *piVar12;
+  Global_sub_00558C00_param_1Enum GVar11;
+  int iVar12;
+  int *piVar13;
   undefined *local_c;
   
   puVar9 = param_5;
@@ -30,14 +31,14 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,uint param_4,
       iVar5 = (int)puVar9 * 2 + 1;
       param_6 = param_1 - (int)puVar9;
       param_4 = param_2 - (int)puVar9;
-      puVar8 = thunk_FUN_005532f0((int)puVar9);
+      puVar8 = thunk_FUN_005532f0((Global_sub_005532F0_param_1Enum)puVar9);
       if (((puVar8 != (undefined *)0x0) && (*(int *)((int)this + 0x38) != 0)) &&
-         (((param_7 & 1) != 0 && (iVar11 = 0, puVar9 = param_5, local_c = puVar8, 0 < iVar5)))) {
+         (((param_7 & 1) != 0 && (iVar12 = 0, puVar9 = param_5, local_c = puVar8, 0 < iVar5)))) {
         do {
           iVar10 = 0;
           do {
             if (local_c[iVar10] != '\0') {
-              iVar1 = iVar11 + param_4;
+              iVar1 = iVar12 + param_4;
               iVar2 = iVar10 + param_6;
               if ((((-1 < iVar2) && (iVar2 < *(int *)((int)this + 0x20))) && (-1 < iVar1)) &&
                  (iVar1 < *(int *)((int)this + 0x24))) {
@@ -51,30 +52,30 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,uint param_4,
             }
             iVar10 = iVar10 + 1;
           } while (iVar10 < iVar5);
-          iVar11 = iVar11 + 1;
+          iVar12 = iVar12 + 1;
           local_c = local_c + iVar5;
-        } while (iVar11 < iVar5);
+        } while (iVar12 < iVar5);
       }
       if ((-1 < (int)param_3) && ((int)param_3 < 5)) {
         if ((param_7 & 0x2008) != 0) {
-          iVar11 = 0;
-          piVar12 = (int *)((int)this + 0x3c);
+          GVar11 = CASE_0;
+          piVar13 = (int *)((int)this + 0x3c);
           do {
-            if (*piVar12 != 0) {
-              thunk_FUN_00558c00(this,iVar11,param_1,param_2,&param_6,(int *)&param_4);
+            if (*piVar13 != 0) {
+              thunk_FUN_00558c00(this,GVar11,param_1,param_2,&param_6,(int *)&param_4);
               param_4 = param_4 + (&DAT_0079aed0)[(int)param_3];
-              thunk_FUN_00553b00(param_6,param_4,*piVar12,*(uint *)((int)this + 0x28),
+              thunk_FUN_00553b00(param_6,param_4,*piVar13,*(uint *)((int)this + 0x28),
                                  *(int *)((int)this + 0x2c),param_5);
             }
-            iVar11 = iVar11 + 1;
-            piVar12 = piVar12 + 1;
+            GVar11 = GVar11 + CASE_1;
+            piVar13 = piVar13 + 1;
             puVar9 = param_5;
-          } while (iVar11 < 4);
+          } while ((int)GVar11 < 4);
         }
         if (((puVar8 != (undefined *)0x0) && (*(int *)((int)this + 0x4c) != 0)) &&
            ((*(int *)((int)this + 0x50) != 0 && ((param_7 & 0x4000) != 0)))) {
-          thunk_FUN_00558c00(this,*(undefined4 *)((int)this + 0x10c),param_1,param_2,&param_6,
-                             (int *)&param_4);
+          thunk_FUN_00558c00(this,*(Global_sub_00558C00_param_1Enum *)((int)this + 0x10c),param_1,
+                             param_2,&param_6,(int *)&param_4);
           param_6 = param_6 - (int)puVar9;
           param_5 = (undefined *)0x0;
           param_4 = param_4 + ((&DAT_0079aed0)[(int)param_3] - (int)puVar9);
@@ -84,14 +85,14 @@ FUN_00558dc0(void *this,int param_1,int param_2,undefined *param_3,uint param_4,
               param_7 = 0;
               do {
                 if (param_3[param_7] != '\0') {
-                  iVar11 = param_7 + param_6;
+                  iVar12 = param_7 + param_6;
                   puVar9 = param_5 + param_4;
-                  if ((((-1 < iVar11) && (uVar7 = *(uint *)((int)this + 0x30), iVar11 < (int)uVar7))
+                  if ((((-1 < iVar12) && (uVar7 = *(uint *)((int)this + 0x30), iVar12 < (int)uVar7))
                       && (-1 < (int)puVar9)) &&
                      (((int)puVar9 < *(int *)((int)this + 0x34) &&
-                      (iVar10 = uVar7 * (int)puVar9 + iVar11, -1 < iVar10)))) {
+                      (iVar10 = uVar7 * (int)puVar9 + iVar12, -1 < iVar10)))) {
                     if (*(short *)(*(int *)((int)this + 0x50) + iVar10 * 2) == 0) {
-                      thunk_FUN_00553990(iVar11,(int)puVar9,*(int *)((int)this + 0x4c),uVar7,
+                      thunk_FUN_00553990(iVar12,(int)puVar9,*(int *)((int)this + 0x4c),uVar7,
                                          *(int *)((int)this + 0x34));
                     }
                     psVar4 = (short *)(*(int *)((int)this + 0x50) + iVar10 * 2);

@@ -325,8 +325,9 @@ LAB_005f2d8b:
                             (short)((longlong)iVar5 * 0x28c1979 >> 0x3f));
       }
       if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-          (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar5,iVar4,
-                              &local_24,&local_28), local_18 < 0)) || (4 < local_18)) {
+          (thunk_FUN_00558c00(DAT_00802a88,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar5,
+                              iVar4,&local_24,&local_28), local_18 < 0)) || (4 < local_18)) {
         bVar11 = true;
       }
       else {

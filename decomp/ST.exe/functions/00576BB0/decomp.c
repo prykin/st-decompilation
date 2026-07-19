@@ -4,7 +4,7 @@ void FUN_00576bb0(void)
 {
   code *pcVar1;
   int errorCode;
-  void *this;
+  BaseSystemC *this;
   int iVar2;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
@@ -14,12 +14,12 @@ void FUN_00576bb0(void)
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
   errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_ESI,pIVar3);
   if (errorCode == 0) {
-    this = (void *)Library::MSVCRT::FUN_0072e530(0x24);
-    if (this == (void *)0x0) {
+    this = (BaseSystemC *)Library::MSVCRT::FUN_0072e530(0x24);
+    if (this == (BaseSystemC *)0x0) {
       DAT_00811638 = (int *)0x0;
     }
     else {
-      DAT_00811638 = thunk_FUN_00576aa0(this,DAT_00806728);
+      DAT_00811638 = BaseSystemC::BaseSystemC(this,DAT_00806728);
     }
     if (DAT_00811638 == (int *)0x0) {
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_tsystem_cpp_007cab5c,0x38);

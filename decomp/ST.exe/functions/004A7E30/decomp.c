@@ -43,7 +43,7 @@ undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
       *(undefined4 *)((int)this + 0x23e) = 0;
       *(uint *)((int)this + 0x232) = iVar5 - 1U;
       FUN_006acc70(iVar1,iVar5 - 1U,&local_14);
-      bVar2 = thunk_FUN_00430750(8);
+      bVar2 = thunk_FUN_00430750(CASE_8);
       uVar4 = (uint)bVar2;
       local_e = local_e * 0xc9;
     }
@@ -51,7 +51,7 @@ undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
       *(undefined4 *)((int)this + 0x23e) = 0;
       *(uint *)((int)this + 0x232) = iVar5 + 1U;
       FUN_006acc70(iVar1,iVar5 + 1U,&local_14);
-      bVar2 = thunk_FUN_00430750(8);
+      bVar2 = thunk_FUN_00430750(CASE_8);
       uVar4 = (uint)bVar2;
       local_e = local_a * 0xc9;
     }
@@ -62,14 +62,14 @@ undefined4 __thiscall FUN_004a7e30(void *this,int param_1)
       *(undefined4 *)((int)this + 0x236) = 1;
       *(undefined4 *)((int)this + 0x23e) = 0;
       FUN_006acc70(*(int *)((int)this + 0x22a),1,&local_14);
-      bVar2 = thunk_FUN_00430750(8);
+      bVar2 = thunk_FUN_00430750(CASE_8);
     }
     else {
       uVar4 = *(int *)((int)this + 0x232) - 1;
       *(uint *)((int)this + 0x232) = uVar4;
       *(undefined4 *)((int)this + 0x23e) = 0;
       FUN_006acc70(*(int *)((int)this + 0x22a),uVar4,&local_14);
-      bVar2 = thunk_FUN_00430750(8);
+      bVar2 = thunk_FUN_00430750(CASE_8);
       local_a = local_e;
     }
     uVar4 = (uint)bVar2;

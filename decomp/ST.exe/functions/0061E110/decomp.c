@@ -82,9 +82,10 @@ undefined4 __fastcall FUN_0061e110(int param_1)
         ((iVar7 + -1 <= *(int *)(DAT_00807598 + 0x54) && (iVar6 = FUN_006ddbd0(), iVar6 != 0))))))
       && (((((pvVar2 = DAT_00802a88, local_c = 1, DAT_00802a88 != (void *)0x0 &&
              (DAT_0080874d != -1)) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)) &&
-           (((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_8,
-                                 iVar5,&local_8,&local_1c), pvVar3 = DAT_00802a88, -1 < local_10 &&
-             (local_10 < 5)) &&
+           (((thunk_FUN_00558c00(DAT_00802a88,
+                                 *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                 local_8,iVar5,&local_8,&local_1c), pvVar3 = DAT_00802a88,
+             -1 < local_10 && (local_10 < 5)) &&
             ((-1 < local_8 &&
              ((local_8 < *(int *)((int)pvVar2 + 0x30) &&
               (iVar5 = (&DAT_0079aed0)[local_10] + local_1c, -1 < iVar5)))))))) &&
@@ -93,8 +94,9 @@ undefined4 __fastcall FUN_0061e110(int param_1)
            (*(char *)(iVar5 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) + local_8)
             == '\0')) && (DAT_0080874d != -1)) &&
          ((*(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-          (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_14,iVar7
-                              ,&local_1c,&local_14), -1 < local_18)))) &&
+          (thunk_FUN_00558c00(DAT_00802a88,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                              local_14,iVar7,&local_1c,&local_14), -1 < local_18)))) &&
         ((local_18 < 5 && ((-1 < local_1c && (local_1c < *(int *)((int)pvVar3 + 0x30))))))) &&
        (local_14 = (&DAT_0079aed0)[local_18] + local_14, -1 < local_14)) &&
       (((local_14 < *(int *)((int)pvVar3 + 0x34) && (*(int *)((int)pvVar3 + 0x4c) != 0)) &&

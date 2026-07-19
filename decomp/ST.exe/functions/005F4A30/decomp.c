@@ -29,7 +29,8 @@ undefined4 FUN_005f4a30(int param_1,uint param_2,int param_3)
   }
   if (local_c != 0) {
     uVar4 = param_2 & 0xff;
-    local_14 = FUN_00709af0(DAT_00806764,0x1d,local_10[uVar4],0xffffffff,0,1,0,(undefined4 *)0x0);
+    local_14 = FUN_00709af0(DAT_00806764,CASE_1D,local_10[uVar4],0xffffffff,0,1,0,(undefined4 *)0x0)
+    ;
     puVar1 = (uint *)(iVar2 + 0x1f);
     FUN_006e8660(DAT_00807598,(int *)puVar1,1,0,*(uint *)((int)local_14 + 9),
                  *(uint *)((int)local_14 + 0xd),*(int *)(&DAT_007ce5b0 + uVar4 * 8) / 2,

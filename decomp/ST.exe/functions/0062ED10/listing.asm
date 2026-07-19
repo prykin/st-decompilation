@@ -1,4 +1,4 @@
-FUN_0062ed10:
+STRubbishC::STRubbishC:
 0062ED10  56                        PUSH ESI
 0062ED11  8B F1                     MOV ESI,ECX
 0062ED13  E8 1B 2C DD FF            CALL 0x00401933

@@ -42,7 +42,7 @@ ushort * FUN_00630c50(undefined4 param_1,int param_2,int param_3,int param_4,int
     g_currentExceptionFrame = local_58.previous;
     return local_c;
   }
-  puVar3 = FUN_00709af0(DAT_00806774,0x1d,local_8[*(int *)(local_10 + 0x40)],0xffffffff,0,1,0,
+  puVar3 = FUN_00709af0(DAT_00806774,CASE_1D,local_8[*(int *)(local_10 + 0x40)],0xffffffff,0,1,0,
                         (undefined4 *)0x0);
   if (param_3 == 0) {
     if (param_2 == 1) {

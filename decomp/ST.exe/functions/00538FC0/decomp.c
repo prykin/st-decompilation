@@ -31,19 +31,19 @@ PanelTy::PaintLBut(PanelTy *this,int param_1,byte param_2,char *param_3,char *pa
   else {
     local_c = *piVar1;
     iVar4 = DAT_00806730;
-    if (*(int *)(this + 0x5c) == 0) goto LAB_00538ff6;
+    if (this->field_005C == 0) goto LAB_00538ff6;
   }
-  iVar4 = *(int *)(this + 0x3c);
+  iVar4 = this->field_003C;
 LAB_00538ff6:
   local_c = local_c - iVar4;
   if (param_7 == 0) {
-    local_10 = piVar1[1] - *(int *)(this + 0x44);
+    local_10 = piVar1[1] - *(int *)&this->field_0x44;
   }
-  else if (*(int *)(this + 0x5c) == 0) {
+  else if (this->field_005C == 0) {
     local_10 = piVar1[1] - DAT_00806734;
   }
   else {
-    local_10 = piVar1[1] - *(int *)(this + 0x44);
+    local_10 = piVar1[1] - *(int *)&this->field_0x44;
   }
   if (param_5 != (undefined *)0x0) {
     local_58.previous = g_currentExceptionFrame;
@@ -56,17 +56,18 @@ LAB_00538ff6:
       local_8 = cMf32::RecGet(DAT_00806790,param_2,pCVar6,(int *)0x0,1);
       iVar4 = local_10;
       pPVar3 = local_14;
-      thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),local_c,local_10,param_2,(byte *)local_8)
-      ;
+      thunk_FUN_00540760(*(undefined4 **)&local_14[1].field_0x8,local_c,local_10,param_2,
+                         (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (*(int *)(param_1 + 0x14) == 3) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_4,(int *)0x0,1);
-        thunk_FUN_00540760(*(undefined4 **)(pPVar3 + 0x68),local_c,iVar4,'\x06',(byte *)local_8);
+        thunk_FUN_00540760(*(undefined4 **)&pPVar3[1].field_0x8,local_c,iVar4,'\x06',(byte *)local_8
+                          );
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pPVar3 + 0x60),0xffffffff,*(uint *)(pPVar3 + 0x3c),
-                 *(uint *)(pPVar3 + 0x44));
+                (DAT_008075a8,*(uint *)(pPVar3 + 1),0xffffffff,pPVar3->field_003C,
+                 *(uint *)&pPVar3->field_0x44);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

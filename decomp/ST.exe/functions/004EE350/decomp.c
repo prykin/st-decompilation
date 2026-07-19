@@ -22,12 +22,12 @@ void __thiscall BehPanelTy::PaintBBut(BehPanelTy *this,int param_1,char *param_2
   pIVar6 = g_currentExceptionFrame;
   local_8 = (ushort *)0x0;
   piVar3 = *(int **)(param_1 + 0x18);
-  local_10 = *piVar3 - *(int *)(this + 0x3c);
-  if (*(int *)(this + 0x5c) == 0) {
+  local_10 = *piVar3 - this->field_003C;
+  if (this->field_005C == 0) {
     local_c = piVar3[1] - DAT_00806734;
   }
   else {
-    local_c = piVar3[1] - *(int *)(this + 0x44);
+    local_c = piVar3[1] - *(int *)&this->field_0x44;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffa8;
   local_14 = this;
@@ -37,11 +37,12 @@ void __thiscall BehPanelTy::PaintBBut(BehPanelTy *this,int param_1,char *param_2
     pCVar4 = FUN_006f2c00(param_2,1,param_3 & 0xff);
     local_8 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar3,iVar5);
     pBVar2 = local_14;
-    thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),local_10,local_c,'\x01',(byte *)local_8);
+    thunk_FUN_00540760(*(undefined4 **)&local_14->field_0x68,local_10,local_c,'\x01',(byte *)local_8
+                      );
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
     Library::DKW::DDX::FUN_006b3640
-              (DAT_008075a8,*(uint *)(pBVar2 + 0x60),0xffffffff,*(uint *)(pBVar2 + 0x3c),
-               *(uint *)(pBVar2 + 0x44));
+              (DAT_008075a8,*(uint *)&pBVar2->field_0x60,0xffffffff,pBVar2->field_003C,
+               *(uint *)&pBVar2->field_0x44);
     g_currentExceptionFrame = pIVar6;
     return;
   }

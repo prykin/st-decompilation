@@ -38,7 +38,7 @@ undefined4 __fastcall FUN_0045f6c0(int *param_1)
   }
   iVar13 = thunk_FUN_004e60d0(iVar13,iVar15);
 LAB_0045f710:
-  bVar3 = thunk_FUN_00430750(*(int *)((int)param_1 + 0x6f7));
+  bVar3 = thunk_FUN_00430750(*(Global_sub_00430750_param_1Enum *)((int)param_1 + 0x6f7));
   if (iVar13 == 1) {
     bVar3 = bVar3 + 2;
     iVar13 = 0;

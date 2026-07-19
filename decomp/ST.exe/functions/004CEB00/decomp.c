@@ -40,11 +40,11 @@ undefined4 __thiscall FUN_004ceb00(void *this,undefined4 param_1)
   int local_8;
   
   local_10 = 0;
-  if (*(uint *)(DAT_00802a38 + 0xe4) <
+  if ((uint)DAT_00802a38->field_00E4 <
       (uint)(*(int *)((int)this + 0x3cc) + *(int *)((int)this + 0x3d0))) {
     return 0;
   }
-  *(uint *)((int)this + 0x3cc) = *(uint *)(DAT_00802a38 + 0xe4);
+  *(undefined4 *)((int)this + 0x3cc) = DAT_00802a38->field_00E4;
   switch(*(undefined4 *)((int)this + 0x4d0)) {
   case 1:
     switch(*(undefined4 *)((int)this + 0x5ac)) {

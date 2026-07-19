@@ -12,20 +12,20 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
   if (param_1 == (int *)0x0) {
     thunk_FUN_00492420((int *)this);
   }
-  iVar2 = *(int *)(this + 0x596);
+  iVar2 = this->field_0596;
   if (iVar2 == 0) {
     iVar2 = thunk_FUN_00460360((int *)this);
     return iVar2;
   }
   if (iVar2 == 1) {
-    iVar2 = (**(code **)(*(int *)this + 0xd8))();
+    iVar2 = (*this->vtable->vfunc_D8)();
     return -(uint)(iVar2 != 0);
   }
   if (iVar2 == 2) {
-    FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x58e),(int *)&param_1);
-    if ((param_1 != (int *)0x0) && (param_1[6] == *(int *)(this + 0x58e))) {
-      (**(code **)(*param_1 + 0xac))(*(undefined4 *)(this + 0x18));
-      iVar2 = (**(code **)(*(int *)this + 0xd8))();
+    FUN_006e62d0(DAT_00802a38,this->field_058E,(int *)&param_1);
+    if ((param_1 != (int *)0x0) && (param_1[6] == this->field_058E)) {
+      (**(code **)(*param_1 + 0xac))(this->field_0018);
+      iVar2 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar2 != 0);
     }
     iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f2d,0,0,&DAT_007a4ccc,
@@ -40,18 +40,18 @@ int __thiscall STBoatC::BackLoadObj(STBoatC *this,int *param_1)
   if (iVar2 != 3) {
     return 2;
   }
-  iVar2 = *(int *)(this + 0x59a);
+  iVar2 = this->field_059A;
   if (((iVar2 != 0) && (iVar2 != 1)) && (iVar2 != 2)) {
     if ((iVar2 != 3) && (iVar2 != 4)) {
       iVar2 = LoadObj(this,2);
       return iVar2;
     }
-    *(undefined4 *)(this + 0x59a) = 5;
-    iVar2 = (**(code **)(*(int *)this + 0xd8))();
+    this->field_059A = 5;
+    iVar2 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar2 != 0) & 0xfffffffd) + 2;
   }
-  FUN_006ea2f0(*(void **)(this + 0x211),*(uint *)(this + 0x1ed));
-  iVar2 = (**(code **)(*(int *)this + 0xd8))();
+  FUN_006ea2f0(*(void **)&this->field_0x211,*(uint *)&this->field_0x1ed);
+  iVar2 = (*this->vtable->vfunc_D8)();
   return -(uint)(iVar2 != 0);
 }
 

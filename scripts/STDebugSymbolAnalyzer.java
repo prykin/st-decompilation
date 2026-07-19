@@ -36,8 +36,9 @@ import ghidra.program.util.DefinedStringIterator;
 public class STDebugSymbolAnalyzer extends GhidraScript {
     private static final Pattern METHOD = Pattern.compile(
         "^[A-Za-z_~][A-Za-z0-9_~<>]*(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+$");
-    private static final Pattern METHOD_PREFIX = Pattern.compile(
-        "^([A-Za-z_~][A-Za-z0-9_~<>]*(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+)(?=$|\\s|[-:(])");
+    private static final Pattern METHOD_ANYWHERE = Pattern.compile(
+        "(?<![A-Za-z0-9_~])([A-Za-z_~][A-Za-z0-9_~<>]*" +
+        "(?:::[A-Za-z_~][A-Za-z0-9_~<>]*)+)(?=$|[^A-Za-z0-9_~:])");
     private static final Pattern SOURCE = Pattern.compile(
         "(?i)^[A-Za-z]:\\\\.*\\.(?:c|cc|cpp|cxx|h|hh|hpp|hxx)$");
 
@@ -152,20 +153,17 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             return -1;
         }
         Instruction instruction = listing.getInstructionAt(sourceReference);
-        // MSVC pushes arguments right-to-left.  In both ReportDebugMessage and
-        // RaiseInternalException calls the source line is pushed immediately before sourceFile.
+        // In this binary the reference often points at an address materialization rather
+        // than at the final PUSH itself.  The matching line literal is immediately before
+        // that materialization in the ReportDebugMessage/RaiseInternalException sequences.
         for (int i = 0; i < 3 && instruction != null; i++) {
             instruction = listing.getInstructionBefore(instruction.getAddress());
-            if (instruction == null) {
-                break;
-            }
+            if (instruction == null) break;
             if ("PUSH".equalsIgnoreCase(instruction.getMnemonicString())) {
                 Scalar scalar = instruction.getScalar(0);
                 if (scalar != null) {
                     long value = scalar.getUnsignedValue();
-                    if (value > 0 && value < 1000000) {
-                        return value;
-                    }
+                    if (value > 0 && value < 1000000) return value;
                 }
             }
         }
@@ -207,7 +205,11 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
 
     private static String methodValue(String value) {
         if (METHOD.matcher(value).matches()) return value;
-        Matcher matcher = METHOD_PREFIX.matcher(value);
+        // Diagnostics are not consistent: most begin with Class::Method, but some use
+        // "Class::Method, details" and a few prepend a return type (for example
+        // "Int TLOEmbryoTy::Create(...)").  Search the whole diagnostic while keeping
+        // identifier boundaries strict; selectMethod() still rejects conflicting evidence.
+        Matcher matcher = METHOD_ANYWHERE.matcher(value);
         return matcher.find() ? matcher.group(1) : null;
     }
 

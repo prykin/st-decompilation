@@ -42,16 +42,16 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806774;
       }
-      local_10 = FUN_00709af0(piVar6,0x1d,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
+      local_10 = FUN_00709af0(piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
       iVar2 = *(int *)(pSVar5 + 0x29);
       if (iVar2 < 4) {
-        local_14 = FUN_00709af0(DAT_00806764,0x1d,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,0,
-                                (undefined4 *)0x0);
+        local_14 = FUN_00709af0(DAT_00806764,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,
+                                0,(undefined4 *)0x0);
         puVar3 = local_8;
       }
       else {
-        local_14 = FUN_00709af0(DAT_00806774,0x1d,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,0,
-                                (undefined4 *)0x0);
+        local_14 = FUN_00709af0(DAT_00806774,CASE_1D,(&PTR_s_pics_g_007d1bb4)[iVar2],0xffffffff,0,1,
+                                0,(undefined4 *)0x0);
         puVar3 = local_8;
       }
     }
@@ -65,14 +65,14 @@ void __thiscall STTeamLissagC::InitVisibelSystem(STTeamLissagC *this)
         pbVar7 = (&PTR_s_pics_g_007d1bb4)[iVar2];
         piVar6 = DAT_00806774;
       }
-      puVar3 = FUN_00709af0(piVar6,0x1d,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
+      puVar3 = FUN_00709af0(piVar6,CASE_1D,pbVar7,0xffffffff,0,1,0,(undefined4 *)0x0);
       local_8 = puVar3;
       if (*(int *)(pSVar5 + 0x11) == 1) {
-        local_10 = FUN_00709af0(DAT_00806774,0x1d,PTR_s_starR_007d1bcc,0xffffffff,0,1,0,
+        local_10 = FUN_00709af0(DAT_00806774,CASE_1D,PTR_s_starR_007d1bcc,0xffffffff,0,1,0,
                                 (undefined4 *)0x0);
       }
       if (*(int *)(pSVar5 + 0x11) == 4) {
-        local_10 = FUN_00709af0(DAT_00806774,0x1d,PTR_s_starF_007d1bd0,0xffffffff,0,1,0,
+        local_10 = FUN_00709af0(DAT_00806774,CASE_1D,PTR_s_starF_007d1bd0,0xffffffff,0,1,0,
                                 (undefined4 *)0x0);
         local_14 = puVar3;
       }

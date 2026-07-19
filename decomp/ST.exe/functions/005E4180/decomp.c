@@ -45,14 +45,14 @@ MTaskTy::CreateBut(MTaskTy *this,undefined4 param_1,undefined4 param_2,undefined
     local_1bc = param_5;
     local_1cc[2] = param_3;
     local_1cc[3] = param_4;
-    local_1ac = *(undefined4 *)(local_c + 8);
+    local_1ac = *(undefined4 *)&local_c->field_0x8;
     local_1a4 = param_7;
     local_1b8 = param_6;
     local_1a8 = 2;
     local_168 = 2;
     local_164 = param_8;
     local_16c = local_1ac;
-    (**(code **)(**(int **)(local_c + 0xc) + 8))(2,&local_8,0,local_1cc,0);
+    (**(code **)(**(int **)&local_c->field_0xc + 8))(2,&local_8,0,local_1cc,0);
     g_currentExceptionFrame = local_50.previous;
     return local_8;
   }

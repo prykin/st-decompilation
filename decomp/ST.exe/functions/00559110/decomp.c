@@ -62,8 +62,8 @@ FUN_00559110(void *this,int param_1,undefined *param_2,int param_3,uint param_4,
         }
         if (((*(int *)((int)this + 0x4c) != 0) && (*(int *)((int)this + 0x50) != 0)) &&
            ((param_7 & 0x4000) != 0)) {
-          thunk_FUN_00558c00(this,*(undefined4 *)((int)this + 0x10c),param_1,(int)param_2,
-                             (int *)&param_4,&param_6);
+          thunk_FUN_00558c00(this,*(Global_sub_00558C00_param_1Enum *)((int)this + 0x10c),param_1,
+                             (int)param_2,(int *)&param_4,&param_6);
           param_5 = 0;
           param_4 = param_4 - iVar12;
           param_6 = param_6 + ((&DAT_0079aed0)[param_3] - iVar12);

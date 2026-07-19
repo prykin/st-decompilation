@@ -4,7 +4,7 @@ undefined4 FUN_004b7750(undefined4 param_1)
 {
   int iVar1;
   int iVar2;
-  undefined4 uVar3;
+  Global_sub_004B7350_param_2Enum GVar3;
   char cVar4;
   uint uVar5;
   int iVar6;
@@ -31,14 +31,14 @@ LAB_004b77c4:
         FUN_006acc70(iVar1,local_10,local_c);
         if ((local_c[0] != (int *)0x0) &&
            ((iVar1 = (**(code **)(*local_c[0] + 0x2c))(), iVar1 != 0x78 ||
-            (iVar1 = thunk_FUN_004b7520(param_1,*(undefined4 *)((int)local_c[0] + 0x259)),
-            iVar1 != 0)))) {
+            (iVar1 = thunk_FUN_004b7520(param_1,*(Global_sub_004B7520_param_2Enum *)
+                                                 ((int)local_c[0] + 0x259)), iVar1 != 0)))) {
           iVar1 = (**(code **)(*local_c[0] + 0x2c))();
           local_14 = thunk_FUN_004b72e0(cVar4,iVar1);
           if (0 < local_14) {
             local_1c = local_c[0][6];
-            uVar3 = (**(code **)(*local_c[0] + 0x2c))();
-            local_18 = thunk_FUN_004b7350(param_1,uVar3);
+            GVar3 = (**(code **)(*local_c[0] + 0x2c))();
+            local_18 = thunk_FUN_004b7350(param_1,GVar3);
             iVar1 = *(int *)(&DAT_007f57b2 + iVar6);
             uVar5 = 0;
             if (*(int *)(iVar1 + 0xc) != 0) {

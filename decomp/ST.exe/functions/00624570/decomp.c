@@ -1,6 +1,10 @@
 
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00624570_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+
 undefined4 __thiscall
-FUN_00624570(void *this,undefined4 param_1,int param_2,int param_3,int param_4)
+FUN_00624570(void *this,Global_sub_00624570_param_1Enum param_1,int param_2,int param_3,int param_4)
 
 {
   undefined4 uVar1;
@@ -10,14 +14,14 @@ FUN_00624570(void *this,undefined4 param_1,int param_2,int param_3,int param_4)
   
   uVar1 = 0;
   switch(param_1) {
-  case 0:
+  case CASE_0:
     *(undefined1 *)((int)this + 0x61) = 0;
     *(undefined1 *)((int)this + 0x62) = 0;
     *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
     return 1;
-  case 1:
+  case CASE_1:
     break;
-  case 2:
+  case CASE_2:
     iVar2 = FUN_006acf0d(*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
                          *(int *)((int)this + 0x2ca),param_2,param_3,param_4);
     *(undefined4 *)((int)this + 0x306) = 3;
@@ -40,7 +44,7 @@ FUN_00624570(void *this,undefined4 param_1,int param_2,int param_3,int param_4)
     }
     *(undefined4 *)((int)this + 0x30f) = *(undefined4 *)(DAT_00802a38 + 0xe4);
     return uVar1;
-  case 3:
+  case CASE_3:
     if (param_4 < 0) {
       iVar2 = (short)(param_4 / 200) + -1;
     }

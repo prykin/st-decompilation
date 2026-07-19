@@ -1,8 +1,12 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004AB070_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8 */
 
 undefined4 __thiscall
-FUN_004ab070(void *this,undefined4 param_1,float param_2,int param_3,int param_4)
+FUN_004ab070(void *this,Global_sub_004AB070_param_1Enum param_1,float param_2,int param_3,
+            int param_4)
 
 {
   DWORD DVar1;
@@ -37,28 +41,28 @@ LAB_004ab0d1:
   }
   *(DWORD *)((int)this + 0x18) = DVar1;
   switch(param_1) {
-  case 1:
+  case CASE_1:
     iVar2 = thunk_FUN_004a9d60(param_2);
     break;
-  case 2:
+  case CASE_2:
     iVar2 = thunk_FUN_004a9fb0(param_2);
     break;
-  case 3:
+  case CASE_3:
     iVar2 = thunk_FUN_004aa200(param_2);
     break;
-  case 4:
+  case CASE_4:
     iVar2 = thunk_FUN_004aa450(param_2);
     break;
-  case 5:
+  case CASE_5:
     iVar2 = thunk_FUN_004aa6a0(param_2);
     break;
-  case 6:
+  case CASE_6:
     iVar2 = thunk_FUN_004aa8d0(param_2);
     break;
-  case 7:
+  case CASE_7:
     iVar2 = thunk_FUN_004aab00(param_2);
     break;
-  case 8:
+  case CASE_8:
     iVar2 = thunk_FUN_004aad30(param_2);
     break;
   default:

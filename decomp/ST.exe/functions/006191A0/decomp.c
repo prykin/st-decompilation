@@ -20,7 +20,8 @@ uint __thiscall FUN_006191a0(void *this,uint param_1,int param_2)
     iVar2 = (int)*(short *)((int)this + 0xcd);
     if ((DAT_0080874d == -1) || (in_EAX = 0, *(int *)((int)DAT_00802a88 + 0xf8) == 0))
     goto LAB_00619287;
-    in_EAX = thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+    in_EAX = thunk_FUN_00558c00(DAT_00802a88,
+                                *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                                 (int)*(short *)((int)this + 0xc9),(int)*(short *)((int)this + 0xcb),
                                 &param_2,(int *)&local_8);
     if ((((iVar2 < 0) || (4 < iVar2)) || (param_2 < 0)) ||

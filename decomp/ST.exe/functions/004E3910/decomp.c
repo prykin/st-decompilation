@@ -156,7 +156,7 @@ undefined4 __fastcall FUN_004e3910(int *param_1)
                     sVar2 = DAT_007fb244;
                   } while (iVar10 < DAT_007fb244);
                 }
-                pSVar11 = pSVar11 + 1;
+                pSVar11 = (STSharkC *)((int)&pSVar11->vtable + 1);
               } while ((int)pSVar11 < (int)(short)uVar8);
             }
             if (local_8[3] != 0) {

@@ -71,7 +71,7 @@ uint __thiscall FUN_0065da50(void *this,int param_1,char param_2)
                                     (DAT_007fa174,
                                      CONCAT31((int3)((uint)uVar7 >> 8),
                                               *(undefined1 *)((int)this + 0x24)),
-                                     CONCAT22((short)(uVar2 >> 0x10),*puVar5),1);
+                                     CONCAT22((short)(uVar2 >> 0x10),*puVar5),CASE_1);
           uVar2 = extraout_ECX_01;
           uVar7 = extraout_EDX_02;
           if (piVar6 != (int *)0x0) {

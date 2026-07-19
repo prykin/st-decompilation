@@ -7,8 +7,8 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
 
 {
   code *pcVar1;
-  BehPanelTy *this_00;
-  SpecPanelTy *pSVar2;
+  SpecPanelTy *this_00;
+  undefined1 *puVar2;
   LPSTR pCVar3;
   ushort *puVar4;
   char *pcVar5;
@@ -21,7 +21,7 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   int *piVar10;
   undefined4 uVar11;
   undefined4 uVar12;
-  byte bVar13;
+  Global_sub_00709AF0_param_2Enum GVar13;
   undefined4 uVar14;
   undefined4 uVar15;
   undefined4 uVar16;
@@ -50,14 +50,14 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   int local_30;
   int local_20;
   int *local_1c;
-  BehPanelTy *local_18;
-  SpecPanelTy *local_14;
+  SpecPanelTy *local_18;
+  undefined1 *local_14;
   uint local_10;
   int local_c;
   int local_8;
   
   puVar25 = local_68;
-  local_18 = this;
+  local_18 = (SpecPanelTy *)this;
   for (iVar8 = 0x14; iVar8 != 0; iVar8 = iVar8 + -1) {
     *puVar25 = 0;
     puVar25 = puVar25 + 1;
@@ -90,19 +90,18 @@ void __thiscall BehPanelTy::InitBehPanel(BehPanelTy *this)
   iVar8 = 0x84;
   uVar16 = 3;
   uVar14 = 0x36;
-  DAT_00801678 = (SpecPanelTy *)local_18;
+  DAT_00801678 = local_18;
   pCVar3 = thunk_FUN_00571240(s_BKG_BEHAVIOURW_007c1704,0);
-  SpecPanelTy::InitPanel
-            ((SpecPanelTy *)this_00,pCVar3,uVar14,uVar16,iVar8,iVar19,UVar20,uVar22,uVar24);
-  puVar4 = FUN_00709af0(DAT_00806794,0xb,(byte *)s_BUT_MSK_SI_007c16f4,0xffffffff,0,1,0,
+  SpecPanelTy::InitPanel(this_00,pCVar3,uVar14,uVar16,iVar8,iVar19,UVar20,uVar22,uVar24);
+  puVar4 = FUN_00709af0(DAT_00806794,CASE_B,(byte *)s_BUT_MSK_SI_007c16f4,0xffffffff,0,1,0,
                         (undefined4 *)0x0);
-  *(ushort **)(this_00 + 0x2b8) = puVar4;
-  *(SpecPanelTy *)(this_00 + 0x1af) = (SpecPanelTy)0x2b;
-  *(SpecPanelTy *)(this_00 + 0x1b0) = (SpecPanelTy)0x2c;
-  *(SpecPanelTy *)(this_00 + 0x1b1) = (SpecPanelTy)0x5;
-  *(SpecPanelTy *)(this_00 + 0x1b2) = (SpecPanelTy)0x6;
-  *(SpecPanelTy *)(this_00 + 0x1b3) = (SpecPanelTy)0x4d;
-  *(SpecPanelTy *)(this_00 + 0x1b4) = (SpecPanelTy)0x2d;
+  *(ushort **)&this_00[1].field_0x133 = puVar4;
+  *(undefined1 *)((int)&this_00[1].field_0028 + 2) = 0x2b;
+  *(undefined1 *)((int)&this_00[1].field_0028 + 3) = 0x2c;
+  this_00[1].field_0x2c = 5;
+  this_00[1].field_0x2d = 6;
+  *(undefined1 *)&this_00[1].field_002E = 0x4d;
+  *(undefined1 *)((int)&this_00[1].field_002E + 1) = 0x2d;
   local_10 = local_10 & 0xffffff00;
   do {
     if (DAT_0080874e == '\x03') {
@@ -159,12 +158,12 @@ LAB_004ed7fd:
     }
 switchD_004ed72f_default:
     uVar9 = local_10 & 0xff;
-    iVar8 = local_c + *(int *)(this_00 + 0x3c);
+    iVar8 = local_c + *(int *)&this_00->field_0x3c;
     local_994[uVar9 * 0x5f] = 0;
     local_994[uVar9 * 0x5f + 2] = iVar8;
     iVar8 = DAT_00806734;
-    if (*(int *)(this_00 + 0x5c) != 0) {
-      iVar8 = *(int *)(this_00 + 0x44);
+    if (this_00->field_005C != 0) {
+      iVar8 = *(int *)&this_00->field_0x44;
     }
     puVar25 = (undefined4 *)0x0;
     iVar23 = 0;
@@ -178,44 +177,48 @@ switchD_004ed72f_default:
     iVar8 = 0;
     auStack_88c[uVar9 * 0x5f + 1] = 1;
     if (DAT_0080874e == '\x03') {
-      pcVar5 = thunk_FUN_00529590(*(SpecPanelTy *)(this_00 + uVar9 + 0x1af),0);
+      pcVar5 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
+                                   ((int)&this_00[1].field_0028 + uVar9 + 2),0);
       pCVar3 = thunk_FUN_00571240(pcVar5,iVar8);
       pbVar6 = (byte *)FUN_006f2c00(pCVar3,iVar19,uVar14);
-      bVar13 = 6;
+      GVar13 = CASE_6;
     }
     else {
-      pcVar5 = thunk_FUN_00529590(*(SpecPanelTy *)(this_00 + uVar9 + 0x1af),0);
+      pcVar5 = thunk_FUN_00529590(*(Global_sub_00529590_param_1Enum *)
+                                   ((int)&this_00[1].field_0028 + uVar9 + 2),0);
       pCVar3 = thunk_FUN_00571240(pcVar5,iVar8);
       pbVar6 = (byte *)FUN_006f2c00(pCVar3,iVar19,uVar14);
-      bVar13 = 1;
+      GVar13 = CASE_1;
     }
-    puVar4 = FUN_00709af0(DAT_00806794,bVar13,pbVar6,uVar18,bVar7,iVar21,iVar23,puVar25);
+    puVar4 = FUN_00709af0(DAT_00806794,GVar13,pbVar6,uVar18,bVar7,iVar21,iVar23,puVar25);
     iVar8 = *(int *)(puVar4 + 4);
     local_994[uVar9 * 0x5f + 4] = *(int *)(puVar4 + 2);
     local_994[uVar9 * 0x5f + 5] = iVar8;
-    local_14 = (SpecPanelTy *)(this_00 + uVar9 * 0x27);
-    local_14[0x1ce] = (SpecPanelTy)0x1;
-    iVar8 = thunk_FUN_00525390(*(SpecPanelTy *)(this_00 + uVar9 + 0x1af),0);
+    local_14 = &this_00->field_0x0 + uVar9 * 0x27;
+    local_14[0x1ce] = 1;
+    iVar8 = thunk_FUN_00525390(*(Global_sub_00525390_param_1Enum *)
+                                ((int)&this_00[1].field_0028 + uVar9 + 2),0);
     *(int *)(local_14 + 0x1cf) = iVar8;
-    uVar14 = thunk_FUN_005272b0(*(SpecPanelTy *)(this_00 + uVar9 + 0x1af));
-    pSVar2 = local_14;
+    uVar14 = thunk_FUN_005272b0(*(Global_sub_005272B0_param_1Enum *)
+                                 ((int)&this_00[1].field_0028 + uVar9 + 2));
+    puVar2 = local_14;
     auStack_914[uVar9 * 0x5f] = 0x101;
     auStack_914[uVar9 * 0x5f + 1] = 3;
     auStack_914[uVar9 * 0x5f + 2] = 0x4201;
-    *(undefined4 *)(pSVar2 + 0x1d7) = uVar14;
+    *(undefined4 *)(puVar2 + 0x1d7) = uVar14;
     *(undefined2 *)(aiStack_908 + uVar9 * 0x5f) = 0;
     *(undefined2 *)((int)aiStack_908 + (uVar9 * 0xbe + 1) * 2) = 1;
-    aiStack_908[uVar9 * 0x5f + 1] = (int)(pSVar2 + 0x1ce);
+    aiStack_908[uVar9 * 0x5f + 1] = (int)puVar2 + 0x1ce;
     aiStack_908[uVar9 * 0x5f + 3] = 0;
     aiStack_8e4[uVar9 * 0x5f + 3] = 1;
     aiStack_908[uVar9 * 0x5f + 6] = 0x101;
-    pSVar2[0x1db] = (SpecPanelTy)0x3;
-    iVar8 = *(int *)(pSVar2 + 0x1d7);
+    puVar2[0x1db] = 3;
+    iVar8 = *(int *)(puVar2 + 0x1d7);
     aiStack_908[uVar9 * 0x5f + 7] = 3;
     aiStack_908[uVar9 * 0x5f + 8] = 0x4202;
     *(undefined2 *)(aiStack_8e4 + uVar9 * 0x5f) = 0;
     *(undefined2 *)((int)aiStack_8e4 + (uVar9 * 0xbe + 1) * 2) = 1;
-    aiStack_8e4[uVar9 * 0x5f + 1] = (int)(pSVar2 + 0x1ce);
+    aiStack_8e4[uVar9 * 0x5f + 1] = (int)puVar2 + 0x1ce;
     if (-1 < iVar8) {
       uVar14 = *(undefined4 *)(&DAT_00807e66 + iVar8 * 4);
       auStack_870[uVar9 * 0x5f + 2] = 8;
@@ -234,7 +237,7 @@ LAB_004eda0d:
         if (bVar7 == 0) goto LAB_004eda0d;
         iVar19 = uVar9 - 1;
       }
-      uVar14 = FUN_0070b3a0(*(int *)(this_00 + 0x2b8),iVar19);
+      uVar14 = FUN_0070b3a0(*(int *)&this_00[1].field_0x133,iVar19);
       bVar7 = (byte)local_10;
       auStack_870[iVar8 * 0x5f] = uVar14;
       auStack_870[iVar8 * 0x5f + 1] = 0x3c;
@@ -242,7 +245,7 @@ LAB_004eda0d:
 LAB_004eda47:
     local_10 = CONCAT31(local_10._1_3_,bVar7 + 1);
     if (5 < (byte)(bVar7 + 1)) {
-      local_58 = *(undefined4 *)(this_00 + 8);
+      local_58 = *(undefined4 *)&this_00->field_0x8;
       local_1c = local_994;
       local_30 = (-(uint)(DAT_0080874e != '\x03') & 0xfffffff2) + 0xb20e;
       local_68[0] = 1;
@@ -252,7 +255,7 @@ LAB_004eda47:
       local_50 = 0xb1ff;
       local_34 = 2;
       local_38 = local_58;
-      (**(code **)(**(int **)(this_00 + 0xc) + 8))(9,(SpecPanelTy *)(this_00 + 0x1be),0,local_68,0);
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(9,&this_00[1].field_0x39,0,local_68,0);
       uVar17 = 1;
       iVar8 = *(int *)this_00;
       uVar15 = 0;
@@ -274,7 +277,7 @@ LAB_004eda47:
       uVar24 = 2;
       uVar22 = 0xc0b0;
       uVar16 = 0xc0a0;
-      *(undefined4 *)(this_00 + 0x1c2) = uVar14;
+      *(undefined4 *)&this_00[1].field_0x3d = uVar14;
       pCVar3 = thunk_FUN_00571240(s_BUT_BHOLD_007c16e8,0);
       uVar14 = (**(code **)(iVar8 + 4))
                          (0,0,(-(DAT_0080874e != '\x03') & 6U) + 0x45,
@@ -288,13 +291,13 @@ LAB_004eda47:
       uVar24 = 2;
       uVar22 = 0xc0b1;
       uVar16 = 0xc0a1;
-      *(undefined4 *)(this_00 + 0x1c6) = uVar14;
+      *(undefined4 *)&this_00[1].field_0x41 = uVar14;
       pCVar3 = thunk_FUN_00571240(s_BUT_BAGR_007c16dc,0);
       uVar14 = (**(code **)(iVar8 + 4))
                          (0,0,(-(uint)(DAT_0080874e != '\x03') & 0xfffffffd) + 0xb3,
                           (-(DAT_0080874e != '\x03') & 7U) + 0x5a,0,1,1,pCVar3,uVar16,uVar22,uVar24,
                           uVar12,uVar15,uVar17,uVar11);
-      *(undefined4 *)(this_00 + 0x1ca) = uVar14;
+      *(undefined4 *)&this_00[1].field_0x45 = uVar14;
       g_currentExceptionFrame = local_ac.previous;
       return;
     }

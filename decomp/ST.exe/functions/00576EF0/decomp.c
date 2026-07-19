@@ -8,22 +8,23 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
 {
   code *pcVar1;
   short *psVar2;
-  SystemClassTy *pSVar3;
+  GameSystemC *pGVar3;
   int iVar4;
   undefined4 *puVar5;
   void *pvVar6;
-  int iVar7;
-  undefined4 uVar8;
+  GameSystemCVTable *pGVar7;
+  int iVar8;
+  undefined4 uVar9;
   void *unaff_ESI;
-  char *pcVar9;
+  char *pcVar10;
   InternalExceptionFrame *in_stack_ffffff70;
   undefined4 local_8c [16];
   InternalExceptionFrame local_4c;
-  SystemClassTy *local_8;
+  GameSystemC *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (SystemClassTy *)this;
+  local_8 = this;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,in_stack_ffffff70);
   if (iVar4 == 0) {
     DAT_00806750 = thunk_FUN_0042a290(DAT_00806754,s_3D_MAP_007ca1e4);
@@ -40,29 +41,29 @@ undefined4 __thiscall GameSystemC::InitSystem(GameSystemC *this)
     iVar4 = (int)*psVar2 / 2;
     *(int *)((int)pvVar6 + 0x284) = iVar4;
     *(int *)((int)pvVar6 + 0x288) = iVar4 * iVar4;
-    SystemClassTy::InitSystem(local_8);
+    SystemClassTy::InitSystem((SystemClassTy *)local_8);
     FUN_006e8580(DAT_00807598,DAT_008075a8);
-    pcVar9 = s_scmask_007cac10;
+    pcVar10 = s_scmask_007cac10;
     pvVar6 = DAT_00806770;
     DAT_00806724 = FUN_0070ae60(DAT_00806770,s_scmask_007cac10,0,0,(undefined4 *)0x0,1);
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffff70;
-    iVar4 = Library::MSVCRT::__setjmp3(local_8c,0,pvVar6,pcVar9);
-    pSVar3 = local_8;
+    iVar4 = Library::MSVCRT::__setjmp3(local_8c,0,pvVar6,pcVar10);
+    pGVar3 = local_8;
     if (iVar4 == 0) {
-      puVar5 = FUN_00725550(DAT_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
-      *(undefined4 **)((int)&pSVar3[0x21].objects + 1) = puVar5;
+      pGVar7 = (GameSystemCVTable *)FUN_00725550(DAT_00806760,PTR_s_ANIM_PALETTE_0079b1a8,0);
+      pGVar3[1].vtable = pGVar7;
     }
-    pSVar3[0x21].objectLock = DAT_00808784;
+    *(undefined4 *)&pGVar3->field_0x42c = DAT_00808784;
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar7 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x86,0,iVar4,&DAT_007a4ccc,
+  iVar8 = ReportDebugMessage(s_E____titans_tsystem_cpp_007cab5c,0x86,0,iVar4,&DAT_007a4ccc,
                              s_GameSystemC__InitSystem_007cabf4);
-  if (iVar7 != 0) {
+  if (iVar8 != 0) {
     pcVar1 = (code *)swi(3);
-    uVar8 = (*pcVar1)();
-    return uVar8;
+    uVar9 = (*pcVar1)();
+    return uVar9;
   }
   RaiseInternalException(iVar4,0,s_E____titans_tsystem_cpp_007cab5c,0x86);
   return 0xfffffffc;

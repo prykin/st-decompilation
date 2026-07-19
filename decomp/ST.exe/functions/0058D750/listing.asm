@@ -1,4 +1,4 @@
-FUN_0058d750:
+STSharkC::STSharkC:
 0058D750  56                        PUSH ESI
 0058D751  57                        PUSH EDI
 0058D752  8B F1                     MOV ESI,ECX

@@ -1,28 +1,33 @@
 
-undefined4 * __fastcall FUN_005823d0(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079B78C (store 005823F9)
+   Evidence: final_vptr=0079B78C; returns_this=true; calls_before=2; field_writes_after=8;
+   table_confidence=high */
+
+undefined4 * __thiscall STJellyGunC::STJellyGunC(STJellyGunC *this,undefined4 *param_1)
 
 {
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0(param_1);
-  thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_0079b8ec;
-  *param_1 = &STJellyGunCVTable;
-  puVar2 = (undefined4 *)((int)param_1 + 0x256);
+  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004ab810(&this->field_01D5);
+  this->field_01D5 = &PTR_LAB_0079b8ec;
+  this->vtable = &STJellyGunCVTable;
+  puVar2 = (undefined4 *)&this->field_0x256;
   for (iVar1 = 0xf; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
   *(undefined2 *)puVar2 = 0;
-  *(undefined4 *)((int)param_1 + 0x241) = 0xff;
-  *(undefined4 *)((int)param_1 + 0x231) = 0;
-  *(undefined4 *)((int)param_1 + 0x235) = 0;
-  *(undefined4 *)((int)param_1 + 0x239) = 0;
-  *(undefined4 *)((int)param_1 + 0x23d) = 0;
-  *(undefined4 *)((int)param_1 + 0x247) = 0;
-  *(undefined4 *)((int)param_1 + 0x24b) = 0;
-  *(undefined4 *)((int)param_1 + 0x252) = 0;
-  return param_1;
+  *(undefined4 *)&this->field_0x241 = 0xff;
+  this->field_0231 = 0;
+  this->field_0235 = 0;
+  this->field_0239 = 0;
+  this->field_023D = 0;
+  this->field_0247 = 0;
+  this->field_024B = 0;
+  this->field_0252 = 0;
+  return &this->vtable;
 }
 
