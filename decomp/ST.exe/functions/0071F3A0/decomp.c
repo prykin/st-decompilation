@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\_slist.cpp:65535
+   E:\Ourlib\_slist.cpp
    ListClassTy::GetMessage */
 
 int __thiscall ListClassTy::GetMessage(ListClassTy *this,int *param_1)

@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\_sslider.cpp:65535
+   E:\Ourlib\_sslider.cpp
    SliderClassTy::GetMessage */
 
 undefined4 __thiscall SliderClassTy::GetMessage(SliderClassTy *this,int *param_1)

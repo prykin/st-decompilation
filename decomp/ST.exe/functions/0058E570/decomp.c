@@ -1,7 +1,7 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
-   E:\__titans\Igor\To_shark.cpp:65535
+   E:\__titans\Igor\To_shark.cpp
    STSharkC::LifeShark */
 
 void __thiscall STSharkC::LifeShark(STSharkC *this,int *param_1)

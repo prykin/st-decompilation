@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\_stab.cpp:65535
+   E:\Ourlib\_stab.cpp
    TabClassTy::GetMessage */
 
 int __thiscall TabClassTy::GetMessage(TabClassTy *this,int *param_1)

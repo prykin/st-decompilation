@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\_strack.cpp:65535
+   E:\Ourlib\_strack.cpp
    TrackbarClassTy::GetMessage */
 
 int __thiscall TrackbarClassTy::GetMessage(TrackbarClassTy *this,int *param_1)

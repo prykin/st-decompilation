@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\_sedit.cpp:65535
+   E:\Ourlib\_sedit.cpp
    EditorClassTy::GetMessage */
 
 int __thiscall EditorClassTy::GetMessage(EditorClassTy *this,int *param_1)

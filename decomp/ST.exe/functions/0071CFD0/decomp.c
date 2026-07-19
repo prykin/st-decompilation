@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\_sbutton.cpp:65535
+   E:\Ourlib\_sbutton.cpp
    ButtonClassTy::GetMessage */
 
 int __thiscall ButtonClassTy::GetMessage(ButtonClassTy *this,int *param_1)

@@ -1,14 +1,237 @@
 apply	name	value_hex	value_decimal	function_address	function	confidence	reason	strings
+1	MESS_AIBOSSCLASSTY_5DC5	0x5DC5	24005	00648030	AiBossClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00648030 AiBossClassTy::GetMessage
+1	MESS_AIBOSSCLASSTY_5DC6	0x5DC6	24006	00648030	AiBossClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00648030 AiBossClassTy::GetMessage
+1	MESS_AIBOSSCLASSTY_5DD0	0x5DD0	24016	00648030	AiBossClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00648030 AiBossClassTy::GetMessage
+1	MESS_AIBOSSCLASSTY_7106	0x7106	28934	00648030	AiBossClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00648030 AiBossClassTy::GetMessage
+1	MESS_AIPLRCLASSTY_5D94	0x5D94	23956	0067C7E0	AiPlrClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0067C7E0 AiPlrClassTy::GetMessage
+1	MESS_AIPLRCLASSTY_5D97	0x5D97	23959	0067C7E0	AiPlrClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0067C7E0 AiPlrClassTy::GetMessage
+1	MESS_BEHPANELTY_B200	0xB200	45568	004EE4D0	BehPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EE4D0 BehPanelTy::GetMessage
+1	MESS_BEHPANELTY_B20E	0xB20E	45582	004EE4D0	BehPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EE4D0 BehPanelTy::GetMessage
+1	MESS_BEHPANELTY_C0A0	0xC0A0	49312	004EE4D0	BehPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EE4D0 BehPanelTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
+1	MESS_BEHPANELTY_C0B1	0xC0B1	49329	004EE4D0	BehPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EE4D0 BehPanelTy::GetMessage
+1	MESS_BLDLABPANELTY_C0A4	0xC0A4	49316	004F0210	BldLabPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004F0210 BldLabPanelTy::GetMessage
+1	MESS_BLDLABPANELTY_C0B3	0xC0B3	49331	004F0210	BldLabPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004F0210 BldLabPanelTy::GetMessage
+1	MESS_BLDOBJPANELTY_B206	0xB206	45574	004F1080	BldObjPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004F1080 BldObjPanelTy::GetMessage
+1	MESS_CHOOSEMAPTY_6327	0x6327	25383	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+1	MESS_CHOOSEMAPTY_6942	0x6942	26946	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_CHOOSEMAPTY_6956	0x6956	26966	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage
+1	MESS_COMBOTY_FFFF	0xFFFF	65535	00594440	ComboTy::GetMessage	high	existing_enum_catalog_value	handlers: 00594440 ComboTy::GetMessage
+1	MESS_CONTROLCLASSTY_0053	0x53	83	0072B780	ControlClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0072B780 ControlClassTy::GetMessage
+1	MESS_CPANELTY_B106	0xB106	45318	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage
+1	MESS_CPANELTY_B10D	0xB10D	45325	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage
+1	MESS_CPANELTY_B10E	0xB10E	45326	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage | 005107C0 FrmPanelTy::GetMessage
+1	MESS_CPANELTY_B110	0xB110	45328	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage
+1	MESS_CPANELTY_B164	0xB164	45412	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage
+1	MESS_CPANELTY_B16F	0xB16F	45423	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage
+1	MESS_CPANELTY_B174	0xB174	45428	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage
+1	MESS_CURSORCLASSTY_0009	0x9	9	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_4201	0x4201	16897	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_4202	0x4202	16898	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_4203	0x4203	16899	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A0FF	0xA0FF	41215	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A102	0xA102	41218	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A10F	0xA10F	41231	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A115	0xA115	41237	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A123	0xA123	41251	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A124	0xA124	41252	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A133	0xA133	41267	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A1FF	0xA1FF	41471	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A203	0xA203	41475	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A209	0xA209	41481	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A313	0xA313	41747	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A31C	0xA31C	41756	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A31D	0xA31D	41757	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A326	0xA326	41766	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A32F	0xA32F	41775	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A330	0xA330	41776	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A4FF	0xA4FF	42239	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A500	0xA500	42240	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A501	0xA501	42241	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A502	0xA502	42242	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A504	0xA504	42244	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A507	0xA507	42247	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A50C	0xA50C	42252	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A51A	0xA51A	42266	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A6FF	0xA6FF	42751	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_A708	0xA708	42760	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_CURSORCLASSTY_B0FF	0xB0FF	45311	005449B0	CursorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 005449B0 CursorClassTy::GetMessage
+1	MESS_EDITORCLASSTY_0041	0x41	65	00722410	EditorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00722410 EditorClassTy::GetMessage
+1	MESS_FRMPANELTY_B108	0xB108	45320	005107C0	FrmPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 005107C0 FrmPanelTy::GetMessage
+1	MESS_FRMPANELTY_B10B	0xB10B	45323	005107C0	FrmPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 005107C0 FrmPanelTy::GetMessage
+1	MESS_FRMPANELTY_C0A5	0xC0A5	49317	005107C0	FrmPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 005107C0 FrmPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6150	0x6150	24912	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6151	0x6151	24913	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6156	0x6156	24918	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_63FF	0x63FF	25599	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6506	0x6506	25862	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6901	0x6901	26881	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6906	0x6906	26886	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6941	0x6941	26945	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6949	0x6949	26953	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_694A	0x694A	26954	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+1	MESS_FSGSTY_6957	0x6957	26967	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_698A	0x698A	27018	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_6992	0x6992	27026	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
+1	MESS_FSGSTY_C0A1	0xC0A1	49313	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage
 1	MESS_HITKILL	0x128	296	0044EE30	STBoatC::GetMessage	high	existing_enum_value	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
 1	MESS_ID_ALLCREATE	0x111	273	0044EE30	STBoatC::GetMessage	high	existing_enum_value	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
 0	MESS_ID_CREATE	0x3	3	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
 0	MESS_ID_CREATE	0x111	273	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+0	MESS_ID_CREATE	0x128	296	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+0	MESS_ID_CREATE	0x129	297	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+0	MESS_ID_CREATE	0x4405	17413	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
 0	MESS_ID_MSGOK	0x5	5	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
 0	MESS_ID_MSGOK	0x6105	24837	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6150	24912	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
 0	MESS_ID_MSGOK	0x6151	24913	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6156	24918	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6333	25395	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
 0	MESS_ID_MSGOK	0x63FF	25599	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6506	25862	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x68FF	26879	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6900	26880	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6901	26881	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6902	26882	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6906	26886	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6941	26945	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
 0	MESS_ID_MSGOK	0x6949	26953	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
 0	MESS_ID_MSGOK	0x694A	26954	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6957	26967	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x697F	27007	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
 0	MESS_ID_MSGOK	0x698A	27018	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x6992	27026	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x8160	33120	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0x8166	33126	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0xC0A1	49313	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+0	MESS_ID_MSGOK	0xC0A5	49317	005A4350	FSGSTy::GetMessage	low	ambiguous_function_candidates	FSGSTy::GetMessage(MESS_ID_MSGOK, New Game)
+1	MESS_INPUTCLASSTY_0066	0x66	102	0071CA50	InputClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0071CA50 InputClassTy::GetMessage
+1	MESS_INTERSYSTEMC_B8FF	0xB8FF	47359	00542F40	InterSystemC::GetMessage	high	existing_enum_catalog_value	handlers: 00542F40 InterSystemC::GetMessage
+1	MESS_INTERSYSTEMC_B900	0xB900	47360	00542F40	InterSystemC::GetMessage	high	existing_enum_catalog_value	handlers: 00542F40 InterSystemC::GetMessage
+1	MESS_INTERSYSTEMC_B903	0xB903	47363	00542F40	InterSystemC::GetMessage	high	existing_enum_catalog_value	handlers: 00542F40 InterSystemC::GetMessage
+1	MESS_INTERSYSTEMC_B908	0xB908	47368	00542F40	InterSystemC::GetMessage	high	existing_enum_catalog_value	handlers: 00542F40 InterSystemC::GetMessage
+1	MESS_LISTCLASSTY_005C	0x5C	92	0071F3A0	ListClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0071F3A0 ListClassTy::GetMessage
+1	MESS_MAINMENUTY_6902	0x6902	26882	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage
+1	MESS_MAINMENUTY_6944	0x6944	26948	005B4BB0	MainMenuTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B4BB0 MainMenuTy::GetMessage
+1	MESS_MAINMENUTY_6983	0x6983	27011	005B4BB0	MainMenuTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B4BB0 MainMenuTy::GetMessage | 005C8A40 SettMapTy::GetMessage
+1	MESS_MMSGTY_68FF	0x68FF	26879	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005C8A40 SettMapTy::GetMessage
+1	MESS_MMSGTY_6986	0x6986	27014	005B9330	MMsgTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B9330 MMsgTy::GetMessage
+1	MESS_MREPORTTY_6214	0x6214	25108	005C1A90	MReportTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C1A90 MReportTy::GetMessage
+1	MESS_MREPORTTY_6215	0x6215	25109	005C1A90	MReportTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C1A90 MReportTy::GetMessage
+1	MESS_MREPORTTY_70FF	0x70FF	28927	005C1A90	MReportTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C1A90 MReportTy::GetMessage
+1	MESS_MREPORTTY_B208	0xB208	45576	005C1A90	MReportTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C1A90 MReportTy::GetMessage
+1	MESS_MTASKTY_6212	0x6212	25106	005E4570	MTaskTy::GetMessage	high	existing_enum_catalog_value	handlers: 005E4570 MTaskTy::GetMessage
+1	MESS_MTASKTY_6213	0x6213	25107	005C1A90	MReportTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C1A90 MReportTy::GetMessage | 005E4570 MTaskTy::GetMessage
+1	MESS_MTASKTY_6217	0x6217	25111	005E4570	MTaskTy::GetMessage	high	existing_enum_catalog_value	handlers: 005E4570 MTaskTy::GetMessage
+1	MESS_MTASKTY_6339	0x6339	25401	005E4570	MTaskTy::GetMessage	high	existing_enum_catalog_value	handlers: 005E4570 MTaskTy::GetMessage
+1	MESS_OPTICCLASSC_0104	0x104	260	004A8920	OpticClassC::GetMessage	high	existing_enum_catalog_value	handlers: 004A8920 OpticClassC::GetMessage
+1	MESS_OPTPANELTY_8164	0x8164	33124	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_8165	0x8165	33125	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_A105	0xA105	41221	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_A106	0xA106	41222	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_C001	0xC001	49153	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_C002	0xC002	49154	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_C006	0xC006	49158	00533D10	OptPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 00533D10 OptPanelTy::GetMessage
+1	MESS_OPTPANELTY_C0AE	0xC0AE	49326	004F0210	BldLabPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004F0210 BldLabPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage
+1	MESS_PLAYPANELTY_B209	0xB209	45577	0053AFB0	PlayPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053AFB0 PlayPanelTy::GetMessage | 005C1A90 MReportTy::GetMessage
+1	MESS_PLAYPANELTY_B526	0xB526	46374	0053AFB0	PlayPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053AFB0 PlayPanelTy::GetMessage
+1	MESS_PLAYPANELTY_B52F	0xB52F	46383	0053AFB0	PlayPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053AFB0 PlayPanelTy::GetMessage
+1	MESS_PLAYPANELTY_B536	0xB536	46390	0053AFB0	PlayPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053AFB0 PlayPanelTy::GetMessage
+1	MESS_PRIVIDERTY_631F	0x631F	25375	005BC5E0	PrividerTy::GetMessage	high	existing_enum_catalog_value	handlers: 005BC5E0 PrividerTy::GetMessage
+1	MESS_PRIVIDERTY_6502	0x6502	25858	005BC5E0	PrividerTy::GetMessage	high	existing_enum_catalog_value	handlers: 005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+1	MESS_PRIVIDERTY_693F	0x693F	26943	005BC5E0	PrividerTy::GetMessage	high	existing_enum_catalog_value	handlers: 005BC5E0 PrividerTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_PRIVIDERTY_6952	0x6952	26962	005BC5E0	PrividerTy::GetMessage	high	existing_enum_catalog_value	handlers: 005BC5E0 PrividerTy::GetMessage
+1	MESS_RADIOCLASSTY_005B	0x5B	91	0071E0E0	RadioClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0071E0E0 RadioClassTy::GetMessage
+1	MESS_RESEARCHPANELTY_C0B4	0xC0B4	49332	0053CA80	ResearchPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053CA80 ResearchPanelTy::GetMessage
+1	MESS_SAMPANELTY_B4FF	0xB4FF	46335	0053D4D0	SAMPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053D4D0 SAMPanelTy::GetMessage
+1	MESS_SAMPANELTY_B507	0xB507	46343	0053D4D0	SAMPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053D4D0 SAMPanelTy::GetMessage
+1	MESS_SAMPANELTY_B508	0xB508	46344	0053D4D0	SAMPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053D4D0 SAMPanelTy::GetMessage
+1	MESS_SAMPANELTY_B50F	0xB50F	46351	0053D4D0	SAMPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053D4D0 SAMPanelTy::GetMessage
+1	MESS_SAMPANELTY_B517	0xB517	46359	0053D4D0	SAMPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053D4D0 SAMPanelTy::GetMessage
+1	MESS_SAMPANELTY_B518	0xB518	46360	0053D4D0	SAMPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0053D4D0 SAMPanelTy::GetMessage
+1	MESS_SETTMAPMTY_6340	0x6340	25408	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+1	MESS_SETTMAPMTY_6549	0x6549	25929	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage
+1	MESS_SETTMAPMTY_654A	0x654A	25930	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage
+1	MESS_SETTMAPMTY_654B	0x654B	25931	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage
+1	MESS_SETTMAPSTY_6505	0x6505	25861	005D5560	SettMapSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D5560 SettMapSTy::GetMessage
+1	MESS_SETTMAPTY_6203	0x6203	25091	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SETTMAPTY_6503	0x6503	25859	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SETTMAPTY_6547	0x6547	25927	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SETTMAPTY_6548	0x6548	25928	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SETTMAPTY_654D	0x654D	25933	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SETTMAPTY_657F	0x657F	25983	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SETTMAPTY_658D	0x658D	25997	005C8A40	SettMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C8A40 SettMapTy::GetMessage
+1	MESS_SHARED_0003	0x3	3	00430A90	STAllPlayersC::GetMessage	high	existing_enum_catalog_value	handlers: 00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053D4D0 SAMPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005EA680 WaitTy::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005F10D0 STManBasisC::GetMessage | 005F5F20 STColl3C::GetMessage | 005FB640 STContainerC::GetMessage | 0061D190 STLightC::GetMessage | 00621B50 STMineSetC::GetMessage | 0062E740 STRubbishC::GetMessage | 00630430 STManRuinC::GetMessage | 006406D0 STTorpC::GetMessage | 006461E0 STVolcanoC::GetMessage | 00667D90 AiFltClassTy::GetMessage
+1	MESS_SHARED_0005	0x5	5	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage | 0051FBA0 HelpStringTy::GetMessage | 0052DD20 PopUpTy::GetMessage | 00542F40 InterSystemC::GetMessage | 00593040 CampaignTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D9470 SIDTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_0008	0x8	8	0054E4F0	STPlaySystemC::GetMessage	high	existing_enum_catalog_value	handlers: 0054E4F0 STPlaySystemC::GetMessage | 005DCE90 StartSystemTy::GetMessage
+1	MESS_SHARED_0024	0x24	36	00722410	EditorClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00722410 EditorClassTy::GetMessage | 0072B780 ControlClassTy::GetMessage
+1	MESS_SHARED_0060	0x60	96	004FB060	CPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004FB060 CPanelTy::GetMessage | 0051DDD0 HelpPanelTy::GetMessage | 00521490 InfocPanelTy::GetMessage | 0052BF00 MoneyTy::GetMessage | 005449B0 CursorClassTy::GetMessage | 005C1A90 MReportTy::GetMessage | 0071CFD0 ButtonClassTy::GetMessage | 0072B780 ControlClassTy::GetMessage
+1	MESS_SHARED_0061	0x61	97	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 00722410 EditorClassTy::GetMessage | 00723420 TabClassTy::GetMessage
+1	MESS_SHARED_0064	0x64	100	005908B0	MAdvTy::GetMessage	high	existing_enum_catalog_value	handlers: 005908B0 MAdvTy::GetMessage | 00594440 ComboTy::GetMessage | 005E4570 MTaskTy::GetMessage | 005E5FB0 MTestTy::GetMessage | 0071CFD0 ButtonClassTy::GetMessage | 0071E8B0 ViewerClassTy::GetMessage
+1	MESS_SHARED_0068	0x68	104	0071F3A0	ListClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 0071F3A0 ListClassTy::GetMessage | 007244B0 SliderClassTy::GetMessage
+1	MESS_SHARED_0108	0x108	264	004B9FA0	TLOBaseTy::GetMessage	high	existing_enum_catalog_value	handlers: 004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 005F5F20 STColl3C::GetMessage
+1	MESS_SHARED_010F	0x10F	271	00497E00	STGroupBoatC::GetMessage	high	existing_enum_catalog_value	handlers: 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005F10D0 STManBasisC::GetMessage | 005F27C0 STBHEShellC::GetMessage | 005F5F20 STColl3C::GetMessage | 00601F80 STDestC::GetMessage | 00603740 STExplosion::GetMessage | 00618C00 STJumpMineC::GetMessage | 0061D190 STLightC::GetMessage | 00627EB0 STParticleC::GetMessage | 00630430 STManRuinC::GetMessage | 006461E0 STVolcanoC::GetMessage | 00648030 AiBossClassTy::GetMessage | 00667D90 AiFltClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+1	MESS_SHARED_0110	0x110	272	0057BF60	STFishC::GetMessage	high	existing_enum_catalog_value	handlers: 0057BF60 STFishC::GetMessage | 00583270 STJellyGunC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005FB640 STContainerC::GetMessage | 00621B50 STMineSetC::GetMessage
+1	MESS_SHARED_0129	0x129	297	0044EE30	STBoatC::GetMessage	high	existing_enum_catalog_value	handlers: 0044EE30 STBoatC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005FB640 STContainerC::GetMessage
+1	MESS_SHARED_440F	0x440F	17423	00578630	STCrabC::GetMessage	high	existing_enum_catalog_value	handlers: 00578630 STCrabC::GetMessage | 00589C10 STOctopusC::GetMessage
+1	MESS_SHARED_5DD5	0x5DD5	24021	00648030	AiBossClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00648030 AiBossClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+1	MESS_SHARED_5DEC	0x5DEC	24044	00648030	AiBossClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00648030 AiBossClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage
+1	MESS_SHARED_6105	0x6105	24837	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_610A	0x610A	24842	0056FA60	STAppC::GetMessage	high	existing_enum_catalog_value	handlers: 0056FA60 STAppC::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_611F	0x611F	24863	0056FA60	STAppC::GetMessage	high	existing_enum_catalog_value	handlers: 0056FA60 STAppC::GetMessage | 005BC5E0 PrividerTy::GetMessage
+1	MESS_SHARED_6120	0x6120	24864	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
+1	MESS_SHARED_6121	0x6121	24865	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_6200	0x6200	25088	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005E4570 MTaskTy::GetMessage
+1	MESS_SHARED_6326	0x6326	25382	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+1	MESS_SHARED_6332	0x6332	25394	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_6334	0x6334	25396	005E4570	MTaskTy::GetMessage	high	existing_enum_catalog_value	handlers: 005E4570 MTaskTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_6341	0x6341	25409	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
+1	MESS_SHARED_64FF	0x64FF	25855	005BC5E0	PrividerTy::GetMessage	high	existing_enum_catalog_value	handlers: 005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+1	MESS_SHARED_6501	0x6501	25857	005BC5E0	PrividerTy::GetMessage	high	existing_enum_catalog_value	handlers: 005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+1	MESS_SHARED_6504	0x6504	25860	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+1	MESS_SHARED_6900	0x6900	26880	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage | 005C1A90 MReportTy::GetMessage
+1	MESS_SHARED_6940	0x6940	26944	00593040	CampaignTy::GetMessage	high	existing_enum_catalog_value	handlers: 00593040 CampaignTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_6951	0x6951	26961	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_697F	0x697F	27007	00593040	CampaignTy::GetMessage	high	existing_enum_catalog_value	handlers: 00593040 CampaignTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005D9470 SIDTy::GetMessage
+1	MESS_SHARED_6980	0x6980	27008	005C1A90	MReportTy::GetMessage	high	existing_enum_catalog_value	handlers: 005C1A90 MReportTy::GetMessage | 005D9470 SIDTy::GetMessage
+1	MESS_SHARED_69FF	0x69FF	27135	005B4BB0	MainMenuTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B4BB0 MainMenuTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+1	MESS_SHARED_6A7F	0x6A7F	27263	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+1	MESS_SHARED_6AFF	0x6AFF	27391	005D1400	SettMapMTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+1	MESS_SHARED_8160	0x8160	33120	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005D9470 SIDTy::GetMessage
+1	MESS_SHARED_8166	0x8166	33126	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage
+1	MESS_SHARED_B1FF	0xB1FF	45567	004EE4D0	BehPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EE4D0 BehPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
+1	MESS_SHARED_B202	0xB202	45570	004EF6D0	BldBoatPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EF6D0 BldBoatPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
+1	MESS_SHARED_BFFF	0xBFFF	49151	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage
+1	MESS_SHARED_C000	0xC000	49152	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage
+1	MESS_SHARED_C09F	0xC09F	49311	004EE4D0	BehPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004EE4D0 BehPanelTy::GetMessage | 004F0210 BldLabPanelTy::GetMessage | 005107C0 FrmPanelTy::GetMessage | 00522E80 IntercomPanelTy::GetMessage | 0053CA80 ResearchPanelTy::GetMessage
+1	MESS_SHARED_C0A2	0xC0A2	49314	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_SHARED_C0A3	0xC0A3	49315	004F0210	BldLabPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 004F0210 BldLabPanelTy::GetMessage | 0053CA80 ResearchPanelTy::GetMessage
+1	MESS_SHARED_C0B5	0xC0B5	49333	0051DDD0	HelpPanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 0051DDD0 HelpPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage
+1	MESS_SIDTY_6981	0x6981	27009	005D9470	SIDTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D9470 SIDTy::GetMessage
+1	MESS_SIDTY_8161	0x8161	33121	005D9470	SIDTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D9470 SIDTy::GetMessage
+1	MESS_SIDTY_8163	0x8163	33123	005D9470	SIDTy::GetMessage	high	existing_enum_catalog_value	handlers: 005D9470 SIDTy::GetMessage
+1	MESS_STAPPC_6122	0x6122	24866	0056FA60	STAppC::GetMessage	high	existing_enum_catalog_value	handlers: 0056FA60 STAppC::GetMessage
+1	MESS_STAPPC_7100	0x7100	28928	0056FA60	STAppC::GetMessage	high	existing_enum_catalog_value	handlers: 0056FA60 STAppC::GetMessage
+1	MESS_STARTSYSTEMTY_6102	0x6102	24834	005DCE90	StartSystemTy::GetMessage	high	existing_enum_catalog_value	handlers: 005DCE90 StartSystemTy::GetMessage
+1	MESS_STARTSYSTEMTY_6103	0x6103	24835	005DCE90	StartSystemTy::GetMessage	high	existing_enum_catalog_value	handlers: 005DCE90 StartSystemTy::GetMessage
+1	MESS_STARTSYSTEMTY_6104	0x6104	24836	005DCE90	StartSystemTy::GetMessage	high	existing_enum_catalog_value	handlers: 005DCE90 StartSystemTy::GetMessage
+1	MESS_STARTSYSTEMTY_6124	0x6124	24868	005DCE90	StartSystemTy::GetMessage	high	existing_enum_catalog_value	handlers: 005DCE90 StartSystemTy::GetMessage
+1	MESS_STARTSYSTEMTY_633F	0x633F	25407	005DCE90	StartSystemTy::GetMessage	high	existing_enum_catalog_value	handlers: 005DCE90 StartSystemTy::GetMessage
+1	MESS_STBOATC_4405	0x4405	17413	0044EE30	STBoatC::GetMessage	high	existing_enum_catalog_value	handlers: 0044EE30 STBoatC::GetMessage
+1	MESS_STOCTOPUSC_0112	0x112	274	00589C10	STOctopusC::GetMessage	high	existing_enum_catalog_value	handlers: 00589C10 STOctopusC::GetMessage
+1	MESS_STPLAYSYSTEMC_44FF	0x44FF	17663	0054E4F0	STPlaySystemC::GetMessage	high	existing_enum_catalog_value	handlers: 0054E4F0 STPlaySystemC::GetMessage
+1	MESS_STSPRGAMEOBJC_0109	0x109	265	0041E530	STSprGameObjC::GetMessage	high	existing_enum_catalog_value	handlers: 0041E530 STSprGameObjC::GetMessage
+1	MESS_STSPRGAMEOBJC_0113	0x113	275	0041E530	STSprGameObjC::GetMessage	high	existing_enum_catalog_value	handlers: 0041E530 STSprGameObjC::GetMessage
+1	MESS_STSPRGAMEOBJC_4403	0x4403	17411	0041E530	STSprGameObjC::GetMessage	high	existing_enum_catalog_value	handlers: 0041E530 STSprGameObjC::GetMessage
+1	MESS_SYSTEMCLASSTY_000A	0xA	10	006E5F00	SystemClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 006E5F00 SystemClassTy::GetMessage
+1	MESS_TABCLASSTY_002D	0x2D	45	00723420	TabClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00723420 TabClassTy::GetMessage
+1	MESS_TLOEMBRYOTY_4401	0x4401	17409	004D55B0	TLOEmbryoTy::GetMessage	high	existing_enum_catalog_value	handlers: 004D55B0 TLOEmbryoTy::GetMessage
 0	MESS_TORPHIT	0x3	3	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
 0	MESS_TORPHIT	0x111	273	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+0	MESS_TORPHIT	0x128	296	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+0	MESS_TORPHIT	0x129	297	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+0	MESS_TORPHIT	0x4405	17413	0044EE30	STBoatC::GetMessage	low	ambiguous_function_candidates	STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL | STBoatC::GetMessage MESS_ID_ALLCREATE data.lname!=0 | STBoatC::GetMessage MESS_ID_ALLCREATE sloi.name | STBoatC::GetMessage MESS_ID_CREATE FLAG_BASE PairObjectAvail()==FALSE | STBoatC::GetMessage MESS_TORPHIT data.lname!=0 ptr=NULL
+1	MESS_TRACKBARCLASSTY_0028	0x28	40	00725020	TrackbarClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00725020 TrackbarClassTy::GetMessage
+1	MESS_TRACKBARCLASSTY_0062	0x62	98	00725020	TrackbarClassTy::GetMessage	high	existing_enum_catalog_value	handlers: 00725020 TrackbarClassTy::GetMessage
+1	MESS_TRADEPANELTY_B20C	0xB20C	45580	005522A0	TradePanelTy::GetMessage	high	existing_enum_catalog_value	handlers: 005522A0 TradePanelTy::GetMessage
+1	MESS_WAITTY_6333	0x6333	25395	005A4350	FSGSTy::GetMessage	high	existing_enum_catalog_value	handlers: 005A4350 FSGSTy::GetMessage | 005EA680 WaitTy::GetMessage
+1	MESS_WAITTY_6335	0x6335	25397	005B0BA0	ChooseMapTy::GetMessage	high	existing_enum_catalog_value	handlers: 005B0BA0 ChooseMapTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
