@@ -225,7 +225,7 @@ switchD_004ceb68_caseD_32:
     *(undefined4 *)((int)this + 0x4d4) = *(undefined4 *)(local_24 + 0x18);
     *(undefined4 *)((int)this + 0x4d8) = 0;
     if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
-    goto LAB_004cf029;
+    goto cf_common_exit_004CF029;
     thunk_FUN_0052af50(0,*(float *)((int)this + 0x1f9),*(float *)((int)this + 0x1fd));
     uVar6 = thunk_FUN_004406c0(*(char *)((int)this + 0x24));
     uVar6 = uVar6 & 0xff;
@@ -236,14 +236,14 @@ switchD_004ceb68_caseD_32:
     else {
       if (uVar6 == 2) {
         (**(code **)(*(int *)this + 0x90))(6,0x66);
-        goto LAB_004cf029;
+        goto cf_common_exit_004CF029;
       }
-      if (uVar6 != 3) goto LAB_004cf029;
+      if (uVar6 != 3) goto cf_common_exit_004CF029;
       iVar4 = *(int *)this;
       uVar12 = 0x67;
     }
     (**(code **)(iVar4 + 0x90))(6,uVar12);
-LAB_004cf029:
+cf_common_exit_004CF029:
     *(undefined4 *)((int)this + 0x4d0) = 4;
     *(undefined4 *)((int)this + 0x3d0) = 5;
     TLOBaseTy::RotateSpr(this,1);

@@ -1768,7 +1768,7 @@ LAB_00545fd0:
 00545FEE  6A 00                     PUSH 0x0
 00545FF0  51                        PUSH ECX
 00545FF1  E8 EA FE 16 00            CALL 0x006b5ee0
-LAB_00545ff6:
+CursorClassTy::GetMessage::cf_common_exit_00545FF6:
 00545FF6  8B 8B CA 04 00 00         MOV ECX,dword ptr [EBX + 0x4ca]
 00545FFC  81 F9 20 03 00 00         CMP ECX,0x320
 00546002  0F 8F 32 1C 00 00         JG 0x00547c3a

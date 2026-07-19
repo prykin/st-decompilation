@@ -642,7 +642,7 @@ switchD_00724504::caseD_2c:
 00724BA2  E8 B9 F7 FF FF            CALL 0x00724360
 00724BA7  8D 57 28                  LEA EDX,[EDI + 0x28]
 00724BAA  52                        PUSH EDX
-LAB_00724bab:
+SliderClassTy::GetMessage::cf_common_exit_00724BAB:
 00724BAB  8B CF                     MOV ECX,EDI
 00724BAD  E8 6E 14 FC FF            CALL 0x006e6020
 LAB_00724bb2:

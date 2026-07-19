@@ -161,11 +161,11 @@ void __cdecl FUN_00645880(int *param_1)
         iVar4 = 0x41;
 LAB_00645914:
         iVar2 = thunk_FUN_004e60d0(iVar2,iVar4);
-        if (iVar2 < 1) goto LAB_00645953;
+        if (iVar2 < 1) goto cf_common_exit_00645953;
       }
     }
     else {
-      if (uVar1 != 3) goto LAB_00645953;
+      if (uVar1 != 3) goto cf_common_exit_00645953;
       iVar2 = thunk_FUN_004e60d0(*param_1,0x4b);
       if (iVar2 < 1) {
         iVar2 = *param_1;
@@ -176,7 +176,7 @@ LAB_00645914:
 LAB_00645950:
     local_6 = 1;
   }
-LAB_00645953:
+cf_common_exit_00645953:
   local_48 = (undefined2)param_1[2];
   local_46 = *(undefined2 *)((int)param_1 + 10);
   local_44 = (undefined2)param_1[3];

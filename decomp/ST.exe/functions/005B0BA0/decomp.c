@@ -87,7 +87,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       *(undefined4 *)&this_01->field_0x4d = 0x6102;
       *(undefined4 *)&this_01->field_0x51 = *(undefined4 *)(param_1 + 0x14);
       thunk_FUN_005b66e0(this_01);
-      goto switchD_005b0c37_caseD_1;
+      goto cf_common_exit_005B2053;
     }
     if (0x6327 < uVar14) {
       if (uVar14 < 0x6341) {
@@ -127,7 +127,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       else if (uVar14 == 0x6940) {
         thunk_FUN_005ae950(this_01);
       }
-      goto switchD_005b0c37_caseD_1;
+      goto cf_common_exit_005B2053;
     }
     if (uVar14 == 0x6327) {
       piVar5 = *(int **)(param_1 + 0x14);
@@ -166,7 +166,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
       puVar11 = (uint *)FUN_006b0140(UVar19,DAT_00807618);
       ccFntTy::WrStr((ccFntTy *)DAT_0081176c->field_0034,puVar11,iVar10,iVar24,uVar9);
       FUN_006b35d0(DAT_008075a8,*(uint *)&this_01[1].field_0x227);
-      goto switchD_005b0c37_caseD_1;
+      goto cf_common_exit_005B2053;
     }
     if (uVar14 < 0x6106) {
       if (uVar14 == 0x6105) {
@@ -193,7 +193,7 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
           PaintChooseMap(this_01,'\0');
         }
       }
-      goto switchD_005b0c37_caseD_1;
+      goto cf_common_exit_005B2053;
     }
     if (uVar14 < 0x6122) {
       if (uVar14 < 0x6120) {
@@ -213,9 +213,9 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
         *(undefined4 *)&this_01->field_0x55 = *(undefined4 *)(param_1 + 0x18);
         thunk_FUN_005b66e0(this_01);
       }
-      goto switchD_005b0c37_caseD_1;
+      goto cf_common_exit_005B2053;
     }
-    if (uVar14 != 0x6326) goto switchD_005b0c37_caseD_1;
+    if (uVar14 != 0x6326) goto cf_common_exit_005B2053;
     piVar5 = *(int **)(param_1 + 0x14);
     switch(this_01->field_1A5F) {
     case CASE_1:
@@ -227,10 +227,10 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
         this_01->field_1A5F = CASE_2;
       }
       DAT_0081176c->field_02EB = (char)*piVar5;
-      if (*(int *)(this_01 + 1) == 0) goto switchD_005b0d25_caseD_3;
+      if (*(int *)(this_01 + 1) == 0) goto cf_common_exit_005B0DCE;
       goto LAB_005b0dc0;
     default:
-      goto switchD_005b0d25_caseD_3;
+      goto cf_common_exit_005B0DCE;
     case CASE_4:
     case CASE_5:
       if (*piVar5 == 1) {
@@ -261,12 +261,12 @@ undefined4 __thiscall ChooseMapTy::GetMessage(ChooseMapTy *this,int param_1)
 LAB_005b0dc0:
       PrepFiles(this_01,*(uint *)&this_01[1].field_0x233);
     }
-switchD_005b0d25_caseD_3:
+cf_common_exit_005B0DCE:
     thunk_FUN_005b6730(this_01,10,'\x01',-1);
-    goto switchD_005b0c37_caseD_1;
+    goto cf_common_exit_005B2053;
   }
   if (0x6956 < uVar14) {
-    if (0xc0a2 < uVar14) goto switchD_005b0c37_caseD_1;
+    if (0xc0a2 < uVar14) goto cf_common_exit_005B2053;
     if (uVar14 != 0xc0a2) {
       switch(uVar14) {
       case 0x8160:
@@ -465,7 +465,7 @@ LAB_005b1b6c:
                      *(uint *)&this_01[1].field_0x13a,*(uint *)&this_01[1].field_0x14e,uVar14);
         }
       }
-      goto switchD_005b0c37_caseD_1;
+      goto cf_common_exit_005B2053;
     }
     iVar10 = thunk_FUN_005ddb40(*(int *)&this_01->field_0x1a5b);
     if (iVar10 == 0) {
@@ -563,17 +563,17 @@ LAB_005b2011:
     *(undefined4 *)&this_01->field_0x31 = *(undefined4 *)(*(int *)&this_01->field_0x1a5b + 0x686);
     FUN_006e6080(this_01,2,*(undefined4 *)(*(int *)&this_01->field_0x1a5b + 0x54c),
                  (undefined4 *)&this_01->field_0x1d);
-    goto switchD_005b0c37_caseD_1;
+    goto cf_common_exit_005B2053;
   }
   if (uVar14 == 0x6956) {
     if ((((this_01->field_0x65 != '\x01') || (CVar3 = this_01->field_1A5F, CVar3 == CASE_C)) ||
         (CVar3 == CASE_4)) || ((CVar3 == CASE_5 || (CVar3 == CASE_13))))
-    goto switchD_005b0c37_caseD_1;
+    goto cf_common_exit_005B2053;
     uVar9 = *(undefined4 *)&this_01[1].field_0xc;
     *(undefined4 *)&this_01->field_0x2d = 0x26;
     FUN_006e6080(this_01,2,uVar9,(undefined4 *)&this_01->field_0x1d);
     if (*(uint *)(*(int *)&this_01[1].field_0x23f + 8) <= *(uint *)&this_01->field_0x31)
-    goto switchD_005b0c37_caseD_1;
+    goto cf_common_exit_005B2053;
     if (*(int *)&this_01[1].field_0x4 != 0) {
       ShowDescription(this_01,*(uint *)&this_01[1].field_0x233);
       *(undefined4 *)&this_01[1].field_0x4 = 0;
@@ -622,7 +622,7 @@ LAB_005b2011:
     wsprintfA(&DAT_0080ed16,s__s_s__s_007cc8dc,&this_01[1].field_0x347,uVar9,&DAT_0080f33a);
     DAT_008087a0 = CASE_2|CASE_1;
     iVar10 = thunk_FUN_0056e9e0(&DAT_00807620,1);
-    if (iVar10 == 0) goto switchD_005b0c37_caseD_1;
+    if (iVar10 == 0) goto cf_common_exit_005B2053;
     uVar14 = 0xffffffff;
     pcVar16 = &DAT_00807784;
     do {
@@ -738,7 +738,7 @@ LAB_005b1644:
     if (pMVar13 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(pMVar13,1,0,1);
     }
-    goto switchD_005b0c37_caseD_1;
+    goto cf_common_exit_005B2053;
   }
   switch(uVar14) {
   case 0x6943:
@@ -1343,7 +1343,7 @@ LAB_005b1108:
       MMsgTy::HidePanel(pMVar13,1,0,1);
     }
   }
-switchD_005b0c37_caseD_1:
+cf_common_exit_005B2053:
   g_currentExceptionFrame = local_84.previous;
   uVar9 = MMObjTy::GetMessage((MMObjTy *)this_01,param_1);
   return uVar9;

@@ -100,7 +100,7 @@ void __fastcall FUN_00581200(int param_1)
         if ((bVar16) && (iVar13 = (**(code **)(*piVar4 + 0xf8))(), iVar9 = local_18, iVar13 != 0)) {
           *(int **)(*(int *)(iVar11 + 0x20b) + local_1c * 4) = piVar4;
           local_1c = local_1c + 1;
-          if (*(int *)(iVar11 + 0x1fd) <= local_1c) goto LAB_00581775;
+          if (*(int *)(iVar11 + 0x1fd) <= local_1c) goto cf_break_loop_00581775;
         }
       }
       local_18 = iVar9 + 1;
@@ -115,7 +115,7 @@ void __fastcall FUN_00581200(int param_1)
     local_34 = 3;
     local_4c = DAT_007cb2dc;
     local_38 = DAT_007cb2e8;
-LAB_005814a2:
+cf_continue_loop_005814A2:
     iVar9 = iVar9 + local_4c;
     local_10 = local_10 + local_38;
     sVar12 = (short)iVar9 - (short)local_28;
@@ -148,7 +148,7 @@ LAB_00581518:
       local_4c = (&DAT_007cb2dc)[local_30];
       local_38 = (&DAT_007cb2dc)[local_34];
       local_14 = iVar9;
-      if (bVar16) goto LAB_005814a2;
+      if (bVar16) goto cf_continue_loop_005814A2;
 LAB_00581545:
       iVar9 = local_14;
       if (((((iVar10 < local_14) || (local_24 < local_10)) || (local_14 < (int)local_40)) ||
@@ -163,7 +163,7 @@ LAB_00581545:
          ((((piVar4[8] != 1000 && (piVar4[8] != 0x14)) ||
            ((iVar11 = (**(code **)(*piVar4 + 0xf0))(), iVar11 == 0 || (7 < (uint)piVar4[9])))) ||
           ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[piVar4[9] * 0x51]))))))
-      goto LAB_005814a2;
+      goto cf_continue_loop_005814A2;
       bVar1 = *(byte *)(piVar4 + 9);
       bVar2 = *(byte *)(local_c + 0x24);
       iVar11 = *(int *)(local_c + 0x10);
@@ -204,16 +204,16 @@ LAB_00581728:
       if ((bVar16) && (iVar11 = (**(code **)(*piVar4 + 0xf8))(), iVar11 != 0)) {
         local_1c = local_1c + 1;
         *(int **)(*(int *)(local_c + 0x20b) + -4 + local_1c * 4) = piVar4;
-        if (*(int *)(local_c + 0x1fd) <= local_1c) goto LAB_00581775;
+        if (*(int *)(local_c + 0x1fd) <= local_1c) goto cf_break_loop_00581775;
       }
-      goto LAB_005814a2;
+      goto cf_continue_loop_005814A2;
     }
     local_44 = local_44 + 1;
     local_30 = 0;
     if (local_44 <= iVar14) goto LAB_00581518;
     local_18 = local_18 + 1;
     if (4 < local_18) {
-LAB_00581775:
+cf_break_loop_00581775:
       iVar14 = *(int *)(local_c + 0x1fd);
       while (iVar14 = iVar14 + -1, -1 < iVar14) {
         iVar9 = *(int *)(*(int *)(local_c + 0x207) + iVar14 * 4);

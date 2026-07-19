@@ -408,7 +408,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
     iVar18 = 0;
     if (local_44[6] < 1) {
       iVar3 = local_50;
-      if (param_6 != 0) goto LAB_0041098f;
+      if (param_6 != 0) goto cf_common_exit_0041098F;
       local_44[7] = 0;
       iVar3 = DAT_007f4d3c;
       if (0 < DAT_007f4d14) goto LAB_00410872;
@@ -422,7 +422,7 @@ int FUN_0040fc40(int param_1,int param_2,int param_3,int param_4,int param_5,int
            (((param_2 < DAT_007f4d30 && (-1 < param_3)) && (param_3 < DAT_007f4d34))))));
 LAB_004109fd:
   iVar3 = -4;
-  goto LAB_0041098f;
+  goto cf_common_exit_0041098F;
 LAB_00410872:
   do {
     local_68 = *(int *)(iVar18 + iVar3);
@@ -450,7 +450,7 @@ LAB_00410872:
 LAB_00410987:
   FUN_0040eb90();
   iVar3 = local_50;
-LAB_0041098f:
+cf_common_exit_0041098F:
   if (iVar3 == 0) {
     ExceptionList = local_14;
     return 0;

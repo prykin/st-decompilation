@@ -211,12 +211,12 @@ LAB_005d0391:
             if (local_14 < uVar10) {
 LAB_005d045a:
               pcVar8 = (char *)(*(int *)(local_18 + 8) * local_14 + *(int *)(local_18 + 0x1c));
-              if (pcVar8 == (char *)0x0) goto LAB_005d0486;
+              if (pcVar8 == (char *)0x0) goto cf_continue_loop_005D0486;
               if (*pcVar8 == '\0') {
                 if (pcVar8[4] == '\x03') {
                   local_6 = local_6 + '\x01';
                 }
-                if (pcVar8[4] != '\x02') goto LAB_005d0486;
+                if (pcVar8[4] != '\x02') goto cf_continue_loop_005D0486;
                 if (*(byte **)(pcVar7 + 0x50) != (byte *)0x0) {
                   FUN_006ae110(*(byte **)(pcVar7 + 0x50));
                 }
@@ -270,7 +270,7 @@ LAB_005d048e:
     RaiseInternalException(iVar6,0,s_E____titans_Start_settmobj_cpp_007cd258,0x563);
   }
   return;
-LAB_005d0486:
+cf_continue_loop_005D0486:
   local_14 = local_14 + 1;
   if (uVar10 <= local_14) goto LAB_005d048e;
   goto LAB_005d045a;

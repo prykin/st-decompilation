@@ -1045,7 +1045,7 @@ LAB_0071dda4:
 0071DDB8  EB 06                     JMP 0x0071ddc0
 LAB_0071ddba:
 0071DDBA  89 B3 C0 01 00 00         MOV dword ptr [EBX + 0x1c0],ESI
-switchD_0071d549::caseD_1:
+ButtonClassTy::GetMessage::cf_common_exit_0071DDC0:
 0071DDC0  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 0071DDC3  85 C0                     TEST EAX,EAX
 0071DDC5  74 17                     JZ 0x0071ddde

@@ -46,7 +46,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   DAT_007f4d6c = (undefined4 *)0x0;
   ExceptionList = &local_14;
   puVar2 = &stack0xffffff3c;
-  if (param_4 < 1) goto LAB_004286d0;
+  if (param_4 < 1) goto cf_common_join_004286D0;
   if (param_5 < 0) {
     param_5 = 0;
   }
@@ -54,7 +54,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   puVar2 = &stack0xffffff3c;
   if ((param_4 < param_5) ||
      (_DAT_007f4d70 = param_4, ExceptionList = &local_14, puVar2 = &stack0xffffff3c,
-     param_4 - param_5 < 100)) goto LAB_004286d0;
+     param_4 - param_5 < 100)) goto cf_common_join_004286D0;
   ExceptionList = &local_14;
   iVar3 = FUN_006e25d0(this,local_54);
   iVar4 = 1;
@@ -86,7 +86,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
     }
   }
   puVar2 = local_1c;
-  if (iVar4 == 0) goto LAB_004286d0;
+  if (iVar4 == 0) goto cf_common_join_004286D0;
   dVar1 = (double)(param_1 / (float)*(double *)((int)this + 0x368));
   Library::MSVCRT::FUN_0072e150(SUB84(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));
   lVar12 = Library::MSVCRT::__ftol();
@@ -113,7 +113,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
   }
   puVar2 = local_1c;
   if ((local_34 == local_2c || local_34 - local_2c < 0) || (iVar3 == iVar4 || iVar3 - iVar4 < 0))
-  goto LAB_004286d0;
+  goto cf_common_join_004286D0;
   Library::MSVCRT::FUN_0072e150
             (SUB84((double)(param_3 * _DAT_00790538),0),
              (uint)((ulonglong)(double)(param_3 * _DAT_00790538) >> 0x20));
@@ -291,7 +291,7 @@ FUN_00427f20(void *this,float param_1,float param_2,float param_3,int param_4,in
     local_30 = thunk_FUN_00427bb0(this,iVar4,iVar3,0);
 joined_r0x004286bb:
     puVar2 = local_1c;
-    if (local_30 != 0) goto LAB_004286d0;
+    if (local_30 != 0) goto cf_common_join_004286D0;
   }
   else {
     iVar6 = -1 - param_5;
@@ -300,7 +300,7 @@ joined_r0x004286bb:
     }
     if ((iVar4 <= iVar6) &&
        (local_30 = thunk_FUN_00427bb0(this,iVar4,iVar6,0), puVar2 = local_1c, local_30 != 0))
-    goto LAB_004286d0;
+    goto cf_common_join_004286D0;
     iVar6 = -param_5;
     if (-param_5 < iVar4) {
       iVar6 = iVar4;
@@ -312,7 +312,7 @@ joined_r0x004286bb:
     if ((iVar6 <= iVar8) &&
        ((local_30 = thunk_FUN_00427bb0(this,iVar6,iVar8,-1), puVar2 = local_1c, local_30 != 0 ||
         (local_30 = thunk_FUN_00427bb0(this,iVar6,iVar8,1), puVar2 = local_1c, local_30 != 0))))
-    goto LAB_004286d0;
+    goto cf_common_join_004286D0;
     iVar6 = param_5 + 1;
     if (param_5 + 1 < iVar4) {
       iVar6 = iVar4;
@@ -327,7 +327,7 @@ joined_r0x004286bb:
     FUN_006ab060(&DAT_007f4d6c);
     puVar2 = local_1c;
   }
-LAB_004286d0:
+cf_common_join_004286D0:
   local_1c = puVar2;
   iVar4 = 0;
   if (local_30 == 0) {

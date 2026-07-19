@@ -469,7 +469,7 @@ LAB_0058c380:
 0058C38A  6A 0E                     PUSH 0xe
 LAB_0058c38c:
 0058C38C  E8 D3 4C E7 FF            CALL 0x00401064
-switchD_0058bec9::caseD_1:
+FUN_0058bd90::cf_common_exit_0058C391:
 0058C391  6A 0E                     PUSH 0xe
 0058C393  8D 8E D5 01 00 00         LEA ECX,[ESI + 0x1d5]
 0058C399  E8 1E 6D E7 FF            CALL 0x004030bc

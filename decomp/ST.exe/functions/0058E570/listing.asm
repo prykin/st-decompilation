@@ -263,7 +263,7 @@ LAB_0058e87e:
 0058E919  E8 46 59 E7 FF            CALL 0x00404264
 0058E91E  8B CB                     MOV ECX,EBX
 0058E920  E8 6B 41 E7 FF            CALL 0x00402a90
-LAB_0058e925:
+STSharkC::LifeShark::cf_common_exit_0058E925:
 0058E925  8B 86 57 02 00 00         MOV EAX,dword ptr [ESI + 0x257]
 0058E92B  83 F8 04                  CMP EAX,0x4
 0058E92E  0F 84 B4 00 00 00         JZ 0x0058e9e8

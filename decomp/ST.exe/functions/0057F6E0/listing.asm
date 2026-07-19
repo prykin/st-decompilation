@@ -285,7 +285,7 @@ LAB_0057fa8d:
 0057FA9A  89 4D F0                  MOV dword ptr [EBP + -0x10],ECX
 0057FA9D  0F 8E 5B FE FF FF         JLE 0x0057f8fe
 0057FAA3  EB 07                     JMP 0x0057faac
-LAB_0057faa5:
+STDcResourcC::CreateRes::cf_break_loop_0057FAA5:
 0057FAA5  C7 45 FC 00 00 00 00      MOV dword ptr [EBP + -0x4],0x0
 LAB_0057faac:
 0057FAAC  83 7D F8 08               CMP dword ptr [EBP + -0x8],0x8

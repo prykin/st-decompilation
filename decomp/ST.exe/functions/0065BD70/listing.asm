@@ -576,7 +576,7 @@ LAB_0065c53e:
 LAB_0065c561:
 0065C561  C7 86 63 05 00 00 00 00 00 00  MOV dword ptr [ESI + 0x563],0x0
 0065C56B  E9 EB 00 00 00            JMP 0x0065c65b
-LAB_0065c570:
+FUN_0065bd70::cf_common_exit_0065C570:
 0065C570  C7 86 57 05 00 00 FF 00 00 00  MOV dword ptr [ESI + 0x557],0xff
 0065C57A  E9 DC 00 00 00            JMP 0x0065c65b
 switchD_0065bf29::caseD_5de5:
@@ -638,7 +638,7 @@ switchD_0065bf29::caseD_5deb:
 0065C655  50                        PUSH EAX
 LAB_0065c656:
 0065C656  E8 C5 99 05 00            CALL 0x006b6020
-switchD_0065bf29::caseD_5dc7:
+FUN_0065bd70::cf_common_exit_0065C65B:
 0065C65B  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 0065C661  B8 1F 85 EB 51            MOV EAX,0x51eb851f
 0065C666  F7 A1 E4 00 00 00         MUL dword ptr [ECX + 0xe4]

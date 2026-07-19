@@ -201,7 +201,7 @@ LAB_0058146f:
 00581495  C7 45 D0 03 00 00 00      MOV dword ptr [EBP + -0x30],0x3
 0058149C  89 55 B8                  MOV dword ptr [EBP + -0x48],EDX
 0058149F  89 45 CC                  MOV dword ptr [EBP + -0x34],EAX
-LAB_005814a2:
+FUN_00581200::cf_continue_loop_005814A2:
 005814A2  8B 7D B8                  MOV EDI,dword ptr [EBP + -0x48]
 005814A5  8B 75 F4                  MOV ESI,dword ptr [EBP + -0xc]
 005814A8  8B 45 CC                  MOV EAX,dword ptr [EBP + -0x34]
@@ -429,7 +429,7 @@ LAB_00581765:
 00581769  83 F8 05                  CMP EAX,0x5
 0058176C  89 45 EC                  MOV dword ptr [EBP + -0x14],EAX
 0058176F  0F 8C FA FC FF FF         JL 0x0058146f
-LAB_00581775:
+FUN_00581200::cf_break_loop_00581775:
 00581775  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
 00581778  8B 90 FD 01 00 00         MOV EDX,dword ptr [EAX + 0x1fd]
 0058177E  4A                        DEC EDX

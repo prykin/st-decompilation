@@ -50,7 +50,7 @@ FUN_004ae0b0(int param_1,int param_2,int param_3,Global_sub_004AE0B0_param_4Enum
   if (((((param_1 < 0) || (iVar11 = iVar11 + param_1, DAT_007fb240 < iVar11)) || (param_2 < 0)) ||
       ((iVar15 = iVar15 + param_2, DAT_007fb242 < iVar15 || (param_3 < 0)))) ||
      ((int)DAT_007fb244 < param_3 + 1)) {
-LAB_004ae25b:
+cf_break_loop_004AE25B:
     local_20 = 0;
     goto LAB_004aecb2;
   }
@@ -61,7 +61,7 @@ LAB_004ae25b:
       if (param_3 < param_3 + 1) {
         do {
           sVar13 = (short)iVar16;
-          if (sVar13 < 0) goto LAB_004ae25b;
+          if (sVar13 < 0) goto cf_break_loop_004AE25B;
           sVar10 = (short)iVar7;
           sVar14 = (short)iVar6;
           if ((((sVar13 < DAT_007fb240) && (-1 < sVar10)) &&
@@ -76,7 +76,7 @@ LAB_004ae25b:
                 ((DAT_007fb244 <= sVar14 ||
                  (*(short *)(DAT_007fb280 +
                             ((int)sVar10 * (int)DAT_007fb278 + (int)sVar14 * (int)DAT_007fb27e +
-                            (int)sVar13) * 2) != 0)))))))))) goto LAB_004ae25b;
+                            (int)sVar13) * 2) != 0)))))))))) goto cf_break_loop_004AE25B;
           iVar6 = iVar6 + 1;
         } while (iVar6 < param_3 + 1);
       }
@@ -184,7 +184,7 @@ LAB_004ae41c:
             }
             if (((local_10 != (int *)0x0) && (local_10[8] != 0xbe)) ||
                (pvVar8 = thunk_FUN_004d85e0(iVar16,iVar7,iVar6), pvVar8 != (void *)0x0))
-            goto LAB_004aec96;
+            goto cf_break_loop_004AEC96;
             iVar6 = iVar6 + 1;
             local_10 = (int *)0x0;
             sVar14 = DAT_007fb240;
@@ -203,7 +203,7 @@ LAB_004ae41c:
                 (uVar9 = param_9._2_2_ - param_1, uVar12 = (int)uVar9 >> 0x1f,
                 (int)((uVar9 ^ uVar12) - uVar12) < 0x10)) &&
                (uVar9 = local_6 - param_2 >> 0x1f, (int)((local_6 - param_2 ^ uVar9) - uVar9) < 0x10
-               )) goto LAB_004aec96;
+               )) goto cf_break_loop_004AEC96;
             iVar11 = *(int *)(&DAT_007f57f6 + param_5 * 0xa62);
             uVar17 = uVar17 + 1;
           } while ((int)uVar17 < *(int *)(iVar11 + 0xc));
@@ -223,7 +223,8 @@ LAB_004ae41c:
                  ((uVar9 = param_9._2_2_ - param_1, uVar12 = (int)uVar9 >> 0x1f,
                   (int)((uVar9 ^ uVar12) - uVar12) <= iVar15 &&
                   (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15)))) goto LAB_004aec96;
+                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15))))
+              goto cf_break_loop_004AEC96;
               uVar17 = uVar17 + 1;
               iVar11 = *param_10;
             } while ((int)uVar17 < *(int *)(iVar11 + 0xc));
@@ -244,7 +245,8 @@ LAB_004ae41c:
                  ((uVar9 = param_9._2_2_ - param_1, uVar12 = (int)uVar9 >> 0x1f,
                   (int)((uVar9 ^ uVar12) - uVar12) <= iVar15 &&
                   (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15)))) goto LAB_004aec96;
+                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15))))
+              goto cf_break_loop_004AEC96;
               uVar17 = uVar17 + 1;
               iVar11 = *param_10;
             } while ((int)uVar17 < *(int *)(iVar11 + 0xc));
@@ -265,7 +267,8 @@ LAB_004ae41c:
                  ((uVar9 = param_9._2_2_ - param_1, uVar12 = (int)uVar9 >> 0x1f,
                   (int)((uVar9 ^ uVar12) - uVar12) <= iVar15 &&
                   (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15)))) goto LAB_004aec96;
+                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15))))
+              goto cf_break_loop_004AEC96;
               uVar17 = uVar17 + 1;
               iVar11 = *param_10;
             } while ((int)uVar17 < *(int *)(iVar11 + 0xc));
@@ -286,7 +289,8 @@ LAB_004ae41c:
                  ((uVar9 = param_9._2_2_ - param_1, uVar12 = (int)uVar9 >> 0x1f,
                   (int)((uVar9 ^ uVar12) - uVar12) <= iVar15 &&
                   (uVar9 = local_6 - param_2 >> 0x1f,
-                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15)))) goto LAB_004aec96;
+                  (int)((local_6 - param_2 ^ uVar9) - uVar9) <= iVar15))))
+              goto cf_break_loop_004AEC96;
               uVar17 = uVar17 + 1;
               iVar11 = *param_10;
             } while ((int)uVar17 < *(int *)(iVar11 + 0xc));
@@ -375,7 +379,7 @@ LAB_004aecb2:
     *param_8 = local_c;
   }
   return local_24;
-LAB_004aec96:
+cf_break_loop_004AEC96:
   local_c = 0;
   goto switchD_004ae472_caseD_3;
 }

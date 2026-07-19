@@ -42,7 +42,7 @@ LAB_0054b9fb:
 0054BA03  6A 00                     PUSH 0x0
 0054BA05  8B CE                     MOV ECX,ESI
 0054BA07  E8 72 96 EB FF            CALL 0x0040507e
-LAB_0054ba0c:
+FUN_0054b9a0::cf_common_exit_0054BA0C:
 0054BA0C  C6 86 D1 00 00 00 01      MOV byte ptr [ESI + 0xd1],0x1
 0054BA13  5F                        POP EDI
 0054BA14  5E                        POP ESI

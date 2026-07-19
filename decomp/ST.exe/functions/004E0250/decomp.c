@@ -18,22 +18,22 @@ void __fastcall FUN_004e0250(int param_1)
   *(int *)(param_1 + 0x4dc) = iVar1;
   switch(*(undefined4 *)(param_1 + 0x5ac)) {
   case 0x38:
-    if (iVar1 != 0xdc) goto switchD_004e02b5_caseD_3a;
+    if (iVar1 != 0xdc) goto cf_common_exit_004E02E4;
     break;
   case 0x39:
   case 0x5e:
-    if (iVar1 != 0xdd) goto switchD_004e02b5_caseD_3a;
+    if (iVar1 != 0xdd) goto cf_common_exit_004E02E4;
     break;
   default:
-    goto switchD_004e02b5_caseD_3a;
+    goto cf_common_exit_004E02E4;
   case 0x4f:
     goto joined_r0x004e02dc;
   case 0x61:
 joined_r0x004e02dc:
-    if (iVar1 != 0xde) goto switchD_004e02b5_caseD_3a;
+    if (iVar1 != 0xde) goto cf_common_exit_004E02E4;
   }
   *(undefined4 *)(param_1 + 0x4d4) = 1;
-switchD_004e02b5_caseD_3a:
+cf_common_exit_004E02E4:
   if (*(int *)(param_1 + 0x4d4) != 0) {
     *(undefined4 *)(param_1 + 0x4e0) = *(undefined4 *)((int)this + 0x259);
     thunk_FUN_005804f0(this,*(undefined4 *)(param_1 + 0x18),(short)*(undefined4 *)(param_1 + 0x24),

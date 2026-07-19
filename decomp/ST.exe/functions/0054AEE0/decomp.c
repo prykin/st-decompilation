@@ -74,7 +74,7 @@ LAB_0054b019:
     uVar19 = *(undefined4 *)&this_00->field_0x38;
     uVar17 = *(undefined4 *)&this_00->field_0x34;
     CVar5 = (CursorClassTy_SetGCType_param_1Enum)*(byte *)((int)DAT_00801690 + 0x1db);
-    goto LAB_0054b368;
+    goto cf_common_exit_0054B368;
   }
   puVar13 = local_f8;
   for (iVar6 = 8; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -221,7 +221,7 @@ LAB_0054b2a9:
             uVar19 = *(undefined4 *)&this_00->field_0x38;
             uVar17 = *(undefined4 *)&this_00->field_0x34;
             CVar5 = CASE_48;
-            goto LAB_0054b368;
+            goto cf_common_exit_0054B368;
           }
         }
         uVar19 = *(undefined4 *)&this_00->field_0x38;
@@ -230,7 +230,7 @@ LAB_0054b2a9:
       }
     }
   }
-LAB_0054b368:
+cf_common_exit_0054B368:
   local_8 = SetGCType(this_00,CVar5,uVar17,uVar19);
 LAB_0054b372:
   if ((param_1 != 0) && (local_8 != 0)) {

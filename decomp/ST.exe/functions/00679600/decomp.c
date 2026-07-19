@@ -29,7 +29,7 @@ void __fastcall FUN_00679600(void *param_1)
     *(uint *)((int)param_1 + 0x640) = (uint)DAT_0080874d;
   }
   local_8 = param_1;
-  if (*(char *)((int)param_1 + 0x644) != '\x01') goto LAB_0067989b;
+  if (*(char *)((int)param_1 + 0x644) != '\x01') goto cf_common_exit_0067989B;
   uVar4 = *(uint *)((int)param_1 + 0x640);
   uVar7 = *(uint *)((int)param_1 + 0x5d7);
   if ((uVar4 != uVar7) && (uVar4 != 0xff)) {
@@ -66,7 +66,7 @@ LAB_0067971a:
       bVar10 = (&DAT_008087ea)[(uVar7 & 0xff) * 0x51] != (&DAT_008087ea)[(uVar4 & 0xff) * 0x51];
     }
     if ((bVar10) && (sVar3 = thunk_FUN_0043e460(cVar2), param_1 = local_8, sVar3 != 0))
-    goto LAB_0067989b;
+    goto cf_common_exit_0067989B;
   }
   iVar6 = 0;
   piVar8 = &local_1a8;
@@ -130,7 +130,7 @@ LAB_0067971a:
     iVar6 = thunk_FUN_00423220((void *)((int)param_1 + 0xa4),&local_1a8,iVar6);
     *(undefined4 *)((int)param_1 + 0x640) = local_1a4[iVar6 * 0xb];
   }
-LAB_0067989b:
+cf_common_exit_0067989B:
   uVar4 = *(uint *)((int)param_1 + 0x640);
   if (uVar4 != local_14) {
     puVar9 = local_48;

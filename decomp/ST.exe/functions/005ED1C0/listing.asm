@@ -519,7 +519,7 @@ LAB_005ed7f7:
 005ED86D  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]
 005ED870  89 1A                     MOV dword ptr [EDX],EBX
 005ED872  89 08                     MOV dword ptr [EAX],ECX
-LAB_005ed874:
+FUN_005ed1c0::cf_common_exit_005ED874:
 005ED874  C7 86 83 02 00 00 01 00 00 00  MOV dword ptr [ESI + 0x283],0x1
 LAB_005ed87e:
 005ED87E  5F                        POP EDI

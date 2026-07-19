@@ -464,7 +464,7 @@ LAB_007525bd:
 LAB_007525e3:
 007525E3  8B 75 FC                  MOV ESI,dword ptr [EBP + -0x4]
 007525E6  8B 7D 0C                  MOV EDI,dword ptr [EBP + 0xc]
-LAB_007525e9:
+FUN_007521b0::cf_continue_loop_007525E9:
 007525E9  3B 7D F8                  CMP EDI,dword ptr [EBP + -0x8]
 007525EC  0F 8C A8 FD FF FF         JL 0x0075239a
 LAB_007525f2:

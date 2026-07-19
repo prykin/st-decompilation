@@ -46,7 +46,8 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
       pSVar5 = DAT_007fa174;
       do {
         GVar1 = *local_8;
-        if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar9 != 1)))) goto LAB_0066137e;
+        if ((GVar1 == 0) || (((GVar1 == 0 || (0x28 < GVar1)) && (sVar9 != 1))))
+        goto cf_continue_loop_0066137E;
         if ((((int)GVar1 < 1) || (0x28 < (int)GVar1)) || (pSVar5 == (STAllPlayersC *)0x0)) {
           if ((((int)GVar1 < 0x32) || (0x73 < (int)GVar1)) || (pSVar5 == (STAllPlayersC *)0x0)) {
             if ((((GVar1 == CASE_A3) || (GVar1 == CASE_A8)) ||
@@ -57,7 +58,7 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
             else {
               pSVar3 = pSVar5;
               if (((GVar1 != 0xdd) && (GVar1 != 0xde)) && ((GVar1 != 0xe2 && (GVar1 != 0xdc))))
-              goto LAB_0066137e;
+              goto cf_continue_loop_0066137E;
             }
           }
           else {
@@ -71,7 +72,7 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
         }
         bVar2 = pSVar5 == (STAllPlayersC *)0x0;
         pSVar5 = pSVar3;
-        if (bVar2) goto LAB_0066137e;
+        if (bVar2) goto cf_continue_loop_0066137E;
         if (*(char *)((int)this + 0xff) == '\0') goto switchD_0066104e_caseD_9;
         switch(*local_8) {
         case 8:
@@ -84,7 +85,7 @@ void __thiscall FUN_00660f70(void *this,uint *param_1,undefined2 param_2)
             if (iVar6 != 0) goto switchD_0066104e_caseD_9;
             iVar6 = *(int *)(*(int *)((int)this + 0x284) + 0x134);
           }
-          if (iVar6 == 0) goto LAB_0066137e;
+          if (iVar6 == 0) goto cf_continue_loop_0066137E;
         default:
           goto switchD_0066104e_caseD_9;
         case 0x39:
@@ -186,7 +187,7 @@ switchD_0066104e_caseD_9:
             return;
           }
         }
-LAB_0066137e:
+cf_continue_loop_0066137E:
         local_8 = local_8 + 1;
         local_c = local_c + 1;
         sVar9 = *(short *)((int)this + 0x7b);

@@ -68,7 +68,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
       case 1:
       case 4:
       case 5:
-        goto switchD_005052d8_caseD_2;
+        goto cf_continue_loop_00505716;
       case 2:
         local_14 = CONCAT31(local_14._1_3_,1);
         break;
@@ -93,7 +93,7 @@ void __thiscall CPanelTy::PaintMunition(CPanelTy *this,int param_1)
     case 6:
     case 7:
     case 8:
-      goto switchD_005052d8_caseD_2;
+      goto cf_continue_loop_00505716;
     case 4:
 switchD_005052d8_caseD_4:
       local_14 = CONCAT31(local_14._1_3_,3);
@@ -296,7 +296,7 @@ switchD_00505324_default:
                      (uVar3 & 0xff) * 0xb + 0x39,0x23,0xc);
     ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,(uint *)&pCVar2->field_0x1e1,-3,-1,0,-1,-1);
     pcVar9 = local_24;
-switchD_005052d8_caseD_2:
+cf_continue_loop_00505716:
     local_6 = local_6 + 1;
     local_28 = local_28 + 1;
     pcVar9 = pcVar9 + 6;

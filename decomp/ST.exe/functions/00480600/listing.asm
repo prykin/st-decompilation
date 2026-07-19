@@ -1040,7 +1040,7 @@ LAB_00481191:
 004811B7  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
 004811BA  3B C2                     CMP EAX,EDX
 004811BC  0F 8C 17 FF FF FF         JL 0x004810d9
-LAB_004811c2:
+FUN_00480600::cf_common_exit_004811C2:
 004811C2  8B CE                     MOV ECX,ESI
 004811C4  E8 74 3E F8 FF            CALL 0x0040503d
 004811C9  5F                        POP EDI

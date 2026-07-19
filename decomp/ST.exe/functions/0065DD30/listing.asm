@@ -232,7 +232,7 @@ LAB_0065df11:
 0065DF8C  7D 03                     JGE 0x0065df91
 LAB_0065df8e:
 0065DF8E  FF 45 F4                  INC dword ptr [EBP + -0xc]
-LAB_0065df91:
+FUN_0065dd30::cf_common_join_0065DF91:
 0065DF91  8B 55 E8                  MOV EDX,dword ptr [EBP + -0x18]
 0065DF94  8B 4D F0                  MOV ECX,dword ptr [EBP + -0x10]
 0065DF97  41                        INC ECX

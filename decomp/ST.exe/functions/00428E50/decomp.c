@@ -319,7 +319,7 @@ LAB_0042958f:
             iVar12 = *local_8;
             if ((iVar12 == 0) ||
                (iVar14 = (int)*(short *)(iVar12 + 8) - (uint)*(byte *)(iVar12 + 0x48),
-               iVar8 + 3 < iVar14)) goto LAB_004296cf;
+               iVar8 + 3 < iVar14)) goto cf_continue_loop_004296CF;
             if (*(uint *)(iVar12 + 0x18) < local_44[3]) {
               iVar12 = local_44[2] * *(uint *)(iVar12 + 0x18) + local_44[7];
             }
@@ -333,7 +333,7 @@ LAB_0042958f:
             local_54 = *(undefined4 *)(iVar12 + 0x18);
             local_18 = iVar12;
             iVar14 = FUN_006b0460(&local_a0,(int *)(iVar10 + 0xc),&local_60);
-            if (iVar14 == 0) goto LAB_004296cf;
+            if (iVar14 == 0) goto cf_continue_loop_004296CF;
             if (2 < *(int *)(local_10 + 0x24)) {
               iVar14 = *(int *)(iVar10 + 0x14);
               local_20 = (undefined4 *)local_30[3];
@@ -362,9 +362,9 @@ LAB_0042958f:
                                           *(int *)(iVar10 + 0x14),local_4c,*(int *)(iVar12 + 0x14),
                                           local_98,local_94,*(int *)(local_10 + 0x3c),local_50);
               local_34 = local_34 | uVar11;
-              goto LAB_004296cf;
+              goto cf_continue_loop_004296CF;
             }
-            if (local_94 < 3) goto LAB_004296cf;
+            if (local_94 < 3) goto cf_continue_loop_004296CF;
             **(byte **)(local_10 + 0x3c) = **(byte **)(local_10 + 0x3c) | local_50;
             iVar12 = *(int *)(local_10 + 0x3c);
 LAB_00429d7a:
@@ -647,7 +647,7 @@ LAB_00429d7d:
       return;
     }
   } while( true );
-LAB_004296cf:
+cf_continue_loop_004296CF:
   local_8 = local_8 + -local_80;
   iVar8 = (int)*(short *)(local_10 + 8);
   local_1c = local_1c + -1;

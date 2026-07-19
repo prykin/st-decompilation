@@ -642,26 +642,26 @@ LAB_00485b29:
           if ((cVar3 == '\0') &&
              (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\0')) {
             iVar5 = -2;
-            goto LAB_00484b10;
+            goto cf_common_exit_00484B10;
           }
           if ((cVar3 == '\x01') &&
              (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\0')) {
             iVar5 = -1;
-            goto LAB_00484b10;
+            goto cf_common_exit_00484B10;
           }
           if ((cVar3 == '\0') &&
              (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\x01')) {
             iVar5 = 1;
-            goto LAB_00484b10;
+            goto cf_common_exit_00484B10;
           }
           if ((cVar3 == '\x01') &&
              (*(char *)((int)&DAT_00808a4f + (int)param_2 + param_1 * 8) == '\x01')) {
             iVar5 = 2;
-            goto LAB_00484b10;
+            goto cf_common_exit_00484B10;
           }
         }
         iVar5 = 0;
-LAB_00484b10:
+cf_common_exit_00484B10:
         bVar8 = iVar5 < 0;
         return (((ushort)bVar8 - (ushort)bVar8) - (ushort)bVar8 & 5) + 2;
       }

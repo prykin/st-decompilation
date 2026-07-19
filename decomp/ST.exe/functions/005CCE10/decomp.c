@@ -125,7 +125,7 @@ void __thiscall SettMapMTy::SetListCtrls(SettMapMTy *this)
                ((pSVar3->field_0x1e26 != '\x0f' && (pcVar9[4] == '\x02')))) {
               bVar11 = *(int *)(pcVar9 + 6) == DAT_0080877f;
 LAB_005cd119:
-              if (bVar11) goto LAB_005cd142;
+              if (bVar11) goto cf_common_join_005CD142;
             }
             break;
           case 1:
@@ -137,7 +137,7 @@ LAB_005cd10f:
                   bVar11 = *(int *)(pcVar9 + 6) == DAT_0080877f;
                   goto LAB_005cd119;
                 }
-                goto LAB_005cd142;
+                goto cf_common_join_005CD142;
               }
               if (pcVar9[4] == '\x02') {
                 iVar4 = *(int *)(pcVar9 + 6);
@@ -147,7 +147,8 @@ LAB_005cd10f:
             break;
           case 3:
             if (((DAT_0080877e != '\0') || (cVar1 = pcVar9[4], cVar1 == '\x01')) ||
-               ((cVar1 == '\x02' && (*(int *)(pcVar9 + 6) == DAT_0080877f)))) goto LAB_005cd142;
+               ((cVar1 == '\x02' && (*(int *)(pcVar9 + 6) == DAT_0080877f))))
+            goto cf_common_join_005CD142;
             if (cVar1 == '\x03') {
               iVar4 = *(int *)(pcVar9 + 6);
               goto joined_r0x005cd0bb;
@@ -158,7 +159,8 @@ LAB_005cd10f:
                  ((cVar1 != '\x0f' && ((*pcVar9 != '\0' && (cVar1 = pcVar9[4], cVar1 != '\0'))))))
                 && (cVar1 != '\x01')) && (pcVar9[2] != -1)) {
               if (DAT_00808a8f == '\0') {
-                if ((cVar1 != '\x02') || (*(int *)(pcVar9 + 6) != DAT_0080877f)) goto LAB_005cd142;
+                if ((cVar1 != '\x02') || (*(int *)(pcVar9 + 6) != DAT_0080877f))
+                goto cf_common_join_005CD142;
               }
               else if (DAT_0080877e == '\0') {
                 if (cVar1 == '\x02') goto LAB_005cd10f;
@@ -168,7 +170,7 @@ LAB_005cd10f:
                   iVar4 = *(int *)(pcVar9 + 6);
                   goto joined_r0x005cd0bb;
                 }
-LAB_005cd142:
+cf_common_join_005CD142:
                 *(undefined4 *)&pSVar3->field_0x31 = 1;
               }
             }
@@ -177,7 +179,7 @@ LAB_005cd142:
             if (pcVar9[4] == '\x02') {
               iVar4 = *(int *)(pcVar9 + 6);
 joined_r0x005cd0bb:
-              if (iVar4 == DAT_0080877f) goto LAB_005cd142;
+              if (iVar4 == DAT_0080877f) goto cf_common_join_005CD142;
             }
           }
         }

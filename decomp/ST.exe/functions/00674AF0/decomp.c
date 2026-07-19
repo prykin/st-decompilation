@@ -51,7 +51,7 @@ char * FUN_00674af0(int param_1)
     iVar4 = *DAT_00811928;
     piVar7 = DAT_00811928;
     while (iVar4 != 0) {
-      if (piVar7[1] == param_1) goto LAB_00674bc4;
+      if (piVar7[1] == param_1) goto cf_common_exit_00674BC4;
       piVar2 = piVar7 + 2;
       piVar7 = piVar7 + 2;
       iVar4 = *piVar2;
@@ -61,7 +61,7 @@ char * FUN_00674af0(int param_1)
     iVar4 = *DAT_0081192c;
     piVar7 = DAT_0081192c;
     while (iVar4 != 0) {
-      if (piVar7[1] == param_1) goto LAB_00674bc4;
+      if (piVar7[1] == param_1) goto cf_common_exit_00674BC4;
       piVar2 = piVar7 + 2;
       piVar7 = piVar7 + 2;
       iVar4 = *piVar2;
@@ -75,7 +75,7 @@ char * FUN_00674af0(int param_1)
         return pcVar5;
       }
     }
-LAB_00674bc4:
+cf_common_exit_00674BC4:
     pcVar5 = (char *)*piVar7;
   }
   return pcVar5;

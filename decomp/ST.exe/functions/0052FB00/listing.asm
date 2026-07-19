@@ -927,7 +927,7 @@ LAB_005305a9:
 LAB_005305b4:
 005305B4  E8 70 2C ED FF            CALL 0x00403229
 005305B9  83 C4 14                  ADD ESP,0x14
-switchD_0052fbb9::caseD_9:
+OptPanelTy::SetOptControls::cf_switch_join_005305BC:
 005305BC  8A 83 A4 01 00 00         MOV AL,byte ptr [EBX + 0x1a4]
 005305C2  8B C8                     MOV ECX,EAX
 005305C4  81 E1 FF 00 00 00         AND ECX,0xff
@@ -2119,7 +2119,7 @@ switchD_005311ec::caseD_8:
 00531384  03 D1                     ADD EDX,ECX
 00531386  8B F2                     MOV ESI,EDX
 00531388  89 75 F0                  MOV dword ptr [EBP + -0x10],ESI
-LAB_0053138b:
+OptPanelTy::SetOptControls::cf_common_join_0053138B:
 0053138B  8B 7D E0                  MOV EDI,dword ptr [EBP + -0x20]
 0053138E  8B 45 CC                  MOV EAX,dword ptr [EBP + -0x34]
 00531391  8B 4D E4                  MOV ECX,dword ptr [EBP + -0x1c]

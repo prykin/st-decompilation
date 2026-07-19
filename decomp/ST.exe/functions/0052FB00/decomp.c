@@ -243,7 +243,7 @@ LAB_005305a9:
     puVar34 = *(undefined4 **)&this_00->field_0x68;
 LAB_005305b4:
     thunk_FUN_00540760(puVar34,0x1d,0x13,'\x01',pbVar20);
-    goto switchD_0052fbb9_caseD_9;
+    goto cf_switch_join_005305BC;
   case 5:
   case 0xb:
     uVar36 = 0;
@@ -553,7 +553,7 @@ LAB_0052ff02:
     }
     ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x180,(uint *)&this_00->field_0x6c,-2,-1,uVar19,-1,
                    -1);
-    goto switchD_0052fbb9_caseD_9;
+    goto cf_switch_join_005305BC;
   case 6:
     uVar36 = 0;
     iVar17 = -1;
@@ -650,7 +650,7 @@ LAB_00530554:
     UVar31 = 0x3e8d;
     break;
   default:
-    goto switchD_0052fbb9_caseD_9;
+    goto cf_switch_join_005305BC;
   case 0xc:
     uVar36 = 0;
     iVar17 = -1;
@@ -694,7 +694,7 @@ LAB_00530554:
                      *(int *)(*(int *)&this_00->field_0x18c + 4),
                      *(int *)(*(int *)&this_00->field_0x18c + 8));
     ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x17c,(uint *)puVar1,-2,-1,0);
-    goto switchD_0052fbb9_caseD_9;
+    goto cf_switch_join_005305BC;
   case 0xe:
     uVar36 = 0;
     iVar17 = -1;
@@ -708,7 +708,7 @@ LAB_00530554:
   iVar17 = -1;
   puVar10 = (uint *)FUN_006b0140(UVar31,DAT_00807618);
   ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x17c,puVar10,iVar6,iVar17,uVar19);
-switchD_0052fbb9_caseD_9:
+cf_switch_join_005305BC:
   switch(this_00->field_0x1a4) {
   case 1:
     bVar5 = 0;
@@ -1222,7 +1222,7 @@ LAB_00530da0:
           if (uVar14 == 0) {
             uVar19 = 0;
             iVar17 = 0;
-            goto LAB_0053138b;
+            goto cf_common_join_0053138B;
           }
         }
         if ((char)DAT_00807300 == '\x04') {
@@ -1236,7 +1236,7 @@ LAB_00530da0:
 switchD_005311ec_caseD_1:
           uVar19 = 0;
           iVar17 = 0;
-          goto LAB_0053138b;
+          goto cf_common_join_0053138B;
         }
 LAB_005311d8:
         switch(DAT_00807300 & 0xff) {
@@ -1316,7 +1316,7 @@ LAB_0053108d:
           break;
         case 8:
           uVar19 = ((DAT_0080730a + 4000) * 0x1f) / 0xfa1;
-          goto LAB_0053138b;
+          goto cf_common_join_0053138B;
         }
 LAB_0053108f:
         uVar19 = (uVar14 * 0x1f) / uVar19;
@@ -1332,7 +1332,7 @@ LAB_0053108f:
           }
           if (uVar14 == 0) {
             iVar17 = 0;
-            goto LAB_0053138b;
+            goto cf_common_join_0053138B;
           }
           local_220.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_220;
@@ -1379,7 +1379,7 @@ LAB_0053108f:
           }
           if (uVar14 == 0) {
             iVar17 = 0;
-            goto LAB_0053138b;
+            goto cf_common_join_0053138B;
           }
           local_2a8.previous = g_currentExceptionFrame;
           g_currentExceptionFrame = &local_2a8;
@@ -1414,7 +1414,7 @@ LAB_0053108f:
           goto LAB_0053108f;
         }
       }
-LAB_0053138b:
+cf_common_join_0053138B:
       uVar18 = uVar18 & 0xff;
       iVar6 = uVar13 + uVar18 * 0xd + 0x29;
       pOVar29 = (OptPanelTy *)0xf9;

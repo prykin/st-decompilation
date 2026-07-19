@@ -81,7 +81,7 @@ int __thiscall ControlClassTy::GetMessage(ControlClassTy *this,int *param_1)
       return iVar5;
     }
     iVar5 = FUN_006e5fe0(this_00,(undefined4 *)(this_00 + 0x8c));
-    if (iVar5 == 0) goto LAB_0072be89;
+    if (iVar5 == 0) goto cf_common_exit_0072BE89;
     iVar10 = 0xda;
     goto LAB_0072be83;
   default:
@@ -418,12 +418,12 @@ LAB_0072bcc4:
       return iVar5;
     }
     iVar5 = FUN_006e5fe0(this_00,(undefined4 *)(this_00 + 0x8c));
-    if (iVar5 == 0) goto LAB_0072be89;
+    if (iVar5 == 0) goto cf_common_exit_0072BE89;
     iVar10 = 0xbf;
 LAB_0072be83:
     local_8 = iVar5;
     RaiseInternalException(iVar5,DAT_007ed77c,s_E__Ourlib_Scontrol_cpp_007f10c0,iVar10);
-LAB_0072be89:
+cf_common_exit_0072BE89:
     *(int *)(this_00 + 0xd0) = 1;
     g_currentExceptionFrame = local_70.previous;
     return iVar5;

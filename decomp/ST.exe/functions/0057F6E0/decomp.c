@@ -69,15 +69,15 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         }
         if ((3 < local_14) &&
            (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 == (STT3DSprC *)0x0))
-        goto LAB_0057faa5;
+        goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f3a0(this_00,local_c,0);
         iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
-        if (iVar10 != 0) goto LAB_0057faa5;
+        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f3a0(this_00,local_c,1);
         iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
-        if (iVar10 != 0) goto LAB_0057faa5;
+        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
         thunk_FUN_004acf50(pSVar7,'\r');
@@ -113,15 +113,15 @@ int __thiscall STDcResourcC::CreateRes(STDcResourcC *this)
         }
         if ((3 < local_14) &&
            (pSVar7 = (STT3DSprC *)Init(this_00,(uint)unaff_EDI), pSVar7 == (STT3DSprC *)0x0))
-        goto LAB_0057faa5;
+        goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f2e0(this_00,local_c,0);
         iVar10 = STT3DSprC::LoadSequence(pSVar7,0xe,DAT_00806774,pbVar8,bVar13);
-        if (iVar10 != 0) goto LAB_0057faa5;
+        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         bVar13 = 0x1d;
         pbVar8 = (byte *)thunk_FUN_0057f2e0(this_00,local_c,1);
         iVar10 = STT3DSprC::LoadSequence(pSVar7,0xd,DAT_00806774,pbVar8,bVar13);
-        if (iVar10 != 0) goto LAB_0057faa5;
+        if (iVar10 != 0) goto cf_break_loop_0057FAA5;
         STT3DSprC::StartShow(pSVar7,0xe,*(undefined4 *)(DAT_00802a38 + 0xe4));
         thunk_FUN_004acef0(pSVar7,DAT_008073cc);
         thunk_FUN_004acf50(pSVar7,'\r');
@@ -267,7 +267,7 @@ LAB_0057fd72:
 switchD_0057f734_caseD_df:
   local_8 = 0;
   goto LAB_0057fd72;
-LAB_0057faa5:
+cf_break_loop_0057FAA5:
   local_8 = 0;
   goto LAB_0057faac;
 }

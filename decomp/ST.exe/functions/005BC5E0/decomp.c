@@ -61,7 +61,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
   if (uVar11 < 0x6941) {
     if (uVar11 == 0x6940) {
       thunk_FUN_005bba40((int)this_00);
-      goto switchD_005bc9da_caseD_6944;
+      goto cf_common_exit_005BCF7F;
     }
     if (uVar11 < 0x6120) {
       if (uVar11 != 0x611f) {
@@ -79,7 +79,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
           else if (uVar11 == 3) {
             DonePrivider(this_00);
           }
-          goto switchD_005bc9da_caseD_6944;
+          goto cf_common_exit_005BCF7F;
         }
         if (uVar11 != 0x6109) {
           if (uVar11 == 0x610a) {
@@ -88,7 +88,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
             *(undefined4 *)&this_00->field_0x4d = 0x610a;
             thunk_FUN_005b66e0(this_00);
           }
-          goto switchD_005bc9da_caseD_6944;
+          goto cf_common_exit_005BCF7F;
         }
       }
     }
@@ -98,7 +98,7 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
           if (uVar11 == 0x693f) {
             thunk_FUN_005bb9f0((int)this_00);
           }
-          goto switchD_005bc9da_caseD_6944;
+          goto cf_common_exit_005BCF7F;
         }
         uVar4 = thunk_FUN_005da940(DAT_0081176c,*(int *)&this_00->field_0x1a61);
         if (CONCAT31(extraout_var,uVar4) == 0) {
@@ -117,12 +117,12 @@ undefined4 __thiscall PrividerTy::GetMessage(PrividerTy *this,int param_1)
             this_00->field_0x65 = 5;
             this_00->field_0x1a60 = 1;
           }
-          goto switchD_005bc9da_caseD_6944;
+          goto cf_common_exit_005BCF7F;
         }
 LAB_005bccb9:
         *(undefined4 *)&this_00->field_0x4d = 0x6951;
         (*this_00->vtable->GetMessage)(this_00,(int)&this_00->field_0x3d);
-        goto switchD_005bc9da_caseD_6944;
+        goto cf_common_exit_005BCF7F;
       }
       if (uVar11 == 0x6501) goto switchD_005bc9da_caseD_6949;
       if (uVar11 != 0x6121) {
@@ -170,7 +170,7 @@ LAB_005bccb9:
             }
           }
         }
-        goto switchD_005bc9da_caseD_6944;
+        goto cf_common_exit_005BCF7F;
       }
     }
     StartSystemTy::InitChat(*(StartSystemTy **)&this_00->field_0x1a5b);
@@ -180,7 +180,7 @@ LAB_005bccb9:
     *(undefined4 *)&this_00->field_0x51 = *(undefined4 *)(param_1 + 0x14);
     *(undefined4 *)&this_00->field_0x55 = *(undefined4 *)(param_1 + 0x18);
     thunk_FUN_005b66e0(this_00);
-    goto switchD_005bc9da_caseD_6944;
+    goto cf_common_exit_005BCF7F;
   }
   if (0x8160 < uVar11) {
     switch(uVar11) {
@@ -226,11 +226,11 @@ LAB_005bccb9:
                    *(uint *)&this_00->field_0x1ba1,*(uint *)&this_00->field_0x1bb5,uVar11);
       }
     }
-    goto switchD_005bc9da_caseD_6944;
+    goto cf_common_exit_005BCF7F;
   }
   if (uVar11 == 0x8160) {
     *(undefined4 *)(param_1 + 0x18) = 0x13;
-    goto switchD_005bc9da_caseD_6944;
+    goto cf_common_exit_005BCF7F;
   }
   switch(uVar11) {
   case 0x6942:
@@ -245,7 +245,7 @@ LAB_005bccb9:
     thunk_FUN_005b6350(this_00,0x6942,*(undefined4 *)(param_1 + 0x14),0);
     CloseButtons(this_00,'\x01');
     pMVar9 = *(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6);
-    goto LAB_005bcd75;
+    goto cf_common_exit_005BCD75;
   case 0x6949:
 switchD_005bc9da_caseD_6949:
     uVar4 = thunk_FUN_005da940(DAT_0081176c,*(int *)&this_00->field_0x1a61);
@@ -271,7 +271,7 @@ switchD_005bc9da_caseD_6949:
     thunk_FUN_005b6350(this_00,0x611f,(-(uint)(*(int *)(param_1 + 0x10) != 0x6501) & 8) + 4,0x11);
     CloseButtons(this_00,'\x01');
     pMVar9 = *(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6);
-    goto LAB_005bcd75;
+    goto cf_common_exit_005BCD75;
   case 0x694e:
     iVar6 = thunk_FUN_005dab70(*(int *)&this_00->field_0x1a61,&DAT_008016a0);
     if (iVar6 == 0) {
@@ -297,7 +297,7 @@ switchD_005bc9da_caseD_6949:
     thunk_FUN_005b6350(this_00,0x610a,0,0);
     CloseButtons(this_00,'\x01');
     pMVar9 = *(MMsgTy **)(*(int *)&this_00->field_0x1a5b + 0x2e6);
-LAB_005bcd75:
+cf_common_exit_005BCD75:
     if (pMVar9 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(pMVar9,1,0,1);
     }
@@ -386,7 +386,7 @@ LAB_005bcd75:
       }
     }
   }
-switchD_005bc9da_caseD_6944:
+cf_common_exit_005BCF7F:
   g_currentExceptionFrame = local_8c.previous;
   uVar5 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
   return uVar5;

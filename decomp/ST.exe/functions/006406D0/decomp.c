@@ -839,9 +839,9 @@ switchD_00640c2d_caseD_a2:
     iVar10 = thunk_FUN_004acd30(puVar14,'\0');
     if ((iVar10 + -1 < (int)(uint)(byte)this_00->field_0x27c) && (this_00->field_0x282 == '\0'))
     goto LAB_00642c6e;
-    goto LAB_00642c8b;
+    goto cf_common_exit_00642C8B;
   }
-  if (this_00->field_0x27d == '\0') goto LAB_00642c8b;
+  if (this_00->field_0x27d == '\0') goto cf_common_exit_00642C8B;
   local_80 = (int)*(short *)&this_00->field_0x41;
   local_10 = CONCAT22(local_10._2_2_,*(undefined2 *)&this_00->field_0x49);
   sVar9 = *(short *)&this_00->field_0x47;
@@ -1073,7 +1073,7 @@ LAB_0064190c:
                        (int)*(short *)&this_00->field_0x43,(int)*(short *)&this_00->field_0x45);
   }
   if (local_18 != 1) {
-LAB_00642c8b:
+cf_common_exit_00642C8B:
     iVar10 = (*this_00->vtable->slot_D8)();
     if (iVar10 == 0) {
       g_currentExceptionFrame = local_28c.previous;

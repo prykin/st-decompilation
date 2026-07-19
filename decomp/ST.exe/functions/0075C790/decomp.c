@@ -60,7 +60,7 @@ undefined4 FUN_0075c790(int param_1,int *param_2)
       do {
         if (iVar3 < 8) {
           iVar3 = FUN_0075b720(&local_44,uVar10,iVar3,0);
-          if (iVar3 == 0) goto LAB_0075cb0b;
+          if (iVar3 == 0) goto cf_break_loop_0075CB0B;
           iVar3 = local_34;
           uVar10 = local_38;
           if (7 < local_34) goto LAB_0075c882;
@@ -69,7 +69,7 @@ LAB_0075c8af:
           uVar4 = FUN_0075b800(&local_44,uVar10,iVar3,local_48,iVar8);
           iVar3 = local_34;
           uVar10 = local_38;
-          if ((int)uVar4 < 0) goto LAB_0075cb0b;
+          if ((int)uVar4 < 0) goto cf_break_loop_0075CB0B;
         }
         else {
 LAB_0075c882:
@@ -91,7 +91,7 @@ LAB_0075c882:
             if (local_10 == 0) goto LAB_0075ca4a;
             if ((iVar3 < local_10) &&
                (iVar5 = FUN_0075b720(&local_44,uVar10,iVar3,local_10), iVar3 = local_34,
-               uVar10 = local_38, iVar5 == 0)) goto LAB_0075cb0b;
+               uVar10 = local_38, iVar5 == 0)) goto cf_break_loop_0075CB0B;
             iVar3 = iVar3 - local_10;
             local_c = local_c + ((int)uVar10 >> ((byte)iVar3 & 0x1f) & iVar8 - 1U);
             piVar6 = local_8;
@@ -103,7 +103,7 @@ LAB_0075c882:
         else {
           if ((iVar3 < 1) &&
              (iVar8 = FUN_0075b720(&local_44,uVar10,iVar3,1), iVar3 = local_34, uVar10 = local_38,
-             iVar8 == 0)) goto LAB_0075cb0b;
+             iVar8 == 0)) goto cf_break_loop_0075CB0B;
           iVar3 = iVar3 + -1;
           if (((int)uVar10 >> ((byte)iVar3 & 0x1f) & 1U) == 0) {
             local_28 = &DAT_007a1e94 + (int)param_2;
@@ -123,7 +123,7 @@ LAB_0075c882:
           else {
             if ((iVar3 < 1) &&
                (iVar8 = FUN_0075b720(&local_44,uVar10,iVar3,1), iVar3 = local_34, uVar10 = local_38,
-               iVar8 == 0)) goto LAB_0075cb0b;
+               iVar8 == 0)) goto cf_break_loop_0075CB0B;
             iVar3 = iVar3 + -1;
             if ((((int)uVar10 >> ((byte)iVar3 & 0x1f) & 1U) != 0) &&
                (uVar9 = *puVar2, (local_18 & uVar9) == 0)) {
@@ -161,7 +161,7 @@ LAB_0075ca4a:
             if ((iVar3 < 1) &&
                (iVar8 = FUN_0075b720(&local_44,uVar10,iVar3,1), iVar3 = local_34, uVar10 = local_38,
                iVar8 == 0)) {
-LAB_0075cb0b:
+cf_break_loop_0075CB0B:
               if (0 < local_24) {
                 piVar6 = local_14c + local_24;
                 do {

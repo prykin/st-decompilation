@@ -17,11 +17,11 @@ undefined4 __thiscall FUN_004b7f90(void *this,int param_1)
     if ((*(int *)((int)this + 0x3dc) != 0) ||
        (((iVar1 = *(int *)((int)this + 0x46c), iVar1 != 0 && (iVar1 != 1)) && (iVar1 != 2)))) {
       uVar2 = 0;
-      goto LAB_004b8058;
+      goto cf_common_exit_004B8058;
     }
     break;
   case 5:
-    if (((param_1 != 0) && (param_1 != 1)) && (param_1 != 6)) goto LAB_004b8058;
+    if (((param_1 != 0) && (param_1 != 1)) && (param_1 != 6)) goto cf_common_exit_004B8058;
     break;
   case 0xffffffff:
     goto switchD_004b7fa6_caseD_ffffffff;
@@ -38,7 +38,7 @@ switchD_004b7fa6_caseD_ffffffff:
       uVar2 = thunk_FUN_004cc040((int)this);
     }
   }
-LAB_004b8058:
+cf_common_exit_004B8058:
   if (param_1 != 3) {
     return uVar2;
   }

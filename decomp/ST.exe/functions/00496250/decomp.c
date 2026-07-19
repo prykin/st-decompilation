@@ -146,12 +146,12 @@ switchD_0049655f_caseD_0:
             }
             return 2;
           case 5:
-            goto switchD_0049655f_caseD_5;
+            goto cf_common_exit_0049679C;
           case 6:
 switchD_0049655f_caseD_6:
             return 6;
           case 7:
-            goto switchD_0049655f_caseD_7;
+            goto cf_common_exit_004967AA;
           case 8:
 switchD_0049655f_caseD_8:
             return 2;
@@ -200,7 +200,7 @@ switchD_0049655f_caseD_8:
           default:
             goto switchD_0049655f_default;
           }
-switchD_004967be_caseD_3:
+cf_common_exit_004965EF:
           return 7;
         }
         switch(iVar7) {
@@ -220,7 +220,7 @@ switchD_00496785_caseD_2:
         case 1:
           switch(iVar6) {
           case 0:
-switchD_0049655f_caseD_5:
+cf_common_exit_0049679C:
             return 4;
           case 1:
 switchD_00496785_caseD_1:
@@ -228,7 +228,7 @@ switchD_00496785_caseD_1:
           case 2:
             goto switchD_00496785_caseD_2;
           case 3:
-switchD_0049655f_caseD_7:
+cf_common_exit_004967AA:
             return 0;
           default:
             return 0xffffffff;
@@ -236,14 +236,14 @@ switchD_0049655f_caseD_7:
         case 2:
           switch(iVar6) {
           case 0:
-            goto switchD_0049655f_caseD_5;
+            goto cf_common_exit_0049679C;
           case 1:
 switchD_004967be_caseD_0:
             return 5;
           case 2:
-            goto switchD_004967be_caseD_3;
+            goto cf_common_exit_004965EF;
           case 3:
-            goto switchD_0049655f_caseD_7;
+            goto cf_common_exit_004967AA;
           }
           break;
         case 3:
@@ -254,7 +254,7 @@ switchD_004967be_caseD_0:
           case 2:
             goto switchD_0049655f_caseD_6;
           case 3:
-            goto switchD_004967be_caseD_3;
+            goto cf_common_exit_004965EF;
           }
         }
       }

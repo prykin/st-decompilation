@@ -159,7 +159,7 @@ LAB_004e067b:
 004E0689  8B 18                     MOV EBX,dword ptr [EAX]
 LAB_004e068b:
 004E068B  4B                        DEC EBX
-LAB_004e068c:
+FUN_004e04a0::cf_common_exit_004E068C:
 004E068C  8B 75 F8                  MOV ESI,dword ptr [EBP + -0x8]
 004E068F  6A 00                     PUSH 0x0
 004E0691  53                        PUSH EBX

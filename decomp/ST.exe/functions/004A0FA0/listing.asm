@@ -2463,7 +2463,7 @@ LAB_004a2c22:
 004A2C53  81 E2 FF FF 00 00         AND EDX,0xffff
 004A2C59  3B D3                     CMP EDX,EBX
 004A2C5B  7C C5                     JL 0x004a2c22
-LAB_004a2c5d:
+STGroupBoatC::RechargeNewCmd::cf_common_exit_004A2C5D:
 004A2C5D  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 004A2C60  85 C0                     TEST EAX,EAX
 004A2C62  74 06                     JZ 0x004a2c6a

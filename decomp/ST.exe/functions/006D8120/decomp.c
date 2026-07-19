@@ -58,7 +58,7 @@ uint __cdecl FUN_006d8120(int param_1)
               iVar10 = 0;
               if ((!bVar18) &&
                  (uVar6 = FUN_006d822b(), iVar10 = extraout_ECX, pbVar12 = extraout_EDX, bVar18))
-              goto LAB_006d8217;
+              goto cf_common_exit_006D8217;
               uVar14 = iVar10 + 1;
               pbVar1 = pbVar15 + 1;
               bVar2 = *pbVar15;
@@ -69,7 +69,7 @@ uint __cdecl FUN_006d8120(int param_1)
                 bVar18 = pbVar1 < pbVar12;
                 if ((!bVar18) &&
                    (uVar6 = FUN_006d822b(), uVar14 = extraout_ECX_00, pbVar12 = extraout_EDX_00,
-                   bVar18)) goto LAB_006d8217;
+                   bVar18)) goto cf_common_exit_006D8217;
                 pbVar16 = pbVar15 + 2;
                 pbVar9 = (byte *)(uint)*pbVar1;
               }
@@ -89,7 +89,7 @@ uint __cdecl FUN_006d8120(int param_1)
         } while (local_30 != 0);
         uVar6 = (*pcVar3)(param_1,pbVar8,local_1c);
         if (uVar6 != 0) {
-          if (uVar6 != 0xffffffff) goto LAB_006d8217;
+          if (uVar6 != 0xffffffff) goto cf_common_exit_006D8217;
           break;
         }
         local_1c = local_1c + 1;
@@ -98,7 +98,7 @@ uint __cdecl FUN_006d8120(int param_1)
         local_30 = uVar5;
       } while (local_20 != 0);
       uVar6 = 0;
-LAB_006d8217:
+cf_common_exit_006D8217:
       Library::MSVCRT::thunk_FUN_006a4950((undefined4 *)pbVar7);
     }
   }

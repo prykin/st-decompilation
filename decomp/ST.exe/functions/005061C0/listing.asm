@@ -1275,7 +1275,7 @@ LAB_00507022:
 0050702D  83 C4 08                  ADD ESP,0x8
 00507030  85 C0                     TEST EAX,EAX
 00507032  75 EE                     JNZ 0x00507022
-LAB_00507034:
+CPanelTy::PaintCtrlObj::cf_common_exit_00507034:
 00507034  8B 8B B8 01 00 00         MOV ECX,dword ptr [EBX + 0x1b8]
 0050703A  6A FF                     PUSH -0x1
 0050703C  6A FF                     PUSH -0x1

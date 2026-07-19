@@ -94,21 +94,21 @@ undefined4 __thiscall FUN_00629f90(void *this,int param_1,undefined4 param_2)
   case 0:
     if (*(int *)(param_1 + 0x1c) == 4) {
       *(byte *)((int)this + 0xbe) = (byte)(&DAT_007d0af0)[(uint)*(byte *)(param_1 + 0x14) * 8] >> 1;
-      goto switchD_0062a167_caseD_3;
+      goto cf_common_exit_0062A1E3;
     }
     bVar4 = (byte)(&DAT_007d0a70)[(uint)*(byte *)(param_1 + 0x14) * 8] >> 1;
     goto LAB_0062a1dd;
   case 1:
   case 0x20:
     *(byte *)((int)this + 0xbe) = (byte)(&DAT_007d0bf0)[(uint)*(byte *)(param_1 + 0x14) * 8] >> 1;
-    goto switchD_0062a167_caseD_3;
+    goto cf_common_exit_0062A1E3;
   case 2:
   case 8:
   case 0x40:
     iVar6 = DAT_007d09d4;
     break;
   default:
-    goto switchD_0062a167_caseD_3;
+    goto cf_common_exit_0062A1E3;
   case 4:
     iVar6 = *(int *)(&DAT_007d0a00 + (uint)*(byte *)((int)this + 0x14) * 4);
     break;
@@ -121,7 +121,7 @@ undefined4 __thiscall FUN_00629f90(void *this,int param_1,undefined4 param_2)
   bVar4 = (byte)(iVar6 / 2);
 LAB_0062a1dd:
   *(byte *)((int)this + 0xbe) = bVar4;
-switchD_0062a167_caseD_3:
+cf_common_exit_0062A1E3:
   *(char *)((int)this + 0xbe) = *(char *)((int)this + 0xbe) + '\n';
   return 0;
 }

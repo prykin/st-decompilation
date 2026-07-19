@@ -71,7 +71,7 @@ LAB_005a33eb:
 005A33F2  EB 07                     JMP 0x005a33fb
 LAB_005a33f4:
 005A33F4  C6 05 00 34 80 00 0C      MOV byte ptr [0x00803400],0xc
-LAB_005a33fb:
+FSGSTy::CreateGame::cf_common_exit_005A33FB:
 005A33FB  6A 00                     PUSH 0x0
 005A33FD  6A 13                     PUSH 0x13
 005A33FF  68 1F 61 00 00            PUSH 0x611f

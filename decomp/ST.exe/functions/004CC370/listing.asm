@@ -115,7 +115,7 @@ LAB_004cc4e5:
 004CC501  85 C0                     TEST EAX,EAX
 004CC503  74 17                     JZ 0x004cc51c
 004CC505  68 7F 03 00 00            PUSH 0x37f
-LAB_004cc50a:
+FUN_004cc370::cf_error_exit_004CC50A:
 004CC50A  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 004CC510  68 D0 D4 7A 00            PUSH 0x7ad4d0
 004CC515  51                        PUSH ECX
@@ -246,7 +246,7 @@ LAB_004cc660:
 004CC6C9  50                        PUSH EAX
 004CC6CA  6A 03                     PUSH 0x3
 004CC6CC  FF 97 90 00 00 00         CALL dword ptr [EDI + 0x90]
-LAB_004cc6d2:
+FUN_004cc370::cf_common_exit_004CC6D2:
 004CC6D2  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 004CC6D8  8B 91 E4 00 00 00         MOV EDX,dword ptr [ECX + 0xe4]
 004CC6DE  8B 8E 03 06 00 00         MOV ECX,dword ptr [ESI + 0x603]

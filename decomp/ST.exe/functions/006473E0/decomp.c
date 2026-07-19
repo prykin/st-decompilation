@@ -25,15 +25,15 @@ void __thiscall FUN_006473e0(void *this,undefined4 param_1)
   if (iVar1 != 0) {
     if (iVar1 == 1) {
       local_20 = *(int *)((int)this + 0x44) + 0x96;
-      goto LAB_00647445;
+      goto cf_common_exit_00647445;
     }
     if (iVar1 == 2) {
       local_20 = *(int *)((int)this + 0x44) + 0xfa;
-      goto LAB_00647445;
+      goto cf_common_exit_00647445;
     }
   }
   local_20 = *(int *)((int)this + 0x44) + 0x96;
-LAB_00647445:
+cf_common_exit_00647445:
   local_1c = param_1;
   local_30 = 0;
   (**(code **)(*DAT_00802a38 + 8))(0x124,0,0,local_44,0);

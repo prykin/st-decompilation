@@ -50,7 +50,7 @@ FUN_004b2520(uint param_1,int param_2,int param_3,int param_4,undefined4 param_5
   iVar5 = thunk_FUN_004b2390(param_1,param_3,param_4,param_5,param_10,1);
   if (iVar5 != 0) {
     local_34 = 1;
-    goto LAB_004b2601;
+    goto cf_common_exit_004B2601;
   }
   if ((param_2 < 0x32) || (0x73 < param_2)) {
     if ((0 < param_2) && (param_2 < 0x29)) {
@@ -139,7 +139,7 @@ LAB_004b288e:
     if (*param_10 != 0) {
       *param_10 = 0;
       local_34 = 1;
-      goto LAB_004b2601;
+      goto cf_common_exit_004B2601;
     }
     local_48 = 0;
   }
@@ -181,7 +181,7 @@ LAB_004b288e:
                 piVar14[2] = iVar9;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
-                if (0xe < local_34) goto LAB_004b2601;
+                if (0xe < local_34) goto cf_common_exit_004B2601;
               }
               iVar8 = local_64 + iVar5;
               if (((-1 < iVar8) && (iVar8 < DAT_007fb242)) &&
@@ -192,7 +192,7 @@ LAB_004b288e:
                 piVar14[2] = iVar9;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
-                if (0xe < local_34) goto LAB_004b2601;
+                if (0xe < local_34) goto cf_common_exit_004B2601;
               }
             }
             iVar7 = iVar7 + 1;
@@ -213,7 +213,7 @@ LAB_004b288e:
                 piVar14[2] = iVar9;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
-                if (0xe < local_34) goto LAB_004b2601;
+                if (0xe < local_34) goto cf_common_exit_004B2601;
               }
               if (((-1 < local_64) && (local_64 < (short)uVar12)) &&
                  (iVar10 = thunk_FUN_004b2390(param_1,local_64,iVar7,iVar9,param_10,local_48),
@@ -223,7 +223,7 @@ LAB_004b288e:
                 piVar14[2] = iVar9;
                 local_34 = local_34 + 1;
                 piVar14 = piVar14 + 3;
-                if (0xe < local_34) goto LAB_004b2601;
+                if (0xe < local_34) goto cf_common_exit_004B2601;
               }
             }
             iVar7 = iVar7 + 1;
@@ -235,7 +235,7 @@ LAB_004b288e:
     local_28 = local_28 + 1;
     param_3 = local_68;
   }
-LAB_004b2601:
+cf_common_exit_004B2601:
   if (local_34 != 0) {
     if (local_34 < 2) {
       local_34 = 0;

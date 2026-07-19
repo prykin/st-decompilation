@@ -35,7 +35,7 @@ LAB_00647439:
 00647439  8B 56 44                  MOV EDX,dword ptr [ESI + 0x44]
 0064743C  81 C2 96 00 00 00         ADD EDX,0x96
 00647442  89 55 E4                  MOV dword ptr [EBP + -0x1c],EDX
-LAB_00647445:
+FUN_006473e0::cf_common_exit_00647445:
 00647445  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 00647448  8B 0D 38 2A 80 00         MOV ECX,dword ptr [0x00802a38]
 0064744E  89 45 E8                  MOV dword ptr [EBP + -0x18],EAX

@@ -26,7 +26,7 @@ undefined4 __thiscall FUN_004ac9e0(void *this,int param_1)
   local_20 = 1;
   local_28 = 0;
   ExceptionList = &local_14;
-LAB_004aca23:
+cf_continue_loop_004ACA23:
   do {
     if (*(int *)((int)this + 0x14) <= (int)local_28) {
       ExceptionList = local_14;
@@ -56,7 +56,7 @@ LAB_004aca23:
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
           }
-          goto LAB_004aca23;
+          goto cf_continue_loop_004ACA23;
         }
         if (iVar1 != 0) {
           *(undefined4 *)(iVar3 + 0x20) = 0;
@@ -71,7 +71,7 @@ LAB_004aca23:
             STT3DSprC::StopShow(this,(byte)local_28);
             local_28 = local_28 + 1;
             local_20 = local_20 << 1;
-            goto LAB_004aca23;
+            goto cf_continue_loop_004ACA23;
           }
           if (*(char *)(iVar3 + 0xd) == '\x01') goto LAB_004acbdc;
         }

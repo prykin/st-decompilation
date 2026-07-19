@@ -70,7 +70,7 @@ FUN_00601500(void *this,int param_1,int param_2,int param_3,int param_4,int para
     param_3 = 0x14;
     local_c = 1;
     local_8 = 0;
-LAB_00601b38:
+cf_common_exit_00601B38:
     *(int *)((int)this + 0x28) = param_3;
     *(int *)((int)this + 0x20) = param_1;
     *(int *)((int)this + 0x24) = param_2;
@@ -84,7 +84,7 @@ LAB_00601b38:
     if (local_c != 1) {
       return local_c;
     }
-    goto LAB_00601b38;
+    goto cf_common_exit_00601B38;
   }
   local_10 = this;
   if (((param_11 != 0xa8) && (param_11 != 0xb1)) && (param_11 != 0x14e)) {
@@ -154,7 +154,7 @@ LAB_00601b38:
                                (int)sVar4) * 8), piVar7 == (int *)0x0)) {
         local_c = 1;
         this = local_10;
-        goto LAB_00601b38;
+        goto cf_common_exit_00601B38;
       }
       iVar6 = (**(code **)(*piVar7 + 0xf8))();
       if (iVar6 == 0) {

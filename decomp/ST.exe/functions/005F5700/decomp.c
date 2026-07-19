@@ -86,7 +86,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
               if (param_2 <= iVar5) {
                 iVar5 = FUN_006aced8(local_6 + 100,param_1._2_2_ + 100,*(int *)((int)this + 0x111),
                                      *(int *)((int)this + 0x115));
-                if (param_2 <= iVar5) goto LAB_005f5985;
+                if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
               }
             }
           }
@@ -94,7 +94,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
         else {
           iVar5 = FUN_006aced8((int)local_6,(int)param_1._2_2_,*(int *)((int)this + 0x111),
                                *(int *)((int)this + 0x115));
-          if (param_2 <= iVar5) goto LAB_005f5985;
+          if (param_2 <= iVar5) goto cf_continue_loop_005F5985;
         }
         local_c = local_c + 1;
         thunk_FUN_00601d10(*(undefined4 *)((int)this + 0x51),
@@ -102,7 +102,7 @@ int __thiscall FUN_005f5700(void *this,int param_1,int param_2)
                            (short)*(undefined4 *)((int)this + 0x81),
                            *(undefined2 *)((int)this + 0x85),0xb5,0x110);
       }
-LAB_005f5985:
+cf_continue_loop_005F5985:
       sVar2 = DAT_007fb240;
     }
     iVar6 = iVar6 + 1;

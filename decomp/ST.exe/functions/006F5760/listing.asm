@@ -141,7 +141,7 @@ LAB_006f5891:
 006F5896  49                        DEC ECX
 006F5897  7F F3                     JG 0x006f588c
 006F5899  EB 46                     JMP 0x006f58e1
-LAB_006f589b:
+FUN_006f5760::cf_continue_loop_006F589B:
 006F589B  83 C3 02                  ADD EBX,0x2
 006F589E  47                        INC EDI
 006F589F  49                        DEC ECX

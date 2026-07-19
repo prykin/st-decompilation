@@ -89,7 +89,7 @@ LAB_00674bbd:
 00674BBF  5B                        POP EBX
 00674BC0  5D                        POP EBP
 00674BC1  C2 04 00                  RET 0x4
-LAB_00674bc4:
+FUN_00674af0::cf_common_exit_00674BC4:
 00674BC4  8B 01                     MOV EAX,dword ptr [ECX]
 LAB_00674bc6:
 00674BC6  5B                        POP EBX

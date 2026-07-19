@@ -18,7 +18,7 @@ undefined4 __cdecl FUN_004b1690(int param_1,int param_2,int param_3,int param_4,
   
   if ((((param_1 < 0) || ((int)DAT_007fb240 < param_1 + 1)) || (param_2 < 0)) ||
      ((((int)DAT_007fb242 < param_2 + 1 || (param_3 < 0)) || ((int)DAT_007fb244 < param_3 + 1)))) {
-LAB_004b1816:
+cf_break_loop_004B1816:
     bVar1 = false;
   }
   else {
@@ -34,7 +34,7 @@ LAB_004b1816:
             if (param_3 < param_3 + 1) {
               do {
                 sVar7 = (short)iVar8;
-                if (sVar7 < 0) goto LAB_004b1816;
+                if (sVar7 < 0) goto cf_break_loop_004B1816;
                 sVar6 = (short)iVar5;
                 sVar2 = (short)iVar3;
                 if (((((sVar7 < DAT_007fb240) && (-1 < sVar6)) &&
@@ -49,7 +49,7 @@ LAB_004b1816:
                      ((DAT_007fb244 <= sVar2 ||
                       (*(short *)(DAT_007fb280 +
                                  ((int)sVar6 * (int)DAT_007fb278 + (int)sVar2 * (int)DAT_007fb27e +
-                                 (int)sVar7) * 2) != 0)))))))) goto LAB_004b1816;
+                                 (int)sVar7) * 2) != 0)))))))) goto cf_break_loop_004B1816;
                 iVar3 = iVar3 + 1;
               } while (iVar3 < param_3 + 1);
             }

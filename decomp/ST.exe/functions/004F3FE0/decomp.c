@@ -34,19 +34,19 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,int param_2,byte param_3,char *p
   default:
     if (this->field_0130 != 0) {
       local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f4070;
+      goto cf_common_join_004F4070;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
       local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f4070;
+      goto cf_common_join_004F4070;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
       local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f4070;
+      goto cf_common_join_004F4070;
     }
     break;
   case 7:
@@ -54,12 +54,12 @@ CPanelTy::PaintLBut(CPanelTy *this,byte param_1,int param_2,byte param_3,char *p
 LAB_004f4057:
     if (iVar4 != 0) {
       local_c = local_c - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f4070;
+      goto cf_common_join_004F4070;
     }
     local_c = local_c - this->field_00C0;
   }
   local_c = local_c - DAT_00806734;
-LAB_004f4070:
+cf_common_join_004F4070:
   if (param_6 != (undefined *)0x0) {
     local_58.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_58;

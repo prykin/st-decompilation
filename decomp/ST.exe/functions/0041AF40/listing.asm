@@ -605,7 +605,7 @@ LAB_0041b6ad:
 0041B6BD  0F 84 FC 00 00 00         JZ 0x0041b7bf
 0041B6C3  48                        DEC EAX
 0041B6C4  74 3C                     JZ 0x0041b702
-LAB_0041b6c6:
+STGameObjC::GetMessage::cf_common_exit_0041B6C6:
 0041B6C6  68 E8 4E 7A 00            PUSH 0x7a4ee8
 0041B6CB  68 CC 4C 7A 00            PUSH 0x7a4ccc
 0041B6D0  6A 00                     PUSH 0x0
@@ -1226,7 +1226,7 @@ LAB_0041be13:
 0041BE5A  52                        PUSH EDX
 0041BE5B  F3 A5                     MOVSD.REP ES:EDI,ESI
 0041BE5D  6A 04                     PUSH 0x4
-LAB_0041be5f:
+STGameObjC::GetMessage::cf_common_exit_0041BE5F:
 0041BE5F  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
 0041BE65  E8 EB 8D FE FF            CALL 0x00404c55
 LAB_0041be6a:

@@ -48,7 +48,7 @@ LAB_004177b8:
 004177B8  33 C2                     XOR EAX,EDX
 004177BA  2B C2                     SUB EAX,EDX
 004177BC  F7 D8                     NEG EAX
-LAB_004177be:
+FUN_00417740::cf_common_exit_004177BE:
 004177BE  66 89 81 86 00 00 00      MOV word ptr [ECX + 0x86],AX
 004177C5  B8 01 00 00 00            MOV EAX,0x1
 004177CA  5F                        POP EDI

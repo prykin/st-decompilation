@@ -29,7 +29,7 @@ undefined4 __fastcall FUN_004c6d00(int *param_1)
     }
     else {
       if (iVar3 == 1) goto LAB_004c6e4d;
-      if (iVar3 != 2) goto LAB_004c6f47;
+      if (iVar3 != 2) goto cf_common_exit_004C6F47;
       iVar3 = param_1[0x101];
       param_1[0x101] = iVar3 + 1;
       if ((9 < iVar3 + 1) && (iVar3 = thunk_FUN_004ea620((int)param_1), iVar3 != 0)) {
@@ -42,7 +42,7 @@ undefined4 __fastcall FUN_004c6d00(int *param_1)
         if (iVar3 == 2) {
           param_1[0xf7] = 0;
         }
-        goto LAB_004c6f47;
+        goto cf_common_exit_004C6F47;
       }
       iVar3 = 0x59;
     }
@@ -76,14 +76,14 @@ undefined4 __fastcall FUN_004c6d00(int *param_1)
         }
       }
     }
-    if ((param_1[0x100] == 0) || (param_1[0xf7] == 0)) goto LAB_004c6f47;
+    if ((param_1[0x100] == 0) || (param_1[0xf7] == 0)) goto cf_common_exit_004C6F47;
     iVar3 = thunk_FUN_00415ed0(param_1,&local_20,&local_1c);
     if (iVar3 != -1) {
-      if (iVar3 != 0) goto LAB_004c6f47;
+      if (iVar3 != 0) goto cf_common_exit_004C6F47;
 LAB_004c6e4d:
       param_1[0xf7] = 0;
       thunk_FUN_004167a0((int)param_1);
-      goto LAB_004c6f47;
+      goto cf_common_exit_004C6F47;
     }
     iVar3 = ReportDebugMessage(s_E____titans_Artem_TLO_bmove_cpp_007ad368,0x47,0,-5,&DAT_007a4ccc,
                                s_move_error_007ad390);
@@ -95,7 +95,7 @@ LAB_004c6e4d:
     iVar3 = 0x47;
   }
   RaiseInternalException(-5,DAT_007ed77c,s_E____titans_Artem_TLO_bmove_cpp_007ad368,iVar3);
-LAB_004c6f47:
+cf_common_exit_004C6F47:
   thunk_FUN_004162f0(param_1,&local_6,&local_8,&local_a);
   param_1[0x16c] = (int)local_6;
   param_1[0x16d] = (int)local_8;

@@ -1369,9 +1369,9 @@ LAB_004a2bcf:
       STAllPlayersC::RegisterPGPair
                 (DAT_007fa174,CONCAT31((int3)((uint)local_c >> 8),this_00->field_0024),local_10,
                  local_c);
-      goto LAB_004a2c5d;
+      goto cf_common_exit_004A2C5D;
     }
-    if (local_10 != (uint *)0x0) goto LAB_004a2c5d;
+    if (local_10 != (uint *)0x0) goto cf_common_exit_004A2C5D;
   }
   if (local_c != (uint *)0x0) {
     uVar10 = 0;
@@ -1391,7 +1391,7 @@ LAB_004a2bcf:
       } while ((int)uVar4 < (int)uVar11);
     }
   }
-LAB_004a2c5d:
+cf_common_exit_004A2C5D:
   if (local_10 != (uint *)0x0) {
     FUN_006ae110((byte *)local_10);
   }

@@ -122,7 +122,7 @@ switchD_00668c18::caseD_80e:
 00668C3B  83 F8 04                  CMP EAX,0x4
 LAB_00668c3e:
 00668C3E  0F 8F B2 00 00 00         JG 0x00668cf6
-switchD_00668b66::caseD_4:
+FUN_00668aa0::cf_common_exit_00668C44:
 00668C44  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 00668C47  C6 00 01                  MOV byte ptr [EAX],0x1
 00668C4A  C7 40 01 00 00 00 00      MOV dword ptr [EAX + 0x1],0x0
@@ -133,7 +133,7 @@ switchD_00668c18::caseD_82a:
 00668C58  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 00668C5B  83 E8 02                  SUB EAX,0x2
 00668C5E  0F 85 92 00 00 00         JNZ 0x00668cf6
-switchD_00668bfb::caseD_4:
+FUN_00668aa0::cf_common_exit_00668C64:
 00668C64  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 00668C67  C6 00 03                  MOV byte ptr [EAX],0x3
 00668C6A  66 C7 40 01 00 00         MOV word ptr [EAX + 0x1],0x0
@@ -150,7 +150,7 @@ switchD_00668c18::caseD_82c:
 00668C85  48                        DEC EAX
 LAB_00668c86:
 00668C86  75 6E                     JNZ 0x00668cf6
-switchD_00668b66::caseD_3:
+FUN_00668aa0::cf_common_exit_00668C88:
 00668C88  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 00668C8B  C6 00 01                  MOV byte ptr [EAX],0x1
 00668C8E  C7 40 01 FF FF FF FF      MOV dword ptr [EAX + 0x1],0xffffffff
@@ -171,7 +171,7 @@ switchD_00668c18::caseD_82f:
 00668CB7  77 3D                     JA 0x00668cf6
 switchD_00668cb9::switchD:
 00668CB9  FF 24 85 44 8E 66 00      JMP dword ptr [EAX*0x4 + 0x668e44]
-switchD_00668cb9::caseD_4:
+FUN_00668aa0::cf_common_exit_00668CC0:
 00668CC0  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 00668CC3  C6 00 01                  MOV byte ptr [EAX],0x1
 00668CC6  C7 40 01 FF FF FF 3F      MOV dword ptr [EAX + 0x1],0x3fffffff

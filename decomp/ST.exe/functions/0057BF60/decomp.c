@@ -267,7 +267,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
         STT3DSprC::SetCurFase((STT3DSprC *)&this_00->field_01D5,'\x0e',0);
       }
     }
-    goto LAB_0057c3e4;
+    goto cf_common_exit_0057C3E4;
   }
   *(undefined4 *)&this_00->field_0x23b = 6;
   *(undefined4 *)&this_00->field_0x231 = 0;
@@ -295,7 +295,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
      (iVar6 = thunk_FUN_00417ee0(this_00,*(short *)&this_00->field_0x263), iVar6 != 0)) {
     thunk_FUN_0057bf20(this_00);
     *(undefined4 *)&this_00->field_0x23b = 3;
-    goto LAB_0057c3e4;
+    goto cf_common_exit_0057C3E4;
   }
   switch(*(undefined4 *)&this_00->field_0x267) {
   case 0xe7:
@@ -314,7 +314,7 @@ undefined4 __thiscall STFishC::GetMessage(STFishC *this,int param_1)
                        0x1d);
     if (iVar6 != 0) {
       iVar6 = 0xea;
-LAB_0057c332:
+cf_error_exit_0057C332:
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_To_fish_cpp_007cb044,iVar6);
     }
     break;
@@ -324,7 +324,7 @@ LAB_0057c332:
                        ,0x1d);
     if (iVar6 != 0) {
       iVar6 = 0xf0;
-      goto LAB_0057c332;
+      goto cf_error_exit_0057C332;
     }
     break;
   case 0xea:
@@ -332,7 +332,7 @@ LAB_0057c332:
                       ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,&DAT_007cb008,0x1d);
     if (iVar6 != 0) {
       iVar6 = 0xfd;
-      goto LAB_0057c332;
+      goto cf_error_exit_0057C332;
     }
     break;
   case 0xeb:
@@ -340,7 +340,7 @@ LAB_0057c332:
                       ((STT3DSprC *)&this_00->field_01D5,0xe,DAT_0080676c,&DAT_007cb010,0x1d);
     if (iVar6 != 0) {
       iVar6 = 0x104;
-      goto LAB_0057c332;
+      goto cf_error_exit_0057C332;
     }
     break;
   default:
@@ -357,7 +357,7 @@ switchD_0057c210_default:
   *(undefined2 *)&this_00->field_0x237 = *(undefined2 *)&this_00->field_0x49;
   *(undefined2 *)&this_00->field_0x239 = *(undefined2 *)&this_00->field_0x4b;
   *(undefined4 *)&this_00->field_0x23b = 0;
-LAB_0057c3e4:
+cf_common_exit_0057C3E4:
   if ((*(int *)&this_00->field_0x23b != 6) && (iVar6 = thunk_FUN_0058cfe0((int)this_00), iVar6 == 0)
      ) {
     thunk_FUN_0057bf20(this_00);

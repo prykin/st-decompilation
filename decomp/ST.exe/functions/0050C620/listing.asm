@@ -2182,7 +2182,7 @@ switchD_0050cbf9::caseD_5f:
 0050E003  8B E5                     MOV ESP,EBP
 0050E005  5D                        POP EBP
 0050E006  C3                        RET
-LAB_0050e007:
+CPanelTy::Update4PanelSI::cf_common_exit_0050E007:
 0050E007  8B CB                     MOV ECX,EBX
 0050E009  E8 82 45 EF FF            CALL 0x00402590
 0050E00E  6A 01                     PUSH 0x1

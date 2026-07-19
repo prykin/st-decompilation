@@ -177,7 +177,7 @@ LAB_0071c72b:
 0071C72B  49                        DEC ECX
 0071C72C  89 4D EC                  MOV dword ptr [EBP + -0x14],ECX
 0071C72F  0F 89 AF FE FF FF         JNS 0x0071c5e4
-LAB_0071c735:
+InputClassTy::DelAcc::cf_common_exit_0071C735:
 0071C735  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
 0071C738  8B 4B 24                  MOV ECX,dword ptr [EBX + 0x24]
 0071C73B  50                        PUSH EAX

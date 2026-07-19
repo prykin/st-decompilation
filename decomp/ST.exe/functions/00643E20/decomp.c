@@ -140,7 +140,7 @@ LAB_00643f4a:
         }
       }
       iVar9 = thunk_FUN_004acd30(pSVar1,'\x01');
-      if (iVar9 != *(byte *)(param_1 + 0x27c) - 1) goto LAB_0064428f;
+      if (iVar9 != *(byte *)(param_1 + 0x27c) - 1) goto cf_common_exit_0064428F;
     }
     else {
       bVar6 = *(byte *)(param_1 + 0x27c);
@@ -199,11 +199,11 @@ LAB_00643f4a:
         }
       }
       iVar9 = thunk_FUN_004acd30(pSVar1,'\x01');
-      if (iVar9 != *(byte *)(param_1 + 0x27c) - 1) goto LAB_0064428f;
+      if (iVar9 != *(byte *)(param_1 + 0x27c) - 1) goto cf_common_exit_0064428F;
     }
     STT3DSprC::StopShow((STT3DSprC *)(param_1 + 0x1d5),1);
   }
-LAB_0064428f:
+cf_common_exit_0064428F:
   uVar5 = thunk_FUN_0041da30(param_1);
   return uVar5;
 }

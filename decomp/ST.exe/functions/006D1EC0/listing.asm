@@ -142,7 +142,7 @@ LAB_006d2038:
 006D2038  0F 8E C2 04 00 00         JLE 0x006d2500
 LAB_006d203e:
 006D203E  8B 5D 08                  MOV EBX,dword ptr [EBP + 0x8]
-LAB_006d2041:
+FUN_006d1ec0::cf_common_join_006D2041:
 006D2041  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 006D2044  42                        INC EDX
 006D2045  83 C0 10                  ADD EAX,0x10
@@ -413,7 +413,7 @@ LAB_006d22a0:
 006D22BC  57                        PUSH EDI
 006D22BD  51                        PUSH ECX
 006D22BE  E9 6F FF FF FF            JMP 0x006d2232
-LAB_006d22c3:
+FUN_006d1ec0::cf_common_join_006D22C3:
 006D22C3  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 006D22C6  8B 45 DC                  MOV EAX,dword ptr [EBP + -0x24]
 006D22C9  8B 4D 14                  MOV ECX,dword ptr [EBP + 0x14]

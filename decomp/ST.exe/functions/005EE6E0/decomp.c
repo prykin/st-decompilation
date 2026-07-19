@@ -158,12 +158,12 @@ LAB_005ee9db:
   case 5:
     if (*(char *)((int)param_1 + 0x315) == '\x03') {
       if (DAT_00802a38[7].messages == (void *)param_1[0xb8]) {
-LAB_005eeddf:
+cf_common_exit_005EEDDF:
         *(undefined4 *)((int)param_1 + 0x23a) = 6;
       }
     }
     else if (*(char *)((int)param_1 + 0x315) == '\x05') {
-      if (*(int *)((int)param_1 + 0x2d2) < 0) goto LAB_005eeddf;
+      if (*(int *)((int)param_1 + 0x2d2) < 0) goto cf_common_exit_005EEDDF;
     }
     else {
       this = (STT3DSprC *)((int)param_1 + 0x1d5);
@@ -229,7 +229,7 @@ joined_r0x005eed0b:
       }
       iVar4 = thunk_FUN_004ac910(this,'\t');
       if (iVar4 == *(int *)(&DAT_007cdf5e + (uint)*(byte *)((int)param_1 + 0x2df) * 0x32))
-      goto LAB_005eeddf;
+      goto cf_common_exit_005EEDDF;
     }
     thunk_FUN_005eeff0(param_1,1);
     break;

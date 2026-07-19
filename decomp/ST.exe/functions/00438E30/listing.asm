@@ -141,7 +141,7 @@ LAB_00438fb0:
 00438FD0  85 C0                     TEST EAX,EAX
 00438FD2  74 2D                     JZ 0x00439001
 00438FD4  CC                        INT3
-LAB_00438fe7:
+STAllPlayersC::SaveTmp::cf_common_exit_00438FE7:
 00438FE7  C1 E3 04                  SHL EBX,0x4
 00438FEA  8D 8C 33 27 50 7F 00      LEA ECX,[EBX + ESI*0x1 + 0x7f5027]
 00438FF1  89 01                     MOV dword ptr [ECX],EAX

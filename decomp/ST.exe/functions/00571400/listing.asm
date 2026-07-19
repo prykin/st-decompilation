@@ -188,7 +188,7 @@ LAB_00571614:
 0057161B  EB 03                     JMP 0x00571620
 LAB_0057161d:
 0057161D  89 75 FC                  MOV dword ptr [EBP + -0x4],ESI
-LAB_00571620:
+STAppC::ReadCmdPlay::cf_common_exit_00571620:
 00571620  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 00571623  85 C0                     TEST EAX,EAX
 00571625  74 32                     JZ 0x00571659

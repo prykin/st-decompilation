@@ -81,7 +81,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
       else {
         uVar5 = 0xffffffff;
       }
-      if ((int)uVar5 < 0) goto LAB_0054acfd;
+      if ((int)uVar5 < 0) goto cf_common_exit_0054ACFD;
       if (uVar5 == 0xf) {
         if (((local_10 < 0) || (*(int *)((int)pvVar3 + 0x30) <= local_10)) ||
            (((&DAT_0079aed0)[iVar7] + local_14 < 0 ||
@@ -98,7 +98,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
         else {
           uVar5 = 0xffffffff;
         }
-        if ((int)uVar5 < 0) goto LAB_0054acfd;
+        if ((int)uVar5 < 0) goto cf_common_exit_0054ACFD;
         uVar5 = (uint)(uVar5 != 0xf);
       }
       else {
@@ -149,7 +149,7 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
     g_currentExceptionFrame = local_58.previous;
     return;
   }
-LAB_0054acfd:
+cf_common_exit_0054ACFD:
   local_8 = 0xffffffff;
   uVar5 = *(uint *)(*(int *)(local_c + 0x4e7) + 0xd);
   uVar1 = *(uint *)(*(int *)(local_c + 0x4e7) + 9);

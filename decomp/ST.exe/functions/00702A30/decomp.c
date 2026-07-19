@@ -301,7 +301,7 @@ LAB_00702de8:
   }
   uVar4 = uVar4 - local_8;
   pbVar9 = param_8;
-  if ((local_8 < 1) || ((local_c & 0x80) == 0)) goto LAB_00702f3a;
+  if ((local_8 < 1) || ((local_c & 0x80) == 0)) goto cf_common_join_00702F3A;
   if ((local_c & 0x40) == 0) {
     if (iVar6 < 1) goto switchD_00702fe7_default;
     switch(iVar6) {
@@ -315,14 +315,14 @@ LAB_00702de8:
       param_8 = param_8 + 1;
       local_8 = local_8 + -1;
       pbVar9 = param_8;
-      if (local_8 < 1) goto LAB_00702f3a;
+      if (local_8 < 1) goto cf_common_join_00702F3A;
       goto LAB_00703023;
     case 2:
 LAB_00703023:
       param_8 = param_8 + 1;
       local_8 = local_8 + -1;
       pbVar9 = param_8;
-      if (local_8 < 1) goto LAB_00702f3a;
+      if (local_8 < 1) goto cf_common_join_00702F3A;
 switchD_00702fe7_caseD_3:
       if (param_7 <= *puVar8) {
         *puVar11 = *(undefined1 *)((uint)*pbVar12 + param_15);
@@ -331,7 +331,7 @@ switchD_00702fe7_caseD_3:
       puVar11 = puVar11 + 1;
       pbVar12 = pbVar12 + 1;
       pbVar9 = param_8 + 1;
-      if (local_8 + -1 < 1) goto LAB_00702f3a;
+      if (local_8 + -1 < 1) goto cf_common_join_00702F3A;
       param_8 = param_8 + 2;
       local_8 = local_8 + -2;
       break;
@@ -369,7 +369,7 @@ switchD_00702fe7_default:
         }
       }
     }
-    goto LAB_00702f3a;
+    goto cf_common_join_00702F3A;
   }
   pbVar9 = param_8 + 1;
   if (iVar6 < 1) goto switchD_00702e5a_default;
@@ -382,12 +382,12 @@ switchD_00702fe7_default:
     puVar11 = puVar11 + 1;
     pbVar12 = pbVar12 + 1;
     local_8 = local_8 + -1;
-    if (local_8 < 1) goto LAB_00702f3a;
+    if (local_8 < 1) goto cf_common_join_00702F3A;
     goto LAB_00702e8d;
   case 2:
 LAB_00702e8d:
     local_8 = local_8 + -1;
-    if (local_8 < 1) goto LAB_00702f3a;
+    if (local_8 < 1) goto cf_common_join_00702F3A;
 switchD_00702e5a_caseD_3:
     if (param_7 <= *puVar8) {
       *puVar11 = *(undefined1 *)((uint)*pbVar12 + param_15);
@@ -395,7 +395,7 @@ switchD_00702e5a_caseD_3:
     puVar8 = puVar8 + 1;
     puVar11 = puVar11 + 1;
     pbVar12 = pbVar12 + 1;
-    if (local_8 + -1 < 1) goto LAB_00702f3a;
+    if (local_8 + -1 < 1) goto cf_common_join_00702F3A;
     local_8 = local_8 + -2;
     break;
   case 3:
@@ -419,7 +419,7 @@ switchD_00702e5a_default:
       if ((local_8 + -4 < 1) || (local_8 = local_8 + -5, local_8 < 1)) break;
     }
   }
-LAB_00702f3a:
+cf_common_join_00702F3A:
   iVar6 = (param_9 - param_10) - param_11;
   bVar1 = (byte)local_c;
   if ((int)uVar4 < iVar6) {

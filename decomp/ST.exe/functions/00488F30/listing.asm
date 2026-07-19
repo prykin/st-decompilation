@@ -244,7 +244,7 @@ LAB_004891f5:
 LAB_0048921c:
 0048921C  89 11                     MOV dword ptr [ECX],EDX
 0048921E  C6 41 08 01               MOV byte ptr [ECX + 0x8],0x1
-LAB_00489222:
+STBoatC::GetInfo16::cf_common_join_00489222:
 00489222  8B 83 F7 06 00 00         MOV EAX,dword ptr [EBX + 0x6f7]
 00489228  BF 09 00 00 00            MOV EDI,0x9
 0048922D  48                        DEC EAX

@@ -17,7 +17,7 @@ FUN_006accd0:
 006ACD00  C7 45 08 00 00 00 00      MOV dword ptr [EBP + 0x8],0x0
 006ACD07  89 45 F8                  MOV dword ptr [EBP + -0x8],EAX
 006ACD0A  89 4D 0C                  MOV dword ptr [EBP + 0xc],ECX
-LAB_006acd0d:
+FUN_006accd0::cf_continue_loop_006ACD0D:
 006ACD0D  8B 7D FC                  MOV EDI,dword ptr [EBP + -0x4]
 006ACD10  8B 4D 10                  MOV ECX,dword ptr [EBP + 0x10]
 006ACD13  8B C7                     MOV EAX,EDI
@@ -36,7 +36,7 @@ LAB_006acd0d:
 006ACD2F  56                        PUSH ESI
 006ACD30  E8 CB 19 02 00            CALL 0x006ce700
 006ACD35  8B DE                     MOV EBX,ESI
-LAB_006acd37:
+FUN_006accd0::cf_continue_loop_006ACD37:
 006ACD37  8B 4D 10                  MOV ECX,dword ptr [EBP + 0x10]
 006ACD3A  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 006ACD3D  03 D9                     ADD EBX,ECX

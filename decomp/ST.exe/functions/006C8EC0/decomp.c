@@ -120,7 +120,7 @@ LAB_006c8f65:
     puVar17 = local_4c;
     if ((param_4 == (undefined4 *)0x0) ||
        (local_4c = (undefined4 *)FUN_006bfb70(0x3e84), local_4c == (undefined4 *)0x0))
-    goto LAB_006ce63a;
+    goto cf_break_loop_006CE63A;
     *local_4c = 0;
     puVar17 = local_4c + 1;
     local_3c = local_4c + 5;
@@ -138,22 +138,22 @@ LAB_006c8f65:
     *(undefined2 *)(local_4c + 4) = 1;
     bVar14 = false;
     puVar37 = (undefined4 *)0x0;
-    goto LAB_006c9187;
+    goto cf_continue_loop_006C9187;
   }
   goto LAB_006c8f65;
-LAB_006c9187:
-  if (local_34 <= local_48) goto LAB_006ce641;
+cf_continue_loop_006C9187:
+  if (local_34 <= local_48) goto cf_break_loop_006CE641;
   puVar17 = param_4 + local_48;
   while (puVar11 = (undefined4 *)*puVar17, puVar11 == (undefined4 *)0x0) {
     local_48 = local_48 + 1;
     puVar17 = puVar17 + 1;
-    if (local_34 <= local_48) goto LAB_006ce641;
+    if (local_34 <= local_48) goto cf_break_loop_006CE641;
   }
-  if (local_34 <= local_48) goto LAB_006ce641;
+  if (local_34 <= local_48) goto cf_break_loop_006CE641;
   if (local_34 <= local_48 + 10) {
     param_4 = (undefined4 *)FUN_006bfb50(param_4,local_34 * 4 + 400);
     puVar17 = local_4c;
-    if (param_4 == (undefined4 *)0x0) goto LAB_006ce63a;
+    if (param_4 == (undefined4 *)0x0) goto cf_break_loop_006CE63A;
     puVar17 = param_4 + local_34;
     for (iVar21 = 100; iVar21 != 0; iVar21 = iVar21 + -1) {
       *puVar17 = 0;
@@ -186,7 +186,7 @@ LAB_006c9187:
       for (; local_4c = puVar17, param_9 < 0x1a; param_9 = param_9 + 1) {
         if (local_40 < 1) {
           local_4c = (undefined4 *)FUN_006bfb70(0x3e84);
-          if (local_4c == (undefined4 *)0x0) goto LAB_006ce63a;
+          if (local_4c == (undefined4 *)0x0) goto cf_break_loop_006CE63A;
           *local_4c = puVar17;
           local_3c = local_4c + 1;
           local_40 = 1000;
@@ -2843,7 +2843,7 @@ LAB_006ce57c:
           }
         }
       }
-      if (0 < *psVar1) goto LAB_006ce641;
+      if (0 < *psVar1) goto cf_break_loop_006CE641;
       if ((((bVar13) && (-2 < iVar36)) && ((iVar36 < 2 && ((-2 < iVar21 && (iVar21 < 2)))))) &&
          ((-2 < iVar23 && (iVar23 < 2)))) {
         bVar14 = true;
@@ -2855,12 +2855,12 @@ LAB_006ce57c:
   *puVar22 = puVar37;
   param_9 = param_9 + local_54;
   puVar37 = puVar11;
-  if (bVar14) goto LAB_006ce641;
-  goto LAB_006c9187;
-LAB_006ce63a:
+  if (bVar14) goto cf_break_loop_006CE641;
+  goto cf_continue_loop_006C9187;
+cf_break_loop_006CE63A:
   local_4c = puVar17;
   local_38 = 0xfffffffe;
-LAB_006ce641:
+cf_break_loop_006CE641:
   if (sVar3 < 0) {
     *psVar1 = sVar3;
   }

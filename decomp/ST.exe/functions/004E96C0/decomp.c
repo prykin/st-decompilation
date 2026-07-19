@@ -51,9 +51,9 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
         else {
           if (uVar2 == 2) {
             (**(code **)(*(int *)this + 0x90))(4,0x2de);
-            goto LAB_004e987a;
+            goto cf_common_exit_004E987A;
           }
-          if (uVar2 != 3) goto LAB_004e987a;
+          if (uVar2 != 3) goto cf_common_exit_004E987A;
           iVar1 = *(int *)this;
           uVar3 = 0x405;
         }
@@ -65,7 +65,7 @@ undefined4 __thiscall FUN_004e96c0(void *this,int *param_1)
                          *(uint *)((int)this + 0x24));
     }
   }
-LAB_004e987a:
+cf_common_exit_004E987A:
   thunk_FUN_004ea6e0(*(uint *)((int)this + 0x24),*(int *)((int)this + 0x4e4),
                      *(int *)((int)this + 0x4e8),*(undefined4 *)((int)this + 0x4ec));
   return 0;

@@ -118,7 +118,7 @@ LAB_004b787c:
 004B78A1  03 7D F0                  ADD EDI,dword ptr [EBP + -0x10]
 LAB_004b78a4:
 004B78A4  8B 5D FC                  MOV EBX,dword ptr [EBP + -0x4]
-LAB_004b78a7:
+FUN_004b7750::cf_continue_loop_004B78A7:
 004B78A7  8B 8E 29 4E 7F 00         MOV ECX,dword ptr [ESI + 0x7f4e29]
 004B78AD  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 004B78B0  40                        INC EAX

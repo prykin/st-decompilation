@@ -1561,13 +1561,13 @@ LAB_0046e7f8:
 0046E7F8  0F BF 86 36 05 00 00      MOVSX EAX,word ptr [ESI + 0x536]
 0046E7FF  52                        PUSH EDX
 0046E800  50                        PUSH EAX
-LAB_0046e801:
+STBoatC::UnLoadRC::cf_common_exit_0046E801:
 0046E801  8B CE                     MOV ECX,ESI
 0046E803  E8 63 67 F9 FF            CALL 0x00404f6b
 0046E808  6A 00                     PUSH 0x0
 0046E80A  8B CE                     MOV ECX,ESI
 0046E80C  E8 CD 49 F9 FF            CALL 0x004031de
-switchD_0046d492::caseD_2:
+STBoatC::UnLoadRC::cf_common_exit_0046E811:
 0046E811  8B 16                     MOV EDX,dword ptr [ESI]
 0046E813  8B CE                     MOV ECX,ESI
 0046E815  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
@@ -1595,7 +1595,7 @@ LAB_0046e82d:
 0046E851  CC                        INT3
 LAB_0046e852:
 0046E852  68 D5 27 00 00            PUSH 0x27d5
-LAB_0046e857:
+STBoatC::UnLoadRC::cf_error_exit_0046E857:
 0046E857  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 0046E85D  68 3C 9D 7A 00            PUSH 0x7a9d3c
 0046E862  51                        PUSH ECX
@@ -1708,7 +1708,7 @@ LAB_0046e991:
 LAB_0046e9ec:
 0046E9EC  8B CE                     MOV ECX,ESI
 0046E9EE  E8 EB 47 F9 FF            CALL 0x004031de
-switchD_0046db6f::caseD_2:
+STBoatC::UnLoadRC::cf_common_exit_0046E9F3:
 0046E9F3  8B 06                     MOV EAX,dword ptr [ESI]
 0046E9F5  8B CE                     MOV ECX,ESI
 0046E9F7  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

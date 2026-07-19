@@ -130,12 +130,12 @@ FUN_004cafc0(void *this,Global_sub_004CAFC0_param_1Enum param_1,uint param_2,uin
   case CASE_9:
     goto switchD_004cb1d7_caseD_8;
   default:
-    goto switchD_004cb1d7_caseD_a;
+    goto cf_common_exit_004CB6D2;
   case CASE_C:
     switch(iVar3) {
     case 0x33:
       if (*(int *)((int)this + 0x520) == 0) {
-switchD_004cb5c6_caseD_1:
+cf_common_exit_004CB489:
         uVar1 = *(uint *)((&PTR_DAT_007b8310)[iVar4] +
                          (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
         *param_4 = uVar1;
@@ -159,7 +159,7 @@ switchD_004cb5c6_caseD_1:
                             (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8 + 4);
         return;
       }
-switchD_004cb5c6_caseD_2:
+cf_common_exit_004CB504:
       uVar1 = *(uint *)((&PTR_DAT_007b8310)[iVar4] +
                        (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
       *param_4 = uVar1;
@@ -169,7 +169,7 @@ switchD_004cb5c6_caseD_2:
     case 0x39:
     case 0x4f:
     case 0x5e:
-      if (*(int *)((int)this + 0x4d0) == 0) goto switchD_004cb5c6_caseD_1;
+      if (*(int *)((int)this + 0x4d0) == 0) goto cf_common_exit_004CB489;
       if (*(int *)((int)this + 0x4d0) != 1) {
         return;
       }
@@ -182,9 +182,9 @@ switchD_004cb5c6_caseD_0:
         *param_3 = 0;
         return;
       case 1:
-        goto switchD_004cb5c6_caseD_1;
+        goto cf_common_exit_004CB489;
       case 2:
-        goto switchD_004cb5c6_caseD_2;
+        goto cf_common_exit_004CB504;
       case 3:
         break;
       case 4:
@@ -202,16 +202,16 @@ switchD_004cb5c6_caseD_5:
                             (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
         return;
       default:
-        goto switchD_004cb1d7_caseD_a;
+        goto cf_common_exit_004CB6D2;
       }
     case 0x70:
       switch(*(undefined4 *)((int)this + 0x4d0)) {
       case 0:
         goto switchD_004cb5c6_caseD_0;
       case 1:
-        goto switchD_004cb5c6_caseD_1;
+        goto cf_common_exit_004CB489;
       case 2:
-        goto switchD_004cb5c6_caseD_2;
+        goto cf_common_exit_004CB504;
       case 3:
         break;
       case 4:
@@ -219,7 +219,7 @@ switchD_004cb5c6_caseD_5:
       case 5:
         goto switchD_004cb5c6_caseD_5;
       default:
-        goto switchD_004cb1d7_caseD_a;
+        goto cf_common_exit_004CB6D2;
       }
     }
     *param_3 = *(uint *)((&PTR_DAT_007b8310)[iVar4] +
@@ -276,7 +276,7 @@ switchD_004cb2cd_caseD_2:
                             (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
         return;
       default:
-switchD_004cb1d7_caseD_a:
+cf_common_exit_004CB6D2:
         return;
       }
     }
@@ -303,7 +303,7 @@ switchD_004cb2cd_caseD_0:
                             (param_2 + (iVar2 + *(int *)((int)this + 0x235) * 3) * 4) * 8);
         return;
       default:
-        goto switchD_004cb1d7_caseD_a;
+        goto cf_common_exit_004CB6D2;
       }
     }
   }

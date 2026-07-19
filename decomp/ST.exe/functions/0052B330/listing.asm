@@ -162,7 +162,7 @@ LAB_0052b512:
 0052B57E  5F                        POP EDI
 0052B57F  5E                        POP ESI
 0052B580  C3                        RET
-LAB_0052b581:
+FUN_0052b330::cf_common_exit_0052B581:
 0052B581  8B 86 B3 0D 00 00         MOV EAX,dword ptr [ESI + 0xdb3]
 0052B587  85 C0                     TEST EAX,EAX
 0052B589  0F 84 CC FD FF FF         JZ 0x0052b35b

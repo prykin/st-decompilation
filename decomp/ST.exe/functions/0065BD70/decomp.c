@@ -154,14 +154,14 @@ int __thiscall FUN_0065bd70(void *this,int param_1,int param_2)
   switch(uVar12) {
   case 0x5dc5:
     *(undefined4 *)((int)this + 0x52f) = *(undefined4 *)(param_1 + 0x14);
-    goto switchD_0065bf29_caseD_5dc7;
+    goto cf_common_exit_0065C65B;
   case 0x5dc6:
     pcVar10 = *(char **)(param_1 + 0x14);
     iVar6 = *(int *)((int)this + 0x5b3);
     uVar12 = 0;
     break;
   default:
-    goto switchD_0065bf29_caseD_5dc7;
+    goto cf_common_exit_0065C65B;
   case 0x5dd0:
   case 0x5dd1:
   case 0x5dd2:
@@ -245,7 +245,7 @@ LAB_0065c021:
       uVar9 = CONCAT22(uVar11,*(undefined2 *)(iVar6 + 0x1a));
       goto LAB_0065c4bb;
     }
-    goto LAB_0065c570;
+    goto cf_common_exit_0065C570;
   case 0x5ddb:
   case 0x5ddc:
   case 0x5ddd:
@@ -274,7 +274,7 @@ LAB_0065c021:
     sVar7 = *(short *)(iVar6 + 0x18);
     uVar12 = CONCAT22(uVar4,sVar7);
     if (((sVar7 < 0) || (7 < sVar7)) || (iVar8 = (int)sVar7, (&DAT_008087e9)[iVar8 * 0x51] == -1))
-    goto LAB_0065c570;
+    goto cf_common_exit_0065C570;
     *(int *)((int)this + 0x557) = iVar8;
     *(uint *)((int)this + 0x55b) = (uint)(byte)(&DAT_008087e8)[iVar8 * 0x51];
     *(uint *)((int)this + 0x55f) = (uint)(byte)(&DAT_008087ea)[iVar8 * 0x51];
@@ -300,7 +300,7 @@ LAB_0065c021:
       *(int *)((int)this + 0x54b) = (int)local_6;
     }
     uVar12 = CONCAT22((short)((uint)iVar8 >> 0x10),*(undefined2 *)(iVar6 + 0x18));
-    if (*(int *)(iVar6 + 0x10) != 0x5de1) goto LAB_0065c570;
+    if (*(int *)(iVar6 + 0x10) != 0x5de1) goto cf_common_exit_0065C570;
     goto LAB_0065c042;
   case 0x5de3:
   case 0x5de4:
@@ -335,9 +335,9 @@ LAB_0065c03e:
 LAB_0065c042:
     sVar7 = (short)uVar12;
     if (((sVar7 < 0) || (7 < sVar7)) || (iVar8 = (int)sVar7, (&DAT_008087e9)[iVar8 * 0x51] == -1)) {
-LAB_0065c570:
+cf_common_exit_0065C570:
       *(undefined4 *)((int)this + 0x557) = 0xff;
-      goto switchD_0065bf29_caseD_5dc7;
+      goto cf_common_exit_0065C65B;
     }
     *(int *)((int)this + 0x557) = iVar8;
     *(uint *)((int)this + 0x55b) = (uint)(byte)(&DAT_008087e8)[iVar8 * 0x51];
@@ -347,13 +347,13 @@ LAB_0065c570:
   case 0x5de5:
     sVar7 = *(short *)(param_1 + 0x14);
     if (((sVar7 < 0) || (7 < sVar7)) || (iVar6 = (int)sVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1))
-    goto switchD_0065bf29_caseD_5dc7;
+    goto cf_common_exit_0065C65B;
     *(int *)((int)this + 0x52f) = iVar6;
     *(uint *)((int)this + 0x533) = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
     *(uint *)((int)this + 0x537) = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
     *(uint *)((int)this + 0x53b) = (uint)*(ushort *)(param_1 + 0x16);
     *(uint *)((int)this + 0x53f) = (uint)*(ushort *)(param_1 + 0x1c);
-    if (*(int *)(param_1 + 0x18) == 0) goto switchD_0065bf29_caseD_5dc7;
+    if (*(int *)(param_1 + 0x18) == 0) goto cf_common_exit_0065C65B;
     iVar6 = *(int *)((int)this + 0x5b3);
     pcVar10 = (char *)(*(int *)(param_1 + 0x18) + 0x3b);
     uVar12 = 0;
@@ -374,12 +374,12 @@ LAB_0065c570:
       *(uint *)((int)this + 0x543) = (uint)(*(int *)(param_1 + 0x10) == 0x5de7);
     }
     if ((*(uint *)(param_1 + 0x10) < 0x5de6) || (0x5de8 < *(uint *)(param_1 + 0x10)))
-    goto switchD_0065bf29_caseD_5dc7;
+    goto cf_common_exit_0065C65B;
     uVar1 = *(ushort *)(param_1 + 0x14);
     uVar12 = (uint)uVar1;
     if (((short)uVar1 < 0) ||
        ((7 < (short)uVar1 || (iVar6 = (int)(short)uVar1, (&DAT_008087e9)[iVar6 * 0x51] == -1))))
-    goto LAB_0065c570;
+    goto cf_common_exit_0065C570;
     *(int *)((int)this + 0x557) = iVar6;
     *(uint *)((int)this + 0x55b) = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
     *(uint *)((int)this + 0x55f) = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
@@ -389,7 +389,7 @@ LAB_0065c4bb:
        (piVar2 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,uVar12,uVar9,CASE_1),
        piVar2 == (int *)0x0)) {
       *(undefined4 *)((int)this + 0x563) = 0;
-      goto switchD_0065bf29_caseD_5dc7;
+      goto cf_common_exit_0065C65B;
     }
     uVar3 = (**(code **)(*piVar2 + 0x2c))();
     *(undefined4 *)((int)this + 0x563) = uVar3;
@@ -416,17 +416,17 @@ LAB_0065c4bb:
   case 0x5dec:
     sVar7 = *(short *)(param_1 + 0x14);
     if (((sVar7 < 0) || (7 < sVar7)) || (iVar6 = (int)sVar7, (&DAT_008087e9)[iVar6 * 0x51] == -1))
-    goto switchD_0065bf29_caseD_5dc7;
+    goto cf_common_exit_0065C65B;
     *(int *)((int)this + 0x52f) = iVar6;
     *(uint *)((int)this + 0x533) = (uint)(byte)(&DAT_008087e8)[iVar6 * 0x51];
     *(uint *)((int)this + 0x537) = (uint)(byte)(&DAT_008087ea)[iVar6 * 0x51];
-    if (*(int *)(param_1 + 0x18) == 0) goto switchD_0065bf29_caseD_5dc7;
+    if (*(int *)(param_1 + 0x18) == 0) goto cf_common_exit_0065C65B;
     iVar6 = *(int *)((int)this + 0x5b3);
     pcVar10 = (char *)(*(int *)(param_1 + 0x18) + 0x92);
     uVar12 = 0;
   }
   Library::DKW::TBL::FUN_006b6020(iVar6,uVar12,pcVar10);
-switchD_0065bf29_caseD_5dc7:
+cf_common_exit_0065C65B:
   *(uint *)((int)this + 0x5a7) = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
   *(undefined4 *)((int)this + 0x5ab) = *(undefined4 *)(DAT_00802a38 + 0xe4);
   uVar3 = (**(code **)(*(int *)this + 0x14))();

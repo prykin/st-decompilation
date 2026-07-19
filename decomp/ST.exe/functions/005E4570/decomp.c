@@ -66,7 +66,7 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
     if (uVar12 == 0x6213) {
       PaintBut(local_18,&local_18[0xe].field_0069,0x24bc,4,1,*(short *)(param_1 + 0x14));
       FUN_006b35d0(DAT_008075a8,*(uint *)&this_00[6].field_0x1b);
-      goto switchD_005e45f7_caseD_1;
+      goto cf_common_exit_005E525B;
     }
     if (uVar12 < 0x6201) {
       if (uVar12 == 0x6200) {
@@ -82,7 +82,7 @@ undefined4 __thiscall MTaskTy::GetMessage(MTaskTy *this,int param_1)
           *(undefined4 *)&this_00->field_0x49 = 1;
           FUN_006e6020(this_00,(undefined4 *)&this_00->field_0x3d);
         }
-        goto switchD_005e45f7_caseD_1;
+        goto cf_common_exit_005E525B;
       }
       switch(uVar12) {
       case 0:
@@ -358,7 +358,7 @@ LAB_005e496b:
         FUN_006b35d0(DAT_008075a8,*(uint *)&this_00[6].field_0x17);
       }
     }
-    goto switchD_005e45f7_caseD_1;
+    goto cf_common_exit_005E525B;
   }
   uVar13 = (undefined3)((uint)extraout_ECX >> 8);
   if (uVar12 < 0x6335) {
@@ -507,7 +507,7 @@ LAB_005e496b:
                 ((MMMObjTy *)local_18,(int)&local_18[6].field_0x43,param_1,
                  CONCAT31(uVar13,*(char *)((int)&local_18[0xf].field_0065 + 2) == '\x01'));
     }
-    goto switchD_005e45f7_caseD_1;
+    goto cf_common_exit_005E525B;
   }
   switch(uVar12) {
   case 0x6335:
@@ -594,7 +594,7 @@ LAB_005e496b:
 LAB_005e5255:
     Library::DKW::DDX::FUN_006b3730(puVar9,uVar12,uVar17,uVar19,uVar10);
   }
-switchD_005e45f7_caseD_1:
+cf_common_exit_005E525B:
   g_currentExceptionFrame = local_68.previous;
   uVar5 = FUN_006e5fd0();
   return uVar5;

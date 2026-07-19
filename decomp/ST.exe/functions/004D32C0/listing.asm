@@ -1187,7 +1187,7 @@ LAB_004d4269:
 004D4284  85 C0                     TEST EAX,EAX
 004D4286  74 17                     JZ 0x004d429f
 004D4288  68 42 03 00 00            PUSH 0x342
-LAB_004d428d:
+FUN_004d32c0::cf_error_exit_004D428D:
 004D428D  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 004D4293  68 BC F4 7B 00            PUSH 0x7bf4bc
 004D4298  52                        PUSH EDX

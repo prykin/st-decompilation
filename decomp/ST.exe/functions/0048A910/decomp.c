@@ -755,7 +755,7 @@ LAB_0048c41d:
     *(undefined2 *)(param_1 + 0x241) = 0xfffb;
     *(undefined2 *)(param_1 + 0x243) = 0x1e;
     *(undefined2 *)(param_1 + 0x247) = 0x23;
-    goto LAB_0048c491;
+    goto cf_common_exit_0048C491;
   case 0x1d:
     *(undefined2 *)(param_1 + 0x231) = 0;
     *(undefined2 *)(param_1 + 0x233) = 0;
@@ -792,7 +792,7 @@ LAB_0048c41d:
     *(undefined2 *)(param_1 + 0x251) = 0x1e;
     *(undefined2 *)(param_1 + 0x253) = 0x14;
     *(undefined2 *)(param_1 + 599) = 0x28;
-    goto LAB_0048c491;
+    goto cf_common_exit_0048C491;
   case 0x1f:
     *(undefined2 *)(param_1 + 0x231) = 0;
     *(undefined2 *)(param_1 + 0x233) = 0;
@@ -804,7 +804,7 @@ LAB_0048c41d:
     *(undefined2 *)(param_1 + 0x241) = 0x19;
     *(undefined2 *)(param_1 + 0x243) = 0;
     *(undefined2 *)(param_1 + 0x247) = 0x50;
-    goto LAB_0048c491;
+    goto cf_common_exit_0048C491;
   case 0x20:
     *(undefined2 *)(param_1 + 0x231) = 0;
     *(undefined2 *)(param_1 + 0x233) = 0;
@@ -822,7 +822,7 @@ LAB_0048c41d:
     *(undefined2 *)(param_1 + 0x251) = 0xffbf;
     *(undefined2 *)(param_1 + 0x253) = 0xf;
     *(undefined2 *)(param_1 + 599) = 0x23;
-    goto LAB_0048c491;
+    goto cf_common_exit_0048C491;
   case 0x21:
     *(undefined2 *)(param_1 + 0x231) = 0;
     *(undefined2 *)(param_1 + 0x233) = 0;
@@ -837,7 +837,7 @@ LAB_0048c41d:
     *(undefined2 *)(param_1 + 0x249) = 10;
     *(undefined2 *)(param_1 + 0x24b) = 0;
     *(undefined2 *)(param_1 + 0x24f) = 0x50;
-    goto LAB_0048c491;
+    goto cf_common_exit_0048C491;
   case 0x22:
   case 0x28:
     *(undefined2 *)(param_1 + 0x231) = 0;
@@ -850,7 +850,7 @@ LAB_0048c41d:
     *(undefined2 *)(param_1 + 0x241) = 0xf;
     *(undefined2 *)(param_1 + 0x243) = 0;
     *(undefined2 *)(param_1 + 0x247) = 0x1e;
-LAB_0048c491:
+cf_common_exit_0048C491:
     *(undefined1 *)(param_1 + 0x2b2) = 1;
     break;
   case 0x23:

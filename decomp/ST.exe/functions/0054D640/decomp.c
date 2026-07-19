@@ -151,7 +151,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (0 < local_c) {
           do {
             iVar7 = FUN_00715630(DAT_00811764,0x42,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if (iVar7 == -0x4d) goto LAB_0054dfad;
+            if (iVar7 == -0x4d) goto cf_common_join_0054DFAD;
             if ((iVar7 == 1) && (local_8 != (int *)0x0)) {
               FUN_006ab060(&local_8);
             }
@@ -163,7 +163,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (0 < local_c) {
           do {
             iVar7 = FUN_00715630(DAT_00811764,0x43,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if (iVar7 == -0x4d) goto LAB_0054dfad;
+            if (iVar7 == -0x4d) goto cf_common_join_0054DFAD;
             if (iVar7 == 1) {
               if (local_10 == *(int *)&this_00->field_0x61) {
                 *(undefined4 *)&this_00->field_0x59 = 0;
@@ -180,7 +180,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (0 < local_c) {
           do {
             iVar7 = FUN_00715630(DAT_00811764,0x33,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if (iVar7 == -0x4d) goto LAB_0054dfad;
+            if (iVar7 == -0x4d) goto cf_common_join_0054DFAD;
             if ((iVar7 == 1) && (local_8 != (int *)0x0)) {
               thunk_FUN_00550830((int)local_8);
               FUN_006ab060(&local_8);
@@ -193,7 +193,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (0 < local_c) {
           do {
             iVar7 = FUN_00715630(DAT_00811764,0x35,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if (iVar7 == -0x4d) goto LAB_0054dfad;
+            if (iVar7 == -0x4d) goto cf_common_join_0054DFAD;
             if ((iVar7 == 1) && (thunk_FUN_00550430(this_00,local_10,1), local_8 != (int *)0x0)) {
               FUN_006ab060(&local_8);
             }
@@ -217,7 +217,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (0 < local_c) {
           do {
             iVar7 = FUN_00715630(DAT_00811764,0x11,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if (iVar7 == -0x4d) goto LAB_0054dfad;
+            if (iVar7 == -0x4d) goto cf_common_join_0054DFAD;
             if (iVar7 == 1) {
               thunk_FUN_005504f0(this_00,local_10,0x426f,1);
               if (local_10 == *(int *)&this_00->field_0x61) {
@@ -235,7 +235,7 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         if (0 < local_c) {
           do {
             iVar7 = FUN_00715630(DAT_00811764,0x13,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
-            if (iVar7 == -0x4d) goto LAB_0054dfad;
+            if (iVar7 == -0x4d) goto cf_common_join_0054DFAD;
             if (iVar7 == 1) {
               if (local_10 == *(int *)&this_00->field_0x61) {
                 *(undefined4 *)&this_00->field_0x59 = 0;
@@ -479,7 +479,7 @@ LAB_0054e052:
 switchD_0054e0ae_caseD_9:
   g_currentExceptionFrame = local_a8.previous;
   return 0;
-LAB_0054dfad:
+cf_common_join_0054DFAD:
   thunk_FUN_00550380(3);
   goto LAB_0054e052;
 }

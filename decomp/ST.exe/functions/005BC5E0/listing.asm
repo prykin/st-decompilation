@@ -566,7 +566,7 @@ LAB_005bcd37:
 005BCD64  E8 23 7F E4 FF            CALL 0x00404c8c
 005BCD69  8B 96 5B 1A 00 00         MOV EDX,dword ptr [ESI + 0x1a5b]
 005BCD6F  8B 8A E6 02 00 00         MOV ECX,dword ptr [EDX + 0x2e6]
-LAB_005bcd75:
+PrividerTy::GetMessage::cf_common_exit_005BCD75:
 005BCD75  3B CF                     CMP ECX,EDI
 005BCD77  0F 84 02 02 00 00         JZ 0x005bcf7f
 005BCD7D  6A 01                     PUSH 0x1
@@ -732,7 +732,7 @@ switchD_005bce3c::caseD_8166:
 005BCF73  8B 86 E1 1B 00 00         MOV EAX,dword ptr [ESI + 0x1be1]
 005BCF79  50                        PUSH EAX
 005BCF7A  E8 B1 67 0F 00            CALL 0x006b3730
-switchD_005bc9da::caseD_6944:
+PrividerTy::GetMessage::cf_common_exit_005BCF7F:
 005BCF7F  8B 8D 78 FF FF FF         MOV ECX,dword ptr [EBP + 0xffffff78]
 005BCF85  53                        PUSH EBX
 005BCF86  89 0D F8 8D 85 00         MOV dword ptr [0x00858df8],ECX

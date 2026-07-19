@@ -999,7 +999,7 @@ LAB_00662dbb:
                                       CONCAT31((int3)((uint)puVar10 >> 8),this_00->field_0x24),
                                       (uint)puVar14,CASE_1);
       }
-      if (local_10 == (uint *)0x0) goto LAB_00662e52;
+      if (local_10 == (uint *)0x0) goto cf_continue_loop_00662E52;
       switch(**(undefined4 **)((int)param_1 + 10)) {
       case 0xa3:
         iVar8 = thunk_FUN_004c7860(local_10,4,0,1,1,1);
@@ -1016,7 +1016,7 @@ LAB_00662dbb:
       case 0xbe:
         iVar8 = thunk_FUN_004c7860(local_10,8,0,1,1,1);
       }
-      if (iVar8 == 0) goto LAB_00662e52;
+      if (iVar8 == 0) goto cf_continue_loop_00662E52;
       *(undefined1 *)(param_1 + 2) = 1;
       *(undefined2 *)((int)param_1 + 0xe) = uVar7;
       if (*(char *)((int)param_1 + 9) != '\0') {
@@ -1468,7 +1468,7 @@ LAB_0066380d:
   }
   g_currentExceptionFrame = local_74.previous;
   return 0;
-LAB_00662e52:
+cf_continue_loop_00662E52:
   local_24 = (void *)((int)local_24 + 1);
   bVar22 = local_24 < (void *)local_8[3];
   if ((int)local_8[3] <= (int)local_24) goto LAB_00662f34;

@@ -349,7 +349,7 @@ LAB_0054f6c6:
         iVar8 = FUN_00715360(DAT_00811764,1,'C',(char *)0x0,0,0,0xffffffff);
         if (iVar8 != 0) {
           uVar27 = 0xc;
-          goto LAB_0054f76e;
+          goto cf_common_exit_0054F76E;
         }
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
         *(undefined4 *)&pSVar21->field_0x59 = 0;
@@ -366,14 +366,14 @@ LAB_0054f6c6:
         iVar8 = FUN_00715360(DAT_00811764,1,'B',&local_19,1,0,0xffffffff);
         if (iVar8 != 0) {
           uVar27 = 0xb;
-          goto LAB_0054f76e;
+          goto cf_common_exit_0054F76E;
         }
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
         *(undefined4 *)&pSVar21->field_0x59 = 1;
       }
     }
     local_10 = 1;
-    goto LAB_0054fad8;
+    goto cf_common_join_0054FAD8;
   }
   if (*(int *)&local_c->field_0x71 != 0) {
     bVar26 = thunk_FUN_00550110((int)local_c);
@@ -392,7 +392,7 @@ LAB_0054f6c6:
   iVar8 = FUN_006e51b0(0x807620);
   if (30000 < iVar8 - *(int *)&pSVar21->field_0x79) {
     uVar27 = 10;
-LAB_0054f76e:
+cf_common_exit_0054F76E:
     puVar11 = (undefined4 *)thunk_FUN_00550380(uVar27);
     g_currentExceptionFrame = local_78.previous;
     return puVar11;
@@ -450,7 +450,7 @@ LAB_0054f76e:
         return puVar11;
       }
       uVar27 = 0x10;
-      goto LAB_0054f76e;
+      goto cf_common_exit_0054F76E;
     }
   }
   if ((DAT_0080735e != '\0') && (DAT_008016d8 != (void *)0x0)) {
@@ -463,15 +463,15 @@ LAB_0054f98b:
   do {
     if (iVar8 == -0x4d) {
       thunk_FUN_00550380(0xe);
-      goto LAB_0054fad8;
+      goto cf_common_join_0054FAD8;
     }
     if (iVar8 == 0) {
       if (60000 < (int)local_2c - *(int *)&pSVar21->field_0x83) {
         thunk_FUN_00550380(0xd);
       }
-      goto LAB_0054fad8;
+      goto cf_common_join_0054FAD8;
     }
-    if (iVar8 != 1) goto LAB_0054fad8;
+    if (iVar8 != 1) goto cf_common_join_0054FAD8;
     *(int **)&pSVar21->field_0x83 = local_2c;
     if (local_14 == 0x31) {
       pSVar21->field_0x38 = 0;
@@ -560,7 +560,7 @@ switchD_0054fb75_caseD_12:
     if (local_8 != (uint *)0x0) {
       FUN_006ab060(&local_8);
     }
-LAB_0054fad8:
+cf_common_join_0054FAD8:
     if (local_10 == 0) {
       g_currentExceptionFrame = local_78.previous;
       return (undefined4 *)0x0;

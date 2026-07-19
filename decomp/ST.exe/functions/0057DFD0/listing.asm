@@ -39,7 +39,7 @@ LAB_0057e014:
 0057E03F  CC                        INT3
 LAB_0057e040:
 0057E040  B8 3F 42 0F 00            MOV EAX,0xf423f
-LAB_0057e045:
+STResourceC::SetResource::cf_common_exit_0057E045:
 0057E045  85 C0                     TEST EAX,EAX
 0057E047  89 86 59 02 00 00         MOV dword ptr [ESI + 0x259],EAX
 0057E04D  7F 17                     JG 0x0057e066

@@ -651,7 +651,7 @@ LAB_006de4f5:
 006DE4F5  3B 85 00 FF FF FF         CMP EAX,dword ptr [EBP + 0xffffff00]
 006DE4FB  7C 08                     JL 0x006de505
 006DE4FD  8A 86 3D 04 00 00         MOV AL,byte ptr [ESI + 0x43d]
-LAB_006de503:
+FUN_006ddd50::cf_common_join_006DE503:
 006DE503  88 02                     MOV byte ptr [EDX],AL
 LAB_006de505:
 006DE505  42                        INC EDX

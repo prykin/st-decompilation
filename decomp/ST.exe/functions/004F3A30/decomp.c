@@ -39,19 +39,19 @@ CPanelTy::PaintTxtBut
   default:
     if (this->field_0130 != 0) {
       local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f3ac3;
+      goto cf_common_join_004F3AC3;
     }
     break;
   case 3:
     if (this->field_0134 != 0) {
       local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f3ac3;
+      goto cf_common_join_004F3AC3;
     }
     break;
   case 5:
     if (this->field_0138 != 0) {
       local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f3ac3;
+      goto cf_common_join_004F3AC3;
     }
     break;
   case 7:
@@ -59,12 +59,12 @@ CPanelTy::PaintTxtBut
 LAB_004f3aaa:
     if (iVar4 != 0) {
       local_14 = local_14 - *(int *)(&this->field_0x94 + uVar2 * 4);
-      goto LAB_004f3ac3;
+      goto cf_common_join_004F3AC3;
     }
     local_14 = local_14 - this->field_00C0;
   }
   local_14 = local_14 - DAT_00806734;
-LAB_004f3ac3:
+cf_common_join_004F3AC3:
   if (param_6 != (undefined *)0x0) {
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;

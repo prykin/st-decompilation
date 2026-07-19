@@ -75,7 +75,7 @@ LAB_004b8037:
 004B8051  EB 05                     JMP 0x004b8058
 switchD_004b7fa6::caseD_ffffffff:
 004B8053  BB 01 00 00 00            MOV EBX,0x1
-LAB_004b8058:
+FUN_004b7f90::cf_common_exit_004B8058:
 004B8058  83 7D 08 03               CMP dword ptr [EBP + 0x8],0x3
 004B805C  0F 85 65 FF FF FF         JNZ 0x004b7fc7
 004B8062  6A 01                     PUSH 0x1

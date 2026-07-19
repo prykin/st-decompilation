@@ -82,7 +82,7 @@ void __fastcall FUN_005f6f60(int *param_1)
       if (*(char *)((int)param_1 + 0x29e) != '\0') {
         thunk_FUN_005f9450((int)param_1);
       }
-      if (param_1[0xa8] < 1) goto LAB_005f7a68;
+      if (param_1[0xa8] < 1) goto cf_common_exit_005F7A68;
       *(undefined1 *)((int)param_1 + 0x29f) = 1;
     }
     if (*(char *)((int)param_1 + 0x29f) == '\0') {
@@ -216,7 +216,7 @@ LAB_005f7400:
           thunk_FUN_005f9450((int)param_1);
         }
         if (param_1[0xa8] < 1) {
-LAB_005f7a68:
+cf_common_exit_005F7A68:
           thunk_FUN_005fb100((int)param_1);
           return;
         }
@@ -428,7 +428,7 @@ LAB_005f7efc:
       thunk_FUN_005fa030((int)param_1);
       *(undefined1 *)((int)param_1 + 0x29f) = 0;
       param_1[0xa8] = 0;
-      if (*(int *)((int)param_1 + 0x2ea) != 0) goto LAB_005f7a68;
+      if (*(int *)((int)param_1 + 0x2ea) != 0) goto cf_common_exit_005F7A68;
       thunk_FUN_005f9310(param_1,0);
       if (*(char *)((int)param_1 + 0x29e) == '\0') {
         iVar5 = thunk_FUN_005f89f0(param_1,2);
@@ -486,7 +486,7 @@ LAB_005f7efc:
       if (*(char *)((int)param_1 + 0x29e) != '\0') {
         thunk_FUN_005f9450((int)param_1);
       }
-      if (param_1[0xa8] < 1) goto LAB_005f7a68;
+      if (param_1[0xa8] < 1) goto cf_common_exit_005F7A68;
       *(undefined1 *)((int)param_1 + 0x29f) = 1;
     }
     if (*(char *)((int)param_1 + 0x29f) == '\0') {
@@ -503,7 +503,7 @@ LAB_005f7efc:
           if (iVar5 != 0) goto LAB_005f7927;
           iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
                                      (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
-          if (iVar5 == 0) goto LAB_005f76d2;
+          if (iVar5 == 0) goto cf_common_exit_005F76D2;
           thunk_FUN_004162b0(param_1,&local_8,&local_6,&local_a);
           iVar5 = thunk_FUN_005fa360(param_1,(undefined4 *)local_1c,(int)local_8,(int)local_6,
                                      (int)local_a,&local_14,&local_18,&local_10);
@@ -550,7 +550,7 @@ LAB_005f7927:
       if (iVar5 < 4) {
         iVar5 = thunk_FUN_005fa8b0(param_1,(int *)((int)param_1 + 0x27d),
                                    (int *)((int)param_1 + 0x281),(int *)((int)param_1 + 0x285));
-        if (iVar5 == 0) goto LAB_005f76d2;
+        if (iVar5 == 0) goto cf_common_exit_005F76D2;
         iVar5 = thunk_FUN_005f8cc0(param_1);
         if (-1 < iVar5) {
           if ((iVar5 == 2) && (*(char *)((int)param_1 + 0x29f) != '\0')) {
@@ -581,7 +581,7 @@ LAB_005f7927:
           }
         }
         if (*(int *)((int)param_1 + 0x2dd) != 5) {
-LAB_005f76d2:
+cf_common_exit_005F76D2:
           *(undefined4 *)((int)param_1 + 0x2ef) = 0x10;
           return;
         }

@@ -1594,7 +1594,7 @@ LAB_004b48c1:
 004B48C1  0F BF C8                  MOVSX ECX,AX
 004B48C4  3B D9                     CMP EBX,ECX
 004B48C6  0F 8D 01 18 00 00         JGE 0x004b60cd
-LAB_004b48cc:
+FUN_004b33d0::cf_continue_loop_004B48CC:
 004B48CC  33 F6                     XOR ESI,ESI
 004B48CE  89 75 90                  MOV dword ptr [EBP + -0x70],ESI
 004B48D1  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]
@@ -2612,7 +2612,7 @@ LAB_004b5635:
 004B5635  8B 8D FC FE FF FF         MOV ECX,dword ptr [EBP + 0xfffffefc]
 004B563B  39 1C 8D 68 1D 79 00      CMP dword ptr [ECX*0x4 + 0x791d68],EBX
 004B5642  0F 84 69 07 00 00         JZ 0x004b5db1
-LAB_004b5648:
+FUN_004b33d0::cf_common_join_004B5648:
 004B5648  8D 95 FC FE FF FF         LEA EDX,[EBP + 0xfffffefc]
 004B564E  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 004B5651  8B 48 0C                  MOV ECX,dword ptr [EAX + 0xc]
@@ -3230,7 +3230,7 @@ LAB_004b5f7b:
 004B5FAA  03 D6                     ADD EDX,ESI
 004B5FAC  8B 8D 88 FD FF FF         MOV ECX,dword ptr [EBP + 0xfffffd88]
 004B5FB2  66 89 04 51               MOV word ptr [ECX + EDX*0x2],AX
-LAB_004b5fb6:
+FUN_004b33d0::cf_continue_loop_004B5FB6:
 004B5FB6  8B 85 B0 FD FF FF         MOV EAX,dword ptr [EBP + 0xfffffdb0]
 004B5FBC  40                        INC EAX
 004B5FBD  89 85 B0 FD FF FF         MOV dword ptr [EBP + 0xfffffdb0],EAX
@@ -3321,7 +3321,7 @@ LAB_004b60b0:
 LAB_004b60c7:
 004B60C7  40                        INC EAX
 004B60C8  E9 CD DC FF FF            JMP 0x004b3d9a
-LAB_004b60cd:
+FUN_004b33d0::cf_break_loop_004B60CD:
 004B60CD  8B 45 E4                  MOV EAX,dword ptr [EBP + -0x1c]
 004B60D0  85 C0                     TEST EAX,EAX
 004B60D2  74 06                     JZ 0x004b60da

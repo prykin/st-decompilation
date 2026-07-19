@@ -27,13 +27,13 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         case CASE_4:
         case CASE_5:
         case CASE_6:
-          goto switchD_00668b66_caseD_4;
+          goto cf_common_exit_00668C44;
         case CASE_3:
-          goto switchD_00668bfb_caseD_4;
+          goto cf_common_exit_00668C64;
         case CASE_7:
         case CASE_8:
         case CASE_9:
-          goto switchD_00668b66_caseD_3;
+          goto cf_common_exit_00668C88;
         default:
           return 0;
         }
@@ -43,13 +43,13 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         case 2:
         case CASE_3:
         case CASE_4:
-          goto switchD_00668b66_caseD_4;
+          goto cf_common_exit_00668C44;
         case 1:
-          goto switchD_00668bfb_caseD_4;
+          goto cf_common_exit_00668C64;
         case CASE_5:
         case CASE_6:
         case CASE_7:
-          goto switchD_00668b66_caseD_3;
+          goto cf_common_exit_00668C88;
         default:
           return 0;
         }
@@ -59,13 +59,13 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         case CASE_5:
         case CASE_6:
         case CASE_7:
-          goto switchD_00668b66_caseD_3;
+          goto cf_common_exit_00668C88;
         case 1:
-          goto switchD_00668bfb_caseD_4;
+          goto cf_common_exit_00668C64;
         case 2:
         case CASE_3:
         case CASE_4:
-          goto switchD_00668b66_caseD_4;
+          goto cf_common_exit_00668C44;
         default:
           return 0;
         }
@@ -76,14 +76,14 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
         case CASE_8:
         case CASE_9:
         case 10:
-          goto switchD_00668b66_caseD_3;
+          goto cf_common_exit_00668C88;
         case 2:
         case CASE_5:
         case CASE_6:
         case CASE_7:
-          goto switchD_00668b66_caseD_4;
+          goto cf_common_exit_00668C44;
         case CASE_4:
-          goto switchD_00668bfb_caseD_4;
+          goto cf_common_exit_00668C64;
         default:
           return 0;
         }
@@ -134,11 +134,11 @@ FUN_00668aa0(Global_sub_00668AA0_param_1Enum param_1,Global_sub_00668AA0_param_2
           case CASE_7:
           case CASE_8:
           case CASE_9:
-            goto switchD_00668b66_caseD_3;
+            goto cf_common_exit_00668C88;
           case CASE_4:
           case CASE_5:
           case CASE_6:
-            goto switchD_00668b66_caseD_4;
+            goto cf_common_exit_00668C44;
           default:
             return 0;
           }
@@ -174,7 +174,7 @@ switchD_00668c18_caseD_810:
     bVar2 = param_2 == CASE_5;
 LAB_00668c3e:
     if (bVar2 || bVar3 != iVar1 < 0) {
-switchD_00668b66_caseD_4:
+cf_common_exit_00668C44:
       *param_3 = 1;
       *(undefined4 *)(param_3 + 1) = 0;
       return 1;
@@ -197,7 +197,7 @@ LAB_00668ce2:
     break;
   case CASE_82A:
     if (param_2 == 2) {
-switchD_00668bfb_caseD_4:
+cf_common_exit_00668C64:
       *param_3 = 3;
       *(undefined2 *)(param_3 + 1) = 0;
       return 1;
@@ -207,14 +207,14 @@ switchD_00668bfb_caseD_4:
     goto LAB_00668c86;
   case CASE_82C:
     if (param_2 == 2) {
-switchD_00668cb9_caseD_4:
+cf_common_exit_00668CC0:
       *param_3 = 1;
       *(undefined4 *)(param_3 + 1) = 0x3fffffff;
       return 1;
     }
 LAB_00668c86:
     if (param_2 == CASE_3) {
-switchD_00668b66_caseD_3:
+cf_common_exit_00668C88:
       *param_3 = 1;
       *(undefined4 *)(param_3 + 1) = 0xffffffff;
       return 1;
@@ -223,32 +223,32 @@ switchD_00668b66_caseD_3:
   case CASE_82E:
     switch(param_2) {
     case 2:
-      goto switchD_00668cb9_caseD_4;
+      goto cf_common_exit_00668CC0;
     case CASE_3:
     case CASE_6:
     case CASE_7:
     case CASE_8:
-      goto switchD_00668b66_caseD_4;
+      goto cf_common_exit_00668C44;
     case CASE_4:
     case CASE_9:
     case 10:
     case CASE_8|CASE_3:
-      goto switchD_00668b66_caseD_3;
+      goto cf_common_exit_00668C88;
     case CASE_5:
-      goto switchD_00668bfb_caseD_4;
+      goto cf_common_exit_00668C64;
     default:
       break;
     }
   case CASE_82F:
     switch(param_2) {
     case CASE_4:
-      goto switchD_00668cb9_caseD_4;
+      goto cf_common_exit_00668CC0;
     case CASE_5:
-      goto switchD_00668b66_caseD_4;
+      goto cf_common_exit_00668C44;
     case CASE_6:
-      goto switchD_00668b66_caseD_3;
+      goto cf_common_exit_00668C88;
     case CASE_7:
-      goto switchD_00668bfb_caseD_4;
+      goto cf_common_exit_00668C64;
     }
   }
   return 0;

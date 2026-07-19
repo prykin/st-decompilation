@@ -97,7 +97,7 @@ LAB_005ef8ad:
 005EF8CB  5B                        POP EBX
 005EF8CC  5D                        POP EBP
 005EF8CD  C2 0C 00                  RET 0xc
-LAB_005ef8d0:
+FUN_005ef7a0::cf_common_exit_005EF8D0:
 005EF8D0  C7 86 3A 02 00 00 06 00 00 00  MOV dword ptr [ESI + 0x23a],0x6
 005EF8DA  5F                        POP EDI
 005EF8DB  5E                        POP ESI

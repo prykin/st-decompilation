@@ -274,7 +274,7 @@ switchD_005b4db9::caseD_6944:
 LAB_005b4ee5:
 005B4EE5  8B CE                     MOV ECX,ESI
 005B4EE7  E8 14 D0 E4 FF            CALL 0x00401f00
-switchD_005b4db9::caseD_6904:
+MainMenuTy::GetMessage::cf_common_exit_005B4EEC:
 005B4EEC  8B 95 78 FF FF FF         MOV EDX,dword ptr [EBP + 0xffffff78]
 005B4EF2  53                        PUSH EBX
 005B4EF3  8B CE                     MOV ECX,ESI

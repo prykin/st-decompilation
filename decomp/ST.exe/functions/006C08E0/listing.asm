@@ -479,9 +479,9 @@ LAB_006c0de0:
 006C0DF5  FF 51 30                  CALL dword ptr [ECX + 0x30]
 006C0DF8  85 C0                     TEST EAX,EAX
 006C0DFA  0F 84 07 01 00 00         JZ 0x006c0f07
-LAB_006c0e00:
+FUN_006c08e0::cf_common_join_006C0E00:
 006C0E00  BE 01 00 00 00            MOV ESI,0x1
-LAB_006c0e05:
+FUN_006c08e0::cf_common_join_006C0E05:
 006C0E05  8B 03                     MOV EAX,dword ptr [EBX]
 006C0E07  83 E0 08                  AND EAX,0x8
 006C0E0A  89 45 EC                  MOV dword ptr [EBP + -0x14],EAX
@@ -595,7 +595,7 @@ LAB_006c0efc:
 006C0EFF  89 47 34                  MOV dword ptr [EDI + 0x34],EAX
 006C0F02  89 47 38                  MOV dword ptr [EDI + 0x38],EAX
 006C0F05  EB 39                     JMP 0x006c0f40
-LAB_006c0f07:
+FUN_006c08e0::cf_common_join_006C0F07:
 006C0F07  8B 45 EC                  MOV EAX,dword ptr [EBP + -0x14]
 006C0F0A  85 C0                     TEST EAX,EAX
 006C0F0C  74 32                     JZ 0x006c0f40
@@ -613,7 +613,7 @@ LAB_006c0f34:
 006C0F34  83 F9 03                  CMP ECX,0x3
 006C0F37  75 07                     JNZ 0x006c0f40
 006C0F39  C7 45 D0 00 00 00 00      MOV dword ptr [EBP + -0x30],0x0
-LAB_006c0f40:
+FUN_006c08e0::cf_continue_loop_006C0F40:
 006C0F40  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
 006C0F43  40                        INC EAX
 006C0F44  83 F8 20                  CMP EAX,0x20

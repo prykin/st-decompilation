@@ -3165,7 +3165,7 @@ LAB_00642c6e:
 00642C85  8B E5                     MOV ESP,EBP
 00642C87  5D                        POP EBP
 00642C88  C2 04 00                  RET 0x4
-LAB_00642c8b:
+STTorpC::GetMessage::cf_common_exit_00642C8B:
 00642C8B  8B 03                     MOV EAX,dword ptr [EBX]
 00642C8D  8B CB                     MOV ECX,EBX
 00642C8F  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

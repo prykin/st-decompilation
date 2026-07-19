@@ -514,7 +514,7 @@ LAB_0054f71a:
 0054F769  7E 1A                     JLE 0x0054f785
 0054F76B  56                        PUSH ESI
 0054F76C  6A 0A                     PUSH 0xa
-LAB_0054f76e:
+STPlaySystemC::PrepareMail::cf_common_exit_0054F76E:
 0054F76E  8B CB                     MOV ECX,EBX
 0054F770  E8 78 62 EB FF            CALL 0x004059ed
 LAB_0054f775:
@@ -810,7 +810,7 @@ LAB_0054fab4:
 0054FAD0  A3 54 76 80 00            MOV [0x00807654],EAX
 LAB_0054fad5:
 0054FAD5  89 7D F4                  MOV dword ptr [EBP + -0xc],EDI
-LAB_0054fad8:
+STPlaySystemC::PrepareMail::cf_common_join_0054FAD8:
 0054FAD8  8B 45 F4                  MOV EAX,dword ptr [EBP + -0xc]
 0054FADB  85 C0                     TEST EAX,EAX
 0054FADD  0F 84 92 FC FF FF         JZ 0x0054f775

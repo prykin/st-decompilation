@@ -156,20 +156,20 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
       else if (uVar12 == 0x6940) {
         thunk_FUN_005c0190((int)local_10);
       }
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
     if (0xb208 < uVar12) {
       if (uVar12 == 0xb209) {
         PaintTab(local_10,param_1);
       }
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
     if (uVar12 == 0xb208) {
       cVar1 = **(char **)(param_1 + 0x14);
       local_10->field_0x68 = 0;
       local_10->field_0x69 = cVar1 + -1;
       PaintMReport(local_10,'\0');
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
     if (uVar12 == 0x6980) {
       iVar8 = *(int *)(&local_10[6].field_0x4d + (uint)(byte)local_10->field_006A * 4);
@@ -189,13 +189,13 @@ undefined4 __thiscall MReportTy::GetMessage(MReportTy *this,int param_1)
           FUN_006b5ee0(iVar8,0,0,0,*(int *)(iVar8 + 4),*(int *)(iVar8 + 8),0x18,0xd);
         }
       }
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
-    if (uVar12 != 0x70ff) goto switchD_005c1b14_caseD_1;
+    if (uVar12 != 0x70ff) goto cf_common_exit_005C22B1;
     thunk_FUN_0055ddf0(DAT_0080759c,DAT_008075a8,*(int *)&local_10->field_0x5d,0,0);
 switchD_005c1b14_caseD_5:
     PaintMReport(this_00,'\0');
-    goto switchD_005c1b14_caseD_1;
+    goto cf_common_exit_005C22B1;
   }
   if (uVar12 == 0x6214) {
     if (local_10->field_006A == '\x01') {
@@ -235,7 +235,7 @@ switchD_005c1b14_caseD_5:
       *(undefined1 *)puVar10 = 0x20;
     }
     PaintBut(this_00,param_1,0,2,'\x01',&DAT_0080f33a);
-    goto switchD_005c1b14_caseD_1;
+    goto cf_common_exit_005C22B1;
   }
   if (uVar12 < 0x6201) {
     if (uVar12 != 0x6200) {
@@ -299,13 +299,13 @@ switchD_005c1b14_caseD_5:
           }
         }
       }
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
     *(undefined4 *)&local_10->field_0x49 = 1;
     if (local_10->field_0066 == '\0') {
       *(undefined4 *)&local_10->field_0x4d = 0x6108;
       thunk_FUN_005c05f0((int)local_10);
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
     wsprintfA(&DAT_0080ed16,&DAT_007c6ee4,&DAT_00807680,&DAT_0080c52e);
     uVar12 = 0xffffffff;
@@ -361,7 +361,7 @@ switchD_005c1b14_caseD_5:
       *(undefined4 *)&this_00->field_0x51 = 0;
       *(undefined4 *)&this_00->field_0x55 = 2;
       thunk_FUN_005c05f0((int)this_00);
-      goto switchD_005c1b14_caseD_1;
+      goto cf_common_exit_005C22B1;
     }
 LAB_005c1d24:
     *(undefined4 *)&this_00->field_0x4d = 0x6102;
@@ -418,7 +418,7 @@ LAB_005c1d24:
       PaintBut(local_10,param_1,0x24bc,4,'\0',(uint *)0x0);
     }
   }
-switchD_005c1b14_caseD_1:
+cf_common_exit_005C22B1:
   g_currentExceptionFrame = local_5c.previous;
   uVar7 = FUN_006e5fd0();
   return uVar7;

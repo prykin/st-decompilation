@@ -43,7 +43,7 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
     if (0 < iVar2) {
       local_14 = (uVar6 & 0xfffffffe) - 1;
       do {
-        if (DAT_007f4d20 <= DAT_007f4d14) goto LAB_00411005;
+        if (DAT_007f4d20 <= DAT_007f4d14) goto cf_break_loop_00411005;
         local_8 = (DAT_007f4d38 * param_4 >> 0x10) + param_1;
         local_c = param_2 - (DAT_007f4d28 * param_4 >> 0x10);
         iVar4 = DAT_007f4d20 - DAT_007f4d14;
@@ -55,7 +55,7 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
            (iVar5 = thunk_FUN_0040fc40(local_8,local_c,param_3,0,param_5,iVar5), iVar5 != 0)) {
           return iVar5;
         }
-        if (DAT_007f4d20 <= DAT_007f4d14) goto LAB_00411005;
+        if (DAT_007f4d20 <= DAT_007f4d14) goto cf_break_loop_00411005;
         local_8 = param_1 - (DAT_007f4d38 * param_4 >> 0x10);
         iVar4 = DAT_007f4d20 - DAT_007f4d14;
         local_c = (DAT_007f4d28 * param_4 >> 0x10) + param_2;
@@ -75,7 +75,7 @@ int FUN_00410dc0(int param_1,int param_2,int param_3,int param_4,int param_5)
       } while (param_4 <= iVar2);
     }
     if (DAT_007f4d20 <= DAT_007f4d14) {
-LAB_00411005:
+cf_break_loop_00411005:
       iVar5 = 0;
       param_4 = 0;
       iVar2 = DAT_007f4d14;

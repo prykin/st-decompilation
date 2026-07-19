@@ -189,7 +189,7 @@ LAB_004c6f34:
 LAB_004c6f40:
 004C6F40  6A FB                     PUSH -0x5
 004C6F42  E8 F9 EE 1D 00            CALL 0x006a5e40
-LAB_004c6f47:
+FUN_004c6d00::cf_common_exit_004C6F47:
 004C6F47  8D 45 FA                  LEA EAX,[EBP + -0x6]
 004C6F4A  8D 4D FC                  LEA ECX,[EBP + -0x4]
 004C6F4D  50                        PUSH EAX

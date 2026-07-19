@@ -351,7 +351,7 @@ LAB_006d1e27:
 006D1E3A  8B 45 F8                  MOV EAX,dword ptr [EBP + -0x8]
 006D1E3D  52                        PUSH EDX
 006D1E3E  50                        PUSH EAX
-LAB_006d1e3f:
+FUN_006d1ad0::cf_continue_loop_006D1E3F:
 006D1E3F  8B 55 0C                  MOV EDX,dword ptr [EBP + 0xc]
 006D1E42  51                        PUSH ECX
 006D1E43  52                        PUSH EDX

@@ -86,7 +86,7 @@ undefined4 __fastcall FUN_00480600(void *param_1)
         return 0xffffffff;
       }
     }
-    goto LAB_004811c2;
+    goto cf_common_exit_004811C2;
   default:
 switchD_004806bc_caseD_a:
     iVar5 = ((0x18 - (int)*(short *)((int)param_1 + 0x6c) / 0xf) % 0x18 + (4 - DAT_008073fc) * 6) %
@@ -137,7 +137,7 @@ switchD_004806bc_caseD_a:
         return 0xffffffff;
       }
     }
-    goto LAB_004811c2;
+    goto cf_common_exit_004811C2;
   case 0x16:
   case 0x25:
     if (*(int *)((int)param_1 + 0x732) == 1) {
@@ -467,7 +467,7 @@ LAB_00480f12:
       local_8 = local_8 + 1;
     } while ((int)local_8 < (int)(uint)*(byte *)((int)param_1 + 0x2bf));
   }
-LAB_004811c2:
+cf_common_exit_004811C2:
   uVar8 = thunk_FUN_0041da30((int)param_1);
   return uVar8;
 }

@@ -125,7 +125,7 @@ LAB_006d27a4:
         pbVar7 = param_3;
         if ((uVar4 & 0x80) == 0) {
           do {
-            if (iVar5 <= (int)uVar4) goto LAB_006d27ee;
+            if (iVar5 <= (int)uVar4) goto cf_continue_loop_006D27EE;
             iVar5 = iVar5 - uVar4;
             bVar1 = *param_3;
             uVar4 = (uint)bVar1;
@@ -135,7 +135,7 @@ LAB_006d27a4:
         }
         if ((uVar4 & 0x40) == 0) break;
         param_3 = pbVar7 + 1;
-        if (iVar5 <= (int)(uVar4 & 0xffffff3f)) goto LAB_006d27ee;
+        if (iVar5 <= (int)(uVar4 & 0xffffff3f)) goto cf_continue_loop_006D27EE;
         iVar5 = iVar5 - (uVar4 & 0xffffff3f);
         uVar4 = (uint)*param_3;
         param_3 = pbVar7 + 2;
@@ -147,7 +147,7 @@ LAB_006d27a4:
       param_3 = pbVar7 + uVar6 + 1;
     }
     param_3 = pbVar7 + uVar6;
-LAB_006d27ee:
+cf_continue_loop_006D27EE:
     param_1 = param_1 + (param_2 - param_6);
     iVar5 = param_7 + -1;
     bVar2 = param_7 < 1;

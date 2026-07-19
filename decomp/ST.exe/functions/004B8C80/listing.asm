@@ -236,7 +236,7 @@ LAB_004b8f50:
 004B8F50  6A 06                     PUSH 0x6
 004B8F52  8B CE                     MOV ECX,ESI
 004B8F54  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-LAB_004b8f5a:
+FUN_004b8c80::cf_common_exit_004B8F5A:
 004B8F5A  57                        PUSH EDI
 004B8F5B  6A 01                     PUSH 0x1
 004B8F5D  8B CE                     MOV ECX,ESI
@@ -374,7 +374,7 @@ LAB_004b9112:
 004B9126  6A 03                     PUSH 0x3
 004B9128  8B CE                     MOV ECX,ESI
 004B912A  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-LAB_004b9130:
+FUN_004b8c80::cf_common_exit_004B9130:
 004B9130  8B 06                     MOV EAX,dword ptr [ESI]
 004B9132  8B CE                     MOV ECX,ESI
 004B9134  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]
@@ -510,7 +510,7 @@ LAB_004b92d3:
 004B92E4  8B CE                     MOV ECX,ESI
 004B92E6  E8 8A CB F4 FF            CALL 0x00405e75
 004B92EB  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
-LAB_004b92ee:
+FUN_004b8c80::cf_common_join_004B92EE:
 004B92EE  8D 9E D5 01 00 00         LEA EBX,[ESI + 0x1d5]
 004B92F4  6A 0E                     PUSH 0xe
 004B92F6  8B CB                     MOV ECX,EBX

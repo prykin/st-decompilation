@@ -47,7 +47,7 @@ switchD_004e02b5::caseD_61:
 004E02DC  75 06                     JNZ 0x004e02e4
 LAB_004e02de:
 004E02DE  89 9E D4 04 00 00         MOV dword ptr [ESI + 0x4d4],EBX
-switchD_004e02b5::caseD_3a:
+FUN_004e0250::cf_common_exit_004E02E4:
 004E02E4  8B 86 D4 04 00 00         MOV EAX,dword ptr [ESI + 0x4d4]
 004E02EA  85 C0                     TEST EAX,EAX
 004E02EC  74 5E                     JZ 0x004e034c

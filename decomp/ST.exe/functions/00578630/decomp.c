@@ -289,7 +289,7 @@ undefined4 __thiscall STCrabC::GetMessage(STCrabC *this,int param_1)
                            (byte *)s_crab1l_m_007cacb8,0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xd5;
-LAB_00578b5d:
+cf_error_exit_00578B5D:
           RaiseInternalException(-1,DAT_007ed77c,s_E____titans_Igor_to_crab_cpp_007cad4c,iVar7);
         }
         break;
@@ -305,7 +305,7 @@ LAB_00578b5d:
                            (byte *)s_crab2l_m_007caccc,0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xdd;
-          goto LAB_00578b5d;
+          goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf4:
@@ -320,7 +320,7 @@ LAB_00578b5d:
                            (byte *)s_crab1b_m_007cace0,0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xe5;
-          goto LAB_00578b5d;
+          goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf5:
@@ -335,7 +335,7 @@ LAB_00578b5d:
                            (byte *)s_crab2b_m_007cacf4,0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xed;
-          goto LAB_00578b5d;
+          goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf6:
@@ -350,7 +350,7 @@ LAB_00578b5d:
                            (byte *)s_langus2m_007cad1c,0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xfd;
-          goto LAB_00578b5d;
+          goto cf_error_exit_00578B5D;
         }
         break;
       case 0xf7:
@@ -365,7 +365,7 @@ LAB_00578b5d:
                            (byte *)s_langus1m_007cad08,0x1d);
         if (iVar7 != 0) {
           iVar7 = 0xf5;
-          goto LAB_00578b5d;
+          goto cf_error_exit_00578B5D;
         }
       }
       puVar11 = &this_00->field_01D5;

@@ -386,7 +386,7 @@ LAB_0054b35e:
 0054B365  51                        PUSH ECX
 LAB_0054b366:
 0054B366  6A 00                     PUSH 0x0
-LAB_0054b368:
+CursorClassTy::GCGameState::cf_common_exit_0054B368:
 0054B368  8B CB                     MOV ECX,EBX
 0054B36A  E8 0F 9D EB FF            CALL 0x0040507e
 0054B36F  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX

@@ -37,21 +37,21 @@ Global_sub_00675430_param_1Enum __cdecl FUN_00675430(Global_sub_00675430_param_1
     GVar1 = param_1;
     if (param_1 < 0x100001) {
       if (param_1 == 0x100000) {
-LAB_006754a8:
+cf_common_exit_006754A8:
         return CONCAT22((short)(param_1 >> 0x10),10);
       }
       if (param_1 < 0x40001) {
         if (param_1 == 0x40000) {
           return 0x4003c;
         }
-        if ((param_1 == 0x10000) || (param_1 == 0x20000)) goto LAB_006754a8;
+        if ((param_1 == 0x10000) || (param_1 == 0x20000)) goto cf_common_exit_006754A8;
       }
       else if (param_1 == 0x80000) {
         return 0x80050;
       }
     }
     else if (((param_1 == 0x200000) || (param_1 == 0x400000)) || (param_1 == 0x800000))
-    goto LAB_006754a8;
+    goto cf_common_exit_006754A8;
   }
   return GVar1 & 0xffff0000;
 }

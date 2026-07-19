@@ -98,7 +98,7 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
   local_34 = 1;
   local_40 = 0;
   if ((local_90[0] & 8) == 0) {
-    if (*(int *)(this_00 + 0x60) == 0) goto LAB_0071c3c1;
+    if (*(int *)(this_00 + 0x60) == 0) goto cf_common_join_0071C3C1;
     iVar3 = (**(code **)(**(int **)(this_00 + 0x1c) + 0x24))
                       (*(int **)(this_00 + 0x1c),0x100,local_1d4);
     if (iVar3 != 0) {
@@ -107,11 +107,12 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
     if (((local_1d4[local_90[1] & 0xff] & 0x80) != 0) &&
        (((char)(local_90[1] >> 8) == '\0' || ((local_1d4[local_90[1] >> 8 & 0xff] & 0x80) != 0)))) {
       local_40 = 1;
-      goto LAB_0071c3c1;
+      goto cf_common_join_0071C3C1;
     }
   }
   else {
-    if ((*(int *)(this_00 + 0x60) == 0) || (*(int *)(this_00 + 100) == 0)) goto LAB_0071c3c1;
+    if ((*(int *)(this_00 + 0x60) == 0) || (*(int *)(this_00 + 100) == 0))
+    goto cf_common_join_0071C3C1;
     iVar3 = (**(code **)(**(int **)(this_00 + 0x1c) + 0x24))
                       (*(int **)(this_00 + 0x1c),0x100,local_1d4);
     if (iVar3 != 0) {
@@ -121,11 +122,11 @@ int __thiscall InputClassTy::AddAcc(InputClassTy *this,uint *param_1)
     FUN_0071b760(local_90[1],(byte)local_90[0],(int)local_1d4,(int)local_2c,&local_c,&local_8);
     if ((local_c != 0) && (local_8 != 0)) {
       local_40 = 1;
-      goto LAB_0071c3c1;
+      goto cf_common_join_0071C3C1;
     }
   }
   local_40 = 0;
-LAB_0071c3c1:
+cf_common_join_0071C3C1:
   iVar3 = *(int *)(this_00 + 0x24);
   uVar1 = *(uint *)(iVar3 + 0xc);
   while( true ) {

@@ -87,7 +87,7 @@ LAB_0063eac2:
 0063EAC2  8A 45 FF                  MOV AL,byte ptr [EBP + -0x1]
 0063EAC5  FE C0                     INC AL
 0063EAC7  88 86 29 03 00 00         MOV byte ptr [ESI + 0x329],AL
-LAB_0063eacd:
+FUN_0063e9c0::cf_common_join_0063EACD:
 0063EACD  8D 04 39                  LEA EAX,[ECX + EDI*0x1]
 0063EAD0  89 7D F0                  MOV dword ptr [EBP + -0x10],EDI
 0063EAD3  3B F8                     CMP EDI,EAX

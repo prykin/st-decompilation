@@ -37,13 +37,13 @@ int FUN_006736f0(void)
       if (DAT_00811914 < DAT_00857558) {
         do {
           if ((DAT_007d2d18 == 0x3c) || (DAT_007d2d18 == 0x22)) break;
-          if (DAT_007d2d18 == 0x1d) goto LAB_00673ba7;
+          if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
           iVar3 = FUN_00673d20();
-          if (iVar3 < 0) goto LAB_00673bb3;
+          if (iVar3 < 0) goto cf_common_exit_00673BB3;
         } while (DAT_00811914 < DAT_00857558);
       }
       if (DAT_007d2d18 == 0x1d) {
-LAB_00673ba7:
+cf_common_exit_00673BA7:
         iVar3 = -6;
         break;
       }
@@ -99,12 +99,12 @@ LAB_0067383b:
         goto joined_r0x00673849;
       }
       while ((DAT_007d2d18 != 0x3c && (DAT_007d2d18 != 0x22))) {
-        if (DAT_007d2d18 == 0x1d) goto LAB_00673ba7;
+        if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
         iVar3 = FUN_00673d20();
 joined_r0x00673849:
-        if (iVar3 < 0) goto LAB_00673bb3;
+        if (iVar3 < 0) goto cf_common_exit_00673BB3;
       }
-      if (DAT_007d2d18 == 0x1d) goto LAB_00673ba7;
+      if (DAT_007d2d18 == 0x1d) goto cf_common_exit_00673BA7;
       if ((DAT_007d2d24 & 0x800) == 0) {
         pbVar4 = DAT_00811948;
         if (DAT_007d2d18 != 0x3c) {
@@ -141,7 +141,7 @@ LAB_006738ee:
       }
       while (DAT_007d2d18 != 0x1d) {
         iVar3 = FUN_00673d20();
-        if (iVar3 < 0) goto LAB_00673bb3;
+        if (iVar3 < 0) goto cf_common_exit_00673BB3;
       }
       if ((local_10 & 1) != 0) {
         thunk_FUN_00673690(0x1d);
@@ -150,7 +150,7 @@ LAB_006738ee:
       if (iVar3 < 0) break;
     } while( true );
   }
-  goto LAB_00673bb3;
+  goto cf_common_exit_00673BB3;
   while( true ) {
     if (DAT_007d2d18 == 0x22) goto LAB_006739cd;
     iVar3 = FUN_00673d20();
@@ -263,7 +263,7 @@ LAB_006739cd:
       iVar3 = FUN_00673d20();
     } while (-1 < iVar3);
   }
-LAB_00673bb3:
+cf_common_exit_00673BB3:
   DAT_007d2d24 = DAT_007d2d24 ^ (DAT_007d2d24 ^ local_10) & 1;
   return iVar3;
 }

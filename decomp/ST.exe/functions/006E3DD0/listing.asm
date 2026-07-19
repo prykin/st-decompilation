@@ -227,7 +227,7 @@ switchD_006e3e37::caseD_1:
 006E402B  FF 50 18                  CALL dword ptr [EAX + 0x18]
 LAB_006e402e:
 006E402E  89 45 FC                  MOV dword ptr [EBP + -0x4],EAX
-switchD_006e3e37::caseD_4:
+AppClassTy::SendMessage::cf_common_exit_006E4031:
 006E4031  8B 75 FC                  MOV ESI,dword ptr [EBP + -0x4]
 006E4034  81 FE FF FF 00 00         CMP ESI,0xffff
 006E403A  75 17                     JNZ 0x006e4053

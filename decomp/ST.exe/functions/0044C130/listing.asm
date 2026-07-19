@@ -316,7 +316,7 @@ LAB_0044c44d:
 0044C46E  83 C4 20                  ADD ESP,0x20
 0044C471  8B 14 88                  MOV EDX,dword ptr [EAX + ECX*0x4]
 0044C474  89 55 E8                  MOV dword ptr [EBP + -0x18],EDX
-LAB_0044c477:
+STAllPlayersC::GetTOBJImage::cf_common_exit_0044C477:
 0044C477  8B 0D 98 75 80 00         MOV ECX,dword ptr [0x00807598]
 0044C47D  68 FF 00 00 00            PUSH 0xff
 0044C482  6A 0A                     PUSH 0xa

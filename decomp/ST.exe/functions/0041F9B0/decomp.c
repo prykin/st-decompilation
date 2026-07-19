@@ -218,7 +218,7 @@ LAB_0041fe0d:
                 if ((7 < *(uint *)(iVar7 + 0x24)) ||
                    ((DAT_00802a38 != 0 &&
                     (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar7 + 0x24) * 0x51]))))
-                goto LAB_0042004a;
+                goto cf_continue_loop_0042004A;
                 bVar6 = *(byte *)(iVar7 + 0x24);
                 bVar1 = local_1c->field_0x24;
                 _local_38 = CONCAT31(uStack_37,bVar6);
@@ -278,7 +278,7 @@ LAB_0041fffd:
             if (param_9 == 0) {
               if ((7 < *(uint *)(iVar13 + 0x24)) ||
                  ((DAT_00802a38 != 0 && (7 < (byte)(&DAT_008087e9)[*(uint *)(iVar13 + 0x24) * 0x51])
-                  ))) goto LAB_0042004a;
+                  ))) goto cf_continue_loop_0042004A;
               bVar6 = *(byte *)(iVar13 + 0x24);
               bVar1 = local_1c->field_0x24;
               _local_40 = CONCAT31(uStack_3f,bVar6);
@@ -325,7 +325,7 @@ LAB_0041fdc6:
                       (-0x5001fff6,DAT_007ed77c,s_E____titans_wlad_Tc_gobj_cpp_007a4e0c,0xb83);
             goto LAB_0041fe0d;
           }
-LAB_0042004a:
+cf_continue_loop_0042004A:
           local_20 = local_20 + local_58;
           local_2c = local_2c + local_68;
           local_24 = local_24 + local_4c;

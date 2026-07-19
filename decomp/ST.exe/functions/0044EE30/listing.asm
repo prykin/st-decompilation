@@ -10786,7 +10786,7 @@ LAB_00458c46:
 LAB_00458c51:
 00458C51  68 FF FF 00 00            PUSH 0xffff
 00458C56  E8 E5 D1 24 00            CALL 0x006a5e40
-LAB_00458c5b:
+STBoatC::GetMessage::cf_common_exit_00458C5B:
 00458C5B  3B FE                     CMP EDI,ESI
 00458C5D  0F 85 8A 22 00 00         JNZ 0x0045aeed
 00458C63  89 B3 59 04 00 00         MOV dword ptr [EBX + 0x459],ESI
@@ -13419,7 +13419,7 @@ LAB_0045aed7:
 0045AED7  8B 0D 7C D7 7E 00         MOV ECX,dword ptr [0x007ed77c]
 0045AEDD  68 3C 9D 7A 00            PUSH 0x7a9d3c
 0045AEE2  51                        PUSH ECX
-LAB_0045aee3:
+STBoatC::GetMessage::cf_error_exit_0045AEE3:
 0045AEE3  68 FF FF 00 00            PUSH 0xffff
 0045AEE8  E8 53 AF 24 00            CALL 0x006a5e40
 switchD_0045189e::default:

@@ -1084,7 +1084,7 @@ LAB_007231f1:
 007231F8  EB 03                     JMP 0x007231fd
 LAB_007231fa:
 007231FA  8B 7D 08                  MOV EDI,dword ptr [EBP + 0x8]
-switchD_00722eb2::caseD_38:
+EditorClassTy::GetMessage::cf_switch_join_007231FD:
 007231FD  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 00723200  85 C0                     TEST EAX,EAX
 00723202  74 17                     JZ 0x0072321b

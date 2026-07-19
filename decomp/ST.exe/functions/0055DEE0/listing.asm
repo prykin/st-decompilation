@@ -342,7 +342,7 @@ LAB_0055e2a8:
 0055E2DE  E9 65 FD FF FF            JMP 0x0055e048
 LAB_0055e2e3:
 0055E2E3  8B 0D A4 33 80 00         MOV ECX,dword ptr [0x008033a4]
-LAB_0055e2e9:
+FUN_0055dee0::cf_continue_loop_0055E2E9:
 0055E2E9  8B 55 C4                  MOV EDX,dword ptr [EBP + -0x3c]
 0055E2EC  8B 45 C0                  MOV EAX,dword ptr [EBP + -0x40]
 0055E2EF  83 C2 04                  ADD EDX,0x4

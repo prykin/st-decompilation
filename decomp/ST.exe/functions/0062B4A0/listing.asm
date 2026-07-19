@@ -148,7 +148,7 @@ LAB_0062b556:
 0062B612  75 02                     JNZ 0x0062b616
 LAB_0062b614:
 0062B614  33 DB                     XOR EBX,EBX
-LAB_0062b616:
+FUN_0062b4a0::cf_common_exit_0062B616:
 0062B616  5F                        POP EDI
 0062B617  8A C3                     MOV AL,BL
 0062B619  5E                        POP ESI

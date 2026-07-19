@@ -388,7 +388,7 @@ LAB_00478b7a:
 00478B81  50                        PUSH EAX
 LAB_00478b82:
 00478B82  51                        PUSH ECX
-LAB_00478b83:
+STBoatC::Recharge::cf_common_exit_00478B83:
 00478B83  8B CE                     MOV ECX,ESI
 00478B85  E8 E1 C3 F8 FF            CALL 0x00404f6b
 00478B8A  6A 00                     PUSH 0x0
@@ -608,7 +608,7 @@ LAB_00478e41:
 LAB_00478e4a:
 00478E4A  8B CE                     MOV ECX,ESI
 00478E4C  E8 04 AA F8 FF            CALL 0x00403855
-LAB_00478e51:
+STBoatC::Recharge::cf_common_exit_00478E51:
 00478E51  8B 16                     MOV EDX,dword ptr [ESI]
 00478E53  68 B2 01 00 00            PUSH 0x1b2
 00478E58  6A 03                     PUSH 0x3
@@ -911,7 +911,7 @@ LAB_0047926a:
 LAB_00479280:
 00479280  89 9E 31 06 00 00         MOV dword ptr [ESI + 0x631],EBX
 00479286  89 9E 2D 06 00 00         MOV dword ptr [ESI + 0x62d],EBX
-switchD_004786b6::caseD_2:
+STBoatC::Recharge::cf_common_exit_0047928C:
 0047928C  5F                        POP EDI
 0047928D  5E                        POP ESI
 0047928E  B8 02 00 00 00            MOV EAX,0x2

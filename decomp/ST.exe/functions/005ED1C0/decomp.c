@@ -56,7 +56,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
     *param_1 = (*(int *)((int)this + 0x297) * iVar10) / 10000 + *(int *)((int)this + 0x25b);
     *param_2 = (iVar7 * iVar10) / 10000 + iVar2;
     *param_3 = (iVar6 * iVar10) / 10000 + iVar3;
-    goto LAB_005ed874;
+    goto cf_common_exit_005ED874;
   }
   iVar10 = *(int *)((int)this + 0x263);
   if (*(int *)((int)this + 0x26f) - iVar10 < 1) {
@@ -136,7 +136,7 @@ undefined4 __thiscall FUN_005ed1c0(void *this,int *param_1,int *param_2,int *par
     *param_1 = *(int *)((int)this + 0x277);
     *param_2 = *(int *)((int)this + 0x27b);
     *param_3 = iVar10;
-    goto LAB_005ed874;
+    goto cf_common_exit_005ED874;
   }
   if (local_8 == 0) {
 LAB_005ed68c:
@@ -212,7 +212,7 @@ joined_r0x005ed4b7:
     *param_1 = *(int *)((int)this + 0x277);
     *param_2 = *(int *)((int)this + 0x27b);
     *param_3 = iVar10;
-LAB_005ed874:
+cf_common_exit_005ED874:
     *(undefined4 *)((int)this + 0x283) = 1;
     return 1;
   }

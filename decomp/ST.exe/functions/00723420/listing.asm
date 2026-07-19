@@ -826,7 +826,7 @@ LAB_00723d50:
 00723D82  FF 50 04                  CALL dword ptr [EAX + 0x4]
 00723D85  85 C0                     TEST EAX,EAX
 00723D87  74 07                     JZ 0x00723d90
-LAB_00723d89:
+TabClassTy::GetMessage::cf_common_join_00723D89:
 00723D89  C7 45 FC FF FF 00 00      MOV dword ptr [EBP + -0x4],0xffff
 switchD_00723488::caseD_4:
 00723D90  83 7B 74 01               CMP dword ptr [EBX + 0x74],0x1
@@ -1071,7 +1071,7 @@ LAB_0072401f:
 0072404F  FF 52 04                  CALL dword ptr [EDX + 0x4]
 00724052  85 C0                     TEST EAX,EAX
 00724054  74 0C                     JZ 0x00724062
-LAB_00724056:
+TabClassTy::GetMessage::cf_break_loop_00724056:
 00724056  C7 45 FC FF FF 00 00      MOV dword ptr [EBP + -0x4],0xffff
 0072405D  E9 D2 00 00 00            JMP 0x00724134
 LAB_00724062:

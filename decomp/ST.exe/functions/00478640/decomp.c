@@ -118,7 +118,7 @@ LAB_0047926a:
     if (iVar11 != 0) {
       return -1;
     }
-    goto LAB_00478e51;
+    goto cf_common_exit_00478E51;
   }
   if (iVar11 == 1) {
     iVar11 = thunk_FUN_00460260(this,2);
@@ -146,7 +146,7 @@ LAB_0047926a:
             iVar12 = (int)*(short *)&this->field_0x629;
             iVar11 = (int)*(short *)&this->field_0x627;
             this->field_0631 = 3;
-            goto LAB_00478b83;
+            goto cf_common_exit_00478B83;
           }
 LAB_00478d20:
           this->field_0631 = 2;
@@ -155,7 +155,7 @@ LAB_00478d20:
           if (iVar11 == -1) {
             return -1;
           }
-switchD_004786b6_caseD_2:
+cf_common_exit_0047928C:
           return 2;
         }
         if (*(int *)&this->field_0x619 == 0) {
@@ -201,7 +201,7 @@ LAB_0047885b:
       }
       break;
     default:
-      goto switchD_004786b6_caseD_2;
+      goto cf_common_exit_0047928C;
     case 3:
       thunk_FUN_00481520(this,(int)*(short *)&this->field_0x61d,(int)*(short *)&this->field_0x61f,
                          (int)*(short *)&this->field_0x621);
@@ -220,7 +220,7 @@ LAB_0047885b:
     }
     thunk_FUN_004602b0((int *)this);
     this->field_00B7 = 0;
-LAB_00478e51:
+cf_common_exit_00478E51:
     (*this->vtable->vfunc_90)(3,0x1b2);
     return 0;
   }
@@ -243,7 +243,7 @@ LAB_00478e51:
     if ((iVar11 == 0) ||
        ((iVar11 = CheckForReplenisher(this,unaff_EDI), iVar11 == 1 &&
         (bVar7 = thunk_FUN_004d6f70((int *)this), CONCAT31(extraout_var_01,bVar7) == 1))))
-    goto LAB_00478e51;
+    goto cf_common_exit_00478E51;
     sVar2 = *(short *)&this->field_0x61d;
     sVar3 = *(short *)&this->field_0x621;
     sVar4 = *(short *)&this->field_0x61f;
@@ -307,7 +307,7 @@ LAB_00478b1a:
         iVar9 = (int)*(short *)&this->field_0x62b;
         iVar12 = (int)*(short *)&this->field_0x629;
         iVar11 = (int)*(short *)&this->field_0x627;
-        goto LAB_00478b83;
+        goto cf_common_exit_00478B83;
       }
       sVar2 = *(short *)&this->field_0x61d;
       sVar3 = *(short *)&this->field_0x621;
@@ -333,7 +333,7 @@ LAB_00478b1a:
         iVar11 = (int)*(short *)&this->field_0x61d;
         this->field_0631 = 1;
         this->field_00B7 = 3;
-        goto LAB_00478b83;
+        goto cf_common_exit_00478B83;
       }
       bVar7 = thunk_FUN_004d6f70((int *)this);
       if (CONCAT31(extraout_var_03,bVar7) != 1) goto LAB_00478ff2;
@@ -404,7 +404,7 @@ LAB_00478ff2:
          ((iVar11 = CheckForReplenisher(this,unaff_EDI), iVar11 == 1 &&
           (bVar7 = thunk_FUN_004d6f70((int *)this), CONCAT31(extraout_var_02,bVar7) == 1)))) {
         thunk_FUN_004602b0((int *)this);
-        goto LAB_00478e51;
+        goto cf_common_exit_00478E51;
       }
       sVar2 = *(short *)&this->field_0x61d;
       sVar3 = *(short *)&this->field_0x621;
@@ -428,7 +428,7 @@ LAB_00478ff2:
       }
       goto LAB_00478b5f;
     default:
-      goto switchD_004786b6_caseD_2;
+      goto cf_common_exit_0047928C;
     case 3:
       iVar11 = thunk_FUN_00493610(this,(short *)&this->field_0x627,(short *)&this->field_0x629,
                                   (short *)&this->field_0x62b);
@@ -452,7 +452,7 @@ LAB_00478ff2:
   iVar9 = (int)sVar2;
   iVar12 = (int)sVar3;
   iVar11 = (int)sVar4;
-LAB_00478b83:
+cf_common_exit_00478B83:
   thunk_FUN_00481520(this,iVar11,iVar12,iVar9);
   thunk_FUN_00460260(this,0);
   return 2;

@@ -80,7 +80,7 @@ LAB_004c796d:
   }
   switch(param_1 + -1) {
   case 0:
-    goto switchD_004c79ec_caseD_0;
+    goto cf_common_exit_004C7B08;
   case 1:
     if (*(int *)((int)this + 0x361) != 0) {
       return 0;
@@ -96,7 +96,7 @@ LAB_004c796d:
       }
       return 1;
     }
-    goto switchD_004c79ec_caseD_0;
+    goto cf_common_exit_004C7B08;
   case 2:
   case 3:
     if (*(int *)((int)this + 0x4d0) == 0) {
@@ -132,7 +132,7 @@ LAB_004c796d:
     if (*(int *)((int)this + 0x4d0) != 0) {
       return 0;
     }
-switchD_004c79ec_caseD_0:
+cf_common_exit_004C7B08:
     iVar4 = 1;
   }
   return iVar4;

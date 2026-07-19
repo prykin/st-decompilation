@@ -1028,7 +1028,7 @@ LAB_00570730:
 00570735  50                        PUSH EAX
 LAB_00570736:
 00570736  E8 85 38 15 00            CALL 0x006c3fc0
-LAB_0057073b:
+STAppC::GetMessage::cf_common_exit_0057073B:
 0057073B  8B 7D EC                  MOV EDI,dword ptr [EBP + -0x14]
 0057073E  8D 4F 38                  LEA ECX,[EDI + 0x38]
 00570741  E8 2D 4A E9 FF            CALL 0x00405173

@@ -358,7 +358,7 @@ switchD_005c8dcf::caseD_5:
 005C8EC2  74 12                     JZ 0x005c8ed6
 005C8EC4  8A C8                     MOV CL,AL
 005C8EC6  88 8B 5E 1F 00 00         MOV byte ptr [EBX + 0x1f5e],CL
-LAB_005c8ecc:
+SettMapTy::GetMessage::cf_common_join_005C8ECC:
 005C8ECC  C7 83 47 1F 00 00 00 00 00 00  MOV dword ptr [EBX + 0x1f47],0x0
 switchD_005c8dcf::default:
 005C8ED6  89 7B 2D                  MOV dword ptr [EBX + 0x2d],EDI
@@ -2316,7 +2316,7 @@ LAB_005ca964:
 005CA968  6A 09                     PUSH 0x9
 005CA96A  8B CB                     MOV ECX,EBX
 005CA96C  E8 80 A2 E3 FF            CALL 0x00404bf1
-switchD_005c8bd0::caseD_6120:
+SettMapTy::GetMessage::cf_switch_join_005CA971:
 005CA971  8B 46 10                  MOV EAX,dword ptr [ESI + 0x10]
 005CA974  3D 7F 65 00 00            CMP EAX,0x657f
 005CA979  0F 82 BF 04 00 00         JC 0x005cae3e
@@ -2752,7 +2752,7 @@ LAB_005cadd5:
 005CAE0B  03 C7                     ADD EAX,EDI
 005CAE0D  50                        PUSH EAX
 005CAE0E  52                        PUSH EDX
-LAB_005cae0f:
+SettMapTy::GetMessage::cf_common_exit_005CAE0F:
 005CAE0F  E8 15 84 E3 FF            CALL 0x00403229
 005CAE14  83 C4 1C                  ADD ESP,0x1c
 switchD_005ca9f1::caseD_6580:

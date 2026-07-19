@@ -108,7 +108,7 @@ LAB_006d820b:
 006D8213  75 86                     JNZ 0x006d819b
 LAB_006d8215:
 006D8215  33 C0                     XOR EAX,EAX
-LAB_006d8217:
+FUN_006d8120::cf_common_exit_006D8217:
 006D8217  8B F0                     MOV ESI,EAX
 006D8219  FF 75 F4                  PUSH dword ptr [EBP + -0xc]
 006D821C  E8 69 DB D2 FF            CALL 0x00405d8a

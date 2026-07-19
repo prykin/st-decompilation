@@ -1479,7 +1479,7 @@
 {"address":"004387C0","name":"PTR_caseD_b_004387c0","type":"pointer","length":4,"value":"00438557","referenced_from":[]}
 {"address":"004387C4","name":"PTR_caseD_c_004387c4","type":"pointer","length":4,"value":"00438572","referenced_from":[]}
 {"address":"004387C8","name":"switchD_004385e5::switchdataD_004387c8","type":"pointer","length":4,"value":"004385ec","referenced_from":["00436F20 STAllPlayersC::CmdToPlsObj"]}
-{"address":"004387CC","name":"PTR_caseD_a_004387cc","type":"pointer","length":4,"value":"0043824d","referenced_from":[]}
+{"address":"004387CC","name":"PTR_cf_common_exit_0043824D_004387cc","type":"pointer","length":4,"value":"0043824d","referenced_from":[]}
 {"address":"004387D0","name":"PTR_caseD_9_004387d0","type":"pointer","length":4,"value":"00438621","referenced_from":[]}
 {"address":"004387D4","name":"PTR_caseD_a_004387d4","type":"pointer","length":4,"value":"00438676","referenced_from":[]}
 {"address":"004387D8","name":"switchD_004385e5::switchdataD_004387d8","type":"byte","length":1,"value":"0h","referenced_from":[]}
@@ -1540,10 +1540,10 @@
 {"address":"0043D926","name":"BYTE_0043d926","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043D927","name":"BYTE_0043d927","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043D928","name":"switchD_0043c501::switchdataD_0043d928","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043D92C","name":"PTR_caseD_2_0043d92c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043D930","name":"PTR_caseD_3_0043d930","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043D934","name":"PTR_caseD_4_0043d934","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
-{"address":"0043D938","name":"PTR_caseD_e_0043d938","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043D92C","name":"PTR_cf_common_exit_0043C862_0043d92c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043D930","name":"PTR_cf_common_exit_0043C95B_0043d930","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043D934","name":"PTR_cf_common_exit_0043C86F_0043d934","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043D938","name":"PTR_cf_common_exit_0043C508_0043d938","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
 {"address":"0043D93C","name":"PTR_caseD_3_0043d93c","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D940","name":"switchD_0043c501::switchdataD_0043d940","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043D941","name":"BYTE_0043d941","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1561,10 +1561,10 @@
 {"address":"0043D94D","name":"BYTE_0043d94d","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043D94E","name":"BYTE_0043d94e","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043D950","name":"switchD_0043c53d::switchdataD_0043d950","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043D954","name":"PTR_caseD_2_0043d954","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043D958","name":"PTR_caseD_3_0043d958","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043D95C","name":"PTR_caseD_4_0043d95c","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
-{"address":"0043D960","name":"PTR_caseD_e_0043d960","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043D954","name":"PTR_cf_common_exit_0043C862_0043d954","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043D958","name":"PTR_cf_common_exit_0043C95B_0043d958","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043D95C","name":"PTR_cf_common_exit_0043C86F_0043d95c","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043D960","name":"PTR_cf_common_exit_0043C508_0043d960","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
 {"address":"0043D964","name":"PTR_caseD_3_0043d964","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D968","name":"switchD_0043c53d::switchdataD_0043d968","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043D969","name":"BYTE_0043d969","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1580,17 +1580,17 @@
 {"address":"0043D973","name":"BYTE_0043d973","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043D974","name":"BYTE_0043d974","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043D978","name":"switchD_0043c564::switchdataD_0043d978","type":"pointer","length":4,"value":"0043c72d","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043D97C","name":"PTR_caseD_2_0043d97c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043D980","name":"PTR_caseD_3_0043d980","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043D984","name":"PTR_caseD_4_0043d984","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043D97C","name":"PTR_cf_common_exit_0043C862_0043d97c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043D980","name":"PTR_cf_common_exit_0043C95B_0043d980","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043D984","name":"PTR_cf_common_exit_0043C86F_0043d984","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043D988","name":"PTR_caseD_3_0043d988","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D98C","name":"PTR_caseD_3_0043d98c","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043D990","name":"PTR_caseD_1_0043d990","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
+{"address":"0043D990","name":"PTR_cf_common_exit_0043C72D_0043d990","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
 {"address":"0043D994","name":"switchD_0043c594::switchdataD_0043d994","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043D998","name":"PTR_caseD_2_0043d998","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043D99C","name":"PTR_caseD_3_0043d99c","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043D9A0","name":"PTR_caseD_4_0043d9a0","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
-{"address":"0043D9A4","name":"PTR_caseD_e_0043d9a4","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043D998","name":"PTR_cf_common_exit_0043C862_0043d998","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043D99C","name":"PTR_cf_common_exit_0043C95B_0043d99c","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043D9A0","name":"PTR_cf_common_exit_0043C86F_0043d9a0","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043D9A4","name":"PTR_cf_common_exit_0043C508_0043d9a4","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
 {"address":"0043D9A8","name":"PTR_caseD_3_0043d9a8","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D9AC","name":"switchD_0043c594::switchdataD_0043d9ac","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043D9AD","name":"BYTE_0043d9ad","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1607,27 +1607,27 @@
 {"address":"0043D9B8","name":"BYTE_0043d9b8","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043D9B9","name":"BYTE_0043d9b9","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043D9BC","name":"switchD_0043c5d9::switchdataD_0043d9bc","type":"pointer","length":4,"value":"0043c72d","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043D9C0","name":"PTR_caseD_2_0043d9c0","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043D9C4","name":"PTR_caseD_3_0043d9c4","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043D9C0","name":"PTR_cf_common_exit_0043C862_0043d9c0","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043D9C4","name":"PTR_cf_common_exit_0043C95B_0043d9c4","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
 {"address":"0043D9C8","name":"PTR_caseD_3_0043d9c8","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D9CC","name":"PTR_caseD_3_0043d9cc","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D9D0","name":"PTR_caseD_3_0043d9d0","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043D9D4","name":"PTR_caseD_1_0043d9d4","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
+{"address":"0043D9D4","name":"PTR_cf_common_exit_0043C72D_0043d9d4","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
 {"address":"0043D9D8","name":"switchD_0043c601::switchdataD_0043d9d8","type":"pointer","length":4,"value":"0043c72d","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
 {"address":"0043D9DC","name":"PTR_caseD_3_0043d9dc","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043D9E0","name":"PTR_caseD_3_0043d9e0","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043D9E4","name":"PTR_caseD_4_0043d9e4","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043D9E0","name":"PTR_cf_common_exit_0043C95B_0043d9e0","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043D9E4","name":"PTR_cf_common_exit_0043C86F_0043d9e4","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043D9E8","name":"PTR_caseD_3_0043d9e8","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043D9EC","name":"PTR_caseD_3_0043d9ec","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043D9F0","name":"PTR_caseD_1_0043d9f0","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
-{"address":"0043D9F4","name":"PTR_caseD_2_0043d9f4","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043D9F0","name":"PTR_cf_common_exit_0043C72D_0043d9f0","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
+{"address":"0043D9F4","name":"PTR_cf_common_exit_0043C862_0043d9f4","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
 {"address":"0043D9F8","name":"PTR_caseD_3_0043d9f8","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043D9FC","name":"PTR_caseD_e_0043d9fc","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043D9FC","name":"PTR_cf_common_exit_0043C508_0043d9fc","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
 {"address":"0043DA00","name":"switchD_0043c645::switchdataD_0043da00","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DA04","name":"PTR_caseD_3_0043da04","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DA08","name":"PTR_caseD_4_0043da08","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
-{"address":"0043DA0C","name":"PTR_caseD_2_0043da0c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DA10","name":"PTR_caseD_e_0043da10","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043DA04","name":"PTR_cf_common_exit_0043C95B_0043da04","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DA08","name":"PTR_cf_common_exit_0043C86F_0043da08","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DA0C","name":"PTR_cf_common_exit_0043C862_0043da0c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DA10","name":"PTR_cf_common_exit_0043C508_0043da10","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
 {"address":"0043DA14","name":"PTR_caseD_3_0043da14","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DA18","name":"switchD_0043c645::switchdataD_0043da18","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DA19","name":"BYTE_0043da19","type":"byte","length":1,"value":"5h","referenced_from":[]}
@@ -1649,10 +1649,10 @@
 {"address":"0043DA29","name":"BYTE_0043da29","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043DA2A","name":"BYTE_0043da2a","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DA2C","name":"switchD_0043c674::switchdataD_0043da2c","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DA30","name":"PTR_caseD_3_0043da30","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DA34","name":"PTR_caseD_4_0043da34","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
-{"address":"0043DA38","name":"PTR_caseD_e_0043da38","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
-{"address":"0043DA3C","name":"PTR_caseD_2_0043da3c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DA30","name":"PTR_cf_common_exit_0043C95B_0043da30","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DA34","name":"PTR_cf_common_exit_0043C86F_0043da34","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DA38","name":"PTR_cf_common_exit_0043C508_0043da38","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043DA3C","name":"PTR_cf_common_exit_0043C862_0043da3c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
 {"address":"0043DA40","name":"PTR_caseD_3_0043da40","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DA44","name":"switchD_0043c674::switchdataD_0043da44","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DA45","name":"BYTE_0043da45","type":"byte","length":1,"value":"5h","referenced_from":[]}
@@ -1676,17 +1676,17 @@
 {"address":"0043DA57","name":"BYTE_0043da57","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043DA58","name":"BYTE_0043da58","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DA5C","name":"switchD_0043c69b::switchdataD_0043da5c","type":"pointer","length":4,"value":"0043c72d","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DA60","name":"PTR_caseD_2_0043da60","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DA64","name":"PTR_caseD_3_0043da64","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DA68","name":"PTR_caseD_4_0043da68","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DA60","name":"PTR_cf_common_exit_0043C862_0043da60","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DA64","name":"PTR_cf_common_exit_0043C95B_0043da64","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DA68","name":"PTR_cf_common_exit_0043C86F_0043da68","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DA6C","name":"PTR_caseD_3_0043da6c","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DA70","name":"PTR_caseD_3_0043da70","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043DA74","name":"PTR_caseD_1_0043da74","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
+{"address":"0043DA74","name":"PTR_cf_common_exit_0043C72D_0043da74","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
 {"address":"0043DA78","name":"switchD_0043c6ff::switchdataD_0043da78","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DA7C","name":"PTR_caseD_2_0043da7c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DA80","name":"PTR_caseD_3_0043da80","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DA84","name":"PTR_caseD_e_0043da84","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
-{"address":"0043DA88","name":"PTR_caseD_4_0043da88","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DA7C","name":"PTR_cf_common_exit_0043C862_0043da7c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DA80","name":"PTR_cf_common_exit_0043C95B_0043da80","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DA84","name":"PTR_cf_common_exit_0043C508_0043da84","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043DA88","name":"PTR_cf_common_exit_0043C86F_0043da88","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DA8C","name":"PTR_caseD_3_0043da8c","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DA90","name":"switchD_0043c6ff::switchdataD_0043da90","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DA91","name":"BYTE_0043da91","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1706,17 +1706,17 @@
 {"address":"0043DA9F","name":"BYTE_0043da9f","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043DAA0","name":"BYTE_0043daa0","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DAA4","name":"switchD_0043c726::switchdataD_0043daa4","type":"pointer","length":4,"value":"0043c72d","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DAA8","name":"PTR_caseD_2_0043daa8","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DAAC","name":"PTR_caseD_3_0043daac","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DAB0","name":"PTR_caseD_4_0043dab0","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DAA8","name":"PTR_cf_common_exit_0043C862_0043daa8","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DAAC","name":"PTR_cf_common_exit_0043C95B_0043daac","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DAB0","name":"PTR_cf_common_exit_0043C86F_0043dab0","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DAB4","name":"PTR_caseD_3_0043dab4","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
-{"address":"0043DAB8","name":"PTR_caseD_e_0043dab8","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
-{"address":"0043DABC","name":"PTR_caseD_1_0043dabc","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
+{"address":"0043DAB8","name":"PTR_cf_common_exit_0043C508_0043dab8","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043DABC","name":"PTR_cf_common_exit_0043C72D_0043dabc","type":"pointer","length":4,"value":"0043c72d","referenced_from":[]}
 {"address":"0043DAC0","name":"switchD_0043c765::switchdataD_0043dac0","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DAC4","name":"PTR_caseD_3_0043dac4","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DAC8","name":"PTR_caseD_2_0043dac8","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DACC","name":"PTR_caseD_e_0043dacc","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
-{"address":"0043DAD0","name":"PTR_caseD_4_0043dad0","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DAC4","name":"PTR_cf_common_exit_0043C95B_0043dac4","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DAC8","name":"PTR_cf_common_exit_0043C862_0043dac8","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DACC","name":"PTR_cf_common_exit_0043C508_0043dacc","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043DAD0","name":"PTR_cf_common_exit_0043C86F_0043dad0","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DAD4","name":"PTR_caseD_3_0043dad4","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DAD8","name":"switchD_0043c765::switchdataD_0043dad8","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DAD9","name":"BYTE_0043dad9","type":"byte","length":1,"value":"5h","referenced_from":[]}
@@ -1736,9 +1736,9 @@
 {"address":"0043DAE7","name":"BYTE_0043dae7","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043DAE8","name":"BYTE_0043dae8","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DAEC","name":"switchD_0043c7a8::switchdataD_0043daec","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DAF0","name":"PTR_caseD_2_0043daf0","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DAF4","name":"PTR_caseD_3_0043daf4","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DAF8","name":"PTR_caseD_4_0043daf8","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DAF0","name":"PTR_cf_common_exit_0043C862_0043daf0","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DAF4","name":"PTR_cf_common_exit_0043C95B_0043daf4","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DAF8","name":"PTR_cf_common_exit_0043C86F_0043daf8","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DAFC","name":"PTR_caseD_3_0043dafc","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DB00","name":"switchD_0043c7a8::switchdataD_0043db00","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DB01","name":"BYTE_0043db01","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1758,9 +1758,9 @@
 {"address":"0043DB0F","name":"BYTE_0043db0f","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DB10","name":"BYTE_0043db10","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043DB14","name":"switchD_0043c7d7::switchdataD_0043db14","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DB18","name":"PTR_caseD_3_0043db18","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DB1C","name":"PTR_caseD_2_0043db1c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DB20","name":"PTR_caseD_4_0043db20","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DB18","name":"PTR_cf_common_exit_0043C95B_0043db18","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DB1C","name":"PTR_cf_common_exit_0043C862_0043db1c","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DB20","name":"PTR_cf_common_exit_0043C86F_0043db20","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DB24","name":"PTR_caseD_3_0043db24","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DB28","name":"switchD_0043c7d7::switchdataD_0043db28","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DB29","name":"BYTE_0043db29","type":"byte","length":1,"value":"4h","referenced_from":[]}
@@ -1780,9 +1780,9 @@
 {"address":"0043DB37","name":"BYTE_0043db37","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DB38","name":"BYTE_0043db38","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043DB3C","name":"switchD_0043c806::switchdataD_0043db3c","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DB40","name":"PTR_caseD_3_0043db40","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DB44","name":"PTR_caseD_4_0043db44","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
-{"address":"0043DB48","name":"PTR_caseD_2_0043db48","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DB40","name":"PTR_cf_common_exit_0043C95B_0043db40","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DB44","name":"PTR_cf_common_exit_0043C86F_0043db44","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DB48","name":"PTR_cf_common_exit_0043C862_0043db48","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
 {"address":"0043DB4C","name":"PTR_caseD_3_0043db4c","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DB50","name":"switchD_0043c806::switchdataD_0043db50","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DB51","name":"BYTE_0043db51","type":"byte","length":1,"value":"4h","referenced_from":[]}
@@ -1804,10 +1804,10 @@
 {"address":"0043DB61","name":"BYTE_0043db61","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DB62","name":"BYTE_0043db62","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043DB64","name":"switchD_0043c85b::switchdataD_0043db64","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DB68","name":"PTR_caseD_2_0043db68","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DB6C","name":"PTR_caseD_3_0043db6c","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DB70","name":"PTR_caseD_e_0043db70","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
-{"address":"0043DB74","name":"PTR_caseD_4_0043db74","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DB68","name":"PTR_cf_common_exit_0043C862_0043db68","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DB6C","name":"PTR_cf_common_exit_0043C95B_0043db6c","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DB70","name":"PTR_cf_common_exit_0043C508_0043db70","type":"pointer","length":4,"value":"0043c508","referenced_from":[]}
+{"address":"0043DB74","name":"PTR_cf_common_exit_0043C86F_0043db74","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DB78","name":"PTR_caseD_3_0043db78","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DB7C","name":"switchD_0043c85b::switchdataD_0043db7c","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DB7D","name":"BYTE_0043db7d","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1827,9 +1827,9 @@
 {"address":"0043DB8B","name":"BYTE_0043db8b","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0043DB8C","name":"BYTE_0043db8c","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DB90","name":"switchD_0043c8a4::switchdataD_0043db90","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DB94","name":"PTR_caseD_3_0043db94","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DB98","name":"PTR_caseD_2_0043db98","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DB9C","name":"PTR_caseD_4_0043db9c","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DB94","name":"PTR_cf_common_exit_0043C95B_0043db94","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DB98","name":"PTR_cf_common_exit_0043C862_0043db98","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DB9C","name":"PTR_cf_common_exit_0043C86F_0043db9c","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DBA0","name":"PTR_caseD_3_0043dba0","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DBA4","name":"switchD_0043c8a4::switchdataD_0043dba4","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DBA5","name":"BYTE_0043dba5","type":"byte","length":1,"value":"4h","referenced_from":[]}
@@ -1849,9 +1849,9 @@
 {"address":"0043DBB3","name":"BYTE_0043dbb3","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DBB4","name":"BYTE_0043dbb4","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043DBB8","name":"switchD_0043c8d3::switchdataD_0043dbb8","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DBBC","name":"PTR_caseD_2_0043dbbc","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DBC0","name":"PTR_caseD_3_0043dbc0","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DBC4","name":"PTR_caseD_4_0043dbc4","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DBBC","name":"PTR_cf_common_exit_0043C862_0043dbbc","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DBC0","name":"PTR_cf_common_exit_0043C95B_0043dbc0","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DBC4","name":"PTR_cf_common_exit_0043C86F_0043dbc4","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DBC8","name":"PTR_caseD_3_0043dbc8","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DBCC","name":"switchD_0043c8d3::switchdataD_0043dbcc","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DBCD","name":"BYTE_0043dbcd","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1871,9 +1871,9 @@
 {"address":"0043DBDB","name":"BYTE_0043dbdb","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DBDC","name":"BYTE_0043dbdc","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043DBE0","name":"switchD_0043c916::switchdataD_0043dbe0","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DBE4","name":"PTR_caseD_2_0043dbe4","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
-{"address":"0043DBE8","name":"PTR_caseD_3_0043dbe8","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DBEC","name":"PTR_caseD_4_0043dbec","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DBE4","name":"PTR_cf_common_exit_0043C862_0043dbe4","type":"pointer","length":4,"value":"0043c862","referenced_from":[]}
+{"address":"0043DBE8","name":"PTR_cf_common_exit_0043C95B_0043dbe8","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DBEC","name":"PTR_cf_common_exit_0043C86F_0043dbec","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DBF0","name":"PTR_caseD_3_0043dbf0","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DBF4","name":"switchD_0043c916::switchdataD_0043dbf4","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DBF5","name":"BYTE_0043dbf5","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -1893,8 +1893,8 @@
 {"address":"0043DC03","name":"BYTE_0043dc03","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0043DC04","name":"BYTE_0043dc04","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0043DC08","name":"switchD_0043c945::switchdataD_0043dc08","type":"pointer","length":4,"value":"0043c94c","referenced_from":["0043BEB0 STAllPlayersC::GetPanelInfo"]}
-{"address":"0043DC0C","name":"PTR_caseD_3_0043dc0c","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
-{"address":"0043DC10","name":"PTR_caseD_4_0043dc10","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
+{"address":"0043DC0C","name":"PTR_cf_common_exit_0043C95B_0043dc0c","type":"pointer","length":4,"value":"0043c95b","referenced_from":[]}
+{"address":"0043DC10","name":"PTR_cf_common_exit_0043C86F_0043dc10","type":"pointer","length":4,"value":"0043c86f","referenced_from":[]}
 {"address":"0043DC14","name":"PTR_caseD_3_0043dc14","type":"pointer","length":4,"value":"0043d8e0","referenced_from":[]}
 {"address":"0043DC18","name":"switchD_0043c945::switchdataD_0043dc18","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0043DC19","name":"BYTE_0043dc19","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -3039,7 +3039,7 @@
 {"address":"0044DE74","name":"PTR_caseD_2_0044de74","type":"pointer","length":4,"value":"0044d7e7","referenced_from":[]}
 {"address":"0044DE78","name":"PTR_caseD_10_0044de78","type":"pointer","length":4,"value":"0044d84e","referenced_from":[]}
 {"address":"0044DE7C","name":"PTR_caseD_28_0044de7c","type":"pointer","length":4,"value":"0044da6b","referenced_from":[]}
-{"address":"0044DE80","name":"PTR_caseD_3_0044de80","type":"pointer","length":4,"value":"0044ddcf","referenced_from":[]}
+{"address":"0044DE80","name":"PTR_cf_continue_loop_0044DDCF_0044de80","type":"pointer","length":4,"value":"0044ddcf","referenced_from":[]}
 {"address":"0044DE84","name":"switchD_0044d78f::switchdataD_0044de84","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0044DE85","name":"BYTE_0044de85","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"0044DE86","name":"BYTE_0044de86","type":"byte","length":1,"value":"4h","referenced_from":[]}
@@ -3081,7 +3081,7 @@
 {"address":"0044DEAA","name":"BYTE_0044deaa","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"0044DEAB","name":"BYTE_0044deab","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"0044DEAC","name":"switchD_0044dcfe::switchdataD_0044deac","type":"pointer","length":4,"value":"0044dd19","referenced_from":["0044D320 FUN_0044d320"]}
-{"address":"0044DEB0","name":"PTR_caseD_3_0044deb0","type":"pointer","length":4,"value":"0044ddcf","referenced_from":[]}
+{"address":"0044DEB0","name":"PTR_cf_continue_loop_0044DDCF_0044deb0","type":"pointer","length":4,"value":"0044ddcf","referenced_from":[]}
 {"address":"0044DEB4","name":"switchD_0044dcfe::switchdataD_0044deb4","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0044DEB5","name":"BYTE_0044deb5","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0044DEB6","name":"BYTE_0044deb6","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -4178,26 +4178,26 @@
 {"address":"00464904","name":"PTR_caseD_1_00464904","type":"pointer","length":4,"value":"00462433","referenced_from":[]}
 {"address":"00464908","name":"PTR_caseD_2_00464908","type":"pointer","length":4,"value":"0046237a","referenced_from":[]}
 {"address":"0046490C","name":"PTR_caseD_3_0046490c","type":"pointer","length":4,"value":"00462508","referenced_from":[]}
-{"address":"00464910","name":"PTR_caseD_4_00464910","type":"pointer","length":4,"value":"0046351a","referenced_from":[]}
+{"address":"00464910","name":"PTR_cf_common_exit_0046351A_00464910","type":"pointer","length":4,"value":"0046351a","referenced_from":[]}
 {"address":"00464914","name":"PTR_caseD_1_00464914","type":"pointer","length":4,"value":"00462433","referenced_from":[]}
 {"address":"00464918","name":"PTR_caseD_6_00464918","type":"pointer","length":4,"value":"00462388","referenced_from":[]}
 {"address":"0046491C","name":"PTR_caseD_6_0046491c","type":"pointer","length":4,"value":"00462388","referenced_from":[]}
 {"address":"00464920","name":"PTR_caseD_6_00464920","type":"pointer","length":4,"value":"00462388","referenced_from":[]}
 {"address":"00464924","name":"PTR_caseD_9_00464924","type":"pointer","length":4,"value":"004624de","referenced_from":[]}
 {"address":"00464928","name":"switchD_004627fb::switchdataD_00464928","type":"pointer","length":4,"value":"0046351c","referenced_from":["00462180 FUN_00462180"]}
-{"address":"0046492C","name":"PTR_caseD_0_0046492c","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
-{"address":"00464930","name":"PTR_caseD_0_00464930","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
-{"address":"00464934","name":"PTR_caseD_ffffffff_00464934","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
-{"address":"00464938","name":"PTR_caseD_ffffffff_00464938","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
+{"address":"0046492C","name":"PTR_cf_common_exit_00462823_0046492c","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
+{"address":"00464930","name":"PTR_cf_common_exit_00462823_00464930","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
+{"address":"00464934","name":"PTR_cf_common_exit_0046351C_00464934","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
+{"address":"00464938","name":"PTR_cf_common_exit_0046351C_00464938","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
 {"address":"0046493C","name":"switchD_0046281c::switchdataD_0046493c","type":"pointer","length":4,"value":"0046351c","referenced_from":["00462180 FUN_00462180"]}
-{"address":"00464940","name":"PTR_caseD_0_00464940","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
-{"address":"00464944","name":"PTR_caseD_0_00464944","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
-{"address":"00464948","name":"PTR_caseD_ffffffff_00464948","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
-{"address":"0046494C","name":"PTR_caseD_ffffffff_0046494c","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
+{"address":"00464940","name":"PTR_cf_common_exit_00462823_00464940","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
+{"address":"00464944","name":"PTR_cf_common_exit_00462823_00464944","type":"pointer","length":4,"value":"00462823","referenced_from":[]}
+{"address":"00464948","name":"PTR_cf_common_exit_0046351C_00464948","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
+{"address":"0046494C","name":"PTR_cf_common_exit_0046351C_0046494c","type":"pointer","length":4,"value":"0046351c","referenced_from":[]}
 {"address":"00464950","name":"switchD_004628af::switchdataD_00464950","type":"pointer","length":4,"value":"0046401f","referenced_from":["00462180 FUN_00462180"]}
 {"address":"00464954","name":"PTR_caseD_0_00464954","type":"pointer","length":4,"value":"00462acf","referenced_from":[]}
 {"address":"00464958","name":"PTR_caseD_1_00464958","type":"pointer","length":4,"value":"004628d2","referenced_from":[]}
-{"address":"0046495C","name":"PTR_caseD_2_0046495c","type":"pointer","length":4,"value":"00464526","referenced_from":[]}
+{"address":"0046495C","name":"PTR_cf_common_exit_00464526_0046495c","type":"pointer","length":4,"value":"00464526","referenced_from":[]}
 {"address":"00464960","name":"PTR_caseD_3_00464960","type":"pointer","length":4,"value":"004628b6","referenced_from":[]}
 {"address":"00464964","name":"switchD_00462e6c::switchdataD_00464964","type":"pointer","length":4,"value":"0046401f","referenced_from":["00462180 FUN_00462180"]}
 {"address":"00464968","name":"PTR_caseD_1_00464968","type":"pointer","length":4,"value":"00463525","referenced_from":[]}
@@ -4210,9 +4210,9 @@
 {"address":"00464984","name":"PTR_caseD_2_00464984","type":"pointer","length":4,"value":"00463fef","referenced_from":[]}
 {"address":"00464988","name":"PTR_caseD_3_00464988","type":"pointer","length":4,"value":"004638ed","referenced_from":[]}
 {"address":"0046498C","name":"switchD_00464018::switchdataD_0046498c","type":"pointer","length":4,"value":"0046401f","referenced_from":["00462180 FUN_00462180"]}
-{"address":"00464990","name":"PTR_caseD_4_00464990","type":"pointer","length":4,"value":"0046351a","referenced_from":[]}
+{"address":"00464990","name":"PTR_cf_common_exit_0046351A_00464990","type":"pointer","length":4,"value":"0046351a","referenced_from":[]}
 {"address":"00464994","name":"PTR_caseD_1_00464994","type":"pointer","length":4,"value":"004643e3","referenced_from":[]}
-{"address":"00464998","name":"PTR_caseD_2_00464998","type":"pointer","length":4,"value":"00464526","referenced_from":[]}
+{"address":"00464998","name":"PTR_cf_common_exit_00464526_00464998","type":"pointer","length":4,"value":"00464526","referenced_from":[]}
 {"address":"0046499C","name":"PTR_caseD_3_0046499c","type":"pointer","length":4,"value":"0046402b","referenced_from":[]}
 {"address":"00465B24","name":"switchD_0046590f::switchdataD_00465b24","type":"pointer","length":4,"value":"00465916","referenced_from":["004658D0 FUN_004658d0"]}
 {"address":"00465B28","name":"PTR_caseD_1_00465b28","type":"pointer","length":4,"value":"004659a0","referenced_from":[]}
@@ -4222,42 +4222,42 @@
 {"address":"00469A08","name":"switchD_004660af::switchdataD_00469a08","type":"pointer","length":4,"value":"004660b6","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A0C","name":"PTR_caseD_0_00469a0c","type":"pointer","length":4,"value":"00466101","referenced_from":[]}
 {"address":"00469A10","name":"PTR_caseD_1_00469a10","type":"pointer","length":4,"value":"0046623d","referenced_from":[]}
-{"address":"00469A14","name":"PTR_caseD_2_00469a14","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
+{"address":"00469A14","name":"PTR_cf_common_exit_00468C50_00469a14","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
 {"address":"00469A18","name":"PTR_caseD_3_00469a18","type":"pointer","length":4,"value":"00466de9","referenced_from":[]}
 {"address":"00469A1C","name":"switchD_00466448::switchdataD_00469a1c","type":"pointer","length":4,"value":"0046644f","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A20","name":"PTR_caseD_0_00469a20","type":"pointer","length":4,"value":"0046649d","referenced_from":[]}
 {"address":"00469A24","name":"PTR_caseD_1_00469a24","type":"pointer","length":4,"value":"0046654e","referenced_from":[]}
-{"address":"00469A28","name":"PTR_caseD_2_00469a28","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
+{"address":"00469A28","name":"PTR_cf_common_exit_004699E9_00469a28","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
 {"address":"00469A2C","name":"PTR_caseD_3_00469a2c","type":"pointer","length":4,"value":"00466509","referenced_from":[]}
 {"address":"00469A30","name":"switchD_00466d8f::switchdataD_00469a30","type":"pointer","length":4,"value":"00466d96","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A34","name":"PTR_caseD_0_00469a34","type":"pointer","length":4,"value":"00466dc3","referenced_from":[]}
 {"address":"00469A38","name":"PTR_caseD_1_00469a38","type":"pointer","length":4,"value":"00466e0f","referenced_from":[]}
-{"address":"00469A3C","name":"PTR_caseD_2_00469a3c","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
+{"address":"00469A3C","name":"PTR_cf_common_exit_00468C50_00469a3c","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
 {"address":"00469A40","name":"PTR_caseD_3_00469a40","type":"pointer","length":4,"value":"00466de9","referenced_from":[]}
 {"address":"00469A44","name":"switchD_00467682::switchdataD_00469a44","type":"pointer","length":4,"value":"00467689","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A48","name":"PTR_caseD_0_00469a48","type":"pointer","length":4,"value":"004676e0","referenced_from":[]}
 {"address":"00469A4C","name":"PTR_caseD_1_00469a4c","type":"pointer","length":4,"value":"004676c2","referenced_from":[]}
-{"address":"00469A50","name":"PTR_caseD_2_00469a50","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
+{"address":"00469A50","name":"PTR_cf_common_exit_004699E9_00469a50","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
 {"address":"00469A54","name":"PTR_caseD_3_00469a54","type":"pointer","length":4,"value":"004676fc","referenced_from":[]}
 {"address":"00469A58","name":"switchD_0046793d::switchdataD_00469a58","type":"pointer","length":4,"value":"00467944","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A5C","name":"PTR_caseD_0_00469a5c","type":"pointer","length":4,"value":"00467971","referenced_from":[]}
 {"address":"00469A60","name":"PTR_caseD_1_00469a60","type":"pointer","length":4,"value":"00467ad4","referenced_from":[]}
-{"address":"00469A64","name":"PTR_caseD_2_00469a64","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
+{"address":"00469A64","name":"PTR_cf_common_exit_00468C50_00469a64","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
 {"address":"00469A68","name":"PTR_caseD_3_00469a68","type":"pointer","length":4,"value":"00467aae","referenced_from":[]}
 {"address":"00469A6C","name":"switchD_00467d27::switchdataD_00469a6c","type":"pointer","length":4,"value":"00467d2e","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A70","name":"PTR_caseD_0_00469a70","type":"pointer","length":4,"value":"00467d69","referenced_from":[]}
 {"address":"00469A74","name":"PTR_caseD_1_00469a74","type":"pointer","length":4,"value":"00467e6e","referenced_from":[]}
-{"address":"00469A78","name":"PTR_caseD_2_00469a78","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
+{"address":"00469A78","name":"PTR_cf_common_exit_004699E9_00469a78","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
 {"address":"00469A7C","name":"PTR_caseD_3_00469a7c","type":"pointer","length":4,"value":"00467df5","referenced_from":[]}
 {"address":"00469A80","name":"switchD_0046878c::switchdataD_00469a80","type":"pointer","length":4,"value":"00468793","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A84","name":"PTR_caseD_0_00469a84","type":"pointer","length":4,"value":"004687c0","referenced_from":[]}
 {"address":"00469A88","name":"PTR_caseD_1_00469a88","type":"pointer","length":4,"value":"0046893b","referenced_from":[]}
-{"address":"00469A8C","name":"PTR_caseD_2_00469a8c","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
+{"address":"00469A8C","name":"PTR_cf_common_exit_00468C50_00469a8c","type":"pointer","length":4,"value":"00468c50","referenced_from":[]}
 {"address":"00469A90","name":"PTR_caseD_3_00469a90","type":"pointer","length":4,"value":"004688a0","referenced_from":[]}
 {"address":"00469A94","name":"switchD_0046980c::switchdataD_00469a94","type":"pointer","length":4,"value":"00469813","referenced_from":["00465C60 STBoatC::LoadRC"]}
 {"address":"00469A98","name":"PTR_caseD_0_00469a98","type":"pointer","length":4,"value":"00469853","referenced_from":[]}
 {"address":"00469A9C","name":"PTR_caseD_1_00469a9c","type":"pointer","length":4,"value":"0046984c","referenced_from":[]}
-{"address":"00469AA0","name":"PTR_caseD_2_00469aa0","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
+{"address":"00469AA0","name":"PTR_cf_common_exit_004699E9_00469aa0","type":"pointer","length":4,"value":"004699e9","referenced_from":[]}
 {"address":"00469AA4","name":"PTR_caseD_3_00469aa4","type":"pointer","length":4,"value":"00469869","referenced_from":[]}
 {"address":"0046AF5C","name":"switchD_0046aa71::switchdataD_0046af5c","type":"pointer","length":4,"value":"0046af07","referenced_from":["0046AA50 STBoatC::BackLoadRC"]}
 {"address":"0046AF60","name":"PTR_caseD_1_0046af60","type":"pointer","length":4,"value":"0046aa78","referenced_from":[]}
@@ -4276,7 +4276,7 @@
 {"address":"0046AF94","name":"PTR_caseD_6_0046af94","type":"pointer","length":4,"value":"0046ab03","referenced_from":[]}
 {"address":"0046C478","name":"switchD_0046b287::switchdataD_0046c478","type":"pointer","length":4,"value":"0046b28e","referenced_from":["0046B100 STBoatC::Build"]}
 {"address":"0046C47C","name":"PTR_caseD_0_0046c47c","type":"pointer","length":4,"value":"0046b2d9","referenced_from":[]}
-{"address":"0046C480","name":"PTR_caseD_1_0046c480","type":"pointer","length":4,"value":"0046c3c5","referenced_from":[]}
+{"address":"0046C480","name":"PTR_cf_common_exit_0046C3C5_0046c480","type":"pointer","length":4,"value":"0046c3c5","referenced_from":[]}
 {"address":"0046C484","name":"PTR_caseD_2_0046c484","type":"pointer","length":4,"value":"0046b3a7","referenced_from":[]}
 {"address":"0046C488","name":"PTR_caseD_3_0046c488","type":"pointer","length":4,"value":"0046b37b","referenced_from":[]}
 {"address":"0046CDDC","name":"switchD_0046c997::switchdataD_0046cddc","type":"pointer","length":4,"value":"0046c9e3","referenced_from":["0046C980 STBoatC::BackBuild"]}
@@ -4290,17 +4290,17 @@
 {"address":"0046EA10","name":"switchD_0046d492::switchdataD_0046ea10","type":"pointer","length":4,"value":"0046d499","referenced_from":["0046D450 STBoatC::UnLoadRC"]}
 {"address":"0046EA14","name":"PTR_caseD_0_0046ea14","type":"pointer","length":4,"value":"0046d4e6","referenced_from":[]}
 {"address":"0046EA18","name":"PTR_caseD_1_0046ea18","type":"pointer","length":4,"value":"0046d687","referenced_from":[]}
-{"address":"0046EA1C","name":"PTR_caseD_2_0046ea1c","type":"pointer","length":4,"value":"0046e811","referenced_from":[]}
+{"address":"0046EA1C","name":"PTR_cf_common_exit_0046E811_0046ea1c","type":"pointer","length":4,"value":"0046e811","referenced_from":[]}
 {"address":"0046EA20","name":"PTR_caseD_3_0046ea20","type":"pointer","length":4,"value":"0046d669","referenced_from":[]}
 {"address":"0046EA24","name":"switchD_0046d760::switchdataD_0046ea24","type":"pointer","length":4,"value":"0046d767","referenced_from":["0046D450 STBoatC::UnLoadRC"]}
 {"address":"0046EA28","name":"PTR_caseD_0_0046ea28","type":"pointer","length":4,"value":"0046d7b4","referenced_from":[]}
 {"address":"0046EA2C","name":"PTR_caseD_1_0046ea2c","type":"pointer","length":4,"value":"0046d898","referenced_from":[]}
-{"address":"0046EA30","name":"PTR_caseD_2_0046ea30","type":"pointer","length":4,"value":"0046e811","referenced_from":[]}
+{"address":"0046EA30","name":"PTR_cf_common_exit_0046E811_0046ea30","type":"pointer","length":4,"value":"0046e811","referenced_from":[]}
 {"address":"0046EA34","name":"PTR_caseD_3_0046ea34","type":"pointer","length":4,"value":"0046d833","referenced_from":[]}
 {"address":"0046EA38","name":"switchD_0046db6f::switchdataD_0046ea38","type":"pointer","length":4,"value":"0046db76","referenced_from":["0046D450 STBoatC::UnLoadRC"]}
 {"address":"0046EA3C","name":"PTR_caseD_0_0046ea3c","type":"pointer","length":4,"value":"0046dba5","referenced_from":[]}
 {"address":"0046EA40","name":"PTR_caseD_1_0046ea40","type":"pointer","length":4,"value":"0046dd4a","referenced_from":[]}
-{"address":"0046EA44","name":"PTR_caseD_2_0046ea44","type":"pointer","length":4,"value":"0046e9f3","referenced_from":[]}
+{"address":"0046EA44","name":"PTR_cf_common_exit_0046E9F3_0046ea44","type":"pointer","length":4,"value":"0046e9f3","referenced_from":[]}
 {"address":"0046EA48","name":"PTR_caseD_3_0046ea48","type":"pointer","length":4,"value":"0046dcc4","referenced_from":[]}
 {"address":"0046F468","name":"switchD_0046eff1::switchdataD_0046f468","type":"pointer","length":4,"value":"0046eff8","referenced_from":["0046EFD0 STBoatC::BackUnLoadRC"]}
 {"address":"0046F46C","name":"PTR_caseD_0_0046f46c","type":"pointer","length":4,"value":"0046eff8","referenced_from":[]}
@@ -4313,17 +4313,17 @@
 {"address":"00470E50","name":"switchD_0046f604::switchdataD_00470e50","type":"pointer","length":4,"value":"0046f60b","referenced_from":["0046F5C0 STBoatC::ToDok"]}
 {"address":"00470E54","name":"PTR_caseD_0_00470e54","type":"pointer","length":4,"value":"0046f63a","referenced_from":[]}
 {"address":"00470E58","name":"PTR_caseD_1_00470e58","type":"pointer","length":4,"value":"0046f7cb","referenced_from":[]}
-{"address":"00470E5C","name":"PTR_caseD_2_00470e5c","type":"pointer","length":4,"value":"004707b7","referenced_from":[]}
+{"address":"00470E5C","name":"PTR_cf_common_exit_004707B7_00470e5c","type":"pointer","length":4,"value":"004707b7","referenced_from":[]}
 {"address":"00470E60","name":"PTR_caseD_3_00470e60","type":"pointer","length":4,"value":"0046f7e4","referenced_from":[]}
 {"address":"00470E64","name":"switchD_0046f8cb::switchdataD_00470e64","type":"pointer","length":4,"value":"0046f8d2","referenced_from":["0046F5C0 STBoatC::ToDok"]}
 {"address":"00470E68","name":"PTR_caseD_0_00470e68","type":"pointer","length":4,"value":"0046f91e","referenced_from":[]}
 {"address":"00470E6C","name":"PTR_caseD_1_00470e6c","type":"pointer","length":4,"value":"0046fa25","referenced_from":[]}
-{"address":"00470E70","name":"PTR_caseD_2_00470e70","type":"pointer","length":4,"value":"004707b7","referenced_from":[]}
+{"address":"00470E70","name":"PTR_cf_common_exit_004707B7_00470e70","type":"pointer","length":4,"value":"004707b7","referenced_from":[]}
 {"address":"00470E74","name":"PTR_caseD_3_00470e74","type":"pointer","length":4,"value":"0046f9a8","referenced_from":[]}
 {"address":"00470E78","name":"switchD_0046fd75::switchdataD_00470e78","type":"pointer","length":4,"value":"0046fd7c","referenced_from":["0046F5C0 STBoatC::ToDok"]}
 {"address":"00470E7C","name":"PTR_caseD_0_00470e7c","type":"pointer","length":4,"value":"0046fdab","referenced_from":[]}
 {"address":"00470E80","name":"PTR_caseD_1_00470e80","type":"pointer","length":4,"value":"0046ff97","referenced_from":[]}
-{"address":"00470E84","name":"PTR_caseD_2_00470e84","type":"pointer","length":4,"value":"00470e32","referenced_from":[]}
+{"address":"00470E84","name":"PTR_cf_common_exit_00470E32_00470e84","type":"pointer","length":4,"value":"00470e32","referenced_from":[]}
 {"address":"00470E88","name":"PTR_caseD_3_00470e88","type":"pointer","length":4,"value":"0046feec","referenced_from":[]}
 {"address":"00471964","name":"switchD_004714f1::switchdataD_00471964","type":"pointer","length":4,"value":"004714f8","referenced_from":["004714D0 STBoatC::BackToDok"]}
 {"address":"00471968","name":"PTR_caseD_0_00471968","type":"pointer","length":4,"value":"004714f8","referenced_from":[]}
@@ -4346,9 +4346,9 @@
 {"address":"00472DA0","name":"PTR_caseD_9_00472da0","type":"pointer","length":4,"value":"004720c1","referenced_from":[]}
 {"address":"00472DA4","name":"PTR_caseD_0_00472da4","type":"pointer","length":4,"value":"0047210e","referenced_from":[]}
 {"address":"00472DA8","name":"switchD_0047251b::switchdataD_00472da8","type":"pointer","length":4,"value":"00472533","referenced_from":["00471AC0 STBoatC::Guard"]}
-{"address":"00472DAC","name":"PTR_caseD_1_00472dac","type":"pointer","length":4,"value":"00472a1f","referenced_from":[]}
+{"address":"00472DAC","name":"PTR_cf_common_exit_00472A1F_00472dac","type":"pointer","length":4,"value":"00472a1f","referenced_from":[]}
 {"address":"00472DB0","name":"PTR_caseD_9_00472db0","type":"pointer","length":4,"value":"00472522","referenced_from":[]}
-{"address":"00472DB4","name":"PTR_caseD_2_00472db4","type":"pointer","length":4,"value":"00472cb0","referenced_from":[]}
+{"address":"00472DB4","name":"PTR_cf_common_exit_00472CB0_00472db4","type":"pointer","length":4,"value":"00472cb0","referenced_from":[]}
 {"address":"00472DB8","name":"switchD_0047251b::switchdataD_00472db8","type":"byte","length":1,"value":"0h","referenced_from":["00471AC0 STBoatC::Guard"]}
 {"address":"00472DB9","name":"BYTE_00472db9","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00472DBA","name":"BYTE_00472dba","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -4361,9 +4361,9 @@
 {"address":"00472DC1","name":"BYTE_00472dc1","type":"byte","length":1,"value":"2h","referenced_from":[]}
 {"address":"00472DC2","name":"BYTE_00472dc2","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00472DC4","name":"switchD_004727e9::switchdataD_00472dc4","type":"pointer","length":4,"value":"004727f0","referenced_from":["00471AC0 STBoatC::Guard"]}
-{"address":"00472DC8","name":"PTR_caseD_1_00472dc8","type":"pointer","length":4,"value":"00472a1f","referenced_from":[]}
+{"address":"00472DC8","name":"PTR_cf_common_exit_00472A1F_00472dc8","type":"pointer","length":4,"value":"00472a1f","referenced_from":[]}
 {"address":"00472DCC","name":"PTR_caseD_9_00472dcc","type":"pointer","length":4,"value":"00472a2e","referenced_from":[]}
-{"address":"00472DD0","name":"PTR_caseD_2_00472dd0","type":"pointer","length":4,"value":"00472cb0","referenced_from":[]}
+{"address":"00472DD0","name":"PTR_cf_common_exit_00472CB0_00472dd0","type":"pointer","length":4,"value":"00472cb0","referenced_from":[]}
 {"address":"00472DD4","name":"switchD_004727e9::switchdataD_00472dd4","type":"byte","length":1,"value":"0h","referenced_from":["00471AC0 STBoatC::Guard"]}
 {"address":"00472DD5","name":"BYTE_00472dd5","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00472DD6","name":"BYTE_00472dd6","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -4376,9 +4376,9 @@
 {"address":"00472DDD","name":"BYTE_00472ddd","type":"byte","length":1,"value":"2h","referenced_from":[]}
 {"address":"00472DDE","name":"BYTE_00472dde","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00472DE0","name":"switchD_00472a18::switchdataD_00472de0","type":"pointer","length":4,"value":"00472a7b","referenced_from":["00471AC0 STBoatC::Guard"]}
-{"address":"00472DE4","name":"PTR_caseD_1_00472de4","type":"pointer","length":4,"value":"00472a1f","referenced_from":[]}
+{"address":"00472DE4","name":"PTR_cf_common_exit_00472A1F_00472de4","type":"pointer","length":4,"value":"00472a1f","referenced_from":[]}
 {"address":"00472DE8","name":"PTR_caseD_9_00472de8","type":"pointer","length":4,"value":"00472a2e","referenced_from":[]}
-{"address":"00472DEC","name":"PTR_caseD_2_00472dec","type":"pointer","length":4,"value":"00472cb0","referenced_from":[]}
+{"address":"00472DEC","name":"PTR_cf_common_exit_00472CB0_00472dec","type":"pointer","length":4,"value":"00472cb0","referenced_from":[]}
 {"address":"00472DF0","name":"switchD_00472a18::switchdataD_00472df0","type":"byte","length":1,"value":"0h","referenced_from":["00471AC0 STBoatC::Guard"]}
 {"address":"00472DF1","name":"BYTE_00472df1","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00472DF2","name":"BYTE_00472df2","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -4419,12 +4419,12 @@
 {"address":"00479298","name":"switchD_004786b6::switchdataD_00479298","type":"pointer","length":4,"value":"004786bd","referenced_from":["00478640 STBoatC::Recharge"]}
 {"address":"0047929C","name":"PTR_caseD_0_0047929c","type":"pointer","length":4,"value":"00478707","referenced_from":[]}
 {"address":"004792A0","name":"PTR_caseD_1_004792a0","type":"pointer","length":4,"value":"004788a8","referenced_from":[]}
-{"address":"004792A4","name":"PTR_caseD_2_004792a4","type":"pointer","length":4,"value":"0047928c","referenced_from":[]}
+{"address":"004792A4","name":"PTR_cf_common_exit_0047928C_004792a4","type":"pointer","length":4,"value":"0047928c","referenced_from":[]}
 {"address":"004792A8","name":"PTR_caseD_3_004792a8","type":"pointer","length":4,"value":"00478875","referenced_from":[]}
 {"address":"004792AC","name":"switchD_00478bbb::switchdataD_004792ac","type":"pointer","length":4,"value":"00478bc2","referenced_from":["00478640 STBoatC::Recharge"]}
 {"address":"004792B0","name":"PTR_caseD_0_004792b0","type":"pointer","length":4,"value":"00478c0d","referenced_from":[]}
 {"address":"004792B4","name":"PTR_caseD_1_004792b4","type":"pointer","length":4,"value":"00478d50","referenced_from":[]}
-{"address":"004792B8","name":"PTR_caseD_2_004792b8","type":"pointer","length":4,"value":"0047928c","referenced_from":[]}
+{"address":"004792B8","name":"PTR_cf_common_exit_0047928C_004792b8","type":"pointer","length":4,"value":"0047928c","referenced_from":[]}
 {"address":"004792BC","name":"PTR_caseD_3_004792bc","type":"pointer","length":4,"value":"00478ceb","referenced_from":[]}
 {"address":"0047B6F4","name":"switchD_00479647::switchdataD_0047b6f4","type":"pointer","length":4,"value":"0047964e","referenced_from":["00479600 STBoatC::Teleport"]}
 {"address":"0047B6F8","name":"PTR_caseD_0_0047b6f8","type":"pointer","length":4,"value":"0047967d","referenced_from":[]}
@@ -5005,9 +5005,9 @@
 {"address":"004967DC","name":"PTR_caseD_2_004967dc","type":"pointer","length":4,"value":"004965a4","referenced_from":[]}
 {"address":"004967E0","name":"PTR_caseD_3_004967e0","type":"pointer","length":4,"value":"004965e8","referenced_from":[]}
 {"address":"004967E4","name":"PTR_caseD_4_004967e4","type":"pointer","length":4,"value":"0049661f","referenced_from":[]}
-{"address":"004967E8","name":"PTR_caseD_5_004967e8","type":"pointer","length":4,"value":"0049679c","referenced_from":[]}
+{"address":"004967E8","name":"PTR_cf_common_exit_0049679C_004967e8","type":"pointer","length":4,"value":"0049679c","referenced_from":[]}
 {"address":"004967EC","name":"PTR_caseD_6_004967ec","type":"pointer","length":4,"value":"00496601","referenced_from":[]}
-{"address":"004967F0","name":"PTR_caseD_7_004967f0","type":"pointer","length":4,"value":"004967aa","referenced_from":[]}
+{"address":"004967F0","name":"PTR_cf_common_exit_004967AA_004967f0","type":"pointer","length":4,"value":"004967aa","referenced_from":[]}
 {"address":"004967F4","name":"PTR_caseD_8_004967f4","type":"pointer","length":4,"value":"0049663f","referenced_from":[]}
 {"address":"004967F8","name":"PTR_caseD_9_004967f8","type":"pointer","length":4,"value":"00496660","referenced_from":[]}
 {"address":"004967FC","name":"PTR_caseD_a_004967fc","type":"pointer","length":4,"value":"0049668c","referenced_from":[]}
@@ -5026,15 +5026,15 @@
 {"address":"00496830","name":"switchD_00496785::switchdataD_00496830","type":"pointer","length":4,"value":"0049679c","referenced_from":["00496250 FUN_00496250"]}
 {"address":"00496834","name":"PTR_caseD_1_00496834","type":"pointer","length":4,"value":"0049676e","referenced_from":[]}
 {"address":"00496838","name":"PTR_caseD_2_00496838","type":"pointer","length":4,"value":"0049662d","referenced_from":[]}
-{"address":"0049683C","name":"PTR_caseD_7_0049683c","type":"pointer","length":4,"value":"004967aa","referenced_from":[]}
+{"address":"0049683C","name":"PTR_cf_common_exit_004967AA_0049683c","type":"pointer","length":4,"value":"004967aa","referenced_from":[]}
 {"address":"00496840","name":"switchD_00496795::switchdataD_00496840","type":"pointer","length":4,"value":"0049679c","referenced_from":["00496250 FUN_00496250"]}
 {"address":"00496844","name":"PTR_caseD_0_00496844","type":"pointer","length":4,"value":"004967c5","referenced_from":[]}
-{"address":"00496848","name":"PTR_caseD_3_00496848","type":"pointer","length":4,"value":"004965ef","referenced_from":[]}
-{"address":"0049684C","name":"PTR_caseD_7_0049684c","type":"pointer","length":4,"value":"004967aa","referenced_from":[]}
+{"address":"00496848","name":"PTR_cf_common_exit_004965EF_00496848","type":"pointer","length":4,"value":"004965ef","referenced_from":[]}
+{"address":"0049684C","name":"PTR_cf_common_exit_004967AA_0049684c","type":"pointer","length":4,"value":"004967aa","referenced_from":[]}
 {"address":"00496850","name":"switchD_004967be::switchdataD_00496850","type":"pointer","length":4,"value":"004967c5","referenced_from":["00496250 FUN_00496250"]}
 {"address":"00496854","name":"PTR_caseD_6_00496854","type":"pointer","length":4,"value":"00496601","referenced_from":[]}
 {"address":"00496858","name":"PTR_caseD_6_00496858","type":"pointer","length":4,"value":"00496601","referenced_from":[]}
-{"address":"0049685C","name":"PTR_caseD_3_0049685c","type":"pointer","length":4,"value":"004965ef","referenced_from":[]}
+{"address":"0049685C","name":"PTR_cf_common_exit_004965EF_0049685c","type":"pointer","length":4,"value":"004965ef","referenced_from":[]}
 {"address":"004989B4","name":"switchD_004984e0::switchdataD_004989b4","type":"pointer","length":4,"value":"004984e7","referenced_from":["00497E00 STGroupBoatC::GetMessage"]}
 {"address":"004989B8","name":"PTR_caseD_2_004989b8","type":"pointer","length":4,"value":"00498547","referenced_from":[]}
 {"address":"004989BC","name":"PTR_caseD_3_004989bc","type":"pointer","length":4,"value":"0049852a","referenced_from":[]}
@@ -6876,7 +6876,7 @@
 {"address":"004C2660","name":"PTR_caseD_26_004c2660","type":"pointer","length":4,"value":"004c231a","referenced_from":[]}
 {"address":"004C2664","name":"PTR_caseD_2a_004c2664","type":"pointer","length":4,"value":"004c2366","referenced_from":[]}
 {"address":"004C2668","name":"PTR_caseD_42_004c2668","type":"pointer","length":4,"value":"004c249a","referenced_from":[]}
-{"address":"004C266C","name":"PTR_caseD_1_004c266c","type":"pointer","length":4,"value":"004c261b","referenced_from":[]}
+{"address":"004C266C","name":"PTR_cf_common_exit_004C261B_004c266c","type":"pointer","length":4,"value":"004c261b","referenced_from":[]}
 {"address":"004C2670","name":"switchD_004c22b3::switchdataD_004c2670","type":"byte","length":1,"value":"0h","referenced_from":["004C21A0 FUN_004c21a0"]}
 {"address":"004C2671","name":"BYTE_004c2671","type":"byte","length":1,"value":"8h","referenced_from":[]}
 {"address":"004C2672","name":"BYTE_004c2672","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -7213,8 +7213,8 @@
 {"address":"004CB6DC","name":"switchD_004cb1d7::switchdataD_004cb6dc","type":"pointer","length":4,"value":"004cb5fa","referenced_from":["004CAFC0 FUN_004cafc0"]}
 {"address":"004CB6E0","name":"PTR_caseD_8_004cb6e0","type":"pointer","length":4,"value":"004cb35e","referenced_from":[]}
 {"address":"004CB6E4","name":"PTR_caseD_8_004cb6e4","type":"pointer","length":4,"value":"004cb35e","referenced_from":[]}
-{"address":"004CB6E8","name":"PTR_caseD_a_004cb6e8","type":"pointer","length":4,"value":"004cb6d2","referenced_from":[]}
-{"address":"004CB6EC","name":"PTR_caseD_a_004cb6ec","type":"pointer","length":4,"value":"004cb6d2","referenced_from":[]}
+{"address":"004CB6E8","name":"PTR_cf_common_exit_004CB6D2_004cb6e8","type":"pointer","length":4,"value":"004cb6d2","referenced_from":[]}
+{"address":"004CB6EC","name":"PTR_cf_common_exit_004CB6D2_004cb6ec","type":"pointer","length":4,"value":"004cb6d2","referenced_from":[]}
 {"address":"004CB6F0","name":"PTR_caseD_c_004cb6f0","type":"pointer","length":4,"value":"004cb41b","referenced_from":[]}
 {"address":"004CB6F4","name":"PTR_caseD_d_004cb6f4","type":"pointer","length":4,"value":"004cb1de","referenced_from":[]}
 {"address":"004CB6F8","name":"PTR_caseD_e_004cb6f8","type":"pointer","length":4,"value":"004cb212","referenced_from":[]}
@@ -7297,14 +7297,14 @@
 {"address":"004CB778","name":"BYTE_004cb778","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"004CB779","name":"BYTE_004cb779","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"004CB77C","name":"switchD_004cb552::switchdataD_004cb77c","type":"pointer","length":4,"value":"004cb559","referenced_from":["004CAFC0 FUN_004cafc0"]}
-{"address":"004CB780","name":"PTR_caseD_1_004cb780","type":"pointer","length":4,"value":"004cb489","referenced_from":[]}
-{"address":"004CB784","name":"PTR_caseD_2_004cb784","type":"pointer","length":4,"value":"004cb504","referenced_from":[]}
+{"address":"004CB780","name":"PTR_cf_common_exit_004CB489_004cb780","type":"pointer","length":4,"value":"004cb489","referenced_from":[]}
+{"address":"004CB784","name":"PTR_cf_common_exit_004CB504_004cb784","type":"pointer","length":4,"value":"004cb504","referenced_from":[]}
 {"address":"004CB788","name":"PTR_caseD_34_004cb788","type":"pointer","length":4,"value":"004cb444","referenced_from":[]}
 {"address":"004CB78C","name":"PTR_caseD_4_004cb78c","type":"pointer","length":4,"value":"004cb5cd","referenced_from":[]}
 {"address":"004CB790","name":"PTR_caseD_5_004cb790","type":"pointer","length":4,"value":"004cb572","referenced_from":[]}
 {"address":"004CB794","name":"switchD_004cb5c6::switchdataD_004cb794","type":"pointer","length":4,"value":"004cb559","referenced_from":["004CAFC0 FUN_004cafc0"]}
-{"address":"004CB798","name":"PTR_caseD_1_004cb798","type":"pointer","length":4,"value":"004cb489","referenced_from":[]}
-{"address":"004CB79C","name":"PTR_caseD_2_004cb79c","type":"pointer","length":4,"value":"004cb504","referenced_from":[]}
+{"address":"004CB798","name":"PTR_cf_common_exit_004CB489_004cb798","type":"pointer","length":4,"value":"004cb489","referenced_from":[]}
+{"address":"004CB79C","name":"PTR_cf_common_exit_004CB504_004cb79c","type":"pointer","length":4,"value":"004cb504","referenced_from":[]}
 {"address":"004CB7A0","name":"PTR_caseD_34_004cb7a0","type":"pointer","length":4,"value":"004cb444","referenced_from":[]}
 {"address":"004CB7A4","name":"PTR_caseD_4_004cb7a4","type":"pointer","length":4,"value":"004cb5cd","referenced_from":[]}
 {"address":"004CB7A8","name":"PTR_caseD_5_004cb7a8","type":"pointer","length":4,"value":"004cb572","referenced_from":[]}
@@ -7968,7 +7968,7 @@
 {"address":"004E0354","name":"PTR_caseD_39_004e0354","type":"pointer","length":4,"value":"004e02c5","referenced_from":[]}
 {"address":"004E0358","name":"PTR_caseD_4f_004e0358","type":"pointer","length":4,"value":"004e02ce","referenced_from":[]}
 {"address":"004E035C","name":"PTR_caseD_61_004e035c","type":"pointer","length":4,"value":"004e02d7","referenced_from":[]}
-{"address":"004E0360","name":"PTR_caseD_3a_004e0360","type":"pointer","length":4,"value":"004e02e4","referenced_from":[]}
+{"address":"004E0360","name":"PTR_cf_common_exit_004E02E4_004e0360","type":"pointer","length":4,"value":"004e02e4","referenced_from":[]}
 {"address":"004E0364","name":"switchD_004e02b5::switchdataD_004e0364","type":"byte","length":1,"value":"0h","referenced_from":["004E0250 FUN_004e0250"]}
 {"address":"004E0365","name":"BYTE_004e0365","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"004E0366","name":"BYTE_004e0366","type":"byte","length":1,"value":"4h","referenced_from":[]}
@@ -8961,7 +8961,7 @@
 {"address":"004F8A00","name":"PTR_caseD_4_004f8a00","type":"pointer","length":4,"value":"004f810c","referenced_from":[]}
 {"address":"004F8A04","name":"PTR_caseD_5_004f8a04","type":"pointer","length":4,"value":"004f82f2","referenced_from":[]}
 {"address":"004F8A08","name":"switchD_004f86b0::switchdataD_004f8a08","type":"pointer","length":4,"value":"004f889e","referenced_from":["004F80A0 CPanelTy::PaintTV"]}
-{"address":"004F8A0C","name":"PTR_caseD_2_004f8a0c","type":"pointer","length":4,"value":"004f88ed","referenced_from":[]}
+{"address":"004F8A0C","name":"PTR_cf_switch_join_004F88ED_004f8a0c","type":"pointer","length":4,"value":"004f88ed","referenced_from":[]}
 {"address":"004F8A10","name":"PTR_caseD_3_004f8a10","type":"pointer","length":4,"value":"004f8722","referenced_from":[]}
 {"address":"004F8A14","name":"PTR_caseD_4_004f8a14","type":"pointer","length":4,"value":"004f86b7","referenced_from":[]}
 {"address":"004F8A18","name":"PTR_caseD_5_004f8a18","type":"pointer","length":4,"value":"004f87c4","referenced_from":[]}
@@ -9013,10 +9013,10 @@
 {"address":"004FAC9C","name":"PTR_caseD_11_004fac9c","type":"pointer","length":4,"value":"004fac1d","referenced_from":[]}
 {"address":"004FACA0","name":"PTR_caseD_12_004faca0","type":"pointer","length":4,"value":"004fac39","referenced_from":[]}
 {"address":"004FD67C","name":"switchD_004fb10b::switchdataD_004fd67c","type":"pointer","length":4,"value":"004fb171","referenced_from":["004FB060 CPanelTy::GetMessage"]}
-{"address":"004FD680","name":"PTR_caseD_1_004fd680","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD680","name":"PTR_cf_common_exit_004FD60B_004fd680","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD684","name":"PTR_caseD_2_004fd684","type":"pointer","length":4,"value":"004fb112","referenced_from":[]}
 {"address":"004FD688","name":"PTR_caseD_3_004fd688","type":"pointer","length":4,"value":"004fb11e","referenced_from":[]}
-{"address":"004FD68C","name":"PTR_caseD_1_004fd68c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD68C","name":"PTR_cf_common_exit_004FD60B_004fd68c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD690","name":"PTR_caseD_5_004fd690","type":"pointer","length":4,"value":"004fb12a","referenced_from":[]}
 {"address":"004FD694","name":"switchD_004fb2cc::switchdataD_004fd694","type":"pointer","length":4,"value":"004fb2d3","referenced_from":["004FB060 CPanelTy::GetMessage"]}
 {"address":"004FD698","name":"PTR_caseD_1_004fd698","type":"pointer","length":4,"value":"004fb2dc","referenced_from":[]}
@@ -9063,13 +9063,13 @@
 {"address":"004FD6F5","name":"BYTE_004fd6f5","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"004FD6F6","name":"BYTE_004fd6f6","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"004FD6F8","name":"switchD_004fbe84::switchdataD_004fd6f8","type":"pointer","length":4,"value":"004fbe8b","referenced_from":["004FB060 CPanelTy::GetMessage"]}
-{"address":"004FD6FC","name":"PTR_caseD_1_004fd6fc","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD6FC","name":"PTR_cf_common_exit_004FD60B_004fd6fc","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD700","name":"PTR_caseD_2_004fd700","type":"pointer","length":4,"value":"004fbf12","referenced_from":[]}
 {"address":"004FD704","name":"PTR_caseD_3_004fd704","type":"pointer","length":4,"value":"004fc132","referenced_from":[]}
-{"address":"004FD708","name":"PTR_caseD_1_004fd708","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD708","name":"PTR_cf_common_exit_004FD60B_004fd708","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD70C","name":"PTR_caseD_3_004fd70c","type":"pointer","length":4,"value":"004fc132","referenced_from":[]}
 {"address":"004FD710","name":"PTR_caseD_2_004fd710","type":"pointer","length":4,"value":"004fbf12","referenced_from":[]}
-{"address":"004FD714","name":"PTR_caseD_1_004fd714","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD714","name":"PTR_cf_common_exit_004FD60B_004fd714","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD718","name":"PTR_caseD_0_004fd718","type":"pointer","length":4,"value":"004fbe8b","referenced_from":[]}
 {"address":"004FD71C","name":"PTR_caseD_9_004fd71c","type":"pointer","length":4,"value":"004fc44f","referenced_from":[]}
 {"address":"004FD720","name":"PTR_caseD_a_004fd720","type":"pointer","length":4,"value":"004fc372","referenced_from":[]}
@@ -9095,7 +9095,7 @@
 {"address":"004FD770","name":"PTR_caseD_b12f_004fd770","type":"pointer","length":4,"value":"004fc8de","referenced_from":[]}
 {"address":"004FD774","name":"PTR_caseD_b13f_004fd774","type":"pointer","length":4,"value":"004fcb12","referenced_from":[]}
 {"address":"004FD778","name":"PTR_caseD_b15f_004fd778","type":"pointer","length":4,"value":"004fca2c","referenced_from":[]}
-{"address":"004FD77C","name":"PTR_caseD_1_004fd77c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD77C","name":"PTR_cf_common_exit_004FD60B_004fd77c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD780","name":"switchD_004fc7fb::switchdataD_004fd780","type":"byte","length":1,"value":"0h","referenced_from":["004FB060 CPanelTy::GetMessage"]}
 {"address":"004FD781","name":"BYTE_004fd781","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"004FD782","name":"BYTE_004fd782","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -9203,7 +9203,7 @@
 {"address":"004FD820","name":"PTR_caseD_b231_004fd820","type":"pointer","length":4,"value":"004fd194","referenced_from":[]}
 {"address":"004FD824","name":"PTR_caseD_b232_004fd824","type":"pointer","length":4,"value":"004fd1af","referenced_from":[]}
 {"address":"004FD828","name":"PTR_caseD_b233_004fd828","type":"pointer","length":4,"value":"004fd1ff","referenced_from":[]}
-{"address":"004FD82C","name":"PTR_caseD_1_004fd82c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD82C","name":"PTR_cf_common_exit_004FD60B_004fd82c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD830","name":"switchD_004fccba::switchdataD_004fd830","type":"byte","length":1,"value":"0h","referenced_from":["004FB060 CPanelTy::GetMessage"]}
 {"address":"004FD831","name":"BYTE_004fd831","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"004FD832","name":"BYTE_004fd832","type":"byte","length":1,"value":"0h","referenced_from":[]}
@@ -9387,7 +9387,7 @@
 {"address":"004FD8E4","name":"BYTE_004fd8e4","type":"byte","length":1,"value":"14h","referenced_from":[]}
 {"address":"004FD8E8","name":"switchD_004fd4b5::switchdataD_004fd8e8","type":"pointer","length":4,"value":"004fd4da","referenced_from":["004FB060 CPanelTy::GetMessage"]}
 {"address":"004FD8EC","name":"PTR_caseD_64_004fd8ec","type":"pointer","length":4,"value":"004fd4bc","referenced_from":[]}
-{"address":"004FD8F0","name":"PTR_caseD_1_004fd8f0","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD8F0","name":"PTR_cf_common_exit_004FD60B_004fd8f0","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD8F4","name":"switchD_004fd4b5::switchdataD_004fd8f4","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"004FD8F5","name":"BYTE_004fd8f5","type":"byte","length":1,"value":"2h","referenced_from":[]}
 {"address":"004FD8F6","name":"BYTE_004fd8f6","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -9405,7 +9405,7 @@
 {"address":"004FD902","name":"BYTE_004fd902","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"004FD904","name":"switchD_004fd502::switchdataD_004fd904","type":"pointer","length":4,"value":"004fd527","referenced_from":["004FB060 CPanelTy::GetMessage"]}
 {"address":"004FD908","name":"PTR_caseD_64_004fd908","type":"pointer","length":4,"value":"004fd509","referenced_from":[]}
-{"address":"004FD90C","name":"PTR_caseD_1_004fd90c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
+{"address":"004FD90C","name":"PTR_cf_common_exit_004FD60B_004fd90c","type":"pointer","length":4,"value":"004fd60b","referenced_from":[]}
 {"address":"004FD910","name":"switchD_004fd502::switchdataD_004fd910","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"004FD911","name":"BYTE_004fd911","type":"byte","length":1,"value":"2h","referenced_from":[]}
 {"address":"004FD912","name":"BYTE_004fd912","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -10072,18 +10072,18 @@
 {"address":"005051D4","name":"PTR_caseD_4_005051d4","type":"pointer","length":4,"value":"00505170","referenced_from":[]}
 {"address":"005051D8","name":"PTR_caseD_5_005051d8","type":"pointer","length":4,"value":"0050517c","referenced_from":[]}
 {"address":"00505788","name":"switchD_005052d8::switchdataD_00505788","type":"pointer","length":4,"value":"00505716","referenced_from":["00505230 CPanelTy::PaintMunition"]}
-{"address":"0050578C","name":"PTR_caseD_2_0050578c","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"0050578C","name":"PTR_cf_continue_loop_00505716_0050578c","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
 {"address":"00505790","name":"PTR_caseD_4_00505790","type":"pointer","length":4,"value":"005052df","referenced_from":[]}
 {"address":"00505794","name":"PTR_caseD_5_00505794","type":"pointer","length":4,"value":"005052e5","referenced_from":[]}
-{"address":"00505798","name":"PTR_caseD_2_00505798","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
-{"address":"0050579C","name":"PTR_caseD_2_0050579c","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
-{"address":"005057A0","name":"PTR_caseD_2_005057a0","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"00505798","name":"PTR_cf_continue_loop_00505716_00505798","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"0050579C","name":"PTR_cf_continue_loop_00505716_0050579c","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"005057A0","name":"PTR_cf_continue_loop_00505716_005057a0","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
 {"address":"005057A4","name":"switchD_005052f0::switchdataD_005057a4","type":"pointer","length":4,"value":"00505716","referenced_from":["00505230 CPanelTy::PaintMunition"]}
-{"address":"005057A8","name":"PTR_caseD_2_005057a8","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"005057A8","name":"PTR_cf_continue_loop_00505716_005057a8","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
 {"address":"005057AC","name":"PTR_caseD_2_005057ac","type":"pointer","length":4,"value":"005052f7","referenced_from":[]}
 {"address":"005057B0","name":"PTR_caseD_5_005057b0","type":"pointer","length":4,"value":"005052e5","referenced_from":[]}
-{"address":"005057B4","name":"PTR_caseD_2_005057b4","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
-{"address":"005057B8","name":"PTR_caseD_2_005057b8","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"005057B4","name":"PTR_cf_continue_loop_00505716_005057b4","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
+{"address":"005057B8","name":"PTR_cf_continue_loop_00505716_005057b8","type":"pointer","length":4,"value":"00505716","referenced_from":[]}
 {"address":"005057BC","name":"PTR_caseD_4_005057bc","type":"pointer","length":4,"value":"005052df","referenced_from":[]}
 {"address":"005057C0","name":"PTR_caseD_7_005057c0","type":"pointer","length":4,"value":"005052fd","referenced_from":[]}
 {"address":"005057C4","name":"PTR_caseD_8_005057c4","type":"pointer","length":4,"value":"00505303","referenced_from":[]}
@@ -10372,7 +10372,7 @@
 {"address":"00509274","name":"PTR_caseD_3a_00509274","type":"pointer","length":4,"value":"00508bf1","referenced_from":[]}
 {"address":"00509278","name":"PTR_caseD_3c_00509278","type":"pointer","length":4,"value":"00508fca","referenced_from":[]}
 {"address":"0050927C","name":"PTR_caseD_50_0050927c","type":"pointer","length":4,"value":"00508f52","referenced_from":[]}
-{"address":"00509280","name":"PTR_caseD_3b_00509280","type":"pointer","length":4,"value":"00509192","referenced_from":[]}
+{"address":"00509280","name":"PTR_cf_common_exit_00509192_00509280","type":"pointer","length":4,"value":"00509192","referenced_from":[]}
 {"address":"00509284","name":"switchD_0050858c::switchdataD_00509284","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00509285","name":"BYTE_00509285","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00509286","name":"BYTE_00509286","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -10849,7 +10849,7 @@
 {"address":"00510758","name":"PTR_caseD_2_00510758","type":"pointer","length":4,"value":"00510668","referenced_from":[]}
 {"address":"00510AD0","name":"switchD_005108d5::switchdataD_00510ad0","type":"pointer","length":4,"value":"005109a5","referenced_from":["005107C0 FrmPanelTy::GetMessage"]}
 {"address":"00510AD4","name":"PTR_caseD_b10d_00510ad4","type":"pointer","length":4,"value":"005108dc","referenced_from":[]}
-{"address":"00510AD8","name":"PTR_caseD_b10c_00510ad8","type":"pointer","length":4,"value":"005109a5","referenced_from":[]}
+{"address":"00510AD8","name":"PTR_cf_common_exit_005109A5_00510ad8","type":"pointer","length":4,"value":"005109a5","referenced_from":[]}
 {"address":"00510ADC","name":"PTR_caseD_b10f_00510adc","type":"pointer","length":4,"value":"005108f0","referenced_from":[]}
 {"address":"00510AE0","name":"switchD_00510930::switchdataD_00510ae0","type":"pointer","length":4,"value":"00510937","referenced_from":["005107C0 FrmPanelTy::GetMessage"]}
 {"address":"00510AE4","name":"PTR_caseD_c0a0_00510ae4","type":"pointer","length":4,"value":"0051093b","referenced_from":[]}
@@ -10994,7 +10994,7 @@
 {"address":"00514B43","name":"BYTE_00514b43","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00514DF0","name":"switchD_00514c13::switchdataD_00514df0","type":"pointer","length":4,"value":"00514c1a","referenced_from":["00514BC0 FUN_00514bc0"]}
 {"address":"00514DF4","name":"PTR_caseD_c_00514df4","type":"pointer","length":4,"value":"00514c47","referenced_from":[]}
-{"address":"00514DF8","name":"PTR_caseD_5_00514df8","type":"pointer","length":4,"value":"00514cf6","referenced_from":[]}
+{"address":"00514DF8","name":"PTR_cf_switch_join_00514CF6_00514df8","type":"pointer","length":4,"value":"00514cf6","referenced_from":[]}
 {"address":"00514DFC","name":"switchD_00514c13::switchdataD_00514dfc","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00514DFD","name":"BYTE_00514dfd","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00514DFE","name":"BYTE_00514dfe","type":"byte","length":1,"value":"0h","referenced_from":[]}
@@ -11068,7 +11068,7 @@
 {"address":"0051F214","name":"switchD_0051e4d9::switchdataD_0051f214","type":"pointer","length":4,"value":"0051e60f","referenced_from":["0051DDD0 HelpPanelTy::GetMessage"]}
 {"address":"0051F218","name":"PTR_caseD_6_0051f218","type":"pointer","length":4,"value":"0051e4e0","referenced_from":[]}
 {"address":"0051F21C","name":"PTR_caseD_8_0051f21c","type":"pointer","length":4,"value":"0051e8ab","referenced_from":[]}
-{"address":"0051F220","name":"PTR_caseD_7_0051f220","type":"pointer","length":4,"value":"0051f19a","referenced_from":[]}
+{"address":"0051F220","name":"PTR_cf_common_exit_0051F19A_0051f220","type":"pointer","length":4,"value":"0051f19a","referenced_from":[]}
 {"address":"0051F224","name":"switchD_0051e4d9::switchdataD_0051f224","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0051F225","name":"BYTE_0051f225","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0051F226","name":"BYTE_0051f226","type":"byte","length":1,"value":"0h","referenced_from":[]}
@@ -11127,7 +11127,7 @@
 {"address":"0051F2DC","name":"PTR_caseD_c0b3_0051f2dc","type":"pointer","length":4,"value":"0051f15f","referenced_from":[]}
 {"address":"0051F2E0","name":"PTR_caseD_c0b4_0051f2e0","type":"pointer","length":4,"value":"0051f16d","referenced_from":[]}
 {"address":"0051F2E4","name":"PTR_caseD_c0b5_0051f2e4","type":"pointer","length":4,"value":"0051f17b","referenced_from":[]}
-{"address":"0051F2E8","name":"PTR_caseD_7_0051f2e8","type":"pointer","length":4,"value":"0051f19a","referenced_from":[]}
+{"address":"0051F2E8","name":"PTR_cf_common_exit_0051F19A_0051f2e8","type":"pointer","length":4,"value":"0051f19a","referenced_from":[]}
 {"address":"0051F2EC","name":"switchD_0051f063::switchdataD_0051f2ec","type":"byte","length":1,"value":"0h","referenced_from":["0051DDD0 HelpPanelTy::GetMessage"]}
 {"address":"0051F2ED","name":"BYTE_0051f2ed","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"0051F2EE","name":"BYTE_0051f2ee","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -13949,7 +13949,7 @@
 {"address":"00531C74","name":"PTR_caseD_6_00531c74","type":"pointer","length":4,"value":"0053041a","referenced_from":[]}
 {"address":"00531C78","name":"PTR_caseD_7_00531c78","type":"pointer","length":4,"value":"00530206","referenced_from":[]}
 {"address":"00531C7C","name":"PTR_caseD_8_00531c7c","type":"pointer","length":4,"value":"0053005c","referenced_from":[]}
-{"address":"00531C80","name":"PTR_caseD_9_00531c80","type":"pointer","length":4,"value":"005305bc","referenced_from":[]}
+{"address":"00531C80","name":"PTR_cf_switch_join_005305BC_00531c80","type":"pointer","length":4,"value":"005305bc","referenced_from":[]}
 {"address":"00531C84","name":"PTR_caseD_4_00531c84","type":"pointer","length":4,"value":"0052fbd6","referenced_from":[]}
 {"address":"00531C88","name":"PTR_caseD_b_00531c88","type":"pointer","length":4,"value":"0052ffde","referenced_from":[]}
 {"address":"00531C8C","name":"PTR_caseD_c_00531c8c","type":"pointer","length":4,"value":"00530073","referenced_from":[]}
@@ -14224,14 +14224,14 @@
 {"address":"005370E8","name":"PTR_caseD_c0a4_005370e8","type":"pointer","length":4,"value":"00535ff5","referenced_from":[]}
 {"address":"005370EC","name":"PTR_caseD_c0a5_005370ec","type":"pointer","length":4,"value":"00536091","referenced_from":[]}
 {"address":"005370F0","name":"PTR_caseD_c0a6_005370f0","type":"pointer","length":4,"value":"005361cc","referenced_from":[]}
-{"address":"005370F4","name":"PTR_caseD_c0a7_005370f4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"005370F8","name":"PTR_caseD_c0a7_005370f8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"005370FC","name":"PTR_caseD_c0a7_005370fc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537100","name":"PTR_caseD_c0a7_00537100","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537104","name":"PTR_caseD_c0a7_00537104","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537108","name":"PTR_caseD_c0a7_00537108","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"0053710C","name":"PTR_caseD_c0a7_0053710c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537110","name":"PTR_caseD_c0a7_00537110","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005370F4","name":"PTR_cf_common_exit_00536FB7_005370f4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005370F8","name":"PTR_cf_common_exit_00536FB7_005370f8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005370FC","name":"PTR_cf_common_exit_00536FB7_005370fc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537100","name":"PTR_cf_common_exit_00536FB7_00537100","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537104","name":"PTR_cf_common_exit_00536FB7_00537104","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537108","name":"PTR_cf_common_exit_00536FB7_00537108","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053710C","name":"PTR_cf_common_exit_00536FB7_0053710c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537110","name":"PTR_cf_common_exit_00536FB7_00537110","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537114","name":"PTR_caseD_c0af_00537114","type":"pointer","length":4,"value":"005362d4","referenced_from":[]}
 {"address":"00537118","name":"PTR_caseD_c0b0_00537118","type":"pointer","length":4,"value":"005366fd","referenced_from":[]}
 {"address":"0053711C","name":"PTR_caseD_c0b1_0053711c","type":"pointer","length":4,"value":"00536a19","referenced_from":[]}
@@ -14241,16 +14241,16 @@
 {"address":"0053712C","name":"PTR_caseD_c0b5_0053712c","type":"pointer","length":4,"value":"00536f5c","referenced_from":[]}
 {"address":"00537130","name":"switchD_005347f1::switchdataD_00537130","type":"pointer","length":4,"value":"005347f8","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"00537134","name":"PTR_caseD_2_00537134","type":"pointer","length":4,"value":"00534e94","referenced_from":[]}
-{"address":"00537138","name":"PTR_caseD_c0a7_00537138","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"0053713C","name":"PTR_caseD_c0a7_0053713c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537138","name":"PTR_cf_common_exit_00536FB7_00537138","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053713C","name":"PTR_cf_common_exit_00536FB7_0053713c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537140","name":"PTR_caseD_5_00537140","type":"pointer","length":4,"value":"00534823","referenced_from":[]}
 {"address":"00537144","name":"PTR_caseD_6_00537144","type":"pointer","length":4,"value":"00534ecb","referenced_from":[]}
 {"address":"00537148","name":"PTR_caseD_7_00537148","type":"pointer","length":4,"value":"00534efd","referenced_from":[]}
 {"address":"0053714C","name":"PTR_caseD_8_0053714c","type":"pointer","length":4,"value":"00534ddd","referenced_from":[]}
 {"address":"00537150","name":"PTR_caseD_9_00537150","type":"pointer","length":4,"value":"00534d6e","referenced_from":[]}
-{"address":"00537154","name":"PTR_caseD_c0a7_00537154","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537158","name":"PTR_caseD_c0a7_00537158","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"0053715C","name":"PTR_caseD_c0a7_0053715c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537154","name":"PTR_cf_common_exit_00536FB7_00537154","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537158","name":"PTR_cf_common_exit_00536FB7_00537158","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053715C","name":"PTR_cf_common_exit_00536FB7_0053715c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537160","name":"PTR_caseD_d_00537160","type":"pointer","length":4,"value":"00534d97","referenced_from":[]}
 {"address":"00537164","name":"switchD_00534835::switchdataD_00537164","type":"pointer","length":4,"value":"00535614","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"00537168","name":"PTR_caseD_2_00537168","type":"pointer","length":4,"value":"00534c14","referenced_from":[]}
@@ -14270,28 +14270,28 @@
 {"address":"005371A0","name":"switchD_00535190::switchdataD_005371a0","type":"pointer","length":4,"value":"00535197","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"005371A4","name":"PTR_caseD_2_005371a4","type":"pointer","length":4,"value":"00535345","referenced_from":[]}
 {"address":"005371A8","name":"PTR_caseD_3_005371a8","type":"pointer","length":4,"value":"00534475","referenced_from":[]}
-{"address":"005371AC","name":"PTR_caseD_c0a7_005371ac","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371AC","name":"PTR_cf_common_exit_00536FB7_005371ac","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005371B0","name":"PTR_caseD_5_005371b0","type":"pointer","length":4,"value":"005351c2","referenced_from":[]}
 {"address":"005371B4","name":"PTR_caseD_6_005371b4","type":"pointer","length":4,"value":"0053537c","referenced_from":[]}
-{"address":"005371B8","name":"PTR_caseD_c0a7_005371b8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371B8","name":"PTR_cf_common_exit_00536FB7_005371b8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005371BC","name":"PTR_caseD_8_005371bc","type":"pointer","length":4,"value":"005352e7","referenced_from":[]}
 {"address":"005371C0","name":"PTR_caseD_9_005371c0","type":"pointer","length":4,"value":"005352be","referenced_from":[]}
-{"address":"005371C4","name":"PTR_caseD_c0a7_005371c4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371C4","name":"PTR_cf_common_exit_00536FB7_005371c4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005371C8","name":"PTR_caseD_5_005371c8","type":"pointer","length":4,"value":"005351c2","referenced_from":[]}
-{"address":"005371CC","name":"PTR_caseD_c0a7_005371cc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371CC","name":"PTR_cf_common_exit_00536FB7_005371cc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005371D0","name":"PTR_caseD_d_005371d0","type":"pointer","length":4,"value":"0053530c","referenced_from":[]}
 {"address":"005371D4","name":"switchD_005353c8::switchdataD_005371d4","type":"pointer","length":4,"value":"005353cf","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"005371D8","name":"PTR_caseD_2_005371d8","type":"pointer","length":4,"value":"0053540b","referenced_from":[]}
 {"address":"005371DC","name":"PTR_caseD_3_005371dc","type":"pointer","length":4,"value":"005354ed","referenced_from":[]}
 {"address":"005371E0","name":"PTR_caseD_4_005371e0","type":"pointer","length":4,"value":"00535632","referenced_from":[]}
-{"address":"005371E4","name":"PTR_caseD_c0a7_005371e4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371E4","name":"PTR_cf_common_exit_00536FB7_005371e4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005371E8","name":"PTR_caseD_6_005371e8","type":"pointer","length":4,"value":"005354a7","referenced_from":[]}
-{"address":"005371EC","name":"PTR_caseD_c0a7_005371ec","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"005371F0","name":"PTR_caseD_c0a7_005371f0","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371EC","name":"PTR_cf_common_exit_00536FB7_005371ec","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371F0","name":"PTR_cf_common_exit_00536FB7_005371f0","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005371F4","name":"PTR_caseD_9_005371f4","type":"pointer","length":4,"value":"00535442","referenced_from":[]}
-{"address":"005371F8","name":"PTR_caseD_c0a7_005371f8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"005371FC","name":"PTR_caseD_c0a7_005371fc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537200","name":"PTR_caseD_c0a7_00537200","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371F8","name":"PTR_cf_common_exit_00536FB7_005371f8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005371FC","name":"PTR_cf_common_exit_00536FB7_005371fc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537200","name":"PTR_cf_common_exit_00536FB7_00537200","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537204","name":"PTR_caseD_d_00537204","type":"pointer","length":4,"value":"0053546b","referenced_from":[]}
 {"address":"00537208","name":"PTR_caseD_e_00537208","type":"pointer","length":4,"value":"005356e1","referenced_from":[]}
 {"address":"0053720C","name":"switchD_00535793::switchdataD_0053720c","type":"pointer","length":4,"value":"0053579a","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
@@ -14320,14 +14320,14 @@
 {"address":"00537230","name":"PTR_caseD_2_00537230","type":"pointer","length":4,"value":"005359be","referenced_from":[]}
 {"address":"00537234","name":"PTR_caseD_3_00537234","type":"pointer","length":4,"value":"00535b28","referenced_from":[]}
 {"address":"00537238","name":"PTR_caseD_3_00537238","type":"pointer","length":4,"value":"00535b28","referenced_from":[]}
-{"address":"0053723C","name":"PTR_caseD_c0a7_0053723c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053723C","name":"PTR_cf_common_exit_00536FB7_0053723c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537240","name":"PTR_caseD_6_00537240","type":"pointer","length":4,"value":"00535af6","referenced_from":[]}
-{"address":"00537244","name":"PTR_caseD_c0a7_00537244","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537244","name":"PTR_cf_common_exit_00536FB7_00537244","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537248","name":"PTR_caseD_8_00537248","type":"pointer","length":4,"value":"00535ad2","referenced_from":[]}
 {"address":"0053724C","name":"PTR_caseD_9_0053724c","type":"pointer","length":4,"value":"005359f5","referenced_from":[]}
-{"address":"00537250","name":"PTR_caseD_c0a7_00537250","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537254","name":"PTR_caseD_c0a7_00537254","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537258","name":"PTR_caseD_c0a7_00537258","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537250","name":"PTR_cf_common_exit_00536FB7_00537250","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537254","name":"PTR_cf_common_exit_00536FB7_00537254","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537258","name":"PTR_cf_common_exit_00536FB7_00537258","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"0053725C","name":"PTR_caseD_d_0053725c","type":"pointer","length":4,"value":"00535a2c","referenced_from":[]}
 {"address":"00537260","name":"switchD_00535bf9::switchdataD_00537260","type":"pointer","length":4,"value":"00535c00","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"00537264","name":"PTR_caseD_2_00537264","type":"pointer","length":4,"value":"00535c3c","referenced_from":[]}
@@ -14335,7 +14335,7 @@
 {"address":"0053726C","name":"PTR_caseD_7_0053726c","type":"pointer","length":4,"value":"00535db2","referenced_from":[]}
 {"address":"00537270","name":"PTR_caseD_9_00537270","type":"pointer","length":4,"value":"00535d0a","referenced_from":[]}
 {"address":"00537274","name":"PTR_caseD_d_00537274","type":"pointer","length":4,"value":"00535c73","referenced_from":[]}
-{"address":"00537278","name":"PTR_caseD_c0a7_00537278","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537278","name":"PTR_cf_common_exit_00536FB7_00537278","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"0053727C","name":"switchD_00535bf9::switchdataD_0053727c","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0053727D","name":"BYTE_0053727d","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"0053727E","name":"BYTE_0053727e","type":"byte","length":1,"value":"6h","referenced_from":[]}
@@ -14351,51 +14351,51 @@
 {"address":"00537288","name":"BYTE_00537288","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"0053728C","name":"switchD_005362e6::switchdataD_0053728c","type":"pointer","length":4,"value":"005362ed","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"00537290","name":"PTR_caseD_2_00537290","type":"pointer","length":4,"value":"00536329","referenced_from":[]}
-{"address":"00537294","name":"PTR_caseD_c0a7_00537294","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537298","name":"PTR_caseD_c0a7_00537298","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537294","name":"PTR_cf_common_exit_00536FB7_00537294","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537298","name":"PTR_cf_common_exit_00536FB7_00537298","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"0053729C","name":"PTR_caseD_5_0053729c","type":"pointer","length":4,"value":"0053631f","referenced_from":[]}
 {"address":"005372A0","name":"PTR_caseD_6_005372a0","type":"pointer","length":4,"value":"005365e9","referenced_from":[]}
 {"address":"005372A4","name":"PTR_caseD_7_005372a4","type":"pointer","length":4,"value":"00536627","referenced_from":[]}
 {"address":"005372A8","name":"PTR_caseD_8_005372a8","type":"pointer","length":4,"value":"005363a7","referenced_from":[]}
 {"address":"005372AC","name":"PTR_caseD_9_005372ac","type":"pointer","length":4,"value":"00536369","referenced_from":[]}
-{"address":"005372B0","name":"PTR_caseD_c0a7_005372b0","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"005372B4","name":"PTR_caseD_c0a7_005372b4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"005372B8","name":"PTR_caseD_c0a7_005372b8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372B0","name":"PTR_cf_common_exit_00536FB7_005372b0","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372B4","name":"PTR_cf_common_exit_00536FB7_005372b4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372B8","name":"PTR_cf_common_exit_00536FB7_005372b8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005372BC","name":"PTR_caseD_d_005372bc","type":"pointer","length":4,"value":"005364c8","referenced_from":[]}
 {"address":"005372C0","name":"switchD_0053670f::switchdataD_005372c0","type":"pointer","length":4,"value":"00536716","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"005372C4","name":"PTR_caseD_2_005372c4","type":"pointer","length":4,"value":"0053676a","referenced_from":[]}
 {"address":"005372C8","name":"PTR_caseD_3_005372c8","type":"pointer","length":4,"value":"005368f3","referenced_from":[]}
-{"address":"005372CC","name":"PTR_caseD_c0a7_005372cc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372CC","name":"PTR_cf_common_exit_00536FB7_005372cc","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005372D0","name":"PTR_caseD_5_005372d0","type":"pointer","length":4,"value":"00536760","referenced_from":[]}
 {"address":"005372D4","name":"PTR_caseD_6_005372d4","type":"pointer","length":4,"value":"005368b5","referenced_from":[]}
-{"address":"005372D8","name":"PTR_caseD_c0a7_005372d8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372D8","name":"PTR_cf_common_exit_00536FB7_005372d8","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005372DC","name":"PTR_caseD_8_005372dc","type":"pointer","length":4,"value":"0053681a","referenced_from":[]}
 {"address":"005372E0","name":"PTR_caseD_9_005372e0","type":"pointer","length":4,"value":"0053679c","referenced_from":[]}
-{"address":"005372E4","name":"PTR_caseD_c0a7_005372e4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372E4","name":"PTR_cf_common_exit_00536FB7_005372e4","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005372E8","name":"PTR_caseD_3_005372e8","type":"pointer","length":4,"value":"00536756","referenced_from":[]}
-{"address":"005372EC","name":"PTR_caseD_c0a7_005372ec","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"005372EC","name":"PTR_cf_common_exit_00536FB7_005372ec","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"005372F0","name":"PTR_caseD_d_005372f0","type":"pointer","length":4,"value":"005367da","referenced_from":[]}
 {"address":"005372F4","name":"switchD_00536a2b::switchdataD_005372f4","type":"pointer","length":4,"value":"00536a32","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"005372F8","name":"PTR_caseD_2_005372f8","type":"pointer","length":4,"value":"00536a72","referenced_from":[]}
 {"address":"005372FC","name":"PTR_caseD_3_005372fc","type":"pointer","length":4,"value":"00536756","referenced_from":[]}
 {"address":"00537300","name":"PTR_caseD_3_00537300","type":"pointer","length":4,"value":"00536756","referenced_from":[]}
-{"address":"00537304","name":"PTR_caseD_c0a7_00537304","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537304","name":"PTR_cf_common_exit_00536FB7_00537304","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537308","name":"PTR_caseD_6_00537308","type":"pointer","length":4,"value":"00536baf","referenced_from":[]}
-{"address":"0053730C","name":"PTR_caseD_c0a7_0053730c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053730C","name":"PTR_cf_common_exit_00536FB7_0053730c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537310","name":"PTR_caseD_8_00537310","type":"pointer","length":4,"value":"00536b20","referenced_from":[]}
 {"address":"00537314","name":"PTR_caseD_9_00537314","type":"pointer","length":4,"value":"00536aa4","referenced_from":[]}
-{"address":"00537318","name":"PTR_caseD_c0a7_00537318","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"0053731C","name":"PTR_caseD_c0a7_0053731c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
-{"address":"00537320","name":"PTR_caseD_c0a7_00537320","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537318","name":"PTR_cf_common_exit_00536FB7_00537318","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053731C","name":"PTR_cf_common_exit_00536FB7_0053731c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537320","name":"PTR_cf_common_exit_00536FB7_00537320","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537324","name":"PTR_caseD_d_00537324","type":"pointer","length":4,"value":"00536ae2","referenced_from":[]}
 {"address":"00537328","name":"PTR_caseD_e_00537328","type":"pointer","length":4,"value":"00536bed","referenced_from":[]}
 {"address":"0053732C","name":"switchD_00536c09::switchdataD_0053732c","type":"pointer","length":4,"value":"00536c10","referenced_from":["00533D10 OptPanelTy::GetMessage"]}
 {"address":"00537330","name":"PTR_caseD_2_00537330","type":"pointer","length":4,"value":"00536c65","referenced_from":[]}
 {"address":"00537334","name":"PTR_caseD_3_00537334","type":"pointer","length":4,"value":"00536db0","referenced_from":[]}
 {"address":"00537338","name":"PTR_caseD_3_00537338","type":"pointer","length":4,"value":"00536db0","referenced_from":[]}
-{"address":"0053733C","name":"PTR_caseD_c0a7_0053733c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"0053733C","name":"PTR_cf_common_exit_00536FB7_0053733c","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537340","name":"PTR_caseD_6_00537340","type":"pointer","length":4,"value":"00536d72","referenced_from":[]}
-{"address":"00537344","name":"PTR_caseD_c0a7_00537344","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
+{"address":"00537344","name":"PTR_cf_common_exit_00536FB7_00537344","type":"pointer","length":4,"value":"00536fb7","referenced_from":[]}
 {"address":"00537348","name":"PTR_caseD_8_00537348","type":"pointer","length":4,"value":"00536ce3","referenced_from":[]}
 {"address":"0053734C","name":"PTR_caseD_9_0053734c","type":"pointer","length":4,"value":"00536ca5","referenced_from":[]}
 {"address":"00539688","name":"switchD_005395f3::switchdataD_00539688","type":"pointer","length":4,"value":"005395fa","referenced_from":["005395B0 PausePanelTy::SwitchPausePanel"]}
@@ -15993,11 +15993,11 @@
 {"address":"0058B7D0","name":"PTR_caseD_6_0058b7d0","type":"pointer","length":4,"value":"0058b45b","referenced_from":[]}
 {"address":"0058B7D4","name":"PTR_caseD_7_0058b7d4","type":"pointer","length":4,"value":"0058b461","referenced_from":[]}
 {"address":"0058C3B0","name":"switchD_0058bec9::switchdataD_0058c3b0","type":"pointer","length":4,"value":"0058bef6","referenced_from":["0058BD90 FUN_0058bd90"]}
-{"address":"0058C3B4","name":"PTR_caseD_1_0058c3b4","type":"pointer","length":4,"value":"0058c391","referenced_from":[]}
+{"address":"0058C3B4","name":"PTR_cf_common_exit_0058C391_0058c3b4","type":"pointer","length":4,"value":"0058c391","referenced_from":[]}
 {"address":"0058C3B8","name":"PTR_caseD_2_0058c3b8","type":"pointer","length":4,"value":"0058c168","referenced_from":[]}
 {"address":"0058C3BC","name":"PTR_caseD_0_0058c3bc","type":"pointer","length":4,"value":"0058bef6","referenced_from":[]}
 {"address":"0058C3C0","name":"PTR_caseD_4_0058c3c0","type":"pointer","length":4,"value":"0058c121","referenced_from":[]}
-{"address":"0058C3C4","name":"PTR_caseD_1_0058c3c4","type":"pointer","length":4,"value":"0058c391","referenced_from":[]}
+{"address":"0058C3C4","name":"PTR_cf_common_exit_0058C391_0058c3c4","type":"pointer","length":4,"value":"0058c391","referenced_from":[]}
 {"address":"0058C3C8","name":"PTR_caseD_6_0058c3c8","type":"pointer","length":4,"value":"0058bed0","referenced_from":[]}
 {"address":"0058E160","name":"switchD_0058df4b::switchdataD_0058e160","type":"pointer","length":4,"value":"0058e0a3","referenced_from":["0058D7C0 STSharkC::GetMessage"]}
 {"address":"0058E164","name":"PTR_caseD_113_0058e164","type":"pointer","length":4,"value":"0058e0c1","referenced_from":[]}
@@ -16389,7 +16389,7 @@
 {"address":"00594684","name":"PTR_caseD_5_00594684","type":"pointer","length":4,"value":"005944cb","referenced_from":[]}
 {"address":"00594688","name":"PTR_caseD_62_00594688","type":"pointer","length":4,"value":"005944e3","referenced_from":[]}
 {"address":"0059468C","name":"PTR_caseD_64_0059468c","type":"pointer","length":4,"value":"00594565","referenced_from":[]}
-{"address":"00594690","name":"PTR_caseD_4_00594690","type":"pointer","length":4,"value":"00594615","referenced_from":[]}
+{"address":"00594690","name":"PTR_cf_common_exit_00594615_00594690","type":"pointer","length":4,"value":"00594615","referenced_from":[]}
 {"address":"00594694","name":"switchD_005944a8::switchdataD_00594694","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00594695","name":"BYTE_00594695","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00594696","name":"BYTE_00594696","type":"byte","length":1,"value":"5h","referenced_from":[]}
@@ -16602,15 +16602,15 @@
 {"address":"005A0278","name":"PTR_caseD_9_005a0278","type":"pointer","length":4,"value":"0059f9a5","referenced_from":[]}
 {"address":"005A027C","name":"PTR_caseD_a_005a027c","type":"pointer","length":4,"value":"0059f85f","referenced_from":[]}
 {"address":"005A8D14","name":"switchD_005a43f5::switchdataD_005a8d14","type":"pointer","length":4,"value":"005a4428","referenced_from":["005A4350 FSGSTy::GetMessage"]}
-{"address":"005A8D18","name":"PTR_caseD_1_005a8d18","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8D18","name":"PTR_cf_common_exit_005A8CA7_005a8d18","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
 {"address":"005A8D1C","name":"PTR_caseD_2_005a8d1c","type":"pointer","length":4,"value":"005a43fc","referenced_from":[]}
 {"address":"005A8D20","name":"PTR_caseD_3_005a8d20","type":"pointer","length":4,"value":"005a440f","referenced_from":[]}
-{"address":"005A8D24","name":"PTR_caseD_1_005a8d24","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8D24","name":"PTR_cf_common_exit_005A8CA7_005a8d24","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
 {"address":"005A8D28","name":"PTR_caseD_5_005a8d28","type":"pointer","length":4,"value":"005a441b","referenced_from":[]}
 {"address":"005A8D2C","name":"switchD_005a4472::switchdataD_005a8d2c","type":"pointer","length":4,"value":"005a4479","referenced_from":["005A4350 FSGSTy::GetMessage"]}
 {"address":"005A8D30","name":"PTR_caseD_614f_005a8d30","type":"pointer","length":4,"value":"005a44ac","referenced_from":[]}
 {"address":"005A8D34","name":"PTR_caseD_6150_005a8d34","type":"pointer","length":4,"value":"005a4577","referenced_from":[]}
-{"address":"005A8D38","name":"PTR_caseD_1_005a8d38","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8D38","name":"PTR_cf_common_exit_005A8CA7_005a8d38","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
 {"address":"005A8D3C","name":"switchD_005a4472::switchdataD_005a8d3c","type":"byte","length":1,"value":"0h","referenced_from":["005A4350 FSGSTy::GetMessage"]}
 {"address":"005A8D3D","name":"BYTE_005a8d3d","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"005A8D3E","name":"BYTE_005a8d3e","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -16711,7 +16711,7 @@
 {"address":"005A8DE8","name":"PTR_caseD_693f_005a8de8","type":"pointer","length":4,"value":"005a5d94","referenced_from":[]}
 {"address":"005A8DEC","name":"PTR_caseD_6940_005a8dec","type":"pointer","length":4,"value":"005a5d88","referenced_from":[]}
 {"address":"005A8DF0","name":"PTR_caseD_6941_005a8df0","type":"pointer","length":4,"value":"005a5da0","referenced_from":[]}
-{"address":"005A8DF4","name":"PTR_caseD_1_005a8df4","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8DF4","name":"PTR_cf_common_exit_005A8CA7_005a8df4","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
 {"address":"005A8DF8","name":"switchD_005a5d81::switchdataD_005a8df8","type":"byte","length":1,"value":"0h","referenced_from":["005A4350 FSGSTy::GetMessage"]}
 {"address":"005A8DF9","name":"BYTE_005a8df9","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"005A8DFA","name":"BYTE_005a8dfa","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -16774,11 +16774,11 @@
 {"address":"005A8E34","name":"switchD_005a6301::switchdataD_005a8e34","type":"pointer","length":4,"value":"005a69d7","referenced_from":["005A4350 FSGSTy::GetMessage"]}
 {"address":"005A8E38","name":"PTR_caseD_694b_005a8e38","type":"pointer","length":4,"value":"005a6817","referenced_from":[]}
 {"address":"005A8E3C","name":"PTR_caseD_694c_005a8e3c","type":"pointer","length":4,"value":"005a6d0c","referenced_from":[]}
-{"address":"005A8E40","name":"PTR_caseD_1_005a8e40","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8E40","name":"PTR_cf_common_exit_005A8CA7_005a8e40","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
 {"address":"005A8E44","name":"PTR_caseD_694a_005a8e44","type":"pointer","length":4,"value":"005a69d7","referenced_from":[]}
-{"address":"005A8E48","name":"PTR_caseD_1_005a8e48","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
-{"address":"005A8E4C","name":"PTR_caseD_1_005a8e4c","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
-{"address":"005A8E50","name":"PTR_caseD_1_005a8e50","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8E48","name":"PTR_cf_common_exit_005A8CA7_005a8e48","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8E4C","name":"PTR_cf_common_exit_005A8CA7_005a8e4c","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
+{"address":"005A8E50","name":"PTR_cf_common_exit_005A8CA7_005a8e50","type":"pointer","length":4,"value":"005a8ca7","referenced_from":[]}
 {"address":"005A8E54","name":"PTR_caseD_6952_005a8e54","type":"pointer","length":4,"value":"005a6308","referenced_from":[]}
 {"address":"005A8E58","name":"PTR_caseD_6953_005a8e58","type":"pointer","length":4,"value":"005a6530","referenced_from":[]}
 {"address":"005A8E5C","name":"PTR_caseD_6954_005a8e5c","type":"pointer","length":4,"value":"005a64ca","referenced_from":[]}
@@ -17227,15 +17227,15 @@
 {"address":"005B08A5","name":"BYTE_005b08a5","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"005B08A6","name":"BYTE_005b08a6","type":"byte","length":1,"value":"2h","referenced_from":[]}
 {"address":"005B20BC","name":"switchD_005b0c37::switchdataD_005b20bc","type":"pointer","length":4,"value":"005b0c6e","referenced_from":["005B0BA0 ChooseMapTy::GetMessage"]}
-{"address":"005B20C0","name":"PTR_caseD_1_005b20c0","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
+{"address":"005B20C0","name":"PTR_cf_common_exit_005B2053_005b20c0","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
 {"address":"005B20C4","name":"PTR_caseD_2_005b20c4","type":"pointer","length":4,"value":"005b0c3e","referenced_from":[]}
 {"address":"005B20C8","name":"PTR_caseD_3_005b20c8","type":"pointer","length":4,"value":"005b0c55","referenced_from":[]}
-{"address":"005B20CC","name":"PTR_caseD_1_005b20cc","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
+{"address":"005B20CC","name":"PTR_cf_common_exit_005B2053_005b20cc","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
 {"address":"005B20D0","name":"PTR_caseD_5_005b20d0","type":"pointer","length":4,"value":"005b0c61","referenced_from":[]}
 {"address":"005B20D4","name":"switchD_005b0d25::switchdataD_005b20d4","type":"pointer","length":4,"value":"005b0d66","referenced_from":["005B0BA0 ChooseMapTy::GetMessage"]}
 {"address":"005B20D8","name":"PTR_caseD_4_005b20d8","type":"pointer","length":4,"value":"005b0d94","referenced_from":[]}
 {"address":"005B20DC","name":"PTR_caseD_9_005b20dc","type":"pointer","length":4,"value":"005b0d2c","referenced_from":[]}
-{"address":"005B20E0","name":"PTR_caseD_3_005b20e0","type":"pointer","length":4,"value":"005b0dce","referenced_from":[]}
+{"address":"005B20E0","name":"PTR_cf_common_exit_005B0DCE_005b20e0","type":"pointer","length":4,"value":"005b0dce","referenced_from":[]}
 {"address":"005B20E4","name":"switchD_005b0d25::switchdataD_005b20e4","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005B20E5","name":"BYTE_005b20e5","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005B20E6","name":"BYTE_005b20e6","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -17273,7 +17273,7 @@
 {"address":"005B212C","name":"PTR_caseD_694d_005b212c","type":"pointer","length":4,"value":"005b10b9","referenced_from":[]}
 {"address":"005B2130","name":"PTR_caseD_694e_005b2130","type":"pointer","length":4,"value":"005b11f3","referenced_from":[]}
 {"address":"005B2134","name":"PTR_caseD_6951_005b2134","type":"pointer","length":4,"value":"005b1132","referenced_from":[]}
-{"address":"005B2138","name":"PTR_caseD_1_005b2138","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
+{"address":"005B2138","name":"PTR_cf_common_exit_005B2053_005b2138","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
 {"address":"005B213C","name":"switchD_005b1026::switchdataD_005b213c","type":"byte","length":1,"value":"0h","referenced_from":["005B0BA0 ChooseMapTy::GetMessage"]}
 {"address":"005B213D","name":"BYTE_005b213d","type":"byte","length":1,"value":"8h","referenced_from":[]}
 {"address":"005B213E","name":"BYTE_005b213e","type":"byte","length":1,"value":"8h","referenced_from":[]}
@@ -17363,7 +17363,7 @@
 {"address":"005B21CC","name":"switchD_005b1c6f::switchdataD_005b21cc","type":"pointer","length":4,"value":"005b1c8c","referenced_from":["005B0BA0 ChooseMapTy::GetMessage"]}
 {"address":"005B21D0","name":"PTR_caseD_4_005b21d0","type":"pointer","length":4,"value":"005b1ca2","referenced_from":[]}
 {"address":"005B21D4","name":"PTR_caseD_9_005b21d4","type":"pointer","length":4,"value":"005b1c76","referenced_from":[]}
-{"address":"005B21D8","name":"PTR_caseD_1_005b21d8","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
+{"address":"005B21D8","name":"PTR_cf_common_exit_005B2053_005b21d8","type":"pointer","length":4,"value":"005b2053","referenced_from":[]}
 {"address":"005B21DC","name":"switchD_005b1c6f::switchdataD_005b21dc","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005B21DD","name":"BYTE_005b21dd","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005B21DE","name":"BYTE_005b21de","type":"byte","length":1,"value":"3h","referenced_from":[]}
@@ -17409,7 +17409,7 @@
 {"address":"005B4F7C","name":"PTR_caseD_6942_005b4f7c","type":"pointer","length":4,"value":"005b4edb","referenced_from":[]}
 {"address":"005B4F80","name":"PTR_caseD_6943_005b4f80","type":"pointer","length":4,"value":"005b4eb3","referenced_from":[]}
 {"address":"005B4F84","name":"PTR_caseD_6944_005b4f84","type":"pointer","length":4,"value":"005b4ee1","referenced_from":[]}
-{"address":"005B4F88","name":"PTR_caseD_6904_005b4f88","type":"pointer","length":4,"value":"005b4eec","referenced_from":[]}
+{"address":"005B4F88","name":"PTR_cf_common_exit_005B4EEC_005b4f88","type":"pointer","length":4,"value":"005b4eec","referenced_from":[]}
 {"address":"005B4F8C","name":"switchD_005b4db9::switchdataD_005b4f8c","type":"byte","length":1,"value":"0h","referenced_from":["005B4BB0 MainMenuTy::GetMessage"]}
 {"address":"005B4F8D","name":"BYTE_005b4f8d","type":"byte","length":1,"value":"7h","referenced_from":[]}
 {"address":"005B4F8E","name":"BYTE_005b4f8e","type":"byte","length":1,"value":"7h","referenced_from":[]}
@@ -17522,7 +17522,7 @@
 {"address":"005BCFF8","name":"PTR_caseD_694e_005bcff8","type":"pointer","length":4,"value":"005bcd8c","referenced_from":[]}
 {"address":"005BCFFC","name":"PTR_caseD_6951_005bcffc","type":"pointer","length":4,"value":"005bca36","referenced_from":[]}
 {"address":"005BD000","name":"PTR_caseD_6952_005bd000","type":"pointer","length":4,"value":"005bca65","referenced_from":[]}
-{"address":"005BD004","name":"PTR_caseD_6944_005bd004","type":"pointer","length":4,"value":"005bcf7f","referenced_from":[]}
+{"address":"005BD004","name":"PTR_cf_common_exit_005BCF7F_005bd004","type":"pointer","length":4,"value":"005bcf7f","referenced_from":[]}
 {"address":"005BD008","name":"switchD_005bc9da::switchdataD_005bd008","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005BD009","name":"BYTE_005bd009","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"005BD00A","name":"BYTE_005bd00a","type":"byte","length":1,"value":"6h","referenced_from":[]}
@@ -17541,7 +17541,7 @@
 {"address":"005BD017","name":"BYTE_005bd017","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"005BD018","name":"BYTE_005bd018","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"005BD01C","name":"switchD_005bce3c::switchdataD_005bd01c","type":"pointer","length":4,"value":"005bce58","referenced_from":["005BC5E0 PrividerTy::GetMessage"]}
-{"address":"005BD020","name":"PTR_caseD_6944_005bd020","type":"pointer","length":4,"value":"005bcf7f","referenced_from":[]}
+{"address":"005BD020","name":"PTR_cf_common_exit_005BCF7F_005bd020","type":"pointer","length":4,"value":"005bcf7f","referenced_from":[]}
 {"address":"005BD024","name":"PTR_caseD_8163_005bd024","type":"pointer","length":4,"value":"005bce43","referenced_from":[]}
 {"address":"005BD028","name":"PTR_caseD_8164_005bd028","type":"pointer","length":4,"value":"005bcf1e","referenced_from":[]}
 {"address":"005BD02C","name":"PTR_caseD_8165_005bd02c","type":"pointer","length":4,"value":"005bcf30","referenced_from":[]}
@@ -17559,7 +17559,7 @@
 {"address":"005C2324","name":"PTR_caseD_3_005c2324","type":"pointer","length":4,"value":"005c1b2e","referenced_from":[]}
 {"address":"005C2328","name":"PTR_caseD_5_005c2328","type":"pointer","length":4,"value":"005c21c7","referenced_from":[]}
 {"address":"005C232C","name":"PTR_caseD_60_005c232c","type":"pointer","length":4,"value":"005c1b46","referenced_from":[]}
-{"address":"005C2330","name":"PTR_caseD_1_005c2330","type":"pointer","length":4,"value":"005c22b1","referenced_from":[]}
+{"address":"005C2330","name":"PTR_cf_common_exit_005C22B1_005c2330","type":"pointer","length":4,"value":"005c22b1","referenced_from":[]}
 {"address":"005C2334","name":"switchD_005c1b14::switchdataD_005c2334","type":"byte","length":1,"value":"0h","referenced_from":["005C1A90 MReportTy::GetMessage"]}
 {"address":"005C2335","name":"BYTE_005c2335","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"005C2336","name":"BYTE_005c2336","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -17662,7 +17662,7 @@
 {"address":"005C23A0","name":"PTR_caseD_6203_005c23a0","type":"pointer","length":4,"value":"005c1d9a","referenced_from":[]}
 {"address":"005C23A4","name":"PTR_caseD_6212_005c23a4","type":"pointer","length":4,"value":"005c1e46","referenced_from":[]}
 {"address":"005C23A8","name":"PTR_caseD_6213_005c23a8","type":"pointer","length":4,"value":"005c1e87","referenced_from":[]}
-{"address":"005C23AC","name":"PTR_caseD_1_005c23ac","type":"pointer","length":4,"value":"005c22b1","referenced_from":[]}
+{"address":"005C23AC","name":"PTR_cf_common_exit_005C22B1_005c23ac","type":"pointer","length":4,"value":"005c22b1","referenced_from":[]}
 {"address":"005C23B0","name":"switchD_005c1d13::switchdataD_005c23b0","type":"byte","length":1,"value":"0h","referenced_from":["005C1A90 MReportTy::GetMessage"]}
 {"address":"005C23B1","name":"BYTE_005c23b1","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"005C23B2","name":"BYTE_005c23b2","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -17707,7 +17707,7 @@
 {"address":"005CAEB0","name":"PTR_caseD_6201_005caeb0","type":"pointer","length":4,"value":"005c8bec","referenced_from":[]}
 {"address":"005CAEB4","name":"PTR_caseD_6202_005caeb4","type":"pointer","length":4,"value":"005c8c02","referenced_from":[]}
 {"address":"005CAEB8","name":"PTR_caseD_6203_005caeb8","type":"pointer","length":4,"value":"005c8c18","referenced_from":[]}
-{"address":"005CAEBC","name":"PTR_caseD_6120_005caebc","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
+{"address":"005CAEBC","name":"PTR_cf_switch_join_005CA971_005caebc","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
 {"address":"005CAEC0","name":"switchD_005c8bd0::switchdataD_005caec0","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005CAEC1","name":"BYTE_005caec1","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"005CAEC2","name":"BYTE_005caec2","type":"byte","length":1,"value":"5h","referenced_from":[]}
@@ -17956,7 +17956,7 @@
 {"address":"005CAFE8","name":"PTR_caseD_6542_005cafe8","type":"pointer","length":4,"value":"005c9458","referenced_from":[]}
 {"address":"005CAFEC","name":"PTR_caseD_6546_005cafec","type":"pointer","length":4,"value":"005c9684","referenced_from":[]}
 {"address":"005CAFF0","name":"PTR_caseD_6547_005caff0","type":"pointer","length":4,"value":"005c9838","referenced_from":[]}
-{"address":"005CAFF4","name":"PTR_caseD_6120_005caff4","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
+{"address":"005CAFF4","name":"PTR_cf_switch_join_005CA971_005caff4","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
 {"address":"005CAFF8","name":"switchD_005c8fe2::switchdataD_005caff8","type":"byte","length":1,"value":"0h","referenced_from":["005C8A40 SettMapTy::GetMessage"]}
 {"address":"005CAFF9","name":"BYTE_005caff9","type":"byte","length":1,"value":"5h","referenced_from":[]}
 {"address":"005CAFFA","name":"BYTE_005caffa","type":"byte","length":1,"value":"5h","referenced_from":[]}
@@ -18024,8 +18024,8 @@
 {"address":"005CB038","name":"BYTE_005cb038","type":"byte","length":1,"value":"3h","referenced_from":[]}
 {"address":"005CB039","name":"BYTE_005cb039","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"005CB03C","name":"switchD_005c9007::switchdataD_005cb03c","type":"pointer","length":4,"value":"005c900e","referenced_from":["005C8A40 SettMapTy::GetMessage"]}
-{"address":"005CB040","name":"PTR_caseD_6120_005cb040","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
-{"address":"005CB044","name":"PTR_caseD_6120_005cb044","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
+{"address":"005CB040","name":"PTR_cf_switch_join_005CA971_005cb040","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
+{"address":"005CB044","name":"PTR_cf_switch_join_005CA971_005cb044","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
 {"address":"005CB048","name":"PTR_caseD_3_005cb048","type":"pointer","length":4,"value":"005c91ba","referenced_from":[]}
 {"address":"005CB04C","name":"PTR_caseD_4_005cb04c","type":"pointer","length":4,"value":"005c91f0","referenced_from":[]}
 {"address":"005CB050","name":"PTR_caseD_5_005cb050","type":"pointer","length":4,"value":"005c9226","referenced_from":[]}
@@ -18066,7 +18066,7 @@
 {"address":"005CB0DC","name":"PTR_caseD_6951_005cb0dc","type":"pointer","length":4,"value":"005c9e3e","referenced_from":[]}
 {"address":"005CB0E0","name":"PTR_caseD_697f_005cb0e0","type":"pointer","length":4,"value":"005ca5c4","referenced_from":[]}
 {"address":"005CB0E4","name":"PTR_caseD_6985_005cb0e4","type":"pointer","length":4,"value":"005ca84a","referenced_from":[]}
-{"address":"005CB0E8","name":"PTR_caseD_6120_005cb0e8","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
+{"address":"005CB0E8","name":"PTR_cf_switch_join_005CA971_005cb0e8","type":"pointer","length":4,"value":"005ca971","referenced_from":[]}
 {"address":"005CB0EC","name":"switchD_005c9cc0::switchdataD_005cb0ec","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"005CB0ED","name":"BYTE_005cb0ed","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"005CB0EE","name":"BYTE_005cb0ee","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -18634,7 +18634,7 @@
 {"address":"005E52D0","name":"PTR_caseD_5_005e52d0","type":"pointer","length":4,"value":"005e4621","referenced_from":[]}
 {"address":"005E52D4","name":"PTR_caseD_62_005e52d4","type":"pointer","length":4,"value":"005e4639","referenced_from":[]}
 {"address":"005E52D8","name":"PTR_caseD_64_005e52d8","type":"pointer","length":4,"value":"005e46a8","referenced_from":[]}
-{"address":"005E52DC","name":"PTR_caseD_1_005e52dc","type":"pointer","length":4,"value":"005e525b","referenced_from":[]}
+{"address":"005E52DC","name":"PTR_cf_common_exit_005E525B_005e52dc","type":"pointer","length":4,"value":"005e525b","referenced_from":[]}
 {"address":"005E52E0","name":"switchD_005e45f7::switchdataD_005e52e0","type":"byte","length":1,"value":"0h","referenced_from":["005E4570 MTaskTy::GetMessage"]}
 {"address":"005E52E1","name":"BYTE_005e52e1","type":"byte","length":1,"value":"6h","referenced_from":[]}
 {"address":"005E52E2","name":"BYTE_005e52e2","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -18742,7 +18742,7 @@
 {"address":"005E5354","name":"PTR_caseD_6204_005e5354","type":"pointer","length":4,"value":"005e4ac1","referenced_from":[]}
 {"address":"005E5358","name":"PTR_caseD_6205_005e5358","type":"pointer","length":4,"value":"005e4af4","referenced_from":[]}
 {"address":"005E535C","name":"PTR_caseD_6212_005e535c","type":"pointer","length":4,"value":"005e4b1d","referenced_from":[]}
-{"address":"005E5360","name":"PTR_caseD_1_005e5360","type":"pointer","length":4,"value":"005e525b","referenced_from":[]}
+{"address":"005E5360","name":"PTR_cf_common_exit_005E525B_005e5360","type":"pointer","length":4,"value":"005e525b","referenced_from":[]}
 {"address":"005E5364","name":"switchD_005e47a6::switchdataD_005e5364","type":"byte","length":1,"value":"0h","referenced_from":["005E4570 MTaskTy::GetMessage"]}
 {"address":"005E5365","name":"BYTE_005e5365","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"005E5366","name":"BYTE_005e5366","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -20431,17 +20431,17 @@
 {"address":"0061AE6C","name":"PTR_caseD_1_0061ae6c","type":"pointer","length":4,"value":"00619d6b","referenced_from":[]}
 {"address":"0061AE70","name":"PTR_caseD_2_0061ae70","type":"pointer","length":4,"value":"00619db3","referenced_from":[]}
 {"address":"0061AE74","name":"PTR_caseD_3_0061ae74","type":"pointer","length":4,"value":"00619fde","referenced_from":[]}
-{"address":"0061AE78","name":"PTR_caseD_4_0061ae78","type":"pointer","length":4,"value":"0061ab3a","referenced_from":[]}
+{"address":"0061AE78","name":"PTR_cf_common_exit_0061AB3A_0061ae78","type":"pointer","length":4,"value":"0061ab3a","referenced_from":[]}
 {"address":"0061AE7C","name":"switchD_0061a1b7::switchdataD_0061ae7c","type":"pointer","length":4,"value":"0061a1be","referenced_from":["00619C70 FUN_00619c70"]}
 {"address":"0061AE80","name":"PTR_caseD_1_0061ae80","type":"pointer","length":4,"value":"0061a21d","referenced_from":[]}
 {"address":"0061AE84","name":"PTR_caseD_2_0061ae84","type":"pointer","length":4,"value":"0061a307","referenced_from":[]}
 {"address":"0061AE88","name":"PTR_caseD_3_0061ae88","type":"pointer","length":4,"value":"0061a524","referenced_from":[]}
-{"address":"0061AE8C","name":"PTR_caseD_4_0061ae8c","type":"pointer","length":4,"value":"0061ab3a","referenced_from":[]}
+{"address":"0061AE8C","name":"PTR_cf_common_exit_0061AB3A_0061ae8c","type":"pointer","length":4,"value":"0061ab3a","referenced_from":[]}
 {"address":"0061AE90","name":"switchD_0061aa5c::switchdataD_0061ae90","type":"pointer","length":4,"value":"0061aa63","referenced_from":["00619C70 FUN_00619c70"]}
 {"address":"0061AE94","name":"PTR_caseD_1_0061ae94","type":"pointer","length":4,"value":"0061aae3","referenced_from":[]}
 {"address":"0061AE98","name":"PTR_caseD_1_0061ae98","type":"pointer","length":4,"value":"0061aae3","referenced_from":[]}
 {"address":"0061AE9C","name":"PTR_caseD_3_0061ae9c","type":"pointer","length":4,"value":"0061ab6b","referenced_from":[]}
-{"address":"0061AEA0","name":"PTR_caseD_4_0061aea0","type":"pointer","length":4,"value":"0061ab3a","referenced_from":[]}
+{"address":"0061AEA0","name":"PTR_cf_common_exit_0061AB3A_0061aea0","type":"pointer","length":4,"value":"0061ab3a","referenced_from":[]}
 {"address":"0061C42C","name":"switchD_0061bdca::switchdataD_0061c42c","type":"pointer","length":4,"value":"0061bdd1","referenced_from":["0061BDB0 FUN_0061bdb0"]}
 {"address":"0061C430","name":"PTR_caseD_1_0061c430","type":"pointer","length":4,"value":"0061beba","referenced_from":[]}
 {"address":"0061C434","name":"PTR_caseD_2_0061c434","type":"pointer","length":4,"value":"0061c00c","referenced_from":[]}
@@ -20502,7 +20502,7 @@
 {"address":"00626102","name":"BYTE_00626102","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00626103","name":"BYTE_00626103","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00626104","name":"switchD_00626071::switchdataD_00626104","type":"pointer","length":4,"value":"00626078","referenced_from":["00625730 FUN_00625730"]}
-{"address":"00626108","name":"PTR_caseD_a8_00626108","type":"pointer","length":4,"value":"0062607f","referenced_from":[]}
+{"address":"00626108","name":"PTR_cf_continue_loop_0062607F_00626108","type":"pointer","length":4,"value":"0062607f","referenced_from":[]}
 {"address":"0062610C","name":"switchD_00626071::switchdataD_0062610c","type":"byte","length":1,"value":"0h","referenced_from":["00625730 FUN_00625730"]}
 {"address":"0062610D","name":"BYTE_0062610d","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0062610E","name":"BYTE_0062610e","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -20969,7 +20969,7 @@
 {"address":"0062A200","name":"PTR_caseD_4_0062a200","type":"pointer","length":4,"value":"0062a1b0","referenced_from":[]}
 {"address":"0062A204","name":"PTR_caseD_10_0062a204","type":"pointer","length":4,"value":"0062a1c5","referenced_from":[]}
 {"address":"0062A208","name":"PTR_caseD_80_0062a208","type":"pointer","length":4,"value":"0062a1be","referenced_from":[]}
-{"address":"0062A20C","name":"PTR_caseD_3_0062a20c","type":"pointer","length":4,"value":"0062a1e3","referenced_from":[]}
+{"address":"0062A20C","name":"PTR_cf_common_exit_0062A1E3_0062a20c","type":"pointer","length":4,"value":"0062a1e3","referenced_from":[]}
 {"address":"0062A210","name":"switchD_0062a167::switchdataD_0062a210","type":"byte","length":1,"value":"0h","referenced_from":["00629F90 FUN_00629f90"]}
 {"address":"0062A211","name":"BYTE_0062a211","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"0062A212","name":"BYTE_0062a212","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -22505,7 +22505,7 @@
 {"address":"0064C318","name":"PTR_caseD_13_0064c318","type":"pointer","length":4,"value":"0064af0c","referenced_from":[]}
 {"address":"0064C31C","name":"PTR_caseD_1e_0064c31c","type":"pointer","length":4,"value":"0064aa6e","referenced_from":[]}
 {"address":"0064C320","name":"PTR_caseD_32_0064c320","type":"pointer","length":4,"value":"0064ad6a","referenced_from":[]}
-{"address":"0064C324","name":"PTR_caseD_2_0064c324","type":"pointer","length":4,"value":"0064c271","referenced_from":[]}
+{"address":"0064C324","name":"PTR_cf_common_exit_0064C271_0064c324","type":"pointer","length":4,"value":"0064c271","referenced_from":[]}
 {"address":"0064C328","name":"switchD_0064aa67::switchdataD_0064c328","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"0064C329","name":"BYTE_0064c329","type":"byte","length":1,"value":"7h","referenced_from":[]}
 {"address":"0064C32A","name":"BYTE_0064c32a","type":"byte","length":1,"value":"1h","referenced_from":[]}
@@ -22925,7 +22925,7 @@
 {"address":"00659B58","name":"PTR_caseD_19_00659b58","type":"pointer","length":4,"value":"00652ad0","referenced_from":[]}
 {"address":"00659B5C","name":"PTR_caseD_21_00659b5c","type":"pointer","length":4,"value":"00652b11","referenced_from":[]}
 {"address":"00659B60","name":"PTR_caseD_23_00659b60","type":"pointer","length":4,"value":"00652a86","referenced_from":[]}
-{"address":"00659B64","name":"PTR_caseD_3_00659b64","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659B64","name":"PTR_cf_switch_join_00659A73_00659b64","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659B68","name":"switchD_00652a7f::switchdataD_00659b68","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00659B69","name":"BYTE_00659b69","type":"byte","length":1,"value":"4h","referenced_from":[]}
 {"address":"00659B6A","name":"BYTE_00659b6a","type":"byte","length":1,"value":"4h","referenced_from":[]}
@@ -22984,7 +22984,7 @@
 {"address":"00659BB4","name":"PTR_caseD_2d_00659bb4","type":"pointer","length":4,"value":"00652c1f","referenced_from":[]}
 {"address":"00659BB8","name":"PTR_caseD_31_00659bb8","type":"pointer","length":4,"value":"00652bc3","referenced_from":[]}
 {"address":"00659BBC","name":"PTR_caseD_3e_00659bbc","type":"pointer","length":4,"value":"00652bab","referenced_from":[]}
-{"address":"00659BC0","name":"PTR_caseD_3_00659bc0","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659BC0","name":"PTR_cf_switch_join_00659A73_00659bc0","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659BC4","name":"switchD_00652b74::switchdataD_00659bc4","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00659BC5","name":"BYTE_00659bc5","type":"byte","length":1,"value":"6h","referenced_from":[]}
 {"address":"00659BC6","name":"BYTE_00659bc6","type":"byte","length":1,"value":"6h","referenced_from":[]}
@@ -23052,7 +23052,7 @@
 {"address":"00659C10","name":"PTR_caseD_2d_00659c10","type":"pointer","length":4,"value":"00652d31","referenced_from":[]}
 {"address":"00659C14","name":"PTR_caseD_31_00659c14","type":"pointer","length":4,"value":"00652cd5","referenced_from":[]}
 {"address":"00659C18","name":"PTR_caseD_3e_00659c18","type":"pointer","length":4,"value":"00652cbd","referenced_from":[]}
-{"address":"00659C1C","name":"PTR_caseD_3_00659c1c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659C1C","name":"PTR_cf_switch_join_00659A73_00659c1c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659C20","name":"switchD_00652c86::switchdataD_00659c20","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00659C21","name":"BYTE_00659c21","type":"byte","length":1,"value":"6h","referenced_from":[]}
 {"address":"00659C22","name":"BYTE_00659c22","type":"byte","length":1,"value":"6h","referenced_from":[]}
@@ -23120,7 +23120,7 @@
 {"address":"00659C6C","name":"PTR_caseD_2d_00659c6c","type":"pointer","length":4,"value":"00652e43","referenced_from":[]}
 {"address":"00659C70","name":"PTR_caseD_31_00659c70","type":"pointer","length":4,"value":"00652de7","referenced_from":[]}
 {"address":"00659C74","name":"PTR_caseD_3e_00659c74","type":"pointer","length":4,"value":"00652dcf","referenced_from":[]}
-{"address":"00659C78","name":"PTR_caseD_3_00659c78","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659C78","name":"PTR_cf_switch_join_00659A73_00659c78","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659C7C","name":"switchD_00652d98::switchdataD_00659c7c","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00659C7D","name":"BYTE_00659c7d","type":"byte","length":1,"value":"6h","referenced_from":[]}
 {"address":"00659C7E","name":"BYTE_00659c7e","type":"byte","length":1,"value":"6h","referenced_from":[]}
@@ -23197,7 +23197,7 @@
 {"address":"00659CEC","name":"PTR_caseD_549_00659cec","type":"pointer","length":4,"value":"00653ac2","referenced_from":[]}
 {"address":"00659CF0","name":"PTR_caseD_54a_00659cf0","type":"pointer","length":4,"value":"00653b5a","referenced_from":[]}
 {"address":"00659CF4","name":"PTR_caseD_54b_00659cf4","type":"pointer","length":4,"value":"00653c60","referenced_from":[]}
-{"address":"00659CF8","name":"PTR_caseD_3_00659cf8","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659CF8","name":"PTR_cf_switch_join_00659A73_00659cf8","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659CFC","name":"switchD_0065335b::switchdataD_00659cfc","type":"byte","length":1,"value":"0h","referenced_from":["00652810 AiEventClassTy::GetMessage"]}
 {"address":"00659CFD","name":"BYTE_00659cfd","type":"byte","length":1,"value":"Fh","referenced_from":[]}
 {"address":"00659CFE","name":"BYTE_00659cfe","type":"byte","length":1,"value":"Fh","referenced_from":[]}
@@ -23283,7 +23283,7 @@
 {"address":"00659DB0","name":"PTR_caseD_590_00659db0","type":"pointer","length":4,"value":"00655c0c","referenced_from":[]}
 {"address":"00659DB4","name":"PTR_caseD_591_00659db4","type":"pointer","length":4,"value":"00655cd6","referenced_from":[]}
 {"address":"00659DB8","name":"PTR_caseD_592_00659db8","type":"pointer","length":4,"value":"00655d94","referenced_from":[]}
-{"address":"00659DBC","name":"PTR_caseD_3_00659dbc","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659DBC","name":"PTR_cf_switch_join_00659A73_00659dbc","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659DC0","name":"switchD_00653ded::switchdataD_00659dc0","type":"byte","length":1,"value":"0h","referenced_from":["00652810 AiEventClassTy::GetMessage"]}
 {"address":"00659DC1","name":"BYTE_00659dc1","type":"byte","length":1,"value":"1Fh","referenced_from":[]}
 {"address":"00659DC2","name":"BYTE_00659dc2","type":"byte","length":1,"value":"1Fh","referenced_from":[]}
@@ -23371,18 +23371,18 @@
 {"address":"00659E44","name":"PTR_caseD_59b_00659e44","type":"pointer","length":4,"value":"006561c9","referenced_from":[]}
 {"address":"00659E48","name":"PTR_caseD_59c_00659e48","type":"pointer","length":4,"value":"0065629a","referenced_from":[]}
 {"address":"00659E4C","name":"PTR_caseD_59d_00659e4c","type":"pointer","length":4,"value":"0065635e","referenced_from":[]}
-{"address":"00659E50","name":"PTR_caseD_3_00659e50","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E54","name":"PTR_caseD_3_00659e54","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E58","name":"PTR_caseD_3_00659e58","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E5C","name":"PTR_caseD_3_00659e5c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E60","name":"PTR_caseD_3_00659e60","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E64","name":"PTR_caseD_3_00659e64","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E68","name":"PTR_caseD_3_00659e68","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E6C","name":"PTR_caseD_3_00659e6c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E70","name":"PTR_caseD_3_00659e70","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E74","name":"PTR_caseD_3_00659e74","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E78","name":"PTR_caseD_3_00659e78","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
-{"address":"00659E7C","name":"PTR_caseD_3_00659e7c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E50","name":"PTR_cf_switch_join_00659A73_00659e50","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E54","name":"PTR_cf_switch_join_00659A73_00659e54","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E58","name":"PTR_cf_switch_join_00659A73_00659e58","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E5C","name":"PTR_cf_switch_join_00659A73_00659e5c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E60","name":"PTR_cf_switch_join_00659A73_00659e60","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E64","name":"PTR_cf_switch_join_00659A73_00659e64","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E68","name":"PTR_cf_switch_join_00659A73_00659e68","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E6C","name":"PTR_cf_switch_join_00659A73_00659e6c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E70","name":"PTR_cf_switch_join_00659A73_00659e70","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E74","name":"PTR_cf_switch_join_00659A73_00659e74","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E78","name":"PTR_cf_switch_join_00659A73_00659e78","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
+{"address":"00659E7C","name":"PTR_cf_switch_join_00659A73_00659e7c","type":"pointer","length":4,"value":"00659a73","referenced_from":[]}
 {"address":"00659E80","name":"PTR_caseD_5aa_00659e80","type":"pointer","length":4,"value":"00656422","referenced_from":[]}
 {"address":"00659E84","name":"PTR_caseD_5ab_00659e84","type":"pointer","length":4,"value":"006564a2","referenced_from":[]}
 {"address":"00659E88","name":"PTR_caseD_5ac_00659e88","type":"pointer","length":4,"value":"00656606","referenced_from":[]}
@@ -23467,7 +23467,7 @@
 {"address":"0065C71C","name":"PTR_caseD_5de5_0065c71c","type":"pointer","length":4,"value":"0065c57f","referenced_from":[]}
 {"address":"0065C720","name":"PTR_caseD_5de6_0065c720","type":"pointer","length":4,"value":"0065c3e1","referenced_from":[]}
 {"address":"0065C724","name":"PTR_caseD_5deb_0065c724","type":"pointer","length":4,"value":"0065c5fc","referenced_from":[]}
-{"address":"0065C728","name":"PTR_caseD_5dc7_0065c728","type":"pointer","length":4,"value":"0065c65b","referenced_from":[]}
+{"address":"0065C728","name":"PTR_cf_common_exit_0065C65B_0065c728","type":"pointer","length":4,"value":"0065c65b","referenced_from":[]}
 {"address":"0065C72C","name":"switchD_0065bf29::switchdataD_0065c72c","type":"byte","length":1,"value":"0h","referenced_from":["0065BD70 FUN_0065bd70"]}
 {"address":"0065C72D","name":"BYTE_0065c72d","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"0065C72E","name":"BYTE_0065c72e","type":"byte","length":1,"value":"Ah","referenced_from":[]}
@@ -23867,7 +23867,7 @@
 {"address":"00667194","name":"PTR_caseD_70_00667194","type":"pointer","length":4,"value":"00665abd","referenced_from":[]}
 {"address":"00667198","name":"PTR_caseD_71_00667198","type":"pointer","length":4,"value":"00665bcf","referenced_from":[]}
 {"address":"0066719C","name":"PTR_caseD_78_0066719c","type":"pointer","length":4,"value":"00665c2c","referenced_from":[]}
-{"address":"006671A0","name":"PTR_caseD_1_006671a0","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"006671A0","name":"PTR_cf_common_exit_00667066_006671a0","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
 {"address":"006671A4","name":"switchD_00665095::switchdataD_006671a4","type":"byte","length":1,"value":"0h","referenced_from":["00664960 FUN_00664960"]}
 {"address":"006671A5","name":"BYTE_006671a5","type":"byte","length":1,"value":"17h","referenced_from":[]}
 {"address":"006671A6","name":"BYTE_006671a6","type":"byte","length":1,"value":"17h","referenced_from":[]}
@@ -23992,11 +23992,11 @@
 {"address":"00667220","name":"switchD_0066635e::switchdataD_00667220","type":"pointer","length":4,"value":"00666365","referenced_from":[]}
 {"address":"00667224","name":"PTR_caseD_1f7_00667224","type":"pointer","length":4,"value":"00666471","referenced_from":[]}
 {"address":"00667228","name":"PTR_caseD_1f8_00667228","type":"pointer","length":4,"value":"00666511","referenced_from":[]}
-{"address":"0066722C","name":"PTR_caseD_1_0066722c","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
-{"address":"00667230","name":"PTR_caseD_1_00667230","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
-{"address":"00667234","name":"PTR_caseD_1_00667234","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
-{"address":"00667238","name":"PTR_caseD_1_00667238","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
-{"address":"0066723C","name":"PTR_caseD_1_0066723c","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"0066722C","name":"PTR_cf_common_exit_00667066_0066722c","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"00667230","name":"PTR_cf_common_exit_00667066_00667230","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"00667234","name":"PTR_cf_common_exit_00667066_00667234","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"00667238","name":"PTR_cf_common_exit_00667066_00667238","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"0066723C","name":"PTR_cf_common_exit_00667066_0066723c","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
 {"address":"00667240","name":"PTR_caseD_1fe_00667240","type":"pointer","length":4,"value":"00666625","referenced_from":[]}
 {"address":"00667244","name":"PTR_caseD_1ff_00667244","type":"pointer","length":4,"value":"0066679a","referenced_from":[]}
 {"address":"00667248","name":"switchD_00666965::switchdataD_00667248","type":"pointer","length":4,"value":"0066696c","referenced_from":[]}
@@ -24009,7 +24009,7 @@
 {"address":"00667264","name":"PTR_caseD_244_00667264","type":"pointer","length":4,"value":"00666d2b","referenced_from":[]}
 {"address":"00667268","name":"PTR_caseD_246_00667268","type":"pointer","length":4,"value":"00666d64","referenced_from":[]}
 {"address":"0066726C","name":"PTR_caseD_24e_0066726c","type":"pointer","length":4,"value":"00666dea","referenced_from":["00664960 FUN_00664960"]}
-{"address":"00667270","name":"PTR_caseD_1_00667270","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
+{"address":"00667270","name":"PTR_cf_common_exit_00667066_00667270","type":"pointer","length":4,"value":"00667066","referenced_from":[]}
 {"address":"00667274","name":"switchD_00666965::switchdataD_00667274","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00667275","name":"BYTE_00667275","type":"byte","length":1,"value":"Ah","referenced_from":[]}
 {"address":"00667276","name":"BYTE_00667276","type":"byte","length":1,"value":"Ah","referenced_from":[]}
@@ -24156,8 +24156,8 @@
 {"address":"006673F2","name":"DAT_006673f2","type":"undefined1","length":1,"value":"CCh","referenced_from":["00664960 FUN_00664960"]}
 {"address":"00667474","name":"DAT_00667474","type":"undefined4","length":4,"value":"CCCCCCCCh","referenced_from":["00664960 FUN_00664960"]}
 {"address":"006687EC","name":"switchD_0066872f::switchdataD_006687ec","type":"pointer","length":4,"value":"00668754","referenced_from":["006686F0 FUN_006686f0"]}
-{"address":"006687F0","name":"PTR_caseD_388_006687f0","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
-{"address":"006687F4","name":"PTR_caseD_322_006687f4","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"006687F0","name":"PTR_cf_common_exit_00668773_006687f0","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
+{"address":"006687F4","name":"PTR_cf_common_exit_006687E7_006687f4","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
 {"address":"006687F8","name":"switchD_0066872f::switchdataD_006687f8","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"006687F9","name":"BYTE_006687f9","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"006687FA","name":"BYTE_006687fa","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -24266,36 +24266,36 @@
 {"address":"00668861","name":"BYTE_00668861","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00668862","name":"BYTE_00668862","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00668864","name":"switchD_0066874d::switchdataD_00668864","type":"pointer","length":4,"value":"00668754","referenced_from":["006686F0 FUN_006686f0"]}
-{"address":"00668868","name":"PTR_caseD_388_00668868","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
+{"address":"00668868","name":"PTR_cf_common_exit_00668773_00668868","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
 {"address":"0066886C","name":"PTR_caseD_38e_0066886c","type":"pointer","length":4,"value":"0066875b","referenced_from":[]}
 {"address":"00668870","name":"PTR_caseD_38f_00668870","type":"pointer","length":4,"value":"006687c4","referenced_from":[]}
 {"address":"00668874","name":"switchD_0066876c::switchdataD_00668874","type":"pointer","length":4,"value":"00668773","referenced_from":["006686F0 FUN_006686f0"]}
-{"address":"00668878","name":"PTR_caseD_320_00668878","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
-{"address":"0066887C","name":"PTR_caseD_388_0066887c","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
-{"address":"00668880","name":"PTR_caseD_320_00668880","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"00668878","name":"PTR_cf_common_exit_00668754_00668878","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"0066887C","name":"PTR_cf_common_exit_00668773_0066887c","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
+{"address":"00668880","name":"PTR_cf_common_exit_00668754_00668880","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
 {"address":"00668884","name":"switchD_00668784::switchdataD_00668884","type":"pointer","length":4,"value":"00668754","referenced_from":["006686F0 FUN_006686f0"]}
 {"address":"00668888","name":"PTR_caseD_7d7_00668888","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"0066888C","name":"PTR_caseD_322_0066888c","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
-{"address":"00668890","name":"PTR_caseD_322_00668890","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"0066888C","name":"PTR_cf_common_exit_006687E7_0066888c","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"00668890","name":"PTR_cf_common_exit_006687E7_00668890","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
 {"address":"00668894","name":"PTR_caseD_7d7_00668894","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"00668898","name":"PTR_caseD_322_00668898","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"00668898","name":"PTR_cf_common_exit_006687E7_00668898","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
 {"address":"0066889C","name":"PTR_caseD_7d7_0066889c","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"006688A0","name":"PTR_caseD_320_006688a0","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
-{"address":"006688A4","name":"PTR_caseD_320_006688a4","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
-{"address":"006688A8","name":"PTR_caseD_322_006688a8","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
-{"address":"006688AC","name":"PTR_caseD_322_006688ac","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
-{"address":"006688B0","name":"PTR_caseD_322_006688b0","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
-{"address":"006688B4","name":"PTR_caseD_322_006688b4","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
-{"address":"006688B8","name":"PTR_caseD_322_006688b8","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"006688A0","name":"PTR_cf_common_exit_00668754_006688a0","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688A4","name":"PTR_cf_common_exit_00668754_006688a4","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688A8","name":"PTR_cf_common_exit_006687E7_006688a8","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"006688AC","name":"PTR_cf_common_exit_006687E7_006688ac","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"006688B0","name":"PTR_cf_common_exit_006687E7_006688b0","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"006688B4","name":"PTR_cf_common_exit_006687E7_006688b4","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"006688B8","name":"PTR_cf_common_exit_006687E7_006688b8","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
 {"address":"006688BC","name":"PTR_caseD_7d7_006688bc","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"006688C0","name":"PTR_caseD_320_006688c0","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
-{"address":"006688C4","name":"PTR_caseD_388_006688c4","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
-{"address":"006688C8","name":"PTR_caseD_320_006688c8","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
-{"address":"006688CC","name":"PTR_caseD_320_006688cc","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688C0","name":"PTR_cf_common_exit_00668754_006688c0","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688C4","name":"PTR_cf_common_exit_00668773_006688c4","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
+{"address":"006688C8","name":"PTR_cf_common_exit_00668754_006688c8","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688CC","name":"PTR_cf_common_exit_00668754_006688cc","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
 {"address":"006688D0","name":"PTR_caseD_7d7_006688d0","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"006688D4","name":"PTR_caseD_320_006688d4","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688D4","name":"PTR_cf_common_exit_00668754_006688d4","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
 {"address":"006688D8","name":"PTR_caseD_7d7_006688d8","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"006688DC","name":"PTR_caseD_320_006688dc","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"006688DC","name":"PTR_cf_common_exit_00668754_006688dc","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
 {"address":"006688E0","name":"PTR_caseD_7d7_006688e0","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
 {"address":"006688E4","name":"PTR_caseD_7ee_006688e4","type":"pointer","length":4,"value":"0066878f","referenced_from":[]}
 {"address":"006688E8","name":"PTR_caseD_7ee_006688e8","type":"pointer","length":4,"value":"0066878f","referenced_from":[]}
@@ -24307,12 +24307,12 @@
 {"address":"00668900","name":"PTR_caseD_7fa_00668900","type":"pointer","length":4,"value":"006687bd","referenced_from":[]}
 {"address":"00668904","name":"PTR_caseD_38f_00668904","type":"pointer","length":4,"value":"006687c4","referenced_from":[]}
 {"address":"00668908","name":"PTR_caseD_80e_00668908","type":"pointer","length":4,"value":"006687cb","referenced_from":[]}
-{"address":"0066890C","name":"PTR_caseD_320_0066890c","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
-{"address":"00668910","name":"PTR_caseD_388_00668910","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
+{"address":"0066890C","name":"PTR_cf_common_exit_00668754_0066890c","type":"pointer","length":4,"value":"00668754","referenced_from":[]}
+{"address":"00668910","name":"PTR_cf_common_exit_00668773_00668910","type":"pointer","length":4,"value":"00668773","referenced_from":[]}
 {"address":"00668914","name":"PTR_caseD_82b_00668914","type":"pointer","length":4,"value":"006687d2","referenced_from":[]}
 {"address":"00668918","name":"PTR_caseD_82e_00668918","type":"pointer","length":4,"value":"006687d9","referenced_from":[]}
 {"address":"0066891C","name":"PTR_caseD_7d7_0066891c","type":"pointer","length":4,"value":"0066878b","referenced_from":[]}
-{"address":"00668920","name":"PTR_caseD_322_00668920","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
+{"address":"00668920","name":"PTR_cf_common_exit_006687E7_00668920","type":"pointer","length":4,"value":"006687e7","referenced_from":[]}
 {"address":"00668924","name":"switchD_006687a8::switchdataD_00668924","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00668925","name":"BYTE_00668925","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00668926","name":"BYTE_00668926","type":"byte","length":1,"value":"0h","referenced_from":[]}
@@ -24406,12 +24406,12 @@
 {"address":"0066897E","name":"BYTE_0066897e","type":"byte","length":1,"value":"Bh","referenced_from":[]}
 {"address":"0066897F","name":"BYTE_0066897f","type":"byte","length":1,"value":"Bh","referenced_from":[]}
 {"address":"00668CFC","name":"switchD_00668b66::switchdataD_00668cfc","type":"pointer","length":4,"value":"00668c88","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668D00","name":"PTR_caseD_4_00668d00","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D04","name":"PTR_caseD_4_00668d04","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D08","name":"PTR_caseD_4_00668d08","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D0C","name":"PTR_caseD_3_00668d0c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D10","name":"PTR_caseD_3_00668d10","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D14","name":"PTR_caseD_3_00668d14","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D00","name":"PTR_cf_common_exit_00668C44_00668d00","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D04","name":"PTR_cf_common_exit_00668C44_00668d04","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D08","name":"PTR_cf_common_exit_00668C44_00668d08","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D0C","name":"PTR_cf_common_exit_00668C88_00668d0c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D10","name":"PTR_cf_common_exit_00668C88_00668d10","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D14","name":"PTR_cf_common_exit_00668C88_00668d14","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668D18","name":"switchD_00668b95::switchdataD_00668d18","type":"pointer","length":4,"value":"00668bb2","referenced_from":["00668AA0 FUN_00668aa0"]}
 {"address":"00668D1C","name":"PTR_caseD_7f6_00668d1c","type":"pointer","length":4,"value":"00668bb2","referenced_from":[]}
 {"address":"00668D20","name":"PTR_caseD_7f8_00668d20","type":"pointer","length":4,"value":"00668bc8","referenced_from":[]}
@@ -24419,45 +24419,45 @@
 {"address":"00668D28","name":"PTR_caseD_7fa_00668d28","type":"pointer","length":4,"value":"00668bee","referenced_from":[]}
 {"address":"00668D2C","name":"PTR_caseD_7fb_00668d2c","type":"pointer","length":4,"value":"00668b9c","referenced_from":[]}
 {"address":"00668D30","name":"switchD_00668bab::switchdataD_00668d30","type":"pointer","length":4,"value":"00668c44","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668D34","name":"PTR_caseD_4_00668d34","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D38","name":"PTR_caseD_4_00668d38","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D3C","name":"PTR_caseD_3_00668d3c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D40","name":"PTR_caseD_3_00668d40","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D44","name":"PTR_caseD_3_00668d44","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D34","name":"PTR_cf_common_exit_00668C44_00668d34","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D38","name":"PTR_cf_common_exit_00668C44_00668d38","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D3C","name":"PTR_cf_common_exit_00668C88_00668d3c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D40","name":"PTR_cf_common_exit_00668C88_00668d40","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D44","name":"PTR_cf_common_exit_00668C88_00668d44","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668D48","name":"switchD_00668bc1::switchdataD_00668d48","type":"pointer","length":4,"value":"00668c44","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668D4C","name":"PTR_caseD_4_00668d4c","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
-{"address":"00668D50","name":"PTR_caseD_4_00668d50","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D54","name":"PTR_caseD_4_00668d54","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D58","name":"PTR_caseD_4_00668d58","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D5C","name":"PTR_caseD_3_00668d5c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D60","name":"PTR_caseD_3_00668d60","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D64","name":"PTR_caseD_3_00668d64","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D4C","name":"PTR_cf_common_exit_00668C64_00668d4c","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
+{"address":"00668D50","name":"PTR_cf_common_exit_00668C44_00668d50","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D54","name":"PTR_cf_common_exit_00668C44_00668d54","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D58","name":"PTR_cf_common_exit_00668C44_00668d58","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D5C","name":"PTR_cf_common_exit_00668C88_00668d5c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D60","name":"PTR_cf_common_exit_00668C88_00668d60","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D64","name":"PTR_cf_common_exit_00668C88_00668d64","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668D68","name":"switchD_00668bd4::switchdataD_00668d68","type":"pointer","length":4,"value":"00668c44","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668D6C","name":"PTR_caseD_4_00668d6c","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
-{"address":"00668D70","name":"PTR_caseD_4_00668d70","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D74","name":"PTR_caseD_4_00668d74","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D78","name":"PTR_caseD_4_00668d78","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D7C","name":"PTR_caseD_3_00668d7c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D80","name":"PTR_caseD_3_00668d80","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668D84","name":"PTR_caseD_3_00668d84","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D6C","name":"PTR_cf_common_exit_00668C64_00668d6c","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
+{"address":"00668D70","name":"PTR_cf_common_exit_00668C44_00668d70","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D74","name":"PTR_cf_common_exit_00668C44_00668d74","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D78","name":"PTR_cf_common_exit_00668C44_00668d78","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D7C","name":"PTR_cf_common_exit_00668C88_00668d7c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D80","name":"PTR_cf_common_exit_00668C88_00668d80","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D84","name":"PTR_cf_common_exit_00668C88_00668d84","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668D88","name":"switchD_00668be7::switchdataD_00668d88","type":"pointer","length":4,"value":"00668c88","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668D8C","name":"PTR_caseD_4_00668d8c","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
-{"address":"00668D90","name":"PTR_caseD_4_00668d90","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D94","name":"PTR_caseD_4_00668d94","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D98","name":"PTR_caseD_4_00668d98","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668D9C","name":"PTR_caseD_3_00668d9c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668DA0","name":"PTR_caseD_3_00668da0","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668DA4","name":"PTR_caseD_3_00668da4","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668D8C","name":"PTR_cf_common_exit_00668C64_00668d8c","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
+{"address":"00668D90","name":"PTR_cf_common_exit_00668C44_00668d90","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D94","name":"PTR_cf_common_exit_00668C44_00668d94","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D98","name":"PTR_cf_common_exit_00668C44_00668d98","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668D9C","name":"PTR_cf_common_exit_00668C88_00668d9c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668DA0","name":"PTR_cf_common_exit_00668C88_00668da0","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668DA4","name":"PTR_cf_common_exit_00668C88_00668da4","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668DA8","name":"switchD_00668bfb::switchdataD_00668da8","type":"pointer","length":4,"value":"00668c88","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668DAC","name":"PTR_caseD_4_00668dac","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668DB0","name":"PTR_caseD_3_00668db0","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668DB4","name":"PTR_caseD_4_00668db4","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
-{"address":"00668DB8","name":"PTR_caseD_4_00668db8","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668DBC","name":"PTR_caseD_4_00668dbc","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668DC0","name":"PTR_caseD_4_00668dc0","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668DC4","name":"PTR_caseD_3_00668dc4","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668DC8","name":"PTR_caseD_3_00668dc8","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668DCC","name":"PTR_caseD_3_00668dcc","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668DAC","name":"PTR_cf_common_exit_00668C44_00668dac","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668DB0","name":"PTR_cf_common_exit_00668C88_00668db0","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668DB4","name":"PTR_cf_common_exit_00668C64_00668db4","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
+{"address":"00668DB8","name":"PTR_cf_common_exit_00668C44_00668db8","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668DBC","name":"PTR_cf_common_exit_00668C44_00668dbc","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668DC0","name":"PTR_cf_common_exit_00668C44_00668dc0","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668DC4","name":"PTR_cf_common_exit_00668C88_00668dc4","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668DC8","name":"PTR_cf_common_exit_00668C88_00668dc8","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668DCC","name":"PTR_cf_common_exit_00668C88_00668dcc","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668DD0","name":"switchD_00668c18::switchdataD_00668dd0","type":"pointer","length":4,"value":"00668c30","referenced_from":["00668AA0 FUN_00668aa0"]}
 {"address":"00668DD4","name":"PTR_caseD_810_00668dd4","type":"pointer","length":4,"value":"00668c1f","referenced_from":[]}
 {"address":"00668DD8","name":"PTR_caseD_819_00668dd8","type":"pointer","length":4,"value":"00668cd4","referenced_from":[]}
@@ -24503,19 +24503,19 @@
 {"address":"00668E18","name":"BYTE_00668e18","type":"byte","length":1,"value":"7h","referenced_from":[]}
 {"address":"00668E19","name":"BYTE_00668e19","type":"byte","length":1,"value":"8h","referenced_from":[]}
 {"address":"00668E1C","name":"switchD_00668ca7::switchdataD_00668e1c","type":"pointer","length":4,"value":"00668cc0","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668E20","name":"PTR_caseD_4_00668e20","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668E24","name":"PTR_caseD_3_00668e24","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668E28","name":"PTR_caseD_4_00668e28","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
-{"address":"00668E2C","name":"PTR_caseD_4_00668e2c","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668E30","name":"PTR_caseD_4_00668e30","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668E34","name":"PTR_caseD_4_00668e34","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668E38","name":"PTR_caseD_3_00668e38","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668E3C","name":"PTR_caseD_3_00668e3c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668E40","name":"PTR_caseD_3_00668e40","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668E20","name":"PTR_cf_common_exit_00668C44_00668e20","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668E24","name":"PTR_cf_common_exit_00668C88_00668e24","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668E28","name":"PTR_cf_common_exit_00668C64_00668e28","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
+{"address":"00668E2C","name":"PTR_cf_common_exit_00668C44_00668e2c","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668E30","name":"PTR_cf_common_exit_00668C44_00668e30","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668E34","name":"PTR_cf_common_exit_00668C44_00668e34","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668E38","name":"PTR_cf_common_exit_00668C88_00668e38","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668E3C","name":"PTR_cf_common_exit_00668C88_00668e3c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668E40","name":"PTR_cf_common_exit_00668C88_00668e40","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
 {"address":"00668E44","name":"switchD_00668cb9::switchdataD_00668e44","type":"pointer","length":4,"value":"00668cc0","referenced_from":["00668AA0 FUN_00668aa0"]}
-{"address":"00668E48","name":"PTR_caseD_4_00668e48","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
-{"address":"00668E4C","name":"PTR_caseD_3_00668e4c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
-{"address":"00668E50","name":"PTR_caseD_4_00668e50","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
+{"address":"00668E48","name":"PTR_cf_common_exit_00668C44_00668e48","type":"pointer","length":4,"value":"00668c44","referenced_from":[]}
+{"address":"00668E4C","name":"PTR_cf_common_exit_00668C88_00668e4c","type":"pointer","length":4,"value":"00668c88","referenced_from":[]}
+{"address":"00668E50","name":"PTR_cf_common_exit_00668C64_00668e50","type":"pointer","length":4,"value":"00668c64","referenced_from":[]}
 {"address":"006704E0","name":"switchD_0066b69d::switchdataD_006704e0","type":"pointer","length":4,"value":"0066b6a4","referenced_from":["0066ACC0 FUN_0066acc0"]}
 {"address":"006704E4","name":"PTR_caseD_7da_006704e4","type":"pointer","length":4,"value":"0066b6c8","referenced_from":[]}
 {"address":"006704E8","name":"PTR_caseD_7dc_006704e8","type":"pointer","length":4,"value":"0066b6ef","referenced_from":[]}
@@ -24523,7 +24523,7 @@
 {"address":"006704F0","name":"PTR_caseD_7de_006704f0","type":"pointer","length":4,"value":"0066b855","referenced_from":[]}
 {"address":"006704F4","name":"PTR_caseD_7e4_006704f4","type":"pointer","length":4,"value":"0066b9d2","referenced_from":[]}
 {"address":"006704F8","name":"PTR_caseD_7e5_006704f8","type":"pointer","length":4,"value":"0066ba0a","referenced_from":[]}
-{"address":"006704FC","name":"PTR_caseD_7d8_006704fc","type":"pointer","length":4,"value":"00670456","referenced_from":[]}
+{"address":"006704FC","name":"PTR_cf_common_exit_00670456_006704fc","type":"pointer","length":4,"value":"00670456","referenced_from":[]}
 {"address":"00670500","name":"switchD_0066b69d::switchdataD_00670500","type":"byte","length":1,"value":"0h","referenced_from":["0066ACC0 FUN_0066acc0"]}
 {"address":"00670501","name":"BYTE_00670501","type":"byte","length":1,"value":"7h","referenced_from":[]}
 {"address":"00670502","name":"BYTE_00670502","type":"byte","length":1,"value":"7h","referenced_from":[]}
@@ -24562,7 +24562,7 @@
 {"address":"00670560","name":"PTR_caseD_20_00670560","type":"pointer","length":4,"value":"0066ca23","referenced_from":[]}
 {"address":"00670564","name":"PTR_caseD_40_00670564","type":"pointer","length":4,"value":"0066ca2e","referenced_from":[]}
 {"address":"00670568","name":"PTR_caseD_80_00670568","type":"pointer","length":4,"value":"0066ca39","referenced_from":[]}
-{"address":"0067056C","name":"PTR_caseD_3_0067056c","type":"pointer","length":4,"value":"0066cacd","referenced_from":[]}
+{"address":"0067056C","name":"PTR_cf_continue_loop_0066CACD_0067056c","type":"pointer","length":4,"value":"0066cacd","referenced_from":[]}
 {"address":"00670570","name":"switchD_0066c9e5::switchdataD_00670570","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00670571","name":"BYTE_00670571","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00670572","name":"BYTE_00670572","type":"byte","length":1,"value":"8h","referenced_from":[]}
@@ -24699,7 +24699,7 @@
 {"address":"00670604","name":"PTR_caseD_20_00670604","type":"pointer","length":4,"value":"0066cca0","referenced_from":[]}
 {"address":"00670608","name":"PTR_caseD_40_00670608","type":"pointer","length":4,"value":"0066ccab","referenced_from":[]}
 {"address":"0067060C","name":"PTR_caseD_80_0067060c","type":"pointer","length":4,"value":"0066ccb6","referenced_from":[]}
-{"address":"00670610","name":"PTR_caseD_3_00670610","type":"pointer","length":4,"value":"0066cd4a","referenced_from":[]}
+{"address":"00670610","name":"PTR_cf_continue_loop_0066CD4A_00670610","type":"pointer","length":4,"value":"0066cd4a","referenced_from":[]}
 {"address":"00670614","name":"switchD_0066cc62::switchdataD_00670614","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"00670615","name":"BYTE_00670615","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"00670616","name":"BYTE_00670616","type":"byte","length":1,"value":"8h","referenced_from":[]}
@@ -24836,7 +24836,7 @@
 {"address":"006706A8","name":"PTR_caseD_20_006706a8","type":"pointer","length":4,"value":"0066cf1d","referenced_from":[]}
 {"address":"006706AC","name":"PTR_caseD_40_006706ac","type":"pointer","length":4,"value":"0066cf28","referenced_from":[]}
 {"address":"006706B0","name":"PTR_caseD_80_006706b0","type":"pointer","length":4,"value":"0066cf33","referenced_from":[]}
-{"address":"006706B4","name":"PTR_caseD_3_006706b4","type":"pointer","length":4,"value":"0066cfca","referenced_from":[]}
+{"address":"006706B4","name":"PTR_cf_continue_loop_0066CFCA_006706b4","type":"pointer","length":4,"value":"0066cfca","referenced_from":[]}
 {"address":"006706B8","name":"switchD_0066cedf::switchdataD_006706b8","type":"byte","length":1,"value":"0h","referenced_from":[]}
 {"address":"006706B9","name":"BYTE_006706b9","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"006706BA","name":"BYTE_006706ba","type":"byte","length":1,"value":"8h","referenced_from":[]}
@@ -24995,7 +24995,7 @@
 {"address":"006707A4","name":"PTR_caseD_84b_006707a4","type":"pointer","length":4,"value":"0066d697","referenced_from":[]}
 {"address":"006707A8","name":"PTR_caseD_84c_006707a8","type":"pointer","length":4,"value":"0066d6b0","referenced_from":[]}
 {"address":"006707AC","name":"PTR_caseD_84d_006707ac","type":"pointer","length":4,"value":"0066d6c9","referenced_from":[]}
-{"address":"006707B0","name":"PTR_caseD_7d8_006707b0","type":"pointer","length":4,"value":"00670456","referenced_from":[]}
+{"address":"006707B0","name":"PTR_cf_common_exit_00670456_006707b0","type":"pointer","length":4,"value":"00670456","referenced_from":[]}
 {"address":"006707B4","name":"switchD_0066d45d::switchdataD_006707b4","type":"byte","length":1,"value":"0h","referenced_from":["0066ACC0 FUN_0066acc0"]}
 {"address":"006707B5","name":"BYTE_006707b5","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"006707B6","name":"BYTE_006707b6","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -27875,7 +27875,7 @@
 {"address":"006E40BC","name":"PTR_caseD_2_006e40bc","type":"pointer","length":4,"value":"006e3e3e","referenced_from":[]}
 {"address":"006E40C0","name":"PTR_caseD_3_006e40c0","type":"pointer","length":4,"value":"006e3e83","referenced_from":[]}
 {"address":"006E40C4","name":"PTR_caseD_f_006e40c4","type":"pointer","length":4,"value":"006e3fd9","referenced_from":[]}
-{"address":"006E40C8","name":"PTR_caseD_4_006e40c8","type":"pointer","length":4,"value":"006e4031","referenced_from":[]}
+{"address":"006E40C8","name":"PTR_cf_common_exit_006E4031_006e40c8","type":"pointer","length":4,"value":"006e4031","referenced_from":[]}
 {"address":"006E40CC","name":"switchD_006e3e37::switchdataD_006e40cc","type":"byte","length":1,"value":"0h","referenced_from":["006E3DD0 AppClassTy::SendMessage"]}
 {"address":"006E40CD","name":"BYTE_006e40cd","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"006E40CE","name":"BYTE_006e40ce","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -27897,7 +27897,7 @@
 {"address":"006E5C48","name":"PTR_caseD_2_006e5c48","type":"pointer","length":4,"value":"006e59fb","referenced_from":[]}
 {"address":"006E5C4C","name":"PTR_caseD_3_006e5c4c","type":"pointer","length":4,"value":"006e5a3b","referenced_from":[]}
 {"address":"006E5C50","name":"PTR_caseD_f_006e5c50","type":"pointer","length":4,"value":"006e5b8a","referenced_from":[]}
-{"address":"006E5C54","name":"PTR_caseD_4_006e5c54","type":"pointer","length":4,"value":"006e5bc2","referenced_from":[]}
+{"address":"006E5C54","name":"PTR_cf_common_exit_006E5BC2_006e5c54","type":"pointer","length":4,"value":"006e5bc2","referenced_from":[]}
 {"address":"006E5C58","name":"switchD_006e59d5::switchdataD_006e5c58","type":"byte","length":1,"value":"0h","referenced_from":["006E5970 SystemClassTy::SendMessage"]}
 {"address":"006E5C59","name":"BYTE_006e5c59","type":"byte","length":1,"value":"1h","referenced_from":[]}
 {"address":"006E5C5A","name":"BYTE_006e5c5a","type":"byte","length":1,"value":"2h","referenced_from":[]}
@@ -29634,7 +29634,7 @@
 {"address":"0071DF24","name":"PTR_caseD_62_0071df24","type":"pointer","length":4,"value":"0071da08","referenced_from":[]}
 {"address":"0071DF28","name":"PTR_caseD_63_0071df28","type":"pointer","length":4,"value":"0071d727","referenced_from":[]}
 {"address":"0071DF2C","name":"PTR_caseD_64_0071df2c","type":"pointer","length":4,"value":"0071d991","referenced_from":[]}
-{"address":"0071DF30","name":"PTR_caseD_1_0071df30","type":"pointer","length":4,"value":"0071ddc0","referenced_from":[]}
+{"address":"0071DF30","name":"PTR_cf_common_exit_0071DDC0_0071df30","type":"pointer","length":4,"value":"0071ddc0","referenced_from":[]}
 {"address":"0071DF34","name":"switchD_0071d549::switchdataD_0071df34","type":"byte","length":1,"value":"0h","referenced_from":["0071CFD0 ButtonClassTy::GetMessage"]}
 {"address":"0071DF35","name":"BYTE_0071df35","type":"byte","length":1,"value":"8h","referenced_from":[]}
 {"address":"0071DF36","name":"BYTE_0071df36","type":"byte","length":1,"value":"8h","referenced_from":[]}
@@ -29755,10 +29755,10 @@
 {"address":"0071DFDC","name":"PTR_caseD_6_0071dfdc","type":"pointer","length":4,"value":"0071d916","referenced_from":[]}
 {"address":"0071DFE0","name":"PTR_caseD_6_0071dfe0","type":"pointer","length":4,"value":"0071d916","referenced_from":[]}
 {"address":"0071DFE4","name":"switchD_0071db77::switchdataD_0071dfe4","type":"pointer","length":4,"value":"0071db7e","referenced_from":["0071CFD0 ButtonClassTy::GetMessage"]}
-{"address":"0071DFE8","name":"PTR_caseD_1_0071dfe8","type":"pointer","length":4,"value":"0071ddc0","referenced_from":[]}
+{"address":"0071DFE8","name":"PTR_cf_common_exit_0071DDC0_0071dfe8","type":"pointer","length":4,"value":"0071ddc0","referenced_from":[]}
 {"address":"0071DFEC","name":"PTR_caseD_4_0071dfec","type":"pointer","length":4,"value":"0071dd64","referenced_from":[]}
 {"address":"0071DFF0","name":"PTR_caseD_5_0071dff0","type":"pointer","length":4,"value":"0071dcf0","referenced_from":[]}
-{"address":"0071DFF4","name":"PTR_caseD_1_0071dff4","type":"pointer","length":4,"value":"0071ddc0","referenced_from":[]}
+{"address":"0071DFF4","name":"PTR_cf_common_exit_0071DDC0_0071dff4","type":"pointer","length":4,"value":"0071ddc0","referenced_from":[]}
 {"address":"0071DFF8","name":"PTR_caseD_5_0071dff8","type":"pointer","length":4,"value":"0071dcf0","referenced_from":[]}
 {"address":"0071E634","name":"switchD_0071e133::switchdataD_0071e634","type":"pointer","length":4,"value":"0071e13a","referenced_from":["0071E0E0 RadioClassTy::GetMessage"]}
 {"address":"0071E638","name":"PTR_caseD_3_0071e638","type":"pointer","length":4,"value":"0071e266","referenced_from":[]}
@@ -30279,7 +30279,7 @@
 {"address":"00723370","name":"PTR_caseD_35_00723370","type":"pointer","length":4,"value":"00722eb9","referenced_from":[]}
 {"address":"00723374","name":"PTR_caseD_36_00723374","type":"pointer","length":4,"value":"00722fe5","referenced_from":[]}
 {"address":"00723378","name":"PTR_caseD_37_00723378","type":"pointer","length":4,"value":"00722ffb","referenced_from":[]}
-{"address":"0072337C","name":"PTR_caseD_38_0072337c","type":"pointer","length":4,"value":"007231fd","referenced_from":[]}
+{"address":"0072337C","name":"PTR_cf_switch_join_007231FD_0072337c","type":"pointer","length":4,"value":"007231fd","referenced_from":[]}
 {"address":"00723380","name":"PTR_caseD_39_00723380","type":"pointer","length":4,"value":"00722f71","referenced_from":[]}
 {"address":"00723384","name":"PTR_caseD_3a_00723384","type":"pointer","length":4,"value":"0072302d","referenced_from":[]}
 {"address":"00723388","name":"PTR_caseD_3b_00723388","type":"pointer","length":4,"value":"00723079","referenced_from":[]}

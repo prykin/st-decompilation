@@ -248,7 +248,7 @@ LAB_005d97ca:
           PrepFiles(this_00);
         }
       }
-      goto LAB_005d9ccb;
+      goto cf_common_exit_005D9CCB;
     }
     iVar7 = *(int *)&this_00[0x48].field_0x60;
     local_8 = *(uint **)(iVar7 + 0x14);
@@ -296,12 +296,12 @@ LAB_005d97ca:
                          uVar11);
             }
           }
-          goto LAB_005d9ccb;
+          goto cf_common_exit_005D9CCB;
         }
         puVar21 = &this_00[0x45].field_0x59;
       }
       MMMObjTy::PaintSlBut((MMMObjTy *)this_00,(int)puVar21,param_1,0);
-      goto LAB_005d9ccb;
+      goto cf_common_exit_005D9CCB;
     }
     if (uVar11 == 0x8163) {
       iVar7 = *(int *)((int)&this_00[0x48].field_0061 + 3);
@@ -334,7 +334,7 @@ LAB_005d97ca:
       *(undefined4 *)&this_00->field_0x2d = 0x33;
       *(undefined4 *)&this_00->field_0x31 = uVar4;
       FUN_006e6080(this_00,2,uVar6,(undefined4 *)&this_00->field_0x1d);
-      goto LAB_005d9ccb;
+      goto cf_common_exit_005D9CCB;
     }
     if (0x8160 < uVar11) {
       if (uVar11 == 0x8161) {
@@ -373,13 +373,13 @@ LAB_005d97ca:
                      *(ushort *)(param_1 + 0x1a) + 0x15,*(int *)&this_00[0x48].field_0x54,0,0xff);
         FUN_006b35d0(DAT_008075a8,*(uint *)&this_00[0x48].field_0x4c);
       }
-      goto LAB_005d9ccb;
+      goto cf_common_exit_005D9CCB;
     }
     if (uVar11 == 0x8160) {
       *(undefined4 *)(param_1 + 0x18) = 0xe;
-      goto LAB_005d9ccb;
+      goto cf_common_exit_005D9CCB;
     }
-    if ((uVar11 < 0x6980) || (0x6981 < uVar11)) goto LAB_005d9ccb;
+    if ((uVar11 < 0x6980) || (0x6981 < uVar11)) goto cf_common_exit_005D9CCB;
     piVar15 = *(int **)(param_1 + 0x18);
     local_c = CONCAT31(local_c._1_3_,*(char *)(param_1 + 0x10) + -0x7f);
     local_20 = *piVar15 + -0xe1;
@@ -404,7 +404,7 @@ LAB_005d97ca:
     ccFntTy::WrStr(*(ccFntTy **)(DAT_0081176c + 0x34),puVar10,iVar20,iVar22,iVar7);
   }
   FUN_006b35d0(DAT_008075a8,*(uint *)&this_00[0x48].field_0x4c);
-LAB_005d9ccb:
+cf_common_exit_005D9CCB:
   g_currentExceptionFrame = local_64.previous;
   uVar6 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
   return uVar6;

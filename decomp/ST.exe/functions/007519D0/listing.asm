@@ -105,6 +105,7 @@ LAB_00751acb:
 00751ACB  8B F2                     MOV ESI,EDX
 00751ACD  4A                        DEC EDX
 00751ACE  85 F6                     TEST ESI,ESI
+FUN_007519d0::cf_continue_loop_00751AD0:
 00751AD0  0F 84 17 FF FF FF         JZ 0x007519ed
 00751AD6  42                        INC EDX
 00751AD7  89 55 08                  MOV dword ptr [EBP + 0x8],EDX

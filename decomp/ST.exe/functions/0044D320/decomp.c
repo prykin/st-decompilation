@@ -383,10 +383,10 @@ joined_r0x0044ddc7:
             if (GVar2 < 0x20001) {
               if (GVar2 != 0x20000) {
                 if (GVar2 == 0x2000) goto LAB_0044d9c4;
-                if (GVar2 != 0x10000) goto switchD_0044d78f_caseD_3;
+                if (GVar2 != 0x10000) goto cf_continue_loop_0044DDCF;
               }
             }
-            else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto switchD_0044d78f_caseD_3;
+            else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto cf_continue_loop_0044DDCF;
 LAB_0044dce3:
             uVar6 = (**(code **)(*piVar4 + 0x2c))();
             switch(uVar6) {
@@ -451,7 +451,7 @@ switchD_0044dcfe_caseD_19:
         }
         else if (GVar2 == 0x2000000) goto switchD_0044dcfe_caseD_19;
       }
-switchD_0044d78f_caseD_3:
+cf_continue_loop_0044DDCF:
       param_1 = param_1 + CASE_1;
     } while ((int)param_1 < local_10);
     if (local_8 != 0) {

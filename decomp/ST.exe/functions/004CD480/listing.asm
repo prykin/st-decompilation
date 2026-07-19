@@ -142,7 +142,7 @@ LAB_004cd61a:
 004CD61A  6A 06                     PUSH 0x6
 004CD61C  8B CE                     MOV ECX,ESI
 004CD61E  FF 92 90 00 00 00         CALL dword ptr [EDX + 0x90]
-LAB_004cd624:
+FUN_004cd480::cf_common_exit_004CD624:
 004CD624  8B CE                     MOV ECX,ESI
 004CD626  E8 F3 84 F3 FF            CALL 0x00405b1e
 004CD62B  8B C7                     MOV EAX,EDI

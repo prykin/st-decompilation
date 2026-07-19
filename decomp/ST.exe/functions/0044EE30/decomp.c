@@ -416,7 +416,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       return 0;
     }
     iVar10 = 0x1377;
-    goto LAB_0045aee3;
+    goto cf_error_exit_0045AEE3;
   }
   if (SVar8 == MESS_ID_ALLCREATE) goto LAB_00450268;
   if (MESS_SHARED_0003 < SVar8) {
@@ -1697,14 +1697,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x536;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x53e;
           local_8 = uVar11;
           break;
@@ -1712,7 +1712,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x549;
           local_8 = uVar11;
           break;
@@ -1720,7 +1720,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x544;
           local_8 = uVar11;
           break;
@@ -1728,7 +1728,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x567;
           local_8 = uVar11;
           break;
@@ -1736,7 +1736,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x56c;
           local_8 = uVar11;
           break;
@@ -1744,7 +1744,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x54e;
           local_8 = uVar11;
           break;
@@ -1752,7 +1752,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x580;
           local_8 = uVar11;
           break;
@@ -1760,7 +1760,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5a8;
           local_8 = uVar11;
           break;
@@ -1768,7 +1768,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x58a;
           local_8 = uVar11;
           break;
@@ -1776,7 +1776,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x585;
           local_8 = uVar11;
           break;
@@ -1784,7 +1784,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x59e;
           local_8 = uVar11;
           break;
@@ -1792,7 +1792,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x553;
           local_8 = uVar11;
           break;
@@ -1800,7 +1800,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x562;
           local_8 = uVar11;
           break;
@@ -1808,7 +1808,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5ad;
           local_8 = uVar11;
           break;
@@ -1816,7 +1816,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x571;
           local_8 = uVar11;
           break;
@@ -1824,7 +1824,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x57b;
           local_8 = uVar11;
           break;
@@ -1832,7 +1832,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x558;
           local_8 = uVar11;
           break;
@@ -1840,7 +1840,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5a3;
           local_8 = uVar11;
           break;
@@ -1848,7 +1848,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x55d;
           local_8 = uVar11;
           break;
@@ -1856,7 +1856,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x576;
           local_8 = uVar11;
           break;
@@ -1864,7 +1864,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x594;
           local_8 = uVar11;
           break;
@@ -1872,7 +1872,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x58f;
           local_8 = uVar11;
           break;
@@ -1880,7 +1880,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x599;
           local_8 = uVar11;
           break;
@@ -1899,14 +1899,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x5b9;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5c0;
           local_8 = uVar11;
           break;
@@ -1914,7 +1914,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5cb;
           local_8 = uVar11;
           break;
@@ -1922,7 +1922,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5c6;
           local_8 = uVar11;
           break;
@@ -1930,7 +1930,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5e9;
           local_8 = uVar11;
           break;
@@ -1938,7 +1938,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5ee;
           local_8 = uVar11;
           break;
@@ -1946,7 +1946,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5d0;
           local_8 = uVar11;
           break;
@@ -1954,7 +1954,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x602;
           local_8 = uVar11;
           break;
@@ -1962,7 +1962,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x62a;
           local_8 = uVar11;
           break;
@@ -1970,7 +1970,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x60c;
           local_8 = uVar11;
           break;
@@ -1978,7 +1978,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x607;
           local_8 = uVar11;
           break;
@@ -1986,7 +1986,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x620;
           local_8 = uVar11;
           break;
@@ -1994,7 +1994,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5d5;
           local_8 = uVar11;
           break;
@@ -2002,7 +2002,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5e4;
           local_8 = uVar11;
           break;
@@ -2010,7 +2010,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x62f;
           local_8 = uVar11;
           break;
@@ -2018,7 +2018,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5f3;
           local_8 = uVar11;
           break;
@@ -2026,7 +2026,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5fd;
           local_8 = uVar11;
           break;
@@ -2034,7 +2034,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5da;
           local_8 = uVar11;
           break;
@@ -2042,7 +2042,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x625;
           local_8 = uVar11;
           break;
@@ -2050,7 +2050,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5df;
           local_8 = uVar11;
           break;
@@ -2058,7 +2058,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x5f8;
           local_8 = uVar11;
           break;
@@ -2066,7 +2066,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x616;
           local_8 = uVar11;
           break;
@@ -2074,7 +2074,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x611;
           local_8 = uVar11;
           break;
@@ -2082,7 +2082,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x61b;
           local_8 = uVar11;
           break;
@@ -2112,14 +2112,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x63f;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x647;
           local_8 = uVar11;
           break;
@@ -2127,7 +2127,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x652;
           local_8 = uVar11;
           break;
@@ -2135,7 +2135,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x64d;
           local_8 = uVar11;
           break;
@@ -2143,7 +2143,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x670;
           local_8 = uVar11;
           break;
@@ -2151,7 +2151,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x675;
           local_8 = uVar11;
           break;
@@ -2159,7 +2159,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x657;
           local_8 = uVar11;
           break;
@@ -2167,7 +2167,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x689;
           local_8 = uVar11;
           break;
@@ -2175,7 +2175,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6b1;
           local_8 = uVar11;
           break;
@@ -2183,7 +2183,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x693;
           local_8 = uVar11;
           break;
@@ -2191,7 +2191,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x68e;
           local_8 = uVar11;
           break;
@@ -2199,7 +2199,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6a7;
           local_8 = uVar11;
           break;
@@ -2207,7 +2207,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x65c;
           local_8 = uVar11;
           break;
@@ -2215,7 +2215,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x66b;
           local_8 = uVar11;
           break;
@@ -2223,7 +2223,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6b6;
           local_8 = uVar11;
           break;
@@ -2231,7 +2231,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x67a;
           local_8 = uVar11;
           break;
@@ -2239,7 +2239,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x684;
           local_8 = uVar11;
           break;
@@ -2247,7 +2247,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x661;
           local_8 = uVar11;
           break;
@@ -2255,7 +2255,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6ac;
           local_8 = uVar11;
           break;
@@ -2263,7 +2263,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x666;
           local_8 = uVar11;
           break;
@@ -2271,7 +2271,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x67f;
           local_8 = uVar11;
           break;
@@ -2279,7 +2279,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x69d;
           local_8 = uVar11;
           break;
@@ -2287,7 +2287,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x698;
           local_8 = uVar11;
           break;
@@ -2295,7 +2295,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6a2;
           local_8 = uVar11;
           break;
@@ -2314,14 +2314,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x6c2;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6c9;
           local_8 = uVar11;
           break;
@@ -2329,7 +2329,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6d4;
           local_8 = uVar11;
           break;
@@ -2337,7 +2337,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6cf;
           local_8 = uVar11;
           break;
@@ -2345,7 +2345,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6f2;
           local_8 = uVar11;
           break;
@@ -2353,7 +2353,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6f7;
           local_8 = uVar11;
           break;
@@ -2361,7 +2361,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6d9;
           local_8 = uVar11;
           break;
@@ -2369,7 +2369,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x70b;
           local_8 = uVar11;
           break;
@@ -2377,7 +2377,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x733;
           local_8 = uVar11;
           break;
@@ -2385,7 +2385,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x715;
           local_8 = uVar11;
           break;
@@ -2393,7 +2393,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x710;
           local_8 = uVar11;
           break;
@@ -2401,7 +2401,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x729;
           local_8 = uVar11;
           break;
@@ -2409,7 +2409,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6de;
           local_8 = uVar11;
           break;
@@ -2417,7 +2417,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6ed;
           local_8 = uVar11;
           break;
@@ -2425,7 +2425,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x738;
           local_8 = uVar11;
           break;
@@ -2433,7 +2433,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6fc;
           local_8 = uVar11;
           break;
@@ -2441,7 +2441,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x706;
           local_8 = uVar11;
           break;
@@ -2449,7 +2449,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6e3;
           local_8 = uVar11;
           break;
@@ -2457,7 +2457,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x72e;
           local_8 = uVar11;
           break;
@@ -2465,7 +2465,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x6e8;
           local_8 = uVar11;
           break;
@@ -2473,7 +2473,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x701;
           local_8 = uVar11;
           break;
@@ -2481,7 +2481,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x71f;
           local_8 = uVar11;
           break;
@@ -2489,7 +2489,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x71a;
           local_8 = uVar11;
           break;
@@ -2497,7 +2497,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x724;
           local_8 = uVar11;
           break;
@@ -2527,14 +2527,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x748;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x750;
           local_8 = uVar11;
           break;
@@ -2542,7 +2542,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x75b;
           local_8 = uVar11;
           break;
@@ -2550,7 +2550,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x756;
           local_8 = uVar11;
           break;
@@ -2558,7 +2558,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x779;
           local_8 = uVar11;
           break;
@@ -2566,7 +2566,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x77e;
           local_8 = uVar11;
           break;
@@ -2574,7 +2574,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x760;
           local_8 = uVar11;
           break;
@@ -2582,7 +2582,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x792;
           local_8 = uVar11;
           break;
@@ -2590,7 +2590,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7ba;
           local_8 = uVar11;
           break;
@@ -2598,7 +2598,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x79c;
           local_8 = uVar11;
           break;
@@ -2606,7 +2606,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x797;
           local_8 = uVar11;
           break;
@@ -2614,7 +2614,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7b0;
           local_8 = uVar11;
           break;
@@ -2622,7 +2622,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x765;
           local_8 = uVar11;
           break;
@@ -2630,7 +2630,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x774;
           local_8 = uVar11;
           break;
@@ -2638,7 +2638,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7bf;
           local_8 = uVar11;
           break;
@@ -2646,7 +2646,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x783;
           local_8 = uVar11;
           break;
@@ -2654,7 +2654,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x78d;
           local_8 = uVar11;
           break;
@@ -2662,7 +2662,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x76a;
           local_8 = uVar11;
           break;
@@ -2670,7 +2670,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7b5;
           local_8 = uVar11;
           break;
@@ -2678,7 +2678,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x76f;
           local_8 = uVar11;
           break;
@@ -2686,7 +2686,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x788;
           local_8 = uVar11;
           break;
@@ -2694,7 +2694,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7a6;
           local_8 = uVar11;
           break;
@@ -2702,7 +2702,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7a1;
           local_8 = uVar11;
           break;
@@ -2710,7 +2710,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7ab;
           local_8 = uVar11;
           break;
@@ -2729,14 +2729,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x7cb;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7d2;
           local_8 = uVar11;
           break;
@@ -2744,7 +2744,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7dc;
           local_8 = uVar11;
           break;
@@ -2752,7 +2752,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7d7;
           local_8 = uVar11;
           break;
@@ -2760,7 +2760,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7fa;
           local_8 = uVar11;
           break;
@@ -2768,7 +2768,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7ff;
           local_8 = uVar11;
           break;
@@ -2776,7 +2776,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7e1;
           local_8 = uVar11;
           break;
@@ -2784,7 +2784,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x813;
           local_8 = uVar11;
           break;
@@ -2792,7 +2792,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x83b;
           local_8 = uVar11;
           break;
@@ -2800,7 +2800,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x81d;
           local_8 = uVar11;
           break;
@@ -2808,7 +2808,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x818;
           local_8 = uVar11;
           break;
@@ -2816,7 +2816,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x831;
           local_8 = uVar11;
           break;
@@ -2824,7 +2824,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7e6;
           local_8 = uVar11;
           break;
@@ -2832,7 +2832,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7f5;
           local_8 = uVar11;
           break;
@@ -2840,7 +2840,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x840;
           local_8 = uVar11;
           break;
@@ -2848,7 +2848,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x804;
           local_8 = uVar11;
           break;
@@ -2856,7 +2856,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x80e;
           local_8 = uVar11;
           break;
@@ -2864,7 +2864,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7eb;
           local_8 = uVar11;
           break;
@@ -2872,7 +2872,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x836;
           local_8 = uVar11;
           break;
@@ -2880,7 +2880,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x7f0;
           local_8 = uVar11;
           break;
@@ -2888,7 +2888,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x809;
           local_8 = uVar11;
           break;
@@ -2896,7 +2896,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x827;
           local_8 = uVar11;
           break;
@@ -2904,7 +2904,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x822;
           local_8 = uVar11;
           break;
@@ -2912,7 +2912,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x82c;
           local_8 = uVar11;
           break;
@@ -2931,14 +2931,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x84c;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x853;
           local_8 = uVar11;
           break;
@@ -2946,7 +2946,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x85d;
           local_8 = uVar11;
           break;
@@ -2954,7 +2954,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x858;
           local_8 = uVar11;
           break;
@@ -2962,7 +2962,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x87b;
           local_8 = uVar11;
           break;
@@ -2970,7 +2970,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x880;
           local_8 = uVar11;
           break;
@@ -2978,7 +2978,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x862;
           local_8 = uVar11;
           break;
@@ -2986,7 +2986,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x894;
           local_8 = uVar11;
           break;
@@ -2994,7 +2994,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8bc;
           local_8 = uVar11;
           break;
@@ -3002,7 +3002,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x89e;
           local_8 = uVar11;
           break;
@@ -3010,7 +3010,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x899;
           local_8 = uVar11;
           break;
@@ -3018,7 +3018,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8b2;
           local_8 = uVar11;
           break;
@@ -3026,7 +3026,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x867;
           local_8 = uVar11;
           break;
@@ -3034,7 +3034,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x876;
           local_8 = uVar11;
           break;
@@ -3042,7 +3042,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8c1;
           local_8 = uVar11;
           break;
@@ -3050,7 +3050,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x885;
           local_8 = uVar11;
           break;
@@ -3058,7 +3058,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x88f;
           local_8 = uVar11;
           break;
@@ -3066,7 +3066,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x86c;
           local_8 = uVar11;
           break;
@@ -3074,7 +3074,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8b7;
           local_8 = uVar11;
           break;
@@ -3082,7 +3082,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x871;
           local_8 = uVar11;
           break;
@@ -3090,7 +3090,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x88a;
           local_8 = uVar11;
           break;
@@ -3098,7 +3098,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8a8;
           local_8 = uVar11;
           break;
@@ -3106,7 +3106,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8a3;
           local_8 = uVar11;
           break;
@@ -3114,7 +3114,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8ad;
           local_8 = uVar11;
           break;
@@ -3133,14 +3133,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x8cd;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8d4;
           local_8 = uVar11;
           break;
@@ -3148,7 +3148,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8de;
           local_8 = uVar11;
           break;
@@ -3156,7 +3156,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8d9;
           local_8 = uVar11;
           break;
@@ -3164,7 +3164,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8fc;
           local_8 = uVar11;
           break;
@@ -3172,7 +3172,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x901;
           local_8 = uVar11;
           break;
@@ -3180,7 +3180,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8e3;
           local_8 = uVar11;
           break;
@@ -3188,7 +3188,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x915;
           local_8 = uVar11;
           break;
@@ -3196,7 +3196,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x93d;
           local_8 = uVar11;
           break;
@@ -3204,7 +3204,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x91f;
           local_8 = uVar11;
           break;
@@ -3212,7 +3212,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x91a;
           local_8 = uVar11;
           break;
@@ -3220,7 +3220,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x933;
           local_8 = uVar11;
           break;
@@ -3228,7 +3228,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8e8;
           local_8 = uVar11;
           break;
@@ -3236,7 +3236,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8f7;
           local_8 = uVar11;
           break;
@@ -3244,7 +3244,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x942;
           local_8 = uVar11;
           break;
@@ -3252,7 +3252,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x906;
           local_8 = uVar11;
           break;
@@ -3260,7 +3260,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x910;
           local_8 = uVar11;
           break;
@@ -3268,7 +3268,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8ed;
           local_8 = uVar11;
           break;
@@ -3276,7 +3276,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x938;
           local_8 = uVar11;
           break;
@@ -3284,7 +3284,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x8f2;
           local_8 = uVar11;
           break;
@@ -3292,7 +3292,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x90b;
           local_8 = uVar11;
           break;
@@ -3300,7 +3300,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x929;
           local_8 = uVar11;
           break;
@@ -3308,7 +3308,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x924;
           local_8 = uVar11;
           break;
@@ -3316,7 +3316,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x92e;
           local_8 = uVar11;
           break;
@@ -3335,14 +3335,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x94e;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x955;
           local_8 = uVar11;
           break;
@@ -3350,7 +3350,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x95f;
           local_8 = uVar11;
           break;
@@ -3358,7 +3358,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x95a;
           local_8 = uVar11;
           break;
@@ -3366,7 +3366,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x97d;
           local_8 = uVar11;
           break;
@@ -3374,7 +3374,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x982;
           local_8 = uVar11;
           break;
@@ -3382,7 +3382,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x964;
           local_8 = uVar11;
           break;
@@ -3390,7 +3390,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x996;
           local_8 = uVar11;
           break;
@@ -3398,7 +3398,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9be;
           local_8 = uVar11;
           break;
@@ -3406,7 +3406,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9a0;
           local_8 = uVar11;
           break;
@@ -3414,7 +3414,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x99b;
           local_8 = uVar11;
           break;
@@ -3422,7 +3422,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9b4;
           local_8 = uVar11;
           break;
@@ -3430,7 +3430,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x969;
           local_8 = uVar11;
           break;
@@ -3438,7 +3438,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x978;
           local_8 = uVar11;
           break;
@@ -3446,7 +3446,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9c3;
           local_8 = uVar11;
           break;
@@ -3454,7 +3454,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x987;
           local_8 = uVar11;
           break;
@@ -3462,7 +3462,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x991;
           local_8 = uVar11;
           break;
@@ -3470,7 +3470,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x96e;
           local_8 = uVar11;
           break;
@@ -3478,7 +3478,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9b9;
           local_8 = uVar11;
           break;
@@ -3486,7 +3486,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x973;
           local_8 = uVar11;
           break;
@@ -3494,7 +3494,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x98c;
           local_8 = uVar11;
           break;
@@ -3502,7 +3502,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9aa;
           local_8 = uVar11;
           break;
@@ -3510,7 +3510,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9a5;
           local_8 = uVar11;
           break;
@@ -3518,7 +3518,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9af;
           local_8 = uVar11;
           break;
@@ -3537,14 +3537,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x9cf;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9d6;
           local_8 = uVar11;
           break;
@@ -3552,7 +3552,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9e0;
           local_8 = uVar11;
           break;
@@ -3560,7 +3560,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9db;
           local_8 = uVar11;
           break;
@@ -3568,7 +3568,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9fe;
           local_8 = uVar11;
           break;
@@ -3576,7 +3576,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa03;
           local_8 = uVar11;
           break;
@@ -3584,7 +3584,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9e5;
           local_8 = uVar11;
           break;
@@ -3592,7 +3592,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa17;
           local_8 = uVar11;
           break;
@@ -3600,7 +3600,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa3f;
           local_8 = uVar11;
           break;
@@ -3608,7 +3608,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa21;
           local_8 = uVar11;
           break;
@@ -3616,7 +3616,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa1c;
           local_8 = uVar11;
           break;
@@ -3624,7 +3624,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa35;
           local_8 = uVar11;
           break;
@@ -3632,7 +3632,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9ea;
           local_8 = uVar11;
           break;
@@ -3640,7 +3640,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9f9;
           local_8 = uVar11;
           break;
@@ -3648,7 +3648,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa44;
           local_8 = uVar11;
           break;
@@ -3656,7 +3656,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa08;
           local_8 = uVar11;
           break;
@@ -3664,7 +3664,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa12;
           local_8 = uVar11;
           break;
@@ -3672,7 +3672,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9ef;
           local_8 = uVar11;
           break;
@@ -3680,7 +3680,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa3a;
           local_8 = uVar11;
           break;
@@ -3688,7 +3688,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x9f4;
           local_8 = uVar11;
           break;
@@ -3696,7 +3696,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa0d;
           local_8 = uVar11;
           break;
@@ -3704,7 +3704,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa2b;
           local_8 = uVar11;
           break;
@@ -3712,7 +3712,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa26;
           local_8 = uVar11;
           break;
@@ -3720,7 +3720,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa30;
           local_8 = uVar11;
           break;
@@ -3739,14 +3739,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xa50;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa57;
           local_8 = uVar11;
           break;
@@ -3754,7 +3754,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa61;
           local_8 = uVar11;
           break;
@@ -3762,7 +3762,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa5c;
           local_8 = uVar11;
           break;
@@ -3770,7 +3770,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa7f;
           local_8 = uVar11;
           break;
@@ -3778,7 +3778,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa84;
           local_8 = uVar11;
           break;
@@ -3786,7 +3786,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa66;
           local_8 = uVar11;
           break;
@@ -3794,7 +3794,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa98;
           local_8 = uVar11;
           break;
@@ -3802,7 +3802,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xac0;
           local_8 = uVar11;
           break;
@@ -3810,7 +3810,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xaa2;
           local_8 = uVar11;
           break;
@@ -3818,7 +3818,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa9d;
           local_8 = uVar11;
           break;
@@ -3826,7 +3826,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xab6;
           local_8 = uVar11;
           break;
@@ -3834,7 +3834,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa6b;
           local_8 = uVar11;
           break;
@@ -3842,7 +3842,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa7a;
           local_8 = uVar11;
           break;
@@ -3850,7 +3850,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xac5;
           local_8 = uVar11;
           break;
@@ -3858,7 +3858,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa89;
           local_8 = uVar11;
           break;
@@ -3866,7 +3866,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa93;
           local_8 = uVar11;
           break;
@@ -3874,7 +3874,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa70;
           local_8 = uVar11;
           break;
@@ -3882,7 +3882,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xabb;
           local_8 = uVar11;
           break;
@@ -3890,7 +3890,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa75;
           local_8 = uVar11;
           break;
@@ -3898,7 +3898,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xa8e;
           local_8 = uVar11;
           break;
@@ -3906,7 +3906,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xaac;
           local_8 = uVar11;
           break;
@@ -3914,7 +3914,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xaa7;
           local_8 = uVar11;
           break;
@@ -3922,7 +3922,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xab1;
           local_8 = uVar11;
           break;
@@ -3952,14 +3952,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xad5;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xadd;
           local_8 = uVar11;
           break;
@@ -3967,7 +3967,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xae8;
           local_8 = uVar11;
           break;
@@ -3975,7 +3975,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xae3;
           local_8 = uVar11;
           break;
@@ -3983,7 +3983,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb06;
           local_8 = uVar11;
           break;
@@ -3991,7 +3991,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb0b;
           local_8 = uVar11;
           break;
@@ -3999,7 +3999,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xaed;
           local_8 = uVar11;
           break;
@@ -4007,7 +4007,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb1f;
           local_8 = uVar11;
           break;
@@ -4015,7 +4015,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb47;
           local_8 = uVar11;
           break;
@@ -4023,7 +4023,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb29;
           local_8 = uVar11;
           break;
@@ -4031,7 +4031,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb24;
           local_8 = uVar11;
           break;
@@ -4039,7 +4039,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb3d;
           local_8 = uVar11;
           break;
@@ -4047,7 +4047,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xaf2;
           local_8 = uVar11;
           break;
@@ -4055,7 +4055,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb01;
           local_8 = uVar11;
           break;
@@ -4063,7 +4063,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb4c;
           local_8 = uVar11;
           break;
@@ -4071,7 +4071,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb10;
           local_8 = uVar11;
           break;
@@ -4079,7 +4079,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb1a;
           local_8 = uVar11;
           break;
@@ -4087,7 +4087,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xaf7;
           local_8 = uVar11;
           break;
@@ -4095,7 +4095,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb42;
           local_8 = uVar11;
           break;
@@ -4103,7 +4103,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xafc;
           local_8 = uVar11;
           break;
@@ -4111,7 +4111,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb15;
           local_8 = uVar11;
           break;
@@ -4119,7 +4119,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb33;
           local_8 = uVar11;
           break;
@@ -4127,7 +4127,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb2e;
           local_8 = uVar11;
           break;
@@ -4135,7 +4135,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb38;
           local_8 = uVar11;
           break;
@@ -4165,14 +4165,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xb5c;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb64;
           local_8 = uVar11;
           break;
@@ -4180,7 +4180,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb6f;
           local_8 = uVar11;
           break;
@@ -4188,7 +4188,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb6a;
           local_8 = uVar11;
           break;
@@ -4196,7 +4196,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb8d;
           local_8 = uVar11;
           break;
@@ -4204,7 +4204,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb92;
           local_8 = uVar11;
           break;
@@ -4212,7 +4212,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb74;
           local_8 = uVar11;
           break;
@@ -4220,7 +4220,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xba6;
           local_8 = uVar11;
           break;
@@ -4228,7 +4228,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbce;
           local_8 = uVar11;
           break;
@@ -4236,7 +4236,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbb0;
           local_8 = uVar11;
           break;
@@ -4244,7 +4244,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbab;
           local_8 = uVar11;
           break;
@@ -4252,7 +4252,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbc4;
           local_8 = uVar11;
           break;
@@ -4260,7 +4260,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb79;
           local_8 = uVar11;
           break;
@@ -4268,7 +4268,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb88;
           local_8 = uVar11;
           break;
@@ -4276,7 +4276,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbd3;
           local_8 = uVar11;
           break;
@@ -4284,7 +4284,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb97;
           local_8 = uVar11;
           break;
@@ -4292,7 +4292,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xba1;
           local_8 = uVar11;
           break;
@@ -4300,7 +4300,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb7e;
           local_8 = uVar11;
           break;
@@ -4308,7 +4308,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbc9;
           local_8 = uVar11;
           break;
@@ -4316,7 +4316,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb83;
           local_8 = uVar11;
           break;
@@ -4324,7 +4324,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xb9c;
           local_8 = uVar11;
           break;
@@ -4332,7 +4332,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbba;
           local_8 = uVar11;
           break;
@@ -4340,7 +4340,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbb5;
           local_8 = uVar11;
           break;
@@ -4348,7 +4348,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbbf;
           local_8 = uVar11;
           break;
@@ -4378,14 +4378,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xbe3;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbeb;
           local_8 = uVar11;
           break;
@@ -4393,7 +4393,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbf6;
           local_8 = uVar11;
           break;
@@ -4401,7 +4401,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbf1;
           local_8 = uVar11;
           break;
@@ -4409,7 +4409,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc14;
           local_8 = uVar11;
           break;
@@ -4417,7 +4417,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc19;
           local_8 = uVar11;
           break;
@@ -4425,7 +4425,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xbfb;
           local_8 = uVar11;
           break;
@@ -4433,7 +4433,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc2d;
           local_8 = uVar11;
           break;
@@ -4441,7 +4441,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc55;
           local_8 = uVar11;
           break;
@@ -4449,7 +4449,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc37;
           local_8 = uVar11;
           break;
@@ -4457,7 +4457,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc32;
           local_8 = uVar11;
           break;
@@ -4465,7 +4465,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc4b;
           local_8 = uVar11;
           break;
@@ -4473,7 +4473,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc00;
           local_8 = uVar11;
           break;
@@ -4481,7 +4481,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc0f;
           local_8 = uVar11;
           break;
@@ -4489,7 +4489,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc5a;
           local_8 = uVar11;
           break;
@@ -4497,7 +4497,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc1e;
           local_8 = uVar11;
           break;
@@ -4505,7 +4505,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc28;
           local_8 = uVar11;
           break;
@@ -4513,7 +4513,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc05;
           local_8 = uVar11;
           break;
@@ -4521,7 +4521,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc50;
           local_8 = uVar11;
           break;
@@ -4529,7 +4529,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc0a;
           local_8 = uVar11;
           break;
@@ -4537,7 +4537,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc23;
           local_8 = uVar11;
           break;
@@ -4545,7 +4545,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc41;
           local_8 = uVar11;
           break;
@@ -4553,7 +4553,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc3c;
           local_8 = uVar11;
           break;
@@ -4561,7 +4561,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc46;
           local_8 = uVar11;
           break;
@@ -4591,14 +4591,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xc6a;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc72;
           local_8 = uVar11;
           break;
@@ -4606,7 +4606,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc7d;
           local_8 = uVar11;
           break;
@@ -4614,7 +4614,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc78;
           local_8 = uVar11;
           break;
@@ -4622,7 +4622,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc9b;
           local_8 = uVar11;
           break;
@@ -4630,7 +4630,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xca0;
           local_8 = uVar11;
           break;
@@ -4638,7 +4638,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc82;
           local_8 = uVar11;
           break;
@@ -4646,7 +4646,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcb4;
           local_8 = uVar11;
           break;
@@ -4654,7 +4654,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcdc;
           local_8 = uVar11;
           break;
@@ -4662,7 +4662,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcbe;
           local_8 = uVar11;
           break;
@@ -4670,7 +4670,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcb9;
           local_8 = uVar11;
           break;
@@ -4678,7 +4678,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcd2;
           local_8 = uVar11;
           break;
@@ -4686,7 +4686,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc87;
           local_8 = uVar11;
           break;
@@ -4694,7 +4694,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc96;
           local_8 = uVar11;
           break;
@@ -4702,7 +4702,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xce1;
           local_8 = uVar11;
           break;
@@ -4710,7 +4710,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xca5;
           local_8 = uVar11;
           break;
@@ -4718,7 +4718,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcaf;
           local_8 = uVar11;
           break;
@@ -4726,7 +4726,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc8c;
           local_8 = uVar11;
           break;
@@ -4734,7 +4734,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcd7;
           local_8 = uVar11;
           break;
@@ -4742,7 +4742,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xc91;
           local_8 = uVar11;
           break;
@@ -4750,7 +4750,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcaa;
           local_8 = uVar11;
           break;
@@ -4758,7 +4758,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcc8;
           local_8 = uVar11;
           break;
@@ -4766,7 +4766,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcc3;
           local_8 = uVar11;
           break;
@@ -4774,7 +4774,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xccd;
           local_8 = uVar11;
           break;
@@ -4804,14 +4804,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xcf1;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcf9;
           local_8 = uVar11;
           break;
@@ -4819,7 +4819,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd04;
           local_8 = uVar11;
           break;
@@ -4827,7 +4827,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xcff;
           local_8 = uVar11;
           break;
@@ -4835,7 +4835,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd22;
           local_8 = uVar11;
           break;
@@ -4843,7 +4843,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd27;
           local_8 = uVar11;
           break;
@@ -4851,7 +4851,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd09;
           local_8 = uVar11;
           break;
@@ -4859,7 +4859,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd3b;
           local_8 = uVar11;
           break;
@@ -4867,7 +4867,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd63;
           local_8 = uVar11;
           break;
@@ -4875,7 +4875,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd45;
           local_8 = uVar11;
           break;
@@ -4883,7 +4883,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd40;
           local_8 = uVar11;
           break;
@@ -4891,7 +4891,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd59;
           local_8 = uVar11;
           break;
@@ -4899,7 +4899,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd0e;
           local_8 = uVar11;
           break;
@@ -4907,7 +4907,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd1d;
           local_8 = uVar11;
           break;
@@ -4915,7 +4915,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd68;
           local_8 = uVar11;
           break;
@@ -4923,7 +4923,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd2c;
           local_8 = uVar11;
           break;
@@ -4931,7 +4931,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd36;
           local_8 = uVar11;
           break;
@@ -4939,7 +4939,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd13;
           local_8 = uVar11;
           break;
@@ -4947,7 +4947,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd5e;
           local_8 = uVar11;
           break;
@@ -4955,7 +4955,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd18;
           local_8 = uVar11;
           break;
@@ -4963,7 +4963,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd31;
           local_8 = uVar11;
           break;
@@ -4971,7 +4971,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd4f;
           local_8 = uVar11;
           break;
@@ -4979,7 +4979,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd4a;
           local_8 = uVar11;
           break;
@@ -4987,7 +4987,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd54;
           local_8 = uVar11;
           break;
@@ -5017,14 +5017,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xd78;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd80;
           local_8 = uVar11;
           break;
@@ -5032,7 +5032,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd8b;
           local_8 = uVar11;
           break;
@@ -5040,7 +5040,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd86;
           local_8 = uVar11;
           break;
@@ -5048,7 +5048,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xda9;
           local_8 = uVar11;
           break;
@@ -5056,7 +5056,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdae;
           local_8 = uVar11;
           break;
@@ -5064,7 +5064,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd90;
           local_8 = uVar11;
           break;
@@ -5072,7 +5072,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdc2;
           local_8 = uVar11;
           break;
@@ -5080,7 +5080,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdea;
           local_8 = uVar11;
           break;
@@ -5088,7 +5088,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdcc;
           local_8 = uVar11;
           break;
@@ -5096,7 +5096,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdc7;
           local_8 = uVar11;
           break;
@@ -5104,7 +5104,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xde0;
           local_8 = uVar11;
           break;
@@ -5112,7 +5112,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd95;
           local_8 = uVar11;
           break;
@@ -5120,7 +5120,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xda4;
           local_8 = uVar11;
           break;
@@ -5128,7 +5128,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdef;
           local_8 = uVar11;
           break;
@@ -5136,7 +5136,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdb3;
           local_8 = uVar11;
           break;
@@ -5144,7 +5144,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdbd;
           local_8 = uVar11;
           break;
@@ -5152,7 +5152,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd9a;
           local_8 = uVar11;
           break;
@@ -5160,7 +5160,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xde5;
           local_8 = uVar11;
           break;
@@ -5168,7 +5168,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xd9f;
           local_8 = uVar11;
           break;
@@ -5176,7 +5176,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdb8;
           local_8 = uVar11;
           break;
@@ -5184,7 +5184,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdd6;
           local_8 = uVar11;
           break;
@@ -5192,7 +5192,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xdd1;
           local_8 = uVar11;
           break;
@@ -5200,7 +5200,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xddb;
           local_8 = uVar11;
           break;
@@ -5230,14 +5230,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xdff;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe07;
           local_8 = uVar11;
           break;
@@ -5245,7 +5245,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe12;
           local_8 = uVar11;
           break;
@@ -5253,7 +5253,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe0d;
           local_8 = uVar11;
           break;
@@ -5261,7 +5261,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe30;
           local_8 = uVar11;
           break;
@@ -5269,7 +5269,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe35;
           local_8 = uVar11;
           break;
@@ -5277,7 +5277,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe17;
           local_8 = uVar11;
           break;
@@ -5285,7 +5285,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe49;
           local_8 = uVar11;
           break;
@@ -5293,7 +5293,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe71;
           local_8 = uVar11;
           break;
@@ -5301,7 +5301,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe53;
           local_8 = uVar11;
           break;
@@ -5309,7 +5309,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe4e;
           local_8 = uVar11;
           break;
@@ -5317,7 +5317,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe67;
           local_8 = uVar11;
           break;
@@ -5325,7 +5325,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe1c;
           local_8 = uVar11;
           break;
@@ -5333,7 +5333,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe2b;
           local_8 = uVar11;
           break;
@@ -5341,7 +5341,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe76;
           local_8 = uVar11;
           break;
@@ -5349,7 +5349,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe3a;
           local_8 = uVar11;
           break;
@@ -5357,7 +5357,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe44;
           local_8 = uVar11;
           break;
@@ -5365,7 +5365,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe21;
           local_8 = uVar11;
           break;
@@ -5373,7 +5373,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe6c;
           local_8 = uVar11;
           break;
@@ -5381,7 +5381,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe26;
           local_8 = uVar11;
           break;
@@ -5389,7 +5389,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe3f;
           local_8 = uVar11;
           break;
@@ -5397,7 +5397,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe5d;
           local_8 = uVar11;
           break;
@@ -5405,7 +5405,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe58;
           local_8 = uVar11;
           break;
@@ -5413,7 +5413,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe62;
           local_8 = uVar11;
           break;
@@ -5443,14 +5443,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xe86;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe8e;
           local_8 = uVar11;
           break;
@@ -5458,7 +5458,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe99;
           local_8 = uVar11;
           break;
@@ -5466,7 +5466,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe94;
           local_8 = uVar11;
           break;
@@ -5474,7 +5474,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xeb7;
           local_8 = uVar11;
           break;
@@ -5482,7 +5482,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xebc;
           local_8 = uVar11;
           break;
@@ -5490,7 +5490,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xe9e;
           local_8 = uVar11;
           break;
@@ -5498,7 +5498,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xed0;
           local_8 = uVar11;
           break;
@@ -5506,7 +5506,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xef8;
           local_8 = uVar11;
           break;
@@ -5514,7 +5514,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xeda;
           local_8 = uVar11;
           break;
@@ -5522,7 +5522,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xed5;
           local_8 = uVar11;
           break;
@@ -5530,7 +5530,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xeee;
           local_8 = uVar11;
           break;
@@ -5538,7 +5538,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xea3;
           local_8 = uVar11;
           break;
@@ -5546,7 +5546,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xeb2;
           local_8 = uVar11;
           break;
@@ -5554,7 +5554,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xefd;
           local_8 = uVar11;
           break;
@@ -5562,7 +5562,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xec1;
           local_8 = uVar11;
           break;
@@ -5570,7 +5570,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xecb;
           local_8 = uVar11;
           break;
@@ -5578,7 +5578,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xea8;
           local_8 = uVar11;
           break;
@@ -5586,7 +5586,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xef3;
           local_8 = uVar11;
           break;
@@ -5594,7 +5594,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xead;
           local_8 = uVar11;
           break;
@@ -5602,7 +5602,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xec6;
           local_8 = uVar11;
           break;
@@ -5610,7 +5610,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xee4;
           local_8 = uVar11;
           break;
@@ -5618,7 +5618,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xedf;
           local_8 = uVar11;
           break;
@@ -5626,7 +5626,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xee9;
           local_8 = uVar11;
           break;
@@ -5656,14 +5656,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xf0d;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf15;
           local_8 = uVar11;
           break;
@@ -5671,7 +5671,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf20;
           local_8 = uVar11;
           break;
@@ -5679,7 +5679,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf1b;
           local_8 = uVar11;
           break;
@@ -5687,7 +5687,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf3e;
           local_8 = uVar11;
           break;
@@ -5695,7 +5695,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf43;
           local_8 = uVar11;
           break;
@@ -5703,7 +5703,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf25;
           local_8 = uVar11;
           break;
@@ -5711,7 +5711,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf57;
           local_8 = uVar11;
           break;
@@ -5719,7 +5719,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf7f;
           local_8 = uVar11;
           break;
@@ -5727,7 +5727,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf61;
           local_8 = uVar11;
           break;
@@ -5735,7 +5735,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf5c;
           local_8 = uVar11;
           break;
@@ -5743,7 +5743,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf75;
           local_8 = uVar11;
           break;
@@ -5751,7 +5751,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf2a;
           local_8 = uVar11;
           break;
@@ -5759,7 +5759,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf39;
           local_8 = uVar11;
           break;
@@ -5767,7 +5767,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf84;
           local_8 = uVar11;
           break;
@@ -5775,7 +5775,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf48;
           local_8 = uVar11;
           break;
@@ -5783,7 +5783,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf52;
           local_8 = uVar11;
           break;
@@ -5791,7 +5791,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf2f;
           local_8 = uVar11;
           break;
@@ -5799,7 +5799,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf7a;
           local_8 = uVar11;
           break;
@@ -5807,7 +5807,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf34;
           local_8 = uVar11;
           break;
@@ -5815,7 +5815,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf4d;
           local_8 = uVar11;
           break;
@@ -5823,7 +5823,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf6b;
           local_8 = uVar11;
           break;
@@ -5831,7 +5831,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf66;
           local_8 = uVar11;
           break;
@@ -5839,7 +5839,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf70;
           local_8 = uVar11;
           break;
@@ -5869,14 +5869,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0xf94;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xf9c;
           local_8 = uVar11;
           break;
@@ -5884,7 +5884,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfa7;
           local_8 = uVar11;
           break;
@@ -5892,7 +5892,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfa2;
           local_8 = uVar11;
           break;
@@ -5900,7 +5900,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfc5;
           local_8 = uVar11;
           break;
@@ -5908,7 +5908,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfca;
           local_8 = uVar11;
           break;
@@ -5916,7 +5916,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfac;
           local_8 = uVar11;
           break;
@@ -5924,7 +5924,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfde;
           local_8 = uVar11;
           break;
@@ -5932,7 +5932,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1006;
           local_8 = uVar11;
           break;
@@ -5940,7 +5940,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfe8;
           local_8 = uVar11;
           break;
@@ -5948,7 +5948,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfe3;
           local_8 = uVar11;
           break;
@@ -5956,7 +5956,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xffc;
           local_8 = uVar11;
           break;
@@ -5964,7 +5964,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfb1;
           local_8 = uVar11;
           break;
@@ -5972,7 +5972,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfc0;
           local_8 = uVar11;
           break;
@@ -5980,7 +5980,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x100b;
           local_8 = uVar11;
           break;
@@ -5988,7 +5988,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfcf;
           local_8 = uVar11;
           break;
@@ -5996,7 +5996,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfd9;
           local_8 = uVar11;
           break;
@@ -6004,7 +6004,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfb6;
           local_8 = uVar11;
           break;
@@ -6012,7 +6012,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x76;
           uVar11 = BackDismant(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1001;
           local_8 = uVar11;
           break;
@@ -6020,7 +6020,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfbb;
           local_8 = uVar11;
           break;
@@ -6028,7 +6028,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfd4;
           local_8 = uVar11;
           break;
@@ -6036,7 +6036,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xff2;
           local_8 = uVar11;
           break;
@@ -6044,7 +6044,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xfed;
           local_8 = uVar11;
           break;
@@ -6052,7 +6052,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0xff7;
           local_8 = uVar11;
           break;
@@ -6072,14 +6072,14 @@ LAB_0045ad7b:
           }
           iVar10 = 0x1017;
           local_8 = -1;
-          goto LAB_0045aee3;
+          goto cf_error_exit_0045AEE3;
         }
         switch(this_00->field_045D) {
         case 1:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x65;
           uVar11 = thunk_FUN_00460360((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x101e;
           local_8 = uVar11;
           break;
@@ -6087,7 +6087,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x66;
           uVar11 = BackAttack(this_00,(int *)0x0,(int)unaff_EDI,(int)unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1028;
           local_8 = uVar11;
           break;
@@ -6095,7 +6095,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x67;
           uVar11 = thunk_FUN_004620f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1023;
           local_8 = uVar11;
           break;
@@ -6103,7 +6103,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x68;
           uVar11 = BackToDok(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1046;
           local_8 = uVar11;
           break;
@@ -6111,7 +6111,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x69;
           uVar11 = thunk_FUN_004732d0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x104b;
           local_8 = uVar11;
           break;
@@ -6119,7 +6119,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6a;
           uVar11 = BackPatrol(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x102d;
           local_8 = uVar11;
           break;
@@ -6127,7 +6127,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6b;
           uVar11 = thunk_FUN_004769f0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x105f;
           local_8 = uVar11;
           break;
@@ -6135,7 +6135,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6c;
           uVar11 = thunk_FUN_004803b0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1082;
           local_8 = uVar11;
           break;
@@ -6143,7 +6143,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6d;
           uVar11 = BackCapture(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1069;
           local_8 = uVar11;
           break;
@@ -6151,7 +6151,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6e;
           uVar11 = thunk_FUN_00476cc0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1064;
           local_8 = uVar11;
           break;
@@ -6159,7 +6159,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x6f;
           uVar11 = BackAnnih(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x107d;
           local_8 = uVar11;
           break;
@@ -6167,7 +6167,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x70;
           uVar11 = BackLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1032;
           local_8 = uVar11;
           break;
@@ -6175,7 +6175,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x71;
           uVar11 = BackUnLoadRC(this_00,0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1041;
           local_8 = uVar11;
           break;
@@ -6183,7 +6183,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x72;
           uVar11 = thunk_FUN_004805b0(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1087;
           local_8 = uVar11;
           break;
@@ -6191,7 +6191,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x73;
           uVar11 = BackLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1050;
           local_8 = uVar11;
           break;
@@ -6199,7 +6199,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x74;
           uVar11 = BackUnLoadObj(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x105a;
           local_8 = uVar11;
           break;
@@ -6207,7 +6207,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x75;
           uVar11 = BackBuild(this_00,(int *)0x0,unaff_EDI,unaff_ESI);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1037;
           local_8 = uVar11;
           break;
@@ -6218,7 +6218,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x77;
           uVar11 = thunk_FUN_0046d400((int *)this_00,uVar11);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x103c;
           local_8 = uVar11;
           break;
@@ -6226,7 +6226,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x78;
           uVar11 = BackWaitLoad(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1055;
           local_8 = uVar11;
           break;
@@ -6234,7 +6234,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x79;
           uVar11 = BackTeleport(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1073;
           local_8 = uVar11;
           break;
@@ -6242,7 +6242,7 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7a;
           uVar11 = thunk_FUN_004795e0((int *)this_00);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x106e;
           local_8 = uVar11;
           break;
@@ -6250,14 +6250,14 @@ LAB_0045ad7b:
           this_00->field_045D = 0;
           this_00->field_0459 = 0x7b;
           uVar11 = BackBring(this_00,(int *)0x0);
-          if (uVar11 != -1) goto LAB_00458c5b;
+          if (uVar11 != -1) goto cf_common_exit_00458C5B;
           iVar10 = 0x1078;
           local_8 = uVar11;
         }
       }
       uVar11 = local_8;
       RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar10);
-LAB_00458c5b:
+cf_common_exit_00458C5B:
       if (uVar11 != 0) {
         g_currentExceptionFrame = local_184.previous;
         return 0;
@@ -6788,7 +6788,7 @@ LAB_0045910d:
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-LAB_0045aee3:
+cf_error_exit_0045AEE3:
     RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar10);
     g_currentExceptionFrame = local_184.previous;
     return 0;

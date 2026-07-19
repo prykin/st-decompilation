@@ -64,7 +64,7 @@ LAB_004ca857:
 LAB_004ca86c:
 004CA86C  83 F9 06                  CMP ECX,0x6
 004CA86F  75 C4                     JNZ 0x004ca835
-LAB_004ca871:
+FUN_004ca7b0::cf_common_exit_004CA871:
 004CA871  57                        PUSH EDI
 004CA872  8B CB                     MOV ECX,EBX
 004CA874  E8 33 7A F3 FF            CALL 0x004022ac
@@ -284,7 +284,7 @@ LAB_004caaa0:
 004CAAA0  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]
 LAB_004caaa3:
 004CAAA3  50                        PUSH EAX
-LAB_004caaa4:
+FUN_004ca7b0::cf_common_exit_004CAAA4:
 004CAAA4  57                        PUSH EDI
 004CAAA5  8B CB                     MOV ECX,EBX
 004CAAA7  E8 B8 65 F3 FF            CALL 0x00401064

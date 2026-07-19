@@ -83,7 +83,7 @@ LAB_0074f470:
 0074F483  89 4E 20                  MOV dword ptr [ESI + 0x20],ECX
 LAB_0074f486:
 0074F486  89 46 24                  MOV dword ptr [ESI + 0x24],EAX
-LAB_0074f489:
+FUN_0074f3c0::cf_common_exit_0074F489:
 0074F489  FF 75 18                  PUSH dword ptr [EBP + 0x18]
 0074F48C  FF 15 90 BB 85 00         CALL dword ptr [0x0085bb90]
 0074F492  33 C0                     XOR EAX,EAX

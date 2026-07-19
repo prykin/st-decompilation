@@ -71,7 +71,7 @@ LAB_00476da6:
 00476DB7  51                        PUSH ECX
 00476DB8  52                        PUSH EDX
 00476DB9  50                        PUSH EAX
-LAB_00476dba:
+STBoatC::Capture::cf_common_exit_00476DBA:
 00476DBA  8B CB                     MOV ECX,EBX
 00476DBC  E8 AA E1 F8 FF            CALL 0x00404f6b
 00476DC1  6A 00                     PUSH 0x0
@@ -631,7 +631,7 @@ LAB_00477461:
 00477461  6A 03                     PUSH 0x3
 00477463  8B CB                     MOV ECX,EBX
 00477465  FF 90 90 00 00 00         CALL dword ptr [EAX + 0x90]
-LAB_0047746b:
+STBoatC::Capture::cf_common_exit_0047746B:
 0047746B  8B 13                     MOV EDX,dword ptr [EBX]
 0047746D  8B CB                     MOV ECX,EBX
 0047746F  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
@@ -1201,7 +1201,7 @@ LAB_00477ae0:
 00477B25  6A 00                     PUSH 0x0
 00477B27  8B CB                     MOV ECX,EBX
 00477B29  E8 06 C0 F8 FF            CALL 0x00403b34
-LAB_00477b2e:
+STBoatC::Capture::cf_common_exit_00477B2E:
 00477B2E  8B 03                     MOV EAX,dword ptr [EBX]
 00477B30  8B CB                     MOV ECX,EBX
 00477B32  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

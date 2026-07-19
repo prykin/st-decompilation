@@ -60,7 +60,7 @@ LAB_004b25c4:
 004B25FA  89 50 08                  MOV dword ptr [EAX + 0x8],EDX
 004B25FD  46                        INC ESI
 004B25FE  89 75 D0                  MOV dword ptr [EBP + -0x30],ESI
-LAB_004b2601:
+FUN_004b2520::cf_common_exit_004B2601:
 004B2601  8B 4D D0                  MOV ECX,dword ptr [EBP + -0x30]
 004B2604  85 C9                     TEST ECX,ECX
 004B2606  0F 84 4A 05 00 00         JZ 0x004b2b56

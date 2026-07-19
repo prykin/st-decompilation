@@ -695,7 +695,7 @@ LAB_004286bd:
 004286C4  75 0A                     JNZ 0x004286d0
 004286C6  68 6C 4D 7F 00            PUSH 0x7f4d6c
 004286CB  E8 90 29 28 00            CALL 0x006ab060
-LAB_004286d0:
+FUN_00427f20::cf_common_join_004286D0:
 004286D0  33 DB                     XOR EBX,EBX
 004286D2  39 5D D4                  CMP dword ptr [EBP + -0x2c],EBX
 004286D5  0F 84 80 00 00 00         JZ 0x0042875b

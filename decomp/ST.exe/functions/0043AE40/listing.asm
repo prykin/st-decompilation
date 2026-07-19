@@ -328,7 +328,7 @@ LAB_0043b1d3:
 0043B27B  E8 D8 7D FC FF            CALL 0x00403058
 0043B280  C7 05 4C 67 80 00 02 00 00 00  MOV dword ptr [0x0080674c],0x2
 0043B28A  C7 05 5D 74 80 00 00 00 00 00  MOV dword ptr [0x0080745d],0x0
-LAB_0043b294:
+STAllPlayersC::SetActivePanel::cf_common_exit_0043B294:
 0043B294  8B 4D 0C                  MOV ECX,dword ptr [EBP + 0xc]
 0043B297  8A 15 4D 87 80 00         MOV DL,byte ptr [0x0080874d]
 0043B29D  51                        PUSH ECX
@@ -644,7 +644,7 @@ LAB_0043b659:
 0043B678  03 D0                     ADD EDX,EAX
 0043B67A  89 1C 55 23 50 7F 00      MOV dword ptr [EDX*0x2 + 0x7f5023],EBX
 0043B681  E8 61 7C FC FF            CALL 0x004032e7
-LAB_0043b686:
+STAllPlayersC::SetActivePanel::cf_common_exit_0043B686:
 0043B686  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 0043B689  50                        PUSH EAX
 0043B68A  53                        PUSH EBX
@@ -1012,7 +1012,7 @@ LAB_0043bb46:
 0043BB46  57                        PUSH EDI
 LAB_0043bb47:
 0043BB47  6A 00                     PUSH 0x0
-LAB_0043bb49:
+STAllPlayersC::SetActivePanel::cf_common_exit_0043BB49:
 0043BB49  8A 0D 4D 87 80 00         MOV CL,byte ptr [0x0080874d]
 0043BB4F  51                        PUSH ECX
 0043BB50  8B CE                     MOV ECX,ESI

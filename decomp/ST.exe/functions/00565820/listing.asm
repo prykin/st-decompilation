@@ -917,7 +917,7 @@ LAB_00566218:
 LAB_0056623c:
 0056623C  4B                        DEC EBX
 0056623D  75 D9                     JNZ 0x00566218
-LAB_0056623f:
+FUN_00565820::cf_common_exit_0056623F:
 0056623F  8B 55 E0                  MOV EDX,dword ptr [EBP + -0x20]
 00566242  52                        PUSH EDX
 00566243  E8 C8 7E 14 00            CALL 0x006ae110

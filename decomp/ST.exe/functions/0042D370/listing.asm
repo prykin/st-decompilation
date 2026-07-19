@@ -87,7 +87,7 @@ LAB_0042d446:
 0042D448  EB 02                     JMP 0x0042d44c
 LAB_0042d44a:
 0042D44A  6A 03                     PUSH 0x3
-LAB_0042d44c:
+STAllPlayersC::SetActivityToObjs::cf_common_exit_0042D44C:
 0042D44C  8B 45 14                  MOV EAX,dword ptr [EBP + 0x14]
 0042D44F  8B 4D 08                  MOV ECX,dword ptr [EBP + 0x8]
 0042D452  50                        PUSH EAX

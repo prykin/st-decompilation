@@ -245,7 +245,7 @@ switchD_0045ef41::caseD_b:
 0045F19A  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 0045F19D  89 B7 F4 02 00 00         MOV dword ptr [EDI + 0x2f4],ESI
 0045F1A3  81 C7 1F 04 00 00         ADD EDI,0x41f
-LAB_0045f1a9:
+STBoatC::CmdToObj::cf_common_exit_0045F1A9:
 0045F1A9  8B 08                     MOV ECX,dword ptr [EAX]
 0045F1AB  89 0F                     MOV dword ptr [EDI],ECX
 0045F1AD  8B 50 04                  MOV EDX,dword ptr [EAX + 0x4]

@@ -41,7 +41,7 @@ uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
     param_1 = FUN_006ddbd0();
     pvVar1 = DAT_00802a88;
     uVar3 = param_1;
-    if ((param_1 == 0) || (DAT_00802a88 == (void *)0x0)) goto LAB_006227f9;
+    if ((param_1 == 0) || (DAT_00802a88 == (void *)0x0)) goto cf_common_exit_006227F9;
     uVar3 = CONCAT31((int3)(param_1 >> 8),DAT_0080874d);
     iVar4 = (int)*(short *)((int)this + 0x4b);
     if ((DAT_0080874d == 0xff) ||
@@ -57,10 +57,10 @@ uint __thiscall FUN_006226c0(void *this,uint param_1,int param_2)
           ((*(int *)((int)pvVar1 + 0x34) <= (int)uVar3 || (*(int *)((int)pvVar1 + 0x4c) == 0))))))
         || (uVar3 = (uint)*(byte *)(uVar3 * *(int *)((int)pvVar1 + 0x30) +
                                     *(int *)((int)pvVar1 + 0x4c) + param_2), uVar3 != 0))))
-    goto LAB_006227f9;
+    goto cf_common_exit_006227F9;
   }
   param_1 = 0;
-LAB_006227f9:
+cf_common_exit_006227F9:
   return CONCAT31((int3)(uVar3 >> 8),(undefined1)param_1);
 }
 

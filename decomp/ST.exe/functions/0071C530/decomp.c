@@ -68,7 +68,7 @@ void __thiscall InputClassTy::DelAcc(InputClassTy *this,byte *param_1)
       *(undefined4 *)(this_00 + 0x70) = 1;
       uVar3 = local_c;
       if ((*param_1 & 2) != 0) goto joined_r0x0071c5de;
-      goto LAB_0071c735;
+      goto cf_common_exit_0071C735;
     }
     local_c = FUN_006b1190(*(int *)(this_00 + 0x24),local_d8);
   }
@@ -77,7 +77,7 @@ joined_r0x0071c5de:
   do {
     do {
       local_18 = uVar3 - 1;
-      if ((int)local_18 < 0) goto LAB_0071c735;
+      if ((int)local_18 < 0) goto cf_common_exit_0071C735;
       iVar2 = *(int *)(this_00 + 0x24);
       if (local_18 < *(uint *)(iVar2 + 0xc)) {
         puVar6 = (uint *)(*(int *)(iVar2 + 8) * local_18 + *(int *)(iVar2 + 0x1c));
@@ -126,7 +126,7 @@ LAB_0071c71d:
     }
     uVar3 = local_18;
   } while ((*puVar6 & 2) == 0);
-LAB_0071c735:
+cf_common_exit_0071C735:
   FUN_006b0c70(*(int *)(this_00 + 0x24),local_c);
 LAB_0071c742:
   if (*(int *)(*(byte **)(this_00 + 0x24) + 0xc) == 0) {

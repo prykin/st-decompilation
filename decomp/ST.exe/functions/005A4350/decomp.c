@@ -206,7 +206,7 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
           FUN_006b5b10(this_01->field_1AC0,0,iVar13,iVar34 + 1,iVar13,local_54 + -2 + iVar34,9,0xd);
         }
         FUN_006b35d0(DAT_008075a8,this_01->field_1ABC);
-        goto switchD_005a43f5_caseD_1;
+        goto cf_common_exit_005A8CA7;
       }
       switch(uVar25) {
       case 0x694a:
@@ -227,7 +227,7 @@ undefined4 __thiscall FSGSTy::GetMessage(FSGSTy *this,int *param_1)
         local_94 = 0;
         MMsgTy::StatePanel(*(MMsgTy **)(iVar13 + 0x2e6),(int)local_31c);
         puVar15 = &local_a0;
-        goto LAB_005a7f3b;
+        goto cf_common_exit_005A7F3B;
       case 0x694b:
         if (this_01->field_1A5F == '\x02') {
           (**(code **)(*(int *)this_01 + 8))();
@@ -793,7 +793,7 @@ LAB_005a6e50:
           *(undefined4 *)&pCVar27[0xc].field_0x2f = 0xffffffff;
         }
       }
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     if (0x8160 < uVar25) {
       if (uVar25 < 0xc0a2) {
@@ -804,7 +804,7 @@ LAB_005a6e50:
             FUN_006e6080(this_01,2,*(int *)&this_01->field_0x1b10,(undefined4 *)&this_01->field_0x1d
                         );
           }
-          goto switchD_005a43f5_caseD_1;
+          goto cf_common_exit_005A8CA7;
         }
         switch(uVar25) {
         case 0x8161:
@@ -1077,7 +1077,7 @@ LAB_005a6e50:
           local_74 = 0;
           MMsgTy::StatePanel(*(MMsgTy **)(iVar13 + 0x2e6),(int)local_370);
           puVar15 = &local_80;
-          goto LAB_005a7f3b;
+          goto cf_common_exit_005A7F3B;
         case 0x8163:
           if (this_01->field_1A5F == '\x06') {
             if (this_01->field_1A60 == '\0') {
@@ -1234,7 +1234,7 @@ LAB_005a6e50:
                        *(uint *)&this_01->field_0x1e05,*(uint *)&this_01->field_0x1e19,uVar25);
           }
         }
-        goto switchD_005a43f5_caseD_1;
+        goto cf_common_exit_005A8CA7;
       }
       switch(uVar25) {
       case 0xc0a2:
@@ -1335,11 +1335,11 @@ LAB_005a8c85:
       case 0xc0a5:
         DAT_00807360 = DAT_00807360 == '\0';
       }
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     if (uVar25 == 0x8160) {
       param_1[6] = 0x11;
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     switch(uVar25) {
     case 0x6980:
@@ -1832,13 +1832,13 @@ LAB_005a7c92:
         FUN_006b5ee0(iVar13,0,0,0,*(int *)(iVar13 + 4),*(int *)(iVar13 + 8),0xf,0xd);
       }
     }
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   if (uVar25 == 0x6949) {
     (**(code **)(*(int *)this_01 + 8))();
     this_01->field_0x1a61 = 9;
     iVar13 = *(int *)&this_01->field_0x1a5b;
-    if (*(int *)(iVar13 + 0x2e6) == 0) goto switchD_005a43f5_caseD_1;
+    if (*(int *)(iVar13 + 0x2e6) == 0) goto cf_common_exit_005A8CA7;
     puVar15 = local_2ac;
     for (iVar34 = 6; iVar34 != 0; iVar34 = iVar34 + -1) {
       *puVar15 = 0xffffffff;
@@ -1851,14 +1851,14 @@ LAB_005a7c92:
     local_c4 = 0;
     MMsgTy::StatePanel(*(MMsgTy **)(iVar13 + 0x2e6),(int)local_2ac);
     puVar15 = &local_d0;
-LAB_005a7f3b:
+cf_common_exit_005A7F3B:
     thunk_FUN_005b8f40(*(void **)(*(int *)&this_01->field_0x1a5b + 0x2e6),puVar15);
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   if (0x63ff < uVar25) {
     if (uVar25 < 0x6907) {
       if (uVar25 == 0x6906) {
-        if (DAT_00802a30[0xb].field_0x47 == '\x05') goto switchD_005a43f5_caseD_1;
+        if (DAT_00802a30[0xb].field_0x47 == '\x05') goto cf_common_exit_005A8CA7;
         iVar13 = *(int *)&this_01[1].field_0xd4;
         local_c = (byte *)param_1[7];
         *(undefined4 *)((int)&this_01[1].field_0061 + 3) = 0x6506;
@@ -1982,14 +1982,14 @@ LAB_005a7f3b:
                 }
               }
             }
-            goto switchD_005a43f5_caseD_1;
+            goto cf_common_exit_005A8CA7;
           }
           if (uVar25 == 0x6900) {
             DAT_0080735f = DAT_0080735f == '\0';
             *(undefined4 *)&this_01->field_0x2d = 5;
             FUN_006e6080(this_01,2,*(undefined4 *)&this_01->field_0x1ad0,
                          (undefined4 *)&this_01->field_0x1d);
-            goto switchD_005a43f5_caseD_1;
+            goto cf_common_exit_005A8CA7;
           }
           if (uVar25 != 0x6506) {
             if (uVar25 == 0x68ff) {
@@ -2002,11 +2002,11 @@ LAB_005a7f3b:
                 *(int *)&this_01->field_0x1ab7 = *param_1;
               }
             }
-            goto switchD_005a43f5_caseD_1;
+            goto cf_common_exit_005A8CA7;
           }
           iVar13 = *(int *)&this_01[1].field_0xd4;
           uVar25 = param_1[5];
-          if (*(uint *)(iVar13 + 0xc) <= uVar25) goto switchD_005a43f5_caseD_1;
+          if (*(uint *)(iVar13 + 0xc) <= uVar25) goto cf_common_exit_005A8CA7;
           if (this_01->field_1A5F == '\t') {
             if (param_1[6] == *(int *)&this_01->field_0x1eb6) {
               DAT_00803140 = *(ulong *)(*(int *)(iVar13 + 8) * uVar25 + 0x104 +
@@ -2016,7 +2016,7 @@ LAB_005a7f3b:
               pCVar27 = DAT_00802a30;
 joined_r0x005a55e5:
               DAT_00802a30 = pCVar27;
-              if (pCVar27 == (CursorClassTy *)0x0) goto LAB_005a5634;
+              if (pCVar27 == (CursorClassTy *)0x0) goto cf_common_exit_005A5634;
               pCVar27[0xb].field_0x47 = 5;
               *(undefined2 *)&pCVar27[0xb].field_0x48 = 0xffff;
               CursorClassTy::SetGCType
@@ -2031,7 +2031,7 @@ joined_r0x005a55e5:
               CFsgsConnection::RequestLadderList
                         ((CFsgsConnection *)&DAT_00802a90,DAT_00803140,0,DAT_00803148,0xf);
               pCVar27 = DAT_00802a30;
-              if (DAT_00802a30 == (CursorClassTy *)0x0) goto LAB_005a5634;
+              if (DAT_00802a30 == (CursorClassTy *)0x0) goto cf_common_exit_005A5634;
               uVar12 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
               uVar19 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
               DAT_00802a30[0xb].field_0x47 = 5;
@@ -2092,10 +2092,10 @@ LAB_005a561c:
               }
             }
           }
-LAB_005a5634:
+cf_common_exit_005A5634:
           *(undefined4 *)&this_01->field_0x2d = 5;
           FUN_006e6080(this_01,2,param_1[6],(undefined4 *)&this_01->field_0x1d);
-          goto switchD_005a43f5_caseD_1;
+          goto cf_common_exit_005A8CA7;
         }
         if (uVar25 == 0x6903) {
           if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -2121,7 +2121,7 @@ LAB_005a5634:
             DVar18 = timeGetTime();
             *(DWORD *)&this_01->field_0x1a63 = DVar18;
           }
-          goto switchD_005a43f5_caseD_1;
+          goto cf_common_exit_005A8CA7;
         }
         if (uVar25 == 0x6904) {
           local_c = (byte *)param_1[7];
@@ -2311,7 +2311,7 @@ LAB_005a5634:
           }
         }
         else {
-          if (uVar25 != 0x6905) goto switchD_005a43f5_caseD_1;
+          if (uVar25 != 0x6905) goto cf_common_exit_005A8CA7;
           iVar13 = *(int *)&this_01[1].field_0xd4;
           local_c = (byte *)param_1[7];
           *(undefined4 *)((int)&this_01[1].field_0061 + 3) = 0x6506;
@@ -2435,7 +2435,7 @@ joined_r0x005a5b89:
       piVar4 = *(int **)&this_01->field_0xc;
       *(undefined4 *)&this_01[1].field_0x98 = *(undefined4 *)(iVar13 + 0x8a);
       (**(code **)(*piVar4 + 8))(0x100ef,0,0,&this_01[1].field_0x54,0);
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     switch(uVar25) {
     case 0x6907:
@@ -2580,7 +2580,7 @@ joined_r0x005a5b89:
       CursorClassTy::SetGCType(pCVar27,CASE_0,uVar19,uVar12);
       iVar13 = *(int *)&pCVar27[2].field_0x1;
       iVar34 = *(int *)((int)&pCVar27[1].field_0060 + 1);
-      goto LAB_005a52aa;
+      goto cf_common_exit_005A52AA;
     case 0x6909:
       if ((DAT_00802a30[0xb].field_0x47 == '\x05') || (0xf422f < DAT_00803148)) break;
       DAT_00803148 = DAT_00803148 + 0xf;
@@ -2595,7 +2595,7 @@ joined_r0x005a5b89:
       CursorClassTy::SetGCType(pCVar27,CASE_0,uVar19,uVar12);
       iVar13 = *(int *)&pCVar27[2].field_0x1;
       iVar34 = *(int *)((int)&pCVar27[1].field_0060 + 1);
-LAB_005a52aa:
+cf_common_exit_005A52AA:
       CursorClassTy::DrawSprite(pCVar27,iVar34,iVar13);
       pCVar27[2].field_0xa = 0;
       *(undefined4 *)&pCVar27[0xc].field_0x2f = 0xffffffff;
@@ -2703,7 +2703,7 @@ LAB_005a52aa:
       local_64 = 0;
       MMsgTy::StatePanel(*(MMsgTy **)(iVar13 + 0x2e6),(int)local_338);
       puVar15 = &local_70;
-      goto LAB_005a7f3b;
+      goto cf_common_exit_005A7F3B;
     case 0x693f:
       thunk_FUN_0059b820(this_01);
       break;
@@ -2720,7 +2720,7 @@ LAB_005a52aa:
         MMsgTy::HidePanel(pMVar23,1,0,1);
       }
     }
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   if (uVar25 == 0x63ff) {
     cVar2 = this_01->field_1A5F;
@@ -2734,11 +2734,11 @@ LAB_005a52aa:
         local_d4 = 0;
         thunk_FUN_005b8f40(*(void **)(*(int *)&this_01->field_0x1a5b + 0x2e6),&local_e0);
       }
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     if (cVar2 == '\a') {
       if ((DAT_00802a30 != (CursorClassTy *)0x0) && (DAT_00802a30[0xb].field_0x47 == '\x05'))
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
       thunk_FUN_005daa60();
       local_290.previous = g_currentExceptionFrame;
       g_currentExceptionFrame = &local_290;
@@ -2771,7 +2771,7 @@ LAB_005a52aa:
           MMsgTy::SetMessage(pMVar23,0x2594,'\0',(undefined4 *)0x0,(undefined4 *)0x0,
                              (undefined4 *)0x0,0,0);
         }
-        goto switchD_005a43f5_caseD_1;
+        goto cf_common_exit_005A8CA7;
       }
       FUN_006b6160(local_6b8,DAT_00811764 + 0x18);
       local_698 = 0;
@@ -2791,7 +2791,7 @@ LAB_005a52aa:
                 ((CFsgsConnection *)&DAT_00802a90,*(ulong *)&this_01->field_0x1ec2,0x17e0,pcVar17,
                  pcVar29,local_6b8);
       pCVar27 = DAT_00802a30;
-      if (DAT_00802a30 == (CursorClassTy *)0x0) goto switchD_005a43f5_caseD_1;
+      if (DAT_00802a30 == (CursorClassTy *)0x0) goto cf_common_exit_005A8CA7;
       uVar12 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
       uVar19 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
       DAT_00802a30[0xb].field_0x47 = 5;
@@ -2799,11 +2799,11 @@ LAB_005a52aa:
       CursorClassTy::SetGCType(pCVar27,CASE_0,uVar19,uVar12);
       iVar13 = *(int *)&pCVar27[2].field_0x1;
       iVar34 = *(int *)((int)&pCVar27[1].field_0060 + 1);
-      goto LAB_005a52aa;
+      goto cf_common_exit_005A52AA;
     }
     if ((cVar2 != '\b') ||
        (((DAT_00802a30 != (CursorClassTy *)0x0 && (DAT_00802a30[0xb].field_0x47 == '\x05')) ||
-        (this_01->field_1EBE == 0)))) goto switchD_005a43f5_caseD_1;
+        (this_01->field_1EBE == 0)))) goto cf_common_exit_005A8CA7;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
       DAT_00802a30[0xb].field_0x47 = 5;
       *(undefined2 *)&pCVar27[0xb].field_0x48 = 0xffff;
@@ -2820,11 +2820,11 @@ LAB_005a52aa:
     ;
     pCVar27 = DAT_00802a30;
     iVar13 = this_01->field_1EBE;
-    if (*(uint *)(iVar13 + 0xc) <= *(uint *)&this_01->field_0x31) goto switchD_005a43f5_caseD_1;
+    if (*(uint *)(iVar13 + 0xc) <= *(uint *)&this_01->field_0x31) goto cf_common_exit_005A8CA7;
     local_15 = '\x01';
     local_8 = (uint *)(*(int *)(iVar13 + 8) * *(uint *)&this_01->field_0x31 +
                       *(int *)(iVar13 + 0x1c));
-    if (local_8 == (uint *)0x0) goto switchD_005a43f5_caseD_1;
+    if (local_8 == (uint *)0x0) goto cf_common_exit_005A8CA7;
     puVar16 = local_8 + 0x13;
     iVar13 = -1;
     puVar30 = puVar16;
@@ -2877,7 +2877,7 @@ LAB_005a4ecf:
       }
     }
     puVar16 = local_8;
-    if (local_15 == '\0') goto switchD_005a43f5_caseD_1;
+    if (local_15 == '\0') goto cf_common_exit_005A8CA7;
     thunk_FUN_005daa60();
     FUN_006b61a0(local_22c,(byte *)(puVar16 + 0x17));
     local_3b4.previous = g_currentExceptionFrame;
@@ -2909,7 +2909,7 @@ LAB_005a4ecf:
         MMsgTy::SetMessage(pMVar23,0x2595,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0
                            ,0,0);
       }
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     CFsgsConnection::JoinGame((CFsgsConnection *)&DAT_00802a90,puVar16[1]);
     this_01 = local_20;
@@ -2944,7 +2944,7 @@ LAB_005a50be:
     if (pMVar23 != (MMsgTy *)0x0) {
       MMsgTy::HidePanel(pMVar23,1,0,1);
     }
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   if (uVar25 < 0x6152) {
     if (uVar25 != 0x6151) {
@@ -3071,9 +3071,9 @@ LAB_005a50be:
           }
         }
       }
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
-    if (this_01->field_1A5F != '\x01') goto switchD_005a43f5_caseD_1;
+    if (this_01->field_1A5F != '\x01') goto cf_common_exit_005A8CA7;
     CFsgsConnection::StartBanners((CFsgsConnection *)&DAT_00802a90);
     if (((char)DAT_00807dd1 != '\x01') && ((DAT_00807dd1 & 0xffff0000) != 0xd0dd0000)) {
       iVar13 = this_01->field_1AC0;
@@ -3102,7 +3102,7 @@ LAB_005a50be:
       ;
       FUN_006b35d0(DAT_008075a8,this_01->field_1ABC);
       CFsgsConnection::RequestDatafile((CFsgsConnection *)&DAT_00802a90,s_st_inf_007cc66c);
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     goto LAB_005a6d57;
   }
@@ -3120,15 +3120,15 @@ LAB_005a50be:
                    *(uint *)&this_01->field_0x1c6a);
       }
     }
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   if (uVar25 == 0x6333) {
     MMMObjTy::PaintSlBut((MMMObjTy *)this_01,(int)&this_01->field_0x1b28,(int)param_1,0);
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   switch(uVar25) {
   case 0x6152:
-    if (this_01->field_1A5F != '\x02') goto switchD_005a43f5_caseD_1;
+    if (this_01->field_1A5F != '\x02') goto cf_common_exit_005A8CA7;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
       DAT_00802a30[0xb].field_0x47 = 1;
       *(undefined2 *)&pCVar27[0xb].field_0x48 = 0xffff;
@@ -3169,11 +3169,11 @@ LAB_005a50be:
     }
     if ((UVar14 == 0) ||
        (pMVar23 = *(MMsgTy **)(*(int *)&this_01->field_0x1a5b + 0x2e6), pMVar23 == (MMsgTy *)0x0))
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
     if (UVar14 == 0x2589) {
       MMsgTy::SetMessage(pMVar23,0x2589,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,
                          param_1[5],0x2599);
-      goto switchD_005a43f5_caseD_1;
+      goto cf_common_exit_005A8CA7;
     }
     break;
   case 0x6153:
@@ -3223,7 +3223,7 @@ LAB_005a50be:
         thunk_FUN_005b8f40(*(void **)(*(int *)&this_01->field_0x1a5b + 0x2e6),&local_b0);
       }
     }
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   case 0x6154:
     if (this_01->field_1A5F == '\x05') {
       if (DAT_00802a30 != (CursorClassTy *)0x0) {
@@ -3261,9 +3261,9 @@ LAB_005a50be:
         }
       }
     }
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   case 0x6155:
-    if (this_01->field_1A5F != '\x04') goto switchD_005a43f5_caseD_1;
+    if (this_01->field_1A5F != '\x04') goto cf_common_exit_005A8CA7;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
       DAT_00802a30[0xb].field_0x47 = 1;
       *(undefined2 *)&pCVar27[0xb].field_0x48 = 0xffff;
@@ -3276,7 +3276,7 @@ LAB_005a50be:
       *(undefined4 *)&pCVar27[0xc].field_0x2f = 0xffffffff;
     }
     if (param_1[5] == 0) goto LAB_005a67e1;
-    if (6 < (uint)param_1[5]) goto switchD_005a43f5_caseD_1;
+    if (6 < (uint)param_1[5]) goto cf_common_exit_005A8CA7;
     puVar15 = local_354;
     for (iVar13 = 6; iVar13 != 0; iVar13 = iVar13 + -1) {
       *puVar15 = 0x10001;
@@ -3288,7 +3288,7 @@ LAB_005a50be:
       MMsgTy::StatePanel(pMVar23,(int)local_354);
     }
     pMVar23 = *(MMsgTy **)(*(int *)&this_01->field_0x1a5b + 0x2e6);
-    if (pMVar23 == (MMsgTy *)0x0) goto switchD_005a43f5_caseD_1;
+    if (pMVar23 == (MMsgTy *)0x0) goto cf_common_exit_005A8CA7;
     switch(param_1[5]) {
     case 2:
       UVar14 = 0x2597;
@@ -3310,7 +3310,7 @@ LAB_005a50be:
     }
     break;
   case 0x6156:
-    if (this_01->field_1A5F != '\x06') goto switchD_005a43f5_caseD_1;
+    if (this_01->field_1A5F != '\x06') goto cf_common_exit_005A8CA7;
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
       DAT_00802a30[0xb].field_0x47 = 1;
       *(undefined2 *)&pCVar27[0xb].field_0x48 = 0xffff;
@@ -3331,13 +3331,13 @@ LAB_005a50be:
     }
     if ((UVar14 == 0) ||
        (pMVar23 = *(MMsgTy **)(*(int *)&this_01->field_0x1a5b + 0x2e6), pMVar23 == (MMsgTy *)0x0))
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
     break;
   default:
-    goto switchD_005a43f5_caseD_1;
+    goto cf_common_exit_005A8CA7;
   }
   MMsgTy::SetMessage(pMVar23,UVar14,'\0',(undefined4 *)0x0,(undefined4 *)0x0,(undefined4 *)0x0,0,0);
-switchD_005a43f5_caseD_1:
+cf_common_exit_005A8CA7:
   g_currentExceptionFrame = local_21c.previous;
   uVar12 = MMObjTy::GetMessage((MMObjTy *)this_01,(int)param_1);
   return uVar12;

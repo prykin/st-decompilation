@@ -354,7 +354,7 @@ switchD_0049655f::caseD_3:
 004965E8  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 004965EB  3B F0                     CMP ESI,EAX
 004965ED  75 0E                     JNZ 0x004965fd
-switchD_004967be::caseD_3:
+FUN_00496250::cf_common_exit_004965EF:
 004965EF  5F                        POP EDI
 004965F0  5E                        POP ESI
 004965F1  B8 07 00 00 00            MOV EAX,0x7
@@ -544,7 +544,7 @@ switchD_00496757::caseD_2:
 0049678F  0F 87 3D FC FF FF         JA 0x004963d2
 switchD_00496795::switchD:
 00496795  FF 24 B5 40 68 49 00      JMP dword ptr [ESI*0x4 + 0x496840]
-switchD_0049655f::caseD_5:
+FUN_00496250::cf_common_exit_0049679C:
 0049679C  5F                        POP EDI
 0049679D  5E                        POP ESI
 0049679E  B8 04 00 00 00            MOV EAX,0x4
@@ -552,7 +552,7 @@ switchD_0049655f::caseD_5:
 004967A4  8B E5                     MOV ESP,EBP
 004967A6  5D                        POP EBP
 004967A7  C2 0C 00                  RET 0xc
-switchD_0049655f::caseD_7:
+FUN_00496250::cf_common_exit_004967AA:
 004967AA  5F                        POP EDI
 004967AB  5E                        POP ESI
 004967AC  33 C0                     XOR EAX,EAX

@@ -81,7 +81,7 @@ byte * FUN_006f4fe0(byte *param_1,int param_2,uint *param_3,int param_4,int para
               DAT_00857000 = '\x01';
               iVar8 = DAT_00857010;
               pbVar10 = param_6;
-              goto LAB_006f5151;
+              goto cf_continue_loop_006F5151;
             }
             *param_1 = bVar2;
             param_3 = (uint *)((int)param_3 + 2);
@@ -108,7 +108,7 @@ LAB_006f50a4:
       return param_9;
     }
   } while( true );
-LAB_006f5151:
+cf_continue_loop_006F5151:
   do {
     bVar2 = *DAT_00856fe0;
     DAT_00856fe0 = DAT_00856fe0 + 1;
@@ -214,6 +214,6 @@ LAB_006f51af:
     puVar7 = param_3;
     iVar8 = DAT_00857010;
   } while (uVar6 <= *(uint *)((int)param_3 + -2));
-  goto LAB_006f5151;
+  goto cf_continue_loop_006F5151;
 }
 

@@ -1106,7 +1106,7 @@ switchD_00662e0b::caseD_a4:
 LAB_00662e4e:
 00662E4E  85 C0                     TEST EAX,EAX
 00662E50  75 1A                     JNZ 0x00662e6c
-LAB_00662e52:
+AiFltClassTy::GetAiMess::cf_continue_loop_00662E52:
 00662E52  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00662E55  8B 4D E0                  MOV ECX,dword ptr [EBP + -0x20]
 00662E58  41                        INC ECX

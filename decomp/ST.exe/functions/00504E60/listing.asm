@@ -89,7 +89,7 @@ LAB_00504f70:
 00504F75  8B 8E B8 01 00 00         MOV ECX,dword ptr [ESI + 0x1b8]
 00504F7B  50                        PUSH EAX
 00504F7C  E8 EF CB 20 00            CALL 0x00711b70
-LAB_00504f81:
+CPanelTy::PaintIDSObj::cf_common_exit_00504F81:
 00504F81  8B 86 5C 01 00 00         MOV EAX,dword ptr [ESI + 0x15c]
 00504F87  85 C0                     TEST EAX,EAX
 00504F89  7C 19                     JL 0x00504fa4

@@ -209,7 +209,7 @@ LAB_00679851:
 0067988F  EB 0A                     JMP 0x0067989b
 LAB_00679891:
 00679891  C7 86 40 06 00 00 FF 00 00 00  MOV dword ptr [ESI + 0x640],0xff
-LAB_0067989b:
+FUN_00679600::cf_common_exit_0067989B:
 0067989B  8B 96 40 06 00 00         MOV EDX,dword ptr [ESI + 0x640]
 006798A1  8B 45 F0                  MOV EAX,dword ptr [EBP + -0x10]
 006798A4  3B D0                     CMP EDX,EAX

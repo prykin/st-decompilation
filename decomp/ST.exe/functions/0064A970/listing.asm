@@ -878,7 +878,7 @@ LAB_0064b272:
 0064B289  51                        PUSH ECX
 0064B28A  6A 8A                     PUSH -0x76
 0064B28C  E8 AF AB 05 00            CALL 0x006a5e40
-LAB_0064b291:
+FUN_0064a970::cf_common_exit_0064B291:
 0064B291  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 0064B294  85 C0                     TEST EAX,EAX
 0064B296  0F 84 0D 10 00 00         JZ 0x0064c2a9
@@ -966,10 +966,10 @@ LAB_0064b35d:
 0064B35D  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 0064B362  68 04 2A 7D 00            PUSH 0x7d2a04
 0064B367  50                        PUSH EAX
-LAB_0064b368:
+FUN_0064a970::cf_error_exit_0064B368:
 0064B368  6A 95                     PUSH -0x6b
 0064B36A  E8 D1 AA 05 00            CALL 0x006a5e40
-LAB_0064b36f:
+FUN_0064a970::cf_common_exit_0064B36F:
 0064B36F  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 0064B372  85 C0                     TEST EAX,EAX
 0064B374  0F 84 2F 0F 00 00         JZ 0x0064c2a9
@@ -1295,7 +1295,7 @@ LAB_0064b6f4:
 0064B70B  50                        PUSH EAX
 0064B70C  E8 2F 2C 0E 00            CALL 0x0072e340
 0064B711  83 C4 0C                  ADD ESP,0xc
-LAB_0064b714:
+FUN_0064a970::cf_error_exit_0064B714:
 0064B714  C7 86 84 00 00 00 FF FF FF FF  MOV dword ptr [ESI + 0x84],0xffffffff
 0064B71E  8B 15 7C D7 7E 00         MOV EDX,dword ptr [0x007ed77c]
 0064B724  6A 79                     PUSH 0x79
@@ -1349,7 +1349,7 @@ LAB_0064b797:
 0064B799  75 F0                     JNZ 0x0064b78b
 0064B79B  85 F6                     TEST ESI,ESI
 0064B79D  75 EC                     JNZ 0x0064b78b
-LAB_0064b79f:
+FUN_0064a970::cf_common_exit_0064B79F:
 0064B79F  33 C9                     XOR ECX,ECX
 0064B7A1  89 08                     MOV dword ptr [EAX],ECX
 0064B7A3  E9 C7 FB FF FF            JMP 0x0064b36f
@@ -1741,7 +1741,7 @@ LAB_0064bb92:
 0064BBA6  DD 1C 24                  FSTP double ptr [ESP]
 0064BBA9  E8 32 46 0E 00            CALL 0x007301e0
 0064BBAE  83 C4 10                  ADD ESP,0x10
-LAB_0064bbb1:
+FUN_0064a970::cf_common_exit_0064BBB1:
 0064BBB1  8B 45 10                  MOV EAX,dword ptr [EBP + 0x10]
 0064BBB4  85 C0                     TEST EAX,EAX
 0064BBB6  0F 84 ED 06 00 00         JZ 0x0064c2a9
@@ -2351,7 +2351,7 @@ LAB_0064c20a:
 0064C265  B9 01 00 00 00            MOV ECX,0x1
 0064C26A  89 08                     MOV dword ptr [EAX],ECX
 0064C26C  E9 FE F0 FF FF            JMP 0x0064b36f
-switchD_0064aa67::caseD_2:
+FUN_0064a970::cf_common_exit_0064C271:
 0064C271  50                        PUSH EAX
 0064C272  E8 64 95 DB FF            CALL 0x004057db
 0064C277  85 C0                     TEST EAX,EAX
@@ -2369,7 +2369,7 @@ LAB_0064c28a:
 0064C29C  68 24 2A 7D 00            PUSH 0x7d2a24
 0064C2A1  52                        PUSH EDX
 0064C2A2  6A 8B                     PUSH -0x75
-LAB_0064c2a4:
+FUN_0064a970::cf_error_exit_0064C2A4:
 0064C2A4  E8 97 9B 05 00            CALL 0x006a5e40
 LAB_0064c2a9:
 0064C2A9  8B 85 44 FF FF FF         MOV EAX,dword ptr [EBP + 0xffffff44]

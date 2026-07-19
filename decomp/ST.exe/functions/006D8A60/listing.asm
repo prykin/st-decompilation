@@ -357,7 +357,7 @@ LAB_006d8d94:
 006D8D9C  89 4D FC                  MOV dword ptr [EBP + -0x4],ECX
 006D8D9F  46                        INC ESI
 006D8DA0  E9 04 FE FF FF            JMP 0x006d8ba9
-LAB_006d8da5:
+FUN_006d8a60::cf_common_join_006D8DA5:
 006D8DA5  0B D2                     OR EDX,EDX
 006D8DA7  0F 8E D1 01 00 00         JLE 0x006d8f7e
 006D8DAD  2B CA                     SUB ECX,EDX
@@ -1235,7 +1235,7 @@ LAB_006d957d:
 006D9585  89 4D FC                  MOV dword ptr [EBP + -0x4],ECX
 006D9588  46                        INC ESI
 006D9589  E9 31 FE FF FF            JMP 0x006d93bf
-LAB_006d958e:
+FUN_006d8a60::cf_common_join_006D958E:
 006D958E  0B D2                     OR EDX,EDX
 006D9590  0F 8E A5 01 00 00         JLE 0x006d973b
 006D9596  2B CA                     SUB ECX,EDX
@@ -1734,7 +1734,7 @@ LAB_006d99f9:
 006D9A13  E9 94 04 00 00            JMP 0x006d9eac
 LAB_006d9a18:
 006D9A18  03 D1                     ADD EDX,ECX
-LAB_006d9a1a:
+FUN_006d8a60::cf_common_join_006D9A1A:
 006D9A1A  8B 4D 38                  MOV ECX,dword ptr [EBP + 0x38]
 006D9A1D  8B 7D 34                  MOV EDI,dword ptr [EBP + 0x34]
 006D9A20  03 F9                     ADD EDI,ECX
@@ -2238,7 +2238,7 @@ LAB_006d9e9e:
 006D9EA8  EB 02                     JMP 0x006d9eac
 LAB_006d9eaa:
 006D9EAA  03 D1                     ADD EDX,ECX
-LAB_006d9eac:
+FUN_006d8a60::cf_common_join_006D9EAC:
 006D9EAC  8B 4D E8                  MOV ECX,dword ptr [EBP + -0x18]
 006D9EAF  8B 5D 14                  MOV EBX,dword ptr [EBP + 0x14]
 006D9EB2  2B CB                     SUB ECX,EBX

@@ -240,7 +240,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       }
       if (*(int *)&this_00->field_0x251 < 1) {
         thunk_FUN_00580380(this_00);
-        goto LAB_0057e624;
+        goto cf_common_exit_0057E624;
       }
       iVar8 = *(int *)&this_00->field_0x255;
       if ((((iVar8 != 0xdd) && (iVar8 != 0xde)) && (iVar8 != 0xdc)) && (iVar8 != 0xe0)) {
@@ -299,7 +299,7 @@ undefined4 __thiscall STDcResourcC::GetMessage(STDcResourcC *this,int param_1)
       }
     }
     else {
-      if (local_18[3] != 2) goto LAB_0057e624;
+      if (local_18[3] != 2) goto cf_common_exit_0057E624;
       puVar11 = local_18;
       puVar18 = (undefined4 *)&this_00->field_0x231;
       for (iVar8 = 0x11; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -362,7 +362,7 @@ LAB_0057e60c:
       }
     }
     *(uint *)&this_00->field_0x261 = *(uint *)&this_00->field_0x261 & 0xfffffffb;
-LAB_0057e624:
+cf_common_exit_0057E624:
     if ((this_00->field_0x261 & 4) != 0) {
       g_currentExceptionFrame = local_68.previous;
       return 0;
@@ -396,7 +396,7 @@ LAB_0057e6f0:
   }
   pvVar5 = DAT_00802a88;
   if (*(int *)&this_00->field_0x273 == 0) {
-    if (DAT_00802a88 == (void *)0x0) goto LAB_0057e9c2;
+    if (DAT_00802a88 == (void *)0x0) goto cf_common_join_0057E9C2;
     iVar8 = *(int *)&this_00->field_0x24d;
     if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
       uVar10 = 0;
@@ -460,13 +460,13 @@ LAB_0057e6f0:
                           ((STFieldC *)this_00,*(int *)&this_00->field_0x245,
                            *(int *)&this_00->field_0x249);
       *(undefined4 **)&this_00->field_0x273 = puVar11;
-      goto LAB_0057e9c2;
+      goto cf_common_join_0057E9C2;
     }
     piVar15 = *(int **)&this_00->field_0x273;
-    if (piVar15 == (int *)0x0) goto LAB_0057e9c2;
+    if (piVar15 == (int *)0x0) goto cf_common_join_0057E9C2;
   }
   else {
-    if (DAT_00802a88 == (void *)0x0) goto LAB_0057e9c2;
+    if (DAT_00802a88 == (void *)0x0) goto cf_common_join_0057E9C2;
     iVar8 = *(int *)&this_00->field_0x24d;
     if ((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) {
       uVar10 = 0;
@@ -525,12 +525,12 @@ LAB_0057e6f0:
         }
       }
     }
-    if (uVar10 != 2) goto LAB_0057e9c2;
+    if (uVar10 != 2) goto cf_common_join_0057E9C2;
     piVar15 = *(int **)&this_00->field_0x273;
   }
   FUN_006e6580((void *)this_00->field_0211,piVar15);
   *(undefined4 *)&this_00->field_0x273 = 0;
-LAB_0057e9c2:
+cf_common_join_0057E9C2:
   (*this_00->vtable->slot_D8)();
   if ((*(int *)&this_00->field_0x255 != 0xe0) && (iVar8 = 0, 0 < *(int *)&this_00->field_0x265)) {
     do {

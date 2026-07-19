@@ -68,13 +68,13 @@ LAB_006d8786:
     do {
       puVar3 = param_3;
       if ((uVar7 & 0x80) == 0) {
-        if (iVar8 < (int)uVar7) goto LAB_006d88d7;
+        if (iVar8 < (int)uVar7) goto cf_common_join_006D88D7;
         iVar8 = iVar8 - uVar7;
         param_1 = (uint *)((int)param_1 + uVar7);
       }
       else if ((uVar7 & 0x40) == 0) {
         uVar7 = uVar7 & 0x3f;
-        if (iVar8 < (int)uVar7) goto LAB_006d88d7;
+        if (iVar8 < (int)uVar7) goto cf_common_join_006D88D7;
         iVar8 = iVar8 - uVar7;
         if (((byte)*param_3 < param_8) || (local_8 < (byte)*param_3)) {
           if (3 < uVar7) {
@@ -120,7 +120,7 @@ LAB_006d8786:
         uVar7 = uVar7 & 0xffffff3f;
         uVar2 = CONCAT11(bVar6,bVar6);
         uVar4 = (uint)uVar2;
-        if (iVar8 < (int)uVar7) goto LAB_006d88d7;
+        if (iVar8 < (int)uVar7) goto cf_common_join_006D88D7;
         iVar8 = iVar8 - uVar7;
         param_3 = (uint *)((int)param_3 + 1);
         if (3 < uVar7) {
@@ -155,7 +155,7 @@ LAB_006d8786:
 LAB_006d88c6:
       uVar7 = 0;
       puVar3 = param_3;
-      if (iVar8 < 1) goto LAB_006d88d7;
+      if (iVar8 < 1) goto cf_common_join_006D88D7;
       uVar7 = (uint)(byte)*param_3;
       param_3 = (uint *)((int)param_3 + 1);
       param_7 = uVar7;
@@ -163,7 +163,7 @@ LAB_006d88c6:
   }
   param_1 = (uint *)((int)param_1 + param_2);
   goto LAB_006d8a3c;
-LAB_006d88d7:
+cf_common_join_006D88D7:
   if (0 < iVar8) {
     uVar7 = uVar7 - iVar8;
     if ((param_7 & 0x80) == 0) {

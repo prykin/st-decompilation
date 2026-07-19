@@ -1045,7 +1045,7 @@ LAB_006bf60a:
 006BF60A  83 C6 10                  ADD ESI,0x10
 006BF60D  FF 8D 5C FF FF FF         DEC dword ptr [EBP + 0xffffff5c]
 006BF613  0F 85 26 FF FF FF         JNZ 0x006bf53f
-LAB_006bf619:
+FUN_006bea40::cf_common_join_006BF619:
 006BF619  81 FB A0 00 76 88         CMP EBX,0x887600a0
 006BF61F  74 08                     JZ 0x006bf629
 006BF621  81 FB AE 01 76 88         CMP EBX,0x887601ae

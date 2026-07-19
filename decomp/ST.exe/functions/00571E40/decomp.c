@@ -32,7 +32,7 @@ undefined4 __thiscall FUN_00571e40(void *this,uint param_1)
   
   LVar4 = RegOpenKeyA((HKEY)0x80000001,s_SOFTWARE_Ellipse_Studios_Submari_007ca434,&local_8);
   pcVar9 = RegQueryValueExA_exref;
-  if (LVar4 != 0) goto LAB_0057238d;
+  if (LVar4 != 0) goto cf_common_exit_0057238D;
   pBVar1 = (LPBYTE)((int)this + 0x28);
   local_10[1] = 0x104;
   LVar4 = RegQueryValueExA(local_8,s_MainPath_007ca4ac,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
@@ -52,7 +52,7 @@ undefined4 __thiscall FUN_00571e40(void *this,uint param_1)
   pBVar1 = (LPBYTE)((int)this + 300);
   local_10[1] = 0x104;
   LVar4 = RegQueryValueExA(local_8,s_VideoPath_007ca4a0,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
-  if (LVar4 != 0) goto LAB_0057238d;
+  if (LVar4 != 0) goto cf_common_exit_0057238D;
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x438);
   local_10[1] = 0x104;
@@ -73,7 +73,7 @@ undefined4 __thiscall FUN_00571e40(void *this,uint param_1)
   pBVar1 = (LPBYTE)((int)this + 0x334);
   local_10[1] = 0x104;
   LVar4 = RegQueryValueExA(local_8,s_MusicPath_007ca4d0,(LPDWORD)0x0,local_10,pBVar1,local_10 + 1);
-  if (LVar4 != 0) goto LAB_0057238d;
+  if (LVar4 != 0) goto cf_common_exit_0057238D;
   FUN_006b8280((char *)pBVar1,(char *)pBVar1);
   pBVar1 = (LPBYTE)((int)this + 0x53c);
   local_10[1] = 0x104;
@@ -99,7 +99,7 @@ LAB_00572086:
   lpData = (uint *)((int)this + 0x779);
   local_10[1] = 4;
   LVar4 = RegQueryValueExA(local_8,&DAT_007ca4f8,(LPDWORD)0x0,local_10,(LPBYTE)lpData,local_10 + 1);
-  if (LVar4 != 0) goto LAB_0057238d;
+  if (LVar4 != 0) goto cf_common_exit_0057238D;
   uVar6 = *lpData >> 0x10;
   if (uVar6 < 0xdeb1) {
     if (((uVar6 != 0xdeb0) && (uVar6 != 0xd0dd)) && ((uVar6 < 0xddd1 || (0xddd2 < uVar6)))) {
@@ -259,7 +259,7 @@ LAB_005722ed:
       return 1;
     }
   }
-LAB_0057238d:
+cf_common_exit_0057238D:
   RegCloseKey(local_8);
   return 0;
 }

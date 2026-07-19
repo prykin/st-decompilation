@@ -561,7 +561,7 @@ LAB_00702f20:
 00702F35  7F A7                     JG 0x00702ede
 LAB_00702f37:
 00702F37  8B 5D 24                  MOV EBX,dword ptr [EBP + 0x24]
-LAB_00702f3a:
+FUN_00702a30::cf_common_join_00702F3A:
 00702F3A  8B 7D 28                  MOV EDI,dword ptr [EBP + 0x28]
 00702F3D  8B 4D 2C                  MOV ECX,dword ptr [EBP + 0x2c]
 00702F40  8B 55 30                  MOV EDX,dword ptr [EBP + 0x30]

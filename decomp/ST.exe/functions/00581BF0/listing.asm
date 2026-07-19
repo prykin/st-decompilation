@@ -110,7 +110,7 @@ LAB_00581d4b:
 LAB_00581d5b:
 00581D5B  6A FF                     PUSH -0x1
 00581D5D  E8 DE 40 12 00            CALL 0x006a5e40
-LAB_00581d62:
+STJellyManC::GetMessage::cf_common_exit_00581D62:
 00581D62  8B 8B FD 01 00 00         MOV ECX,dword ptr [EBX + 0x1fd]
 00581D68  8B BB 07 02 00 00         MOV EDI,dword ptr [EBX + 0x207]
 00581D6E  C1 E1 02                  SHL ECX,0x2

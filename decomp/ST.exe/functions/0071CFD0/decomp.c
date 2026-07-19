@@ -275,7 +275,7 @@ int __thiscall ButtonClassTy::GetMessage(ButtonClassTy *this,int *param_1)
   }
 LAB_0071d51b:
   uVar6 = *(uint *)(this_00 + 0x1c);
-  if ((uVar6 == 0) || ((uVar6 & 0xf0000000) != 0)) goto switchD_0071d549_caseD_1;
+  if ((uVar6 == 0) || ((uVar6 & 0xf0000000) != 0)) goto cf_common_exit_0071DDC0;
   switch(param_1[4]) {
   case 0:
     switch(*(undefined4 *)(this_00 + 0x20)) {
@@ -382,13 +382,13 @@ LAB_0071ddba:
       }
     }
   default:
-    goto switchD_0071d549_caseD_1;
+    goto cf_common_exit_0071DDC0;
   case 0x2c:
     goto switchD_0071d549_caseD_2c;
   case 0x2e:
     goto switchD_0071d549_caseD_2e;
   case 0x60:
-    if (*(int *)(this_00 + 0x1d0) != 0) goto switchD_0071d549_caseD_1;
+    if (*(int *)(this_00 + 0x1d0) != 0) goto cf_common_exit_0071DDC0;
     iVar4 = *(int *)(this_00 + 0x24);
     uVar6 = (uint)*(ushort *)(param_1 + 6);
     uVar8 = (uint)*(ushort *)((int)param_1 + 0x1a);
@@ -423,10 +423,10 @@ switchD_0071d5d0_caseD_1:
       if (*(int *)(this_00 + 0x198) == 0) {
         *(undefined4 *)(this_00 + 0x1a0) = *(undefined4 *)(this_00 + 0x1c);
       }
-      goto switchD_0071d549_caseD_1;
+      goto cf_common_exit_0071DDC0;
     }
     if (((*(int *)(this_00 + 0x198) == 0) && (*(int *)(this_00 + 0x19c) == 0)) &&
-       (*(int *)(this_00 + 0x1c8) == 0)) goto switchD_0071d549_caseD_1;
+       (*(int *)(this_00 + 0x1c8) == 0)) goto cf_common_exit_0071DDC0;
     switch(*(undefined4 *)(this_00 + 0x20)) {
     case 3:
       *(undefined4 *)(this_00 + 0x1c) = *(undefined4 *)(this_00 + 0x1a0);
@@ -469,7 +469,7 @@ LAB_0071d6f7:
     else {
       local_8 = 0xffff;
     }
-    goto switchD_0071d549_caseD_1;
+    goto cf_common_exit_0071DDC0;
   case 0x61:
     goto switchD_0071d549_caseD_61;
   case 0x62:
@@ -479,7 +479,7 @@ LAB_0071d6f7:
   case 100:
     uVar6 = (uint)*(ushort *)(param_1 + 6);
     uVar8 = (uint)*(ushort *)((int)param_1 + 0x1a);
-    if (*(int *)(this_00 + 0x164) == 0) goto switchD_0071d549_caseD_1;
+    if (*(int *)(this_00 + 0x164) == 0) goto cf_common_exit_0071DDC0;
     iVar4 = *(int *)(this_00 + 0x24);
     *(undefined4 *)(this_00 + 0x174) = 0;
     if (((((iVar4 <= (int)uVar6) && ((int)uVar6 <= *(int *)(this_00 + 0x2c) + iVar4)) &&
@@ -547,9 +547,9 @@ switchD_0071d549_caseD_2e:
       }
     }
   }
-  goto switchD_0071d549_caseD_1;
+  goto cf_common_exit_0071DDC0;
 switchD_0071d549_caseD_63:
-  if (*(int *)(this_00 + 0x164) == 0) goto switchD_0071d549_caseD_1;
+  if (*(int *)(this_00 + 0x164) == 0) goto cf_common_exit_0071DDC0;
   uVar6 = (uint)*(ushort *)(param_1 + 6);
   uVar8 = (uint)*(ushort *)((int)param_1 + 0x1a);
   iVar4 = *(int *)(this_00 + 0x24);
@@ -606,7 +606,7 @@ switchD_0071d549_caseD_2c:
         break;
       case 3:
         if ((*(int *)(this_00 + 0x1dc) != 0) && (*(int *)(this_00 + 0x1c) == 3))
-        goto switchD_0071d549_caseD_1;
+        goto cf_common_exit_0071DDC0;
         *(undefined4 *)(this_00 + 0x1a0) = *(undefined4 *)(this_00 + 0x1c);
         break;
       case 6:
@@ -639,7 +639,7 @@ switchD_0071d549_caseD_2c:
       }
     }
   }
-switchD_0071d549_caseD_1:
+cf_common_exit_0071DDC0:
   if (local_8 != 0) {
     RaiseInternalException(local_8,DAT_007ed77c,s_E__Ourlib__sbutton_cpp_007f0a30,0x1a6);
   }

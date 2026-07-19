@@ -105,7 +105,7 @@ void __thiscall CPanelTy::Update4PanelSI(CPanelTy *this)
   STAllPlayersC::GetPanelInfo(DAT_007fa174,4,(int *)puVar1);
   cVar11 = this_00->field_0xbfa;
   if ((local_73 != cVar11) || (local_72 != this_00->field_0xbfb)) {
-LAB_0050e007:
+cf_common_exit_0050E007:
     PaintCtrlObjSI(this_00);
     SetControlObjSI(this_00,'\x01');
     thunk_FUN_00506040((int)this_00);
@@ -259,10 +259,10 @@ LAB_0050e007:
         return;
       }
     }
-    goto LAB_0050e007;
+    goto cf_common_exit_0050E007;
   }
   if ((local_78 != *(int *)&this_00->field_0xbf5) || (local_74 != this_00->field_0xbf9))
-  goto LAB_0050e007;
+  goto cf_common_exit_0050E007;
   cVar11 = '\0';
   cVar12 = '\0';
   uVar5 = 0;

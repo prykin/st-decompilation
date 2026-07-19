@@ -1085,7 +1085,7 @@ LAB_0047402b:
 0047404F  85 C0                     TEST EAX,EAX
 00474051  75 57                     JNZ 0x004740aa
 00474053  C7 86 9A 05 00 00 07 00 00 00  MOV dword ptr [ESI + 0x59a],0x7
-LAB_0047405d:
+STBoatC::LoadObj::cf_common_exit_0047405D:
 0047405D  8B 16                     MOV EDX,dword ptr [ESI]
 0047405F  8B CE                     MOV ECX,ESI
 00474061  FF 92 D8 00 00 00         CALL dword ptr [EDX + 0xd8]
@@ -1380,7 +1380,7 @@ LAB_0047438f:
 00474399  8B CE                     MOV ECX,ESI
 0047439B  E8 3E EE F8 FF            CALL 0x004031de
 004743A0  E9 B8 FC FF FF            JMP 0x0047405d
-LAB_004743a5:
+STBoatC::LoadObj::cf_common_exit_004743A5:
 004743A5  8B CE                     MOV ECX,ESI
 004743A7  E8 1E E4 F8 FF            CALL 0x004027ca
 LAB_004743ac:

@@ -110,7 +110,7 @@ void __thiscall STAllPlayersC::RestoreTmp(STAllPlayersC *this,int param_1)
             iVar3 = CheckTmps(local_8,1,0x19a,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
             if (-1 < iVar3) {
               ActivateTV(this_00,(char)local_8,1,iVar3);
-              goto LAB_0043a47c;
+              goto cf_common_exit_0043A47C;
             }
             iVar3 = PushTV((char)local_8,1);
 LAB_00439c32:
@@ -128,7 +128,7 @@ LAB_00439c32:
             if (0 < iVar3) {
               ActivateTV(this_00,(char)local_8,1,iVar3);
               *(undefined4 *)((int)&DAT_007f4fd3 + iVar10) = 0x19a;
-              goto LAB_0043a47c;
+              goto cf_common_exit_0043A47C;
             }
 LAB_00439aaa:
             uVar5 = CONCAT31((int3)((uint)*(int *)((int)piVar1 + 10) >> 8),(char)piVar1[1]);
@@ -145,13 +145,13 @@ LAB_00439c59:
               (*pcVar2)();
               return;
             }
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
 LAB_00439c87:
           iVar3 = CheckTmps(local_8,1,0x19a,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           PushTV((char)local_8,1);
           uVar9 = extraout_var_05;
@@ -161,7 +161,7 @@ LAB_00439cc7:
         }
         AddObjToTmp(this_00,(char)local_8,1,0,uVar5,uVar4);
         *(undefined4 *)((int)&DAT_007f4fd3 + iVar10) = 0x19a;
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
       if (*(int *)((int)&DAT_007f5023 + iVar10) != 1) {
         iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x17d7,0,0,&DAT_007a4ccc
@@ -171,7 +171,7 @@ LAB_00439cc7:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
       iVar3 = *(int *)((int)&DAT_007f4fd3 + iVar10);
       if (iVar3 < 0x19b) {
@@ -179,7 +179,7 @@ LAB_00439cc7:
           iVar3 = CheckTmps(local_8,1,0x19a,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           if (iVar3 < 0) {
             PushTV((char)local_8,1);
@@ -187,16 +187,16 @@ LAB_00439cc7:
             uVar9 = extraout_var_18;
             goto LAB_00439aaa;
           }
-LAB_0043a107:
+cf_common_join_0043A107:
           local_24 = 1;
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         if (iVar3 == 0) {
           iVar3 = CheckTmps(local_8,1,0x19a,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,1,iVar3);
             *(undefined4 *)((int)&DAT_007f4fd3 + iVar10) = 0x19a;
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           goto LAB_00439c32;
         }
@@ -207,7 +207,7 @@ LAB_00439b10:
         iVar3 = CheckTmps(local_8,1,0x19a,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
         if (0 < iVar3) {
           ActivateTV(this_00,(char)local_8,1,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         PushTV((char)local_8,1);
         ResetActivityFromTmp(this_00,(char)local_8,1,1,0);
@@ -221,7 +221,7 @@ LAB_00439b10:
         (*pcVar2)();
         return;
       }
-      goto LAB_0043a47c;
+      goto cf_common_exit_0043A47C;
     }
     uVar9 = (undefined2)(local_20 * 0x29 >> 0x10);
     if (0x5a < iVar3) {
@@ -238,7 +238,7 @@ LAB_00439b10:
               (*pcVar2)();
               return;
             }
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           iVar3 = *(int *)((int)&DAT_007f4fd3 + iVar10);
           if (iVar3 < 0x19b) {
@@ -253,10 +253,10 @@ LAB_0043986a:
                               CONCAT22(extraout_var_17,*(undefined2 *)(uVar5 + 0x32)));
             if (0 < iVar3) {
               ActivateTV(this_00,cVar11,1,iVar3);
-              goto LAB_0043a47c;
+              goto cf_common_exit_0043A47C;
             }
             if (iVar3 < 0) goto LAB_00439672;
-            goto LAB_0043a107;
+            goto cf_common_join_0043A107;
           }
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x18b4,0,0,
                                      &DAT_007a4ccc,s_STAllPlayersC__RestoreTmp_GAMETY_007a77dc);
@@ -265,7 +265,7 @@ LAB_0043986a:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         *(undefined4 *)((int)&DAT_007f5023 + iVar10) = 1;
         ResetActivityFromTmp(this_00,cVar11,0,0,0);
@@ -283,7 +283,7 @@ LAB_00439956:
                             CONCAT22(extraout_var_00,*(undefined2 *)(uVar5 + 0x32)));
           if (-1 < iVar3) {
             ActivateTV(this_00,(char)uVar4,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           goto LAB_00439986;
         }
@@ -294,7 +294,7 @@ LAB_00439956:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
 LAB_00439cfb:
       iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1998,0,0,&DAT_007a4ccc,
@@ -306,7 +306,7 @@ LAB_00439cfb:
       }
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0x1999);
-      goto LAB_0043a47c;
+      goto cf_common_exit_0043A47C;
     }
     if (iVar3 != 0x5a) {
       if (iVar3 == 0) {
@@ -322,14 +322,14 @@ LAB_00439369:
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,0,iVar3);
             *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
 LAB_0043953a:
           uVar5 = piVar1[1];
           if (uVar5 == local_20) {
             AddObjsToTmp(this_00,local_8,0,0,*(int *)((int)piVar1 + 10));
             *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           goto LAB_00439566;
         }
@@ -337,9 +337,9 @@ LAB_0043953a:
           iVar3 = CheckTmps(local_8,0,0x3c,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,0,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
-          if (-1 < iVar3) goto LAB_0043a107;
+          if (-1 < iVar3) goto cf_common_join_0043A107;
           PushTV((char)local_8,0);
           if ((*(uint *)((int)&DAT_007f4f97 + iVar10) == local_20) && (piVar1[1] == local_20)) {
             CalibrateTmp(this_00,(char)local_8,0,1,*(uint **)((int)piVar1 + 10),(int *)&local_c,
@@ -360,12 +360,12 @@ LAB_0043953a:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         iVar3 = CheckTmps(local_8,0,0x3c,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
         if (0 < iVar3) {
           ActivateTV(this_00,(char)local_8,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         PushTV((char)local_8,0);
         ResetActivityFromTmp(this_00,(char)local_8,0,1,0);
@@ -373,7 +373,7 @@ LAB_0043953a:
         if (piVar1[1] == local_20) {
           AddObjsToTmp(this_00,local_8,0,0,*(int *)((int)piVar1 + 10));
           *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
 LAB_00439469:
         uVar4 = CONCAT31((int3)((uint)*(int *)((int)piVar1 + 10) >> 8),(char)piVar1[1]);
@@ -388,7 +388,7 @@ LAB_00439469:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         *(undefined4 *)((int)&DAT_007f5023 + iVar10) = 0;
         ResetActivityFromTmp(this_00,(char)local_8,1,0,0);
@@ -403,33 +403,33 @@ LAB_00439469:
               (*pcVar2)();
               return;
             }
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           iVar3 = CheckTmps(local_8,0,0x3c,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
           if (0 < iVar3) {
             ActivateTV(this_00,(char)local_8,0,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           PushTV((char)local_8,0);
           uVar9 = extraout_var_13;
           if (piVar1[1] == local_20) {
             AddObjsToTmp(this_00,local_8,0,0,*(int *)((int)piVar1 + 10));
             *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           goto LAB_00439469;
         }
         iVar3 = CheckTmps(local_8,0,0x3c,(char)piVar1[1],*(uint **)((int)piVar1 + 10),0);
         if (-1 < iVar3) {
           ActivateTV(this_00,(char)local_8,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         PushTV((char)local_8,0);
         uVar5 = piVar1[1];
         if (uVar5 == local_20) {
           AddObjsToTmp(this_00,local_8,0,0,*(int *)((int)piVar1 + 10));
           *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
 LAB_00439566:
         uVar4 = CONCAT31((int3)((uint)*(int *)((int)piVar1 + 10) >> 8),(char)piVar1[1]);
@@ -438,7 +438,7 @@ LAB_00439566:
       }
       AddObjToTmp(this_00,(char)local_8,0,0,uVar4,uVar5);
       *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
-      goto LAB_0043a47c;
+      goto cf_common_exit_0043A47C;
     }
     uVar5 = GetObjPtr(local_2c,0xffffffff,CONCAT22(uVar9,(short)piVar1[2]),CASE_4);
     uVar4 = local_8;
@@ -452,7 +452,7 @@ LAB_00439566:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
       iVar3 = *(int *)((int)&DAT_007f4fd3 + iVar10);
       if (iVar3 < 0x19b) {
@@ -464,7 +464,7 @@ LAB_004397fb:
                             CONCAT22(uVar9,*(undefined2 *)(uVar5 + 0x32)));
           if (0 < iVar3) {
             ActivateTV(this_00,(char)uVar4,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
 LAB_00439672:
           PushTV((char)uVar4,1);
@@ -481,9 +481,9 @@ LAB_0043963c:
                           CONCAT22(extraout_var_15,*(undefined2 *)(uVar5 + 0x32)));
         if (0 < iVar3) {
           ActivateTV(this_00,cVar11,1,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
-        if (-1 < iVar3) goto LAB_0043a107;
+        if (-1 < iVar3) goto cf_common_join_0043A107;
         goto LAB_00439672;
       }
       iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x185a,0,0,&DAT_007a4ccc,
@@ -493,7 +493,7 @@ LAB_0043963c:
         (*pcVar2)();
         return;
       }
-      goto LAB_0043a47c;
+      goto cf_common_exit_0043A47C;
     }
     *(undefined4 *)((int)&DAT_007f5023 + iVar10) = 1;
     ResetActivityFromTmp(this_00,cVar11,0,0,0);
@@ -508,7 +508,7 @@ LAB_004396d1:
                           CONCAT22(uVar9,*(undefined2 *)(uVar5 + 0x32)));
         if (0 < iVar3) {
           ActivateTV(this_00,(char)uVar4,1,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         goto LAB_00439986;
       }
@@ -523,7 +523,7 @@ LAB_004398e7:
       uVar7 = extraout_ECX;
       if (0 < iVar3) {
         ActivateTV(this_00,(char)uVar4,1,iVar3);
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
     }
     else {
@@ -536,14 +536,14 @@ LAB_00439712:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
 LAB_00439740:
       iVar3 = CheckTmps(local_8,1,*(int *)(uVar5 + 0x20),*(char *)(uVar5 + 0x24),(uint *)0x0,
                         CONCAT22(extraout_var,*(undefined2 *)(uVar5 + 0x32)));
       if (-1 < iVar3) {
         ActivateTV(this_00,(char)uVar4,1,iVar3);
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
 LAB_00439986:
       iVar3 = PushTV((char)uVar4,1);
@@ -569,7 +569,7 @@ LAB_0043a470:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         iVar3 = *(int *)((int)&DAT_007f4fd3 + iVar10);
         if (iVar3 < 0x19b) {
@@ -581,7 +581,7 @@ LAB_0043a27b:
                               CONCAT22(uVar9,*(undefined2 *)(uVar5 + 0x32)));
             if (0 < iVar3) {
               ActivateTV(this_00,(char)uVar4,1,iVar3);
-              goto LAB_0043a47c;
+              goto cf_common_exit_0043A47C;
             }
             goto LAB_0043a320;
           }
@@ -597,7 +597,7 @@ LAB_0043a247:
           uVar9 = extraout_var_11;
           if (0 < iVar3) {
             ActivateTV(this_00,(char)uVar4,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
         }
         else {
@@ -610,17 +610,17 @@ LAB_0043a2bc:
               (*pcVar2)();
               return;
             }
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
 LAB_0043a2ea:
           iVar3 = CheckTmps(local_8,1,*(int *)(uVar5 + 0x20),*(char *)(uVar5 + 0x24),(uint *)0x0,
                             CONCAT22(extraout_var_10,*(undefined2 *)(uVar5 + 0x32)));
           if (0 < iVar3) {
             ActivateTV(this_00,cVar11,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
 joined_r0x0043a31a:
-          if (-1 < iVar3) goto LAB_0043a107;
+          if (-1 < iVar3) goto cf_common_join_0043A107;
 LAB_0043a320:
           PushTV((char)uVar4,1);
           ResetActivityFromTmp(this_00,(char)uVar4,1,1,0);
@@ -645,7 +645,7 @@ LAB_0043a3c8:
                             CONCAT22(uVar9,*(undefined2 *)(uVar5 + 0x32)));
           if (0 < iVar3) {
             ActivateTV(this_00,(char)uVar4,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           goto LAB_0043a459;
         }
@@ -660,7 +660,7 @@ LAB_0043a394:
         uVar9 = extraout_var_26;
         if (0 < iVar3) {
           ActivateTV(this_00,(char)uVar4,1,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
       }
       else {
@@ -673,14 +673,14 @@ LAB_0043a405:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
 LAB_0043a42c:
         iVar3 = CheckTmps(local_8,1,*(int *)(uVar5 + 0x20),*(char *)(uVar5 + 0x24),(uint *)0x0,
                           CONCAT22(extraout_var_25,*(undefined2 *)(uVar5 + 0x32)));
         if (-1 < iVar3) {
           ActivateTV(this_00,(char)uVar4,1,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
 LAB_0043a459:
         iVar3 = PushTV((char)uVar4,1);
@@ -714,7 +714,7 @@ LAB_00439eb7:
                             CONCAT22(extraout_var_20,*(undefined2 *)(uVar5 + 0x32)));
           if (-1 < iVar3) {
             ActivateTV(this_00,(char)uVar4,1,iVar3);
-            goto LAB_0043a47c;
+            goto cf_common_exit_0043A47C;
           }
           goto LAB_0043a459;
         }
@@ -725,7 +725,7 @@ LAB_00439eb7:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
       if (*(int *)((int)&DAT_007f5023 + iVar10) != 1) {
         iVar3 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x1993,0,0,&DAT_007a4ccc
@@ -735,7 +735,7 @@ LAB_00439eb7:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
       iVar3 = *(int *)((int)&DAT_007f4fd3 + iVar10);
       if (iVar3 < 0x19b) {
@@ -750,7 +750,7 @@ LAB_00439dfb:
                           CONCAT22(extraout_var_06,*(undefined2 *)(uVar5 + 0x32)));
         if (0 < iVar3) {
           ActivateTV(this_00,cVar11,1,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         goto joined_r0x0043a31a;
       }
@@ -761,7 +761,7 @@ LAB_00439dfb:
         (*pcVar2)();
         return;
       }
-      goto LAB_0043a47c;
+      goto cf_common_exit_0043A47C;
     }
     local_20 = GetObjPtr(local_2c,(uint)*(byte *)(piVar1 + 1),
                          CONCAT22((short)(local_20 * 5 >> 0x10),(short)piVar1[2]),CASE_3);
@@ -777,7 +777,7 @@ LAB_0043a177:
                           CONCAT22(uVar9,(short)piVar1[2]));
         if (0 < iVar3) {
           ActivateTV(this_00,(char)uVar4,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         uVar6 = CONCAT22(extraout_var_09,(short)piVar1[2]);
         uVar8 = CONCAT31((int3)((uint)extraout_EDX >> 8),(char)piVar1[1]);
@@ -789,7 +789,7 @@ LAB_0043a177:
                           CONCAT22(extraout_var_07,(short)piVar1[2]));
         if (0 < iVar3) {
           ActivateTV(this_00,cVar11,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         PushTV(cVar11,0);
         uVar7 = ResetActivityFromTmp(this_00,cVar11,0,1,0);
@@ -807,15 +807,15 @@ LAB_0043a177:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         iVar3 = CheckTmps(local_8,0,*(int *)(local_20 + 0x20),(char)piVar1[1],(uint *)0x0,
                           CONCAT22(extraout_var_21,(short)piVar1[2]));
         if (0 < iVar3) {
           ActivateTV(this_00,cVar11,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
-        if (-1 < iVar3) goto LAB_0043a107;
+        if (-1 < iVar3) goto cf_common_join_0043A107;
         PushTV(cVar11,0);
         ResetActivityFromTmp(this_00,cVar11,0,1,0);
         uVar6 = CONCAT22(extraout_var_03,(short)piVar1[2]);
@@ -833,7 +833,7 @@ LAB_0043a177:
           (*pcVar2)();
           return;
         }
-        goto LAB_0043a47c;
+        goto cf_common_exit_0043A47C;
       }
       *(undefined4 *)((int)&DAT_007f5023 + iVar10) = 0;
       ResetActivityFromTmp(this_00,cVar11,1,0,0);
@@ -847,7 +847,7 @@ LAB_0043a177:
                           CONCAT22(extraout_var_08,(short)piVar1[2]));
         if (0 < iVar3) {
           ActivateTV(this_00,cVar11,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         uVar7 = PushTV(cVar11,0);
         uVar6 = CONCAT22(extraout_var_23,(short)piVar1[2]);
@@ -864,13 +864,13 @@ LAB_0043a177:
             (*pcVar2)();
             return;
           }
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         iVar3 = CheckTmps(local_8,0,*(int *)(local_20 + 0x20),(char)piVar1[1],(uint *)0x0,
                           CONCAT22(extraout_var_22,(short)piVar1[2]));
         if (-1 < iVar3) {
           ActivateTV(this_00,cVar11,0,iVar3);
-          goto LAB_0043a47c;
+          goto cf_common_exit_0043A47C;
         }
         PushTV(cVar11,0);
         uVar6 = CONCAT22(extraout_var_02,(short)piVar1[2]);
@@ -881,7 +881,7 @@ LAB_0043a177:
     }
   }
   AddObjToTmp2(this_00,(char)uVar4,iVar10,0,iVar3,uVar8,uVar6);
-LAB_0043a47c:
+cf_common_exit_0043A47C:
   if (((local_24 == 1) &&
       (uVar5 = CONCAT22((short)((uint)&local_14 >> 0x10),(short)local_28[2]),
       iVar3 = GetCamPoint(*local_28,CONCAT31((int3)(uVar5 >> 8),(char)local_28[1]),

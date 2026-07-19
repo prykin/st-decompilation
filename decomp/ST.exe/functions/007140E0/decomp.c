@@ -63,7 +63,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         }
         *(undefined4 *)(*(int *)this + 0x82) = 0xffffffff;
       }
-      goto LAB_00714acb;
+      goto cf_common_exit_00714ACB;
     }
     iVar8 = *(int *)((int)this + 0x7c);
     if (-1 < iVar8) {
@@ -238,7 +238,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         *(undefined1 *)puVar4 = local_5;
       }
     }
-    if (param_1 == 0) goto LAB_00714acb;
+    if (param_1 == 0) goto cf_common_exit_00714ACB;
     iVar7 = *(int *)((int)this + 0x70);
     uVar13 = *(undefined4 *)((int)this + 0x94);
   }
@@ -263,7 +263,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         }
         *(undefined4 *)(*(int *)this + 0x82) = 0xffffffff;
       }
-      goto LAB_00714acb;
+      goto cf_common_exit_00714ACB;
     }
     if ((*(int *)(this_00 + 0x5c) < 0) && (*(int *)((int)this + 0x74) < -4)) {
       param_2 = '\x01';
@@ -501,13 +501,13 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
         *(undefined1 *)puVar4 = local_5;
       }
     }
-    if (param_1 == 0) goto LAB_00714acb;
+    if (param_1 == 0) goto cf_common_exit_00714ACB;
     if (param_2 == '\x01') {
       FUN_006b4170(local_c,local_10,0,0,*(int *)((int)this + 0x5c),*(int *)((int)this + 0x60),
                    (char)*(undefined4 *)((int)this + 0xa0));
       ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),
                      *(int *)((int)this + 0x70),*(undefined4 *)((int)this + 0x94),iVar8,local_14);
-      goto LAB_00714acb;
+      goto cf_common_exit_00714ACB;
     }
     if (local_18 != 0) {
       iVar9 = *(int *)this;
@@ -523,7 +523,7 @@ int __thiscall FUN_007140e0(void *this,int param_1,char param_2)
   }
   ccFntTy::WrTxt(*(ccFntTy **)this,*(uint **)((int)this + 0x88),*(int *)((int)this + 0x6c),iVar7,
                  uVar13,iVar8,iVar9);
-LAB_00714acb:
+cf_common_exit_00714ACB:
   *(int *)((int)this + 0xc) = *(int *)((int)this + 0xc) + 1;
   *(int *)((int)this + 4) = *(int *)((int)this + 4) + 1;
   FUN_007109f0(*(void **)this,local_6c);

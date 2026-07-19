@@ -246,7 +246,7 @@ LAB_0068d1b8:
 0068D1E2  56                        PUSH ESI
 0068D1E3  E8 B8 88 02 00            CALL 0x006b5aa0
 0068D1E8  8B 5D F4                  MOV EBX,dword ptr [EBP + -0xc]
-LAB_0068d1eb:
+FUN_0068cec0::cf_continue_loop_0068D1EB:
 0068D1EB  E8 8F 4B D7 FF            CALL 0x00401d7f
 0068D1F0  33 F6                     XOR ESI,ESI
 0068D1F2  3B C6                     CMP EAX,ESI

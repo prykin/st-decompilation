@@ -1366,7 +1366,7 @@ LAB_0050b375:
 0050B385  51                        PUSH ECX
 LAB_0050b386:
 0050B386  68 13 27 00 00            PUSH 0x2713
-LAB_0050b38b:
+CPanelTy::PaintCtrlObjSI::cf_common_exit_0050B38B:
 0050B38B  E8 B0 4D 1A 00            CALL 0x006b0140
 0050B390  8B 8B B8 01 00 00         MOV ECX,dword ptr [EBX + 0x1b8]
 0050B396  50                        PUSH EAX
@@ -2220,7 +2220,7 @@ LAB_0050bd17:
 0050BD8A  6A FF                     PUSH -0x1
 0050BD8C  6A FF                     PUSH -0x1
 0050BD8E  68 3A F3 80 00            PUSH 0x80f33a
-LAB_0050bd93:
+CPanelTy::PaintCtrlObjSI::cf_common_exit_0050BD93:
 0050BD93  E8 28 5C 20 00            CALL 0x007119c0
 switchD_0050a9c9::caseD_5f:
 0050BD98  8B CB                     MOV ECX,EBX

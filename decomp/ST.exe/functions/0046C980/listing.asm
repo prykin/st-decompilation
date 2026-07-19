@@ -203,7 +203,7 @@ LAB_0046cbb8:
 0046CBDC  CC                        INT3
 LAB_0046cbdd:
 0046CBDD  68 55 25 00 00            PUSH 0x2555
-LAB_0046cbe2:
+STBoatC::BackBuild::cf_error_exit_0046CBE2:
 0046CBE2  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 0046CBE7  68 3C 9D 7A 00            PUSH 0x7a9d3c
 0046CBEC  50                        PUSH EAX

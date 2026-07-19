@@ -694,7 +694,7 @@ LAB_004f88df:
 LAB_004f88e6:
 004F88E6  8B CE                     MOV ECX,ESI
 004F88E8  E8 01 D5 F0 FF            CALL 0x00405dee
-switchD_004f86b0::caseD_2:
+CPanelTy::PaintTV::cf_switch_join_004F88ED:
 004F88ED  8B 86 D8 01 00 00         MOV EAX,dword ptr [ESI + 0x1d8]
 004F88F3  85 C0                     TEST EAX,EAX
 004F88F5  0F 84 A1 00 00 00         JZ 0x004f899c

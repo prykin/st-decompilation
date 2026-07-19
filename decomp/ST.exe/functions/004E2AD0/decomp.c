@@ -21,7 +21,7 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
   TLOBaseTy::RotateSpr(this,1);
   thunk_FUN_004e5eb0(*(int *)((int)this + 0x24),param_2);
   if (*(uint *)((int)this + 0x24) != (uint)*(byte *)(*(int *)((int)this + 0x10) + 0x112d))
-  goto LAB_004e2b69;
+  goto cf_common_exit_004E2B69;
   uVar1 = thunk_FUN_004406c0(*(char *)((int)this + 0x23d));
   uVar1 = uVar1 & 0xff;
   if (uVar1 == 1) {
@@ -31,14 +31,14 @@ undefined4 __thiscall FUN_004e2ad0(void *this,int param_1,uint param_2)
   else {
     if (uVar1 == 2) {
       (**(code **)(*(int *)this + 0x90))(4,0x2d4);
-      goto LAB_004e2b69;
+      goto cf_common_exit_004E2B69;
     }
-    if (uVar1 != 3) goto LAB_004e2b69;
+    if (uVar1 != 3) goto cf_common_exit_004E2B69;
     iVar3 = *(int *)this;
     uVar5 = 0x38f;
   }
   (**(code **)(iVar3 + 0x90))(4,uVar5);
-LAB_004e2b69:
+cf_common_exit_004E2B69:
   if (DAT_008117bc == (undefined4 *)0x0) {
     return 0;
   }

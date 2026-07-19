@@ -93,7 +93,7 @@ LAB_00419f53:
 00419F63  74 32                     JZ 0x00419f97
 00419F65  48                        DEC EAX
 00419F66  0F 84 E9 00 00 00         JZ 0x0041a055
-LAB_00419f6c:
+STGameObjC::SetSelfCheckFlag::cf_common_exit_00419F6C:
 00419F6C  68 58 4E 7A 00            PUSH 0x7a4e58
 00419F71  68 CC 4C 7A 00            PUSH 0x7a4ccc
 00419F76  56                        PUSH ESI

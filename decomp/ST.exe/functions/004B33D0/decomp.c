@@ -474,7 +474,7 @@ switchD_004b38f0_caseD_3a:
   iVar6 = 0;
 LAB_004b3d9a:
   if (10 < iVar6) {
-LAB_004b60cd:
+cf_break_loop_004B60CD:
     if (local_20 != (uint *)0x0) {
       FUN_006ae110((byte *)local_20);
     }
@@ -713,7 +713,7 @@ LAB_004b4689:
           sVar13 = DAT_007fb242;
         }
         if (sVar13 <= iVar21) break;
-LAB_004b48cc:
+cf_continue_loop_004B48CC:
         for (local_74 = 0; local_74 < local_64 * 8; local_74 = local_74 + 1) {
           if (local_74 < local_64 * 2) {
             local_11c = (*param_2 - local_64) + local_74;
@@ -766,7 +766,7 @@ LAB_004b49b4:
                     iVar6 = iVar16 + iVar6 + local_11c;
                     local_118 = iVar6;
                     bVar24 = *(short *)(local_27c + iVar6 * 2) == 0x20;
-                    if (!bVar24) goto LAB_004b5fb6;
+                    if (!bVar24) goto cf_continue_loop_004B5FB6;
                     if ((local_10c != 0) && (local_124 != 0)) {
                       local_124 = 0;
                       local_118 = iVar6 + 1;
@@ -941,7 +941,7 @@ LAB_004b4f35:
                           if (iVar21 == 4) {
                             if ((uVar17 == 0) ||
                                (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar6))
-                            goto LAB_004b5648;
+                            goto cf_common_join_004B5648;
                             local_a0 = local_108[0];
                             local_9c = local_11c;
                             local_98 = local_138;
@@ -952,13 +952,13 @@ LAB_004b4f35:
                             puVar7[1] = 0;
                             goto LAB_004b56e4;
                           }
-                          if (local_4c[4] != 0) goto LAB_004b5648;
+                          if (local_4c[4] != 0) goto cf_common_join_004B5648;
                           if (((iVar21 == 1) || (iVar21 == 6)) || ((iVar21 == 2 || (iVar21 == 3))))
                           {
                             iVar21 = thunk_FUN_004406c0(bVar25);
                             GVar11 = (-(uint)((char)iVar21 != '\x03') & 0xffffffd6) + 100;
                             if (local_270 == 0) {
-                              if (local_108[0] == GVar11) goto LAB_004b5648;
+                              if (local_108[0] == GVar11) goto cf_common_join_004B5648;
 LAB_004b5614:
                               if (((local_270 != 0) &&
                                   (iVar21 = thunk_FUN_004406c0(bVar25), (char)iVar21 != '\x03')) ||
@@ -1019,18 +1019,19 @@ LAB_004b5f7b:
                             else if (local_108[0] == GVar11) goto LAB_004b5614;
                           }
                           else {
-                            if ((local_4c[6] != 0) || (local_4c[1] != 0)) goto LAB_004b5648;
+                            if ((local_4c[6] != 0) || (local_4c[1] != 0))
+                            goto cf_common_join_004B5648;
                             if (local_60 == 0) {
                               local_64 = local_64 + -5;
                               if (local_64 < 0) {
                                 local_64 = 0;
                               }
                               local_60 = 1;
-                              goto LAB_004b48cc;
+                              goto cf_continue_loop_004B48CC;
                             }
                             if (iVar21 == 7) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != iVar6)
-                              goto LAB_004b5648;
+                              goto cf_common_join_004B5648;
                               iVar6 = aiStack_314[local_108[0]];
                               if ((iVar6 == 0) || (*(int *)(iVar6 + 0xc) == 0)) {
 LAB_004b50f4:
@@ -1093,18 +1094,18 @@ LAB_004b50f4:
                               break;
                             }
 LAB_004b5101:
-                            if (local_4c[7] != 0) goto LAB_004b5648;
+                            if (local_4c[7] != 0) goto cf_common_join_004B5648;
                             if (local_274 == 0) {
                               local_64 = local_64 + -2;
                               if (local_64 < 0) {
                                 local_64 = 0;
                               }
                               local_274 = 1;
-                              goto LAB_004b48cc;
+                              goto cf_continue_loop_004B48CC;
                             }
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 8) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
-                              goto LAB_004b5648;
+                              goto cf_common_join_004B5648;
                               iVar6 = aiStack_314[local_108[0]];
                               if ((iVar6 == 0) || (*(int *)(iVar6 + 0xc) == 0)) {
 LAB_004b51da:
@@ -1167,18 +1168,18 @@ LAB_004b51da:
                                 break;
                               }
                             }
-                            if (local_4c[8] != 0) goto LAB_004b5648;
+                            if (local_4c[8] != 0) goto cf_common_join_004B5648;
                             if (local_26c == 0) {
                               local_64 = local_64 + -2;
                               if (local_64 < 0) {
                                 local_64 = 0;
                               }
                               local_26c = 1;
-                              goto LAB_004b48cc;
+                              goto cf_continue_loop_004B48CC;
                             }
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 9) {
                               if (*(int *)(&DAT_00791d68 + local_108[0] * 4) != local_ac)
-                              goto LAB_004b5648;
+                              goto cf_common_join_004B5648;
                               iVar6 = aiStack_314[local_108[0]];
                               if ((iVar6 == 0) || (*(int *)(iVar6 + 0xc) == 0)) {
 LAB_004b52b6:
@@ -1246,14 +1247,14 @@ LAB_004b52b6:
                                 break;
                               }
                             }
-                            if (local_4c[9] != 0) goto LAB_004b5648;
+                            if (local_4c[9] != 0) goto cf_common_join_004B5648;
                             if (local_5c == 0) {
                               local_64 = local_64 + -1;
                               if (local_64 < 0) {
                                 local_64 = 0;
                               }
                               local_5c = 1;
-                              goto LAB_004b48cc;
+                              goto cf_continue_loop_004B48CC;
                             }
                             if (*(int *)(&DAT_00790888 + local_108[0] * 4) == 10) {
                               local_128 = 0;
@@ -1391,7 +1392,7 @@ LAB_004b52b6:
                               }
                             }
                           }
-LAB_004b5648:
+cf_common_join_004B5648:
                           iVar21 = FUN_006b1190(param_2[3],local_108);
                           iVar6 = local_ac;
                           uVar17 = local_268;
@@ -1401,7 +1402,7 @@ LAB_004b5648:
                     }
                   }
                 }
-                goto LAB_004b5fb6;
+                goto cf_continue_loop_004B5FB6;
               }
               local_114 = local_54;
               local_64 = local_54;
@@ -1411,12 +1412,12 @@ LAB_004b5648:
 LAB_004b5fd6:
             if ((((((local_4c[1] == 0) && (local_4c[6] == 0)) && (local_4c[2] == 0)) &&
                  ((local_4c[3] == 0 && (local_4c[7] == 0)))) && (local_4c[8] == 0)) &&
-               ((local_4c[9] == 0 && (local_4c[10] == 0)))) goto LAB_004b60cd;
+               ((local_4c[9] == 0 && (local_4c[10] == 0)))) goto cf_break_loop_004B60CD;
           }
         }
         iVar21 = local_64 + 1;
       }
-      goto LAB_004b60cd;
+      goto cf_break_loop_004B60CD;
     }
     local_74 = 0;
     if (0 < local_64 << 3) {
@@ -1617,9 +1618,9 @@ LAB_004b5727:
   } while (iVar21 < 0x24);
   if (iVar6 == 0) {
     local_64 = 0;
-    goto LAB_004b48cc;
+    goto cf_continue_loop_004B48CC;
   }
-LAB_004b5fb6:
+cf_continue_loop_004B5FB6:
   local_254[0] = local_254[0] + 1;
   if (DAT_007fb244 + -1 <= local_254[0]) goto LAB_004b5fd6;
   goto LAB_004b49b4;

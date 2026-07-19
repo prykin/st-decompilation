@@ -1199,7 +1199,7 @@ LAB_004729bd:
 00472A12  8A 8B F0 2D 47 00         MOV CL,byte ptr [EBX + 0x472df0]
 switchD_00472a18::switchD:
 00472A18  FF 24 8D E0 2D 47 00      JMP dword ptr [ECX*0x4 + 0x472de0]
-switchD_0047251b::caseD_1:
+STBoatC::Guard::cf_common_exit_00472A1F:
 00472A1F  C7 86 7F 04 00 00 FF FF FF FF  MOV dword ptr [ESI + 0x47f],0xffffffff
 00472A29  E9 82 02 00 00            JMP 0x00472cb0
 switchD_004727e9::caseD_9:
@@ -1408,7 +1408,7 @@ LAB_00472c6a:
 LAB_00472ca0:
 00472CA0  C7 86 36 08 00 00 01 00 00 00  MOV dword ptr [ESI + 0x836],0x1
 00472CAA  89 9E 2E 08 00 00         MOV dword ptr [ESI + 0x82e],EBX
-switchD_0047251b::caseD_2:
+STBoatC::Guard::cf_common_exit_00472CB0:
 00472CB0  8B 06                     MOV EAX,dword ptr [ESI]
 00472CB2  8B CE                     MOV ECX,ESI
 00472CB4  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

@@ -670,7 +670,7 @@ LAB_004435b4:
 004435C7  53                        PUSH EBX
 LAB_004435c8:
 004435C8  E8 73 AB 26 00            CALL 0x006ae140
-LAB_004435cd:
+STAllPlayersC::_AssignMDPairs::cf_common_join_004435CD:
 004435CD  8B 55 C0                  MOV EDX,dword ptr [EBP + -0x40]
 004435D0  8B 85 4C FF FF FF         MOV EAX,dword ptr [EBP + 0xffffff4c]
 004435D6  42                        INC EDX

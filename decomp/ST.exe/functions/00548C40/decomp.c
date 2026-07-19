@@ -301,7 +301,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       local_1c7 = *(undefined4 *)(*(int *)&pCVar8[0xb].field_0x4e + 0x18);
       puVar17 = (uint *)local_1e4;
       puVar16 = (undefined4 *)0x17;
-      goto LAB_0054a19a;
+      goto cf_common_join_0054A19A;
     case 0xe:
       if (DAT_007fb2ac != 0) {
         local_b8 = *(undefined4 *)&pCVar8[0xb].field_0x5e;
@@ -462,7 +462,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
       puVar17 = (uint *)local_120;
       puVar16 = (undefined4 *)0x16;
     }
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 5:
   case 6:
     iVar9 = FUN_006e1dd0(DAT_00807598,
@@ -602,7 +602,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_1a3 = *(undefined4 *)(*(int *)&pCVar8[0xb].field_0x4e + 0x18);
     puVar17 = (uint *)local_1c0;
     puVar16 = (undefined4 *)0x17;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0xf:
   case 0x10:
     iVar9 = FUN_006e1dd0(DAT_00807598,
@@ -670,7 +670,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     thunk_FUN_004162b0(*(void **)&pCVar8[0xb].field_0x4e,&local_cf,&local_cd,&local_cb);
     puVar17 = (uint *)&local_d0;
     puVar16 = (undefined4 *)0x1f;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0x14:
     if (DAT_007fb2ac != 0) {
       local_c8 = *(undefined4 *)&pCVar8[0xb].field_0x5e;
@@ -725,7 +725,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_260[0] = ((*(short *)&pCVar8[0xb].field_0x48 != 0x18) - 1U & 0xeb) + 0x18;
     puVar17 = (uint *)local_260;
     puVar16 = (undefined4 *)0x17;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0x17:
     if (*(int *)&pCVar8[0xb].field_0x4e == 0) break;
     uVar6 = *(undefined4 *)(*(int *)&pCVar8[0xb].field_0x4e + 0x18);
@@ -733,7 +733,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     _local_78 = CONCAT31((int3)uVar6,1);
     local_74 = (undefined1)((uint)uVar6 >> 0x18);
     puVar16 = (undefined4 *)0x21;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0x19:
     iVar9 = FUN_006e1dd0(DAT_00807598,
                          *(int *)((int)&pCVar8[1].field_0060 + 1) - *(int *)&pCVar8[0xc].field_0x2,
@@ -771,7 +771,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     _local_80 = CONCAT31((int3)uVar6,4);
     local_7c = (undefined1)((uint)uVar6 >> 0x18);
     puVar16 = (undefined4 *)0x21;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0x1b:
     pvVar5 = *(void **)&pCVar8[0xb].field_0x4e;
     if (pvVar5 == (void *)0x0) break;
@@ -788,7 +788,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     puVar17 = (uint *)local_23c;
     local_23c[0] = 0x13;
     puVar16 = (undefined4 *)0x17;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0x1c:
     local_108 = (uint)(byte)pCVar8[0xb].field_0x5e;
     local_104 = 0;
@@ -811,7 +811,7 @@ void __thiscall CursorClassTy::TakeCmdToRun(CursorClassTy *this,int param_1)
     local_f8 = (undefined1)((uint)*(undefined4 *)&pCVar8[2].field_0x2f >> 0x18);
 LAB_0054a196:
     puVar16 = (undefined4 *)0x18;
-    goto LAB_0054a19a;
+    goto cf_common_join_0054A19A;
   case 0x1d:
     if (*(int *)&pCVar8[0xb].field_0x56 == 0x18) {
       iVar9 = FUN_006e1dd0(DAT_00807598,
@@ -895,7 +895,7 @@ LAB_00549b36:
     local_26 = (undefined1)((ushort)local_34 >> 8);
     local_2c = 3;
     puVar16 = (undefined4 *)0x1f;
-LAB_0054a19a:
+cf_common_join_0054A19A:
     thunk_FUN_0054edf0(puVar16,puVar17,0,0xffffffff);
     break;
   case 0x1f:

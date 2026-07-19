@@ -427,7 +427,7 @@ LAB_0057e616:
 0057E616  8B 83 61 02 00 00         MOV EAX,dword ptr [EBX + 0x261]
 0057E61C  24 FB                     AND AL,0xfb
 0057E61E  89 83 61 02 00 00         MOV dword ptr [EBX + 0x261],EAX
-LAB_0057e624:
+STDcResourcC::GetMessage::cf_common_exit_0057E624:
 0057E624  F6 83 61 02 00 00 04      TEST byte ptr [EBX + 0x261],0x4
 0057E62B  0F 85 95 07 00 00         JNZ 0x0057edc6
 0057E631  8B 0D 74 A1 7F 00         MOV ECX,dword ptr [0x007fa174]
@@ -741,7 +741,7 @@ LAB_0057e9ad:
 0057E9AD  8B 8B 11 02 00 00         MOV ECX,dword ptr [EBX + 0x211]
 0057E9B3  E8 C8 7B 16 00            CALL 0x006e6580
 0057E9B8  C7 83 73 02 00 00 00 00 00 00  MOV dword ptr [EBX + 0x273],0x0
-LAB_0057e9c2:
+STDcResourcC::GetMessage::cf_common_join_0057E9C2:
 0057E9C2  8B 03                     MOV EAX,dword ptr [EBX]
 0057E9C4  8B CB                     MOV ECX,EBX
 0057E9C6  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

@@ -128,7 +128,7 @@ LAB_0046ab92:
 0046ABBD  85 C0                     TEST EAX,EAX
 0046ABBF  75 0A                     JNZ 0x0046abcb
 0046ABC1  C7 86 D9 04 00 00 05 00 00 00  MOV dword ptr [ESI + 0x4d9],0x5
-LAB_0046abcb:
+STBoatC::BackLoadRC::cf_common_exit_0046ABCB:
 0046ABCB  8B 06                     MOV EAX,dword ptr [ESI]
 0046ABCD  8B CE                     MOV ECX,ESI
 0046ABCF  FF 90 D8 00 00 00         CALL dword ptr [EAX + 0xd8]

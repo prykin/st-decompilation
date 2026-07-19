@@ -201,7 +201,7 @@ LAB_00410ff2:
 00410FF8  A1 20 4D 7F 00            MOV EAX,[0x007f4d20]
 00410FFD  3B D0                     CMP EDX,EAX
 00410FFF  0F 8C 59 01 00 00         JL 0x0041115e
-LAB_00411005:
+FUN_00410dc0::cf_break_loop_00411005:
 00411005  33 FF                     XOR EDI,EDI
 00411007  3B D7                     CMP EDX,EDI
 00411009  89 7D 14                  MOV dword ptr [EBP + 0x14],EDI

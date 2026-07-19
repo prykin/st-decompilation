@@ -129,7 +129,7 @@ LAB_00621cdd:
 LAB_00621d1c:
 00621D1C  89 BB AE 02 00 00         MOV dword ptr [EBX + 0x2ae],EDI
 00621D22  8B F7                     MOV ESI,EDI
-LAB_00621d24:
+STMineSetC::GetMessage::cf_common_exit_00621D24:
 00621D24  85 F6                     TEST ESI,ESI
 00621D26  75 1A                     JNZ 0x00621d42
 00621D28  8B CB                     MOV ECX,EBX

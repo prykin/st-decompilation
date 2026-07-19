@@ -78,7 +78,7 @@ void FUN_006f5760(undefined1 *param_1,int param_2,uint *param_3,int param_4,int 
           do {
             if (*(uint *)((int)param_3 + -2) < uVar7) {
               DAT_00857000 = '\x01';
-              goto LAB_006f589b;
+              goto cf_continue_loop_006F589B;
             }
             *param_1 = uVar4;
             param_1 = param_1 + 1;
@@ -103,7 +103,7 @@ LAB_006f5824:
       return;
     }
   } while( true );
-LAB_006f589b:
+cf_continue_loop_006F589B:
   do {
     puVar8 = (uint *)((int)param_3 + 2);
     param_1 = param_1 + 1;
@@ -196,6 +196,6 @@ LAB_006f58d2:
     uVar5 = uVar6;
     puVar8 = param_3;
   } while (uVar7 <= *(uint *)((int)param_3 + -2));
-  goto LAB_006f589b;
+  goto cf_continue_loop_006F589B;
 }
 

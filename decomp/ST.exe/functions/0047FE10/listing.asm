@@ -70,7 +70,7 @@ switchD_0047fed8::switchD:
 switchD_0047fed8::caseD_0:
 0047FEDF  89 86 D7 06 00 00         MOV dword ptr [ESI + 0x6d7],EAX
 0047FEE5  89 BE E3 06 00 00         MOV dword ptr [ESI + 0x6e3],EDI
-LAB_0047feeb:
+STBoatC::Scout::cf_common_exit_0047FEEB:
 0047FEEB  0F BF 96 CF 06 00 00      MOVSX EDX,word ptr [ESI + 0x6cf]
 0047FEF2  0F BF 86 CD 06 00 00      MOVSX EAX,word ptr [ESI + 0x6cd]
 0047FEF9  0F BF 8E CB 06 00 00      MOVSX ECX,word ptr [ESI + 0x6cb]
@@ -218,7 +218,7 @@ switchD_004800d9::switchD:
 switchD_004800d9::caseD_0:
 004800E0  89 86 D7 06 00 00         MOV dword ptr [ESI + 0x6d7],EAX
 004800E6  89 BE E3 06 00 00         MOV dword ptr [ESI + 0x6e3],EDI
-LAB_004800ec:
+STBoatC::Scout::cf_common_exit_004800EC:
 004800EC  0F BF 86 D5 06 00 00      MOVSX EAX,word ptr [ESI + 0x6d5]
 004800F3  0F BF 8E D3 06 00 00      MOVSX ECX,word ptr [ESI + 0x6d3]
 004800FA  0F BF 96 D1 06 00 00      MOVSX EDX,word ptr [ESI + 0x6d1]

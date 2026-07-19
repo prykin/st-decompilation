@@ -541,7 +541,7 @@ LAB_005eedca:
 005EEDD5  8B 86 E0 02 00 00         MOV EAX,dword ptr [ESI + 0x2e0]
 005EEDDB  3B C8                     CMP ECX,EAX
 005EEDDD  75 0A                     JNZ 0x005eede9
-LAB_005eeddf:
+FUN_005ee6e0::cf_common_exit_005EEDDF:
 005EEDDF  C7 86 3A 02 00 00 06 00 00 00  MOV dword ptr [ESI + 0x23a],0x6
 LAB_005eede9:
 005EEDE9  6A 01                     PUSH 0x1

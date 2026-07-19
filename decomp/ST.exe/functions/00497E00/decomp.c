@@ -354,7 +354,7 @@ LAB_004984e9:
     default:
       goto switchD_004984e0_default;
     }
-    goto LAB_004984f2;
+    goto cf_common_exit_004984F2;
   }
   if (*(int *)&this_00->field_0x89 == 1) {
     if (this_00->field_01E6 == 1) {
@@ -385,7 +385,7 @@ LAB_004984e9:
       this_00->field_01E6 = 2;
       puVar3 = (uint *)GrpAttack(this_00,0);
     }
-LAB_004984f2:
+cf_common_exit_004984F2:
     if (puVar3 != (uint *)0x0) {
 switchD_004984e0_default:
       g_currentExceptionFrame = local_84.previous;
@@ -402,7 +402,7 @@ switchD_004984e0_default:
         this_00->field_01E6 = 7;
         puVar3 = (uint *)GrpGoToDeep(this_00,0);
       }
-      goto LAB_004984f2;
+      goto cf_common_exit_004984F2;
     }
     if (*(int *)&this_00->field_0x9d == 1) {
       bVar10 = this_00->field_01E6 == 6;
@@ -413,7 +413,7 @@ switchD_004984e0_default:
       if (puVar3 == (uint *)0xffffffff) {
         return 0xffff;
       }
-      goto LAB_004984f2;
+      goto cf_common_exit_004984F2;
     }
     if (*(int *)&this_00->field_0xa5 == 1) {
       bVar10 = this_00->field_01E6 == 8;
@@ -431,7 +431,7 @@ switchD_004984e0_default:
           this_00->field_01E6 = 9;
           puVar3 = (uint *)GrpBuild(this_00,0);
         }
-        goto LAB_004984f2;
+        goto cf_common_exit_004984F2;
       }
       if (*(int *)&this_00->field_0xad == 1) {
         if (this_00->field_01E6 == 10) {
@@ -554,7 +554,7 @@ switchD_004984e0_default:
               puVar3 = (uint *)Scout(this_00,0);
             }
           }
-          goto LAB_004984f2;
+          goto cf_common_exit_004984F2;
         }
         if (this_00->field_01E6 == 0xc) {
           puVar3 = GrpUnLoadObj(this_00,1);

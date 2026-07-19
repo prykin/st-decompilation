@@ -76,7 +76,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
     iVar16 = (int)*(short *)&this->field_0x605;
     iVar6 = (int)*(short *)&this->field_0x603;
     this->field_0611 = CASE_0;
-    goto LAB_00476dba;
+    goto cf_common_exit_00476DBA;
   }
   SVar1 = this->field_0611;
   if (SVar1 == CASE_0) {
@@ -94,7 +94,7 @@ int __thiscall STBoatC::Capture(STBoatC *this,int param_1)
         iVar8 = (int)*(short *)&this->field_0x607;
         iVar16 = (int)*(short *)&this->field_0x605;
         iVar6 = (int)*(short *)&this->field_0x603;
-LAB_00476dba:
+cf_common_exit_00476DBA:
         thunk_FUN_00481520(this,iVar6,iVar16,iVar8);
         iVar6 = thunk_FUN_00460260(this,0);
         return (-(uint)(iVar6 != -1) & 3) - 1;
@@ -119,7 +119,7 @@ LAB_00476dba:
         iVar8 = (int)*(short *)&this->field_0x607;
         iVar16 = (int)*(short *)&this->field_0x605;
         iVar6 = (int)*(short *)&this->field_0x603;
-        goto LAB_00476dba;
+        goto cf_common_exit_00476DBA;
       }
       break;
     case -1:
@@ -240,7 +240,7 @@ LAB_00476dba:
       }
       if (uVar10 == 0) {
         *(undefined4 *)&this->field_0x615 = 2;
-        goto LAB_00477b2e;
+        goto cf_common_exit_00477B2E;
       }
     }
     if (*(int *)&this->field_0x615 == 2) {
@@ -346,9 +346,9 @@ LAB_00476dba:
           else {
             if (SVar2 == CASE_12) {
               (*this->vtable->vfunc_90)(3,0x151);
-              goto LAB_0047746b;
+              goto cf_common_exit_0047746B;
             }
-            if (SVar2 != CASE_22) goto LAB_0047746b;
+            if (SVar2 != CASE_22) goto cf_common_exit_0047746B;
             pSVar13 = this->vtable;
             uVar25 = 0x1d2;
           }
@@ -391,7 +391,7 @@ LAB_00476dba:
                              (int)*(short *)&this->field_0x60b,(int)*(short *)&this->field_0x60d);
           thunk_FUN_0045ff50(this,0);
         }
-LAB_00477b2e:
+cf_common_exit_00477B2E:
         iVar6 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
       }
@@ -422,7 +422,7 @@ LAB_00477b2e:
         }
         if (uVar10 == 0) {
           *(undefined4 *)&this->field_0x615 = 2;
-          goto LAB_00477b2e;
+          goto cf_common_exit_00477B2E;
         }
       }
       if (*(int *)&this->field_0x615 == 2) {
@@ -548,7 +548,7 @@ LAB_00477b2e:
       (**(code **)(*piVar7 + 0x110))
                 (*(undefined4 *)&this->field_0x24,*(undefined4 *)&this->field_0x6f3);
     }
-    else if (iVar6 != 2) goto LAB_0047746b;
+    else if (iVar6 != 2) goto cf_common_exit_0047746B;
     uVar10 = thunk_FUN_004406c0((char)piVar7[9]);
     iVar6 = (**(code **)(*piVar7 + 0x2c))();
     local_64.data = &local_40;
@@ -575,7 +575,7 @@ LAB_00477b2e:
       }
     }
   }
-LAB_0047746b:
+cf_common_exit_0047746B:
   iVar6 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar6 != 0) & 0xfffffffd) + 2;
 }

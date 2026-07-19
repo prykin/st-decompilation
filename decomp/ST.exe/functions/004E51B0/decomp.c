@@ -152,12 +152,12 @@ LAB_004e5403:
       *pbVar4 = *pbVar4 & ~('\x01' << (((uint)param_3 ^ 7) & 7));
     }
   }
-  goto LAB_004e5505;
+  goto cf_continue_loop_004E5505;
   while( true ) {
     if (*(int *)((int)&DAT_007f5147 + *piVar5 * 4 + iVar8) < (int)(uint)*(byte *)(piVar5 + 1)) {
       pbVar4 = (byte *)((int)&DAT_007f511f + ((int)((uint)param_3 ^ 7) >> 3) + iVar8);
       *pbVar4 = *pbVar4 & ~('\x01' << (((uint)param_3 ^ 7) & 7));
-      goto LAB_004e5505;
+      goto cf_continue_loop_004E5505;
     }
     piVar11 = (int *)((int)piVar5 + 5);
     piVar5 = (int *)((int)piVar5 + 5);
@@ -169,7 +169,7 @@ LAB_004e54b9:
 LAB_004e54d9:
   pbVar4 = (byte *)((int)&DAT_007f511f + ((int)((uint)param_3 ^ 7) >> 3) + iVar8);
   *pbVar4 = *pbVar4 | '\x01' << (((uint)param_3 ^ 7) & 7);
-LAB_004e5505:
+cf_continue_loop_004E5505:
   param_3 = (uint *)((int)param_3 + 1);
   if (0x9a < (int)param_3) {
     param_3 = (uint *)(&DAT_007f54bb + iVar8);

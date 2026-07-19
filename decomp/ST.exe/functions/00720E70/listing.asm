@@ -80,7 +80,7 @@ LAB_00720f3f:
 00720F3F  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00720F42  89 8E 08 02 00 00         MOV dword ptr [ESI + 0x208],ECX
 00720F48  89 96 0C 02 00 00         MOV dword ptr [ESI + 0x20c],EDX
-LAB_00720f4e:
+FUN_00720e70::cf_break_loop_00720F4E:
 00720F4E  8B 86 08 02 00 00         MOV EAX,dword ptr [ESI + 0x208]
 00720F54  85 C0                     TEST EAX,EAX
 00720F56  7D 39                     JGE 0x00720f91

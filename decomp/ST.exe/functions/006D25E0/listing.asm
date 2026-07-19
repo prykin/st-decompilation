@@ -17,7 +17,7 @@ LAB_006d25f2:
 006D25FF  8B 55 14                  MOV EDX,dword ptr [EBP + 0x14]
 006D2602  80 F9 80                  CMP CL,0x80
 006D2605  73 14                     JNC 0x006d261b
-LAB_006d2607:
+FUN_006d25e0::cf_continue_loop_006D2607:
 006D2607  03 F9                     ADD EDI,ECX
 006D2609  2B D1                     SUB EDX,ECX
 006D260B  0F 8E 9C 00 00 00         JLE 0x006d26ad
@@ -108,7 +108,7 @@ LAB_006d268e:
 006D26A2  80 F9 C0                  CMP CL,0xc0
 006D26A5  0F 83 75 FF FF FF         JNC 0x006d2620
 006D26AB  EB 94                     JMP 0x006d2641
-LAB_006d26ad:
+FUN_006d25e0::cf_continue_loop_006D26AD:
 006D26AD  03 FB                     ADD EDI,EBX
 006D26AF  FF 4D 18                  DEC dword ptr [EBP + 0x18]
 006D26B2  0F 8F 3A FF FF FF         JG 0x006d25f2

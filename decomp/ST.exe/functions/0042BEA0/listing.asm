@@ -155,7 +155,7 @@ LAB_0042c062:
 0042C069  EB 07                     JMP 0x0042c072
 LAB_0042c06b:
 0042C06B  C7 45 FC 03 00 00 00      MOV dword ptr [EBP + -0x4],0x3
-LAB_0042c072:
+STAllPlayersC::AddObjToTmp2::cf_common_exit_0042C072:
 0042C072  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
 0042C075  8B 55 1C                  MOV EDX,dword ptr [EBP + 0x1c]
 0042C078  51                        PUSH ECX

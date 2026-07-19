@@ -566,7 +566,7 @@ LAB_005f75e6:
 LAB_005f76c6:
 005F76C6  39 B3 DD 02 00 00         CMP dword ptr [EBX + 0x2dd],ESI
 005F76CC  0F 84 9E 0A 00 00         JZ 0x005f8170
-LAB_005f76d2:
+FUN_005f6f60::cf_common_exit_005F76D2:
 005F76D2  5F                        POP EDI
 005F76D3  C7 83 EF 02 00 00 10 00 00 00  MOV dword ptr [EBX + 0x2ef],0x10
 005F76DD  5E                        POP ESI
@@ -886,7 +886,7 @@ LAB_005f7a4c:
 005F7A5A  89 B3 A0 02 00 00         MOV dword ptr [EBX + 0x2a0],ESI
 005F7A60  39 B3 EA 02 00 00         CMP dword ptr [EBX + 0x2ea],ESI
 005F7A66  74 0E                     JZ 0x005f7a76
-LAB_005f7a68:
+FUN_005f6f60::cf_common_exit_005F7A68:
 005F7A68  8B CB                     MOV ECX,EBX
 005F7A6A  E8 F9 E1 E0 FF            CALL 0x00405c68
 005F7A6F  5F                        POP EDI

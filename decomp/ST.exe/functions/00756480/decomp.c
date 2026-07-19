@@ -9,7 +9,7 @@ void FUN_00756480(int param_1)
   if (iVar1 == 1) {
     *(undefined4 *)(param_1 + 0x20) = 1;
     *(undefined4 *)(param_1 + 0x24) = 1;
-    goto LAB_00756569;
+    goto cf_common_exit_00756569;
   }
   if (iVar1 != 3) {
     if (iVar1 == 4) {
@@ -26,7 +26,7 @@ void FUN_00756480(int param_1)
       *(undefined4 *)(param_1 + 0x20) = 0;
       *(undefined4 *)(param_1 + 0x24) = 0;
     }
-    goto LAB_00756569;
+    goto cf_common_exit_00756569;
   }
   if (*(int *)(param_1 + 0x110) == 0) {
     if (*(int *)(param_1 + 0x119) == 0) {
@@ -38,12 +38,12 @@ void FUN_00756480(int param_1)
 LAB_00756548:
       *(undefined4 *)(param_1 + 0x20) = 2;
       *(undefined4 *)(param_1 + 0x24) = 2;
-      goto LAB_00756569;
+      goto cf_common_exit_00756569;
     }
   }
   *(undefined4 *)(param_1 + 0x20) = 3;
   *(undefined4 *)(param_1 + 0x24) = 2;
-LAB_00756569:
+cf_common_exit_00756569:
   *(undefined4 *)(param_1 + 0x30) = 0;
   *(undefined4 *)(param_1 + 0x38) = 0;
   *(undefined4 *)(param_1 + 0x3c) = 0;

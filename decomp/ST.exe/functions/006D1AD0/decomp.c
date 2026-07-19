@@ -75,7 +75,7 @@ int FUN_006d1ad0(int *param_1,int param_2,int param_3,int param_4,int param_5,in
                   param_1[1] = param_1[1] - iVar2 * iVar1;
                   param_5 = iVar4;
                   param_6 = iVar6;
-LAB_006d1e3f:
+cf_continue_loop_006D1E3F:
                   iVar8 = FUN_006d1ad0(param_1,param_2,local_8,local_c,param_5,param_6,param_7,
                                        param_8,param_9);
                   if (local_10 < iVar8) {
@@ -118,7 +118,7 @@ LAB_006d1d8a:
                     piVar9 = (int *)((int)piVar9 + 1);
                   }
                 }
-                goto LAB_006d1e3f;
+                goto cf_continue_loop_006D1E3F;
               }
 LAB_006d1cbe:
               if ((param_5 == iVar1) && (param_3 == local_8)) {
@@ -149,7 +149,7 @@ LAB_006d1de7:
                     piVar9 = (int *)((int)piVar9 + 1);
                   }
                 }
-                goto LAB_006d1e3f;
+                goto cf_continue_loop_006D1E3F;
               }
             }
           }

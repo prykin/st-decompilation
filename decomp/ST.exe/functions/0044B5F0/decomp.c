@@ -227,9 +227,9 @@ STAllPlayersC::SelectObjects
         iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
         if (0 < iVar8) {
           ActivateTV(this,bVar2,0,iVar8);
-          goto LAB_0044bd53;
+          goto cf_common_exit_0044BD53;
         }
-        if (-1 < iVar8) goto LAB_0044bd53;
+        if (-1 < iVar8) goto cf_common_exit_0044BD53;
         PushTV(bVar2,0);
         if (*(uint *)((int)&DAT_007f4f97 + iVar7) == uVar3) {
           CalibrateTmp(this,bVar2,0,1,local_8,(int *)&local_10,(int *)0x0,(int *)0x0);
@@ -249,20 +249,20 @@ STAllPlayersC::SelectObjects
             (*pcVar1)();
             return;
           }
-          goto LAB_0044bd53;
+          goto cf_common_exit_0044BD53;
         }
         iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
         if (0 < iVar8) {
           ActivateTV(this,bVar2,0,iVar8);
-          goto LAB_0044bd53;
+          goto cf_common_exit_0044BD53;
         }
         PushTV(bVar2,0);
         ResetActivityFromTmp(this,bVar2,0,1,0);
       }
-      goto LAB_0044bd3d;
+      goto cf_common_exit_0044BD3D;
     }
     iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
-    if (iVar8 < 1) goto LAB_0044bd3d;
+    if (iVar8 < 1) goto cf_common_exit_0044BD3D;
     ActivateTV(this,bVar2,0,iVar8);
   }
   else {
@@ -274,7 +274,7 @@ STAllPlayersC::SelectObjects
         (*pcVar1)();
         return;
       }
-      goto LAB_0044bd53;
+      goto cf_common_exit_0044BD53;
     }
     *(undefined4 *)((int)&DAT_007f5023 + iVar7) = 0;
     ResetActivityFromTmp(this,bVar2,1,0,0);
@@ -290,7 +290,7 @@ STAllPlayersC::SelectObjects
       iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
       if (-1 < iVar8) {
         ActivateTV(this,bVar2,0,iVar8);
-        goto LAB_0044bd53;
+        goto cf_common_exit_0044BD53;
       }
       PushTV(bVar2,0);
     }
@@ -303,21 +303,21 @@ STAllPlayersC::SelectObjects
           (*pcVar1)();
           return;
         }
-        goto LAB_0044bd53;
+        goto cf_common_exit_0044BD53;
       }
       iVar8 = CheckTmps(uVar3,0,0x3c,bVar2,local_8,0);
       if (0 < iVar8) {
         ActivateTV(this,bVar2,0,iVar8);
-        goto LAB_0044bd53;
+        goto cf_common_exit_0044BD53;
       }
       PushTV(bVar2,0);
     }
-LAB_0044bd3d:
+cf_common_exit_0044BD3D:
     AddObjsToTmp(this,uVar3,0,0,(int)local_8);
   }
 LAB_0044bd49:
   *(undefined4 *)((int)&DAT_007f4f83 + iVar7) = 0x3c;
-LAB_0044bd53:
+cf_common_exit_0044BD53:
   FUN_006ae110((byte *)local_8);
   SelfCheckObjControl(this);
   return;

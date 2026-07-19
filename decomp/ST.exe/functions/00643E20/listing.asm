@@ -445,7 +445,7 @@ LAB_00644286:
 00644286  6A 01                     PUSH 0x1
 00644288  8B CF                     MOV ECX,EDI
 0064428A  E8 D5 FF DB FF            CALL 0x00404264
-LAB_0064428f:
+FUN_00643e20::cf_common_exit_0064428F:
 0064428F  8B CE                     MOV ECX,ESI
 00644291  E8 A7 0D DC FF            CALL 0x0040503d
 00644296  5F                        POP EDI

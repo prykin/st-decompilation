@@ -419,7 +419,7 @@ LAB_004d3f76:
                                     (byte *)s_tlo_emb2_007ad434,0x1d);
                 if (iVar10 != 0) {
                   iVar4 = 0x342;
-                  goto LAB_004d428d;
+                  goto cf_error_exit_004D428D;
                 }
               }
               else if ((iVar10 == 1) &&
@@ -427,7 +427,7 @@ LAB_004d3f76:
                                           (pSVar12,*(byte *)(param_1 + 0xbc),DAT_0080678c,
                                            (byte *)s_tlo_emb3_007ad440,0x1d), iVar10 != 0)) {
                 iVar4 = 0x343;
-LAB_004d428d:
+cf_error_exit_004D428D:
                 RaiseInternalException
                           (iVar10,DAT_007ed77c,s_E____titans_Artem_TLO_embryo_cpp_007bf4bc,iVar4);
               }
@@ -445,7 +445,7 @@ LAB_004d428d:
                                  (pSVar12,(char)param_1[0xbc] - 1,DAT_0080678c,local_7c,0x1d);
               if (iVar10 != 0) {
                 iVar4 = 0x336;
-                goto LAB_004d428d;
+                goto cf_error_exit_004D428D;
               }
             }
             else if (iVar10 == 1) {
@@ -461,7 +461,7 @@ LAB_004d428d:
                                  (pSVar12,(char)param_1[0xbc] - 1,DAT_0080678c,local_7c,0x1d);
               if (iVar10 != 0) {
                 iVar4 = 0x33c;
-                goto LAB_004d428d;
+                goto cf_error_exit_004D428D;
               }
             }
             thunk_FUN_004ac6b0(pSVar12,(char)param_1[0xbc]);

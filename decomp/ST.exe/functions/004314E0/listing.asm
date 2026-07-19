@@ -360,7 +360,7 @@ LAB_00431886:
 LAB_004318a5:
 004318A5  8B 55 F4                  MOV EDX,dword ptr [EBP + -0xc]
 004318A8  52                        PUSH EDX
-LAB_004318a9:
+STAllPlayersC::FramePick::cf_error_exit_004318A9:
 004318A9  6A 00                     PUSH 0x0
 004318AB  6A 00                     PUSH 0x0
 004318AD  53                        PUSH EBX
@@ -494,7 +494,7 @@ LAB_00431a3f:
 00431A41  53                        PUSH EBX
 00431A42  8B CE                     MOV ECX,ESI
 00431A44  E8 D7 3E FD FF            CALL 0x00405920
-LAB_00431a49:
+STAllPlayersC::FramePick::cf_error_exit_00431A49:
 00431A49  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00431A4C  8A 47 24                  MOV AL,byte ptr [EDI + 0x24]
 00431A4F  8B 4F 20                  MOV ECX,dword ptr [EDI + 0x20]
@@ -1543,7 +1543,7 @@ LAB_0043255d:
 LAB_00432567:
 00432567  8B 45 FC                  MOV EAX,dword ptr [EBP + -0x4]
 0043256A  50                        PUSH EAX
-LAB_0043256b:
+STAllPlayersC::FramePick::cf_error_exit_0043256B:
 0043256B  53                        PUSH EBX
 0043256C  6A 00                     PUSH 0x0
 0043256E  6A 01                     PUSH 0x1
@@ -2417,7 +2417,7 @@ LAB_00432ea6:
 00432EA9  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 00432EAC  51                        PUSH ECX
 00432EAD  52                        PUSH EDX
-LAB_00432eae:
+STAllPlayersC::FramePick::cf_error_exit_00432EAE:
 00432EAE  6A 00                     PUSH 0x0
 00432EB0  6A 00                     PUSH 0x0
 00432EB2  53                        PUSH EBX
@@ -2553,7 +2553,7 @@ LAB_00433046:
 00433048  53                        PUSH EBX
 00433049  8B CE                     MOV ECX,ESI
 0043304B  E8 D0 28 FD FF            CALL 0x00405920
-LAB_00433050:
+STAllPlayersC::FramePick::cf_error_exit_00433050:
 00433050  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 00433053  8A 47 24                  MOV AL,byte ptr [EDI + 0x24]
 00433056  8B 4F 20                  MOV ECX,dword ptr [EDI + 0x20]
@@ -2982,7 +2982,7 @@ LAB_004334d7:
 004334DA  8B 55 F8                  MOV EDX,dword ptr [EBP + -0x8]
 004334DD  51                        PUSH ECX
 004334DE  52                        PUSH EDX
-LAB_004334df:
+STAllPlayersC::FramePick::cf_error_exit_004334DF:
 004334DF  6A 00                     PUSH 0x0
 004334E1  6A 01                     PUSH 0x1
 004334E3  53                        PUSH EBX
@@ -2990,7 +2990,7 @@ LAB_004334df:
 004334E6  E8 AD 0B FD FF            CALL 0x00404098
 LAB_004334eb:
 004334EB  C7 87 D3 4F 7F 00 9A 01 00 00  MOV dword ptr [EDI + 0x7f4fd3],0x19a
-LAB_004334f5:
+STAllPlayersC::FramePick::cf_error_exit_004334F5:
 004334F5  A1 7C D7 7E 00            MOV EAX,[0x007ed77c]
 004334FA  68 CE 0D 00 00            PUSH 0xdce
 004334FF  68 04 60 7A 00            PUSH 0x7a6004

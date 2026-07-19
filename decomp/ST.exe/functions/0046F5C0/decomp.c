@@ -114,9 +114,9 @@ int __thiscall STBoatC::ToDok(STBoatC *this,int param_1)
     this->field_00B7 = 3;
 LAB_00470e23:
     thunk_FUN_00481520(this,(int)sVar21,(int)sVar22,sVar20 + 1);
-LAB_00470e2b:
+cf_common_exit_00470E2B:
     thunk_FUN_00460260(this,0);
-switchD_0046fd75_caseD_2:
+cf_common_exit_00470E32:
     iVar7 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
   }
@@ -198,7 +198,7 @@ LAB_0046f888:
                                   ((int)sVar21 * (int)DAT_007fb246 + (int)sVar22 * (int)DAT_007fb240
                                   + (int)sVar20) * 8), piVar18 != (int *)0x0 &&
               (iVar7 = (**(code **)(*piVar18 + 0x2c))(), iVar7 == 0x33)))))) &&
-           (piVar18[9] == *(int *)&this->field_0x24)) goto switchD_0046f604_caseD_2;
+           (piVar18[9] == *(int *)&this->field_0x24)) goto cf_common_exit_004707B7;
         goto LAB_0046f888;
       }
       this->field_0564 = 0;
@@ -209,7 +209,7 @@ LAB_0046f888:
       iVar8 = (short)this->field_0558 + 1;
       break;
     default:
-      goto switchD_0046f604_caseD_2;
+      goto cf_common_exit_004707B7;
     case -1:
       iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x28ac,0,0,&DAT_007a4ccc,
                                  s_STBoatC__ToDok__move_to_dock_err_007aac3c);
@@ -219,7 +219,7 @@ LAB_0046f888:
         return iVar7;
       }
       iVar7 = 0x28ac;
-LAB_00470c46:
+cf_error_exit_00470C46:
       RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,iVar7);
       return 0xffff;
     }
@@ -331,7 +331,7 @@ LAB_0046fd3e:
         thunk_FUN_004602b0((int *)this);
         break;
       default:
-        goto switchD_0046fd75_caseD_2;
+        goto cf_common_exit_00470E32;
       case 3:
         sVar20 = this->field_0554;
         sVar21 = this->field_0558;
@@ -352,7 +352,7 @@ LAB_00470071:
         thunk_FUN_004908a0(this,piVar18,this->field_0568);
         thunk_FUN_00481520(this,(int)*(short *)&this->field_0x56c,(int)*(short *)&this->field_0x56e,
                            (int)*(short *)&this->field_0x570);
-        goto LAB_00470e2b;
+        goto cf_common_exit_00470E2B;
       case -1:
         iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2977,0,0,&DAT_007a4ccc,
                                    s_STBoatC__ToDok__move_to_depot_2_e_007aabd8);
@@ -362,7 +362,7 @@ LAB_00470071:
           return iVar7;
         }
         iVar7 = 0x2977;
-        goto LAB_00470c46;
+        goto cf_error_exit_00470C46;
       }
       sVar20 = this->field_0558;
       sVar22 = this->field_0556;
@@ -405,7 +405,7 @@ LAB_00470071:
         if (uVar9 == 0) {
 LAB_004707ad:
           *(undefined4 *)&this->field_0x584 = 2;
-          goto switchD_0046f604_caseD_2;
+          goto cf_common_exit_004707B7;
         }
       }
       if (*(int *)&this->field_0x584 == 2) {
@@ -493,7 +493,7 @@ LAB_004707ad:
           *(uint *)&this->field_0x578 = (uVar9 >> 0x10) % 0x33 + 0x28;
         }
       }
-      goto switchD_0046f604_caseD_2;
+      goto cf_common_exit_004707B7;
     }
     if (SVar2 == CASE_5) {
       sVar20 = this->field_0554;
@@ -541,7 +541,7 @@ LAB_004707ad:
                            this->field_0716);
         iVar7 = thunk_FUN_004e2340(this_00,this->field_0568,this->field_0018,(undefined4 *)0x0);
         this->field_0716 = iVar7;
-        if (iVar7 != this->field_0712) goto switchD_0046fd75_caseD_2;
+        if (iVar7 != this->field_0712) goto cf_common_exit_00470E32;
       }
       thunk_FUN_0048dba0((int)this);
       this->field_0580 = CASE_6;
@@ -560,7 +560,7 @@ LAB_004707ad:
             return iVar7;
           }
           iVar7 = 0x2a8c;
-          goto LAB_00470c46;
+          goto cf_error_exit_00470C46;
         }
         if (iVar7 == 0) {
           return 0;
@@ -614,7 +614,7 @@ LAB_004707ad:
     }
     iVar7 = *(int *)&this->field_0x57c + 1;
     *(int *)&this->field_0x57c = iVar7;
-    if (iVar7 < 0x1e) goto switchD_0046f604_caseD_2;
+    if (iVar7 < 0x1e) goto cf_common_exit_004707B7;
     if (*(int *)&this->field_0x584 == 0) {
       iVar26 = (ushort)(*(short *)&this->field_0x570 * 200) + 100;
       iVar8 = CONCAT22((short)((uint)iVar7 >> 0x10),*(short *)&this->field_0x56e * 0xc9) + 100;
@@ -642,7 +642,7 @@ LAB_004707ad:
         iVar7 = (*pcVar4)();
         return iVar7;
       }
-      if (uVar9 != 0) goto switchD_0046f604_caseD_2;
+      if (uVar9 != 0) goto cf_common_exit_004707B7;
       goto LAB_004707ad;
     }
     if (*(int *)&this->field_0x584 == 2) {
@@ -652,7 +652,7 @@ LAB_004707ad:
                          *(short *)&this->field_0x570 * 200 + 100,this->field_0x61);
       *(undefined4 *)&this->field_0x584 = 3;
     }
-    if (*(int *)&this->field_0x584 != 3) goto switchD_0046fd75_caseD_2;
+    if (*(int *)&this->field_0x584 != 3) goto cf_common_exit_00470E32;
     local_c = thunk_FUN_00415ed0(this,&local_10,&local_14);
     uVar9 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
     *(uint *)&this->field_0x1c = uVar9;
@@ -720,9 +720,9 @@ LAB_004707ad:
         return iVar7;
       }
       iVar7 = 0x2a6d;
-      goto LAB_00470c46;
+      goto cf_error_exit_00470C46;
     }
-    if (local_c != 0) goto switchD_0046fd75_caseD_2;
+    if (local_c != 0) goto cf_common_exit_00470E32;
     sVar20 = this->field_0554;
     iVar7 = 0;
     sVar21 = this->field_0558;
@@ -730,7 +730,7 @@ LAB_004707ad:
     sVar22 = this->field_0556;
     if ((((sVar20 < 0) || (DAT_007fb240 <= sVar20)) || (sVar22 < 0)) ||
        (((DAT_007fb242 <= sVar22 || (sVar21 < 0)) || (DAT_007fb244 <= sVar21)))) {
-LAB_00470b14:
+cf_common_exit_00470B14:
       uVar9 = CONCAT22((short)((uint)iVar7 >> 0x10),this->field_004B);
       iVar7 = CONCAT22((short)((uint)puVar15 >> 0x10),this->field_0049);
       iVar26 = CONCAT22((short)((uint)&this->field_055E >> 0x10),this->field_0047);
@@ -744,7 +744,7 @@ LAB_00470b14:
       iVar7 = *(int *)(DAT_007fb248 + (int)puVar15 * 8);
       if ((iVar7 == 0) ||
          (puVar15 = *(undefined1 **)(iVar7 + 0x18), puVar15 != *(undefined1 **)&this->field_0x55a))
-      goto LAB_00470b14;
+      goto cf_common_exit_00470B14;
       puVar15 = (undefined1 *)&this->field_055E;
       if (*(int *)(iVar7 + 0x42c) != 0) {
         if ((undefined2 *)puVar15 != (undefined2 *)0x0) {
@@ -760,12 +760,12 @@ LAB_00470b14:
           *(undefined4 *)&this->field_0x562 = *(undefined4 *)(iVar7 + 0x438);
         }
       }
-      if (*(int *)(iVar7 + 0x42c) != 1) goto LAB_00470b14;
+      if (*(int *)(iVar7 + 0x42c) != 1) goto cf_common_exit_00470B14;
       this->field_0580 = CASE_8;
     }
     thunk_FUN_00481520(this,(int)(short)this->field_055E,(int)(short)this->field_0560,
                        (int)*(short *)&this->field_0x562);
-    goto LAB_00470e2b;
+    goto cf_common_exit_00470E2B;
   }
   iVar7 = thunk_FUN_00460260(this,2);
   switch(iVar7) {
@@ -794,7 +794,7 @@ LAB_00470b14:
       thunk_FUN_00481520(this,(int)(short)this->field_0554,(int)(short)this->field_0556,
                          (short)this->field_0558 + 1);
       thunk_FUN_00460260(this,0);
-      goto switchD_0046f604_caseD_2;
+      goto cf_common_exit_004707B7;
     }
     sVar20 = this->field_0554;
     sVar21 = this->field_0558;
@@ -811,7 +811,7 @@ LAB_00470b14:
     this->field_0568 = iVar7;
     if ((iVar7 == -1) ||
        (bVar5 = thunk_FUN_004908a0(this,piVar18,iVar7), CONCAT31(extraout_var,bVar5) != 1))
-    goto switchD_0046f604_caseD_2;
+    goto cf_common_exit_004707B7;
     thunk_FUN_004602b0((int *)this);
     *(int *)&this->field_0x55a = piVar18[6];
     thunk_FUN_004e1fb0(piVar18,this->field_0568,this->field_0018);
@@ -821,7 +821,7 @@ LAB_00470b14:
     this->field_0580 = CASE_3;
     break;
   default:
-    goto switchD_0046f604_caseD_2;
+    goto cf_common_exit_004707B7;
   case 3:
     iVar7 = thunk_FUN_00490570((int)this);
     if (iVar7 == 1) {
@@ -837,7 +837,7 @@ LAB_00470b14:
     thunk_FUN_00481520(this,(int)(short)this->field_055E,(int)(short)this->field_0560,
                        (int)*(short *)&this->field_0x562);
     thunk_FUN_00460260(this,0);
-    goto switchD_0046f604_caseD_2;
+    goto cf_common_exit_004707B7;
   case -1:
     iVar7 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2907,0,0,&DAT_007a4ccc,
                                s_STBoatC__ToDok__correct_move_to_d_007aac08);
@@ -852,7 +852,7 @@ LAB_00470b14:
 LAB_0046fb98:
   thunk_FUN_00481520(this,iVar7,iVar26,iVar8);
   thunk_FUN_00460260(this,0);
-switchD_0046f604_caseD_2:
+cf_common_exit_004707B7:
   iVar7 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar7 != 0) & 0xfffffffd) + 2;
 }

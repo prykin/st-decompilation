@@ -370,9 +370,9 @@ LAB_00582edf:
 LAB_00582f2d:
     if (((this->field_0231 != 0) || (this->field_0247 != 4)) ||
        (iVar9 = (int)(short)this->field_003E - (int)(short)this->field_0038, iVar9 < -10))
-    goto LAB_00582f72;
+    goto cf_common_exit_00582F72;
     this->field_0239 = 0x19;
-    if (iVar9 == 0) goto LAB_00582f72;
+    if (iVar9 == 0) goto cf_common_exit_00582F72;
     if (iVar9 < 0) {
       iVar9 = -iVar9;
     }
@@ -382,7 +382,7 @@ LAB_00582f2d:
     iVar9 = this->field_0239 + -1;
   }
   this->field_0239 = iVar9;
-LAB_00582f72:
+cf_common_exit_00582F72:
   puVar1 = &this->field_01D5;
   STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\x0e',this->field_0247);
   STT3DSprC::SetCurFase((STT3DSprC *)puVar1,'\f',this->field_0247);

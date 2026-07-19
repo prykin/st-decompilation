@@ -682,7 +682,7 @@ LAB_0042968a:
 LAB_004296c7:
 004296C7  39 85 70 FF FF FF         CMP dword ptr [EBP + 0xffffff70],EAX
 004296CD  7F 2F                     JG 0x004296fe
-LAB_004296cf:
+FUN_00428e50::cf_continue_loop_004296CF:
 004296CF  8B 4D 84                  MOV ECX,dword ptr [EBP + -0x7c]
 004296D2  8B 55 FC                  MOV EDX,dword ptr [EBP + -0x4]
 004296D5  F7 D9                     NEG ECX

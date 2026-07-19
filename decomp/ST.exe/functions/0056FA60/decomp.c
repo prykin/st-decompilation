@@ -645,11 +645,11 @@ LAB_00570645:
         iVar28 = DAT_0080759c[7];
         if (iVar8 != 0) {
           Library::DKW::DV::FUN_006c2d30(DAT_008075a4,0,0,DAT_0080759c[6],DAT_0080759c[7]);
-          goto LAB_0057073b;
+          goto cf_common_exit_0057073B;
         }
       }
       else {
-        if (DAT_0080350c._2_1_ != '\x02') goto LAB_0057073b;
+        if (DAT_0080350c._2_1_ != '\x02') goto cf_common_exit_0057073B;
         iVar17 = ram0x0080350f;
         iVar26 = DAT_00803513;
         iVar27 = DAT_00803517;
@@ -657,11 +657,11 @@ LAB_00570645:
         if (iVar8 != 0) {
           Library::DKW::DV::FUN_006c2d30
                     (DAT_008075a4,ram0x0080350f,DAT_00803513,DAT_00803517,DAT_0080351b);
-          goto LAB_0057073b;
+          goto cf_common_exit_0057073B;
         }
       }
       FUN_006c3fc0((int)DAT_008075a0,iVar17,iVar26,iVar27,iVar28);
-LAB_0057073b:
+cf_common_exit_0057073B:
       pSVar7 = local_18;
       thunk_FUN_00567220((int)&local_18->field_0x38);
       pSVar7->field_4EFA = 1;

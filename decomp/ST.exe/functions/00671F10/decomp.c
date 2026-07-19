@@ -107,7 +107,7 @@ float * FUN_00671f10(int param_1,int *param_2,int *param_3)
       }
       thunk_FUN_0064a830(local_c,(undefined4 *)((int)psVar7 + -1));
       if (*(char *)((int)psVar7 + -1) == '\a') break;
-LAB_006721a4:
+cf_continue_loop_006721A4:
       local_20 = (float)((int)local_20 + 1);
       psVar7 = (short *)((int)psVar7 + 5);
     }
@@ -137,7 +137,7 @@ LAB_006721a4:
     }
     if (local_8 == (float *)0x0) {
       RaiseInternalException(local_1c,DAT_007ed77c,s_E____titans_ai_ai_interp_cpp_007d2cf4,0x56c);
-      goto LAB_006721a4;
+      goto cf_continue_loop_006721A4;
     }
     iVar3 = thunk_FUN_0064a940((int)local_c,iVar3);
     if (iVar3 == 0) {
@@ -174,7 +174,7 @@ LAB_006721a4:
     if (((sVar1 == 0x321) && (local_2b == 1.4013e-45)) && (local_10 == 0)) {
       local_14 = local_14 + 1;
     }
-    if ((sVar1 != 0x34) || (local_14 < 1)) goto LAB_006721a4;
+    if ((sVar1 != 0x34) || (local_14 < 1)) goto cf_continue_loop_006721A4;
     local_14 = local_14 + -1;
     local_20 = (float)((int)local_20 + 1);
     psVar7 = (short *)((int)psVar7 + 5);

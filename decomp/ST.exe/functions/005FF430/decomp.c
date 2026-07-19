@@ -158,7 +158,7 @@ switchD_005ffb0e_default:
       *param_6 = (*(short *)((int)this + 0x21a) - (short)((ulonglong)(uVar5 >> 0x10) % 0x3d)) +
                  -0x174;
       sVar2 = *(short *)((int)this + 0x21c);
-      goto LAB_005ffa34;
+      goto cf_common_exit_005FFA34;
     case CASE_B:
       sVar2 = *(short *)((int)this + 0x21a);
       break;
@@ -176,7 +176,7 @@ LAB_005ffa94:
       uVar5 = iVar4 * 0x41c64e6d + 0x3039;
       *(uint *)((int)this + 0x1c) = uVar5;
       sVar2 = (*(short *)((int)this + 0x21c) - (short)((ulonglong)(uVar5 >> 0x10) % 0x3d)) + -0x174;
-      goto LAB_005ffab2;
+      goto cf_common_exit_005FFAB2;
     case CASE_E:
       uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
       *(uint *)((int)this + 0x1c) = uVar5;
@@ -203,14 +203,14 @@ LAB_005ffa18:
     uVar5 = iVar4 * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar5;
     sVar2 = (short)((ulonglong)(uVar5 >> 0x10) % 0x3d) + *(short *)((int)this + 0x21c) + 0x174;
-    goto LAB_005ffa34;
+    goto cf_common_exit_005FFA34;
   }
   switch(param_1) {
   case CASE_0:
 switchD_005ff553_caseD_0:
     *param_6 = *(short *)((int)this + 0x21a);
     sVar2 = *(short *)((int)this + 0x21c);
-    goto LAB_005ffa34;
+    goto cf_common_exit_005FFA34;
   case CASE_1:
 switchD_005ff553_caseD_1:
     uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
@@ -227,7 +227,7 @@ switchD_005ff553_caseD_2:
     *(uint *)((int)this + 0x1c) = uVar5;
     *param_6 = (*(short *)((int)this + 0x21a) - (short)((ulonglong)(uVar5 >> 0x10) % 0x3d)) + -0xab;
     sVar2 = *(short *)((int)this + 0x21c);
-    goto LAB_005ffa34;
+    goto cf_common_exit_005FFA34;
   case CASE_3:
 switchD_005ff553_caseD_3:
     sVar2 = *(short *)((int)this + 0x21a);
@@ -238,7 +238,7 @@ LAB_005ff5fd:
     uVar5 = iVar4 * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar5;
     sVar2 = (short)((ulonglong)(uVar5 >> 0x10) % 0x3d) + *(short *)((int)this + 0x21c) + 0xab;
-    goto LAB_005ffa34;
+    goto cf_common_exit_005FFA34;
   case CASE_4:
 switchD_005ff553_caseD_4:
     sVar2 = *(short *)((int)this + 0x21a);
@@ -249,7 +249,7 @@ LAB_005ff63a:
     uVar5 = iVar4 * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar5;
     sVar2 = (*(short *)((int)this + 0x21c) - (short)((ulonglong)(uVar5 >> 0x10) % 0x3d)) + -0xab;
-    goto LAB_005ffab2;
+    goto cf_common_exit_005FFAB2;
   case CASE_5:
     uVar5 = *(int *)((int)this + 0x1c) * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar5;
@@ -277,7 +277,7 @@ LAB_005ff73a:
     uVar5 = iVar4 * 0x41c64e6d + 0x3039;
     *(uint *)((int)this + 0x1c) = uVar5;
     sVar2 = (short)((ulonglong)(uVar5 >> 0x10) % 0x3d) + *(short *)((int)this + 0x21c) + 0x7e;
-LAB_005ffa34:
+cf_common_exit_005FFA34:
     *param_7 = sVar2;
     *param_8 = *(undefined2 *)((int)this + 0x21e);
     return 1;
@@ -287,7 +287,7 @@ LAB_005ffa34:
   uVar5 = iVar4 * 0x41c64e6d + 0x3039;
   *(uint *)((int)this + 0x1c) = uVar5;
   sVar2 = (*(short *)((int)this + 0x21c) - (short)((ulonglong)(uVar5 >> 0x10) % 0x3d)) + -0x7e;
-LAB_005ffab2:
+cf_common_exit_005FFAB2:
   *param_7 = sVar2;
   *param_8 = *(undefined2 *)((int)this + 0x21e);
   return 1;

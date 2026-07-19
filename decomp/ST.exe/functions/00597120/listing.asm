@@ -560,6 +560,7 @@ switchD_00597759::caseD_a:
 00597864  FF 15 20 C0 85 00         CALL dword ptr [0x0085c020]
 0059786A  8B 3D 30 2A 80 00         MOV EDI,dword ptr [0x00802a30]
 00597870  3B FB                     CMP EDI,EBX
+FSGSTy::NoneFSGS::cf_common_exit_00597872:
 00597872  74 73                     JZ 0x005978e7
 00597874  EB 25                     JMP 0x0059789b
 switchD_00597759::caseD_9:

@@ -305,19 +305,19 @@ undefined4 __thiscall STMineSetC::GetMessage(STMineSetC *this,int param_1)
     iVar14 = *(int *)&this_00[1].field_0x8;
     *(undefined2 *)&this_00->field_0x38 = *(undefined2 *)&this_00->field_0x45;
     iVar10 = thunk_FUN_00624570(this_00,CASE_1,*(int *)&this_00[1].field_0x4,iVar14,iVar10);
-    if (iVar10 == 0) goto LAB_00621d24;
+    if (iVar10 == 0) goto cf_common_exit_00621D24;
     *(undefined4 *)&this_00[1].field_0x30 = 1;
   }
   else {
     iVar10 = thunk_FUN_00624570(this_00,CASE_2,(int)*(short *)&this_00->field_0x3a,
                                 (int)*(short *)&this_00->field_0x3c,
                                 (int)*(short *)&this_00->field_0x3e);
-    if (iVar10 == 0) goto LAB_00621d24;
+    if (iVar10 == 0) goto cf_common_exit_00621D24;
     *(undefined4 *)&this_00[1].field_0x30 = 2;
   }
   *(undefined4 *)&this_00->field_0x2ae = 1;
   bVar9 = true;
-LAB_00621d24:
+cf_common_exit_00621D24:
   if (bVar9) {
     *(undefined4 *)&this_00->field_0x2ae = 1;
     this_00[1].field_0x95 = 1;

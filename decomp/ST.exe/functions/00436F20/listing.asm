@@ -196,7 +196,7 @@ LAB_00437184:
 0043718B  89 50 08                  MOV dword ptr [EAX + 0x8],EDX
 LAB_0043718e:
 0043718E  8B 4D FC                  MOV ECX,dword ptr [EBP + -0x4]
-switchD_0043702c::caseD_8:
+STAllPlayersC::CmdToPlsObj::cf_common_exit_00437191:
 00437191  89 75 8C                  MOV dword ptr [EBP + -0x74],ESI
 00437194  8B 11                     MOV EDX,dword ptr [ECX]
 00437196  8D 85 78 FF FF FF         LEA EAX,[EBP + 0xffffff78]
@@ -1319,7 +1319,7 @@ LAB_00437db4:
 00437DFC  8B CB                     MOV ECX,EBX
 00437DFE  FF 50 08                  CALL dword ptr [EAX + 0x8]
 00437E01  EB 3A                     JMP 0x00437e3d
-LAB_00437e03:
+STAllPlayersC::CmdToPlsObj::cf_common_exit_00437E03:
 00437E03  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]
 00437E06  8B 42 17                  MOV EAX,dword ptr [EDX + 0x17]
 00437E09  66 8B 48 01               MOV CX,word ptr [EAX + 0x1]
@@ -1658,7 +1658,7 @@ switchD_004375b6::caseD_29:
 00438245  8B 4E 17                  MOV ECX,dword ptr [ESI + 0x17]
 00438248  80 39 00                  CMP byte ptr [ECX],0x0
 0043824B  75 14                     JNZ 0x00438261
-switchD_004375b6::caseD_a:
+STAllPlayersC::CmdToPlsObj::cf_common_exit_0043824D:
 0043824D  8B 13                     MOV EDX,dword ptr [EBX]
 0043824F  6A 00                     PUSH 0x0
 00438251  6A 03                     PUSH 0x3

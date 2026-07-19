@@ -88,7 +88,7 @@ LAB_006e2e1d:
 006E2E28  66 2B C3                  SUB AX,BX
 006E2E2B  66 89 07                  MOV word ptr [EDI],AX
 006E2E2E  83 C7 02                  ADD EDI,0x2
-LAB_006e2e31:
+FUN_006e2d50::cf_continue_loop_006E2E31:
 006E2E31  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 006E2E34  03 45 10                  ADD EAX,dword ptr [EBP + 0x10]
 006E2E37  89 45 0C                  MOV dword ptr [EBP + 0xc],EAX
@@ -204,7 +204,7 @@ LAB_006e2f4c:
 006E2F5D  66 2B C3                  SUB AX,BX
 006E2F60  66 89 07                  MOV word ptr [EDI],AX
 006E2F63  83 EF 02                  SUB EDI,0x2
-LAB_006e2f66:
+FUN_006e2d50::cf_continue_loop_006E2F66:
 006E2F66  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]
 006E2F69  2B 45 10                  SUB EAX,dword ptr [EBP + 0x10]
 006E2F6C  89 45 0C                  MOV dword ptr [EBP + 0xc],EAX
