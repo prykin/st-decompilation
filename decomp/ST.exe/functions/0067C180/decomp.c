@@ -79,7 +79,7 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
               local_1c = iVar3;
             } while ((int)uVar13 < (int)uVar8);
           }
-          if (((((short)this_00->field_0677 <= local_1c) && (0 < (int)uVar8)) && (0 < local_1c)) &&
+          if ((((this_00->field_0677 <= local_1c) && (0 < (int)uVar8)) && (0 < local_1c)) &&
              ((0 < local_10 &&
               (iVar3 = thunk_FUN_0042a990(this_00->field_0x640), local_18 = iVar3, iVar3 != 0)))) {
             bVar14 = *(int *)(iVar3 + 0xc) != 0;
@@ -108,8 +108,8 @@ void __thiscall AiPlrClassTy::Offensive(AiPlrClassTy *this,void *param_1)
                 puVar4 = local_c;
               } while ((int)local_8 < (int)*(uint *)(iVar3 + 0xc));
             }
-            if ((((short)this_00->field_0679 <= local_1c) || (local_14 < 1)) ||
-               ((int)(short)this_00->field_067B < (local_10 * 100) / local_14)) {
+            if (((this_00->field_0679 <= local_1c) || (local_14 < 1)) ||
+               ((int)this_00->field_067B < (local_10 * 100) / local_14)) {
               local_8 = 0;
               *(undefined4 *)(this_00->field_06AD + 0xc) = 0;
               bVar14 = *(int *)(iVar3 + 0xc) != 0;

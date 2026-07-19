@@ -108,16 +108,19 @@ void __thiscall TradePanelTy::InitTradePanel(TradePanelTy *this)
     this_00->field_01DD = pcVar5;
     pcVar5->field_0058 = 1;
     pcVar5->field_005C = 0;
-    puVar6 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_01D1 = puVar6;
-    puVar6 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_01D5 = puVar6;
     iVar9 = 1;
     uVar18 = 0xffffffff;
     puVar21 = puVar3;
     puVar23 = puVar3;
     pbVar7 = (byte *)thunk_FUN_00571240(s_TRADE_RATE_007c8670,0);
-    puVar6 = mfRLoad(DAT_00806794,CASE_B,pbVar7,uVar18,(byte)puVar3,iVar9,(int)puVar21,puVar23);
+    puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar7,uVar18,(byte)puVar3,iVar9,(int)puVar21,puVar23);
     local_5 = this_00->field_01D0;
     this_00->field_01D9 = puVar6;
     local_1c = this_00->field_005C;

@@ -108,8 +108,8 @@ LAB_0047848a:
        (iVar6 = (**(code **)(*piVar3 + 0x108))(*(undefined4 *)&this->field_0x24), iVar6 != 0)) {
       thunk_FUN_004cd450((int)piVar3);
     }
-    if (((int)(short)this->field_0041 != (*(short *)&this->field_0x609 + 1) * 0xc9) ||
-       ((int)(short)this->field_0043 != (*(short *)&this->field_0x60b + 1) * 0xc9)) {
+    if (((int)this->field_0041 != (*(short *)&this->field_0x609 + 1) * 0xc9) ||
+       ((int)this->field_0043 != (*(short *)&this->field_0x60b + 1) * 0xc9)) {
       iVar6 = (*this->vtable->vfunc_D8)();
       return -(uint)(iVar6 != 0);
     }

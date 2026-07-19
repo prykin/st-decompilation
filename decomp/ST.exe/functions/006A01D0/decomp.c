@@ -74,19 +74,21 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   cMf32::RecGet(local_10->field_0234,0xc,s_TEXTURE_DSCR_007cd130,(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
   cMf32::RecMemFree(pCVar3->field_0234,(uint *)&local_8);
-  pcVar5 = (cMf32 *)FUN_006f0ec0(0x345,&pCVar3->field_0x20,1,0,0);
+  pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&pCVar3->field_0x20,1,0,0);
   pCVar3->field_0018 = pcVar5;
   thunk_FUN_0069ff90((int)pCVar3);
-  puVar6 = mfTMapCreate(pCVar3->field_0228,pCVar3->field_022C,(int)pCVar3->field_0234,
-                        pCVar3->field_0239,0x20);
+  puVar6 = Library::Ourlib::MFSTMAP::mfTMapCreate
+                     (pCVar3->field_0228,pCVar3->field_022C,(int)pCVar3->field_0234,
+                      pCVar3->field_0239,0x20);
   pCVar3->field_000C = puVar6;
   thunk_FUN_0069ff90((int)pCVar3);
-  piVar7 = FUN_006f0620((short *)pCVar3->field_000C);
+  piVar7 = Library::Ourlib::MFSTMAP::FUN_006f0620((short *)pCVar3->field_000C);
   pCVar3->field_0008 = piVar7;
   thunk_FUN_0069ff90((int)pCVar3);
   thunk_FUN_006a2d80(1,(int *)pCVar3->field_0008);
   thunk_FUN_0069ff90((int)pCVar3);
-  iVar4 = AuxTMapRefreshAll((short *)pCVar3->field_000C,(int *)pCVar3->field_0008);
+  iVar4 = Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
+                    ((short *)pCVar3->field_000C,(int *)pCVar3->field_0008);
   if (iVar4 != 0) {
     local_c = 0;
   }

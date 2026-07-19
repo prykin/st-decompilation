@@ -17,7 +17,7 @@ int __thiscall FUN_006eb350(void *this,int param_1,int param_2,int param_3,int p
   int local_8;
   
   local_1c = 0;
-  iVar4 = FUN_006eaff0(this,param_1,param_2,&local_c,&local_14);
+  iVar4 = Library::Ourlib::ST3DSPR::FUN_006eaff0(this,param_1,param_2,&local_c,&local_14);
   if (iVar4 != 0) {
     return 0;
   }

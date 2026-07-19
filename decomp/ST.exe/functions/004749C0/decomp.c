@@ -258,16 +258,16 @@ switchD_00474a47_caseD_2:
             sVar21 = 0;
             bVar22 = 0;
             lVar14 = Library::MSVCRT::__ftol();
-            iVar13 = (int)local_20 + (short)this->field_0045 + local_c + (int)(short)lVar14;
-            iVar12 = (int)(short)this->field_0043 - (int)local_24._2_2_;
-            iVar9 = (int)(short)local_24 + iVar10 + (short)this->field_0041;
+            iVar13 = (int)local_20 + this->field_0045 + local_c + (int)(short)lVar14;
+            iVar12 = (int)this->field_0043 - (int)local_24._2_2_;
+            iVar9 = (int)(short)local_24 + iVar10 + this->field_0041;
           }
           else {
-            iVar13 = (int)local_20 + local_c + (short)this->field_0045;
+            iVar13 = (int)local_20 + local_c + this->field_0045;
             local_24._2_2_ = (short)((uint)uVar2 >> 0x10);
-            iVar12 = (int)(short)this->field_0043 - (int)local_24._2_2_;
+            iVar12 = (int)this->field_0043 - (int)local_24._2_2_;
             local_24._0_2_ = (short)uVar2;
-            iVar9 = (int)(short)local_24 + iVar10 + (short)this->field_0041;
+            iVar9 = (int)(short)local_24 + iVar10 + this->field_0041;
           }
           TraksClassTy::TraksCreate
                     (DAT_00802a7c,1,2,7,iVar9,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar13,sVar15,

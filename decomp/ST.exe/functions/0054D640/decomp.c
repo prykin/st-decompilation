@@ -140,7 +140,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x42,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x42,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
             if ((iVar4 == 1) && (local_8 != (int *)0x0)) {
               FUN_006ab060(&local_8);
@@ -152,7 +153,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x43,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x43,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
             if (iVar4 == 1) {
               if (local_10 == this_00->field_0061) {
@@ -169,7 +171,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x33,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x33,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
             if ((iVar4 == 1) && (local_8 != (int *)0x0)) {
               thunk_FUN_00550830((int)local_8);
@@ -182,7 +185,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x35,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x35,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
             if ((iVar4 == 1) && (thunk_FUN_00550430(this_00,local_10,1), local_8 != (int *)0x0)) {
               FUN_006ab060(&local_8);
@@ -194,7 +198,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x36,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x36,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if ((iVar4 == 1) &&
                (thunk_FUN_005505d0(this_00,local_10,local_8), local_8 != (int *)0x0)) {
               FUN_006ab060(&local_8);
@@ -206,7 +211,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x11,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x11,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
             if (iVar4 == 1) {
               thunk_FUN_005504f0(this_00,local_10,0x426f,1);
@@ -224,7 +230,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
         iVar2 = 0;
         if (0 < local_c) {
           do {
-            iVar4 = FUN_00715630(DAT_00811764,0x13,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
+            iVar4 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,0x13,&local_14,&local_10,&local_8,(uint *)0x0,-1,0);
             if (iVar4 == -0x4d) goto cf_common_join_0054DFAD;
             if (iVar4 == 1) {
               if (local_10 == this_00->field_0061) {
@@ -253,7 +260,8 @@ undefined4 __thiscall STPlaySystemC::Life(STPlaySystemC *this)
       local_10 = 0;
       if (0 < local_20) {
         do {
-          iVar2 = FUN_00715630(DAT_00811764,-1,&local_14,&local_18,&local_8,(uint *)0x0,-1,0);
+          iVar2 = Library::Ourlib::CONNECT::FUN_00715630
+                            (DAT_00811764,-1,&local_14,&local_18,&local_8,(uint *)0x0,-1,0);
           if (iVar2 == 1) {
             switch(local_14) {
             case 0x11:

@@ -277,7 +277,8 @@ undefined4 __thiscall MoneyTy::GetMessage(MoneyTy *this,int param_1)
       bVar15 = 0;
       uVar14 = 0xffffffff;
       pbVar9 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
-      puVar10 = mfRLoad(DAT_00806794,CASE_B,pbVar9,uVar14,bVar15,iVar6,iVar12,puVar8);
+      puVar10 = Library::Ourlib::MFRLOAD::mfRLoad
+                          (DAT_00806794,CASE_B,pbVar9,uVar14,bVar15,iVar6,iVar12,puVar8);
       this_00->field_0082 = puVar10;
       puVar8 = (undefined4 *)(DAT_0080679c + 0x28);
       iVar6 = 1;

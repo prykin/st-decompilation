@@ -48,7 +48,7 @@ undefined4 __cdecl FUN_005db030(byte *param_1,undefined4 param_2,char param_3)
     return 0;
   }
   uVar9 = 0;
-  this = (cMf32 *)FUN_006f0ec0(0x345,local_170,0,0,0);
+  this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_170,0,0,0);
   piVar11 = (int *)&stack0xffffffe4;
   iVar2 = 0;
   uVar10 = 0x5db113;

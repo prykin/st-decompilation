@@ -85,7 +85,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
         iVar17 = 0;
         bVar16 = 0;
         pCVar3 = FUN_006f2c00(s_CMPG_FLC_007cbdc4,3,iVar2);
-        puVar4 = mfAnyLoad(DAT_00806780,pCVar3,bVar16,iVar17);
+        puVar4 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806780,pCVar3,bVar16,iVar17);
         *puVar5 = puVar4;
         puVar5 = puVar5 + 1;
         iVar2 = iVar2 + 1;
@@ -100,7 +100,7 @@ void __thiscall CampaignTy::InitCampaign(CampaignTy *this,undefined4 param_1)
       iVar17 = 0;
       bVar16 = 0;
       pCVar3 = FUN_006f2c00(s_CMPG_FONFLC_007cbdb4,2,iVar2);
-      puVar4 = mfAnyLoad(DAT_00806780,pCVar3,bVar16,iVar17);
+      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806780,pCVar3,bVar16,iVar17);
       *puVar5 = puVar4;
       iVar2 = iVar2 + 1;
       puVar5 = puVar5 + 1;

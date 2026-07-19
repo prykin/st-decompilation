@@ -281,9 +281,9 @@ undefined4 __thiscall STArtiafactC::GetMessage(STArtiafactC *this,int param_1)
         }
         *(undefined1 *)puVar14 = *(undefined1 *)puVar12;
         if (puVar13[3] == 0) {
-          local_8->field_046B = (int)(short)local_8->field_034A;
-          local_8->field_046F = (int)(short)local_8->field_034C;
-          local_8->field_0473 = (int)(short)local_8->field_034E;
+          local_8->field_046B = (int)local_8->field_034A;
+          local_8->field_046F = (int)local_8->field_034C;
+          local_8->field_0473 = (int)local_8->field_034E;
           local_8->field_034A = local_8->field_034A * 0xc9 + 100;
           local_8->field_034C = local_8->field_034C * 0xc9 + 100;
           local_8->field_034E = local_8->field_034E * 200 + 100;
@@ -315,8 +315,8 @@ undefined4 __thiscall STArtiafactC::GetMessage(STArtiafactC *this,int param_1)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        thunk_FUN_006377b0(this_00->field_01ED,1,(int)(short)this_00->field_034A,
-                           (int)(short)this_00->field_034C,(int)(short)this_00->field_034E,0x13);
+        thunk_FUN_006377b0(this_00->field_01ED,1,(int)this_00->field_034A,(int)this_00->field_034C,
+                           (int)this_00->field_034E,0x13);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }

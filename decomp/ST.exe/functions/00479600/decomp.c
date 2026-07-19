@@ -58,9 +58,9 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     }
     this->field_02C4 = 0;
     this->field_0635 = *(undefined4 *)&this->field_0x405;
-    this->field_0639 = *(undefined2 *)&this->field_0x409;
-    this->field_063B = *(undefined2 *)&this->field_0x40b;
-    this->field_063D = *(undefined2 *)&this->field_0x40d;
+    this->field_0639 = *(short *)&this->field_0x409;
+    this->field_063B = *(short *)&this->field_0x40b;
+    this->field_063D = *(short *)&this->field_0x40d;
     this->field_0643 = *(undefined2 *)&this->field_0x40f;
     this->field_0645 = *(undefined2 *)&this->field_0x411;
     this->field_0647 = *(undefined2 *)&this->field_0x413;
@@ -179,8 +179,7 @@ int __thiscall STBoatC::Teleport(STBoatC *this,int param_1)
     *(undefined4 *)&this->field_0x663 = 0;
     *(undefined4 *)((int)&this->field_0666 + 1) = 0;
     this->field_00B7 = 3;
-    thunk_FUN_00481520(this,(int)(short)this->field_0639,(int)(short)this->field_063B,
-                       (short)this->field_063D + 1);
+    thunk_FUN_00481520(this,(int)this->field_0639,(int)this->field_063B,this->field_063D + 1);
   }
   else {
     iVar9 = *(int *)&this->field_0x663;
@@ -300,7 +299,7 @@ LAB_0047b2dc:
       case 3:
         sVar19 = this->field_063B;
         sVar18 = this->field_0639;
-        iVar9 = (short)this->field_063D + 1;
+        iVar9 = this->field_063D + 1;
         break;
       case -1:
         iVar9 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3525,0,0,&DAT_007a4ccc,
@@ -400,17 +399,17 @@ LAB_00479ba6:
                    ((this->field_07CA != 0 &&
                     (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_07CA,(int *)&local_8),
                     iVar9 != -4)))) {
-                  iVar23 = (int)(short)this->field_0045;
-                  iVar9 = (int)(short)this->field_0043;
-                  iVar10 = (int)(short)this->field_0041;
+                  iVar23 = (int)this->field_0045;
+                  iVar9 = (int)this->field_0043;
+                  iVar10 = (int)this->field_0041;
                   uVar26 = 0;
                   iVar13 = 0;
                   uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
                 }
                 else {
-                  iVar23 = (int)(short)this->field_0045;
-                  iVar9 = (int)(short)this->field_0043;
-                  iVar10 = (int)(short)this->field_0041;
+                  iVar23 = (int)this->field_0045;
+                  iVar9 = (int)this->field_0043;
+                  iVar10 = (int)this->field_0041;
                   uVar26 = 0;
                   uVar11 = this->field_01ED;
                   iVar13 = 0;
@@ -453,9 +452,9 @@ LAB_00479ba6:
                    ((this->field_07CA != 0 &&
                     (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_07CA,(int *)&local_8),
                     iVar9 != -4)))) {
-                  iVar10 = (int)(short)this->field_0045;
-                  iVar9 = (int)(short)this->field_0043;
-                  iVar23 = (int)(short)this->field_0041;
+                  iVar10 = (int)this->field_0045;
+                  iVar9 = (int)this->field_0043;
+                  iVar23 = (int)this->field_0041;
                   uVar26 = 0;
                   iVar13 = 0;
                   uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
@@ -463,8 +462,8 @@ LAB_00479ba6:
                   thunk_FUN_004ad430((int)local_8 + 0x1d5);
                 }
                 else {
-                  thunk_FUN_006377b0(this->field_01ED,0,(int)(short)this->field_0041,
-                                     (int)(short)this->field_0043,(int)(short)this->field_0045,0);
+                  thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
+                                     (int)this->field_0045,0);
                 }
                 thunk_FUN_004ad430((int)&this->field_01D5);
               }
@@ -484,10 +483,10 @@ LAB_00479ba6:
                 if ((((this->field_06F7 == CASE_B) || (this->field_06F7 == CASE_23)) &&
                     (*(int *)&this->field_0x21d == 1)) &&
                    (*(uint *)&this->field_0x24 == (uint)DAT_0080874d)) {
-                  local_20 = (int)(short)this->field_0041;
+                  local_20 = (int)this->field_0041;
                   FUN_006e6710((void *)this->field_0211,
                                (float)local_20 * _DAT_007904f8 * _DAT_007904f0,
-                               (float)(int)(short)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
+                               (float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
                                (float)*(int *)&this->field_0x10d * _DAT_007904f8 + _DAT_007904f4,
                                0x28,CONCAT22(CONCAT11(2,(char)((uint)this->field_0018 >> 0x10)),
                                              *(undefined2 *)&this->field_0018));
@@ -509,17 +508,17 @@ LAB_00479ba6:
                    ((this->field_07CA != 0 &&
                     (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_07CA,(int *)&local_8),
                     iVar9 != -4)))) {
-                  iVar23 = (int)(short)this->field_0045;
-                  iVar9 = (int)(short)this->field_0043;
-                  iVar10 = (int)(short)this->field_0041;
+                  iVar23 = (int)this->field_0045;
+                  iVar9 = (int)this->field_0043;
+                  iVar10 = (int)this->field_0041;
                   uVar26 = 0;
                   iVar13 = 0;
                   uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
                 }
                 else {
-                  iVar23 = (int)(short)this->field_0045;
-                  iVar9 = (int)(short)this->field_0043;
-                  iVar10 = (int)(short)this->field_0041;
+                  iVar23 = (int)this->field_0045;
+                  iVar9 = (int)this->field_0043;
+                  iVar10 = (int)this->field_0041;
                   uVar26 = 0;
                   uVar11 = this->field_01ED;
                   iVar13 = 0;
@@ -540,8 +539,8 @@ LAB_00479ba6:
                     this->field_071E = 0;
                   }
                   if ((*(int *)&this->field_0x64d != 0) && (DAT_00811798 != (void *)0x0)) {
-                    thunk_FUN_00620670(DAT_00811798,(int)(short)this->field_0047,
-                                       (int)(short)this->field_0049,*(uint *)&this->field_0x24);
+                    thunk_FUN_00620670(DAT_00811798,(int)this->field_0047,(int)this->field_0049,
+                                       *(uint *)&this->field_0x24);
                   }
                   thunk_FUN_004ea6e0(*(uint *)&this->field_0x24,(int)*(short *)&this->field_0x657,
                                      (int)*(short *)&this->field_0x659,
@@ -553,21 +552,19 @@ LAB_00479ba6:
                                    (int)*(short *)((int)&this->field_065A + 1));
                 thunk_FUN_00417a20(this,*(short *)&this->field_0x657,*(short *)&this->field_0x659,
                                    *(short *)((int)&this->field_065A + 1),1);
-                local_20 = (int)(short)this->field_0041;
+                local_20 = (int)this->field_0041;
                 thunk_FUN_004ad3c0(&this->field_01D5,(float)local_20 * _DAT_007904f8 * _DAT_007904f0
-                                   ,(float)(int)(short)this->field_0043 * _DAT_007904f8 *
-                                    _DAT_007904f0,
-                                   (float)(int)(short)this->field_0045 * _DAT_007904f8 *
-                                   _DAT_007904f0);
+                                   ,(float)(int)this->field_0043 * _DAT_007904f8 * _DAT_007904f0,
+                                   (float)(int)this->field_0045 * _DAT_007904f8 * _DAT_007904f0);
                 thunk_FUN_0041c3f0(this,(undefined *)this->field_070A);
                 SVar5 = this->field_06F7;
                 if ((((SVar5 == CASE_7) || (SVar5 == CASE_13)) || (SVar5 == CASE_1B)) &&
                    ((this->field_07CA != 0 &&
                     (iVar9 = FUN_006e62d0(DAT_00802a38,this->field_07CA,(int *)&local_8),
                     iVar9 != -4)))) {
-                  iVar10 = (int)(short)this->field_0045;
-                  iVar9 = (int)(short)this->field_0043;
-                  iVar23 = (int)(short)this->field_0041;
+                  iVar10 = (int)this->field_0045;
+                  iVar9 = (int)this->field_0043;
+                  iVar23 = (int)this->field_0041;
                   uVar26 = 0;
                   iVar13 = 0;
                   uVar11 = thunk_FUN_004ad650((int)local_8 + 0x1d5);
@@ -575,8 +572,8 @@ LAB_00479ba6:
                   thunk_FUN_004ad430((int)local_8 + 0x1d5);
                 }
                 else {
-                  thunk_FUN_006377b0(this->field_01ED,0,(int)(short)this->field_0041,
-                                     (int)(short)this->field_0043,(int)(short)this->field_0045,0);
+                  thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
+                                     (int)this->field_0045,0);
                 }
                 thunk_FUN_004ad430((int)&this->field_01D5);
               }
@@ -738,16 +735,16 @@ LAB_0047acdc:
                   sVar24 = 0;
                   bVar25 = 0;
                   lVar17 = Library::MSVCRT::__ftol();
-                  iVar16 = (int)local_24 + (short)this->field_0045 + local_20 + (int)(short)lVar17;
-                  iVar10 = (int)(short)this->field_0043 - (int)local_28._2_2_;
-                  iVar13 = (int)(short)local_28 + iVar9 + (short)this->field_0041;
+                  iVar16 = (int)local_24 + this->field_0045 + local_20 + (int)(short)lVar17;
+                  iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
+                  iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
                 }
                 else {
-                  iVar16 = (int)local_24 + local_20 + (short)this->field_0045;
+                  iVar16 = (int)local_24 + local_20 + this->field_0045;
                   local_28._2_2_ = (short)((uint)uVar4 >> 0x10);
-                  iVar10 = (int)(short)this->field_0043 - (int)local_28._2_2_;
+                  iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
                   local_28._0_2_ = (short)uVar4;
-                  iVar13 = (int)(short)local_28 + iVar9 + (short)this->field_0041;
+                  iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
                 }
                 TraksClassTy::TraksCreate
                           (DAT_00802a7c,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),iVar16,
@@ -813,9 +810,9 @@ LAB_0047b1c5:
                                          (short *)&this->field_0x655);
 joined_r0x0047b202:
               if (iVar9 == 0) {
-                *(undefined2 *)&this->field_0x651 = this->field_0047;
-                *(undefined2 *)&this->field_0x653 = this->field_0049;
-                *(undefined2 *)&this->field_0x655 = this->field_004B;
+                *(short *)&this->field_0x651 = this->field_0047;
+                *(short *)&this->field_0x653 = this->field_0049;
+                *(short *)&this->field_0x655 = this->field_004B;
               }
             }
             else {
@@ -932,16 +929,16 @@ joined_r0x0047ada9:
                 sVar24 = 0;
                 bVar25 = 0;
                 lVar17 = Library::MSVCRT::__ftol();
-                iVar16 = (int)local_24 + (short)this->field_0045 + local_18 + (int)(short)lVar17;
-                iVar10 = (int)(short)this->field_0043 - (int)local_28._2_2_;
-                iVar13 = (int)(short)local_28 + iVar9 + (short)this->field_0041;
+                iVar16 = (int)local_24 + this->field_0045 + local_18 + (int)(short)lVar17;
+                iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
+                iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
               }
               else {
-                iVar16 = (int)local_24 + local_18 + (short)this->field_0045;
+                iVar16 = (int)local_24 + local_18 + this->field_0045;
                 local_28._2_2_ = (short)((uint)uVar4 >> 0x10);
-                iVar10 = (int)(short)this->field_0043 - (int)local_28._2_2_;
+                iVar10 = (int)this->field_0043 - (int)local_28._2_2_;
                 local_28._0_2_ = (short)uVar4;
-                iVar13 = (int)(short)local_28 + iVar9 + (short)this->field_0041;
+                iVar13 = (int)(short)local_28 + iVar9 + this->field_0041;
               }
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,iVar13,iVar10 + ((uVar11 >> 0x10) % 7 - 3),iVar16,sVar18

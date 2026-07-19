@@ -278,9 +278,9 @@ LAB_005f2d8b:
       goto LAB_005f2d8b;
     }
     FUN_006ea960(DAT_00807598,this_00->field_008F,
-                 (float)(int)this_00->field_0093 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)this_00->field_0097 * _DAT_007904f8 * _DAT_007904f0,
-                 (float)(int)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
+                 (float)this_00->field_0093 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)this_00->field_0097 * _DAT_007904f8 * _DAT_007904f0,
+                 (float)this_00->field_009B * _DAT_007904f8 * _DAT_007904f0 + _DAT_007904fc);
     if (this_00->field_00C0 == this_00->field_00BC) {
       if (-1 < (int)this_00->field_008F) {
         FUN_006eab60(DAT_00807598,this_00->field_008F);

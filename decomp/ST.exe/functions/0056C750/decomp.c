@@ -33,7 +33,7 @@ void __thiscall STAppC::DoneApp(STAppC *this)
   iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar3 = local_8;
   if (iVar4 == 0) {
-    if (local_8->field_1189 != 0) {
+    if (local_8->field_1189 != (LPVOID)0x0) {
       FUN_006ab060(&local_8->field_1189);
     }
     pSVar3->field_118D = 0;

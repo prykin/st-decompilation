@@ -361,7 +361,7 @@ LAB_0054506b:
       case 5:
         if (DAT_00807598 != (void *)0x0) {
           FUN_006e1c20(DAT_00807598,(float)(this_00->field_00C5 - this_00->field_04B2),
-                       this_00->field_00C9 - this_00->field_04B6,(float)this_00->field_0107,
+                       this_00->field_00C9 - this_00->field_04B6,this_00->field_0107,
                        (float *)&local_8,&local_c);
           lVar27 = Library::MSVCRT::__ftol();
           *(int *)&this_00->field_00FB = (int)lVar27;
@@ -827,7 +827,8 @@ switchD_0054679d_default:
       this_02 = extraout_ECX;
       this_01 = local_14;
       if (iVar6 == 0) {
-        this_01 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080ee1a,0,0,0);
+        this_01 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080ee1a,0,0,0)
+        ;
         local_14 = this_01;
         puVar14 = cMf32::RecGet(this_01,0x80,PTR_s_SAVE_DESC_0079adec,(int *)&local_58,0);
         this_02 = local_124.previous;
@@ -2152,8 +2153,8 @@ switchD_00546ac9_caseD_a506:
       return 0;
     }
     iVar6 = FUN_006e1dd0(DAT_00807598,this_00->field_00C5 - this_00->field_04B2,
-                         this_00->field_00C9 - this_00->field_04B6,(float *)&this_00->field_00FF,
-                         (float *)&this_00->field_0103,(float *)&this_00->field_0107);
+                         this_00->field_00C9 - this_00->field_04B6,&this_00->field_00FF,
+                         &this_00->field_0103,&this_00->field_0107);
     if (iVar6 == 0) {
       g_currentExceptionFrame = local_e0.previous;
       return 0;

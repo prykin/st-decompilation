@@ -35,8 +35,9 @@ void __cdecl StartStrateg(int param_1,uint param_2)
     *(undefined2 *)(param_1 + 0x67) = *(undefined2 *)((int)&DAT_008087eb + param_2 * 0x51);
     *(undefined2 *)(param_1 + 0x69) = *(undefined2 *)((int)&DAT_008087ef + param_2 * 0x51);
     *(undefined2 *)(param_1 + 0x6b) = *(undefined2 *)((int)&DAT_008087f3 + param_2 * 0x51);
-    FUN_006e6200(DAT_00802a38,0x402,(undefined4 *)(param_2 + 0x29),(undefined4 *)0x0,(int *)0x0,
-                 param_1,0);
+    Library::Ourlib::SAPP::FUN_006e6200
+              (DAT_00802a38,0x402,(undefined4 *)(param_2 + 0x29),(undefined4 *)0x0,(int *)0x0,
+               param_1,0);
     if (local_c != 0) {
       thunk_FUN_0067d160(&local_8);
     }

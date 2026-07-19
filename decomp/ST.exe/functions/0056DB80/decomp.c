@@ -110,7 +110,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       cLoadingTy::InitParam(DAT_00802a58,0x14,10,0x316,0x244,0,1,2,0x4021c6,0);
     }
     DAT_00806720 = timeGetTime();
-    DAT_00806754 = (cMf32 *)FUN_006f0ec0(0x345,&pSVar10->field_0x76f6,0,0,0);
+    DAT_00806754 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                      (0x345,&pSVar10->field_0x76f6,0,0,0);
     local_8 = (char *)&pSVar10->field_4EAF;
     cMf32::RecGet(DAT_00806754,0xc,PTR_s_AUTOSAVETIME_GAME_0079b068,(int *)&local_8,0);
     local_8 = (char *)&pSVar10->field_4EB3;
@@ -143,7 +144,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pSVar10 = local_c;
       pIVar4 = local_dc.previous;
       if (iVar8 == 0) {
-        DAT_00806758 = FUN_006f0ec0(0x345,&local_c->field_0x76f6,0,0,0);
+        DAT_00806758 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_c->field_0x76f6,0,0,0);
         g_currentExceptionFrame = local_dc.previous;
         pIVar4 = g_currentExceptionFrame;
       }
@@ -160,7 +161,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       pSVar10 = local_c;
       pIVar4 = local_120.previous;
       if (iVar8 == 0) {
-        DAT_00806758 = FUN_006f0ec0(0x345,&local_c->field_7D1A,0,0,0);
+        DAT_00806758 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_c->field_7D1A,0,0,0);
         g_currentExceptionFrame = local_120.previous;
         pIVar4 = g_currentExceptionFrame;
       }
@@ -170,7 +171,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
     if (pSVar10->field_7D12 != 0) {
       FUN_006ab060(puVar11);
     }
-    puVar6 = mfAnyLoad(DAT_00806754,PTR_s_TEXTURE_0079b07c,4,1);
+    puVar6 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806754,PTR_s_TEXTURE_0079b07c,4,1);
     *puVar11 = puVar6;
     iVar8 = cMf32::RecGetOrigLen(DAT_00806754,0,PTR_s_TEXTURE_0079b07c,(undefined1 *)0x0,1);
     pSVar10->field_7D16 = iVar8;
@@ -187,8 +188,8 @@ void __thiscall STAppC::StartGame(STAppC *this)
       cMf32::delete(this_01,&DAT_00806760->field_0000);
       DAT_00806760 = (cMf32 *)0x0;
     }
-    DAT_00806760 = (cMf32 *)FUN_006f0ec0(0x345,&local_224,0,0,0);
-    DAT_00806764 = mfRLoadCreate((int)DAT_00806760);
+    DAT_00806760 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_224,0,0,0);
+    DAT_00806764 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806760);
     DAT_0080679c = FUN_0070a9f0(DAT_00806760,s_PALETTE_007ca1c8,2,1);
     LoadGamePlt((int)DAT_00806760,0);
     if (pSVar10->field_7D0E == 0) {
@@ -276,7 +277,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if ((byte *)pSVar10->field_4EA7 != (byte *)0x0) {
         FUN_006b5570((byte *)pSVar10->field_4EA7);
       }
-      puVar5 = mfSarLoad((int)DAT_00806754,PTR_s_DESCRIPTION_0079b074,0);
+      puVar5 = Library::Ourlib::MFSARR::mfSarLoad((int)DAT_00806754,PTR_s_DESCRIPTION_0079b074,0);
       pSVar10->field_4EA7 = puVar5;
       if (puVar5 == (uint *)0x0) {
         puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
@@ -285,7 +286,7 @@ void __thiscall STAppC::StartGame(STAppC *this)
       if ((byte *)pSVar10->field_4EAB != (byte *)0x0) {
         FUN_006b5570((byte *)pSVar10->field_4EAB);
       }
-      puVar5 = mfSarLoad((int)DAT_00806754,PTR_s_OBJECTIVES_0079b078,0);
+      puVar5 = Library::Ourlib::MFSARR::mfSarLoad((int)DAT_00806754,PTR_s_OBJECTIVES_0079b078,0);
       pSVar10->field_4EAB = puVar5;
       if (puVar5 == (uint *)0x0) {
         puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);

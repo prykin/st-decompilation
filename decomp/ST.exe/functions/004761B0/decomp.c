@@ -186,9 +186,9 @@ LAB_004765df:
     goto LAB_004765df;
   }
   thunk_FUN_00627850(*(undefined4 *)&this->field_0x7b6,*(undefined4 *)&this->field_0x24,
-                     this->field_0018,(uint)(ushort)this->field_0032,(int)(short)this->field_0041,
-                     (int)(short)this->field_0043,(short)this->field_0045 + -10,this->field_06F3,
-                     (char *)0x0,0xffffffff);
+                     this->field_0018,(uint)(ushort)this->field_0032,(int)this->field_0041,
+                     (int)this->field_0043,this->field_0045 + -10,this->field_06F3,(char *)0x0,
+                     0xffffffff);
   *(int *)&this->field_0x7be = *(int *)&this->field_0x7be + -1;
 LAB_00476633:
   iVar9 = (*this->vtable->vfunc_D8)();

@@ -153,16 +153,16 @@ LAB_0047d831:
               sVar20 = 0;
               bVar21 = 0;
               lVar12 = Library::MSVCRT::__ftol();
-              iVar10 = (int)local_1c + (short)this->field_0045 + local_8 + (int)(short)lVar12;
-              iVar6 = (int)(short)this->field_0043 - (int)local_20._2_2_;
-              iVar11 = (int)(short)local_20 + iVar9 + (short)this->field_0041;
+              iVar10 = (int)local_1c + this->field_0045 + local_8 + (int)(short)lVar12;
+              iVar6 = (int)this->field_0043 - (int)local_20._2_2_;
+              iVar11 = (int)(short)local_20 + iVar9 + this->field_0041;
             }
             else {
-              iVar10 = (int)local_1c + local_8 + (short)this->field_0045;
+              iVar10 = (int)local_1c + local_8 + this->field_0045;
               local_20._2_2_ = (short)((uint)uVar3 >> 0x10);
-              iVar6 = (int)(short)this->field_0043 - (int)local_20._2_2_;
+              iVar6 = (int)this->field_0043 - (int)local_20._2_2_;
               local_20._0_2_ = (short)uVar3;
-              iVar11 = (int)(short)local_20 + iVar9 + (short)this->field_0041;
+              iVar11 = (int)(short)local_20 + iVar9 + this->field_0041;
             }
             TraksClassTy::TraksCreate
                       (DAT_00802a7c,1,2,7,iVar11,iVar6 + ((uVar7 >> 0x10) % 7 - 3),iVar10,sVar13,
@@ -227,8 +227,8 @@ LAB_0047d241:
           if (piVar2[0x134] == 2) {
             this->field_06A1 = 2;
             *(undefined4 *)&this->field_0x69d = 0;
-            thunk_FUN_006377b0(this->field_01ED,0,(int)(short)this->field_0041,
-                               (int)(short)this->field_0043,(int)(short)this->field_0045,0);
+            thunk_FUN_006377b0(this->field_01ED,0,(int)this->field_0041,(int)this->field_0043,
+                               (int)this->field_0045,0);
           }
           goto LAB_0047d7e6;
         }

@@ -99,7 +99,7 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       FUN_006e56b0((void *)pFVar2->field_000C,pFVar2->field_1AB3);
     }
     pFVar2->field_1AB3 = 0;
-    if (pFVar2->field_1AAB != 0) {
+    if (pFVar2->field_1AAB != (LPCSTR)0x0) {
       FUN_006ab060(&pFVar2->field_1AAB);
     }
     if ((undefined4 *)pFVar2->field_1A9F != (undefined4 *)0x0) {
@@ -132,10 +132,10 @@ void __thiscall FSGSTy::DoneFSGS(FSGSTy *this)
       ccFntTy::operator(this_01,(uint *)pFVar2->field_1A7F);
       pFVar2->field_1A7F = (StartServTy *)0x0;
     }
-    if ((HGDIOBJ)pFVar2->field_1A67 != (HGDIOBJ)0x0) {
-      DeleteObject((HGDIOBJ)pFVar2->field_1A67);
+    if (pFVar2->field_1A67 != (HGDIOBJ)0x0) {
+      DeleteObject(pFVar2->field_1A67);
     }
-    pFVar2->field_1A67 = 0;
+    pFVar2->field_1A67 = (HGDIOBJ)0x0;
     if ((byte *)pFVar2->field_1FB3 != (byte *)0x0) {
       FUN_006ae110((byte *)pFVar2->field_1FB3);
     }

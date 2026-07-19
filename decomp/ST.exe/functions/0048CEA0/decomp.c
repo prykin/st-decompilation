@@ -26,7 +26,7 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
   short local_8;
   short local_6;
   
-  local_14 = (int)(short)this->field_0816 * (int)(short)this->field_0816 * 0x9dd1;
+  local_14 = (int)this->field_0816 * (int)this->field_0816 * 0x9dd1;
   local_68.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_68;
   local_10 = this;
@@ -64,9 +64,9 @@ void __thiscall STBoatC::_CheckDefenceShots(STBoatC *this,int param_1)
                 iVar3 = (**(code **)(*this_00 + 0xf4))(*(undefined4 *)&pSVar2->field_0x24);
                 if (iVar3 == 1) {
                   thunk_FUN_00416270(this_00,&local_a,&local_8,&local_6);
-                  iVar3 = (int)(short)pSVar2->field_0041 - (int)local_a;
-                  iVar4 = (int)(short)pSVar2->field_0043 - (int)local_8;
-                  iVar5 = (int)(short)pSVar2->field_0045 - (int)local_6;
+                  iVar3 = (int)pSVar2->field_0041 - (int)local_a;
+                  iVar4 = (int)pSVar2->field_0043 - (int)local_8;
+                  iVar5 = (int)pSVar2->field_0045 - (int)local_6;
                   if (local_14 < (uint)(iVar4 * iVar4 + iVar3 * iVar3 + iVar5 * iVar5)) {
                     local_20 = CONCAT22(local_20._2_2_,0xffff);
                   }

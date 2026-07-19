@@ -171,7 +171,8 @@ LAB_005d8dbf:
               iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,pvVar17,pcVar18);
               this_02 = local_c;
               if (iVar4 == 0) {
-                this_00 = (cMf32 *)FUN_006f0ec0(0x345,&local_c->field_1CD4,0,0,0);
+                this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                             (0x345,&local_c->field_1CD4,0,0,0);
                 if (this_00 != (cMf32 *)0x0) {
                   iVar4 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   this_01 = extraout_ECX;

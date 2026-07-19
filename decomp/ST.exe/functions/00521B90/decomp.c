@@ -41,8 +41,8 @@ void __thiscall IntercomPanelTy::DoneIntercomPanel(IntercomPanelTy *this)
       ccFntTy::operator(this_00,(uint *)pIVar2->field_0180);
       pIVar2->field_0180 = 0;
     }
-    if (pIVar2->field_0184 != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pIVar2->field_0184);
+    if (pIVar2->field_0184 != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pIVar2->field_0184);
     }
     if (pIVar2->field_019C != 0) {
       cMf32::RecMemFree(DAT_00806790,&pIVar2->field_019C);

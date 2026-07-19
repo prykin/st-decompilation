@@ -141,7 +141,8 @@ int __thiscall FUN_006952b0(void *this,byte *param_1,byte *param_2)
       thunk_FUN_0069ff90((int)this);
       thunk_FUN_00697cf0(this,local_24,local_20);
       thunk_FUN_0069ff90((int)this);
-      AuxTMapRefreshAll(*(short **)((int)this + 0xc),*(int **)((int)this + 8));
+      Library::Ourlib::MFSTMAP::AuxTMapRefreshAll
+                (*(short **)((int)this + 0xc),*(int **)((int)this + 8));
       thunk_FUN_0069ff90((int)this);
       thunk_FUN_0069b190(this,**(int **)((int)this + 8) << 1,(*(int **)((int)this + 8))[1] << 1,
                          local_34 + -1);

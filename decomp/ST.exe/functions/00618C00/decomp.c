@@ -52,8 +52,7 @@ undefined4 __thiscall STJumpMineC::GetMessage(STJumpMineC *this,int param_1)
       iVar2 = thunk_FUN_00619c70(local_8);
       if (iVar2 != 0) {
         if (this_00->field_0150 == '\0') {
-          uVar3 = thunk_FUN_006191a0(this_00,(int)(short)this_00->field_00C9,
-                                     (int)(short)this_00->field_00CB);
+          uVar3 = thunk_FUN_006191a0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
           this_00->field_0150 = (char)uVar3;
           if ((char)uVar3 != '\0') {
             LoadImagJMine(this_00,1);
@@ -116,8 +115,7 @@ LAB_00618ce0:
         else {
           this_00->field_0093 = 4;
         }
-        uVar3 = thunk_FUN_006191a0(this_00,(int)(short)this_00->field_00C9,
-                                   (int)(short)this_00->field_00CB);
+        uVar3 = thunk_FUN_006191a0(this_00,(int)this_00->field_00C9,(int)this_00->field_00CB);
         this_00->field_0150 = (char)uVar3;
         if ((void *)this_00->field_007D != (void *)0x0) {
           thunk_FUN_00617a20((void *)this_00->field_007D,this_00->field_008B,this_00->field_0018,

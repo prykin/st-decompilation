@@ -327,7 +327,7 @@ LAB_00509ddd:
           local_c = (undefined1 *)((uint)local_c & 0xffffff00);
           local_10 = 0x3b;
           iVar4 = *(int *)(this_00->field_0194 + 4);
-          iVar10 = *(int *)(this_00->field_09F9 + 4);
+          iVar10 = *(int *)(this_00->field_09F9 + 2);
           puVar13 = &this_00->field_0xa2d;
           puVar7 = (undefined4 *)puVar13;
           for (iVar12 = 0x3a; iVar12 != 0; iVar12 = iVar12 + -1) {
@@ -426,7 +426,7 @@ LAB_00509c11:
       iVar10 = 0xb17f;
       local_c = (undefined1 *)0x6;
       iVar4 = 0x3b;
-      local_14 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09F9 + 4)) / 2 + 8;
+      local_14 = (*(int *)(this_00->field_0194 + 4) - *(int *)(this_00->field_09F9 + 2)) / 2 + 8;
       local_8 = &this_00->field_0A15;
       do {
         uVar14 = CreateBut(this_00,5,0,(uint)(this_00->field_0BFC != '\0'),local_14,iVar4,0,0,

@@ -149,7 +149,8 @@ undefined4 __thiscall SettMapMTy::NoneSettMap(SettMapMTy *this,int *param_1)
   local_1c = 0;
   if (0 < local_30) {
     do {
-      iVar3 = FUN_00715630(DAT_00811764,-1,&local_28,(int *)&local_18,&local_c,&local_2c,-1,0);
+      iVar3 = Library::Ourlib::CONNECT::FUN_00715630
+                        (DAT_00811764,-1,&local_28,(int *)&local_18,&local_c,&local_2c,-1,0);
       if ((iVar3 == 1) && (local_28 == 0x1b)) {
         StartSystemTy::AddToChat(this_00->field_1A5B,(int)local_c);
       }

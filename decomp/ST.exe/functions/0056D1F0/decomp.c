@@ -33,7 +33,7 @@ undefined4 __thiscall STAppC::CommonFunction(STAppC *this,int param_1)
       if ((DAT_00802a30 != 0) && (*(int *)(DAT_00802a30 + 0xa9) == 0)) {
         Library::DKW::DDX::FUN_006b8d50(*(int **)(DAT_00802a30 + 0xad),0,0,0,0);
       }
-      FUN_006ed100(DAT_00807598);
+      Library::Ourlib::ST3DSPR::FUN_006ed100(DAT_00807598);
       Library::DKW::DDX::FUN_006bd740(DAT_008075a8);
     }
     g_currentExceptionFrame = pIVar4;

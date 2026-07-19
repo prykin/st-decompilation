@@ -19,8 +19,9 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   ccFntTy *extraout_ECX_05;
   ccFntTy *this_00;
   undefined4 unaff_ESI;
-  uint *puVar5;
+  ushort **ppuVar5;
   void *unaff_EDI;
+  uint *puVar6;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
   
@@ -47,41 +48,41 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       FUN_006ab060(&pOVar2->field_01E5);
       this_00 = extraout_ECX;
     }
-    if ((byte *)pOVar2->field_02F9 != (byte *)0x0) {
+    if (pOVar2->field_02F9 != (uint *)0x0) {
       FUN_006b5570((byte *)pOVar2->field_02F9);
       this_00 = extraout_ECX_00;
     }
-    pOVar2->field_02F9 = 0;
+    pOVar2->field_02F9 = (uint *)0x0;
     if ((byte *)pOVar2->field_02FD != (byte *)0x0) {
       FUN_006ae110((byte *)pOVar2->field_02FD);
       this_00 = extraout_ECX_01;
     }
     pOVar2->field_02FD = 0;
-    if ((HANDLE)pOVar2->field_01DD != (HANDLE)0x0) {
-      FindCloseChangeNotification((HANDLE)pOVar2->field_01DD);
-      pOVar2->field_01DD = 0;
+    if (pOVar2->field_01DD != (HANDLE)0x0) {
+      FindCloseChangeNotification(pOVar2->field_01DD);
+      pOVar2->field_01DD = (HANDLE)0x0;
       this_00 = extraout_ECX_02;
     }
-    puVar5 = &pOVar2->field_01B5;
+    puVar6 = &pOVar2->field_01B5;
     iVar3 = 10;
     do {
-      if (*puVar5 != 0) {
-        FUN_006e56b0((void *)pOVar2->field_000C,*puVar5);
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)pOVar2->field_000C,*puVar6);
         this_00 = extraout_ECX_03;
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    puVar5 = &pOVar2->field_01AD;
+    puVar6 = &pOVar2->field_01AD;
     iVar3 = 2;
     do {
-      if (*puVar5 != 0) {
-        FUN_006e56b0((void *)pOVar2->field_000C,*puVar5);
+      if (*puVar6 != 0) {
+        FUN_006e56b0((void *)pOVar2->field_000C,*puVar6);
         this_00 = extraout_ECX_04;
       }
-      *puVar5 = 0;
-      puVar5 = puVar5 + 1;
+      *puVar6 = 0;
+      puVar6 = puVar6 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     DAT_008016dc = 0;
@@ -95,13 +96,13 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
       pOVar2->field_0180 = (ccFntTy *)0x0;
     }
     pOVar2->field_0198 = 0;
-    puVar5 = &pOVar2->field_0184;
+    ppuVar5 = &pOVar2->field_0184;
     iVar3 = 5;
     do {
-      if (*puVar5 != 0) {
-        cMf32::RecMemFree(DAT_00806790,puVar5);
+      if (*ppuVar5 != (ushort *)0x0) {
+        cMf32::RecMemFree(DAT_00806790,(uint *)ppuVar5);
       }
-      puVar5 = puVar5 + 1;
+      ppuVar5 = ppuVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     g_currentExceptionFrame = local_4c.previous;

@@ -69,25 +69,27 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     DAT_0080877f = 0;
   }
   if (pMVar3->field_006E == '\0') {
-    pcVar5 = (cMf32 *)FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+    pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
   }
   else {
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080c52e);
-    pcVar5 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+    pcVar5 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   }
   pMVar3->field_0070 = pcVar5;
   if (DAT_0080fb6e != 0) {
     if (DAT_0080c4c7 != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
-    DAT_0080c4c7 = mfSarLoad((int)pMVar3->field_0070,PTR_s_DESCRIPTION_0079c21c,0);
+    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad
+                             ((int)pMVar3->field_0070,PTR_s_DESCRIPTION_0079c21c,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
-    DAT_0080c4cb = mfSarLoad((int)pMVar3->field_0070,PTR_s_OBJECTIVES_0079c220,0);
+    DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
+                             ((int)pMVar3->field_0070,PTR_s_OBJECTIVES_0079c220,0);
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
@@ -133,7 +135,7 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
     pcVar5 = pMVar3->field_0070;
     pcVar17 = (char *)&DAT_0080e303;
   }
-  iVar4 = mfDarLoad((int)pcVar5,pcVar17,0);
+  iVar4 = Library::Ourlib::MFDARR::mfDarLoad((int)pcVar5,pcVar17,0);
   pMVar3->field_0074 = iVar4;
   if (iVar4 == 0) {
     puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x50,1);
@@ -161,13 +163,16 @@ void __thiscall MTaskTy::InitMTask(MTaskTy *this,char param_1,undefined1 param_2
   uVar9 = FUN_0070a9f0(DAT_00806780,pCVar8,bVar16,iVar4);
   pMVar3->field_005D = uVar9;
   pMVar3->field_0080 = 1;
-  puVar6 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_MT_CHECK_007cda58,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806784,CASE_B,(byte *)s_MT_CHECK_007cda58,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   pMVar3->field_0081 = puVar6;
   thunk_FUN_00568bc0(&g_sound,0);
   FUN_006bc360(pMVar3->field_005D,local_5a8,(int *)0x0);
-  FUN_00718780((int)local_5a8,0,0x100,0x1a,0x10,(undefined4 *)&pMVar3->field_0x91);
-  FUN_00718780((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3->field_0x191);
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_5a8,0,0x100,0x1a,0x10,(undefined4 *)&pMVar3->field_0x91);
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_5a8,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3->field_0x191);
   pcVar10 = (ccFntTy *)thunk_FUN_005defe0(pMVar3->field_005D,(undefined *)0x0,DAT_00807dd9);
   pMVar3->field_0089 = pcVar10;
   pcVar10->field_0058 = 1;

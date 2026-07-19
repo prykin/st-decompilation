@@ -56,7 +56,7 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     (*pcVar5)();
     return;
   }
-  puVar7 = mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
+  puVar7 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
   DibPut((undefined4 *)DAT_0081176c->field_02F0,0,0,'\x01',(byte *)puVar7);
   iVar6 = DAT_0081176c->field_0544;
   FUN_006b4170(iVar6,0,0,0,*(int *)(iVar6 + 4),*(int *)(iVar6 + 8),0xff);
@@ -173,7 +173,8 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     iVar6 = Library::MSVCRT::__setjmp3(local_bc.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar15 = local_10;
     if (iVar6 == 0) {
-      local_14 = (cMf32 *)FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0);
+      local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                    (0x345,&local_10->field_0x1faf,0,0,0);
     }
     pcVar10 = local_14;
     g_currentExceptionFrame = local_bc.previous;
@@ -289,12 +290,13 @@ void __thiscall ChooseMapTy::ShowDescription(ChooseMapTy *this,uint param_1)
     iVar6 = Library::MSVCRT::__setjmp3(local_100.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pCVar15 = local_10;
     if (iVar6 == 0) {
-      pcVar10 = (cMf32 *)FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0);
+      pcVar10 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&local_10->field_0x1faf,0,0,0)
+      ;
       local_14 = pcVar10;
       if (DAT_0080c4cb != (uint *)0x0) {
         FUN_006b5570((byte *)DAT_0080c4cb);
       }
-      DAT_0080c4cb = mfSarLoad((int)pcVar10,PTR_s_OBJECTIVES_0079c074,0);
+      DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad((int)pcVar10,PTR_s_OBJECTIVES_0079c074,0);
       puVar19 = (undefined4 *)&DAT_0080ed16;
       for (iVar6 = 0x41; iVar6 != 0; iVar6 = iVar6 + -1) {
         *puVar19 = 0;

@@ -48,7 +48,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
   uint local_8;
   
   local_14 = this;
-  local_38 = mfAObjLoad(param_1,s_2D_CLT_007d59b8,0,0);
+  local_38 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,s_2D_CLT_007d59b8,0,0);
   if (local_38 != (ushort *)0x0) {
     puVar8 = local_38;
     puVar3 = (undefined4 *)((int)this + 0x37ac);
@@ -59,7 +59,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
     }
     cMf32::RecMemFree(param_1,(uint *)&local_38);
   }
-  local_30 = mfAObjLoad(param_1,s_CLR_COVER_007d59ac,0,0);
+  local_30 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,s_CLR_COVER_007d59ac,0,0);
   if (local_30 != (ushort *)0x0) {
     puVar3 = &DAT_007d5934;
     puVar8 = local_30;
@@ -78,7 +78,7 @@ FUN_00691690(void *this,cMf32 *param_1,cMf32 *param_2,int param_3,undefined *par
       iVar14 = 1;
       bVar12 = 2;
       pcVar4 = thunk_FUN_00691650(&DAT_007d59a4,local_20);
-      pcVar4 = mfSSprLoad(param_2,pcVar4,bVar12,iVar14);
+      pcVar4 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar4,bVar12,iVar14);
       *(char **)((int)this + iVar10 * 0x248 + 0x1950) = pcVar4;
       thunk_FUN_00692ba0((int)pcVar4);
     }
@@ -113,7 +113,7 @@ LAB_0069177d:
             uVar7 = local_8 + 1;
           }
           pcVar4 = (char *)thunk_FUN_006a2d00(1,local_c,uVar7,1,0);
-          puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
+          puVar8 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar4,0);
           if (puVar8 != (ushort *)0x0) {
             puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0xa9);
             local_1c = (int *)(local_c * 6);
@@ -145,7 +145,7 @@ LAB_0069177d:
                   *piVar11 = 0;
                   piVar11 = piVar11 + 1;
                 }
-                puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
+                puVar8 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar4,0);
                 if (puVar8 == (ushort *)0x0) {
                   *(short *)(*local_28 + 0x23) = *(short *)(*local_28 + 0x23) + 1;
                 }
@@ -219,7 +219,7 @@ LAB_00691a65:
             uVar7 = local_8 + 1;
           }
           pcVar4 = (char *)thunk_FUN_006a2d00(0,local_c,uVar7,0,1);
-          puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
+          puVar8 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar4,0);
           if (puVar8 != (ushort *)0x0) {
             puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x59);
             local_18 = local_c * 6 + iVar10 * 0x92;
@@ -249,7 +249,7 @@ LAB_00691a65:
                 *piVar11 = 0;
                 piVar11 = piVar11 + 1;
               }
-              puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
+              puVar8 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar4,0);
               if (puVar8 == (ushort *)0x0) {
                 psVar1 = (short *)(*(int *)((int)local_14 + (local_18 + local_8) * 4 + 0x1a74) +
                                   0x23);
@@ -308,7 +308,7 @@ LAB_00691a65:
             uVar7 = local_8 + 1;
           }
           pcVar4 = (char *)thunk_FUN_006a2d00(3,local_c,uVar7,1,1);
-          puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
+          puVar8 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar4,0);
           if (puVar8 != (ushort *)0x0) {
             puVar3 = (undefined4 *)Library::DKW::LIB::FUN_006aac70(0x45);
             local_18 = local_c * 6 + iVar10 * 0x92;
@@ -332,7 +332,7 @@ LAB_00691a65:
                 uVar7 = local_8 + 1;
               }
               pcVar4 = (char *)thunk_FUN_006a2d00(3,local_c,uVar7,1,(uint)local_10);
-              puVar8 = FUN_006f0cd0(param_1,pcVar4,0);
+              puVar8 = Library::Ourlib::MFSTMAP::FUN_006f0cd0(param_1,pcVar4,0);
               piVar11 = local_8c;
               for (iVar14 = 0x14; iVar14 != 0; iVar14 = iVar14 + -1) {
                 *piVar11 = 0;
@@ -398,7 +398,7 @@ LAB_00691a65:
             local_24 = thunk_FUN_00692390(0,0,iVar14,iVar10);
             iVar5 = cMf32::RecChk(param_2,7,local_24);
             if (iVar5 != 0) break;
-            pcVar4 = mfSSprLoad(param_2,local_24,2,1);
+            pcVar4 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_24,2,1);
             *(char **)((int)local_14 + (iVar14 + iVar10 * 0x92) * 4 + 0x1954) = pcVar4;
             thunk_FUN_00692ba0((int)pcVar4);
             iVar14 = iVar14 + 1;
@@ -410,7 +410,7 @@ LAB_00691a65:
           wsprintfA(local_190,s__s_u_u_007d5970,puVar6,uVar13,uVar15);
           iVar14 = cMf32::RecChk(param_2,7,local_190);
           if (iVar14 == 0) {
-            pcVar4 = mfSSprLoad(param_2,local_190,2,1);
+            pcVar4 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,local_190,2,1);
             *(char **)((int)pvVar2 + iVar10 * 0x248 + 0x1a74) = pcVar4;
             thunk_FUN_00692ba0((int)pcVar4);
           }
@@ -424,7 +424,7 @@ LAB_00691a65:
       iVar14 = 1;
       bVar12 = 2;
       pcVar4 = thunk_FUN_00691650(s_CRACK_007d5968,iVar10);
-      pcVar4 = mfSSprLoad(param_2,pcVar4,bVar12,iVar14);
+      pcVar4 = Library::Ourlib::MFSPR::mfSSprLoad(param_2,pcVar4,bVar12,iVar14);
       *(char **)((int)pvVar2 + iVar10 * 0x248 + 0x1b04) = pcVar4;
       thunk_FUN_00692ba0((int)pcVar4);
     }

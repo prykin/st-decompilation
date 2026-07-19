@@ -17,17 +17,18 @@ void FUN_005c7800(void)
   int iVar8;
   byte *pbVar9;
   void *unaff_EDI;
-  char *pcVar10;
+  DWORD *pDVar10;
   char *pcVar11;
-  undefined4 *puVar12;
-  byte *pbVar13;
+  char *pcVar12;
+  undefined4 *puVar13;
+  byte *pbVar14;
   undefined4 local_5a80 [5654];
   byte local_228 [336];
   undefined4 local_d8 [17];
   undefined4 local_94;
   InternalExceptionFrame local_8c;
-  undefined *puVar14;
-  undefined4 uVar15;
+  undefined *puVar15;
+  undefined4 uVar16;
   SettMapTy *this_01;
   
   Library::MSVCRT::FUN_0072da40();
@@ -73,12 +74,12 @@ void FUN_005c7800(void)
     this_01->field_1A7F = 0;
     CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01->field_0x1a5f);
   }
-  puVar5 = &DAT_00853de0;
+  pDVar10 = &DAT_00853de0;
   for (iVar3 = 0x8c; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = 0;
-    puVar5 = puVar5 + 1;
+    *pDVar10 = 0;
+    pDVar10 = pDVar10 + 1;
   }
-  *(undefined2 *)puVar5 = 0;
+  *(undefined2 *)pDVar10 = 0;
   DAT_00853de0 = this_01->field_1F53;
   _DAT_00853ff4 = (uint)(byte)this_01->field_1F5C;
   cVar2 = this_01->field_1F57;
@@ -142,36 +143,36 @@ LAB_005c7ae0:
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc);
   iVar3 = this_01->field_1F7C;
   if ((DAT_00853ffc & 0xff) < *(uint *)(iVar3 + 0xc)) {
-    pcVar10 = (char *)(*(int *)(iVar3 + 8) * (DAT_00853ffc & 0xff) + *(int *)(iVar3 + 0x1c));
+    pcVar11 = (char *)(*(int *)(iVar3 + 8) * (DAT_00853ffc & 0xff) + *(int *)(iVar3 + 0x1c));
   }
   else {
-    pcVar10 = (char *)0x0;
+    pcVar11 = (char *)0x0;
   }
   uVar4 = 0xffffffff;
   do {
-    pcVar11 = pcVar10;
+    pcVar12 = pcVar11;
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    pcVar11 = pcVar10 + 1;
-    cVar2 = *pcVar10;
-    pcVar10 = pcVar11;
+    pcVar12 = pcVar11 + 1;
+    cVar2 = *pcVar11;
+    pcVar11 = pcVar12;
   } while (cVar2 != '\0');
   uVar4 = ~uVar4;
-  pcVar10 = pcVar11 + -uVar4;
-  pcVar11 = (char *)&DAT_00853ee8;
+  pcVar11 = pcVar12 + -uVar4;
+  pcVar12 = (char *)&DAT_00853ee8;
   for (uVar7 = uVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar10;
-    pcVar10 = pcVar10 + 4;
+    *(undefined4 *)pcVar12 = *(undefined4 *)pcVar11;
     pcVar11 = pcVar11 + 4;
+    pcVar12 = pcVar12 + 4;
   }
   for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *pcVar11 = *pcVar10;
-    pcVar10 = pcVar10 + 1;
+    *pcVar12 = *pcVar11;
     pcVar11 = pcVar11 + 1;
+    pcVar12 = pcVar12 + 1;
   }
   _DAT_0085400e = &LAB_00404c64;
   wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc);
-  DAT_00853ff8 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+  DAT_00853ff8 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   DAT_00853ffc._1_3_ = SUB43(DAT_00853ff8,0);
   uRam00854000 = (undefined1)((uint)DAT_00853ff8 >> 0x18);
   if (DAT_00853ff8 != (undefined4 *)0x0) {
@@ -188,14 +189,15 @@ LAB_005c7ae0:
     cMf32::delete(this_00,DAT_00853ff8);
     thunk_FUN_006a0070((int)local_5a80);
   }
-  puVar5 = FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
+  puVar5 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   this_01->field_1F3F = puVar5;
   DAT_008087b6 = 0;
   if (this_01->field_1F3F != 0) {
     if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
       FUN_006ab060((undefined4 *)(DAT_0081176c + 0x2f4));
     }
-    puVar6 = mfImgLoad(this_01->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
+    puVar6 = Library::Ourlib::MFIMG::mfImgLoad(this_01->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0)
+    ;
     *(ushort **)(DAT_0081176c + 0x2f4) = puVar6;
     if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
       FUN_006c7f90(*(int *)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0)
@@ -203,11 +205,11 @@ LAB_005c7ae0:
     }
     local_94 = DAT_0080995c;
     puVar5 = &DAT_00809960;
-    puVar12 = local_d8;
+    puVar13 = local_d8;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar12 = *puVar5;
+      *puVar13 = *puVar5;
       puVar5 = puVar5 + 1;
-      puVar12 = puVar12 + 1;
+      puVar13 = puVar13 + 1;
     }
     cMf32::RecGet((cMf32 *)this_01->field_1F3F,0,PTR_s_DESCRIPTOR_0079c110,(int *)&stack0xfffffff8,0
                  );
@@ -223,57 +225,59 @@ LAB_005c7ae0:
     DAT_00809958 = DAT_008087be;
     DAT_0080995c = local_94;
     puVar5 = local_d8;
-    puVar12 = &DAT_00809960;
+    puVar13 = &DAT_00809960;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar12 = *puVar5;
+      *puVar13 = *puVar5;
       puVar5 = puVar5 + 1;
-      puVar12 = puVar12 + 1;
+      puVar13 = puVar13 + 1;
     }
     if (DAT_0080c4c7 != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
-    DAT_0080c4c7 = mfSarLoad(this_01->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
+    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad
+                             (this_01->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
-    DAT_0080c4cb = mfSarLoad(this_01->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
+    DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
+                             (this_01->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
-    puVar14 = PTR_s_TITLE_MISSION_0079c104;
+    puVar15 = PTR_s_TITLE_MISSION_0079c104;
     puVar5 = &DAT_0080c3c3;
     for (iVar3 = 0x41; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    puVar6 = cMf32::RecGet((cMf32 *)this_01->field_1F3F,0xc,puVar14,(int *)&stack0xfffffff8,0);
+    puVar6 = cMf32::RecGet((cMf32 *)this_01->field_1F3F,0xc,puVar15,(int *)&stack0xfffffff8,0);
     if ((puVar6 == (ushort *)0x0) || ((char)DAT_0080c3c3 == '\0')) {
       Library::MSVCRT::FUN_0072e730(&DAT_00853de4,(byte *)0x0,(byte *)0x0,local_228,(byte *)0x0);
       uVar4 = 0xffffffff;
       pbVar9 = local_228;
       do {
-        pbVar13 = pbVar9;
+        pbVar14 = pbVar9;
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        pbVar13 = pbVar9 + 1;
+        pbVar14 = pbVar9 + 1;
         bVar1 = *pbVar9;
-        pbVar9 = pbVar13;
+        pbVar9 = pbVar14;
       } while (bVar1 != 0);
       uVar4 = ~uVar4;
-      pbVar9 = pbVar13 + -uVar4;
-      pbVar13 = (byte *)&DAT_0080c3c3;
+      pbVar9 = pbVar14 + -uVar4;
+      pbVar14 = (byte *)&DAT_0080c3c3;
       for (uVar7 = uVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-        *(undefined4 *)pbVar13 = *(undefined4 *)pbVar9;
+        *(undefined4 *)pbVar14 = *(undefined4 *)pbVar9;
         pbVar9 = pbVar9 + 4;
-        pbVar13 = pbVar13 + 4;
+        pbVar14 = pbVar14 + 4;
       }
       for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *pbVar13 = *pbVar9;
+        *pbVar14 = *pbVar9;
         pbVar9 = pbVar9 + 1;
-        pbVar13 = pbVar13 + 1;
+        pbVar14 = pbVar14 + 1;
       }
     }
     this_01->field_1F47 = 1;
@@ -282,11 +286,11 @@ LAB_005c7ae0:
       this_01->field_1A7F = 1;
       this_01->field_1A80 = DAT_008087c4._2_1_;
       this_01->field_1A81 = (char)(DAT_008087c2 >> 1);
-      puVar14 = &DAT_007cc584;
-      uVar15 = DAT_0080995c;
+      puVar15 = &DAT_007cc584;
+      uVar16 = DAT_0080995c;
       wsprintfA(&stack0xffffffe8,&DAT_007cc584);
-      this_01->field_1A82 = puVar14;
-      this_01->field_1A86 = uVar15;
+      this_01->field_1A82 = puVar15;
+      this_01->field_1A86 = uVar16;
       Library::MSVCRT::_strncpy(&this_01->field_0x1a8a,(char *)&DAT_0080c3c3,0x1d5);
       this_01->field_1C5E = 0;
       CFsgsConnection::UpdateGame((CFsgsConnection *)&DAT_00802a90,4,&this_01->field_0x1a5f);

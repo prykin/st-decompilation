@@ -18,7 +18,7 @@ int FUN_006767d0(void)
   if (iVar1 == 0) {
     wsprintfA((LPSTR)local_150,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079d6c0,
               &DAT_00807ddd,PTR_s_PL_LOG_0079d6c4);
-    this = (cMf32 *)FUN_006f0ec0(0x345,local_150,2,0,0);
+    this = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,2,0,0);
     local_8 = this;
     wsprintfA((LPSTR)local_150,s__s_d_02d_007d2de8,PTR_DAT_0079d6c8,(uint)DAT_0080874e,DAT_0080c52a)
     ;

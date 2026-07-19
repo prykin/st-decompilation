@@ -386,11 +386,13 @@ LAB_005b0041:
                 iVar6 = Library::MSVCRT::__setjmp3(local_e8.jumpBuffer,0,unaff_EDI,unaff_ESI);
                 this_01 = local_28;
                 if (iVar6 == 0) {
-                  pcVar8 = (cMf32 *)FUN_006f0ec0(0x345,&local_28->field_0x1faf,0,0,0);
+                  pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                              (0x345,&local_28->field_0x1faf,0,0,0);
                   if (DAT_0080c4cb != (uint *)0x0) {
                     FUN_006b5570((byte *)DAT_0080c4cb);
                   }
-                  DAT_0080c4cb = mfSarLoad((int)pcVar8,PTR_s_OBJECTIVES_0079c074,0);
+                  DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad
+                                           ((int)pcVar8,PTR_s_OBJECTIVES_0079c074,0);
                   if (DAT_0080c4cb == (uint *)0x0) {
                     DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
                   }
@@ -624,7 +626,8 @@ LAB_005b01f3:
             pbVar20 = pbVar20 + 1;
             pbVar17 = pbVar17 + 1;
           }
-          pcVar8 = (cMf32 *)FUN_006f0ec0(0x345,&local_28->field_0x1faf,0,0,0);
+          pcVar8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                      (0x345,&local_28->field_0x1faf,0,0,0);
           bVar24 = false;
           switch(this_01->field_1A5F) {
           case CASE_1:

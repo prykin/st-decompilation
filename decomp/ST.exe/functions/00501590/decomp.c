@@ -13,7 +13,7 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   undefined4 unaff_ESI;
   void *unaff_EDI;
   undefined4 *puVar4;
-  byte *pbVar5;
+  ushort *puVar5;
   InternalExceptionFrame local_4c;
   CPanelTy *local_8;
   
@@ -37,14 +37,14 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
   switch(local_8->field_0B9E) {
   case 0:
   case 4:
-    pbVar5 = (byte *)local_8->field_0974;
+    puVar5 = local_8->field_0974;
     puVar4 = (undefined4 *)local_8->field_018C;
     iVar3 = 0;
     iVar2 = 0;
     goto LAB_00501758;
   case 1:
     if ((local_8->field_0B99 == 9) || (local_8->field_0B99 == 0x15)) {
-      pbVar5 = (byte *)local_8->field_0978;
+      puVar5 = local_8->field_0978;
       puVar4 = (undefined4 *)local_8->field_018C;
       iVar3 = 0;
       iVar2 = 0;
@@ -52,11 +52,11 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
     }
     DibPut((undefined4 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_097C);
     DibPut((undefined4 *)this_00->field_018C,
-           (((undefined4 *)this_00->field_018C)[1] - *(int *)((byte *)this_00->field_0984 + 4)) / 2,
-           0x61,'\x01',(byte *)this_00->field_0984);
+           (((undefined4 *)this_00->field_018C)[1] - *(int *)(this_00->field_0984 + 2)) / 2,0x61,
+           '\x01',(byte *)this_00->field_0984);
     DibPut((undefined4 *)this_00->field_018C,
-           (((undefined4 *)this_00->field_018C)[1] - *(int *)((byte *)this_00->field_0988 + 4)) / 2,
-           0x7c,'\x01',(byte *)this_00->field_0988);
+           (((undefined4 *)this_00->field_018C)[1] - *(int *)(this_00->field_0988 + 2)) / 2,0x7c,
+           '\x01',(byte *)this_00->field_0988);
     break;
   case 2:
     if ((local_8->field_0B99 == 9) || (local_8->field_0B99 == 0x15)) {
@@ -65,16 +65,16 @@ void __thiscall CPanelTy::PaintCtrlBoat(CPanelTy *this)
     else {
       DibPut((undefined4 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_097C);
       DibPut((undefined4 *)this_00->field_018C,
-             (((undefined4 *)this_00->field_018C)[1] - *(int *)((byte *)this_00->field_0988 + 4)) /
-             2,0x7c,'\x01',(byte *)this_00->field_0988);
+             (((undefined4 *)this_00->field_018C)[1] - *(int *)(this_00->field_0988 + 2)) / 2,0x7c,
+             '\x01',(byte *)this_00->field_0988);
     }
 switchD_0050162e_caseD_a:
-    pbVar5 = (byte *)this_00->field_0984;
+    puVar5 = this_00->field_0984;
     puVar4 = (undefined4 *)this_00->field_018C;
     iVar3 = 0x61;
-    iVar2 = (puVar4[1] - *(int *)(pbVar5 + 4)) / 2;
+    iVar2 = (puVar4[1] - *(int *)(puVar5 + 2)) / 2;
 LAB_00501758:
-    DibPut(puVar4,iVar2,iVar3,'\x01',pbVar5);
+    DibPut(puVar4,iVar2,iVar3,'\x01',(byte *)puVar5);
     break;
   case 3:
     DibPut((undefined4 *)local_8->field_018C,0,0,'\x01',(byte *)local_8->field_0974);

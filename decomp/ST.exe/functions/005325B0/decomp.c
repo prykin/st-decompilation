@@ -87,7 +87,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   case 0xf:
     wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c6ee4,&DAT_00807680,&DAT_0080ef1e);
   }
-  puVar6 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+  puVar6 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   pOVar12 = local_8;
   this_00 = (cMf32 *)(_DAT_008087a0 & 0xff);
   switch(this_00) {

@@ -23,7 +23,7 @@ undefined4 __thiscall STGroupBoatC::SetMine(STGroupBoatC *this,int param_1)
   undefined4 local_28;
   undefined2 local_24;
   undefined2 local_22;
-  undefined2 local_20;
+  short local_20;
   STGroupBoatC *local_1c;
   undefined4 local_18;
   int local_14;

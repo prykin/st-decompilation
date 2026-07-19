@@ -39,7 +39,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
     iVar5 = CONCAT22(extraout_var,uVar4);
     if ((0 < iVar5) &&
        (local_20 = iVar5, local_c = thunk_FUN_00661800((int)this,extraout_EDX),
-       (int)(short)this->field_0179 < iVar5 - local_c)) {
+       (int)this->field_0179 < iVar5 - local_c)) {
       local_18 = thunk_FUN_0068f8f0((void *)this->field_0284,this->field_007B);
       local_8 = (uint *)0x0;
       local_10 = (uint *)0x0;
@@ -65,8 +65,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
                                          (DAT_007fa174,
                                           CONCAT31((int3)(local_24 >> 8),pAVar3->field_0x24),
                                           local_24,CASE_1);
-              if ((this_00 != (int *)0x0) && ((int)(short)pAVar3->field_0179 < local_20 - local_c))
-              {
+              if ((this_00 != (int *)0x0) && ((int)pAVar3->field_0179 < local_20 - local_c)) {
                 iVar5 = (**(code **)(*this_00 + 0x2c))();
                 uVar7 = thunk_FUN_00674fb0(iVar5);
                 if ((pAVar3->field_017F & uVar7) != 0) {
@@ -76,7 +75,7 @@ void __thiscall AiFltClassTy::GoToRepair(AiFltClassTy *this,int param_1)
                   else {
                     iVar5 = (**(code **)(*this_00 + 0x7c))();
                   }
-                  if (iVar5 < (short)pAVar3->field_0177) {
+                  if (iVar5 < pAVar3->field_0177) {
                     iVar5 = (**(code **)(*this_00 + 0x2c))();
                     if ((iVar5 < 0x32) || (0x73 < iVar5)) {
                       bVar2 = false;

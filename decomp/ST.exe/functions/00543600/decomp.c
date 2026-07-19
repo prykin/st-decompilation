@@ -31,11 +31,13 @@ void __thiscall CursorClassTy::InitCursor(CursorClassTy *this,undefined4 param_1
               (&this_00->field_00AD,DAT_0080759c,0,(BITMAPINFO *)0x0,0x8000000,0,(BITMAPINFO *)0x0,0
               );
     SetImages(this_00,param_1,s_CUR_MENU_007c7dd4,0x32,(BITMAPINFO *)0x0,0,-1,-1);
-    puVar4 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_INF_DEEPS_007c7dc8,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806784,CASE_B,(byte *)s_INF_DEEPS_007c7dc8,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_04E3 = puVar4;
-    puVar4 = mfRLoad(DAT_00806784,CASE_13,(byte *)s_CUR_CONFIRM_007c7db8,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806784,CASE_13,(byte *)s_CUR_CONFIRM_007c7db8,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_04E7 = puVar4;
     local_8 = cMf32::RecGet(DAT_00806780,1,s_CURSOR_PAL_007c7da8,(int *)0x0,1);
     puVar4 = local_8 + 0x14;

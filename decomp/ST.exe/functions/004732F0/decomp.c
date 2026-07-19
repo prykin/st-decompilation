@@ -394,9 +394,9 @@ cf_common_exit_0047405D:
             this->field_001C = local_30;
             sVar16 = 0;
             lVar15 = Library::MSVCRT::__ftol();
-            iVar9 = (int)(short)lVar15 + (uVar6 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
+            iVar9 = (int)(short)lVar15 + (uVar6 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                     (int)local_34;
-            iVar5 = ((uVar8 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_38._2_2_;
+            iVar5 = ((uVar8 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
             uVar6 = local_30;
           }
           else {
@@ -415,13 +415,13 @@ cf_common_exit_0047405D:
             sVar18 = 0;
             sVar17 = 0;
             sVar16 = 0;
-            iVar9 = (uVar8 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_34;
+            iVar9 = (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
             local_38._2_2_ = (short)((uint)local_38 >> 0x10);
-            iVar5 = ((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_38._2_2_;
+            iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
           }
           TraksClassTy::TraksCreate
                     (DAT_00802a7c,1,2,7,
-                     (uVar6 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 + (int)(short)local_38,
+                     (uVar6 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
                      iVar5 + -3,iVar9,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar11,sVar22,bVar23
                     );
           uVar6 = (uint)(byte)this->field_0x2bf;
@@ -542,9 +542,9 @@ switchD_004734db_caseD_2:
             sVar16 = 0;
             this->field_001C = local_30;
             lVar15 = Library::MSVCRT::__ftol();
-            iVar9 = (int)(short)lVar15 + (uVar6 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
+            iVar9 = (int)(short)lVar15 + (uVar6 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                     (int)local_34;
-            iVar5 = ((uVar8 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_38._2_2_;
+            iVar5 = ((uVar8 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
             uVar6 = local_30;
           }
           else {
@@ -563,13 +563,13 @@ switchD_004734db_caseD_2:
             sVar18 = 0;
             sVar17 = 0;
             sVar16 = 0;
-            iVar9 = (uVar8 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_34;
+            iVar9 = (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_34;
             local_38._2_2_ = (short)((uint)local_38 >> 0x10);
-            iVar5 = ((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_38._2_2_;
+            iVar5 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_38._2_2_;
           }
           TraksClassTy::TraksCreate
                     (DAT_00802a7c,1,2,7,
-                     (uVar6 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 + (int)(short)local_38,
+                     (uVar6 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_38,
                      iVar5 + -3,iVar9,sVar16,sVar17,sVar18,sVar19,sVar20,sVar21,iVar11,sVar22,bVar23
                     );
           local_1c = local_1c + 1;

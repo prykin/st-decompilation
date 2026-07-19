@@ -38,7 +38,8 @@ void __thiscall MTestTy::InitMTest(MTestTy *this)
     local_8->field_005D = iVar4;
     FUN_006bc360(iVar4,local_44c,(int *)0x0);
     *(undefined4 *)(DAT_0081176c + 0x140) = 0x1f;
-    FUN_00718780((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)(DAT_0081176c + 0x144));
+    Library::Ourlib::PALETTE::FUN_00718780
+              ((int)local_44c,0,0x100,0x8b,0x15,(undefined4 *)(DAT_0081176c + 0x144));
     puVar6 = (undefined4 *)&this_01->field_0x61;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar6 = 0;

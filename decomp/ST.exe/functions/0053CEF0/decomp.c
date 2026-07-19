@@ -50,7 +50,8 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     bVar13 = 0;
     uVar11 = 0xffffffff;
     pbVar4 = (byte *)thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
-    puVar5 = mfRLoad(DAT_00806794,CASE_B,pbVar4,uVar11,bVar13,iVar3,iVar16,puVar19);
+    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar4,uVar11,bVar13,iVar3,iVar16,puVar19);
     local_c = &pSVar2->field_01B5;
     pSVar2->field_01B1 = puVar5;
     iVar3 = 0xb4ff;

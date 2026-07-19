@@ -79,7 +79,7 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
     RaiseInternalException(iVar9,0,s_E____titans_Start_wait_obj_cpp_007cdd5c,0x2a6);
     return;
   }
-  if ((local_50->field_1A87 != 0) && (0xf9 < (uint)(local_50->field_0061 - local_50->field_1A8B))) {
+  if ((local_50->field_1A87 != 0) && (0xf9 < local_50->field_0061 - local_50->field_1A8B)) {
     ShowDescription(local_50);
     this_01->field_1A87 = 0;
   }
@@ -118,7 +118,8 @@ void __thiscall WaitTy::NoneWait(WaitTy *this,int *param_1)
       local_1c = 0;
       if (0 < local_24) {
         do {
-          iVar9 = FUN_00715630(DAT_00811764,-1,&local_2c,&local_6c,&local_14,&local_28,-1,0);
+          iVar9 = Library::Ourlib::CONNECT::FUN_00715630
+                            (DAT_00811764,-1,&local_2c,&local_6c,&local_14,&local_28,-1,0);
           piVar21 = local_14;
           if (iVar9 == -0x4d) {
 LAB_005e9233:
@@ -136,8 +137,7 @@ LAB_005e9233:
             }
           }
           else if (iVar9 == 0) {
-            if (30000 < (uint)(this_01->field_0061 - *(int *)&this_01->field_0x1a6c))
-            goto LAB_005e9233;
+            if (30000 < this_01->field_0061 - *(int *)&this_01->field_0x1a6c) goto LAB_005e9233;
           }
           else if (iVar9 == 1) {
             switch(local_2c) {
@@ -220,7 +220,7 @@ LAB_005e9233:
                       }
                       this_01->field_0x1a76 = 1;
                       uVar22 = *(undefined4 *)((int)piVar21 + 3);
-                      *(undefined4 *)&this_01->field_0x1a7b = this_01->field_0061;
+                      *(DWORD *)&this_01->field_0x1a7b = this_01->field_0061;
                       *(undefined4 *)&this_01->field_0x1a77 = uVar22;
                       puVar17 = &this_01->field_1A5B->field_069A;
                       if (*puVar17 != 0) {
@@ -256,7 +256,7 @@ LAB_005e9233:
                       this_01->field_1A8B = DVar8;
                     }
                   }
-                  else if (5000 < (uint)(this_01->field_0061 - *(int *)&this_01->field_0x1a7b)) {
+                  else if (5000 < this_01->field_0061 - *(int *)&this_01->field_0x1a7b) {
                     this_01->field_0x1a76 = 0;
                   }
                 }
@@ -328,7 +328,7 @@ LAB_005e8ee0:
                       piVar19 = (int *)((int)piVar19 + 1);
                     }
                     *(char *)local_10 = '\x01';
-                    *(undefined4 *)&this_01->field_0x1a7b = this_01->field_0061;
+                    *(DWORD *)&this_01->field_0x1a7b = this_01->field_0061;
                     *(int *)&this_01->field_0x1a7f = *(int *)&this_01->field_0x1a7f + -1;
                     uVar14 = *(uint *)&this_01->field_1A5B->field_0x6a6;
                     uVar14 = (uVar14 * 100 + *(int *)&this_01->field_0x1a7f * -100) / uVar14;
@@ -366,7 +366,7 @@ LAB_005e91f7:
                                    (undefined4 *)0x0,(undefined4 *)0x0,0,0);
               }
             }
-            *(undefined4 *)&this_01->field_0x1a6c = this_01->field_0061;
+            *(DWORD *)&this_01->field_0x1a6c = this_01->field_0061;
             if (local_14 != (int *)0x0) {
               FUN_006ab060(&local_14);
             }
@@ -375,7 +375,7 @@ LAB_005e91f7:
         } while (local_1c < local_24);
       }
       if ((((this_01->field_0x1a76 != '\0') &&
-           (3000 < (uint)(this_01->field_0061 - *(int *)&this_01->field_0x1a7b))) &&
+           (3000 < this_01->field_0061 - *(int *)&this_01->field_0x1a7b)) &&
           (*(int *)&this_01->field_0x1a7f != 0)) && (this_01->field_1A83 != 0)) {
         uVar14 = *(int *)&this_01->field_0x1a7f * 4 + 4;
         local_20 = (char *)Library::DKW::LIB::FUN_006aac70(uVar14);
@@ -405,7 +405,7 @@ LAB_005e91f7:
         FUN_00715360(DAT_00811764,1,'%',local_20,uVar14,1,0xffffffff);
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
         FUN_006ab060(&local_20);
-        *(undefined4 *)&this_01->field_0x1a7b = this_01->field_0061;
+        *(DWORD *)&this_01->field_0x1a7b = this_01->field_0061;
       }
     }
   }
@@ -455,7 +455,7 @@ LAB_005e91f7:
         this_01->field_1AFC = (HoloTy *)0x0;
       }
       this_01->field_0065 = 1;
-      *(undefined4 *)&this_01->field_0x1a6c = this_01->field_0061;
+      *(DWORD *)&this_01->field_0x1a6c = this_01->field_0061;
       if (this_01->field_1A64 == 0) {
         Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
         if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {

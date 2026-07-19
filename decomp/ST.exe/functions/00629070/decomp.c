@@ -146,8 +146,9 @@ LAB_00629242:
     RaiseInternalException(iVar9,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x2ae);
     return 0xffff;
   }
-  puVar10 = mfRLoad(DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,(undefined4 *)0x0
-                   );
+  puVar10 = Library::Ourlib::MFRLOAD::mfRLoad
+                      (DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
+                       (undefined4 *)0x0);
   pSVar8 = local_1c;
   local_1c->field_00B6 = *(undefined4 *)puVar10;
   if (param_1 == 0) {
@@ -163,11 +164,11 @@ LAB_00629242:
   FUN_006e98e0(DAT_00807598,*puVar1,0,*(undefined4 *)puVar10,*(int *)((int)puVar10 + 0x21),1);
   FUN_006ea270(DAT_00807598,*puVar1,0,0);
   uVar3 = *puVar1;
-  local_20 = (float)(int)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
+  local_20 = (float)pSVar8->field_0046 * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006A = local_20;
-  local_14 = (float)(int)pSVar8->field_004A * _DAT_007904f8 * _DAT_007904f0;
+  local_14 = (float)pSVar8->field_004A * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_006E = local_14;
-  fVar6 = (float)(int)pSVar8->field_004E * _DAT_007904f8 * _DAT_007904f0;
+  fVar6 = (float)pSVar8->field_004E * _DAT_007904f8 * _DAT_007904f0;
   pSVar8->field_0072 = fVar6;
   FUN_006ea960(DAT_00807598,uVar3,local_20,local_14,fVar6 + _DAT_007904fc);
   FUN_006eaaa0(DAT_00807598,*puVar1,0);

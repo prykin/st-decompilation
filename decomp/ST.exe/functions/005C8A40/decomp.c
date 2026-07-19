@@ -12,12 +12,12 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
   SettMapTy *this_00;
   byte bVar4;
   char cVar5;
-  undefined4 uVar6;
+  DWORD DVar6;
   int iVar7;
   int *piVar8;
   char *pcVar9;
-  DWORD DVar10;
-  byte *pbVar11;
+  byte *pbVar10;
+  undefined4 uVar11;
   int iVar12;
   undefined1 uVar13;
   uint *puVar14;
@@ -60,8 +60,8 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
   int *local_8;
   
   local_38 = this;
-  uVar6 = FUN_006e51b0(this->field_0010);
-  this->field_0061 = uVar6;
+  DVar6 = FUN_006e51b0(this->field_0010);
+  this->field_0061 = DVar6;
   local_dc.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_dc;
   iVar7 = Library::MSVCRT::__setjmp3(local_dc.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -72,8 +72,8 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
                                 &DAT_007a4ccc,s_SettMapTy__GetMessage_007cd23c);
     if (iVar12 != 0) {
       pcVar3 = (code *)swi(3);
-      uVar6 = (*pcVar3)();
-      return uVar6;
+      uVar11 = (*pcVar3)();
+      return uVar11;
     }
     RaiseInternalException(iVar7,0,s_E____titans_Start_sett_obj_cpp_007cd0e8,0x758);
     return 0xffff;
@@ -109,10 +109,10 @@ undefined4 __thiscall SettMapTy::GetMessage(SettMapTy *this,int param_1)
             (**(code **)(this_00->field_0000 + 0xc))();
           }
           else if (uVar15 == 2) {
-            uVar6 = *(undefined4 *)(*(int *)(param_1 + 0x14) + 0x18);
-            this_00->field_1E27 = uVar6;
+            uVar11 = *(undefined4 *)(*(int *)(param_1 + 0x14) + 0x18);
+            this_00->field_1E27 = uVar11;
             (**(code **)(this_00->field_0000 + 0x10))
-                      (CONCAT31((int3)((uint)uVar6 >> 8),
+                      (CONCAT31((int3)((uint)uVar11 >> 8),
                                 *(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14)));
           }
           else if (uVar15 == 3) {
@@ -699,18 +699,18 @@ joined_r0x005c964b:
         puVar1 = &this_00->field_0x1e33;
         *(undefined4 *)(this_00->field_1E2F + 0xc) = 0;
         this_00->field_1F37 = 0;
-        uVar6 = FUN_006b0140(0x1f57,DAT_00807618);
-        wsprintfA(puVar1,s__s__d_007cd0b8,uVar6,uVar23);
+        uVar11 = FUN_006b0140(0x1f57,DAT_00807618);
+        wsprintfA(puVar1,s__s__d_007cd0b8,uVar11,uVar23);
         Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_1E2F,(undefined4 *)puVar1);
         this_00->field_1F37 = 1;
         uVar23 = 2;
-        uVar6 = FUN_006b0140(0x1f57,DAT_00807618);
-        wsprintfA(puVar1,s__s__d_007cd0b8,uVar6,uVar23);
+        uVar11 = FUN_006b0140(0x1f57,DAT_00807618);
+        wsprintfA(puVar1,s__s__d_007cd0b8,uVar11,uVar23);
         Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_1E2F,(undefined4 *)puVar1);
         this_00->field_1F37 = 2;
         uVar23 = 3;
-        uVar6 = FUN_006b0140(0x1f57,DAT_00807618);
-        wsprintfA(puVar1,s__s__d_007cd0b8,uVar6,uVar23);
+        uVar11 = FUN_006b0140(0x1f57,DAT_00807618);
+        wsprintfA(puVar1,s__s__d_007cd0b8,uVar11,uVar23);
         Library::DKW::TBL::FUN_006ae1c0((uint *)this_00->field_1E2F,(undefined4 *)puVar1);
         this_00->field_21A9 = *(undefined4 *)(this_00->field_1E2F + 0xc);
         this_00->field_21A1 = (uint)DAT_00808a9b;
@@ -882,8 +882,8 @@ joined_r0x005c964b:
       if (local_8 != (int *)0x0) {
         iVar7 = 2;
         do {
-          uVar6 = FUN_006b0140(0x2354,DAT_00807618);
-          wsprintfA(&this_00->field_0x1e33,s__d__s_007c2864,iVar7,uVar6);
+          uVar11 = FUN_006b0140(0x2354,DAT_00807618);
+          wsprintfA(&this_00->field_0x1e33,s__d__s_007c2864,iVar7,uVar11);
           this_00->field_1F37 = iVar7;
           Library::DKW::TBL::FUN_006ae1c0
                     ((uint *)this_00->field_1E2F,(undefined4 *)&this_00->field_0x1e33);
@@ -1253,8 +1253,8 @@ LAB_005c9c8a:
     break;
   case 0x6905:
     if (this_00->field_0065 == '\x01') {
-      DVar10 = timeGetTime();
-      this_00->field_1F53 = DVar10;
+      DVar6 = timeGetTime();
+      this_00->field_1F53 = DVar6;
       thunk_FUN_005c7800();
     }
     break;
@@ -1379,8 +1379,8 @@ LAB_005c9e75:
       }
       goto LAB_005ca619;
     case 0x6980:
-      uVar6 = FUN_006b0140(0x2354,DAT_00807618);
-      wsprintfA((LPSTR)local_98,s__d__s_007c2864,(uint)(byte)this_00->field_1F5C,uVar6);
+      uVar11 = FUN_006b0140(0x2354,DAT_00807618);
+      wsprintfA((LPSTR)local_98,s__d__s_007c2864,(uint)(byte)this_00->field_1F5C,uVar11);
       goto LAB_005ca73b;
     case 0x6981:
       iVar7 = this_00->field_1F7C;
@@ -1633,13 +1633,13 @@ LAB_005cab38:
     break;
   case 0x6587:
     if (DAT_00808a9b == 0xff) {
-      uVar6 = FUN_006b0140(0x1f59,DAT_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007a4ccc,uVar6);
+      uVar11 = FUN_006b0140(0x1f59,DAT_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007a4ccc,uVar11);
     }
     else {
       iVar7 = DAT_00808a9b + 1;
-      uVar6 = FUN_006b0140(0x1f57,DAT_00807618);
-      wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_007cd0b8,uVar6,iVar7);
+      uVar11 = FUN_006b0140(0x1f57,DAT_00807618);
+      wsprintfA((LPSTR)&DAT_0080f33a,s__s__d_007cd0b8,uVar11,iVar7);
     }
     ccFntTy::SetSurf(DAT_0081176c->field_0034,this_00->field_1E1E,0,local_1c,local_18,local_14,
                      local_10);
@@ -1657,14 +1657,14 @@ LAB_005cab38:
   case 0x6589:
     if (DAT_00808a8f == '\0') break;
 LAB_005cadd5:
-    pbVar11 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
+    pbVar10 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
     iVar7 = (local_10 + -0x10) / 2 + local_18;
     puVar18 = (undefined4 *)this_00->field_1E1E;
     iVar12 = (local_14 + -0x11) / 2 + local_1c;
     goto cf_common_exit_005CAE0F;
   case 0x658a:
     if (DAT_00808a94 != '\0') {
-      pbVar11 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
+      pbVar10 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
       iVar7 = (local_10 + -0x10) / 2 + local_18;
       iVar12 = (local_14 + -0x11) / 2 + local_1c;
       puVar18 = (undefined4 *)this_00->field_1E1E;
@@ -1675,12 +1675,12 @@ LAB_005cadd5:
     cVar5 = DAT_00808aa9;
 LAB_005cad88:
     if (cVar5 != '\0') {
-      pbVar11 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
+      pbVar10 = (byte *)FUN_0070b3a0(this_00->field_1F4F,0);
       iVar7 = (local_10 + -0x10) / 2 + local_18;
       iVar12 = (local_14 + -0x11) / 2 + local_1c;
       puVar18 = (undefined4 *)this_00->field_1E1E;
 cf_common_exit_005CAE0F:
-      DibPut(puVar18,iVar12,iVar7,'\x06',pbVar11);
+      DibPut(puVar18,iVar12,iVar7,'\x06',pbVar10);
     }
     break;
   case 0x658c:
@@ -1692,7 +1692,7 @@ cf_common_exit_005CAE0F:
   }
 LAB_005cae3e:
   g_currentExceptionFrame = local_dc.previous;
-  uVar6 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
-  return uVar6;
+  uVar11 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
+  return uVar11;
 }
 

@@ -53,7 +53,7 @@ void __thiscall MainMenuTy::AnimationMainMenu(MainMenuTy *this)
         else {
           uVar4 = piVar8[3];
         }
-        if (uVar4 <= (uint)(pMVar7->field_0061 - piVar8[4])) {
+        if (uVar4 <= pMVar7->field_0061 - piVar8[4]) {
           pBVar5 = (BITMAPINFO *)FUN_0070b3a0(iVar3,(int)*(short *)(iVar3 + 0x29));
           FUN_006b5f80(DAT_008075a8,*piVar8,piVar8[1],(int)*(short *)(iVar3 + 0x2c),
                        (int)*(short *)(iVar3 + 0x2e));

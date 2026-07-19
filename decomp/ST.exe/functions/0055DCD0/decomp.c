@@ -24,7 +24,8 @@ SetPalette(undefined4 *param_1,int *param_2,cMf32 *param_3,char *param_4,int par
     Library::DKW::DDX::FUN_006bd740(param_2);
     local_8 = cMf32::RecGet(param_3,1,param_4,(int *)0x0,1);
     FUN_006bc360((int)local_8,(undefined4 *)&stack0xfffffbb4,(int *)0x0);
-    FUN_00719080(param_1,(undefined4 *)&stack0xfffffbb4,0,0x100,param_5,param_6);
+    Library::Ourlib::PALETTE::FUN_00719080
+              (param_1,(undefined4 *)&stack0xfffffbb4,0,0x100,param_5,param_6);
     cMf32::RecMemFree(param_3,(uint *)&local_8);
     g_currentExceptionFrame = local_4c.previous;
     return;

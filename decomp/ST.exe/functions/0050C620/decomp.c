@@ -215,8 +215,8 @@ cf_common_exit_0050E007:
           } while (iVar3 < 0xb9);
         }
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,this_00->field_09E1,0,0x5c,10,0x3c,
-                   0x1e);
+                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,(int)this_00->field_09E1,0,0x5c,10,
+                   0x3c,0x1e);
         PaintCostsXYSI(this_00,this_00->field_0194,this_00->field_0C1C,this_00->field_0C20,7,4);
         if (-1 < (int)this_00->field_015C) {
           Library::DKW::DDX::FUN_006b3640
@@ -375,8 +375,8 @@ cf_common_exit_0050E007:
     if (local_31 == cVar10) {
       if (cVar10 == '\x01') {
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,this_00->field_09E1,0,0x5c,10,0x32,
-                   0x19);
+                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,(int)this_00->field_09E1,0,0x5c,10,
+                   0x32,0x19);
         PaintDamageXY(this_00,this_00->field_0194,0x5c,0x50,
                       CONCAT31((int3)((uint)extraout_EDX >> 8),this_00->field_0xc3d),0x2714);
         uVar4 = (uint)(*(int *)&this_00->field_0xc3d * 0x21) / 100;
@@ -402,8 +402,8 @@ cf_common_exit_0050E007:
       }
       else if (cVar10 == '\x02') {
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,0x28,0x79,this_00->field_09E1,0,0x28,0x33,
-                   0x9b,0xf);
+                  ((undefined4 *)this_00->field_0194,0,0x28,0x79,(int)this_00->field_09E1,0,0x28,
+                   0x33,0x9b,0xf);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,*(undefined4 *)&this_00->field_0xc3d);
         ccFntTy::SetSurf(this_00->field_01BC,this_00->field_0194,0,0x28,0x79,0x9b,0xf);
         ccFntTy::WrStr(this_00->field_01BC,&DAT_0080f33a,-1,-1,1);
@@ -412,8 +412,8 @@ cf_common_exit_0050E007:
         if (this_00->field_0C31 == local_3c) {
           if (this_00->field_0C33 != local_3a) {
             Library::DKW::WGR::FUN_006b55f0
-                      ((undefined4 *)this_00->field_0194,0,0x5c,0x50,this_00->field_09E1,0,0x5c,10,
-                       0x32,0x19);
+                      ((undefined4 *)this_00->field_0194,0,0x5c,0x50,(int)this_00->field_09E1,0,0x5c
+                       ,10,0x32,0x19);
             PaintPerResSI(this_00);
           }
         }
@@ -456,8 +456,8 @@ cf_common_exit_0050E007:
       }
       else if (this_00->field_0C33 != local_3a) {
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,this_00->field_09E1,0,0x5c,10,0x32,
-                   0x19);
+                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,(int)this_00->field_09E1,0,0x5c,10,
+                   0x32,0x19);
         PaintPerResSI(this_00);
         if (-1 < (int)this_00->field_015C) {
           Library::DKW::DDX::FUN_006b3640
@@ -546,8 +546,8 @@ LAB_0050ce3f:
           } while (iVar3 < 0xb9);
         }
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,this_00->field_09E1,0,0x5c,10,0x3c,
-                   0x1e);
+                  ((undefined4 *)this_00->field_0194,0,0x5c,0x50,(int)this_00->field_09E1,0,0x5c,10,
+                   0x3c,0x1e);
         PaintCostsXYSI(this_00,this_00->field_0194,this_00->field_0C1C,this_00->field_0C20,7,4);
         if (-1 < (int)this_00->field_015C) {
           Library::DKW::DDX::FUN_006b3640
@@ -598,8 +598,8 @@ LAB_0050ce3f:
           iVar3 = iVar3 + 4;
         } while (iVar3 < 0xb9);
       }
-      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09E1,0,0x15,0x22,0xc3,
-                                           0xc,0);
+      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,(int)this_00->field_09E1,0,0x15,0x22,
+                                           0xc3,0xc,0);
       if (pbVar5 != (byte *)0x0) {
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c28e0,(uint)(byte)this_00->field_0C2A);
         ccFntTy::WrStr(this_00->field_01B8,&DAT_0080f33a,-1,-1,5);
@@ -643,16 +643,16 @@ LAB_0050ce3f:
   case 0x62:
     if ((*(Global_sub_00526BA0_param_1Enum *)&this_00->field_0xc12 != local_5b) ||
        (this_00->field_0C16 != local_57)) {
-      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09F5,0,0x7f,0x20,0x24,
-                                           0xb,0);
+      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,(int)this_00->field_09F5,0,0x7f,0x20,
+                                           0x24,0xb,0);
       if (pbVar5 != (byte *)0x0) {
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1890,*(undefined4 *)&this_00->field_0xc12);
         ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,5);
         DibPut((undefined4 *)this_00->field_0194,0x7f,0x66,'\x01',pbVar5);
         ccFntTy::EraseSufr(this_00->field_01C4);
       }
-      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09F5,0,0xa5,9,0x24,0xb
-                                           ,0);
+      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,(int)this_00->field_09F5,0,0xa5,9,
+                                           0x24,0xb,0);
       if (pbVar5 != (byte *)0x0) {
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1890,this_00->field_0C16);
         ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,4);
@@ -738,8 +738,8 @@ LAB_0050ce3f:
       }
     }
     if (((this_00->field_0C1C == local_51) && (this_00->field_0C20 == local_4d)) ||
-       (pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,this_00->field_09DD,0,100,0x13,0x18
-                                             ,0xc,0), pbVar5 == (byte *)0x0)) break;
+       (pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01C4,(int)this_00->field_09DD,0,100,0x13
+                                             ,0x18,0xc,0), pbVar5 == (byte *)0x0)) break;
     if (this_00->field_0C1C != local_51) {
       wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007c1ae4,(uint)(ushort)this_00->field_0C1C);
       ccFntTy::WrStr(this_00->field_01C4,&DAT_0080f33a,-1,-1,7);
@@ -912,8 +912,8 @@ LAB_0050ce3f:
     } while ((int)local_14 < 0xf6);
     wsprintfA((LPSTR)&DAT_0080f33a,s__d_____d_007c28d4,(uint)(byte)this_00->field_0C24,
               (uint)(byte)this_00->field_0C25);
-    pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09DD,0,0x5f,7,0x2f,0xb,0
-                                        );
+    pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,(int)this_00->field_09DD,0,0x5f,7,0x2f,
+                                         0xb,0);
     if (pbVar5 == (byte *)0x0) break;
     ccFntTy::WrStr(this_00->field_01B8,&DAT_0080f33a,-1,-1,5);
     DibPut((undefined4 *)this_00->field_0194,0x5f,0x4d,'\x01',pbVar5);
@@ -995,8 +995,8 @@ LAB_0050dfdc:
           iVar3 = iVar3 + 4;
         } while (iVar3 < 0xb9);
       }
-      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,this_00->field_09E1,0,0x24,6,0xa4,
-                                           0x2b,0);
+      pbVar5 = (byte *)ccFntTy::CreateSurf(this_00->field_01B8,(int)this_00->field_09E1,0,0x24,6,
+                                           0xa4,0x2b,0);
       if (pbVar5 != (byte *)0x0) {
         iVar22 = -1;
         iVar21 = -1;

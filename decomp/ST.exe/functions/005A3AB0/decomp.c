@@ -84,7 +84,7 @@ LAB_005a3b63:
         local_10 = (uint *)thunk_FUN_0055d590((byte *)s_Profile_Description_007cc16c,param_2,param_3
                                              );
         if (local_10 != (uint *)0x0) {
-          if ((byte *)this_01->field_1B04 != (byte *)0x0) {
+          if (this_01->field_1B04 != (uint *)0x0) {
             FUN_006b5570((byte *)this_01->field_1B04);
           }
           puVar5 = ccFntTy::_TxtToSarr(this_01->field_1A73,local_10);
@@ -95,7 +95,7 @@ LAB_005a3b63:
             Library::DKW::TBL::FUN_006b5aa0((int)puVar5,&DAT_008016a0);
           }
           this_01->field_002D = 0x33;
-          *(undefined4 *)&this_01->field_0x31 = this_01->field_1B04;
+          *(uint **)&this_01->field_0x31 = this_01->field_1B04;
           FUN_006e6080(this_01,2,this_01->field_1AE4,(undefined4 *)&this_01->field_0x1d);
         }
         thunk_FUN_005a39a0(this_01,this_01->field_1A7F,(byte *)s_1_Wins_007cc134,param_2,param_3,

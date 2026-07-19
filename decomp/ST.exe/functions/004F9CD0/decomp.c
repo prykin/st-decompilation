@@ -26,7 +26,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar4 == 0) {
     if (DAT_00806758 != 0) {
-      iVar4 = mfDarLoad(DAT_00806758,param_1,0);
+      iVar4 = Library::Ourlib::MFDARR::mfDarLoad(DAT_00806758,param_1,0);
       if (iVar4 != 0) {
         Library::MSVCRT::_strncpy(&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = local_8;
@@ -45,7 +45,7 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         bVar9 = 0;
         bVar8 = 6;
         pcVar5 = (char *)thunk_FUN_005260b0(0,0,0);
-        psVar6 = mfQmtLoad(DAT_00806790,pcVar5,bVar8,bVar9,iVar4);
+        psVar6 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar5,bVar8,bVar9,iVar4);
         *puVar1 = psVar6;
         pCVar3->field_0260 = 1;
         pCVar3->field_025F = 0;

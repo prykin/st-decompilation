@@ -74,10 +74,10 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
       pAVar2->field_00C9 = puVar5;
     }
     iVar3 = 0;
-    if (0 < (short)pAVar2->field_0125) {
+    if (0 < pAVar2->field_0125) {
       *(undefined4 *)(pAVar2->field_00A5 + 0xc) = 0;
       iVar4 = *(int *)((int)param_1 + 0x107) + 0x10b + (int)param_1;
-      if (0 < (short)pAVar2->field_0125) {
+      if (0 < pAVar2->field_0125) {
         do {
           *(undefined4 *)(iVar4 + 4) = *(undefined4 *)&pAVar2->field_0x24;
           *(undefined4 *)(iVar4 + 0x77) = pAVar2->field_009D;
@@ -89,7 +89,7 @@ int __thiscall AiTactClassTy::InitData(AiTactClassTy *this,undefined4 *param_1)
           *(AiTactClassTy **)(local_c + 0x284) = pAVar2;
           iVar4 = iVar4 + *(int *)(iVar4 + 0x14);
           iVar3 = iVar3 + 1;
-        } while (iVar3 < (short)pAVar2->field_0125);
+        } while (iVar3 < pAVar2->field_0125);
       }
       local_10 = thunk_FUN_00668180(s___REPAIR_FLEET___007d571c,pAVar2->field_0039,0x8000,0,
                                     pAVar2->field_0x24);

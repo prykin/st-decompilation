@@ -90,7 +90,8 @@ void __thiscall PrividerTy::NonePrivider(PrividerTy *this,undefined4 *param_1)
     if (iVar10 == 0xf) {
       this_01->field_1A6D = 0;
     }
-    iVar10 = FUN_00715630(DAT_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
+    iVar10 = Library::Ourlib::CONNECT::FUN_00715630
+                       (DAT_00811764,-1,&local_1c,&local_3c,&local_10,(uint *)0x0,-1,0);
     psVar8 = local_10;
     pCVar7 = DAT_00802a30;
     if (iVar10 != -0x4d) {
@@ -208,7 +209,7 @@ LAB_005bb532:
         g_currentExceptionFrame = local_a0.previous;
         return;
       }
-      if ((uint)(this_01->field_0061 - this_01->field_1A69) < 0x7531) {
+      if (this_01->field_0061 - this_01->field_1A69 < 0x7531) {
         g_currentExceptionFrame = local_a0.previous;
         return;
       }

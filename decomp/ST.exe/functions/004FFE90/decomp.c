@@ -138,7 +138,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     }
     if ((local_41 != this_00->field_0C54) || (local_3d != this_00->field_0C58)) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_019C,0,1,0,this_00->field_0B47,0,1,0,0x4e,0x20);
+                ((undefined4 *)this_00->field_019C,0,1,0,(int)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
       if (-1 < (int)this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
@@ -167,7 +167,7 @@ LAB_00500121:
 LAB_00500126:
     if (iVar6 != 0) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_019C,0,1,0,this_00->field_0B47,0,1,0,0x4e,0x20);
+                ((undefined4 *)this_00->field_019C,0,1,0,(int)this_00->field_0B47,0,1,0,0x4e,0x20);
       PaintName(this_00,0);
       if (-1 < (int)this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
@@ -178,7 +178,8 @@ LAB_00500126:
     if ((((local_29 != this_00->field_0C6C) || (local_42 != this_00->field_0C53)) &&
         (iVar6 = this_00->field_0C54, iVar6 != 0xdd)) && ((iVar6 != 0xde && (iVar6 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_019C,0,1,0x1f,this_00->field_0B47,0,1,0x1f,0x4e,0x11);
+                ((undefined4 *)this_00->field_019C,0,1,0x1f,(int)this_00->field_0B47,0,1,0x1f,0x4e,
+                 0x11);
       PaintLife(this_00,0);
       if (-1 < (int)this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640
@@ -197,7 +198,8 @@ LAB_00500126:
         (local_1c != this_00->field_0C79)) &&
        (((iVar6 = this_00->field_0C54, iVar6 != 0xdd && (iVar6 != 0xde)) && (iVar6 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
-                ((undefined4 *)this_00->field_019C,0,1,0x2f,this_00->field_0B47,0,1,0x2f,0x4e,0x24);
+                ((undefined4 *)this_00->field_019C,0,1,0x2f,(int)this_00->field_0B47,0,1,0x2f,0x4e,
+                 0x24);
       PaintWeap(this_00,0);
       if (-1 < (int)this_00->field_0164) {
         Library::DKW::DDX::FUN_006b3640

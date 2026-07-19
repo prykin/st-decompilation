@@ -64,7 +64,7 @@ void __thiscall MainMenuTy::InitMainMenu(MainMenuTy *this,char param_1)
       iVar2 = 0;
       bVar8 = 0;
       pCVar3 = FUN_006f2c00(s_MM_FLC_007cc938,2,iVar7);
-      puVar4 = mfAnyLoad(DAT_00806780,pCVar3,bVar8,iVar2);
+      puVar4 = Library::Ourlib::MFANY::mfAnyLoad(DAT_00806780,pCVar3,bVar8,iVar2);
       *puVar5 = puVar4;
       iVar7 = iVar7 + 1;
       puVar5 = puVar5 + 1;

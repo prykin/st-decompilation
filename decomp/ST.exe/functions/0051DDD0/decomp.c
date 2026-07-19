@@ -246,8 +246,8 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           this_00->field_01C3 = *(undefined4 *)(param_1 + 0x14);
           iVar5 = (ushort)this_00->field_01AF + 0x16;
           Library::DKW::WGR::FUN_006b55f0
-                    ((undefined4 *)this_00->field_0068,0,0x21,iVar5,this_00->field_01DC,0,0x21,iVar5
-                     ,0x19c,0x117 - (uint)(ushort)this_00->field_01AF);
+                    ((undefined4 *)this_00->field_0068,0,0x21,iVar5,(int)this_00->field_01DC,0,0x21,
+                     iVar5,0x19c,0x117 - (uint)(ushort)this_00->field_01AF);
           Library::DKW::WGR::FUN_006b5110
                     (this_00->field_0068,0,0x21,(ushort)this_00->field_01AF + 0x16,
                      this_00->field_0218,0,0,(uint)(ushort)this_00->field_01B1 * this_00->field_01C3
@@ -267,7 +267,7 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
-        if (this_00->field_01D3 == 0) {
+        if (this_00->field_01D3 == (uint *)0x0) {
           g_currentExceptionFrame = local_84.previous;
           return 0;
         }
@@ -283,8 +283,8 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
           local_14 = (undefined4 *)CONCAT31(local_14._1_3_,(-(DAT_0080874e != '\x01') & 6U) + 1);
         }
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0068,0,0x21,0x16,this_00->field_01DC,0,0x21,0x16,
-                   0x19c,0x118);
+                  ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,
+                   0x16,0x19c,0x118);
         iVar5 = this_00->field_0218;
         local_1c = *(uint **)(iVar5 + 0x14);
         if (local_1c == (uint *)0x0) {
@@ -304,8 +304,8 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         uVar14 = uVar15;
         if ((int)uVar15 < (int)(uVar15 + *(int *)((int)local_10 + 0x1e0))) {
           do {
-            if ((int)uVar14 < *(int *)(this_00->field_01D3 + 8)) {
-              local_1c = *(uint **)(*(int *)(this_00->field_01D3 + 0x14) + uVar14 * 4);
+            if ((int)uVar14 < (int)this_00->field_01D3[2]) {
+              local_1c = *(uint **)(this_00->field_01D3[5] + uVar14 * 4);
             }
             else {
               local_1c = (uint *)0x0;
@@ -515,8 +515,8 @@ undefined4 __thiscall HelpPanelTy::GetMessage(HelpPanelTy *this,int param_1)
         }
         iVar5 = *(ushort *)(param_1 + 0x1a) + 0x16;
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)this_00->field_0068,0,0x21,iVar5,this_00->field_01DC,0,0x21,iVar5,
-                   0x19c,*(int *)(this_00->field_01EC + 8));
+                  ((undefined4 *)this_00->field_0068,0,0x21,iVar5,(int)this_00->field_01DC,0,0x21,
+                   iVar5,0x19c,*(int *)(this_00->field_01EC + 8));
         iVar5 = this_00->field_01EC;
         uVar14 = *(uint *)(iVar5 + 0x14);
         if (uVar14 == 0) {

@@ -58,7 +58,7 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,int param_1,char 
     if (local_1c->field_02F4 != 0) {
       FUN_006ab060(puVar12);
     }
-    puVar4 = mfImgLoad(param_1,0xc,PTR_s_SMALL_MAP_0079c1dc,2,0);
+    puVar4 = Library::Ourlib::MFIMG::mfImgLoad(param_1,0xc,PTR_s_SMALL_MAP_0079c1dc,2,0);
     *puVar12 = puVar4;
     if (puVar4 != (ushort *)0x0) {
       FUN_006c7f90((int)puVar4,(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
@@ -67,14 +67,14 @@ void __thiscall StartSystemTy::LoadMapData(StartSystemTy *this,int param_1,char 
     if (DAT_0080c4c7 != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
-    DAT_0080c4c7 = mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
+    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
     if (DAT_0080c4cb != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
-    DAT_0080c4cb = mfSarLoad(param_1,PTR_s_OBJECTIVES_0079c1d4,0);
+    DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_OBJECTIVES_0079c1d4,0);
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }

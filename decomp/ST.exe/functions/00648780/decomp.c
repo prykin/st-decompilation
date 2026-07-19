@@ -26,7 +26,7 @@ undefined4 * __cdecl LoadBossEdit(int param_1,char *param_2)
     if ((param_1 == 0) || (param_2 == (char *)0x0)) {
       RaiseInternalException(-0x34,DAT_007ed77c,s_E____titans_ai_ai_boss_d_cpp_007d27f4,0x7f);
     }
-    local_8 = mfAObjLoad(param_1,param_2,1,0);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,param_2,1,0);
     if (local_8 != (ushort *)0x0) {
       local_c = thunk_FUN_00648530((undefined4 *)local_8);
       thunk_FUN_006484f0((int *)&local_8);

@@ -308,8 +308,8 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
             uVar9 = uVar14;
             if ((int)uVar14 < (int)(*(int *)(local_18 + 0x1e0) + uVar14)) {
               do {
-                if ((int)uVar9 < *(int *)(this_01->field_02F9 + 8)) {
-                  local_1c = *(uint **)(*(int *)(this_01->field_02F9 + 0x14) + uVar9 * 4);
+                if ((int)uVar9 < (int)this_01->field_02F9[2]) {
+                  local_1c = *(uint **)(this_01->field_02F9[5] + uVar9 * 4);
                 }
                 else {
                   local_1c = (uint *)0x0;
@@ -345,9 +345,9 @@ undefined4 __thiscall OptPanelTy::GetMessage(OptPanelTy *this,int param_1)
           }
           bVar25 = this_01->field_01A4;
           if ((2 < bVar25) &&
-             ((((bVar25 < 5 || (bVar25 == 7)) && ((HANDLE)this_01->field_01DD != (HANDLE)0x0)) &&
-              (DVar8 = WaitForSingleObject((HANDLE)this_01->field_01DD,0), DVar8 == 0)))) {
-            FindNextChangeNotification((HANDLE)this_01->field_01DD);
+             ((((bVar25 < 5 || (bVar25 == 7)) && (this_01->field_01DD != (HANDLE)0x0)) &&
+              (DVar8 = WaitForSingleObject(this_01->field_01DD,0), DVar8 == 0)))) {
+            FindNextChangeNotification(this_01->field_01DD);
             if (this_01->field_01A4 != '\a') {
               PrepFiles(this_01,*(uint *)&this_01->field_0x1e1);
             }
@@ -1609,7 +1609,7 @@ switchD_00534835_caseD_1:
         this_00 = extraout_ECX;
         puVar10 = local_c;
         if (iVar7 == 0) {
-          puVar10 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+          puVar10 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
           iVar7 = this_01->field_02FD;
           if (*(uint *)&this_01->field_0x2c < *(uint *)(iVar7 + 0xc)) {
             iVar7 = *(int *)(iVar7 + 8) * *(uint *)&this_01->field_0x2c + *(int *)(iVar7 + 0x1c);
@@ -1763,7 +1763,7 @@ switchD_00534835_caseD_1:
       DibPut((undefined4 *)this_01->field_0068,0xaa,0x6f,'\x01',(byte *)this_01->field_018C);
       wsprintfA(&this_01->field_0x6c,&DAT_007c1890,(uint)(byte)DAT_00807346);
       ccFntTy::SetSurf(this_01->field_017C,this_01->field_0068,0,0xaa,0x6f,
-                       *(int *)(this_01->field_018C + 4),*(int *)(this_01->field_018C + 8));
+                       *(int *)(this_01->field_018C + 2),*(int *)(this_01->field_018C + 4));
       ccFntTy::WrTxt(this_01->field_017C,(uint *)&this_01->field_0x6c,-2,-1,0,-1,-1);
       if (DAT_008016d8 != (PopUpTy *)0x0) {
         PopUpTy::ChangeNumStr(DAT_008016d8);
@@ -1910,7 +1910,7 @@ LAB_00535ef1:
       DibPut((undefined4 *)this_01->field_0068,0xaa,0x81,'\x01',(byte *)this_01->field_018C);
       wsprintfA(&this_01->field_0x6c,&DAT_007c1890,DAT_00807347 + 1);
       ccFntTy::SetSurf(this_01->field_017C,this_01->field_0068,0,0xaa,0x81,
-                       *(int *)(this_01->field_018C + 4),*(int *)(this_01->field_018C + 8));
+                       *(int *)(this_01->field_018C + 2),*(int *)(this_01->field_018C + 4));
       ccFntTy::WrTxt(this_01->field_017C,(uint *)&this_01->field_0x6c,-2,-1,0,-1,-1);
       g_currentExceptionFrame = local_8c.previous;
       return 0;

@@ -18,7 +18,8 @@ void __thiscall FSGSTy::InfoCtrls(FSGSTy *this,void *param_1)
   void *unaff_EDI;
   ccFntTy **ppcVar8;
   bool bVar9;
-  ccFntTy *local_8dc [11];
+  ccFntTy *local_8dc [8];
+  uint *local_8bc;
   undefined4 local_8b0;
   undefined4 local_8ac;
   undefined4 local_8a8;
@@ -86,7 +87,7 @@ LAB_0059d780:
         local_8dc[1] = (ccFntTy *)0x99;
       }
       local_8dc[2] = this_00->field_1A73;
-      local_8dc[8] = (ccFntTy *)this_00->field_1AF8;
+      local_8bc = (uint *)this_00->field_1AF8;
       local_8b0 = this_00->field_0008;
       local_68 = 2;
       local_8ac = 2;
@@ -102,17 +103,17 @@ LAB_0059d780:
       local_890 = local_8b0;
       local_6c = local_8b0;
       (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_1AD8,0,local_8dc,0);
-      local_8dc[8] = (ccFntTy *)this_00->field_1AFC;
+      local_8bc = (uint *)this_00->field_1AFC;
       local_8dc[3] = (ccFntTy *)0x15e;
       (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_1ADC,0,local_8dc,0);
-      local_8dc[8] = (ccFntTy *)this_00->field_1B00;
+      local_8bc = (uint *)this_00->field_1B00;
       local_8dc[3] = (ccFntTy *)0x1ea;
       (**(code **)(*(int *)this_00->field_000C + 8))(6,&this_00->field_1AE0,0,local_8dc,0);
       local_8dc[1] = (ccFntTy *)0xc8;
       if (iVar5 != 0) {
         local_8dc[1] = (ccFntTy *)0xcc;
       }
-      local_8dc[8] = (ccFntTy *)this_00->field_1B04;
+      local_8bc = this_00->field_1B04;
       local_8dc[3] = (ccFntTy *)0xd2;
       local_8dc[4] = (ccFntTy *)0xdd;
       local_8dc[5] = (ccFntTy *)0x17c;

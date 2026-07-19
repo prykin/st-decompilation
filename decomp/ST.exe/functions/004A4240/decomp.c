@@ -90,7 +90,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if ((short)this_00->field_0270 + -1 + (int)(short)this_00->field_026A < (int)local_a) {
+      if (this_00->field_0270 + -1 + (int)(short)this_00->field_026A < (int)local_a) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -98,7 +98,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if ((short)this_00->field_0272 + -1 + (int)(short)this_00->field_026C < (int)local_8) {
+      if (this_00->field_0272 + -1 + (int)(short)this_00->field_026C < (int)local_8) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -106,7 +106,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if ((short)this_00->field_0274 + -1 + (int)(short)this_00->field_026E < (int)local_6) {
+      if (this_00->field_0274 + -1 + (int)(short)this_00->field_026E < (int)local_6) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -167,7 +167,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if ((short)this_00->field_0258 + -1 + (int)(short)this_00->field_0252 < (int)local_a) {
+      if (this_00->field_0258 + -1 + (int)(short)this_00->field_0252 < (int)local_a) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -175,7 +175,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if ((short)this_00->field_025A + -1 + (int)(short)this_00->field_0254 < (int)local_8) {
+      if (this_00->field_025A + -1 + (int)(short)this_00->field_0254 < (int)local_8) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -183,7 +183,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
         g_currentExceptionFrame = local_78.previous;
         return;
       }
-      if ((short)this_00->field_025C + -1 + (int)(short)this_00->field_0256 < (int)local_6) {
+      if (this_00->field_025C + -1 + (int)(short)this_00->field_0256 < (int)local_6) {
         g_currentExceptionFrame = local_78.previous;
         return;
       }
@@ -241,7 +241,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if ((short)this_00->field_0270 + -1 + (int)(short)this_00->field_026A < (int)local_a) {
+    if (this_00->field_0270 + -1 + (int)(short)this_00->field_026A < (int)local_a) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
@@ -249,7 +249,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if ((short)this_00->field_0272 + -1 + (int)(short)this_00->field_026C < (int)local_8) {
+    if (this_00->field_0272 + -1 + (int)(short)this_00->field_026C < (int)local_8) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
@@ -257,7 +257,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if ((short)this_00->field_0274 + -1 + (int)(short)this_00->field_026E < (int)local_6) {
+    if (this_00->field_0274 + -1 + (int)(short)this_00->field_026E < (int)local_6) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
@@ -341,7 +341,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if ((short)this_00->field_0258 + -1 + (int)(short)this_00->field_0252 < (int)local_a) {
+    if (this_00->field_0258 + -1 + (int)(short)this_00->field_0252 < (int)local_a) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
@@ -349,7 +349,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if ((short)this_00->field_025A + -1 + (int)(short)this_00->field_0254 < (int)local_8) {
+    if (this_00->field_025A + -1 + (int)(short)this_00->field_0254 < (int)local_8) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }
@@ -357,7 +357,7 @@ void __thiscall STGroupBoatC::ChangeMDNotify(STGroupBoatC *this,int param_1,uint
       g_currentExceptionFrame = local_78.previous;
       return;
     }
-    if ((short)this_00->field_025C + -1 + (int)(short)this_00->field_0256 < (int)local_6) {
+    if (this_00->field_025C + -1 + (int)(short)this_00->field_0256 < (int)local_6) {
       g_currentExceptionFrame = local_78.previous;
       return;
     }

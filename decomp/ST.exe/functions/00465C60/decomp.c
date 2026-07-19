@@ -1268,10 +1268,9 @@ LAB_00468493:
                       sVar19 = 0;
                       this->field_001C = local_1c;
                       lVar18 = Library::MSVCRT::__ftol();
-                      iVar7 = (int)(short)lVar18 + (uVar11 >> 0x10) % 7 +
-                              (int)(short)this->field_0045 + -3 + (int)local_20;
-                      iVar8 = ((uVar13 >> 0x10) % 7 + (int)(short)this->field_0043) -
-                              (int)local_24._2_2_;
+                      iVar7 = (int)(short)lVar18 + (uVar11 >> 0x10) % 7 + (int)this->field_0045 + -3
+                              + (int)local_20;
+                      iVar8 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
                       uVar11 = local_1c;
                     }
                     else {
@@ -1290,15 +1289,13 @@ LAB_00468493:
                       sVar19 = 0;
                       this->field_001C = uVar15;
                       this->field_001C = uVar11;
-                      iVar7 = (uVar13 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
-                              (int)local_20;
+                      iVar7 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
                       local_24._2_2_ = (short)((uint)local_24 >> 0x10);
-                      iVar8 = ((uVar15 >> 0x10) % 7 + (int)(short)this->field_0043) -
-                              (int)local_24._2_2_;
+                      iVar8 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
                     }
                     TraksClassTy::TraksCreate
                               (DAT_00802a7c,1,2,7,
-                               (uVar11 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
+                               (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 +
                                (int)(short)local_24,iVar8 + -3,iVar7,sVar19,sVar20,sVar21,sVar22,
                                sVar23,sVar24,iVar9,sVar25,bVar26);
                     param_1 = (int *)((int)param_1 + 1);
@@ -1401,9 +1398,9 @@ LAB_00468493:
                           this->field_001C = local_1c;
                           sVar19 = 0;
                           lVar18 = Library::MSVCRT::__ftol();
-                          iVar7 = (int)(short)lVar18 + (uVar11 >> 0x10) % 7 +
-                                  (int)(short)this->field_0045 + -3 + (int)local_20;
-                          iVar8 = ((uVar13 >> 0x10) % 7 + (int)(short)this->field_0043) -
+                          iVar7 = (int)(short)lVar18 + (uVar11 >> 0x10) % 7 + (int)this->field_0045
+                                  + -3 + (int)local_20;
+                          iVar8 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) -
                                   (int)local_24._2_2_;
                           uVar11 = local_1c;
                         }
@@ -1423,15 +1420,14 @@ LAB_00468493:
                           sVar19 = 0;
                           this->field_001C = uVar15;
                           this->field_001C = uVar11;
-                          iVar7 = (uVar13 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
-                                  (int)local_20;
+                          iVar7 = (uVar13 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
                           local_24._2_2_ = (short)((uint)local_24 >> 0x10);
-                          iVar8 = ((uVar15 >> 0x10) % 7 + (int)(short)this->field_0043) -
+                          iVar8 = ((uVar15 >> 0x10) % 7 + (int)this->field_0043) -
                                   (int)local_24._2_2_;
                         }
                         TraksClassTy::TraksCreate
                                   (DAT_00802a7c,1,2,7,
-                                   (uVar11 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
+                                   (uVar11 >> 0x10) % 7 + (int)this->field_0041 + -3 +
                                    (int)(short)local_24,iVar8 + -3,iVar7,sVar19,sVar20,sVar21,sVar22
                                    ,sVar23,sVar24,iVar9,sVar25,bVar26);
                         param_1 = (int *)((int)param_1 + 1);

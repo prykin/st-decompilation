@@ -43,9 +43,11 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     pCVar3 = thunk_FUN_00571240(s_BKG_UPDATESW_007c8800,0);
     SpecPanelTy::InitPanel
               ((SpecPanelTy *)this_00,pCVar3,uVar6,uVar7,iVar2,iVar10,UVar11,uVar12,uVar13);
-    puVar4 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_03EB = puVar4;
-    puVar4 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_03EF = puVar4;
     puVar14 = (undefined4 *)0x0;
     iVar10 = 0;
@@ -53,7 +55,8 @@ void __thiscall UpgPanelTy::InitUpgPanel(UpgPanelTy *this)
     bVar9 = 0;
     uVar8 = 0xffffffff;
     pbVar5 = (byte *)thunk_FUN_00571240(s_FRAMES_007c205c,0);
-    puVar4 = mfRLoad(DAT_00806794,CASE_B,pbVar5,uVar8,bVar9,iVar2,iVar10,puVar14);
+    puVar4 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar5,uVar8,bVar9,iVar2,iVar10,puVar14);
     this_00->field_03F3 = puVar4;
     g_currentExceptionFrame = pIVar15;
     return;

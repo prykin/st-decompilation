@@ -125,13 +125,12 @@ LAB_0048a37f:
                 iVar9 = local_38;
                 thunk_FUN_00416270(local_8,(undefined2 *)&local_14,(undefined2 *)&local_10,
                                    (undefined2 *)&local_c);
-                iVar6 = FUN_006acf0d((int)(short)this->field_0041,(int)(short)this->field_0043,
-                                     (int)(short)this->field_0045,(int)(short)local_14,
-                                     (int)(short)local_10,(int)(short)local_c);
+                iVar6 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,
+                                     (int)this->field_0045,(int)(short)local_14,(int)(short)local_10
+                                     ,(int)(short)local_c);
                 if ((iVar6 == 0) ||
-                   (uVar4 = (int)(short)local_c - (int)(short)this->field_0045,
-                   uVar10 = (int)uVar4 >> 0x1f, (int)(((uVar4 ^ uVar10) - uVar10) * 10) / iVar6 < 4)
-                   ) {
+                   (uVar4 = (int)(short)local_c - (int)this->field_0045, uVar10 = (int)uVar4 >> 0x1f
+                   , (int)(((uVar4 ^ uVar10) - uVar10) * 10) / iVar6 < 4)) {
                   local_24 = (*this->vtable->vfunc_10)
                                        (this->field_0041,this->field_0043,this->field_0045,local_14,
                                         local_10,local_c);
@@ -245,14 +244,12 @@ LAB_00489eb0:
                )) {
               thunk_FUN_00416270(local_8,(undefined2 *)&local_14,(undefined2 *)&local_10,
                                  (undefined2 *)&local_c);
-              iVar9 = FUN_006acf0d((int)(short)this->field_0041,(int)(short)this->field_0043,
-                                   (int)(short)this->field_0045,(int)(short)local_14,
-                                   (int)(short)local_10,(int)(short)local_c);
+              iVar9 = FUN_006acf0d((int)this->field_0041,(int)this->field_0043,(int)this->field_0045
+                                   ,(int)(short)local_14,(int)(short)local_10,(int)(short)local_c);
               local_38 = iVar9;
               if ((iVar9 == 0) ||
-                 (uVar4 = (int)(short)local_c - (int)(short)this->field_0045,
-                 uVar10 = (int)uVar4 >> 0x1f, (int)(((uVar4 ^ uVar10) - uVar10) * 10) / iVar9 < 4))
-              {
+                 (uVar4 = (int)(short)local_c - (int)this->field_0045, uVar10 = (int)uVar4 >> 0x1f,
+                 (int)(((uVar4 ^ uVar10) - uVar10) * 10) / iVar9 < 4)) {
                 local_24 = (*this->vtable->vfunc_10)
                                      (this->field_0041,this->field_0043,this->field_0045,local_14,
                                       local_10,local_c);
@@ -296,7 +293,7 @@ LAB_00489eb0:
                     local_30 = local_30 + 3;
                   } while (local_2c < (int)(uint)(byte)this->field_0x2b2);
                 }
-                iVar6 = ((int)(short)this->field_0816 - iVar9 / 0xc9) * 0x32;
+                iVar6 = ((int)this->field_0816 - iVar9 / 0xc9) * 0x32;
                 iVar9 = (**(code **)(*local_8 + 0xfc))();
                 if (0 < iVar9) {
                   iVar6 = iVar6 + 300;

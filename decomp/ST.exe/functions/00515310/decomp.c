@@ -51,8 +51,8 @@ void __thiscall HelpPanelTy::DrawTitle(HelpPanelTy *this,UINT param_1,int param_
   *(undefined4 *)(pHVar3->field_01D7 + 0xc) = 0;
   pHVar3->field_01DB = 0;
   Library::DKW::WGR::FUN_006b55f0
-            ((undefined4 *)pHVar3->field_0068,0,0x21,0x16,pHVar3->field_01DC,0,0x21,0x16,0x1b8,0x118
-            );
+            ((undefined4 *)pHVar3->field_0068,0,0x21,0x16,(int)pHVar3->field_01DC,0,0x21,0x16,0x1b8,
+             0x118);
   iVar4 = local_8;
   ccFntTy::SetSurf(pHVar3->field_01E4,pHVar3->field_0068,0,0x21,local_8,0x19c,0x14);
   if (DAT_0080874e == '\x03') {

@@ -41,7 +41,7 @@ int __thiscall STGroupC::SaveGrpData(STGroupC *this,int *param_1)
     }
     iVar2 = Library::DKW::LIB::FUN_006aac70(*param_1);
     local_8 = 0;
-    *(int *)(iVar2 + 4) = (int)(char)pSVar5->field_0024;
+    *(int *)(iVar2 + 4) = (int)pSVar5->field_0024;
     *(undefined4 *)(iVar2 + 0xc) = 2;
     *(undefined4 *)(iVar2 + 0x14) = pSVar5->field_0020;
     *(undefined2 *)(iVar2 + 0x18) = pSVar5->field_0025;

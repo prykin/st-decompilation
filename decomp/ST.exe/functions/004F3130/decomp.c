@@ -155,7 +155,7 @@ CPanelTy::CreateBut(CPanelTy *this,byte param_1,undefined4 param_2,int param_3,i
     local_12c = local_16c;
     if (param_13 != (char *)0x0) {
       local_68 = FUN_0070aa70(DAT_00806790,param_13,0,1);
-      local_64 = mfImgGetWidth(DAT_00806790,0x12,param_13,1);
+      local_64 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,param_13,1);
     }
     (**(code **)(*(int *)pCVar3->field_000C + 8))(2,&local_c,0,local_18c,0);
     g_currentExceptionFrame = local_1d0.previous;

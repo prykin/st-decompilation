@@ -58,9 +58,9 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
     RaiseInternalException(iVar7,0,s_E____titans_Start_load_obj_cpp_007cc728,0x24e);
     return;
   }
-  if (((local_20->field_0065 == '\x01') && ((HANDLE)local_20->field_1C8F != (HANDLE)0x0)) &&
-     (DVar6 = WaitForSingleObject((HANDLE)local_20->field_1C8F,0), DVar6 == 0)) {
-    FindNextChangeNotification((HANDLE)this_00->field_1C8F);
+  if (((local_20->field_0065 == '\x01') && (local_20->field_1C8F != (HANDLE)0x0)) &&
+     (DVar6 = WaitForSingleObject(local_20->field_1C8F,0), DVar6 == 0)) {
+    FindNextChangeNotification(this_00->field_1C8F);
     PrepFiles(this_00,this_00->field_1C93);
     this_00->field_002D = 5;
     if (this_00->field_1A6C != 0) {
@@ -70,7 +70,7 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
       FUN_006e6080(this_00,2,*(int *)(DAT_0081176c + 0x389),(undefined4 *)&this_00->field_0x1d);
     }
   }
-  if ((this_00->field_1A64 != 0) && (0xf9 < (uint)(this_00->field_0061 - this_00->field_1A68))) {
+  if ((this_00->field_1A64 != 0) && (0xf9 < this_00->field_0061 - this_00->field_1A68)) {
     ShowDescription(this_00,this_00->field_1C93);
     this_00->field_1A64 = 0;
   }
@@ -90,7 +90,8 @@ void __thiscall ChooseMapTy::NoneChooseMap(ChooseMapTy *this,undefined4 *param_1
         local_10 = 0;
         if (0 < local_14) {
           do {
-            iVar7 = FUN_00715630(DAT_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
+            iVar7 = Library::Ourlib::CONNECT::FUN_00715630
+                              (DAT_00811764,-1,&local_18,&local_1c,&local_c,&local_4c,-1,0);
             if (iVar7 == -0x4d) {
               piVar10 = local_6c;
               for (iVar7 = 8; iVar7 != 0; iVar7 = iVar7 + -1) {

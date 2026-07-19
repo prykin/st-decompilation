@@ -310,7 +310,7 @@ LAB_005ab4e5:
   pvVar7 = FindFirstChangeNotificationA(&this_02->field_1DA7,0,1);
   this_02->field_1C8F = pvVar7;
   if (pvVar7 == (HANDLE)0xffffffff) {
-    this_02->field_1C8F = 0;
+    this_02->field_1C8F = (HANDLE)0x0;
   }
   FUN_006b8280(&this_02->field_1CA3,&this_02->field_1CA3);
   FUN_006b8280(&this_02->field_1DA7,&this_02->field_1DA7);
@@ -319,11 +319,13 @@ LAB_005ab4e5:
   this_02->field_005D = *(undefined4 *)(DAT_0081176c + 0x2c);
   FUN_006bc360(*(int *)(DAT_0081176c + 0x2c),local_86c,(int *)0x0);
   *(undefined4 *)&this_02->field_1A5B->field_0x140 = 0x1f;
-  FUN_00718780((int)local_86c,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
-  puVar9 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_FILE_LIST_007cc084,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_86c,0,0x100,0x8b,0x15,(undefined4 *)&this_02->field_1A5B->field_0x144);
+  puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806784,CASE_B,(byte *)s_FILE_LIST_007cc084,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_02->field_1C7F = puVar9;
-  puVar9 = mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
+  puVar9 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
   DibPut(*(undefined4 **)(DAT_0081176c + 0x2f0),0,0,'\x01',(byte *)puVar9);
   *(undefined4 *)&this_02->field_0x20b3 = 0x1010101;
   this_02->field_20B7 = 1;

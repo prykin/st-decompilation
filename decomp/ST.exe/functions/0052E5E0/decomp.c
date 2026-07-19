@@ -78,13 +78,13 @@ void __thiscall OptPanelTy::InitOptPanel(OptPanelTy *this)
     uVar12 = 0xffffffff;
     this_00->field_0194 = puVar5;
     pbVar6 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
-    puVar5 = mfRLoad(DAT_00806794,CASE_B,pbVar6,uVar12,bVar13,iVar2,iVar17,puVar19);
+    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar6,uVar12,bVar13,iVar2,iVar17,puVar19);
     this_00->field_0198 = puVar5;
-    puVar19 = (undefined4 *)(this_00->field_0184 + 0x28);
+    puVar5 = this_00->field_0184 + 0x14;
     iVar2 = 1;
-    uVar12 = FUN_006b4fe0(this_00->field_0184);
-    uVar7 = FUN_006b50c0(0xde,0xb,(uint)*(ushort *)(this_00->field_0184 + 0xe),uVar12,puVar19,iVar2)
-    ;
+    uVar12 = FUN_006b4fe0((int)this_00->field_0184);
+    uVar7 = FUN_006b50c0(0xde,0xb,(uint)this_00->field_0184[7],uVar12,(undefined4 *)puVar5,iVar2);
     this_00->field_01E5 = uVar7;
     puVar8 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00->field_01F1 = puVar8;

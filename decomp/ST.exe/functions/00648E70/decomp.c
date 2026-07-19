@@ -26,11 +26,12 @@ int __cdecl CreateArbiter(int param_1,char *param_2)
     if ((param_2 == (char *)0x0) || (*param_2 == '\0')) {
       param_2 = PTR_s_AIBOSS_0079d664;
     }
-    local_8 = mfAObjLoad(param_1,param_2,1,0);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,param_2,1,0);
     if (local_8 == (ushort *)0x0) {
       local_8 = (ushort *)CreateDefaultBossData();
     }
-    FUN_006e6200(DAT_00802a38,0x403,(undefined4 *)0x28,(undefined4 *)0x0,(int *)0x0,local_8,0);
+    Library::Ourlib::SAPP::FUN_006e6200
+              (DAT_00802a38,0x403,(undefined4 *)0x28,(undefined4 *)0x0,(int *)0x0,local_8,0);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = pIVar4;
     return 0;

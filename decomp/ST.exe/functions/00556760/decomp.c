@@ -194,7 +194,8 @@ LAB_0055693a:
   local_2a = local_54;
   local_28 = local_52;
   pbVar4 = thunk_FUN_00555840((int)param_1);
-  puVar5 = mfRLoad(piVar7,CASE_1D,pbVar4,uVar11,bVar12,iVar3,iVar13,puVar14);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (piVar7,CASE_1D,pbVar4,uVar11,bVar12,iVar3,iVar13,puVar14);
   local_22 = *puVar5;
   iVar3 = local_58 * 0x18;
   FUN_006e8660(DAT_00807598,(int *)&local_c,1,0,*(uint *)(&DAT_007c9000 + iVar3),

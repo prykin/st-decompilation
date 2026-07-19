@@ -68,8 +68,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
                                  (short *)&this->field_0x5d2,&this->field_05D4);
       if (iVar6 != 0) {
         this->field_05D6 = 5;
-        thunk_FUN_00481520(this,(int)(short)this->field_05D0,(int)*(short *)&this->field_0x5d2,
-                           (int)(short)this->field_05D4);
+        thunk_FUN_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
+                           (int)this->field_05D4);
         thunk_FUN_0045ff50(this,0);
         return 2;
       }
@@ -104,8 +104,8 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
       if (iVar6 == 0) {
         return 0;
       }
-      thunk_FUN_00481520(this,(int)(short)this->field_05D0,(int)*(short *)&this->field_0x5d2,
-                         (int)(short)this->field_05D4);
+      thunk_FUN_00481520(this,(int)this->field_05D0,(int)*(short *)&this->field_0x5d2,
+                         (int)this->field_05D4);
       thunk_FUN_0045ff50(this,0);
       return 2;
     }
@@ -204,9 +204,9 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
           this->field_001C = local_1c;
           sVar5 = 0;
           lVar16 = Library::MSVCRT::__ftol();
-          iVar6 = (int)(short)lVar16 + (uVar8 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 +
+          iVar6 = (int)(short)lVar16 + (uVar8 >> 0x10) % 7 + (int)this->field_0045 + -3 +
                   (int)local_24;
-          iVar7 = ((uVar10 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_28._2_2_;
+          iVar7 = ((uVar10 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
           uVar8 = local_1c;
         }
         else {
@@ -225,13 +225,13 @@ int __thiscall STBoatC::UnLoadObj(STBoatC *this,undefined4 *param_1)
           sVar18 = 0;
           sVar17 = 0;
           sVar5 = 0;
-          iVar6 = (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_24;
+          iVar6 = (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_24;
           local_28._2_2_ = (short)((uint)local_28 >> 0x10);
-          iVar7 = ((uVar13 >> 0x10) % 7 + (int)(short)this->field_0043) - (int)local_28._2_2_;
+          iVar7 = ((uVar13 >> 0x10) % 7 + (int)this->field_0043) - (int)local_28._2_2_;
         }
         TraksClassTy::TraksCreate
                   (DAT_00802a7c,1,2,7,
-                   (uVar8 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 + (int)(short)local_28,
+                   (uVar8 >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_28,
                    iVar7 + -3,iVar6,sVar5,sVar17,sVar18,sVar19,sVar20,sVar21,iVar12,sVar22,bVar23);
         local_10 = local_10 + 1;
         param_1 = (undefined4 *)((int)param_1 + 6);

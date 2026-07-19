@@ -37,7 +37,7 @@ void __thiscall STGroupC::RestoreGrpData(STGroupC *this,int param_1)
     return;
   }
   local_c->field_0020 = *(undefined4 *)(local_8 + 0x14);
-  local_c->field_0024 = *(undefined1 *)(local_8 + 4);
+  local_c->field_0024 = *(char *)(local_8 + 4);
   local_c->field_0025 = *(undefined2 *)(local_8 + 0x18);
   local_c->field_0027 = *(undefined2 *)(local_8 + 0x1a);
   local_c->field_0031 = *(undefined4 *)(local_8 + 0x2c);

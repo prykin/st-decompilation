@@ -83,9 +83,9 @@ void __fastcall FUN_00567330(int param_1)
         pbVar9 = pbVar9 + 1;
         pbVar12 = pbVar12 + 1;
       }
-      puVar5 = FUN_006f0ec0(0x345,local_150,0,0,0);
+      puVar5 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,local_150,0,0,0);
       *(undefined4 **)(iVar3 + 0xdef) = puVar5;
-      piVar6 = mfSndTblLoad((int)puVar5,s_SOUNDLIST_007c97f0,0);
+      piVar6 = Library::Ourlib::MFWAV::mfSndTblLoad((int)puVar5,s_SOUNDLIST_007c97f0,0);
       *(int **)(iVar3 + 0xdf3) = piVar6;
       g_currentExceptionFrame = local_4c.previous;
       return;

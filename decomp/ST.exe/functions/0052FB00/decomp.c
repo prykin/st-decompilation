@@ -28,7 +28,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   OptPanelTy *extraout_ECX;
   uint uVar19;
   uint uVar20;
-  byte *pbVar21;
+  ushort *puVar21;
   OptPanelTy *this_00;
   size_t unaff_ESI;
   void *unaff_EDI;
@@ -54,7 +54,7 @@ void __thiscall OptPanelTy::SetOptControls(OptPanelTy *this)
   undefined4 local_19f4;
   undefined4 local_122c;
   undefined4 local_1228;
-  undefined4 local_11fc [4];
+  uint local_11fc [4];
   undefined4 local_11ec;
   int local_11e8;
   undefined4 local_11e4;
@@ -239,11 +239,11 @@ LAB_00530592:
     iVar7 = -2;
     puVar11 = (uint *)FUN_006b0140(UVar33,DAT_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar11,iVar7,iVar18,uVar38);
-    pbVar21 = (byte *)this_00->field_0190;
+    puVar21 = this_00->field_0190;
 LAB_005305a9:
     puVar36 = (undefined4 *)this_00->field_0068;
 LAB_005305b4:
-    DibPut(puVar36,0x1d,0x13,'\x01',pbVar21);
+    DibPut(puVar36,0x1d,0x13,'\x01',(byte *)puVar21);
     goto cf_switch_join_005305BC;
   case 5:
   case 0xb:
@@ -645,7 +645,7 @@ LAB_00530554:
     iVar7 = -2;
     puVar11 = (uint *)FUN_006b0140(0x3e89,DAT_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar11,iVar7,iVar18,uVar38);
-    pbVar21 = (byte *)this_00->field_0194;
+    puVar21 = this_00->field_0194;
     goto LAB_005305a9;
   case 0xd:
     uVar38 = 0;
@@ -669,12 +669,12 @@ LAB_00530554:
     puVar1 = &this_00->field_0x6c;
     wsprintfA(puVar1,&DAT_007c1890);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x6f,
-                     *(int *)(this_00->field_018C + 4),*(int *)(this_00->field_018C + 8));
+                     *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
     ccFntTy::WrStr(this_00->field_017C,(uint *)puVar1,-2,-1,0);
     DibPut((undefined4 *)this_00->field_0068,0xaa,0x81,'\x01',(byte *)this_00->field_018C);
     wsprintfA(puVar1,&DAT_007c1890);
     ccFntTy::SetSurf(this_00->field_017C,this_00->field_0068,0,0xaa,0x81,
-                     *(int *)(this_00->field_018C + 4),*(int *)(this_00->field_018C + 8));
+                     *(int *)(this_00->field_018C + 2),*(int *)(this_00->field_018C + 4));
     ccFntTy::WrStr(this_00->field_017C,(uint *)puVar1,-2,-1,0);
     goto cf_switch_join_005305BC;
   case 0xe:
@@ -683,7 +683,7 @@ LAB_00530554:
     iVar7 = -2;
     puVar11 = (uint *)FUN_006b0140(0x3e94,DAT_00807618);
     ccFntTy::WrStr(this_00->field_017C,puVar11,iVar7,iVar18,uVar38);
-    pbVar21 = (byte *)this_00->field_0190;
+    puVar21 = this_00->field_0190;
     puVar36 = (undefined4 *)this_00->field_0068;
     goto LAB_005305b4;
   }
@@ -744,9 +744,9 @@ cf_switch_join_005305BC:
   case 4:
   case 0xe:
     if (this_00->field_01A4 != '\x0e') {
-      if ((HANDLE)this_00->field_01DD != (HANDLE)0x0) {
-        FindCloseChangeNotification((HANDLE)this_00->field_01DD);
-        this_00->field_01DD = 0;
+      if (this_00->field_01DD != (HANDLE)0x0) {
+        FindCloseChangeNotification(this_00->field_01DD);
+        this_00->field_01DD = (HANDLE)0x0;
       }
       uVar20 = 0xffffffff;
       pcVar10 = &DAT_00807680;
@@ -841,7 +841,7 @@ cf_switch_join_005305BC:
       pvVar16 = FindFirstChangeNotificationA(&this_00->field_0x6c,0,1);
       this_00->field_01DD = pvVar16;
       if (pvVar16 == (HANDLE)0xffffffff) {
-        this_00->field_01DD = 0;
+        this_00->field_01DD = (HANDLE)0x0;
       }
     }
     iVar7 = this_00->field_005C;
@@ -894,7 +894,7 @@ cf_switch_join_005305BC:
     local_714 = local_754;
     local_6f4 = local_754;
     local_528 = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_524 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_524 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
     local_5ec = this_00->field_0008;
     local_3c4 = 1;
     local_3c0 = 1;
@@ -916,7 +916,7 @@ cf_switch_join_005305BC:
     local_4bc = 0x11;
     local_4b8 = 0x24;
     local_3a8 = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_3a4 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_3a4 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
     local_46c = this_00->field_0008;
     local_3bc = 500;
     local_3b8 = 0x32;
@@ -1463,10 +1463,10 @@ switchD_005311ec_caseD_3:
     break;
   case 0xc:
     iVar7 = this_00->field_003C;
-    puVar36 = local_11fc;
+    puVar11 = local_11fc;
     for (iVar18 = 0x21e; iVar18 != 0; iVar18 = iVar18 + -1) {
-      *puVar36 = 0;
-      puVar36 = puVar36 + 1;
+      *puVar11 = 0;
+      puVar11 = puVar11 + 1;
     }
     local_11dc = iVar7 + 0x26;
     local_11fc[0] = 0;
@@ -1480,7 +1480,7 @@ switchD_005311ec_caseD_3:
     pcVar3 = this_00->field_017C;
     local_11d8 = local_11d8 + 0x1a;
     local_11fc[2] = 1;
-    local_11fc[3] = *(undefined4 *)(this_00->field_02F9 + 8);
+    local_11fc[3] = this_00->field_02F9[2];
     local_11ec = 0xca;
     if (pcVar3->field_00A0 != 0) {
       FUN_00710790((int)pcVar3);
@@ -1515,7 +1515,7 @@ switchD_005311ec_caseD_3:
     local_10d8 = 0x8165;
     local_10e0 = local_11c4;
     local_101c = FUN_0070aa70(DAT_00806790,s_BUT_MSLDN_007c39d4,0,1);
-    local_1018 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
+    local_1018 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLDN_007c39d4,1);
     iVar7 = this_00->field_005C;
     local_1038 = 1;
     local_1034 = 1;
@@ -1539,7 +1539,7 @@ switchD_005311ec_caseD_3:
     local_fac = 0x24;
     local_f58 = 0x8164;
     local_e9c = FUN_0070aa70(DAT_00806790,s_BUT_MSLUP_007c39e0,0,1);
-    local_e98 = mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
+    local_e98 = Library::Ourlib::MFIMG::mfImgGetWidth(DAT_00806790,0x12,s_BUT_MSLUP_007c39e0,1);
     local_990 = 1;
     local_994 = 1;
     (**(code **)(*(int *)this_00->field_000C + 8))();
@@ -1647,10 +1647,10 @@ switchD_005311ec_caseD_3:
                                  0x5b,1,(int)pCVar17,uVar29,uVar34,sVar30,uVar32,uVar37,pcVar10,
                                  uVar40,uVar41);
     this_00->field_01BD = uVar38;
-    uVar38 = CreateSlider(this_00,0x94,0x70,*(int *)(this_00->field_018C + 4) + 0xaf,0x70,0xc0a2,3,
+    uVar38 = CreateSlider(this_00,0x94,0x70,*(int *)(this_00->field_018C + 2) + 0xaf,0x70,0xc0a2,3,
                           DAT_00807346 / 5 - 1,1);
     this_00->field_01C1 = uVar38;
-    uVar38 = CreateSlider(this_00,0x94,0x82,*(int *)(this_00->field_018C + 4) + 0xaf,0x82,0xc0a3,3,
+    uVar38 = CreateSlider(this_00,0x94,0x82,*(int *)(this_00->field_018C + 2) + 0xaf,0x82,0xc0a3,3,
                           (uint)DAT_00807347,1);
     this_00->field_01C5 = uVar38;
     *(byte *)&this_00[1].field_0000 = DAT_00807348;

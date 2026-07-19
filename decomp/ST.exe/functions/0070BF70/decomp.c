@@ -12,7 +12,8 @@ FUN_0070bf70(byte *param_1,int param_2,int param_3,int param_4,int param_5,byte 
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb8;
   iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffbc,0,pIVar2,in_stack_ffffffbc);
   if (iVar1 == 0) {
-    iVar1 = imgGetSprFromFile(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
+    iVar1 = Library::Ourlib::MFIMG::imgGetSprFromFile
+                      (param_1,param_2,param_3,param_4,param_5,param_6,param_7);
     g_currentExceptionFrame = pIVar2;
     return iVar1;
   }

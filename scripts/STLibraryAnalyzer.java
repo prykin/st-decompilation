@@ -34,6 +34,8 @@ public class STLibraryAnalyzer extends GhidraScript {
         "strcmp|strncmp|strcat|strchr|strrchr|sprintf|vsprintf|printf|fprintf|fopen|fclose))$");
     private static final Pattern DKW_PATH = Pattern.compile(
         "(?i)(?:[A-Z]:\\\\)?D?KW\\\\([A-Z0-9_]+)\\\\");
+    private static final Pattern OURLIB_PATH = Pattern.compile(
+        "(?i)(?:[A-Z]:\\\\)?OURLIB\\\\([^\\\\]+?)\\.(?:C|CC|CPP|CXX)(?:$|[^A-Z0-9_])");
     // Confirmed contiguous VC6 CRT block in this ST.exe image; end is exclusive.
     private static final String CRT_START = "0072D7F0";
     private static final String CRT_END = "00746BAB";
@@ -78,7 +80,8 @@ public class STLibraryAnalyzer extends GhidraScript {
                     inCrtBlock ? "confirmed contiguous ST.exe VC6 CRT block " + CRT_START + ".." + CRT_END :
                         "known CRT symbol: " + function.getName(), function.getEntryPoint(), true);
             }
-            else if (function.getParentNamespace().isGlobal() && function.getName().startsWith("_")) {
+            else if (function.getParentNamespace().isGlobal() && function.getName().startsWith("_") &&
+                    !found.containsKey(function.getEntryPoint())) {
                 Evidence evidence = found.computeIfAbsent(function.getEntryPoint(),
                     ignored -> new Evidence(function));
                 evidence.add(new Classification("MSVCRT", "Library::MSVCRT"),
@@ -113,6 +116,8 @@ public class STLibraryAnalyzer extends GhidraScript {
             "program=" + currentProgram.getName(),
             "proposals=" + proposals.size(),
             "conflicts=" + conflicts.size(),
+            "ourlib_proposals=" + proposals.stream()
+                .filter(proposal -> proposal.library.startsWith("OURLIB_")).count(),
             "note=Only rows with apply=1 are consumed by STLibraryApplier."),
             StandardCharsets.UTF_8);
         println("Library analysis complete: " + dir);
@@ -127,7 +132,19 @@ public class STLibraryAnalyzer extends GhidraScript {
             String module = dkw.group(1).toUpperCase(Locale.ROOT);
             return new Classification("DKW_" + module, "Library::DKW::" + module);
         }
+        java.util.regex.Matcher ourlib = OURLIB_PATH.matcher(value.replace('/', '\\'));
+        if (ourlib.find()) {
+            String module = moduleName(ourlib.group(1));
+            if (!module.isBlank())
+                return new Classification("OURLIB_" + module,
+                    "Library::Ourlib::" + module);
+        }
         return null;
+    }
+
+    private String moduleName(String value) {
+        return value.toUpperCase(Locale.ROOT).replaceAll("[^A-Z0-9]+", "_")
+            .replaceAll("^_+|_+$", "");
     }
 
     private File outputDirectory() throws Exception {

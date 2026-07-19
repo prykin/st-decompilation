@@ -42,8 +42,8 @@ undefined4 __thiscall STBoatC::CheckForReplenisher(STBoatC *this,int param_1)
                       (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x5222);
           }
           thunk_FUN_004162b0(local_10,&local_a,&local_8,&local_6);
-          iVar5 = FUN_006aadd0((int)(short)this->field_0047,(int)(short)this->field_0049,
-                               (int)(short)this->field_004B,(int)local_a,(int)local_8,(int)local_6);
+          iVar5 = FUN_006aadd0((int)this->field_0047,(int)this->field_0049,(int)this->field_004B,
+                               (int)local_a,(int)local_8,(int)local_6);
           if (iVar5 < 7) {
             return 1;
           }

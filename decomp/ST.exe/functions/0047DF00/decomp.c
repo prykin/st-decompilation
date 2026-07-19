@@ -369,13 +369,11 @@ LAB_0047f1f7:
               lVar19 = Library::MSVCRT::__ftol();
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,
-                         (local_1c >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
-                         (int)(short)local_24,
-                         (((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) -
-                         (int)local_24._2_2_) + -3,
-                         (int)(short)lVar19 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045 +
-                         -3 + (int)local_20,sVar15,sVar18,sVar14,sVar6,sVar20,sVar21,iVar7,sVar22,
-                         bVar23);
+                         (local_1c >> 0x10) % 7 + (int)this->field_0041 + -3 + (int)(short)local_24,
+                         (((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_) + -3
+                         ,(int)(short)lVar19 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                          (int)local_20,sVar15,sVar18,sVar14,sVar6,sVar20,sVar21,iVar7,sVar22,bVar23
+                        );
             }
             else {
               uVar12 = this->field_001C * 0x41c64e6d + 0x3039;
@@ -390,10 +388,10 @@ LAB_0047f1f7:
               iVar17 = (int)(short)local_24;
               TraksClassTy::TraksCreate
                         (DAT_00802a7c,1,2,7,
-                         (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 + iVar17,
-                         (((uVar16 >> 0x10) % 7 + (int)(short)this->field_0043) - iVar7) + -3,
-                         (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_20,0,
-                         0,0,0,0,0,-1,0,0);
+                         (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 + iVar17,
+                         (((uVar16 >> 0x10) % 7 + (int)this->field_0043) - iVar7) + -3,
+                         (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20,0,0,0,0,0
+                         ,0,-1,0,0);
             }
             local_8 = local_8 + 1;
             local_c = (undefined4 *)((int)local_c + 6);
@@ -511,10 +509,9 @@ LAB_0047edd5:
                     this->field_001C = local_1c;
                     sVar15 = 0;
                     lVar19 = Library::MSVCRT::__ftol();
-                    iVar7 = (int)(short)lVar19 + (uVar10 >> 0x10) % 7 + (int)(short)this->field_0045
-                            + -3 + (int)local_20;
-                    iVar17 = ((uVar12 >> 0x10) % 7 + (int)(short)this->field_0043) -
-                             (int)local_24._2_2_;
+                    iVar7 = (int)(short)lVar19 + (uVar10 >> 0x10) % 7 + (int)this->field_0045 + -3 +
+                            (int)local_20;
+                    iVar17 = ((uVar12 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
                     uVar10 = local_1c;
                   }
                   else {
@@ -533,15 +530,13 @@ LAB_0047edd5:
                     sVar14 = 0;
                     sVar18 = 0;
                     sVar15 = 0;
-                    iVar7 = (uVar12 >> 0x10) % 7 + (int)(short)this->field_0045 + -3 + (int)local_20
-                    ;
+                    iVar7 = (uVar12 >> 0x10) % 7 + (int)this->field_0045 + -3 + (int)local_20;
                     local_24._2_2_ = (short)((uint)local_24 >> 0x10);
-                    iVar17 = ((uVar16 >> 0x10) % 7 + (int)(short)this->field_0043) -
-                             (int)local_24._2_2_;
+                    iVar17 = ((uVar16 >> 0x10) % 7 + (int)this->field_0043) - (int)local_24._2_2_;
                   }
                   TraksClassTy::TraksCreate
                             (DAT_00802a7c,1,2,7,
-                             (uVar10 >> 0x10) % 7 + (int)(short)this->field_0041 + -3 +
+                             (uVar10 >> 0x10) % 7 + (int)this->field_0041 + -3 +
                              (int)(short)local_24,iVar17 + -3,iVar7,sVar15,sVar18,sVar14,sVar6,
                              sVar20,sVar21,iVar8,sVar22,bVar23);
                   local_8 = local_8 + 1;

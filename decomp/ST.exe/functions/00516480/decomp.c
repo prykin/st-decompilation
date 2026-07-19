@@ -77,8 +77,8 @@ void __thiscall HelpPanelTy::TTreeProc(HelpPanelTy *this,uint param_1,char param
     FUN_006e56b0((void *)this_00->field_000C,this_00->field_019C);
   }
   Library::DKW::WGR::FUN_006b55f0
-            ((undefined4 *)this_00->field_0068,0,0x21,0x16,this_00->field_01DC,0,0x21,0x16,0x1b8,
-             0x118);
+            ((undefined4 *)this_00->field_0068,0,0x21,0x16,(int)this_00->field_01DC,0,0x21,0x16,
+             0x1b8,0x118);
   if (param_1 == 1) {
     local_8 = (byte *)((uint)local_8._1_3_ << 8);
     UVar12 = 0x5604;

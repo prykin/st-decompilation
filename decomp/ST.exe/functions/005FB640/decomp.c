@@ -230,9 +230,9 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
         }
         *(undefined1 *)puVar14 = *(undefined1 *)puVar12;
         if (puVar13[3] == 0) {
-          local_8->field_046F = (int)(short)local_8->field_034E;
-          local_8->field_0473 = (int)(short)local_8->field_0350;
-          local_8->field_0477 = (int)(short)local_8->field_0352;
+          local_8->field_046F = (int)local_8->field_034E;
+          local_8->field_0473 = (int)local_8->field_0350;
+          local_8->field_0477 = (int)local_8->field_0352;
           local_8->field_034E = local_8->field_034E * 0xc9 + 100;
           local_8->field_0350 = local_8->field_0350 * 0xc9 + 100;
           local_8->field_0352 = local_8->field_0352 * 200 + 100;
@@ -270,8 +270,8 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
           g_currentExceptionFrame = local_60.previous;
           return 0;
         }
-        thunk_FUN_006377b0(this_00->field_01ED,1,(int)(short)this_00->field_034E,
-                           (int)(short)this_00->field_0350,(int)(short)this_00->field_0352,0x13);
+        thunk_FUN_006377b0(this_00->field_01ED,1,(int)this_00->field_034E,(int)this_00->field_0350,
+                           (int)this_00->field_0352,0x13);
         g_currentExceptionFrame = local_60.previous;
         return 0;
       }

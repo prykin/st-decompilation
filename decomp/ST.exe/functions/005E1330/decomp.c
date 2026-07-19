@@ -851,10 +851,10 @@ LAB_005e24c5:
         break;
       case 6:
         if (this_02->field_006D != '\x05') {
-          puVar9 = (uint *)mfWavLoad(this_02->field_0070,puVar15 + 0xd,0,0);
+          puVar9 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(this_02->field_0070,puVar15 + 0xd,0,0);
           if (puVar9 == (uint *)0x0) {
             in_stack_ffffffdc = (uint *)0x5e2f3a;
-            puVar9 = (uint *)mfWavLoad(DAT_00806798,puVar15 + 0xd,0,0);
+            puVar9 = (uint *)Library::Ourlib::MFWAV::mfWavLoad(DAT_00806798,puVar15 + 0xd,0,0);
             if (puVar9 == (uint *)0x0) break;
           }
           in_stack_ffffffdc = (uint *)0x5e2f24;
@@ -1728,8 +1728,10 @@ LAB_005e195d:
         }
         FUN_006bc360(this_02->field_005D,local_1268,piVar18);
         in_stack_ffffffdc = (uint *)0x0;
-        FUN_00718780((int)local_1268,0,0x100,0x1a,0x10,(undefined4 *)&this_02->field_0x91);
-        FUN_00718780((int)local_1268,0,0x100,0x2e,0x10,(undefined4 *)&this_02->field_0x191);
+        Library::Ourlib::PALETTE::FUN_00718780
+                  ((int)local_1268,0,0x100,0x1a,0x10,(undefined4 *)&this_02->field_0x91);
+        Library::Ourlib::PALETTE::FUN_00718780
+                  ((int)local_1268,0,0x100,0x2e,0x10,(undefined4 *)&this_02->field_0x191);
         pcVar8 = extraout_ECX_00;
         if (this_02->field_007C != 0) {
           DarkScreen(DAT_0080759c,1,0);
@@ -1752,10 +1754,12 @@ LAB_005e195d:
         this_02->field_008D = pcVar8;
         thunk_FUN_00568bc0(&g_sound,0);
         if ((DAT_00807300._1_1_ & 8) != 0) {
-          puVar9 = (uint *)mfWavLoad(this_02->field_0070,(char *)((int)piVar18 + 0x2d),0,0);
+          puVar9 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
+                                     (this_02->field_0070,(char *)((int)piVar18 + 0x2d),0,0);
           *(uint **)&this_02->field_0x85 = puVar9;
           if (puVar9 == (uint *)0x0) {
-            puVar9 = (uint *)mfWavLoad(DAT_00806798,(char *)((int)piVar18 + 0x2d),0,0);
+            puVar9 = (uint *)Library::Ourlib::MFWAV::mfWavLoad
+                                       (DAT_00806798,(char *)((int)piVar18 + 0x2d),0,0);
             *(uint **)&this_02->field_0x85 = puVar9;
             if (puVar9 == (uint *)0x0) {
               in_stack_ffffffdc = (uint *)0x5e1cab;

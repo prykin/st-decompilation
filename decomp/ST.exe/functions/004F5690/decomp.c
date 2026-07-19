@@ -174,19 +174,24 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     this_00->field_0286 = puVar9;
     puVar9 = cMf32::RecGet((cMf32 *)DAT_00806790,1,s_INF_LIFELEVU_007c20d4,(int *)0x0,1);
     this_00->field_028A = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_IND_BKG_007c20c8,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_IND_BKG_007c20c8,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_02B2 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_INF_WEAP_007c20bc,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_INF_WEAP_007c20bc,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_028E = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_INF_WEAPD_007c20b0,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_INF_WEAPD_007c20b0,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_0292 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_UPG_BOAT_007c20a4,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_UPG_BOAT_007c20a4,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_0296 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_029A = puVar9;
     if (DAT_0080874e != '\x03') {
       puVar5 = (undefined4 *)0x0;
@@ -195,7 +200,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       bVar2 = 0;
       uVar4 = 0xffffffff;
       pbVar10 = (byte *)thunk_FUN_00571240(s_INF_BKDEEP_007c2090,0);
-      puVar9 = mfRLoad(DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+      puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
       this_00->field_029E = puVar9;
     }
     puVar5 = (undefined4 *)0x0;
@@ -204,7 +210,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar2 = 0;
     uVar4 = 0xffffffff;
     pbVar10 = (byte *)thunk_FUN_00571240(s_INF_DEEP_007c2084,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_02A2 = puVar9;
     puVar5 = (undefined4 *)0x0;
     iVar20 = 0;
@@ -212,7 +219,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar2 = 0;
     uVar4 = 0xffffffff;
     pbVar10 = (byte *)thunk_FUN_00571240(s_IND_PNT_007c2078,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_02B6 = puVar9;
     if (DAT_0080874d == 0xff) {
       iVar3 = 1;
@@ -221,15 +229,20 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       iVar3 = DAT_0080874d + 1;
     }
     wsprintfA(&this_00->field_0x1e1,s_BOATS__d_007c1810,iVar3);
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,&this_00->field_0x1e1,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&this_00->field_0x1e1,0xffffffff,0,1,0,(undefined4 *)0x0
+                       );
     this_00->field_02BA = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BOATS_R_007c206c,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_BOATS_R_007c206c,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_02BE = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_02C2 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_SOBJS_007c2064,0xffffffff,0,1,0,(undefined4 *)0x0
-                    );
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_SOBJS_007c2064,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_02C6 = puVar9;
     puVar5 = (undefined4 *)0x0;
     iVar20 = 0;
@@ -237,14 +250,18 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar2 = 0;
     uVar4 = 0xffffffff;
     pbVar10 = (byte *)thunk_FUN_00571240(s_FRAMES_007c205c,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_02CA = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_ARTEFACT_007c2050,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_ARTEFACT_007c2050,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_02CE = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c204c,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_02D2 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,&DAT_007c2048,0xffffffff,0,1,0,(undefined4 *)0x0);
     this_00->field_02D6 = puVar9;
     puVar5 = (undefined4 *)0x0;
     iVar20 = 0;
@@ -252,10 +269,12 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar2 = 0;
     uVar4 = 0xffffffff;
     pbVar10 = (byte *)thunk_FUN_00571240(s_BUT_PRIORITY_007c2038,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_0B17 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_SPIMG_SI_007c202c,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_SPIMG_SI_007c202c,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_0B1B = puVar9;
     puVar5 = (undefined4 *)0x0;
     iVar20 = 0;
@@ -263,16 +282,20 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar2 = 0;
     uVar4 = 0xffffffff;
     pbVar10 = (byte *)thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_09D5 = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_ENOBJ_007c2014,0xffffffff,0,1,0,(undefined4 *)0x0
-                    );
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_ENOBJ_007c2014,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_02DA = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_BUT_MSK_SI_007c16f4,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_BUT_MSK_SI_007c16f4,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_02DE = puVar9;
-    puVar9 = mfRLoad(DAT_00806794,CASE_B,(byte *)s_MHELP_007c200c,0xffffffff,0,1,0,(undefined4 *)0x0
-                    );
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_B,(byte *)s_MHELP_007c200c,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     this_00->field_077C = puVar9;
     iVar3 = 1;
     piVar21 = (int *)0x0;
@@ -398,7 +421,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
       bVar2 = 0;
       uVar4 = 0xffffffff;
       pbVar10 = (byte *)FUN_006f2c00(s_SM_TARGET__007c1eec,1,iVar3);
-      puVar9 = mfRLoad(DAT_00806784,CASE_B,pbVar10,uVar4,bVar2,iVar20,iVar23,puVar24);
+      puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806784,CASE_B,pbVar10,uVar4,bVar2,iVar20,iVar23,puVar24);
       *(ushort **)((int)puVar5 + -0x3f7) = puVar9;
       iVar20 = 1;
       piVar21 = (int *)0x0;
@@ -550,7 +574,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar2 = 0;
     uVar4 = 6;
     pbVar10 = (byte *)thunk_FUN_00526100(&this_00->field_0B63,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_1F,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_1F,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_02E2 = puVar9;
     this_00->field_02EA = 0;
     puVar5 = (undefined4 *)0x0;
@@ -561,7 +586,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     this_00->field_02EC = 1;
     this_00->field_02EE = this_00->field_0038;
     pbVar10 = (byte *)thunk_FUN_00526100(&this_00->field_0C51,0);
-    puVar9 = mfRLoad(DAT_00806794,CASE_1F,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
+    puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_1F,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar5);
     this_00->field_02E6 = puVar9;
     this_00->field_02EB = 0;
     this_00->field_02ED = 1;
@@ -579,7 +605,8 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
         bVar2 = 0;
         uVar4 = 6;
         pbVar10 = (byte *)thunk_FUN_004f1d20((undefined1 *)local_8);
-        puVar9 = mfRLoad(DAT_00806794,CASE_1F,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar24);
+        puVar9 = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806794,CASE_1F,pbVar10,uVar4,bVar2,iVar3,iVar20,puVar24);
         puVar5[-0x12] = puVar9;
         puVar15[-0xc] = 0;
         *puVar15 = 1;
@@ -711,7 +738,7 @@ void __thiscall CPanelTy::InitCPanel(CPanelTy *this)
     bVar19 = 0;
     bVar2 = 6;
     pcVar11 = thunk_FUN_00526100((undefined1 *)0x0,0);
-    psVar13 = mfQmtLoad(DAT_00806790,pcVar11,bVar2,bVar19,iVar3);
+    psVar13 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar11,bVar2,bVar19,iVar3);
     this_00->field_025B = psVar13;
     this_00->field_025F = 0;
     this_00->field_0260 = 2;

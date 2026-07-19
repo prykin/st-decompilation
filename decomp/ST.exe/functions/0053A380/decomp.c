@@ -64,8 +64,8 @@ void __thiscall PlayPanelTy::DonePlayPanel(PlayPanelTy *this)
       ccFntTy::operator(this_00,(uint *)pPVar2->field_01DD);
       pPVar2->field_01DD = (ccFntTy *)0x0;
     }
-    if (pPVar2->field_01CD != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pPVar2->field_01CD);
+    if (pPVar2->field_01CD != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pPVar2->field_01CD);
     }
     pPVar2->field_01D9 = 0;
     pPVar2->field_01D5 = 0;

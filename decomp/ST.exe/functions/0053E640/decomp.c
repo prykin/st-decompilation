@@ -34,8 +34,8 @@ void __thiscall SpecPanelTy::DonePanel(SpecPanelTy *this)
       ccFntTy::operator(this_00,(uint *)pSVar2->field_0189);
       pSVar2->field_0189 = (ccFntTy *)0x0;
     }
-    if (pSVar2->field_0185 != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pSVar2->field_0185);
+    if (pSVar2->field_0185 != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pSVar2->field_0185);
     }
     g_currentExceptionFrame = pIVar4;
     return;

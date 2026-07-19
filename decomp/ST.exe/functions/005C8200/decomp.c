@@ -30,7 +30,7 @@ void FUN_005c8200(void)
   undefined4 local_18;
   undefined4 local_14;
   SettMapTy *local_c;
-  undefined4 *local_8;
+  DWORD *local_8;
   
   local_7c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_7c;
@@ -51,12 +51,12 @@ void FUN_005c8200(void)
   }
   wsprintfA(&DAT_00853de4,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_MISSIONS__0079c0e8,
             PTR_s_RANDOM_0079c0f4);
-  puVar3 = FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
+  puVar3 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_00853de4,0,0,0);
   local_c->field_1F3F = puVar3;
   if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
     FUN_006ab060((undefined4 *)(DAT_0081176c + 0x2f4));
   }
-  puVar4 = mfImgLoad(local_c->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
+  puVar4 = Library::Ourlib::MFIMG::mfImgLoad(local_c->field_1F3F,0xc,PTR_s_SMALL_MAP_0079c114,2,0);
   *(ushort **)(DAT_0081176c + 0x2f4) = puVar4;
   if (*(int *)(DAT_0081176c + 0x2f4) != 0) {
     FUN_006c7f90(*(int *)(DAT_0081176c + 0x2f4),(byte *)0x0,*(HPALETTE *)(DAT_0080759c + 0x4b4),0);
@@ -96,14 +96,16 @@ void FUN_005c8200(void)
   if (DAT_0080c4c7 != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4c7);
   }
-  DAT_0080c4c7 = mfSarLoad(local_c->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
+  DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad
+                           (local_c->field_1F3F,PTR_s_DESCRIPTION_0079c108,0);
   if (DAT_0080c4c7 == (uint *)0x0) {
     DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }
   if (DAT_0080c4cb != (uint *)0x0) {
     FUN_006b5570((byte *)DAT_0080c4cb);
   }
-  DAT_0080c4cb = mfSarLoad(local_c->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0);
+  DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad(local_c->field_1F3F,PTR_s_OBJECTIVES_0079c10c,0)
+  ;
   if (DAT_0080c4cb == (uint *)0x0) {
     DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
   }

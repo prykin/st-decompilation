@@ -57,7 +57,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
     if (uVar1 == 2) {
       local_8 = (ushort *)0x0;
       if (DAT_00806754 != (cMf32 *)0x0) {
-        local_8 = mfAObjLoad(DAT_00806754,PTR_s_TRACKS_0079aebc,0,0);
+        local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(DAT_00806754,PTR_s_TRACKS_0079aebc,0,0);
       }
       if ((local_8 == (ushort *)0x0) || (*(int *)(local_8 + 10) == 0)) {
         puVar3 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x32,0x3c,0x32);

@@ -103,7 +103,8 @@ joined_r0x004f81d1:
           bVar12 = 0;
           uVar6 = 6;
           pbVar16 = (byte *)thunk_FUN_00526100(puVar5,0);
-          puVar8 = mfRLoad(DAT_00806794,CASE_1F,pbVar16,uVar6,bVar12,iVar4,iVar11,puVar18);
+          puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                             (DAT_00806794,CASE_1F,pbVar16,uVar6,bVar12,iVar4,iVar11,puVar18);
           (&this_00->field_02E2)[uVar15] = puVar8;
           *local_10 = 1;
           *pcVar10 = '\0';
@@ -182,8 +183,9 @@ joined_r0x004f81d1:
         *pbVar16 = bVar12 + 1;
         local_18 = (byte *)(&this_00->field_02E2 + uVar15);
         if (**(short **)local_18 <= (short)(ushort)(byte)(bVar12 + 1)) {
-          puVar8 = mfRLoad(DAT_00806794,CASE_1F,*(byte **)(&this_00->field_0x2f6 + uVar15 * 4),6,0,1
-                           ,0,(undefined4 *)0x0);
+          puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                             (DAT_00806794,CASE_1F,*(byte **)(&this_00->field_0x2f6 + uVar15 * 4),6,
+                              0,1,0,(undefined4 *)0x0);
           *(ushort **)local_18 = puVar8;
           *local_10 = 1;
           *pbVar16 = 0;
@@ -248,7 +250,8 @@ joined_r0x004f81d1:
               bVar12 = 0;
               uVar15 = 6;
               pbVar7 = (byte *)thunk_FUN_004f1d20(local_14);
-              puVar8 = mfRLoad(DAT_00806794,CASE_1F,pbVar7,uVar15,bVar12,iVar4,iVar11,puVar18);
+              puVar8 = Library::Ourlib::MFRLOAD::mfRLoad
+                                 (DAT_00806794,CASE_1F,pbVar7,uVar15,bVar12,iVar4,iVar11,puVar18);
               piVar14[-0x12] = (int)puVar8;
               pbVar16[0xc] = 1;
               *pbVar16 = 0;
@@ -329,7 +332,7 @@ joined_r0x004f861b:
         bVar2 = 0;
         bVar12 = 6;
         pcVar10 = (char *)thunk_FUN_005260b0(0,0,0);
-        psVar9 = mfQmtLoad(DAT_00806790,pcVar10,bVar12,bVar2,iVar4);
+        psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar10,bVar12,bVar2,iVar4);
         this_00->field_025B = psVar9;
         this_00->field_0260 = 1;
         this_00->field_025F = 0;
@@ -368,14 +371,14 @@ joined_r0x004f861b:
     }
     uVar17 = DAT_00806790;
     if (this_00->field_0285 == '\0') {
-      psVar9 = mfQmtLoad(DAT_00806758,&this_00->field_0x265,6,0,0);
+      psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806758,&this_00->field_0x265,6,0,0);
       *puVar18 = psVar9;
       uVar17 = DAT_00806798;
       if (psVar9 == (short *)0x0) goto LAB_004f8860;
     }
     else {
 LAB_004f8860:
-      psVar9 = mfQmtLoad(uVar17,&this_00->field_0x265,6,0,0);
+      psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(uVar17,&this_00->field_0x265,6,0,0);
       *puVar18 = psVar9;
     }
     if (*puVar18 == 0) {
@@ -383,7 +386,7 @@ LAB_004f8860:
       bVar2 = 0;
       bVar12 = 6;
       pcVar10 = (char *)thunk_FUN_005260b0(0,0,0);
-      psVar9 = mfQmtLoad(DAT_00806790,pcVar10,bVar12,bVar2,iVar4);
+      psVar9 = Library::Ourlib::MFIMG::mfQmtLoad(DAT_00806790,pcVar10,bVar12,bVar2,iVar4);
       *puVar18 = psVar9;
     }
     this_00->field_0260 = 1;

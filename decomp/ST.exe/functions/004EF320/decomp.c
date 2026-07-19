@@ -19,7 +19,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
   int local_1c;
   BldBoatPanelTy *local_18;
   int *local_14;
-  byte *local_10;
+  ushort *local_10;
   int local_c;
   Global_sub_00526BA0_param_1Enum *local_8;
   
@@ -42,7 +42,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
   }
   local_18 = this;
   if ((*(short *)(param_1 + 0x14) == 0) || (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0)) {
-    local_10 = (byte *)this->field_028E;
+    local_10 = this->field_028E;
   }
   else {
     if ((char)local_8[2] == 0) {
@@ -52,7 +52,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
       iVar7 = this->field_0188;
     }
     uVar4 = thunk_FUN_00526ba0(*local_8,*(byte *)((int)local_8 + 9));
-    local_10 = (byte *)FUN_0070b3a0(iVar7,uVar4);
+    local_10 = (ushort *)FUN_0070b3a0(iVar7,uVar4);
   }
   local_60.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_60;
@@ -73,7 +73,7 @@ void __thiscall BldBoatPanelTy::PaintBldBut(BldBoatPanelTy *this,int param_1)
     return;
   }
   FUN_006b4170(local_18->field_0068,0,local_1c,local_c,local_14[2],local_14[3],0);
-  DibPut((undefined4 *)pBVar2->field_0068,iVar7 + 1,iVar3 + 1,'\x01',local_10);
+  DibPut((undefined4 *)pBVar2->field_0068,iVar7 + 1,iVar3 + 1,'\x01',(byte *)local_10);
   if (*(short *)(param_1 + 0x14) == 3) {
     if (local_8 == (Global_sub_00526BA0_param_1Enum *)0x0) goto LAB_004ef4e9;
     iVar5 = (-(uint)((char)local_8[2] != 0) & 2) + 3;

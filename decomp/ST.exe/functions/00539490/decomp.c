@@ -35,8 +35,8 @@ void __thiscall PausePanelTy::DonePausePanel(PausePanelTy *this)
       ccFntTy::operator(this_00,(uint *)pPVar2->field_017C);
       pPVar2->field_017C = (ccFntTy *)0x0;
     }
-    if (pPVar2->field_0180 != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pPVar2->field_0180);
+    if (pPVar2->field_0180 != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pPVar2->field_0180);
     }
     g_currentExceptionFrame = pIVar4;
     return;

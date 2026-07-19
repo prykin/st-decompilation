@@ -87,7 +87,7 @@ uint * __cdecl _CreateStgListByRoot(int param_1,int param_2,char *param_3,uint p
   cMf32::ToBeg((cMf32 *)param_1,FUN_006f2d10,local_2ec);
   pcVar3 = (char *)cMf32::RecNameGetNext((cMf32 *)param_1);
   while (pcVar3 != (char *)0x0) {
-    local_8 = mfAObjLoad(param_1,pcVar3,0,1);
+    local_8 = Library::Ourlib::MFAOBJ::mfAObjLoad(param_1,pcVar3,0,1);
     uVar7 = *(uint *)(local_8 + 0x85);
     if (uVar7 == 0) {
       uVar7 = 1;

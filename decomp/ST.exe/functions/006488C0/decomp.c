@@ -30,7 +30,7 @@ int __cdecl SaveBossEdit(int param_1,char *param_2,undefined4 *param_3,char para
     local_c = EventDataPack(*(undefined4 **)((int)param_3 + 0x4e),&local_14);
     local_8 = (byte *)BossDataPack(param_3,local_c,local_14,&local_10);
     thunk_FUN_0065d0f0((int *)&local_c);
-    mfAObjSave(param_1,param_2,local_8,local_10,param_4);
+    Library::Ourlib::MFAOBJ::mfAObjSave(param_1,param_2,local_8,local_10,param_4);
     thunk_FUN_006484f0((int *)&local_8);
     g_currentExceptionFrame = local_58.previous;
     return 0;

@@ -100,7 +100,7 @@ void FUN_005c29b0(char param_1)
   }
   wsprintfA((LPSTR)&DAT_0080f33a,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_SYSTEM__0079c0ec,
             PTR_s_STRATEGS_0079c100);
-  puVar4 = FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+  puVar4 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
   this_01->field_1F43 = puVar4;
   cVar19 = this_01->field_1E26;
   if (((cVar19 == '\x06') || (cVar19 == '\x01')) || (iVar3 = DAT_0080c502, cVar19 == '\x02')) {
@@ -166,7 +166,8 @@ void FUN_005c29b0(char param_1)
   this_01->field_005D = DAT_0081176c->field_002C;
   FUN_006bc360(DAT_0081176c->field_002C,local_b18,(int *)0x0);
   *(undefined4 *)(this_01->field_1A5B + 0x140) = 0x1f;
-  FUN_00718780((int)local_b18,0,0x100,0x8b,0x15,(undefined4 *)(this_01->field_1A5B + 0x144));
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_b18,0,0x100,0x8b,0x15,(undefined4 *)(this_01->field_1A5B + 0x144));
   if ((DAT_008067a0 != '\0') && (DAT_00811764 != 0)) {
     FUN_006b6160(&this_01->field_0x1a5f,DAT_00811764 + 0x18);
     this_01->field_1A7F = 1;
@@ -190,15 +191,18 @@ void FUN_005c29b0(char param_1)
   *(undefined4 *)&this_01->field_0x21b1 = 0x4d;
   puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0xf,0x10c,5);
   this_01->field_1E2F = puVar5;
-  puVar7 = mfImgLoad(DAT_00806780,6,s_MM_COMBO_007cd164,0,1);
+  puVar7 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,6,s_MM_COMBO_007cd164,0,1);
   this_01->field_1E2B = puVar7;
-  DAT_0081175c = mfRLoad(DAT_00806784,CASE_B,(byte *)s_MAP_GEN_007cd158,0xffffffff,0,1,0,
-                         (undefined4 *)0x0);
-  puVar7 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_SET_ACC_007cc090,0xffffffff,0,1,0,(undefined4 *)0x0
-                  );
+  DAT_0081175c = Library::Ourlib::MFRLOAD::mfRLoad
+                           (DAT_00806784,CASE_B,(byte *)s_MAP_GEN_007cd158,0xffffffff,0,1,0,
+                            (undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806784,CASE_B,(byte *)s_SET_ACC_007cc090,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_01->field_1F4F = puVar7;
-  puVar7 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_SET_ALLY_007cd14c,0xffffffff,0,1,0,
-                   (undefined4 *)0x0);
+  puVar7 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806784,CASE_B,(byte *)s_SET_ALLY_007cd14c,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   *(ushort **)&this_01->field_0x1f4b = puVar7;
   cVar19 = this_01->field_1E26;
   if (((cVar19 == '\x06') || (cVar19 == '\a')) || (cVar19 == '\x0e')) {
@@ -282,7 +286,8 @@ void FUN_005c29b0(char param_1)
           if (iVar3 == 0) {
             wsprintfA((LPSTR)local_3cc,s__s_s_s_007c6edc,&DAT_00807680,PTR_s_SYSTEM__0079c0ec,
                       local_50c.cFileName);
-            this_00 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)local_3cc,0,0,0);
+            this_00 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)local_3cc,0,0,0)
+            ;
             local_1c = this_00;
             iVar3 = cMf32::RecGetLen(this_00,0xc,s_TEXTURE_DSCR_007cd130,0);
             this_01 = local_18;

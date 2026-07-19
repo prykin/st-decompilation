@@ -47,7 +47,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
     if (DAT_0080c4c7 != (uint *)0x0) {
       FUN_006b5570((byte *)DAT_0080c4c7);
     }
-    DAT_0080c4c7 = mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
+    DAT_0080c4c7 = Library::Ourlib::MFSARR::mfSarLoad(param_1,PTR_s_DESCRIPTION_0079c1d0,0);
     if (DAT_0080c4c7 == (uint *)0x0) {
       DAT_0080c4c7 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
     }
@@ -55,7 +55,7 @@ StartSystemTy::SetObjectives(StartSystemTy *this,int param_1,char *param_2,int p
       FUN_006b5570((byte *)DAT_0080c4cb);
     }
     if (param_2 != (char *)0x0) {
-      DAT_0080c4cb = mfSarLoad(param_1,param_2,0);
+      DAT_0080c4cb = Library::Ourlib::MFSARR::mfSarLoad(param_1,param_2,0);
     }
     if (DAT_0080c4cb == (uint *)0x0) {
       DAT_0080c4cb = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);

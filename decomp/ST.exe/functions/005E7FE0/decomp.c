@@ -46,7 +46,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
     (*pcVar2)();
     return;
   }
-  puVar5 = mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
+  puVar5 = Library::Ourlib::MFIMG::mfImgLoad(DAT_00806780,1,s_MM_MAPB_007cc790,0,1);
   DibPut((undefined4 *)DAT_0081176c->field_02F0,0,0,'\x01',(byte *)puVar5);
   iVar4 = DAT_0081176c->field_0544;
   FUN_006b4170(iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8),0xff);
@@ -74,7 +74,7 @@ void __thiscall WaitTy::ShowDescription(WaitTy *this)
       g_currentExceptionFrame = &local_a4;
       iVar4 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
       if (iVar4 == 0) {
-        local_10 = FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
+        local_10 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,&DAT_0080ed16,0,0,0);
       }
       this_01 = local_8;
       puVar3 = local_10;

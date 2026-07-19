@@ -78,11 +78,11 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
       this_00 = extraout_ECX_06;
     }
     pHVar2->field_01D7 = 0;
-    if ((byte *)pHVar2->field_01D3 != (byte *)0x0) {
+    if (pHVar2->field_01D3 != (uint *)0x0) {
       FUN_006b5570((byte *)pHVar2->field_01D3);
       this_00 = extraout_ECX_07;
     }
-    pHVar2->field_01D3 = 0;
+    pHVar2->field_01D3 = (uint *)0x0;
     puVar4 = &pHVar2->field_01F0;
     local_8 = 10;
     do {
@@ -124,14 +124,14 @@ void __thiscall HelpPanelTy::DoneHelpPanel(HelpPanelTy *this)
     if (pHVar2->field_01EC != 0) {
       FUN_006ab060(&pHVar2->field_01EC);
     }
-    if (pHVar2->field_024C != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pHVar2->field_024C);
+    if (pHVar2->field_024C != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_024C);
     }
-    if (pHVar2->field_01DC != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pHVar2->field_01DC);
+    if (pHVar2->field_01DC != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_01DC);
     }
-    if (pHVar2->field_021C != 0) {
-      cMf32::RecMemFree(DAT_00806790,&pHVar2->field_021C);
+    if (pHVar2->field_021C != (ushort *)0x0) {
+      cMf32::RecMemFree(DAT_00806790,(uint *)&pHVar2->field_021C);
     }
     DAT_00801690 = 0;
     g_currentExceptionFrame = local_50.previous;

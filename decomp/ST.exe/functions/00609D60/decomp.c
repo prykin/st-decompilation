@@ -60,7 +60,8 @@ undefined4 __thiscall STFieldC::LoadImagSpr(STFieldC *this,uint param_1)
       pbVar9 = (&PTR_s_pics_g_007cf6d0)[uVar1];
       piVar8 = DAT_00806774;
     }
-    puVar5 = mfRLoad(piVar8,CASE_1D,pbVar9,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (piVar8,CASE_1D,pbVar9,0xffffffff,0,1,0,(undefined4 *)0x0);
     FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar5 + 9),
                  *(uint *)((int)puVar5 + 0xd),*(int *)(&DAT_007cf6f0 + *puVar3 * 8) / 2,
                  *(int *)(&DAT_007cf6f4 + *puVar3 * 8) / 2 - 0xe,0);

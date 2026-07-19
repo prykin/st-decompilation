@@ -38,9 +38,9 @@ void __thiscall SIDTy::NoneSID(SIDTy *this,void *param_1)
     (*pcVar1)();
     return;
   }
-  if (((local_c->field_0065 == '\x01') && ((HANDLE)local_c->field_1CC4 != (HANDLE)0x0)) &&
-     (DVar2 = WaitForSingleObject((HANDLE)local_c->field_1CC4,0), DVar2 == 0)) {
-    FindNextChangeNotification((HANDLE)this_00->field_1CC4);
+  if (((local_c->field_0065 == '\x01') && (local_c->field_1CC4 != (HANDLE)0x0)) &&
+     (DVar2 = WaitForSingleObject(local_c->field_1CC4,0), DVar2 == 0)) {
+    FindNextChangeNotification(this_00->field_1CC4);
     PrepFiles(this_00);
     this_00->field_002D = 5;
     piVar5 = &this_00->field_1AF1;

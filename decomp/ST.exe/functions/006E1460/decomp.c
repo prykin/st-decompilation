@@ -187,10 +187,12 @@ FUN_006e1460(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3
       }
       iVar7 = local_44;
       if (*(int *)((int)this + 0x124) == 1) {
-        FUN_006e3100(this,local_a8,local_b8,local_c0,local_d8,local_bc,local_d4);
+        Library::Ourlib::STREND::FUN_006e3100
+                  (this,local_a8,local_b8,local_c0,local_d8,local_bc,local_d4);
       }
       else {
-        FUN_006e2f90(this,local_a8,local_b8,local_c0,local_d8,local_bc,local_d4,local_30);
+        Library::Ourlib::STREND::FUN_006e2f90
+                  (this,local_a8,local_b8,local_c0,local_d8,local_bc,local_d4,local_30);
         iVar1 = *(int *)((int)this + 0x2b0);
         if ((iVar1 != 0) && (((uVar6 != 0 || (iVar7 != 0)) || (local_30 != 0)))) {
           local_8 = 0;

@@ -91,8 +91,11 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   this_03->field_005D = iVar4;
   FUN_006bc360(iVar4,local_6a4,(int *)0x0);
   *(undefined4 *)(DAT_0081176c + 0x140) = 0x18;
-  FUN_00718780((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)(DAT_0081176c + 0x144));
-  puVar6 = mfRLoad(DAT_00806784,CASE_B,(byte *)s_STATS_007ccf64,0xffffffff,0,1,0,(undefined4 *)0x0);
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)(DAT_0081176c + 0x144));
+  puVar6 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806784,CASE_B,(byte *)s_STATS_007ccf64,0xffffffff,0,1,0,
+                      (undefined4 *)0x0);
   this_03->field_007F = puVar6;
   uVar7 = FUN_0070aa50(DAT_00806780,s_RPT_IND_007ccf58,0,1);
   this_03->field_006F = uVar7;
@@ -125,8 +128,10 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
   this_03->field_0073 = iVar4;
   FUN_006b4170(iVar4,0,0,0,0x2e9,0x15e,0xff);
   FUN_006b5ee0(this_03->field_0073,0,0x2d,0,700,0x15e,0x18,0xd);
-  FUN_00718780((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_03->field_0xa3);
-  FUN_00718780((int)local_6a4,0,0x100,0x2e,0x10,(undefined4 *)&this_03->field_0x1a3);
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_6a4,0,0x100,0x1a,0x10,(undefined4 *)&this_03->field_0xa3);
+  Library::Ourlib::PALETTE::FUN_00718780
+            ((int)local_6a4,0,0x100,0x2e,0x10,(undefined4 *)&this_03->field_0x1a3);
   puVar17 = (undefined4 *)&this_03->field_0x2c7;
   for (iVar4 = 0x20; iVar4 != 0; iVar4 = iVar4 + -1) {
     *puVar17 = 0;
@@ -163,7 +168,7 @@ void __thiscall MReportTy::InitMReport(MReportTy *this,undefined1 param_1)
     g_currentExceptionFrame = &local_a0;
     iVar4 = Library::MSVCRT::__setjmp3(local_a0.jumpBuffer,0,puVar17,pcVar18);
     if (iVar4 == 0) {
-      local_14 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+      local_14 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
     }
     pcVar3 = local_14;
     this_03 = local_18;

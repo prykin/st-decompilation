@@ -79,9 +79,11 @@ void __thiscall ResearchPanelTy::InitResearchPanel(ResearchPanelTy *this)
   pCVar4 = thunk_FUN_00571240(s_BKG_RESEARCHW_007c7724,0);
   puVar5 = cMf32::RecGet(DAT_00806790,1,pCVar4,piVar11,iVar7);
   this_00->field_0184 = puVar5;
-  puVar5 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c20a0,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_0188 = puVar5;
-  puVar5 = mfRLoad(DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_B,&DAT_007c38c8,0xffffffff,0,1,0,(undefined4 *)0x0);
   this_00->field_018C = puVar5;
   ProdPanelTy::InitProdPanel
             ((ProdPanelTy *)this_00,0x2722,0x3f,2,0xc1,0xc,0x85,0x4f,0x68,0xc4,0x4f,0x20,0x13,0x33,

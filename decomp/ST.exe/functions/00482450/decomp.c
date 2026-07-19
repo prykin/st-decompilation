@@ -83,9 +83,9 @@ STBoatC::GetExplosionInfo
   lVar11 = Library::MSVCRT::__ftol();
   uVar6 = (uint)(short)lVar11;
   local_20 = CONCAT44((int)uVar6 >> 0x1f,(undefined4)local_20);
-  uVar7 = (uint)(short)pSVar2->field_0043;
+  uVar7 = (uint)pSVar2->field_0043;
   iVar10 = (((int)uVar7 >> 0x1f) - local_28) - (uint)(uVar7 < uVar4);
-  uVar8 = (uint)(short)pSVar2->field_0041;
+  uVar8 = (uint)pSVar2->field_0041;
   local_18 = uVar8 - local_3c;
   local_14[0] = (float)((((int)uVar8 >> 0x1f) - local_38) - (uint)(uVar8 < local_3c));
   uVar8 = (uint)*param_4;

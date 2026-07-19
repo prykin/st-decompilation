@@ -223,7 +223,7 @@ int __thiscall AiFltClassTy::GetAiMess(AiFltClassTy *this,uint *param_1)
          ((((uint)local_c->field_009B < 0x82 || (0x8b < (uint)local_c->field_009B)) &&
           (local_c->field_00B3 == 0)))))) &&
        (uVar8 = thunk_FUN_0065d9c0((int)local_c,extraout_EDX),
-       (int)(short)this_00->field_018C <= CONCAT22(extraout_var_01,uVar8))) {
+       (int)this_00->field_018C <= CONCAT22(extraout_var_01,uVar8))) {
       *(undefined1 *)(param_1 + 2) = 1;
       *(undefined2 *)((int)param_1 + 9) = uVar8;
       uVar12 = this_00->field_0188;
@@ -386,19 +386,17 @@ LAB_00663af0:
                 }
                 *(undefined2 *)puVar20 = *(undefined2 *)puVar19;
                 if ((this_00->field_01EB != '\0') &&
-                   (iVar9 = thunk_FUN_004ae0b0((int)(short)this_00->field_01C3,
-                                               (int)(short)this_00->field_01C5,
-                                               (int)(short)this_00->field_01C7,this_00->field_01AD,
+                   (iVar9 = thunk_FUN_004ae0b0((int)this_00->field_01C3,(int)this_00->field_01C5,
+                                               (int)this_00->field_01C7,this_00->field_01AD,
                                                *(int *)&this_00->field_0x24,(undefined4 *)0x0,
                                                (int *)0x0,(int *)0x0,0,(int *)0x0), iVar9 == 0)) {
-                  local_18 = (int)(short)this_00->field_01C3;
-                  local_1c = (int)(short)this_00->field_01C5;
-                  local_20 = (int)(short)this_00->field_01C7;
+                  local_18 = (int)this_00->field_01C3;
+                  local_1c = (int)this_00->field_01C5;
+                  local_20 = (int)this_00->field_01C7;
                   iVar9 = thunk_FUN_004b0d10(*(uint *)&this_00->field_0x24,this_00->field_01AD,
-                                             &local_18,&local_1c,&local_20,
-                                             (int)(short)this_00->field_01C3,
-                                             (int)(short)this_00->field_01C5,
-                                             (int)(short)this_00->field_01C7,(int)local_14);
+                                             &local_18,&local_1c,&local_20,(int)this_00->field_01C3,
+                                             (int)this_00->field_01C5,(int)this_00->field_01C7,
+                                             (int)local_14);
                   if (iVar9 == 0) {
                     *(undefined1 *)(param_1 + 2) = 0;
                     *(undefined2 *)((int)param_1 + 0xe) = 0;
@@ -406,12 +404,12 @@ LAB_00663af0:
                     puVar13 = local_10;
                     goto LAB_006625c2;
                   }
-                  this_00->field_01C3 = (undefined2)local_18;
-                  this_00->field_01C5 = (undefined2)local_1c;
-                  this_00->field_01C7 = (undefined2)local_20;
+                  this_00->field_01C3 = (short)local_18;
+                  this_00->field_01C5 = (short)local_1c;
+                  this_00->field_01C7 = (short)local_20;
                 }
-                thunk_FUN_004cdfd0(local_14,this_00->field_01AD,(int)(short)this_00->field_01C3,
-                                   (int)(short)this_00->field_01C5,(int)(short)this_00->field_01C7);
+                thunk_FUN_004cdfd0(local_14,this_00->field_01AD,(int)this_00->field_01C3,
+                                   (int)this_00->field_01C5,(int)this_00->field_01C7);
                 if (this_00->field_00B3 != 0) {
                   thunk_FUN_0065f980((int)this_00);
                 }
@@ -560,26 +558,26 @@ LAB_0066263e:
       }
       *(undefined2 *)puVar20 = *(undefined2 *)puVar19;
       if ((this_00->field_01EB != '\0') &&
-         (iVar9 = thunk_FUN_004ae0b0((int)(short)this_00->field_01C3,(int)(short)this_00->field_01C5
-                                     ,(int)(short)this_00->field_01C7,this_00->field_01AD,
+         (iVar9 = thunk_FUN_004ae0b0((int)this_00->field_01C3,(int)this_00->field_01C5,
+                                     (int)this_00->field_01C7,this_00->field_01AD,
                                      *(int *)&this_00->field_0x24,(undefined4 *)0x0,(int *)0x0,
                                      (int *)0x0,0,(int *)0x0), iVar9 == 0)) {
-        local_14 = (void *)(int)(short)this_00->field_01C3;
-        local_10 = (uint *)(int)(short)this_00->field_01C5;
-        local_24 = (void *)(int)(short)this_00->field_01C7;
+        local_14 = (void *)(int)this_00->field_01C3;
+        local_10 = (uint *)(int)this_00->field_01C5;
+        local_24 = (void *)(int)this_00->field_01C7;
         iVar9 = thunk_FUN_004b0d10(*(uint *)&this_00->field_0x24,this_00->field_01AD,
                                    (int *)&local_14,(int *)&local_10,(int *)&local_24,
-                                   (int)(short)this_00->field_01C3,(int)(short)this_00->field_01C5,
-                                   (int)(short)this_00->field_01C7,0);
+                                   (int)this_00->field_01C3,(int)this_00->field_01C5,
+                                   (int)this_00->field_01C7,0);
         if (iVar9 == 0) {
           *(undefined1 *)(param_1 + 2) = 0;
           *(undefined2 *)((int)param_1 + 0xe) = 0;
           g_currentExceptionFrame = local_74.previous;
           return 0;
         }
-        this_00->field_01C3 = local_14._0_2_;
-        this_00->field_01C5 = local_10._0_2_;
-        this_00->field_01C7 = local_24._0_2_;
+        this_00->field_01C3 = (short)local_14;
+        this_00->field_01C5 = (short)local_10;
+        this_00->field_01C7 = (short)local_24;
       }
       if (this_00->field_00B3 != 0) {
         thunk_FUN_0065f980((int)this_00);

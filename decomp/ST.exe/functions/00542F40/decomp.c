@@ -140,7 +140,9 @@ switchD_00543107_caseD_b904:
     iVar2 = 1;
     pCVar4 = thunk_FUN_00571240(pcVar8,0);
     pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-    pBVar7 = (BITMAPINFO *)mfRLoad(DAT_00806794,CASE_1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
+    pBVar7 = (BITMAPINFO *)
+             Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806794,CASE_1,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
     iVar2 = piVar11[1];
     iVar13 = *piVar11;
     cVar9 = '\x01';
@@ -187,7 +189,9 @@ LAB_00543291:
       iVar2 = 1;
       pCVar4 = thunk_FUN_00571240(s_BUT_OHELP_007c7c90,0);
       pbVar6 = (byte *)FUN_006f2c00(pCVar4,iVar2,uVar5);
-      pBVar7 = (BITMAPINFO *)mfRLoad(DAT_00806794,CASE_6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
+      pBVar7 = (BITMAPINFO *)
+               Library::Ourlib::MFRLOAD::mfRLoad
+                         (DAT_00806794,CASE_6,pbVar6,uVar3,bVar10,iVar13,iVar12,puVar14);
       iVar13 = *piVar11;
       iVar2 = piVar11[1];
       cVar9 = '\x06';

@@ -73,7 +73,8 @@ LAB_00538de2:
   uVar3 = thunk_FUN_00529fe0(param_1);
   bVar8 = (byte)errorCode;
   pbVar4 = (byte *)FUN_006f2c00(param_2,1,uVar3);
-  puVar5 = mfRLoad(DAT_00806794,CASE_1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
+  puVar5 = Library::Ourlib::MFRLOAD::mfRLoad
+                     (DAT_00806794,CASE_1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
   iVar9 = local_c;
   DibPut((undefined4 *)pPVar2->field_0068,local_8,local_c,'\x01',(byte *)puVar5);
   ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),pPVar2->field_0068,0,local_8,iVar9,local_14[2]

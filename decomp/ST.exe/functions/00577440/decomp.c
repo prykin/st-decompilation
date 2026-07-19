@@ -16,8 +16,9 @@ void __fastcall FUN_00577440(int param_1)
     if (*(char *)(param_1 + 0x430) == '\x01') {
       puVar7 = (uint *)(param_1 + 0x20);
       uVar3 = FUN_006e51b0(*(int *)(param_1 + 0x18));
-      iVar2 = FUN_00718f40(DAT_0080759c,(undefined4 *)(param_1 + 0x28),0,0x100,10,
-                           (int *)(param_1 + 0x24),2,uVar3,puVar7);
+      iVar2 = Library::Ourlib::PALETTE::FUN_00718f40
+                        (DAT_0080759c,(undefined4 *)(param_1 + 0x28),0,0x100,10,
+                         (int *)(param_1 + 0x24),2,uVar3,puVar7);
       if (iVar2 == -4) {
         FUN_006b0a20(DAT_0080759c,param_1 + 0x28,0,0x100,0);
         *(undefined1 *)(param_1 + 0x430) = 2;

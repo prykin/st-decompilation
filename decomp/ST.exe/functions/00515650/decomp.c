@@ -35,9 +35,9 @@ HelpPanelTy::DrawObj(HelpPanelTy *this,int *param_1,int param_2,byte param_3,int
         local_c = *(int *)(local_8 + 8);
         iVar3 = (0x19c - local_14) / 2;
         Library::DKW::WGR::FUN_006b55f0
-                  ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,pHVar2->field_021C,0,
-                   (*(int *)(pHVar2->field_021C + 4) - local_14) / 2,
-                   (*(int *)(pHVar2->field_021C + 8) - local_c) / 2,local_14,local_c);
+                  ((undefined4 *)pHVar2->field_0218,0,iVar3,*param_1,(int)pHVar2->field_021C,0,
+                   (*(int *)(pHVar2->field_021C + 2) - local_14) / 2,
+                   (*(int *)(pHVar2->field_021C + 4) - local_c) / 2,local_14,local_c);
         FUN_006b5440(pHVar2->field_0218,0,iVar3,*param_1,(int)local_8,0,0xff);
         FUN_006b5ee0(pHVar2->field_0218,0,iVar3 + -2,*param_1 + -2,local_14 + 4,local_c + 4,0x6f,0xd
                     );

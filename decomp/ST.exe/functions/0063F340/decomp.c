@@ -8,8 +8,9 @@ void __fastcall FUN_0063f340(int param_1)
   
   puVar3 = *(ushort **)(param_1 + 0x347);
   if (puVar3 == (ushort *)0x0) {
-    puVar3 = mfRLoad(DAT_00806774,CASE_1D,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
-                     (undefined4 *)0x0);
+    puVar3 = Library::Ourlib::MFRLOAD::mfRLoad
+                       (DAT_00806774,CASE_1D,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
+                        (undefined4 *)0x0);
     *(ushort **)(param_1 + 0x347) = puVar3;
     *(int *)(param_1 + 0x33e) = *(int *)puVar3 + -7;
     if (puVar3 == (ushort *)0x0) {

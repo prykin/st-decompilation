@@ -62,7 +62,8 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this)
       g_currentExceptionFrame = &local_98;
       iVar4 = Library::MSVCRT::__setjmp3(local_98.jumpBuffer,0,puVar10,pcVar11);
       if (iVar4 == 0) {
-        local_8 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0);
+        local_8 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,(byte *)&DAT_0080f33a,0,0,0)
+        ;
       }
       this_02 = local_8;
       this_01 = local_c;

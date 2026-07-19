@@ -167,12 +167,12 @@ STAppC::InitApp(STAppC *this,HINSTANCE param_1,undefined4 param_2,undefined4 par
     puVar1 = &local_c->field_0x60;
     puVar2 = &local_c->field_7D1A;
     wsprintfA(puVar2,s__s_s_s_007c6edc,puVar1,PTR_s_SYSTEM__0079b030,s_INTER_007ca0c0);
-    DAT_00806780 = FUN_006f0ec0(0x345,puVar2,0,0,0);
-    DAT_00806784 = mfRLoadCreate((int)DAT_00806780);
+    DAT_00806780 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
+    DAT_00806784 = Library::Ourlib::MFRLOAD::mfRLoadCreate((int)DAT_00806780);
     wsprintfA(puVar2,&DAT_007c6ee4,&pSVar20->field_0x470,PTR_s_TASKS_0079b048);
-    DAT_00806798 = FUN_006f0ec0(0x345,puVar2,0,0,0);
+    DAT_00806798 = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     wsprintfA(puVar2,s__s_s_s_007c6edc,puVar1,PTR_s_SYSTEM__0079b030,PTR_s_STRATEGS_0079b04c);
-    DAT_0080675c = FUN_006f0ec0(0x345,puVar2,0,0,0);
+    DAT_0080675c = Library::Ourlib::MF32INT::FUN_006f0ec0(0x345,puVar2,0,0,0);
     puVar9 = CreateArbList((int)DAT_0080675c,0);
     pSVar20->field_4EE2 = puVar9;
     puVar9 = CreateArbList((int)DAT_0080675c,1);
@@ -830,7 +830,8 @@ switchD_0056b4ce_caseD_47:
           iVar8 = Library::MSVCRT::__setjmp3(local_204.jumpBuffer,0,unaff_EDI,unaff_ESI);
           pSVar20 = local_c;
           if (iVar8 == 0) {
-            pcVar11 = (cMf32 *)FUN_006f0ec0(0x345,&local_c->field_0x76f6,0,0,0);
+            pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                         (0x345,&local_c->field_0x76f6,0,0,0);
             local_3c = &pSVar20->field_0x1196;
             cMf32::RecGet(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_3c,0);
             cMf32::delete(this_01,(undefined4 *)pcVar11);
@@ -1204,7 +1205,8 @@ switchD_0056b4ce_caseD_57:
       iVar8 = Library::MSVCRT::__setjmp3(local_17c.jumpBuffer,0,pvVar25,puVar26);
       pSVar20 = local_c;
       if (iVar8 == 0) {
-        pcVar11 = (cMf32 *)FUN_006f0ec0(0x345,&local_c->field_0x76f6,2,0,0);
+        pcVar11 = (cMf32 *)Library::Ourlib::MF32INT::FUN_006f0ec0
+                                     (0x345,&local_c->field_0x76f6,2,0,0);
         local_8 = &pSVar20->field_0x1196;
         cMf32::RecGet(pcVar11,0,PTR_s_DESCRIPTOR_0079b080,(int *)&local_8,0);
         pSVar20->field_119A = 0x8f000805;

@@ -182,7 +182,7 @@ FSGSTy::SetBanner(FSGSTy *this,char *param_1,undefined4 param_2,int param_3,uint
 LAB_005a1cfd:
       FUN_006b35d0(DAT_008075a8,pFVar12->field_1A8F);
       if ((param_3 == 1) || (param_3 == 8)) {
-        if (pFVar12->field_1AAB != 0) {
+        if (pFVar12->field_1AAB != (LPCSTR)0x0) {
           FUN_006ab060(&pFVar12->field_1AAB);
         }
         uVar10 = 0xffffffff;
