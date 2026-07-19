@@ -11,7 +11,7 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
-  SIDTy *pSVar5;
+  uint *puVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SIDTy *local_8;
@@ -23,24 +23,24 @@ void __thiscall SIDTy::DeleteCtrls(SIDTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 4;
-    pSVar5 = local_8 + 0x1af1;
+    puVar5 = (uint *)&local_8[0x44].field_0x1d;
     do {
-      if (*(uint *)pSVar5 != 0) {
-        FUN_006e56b0(*(void **)(pSVar2 + 0xc),*(uint *)pSVar5);
+      if (*puVar5 != 0) {
+        FUN_006e56b0(*(void **)&pSVar2->field_0xc,*puVar5);
       }
-      *(uint *)pSVar5 = 0;
-      pSVar5 = pSVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    FUN_006b3af0(DAT_008075a8,*(uint *)(pSVar2 + 0x1cb4));
-    if (*(uint *)(pSVar2 + 0x1b05) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pSVar2 + 0x1b49),*(uint *)(pSVar2 + 0x1b05));
+    FUN_006b3af0(DAT_008075a8,*(uint *)&pSVar2[0x48].field_0x4c);
+    if (*(uint *)&pSVar2[0x44].field_0x31 != 0xffffffff) {
+      FUN_006b3af0((int *)pSVar2[0x45].field_0010,*(uint *)&pSVar2[0x44].field_0x31);
     }
-    if (*(uint *)(pSVar2 + 0x1b96) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pSVar2 + 0x1bda),*(uint *)(pSVar2 + 0x1b96));
+    if (*(uint *)&pSVar2[0x45].field_0x5d != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pSVar2[0x46].field_0x3c,*(uint *)&pSVar2[0x45].field_0x5d);
     }
-    if (*(uint *)(pSVar2 + 0x1c27) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pSVar2 + 0x1c6b),*(uint *)(pSVar2 + 0x1c27));
+    if (*(uint *)&pSVar2[0x47].field_0x24 != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pSVar2[0x48].field_0x3,*(uint *)&pSVar2[0x47].field_0x24);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -21,16 +21,16 @@ void __thiscall OptPanelTy::SwitchOptPanelOff(OptPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   this_00 = local_8;
   if (errorCode == 0) {
-    if ((*(short *)(local_8 + 0x172) == 1) || (*(short *)(local_8 + 0x172) == 3)) {
-      local_8[0x1aa] = (OptPanelTy)0x0;
-      local_8[0x1a9] = (OptPanelTy)0x0;
-      local_8[0x1a4] = (OptPanelTy)0x1;
+    if ((local_8->field_0172 == 1) || (local_8->field_0172 == 3)) {
+      local_8->field_0x1aa = 0;
+      local_8->field_0x1a9 = 0;
+      local_8->field_0x1a4 = 1;
       SetOptControls(local_8);
-      if (*(short *)(this_00 + 0x172) == 1) {
+      if (this_00->field_0172 == 1) {
         ShiftControls(this_00,0);
       }
-      *(undefined2 *)(this_00 + 0x172) = 4;
-      thunk_FUN_005252c0(0xb0);
+      this_00->field_0172 = 4;
+      thunk_FUN_005252c0(CASE_B0);
     }
     g_currentExceptionFrame = pIVar3;
     return;

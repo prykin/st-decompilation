@@ -5,8 +5,8 @@
 
 short __thiscall
 STAllPlayersC::GetCursorType
-          (STAllPlayersC *this,undefined4 param_1,int *param_2,undefined4 param_3,int *param_4,
-          undefined4 param_5,undefined4 param_6)
+          (STAllPlayersC *this,Global_sub_00435B90_param_3Enum param_1,int *param_2,
+          undefined4 param_3,int *param_4,undefined4 param_5,undefined4 param_6)
 
 {
   int iVar1;
@@ -64,7 +64,7 @@ STAllPlayersC::GetCursorType
         if ((short)local_8 != -1) {
           piVar5 = (int *)GetObjPtr(this,CONCAT31((int3)(local_8 >> 8),
                                                   *(undefined1 *)((int)&DAT_007f4fd7 + iVar6)),
-                                    local_8,1);
+                                    local_8,CASE_1);
           sVar4 = (**(code **)(*piVar5 + 0x28))(param_1,param_2,param_3,param_4);
           return sVar4;
         }

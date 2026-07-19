@@ -44,12 +44,12 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
       iVar3 = DAT_007f4e00;
       pCVar5 = (LPCSTR)FUN_006b0140(0x2685,DAT_00807618);
       wsprintfA(local_f4,pCVar5,iVar3);
-      cLoadingTy::SetState(DAT_00802a58,2,0,local_f4);
+      cLoadingTy::SetState(DAT_00802a58,CASE_2,0,local_f4);
       if (DAT_00802a58 != (cLoadingTy *)0x0) {
         iVar3 = DAT_007f4e00 / 2;
         puVar6 = (uint *)FUN_006b0140(0x268c,DAT_00807618);
         cLoadingTy::SetProcess(DAT_00802a58,0,puVar6,iVar3);
-        cLoadingTy::SetState(DAT_00802a58,0,0,(char *)0x0);
+        cLoadingTy::SetState(DAT_00802a58,CASE_0,0,(char *)0x0);
       }
     }
     psVar11 = psVar4 + 7;
@@ -161,7 +161,7 @@ short * __cdecl FUN_0042a290(int param_1,char *param_2)
     thunk_FUN_00428e50(psVar4);
     thunk_FUN_005751f0(psVar4);
     if (DAT_00802a58 != (cLoadingTy *)0x0) {
-      cLoadingTy::SetState(DAT_00802a58,2,0,(char *)0x0);
+      cLoadingTy::SetState(DAT_00802a58,CASE_2,0,(char *)0x0);
     }
     g_currentExceptionFrame = local_74.previous;
     return psVar4;

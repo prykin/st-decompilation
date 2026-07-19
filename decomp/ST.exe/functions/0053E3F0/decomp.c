@@ -38,14 +38,14 @@ SpecPanelTy::InitPanel
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    *(int *)(local_8 + 0x3c) = *(int *)(local_8 + 0x3c) + (DAT_00806730 + -800) / 2;
+    *(int *)&local_8->field_0x3c = *(int *)&local_8->field_0x3c + (DAT_00806730 + -800) / 2;
     puVar4 = cMf32::RecGet(DAT_00806790,1,param_1,(int *)0x0,1);
-    *(ushort **)(pSVar2 + 0x185) = puVar4;
+    *(ushort **)(pSVar2 + 1) = puVar4;
     puVar5 = ccFntTy::operator(this_00,0x19d,*(int *)(DAT_00802a28 + 0x28));
-    *(undefined4 **)(pSVar2 + 0x189) = puVar5;
+    *(undefined4 **)&pSVar2[1].field_0x4 = puVar5;
     puVar5[0x16] = 0;
     puVar5[0x17] = 0;
-    iVar3 = *(int *)(pSVar2 + 0x68);
+    iVar3 = *(int *)&pSVar2->field_0x68;
     uVar9 = *(uint *)(iVar3 + 0x14);
     if (uVar9 == 0) {
       uVar9 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -60,14 +60,14 @@ SpecPanelTy::InitPanel
       *(undefined1 *)puVar5 = 0xff;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
-    thunk_FUN_00540760(*(undefined4 **)(pSVar2 + 0x68),0,0,'\x01',*(byte **)(pSVar2 + 0x185));
-    ccFntTy::SetSurf(*(ccFntTy **)(pSVar2 + 0x189),*(int *)(pSVar2 + 0x68),0,param_2,param_3,param_4
-                     ,param_5);
+    thunk_FUN_00540760(*(undefined4 **)&pSVar2->field_0x68,0,0,'\x01',*(byte **)(pSVar2 + 1));
+    ccFntTy::SetSurf(*(ccFntTy **)&pSVar2[1].field_0x4,*(int *)&pSVar2->field_0x68,0,param_2,param_3
+                     ,param_4,param_5);
     uVar16 = 0;
     iVar14 = -1;
     iVar3 = -2;
     puVar6 = (uint *)FUN_006b0140(param_6,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(pSVar2 + 0x189),puVar6,iVar3,iVar14,uVar16);
+    ccFntTy::WrStr(*(ccFntTy **)&pSVar2[1].field_0x4,puVar6,iVar3,iVar14,uVar16);
     uVar17 = 1;
     iVar3 = *(int *)pSVar2;
     uVar15 = 0;
@@ -77,10 +77,10 @@ SpecPanelTy::InitPanel
     uVar10 = 0xc000;
     uVar16 = 0xbfff;
     pCVar7 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
-    iVar3 = (**(code **)(iVar3 + 4))
-                      (0,1,param_7,param_8,0,1,1,pCVar7,uVar16,uVar10,uVar11,uVar12,uVar13,uVar15,
-                       uVar17);
-    *(int *)(pSVar2 + 0x17c) = iVar3;
+    uVar16 = (**(code **)(iVar3 + 4))
+                       (0,1,param_7,param_8,0,1,1,pCVar7,uVar16,uVar10,uVar11,uVar12,uVar13,uVar15,
+                        uVar17);
+    *(undefined4 *)&pSVar2->field_0x17c = uVar16;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

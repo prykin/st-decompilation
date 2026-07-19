@@ -28,7 +28,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
   pSVar2 = local_c;
   if (errorCode == 0) {
     if (*(int *)(local_c + 0x33a) == -1) {
-      puVar3 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expl_nb0_007d1f50,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(*(void **)(pSVar2 + 0x211),(int *)&local_8,1,0,*(uint *)((int)puVar3 + 9),
                    *(uint *)((int)puVar3 + 0xd),0x6f,0xf0,0);
@@ -46,7 +46,7 @@ undefined4 __thiscall STTmMineC::LoadImagNuclear(STTmMineC *this,int param_1)
       *(undefined4 *)(pSVar2 + 0x342) = *(undefined4 *)puVar3;
     }
     if ((*(int *)(pSVar2 + 0x353) == -1) && (param_1 != 0)) {
-      puVar3 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
+      puVar3 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expl_fla_007d1f5c,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       *(ushort **)(pSVar2 + 0x34b) = puVar3;
       *(undefined4 *)(pSVar2 + 0x34f) = 0;

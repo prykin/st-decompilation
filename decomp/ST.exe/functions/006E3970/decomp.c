@@ -26,13 +26,13 @@ void __thiscall AppClassTy::DeleteObject(AppClassTy *this,int param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pAVar3 = local_8;
   if (errorCode == 0) {
-    uVar6 = *(int *)(*(int *)(local_8 + 0xc) + 0xc) - 1;
-    uVar4 = FUN_006acc70(*(int *)(local_8 + 0xc),uVar6,&local_10);
+    uVar6 = *(int *)(local_8->field_000C + 0xc) - 1;
+    uVar4 = FUN_006acc70(local_8->field_000C,uVar6,&local_10);
     while (-1 < (int)uVar4) {
       if (local_c[2] == param_1) {
-        FUN_006b0c70(*(int *)(pAVar3 + 0xc),uVar6);
+        FUN_006b0c70(pAVar3->field_000C,uVar6);
         Library::MSVCRT::thunk_FUN_006a4950(local_c);
-        for (puVar1 = *(undefined4 **)(pAVar3 + 0x30); puVar1 != (undefined4 *)0x0;
+        for (puVar1 = (undefined4 *)pAVar3->field_0030; puVar1 != (undefined4 *)0x0;
             puVar1 = (undefined4 *)*puVar1) {
           uVar4 = puVar1[1];
           if ((uVar6 <= uVar4) && (uVar4 != 0)) {
@@ -41,7 +41,7 @@ void __thiscall AppClassTy::DeleteObject(AppClassTy *this,int param_1)
         }
       }
       uVar6 = uVar6 - 1;
-      uVar4 = FUN_006acc70(*(int *)(pAVar3 + 0xc),uVar6,&local_10);
+      uVar4 = FUN_006acc70(pAVar3->field_000C,uVar6,&local_10);
     }
     g_currentExceptionFrame = local_54.previous;
     return;

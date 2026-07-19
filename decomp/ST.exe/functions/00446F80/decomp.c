@@ -207,7 +207,7 @@ LAB_0044738a:
             FUN_006acc70((int)local_48,local_8,&local_c);
             FUN_006acc70((int)local_c,0,&local_34);
             FUN_006acc70((int)local_60,local_34 & 0xffff,(undefined4 *)&local_54);
-            local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),1);
+            local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
             if (local_28 != (int *)0x0) {
               thunk_FUN_004162b0(local_28,&local_e,&local_10,&local_16);
               FUN_006acc70((int)local_40,local_8,&local_c);
@@ -315,7 +315,7 @@ LAB_0044738a:
               FUN_006acc70((int)local_48,local_8,&local_80);
               FUN_006acc70(local_80,0,&local_34);
               FUN_006acc70((int)local_60,local_34 & 0xffff,(undefined4 *)&local_54);
-              local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),1);
+              local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
               if (local_28 != (int *)0x0) {
                 thunk_FUN_004162b0(local_28,&local_e,&local_10,&local_16);
                 PutOnPlaceGuardBoats
@@ -336,7 +336,7 @@ LAB_0044738a:
               FUN_006acc70((int)local_48,local_8,&local_80);
               FUN_006acc70(local_80,0,&local_34);
               FUN_006acc70((int)local_60,local_34 & 0xffff,(undefined4 *)&local_54);
-              local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),1);
+              local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
               if (local_28 != (int *)0x0) {
                 thunk_FUN_004162b0(local_28,&local_e,&local_10,&local_16);
                 uVar10 = 0;
@@ -533,7 +533,7 @@ LAB_004471ad:
   puVar4 = local_30;
 LAB_004471bd:
   if (local_1c == (uint *)0x0) goto LAB_0044738a;
-  local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),1);
+  local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1);
   if (local_28 != (int *)0x0) {
     thunk_FUN_004162b0(local_28,&local_e,&local_10,&local_16);
     local_8 = local_8 + 1;
@@ -541,7 +541,7 @@ LAB_004471bd:
       do {
         FUN_006acc70((int)puVar8,local_8,(undefined4 *)&local_54);
         if ((((local_4e != 1) &&
-             (local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),1),
+             (local_28 = (int *)GetObjPtr(local_6c,param_1,CONCAT22(uStack_52,local_54),CASE_1),
              local_28 != (int *)0x0)) &&
             (thunk_FUN_004162b0(local_28,&local_38,&local_36,&local_66),
             uVar7 = (int)local_38 - (int)local_e >> 0x1f,

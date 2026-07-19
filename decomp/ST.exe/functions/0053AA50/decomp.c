@@ -7,61 +7,62 @@ void __thiscall PlayPanelTy::ShiftControls(PlayPanelTy *this,int param_1)
 
 {
   code *pcVar1;
+  PlayPanelTy *this_00;
   short sVar2;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  PlayPanelTy *pPVar5;
+  undefined4 *puVar5;
   PlayPanelTy *pPVar6;
   InternalExceptionFrame local_54;
   PlayPanelTy *local_10;
   int local_c;
   PlayPanelTy *local_8;
   
-  if (param_1 != *(int *)(this + 0x5c)) {
-    *(int *)(this + 0x5c) = param_1;
-    pPVar5 = this + 0x18;
+  if (param_1 != this->field_005C) {
+    this->field_005C = param_1;
+    puVar5 = (undefined4 *)&this->field_0x18;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined4 *)pPVar5 = 0;
-      pPVar5 = pPVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    sVar2 = (short)*(undefined4 *)(this + 0x174);
-    *(undefined4 *)(this + 0x28) = 0x24;
+    sVar2 = (short)this->field_0174;
+    this->field_0028 = 0x24;
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    *(short *)(this + 0x2e) = sVar2;
+    this->field_002E = sVar2;
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    pPVar5 = local_10;
+    this_00 = local_10;
     if (iVar4 == 0) {
-      if (*(int *)(local_10 + 0x17c) != 0) {
-        FUN_006e6080(local_10,2,*(int *)(local_10 + 0x17c),(undefined4 *)(local_10 + 0x18));
+      if (*(int *)&local_10->field_0x17c != 0) {
+        FUN_006e6080(local_10,2,*(int *)&local_10->field_0x17c,(undefined4 *)&local_10->field_0x18);
       }
-      pPVar6 = pPVar5 + 0x181;
+      pPVar6 = this_00 + 1;
       local_c = 8;
       do {
         iVar4 = 2;
         local_8 = pPVar6;
         do {
           if (*(int *)pPVar6 != 0) {
-            FUN_006e6080(pPVar5,2,*(int *)pPVar6,(undefined4 *)(pPVar5 + 0x18));
+            FUN_006e6080(this_00,2,*(int *)pPVar6,(undefined4 *)&this_00->field_0x18);
           }
-          pPVar6 = pPVar6 + 0x20;
+          pPVar6 = (PlayPanelTy *)&pPVar6->field_0x20;
           iVar4 = iVar4 + -1;
         } while (iVar4 != 0);
-        pPVar6 = local_8 + 4;
+        pPVar6 = (PlayPanelTy *)&local_8->field_0x4;
         local_c = local_c + -1;
       } while (local_c != 0);
       local_8 = pPVar6;
-      if (*(int *)(pPVar5 + 0x1c5) != 0) {
-        FUN_006e6080(pPVar5,2,*(int *)(pPVar5 + 0x1c5),(undefined4 *)(pPVar5 + 0x18));
+      if (*(int *)&this_00[1].field_0x44 != 0) {
+        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x44,(undefined4 *)&this_00->field_0x18);
       }
-      if (*(int *)(pPVar5 + 0x1c1) != 0) {
-        FUN_006e6080(pPVar5,2,*(int *)(pPVar5 + 0x1c1),(undefined4 *)(pPVar5 + 0x18));
+      if (*(int *)&this_00[1].field_0x40 != 0) {
+        FUN_006e6080(this_00,2,*(int *)&this_00[1].field_0x40,(undefined4 *)&this_00->field_0x18);
       }
       g_currentExceptionFrame = local_54.previous;
       return;

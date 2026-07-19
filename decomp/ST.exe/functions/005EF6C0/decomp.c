@@ -15,8 +15,9 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
     this_00 = (STBoatC *)
               STAllPlayersC::GetObjPtr
                         (DAT_007fa174,
-                         CONCAT31((int3)(uVar1 >> 8),*(undefined1 *)((int)this + 0x2a3)),uVar1,1);
-    if ((this_00 != (STBoatC *)0x0) && (*(int *)(this_00 + 0x18) == *(int *)((int)this + 0x2a7)))
+                         CONCAT31((int3)(uVar1 >> 8),*(undefined1 *)((int)this + 0x2a3)),uVar1,
+                         CASE_1);
+    if ((this_00 != (STBoatC *)0x0) && (this_00->field_0018 == *(int *)((int)this + 0x2a7)))
     goto LAB_005ef720;
   }
   if (*(int *)((int)this + 0x2a7) != 0) {
@@ -26,7 +27,7 @@ void __thiscall FUN_005ef6c0(void *this,int param_1)
     }
   }
 LAB_005ef720:
-  if ((this_00 != (STBoatC *)0x0) && (*(int *)(this_00 + 0x20) == 0x14)) {
+  if ((this_00 != (STBoatC *)0x0) && (*(int *)&this_00->field_0x20 == 0x14)) {
     if (param_1 == 1) {
       STBoatC::ReadyForLoading(this_00,*(void **)((int)this + 0x18));
     }

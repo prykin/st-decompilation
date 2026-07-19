@@ -12,7 +12,7 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  STPlaySystemC *pSVar5;
+  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   STPlaySystemC *local_8;
   
@@ -22,33 +22,33 @@ void __thiscall STPlaySystemC::DoneSystem(STPlaySystemC *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pSVar2 = local_8;
   if (iVar3 == 0) {
-    pSVar5 = local_8 + 0xc0;
+    puVar5 = (undefined4 *)&local_8->field_0xc0;
     for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(int *)pSVar5 = 0;
-      pSVar5 = pSVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    *(int *)(local_8 + 0xcc) = 0xf;
-    *(int *)(local_8 + 0xd0) = 0x7106;
-    (**(code **)(*(int *)local_8 + 0x18))(local_8 + 0xc0);
-    if (*(int *)(pSVar2 + 0x39) != 0) {
-      FUN_006b9890((int *)(pSVar2 + 0x39));
+    *(undefined4 *)&local_8->field_0xcc = 0xf;
+    *(undefined4 *)&local_8->field_0xd0 = 0x7106;
+    (*local_8->vtable->SendMessage)((SystemWithNamedObjClassTy *)local_8,(int)&local_8->field_0xc0);
+    if (*(int *)&pSVar2->field_0x39 != 0) {
+      FUN_006b9890((int *)&pSVar2->field_0x39);
     }
-    if (*(int *)(pSVar2 + 0x4f) != 0) {
-      FUN_006ab060((undefined4 *)(pSVar2 + 0x4f));
+    if (*(int *)&pSVar2->field_0x4f != 0) {
+      FUN_006ab060((undefined4 *)&pSVar2->field_0x4f);
     }
-    if (*(int *)(pSVar2 + 0x3d) != 0) {
-      FUN_006ab060((undefined4 *)(pSVar2 + 0x3d));
+    if (pSVar2->field_003D != 0) {
+      FUN_006ab060(&pSVar2->field_003D);
     }
-    *(undefined4 *)(pSVar2 + 0x41) = 0;
-    *(undefined4 *)(pSVar2 + 0x45) = 0;
-    *(undefined4 *)(pSVar2 + 0x53) = 0;
-    if (*(int *)(pSVar2 + 0x65) != 0) {
-      FUN_006b9890((int *)(pSVar2 + 0x65));
+    *(undefined4 *)&pSVar2->field_0x41 = 0;
+    *(undefined4 *)&pSVar2->field_0x45 = 0;
+    *(undefined4 *)&pSVar2->field_0x53 = 0;
+    if (*(int *)&pSVar2->field_0x65 != 0) {
+      FUN_006b9890((int *)&pSVar2->field_0x65);
     }
-    *(undefined4 *)(pSVar2 + 0x69) = 0;
-    *(undefined4 *)(pSVar2 + 0x6d) = 0;
-    *(undefined4 *)(pSVar2 + 0x71) = 0;
-    *(undefined4 *)(pSVar2 + 0x75) = 0;
+    *(undefined4 *)&pSVar2->field_0x69 = 0;
+    *(undefined4 *)&pSVar2->field_0x6d = 0;
+    *(undefined4 *)&pSVar2->field_0x71 = 0;
+    *(undefined4 *)&pSVar2->field_0x75 = 0;
     FUN_006e52d0((int)pSVar2);
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -10,7 +10,7 @@ CPanelTy::SetButStruct
           undefined4 param_10,char *param_11)
 
 {
-  CPanelTy *pCVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   uint uVar3;
   int iVar4;
@@ -36,24 +36,24 @@ CPanelTy::SetButStruct
     }
     *param_1 = param_3;
     uVar3 = (uint)param_2;
-    param_1[2] = *(int *)(local_c + uVar3 * 4 + 0x3c) + param_4;
-    iVar4 = *(int *)(local_c + 0x130);
+    param_1[2] = *(int *)(&local_c->field_0x3c + uVar3 * 4) + param_4;
+    iVar4 = local_c->field_0130;
     switch(uVar3) {
     case 0:
     case 1:
     case 2:
     case 3:
-      iVar4 = *(int *)(local_c + 0x134);
+      iVar4 = local_c->field_0134;
       break;
     case 5:
     case 6:
     case 7:
     case 8:
-      iVar4 = *(int *)(local_c + 0x138);
+      iVar4 = local_c->field_0138;
     }
     if (iVar4 == 0) {
       if ((param_2 == 1) || (param_2 == 7)) {
-        iVar4 = *(int *)(local_c + 0xc0);
+        iVar4 = local_c->field_00C0;
       }
       else {
         iVar4 = 0;
@@ -61,14 +61,14 @@ CPanelTy::SetButStruct
       iVar4 = iVar4 + DAT_00806734;
     }
     else {
-      iVar4 = *(int *)(local_c + uVar3 * 4 + 0x94);
+      iVar4 = *(int *)(&local_c->field_0x94 + uVar3 * 4);
     }
-    pCVar1 = local_c + 0x1e1;
+    puVar1 = &local_c->field_0x1e1;
     param_1[3] = iVar4 + param_5;
     param_1[0x42] = 1;
     param_1[0x43] = 1;
-    wsprintfA((LPSTR)pCVar1,&DAT_007c181c,param_7);
-    local_8 = cMf32::RecGet(DAT_00806790,param_6,(char *)pCVar1,(int *)0x0,1);
+    wsprintfA(puVar1,&DAT_007c181c,param_7);
+    local_8 = cMf32::RecGet(DAT_00806790,param_6,puVar1,(int *)0x0,1);
     param_1[4] = *(undefined4 *)(local_8 + 2);
     param_1[5] = *(undefined4 *)(local_8 + 4);
     cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);

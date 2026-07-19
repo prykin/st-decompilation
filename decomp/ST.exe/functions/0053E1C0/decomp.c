@@ -54,21 +54,21 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     }
     bVar2 = 0;
     if (param_1 != 0) {
-      local_14 = *(int *)(local_c + 0x5c);
+      local_14 = local_c->field_005C;
       iVar3 = 0;
       local_10 = 1;
       puVar6 = local_510 + 1;
-      uVar8 = *(int *)(local_c + 0x3c) + param_3;
+      uVar8 = local_c->field_003C + param_3;
       do {
         puVar6[-1] = local_10;
         iVar5 = local_14;
         *puVar6 = (uint)(bVar2 == param_2);
         puVar6[2] = uVar8;
         if (iVar5 == 0) {
-          iVar5 = -*(int *)(local_c + 0x48);
+          iVar5 = -local_c->field_0048;
         }
         else {
-          iVar5 = *(int *)(local_c + 0x44);
+          iVar5 = local_c->field_0044;
         }
         puVar6[3] = iVar5 + iVar3 + param_4;
         puVar6[4] = param_5;
@@ -81,7 +81,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
       } while (bVar2 < param_1);
     }
     local_24 = local_510;
-    local_5c = *(undefined4 *)(local_c + 8);
+    local_5c = *(undefined4 *)&local_c->field_0x8;
     local_20 = param_2 + 1;
     local_34 = param_10;
     local_58 = 2;
@@ -92,7 +92,7 @@ UPanelTy::CreateTab(UPanelTy *this,byte param_1,byte param_2,int param_3,int par
     local_1c = 1;
     local_18 = 1;
     local_3c = local_5c;
-    (**(code **)(**(int **)(local_c + 0xc) + 8))(5,&local_8,0,local_6c,0);
+    (**(code **)(**(int **)&local_c->field_0xc + 8))(5,&local_8,0,local_6c,0);
     g_currentExceptionFrame = local_b0.previous;
     return local_8;
   }

@@ -1,4 +1,4 @@
-FUN_00476a10:
+STBoatC::DCBomb:
 00476A10  55                        PUSH EBP
 00476A11  8B EC                     MOV EBP,ESP
 00476A13  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

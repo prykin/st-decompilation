@@ -1,15 +1,20 @@
 
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_0043E9A0_param_2Enum. Cases:
+   CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94 */
+
 undefined4
-FUN_0043e9a0(char param_1,int param_2,short param_3,short param_4,short param_5,short param_6,
-            short param_7,short param_8,int param_9,char param_10)
+FUN_0043e9a0(char param_1,Global_sub_0043E9A0_param_2Enum param_2,short param_3,short param_4,
+            short param_5,short param_6,short param_7,short param_8,int param_9,char param_10)
 
 {
   int *piVar1;
   int iVar2;
-  int iVar3;
+  Global_sub_0043E9A0_param_2Enum GVar3;
   int iVar4;
   int iVar5;
   int iVar6;
+  int iVar7;
   undefined1 local_14 [4];
   int local_10;
   int local_c;
@@ -47,7 +52,7 @@ FUN_0043e9a0(char param_1,int param_2,short param_3,short param_4,short param_5,
     iVar2 = CONCAT22((short)((uint)iVar2 >> 0x10),DAT_007fb240);
     _param_5 = _param_5 + 1;
     iVar6 = local_c;
-    iVar3 = local_8;
+    iVar7 = local_8;
     param_3 = 0;
     do {
       iVar4 = iVar4 + DAT_007fb246;
@@ -56,41 +61,41 @@ FUN_0043e9a0(char param_1,int param_2,short param_3,short param_4,short param_5,
         iVar5 = (_param_4 - _param_6) + 1;
         do {
           local_10 = local_10 + (short)iVar2;
-          if (iVar3 <= iVar6) {
+          if (iVar7 <= iVar6) {
             iVar2 = local_10 * 8 + -8;
             iVar6 = (iVar6 - local_8) + 1;
             do {
               iVar2 = iVar2 + 8;
               piVar1 = *(int **)(iVar2 + DAT_007fb248);
-              iVar3 = DAT_007fb248;
+              GVar3 = DAT_007fb248;
               if ((((piVar1 != (int *)0x0) && (piVar1[9] == (int)param_1)) && (piVar1 != (int *)0x0)
-                  ) && ((iVar3 = (**(code **)(*piVar1 + 0x2c))(), iVar3 == param_2 &&
-                        (iVar3 = (**(code **)(*piVar1 + 0xf8))(), iVar3 != 0)))) {
+                  ) && ((GVar3 = (**(code **)(*piVar1 + 0x2c))(), GVar3 == param_2 &&
+                        (GVar3 = (**(code **)(*piVar1 + 0xf8))(), GVar3 != 0)))) {
                 if (param_9 == 0) {
 LAB_0043eb0f:
                   if ((param_10 == -1) ||
-                     (iVar3 = (**(code **)(*piVar1 + 0x6c))(), iVar3 == param_10)) {
+                     (GVar3 = (**(code **)(*piVar1 + 0x6c))(), GVar3 == (int)param_10)) {
                     param_3 = param_3 + 1;
                   }
                 }
                 else {
-                  iVar3 = param_2 + -0x38;
+                  GVar3 = param_2 - CASE_38;
                   switch(param_2) {
-                  case 0x38:
-                  case 0x39:
-                  case 0x4f:
-                  case 0x5e:
+                  case CASE_38:
+                  case CASE_39:
+                  case CASE_4F:
+                  case CASE_5E:
                     if ((param_9 == 1) &&
-                       (iVar3 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < iVar3))
+                       (GVar3 = (**(code **)(*piVar1 + 0x88))(local_14), 0 < (int)GVar3))
                     goto LAB_0043eb0f;
                   }
                 }
               }
               iVar6 = iVar6 + -1;
             } while (iVar6 != 0);
-            iVar2 = CONCAT22((short)((uint)iVar3 >> 0x10),DAT_007fb240);
+            iVar2 = CONCAT22((short)(GVar3 >> 0x10),DAT_007fb240);
             iVar6 = local_c;
-            iVar3 = local_8;
+            iVar7 = local_8;
           }
           iVar5 = iVar5 + -1;
         } while (iVar5 != 0);

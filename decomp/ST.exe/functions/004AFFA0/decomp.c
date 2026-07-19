@@ -1,7 +1,11 @@
 
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004AFFA0_param_2Enum. Cases:
+   CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94;CASE_61=97 */
+
 undefined4 __cdecl
-FUN_004affa0(undefined4 param_1,undefined4 param_2,int *param_3,int *param_4,int *param_5,
-            int param_6,int param_7)
+FUN_004affa0(undefined4 param_1,Global_sub_004AFFA0_param_2Enum param_2,int *param_3,int *param_4,
+            int *param_5,int param_6,int param_7)
 
 {
   int iVar1;
@@ -24,19 +28,19 @@ FUN_004affa0(undefined4 param_1,undefined4 param_2,int *param_3,int *param_4,int
       do {
         if (local_10 == (int *)0x0) goto switchD_004afffd_caseD_3a;
         switch(param_2) {
-        case 0x38:
+        case CASE_38:
           iVar1 = (**(code **)(*local_10 + 0x2c))();
           if (iVar1 != 0xdc) break;
           goto LAB_004b004a;
-        case 0x39:
-        case 0x5e:
+        case CASE_39:
+        case CASE_5E:
           iVar1 = (**(code **)(*local_10 + 0x2c))();
           if (iVar1 == 0xdd) goto LAB_004b004a;
           break;
-        case 0x4f:
+        case CASE_4F:
           iVar1 = (**(code **)(*local_10 + 0x2c))();
           goto joined_r0x004b0044;
-        case 0x61:
+        case CASE_61:
           iVar1 = (**(code **)(*local_10 + 0x2c))();
 joined_r0x004b0044:
           if (iVar1 == 0xde) {

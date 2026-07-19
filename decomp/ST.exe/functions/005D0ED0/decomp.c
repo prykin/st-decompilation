@@ -23,14 +23,14 @@ SettMapMTy::ChangePlayerList
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if (*(int *)(this + 0x1f84) != 0) {
+  if (this->field_1F84 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar3 = local_8;
     if (iVar4 == 0) {
-      iVar4 = *(int *)(local_8 + 0x1f84);
+      iVar4 = local_8->field_1F84;
       if (param_2 < *(uint *)(iVar4 + 0xc)) {
         iVar4 = *(int *)(iVar4 + 8) * param_2 + *(int *)(iVar4 + 0x1c);
       }
@@ -41,7 +41,7 @@ SettMapMTy::ChangePlayerList
         if ((param_3 == 2) || (param_3 == 3)) {
           DeletePlayer(local_8,param_1);
         }
-        iVar4 = *(int *)(pSVar3 + 0x1f84);
+        iVar4 = pSVar3->field_1F84;
         if (param_2 < *(uint *)(iVar4 + 0xc)) {
           pcVar8 = (char *)(*(int *)(iVar4 + 8) * param_2 + *(int *)(iVar4 + 0x1c));
         }
@@ -96,12 +96,12 @@ SettMapMTy::ChangePlayerList
           pcVar8[1] = '\x01';
         }
         CheckPlList(local_8,unaff_EDI);
-        if ((pSVar3[0x1e26] != (SettMapMTy)0xc) && (pSVar3[0x1e26] != (SettMapMTy)0x10)) {
+        if ((pSVar3->field_0x1e26 != '\f') && (pSVar3->field_0x1e26 != '\x10')) {
           thunk_FUN_005d1380((int)pSVar3);
         }
         (**(code **)(*(int *)pSVar3 + 0x2c))();
         SettMapTy::PaintSC((SettMapTy *)pSVar3);
-        *(int *)(pSVar3 + 0x2121) = *(int *)(pSVar3 + 0x2121) + 1;
+        *(int *)&pSVar3[1].field_0x4 = *(int *)&pSVar3[1].field_0x4 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

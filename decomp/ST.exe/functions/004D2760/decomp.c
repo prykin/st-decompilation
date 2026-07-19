@@ -37,7 +37,7 @@ undefined4 __fastcall FUN_004d2760(int *param_1)
       } while (iVar2 < *(int *)((int)param_1 + 0x261) + (int)local_8);
     }
     iVar2 = thunk_FUN_004b7520(CONCAT31((int3)((uint)piVar1 >> 8),(char)param_1[9]),
-                               *(undefined4 *)((int)param_1 + 0x259));
+                               *(Global_sub_004B7520_param_2Enum *)((int)param_1 + 0x259));
     if (iVar2 != 0) {
       iVar2 = (**(code **)(*param_1 + 0x2c))();
       thunk_FUN_004b7710(CONCAT31((int3)((uint)extraout_ECX >> 8),(char)param_1[9]),iVar2);

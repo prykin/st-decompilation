@@ -26,7 +26,7 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pFVar2 = local_8;
   if (iVar3 == 0) {
-    iVar3 = *(int *)(local_8 + 0x1ac0);
+    iVar3 = local_8->field_1AC0;
     uVar7 = *(uint *)(iVar3 + 0x14);
     if (uVar7 == 0) {
       uVar7 = ((uint)*(ushort *)(iVar3 + 0xe) * *(int *)(iVar3 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -41,33 +41,30 @@ void __thiscall FSGSTy::PaintGameNew(FSGSTy *this)
       *(undefined1 *)puVar4 = 0xff;
       puVar4 = (undefined4 *)((int)puVar4 + 1);
     }
-    ccFntTy::SetSurf(*(ccFntTy **)(pFVar2 + 0x1a73),*(int *)(pFVar2 + 0x1ac0),0,0x19,0x48,0x186,0x14
-                    );
+    ccFntTy::SetSurf(*(ccFntTy **)&pFVar2->field_0x1a73,pFVar2->field_1AC0,0,0x19,0x48,0x186,0x14);
     uVar9 = 2;
     iVar8 = -1;
     iVar3 = 0;
     puVar5 = (uint *)FUN_006b0140(0x256b,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(pFVar2 + 0x1a73),puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(*(int *)(pFVar2 + 0x1ac0),0,0x18,0x5b,0x188,0x1b,0xf,0xd);
-    ccFntTy::SetSurf(*(ccFntTy **)(pFVar2 + 0x1a73),*(int *)(pFVar2 + 0x1ac0),0,0x19,0x7f,0xb4,0x14)
-    ;
+    ccFntTy::WrStr(*(ccFntTy **)&pFVar2->field_0x1a73,puVar5,iVar3,iVar8,uVar9);
+    FUN_006b5ee0(pFVar2->field_1AC0,0,0x18,0x5b,0x188,0x1b,0xf,0xd);
+    ccFntTy::SetSurf(*(ccFntTy **)&pFVar2->field_0x1a73,pFVar2->field_1AC0,0,0x19,0x7f,0xb4,0x14);
     uVar9 = 2;
     iVar8 = -1;
     iVar3 = 0;
     puVar5 = (uint *)FUN_006b0140(0x2550,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(pFVar2 + 0x1a73),puVar5,iVar3,iVar8,uVar9);
-    FUN_006b5ee0(*(int *)(pFVar2 + 0x1ac0),0,0x18,0x92,0xb6,0x16,0xf,0xd);
-    ccFntTy::SetSurf(*(ccFntTy **)(pFVar2 + 0x1a73),*(int *)(pFVar2 + 0x1ac0),0,0x19,0xb1,0xb4,0x14)
-    ;
+    ccFntTy::WrStr(*(ccFntTy **)&pFVar2->field_0x1a73,puVar5,iVar3,iVar8,uVar9);
+    FUN_006b5ee0(pFVar2->field_1AC0,0,0x18,0x92,0xb6,0x16,0xf,0xd);
+    ccFntTy::SetSurf(*(ccFntTy **)&pFVar2->field_0x1a73,pFVar2->field_1AC0,0,0x19,0xb1,0xb4,0x14);
     uVar9 = 2;
     iVar8 = -1;
     iVar3 = 0;
     puVar5 = (uint *)FUN_006b0140(0x256d,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(pFVar2 + 0x1a73),puVar5,iVar3,iVar8,uVar9);
-    FUN_006c7570(*(int *)(pFVar2 + 0x1ac0),0,0x19,0xc5,(undefined4 *)0x186,0x19,4,0xf);
-    FUN_006c7570(*(int *)(pFVar2 + 0x1ac0),0,0x1b,199,(undefined4 *)0x182,0x15,4,0xf);
-    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
-    FUN_006b35d0(DAT_008075a8,*(uint *)(pFVar2 + 0x1abc));
+    ccFntTy::WrStr(*(ccFntTy **)&pFVar2->field_0x1a73,puVar5,iVar3,iVar8,uVar9);
+    FUN_006c7570(pFVar2->field_1AC0,0,0x19,0xc5,(undefined4 *)0x186,0x19,4,0xf);
+    FUN_006c7570(pFVar2->field_1AC0,0,0x1b,199,(undefined4 *)0x182,0x15,4,0xf);
+    Library::DKW::DDX::FUN_006b3430(DAT_008075a8,pFVar2->field_1ABC);
+    FUN_006b35d0(DAT_008075a8,pFVar2->field_1ABC);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

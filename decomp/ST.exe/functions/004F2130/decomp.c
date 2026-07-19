@@ -29,27 +29,27 @@ CPanelTy::PaintCostsXY
   pCVar2 = local_8;
   if (iVar3 == 0) {
     if ((param_4 != 0xffff) || (param_5 != 0xffff)) {
-      ccFntTy::SetSurf(*(ccFntTy **)(local_8 + 0x1b8),param_1,0,param_2,param_3,0x30,10);
+      ccFntTy::SetSurf(*(ccFntTy **)&local_8->field_0x1b8,param_1,0,param_2,param_3,0x30,10);
       iVar8 = -1;
       iVar7 = -1;
       uVar6 = 1;
       iVar5 = -1;
       iVar3 = 0;
       puVar4 = (uint *)FUN_006b0140(0x36b3,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
+      ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,puVar4,iVar3,iVar5,uVar6,iVar7,iVar8);
     }
     if (param_4 != 0xffff) {
-      wsprintfA((LPSTR)(pCVar2 + 0x1e1),&DAT_007c1890,param_4);
-      ccFntTy::SetSurf(*(ccFntTy **)(pCVar2 + 0x1b8),param_1,0,param_2 + 0x30,param_3,0x11,10);
-      ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),(uint *)(pCVar2 + 0x1e1),-3,-1,param_6 & 0xffff,
-                     -1,-1);
+      wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1890,param_4);
+      ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,param_1,0,param_2 + 0x30,param_3,0x11,10);
+      ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,(uint *)&pCVar2->field_0x1e1,-3,-1,
+                     param_6 & 0xffff,-1,-1);
     }
     if (param_5 != 0xffff) {
-      wsprintfA((LPSTR)(pCVar2 + 0x1e1),&DAT_007c1890,param_5);
-      ccFntTy::SetSurf(*(ccFntTy **)(pCVar2 + 0x1b8),param_1,0,param_2 + 0x30,param_3 + 0xb,0x11,10)
-      ;
-      ccFntTy::WrTxt(*(ccFntTy **)(pCVar2 + 0x1b8),(uint *)(pCVar2 + 0x1e1),-3,-1,param_7 & 0xffff,
-                     -1,-1);
+      wsprintfA(&pCVar2->field_0x1e1,&DAT_007c1890,param_5);
+      ccFntTy::SetSurf(*(ccFntTy **)&pCVar2->field_0x1b8,param_1,0,param_2 + 0x30,param_3 + 0xb,0x11
+                       ,10);
+      ccFntTy::WrTxt(*(ccFntTy **)&pCVar2->field_0x1b8,(uint *)&pCVar2->field_0x1e1,-3,-1,
+                     param_7 & 0xffff,-1,-1);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

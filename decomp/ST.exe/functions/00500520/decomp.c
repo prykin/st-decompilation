@@ -14,7 +14,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   uint uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  CPanelTy *pCVar7;
+  char *pcVar7;
   undefined4 *puVar8;
   int iVar9;
   int iVar10;
@@ -27,14 +27,14 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
   int local_18;
   int local_14;
   int local_10;
-  CPanelTy *local_c;
+  char *local_c;
   uint local_8;
   
   if (param_1 == 0) {
-    local_c = this + 0xc51;
+    local_c = &this->field_0C51;
   }
   else {
-    local_c = this + 0xb63;
+    local_c = &this->field_0B63;
   }
   if (param_1 == 0) {
     cVar3 = (DAT_0080874e != '\x03') + '\x05';
@@ -43,7 +43,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
     cVar3 = (DAT_0080874e == '\x03') + '\x02';
   }
   local_8 = CONCAT31(local_8._1_3_,cVar3);
-  if (*local_c != (CPanelTy)0x0) {
+  if (*local_c != '\0') {
     local_70.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_70;
     local_1c = this;
@@ -55,7 +55,7 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
       local_24 = -0x11 - (int)local_c;
       local_28 = -0x2a - (int)local_c;
       local_14 = 6;
-      pCVar7 = local_c + 0x2a;
+      pcVar7 = local_c + 0x2a;
       iVar4 = 0xb;
       local_10 = 0x37;
       local_18 = 5;
@@ -64,41 +64,41 @@ void __thiscall CPanelTy::PaintDeep(CPanelTy *this,int param_1)
           iVar10 = iVar4;
           if (param_1 != 0) {
             iVar9 = local_20;
-            if (*pCVar7 != (CPanelTy)0x0) {
+            if (*pcVar7 != '\0') {
               iVar9 = local_28;
             }
-            pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pCVar2 + 0x2a2),(int)(pCVar7 + iVar9));
+            pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2a2,(int)(pcVar7 + iVar9));
             cVar3 = '\x06';
             iVar9 = local_10;
             goto LAB_00500689;
           }
           iVar9 = local_24;
-          if (*pCVar7 == (CPanelTy)0x0) {
+          if (*pcVar7 == '\0') {
             iVar9 = local_2c;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pCVar2 + 0x2a2),(int)(pCVar7 + iVar9));
+          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2a2,(int)(pcVar7 + iVar9));
           cVar3 = '\x06';
           iVar9 = iVar4 + 0x7c;
-          puVar8 = *(undefined4 **)(pCVar2 + (local_8 & 0xff) * 4 + 0x180);
+          puVar8 = *(undefined4 **)(&pCVar2->field_0x180 + (local_8 & 0xff) * 4);
         }
         else {
-          if (*pCVar7 == (CPanelTy)0x0) {
+          if (*pcVar7 == '\0') {
             uVar6 = 2;
           }
           else {
-            uVar6 = -(uint)(local_c[2] != (CPanelTy)0x1) & 3;
+            uVar6 = -(uint)(local_c[2] != '\x01') & 3;
           }
-          pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pCVar2 + 0x2a2),uVar6);
+          pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pCVar2->field_0x2a2,uVar6);
           cVar3 = '\x01';
           iVar9 = 7;
           iVar10 = local_14;
 LAB_00500689:
-          puVar8 = *(undefined4 **)(pCVar2 + (local_8 & 0xff) * 4 + 0x180);
+          puVar8 = *(undefined4 **)(&pCVar2->field_0x180 + (local_8 & 0xff) * 4);
         }
         thunk_FUN_00540760(puVar8,iVar9,iVar10,cVar3,pbVar5);
         local_10 = local_10 + -0xb;
         iVar4 = iVar4 + 0xb;
-        pCVar7 = pCVar7 + 1;
+        pcVar7 = pcVar7 + 1;
         local_14 = local_14 + 0x1d;
         local_18 = local_18 + -1;
         if (local_18 == 0) {

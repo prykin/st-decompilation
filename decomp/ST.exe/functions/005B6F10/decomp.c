@@ -7,24 +7,24 @@ void __thiscall MMsgTy::DoneMMsg(MMsgTy *this)
 
 {
   code *pcVar1;
-  MMObjTy *pMVar2;
+  MMsgTy *pMVar2;
   int errorCode;
   int iVar3;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar4;
   undefined4 local_48 [16];
-  MMObjTy *local_8;
+  MMsgTy *local_8;
   
   pIVar4 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   pMVar2 = local_8;
   if (errorCode == 0) {
-    MMObjTy::DoneMMObj(local_8);
+    MMObjTy::DoneMMObj((MMObjTy *)local_8);
     *(undefined4 *)(DAT_0081176c + 0x2e6) = 0;
-    SpriteClassTy::CloseSprite((SpriteClassTy *)(pMVar2 + 0x1cf7));
-    SpriteClassTy::CloseSprite((SpriteClassTy *)(pMVar2 + 0x1d88));
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2[1].field_0x4d);
+    SpriteClassTy::CloseSprite((SpriteClassTy *)&pMVar2[1].field_0xde);
     g_currentExceptionFrame = pIVar4;
     return;
   }

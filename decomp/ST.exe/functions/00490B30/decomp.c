@@ -31,7 +31,7 @@ void __thiscall FUN_00490b30(void *this,uint param_1,short param_2,uint param_3)
         (iVar4 = FUN_006e62d0(DAT_00802a38,*(int *)((int)this + 0x7f4),(int *)&param_1), iVar4 != -4
         )) && ((*(short *)(param_1 + 0x32) == param_2 && (*(int *)(param_1 + 0x24) == (int)cVar6))))
     {
-      uVar5 = STAllPlayersC::GetObjPtr(DAT_007fa174,uVar5,param_3,1);
+      uVar5 = STAllPlayersC::GetObjPtr(DAT_007fa174,uVar5,param_3,CASE_1);
       *(undefined4 *)((int)this + 0x7f4) = *(undefined4 *)(uVar5 + 0x18);
     }
   }

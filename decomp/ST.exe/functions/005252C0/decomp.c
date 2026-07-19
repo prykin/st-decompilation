@@ -1,5 +1,9 @@
 
-void __cdecl FUN_005252c0(int param_1)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_005252C0_param_1Enum. Cases:
+   CASE_AF=175;CASE_B0=176;CASE_B6=182;CASE_B7=183;CASE_B8=184;CASE_B9=185 */
+
+void __cdecl FUN_005252c0(Global_sub_005252C0_param_1Enum param_1)
 
 {
   int iVar1;
@@ -9,17 +13,17 @@ void __cdecl FUN_005252c0(int param_1)
   
   pIVar2 = g_currentExceptionFrame;
   local_8 = 0;
-  if (param_1 != -1) {
+  if (param_1 != 0xffffffff) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
     iVar1 = Library::MSVCRT::__setjmp3((undefined4 *)&stack0xffffffb8,0,pIVar2,in_stack_ffffffb8);
     if (iVar1 == 0) {
       switch(param_1) {
-      case 0xaf:
-      case 0xb0:
-      case 0xb6:
-      case 0xb7:
-      case 0xb8:
-      case 0xb9:
+      case CASE_AF:
+      case CASE_B0:
+      case CASE_B6:
+      case CASE_B7:
+      case CASE_B8:
+      case CASE_B9:
         local_8 = 1;
       }
       SoundClassTy::PlaySound_thunk

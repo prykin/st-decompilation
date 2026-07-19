@@ -23,3 +23,6 @@
 *~
 *.swp
 *.swo
+
+# Local Java/Ghidra script compilation output.
+*.class

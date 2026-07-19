@@ -1,9 +1,13 @@
 
-undefined2 * FUN_0044d320(uint param_1)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_0044D320_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_8=8;CASE_10=16;CASE_28=40 */
+
+undefined2 * FUN_0044d320(Global_sub_0044D320_param_1Enum param_1)
 
 {
   short sVar1;
-  uint uVar2;
+  Global_sub_0044D320_param_1Enum GVar2;
   undefined2 *puVar3;
   int *piVar4;
   int iVar5;
@@ -15,7 +19,7 @@ undefined2 * FUN_0044d320(uint param_1)
   STAllPlayersC *local_c;
   int local_8;
   
-  uVar2 = param_1;
+  GVar2 = param_1;
   local_8 = 0;
   local_14 = *(int *)((int)&DAT_007f4f8d + (uint)DAT_0080874d * 0xa62);
   local_10 = *(int *)(local_14 + 0xc);
@@ -40,7 +44,7 @@ undefined2 * FUN_0044d320(uint param_1)
       }
       else {
         switch(param_1) {
-        case 1:
+        case CASE_1:
           *puVar3 = 0x201;
           puVar3[1] = 0x301;
           puVar3[2] = 0x101;
@@ -48,9 +52,9 @@ undefined2 * FUN_0044d320(uint param_1)
           puVar3[4] = 0x2f01;
           puVar3[5] = 0x701;
           break;
-        case 2:
-        case 4:
-        case 8:
+        case CASE_2:
+        case CASE_4:
+        case CASE_8:
           *puVar3 = 0x201;
           puVar3[1] = 0x301;
           puVar3[2] = 0x101;
@@ -60,7 +64,7 @@ undefined2 * FUN_0044d320(uint param_1)
           break;
         default:
           goto switchD_0044d3a8_caseD_3;
-        case 0x10:
+        case CASE_10:
           *puVar3 = 0x201;
           puVar3[1] = 0x301;
           puVar3[2] = 0x101;
@@ -68,7 +72,7 @@ undefined2 * FUN_0044d320(uint param_1)
           puVar3[4] = 0x2f01;
           puVar3[5] = 0xa01;
           break;
-        case 0x28:
+        case CASE_28:
           *puVar3 = 0x201;
           puVar3[1] = 0x301;
           puVar3[2] = 0x101;
@@ -224,9 +228,9 @@ LAB_0044d710:
       if (((short)local_18 != -1) &&
          (piVar4 = (int *)STAllPlayersC::GetObjPtr
                                     (local_c,CONCAT31((int3)((uint)extraout_ECX >> 8),DAT_0080874d),
-                                     local_18,1), piVar4 != (int *)0x0)) {
-        if (uVar2 < 0x1001) {
-          if (uVar2 == 0x1000) {
+                                     local_18,CASE_1), piVar4 != (int *)0x0)) {
+        if (GVar2 < 0x1001) {
+          if (GVar2 == 0x1000) {
 switchD_0044d78f_caseD_28:
             iVar5 = (**(code **)(*piVar4 + 0x2c))();
             if ((iVar5 == 0x16) || (iVar5 == 0x25)) {
@@ -241,8 +245,8 @@ switchD_0044d78f_caseD_28:
               }
             }
           }
-          else if (uVar2 < 0x41) {
-            if (uVar2 == 0x40) {
+          else if (GVar2 < 0x41) {
+            if (GVar2 == 0x40) {
               iVar5 = (**(code **)(*piVar4 + 0x2c))();
               if (iVar5 == 4) {
                 local_8 = 1;
@@ -257,8 +261,8 @@ switchD_0044d78f_caseD_28:
               }
             }
             else {
-              switch(uVar2) {
-              case 1:
+              switch(GVar2) {
+              case CASE_1:
                 iVar5 = (**(code **)(*piVar4 + 0x2c))();
                 if ((iVar5 == 6) || (iVar5 == 0x12)) {
                   local_8 = 1;
@@ -273,9 +277,9 @@ joined_r0x0044d9f5:
                   }
                 }
                 break;
-              case 2:
-              case 4:
-              case 8:
+              case CASE_2:
+              case CASE_4:
+              case CASE_8:
                 iVar5 = (**(code **)(*piVar4 + 0x2c))();
                 if (((iVar5 == 5) || (iVar5 == 0xb)) || (iVar5 == 0x11)) {
                   local_8 = 1;
@@ -290,7 +294,7 @@ LAB_0044dc25:
                   }
                 }
                 break;
-              case 0x10:
+              case CASE_10:
                 iVar5 = (**(code **)(*piVar4 + 0x2c))();
                 if (iVar5 == 0x17) {
                   local_8 = 1;
@@ -301,13 +305,13 @@ LAB_0044dc25:
                   }
                 }
                 break;
-              case 0x28:
+              case CASE_28:
                 goto switchD_0044d78f_caseD_28;
               }
             }
           }
-          else if (uVar2 < 0x201) {
-            if (uVar2 == 0x200) {
+          else if (GVar2 < 0x201) {
+            if (GVar2 == 0x200) {
               iVar5 = (**(code **)(*piVar4 + 0x2c))();
               if ((iVar5 == 8) || (iVar5 == 0x14)) {
                 local_8 = 1;
@@ -318,7 +322,7 @@ LAB_0044dc25:
                 }
               }
             }
-            else if ((uVar2 == 0x80) || (uVar2 == 0x100)) {
+            else if ((GVar2 == 0x80) || (GVar2 == 0x100)) {
               iVar5 = (**(code **)(*piVar4 + 0x2c))();
               if (iVar5 == 9) {
                 return puVar3;
@@ -328,7 +332,7 @@ LAB_0044dc25:
               }
             }
           }
-          else if (uVar2 == 0x400) {
+          else if (GVar2 == 0x400) {
             iVar5 = (**(code **)(*piVar4 + 0x2c))();
             if ((iVar5 == 7) || (iVar5 == 0x13)) {
               local_8 = 1;
@@ -343,7 +347,7 @@ LAB_0044dc25:
               }
             }
           }
-          else if ((uVar2 == 0x800) &&
+          else if ((GVar2 == 0x800) &&
                   ((iVar5 = (**(code **)(*piVar4 + 0x2c))(), iVar5 == 0xc || (iVar5 == 0x18)))) {
 LAB_0044d9c4:
             local_8 = 1;
@@ -354,8 +358,8 @@ LAB_0044d9c4:
             }
           }
         }
-        else if (uVar2 < 0x100001) {
-          if (uVar2 == 0x100000) {
+        else if (GVar2 < 0x100001) {
+          if (GVar2 == 0x100000) {
             iVar5 = (**(code **)(*piVar4 + 0x2c))();
             if (iVar5 == 0x1d) {
               local_8 = 1;
@@ -376,13 +380,13 @@ joined_r0x0044ddc7:
             }
           }
           else {
-            if (uVar2 < 0x20001) {
-              if (uVar2 != 0x20000) {
-                if (uVar2 == 0x2000) goto LAB_0044d9c4;
-                if (uVar2 != 0x10000) goto switchD_0044d78f_caseD_3;
+            if (GVar2 < 0x20001) {
+              if (GVar2 != 0x20000) {
+                if (GVar2 == 0x2000) goto LAB_0044d9c4;
+                if (GVar2 != 0x10000) goto switchD_0044d78f_caseD_3;
               }
             }
-            else if ((uVar2 != 0x40000) && (uVar2 != 0x80000)) goto switchD_0044d78f_caseD_3;
+            else if ((GVar2 != 0x40000) && (GVar2 != 0x80000)) goto switchD_0044d78f_caseD_3;
 LAB_0044dce3:
             uVar6 = (**(code **)(*piVar4 + 0x2c))();
             switch(uVar6) {
@@ -402,9 +406,9 @@ switchD_0044dcfe_caseD_19:
             }
           }
         }
-        else if (uVar2 < 0x800001) {
-          if (uVar2 == 0x800000) goto LAB_0044dce3;
-          if (uVar2 == 0x200000) {
+        else if (GVar2 < 0x800001) {
+          if (GVar2 == 0x800000) goto LAB_0044dce3;
+          if (GVar2 == 0x200000) {
             iVar5 = (**(code **)(*piVar4 + 0x2c))();
             if (iVar5 == 0x1b) {
               local_8 = 1;
@@ -420,7 +424,7 @@ switchD_0044dcfe_caseD_19:
               goto LAB_0044dcbe;
             }
           }
-          else if ((uVar2 == 0x400000) && (iVar5 = (**(code **)(*piVar4 + 0x2c))(), iVar5 == 0x21))
+          else if ((GVar2 == 0x400000) && (iVar5 = (**(code **)(*piVar4 + 0x2c))(), iVar5 == 0x21))
           {
             local_8 = 1;
             iVar5 = thunk_FUN_004d6df0(piVar4);
@@ -432,7 +436,7 @@ switchD_0044dcfe_caseD_19:
             goto LAB_0044dc25;
           }
         }
-        else if (uVar2 == 0x1000000) {
+        else if (GVar2 == 0x1000000) {
           iVar5 = (**(code **)(*piVar4 + 0x2c))();
           if (iVar5 == 0x24) {
             local_8 = 1;
@@ -445,10 +449,10 @@ switchD_0044dcfe_caseD_19:
             goto joined_r0x0044ddc7;
           }
         }
-        else if (uVar2 == 0x2000000) goto switchD_0044dcfe_caseD_19;
+        else if (GVar2 == 0x2000000) goto switchD_0044dcfe_caseD_19;
       }
 switchD_0044d78f_caseD_3:
-      param_1 = param_1 + 1;
+      param_1 = param_1 + CASE_1;
     } while ((int)param_1 < local_10);
     if (local_8 != 0) {
       return puVar3;

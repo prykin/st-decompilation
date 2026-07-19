@@ -6,19 +6,20 @@
 undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_1)
 
 {
-  SoundManagerTy SVar1;
+  char cVar1;
   code *pcVar2;
   undefined4 uVar3;
   int iVar4;
   int iVar5;
+  uint uVar6;
   undefined4 unaff_ESI;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SoundManagerTy *local_8;
   
   local_8 = this;
-  uVar3 = FUN_006e51b0(*(int *)(this + 0x10));
-  *(undefined4 *)(this + 0x1c) = uVar3;
+  uVar3 = FUN_006e51b0(this->field_0010);
+  this->field_001C = uVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -38,7 +39,7 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
   if (iVar4 != 0) {
     if (iVar4 == 2) {
       DAT_008033f0 = local_8;
-      *(undefined4 *)(local_8 + 0x28) = *(undefined4 *)(param_1 + 0x14);
+      *(undefined4 *)&local_8[1].field_0x8 = *(undefined4 *)(param_1 + 0x14);
     }
     else if (iVar4 == 3) {
       DAT_008033f0 = (SoundManagerTy *)0x0;
@@ -46,49 +47,51 @@ undefined4 __thiscall SoundManagerTy::GetMessage(SoundManagerTy *this,int param_
     }
     goto LAB_00566d75;
   }
-  SVar1 = local_8[0x38];
-  switch(SVar1) {
-  case (SoundManagerTy)0x0:
-    if (SVar1 != (SoundManagerTy)0x1) {
-      local_8[0x38] = (SoundManagerTy)0x1;
-      *(undefined4 *)(local_8 + 0x39) = 0xffffffff;
+  cVar1 = local_8[1].field_0x18;
+  switch(cVar1) {
+  case '\0':
+    if (cVar1 != '\x01') {
+      local_8[1].field_0x18 = 1;
+      *(undefined4 *)&local_8[1].field_0x19 = 0xffffffff;
     }
-    *(undefined4 *)(local_8 + 0x24) = *(undefined4 *)(local_8 + 0x1c);
-    *(undefined4 *)(local_8 + 0x20) = *(undefined4 *)(local_8 + 0x1c);
+    uVar3 = local_8->field_001C;
+    *(undefined4 *)&local_8[1].field_0x4 = uVar3;
+    *(undefined4 *)(local_8 + 1) = uVar3;
     break;
-  case (SoundManagerTy)0x1:
-    iVar4 = *(int *)(local_8 + 0x1c);
-    if ((4999 < (uint)(iVar4 - *(int *)(local_8 + 0x20))) &&
-       ((uint)(iVar4 - *(int *)(local_8 + 0x24)) < 0x3e9)) {
-      *(int *)(local_8 + 0x24) = iVar4;
-      *(int *)(local_8 + 0x20) = iVar4;
+  case '\x01':
+    iVar4 = local_8->field_001C;
+    if ((4999 < (uint)(iVar4 - *(int *)(local_8 + 1))) &&
+       ((uint)(iVar4 - *(int *)&local_8[1].field_0x4) < 0x3e9)) {
+      *(int *)&local_8[1].field_0x4 = iVar4;
+      *(int *)(local_8 + 1) = iVar4;
 joined_r0x00566d57:
-      if (SVar1 != (SoundManagerTy)0x3) {
-        local_8[0x38] = (SoundManagerTy)0x3;
+      if (cVar1 != '\x03') {
+        local_8[1].field_0x18 = 3;
 LAB_00566d5d:
-        *(undefined4 *)(local_8 + 0x39) = 0xffffffff;
+        *(undefined4 *)&local_8[1].field_0x19 = 0xffffffff;
       }
     }
     break;
-  case (SoundManagerTy)0x2:
-    iVar4 = *(int *)(local_8 + 0x1c);
-    if (4999 < (uint)(iVar4 - *(int *)(local_8 + 0x20))) {
-      if (19999 < (uint)(iVar4 - *(int *)(local_8 + 0x24))) goto LAB_00566d35;
-      if ((uint)(iVar4 - *(int *)(local_8 + 0x24)) < 0x3e9) {
-        *(int *)(local_8 + 0x24) = iVar4;
-        *(int *)(local_8 + 0x20) = iVar4;
+  case '\x02':
+    iVar4 = local_8->field_001C;
+    if (4999 < (uint)(iVar4 - *(int *)(local_8 + 1))) {
+      uVar6 = iVar4 - *(int *)&local_8[1].field_0x4;
+      if (19999 < uVar6) goto LAB_00566d35;
+      if (uVar6 < 0x3e9) {
+        *(int *)&local_8[1].field_0x4 = iVar4;
+        *(int *)(local_8 + 1) = iVar4;
         goto joined_r0x00566d57;
       }
     }
     break;
-  case (SoundManagerTy)0x3:
-    iVar4 = *(int *)(local_8 + 0x1c);
-    if (14999 < (uint)(iVar4 - *(int *)(local_8 + 0x24))) {
+  case '\x03':
+    iVar4 = local_8->field_001C;
+    if (14999 < (uint)(iVar4 - *(int *)&local_8[1].field_0x4)) {
 LAB_00566d35:
-      *(int *)(local_8 + 0x24) = iVar4;
-      *(int *)(local_8 + 0x20) = iVar4;
-      if (SVar1 != (SoundManagerTy)0x1) {
-        local_8[0x38] = (SoundManagerTy)0x1;
+      *(int *)&local_8[1].field_0x4 = iVar4;
+      *(int *)(local_8 + 1) = iVar4;
+      if (cVar1 != '\x01') {
+        local_8[1].field_0x18 = 1;
         goto LAB_00566d5d;
       }
     }

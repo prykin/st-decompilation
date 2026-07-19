@@ -163,9 +163,10 @@ LAB_004c7d8c:
           if (param_8 != (char *)0x0) {
             Library::MSVCRT::_strncpy(_Dest,param_8,0xf);
           }
-          thunk_FUN_004c7260(this,*(undefined4 *)((int)this + 0x361),*(int *)((int)this + 0x369),
-                             (undefined4 *)((int)this + 0x398),(undefined4 *)((int)this + 0x39c),
-                             (int *)((int)this + 0x3a0),(undefined4 *)((int)this + 0x3a4));
+          thunk_FUN_004c7260(this,*(Global_sub_004C7260_param_1Enum *)((int)this + 0x361),
+                             *(int *)((int)this + 0x369),(undefined4 *)((int)this + 0x398),
+                             (undefined4 *)((int)this + 0x39c),(int *)((int)this + 0x3a0),
+                             (undefined4 *)((int)this + 0x3a4));
           *(undefined4 *)((int)this + 0x3a8) = 0;
           *(undefined4 *)((int)this + 0x3ac) = 0;
           *(undefined4 *)((int)this + 0x3b0) = 0;

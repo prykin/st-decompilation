@@ -29,7 +29,7 @@ undefined4 __thiscall VisibleClassTy::GetMessage(VisibleClassTy *this,int param_
   iVar2 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_14;
   if (iVar2 == 0) {
-    *(undefined4 *)(local_14 + 0x108) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+    *(undefined4 *)(local_14 + 0x108) = DAT_00802a38->field_00E4;
     uVar6 = *(uint *)(param_1 + 0x10);
     if (uVar6 < 0x109) {
       if (uVar6 == 0x108) {

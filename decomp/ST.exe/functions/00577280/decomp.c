@@ -32,14 +32,15 @@ void FUN_00577280(void)
     AppClassTy::AddSystem((AppClassTy *)&DAT_00807620,DAT_0081163c,0);
     DAT_0081163c[0x10a] = 1;
     this = DAT_00802a30;
-    uVar1 = *(undefined4 *)(DAT_00802a30 + 0xc9);
-    uVar2 = *(undefined4 *)(DAT_00802a30 + 0xc5);
-    DAT_00802a30[0x493] = (CursorClassTy)0x2;
-    *(undefined2 *)(this + 0x494) = 0xffff;
-    CursorClassTy::SetGCType(this,0,uVar2,uVar1);
-    CursorClassTy::DrawSprite(this,*(int *)(this + 0xc5),*(int *)(this + 0xc9));
-    this[0xd2] = (CursorClassTy)0x0;
-    *(undefined4 *)(this + 0x4df) = 0xffffffff;
+    uVar1 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
+    uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
+    DAT_00802a30[0xb].field_0x47 = 2;
+    *(undefined2 *)&this[0xb].field_0x48 = 0xffff;
+    CursorClassTy::SetGCType(this,CASE_0,uVar2,uVar1);
+    CursorClassTy::DrawSprite
+              (this,*(int *)((int)&this[1].field_0060 + 1),*(int *)&this[2].field_0x1);
+    this[2].field_0xa = 0;
+    *(undefined4 *)&this[0xc].field_0x2f = 0xffffffff;
     g_currentExceptionFrame = pIVar5;
     return;
   }

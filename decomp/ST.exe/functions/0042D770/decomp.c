@@ -38,7 +38,7 @@ uint FUN_0042d770(uint param_1,int *param_2)
     do {
       FUN_006acc70(iVar6,local_14,&local_c);
       if ((short)local_c != -1) {
-        uVar4 = STAllPlayersC::GetObjPtr(local_24,param_1,local_c,1);
+        uVar4 = STAllPlayersC::GetObjPtr(local_24,param_1,local_c,CASE_1);
         iVar5 = thunk_FUN_00493cd0(uVar4);
         puVar3 = local_10;
         if ((iVar5 == 0) &&

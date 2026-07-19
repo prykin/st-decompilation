@@ -38,22 +38,22 @@ void __thiscall CursorClassTy::AddSysAcc(CursorClassTy *this)
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    local_10 = *(undefined4 **)(local_28 + 8);
+    local_10 = *(undefined4 **)&local_28->field_0x8;
     local_c = (-(uint)(DAT_0080734c != '\0') & 2) + 1;
     local_14 = 0x13;
     FUN_006e6000(local_28,3,1,local_24);
     local_14 = 0x15;
     FUN_006e6000(this_00,3,1,local_24);
-    *(uint *)(this_00 + 0xc5) = local_c & 0xffff;
-    *(uint *)(this_00 + 0x34) = local_c & 0xffff;
-    *(uint *)(this_00 + 0xc9) = local_c >> 0x10;
-    *(uint *)(this_00 + 0x38) = local_c >> 0x10;
+    *(uint *)((int)&this_00[1].field_0060 + 1) = local_c & 0xffff;
+    *(uint *)&this_00->field_0x34 = local_c & 0xffff;
+    *(uint *)&this_00[2].field_0x1 = local_c >> 0x10;
+    *(uint *)&this_00->field_0x38 = local_c >> 0x10;
     puVar4 = local_74;
     for (iVar2 = 0x13; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar4 = 0;
       puVar4 = puVar4 + 1;
     }
-    local_60 = *(undefined4 *)(this_00 + 8);
+    local_60 = *(undefined4 *)&this_00->field_0x8;
     local_10 = local_74;
     local_74[0] = 8;
     local_5c = 2;

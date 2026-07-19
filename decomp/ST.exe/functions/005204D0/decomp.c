@@ -25,18 +25,18 @@ void __thiscall InfocPanelTy::DoneInfocPanel(InfocPanelTy *this)
   pIVar2 = local_8;
   if (errorCode == 0) {
     this_00 = extraout_ECX;
-    if (*(uint *)(local_8 + 0x3d0) != 0) {
-      FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x3d0));
+    if (*(uint *)&local_8[2].field_0xe0 != 0) {
+      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8[2].field_0xe0);
       this_00 = extraout_ECX_00;
     }
-    *(undefined4 *)(pIVar2 + 0x3d0) = 0;
-    if (*(uint **)(pIVar2 + 0x3d5) != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)(pIVar2 + 0x3d5));
-      *(undefined4 *)(pIVar2 + 0x3d5) = 0;
+    *(undefined4 *)&pIVar2[2].field_0xe0 = 0;
+    if (*(uint **)&pIVar2[2].field_0xe5 != (uint *)0x0) {
+      ccFntTy::operator(this_00,*(uint **)&pIVar2[2].field_0xe5);
+      *(undefined4 *)&pIVar2[2].field_0xe5 = 0;
     }
-    *(undefined4 *)(pIVar2 + 0x3cc) = 0;
-    *(undefined4 *)(pIVar2 + 0x3c8) = 0;
-    *(undefined4 *)(pIVar2 + 0x3c4) = 0;
+    *(undefined4 *)&pIVar2[2].field_0xdc = 0;
+    *(undefined4 *)&pIVar2[2].field_0xd8 = 0;
+    *(undefined4 *)&pIVar2[2].field_0xd4 = 0;
     DAT_00801698 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

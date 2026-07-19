@@ -29,19 +29,20 @@ void __thiscall FSGSTy::DoLogon(FSGSTy *this)
   this_00 = DAT_00802a30;
   if (iVar5 == 0) {
     if (DAT_00802a30 != (CursorClassTy *)0x0) {
-      uVar1 = *(undefined4 *)(DAT_00802a30 + 0xc9);
-      uVar2 = *(undefined4 *)(DAT_00802a30 + 0xc5);
-      DAT_00802a30[0x493] = (CursorClassTy)0x1;
-      *(undefined2 *)(this_00 + 0x494) = 0xffff;
-      CursorClassTy::SetGCType(this_00,0,uVar2,uVar1);
-      CursorClassTy::DrawSprite(this_00,*(int *)(this_00 + 0xc5),*(int *)(this_00 + 0xc9));
-      this_00[0xd2] = (CursorClassTy)0x0;
-      *(undefined4 *)(this_00 + 0x4df) = 0xffffffff;
+      uVar1 = *(undefined4 *)&DAT_00802a30[2].field_0x1;
+      uVar2 = *(undefined4 *)((int)&DAT_00802a30[1].field_0060 + 1);
+      DAT_00802a30[0xb].field_0x47 = 1;
+      *(undefined2 *)&this_00[0xb].field_0x48 = 0xffff;
+      CursorClassTy::SetGCType(this_00,CASE_0,uVar2,uVar1);
+      CursorClassTy::DrawSprite
+                (this_00,*(int *)((int)&this_00[1].field_0060 + 1),*(int *)&this_00[2].field_0x1);
+      this_00[2].field_0xa = 0;
+      *(undefined4 *)&this_00[0xc].field_0x2f = 0xffffffff;
     }
     pFVar4 = local_8;
     (**(code **)(*(int *)local_8 + 8))();
-    pFVar4[0x1a61] = (FSGSTy)0x2;
-    iVar5 = *(int *)(pFVar4 + 0x1a5b);
+    pFVar4->field_0x1a61 = 2;
+    iVar5 = *(int *)&pFVar4->field_0x1a5b;
     if (*(int *)(iVar5 + 0x2e6) != 0) {
       local_18 = 0;
       local_14 = 0;

@@ -32,27 +32,27 @@ undefined4 __thiscall STT3DSprC::StopShow(STT3DSprC *this,byte param_1)
     }
     return 0xffffffff;
   }
-  if (*(int *)(local_8 + 0x18) == -1) {
+  if (local_8->field_0018 == -1) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xff);
   }
-  if (((char)param_1 < '\0') || (*(int *)(pSVar2 + 0x14) + -1 < (int)(char)param_1)) {
+  if (((char)param_1 < '\0') || (pSVar2->field_0014 + -1 < (int)(char)param_1)) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x100);
   }
   uVar5 = 1 << (param_1 & 0x1f);
-  if ((uVar5 & *(uint *)(pSVar2 + 0x1c)) == 0) {
+  if ((uVar5 & *(uint *)&pSVar2->field_0x1c) == 0) {
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }
-  FUN_006e9d40(*(void **)(pSVar2 + 0x3c),*(uint **)(pSVar2 + 0x18),(int)(char)param_1);
-  *(uint *)(pSVar2 + 0x1c) = *(uint *)(pSVar2 + 0x1c) & ~uVar5;
+  FUN_006e9d40((void *)pSVar2[1].field_0018,(uint *)pSVar2->field_0018,(int)(char)param_1);
+  *(uint *)&pSVar2->field_0x1c = *(uint *)&pSVar2->field_0x1c & ~uVar5;
   if (param_1 == 0xe) {
-    if (pSVar2[0x11] == (STT3DSprC)0x1) {
+    if (pSVar2->field_0x11 == '\x01') {
       thunk_FUN_004ad5e0((int)pSVar2);
       g_currentExceptionFrame = local_4c.previous;
       return 0;
     }
     thunk_FUN_004ad5e0((int)pSVar2);
-    pSVar2[0x11] = (STT3DSprC)0x0;
+    pSVar2->field_0x11 = 0;
   }
   g_currentExceptionFrame = local_4c.previous;
   return 0;

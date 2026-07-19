@@ -33,17 +33,16 @@ undefined4 __fastcall FUN_004de820(int *param_1)
       this_00 = (TLOBaseTy *)
                 STAllPlayersC::GetObjPtr
                           (DAT_007fa174,CONCAT31((int3)((uint)iVar3 >> 8),(char)param_1[9]),local_8,
-                           1);
-      if (((this_00 != (TLOBaseTy *)0x0) &&
-          (iVar3 = (**(code **)(*(int *)this_00 + 0x2c))(), iVar3 == 0x45)) &&
-         ((*(int *)(this_00 + 0x4d0) == 0 &&
-          ((iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar3 != 0 &&
-           (bVar1 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var,bVar1) != 0)))))) {
+                           CASE_1);
+      if (((this_00 != (TLOBaseTy *)0x0) && (iVar3 = (*this_00->vtable->slot_2C)(), iVar3 == 0x45))
+         && ((*(int *)&this_00->field_0x4d0 == 0 &&
+             ((iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1), iVar3 != 0 &&
+              (bVar1 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var,bVar1) != 0)))))) {
         iVar3 = thunk_FUN_004c7860(this_00,3,0,1,1,1);
         if ((iVar3 != 0) &&
            (bVar2 = thunk_FUN_004c7c20((int)this_00), CONCAT31(extraout_var_00,bVar2) != 0)) {
           thunk_FUN_004c7cc0(this_00,3,0,1,0,0xffffffff,0,0xff,(char *)0x0);
-          *(undefined4 *)(this_00 + 0x4d0) = 2;
+          *(undefined4 *)&this_00->field_0x4d0 = 2;
           TLOBaseTy::RotateSpr(this_00,0);
         }
         bVar2 = true;

@@ -1,23 +1,28 @@
 
-undefined4 * __fastcall FUN_004b7ef0(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 00790AA0 (store 004B7F47)
+   Evidence: final_vptr=00790AA0; returns_this=true; calls_before=2; field_writes_after=3;
+   table_confidence=high */
+
+undefined4 * __thiscall TLOBaseTy::TLOBaseTy(TLOBaseTy *this,undefined4 *param_1)
 
 {
-  thunk_FUN_004158e0(param_1);
-  thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_00790c00;
-  *(undefined4 *)((int)param_1 + 0x5ef) = 0;
-  *(undefined4 *)((int)param_1 + 0x5f3) = 0;
-  *(undefined4 *)((int)param_1 + 0x5f7) = 0;
-  *(undefined4 *)((int)param_1 + 0x5ff) = 0;
-  *(undefined4 *)((int)param_1 + 0x603) = 0;
-  *(undefined4 *)((int)param_1 + 0x607) = 0;
-  *(undefined4 *)((int)param_1 + 0x251) = 0;
-  *(undefined4 *)((int)param_1 + 0x61b) = 0;
-  *(undefined4 *)((int)param_1 + 0x61f) = 0;
-  *param_1 = &TLOBaseTyVTable;
-  *(undefined4 *)((int)param_1 + 0x245) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x249) = 0xffffffff;
-  *(undefined4 *)((int)param_1 + 0x24d) = 0xffffffff;
-  return param_1;
+  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004ab810(&this->field_01D5);
+  this->field_01D5 = &PTR_LAB_00790c00;
+  this->field_05EF = 0;
+  this->field_05F3 = 0;
+  this->field_05F7 = 0;
+  this->field_05FF = 0;
+  this->field_0603 = 0;
+  this->field_0607 = 0;
+  this->field_0251 = 0;
+  this->field_061B = 0;
+  this->field_061F = 0;
+  this->vtable = &TLOBaseTyVTable;
+  this->field_0245 = 0xffffffff;
+  this->field_0249 = 0xffffffff;
+  this->field_024D = 0xffffffff;
+  return &this->vtable;
 }
 

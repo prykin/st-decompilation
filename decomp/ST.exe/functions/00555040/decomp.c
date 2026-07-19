@@ -1,9 +1,15 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\grig\loading.cpp
-   cLoadingTy::SetState */
+   cLoadingTy::SetState
+   
+   [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/cLoadingTy_SetState_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
 
-void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint param_2,char *param_3)
+void __thiscall
+cLoadingTy::SetState
+          (cLoadingTy *this,cLoadingTy_SetState_param_1Enum param_1,uint param_2,char *param_3)
 
 {
   char cVar1;
@@ -48,7 +54,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
     return;
   }
   switch(param_1) {
-  case 0:
+  case CASE_0:
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -108,7 +114,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
     DrawLine(local_8,local_450);
     g_currentExceptionFrame = local_50.previous;
     return;
-  case 1:
+  case CASE_1:
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
     do {
@@ -236,7 +242,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
       return;
     }
     break;
-  case 2:
+  case CASE_2:
     *(undefined4 *)(local_8 + 0x3c) = 0xffffffff;
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;
@@ -295,7 +301,7 @@ void __thiscall cLoadingTy::SetState(cLoadingTy *this,undefined4 param_1,uint pa
       pcVar13 = pcVar13 + 1;
     }
     goto joined_r0x00555393;
-  case 3:
+  case CASE_3:
     *(undefined4 *)(local_8 + 0x3c) = 0xffffffff;
     pcVar5 = (char *)FUN_006b0140(0x267a,DAT_00807618);
     uVar8 = 0xffffffff;

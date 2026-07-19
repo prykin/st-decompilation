@@ -40,7 +40,7 @@ LAB_00483342:
                                           *(undefined1 *)((int)param_1 + 0x487)),
                                  CONCAT22((short)((uint)piVar2 >> 0x10),
                                           *(undefined2 *)((int)param_1 + 0x48b)),
-                                 *(undefined4 *)((int)param_1 + 0x483));
+                                 *(STAllPlayersC_GetObjPtr_param_3Enum *)((int)param_1 + 0x483));
       thunk_FUN_00416270(piVar2,(undefined2 *)&local_10,(undefined2 *)&local_14,
                          (undefined2 *)&local_8);
       iVar3 = FUN_006acf0d((int)*(short *)((int)param_1 + 0x41),(int)*(short *)((int)param_1 + 0x43)
@@ -89,12 +89,16 @@ LAB_00483342:
           if (*(int *)((int)param_1 + 0x736) == 0) {
             iVar3 = STSprGameObjC::CheckRay
                               ((STSprGameObjC *)param_1,sVar8,sVar1,(short)local_1c,sVar9,sVar10,
-                               (short)local_8,*(int *)((int)param_1 + 0x79a),(int *)0x0,0);
+                               (short)local_8,
+                               *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
+                               (int *)0x0,0);
           }
           else {
             iVar3 = STSprGameObjC::CheckRay
                               ((STSprGameObjC *)param_1,sVar8,sVar1,(short)local_1c,sVar9,sVar10,
-                               (short)local_8,*(int *)((int)param_1 + 0x79a),(int *)0x0,1);
+                               (short)local_8,
+                               *(STSprGameObjC_CheckRay_param_7Enum *)((int)param_1 + 0x79a),
+                               (int *)0x0,1);
           }
           if (iVar3 == 0) {
             return 8;

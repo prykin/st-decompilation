@@ -27,7 +27,7 @@ undefined4 FUN_005faa10(int param_1)
   }
   if (*(int *)(local_10 + 0x2e6) != 0) {
     if (param_1 == 1) {
-      puVar2 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_rubb3_007ce700,0xffffffff,0,1,0,
+      puVar2 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_rubb3_007ce700,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       uVar4 = *(uint *)((int)puVar2 + 0xd);
       uVar3 = *(uint *)((int)puVar2 + 9);
@@ -35,7 +35,7 @@ undefined4 FUN_005faa10(int param_1)
       uVar5 = 8;
     }
     else {
-      puVar2 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_bulb_tel_007ce708,0xffffffff,0,1,0,
+      puVar2 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_bulb_tel_007ce708,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       uVar4 = *(uint *)((int)puVar2 + 0xd);
       uVar3 = *(uint *)((int)puVar2 + 9);

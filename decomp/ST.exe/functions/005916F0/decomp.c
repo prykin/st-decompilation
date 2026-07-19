@@ -6,23 +6,24 @@
 void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
 
 {
+  MMsgTy *this_00;
   code *pcVar1;
-  MMObjTy *pMVar2;
+  CampaignTy *pCVar2;
   int iVar3;
   undefined4 unaff_ESI;
-  MMObjTy *pMVar4;
+  undefined4 *puVar4;
   void *unaff_EDI;
   int iVar5;
   InternalExceptionFrame local_4c;
-  MMObjTy *local_8;
+  CampaignTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pMVar4 = local_8;
+  pCVar2 = local_8;
   if (iVar3 == 0) {
-    MMObjTy::DoneMMObj(local_8);
+    MMObjTy::DoneMMObj((MMObjTy *)local_8);
     if (DAT_00802a30 != 0) {
       if (*(int *)(DAT_00802a30 + 0xa9) == 0) {
         Library::DKW::DDX::FUN_006b8b10(*(int **)(DAT_00802a30 + 0xad));
@@ -36,43 +37,44 @@ void __thiscall CampaignTy::DoneCampaign(CampaignTy *this)
     if (*(uint *)(DAT_0081176c + 0x2c) != 0) {
       cMf32::RecMemFree(DAT_00806780,(uint *)(DAT_0081176c + 0x2c));
     }
-    if (*(MMsgTy **)(*(int *)(pMVar4 + 0x1a5b) + 0x2e6) != (MMsgTy *)0x0) {
-      MMsgTy::HideSprites(*(MMsgTy **)(*(int *)(pMVar4 + 0x1a5b) + 0x2e6));
-      *(undefined4 *)(*(int *)(*(int *)(pMVar4 + 0x1a5b) + 0x2e6) + 0x1cab) = 0;
+    this_00 = *(MMsgTy **)(*(int *)&pCVar2[0x42].field_0x51 + 0x2e6);
+    if (this_00 != (MMsgTy *)0x0) {
+      MMsgTy::HideSprites(this_00);
+      *(undefined4 *)(*(int *)(*(int *)&pCVar2[0x42].field_0x51 + 0x2e6) + 0x1cab) = 0;
     }
-    pMVar4 = pMVar4 + 0x1b13;
+    puVar4 = (undefined4 *)&pCVar2[0x44].field_0x3f;
     iVar3 = 3;
     do {
       iVar5 = 0xf;
       do {
-        if (*(undefined4 **)pMVar4 != (undefined4 *)0x0) {
-          FUN_006c4a70(*(undefined4 **)pMVar4);
-          *(undefined4 *)pMVar4 = 0;
+        if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
+          FUN_006c4a70((undefined4 *)*puVar4);
+          *puVar4 = 0;
         }
-        if (*(int *)(pMVar4 + -0xb4) != 0) {
-          cMf32::RecMemFree(DAT_00806780,(uint *)(pMVar4 + -0xb4));
+        if (puVar4[-0x2d] != 0) {
+          cMf32::RecMemFree(DAT_00806780,puVar4 + -0x2d);
         }
-        pMVar2 = local_8;
-        pMVar4 = pMVar4 + 4;
+        pCVar2 = local_8;
+        puVar4 = puVar4 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     iVar3 = 4;
-    pMVar4 = local_8 + 0x1bd7;
+    puVar4 = (undefined4 *)&local_8[0x46].field_0x39;
     do {
-      if (*(undefined4 **)pMVar4 != (undefined4 *)0x0) {
-        FUN_006c4a70(*(undefined4 **)pMVar4);
-        *(undefined4 *)pMVar4 = 0;
+      if ((undefined4 *)*puVar4 != (undefined4 *)0x0) {
+        FUN_006c4a70((undefined4 *)*puVar4);
+        *puVar4 = 0;
       }
-      if (*(int *)(pMVar4 + -0x10) != 0) {
-        cMf32::RecMemFree(DAT_00806780,(uint *)(pMVar4 + -0x10));
+      if (puVar4[-4] != 0) {
+        cMf32::RecMemFree(DAT_00806780,puVar4 + -4);
       }
-      pMVar4 = pMVar4 + 4;
+      puVar4 = puVar4 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    if (*(int *)(pMVar2 + 0x4d) != 0) {
-      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)(pMVar2 + 0x3d));
+    if (*(int *)&pCVar2->field_0x4d != 0) {
+      AppClassTy::PostNextMessage((AppClassTy *)&DAT_00807620,(undefined4 *)&pCVar2->field_0x3d);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

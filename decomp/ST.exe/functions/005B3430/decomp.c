@@ -6,7 +6,7 @@
 void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
 
 {
-  MainMenuTy MVar1;
+  char cVar1;
   code *pcVar2;
   MainMenuTy *this_00;
   DWORD DVar3;
@@ -14,17 +14,18 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   uint uVar5;
   int iVar6;
   undefined4 unaff_ESI;
-  MainMenuTy *pMVar7;
+  uint *puVar7;
+  undefined4 *puVar8;
   void *unaff_EDI;
   InternalExceptionFrame local_54;
   MainMenuTy *local_10;
-  MainMenuTy *local_c;
+  int *local_c;
   int local_8;
   
   local_8 = 1;
   local_10 = this;
   DVar3 = timeGetTime();
-  *(DWORD *)(this + 0x61) = DVar3;
+  this->field_0061 = DVar3;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
   iVar4 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -43,177 +44,181 @@ void __thiscall MainMenuTy::NoneMainMenu(MainMenuTy *this,void *param_1)
   }
   LightPalette(local_10);
   AnimationMainMenu(this_00);
-  MVar1 = this_00[0x65];
-  if (MVar1 == (MainMenuTy)0x1) {
+  cVar1 = this_00->field_0x65;
+  if (cVar1 == '\x01') {
     iVar4 = 0;
-    if (this_00[0x9a] != (MainMenuTy)0x0) {
-      pMVar7 = this_00 + 0x221;
+    if (this_00->field_0x9a != '\0') {
+      puVar7 = (uint *)&this_00[1].field_0xa1;
       do {
-        if ((pMVar7[-0x13f] != (MainMenuTy)0x0) &&
-           (*(uint *)(pMVar7 + 0x24) <= *(uint *)(this_00 + 0x61) - *(uint *)(pMVar7 + 0x28))) {
-          *(uint *)(pMVar7 + 0x28) = *(uint *)(this_00 + 0x61);
-          uVar5 = *(uint *)(pMVar7 + -0x14);
-          *(uint *)(pMVar7 + -0x14) = uVar5 + 1;
-          if ((int)*(uint *)(pMVar7 + -0x10) <= (int)(uVar5 + 1)) {
-            *(uint *)(pMVar7 + -0x14) = 0;
+        if ((*(char *)((int)puVar7 + -0x13f) != '\0') &&
+           (puVar7[9] <= this_00->field_0061 - puVar7[10])) {
+          puVar7[10] = this_00->field_0061;
+          uVar5 = puVar7[-5];
+          puVar7[-5] = uVar5 + 1;
+          if ((int)puVar7[-4] <= (int)(uVar5 + 1)) {
+            puVar7[-5] = 0;
           }
-          if (*(uint *)(pMVar7 + -0x18) != 0xffffffff) {
+          if (puVar7[-6] != 0xffffffff) {
             Library::DKW::DDX::FUN_006b3730
-                      (*(uint **)(pMVar7 + 0x2c),*(uint *)(pMVar7 + -0x18),*(uint *)(pMVar7 + -0x14)
-                       ,*(uint *)pMVar7,*(uint *)(pMVar7 + 4));
+                      ((uint *)puVar7[0xb],puVar7[-6],puVar7[-5],*puVar7,puVar7[1]);
           }
         }
         iVar4 = iVar4 + 1;
-        pMVar7 = pMVar7 + 0x1fb;
-      } while (iVar4 < (int)(uint)(byte)this_00[0x9a]);
+        puVar7 = (uint *)((int)puVar7 + 0x1fb);
+      } while (iVar4 < (int)(uint)(byte)this_00->field_0x9a);
     }
   }
-  else if (MVar1 == (MainMenuTy)0x3) {
+  else if (cVar1 == '\x03') {
     iVar4 = 0;
-    uVar5 = (uint)(byte)this_00[0x9a];
+    uVar5 = (uint)(byte)this_00->field_0x9a;
     if (uVar5 != 0) {
       do {
-        if (*(int *)(this_00 + iVar4 * 0x1fb + 0xbc) != 0) {
-          if ((uint)(*(int *)(this_00 + 0x61) - *(int *)(this_00 + iVar4 * 0x1fb + 0x127)) <
-              *(uint *)(this_00 + iVar4 * 0x1fb + 0x123)) {
+        if (*(int *)((int)this_00 + iVar4 * 0x1fb + 0xbc) != 0) {
+          if ((uint)(this_00->field_0061 - *(int *)((int)this_00 + iVar4 * 0x1fb + 0x127)) <
+              *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x123)) {
             iVar4 = 0;
             local_8 = 0;
             if (uVar5 != 0) {
-              pMVar7 = this_00 + 0x249;
+              puVar8 = (undefined4 *)&this_00[1].field_0xc9;
               do {
-                if (pMVar7[-0x167] != (MainMenuTy)0x0) {
-                  *(undefined4 *)pMVar7 = *(undefined4 *)(this_00 + 0x61);
+                if (*(char *)((int)puVar8 + -0x167) != '\0') {
+                  *puVar8 = this_00->field_0061;
                 }
                 iVar4 = iVar4 + 1;
-                pMVar7 = pMVar7 + 0x1fb;
-              } while (iVar4 < (int)(uint)(byte)this_00[0x9a]);
+                puVar8 = (undefined4 *)((int)puVar8 + 0x1fb);
+              } while (iVar4 < (int)(uint)(byte)this_00->field_0x9a);
             }
           }
-          else if (*(int *)(this_00 + iVar4 * 0x1fb + 0xeb) <
-                   *(int *)(this_00 + iVar4 * 0x1fb + 0xef) + -1) {
-            if ((*(int *)(this_00 + iVar4 * 0x1fb + 0xeb) == 0) &&
-               (*(uint *)(this_00 + iVar4 * 0x1fb + 0xe7) != 0xffffffff)) {
-              Library::DKW::DDX::FUN_006b34d0
-                        (*(uint **)(this_00 + iVar4 * 0x1fb + 299),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xe7),0xfffffffe,
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xff),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x103));
-            }
-            *(int *)(this_00 + iVar4 * 0x1fb + 0xeb) = *(int *)(this_00 + iVar4 * 0x1fb + 0xeb) + 1;
-            if (*(uint *)(this_00 + iVar4 * 0x1fb + 0xe7) != 0xffffffff) {
-              Library::DKW::DDX::FUN_006b3730
-                        (*(uint **)(this_00 + iVar4 * 0x1fb + 299),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xe7),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xeb),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0xff),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x103));
-            }
-            local_8 = 0;
-          }
-          else if (*(int *)(this_00 + iVar4 * 0x1fb + 0x17c) <
-                   *(int *)(this_00 + iVar4 * 0x1fb + 0x180) + -3) {
-            if (*(int *)(this_00 + iVar4 * 0x1fb + 0x17c) == 0) {
-              if (*(uint *)(this_00 + iVar4 * 0x1fb + 0x178) != 0xffffffff) {
+          else {
+            iVar6 = *(int *)((int)this_00 + iVar4 * 0x1fb + 0xeb);
+            if (iVar6 < *(int *)((int)this_00 + iVar4 * 0x1fb + 0xef) + -1) {
+              if ((iVar6 == 0) &&
+                 (uVar5 = *(uint *)((int)this_00 + iVar4 * 0x1fb + 0xe7), uVar5 != 0xffffffff)) {
                 Library::DKW::DDX::FUN_006b34d0
-                          (*(uint **)(this_00 + iVar4 * 0x1fb + 0x1bc),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x178),0xfffffffe,
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 400),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x194));
+                          (*(uint **)((int)this_00 + iVar4 * 0x1fb + 299),uVar5,0xfffffffe,
+                           *(uint *)((int)this_00 + iVar4 * 0x1fb + 0xff),
+                           *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x103));
               }
-              if ((this_00[iVar4 * 0x1fb + 0xe2] != (MainMenuTy)0x0) &&
-                 (*(uint *)(this_00 + iVar4 * 0x1fb + 0x209) != 0xffffffff)) {
-                Library::DKW::DDX::FUN_006b34d0
-                          (*(uint **)(this_00 + iVar4 * 0x1fb + 0x24d),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x209),0xfffffffe,
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x221),
-                           *(uint *)(this_00 + iVar4 * 0x1fb + 0x225));
+              *(int *)((int)this_00 + iVar4 * 0x1fb + 0xeb) =
+                   *(int *)((int)this_00 + iVar4 * 0x1fb + 0xeb) + 1;
+              uVar5 = *(uint *)((int)this_00 + iVar4 * 0x1fb + 0xe7);
+              if (uVar5 != 0xffffffff) {
+                Library::DKW::DDX::FUN_006b3730
+                          (*(uint **)((int)this_00 + iVar4 * 0x1fb + 299),uVar5,
+                           *(uint *)((int)this_00 + iVar4 * 0x1fb + 0xeb),
+                           *(uint *)((int)this_00 + iVar4 * 0x1fb + 0xff),
+                           *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x103));
+              }
+              local_8 = 0;
+            }
+            else {
+              iVar6 = *(int *)((int)this_00 + iVar4 * 0x1fb + 0x17c);
+              if (iVar6 < *(int *)((int)this_00 + iVar4 * 0x1fb + 0x180) + -3) {
+                if (iVar6 == 0) {
+                  uVar5 = *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x178);
+                  if (uVar5 != 0xffffffff) {
+                    Library::DKW::DDX::FUN_006b34d0
+                              (*(uint **)((int)this_00 + iVar4 * 0x1fb + 0x1bc),uVar5,0xfffffffe,
+                               *(uint *)((int)this_00 + iVar4 * 0x1fb + 400),
+                               *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x194));
+                  }
+                  if ((*(char *)((int)this_00 + iVar4 * 0x1fb + 0xe2) != '\0') &&
+                     (uVar5 = *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x209), uVar5 != 0xffffffff))
+                  {
+                    Library::DKW::DDX::FUN_006b34d0
+                              (*(uint **)((int)this_00 + iVar4 * 0x1fb + 0x24d),uVar5,0xfffffffe,
+                               *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x221),
+                               *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x225));
+                  }
+                }
+                *(int *)((int)this_00 + iVar4 * 0x1fb + 0x17c) =
+                     *(int *)((int)this_00 + iVar4 * 0x1fb + 0x17c) + 1;
+                uVar5 = *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x178);
+                if (uVar5 != 0xffffffff) {
+                  Library::DKW::DDX::FUN_006b3730
+                            (*(uint **)((int)this_00 + iVar4 * 0x1fb + 0x1bc),uVar5,
+                             *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x17c),
+                             *(uint *)((int)this_00 + iVar4 * 0x1fb + 400),
+                             *(uint *)((int)this_00 + iVar4 * 0x1fb + 0x194));
+                }
+                thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
+                local_8 = 0;
               }
             }
-            *(int *)(this_00 + iVar4 * 0x1fb + 0x17c) =
-                 *(int *)(this_00 + iVar4 * 0x1fb + 0x17c) + 1;
-            if (*(uint *)(this_00 + iVar4 * 0x1fb + 0x178) != 0xffffffff) {
-              Library::DKW::DDX::FUN_006b3730
-                        (*(uint **)(this_00 + iVar4 * 0x1fb + 0x1bc),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x178),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x17c),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 400),
-                         *(uint *)(this_00 + iVar4 * 0x1fb + 0x194));
-            }
-            thunk_FUN_005b6730(this_00,0x1e,'\x01',-1);
-            local_8 = 0;
           }
         }
         iVar4 = iVar4 + 1;
-        uVar5 = (uint)(byte)this_00[0x9a];
+        uVar5 = (uint)(byte)this_00->field_0x9a;
       } while (iVar4 < (int)uVar5);
     }
-    if (((this_00[0x1ee3] != (MainMenuTy)0x0) && (*(int *)(DAT_0081176c + 0x2e6) != 0)) &&
+    if (((this_00[0x14].field_0xe3 != '\0') && (*(int *)(DAT_0081176c + 0x2e6) != 0)) &&
        (*(char *)(*(int *)(DAT_0081176c + 0x2e6) + 0x65) != '\x01')) {
       local_8 = 0;
     }
     if (local_8 != 0) {
-      if (this_00[0x9a] != (MainMenuTy)0x0) {
-        local_c = this_00 + 0x66;
-        pMVar7 = this_00 + 0xa3;
+      if (this_00->field_0x9a != '\0') {
+        local_c = (int *)&this_00->field_0x66;
+        puVar8 = (undefined4 *)&this_00->field_0xa3;
         iVar4 = 0x68ff;
         do {
-          if (*(int *)local_c == 0) {
+          if (*local_c == 0) {
             iVar6 = MMObjTy::CreateSprBut
-                              ((MMObjTy *)this_00,1,(uint)(*(int *)(this_00 + 0x1edf) != 0),
-                               *(int *)(pMVar7 + 0x5c) + *(int *)(pMVar7 + -8),
-                               *(int *)(pMVar7 + 0x60) + *(int *)(pMVar7 + -4),*(undefined4 *)pMVar7
-                               ,*(undefined4 *)(pMVar7 + 4),iVar4,iVar4 + 0x80);
-            *(int *)local_c = iVar6;
+                              ((MMObjTy *)this_00,1,(uint)(*(int *)&this_00[0x14].field_0xdf != 0),
+                               puVar8[0x17] + puVar8[-2],puVar8[0x18] + puVar8[-1],*puVar8,puVar8[1]
+                               ,iVar4,iVar4 + 0x80);
+            *local_c = iVar6;
           }
-          local_c = local_c + 4;
+          local_c = local_c + 1;
           iVar6 = iVar4 + -0x68fe;
-          pMVar7 = pMVar7 + 0x1fb;
+          puVar8 = (undefined4 *)((int)puVar8 + 0x1fb);
           iVar4 = iVar4 + 1;
-        } while (iVar6 < (int)(uint)(byte)this_00[0x9a]);
+        } while (iVar6 < (int)(uint)(byte)this_00->field_0x9a);
       }
-      this_00[0x65] = (MainMenuTy)0x1;
-      if (*(int *)(this_00 + 0x1a6f) != 0) {
-        FUN_006e3db0((int)(this_00 + 0x1a5f));
-        *(undefined4 *)(this_00 + 0x1a6f) = 0;
+      iVar4 = *(int *)&this_00[0x11].field_0xef;
+      this_00->field_0x65 = 1;
+      if (iVar4 != 0) {
+        FUN_006e3db0((int)&this_00[0x11].field_0xdf);
+        *(undefined4 *)&this_00[0x11].field_0xef = 0;
         g_currentExceptionFrame = local_54.previous;
         return;
       }
     }
   }
-  else if (MVar1 == (MainMenuTy)0x4) {
+  else if (cVar1 == '\x04') {
     iVar4 = 0;
-    if (this_00[0x9a] != (MainMenuTy)0x0) {
-      pMVar7 = this_00 + 0x178;
+    if (this_00->field_0x9a != '\0') {
+      puVar7 = (uint *)&this_00->field_0x178;
       do {
-        if ((uint)(*(int *)(this_00 + 0x61) - *(int *)(pMVar7 + -0x51)) < *(uint *)(pMVar7 + -0x55))
-        {
+        if ((uint)(this_00->field_0061 - *(int *)((int)puVar7 + -0x51)) <
+            *(uint *)((int)puVar7 + -0x55)) {
 LAB_005b353c:
           local_8 = 0;
         }
         else {
-          if (pMVar7[-0xbd] != (MainMenuTy)0x0) {
-            if (*(uint *)pMVar7 != 0xffffffff) {
-              FUN_006b3af0(*(int **)(pMVar7 + 0x44),*(uint *)pMVar7);
+          if (*(char *)((int)puVar7 + -0xbd) != '\0') {
+            if (*puVar7 != 0xffffffff) {
+              FUN_006b3af0((int *)puVar7[0x11],*puVar7);
             }
-            if ((pMVar7[-0x96] != (MainMenuTy)0x0) && (*(uint *)(pMVar7 + 0x91) != 0xffffffff)) {
-              FUN_006b3af0(*(int **)(pMVar7 + 0xd5),*(uint *)(pMVar7 + 0x91));
+            if ((*(char *)((int)puVar7 + -0x96) != '\0') &&
+               (*(uint *)((int)puVar7 + 0x91) != 0xffffffff)) {
+              FUN_006b3af0(*(int **)((int)puVar7 + 0xd5),*(uint *)((int)puVar7 + 0x91));
             }
-            pMVar7[-0xbd] = (MainMenuTy)0x0;
+            *(undefined1 *)((int)puVar7 + -0xbd) = 0;
           }
-          if (0 < *(int *)(pMVar7 + -0x8d)) {
-            uVar5 = *(int *)(pMVar7 + -0x8d) - 1;
-            *(uint *)(pMVar7 + -0x8d) = uVar5;
-            if (*(uint *)(pMVar7 + -0x91) != 0xffffffff) {
+          if (0 < *(int *)((int)puVar7 + -0x8d)) {
+            uVar5 = *(int *)((int)puVar7 + -0x8d) - 1;
+            *(uint *)((int)puVar7 + -0x8d) = uVar5;
+            if (*(uint *)((int)puVar7 + -0x91) != 0xffffffff) {
               Library::DKW::DDX::FUN_006b3730
-                        (*(uint **)(pMVar7 + -0x4d),*(uint *)(pMVar7 + -0x91),uVar5,
-                         *(uint *)(pMVar7 + -0x79),*(uint *)(pMVar7 + -0x75));
+                        (*(uint **)((int)puVar7 + -0x4d),*(uint *)((int)puVar7 + -0x91),uVar5,
+                         *(uint *)((int)puVar7 + -0x79),*(uint *)((int)puVar7 + -0x75));
             }
             goto LAB_005b353c;
           }
         }
         iVar4 = iVar4 + 1;
-        pMVar7 = pMVar7 + 0x1fb;
-      } while (iVar4 < (int)(uint)(byte)this_00[0x9a]);
+        puVar7 = (uint *)((int)puVar7 + 0x1fb);
+      } while (iVar4 < (int)(uint)(byte)this_00->field_0x9a);
     }
     iVar4 = 0;
     if ((*(int *)(DAT_0081176c + 0x2e6) != 0) &&
@@ -221,21 +226,22 @@ LAB_005b353c:
       local_8 = 0;
     }
     if (local_8 != 0) {
-      this_00[0x65] = (MainMenuTy)0x2;
-      if (this_00[0x9a] != (MainMenuTy)0x0) {
-        pMVar7 = this_00 + 0xe7;
+      this_00->field_0x65 = 2;
+      if (this_00->field_0x9a != '\0') {
+        puVar7 = (uint *)&this_00->field_0xe7;
         do {
-          if (*(uint *)pMVar7 != 0xffffffff) {
-            FUN_006b3af0(*(int **)(pMVar7 + 0x44),*(uint *)pMVar7);
+          if (*puVar7 != 0xffffffff) {
+            FUN_006b3af0((int *)puVar7[0x11],*puVar7);
           }
           iVar4 = iVar4 + 1;
-          pMVar7 = pMVar7 + 0x1fb;
-        } while (iVar4 < (int)(uint)(byte)this_00[0x9a]);
+          puVar7 = (uint *)((int)puVar7 + 0x1fb);
+        } while (iVar4 < (int)(uint)(byte)this_00->field_0x9a);
       }
-      if (*(int *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xd1) != 0) {
+      if (*(int *)((int)this_00 + (uint)(byte)this_00[0x11].field_0xda * 0x1fb + 0xd1) != 0) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(this_00 + (uint)(byte)this_00[0x1a5a] * 0x1fb + 0xc1));
+                   (undefined4 *)
+                   ((int)this_00 + (uint)(byte)this_00[0x11].field_0xda * 0x1fb + 0xc1));
         g_currentExceptionFrame = local_54.previous;
         return;
       }

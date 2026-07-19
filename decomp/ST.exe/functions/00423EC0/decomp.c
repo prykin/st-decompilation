@@ -47,47 +47,47 @@ undefined4 __thiscall STGroupC::GetMessage(STGroupC *this,int param_1)
   if (*(int *)(param_1 + 0x10) == 2) {
     iVar2 = *(int *)(param_1 + 0x14);
     if (*(uint *)(iVar2 + 0xc) < 2) {
-      *(undefined4 *)(this_00 + 0x20) = *(undefined4 *)(iVar2 + 0x20);
-      this_00[0x24] = *(STGroupC *)(iVar2 + 4);
-      *(undefined2 *)(this_00 + 0x25) = *(undefined2 *)(iVar2 + 0x14);
-      *(undefined2 *)(this_00 + 0x27) = *(undefined2 *)(iVar2 + 0x18);
+      *(undefined4 *)&this_00->field_0x20 = *(undefined4 *)(iVar2 + 0x20);
+      this_00->field_0024 = *(undefined1 *)(iVar2 + 4);
+      *(undefined2 *)&this_00->field_0x25 = *(undefined2 *)(iVar2 + 0x14);
+      *(undefined2 *)&this_00->field_0x27 = *(undefined2 *)(iVar2 + 0x18);
       puVar3 = Library::DKW::TBL::FUN_006ae310((uint *)0x0,5,2,5,0x4045c5);
-      *(uint **)(this_00 + 0x29) = puVar3;
+      this_00->field_0029 = puVar3;
       local_c = *(int *)(iVar2 + 0x1c);
       uVar6 = extraout_var_01;
       if (0 < local_c) {
         puVar8 = (undefined4 *)(iVar2 + 0x24);
         do {
-          Library::DKW::TBL::FUN_006ae140(*(uint **)(this_00 + 0x29),uVar7,puVar8);
+          Library::DKW::TBL::FUN_006ae140((uint *)this_00->field_0029,uVar7,puVar8);
           uVar7 = uVar7 + 1;
           puVar8 = puVar8 + 1;
           uVar6 = extraout_var_02;
         } while ((int)uVar7 < local_c);
       }
       STAllPlayersC::RegisterGroup
-                (DAT_007fa174,(char)this_00[0x24],CONCAT22(uVar6,*(undefined2 *)(this_00 + 0x25)),
-                 (int)this_00);
-      *(int *)(this_00 + 0x31) = *(int *)(this_00 + 0x18) * DAT_00808754;
+                (DAT_007fa174,this_00->field_0024,
+                 CONCAT22(uVar6,*(undefined2 *)&this_00->field_0x25),(int)this_00);
+      *(int *)&this_00->field_0x31 = *(int *)&this_00->field_0x18 * DAT_00808754;
     }
     else if (*(uint *)(iVar2 + 0xc) == 2) {
       RestoreGrpData(this_00,iVar2);
       STAllPlayersC::RegisterGroup
-                (DAT_007fa174,(char)this_00[0x24],
-                 CONCAT22(extraout_var,*(undefined2 *)(this_00 + 0x25)),(int)this_00);
+                (DAT_007fa174,this_00->field_0024,
+                 CONCAT22(extraout_var,*(undefined2 *)&this_00->field_0x25),(int)this_00);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
   else if (*(int *)(param_1 + 0x10) == 3) {
     thunk_FUN_00423e00(this_00);
-    FUN_006ae110(*(byte **)(this_00 + 0x29));
-    *(undefined4 *)(this_00 + 0x29) = 0;
+    FUN_006ae110((byte *)this_00->field_0029);
+    this_00->field_0029 = 0;
     STAllPlayersC::UnRegisterGroup
-              (DAT_007fa174,(char)this_00[0x24],
-               CONCAT22(extraout_var_00,*(undefined2 *)(this_00 + 0x25)),(int)this_00);
-    if (*(byte **)(this_00 + 0x2d) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)(this_00 + 0x2d));
-      *(undefined4 *)(this_00 + 0x2d) = 0;
+              (DAT_007fa174,this_00->field_0024,
+               CONCAT22(extraout_var_00,*(undefined2 *)&this_00->field_0x25),(int)this_00);
+    if (*(byte **)&this_00->field_0x2d != (byte *)0x0) {
+      FUN_006ae110(*(byte **)&this_00->field_0x2d);
+      *(undefined4 *)&this_00->field_0x2d = 0;
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }

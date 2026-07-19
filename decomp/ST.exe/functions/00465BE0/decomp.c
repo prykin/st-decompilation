@@ -9,11 +9,11 @@ int __thiscall STBoatC::BackPatrol(STBoatC *this,int *param_1)
   code *pcVar1;
   int iVar2;
   
-  if (*(int *)(this + 0x497) == 0) {
+  if (this->field_0497 == 0) {
     iVar2 = thunk_FUN_00460360((int *)this);
     return iVar2;
   }
-  if (*(int *)(this + 0x497) == 1) {
+  if (this->field_0497 == 1) {
     iVar2 = thunk_FUN_004620f0((int *)this);
     return iVar2;
   }

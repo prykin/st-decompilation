@@ -71,9 +71,10 @@ LAB_00427cca:
             return 0;
           }
           DAT_007f4d6c[DAT_007f4d78 * 3 + 2] = iVar8;
-          iVar3 = thunk_FUN_004248d0(this,iVar8,0,DAT_007f4d7c + local_14,DAT_007f4d80 + iVar5,0,1);
+          iVar3 = thunk_FUN_004248d0(this,iVar8,0,DAT_007f4d7c + local_14,DAT_007f4d80 + iVar5,
+                                     CASE_0,CASE_1);
           iVar8 = thunk_FUN_004248d0(this,iVar8,iVar3,DAT_007f4d7c + -1 + iVar9,DAT_007f4d80 + iVar5
-                                     ,3,2);
+                                     ,CASE_3,CASE_2);
           DAT_007f4d6c[DAT_007f4d78 * 3 + 1] = iVar8;
           if ((bVar6 & 0x80) == 0) {
             DAT_007f4d6c[DAT_007f4d78 * 3] = 0;

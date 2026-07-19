@@ -12,30 +12,30 @@ void __thiscall PausePanelTy::ShiftControls(PausePanelTy *this,int param_1)
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  PausePanelTy *pPVar5;
+  undefined4 *puVar5;
   InternalExceptionFrame local_4c;
   PausePanelTy *local_8;
   
-  if (param_1 != *(int *)(this + 0x5c)) {
-    *(int *)(this + 0x5c) = param_1;
-    pPVar5 = this + 0x18;
+  if (param_1 != this->field_005C) {
+    this->field_005C = param_1;
+    puVar5 = (undefined4 *)&this->field_0x18;
     for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined4 *)pPVar5 = 0;
-      pPVar5 = pPVar5 + 4;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
     }
-    sVar2 = (short)*(undefined4 *)(this + 0x174);
-    *(undefined4 *)(this + 0x28) = 0x24;
+    sVar2 = (short)this->field_0174;
+    this->field_0028 = 0x24;
     if (param_1 != 0) {
       sVar2 = -sVar2;
     }
-    *(short *)(this + 0x2c) = sVar2;
+    this->field_002C = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar4 == 0) {
-      if (*(int *)(local_8 + 0x184) != 0) {
-        FUN_006e6080(local_8,2,*(int *)(local_8 + 0x184),(undefined4 *)(local_8 + 0x18));
+      if (*(int *)&local_8[1].field_0xc != 0) {
+        FUN_006e6080(local_8,2,*(int *)&local_8[1].field_0xc,(undefined4 *)&local_8->field_0x18);
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

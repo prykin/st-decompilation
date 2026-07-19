@@ -52,7 +52,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
                 pSVar5 = (STGameObjC *)
                          GetObjPtr(this,CONCAT31((int3)(uVar6 >> 8),
                                                  *(undefined1 *)((int)&DAT_007f4f83 + iVar8 + 4)),
-                                   local_c,1);
+                                   local_c,CASE_1);
                 if (pSVar5 != (STGameObjC *)0x0) {
                   if (local_8 == 0) {
                     STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
@@ -68,7 +68,8 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
         }
         else if (iVar4 == 0x1ae) {
           pSVar5 = (STGameObjC *)
-                   GetObjPtr(this,0xffffffff,(uint)*(ushort *)((int)&DAT_007f4f83 + iVar8 + 8),3);
+                   GetObjPtr(this,0xffffffff,(uint)*(ushort *)((int)&DAT_007f4f83 + iVar8 + 8),
+                             CASE_3);
           if (pSVar5 != (STGameObjC *)0x0) {
             if (local_8 == 0) {
               STGameObjC::SetSelfCheckFlag(pSVar5,unaff_EDI);
@@ -108,7 +109,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
                 uVar6 = FUN_006acc70(*(int *)(iVar7 + 10),uVar10,&local_c);
                 pSVar5 = (STGameObjC *)
                          GetObjPtr(this,CONCAT31((int3)(uVar6 >> 8),*(undefined1 *)(iVar7 + 4)),
-                                   local_c,1);
+                                   local_c,CASE_1);
                 iVar8 = extraout_EDX_03;
                 if (pSVar5 != (STGameObjC *)0x0) {
                   if (local_8 == 0) {
@@ -128,7 +129,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
         }
         else if (iVar1 != 0) {
           if (iVar1 == 0x5a) {
-            pSVar5 = (STGameObjC *)GetObjPtr(this,0xffffffff,(uint)*(ushort *)(iVar7 + 8),4);
+            pSVar5 = (STGameObjC *)GetObjPtr(this,0xffffffff,(uint)*(ushort *)(iVar7 + 8),CASE_4);
             iVar8 = extraout_EDX_01;
             if (pSVar5 != (STGameObjC *)0x0) {
               if (iVar11 != 0) goto LAB_004352f5;
@@ -139,7 +140,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
           else {
             if (iVar1 != 0x172) goto LAB_00435287;
             pSVar5 = (STGameObjC *)
-                     GetObjPtr(this,0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),2);
+                     GetObjPtr(this,0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),CASE_2);
             iVar8 = extraout_EDX;
             if (pSVar5 != (STGameObjC *)0x0) {
               if (iVar11 != 0) goto LAB_004352f5;
@@ -151,7 +152,7 @@ void __thiscall STAllPlayersC::SelfCheckObjControl(STAllPlayersC *this)
       }
       else if (iVar1 == 0x1a4) {
         pSVar5 = (STGameObjC *)
-                 GetObjPtr(this,0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),5);
+                 GetObjPtr(this,0xffffffff,CONCAT22(uVar9,*(undefined2 *)(iVar7 + 8)),CASE_5);
         iVar8 = extraout_EDX_09;
         if (pSVar5 != (STGameObjC *)0x0) {
           if (iVar11 == 0) {
@@ -168,7 +169,8 @@ LAB_004352f5:
       else if (iVar1 == 0x1b8) {
         pSVar5 = (STGameObjC *)
                  GetObjPtr(this,0xffffffff,
-                           CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)(iVar7 + 8)),6);
+                           CONCAT22((short)((uint)iVar4 >> 0x10),*(undefined2 *)(iVar7 + 8)),CASE_6)
+        ;
         iVar8 = extraout_EDX_07;
         if (pSVar5 != (STGameObjC *)0x0) {
           if (iVar11 != 0) goto LAB_004352f5;

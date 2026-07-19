@@ -6,23 +6,22 @@
 void __thiscall SIDTy::CreateCtrls(SIDTy *this)
 
 {
+  undefined1 *lpPathName;
   char cVar1;
-  MMObjTy MVar2;
-  code *pcVar3;
-  MMObjTy *this_00;
-  int iVar4;
-  HANDLE pvVar5;
-  undefined4 uVar6;
-  int iVar7;
+  code *pcVar2;
+  SIDTy *this_00;
+  int iVar3;
+  HANDLE pvVar4;
+  undefined4 uVar5;
+  int iVar6;
+  uint uVar7;
   uint uVar8;
-  uint uVar9;
   undefined4 unaff_ESI;
-  MMObjTy *pMVar10;
+  char *pcVar9;
   void *unaff_EDI;
+  char *pcVar10;
   char *pcVar11;
-  char *pcVar12;
-  MMObjTy *pMVar13;
-  undefined4 *puVar14;
+  undefined4 *puVar12;
   undefined4 local_db0 [19];
   undefined4 local_d64;
   undefined4 local_d60;
@@ -86,96 +85,96 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   undefined4 local_9c;
   undefined4 local_54;
   InternalExceptionFrame local_50;
-  MMObjTy *local_8;
+  SIDTy *local_8;
   
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
-  local_8 = (MMObjTy *)this;
-  iVar4 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  local_8 = this;
+  iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
-  if (iVar4 != 0) {
+  if (iVar3 != 0) {
     g_currentExceptionFrame = local_50.previous;
-    iVar7 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104,0,iVar4,&DAT_007a4ccc,
+    iVar6 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104,0,iVar3,&DAT_007a4ccc,
                                s_SIDTy__CreateCtrls_007cd664);
-    if (iVar7 != 0) {
-      pcVar3 = (code *)swi(3);
-      (*pcVar3)();
+    if (iVar6 != 0) {
+      pcVar2 = (code *)swi(3);
+      (*pcVar2)();
       return;
     }
-    RaiseInternalException(iVar4,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104);
+    RaiseInternalException(iVar3,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x104);
     return;
   }
-  if (*(HANDLE *)(local_8 + 0x1cc4) != (HANDLE)0x0) {
-    FindCloseChangeNotification(*(HANDLE *)(local_8 + 0x1cc4));
-    *(undefined4 *)(this_00 + 0x1cc4) = 0;
+  if (*(HANDLE *)&local_8[0x48].field_0x5c != (HANDLE)0x0) {
+    FindCloseChangeNotification(*(HANDLE *)&local_8[0x48].field_0x5c);
+    *(undefined4 *)&this_00[0x48].field_0x5c = 0;
   }
-  uVar8 = 0xffffffff;
-  pcVar11 = &DAT_00807680;
+  uVar7 = 0xffffffff;
+  pcVar9 = &DAT_00807680;
   do {
-    pcVar12 = pcVar11;
-    if (uVar8 == 0) break;
-    uVar8 = uVar8 - 1;
-    pcVar12 = pcVar11 + 1;
-    cVar1 = *pcVar11;
-    pcVar11 = pcVar12;
+    pcVar11 = pcVar9;
+    if (uVar7 == 0) break;
+    uVar7 = uVar7 - 1;
+    pcVar11 = pcVar9 + 1;
+    cVar1 = *pcVar9;
+    pcVar9 = pcVar11;
   } while (cVar1 != '\0');
-  uVar8 = ~uVar8;
-  pMVar10 = (MMObjTy *)(pcVar12 + -uVar8);
-  pMVar13 = this_00 + 0x1cd4;
-  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pMVar13 = *(undefined4 *)pMVar10;
-    pMVar10 = pMVar10 + 4;
-    pMVar13 = pMVar13 + 4;
+  uVar7 = ~uVar7;
+  pcVar9 = pcVar11 + -uVar7;
+  pcVar11 = &this_00[0x49].field_0x7;
+  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
+    pcVar9 = pcVar9 + 4;
+    pcVar11 = pcVar11 + 4;
   }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *pMVar13 = *pMVar10;
-    pMVar10 = pMVar10 + 1;
-    pMVar13 = pMVar13 + 1;
+  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *pcVar11 = *pcVar9;
+    pcVar9 = pcVar9 + 1;
+    pcVar11 = pcVar11 + 1;
   }
-  uVar8 = 0xffffffff;
-  pcVar11 = PTR_s_SAVEGAME__0079c19c;
+  uVar7 = 0xffffffff;
+  pcVar9 = PTR_s_SAVEGAME__0079c19c;
   do {
-    pcVar12 = pcVar11;
-    if (uVar8 == 0) break;
-    uVar8 = uVar8 - 1;
-    pcVar12 = pcVar11 + 1;
-    cVar1 = *pcVar11;
-    pcVar11 = pcVar12;
+    pcVar11 = pcVar9;
+    if (uVar7 == 0) break;
+    uVar7 = uVar7 - 1;
+    pcVar11 = pcVar9 + 1;
+    cVar1 = *pcVar9;
+    pcVar9 = pcVar11;
   } while (cVar1 != '\0');
-  uVar8 = ~uVar8;
-  iVar4 = -1;
-  pMVar10 = this_00 + 0x1cd4;
+  uVar7 = ~uVar7;
+  iVar3 = -1;
+  pcVar9 = &this_00[0x49].field_0x7;
   do {
-    pMVar13 = pMVar10;
-    if (iVar4 == 0) break;
-    iVar4 = iVar4 + -1;
-    pMVar13 = pMVar10 + 1;
-    MVar2 = *pMVar10;
-    pMVar10 = pMVar13;
-  } while (MVar2 != (MMObjTy)0x0);
-  pMVar10 = (MMObjTy *)(pcVar12 + -uVar8);
-  pMVar13 = pMVar13 + -1;
-  for (uVar9 = uVar8 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *(undefined4 *)pMVar13 = *(undefined4 *)pMVar10;
-    pMVar10 = pMVar10 + 4;
-    pMVar13 = pMVar13 + 4;
+    pcVar10 = pcVar9;
+    if (iVar3 == 0) break;
+    iVar3 = iVar3 + -1;
+    pcVar10 = pcVar9 + 1;
+    cVar1 = *pcVar9;
+    pcVar9 = pcVar10;
+  } while (cVar1 != '\0');
+  pcVar9 = pcVar11 + -uVar7;
+  pcVar11 = pcVar10 + -1;
+  for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+    *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
+    pcVar9 = pcVar9 + 4;
+    pcVar11 = pcVar11 + 4;
   }
-  for (uVar8 = uVar8 & 3; uVar8 != 0; uVar8 = uVar8 - 1) {
-    *pMVar13 = *pMVar10;
-    pMVar10 = pMVar10 + 1;
-    pMVar13 = pMVar13 + 1;
+  for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+    *pcVar11 = *pcVar9;
+    pcVar9 = pcVar9 + 1;
+    pcVar11 = pcVar11 + 1;
   }
-  pMVar10 = this_00 + 0x1cd4;
-  FUN_006b78c0((char *)pMVar10,(char *)pMVar10);
-  pvVar5 = FindFirstChangeNotificationA((LPCSTR)pMVar10,0,2);
-  *(HANDLE *)(this_00 + 0x1cc4) = pvVar5;
-  if (pvVar5 == (HANDLE)0xffffffff) {
-    *(undefined4 *)(this_00 + 0x1cc4) = 0;
+  lpPathName = &this_00[0x49].field_0x7;
+  FUN_006b78c0(lpPathName,lpPathName);
+  pvVar4 = FindFirstChangeNotificationA(lpPathName,0,2);
+  *(HANDLE *)&this_00[0x48].field_0x5c = pvVar4;
+  if (pvVar4 == (HANDLE)0xffffffff) {
+    *(undefined4 *)&this_00[0x48].field_0x5c = 0;
   }
-  puVar14 = local_524;
-  for (iVar4 = 0x135; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar14 = 0;
-    puVar14 = puVar14 + 1;
+  puVar12 = local_524;
+  for (iVar3 = 0x135; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
   local_524[0] = 0;
   local_524[2] = 0xe4;
@@ -187,23 +186,23 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   if (DAT_0080734c != '\0') {
     local_54 = 1;
   }
-  local_3ec = *(undefined4 *)(this_00 + 0x1b1d);
+  local_3ec = *(undefined4 *)&this_00[0x44].field_0x49;
   local_2ec = 1;
-  local_3e8 = *(undefined4 *)(this_00 + 0x1b21);
-  local_3e4 = *(undefined4 *)(this_00 + 0x1b25);
-  local_3e0 = *(undefined4 *)(this_00 + 0x1b29);
-  local_26c = *(undefined4 *)(this_00 + 0x1bae);
-  local_268 = *(undefined4 *)(this_00 + 0x1bb2);
+  local_3e8 = *(undefined4 *)&this_00[0x44].field_0x4d;
+  local_3e4 = *(undefined4 *)&this_00[0x44].field_0x51;
+  local_3e0 = *(undefined4 *)&this_00[0x44].field_0x55;
+  local_26c = this_00[0x46].field_0010;
+  local_268 = *(undefined4 *)&this_00[0x46].field_0x14;
   local_2e8 = 1;
   local_16c = 1;
   local_168 = 1;
-  local_264 = *(undefined4 *)(this_00 + 0x1bb6);
+  local_264 = *(undefined4 *)&this_00[0x46].field_0x18;
   local_f4 = 1;
-  local_e8 = *(undefined4 *)(this_00 + 0x1c3f);
-  local_4fc = *(undefined4 *)(this_00 + 8);
-  local_260 = *(undefined4 *)(this_00 + 0x1bba);
-  local_e4 = *(undefined4 *)(this_00 + 0x1c43);
-  local_e0 = *(undefined4 *)(this_00 + 0x1c47);
+  local_e8 = *(undefined4 *)&this_00[0x47].field_0x3c;
+  local_4fc = *(undefined4 *)&this_00->field_0x8;
+  local_260 = *(undefined4 *)&this_00[0x46].field_0x1c;
+  local_e4 = *(undefined4 *)&this_00[0x47].field_0x40;
+  local_e0 = *(undefined4 *)&this_00[0x47].field_0x44;
   local_3f4 = 0;
   local_274 = 0;
   local_ec = 0;
@@ -238,17 +237,17 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_394 = local_4fc;
   local_214 = local_4fc;
   local_a4 = local_4fc;
-  (**(code **)(**(int **)(this_00 + 0xc) + 8))(7,this_00 + 0x1af1,0,local_524,0);
-  puVar14 = local_db0;
-  for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar14 = 0;
-    puVar14 = puVar14 + 1;
+  (**(code **)(**(int **)&this_00->field_0xc + 8))(7,&this_00[0x44].field_0x1d,0,local_524,0);
+  puVar12 = local_db0;
+  for (iVar3 = 0x223; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar12 = 0;
+    puVar12 = puVar12 + 1;
   }
   local_db0[0] = 0;
   local_db0[1] = 9;
   local_db0[2] = *(undefined4 *)(DAT_0081176c + 0x34);
-  local_db0[8] = *(undefined4 *)(this_00 + 0x1cd0);
-  local_d64 = *(undefined4 *)(this_00 + 8);
+  local_db0[8] = *(undefined4 *)&this_00[0x49].field_0x3;
+  local_d64 = *(undefined4 *)&this_00->field_0x8;
   local_db0[3] = 0xe4;
   local_db0[4] = 0x1aa;
   local_db0[5] = 0x156;
@@ -261,27 +260,27 @@ void __thiscall SIDTy::CreateCtrls(SIDTy *this)
   local_d20 = 2;
   local_d1c = 0x68ff;
   local_d24 = local_d64;
-  (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1af5,0,local_db0,1);
-  uVar6 = MMObjTy::CreateSprBut(this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
-  *(undefined4 *)(this_00 + 0x1af9) = uVar6;
-  uVar6 = MMObjTy::CreateSprBut(this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
-  *(undefined4 *)(this_00 + 0x1afd) = uVar6;
-  PrepFiles((SIDTy *)this_00);
-  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(this_00 + 0x1cb4));
-  if (*(uint *)(this_00 + 0x1b05) != 0xffffffff) {
+  (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00[0x44].field_0x21,0,local_db0,1);
+  uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x228,0x55,0x12,0x6900,0x6980);
+  *(undefined4 *)&this_00[0x44].field_0x25 = uVar5;
+  uVar5 = MMObjTy::CreateSprBut((MMObjTy *)this_00,1,1,0x1e8,0x23b,0x55,0x12,0x6901,0x6981);
+  *(undefined4 *)&this_00[0x44].field_0x29 = uVar5;
+  PrepFiles(this_00);
+  Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&this_00[0x48].field_0x4c);
+  if (*(uint *)&this_00[0x44].field_0x31 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(this_00 + 0x1b49),*(uint *)(this_00 + 0x1b05),0xfffffffe,
-               *(uint *)(this_00 + 0x1b1d),*(uint *)(this_00 + 0x1b21));
+              ((uint *)this_00[0x45].field_0010,*(uint *)&this_00[0x44].field_0x31,0xfffffffe,
+               *(uint *)&this_00[0x44].field_0x49,*(uint *)&this_00[0x44].field_0x4d);
   }
-  if (*(uint *)(this_00 + 0x1b96) != 0xffffffff) {
+  if (*(uint *)&this_00[0x45].field_0x5d != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(this_00 + 0x1bda),*(uint *)(this_00 + 0x1b96),0xfffffffe,
-               *(uint *)(this_00 + 0x1bae),*(uint *)(this_00 + 0x1bb2));
+              (*(uint **)&this_00[0x46].field_0x3c,*(uint *)&this_00[0x45].field_0x5d,0xfffffffe,
+               this_00[0x46].field_0010,*(uint *)&this_00[0x46].field_0x14);
   }
-  if (*(uint *)(this_00 + 0x1c27) != 0xffffffff) {
+  if (*(uint *)&this_00[0x47].field_0x24 != 0xffffffff) {
     Library::DKW::DDX::FUN_006b34d0
-              (*(uint **)(this_00 + 0x1c6b),*(uint *)(this_00 + 0x1c27),0xfffffffe,
-               *(uint *)(this_00 + 0x1c3f),*(uint *)(this_00 + 0x1c43));
+              (*(uint **)&this_00[0x48].field_0x3,*(uint *)&this_00[0x47].field_0x24,0xfffffffe,
+               *(uint *)&this_00[0x47].field_0x3c,*(uint *)&this_00[0x47].field_0x40);
   }
   g_currentExceptionFrame = local_50.previous;
   return;

@@ -5,6 +5,8 @@ undefined4 * FUN_005ead30(void)
   undefined4 *puVar1;
   int iVar2;
   undefined4 *puVar3;
+  undefined4 *unaff_EDI;
+  SpriteClassTy *this;
   undefined4 *puVar4;
   int local_8;
   
@@ -25,13 +27,13 @@ undefined4 * FUN_005ead30(void)
       puVar3 = puVar3 + 1;
     }
     DAT_0080879c = 0;
-    puVar3 = puVar1 + 0x5d;
+    this = (SpriteClassTy *)(puVar1 + 0x5d);
     local_8 = 0xd;
     do {
-      FUN_00715820((undefined4 *)((int)puVar3 + -0x91));
-      FUN_00715820(puVar3);
-      FUN_00715820((undefined4 *)((int)puVar3 + 0x91));
-      puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
+      SpriteClassTy::SpriteClassTy(this + -1,unaff_EDI);
+      SpriteClassTy::SpriteClassTy(this,unaff_EDI);
+      SpriteClassTy::SpriteClassTy(this + 1,unaff_EDI);
+      this = (SpriteClassTy *)&this[3].field_0048;
       local_8 = local_8 + -1;
     } while (local_8 != 0);
     *puVar1 = &MMObjTyVTable;

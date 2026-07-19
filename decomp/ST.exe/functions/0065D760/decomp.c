@@ -42,7 +42,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
-  if (*(short *)(local_8 + 0x7d) == -2) {
+  if (*(short *)&local_8->field_0x7d == -2) {
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
@@ -54,7 +54,7 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
     else {
       bVar2 = true;
     }
-    if (((bVar2) && (*(short *)(pAVar3 + 0x7b) != 1)) ||
+    if (((bVar2) && (pAVar3->field_007B != 1)) ||
        (iVar5 = (**(code **)(*param_1 + 0x2c))(), iVar5 == 0x78)) {
       RaiseInternalException(-100,DAT_007ed77c,s_E____titans_ai_ai_flt_cpp_007d2b80,0x9b);
     }
@@ -77,8 +77,8 @@ void __thiscall AiFltClassTy::_AddObjFlt(AiFltClassTy *this,int *param_1,int par
       *(undefined2 *)(param_1 + 0x207) = uVar4;
     }
     STAllPlayersC::AddObjsToGroup
-              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pAVar3[0x24]),
-               *(ushort *)(pAVar3 + 0x7d),(int)puVar6,(undefined2 *)0x0);
+              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pAVar3->field_0x24),
+               *(ushort *)&pAVar3->field_0x7d,(int)puVar6,(undefined2 *)0x0);
     FUN_006ae110((byte *)puVar6);
     g_currentExceptionFrame = local_4c.previous;
     return;

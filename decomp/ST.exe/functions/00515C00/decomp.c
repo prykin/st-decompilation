@@ -40,13 +40,12 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
     return;
   }
   if (param_2 != 10000) {
-    ccFntTy::SetSurf(*(ccFntTy **)(local_8 + 0x1e0),*(int *)(local_8 + 0x218),0,0,*param_1,0x19c,0xf
-                    );
+    ccFntTy::SetSurf(*(ccFntTy **)&local_8->field_0x1e0,local_8->field_0218,0,0,*param_1,0x19c,0xf);
     uVar10 = 3;
     iVar9 = -1;
     iVar3 = -1;
     puVar4 = (uint *)FUN_006b0140(0x55f5,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1e0),puVar4,iVar3,iVar9,uVar10);
+    ccFntTy::WrStr(*(ccFntTy **)&this_00->field_0x1e0,puVar4,iVar3,iVar9,uVar10);
     *param_1 = *param_1 + 0xf;
     pcVar5 = (char *)FUN_006b0140(param_2,DAT_00807618);
     uVar6 = 0xffffffff;
@@ -72,13 +71,13 @@ void __thiscall HelpPanelTy::DrawDescription(HelpPanelTy *this,int *param_1,UINT
       pcVar8 = pcVar8 + 1;
     }
     ccFntTy::FormIndentText
-              (*(ccFntTy **)(this_00 + 0x1e0),(char *)&DAT_0080f33a,&DAT_0080f33a,
+              (*(ccFntTy **)&this_00->field_0x1e0,(char *)&DAT_0080f33a,&DAT_0080f33a,
                (uint *)s________________007c21d8,(uint *)&DAT_007c21ec,0x19c,&DAT_007c2198,1);
-    uVar6 = FUN_007113e0(*(void **)(this_00 + 0x1e0),&DAT_0080f33a);
+    uVar6 = FUN_007113e0(*(void **)&this_00->field_0x1e0,&DAT_0080f33a);
     CheckBkView(this_00,*param_1,uVar6);
-    ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1e0),*(int *)(this_00 + 0x218),0,0,*param_1,0x19c,
+    ccFntTy::SetSurf(*(ccFntTy **)&this_00->field_0x1e0,this_00->field_0218,0,0,*param_1,0x19c,
                      uVar6 + 2);
-    ccFntTy::WrTxt(*(ccFntTy **)(this_00 + 0x1e0),&DAT_0080f33a,1,-1,
+    ccFntTy::WrTxt(*(ccFntTy **)&this_00->field_0x1e0,&DAT_0080f33a,1,-1,
                    (DAT_0080874e != '\x03') - 1 & 5,-1,-1);
     *param_1 = *param_1 + uVar6;
   }

@@ -21,7 +21,7 @@ AiEventClassTy::__CreateObjPl
   uint uVar6;
   void *unaff_EDI;
   uint *puVar7;
-  int iVar8;
+  Global_sub_004B1120_param_2Enum GVar8;
   InternalExceptionFrame local_e8;
   uint local_a4 [5];
   uint local_90;
@@ -88,11 +88,11 @@ AiEventClassTy::__CreateObjPl
       local_30 = CONCAT22((short)(uVar5 * 9 >> 0x10),
                           *(short *)((int)&DAT_008087ef + uVar5 * 0x51) + -3);
       thunk_FUN_006756d0((short *)&local_20,(short *)&local_30,local_28,local_1c);
-      *(int *)(local_38 + 0x88) = *(int *)(local_38 + 0x88) * 0x41c64e6d + 0x3039;
-      local_18 = *(int *)(local_38 + 0x88) * 0x41c64e6d + 0x3039;
-      *(uint *)(local_38 + 0x88) = local_18;
+      *(int *)&local_38->field_0x88 = *(int *)&local_38->field_0x88 * 0x41c64e6d + 0x3039;
+      local_18 = *(int *)&local_38->field_0x88 * 0x41c64e6d + 0x3039;
+      *(uint *)&local_38->field_0x88 = local_18;
       iVar3 = thunk_FUN_00675b10((local_18 >> 0x10) % (uint)(int)local_28[0] + (int)(short)local_20,
-                                 (*(uint *)(local_38 + 0x88) >> 0x10) % (uint)(int)local_1c[0] +
+                                 (*(uint *)&local_38->field_0x88 >> 0x10) % (uint)(int)local_1c[0] +
                                  (int)(short)local_30,1,(short *)&param_3,(short *)&param_4,
                                  (short *)&param_5,(int)param_2);
     }
@@ -179,12 +179,12 @@ AiEventClassTy::__CreateObjPl
     local_10 = (int)(short)param_5;
     if (param_11 == 0) {
       iVar4 = 1;
-      iVar8 = (int)param_2;
+      GVar8 = (Global_sub_004B1120_param_2Enum)param_2;
       uVar5 = param_1 & 0xffff;
-      iVar3 = thunk_FUN_004ae0b0(local_8,local_c,local_10,iVar8,uVar5,(undefined4 *)0x0,(int *)0x0,
+      iVar3 = thunk_FUN_004ae0b0(local_8,local_c,local_10,GVar8,uVar5,(undefined4 *)0x0,(int *)0x0,
                                  (int *)0x0,1,(int *)0x0);
       if (iVar3 == 0) {
-        iVar4 = thunk_FUN_004b1120(uVar5,iVar8,&local_8,&local_c,&local_10,0,0);
+        iVar4 = thunk_FUN_004b1120(uVar5,GVar8,&local_8,&local_c,&local_10,0,0);
       }
       if (iVar4 == 0) {
         g_currentExceptionFrame = local_e8.previous;
@@ -193,7 +193,7 @@ AiEventClassTy::__CreateObjPl
       if (((int)param_7 < 0) || (uVar6 = param_7, 7 < (int)param_7)) {
         uVar6 = uVar5;
       }
-      thunk_FUN_004b1040(uVar5,iVar8,local_8,local_c,local_10,param_6,uVar6,param_8,param_9,param_10
+      thunk_FUN_004b1040(uVar5,GVar8,local_8,local_c,local_10,param_6,uVar6,param_8,param_9,param_10
                         );
     }
     else {

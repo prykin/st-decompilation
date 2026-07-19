@@ -38,13 +38,13 @@ OptPanelTy::PaintDblBut
   else {
     local_18 = *(int *)(local_c + 0xc);
   }
-  local_18 = local_18 - *(int *)(this + 0x3c);
-  if (*(int *)(this + 0x5c) == 0) {
+  local_18 = local_18 - this->field_003C;
+  if (this->field_005C == 0) {
     if (param_6 == 0) {
-      local_14 = *(int *)(this + 0x48) + local_10[1];
+      local_14 = this->field_0048 + local_10[1];
     }
     else {
-      local_14 = *(int *)(this + 0x48) + *(int *)(local_c + 0x10);
+      local_14 = this->field_0048 + *(int *)(local_c + 0x10);
     }
   }
   else {
@@ -54,7 +54,7 @@ OptPanelTy::PaintDblBut
     else {
       local_14 = *(int *)(local_c + 0x10);
     }
-    local_14 = local_14 - *(int *)(this + 0x44);
+    local_14 = local_14 - this->field_0044;
   }
   if ((param_4 != (undefined *)0x0) && (param_5 != (undefined *)0x0)) {
     local_60.previous = g_currentExceptionFrame;
@@ -66,8 +66,8 @@ OptPanelTy::PaintDblBut
       iVar8 = local_14;
       iVar3 = local_18;
       pOVar2 = local_1c;
-      thunk_FUN_00540760(*(undefined4 **)(local_1c + 0x68),local_18,local_14,'\x01',(byte *)local_8)
-      ;
+      thunk_FUN_00540760(*(undefined4 **)&local_1c->field_0x68,local_18,local_14,'\x01',
+                         (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       iVar10 = 1;
       piVar9 = (int *)0x0;
@@ -82,7 +82,7 @@ OptPanelTy::PaintDblBut
       else {
         iVar7 = *(int *)(local_c + 0x18);
       }
-      thunk_FUN_00540760(*(undefined4 **)(pOVar2 + 0x68),iVar3 + 5,
+      thunk_FUN_00540760(*(undefined4 **)&pOVar2->field_0x68,iVar3 + 5,
                          (iVar7 - *(int *)(local_8 + 4)) / 2 + 1 + iVar8,'\x01',(byte *)local_8);
       iVar3 = *(int *)(local_8 + 2);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
@@ -94,18 +94,18 @@ OptPanelTy::PaintDblBut
         iVar7 = *(int *)(local_c + 0x18);
         iVar10 = *(int *)(local_c + 0x14);
       }
-      ccFntTy::SetSurf(*(ccFntTy **)(pOVar2 + 0x180),*(int *)(pOVar2 + 0x68),0,iVar3 + 10 + local_18
-                       ,iVar8,(iVar10 - iVar3) + -10,iVar7);
+      ccFntTy::SetSurf(*(ccFntTy **)&pOVar2->field_0x180,*(int *)&pOVar2->field_0x68,0,
+                       iVar3 + 10 + local_18,iVar8,(iVar10 - iVar3) + -10,iVar7);
       iVar10 = -1;
       iVar7 = -1;
       uVar4 = (*(code *)param_5)(param_1);
       iVar8 = -1;
       iVar3 = 0;
       puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
-      ccFntTy::WrTxt(*(ccFntTy **)(pOVar2 + 0x180),puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
+      ccFntTy::WrTxt(*(ccFntTy **)&pOVar2->field_0x180,puVar6,iVar3,iVar8,uVar4,iVar7,iVar10);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pOVar2 + 0x60),0xffffffff,*(uint *)(pOVar2 + 0x3c),
-                 *(uint *)(pOVar2 + 0x44));
+                (DAT_008075a8,*(uint *)&pOVar2->field_0x60,0xffffffff,pOVar2->field_003C,
+                 pOVar2->field_0044);
       g_currentExceptionFrame = local_60.previous;
       return;
     }

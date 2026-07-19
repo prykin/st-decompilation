@@ -6,7 +6,7 @@
 void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
 
 {
-  PlayPanelTy *pPVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   PlayPanelTy *this_00;
   undefined4 *puVar3;
@@ -67,7 +67,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
   undefined4 local_1c;
   undefined4 local_18;
   PlayPanelTy *local_14;
-  PlayPanelTy *local_10;
+  undefined4 *local_10;
   int local_c;
   byte local_5;
   
@@ -85,29 +85,29 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     DAT_008016e4 = local_14;
     puVar3 = ccFntTy::operator(*(ccFntTy **)(DAT_00802a28 + 0x28),0x19d,
                                (int)*(ccFntTy **)(DAT_00802a28 + 0x28));
-    *(undefined4 **)(this_00 + 0x1dd) = puVar3;
+    this_00[1].field_005C = puVar3;
     puVar3[0x16] = 0;
     puVar3[0x17] = 0;
-    puVar4 = FUN_00709af0(DAT_00806794,0xb,(byte *)s_BUT_CHPLAYER_007c3f08,0xffffffff,0,1,0,
+    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,(byte *)s_BUT_CHPLAYER_007c3f08,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
-    *(ushort **)(this_00 + 0x1d1) = puVar4;
+    *(ushort **)&this_00[1].field_0x50 = puVar4;
     puVar3 = (undefined4 *)0x0;
     iVar23 = 0;
     iVar9 = 1;
     bVar20 = 0;
     uVar19 = 0xffffffff;
     pbVar5 = (byte *)thunk_FUN_00571240(s_GAMEB_ALLY_007c75f8,0);
-    puVar4 = FUN_00709af0(DAT_00806794,0xb,pbVar5,uVar19,bVar20,iVar9,iVar23,puVar3);
-    *(ushort **)(this_00 + 0x1d5) = puVar4;
+    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,pbVar5,uVar19,bVar20,iVar9,iVar23,puVar3);
+    *(ushort **)&this_00[1].field_0x54 = puVar4;
     puVar3 = (undefined4 *)0x0;
     iVar23 = 0;
     iVar9 = 1;
     bVar20 = 0;
     uVar19 = 0xffffffff;
     pbVar5 = (byte *)thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
-    puVar4 = FUN_00709af0(DAT_00806794,0xb,pbVar5,uVar19,bVar20,iVar9,iVar23,puVar3);
-    *(ushort **)(this_00 + 0x1d9) = puVar4;
-    iVar9 = *(int *)(this_00 + 0x68);
+    puVar4 = FUN_00709af0(DAT_00806794,CASE_B,pbVar5,uVar19,bVar20,iVar9,iVar23,puVar3);
+    *(ushort **)&this_00[1].field_0x58 = puVar4;
+    iVar9 = *(int *)&this_00->field_0x68;
     uVar19 = *(uint *)(iVar9 + 0x14);
     if (uVar19 == 0) {
       uVar19 = ((uint)*(ushort *)(iVar9 + 0xe) * *(int *)(iVar9 + 4) + 0x1f >> 3 & 0x1ffffffc) *
@@ -126,30 +126,32 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     }
     pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYW_007c75e4,0);
     puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar24,iVar9);
-    pPVar1 = this_00 + 0x1cd;
-    *(ushort **)pPVar1 = puVar4;
-    thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),0,0,'\x01',(byte *)puVar4);
-    cMf32::RecMemFree(DAT_00806790,(uint *)pPVar1);
+    puVar1 = &this_00[1].field_0x4c;
+    *(ushort **)puVar1 = puVar4;
+    thunk_FUN_00540760(*(undefined4 **)&this_00->field_0x68,0,0,'\x01',(byte *)puVar4);
+    cMf32::RecMemFree(DAT_00806790,(uint *)puVar1);
     if (DAT_00808783 != '\x03') {
       iVar9 = 1;
       piVar24 = (int *)0x0;
       pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYC_007c75d0,0);
       puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar24,iVar9);
-      *(ushort **)pPVar1 = puVar4;
-      thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),0x20,0xa4,'\x01',(byte *)puVar4);
-      cMf32::RecMemFree(DAT_00806790,(uint *)pPVar1);
+      puVar3 = *(undefined4 **)&this_00->field_0x68;
+      *(ushort **)puVar1 = puVar4;
+      thunk_FUN_00540760(puVar3,0x20,0xa4,'\x01',(byte *)puVar4);
+      cMf32::RecMemFree(DAT_00806790,(uint *)puVar1);
     }
     iVar9 = 1;
     piVar24 = (int *)0x0;
     pCVar6 = thunk_FUN_00571240(s_BKG_DIPLOMACYB_007c75bc,0);
     puVar4 = cMf32::RecGet(DAT_00806790,1,pCVar6,piVar24,iVar9);
-    *(ushort **)pPVar1 = puVar4;
-    ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1dd),*(int *)(this_00 + 0x68),0,0x6c,2,0xf3,0xc);
+    iVar9 = *(int *)&this_00->field_0x68;
+    *(ushort **)puVar1 = puVar4;
+    ccFntTy::SetSurf((ccFntTy *)this_00[1].field_005C,iVar9,0,0x6c,2,0xf3,0xc);
     uVar19 = (DAT_0080874e != '\x03') - 1 & 5;
     iVar23 = -1;
     iVar9 = -2;
     puVar7 = (uint *)FUN_006b0140(0x2733,DAT_00807618);
-    ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1dd),puVar7,iVar9,iVar23,uVar19);
+    ccFntTy::WrStr((ccFntTy *)this_00[1].field_005C,puVar7,iVar9,iVar23,uVar19);
     PaintPlayPanel(this_00);
     uVar26 = 0;
     uVar25 = 0;
@@ -162,7 +164,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     pCVar6 = thunk_FUN_00571240(s_BUT_MEDIUM_007c3894,0);
     uVar15 = UPanelTy::CreateBut((UPanelTy *)this_00,0,1,0x171,199,1,(int)pCVar6,uVar15,uVar16,
                                  sVar17,uVar18,uVar21,pcVar22,uVar25,uVar26);
-    *(undefined4 *)(this_00 + 0x17c) = uVar15;
+    *(undefined4 *)&this_00->field_0x17c = uVar15;
     local_488[0] = 0;
     if (DAT_00808aaf < 9) {
       local_c8 = 0;
@@ -170,22 +172,22 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
     else {
       local_c8 = DAT_00808aaf - 8;
     }
-    local_488[4] = *(int *)(this_00 + 0x3c) + 0x19c;
-    iVar9 = *(int *)(this_00 + 0x5c);
-    local_c4 = *(undefined4 *)(this_00 + 0x1c9);
-    local_e0 = *(undefined4 *)(this_00 + 8);
+    local_488[4] = *(int *)&this_00->field_0x3c + 0x19c;
+    iVar9 = this_00->field_005C;
+    local_c4 = *(undefined4 *)&this_00[1].field_0x48;
+    local_e0 = *(undefined4 *)&this_00->field_0x8;
     local_dc = 2;
     local_d8 = 0x6200;
     local_488[1] = 2;
     local_488[2] = 0;
     local_488[3] = 2;
     if (iVar9 == 0) {
-      iVar23 = -*(int *)(this_00 + 0x48);
+      iVar23 = -*(int *)&this_00->field_0x48;
     }
     else {
-      iVar23 = *(int *)(this_00 + 0x44);
+      iVar23 = *(int *)&this_00->field_0x44;
     }
-    local_420 = *(undefined4 *)(this_00 + 8);
+    local_420 = *(undefined4 *)&this_00->field_0x8;
     local_488[5] = iVar23 + 0x6d;
     local_41c = 2;
     local_304 = 2;
@@ -204,20 +206,21 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       piVar12 = piVar12 + 1;
     }
     if (iVar9 == 0) {
-      local_300[3] = -*(int *)(this_00 + 0x48);
+      local_300[3] = -*(int *)&this_00->field_0x48;
     }
     else {
-      local_300[3] = *(int *)(this_00 + 0x44);
+      local_300[3] = *(int *)&this_00->field_0x44;
     }
     local_300[3] = local_300[3] + 0x1a;
     local_298 = 0x6201;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(4,this_00 + 0x1c5,0,local_488,0);
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(4,&this_00[1].field_0x44,0,local_488,0);
     if (8 < DAT_00808aaf) {
-      *(undefined4 *)(this_00 + 0x28) = 0x20;
-      *(undefined4 *)(this_00 + 0x2c) = 1;
-      FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x1c5),(undefined4 *)(this_00 + 0x18));
+      uVar15 = *(undefined4 *)&this_00[1].field_0x44;
+      this_00->field_0028 = 0x20;
+      *(undefined4 *)&this_00->field_0x2c = 1;
+      FUN_006e6080(this_00,2,uVar15,(undefined4 *)&this_00->field_0x18);
     }
-    local_10 = this_00 + 0x1a1;
+    local_10 = (undefined4 *)&this_00[1].field_0x20;
     local_5 = 0;
     iVar23 = 0xb4ff;
     iVar9 = 0x1c;
@@ -230,7 +233,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       }
       uVar15 = UPanelTy::CreateBut((UPanelTy *)this_00,0,iVar8,0x4d,iVar9 + -2,0,0,iVar23,
                                    iVar23 + 0x10,0,0,0,(char *)0x0,0x16,0xe);
-      *(undefined4 *)(local_10 + -0x20) = uVar15;
+      local_10[-8] = uVar15;
       if ((DAT_00808aaf <= local_5) || (local_c = 1, DAT_00808783 != '\x03')) {
         local_c = 0;
       }
@@ -249,10 +252,10 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       uVar15 = UPanelTy::CreateBut((UPanelTy *)this_00,0,local_c,0x183,iVar9,1,(int)pCVar6,iVar11,
                                    iVar8,sVar17,uVar18,uVar16,pcVar22,uVar21,uVar25);
       iVar9 = iVar9 + 0xf;
-      *(undefined4 *)local_10 = uVar15;
+      *local_10 = uVar15;
       local_5 = local_5 + 1;
       iVar23 = iVar23 + 1;
-      local_10 = local_10 + 4;
+      local_10 = local_10 + 1;
     } while (local_5 < 8);
     if (DAT_00808783 == '\x03') {
       iVar23 = 1;
@@ -267,19 +270,19 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
         puVar3 = puVar3 + 1;
       }
       puVar3 = local_6b8 + 1;
-      iVar9 = *(int *)(this_00 + 0x3c) + 0x27;
+      iVar9 = *(int *)&this_00->field_0x3c + 0x27;
       iVar8 = 4;
       do {
-        iVar11 = *(int *)(this_00 + 0x5c);
+        iVar11 = this_00->field_005C;
         puVar3[-1] = iVar23;
         *puVar3 = 0;
         puVar3[2] = iVar9;
         puVar3[4] = 0x13;
         if (iVar11 == 0) {
-          iVar11 = -*(int *)(this_00 + 0x48);
+          iVar11 = -*(int *)&this_00->field_0x48;
         }
         else {
-          iVar11 = *(int *)(this_00 + 0x44);
+          iVar11 = *(int *)&this_00->field_0x44;
         }
         iVar23 = iVar23 + 1;
         puVar3[3] = iVar11 + 0xa9;
@@ -289,7 +292,7 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
         iVar8 = iVar8 + -1;
       } while (iVar8 != 0);
       local_24 = local_6b8;
-      local_5c = *(undefined4 *)(this_00 + 8);
+      local_5c = *(undefined4 *)&this_00->field_0x8;
       local_6c[0] = 1;
       local_20 = 1;
       local_1c = 1;
@@ -299,18 +302,18 @@ void __thiscall PlayPanelTy::InitPlayPanel(PlayPanelTy *this)
       local_38 = 2;
       local_34 = 0xb209;
       local_3c = local_5c;
-      (**(code **)(**(int **)(this_00 + 0xc) + 8))(5,this_00 + 0x1c1,0,local_6c,0);
+      (**(code **)(**(int **)&this_00->field_0xc + 8))(5,&this_00[1].field_0x40,0,local_6c,0);
       UVar13 = 0x42b8;
       iVar9 = 0x3c;
       local_c = 4;
       do {
-        ccFntTy::SetSurf(*(ccFntTy **)(this_00 + 0x1dd),*(int *)(this_00 + 0x68),0,iVar9,0xa9,0x46,
-                         0xe);
+        ccFntTy::SetSurf((ccFntTy *)this_00[1].field_005C,*(int *)&this_00->field_0x68,0,iVar9,0xa9,
+                         0x46,0xe);
         uVar19 = (DAT_0080874e != '\x03') - 1 & 5;
         iVar8 = -1;
         iVar23 = 0;
         puVar7 = (uint *)FUN_006b0140(UVar13,DAT_00807618);
-        ccFntTy::WrStr(*(ccFntTy **)(this_00 + 0x1dd),puVar7,iVar23,iVar8,uVar19);
+        ccFntTy::WrStr((ccFntTy *)this_00[1].field_005C,puVar7,iVar23,iVar8,uVar19);
         iVar9 = iVar9 + 0x5c;
         UVar13 = UVar13 + 1;
         local_c = local_c + -1;

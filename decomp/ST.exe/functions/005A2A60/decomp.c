@@ -22,15 +22,14 @@ void __thiscall FSGSTy::ChangePlayer(FSGSTy *this,byte *param_1)
   int local_c;
   FSGSTy *local_8;
   
-  if (((this[0x1a5f] == (FSGSTy)0x6) && (this[0x1a60] == (FSGSTy)0x0)) &&
-     (*(int *)(this + 0x1ea6) != 0)) {
+  if (((this->field_1A5F == '\x06') && (this->field_1A60 == '\0')) && (this->field_1EA6 != 0)) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_8 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_EDI,unaff_ESI);
     if (iVar3 == 0) {
       uVar6 = 0;
-      local_c = *(int *)(local_8 + 0x1ea6);
+      local_c = local_8->field_1EA6;
       local_10 = *(uint *)(local_c + 0xc);
       if (local_10 != 0) {
         if (local_10 == 0) {
@@ -68,8 +67,9 @@ LAB_005a2b1c:
           uVar6 = uVar6 + 1;
         } while (uVar6 < local_10);
       }
-      *(undefined4 *)(local_8 + 0x2d) = 5;
-      FUN_006e6080(local_8,2,*(undefined4 *)(local_8 + 0x1b20),(undefined4 *)(local_8 + 0x1d));
+      *(undefined4 *)&local_8->field_0x2d = 5;
+      FUN_006e6080(local_8,2,*(undefined4 *)&local_8->field_0x1b20,
+                   (undefined4 *)&local_8->field_0x1d);
       g_currentExceptionFrame = local_54.previous;
       return;
     }

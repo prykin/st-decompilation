@@ -9,10 +9,9 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
   void *pvVar3;
   int iVar4;
   uint uVar5;
-  undefined4 *puVar6;
-  SpriteClassTy *this;
+  SpriteClassTy *pSVar6;
   undefined4 unaff_ESI;
-  void *unaff_EDI;
+  undefined4 *unaff_EDI;
   int iVar7;
   longlong lVar8;
   InternalExceptionFrame local_58;
@@ -60,8 +59,8 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
     uVar5 = 0;
   }
   else {
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_8,iVar4,
-                       &local_10,&local_14);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       local_8,iVar4,&local_10,&local_14);
     if ((iVar7 < 0) || (4 < iVar7)) {
       uVar5 = 0xffffffff;
     }
@@ -113,19 +112,19 @@ void FUN_0054a9b0(float param_1,float param_2,float param_3)
       Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(local_c + 0x4eb));
       *(undefined4 *)(local_c + 0x4eb) = 0;
     }
-    puVar6 = (undefined4 *)Library::MSVCRT::FUN_0072e530(0x91);
-    if (puVar6 == (undefined4 *)0x0) {
-      this = (SpriteClassTy *)0x0;
+    pSVar6 = (SpriteClassTy *)Library::MSVCRT::FUN_0072e530(0x91);
+    if (pSVar6 == (SpriteClassTy *)0x0) {
+      pSVar6 = (SpriteClassTy *)0x0;
     }
     else {
-      this = (SpriteClassTy *)FUN_00715820(puVar6);
+      pSVar6 = (SpriteClassTy *)SpriteClassTy::SpriteClassTy(pSVar6,unaff_EDI);
     }
-    *(SpriteClassTy **)(local_c + 0x4eb) = this;
-    if (this == (SpriteClassTy *)0x0) {
+    *(SpriteClassTy **)(local_c + 0x4eb) = pSVar6;
+    if (pSVar6 == (SpriteClassTy *)0x0) {
       g_currentExceptionFrame = local_58.previous;
       return;
     }
-    SpriteClassTy::InitSprite(this,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
+    SpriteClassTy::InitSprite(pSVar6,DAT_008075a8,1,'\a',(undefined4 *)0x0,0,0);
     (**(code **)(**(int **)(local_c + 0x4eb) + 4))
               (DAT_00806784,7,0,s_CUR_CONFIRM2D_007c7fb4,0xffffffff);
     *(undefined4 *)(*(int *)(local_c + 0x4eb) + 0x40) = 0x19;

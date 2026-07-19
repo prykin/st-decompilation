@@ -22,8 +22,8 @@ uint __fastcall FUN_0044ce40(STAllPlayersC *param_1)
       FUN_006acc70(iVar4,uVar7,&local_c);
       if (((short)local_c != -1) &&
          (piVar2 = (int *)STAllPlayersC::GetObjPtr
-                                    (local_8,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,1),
-         piVar2 != (int *)0x0)) {
+                                    (local_8,CONCAT31((int3)(local_c >> 8),DAT_0080874d),local_c,
+                                     CASE_1), piVar2 != (int *)0x0)) {
         uVar3 = (**(code **)(*piVar2 + 0x2c))();
         switch(uVar3) {
         case 1:

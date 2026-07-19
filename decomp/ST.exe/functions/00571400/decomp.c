@@ -41,7 +41,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
     RaiseInternalException(iVar3,0,s_E____titans_tapp_cpp_007ca0c8,0x914);
     return;
   }
-  hFile = CreateFileA((LPCSTR)(local_10 + 0x7b06),0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
+  hFile = CreateFileA(&local_10[1].field_0x2c08,0x80000000,1,(LPSECURITY_ATTRIBUTES)0x0,3,0x80,
                       (HANDLE)0x0);
   if (hFile == (HANDLE)0xffffffff) {
     local_8 = 1;
@@ -49,12 +49,13 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   }
   if ((param_1 != 0) &&
      (((DVar4 = SetFilePointer(hFile,0,(PLONG)0x0,0), DVar4 == 0xffffffff ||
-       (BVar5 = ReadFile(hFile,pSVar2 + 0x1134,4,&local_c,(LPOVERLAPPED)0x0), BVar5 == 0)) ||
+       (BVar5 = ReadFile(hFile,&pSVar2->field_0x1134,4,&local_c,(LPOVERLAPPED)0x0), BVar5 == 0)) ||
       (local_c != 4)))) {
     local_8 = 1;
   }
   if ((local_8 == 0) &&
-     (DVar4 = SetFilePointer(hFile,*(LONG *)(pSVar2 + 0x1191),(PLONG)0x0,0), DVar4 != 0xffffffff)) {
+     (DVar4 = SetFilePointer(hFile,*(LONG *)&pSVar2->field_0x1191,(PLONG)0x0,0), DVar4 != 0xffffffff
+     )) {
     BVar5 = ReadFile(hFile,local_2c,0x1b,&local_c,(LPOVERLAPPED)0x0);
     if ((BVar5 != 0) && (local_c == 0x1b)) {
       iVar3 = 0;
@@ -104,26 +105,26 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
         iVar3 = 2;
       }
       nNumberOfBytesToRead = iVar3 + 0x1b;
-      if (*(uint *)(pSVar2 + 0x118d) < nNumberOfBytesToRead) {
-        *(uint *)(pSVar2 + 0x118d) = nNumberOfBytesToRead;
+      if (*(uint *)&pSVar2->field_0x118d < nNumberOfBytesToRead) {
+        *(uint *)&pSVar2->field_0x118d = nNumberOfBytesToRead;
         iVar3 = Library::DKW::LIB::FUN_006acf50
-                          (*(undefined4 **)(pSVar2 + 0x1189),nNumberOfBytesToRead);
-        *(int *)(pSVar2 + 0x1189) = iVar3;
+                          (*(undefined4 **)&pSVar2->field_0x1189,nNumberOfBytesToRead);
+        *(int *)&pSVar2->field_0x1189 = iVar3;
       }
-      DVar4 = SetFilePointer(hFile,*(LONG *)(pSVar2 + 0x1191),(PLONG)0x0,0);
+      DVar4 = SetFilePointer(hFile,*(LONG *)&pSVar2->field_0x1191,(PLONG)0x0,0);
       if (((DVar4 == 0xffffffff) ||
-          (BVar5 = ReadFile(hFile,*(LPVOID *)(pSVar2 + 0x1189),nNumberOfBytesToRead,&local_c,
+          (BVar5 = ReadFile(hFile,*(LPVOID *)&pSVar2->field_0x1189,nNumberOfBytesToRead,&local_c,
                             (LPOVERLAPPED)0x0), BVar5 == 0)) || (local_c != nNumberOfBytesToRead)) {
         local_8 = 1;
         CloseHandle(hFile);
       }
       else {
-        *(uint *)(pSVar2 + 0x1191) = *(int *)(pSVar2 + 0x1191) + nNumberOfBytesToRead;
+        *(uint *)&pSVar2->field_0x1191 = *(int *)&pSVar2->field_0x1191 + nNumberOfBytesToRead;
         CloseHandle(hFile);
       }
       goto LAB_00571620;
     }
-    *(undefined4 *)(pSVar2 + 0x1185) = 0;
+    *(undefined4 *)&pSVar2->field_0x1185 = 0;
     if (DAT_008016d8 != (void *)0x0) {
       thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_commands_has_finished_007ca2bc,8);
       CloseHandle(hFile);
@@ -135,7 +136,7 @@ void __thiscall STAppC::ReadCmdPlay(STAppC *this,int param_1)
   }
   CloseHandle(hFile);
 LAB_00571620:
-  if ((local_8 != 0) && (*(undefined4 *)(pSVar2 + 0x1185) = 0, DAT_008016d8 != (void *)0x0)) {
+  if ((local_8 != 0) && (*(undefined4 *)&pSVar2->field_0x1185 = 0, DAT_008016d8 != (void *)0x0)) {
     thunk_FUN_0052d320(DAT_008016d8,s_Error_playing_command__007ca2a0,9);
     thunk_FUN_0052d320(DAT_008016d8,s_Playing_of_command_has_turned_of_007ca274,8);
   }

@@ -1,21 +1,26 @@
 
-void __thiscall FUN_006e34c0(void *this,undefined4 param_1,undefined4 param_2)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079E16C (store 006E34CC)
+   Evidence: final_vptr=0079E16C; returns_this=true; calls_before=0; field_writes_after=12;
+   table_confidence=high */
+
+void __thiscall AppClassTy::AppClassTy(AppClassTy *this,undefined4 param_1,undefined4 param_2)
 
 {
-  *(AppClassTyVTable **)this = &AppClassTyVTable;
+  this->vtable = &AppClassTyVTable;
   DAT_00856d6c = param_1;
-  *(undefined4 *)((int)this + 8) = param_2;
-  *(undefined4 *)((int)this + 0x1c) = 0;
-  *(undefined4 *)((int)this + 0x20) = 0;
-  *(undefined4 *)((int)this + 0x14) = 0;
-  *(undefined4 *)((int)this + 0x10) = 0;
-  *(undefined4 *)((int)this + 4) = 1;
-  *(undefined4 *)((int)this + 0xc) = 0;
-  *(undefined4 *)((int)this + 0x30) = 0;
-  *(undefined4 *)((int)this + 0x28) = 0;
-  *(undefined4 *)((int)this + 0x2c) = 0;
-  *(undefined4 *)((int)this + 0x34) = 0x14;
-  *(undefined4 *)((int)this + 0x24) = 1;
+  this->field_0008 = param_2;
+  this->field_001C = 0;
+  this->field_0020 = 0;
+  this->field_0014 = 0;
+  this->field_0010 = 0;
+  this->field_0004 = 1;
+  this->field_000C = 0;
+  this->field_0030 = 0;
+  this->field_0028 = 0;
+  this->field_002C = 0;
+  this->field_0034 = 0x14;
+  this->field_0024 = 1;
   return;
 }
 

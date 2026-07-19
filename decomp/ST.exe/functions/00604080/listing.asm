@@ -1,4 +1,4 @@
-FUN_00604080:
+STExplosion::STExplosion:
 00604080  56                        PUSH ESI
 00604081  57                        PUSH EDI
 00604082  8B F1                     MOV ESI,ECX

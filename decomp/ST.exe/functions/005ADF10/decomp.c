@@ -7,22 +7,22 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
 
 {
   code *pcVar1;
-  MMObjTy *this_00;
+  ChooseMapTy *this_00;
   int errorCode;
   int iVar2;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
   undefined4 local_48 [16];
-  MMObjTy *local_8;
+  ChooseMapTy *local_8;
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   this_00 = local_8;
   if (errorCode == 0) {
-    MMObjTy::CloseButtons(local_8);
-    if (this_00[0x20b5] != (MMObjTy)0x0) {
+    MMObjTy::CloseButtons((MMObjTy *)local_8);
+    if (this_00[1].field_0x655 != '\0') {
       if (*(uint *)(DAT_0081176c + 0x2fc) != 0xffffffff) {
         Library::DKW::DDX::FUN_006b34d0
                   (*(uint **)(DAT_0081176c + 0x340),*(uint *)(DAT_0081176c + 0x2fc),0xfffffffe,
@@ -30,9 +30,9 @@ void __thiscall ChooseMapTy::CloseButtons(ChooseMapTy *this)
       }
       FUN_006b3af0(DAT_008075a8,*(uint *)(DAT_0081176c + 0x2ec));
     }
-    this_00[0x65] = (MMObjTy)0x4;
+    this_00->field_0x65 = 4;
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
-    DeleteCtrls((ChooseMapTy *)this_00);
+    DeleteCtrls(this_00);
     g_currentExceptionFrame = pIVar3;
     return;
   }

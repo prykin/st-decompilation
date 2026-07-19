@@ -16,7 +16,7 @@ int __thiscall STAllPlayersC::_ChangeMD(STAllPlayersC *this,int param_1,int *par
   
   uVar7 = param_3;
   piVar4 = param_2;
-  param_2 = (int *)GetObjPtr(this,(uint)param_2,param_3,1);
+  param_2 = (int *)GetObjPtr(this,(uint)param_2,param_3,CASE_1);
   if (param_2 == (int *)0x0) {
     iVar5 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21d0,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___ChangeMD_007a8000);

@@ -43,7 +43,7 @@ int __cdecl FUN_00676260(uint param_1,int param_2)
       do {
         puVar4 = (ushort *)(puVar2[2] * uVar7 + puVar2[7]);
 LAB_006762e0:
-        piVar5 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,param_1,(uint)*puVar4,1);
+        piVar5 = (int *)STAllPlayersC::GetObjPtr(DAT_007fa174,param_1,(uint)*puVar4,CASE_1);
         if (piVar5 != (int *)0x0) {
           iVar3 = (**(code **)(*piVar5 + 0x2c))();
           if (iVar3 == 0x78) {

@@ -1,4 +1,4 @@
-FUN_005ec7e0:
+STSprGameObjC::STSprGameObjC:
 005EC7E0  56                        PUSH ESI
 005EC7E1  57                        PUSH EDI
 005EC7E2  8B F1                     MOV ESI,ECX

@@ -7,25 +7,25 @@ void __thiscall FSGSTy::CloseButtons(FSGSTy *this)
 
 {
   code *pcVar1;
-  MMObjTy *this_00;
+  FSGSTy *this_00;
   int errorCode;
   int iVar2;
   void *unaff_ESI;
   InternalExceptionFrame *pIVar3;
   undefined4 local_48 [16];
-  MMObjTy *local_8;
+  FSGSTy *local_8;
   
   pIVar3 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = (MMObjTy *)this;
+  local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar3);
   this_00 = local_8;
   if (errorCode == 0) {
-    MMObjTy::CloseButtons(local_8);
+    MMObjTy::CloseButtons((MMObjTy *)local_8);
     thunk_FUN_005b6730(this_00,0xc,'\x01',-1);
-    DeleteCtrls((FSGSTy *)this_00);
-    this_00[0x65] = (MMObjTy)0x4;
-    this_00[0x1a5f] = (MMObjTy)0x0;
+    DeleteCtrls(this_00);
+    this_00->field_0065 = 4;
+    this_00->field_1A5F = 0;
     g_currentExceptionFrame = pIVar3;
     return;
   }

@@ -1,6 +1,11 @@
 
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00624920_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3 */
+
 undefined4 __thiscall
-FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_4)
+FUN_00624920(void *this,Global_sub_00624920_param_1Enum param_1,int *param_2,int *param_3,
+            int *param_4)
 
 {
   byte bVar1;
@@ -21,7 +26,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
   
   local_8 = 0;
   switch(param_1) {
-  case 0:
+  case CASE_0:
     *param_2 = *(int *)((int)this + 0x2c2);
     *param_3 = *(int *)((int)this + 0x2c6);
     *param_4 = *(int *)((int)this + 0x2ca);
@@ -39,7 +44,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
     }
     *(int *)((int)this + 0x2f2) = *(int *)((int)this + 0x2ca);
     *(undefined4 *)((int)this + 0x302) = 1;
-    iVar7 = thunk_FUN_00624570(this,1,*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
+    iVar7 = thunk_FUN_00624570(this,CASE_1,*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
                                *(int *)((int)this + 0x2ca));
     if (iVar7 != 0) {
       *(undefined2 *)((int)this + 0x36) = *(undefined2 *)((int)this + 0x2ca);
@@ -50,7 +55,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
       return 1;
     }
     break;
-  case 1:
+  case CASE_1:
     if (*(byte *)((int)this + 0x62) == 0) {
       *param_2 = *(int *)((int)this + 0x2c2);
       *param_3 = *(int *)((int)this + 0x2c6);
@@ -67,7 +72,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
           *param_3 = *(int *)((int)this + 0x2c6);
           *param_4 = (iVar10 - *(int *)(&DAT_007d0398 + (uint)*(byte *)((int)this + 0x2ad) * 4)) + 1
           ;
-          thunk_FUN_00624570(this,1,*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
+          thunk_FUN_00624570(this,CASE_1,*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
                              *(int *)(&DAT_007d0398 + (uint)*(byte *)((int)this + 0x2ad) * 4) +
                              iVar10);
           *(undefined4 *)((int)this + 0x2ae) = 1;
@@ -78,7 +83,8 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
         *param_2 = *(int *)((int)this + 0x2c2);
         *param_3 = *(int *)((int)this + 0x2c6);
         *param_4 = *(int *)(&DAT_007d0398 + (uint)*(byte *)((int)this + 0x2ad) * 4) + -1 + iVar10;
-        iVar7 = thunk_FUN_00624570(this,1,*(int *)((int)this + 0x2c2),*(int *)((int)this + 0x2c6),
+        iVar7 = thunk_FUN_00624570(this,CASE_1,*(int *)((int)this + 0x2c2),
+                                   *(int *)((int)this + 0x2c6),
                                    iVar10 - *(int *)(&DAT_007d0398 +
                                                     (uint)*(byte *)((int)this + 0x2ad) * 4));
         if (iVar7 != 0) {
@@ -92,7 +98,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
     }
     *param_4 = iVar7;
     return 1;
-  case 2:
+  case CASE_2:
     iVar9 = *(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x30f);
     iVar11 = *(int *)((int)this + 0x306) * iVar9;
     iVar10 = (*(int *)((int)this + 0x2fa) * iVar11) / 10000 + (int)*(short *)((int)this + 0x34);
@@ -121,7 +127,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
       *param_2 = (int)sVar13;
       *param_3 = (int)sVar2;
       *param_4 = (int)sVar3;
-      iVar7 = thunk_FUN_00624570(this,0,(int)sVar13,(int)sVar2,(int)sVar3);
+      iVar7 = thunk_FUN_00624570(this,CASE_0,(int)sVar13,(int)sVar2,(int)sVar3);
       if (iVar7 != 0) {
         *(undefined4 *)((int)this + 0x2ee) = 0;
         *(undefined4 *)((int)this + 0x2ae) = 1;
@@ -130,7 +136,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
       }
     }
     break;
-  case 3:
+  case CASE_3:
     iVar7 = (*(int *)(DAT_00802a38 + 0xe4) - *(int *)((int)this + 0x30f)) *
             *(int *)((int)this + 0x306);
     iVar10 = *(int *)((int)this + 0x302) * iVar7 + (int)*(short *)((int)this + 0x38);
@@ -220,7 +226,7 @@ FUN_00624920(void *this,undefined4 param_1,int *param_2,int *param_3,int *param_
           }
         }
       }
-      iVar6 = thunk_FUN_00624570(this,2,(int)*(short *)((int)this + 0x3a),
+      iVar6 = thunk_FUN_00624570(this,CASE_2,(int)*(short *)((int)this + 0x3a),
                                  (int)*(short *)((int)this + 0x3c),
                                  (short)(*(short *)((int)this + 0x4b) * 200 + 100) + -0x32);
       if (iVar6 != 0) {
@@ -239,7 +245,7 @@ LAB_00625067:
     *param_3 = (int)*(short *)((int)this + 0x3c);
     *param_4 = iVar10;
     if ((*(int *)((int)this + 0x2f6) <= iVar7) &&
-       (iVar7 = thunk_FUN_00624570(this,0,(int)*(short *)((int)this + 0x3a),
+       (iVar7 = thunk_FUN_00624570(this,CASE_0,(int)*(short *)((int)this + 0x3a),
                                    (int)*(short *)((int)this + 0x3c),iVar10), iVar7 != 0)) {
       *(undefined4 *)((int)this + 0x2ee) = 0;
       *(undefined4 *)((int)this + 0x2ae) = 1;

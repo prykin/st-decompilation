@@ -11,7 +11,7 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
-  MMsgTy *pMVar5;
+  uint *puVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   MMsgTy *local_8;
@@ -22,39 +22,42 @@ void __thiscall MMsgTy::PaintMMsg(MMsgTy *this)
   iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar2 = local_8;
   if (iVar3 == 0) {
-    if (*(uint *)(local_8 + 0x1cfb) != 0xffffffff) {
+    if (*(uint *)&local_8[1].field_0x51 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)(local_8 + 0x1d3f),*(uint *)(local_8 + 0x1cfb),
-                 *(uint *)(local_8 + 0x1cff),*(uint *)(local_8 + 0x1d13),*(uint *)(local_8 + 0x1d17)
-                );
+                (*(uint **)&local_8[1].field_0x95,*(uint *)&local_8[1].field_0x51,
+                 *(uint *)&local_8[1].field_0x55,*(uint *)&local_8[1].field_0x69,
+                 *(uint *)&local_8[1].field_0x6d);
     }
-    if (*(uint *)(pMVar2 + 0x1d8c) != 0xffffffff) {
+    if (*(uint *)&pMVar2[1].field_0xe2 != 0xffffffff) {
       Library::DKW::DDX::FUN_006b3730
-                (*(uint **)(pMVar2 + 0x1dd0),*(uint *)(pMVar2 + 0x1d8c),*(uint *)(pMVar2 + 0x1d90),
-                 *(uint *)(pMVar2 + 0x1da4),*(uint *)(pMVar2 + 0x1da8));
+                (*(uint **)&pMVar2[1].field_0x126,*(uint *)&pMVar2[1].field_0xe2,
+                 *(uint *)&pMVar2[1].field_0xe6,*(uint *)&pMVar2[1].field_0xfa,
+                 *(uint *)&pMVar2[1].field_0xfe);
     }
     iVar3 = 0;
-    if (pMVar2[0x9a] != (MMsgTy)0x0) {
-      pMVar5 = pMVar2 + 0xff;
+    if (pMVar2->field_0x9a != '\0') {
+      puVar5 = (uint *)&pMVar2->field_0xff;
       do {
-        if (*(uint *)(pMVar5 + -0x18) != 0xffffffff) {
+        if (puVar5[-6] != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)(pMVar5 + 0x2c),*(uint *)(pMVar5 + -0x18),*(uint *)(pMVar5 + -0x14),
-                     *(uint *)pMVar5,*(uint *)(pMVar5 + 4));
+                    ((uint *)puVar5[0xb],puVar5[-6],puVar5[-5],*puVar5,puVar5[1]);
         }
-        if (*(uint *)(pMVar5 + 0x79) != 0xffffffff) {
+        if (*(uint *)((int)puVar5 + 0x79) != 0xffffffff) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)(pMVar5 + 0xbd),*(uint *)(pMVar5 + 0x79),*(uint *)(pMVar5 + 0x7d),
-                     *(uint *)(pMVar5 + 0x91),*(uint *)(pMVar5 + 0x95));
+                    (*(uint **)((int)puVar5 + 0xbd),*(uint *)((int)puVar5 + 0x79),
+                     *(uint *)((int)puVar5 + 0x7d),*(uint *)((int)puVar5 + 0x91),
+                     *(uint *)((int)puVar5 + 0x95));
         }
-        if ((pMVar5[-0x1d] != (MMsgTy)0x0) && (*(uint *)(pMVar5 + 0x10a) != 0xffffffff)) {
+        if ((*(char *)((int)puVar5 + -0x1d) != '\0') &&
+           (*(uint *)((int)puVar5 + 0x10a) != 0xffffffff)) {
           Library::DKW::DDX::FUN_006b3730
-                    (*(uint **)(pMVar5 + 0x14e),*(uint *)(pMVar5 + 0x10a),*(uint *)(pMVar5 + 0x10e),
-                     *(uint *)(pMVar5 + 0x122),*(uint *)(pMVar5 + 0x126));
+                    (*(uint **)((int)puVar5 + 0x14e),*(uint *)((int)puVar5 + 0x10a),
+                     *(uint *)((int)puVar5 + 0x10e),*(uint *)((int)puVar5 + 0x122),
+                     *(uint *)((int)puVar5 + 0x126));
         }
         iVar3 = iVar3 + 1;
-        pMVar5 = pMVar5 + 0x1fb;
-      } while (iVar3 < (int)(uint)(byte)pMVar2[0x9a]);
+        puVar5 = (uint *)((int)puVar5 + 0x1fb);
+      } while (iVar3 < (int)(uint)(byte)pMVar2->field_0x9a);
     }
     g_currentExceptionFrame = local_4c.previous;
     return;

@@ -46,8 +46,9 @@ undefined4 FUN_00635bf0(int param_1,int param_2,int param_3)
   if (((char)uVar3 != '\0') && (DAT_00802a88 != (void *)0x0)) {
     if ((((DAT_0080874d != -1) &&
          ((uVar3 = 0, *(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-          (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,iVar5,
-                              &param_2,&param_3), uVar3 = param_1, -1 < param_1)))) &&
+          (thunk_FUN_00558c00(DAT_00802a88,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar4,
+                              iVar5,&param_2,&param_3), uVar3 = param_1, -1 < param_1)))) &&
         ((param_1 < 5 &&
          ((((-1 < param_2 && (param_2 < *(int *)((int)pvVar2 + 0x30))) &&
            (uVar3 = (&DAT_0079aed0)[param_1] + param_3, -1 < (int)uVar3)) &&

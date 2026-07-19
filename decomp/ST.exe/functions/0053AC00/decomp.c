@@ -46,22 +46,23 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     (*pcVar2)();
     return;
   }
-  thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),0x1d,0x13,'\x01',*(byte **)(local_14 + 0x1cd)
-                    );
+  thunk_FUN_00540760(*(undefined4 **)&local_14->field_0x68,0x1d,0x13,'\x01',
+                     *(byte **)&local_14[1].field_0x4c);
   local_c = 0x1b;
   local_10 = 8;
   iVar4 = 0;
   do {
     iVar8 = local_c;
-    if ((uint)(iVar4 + *(int *)(pPVar3 + 0x1c9)) < (uint)DAT_00808aaf) {
+    uVar9 = iVar4 + *(int *)&pPVar3[1].field_0x48;
+    if (uVar9 < DAT_00808aaf) {
       local_8 = iVar4;
-      pbVar5 = (byte *)FUN_0070b3a0(*(int *)(pPVar3 + 0x1d1),
-                                    (byte)(&DAT_00808af4)[(iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x9c]
-                                    + 9);
-      thunk_FUN_00540760(*(undefined4 **)(pPVar3 + 0x68),0x22,iVar8,'\x01',pbVar5);
-      ccFntTy::SetSurf(*(ccFntTy **)(pPVar3 + 0x1dd),*(int *)(pPVar3 + 0x68),0,0x37,iVar8,0x10,0xc);
+      pbVar5 = (byte *)FUN_0070b3a0(*(int *)&pPVar3[1].field_0x50,
+                                    (byte)(&DAT_00808af4)[uVar9 * 0x9c] + 9);
+      thunk_FUN_00540760(*(undefined4 **)&pPVar3->field_0x68,0x22,iVar8,'\x01',pbVar5);
+      ccFntTy::SetSurf((ccFntTy *)pPVar3[1].field_005C,*(int *)&pPVar3->field_0x68,0,0x37,iVar8,0x10
+                       ,0xc);
       cVar1 = (&DAT_008087e8)
-              [(uint)(byte)(&DAT_00808af4)[(iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x9c] * 0x51];
+              [(uint)(byte)(&DAT_00808af4)[(iVar4 + *(int *)&pPVar3[1].field_0x48) * 0x9c] * 0x51];
       if (cVar1 == '\x01') {
         UVar6 = 0x2742;
       }
@@ -78,14 +79,14 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
       iVar14 = -1;
       iVar13 = -1;
       puVar7 = (uint *)FUN_006b0140(UVar6,DAT_00807618);
-      ccFntTy::WrStr(*(ccFntTy **)(pPVar3 + 0x1dd),puVar7,iVar13,iVar14,uVar9);
-      ccFntTy::SetSurf(*(ccFntTy **)(pPVar3 + 0x1dd),*(int *)(pPVar3 + 0x68),0,0x68,iVar8,0x10e,0xc)
-      ;
-      iVar8 = FUN_00711110(*(void **)(pPVar3 + 0x1dd),
-                           &DAT_00808ab0 + (iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x27);
+      ccFntTy::WrStr((ccFntTy *)pPVar3[1].field_005C,puVar7,iVar13,iVar14,uVar9);
+      ccFntTy::SetSurf((ccFntTy *)pPVar3[1].field_005C,*(int *)&pPVar3->field_0x68,0,0x68,iVar8,
+                       0x10e,0xc);
+      iVar8 = FUN_00711110((void *)pPVar3[1].field_005C,
+                           &DAT_00808ab0 + (iVar4 + *(int *)&pPVar3[1].field_0x48) * 0x27);
       if (iVar8 < 0x10e) {
         uVar9 = 0xffffffff;
-        pcVar11 = (char *)(&DAT_00808ab0 + (iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x27);
+        pcVar11 = (char *)(&DAT_00808ab0 + (iVar4 + *(int *)&pPVar3[1].field_0x48) * 0x27);
         do {
           pcVar12 = pcVar11;
           if (uVar9 == 0) break;
@@ -110,7 +111,7 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
       }
       else {
         uVar9 = 0xffffffff;
-        pcVar11 = (char *)(&DAT_00808ab0 + (iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x27);
+        pcVar11 = (char *)(&DAT_00808ab0 + (iVar4 + *(int *)&pPVar3[1].field_0x48) * 0x27);
         do {
           if (uVar9 == 0) break;
           uVar9 = uVar9 - 1;
@@ -123,12 +124,13 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
           _Count = _Count + 1;
           Library::MSVCRT::_strncpy
                     ((char *)&DAT_0080f33a,
-                     (char *)(&DAT_00808ab0 + (iVar4 + *(int *)(pPVar3 + 0x1c9)) * 0x27),_Count);
-          iVar8 = FUN_00711110(*(void **)(pPVar3 + 0x1dd),&DAT_0080f33a);
+                     (char *)(&DAT_00808ab0 + (iVar4 + *(int *)&pPVar3[1].field_0x48) * 0x27),_Count
+                    );
+          iVar8 = FUN_00711110((void *)pPVar3[1].field_005C,&DAT_0080f33a);
           if (0x10d < iVar8) break;
         } while ((int)_Count < local_8);
       }
-      ccFntTy::WrStr(*(ccFntTy **)(pPVar3 + 0x1dd),&DAT_0080f33a,5,-1,
+      ccFntTy::WrStr((ccFntTy *)pPVar3[1].field_005C,&DAT_0080f33a,5,-1,
                      (DAT_0080874e != '\x03') - 1 & 5);
     }
     iVar4 = iVar4 + 1;
@@ -137,8 +139,8 @@ void __thiscall PlayPanelTy::PaintPlayPanel(PlayPanelTy *this)
     if (local_10 == 0) {
       local_8 = iVar4;
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pPVar3 + 0x60),0xffffffff,*(uint *)(pPVar3 + 0x3c),
-                 *(uint *)(pPVar3 + 0x44));
+                (DAT_008075a8,*(uint *)&pPVar3->field_0x60,0xffffffff,*(uint *)&pPVar3->field_0x3c,
+                 *(uint *)&pPVar3->field_0x44);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

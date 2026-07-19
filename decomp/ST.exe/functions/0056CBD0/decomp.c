@@ -1,10 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\tapp.cpp
-   STAppC::MainWindowProc */
+   STAppC::MainWindowProc
+   
+   [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/STAppC_MainWindowProc_param_2Enum. Cases:
+   CASE_5=5;CASE_F=15;CASE_10=16;CASE_1C=28 */
 
 LRESULT __thiscall
-STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint param_4)
+STAppC::MainWindowProc
+          (STAppC *this,HWND param_1,STAppC_MainWindowProc_param_2Enum param_2,uint param_3,
+          uint param_4)
 
 {
   code *pcVar1;
@@ -54,7 +60,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
       return 1;
     }
     switch(param_2) {
-    case 5:
+    case CASE_5:
       puVar6 = local_6c;
       for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
         *puVar6 = 0;
@@ -64,7 +70,7 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
       AppClassTy::SendMessage(DAT_00806728,3,1,(int)local_6c);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
-    case 0xf:
+    case CASE_F:
       BeginPaint(param_1,&local_ac);
       if (DAT_008075a8 != (int *)0x0) {
         FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
@@ -79,10 +85,10 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
       EndPaint(param_1,&local_ac);
       g_currentExceptionFrame = local_4c.previous;
       return local_8;
-    case 0x10:
+    case CASE_10:
       g_currentExceptionFrame = local_4c.previous;
       return 0;
-    case 0x1c:
+    case CASE_1C:
       if (param_3 == 0) {
         if (DAT_0080759c != (undefined4 *)0x0) {
           FUN_006ba760((int)DAT_0080759c);
@@ -169,9 +175,9 @@ STAppC::MainWindowProc(STAppC *this,HWND param_1,uint param_2,uint param_3,uint 
     FUN_006b5f80(DAT_008075a8,0,0,DAT_00806730,DAT_00806734);
     Library::DKW::DDX::FUN_006bab60((int)DAT_0080759c,0x1000000);
     Library::DKW::DDX::FUN_006bb370((int)DAT_0080759c,0,0);
-    *(undefined4 *)(DAT_00806728 + 0x4efa) = 0;
-    thunk_FUN_00567180(DAT_00806728 + 0x38,param_1);
-    FUN_006e3db0((int)(DAT_00806728 + 0x113a));
+    *(undefined4 *)((int)&DAT_00806728[0x169].vtable + 2) = 0;
+    thunk_FUN_00567180(DAT_00806728 + 1,param_1);
+    FUN_006e3db0((int)((int)&DAT_00806728[0x4e].field_0028 + 2));
     g_currentExceptionFrame = local_4c.previous;
     return local_8;
   }

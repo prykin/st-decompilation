@@ -105,11 +105,11 @@ LAB_00618ce0:
           g_currentExceptionFrame = local_58.previous;
           return 0;
         }
-        iVar2 = thunk_FUN_0061bdb0(this_00,0,*(int *)(this_00 + 0xe7),*(int *)(this_00 + 0xeb),
+        iVar2 = thunk_FUN_0061bdb0(this_00,CASE_0,*(int *)(this_00 + 0xe7),*(int *)(this_00 + 0xeb),
                                    *(uint *)(this_00 + 0xef));
         if (iVar2 == 0) {
-          iVar2 = thunk_FUN_0061bdb0(this_00,1,*(int *)(this_00 + 0xe7),*(int *)(this_00 + 0xeb),
-                                     *(uint *)(this_00 + 0xef));
+          iVar2 = thunk_FUN_0061bdb0(this_00,CASE_1,*(int *)(this_00 + 0xe7),
+                                     *(int *)(this_00 + 0xeb),*(uint *)(this_00 + 0xef));
           if (iVar2 == 0) goto LAB_00618ce0;
           *(undefined4 *)(this_00 + 0x93) = 1;
         }

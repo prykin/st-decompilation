@@ -39,25 +39,25 @@ void __thiscall FSGSTy::PswCtrls(FSGSTy *this)
   if (iVar4 == 0) {
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
     this_00 = local_8;
-    *(uint **)(local_8 + 0x1ae8) = puVar2;
+    *(uint **)&local_8->field_0x1ae8 = puVar2;
     Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_00807e1d);
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)(this_00 + 0x1aec) = puVar2;
+    *(uint **)&this_00->field_0x1aec = puVar2;
     Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)(this_00 + 0x1af0) = puVar2;
+    *(uint **)&this_00->field_0x1af0 = puVar2;
     Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar2 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,1,1);
-    *(uint **)(this_00 + 0x1af4) = puVar2;
+    *(uint **)&this_00->field_0x1af4 = puVar2;
     Library::DKW::TBL::FUN_006b5aa0((int)puVar2,&DAT_008016a0);
     puVar5 = local_8d8;
     for (iVar4 = 0x223; iVar4 != 0; iVar4 = iVar4 + -1) {
       *puVar5 = 0;
       puVar5 = puVar5 + 1;
     }
-    local_8d8[2] = *(undefined4 *)(this_00 + 0x1a73);
-    local_8d8[8] = *(undefined4 *)(this_00 + 0x1ae8);
-    local_8ac = *(undefined4 *)(this_00 + 8);
+    local_8d8[2] = *(undefined4 *)&this_00->field_0x1a73;
+    local_8d8[8] = *(undefined4 *)&this_00->field_0x1ae8;
+    local_8ac = *(undefined4 *)&this_00->field_0x8;
     local_64 = 2;
     local_8a8 = 2;
     local_888 = 2;
@@ -73,23 +73,23 @@ void __thiscall FSGSTy::PswCtrls(FSGSTy *this)
     local_60 = 0x6955;
     local_88c = local_8ac;
     local_68 = local_8ac;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ac4,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)(this_00 + 0x1aec);
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ac4,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)&this_00->field_0x1aec;
     local_8d8[1] = 0xa9;
     local_8d8[4] = 0x11f;
     local_8d8[5] = 0xaa;
     local_8d8[6] = 0x14;
     local_8d8[7] = 0x10;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ac8,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)(this_00 + 0x1af4);
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ac8,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)&this_00->field_0x1af4;
     local_8d8[4] = 0x147;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1ad4,0,local_8d8,0);
-    local_8d8[8] = *(undefined4 *)(this_00 + 0x1af0);
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1ad4,0,local_8d8,0);
+    local_8d8[8] = *(undefined4 *)&this_00->field_0x1af0;
     local_8d8[4] = 0x16f;
-    (**(code **)(**(int **)(this_00 + 0xc) + 8))(6,this_00 + 0x1acc,0,local_8d8,0);
-    *(undefined4 *)(this_00 + 0x2d) = 0x61;
-    *(undefined4 *)(this_00 + 0x35) = 0;
-    FUN_006e6080(this_00,0xf,0,(undefined4 *)(this_00 + 0x1d));
+    (**(code **)(**(int **)&this_00->field_0xc + 8))(6,&this_00->field_0x1acc,0,local_8d8,0);
+    *(undefined4 *)&this_00->field_0x2d = 0x61;
+    *(undefined4 *)&this_00->field_0x35 = 0;
+    FUN_006e6080(this_00,0xf,0,(undefined4 *)&this_00->field_0x1d);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

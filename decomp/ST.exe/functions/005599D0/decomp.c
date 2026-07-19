@@ -20,7 +20,7 @@ FUN_005599d0(void *this,int param_1,int param_2,undefined1 param_3,uint param_4,
     iVar1 = (int)param_5 * 2 + 1;
     iVar5 = param_1 - (int)param_5;
     iVar8 = param_2 - (int)param_5;
-    puVar3 = thunk_FUN_005532f0((int)param_5);
+    puVar3 = thunk_FUN_005532f0((Global_sub_005532F0_param_1Enum)param_5);
     _param_3 = iVar1;
     param_5 = puVar3;
     if (0 < iVar1) {

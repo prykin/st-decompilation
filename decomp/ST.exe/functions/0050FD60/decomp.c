@@ -61,7 +61,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xc0b0;
     uVar7 = 0xc0a0;
-    *(undefined4 *)(this_00 + 0x1b3) = uVar6;
+    *(undefined4 *)&this_00[1].field_002E = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBENDUP_007c2a3c,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x60,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
@@ -73,7 +73,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xc0b1;
     uVar7 = 0xc0a1;
-    *(undefined4 *)(this_00 + 0x1b7) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x32 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FHOLD_007c2a30,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x95,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
@@ -85,7 +85,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xc0b2;
     uVar7 = 0xc0a2;
-    *(undefined4 *)(this_00 + 0x1bb) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x36 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FLOCK_007c2a24,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xca,0x19,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
@@ -97,7 +97,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xc0b3;
     uVar7 = 0xc0a3;
-    *(undefined4 *)(this_00 + 0x1bf) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x3a = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FWALL_007c2a18,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
@@ -109,7 +109,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xc0b4;
     uVar7 = 0xc0a4;
-    *(undefined4 *)(this_00 + 0x1c3) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x3e = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBENDDN_007c2a08,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x60,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
@@ -120,7 +120,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 0;
     uVar11 = 2;
     uVar7 = 0xc0b5;
-    *(undefined4 *)(this_00 + 0x1c7) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x42 = uVar6;
     uVar6 = 0xc0a5;
     pCVar3 = thunk_FUN_00571240(s_BUT_FSQUARE_007c29f8,0);
     uVar6 = (**(code **)(iVar2 + 4))
@@ -133,7 +133,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xc0b6;
     uVar7 = 0xc0a6;
-    *(undefined4 *)(this_00 + 0x1cb) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x46 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FBREAK_007c29e8,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xca,0x31,0,1,1,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,uVar14,uVar5);
@@ -145,7 +145,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xb109;
     uVar7 = 0xb108;
-    *(undefined4 *)(this_00 + 0x1cf) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x4a = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FINC_007c29d0,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x2b,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
@@ -157,7 +157,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xb10b;
     uVar7 = 0xb10a;
-    *(undefined4 *)(this_00 + 0x1d3) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x4e = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FDEC_007c29b8,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0x4d,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
@@ -169,7 +169,7 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xb10d;
     uVar7 = 0xb10c;
-    *(undefined4 *)(this_00 + 0x1d7) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x52 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FRLFT_007c29ac,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xaa,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
@@ -181,11 +181,11 @@ void __thiscall FrmPanelTy::InitFrmPanel(FrmPanelTy *this)
     uVar13 = 2;
     uVar11 = 0xb10f;
     uVar7 = 0xb10e;
-    *(undefined4 *)(this_00 + 0x1db) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x56 = uVar6;
     pCVar3 = thunk_FUN_00571240(s_BUT_FRRT_007c29a0,0);
     uVar6 = (**(code **)(iVar2 + 4))
                       (0,1,0xcc,0x52,0,1,6,pCVar3,uVar7,uVar11,uVar13,uVar10,uVar12,pcVar4,uVar14);
-    *(undefined4 *)(this_00 + 0x1df) = uVar6;
+    *(undefined4 *)&this_00[1].field_0x5a = uVar6;
     g_currentExceptionFrame = local_4c.previous;
     return;
   }

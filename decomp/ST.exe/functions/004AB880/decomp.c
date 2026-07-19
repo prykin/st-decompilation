@@ -15,13 +15,15 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
   ushort *puVar5;
   int iVar6;
   undefined4 uVar7;
-  uint uVar8;
+  int *piVar8;
   uint uVar9;
   uint uVar10;
+  uint uVar11;
+  undefined4 *puVar12;
   undefined4 unaff_ESI;
-  byte *pbVar11;
+  byte *pbVar13;
   void *unaff_EDI;
-  byte *pbVar12;
+  byte *pbVar14;
   InternalExceptionFrame local_58;
   uint local_14;
   STT3DSprC *local_c;
@@ -43,81 +45,81 @@ STT3DSprC::LoadSequence(STT3DSprC *this,byte param_1,int *param_2,byte *param_3,
     }
     return 0xffffffff;
   }
-  if (*(int *)(local_c + 0x18) == -1) {
+  if (local_c->field_0018 == -1) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x22);
   }
-  if (((char)param_1 < '\0') || (*(int *)(this_00 + 0x14) + -1 < (int)(char)param_1)) {
+  if (((char)param_1 < '\0') || (this_00->field_0014 + -1 < (int)(char)param_1)) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x23);
   }
   local_14 = (uint)(char)param_1;
   iVar3 = local_14 * 0x24;
   local_8 = iVar3;
-  if (*(int *)(*(int *)(this_00 + 0x20) + iVar3) != 0) {
+  if (*(int *)(this_00->field_0020 + iVar3) != 0) {
     iVar4 = UnLoadSequence(this_00,param_1);
     if (iVar4 != 0) {
       RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0x24);
     }
   }
   puVar5 = FUN_00709af0(param_2,param_4,param_3,0xffffffff,0,1,0,(undefined4 *)0x0);
-  *(ushort **)(*(int *)(this_00 + 0x20) + iVar3) = puVar5;
-  iVar4 = **(int **)(*(int *)(this_00 + 0x20) + iVar3);
+  *(ushort **)(this_00->field_0020 + iVar3) = puVar5;
+  iVar4 = **(int **)(this_00->field_0020 + iVar3);
   iVar6 = Library::DKW::LIB::FUN_006aac70(iVar4 * 4);
-  *(int *)(*(int *)(this_00 + 0x20) + 4 + iVar3) = iVar6;
+  *(int *)(this_00->field_0020 + 4 + iVar3) = iVar6;
   iVar6 = 0;
   if (0 < iVar4) {
     do {
+      piVar8 = (int *)(this_00->field_0020 + iVar3);
       iVar6 = iVar6 + 1;
-      *(undefined4 *)(((int *)(*(int *)(this_00 + 0x20) + iVar3))[1] + -4 + iVar6 * 4) =
-           *(undefined4 *)(*(int *)(*(int *)(this_00 + 0x20) + iVar3) + 0x2d + iVar6 * 4);
+      *(undefined4 *)(piVar8[1] + -4 + iVar6 * 4) = *(undefined4 *)(*piVar8 + 0x2d + iVar6 * 4);
     } while (iVar6 < iVar4);
   }
-  uVar8 = 0xffffffff;
-  pbVar11 = param_3;
-  do {
-    if (uVar8 == 0) break;
-    uVar8 = uVar8 - 1;
-    bVar1 = *pbVar11;
-    pbVar11 = pbVar11 + 1;
-  } while (bVar1 != 0);
-  iVar4 = Library::DKW::LIB::FUN_006aac70(~uVar8);
-  uVar8 = local_14;
-  *(int *)(*(int *)(this_00 + 0x20) + 8 + iVar3) = iVar4;
   uVar9 = 0xffffffff;
+  pbVar13 = param_3;
   do {
-    pbVar11 = param_3;
     if (uVar9 == 0) break;
     uVar9 = uVar9 - 1;
-    pbVar11 = param_3 + 1;
-    bVar1 = *param_3;
-    param_3 = pbVar11;
+    bVar1 = *pbVar13;
+    pbVar13 = pbVar13 + 1;
   } while (bVar1 != 0);
-  uVar9 = ~uVar9;
-  pbVar11 = pbVar11 + -uVar9;
-  pbVar12 = *(byte **)(*(int *)(this_00 + 0x20) + 8 + local_8);
-  for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *(undefined4 *)pbVar12 = *(undefined4 *)pbVar11;
-    pbVar11 = pbVar11 + 4;
-    pbVar12 = pbVar12 + 4;
+  iVar4 = Library::DKW::LIB::FUN_006aac70(~uVar9);
+  uVar9 = local_14;
+  *(int *)(this_00->field_0020 + 8 + iVar3) = iVar4;
+  uVar10 = 0xffffffff;
+  do {
+    pbVar13 = param_3;
+    if (uVar10 == 0) break;
+    uVar10 = uVar10 - 1;
+    pbVar13 = param_3 + 1;
+    bVar1 = *param_3;
+    param_3 = pbVar13;
+  } while (bVar1 != 0);
+  uVar10 = ~uVar10;
+  pbVar13 = pbVar13 + -uVar10;
+  pbVar14 = *(byte **)(this_00->field_0020 + 8 + local_8);
+  for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
+    *(undefined4 *)pbVar14 = *(undefined4 *)pbVar13;
+    pbVar13 = pbVar13 + 4;
+    pbVar14 = pbVar14 + 4;
   }
-  for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
-    *pbVar12 = *pbVar11;
-    pbVar11 = pbVar11 + 1;
-    pbVar12 = pbVar12 + 1;
+  for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
+    *pbVar14 = *pbVar13;
+    pbVar13 = pbVar13 + 1;
+    pbVar14 = pbVar14 + 1;
   }
-  *(byte *)(*(int *)(this_00 + 0x20) + 0xc + local_8) = param_4;
-  *(undefined4 *)(*(int *)(this_00 + 0x20) + 0x18 + local_8) = 0;
-  *(undefined4 *)(*(int *)(this_00 + 0x20) + 0x10 + local_8) = 0;
-  ((undefined4 *)(*(int *)(this_00 + 0x20) + local_8))[5] =
-       **(int **)(*(int *)(this_00 + 0x20) + local_8) + -1;
-  *(undefined4 *)(*(int *)(this_00 + 0x20) + 0x20 + local_8) = 0;
-  FUN_006e98e0(*(void **)(this_00 + 0x3c),*(uint *)(this_00 + 0x18),local_14,
-               **(undefined4 **)(*(int *)(this_00 + 0x20) + local_8),
-               *(int *)((int)*(undefined4 **)(*(int *)(this_00 + 0x20) + local_8) + 0x21),0);
-  puVar5 = (ushort *)(*(int *)(this_00 + 0x20) + 0xe + local_8);
+  *(byte *)(this_00->field_0020 + 0xc + local_8) = param_4;
+  *(undefined4 *)(this_00->field_0020 + 0x18 + local_8) = 0;
+  *(undefined4 *)(this_00->field_0020 + 0x10 + local_8) = 0;
+  puVar12 = (undefined4 *)(this_00->field_0020 + local_8);
+  puVar12[5] = *(int *)*puVar12 + -1;
+  *(undefined4 *)(this_00->field_0020 + 0x20 + local_8) = 0;
+  puVar12 = *(undefined4 **)(this_00->field_0020 + local_8);
+  FUN_006e98e0((void *)this_00[1].field_0018,this_00->field_0018,local_14,*puVar12,
+               *(int *)((int)puVar12 + 0x21),0);
+  puVar5 = (ushort *)(this_00->field_0020 + 0xe + local_8);
   *puVar5 = *puVar5 & 0xfe37;
-  pbVar11 = (byte *)(*(int *)(this_00 + 0x20) + 0xe + local_8);
-  *pbVar11 = *pbVar11 | 0x20;
-  *(uint *)(this_00 + 0x1c) = *(uint *)(this_00 + 0x1c) & ~(1 << ((byte)uVar8 & 0x1f));
+  pbVar13 = (byte *)(this_00->field_0020 + 0xe + local_8);
+  *pbVar13 = *pbVar13 | 0x20;
+  *(uint *)&this_00->field_0x1c = *(uint *)&this_00->field_0x1c & ~(1 << ((byte)uVar9 & 0x1f));
   g_currentExceptionFrame = local_58.previous;
   return 0;
 }

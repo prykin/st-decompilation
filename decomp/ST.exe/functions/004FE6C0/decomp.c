@@ -12,7 +12,7 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
   int iVar4;
   uint uVar5;
   int iVar6;
-  CPanelTy CVar7;
+  byte bVar7;
   int iVar8;
   uint uVar9;
   undefined4 unaff_ESI;
@@ -24,15 +24,15 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
   int local_8;
   
   if (param_1 == 0) {
-    local_8 = *(int *)(this + 0x194);
-    CVar7 = this[0xc6d];
+    local_8 = this->field_0194;
+    bVar7 = this->field_0C6D;
   }
   else {
-    local_8 = *(int *)(this + 0x18c);
-    CVar7 = this[0xb7f];
+    local_8 = this->field_018C;
+    bVar7 = this->field_0B7F;
   }
-  local_c = CONCAT31(local_c._1_3_,CVar7);
-  if ((byte)CVar7 < 0x65) {
+  local_c = CONCAT31(local_c._1_3_,bVar7);
+  if (bVar7 < 0x65) {
     local_54.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_54;
     local_10 = this;
@@ -51,38 +51,38 @@ void __thiscall CPanelTy::PaintEnergy(CPanelTy *this,int param_1)
       return;
     }
     if (param_1 == 0) {
-      iVar3 = FUN_0070b3a0(*(int *)(local_10 + 0x2da),2);
+      iVar3 = FUN_0070b3a0(*(int *)&local_10->field_0x2da,2);
       iVar6 = local_8;
       FUN_006b5440(local_8,0,199,6,iVar3,0,0xff);
-      iVar4 = FUN_0070b3a0(*(int *)(pCVar2 + 0x2da),3);
+      iVar4 = FUN_0070b3a0(*(int *)&pCVar2->field_0x2da,3);
       iVar3 = (int)((local_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
       Library::DKW::WGR::FUN_006b5110
                 (iVar6,0,199,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
-      uVar5 = *(uint *)(pCVar2 + 0x15c);
+      uVar5 = *(uint *)&pCVar2->field_0x15c;
       if ((int)uVar5 < 0) {
         g_currentExceptionFrame = local_54.previous;
         return;
       }
-      uVar10 = *(uint *)(pCVar2 + 0xa8);
-      uVar9 = *(uint *)(pCVar2 + 0x50);
+      uVar10 = *(uint *)&pCVar2->field_0xa8;
+      uVar9 = *(uint *)&pCVar2->field_0x50;
     }
     else {
-      iVar3 = FUN_0070b3a0(*(int *)(local_10 + 0x2da),0);
+      iVar3 = FUN_0070b3a0(*(int *)&local_10->field_0x2da,0);
       iVar6 = local_8;
       FUN_006b5440(local_8,0,2,6,iVar3,0,0xff);
-      iVar4 = FUN_0070b3a0(*(int *)(pCVar2 + 0x2da),1);
+      iVar4 = FUN_0070b3a0(*(int *)&pCVar2->field_0x2da,1);
       iVar3 = (int)((local_c & 0xff) * *(int *)(iVar4 + 8)) / 100;
       iVar8 = *(int *)(iVar4 + 8) - iVar3;
       Library::DKW::WGR::FUN_006b5110
                 (iVar6,0,2,iVar8 + 6,iVar4,0,0,iVar8,*(int *)(iVar4 + 4),iVar3,0xff);
-      uVar5 = *(uint *)(pCVar2 + 0x154);
+      uVar5 = *(uint *)&pCVar2->field_0x154;
       if ((int)uVar5 < 0) {
         g_currentExceptionFrame = local_54.previous;
         return;
       }
-      uVar10 = *(uint *)(pCVar2 + 0xa0);
-      uVar9 = *(uint *)(pCVar2 + 0x48);
+      uVar10 = *(uint *)&pCVar2->field_0xa0;
+      uVar9 = *(uint *)&pCVar2->field_0x48;
     }
     Library::DKW::DDX::FUN_006b3640(DAT_008075a8,uVar5,0xffffffff,uVar9,uVar10);
     g_currentExceptionFrame = local_54.previous;

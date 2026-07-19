@@ -13,8 +13,8 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,undefin
   undefined4 uVar5;
   int *piVar6;
   
-  if (*(int *)(this + 0x18) != -1) {
-    if ((param_1 < '\0') || (*(int *)(this + 0x14) + -1 < (int)param_1)) {
+  if (this->field_0018 != -1) {
+    if ((param_1 < '\0') || (this->field_0014 + -1 < (int)param_1)) {
       iVar4 = ReportDebugMessage(s_E____titans_wlad_Tspr3d_cpp_007ac638,0x93,0,0,&DAT_007a4ccc,
                                  s_STT3DSprC__SetCurFase_wrong_leve_007ac67c);
       if (iVar4 != 0) {
@@ -25,14 +25,14 @@ undefined4 __thiscall STT3DSprC::SetCurFase(STT3DSprC *this,char param_1,undefin
     }
     else {
       iVar4 = param_1 * 0x24;
-      piVar6 = (int *)(*(int *)(this + 0x20) + iVar4);
+      piVar6 = (int *)(this->field_0020 + iVar4);
       piVar1 = (int *)*piVar6;
       if (piVar1 != (int *)0x0) {
         iVar2 = piVar6[6];
         if ((-1 < iVar2) && (iVar2 < *piVar1)) {
           *(undefined4 *)(piVar6[1] + iVar2 * 4) = *(undefined4 *)((int)piVar1 + iVar2 * 4 + 0x31);
         }
-        *(undefined4 *)(iVar4 + 0x18 + *(int *)(this + 0x20)) = param_2;
+        *(undefined4 *)(iVar4 + 0x18 + this->field_0020) = param_2;
         return 0;
       }
     }

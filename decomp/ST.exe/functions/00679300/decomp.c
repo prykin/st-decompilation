@@ -42,7 +42,7 @@ int __thiscall AiPlrClassTy::CloseTactByTitle(AiPlrClassTy *this,byte *param_1)
     g_currentExceptionFrame = local_80.previous;
     return 0;
   }
-  iVar3 = *(int *)(pAVar2 + 0x695);
+  iVar3 = pAVar2->field_0695;
   if ((iVar3 != 0) && ((int)uVar4 < (int)*(uint *)(iVar3 + 0xc))) {
     if (uVar4 < *(uint *)(iVar3 + 0xc)) {
       puVar5 = (undefined4 *)(*(int *)(iVar3 + 8) * uVar4 + *(int *)(iVar3 + 0x1c));
@@ -67,8 +67,8 @@ LAB_00679378:
     if (&stack0x00000000 != (undefined1 *)0x3c) {
       AiTactClassTy::GetAiMess(this_00,local_3c);
     }
-    thunk_FUN_0054cf70(DAT_00802a38,*(uint *)(this_00 + 8));
-    FUN_006b0c70(*(int *)(local_8 + 0x695),uVar4);
+    thunk_FUN_0054cf70(DAT_00802a38,*(uint *)&this_00->field_0x8);
+    FUN_006b0c70(local_8->field_0695,uVar4);
   }
   g_currentExceptionFrame = local_80.previous;
   return 0;

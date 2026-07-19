@@ -1,8 +1,12 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004B1120_param_2Enum. Cases:
+   CASE_38=56;CASE_39=57;CASE_4F=79;CASE_5E=94;CASE_61=97 */
 
 int __cdecl
-FUN_004b1120(int param_1,int param_2,int *param_3,int *param_4,int *param_5,int param_6,int param_7)
+FUN_004b1120(int param_1,Global_sub_004B1120_param_2Enum param_2,int *param_3,int *param_4,
+            int *param_5,int param_6,int param_7)
 
 {
   short sVar1;
@@ -40,7 +44,7 @@ FUN_004b1120(int param_1,int param_2,int *param_3,int *param_4,int *param_5,int 
           do {
             if (local_18 != (int *)0x0) {
               switch(param_2) {
-              case 0x38:
+              case CASE_38:
                 iVar2 = (**(code **)(*local_18 + 0x2c))();
                 if (iVar2 == 0xdc) {
 LAB_004b1226:
@@ -59,16 +63,16 @@ LAB_004b1226:
                   }
                 }
                 break;
-              case 0x39:
-              case 0x5e:
+              case CASE_39:
+              case CASE_5E:
                 iVar2 = (**(code **)(*local_18 + 0x2c))();
                 if (iVar2 == 0xdd) goto LAB_004b1226;
                 break;
-              case 0x4f:
+              case CASE_4F:
                 iVar2 = (**(code **)(*local_18 + 0x2c))();
                 if (iVar2 == 0xde) goto LAB_004b1226;
                 break;
-              case 0x61:
+              case CASE_61:
                 iVar2 = (**(code **)(*local_18 + 0x2c))();
                 if (iVar2 == 0xe0) goto LAB_004b1226;
               }

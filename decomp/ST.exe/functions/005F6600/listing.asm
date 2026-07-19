@@ -1,4 +1,4 @@
-FUN_005f6600:
+STColl3C::STColl3C:
 005F6600  56                        PUSH ESI
 005F6601  57                        PUSH EDI
 005F6602  8B F1                     MOV ESI,ECX

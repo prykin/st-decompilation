@@ -22,13 +22,13 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
   int local_8;
   
   local_c = this;
-  local_10 = FUN_006e51b0(*(int *)(this + 0x10));
+  local_10 = FUN_006e51b0(this->field_0010);
   local_8 = 0;
-  if (*(uint *)(this + 0x1c) == 0xffffffff) {
+  if (this->field_001C == 0xffffffff) {
     iVar5 = 0;
   }
   else {
-    bVar4 = FUN_006b33f0(*(int *)(this + 0x60),*(uint *)(this + 0x1c));
+    bVar4 = FUN_006b33f0(this->field_0060,this->field_001C);
     iVar5 = CONCAT31(extraout_var,bVar4);
   }
   if (iVar5 != 0) {
@@ -38,54 +38,55 @@ void __thiscall CursorClassTy::DrawSprite(CursorClassTy *this,int param_1,int pa
     pCVar3 = local_c;
     uVar2 = local_10;
     if (iVar5 == 0) {
-      *(undefined4 *)(local_c + 0x20) = 0xfffffffe;
+      *(undefined4 *)&local_c->field_0x20 = 0xfffffffe;
       if (param_1 != -1) {
-        *(int *)(local_c + 0x34) = param_1;
+        *(int *)&local_c->field_0x34 = param_1;
         local_8 = 1;
       }
       if (param_2 != -1) {
-        *(int *)(local_c + 0x38) = param_2;
+        *(int *)&local_c->field_0x38 = param_2;
         local_8 = 1;
       }
-      if ((uint)(*(int *)(local_c + 0x58) + *(int *)(local_c + 0x5c)) <= local_10) {
-        *(undefined4 *)(local_c + 0x20) = 0xffffffff;
-        *(uint *)(local_c + 0x5c) = local_10;
+      if ((uint)(*(int *)&local_c->field_0x58 + *(int *)&local_c->field_0x5c) <= local_10) {
+        *(undefined4 *)&local_c->field_0x20 = 0xffffffff;
+        *(uint *)&local_c->field_0x5c = local_10;
         local_8 = 1;
       }
       if (local_8 != 0) {
-        if (*(int *)(local_c + 0xa9) == 0) {
-          FUN_006b8bc0(*(int **)(local_c + 0xad),*(int *)(local_c + 0x34),*(int *)(local_c + 0x38),
-                       *(int *)(local_c + 0x20));
+        if (*(int *)&local_c[1].field_0x45 == 0) {
+          FUN_006b8bc0(*(int **)&local_c[1].field_0x49,*(int *)&local_c->field_0x34,
+                       *(int *)&local_c->field_0x38,*(int *)&local_c->field_0x20);
         }
         else {
           Library::DKW::DDX::FUN_006b3640
-                    ((int *)DAT_008075a8,*(uint *)(local_c + 0x1c),*(uint *)(local_c + 0x20),
-                     *(int *)(local_c + 0xb9) + *(int *)(local_c + 0x34),
-                     *(int *)(local_c + 0xbd) + *(int *)(local_c + 0x38));
+                    ((int *)DAT_008075a8,local_c->field_001C,*(uint *)&local_c->field_0x20,
+                     *(int *)&local_c[1].field_0x55 + *(int *)&local_c->field_0x34,
+                     *(int *)&local_c[1].field_0x59 + *(int *)&local_c->field_0x38);
         }
       }
-      this_00 = *(SpriteClassTy **)(pCVar3 + 0x4eb);
+      this_00 = *(SpriteClassTy **)&pCVar3[0xc].field_0x3b;
       if ((this_00 != (SpriteClassTy *)0x0) && (DAT_00807598 != (void *)0x0)) {
-        if (*(int *)(this_00 + 0xc) + -1 <= *(int *)(this_00 + 8)) {
+        if (this_00->field_000C + -1 <= (int)this_00->field_0008) {
           SpriteClassTy::CloseSprite(this_00);
-          Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pCVar3 + 0x4eb));
-          *(undefined4 *)(pCVar3 + 0x4eb) = 0;
+          Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pCVar3[0xc].field_0x3b);
+          *(undefined4 *)&pCVar3[0xc].field_0x3b = 0;
           g_currentExceptionFrame = local_54.previous;
           return;
         }
-        if ((uint)(*(int *)(this_00 + 0x40) + *(int *)(this_00 + 0x44)) <= uVar2) {
-          *(uint *)(this_00 + 0x44) = uVar2;
-          *(int *)(this_00 + 8) = *(int *)(this_00 + 8) + 1;
-          FUN_006e2970(DAT_00807598,*(undefined4 *)(pCVar3 + 0x4ef),*(undefined4 *)(pCVar3 + 0x4f3),
-                       *(undefined4 *)(pCVar3 + 0x4f7),(int *)(*(int *)(pCVar3 + 0x4eb) + 0x1c),
-                       (int *)(*(int *)(pCVar3 + 0x4eb) + 0x20));
-          *(int *)(*(int *)(pCVar3 + 0x4eb) + 0x1c) =
-               *(int *)(*(int *)(pCVar3 + 0x4eb) + 0x1c) -
-               *(int *)(*(int *)(pCVar3 + 0x4e7) + 9) / 2;
-          *(int *)(*(int *)(pCVar3 + 0x4eb) + 0x20) =
-               *(int *)(*(int *)(pCVar3 + 0x4eb) + 0x20) -
-               *(int *)(*(int *)(pCVar3 + 0x4e7) + 0xd) / 2;
-          iVar5 = *(int *)(pCVar3 + 0x4eb);
+        if ((uint)(this_00->field_0040 + this_00->field_0044) <= uVar2) {
+          this_00->field_0044 = uVar2;
+          this_00->field_0008 = this_00->field_0008 + 1;
+          FUN_006e2970(DAT_00807598,*(undefined4 *)&pCVar3[0xc].field_0x3f,
+                       *(undefined4 *)&pCVar3[0xc].field_0x43,*(undefined4 *)&pCVar3[0xc].field_0x47
+                       ,(int *)(*(int *)&pCVar3[0xc].field_0x3b + 0x1c),
+                       (int *)(*(int *)&pCVar3[0xc].field_0x3b + 0x20));
+          *(int *)(*(int *)&pCVar3[0xc].field_0x3b + 0x1c) =
+               *(int *)(*(int *)&pCVar3[0xc].field_0x3b + 0x1c) -
+               *(int *)(*(int *)&pCVar3[0xc].field_0x37 + 9) / 2;
+          *(int *)(*(int *)&pCVar3[0xc].field_0x3b + 0x20) =
+               *(int *)(*(int *)&pCVar3[0xc].field_0x3b + 0x20) -
+               *(int *)(*(int *)&pCVar3[0xc].field_0x37 + 0xd) / 2;
+          iVar5 = *(int *)&pCVar3[0xc].field_0x3b;
           Library::DKW::DDX::FUN_006b3730
                     (DAT_008075a8,*(uint *)(iVar5 + 4),*(uint *)(iVar5 + 8),*(uint *)(iVar5 + 0x1c),
                      *(uint *)(iVar5 + 0x20));

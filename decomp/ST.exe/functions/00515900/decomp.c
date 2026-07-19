@@ -17,7 +17,7 @@ HelpPanelTy::DrawWeapon
   int iVar7;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined2 uVar8;
+  Global_sub_005259B0_param_1Enum GVar8;
   HINSTANCE pHVar9;
   InternalExceptionFrame local_6c;
   int local_28;
@@ -48,9 +48,9 @@ HelpPanelTy::DrawWeapon
     return 0;
   }
   if (param_3 != 0) {
-    uVar8 = (undefined2)param_3;
-    uVar3 = thunk_FUN_005259b0(uVar8,0,'\x01');
-    pbVar4 = (byte *)FUN_0070b3a0(*(int *)(local_8 + 0x244),uVar3);
+    GVar8 = (Global_sub_005259B0_param_1Enum)param_3;
+    uVar3 = thunk_FUN_005259b0(GVar8,0,'\x01');
+    pbVar4 = (byte *)FUN_0070b3a0(*(int *)&local_8->field_0x244,uVar3);
     if (pbVar4 != (byte *)0x0) {
       if (*(int *)(pbVar4 + 8) + -0xf < 1) {
         iVar2 = 0;
@@ -60,23 +60,23 @@ HelpPanelTy::DrawWeapon
       }
       iVar7 = *param_2;
       *param_2 = iVar7 + iVar2;
-      ccFntTy::SetSurf(*(ccFntTy **)(local_8 + 0x1e0),*(int *)(local_8 + 0x218),0,param_1,
+      ccFntTy::SetSurf(*(ccFntTy **)&local_8->field_0x1e0,local_8->field_0218,0,param_1,
                        iVar7 + iVar2,0x19c - param_1,0xf);
       if (param_4 == 0) {
         pHVar9 = DAT_00807618;
-        UVar5 = thunk_FUN_00524fe0(uVar8);
+        UVar5 = thunk_FUN_00524fe0(GVar8);
         uVar6 = FUN_006b0140(UVar5,pHVar9);
         wsprintfA((LPSTR)&DAT_0080f33a,&DAT_007a4ccc,uVar6);
       }
       else {
         pHVar9 = DAT_00807618;
-        UVar5 = thunk_FUN_00524fe0(uVar8);
+        UVar5 = thunk_FUN_00524fe0(GVar8);
         uVar6 = FUN_006b0140(UVar5,pHVar9);
         wsprintfA((LPSTR)&DAT_0080f33a,s__s___d__007c3bc0,uVar6,param_4);
       }
-      ccFntTy::WrStr(*(ccFntTy **)(local_8 + 0x1e0),&DAT_0080f33a,1,-1,
+      ccFntTy::WrStr(*(ccFntTy **)&local_8->field_0x1e0,&DAT_0080f33a,1,-1,
                      (DAT_0080874e != '\x03') - 1 & 5);
-      thunk_FUN_00540760(*(undefined4 **)(local_8 + 0x218),(param_1 - *(int *)(pbVar4 + 4)) + -5,
+      thunk_FUN_00540760((undefined4 *)local_8->field_0218,(param_1 - *(int *)(pbVar4 + 4)) + -5,
                          (0xf - *(int *)(pbVar4 + 8)) / 2 + *param_2,'\x06',pbVar4);
       local_28 = (param_1 - *(int *)(pbVar4 + 4)) + -5;
       local_20 = *(undefined4 *)(pbVar4 + 4);
@@ -85,7 +85,7 @@ HelpPanelTy::DrawWeapon
       local_17 = param_3;
       local_13 = param_5 & 0xff;
       local_18 = 4;
-      Library::DKW::TBL::FUN_006ae1c0(*(uint **)(local_8 + 0x1d7),&local_28);
+      Library::DKW::TBL::FUN_006ae1c0(*(uint **)&local_8->field_0x1d7,&local_28);
       iVar2 = *(int *)(pbVar4 + 8);
       if (iVar2 < 0x10) {
         iVar2 = 0xf;

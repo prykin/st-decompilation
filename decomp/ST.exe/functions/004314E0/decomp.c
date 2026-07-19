@@ -244,7 +244,7 @@ LAB_004318a9:
     FUN_006acc70((int)local_34,0,&local_8);
     local_34[3] = 0;
     Library::DKW::TBL::FUN_006ae1c0(local_34,&local_8);
-    uVar3 = GetObjPtr(this,0,local_8,3);
+    uVar3 = GetObjPtr(this,0,local_8,CASE_3);
     if (uVar3 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xa95);
@@ -350,7 +350,7 @@ LAB_00431a3f:
     FUN_006acc70((int)local_28,0,&local_8);
     local_28[3] = 0;
     Library::DKW::TBL::FUN_006ae1c0(local_28,&local_8);
-    uVar3 = GetObjPtr(this,0xffffffff,local_8,2);
+    uVar3 = GetObjPtr(this,0xffffffff,local_8,CASE_2);
     if (uVar3 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xaeb);
@@ -479,7 +479,7 @@ LAB_00431d42:
     FUN_006acc70((int)local_30,0,&local_8);
     local_30[3] = 0;
     Library::DKW::TBL::FUN_006ae1c0(local_30,&local_8);
-    uVar3 = GetObjPtr(this,0xffffffff,local_8,5);
+    uVar3 = GetObjPtr(this,0xffffffff,local_8,CASE_5);
     if (uVar3 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xb47);
@@ -729,7 +729,7 @@ LAB_00432582:
     FUN_006acc70((int)local_20,0,&local_8);
     local_20[3] = 0;
     Library::DKW::TBL::FUN_006ae1c0(local_20,&local_8);
-    uVar3 = GetObjPtr(this,0xffffffff,local_8,4);
+    uVar3 = GetObjPtr(this,0xffffffff,local_8,CASE_4);
     if (uVar3 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xc08);
@@ -858,7 +858,7 @@ LAB_00432706:
     FUN_006acc70((int)local_38,0,&local_8);
     local_38[3] = 0;
     Library::DKW::TBL::FUN_006ae1c0(local_38,&local_8);
-    uVar3 = GetObjPtr(this,0xffffffff,local_8,6);
+    uVar3 = GetObjPtr(this,0xffffffff,local_8,CASE_6);
     if (uVar3 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xc64);
@@ -1085,7 +1085,7 @@ LAB_00432eae:
     FUN_006acc70((int)local_2c,0,&local_8);
     local_2c[3] = 0;
     Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_8);
-    uVar3 = GetObjPtr(this,0,local_8,3);
+    uVar3 = GetObjPtr(this,0,local_8,CASE_3);
     if (uVar3 == 0) {
       RaiseInternalException
                 (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_allpl_cpp_007a6004,0xd1b);

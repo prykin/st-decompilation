@@ -28,7 +28,7 @@ STAllPlayersC::UnRegisterArtefact(STAllPlayersC *this,uint param_1,uint param_2)
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (errorCode == 0) {
-    uVar2 = GetObjPtr(local_c,0xffffffff,param_1,2);
+    uVar2 = GetObjPtr(local_c,0xffffffff,param_1,CASE_2);
     uVar4 = extraout_ECX;
     if (uVar2 != param_2) {
       RaiseInternalException

@@ -25,12 +25,12 @@ UPanelTy::PaintLBut(UPanelTy *this,int param_1,byte param_2,char *param_3,char *
   
   piVar1 = *(int **)(param_1 + 0x18);
   local_8 = (ushort *)0x0;
-  local_10 = *piVar1 - *(int *)(this + 0x3c);
-  if (*(int *)(this + 0x5c) == 0) {
-    local_c = piVar1[1] + *(int *)(this + 0x48);
+  local_10 = *piVar1 - this->field_003C;
+  if (this->field_005C == 0) {
+    local_c = piVar1[1] + this->field_0048;
   }
   else {
-    local_c = piVar1[1] - *(int *)(this + 0x44);
+    local_c = piVar1[1] - this->field_0044;
   }
   if (param_5 != (undefined *)0x0) {
     local_58.previous = g_currentExceptionFrame;
@@ -43,17 +43,18 @@ UPanelTy::PaintLBut(UPanelTy *this,int param_1,byte param_2,char *param_3,char *
       local_8 = cMf32::RecGet(DAT_00806790,param_2,pCVar6,(int *)0x0,1);
       iVar4 = local_c;
       pUVar3 = local_14;
-      thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),local_10,local_c,param_2,(byte *)local_8)
-      ;
+      thunk_FUN_00540760(*(undefined4 **)&local_14[1].field_0x8,local_10,local_c,param_2,
+                         (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (*(int *)(param_1 + 0x14) == 3) {
         local_8 = cMf32::RecGet(DAT_00806790,6,param_4,(int *)0x0,1);
-        thunk_FUN_00540760(*(undefined4 **)(pUVar3 + 0x68),local_10,iVar4,'\x06',(byte *)local_8);
+        thunk_FUN_00540760(*(undefined4 **)&pUVar3[1].field_0x8,local_10,iVar4,'\x06',
+                           (byte *)local_8);
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pUVar3 + 0x60),0xffffffff,*(uint *)(pUVar3 + 0x3c),
-                 *(uint *)(pUVar3 + 0x44));
+                (DAT_008075a8,*(uint *)(pUVar3 + 1),0xffffffff,pUVar3->field_003C,pUVar3->field_0044
+                );
       g_currentExceptionFrame = local_58.previous;
       return;
     }

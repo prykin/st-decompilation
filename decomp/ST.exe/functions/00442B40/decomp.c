@@ -35,7 +35,7 @@ undefined4 STAllPlayersC::_SubMDObject(undefined4 *param_1,uint param_2)
   local_2c[1] = 0x39;
   local_2c[2] = 0x4f;
   local_2c[3] = 0x5e;
-  this = (int *)GetObjPtr(in_ECX,(uint)param_1,param_2,1);
+  this = (int *)GetObjPtr(in_ECX,(uint)param_1,param_2,CASE_1);
   local_14 = this;
   uVar4 = (**(code **)(*this + 0x2c))();
   local_c = 0;

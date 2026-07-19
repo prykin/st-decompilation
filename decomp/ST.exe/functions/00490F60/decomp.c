@@ -22,7 +22,7 @@ void __fastcall FUN_00490f60(void *param_1)
                    CONCAT31((int3)((uint)extraout_EDX >> 8),*(undefined1 *)((int)param_1 + 0x24)),
                    0xfffe,(int)puVar1,(undefined2 *)0x0);
         FUN_006ae110((byte *)puVar1);
-        STBoatC::CmdToObj(param_1,0x14,&local_c);
+        STBoatC::CmdToObj(param_1,CASE_14,&local_c);
       }
       iVar2 = *(int *)((int)param_1 + 0x7c2);
     }
@@ -31,7 +31,7 @@ void __fastcall FUN_00490f60(void *param_1)
   }
   local_8 = *(undefined2 *)((int)param_1 + 0x30);
   local_c = *(undefined4 *)(DAT_00802a38 + 0xe4);
-  STBoatC::CmdToObj(param_1,0x14,&local_c);
+  STBoatC::CmdToObj(param_1,CASE_14,&local_c);
   return;
 }
 

@@ -17,7 +17,7 @@ STAllPlayersC::AddObjToTmp
   undefined4 unaff_ESI;
   int *piVar7;
   void *unaff_EDI;
-  undefined1 uVar8;
+  Global_sub_0043FC50_param_1Enum GVar8;
   InternalExceptionFrame local_5c;
   undefined4 local_18;
   uint local_14;
@@ -65,8 +65,8 @@ STAllPlayersC::AddObjToTmp
   if (param_2 == 0) {
     local_10 = (int)&DAT_007f4f83 + param_1 * 0xa62;
     if (param_3 != 0) goto LAB_0042bc00;
-    thunk_FUN_0043fc50(1,0);
-    uVar8 = 2;
+    thunk_FUN_0043fc50(CASE_1,0);
+    GVar8 = CASE_2;
   }
   else {
     if (param_2 != 1) {
@@ -76,10 +76,10 @@ STAllPlayersC::AddObjToTmp
     }
     local_10 = (int)&DAT_007f4fd3 + param_1 * 0xa62;
     if (param_3 != 0) goto LAB_0042bc00;
-    thunk_FUN_0043fc50(4,0);
-    uVar8 = 5;
+    thunk_FUN_0043fc50(CASE_4,0);
+    GVar8 = CASE_5;
   }
-  thunk_FUN_0043fc50(uVar8,param_3);
+  thunk_FUN_0043fc50(GVar8,param_3);
 LAB_0042bc00:
   piVar7 = (int *)(param_3 * 0x10 + local_10);
   if (*piVar7 == 0) {
@@ -120,7 +120,7 @@ LAB_0042bc00:
   }
   Library::DKW::TBL::FUN_006ae140(puVar4,local_14,&param_5);
   *(short *)((int)piVar7 + 0xe) = *(short *)((int)piVar7 + 0xe) + 1;
-  piVar7 = (int *)GetObjPtr(local_c,param_4,param_5,1);
+  piVar7 = (int *)GetObjPtr(local_c,param_4,param_5,CASE_1);
   (**(code **)(*piVar7 + 0xe8))(1);
   g_currentExceptionFrame = local_5c.previous;
   return local_18;

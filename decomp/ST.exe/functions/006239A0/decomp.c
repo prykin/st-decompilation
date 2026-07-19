@@ -26,8 +26,8 @@ undefined4 __fastcall FUN_006239a0(int *param_1)
   case 0:
     return 1;
   case 1:
-    iVar2 = thunk_FUN_00624920(param_1,*(undefined4 *)((int)param_1 + 0x2ee),&local_c,&local_10,
-                               &local_14);
+    iVar2 = thunk_FUN_00624920(param_1,*(Global_sub_00624920_param_1Enum *)((int)param_1 + 0x2ee),
+                               &local_c,&local_10,&local_14);
     if (0 < iVar2) {
       *(undefined2 *)(param_1 + 0x15) = *(undefined2 *)((int)param_1 + 0x2c2);
       *(undefined2 *)((int)param_1 + 0x56) = *(undefined2 *)((int)param_1 + 0x2c6);
@@ -161,7 +161,8 @@ LAB_00623d08:
       lVar5 = Library::MSVCRT::__ftol();
       iVar4 = (int)lVar5;
       lVar5 = Library::MSVCRT::__ftol();
-      thunk_FUN_00558c00(this,*(undefined4 *)((int)this + 0x10c),(int)lVar5,iVar4,piVar6,piVar7);
+      thunk_FUN_00558c00(this,*(Global_sub_00558C00_param_1Enum *)((int)this + 0x10c),(int)lVar5,
+                         iVar4,piVar6,piVar7);
       if ((((-1 < iVar2) &&
            (((iVar2 < 5 && (-1 < local_18)) && (local_18 < *(int *)((int)this + 0x30))))) &&
           (((local_1c = (&DAT_0079aed0)[iVar2] + local_1c, -1 < local_1c &&

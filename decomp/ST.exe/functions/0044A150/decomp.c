@@ -28,7 +28,7 @@ STAllPlayersC::UnRegisterMine(STAllPlayersC *this,uint param_1,uint param_2,uint
   errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
   if (errorCode == 0) {
-    uVar2 = GetObjPtr(local_c,param_1,param_2,3);
+    uVar2 = GetObjPtr(local_c,param_1,param_2,CASE_3);
     uVar4 = extraout_EDX;
     if (uVar2 != param_3) {
       RaiseInternalException

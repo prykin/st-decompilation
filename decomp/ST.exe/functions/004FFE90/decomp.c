@@ -6,37 +6,40 @@
 void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
 
 {
-  CPanelTy CVar1;
-  code *pcVar2;
-  uint uVar3;
+  undefined1 *puVar1;
+  char cVar2;
+  code *pcVar3;
+  uint uVar4;
   CPanelTy *this_00;
-  byte bVar4;
-  int iVar5;
+  byte bVar5;
   int iVar6;
+  int iVar7;
   undefined4 unaff_ESI;
-  CPanelTy *pCVar7;
+  undefined4 *puVar8;
+  byte *pbVar9;
+  char *pcVar10;
   void *unaff_EDI;
-  CPanelTy *pCVar8;
-  CPanelTy *pCVar9;
-  bool bVar10;
+  byte *pbVar11;
+  char *pcVar12;
+  bool bVar13;
   InternalExceptionFrame local_88;
-  CPanelTy local_44;
-  CPanelTy local_43;
-  CPanelTy local_42;
+  char local_44;
+  char local_43;
+  char local_42;
   int local_41;
-  CPanelTy local_3d;
+  char local_3d;
   int local_3c;
-  CPanelTy local_38 [15];
-  CPanelTy local_29;
-  CPanelTy local_28;
-  CPanelTy local_27;
+  byte local_38 [15];
+  char local_29;
+  char local_28;
+  char local_27;
   short local_26;
   short local_24;
   short local_22;
   short local_20;
   short local_1e;
   short local_1c;
-  CPanelTy local_1a [14];
+  char local_1a [14];
   CPanelTy *local_c;
   byte local_8;
   undefined3 uStack_7;
@@ -44,37 +47,37 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
   local_88.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_88;
   local_c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  iVar6 = Library::MSVCRT::__setjmp3(local_88.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_c;
-  if (iVar5 != 0) {
+  if (iVar6 != 0) {
     g_currentExceptionFrame = local_88.previous;
-    iVar6 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2,0,iVar5,&DAT_007a4ccc
+    iVar7 = ReportDebugMessage(s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2,0,iVar6,&DAT_007a4ccc
                                ,s_CPanelTy__Update5Panel_007c24b8);
-    if (iVar6 != 0) {
-      pcVar2 = (code *)swi(3);
-      (*pcVar2)();
+    if (iVar7 != 0) {
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
-    RaiseInternalException(iVar5,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2);
+    RaiseInternalException(iVar6,0,s_E____titans_Andrey_cpanel1_cpp_007c23cc,0x1c2);
     return;
   }
-  pCVar7 = local_c + 0xc51;
-  pCVar9 = pCVar7;
-  pCVar8 = &local_44;
-  for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(int *)pCVar8 = *(int *)pCVar9;
-    pCVar9 = pCVar9 + 4;
-    pCVar8 = pCVar8 + 4;
+  puVar1 = &local_c->field_0C51;
+  puVar8 = (undefined4 *)puVar1;
+  pcVar10 = &local_44;
+  for (iVar6 = 0xd; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *(undefined4 *)pcVar10 = *puVar8;
+    puVar8 = puVar8 + 1;
+    pcVar10 = pcVar10 + 4;
   }
-  *(undefined2 *)pCVar8 = *(undefined2 *)pCVar9;
-  pCVar9 = pCVar7;
-  for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *(int *)pCVar9 = 0;
-    pCVar9 = pCVar9 + 4;
+  *(undefined2 *)pcVar10 = *(undefined2 *)puVar8;
+  puVar8 = (undefined4 *)puVar1;
+  for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
+    *puVar8 = 0;
+    puVar8 = puVar8 + 1;
   }
-  *(undefined2 *)pCVar9 = 0;
-  STAllPlayersC::GetPanelInfo(DAT_007fa174,5,(int *)pCVar7);
-  if (local_44 != this_00[0xc51]) {
+  *(undefined2 *)puVar8 = 0;
+  STAllPlayersC::GetPanelInfo(DAT_007fa174,5,(int *)puVar1);
+  if (local_44 != this_00->field_0C51) {
     if (DAT_008016e8 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(DAT_008016e8,'\0');
     }
@@ -95,7 +98,7 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
     g_currentExceptionFrame = local_88.previous;
     return;
   }
-  if (this_00[0xc6e] != local_27) {
+  if (this_00->field_0C6E != local_27) {
     if (DAT_008016e8 != (ProdPanelTy *)0x0) {
       ProdPanelTy::SetPanel(DAT_008016e8,'\0');
     }
@@ -112,10 +115,10 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       ProdPanelTy::SetPanel(DAT_00801680,'\0');
     }
   }
-  CVar1 = this_00[0xc51];
-  if (((CVar1 == (CPanelTy)0x1) || (CVar1 == (CPanelTy)0x4)) || (CVar1 == (CPanelTy)0x3)) {
-    if (((local_3c != *(int *)(this_00 + 0xc59)) || (local_43 != this_00[0xc52])) ||
-       (local_42 != this_00[0xc53])) {
+  cVar2 = this_00->field_0C51;
+  if (((cVar2 == '\x01') || (cVar2 == '\x04')) || (cVar2 == '\x03')) {
+    if (((local_3c != *(int *)&this_00->field_0xc59) || (local_43 != this_00->field_0xc52)) ||
+       (local_42 != this_00->field_0C53)) {
       if (DAT_008016e8 != (ProdPanelTy *)0x0) {
         ProdPanelTy::SetPanel(DAT_008016e8,'\0');
       }
@@ -133,101 +136,106 @@ void __thiscall CPanelTy::Update5Panel(CPanelTy *this)
       }
       SwitchTV(this_00,0);
     }
-    if ((local_41 != *(int *)(this_00 + 0xc54)) || (local_3d != this_00[0xc58])) {
+    if ((local_41 != *(int *)&this_00->field_0xc54) || (local_3d != this_00->field_0xc58)) {
       Library::DKW::WGR::FUN_006b55f0
-                (*(undefined4 **)(this_00 + 0x19c),0,1,0,*(int *)(this_00 + 0xb47),0,1,0,0x4e,0x20);
+                ((undefined4 *)this_00->field_019C,0,1,0,*(int *)&this_00->field_0xb47,0,1,0,0x4e,
+                 0x20);
       PaintName(this_00,0);
-      if (-1 < (int)*(uint *)(this_00 + 0x164)) {
+      if (-1 < (int)*(uint *)&this_00->field_0x164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
-                   *(uint *)(this_00 + 0xb0));
+                  (DAT_008075a8,*(uint *)&this_00->field_0x164,0xffffffff,this_00->field_0058,
+                   this_00->field_00B0);
       }
     }
-    pCVar9 = this_00 + 0xc5d;
-    pCVar7 = local_38;
+    pbVar11 = &this_00->field_0xc5d;
+    pbVar9 = local_38;
     do {
-      CVar1 = *pCVar7;
-      bVar10 = (byte)CVar1 < (byte)*pCVar9;
-      if (CVar1 != *pCVar9) {
+      bVar5 = *pbVar9;
+      bVar13 = bVar5 < *pbVar11;
+      if (bVar5 != *pbVar11) {
 LAB_00500121:
-        iVar5 = (1 - (uint)bVar10) - (uint)(bVar10 != 0);
+        iVar6 = (1 - (uint)bVar13) - (uint)(bVar13 != 0);
         goto LAB_00500126;
       }
-      if (CVar1 == (CPanelTy)0x0) break;
-      CVar1 = pCVar7[1];
-      bVar10 = (byte)CVar1 < (byte)pCVar9[1];
-      if (CVar1 != pCVar9[1]) goto LAB_00500121;
-      pCVar7 = pCVar7 + 2;
-      pCVar9 = pCVar9 + 2;
-    } while (CVar1 != (CPanelTy)0x0);
-    iVar5 = 0;
+      if (bVar5 == 0) break;
+      bVar5 = pbVar9[1];
+      bVar13 = bVar5 < pbVar11[1];
+      if (bVar5 != pbVar11[1]) goto LAB_00500121;
+      pbVar9 = pbVar9 + 2;
+      pbVar11 = pbVar11 + 2;
+    } while (bVar5 != 0);
+    iVar6 = 0;
 LAB_00500126:
-    if (iVar5 != 0) {
+    if (iVar6 != 0) {
       Library::DKW::WGR::FUN_006b55f0
-                (*(undefined4 **)(this_00 + 0x19c),0,1,0,*(int *)(this_00 + 0xb47),0,1,0,0x4e,0x20);
+                ((undefined4 *)this_00->field_019C,0,1,0,*(int *)&this_00->field_0xb47,0,1,0,0x4e,
+                 0x20);
       PaintName(this_00,0);
-      if (-1 < (int)*(uint *)(this_00 + 0x164)) {
+      if (-1 < (int)*(uint *)&this_00->field_0x164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
-                   *(uint *)(this_00 + 0xb0));
+                  (DAT_008075a8,*(uint *)&this_00->field_0x164,0xffffffff,this_00->field_0058,
+                   this_00->field_00B0);
       }
     }
-    if ((((local_29 != this_00[0xc6c]) || (local_42 != this_00[0xc53])) &&
-        (iVar5 = *(int *)(this_00 + 0xc54), iVar5 != 0xdd)) && ((iVar5 != 0xde && (iVar5 != 0xe0))))
-    {
+    if ((((local_29 != this_00->field_0C6C) || (local_42 != this_00->field_0C53)) &&
+        (iVar6 = *(int *)&this_00->field_0xc54, iVar6 != 0xdd)) &&
+       ((iVar6 != 0xde && (iVar6 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
-                (*(undefined4 **)(this_00 + 0x19c),0,1,0x1f,*(int *)(this_00 + 0xb47),0,1,0x1f,0x4e,
-                 0x11);
+                ((undefined4 *)this_00->field_019C,0,1,0x1f,*(int *)&this_00->field_0xb47,0,1,0x1f,
+                 0x4e,0x11);
       PaintLife(this_00,0);
-      if (-1 < (int)*(uint *)(this_00 + 0x164)) {
+      if (-1 < (int)*(uint *)&this_00->field_0x164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
-                   *(uint *)(this_00 + 0xb0));
+                  (DAT_008075a8,*(uint *)&this_00->field_0x164,0xffffffff,this_00->field_0058,
+                   this_00->field_00B0);
       }
     }
-    if (((DAT_0080874e == '\x03') && (this_00[0xc58] == (CPanelTy)0x3)) &&
-       ((local_28 != this_00[0xc6d] &&
-        (((iVar5 = *(int *)(this_00 + 0xc54), iVar5 != 0xdd && (iVar5 != 0xde)) && (iVar5 != 0xe0)))
-        ))) {
+    if (((DAT_0080874e == '\x03') && (this_00->field_0xc58 == '\x03')) &&
+       ((local_28 != this_00->field_0C6D &&
+        (((iVar6 = *(int *)&this_00->field_0xc54, iVar6 != 0xdd && (iVar6 != 0xde)) &&
+         (iVar6 != 0xe0)))))) {
       PaintEnergy(this_00,0);
     }
-    if (((((local_26 != *(short *)(this_00 + 0xc6f)) || (local_22 != *(short *)(this_00 + 0xc73)))
-         || ((local_1e != *(short *)(this_00 + 0xc77) ||
-             ((local_24 != *(short *)(this_00 + 0xc71) || (local_20 != *(short *)(this_00 + 0xc75)))
-             )))) || (local_1c != *(short *)(this_00 + 0xc79))) &&
-       (((iVar5 = *(int *)(this_00 + 0xc54), iVar5 != 0xdd && (iVar5 != 0xde)) && (iVar5 != 0xe0))))
-    {
+    if (((((local_26 != *(short *)&this_00->field_0xc6f) ||
+          (local_22 != *(short *)&this_00->field_0xc73)) ||
+         ((local_1e != *(short *)&this_00->field_0xc77 ||
+          ((local_24 != *(short *)&this_00->field_0xc71 ||
+           (local_20 != *(short *)&this_00->field_0xc75)))))) ||
+        (local_1c != *(short *)&this_00->field_0xc79)) &&
+       (((iVar6 = *(int *)&this_00->field_0xc54, iVar6 != 0xdd && (iVar6 != 0xde)) &&
+        (iVar6 != 0xe0)))) {
       Library::DKW::WGR::FUN_006b55f0
-                (*(undefined4 **)(this_00 + 0x19c),0,1,0x2f,*(int *)(this_00 + 0xb47),0,1,0x2f,0x4e,
-                 0x24);
+                ((undefined4 *)this_00->field_019C,0,1,0x2f,*(int *)&this_00->field_0xb47,0,1,0x2f,
+                 0x4e,0x24);
       PaintWeap(this_00,0);
-      if (-1 < (int)*(uint *)(this_00 + 0x164)) {
+      if (-1 < (int)*(uint *)&this_00->field_0x164) {
         Library::DKW::DDX::FUN_006b3640
-                  (DAT_008075a8,*(uint *)(this_00 + 0x164),0xffffffff,*(uint *)(this_00 + 0x58),
-                   *(uint *)(this_00 + 0xb0));
+                  (DAT_008075a8,*(uint *)&this_00->field_0x164,0xffffffff,this_00->field_0058,
+                   this_00->field_00B0);
       }
     }
-    iVar5 = 5;
-    bVar10 = true;
-    pCVar7 = local_1a;
-    pCVar9 = this_00 + 0xc7b;
+    iVar6 = 5;
+    bVar13 = true;
+    pcVar10 = local_1a;
+    pcVar12 = &this_00->field_0xc7b;
     do {
-      if (iVar5 == 0) break;
-      iVar5 = iVar5 + -1;
-      bVar10 = *pCVar7 == *pCVar9;
-      pCVar7 = pCVar7 + 1;
-      pCVar9 = pCVar9 + 1;
-    } while (bVar10);
-    if ((!bVar10) || (local_42 != this_00[0xc53])) {
+      if (iVar6 == 0) break;
+      iVar6 = iVar6 + -1;
+      bVar13 = *pcVar10 == *pcVar12;
+      pcVar10 = pcVar10 + 1;
+      pcVar12 = pcVar12 + 1;
+    } while (bVar13);
+    if ((!bVar13) || (local_42 != this_00->field_0C53)) {
       PaintDeep(this_00,0);
-      bVar4 = (DAT_0080874e != '\x03') + 5;
-      _local_8 = CONCAT31(uStack_7,bVar4);
-      if (bVar4 < 0xb) {
-        uVar3 = (uint)bVar4;
-        if (-1 < (int)*(uint *)(this_00 + uVar3 * 4 + 0x148)) {
+      bVar5 = (DAT_0080874e != '\x03') + 5;
+      _local_8 = CONCAT31(uStack_7,bVar5);
+      if (bVar5 < 0xb) {
+        uVar4 = (uint)bVar5;
+        if (-1 < (int)*(uint *)(&this_00->field_0x148 + uVar4 * 4)) {
           Library::DKW::DDX::FUN_006b3640
-                    (DAT_008075a8,*(uint *)(this_00 + uVar3 * 4 + 0x148),0xffffffff,
-                     *(uint *)(this_00 + uVar3 * 4 + 0x3c),*(uint *)(this_00 + uVar3 * 4 + 0x94));
+                    (DAT_008075a8,*(uint *)(&this_00->field_0x148 + uVar4 * 4),0xffffffff,
+                     *(uint *)(&this_00->field_0x3c + uVar4 * 4),
+                     *(uint *)(&this_00->field_0x94 + uVar4 * 4));
         }
       }
     }

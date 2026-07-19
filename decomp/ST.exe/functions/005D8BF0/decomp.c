@@ -7,33 +7,32 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
 
 {
   char cVar1;
-  SIDTy SVar2;
-  byte bVar3;
-  code *pcVar4;
-  int iVar5;
-  uint *puVar6;
+  byte bVar2;
+  code *pcVar3;
+  int iVar4;
+  uint *puVar5;
   HANDLE hFindFile;
   cMf32 *this_00;
-  BOOL BVar7;
-  char *pcVar8;
-  int iVar9;
+  BOOL BVar6;
+  char *pcVar7;
+  int iVar8;
+  uint uVar9;
   uint uVar10;
-  uint uVar11;
   cMf32 *extraout_ECX;
   cMf32 *extraout_ECX_00;
   cMf32 *this_01;
-  int iVar12;
-  SIDTy *pSVar13;
+  int iVar11;
+  SIDTy *this_02;
   undefined4 unaff_ESI;
-  SIDTy *pSVar14;
-  CHAR *pCVar15;
+  CHAR *pCVar12;
   void *unaff_EDI;
-  SIDTy *pSVar16;
-  byte *pbVar17;
-  byte *pbVar18;
-  bool bVar19;
-  char *pcVar20;
-  undefined4 uVar21;
+  char *pcVar13;
+  byte *pbVar14;
+  byte *pbVar15;
+  bool bVar16;
+  void *pvVar17;
+  char *pcVar18;
+  undefined4 uVar19;
   _WIN32_FIND_DATAA local_21c;
   byte local_dc [64];
   InternalExceptionFrame local_9c;
@@ -47,137 +46,141 @@ void __thiscall SIDTy::PrepFiles(SIDTy *this)
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
   local_c = this;
-  iVar5 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pSVar13 = local_c;
-  if (iVar5 != 0) {
+  iVar4 = Library::MSVCRT::__setjmp3(local_58.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  this_02 = local_c;
+  if (iVar4 != 0) {
     g_currentExceptionFrame = local_58.previous;
-    iVar12 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167,0,iVar5,&DAT_007a4ccc
+    iVar11 = ReportDebugMessage(s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167,0,iVar4,&DAT_007a4ccc
                                 ,s_SIDTy__PrepFiles_007cd694);
-    if (iVar12 == 0) {
-      RaiseInternalException(iVar5,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167);
+    if (iVar11 == 0) {
+      RaiseInternalException(iVar4,0,s_E____titans_Start_sid_obj_cpp_007cd5c4,0x167);
       return;
     }
-    pcVar4 = (code *)swi(3);
-    (*pcVar4)();
+    pcVar3 = (code *)swi(3);
+    (*pcVar3)();
     return;
   }
-  if (*(byte **)(local_c + 0x1ccc) != (byte *)0x0) {
-    FUN_006b5570(*(byte **)(local_c + 0x1ccc));
-    *(undefined4 *)(pSVar13 + 0x1ccc) = 0;
+  pbVar14 = *(byte **)((int)&local_c[0x48].field_0061 + 3);
+  if (pbVar14 != (byte *)0x0) {
+    FUN_006b5570(pbVar14);
+    *(undefined4 *)((int)&this_02[0x48].field_0061 + 3) = 0;
   }
-  puVar6 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
-  *(uint **)(pSVar13 + 0x1ccc) = puVar6;
-  *(undefined4 *)(pSVar13 + 0x2d) = 0x20;
-  *(undefined4 *)(pSVar13 + 0x31) = 0;
-  FUN_006e6080(pSVar13,2,*(undefined4 *)(pSVar13 + 0x1af1),(undefined4 *)(pSVar13 + 0x1d));
-  *(undefined4 *)(pSVar13 + 0x2d) = 0x29;
-  *(undefined4 *)(pSVar13 + 0x31) = 0x19;
-  FUN_006e6080(pSVar13,2,*(undefined4 *)(pSVar13 + 0x1af5),(undefined4 *)(pSVar13 + 0x1d));
-  FUN_006b4170(*(int *)(pSVar13 + 0x1cb8),0,3,0x15,0x142,0x62,0xff);
-  FUN_006b35d0(DAT_008075a8,*(uint *)(pSVar13 + 0x1cb4));
-  wsprintfA((LPSTR)(pSVar13 + 0x1cd4),&DAT_007c6ee4,&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
-  uVar10 = 0xffffffff;
-  pcVar20 = &DAT_007cc8bc;
+  puVar5 = Library::DKW::TBL::FUN_006b54f0((uint *)0x0,10,10);
+  *(uint **)((int)&this_02[0x48].field_0061 + 3) = puVar5;
+  uVar19 = *(undefined4 *)&this_02[0x44].field_0x1d;
+  *(undefined4 *)&this_02->field_0x2d = 0x20;
+  *(undefined4 *)&this_02->field_0x31 = 0;
+  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+  uVar19 = *(undefined4 *)&this_02[0x44].field_0x21;
+  *(undefined4 *)&this_02->field_0x2d = 0x29;
+  *(undefined4 *)&this_02->field_0x31 = 0x19;
+  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+  FUN_006b4170(*(int *)&this_02[0x48].field_0x50,0,3,0x15,0x142,0x62,0xff);
+  FUN_006b35d0(DAT_008075a8,*(uint *)&this_02[0x48].field_0x4c);
+  wsprintfA(&this_02[0x49].field_0x7,&DAT_007c6ee4,&DAT_00807680,PTR_s_SAVEGAME__0079c19c);
+  uVar9 = 0xffffffff;
+  pcVar18 = &DAT_007cc8bc;
   do {
-    pcVar8 = pcVar20;
-    if (uVar10 == 0) break;
-    uVar10 = uVar10 - 1;
-    pcVar8 = pcVar20 + 1;
-    cVar1 = *pcVar20;
-    pcVar20 = pcVar8;
+    pcVar7 = pcVar18;
+    if (uVar9 == 0) break;
+    uVar9 = uVar9 - 1;
+    pcVar7 = pcVar18 + 1;
+    cVar1 = *pcVar18;
+    pcVar18 = pcVar7;
   } while (cVar1 != '\0');
-  uVar10 = ~uVar10;
-  iVar5 = -1;
-  pSVar14 = pSVar13 + 0x1cd4;
+  uVar9 = ~uVar9;
+  iVar4 = -1;
+  pcVar18 = &this_02[0x49].field_0x7;
   do {
-    pSVar16 = pSVar14;
-    if (iVar5 == 0) break;
-    iVar5 = iVar5 + -1;
-    pSVar16 = pSVar14 + 1;
-    SVar2 = *pSVar14;
-    pSVar14 = pSVar16;
-  } while (SVar2 != (SIDTy)0x0);
-  pSVar14 = (SIDTy *)(pcVar8 + -uVar10);
-  pSVar16 = pSVar16 + -1;
-  for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *(undefined4 *)pSVar16 = *(undefined4 *)pSVar14;
-    pSVar14 = pSVar14 + 4;
-    pSVar16 = pSVar16 + 4;
+    pcVar13 = pcVar18;
+    if (iVar4 == 0) break;
+    iVar4 = iVar4 + -1;
+    pcVar13 = pcVar18 + 1;
+    cVar1 = *pcVar18;
+    pcVar18 = pcVar13;
+  } while (cVar1 != '\0');
+  pcVar18 = pcVar7 + -uVar9;
+  pcVar7 = pcVar13 + -1;
+  for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+    *(undefined4 *)pcVar7 = *(undefined4 *)pcVar18;
+    pcVar18 = pcVar18 + 4;
+    pcVar7 = pcVar7 + 4;
   }
-  for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *pSVar16 = *pSVar14;
-    pSVar14 = pSVar14 + 1;
-    pSVar16 = pSVar16 + 1;
+  for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *pcVar7 = *pcVar18;
+    pcVar18 = pcVar18 + 1;
+    pcVar7 = pcVar7 + 1;
   }
-  hFindFile = FindFirstFileA((LPCSTR)(pSVar13 + 0x1cd4),&local_21c);
+  hFindFile = FindFirstFileA(&this_02[0x49].field_0x7,&local_21c);
   local_14 = hFindFile;
   if (hFindFile != (HANDLE)0xffffffff) {
     do {
       if (((byte)local_21c.dwFileAttributes & 0x10) != 0) {
-        pbVar17 = &DAT_007cc8b8;
-        pCVar15 = local_21c.cFileName;
+        pbVar14 = &DAT_007cc8b8;
+        pCVar12 = local_21c.cFileName;
         do {
-          bVar3 = *pCVar15;
-          bVar19 = bVar3 < *pbVar17;
-          if (bVar3 != *pbVar17) {
+          bVar2 = *pCVar12;
+          bVar16 = bVar2 < *pbVar14;
+          if (bVar2 != *pbVar14) {
 LAB_005d8d7a:
-            iVar5 = (1 - (uint)bVar19) - (uint)(bVar19 != 0);
+            iVar4 = (1 - (uint)bVar16) - (uint)(bVar16 != 0);
             goto LAB_005d8d7f;
           }
-          if (bVar3 == 0) break;
-          bVar3 = pCVar15[1];
-          bVar19 = bVar3 < pbVar17[1];
-          if (bVar3 != pbVar17[1]) goto LAB_005d8d7a;
-          pCVar15 = pCVar15 + 2;
-          pbVar17 = pbVar17 + 2;
-        } while (bVar3 != 0);
-        iVar5 = 0;
+          if (bVar2 == 0) break;
+          bVar2 = pCVar12[1];
+          bVar16 = bVar2 < pbVar14[1];
+          if (bVar2 != pbVar14[1]) goto LAB_005d8d7a;
+          pCVar12 = pCVar12 + 2;
+          pbVar14 = pbVar14 + 2;
+        } while (bVar2 != 0);
+        iVar4 = 0;
 LAB_005d8d7f:
-        if (iVar5 != 0) {
-          pbVar17 = &DAT_007cc8b4;
-          pCVar15 = local_21c.cFileName;
+        if (iVar4 != 0) {
+          pbVar14 = &DAT_007cc8b4;
+          pCVar12 = local_21c.cFileName;
           do {
-            bVar3 = *pCVar15;
-            bVar19 = bVar3 < *pbVar17;
-            if (bVar3 != *pbVar17) {
+            bVar2 = *pCVar12;
+            bVar16 = bVar2 < *pbVar14;
+            if (bVar2 != *pbVar14) {
 LAB_005d8dba:
-              iVar5 = (1 - (uint)bVar19) - (uint)(bVar19 != 0);
+              iVar4 = (1 - (uint)bVar16) - (uint)(bVar16 != 0);
               goto LAB_005d8dbf;
             }
-            if (bVar3 == 0) break;
-            bVar3 = pCVar15[1];
-            bVar19 = bVar3 < pbVar17[1];
-            if (bVar3 != pbVar17[1]) goto LAB_005d8dba;
-            pCVar15 = pCVar15 + 2;
-            pbVar17 = pbVar17 + 2;
-          } while (bVar3 != 0);
-          iVar5 = 0;
+            if (bVar2 == 0) break;
+            bVar2 = pCVar12[1];
+            bVar16 = bVar2 < pbVar14[1];
+            if (bVar2 != pbVar14[1]) goto LAB_005d8dba;
+            pCVar12 = pCVar12 + 2;
+            pbVar14 = pbVar14 + 2;
+          } while (bVar2 != 0);
+          iVar4 = 0;
 LAB_005d8dbf:
-          if (iVar5 != 0) {
-            uVar10 = 0xffffffff;
-            pCVar15 = local_21c.cFileName;
+          if (iVar4 != 0) {
+            uVar9 = 0xffffffff;
+            pCVar12 = local_21c.cFileName;
             do {
-              if (uVar10 == 0) break;
-              uVar10 = uVar10 - 1;
-              cVar1 = *pCVar15;
-              pCVar15 = pCVar15 + 1;
+              if (uVar9 == 0) break;
+              uVar9 = uVar9 - 1;
+              cVar1 = *pCVar12;
+              pCVar12 = pCVar12 + 1;
             } while (cVar1 != '\0');
-            if (~uVar10 - 1 < 0x40) {
-              pSVar13 = pSVar13 + 0x1cd4;
-              pcVar20 = s__s_s_s__s_007ca1ec;
-              wsprintfA((LPSTR)pSVar13,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079c19c,
+            if (~uVar9 - 1 < 0x40) {
+              pvVar17 = &this_02[0x49].field_0x7;
+              pcVar18 = s__s_s_s__s_007ca1ec;
+              wsprintfA(pvVar17,s__s_s_s__s_007ca1ec,&DAT_00807680,PTR_s_SAVEGAME__0079c19c,
                         local_21c.cFileName,PTR_s_PL_LOG_0079c1a0);
               local_9c.previous = g_currentExceptionFrame;
               g_currentExceptionFrame = &local_9c;
-              iVar5 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,pSVar13,pcVar20);
-              pSVar13 = local_c;
-              if (iVar5 == 0) {
-                this_00 = (cMf32 *)FUN_006f0ec0(0x345,(byte *)(local_c + 0x1cd4),0,0,0);
+              iVar4 = Library::MSVCRT::__setjmp3(local_9c.jumpBuffer,0,pvVar17,pcVar18);
+              this_02 = local_c;
+              if (iVar4 == 0) {
+                this_00 = (cMf32 *)FUN_006f0ec0(0x345,&local_c[0x49].field_0x7,0,0,0);
                 if (this_00 != (cMf32 *)0x0) {
-                  iVar5 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
+                  iVar4 = cMf32::RecChk(this_00,0xc,PTR_s_OPTIONS_PLAYER_0079c1a4);
                   this_01 = extraout_ECX;
-                  if (iVar5 == 0) {
-                    Library::DKW::TBL::FUN_006b5aa0(*(int *)(pSVar13 + 0x1ccc),local_21c.cFileName);
+                  if (iVar4 == 0) {
+                    Library::DKW::TBL::FUN_006b5aa0
+                              (*(int *)((int)&this_02[0x48].field_0061 + 3),local_21c.cFileName);
                     this_01 = extraout_ECX_00;
                   }
                   cMf32::delete(this_01,(undefined4 *)this_00);
@@ -192,125 +195,130 @@ LAB_005d8dbf:
         }
       }
       hFindFile = local_14;
-      BVar7 = FindNextFileA(local_14,&local_21c);
-    } while (BVar7 != 0);
+      BVar6 = FindNextFileA(local_14,&local_21c);
+    } while (BVar6 != 0);
   }
   if (hFindFile != (HANDLE)0xffffffff) {
     FindClose(hFindFile);
   }
-  uVar10 = 0xffffffff;
-  pcVar20 = (char *)&DAT_00807ddd;
+  uVar9 = 0xffffffff;
+  pcVar18 = (char *)&DAT_00807ddd;
   do {
-    pcVar8 = pcVar20;
-    if (uVar10 == 0) break;
-    uVar10 = uVar10 - 1;
-    pcVar8 = pcVar20 + 1;
-    cVar1 = *pcVar20;
-    pcVar20 = pcVar8;
+    pcVar7 = pcVar18;
+    if (uVar9 == 0) break;
+    uVar9 = uVar9 - 1;
+    pcVar7 = pcVar18 + 1;
+    cVar1 = *pcVar18;
+    pcVar18 = pcVar7;
   } while (cVar1 != '\0');
-  uVar10 = ~uVar10;
-  pbVar17 = (byte *)(pcVar8 + -uVar10);
-  pbVar18 = local_dc;
-  for (uVar11 = uVar10 >> 2; uVar11 != 0; uVar11 = uVar11 - 1) {
-    *(undefined4 *)pbVar18 = *(undefined4 *)pbVar17;
-    pbVar17 = pbVar17 + 4;
-    pbVar18 = pbVar18 + 4;
+  uVar9 = ~uVar9;
+  pbVar14 = (byte *)(pcVar7 + -uVar9);
+  pbVar15 = local_dc;
+  for (uVar10 = uVar9 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+    *(undefined4 *)pbVar15 = *(undefined4 *)pbVar14;
+    pbVar14 = pbVar14 + 4;
+    pbVar15 = pbVar15 + 4;
   }
-  uVar21 = *(undefined4 *)(pSVar13 + 0x1af1);
-  for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {
-    *pbVar18 = *pbVar17;
-    pbVar17 = pbVar17 + 1;
-    pbVar18 = pbVar18 + 1;
+  uVar19 = *(undefined4 *)&this_02[0x44].field_0x1d;
+  for (uVar9 = uVar9 & 3; uVar9 != 0; uVar9 = uVar9 - 1) {
+    *pbVar15 = *pbVar14;
+    pbVar14 = pbVar14 + 1;
+    pbVar15 = pbVar15 + 1;
   }
-  *(undefined4 *)(pSVar13 + 0x2d) = 0x28;
-  *(undefined4 *)(pSVar13 + 0x31) = *(undefined4 *)(*(int *)(pSVar13 + 0x1ccc) + 8);
-  FUN_006e6080(pSVar13,2,uVar21,(undefined4 *)(pSVar13 + 0x1d));
-  iVar5 = *(int *)(pSVar13 + 0x1ccc);
-  iVar12 = *(int *)(iVar5 + 8);
-  if (iVar12 < 1) {
-    *(undefined4 *)(pSVar13 + 0x2d) = 0x22;
-    *(undefined4 *)(pSVar13 + 0x31) = 0;
-    FUN_006e6080(pSVar13,2,*(undefined4 *)(pSVar13 + 0x1af1),(undefined4 *)(pSVar13 + 0x1d));
-    uVar21 = *(undefined4 *)(pSVar13 + 0x1af1);
-    *(undefined4 *)(pSVar13 + 0x2d) = 5;
+  iVar4 = *(int *)((int)&this_02[0x48].field_0061 + 3);
+  *(undefined4 *)&this_02->field_0x2d = 0x28;
+  *(undefined4 *)&this_02->field_0x31 = *(undefined4 *)(iVar4 + 8);
+  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+  iVar4 = *(int *)((int)&this_02[0x48].field_0061 + 3);
+  iVar11 = *(int *)(iVar4 + 8);
+  if (iVar11 < 1) {
+    uVar19 = *(undefined4 *)&this_02[0x44].field_0x1d;
+    *(undefined4 *)&this_02->field_0x2d = 0x22;
+    *(undefined4 *)&this_02->field_0x31 = 0;
+    FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+    uVar19 = *(undefined4 *)&this_02[0x44].field_0x1d;
+    *(undefined4 *)&this_02->field_0x2d = 5;
   }
   else {
-    if (1 < iVar12) {
+    if (1 < iVar11) {
       do {
         local_8 = 0;
-        uVar10 = 0;
-        if (0 < iVar12 + -1) {
+        uVar9 = 0;
+        if (0 < iVar11 + -1) {
           do {
-            uVar11 = uVar10 + 1;
-            if ((int)uVar11 < iVar12) {
-              pcVar20 = *(char **)(*(int *)(iVar5 + 0x14) + 4 + uVar10 * 4);
+            uVar10 = uVar9 + 1;
+            if ((int)uVar10 < iVar11) {
+              pcVar18 = *(char **)(*(int *)(iVar4 + 0x14) + 4 + uVar9 * 4);
             }
             else {
-              pcVar20 = (char *)0x0;
+              pcVar18 = (char *)0x0;
             }
-            if ((int)uVar10 < iVar12) {
-              pcVar8 = *(char **)(*(int *)(iVar5 + 0x14) + uVar10 * 4);
+            if ((int)uVar9 < iVar11) {
+              pcVar7 = *(char **)(*(int *)(iVar4 + 0x14) + uVar9 * 4);
             }
             else {
-              pcVar8 = (char *)0x0;
+              pcVar7 = (char *)0x0;
             }
-            iVar5 = Library::MSVCRT::__strcmpi(pcVar8,pcVar20);
-            if (0 < iVar5) {
-              FUN_006b8200(*(int *)(pSVar13 + 0x1ccc),uVar10,uVar11);
+            iVar4 = Library::MSVCRT::__strcmpi(pcVar7,pcVar18);
+            if (0 < iVar4) {
+              FUN_006b8200(*(int *)((int)&this_02[0x48].field_0061 + 3),uVar9,uVar10);
               local_8 = 1;
             }
-            iVar5 = *(int *)(pSVar13 + 0x1ccc);
-            iVar12 = *(int *)(iVar5 + 8);
-            uVar10 = uVar11;
-          } while ((int)uVar11 < iVar12 + -1);
+            iVar4 = *(int *)((int)&this_02[0x48].field_0061 + 3);
+            iVar11 = *(int *)(iVar4 + 8);
+            uVar9 = uVar10;
+          } while ((int)uVar10 < iVar11 + -1);
         }
       } while (local_8 != 0);
     }
-    *(undefined4 *)(pSVar13 + 0x2d) = 0x20;
-    *(undefined4 *)(pSVar13 + 0x31) = 1;
-    FUN_006e6080(pSVar13,2,*(undefined4 *)(pSVar13 + 0x1af1),(undefined4 *)(pSVar13 + 0x1d));
-    iVar12 = 0;
-    local_8 = *(int *)(*(int *)(pSVar13 + 0x1ccc) + 8);
-    iVar5 = local_10;
+    uVar19 = *(undefined4 *)&this_02[0x44].field_0x1d;
+    *(undefined4 *)&this_02->field_0x2d = 0x20;
+    *(undefined4 *)&this_02->field_0x31 = 1;
+    FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+    iVar11 = 0;
+    local_8 = *(int *)(*(int *)((int)&this_02[0x48].field_0061 + 3) + 8);
+    iVar4 = local_10;
     if (0 < local_8) {
       if (local_8 < 1) {
-        pbVar17 = (byte *)0x0;
+        pbVar14 = (byte *)0x0;
         goto LAB_005d8fe2;
       }
       do {
-        pbVar17 = *(byte **)(*(int *)(*(int *)(pSVar13 + 0x1ccc) + 0x14) + iVar12 * 4);
+        pbVar14 = *(byte **)(*(int *)(*(int *)((int)&this_02[0x48].field_0061 + 3) + 0x14) +
+                            iVar11 * 4);
 LAB_005d8fe2:
-        pbVar18 = local_dc;
+        pbVar15 = local_dc;
         do {
-          bVar3 = *pbVar17;
-          bVar19 = bVar3 < *pbVar18;
-          if (bVar3 != *pbVar18) {
+          bVar2 = *pbVar14;
+          bVar16 = bVar2 < *pbVar15;
+          if (bVar2 != *pbVar15) {
 LAB_005d900c:
-            iVar9 = (1 - (uint)bVar19) - (uint)(bVar19 != 0);
+            iVar8 = (1 - (uint)bVar16) - (uint)(bVar16 != 0);
             goto LAB_005d9011;
           }
-          if (bVar3 == 0) break;
-          bVar3 = pbVar17[1];
-          bVar19 = bVar3 < pbVar18[1];
-          if (bVar3 != pbVar18[1]) goto LAB_005d900c;
-          pbVar17 = pbVar17 + 2;
-          pbVar18 = pbVar18 + 2;
-        } while (bVar3 != 0);
-        iVar9 = 0;
+          if (bVar2 == 0) break;
+          bVar2 = pbVar14[1];
+          bVar16 = bVar2 < pbVar15[1];
+          if (bVar2 != pbVar15[1]) goto LAB_005d900c;
+          pbVar14 = pbVar14 + 2;
+          pbVar15 = pbVar15 + 2;
+        } while (bVar2 != 0);
+        iVar8 = 0;
 LAB_005d9011:
-        iVar5 = iVar12;
-      } while ((iVar9 != 0) && (iVar12 = iVar12 + 1, iVar5 = local_10, iVar12 < local_8));
+        iVar4 = iVar11;
+      } while ((iVar8 != 0) && (iVar11 = iVar11 + 1, iVar4 = local_10, iVar11 < local_8));
     }
-    local_10 = iVar5;
-    uVar21 = *(undefined4 *)(pSVar13 + 0x1af1);
-    *(undefined4 *)(pSVar13 + 0x2d) = 0x22;
-    *(int *)(pSVar13 + 0x31) = local_10;
+    local_10 = iVar4;
+    uVar19 = *(undefined4 *)&this_02[0x44].field_0x1d;
+    *(undefined4 *)&this_02->field_0x2d = 0x22;
+    *(int *)&this_02->field_0x31 = local_10;
   }
-  FUN_006e6080(pSVar13,2,uVar21,(undefined4 *)(pSVar13 + 0x1d));
-  *(undefined4 *)(pSVar13 + 0x2d) = 0x29;
-  *(undefined4 *)(pSVar13 + 0x31) = 9;
-  FUN_006e6080(pSVar13,2,*(undefined4 *)(pSVar13 + 0x1af5),(undefined4 *)(pSVar13 + 0x1d));
-  FUN_006b35d0(DAT_008075a8,*(uint *)(pSVar13 + 0x1cb4));
+  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+  uVar19 = *(undefined4 *)&this_02[0x44].field_0x21;
+  *(undefined4 *)&this_02->field_0x2d = 0x29;
+  *(undefined4 *)&this_02->field_0x31 = 9;
+  FUN_006e6080(this_02,2,uVar19,(undefined4 *)&this_02->field_0x1d);
+  FUN_006b35d0(DAT_008075a8,*(uint *)&this_02[0x48].field_0x4c);
   g_currentExceptionFrame = local_58.previous;
   return;
 }

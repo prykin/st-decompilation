@@ -6,27 +6,26 @@
 void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
 
 {
-  MReportTy *pMVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   MReportTy *pMVar3;
   int iVar4;
   undefined1 *puVar5;
-  uint uVar6;
-  undefined4 uVar7;
-  int iVar8;
+  undefined4 uVar6;
+  int iVar7;
   ccFntTy *this_00;
   ccFntTy *this_01;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  undefined4 *puVar9;
+  undefined4 *puVar8;
   undefined4 local_470 [256];
   InternalExceptionFrame local_70;
   undefined4 local_2c [8];
   MReportTy *local_c;
   char local_5;
   
-  if (this[0x66] == (MReportTy)0x1) {
-    local_5 = (char)this[0x6a] + '\x01';
+  if (this->field_0066 == '\x01') {
+    local_5 = this->field_006A + '\x01';
   }
   else {
     local_5 = DAT_0080874e;
@@ -37,8 +36,8 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
   iVar4 = Library::MSVCRT::__setjmp3(local_70.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pMVar3 = local_c;
   if (iVar4 == 0) {
-    pMVar1 = local_c + 0x5d;
-    cMf32::RecMemFree(DAT_00806780,(uint *)pMVar1);
+    puVar1 = &local_c->field_0x5d;
+    cMf32::RecMemFree(DAT_00806780,(uint *)puVar1);
     if (local_5 == '\x01') {
       puVar5 = &DAT_007ca250;
     }
@@ -50,32 +49,32 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     }
     wsprintfA((LPSTR)&DAT_0080f33a,s_REPORT__s__c_007ccf6c,puVar5,
               (int)(char)((-(DAT_0080c522 != 0) & 0xfbU) + 0x46));
-    uVar6 = FUN_0070a9f0(DAT_00806780,(char *)&DAT_0080f33a,0,1);
-    *(uint *)pMVar1 = uVar6;
-    FUN_006bc360(uVar6,local_470,(int *)0x0);
+    iVar4 = FUN_0070a9f0(DAT_00806780,(char *)&DAT_0080f33a,0,1);
+    *(int *)puVar1 = iVar4;
+    FUN_006bc360(iVar4,local_470,(int *)0x0);
     FUN_00718780((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)(DAT_0081176c + 0x144));
-    FUN_00718780((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)(pMVar3 + 0xa3));
-    FUN_00718780((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)(pMVar3 + 0x1a3));
-    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)pMVar1);
-    if (*(uint **)(pMVar3 + 0x83) != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)(pMVar3 + 0x83));
+    FUN_00718780((int)local_470,0,0x100,0x1a,0x10,(undefined4 *)&pMVar3[1].field_0x24);
+    FUN_00718780((int)local_470,0,0x100,0x2e,0x10,(undefined4 *)&pMVar3[3].field_0x26);
+    thunk_FUN_005403c0(0,0,'\x01',*(BITMAPINFO **)puVar1);
+    if (*(uint **)&pMVar3[1].field_0x4 != (uint *)0x0) {
+      ccFntTy::operator(this_00,*(uint **)&pMVar3[1].field_0x4);
     }
-    iVar4 = thunk_FUN_005defe0(*(uint *)pMVar1,(undefined *)0x0,DAT_00807dd9);
-    *(int *)(pMVar3 + 0x83) = iVar4;
+    iVar4 = thunk_FUN_005defe0(*(int *)puVar1,(undefined *)0x0,DAT_00807dd9);
+    *(int *)&pMVar3[1].field_0x4 = iVar4;
     *(undefined4 *)(iVar4 + 0x58) = 1;
     *(undefined4 *)(iVar4 + 0x5c) = 0;
-    if (*(uint **)(pMVar3 + 0x87) != (uint *)0x0) {
-      ccFntTy::operator(this_01,*(uint **)(pMVar3 + 0x87));
+    if (*(uint **)&pMVar3[1].field_0x8 != (uint *)0x0) {
+      ccFntTy::operator(this_01,*(uint **)&pMVar3[1].field_0x8);
     }
-    uVar7 = thunk_FUN_005df290(*(uint *)pMVar1,(undefined *)0x0,DAT_00807dd9);
-    *(undefined4 *)(pMVar3 + 0x87) = uVar7;
-    *(undefined4 *)(DAT_0081176c + 0x38) = uVar7;
+    uVar6 = thunk_FUN_005df290(*(int *)puVar1,(undefined *)0x0,DAT_00807dd9);
+    *(undefined4 *)&pMVar3[1].field_0x8 = uVar6;
+    *(undefined4 *)(DAT_0081176c + 0x38) = uVar6;
     if (param_1 != 0) {
-      local_2c[2] = *(undefined4 *)(pMVar3 + 8);
-      puVar9 = local_2c;
+      local_2c[2] = *(undefined4 *)&pMVar3->field_0x8;
+      puVar8 = local_2c;
       for (iVar4 = 8; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *puVar9 = 0;
-        puVar9 = puVar9 + 1;
+        *puVar8 = 0;
+        puVar8 = puVar8 + 1;
       }
       local_2c[3] = 2;
       local_2c[4] = 0x70ff;
@@ -85,9 +84,9 @@ void __thiscall MReportTy::SetCtrl(MReportTy *this,int param_1)
     return;
   }
   g_currentExceptionFrame = local_70.previous;
-  iVar8 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c,0,iVar4,&DAT_007a4ccc,
+  iVar7 = ReportDebugMessage(s_E____titans_Start_rpt_obj_cpp_007ccec8,0x32c,0,iVar4,&DAT_007a4ccc,
                              s_MReportTy__SetCtrl_007cd05c);
-  if (iVar8 != 0) {
+  if (iVar7 != 0) {
     pcVar2 = (code *)swi(3);
     (*pcVar2)();
     return;

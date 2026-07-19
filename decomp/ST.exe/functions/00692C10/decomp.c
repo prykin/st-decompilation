@@ -1,8 +1,13 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00692C10_param_1Enum. Cases:
+   CASE_A=10;CASE_14=20;CASE_32=50;CASE_5A=90;CASE_8C=140;CASE_10E=270;CASE_118=280;CASE_122=290;CASE_12C=300;CASE_172=370;CASE_BBE=3006;CASE_BBF=3007;CASE_BC0=3008;CASE_BC1=3009;CASE_BC3=3011
+    */
 
 uint * __cdecl
-FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uint param_5)
+FUN_00692c10(Global_sub_00692C10_param_1Enum param_1,int param_2,undefined4 *param_3,
+            undefined4 param_4,uint param_5)
 
 {
   char cVar1;
@@ -14,8 +19,9 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
   int iVar7;
   char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
-  undefined4 *puVar11;
+  Global_sub_00692C10_param_1Enum *pGVar10;
+  char *pcVar11;
+  undefined4 *puVar12;
   CHAR local_108 [260];
   
   if (param_1 < 0x1a5) {
@@ -32,14 +38,14 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
         return (uint *)&DAT_007d5af8;
       }
       switch(param_1) {
-      case 10:
+      case CASE_A:
         *param_3 = 0xa6;
-        puVar4 = &DAT_00853cd8;
+        pGVar10 = &DAT_00853cd8;
         for (iVar7 = 0x29; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar4 = 0;
-          puVar4 = puVar4 + 1;
+          *pGVar10 = 0;
+          pGVar10 = pGVar10 + 1;
         }
-        *(undefined2 *)puVar4 = 0;
+        *(undefined2 *)pGVar10 = 0;
         DAT_00853cd8 = param_1;
         _DAT_00853cdc = 0xff;
         _DAT_00853ce0 = 2;
@@ -138,25 +144,25 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
         uVar3 = 0xffffffff;
         pcVar9 = pcVar8;
         do {
-          pcVar10 = pcVar9;
+          pcVar11 = pcVar9;
           if (uVar3 == 0) break;
           uVar3 = uVar3 - 1;
-          pcVar10 = pcVar9 + 1;
+          pcVar11 = pcVar9 + 1;
           cVar1 = *pcVar9;
-          pcVar9 = pcVar10;
+          pcVar9 = pcVar11;
         } while (cVar1 != '\0');
         uVar3 = ~uVar3;
-        pcVar9 = pcVar10 + -uVar3;
-        pcVar10 = (char *)&DAT_00853cf2;
+        pcVar9 = pcVar11 + -uVar3;
+        pcVar11 = (char *)&DAT_00853cf2;
         for (uVar6 = uVar3 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-          *(undefined4 *)pcVar10 = *(undefined4 *)pcVar9;
+          *(undefined4 *)pcVar11 = *(undefined4 *)pcVar9;
           pcVar9 = pcVar9 + 4;
-          pcVar10 = pcVar10 + 4;
+          pcVar11 = pcVar11 + 4;
         }
         for (uVar3 = uVar3 & 3; uVar3 != 0; uVar3 = uVar3 - 1) {
-          *pcVar10 = *pcVar9;
+          *pcVar11 = *pcVar9;
           pcVar9 = pcVar9 + 1;
-          pcVar10 = pcVar10 + 1;
+          pcVar11 = pcVar11 + 1;
         }
         uVar3 = 0xffffffff;
         pcVar8 = pcVar8 + 0x104;
@@ -183,23 +189,23 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
         }
         _DAT_00853d72 = param_5;
         return &DAT_00853cd8;
-      case 0x14:
+      case CASE_14:
         _DAT_007d5c50 = param_2;
         _DAT_007d5c58 = (undefined2)param_4;
         *param_3 = 0x69;
         return (uint *)&DAT_007d5c38;
-      case 0x32:
+      case CASE_32:
         *param_3 = 0x28;
         _DAT_007d5a3c = param_4;
         _DAT_007d5a44 = param_2;
         return (uint *)&DAT_007d5a20;
-      case 0x5a:
+      case CASE_5A:
         *param_3 = 0x28;
         _DAT_007d5a1c = param_2;
         _DAT_007d5a14 = param_4;
         _DAT_007d5a18 = *(undefined4 *)(&DAT_007d59e0 + (param_2 * 3 + -0x297) * 4);
         return (uint *)&DAT_007d59f8;
-      case 0x8c:
+      case CASE_8C:
         *param_3 = 0x34;
         _DAT_007d5a64 = param_4;
         return (uint *)&DAT_007d5a48;
@@ -207,27 +213,27 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
     }
     else {
       switch(param_1) {
-      case 0x10e:
+      case CASE_10E:
         *param_3 = 0x28;
         _DAT_007d5d20 = param_2;
         _DAT_007d5d1c = param_4;
         return (uint *)&DAT_007d5d00;
-      case 0x118:
+      case CASE_118:
         *param_3 = 0x28;
         _DAT_007d5d48 = param_2;
         _DAT_007d5d44 = param_4;
         return (uint *)&DAT_007d5d28;
-      case 0x122:
+      case CASE_122:
         *param_3 = 0x28;
         _DAT_007d5d70 = param_2;
         _DAT_007d5d6c = param_4;
         return (uint *)&DAT_007d5d50;
-      case 300:
+      case CASE_12C:
         *param_3 = 0x28;
         _DAT_007d5d98 = param_2;
         _DAT_007d5d94 = param_4;
         return (uint *)&DAT_007d5d78;
-      case 0x172:
+      case CASE_172:
         *param_3 = 0x151;
         _DAT_007d5f60 = param_2;
         _DAT_007d5f70 = (undefined2)param_4;
@@ -235,7 +241,7 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
       }
     }
   }
-  else if (param_1 < 0xbbe) {
+  else if (param_1 < CASE_BBE) {
     if (param_1 == 0xbbd) {
       *param_3 = 0x2c;
       return (uint *)&DAT_007d5b98;
@@ -273,10 +279,10 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
       if (param_1 == 0xbba) {
         _DAT_007d5b70 = param_4;
         *param_3 = 0x65;
-        puVar11 = &DAT_007d5b7d;
+        puVar12 = &DAT_007d5b7d;
         for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar11 = 0xffffffff;
-          puVar11 = puVar11 + 1;
+          *puVar12 = 0xffffffff;
+          puVar12 = puVar12 + 1;
         }
         return (uint *)&DAT_007d5b30;
       }
@@ -285,11 +291,11 @@ FUN_00692c10(uint param_1,int param_2,undefined4 *param_3,undefined4 param_4,uin
   }
   else {
     switch(param_1) {
-    case 0xbbe:
+    case CASE_BBE:
       *param_3 = 0x24;
       _DAT_007d5af0 = param_5;
       return (uint *)&DAT_007d5ad0;
-    case 0xbbf:
+    case CASE_BBF:
 switchD_00693197_caseD_bbf:
       _DAT_007d5aa8 = param_1;
       _DAT_007d5ac4 = param_4;
@@ -297,7 +303,7 @@ switchD_00693197_caseD_bbf:
       _DAT_007d5acc = param_5;
       *param_3 = 0x28;
       return (uint *)&DAT_007d5aa8;
-    case 0xbc0:
+    case CASE_BC0:
 switchD_00693197_caseD_bc0:
       _DAT_007d5a80 = param_1;
       _DAT_007d5a9c = param_4;
@@ -305,10 +311,10 @@ switchD_00693197_caseD_bc0:
       _DAT_007d5aa4 = param_5;
       *param_3 = 0x28;
       return (uint *)&DAT_007d5a80;
-    case 0xbc1:
+    case CASE_BC1:
       *param_3 = 0x2c;
       return (uint *)&DAT_007d5c08;
-    case 0xbc3:
+    case CASE_BC3:
       *param_3 = 0x3f;
       return (uint *)&DAT_007d5bc8;
     }

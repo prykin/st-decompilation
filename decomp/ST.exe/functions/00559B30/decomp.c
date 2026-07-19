@@ -57,7 +57,7 @@ VisibleClassTy::SetZoneAst
     }
     if ((param_7 & 8) != 0) {
       if (param_5 < 0) {
-        param_5 = 0;
+        param_5 = CASE_0;
       }
       local_c = param_5 * 2 + 1;
       local_18 = param_1 - param_5;

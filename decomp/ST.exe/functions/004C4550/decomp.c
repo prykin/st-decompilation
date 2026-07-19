@@ -198,7 +198,7 @@ undefined4 __thiscall FUN_004c4550(void *this,int *param_1)
                 STPlaySystemC::CreateGameObject(DAT_00802a38,iVar3,0,0,local_84,0);
               }
               *(int *)((int)this + iVar10 + 0x2c5) = *(int *)((int)this + iVar10 + 0x2c5) + -1;
-              *(undefined4 *)((int)this + iVar10 + 0x2c9) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+              *(undefined4 *)((int)this + iVar10 + 0x2c9) = DAT_00802a38->field_00E4;
               iVar3 = local_18;
               piVar9 = param_1;
             }

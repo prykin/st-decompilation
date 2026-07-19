@@ -35,19 +35,19 @@ PanelTy::PaintIBut(PanelTy *this,int param_1,char *param_2,UINT param_3,int para
   else {
     local_8 = *local_14;
     iVar9 = DAT_00806730;
-    if (*(int *)(this + 0x5c) == 0) goto LAB_00538de2;
+    if (this->field_005C == 0) goto LAB_00538de2;
   }
-  iVar9 = *(int *)(this + 0x3c);
+  iVar9 = this->field_003C;
 LAB_00538de2:
   local_8 = local_8 - iVar9;
   if (param_5 == 0) {
-    local_c = local_14[1] - *(int *)(this + 0x44);
+    local_c = local_14[1] - *(int *)&this->field_0x44;
   }
-  else if (*(int *)(this + 0x5c) == 0) {
+  else if (this->field_005C == 0) {
     local_c = local_14[1] - DAT_00806734;
   }
   else {
-    local_c = local_14[1] - *(int *)(this + 0x44);
+    local_c = local_14[1] - *(int *)&this->field_0x44;
   }
   local_58.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_58;
@@ -73,10 +73,10 @@ LAB_00538de2:
   uVar3 = thunk_FUN_00529fe0(param_1);
   bVar8 = (byte)errorCode;
   pbVar4 = (byte *)FUN_006f2c00(param_2,1,uVar3);
-  puVar5 = FUN_00709af0(DAT_00806794,1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
+  puVar5 = FUN_00709af0(DAT_00806794,CASE_1,pbVar4,uVar7,bVar8,iVar9,(int)puVar10,puVar12);
   iVar9 = local_c;
-  thunk_FUN_00540760(*(undefined4 **)(pPVar2 + 0x68),local_8,local_c,'\x01',(byte *)puVar5);
-  ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)(pPVar2 + 0x68),0,local_8,iVar9,
+  thunk_FUN_00540760(*(undefined4 **)&pPVar2[1].field_0x8,local_8,local_c,'\x01',(byte *)puVar5);
+  ccFntTy::SetSurf(*(ccFntTy **)(DAT_00802a28 + 0x24),*(int *)&pPVar2[1].field_0x8,0,local_8,iVar9,
                    local_14[2],local_14[3]);
   uVar3 = thunk_FUN_00529fe0(param_1);
   iVar11 = -1;
@@ -84,8 +84,8 @@ LAB_00538de2:
   puVar6 = (uint *)FUN_006b0140(param_3,DAT_00807618);
   ccFntTy::WrStr(*(ccFntTy **)(DAT_00802a28 + 0x24),puVar6,iVar9,iVar11,uVar3);
   Library::DKW::DDX::FUN_006b3640
-            (DAT_008075a8,*(uint *)(pPVar2 + 0x60),0xffffffff,*(uint *)(pPVar2 + 0x3c),
-             *(uint *)(pPVar2 + 0x44));
+            (DAT_008075a8,*(uint *)(pPVar2 + 1),0xffffffff,pPVar2->field_003C,
+             *(uint *)&pPVar2->field_0x44);
   g_currentExceptionFrame = local_58.previous;
   return;
 }

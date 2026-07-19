@@ -109,6 +109,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0046AA50	STBoatC::BackLoadRC	STBoatC::BackLoadRC	STBoatC	BackLoadRC	__thiscall	0046AA53: PUSH ECX	E:\\__titans\\wlad\\To_boat.cpp	9063	high	previously_applied_debug_symbol
 1	0046B100	STBoatC::Build	STBoatC::Build	STBoatC	Build	__thiscall	0046B113: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	9488	high	previously_applied_debug_symbol
 1	0046C980	STBoatC::BackBuild	STBoatC::BackBuild	STBoatC	BackBuild	__thiscall	0046C983: PUSH ECX	E:\\__titans\\wlad\\To_boat.cpp	9616	high	previously_applied_debug_symbol
+1	0046CF20	STBoatC::CreateGame	STBoatC::CreateGame	STBoatC	CreateGame	__thiscall	0046CF27: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	9671	high	previously_applied_debug_symbol
 1	0046D450	STBoatC::UnLoadRC	STBoatC::UnLoadRC	STBoatC	UnLoadRC	__thiscall	0046D45E: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	10216	high	previously_applied_debug_symbol
 1	0046EFD0	STBoatC::BackUnLoadRC	STBoatC::BackUnLoadRC	STBoatC	BackUnLoadRC	__thiscall	0046EFD3: PUSH ECX	E:\\__titans\\wlad\\To_boat.cpp	10301	high	previously_applied_debug_symbol
 1	0046F5C0	STBoatC::ToDok	STBoatC::ToDok	STBoatC	ToDok	__thiscall	0046F5CE: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	10931	high	previously_applied_debug_symbol
@@ -120,8 +121,11 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	00475530	STBoatC::BackWaitLoad	STBoatC::BackWaitLoad	STBoatC	BackWaitLoad	__thiscall	00475538: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	12370	high	previously_applied_debug_symbol
 1	004758E0	STBoatC::UnLoadObj	STBoatC::UnLoadObj	STBoatC	UnLoadObj	__thiscall	004758F0: MOV EBX,ECX	E:\\__titans\\wlad\\To_boat.cpp	12498	high	previously_applied_debug_symbol
 1	00476120	STBoatC::BackUnLoadObj	STBoatC::BackUnLoadObj	STBoatC	BackUnLoadObj	__thiscall	00476120: MOV EAX,dword ptr [ECX + 0x5d6]	E:\\__titans\\wlad\\To_boat.cpp	12538	high	previously_applied_debug_symbol
+1	004761B0	STBoatC::SetMine	STBoatC::SetMine	STBoatC	SetMine	__thiscall	004761BB: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	12573	high	previously_applied_debug_symbol
+1	00476A10	STBoatC::DCBomb	STBoatC::DCBomb	STBoatC	DCBomb	__thiscall	00476A19: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	12676	high	previously_applied_debug_symbol
 1	00476CE0	STBoatC::Capture	STBoatC::Capture	STBoatC	Capture	__thiscall	00476CEE: MOV EBX,ECX	E:\\__titans\\wlad\\To_boat.cpp	13070	high	previously_applied_debug_symbol
 1	00478030	STBoatC::BackCapture	STBoatC::BackCapture	STBoatC	BackCapture	__thiscall	00478033: PUSH ECX	E:\\__titans\\wlad\\To_boat.cpp	13206	high	previously_applied_debug_symbol
+1	00478640	STBoatC::Recharge	STBoatC::Recharge	STBoatC	Recharge	__thiscall	0047864B: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	13393	high	previously_applied_debug_symbol
 1	00479600	STBoatC::Teleport	STBoatC::Teleport	STBoatC	Teleport	__thiscall	0047960E: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	13595	high	previously_applied_debug_symbol
 1	0047BF70	STBoatC::BackTeleport	STBoatC::BackTeleport	STBoatC	BackTeleport	__thiscall	0047BF74: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	14193	high	previously_applied_debug_symbol
 1	0047C050	STBoatC::Bring	STBoatC::Bring	STBoatC	Bring	__thiscall	0047C060: MOV ESI,ECX	E:\\__titans\\wlad\\To_boat.cpp	14209	high	previously_applied_debug_symbol
@@ -218,6 +222,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	004CABB0	TLOBaseTy::RotateSpr	TLOBaseTy::RotateSpr	TLOBaseTy	RotateSpr	__thiscall	004CABBD: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Artem\\TLO_bspr.cpp	424	high	previously_applied_debug_symbol
 1	004CBC10	TLOBaseTy::AddSprInit	TLOBaseTy::AddSprInit	TLOBaseTy	AddSprInit	__thiscall	004CBC1B: MOV dword ptr [EBP + -0x4],ECX	E:\\__titans\\Artem\\TLO_bspr.cpp	710	high	previously_applied_debug_symbol
 1	004D0B90	TLOFakeTy::GetMessage	TLOFakeTy::GetMessage	TLOFakeTy	GetMessage	__thiscall	004D0B9E: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Artem\\TLO_dock.cpp	834	high	previously_applied_debug_symbol
+1	004D11D0	TLOEmbryoTy::Create	TLOEmbryoTy::Create	TLOEmbryoTy	Create	__thiscall	004D11E1: MOV dword ptr [EBP + -0x38],ECX	E:\\__titans\\Artem\\TLO_embryo.cpp	359	high	previously_applied_debug_symbol
 1	004D55B0	TLOEmbryoTy::GetMessage	TLOEmbryoTy::GetMessage	TLOEmbryoTy	GetMessage	__thiscall	004D55C0: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Artem\\TLO_embryo.cpp	1254	high	previously_applied_debug_symbol
 1	004D67B0	TLOBaseTy::SetActivity	TLOBaseTy::SetActivity	TLOBaseTy	SetActivity	__thiscall	004D67B6: MOV EAX,dword ptr [ECX]	E:\\__titans\\Artem\\TLO_embryo.cpp	1326	high	previously_applied_debug_symbol
 1	004E9CE0	TLOBaseTy::teleNone	TLOBaseTy::teleNone	TLOBaseTy	teleNone	__thiscall	004E9CEE: MOV dword ptr [EBP + -0x1c],ECX	E:\\__titans\\Artem\\TLO_tele.cpp	470	high	previously_applied_debug_symbol
@@ -542,7 +547,6 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0057F580	STDcResourcC::Init	STDcResourcC::Init	STDcResourcC	Init	__thiscall	0057F588: MOV EBX,ECX	E:\\__titans\\Igor\\To_gold.cpp	515	high	previously_applied_debug_symbol
 1	0057F6E0	STDcResourcC::CreateRes	STDcResourcC::CreateRes	STDcResourcC	CreateRes	__thiscall	0057F6ED: MOV dword ptr [EBP + -0x14],ECX	E:\\__titans\\Igor\\To_gold.cpp	692	high	previously_applied_debug_symbol
 1	00580B60	STFieldC::CreateField	STFieldC::CreateField	STFieldC	CreateField	__thiscall	00580B6C: MOV dword ptr [EBP + -0x8],ECX	E:\\__titans\\Igor\\To_gold.cpp	1044	high	previously_applied_debug_symbol
-1	00581AC0	STJellyManC::Error	STJellyManC::Error	STJellyManC	Error	__thiscall	00581AC3: MOV EAX,dword ptr [ECX + 0x20f]	E:\\__titans\\Igor\\to_jell_m.cpp	218	high	previously_applied_debug_symbol
 1	00581BF0	STJellyManC::GetMessage	STJellyManC::GetMessage	STJellyManC	GetMessage	__thiscall	00581BFD: MOV dword ptr [EBP + -0xc],ECX	E:\\__titans\\Igor\\to_jell_m.cpp	402	high	previously_applied_debug_symbol
 1	005825C0	STJellyGunC::LifeGun	STJellyGunC::LifeGun	STJellyGunC	LifeGun	__thiscall	005825C9: MOV ESI,ECX	E:\\__titans\\Igor\\to_jelly.cpp	283	high	previously_applied_debug_symbol
 1	00583270	STJellyGunC::GetMessage	STJellyGunC::GetMessage	STJellyGunC	GetMessage	__thiscall	00583279: MOV EAX,dword ptr [ECX + 0x235]	E:\\__titans\\Igor\\to_jelly.cpp	688	high	previously_applied_debug_symbol

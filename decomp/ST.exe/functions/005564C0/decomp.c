@@ -39,7 +39,7 @@ undefined4 __thiscall TraksClassTy::GetMessage(TraksClassTy *this,int param_1)
     RaiseInternalException(errorCode,0,s_E____titans_grig_traks_cpp_007c9104,0x152);
     return 0xffff;
   }
-  *(undefined4 *)(local_14 + 0x20) = *(undefined4 *)(DAT_00802a38 + 0xe4);
+  *(undefined4 *)(local_14 + 0x20) = DAT_00802a38->field_00E4;
   FUN_006e5fd0();
   uVar1 = *(uint *)(param_1 + 0x10);
   if (uVar1 < 4) {

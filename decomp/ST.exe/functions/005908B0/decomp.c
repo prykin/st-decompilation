@@ -17,8 +17,8 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
   MAdvTy *local_8;
   
   local_8 = this;
-  uVar3 = FUN_006e51b0(*(int *)(this + 0x10));
-  *(undefined4 *)(this + 0x58) = uVar3;
+  uVar3 = FUN_006e51b0(this->field_0010);
+  this->field_0058 = uVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -29,7 +29,7 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
       NoneMAdv(local_8);
       break;
     case 2:
-      local_8[0x5d] = *(MAdvTy *)(*(int *)(param_1 + 0x14) + 0x14);
+      local_8[1].field_0x1 = *(undefined1 *)(*(int *)(param_1 + 0x14) + 0x14);
       InitMAdv(local_8);
       break;
     case 3:
@@ -41,14 +41,14 @@ undefined4 __thiscall MAdvTy::GetMessage(MAdvTy *this,int param_1)
     case 0x62:
     case 100:
       thunk_FUN_00590860(local_8);
-      if (pMVar2[0x5d] == (MAdvTy)0x0) {
-        *(undefined4 *)(pMVar2 + 0x40) = 0x200;
-        *(undefined4 *)(pMVar2 + 0x44) = 0;
-        *(undefined4 *)(pMVar2 + 0x48) = 0x6102;
+      if (pMVar2[1].field_0x1 == '\0') {
+        *(undefined4 *)&pMVar2->field_0x40 = 0x200;
+        *(undefined4 *)&pMVar2->field_0x44 = 0;
+        *(undefined4 *)&pMVar2->field_0x48 = 0x6102;
       }
       else {
-        *(undefined4 *)(pMVar2 + 0x44) = 1;
-        *(undefined4 *)(pMVar2 + 0x48) = 0x7102;
+        *(undefined4 *)&pMVar2->field_0x44 = 1;
+        *(undefined4 *)&pMVar2->field_0x48 = 0x7102;
       }
     }
     g_currentExceptionFrame = local_4c.previous;

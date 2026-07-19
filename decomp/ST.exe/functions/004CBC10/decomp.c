@@ -19,7 +19,7 @@ int __thiscall TLOBaseTy::AddSprInit(TLOBaseTy *this)
   local_8 = this;
   iVar2 = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   if (iVar2 == 0) {
-    switch(*(undefined4 *)(local_8 + 0x5ac)) {
+    switch(*(undefined4 *)&local_8->field_0x5ac) {
     case 0x32:
     case 0x40:
     case 0x49:

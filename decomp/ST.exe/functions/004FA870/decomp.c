@@ -1,19 +1,23 @@
 
-void __thiscall FUN_004fa870(void *this,byte param_1)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004FA870_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_4=4;CASE_5=5;CASE_E=14;CASE_F=15 */
+
+void __thiscall FUN_004fa870(void *this,Global_sub_004FA870_param_1Enum param_1)
 
 {
   if (*(int *)((int)this + 300) != 0) {
     *(undefined1 *)(param_1 + 0xb4e + (int)this) = 1;
     return;
   }
-  if ((((param_1 == 0) || (5 < param_1)) && (param_1 != 0xe)) && (param_1 != 0xf)) {
-    if (param_1 == 6) {
+  if ((((param_1 == 0) || (CASE_5 < param_1)) && (param_1 != CASE_E)) && (param_1 != CASE_F)) {
+    if (param_1 == (CASE_4|CASE_2)) {
       if (DAT_008016e8 != (int *)0x0) {
         (**(code **)(*DAT_008016e8 + 0x1c))();
         return;
       }
     }
-    else if (param_1 == 7) {
+    else if (param_1 == (CASE_4|CASE_2|CASE_1)) {
       if (DAT_0080167c != (int *)0x0) {
         (**(code **)(*DAT_0080167c + 0x1c))();
         return;
@@ -75,21 +79,21 @@ void __thiscall FUN_004fa870(void *this,byte param_1)
   }
   else {
     switch(param_1) {
-    case 1:
+    case CASE_1:
       CPanelTy::Update1Panel(this);
       return;
-    case 2:
+    case CASE_2:
       thunk_FUN_00502330();
       return;
-    case 4:
+    case CASE_4:
       thunk_FUN_005097b0();
       return;
-    case 5:
+    case CASE_5:
       CPanelTy::Update5Panel(this);
       return;
-    case 0xe:
-    case 0xf:
-      CPanelTy::UpdateStackPanel(this,(uint)(byte)(param_1 - 0xe));
+    case CASE_E:
+    case CASE_F:
+      CPanelTy::UpdateStackPanel(this,(uint)(byte)(param_1 - CASE_E));
     }
   }
   return;

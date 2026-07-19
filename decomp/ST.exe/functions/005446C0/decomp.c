@@ -41,7 +41,7 @@ void __thiscall CursorClassTy::AddOpticAcc(CursorClassTy *this)
     local_14 = local_74;
     local_74[0] = 8;
     local_5c = 2;
-    local_60 = *(undefined4 *)(local_8 + 8);
+    local_60 = *(undefined4 *)&local_8->field_0x8;
     local_18 = 0x10;
     puVar4 = &DAT_00808136;
     do {

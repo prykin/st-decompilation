@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
 
 {
-  CPanelTy CVar1;
+  byte bVar1;
   code *pcVar2;
   bool bVar3;
   CPanelTy *pCVar4;
@@ -54,11 +54,11 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   }
   thunk_FUN_005252c0(0xae);
   pCVar4 = local_10;
-  *(undefined4 *)(local_10 + 300) = 0;
-  if (local_10[0xb64] == (CPanelTy)0x0) {
+  *(undefined4 *)&local_10->field_0x12c = 0;
+  if (local_10->field_0xb64 == '\0') {
     thunk_FUN_004f8020(local_10,'\x01',0);
   }
-  *(undefined4 *)(pCVar4 + 300) = 1;
+  *(undefined4 *)&pCVar4->field_0x12c = 1;
   if (DAT_008016e8 != (ProdPanelTy *)0x0) {
     ProdPanelTy::SetPanel(DAT_008016e8,'\0');
   }
@@ -90,8 +90,8 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     (**(code **)(*DAT_0080168c + 0x1c))(0);
   }
   thunk_FUN_0054a8d0(DAT_00802a30);
-  CVar1 = pCVar4[(param_1 & 0xff) + 0xba2];
-  switch((uint)(byte)CVar1) {
+  bVar1 = (&pCVar4->field_0xba2)[param_1 & 0xff];
+  switch((uint)bVar1) {
   case 1:
     local_5 = 0;
     thunk_FUN_0054edf0((undefined4 *)0xa,(undefined4 *)&local_5,0,0xffffffff);
@@ -112,7 +112,7 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
   case 0x12:
   case 0x13:
   case 0x18:
-    thunk_FUN_0054b630(DAT_00802a30,(uint)(byte)CVar1,0);
+    thunk_FUN_0054b630(DAT_00802a30,(uint)bVar1,0);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 4:
@@ -128,12 +128,12 @@ void __thiscall CPanelTy::SetCmdBoat(CPanelTy *this,uint param_1)
     return;
   case 0xb:
   case 0xc:
-    local_6 = CVar1 == (CPanelTy)0xb;
+    local_6 = bVar1 == 0xb;
     thunk_FUN_0054edf0((undefined4 *)0x28,(undefined4 *)&local_6,0,0xffffffff);
     g_currentExceptionFrame = local_54.previous;
     return;
   case 0xe:
-    if ((DAT_00801684 != (ProdPanelTy *)0x0) && (*(short *)(DAT_00801684 + 0x172) == 2)) {
+    if ((DAT_00801684 != (ProdPanelTy *)0x0) && (*(short *)&DAT_00801684->field_0x172 == 2)) {
       ProdPanelTy::SetPanel(DAT_00801684,'\x01');
     }
     break;

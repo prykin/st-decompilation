@@ -94,7 +94,7 @@ undefined4 __fastcall FUN_005ddb40(int param_1)
         pcVar9 = pcVar9 + 1;
       }
       StartSystemTy::AddToChat(local_8,(int)local_460);
-      iVar7 = *(int *)(pSVar2 + 0x696);
+      iVar7 = pSVar2->field_0696;
       iVar4 = iVar4 + 1;
     } while (iVar4 < *(int *)(iVar7 + 8));
   }

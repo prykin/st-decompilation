@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::BackDismant */
+   STBoatC::BackDismant
+   
+   [STSwitchEnumApplier] Switch target field_06C3 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_06C3State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_2,void *param_3)
 
@@ -14,22 +18,22 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
   int *unaff_ESI;
   undefined4 unaff_EDI;
   
-  *(undefined4 *)(this + 0xb7) = 0;
-  switch(*(undefined4 *)(this + 0x6c3)) {
-  case 0:
-  case 1:
-  case 2:
-  case 6:
+  this->field_00B7 = 0;
+  switch(this->field_06C3) {
+  case CASE_0:
+  case CASE_1:
+  case CASE_2:
+  case CASE_6:
     break;
-  case 3:
-    *(undefined4 *)(this + 0x6c3) = 5;
-    *(undefined4 *)(this + 0x6c7) = 0;
-    iVar5 = (**(code **)(*(int *)this + 0xd8))();
+  case CASE_3:
+    this->field_06C3 = CASE_5;
+    *(undefined4 *)&this->field_0x6c7 = 0;
+    iVar5 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
-  case 4:
-    sVar1 = *(short *)(this + 0x6a9);
-    sVar2 = *(short *)(this + 0x6ad);
-    sVar3 = *(short *)(this + 0x6ab);
+  case CASE_4:
+    sVar1 = this->field_06A9;
+    sVar2 = this->field_06AD;
+    sVar3 = this->field_06AB;
     if (((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
         ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)) {
       param_1 = (int *)0x0;
@@ -39,24 +43,24 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
                          ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
                          (int)sVar1) * 8);
     }
-    if (((param_1 == (int *)0x0) || (param_1[6] != *(int *)(this + 0x6af))) ||
-       ((param_1[9] != *(int *)(this + 0x24) ||
+    if (((param_1 == (int *)0x0) || (param_1[6] != this->field_06AF)) ||
+       ((param_1[9] != *(int *)&this->field_0x24 ||
         (iVar5 = thunk_FUN_004b9d90((int)param_1), iVar5 == 0)))) {
-      FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x6af),(int *)&param_1);
+      FUN_006e62d0(DAT_00802a38,this->field_06AF,(int *)&param_1);
     }
     if (param_1 != (int *)0x0) {
       thunk_FUN_004b9d20(param_1,(int)this);
     }
-    if (*(int *)(this + 0x6b9) == 1) {
-      *(undefined4 *)(this + 0x6c3) = 5;
-      *(undefined4 *)(this + 0x6c7) = 0;
+    if (*(int *)&this->field_0x6b9 == 1) {
+      this->field_06C3 = CASE_5;
+      *(undefined4 *)&this->field_0x6c7 = 0;
     }
     else {
-      *(undefined4 *)(this + 0x6c3) = 6;
+      this->field_06C3 = CASE_6;
     }
-    iVar5 = (**(code **)(*(int *)this + 0xd8))();
+    iVar5 = (*this->vtable->vfunc_D8)();
     return (-(uint)(iVar5 != 0) & 0xfffffffd) + 2;
-  case 5:
+  case CASE_5:
     iVar5 = Dismant(this,(int *)0x2,unaff_EDI,unaff_ESI);
     return iVar5;
   default:
@@ -71,9 +75,9 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
   }
   iVar5 = thunk_FUN_00460360((int *)this);
   if (iVar5 == 0) {
-    sVar1 = *(short *)(this + 0x6a9);
-    sVar2 = *(short *)(this + 0x6ad);
-    sVar3 = *(short *)(this + 0x6ab);
+    sVar1 = this->field_06A9;
+    sVar2 = this->field_06AD;
+    sVar3 = this->field_06AB;
     if (((((sVar1 < 0) || (DAT_007fb240 <= sVar1)) || (sVar3 < 0)) ||
         ((DAT_007fb242 <= sVar3 || (sVar2 < 0)))) || (DAT_007fb244 <= sVar2)) {
       param_1 = (int *)0x0;
@@ -83,12 +87,12 @@ int __thiscall STBoatC::BackDismant(STBoatC *this,int *param_1,undefined4 param_
                          ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
                          (int)sVar1) * 8);
     }
-    if (((param_1 == (int *)0x0) || (param_1[6] != *(int *)(this + 0x6af))) ||
-       ((param_1[9] != *(int *)(this + 0x24) ||
+    if (((param_1 == (int *)0x0) || (param_1[6] != this->field_06AF)) ||
+       ((param_1[9] != *(int *)&this->field_0x24 ||
         (iVar5 = thunk_FUN_004b9d90((int)param_1), iVar5 == 0)))) {
-      FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x6af),(int *)&param_1);
+      FUN_006e62d0(DAT_00802a38,this->field_06AF,(int *)&param_1);
     }
-    if ((param_1 != (int *)0x0) && (param_1[300] == *(int *)(this + 0x18))) {
+    if ((param_1 != (int *)0x0) && (param_1[300] == this->field_0018)) {
       param_1[300] = 0;
     }
     return 0;

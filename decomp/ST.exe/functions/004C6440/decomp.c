@@ -55,8 +55,9 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
     if (((((-1 < iVar8) && (iVar8 < DAT_007fb240)) && (-1 < local_8)) && (local_8 < DAT_007fb242))
        && ((((((DAT_00802a88 == (void *)0x0 || (DAT_0080874d == 0xff)) ||
               ((*(int *)((int)DAT_00802a88 + 0xf8) == 0 ||
-               ((thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_10
-                                    ,local_8,&local_30,&local_34), (int)piVar7 < 0x79aed0 ||
+               ((thunk_FUN_00558c00(DAT_00802a88,
+                                    *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                    local_10,local_8,&local_30,&local_34), (int)piVar7 < 0x79aed0 ||
                 (0x79aee3 < (int)piVar7)))))) ||
              ((local_30 < 0 ||
               (((*(int *)((int)pvVar4 + 0x30) <= local_30 ||
@@ -66,9 +67,10 @@ FUN_004c6440(void *this,float param_1,int param_2,int *param_3,int *param_4,int 
              (*(char *)(iVar8 * *(int *)((int)pvVar4 + 0x30) + *(int *)((int)pvVar4 + 0x4c) +
                        local_30) != '\0')))) &&
            (iVar8 = local_10,
-           thunk_FUN_004ae0b0(local_10,local_8,local_c,*(int *)((int)this + 0x1c),(uint)DAT_0080874d
-                              ,&local_2c,&local_24,&local_1c,0,*(int **)((int)this + 0x20)),
-           local_24 != 0)))) break;
+           thunk_FUN_004ae0b0(local_10,local_8,local_c,
+                              *(Global_sub_004AE0B0_param_4Enum *)((int)this + 0x1c),
+                              (uint)DAT_0080874d,&local_2c,&local_24,&local_1c,0,
+                              *(int **)((int)this + 0x20)), local_24 != 0)))) break;
     local_20 = piVar7 + -1;
     local_c = local_c + -1;
     if ((int)local_20 < 0x79aed0) {

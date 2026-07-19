@@ -33,9 +33,9 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
   uint local_c;
   uint local_8;
   
-  if ((*(int *)(this + 0x91) == 0) ||
-     ((uint)(*(int *)(this + 0x95) + *(int *)(this + 0x91)) <= *(uint *)(this + 300))) {
-    *(undefined4 *)(this + 0x95) = *(undefined4 *)(this + 300);
+  if ((this->field_0091 == 0) ||
+     ((uint)(this->field_0095 + this->field_0091) <= (uint)this->field_012C)) {
+    this->field_0095 = this->field_012C;
     local_88.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_88;
     local_10 = this;
@@ -43,7 +43,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
     pAVar6 = local_10;
     if (iVar8 == 0) {
       local_8 = 0;
-      iVar8 = *(int *)(local_10 + 0xbd);
+      iVar8 = *(int *)&local_10->field_0xbd;
       if (0 < *(int *)(iVar8 + 0xc)) {
         bVar12 = *(int *)(iVar8 + 0xc) != 0;
         do {
@@ -63,9 +63,9 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
           switch(*(undefined4 *)(iVar8 + 0x2c)) {
           case 0:
             if ((*(int *)(iVar8 + 0x12) == 0) ||
-               ((uint)(*(int *)(iVar8 + 0x3a) + *(int *)(iVar8 + 0x12)) <= *(uint *)(pAVar6 + 300)))
-            {
-              iVar9 = *(int *)(pAVar6 + 0xa5);
+               ((uint)(*(int *)(iVar8 + 0x3a) + *(int *)(iVar8 + 0x12)) <= (uint)pAVar6->field_012C)
+               ) {
+              iVar9 = *(int *)&pAVar6->field_0xa5;
               local_c = 0;
               if (0 < *(int *)(iVar9 + 0xc)) {
                 bVar12 = *(int *)(iVar9 + 0xc) != 0;
@@ -84,7 +84,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                       *puVar11 = 0;
                       puVar11 = puVar11 + 1;
                     }
-                    local_44[1] = *(uint *)(pAVar6 + 300);
+                    local_44[1] = pAVar6->field_012C;
                     local_44[0] = 0x68;
                     uStack_3a = (undefined2)iVar8;
                     uStack_38 = (undefined1)((uint)iVar8 >> 0x10);
@@ -95,12 +95,12 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                       *(undefined4 *)(iVar8 + 0x2c) = 1;
                       *(uint *)(iVar8 + 0x34) = local_c;
                       *(undefined2 *)(iVar8 + 0x38) = local_36;
-                      *(undefined4 *)(iVar8 + 0x3a) = *(undefined4 *)(pAVar6 + 300);
+                      *(undefined4 *)(iVar8 + 0x3a) = pAVar6->field_012C;
                       cVar7 = cStack_3b;
                       break;
                     }
                   }
-                  iVar9 = *(int *)(pAVar6 + 0xa5);
+                  iVar9 = *(int *)&pAVar6->field_0xa5;
                   local_c = local_c + 1;
                   bVar12 = local_c < *(uint *)(iVar9 + 0xc);
                   cVar7 = cStack_3b;
@@ -113,9 +113,9 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
             break;
           case 1:
             if ((*(int *)(iVar8 + 0xe) == 0) ||
-               ((uint)(*(int *)(iVar8 + 0x3a) + *(int *)(iVar8 + 0xe)) <= *(uint *)(pAVar6 + 300)))
+               ((uint)(*(int *)(iVar8 + 0x3a) + *(int *)(iVar8 + 0xe)) <= (uint)pAVar6->field_012C))
             {
-              iVar9 = *(int *)(pAVar6 + 0xa5);
+              iVar9 = *(int *)&pAVar6->field_0xa5;
               if (*(uint *)(iVar8 + 0x34) < *(uint *)(iVar9 + 0xc)) {
                 iVar9 = *(int *)(iVar9 + 8) * *(uint *)(iVar8 + 0x34) + *(int *)(iVar9 + 0x1c);
               }
@@ -128,7 +128,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                   *puVar11 = 0;
                   puVar11 = puVar11 + 1;
                 }
-                local_44[1] = *(uint *)(pAVar6 + 300);
+                local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x69;
                 uStack_3a = (undefined2)((uint)iVar8 >> 8);
                 uStack_38 = uVar5;
@@ -150,7 +150,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
             uVar1 = *(uint *)(iVar8 + 0x30);
             cStack_3b = cVar7;
             if (-1 < (int)uVar1) {
-              iVar9 = *(int *)(pAVar6 + 0xa5);
+              iVar9 = *(int *)&pAVar6->field_0xa5;
               if (uVar1 < *(uint *)(iVar9 + 0xc)) {
                 iVar9 = *(int *)(iVar9 + 8) * uVar1 + *(int *)(iVar9 + 0x1c);
               }
@@ -163,7 +163,7 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                   *puVar11 = 0;
                   puVar11 = puVar11 + 1;
                 }
-                local_44[1] = *(uint *)(pAVar6 + 300);
+                local_44[1] = pAVar6->field_012C;
                 local_44[0] = 0x6b;
                 cStack_3b = (char)((uint)iVar8 >> 8);
                 uStack_3a = (undefined2)((uint)iVar8 >> 0x10);
@@ -171,12 +171,12 @@ void __thiscall AiTactClassTy::ExecClaim(AiTactClassTy *this,int param_1)
                 AiFltClassTy::GetAiMess(*(AiFltClassTy **)(iVar9 + 4),local_44);
               }
             }
-            FUN_006b0c70(*(int *)(pAVar6 + 0xbd),local_8);
+            FUN_006b0c70(*(int *)&pAVar6->field_0xbd,local_8);
             local_8 = local_8 - 1;
             cVar7 = cStack_3b;
           }
           cStack_3b = cVar7;
-          iVar8 = *(int *)(pAVar6 + 0xbd);
+          iVar8 = *(int *)&pAVar6->field_0xbd;
           local_8 = local_8 + 1;
           bVar12 = local_8 < *(uint *)(iVar8 + 0xc);
         } while ((int)local_8 < (int)*(uint *)(iVar8 + 0xc));

@@ -20,8 +20,8 @@ void __thiscall STCrabC::SetSprRange(STCrabC *this,uint param_1)
     param_1 = 0;
   }
   iVar2 = param_1 * 6;
-  *(short *)(this + 0x6c) = (short)iVar2;
-  thunk_FUN_004abce0(this + 0x1d5,0xe,iVar2,iVar2 + 5,'\0');
+  this->field_006C = (short)iVar2;
+  thunk_FUN_004abce0(&this->field_01D5,0xe,iVar2,iVar2 + 5,'\0');
   return;
 }
 

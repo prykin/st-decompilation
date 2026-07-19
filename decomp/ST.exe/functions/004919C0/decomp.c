@@ -2,13 +2,17 @@
 /* WARNING: Type propagation algorithm not settling */
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::GetCellForLoading */
+   STBoatC::GetCellForLoading
+   
+   [STSwitchEnumApplier] Switch target param_6 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_GetCellForLoading_param_6Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 undefined4 __thiscall
 STBoatC::GetCellForLoading
           (STBoatC *this,short param_1,short param_2,short param_3,short param_4,short param_5,
-          short param_6,undefined2 *param_7,undefined2 *param_8,undefined2 *param_9,short *param_10,
-          short *param_11,undefined2 *param_12)
+          STBoatC_GetCellForLoading_param_6Enum param_6,undefined2 *param_7,undefined2 *param_8,
+          undefined2 *param_9,short *param_10,short *param_11,undefined2 *param_12)
 
 {
   undefined2 uVar1;
@@ -73,11 +77,11 @@ STBoatC::GetCellForLoading
                (int)param_2,(int)param_3,-1,-1,-1);
   iVar11 = DAT_007fb278 * iVar11;
   iVar10 = 0;
-  if (*(short *)((int)DAT_007fb238 + ((int)param_6 * (int)DAT_007fb27e + iVar11 + (int)param_4) * 2)
-      < 1) {
+  if (*(short *)((int)DAT_007fb238 +
+                ((int)(short)param_6 * (int)DAT_007fb27e + iVar11 + (int)param_4) * 2) < 1) {
     return 0xfffffffe;
   }
-  switch((int)param_6) {
+  switch((int)(short)param_6) {
   case 0:
     local_20[0] = 0;
     local_20[1] = 1;
@@ -166,9 +170,9 @@ LAB_00491c1c:
     }
     iVar10 = iVar10 + 4;
     if (0x13 < iVar10) {
-      iVar10 = param_6 + 1;
+      iVar10 = (short)param_6 + 1;
       if (iVar10 < 5) {
-        iVar12 = param_6 + 2;
+        iVar12 = (short)param_6 + 2;
         psVar13 = (short *)((int)DAT_007fb238 + (DAT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2)
         ;
         do {
@@ -191,7 +195,7 @@ LAB_00491c1c:
           iVar12 = iVar12 + 1;
         } while (iVar12 < 6);
       }
-      iVar10 = param_6 + -1;
+      iVar10 = (short)param_6 + -1;
       if (-1 < iVar10) {
         psVar13 = (short *)((int)DAT_007fb238 + (DAT_007fb27e * iVar10 + iVar11 + (int)param_4) * 2)
         ;

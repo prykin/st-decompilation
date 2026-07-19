@@ -19,9 +19,9 @@ void __thiscall UpgPanelTy::DoneUpgPanel(UpgPanelTy *this)
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_EDI,unaff_ESI);
   if (errorCode == 0) {
-    *(undefined4 *)(local_8 + 0x3f3) = 0;
-    *(undefined4 *)(local_8 + 0x3ef) = 0;
-    *(undefined4 *)(local_8 + 0x3eb) = 0;
+    *(undefined4 *)&local_8[2].field_0x103 = 0;
+    *(undefined4 *)&local_8[2].field_0xff = 0;
+    *(undefined4 *)&local_8[2].field_0xfb = 0;
     DAT_00802a48 = 0;
     g_currentExceptionFrame = pIVar2;
     return;

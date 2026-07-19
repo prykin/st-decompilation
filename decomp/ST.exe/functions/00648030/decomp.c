@@ -43,7 +43,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
     uVar5 = (*pcVar1)();
     return uVar5;
   }
-  uVar6 = *(uint *)(DAT_00802a38 + 0xe4);
+  uVar6 = DAT_00802a38->field_00E4;
   *(uint *)(local_10 + 0x658) = uVar6;
   uVar7 = *(uint *)(param_1 + 0x10);
   if (uVar7 < 0x110) {
@@ -100,7 +100,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
       DAT_0080c83a = 0;
     }
     else {
-      DAT_0080c83a = *(uint *)(DAT_00802a38 + 0xe4) / 0x19;
+      DAT_0080c83a = (uint)DAT_00802a38->field_00E4 / 0x19;
     }
     puVar3 = &DAT_008087b6;
     puVar10 = &DAT_0080c967;

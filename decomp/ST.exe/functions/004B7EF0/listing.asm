@@ -1,4 +1,4 @@
-FUN_004b7ef0:
+TLOBaseTy::TLOBaseTy:
 004B7EF0  56                        PUSH ESI
 004B7EF1  57                        PUSH EDI
 004B7EF2  8B F1                     MOV ESI,ECX

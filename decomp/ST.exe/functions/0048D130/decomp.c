@@ -33,50 +33,50 @@ STBoatC::SetNewMD(STBoatC *this,int param_1,short param_2,short param_3,short pa
     RaiseInternalException(0,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4bcd);
   }
   if (param_1 == 1) {
-    if (*(int *)(this + 0x4a1) != param_5) {
-      sVar1 = *(short *)(this + 0x49b);
-      sVar2 = *(short *)(this + 0x49f);
-      sVar3 = *(short *)(this + 0x49d);
+    if (this->field_04A1 != param_5) {
+      sVar1 = this->field_049B;
+      sVar2 = this->field_049F;
+      sVar3 = this->field_049D;
       if (((-1 < sVar1) && (sVar1 < DAT_007fb240)) &&
          ((-1 < sVar3 &&
           ((((sVar3 < DAT_007fb242 && (-1 < sVar2)) && (sVar2 < DAT_007fb244)) &&
            (pvVar4 = *(void **)(DAT_007fb248 +
                                ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
                                (int)sVar1) * 8), pvVar4 != (void *)0x0)))))) {
-        thunk_FUN_004e18e0(pvVar4,*(int *)(this + 0x18));
-        thunk_FUN_004e1690(pvVar4,*(int *)(this + 0x18));
+        thunk_FUN_004e18e0(pvVar4,this->field_0018);
+        thunk_FUN_004e1690(pvVar4,this->field_0018);
       }
-      *(int *)(this + 0x4a1) = param_5;
-      *(undefined4 *)(this + 0x4bd) = 1;
+      this->field_04A1 = param_5;
+      this->field_04BD = 1;
       if (param_5 != -1) {
-        *(short *)(this + 0x49b) = param_2;
-        *(short *)(this + 0x49d) = param_3;
-        *(short *)(this + 0x49f) = param_4;
-        *(undefined4 *)(this + 0x4b5) = param_6;
+        this->field_049B = param_2;
+        this->field_049D = param_3;
+        this->field_049F = param_4;
+        this->field_04B5 = param_6;
         return;
       }
     }
   }
-  else if (*(int *)(this + 0x4ab) != param_5) {
-    sVar1 = *(short *)(this + 0x4a5);
-    sVar2 = *(short *)(this + 0x4a9);
-    sVar3 = *(short *)(this + 0x4a7);
+  else if (*(int *)&this->field_0x4ab != param_5) {
+    sVar1 = *(short *)&this->field_0x4a5;
+    sVar2 = *(short *)&this->field_0x4a9;
+    sVar3 = *(short *)&this->field_0x4a7;
     if (((((-1 < sVar1) && (sVar1 < DAT_007fb240)) && (-1 < sVar3)) &&
         ((sVar3 < DAT_007fb242 && (-1 < sVar2)))) &&
        ((sVar2 < DAT_007fb244 &&
         (pvVar4 = *(void **)(DAT_007fb248 +
                             ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
                             (int)sVar1) * 8), pvVar4 != (void *)0x0)))) {
-      thunk_FUN_004e18e0(pvVar4,*(int *)(this + 0x18));
-      thunk_FUN_004e1690(pvVar4,*(int *)(this + 0x18));
+      thunk_FUN_004e18e0(pvVar4,this->field_0018);
+      thunk_FUN_004e1690(pvVar4,this->field_0018);
     }
-    *(int *)(this + 0x4ab) = param_5;
-    *(undefined4 *)(this + 0x4c1) = 1;
+    *(int *)&this->field_0x4ab = param_5;
+    *(undefined4 *)&this->field_0x4c1 = 1;
     if (param_5 != -1) {
-      *(short *)(this + 0x4a5) = param_2;
-      *(short *)(this + 0x4a7) = param_3;
-      *(short *)(this + 0x4a9) = param_4;
-      *(undefined4 *)(this + 0x4b9) = param_6;
+      *(short *)&this->field_0x4a5 = param_2;
+      *(short *)&this->field_0x4a7 = param_3;
+      *(short *)&this->field_0x4a9 = param_4;
+      *(undefined4 *)&this->field_0x4b9 = param_6;
     }
   }
   return;

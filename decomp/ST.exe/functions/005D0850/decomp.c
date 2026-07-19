@@ -7,7 +7,7 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
 
 {
   code *pcVar1;
-  SettMapTy *this_00;
+  SettMapMTy *this_00;
   int iVar2;
   int iVar3;
   uint uVar4;
@@ -16,16 +16,16 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
   void *unaff_EDI;
   bool bVar6;
   InternalExceptionFrame local_4c;
-  SettMapTy *local_8;
+  SettMapMTy *local_8;
   
-  if (*(int *)(this + 0x1f84) != 0) {
+  if (this->field_1F84 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
-    local_8 = (SettMapTy *)this;
+    local_8 = this;
     iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar2 == 0) {
-      iVar2 = *(int *)(local_8 + 0x1f84);
+      iVar2 = local_8->field_1F84;
       if (param_1 < *(uint *)(iVar2 + 0xc)) {
         pcVar5 = (char *)(*(int *)(iVar2 + 8) * param_1 + *(int *)(iVar2 + 0x1c));
       }
@@ -40,7 +40,7 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
         if ((pcVar5[4] == '\x02') && (*(int *)(pcVar5 + 6) == DAT_0080877f)) {
           DAT_0080874d = param_2;
         }
-        iVar2 = *(int *)(this_00 + 0x1f84);
+        iVar2 = this_00->field_1F84;
         uVar4 = param_1 + 1;
         bVar6 = uVar4 < *(uint *)(iVar2 + 0xc);
         if ((int)uVar4 < (int)*(uint *)(iVar2 + 0xc)) {
@@ -56,14 +56,14 @@ void __thiscall SettMapMTy::ChangePlayerColor(SettMapMTy *this,uint param_1,char
             if (*(int *)(pcVar5 + 6) == DAT_0080877f) {
               DAT_0080874d = param_2;
             }
-            iVar2 = *(int *)(this_00 + 0x1f84);
+            iVar2 = this_00->field_1F84;
             uVar4 = uVar4 + 1;
             bVar6 = uVar4 < *(uint *)(iVar2 + 0xc);
           } while ((int)uVar4 < (int)*(uint *)(iVar2 + 0xc));
         }
         (**(code **)(*(int *)this_00 + 0x2c))();
-        SettMapTy::PaintSC(this_00);
-        *(int *)(this_00 + 0x2121) = *(int *)(this_00 + 0x2121) + 1;
+        SettMapTy::PaintSC((SettMapTy *)this_00);
+        *(int *)&this_00[1].field_0x4 = *(int *)&this_00[1].field_0x4 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

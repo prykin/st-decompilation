@@ -25,7 +25,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
   undefined4 local_18;
   CGenerate *local_10;
   undefined4 local_c;
-  undefined4 *local_8;
+  Global_sub_00693710_param_1Enum *local_8;
   
   local_c = 1;
   local_64.previous = g_currentExceptionFrame;
@@ -69,7 +69,7 @@ undefined4 __thiscall CGenerate::CreateMap(CGenerate *this)
     pCVar10 = pCVar10 + 1;
     pCVar11 = pCVar11 + 1;
   }
-  local_8 = (undefined4 *)0x0;
+  local_8 = (Global_sub_00693710_param_1Enum *)0x0;
   cMf32::RecGet(*(cMf32 **)(local_10 + 0x234),0xc,s_TEXTURE_DSCR_007cd130,(int *)&local_8,1);
   thunk_FUN_00693710(*local_8);
   cMf32::RecMemFree(*(cMf32 **)(pCVar3 + 0x234),(uint *)&local_8);

@@ -23,8 +23,8 @@ SystemWithNamedObjClassTy::CreateObject
   puVar1 = (undefined4 *)
            SystemClassTy::_CreateObject((SystemClassTy *)this,param_1,param_2,param_3,param_5);
   if (puVar1 != (undefined4 *)0x0) {
-    puVar1[6] = *(undefined4 *)(this + 0x20);
-    *(int *)(this + 0x20) = *(int *)(this + 0x20) + 1;
+    puVar1[6] = this->field_0020;
+    this->field_0020 = this->field_0020 + 1;
     puVar3 = local_24;
     for (iVar2 = 8; iVar2 != 0; iVar2 = iVar2 + -1) {
       *puVar3 = 0;

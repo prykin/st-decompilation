@@ -33,7 +33,7 @@ int __fastcall FUN_00661800(int param_1,undefined4 param_2)
         this = (int *)STAllPlayersC::GetObjPtr
                                 (DAT_007fa174,
                                  CONCAT31((int3)((uint)uVar4 >> 8),*(undefined1 *)(param_1 + 0x24)),
-                                 CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),1);
+                                 CONCAT22((short)((uint)puVar2 >> 0x10),*puVar2),CASE_1);
         uVar4 = extraout_EDX_00;
         if (this != (int *)0x0) {
           uVar7 = (**(code **)(*this + 0x2c))();

@@ -29,10 +29,10 @@ AppClassTy::DecodeMessage(AppClassTy *this,int param_1,undefined4 param_2,undefi
   iVar3 = Library::MSVCRT::__setjmp3(local_6c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   this_00 = local_8;
   if (iVar3 == 0) {
-    if (*(int *)(local_8 + 0x14) != 0) {
-      *(undefined4 *)(*(int *)(local_8 + 0x14) + 4) = 0;
+    if (local_8->field_0014 != 0) {
+      *(undefined4 *)(local_8->field_0014 + 4) = 0;
       while( true ) {
-        iVar3 = *(int *)(this_00 + 0x14);
+        iVar3 = this_00->field_0014;
         uVar1 = *(uint *)(iVar3 + 4);
         if (uVar1 < *(uint *)(iVar3 + 0xc)) {
           piVar4 = (int *)(*(int *)(iVar3 + 8) * uVar1 + *(int *)(iVar3 + 0x1c));

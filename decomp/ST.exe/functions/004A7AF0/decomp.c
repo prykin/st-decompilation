@@ -22,29 +22,29 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
   int local_e;
   int local_a;
   
-  if (*(int *)(this + 0x22a) == 0) {
+  if (this->field_022A == 0) {
     return 1;
   }
-  FUN_006acc70(*(int *)(this + 0x22a),*(uint *)(this + 0x232),(undefined4 *)&local_14);
+  FUN_006acc70(this->field_022A,this->field_0232,(undefined4 *)&local_14);
   if (param_1 == 1) {
     local_1e = thunk_FUN_0040bc90(this,param_2 & 0xffff,(short *)(int)local_14,
                                   (short *)(int)local_12,(short *)(int)local_10,'\0');
-    if (*(int *)(this + 0x242) < local_1e) {
-      if ((1 < *(ushort *)(this + 0x27)) &&
-         (((*(int *)(this + 0x236) == 1 && (local_1e <= local_a / 2)) ||
-          ((*(int *)(this + 0x236) == 0 && (local_1e <= local_e / 2)))))) {
-        FUN_006acc70(*(int *)(this + 0x22e),param_3,&local_2c);
+    if ((int)this->field_0242 < local_1e) {
+      if ((1 < (ushort)this->field_0027) &&
+         (((this->field_0236 == 1 && (local_1e <= local_a / 2)) ||
+          ((this->field_0236 == 0 && (local_1e <= local_e / 2)))))) {
+        FUN_006acc70(this->field_022E,param_3,&local_2c);
         if (local_1a != 0) {
           if (local_1a == 1) {
             if (local_1e < local_26) {
               local_1a = 1;
               local_26 = local_1e;
-              Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&local_2c);
+              Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
               return 0;
             }
             local_1a = 2;
             local_22 = local_1e;
-            Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&local_2c);
+            Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
             return 0;
           }
           if (local_1a != 2) {
@@ -58,27 +58,27 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
             return uVar3;
           }
           if (local_22 <= local_1e) {
-            if (*(int *)(this + 0x23e) == 0) {
-              *(undefined4 *)(this + 0x23e) = 1;
+            if (this->field_023E == 0) {
+              this->field_023E = 1;
             }
             local_1a = 3;
             local_2c = 1;
-            Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&local_2c);
+            Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
             iVar2 = thunk_FUN_004a7e30(this,1);
             return (uint)(iVar2 != 0);
           }
         }
         local_1a = 1;
         local_26 = local_1e;
-        Library::DKW::TBL::FUN_006ae140(*(uint **)(this + 0x22e),param_3,&local_2c);
+        Library::DKW::TBL::FUN_006ae140((uint *)this->field_022E,param_3,&local_2c);
       }
       return 0;
     }
-    if (*(int *)(this + 0x23e) == 0) {
-      *(undefined4 *)(this + 0x23e) = 1;
+    if (this->field_023E == 0) {
+      this->field_023E = 1;
     }
-    FUN_006acc70(*(int *)(this + 0x22e),param_3,&local_2c);
-    puVar4 = *(uint **)(this + 0x22e);
+    FUN_006acc70(this->field_022E,param_3,&local_2c);
+    puVar4 = (uint *)this->field_022E;
   }
   else {
     iVar2 = thunk_FUN_00423e70(this,param_2);
@@ -91,11 +91,11 @@ STGroupBoatC::GetPatrolTask(STGroupBoatC *this,int param_1,uint param_2,uint par
     if ((int)*(short *)(iVar2 + 0x4b) != *(int *)(iVar2 + 0xcf)) {
       return 0;
     }
-    if (*(int *)(this + 0x23e) == 0) {
-      *(undefined4 *)(this + 0x23e) = 1;
+    if (this->field_023E == 0) {
+      this->field_023E = 1;
     }
-    FUN_006acc70(*(int *)(this + 0x22e),param_3,&local_2c);
-    puVar4 = *(uint **)(this + 0x22e);
+    FUN_006acc70(this->field_022E,param_3,&local_2c);
+    puVar4 = (uint *)this->field_022E;
   }
   local_2c = 1;
   Library::DKW::TBL::FUN_006ae140(puVar4,param_3,&local_2c);

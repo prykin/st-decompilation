@@ -41,36 +41,36 @@ int __thiscall STBoatC::WaitLoad(STBoatC *this,void *param_1)
   undefined4 local_14;
   int local_10;
   int local_c;
-  STBoatC *local_8;
+  undefined4 *local_8;
   
   if ((param_1 == (void *)0x0) || (pSVar11 = this, param_1 == (void *)0x1)) {
-    pSVar11 = this + 0x2cc;
+    puVar8 = &this->field_02CC;
     for (iVar10 = 0x17; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *(undefined4 *)pSVar11 = 0;
-      pSVar11 = pSVar11 + 4;
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
-    *(undefined4 *)(this + 0x2c4) = 0;
-    pSVar11 = this + 0x5a0;
+    this->field_02C4 = 0;
+    puVar8 = (undefined4 *)&this->field_05A0;
     for (iVar10 = 10; iVar10 != 0; iVar10 = iVar10 + -1) {
-      *(undefined4 *)pSVar11 = 0;
-      pSVar11 = pSVar11 + 4;
+      *puVar8 = 0;
+      puVar8 = puVar8 + 1;
     }
-    *(undefined2 *)pSVar11 = 0;
-    *(undefined2 *)(this + 0x5a0) = *(undefined2 *)(this + 0x3c8);
-    *(undefined4 *)(this + 0x5c0) = 0;
+    *(undefined2 *)puVar8 = 0;
+    this->field_05A0 = this->field_03C8;
+    this->field_05C0 = 0;
     pSVar11 = (STBoatC *)0x0;
   }
-  if (*(int *)(this + 0x5c0) != 0) {
-    if (*(int *)(this + 0x5c0) != 1) {
+  if (this->field_05C0 != 0) {
+    if (this->field_05C0 != 1) {
 LAB_00475068:
-      if (*(int *)(this + 0x5c0) == 2) {
+      if (this->field_05C0 == 2) {
         iVar10 = BackWaitLoad(this,(int *)0x2);
         if (iVar10 == 0) {
-          *(undefined4 *)(this + 0x5c0) = 0;
+          this->field_05C0 = 0;
         }
         return 2;
       }
-      if (*(int *)(this + 0x5c0) != 3) {
+      if (this->field_05C0 != 3) {
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x3007,0,0,&DAT_007a4ccc
                                     ,s_STBoatC__WaitLoad_unknown_swli_r_007aae9c);
         if (iVar10 == 0) {
@@ -80,84 +80,85 @@ LAB_00475068:
         iVar10 = (*pcVar4)();
         return iVar10;
       }
-      if ((*(int *)(this + 0x5a6) == 0) &&
-         (iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x5a2),(int *)(this + 0x5a6)),
+      if ((*(int *)&this->field_0x5a6 == 0) &&
+         (iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&this->field_0x5a6),
          iVar10 == -4)) {
         RaiseInternalException(0xffff,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fea);
       }
-      if ((*(int *)(*(int *)(this + 0x5a6) + 0x7ce) != 0) &&
-         (*(int *)(this + 0x716) < *(int *)(this + 0x712))) {
+      if ((*(int *)(*(int *)&this->field_0x5a6 + 0x7ce) != 0) &&
+         ((int)this->field_0716 < (int)this->field_0712)) {
         uVar3 = ZEXT48(DAT_00802a38[7].messages) % 0x19;
         if ((int)uVar3 == 0) {
-          iVar10 = *(int *)(this + 0x6f7) + -1;
+          iVar10 = this->field_06F7 - CASE_1;
           if ((int)((uVar3 << 0x20 | ZEXT48(DAT_00802a38[7].messages)) % 100) == 0) {
-            (**(code **)(*(int *)this + 0x90))(3,0x363);
-            thunk_FUN_00637930(*(uint *)(this + 0x1ed),1,-100,-100,-100,0,0);
+            (*this->vtable->vfunc_90)(3,0x363);
+            thunk_FUN_00637930(*(uint *)&this->field_0x1ed,1,-100,-100,-100,0,0);
           }
-          iVar6 = *(int *)(this + 0x712);
+          iVar6 = this->field_0712;
           iVar12 = (iVar6 * 0x19) / (int)(&DAT_007e04a0)[iVar10];
-          if (iVar6 < *(int *)(this + 0x716) + iVar12) {
-            iVar12 = iVar6 - *(int *)(this + 0x716);
+          if (iVar6 < this->field_0716 + iVar12) {
+            iVar12 = iVar6 - this->field_0716;
           }
-          local_8 = (STBoatC *)((*(int *)(&DAT_0085442c + iVar10 * 4) * iVar12) / iVar6);
+          local_8 = (undefined4 *)((*(int *)(&DAT_0085442c + iVar10 * 4) * iVar12) / iVar6);
           iVar6 = (*(int *)(&DAT_007e07a0 + iVar10 * 4) * iVar12) / iVar6;
-          thunk_FUN_004d7480((char)this[0x24],4,*(undefined4 *)(this + 0x18),(int)local_8,0,iVar6,0)
-          ;
-          iVar10 = thunk_FUN_004d7b10((char)this[0x24],4);
+          thunk_FUN_004d7480(this->field_0x24,4,this->field_0018,(int)local_8,0,iVar6,0);
+          iVar10 = thunk_FUN_004d7b10(this->field_0x24,4);
           if (((int)local_8 <= iVar10) &&
-             (iVar10 = thunk_FUN_004d7b90((char)this[0x24],4), iVar6 <= iVar10)) {
-            thunk_FUN_004d7c10((char)this[0x24],4,*(int *)(this + 0x18),(int)local_8);
-            thunk_FUN_004d7e50((char)this[0x24],4,*(int *)(this + 0x18),iVar6);
-            *(int *)(this + 0x716) = *(int *)(this + 0x716) + iVar12;
-            if (*(uint *)(this + 0x24) == (uint)*(byte *)(*(int *)(this + 0x10) + 0x112d)) {
-              thunk_FUN_004d8b70((char)*(uint *)(this + 0x24));
+             (iVar10 = thunk_FUN_004d7b90(this->field_0x24,4), iVar6 <= iVar10)) {
+            thunk_FUN_004d7c10(this->field_0x24,4,this->field_0018,(int)local_8);
+            thunk_FUN_004d7e50(this->field_0x24,4,this->field_0018,iVar6);
+            this->field_0716 = this->field_0716 + iVar12;
+            if (*(uint *)&this->field_0x24 == (uint)*(byte *)(*(int *)&this->field_0x10 + 0x112d)) {
+              thunk_FUN_004d8b70((char)*(uint *)&this->field_0x24);
             }
           }
-          thunk_FUN_004d7570((char)this[0x24],4,*(int *)(this + 0x18));
+          thunk_FUN_004d7570(this->field_0x24,4,this->field_0018);
         }
       }
-      local_44 = *(undefined4 *)(this + 8);
+      local_44 = *(undefined4 *)&this->field_0x8;
       local_3c = 0x129;
       local_40 = 2;
       SystemClassTy::PostMessage(DAT_00802a38,local_4c);
 switchD_00474a47_caseD_2:
       return 2;
     }
-    if (*(int *)(this + 0x5c4) == 0) {
+    if (this->field_05C4 == 0) {
       iVar10 = thunk_FUN_00460260(this,2);
       switch(iVar10) {
       case 0:
       case 1:
         thunk_FUN_004602b0((int *)this);
-        iVar10 = *(int *)(this + 0x5bc) + 1;
-        *(int *)(this + 0x5bc) = iVar10;
-        if (*(short *)(this + iVar10 * 2 + 0x5b2) != -1) {
-          param_1 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),this[0x24]),
-                                               CONCAT22((short)((uint)iVar10 >> 0x10),
-                                                        *(undefined2 *)(this + 0x30)));
-          thunk_FUN_00481520(this,(int)*(short *)(this + 0x5b),(int)*(short *)(this + 0x5d),
-                             (int)*(short *)(this + *(int *)(this + 0x5bc) * 2 + 0x5b2));
+        iVar10 = this->field_05BC;
+        iVar6 = iVar10 + 1;
+        this->field_05BC = iVar6;
+        if ((&this->field_05B4)[iVar10] != -1) {
+          param_1 = (void *)thunk_FUN_0042b760(CONCAT31((int3)((uint)extraout_ECX >> 8),
+                                                        this->field_0x24),
+                                               CONCAT22((short)((uint)iVar6 >> 0x10),
+                                                        this->field_0030));
+          thunk_FUN_00481520(this,(int)(short)this->field_005B,(int)(short)this->field_005D,
+                             (int)(short)(&this->field_05B2)[this->field_05BC]);
           thunk_FUN_00460260(this,0);
           return 2;
         }
-        if ((*(short *)(this + 0x41) == (short)(*(short *)(this + 0x5aa) * 0xc9 + 100)) &&
-           (*(short *)(this + 0x43) == (short)(*(short *)(this + 0x5ac) * 0xc9 + 100))) {
-          if (*(short *)(this + 0x45) != (short)(*(short *)(this + 0x5ae) * 200 + 100)) {
-            *(undefined4 *)(this + 0x5c4) = 3;
+        if ((this->field_0041 == (short)(this->field_05AA * 0xc9 + 100)) &&
+           (this->field_0043 == (short)(this->field_05AC * 0xc9 + 100))) {
+          if (this->field_0045 != (short)(this->field_05AE * 200 + 100)) {
+            this->field_05C4 = 3;
             return 2;
           }
-          *(uint *)(this + 0x5c4) = 6 - (uint)(*(short *)(this + 0x6c) != *(short *)(this + 0x5b0));
+          this->field_05C4 = 6 - (uint)(*(short *)&this->field_0x6c != this->field_05B0);
           return 2;
         }
-        *(undefined4 *)(this + 0x5c4) = 1;
+        this->field_05C4 = 1;
         return 2;
       case 2:
         goto switchD_00474a47_caseD_2;
       case 3:
-        *(undefined4 *)(this + 0x5c0) = 0;
-        iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x5a2),(int *)&param_1);
+        this->field_05C0 = 0;
+        iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&param_1);
         if (iVar10 != -4) {
-          NotReadyForLoading(param_1,*(int *)(this + 0x18));
+          NotReadyForLoading(param_1,this->field_0018);
           return 2;
         }
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f68,0,0,&DAT_007a4ccc
@@ -181,26 +182,26 @@ switchD_00474a47_caseD_2:
         return 2;
       }
     }
-    if (*(int *)(this + 0x5c4) == 1) {
-      iVar10 = (ushort)(*(short *)(this + 0x5ae) * 200) + 100;
-      iVar12 = CONCAT22((short)((uint)pSVar11 >> 0x10),*(short *)(this + 0x5ac) * 0xc9) + 100;
-      iVar6 = CONCAT22((short)((uint)iVar10 >> 0x10),*(short *)(this + 0x5aa) * 0xc9) + 100;
+    if (this->field_05C4 == 1) {
+      iVar10 = (ushort)(this->field_05AE * 200) + 100;
+      iVar12 = CONCAT22((short)((uint)pSVar11 >> 0x10),this->field_05AC * 0xc9) + 100;
+      iVar6 = CONCAT22((short)((uint)iVar10 >> 0x10),this->field_05AA * 0xc9) + 100;
       uVar5 = (undefined2)((uint)iVar12 >> 0x10);
-      uVar5 = (**(code **)(*(int *)this + 0x10))
-                        (CONCAT22(uVar5,*(undefined2 *)(this + 0x41)),
-                         CONCAT22((short)((uint)iVar6 >> 0x10),*(undefined2 *)(this + 0x43)),
-                         CONCAT22(uVar5,*(undefined2 *)(this + 0x45)),iVar6,iVar12,iVar10);
-      *(undefined2 *)(this + 0x5c8) = uVar5;
-      *(undefined4 *)(this + 0x5c4) = 2;
+      uVar5 = (*this->vtable->vfunc_10)
+                        (CONCAT22(uVar5,this->field_0041),
+                         CONCAT22((short)((uint)iVar6 >> 0x10),this->field_0043),
+                         CONCAT22(uVar5,this->field_0045),iVar6,iVar12,iVar10);
+      *(undefined2 *)&this->field_0x5c8 = uVar5;
+      this->field_05C4 = 2;
     }
-    if (*(int *)(this + 0x5c4) == 2) {
-      uVar7 = thunk_FUN_004176c0(this,*(short *)(this + 0x5c8));
+    if (this->field_05C4 == 2) {
+      uVar7 = thunk_FUN_004176c0(this,*(short *)&this->field_0x5c8);
       uVar7 = thunk_FUN_00417910(this,(short)uVar7);
       if (uVar7 != 0xffffffff) {
         if (uVar7 == 0) {
-          *(undefined4 *)(this + 0x5c4) = 3;
+          this->field_05C4 = 3;
         }
-        iVar10 = (**(code **)(*(int *)this + 0xd8))();
+        iVar10 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
       iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2f8f,0,0,&DAT_007a4ccc,
@@ -212,31 +213,30 @@ switchD_00474a47_caseD_2:
       iVar10 = (*pcVar4)();
       return iVar10;
     }
-    if (*(int *)(this + 0x5c4) == 3) {
-      thunk_FUN_00415b30(this,*(short *)(this + 0x41),*(short *)(this + 0x43),
-                         *(short *)(this + 0x45),*(short *)(this + 0x5aa) * 0xc9 + 100,
-                         *(short *)(this + 0x5ac) * 0xc9 + 100,*(short *)(this + 0x5ae) * 200 + 100,
-                         (byte)this[0x61]);
-      *(undefined4 *)(this + 0x5c4) = 4;
+    if (this->field_05C4 == 3) {
+      thunk_FUN_00415b30(this,this->field_0041,this->field_0043,this->field_0045,
+                         this->field_05AA * 0xc9 + 100,this->field_05AC * 0xc9 + 100,
+                         this->field_05AE * 200 + 100,this->field_0x61);
+      this->field_05C4 = 4;
     }
-    iVar10 = *(int *)(this + 0x5c4);
+    iVar10 = this->field_05C4;
     if (iVar10 == 4) {
       local_1c = thunk_FUN_00415ed0(this,&local_18,&local_14);
-      uVar7 = *(int *)(this + 0x1c) * 0x41c64e6d + 0x3039;
-      *(uint *)(this + 0x1c) = uVar7;
+      uVar7 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+      *(uint *)&this->field_0x1c = uVar7;
       iVar10 = (uVar7 >> 0x10) % 7 - 3;
-      uVar7 = *(int *)(this + 0x1c) * 0x41c64e6d + 0x3039;
-      *(uint *)(this + 0x1c) = uVar7;
-      uVar1 = *(int *)(this + 0x1c) * 0x41c64e6d + 0x3039;
-      *(uint *)(this + 0x1c) = uVar1;
+      uVar7 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+      *(uint *)&this->field_0x1c = uVar7;
+      uVar1 = *(int *)&this->field_0x1c * 0x41c64e6d + 0x3039;
+      *(uint *)&this->field_0x1c = uVar1;
       local_c = (uVar1 >> 0x10) % 7 - 3;
-      if ((*(int *)(this + 0x74a) <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
-         (local_10 = 0, this[0x2bf] != (STBoatC)0x0)) {
-        local_8 = this + 0x2b3;
+      if (((int)this->field_074A <= (int)*(short *)(DAT_00806724 + 0x23) / 2) &&
+         (local_10 = 0, this->field_0x2bf != '\0')) {
+        local_8 = (undefined4 *)&this->field_0x2b3;
         do {
           puVar8 = (undefined4 *)
-                   thunk_FUN_0041dc40(local_2c,*(undefined4 *)local_8,*(undefined2 *)(local_8 + 4),
-                                      *(short *)(this + 0x6c));
+                   thunk_FUN_0041dc40(local_2c,*local_8,*(undefined2 *)(local_8 + 1),
+                                      *(short *)&this->field_0x6c);
           uVar2 = *puVar8;
           bVar22 = 0;
           sVar21 = 0;
@@ -259,23 +259,23 @@ switchD_00474a47_caseD_2:
             sVar21 = 0;
             bVar22 = 0;
             lVar14 = Library::MSVCRT::__ftol();
-            iVar13 = (int)local_20 + *(short *)(this + 0x45) + local_c + (int)(short)lVar14;
-            iVar12 = (int)*(short *)(this + 0x43) - (int)local_24._2_2_;
-            iVar9 = (int)(short)local_24 + iVar10 + *(short *)(this + 0x41);
+            iVar13 = (int)local_20 + (short)this->field_0045 + local_c + (int)(short)lVar14;
+            iVar12 = (int)(short)this->field_0043 - (int)local_24._2_2_;
+            iVar9 = (int)(short)local_24 + iVar10 + (short)this->field_0041;
           }
           else {
-            iVar13 = (int)local_20 + local_c + *(short *)(this + 0x45);
+            iVar13 = (int)local_20 + local_c + (short)this->field_0045;
             local_24._2_2_ = (short)((uint)uVar2 >> 0x10);
-            iVar12 = (int)*(short *)(this + 0x43) - (int)local_24._2_2_;
+            iVar12 = (int)(short)this->field_0043 - (int)local_24._2_2_;
             local_24._0_2_ = (short)uVar2;
-            iVar9 = (int)(short)local_24 + iVar10 + *(short *)(this + 0x41);
+            iVar9 = (int)(short)local_24 + iVar10 + (short)this->field_0041;
           }
           TraksClassTy::TraksCreate
                     (DAT_00802a7c,1,2,7,iVar9,iVar12 + ((uVar7 >> 0x10) % 7 - 3),iVar13,sVar15,
                      sVar16,sVar17,sVar18,sVar19,sVar20,iVar6,sVar21,bVar22);
-          local_8 = local_8 + 6;
+          local_8 = (undefined4 *)((int)local_8 + 6);
           local_10 = local_10 + 1;
-        } while (local_10 < (int)(uint)(byte)this[0x2bf]);
+        } while (local_10 < (int)(uint)(byte)this->field_0x2bf);
       }
       if (local_1c == -1) {
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fb6,0,0,&DAT_007a4ccc
@@ -288,13 +288,13 @@ switchD_00474a47_caseD_2:
         return iVar10;
       }
       if (local_1c == 0) {
-        *(uint *)(this + 0x5c4) = 6 - (uint)(*(short *)(this + 0x6c) != *(short *)(this + 0x5b0));
+        this->field_05C4 = 6 - (uint)(*(short *)&this->field_0x6c != this->field_05B0);
       }
-      iVar10 = (**(code **)(*(int *)this + 0xd8))();
+      iVar10 = (*this->vtable->vfunc_D8)();
       return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
     }
     if (iVar10 == 5) {
-      uVar7 = thunk_FUN_004176c0(this,*(short *)(this + 0x5b0));
+      uVar7 = thunk_FUN_004176c0(this,this->field_05B0);
       uVar7 = thunk_FUN_00417910(this,(short)uVar7);
       if (uVar7 == 0xffffffff) {
         iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fc5,0,0,&DAT_007a4ccc
@@ -307,14 +307,14 @@ switchD_00474a47_caseD_2:
         return iVar10;
       }
       if (uVar7 == 0) {
-        *(undefined4 *)(this + 0x5c4) = 6;
+        this->field_05C4 = 6;
       }
     }
     else {
       if (iVar10 == 6) {
-        if (*(short *)(this + 0x6e) == 0x2f) {
-          *(undefined4 *)(this + 0x76) = 0;
-          iVar10 = FUN_006e62d0(DAT_00802a38,*(int *)(this + 0x5a2),(int *)&param_1);
+        if (*(short *)&this->field_0x6e == 0x2f) {
+          this->field_0076 = 0;
+          iVar10 = FUN_006e62d0(DAT_00802a38,this->field_05A2,(int *)&param_1);
           if (iVar10 == -4) {
             iVar10 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x2fd1,0,0,
                                         &DAT_007a4ccc,s_STBoatC__WaitLoad_WAITLOAD_PREPA_007aaecc);
@@ -325,16 +325,16 @@ switchD_00474a47_caseD_2:
             iVar10 = (*pcVar4)();
             return iVar10;
           }
-          ReadyForLoading(param_1,*(void **)(this + 0x18));
-          *(undefined4 *)(this + 0x5c4) = 7;
+          ReadyForLoading(param_1,(void *)this->field_0018);
+          this->field_05C4 = 7;
         }
-        iVar10 = (**(code **)(*(int *)this + 0xd8))();
+        iVar10 = (*this->vtable->vfunc_D8)();
         return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
       }
       if (iVar10 != 7) goto LAB_00475068;
     }
   }
-  iVar10 = (**(code **)(*(int *)this + 0xd8))();
+  iVar10 = (*this->vtable->vfunc_D8)();
   return (-(uint)(iVar10 != 0) & 0xfffffffd) + 2;
 }
 

@@ -1,21 +1,26 @@
 
-undefined4 * __fastcall FUN_00622600(undefined4 *param_1)
+/* [STConstructorApplier] Recovered constructor candidate.
+   VTable: 0079CEFC (store 00622629)
+   Evidence: final_vptr=0079CEFC; returns_this=true; calls_before=2; field_writes_after=1;
+   table_confidence=high */
+
+undefined4 * __thiscall STMineSetC::STMineSetC(STMineSetC *this,undefined4 *param_1)
 
 {
   int iVar1;
   undefined4 *puVar2;
   
-  thunk_FUN_004158e0(param_1);
-  thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_0079d05c;
-  *param_1 = &STMineSetCVTable;
-  puVar2 = (undefined4 *)((int)param_1 + 0x25e);
+  thunk_FUN_004158e0(&this->vtable);
+  thunk_FUN_004ab810(&this->field_01D5);
+  this->field_01D5 = &PTR_LAB_0079d05c;
+  this->vtable = &STMineSetCVTable;
+  puVar2 = (undefined4 *)&this->field_0x25e;
   for (iVar1 = 0x42; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar2 = 0;
     puVar2 = puVar2 + 1;
   }
   *(undefined1 *)puVar2 = 0;
-  *(undefined4 *)((int)param_1 + 0x2ba) = 0xffffffff;
-  return param_1;
+  this->field_02BA = 0xffffffff;
+  return &this->vtable;
 }
 

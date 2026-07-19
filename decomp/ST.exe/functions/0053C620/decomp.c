@@ -6,7 +6,7 @@ void __fastcall FUN_0053c620(void *param_1)
   undefined4 uVar2;
   uint uVar3;
   int iVar4;
-  undefined4 *puVar5;
+  Global_sub_00528060_param_1Enum *pGVar5;
   undefined4 *puVar6;
   undefined4 *puVar7;
   int local_14;
@@ -45,26 +45,27 @@ LAB_0053c75b:
         uVar3 = *(int *)((int)param_1 + 0x199) + local_c;
         uVar1 = *(uint *)(iVar4 + 0xc);
         if ((uVar3 < uVar1) &&
-           (puVar5 = (undefined4 *)(*(int *)(iVar4 + 8) * uVar3 + *(int *)(iVar4 + 0x1c)),
-           puVar5 != (undefined4 *)0x0)) {
-          *(char *)((int)local_8 + -1) = (*(char *)(puVar5 + 2) == '\0') + '\x03';
-          uVar2 = thunk_FUN_005293c0(CONCAT31((int3)(uVar1 >> 8),*(undefined1 *)puVar5));
+           (pGVar5 = (Global_sub_00528060_param_1Enum *)
+                     (*(int *)(iVar4 + 8) * uVar3 + *(int *)(iVar4 + 0x1c)),
+           pGVar5 != (Global_sub_00528060_param_1Enum *)0x0)) {
+          *(char *)((int)local_8 + -1) = (pGVar5[8] == ~(CASE_80|CASE_7F)) + '\x03';
+          uVar2 = thunk_FUN_005293c0(CONCAT31((int3)(uVar1 >> 8),*pGVar5));
           *local_8 = uVar2;
-          uVar2 = thunk_FUN_00528060(*(undefined1 *)puVar5,(char)((uint)*puVar5 >> 0x10));
+          uVar2 = thunk_FUN_00528060(*pGVar5,(char)((uint)*(undefined4 *)pGVar5 >> 0x10));
           local_8[1] = uVar2;
-          if (*(char *)(puVar5 + 2) == '\0') {
-            puVar5 = (undefined4 *)((int)puVar5 + 0x12);
+          if (pGVar5[8] == ~(CASE_80|CASE_7F)) {
+            pGVar5 = pGVar5 + 0x12;
             puVar7 = local_8 + 2;
             for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *puVar7 = *puVar5;
-              puVar5 = puVar5 + 1;
+              *puVar7 = *(undefined4 *)pGVar5;
+              pGVar5 = pGVar5 + 4;
               puVar7 = puVar7 + 1;
             }
-            *(undefined2 *)puVar7 = *(undefined2 *)puVar5;
+            *(undefined2 *)puVar7 = *(undefined2 *)pGVar5;
           }
           else {
-            local_8[2] = *(undefined4 *)((int)puVar5 + 10);
-            local_8[3] = *(undefined4 *)((int)puVar5 + 0xe);
+            local_8[2] = *(undefined4 *)(pGVar5 + 10);
+            local_8[3] = *(undefined4 *)(pGVar5 + 0xe);
           }
         }
       }

@@ -8,7 +8,7 @@ uint FUN_006364b0(int param_1)
   
   local_8 = 0xffffffff;
   if (param_1 == 0) {
-    puVar1 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_blast_p_007d1c14,0xffffffff,0,0,0,
+    puVar1 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_blast_p_007d1c14,0xffffffff,0,0,0,
                           (undefined4 *)0x0);
     if ((puVar1 != (ushort *)0x0) && (DAT_00807598 != (void *)0x0)) {
       FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
@@ -25,7 +25,7 @@ uint FUN_006364b0(int param_1)
     else {
       pcVar2 = s_shapeB_007d1c24;
     }
-    puVar1 = FUN_00709af0(DAT_00806774,0x1d,(byte *)pcVar2,0xffffffff,0,1,0,(undefined4 *)0x0);
+    puVar1 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)pcVar2,0xffffffff,0,1,0,(undefined4 *)0x0);
     if ((puVar1 != (ushort *)0x0) && (DAT_00807598 != (void *)0x0)) {
       FUN_006e8660(DAT_00807598,(int *)&local_8,1,0,*(uint *)((int)puVar1 + 9),
                    *(uint *)((int)puVar1 + 0xd),(int)*(uint *)((int)puVar1 + 9) / 2,

@@ -1,4 +1,4 @@
-FUN_006e34c0:
+AppClassTy::AppClassTy:
 006E34C0  55                        PUSH EBP
 006E34C1  8B EC                     MOV EBP,ESP
 006E34C3  8B C1                     MOV EAX,ECX

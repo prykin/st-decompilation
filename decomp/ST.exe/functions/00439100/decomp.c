@@ -226,7 +226,7 @@ LAB_00439b10:
     uVar9 = (undefined2)(local_20 * 0x29 >> 0x10);
     if (0x5a < iVar3) {
       if (iVar3 == 0x172) {
-        uVar5 = GetObjPtr(local_2c,0xffffffff,CONCAT22(uVar9,(short)piVar1[2]),2);
+        uVar5 = GetObjPtr(local_2c,0xffffffff,CONCAT22(uVar9,(short)piVar1[2]),CASE_2);
         uVar4 = local_8;
         cVar11 = (char)local_8;
         if (*(int *)((int)&DAT_007f5023 + iVar10) != 0) {
@@ -440,7 +440,7 @@ LAB_00439566:
       *(undefined4 *)((int)&DAT_007f4f83 + iVar10) = 0x3c;
       goto LAB_0043a47c;
     }
-    uVar5 = GetObjPtr(local_2c,0xffffffff,CONCAT22(uVar9,(short)piVar1[2]),4);
+    uVar5 = GetObjPtr(local_2c,0xffffffff,CONCAT22(uVar9,(short)piVar1[2]),CASE_4);
     uVar4 = local_8;
     cVar11 = (char)local_8;
     if (*(int *)((int)&DAT_007f5023 + iVar10) != 0) {
@@ -557,7 +557,7 @@ LAB_0043a470:
   }
   else {
     if (iVar3 == 0x1a4) {
-      uVar5 = GetObjPtr(local_2c,0xffffffff,(uint)*(ushort *)(piVar1 + 2),5);
+      uVar5 = GetObjPtr(local_2c,0xffffffff,(uint)*(ushort *)(piVar1 + 2),CASE_5);
       uVar4 = local_8;
       cVar11 = (char)local_8;
       if (*(int *)((int)&DAT_007f5023 + iVar10) != 0) {
@@ -694,7 +694,7 @@ LAB_0043a463:
     }
     if (iVar3 != 0x1ae) {
       if (iVar3 != 0x1b8) goto LAB_00439cfb;
-      uVar5 = GetObjPtr(local_2c,0xffffffff,(uint)*(ushort *)(piVar1 + 2),6);
+      uVar5 = GetObjPtr(local_2c,0xffffffff,(uint)*(ushort *)(piVar1 + 2),CASE_6);
       uVar4 = local_8;
       cVar11 = (char)local_8;
       if (*(int *)((int)&DAT_007f5023 + iVar10) == 0) {
@@ -764,7 +764,7 @@ LAB_00439dfb:
       goto LAB_0043a47c;
     }
     local_20 = GetObjPtr(local_2c,(uint)*(byte *)(piVar1 + 1),
-                         CONCAT22((short)(local_20 * 5 >> 0x10),(short)piVar1[2]),3);
+                         CONCAT22((short)(local_20 * 5 >> 0x10),(short)piVar1[2]),CASE_3);
     uVar4 = local_8;
     cVar11 = (char)local_8;
     if (*(int *)((int)&DAT_007f5023 + iVar10) == 0) {

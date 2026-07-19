@@ -83,8 +83,8 @@ int __fastcall FUN_0060dd70(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar5,iVar6,&local_20
-                       ,&local_24);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       iVar5,iVar6,&local_20,&local_24);
     iVar6 = local_8;
     iVar5 = local_18;
     pvVar3 = DAT_00802a88;
@@ -120,8 +120,8 @@ int __fastcall FUN_0060dd70(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_c,local_18,
-                       &local_24,&local_20);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       local_c,local_18,&local_24,&local_20);
     pvVar2 = DAT_00802a88;
     if (local_24 < 0) {
       return local_14;
@@ -149,8 +149,8 @@ int __fastcall FUN_0060dd70(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_10,iVar5,
-                       &local_24,&local_20);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       local_10,iVar5,&local_24,&local_20);
     iVar6 = local_8;
     iVar5 = local_1c;
     pvVar3 = DAT_00802a88;
@@ -180,8 +180,8 @@ int __fastcall FUN_0060dd70(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return local_14;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_c,local_1c,
-                       &local_24,&local_20);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       local_c,local_1c,&local_24,&local_20);
     if (local_24 < 0) {
       return local_14;
     }

@@ -24,11 +24,11 @@ int __thiscall AppClassTy::AddDecodeMessage(AppClassTy *this,undefined4 *param_1
   iVar3 = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar6);
   pAVar2 = local_8;
   if (iVar3 == 0) {
-    if (*(int *)(local_8 + 0x14) == 0) {
+    if (local_8->field_0014 == 0) {
       puVar4 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0x10,10);
-      *(uint **)(pAVar2 + 0x14) = puVar4;
+      pAVar2->field_0014 = puVar4;
     }
-    Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pAVar2 + 0x14),param_1);
+    Library::DKW::TBL::FUN_006ae1c0((uint *)pAVar2->field_0014,param_1);
     g_currentExceptionFrame = pIVar6;
     return local_c;
   }

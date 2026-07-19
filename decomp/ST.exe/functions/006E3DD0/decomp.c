@@ -17,7 +17,7 @@ int __thiscall AppClassTy::SendMessage(AppClassTy *this,uint param_1,int param_2
   void *unaff_EDI;
   InternalExceptionFrame local_a4;
   InternalExceptionFrame local_60;
-  AppClassTy *local_1c;
+  int *local_1c;
   int local_18;
   uint local_14;
   undefined4 *local_10;
@@ -52,7 +52,7 @@ int __thiscall AppClassTy::SendMessage(AppClassTy *this,uint param_1,int param_2
     iVar3 = (**(code **)(*(int *)piVar4[1] + 0x20))(param_3);
     break;
   case 1:
-    iVar3 = (**(code **)(*(int *)local_c + 0x18))(param_3);
+    iVar3 = (*local_c->vtable->vfunc_18)(param_3);
     break;
   case 2:
     iVar3 = FUN_006e3a70(local_c,param_2,(int *)0x0,&local_10);
@@ -68,9 +68,9 @@ int __thiscall AppClassTy::SendMessage(AppClassTy *this,uint param_1,int param_2
     iVar3 = Library::MSVCRT::__setjmp3(local_a4.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pAVar2 = local_c;
     if (iVar3 == 0) {
-      local_1c = local_c + 0x30;
-      FUN_006b9910((undefined4 *)local_1c,&local_18);
-      iVar3 = *(int *)(pAVar2 + 0xc);
+      local_1c = &local_c->field_0030;
+      FUN_006b9910(local_1c,&local_18);
+      iVar3 = pAVar2->field_000C;
       local_14 = 0;
       uVar7 = *(uint *)(iVar3 + 0xc);
       if (uVar7 != 0) {
@@ -92,7 +92,7 @@ LAB_006e3ef1:
               iVar3 = FUN_006e4d40(pAVar2,*(int *)(*(int *)(iVar3 + 4) + 0xc));
               if (iVar3 != 1) goto LAB_006e3f72;
             }
-            iVar3 = *(int *)(pAVar2 + 0xc);
+            iVar3 = pAVar2->field_000C;
             if (local_14 < *(uint *)(iVar3 + 0xc)) {
               iVar3 = *(int *)(iVar3 + 8) * local_14 + *(int *)(iVar3 + 0x1c);
             }
@@ -104,7 +104,7 @@ LAB_006e3ef1:
               local_8 = 0xffff;
               break;
             }
-            iVar3 = *(int *)(pAVar2 + 0xc);
+            iVar3 = pAVar2->field_000C;
             if (local_14 < *(uint *)(iVar3 + 0xc)) {
               pbVar6 = (byte *)(*(int *)(iVar3 + 8) * local_14 + *(int *)(iVar3 + 0x1c));
             }
@@ -114,28 +114,28 @@ LAB_006e3ef1:
             if ((*pbVar6 & 1) != 0) break;
           }
 LAB_006e3f72:
-          iVar3 = *(int *)(pAVar2 + 0xc);
+          iVar3 = pAVar2->field_000C;
           local_14 = local_14 + 1;
           uVar7 = *(uint *)(iVar3 + 0xc);
         } while (local_14 < uVar7);
       }
-      FUN_006b98c0((int *)local_1c,&local_18);
+      FUN_006b98c0(local_1c,&local_18);
       g_currentExceptionFrame = local_a4.previous;
     }
     else {
       g_currentExceptionFrame = local_a4.previous;
-      FUN_006b98c0((int *)(local_c + 0x30),&local_18);
+      FUN_006b98c0(&local_c->field_0030,&local_18);
       RaiseInternalException(iVar3,0,s_E__Ourlib_Sapp_cpp_007ee78c,0x10b);
     }
   default:
     goto switchD_006e3e37_caseD_4;
   case 0xf:
     local_8 = 0;
-    iVar3 = (**(code **)(*(int *)local_c + 0x18))(param_3);
+    iVar3 = (*local_c->vtable->vfunc_18)(param_3);
     if (iVar3 != 0) {
       local_8 = iVar3;
     }
-    iVar3 = SendMessageToAllSystemsInArr(pAVar2,*(int *)(pAVar2 + 0x10),param_3);
+    iVar3 = SendMessageToAllSystemsInArr(pAVar2,pAVar2->field_0010,param_3);
     if (iVar3 == 0) goto switchD_006e3e37_caseD_4;
   }
   local_8 = iVar3;

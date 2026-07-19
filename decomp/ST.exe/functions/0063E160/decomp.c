@@ -55,7 +55,7 @@ undefined4 __thiscall STTmMineC::LoadImagSpr(STTmMineC *this,uint param_1,int pa
       RaiseInternalException(iVar4,0,s_E____titans_nick_to_TmMin_cpp_007d209c,0x605);
       return 0xffff;
     }
-    puVar5 = FUN_00709af0(DAT_00806764,0x1d,(&PTR_s_blast_p_007d1f68)[*local_c],0xffffffff,0,1,0,
+    puVar5 = FUN_00709af0(DAT_00806764,CASE_1D,(&PTR_s_blast_p_007d1f68)[*local_c],0xffffffff,0,1,0,
                           (undefined4 *)0x0);
     pSVar8 = local_10;
     uVar1 = piVar3[0xe];

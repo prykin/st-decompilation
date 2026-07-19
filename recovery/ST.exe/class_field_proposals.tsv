@@ -1,0 +1,814 @@
+apply	owner	offset	offset_hex	size	proposed_name	proposed_type	reads	writes	confidence	reason	evidence_functions
+1	AiEventClassTy	0	0x0	4	field_0000	/undefined4	1	0	high	consistent_this_relative_access	00652810
+1	AiEventClassTy	210	0xD2	4	field_00D2	/undefined4	1	0	high	consistent_this_relative_access	00652810
+1	AiEventClassTy	1250	0x4E2	4	field_04E2	/undefined4	1	0	high	consistent_this_relative_access	00652810
+1	AiEventClassTy	1323	0x52B	4	field_052B	/undefined4	0	1	high	consistent_this_relative_access	00652810
+1	AiFltClassTy	123	0x7B	2	field_007B	/undefined2	1	0	high	consistent_this_relative_access	006618E0
+1	AiFltClassTy	377	0x179	2	field_0179	/undefined2	1	0	high	consistent_this_relative_access	006618E0
+1	AiFltClassTy	515	0x203	4	field_0203	/undefined4	1	0	high	consistent_this_relative_access	006618E0
+1	AiFltClassTy	519	0x207	4	field_0207	/undefined4	1	1	high	consistent_this_relative_access	006618E0
+1	AiFltClassTy	640	0x280	4	field_0280	/undefined4	2	0	high	consistent_this_relative_access	006618E0
+1	AiFltClassTy	644	0x284	4	field_0284	/undefined4	1	0	high	consistent_this_relative_access	006618E0
+1	AiPlrClassTy	1600	0x640	4	field_0640	/undefined4	1	0	high	consistent_this_relative_access	0067C180
+1	AiPlrClassTy	1646	0x66E	4	field_066E	/undefined4	1	0	high	consistent_this_relative_access	0067B520
+1	AiPlrClassTy	1650	0x672	4	field_0672	/undefined4	1	1	high	consistent_this_relative_access	0067B520
+1	AiPlrClassTy	1654	0x676	1	field_0676	/undefined1	1	0	high	consistent_this_relative_access	0067C180
+1	AiPlrClassTy	1685	0x695	4	field_0695	/undefined4	2	0	high	consistent_this_relative_access	0067B520 | 0067C180
+1	AiPlrClassTy	1790	0x6FE	4	field_06FE	/undefined4	2	0	high	consistent_this_relative_access	0067B520
+0	AiTactClassTy	36	0x24	4	field_0024	/undefined4	2	0	conflict	conflicting_access_widths=1x1|4x1	00690650
+1	AiTactClassTy	145	0x91	4	field_0091	/undefined4	1	0	high	consistent_this_relative_access	0068EC70
+1	AiTactClassTy	149	0x95	4	field_0095	/undefined4	1	1	high	consistent_this_relative_access	0068EC70
+1	AiTactClassTy	300	0x12C	4	field_012C	/undefined4	2	0	high	consistent_this_relative_access	0068EC70
+1	AppClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/AppClassTyVTable	0	1	high	owner_vtable_pointer	006E34C0
+1	AppClassTy	4	0x4	4	field_0004	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	8	0x8	4	field_0008	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	12	0xC	4	field_000C	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	16	0x10	4	field_0010	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	20	0x14	4	field_0014	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	28	0x1C	4	field_001C	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	32	0x20	4	field_0020	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	36	0x24	4	field_0024	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	44	0x2C	4	field_002C	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	48	0x30	4	field_0030	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	AppClassTy	52	0x34	4	field_0034	/undefined4	0	1	high	consistent_this_relative_access	006E34C0
+1	BaseSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/BaseSystemCVTable	0	1	high	owner_vtable_pointer	00576AA0
+1	BehPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	004EDF30
+1	BehPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	004EDF30
+1	BehPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	004EE350
+1	BehPanelTy	92	0x5C	4	field_005C	/undefined4	2	0	high	consistent_this_relative_access	004EDF30 | 004EE350
+1	BehPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	004EDF30
+1	BldBoatPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	004EF320
+1	BldBoatPanelTy	68	0x44	4	field_0044	/undefined4	1	0	high	consistent_this_relative_access	004EF320
+1	BldBoatPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	004EF320
+1	BldBoatPanelTy	392	0x188	4	field_0188	/undefined4	1	0	high	consistent_this_relative_access	004EF320
+1	BldBoatPanelTy	396	0x18C	4	field_018C	/undefined4	1	0	high	consistent_this_relative_access	004EF320
+1	BldBoatPanelTy	409	0x199	4	field_0199	/undefined4	1	0	high	consistent_this_relative_access	004EF320
+1	BldBoatPanelTy	632	0x278	1	field_0278	/undefined1	1	0	high	consistent_this_relative_access	004EF320
+1	BldLabPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	004EFFE0
+1	BldLabPanelTy	68	0x44	4	field_0044	/undefined4	1	0	high	consistent_this_relative_access	004EFFE0
+1	BldLabPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	004EFFE0
+1	BldLabPanelTy	409	0x199	4	field_0199	/undefined4	1	0	high	consistent_this_relative_access	004EFFE0
+1	BldLabPanelTy	634	0x27A	4	field_027A	/undefined4	2	0	high	consistent_this_relative_access	004EFD10 | 004EFFE0
+1	BldObjPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	004F0E60
+1	BldObjPanelTy	68	0x44	4	field_0044	/undefined4	1	0	high	consistent_this_relative_access	004F0E60
+1	BldObjPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	004F0E60
+1	BldObjPanelTy	392	0x188	4	field_0188	/undefined4	1	0	high	consistent_this_relative_access	004F0E60
+1	BldObjPanelTy	396	0x18C	4	field_018C	/undefined4	1	0	high	consistent_this_relative_access	004F0E60
+1	BldObjPanelTy	409	0x199	4	field_0199	/undefined4	1	0	high	consistent_this_relative_access	004F0E60
+1	BldObjPanelTy	632	0x278	1	field_0278	/undefined1	1	0	high	consistent_this_relative_access	004F0E60
+1	CBaseRenderer	0	0x0	4	field_0000	/undefined4	4	0	high	consistent_this_relative_access	0074A113 | 0074A143
+1	CBaseRenderer	20	0x14	4	field_0014	/undefined4	2	0	high	consistent_this_relative_access	0074A113 | 0074A143
+1	CBaseRenderer	92	0x5C	4	field_005C	/undefined4	2	0	high	consistent_this_relative_access	0074A113 | 0074A143
+1	CBaseRenderer	100	0x64	4	field_0064	/undefined4	1	0	high	consistent_this_relative_access	0074A113
+1	CBaseRenderer	108	0x6C	4	field_006C	/undefined4	1	0	high	consistent_this_relative_access	0074A113
+1	CBaseRenderer	112	0x70	4	field_0070	/undefined4	0	1	high	consistent_this_relative_access	0074A113
+1	CPanelTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	004FB060
+1	CPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	004FA570
+1	CPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	004FA570
+1	CPanelTy	56	0x38	4	field_0038	/undefined4	0	1	high	consistent_this_relative_access	004FB060
+1	CPanelTy	64	0x40	4	field_0040	/undefined4	1	0	high	consistent_this_relative_access	004F2560
+1	CPanelTy	88	0x58	4	field_0058	/undefined4	1	0	high	consistent_this_relative_access	004F2560
+1	CPanelTy	152	0x98	4	field_0098	/undefined4	1	0	high	consistent_this_relative_access	004F2560
+1	CPanelTy	176	0xB0	4	field_00B0	/undefined4	1	0	high	consistent_this_relative_access	004F2560
+1	CPanelTy	192	0xC0	4	field_00C0	/undefined4	4	0	high	consistent_this_relative_access	004F3A30 | 004F3CF0 | 004F3FE0 | 004F42A0
+1	CPanelTy	304	0x130	4	field_0130	/undefined4	1	1	high	consistent_this_relative_access	004FA400
+1	CPanelTy	308	0x134	4	field_0134	/undefined4	9	1	high	consistent_this_relative_access	004F3A30 | 004F3CF0 | 004F3FE0 | 004F42A0 | 004FA570
+1	CPanelTy	312	0x138	4	field_0138	/undefined4	9	1	high	consistent_this_relative_access	004F3A30 | 004F3CF0 | 004F3FE0 | 004F42A0 | 004FA570
+1	CPanelTy	388	0x184	4	field_0184	/undefined4	2	0	high	consistent_this_relative_access	004F2560 | 004FE4F0
+1	CPanelTy	396	0x18C	4	field_018C	/undefined4	1	0	high	consistent_this_relative_access	004FE6C0
+1	CPanelTy	404	0x194	4	field_0194	/undefined4	1	0	high	consistent_this_relative_access	004FE6C0
+1	CPanelTy	412	0x19C	4	field_019C	/undefined4	2	0	high	consistent_this_relative_access	004F2560 | 004FE4F0
+1	CPanelTy	577	0x241	2	field_0241	/undefined2	2	0	high	consistent_this_relative_access	004FA570
+1	CPanelTy	587	0x24B	4	field_024B	/undefined4	1	0	high	consistent_this_relative_access	004F96A0
+1	CPanelTy	2516	0x9D4	1	field_09D4	/undefined1	1	0	high	consistent_this_relative_access	00505230
+1	CPanelTy	2915	0xB63	1	field_0B63	/undefined1	1	0	high	consistent_this_relative_access	005007A0
+1	CPanelTy	2917	0xB65	1	field_0B65	/undefined1	1	0	high	consistent_this_relative_access	004FE4F0
+1	CPanelTy	2942	0xB7E	1	field_0B7E	/undefined1	1	0	high	consistent_this_relative_access	004FE4F0
+1	CPanelTy	2943	0xB7F	1	field_0B7F	/undefined1	1	0	high	consistent_this_relative_access	004FE6C0
+1	CPanelTy	2944	0xB80	1	field_0B80	/undefined1	1	0	high	consistent_this_relative_access	005007A0
+1	CPanelTy	3153	0xC51	1	field_0C51	/undefined1	1	0	high	consistent_this_relative_access	005007A0
+1	CPanelTy	3155	0xC53	1	field_0C53	/undefined1	1	0	high	consistent_this_relative_access	004FE4F0
+1	CPanelTy	3180	0xC6C	1	field_0C6C	/undefined1	1	0	high	consistent_this_relative_access	004FE4F0
+1	CPanelTy	3181	0xC6D	1	field_0C6D	/undefined1	1	0	high	consistent_this_relative_access	004FE6C0
+1	CPanelTy	3182	0xC6E	1	field_0C6E	/undefined1	1	0	high	consistent_this_relative_access	005007A0
+1	CPanelTy	6068	0x17B4	1	field_17B4	/undefined1	1	0	high	consistent_this_relative_access	00500520
+1	CampaignTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	00593040
+1	CampaignTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	00591BF0 | 00593040
+1	ChooseMapTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005B0BA0
+1	ChooseMapTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	005AD390 | 005B0BA0
+1	ChooseMapTy	6751	0x1A5F	1	field_1A5F	/undefined1	1	0	high	consistent_this_relative_access	005AFD00
+1	CursorClassTy	16	0x10	4	field_0010	/undefined4	2	0	high	consistent_this_relative_access	00543C90 | 005449B0
+1	CursorClassTy	28	0x1C	4	field_001C	/undefined4	1	0	high	consistent_this_relative_access	00543C90
+1	CursorClassTy	96	0x60	4	field_0060	/undefined4	1	0	high	consistent_this_relative_access	00543C90
+1	DebugSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/DebugSystemCVTable	0	1	high	owner_vtable_pointer	005781C0
+1	EditorClassTy	312	0x138	4	field_0138	/undefined4	1	0	high	consistent_this_relative_access	00720A50
+1	FSGSTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005A4350
+1	FSGSTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	00597120 | 005A4350
+1	FSGSTy	101	0x65	1	field_0065	/undefined1	1	0	high	consistent_this_relative_access	005A1920
+1	FSGSTy	6751	0x1A5F	1	field_1A5F	/undefined1	12	0	high	consistent_this_relative_access	005A0DC0 | 005A1430 | 005A1630 | 005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0 | 005A3540 | 005A3AB0 | 005A40F0
+1	FSGSTy	6752	0x1A60	1	field_1A60	/undefined1	5	1	high	consistent_this_relative_access	005A2380 | 005A26C0 | 005A2A60 | 005A2C10 | 005A2D70 | 005A2FF0
+1	FSGSTy	6807	0x1A97	4	field_1A97	/undefined4	1	0	high	consistent_this_relative_access	005A1920
+1	FSGSTy	6844	0x1ABC	4	field_1ABC	/undefined4	3	0	high	consistent_this_relative_access	005A0DC0 | 005A1430 | 005A1630
+1	FSGSTy	6848	0x1AC0	4	field_1AC0	/undefined4	3	0	high	consistent_this_relative_access	005A0DC0 | 005A1430 | 005A1630
+1	FSGSTy	6924	0x1B0C	4	field_1B0C	/undefined4	2	0	high	consistent_this_relative_access	0059D720 | 005A3AB0
+1	FSGSTy	7822	0x1E8E	4	field_1E8E	/undefined4	1	0	high	consistent_this_relative_access	0059B2C0
+1	FSGSTy	7826	0x1E92	4	field_1E92	/undefined4	1	0	high	consistent_this_relative_access	0059B2C0
+1	FSGSTy	7846	0x1EA6	4	field_1EA6	/undefined4	2	0	high	consistent_this_relative_access	005A2A60 | 005A2C10
+1	FSGSTy	7870	0x1EBE	4	field_1EBE	/undefined4	1	0	high	consistent_this_relative_access	005A3540
+1	FSGSTy	7899	0x1EDB	4	field_1EDB	/undefined4	1	0	high	consistent_this_relative_access	0059B2C0
+1	FrmPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	00510370
+1	FrmPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	00510370
+1	FrmPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	005105E0
+1	FrmPanelTy	92	0x5C	4	field_005C	/undefined4	2	0	high	consistent_this_relative_access	00510370 | 005105E0
+1	FrmPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	00510370
+1	GameSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/GameSystemCVTable	0	0	high	owner_vtable_pointer	
+1	GameSystemC	1072	0x430	1	field_0430	/undefined1	0	1	high	consistent_this_relative_access	005770D0
+1	HelpPanelTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/HelpPanelTyVTable	0	0	high	owner_vtable_pointer	
+1	HelpPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	00511C70
+1	HelpPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	00511C70
+1	HelpPanelTy	92	0x5C	4	field_005C	/undefined4	1	1	high	consistent_this_relative_access	00511C70
+1	HelpPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	00511C70
+1	HelpPanelTy	416	0x1A0	1	field_01A0	/undefined1	1	0	high	consistent_this_relative_access	00511FA0
+1	HelpPanelTy	417	0x1A1	1	field_01A1	/undefined1	2	0	high	consistent_this_relative_access	005134B0 | 00513810
+1	HelpPanelTy	418	0x1A2	1	field_01A2	/undefined1	1	0	high	consistent_this_relative_access	00513810
+1	HelpPanelTy	419	0x1A3	4	field_01A3	/undefined4	1	0	high	consistent_this_relative_access	005134B0
+1	HelpPanelTy	423	0x1A7	4	field_01A7	/undefined4	1	0	high	consistent_this_relative_access	005134B0
+1	HelpPanelTy	459	0x1CB	4	field_01CB	/undefined4	1	0	high	consistent_this_relative_access	005134B0
+1	HelpPanelTy	536	0x218	4	field_0218	/undefined4	1	0	high	consistent_this_relative_access	00511AB0
+1	HelpPanelTy	584	0x248	4	field_0248	/undefined4	4	0	high	consistent_this_relative_access	00516A40 | 00517A50 | 0051B5A0 | 0051C980
+1	HelpPanelTy	588	0x24C	4	field_024C	/undefined4	1	0	high	consistent_this_relative_access	00515E30
+1	InfocPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	005205E0
+1	InfocPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	005205E0
+1	InfocPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	005205E0
+1	InfocPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	005205E0
+1	InterSystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/InterSystemCVTable	0	1	high	owner_vtable_pointer	00542440
+1	InterSystemC	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	00542440
+1	InterSystemC	44	0x2C	4	field_002C	/undefined4	0	1	high	consistent_this_relative_access	00542440
+1	InterSystemC	48	0x30	4	field_0030	/undefined4	0	1	high	consistent_this_relative_access	00542440
+1	JumpManagC	94	0x5E	4	field_005E	/undefined4	1	0	high	consistent_this_relative_access	006178C0
+1	MAdvTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005908B0
+1	MAdvTy	88	0x58	4	field_0058	/undefined4	0	1	high	consistent_this_relative_access	005908B0
+1	MMsgTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005B9330
+1	MMsgTy	45	0x2D	4	field_002D	/undefined4	0	1	high	consistent_this_relative_access	005B9010
+1	MMsgTy	97	0x61	4	field_0061	/undefined4	0	1	high	consistent_this_relative_access	005B9330
+1	MMsgTy	101	0x65	1	field_0065	/undefined1	2	0	high	consistent_this_relative_access	005B87D0 | 005B8C70
+1	MMsgTy	7337	0x1CA9	1	field_1CA9	/undefined1	2	0	high	consistent_this_relative_access	005B7EF0 | 005B87D0
+1	MReportTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005C1A90
+1	MReportTy	97	0x61	4	field_0061	/undefined4	0	1	high	consistent_this_relative_access	005C1A90
+1	MReportTy	102	0x66	1	field_0066	/undefined1	1	0	high	consistent_this_relative_access	005C1340
+1	MReportTy	106	0x6A	1	field_006A	/undefined1	1	0	high	consistent_this_relative_access	005C1340
+1	MReportTy	119	0x77	4	field_0077	/undefined4	1	0	high	consistent_this_relative_access	005C0B00
+1	MReportTy	123	0x7B	4	field_007B	/undefined4	1	0	high	consistent_this_relative_access	005C0B00
+1	MTaskTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005E4570
+1	MTaskTy	97	0x61	4	field_0061	/undefined4	0	1	high	consistent_this_relative_access	005DFA30
+1	MTaskTy	101	0x65	4	field_0065	/undefined4	0	1	high	consistent_this_relative_access	005E4570
+1	MTaskTy	105	0x69	4	field_0069	/undefined4	1	0	high	consistent_this_relative_access	005DFA30
+1	MTestTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005E5FB0
+1	MTestTy	161	0xA1	4	field_00A1	/undefined4	0	1	high	consistent_this_relative_access	005E5FB0
+1	MainMenuTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005B4BB0
+1	MainMenuTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	005B3430 | 005B4BB0
+1	MainMenuTy	188	0xBC	4	field_00BC	/undefined4	0	1	high	consistent_this_relative_access	005B3D60
+1	MainMenuTy	380	0x17C	4	field_017C	/undefined4	0	1	high	consistent_this_relative_access	005B3D60
+1	OptPanelTy	40	0x28	4	field_0028	/undefined4	0	2	high	consistent_this_relative_access	0052F900 | 005325B0
+0	OptPanelTy	44	0x2C	4	field_002C	/undefined4	0	1	conflict	overlaps_field_002E	005325B0
+0	OptPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	conflict	overlaps_field_002C	0052F900
+1	OptPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	0052EFB0
+1	OptPanelTy	68	0x44	4	field_0044	/undefined4	1	0	high	consistent_this_relative_access	0052EFB0
+1	OptPanelTy	72	0x48	4	field_0048	/undefined4	2	0	high	consistent_this_relative_access	0052EFB0
+1	OptPanelTy	92	0x5C	4	field_005C	/undefined4	2	1	high	consistent_this_relative_access	0052EFB0 | 0052F900
+1	OptPanelTy	370	0x172	2	field_0172	/undefined2	1	0	high	consistent_this_relative_access	00533880
+1	OptPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	0052F900
+1	OptPanelTy	412	0x19C	4	field_019C	/undefined4	1	0	high	consistent_this_relative_access	0052F2B0
+1	OptPanelTy	437	0x1B5	4	field_01B5	/undefined4	1	0	high	consistent_this_relative_access	005325B0
+1	PanelTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005384A0
+1	PanelTy	56	0x38	4	field_0038	/undefined4	0	1	high	consistent_this_relative_access	005384A0
+1	PanelTy	60	0x3C	4	field_003C	/undefined4	4	0	high	consistent_this_relative_access	005389E0 | 00538BA0 | 00538DB0 | 00538FC0
+1	PanelTy	92	0x5C	4	field_005C	/undefined4	8	0	high	consistent_this_relative_access	005389E0 | 00538BA0 | 00538DB0 | 00538FC0
+1	PausePanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	005396E0
+1	PausePanelTy	44	0x2C	2	field_002C	/undefined2	0	1	high	consistent_this_relative_access	005396E0
+1	PausePanelTy	92	0x5C	4	field_005C	/undefined4	1	1	high	consistent_this_relative_access	005396E0
+1	PausePanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	005396E0
+1	PlayPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	0053AA50
+1	PlayPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	0053AA50
+1	PlayPanelTy	92	0x5C	4	field_005C	/undefined4	1	1	high	consistent_this_relative_access	0053AA50
+1	PlayPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	0053AA50
+1	PlayPanelTy	384	0x180	1	field_0180	/undefined1	1	0	high	consistent_this_relative_access	0053A820
+1	PlaySystemTy	57	0x39	4	field_0039	/undefined4	1	0	high	consistent_this_relative_access	0054EC20
+1	PrividerTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/PrividerTyVTable	0	0	high	owner_vtable_pointer	
+1	PrividerTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005BC5E0
+1	PrividerTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	005BAE00 | 005BC5E0
+1	ProdPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	0053F780
+1	ProdPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	0053F780
+1	ProdPanelTy	60	0x3C	4	field_003C	/undefined4	2	0	high	consistent_this_relative_access	0053FCD0 | 0053FEE0
+1	ProdPanelTy	92	0x5C	4	field_005C	/undefined4	3	1	high	consistent_this_relative_access	0053F780 | 0053FCD0 | 0053FEE0
+1	ProdPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	0053F780
+1	ProdPanelTy	404	0x194	1	field_0194	/undefined1	1	0	high	consistent_this_relative_access	0053F650
+1	ResearchPanelTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	0053C820
+1	ResearchPanelTy	68	0x44	4	field_0044	/undefined4	1	0	high	consistent_this_relative_access	0053C820
+1	ResearchPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	0053C820
+1	ResearchPanelTy	409	0x199	4	field_0199	/undefined4	1	0	high	consistent_this_relative_access	0053C820
+1	ResearchPanelTy	632	0x278	1	field_0278	/undefined1	1	0	high	consistent_this_relative_access	0053C820
+1	SAMPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	0053D290
+1	SAMPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	0053D290
+1	SAMPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	0053D290
+1	SAMPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	0053D290
+1	SIDTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005D9470
+1	SIDTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	005D81F0 | 005D9470
+1	STAppC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STAppCVTable	0	0	high	owner_vtable_pointer	
+1	STAppC	20218	0x4EFA	4	field_4EFA	/undefined4	1	0	high	consistent_this_relative_access	0056D1F0
+1	STBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STBoatCVTable	12	1	high	owner_vtable_pointer	0044E690 | 004608B0 | 0046C980 | 0046CF20 | 0046F5C0 | 00471AC0 | 00475530 | 00478640 | 0047D080 | 0047DA50
+1	STBoatC	24	0x18	4	field_0018	/undefined4	4	0	high	consistent_this_relative_access	004749C0 | 0047FAD0 | 0048D130
+0	STBoatC	36	0x24	4	field_0024	/undefined4	27	0	conflict	conflicting_access_widths=1x4|4x23	0045EF00 | 0045FD30 | 0046F5C0 | 0047FAD0 | 0047FE10 | 00488F30 | 004899A0 | 00493340
+1	STBoatC	48	0x30	2	field_0030	/undefined2	2	0	high	consistent_this_relative_access	0045FD30 | 0047FE10
+1	STBoatC	50	0x32	2	field_0032	/undefined2	1	0	high	consistent_this_relative_access	0045EF00
+1	STBoatC	65	0x41	2	field_0041	/undefined2	4	0	high	consistent_this_relative_access	0046CF20 | 0046F5C0 | 0047D080 | 0047DA50
+1	STBoatC	67	0x43	2	field_0043	/undefined2	4	0	high	consistent_this_relative_access	0046CF20 | 0046F5C0 | 0047D080 | 0047DA50
+1	STBoatC	69	0x45	2	field_0045	/undefined2	4	0	high	consistent_this_relative_access	0046CF20 | 0046F5C0 | 0047D080 | 0047DA50
+1	STBoatC	71	0x47	2	field_0047	/undefined2	3	0	high	consistent_this_relative_access	004608B0 | 0046F5C0 | 00493340
+1	STBoatC	73	0x49	2	field_0049	/undefined2	3	0	high	consistent_this_relative_access	004608B0 | 0046F5C0 | 00493340
+1	STBoatC	75	0x4B	2	field_004B	/undefined2	3	0	high	consistent_this_relative_access	004608B0 | 0046F5C0 | 00493340
+1	STBoatC	91	0x5B	2	field_005B	/undefined2	4	0	high	consistent_this_relative_access	004732F0 | 004758E0 | 0047D080
+1	STBoatC	93	0x5D	2	field_005D	/undefined2	4	0	high	consistent_this_relative_access	004732F0 | 004758E0 | 0047D080
+1	STBoatC	95	0x5F	2	field_005F	/undefined2	5	0	high	consistent_this_relative_access	004732F0 | 004758E0 | 0047D080 | 00491240
+1	STBoatC	118	0x76	4	field_0076	/undefined4	0	1	high	consistent_this_relative_access	00491070
+1	STBoatC	183	0xB7	4	field_00B7	/undefined4	0	10	high	consistent_this_relative_access	0046AA50 | 0046EFD0 | 0046F5C0 | 004714D0 | 00479600 | 0047BF70 | 0047CF20 | 0047FAD0
+1	STBoatC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	537	0x219	4	field_0219	/undefined4	0	6	high	consistent_this_relative_access	0048A670
+1	STBoatC	708	0x2C4	4	field_02C4	/undefined4	0	7	high	consistent_this_relative_access	0045EF00 | 004608B0 | 0046B100 | 00471AC0 | 004732F0 | 004749C0 | 0047D080
+1	STBoatC	716	0x2CC	4	field_02CC	/undefined4	2	1	high	consistent_this_relative_access	0045EF00 | 0045F400 | 00491070
+1	STBoatC	720	0x2D0	4	field_02D0	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	724	0x2D4	4	field_02D4	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	728	0x2D8	4	field_02D8	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	732	0x2DC	4	field_02DC	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	736	0x2E0	4	field_02E0	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	740	0x2E4	4	field_02E4	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	744	0x2E8	4	field_02E8	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	748	0x2EC	4	field_02EC	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	752	0x2F0	4	field_02F0	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	756	0x2F4	4	field_02F4	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	760	0x2F8	4	field_02F8	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	764	0x2FC	4	field_02FC	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	768	0x300	4	field_0300	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	772	0x304	4	field_0304	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	776	0x308	4	field_0308	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	780	0x30C	4	field_030C	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	784	0x310	4	field_0310	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	788	0x314	4	field_0314	/undefined4	1	1	high	consistent_this_relative_access	0045F400 | 00491070
+1	STBoatC	792	0x318	4	field_0318	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	796	0x31C	4	field_031C	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	800	0x320	4	field_0320	/undefined4	1	0	high	consistent_this_relative_access	0045F400
+1	STBoatC	883	0x373	2	field_0373	/undefined2	1	0	high	consistent_this_relative_access	0046B100
+1	STBoatC	885	0x375	2	field_0375	/undefined2	1	0	high	consistent_this_relative_access	0046B100
+1	STBoatC	887	0x377	2	field_0377	/undefined2	1	0	high	consistent_this_relative_access	0046B100
+1	STBoatC	934	0x3A6	4	field_03A6	/undefined4	1	0	high	consistent_this_relative_access	00471AC0
+1	STBoatC	938	0x3AA	4	field_03AA	/undefined4	1	0	high	consistent_this_relative_access	00471AC0
+1	STBoatC	942	0x3AE	4	field_03AE	/undefined4	1	0	high	consistent_this_relative_access	00471AC0
+1	STBoatC	946	0x3B2	4	field_03B2	/undefined4	1	0	high	consistent_this_relative_access	00471AC0
+1	STBoatC	954	0x3BA	2	field_03BA	/undefined2	1	0	high	consistent_this_relative_access	004732F0
+1	STBoatC	956	0x3BC	2	field_03BC	/undefined2	1	0	high	consistent_this_relative_access	004732F0
+1	STBoatC	958	0x3BE	2	field_03BE	/undefined2	1	0	high	consistent_this_relative_access	004732F0
+1	STBoatC	960	0x3C0	4	field_03C0	/undefined4	1	0	high	consistent_this_relative_access	004732F0
+1	STBoatC	968	0x3C8	2	field_03C8	/undefined2	1	0	high	consistent_this_relative_access	004749C0
+1	STBoatC	1059	0x423	2	field_0423	/undefined2	1	0	high	consistent_this_relative_access	0047D080
+1	STBoatC	1061	0x425	2	field_0425	/undefined2	1	0	high	consistent_this_relative_access	0047D080
+1	STBoatC	1063	0x427	2	field_0427	/undefined2	1	0	high	consistent_this_relative_access	0047D080
+1	STBoatC	1109	0x455	4	field_0455	/undefined4	1	1	high	consistent_this_relative_access	0044E690 | 00482A00
+1	STBoatC	1113	0x459	4	field_0459	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1117	0x45D	4	field_045D	/undefined4	5	2	high	consistent_this_relative_access	0044E690 | 004608B0 | 00491070 | 00491FB0 | 00492080 | 00492280
+1	STBoatC	1121	0x461	4	field_0461	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1125	0x465	4	field_0465	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1141	0x475	2	field_0475	/undefined2	0	1	high	consistent_this_relative_access	004608B0
+1	STBoatC	1143	0x477	2	field_0477	/undefined2	0	1	high	consistent_this_relative_access	004608B0
+1	STBoatC	1145	0x479	2	field_0479	/undefined2	0	1	high	consistent_this_relative_access	004608B0
+1	STBoatC	1147	0x47B	4	field_047B	/undefined4	0	2	high	consistent_this_relative_access	004608B0 | 00471AC0
+1	STBoatC	1151	0x47F	4	field_047F	/undefined4	2	1	high	consistent_this_relative_access	004899A0
+1	STBoatC	1155	0x483	4	field_0483	/undefined4	1	0	high	consistent_this_relative_access	004899A0
+0	STBoatC	1159	0x487	4	field_0487	/undefined4	1	2	conflict	conflicting_access_widths=1x1|4x2	004608B0 | 00471AC0 | 004899A0
+1	STBoatC	1163	0x48B	4	field_048B	/undefined4	1	2	high	consistent_this_relative_access	004608B0 | 00471AC0 | 004899A0
+1	STBoatC	1167	0x48F	4	field_048F	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1171	0x493	4	field_0493	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1175	0x497	4	field_0497	/undefined4	1	1	high	consistent_this_relative_access	0044E690 | 00465BE0
+1	STBoatC	1179	0x49B	2	field_049B	/undefined2	1	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1181	0x49D	2	field_049D	/undefined2	1	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1183	0x49F	2	field_049F	/undefined2	1	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1185	0x4A1	4	field_04A1	/undefined4	1	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1205	0x4B5	4	field_04B5	/undefined4	0	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1213	0x4BD	4	field_04BD	/undefined4	0	1	high	consistent_this_relative_access	0048D130
+1	STBoatC	1229	0x4CD	4	field_04CD	/undefined4	1	0	high	consistent_this_relative_access	0046AA50
+1	STBoatC	1237	0x4D5	4	field_04D5	/undefined4	2	0	high	consistent_this_relative_access	00465C60 | 0046AA50
+1	STBoatC	1282	0x502	4	field_0502	/undefined4	1	0	high	consistent_this_relative_access	0046C980
+1	STBoatC	1288	0x508	4	field_0508	/undefined4	1	0	high	consistent_this_relative_access	0046C980
+1	STBoatC	1296	0x510	2	field_0510	/undefined2	1	0	high	consistent_this_relative_access	0046CF20
+1	STBoatC	1298	0x512	2	field_0512	/undefined2	1	0	high	consistent_this_relative_access	0046CF20
+1	STBoatC	1300	0x514	2	field_0514	/undefined2	1	0	high	consistent_this_relative_access	0046CF20
+1	STBoatC	1314	0x522	2	field_0522	/undefined2	1	1	high	consistent_this_relative_access	0046CF20
+1	STBoatC	1320	0x528	4	field_0528	/undefined4	2	2	high	consistent_this_relative_access	0046CF20
+1	STBoatC	1348	0x544	4	field_0544	/undefined4	1	0	high	consistent_this_relative_access	0046EFD0
+1	STBoatC	1356	0x54C	4	field_054C	/undefined4	2	0	high	consistent_this_relative_access	0046D450 | 0046EFD0
+1	STBoatC	1364	0x554	2	field_0554	/undefined2	5	0	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1366	0x556	2	field_0556	/undefined2	5	0	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1368	0x558	2	field_0558	/undefined2	5	0	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1374	0x55E	2	field_055E	/undefined2	1	0	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1376	0x560	2	field_0560	/undefined2	1	0	high	consistent_this_relative_access	0046F5C0
+0	STBoatC	1378	0x562	4	field_0562	/undefined4	2	0	conflict	conflicting_access_widths=2x1|4x1	0046F5C0
+1	STBoatC	1380	0x564	4	field_0564	/undefined4	2	2	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1384	0x568	4	field_0568	/undefined4	0	1	high	consistent_this_relative_access	0046F5C0
+1	STBoatC	1408	0x580	4	field_0580	/undefined4	2	2	high	consistent_this_relative_access	0046F5C0 | 004714D0
+0	STBoatC	1414	0x586	4	field_0586	/undefined4	1	0	conflict	overlaps_field_0588	0046F5C0
+0	STBoatC	1416	0x588	2	field_0588	/undefined2	1	1	conflict	overlaps_field_0586	004732F0
+1	STBoatC	1418	0x58A	2	field_058A	/undefined2	1	1	high	consistent_this_relative_access	004732F0
+1	STBoatC	1420	0x58C	2	field_058C	/undefined2	1	1	high	consistent_this_relative_access	004732F0
+1	STBoatC	1422	0x58E	4	field_058E	/undefined4	4	1	high	consistent_this_relative_access	004732F0 | 00491FB0 | 00492080 | 00492280
+1	STBoatC	1426	0x592	4	field_0592	/undefined4	0	2	high	consistent_this_relative_access	00492080 | 00492280
+1	STBoatC	1430	0x596	4	field_0596	/undefined4	6	4	high	consistent_this_relative_access	004732F0 | 00474810 | 00491FB0 | 00492080 | 00492280
+1	STBoatC	1434	0x59A	4	field_059A	/undefined4	1	3	high	consistent_this_relative_access	00491FB0 | 00492280
+1	STBoatC	1440	0x5A0	2	field_05A0	/undefined2	0	1	high	consistent_this_relative_access	004749C0
+1	STBoatC	1442	0x5A2	4	field_05A2	/undefined4	2	1	high	consistent_this_relative_access	004749C0 | 00491070 | 00491240
+1	STBoatC	1450	0x5AA	2	field_05AA	/undefined2	0	1	high	consistent_this_relative_access	00491240
+1	STBoatC	1452	0x5AC	2	field_05AC	/undefined2	0	1	high	consistent_this_relative_access	00491240
+1	STBoatC	1454	0x5AE	2	field_05AE	/undefined2	0	1	high	consistent_this_relative_access	00491240
+1	STBoatC	1456	0x5B0	2	field_05B0	/undefined2	0	1	high	consistent_this_relative_access	00491240
+1	STBoatC	1458	0x5B2	2	field_05B2	/undefined2	1	9	high	consistent_this_relative_access	00491240
+1	STBoatC	1460	0x5B4	2	field_05B4	/undefined2	0	8	high	consistent_this_relative_access	00491240
+1	STBoatC	1462	0x5B6	2	field_05B6	/undefined2	0	6	high	consistent_this_relative_access	00491240
+1	STBoatC	1464	0x5B8	2	field_05B8	/undefined2	0	4	high	consistent_this_relative_access	00491240
+1	STBoatC	1466	0x5BA	2	field_05BA	/undefined2	0	2	high	consistent_this_relative_access	00491240
+1	STBoatC	1468	0x5BC	4	field_05BC	/undefined4	0	1	high	consistent_this_relative_access	00491240
+1	STBoatC	1472	0x5C0	4	field_05C0	/undefined4	2	3	high	consistent_this_relative_access	004749C0 | 00475530 | 00491240
+1	STBoatC	1476	0x5C4	4	field_05C4	/undefined4	1	1	high	consistent_this_relative_access	004749C0 | 00491240
+0	STBoatC	1482	0x5CA	4	field_05CA	/undefined4	1	1	conflict	conflicting_access_widths=2x1|4x1	0044E690 | 004758E0
+1	STBoatC	1484	0x5CC	2	field_05CC	/undefined2	1	0	high	consistent_this_relative_access	004758E0
+0	STBoatC	1486	0x5CE	4	field_05CE	/undefined4	1	1	conflict	conflicting_access_widths=2x1|4x1	0044E690 | 004758E0
+1	STBoatC	1488	0x5D0	2	field_05D0	/undefined2	1	0	high	consistent_this_relative_access	004758E0
+0	STBoatC	1490	0x5D2	4	field_05D2	/undefined4	1	1	conflict	conflicting_access_widths=2x1|4x1	0044E690 | 004758E0
+1	STBoatC	1492	0x5D4	2	field_05D4	/undefined2	1	0	high	consistent_this_relative_access	004758E0
+1	STBoatC	1494	0x5D6	4	field_05D6	/undefined4	2	1	high	consistent_this_relative_access	0044E690 | 004758E0 | 00476120
+1	STBoatC	1498	0x5DA	2	field_05DA	/undefined2	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1500	0x5DC	4	field_05DC	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1504	0x5E0	4	field_05E0	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1508	0x5E4	4	field_05E4	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1512	0x5E8	4	field_05E8	/undefined4	1	1	high	consistent_this_relative_access	0044E690 | 004761B0
+1	STBoatC	1516	0x5EC	4	field_05EC	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+0	STBoatC	1520	0x5F0	4	field_05F0	/undefined4	0	1	conflict	overlaps_field_05F2	0044E690
+0	STBoatC	1522	0x5F2	2	field_05F2	/undefined2	1	0	conflict	overlaps_field_05F0	00476A10
+0	STBoatC	1524	0x5F4	4	field_05F4	/undefined4	1	1	conflict	conflicting_access_widths=2x1|4x1	0044E690 | 00476A10
+1	STBoatC	1526	0x5F6	2	field_05F6	/undefined2	1	0	high	consistent_this_relative_access	00476A10
+1	STBoatC	1528	0x5F8	4	field_05F8	/undefined4	1	3	high	consistent_this_relative_access	0044E690 | 0045EF00 | 00476A10
+1	STBoatC	1553	0x611	4	field_0611	/undefined4	2	0	high	consistent_this_relative_access	00476CE0 | 00478030
+1	STBoatC	1581	0x62D	4	field_062D	/undefined4	1	1	high	consistent_this_relative_access	00478640
+1	STBoatC	1585	0x631	4	field_0631	/undefined4	1	0	high	consistent_this_relative_access	00478640
+1	STBoatC	1589	0x635	4	field_0635	/undefined4	2	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1593	0x639	2	field_0639	/undefined2	3	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1595	0x63B	2	field_063B	/undefined2	3	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1597	0x63D	2	field_063D	/undefined2	3	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1599	0x63F	4	field_063F	/undefined4	2	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1603	0x643	2	field_0643	/undefined2	2	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1605	0x645	2	field_0645	/undefined2	2	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1607	0x647	2	field_0647	/undefined2	2	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1609	0x649	4	field_0649	/undefined4	2	0	high	consistent_this_relative_access	00479600
+1	STBoatC	1626	0x65A	4	field_065A	/undefined4	0	1	high	consistent_this_relative_access	0045EF00
+1	STBoatC	1630	0x65E	4	field_065E	/undefined4	0	1	high	consistent_this_relative_access	0045EF00
+0	STBoatC	1634	0x662	4	field_0662	/undefined4	0	1	conflict	overlaps_field_0663	0045EF00
+0	STBoatC	1635	0x663	4	field_0663	/undefined4	2	1	conflict	overlaps_field_0662	00479600 | 0047BF70
+1	STBoatC	1638	0x666	4	field_0666	/undefined4	0	1	high	consistent_this_relative_access	0045EF00
+1	STBoatC	1642	0x66A	1	field_066A	/undefined1	0	1	high	consistent_this_relative_access	0045EF00
+1	STBoatC	1647	0x66F	2	field_066F	/undefined2	1	0	high	consistent_this_relative_access	0047CF20
+1	STBoatC	1649	0x671	2	field_0671	/undefined2	1	0	high	consistent_this_relative_access	0047CF20
+1	STBoatC	1651	0x673	2	field_0673	/undefined2	1	0	high	consistent_this_relative_access	0047CF20
+1	STBoatC	1653	0x675	4	field_0675	/undefined4	1	0	high	consistent_this_relative_access	0047CF20
+1	STBoatC	1657	0x679	4	field_0679	/undefined4	1	0	high	consistent_this_relative_access	0047CF20
+1	STBoatC	1671	0x687	4	field_0687	/undefined4	2	0	high	consistent_this_relative_access	0047C050 | 0047CF20
+1	STBoatC	1675	0x68B	2	field_068B	/undefined2	1	1	high	consistent_this_relative_access	0047D080
+1	STBoatC	1677	0x68D	2	field_068D	/undefined2	1	1	high	consistent_this_relative_access	0047D080
+1	STBoatC	1679	0x68F	2	field_068F	/undefined2	1	1	high	consistent_this_relative_access	0047D080
+1	STBoatC	1681	0x691	2	field_0691	/undefined2	1	1	high	consistent_this_relative_access	0047D080 | 0047DA50
+1	STBoatC	1683	0x693	2	field_0693	/undefined2	1	1	high	consistent_this_relative_access	0047D080 | 0047DA50
+1	STBoatC	1685	0x695	2	field_0695	/undefined2	1	1	high	consistent_this_relative_access	0047D080 | 0047DA50
+1	STBoatC	1687	0x697	4	field_0697	/undefined4	0	1	high	consistent_this_relative_access	0047D080
+1	STBoatC	1691	0x69B	2	field_069B	/undefined2	2	2	high	consistent_this_relative_access	0047D080 | 0047DA50
+1	STBoatC	1697	0x6A1	4	field_06A1	/undefined4	2	1	high	consistent_this_relative_access	0047D080 | 0047DA50
+1	STBoatC	1701	0x6A5	4	field_06A5	/undefined4	4	5	high	consistent_this_relative_access	0047D080 | 0047DA50
+1	STBoatC	1705	0x6A9	2	field_06A9	/undefined2	1	0	high	consistent_this_relative_access	0047FAD0
+1	STBoatC	1707	0x6AB	2	field_06AB	/undefined2	1	0	high	consistent_this_relative_access	0047FAD0
+1	STBoatC	1709	0x6AD	2	field_06AD	/undefined2	1	0	high	consistent_this_relative_access	0047FAD0
+1	STBoatC	1711	0x6AF	4	field_06AF	/undefined4	2	0	high	consistent_this_relative_access	0047FAD0
+1	STBoatC	1731	0x6C3	4	field_06C3	/undefined4	2	0	high	consistent_this_relative_access	0047DF00 | 0047FAD0
+1	STBoatC	1767	0x6E7	4	field_06E7	/undefined4	1	0	high	consistent_this_relative_access	0047FE10
+1	STBoatC	1771	0x6EB	4	field_06EB	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1775	0x6EF	4	field_06EF	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1783	0x6F7	4	field_06F7	/undefined4	5	0	high	consistent_this_relative_access	004653B0 | 00488F30 | 0048A670
+1	STBoatC	1810	0x712	4	field_0712	/undefined4	0	2	high	consistent_this_relative_access	0044E690 | 0048A670
+1	STBoatC	1814	0x716	4	field_0716	/undefined4	0	2	high	consistent_this_relative_access	0044E690 | 0048A670
+1	STBoatC	1818	0x71A	4	field_071A	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1850	0x73A	4	field_073A	/undefined4	1	0	high	consistent_this_relative_access	004899A0
+1	STBoatC	1854	0x73E	4	field_073E	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1866	0x74A	4	field_074A	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1902	0x76E	4	field_076E	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1910	0x776	4	field_0776	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1946	0x79A	4	field_079A	/undefined4	1	0	high	consistent_this_relative_access	004899A0
+1	STBoatC	1958	0x7A6	4	field_07A6	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1962	0x7AA	4	field_07AA	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	1986	0x7C2	4	field_07C2	/undefined4	1	1	high	consistent_this_relative_access	00491070
+1	STBoatC	1994	0x7CA	4	field_07CA	/undefined4	1	0	high	consistent_this_relative_access	004732F0
+1	STBoatC	2034	0x7F2	2	field_07F2	/undefined2	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	2060	0x80C	4	field_080C	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	2064	0x810	4	field_0810	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	2068	0x814	2	field_0814	/undefined2	0	3	high	consistent_this_relative_access	0044E690 | 004608B0 | 00471AC0
+1	STBoatC	2070	0x816	2	field_0816	/undefined2	3	2	high	consistent_this_relative_access	0044E690 | 004608B0 | 004653B0 | 00471AC0 | 0048CEA0
+1	STBoatC	2076	0x81C	2	field_081C	/undefined2	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	2086	0x826	4	field_0826	/undefined4	0	1	high	consistent_this_relative_access	0044E690
+1	STBoatC	2094	0x82E	4	field_082E	/undefined4	2	2	high	consistent_this_relative_access	004608B0 | 00471AC0
+1	STBoatC	2102	0x836	4	field_0836	/undefined4	2	5	high	consistent_this_relative_access	004608B0 | 00471AC0
+1	STColl3C	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STColl3CVTable	0	1	high	owner_vtable_pointer	005F6600
+1	STColl3C	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	005F6600
+1	STColl3C	695	0x2B7	4	field_02B7	/undefined4	0	1	high	consistent_this_relative_access	005F6600
+1	STCrabC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STCrabCVTable	0	1	high	owner_vtable_pointer	005785E0
+1	STCrabC	108	0x6C	2	field_006C	/undefined2	0	1	high	consistent_this_relative_access	00578560
+1	STCrabC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	005785E0
+1	STCrabC	569	0x239	4	field_0239	/undefined4	1	1	high	consistent_this_relative_access	005785E0 | 00578630
+0	STCrabC	621	0x26D	4	field_026D	/undefined4	2	1	conflict	conflicting_access_widths=2x1|4x2	00579170
+0	STCrabC	625	0x271	4	field_0271	/undefined4	2	1	conflict	conflicting_access_widths=2x1|4x2	00579170
+1	STCrabC	629	0x275	4	field_0275	/undefined4	1	1	high	consistent_this_relative_access	00579170
+1	STCrabC	637	0x27D	4	field_027D	/undefined4	1	1	high	consistent_this_relative_access	00579170
+1	STDcResourcC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STDcResourcCVTable	0	1	high	owner_vtable_pointer	0057F1D0
+1	STDcResourcC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	0057F1D0
+1	STDcResourcC	601	0x259	4	field_0259	/undefined4	0	1	high	consistent_this_relative_access	0057F1D0
+0	STDcResourcC	609	0x261	4	field_0261	/undefined4	1	1	conflict	conflicting_access_widths=1x1|4x1	0057E0A0 | 0057F1D0
+1	STDestC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STDestCVTable	0	1	high	owner_vtable_pointer	006023F0
+1	STDestC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	006023F0
+1	STExplosion	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STExplosionVTable	0	1	high	owner_vtable_pointer	00604080
+1	STExplosion	533	0x215	4	field_0215	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	617	0x269	4	field_0269	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	621	0x26D	1	field_026D	/undefined1	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	622	0x26E	4	field_026E	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	687	0x2AF	4	field_02AF	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	691	0x2B3	4	field_02B3	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	695	0x2B7	4	field_02B7	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosion	699	0x2BB	4	field_02BB	/undefined4	0	1	high	consistent_this_relative_access	00604080
+1	STExplosionC	489	0x1E9	4	field_01E9	/undefined4	1	0	high	consistent_this_relative_access	006051B0
+1	STFieldC	564	0x234	4	field_0234	/undefined4	1	0	high	consistent_this_relative_access	00609D60
+1	STFishC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STFishCVTable	2	1	high	owner_vtable_pointer	0057BD20 | 0057CD70
+1	STFishC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	0057BD20
+1	STFishC	529	0x211	4	field_0211	/undefined4	3	0	high	consistent_this_relative_access	0057CD70
+1	STFishC	565	0x235	2	field_0235	/undefined2	1	0	high	consistent_this_relative_access	0057CD70
+1	STFishC	567	0x237	2	field_0237	/undefined2	1	0	high	consistent_this_relative_access	0057CD70
+1	STFishC	569	0x239	2	field_0239	/undefined2	1	0	high	consistent_this_relative_access	0057CD70
+1	STFishC	571	0x23B	4	field_023B	/undefined4	2	5	high	consistent_this_relative_access	0057BD20 | 0057BF60 | 0057CD70
+1	STFishC	575	0x23F	4	field_023F	/undefined4	1	2	high	consistent_this_relative_access	0057CD70
+1	STFishC	615	0x267	4	field_0267	/undefined4	1	0	high	consistent_this_relative_access	0057CD70
+1	STGameObjC	0	0x0	4	field_0000	/undefined4	6	0	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	32	0x20	4	field_0020	/undefined4	3	0	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	232	0xE8	4	field_00E8	/undefined4	1	0	high	consistent_this_relative_access	004189D0
+1	STGameObjC	285	0x11D	4	field_011D	/undefined4	1	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	289	0x121	4	field_0121	/undefined4	2	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	293	0x125	4	field_0125	/undefined4	1	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	297	0x129	4	field_0129	/undefined4	2	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	301	0x12D	4	field_012D	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	305	0x131	4	field_0131	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	309	0x135	4	field_0135	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	313	0x139	4	field_0139	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	317	0x13D	4	field_013D	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	321	0x141	4	field_0141	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	325	0x145	4	field_0145	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	329	0x149	4	field_0149	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	333	0x14D	4	field_014D	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	337	0x151	4	field_0151	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	341	0x155	4	field_0155	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	345	0x159	4	field_0159	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	349	0x15D	4	field_015D	/undefined4	1	2	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	353	0x161	4	field_0161	/undefined4	1	2	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	357	0x165	4	field_0165	/undefined4	1	2	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	361	0x169	4	field_0169	/undefined4	1	2	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	365	0x16D	4	field_016D	/undefined4	1	2	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	369	0x171	4	field_0171	/undefined4	3	3	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	373	0x175	4	field_0175	/undefined4	3	3	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	377	0x179	4	field_0179	/undefined4	3	3	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	381	0x17D	4	field_017D	/undefined4	3	3	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	385	0x181	4	field_0181	/undefined4	3	3	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGameObjC	389	0x185	4	field_0185	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	393	0x189	4	field_0189	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	397	0x18D	4	field_018D	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	401	0x191	4	field_0191	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	405	0x195	4	field_0195	/undefined4	1	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	409	0x199	4	field_0199	/undefined4	2	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	413	0x19D	4	field_019D	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	417	0x1A1	4	field_01A1	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	421	0x1A5	4	field_01A5	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	425	0x1A9	4	field_01A9	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	429	0x1AD	4	field_01AD	/undefined4	1	2	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	433	0x1B1	4	field_01B1	/undefined4	2	2	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	437	0x1B5	4	field_01B5	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	441	0x1B9	4	field_01B9	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	445	0x1BD	4	field_01BD	/undefined4	1	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	449	0x1C1	4	field_01C1	/undefined4	2	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	453	0x1C5	4	field_01C5	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	457	0x1C9	4	field_01C9	/undefined4	0	1	high	consistent_this_relative_access	00419DF0
+1	STGameObjC	461	0x1CD	4	field_01CD	/undefined4	2	2	high	consistent_this_relative_access	00419DF0 | 0041A680
+1	STGroupBoatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STGroupBoatCVTable	0	1	high	owner_vtable_pointer	00497AF0
+1	STGroupBoatC	36	0x24	1	field_0024	/undefined1	4	0	high	consistent_this_relative_access	004A80A0 | 004A85B0 | 004A8690 | 004A87A0
+1	STGroupBoatC	39	0x27	2	field_0027	/undefined2	1	0	high	consistent_this_relative_access	004A7490
+1	STGroupBoatC	41	0x29	4	field_0029	/undefined4	24	0	high	consistent_this_relative_access	0049A620 | 0049A940 | 0049B4C0 | 0049B7D0 | 0049CD30 | 0049D230 | 0049DB40 | 0049DFA0 | 0049E510 | 0049EA00 | 0049ED40 | 0049F100 | 0049F640 | 0049F900 | 0049FBF0 | 004A0040 | 004A0590 | 004A0990 | 004A85B0 | 004A8690 | 004A87A0
+1	STGroupBoatC	45	0x2D	4	field_002D	/undefined4	1	0	high	consistent_this_relative_access	004A0FA0
+1	STGroupBoatC	57	0x39	4	field_0039	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	61	0x3D	4	field_003D	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	65	0x41	4	field_0041	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	69	0x45	4	field_0045	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	73	0x49	4	field_0049	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	77	0x4D	4	field_004D	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	81	0x51	4	field_0051	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	85	0x55	4	field_0055	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	89	0x59	4	field_0059	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	486	0x1E6	4	field_01E6	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	550	0x226	4	field_0226	/undefined4	3	0	high	consistent_this_relative_access	004A7490
+1	STGroupBoatC	554	0x22A	4	field_022A	/undefined4	2	0	high	consistent_this_relative_access	004A7AF0 | 004A80A0
+1	STGroupBoatC	558	0x22E	4	field_022E	/undefined4	3	0	high	consistent_this_relative_access	004A80A0
+1	STGroupBoatC	562	0x232	4	field_0232	/undefined4	1	1	high	consistent_this_relative_access	00497AF0 | 004A80A0
+1	STGroupBoatC	566	0x236	4	field_0236	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	574	0x23E	4	field_023E	/undefined4	1	1	high	consistent_this_relative_access	0049B7D0
+1	STGroupBoatC	578	0x242	4	field_0242	/undefined4	0	5	high	consistent_this_relative_access	004A7490
+1	STGroupBoatC	661	0x295	4	field_0295	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	665	0x299	2	field_0299	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	667	0x29B	4	field_029B	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	671	0x29F	4	field_029F	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	675	0x2A3	4	field_02A3	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	679	0x2A7	4	field_02A7	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	683	0x2AB	2	field_02AB	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	691	0x2B3	4	field_02B3	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	695	0x2B7	4	field_02B7	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	699	0x2BB	2	field_02BB	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	701	0x2BD	4	field_02BD	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	705	0x2C1	2	field_02C1	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	707	0x2C3	4	field_02C3	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	711	0x2C7	4	field_02C7	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	715	0x2CB	2	field_02CB	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	717	0x2CD	1	field_02CD	/undefined1	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	718	0x2CE	4	field_02CE	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	722	0x2D2	4	field_02D2	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	726	0x2D6	2	field_02D6	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	728	0x2D8	4	field_02D8	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	732	0x2DC	4	field_02DC	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	736	0x2E0	4	field_02E0	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	740	0x2E4	4	field_02E4	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	744	0x2E8	4	field_02E8	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	748	0x2EC	2	field_02EC	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	750	0x2EE	4	field_02EE	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	754	0x2F2	4	field_02F2	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	758	0x2F6	2	field_02F6	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	760	0x2F8	4	field_02F8	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	764	0x2FC	4	field_02FC	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	768	0x300	4	field_0300	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	772	0x304	4	field_0304	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	776	0x308	4	field_0308	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	780	0x30C	2	field_030C	/undefined2	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupBoatC	782	0x30E	4	field_030E	/undefined4	0	1	high	consistent_this_relative_access	00497AF0
+1	STGroupC	36	0x24	1	field_0024	/undefined1	1	0	high	consistent_this_relative_access	004247B0
+1	STGroupC	41	0x29	4	field_0029	/undefined4	4	0	high	consistent_this_relative_access	004233E0 | 00423850 | 004247B0
+1	STGroupC	57	0x39	4	field_0039	/undefined4	1	1	high	consistent_this_relative_access	004247B0
+1	STJellyGunC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STJellyGunCVTable	1	1	high	owner_vtable_pointer	005823D0 | 005825C0
+1	STJellyGunC	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005825C0
+0	STJellyGunC	36	0x24	4	field_0024	/undefined4	3	0	conflict	conflicting_access_widths=1x1|4x2	005825C0
+1	STJellyGunC	56	0x38	2	field_0038	/undefined2	1	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	62	0x3E	2	field_003E	/undefined2	1	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	65	0x41	2	field_0041	/undefined2	6	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	67	0x43	2	field_0043	/undefined2	6	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	69	0x45	2	field_0045	/undefined2	4	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	71	0x47	2	field_0047	/undefined2	3	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	73	0x49	2	field_0049	/undefined2	4	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	75	0x4B	2	field_004B	/undefined2	3	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	005823D0
+1	STJellyGunC	493	0x1ED	4	field_01ED	/undefined4	2	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	529	0x211	4	field_0211	/undefined4	5	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	561	0x231	4	field_0231	/undefined4	1	1	high	consistent_this_relative_access	005823D0 | 005825C0
+1	STJellyGunC	565	0x235	4	field_0235	/undefined4	2	6	high	consistent_this_relative_access	005823D0 | 005825C0 | 00583270
+1	STJellyGunC	569	0x239	4	field_0239	/undefined4	1	1	high	consistent_this_relative_access	005823D0 | 005825C0
+1	STJellyGunC	573	0x23D	4	field_023D	/undefined4	1	3	high	consistent_this_relative_access	005823D0 | 005825C0
+0	STJellyGunC	577	0x241	4	field_0241	/undefined4	4	4	conflict	conflicting_access_widths=1x2|4x6	005823D0 | 005825C0
+1	STJellyGunC	581	0x245	2	field_0245	/undefined2	3	3	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	583	0x247	4	field_0247	/undefined4	1	3	high	consistent_this_relative_access	005823D0 | 005825C0
+1	STJellyGunC	587	0x24B	4	field_024B	/undefined4	1	1	high	consistent_this_relative_access	005823D0 | 005825C0
+1	STJellyGunC	591	0x24F	1	field_024F	/undefined1	3	1	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	592	0x250	1	field_0250	/undefined1	1	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	594	0x252	4	field_0252	/undefined4	2	3	high	consistent_this_relative_access	005823D0 | 005825C0
+1	STJellyGunC	602	0x25A	4	field_025A	/undefined4	1	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	654	0x28E	2	field_028E	/undefined2	1	0	high	consistent_this_relative_access	005825C0
+1	STJellyGunC	658	0x292	2	field_0292	/undefined2	1	0	high	consistent_this_relative_access	005825C0
+1	STJellyManC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STJellyManCVTable	0	1	high	owner_vtable_pointer	005810D0
+1	STJellyManC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	005810D0
+1	STJellyManC	509	0x1FD	4	field_01FD	/undefined4	1	0	high	consistent_this_relative_access	00581AC0
+1	STJellyManC	519	0x207	4	field_0207	/undefined4	0	1	high	consistent_this_relative_access	005810D0
+1	STJellyManC	523	0x20B	4	field_020B	/undefined4	0	1	high	consistent_this_relative_access	005810D0
+1	STJellyManC	527	0x20F	4	field_020F	/undefined4	1	1	high	consistent_this_relative_access	005810D0 | 00581AC0
+1	STLBombC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STLBombCVTable	0	1	high	owner_vtable_pointer	00584970
+1	STLBombC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	561	0x231	4	field_0231	/undefined4	1	1	high	consistent_this_relative_access	00584970 | 005859A0
+1	STLBombC	565	0x235	4	field_0235	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	569	0x239	4	field_0239	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	573	0x23D	4	field_023D	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	577	0x241	4	field_0241	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	581	0x245	4	field_0245	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	585	0x249	4	field_0249	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	589	0x24D	4	field_024D	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	593	0x251	4	field_0251	/undefined4	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	597	0x255	1	field_0255	/undefined1	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	598	0x256	1	field_0256	/undefined1	0	1	high	consistent_this_relative_access	00584970
+1	STLBombC	599	0x257	1	field_0257	/undefined1	0	1	high	consistent_this_relative_access	00584970
+1	STMBombC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STMBombCVTable	0	1	high	owner_vtable_pointer	005861F0
+1	STMBombC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	005861F0
+1	STMBombC	561	0x231	4	field_0231	/undefined4	1	1	high	consistent_this_relative_access	005861F0 | 00588BC0
+1	STMBombC	623	0x26F	4	field_026F	/undefined4	0	1	high	consistent_this_relative_access	005861F0
+1	STMineSetC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STMineSetCVTable	0	1	high	owner_vtable_pointer	00622600
+1	STMineSetC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	00622600
+1	STMineSetC	698	0x2BA	4	field_02BA	/undefined4	0	1	high	consistent_this_relative_access	00622600
+1	STOctopusC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STOctopusCVTable	0	1	high	owner_vtable_pointer	00589990
+1	STOctopusC	108	0x6C	2	field_006C	/undefined2	0	1	high	consistent_this_relative_access	00589B50
+1	STOctopusC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	00589990
+1	STOctopusC	585	0x249	4	field_0249	/undefined4	0	1	high	consistent_this_relative_access	00589990
+1	STOctopusC	665	0x299	4	field_0299	/undefined4	1	1	high	consistent_this_relative_access	0058A8D0
+1	STOctopusC	669	0x29D	4	field_029D	/undefined4	1	1	high	consistent_this_relative_access	0058A8D0
+1	STOctopusC	677	0x2A5	4	field_02A5	/undefined4	1	0	high	consistent_this_relative_access	00589B50
+1	STOctopusC	681	0x2A9	4	field_02A9	/undefined4	1	1	high	consistent_this_relative_access	0058A8D0
+0	STParticleC	20	0x14	1	field_0014	/undefined1	8	0	conflict	conflicting_access_widths=1x7|4x1	00629070
+1	STParticleC	28	0x1C	4	field_001C	/undefined4	1	0	high	consistent_this_relative_access	00629070
+1	STPlaySystemC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STPlaySystemCVTable	0	0	high	owner_vtable_pointer	
+1	STPlaySystemC	32	0x20	4	field_0020	/undefined4	1	0	high	consistent_this_relative_access	0054D2F0
+1	STPlaySystemC	36	0x24	4	field_0024	/undefined4	2	0	high	consistent_this_relative_access	0054D430 | 0054D550
+1	STPlaySystemC	48	0x30	4	field_0030	/undefined4	0	1	high	consistent_this_relative_access	0054CFC0
+1	STPlaySystemC	61	0x3D	4	field_003D	/undefined4	1	0	high	consistent_this_relative_access	00550250
+1	STPlaySystemC	228	0xE4	4	field_00E4	/undefined4	1	0	high	consistent_this_relative_access	0054D2F0
+1	STResourceC	597	0x255	4	field_0255	/undefined4	1	0	high	consistent_this_relative_access	0057DFD0
+1	STResourceC	601	0x259	4	field_0259	/undefined4	0	1	high	consistent_this_relative_access	0057DFD0
+1	STRubbishC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STRubbishCVTable	0	1	high	owner_vtable_pointer	0062ED10
+1	STRubbishC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	473	0x1D9	4	field_01D9	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	477	0x1DD	4	field_01DD	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	481	0x1E1	4	field_01E1	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	485	0x1E5	4	field_01E5	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	489	0x1E9	4	field_01E9	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	493	0x1ED	4	field_01ED	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	497	0x1F1	4	field_01F1	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	501	0x1F5	4	field_01F5	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	505	0x1F9	1	field_01F9	/undefined1	0	1	high	consistent_this_relative_access	0062ED10
+1	STRubbishC	506	0x1FA	4	field_01FA	/undefined4	0	1	high	consistent_this_relative_access	0062ED10
+1	STSatC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STSatCVTable	0	1	high	owner_vtable_pointer	0058BA30
+1	STSatC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	0058BA30
+1	STSatC	561	0x231	4	field_0231	/undefined4	1	1	high	consistent_this_relative_access	0058BA30 | 0058C760
+1	STSatC	565	0x235	4	field_0235	/undefined4	0	1	high	consistent_this_relative_access	0058BA30
+1	STSatC	569	0x239	4	field_0239	/undefined4	0	1	high	consistent_this_relative_access	0058BA30
+1	STSatC	573	0x23D	4	field_023D	/undefined4	0	1	high	consistent_this_relative_access	0058BA30
+1	STSatC	581	0x245	4	field_0245	/undefined4	0	1	high	consistent_this_relative_access	0058BA30
+1	STSharkC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STSharkCVTable	3	1	high	owner_vtable_pointer	0058D750 | 0058E570
+1	STSharkC	71	0x47	2	field_0047	/undefined2	1	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	73	0x49	2	field_0049	/undefined2	1	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	75	0x4B	2	field_004B	/undefined2	1	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	108	0x6C	2	field_006C	/undefined2	1	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	0058D750
+1	STSharkC	529	0x211	4	field_0211	/undefined4	4	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	561	0x231	2	field_0231	/undefined2	2	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	563	0x233	2	field_0233	/undefined2	2	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	565	0x235	2	field_0235	/undefined2	2	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	573	0x23D	4	field_023D	/undefined4	1	2	high	consistent_this_relative_access	0058D750 | 0058E570
+1	STSharkC	577	0x241	4	field_0241	/undefined4	2	1	high	consistent_this_relative_access	0058E570
+0	STSharkC	585	0x249	4	field_0249	/undefined4	1	1	conflict	conflicting_access_widths=1x1|4x1	0058D750 | 0058E570
+1	STSharkC	589	0x24D	2	field_024D	/undefined2	1	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	591	0x24F	4	field_024F	/undefined4	1	0	high	consistent_this_relative_access	0058E570
+1	STSharkC	599	0x257	4	field_0257	/undefined4	4	5	high	consistent_this_relative_access	0058D750 | 0058D7C0 | 0058E570
+1	STSprGameObjC	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/STSprGameObjCVTable	4	1	high	owner_vtable_pointer	00420340 | 00420AE0 | 005EC7E0
+1	STSprGameObjC	32	0x20	4	field_0020	/undefined4	2	0	high	consistent_this_relative_access	00420340 | 00420AE0
+1	STSprGameObjC	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	005EC7E0
+1	STSprGameObjC	493	0x1ED	4	field_01ED	/undefined4	4	0	high	consistent_this_relative_access	00420340 | 00420AE0
+1	STSprGameObjC	529	0x211	4	field_0211	/undefined4	4	0	high	consistent_this_relative_access	00420340 | 00420AE0
+1	STSprGameObjC	601	0x259	4	field_0259	/undefined4	2	0	high	consistent_this_relative_access	00420340 | 00420AE0
+1	STSprGameObjC	776	0x308	4	field_0308	/undefined4	0	1	high	consistent_this_relative_access	005EC7E0
+1	STSprGameObjC	780	0x30C	1	field_030C	/undefined1	0	1	high	consistent_this_relative_access	005EC7E0
+1	STSprGameObjC	782	0x30E	1	field_030E	/undefined1	0	1	high	consistent_this_relative_access	005EC7E0
+1	STT3DSprC	20	0x14	4	field_0014	/undefined4	1	0	high	consistent_this_relative_access	004ABE40
+1	STT3DSprC	24	0x18	4	field_0018	/undefined4	1	0	high	consistent_this_relative_access	004ABE40
+1	STT3DSprC	32	0x20	4	field_0020	/undefined4	2	0	high	consistent_this_relative_access	004ABE40
+1	STTmMineC	822	0x336	4	field_0336	/undefined4	1	0	high	consistent_this_relative_access	0063E160
+1	STTorpC	577	0x241	4	field_0241	/undefined4	1	0	high	consistent_this_relative_access	00645020
+1	SettMapMTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005D1400
+1	SettMapMTy	97	0x61	4	field_0061	/undefined4	0	1	high	consistent_this_relative_access	005D1400
+1	SettMapMTy	101	0x65	1	field_0065	/undefined1	1	0	high	consistent_this_relative_access	005CE0E0
+1	SettMapMTy	8068	0x1F84	4	field_1F84	/undefined4	9	0	high	consistent_this_relative_access	005CFCD0 | 005CFF40 | 005D0150 | 005D06C0 | 005D0850 | 005D0A20 | 005D0BB0 | 005D0ED0 | 005D1100
+1	SettMapMTy	8476	0x211C	1	field_211C	/undefined1	0	1	high	consistent_this_relative_access	005CD430
+1	SettMapSTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005D5560
+1	SettMapSTy	97	0x61	4	field_0061	/undefined4	0	1	high	consistent_this_relative_access	005D5560
+1	SettMapSTy	8476	0x211C	1	field_211C	/undefined1	0	1	high	consistent_this_relative_access	005D5160
+1	SettMapTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005C8A40
+1	SettMapTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	005C5130 | 005C8A40
+1	SoundClassTy	3979	0xF8B	4	field_0F8B	/undefined4	1	0	high	consistent_this_relative_access	00568DD0
+1	SoundManagerTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	00566C20
+1	SoundManagerTy	28	0x1C	4	field_001C	/undefined4	0	1	high	consistent_this_relative_access	00566C20
+1	SpecPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	0053EA50
+1	SpecPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	0053EA50
+1	SpecPanelTy	92	0x5C	4	field_005C	/undefined4	1	1	high	consistent_this_relative_access	0053EA50
+1	SpecPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	0053EA50
+1	SpecPanelTy	388	0x184	1	field_0184	/undefined1	1	0	high	consistent_this_relative_access	0053E920
+1	SpriteClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/SpriteClassTyVTable	0	1	high	owner_vtable_pointer	00715820
+1	SpriteClassTy	4	0x4	4	field_0004	/undefined4	3	1	high	consistent_this_relative_access	00715820 | 00715C60 | 00716040 | 00716480
+1	SpriteClassTy	8	0x8	4	field_0008	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	12	0xC	4	field_000C	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	16	0x10	4	field_0010	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	20	0x14	4	field_0014	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	24	0x18	4	field_0018	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	28	0x1C	4	field_001C	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	32	0x20	4	field_0020	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	36	0x24	4	field_0024	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	44	0x2C	4	field_002C	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	48	0x30	4	field_0030	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	52	0x34	4	field_0034	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	56	0x38	4	field_0038	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	60	0x3C	4	field_003C	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	64	0x40	4	field_0040	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	68	0x44	4	field_0044	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	72	0x48	4	field_0048	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	76	0x4C	1	field_004C	/undefined1	3	1	high	consistent_this_relative_access	00715820 | 00715C60 | 00716040 | 00716480
+1	SpriteClassTy	77	0x4D	4	field_004D	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	81	0x51	4	field_0051	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	85	0x55	4	field_0055	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	89	0x59	4	field_0059	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	93	0x5D	4	field_005D	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	97	0x61	4	field_0061	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	101	0x65	1	field_0065	/undefined1	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	133	0x85	4	field_0085	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	137	0x89	4	field_0089	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	SpriteClassTy	141	0x8D	4	field_008D	/undefined4	0	1	high	consistent_this_relative_access	00715820
+1	StartSystemTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/StartSystemTyVTable	1	1	high	owner_vtable_pointer	005DA610 | 005DCD90
+1	StartSystemTy	32	0x20	4	field_0020	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	44	0x2C	4	field_002C	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	48	0x30	4	field_0030	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	52	0x34	4	field_0034	/undefined4	1	1	high	consistent_this_relative_access	005DA610 | 005DE050
+1	StartSystemTy	56	0x38	4	field_0038	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	742	0x2E6	4	field_02E6	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	746	0x2EA	1	field_02EA	/undefined1	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	747	0x2EB	1	field_02EB	/undefined1	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	748	0x2EC	4	field_02EC	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	752	0x2F0	4	field_02F0	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	756	0x2F4	4	field_02F4	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	905	0x389	4	field_0389	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1344	0x540	4	field_0540	/undefined4	1	1	high	consistent_this_relative_access	005DA610 | 005DE050
+1	StartSystemTy	1348	0x544	4	field_0544	/undefined4	1	1	high	consistent_this_relative_access	005DA610 | 005DE050
+1	StartSystemTy	1352	0x548	4	field_0548	/undefined4	1	1	high	consistent_this_relative_access	005DA610 | 005DE050
+1	StartSystemTy	1356	0x54C	4	field_054C	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1360	0x550	4	field_0550	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1364	0x554	4	field_0554	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1368	0x558	4	field_0558	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1662	0x67E	4	field_067E	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1666	0x682	4	field_0682	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1670	0x686	4	field_0686	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1674	0x68A	4	field_068A	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1678	0x68E	4	field_068E	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1682	0x692	4	field_0692	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1686	0x696	4	field_0696	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1690	0x69A	4	field_069A	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1694	0x69E	4	field_069E	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1710	0x6AE	4	field_06AE	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	StartSystemTy	1714	0x6B2	4	field_06B2	/undefined4	0	1	high	consistent_this_relative_access	005DA610
+1	SystemClassTy	0	0x0	4	field_0000	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	4	0x4	4	field_0004	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	8	0x8	4	field_0008	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	12	0xC	4	field_000C	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	16	0x10	4	field_0010	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	20	0x14	4	field_0014	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemClassTy	24	0x18	4	field_0018	/undefined4	0	1	high	consistent_this_relative_access	006E51C0
+1	SystemWithNamedObjClassTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/SystemWithNamedObjClassTyVTable	0	1	high	owner_vtable_pointer	006E6100
+1	SystemWithNamedObjClassTy	32	0x20	4	field_0020	/undefined4	2	2	high	consistent_this_relative_access	006E6100 | 006E6170
+1	TLOBaseTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/TLOBaseTyVTable	2	1	high	owner_vtable_pointer	004B7EF0 | 004BE500 | 004D67B0
+1	TLOBaseTy	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	573	0x23D	1	field_023D	/undefined1	1	0	high	consistent_this_relative_access	004C9770
+1	TLOBaseTy	581	0x245	4	field_0245	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	585	0x249	4	field_0249	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	589	0x24D	4	field_024D	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	593	0x251	4	field_0251	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1519	0x5EF	4	field_05EF	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1523	0x5F3	4	field_05F3	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1527	0x5F7	4	field_05F7	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1535	0x5FF	4	field_05FF	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1539	0x603	4	field_0603	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1543	0x607	4	field_0607	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1563	0x61B	4	field_061B	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOBaseTy	1567	0x61F	4	field_061F	/undefined4	0	1	high	consistent_this_relative_access	004B7EF0
+1	TLOFakeTy	0	0x0	4	vtable	pointer:/SubmarineTitans/Recovered/VTables/TLOFakeTyVTable	0	1	high	owner_vtable_pointer	004D0920
+1	TLOFakeTy	469	0x1D5	4	field_01D5	/undefined4	0	1	high	consistent_this_relative_access	004D0920
+1	TLOFakeTy	589	0x24D	4	field_024D	/undefined4	0	1	high	consistent_this_relative_access	004D0920
+1	TradePanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	00551690
+1	TradePanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	00551690
+1	TradePanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	00551690
+1	TradePanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	00551690
+1	TradePanelTy	443	0x1BB	1	field_01BB	/undefined1	1	1	high	consistent_this_relative_access	00551460
+1	TraksClassTy	36	0x24	4	field_0024	/undefined4	2	0	high	consistent_this_relative_access	00556760 | 00556DD0
+1	UPanelTy	60	0x3C	4	field_003C	/undefined4	4	0	high	consistent_this_relative_access	0053D7A0 | 0053D920 | 0053DAF0 | 0053DCC0
+1	UPanelTy	68	0x44	4	field_0044	/undefined4	3	0	high	consistent_this_relative_access	0053D7A0 | 0053D920 | 0053DCC0
+1	UPanelTy	72	0x48	4	field_0048	/undefined4	4	0	high	consistent_this_relative_access	0053D7A0 | 0053D920 | 0053DAF0 | 0053DCC0
+1	UPanelTy	92	0x5C	4	field_005C	/undefined4	4	0	high	consistent_this_relative_access	0053D7A0 | 0053D920 | 0053DAF0 | 0053DCC0
+1	UpgPanelTy	40	0x28	4	field_0028	/undefined4	0	1	high	consistent_this_relative_access	00552AF0
+1	UpgPanelTy	46	0x2E	2	field_002E	/undefined2	0	1	high	consistent_this_relative_access	00552AF0
+1	UpgPanelTy	92	0x5C	4	field_005C	/undefined4	1	0	high	consistent_this_relative_access	00552AF0
+1	UpgPanelTy	372	0x174	4	field_0174	/undefined4	1	0	high	consistent_this_relative_access	00552AF0
+1	VisibleClassTy	276	0x114	4	field_0114	/undefined4	7	0	high	consistent_this_relative_access	005597A0 | 00559B30 | 00559EC0 | 0055A270 | 0055A620 | 0055A9D0 | 0055AB50
+1	WaitTy	16	0x10	4	field_0010	/undefined4	1	0	high	consistent_this_relative_access	005EA680
+1	WaitTy	97	0x61	4	field_0061	/undefined4	0	2	high	consistent_this_relative_access	005E84D0 | 005EA680
+1	cLoadingTy	60	0x3C	4	field_003C	/undefined4	1	0	high	consistent_this_relative_access	00555040

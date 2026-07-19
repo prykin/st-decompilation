@@ -36,8 +36,8 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
     (*pcVar3)();
     return;
   }
-  iVar4 = *(int *)(local_8 + 0x1b3);
-  uVar7 = *(uint *)(local_8 + 0x1b7);
+  iVar4 = *(int *)&local_8->field_0x1b3;
+  uVar7 = *(uint *)&local_8->field_0x1b7;
   uVar1 = *(uint *)(iVar4 + 0xc);
   if (uVar7 < uVar1 - 1) {
     uVar7 = uVar7 + 1;
@@ -51,11 +51,11 @@ void __thiscall HelpPanelTy::NextBut(HelpPanelTy *this)
       g_currentExceptionFrame = local_4c.previous;
       return;
     }
-    *(uint *)(local_8 + 0x1b7) = uVar7;
+    *(uint *)&local_8->field_0x1b7 = uVar7;
     if ((char)piVar5[2] != '\0') {
-      local_8[0x1a1] = (HelpPanelTy)0x0;
-      *(undefined4 *)(local_8 + 0x1a7) = 0;
-      *(undefined4 *)(local_8 + 0x1a3) = 0;
+      local_8->field_01A1 = 0;
+      local_8->field_01A7 = 0;
+      local_8->field_01A3 = 0;
       uVar7 = *(uint *)((int)piVar5 + 0xd);
       pvVar2 = *(void **)((int)piVar5 + 9);
       switch((char)piVar5[2]) {

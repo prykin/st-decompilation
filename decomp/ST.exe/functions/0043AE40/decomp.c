@@ -18,7 +18,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
   undefined3 uVar11;
   uint uVar9;
   int iVar10;
-  undefined4 uVar12;
+  STAllPlayersC_GetObjPtr_param_3Enum SVar12;
   int local_10;
   int local_c;
   int local_8;
@@ -43,7 +43,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
         if (iVar6 == 0x1ae) {
           if (param_3 == 1) {
             pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
-                                       (uint)*(ushort *)(piVar1 + 2),3);
+                                       (uint)*(ushort *)(piVar1 + 2),CASE_3);
             thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                                (undefined2 *)&local_8);
             iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,
@@ -137,7 +137,7 @@ STAllPlayersC::SetActivePanel(STAllPlayersC *this,uint param_1,int param_2,int p
       if (param_3 == 1) {
         pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)iVar10 >> 8),
                                                  *(undefined1 *)((int)&DAT_007f4f83 + iVar6 + 4)),
-                                   (uint)*(ushort *)((int)&DAT_007f4f83 + iVar6 + 8),3);
+                                   (uint)*(ushort *)((int)&DAT_007f4f83 + iVar6 + 8),CASE_3);
         thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                            (undefined2 *)&local_8);
         iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -213,11 +213,11 @@ LAB_0043aee4:
       }
       if (iVar6 == 0x5a) {
         if (param_3 == 1) {
-          uVar12 = 4;
+          SVar12 = CASE_4;
 LAB_0043b0f1:
           pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),
                                      CONCAT22((short)((uint)param_3 >> 0x10),(short)piVar1[2]),
-                                     uVar12);
+                                     SVar12);
           thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                              (undefined2 *)&local_8);
           iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414
@@ -248,22 +248,22 @@ LAB_0043b0af:
         return;
       }
       if (param_3 != 1) goto LAB_0043b294;
-      uVar12 = 2;
+      SVar12 = CASE_2;
     }
     else {
       if (iVar6 != 0x1a4) {
         if (iVar6 != 0x1b8) goto LAB_0043b0af;
         if (param_3 == 1) {
-          uVar12 = 6;
+          SVar12 = CASE_6;
           goto LAB_0043b0f1;
         }
         goto LAB_0043b686;
       }
       if (param_3 != 1) goto LAB_0043b294;
-      uVar12 = 5;
+      SVar12 = CASE_5;
     }
     pvVar7 = (void *)GetObjPtr(this,CONCAT31((int3)((uint)piVar1 >> 8),(char)piVar1[1]),
-                               (uint)*(ushort *)(piVar1 + 2),uVar12);
+                               (uint)*(ushort *)(piVar1 + 2),SVar12);
     thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,(undefined2 *)&local_8)
     ;
     iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -310,10 +310,10 @@ LAB_0043b294:
     }
     if (iVar6 == 0x5a) {
       if (param_3 == 1) {
-        uVar12 = 4;
+        SVar12 = CASE_4;
 LAB_0043b2fe:
         pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),
-                                   (uint)*(ushort *)(piVar1 + 2),uVar12);
+                                   (uint)*(ushort *)(piVar1 + 2),SVar12);
         thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                            (undefined2 *)&local_8);
         iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -343,7 +343,7 @@ LAB_0043b4a2:
         return;
       }
       if (param_3 == 1) {
-        uVar12 = 2;
+        SVar12 = CASE_2;
         goto LAB_0043b2fe;
       }
     }
@@ -351,7 +351,7 @@ LAB_0043b4a2:
   else if (iVar6 == 0x1a4) {
     if (param_3 == 1) {
       pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar8,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2),
-                                 5);
+                                 CASE_5);
       thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                          (undefined2 *)&local_8);
       iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,
@@ -363,7 +363,7 @@ LAB_0043b4a2:
     if (iVar6 != 0x1b8) goto LAB_0043b4a2;
     if (param_3 == 1) {
       pvVar7 = (void *)GetObjPtr(this,CONCAT31(uVar11,(char)piVar1[1]),(uint)*(ushort *)(piVar1 + 2)
-                                 ,6);
+                                 ,CASE_6);
       thunk_FUN_004162b0(pvVar7,(undefined2 *)&local_10,(undefined2 *)&local_c,
                          (undefined2 *)&local_8);
       iVar5 = FUN_006eb230(DAT_00807598,*(uint *)((int)pvVar7 + 0x1ed),DAT_00807410,DAT_00807414,

@@ -319,9 +319,11 @@ LAB_0060b48b:
                   if (DAT_00802a88 != (void *)0x0) {
                     iVar16 = (int)local_34[0];
                     if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-                        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
-                                            (int)local_70[0],(int)local_a0[0],local_d4,&local_d8),
-                        iVar16 < 0)) || (4 < iVar16)) {
+                        (thunk_FUN_00558c00(DAT_00802a88,
+                                            *(Global_sub_00558C00_param_1Enum *)
+                                             ((int)DAT_00802a88 + 0x10c),(int)local_70[0],
+                                            (int)local_a0[0],local_d4,&local_d8), iVar16 < 0)) ||
+                       (4 < iVar16)) {
                       bVar19 = true;
                     }
                     else {

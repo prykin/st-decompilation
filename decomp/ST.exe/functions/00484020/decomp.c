@@ -131,15 +131,17 @@ FUN_00484020(void *this,int param_1,short *param_2,short *param_3,short *param_4
                     if (*(int *)((int)this + 0x736) == 0) {
                       iVar9 = STSprGameObjC::CheckRay
                                         (this,(short)local_28,sVar3,(short)local_24,sVar4,sStack_56,
-                                         (short)param_1,*(int *)((int)this + 0x79a),(int *)&local_1c
-                                         ,0);
+                                         (short)param_1,
+                                         *(STSprGameObjC_CheckRay_param_7Enum *)((int)this + 0x79a),
+                                         (int *)&local_1c,0);
                       if ((iVar9 == 0) && (local_1c != local_10)) break;
                     }
                     else {
                       iVar9 = STSprGameObjC::CheckRay
                                         (this,(short)local_28,sVar3,(short)local_24,sVar4,sStack_56,
-                                         (short)param_1,*(int *)((int)this + 0x79a),(int *)&local_1c
-                                         ,1);
+                                         (short)param_1,
+                                         *(STSprGameObjC_CheckRay_param_7Enum *)((int)this + 0x79a),
+                                         (int *)&local_1c,1);
                       if ((iVar9 == 0) && (local_1c != local_10)) break;
                     }
                     local_2c = local_2c + 1;

@@ -6,7 +6,7 @@
 void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
 
 {
-  BldLabPanelTy *pBVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   BldLabPanelTy *this_00;
   int errorCode;
@@ -17,17 +17,17 @@ void __thiscall BldLabPanelTy::Update(BldLabPanelTy *this,void *param_1)
   uint local_c;
   BldLabPanelTy *local_8;
   
-  if (*(int *)(this + 0x27a) != 0) {
-    local_c = *(uint *)(*(int *)(this + 0x27a) + 0xc);
+  if (this->field_027A != 0) {
+    local_c = *(uint *)(this->field_027A + 0xc);
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_8 = this;
     errorCode = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (errorCode == 0) {
-      pBVar1 = local_8 + 0x27a;
-      STAllPlayersC::GetPanelInfo(DAT_007fa174,0xc,(int *)pBVar1);
-      thunk_FUN_0053f510(this_00,*(uint *)(*(int *)pBVar1 + 0xc),local_c);
+      puVar1 = &local_8->field_027A;
+      STAllPlayersC::GetPanelInfo(DAT_007fa174,0xc,puVar1);
+      thunk_FUN_0053f510(this_00,*(uint *)(*puVar1 + 0xc),local_c);
       thunk_FUN_004efe20(this_00);
       g_currentExceptionFrame = local_50.previous;
       return;

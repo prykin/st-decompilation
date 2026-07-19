@@ -48,7 +48,8 @@ void __fastcall FUN_00602be0(int *param_1)
     iVar2 = (int)*(short *)((int)param_1 + 0x259);
     if (((DAT_0080874d != -1) &&
         ((((*(int *)((int)DAT_00802a88 + 0xf8) != 0 &&
-           (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+           (thunk_FUN_00558c00(DAT_00802a88,
+                               *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                                (int)*(short *)((int)param_1 + 0x255),
                                (int)*(short *)((int)param_1 + 599),&local_8,&local_c), -1 < iVar2))
           && (iVar2 < 5)) && ((-1 < local_8 && (local_8 < *(int *)((int)pvVar1 + 0x30))))))) &&

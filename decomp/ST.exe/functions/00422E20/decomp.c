@@ -17,7 +17,7 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
   undefined4 extraout_EDX_02;
   int iVar5;
   undefined8 uVar6;
-  undefined1 uVar7;
+  Global_sub_0043FC50_param_1Enum GVar7;
   
   uVar6 = (**(code **)(*(int *)this + 4))();
   uVar4 = (undefined4)((ulonglong)uVar6 >> 0x20);
@@ -69,14 +69,14 @@ void __thiscall FUN_00422e20(void *this,byte param_1)
        (*(uint *)((int)this + 0x1d1) = *(uint *)((int)this + 0x1d1) | 4,
        *(int *)((int)this + 0x21d) == 1)) {
       if (*(int *)((int)this + 0x20) == 0x14) {
-        thunk_FUN_0043fc50(1,0);
-        uVar7 = 2;
+        thunk_FUN_0043fc50(CASE_1,0);
+        GVar7 = CASE_2;
       }
       else {
-        thunk_FUN_0043fc50(4,0);
-        uVar7 = 5;
+        thunk_FUN_0043fc50(CASE_4,0);
+        GVar7 = CASE_5;
       }
-      thunk_FUN_0043fc50(uVar7,0);
+      thunk_FUN_0043fc50(GVar7,0);
     }
     if (((param_1 & 8) != 0) && ((*(uint *)((int)this + 0x1d1) & 8) == 0)) {
       *(uint *)((int)this + 0x1d1) = *(uint *)((int)this + 0x1d1) | 8;

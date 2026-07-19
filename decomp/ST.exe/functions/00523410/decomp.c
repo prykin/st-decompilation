@@ -1,12 +1,17 @@
 
-undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00523410_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_9=9;CASE_A=10;CASE_B=11;CASE_C=12;CASE_D=13;CASE_E=14;CASE_F=15;CASE_10=16;CASE_11=17;CASE_12=18;CASE_13=19;CASE_14=20;CASE_15=21;CASE_16=22;CASE_17=23;CASE_18=24;CASE_19=25;CASE_1A=26;CASE_1B=27;CASE_1C=28;CASE_1D=29;CASE_1E=30;CASE_1F=31;CASE_20=32;CASE_21=33;CASE_22=34;CASE_23=35;CASE_24=36;CASE_25=37;CASE_26=38;CASE_27=39;CASE_28=40;CASE_2B=43;CASE_32=50;CASE_33=51;CASE_34=52;CASE_35=53;CASE_36=54;CASE_37=55;CASE_38=56;CASE_39=57;CASE_3A=58;CASE_3B=59;CASE_3C=60;CASE_3D=61;CASE_3E=62;CASE_3F=63;CASE_40=64;CASE_41=65;CASE_42=66;CASE_43=67;CASE_44=68;CASE_45=69;CASE_46=70;CASE_47=71;CASE_48=72;CASE_49=73;CASE_4A=74;CASE_4B=75;CASE_4C=76;CASE_4D=77;CASE_4E=78;CASE_4F=79;CASE_50=80;CASE_51=81;CASE_52=82;CASE_53=83;CASE_54=84;CASE_55=85;CASE_56=86;CASE_57=87;CASE_58=88;CASE_59=89;CASE_5A=90;CASE_5B=91;CASE_5C=92;CASE_5D=93;CASE_5E=94;CASE_5F=95;CASE_60=96;CASE_61=97;CASE_62=98;CASE_63=99;CASE_64=100;CASE_65=101;CASE_66=102;CASE_67=103;CASE_68=104;CASE_69=105;CASE_6A=106;CASE_6B=107;CASE_6C=108;CASE_6D=109;CASE_6E=110;CASE_6F=111;CASE_70=112;CASE_71=113;CASE_72=114;CASE_73=115;CASE_A6=166;CASE_A7=167;CASE_AF=175;CASE_BD=189;CASE_DD=221;CASE_DE=222;CASE_E0=224;CASE_E6=230;CASE_E7=231;CASE_E8=232;CASE_E9=233;CASE_EA=234;CASE_EB=235;CASE_F2=242;CASE_F3=243;CASE_F4=244;CASE_F5=245;CASE_F6=246;CASE_F7=247;CASE_F8=248;CASE_F9=249;CASE_FA=250;CASE_FB=251;CASE_FD=253;CASE_FE=254
+    */
+
+undefined4 __cdecl FUN_00523410(Global_sub_00523410_param_1Enum param_1,char param_2,byte param_3)
 
 {
   undefined4 uVar1;
   
   uVar1 = 10000;
   switch(param_1) {
-  case 1:
+  case CASE_1:
     if (param_3 == 1) {
       return 0x56b8;
     }
@@ -14,7 +19,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56dd;
     }
     return 0x2af9;
-  case 2:
+  case CASE_2:
     if (param_3 == 1) {
       return 0x56b9;
     }
@@ -22,7 +27,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56de;
     }
     return 0x2afa;
-  case 3:
+  case CASE_3:
     if (param_3 == 1) {
       return 0x56ba;
     }
@@ -30,7 +35,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56df;
     }
     return 0x2afb;
-  case 4:
+  case CASE_4:
     if (param_3 == 1) {
       return 0x56bb;
     }
@@ -38,7 +43,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e0;
     }
     return 0x2afc;
-  case 5:
+  case CASE_5:
     if (param_3 == 1) {
       return 0x56bc;
     }
@@ -46,7 +51,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e1;
     }
     return 0x2afd;
-  case 6:
+  case CASE_6:
     if (param_3 == 1) {
       return 0x56c3;
     }
@@ -54,7 +59,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e8;
     }
     return 0x2b41;
-  case 7:
+  case CASE_7:
     if (param_3 == 1) {
       return 0x56bd;
     }
@@ -62,7 +67,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e2;
     }
     return 0x2afe;
-  case 8:
+  case CASE_8:
     if (param_3 == 1) {
       return 0x56c2;
     }
@@ -70,7 +75,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e7;
     }
     return 0x2b40;
-  case 9:
+  case CASE_9:
     if (param_3 == 1) {
       return 0x56be;
     }
@@ -78,7 +83,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e3;
     }
     return 0x2aff;
-  case 10:
+  case CASE_A:
     if (param_3 == 1) {
       return 0x56bf;
     }
@@ -86,7 +91,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e4;
     }
     return 0x2b01;
-  case 0xb:
+  case CASE_B:
     if (param_3 == 1) {
       return 0x56c0;
     }
@@ -94,7 +99,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e5;
     }
     return 0x2b09;
-  case 0xc:
+  case CASE_C:
     if (param_3 == 1) {
       return 0x56cd;
     }
@@ -102,7 +107,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f2;
     }
     return 0x2b0b;
-  case 0xd:
+  case CASE_D:
     if (param_3 == 1) {
       return 0x56c4;
     }
@@ -110,7 +115,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e9;
     }
     return 0x2b02;
-  case 0xe:
+  case CASE_E:
     if (param_3 == 1) {
       return 0x56c5;
     }
@@ -118,7 +123,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56ea;
     }
     return 0x2b03;
-  case 0xf:
+  case CASE_F:
     if (param_3 == 1) {
       return 0x56c6;
     }
@@ -126,7 +131,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56eb;
     }
     return 0x2b04;
-  case 0x10:
+  case CASE_10:
     if (param_3 == 1) {
       return 0x56c7;
     }
@@ -134,7 +139,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56ec;
     }
     return 0x2b05;
-  case 0x11:
+  case CASE_11:
     if (param_3 == 1) {
       return 0x56c8;
     }
@@ -142,7 +147,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56ed;
     }
     return 0x2b06;
-  case 0x12:
+  case CASE_12:
     if (param_3 == 1) {
       return 0x56ce;
     }
@@ -150,7 +155,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f3;
     }
     return 0x2b0c;
-  case 0x13:
+  case CASE_13:
     if (param_3 == 1) {
       return 0x56c9;
     }
@@ -158,7 +163,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56ee;
     }
     return 0x2b07;
-  case 0x14:
+  case CASE_14:
     if (param_3 == 1) {
       return 0x56cf;
     }
@@ -166,7 +171,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f4;
     }
     return 0x2b0d;
-  case 0x15:
+  case CASE_15:
     if (param_3 == 1) {
       return 0x56cb;
     }
@@ -174,7 +179,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f0;
     }
     return 0x2b08;
-  case 0x16:
+  case CASE_16:
     if (param_3 == 1) {
       return 0x56ca;
     }
@@ -182,7 +187,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56ef;
     }
     return 0x2b00;
-  case 0x17:
+  case CASE_17:
     if (param_3 == 1) {
       return 0x56cc;
     }
@@ -190,7 +195,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f1;
     }
     return 0x2b0a;
-  case 0x18:
+  case CASE_18:
     if (param_3 == 1) {
       return 0x56c1;
     }
@@ -198,7 +203,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56e6;
     }
     return 0x2b3f;
-  case 0x19:
+  case CASE_19:
     if (param_3 == 1) {
       return 0x56d1;
     }
@@ -206,7 +211,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f6;
     }
     return 0x2b66;
-  case 0x1a:
+  case CASE_1A:
     if (param_3 == 1) {
       return 0x56d2;
     }
@@ -214,7 +219,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f7;
     }
     return 0x2b67;
-  case 0x1b:
+  case CASE_1B:
     if (param_3 == 1) {
       return 0x56d3;
     }
@@ -222,7 +227,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f8;
     }
     return 0x2b68;
-  case 0x1c:
+  case CASE_1C:
     if (param_3 == 1) {
       return 0x56d4;
     }
@@ -230,7 +235,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f9;
     }
     return 0x2b69;
-  case 0x1d:
+  case CASE_1D:
     if (param_3 == 1) {
       return 0x56d5;
     }
@@ -238,7 +243,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56fa;
     }
     return 0x2b6a;
-  case 0x1e:
+  case CASE_1E:
     if (param_3 == 1) {
       return 0x56d6;
     }
@@ -246,7 +251,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56fb;
     }
     return 0x2b6b;
-  case 0x1f:
+  case CASE_1F:
     if (param_3 == 1) {
       return 0x56d7;
     }
@@ -254,7 +259,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56fc;
     }
     return 0x2b6c;
-  case 0x20:
+  case CASE_20:
     if (param_3 == 1) {
       return 0x56d8;
     }
@@ -262,7 +267,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56fd;
     }
     return 0x2b6d;
-  case 0x21:
+  case CASE_21:
     if (param_3 == 1) {
       return 0x56d9;
     }
@@ -270,7 +275,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56fe;
     }
     return 0x2b6e;
-  case 0x22:
+  case CASE_22:
     if (param_3 == 1) {
       return 0x56da;
     }
@@ -278,7 +283,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56ff;
     }
     return 0x2b6f;
-  case 0x23:
+  case CASE_23:
     if (param_3 == 1) {
       return 0x56db;
     }
@@ -286,7 +291,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5700;
     }
     return 0x2b70;
-  case 0x24:
+  case CASE_24:
     if (param_3 == 1) {
       return 0x56dc;
     }
@@ -294,7 +299,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5701;
     }
     return 0x2b71;
-  case 0x25:
+  case CASE_25:
     if (param_3 == 1) {
       return 0x56d0;
     }
@@ -302,7 +307,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x56f5;
     }
     return 0x2b2f;
-  case 0x26:
+  case CASE_26:
     if (param_3 == 1) {
       return 0x5704;
     }
@@ -310,7 +315,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5707;
     }
     return 0x2b7d;
-  case 0x27:
+  case CASE_27:
     if (param_3 == 1) {
       return 0x5705;
     }
@@ -318,7 +323,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5708;
     }
     return 0x2b7e;
-  case 0x28:
+  case CASE_28:
     if (param_3 == 1) {
       return 0x5706;
     }
@@ -326,7 +331,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5709;
     }
     return 0x2b7f;
-  case 0x2b:
+  case CASE_2B:
     if (param_3 == 1) {
       return 0x5703;
     }
@@ -334,7 +339,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5702;
     }
     return 0x2b7a;
-  case 0x32:
+  case CASE_32:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x571c;
@@ -354,7 +359,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b0e;
     }
     break;
-  case 0x33:
+  case CASE_33:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x571d;
@@ -374,7 +379,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b0f;
     }
     break;
-  case 0x34:
+  case CASE_34:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x571f;
@@ -394,7 +399,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b10;
     }
     break;
-  case 0x35:
+  case CASE_35:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x571e;
@@ -414,7 +419,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b11;
     }
     break;
-  case 0x36:
+  case CASE_36:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x5722;
@@ -434,7 +439,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b3c;
     }
     break;
-  case 0x37:
+  case CASE_37:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x572e;
@@ -454,9 +459,9 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b13;
     }
     break;
-  case 0x38:
+  case CASE_38:
     return 0x2b14;
-  case 0x39:
+  case CASE_39:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x5727;
@@ -476,7 +481,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b15;
     }
     break;
-  case 0x3a:
+  case CASE_3A:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x5729;
@@ -496,7 +501,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b16;
     }
     break;
-  case 0x3b:
+  case CASE_3B:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x572a;
@@ -516,7 +521,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b3a;
     }
     break;
-  case 0x3c:
+  case CASE_3C:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x5720;
@@ -536,7 +541,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b33;
     }
     break;
-  case 0x3d:
+  case CASE_3D:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x572d;
@@ -556,7 +561,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b3e;
     }
     break;
-  case 0x3e:
+  case CASE_3E:
     if (param_3 == 1) {
       return 0x5724;
     }
@@ -564,7 +569,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5788;
     }
     return 0x2b1b;
-  case 0x3f:
+  case CASE_3F:
     if (param_3 == 1) {
       return 0x5723;
     }
@@ -572,8 +577,8 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5787;
     }
     return 0x2b1c;
-  case 0x40:
-  case 0x49:
+  case CASE_40:
+  case CASE_49:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x5721;
@@ -593,7 +598,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b37;
     }
     break;
-  case 0x41:
+  case CASE_41:
     if (param_3 == 1) {
       return 0x5733;
     }
@@ -601,7 +606,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5797;
     }
     return 0x2b1d;
-  case 0x42:
+  case CASE_42:
     if (param_3 == 1) {
       return 0x5725;
     }
@@ -609,7 +614,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5789;
     }
     return 0x2b1e;
-  case 0x43:
+  case CASE_43:
     if (param_3 == 1) {
       return 0x572f;
     }
@@ -617,7 +622,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5793;
     }
     return 0x2b1f;
-  case 0x44:
+  case CASE_44:
     if (param_3 == 1) {
       return 0x5730;
     }
@@ -625,7 +630,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5794;
     }
     return 0x2b20;
-  case 0x45:
+  case CASE_45:
     if (param_3 == 1) {
       return 0x5731;
     }
@@ -633,7 +638,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5795;
     }
     return 0x2b21;
-  case 0x46:
+  case CASE_46:
     if (param_3 == 1) {
       return 0x573c;
     }
@@ -641,7 +646,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57a0;
     }
     return 0x2b22;
-  case 0x47:
+  case CASE_47:
     if (param_3 == 1) {
       return 0x573e;
     }
@@ -649,7 +654,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57a2;
     }
     return 0x2b23;
-  case 0x48:
+  case CASE_48:
     if (param_3 == 1) {
       return 0x573b;
     }
@@ -657,7 +662,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x579f;
     }
     return 0x2b24;
-  case 0x4a:
+  case CASE_4A:
     if (param_3 == 1) {
       return 0x573d;
     }
@@ -665,7 +670,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57a1;
     }
     return 0x2b25;
-  case 0x4b:
+  case CASE_4B:
     if (param_3 == 1) {
       return 0x573f;
     }
@@ -673,7 +678,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57a3;
     }
     return 0x2b26;
-  case 0x4c:
+  case CASE_4C:
     if (param_3 == 1) {
       return 0x5748;
     }
@@ -681,7 +686,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57ac;
     }
     return 0x2b27;
-  case 0x4d:
+  case CASE_4D:
     if (param_3 == 1) {
       return 0x5749;
     }
@@ -689,7 +694,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57ad;
     }
     return 0x2b28;
-  case 0x4e:
+  case CASE_4E:
     if (param_3 == 1) {
       return 0x574a;
     }
@@ -697,7 +702,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57ae;
     }
     return 0x2b29;
-  case 0x4f:
+  case CASE_4F:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x5728;
@@ -717,7 +722,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b2a;
     }
     break;
-  case 0x50:
+  case CASE_50:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x572b;
@@ -737,7 +742,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b38;
     }
     break;
-  case 0x51:
+  case CASE_51:
     if (param_3 == 1) {
       return 0x5726;
     }
@@ -745,7 +750,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x578a;
     }
     return 0x2b2d;
-  case 0x52:
+  case CASE_52:
     if (param_2 == '\x01') {
       if (param_3 == 1) {
         return 0x572c;
@@ -765,7 +770,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b3d;
     }
     break;
-  case 0x53:
+  case CASE_53:
     if (param_3 == 1) {
       return 0x574b;
     }
@@ -773,7 +778,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57af;
     }
     return 0x2b47;
-  case 0x54:
+  case CASE_54:
     if (param_3 == 1) {
       return 0x574c;
     }
@@ -781,7 +786,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b0;
     }
     return 0x2b48;
-  case 0x55:
+  case CASE_55:
     if (param_3 == 1) {
       return 0x574d;
     }
@@ -789,7 +794,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b1;
     }
     return 0x2b49;
-  case 0x56:
+  case CASE_56:
     if (param_3 == 1) {
       return 0x574e;
     }
@@ -797,7 +802,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b2;
     }
     return 0x2b4a;
-  case 0x57:
+  case CASE_57:
     if (param_3 == 1) {
       return 0x574f;
     }
@@ -805,7 +810,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b3;
     }
     return 0x2b4b;
-  case 0x58:
+  case CASE_58:
     if (param_3 == 1) {
       return 0x5750;
     }
@@ -813,7 +818,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b4;
     }
     return 0x2b4c;
-  case 0x59:
+  case CASE_59:
     if (param_3 == 1) {
       return 0x5751;
     }
@@ -821,7 +826,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b5;
     }
     return 0x2b4d;
-  case 0x5a:
+  case CASE_5A:
     if (param_3 == 1) {
       return 0x5752;
     }
@@ -829,7 +834,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b6;
     }
     return 0x2b4e;
-  case 0x5b:
+  case CASE_5B:
     if (param_3 == 1) {
       return 0x5753;
     }
@@ -837,7 +842,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b7;
     }
     return 0x2b4f;
-  case 0x5c:
+  case CASE_5C:
     if (param_3 == 1) {
       return 0x5754;
     }
@@ -845,7 +850,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b8;
     }
     return 0x2b50;
-  case 0x5d:
+  case CASE_5D:
     if (param_3 == 1) {
       return 0x5756;
     }
@@ -853,7 +858,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57ba;
     }
     return 0x2b51;
-  case 0x5e:
+  case CASE_5E:
     if (param_3 == 1) {
       return 0x5760;
     }
@@ -861,7 +866,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c4;
     }
     return 0x2b52;
-  case 0x5f:
+  case CASE_5F:
     if (param_3 == 1) {
       return 0x5764;
     }
@@ -869,7 +874,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c8;
     }
     return 0x2b53;
-  case 0x60:
+  case CASE_60:
     if (param_3 == 1) {
       return 0x5761;
     }
@@ -877,7 +882,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c5;
     }
     return 0x2b54;
-  case 0x61:
+  case CASE_61:
     if (param_3 == 1) {
       return 0x5762;
     }
@@ -885,7 +890,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c6;
     }
     return 0x2b55;
-  case 0x62:
+  case CASE_62:
     if (param_3 == 1) {
       return 0x5755;
     }
@@ -893,7 +898,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57b9;
     }
     return 0x2b56;
-  case 99:
+  case CASE_63:
     if (param_3 == 1) {
       return 0x5763;
     }
@@ -901,7 +906,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c7;
     }
     return 0x2b57;
-  case 100:
+  case CASE_64:
     if (param_3 == 1) {
       return 0x575f;
     }
@@ -909,7 +914,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c3;
     }
     return 0x2b58;
-  case 0x65:
+  case CASE_65:
     if (param_3 == 1) {
       return 0x575c;
     }
@@ -917,7 +922,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c0;
     }
     return 0x2b59;
-  case 0x66:
+  case CASE_66:
     if (param_3 == 1) {
       return 0x5759;
     }
@@ -925,7 +930,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57bd;
     }
     return 0x2b5a;
-  case 0x67:
+  case CASE_67:
     if (param_3 == 1) {
       return 0x5758;
     }
@@ -933,7 +938,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57bc;
     }
     return 0x2b5b;
-  case 0x68:
+  case CASE_68:
     if (param_3 == 1) {
       return 0x575d;
     }
@@ -941,7 +946,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c1;
     }
     return 0x2b5c;
-  case 0x69:
+  case CASE_69:
     if (param_3 == 1) {
       return 0x575a;
     }
@@ -949,7 +954,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57be;
     }
     return 0x2b5d;
-  case 0x6a:
+  case CASE_6A:
     if (param_3 == 1) {
       return 0x575b;
     }
@@ -957,7 +962,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57bf;
     }
     return 0x2b5e;
-  case 0x6b:
+  case CASE_6B:
     if (param_3 == 1) {
       return 0x5757;
     }
@@ -965,7 +970,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57bb;
     }
     return 0x2b5f;
-  case 0x6c:
+  case CASE_6C:
     if (param_3 == 1) {
       return 0x5765;
     }
@@ -973,7 +978,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c9;
     }
     return 0x2b60;
-  case 0x6d:
+  case CASE_6D:
     if (param_3 == 1) {
       return 0x5767;
     }
@@ -981,7 +986,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57cb;
     }
     return 0x2b62;
-  case 0x6e:
+  case CASE_6E:
     if (param_3 == 1) {
       return 0x5768;
     }
@@ -989,7 +994,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57cc;
     }
     return 0x2b63;
-  case 0x6f:
+  case CASE_6F:
     if (param_3 == 1) {
       return 0x5732;
     }
@@ -997,7 +1002,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x5796;
     }
     return 0x2b43;
-  case 0x70:
+  case CASE_70:
     if (param_3 == 1) {
       return 0x5769;
     }
@@ -1005,7 +1010,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57cd;
     }
     return 0x2b64;
-  case 0x71:
+  case CASE_71:
     if (param_3 == 1) {
       return 0x575e;
     }
@@ -1013,7 +1018,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57c2;
     }
     return 0x2b65;
-  case 0x72:
+  case CASE_72:
     if (param_3 == 1) {
       return 0x576a;
     }
@@ -1021,7 +1026,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57ce;
     }
     return 0x2b72;
-  case 0x73:
+  case CASE_73:
     if (param_3 == 1) {
       return 0x576b;
     }
@@ -1029,21 +1034,21 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57cf;
     }
     return 0x2b7c;
-  case 0xa6:
+  case CASE_A6:
     return 0x2b73;
-  case 0xa7:
+  case CASE_A7:
     return 0x2b74;
-  case 0xaf:
+  case CASE_AF:
     return 0x2b76;
-  case 0xbd:
+  case CASE_BD:
     return 0x2b75;
-  case 0xdd:
+  case CASE_DD:
     return 0x2b77;
-  case 0xde:
+  case CASE_DE:
     return 0x2b78;
-  case 0xe0:
+  case CASE_E0:
     return 0x2b79;
-  case 0xe6:
+  case CASE_E6:
     if (param_3 != 1) {
       if (param_3 == 2) {
         return 0x5bfe;
@@ -1051,58 +1056,58 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x2b8e;
     }
     break;
-  case 0xe7:
+  case CASE_E7:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b8f;
     }
     break;
-  case 0xe8:
+  case CASE_E8:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b90;
     }
     break;
-  case 0xe9:
+  case CASE_E9:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b91;
     }
     break;
-  case 0xea:
+  case CASE_EA:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b92;
     }
     break;
-  case 0xeb:
+  case CASE_EB:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b93;
     }
     break;
-  case 0xf2:
-  case 0xf3:
-  case 0xf4:
-  case 0xf5:
+  case CASE_F2:
+  case CASE_F3:
+  case CASE_F4:
+  case CASE_F5:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b94;
     }
     break;
-  case 0xf6:
-  case 0xf7:
+  case CASE_F6:
+  case CASE_F7:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b95;
     }
     break;
-  case 0xf8:
-  case 0xf9:
+  case CASE_F8:
+  case CASE_F9:
     if ((param_3 == 0) || (2 < param_3)) {
       return 0x2b96;
     }
     break;
-  case 0xfa:
-  case 0xfb:
+  case CASE_FA:
+  case CASE_FB:
     if ((param_3 == 0) || (2 < param_3)) {
       uVar1 = 0x2b97;
     }
     break;
-  case 0xfd:
+  case CASE_FD:
     if (((param_2 != '\x01') && (param_2 != '\x02')) && (param_2 != '\x03')) {
       return 0x2b7b;
     }
@@ -1113,7 +1118,7 @@ undefined4 __cdecl FUN_00523410(undefined4 param_1,char param_2,byte param_3)
       return 0x57d3;
     }
     return 0x2b7b;
-  case 0xfe:
+  case CASE_FE:
     if ((param_2 != '\x01') && (param_2 != '\x02')) {
       return 0x2b46;
     }

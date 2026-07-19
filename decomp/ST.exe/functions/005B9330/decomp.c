@@ -8,7 +8,7 @@ undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
 {
   code *pcVar1;
   MMsgTy *this_00;
-  MMObjTy MVar2;
+  byte bVar2;
   undefined4 uVar3;
   int iVar4;
   int iVar5;
@@ -19,8 +19,8 @@ undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
   MMsgTy *local_8;
   
   local_8 = this;
-  uVar3 = FUN_006e51b0(*(int *)(this + 0x10));
-  *(undefined4 *)(this + 0x61) = uVar3;
+  uVar3 = FUN_006e51b0(this->field_0010);
+  this->field_0061 = uVar3;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   iVar4 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -89,13 +89,13 @@ undefined4 __thiscall MMsgTy::GetMessage(MMsgTy *this,int param_1)
 switchD_005b939a_default:
   uVar6 = *(uint *)(param_1 + 0x10);
   if ((0x68fe < uVar6) && (uVar6 < 0x697f)) {
-    MVar2 = (MMObjTy)((char)uVar6 + 1);
-    *(MMObjTy *)(this_00 + 0x1a5a) = MVar2;
-    if (*(MMObjTy *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xe1) == (MMObjTy)0x0) {
-      if (*(int *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xd1) != 0) {
+    bVar2 = (char)uVar6 + 1;
+    this_00->field_0x1a5a = bVar2;
+    if ((&this_00->field_0xe1)[(uint)bVar2 * 0x1fb] == '\0') {
+      if (*(int *)(&this_00->field_0xd1 + (uint)bVar2 * 0x1fb) != 0) {
         AppClassTy::PostNextMessage
                   ((AppClassTy *)&DAT_00807620,
-                   (undefined4 *)(this_00 + (uint)(byte)MVar2 * 0x1fb + 0xc1));
+                   (undefined4 *)(&this_00->field_0xc1 + (uint)bVar2 * 0x1fb));
       }
     }
     else {

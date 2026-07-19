@@ -16,15 +16,15 @@ void __thiscall GameSystemC::DoneSystem(GameSystemC *this,int param_1)
   InternalExceptionFrame local_4c;
   GameSystemC *local_8;
   
-  this[0x430] = (GameSystemC)0x0;
+  this->field_0430 = 0;
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pGVar3 = local_8;
   if (errorCode == 0) {
-    if (*(int *)(local_8 + 0x431) != 0) {
-      FUN_00725680((int *)(local_8 + 0x431));
+    if (local_8[1].vtable != (GameSystemCVTable *)0x0) {
+      FUN_00725680((int *)(local_8 + 1));
     }
     FUN_0070b1d0(&DAT_00806724);
     if (DAT_00802a28 != 0) {

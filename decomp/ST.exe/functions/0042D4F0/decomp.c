@@ -69,13 +69,13 @@ LAB_0042d5e8:
 LAB_0042d5ff:
   if (param_3 == 0) {
     if (param_2 == 0) {
-      thunk_FUN_0043fc50(1,0);
-      thunk_FUN_0043fc50(2,0);
+      thunk_FUN_0043fc50(CASE_1,0);
+      thunk_FUN_0043fc50(CASE_2,0);
       return;
     }
     if (param_2 == 1) {
-      thunk_FUN_0043fc50(5,0);
-      thunk_FUN_0043fc50(4,0);
+      thunk_FUN_0043fc50(CASE_5,0);
+      thunk_FUN_0043fc50(CASE_4,0);
     }
   }
   return;

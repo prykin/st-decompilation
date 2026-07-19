@@ -24,8 +24,8 @@ undefined4 __thiscall BaseSystemC::CreateSystemObjects(BaseSystemC *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c,0,unaff_ESI,pIVar5);
   pBVar2 = local_c;
   if (errorCode == 0) {
-    (**(code **)(*(int *)local_c + 0xc))(1,&local_8,0,0);
-    (**(code **)(*(int *)pBVar2 + 0xc))(0x101,&DAT_00802a2c,0,0);
+    (*local_c->vtable->slot_0C)(1,&local_8,0,0);
+    (*pBVar2->vtable->slot_0C)(0x101,&DAT_00802a2c,0,0);
     g_currentExceptionFrame = pIVar5;
     return 0;
   }

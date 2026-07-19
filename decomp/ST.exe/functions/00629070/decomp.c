@@ -141,7 +141,7 @@ LAB_00629242:
     RaiseInternalException(iVar9,0,s_E____titans_nick_to_Part_Cpp_007d1354,0x2ae);
     return 0xffff;
   }
-  puVar10 = FUN_00709af0(DAT_00806774,0x1d,local_8[local_18 & 0xff],0xffffffff,0,1,0,
+  puVar10 = FUN_00709af0(DAT_00806774,CASE_1D,local_8[local_18 & 0xff],0xffffffff,0,1,0,
                          (undefined4 *)0x0);
   pSVar8 = local_1c;
   *(undefined4 *)(local_1c + 0xb6) = *(undefined4 *)puVar10;
@@ -207,8 +207,10 @@ LAB_00629242:
                            (short)((longlong)iVar11 * 0x28c1979 >> 0x3f));
     }
     if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar11,iVar9,
-                            &local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14)) {
+        (thunk_FUN_00558c00(DAT_00802a88,
+                            *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),iVar11,
+                            iVar9,&local_28,&local_2c), (int)local_14 < 0)) || (4 < (int)local_14))
+    {
       bVar14 = true;
     }
     else {

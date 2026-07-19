@@ -7,54 +7,54 @@ void __thiscall MMsgTy::CloseSprBut(MMsgTy *this)
 
 {
   code *pcVar1;
-  MMObjTy *this_00;
+  MMsgTy *this_00;
   int errorCode;
   uint uVar2;
   int iVar3;
-  MMObjTy MVar4;
-  MMObjTy MVar5;
+  byte bVar4;
+  byte bVar5;
   undefined4 unaff_EBX;
   void *unaff_ESI;
   InternalExceptionFrame local_54;
-  MMObjTy *local_10;
+  MMsgTy *local_10;
   uint local_c;
   uint local_8;
   
-  MVar5 = (MMObjTy)0x0;
+  bVar5 = 0;
   local_c = local_c & 0xffffff00;
   local_54.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_54;
-  local_10 = (MMObjTy *)this;
+  local_10 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_54.jumpBuffer,0,unaff_ESI,unaff_EBX);
   this_00 = local_10;
   if (errorCode == 0) {
-    MMObjTy::CloseButtons(local_10);
-    MVar4 = (MMObjTy)0x0;
+    MMObjTy::CloseButtons((MMObjTy *)local_10);
+    bVar4 = 0;
     local_8 = local_8 & 0xffffff00;
-    if (this_00[0x9a] != (MMObjTy)0x0) {
+    if (this_00->field_0x9a != '\0') {
       do {
         uVar2 = local_8 & 0xff;
-        *(undefined4 *)(this_00 + uVar2 * 0x1fb + 0x127) = *(undefined4 *)(this_00 + 0x61);
-        *(uint *)(this_00 + uVar2 * 0x1fb + 0x123) = ((local_c & 0xff) + 1) * 100;
-        if (*(int *)(this_00 + uVar2 * 0x1fb + 0xbc) != 0) {
+        *(undefined4 *)(&this_00->field_0x127 + uVar2 * 0x1fb) = this_00->field_0061;
+        *(uint *)(&this_00->field_0x123 + uVar2 * 0x1fb) = ((local_c & 0xff) + 1) * 100;
+        if (*(int *)(&this_00->field_0xbc + uVar2 * 0x1fb) != 0) {
           local_c = CONCAT31(local_c._1_3_,(char)local_c + '\x01');
         }
-        MVar4 = (MMObjTy)((char)MVar4 + 1);
-        local_8 = CONCAT31(local_8._1_3_,MVar4);
-      } while ((byte)MVar4 < (byte)this_00[0x9a]);
+        bVar4 = bVar4 + 1;
+        local_8 = CONCAT31(local_8._1_3_,bVar4);
+      } while (bVar4 < (byte)this_00->field_0x9a);
     }
     local_8 = local_8 & 0xffffff00;
-    if (this_00[0x9a] != (MMObjTy)0x0) {
+    if (this_00->field_0x9a != '\0') {
       do {
-        if (*(uint *)(this_00 + (local_8 & 0xff) * 0x1fb + 0x178) != 0xffffffff) {
-          FUN_006b3af0(*(int **)(this_00 + (local_8 & 0xff) * 0x1fb + 0x1bc),
-                       *(uint *)(this_00 + (local_8 & 0xff) * 0x1fb + 0x178));
+        if (*(uint *)(&this_00->field_0x178 + (local_8 & 0xff) * 0x1fb) != 0xffffffff) {
+          FUN_006b3af0(*(int **)(&this_00->field_0x1bc + (local_8 & 0xff) * 0x1fb),
+                       *(uint *)(&this_00->field_0x178 + (local_8 & 0xff) * 0x1fb));
         }
-        MVar5 = (MMObjTy)((char)MVar5 + 1);
-        local_8 = CONCAT31(local_8._1_3_,MVar5);
-      } while ((byte)MVar5 < (byte)this_00[0x9a]);
+        bVar5 = bVar5 + 1;
+        local_8 = CONCAT31(local_8._1_3_,bVar5);
+      } while (bVar5 < (byte)this_00->field_0x9a);
     }
-    HidePanel((MMsgTy *)this_00,1,1,1);
+    HidePanel(this_00,1,1,1);
     g_currentExceptionFrame = local_54.previous;
     return;
   }

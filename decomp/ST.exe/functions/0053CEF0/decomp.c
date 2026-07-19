@@ -32,7 +32,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
   InternalExceptionFrame local_5c;
   SpecPanelTy *local_14;
   int local_10;
-  SpecPanelTy *local_c;
+  undefined4 *local_c;
   int local_8;
   
   local_5c.previous = g_currentExceptionFrame;
@@ -49,9 +49,9 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     bVar13 = 0;
     uVar11 = 0xffffffff;
     pbVar4 = (byte *)thunk_FUN_00571240(s_BUT_PRODWEAP_007c201c,0);
-    puVar5 = FUN_00709af0(DAT_00806794,0xb,pbVar4,uVar11,bVar13,iVar3,iVar16,puVar19);
-    local_c = pSVar2 + 0x1b5;
-    *(ushort **)(pSVar2 + 0x1b1) = puVar5;
+    puVar5 = FUN_00709af0(DAT_00806794,CASE_B,pbVar4,uVar11,bVar13,iVar3,iVar16,puVar19);
+    local_c = (undefined4 *)&pSVar2[1].field_0x30;
+    *(ushort **)&pSVar2[1].field_0x2c = puVar5;
     iVar3 = 0xb4ff;
     local_8 = 0x17;
     local_10 = 6;
@@ -72,20 +72,20 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
       uVar9 = (**(code **)(iVar18 + 4))
                         (0,1,0x24,local_8 + 1,0,1,1,pCVar6,iVar10,iVar16,uVar12,uVar14,uVar15,uVar17
                          ,uVar20);
-      *(undefined4 *)local_c = uVar9;
-      pbVar4 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)(pSVar2 + 0x189),*(int *)(pSVar2 + 0x185),0,
+      *local_c = uVar9;
+      pbVar4 = (byte *)ccFntTy::CreateSurf(*(ccFntTy **)&pSVar2[1].field_0x4,*(int *)(pSVar2 + 1),0,
                                            0x37,iVar8,0xd2,0xc,0);
       if (pbVar4 != (byte *)0x0) {
         uVar9 = 0;
         iVar18 = -1;
         iVar16 = 0;
         puVar7 = (uint *)FUN_006b0140(iVar3 - 0x842b,DAT_00807618);
-        ccFntTy::WrStr(*(ccFntTy **)(pSVar2 + 0x189),puVar7,iVar16,iVar18,uVar9);
-        thunk_FUN_00540760(*(undefined4 **)(pSVar2 + 0x68),0x37,local_8,'\x01',pbVar4);
-        ccFntTy::EraseSufr(*(ccFntTy **)(pSVar2 + 0x189));
+        ccFntTy::WrStr(*(ccFntTy **)&pSVar2[1].field_0x4,puVar7,iVar16,iVar18,uVar9);
+        thunk_FUN_00540760(*(undefined4 **)&pSVar2->field_0x68,0x37,local_8,'\x01',pbVar4);
+        ccFntTy::EraseSufr(*(ccFntTy **)&pSVar2[1].field_0x4);
       }
       iVar3 = iVar3 + 1;
-      local_c = local_c + 4;
+      local_c = local_c + 1;
       local_8 = local_8 + 0xb;
       local_10 = local_10 + -1;
     } while (local_10 != 0);
@@ -100,7 +100,7 @@ void __thiscall SAMPanelTy::InitSAMPanel(SAMPanelTy *this)
     pCVar6 = thunk_FUN_00571240(s_BUT_BIG_007c77e0,0);
     uVar9 = (**(code **)(iVar3 + 4))
                       (0,1,0xa0,0x5c,0,1,1,pCVar6,uVar9,uVar12,uVar14,uVar15,uVar17,uVar20,uVar21);
-    *(undefined4 *)(pSVar2 + 0x1cd) = uVar9;
+    *(undefined4 *)&pSVar2[1].field_0x48 = uVar9;
     g_currentExceptionFrame = local_5c.previous;
     return;
   }

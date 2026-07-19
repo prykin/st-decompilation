@@ -75,14 +75,14 @@ joined_r0x0068f3e2:
         }
         else {
           piVar10 = (int *)STAllPlayersC::GetObjPtr
-                                     (DAT_007fa174,CONCAT31((int3)(uVar9 >> 8),pAVar6[0x24]),uVar9,1
-                                     );
+                                     (DAT_007fa174,CONCAT31((int3)(uVar9 >> 8),pAVar6->field_0x24),
+                                      uVar9,CASE_1);
         }
         pAVar6 = local_8;
       } while (piVar10 == (int *)0x0);
       iVar7 = (**(code **)(*piVar10 + 0x2c))();
       if ((iVar7 != 0x78) || ((int)local_c < 0)) break;
-      iVar7 = *(int *)(local_8 + 0xa5);
+      iVar7 = *(int *)&local_8->field_0xa5;
       if ((iVar7 == 0) || ((int)*(uint *)(iVar7 + 0xc) <= (int)local_c)) {
         pAVar11 = (AiFltClassTy *)0x0;
       }
@@ -92,7 +92,7 @@ joined_r0x0068f3e2:
           pAVar11 = *(AiFltClassTy **)(*(int *)(iVar7 + 8) * local_c + *(int *)(iVar7 + 0x1c) + 4);
         }
       }
-      uVar1 = *(ushort *)(pAVar11 + 0x7d);
+      uVar1 = *(ushort *)&pAVar11->field_0x7d;
       iVar7 = (**(code **)(*piVar10 + 0x2c))();
       if (iVar7 == 0x78) {
         *(uint *)((int)piVar10 + 0x269) = (uint)uVar1;
@@ -109,7 +109,7 @@ joined_r0x0068f3e2:
     uVar9 = local_c;
     pAVar6 = local_8;
     if ((bVar5) || (iVar7 == 0x78)) goto LAB_0068f509;
-    sVar2 = *(short *)(local_8 + 0x39);
+    sVar2 = *(short *)&local_8->field_0x39;
     if (sVar2 == 1) {
       iVar12 = 8;
     }
@@ -141,12 +141,12 @@ joined_r0x0068f3e2:
       if (iVar7 == iVar12) goto LAB_0068f509;
     }
   } while ((int)uVar13 < 0);
-  iVar7 = *(int *)(local_8 + 0xa5);
+  iVar7 = *(int *)&local_8->field_0xa5;
   uVar9 = uVar13;
   goto LAB_0068f516;
 LAB_0068f509:
   if (-1 < (int)uVar9) {
-    iVar7 = *(int *)(local_8 + 0xa5);
+    iVar7 = *(int *)&local_8->field_0xa5;
 LAB_0068f516:
     if ((iVar7 == 0) || ((int)*(uint *)(iVar7 + 0xc) <= (int)uVar9)) {
       pAVar11 = (AiFltClassTy *)0x0;

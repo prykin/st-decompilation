@@ -7,7 +7,7 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
 
 {
   code *pcVar1;
-  ProdPanelTy *this_00;
+  BldLabPanelTy *this_00;
   int errorCode;
   uint *puVar2;
   ushort *puVar3;
@@ -15,27 +15,28 @@ void __thiscall BldLabPanelTy::InitBldLabPanel(BldLabPanelTy *this)
   void *unaff_ESI;
   InternalExceptionFrame *pIVar5;
   undefined4 local_48 [16];
-  ProdPanelTy *local_8;
+  BldLabPanelTy *local_8;
   
   pIVar5 = g_currentExceptionFrame;
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
-  local_8 = (ProdPanelTy *)this;
+  local_8 = this;
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar5);
   this_00 = local_8;
   if (errorCode == 0) {
     DAT_00801680 = local_8;
     puVar2 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,0x28,0x30,10);
-    *(uint **)(this_00 + 0x27a) = puVar2;
-    *(int *)(this_00 + 0x3c) = *(int *)(this_00 + 0x3c) + (DAT_00806730 + -800) / 2;
+    this_00->field_027A = puVar2;
+    this_00->field_003C = this_00->field_003C + (DAT_00806730 + -800) / 2;
     puVar3 = cMf32::RecGet(DAT_00806790,1,s_BKG_BUILDLABW_007c1918,(int *)0x0,1);
-    *(ushort **)(this_00 + 0x184) = puVar3;
-    puVar3 = FUN_00709af0(DAT_00806794,0xb,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
-    *(ushort **)(this_00 + 0x188) = puVar3;
-    puVar3 = FUN_00709af0(DAT_00806794,0xb,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,
+    *(ushort **)&this_00->field_0x184 = puVar3;
+    puVar3 = FUN_00709af0(DAT_00806794,CASE_B,&DAT_007c1910,0xffffffff,0,1,0,(undefined4 *)0x0);
+    *(ushort **)&this_00->field_0x188 = puVar3;
+    puVar3 = FUN_00709af0(DAT_00806794,CASE_B,(byte *)s_OBJSD_007c1908,0xffffffff,0,1,0,
                           (undefined4 *)0x0);
-    *(ushort **)(this_00 + 0x18c) = puVar3;
+    *(ushort **)&this_00->field_0x18c = puVar3;
     ProdPanelTy::InitProdPanel
-              (this_00,0x2726,0x3f,2,0xc1,0xc,0x81,99,100,0xc0,99,0x25,0x14,0x31,s_OBJS_0_007c1900);
+              ((ProdPanelTy *)this_00,0x2726,0x3f,2,0xc1,0xc,0x81,99,100,0xc0,99,0x25,0x14,0x31,
+               s_OBJS_0_007c1900);
     g_currentExceptionFrame = pIVar5;
     return;
   }

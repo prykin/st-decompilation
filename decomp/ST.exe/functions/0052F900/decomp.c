@@ -7,70 +7,71 @@ void __thiscall OptPanelTy::ShiftControls(OptPanelTy *this,int param_1)
 
 {
   code *pcVar1;
+  OptPanelTy *this_00;
   short sVar2;
   undefined4 uVar3;
   int iVar4;
   int iVar5;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  OptPanelTy *pOVar6;
-  OptPanelTy *pOVar7;
+  int *piVar6;
+  undefined4 *puVar7;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
   
-  if (param_1 != *(int *)(this + 0x5c)) {
-    *(int *)(this + 0x5c) = param_1;
-    pOVar6 = this + 0x18;
+  if (param_1 != this->field_005C) {
+    this->field_005C = param_1;
+    puVar7 = (undefined4 *)&this->field_0x18;
     for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *(undefined4 *)pOVar6 = 0;
-      pOVar6 = pOVar6 + 4;
+      *puVar7 = 0;
+      puVar7 = puVar7 + 1;
     }
-    sVar2 = (short)*(undefined4 *)(this + 0x174);
-    *(undefined4 *)(this + 0x28) = 0x24;
+    sVar2 = (short)this->field_0174;
+    this->field_0028 = 0x24;
     if (param_1 == 0) {
       sVar2 = -sVar2;
     }
-    *(short *)(this + 0x2e) = sVar2;
+    *(short *)&this->field_0x2e = sVar2;
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-    pOVar6 = local_8;
+    this_00 = local_8;
     if (iVar5 == 0) {
       iVar5 = 10;
-      pOVar7 = local_8 + 0x1b5;
+      piVar6 = &local_8->field_01B5;
       do {
-        if (*(int *)pOVar7 != 0) {
-          FUN_006e6080(pOVar6,2,*(int *)pOVar7,(undefined4 *)(pOVar6 + 0x18));
+        if (*piVar6 != 0) {
+          FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
         }
-        pOVar7 = pOVar7 + 4;
+        piVar6 = piVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
-      pOVar7 = pOVar6 + 0x1ad;
+      piVar6 = (int *)&this_00->field_0x1ad;
       iVar5 = 2;
       do {
-        if (*(int *)pOVar7 != 0) {
-          FUN_006e6080(pOVar6,2,*(int *)pOVar7,(undefined4 *)(pOVar6 + 0x18));
+        if (*piVar6 != 0) {
+          FUN_006e6080(this_00,2,*piVar6,(undefined4 *)&this_00->field_0x18);
         }
-        pOVar7 = pOVar7 + 4;
+        piVar6 = piVar6 + 1;
         iVar5 = iVar5 + -1;
       } while (iVar5 != 0);
-      switch(pOVar6[0x1a4]) {
-      case (OptPanelTy)0x3:
-      case (OptPanelTy)0x4:
-      case (OptPanelTy)0xc:
-      case (OptPanelTy)0xe:
-        pOVar7 = pOVar6 + 0x18;
+      switch(this_00->field_0x1a4) {
+      case 3:
+      case 4:
+      case 0xc:
+      case 0xe:
+        puVar7 = (undefined4 *)&this_00->field_0x18;
         for (iVar5 = 8; iVar5 != 0; iVar5 = iVar5 + -1) {
-          *(undefined4 *)pOVar7 = 0;
-          pOVar7 = pOVar7 + 4;
+          *puVar7 = 0;
+          puVar7 = puVar7 + 1;
         }
         if ((param_1 == 0) || (uVar3 = 0x55, DAT_0080734c == '\0')) {
           uVar3 = 0x56;
         }
-        *(undefined4 *)(pOVar6 + 0x28) = uVar3;
-        if (*(int *)(pOVar6 + 0x1b5) != 0) {
-          FUN_006e6080(pOVar6,2,*(int *)(pOVar6 + 0x1b5),(undefined4 *)(pOVar6 + 0x18));
+        this_00->field_0028 = uVar3;
+        if (this_00->field_01B5 != 0) {
+          FUN_006e6080(this_00,2,this_00->field_01B5,(undefined4 *)&this_00->field_0x18);
         }
       }
       g_currentExceptionFrame = local_4c.previous;

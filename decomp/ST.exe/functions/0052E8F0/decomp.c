@@ -7,8 +7,9 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
 
 {
   code *pcVar1;
-  int iVar2;
+  OptPanelTy *pOVar2;
   int iVar3;
+  int iVar4;
   ccFntTy *extraout_ECX;
   ccFntTy *extraout_ECX_00;
   ccFntTy *extraout_ECX_01;
@@ -18,104 +19,103 @@ void __thiscall OptPanelTy::DoneOptPanel(OptPanelTy *this)
   ccFntTy *extraout_ECX_05;
   ccFntTy *this_00;
   undefined4 unaff_ESI;
-  OptPanelTy *pOVar4;
+  uint *puVar5;
   void *unaff_EDI;
-  OptPanelTy *pOVar5;
   InternalExceptionFrame local_4c;
   OptPanelTy *local_8;
   
   local_4c.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_4c;
   local_8 = this;
-  iVar2 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
-  pOVar4 = local_8;
-  if (iVar2 == 0) {
-    if (*(byte **)(local_8 + 0x1e9) != (byte *)0x0) {
-      FUN_006b5570(*(byte **)(local_8 + 0x1e9));
-      *(undefined4 *)(pOVar4 + 0x1e9) = 0;
+  iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
+  pOVar2 = local_8;
+  if (iVar3 == 0) {
+    if (*(byte **)&local_8[1].field_0x30 != (byte *)0x0) {
+      FUN_006b5570(*(byte **)&local_8[1].field_0x30);
+      *(undefined4 *)&pOVar2[1].field_0x30 = 0;
     }
-    if (*(byte **)(pOVar4 + 0x1ed) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)(pOVar4 + 0x1ed));
-      *(undefined4 *)(pOVar4 + 0x1ed) = 0;
+    if (*(byte **)&pOVar2[1].field_0x34 != (byte *)0x0) {
+      FUN_006ae110(*(byte **)&pOVar2[1].field_0x34);
+      *(undefined4 *)&pOVar2[1].field_0x34 = 0;
     }
-    if (*(byte **)(pOVar4 + 0x1f1) != (byte *)0x0) {
-      FUN_006b5570(*(byte **)(pOVar4 + 0x1f1));
-      *(undefined4 *)(pOVar4 + 0x1f1) = 0;
+    if (*(byte **)&pOVar2[1].field_0x38 != (byte *)0x0) {
+      FUN_006b5570(*(byte **)&pOVar2[1].field_0x38);
+      *(undefined4 *)&pOVar2[1].field_0x38 = 0;
     }
     this_00 = (ccFntTy *)0x0;
-    if (*(int *)(pOVar4 + 0x1e5) != 0) {
-      FUN_006ab060((undefined4 *)(pOVar4 + 0x1e5));
+    if (*(int *)&pOVar2[1].field_0x2c != 0) {
+      FUN_006ab060((undefined4 *)&pOVar2[1].field_0x2c);
       this_00 = extraout_ECX;
     }
-    if (*(byte **)(pOVar4 + 0x2f9) != (byte *)0x0) {
-      FUN_006b5570(*(byte **)(pOVar4 + 0x2f9));
+    if (*(byte **)&pOVar2[1].field_0x140 != (byte *)0x0) {
+      FUN_006b5570(*(byte **)&pOVar2[1].field_0x140);
       this_00 = extraout_ECX_00;
     }
-    *(undefined4 *)(pOVar4 + 0x2f9) = 0;
-    if (*(byte **)(pOVar4 + 0x2fd) != (byte *)0x0) {
-      FUN_006ae110(*(byte **)(pOVar4 + 0x2fd));
+    *(undefined4 *)&pOVar2[1].field_0x140 = 0;
+    if (*(byte **)&pOVar2[1].field_0x144 != (byte *)0x0) {
+      FUN_006ae110(*(byte **)&pOVar2[1].field_0x144);
       this_00 = extraout_ECX_01;
     }
-    *(undefined4 *)(pOVar4 + 0x2fd) = 0;
-    if (*(HANDLE *)(pOVar4 + 0x1dd) != (HANDLE)0x0) {
-      FindCloseChangeNotification(*(HANDLE *)(pOVar4 + 0x1dd));
-      *(undefined4 *)(pOVar4 + 0x1dd) = 0;
+    *(undefined4 *)&pOVar2[1].field_0x144 = 0;
+    if (*(HANDLE *)&pOVar2[1].field_0x24 != (HANDLE)0x0) {
+      FindCloseChangeNotification(*(HANDLE *)&pOVar2[1].field_0x24);
+      *(undefined4 *)&pOVar2[1].field_0x24 = 0;
       this_00 = extraout_ECX_02;
     }
-    pOVar5 = pOVar4 + 0x1b5;
-    iVar2 = 10;
+    puVar5 = &pOVar2->field_01B5;
+    iVar3 = 10;
     do {
-      if (*(uint *)pOVar5 != 0) {
-        FUN_006e56b0(*(void **)(pOVar4 + 0xc),*(uint *)pOVar5);
+      if (*puVar5 != 0) {
+        FUN_006e56b0(*(void **)&pOVar2->field_0xc,*puVar5);
         this_00 = extraout_ECX_03;
       }
-      *(uint *)pOVar5 = 0;
-      pOVar5 = pOVar5 + 4;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
-    pOVar5 = pOVar4 + 0x1ad;
-    iVar2 = 2;
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
+    puVar5 = (uint *)&pOVar2->field_0x1ad;
+    iVar3 = 2;
     do {
-      if (*(uint *)pOVar5 != 0) {
-        FUN_006e56b0(*(void **)(pOVar4 + 0xc),*(uint *)pOVar5);
+      if (*puVar5 != 0) {
+        FUN_006e56b0(*(void **)&pOVar2->field_0xc,*puVar5);
         this_00 = extraout_ECX_04;
       }
-      *(uint *)pOVar5 = 0;
-      pOVar5 = pOVar5 + 4;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      *puVar5 = 0;
+      puVar5 = puVar5 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
     DAT_008016dc = 0;
-    if (*(uint **)(pOVar4 + 0x17c) != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)(pOVar4 + 0x17c));
-      *(undefined4 *)(pOVar4 + 0x17c) = 0;
+    if (*(uint **)&pOVar2->field_0x17c != (uint *)0x0) {
+      ccFntTy::operator(this_00,*(uint **)&pOVar2->field_0x17c);
+      *(undefined4 *)&pOVar2->field_0x17c = 0;
       this_00 = extraout_ECX_05;
     }
-    if (*(uint **)(pOVar4 + 0x180) != (uint *)0x0) {
-      ccFntTy::operator(this_00,*(uint **)(pOVar4 + 0x180));
-      *(undefined4 *)(pOVar4 + 0x180) = 0;
+    if (*(uint **)&pOVar2->field_0x180 != (uint *)0x0) {
+      ccFntTy::operator(this_00,*(uint **)&pOVar2->field_0x180);
+      *(undefined4 *)&pOVar2->field_0x180 = 0;
     }
-    *(undefined4 *)(pOVar4 + 0x198) = 0;
-    pOVar4 = pOVar4 + 0x184;
-    iVar2 = 5;
+    *(undefined4 *)&pOVar2->field_0x198 = 0;
+    puVar5 = (uint *)&pOVar2->field_0x184;
+    iVar3 = 5;
     do {
-      if (*(int *)pOVar4 != 0) {
-        cMf32::RecMemFree(DAT_00806790,(uint *)pOVar4);
+      if (*puVar5 != 0) {
+        cMf32::RecMemFree(DAT_00806790,puVar5);
       }
-      pOVar4 = pOVar4 + 4;
-      iVar2 = iVar2 + -1;
-    } while (iVar2 != 0);
+      puVar5 = puVar5 + 1;
+      iVar3 = iVar3 + -1;
+    } while (iVar3 != 0);
     g_currentExceptionFrame = local_4c.previous;
     return;
   }
   g_currentExceptionFrame = local_4c.previous;
-  iVar3 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x79,0,iVar2,&DAT_007a4ccc,
+  iVar4 = ReportDebugMessage(s_E____titans_Andrey_optpanel_cpp_007c70a0,0x79,0,iVar3,&DAT_007a4ccc,
                              s_OptPanelTy__DoneOptPanel_007c714c);
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
     pcVar1 = (code *)swi(3);
     (*pcVar1)();
     return;
   }
-  RaiseInternalException(iVar2,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x79);
+  RaiseInternalException(iVar3,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x79);
   return;
 }
 

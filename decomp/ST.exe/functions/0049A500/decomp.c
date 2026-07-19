@@ -33,7 +33,7 @@ void __thiscall FUN_0049a500(void *this,undefined2 *param_1,undefined2 *param_2,
           this_00 = (void *)STAllPlayersC::GetObjPtr
                                       (DAT_007fa174,
                                        CONCAT31((int3)((uint)extraout_EDX >> 8),
-                                                *(undefined1 *)((int)this + 0x24)),local_10,1);
+                                                *(undefined1 *)((int)this + 0x24)),local_10,CASE_1);
           thunk_FUN_004162b0(this_00,(undefined2 *)&local_14,(undefined2 *)&local_18,
                              (undefined2 *)&local_1c);
           iVar6 = iVar6 + local_14;

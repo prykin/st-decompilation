@@ -1,7 +1,11 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\To_boat.cpp
-   STBoatC::BackBring */
+   STBoatC::BackBring
+   
+   [STSwitchEnumApplier] Switch target field_0687 uses
+   /SubmarineTitans/Recovered/Enums/STBoatC_field_0687State. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4 */
 
 int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
 
@@ -13,28 +17,27 @@ int __thiscall STBoatC::BackBring(STBoatC *this,int *param_1)
   code *pcVar4;
   int iVar5;
   
-  sVar1 = *(short *)(this + 0x66f);
-  sVar2 = *(short *)(this + 0x673);
-  sVar3 = *(short *)(this + 0x671);
-  *(undefined4 *)(this + 0xb7) = 0;
+  sVar1 = this->field_066F;
+  sVar2 = this->field_0673;
+  sVar3 = this->field_0671;
+  this->field_00B7 = 0;
   if ((((((-1 < sVar1) && (sVar1 < DAT_007fb240)) && (-1 < sVar3)) &&
        ((sVar3 < DAT_007fb242 && (-1 < sVar2)))) &&
       ((sVar2 < DAT_007fb244 &&
        ((this_00 = *(void **)(DAT_007fb248 +
                              ((int)DAT_007fb246 * (int)sVar2 + (int)DAT_007fb240 * (int)sVar3 +
                              (int)sVar1) * 8), this_00 != (void *)0x0 &&
-        (*(int *)((int)this_00 + 0x18) == *(int *)(this + 0x679))))))) &&
-     (*(int *)(this + 0x675) == 99)) {
+        (*(int *)((int)this_00 + 0x18) == this->field_0679)))))) && (this->field_0675 == 99)) {
     thunk_FUN_004b7d50(this_00,(int)this);
   }
-  switch(*(undefined4 *)(this + 0x687)) {
-  case 0:
-  case 1:
-  case 2:
-  case 4:
+  switch(this->field_0687) {
+  case CASE_0:
+  case CASE_1:
+  case CASE_2:
+  case CASE_4:
     iVar5 = thunk_FUN_00460360((int *)this);
     return iVar5;
-  case 3:
+  case CASE_3:
     iVar5 = UnLoadObj(this,(undefined4 *)0x2);
     return iVar5;
   }

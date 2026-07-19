@@ -1,4 +1,4 @@
-FUN_006e6100:
+SystemWithNamedObjClassTy::SystemWithNamedObjClassTy:
 006E6100  55                        PUSH EBP
 006E6101  8B EC                     MOV EBP,ESP
 006E6103  8B 45 0C                  MOV EAX,dword ptr [EBP + 0xc]

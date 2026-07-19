@@ -24,7 +24,7 @@ undefined4 __fastcall FUN_00492b20(int param_1)
                           (DAT_007fa174,
                            CONCAT31((int3)((uint)param_1 >> 8),*(undefined1 *)(param_1 + 0x5fc)),
                            CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0x5fd)),
-                           1);
+                           CASE_1);
   if ((((((this != (int *)0x0) && (this[6] == *(int *)(param_1 + 0x5ff))) &&
         (iVar1 = (**(code **)(*this + 0x108))(*(undefined4 *)(param_1 + 0x24)), iVar1 != 0)) &&
        ((thunk_FUN_004162b0(this,&local_8,&local_6,local_c), -1 < local_8 &&

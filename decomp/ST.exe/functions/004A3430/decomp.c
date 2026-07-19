@@ -111,8 +111,9 @@ STGroupBoatC::DistributeMD(STGroupBoatC *this,int param_1,int param_2,int param_
       if ((short)local_8 != -1) {
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (DAT_007fa174,CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2[0x24]),
-                            local_8,1);
+                           (DAT_007fa174,
+                            CONCAT31((int3)((uint)extraout_EDX >> 8),pSVar2->field_0024),local_8,
+                            CASE_1);
         if (pSVar4 == (STBoatC *)0x0) {
           iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x10fc,0,0,
                                      &DAT_007a4ccc,s_STGroupBoatC__DistributeMD_ptr___007ac290);
@@ -124,15 +125,15 @@ STGroupBoatC::DistributeMD(STGroupBoatC *this,int param_1,int param_2,int param_
           RaiseInternalException
                     (-0x5001fffc,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x10fd);
         }
-        iVar3 = (**(code **)(*(int *)pSVar4 + 0x2c))();
+        iVar3 = (*pSVar4->vtable->vfunc_2C)();
         puVar7 = local_1c;
         if (((iVar3 != 8) &&
-            (iVar3 = (**(code **)(*(int *)pSVar4 + 0x2c))(), puVar7 = local_1c, iVar3 != 0x14)) &&
-           (iVar3 = (**(code **)(*(int *)pSVar4 + 0x2c))(), puVar7 = local_1c, iVar3 != 0x1a)) {
+            (iVar3 = (*pSVar4->vtable->vfunc_2C)(), puVar7 = local_1c, iVar3 != 0x14)) &&
+           (iVar3 = (*pSVar4->vtable->vfunc_2C)(), puVar7 = local_1c, iVar3 != 0x1a)) {
           iVar3 = thunk_FUN_00490d90((int)pSVar4);
           if (iVar3 == 0) {
             local_18 = *(undefined4 *)(DAT_00802a38 + 0xe4);
-            STBoatC::CmdToObj(pSVar4,3,&local_18);
+            STBoatC::CmdToObj(pSVar4,CASE_3,&local_18);
             goto LAB_004a35b6;
           }
           puVar7 = local_24;
@@ -159,8 +160,9 @@ LAB_004a35b6:
         FUN_006acc70(param_2,uVar10,&local_8);
         if (((short)local_8 != -1) &&
            (uVar5 = STAllPlayersC::GetObjPtr
-                              (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2[0x24]),
-                               local_8,1), uVar5 != 0)) {
+                              (DAT_007fa174,
+                               CONCAT31((int3)((uint)extraout_ECX >> 8),pSVar2->field_0024),local_8,
+                               CASE_1), uVar5 != 0)) {
           Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_8);
         }
         uVar10 = uVar10 + 1;
@@ -175,12 +177,13 @@ LAB_004a35b6:
         uVar6 = FUN_006acc70((int)local_1c,uVar5,&local_8);
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (DAT_007fa174,CONCAT31((int3)(uVar6 >> 8),pSVar2[0x24]),local_8,1);
+                           (DAT_007fa174,CONCAT31((int3)(uVar6 >> 8),pSVar2->field_0024),local_8,
+                            CASE_1);
         if (param_1 == 1) {
           local_60 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           local_4c = 0xffffffff;
           local_56 = 0xffffffff;
-          STBoatC::CmdToObj(pSVar4,0xc,&local_60);
+          STBoatC::CmdToObj(pSVar4,CASE_C,&local_60);
         }
         else {
           STBoatC::SetNewMD(pSVar4,1,-1,-1,-1,-1,0xffffffff);
@@ -199,8 +202,8 @@ LAB_004a35b6:
         if (((short)local_8 != -1) &&
            (uVar5 = STAllPlayersC::GetObjPtr
                               (DAT_007fa174,
-                               CONCAT31((int3)((uint)extraout_ECX_00 >> 8),pSVar2[0x24]),local_8,1),
-           uVar5 != 0)) {
+                               CONCAT31((int3)((uint)extraout_ECX_00 >> 8),pSVar2->field_0024),
+                               local_8,CASE_1), uVar5 != 0)) {
           Library::DKW::TBL::FUN_006ae1c0(local_28,&local_8);
         }
         uVar10 = uVar10 + 1;
@@ -215,12 +218,13 @@ LAB_004a35b6:
         uVar6 = FUN_006acc70((int)local_1c,uVar5,&local_8);
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (DAT_007fa174,CONCAT31((int3)(uVar6 >> 8),pSVar2[0x24]),local_8,1);
+                           (DAT_007fa174,CONCAT31((int3)(uVar6 >> 8),pSVar2->field_0024),local_8,
+                            CASE_1);
         if (param_1 == 1) {
           local_60 = *(undefined4 *)(DAT_00802a38 + 0xe4);
           local_4c = 0xffffffff;
           local_56 = 0xffffffff;
-          STBoatC::CmdToObj(pSVar4,0xc,&local_60);
+          STBoatC::CmdToObj(pSVar4,CASE_C,&local_60);
         }
         else {
           STBoatC::SetNewMD(pSVar4,0,-1,-1,-1,-1,0xffffffff);
@@ -231,8 +235,8 @@ LAB_004a35b6:
     RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x113a);
   }
   puVar7 = STAllPlayersC::_AssignMDPairs
-                     (DAT_007fa174,CONCAT31((int3)((uint)local_28 >> 8),pSVar2[0x24]),
-                      *(int *)(pSVar2 + 0x25e),(int)local_2c,(int)local_28,(int)local_1c);
+                     (DAT_007fa174,CONCAT31((int3)((uint)local_28 >> 8),pSVar2->field_0024),
+                      *(int *)&pSVar2->field_0x25e,(int)local_2c,(int)local_28,(int)local_1c);
   local_40 = puVar7;
   if (puVar7 == (uint *)0x0) {
     iVar3 = ReportDebugMessage(s_E____titans_wlad_to_grpb_cpp_007abe3c,0x113f,0,0,&DAT_007a4ccc,
@@ -264,40 +268,42 @@ LAB_004a35b6:
         local_60 = *(undefined4 *)(DAT_00802a38 + 0xe4);
         pvVar8 = (void *)STAllPlayersC::GetObjPtr
                                    (DAT_007fa174,
-                                    CONCAT31((int3)((uint)DAT_00802a38 >> 8),pSVar2[0x24]),
-                                    CONCAT22(uStack_3a,local_3c),1);
+                                    CONCAT31((int3)((uint)DAT_00802a38 >> 8),pSVar2->field_0024),
+                                    CONCAT22(uStack_3a,local_3c),CASE_1);
         thunk_FUN_004162b0(pvVar8,&local_5c,&local_5a,&local_58);
         local_56 = *(undefined4 *)((int)pvVar8 + 0x18);
         pvVar8 = (void *)STAllPlayersC::GetObjPtr
                                    (DAT_007fa174,
-                                    CONCAT31((int3)((uint)extraout_EDX_00 >> 8),pSVar2[0x24]),
-                                    CONCAT22(uStack_38,uStack_3a),1);
+                                    CONCAT31((int3)((uint)extraout_EDX_00 >> 8),pSVar2->field_0024),
+                                    CONCAT22(uStack_38,uStack_3a),CASE_1);
         thunk_FUN_004162b0(pvVar8,&local_52,&local_50,&local_4e);
         local_4c = *(undefined4 *)((int)pvVar8 + 0x18);
         local_44 = local_32;
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
                            (DAT_007fa174,
-                            CONCAT31((int3)(CONCAT22(uStack_34,local_36) >> 8),pSVar2[0x24]),
-                            CONCAT22(local_36,uStack_38),1);
-        STBoatC::CmdToObj(pSVar4,0xc,&local_60);
+                            CONCAT31((int3)(CONCAT22(uStack_34,local_36) >> 8),pSVar2->field_0024),
+                            CONCAT22(local_36,uStack_38),CASE_1);
+        STBoatC::CmdToObj(pSVar4,CASE_C,&local_60);
         local_20 = uVar10;
       }
       else {
         pSVar4 = (STBoatC *)
                  STAllPlayersC::GetObjPtr
-                           (DAT_007fa174,CONCAT31((int3)((uint)extraout_ECX_01 >> 8),pSVar2[0x24]),
-                            CONCAT22(local_36,uStack_38),1);
+                           (DAT_007fa174,
+                            CONCAT31((int3)((uint)extraout_ECX_01 >> 8),pSVar2->field_0024),
+                            CONCAT22(local_36,uStack_38),CASE_1);
         pvVar8 = (void *)STAllPlayersC::GetObjPtr
-                                   (DAT_007fa174,CONCAT31((int3)((uint)pSVar4 >> 8),pSVar2[0x24]),
-                                    CONCAT22(uStack_3a,local_3c),1);
+                                   (DAT_007fa174,
+                                    CONCAT31((int3)((uint)pSVar4 >> 8),pSVar2->field_0024),
+                                    CONCAT22(uStack_3a,local_3c),CASE_1);
         thunk_FUN_004162b0(pvVar8,local_c,local_14,local_10);
         STBoatC::SetNewMD(pSVar4,1,local_c[0],local_14[0],local_10[0],*(int *)((int)pvVar8 + 0x18),
                           CONCAT22(uStack_34,local_36));
         pvVar8 = (void *)STAllPlayersC::GetObjPtr
                                    (DAT_007fa174,
-                                    CONCAT31((int3)((uint)extraout_ECX_02 >> 8),pSVar2[0x24]),
-                                    CONCAT22(uStack_38,uStack_3a),1);
+                                    CONCAT31((int3)((uint)extraout_ECX_02 >> 8),pSVar2->field_0024),
+                                    CONCAT22(uStack_38,uStack_3a),CASE_1);
         thunk_FUN_004162b0(pvVar8,local_c,local_14,local_10);
         STBoatC::SetNewMD(pSVar4,0,local_c[0],local_14[0],local_10[0],*(int *)((int)pvVar8 + 0x18),
                           local_32);
@@ -307,7 +313,7 @@ LAB_004a35b6:
     } while ((int)local_20 < (int)local_64);
   }
   STAllPlayersC::RegisterPGPair
-            (DAT_007fa174,CONCAT31((int3)(local_64 >> 8),pSVar2[0x24]),local_1c,local_24);
+            (DAT_007fa174,CONCAT31((int3)(local_64 >> 8),pSVar2->field_0024),local_1c,local_24);
   RaiseInternalException(-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_to_grpb_cpp_007abe3c,0x1165);
   g_currentExceptionFrame = local_b0.previous;
   return;

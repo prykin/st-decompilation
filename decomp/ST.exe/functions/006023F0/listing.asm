@@ -1,4 +1,4 @@
-FUN_006023f0:
+STDestC::STDestC:
 006023F0  56                        PUSH ESI
 006023F1  57                        PUSH EDI
 006023F2  8B F1                     MOV ESI,ECX

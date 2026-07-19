@@ -233,12 +233,12 @@ undefined4 __thiscall STAllPlayersC::GetMessage(STAllPlayersC *this,int param_1)
       local_14 = &DAT_008087e9;
       piVar14 = &DAT_007f582a;
       do {
-        if (0x18 < (uint)(*(int *)(DAT_00802a38 + 0xe4) - *piVar14)) {
+        if (0x18 < (uint)(DAT_00802a38->field_00E4 - *piVar14)) {
           OptimizeGuardBoats(this_00,(char)uVar11);
           DistributeGuardBoats(this_00,uVar11);
         }
         if ((*local_14 != -1) &&
-           (thunk_FUN_004eb150(this_00,uVar11), *(uint *)(DAT_00802a38 + 0xe4) % 10 == 0)) {
+           (thunk_FUN_004eb150(this_00,uVar11), (uint)DAT_00802a38->field_00E4 % 10 == 0)) {
           thunk_FUN_004d78e0((char)uVar11);
         }
         piVar14 = (int *)((int)piVar14 + 0xa62);

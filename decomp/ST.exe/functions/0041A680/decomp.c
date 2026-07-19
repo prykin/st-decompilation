@@ -10,21 +10,21 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
   code *pcVar2;
   int iVar3;
   
-  if (*(int *)(this + 0x1cd) != 1) {
+  if (this->field_01CD != 1) {
     return;
   }
-  *(undefined4 *)(this + 0x1cd) = 0;
-  FUN_006ab060((undefined4 *)(this + 0x11d));
-  FUN_006ab060((undefined4 *)(this + 0x121));
-  FUN_006ab060((undefined4 *)(this + 0x125));
-  FUN_006ab060((undefined4 *)(this + 0x129));
-  uVar1 = *(uint *)(this + 0x20);
+  this->field_01CD = 0;
+  FUN_006ab060(&this->field_011D);
+  FUN_006ab060(&this->field_0121);
+  FUN_006ab060(&this->field_0125);
+  FUN_006ab060(&this->field_0129);
+  uVar1 = this->field_0020;
   if (uVar1 < 0x1af) {
     if (uVar1 == 0x1ae) {
-      FUN_006ab060((undefined4 *)(this + 0x1ad));
-      FUN_006ab060((undefined4 *)(this + 0x1b1));
-      FUN_006ab060((undefined4 *)(this + 0x1c5));
-      FUN_006ab060((undefined4 *)(this + 0x1c9));
+      FUN_006ab060(&this->field_01AD);
+      FUN_006ab060(&this->field_01B1);
+      FUN_006ab060(&this->field_01C5);
+      FUN_006ab060(&this->field_01C9);
       return;
     }
     if (uVar1 < 0x173) {
@@ -32,52 +32,52 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
         return;
       }
       if (uVar1 == 0x14) {
-        if (*(byte **)(this + 0x171) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x171));
+        if ((byte *)this->field_0171 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0171);
         }
-        if (*(byte **)(this + 0x175) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x175));
+        if ((byte *)this->field_0175 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0175);
         }
-        if (*(byte **)(this + 0x179) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x179));
+        if ((byte *)this->field_0179 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0179);
         }
-        if (*(byte **)(this + 0x17d) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x17d));
+        if ((byte *)this->field_017D != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_017D);
         }
-        if (*(byte **)(this + 0x181) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x181));
+        if ((byte *)this->field_0181 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0181);
         }
-        *(undefined4 *)(this + 0x171) = 0;
-        *(undefined4 *)(this + 0x175) = 0;
-        *(undefined4 *)(this + 0x179) = 0;
-        *(undefined4 *)(this + 0x17d) = 0;
-        *(undefined4 *)(this + 0x181) = 0;
-        if (*(byte **)(this + 0x15d) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x15d));
+        this->field_0171 = 0;
+        this->field_0175 = 0;
+        this->field_0179 = 0;
+        this->field_017D = 0;
+        this->field_0181 = 0;
+        if ((byte *)this->field_015D != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_015D);
         }
-        if (*(byte **)(this + 0x161) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x161));
+        if ((byte *)this->field_0161 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0161);
         }
-        if (*(byte **)(this + 0x165) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x165));
+        if ((byte *)this->field_0165 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0165);
         }
-        if (*(byte **)(this + 0x169) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x169));
+        if ((byte *)this->field_0169 != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_0169);
         }
-        if (*(byte **)(this + 0x16d) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(this + 0x16d));
+        if ((byte *)this->field_016D != (byte *)0x0) {
+          FUN_006ae110((byte *)this->field_016D);
         }
-        *(undefined4 *)(this + 0x15d) = 0;
-        *(undefined4 *)(this + 0x161) = 0;
-        *(undefined4 *)(this + 0x165) = 0;
-        *(undefined4 *)(this + 0x169) = 0;
-        *(undefined4 *)(this + 0x16d) = 0;
-        FUN_006ab060((undefined4 *)(this + 0x195));
-        FUN_006ab060((undefined4 *)(this + 0x199));
-        FUN_006ab060((undefined4 *)(this + 0x1ad));
-        FUN_006ab060((undefined4 *)(this + 0x1b1));
-        FUN_006ab060((undefined4 *)(this + 0x1bd));
-        FUN_006ab060((undefined4 *)(this + 0x1c1));
+        this->field_015D = 0;
+        this->field_0161 = 0;
+        this->field_0165 = 0;
+        this->field_0169 = 0;
+        this->field_016D = 0;
+        FUN_006ab060(&this->field_0195);
+        FUN_006ab060(&this->field_0199);
+        FUN_006ab060(&this->field_01AD);
+        FUN_006ab060(&this->field_01B1);
+        FUN_006ab060(&this->field_01BD);
+        FUN_006ab060(&this->field_01C1);
         return;
       }
       if (uVar1 == 0x5a) {
@@ -93,70 +93,70 @@ void __thiscall STGameObjC::ResetSelfCheckFlag(STGameObjC *this,int param_1)
       return;
     }
     if (uVar1 == 1000) {
-      if (*(byte **)(this + 0x135) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x135));
+      if ((byte *)this->field_0135 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0135);
       }
-      if (*(byte **)(this + 0x139) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x139));
+      if ((byte *)this->field_0139 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0139);
       }
-      *(undefined4 *)(this + 0x135) = 0;
-      *(undefined4 *)(this + 0x139) = 0;
-      if (*(byte **)(this + 0x12d) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x12d));
+      this->field_0135 = 0;
+      this->field_0139 = 0;
+      if ((byte *)this->field_012D != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_012D);
       }
-      if (*(byte **)(this + 0x131) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x131));
+      if ((byte *)this->field_0131 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0131);
       }
-      *(undefined4 *)(this + 0x12d) = 0;
-      *(undefined4 *)(this + 0x131) = 0;
-      if (*(byte **)(this + 0x14d) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x14d));
+      this->field_012D = 0;
+      this->field_0131 = 0;
+      if ((byte *)this->field_014D != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_014D);
       }
-      if (*(byte **)(this + 0x151) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x151));
+      if ((byte *)this->field_0151 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0151);
       }
-      if (*(byte **)(this + 0x155) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x155));
+      if ((byte *)this->field_0155 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0155);
       }
-      if (*(byte **)(this + 0x159) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x159));
+      if ((byte *)this->field_0159 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0159);
       }
-      *(undefined4 *)(this + 0x14d) = 0;
-      *(undefined4 *)(this + 0x151) = 0;
-      *(undefined4 *)(this + 0x155) = 0;
-      *(undefined4 *)(this + 0x159) = 0;
-      if (*(byte **)(this + 0x13d) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x13d));
+      this->field_014D = 0;
+      this->field_0151 = 0;
+      this->field_0155 = 0;
+      this->field_0159 = 0;
+      if ((byte *)this->field_013D != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_013D);
       }
-      if (*(byte **)(this + 0x141) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x141));
+      if ((byte *)this->field_0141 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0141);
       }
-      if (*(byte **)(this + 0x145) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x145));
+      if ((byte *)this->field_0145 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0145);
       }
-      if (*(byte **)(this + 0x149) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x149));
+      if ((byte *)this->field_0149 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_0149);
       }
-      *(undefined4 *)(this + 0x13d) = 0;
-      *(undefined4 *)(this + 0x141) = 0;
-      *(undefined4 *)(this + 0x145) = 0;
-      *(undefined4 *)(this + 0x149) = 0;
-      FUN_006ab060((undefined4 *)(this + 0x185));
-      FUN_006ab060((undefined4 *)(this + 0x189));
-      FUN_006ab060((undefined4 *)(this + 0x18d));
-      FUN_006ab060((undefined4 *)(this + 0x191));
-      if (*(byte **)(this + 0x1a1) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x1a1));
-        *(undefined4 *)(this + 0x1a1) = 0;
+      this->field_013D = 0;
+      this->field_0141 = 0;
+      this->field_0145 = 0;
+      this->field_0149 = 0;
+      FUN_006ab060(&this->field_0185);
+      FUN_006ab060(&this->field_0189);
+      FUN_006ab060(&this->field_018D);
+      FUN_006ab060(&this->field_0191);
+      if ((byte *)this->field_01A1 != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_01A1);
+        this->field_01A1 = 0;
       }
-      if (*(byte **)(this + 0x19d) != (byte *)0x0) {
-        FUN_006ae110(*(byte **)(this + 0x19d));
-        *(undefined4 *)(this + 0x19d) = 0;
+      if ((byte *)this->field_019D != (byte *)0x0) {
+        FUN_006ae110((byte *)this->field_019D);
+        this->field_019D = 0;
       }
-      FUN_006ab060((undefined4 *)(this + 0x1a5));
-      FUN_006ab060((undefined4 *)(this + 0x1a9));
-      FUN_006ab060((undefined4 *)(this + 0x1b5));
-      FUN_006ab060((undefined4 *)(this + 0x1b9));
+      FUN_006ab060(&this->field_01A5);
+      FUN_006ab060(&this->field_01A9);
+      FUN_006ab060(&this->field_01B5);
+      FUN_006ab060(&this->field_01B9);
       return;
     }
     if (uVar1 == 0x3e9) {

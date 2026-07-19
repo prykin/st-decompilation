@@ -7,7 +7,7 @@
 void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
 
 {
-  OptPanelTy *pOVar1;
+  undefined1 *puVar1;
   char cVar2;
   byte bVar3;
   code *pcVar4;
@@ -35,10 +35,10 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   uint local_c;
   OptPanelTy *local_8;
   
-  *(undefined4 *)(this + 0x28) = 0x20;
-  *(undefined4 *)(this + 0x2c) = 0;
+  this->field_0028 = 0x20;
+  *(undefined4 *)&this->field_0x2c = 0;
   local_8 = this;
-  FUN_006e6080(this,2,*(undefined4 *)(this + 0x1b5),(undefined4 *)(this + 0x18));
+  FUN_006e6080(this,2,this->field_01B5,(undefined4 *)&this->field_0x18);
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   iVar5 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
@@ -55,17 +55,17 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
     RaiseInternalException(iVar5,0,s_E____titans_Andrey_optpanel_cpp_007c70a0,0x3ad);
     return;
   }
-  if (*(byte **)(local_8 + 0x2fd) != (byte *)0x0) {
-    FUN_006ae110(*(byte **)(local_8 + 0x2fd));
+  if (*(byte **)&local_8[1].field_0x144 != (byte *)0x0) {
+    FUN_006ae110(*(byte **)&local_8[1].field_0x144);
   }
-  *(undefined4 *)(pOVar12 + 0x2fd) = 0;
+  *(undefined4 *)&pOVar12[1].field_0x144 = 0;
   local_94.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_94;
   iVar5 = Library::MSVCRT::__setjmp3(local_94.jumpBuffer,0,unaff_EDI,unaff_ESI);
   if (iVar5 != 0) {
     g_currentExceptionFrame = local_94.previous;
     puVar7 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,1,0x98,1);
-    *(uint **)(local_8 + 0x2fd) = puVar7;
+    *(uint **)&local_8[1].field_0x144 = puVar7;
     pOVar12 = local_8;
     goto LAB_00532758;
   }
@@ -112,7 +112,7 @@ void __thiscall OptPanelTy::PrepAsses(OptPanelTy *this,void *param_1)
   default:
     goto switchD_005326e6_caseD_9;
   }
-  *(uint **)(pOVar12 + 0x2fd) = puVar7;
+  *(uint **)&pOVar12[1].field_0x144 = puVar7;
 switchD_005326e6_caseD_9:
   cMf32::delete(this_00,puVar6);
   g_currentExceptionFrame = local_94.previous;
@@ -144,22 +144,23 @@ LAB_00532758:
     }
   }
   local_c0 = 1;
-  Library::DKW::TBL::FUN_006b11d0(*(uint **)(pOVar12 + 0x2fd),0,(undefined4 *)local_12c);
-  *(undefined4 *)(pOVar12 + 0x28) = 0x28;
-  pOVar1 = pOVar12 + 0x18;
-  *(undefined4 *)(pOVar12 + 0x2c) = *(undefined4 *)(*(int *)(pOVar12 + 0x2fd) + 0xc);
-  FUN_006e6080(pOVar12,2,*(undefined4 *)(pOVar12 + 0x1b5),(undefined4 *)pOVar1);
-  *(undefined4 *)(pOVar12 + 0x28) = 0x20;
-  *(undefined4 *)(pOVar12 + 0x2c) = 1;
-  FUN_006e6080(pOVar12,2,*(undefined4 *)(pOVar12 + 0x1b5),(undefined4 *)pOVar1);
+  Library::DKW::TBL::FUN_006b11d0(*(uint **)&pOVar12[1].field_0x144,0,(undefined4 *)local_12c);
+  iVar5 = *(int *)&pOVar12[1].field_0x144;
+  pOVar12->field_0028 = 0x28;
+  puVar1 = &pOVar12->field_0x18;
+  *(undefined4 *)&pOVar12->field_0x2c = *(undefined4 *)(iVar5 + 0xc);
+  FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
+  pOVar12->field_0028 = 0x20;
+  *(undefined4 *)&pOVar12->field_0x2c = 1;
+  FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
   iVar5 = thunk_FUN_00648a30((uint)DAT_0080874d,(char *)&DAT_0080f33a);
   if (iVar5 == 0) {
-    *(undefined4 *)(pOVar12 + 0x28) = 0x22;
-    *(undefined4 *)(pOVar12 + 0x2c) = 0;
-    FUN_006e6080(pOVar12,2,*(undefined4 *)(pOVar12 + 0x1b5),(undefined4 *)pOVar1);
+    pOVar12->field_0028 = 0x22;
+    *(undefined4 *)&pOVar12->field_0x2c = 0;
+    FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)puVar1);
   }
   else {
-    iVar5 = *(int *)(pOVar12 + 0x2fd);
+    iVar5 = *(int *)&pOVar12[1].field_0x144;
     local_c = 0;
     if (*(int *)(iVar5 + 0xc) != 0) {
       if (*(int *)(iVar5 + 0xc) == 0) {
@@ -188,11 +189,11 @@ LAB_0053287e:
         iVar5 = 0;
 LAB_00532883:
         if (iVar5 == 0) {
-          *(uint *)(pOVar12 + 0x2c) = local_c;
-          *(undefined4 *)(pOVar12 + 0x28) = 0x22;
-          FUN_006e6080(pOVar12,2,*(undefined4 *)(pOVar12 + 0x1b5),(undefined4 *)(pOVar12 + 0x18));
+          *(uint *)&pOVar12->field_0x2c = local_c;
+          pOVar12->field_0028 = 0x22;
+          FUN_006e6080(pOVar12,2,pOVar12->field_01B5,(undefined4 *)&pOVar12->field_0x18);
         }
-        iVar5 = *(int *)(pOVar12 + 0x2fd);
+        iVar5 = *(int *)&pOVar12[1].field_0x144;
         local_c = local_c + 1;
         if (*(uint *)(iVar5 + 0xc) <= local_c) {
           g_currentExceptionFrame = local_50.previous;

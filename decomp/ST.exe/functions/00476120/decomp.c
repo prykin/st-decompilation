@@ -8,10 +8,11 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
 {
   code *pcVar1;
   int iVar2;
+  void *unaff_retaddr;
   
-  iVar2 = *(int *)(this + 0x5d6);
+  iVar2 = this->field_05D6;
   if ((iVar2 == 0) || (iVar2 == 1)) {
-    iVar2 = (**(code **)(*(int *)this + 0xd8))();
+    iVar2 = (*this->vtable->vfunc_D8)();
     return -(uint)(iVar2 != 0);
   }
   if (iVar2 == 2) {
@@ -19,7 +20,7 @@ int __thiscall STBoatC::BackUnLoadObj(STBoatC *this,int *param_1)
     return iVar2;
   }
   if (iVar2 == 5) {
-    iVar2 = (**(code **)(*(int *)this + 0x20))();
+    iVar2 = (*this->vtable->StopMove)(this,unaff_retaddr);
     return iVar2;
   }
   iVar2 = ReportDebugMessage(s_E____titans_wlad_To_boat_cpp_007a9d3c,0x30fa,0,0,&DAT_007a4ccc,

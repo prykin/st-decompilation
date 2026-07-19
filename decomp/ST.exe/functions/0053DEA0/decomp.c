@@ -10,8 +10,8 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
                    undefined4 param_14)
 
 {
-  UPanelTy *pUVar1;
-  code *pcVar2;
+  code *pcVar1;
+  UPanelTy *pUVar2;
   UPanelTy *pUVar3;
   int iVar4;
   int iVar5;
@@ -66,9 +66,9 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     local_1d0[1] = param_1;
     local_1d0[0] = param_2;
     if (param_6 != 0) {
-      pUVar1 = local_10 + 0x6c;
-      wsprintfA((LPSTR)pUVar1,&DAT_007c181c,param_6);
-      local_8 = cMf32::RecGet(DAT_00806790,param_5,(char *)pUVar1,(int *)0x0,1);
+      pUVar2 = local_10 + 1;
+      wsprintfA(&pUVar2->field_0xc,&DAT_007c181c,param_6);
+      local_8 = cMf32::RecGet(DAT_00806790,param_5,&pUVar2->field_0xc,(int *)0x0,1);
     }
     if ((param_5 == 1) || (param_5 == 6)) {
       local_1c0 = *(undefined4 *)(local_8 + 2);
@@ -77,19 +77,19 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     else {
       local_1c0 = param_13;
     }
-    local_1d0[2] = *(int *)(pUVar3 + 0x3c) + param_3;
-    if (*(int *)(pUVar3 + 0x5c) == 0) {
-      local_1d0[3] = -*(int *)(pUVar3 + 0x48);
+    local_1d0[2] = pUVar3->field_003C + param_3;
+    if (pUVar3->field_005C == 0) {
+      local_1d0[3] = -pUVar3->field_0048;
     }
     else {
-      local_1d0[3] = *(int *)(pUVar3 + 0x44);
+      local_1d0[3] = pUVar3->field_0044;
     }
     local_1d0[3] = local_1d0[3] + param_4;
     local_1bc = param_14;
     if (local_8 != (ushort *)0x0) {
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
     }
-    local_1b0 = *(undefined4 *)(pUVar3 + 8);
+    local_1b0 = *(undefined4 *)&pUVar3->field_0x8;
     local_168 = param_8;
     local_c8 = 1;
     local_c4 = 1;
@@ -117,7 +117,7 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
       local_ac = FUN_0070aa70(DAT_00806790,param_12,0,1);
       local_a8 = FUN_0070a6f0(DAT_00806790,0x12,param_12,1);
     }
-    (**(code **)(**(int **)(pUVar3 + 0xc) + 8))(2,&local_c,0,local_1d0,0);
+    (**(code **)(**(int **)&pUVar3->field_0xc + 8))(2,&local_c,0,local_1d0,0);
     g_currentExceptionFrame = local_54.previous;
     return local_c;
   }
@@ -128,8 +128,8 @@ UPanelTy::CreateBut(UPanelTy *this,undefined4 param_1,int param_2,int param_3,in
     RaiseInternalException(iVar4,0,s_E____titans_Andrey_specpan_cpp_007c7870,0xb1);
     return 0;
   }
-  pcVar2 = (code *)swi(3);
-  uVar6 = (*pcVar2)();
+  pcVar1 = (code *)swi(3);
+  uVar6 = (*pcVar1)();
   return uVar6;
 }
 

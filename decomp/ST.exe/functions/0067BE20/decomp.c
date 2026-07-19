@@ -27,7 +27,7 @@ void __fastcall FUN_0067be20(int param_1,undefined4 param_2,int param_3)
                                  (DAT_007fa174,
                                   CONCAT31((int3)((uint)param_2 >> 8),
                                            *(undefined1 *)(local_8 + 0x640)),
-                                  CONCAT22((short)((uint)in_EAX >> 0x10),*puVar3),1);
+                                  CONCAT22((short)((uint)in_EAX >> 0x10),*puVar3),CASE_1);
       if (pvVar2 == (void *)0x0) {
         in_EAX = FUN_006b0c70(param_3,uVar1);
         param_2 = extraout_EDX;

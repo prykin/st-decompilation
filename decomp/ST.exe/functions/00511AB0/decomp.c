@@ -6,7 +6,7 @@
 void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint param_2)
 
 {
-  HelpPanelTy *pHVar1;
+  undefined4 *puVar1;
   code *pcVar2;
   HelpPanelTy *pHVar3;
   int iVar4;
@@ -20,8 +20,8 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
   HelpPanelTy *local_c;
   uint local_8;
   
-  if ((*(int *)(this + 0x218) != 0) &&
-     (*(int *)(*(int *)(this + 0x218) + 8) < (int)((param_2 & 0xffff) + param_1))) {
+  if ((this->field_0218 != 0) &&
+     (*(int *)(this->field_0218 + 8) < (int)((param_2 & 0xffff) + param_1))) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
@@ -29,13 +29,14 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
     pHVar3 = local_c;
     if (iVar4 == 0) {
       iVar8 = 1;
-      iVar4 = *(int *)(local_c + 0x218);
-      pHVar1 = local_c + 0x218;
-      puVar6 = (undefined4 *)(*(int *)(local_c + 0x1dc) + 0x28);
-      uVar5 = FUN_006b4fe0(*(int *)(local_c + 0x1dc));
+      iVar4 = local_c->field_0218;
+      puVar1 = &local_c->field_0218;
+      puVar6 = (undefined4 *)(*(int *)&local_c->field_0x1dc + 0x28);
+      uVar5 = FUN_006b4fe0(*(int *)&local_c->field_0x1dc);
       puVar6 = (undefined4 *)
                FUN_006b50c0(*(int *)(iVar4 + 4),*(int *)(iVar4 + 8) + 0x32,
-                            (uint)*(ushort *)(*(int *)(pHVar3 + 0x1dc) + 0xe),uVar5,puVar6,iVar8);
+                            (uint)*(ushort *)(*(int *)&pHVar3->field_0x1dc + 0xe),uVar5,puVar6,iVar8
+                           );
       local_8 = puVar6[5];
       if (local_8 == 0) {
         local_8 = ((uint)*(ushort *)((int)puVar6 + 0xe) * puVar6[1] + 0x1f >> 3 & 0x1ffffffc) *
@@ -50,11 +51,11 @@ void __thiscall HelpPanelTy::CheckBkView(HelpPanelTy *this,int param_1,uint para
         *(undefined1 *)puVar7 = 0xff;
         puVar7 = (undefined4 *)((int)puVar7 + 1);
       }
-      iVar4 = *(int *)pHVar1;
+      iVar4 = *puVar1;
       Library::DKW::WGR::FUN_006b55f0
                 (puVar6,0,0,0,iVar4,0,0,0,*(int *)(iVar4 + 4),*(int *)(iVar4 + 8));
-      FUN_006ab060((undefined4 *)pHVar1);
-      *(undefined4 **)pHVar1 = puVar6;
+      FUN_006ab060(puVar1);
+      *puVar1 = puVar6;
       g_currentExceptionFrame = local_50.previous;
       return;
     }

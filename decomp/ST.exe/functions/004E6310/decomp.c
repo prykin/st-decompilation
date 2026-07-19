@@ -90,7 +90,7 @@ LAB_004e645f:
       }
     }
     thunk_FUN_004e6680(param_1);
-    thunk_FUN_0043fc50(0x13,0);
+    thunk_FUN_0043fc50(CASE_13,0);
   }
   return;
   while( true ) {

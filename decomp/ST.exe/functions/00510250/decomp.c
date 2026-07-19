@@ -11,7 +11,7 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
-  FrmPanelTy *pFVar5;
+  uint *puVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   FrmPanelTy *local_8;
@@ -23,23 +23,23 @@ void __thiscall FrmPanelTy::DoneFrmPanel(FrmPanelTy *this)
   pFVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 8;
-    pFVar5 = local_8 + 0x1b3;
+    puVar5 = (uint *)&local_8[1].field_0x3b;
     do {
-      if (*(uint *)pFVar5 != 0) {
-        FUN_006e56b0(*(void **)(pFVar2 + 0xc),*(uint *)pFVar5);
-        *(uint *)pFVar5 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0(*(void **)&pFVar2->field_0xc,*puVar5);
+        *puVar5 = 0;
       }
-      pFVar5 = pFVar5 + 4;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
-    pFVar5 = pFVar2 + 0x1d3;
+    puVar5 = (uint *)&pFVar2[1].field_0x5b;
     iVar3 = 4;
     do {
-      if (*(uint *)pFVar5 != 0) {
-        FUN_006e56b0(*(void **)(pFVar2 + 0xc),*(uint *)pFVar5);
-        *(uint *)pFVar5 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0(*(void **)&pFVar2->field_0xc,*puVar5);
+        *puVar5 = 0;
       }
-      pFVar5 = pFVar5 + 4;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     DAT_0080168c = 0;

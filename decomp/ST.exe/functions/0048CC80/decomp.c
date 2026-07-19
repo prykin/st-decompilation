@@ -44,20 +44,20 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     }
     return;
   }
-  if (*(int *)(local_10 + 0x47b) == 0) {
+  if (local_10->field_047B == 0) {
     puVar5 = Library::DKW::TBL::FUN_006ae290((uint *)0x0,10,0xe,5);
-    *(uint **)(pSVar3 + 0x47b) = puVar5;
+    pSVar3->field_047B = puVar5;
   }
-  uVar1 = (*(uint **)(pSVar3 + 0x47b))[3];
+  uVar1 = ((uint *)pSVar3->field_047B)[3];
   uVar4 = uVar1;
   if (uVar1 != 0) {
     while (local_c = uVar4, uVar1 = uVar1 - 1, -1 < (int)uVar1) {
-      FUN_006acc70(*(int *)(pSVar3 + 0x47b),uVar1,&local_20);
+      FUN_006acc70(pSVar3->field_047B,uVar1,&local_20);
       uVar4 = uVar1;
       if (((local_1c != -1) && (uVar4 = local_c, local_20 == param_1)) && (local_1c == param_2)) {
         local_1a = local_1a + param_3;
         local_16 = local_8;
-        Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar3 + 0x47b),uVar1,&local_20);
+        Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_047B,uVar1,&local_20);
         RaiseInternalException
                   (-0x5001fff7,DAT_007ed77c,s_E____titans_wlad_To_boat_cpp_007a9d3c,0x4b76);
         uVar4 = local_c;
@@ -67,7 +67,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
     local_1c = param_2;
     local_1a = param_3;
     local_16 = local_8;
-    Library::DKW::TBL::FUN_006ae140(*(uint **)(pSVar3 + 0x47b),local_c,&local_20);
+    Library::DKW::TBL::FUN_006ae140((uint *)pSVar3->field_047B,local_c,&local_20);
     g_currentExceptionFrame = local_64.previous;
     return;
   }
@@ -75,7 +75,7 @@ void __thiscall STBoatC::_AddDefenceShots(STBoatC *this,char param_1,short param
   local_1c = param_2;
   local_1a = param_3;
   local_16 = local_8;
-  Library::DKW::TBL::FUN_006ae1c0(*(uint **)(pSVar3 + 0x47b),&local_20);
+  Library::DKW::TBL::FUN_006ae1c0((uint *)pSVar3->field_047B,&local_20);
   g_currentExceptionFrame = local_64.previous;
   return;
 }

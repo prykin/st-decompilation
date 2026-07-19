@@ -46,23 +46,23 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
     (*pcVar3)();
     return;
   }
-  *(undefined4 *)(local_24 + 4) = *param_2;
-  *(undefined4 *)(local_24 + 8) = param_2[1];
-  local_24[0x10] = *(STT3DSprC *)(param_2 + 2);
-  local_24[0x11] = *(STT3DSprC *)((int)param_2 + 9);
-  local_24[0x12] = *(STT3DSprC *)((int)param_2 + 10);
-  *(undefined4 *)(local_24 + 0xc) = *(undefined4 *)((int)param_2 + 0xb);
-  *(undefined4 *)(local_24 + 0x14) = *(undefined4 *)((int)param_2 + 0xf);
-  *(undefined4 *)(local_24 + 0x24) = *(undefined4 *)((int)param_2 + 0x13);
-  *(undefined4 *)(local_24 + 0x28) = *(undefined4 *)((int)param_2 + 0x17);
-  *(undefined4 *)(local_24 + 0x2c) = *(undefined4 *)((int)param_2 + 0x1b);
-  local_24[0x13] = *(STT3DSprC *)((int)param_2 + 0x1f);
-  *(undefined4 *)(local_24 + 0x30) = param_2[8];
-  *(int *)(local_24 + 0x38) = param_1[6];
-  thunk_FUN_004ad3c0(local_24,*(float *)(local_24 + 0x24),*(float *)(local_24 + 0x28),
-                     *(float *)(local_24 + 0x2c));
-  FUN_006e9830(*(void **)(this_00 + 0x3c),*(uint *)(this_00 + 0x18),*(uint *)(this_00 + 4),
-               *(uint *)(this_00 + 8));
+  *(undefined4 *)&local_24->field_0x4 = *param_2;
+  *(undefined4 *)&local_24->field_0x8 = param_2[1];
+  local_24->field_0x10 = *(undefined1 *)(param_2 + 2);
+  local_24->field_0x11 = *(undefined1 *)((int)param_2 + 9);
+  local_24->field_0x12 = *(undefined1 *)((int)param_2 + 10);
+  *(undefined4 *)&local_24->field_0xc = *(undefined4 *)((int)param_2 + 0xb);
+  local_24->field_0014 = *(undefined4 *)((int)param_2 + 0xf);
+  *(undefined4 *)(local_24 + 1) = *(undefined4 *)((int)param_2 + 0x13);
+  *(undefined4 *)&local_24[1].field_0x4 = *(undefined4 *)((int)param_2 + 0x17);
+  *(undefined4 *)&local_24[1].field_0x8 = *(undefined4 *)((int)param_2 + 0x1b);
+  local_24->field_0x13 = *(undefined1 *)((int)param_2 + 0x1f);
+  *(undefined4 *)&local_24[1].field_0xc = param_2[8];
+  local_24[1].field_0014 = param_1[6];
+  thunk_FUN_004ad3c0(local_24,*(float *)(local_24 + 1),*(float *)&local_24[1].field_0x4,
+                     *(float *)&local_24[1].field_0x8);
+  FUN_006e9830((void *)this_00[1].field_0018,this_00->field_0018,*(uint *)&this_00->field_0x4,
+               *(uint *)&this_00->field_0x8);
   if (param_1[1] != 0) {
     thunk_FUN_004ace30(this_00,param_1[1],param_1[2]);
   }
@@ -73,7 +73,7 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
     thunk_FUN_004acf20(this_00,param_1[4],param_1[5]);
   }
   local_10 = param_2 + 9;
-  iVar5 = *(int *)(this_00 + 0x14);
+  iVar5 = this_00->field_0014;
   local_1c = local_10 + iVar5 * 9;
   iVar10 = iVar5;
   local_14 = local_1c;
@@ -107,13 +107,13 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
         puVar9 = (uint *)((int)puVar9 + 1);
       } while ((char)uVar6 != '\0');
       if (iVar5 != -2) {
-        *(char *)(local_18 + 0xc + *(int *)(this_00 + 0x20)) = (char)local_10[1];
+        *(char *)(local_18 + 0xc + this_00->field_0020) = (char)local_10[1];
         LoadSequence(this_00,(byte)local_8,*(int **)(*param_1 + local_8 * 4),(byte *)local_1c,
-                     *(byte *)(local_18 + 0xc + *(int *)(this_00 + 0x20)));
+                     *(byte *)(local_18 + 0xc + this_00->field_0020));
         puVar9 = local_10;
         local_20 = *local_10 << 2;
         puVar7 = local_14;
-        puVar8 = *(uint **)(local_18 + 4 + *(int *)(this_00 + 0x20));
+        puVar8 = *(uint **)(local_18 + 4 + this_00->field_0020);
         for (uVar6 = *local_10 & 0x3fffffff; uVar6 != 0; uVar6 = uVar6 - 1) {
           *puVar8 = *puVar7;
           puVar7 = puVar7 + 1;
@@ -124,13 +124,13 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
           puVar7 = (uint *)((int)puVar7 + 1);
           puVar8 = (uint *)((int)puVar8 + 1);
         }
-        *(undefined4 *)(local_18 + 0x10 + *(int *)(this_00 + 0x20)) =
+        *(undefined4 *)(local_18 + 0x10 + this_00->field_0020) =
              *(undefined4 *)((int)local_10 + 0xb);
-        *(undefined4 *)(local_18 + 0x14 + *(int *)(this_00 + 0x20)) =
+        *(undefined4 *)(local_18 + 0x14 + this_00->field_0020) =
              *(undefined4 *)((int)local_10 + 0xf);
-        *(undefined4 *)(local_18 + 0x18 + *(int *)(this_00 + 0x20)) =
+        *(undefined4 *)(local_18 + 0x18 + this_00->field_0020) =
              *(undefined4 *)((int)local_10 + 0x13);
-        *(undefined4 *)(local_18 + 0x20 + *(int *)(this_00 + 0x20)) =
+        *(undefined4 *)(local_18 + 0x20 + this_00->field_0020) =
              *(undefined4 *)((int)local_10 + 0x1b);
         StartShow(this_00,(byte)local_8,*(undefined4 *)((int)local_10 + 0x17));
         if (*(char *)((int)puVar9 + 5) == '\0') {
@@ -139,37 +139,36 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
       }
       iVar5 = local_18;
       if (*(char *)((int)local_10 + 6) == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
         *puVar2 = *puVar2 & 0xfffe;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
         *pbVar1 = *pbVar1 | 1;
       }
-      *(undefined1 *)(local_18 + 0xd + *(int *)(this_00 + 0x20)) =
-           *(undefined1 *)((int)local_10 + 7);
+      *(undefined1 *)(local_18 + 0xd + this_00->field_0020) = *(undefined1 *)((int)local_10 + 7);
       if ((char)local_10[2] == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
         *puVar2 = *puVar2 & 0xfffd;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
         *pbVar1 = *pbVar1 | 2;
       }
       if (*(char *)((int)local_10 + 9) == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
         *puVar2 = *puVar2 & 0xfdff;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xf + *(int *)(this_00 + 0x20));
+        pbVar1 = (byte *)(local_18 + 0xf + this_00->field_0020);
         *pbVar1 = *pbVar1 | 2;
       }
       if (*(char *)((int)local_10 + 10) == '\0') {
-        puVar2 = (ushort *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        puVar2 = (ushort *)(local_18 + 0xe + this_00->field_0020);
         *puVar2 = *puVar2 & 0xfffb;
       }
       else {
-        pbVar1 = (byte *)(local_18 + 0xe + *(int *)(this_00 + 0x20));
+        pbVar1 = (byte *)(local_18 + 0xe + this_00->field_0020);
         *pbVar1 = *pbVar1 | 4;
       }
       _local_c = CONCAT31(uStack_b,(char)local_8);
@@ -196,11 +195,11 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
         thunk_FUN_004ad070(this_00,(byte)_local_c);
       }
       if (*(char *)((int)puVar9 + 0x23) == '\0') {
-        puVar2 = (ushort *)(iVar5 + 0xe + *(int *)(this_00 + 0x20));
+        puVar2 = (ushort *)(iVar5 + 0xe + this_00->field_0020);
         *puVar2 = *puVar2 & 0xfeff;
       }
       else {
-        pbVar1 = (byte *)(iVar5 + 0xf + *(int *)(this_00 + 0x20));
+        pbVar1 = (byte *)(iVar5 + 0xf + this_00->field_0020);
         *pbVar1 = *pbVar1 | 1;
       }
       local_10 = puVar9 + 9;
@@ -216,18 +215,18 @@ void __thiscall STT3DSprC::RestoreSpr(STT3DSprC *this,int *param_1,undefined4 *p
       local_1c = (uint *)((int)local_1c + ~uVar6);
       local_14 = (uint *)((int)local_14 + local_20);
       local_8 = local_8 + 1;
-    } while (local_8 < *(int *)(this_00 + 0x14));
+    } while (local_8 < (int)this_00->field_0014);
   }
-  if ((-1 < *(int *)(this_00 + 0xc)) && (iVar5 = 0, 0 < *(int *)(this_00 + 0x14))) {
+  if ((-1 < *(int *)&this_00->field_0xc) && (iVar5 = 0, 0 < (int)this_00->field_0014)) {
     iVar10 = 0;
     do {
-      if ((*(byte *)(*(int *)(this_00 + 0x20) + 0xf + iVar10) & 1) != 0) {
-        FUN_006e93c0(*(void **)(this_00 + 0x3c),*(uint *)(this_00 + 0x18),iVar5,
-                     *(uint *)(this_00 + 0xc));
+      if ((*(byte *)(this_00->field_0020 + 0xf + iVar10) & 1) != 0) {
+        FUN_006e93c0((void *)this_00[1].field_0018,this_00->field_0018,iVar5,
+                     *(uint *)&this_00->field_0xc);
       }
       iVar5 = iVar5 + 1;
       iVar10 = iVar10 + 0x24;
-    } while (iVar5 < *(int *)(this_00 + 0x14));
+    } while (iVar5 < (int)this_00->field_0014);
   }
   g_currentExceptionFrame = local_68.previous;
   return;

@@ -175,7 +175,7 @@ LAB_005761b9:
           if (iVar7 == 0) {
             local_8 = (byte *)((int)local_10 + 6);
             local_58 = 0;
-            puVar10 = FUN_00709af0(DAT_00806764,0x1d,local_8,0xffffffff,0,0,0,(undefined4 *)0x0);
+            puVar10 = FUN_00709af0(DAT_00806764,CASE_1D,local_8,0xffffffff,0,0,0,(undefined4 *)0x0);
             if (puVar10 == (ushort *)0x0) {
               RaiseInternalException(-4,DAT_007ed77c,s_E____titans_Object_To_alga_cpp_007cab24,0x9a)
               ;
@@ -191,7 +191,8 @@ LAB_005761b9:
               local_50 = 0;
             }
             else {
-              puVar10 = FUN_00709af0(DAT_00806764,0x1d,pbVar16,0xffffffff,0,0,0,(undefined4 *)0x0);
+              puVar10 = FUN_00709af0(DAT_00806764,CASE_1D,pbVar16,0xffffffff,0,0,0,(undefined4 *)0x0
+                                    );
               if (puVar10 == (ushort *)0x0) {
                 RaiseInternalException
                           (-4,DAT_007ed77c,s_E____titans_Object_To_alga_cpp_007cab24,0xa3);

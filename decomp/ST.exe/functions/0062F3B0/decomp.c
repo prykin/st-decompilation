@@ -2,11 +2,16 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Recovered from embedded debug metadata:
    E:\__titans\nick\to_Rubb.cpp
-   STRubbishC::LoadImagSpr */
+   STRubbishC::LoadImagSpr
+   
+   [STSwitchEnumApplier] Switch target param_4 uses
+   /SubmarineTitans/Recovered/Enums/STRubbishC_LoadImagSpr_param_4Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 undefined4 __thiscall
 STRubbishC::LoadImagSpr
-          (STRubbishC *this,void *param_1,int *param_2,undefined4 param_3,undefined4 param_4)
+          (STRubbishC *this,void *param_1,int *param_2,undefined4 param_3,
+          STRubbishC_LoadImagSpr_param_4Enum param_4)
 
 {
   code *pcVar1;
@@ -25,32 +30,32 @@ STRubbishC::LoadImagSpr
   
   local_18 = 0;
   switch(param_4) {
-  case 1:
+  case CASE_1:
     local_10 = *(int *)(&DAT_007d1530 + *param_2 * 8);
     local_c = *(int *)(&DAT_007d1534 + *param_2 * 8);
   default:
     local_8 = &PTR_s_rubb_w0_007d1480;
     break;
-  case 2:
+  case CASE_2:
     local_8 = &PTR_s_rubb_g0_007d14a8;
     local_10 = *(int *)(&DAT_007d1530 + *param_2 * 8);
     local_c = *(int *)(&DAT_007d1534 + *param_2 * 8);
     break;
-  case 3:
+  case CASE_3:
     local_8 = &PTR_s_rubb3_007d14d0;
     local_10 = 0xf;
     local_c = 0xf;
     break;
-  case 4:
+  case CASE_4:
     local_8 = &PTR_s_rubb_gw0_007d1514;
     goto LAB_0062f450;
-  case 5:
+  case CASE_5:
     local_8 = &PTR_s_rubb_gb0_007d14f8;
 LAB_0062f450:
     local_10 = *(int *)(&DAT_007d1580 + *param_2 * 8);
     local_c = *(int *)(&DAT_007d1584 + *param_2 * 8);
     break;
-  case 6:
+  case CASE_6:
     local_8 = &PTR_s_rubb3_007d14d0;
     local_10 = *(int *)(&DAT_007d1580 + *param_2 * 8);
     local_c = *(int *)(&DAT_007d1584 + *param_2 * 8);

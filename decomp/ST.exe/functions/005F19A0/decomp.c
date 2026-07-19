@@ -53,8 +53,8 @@ joined_r0x005f19be:
   local_8 = psVar5;
   if ((char)psVar5[3] != '\x01') goto LAB_005f1c99;
   if (((((DAT_0080874d != -1) && (*(int *)((int)pvVar1 + 0xf8) != 0)) &&
-       (thunk_FUN_00558c00(pvVar1,*(undefined4 *)((int)pvVar1 + 0x10c),local_1c,local_18,&local_20,
-                           &local_24), pvVar3 = DAT_00802a88, -1 < iVar6)) &&
+       (thunk_FUN_00558c00(pvVar1,*(Global_sub_00558C00_param_1Enum *)((int)pvVar1 + 0x10c),local_1c
+                           ,local_18,&local_20,&local_24), pvVar3 = DAT_00802a88, -1 < iVar6)) &&
       (((iVar6 < 5 && (-1 < local_20)) &&
        ((local_20 < *(int *)((int)pvVar1 + 0x30) &&
         ((iVar6 = (&DAT_0079aed0)[iVar6] + local_24, -1 < iVar6 &&
@@ -63,8 +63,8 @@ joined_r0x005f19be:
       (((*(char *)(iVar6 * *(int *)((int)pvVar1 + 0x30) + *(int *)((int)pvVar1 + 0x4c) + local_20)
          == '\0' && (DAT_0080874d != -1)) && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))))) {
     local_38 = local_1c + 1;
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_38,local_18,
-                       &local_28,&local_2c);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       local_38,local_18,&local_28,&local_2c);
     pvVar1 = DAT_00802a88;
     if ((((-1 < local_28) && (local_28 < *(int *)((int)pvVar3 + 0x30))) &&
         (((iVar6 = (&DAT_0079aed0)[local_10] + local_2c, -1 < iVar6 &&
@@ -72,8 +72,9 @@ joined_r0x005f19be:
          (*(char *)(iVar6 * *(int *)((int)pvVar3 + 0x30) + *(int *)((int)pvVar3 + 0x4c) + local_28)
           == '\0')))) && ((DAT_0080874d != -1 && (*(int *)((int)DAT_00802a88 + 0xf8) != 0)))) {
       iVar6 = local_18 + 1;
-      thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_1c,iVar6,
-                         &local_30,&local_34);
+      thunk_FUN_00558c00(DAT_00802a88,
+                         *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),local_1c,
+                         iVar6,&local_30,&local_34);
       pvVar2 = DAT_00802a88;
       if (((local_30 < 0) ||
           ((((*(int *)((int)pvVar1 + 0x30) <= local_30 ||
@@ -84,14 +85,16 @@ joined_r0x005f19be:
                       local_30) != '\0')))))) ||
          ((DAT_0080874d == -1 ||
           ((((*(int *)((int)DAT_00802a88 + 0xf8) == 0 ||
-             (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),local_38,
-                                 iVar6,&local_3c,&local_40), psVar5 = local_8, local_3c < 0)) ||
-            ((*(int *)((int)pvVar2 + 0x30) <= local_3c ||
-             (((iVar6 = (&DAT_0079aed0)[local_10] + local_40, iVar6 < 0 ||
-               (*(int *)((int)pvVar2 + 0x34) <= iVar6)) || (*(int *)((int)pvVar2 + 0x4c) == 0))))))
-           || (pvVar3 = DAT_00802a88,
-              *(char *)(iVar6 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) +
-                       local_3c) != '\0')))))) goto LAB_005f1c4c;
+             (thunk_FUN_00558c00(DAT_00802a88,
+                                 *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                                 local_38,iVar6,&local_3c,&local_40), psVar5 = local_8, local_3c < 0
+             )) || ((*(int *)((int)pvVar2 + 0x30) <= local_3c ||
+                    (((iVar6 = (&DAT_0079aed0)[local_10] + local_40, iVar6 < 0 ||
+                      (*(int *)((int)pvVar2 + 0x34) <= iVar6)) ||
+                     (*(int *)((int)pvVar2 + 0x4c) == 0)))))) ||
+           (pvVar3 = DAT_00802a88,
+           *(char *)(iVar6 * *(int *)((int)pvVar2 + 0x30) + *(int *)((int)pvVar2 + 0x4c) + local_3c)
+           != '\0')))))) goto LAB_005f1c4c;
       goto joined_r0x005f19be;
     }
   }

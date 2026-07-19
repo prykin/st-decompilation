@@ -1,5 +1,6 @@
 
-int __thiscall FUN_00607200(void *this,int param_1,int param_2,int param_3,undefined4 param_4)
+int __thiscall
+FUN_00607200(void *this,int param_1,int param_2,int param_3,Global_sub_00606CD0_param_1Enum param_4)
 
 {
   uint uVar1;
@@ -23,7 +24,7 @@ int __thiscall FUN_00607200(void *this,int param_1,int param_2,int param_3,undef
   int local_6c;
   undefined4 local_68 [5];
   uint local_54;
-  undefined4 local_50;
+  Global_sub_00606CD0_param_1Enum local_50;
   uint local_4c;
   int local_48;
   int local_44;

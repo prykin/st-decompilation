@@ -6,7 +6,7 @@
 void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
 
 {
-  CPanelTy *pCVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   CPanelTy *pCVar3;
   int iVar4;
@@ -31,29 +31,29 @@ void __thiscall CPanelTy::PlayBriefing(CPanelTy *this,char *param_1)
         Library::MSVCRT::_strncpy(&DAT_0080c4d7,param_1,0x1f);
         pCVar3 = local_8;
         DAT_0080c4f6 = 0;
-        if (*(byte **)(local_8 + 0x24b) != (byte *)0x0) {
-          FUN_006ae110(*(byte **)(local_8 + 0x24b));
+        if ((byte *)local_8->field_024B != (byte *)0x0) {
+          FUN_006ae110((byte *)local_8->field_024B);
         }
-        *(int *)(pCVar3 + 0x24b) = iVar4;
-        pCVar1 = pCVar3 + 0x25b;
-        *(undefined4 *)(pCVar3 + 599) = *(undefined4 *)(pCVar3 + 0x253);
-        *(undefined4 *)(pCVar3 + 0x24f) = 0;
-        if (*(int *)pCVar1 != 0) {
-          FUN_0070b600((int *)pCVar1);
+        pCVar3->field_024B = iVar4;
+        puVar1 = &pCVar3->field_0x25b;
+        *(undefined4 *)&pCVar3->field_0x257 = *(undefined4 *)&pCVar3->field_0x253;
+        *(undefined4 *)&pCVar3->field_0x24f = 0;
+        if (*(int *)puVar1 != 0) {
+          FUN_0070b600((int *)puVar1);
         }
         iVar4 = 1;
         bVar9 = 0;
         bVar8 = 6;
         pcVar5 = (char *)thunk_FUN_005260b0(0,0,0);
         psVar6 = FUN_0070b430(DAT_00806790,pcVar5,bVar8,bVar9,iVar4);
-        *(short **)pCVar1 = psVar6;
-        pCVar3[0x260] = (CPanelTy)0x1;
-        pCVar3[0x25f] = (CPanelTy)0x0;
-        FUN_006b4170(*(int *)(pCVar3 + 0x1b4),0,100,5,0x226,0x55,0);
+        *(short **)puVar1 = psVar6;
+        pCVar3->field_0x260 = 1;
+        pCVar3->field_0x25f = 0;
+        FUN_006b4170(*(int *)&pCVar3->field_0x1b4,0,100,5,0x226,0x55,0);
         if ((DAT_0080c4f7 != 3) && (DAT_0080c4f7 != 1)) {
-          pCVar3[0x260] = (CPanelTy)0x3;
+          pCVar3->field_0x260 = 3;
           DAT_0080c4f7 = 3;
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(pCVar3 + 0x17c));
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)&pCVar3->field_0x17c);
         }
       }
     }

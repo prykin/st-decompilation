@@ -77,7 +77,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
                                            (DAT_007fa174,
                                             CONCAT31((int3)((uint)param_1 >> 8),local_8[0x2a3]),
                                             CONCAT22((short)(uVar9 - 0x112 >> 0x10),
-                                                     *(short *)(local_8 + 0x2ab)),1),
+                                                     *(short *)(local_8 + 0x2ab)),CASE_1),
               this_01 != (void *)0x0)))) {
             thunk_FUN_00492510(this_01,*(int *)(this_00 + 0x18));
             (**(code **)(*(int *)this_00 + 0xac))(*(undefined4 *)((int)this_01 + 0x18));
@@ -94,7 +94,7 @@ undefined4 __thiscall STContainerC::GetMessage(STContainerC *this,int param_1)
             this_00[0x30d] = (STContainerC)0x1;
             *(undefined4 *)(this_00 + 0x23a) = 5;
             iVar10 = *(int *)(this_00 + 0x2c2);
-            *(int *)(this_00 + 0x2e0) = *(int *)(DAT_00802a38 + 0xe4) + 0x15;
+            *(int *)(this_00 + 0x2e0) = DAT_00802a38->field_00E4 + 0x15;
             iVar17 = *(int *)(this_00 + 0x2be);
             iVar16 = 1;
             uVar9 = thunk_FUN_004ad650((int)(this_00 + 0x1d5));
@@ -401,7 +401,7 @@ switchD_005fbd08_caseD_129:
   local_c = *(uint *)(local_8 + 0x2ad);
   if (local_c == 0) {
     local_c = STAllPlayersC::GetObjPtr
-                        (DAT_007fa174,CONCAT31((int3)(uVar9 >> 8),local_8[0x2a3]),uVar9,1);
+                        (DAT_007fa174,CONCAT31((int3)(uVar9 >> 8),local_8[0x2a3]),uVar9,CASE_1);
   }
   if (local_c != 0) {
     *(int *)(this_00 + 0x277) = (int)*(short *)(local_c + 0x41);

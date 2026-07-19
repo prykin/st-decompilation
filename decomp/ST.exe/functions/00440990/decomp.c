@@ -15,7 +15,7 @@ void STAllPlayersC::_ChangeDock(undefined4 param_1,int *param_2,uint param_3)
   uint uVar6;
   
   piVar3 = param_2;
-  param_2 = (int *)GetObjPtr(in_ECX,(uint)param_2,param_3,1);
+  param_2 = (int *)GetObjPtr(in_ECX,(uint)param_2,param_3,CASE_1);
   if (param_2 == (int *)0x0) {
     iVar4 = ReportDebugMessage(s_E____titans_wlad_to_allpl_cpp_007a6004,0x21ed,0,0,&DAT_007a4ccc,
                                s_STAllPlayersC___ChangeDock_007a8020);

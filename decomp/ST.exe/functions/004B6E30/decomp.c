@@ -1,5 +1,9 @@
 
-undefined4 __thiscall FUN_004b6e30(void *this,int param_1,undefined4 param_2)
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004B6E30_param_2Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+undefined4 __thiscall FUN_004b6e30(void *this,int param_1,Global_sub_004B6E30_param_2Enum param_2)
 
 {
   int iVar1;
@@ -9,22 +13,22 @@ undefined4 __thiscall FUN_004b6e30(void *this,int param_1,undefined4 param_2)
   int *piVar5;
   
   switch(param_2) {
-  case 0:
+  case CASE_0:
     iVar4 = 0;
     break;
-  case 1:
+  case CASE_1:
     iVar4 = 1;
     break;
-  case 2:
+  case CASE_2:
     iVar4 = 2;
     break;
-  case 3:
+  case CASE_3:
     iVar4 = 3;
     break;
-  case 4:
+  case CASE_4:
     iVar4 = 4;
     break;
-  case 5:
+  case CASE_5:
     iVar4 = 5;
     break;
   default:

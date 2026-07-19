@@ -16,13 +16,13 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
   byte *pbVar6;
   int iVar7;
   void *unaff_EDI;
-  STSprGameObjC *pSVar8;
+  undefined4 *puVar8;
   byte *pbVar9;
   InternalExceptionFrame local_50;
   STSprGameObjC *local_c;
   byte *local_8;
   
-  pSVar8 = (STSprGameObjC *)0x0;
+  puVar8 = (undefined4 *)0x0;
   local_50.previous = g_currentExceptionFrame;
   g_currentExceptionFrame = &local_50;
   local_c = (STSprGameObjC *)this;
@@ -44,27 +44,27 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
   iVar4 = *(int *)(param_1 + 0x10);
   if (iVar4 == 2) {
     DAT_00800bcc = pSVar3;
-    *(undefined4 *)(pSVar3 + 0x20) = 0x3ea;
-    *(undefined4 *)(pSVar3 + 0x28) = 2;
+    pSVar3->field_0020 = 0x3ea;
+    *(undefined4 *)&pSVar3->field_0x28 = 2;
     local_8 = *(byte **)(param_1 + 0x14);
     if (pSVar3 != (STSprGameObjC *)0x0) {
-      pSVar8 = pSVar3 + 0x231;
+      puVar8 = (undefined4 *)&pSVar3->field_0x231;
     }
     pbVar6 = local_8;
     for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined4 *)pSVar8 = *(undefined4 *)pbVar6;
+      *puVar8 = *(undefined4 *)pbVar6;
       pbVar6 = pbVar6 + 4;
-      pSVar8 = pSVar8 + 4;
+      puVar8 = puVar8 + 1;
     }
-    if (*(int *)(pSVar3 + 0x23d) == 2) {
-      if (*(int *)(pSVar3 + 0x249) != 0) {
-        iVar4 = Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar3 + 0x249) * 0xc);
-        *(int *)(pSVar3 + 0x24d) = iVar4;
+    if (*(int *)&pSVar3->field_0x23d == 2) {
+      if (*(int *)&pSVar3->field_0x249 != 0) {
+        iVar4 = Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar3->field_0x249 * 0xc);
+        *(int *)&pSVar3->field_0x24d = iVar4;
       }
-      if (*(int *)(pSVar3 + 0x245) != 0) {
+      if (*(int *)&pSVar3->field_0x245 != 0) {
         pbVar6 = local_8 + 0x1c;
-        pbVar9 = *(byte **)(pSVar3 + 0x24d);
-        for (uVar5 = *(int *)(pSVar3 + 0x245) * 3 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+        pbVar9 = *(byte **)&pSVar3->field_0x24d;
+        for (uVar5 = *(int *)&pSVar3->field_0x245 * 3 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
           *(undefined4 *)pbVar9 = *(undefined4 *)pbVar6;
           pbVar6 = pbVar6 + 4;
           pbVar9 = pbVar9 + 4;
@@ -75,14 +75,14 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
           pbVar9 = pbVar9 + 1;
         }
         iVar4 = 0;
-        if (0 < *(int *)(pSVar3 + 0x245)) {
+        if (0 < *(int *)&pSVar3->field_0x245) {
           iVar7 = 0;
           do {
-            psVar1 = (short *)(*(int *)(pSVar3 + 0x24d) + iVar7);
+            psVar1 = (short *)(*(int *)&pSVar3->field_0x24d + iVar7);
             exceptionCode =
                  DumpClassC::WritePtr
-                           (*psVar1,*(short *)(*(int *)(pSVar3 + 0x24d) + 4 + iVar7),psVar1[4],0,
-                            (int)pSVar3);
+                           (*psVar1,*(short *)(*(int *)&pSVar3->field_0x24d + 4 + iVar7),psVar1[4],0
+                            ,(int)pSVar3);
             if (exceptionCode != 0) {
               RaiseInternalException
                         (exceptionCode,DAT_007ed77c,s_E____titans_Artem_TLO_dock_cpp_007bf39c,0x326)
@@ -90,42 +90,42 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
             }
             iVar4 = iVar4 + 1;
             iVar7 = iVar7 + 0xc;
-          } while (iVar4 < *(int *)(pSVar3 + 0x245));
+          } while (iVar4 < *(int *)&pSVar3->field_0x245);
         }
       }
     }
   }
   else if (iVar4 == 3) {
     DAT_00800bcc = (STSprGameObjC *)0x0;
-    thunk_FUN_004ad310((int)(pSVar3 + 0x1d5));
-    if (*(int *)(pSVar3 + 0x24d) != 0) {
-      FUN_006ab060((undefined4 *)(pSVar3 + 0x24d));
+    thunk_FUN_004ad310((int)&pSVar3->field_01D5);
+    if (*(int *)&pSVar3->field_0x24d != 0) {
+      FUN_006ab060((undefined4 *)&pSVar3->field_0x24d);
       g_currentExceptionFrame = local_50.previous;
       return 0;
     }
   }
   else if (iVar4 == 0x10f) {
-    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)(pSVar3 + 0x245) * 0xc + 0x1c);
+    local_8 = (byte *)Library::DKW::LIB::FUN_006aac70(*(int *)&pSVar3->field_0x245 * 0xc + 0x1c);
     if (pSVar3 == (STSprGameObjC *)0x0) {
-      pSVar8 = (STSprGameObjC *)0x0;
+      puVar8 = (undefined4 *)0x0;
     }
     else {
-      pSVar8 = pSVar3 + 0x231;
+      puVar8 = (undefined4 *)&pSVar3->field_0x231;
     }
     pbVar6 = local_8;
     for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *(undefined4 *)pbVar6 = *(undefined4 *)pSVar8;
-      pSVar8 = pSVar8 + 4;
+      *(undefined4 *)pbVar6 = *puVar8;
+      puVar8 = puVar8 + 1;
       pbVar6 = pbVar6 + 4;
     }
     local_8[0xc] = 2;
     local_8[0xd] = 0;
     local_8[0xe] = 0;
     local_8[0xf] = 0;
-    if (*(int *)(pSVar3 + 0x245) != 0) {
-      pbVar6 = *(byte **)(pSVar3 + 0x24d);
+    if (*(int *)&pSVar3->field_0x245 != 0) {
+      pbVar6 = *(byte **)&pSVar3->field_0x24d;
       pbVar9 = local_8 + 0x1c;
-      for (uVar5 = *(int *)(pSVar3 + 0x245) * 3 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
+      for (uVar5 = *(int *)&pSVar3->field_0x245 * 3 & 0x3fffffff; uVar5 != 0; uVar5 = uVar5 - 1) {
         *(undefined4 *)pbVar9 = *(undefined4 *)pbVar6;
         pbVar6 = pbVar6 + 4;
         pbVar9 = pbVar9 + 4;
@@ -137,8 +137,8 @@ int __thiscall TLOFakeTy::GetMessage(TLOFakeTy *this,int param_1)
       }
     }
     STPlaySystemC::SaveObjData
-              (DAT_00802a38,*(undefined4 *)(pSVar3 + 0x18),local_8,
-               *(int *)(pSVar3 + 0x245) * 0xc + 0x1c);
+              (DAT_00802a38,*(undefined4 *)&pSVar3->field_0x18,local_8,
+               *(int *)&pSVar3->field_0x245 * 0xc + 0x1c);
     FUN_006ab060(&local_8);
     g_currentExceptionFrame = local_50.previous;
     return 0;

@@ -26,7 +26,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
   pSVar6 = local_8;
   if (errorCode == 0) {
     if (param_1 == 1) {
-      puVar2 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_jmpmine_007d00d4,0xffffffff,0,1,0,
+      puVar2 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_jmpmine_007d00d4,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       pSVar6 = local_8;
       pSVar5 = local_8 + 0x97;
@@ -48,7 +48,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
         FUN_006e9520(DAT_00807598,*(uint *)(local_8 + 0x97),0,0,(uint)local_8);
         FUN_006e8ba0(DAT_00807598,*(uint *)pSVar5);
       }
-      puVar2 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_exptme_007d00dc,0xffffffff,0,1,0,
+      puVar2 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_exptme_007d00dc,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e8660(DAT_00807598,(int *)pSVar5,3,0,*(uint *)((int)puVar2 + 9),
                    *(uint *)((int)puVar2 + 0xd),0x5a,0x45,0);
@@ -56,7 +56,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
                    ,1);
       FUN_006ea270(DAT_00807598,*(uint *)pSVar5,0,*(uint *)(pSVar6 + 0xab));
       *(undefined4 *)(pSVar6 + 0xaf) = *(undefined4 *)puVar2;
-      puVar2 = FUN_00709af0(DAT_00806774,0x1d,(byte *)s_expmask2_007d00e4,0xffffffff,0,1,0,
+      puVar2 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)s_expmask2_007d00e4,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e98e0(DAT_00807598,*(uint *)pSVar5,1,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21)
                    ,1);
@@ -65,7 +65,7 @@ undefined4 __thiscall STJumpMineC::LoadImagJMine(STJumpMineC *this,int param_1)
       FUN_006ea790(DAT_00807598,*(uint *)pSVar5,DAT_008032b8,0x10);
       *(undefined4 *)(pSVar6 + 0xc0) = *(undefined4 *)puVar2;
       pSVar6[0xbb] = (STJumpMineC)0x1;
-      puVar2 = FUN_00709af0(DAT_00806764,0x1d,(byte *)s_bulb_n4_007d00f0,0xffffffff,0,1,0,
+      puVar2 = FUN_00709af0(DAT_00806764,CASE_1D,(byte *)s_bulb_n4_007d00f0,0xffffffff,0,1,0,
                             (undefined4 *)0x0);
       FUN_006e98e0(DAT_00807598,*(uint *)pSVar5,2,*(undefined4 *)puVar2,*(int *)((int)puVar2 + 0x21)
                    ,1);

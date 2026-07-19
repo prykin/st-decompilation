@@ -15,14 +15,14 @@ void __thiscall UpgPanelTy::ShiftControls(UpgPanelTy *this,int param_1)
   void *unaff_EDI;
   undefined4 local_44 [16];
   
-  if (param_1 != *(int *)(this + 0x5c)) {
+  if (param_1 != this->field_005C) {
     SpecPanelTy::ShiftControls((SpecPanelTy *)this,param_1);
-    sVar3 = (short)*(undefined4 *)(this + 0x174);
-    *(undefined4 *)(this + 0x28) = 0x24;
+    sVar3 = (short)this->field_0174;
+    this->field_0028 = 0x24;
     if (param_1 != 0) {
       sVar3 = -sVar3;
     }
-    *(short *)(this + 0x2e) = sVar3;
+    this->field_002E = sVar3;
     pIVar2 = g_currentExceptionFrame;
     errorCode = Library::MSVCRT::__setjmp3(local_44,0,unaff_EDI,unaff_ESI);
     if (errorCode == 0) {

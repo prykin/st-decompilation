@@ -6,7 +6,7 @@ undefined4 * __thiscall FUN_0056a5f0(void *this,undefined4 param_1)
   int iVar2;
   undefined4 *puVar3;
   
-  FUN_006e34c0(this,0,param_1);
+  AppClassTy::AppClassTy(this,0,param_1);
   thunk_FUN_00571cd0((undefined4 *)((int)this + 0x38));
   *(undefined4 *)((int)this + 0x1111) = 10;
   *(undefined4 *)((int)this + 0x1115) = 10;

@@ -52,8 +52,8 @@ int FUN_005f3940(int param_1,int param_2,int param_3)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return iVar3;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),iVar4,iVar5,&param_3,
-                       &local_8);
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
+                       iVar4,iVar5,&param_3,&local_8);
     if (param_2 < 0) {
       return iVar3;
     }

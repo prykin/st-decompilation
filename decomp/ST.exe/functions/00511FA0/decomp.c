@@ -17,7 +17,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
   HelpPanelTy *local_8;
   
   pIVar4 = g_currentExceptionFrame;
-  if (this[0x1a0] == (HelpPanelTy)param_1) {
+  if (this->field_01A0 == param_1) {
     return 0;
   }
   g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;
@@ -25,7 +25,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
   errorCode = Library::MSVCRT::__setjmp3(local_48,0,unaff_ESI,pIVar4);
   this_00 = local_8;
   if (errorCode == 0) {
-    local_8[0x1a0] = (HelpPanelTy)param_1;
+    local_8->field_01A0 = param_1;
     if (param_1 != '\0') {
       if (DAT_008016e8 != (ProdPanelTy *)0x0) {
         ProdPanelTy::SetPanel(DAT_008016e8,'\0');
@@ -67,7 +67,7 @@ undefined4 __thiscall HelpPanelTy::SetPanel(HelpPanelTy *this,char param_1)
       g_currentExceptionFrame = pIVar4;
       return 1;
     }
-    if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)(DAT_00801688 + 0x23f) == 1)) {
+    if ((DAT_00801688 != (CPanelTy *)0x0) && (*(short *)&DAT_00801688->field_0x23f == 1)) {
       CPanelTy::ShiftControls(DAT_00801688,1);
     }
     SwitchOptPanel(this_00,0);

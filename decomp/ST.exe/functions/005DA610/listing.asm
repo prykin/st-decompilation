@@ -1,4 +1,4 @@
-FUN_005da610:
+StartSystemTy::StartSystemTy:
 005DA610  55                        PUSH EBP
 005DA611  8B EC                     MOV EBP,ESP
 005DA613  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

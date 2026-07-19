@@ -21,7 +21,7 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return 1;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                        (int)*(short *)(param_1 + 0x5b),(int)*(short *)(param_1 + 0x5d),&local_8,
                        &local_c);
     if (iVar4 < 0) {
@@ -55,7 +55,8 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     }
     iVar4 = (int)*(short *)(param_1 + 0x5f);
     if ((((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-          (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+          (thunk_FUN_00558c00(DAT_00802a88,
+                              *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                               (int)*(short *)(param_1 + 0x5b),(int)*(short *)(param_1 + 0x5d),
                               &local_c,&local_8), pvVar3 = DAT_00802a88, iVar4 < 0)) ||
          ((4 < iVar4 || (local_c < 0)))) || (*(int *)((int)pvVar2 + 0x30) <= local_c)) ||
@@ -68,7 +69,8 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     }
     iVar4 = (int)*(short *)(param_1 + 0x5f);
     if ((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-        (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+        (thunk_FUN_00558c00(DAT_00802a88,
+                            *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                             *(short *)(param_1 + 0x5b) + 1,(int)*(short *)(param_1 + 0x5d),&local_c,
                             &local_8), pvVar2 = DAT_00802a88, iVar4 < 0)) ||
        (((4 < iVar4 || (local_c < 0)) ||
@@ -81,7 +83,8 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     }
     iVar4 = (int)*(short *)(param_1 + 0x5f);
     if (((((DAT_0080874d == -1) || (*(int *)((int)DAT_00802a88 + 0xf8) == 0)) ||
-         (thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+         (thunk_FUN_00558c00(DAT_00802a88,
+                             *(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                              (int)*(short *)(param_1 + 0x5b),*(short *)(param_1 + 0x5d) + 1,&local_c
                              ,&local_8), pvVar3 = DAT_00802a88, iVar4 < 0)) ||
         (((4 < iVar4 || (local_c < 0)) ||
@@ -100,7 +103,7 @@ undefined4 __fastcall FUN_0041c710(int param_1)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return 1;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                        *(short *)(param_1 + 0x5b) + 1,*(short *)(param_1 + 0x5d) + 1,&local_c,
                        &local_8);
     if (iVar4 < 0) {

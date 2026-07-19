@@ -19,7 +19,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   bool bVar14;
   char local_22c [532];
   uint local_18;
-  int local_14;
+  Global_sub_0068CDA0_param_2Enum local_14;
   uint *local_10;
   uint local_c;
   uint *local_8;
@@ -145,7 +145,7 @@ FUN_00649ff0(uint *param_1,undefined4 *param_2,undefined4 *param_3,int *param_4)
   FUN_006b78c0(&stack0xfffffcd0,&stack0xfffffcd0);
   puVar6 = thunk_FUN_00683c70(param_1,&stack0xfffffcd0,&local_14,param_4,(undefined *)0x0);
   if (puVar6 != (uint *)0x0) {
-    if (local_14 != 10) {
+    if (local_14 != CASE_A) {
       local_8 = puVar6;
       thunk_FUN_0068cda0((int *)&local_8,local_14);
       return (undefined4 *)0x0;

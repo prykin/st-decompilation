@@ -34,24 +34,24 @@ undefined4 __thiscall STT3DSprC::SetCurShad(STT3DSprC *this,char param_1,undefin
     }
     return 0xffffffff;
   }
-  if (*(int *)(local_8 + 0x18) == -1) {
+  if (local_8->field_0018 == -1) {
     RaiseInternalException(-1,DAT_007ed77c,s_E____titans_wlad_Tspr3d_cpp_007ac638,0xa5);
   }
-  if (*(int *)(*(int *)(*(int *)(pSVar2 + 0x20) + param_1 * 0x24) + 0x29) != 0) {
-    pSVar2[0x13] = (STT3DSprC)param_1;
-    *(undefined4 *)(pSVar2 + 0x30) = param_2;
-    if (pSVar2[0x11] == (STT3DSprC)0x0) {
-      if (pSVar2[0x10] == (STT3DSprC)0x0) {
-        uVar6 = *(uint *)(pSVar2 + 0x34);
-        uVar5 = *(uint *)(pSVar2 + 0x18);
+  if (*(int *)(*(int *)(pSVar2->field_0020 + param_1 * 0x24) + 0x29) != 0) {
+    pSVar2->field_0x13 = param_1;
+    *(undefined4 *)&pSVar2[1].field_0xc = param_2;
+    if (pSVar2->field_0x11 == '\0') {
+      if (pSVar2->field_0x10 == '\0') {
+        uVar6 = *(uint *)&pSVar2[1].field_0x10;
+        uVar5 = pSVar2->field_0018;
         puVar7 = &LAB_00404999;
       }
       else {
-        uVar6 = *(uint *)(pSVar2 + 0x34);
-        uVar5 = *(uint *)(pSVar2 + 0x18);
+        uVar6 = *(uint *)&pSVar2[1].field_0x10;
+        uVar5 = pSVar2->field_0018;
         puVar7 = &LAB_00405b64;
       }
-      FUN_006e9520(*(void **)(pSVar2 + 0x3c),uVar5,uVar6,(uint)puVar7,(uint)pSVar2);
+      FUN_006e9520((void *)pSVar2[1].field_0018,uVar5,uVar6,(uint)puVar7,(uint)pSVar2);
     }
     g_currentExceptionFrame = pIVar8;
     return 0;

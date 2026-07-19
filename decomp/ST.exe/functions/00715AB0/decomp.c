@@ -22,38 +22,38 @@ undefined4 __thiscall SpriteClassTy::CloseSprite(SpriteClassTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_ESI,unaff_EBX);
   pSVar2 = local_8;
   if (errorCode == 0) {
-    if ((*(int **)(local_8 + 0x48) != (int *)0x0) && (*(uint *)(local_8 + 4) != 0xffffffff)) {
-      FUN_006b3bb0(*(int **)(local_8 + 0x48),*(uint *)(local_8 + 4));
+    if (((int *)local_8->field_0048 != (int *)0x0) && (local_8->field_0004 != 0xffffffff)) {
+      FUN_006b3bb0((int *)local_8->field_0048,local_8->field_0004);
     }
-    if (*(int *)(pSVar2 + 0x61) == 0) {
-      switch(pSVar2[0x4c]) {
-      case (SpriteClassTy)0x7:
-      case (SpriteClassTy)0x81:
-        if (*(int *)(pSVar2 + 0x51) != 0) {
-          FUN_00725e30((int *)(pSVar2 + 0x51));
+    if (pSVar2->field_0061 == 0) {
+      switch(pSVar2->field_004C) {
+      case 7:
+      case 0x81:
+        if (pSVar2->field_0051 != 0) {
+          FUN_00725e30(&pSVar2->field_0051);
         }
         break;
-      case (SpriteClassTy)0x8:
-        if (*(int *)(pSVar2 + 0x59) != 0) {
-          FUN_00726260((undefined4 *)(pSVar2 + 0x59));
+      case 8:
+        if (pSVar2->field_0059 != 0) {
+          FUN_00726260(&pSVar2->field_0059);
         }
         break;
-      case (SpriteClassTy)0x1e:
-        if (*(int *)(pSVar2 + 0x55) != 0) {
-          FUN_00726bd0((int *)(pSVar2 + 0x55));
+      case 0x1e:
+        if (pSVar2->field_0055 != 0) {
+          FUN_00726bd0(&pSVar2->field_0055);
         }
       }
     }
     else {
-      *(undefined4 *)(pSVar2 + 0x51) = 0;
-      *(undefined4 *)(pSVar2 + 0x55) = 0;
-      *(undefined4 *)(pSVar2 + 0x59) = 0;
+      pSVar2->field_0051 = 0;
+      pSVar2->field_0055 = 0;
+      pSVar2->field_0059 = 0;
     }
-    *(undefined4 *)(pSVar2 + 0x61) = 0;
-    *(undefined4 *)(pSVar2 + 4) = 0xffffffff;
-    *(undefined4 *)(pSVar2 + 0x48) = 0;
-    *(undefined4 *)(pSVar2 + 0x4d) = 0;
-    pSVar2[0x65] = (SpriteClassTy)0x0;
+    pSVar2->field_0061 = 0;
+    pSVar2->field_0004 = 0xffffffff;
+    pSVar2->field_0048 = 0;
+    pSVar2->field_004D = 0;
+    pSVar2->field_0065 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return 0;
   }

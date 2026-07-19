@@ -18,14 +18,14 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if (*(int *)(this + 0x1f84) != 0) {
+  if (this->field_1F84 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     pSVar2 = local_8;
     if (iVar3 == 0) {
-      iVar3 = *(int *)(local_8 + 0x1f84);
+      iVar3 = local_8->field_1F84;
       if (param_1 < *(uint *)(iVar3 + 0xc)) {
         pcVar4 = (char *)(*(int *)(iVar3 + 8) * param_1 + *(int *)(iVar3 + 0x1c));
       }
@@ -37,7 +37,7 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
         if ((pcVar4[4] == '\x02') && (*(int *)(pcVar4 + 6) == DAT_0080877f)) {
           DAT_0080874e = param_2;
         }
-        iVar3 = *(int *)(local_8 + 0x1f84);
+        iVar3 = local_8->field_1F84;
         uVar6 = param_1 + 1;
         bVar7 = uVar6 < *(uint *)(iVar3 + 0xc);
         if ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc)) {
@@ -53,13 +53,13 @@ void __thiscall SettMapMTy::ChangePlayerCiv(SettMapMTy *this,uint param_1,char p
             if (*(int *)(pcVar4 + 6) == DAT_0080877f) {
               DAT_0080874e = param_2;
             }
-            iVar3 = *(int *)(local_8 + 0x1f84);
+            iVar3 = local_8->field_1F84;
             uVar6 = uVar6 + 1;
             bVar7 = uVar6 < *(uint *)(iVar3 + 0xc);
           } while ((int)uVar6 < (int)*(uint *)(iVar3 + 0xc));
         }
         (**(code **)(*(int *)local_8 + 0x2c))();
-        *(int *)(pSVar2 + 0x2121) = *(int *)(pSVar2 + 0x2121) + 1;
+        *(int *)&pSVar2[1].field_0x4 = *(int *)&pSVar2[1].field_0x4 + 1;
       }
       g_currentExceptionFrame = local_4c.previous;
       return;

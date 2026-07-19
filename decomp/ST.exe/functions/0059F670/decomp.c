@@ -45,22 +45,22 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
     }
   }
   pFVar2 = local_8;
-  switch(local_8[0x1a5f]) {
-  case (FSGSTy)0x2:
-  case (FSGSTy)0x4:
-  case (FSGSTy)0x5:
-  case (FSGSTy)0x7:
-    if (local_8[0x1a5f] == (FSGSTy)0x7) {
+  switch(local_8->field_1A5F) {
+  case 2:
+  case 4:
+  case 5:
+  case 7:
+    if (local_8->field_1A5F == '\a') {
       thunk_FUN_005a0a50((int)local_8);
     }
     else {
       thunk_FUN_005a0590((int)local_8);
     }
-  case (FSGSTy)0x1:
-    if (*(HoloTy **)(pFVar2 + 0x1f23) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f23));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f23));
-      *(undefined4 *)(pFVar2 + 0x1f23) = 0;
+  case 1:
+    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
+      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -82,36 +82,38 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f23) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
     if (puVar4 != (undefined1 *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0xb4,0xaa,0x1b8,0x106);
-      uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f23),4,0xb4,0xaa,iVar3,iVar5,uVar6,cVar7,uVar9);
+      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0xb4,0xaa,iVar3,iVar5,uVar6,cVar7,
+                           uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)(pFVar2 + 0x1f23);
+        iVar3 = *(int *)&pFVar2[1].field_0x44;
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3)) {
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3));
+        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+        if (-1 < (int)uVar6) {
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f23));
+        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
       }
       FUN_006b5f80(DAT_008075a8,0xb4,0xaa,0x1b8,0x106);
       thunk_FUN_00540620(0xb4,0xaa,0xb4,0xaa,0x1b8,(byte *)0x106,'\x01',
-                         *(BITMAPINFO **)(pFVar2 + 0x5d));
+                         *(BITMAPINFO **)&pFVar2->field_0x5d);
     }
-    uVar6 = *(uint *)(pFVar2 + 0x1abc);
+    uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
-  case (FSGSTy)0x3:
+  case 3:
     thunk_FUN_005a0590((int)local_8);
-    if (*(HoloTy **)(pFVar2 + 0x1f23) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f23));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f23));
-      *(undefined4 *)(pFVar2 + 0x1f23) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
+      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -133,42 +135,44 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f23) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
     if (puVar4 == (undefined1 *)0x0) goto switchD_0059f6f7_default;
     uVar9 = 0;
     cVar7 = '\x01';
     uVar6 = 0x10;
     iVar5 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x22,0x72,0x2e1,0x14c);
-    uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f23),4,0x22,0x72,iVar3,iVar5,uVar6,cVar7,uVar9);
+    uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0x22,0x72,iVar3,iVar5,uVar6,cVar7,uVar9
+                        );
     if (uVar6 != 0) {
-      iVar3 = *(int *)(pFVar2 + 0x1f23);
+      iVar3 = *(int *)&pFVar2[1].field_0x44;
       *(undefined1 *)(iVar3 + 2) = 0;
       *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-      if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3)) {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3));
+      uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+      if (-1 < (int)uVar6) {
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
       }
-      HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f23));
+      HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
     }
     FUN_006b5f80(DAT_008075a8,0x22,0x72,0x2e1,0x14c);
     thunk_FUN_00540620(0x22,0x72,0x22,0x72,0x2e1,(byte *)0x14c,'\x01',
-                       *(BITMAPINFO **)(pFVar2 + 0x5d));
-    if (*(uint *)(pFVar2 + 0x1b2c) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pFVar2 + 0x1b70),*(uint *)(pFVar2 + 0x1b2c));
+                       *(BITMAPINFO **)&pFVar2->field_0x5d);
+    if (*(uint *)&pFVar2->field_0x1b2c != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pFVar2->field_0x1b70,*(uint *)&pFVar2->field_0x1b2c);
     }
-    if (*(uint *)(pFVar2 + 0x1bbd) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pFVar2 + 0x1c01),*(uint *)(pFVar2 + 0x1bbd));
+    if (*(uint *)&pFVar2->field_0x1bbd != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pFVar2->field_0x1c01,*(uint *)&pFVar2->field_0x1bbd);
     }
-    uVar6 = *(uint *)(pFVar2 + 0x1c4e);
+    uVar6 = *(uint *)&pFVar2->field_0x1c4e;
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
-    piVar8 = *(int **)(pFVar2 + 0x1c92);
+    piVar8 = *(int **)&pFVar2->field_0x1c92;
     break;
-  case (FSGSTy)0x6:
+  case 6:
     thunk_FUN_005a07f0((int)local_8);
-    if (*(HoloTy **)(pFVar2 + 0x1f27) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f27));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f27));
-      *(undefined4 *)(pFVar2 + 0x1f27) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x48 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x48);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x48);
+      *(undefined4 *)&pFVar2[1].field_0x48 = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -190,40 +194,42 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f27) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x48 = puVar4;
     if (puVar4 != (undefined1 *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x13,0x5e,0x1bf,0x175);
-      uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f27),4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
+      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x48,4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,
+                           uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)(pFVar2 + 0x1f27);
+        iVar3 = *(int *)&pFVar2[1].field_0x48;
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f27) + 3)) {
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f27) + 3));
+        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x48 + 3);
+        if (-1 < (int)uVar6) {
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f27));
+        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x48);
       }
       FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x1bf,0x175);
       thunk_FUN_00540620(0x13,0x5e,0x13,0x5e,0x1bf,(byte *)0x175,'\x01',
-                         *(BITMAPINFO **)(pFVar2 + 0x5d));
-      if (*(uint *)(pFVar2 + 0x1b2c) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(pFVar2 + 0x1b70),*(uint *)(pFVar2 + 0x1b2c));
+                         *(BITMAPINFO **)&pFVar2->field_0x5d);
+      if (*(uint *)&pFVar2->field_0x1b2c != 0xffffffff) {
+        FUN_006b3af0(*(int **)&pFVar2->field_0x1b70,*(uint *)&pFVar2->field_0x1b2c);
       }
-      if (*(uint *)(pFVar2 + 0x1bbd) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(pFVar2 + 0x1c01),*(uint *)(pFVar2 + 0x1bbd));
+      if (*(uint *)&pFVar2->field_0x1bbd != 0xffffffff) {
+        FUN_006b3af0(*(int **)&pFVar2->field_0x1c01,*(uint *)&pFVar2->field_0x1bbd);
       }
-      if (*(uint *)(pFVar2 + 0x1c4e) != 0xffffffff) {
-        FUN_006b3af0(*(int **)(pFVar2 + 0x1c92),*(uint *)(pFVar2 + 0x1c4e));
+      if (*(uint *)&pFVar2->field_0x1c4e != 0xffffffff) {
+        FUN_006b3af0(*(int **)&pFVar2->field_0x1c92,*(uint *)&pFVar2->field_0x1c4e);
       }
     }
-    if (*(HoloTy **)(pFVar2 + 0x1f2b) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f2b));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2b));
-      *(undefined4 *)(pFVar2 + 0x1f2b) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x4c != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x4c);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x4c);
+      *(undefined4 *)&pFVar2[1].field_0x4c = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -245,42 +251,44 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f2b) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x4c = puVar4;
     if (puVar4 == (undefined1 *)0x0) goto switchD_0059f6f7_default;
     uVar9 = 0;
     cVar7 = '\x01';
     uVar6 = 0x10;
     iVar5 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x1e9,0x5e,0x124,0x175);
-    uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f2b),2,0x1e9,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
+    uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x4c,2,0x1e9,0x5e,iVar3,iVar5,uVar6,cVar7,
+                         uVar9);
     if (uVar6 != 0) {
-      iVar3 = *(int *)(pFVar2 + 0x1f2b);
+      iVar3 = *(int *)&pFVar2[1].field_0x4c;
       *(undefined1 *)(iVar3 + 2) = 0;
       *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-      if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f2b) + 3)) {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f2b) + 3));
+      uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x4c + 3);
+      if (-1 < (int)uVar6) {
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
       }
-      HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f2b));
+      HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x4c);
     }
     FUN_006b5f80(DAT_008075a8,0x1e9,0x5e,0x124,0x175);
     thunk_FUN_00540620(0x1e9,0x5e,0x1e9,0x5e,0x124,(byte *)0x175,'\x01',
-                       *(BITMAPINFO **)(pFVar2 + 0x5d));
-    if (*(uint *)(pFVar2 + 0x1cdf) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pFVar2 + 0x1d23),*(uint *)(pFVar2 + 0x1cdf));
+                       *(BITMAPINFO **)&pFVar2->field_0x5d);
+    if (*(uint *)&pFVar2->field_0x1cdf != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pFVar2->field_0x1d23,*(uint *)&pFVar2->field_0x1cdf);
     }
-    if (*(uint *)(pFVar2 + 0x1d70) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pFVar2 + 0x1db4),*(uint *)(pFVar2 + 0x1d70));
+    if (*(uint *)&pFVar2->field_0x1d70 != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pFVar2->field_0x1db4,*(uint *)&pFVar2->field_0x1d70);
     }
-    uVar6 = *(uint *)(pFVar2 + 0x1e01);
+    uVar6 = *(uint *)&pFVar2->field_0x1e01;
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
-    piVar8 = *(int **)(pFVar2 + 0x1e45);
+    piVar8 = *(int **)&pFVar2->field_0x1e45;
     break;
-  case (FSGSTy)0x8:
+  case 8:
     thunk_FUN_005a0af0((int)local_8);
-    if (*(HoloTy **)(pFVar2 + 0x1f2f) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f2f));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2f));
-      *(undefined4 *)(pFVar2 + 0x1f2f) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x50 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x50);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x50);
+      *(undefined4 *)&pFVar2[1].field_0x50 = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -302,32 +310,33 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f2f) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x50 = puVar4;
     if (puVar4 != (undefined1 *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x199,0x5e,0x174,0x175);
-      uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f2f),2,0x199,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9)
-      ;
+      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x50,2,0x199,0x5e,iVar3,iVar5,uVar6,cVar7,
+                           uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)(pFVar2 + 0x1f2f);
+        iVar3 = *(int *)&pFVar2[1].field_0x50;
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f2f) + 3)) {
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f2f) + 3));
+        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x50 + 3);
+        if (-1 < (int)uVar6) {
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f2f));
+        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x50);
       }
       FUN_006b5f80(DAT_008075a8,0x199,0x5e,0x174,0x175);
       thunk_FUN_00540620(0x199,0x5e,0x199,0x5e,0x174,(byte *)0x175,'\x01',
-                         *(BITMAPINFO **)(pFVar2 + 0x5d));
+                         *(BITMAPINFO **)&pFVar2->field_0x5d);
     }
-    if (*(HoloTy **)(pFVar2 + 0x1f2b) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f2b));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f2b));
-      *(undefined4 *)(pFVar2 + 0x1f2b) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x4c != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x4c);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x4c);
+      *(undefined4 *)&pFVar2[1].field_0x4c = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -349,42 +358,44 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f2b) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x4c = puVar4;
     if (puVar4 == (undefined1 *)0x0) goto switchD_0059f6f7_default;
     uVar9 = 0;
     cVar7 = '\x01';
     uVar6 = 0x10;
     iVar5 = 1;
     iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x13,0x5e,0x174,0x175);
-    uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f2b),4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
+    uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x4c,4,0x13,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9
+                        );
     if (uVar6 != 0) {
-      iVar3 = *(int *)(pFVar2 + 0x1f2b);
+      iVar3 = *(int *)&pFVar2[1].field_0x4c;
       *(undefined1 *)(iVar3 + 2) = 0;
       *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-      if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f2b) + 3)) {
-        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f2b) + 3));
+      uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x4c + 3);
+      if (-1 < (int)uVar6) {
+        Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
       }
-      HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f2b));
+      HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x4c);
     }
     FUN_006b5f80(DAT_008075a8,0x13,0x5e,0x174,0x175);
     thunk_FUN_00540620(0x13,0x5e,0x13,0x5e,0x174,(byte *)0x175,'\x01',
-                       *(BITMAPINFO **)(pFVar2 + 0x5d));
-    if (*(uint *)(pFVar2 + 0x1cdf) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pFVar2 + 0x1d23),*(uint *)(pFVar2 + 0x1cdf));
+                       *(BITMAPINFO **)&pFVar2->field_0x5d);
+    if (*(uint *)&pFVar2->field_0x1cdf != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pFVar2->field_0x1d23,*(uint *)&pFVar2->field_0x1cdf);
     }
-    if (*(uint *)(pFVar2 + 0x1d70) != 0xffffffff) {
-      FUN_006b3af0(*(int **)(pFVar2 + 0x1db4),*(uint *)(pFVar2 + 0x1d70));
+    if (*(uint *)&pFVar2->field_0x1d70 != 0xffffffff) {
+      FUN_006b3af0(*(int **)&pFVar2->field_0x1db4,*(uint *)&pFVar2->field_0x1d70);
     }
-    uVar6 = *(uint *)(pFVar2 + 0x1e01);
+    uVar6 = *(uint *)&pFVar2->field_0x1e01;
     if (uVar6 == 0xffffffff) goto switchD_0059f6f7_default;
-    piVar8 = *(int **)(pFVar2 + 0x1e45);
+    piVar8 = *(int **)&pFVar2->field_0x1e45;
     break;
-  case (FSGSTy)0x9:
+  case 9:
     thunk_FUN_005a0c80((int)local_8);
-    if (*(HoloTy **)(pFVar2 + 0x1f23) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f23));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f23));
-      *(undefined4 *)(pFVar2 + 0x1f23) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
+      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -406,36 +417,38 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f23) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
     if (puVar4 != (undefined1 *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
-      uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f23),4,0x22,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
+      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0x22,0x5e,iVar3,iVar5,uVar6,cVar7,
+                           uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)(pFVar2 + 0x1f23);
+        iVar3 = *(int *)&pFVar2[1].field_0x44;
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3)) {
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3));
+        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+        if (-1 < (int)uVar6) {
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f23));
+        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
       }
       FUN_006b5f80(DAT_008075a8,0x22,0x5e,0x2e1,0x175);
       thunk_FUN_00540620(0x22,0x5e,0x22,0x5e,0x2e1,(byte *)0x175,'\x01',
-                         *(BITMAPINFO **)(pFVar2 + 0x5d));
+                         *(BITMAPINFO **)&pFVar2->field_0x5d);
     }
-    uVar6 = *(uint *)(pFVar2 + 0x1abc);
+    uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
-  case (FSGSTy)0xa:
+  case 10:
     thunk_FUN_005a0590((int)local_8);
-    if (*(HoloTy **)(pFVar2 + 0x1f23) != (HoloTy *)0x0) {
-      HoloTy::Done(*(HoloTy **)(pFVar2 + 0x1f23));
-      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)(pFVar2 + 0x1f23));
-      *(undefined4 *)(pFVar2 + 0x1f23) = 0;
+    if (*(HoloTy **)&pFVar2[1].field_0x44 != (HoloTy *)0x0) {
+      HoloTy::Done(*(HoloTy **)&pFVar2[1].field_0x44);
+      Library::MSVCRT::FUN_0072e2b0(*(undefined4 **)&pFVar2[1].field_0x44);
+      *(undefined4 *)&pFVar2[1].field_0x44 = 0;
     }
     puVar4 = (undefined1 *)Library::MSVCRT::FUN_0072e530(0x33);
     if (puVar4 == (undefined1 *)0x0) {
@@ -457,28 +470,30 @@ void __thiscall FSGSTy::DeleteCtrls(FSGSTy *this)
       *(undefined4 *)(puVar4 + 0x2f) = 1;
       *(undefined4 *)(puVar4 + 0x2b) = 1;
     }
-    *(undefined1 **)(pFVar2 + 0x1f23) = puVar4;
+    *(undefined1 **)&pFVar2[1].field_0x44 = puVar4;
     if (puVar4 != (undefined1 *)0x0) {
       uVar9 = 0;
       cVar7 = '\x01';
       uVar6 = 0x10;
       iVar5 = 1;
       iVar3 = Library::DKW::DDX::FUN_006bf9f0(DAT_008075a8,0xb4,0x5e,0x1b8,0x17a);
-      uVar6 = HoloTy::Init(*(HoloTy **)(pFVar2 + 0x1f23),4,0xb4,0x5e,iVar3,iVar5,uVar6,cVar7,uVar9);
+      uVar6 = HoloTy::Init(*(HoloTy **)&pFVar2[1].field_0x44,4,0xb4,0x5e,iVar3,iVar5,uVar6,cVar7,
+                           uVar9);
       if (uVar6 != 0) {
-        iVar3 = *(int *)(pFVar2 + 0x1f23);
+        iVar3 = *(int *)&pFVar2[1].field_0x44;
         *(undefined1 *)(iVar3 + 2) = 0;
         *(undefined4 *)(iVar3 + 0x17) = 0xffffffff;
-        if (-1 < (int)*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3)) {
-          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,*(uint *)(*(int *)(pFVar2 + 0x1f23) + 3));
+        uVar6 = *(uint *)(*(int *)&pFVar2[1].field_0x44 + 3);
+        if (-1 < (int)uVar6) {
+          Library::DKW::DDX::FUN_006b3430(DAT_008075a8,uVar6);
         }
-        HoloTy::NextFas(*(HoloTy **)(pFVar2 + 0x1f23));
+        HoloTy::NextFas(*(HoloTy **)&pFVar2[1].field_0x44);
       }
       FUN_006b5f80(DAT_008075a8,0xb4,0x5e,0x1b8,0x17a);
       thunk_FUN_00540620(0xb4,0x5e,0xb4,0x5e,0x1b8,(byte *)0x17a,'\x01',
-                         *(BITMAPINFO **)(pFVar2 + 0x5d));
+                         *(BITMAPINFO **)&pFVar2->field_0x5d);
     }
-    uVar6 = *(uint *)(pFVar2 + 0x1abc);
+    uVar6 = pFVar2->field_1ABC;
     piVar8 = DAT_008075a8;
     break;
   default:

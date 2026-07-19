@@ -13,7 +13,7 @@ void __thiscall FUN_00566e70(void *this,undefined4 param_1)
       FUN_00719560(pMVar1);
       FUN_00719c60(pMVar1);
     }
-    MVar2 = FUN_00719410(0,3,(int)this + 0x640);
+    MVar2 = FUN_00719410(0,CASE_3,(int)this + 0x640);
     *pMVar1 = MVar2;
     if (MVar2 != 0) {
       iVar3 = FUN_00719900(pMVar1);

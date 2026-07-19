@@ -13,7 +13,7 @@ void __fastcall FUN_00566ff0(void *param_1)
     }
   }
   else if ((uVar1 == 4) || (uVar1 == 8)) {
-    thunk_FUN_00568940(param_1,0xb);
+    thunk_FUN_00568940(param_1,CASE_B);
     return;
   }
   return;

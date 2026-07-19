@@ -1,4 +1,4 @@
-FUN_005810d0:
+STJellyManC::STJellyManC:
 005810D0  56                        PUSH ESI
 005810D1  57                        PUSH EDI
 005810D2  8B F1                     MOV ESI,ECX

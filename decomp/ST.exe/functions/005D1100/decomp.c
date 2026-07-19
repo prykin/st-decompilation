@@ -21,14 +21,14 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
   InternalExceptionFrame local_4c;
   SettMapMTy *local_8;
   
-  if (*(int *)(this + 0x1f84) != 0) {
+  if (this->field_1F84 != 0) {
     local_4c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_4c;
     local_8 = this;
     iVar5 = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_8;
     if (iVar5 == 0) {
-      iVar5 = *(int *)(local_8 + 0x1f84);
+      iVar5 = local_8->field_1F84;
       if (param_2 < *(uint *)(iVar5 + 0xc)) {
         iVar5 = *(int *)(iVar5 + 8) * param_2 + *(int *)(iVar5 + 0x1c);
       }
@@ -49,8 +49,8 @@ SettMapMTy::AddPlayerList(SettMapMTy *this,int param_1,uint param_2,int param_3,
         ChangePlayerList(this_00,param_1,param_2,param_3,'\0',param_4);
       }
 LAB_005d11ad:
-      if ((DAT_0080877e != '\0') && (this_00[0x1e26] == (SettMapMTy)0xc)) {
-        iVar5 = *(int *)(this_00 + 0x1f84);
+      if ((DAT_0080877e != '\0') && (this_00->field_0x1e26 == '\f')) {
+        iVar5 = this_00->field_1F84;
         uVar8 = 0;
         bVar4 = true;
         uVar2 = *(uint *)(iVar5 + 0xc);

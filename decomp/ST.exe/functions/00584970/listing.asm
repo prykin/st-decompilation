@@ -1,4 +1,4 @@
-FUN_00584970:
+STLBombC::STLBombC:
 00584970  56                        PUSH ESI
 00584971  57                        PUSH EDI
 00584972  8B F1                     MOV ESI,ECX

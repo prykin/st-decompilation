@@ -15,9 +15,9 @@ undefined4 FUN_005dab70(int param_1,undefined4 param_2)
     if (DAT_00811764 != (int *)0x0) {
       FUN_006b76d0(DAT_00811764);
       if (DAT_0080877e == '\0') {
-        if (*(int *)(local_8 + 0x68e) != 0) {
+        if (local_8->field_068E != 0) {
           Library::DKW::DDX::FUN_006b68e0
-                    (DAT_00811764,(undefined4 *)(*(int *)(local_8 + 0x68e) + 0xc + param_1 * 0x14));
+                    (DAT_00811764,(undefined4 *)(local_8->field_068E + 0xc + param_1 * 0x14));
         }
       }
       else {

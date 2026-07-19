@@ -25,7 +25,7 @@ int __thiscall FUN_0062fea0(void *this,int param_1,int param_2)
     if (*(int *)((int)DAT_00802a88 + 0xf8) == 0) {
       return iVar2;
     }
-    thunk_FUN_00558c00(DAT_00802a88,*(undefined4 *)((int)DAT_00802a88 + 0x10c),
+    thunk_FUN_00558c00(DAT_00802a88,*(Global_sub_00558C00_param_1Enum *)((int)DAT_00802a88 + 0x10c),
                        *(int *)((int)this + 0x1d5),*(int *)((int)this + 0x1d9),&param_2,
                        (int *)&local_8);
     if (iVar3 < 0) {

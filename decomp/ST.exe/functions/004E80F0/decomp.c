@@ -1,5 +1,9 @@
 
-undefined4 FUN_004e80f0(int param_1,int param_2)
+/* [STSwitchEnumApplier] Switch target param_2 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_004E80F0_param_2Enum. Cases:
+   CASE_A3=163;CASE_A8=168;CASE_B2=178;CASE_BE=190 */
+
+undefined4 FUN_004e80f0(int param_1,Global_sub_004E80F0_param_2Enum param_2)
 
 {
   int iVar1;
@@ -8,10 +12,10 @@ undefined4 FUN_004e80f0(int param_1,int param_2)
   
   uVar3 = 0;
   switch(param_2) {
-  case 0xa3:
-  case 0xa8:
-  case 0xb2:
-  case 0xbe:
+  case CASE_A3:
+  case CASE_A8:
+  case CASE_B2:
+  case CASE_BE:
     iVar1 = param_2 * 3 + -0x1c2;
     iVar2 = (&DAT_007bf67c)[iVar1];
     if (((iVar2 < 0) || (iVar2 == 0)) ||

@@ -28,7 +28,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
   char local_6;
   char local_5;
   
-  if (*(int *)(this + 0x1f84) != 0) {
+  if (this->field_1F84 != 0) {
     local_5c.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_5c;
     local_c = this;
@@ -39,7 +39,7 @@ void __thiscall SettMapMTy::CheckPlList(SettMapMTy *this,void *param_1)
       local_6 = '\0';
       cVar4 = cVar5;
       if (DAT_00808aaa == '\0') {
-        iVar6 = *(int *)(local_c + 0x1f84);
+        iVar6 = local_c->field_1F84;
         cVar4 = local_6;
         if (*(int *)(iVar6 + 0xc) != 0) {
           uVar10 = 0;
@@ -55,10 +55,10 @@ LAB_005d01c2:
               if (*(byte **)(iVar6 + 0x50) != (byte *)0x0) {
                 FUN_006ae110(*(byte **)(iVar6 + 0x50));
               }
-              FUN_006b0c70(*(int *)(pSVar3 + 0x1f84),uVar10);
+              FUN_006b0c70(pSVar3->field_1F84,uVar10);
               uVar10 = uVar10 - 1;
             }
-            iVar6 = *(int *)(pSVar3 + 0x1f84);
+            iVar6 = pSVar3->field_1F84;
             uVar10 = uVar10 + 1;
             cVar4 = local_6;
           } while (uVar10 < *(uint *)(iVar6 + 0xc));
@@ -66,7 +66,7 @@ LAB_005d01c2:
       }
       do {
         local_6 = cVar4;
-        iVar6 = *(int *)(pSVar3 + 0x1f84);
+        iVar6 = pSVar3->field_1F84;
         bVar2 = false;
         uVar11 = 0;
         local_5 = '\0';
@@ -86,13 +86,13 @@ LAB_005d021c:
                   if (*(byte **)(pcVar7 + 0x50) != (byte *)0x0) {
                     FUN_006ae110(*(byte **)(pcVar7 + 0x50));
                   }
-                  FUN_006b0c70(*(int *)(pSVar3 + 0x1f84),uVar11);
+                  FUN_006b0c70(pSVar3->field_1F84,uVar11);
                   bVar2 = true;
                   goto LAB_005d0277;
                 }
               }
-              else if (((pcVar7[4] == '\x02') && (pSVar3[0x1e26] != (SettMapMTy)0xc)) &&
-                      (pSVar3[0x1e26] != (SettMapMTy)0x10)) {
+              else if (((pcVar7[4] == '\x02') && (pSVar3->field_0x1e26 != '\f')) &&
+                      (pSVar3->field_0x1e26 != '\x10')) {
                 local_6 = '\0';
               }
               else {
@@ -107,7 +107,7 @@ LAB_005d024d:
 LAB_005d0277:
         cVar4 = local_6;
       } while (bVar2);
-      if ((pSVar3[0x1e26] == (SettMapMTy)0xc) || (pSVar3[0x1e26] == (SettMapMTy)0x10)) {
+      if ((pSVar3->field_0x1e26 == '\f') || (pSVar3->field_0x1e26 == '\x10')) {
         bVar2 = false;
       }
       else {
@@ -117,7 +117,7 @@ LAB_005d0277:
         do {
           uVar11 = 1;
           local_5 = '\0';
-          iVar6 = *(int *)(local_c + 0x1f84);
+          iVar6 = local_c->field_1F84;
           uVar10 = *(uint *)(iVar6 + 0xc);
           if (1 < uVar10) {
             if (uVar10 < 2) {
@@ -145,8 +145,8 @@ LAB_005d02c3:
           }
         } while (local_5 != '\0');
       }
-      if ((local_c[0x1e26] != (SettMapMTy)0xc) && (local_c[0x1e26] != (SettMapMTy)0x10)) {
-        iVar6 = *(int *)(local_c + 0x1f84);
+      if ((local_c->field_0x1e26 != '\f') && (local_c->field_0x1e26 != '\x10')) {
+        iVar6 = local_c->field_1F84;
         uVar10 = *(uint *)(iVar6 + 0xc);
         if (uVar10 != 0) {
           if (uVar10 - 1 < uVar10) {
@@ -164,7 +164,7 @@ LAB_005d02c3:
       do {
         uVar11 = 1;
         local_5 = '\0';
-        iVar6 = *(int *)(local_c + 0x1f84);
+        iVar6 = local_c->field_1F84;
         uVar10 = *(uint *)(iVar6 + 0xc);
         if (1 < uVar10) {
           if (uVar10 < 2) {
@@ -185,7 +185,7 @@ LAB_005d0391:
               if (*(byte **)(pcVar8 + 0x50) != (byte *)0x0) {
                 FUN_006ae110(*(byte **)(pcVar8 + 0x50));
               }
-              FUN_006b0c70(*(int *)(local_c + 0x1f84),uVar11 - 1);
+              FUN_006b0c70(local_c->field_1F84,uVar11 - 1);
               local_5 = '\x01';
               break;
             }
@@ -195,7 +195,7 @@ LAB_005d0391:
       } while (local_5 != '\0');
       local_5 = '\0';
       local_10 = 0;
-      local_18 = *(int *)(local_c + 0x1f84);
+      local_18 = local_c->field_1F84;
       uVar10 = *(uint *)(local_18 + 0xc);
       if (uVar10 != 0) {
         do {
@@ -228,14 +228,14 @@ LAB_005d045a:
                 }
                 pcVar7[1] = '\0';
                 *pcVar7 = '\x01';
-                FUN_006b0c70(*(int *)(local_c + 0x1f84),local_14);
+                FUN_006b0c70(local_c->field_1F84,local_14);
                 local_5 = '\x01';
               }
             }
 LAB_005d048e:
             if ((local_5 == '\0') && (local_6 != '\0')) {
               while( true ) {
-                iVar6 = *(int *)(local_c + 0x1f84);
+                iVar6 = local_c->field_1F84;
                 uVar10 = local_10 + 1;
                 if (uVar10 < *(uint *)(iVar6 + 0xc)) {
                   pcVar7 = (char *)(*(int *)(iVar6 + 8) * uVar10 + *(int *)(iVar6 + 0x1c));
@@ -247,12 +247,12 @@ LAB_005d048e:
                 if (*(byte **)(pcVar7 + 0x50) != (byte *)0x0) {
                   FUN_006ae110(*(byte **)(pcVar7 + 0x50));
                 }
-                FUN_006b0c70(*(int *)(local_c + 0x1f84),uVar10);
+                FUN_006b0c70(local_c->field_1F84,uVar10);
               }
             }
           }
           local_10 = local_10 + 1;
-          local_18 = *(int *)(local_c + 0x1f84);
+          local_18 = local_c->field_1F84;
           uVar10 = *(uint *)(local_18 + 0xc);
         } while (local_10 < uVar10);
       }

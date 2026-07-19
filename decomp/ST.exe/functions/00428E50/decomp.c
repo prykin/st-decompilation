@@ -186,7 +186,7 @@ LAB_00428e95:
             }
             if (bVar16) {
               cLoadingTy::SetState
-                        (DAT_00802a58,1,(int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,
+                        (DAT_00802a58,CASE_1,(int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,
                          (char *)0x0);
             }
           }
@@ -289,7 +289,7 @@ LAB_00429475:
             }
             if (bVar16) {
               cLoadingTy::SetState
-                        (DAT_00802a58,1,(int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,
+                        (DAT_00802a58,CASE_1,(int)(local_a4 + ((int)local_a4 >> 0x1f & 0xfU)) >> 4,
                          (char *)0x0);
             }
           }

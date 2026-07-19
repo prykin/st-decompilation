@@ -504,7 +504,7 @@
 {"address":"007A9012","type":"string","length":10,"value":"\"expmask3\"","referenced_from":[]}
 {"address":"007A9057","type":"string","length":9,"value":"\"expmask3\"","referenced_from":[]}
 {"address":"007A909C","type":"string","length":12,"value":"\"expmask3\"","referenced_from":[]}
-{"address":"007A9D3C","type":"string","length":29,"value":"\"E:\\\\__titans\\\\wlad\\\\To_boat.cpp\"","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage","0045EF00 STBoatC::CmdToObj","0045F400 STBoatC::CheckPBoxCmd","0045FD30 STBoatC::StopMove","004608B0 STBoatC::Defence","004653B0 STBoatC::BackAttack","00465BE0 STBoatC::BackPatrol","00465C60 STBoatC::LoadRC","0046AA50 STBoatC::BackLoadRC","0046B100 STBoatC::Build","0046C980 STBoatC::BackBuild","0046CF20 FUN_0046cf20","0046D450 STBoatC::UnLoadRC","0046EFD0 STBoatC::BackUnLoadRC","0046F5C0 STBoatC::ToDok","004714D0 STBoatC::BackToDok","00471AC0 STBoatC::Guard","004732F0 STBoatC::LoadObj","00474810 STBoatC::BackLoadObj","004749C0 STBoatC::WaitLoad","00475530 STBoatC::BackWaitLoad","004758E0 STBoatC::UnLoadObj","00476120 STBoatC::BackUnLoadObj","004761B0 FUN_004761b0","00476A10 FUN_00476a10","00476CE0 STBoatC::Capture","00478030 STBoatC::BackCapture","00478640 FUN_00478640","00479600 STBoatC::Teleport","0047BF70 STBoatC::BackTeleport","0047C050 STBoatC::Bring","0047CF20 STBoatC::BackBring","0047D080 STBoatC::Annih","0047DA50 STBoatC::BackAnnih","0047DF00 STBoatC::Dismant","0047FAD0 STBoatC::BackDismant","0047FE10 STBoatC::Scout","00482450 STBoatC::GetExplosionInfo","004827F0 STBoatC::ExpIsOver","00482A00 STBoatC::ChangeActivity","00488F30 STBoatC::GetInfo16","004899A0 STBoatC::GetDefenceTarget","0048A670 STBoatC::_SetSpeedFireLife","0048CC80 STBoatC::_AddDefenceShots","0048CEA0 STBoatC::_CheckDefenceShots","0048D130 STBoatC::SetNewMD","0048FAC0 STBoatC::SaveBoatData","004900E0 STBoatC::RestoreBoatData","00491070 STBoatC::ReleaseLoad","00491240 STBoatC::PrepareForLoading","00491600 FUN_00491600","00491720 FUN_00491720","004919C0 STBoatC::GetCellForLoading","00491FB0 STBoatC::ReadyForLoading","00492080 STBoatC::NotReadyForLoading","00492280 STBoatC::CancelLoading","00492390 FUN_00492390","00493340 STBoatC::CheckForReplenisher"]}
+{"address":"007A9D3C","type":"string","length":29,"value":"\"E:\\\\__titans\\\\wlad\\\\To_boat.cpp\"","referenced_from":["0044E980 STBoatC::GetVisualInfo","0044EE30 STBoatC::GetMessage","0045EF00 STBoatC::CmdToObj","0045F400 STBoatC::CheckPBoxCmd","0045FD30 STBoatC::StopMove","004608B0 STBoatC::Defence","004653B0 STBoatC::BackAttack","00465BE0 STBoatC::BackPatrol","00465C60 STBoatC::LoadRC","0046AA50 STBoatC::BackLoadRC","0046B100 STBoatC::Build","0046C980 STBoatC::BackBuild","0046CF20 STBoatC::CreateGame","0046D450 STBoatC::UnLoadRC","0046EFD0 STBoatC::BackUnLoadRC","0046F5C0 STBoatC::ToDok","004714D0 STBoatC::BackToDok","00471AC0 STBoatC::Guard","004732F0 STBoatC::LoadObj","00474810 STBoatC::BackLoadObj","004749C0 STBoatC::WaitLoad","00475530 STBoatC::BackWaitLoad","004758E0 STBoatC::UnLoadObj","00476120 STBoatC::BackUnLoadObj","004761B0 STBoatC::SetMine","00476A10 STBoatC::DCBomb","00476CE0 STBoatC::Capture","00478030 STBoatC::BackCapture","00478640 STBoatC::Recharge","00479600 STBoatC::Teleport","0047BF70 STBoatC::BackTeleport","0047C050 STBoatC::Bring","0047CF20 STBoatC::BackBring","0047D080 STBoatC::Annih","0047DA50 STBoatC::BackAnnih","0047DF00 STBoatC::Dismant","0047FAD0 STBoatC::BackDismant","0047FE10 STBoatC::Scout","00482450 STBoatC::GetExplosionInfo","004827F0 STBoatC::ExpIsOver","00482A00 STBoatC::ChangeActivity","00488F30 STBoatC::GetInfo16","004899A0 STBoatC::GetDefenceTarget","0048A670 STBoatC::_SetSpeedFireLife","0048CC80 STBoatC::_AddDefenceShots","0048CEA0 STBoatC::_CheckDefenceShots","0048D130 STBoatC::SetNewMD","0048FAC0 STBoatC::SaveBoatData","004900E0 STBoatC::RestoreBoatData","00491070 STBoatC::ReleaseLoad","00491240 STBoatC::PrepareForLoading","00491600 FUN_00491600","00491720 FUN_00491720","004919C0 STBoatC::GetCellForLoading","00491FB0 STBoatC::ReadyForLoading","00492080 STBoatC::NotReadyForLoading","00492280 STBoatC::CancelLoading","00492390 FUN_00492390","00493340 STBoatC::CheckForReplenisher"]}
 {"address":"007A9D60","type":"string","length":34,"value":"\"STBoatC::GetVisualInfo BODY_LEVEL\"","referenced_from":["0044E980 STBoatC::GetVisualInfo"]}
 {"address":"007A9EAC","type":"string","length":63,"value":"\"STBoatC::GetMessage - Name=%d Player=%d obj_num=%d grp_num=%d\\n\"","referenced_from":["0044EE30 STBoatC::GetMessage"]}
 {"address":"007A9EF8","type":"string","length":56,"value":"\"STBoatC::GetMessage MESS_HITKILL data.lname!=0 ptr=NULL\"","referenced_from":["0044EE30 STBoatC::GetMessage"]}
@@ -561,8 +561,8 @@
 {"address":"007AA784","type":"string","length":32,"value":"\"STBoatC::BackBuild, BUILD_OMOVE\"","referenced_from":["0046C980 STBoatC::BackBuild"]}
 {"address":"007AA7AC","type":"string","length":34,"value":"\"STBoatC::BackBuild, BUILD_PMOVE 2\"","referenced_from":["0046C980 STBoatC::BackBuild"]}
 {"address":"007AA7D4","type":"string","length":32,"value":"\"STBoatC::BackBuild, BUILD_PMOVE\"","referenced_from":["0046C980 STBoatC::BackBuild"]}
-{"address":"007AA7FC","type":"string","length":39,"value":"\"STBoatC::CreateGame, CREATEGAME_MOVE 2\"","referenced_from":["0046CF20 FUN_0046cf20"]}
-{"address":"007AA82C","type":"string","length":36,"value":"\"STBoatC::CreateGame, CREATEGAME_ROT\"","referenced_from":["0046CF20 FUN_0046cf20"]}
+{"address":"007AA7FC","type":"string","length":39,"value":"\"STBoatC::CreateGame, CREATEGAME_MOVE 2\"","referenced_from":["0046CF20 STBoatC::CreateGame"]}
+{"address":"007AA82C","type":"string","length":36,"value":"\"STBoatC::CreateGame, CREATEGAME_ROT\"","referenced_from":["0046CF20 STBoatC::CreateGame"]}
 {"address":"007AA858","type":"string","length":36,"value":"\"STBoatC::UnLoadRC - incorrect entry\"","referenced_from":["0046D450 STBoatC::UnLoadRC"]}
 {"address":"007AA884","type":"string","length":49,"value":"\"STBoatC::UnLoadRC, UNLOADRC_MOVEWAITUNLOAD error\"","referenced_from":["0046D450 STBoatC::UnLoadRC"]}
 {"address":"007AA8C0","type":"string","length":37,"value":"\"STBoatC::UnLoadRC, UNLOADRC_ODEPOT 2\"","referenced_from":["0046D450 STBoatC::UnLoadRC"]}
@@ -612,8 +612,8 @@
 {"address":"007AB080","type":"string","length":31,"value":"\"STBoatC::UnLoadObj RotateCheat\"","referenced_from":["004758E0 STBoatC::UnLoadObj"]}
 {"address":"007AB0A8","type":"string","length":22,"value":"\"STBoatC::UnLoadObj, 5\"","referenced_from":["004758E0 STBoatC::UnLoadObj"]}
 {"address":"007AB0C4","type":"string","length":23,"value":"\"STBoatC::BackUnLoadObj\"","referenced_from":["00476120 STBoatC::BackUnLoadObj"]}
-{"address":"007AB0E0","type":"string","length":37,"value":"\"STBoatC::SetMine, SETMINE_MOVE error\"","referenced_from":["004761B0 FUN_004761b0"]}
-{"address":"007AB10C","type":"string","length":35,"value":"\"STBoatC::DCBomb, DCBOMB_MOVE error\"","referenced_from":["00476A10 FUN_00476a10"]}
+{"address":"007AB0E0","type":"string","length":37,"value":"\"STBoatC::SetMine, SETMINE_MOVE error\"","referenced_from":["004761B0 STBoatC::SetMine"]}
+{"address":"007AB10C","type":"string","length":35,"value":"\"STBoatC::DCBomb, DCBOMB_MOVE error\"","referenced_from":["00476A10 STBoatC::DCBomb"]}
 {"address":"007AB138","type":"string","length":35,"value":"\"STBoatC::Capture - incorrect entry\"","referenced_from":["00476CE0 STBoatC::Capture"]}
 {"address":"007AB164","type":"string","length":40,"value":"\"STBoatC::Capture, CAPTURE_ESCMOVE error\"","referenced_from":["00476CE0 STBoatC::Capture"]}
 {"address":"007AB194","type":"string","length":34,"value":"\"STBoatC::Capture, CAPTURE_OMOVE 2\"","referenced_from":["00476CE0 STBoatC::Capture"]}
@@ -626,8 +626,8 @@
 {"address":"007AB2C0","type":"string","length":36,"value":"\"STBoatC::BackCapture, CAPTURE_OMOVE\"","referenced_from":["00478030 STBoatC::BackCapture"]}
 {"address":"007AB2EC","type":"string","length":38,"value":"\"STBoatC::BackCapture, CAPTURE_PMOVE 2\"","referenced_from":["00478030 STBoatC::BackCapture"]}
 {"address":"007AB31C","type":"string","length":36,"value":"\"STBoatC::BackCapture, CAPTURE_PMOVE\"","referenced_from":["00478030 STBoatC::BackCapture"]}
-{"address":"007AB348","type":"string","length":43,"value":"\"STBoatC::Recharge, RECHARGE_RECHMOVE error\"","referenced_from":["00478640 FUN_00478640"]}
-{"address":"007AB37C","type":"string","length":39,"value":"\"STBoatC::Recharge, RECHARGE_MOVE error\"","referenced_from":["00478640 FUN_00478640"]}
+{"address":"007AB348","type":"string","length":43,"value":"\"STBoatC::Recharge, RECHARGE_RECHMOVE error\"","referenced_from":["00478640 STBoatC::Recharge"]}
+{"address":"007AB37C","type":"string","length":39,"value":"\"STBoatC::Recharge, RECHARGE_MOVE error\"","referenced_from":["00478640 STBoatC::Recharge"]}
 {"address":"007AB3AC","type":"string","length":48,"value":"\"STBoatC::Teleport invalid type of teleportation\"","referenced_from":["00479600 STBoatC::Teleport"]}
 {"address":"007AB3E8","type":"string","length":36,"value":"\"STBoatC::Teleport - incorrect entry\"","referenced_from":["00479600 STBoatC::Teleport"]}
 {"address":"007AB414","type":"string","length":35,"value":"\"STBoatC::Teleport TELEPORT_OMOVE 2\"","referenced_from":["00479600 STBoatC::Teleport"]}
@@ -765,7 +765,7 @@
 {"address":"007AC8D0","type":"string","length":23,"value":"\"TLOBaseTy::SetActivity\"","referenced_from":["004BE500 TLOBaseTy::SetActivity","004D67B0 TLOBaseTy::SetActivity"]}
 {"address":"007AC8EC","type":"string","length":12,"value":"\"%s_cover%1i\"","referenced_from":["004C2950 FUN_004c2950","004C9770 TLOBaseTy::LoadImages","004CA3C0 TLOBaseTy::ReloadLogoPlane"]}
 {"address":"007AC8FC","type":"string","length":9,"value":"\"%s_cover\"","referenced_from":["004C2950 FUN_004c2950","004C9770 TLOBaseTy::LoadImages"]}
-{"address":"007AC908","type":"string","length":6,"value":"\"%s%1i\"","referenced_from":["004C2950 FUN_004c2950","004C9770 TLOBaseTy::LoadImages","004CA3C0 TLOBaseTy::ReloadLogoPlane","004D0310 FUN_004d0310","004D11D0 FUN_004d11d0","004D32C0 FUN_004d32c0","004D55B0 TLOEmbryoTy::GetMessage"]}
+{"address":"007AC908","type":"string","length":6,"value":"\"%s%1i\"","referenced_from":["004C2950 FUN_004c2950","004C9770 TLOBaseTy::LoadImages","004CA3C0 TLOBaseTy::ReloadLogoPlane","004D0310 FUN_004d0310","004D11D0 TLOEmbryoTy::Create","004D32C0 FUN_004d32c0","004D55B0 TLOEmbryoTy::GetMessage"]}
 {"address":"007AC910","type":"string","length":32,"value":"\"E:\\\\__titans\\\\Artem\\\\TLO_bfire.cpp\"","referenced_from":["004C3570 TLOBaseTy::fireProc","004C3C00 TLOBaseTy::fireFindCheckTarget"]}
 {"address":"007AC938","type":"string","length":26,"value":"\"TLOBaseTy::fireProc error\"","referenced_from":["004C3570 TLOBaseTy::fireProc"]}
 {"address":"007AC958","type":"string","length":37,"value":"\"TLOBaseTy::fireFindCheckTarget error\"","referenced_from":["004C3C00 TLOBaseTy::fireFindCheckTarget"]}
@@ -786,12 +786,12 @@
 {"address":"007AD3DC","type":"string","length":14,"value":"\"What's that ?\"","referenced_from":["004C84C0 FUN_004c84c0"]}
 {"address":"007AD3EC","type":"string","length":28,"value":"\"TLOBaseTy::procResult error\"","referenced_from":["004C94B0 TLOBaseTy::procResult"]}
 {"address":"007AD410","type":"string","length":28,"value":"\"TLOBaseTy::LoadImages error\"","referenced_from":["004C9770 TLOBaseTy::LoadImages"]}
-{"address":"007AD434","type":"string","length":9,"value":"\"tlo_emb2\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 FUN_004d11d0","004D32C0 FUN_004d32c0"]}
-{"address":"007AD440","type":"string","length":9,"value":"\"tlo_emb3\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 FUN_004d11d0","004D32C0 FUN_004d32c0"]}
-{"address":"007AD44C","type":"string","length":8,"value":"\"si_emb5\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 FUN_004d11d0"]}
-{"address":"007AD458","type":"string","length":8,"value":"\"si_emb6\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 FUN_004d11d0"]}
-{"address":"007AD464","type":"string","length":9,"value":"\"tlo_emb5\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 FUN_004d11d0"]}
-{"address":"007AD470","type":"string","length":13,"value":"\"tlo_emb5_big\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 FUN_004d11d0"]}
+{"address":"007AD434","type":"string","length":9,"value":"\"tlo_emb2\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 TLOEmbryoTy::Create","004D32C0 FUN_004d32c0"]}
+{"address":"007AD440","type":"string","length":9,"value":"\"tlo_emb3\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 TLOEmbryoTy::Create","004D32C0 FUN_004d32c0"]}
+{"address":"007AD44C","type":"string","length":8,"value":"\"si_emb5\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007AD458","type":"string","length":8,"value":"\"si_emb6\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007AD464","type":"string","length":9,"value":"\"tlo_emb5\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007AD470","type":"string","length":13,"value":"\"tlo_emb5_big\"","referenced_from":["004C9770 TLOBaseTy::LoadImages","004D11D0 TLOEmbryoTy::Create"]}
 {"address":"007AD480","type":"string","length":10,"value":"\"trabo_ani\"","referenced_from":["004C9770 TLOBaseTy::LoadImages"]}
 {"address":"007AD48C","type":"string","length":10,"value":"\"traws_ani\"","referenced_from":["004C9770 TLOBaseTy::LoadImages"]}
 {"address":"007AD498","type":"string","length":16,"value":"\"glsat_ani_cover\"","referenced_from":["004C9770 TLOBaseTy::LoadImages"]}
@@ -804,7 +804,7 @@
 {"address":"007AD564","type":"string","length":10,"value":"\"expl_bbt0\"","referenced_from":["004D32C0 FUN_004d32c0","00791164","0079116C","00791170","00791174","00791184","00791188","0079118C","00791194","0079119C","007911A0","007911A4","007911A8","007911B0","007911B4","007911B8","007911BC","007911C4","007911C8","007911D0","007911DC","007911E0","007911E4","007911E8","007911EC","007911F0","007911F4","00791204","00791210","00791220","00791224","00791228","0079122C","00791230","00791234","00791238","00791248","00791250","00791254","007CEDC0","007CEDC8","007CEDCC","007CEDD0","007CEDD4","007CEDD8","007CEDDC","007CEDE0","007CEDE4"]}
 {"address":"007AD570","type":"string","length":10,"value":"\"expl_bbt1\"","referenced_from":["004D32C0 FUN_004d32c0","00791154","00791158","0079115C","00791160","00791168","00791178","0079117C","00791180","00791190","00791198","007911AC","007911C0","007911CC","007911D4","007911D8","007911F8","007911FC","00791200","00791208","0079120C","00791214","00791218","0079121C","0079123C","00791240","00791244","0079124C","00791258","007CEDC4"]}
 {"address":"007AD57C","type":"string","length":12,"value":"\"tlo_capture\"","referenced_from":["004CC370 FUN_004cc370","00790C28"]}
-{"address":"007AD590","type":"string","length":9,"value":"\"tlo_emb6\"","referenced_from":["004CC370 FUN_004cc370","004D11D0 FUN_004d11d0","00790C20"]}
+{"address":"007AD590","type":"string","length":9,"value":"\"tlo_emb6\"","referenced_from":["004CC370 FUN_004cc370","004D11D0 TLOEmbryoTy::Create","00790C20"]}
 {"address":"007AD59C","type":"string","length":12,"value":"\"tlo_bubbles\"","referenced_from":["004CC370 FUN_004cc370","00790C1C"]}
 {"address":"007BDDC4","type":"string","length":12,"value":"\"tlo_sha_si\"","referenced_from":[]}
 {"address":"007BDDD4","type":"string","length":12,"value":"\"tlo_sha_bo\"","referenced_from":[]}
@@ -1002,13 +1002,13 @@
 {"address":"007BF39C","type":"string","length":31,"value":"\"E:\\\\__titans\\\\Artem\\\\TLO_dock.cpp\"","referenced_from":["004D01F0 FUN_004d01f0","004D0310 FUN_004d0310","004D0970 FUN_004d0970","004D0A80 FUN_004d0a80","004D0B90 TLOFakeTy::GetMessage"]}
 {"address":"007BF3C4","type":"string","length":28,"value":"\"TLOFakeTy::GetMessage error\"","referenced_from":["004D0B90 TLOFakeTy::GetMessage"]}
 {"address":"007BF418","type":"string","length":11,"value":"\"tlo_embws1\"","referenced_from":["007BF3E8"]}
-{"address":"007BF428","type":"string","length":47,"value":"\"Int TLOEmbryoTy::Create(LPtrTy _param) error !\"","referenced_from":["004D11D0 FUN_004d11d0"]}
-{"address":"007BF460","type":"string","length":14,"value":"\"si_emb1_id%1d\"","referenced_from":["004D11D0 FUN_004d11d0"]}
-{"address":"007BF470","type":"string","length":8,"value":"\"si_emb1\"","referenced_from":["004D11D0 FUN_004d11d0"]}
-{"address":"007BF47C","type":"string","length":14,"value":"\"si_emb4_id%1d\"","referenced_from":["004D11D0 FUN_004d11d0"]}
-{"address":"007BF48C","type":"string","length":8,"value":"\"si_emb4\"","referenced_from":["004D11D0 FUN_004d11d0"]}
-{"address":"007BF498","type":"string","length":29,"value":"\"I don't now what I must do !\"","referenced_from":["004D11D0 FUN_004d11d0"]}
-{"address":"007BF4BC","type":"string","length":33,"value":"\"E:\\\\__titans\\\\Artem\\\\TLO_embryo.cpp\"","referenced_from":["004D11D0 FUN_004d11d0","004D32C0 FUN_004d32c0","004D55B0 TLOEmbryoTy::GetMessage","004D67B0 TLOBaseTy::SetActivity"]}
+{"address":"007BF428","type":"string","length":47,"value":"\"Int TLOEmbryoTy::Create(LPtrTy _param) error !\"","referenced_from":["004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007BF460","type":"string","length":14,"value":"\"si_emb1_id%1d\"","referenced_from":["004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007BF470","type":"string","length":8,"value":"\"si_emb1\"","referenced_from":["004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007BF47C","type":"string","length":14,"value":"\"si_emb4_id%1d\"","referenced_from":["004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007BF48C","type":"string","length":8,"value":"\"si_emb4\"","referenced_from":["004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007BF498","type":"string","length":29,"value":"\"I don't now what I must do !\"","referenced_from":["004D11D0 TLOEmbryoTy::Create"]}
+{"address":"007BF4BC","type":"string","length":33,"value":"\"E:\\\\__titans\\\\Artem\\\\TLO_embryo.cpp\"","referenced_from":["004D11D0 TLOEmbryoTy::Create","004D32C0 FUN_004d32c0","004D55B0 TLOEmbryoTy::GetMessage","004D67B0 TLOBaseTy::SetActivity"]}
 {"address":"007BF4E4","type":"string","length":14,"value":"\"si_emb3_id%1d\"","referenced_from":["004D32C0 FUN_004d32c0"]}
 {"address":"007BF4F4","type":"string","length":8,"value":"\"si_emb3\"","referenced_from":["004D32C0 FUN_004d32c0"]}
 {"address":"007BF500","type":"string","length":14,"value":"\"si_emb2_id%1d\"","referenced_from":["004D32C0 FUN_004d32c0"]}

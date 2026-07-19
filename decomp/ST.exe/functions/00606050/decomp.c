@@ -52,7 +52,7 @@ FUN_00606050(void *this,int param_1,int param_2,int param_3,int param_4,uint *pa
   if (param_4 == 0x21) {
     *(int *)((int)this + 0x2b7) = param_7;
   }
-  local_74 = thunk_FUN_00606a50((int)param_5);
+  local_74 = thunk_FUN_00606a50((Global_sub_00606A50_param_1Enum)param_5);
   local_14 = thunk_FUN_00607ee0(param_4,&local_10,&local_78,&local_28,&local_1c,&local_24);
   if (0 < (int)local_24) {
     local_18 = local_24;

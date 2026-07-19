@@ -16,7 +16,7 @@ void __cdecl FUN_00637f40(uint param_1,uint param_2,int param_3)
   else {
     pcVar2 = s_mstarGb_007d1c78;
   }
-  puVar1 = FUN_00709af0(DAT_00806774,0x1d,(byte *)pcVar2,0xffffffff,0,1,0,(undefined4 *)0x0);
+  puVar1 = FUN_00709af0(DAT_00806774,CASE_1D,(byte *)pcVar2,0xffffffff,0,1,0,(undefined4 *)0x0);
   if ((puVar1 != (ushort *)0x0) && (DAT_00807598 != (void *)0x0)) {
     if (uVar4 == 0) {
       uVar4 = *(uint *)((int)puVar1 + 0xd);

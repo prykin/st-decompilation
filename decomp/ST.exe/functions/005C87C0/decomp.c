@@ -29,7 +29,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
       FUN_006b5440(*(int *)(DAT_0081176c + 0x2f0),0,0x14,0x14,*(int *)(DAT_0081176c + 0x2f4),0,0);
       pSVar2 = local_8;
       if ((DAT_0080734b != '\0') &&
-         ((iVar4 = *(int *)(local_8 + 0x1f84), iVar4 != 0 && (0 < *(int *)(iVar4 + 0xc))))) {
+         ((iVar4 = *(int *)&local_8[0x4f].field_0x59, iVar4 != 0 && (0 < *(int *)(iVar4 + 0xc))))) {
         bVar8 = *(int *)(iVar4 + 0xc) != 0;
         uVar7 = 0;
         do {
@@ -71,7 +71,7 @@ void __thiscall SettMapTy::PaintSC(SettMapTy *this)
             }
             FUN_006e8460(*(undefined4 *)(pcVar6 + 0x54),*(undefined4 *)(pcVar6 + 0x58),4,uVar3);
           }
-          iVar4 = *(int *)(pSVar2 + 0x1f84);
+          iVar4 = *(int *)&pSVar2[0x4f].field_0x59;
           uVar7 = uVar7 + 1;
           bVar8 = uVar7 < *(uint *)(iVar4 + 0xc);
         } while ((int)uVar7 < (int)*(uint *)(iVar4 + 0xc));

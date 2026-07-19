@@ -1,4 +1,4 @@
-FUN_0058ba30:
+STSatC::STSatC:
 0058BA30  56                        PUSH ESI
 0058BA31  57                        PUSH EDI
 0058BA32  8B F1                     MOV ESI,ECX

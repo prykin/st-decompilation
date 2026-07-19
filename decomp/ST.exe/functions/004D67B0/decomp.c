@@ -15,7 +15,7 @@ void __thiscall TLOBaseTy::SetActivity(TLOBaseTy *this,int param_1)
   TLOBaseTy *local_8;
   
   local_8 = this;
-  iVar2 = (**(code **)(*(int *)this + 0xf8))();
+  iVar2 = (*this->vtable->slot_F8)();
   pIVar4 = g_currentExceptionFrame;
   if (iVar2 != 0) {
     g_currentExceptionFrame = (InternalExceptionFrame *)&stack0xffffffb4;

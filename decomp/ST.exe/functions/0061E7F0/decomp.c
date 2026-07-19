@@ -216,8 +216,8 @@ LAB_0061eefe:
                 iVar15 = (int)(short)lVar16;
               }
               if (((((DAT_0080874d != -1) && (*(int *)((int)this + 0xf8) != 0)) &&
-                   ((thunk_FUN_00558c00(this,*(undefined4 *)((int)this + 0x10c),iVar15,local_34,
-                                        &local_38,&local_48), -1 < local_20 &&
+                   ((thunk_FUN_00558c00(this,*(Global_sub_00558C00_param_1Enum *)((int)this + 0x10c)
+                                        ,iVar15,local_34,&local_38,&local_48), -1 < local_20 &&
                     ((((local_20 < 5 && (-1 < local_38)) && (local_38 < *(int *)((int)this + 0x30)))
                      && ((iVar15 = local_48 + (&DAT_0079aed0)[local_20], -1 < iVar15 &&
                          (iVar15 < *(int *)((int)this + 0x34))))))))) &&

@@ -21,23 +21,23 @@ void __thiscall BehPanelTy::DoneBehPanel(BehPanelTy *this)
   errorCode = Library::MSVCRT::__setjmp3(local_4c.jumpBuffer,0,unaff_EDI,unaff_ESI);
   pBVar2 = local_8;
   if (errorCode == 0) {
-    if (*(uint *)(local_8 + 0x1be) != 0) {
-      FUN_006e56b0(*(void **)(local_8 + 0xc),*(uint *)(local_8 + 0x1be));
+    if (*(uint *)&local_8[1].field_0x46 != 0) {
+      FUN_006e56b0(*(void **)&local_8->field_0xc,*(uint *)&local_8[1].field_0x46);
     }
-    *(undefined4 *)(pBVar2 + 0x1be) = 0;
-    if (*(uint *)(pBVar2 + 0x1c2) != 0) {
-      FUN_006e56b0(*(void **)(pBVar2 + 0xc),*(uint *)(pBVar2 + 0x1c2));
+    *(undefined4 *)&pBVar2[1].field_0x46 = 0;
+    if (*(uint *)&pBVar2[1].field_0x4a != 0) {
+      FUN_006e56b0(*(void **)&pBVar2->field_0xc,*(uint *)&pBVar2[1].field_0x4a);
     }
-    *(undefined4 *)(pBVar2 + 0x1c2) = 0;
-    if (*(uint *)(pBVar2 + 0x1c6) != 0) {
-      FUN_006e56b0(*(void **)(pBVar2 + 0xc),*(uint *)(pBVar2 + 0x1c6));
+    *(undefined4 *)&pBVar2[1].field_0x4a = 0;
+    if (*(uint *)&pBVar2[1].field_0x4e != 0) {
+      FUN_006e56b0(*(void **)&pBVar2->field_0xc,*(uint *)&pBVar2[1].field_0x4e);
     }
-    *(undefined4 *)(pBVar2 + 0x1c6) = 0;
-    if (*(uint *)(pBVar2 + 0x1ca) != 0) {
-      FUN_006e56b0(*(void **)(pBVar2 + 0xc),*(uint *)(pBVar2 + 0x1ca));
+    *(undefined4 *)&pBVar2[1].field_0x4e = 0;
+    if (*(uint *)&pBVar2[1].field_0x52 != 0) {
+      FUN_006e56b0(*(void **)&pBVar2->field_0xc,*(uint *)&pBVar2[1].field_0x52);
     }
-    *(undefined4 *)(pBVar2 + 0x1ca) = 0;
-    *(undefined4 *)(pBVar2 + 0x2b8) = 0;
+    *(undefined4 *)&pBVar2[1].field_0x52 = 0;
+    *(undefined4 *)&pBVar2[1].field_0x140 = 0;
     DAT_00801678 = 0;
     g_currentExceptionFrame = local_4c.previous;
     return;

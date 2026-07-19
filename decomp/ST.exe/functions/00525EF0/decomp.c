@@ -1,12 +1,16 @@
 
-undefined4 __cdecl FUN_00525ef0(undefined1 param_1,undefined1 param_2)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00525EF0_param_1Enum. Cases:
+   CASE_0=0;CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5 */
+
+undefined4 __cdecl FUN_00525ef0(Global_sub_00525EF0_param_1Enum param_1,undefined1 param_2)
 
 {
   undefined4 uVar1;
   
   uVar1 = 0;
   switch(param_1) {
-  case 1:
+  case CASE_1:
     switch(param_2) {
     case 0:
 switchD_00525f56_caseD_0:
@@ -21,7 +25,7 @@ switchD_00525f56_caseD_0:
       return 0x316e;
     }
     break;
-  case 2:
+  case CASE_2:
     switch(param_2) {
     case 0:
       goto switchD_00525f56_caseD_0;
@@ -37,7 +41,7 @@ switchD_00525f56_caseD_0:
       return 0x3173;
     }
     break;
-  case 3:
+  case CASE_3:
     switch(param_2) {
     case 0:
       return 0x3178;
@@ -49,7 +53,7 @@ switchD_00525f56_caseD_0:
       uVar1 = 10000;
     }
     break;
-  case 4:
+  case CASE_4:
     switch(param_2) {
     case 0:
       return 0x3174;

@@ -11,7 +11,7 @@ void __thiscall SAMPanelTy::DoneSAMPanel(SAMPanelTy *this)
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
-  SAMPanelTy *pSVar5;
+  uint *puVar5;
   void *unaff_EDI;
   InternalExceptionFrame local_4c;
   SAMPanelTy *local_8;
@@ -23,14 +23,14 @@ void __thiscall SAMPanelTy::DoneSAMPanel(SAMPanelTy *this)
   pSVar2 = local_8;
   if (iVar3 == 0) {
     iVar3 = 7;
-    *(undefined4 *)(local_8 + 0x1b1) = 0;
-    pSVar5 = local_8 + 0x1b5;
+    *(undefined4 *)&local_8[1].field_0x39 = 0;
+    puVar5 = (uint *)&local_8[1].field_0x3d;
     do {
-      if (*(uint *)pSVar5 != 0) {
-        FUN_006e56b0(*(void **)(pSVar2 + 0xc),*(uint *)pSVar5);
-        *(uint *)pSVar5 = 0;
+      if (*puVar5 != 0) {
+        FUN_006e56b0(*(void **)&pSVar2->field_0xc,*puVar5);
+        *puVar5 = 0;
       }
-      pSVar5 = pSVar5 + 4;
+      puVar5 = puVar5 + 1;
       iVar3 = iVar3 + -1;
     } while (iVar3 != 0);
     DAT_008016ec = 0;

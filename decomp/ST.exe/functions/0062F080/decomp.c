@@ -1,5 +1,6 @@
 
-undefined4 __thiscall FUN_0062f080(void *this,int param_1,undefined4 param_2,undefined4 param_3)
+undefined4 __thiscall
+FUN_0062f080(void *this,int param_1,undefined4 param_2,STRubbishC_LoadImagSpr_param_4Enum param_3)
 
 {
   int iVar1;

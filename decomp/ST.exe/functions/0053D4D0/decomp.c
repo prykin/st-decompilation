@@ -75,22 +75,22 @@ undefined4 __thiscall SAMPanelTy::GetMessage(SAMPanelTy *this,int param_1)
   }
   else if (0xb50e < uVar1) {
     if (uVar1 < 0xb518) {
-      iVar5 = *(int *)(this_00 + 0x3c);
+      iVar5 = *(int *)&this_00->field_0x3c;
       bVar4 = *(char *)(param_1 + 0x10) - 0xf;
       iVar9 = **(int **)(param_1 + 0x18);
       iVar2 = (*(int **)(param_1 + 0x18))[1];
       _local_10 = CONCAT31(uStack_f,bVar4);
       iVar7 = DAT_00806734;
-      if (*(int *)(this_00 + 0x5c) != 0) {
-        iVar7 = *(int *)(this_00 + 0x44);
+      if (this_00->field_005C != 0) {
+        iVar7 = *(int *)&this_00->field_0x44;
       }
-      pbVar8 = (byte *)FUN_0070b3a0(*(int *)(this_00 + 0x1b1),
-                                    (uint)(this_00[bVar4 + 0x1ab] == (SpecPanelTy)0x0));
-      thunk_FUN_00540760(*(undefined4 **)(this_00 + 0x68),iVar9 - iVar5,iVar2 - iVar7,'\x01',pbVar8)
-      ;
+      pbVar8 = (byte *)FUN_0070b3a0(*(int *)&this_00[1].field_0x2c,
+                                    (uint)((&this_00[1].field_0x26)[bVar4] == '\0'));
+      thunk_FUN_00540760(*(undefined4 **)&this_00->field_0x68,iVar9 - iVar5,iVar2 - iVar7,'\x01',
+                         pbVar8);
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(this_00 + 0x60),0xffffffff,*(uint *)(this_00 + 0x3c),
-                 *(uint *)(this_00 + 0x44));
+                (DAT_008075a8,*(uint *)&this_00->field_0x60,0xffffffff,*(uint *)&this_00->field_0x3c
+                 ,*(uint *)&this_00->field_0x44);
     }
     else if (uVar1 == 0xb518) {
       iVar5 = *(int *)this_00;

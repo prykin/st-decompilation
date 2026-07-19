@@ -1,4 +1,4 @@
-FUN_006e51c0:
+SystemClassTy::SystemClassTy:
 006E51C0  55                        PUSH EBP
 006E51C1  8B EC                     MOV EBP,ESP
 006E51C3  8B 55 08                  MOV EDX,dword ptr [EBP + 0x8]

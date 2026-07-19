@@ -1,4 +1,4 @@
-FUN_0044e690:
+STBoatC::STBoatC:
 0044E690  56                        PUSH ESI
 0044E691  57                        PUSH EDI
 0044E692  8B F1                     MOV ESI,ECX

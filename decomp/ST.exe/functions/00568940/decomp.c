@@ -1,5 +1,9 @@
 
-void __thiscall FUN_00568940(void *this,undefined1 param_1)
+/* [STSwitchEnumApplier] Switch target param_1 uses
+   /SubmarineTitans/Recovered/Enums/Global_sub_00568940_param_1Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6;CASE_7=7;CASE_8=8;CASE_B=11;CASE_C=12 */
+
+void __thiscall FUN_00568940(void *this,Global_sub_00568940_param_1Enum param_1)
 
 {
   void *this_00;
@@ -17,8 +21,8 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
     this_00 = local_8;
     if (iVar1 == 0) {
       switch(param_1) {
-      case 1:
-      case 8:
+      case CASE_1:
+      case CASE_8:
         iVar1 = 2;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -26,7 +30,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 4);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 2:
+      case CASE_2:
         iVar1 = 4;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -34,7 +38,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 0xb);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 3:
+      case CASE_3:
         iVar1 = 0xb;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -42,7 +46,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 0x12);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 4:
+      case CASE_4:
         iVar1 = 0x12;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -50,7 +54,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 0x15);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 5:
+      case CASE_5:
         iVar1 = 0x15;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -58,7 +62,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 0x1a);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 6:
+      case CASE_6:
         iVar1 = 0x1b;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -66,7 +70,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 0x1e);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 7:
+      case CASE_7:
         iVar1 = 0x1e;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -74,7 +78,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         } while (iVar1 < 0x20);
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 0xb:
+      case CASE_B:
         iVar1 = 0;
         do {
           thunk_FUN_00568bc0(this_00,iVar1);
@@ -84,7 +88,7 @@ void __thiscall FUN_00568940(void *this,undefined1 param_1)
         *(undefined4 *)((int)this_00 + 0xe07) = 0xffffffff;
         g_currentExceptionFrame = local_4c.previous;
         return;
-      case 0xc:
+      case CASE_C:
         thunk_FUN_00568bc0(local_8,0x1a);
       }
       g_currentExceptionFrame = local_4c.previous;

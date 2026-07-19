@@ -1,4 +1,4 @@
-FUN_005861f0:
+STMBombC::STMBombC:
 005861F0  56                        PUSH ESI
 005861F1  57                        PUSH EDI
 005861F2  8B F1                     MOV ESI,ECX

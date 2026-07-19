@@ -6,70 +6,71 @@
 void __thiscall HelpPanelTy::BackBut(HelpPanelTy *this,void *param_1)
 
 {
-  HelpPanelTy HVar1;
+  char cVar1;
   code *pcVar2;
   HelpPanelTy *this_00;
   int iVar3;
   int iVar4;
   undefined4 unaff_ESI;
   void *unaff_EDI;
-  HelpPanelTy *pHVar5;
+  undefined4 *puVar5;
   InternalExceptionFrame local_50;
   HelpPanelTy *local_c;
   undefined4 local_8;
   
-  if (this[0x1a1] != this[0x1a2]) {
+  if (this->field_01A1 != this->field_01A2) {
     local_50.previous = g_currentExceptionFrame;
     g_currentExceptionFrame = &local_50;
     local_c = this;
     iVar3 = Library::MSVCRT::__setjmp3(local_50.jumpBuffer,0,unaff_EDI,unaff_ESI);
     this_00 = local_c;
     if (iVar3 == 0) {
-      if (*(int *)(local_c + 0x178) != 0) {
-        *(undefined4 *)(local_c + 0x28) = 0x4202;
-        *(undefined2 *)(local_c + 0x2c) = 0;
-        *(undefined2 *)(local_c + 0x2e) = 2;
-        *(int *)(local_c + 0x30) = *(int *)(local_c + 0x178);
+      if (*(int *)&local_c->field_0x178 != 0) {
+        local_c->field_0028 = 0x4202;
+        *(undefined2 *)&local_c->field_0x2c = 0;
+        local_c->field_002E = 2;
+        *(int *)&local_c->field_0x30 = *(int *)&local_c->field_0x178;
         if (DAT_00802a30 != (undefined4 *)0x0) {
-          (**(code **)*DAT_00802a30)(local_c + 0x18);
+          (**(code **)*DAT_00802a30)(&local_c->field_0x18);
         }
       }
-      HVar1 = this_00[0x1a2];
-      if (HVar1 != (HelpPanelTy)0x0) {
-        if (HVar1 == (HelpPanelTy)0x6) {
-          TTreeProc(this_00,*(uint *)(this_00 + 0x1ab),'\0');
+      cVar1 = this_00->field_01A2;
+      if (cVar1 != '\0') {
+        if (cVar1 == '\x06') {
+          TTreeProc(this_00,*(uint *)&this_00->field_0x1ab,'\0');
           PutToSHlp(this_00,(int)unaff_EDI);
           g_currentExceptionFrame = local_50.previous;
           return;
         }
-        if (HVar1 != (HelpPanelTy)0xa) {
+        if (cVar1 != '\n') {
           g_currentExceptionFrame = local_50.previous;
           return;
         }
       }
-      this_00[0x1a1] = HVar1;
-      *(undefined4 *)(this_00 + 0x1a3) = local_8;
+      this_00->field_01A1 = cVar1;
+      this_00->field_01A3 = local_8;
       Library::DKW::WGR::FUN_006b55f0
-                (*(undefined4 **)(this_00 + 0x68),0,0x21,0x16,*(int *)(this_00 + 0x1dc),0,0x21,0x16,
-                 0x1b8,0x118);
+                (*(undefined4 **)&this_00->field_0x68,0,0x21,0x16,*(int *)&this_00->field_0x1dc,0,
+                 0x21,0x16,0x1b8,0x118);
       CreateList(this_00);
-      if (this_00[0x1a2] == (HelpPanelTy)0x0) {
-        local_8 = *(undefined4 *)(this_00 + 0x1b7);
+      if (this_00->field_01A2 == '\0') {
+        local_8 = *(undefined4 *)&this_00->field_0x1b7;
       }
       else {
-        local_8 = *(undefined4 *)(this_00 + 0x1bf);
+        local_8 = *(undefined4 *)&this_00->field_0x1bf;
       }
-      if (*(int *)(this_00 + 0x19c) != 0) {
-        pHVar5 = this_00 + 0x18;
+      if (*(int *)&this_00->field_0x19c != 0) {
+        puVar5 = (undefined4 *)&this_00->field_0x18;
         for (iVar3 = 8; iVar3 != 0; iVar3 = iVar3 + -1) {
-          *(undefined4 *)pHVar5 = 0;
-          pHVar5 = pHVar5 + 4;
+          *puVar5 = 0;
+          puVar5 = puVar5 + 1;
         }
-        *(undefined4 *)(this_00 + 0x28) = 0x22;
-        *(short *)(this_00 + 0x2c) = (short)local_8;
-        *(undefined2 *)(this_00 + 0x30) = 1;
-        *(undefined2 *)(this_00 + 0x32) = 1;
-        FUN_006e6080(this_00,2,*(undefined4 *)(this_00 + 0x19c),(undefined4 *)(this_00 + 0x18));
+        this_00->field_0028 = 0x22;
+        *(short *)&this_00->field_0x2c = (short)local_8;
+        *(undefined2 *)&this_00->field_0x30 = 1;
+        *(undefined2 *)&this_00->field_0x32 = 1;
+        FUN_006e6080(this_00,2,*(undefined4 *)&this_00->field_0x19c,
+                     (undefined4 *)&this_00->field_0x18);
       }
       g_currentExceptionFrame = local_50.previous;
       return;

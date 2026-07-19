@@ -6,7 +6,7 @@
 void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,uint param_2)
 
 {
-  STPlaySystemC *pSVar1;
+  undefined1 *puVar1;
   code *pcVar2;
   STPlaySystemC *pSVar3;
   int iVar4;
@@ -40,18 +40,18 @@ void __thiscall STPlaySystemC::AddToRep(STPlaySystemC *this,undefined4 *param_1,
         param_1 = (undefined4 *)((int)param_1 + 1);
         puVar8 = (undefined4 *)((int)puVar8 + 1);
       }
-      pSVar1 = local_c + 0x65;
-      FUN_006b9910((undefined4 *)pSVar1,puVar5);
-      iVar4 = *(int *)(pSVar3 + 0x69);
-      *(uint *)(pSVar3 + 0x69) = iVar4 + 1U;
-      if (0xd2 < iVar4 + 1U) {
-        local_8 = *(int **)pSVar1;
-        iVar4 = FUN_006b98c0((int *)pSVar1,local_8);
+      puVar1 = &local_c->field_0x65;
+      FUN_006b9910((undefined4 *)puVar1,puVar5);
+      uVar7 = *(int *)&pSVar3->field_0x69 + 1;
+      *(uint *)&pSVar3->field_0x69 = uVar7;
+      if (0xd2 < uVar7) {
+        local_8 = *(int **)puVar1;
+        iVar4 = FUN_006b98c0((int *)puVar1,local_8);
         if (iVar4 != 0) {
           if (local_8 != (int *)0x0) {
             FUN_006ab060(&local_8);
           }
-          *(int *)(pSVar3 + 0x69) = *(int *)(pSVar3 + 0x69) + -1;
+          *(int *)&pSVar3->field_0x69 = *(int *)&pSVar3->field_0x69 + -1;
         }
       }
       g_currentExceptionFrame = local_50.previous;

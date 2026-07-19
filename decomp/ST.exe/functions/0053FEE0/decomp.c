@@ -23,12 +23,12 @@ void __thiscall ProdPanelTy::PaintTab(ProdPanelTy *this,int param_1,undefined *p
   
   iVar6 = *(int *)(param_1 + 0x14);
   local_8 = (ushort *)0x0;
-  local_10 = *(int *)(iVar6 + 0xc) - *(int *)(this + 0x3c);
-  if (*(int *)(this + 0x5c) == 0) {
+  local_10 = *(int *)(iVar6 + 0xc) - this->field_003C;
+  if (this->field_005C == 0) {
     local_c = *(int *)(iVar6 + 0x10) - DAT_00806734;
   }
   else {
-    local_c = *(int *)(iVar6 + 0x10) - *(int *)(this + 0x44);
+    local_c = *(int *)(iVar6 + 0x10) - *(int *)&this->field_0x44;
   }
   if (param_2 != (undefined *)0x0) {
     local_58.previous = g_currentExceptionFrame;
@@ -44,19 +44,21 @@ void __thiscall ProdPanelTy::PaintTab(ProdPanelTy *this,int param_1,undefined *p
       local_8 = cMf32::RecGet(DAT_00806790,1,pCVar5,piVar3,iVar7);
       iVar6 = local_c;
       pPVar2 = local_14;
-      thunk_FUN_00540760(*(undefined4 **)(local_14 + 0x68),local_10,local_c,'\x01',(byte *)local_8);
+      thunk_FUN_00540760(*(undefined4 **)&local_14->field_0x68,local_10,local_c,'\x01',
+                         (byte *)local_8);
       cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       if (*(int *)(*(int *)(param_1 + 0x14) + 4) == 3) {
         iVar7 = 1;
         piVar3 = (int *)0x0;
         pCVar5 = thunk_FUN_00571240(s_BUT_MFFRAMES_007c2384,0);
         local_8 = cMf32::RecGet(DAT_00806790,6,pCVar5,piVar3,iVar7);
-        thunk_FUN_00540760(*(undefined4 **)(pPVar2 + 0x68),local_10,iVar6,'\x06',(byte *)local_8);
+        thunk_FUN_00540760(*(undefined4 **)&pPVar2->field_0x68,local_10,iVar6,'\x06',(byte *)local_8
+                          );
         cMf32::RecMemFree(DAT_00806790,(uint *)&local_8);
       }
       Library::DKW::DDX::FUN_006b3640
-                (DAT_008075a8,*(uint *)(pPVar2 + 0x60),0xffffffff,*(uint *)(pPVar2 + 0x3c),
-                 *(uint *)(pPVar2 + 0x44));
+                (DAT_008075a8,*(uint *)&pPVar2->field_0x60,0xffffffff,pPVar2->field_003C,
+                 *(uint *)&pPVar2->field_0x44);
       g_currentExceptionFrame = local_58.previous;
       return;
     }

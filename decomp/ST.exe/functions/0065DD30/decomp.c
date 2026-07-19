@@ -50,7 +50,7 @@ FUN_0065dd30(int param_1,undefined4 param_2,uint param_3,uint param_4,char param
         this = (int *)STAllPlayersC::GetObjPtr
                                 (DAT_007fa174,
                                  CONCAT31((int3)(local_14 >> 8),*(undefined1 *)(param_1 + 0x24)),
-                                 CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),1);
+                                 CONCAT22((short)((uint)puVar3 >> 0x10),*puVar3),CASE_1);
         if ((this == (int *)0x0) || (iVar8 = (**(code **)(*this + 0xf8))(), iVar8 == 0))
         goto LAB_0065df91;
         uVar4 = (**(code **)(*this + 0x2c))();

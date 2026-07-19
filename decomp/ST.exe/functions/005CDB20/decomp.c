@@ -40,8 +40,8 @@ void __thiscall SettMapMTy::AddPlList(SettMapMTy *this,int param_1)
     return;
   }
   if (param_1 == 0) {
-    if (local_c[0x2244] != (SettMapMTy)0x0) {
-      iVar2 = *(int *)(local_c + 0x1f84);
+    if (local_c[1].field_0x127 != '\0') {
+      iVar2 = local_c->field_1F84;
       cVar6 = '\0';
       uVar4 = 0;
       uVar5 = *(uint *)(iVar2 + 0xc);
@@ -111,13 +111,13 @@ LAB_005cdd57:
         FUN_006b6500((int)DAT_00811764,1);
         FUN_00715360(DAT_00811764,1,'(',(char *)local_164,0x114,1,0xffffffff);
         FUN_006b6500((int)DAT_00811764,DAT_0080733c);
-        local_c[0x2244] = (SettMapMTy)0x0;
+        local_c[1].field_0x127 = 0;
       }
     }
   }
   else {
     uVar4 = 0;
-    iVar2 = *(int *)(local_c + 0x1f84);
+    iVar2 = local_c->field_1F84;
     uVar5 = *(uint *)(iVar2 + 0xc);
     if (uVar5 != 0) {
       if (uVar5 == 0) {

@@ -1,10 +1,16 @@
 
 /* Recovered from embedded debug metadata:
    E:\__titans\wlad\to_allpl.cpp
-   STAllPlayersC::GetObjPtr */
+   STAllPlayersC::GetObjPtr
+   
+   [STSwitchEnumApplier] Switch target param_3 uses
+   /SubmarineTitans/Recovered/Enums/STAllPlayersC_GetObjPtr_param_3Enum. Cases:
+   CASE_1=1;CASE_2=2;CASE_3=3;CASE_4=4;CASE_5=5;CASE_6=6 */
 
 uint __thiscall
-STAllPlayersC::GetObjPtr(STAllPlayersC *this,uint param_1,uint param_2,undefined4 param_3)
+STAllPlayersC::GetObjPtr
+          (STAllPlayersC *this,uint param_1,uint param_2,STAllPlayersC_GetObjPtr_param_3Enum param_3
+          )
 
 {
   code *pcVar1;
@@ -12,37 +18,37 @@ STAllPlayersC::GetObjPtr(STAllPlayersC *this,uint param_1,uint param_2,undefined
   uint uVar3;
   
   switch(param_3) {
-  case 1:
+  case CASE_1:
     iVar2 = *(int *)((int)&DAT_007f4e29 + (char)param_1 * 0xa62);
     if (iVar2 == 0) {
       return 0;
     }
     break;
-  case 2:
+  case CASE_2:
     iVar2 = DAT_007fa154;
     if (DAT_007fa154 == 0) {
       return 0;
     }
     break;
-  case 3:
+  case CASE_3:
     iVar2 = DAT_007fa158;
     if (DAT_007fa158 == 0) {
       return 0;
     }
     break;
-  case 4:
+  case CASE_4:
     iVar2 = DAT_007fa15c;
     if (DAT_007fa15c == 0) {
       return 0;
     }
     break;
-  case 5:
+  case CASE_5:
     iVar2 = DAT_007fa160;
     if (DAT_007fa160 == 0) {
       return 0;
     }
     break;
-  case 6:
+  case CASE_6:
     iVar2 = DAT_007fa164;
     if (DAT_007fa164 == 0) {
       return 0;
