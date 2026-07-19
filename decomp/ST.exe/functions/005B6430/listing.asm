@@ -1,4 +1,4 @@
-FUN_005b6430:
+MMObjTy::GetMessage:
 005B6430  55                        PUSH EBP
 005B6431  8B EC                     MOV EBP,ESP
 005B6433  8B 45 08                  MOV EAX,dword ptr [EBP + 0x8]

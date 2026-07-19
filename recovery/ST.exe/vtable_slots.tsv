@@ -442,7 +442,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079ADB8	InterSystemC	2	0x8	0079ADC0	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject	SystemClassTy	SystemClassTy::CreateObject	0	0
 0079ADB8	InterSystemC	3	0xC	0079ADC4	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		FUN_006e5670	0	0
 0079ADB8	InterSystemC	4	0x10	0079ADC8	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		FUN_006e5690	0	0
-0079ADB8	InterSystemC	5	0x14	0079ADCC	00401DCA	thunk_FUN_00542480	00401DCA	thunk_FUN_00542480	false	false	00401DCA	thunk_FUN_00542480	true	00542480	FUN_00542480		FUN_00542480	0	0
+0079ADB8	InterSystemC	5	0x14	0079ADCC	00401DCA	InterSystemC::CreateSystemObjects	00401DCA	InterSystemC::CreateSystemObjects	false	false	00401DCA	InterSystemC::CreateSystemObjects	true	00542480	InterSystemC::CreateSystemObjects	InterSystemC	InterSystemC::CreateSystemObjects	0	0
 0079ADB8	InterSystemC	6	0x18	0079ADD0	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		FUN_006e5950	0	0
 0079ADB8	InterSystemC	7	0x1C	0079ADD4	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life	SystemClassTy	SystemClassTy::Life	0	0
 0079ADB8	InterSystemC	8	0x20	0079ADD8	00402A63	InterSystemC::GetMessage	00402A63	InterSystemC::GetMessage	false	false	00402A63	InterSystemC::GetMessage	true	00542F40	InterSystemC::GetMessage	InterSystemC	InterSystemC::GetMessage	0	0
@@ -1235,7 +1235,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079BE80	STSharkC	70	0x118	0079BF98	004041E2	thunk_FUN_004231c0	004041E2	thunk_FUN_004231c0	false	false	004041E2	thunk_FUN_004231c0	true	004231C0	FUN_004231c0		FUN_004231c0	0	0
 0079BE80	STSharkC	71	0x11C	0079BF9C	00404F66	thunk_FUN_004231e0	00404F66	thunk_FUN_004231e0	false	false	00404F66	thunk_FUN_004231e0	true	004231E0	FUN_004231e0		FUN_004231e0	0	0
 0079BE80	STSharkC	72	0x120	0079BFA0	004045CF	thunk_FUN_00423200	004045CF	thunk_FUN_00423200	false	false	004045CF	thunk_FUN_00423200	true	00423200	FUN_00423200		FUN_00423200	0	0
-0079C008	MMObjTy	0	0x0	0079C008	00401280	thunk_FUN_005b6430	00401280	thunk_FUN_005b6430	false	false	00401280	thunk_FUN_005b6430	true	005B6430	FUN_005b6430		MMObjTy::vfunc_00	0	0
+0079C008	MMObjTy	0	0x0	0079C008	00401280	MMObjTy::GetMessage	00401280	MMObjTy::GetMessage	false	false	00401280	MMObjTy::GetMessage	true	005B6430	MMObjTy::GetMessage	MMObjTy	MMObjTy::GetMessage	0	0
 0079C008	MMObjTy	1	0x4	0079C00C	0040458E	MMObjTy::DoneMMObj	0040458E	MMObjTy::DoneMMObj	false	false	0040458E	MMObjTy::DoneMMObj	true	005B6220	MMObjTy::DoneMMObj	MMObjTy	MMObjTy::DoneMMObj	0	0
 0079C008	MMObjTy	2	0x8	0079C010	00403459	MMObjTy::CloseButtons	00403459	MMObjTy::CloseButtons	false	false	00403459	MMObjTy::CloseButtons	true	005B6480	MMObjTy::CloseButtons	MMObjTy	MMObjTy::CloseButtons	0	0
 0079C0C4	PrividerTy	0	0x0	0079C0C4	00401CC6	PrividerTy::GetMessage	00401CC6	PrividerTy::GetMessage	false	false	00401CC6	PrividerTy::GetMessage	true	005BC5E0	PrividerTy::GetMessage	PrividerTy	PrividerTy::GetMessage	0	0
@@ -1270,7 +1270,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079C1E8	StartSystemTy	2	0x8	0079C1F0	006E5580	SystemClassTy::CreateObject	006E5580	SystemClassTy::CreateObject	false	false	006E5580	SystemClassTy::CreateObject	false	006E5580	SystemClassTy::CreateObject	SystemClassTy	SystemClassTy::CreateObject	0	0
 0079C1E8	StartSystemTy	3	0xC	0079C1F4	006E5670	FUN_006e5670	006E5670	FUN_006e5670	false	false	006E5670	FUN_006e5670	false	006E5670	FUN_006e5670		FUN_006e5670	0	0
 0079C1E8	StartSystemTy	4	0x10	0079C1F8	006E5690	FUN_006e5690	006E5690	FUN_006e5690	false	false	006E5690	FUN_006e5690	false	006E5690	FUN_006e5690		FUN_006e5690	0	0
-0079C1E8	StartSystemTy	5	0x14	0079C1FC	00402171	thunk_FUN_005dcd90	00402171	thunk_FUN_005dcd90	false	false	00402171	thunk_FUN_005dcd90	true	005DCD90	FUN_005dcd90		FUN_005dcd90	0	0
+0079C1E8	StartSystemTy	5	0x14	0079C1FC	00402171	StartSystemTy::CreateSystemObjects	00402171	StartSystemTy::CreateSystemObjects	false	false	00402171	StartSystemTy::CreateSystemObjects	true	005DCD90	StartSystemTy::CreateSystemObjects	StartSystemTy	StartSystemTy::CreateSystemObjects	0	0
 0079C1E8	StartSystemTy	6	0x18	0079C200	006E5950	FUN_006e5950	006E5950	FUN_006e5950	false	false	006E5950	FUN_006e5950	false	006E5950	FUN_006e5950		FUN_006e5950	0	0
 0079C1E8	StartSystemTy	7	0x1C	0079C204	006E5D90	SystemClassTy::Life	006E5D90	SystemClassTy::Life	false	false	006E5D90	SystemClassTy::Life	false	006E5D90	SystemClassTy::Life	SystemClassTy	SystemClassTy::Life	0	0
 0079C1E8	StartSystemTy	8	0x20	0079C208	004046CE	StartSystemTy::GetMessage	004046CE	StartSystemTy::GetMessage	false	false	004046CE	StartSystemTy::GetMessage	true	005DCE90	StartSystemTy::GetMessage	StartSystemTy	StartSystemTy::GetMessage	0	0
@@ -2515,7 +2515,7 @@ table_address	owner	slot_index	slot_offset	pointer_address	raw_target_address	ra
 0079E188	SystemClassTy	8	0x20	0079E1A8	006E5F00	SystemClassTy::GetMessage	006E5F00	SystemClassTy::GetMessage	false	false	006E5F00	SystemClassTy::GetMessage	false	006E5F00	SystemClassTy::GetMessage	SystemClassTy	SystemClassTy::GetMessage	0	0
 0079E1B4	SystemWithNamedObjClassTy	0	0x0	0079E1B4	006E51F0	SystemClassTy::InitSystem	006E51F0	SystemClassTy::InitSystem	false	false	006E51F0	SystemClassTy::InitSystem	false	006E51F0	SystemClassTy::InitSystem	SystemClassTy	SystemClassTy::InitSystem	0	0
 0079E1B4	SystemWithNamedObjClassTy	1	0x4	0079E1B8	006E52D0	FUN_006e52d0	006E52D0	FUN_006e52d0	false	false	006E52D0	FUN_006e52d0	false	006E52D0	FUN_006e52d0		FUN_006e52d0	0	0
-0079E1B4	SystemWithNamedObjClassTy	2	0x8	0079E1BC	006E6170	FUN_006e6170	006E6170	FUN_006e6170	false	false	006E6170	FUN_006e6170	false	006E6170	FUN_006e6170		FUN_006e6170	0	0
+0079E1B4	SystemWithNamedObjClassTy	2	0x8	0079E1BC	006E6170	SystemWithNamedObjClassTy::CreateObject	006E6170	SystemWithNamedObjClassTy::CreateObject	false	false	006E6170	SystemWithNamedObjClassTy::CreateObject	false	006E6170	SystemWithNamedObjClassTy::CreateObject	SystemWithNamedObjClassTy	SystemWithNamedObjClassTy::CreateObject	0	0
 0079E1B4	SystemWithNamedObjClassTy	3	0xC	0079E1C0	006E6150	FUN_006e6150	006E6150	FUN_006e6150	false	false	006E6150	FUN_006e6150	false	006E6150	FUN_006e6150		FUN_006e6150	0	0
 0079E1B4	SystemWithNamedObjClassTy	4	0x10	0079E1C4	006E6130	FUN_006e6130	006E6130	FUN_006e6130	false	false	006E6130	FUN_006e6130	false	006E6130	FUN_006e6130		FUN_006e6130	0	0
 0079E1B4	SystemWithNamedObjClassTy	5	0x14	0079E1C8	00734210	Library::MSVCRT::FUN_00734210	00734210	Library::MSVCRT::FUN_00734210	false	false	00734210	Library::MSVCRT::FUN_00734210	false	00734210	Library::MSVCRT::FUN_00734210		Library::MSVCRT::FUN_00734210	0	0

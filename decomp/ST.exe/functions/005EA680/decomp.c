@@ -264,7 +264,7 @@ LAB_005eab28:
                (undefined4 *)(this_01 + 0x1d));
 LAB_005eab6a:
   g_currentExceptionFrame = local_50.previous;
-  uVar4 = thunk_FUN_005b6430();
+  uVar4 = MMObjTy::GetMessage((MMObjTy *)this_01,param_1);
   return uVar4;
 }
 
