@@ -118,7 +118,7 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
             }
             (**(code **)*DAT_008117bc)(local_38);
           }
-          thunk_FUN_00652810(this_00 + 0x1c,param_1);
+          AiEventClassTy::GetMessage((AiEventClassTy *)(this_00 + 0x1c),(STMessage *)param_1);
           if (*(int *)(this_00 + 0x658) == 0) {
             *(undefined4 *)(this_00 + 0x658) = 1;
             thunk_FUN_0067a2d0(this_00);
@@ -292,10 +292,10 @@ undefined4 __thiscall AiPlrClassTy::GetMessage(AiPlrClassTy *this,int param_1)
     case 0x5dea:
     case 0x5deb:
     case 0x5dec:
-      thunk_FUN_00652810(local_10 + 0x1c,param_1);
+      AiEventClassTy::GetMessage((AiEventClassTy *)(local_10 + 0x1c),(STMessage *)param_1);
       break;
     case 0x5dd5:
-      thunk_FUN_00652810(local_10 + 0x1c,param_1);
+      AiEventClassTy::GetMessage((AiEventClassTy *)(local_10 + 0x1c),(STMessage *)param_1);
       if (*(int *)(this_00 + 0x645) + 10U <= *(uint *)(this_00 + 0x6fe)) {
         *(uint *)(this_00 + 0x645) = *(uint *)(this_00 + 0x6fe);
         thunk_FUN_006799b0(this_00,CONCAT22(extraout_var_00,*(undefined2 *)(param_1 + 0x18)));

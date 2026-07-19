@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\__titans\wlad\To_boat.cpp:65535
+   E:\__titans\wlad\To_boat.cpp
    STBoatC::LoadObj */
 
 int __thiscall STBoatC::LoadObj(STBoatC *this,int param_1)

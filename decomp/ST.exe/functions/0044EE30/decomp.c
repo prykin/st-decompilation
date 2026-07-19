@@ -194,7 +194,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   STSprGameObjC::GetMessage(local_ec,(int)message);
   SVar9 = message->id;
   if (MESS_ID_ALLCREATE < SVar9) {
-    if (SVar9 < (MESS_HITKILL|MESS_CONTROLCLASSTY_0001)) {
+    if (SVar9 < MESS_SHARED_0129) {
       if (SVar9 != MESS_HITKILL) {
         if (SVar9 == 0x121) {
           if (*(int *)(this_00 + 0x6f7) != 0x23) {
@@ -392,8 +392,8 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       }
       goto LAB_0045ad7b;
     }
-    if (SVar9 != (MESS_HITKILL|MESS_CONTROLCLASSTY_0001)) {
-      if (SVar9 != 0x4405) {
+    if (SVar9 != MESS_SHARED_0129) {
+      if (SVar9 != MESS_STBOATC_4405) {
         g_currentExceptionFrame = local_184.previous;
         return 0;
       }

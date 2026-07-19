@@ -1,4 +1,4 @@
-FUN_00652810:
+AiEventClassTy::GetMessage:
 00652810  55                        PUSH EBP
 00652811  8B EC                     MOV EBP,ESP
 00652813  81 EC 80 04 00 00         SUB ESP,0x480

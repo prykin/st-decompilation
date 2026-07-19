@@ -1,6 +1,6 @@
 
 /* Recovered from embedded debug metadata:
-   E:\Ourlib\Scontrol.cpp:65535
+   E:\Ourlib\Scontrol.cpp
    ControlClassTy::GetMessage */
 
 int __thiscall ControlClassTy::GetMessage(ControlClassTy *this,int *param_1)

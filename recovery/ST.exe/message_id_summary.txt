@@ -1,7 +1,8 @@
 program=ST.exe
 functions_with_MESS_strings=4
-proposals=13
-auto_apply=2
+proposals=236
+auto_apply=202
 synthetic_auto_apply=0
-numeric_ids_in_catalog=100
+numeric_ids_in_catalog=202
+stale_enum_values_for_review=0
 note=Review apply=0 rows; STMessageIdApplier consumes only apply=1.

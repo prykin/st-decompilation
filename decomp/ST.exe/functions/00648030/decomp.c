@@ -56,7 +56,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
       }
     }
     else if (uVar7 == 0) {
-      thunk_FUN_00652810(local_10 + 0x1c,param_1);
+      AiEventClassTy::GetMessage((AiEventClassTy *)(local_10 + 0x1c),(STMessage *)param_1);
     }
     else if (uVar7 == 2) {
       puVar3 = *(undefined4 **)(param_1 + 0x14);
@@ -79,7 +79,7 @@ undefined4 __thiscall AiBossClassTy::GetMessage(AiBossClassTy *this,int param_1)
         if (uVar6 < *(int *)(local_10 + 0x629) + 5U) goto LAB_00648291;
         *(uint *)(local_10 + 0x629) = uVar6;
       }
-      thunk_FUN_00652810(local_10 + 0x1c,param_1);
+      AiEventClassTy::GetMessage((AiEventClassTy *)(local_10 + 0x1c),(STMessage *)param_1);
       if (DAT_007fa174 != 0) {
         cVar9 = '\0';
         pcVar8 = &DAT_008087e9;
