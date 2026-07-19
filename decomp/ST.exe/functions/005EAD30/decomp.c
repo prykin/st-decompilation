@@ -34,7 +34,7 @@ undefined4 * FUN_005ead30(void)
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    *puVar1 = &PTR_thunk_FUN_005b6430_0079c008;
+    *puVar1 = &MMObjTyVTable;
     *(undefined1 *)((int)puVar1 + 0x65) = 2;
     *(undefined1 *)((int)puVar1 + 0x9a) = 0;
     puVar3 = (undefined4 *)((int)puVar1 + 0x66);

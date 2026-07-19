@@ -23,7 +23,7 @@ undefined4 * __thiscall FUN_0056a5f0(void *this,undefined4 param_1)
   *(undefined4 *)((int)this + 0xe37) = 0;
   *(undefined4 *)((int)this + 0xe3f) = 0xffffffff;
   *(undefined4 *)((int)this + 0xe3b) = 0xffffffff;
-  *(undefined ***)this = &PTR_InitApp_0079b0a8;
+  *(STAppCVTable **)this = &STAppCVTable;
   DAT_00806728 = this;
   *(undefined4 *)((int)this + 0x115a) = 0;
   DAT_0080673c = 0;

@@ -1,0 +1,3 @@
+FUN_006d7160:
+006D7160  B8 FF FF 00 80            MOV EAX,0x8000ffff
+006D7165  C2 08 00                  RET 0x8

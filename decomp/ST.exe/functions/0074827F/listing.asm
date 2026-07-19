@@ -1,0 +1,3 @@
+FUN_0074827f:
+0074827F  B8 FF FF 00 80            MOV EAX,0x8000ffff
+00748284  C2 08 00                  RET 0x8

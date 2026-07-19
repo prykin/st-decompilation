@@ -10,9 +10,9 @@ FUN_006d4ff0(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   FUN_006d5cd0((void *)((int)this + 0x294),this,0,param_3);
   *(undefined ***)this = &PTR_FUN_0079db78;
   *(undefined ***)((int)this + 0xc) = &PTR_FUN_0079db3c;
-  *(undefined ***)((int)this + 0x10) = &PTR_LAB_0079db28;
-  *(undefined ***)((int)this + 200) = &PTR_LAB_0079db04;
-  *(undefined ***)((int)this + 0xcc) = &PTR_LAB_0079daf0;
+  *(undefined ***)((int)this + 0x10) = &PTR_FUN_0079db28;
+  *(undefined ***)((int)this + 200) = &PTR_FUN_0079db04;
+  *(undefined ***)((int)this + 0xcc) = &PTR_FUN_0079daf0;
   FUN_0074bb83((undefined4 *)((int)this + 0x240));
   *(undefined4 *)((int)this + 0x28c) = 0;
   *(undefined4 *)((int)this + 0x290) = 0;

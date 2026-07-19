@@ -7,7 +7,7 @@ undefined4 * __fastcall FUN_004d0fc0(undefined4 *param_1)
   
   thunk_FUN_004158e0(param_1);
   thunk_FUN_004ab810((undefined4 *)((int)param_1 + 0x1d5));
-  *param_1 = &PTR_LAB_00798c70;
+  *param_1 = &PTR_GetMessage_00798c70;
   *(undefined4 *)((int)param_1 + 0x1d5) = &PTR_LAB_00798c6c;
   param_1[0xaa] = 0;
   param_1[0xb7] = 0;

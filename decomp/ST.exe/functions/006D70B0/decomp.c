@@ -7,7 +7,7 @@ FUN_006d70b0(void *this,undefined4 param_1,int param_2,undefined4 param_3,undefi
   *(undefined ***)this = &PTR_FUN_0079ddec;
   *(undefined4 *)((int)this + 0xa0) = param_4;
   *(undefined ***)((int)this + 0xc) = &PTR_FUN_0079ddb0;
-  *(undefined ***)((int)this + 0x10) = &PTR_LAB_0079dd9c;
+  *(undefined ***)((int)this + 0x10) = &PTR_FUN_0079dd9c;
   return this;
 }
 

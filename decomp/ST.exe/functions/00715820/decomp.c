@@ -2,7 +2,7 @@
 void __fastcall FUN_00715820(undefined4 *param_1)
 
 {
-  *param_1 = &PTR_SetImages_0079e21c;
+  *param_1 = &SpriteClassTyVTable;
   *(undefined1 *)(param_1 + 0x13) = 0xff;
   *(undefined4 *)((int)param_1 + 0x51) = 0;
   *(undefined4 *)((int)param_1 + 0x55) = 0;

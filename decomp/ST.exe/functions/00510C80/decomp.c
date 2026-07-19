@@ -15,7 +15,7 @@ undefined4 * __fastcall FUN_00510c80(undefined4 *param_1)
   param_1[0x1a] = 0;
   *(undefined2 *)((int)param_1 + 0x172) = 2;
   param_1[0x5e] = 0;
-  *param_1 = &PTR_LAB_0079ac48;
+  *param_1 = &HelpPanelTyVTable;
   param_1[0x10] = 500;
   param_1[0x12] = 400;
   *(undefined1 *)(param_1 + 0x68) = 0;

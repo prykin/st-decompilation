@@ -12,7 +12,7 @@ undefined4 * __thiscall FUN_005da610(void *this,undefined4 param_1)
   FUN_00715820((undefined4 *)((int)this + 0x4af));
   FUN_00715820((undefined4 *)((int)this + 0x55c));
   FUN_00715820((undefined4 *)((int)this + 0x5ed));
-  *(undefined ***)this = &PTR_LAB_0079c1e8;
+  *(StartSystemTyVTable **)this = &StartSystemTyVTable;
   DAT_0081176c = this;
   *(undefined4 *)((int)this + 0x28) = DAT_00807332;
   *(undefined1 *)((int)this + 0x2ea) = 1;

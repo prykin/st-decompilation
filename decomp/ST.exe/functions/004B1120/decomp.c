@@ -29,7 +29,7 @@ FUN_004b1120(int param_1,int param_2,int *param_3,int *param_4,int *param_5,int 
   local_10 = thunk_FUN_004ae0b0(*param_3,*param_4,*param_5,param_2,param_1,(undefined4 *)0x0,
                                 (int *)0x0,(int *)0x0,0,piVar4);
   if (local_10 == 0) {
-    if ((&PTR_LAB_0079072c)[param_2] == (undefined *)0x1) {
+    if ((&STGroupBoatCVTable.vfunc_04)[param_2] == (void *)0x1) {
       param_7 = 0;
       param_1 = 0;
       param_6 = 0;
