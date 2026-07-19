@@ -5,7 +5,7 @@ void FUN_0055bcb0(void)
 
 {
   CFsgsConnection::CFsgsConnection((CFsgsConnection *)&DAT_00802a90);
-  _DAT_00802a90 = &PTR_LAB_0079aefc;
+  _DAT_00802a90 = &CFsgsConnectionVTable;
   DAT_00802a98 = 0;
   DAT_00802a99 = 0;
   DAT_00802a9a = 0;

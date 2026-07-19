@@ -1,0 +1,15 @@
+program=ST.exe
+candidate_tables=131
+candidate_slots=3077
+interior_code_slots=0
+auto_create_function_targets=0
+high_auto_apply=31
+medium=88
+low=12
+owner_conflicts=13
+minimum_slots=3
+note=Analyzer is read-only. Table apply is conservative; rename_apply is always 0.
+note_apply=create_apply=1 creates only missing function boundaries; it never renames them.
+note_rename=Set rename_apply=1 only after reviewing proposed_function.
+note_interior=interior_target=true usually denotes an adjustor thunk or a missing function boundary.
+note_relations=Related layouts help distinguish inherited base slots from the actual table owner.

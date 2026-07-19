@@ -1,0 +1,3 @@
+FUN_006d7430:
+006D7430  83 6C 24 04 04            SUB dword ptr [ESP + 0x4],0x4
+006D7435  E9 56 E3 FF FF            JMP 0x006d5790

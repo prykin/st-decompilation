@@ -8,7 +8,7 @@ undefined4 * __fastcall FUN_006788b0(undefined4 *param_1)
   FUN_006e60e0(param_1);
   thunk_FUN_0064cc90(param_1 + 7);
   *param_1 = &PTR_LAB_0079d714;
-  param_1[7] = &PTR_LAB_0079d6d4;
+  param_1[7] = &PTR_thunk_FUN_00647b60_0079d6d4;
   if (param_1 == (undefined4 *)0x0) {
     puVar2 = (undefined4 *)0x0;
   }

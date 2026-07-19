@@ -22,7 +22,7 @@ FUN_0074fc49(void *this,int *param_1,int *param_2,uint *param_3,int param_4,unde
   *(undefined4 *)((int)this + 0x48) = 0;
   *(undefined4 *)((int)this + 0x4c) = 0x80004004;
   *(undefined ***)this = &PTR_FUN_007a1d88;
-  *(undefined ***)((int)this + 0xc) = &PTR_LAB_007a1d68;
+  *(undefined ***)((int)this + 0xc) = &PTR_FUN_007a1d68;
   lVar2 = Library::MSVCRT::__ftol();
   *(longlong *)((int)this + 0x18) = lVar2;
   uVar1 = (**(code **)**(undefined4 **)((int)this + 0x14))

@@ -10,8 +10,8 @@ FUN_0074eef3(void *this,undefined4 param_1,int param_2,undefined4 *param_3,int p
   *(undefined4 *)((int)this + 0x40) = 0;
   *(undefined4 *)((int)this + 0x3c) = 0;
   *(undefined4 *)((int)this + 0x44) = 0;
-  *(undefined ***)this = &PTR_LAB_007a1d10;
-  *(undefined ***)((int)this + 4) = &PTR_LAB_007a1cc8;
+  *(undefined ***)this = &PTR_FUN_007a1d10;
+  *(undefined ***)((int)this + 4) = &PTR_FUN_007a1cc8;
   *(undefined ***)((int)this + 8) = &PTR_FUN_007a1cb8;
   return this;
 }

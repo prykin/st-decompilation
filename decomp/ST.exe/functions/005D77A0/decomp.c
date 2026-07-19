@@ -34,7 +34,7 @@ undefined4 * FUN_005d77a0(void)
       puVar3 = (undefined4 *)((int)puVar3 + 0x1fb);
       local_8 = local_8 + -1;
     } while (local_8 != 0);
-    *puVar1 = &PTR_thunk_FUN_005b6430_0079c008;
+    *puVar1 = &MMObjTyVTable;
     *(undefined1 *)((int)puVar1 + 0x65) = 2;
     *(undefined1 *)((int)puVar1 + 0x9a) = 0;
     puVar3 = (undefined4 *)((int)puVar1 + 0x66);
@@ -121,7 +121,7 @@ undefined4 * FUN_005d77a0(void)
     *(undefined1 *)((int)puVar1 + 0x1f5e) = 1;
     *(undefined1 *)((int)puVar1 + 0x1f5f) = 1;
     *(undefined1 *)(puVar1 + 0x7d7) = 4;
-    *puVar1 = &PTR_LAB_0079c160;
+    *puVar1 = &PTR_GetMessage_0079c160;
     return puVar1;
   }
   return (undefined4 *)0x0;

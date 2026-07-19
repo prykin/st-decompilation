@@ -4,7 +4,7 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
             ,undefined4 param_8,int param_9)
 
 {
-  undefined *puVar1;
+  void *pvVar1;
   code *pcVar2;
   int iVar3;
   undefined4 uVar4;
@@ -45,19 +45,19 @@ FUN_004b0d10(uint param_1,int param_2,int *param_3,int *param_4,int *param_5,int
       return 1;
     }
   }
-  puVar1 = (&PTR_LAB_0079072c)[param_2];
-  if (puVar1 == (undefined *)0x0) {
+  pvVar1 = (&STGroupBoatCVTable.vfunc_04)[param_2];
+  if (pvVar1 == (void *)0x0) {
     uVar4 = thunk_FUN_004af080(param_1,param_2,param_3,param_4,param_5,param_6,param_7,param_8,
                                param_9);
     g_currentExceptionFrame = local_50.previous;
     return uVar4;
   }
-  if (puVar1 == (undefined *)0x1) {
+  if (pvVar1 == (void *)0x1) {
     uVar4 = thunk_FUN_004affa0(param_1,param_2,param_3,param_4,param_5,param_6,param_7);
     g_currentExceptionFrame = local_50.previous;
     return uVar4;
   }
-  if (puVar1 != (undefined *)0x2) {
+  if (pvVar1 != (void *)0x2) {
     g_currentExceptionFrame = local_50.previous;
     return local_c;
   }

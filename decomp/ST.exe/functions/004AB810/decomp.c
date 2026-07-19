@@ -2,7 +2,7 @@
 void __fastcall FUN_004ab810(undefined4 *param_1)
 
 {
-  *param_1 = &PTR_LAB_00790790;
+  *param_1 = &PTR_thunk_FUN_004ad550_00790790;
   param_1[5] = 0;
   param_1[6] = 0xffffffff;
   param_1[8] = 0;

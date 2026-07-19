@@ -1,0 +1,3 @@
+FUN_006d74f0:
+006D74F0  81 6C 24 04 BC 00 00 00   SUB dword ptr [ESP + 0x4],0xbc
+006D74F8  E9 13 DC FF FF            JMP 0x006d5110

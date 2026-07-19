@@ -98,7 +98,7 @@ apply	address	old_name	qualified_name	owner	method	suggested_calling_convention	
 1	0044C130	STAllPlayersC::GetTOBJImage	STAllPlayersC::GetTOBJImage	STAllPlayersC	GetTOBJImage	__thiscall	0044C163: JMP dword ptr [ECX*0x4 + 0x44c4c8]	E:\\__titans\\wlad\\to_allpl.cpp	12878	high	previously_applied_debug_symbol
 1	0044C720	STAllPlayersC::GetScrObjList	STAllPlayersC::GetScrObjList	STAllPlayersC	GetScrObjList	__thiscall	0044C741: MOV dword ptr [0x00858df8],ECX	E:\\__titans\\wlad\\to_allpl.cpp	12974	high	previously_applied_debug_symbol
 1	0044E980	STBoatC::GetVisualInfo	STBoatC::GetVisualInfo	STBoatC	GetVisualInfo	__thiscall	0044E993: MOV dword ptr [EAX],ECX	E:\\__titans\\wlad\\To_boat.cpp	302	high	previously_applied_debug_symbol
-1	0044EE30	STBoatC::GetMessage	STBoatC::GetMessage	STBoatC	GetMessage	__thiscall	0044EE40: MOV dword ptr [EBP + 0xffffff18],ECX	E:\\__titans\\wlad\\To_boat.cpp	4993	high	already_matches_debug_symbol
+1	0044EE30	STBoatC::GetMessage	STBoatC::GetMessage	STBoatC	GetMessage	__thiscall	0044EE40: MOV dword ptr [EBP + 0xffffff18],ECX	E:\\__titans\\wlad\\To_boat.cpp	4993	high	previously_applied_debug_symbol
 1	0045EF00	STBoatC::CmdToObj	STBoatC::CmdToObj	STBoatC	CmdToObj	__thiscall	0045EF0C: MOV EDI,ECX	E:\\__titans\\wlad\\To_boat.cpp	5031	high	previously_applied_debug_symbol
 1	0045F400	STBoatC::CheckPBoxCmd	STBoatC::CheckPBoxCmd	STBoatC	CheckPBoxCmd	__thiscall	0045F417: MOV EDX,dword ptr [ECX + 0x2cc]	E:\\__titans\\wlad\\To_boat.cpp	5092	high	previously_applied_debug_symbol
 1	0045FD30	STBoatC::StopMove	STBoatC::StopMove	STBoatC	StopMove	__thiscall	0045FD33: PUSH ECX	E:\\__titans\\wlad\\To_boat.cpp	5272	high	previously_applied_debug_symbol

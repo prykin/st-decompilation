@@ -141,18 +141,20 @@ LAB_004b04c9:
                 if (bVar16) {
                   *(undefined1 *)((int)puVar10 + iVar14 + (int)local_10) = 4;
                   iVar8 = (**(code **)(*local_c + 0x2c))();
-                  if (((&PTR_LAB_0079072c)[iVar8] == (undefined *)0x2) ||
+                  if (((&STGroupBoatCVTable.vfunc_04)[iVar8] == (void *)0x2) ||
                      ((iVar8 = (**(code **)(*local_c + 0x2c))(), iVar8 == 0x78 &&
-                      ((&PTR_LAB_0079072c)[*(int *)((int)local_c + 0x259)] == (undefined *)0x2)))) {
+                      ((&STGroupBoatCVTable.vfunc_04)[*(int *)((int)local_c + 0x259)] == (void *)0x2
+                      )))) {
                     Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_c);
                   }
                   goto LAB_004b057d;
                 }
               }
               iVar8 = (**(code **)(*local_c + 0x2c))();
-              if (((&PTR_LAB_0079072c)[iVar8] == (undefined *)0x2) ||
+              if (((&STGroupBoatCVTable.vfunc_04)[iVar8] == (void *)0x2) ||
                  ((iVar8 = (**(code **)(*local_c + 0x2c))(), iVar8 == 0x78 &&
-                  ((&PTR_LAB_0079072c)[*(int *)((int)local_c + 0x259)] == (undefined *)0x2)))) {
+                  ((&STGroupBoatCVTable.vfunc_04)[*(int *)((int)local_c + 0x259)] == (void *)0x2))))
+              {
                 *(undefined1 *)((int)puVar10 + iVar14 + (int)local_10) = 6;
                 Library::DKW::TBL::FUN_006ae1c0(local_2c,&local_c);
               }

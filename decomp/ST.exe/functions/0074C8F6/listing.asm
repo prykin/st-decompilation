@@ -1,0 +1,3 @@
+FUN_0074c8f6:
+0074C8F6  83 6C 24 04 04            SUB dword ptr [ESP + 0x4],0x4
+0074C8FB  E9 21 00 00 00            JMP 0x0074c921
