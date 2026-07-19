@@ -396,7 +396,7 @@ LAB_005d97ca:
   FUN_006b35d0(DAT_008075a8,*(uint *)(this_00 + 0x1cb4));
 LAB_005d9ccb:
   g_currentExceptionFrame = local_64.previous;
-  uVar6 = thunk_FUN_005b6430();
+  uVar6 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
   return uVar6;
 }
 

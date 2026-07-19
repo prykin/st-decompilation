@@ -1,0 +1,349 @@
+target_address	status	proposed_name	detail
+004137F0	disabled	STGroupBoatC::vfunc_18	all apply flags are 0
+00415B10	disabled		all apply flags are 0
+004168D0	disabled		all apply flags are 0
+00416DB0	disabled		all apply flags are 0
+00417F30	disabled		all apply flags are 0
+00418990	disabled		all apply flags are 0
+004189B0	disabled		all apply flags are 0
+004189D0	disabled	STGameObjC::MoveStep	all apply flags are 0
+00418CE0	disabled		all apply flags are 0
+00418D00	disabled		all apply flags are 0
+00419A90	disabled		all apply flags are 0
+00419BF0	disabled		all apply flags are 0
+00419DB0	disabled		all apply flags are 0
+00419DD0	disabled		all apply flags are 0
+0041AB60	disabled		all apply flags are 0
+0041AB90	disabled		all apply flags are 0
+0041ABC0	disabled		all apply flags are 0
+0041ABF0	disabled		all apply flags are 0
+0041AC40	disabled		all apply flags are 0
+0041AC90	disabled		all apply flags are 0
+0041ACC0	disabled		all apply flags are 0
+0041ACF0	disabled		all apply flags are 0
+0041AD20	disabled		all apply flags are 0
+0041AD50	disabled		all apply flags are 0
+0041AD80	disabled		all apply flags are 0
+0041ADB0	disabled		all apply flags are 0
+0041ADE0	disabled		all apply flags are 0
+0041AE10	disabled		all apply flags are 0
+0041AE40	disabled		all apply flags are 0
+0041AE80	disabled		all apply flags are 0
+0041AEA0	disabled		all apply flags are 0
+0041AEC0	disabled		all apply flags are 0
+0041C2C0	disabled		all apply flags are 0
+0041C2E0	disabled		all apply flags are 0
+0041C300	disabled		all apply flags are 0
+0041C320	disabled		all apply flags are 0
+0041C340	disabled		all apply flags are 0
+0041C360	disabled		all apply flags are 0
+0041C380	disabled		all apply flags are 0
+0041D5E0	disabled		all apply flags are 0
+0041D600	disabled		all apply flags are 0
+0041D760	disabled		all apply flags are 0
+0041D780	disabled		all apply flags are 0
+0041D7A0	disabled		all apply flags are 0
+0041D7C0	disabled		all apply flags are 0
+0041D7E0	disabled		all apply flags are 0
+0041D800	disabled		all apply flags are 0
+0041D820	disabled		all apply flags are 0
+0041D860	disabled		all apply flags are 0
+0041D8A0	disabled		all apply flags are 0
+0041D8C0	disabled		all apply flags are 0
+0041DA10	disabled		all apply flags are 0
+0041DA30	disabled		all apply flags are 0
+0041DBC0	disabled		all apply flags are 0
+0041DBE0	disabled		all apply flags are 0
+0041DC20	disabled		all apply flags are 0
+0041DD00	disabled		all apply flags are 0
+0041E510	disabled		all apply flags are 0
+0041E530	disabled	STSprGameObjC::GetMessage	all apply flags are 0
+0041F310	disabled		all apply flags are 0
+0041F330	disabled		all apply flags are 0
+0041F350	disabled		all apply flags are 0
+0041F370	disabled		all apply flags are 0
+004210C0	disabled		all apply flags are 0
+00422E20	disabled		all apply flags are 0
+00422FF0	disabled		all apply flags are 0
+00423140	disabled		all apply flags are 0
+00423160	disabled		all apply flags are 0
+00423180	disabled		all apply flags are 0
+004231A0	disabled		all apply flags are 0
+004231C0	disabled		all apply flags are 0
+004231E0	disabled		all apply flags are 0
+00423200	disabled		all apply flags are 0
+0044E960	disabled	STBoatC::vfunc_4	all apply flags are 0
+0044EDC0	disabled	STBoatC::vfunc_C4	all apply flags are 0
+0044EDE0	disabled	STBoatC::vfunc_C8	all apply flags are 0
+0044EE30	disabled	STBoatC::GetMessage	all apply flags are 0
+0045EEE0	disabled	STBoatC::vfunc_2C	all apply flags are 0
+0045F980	disabled	STBoatC::vfunc_1C	all apply flags are 0
+0045FD30	disabled	STBoatC::StopMove	all apply flags are 0
+00480600	disabled	STBoatC::vfunc_D8	all apply flags are 0
+00481560	disabled	STBoatC::vfunc_DC	all apply flags are 0
+00482450	disabled	STBoatC::GetExplosionInfo	all apply flags are 0
+004827F0	disabled	STBoatC::ExpIsOver	all apply flags are 0
+00482A00	disabled	STBoatC::ChangeActivity	all apply flags are 0
+00483880	disabled	STBoatC::vfunc_EC	all apply flags are 0
+004838B0	disabled	STBoatC::vfunc_F8	all apply flags are 0
+004845E0	disabled	STBoatC::vfunc_28	all apply flags are 0
+00486A40	disabled	STBoatC::vfunc_78	all apply flags are 0
+00486A60	disabled	STBoatC::vfunc_7C	all apply flags are 0
+00486AA0	disabled	STBoatC::vfunc_84	all apply flags are 0
+00486AF0	disabled	STBoatC::vfunc_80	all apply flags are 0
+00486B60	disabled	STBoatC::vfunc_30	all apply flags are 0
+00486E20	disabled	STBoatC::vfunc_34	all apply flags are 0
+00488890	disabled	STBoatC::vfunc_40	all apply flags are 0
+00488D10	disabled	STBoatC::vfunc_4C	all apply flags are 0
+00488EE0	disabled	STBoatC::vfunc_58	all apply flags are 0
+00488F30	disabled	STBoatC::GetInfo16	all apply flags are 0
+004898C0	disabled	STBoatC::vfunc_68	all apply flags are 0
+0048D110	disabled	STBoatC::vfunc_FC	all apply flags are 0
+00490B30	disabled	STBoatC::vfunc_8C	all apply flags are 0
+00490E70	disabled	STBoatC::vfunc_6C	all apply flags are 0
+00490E90	disabled	STBoatC::vfunc_74	all apply flags are 0
+00490ED0	disabled	STBoatC::vfunc_70	all apply flags are 0
+00490F60	disabled	STBoatC::vfunc_9C	all apply flags are 0
+00491070	disabled	STBoatC::ReleaseLoad	all apply flags are 0
+00491180	disabled	STBoatC::vfunc_A4	all apply flags are 0
+004911B0	disabled	STBoatC::vfunc_A8	all apply flags are 0
+00491200	disabled	STBoatC::vfunc_AC	all apply flags are 0
+00491240	disabled	STBoatC::PrepareForLoading	all apply flags are 0
+00491600	disabled	STBoatC::vfunc_B4	all apply flags are 0
+00491720	disabled	STBoatC::vfunc_B8	all apply flags are 0
+00491930	disabled	STBoatC::vfunc_BC	all apply flags are 0
+00491980	disabled	STBoatC::vfunc_C0	all apply flags are 0
+00493050	disabled	STBoatC::vfunc_114	all apply flags are 0
+00493110	disabled	STBoatC::vfunc_118	all apply flags are 0
+00493250	disabled	STBoatC::vfunc_11C	all apply flags are 0
+00493CA0	disabled	STBoatC::vfunc_C	all apply flags are 0
+00494870	disabled	STBoatC::vfunc_F4	all apply flags are 0
+00494DF0	disabled	STBoatC::vfunc_94	all apply flags are 0
+00494F00	disabled	STBoatC::vfunc_98	all apply flags are 0
+004952C0	disabled	STBoatC::vfunc_120	all apply flags are 0
+00497E00	disabled	STGroupBoatC::GetMessage	all apply flags are 0
+00498D20	disabled	STGroupBoatC::vfunc_8	all apply flags are 0
+004996F0	disabled	STGroupBoatC::vfunc_1C	all apply flags are 0
+00499710	disabled	STGroupBoatC::vfunc_20	all apply flags are 0
+00499730	disabled	STGroupBoatC::vfunc_24	all apply flags are 0
+004A0EC0	disabled	STGroupBoatC::vfunc_C	all apply flags are 0
+004A0EE0	disabled	STGroupBoatC::vfunc_4	all apply flags are 0
+004A4240	disabled	STGroupBoatC::ChangeMDNotify	all apply flags are 0
+004A4D60	disabled	STGroupBoatC::ChangeMDNotify	all apply flags are 0
+004B9FA0	disabled	TLOBaseTy::GetMessage	all apply flags are 0
+004BE0F0	disabled	TLOBaseTy::vfunc_2C	all apply flags are 0
+004BE110	disabled	TLOBaseTy::vfunc_C	all apply flags are 0
+004BE140	disabled	TLOBaseTy::vfunc_F8	all apply flags are 0
+004BE160	disabled	TLOBaseTy::vfunc_C4	all apply flags are 0
+004BE180	disabled	TLOBaseTy::vfunc_C8	all apply flags are 0
+004BE1A0	disabled	TLOBaseTy::vfunc_EC	all apply flags are 0
+004BE1D0	disabled	TLOBaseTy::vfunc_F0	all apply flags are 0
+004BE200	disabled	TLOBaseTy::vfunc_F4	all apply flags are 0
+004BE220	disabled	TLOBaseTy::vfunc_6C	all apply flags are 0
+004BE240	disabled	TLOBaseTy::vfunc_74	all apply flags are 0
+004BE290	disabled	TLOBaseTy::vfunc_70	all apply flags are 0
+004BE320	disabled	TLOBaseTy::vfunc_88	all apply flags are 0
+004BE380	disabled	TLOBaseTy::vfunc_7C	all apply flags are 0
+004BE3D0	disabled	TLOBaseTy::vfunc_84	all apply flags are 0
+004BE450	disabled	TLOBaseTy::vfunc_78	all apply flags are 0
+004BE470	disabled	TLOBaseTy::vfunc_80	all apply flags are 0
+004BE500	disabled	TLOBaseTy::SetActivity	all apply flags are 0
+004BE6C0	disabled	TLOBaseTy::vfunc_30	all apply flags are 0
+004BEA70	disabled	TLOBaseTy::vfunc_34	all apply flags are 0
+004C21A0	disabled	TLOBaseTy::vfunc_28	all apply flags are 0
+004C2810	disabled	TLOBaseTy::vfunc_FC	all apply flags are 0
+004C2840	disabled	TLOBaseTy::vfunc_68	all apply flags are 0
+004C28B0	disabled	TLOBaseTy::vfunc_5C	all apply flags are 0
+004C5980	disabled	TLOBaseTy::vfunc_DC	all apply flags are 0
+004C5BD0	disabled	TLOBaseTy::vfunc_E0	all apply flags are 0
+004CC9C0	disabled	TLOBaseTy::vfunc_108	all apply flags are 0
+004CCAD0	disabled	TLOBaseTy::vfunc_10C	all apply flags are 0
+004CCC10	disabled	TLOBaseTy::vfunc_110	all apply flags are 0
+004CE0F0	disabled	TLOBaseTy::vfunc_50	all apply flags are 0
+004CF640	disabled	TLOBaseTy::vfunc_3C	all apply flags are 0
+004D0B90	disabled	TLOFakeTy::GetMessage	all apply flags are 0
+004D0F80	disabled	TLOFakeTy::vfunc_F8	all apply flags are 0
+004D0FA0	disabled	TLOFakeTy::vfunc_EC	all apply flags are 0
+004D7010	disabled		all apply flags are 0
+004D7040	disabled		all apply flags are 0
+004D7390	disabled	TLOBaseTy::vfunc_D0	all apply flags are 0
+004DA340	disabled	TLOBaseTy::vfunc_44	all apply flags are 0
+004E3200	disabled	TLOBaseTy::vfunc_38	all apply flags are 0
+004EB600	disabled	TLOBaseTy::vfunc_48	all apply flags are 0
+00511FA0	disabled	HelpPanelTy::SetPanel	all apply flags are 0
+0051DDD0	disabled	HelpPanelTy::GetMessage	all apply flags are 0
+00538690	disabled	PanelTy::CreateBut	all apply flags are 0
+005389E0	disabled	PanelTy::PaintBut	all apply flags are 0
+00538BA0	disabled	PanelTy::PaintTxtBut	all apply flags are 0
+00538DB0	disabled	PanelTy::PaintIBut	all apply flags are 0
+00538FC0	disabled	PanelTy::PaintLBut	all apply flags are 0
+00542480	applied	InterSystemC::CreateSystemObjects	name=applied(InterSystemC::CreateSystemObjects); convention=applied(__thiscall)
+00542EC0	disabled	InterSystemC::vfunc_4	all apply flags are 0
+00542F40	disabled	InterSystemC::GetMessage	all apply flags are 0
+0054CF00	disabled	STPlaySystemC::vfunc_8	all apply flags are 0
+0054CFA0	disabled	STPlaySystemC::vfunc_14	all apply flags are 0
+0054CFC0	disabled	STPlaySystemC::InitSystem	all apply flags are 0
+0054D180	disabled	STPlaySystemC::DoneSystem	all apply flags are 0
+0054D640	disabled	STPlaySystemC::Life	all apply flags are 0
+0054E4F0	disabled	STPlaySystemC::GetMessage	all apply flags are 0
+0055BD40	disabled	CFsgsConnection::vfunc_58	all apply flags are 0
+0055C0E0	disabled	CFsgsConnection::vfunc_48	all apply flags are 0
+0055C260	disabled	CFsgsConnection::vfunc_C	all apply flags are 0
+0055C290	disabled	CFsgsConnection::vfunc_38	all apply flags are 0
+0055C2E0	disabled	CFsgsConnection::vfunc_3C	all apply flags are 0
+0055C500	disabled	CFsgsConnection::vfunc_10	all apply flags are 0
+0055C550	disabled	CFsgsConnection::vfunc_14	all apply flags are 0
+0055C590	disabled	CFsgsConnection::vfunc_54	all apply flags are 0
+0055C6C0	disabled	CFsgsConnection::vfunc_8	all apply flags are 0
+0055C740	disabled	CFsgsConnection::vfunc_4	all apply flags are 0
+0055C790	disabled	CFsgsConnection::vfunc_30	all apply flags are 0
+0055C7E0	disabled	CFsgsConnection::vfunc_34	all apply flags are 0
+0055C830	disabled	CFsgsConnection::vfunc_0	all apply flags are 0
+0055D440	disabled	CFsgsConnection::vfunc_24	all apply flags are 0
+0055D480	disabled	CFsgsConnection::vfunc_18	all apply flags are 0
+0055D4C0	disabled	CFsgsConnection::vfunc_28	all apply flags are 0
+0055D500	disabled	CFsgsConnection::vfunc_20	all apply flags are 0
+0055D550	disabled	CFsgsConnection::vfunc_2C	all apply flags are 0
+0055D630	disabled	CFsgsConnection::vfunc_44	all apply flags are 0
+0055D670	disabled	CFsgsConnection::vfunc_4C	all apply flags are 0
+0055D6B0	disabled	CFsgsConnection::vfunc_50	all apply flags are 0
+0056A820	disabled		all apply flags are 0
+0056ADC0	disabled	STAppC::InitApp	all apply flags are 0
+0056C750	disabled	STAppC::DoneApp	all apply flags are 0
+0056D1F0	disabled	STAppC::CommonFunction	all apply flags are 0
+0056FA60	disabled	STAppC::GetMessage	all apply flags are 0
+00576AD0	disabled	BaseSystemC::CreateSystemObjects	all apply flags are 0
+00576E10	disabled	GameSystemC::CreateSystemObjects	all apply flags are 0
+00576EF0	disabled	GameSystemC::InitSystem	all apply flags are 0
+005770D0	disabled	GameSystemC::DoneSystem	all apply flags are 0
+00577440	disabled	GameSystemC::vfunc_1C	all apply flags are 0
+005776D0	disabled	GameSystemC::GetMessage	all apply flags are 0
+00578200	disabled	DebugSystemC::CreateSystemObjects	all apply flags are 0
+00578430	disabled	STCrabC::vfunc_DC	all apply flags are 0
+00578520	disabled	STCrabC::vfunc_E0	all apply flags are 0
+00578630	disabled	STCrabC::GetMessage	all apply flags are 0
+0057A2A0	disabled	STCrabC::vfunc_2C	all apply flags are 0
+0057BD70	disabled	STFishC::vfunc_DC	all apply flags are 0
+0057BEE0	disabled	STFishC::vfunc_E0	all apply flags are 0
+0057BF60	disabled	STFishC::GetMessage	all apply flags are 0
+0057DFB0	disabled	STFishC::vfunc_2C	all apply flags are 0
+0057E0A0	disabled	STDcResourcC::GetMessage	all apply flags are 0
+00580700	disabled	STDcResourcC::vfunc_30	all apply flags are 0
+00580780	disabled	STDcResourcC::vfunc_34	all apply flags are 0
+00580860	disabled	STDcResourcC::vfunc_5C	all apply flags are 0
+005808A0	disabled	STDcResourcC::vfunc_58	all apply flags are 0
+005808E0	disabled	STDcResourcC::vfunc_EC	all apply flags are 0
+00580F20	disabled	STDcResourcC::vfunc_11C	all apply flags are 0
+005810B0	disabled	STDcResourcC::vfunc_2C	all apply flags are 0
+00581BF0	disabled	STJellyManC::GetMessage	all apply flags are 0
+005823B0	disabled	STJellyManC::vfunc_2C	all apply flags are 0
+00583270	disabled	STJellyGunC::GetMessage	all apply flags are 0
+00584950	disabled	STJellyGunC::vfunc_2C	all apply flags are 0
+005859A0	disabled	STLBombC::GetMessage	all apply flags are 0
+005861D0	disabled	STLBombC::vfunc_2C	all apply flags are 0
+00588BC0	disabled	STMBombC::GetMessage	all apply flags are 0
+00589970	disabled	STMBombC::vfunc_2C	all apply flags are 0
+00589A20	disabled	STOctopusC::vfunc_DC	all apply flags are 0
+00589B10	disabled	STOctopusC::vfunc_E0	all apply flags are 0
+00589C10	disabled	STOctopusC::GetMessage	all apply flags are 0
+0058BA10	disabled	STOctopusC::vfunc_2C	all apply flags are 0
+0058C760	disabled	STSatC::GetMessage	all apply flags are 0
+0058CFC0	disabled	STSatC::vfunc_2C	all apply flags are 0
+0058D7C0	disabled	STSharkC::GetMessage	all apply flags are 0
+0058E440	disabled	STSharkC::vfunc_DC	all apply flags are 0
+0058E530	disabled	STSharkC::vfunc_E0	all apply flags are 0
+00590150	disabled	STSharkC::vfunc_2C	all apply flags are 0
+005B6220	disabled	MMObjTy::DoneMMObj	all apply flags are 0
+005B6430	applied	MMObjTy::GetMessage	name=applied(MMObjTy::GetMessage); signature=applied(undefined4 __thiscall GetMessage(MMObjTy * this, int param_1))
+005B6480	disabled	MMObjTy::CloseButtons	all apply flags are 0
+005BC5E0	disabled	PrividerTy::GetMessage	all apply flags are 0
+005DCC10	disabled	StartSystemTy::InitSystem	all apply flags are 0
+005DCD90	applied	StartSystemTy::CreateSystemObjects	name=applied(StartSystemTy::CreateSystemObjects); convention=applied(__thiscall)
+005DCDB0	disabled	StartSystemTy::vfunc_4	all apply flags are 0
+005DCE90	disabled	StartSystemTy::GetMessage	all apply flags are 0
+005EE080	disabled	STSprGameObjC::vfunc_DC	all apply flags are 0
+005EE3F0	disabled	STSprGameObjC::vfunc_E0	all apply flags are 0
+005EF430	disabled	STSprGameObjC::vfunc_124	all apply flags are 0
+005EF450	disabled	STSprGameObjC::vfunc_128	all apply flags are 0
+005EF470	disabled	STSprGameObjC::vfunc_144	all apply flags are 0
+005EF9F0	disabled	STSprGameObjC::vfunc_EC	all apply flags are 0
+005EFA10	disabled	STSprGameObjC::vfunc_78	all apply flags are 0
+005EFA30	disabled	STSprGameObjC::vfunc_7C	all apply flags are 0
+005EFA70	disabled	STSprGameObjC::vfunc_9C	all apply flags are 0
+005EFA90	disabled	STSprGameObjC::vfunc_A0	all apply flags are 0
+005EFAC0	disabled	STSprGameObjC::vfunc_A4	all apply flags are 0
+005EFAE0	disabled	STSprGameObjC::vfunc_A8	all apply flags are 0
+005EFB80	disabled	STSprGameObjC::vfunc_AC	all apply flags are 0
+005EFBD0	disabled	STSprGameObjC::vfunc_B0	all apply flags are 0
+005EFC40	disabled	STSprGameObjC::vfunc_B4	all apply flags are 0
+005EFCD0	disabled	STSprGameObjC::vfunc_B8	all apply flags are 0
+005F0030	disabled	STSprGameObjC::vfunc_BC	all apply flags are 0
+005F0050	disabled	STSprGameObjC::vfunc_F8	all apply flags are 0
+005F0090	disabled	STSprGameObjC::vfunc_F0	all apply flags are 0
+005F00B0	disabled	STSprGameObjC::vfunc_30	all apply flags are 0
+005F0150	disabled	STSprGameObjC::vfunc_34	all apply flags are 0
+005F0220	disabled	STSprGameObjC::vfunc_2C	all apply flags are 0
+005F0240	disabled	STSprGameObjC::vfunc_5C	all apply flags are 0
+005F0280	disabled	STSprGameObjC::vfunc_58	all apply flags are 0
+005F0360	disabled	STSprGameObjC::vfunc_12C	all apply flags are 0
+005F0380	disabled	STSprGameObjC::vfunc_C	all apply flags are 0
+005F03D0	disabled	STSprGameObjC::vfunc_130	all apply flags are 0
+005F03F0	disabled	STSprGameObjC::vfunc_134	all apply flags are 0
+005F0410	disabled	STSprGameObjC::vfunc_138	all apply flags are 0
+005F0430	disabled	STSprGameObjC::vfunc_13C	all apply flags are 0
+005F0450	disabled	STSprGameObjC::vfunc_140	all apply flags are 0
+005F0470	disabled	STSprGameObjC::vfunc_114	all apply flags are 0
+005F04B0	disabled	STSprGameObjC::vfunc_118	all apply flags are 0
+005F0E20	disabled	STSprGameObjC::vfunc_28	all apply flags are 0
+005F5F20	disabled	STColl3C::GetMessage	all apply flags are 0
+005F6EC0	disabled	STColl3C::vfunc_78	all apply flags are 0
+005F6EE0	disabled	STColl3C::vfunc_7C	all apply flags are 0
+005FB1F0	disabled	STColl3C::vfunc_DC	all apply flags are 0
+005FB540	disabled	STColl3C::vfunc_E0	all apply flags are 0
+005FB5C0	disabled	STColl3C::vfunc_EC	all apply flags are 0
+005FB5E0	disabled	STColl3C::vfunc_F8	all apply flags are 0
+00601F80	disabled	STDestC::GetMessage	all apply flags are 0
+00602700	disabled	STDestC::vfunc_74	all apply flags are 0
+00602740	disabled	STDestC::vfunc_70	all apply flags are 0
+00602880	disabled	STDestC::vfunc_2C	all apply flags are 0
+006033D0	disabled	STDestC::vfunc_30	all apply flags are 0
+00603470	disabled	STDestC::vfunc_34	all apply flags are 0
+00603740	disabled	STExplosion::GetMessage	all apply flags are 0
+00621B50	disabled	STMineSetC::GetMessage	all apply flags are 0
+00626BC0	disabled	STMineSetC::vfunc_74	all apply flags are 0
+00626C00	disabled	STMineSetC::vfunc_70	all apply flags are 0
+00626C90	disabled	STMineSetC::vfunc_30	all apply flags are 0
+00626D70	disabled	STMineSetC::vfunc_34	all apply flags are 0
+00626E60	disabled	STMineSetC::vfunc_64	all apply flags are 0
+00626EA0	disabled	STMineSetC::vfunc_6C	all apply flags are 0
+00626EC0	disabled	STMineSetC::vfunc_2C	all apply flags are 0
+00626FA0	disabled	STMineSetC::vfunc_EC	all apply flags are 0
+00626FC0	disabled	STMineSetC::vfunc_5C	all apply flags are 0
+00627050	disabled	STMineSetC::vfunc_58	all apply flags are 0
+00627200	disabled	STMineSetC::vfunc_E0	all apply flags are 0
+00627250	disabled	STMineSetC::vfunc_F8	all apply flags are 0
+00627280	disabled	STMineSetC::vfunc_DC	all apply flags are 0
+00627A60	disabled	STMineSetC::vfunc_F0	all apply flags are 0
+00627AA0	disabled	STMineSetC::vfunc_F4	all apply flags are 0
+00627E80	disabled	STMineSetC::vfunc_7C	all apply flags are 0
+0062E740	disabled	STRubbishC::GetMessage	all apply flags are 0
+006E3510	disabled	AppClassTy::InitApp	all apply flags are 0
+006E36E0	disabled	AppClassTy::DoneApp	all apply flags are 0
+006E4FA0	disabled		all apply flags are 0
+006E4FC0	disabled	AppClassTy::RunApp	all apply flags are 0
+006E5150	disabled	AppClassTy::vfunc_18	all apply flags are 0
+006E51F0	disabled	SystemClassTy::InitSystem	all apply flags are 0
+006E52D0	disabled		all apply flags are 0
+006E5580	disabled	SystemClassTy::CreateObject	all apply flags are 0
+006E5670	disabled		all apply flags are 0
+006E5690	disabled		all apply flags are 0
+006E5950	disabled		all apply flags are 0
+006E5D90	disabled	SystemClassTy::Life	all apply flags are 0
+006E5F00	disabled	SystemClassTy::GetMessage	all apply flags are 0
+006E6130	disabled		all apply flags are 0
+006E6150	disabled		all apply flags are 0
+006E6170	applied	SystemWithNamedObjClassTy::CreateObject	name=applied(SystemWithNamedObjClassTy::CreateObject); signature=applied(int __thiscall CreateObject(SystemWithNamedObjClassTy * this, int param_1, undefined4 * param_2, int * param_3, undefined4 param_4, undefined4 param_5))
+006E6330	disabled	SystemWithNamedObjClassTy::SendMessage	all apply flags are 0
+00715C60	disabled	SpriteClassTy::SetImagesReg	all apply flags are 0
+00716040	disabled	SpriteClassTy::SetImages	all apply flags are 0
+00716480	disabled	SpriteClassTy::SetImagesPtr	all apply flags are 0

@@ -1,0 +1,7 @@
+apply	base_owner	derived_owner	base_table	derived_table	confidence	reason
+0	MMObjTy	PrividerTy	0079C008	0079C0C4	medium	derived table reuses 2 named MMObjTy methods; shared_ratio=0.667
+0	SystemClassTy	BaseSystemC	0079E188	0079B1B4	high	derived table reuses 4 named SystemClassTy methods; shared_ratio=0.889
+0	SystemClassTy	DebugSystemC	0079E188	0079B20C	high	derived table reuses 4 named SystemClassTy methods; shared_ratio=0.889
+0	SystemClassTy	InterSystemC	0079E188	0079ADB8	medium	derived table reuses 3 named SystemClassTy methods; shared_ratio=0.667
+0	SystemClassTy	StartSystemTy	0079E188	0079C1E8	medium	derived table reuses 2 named SystemClassTy methods; shared_ratio=0.556
+0	SystemClassTy	SystemWithNamedObjClassTy	0079E188	0079E1B4	medium	derived table reuses 3 named SystemClassTy methods; shared_ratio=0.556

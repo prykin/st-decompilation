@@ -116,7 +116,7 @@ switchD_005b939a_default:
     PaintMMsg(this_00);
   }
   g_currentExceptionFrame = local_4c.previous;
-  uVar3 = thunk_FUN_005b6430();
+  uVar3 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
   return uVar3;
 }
 

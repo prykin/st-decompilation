@@ -34,7 +34,9 @@ import ghidra.program.model.data.DataTypeComponent;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
 import ghidra.program.model.data.DataUtilities;
+import ghidra.program.model.data.FunctionDefinition;
 import ghidra.program.model.data.FunctionDefinitionDataType;
+import ghidra.program.model.data.ParameterDefinition;
 import ghidra.program.model.data.PointerDataType;
 import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
@@ -42,6 +44,7 @@ import ghidra.program.model.data.VoidDataType;
 import ghidra.program.model.listing.CommentType;
 import ghidra.program.model.listing.Data;
 import ghidra.program.model.listing.Function;
+import ghidra.program.model.listing.FunctionTag;
 import ghidra.program.model.listing.GhidraClass;
 import ghidra.program.model.listing.Listing;
 import ghidra.program.model.mem.MemoryAccessException;
@@ -58,8 +61,10 @@ public class STVTableApplier extends GhidraScript {
     private static final CategoryPath VFUNCTIONS =
         new CategoryPath("/SubmarineTitans/Recovered/VTableFunctions");
     private static final String FUNCTION_TAG = "RECOVERED_VTABLE_SLOT";
+    private static final String VIRTUAL_METHOD_TAG = "RECOVERED_VIRTUAL_METHOD";
     private static final String COMMENT_MARKER = "[STVTableApplier]";
     private static final String LAYOUT_HASH_MARKER = "; generated_layout_sha256=";
+    private static final String SIGNATURE_HASH_MARKER = "; generated_signature_sha256=";
 
     private Listing listing;
     private DataTypeManager dataTypes;
@@ -119,13 +124,15 @@ public class STVTableApplier extends GhidraScript {
         Path reportPath = directory.toPath().resolve("vtable_apply_report.tsv");
         writeReport(reportPath);
         long applied = report.stream().filter(row -> row.status.equals("applied")).count();
+        long updated = report.stream().filter(row -> row.status.equals("updated")).count();
         long created = report.stream().filter(row -> row.status.equals("created")).count();
         long same = report.stream().filter(row -> row.status.equals("already_present")).count();
         long skipped = report.stream().filter(row -> row.status.equals("skipped")).count();
         long conflicts = report.stream().filter(row -> row.status.equals("conflict") ||
             row.status.equals("failed")).count();
-        println("VTables applied: " + applied + ", functions created/renamed: " + created +
-            ", already present: " + same + ", skipped: " + skipped +
+        println("VTables applied: " + applied + ", updated types: " + updated +
+            ", functions created/renamed: " + created + ", already present: " + same +
+            ", skipped: " + skipped +
             ", conflicts/failed: " + conflicts);
         println("Apply report: " + reportPath.toAbsolutePath().normalize());
         if (createdFunctions > 0)
@@ -410,8 +417,9 @@ public class STVTableApplier extends GhidraScript {
                         dataTypes.remove(replacedOwnedType);
                     else retainedPriorType = true;
                 }
-                report.add(new ReportRow("table", addressText,
-                    alreadyApplied ? "already_present" : "applied", proposedName,
+                String status = !alreadyApplied ? "applied" :
+                    typeResolution.updated ? "updated" : "already_present";
+                report.add(new ReportRow("table", addressText, status, proposedName,
                     typeResolution.detail + " " + structure.getPathName() + "; " +
                     slotCount + " slots" + (retainedPriorType ?
                     "; retained prior type because its generated baseline is unknown/modified" : "")));
@@ -464,7 +472,7 @@ public class STVTableApplier extends GhidraScript {
         existing.replaceWith(desired);
         existing.setDescription(desired.getDescription());
         return new StructureResolution(existing,
-            "updated unchanged-since-apply generated type", null);
+            "updated unchanged-since-apply generated type", null, true);
     }
 
     private Structure buildStructure(String name, List<Map<String, String>> slots,
@@ -499,9 +507,13 @@ public class STVTableApplier extends GhidraScript {
                 .append(component.getFieldName() == null ? "" : component.getFieldName()).append('|')
                 .append(component.getComment() == null ? "" : component.getComment()).append('\n');
         }
+        return sha256(layout.toString());
+    }
+
+    private String sha256(String text) {
         try {
             byte[] digest = MessageDigest.getInstance("SHA-256")
-                .digest(layout.toString().getBytes(StandardCharsets.UTF_8));
+                .digest(text.getBytes(StandardCharsets.UTF_8));
             StringBuilder result = new StringBuilder();
             for (byte value : digest) result.append(String.format("%02x", value & 0xff));
             return result.toString();
@@ -512,24 +524,105 @@ public class STVTableApplier extends GhidraScript {
     }
 
     private String storedLayoutHash(String description) {
-        int index = description.indexOf(LAYOUT_HASH_MARKER);
+        return storedHash(description, LAYOUT_HASH_MARKER);
+    }
+
+    private String storedHash(String text, String marker) {
+        if (text == null) return null;
+        int index = text.indexOf(marker);
         if (index < 0) return null;
-        String value = description.substring(index + LAYOUT_HASH_MARKER.length()).trim();
+        String value = text.substring(index + marker.length()).trim();
         int end = value.indexOf(';');
         if (end >= 0) value = value.substring(0, end);
         return value.matches("[0-9a-fA-F]{64}") ? value.toLowerCase(Locale.ROOT) : null;
     }
 
     private DataType pointerFor(Function function, Address rawAddress) {
-        if (function == null || function.getSignatureSource() != SourceType.USER_DEFINED)
+        Function signatureFunction = trustedSignatureFunction(function);
+        if (signatureFunction == null)
             return new PointerDataType(VoidDataType.dataType, pointerSize, dataTypes);
-        String name = "vfunc_" + addr(rawAddress) + "_" + sanitize(function.getName());
+
+        String name = "vfunc_" + addr(rawAddress) + "_" +
+            sanitize(signatureFunction.getName());
+        FunctionDefinitionDataType desired = new FunctionDefinitionDataType(VFUNCTIONS, name,
+            signatureFunction.getSignature(), dataTypes);
+        String desiredHash = functionSignatureHash(desired);
+        desired.setComment(generatedSignatureComment(rawAddress, signatureFunction, desiredHash));
+
         DataType existing = dataTypes.getDataType(VFUNCTIONS, name);
-        DataType definition;
-        if (existing != null) definition = existing;
-        else definition = dataTypes.resolve(new FunctionDefinitionDataType(VFUNCTIONS, name,
-            function.getSignature(), dataTypes), DataTypeConflictHandler.KEEP_HANDLER);
+        DataType definition = existing;
+        if (existing == null) {
+            definition = dataTypes.resolve(desired, DataTypeConflictHandler.KEEP_HANDLER);
+        }
+        else if (existing instanceof FunctionDefinition existingDefinition) {
+            updateGeneratedFunctionDefinition(existingDefinition, desired, desiredHash);
+        }
+        else {
+            // A manually created non-function type owns the generated name. Do not replace it.
+            return new PointerDataType(VoidDataType.dataType, pointerSize, dataTypes);
+        }
         return new PointerDataType(definition, pointerSize, dataTypes);
+    }
+
+    private Function trustedSignatureFunction(Function entry) {
+        if (entry == null) return null;
+        Function target = entry.isThunk() ? entry.getThunkedFunction(true) : entry;
+        if (isTrustedSignature(target)) return target;
+        return isTrustedSignature(entry) ? entry : null;
+    }
+
+    private boolean isTrustedSignature(Function function) {
+        return function != null &&
+            (function.getSignatureSource() == SourceType.USER_DEFINED ||
+                hasTag(function, VIRTUAL_METHOD_TAG));
+    }
+
+    private boolean hasTag(Function function, String name) {
+        for (FunctionTag tag : function.getTags())
+            if (name.equals(tag.getName())) return true;
+        return false;
+    }
+
+    private void updateGeneratedFunctionDefinition(FunctionDefinition existing,
+            FunctionDefinitionDataType desired, String desiredHash) {
+        String comment = existing.getComment();
+        String currentHash = functionSignatureHash(existing);
+        String storedHash = storedHash(comment, SIGNATURE_HASH_MARKER);
+
+        if (storedHash == null) {
+            // Older versions created these definitions without a safety marker. Adopt only an
+            // equivalent definition; a differing legacy type may have been edited by hand.
+            if (existing.isEquivalentSignature(desired))
+                existing.setComment(desired.getComment());
+            return;
+        }
+        if (!storedHash.equals(currentHash)) return; // Preserves a manual signature edit.
+        if (!currentHash.equals(desiredHash)) existing.replaceWith(desired);
+        existing.setComment(desired.getComment());
+    }
+
+    private String generatedSignatureComment(Address rawAddress, Function target,
+            String signatureHash) {
+        return COMMENT_MARKER + " Generated vtable function type from entry " +
+            addr(rawAddress) + "; signature target=" + addr(target.getEntryPoint()) + " " +
+            target.getName(true) + SIGNATURE_HASH_MARKER + signatureHash;
+    }
+
+    private String functionSignatureHash(FunctionDefinition definition) {
+        StringBuilder signature = new StringBuilder();
+        signature.append("return=").append(definition.getReturnType().getPathName()).append('\n')
+            .append("calling_convention=").append(definition.getCallingConventionName())
+            .append('\n')
+            .append("varargs=").append(definition.hasVarArgs()).append('\n')
+            .append("noreturn=").append(definition.hasNoReturn()).append('\n');
+        for (ParameterDefinition parameter : definition.getArguments()) {
+            signature.append(parameter.getOrdinal()).append('|')
+                .append(parameter.getName() == null ? "" : parameter.getName()).append('|')
+                .append(parameter.getDataType().getPathName()).append('|')
+                .append(parameter.getComment() == null ? "" : parameter.getComment())
+                .append('\n');
+        }
+        return sha256(signature.toString());
     }
 
     private Structure findStructure(String name) {
@@ -852,10 +945,15 @@ public class STVTableApplier extends GhidraScript {
     private static class StructureResolution {
         final Structure structure;
         final String detail, error;
+        final boolean updated;
         StructureResolution(Structure structure, String detail, String error) {
+            this(structure, detail, error, false);
+        }
+        StructureResolution(Structure structure, String detail, String error, boolean updated) {
             this.structure = structure;
             this.detail = detail;
             this.error = error;
+            this.updated = updated;
         }
         static StructureResolution error(String error) {
             return new StructureResolution(null, "", error);

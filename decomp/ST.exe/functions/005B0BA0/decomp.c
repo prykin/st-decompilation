@@ -1332,7 +1332,7 @@ LAB_005b1108:
   }
 switchD_005b0c37_caseD_1:
   g_currentExceptionFrame = local_84.previous;
-  uVar8 = thunk_FUN_005b6430();
+  uVar8 = MMObjTy::GetMessage((MMObjTy *)this_00,param_1);
   return uVar8;
 }
 
