@@ -1,2 +1,0 @@
-thunk_FUN_004d08c0:
-00404615  E9 A6 C2 0C 00            JMP 0x004d08c0

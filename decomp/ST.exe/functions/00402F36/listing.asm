@@ -1,2 +1,0 @@
-thunk_FUN_0063cb30:
-00402F36  E9 F5 9B 23 00            JMP 0x0063cb30

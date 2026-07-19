@@ -1,2 +1,0 @@
-Library::MSVCRT::thunk_FUN_006a4f20:
-00402C52  E9 C9 22 2A 00            JMP 0x006a4f20

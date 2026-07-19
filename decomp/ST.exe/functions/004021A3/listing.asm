@@ -1,2 +1,0 @@
-STAllPlayersC::DelObjFromTmps:
-004021A3  E9 48 A4 02 00            JMP 0x0042c5f0

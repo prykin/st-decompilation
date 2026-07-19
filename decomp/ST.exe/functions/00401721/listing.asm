@@ -1,2 +1,0 @@
-FSGSTy::DoneFSGS:
-00401721  E9 CA 50 19 00            JMP 0x005967f0

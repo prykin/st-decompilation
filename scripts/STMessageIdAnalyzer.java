@@ -66,11 +66,15 @@ public class STMessageIdAnalyzer extends GhidraScript {
                     ignored -> new Evidence(function));
                 evidence.names.addAll(names);
                 evidence.strings.add(text);
+                for (String name : names) {
+                    evidence.nameRefs.computeIfAbsent(name, ignored -> new TreeSet<>())
+                        .add(reference.getFromAddress());
+                }
             }
         }
 
         Map<String, Long> existing = existingValues();
-        Map<Address, Set<Long>> allFunctionValues = new LinkedHashMap<>();
+        Map<Address, MessageIdScan> functionScans = new LinkedHashMap<>();
         Map<Long, Set<String>> handlersByValue = new java.util.TreeMap<>();
         FunctionIterator allFunctions = currentProgram.getFunctionManager().getFunctions(true);
         while (allFunctions.hasNext()) {
@@ -80,20 +84,38 @@ public class STMessageIdAnalyzer extends GhidraScript {
             String functionName = function.getName(true);
             if (!functionName.contains("GetMessage") && !functions.containsKey(function.getEntryPoint()))
                 continue;
-            Set<Long> values = findComparedMessageIds(function);
-            if (values.isEmpty()) continue;
-            allFunctionValues.put(function.getEntryPoint(), values);
-            for (Long value : values) handlersByValue.computeIfAbsent(value,
+            MessageIdScan scan = findComparedMessageIds(function);
+            if (scan.values.isEmpty()) continue;
+            functionScans.put(function.getEntryPoint(), scan);
+            for (Long value : scan.values) handlersByValue.computeIfAbsent(value,
                 ignored -> new TreeSet<>()).add(addr(function.getEntryPoint()) + " " + function.getName(true));
         }
         List<Proposal> proposals = new ArrayList<>();
         for (Evidence evidence : functions.values()) {
             monitor.checkCancelled();
-            evidence.values.addAll(allFunctionValues.getOrDefault(evidence.function.getEntryPoint(), Set.of()));
+            MessageIdScan scan = functionScans.get(evidence.function.getEntryPoint());
+            if (scan != null) evidence.values.addAll(scan.values);
             for (String name : evidence.names) {
                 Long known = existing.get(name);
                 if (known != null) {
                     proposals.add(new Proposal(evidence, name, known, true, "existing_enum_value"));
+                }
+                else if (scan != null) {
+                    Set<Long> siteValues = siteSpecificValues(evidence, name, scan);
+                    if (siteValues.size() == 1) {
+                        proposals.add(new Proposal(evidence, name, siteValues.iterator().next(),
+                            true, "cfg_unique_string_site"));
+                    }
+                    else if (evidence.names.size() == 1 && evidence.values.size() == 1) {
+                        proposals.add(new Proposal(evidence, name, evidence.values.iterator().next(),
+                            true, "single_name_single_id_comparison"));
+                    }
+                    else {
+                        for (Long value : evidence.values) {
+                            proposals.add(new Proposal(evidence, name, value, false,
+                                "ambiguous_function_candidates"));
+                        }
+                    }
                 }
                 else if (evidence.names.size() == 1 && evidence.values.size() == 1) {
                     proposals.add(new Proposal(evidence, name, evidence.values.iterator().next(),
@@ -109,6 +131,11 @@ public class STMessageIdAnalyzer extends GhidraScript {
         }
         Set<String> proposalKeys = new TreeSet<>();
         for (Proposal proposal : proposals) proposalKeys.add(proposal.name + "\u0000" + proposal.value);
+        Set<Long> valuesWithRecoveredNames = new TreeSet<>();
+        for (Proposal proposal : proposals) {
+            if (proposal.apply && !isSyntheticName(proposal.name, proposal.value))
+                valuesWithRecoveredNames.add(proposal.value);
+        }
         Map<Long, Set<String>> existingNamesByValue = new HashMap<>();
         for (Map.Entry<String, Long> entry : existing.entrySet()) {
             existingNamesByValue.computeIfAbsent(entry.getValue(), ignored -> new TreeSet<>())
@@ -116,6 +143,7 @@ public class STMessageIdAnalyzer extends GhidraScript {
         }
         int syntheticCount = 0;
         for (Map.Entry<Long, Set<String>> entry : handlersByValue.entrySet()) {
+            if (valuesWithRecoveredNames.contains(entry.getKey())) continue;
             Function representative = representativeFunction(entry.getValue());
             if (representative == null) continue;
             Evidence evidence = new Evidence(representative);
@@ -151,9 +179,12 @@ public class STMessageIdAnalyzer extends GhidraScript {
         int staleEnumValues = writeStaleEnumValues(
             dir.resolve("message_id_stale_enum_values.tsv"), handlersByValue.keySet(), existing);
         long high = proposals.stream().filter(p -> p.apply).count();
+        long cfgNamed = proposals.stream().filter(p -> p.apply &&
+            "cfg_unique_string_site".equals(p.reason)).count();
         Files.write(dir.resolve("message_id_summary.txt"), List.of(
             "program=" + currentProgram.getName(), "functions_with_MESS_strings=" + functions.size(),
             "proposals=" + proposals.size(), "auto_apply=" + high,
+            "cfg_named_auto_apply=" + cfgNamed,
             "synthetic_auto_apply=" + syntheticCount,
             "numeric_ids_in_catalog=" + handlersByValue.size(),
             "stale_enum_values_for_review=" + staleEnumValues,
@@ -192,8 +223,13 @@ public class STMessageIdAnalyzer extends GhidraScript {
         return String.format("MESS_%s_%04X", owner, value & 0xffff);
     }
 
-    private Set<Long> findComparedMessageIds(Function function) {
-        Set<Long> result = new TreeSet<>();
+    private boolean isSyntheticName(String name, long value) {
+        return name.startsWith("MESS_") &&
+            name.endsWith(String.format("_%04X", value & 0xffff));
+    }
+
+    private MessageIdScan findComparedMessageIds(Function function) {
+        MessageIdScan result = new MessageIdScan();
         Map<Address, FlowState> incoming = new HashMap<>();
         Deque<Address> work = new ArrayDeque<>();
         incoming.put(function.getEntryPoint(), new FlowState());
@@ -213,6 +249,8 @@ public class STMessageIdAnalyzer extends GhidraScript {
                 state.idRegisters.get(registerKey(destination));
             Long previousConstant = destination == null ? null :
                 state.constantRegisters.get(registerKey(destination));
+            Long sourceConstant = source == null ? null :
+                state.constantRegisters.get(registerKey(source));
 
             if (destination != null && writesFirstOperand(mnemonic)) {
                 state.idRegisters.remove(registerKey(destination));
@@ -236,6 +274,10 @@ public class STMessageIdAnalyzer extends GhidraScript {
                         state.constantRegisters.get(registerKey(source)));
                 }
             }
+            else if ("XOR".equals(mnemonic) && destination != null && source != null &&
+                    registerKey(destination).equals(registerKey(source))) {
+                state.constantRegisters.put(registerKey(destination), 0L);
+            }
             else if ("LEA".equals(mnemonic) && destination != null && source != null &&
                     state.idRegisters.containsKey(registerKey(source))) {
                 RegisterState sourceState = state.idRegisters.get(registerKey(source));
@@ -244,14 +286,26 @@ public class STMessageIdAnalyzer extends GhidraScript {
                     new RegisterState(sourceState.delta + delta, true));
             }
             else if (("ADD".equals(mnemonic) || "SUB".equals(mnemonic)) && destination != null &&
-                    operandScalar != null && previousDestination != null) {
-                long delta = operandScalar.getSignedValue();
+                    (operandScalar != null || sourceConstant != null) && previousDestination != null) {
+                long delta = operandScalar != null ? operandScalar.getSignedValue() : sourceConstant;
                 if ("SUB".equals(mnemonic)) delta = -delta;
-                state.idRegisters.put(registerKey(destination), new RegisterState(
-                    previousDestination.delta + delta, previousDestination.switchNormalized));
+                RegisterState updated = new RegisterState(previousDestination.delta + delta,
+                    previousDestination.switchNormalized);
+                state.idRegisters.put(registerKey(destination), updated);
+                addZeroComparison(result, function, instruction, updated);
                 if (previousConstant != null) {
                     state.constantRegisters.put(registerKey(destination), previousConstant + delta);
                 }
+            }
+            else if (("INC".equals(mnemonic) || "DEC".equals(mnemonic)) &&
+                    destination != null && previousDestination != null) {
+                long delta = "INC".equals(mnemonic) ? 1 : -1;
+                RegisterState updated = new RegisterState(previousDestination.delta + delta,
+                    previousDestination.switchNormalized);
+                state.idRegisters.put(registerKey(destination), updated);
+                addZeroComparison(result, function, instruction, updated);
+                if (previousConstant != null)
+                    state.constantRegisters.put(registerKey(destination), previousConstant + delta);
             }
 
             if ("CMP".equals(mnemonic)) {
@@ -276,14 +330,20 @@ public class STMessageIdAnalyzer extends GhidraScript {
                         if (candidate != null) tracked = candidate;
                     }
                     long value = comparedConstant;
-                    if (direct && value <= 0xffff) result.add(value);
+                    if (direct && value <= 0xffff) {
+                        result.values.add(value);
+                        addExactComparison(result, function, instruction, value);
+                    }
                     if (tracked != null) {
                         long original = value - tracked.delta;
-                        if (original >= 0 && original <= 0xffff) result.add(original);
+                        if (original >= 0 && original <= 0xffff) {
+                            result.values.add(original);
+                            addExactComparison(result, function, instruction, original);
+                        }
                         if (tracked.switchNormalized && tracked.delta < 0 && value <= 0x400) {
                             long base = -tracked.delta;
                             for (long candidate = base; candidate <= base + value; candidate++) {
-                                if (candidate <= 0xffff) result.add(candidate);
+                                if (candidate <= 0xffff) result.values.add(candidate);
                             }
                         }
                     }
@@ -319,6 +379,93 @@ public class STMessageIdAnalyzer extends GhidraScript {
             }
         }
         return result;
+    }
+
+    private void addExactComparison(MessageIdScan scan, Function function,
+            Instruction comparison, long value) {
+        Address nextAddress = comparison.getFallThrough();
+        if (nextAddress == null) return;
+        Set<Address> priorInequalitySuccessors = new TreeSet<>();
+        for (int step = 0; step < 2; step++) {
+            Instruction branch = currentProgram.getListing().getInstructionAt(nextAddress);
+            if (branch == null || !branch.getFlowType().isConditional()) return;
+            String mnemonic = branch.getMnemonicString().toUpperCase(Locale.ROOT);
+            Address fallThrough = branch.getFallThrough();
+            Address[] flows = branch.getFlows();
+            if (fallThrough == null || flows.length != 1) return;
+            Address taken = flows[0];
+            if (!function.getBody().contains(fallThrough) || !function.getBody().contains(taken)) return;
+
+            boolean equalBranch = "JE".equals(mnemonic) || "JZ".equals(mnemonic);
+            boolean notEqualBranch = "JNE".equals(mnemonic) || "JNZ".equals(mnemonic);
+            if (equalBranch || notEqualBranch) {
+                Address equalitySuccessor = equalBranch ? taken : fallThrough;
+                Set<Address> inequalitySuccessors = new TreeSet<>(priorInequalitySuccessors);
+                inequalitySuccessors.add(equalBranch ? fallThrough : taken);
+                IdComparison candidate = new IdComparison(comparison.getAddress(),
+                    equalitySuccessor, inequalitySuccessors, value);
+                if (!scan.comparisons.contains(candidate)) scan.comparisons.add(candidate);
+                return;
+            }
+
+            // MSVC commonly emits CMP; JA/JB; JZ for a three-way decision tree.
+            // A strict ordered branch excludes one side but leaves equality for the next JZ.
+            if (!("JA".equals(mnemonic) || "JG".equals(mnemonic) ||
+                    "JB".equals(mnemonic) || "JL".equals(mnemonic))) return;
+            priorInequalitySuccessors.add(taken);
+            nextAddress = fallThrough;
+        }
+    }
+
+    private void addZeroComparison(MessageIdScan scan, Function function,
+            Instruction instruction, RegisterState state) {
+        long original = -state.delta;
+        if (original < 0 || original > 0xffff) return;
+        int before = scan.comparisons.size();
+        addExactComparison(scan, function, instruction, original);
+        if (scan.comparisons.size() != before) scan.values.add(original);
+    }
+
+    private Set<Long> siteSpecificValues(Evidence evidence, String name, MessageIdScan scan)
+            throws Exception {
+        Set<Long> agreed = new TreeSet<>();
+        for (Address reference : evidence.nameRefs.getOrDefault(name, Set.of())) {
+            Set<Long> candidates = new TreeSet<>();
+            for (IdComparison comparison : scan.comparisons) {
+                boolean equalityReaches = reaches(comparison.equalitySuccessor, reference,
+                    evidence.function, comparison.address);
+                if (!equalityReaches) continue;
+                boolean inequalityReaches = false;
+                for (Address successor : comparison.inequalitySuccessors) {
+                    if (reaches(successor, reference, evidence.function, comparison.address)) {
+                        inequalityReaches = true;
+                        break;
+                    }
+                }
+                if (!inequalityReaches) candidates.add(comparison.value);
+            }
+            if (candidates.size() == 1) agreed.add(candidates.iterator().next());
+        }
+        return agreed.size() == 1 ? agreed : Set.of();
+    }
+
+    private boolean reaches(Address start, Address target, Function function, Address barrier)
+            throws Exception {
+        if (start == null || target == null) return false;
+        Deque<Address> work = new ArrayDeque<>();
+        Set<Address> visited = new TreeSet<>();
+        work.add(start);
+        int steps = 0;
+        while (!work.isEmpty()) {
+            Address address = work.removeFirst();
+            if (!visited.add(address) || address.equals(barrier)) continue;
+            if (address.equals(target)) return true;
+            if ((++steps & 0x3ff) == 0) monitor.checkCancelled();
+            Instruction instruction = currentProgram.getListing().getInstructionAt(address);
+            if (instruction == null || !function.getBody().contains(address)) continue;
+            work.addAll(successors(instruction, function));
+        }
+        return false;
     }
 
     private Set<Address> successors(Instruction instruction, Function function) {
@@ -443,7 +590,38 @@ public class STMessageIdAnalyzer extends GhidraScript {
     private static class Evidence {
         final Function function; final Set<String> names = new TreeSet<>(), strings = new TreeSet<>();
         final Set<Long> values = new TreeSet<>();
+        final Map<String, Set<Address>> nameRefs = new HashMap<>();
         Evidence(Function function) { this.function = function; }
+    }
+    private static class MessageIdScan {
+        final Set<Long> values = new TreeSet<>();
+        final List<IdComparison> comparisons = new ArrayList<>();
+    }
+    private static class IdComparison {
+        final Address address, equalitySuccessor;
+        final Set<Address> inequalitySuccessors;
+        final long value;
+        IdComparison(Address address, Address equalitySuccessor, Set<Address> inequalitySuccessors,
+                long value) {
+            this.address = address;
+            this.equalitySuccessor = equalitySuccessor;
+            this.inequalitySuccessors = inequalitySuccessors;
+            this.value = value;
+        }
+        @Override
+        public boolean equals(Object other) {
+            if (!(other instanceof IdComparison comparison)) return false;
+            return value == comparison.value && address.equals(comparison.address) &&
+                equalitySuccessor.equals(comparison.equalitySuccessor) &&
+                inequalitySuccessors.equals(comparison.inequalitySuccessors);
+        }
+        @Override
+        public int hashCode() {
+            int result = address.hashCode();
+            result = result * 31 + equalitySuccessor.hashCode();
+            result = result * 31 + inequalitySuccessors.hashCode();
+            return result * 31 + Long.hashCode(value);
+        }
     }
     private static class RegisterState {
         final long delta; final boolean switchNormalized;

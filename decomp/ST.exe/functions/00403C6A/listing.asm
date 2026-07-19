@@ -1,2 +1,0 @@
-thunk_FUN_004ef140:
-00403C6A  E9 D1 B4 0E 00            JMP 0x004ef140

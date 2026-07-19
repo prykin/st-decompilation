@@ -1,2 +1,0 @@
-thunk_FUN_0062e610:
-004029DC  E9 2F BC 22 00            JMP 0x0062e610

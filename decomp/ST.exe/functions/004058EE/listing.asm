@@ -1,2 +1,0 @@
-STAppC::GetMessage:
-004058EE  E9 6D A1 16 00            JMP 0x0056fa60

@@ -1,2 +1,0 @@
-TraksClassTy::TraksExec:
-004040CA  E9 B1 1D 15 00            JMP 0x00555e80

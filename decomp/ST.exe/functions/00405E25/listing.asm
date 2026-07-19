@@ -1,2 +1,0 @@
-MAdvTy::InitMAdv:
-00405E25  E9 46 A3 18 00            JMP 0x00590170

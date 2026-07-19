@@ -1,2 +1,0 @@
-thunk_FUN_0062f080:
-0040318E  E9 ED BE 22 00            JMP 0x0062f080

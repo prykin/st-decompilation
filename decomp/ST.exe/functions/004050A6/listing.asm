@@ -1,2 +1,0 @@
-thunk_FUN_00630ff0:
-004050A6  E9 45 BF 22 00            JMP 0x00630ff0

@@ -1,2 +1,0 @@
-thunk_FUN_004de410:
-0040428C  E9 7F A1 0D 00            JMP 0x004de410

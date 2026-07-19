@@ -1,5 +1,8 @@
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Recovered from embedded debug metadata:
+   E:\__titans\wlad\To_boat.cpp
+   STBoatC::GetMessage */
 
 int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
 
@@ -196,7 +199,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
   if (MESS_ID_ALLCREATE < SVar9) {
     if (SVar9 < MESS_SHARED_0129) {
       if (SVar9 != MESS_HITKILL) {
-        if (SVar9 == 0x121) {
+        if (SVar9 == MESS_SHARED_0121) {
           if (*(int *)(this_00 + 0x6f7) != 0x23) {
             *(undefined4 *)(this_00 + 0x736) = *(undefined4 *)((int)message->data + 4);
             if (*(int *)(this_00 + 0x45d) == 3) {
@@ -221,7 +224,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
-        if (SVar9 != 0x122) {
+        if (SVar9 != MESS_SHARED_0122) {
           g_currentExceptionFrame = local_184.previous;
           return 0;
         }
@@ -501,7 +504,7 @@ int __thiscall STBoatC::GetMessage(STBoatC *this,STMessage *message)
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
-    if (SVar9 != MESS_SHARED_0110) {
+    if (SVar9 != MESS_TORPHIT) {
       g_currentExceptionFrame = local_184.previous;
       return 0;
     }
@@ -6841,8 +6844,8 @@ LAB_0045aee3:
   }
   pvVar14 = (void *)0x0;
   uVar12 = extraout_EDX;
-  if (SVar9 == 0) goto LAB_0045048a;
-  if (SVar9 != 2) {
+  if (SVar9 == MESS_ID_NONE) goto LAB_0045048a;
+  if (SVar9 != MESS_ID_CREATE) {
     g_currentExceptionFrame = local_184.previous;
     return 0;
   }

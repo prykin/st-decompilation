@@ -1,2 +1,0 @@
-thunk_FUN_004ab810:
-00401316  E9 F5 A4 0A 00            JMP 0x004ab810

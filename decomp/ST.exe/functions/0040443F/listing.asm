@@ -1,2 +1,0 @@
-thunk_FUN_0041af10:
-0040443F  E9 CC 6A 01 00            JMP 0x0041af10

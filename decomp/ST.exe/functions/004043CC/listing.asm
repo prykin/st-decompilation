@@ -1,2 +1,0 @@
-thunk_FUN_0063cc50:
-004043CC  E9 7F 88 23 00            JMP 0x0063cc50

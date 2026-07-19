@@ -1,2 +1,0 @@
-MainMenuTy::DoneMainMenu:
-0040189D  E9 EE 16 1B 00            JMP 0x005b2f90

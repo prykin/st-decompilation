@@ -1,2 +1,0 @@
-thunk_FUN_004b8c80:
-004048EF  E9 8C 43 0B 00            JMP 0x004b8c80

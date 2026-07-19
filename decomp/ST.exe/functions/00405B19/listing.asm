@@ -1,2 +1,0 @@
-thunk_FUN_005f3b30:
-00405B19  E9 12 E0 1E 00            JMP 0x005f3b30

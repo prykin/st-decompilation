@@ -1,2 +1,0 @@
-thunk_FUN_0062af40:
-00403C7E  E9 BD 72 22 00            JMP 0x0062af40

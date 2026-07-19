@@ -1,2 +1,0 @@
-CPanelTy::SetControlBoatSI:
-0040296E  E9 DD 0A 10 00            JMP 0x00503450

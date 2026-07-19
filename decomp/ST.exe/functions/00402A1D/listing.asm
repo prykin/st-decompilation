@@ -1,2 +1,0 @@
-thunk_FUN_0064ef10:
-00402A1D  E9 EE C4 24 00            JMP 0x0064ef10

@@ -1,2 +1,0 @@
-thunk_FUN_005fa180:
-004057B3  E9 C8 49 1F 00            JMP 0x005fa180

@@ -1,2 +1,0 @@
-thunk_FUN_00627db0:
-004049FD  E9 AE 33 22 00            JMP 0x00627db0

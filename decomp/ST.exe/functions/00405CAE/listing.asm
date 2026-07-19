@@ -1,2 +1,0 @@
-thunk_FUN_0067bd00:
-00405CAE  E9 4D 60 27 00            JMP 0x0067bd00

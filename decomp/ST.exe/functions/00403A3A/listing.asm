@@ -1,2 +1,0 @@
-OptPanelTy::PreInitOptPanel:
-00403A3A  E9 C1 AA 12 00            JMP 0x0052e500

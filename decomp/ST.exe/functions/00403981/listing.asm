@@ -1,2 +1,0 @@
-FSGSTy::OutSGlProc:
-00403981  E9 2A 19 19 00            JMP 0x005952b0

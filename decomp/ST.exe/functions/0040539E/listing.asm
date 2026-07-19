@@ -1,2 +1,0 @@
-thunk_FUN_004dc220:
-0040539E  E9 7D 6E 0D 00            JMP 0x004dc220

@@ -1,2 +1,0 @@
-CPanelTy::OutText:
-0040195B  E9 50 7C 0F 00            JMP 0x004f95b0

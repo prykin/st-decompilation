@@ -1,2 +1,0 @@
-STGroupBoatC::GrpDismant:
-004018C0  E9 7B E7 09 00            JMP 0x004a0040

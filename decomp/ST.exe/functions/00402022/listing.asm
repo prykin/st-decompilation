@@ -1,2 +1,0 @@
-FSGSTy::NewIDCtrls:
-00402022  E9 C9 A9 19 00            JMP 0x0059c9f0

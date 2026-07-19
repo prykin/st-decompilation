@@ -1,2 +1,0 @@
-STT3DSprC::StopShow:
-00404264  E9 A7 81 0A 00            JMP 0x004ac410

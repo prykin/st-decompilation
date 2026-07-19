@@ -1,2 +1,0 @@
-thunk_FUN_006829b0:
-004049C1  E9 EA DF 27 00            JMP 0x006829b0

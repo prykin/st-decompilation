@@ -1,2 +1,0 @@
-thunk_FUN_006457e0:
-00403FDF  E9 FC 17 24 00            JMP 0x006457e0

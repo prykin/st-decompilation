@@ -1,2 +1,0 @@
-STAppC::ReadCmdPlay:
-00404AA2  E9 59 C9 16 00            JMP 0x00571400

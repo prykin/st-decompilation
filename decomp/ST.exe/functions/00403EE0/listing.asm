@@ -1,2 +1,0 @@
-OptPanelTy::CreateSlider:
-00403EE0  E9 6B AC 12 00            JMP 0x0052eb50

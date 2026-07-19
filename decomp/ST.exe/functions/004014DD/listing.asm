@@ -1,2 +1,0 @@
-thunk_FUN_006383e0:
-004014DD  E9 FE 6E 23 00            JMP 0x006383e0

@@ -1,2 +1,0 @@
-thunk_FUN_0062fa80:
-004032AB  E9 D0 C7 22 00            JMP 0x0062fa80

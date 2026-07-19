@@ -1,2 +1,0 @@
-thunk_FUN_004e2040:
-0040498F  E9 AC D6 0D 00            JMP 0x004e2040

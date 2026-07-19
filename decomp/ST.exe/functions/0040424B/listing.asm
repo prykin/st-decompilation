@@ -1,2 +1,0 @@
-thunk_FUN_00490ca0:
-0040424B  E9 50 CA 08 00            JMP 0x00490ca0

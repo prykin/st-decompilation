@@ -1,2 +1,0 @@
-thunk_FUN_005501d0:
-004043DB  E9 F0 BD 14 00            JMP 0x005501d0

@@ -1,2 +1,0 @@
-thunk_FUN_0054eb20:
-004025EF  E9 2C C5 14 00            JMP 0x0054eb20

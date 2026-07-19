@@ -1,2 +1,0 @@
-thunk_FUN_005ee670:
-00404377  E9 F4 A2 1E 00            JMP 0x005ee670

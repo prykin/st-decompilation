@@ -1,2 +1,0 @@
-thunk_FUN_004ce700:
-00401DF7  E9 04 C9 0C 00            JMP 0x004ce700

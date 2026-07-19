@@ -1,2 +1,0 @@
-thunk_FUN_004ec050:
-00401302  E9 49 AD 0E 00            JMP 0x004ec050

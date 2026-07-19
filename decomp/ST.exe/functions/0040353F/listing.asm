@@ -1,2 +1,0 @@
-thunk_FUN_004cd480:
-0040353F  E9 3C 9F 0C 00            JMP 0x004cd480

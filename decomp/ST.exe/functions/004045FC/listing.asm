@@ -1,2 +1,0 @@
-STPlaySystemC::AddToRep:
-004045FC  E9 4F A3 14 00            JMP 0x0054e950

@@ -1,2 +1,0 @@
-FSGSTy::PaintLogNew:
-00401C49  E9 42 82 19 00            JMP 0x00599e90

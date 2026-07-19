@@ -1,9 +1,0 @@
-
-void __thiscall thunk_FUN_005822b0(void *this,undefined4 param_1,undefined2 param_2)
-
-{
-  *(undefined2 *)((int)this + 0x205) = param_2;
-  *(undefined4 *)((int)this + 0x1dd) = param_1;
-  return;
-}
-

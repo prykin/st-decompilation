@@ -1,2 +1,0 @@
-thunk_FUN_0041c3f0:
-004023A1  E9 4A A0 01 00            JMP 0x0041c3f0

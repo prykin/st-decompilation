@@ -1,2 +1,0 @@
-thunk_FUN_0041d4f0:
-004029F0  E9 FB AA 01 00            JMP 0x0041d4f0

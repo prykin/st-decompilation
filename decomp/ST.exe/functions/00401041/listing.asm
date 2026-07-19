@@ -1,2 +1,0 @@
-thunk_FUN_0067bd50:
-00401041  E9 0A AD 27 00            JMP 0x0067bd50

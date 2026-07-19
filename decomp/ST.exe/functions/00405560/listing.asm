@@ -1,2 +1,0 @@
-thunk_FUN_004ed430:
-00405560  E9 CB 7E 0E 00            JMP 0x004ed430

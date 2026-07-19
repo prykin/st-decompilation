@@ -1,2 +1,0 @@
-thunk_FUN_004ad380:
-004023C4  E9 B7 AF 0A 00            JMP 0x004ad380

@@ -1,2 +1,0 @@
-thunk_FUN_005f5c40:
-0040264E  E9 ED 35 1F 00            JMP 0x005f5c40

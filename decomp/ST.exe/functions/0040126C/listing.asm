@@ -1,2 +1,0 @@
-MReportTy::SetCtrl:
-0040126C  E9 CF 00 1C 00            JMP 0x005c1340

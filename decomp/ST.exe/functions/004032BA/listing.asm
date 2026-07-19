@@ -1,2 +1,0 @@
-thunk_FUN_0057bf20:
-004032BA  E9 61 8C 17 00            JMP 0x0057bf20

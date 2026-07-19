@@ -1,2 +1,0 @@
-thunk_FUN_004d10a0:
-00404061  E9 3A D0 0C 00            JMP 0x004d10a0

@@ -1,2 +1,0 @@
-FSGSTy::PaintInfo:
-004024BE  E9 4D 84 19 00            JMP 0x0059a910

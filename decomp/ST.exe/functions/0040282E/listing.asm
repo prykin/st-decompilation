@@ -1,2 +1,0 @@
-STTorpC::ClearDangerous:
-0040282E  E9 6D 2A 24 00            JMP 0x006452a0

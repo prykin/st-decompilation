@@ -1,2 +1,0 @@
-thunk_FUN_0068e610:
-00401D0C  E9 FF C8 28 00            JMP 0x0068e610

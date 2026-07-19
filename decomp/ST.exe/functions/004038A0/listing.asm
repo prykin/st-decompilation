@@ -1,2 +1,0 @@
-thunk_FUN_0061ca90:
-004038A0  E9 EB 91 21 00            JMP 0x0061ca90

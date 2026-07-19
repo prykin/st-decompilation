@@ -1,2 +1,0 @@
-thunk_FUN_005a39a0:
-004049DF  E9 BC EF 19 00            JMP 0x005a39a0

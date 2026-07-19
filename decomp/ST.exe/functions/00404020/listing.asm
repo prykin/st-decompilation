@@ -1,2 +1,0 @@
-thunk_FUN_0067fb40:
-00404020  E9 1B BB 27 00            JMP 0x0067fb40

@@ -1,2 +1,0 @@
-STAllPlayersC::GetObjPtr:
-004028BA  E9 61 8D 02 00            JMP 0x0042b620

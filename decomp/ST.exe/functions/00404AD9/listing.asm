@@ -1,2 +1,0 @@
-PanelTy::DonePanel:
-00404AD9  E9 B2 38 13 00            JMP 0x00538390

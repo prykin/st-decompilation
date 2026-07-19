@@ -1,2 +1,0 @@
-thunk_FUN_0061fb70:
-00405CFE  E9 6D 9E 21 00            JMP 0x0061fb70

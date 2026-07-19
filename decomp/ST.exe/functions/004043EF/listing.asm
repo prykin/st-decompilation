@@ -1,2 +1,0 @@
-thunk_FUN_004dd770:
-004043EF  E9 7C 93 0D 00            JMP 0x004dd770

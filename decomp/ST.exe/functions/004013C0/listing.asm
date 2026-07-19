@@ -1,2 +1,0 @@
-thunk_FUN_005f89f0:
-004013C0  E9 2B 76 1F 00            JMP 0x005f89f0

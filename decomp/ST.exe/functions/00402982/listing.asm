@@ -1,2 +1,0 @@
-thunk_FUN_004ad460:
-00402982  E9 D9 AA 0A 00            JMP 0x004ad460

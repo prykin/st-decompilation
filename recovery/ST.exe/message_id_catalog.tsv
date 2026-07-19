@@ -1,6 +1,8 @@
 value_hex	value_decimal	known_names	handler_count	handlers
-0x3	3	MESS_SHARED_0003	32	00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053D4D0 SAMPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005EA680 WaitTy::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005F10D0 STManBasisC::GetMessage | 005F5F20 STColl3C::GetMessage | 005FB640 STContainerC::GetMessage | 0061D190 STLightC::GetMessage | 00621B50 STMineSetC::GetMessage | 0062E740 STRubbishC::GetMessage | 00630430 STManRuinC::GetMessage | 006406D0 STTorpC::GetMessage | 006461E0 STVolcanoC::GetMessage | 00667D90 AiFltClassTy::GetMessage
-0x5	5	MESS_SHARED_0005	13	004FB060 CPanelTy::GetMessage | 0051FBA0 HelpStringTy::GetMessage | 0052DD20 PopUpTy::GetMessage | 00542F40 InterSystemC::GetMessage | 00593040 CampaignTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D9470 SIDTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x0	0		37	0041AF40 STGameObjC::GetMessage | 0041E530 STSprGameObjC::GetMessage | 00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 0051DDD0 HelpPanelTy::GetMessage | 00522E80 IntercomPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 00593040 CampaignTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D9470 SIDTy::GetMessage | 005EA680 WaitTy::GetMessage | 00603740 STExplosion::GetMessage | 00627EB0 STParticleC::GetMessage | 0062E740 STRubbishC::GetMessage | 00630430 STManRuinC::GetMessage | 006406D0 STTorpC::GetMessage | 00667D90 AiFltClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+0x2	2		55	0041AF40 STGameObjC::GetMessage | 0041E530 STSprGameObjC::GetMessage | 00423EC0 STGroupC::GetMessage | 00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D0B90 TLOFakeTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 004EE4D0 BehPanelTy::GetMessage | 004EF6D0 BldBoatPanelTy::GetMessage | 004F0210 BldLabPanelTy::GetMessage | 004F1080 BldObjPanelTy::GetMessage | 005107C0 FrmPanelTy::GetMessage | 0051DDD0 HelpPanelTy::GetMessage | 00521490 InfocPanelTy::GetMessage | 00522E80 IntercomPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005384A0 PanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 0053CA80 ResearchPanelTy::GetMessage | 0053D4D0 SAMPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage | 00552E40 UpgPanelTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 00575CB0 STAlgaC::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 00593040 CampaignTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D9470 SIDTy::GetMessage | 005EA680 WaitTy::GetMessage | 00603740 STExplosion::GetMessage | 00617640 JumpManagC::GetMessage | 00627EB0 STParticleC::GetMessage | 0062CCA0 STManRub3C::GetMessage | 0062E740 STRubbishC::GetMessage | 00630430 STManRuinC::GetMessage | 006406D0 STTorpC::GetMessage | 00667D90 AiFltClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+0x3	3	MESS_SHARED_0003	62	0041E530 STSprGameObjC::GetMessage | 00423EC0 STGroupC::GetMessage | 00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D0B90 TLOFakeTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 004EE4D0 BehPanelTy::GetMessage | 004EF6D0 BldBoatPanelTy::GetMessage | 004F0210 BldLabPanelTy::GetMessage | 004F1080 BldObjPanelTy::GetMessage | 005107C0 FrmPanelTy::GetMessage | 0051DDD0 HelpPanelTy::GetMessage | 00521490 InfocPanelTy::GetMessage | 00522E80 IntercomPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005384A0 PanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 0053CA80 ResearchPanelTy::GetMessage | 0053D4D0 SAMPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage | 00552E40 UpgPanelTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 00575CB0 STAlgaC::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 00593040 CampaignTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D9470 SIDTy::GetMessage | 005EA680 WaitTy::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005F10D0 STManBasisC::GetMessage | 005F5F20 STColl3C::GetMessage | 005FB640 STContainerC::GetMessage | 00603740 STExplosion::GetMessage | 00617640 JumpManagC::GetMessage | 0061D190 STLightC::GetMessage | 00621B50 STMineSetC::GetMessage | 00627EB0 STParticleC::GetMessage | 0062CCA0 STManRub3C::GetMessage | 0062E740 STRubbishC::GetMessage | 00630430 STManRuinC::GetMessage | 006406D0 STTorpC::GetMessage | 006461E0 STVolcanoC::GetMessage | 00667D90 AiFltClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+0x5	5	MESS_SHARED_0005	14	004FB060 CPanelTy::GetMessage | 0051FBA0 HelpStringTy::GetMessage | 0052DD20 PopUpTy::GetMessage | 005384A0 PanelTy::GetMessage | 00542F40 InterSystemC::GetMessage | 00593040 CampaignTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D9470 SIDTy::GetMessage | 005EA680 WaitTy::GetMessage
 0x8	8	MESS_SHARED_0008	2	0054E4F0 STPlaySystemC::GetMessage | 005DCE90 StartSystemTy::GetMessage
 0x9	9	MESS_CURSORCLASSTY_0009	1	005449B0 CursorClassTy::GetMessage
 0xA	10	MESS_SYSTEMCLASSTY_000A	1	006E5F00 SystemClassTy::GetMessage
@@ -12,31 +14,48 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0x5B	91	MESS_RADIOCLASSTY_005B	1	0071E0E0 RadioClassTy::GetMessage
 0x5C	92	MESS_LISTCLASSTY_005C	1	0071F3A0 ListClassTy::GetMessage
 0x60	96	MESS_SHARED_0060	8	004FB060 CPanelTy::GetMessage | 0051DDD0 HelpPanelTy::GetMessage | 00521490 InfocPanelTy::GetMessage | 0052BF00 MoneyTy::GetMessage | 005449B0 CursorClassTy::GetMessage | 005C1A90 MReportTy::GetMessage | 0071CFD0 ButtonClassTy::GetMessage | 0072B780 ControlClassTy::GetMessage
-0x61	97	MESS_SHARED_0061	3	0051DDD0 HelpPanelTy::GetMessage | 00722410 EditorClassTy::GetMessage | 00723420 TabClassTy::GetMessage
+0x61	97	MESS_SHARED_0061	4	004FB060 CPanelTy::GetMessage | 0051DDD0 HelpPanelTy::GetMessage | 00722410 EditorClassTy::GetMessage | 00723420 TabClassTy::GetMessage
 0x62	98	MESS_TRACKBARCLASSTY_0062	1	00725020 TrackbarClassTy::GetMessage
 0x64	100	MESS_SHARED_0064	6	005908B0 MAdvTy::GetMessage | 00594440 ComboTy::GetMessage | 005E4570 MTaskTy::GetMessage | 005E5FB0 MTestTy::GetMessage | 0071CFD0 ButtonClassTy::GetMessage | 0071E8B0 ViewerClassTy::GetMessage
 0x66	102	MESS_INPUTCLASSTY_0066	1	0071CA50 InputClassTy::GetMessage
-0x68	104	MESS_SHARED_0068	2	0071F3A0 ListClassTy::GetMessage | 007244B0 SliderClassTy::GetMessage
+0x67	103		1	005449B0 CursorClassTy::GetMessage
+0x68	104	MESS_SHARED_0068	3	005449B0 CursorClassTy::GetMessage | 0071F3A0 ListClassTy::GetMessage | 007244B0 SliderClassTy::GetMessage
+0x100	256		1	004A8920 OpticClassC::GetMessage
+0x101	257		1	004A8920 OpticClassC::GetMessage
 0x104	260	MESS_OPTICCLASSC_0104	1	004A8920 OpticClassC::GetMessage
-0x108	264	MESS_SHARED_0108	5	004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 005F5F20 STColl3C::GetMessage
+0x108	264	MESS_SHARED_0108	10	004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005F5F20 STColl3C::GetMessage | 005FB640 STContainerC::GetMessage | 00621B50 STMineSetC::GetMessage | 0062E740 STRubbishC::GetMessage | 006406D0 STTorpC::GetMessage
 0x109	265	MESS_STSPRGAMEOBJC_0109	1	0041E530 STSprGameObjC::GetMessage
-0x10F	271	MESS_SHARED_010F	27	00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005F10D0 STManBasisC::GetMessage | 005F27C0 STBHEShellC::GetMessage | 005F5F20 STColl3C::GetMessage | 00601F80 STDestC::GetMessage | 00603740 STExplosion::GetMessage | 00618C00 STJumpMineC::GetMessage | 0061D190 STLightC::GetMessage | 00627EB0 STParticleC::GetMessage | 00630430 STManRuinC::GetMessage | 006461E0 STVolcanoC::GetMessage | 00648030 AiBossClassTy::GetMessage | 00667D90 AiFltClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
-0x110	272	MESS_SHARED_0110	6	0057BF60 STFishC::GetMessage | 00583270 STJellyGunC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005FB640 STContainerC::GetMessage | 00621B50 STMineSetC::GetMessage
-0x111	273	MESS_ID_ALLCREATE	5	0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 00667D90 AiFltClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
-0x112	274	MESS_STOCTOPUSC_0112	1	00589C10 STOctopusC::GetMessage
-0x113	275	MESS_STSPRGAMEOBJC_0113	1	0041E530 STSprGameObjC::GetMessage
-0x128	296	MESS_HITKILL	9	0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005F5F20 STColl3C::GetMessage | 00621B50 STMineSetC::GetMessage
+0x10F	271	MESS_SHARED_010F	41	00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 00497E00 STGroupBoatC::GetMessage | 004A8920 OpticClassC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 004D0B90 TLOFakeTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 005564C0 TraksClassTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 00575CB0 STAlgaC::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005F10D0 STManBasisC::GetMessage | 005F27C0 STBHEShellC::GetMessage | 005F5F20 STColl3C::GetMessage | 005FB640 STContainerC::GetMessage | 00601F80 STDestC::GetMessage | 00603740 STExplosion::GetMessage | 00617640 JumpManagC::GetMessage | 00618C00 STJumpMineC::GetMessage | 0061D190 STLightC::GetMessage | 00621B50 STMineSetC::GetMessage | 00627EB0 STParticleC::GetMessage | 0062CCA0 STManRub3C::GetMessage | 0062E740 STRubbishC::GetMessage | 00630430 STManRuinC::GetMessage | 006406D0 STTorpC::GetMessage | 006461E0 STVolcanoC::GetMessage | 00648030 AiBossClassTy::GetMessage | 00667D90 AiFltClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+0x110	272	MESS_SHARED_0110	10	0041E530 STSprGameObjC::GetMessage | 0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 0057BF60 STFishC::GetMessage | 00583270 STJellyGunC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005FB640 STContainerC::GetMessage | 00621B50 STMineSetC::GetMessage
+0x111	273	MESS_ID_ALLCREATE	10	00430A90 STAllPlayersC::GetMessage | 0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 00558840 VisibleClassTy::GetMessage | 0057E0A0 STDcResourcC::GetMessage | 00603740 STExplosion::GetMessage | 00618C00 STJumpMineC::GetMessage | 00667D90 AiFltClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage | 00690B90 AiTactClassTy::GetMessage
+0x112	274	MESS_STOCTOPUSC_0112	12	0041E530 STSprGameObjC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 005F27C0 STBHEShellC::GetMessage | 00601F80 STDestC::GetMessage | 00603740 STExplosion::GetMessage | 00618C00 STJumpMineC::GetMessage | 00621B50 STMineSetC::GetMessage | 00627EB0 STParticleC::GetMessage
+0x113	275	MESS_STSPRGAMEOBJC_0113	11	0041E530 STSprGameObjC::GetMessage | 00583270 STJellyGunC::GetMessage | 005859A0 STLBombC::GetMessage | 00588BC0 STMBombC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058C760 STSatC::GetMessage | 005F27C0 STBHEShellC::GetMessage | 00601F80 STDestC::GetMessage | 00603740 STExplosion::GetMessage | 00618C00 STJumpMineC::GetMessage | 00621B50 STMineSetC::GetMessage
+0x11F	287		1	0041E530 STSprGameObjC::GetMessage
+0x120	288		1	0041E530 STSprGameObjC::GetMessage
+0x121	289		2	0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage
+0x122	290		3	0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage
+0x123	291		1	004B9FA0 TLOBaseTy::GetMessage
+0x124	292		1	00581BF0 STJellyManC::GetMessage
+0x125	293		1	00581BF0 STJellyManC::GetMessage
+0x127	295		1	00589C10 STOctopusC::GetMessage
+0x128	296	MESS_HITKILL	12	0044EE30 STBoatC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage | 00578630 STCrabC::GetMessage | 0057BF60 STFishC::GetMessage | 00581BF0 STJellyManC::GetMessage | 00583270 STJellyGunC::GetMessage | 00589C10 STOctopusC::GetMessage | 0058D7C0 STSharkC::GetMessage | 005F5F20 STColl3C::GetMessage | 00601F80 STDestC::GetMessage | 00621B50 STMineSetC::GetMessage
 0x129	297	MESS_SHARED_0129	3	0044EE30 STBoatC::GetMessage | 005EAF10 STArtiafactC::GetMessage | 005FB640 STContainerC::GetMessage
 0x4201	16897	MESS_CURSORCLASSTY_4201	1	005449B0 CursorClassTy::GetMessage
 0x4202	16898	MESS_CURSORCLASSTY_4202	1	005449B0 CursorClassTy::GetMessage
 0x4203	16899	MESS_CURSORCLASSTY_4203	1	005449B0 CursorClassTy::GetMessage
-0x4401	17409	MESS_TLOEMBRYOTY_4401	1	004D55B0 TLOEmbryoTy::GetMessage
+0x43FF	17407		1	005776D0 GameSystemC::GetMessage
+0x4400	17408		1	005776D0 GameSystemC::GetMessage
+0x4401	17409	MESS_TLOEMBRYOTY_4401	2	004B9FA0 TLOBaseTy::GetMessage | 004D55B0 TLOEmbryoTy::GetMessage
 0x4403	17411	MESS_STSPRGAMEOBJC_4403	1	0041E530 STSprGameObjC::GetMessage
+0x4404	17412		1	0041E530 STSprGameObjC::GetMessage
 0x4405	17413	MESS_STBOATC_4405	1	0044EE30 STBoatC::GetMessage
-0x440F	17423	MESS_SHARED_440F	2	00578630 STCrabC::GetMessage | 00589C10 STOctopusC::GetMessage
+0x440F	17423	MESS_SHARED_440F	4	0041E530 STSprGameObjC::GetMessage | 004B9FA0 TLOBaseTy::GetMessage | 00578630 STCrabC::GetMessage | 00589C10 STOctopusC::GetMessage
 0x44FF	17663	MESS_STPLAYSYSTEMC_44FF	1	0054E4F0 STPlaySystemC::GetMessage
 0x5D94	23956	MESS_AIPLRCLASSTY_5D94	1	0067C7E0 AiPlrClassTy::GetMessage
+0x5D95	23957		1	00667D90 AiFltClassTy::GetMessage
+0x5D96	23958		1	00667D90 AiFltClassTy::GetMessage
 0x5D97	23959	MESS_AIPLRCLASSTY_5D97	1	0067C7E0 AiPlrClassTy::GetMessage
+0x5D99	23961		1	00667D90 AiFltClassTy::GetMessage
 0x5DC5	24005	MESS_AIBOSSCLASSTY_5DC5	1	00648030 AiBossClassTy::GetMessage
 0x5DC6	24006	MESS_AIBOSSCLASSTY_5DC6	1	00648030 AiBossClassTy::GetMessage
 0x5DD0	24016	MESS_AIBOSSCLASSTY_5DD0	1	00648030 AiBossClassTy::GetMessage
@@ -44,39 +63,45 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0x5DEC	24044	MESS_SHARED_5DEC	2	00648030 AiBossClassTy::GetMessage | 0067C7E0 AiPlrClassTy::GetMessage
 0x6102	24834	MESS_STARTSYSTEMTY_6102	1	005DCE90 StartSystemTy::GetMessage
 0x6103	24835	MESS_STARTSYSTEMTY_6103	1	005DCE90 StartSystemTy::GetMessage
-0x6104	24836	MESS_STARTSYSTEMTY_6104	1	005DCE90 StartSystemTy::GetMessage
-0x6105	24837	MESS_SHARED_6105	4	005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
-0x610A	24842	MESS_SHARED_610A	4	0056FA60 STAppC::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005EA680 WaitTy::GetMessage
-0x611F	24863	MESS_SHARED_611F	2	0056FA60 STAppC::GetMessage | 005BC5E0 PrividerTy::GetMessage
+0x6104	24836	MESS_STARTSYSTEMTY_6104	2	0056FA60 STAppC::GetMessage | 005DCE90 StartSystemTy::GetMessage
+0x6105	24837	MESS_SHARED_6105	5	005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6109	24841		3	005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
+0x610A	24842	MESS_SHARED_610A	6	0056FA60 STAppC::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x611F	24863	MESS_SHARED_611F	3	0056FA60 STAppC::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
 0x6120	24864	MESS_SHARED_6120	2	005B0BA0 ChooseMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
 0x6121	24865	MESS_SHARED_6121	3	005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005EA680 WaitTy::GetMessage
 0x6122	24866	MESS_STAPPC_6122	1	0056FA60 STAppC::GetMessage
-0x6124	24868	MESS_STARTSYSTEMTY_6124	1	005DCE90 StartSystemTy::GetMessage
+0x6123	24867		1	0056FA60 STAppC::GetMessage
+0x6124	24868	MESS_STARTSYSTEMTY_6124	2	0056FA60 STAppC::GetMessage | 005DCE90 StartSystemTy::GetMessage
 0x6150	24912	MESS_FSGSTY_6150	1	005A4350 FSGSTy::GetMessage
 0x6151	24913	MESS_FSGSTY_6151	1	005A4350 FSGSTy::GetMessage
 0x6156	24918	MESS_FSGSTY_6156	1	005A4350 FSGSTy::GetMessage
 0x6200	25088	MESS_SHARED_6200	4	0051DDD0 HelpPanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005E4570 MTaskTy::GetMessage
+0x6201	25089		1	0053AFB0 PlayPanelTy::GetMessage
+0x6202	25090		1	0053AFB0 PlayPanelTy::GetMessage
 0x6203	25091	MESS_SETTMAPTY_6203	1	005C8A40 SettMapTy::GetMessage
 0x6212	25106	MESS_MTASKTY_6212	1	005E4570 MTaskTy::GetMessage
 0x6213	25107	MESS_MTASKTY_6213	2	005C1A90 MReportTy::GetMessage | 005E4570 MTaskTy::GetMessage
-0x6214	25108	MESS_MREPORTTY_6214	1	005C1A90 MReportTy::GetMessage
-0x6215	25109	MESS_MREPORTTY_6215	1	005C1A90 MReportTy::GetMessage
+0x6214	25108	MESS_MREPORTTY_6214	2	005C1A90 MReportTy::GetMessage | 005E4570 MTaskTy::GetMessage
+0x6215	25109	MESS_MREPORTTY_6215	2	005C1A90 MReportTy::GetMessage | 005E4570 MTaskTy::GetMessage
+0x6216	25110		1	005E4570 MTaskTy::GetMessage
 0x6217	25111	MESS_MTASKTY_6217	1	005E4570 MTaskTy::GetMessage
 0x631F	25375	MESS_PRIVIDERTY_631F	1	005BC5E0 PrividerTy::GetMessage
 0x6326	25382	MESS_SHARED_6326	2	005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
 0x6327	25383	MESS_CHOOSEMAPTY_6327	2	005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
-0x6332	25394	MESS_SHARED_6332	5	0051DDD0 HelpPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
-0x6333	25395	MESS_WAITTY_6333	2	005A4350 FSGSTy::GetMessage | 005EA680 WaitTy::GetMessage
-0x6334	25396	MESS_SHARED_6334	2	005E4570 MTaskTy::GetMessage | 005EA680 WaitTy::GetMessage
-0x6335	25397	MESS_WAITTY_6335	4	005B0BA0 ChooseMapTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6332	25394	MESS_SHARED_6332	6	0051DDD0 HelpPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005E4570 MTaskTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6333	25395	MESS_WAITTY_6333	4	005A4350 FSGSTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005E4570 MTaskTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6334	25396	MESS_SHARED_6334	4	005A4350 FSGSTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005E4570 MTaskTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6335	25397	MESS_WAITTY_6335	5	005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
 0x6339	25401	MESS_MTASKTY_6339	1	005E4570 MTaskTy::GetMessage
 0x633F	25407	MESS_STARTSYSTEMTY_633F	1	005DCE90 StartSystemTy::GetMessage
-0x6340	25408	MESS_SETTMAPMTY_6340	2	005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
-0x6341	25409	MESS_SHARED_6341	2	005D1400 SettMapMTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
+0x6340	25408	MESS_SETTMAPMTY_6340	3	005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6341	25409	MESS_SHARED_6341	4	005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
 0x63FF	25599	MESS_FSGSTY_63FF	1	005A4350 FSGSTy::GetMessage
-0x64FF	25855	MESS_SHARED_64FF	2	005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage
-0x6501	25857	MESS_SHARED_6501	2	005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage
-0x6502	25858	MESS_PRIVIDERTY_6502	2	005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+0x64FF	25855	MESS_SHARED_64FF	3	005BC5E0 PrividerTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
+0x6500	25856		1	005C8A40 SettMapTy::GetMessage
+0x6501	25857	MESS_SHARED_6501	3	005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+0x6502	25858	MESS_PRIVIDERTY_6502	3	005BC5E0 PrividerTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
 0x6503	25859	MESS_SETTMAPTY_6503	1	005C8A40 SettMapTy::GetMessage
 0x6504	25860	MESS_SHARED_6504	2	005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
 0x6505	25861	MESS_SETTMAPSTY_6505	1	005D5560 SettMapSTy::GetMessage
@@ -86,21 +111,27 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0x6549	25929	MESS_SETTMAPMTY_6549	1	005D1400 SettMapMTy::GetMessage
 0x654A	25930	MESS_SETTMAPMTY_654A	1	005D1400 SettMapMTy::GetMessage
 0x654B	25931	MESS_SETTMAPMTY_654B	1	005D1400 SettMapMTy::GetMessage
-0x654D	25933	MESS_SETTMAPTY_654D	1	005C8A40 SettMapTy::GetMessage
+0x654C	25932		1	005D1400 SettMapMTy::GetMessage
+0x654D	25933	MESS_SETTMAPTY_654D	2	005C8A40 SettMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage
 0x657F	25983	MESS_SETTMAPTY_657F	1	005C8A40 SettMapTy::GetMessage
 0x658D	25997	MESS_SETTMAPTY_658D	1	005C8A40 SettMapTy::GetMessage
-0x68FF	26879	MESS_MMSGTY_68FF	4	005A4350 FSGSTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005C8A40 SettMapTy::GetMessage
-0x6900	26880	MESS_SHARED_6900	2	005A4350 FSGSTy::GetMessage | 005C1A90 MReportTy::GetMessage
-0x6901	26881	MESS_FSGSTY_6901	1	005A4350 FSGSTy::GetMessage
+0x68FF	26879	MESS_MMSGTY_68FF	7	00593040 CampaignTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005B9330 MMsgTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005C8A40 SettMapTy::GetMessage | 005D9470 SIDTy::GetMessage
+0x6900	26880	MESS_SHARED_6900	4	005A4350 FSGSTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005D9470 SIDTy::GetMessage
+0x6901	26881	MESS_FSGSTY_6901	3	005A4350 FSGSTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage | 005D9470 SIDTy::GetMessage
 0x6902	26882	MESS_MAINMENUTY_6902	2	005A4350 FSGSTy::GetMessage | 005B4BB0 MainMenuTy::GetMessage
+0x6903	26883		1	005A4350 FSGSTy::GetMessage
+0x6904	26884		1	005A4350 FSGSTy::GetMessage
+0x6905	26885		1	005A4350 FSGSTy::GetMessage
 0x6906	26886	MESS_FSGSTY_6906	1	005A4350 FSGSTy::GetMessage
-0x693F	26943	MESS_PRIVIDERTY_693F	3	005BC5E0 PrividerTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
-0x6940	26944	MESS_SHARED_6940	4	00593040 CampaignTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x693F	26943	MESS_PRIVIDERTY_693F	6	00593040 CampaignTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6940	26944	MESS_SHARED_6940	6	00593040 CampaignTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005C1A90 MReportTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
 0x6941	26945	MESS_FSGSTY_6941	1	005A4350 FSGSTy::GetMessage
 0x6942	26946	MESS_CHOOSEMAPTY_6942	2	005B0BA0 ChooseMapTy::GetMessage | 005EA680 WaitTy::GetMessage
+0x6943	26947		1	005EA680 WaitTy::GetMessage
 0x6944	26948	MESS_MAINMENUTY_6944	1	005B4BB0 MainMenuTy::GetMessage
 0x6949	26953	MESS_FSGSTY_6949	1	005A4350 FSGSTy::GetMessage
 0x694A	26954	MESS_FSGSTY_694A	3	005A4350 FSGSTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
+0x694D	26957		1	005EA680 WaitTy::GetMessage
 0x6951	26961	MESS_SHARED_6951	2	005B0BA0 ChooseMapTy::GetMessage | 005EA680 WaitTy::GetMessage
 0x6952	26962	MESS_PRIVIDERTY_6952	1	005BC5E0 PrividerTy::GetMessage
 0x6956	26966	MESS_CHOOSEMAPTY_6956	1	005B0BA0 ChooseMapTy::GetMessage
@@ -117,14 +148,20 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0x6AFF	27391	MESS_SHARED_6AFF	2	005D1400 SettMapMTy::GetMessage | 005D5560 SettMapSTy::GetMessage
 0x70FF	28927	MESS_MREPORTTY_70FF	1	005C1A90 MReportTy::GetMessage
 0x7100	28928	MESS_STAPPC_7100	1	0056FA60 STAppC::GetMessage
+0x7101	28929		1	0056FA60 STAppC::GetMessage
+0x7102	28930		1	0056FA60 STAppC::GetMessage
+0x7104	28932		1	0056FA60 STAppC::GetMessage
 0x7106	28934	MESS_AIBOSSCLASSTY_7106	1	00648030 AiBossClassTy::GetMessage
 0x8160	33120	MESS_SHARED_8160	5	0051DDD0 HelpPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005D9470 SIDTy::GetMessage
-0x8161	33121	MESS_SIDTY_8161	1	005D9470 SIDTy::GetMessage
-0x8163	33123	MESS_SIDTY_8163	1	005D9470 SIDTy::GetMessage
-0x8164	33124	MESS_OPTPANELTY_8164	1	00533D10 OptPanelTy::GetMessage
-0x8165	33125	MESS_OPTPANELTY_8165	1	00533D10 OptPanelTy::GetMessage
-0x8166	33126	MESS_SHARED_8166	4	0051DDD0 HelpPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage
+0x8161	33121	MESS_SIDTY_8161	2	00533D10 OptPanelTy::GetMessage | 005D9470 SIDTy::GetMessage
+0x8162	33122		1	00533D10 OptPanelTy::GetMessage
+0x8163	33123	MESS_SIDTY_8163	2	00533D10 OptPanelTy::GetMessage | 005D9470 SIDTy::GetMessage
+0x8164	33124	MESS_OPTPANELTY_8164	2	00533D10 OptPanelTy::GetMessage | 005D9470 SIDTy::GetMessage
+0x8165	33125	MESS_OPTPANELTY_8165	2	00533D10 OptPanelTy::GetMessage | 005D9470 SIDTy::GetMessage
+0x8166	33126	MESS_SHARED_8166	5	0051DDD0 HelpPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage | 005B0BA0 ChooseMapTy::GetMessage | 005BC5E0 PrividerTy::GetMessage | 005D9470 SIDTy::GetMessage
 0xA0FF	41215	MESS_CURSORCLASSTY_A0FF	1	005449B0 CursorClassTy::GetMessage
+0xA100	41216		1	005449B0 CursorClassTy::GetMessage
+0xA101	41217		1	005449B0 CursorClassTy::GetMessage
 0xA102	41218	MESS_CURSORCLASSTY_A102	1	005449B0 CursorClassTy::GetMessage
 0xA105	41221	MESS_OPTPANELTY_A105	1	00533D10 OptPanelTy::GetMessage
 0xA106	41222	MESS_OPTPANELTY_A106	1	00533D10 OptPanelTy::GetMessage
@@ -135,6 +172,9 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0xA133	41267	MESS_CURSORCLASSTY_A133	1	005449B0 CursorClassTy::GetMessage
 0xA1FF	41471	MESS_CURSORCLASSTY_A1FF	1	005449B0 CursorClassTy::GetMessage
 0xA203	41475	MESS_CURSORCLASSTY_A203	1	005449B0 CursorClassTy::GetMessage
+0xA206	41478		1	005449B0 CursorClassTy::GetMessage
+0xA207	41479		1	005449B0 CursorClassTy::GetMessage
+0xA208	41480		1	005449B0 CursorClassTy::GetMessage
 0xA209	41481	MESS_CURSORCLASSTY_A209	1	005449B0 CursorClassTy::GetMessage
 0xA313	41747	MESS_CURSORCLASSTY_A313	1	005449B0 CursorClassTy::GetMessage
 0xA31C	41756	MESS_CURSORCLASSTY_A31C	1	005449B0 CursorClassTy::GetMessage
@@ -146,6 +186,7 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0xA500	42240	MESS_CURSORCLASSTY_A500	1	005449B0 CursorClassTy::GetMessage
 0xA501	42241	MESS_CURSORCLASSTY_A501	1	005449B0 CursorClassTy::GetMessage
 0xA502	42242	MESS_CURSORCLASSTY_A502	1	005449B0 CursorClassTy::GetMessage
+0xA503	42243		1	005449B0 CursorClassTy::GetMessage
 0xA504	42244	MESS_CURSORCLASSTY_A504	1	005449B0 CursorClassTy::GetMessage
 0xA507	42247	MESS_CURSORCLASSTY_A507	1	005449B0 CursorClassTy::GetMessage
 0xA50C	42252	MESS_CURSORCLASSTY_A50C	1	005449B0 CursorClassTy::GetMessage
@@ -153,8 +194,12 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0xA6FF	42751	MESS_CURSORCLASSTY_A6FF	1	005449B0 CursorClassTy::GetMessage
 0xA708	42760	MESS_CURSORCLASSTY_A708	1	005449B0 CursorClassTy::GetMessage
 0xB0FF	45311	MESS_CURSORCLASSTY_B0FF	1	005449B0 CursorClassTy::GetMessage
+0xB104	45316		1	004FB060 CPanelTy::GetMessage
+0xB105	45317		1	004FB060 CPanelTy::GetMessage
 0xB106	45318	MESS_CPANELTY_B106	1	004FB060 CPanelTy::GetMessage
 0xB108	45320	MESS_FRMPANELTY_B108	1	005107C0 FrmPanelTy::GetMessage
+0xB109	45321		1	005107C0 FrmPanelTy::GetMessage
+0xB10A	45322		1	005107C0 FrmPanelTy::GetMessage
 0xB10B	45323	MESS_FRMPANELTY_B10B	1	005107C0 FrmPanelTy::GetMessage
 0xB10D	45325	MESS_CPANELTY_B10D	1	004FB060 CPanelTy::GetMessage
 0xB10E	45326	MESS_CPANELTY_B10E	2	004FB060 CPanelTy::GetMessage | 005107C0 FrmPanelTy::GetMessage
@@ -163,11 +208,16 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0xB16F	45423	MESS_CPANELTY_B16F	1	004FB060 CPanelTy::GetMessage
 0xB174	45428	MESS_CPANELTY_B174	1	004FB060 CPanelTy::GetMessage
 0xB1FF	45567	MESS_SHARED_B1FF	2	004EE4D0 BehPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
-0xB200	45568	MESS_BEHPANELTY_B200	1	004EE4D0 BehPanelTy::GetMessage
+0xB200	45568	MESS_BEHPANELTY_B200	2	004EE4D0 BehPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
+0xB201	45569		2	004EF6D0 BldBoatPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
 0xB202	45570	MESS_SHARED_B202	2	004EF6D0 BldBoatPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
+0xB205	45573		1	004F1080 BldObjPanelTy::GetMessage
 0xB206	45574	MESS_BLDOBJPANELTY_B206	1	004F1080 BldObjPanelTy::GetMessage
-0xB208	45576	MESS_MREPORTTY_B208	1	005C1A90 MReportTy::GetMessage
-0xB209	45577	MESS_PLAYPANELTY_B209	2	0053AFB0 PlayPanelTy::GetMessage | 005C1A90 MReportTy::GetMessage
+0xB207	45575		1	0053CA80 ResearchPanelTy::GetMessage
+0xB208	45576	MESS_MREPORTTY_B208	3	00521490 InfocPanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 005C1A90 MReportTy::GetMessage
+0xB209	45577	MESS_PLAYPANELTY_B209	3	00521490 InfocPanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 005C1A90 MReportTy::GetMessage
+0xB20A	45578		1	005522A0 TradePanelTy::GetMessage
+0xB20B	45579		1	005522A0 TradePanelTy::GetMessage
 0xB20C	45580	MESS_TRADEPANELTY_B20C	1	005522A0 TradePanelTy::GetMessage
 0xB20E	45582	MESS_BEHPANELTY_B20E	1	004EE4D0 BehPanelTy::GetMessage
 0xB4FF	46335	MESS_SAMPANELTY_B4FF	1	0053D4D0 SAMPanelTy::GetMessage
@@ -181,21 +231,28 @@ value_hex	value_decimal	known_names	handler_count	handlers
 0xB536	46390	MESS_PLAYPANELTY_B536	1	0053AFB0 PlayPanelTy::GetMessage
 0xB8FF	47359	MESS_INTERSYSTEMC_B8FF	1	00542F40 InterSystemC::GetMessage
 0xB900	47360	MESS_INTERSYSTEMC_B900	1	00542F40 InterSystemC::GetMessage
+0xB901	47361		1	00542F40 InterSystemC::GetMessage
+0xB902	47362		1	00542F40 InterSystemC::GetMessage
 0xB903	47363	MESS_INTERSYSTEMC_B903	1	00542F40 InterSystemC::GetMessage
+0xB904	47364		1	00542F40 InterSystemC::GetMessage
 0xB908	47368	MESS_INTERSYSTEMC_B908	1	00542F40 InterSystemC::GetMessage
-0xBFFF	49151	MESS_SHARED_BFFF	3	0051DDD0 HelpPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage
-0xC000	49152	MESS_SHARED_C000	3	0051DDD0 HelpPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage
+0xBFFF	49151	MESS_SHARED_BFFF	5	0051DDD0 HelpPanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage
+0xC000	49152	MESS_SHARED_C000	5	0051DDD0 HelpPanelTy::GetMessage | 005397F0 PausePanelTy::GetMessage | 0053AFB0 PlayPanelTy::GetMessage | 0053EB70 SpecPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage
 0xC001	49153	MESS_OPTPANELTY_C001	1	00533D10 OptPanelTy::GetMessage
 0xC002	49154	MESS_OPTPANELTY_C002	1	00533D10 OptPanelTy::GetMessage
-0xC006	49158	MESS_OPTPANELTY_C006	1	00533D10 OptPanelTy::GetMessage
+0xC003	49155		1	00533D10 OptPanelTy::GetMessage
+0xC004	49156		1	00533D10 OptPanelTy::GetMessage
+0xC005	49157		3	00533D10 OptPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
+0xC006	49158	MESS_OPTPANELTY_C006	3	00533D10 OptPanelTy::GetMessage | 005400F0 ProdPanelTy::GetMessage | 005522A0 TradePanelTy::GetMessage
 0xC09F	49311	MESS_SHARED_C09F	5	004EE4D0 BehPanelTy::GetMessage | 004F0210 BldLabPanelTy::GetMessage | 005107C0 FrmPanelTy::GetMessage | 00522E80 IntercomPanelTy::GetMessage | 0053CA80 ResearchPanelTy::GetMessage
-0xC0A0	49312	MESS_BEHPANELTY_C0A0	2	004EE4D0 BehPanelTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
+0xC0A0	49312	MESS_BEHPANELTY_C0A0	3	004EE4D0 BehPanelTy::GetMessage | 00522E80 IntercomPanelTy::GetMessage | 005DCE90 StartSystemTy::GetMessage
 0xC0A1	49313	MESS_FSGSTY_C0A1	1	005A4350 FSGSTy::GetMessage
 0xC0A2	49314	MESS_SHARED_C0A2	4	005B0BA0 ChooseMapTy::GetMessage | 005D1400 SettMapMTy::GetMessage | 005DCE90 StartSystemTy::GetMessage | 005EA680 WaitTy::GetMessage
 0xC0A3	49315	MESS_SHARED_C0A3	2	004F0210 BldLabPanelTy::GetMessage | 0053CA80 ResearchPanelTy::GetMessage
 0xC0A4	49316	MESS_BLDLABPANELTY_C0A4	1	004F0210 BldLabPanelTy::GetMessage
 0xC0A5	49317	MESS_FRMPANELTY_C0A5	2	005107C0 FrmPanelTy::GetMessage | 005A4350 FSGSTy::GetMessage
 0xC0AE	49326	MESS_OPTPANELTY_C0AE	2	004F0210 BldLabPanelTy::GetMessage | 00533D10 OptPanelTy::GetMessage
+0xC0AF	49327		1	00522E80 IntercomPanelTy::GetMessage
 0xC0B1	49329	MESS_BEHPANELTY_C0B1	1	004EE4D0 BehPanelTy::GetMessage
 0xC0B3	49331	MESS_BLDLABPANELTY_C0B3	1	004F0210 BldLabPanelTy::GetMessage
 0xC0B4	49332	MESS_RESEARCHPANELTY_C0B4	1	0053CA80 ResearchPanelTy::GetMessage

@@ -1,2 +1,0 @@
-thunk_FUN_004ab030:
-00401339  E9 F2 9C 0A 00            JMP 0x004ab030

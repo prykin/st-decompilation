@@ -1,2 +1,0 @@
-thunk_FUN_00697cf0:
-004010FA  E9 F1 6B 29 00            JMP 0x00697cf0

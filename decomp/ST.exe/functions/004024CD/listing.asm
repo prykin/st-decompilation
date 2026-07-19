@@ -1,2 +1,0 @@
-thunk_FUN_0048dc90:
-004024CD  E9 BE B7 08 00            JMP 0x0048dc90

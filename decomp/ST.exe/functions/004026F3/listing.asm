@@ -1,2 +1,0 @@
-STBoatC::BackPatrol:
-004026F3  E9 E8 34 06 00            JMP 0x00465be0

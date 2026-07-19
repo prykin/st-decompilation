@@ -1,2 +1,0 @@
-STBoatC::GetDefenceTarget:
-00405B05  E9 96 3E 08 00            JMP 0x004899a0

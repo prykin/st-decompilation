@@ -1,2 +1,0 @@
-HelpPanelTy::PrevBut:
-00403B43  E9 78 00 11 00            JMP 0x00513bc0

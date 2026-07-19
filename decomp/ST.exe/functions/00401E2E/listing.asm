@@ -1,2 +1,0 @@
-thunk_FUN_0062e520:
-00401E2E  E9 ED C6 22 00            JMP 0x0062e520

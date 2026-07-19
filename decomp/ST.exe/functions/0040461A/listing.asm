@@ -1,2 +1,0 @@
-thunk_FUN_00630ac0:
-0040461A  E9 A1 C4 22 00            JMP 0x00630ac0

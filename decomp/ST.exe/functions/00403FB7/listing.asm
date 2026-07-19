@@ -1,2 +1,0 @@
-SettMapTy::DoneSettMap:
-00403FB7  E9 74 09 1C 00            JMP 0x005c4930

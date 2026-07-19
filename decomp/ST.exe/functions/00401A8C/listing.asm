@@ -1,2 +1,0 @@
-thunk_FUN_006817a0:
-00401A8C  E9 0F FD 27 00            JMP 0x006817a0

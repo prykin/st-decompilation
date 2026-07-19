@@ -1,2 +1,0 @@
-thunk_FUN_006a10c0:
-00401CCB  E9 F0 F3 29 00            JMP 0x006a10c0

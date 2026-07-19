@@ -1,2 +1,0 @@
-FSGSTy::SetState:
-00401B2C  E9 3F 63 19 00            JMP 0x00597e70

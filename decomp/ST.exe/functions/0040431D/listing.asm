@@ -1,2 +1,0 @@
-BldObjPanelTy::PaintBldBut:
-0040431D  E9 3E CB 0E 00            JMP 0x004f0e60

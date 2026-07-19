@@ -1,2 +1,0 @@
-thunk_FUN_00601d10:
-00403E22  E9 E9 DE 1F 00            JMP 0x00601d10

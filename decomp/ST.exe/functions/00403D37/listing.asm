@@ -1,2 +1,0 @@
-thunk_FUN_00541cf0:
-00403D37  E9 B4 DF 13 00            JMP 0x00541cf0

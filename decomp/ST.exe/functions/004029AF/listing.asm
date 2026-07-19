@@ -1,2 +1,0 @@
-SIDTy::InitSID:
-004029AF  E9 9C 50 1D 00            JMP 0x005d7a50

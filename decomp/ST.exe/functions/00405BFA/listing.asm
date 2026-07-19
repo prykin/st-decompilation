@@ -1,2 +1,0 @@
-thunk_FUN_006239a0:
-00405BFA  E9 A1 DD 21 00            JMP 0x006239a0

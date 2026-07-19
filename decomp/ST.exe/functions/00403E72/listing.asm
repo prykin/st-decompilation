@@ -1,2 +1,0 @@
-thunk_FUN_006a19d0:
-00403E72  E9 59 DB 29 00            JMP 0x006a19d0

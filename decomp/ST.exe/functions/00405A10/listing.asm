@@ -1,2 +1,0 @@
-thunk_FUN_0067f5e0:
-00405A10  E9 CB 9B 27 00            JMP 0x0067f5e0

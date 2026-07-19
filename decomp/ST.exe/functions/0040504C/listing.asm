@@ -1,2 +1,0 @@
-PausePanelTy::SwitchPausePanel:
-0040504C  E9 5F 45 13 00            JMP 0x005395b0

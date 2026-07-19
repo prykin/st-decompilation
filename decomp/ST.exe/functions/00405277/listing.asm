@@ -1,2 +1,0 @@
-CGenerate::_saveObj:
-00405277  E9 E4 B6 29 00            JMP 0x006a0960

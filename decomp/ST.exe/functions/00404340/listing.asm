@@ -1,2 +1,0 @@
-STGroupC::SetAVPar:
-00404340  E9 6B 04 02 00            JMP 0x004247b0

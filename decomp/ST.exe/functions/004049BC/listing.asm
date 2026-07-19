@@ -1,2 +1,0 @@
-thunk_FUN_005f2330:
-004049BC  E9 6F D9 1E 00            JMP 0x005f2330

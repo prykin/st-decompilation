@@ -1,2 +1,0 @@
-FSGSTy::Finished:
-00404B92  E9 99 CA 19 00            JMP 0x005a1630

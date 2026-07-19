@@ -1,2 +1,0 @@
-STAllPlayersC::UnRegisterObject:
-004020AE  E9 FD D1 02 00            JMP 0x0042f2b0

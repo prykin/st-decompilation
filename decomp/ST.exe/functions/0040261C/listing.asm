@@ -1,2 +1,0 @@
-CampaignTy::LightPalette:
-0040261C  E9 1F FD 18 00            JMP 0x00592340

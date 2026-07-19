@@ -1,2 +1,0 @@
-thunk_FUN_0055de60:
-004043A9  E9 B2 9A 15 00            JMP 0x0055de60

@@ -1,2 +1,0 @@
-thunk_FUN_00671f10:
-00401F5F  E9 AC FF 26 00            JMP 0x00671f10

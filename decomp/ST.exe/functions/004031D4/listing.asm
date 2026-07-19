@@ -1,2 +1,0 @@
-MMMObjTy::PaintSlBut:
-004031D4  E9 87 33 1B 00            JMP 0x005b6560

@@ -1,2 +1,0 @@
-thunk_FUN_0044cc90:
-00403CFB  E9 90 8F 04 00            JMP 0x0044cc90

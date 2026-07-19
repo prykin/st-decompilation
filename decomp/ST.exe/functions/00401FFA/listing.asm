@@ -1,2 +1,0 @@
-thunk_FUN_0054cb40:
-00401FFA  E9 41 AB 14 00            JMP 0x0054cb40

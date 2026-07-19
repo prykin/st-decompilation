@@ -1,2 +1,0 @@
-thunk_FUN_004cc130:
-00405E75  E9 B6 62 0C 00            JMP 0x004cc130

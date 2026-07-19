@@ -1,2 +1,0 @@
-thunk_FUN_004ab300:
-00403F1C  E9 DF 73 0A 00            JMP 0x004ab300

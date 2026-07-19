@@ -1,2 +1,0 @@
-thunk_FUN_0064e680:
-004011CC  E9 AF D4 24 00            JMP 0x0064e680

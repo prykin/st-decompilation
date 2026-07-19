@@ -1,2 +1,0 @@
-thunk_FUN_00678d90:
-00401EB0  E9 DB 6E 27 00            JMP 0x00678d90

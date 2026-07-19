@@ -1,2 +1,0 @@
-STGroupBoatC::MakePVec:
-00402603  E9 78 75 09 00            JMP 0x00499b80

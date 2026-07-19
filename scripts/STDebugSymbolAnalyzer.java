@@ -103,14 +103,16 @@ public class STDebugSymbolAnalyzer extends GhidraScript {
             String source = item.sources.size() == 1 ? item.sources.iterator().next() : "";
             long line = source.isEmpty() ? -1 : recoverLine(item.sourceRefs.get(source));
             boolean defaultName = item.function.getSymbol().getSource().toString().equals("DEFAULT");
-            boolean previouslyApplied = item.function.getName(true).equals(qualified) &&
+            boolean exactCurrentName = item.function.getName(true).equals(qualified);
+            boolean previouslyApplied = exactCurrentName &&
                 item.function.getTags().stream()
                     .anyMatch(tag -> "RECOVERED_DEBUG_NAME".equals(tag.getName()));
-            String confidence = item.sources.size() == 1 && (defaultName || previouslyApplied) ? "high" :
+            String confidence = item.sources.size() == 1 && (defaultName || exactCurrentName) ? "high" :
                 item.sources.size() <= 1 ? "medium" : "conflict";
             String reason = item.sources.size() > 1 ? "multiple_source_paths" :
                 source.isEmpty() ? "no_source_path" : previouslyApplied ?
-                    "previously_applied_debug_symbol" : "unique_method_and_source";
+                    "previously_applied_debug_symbol" : exactCurrentName ?
+                    "already_matches_debug_symbol" : "unique_method_and_source";
             ThiscallEvidence thiscall = findThiscallEvidence(item.function);
             proposals.add(new Proposal(item.function, qualified, owner, method, source, line,
                 confidence, reason, thiscall.convention, thiscall.evidence));

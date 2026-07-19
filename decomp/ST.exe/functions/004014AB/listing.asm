@@ -1,2 +1,0 @@
-thunk_FUN_0064ec80:
-004014AB  E9 D0 D7 24 00            JMP 0x0064ec80

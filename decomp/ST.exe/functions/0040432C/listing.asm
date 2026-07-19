@@ -1,2 +1,0 @@
-thunk_FUN_0054cf70:
-0040432C  E9 3F 8C 14 00            JMP 0x0054cf70

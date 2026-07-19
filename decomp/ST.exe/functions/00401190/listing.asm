@@ -1,2 +1,0 @@
-CPanelTy::SetCmdBoat:
-00401190  E9 1B 2A 10 00            JMP 0x00503bb0

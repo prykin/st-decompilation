@@ -1,2 +1,0 @@
-thunk_FUN_004c7230:
-0040133E  E9 ED 5E 0C 00            JMP 0x004c7230

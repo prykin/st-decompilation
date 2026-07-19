@@ -1,2 +1,0 @@
-thunk_FUN_0062db10:
-00404BEC  E9 1F 8F 22 00            JMP 0x0062db10

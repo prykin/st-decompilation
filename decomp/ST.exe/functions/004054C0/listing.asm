@@ -1,2 +1,0 @@
-thunk_FUN_00635da0:
-004054C0  E9 DB 08 23 00            JMP 0x00635da0

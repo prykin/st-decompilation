@@ -1,2 +1,0 @@
-IntercomPanelTy::DoneIntercomPanel:
-004021EE  E9 9D F9 11 00            JMP 0x00521b90

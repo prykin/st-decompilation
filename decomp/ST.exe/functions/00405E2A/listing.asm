@@ -1,2 +1,0 @@
-thunk_FUN_0064ed20:
-00405E2A  E9 F1 8E 24 00            JMP 0x0064ed20

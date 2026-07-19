@@ -1,2 +1,0 @@
-Library::MSVCRT::thunk_FUN_006a3d40:
-00405777  E9 C4 E5 29 00            JMP 0x006a3d40

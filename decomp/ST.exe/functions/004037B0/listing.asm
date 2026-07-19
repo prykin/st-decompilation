@@ -1,2 +1,0 @@
-thunk_FUN_004de030:
-004037B0  E9 7B A8 0D 00            JMP 0x004de030

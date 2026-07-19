@@ -1,2 +1,0 @@
-CPanelTy::PaintCostsXYSI:
-00402A3B  E9 10 F9 0E 00            JMP 0x004f2350

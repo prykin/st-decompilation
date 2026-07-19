@@ -1,2 +1,0 @@
-thunk_FUN_004aa450:
-004031B1  E9 9A 72 0A 00            JMP 0x004aa450

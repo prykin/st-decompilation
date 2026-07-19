@@ -1,2 +1,0 @@
-thunk_FUN_00619c70:
-00404F8E  E9 DD 4C 21 00            JMP 0x00619c70

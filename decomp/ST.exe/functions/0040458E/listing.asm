@@ -1,2 +1,0 @@
-MMObjTy::DoneMMObj:
-0040458E  E9 8D 1C 1B 00            JMP 0x005b6220

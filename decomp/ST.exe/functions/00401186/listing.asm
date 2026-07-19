@@ -1,2 +1,0 @@
-thunk_FUN_004ab650:
-00401186  E9 C5 A4 0A 00            JMP 0x004ab650

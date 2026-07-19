@@ -1,2 +1,0 @@
-ChatGlassTy::OutChGlProc:
-00403B61  E9 8A 2E 1B 00            JMP 0x005b69f0

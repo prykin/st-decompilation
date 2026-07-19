@@ -1,2 +1,0 @@
-AiTactClassTy::HelpOrganize:
-004046E2  E9 69 BF 28 00            JMP 0x00690650

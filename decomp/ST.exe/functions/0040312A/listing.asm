@@ -1,2 +1,0 @@
-thunk_FUN_004de300:
-0040312A  E9 D1 B1 0D 00            JMP 0x004de300

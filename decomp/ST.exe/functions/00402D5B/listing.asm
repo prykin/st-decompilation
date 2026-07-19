@@ -1,2 +1,0 @@
-thunk_FUN_0052af50:
-00402D5B  E9 F0 81 12 00            JMP 0x0052af50

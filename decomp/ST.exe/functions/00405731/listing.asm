@@ -1,2 +1,0 @@
-thunk_FUN_006a0e30:
-00405731  E9 FA B6 29 00            JMP 0x006a0e30

@@ -1,2 +1,0 @@
-thunk_FUN_0060f940:
-00402EFF  E9 3C CA 20 00            JMP 0x0060f940

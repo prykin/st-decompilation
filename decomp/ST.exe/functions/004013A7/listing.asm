@@ -1,2 +1,0 @@
-SettMapMTy::AddPlayerList:
-004013A7  E9 54 FD 1C 00            JMP 0x005d1100

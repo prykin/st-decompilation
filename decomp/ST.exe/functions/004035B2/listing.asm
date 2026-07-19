@@ -1,2 +1,0 @@
-thunk_FUN_004ce250:
-004035B2  E9 99 AC 0C 00            JMP 0x004ce250

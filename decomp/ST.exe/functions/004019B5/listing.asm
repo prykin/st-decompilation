@@ -1,2 +1,0 @@
-CPanelTy::PaintIDSObj:
-004019B5  E9 A6 34 10 00            JMP 0x00504e60

@@ -1,2 +1,0 @@
-thunk_FUN_005de670:
-004021E4  E9 87 C4 1D 00            JMP 0x005de670

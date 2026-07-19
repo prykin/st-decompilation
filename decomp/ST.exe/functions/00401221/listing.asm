@@ -1,2 +1,0 @@
-thunk_FUN_00606cd0:
-00401221  E9 AA 5A 20 00            JMP 0x00606cd0

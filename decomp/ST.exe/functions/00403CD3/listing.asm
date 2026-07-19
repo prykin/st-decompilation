@@ -1,2 +1,0 @@
-thunk_FUN_0064e9a0:
-00403CD3  E9 C8 AC 24 00            JMP 0x0064e9a0

@@ -1,2 +1,0 @@
-thunk_FUN_0067bf60:
-00402C61  E9 FA 92 27 00            JMP 0x0067bf60

@@ -1,2 +1,0 @@
-thunk_FUN_004cd790:
-00402C93  E9 F8 AA 0C 00            JMP 0x004cd790

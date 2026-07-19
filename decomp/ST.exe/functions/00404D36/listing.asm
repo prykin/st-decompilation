@@ -1,2 +1,0 @@
-SpecPanelTy::ShiftControls:
-00404D36  E9 15 9D 13 00            JMP 0x0053ea50

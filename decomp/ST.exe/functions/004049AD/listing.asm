@@ -1,2 +1,0 @@
-thunk_FUN_004d8f80:
-004049AD  E9 CE 45 0D 00            JMP 0x004d8f80

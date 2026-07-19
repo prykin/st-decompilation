@@ -1,2 +1,0 @@
-MMsgTy::PaintMMsg:
-00401BB8  E9 83 57 1B 00            JMP 0x005b7340

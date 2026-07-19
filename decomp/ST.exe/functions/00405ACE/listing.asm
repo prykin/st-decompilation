@@ -1,2 +1,0 @@
-thunk_FUN_004c7860:
-00405ACE  E9 8D 1D 0C 00            JMP 0x004c7860

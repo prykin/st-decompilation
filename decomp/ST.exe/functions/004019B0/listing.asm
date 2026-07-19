@@ -1,2 +1,0 @@
-thunk_FUN_006a20e0:
-004019B0  E9 2B 07 2A 00            JMP 0x006a20e0

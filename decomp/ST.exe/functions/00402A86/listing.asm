@@ -1,2 +1,0 @@
-thunk_FUN_0061f5c0:
-00402A86  E9 35 CB 21 00            JMP 0x0061f5c0

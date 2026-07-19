@@ -1,2 +1,0 @@
-thunk_FUN_005fe280:
-00403328  E9 53 AF 1F 00            JMP 0x005fe280

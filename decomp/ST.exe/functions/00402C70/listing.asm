@@ -1,2 +1,0 @@
-FSGSTy::Download:
-00402C70  E9 BB E7 19 00            JMP 0x005a1430

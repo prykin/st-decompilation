@@ -1,2 +1,0 @@
-thunk_FUN_004e3800:
-00402D10  E9 EB 0A 0E 00            JMP 0x004e3800

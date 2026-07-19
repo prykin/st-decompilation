@@ -1,2 +1,0 @@
-thunk_FUN_0052bc30:
-00401E83  E9 A8 9D 12 00            JMP 0x0052bc30

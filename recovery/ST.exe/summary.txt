@@ -1,6 +1,6 @@
 program=ST.exe
 proposals=971
-high=970
-medium=1
+high=971
+medium=0
 conflicts=0
 note=Only rows with apply=1 are consumed by STDebugSymbolApplier.

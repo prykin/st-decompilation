@@ -1,2 +1,0 @@
-thunk_FUN_006211e0:
-00401BBD  E9 1E F6 21 00            JMP 0x006211e0

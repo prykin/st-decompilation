@@ -1,2 +1,0 @@
-SIDTy::DoneSID:
-00405B78  E9 03 24 1D 00            JMP 0x005d7f80

@@ -1,2 +1,0 @@
-STGameObjC::ResetSelfCheckFlag:
-0040321F  E9 5C 74 01 00            JMP 0x0041a680

@@ -1,2 +1,0 @@
-STGroupBoatC::Recharge:
-004051AF  E9 8C A4 09 00            JMP 0x0049f640

@@ -1,2 +1,0 @@
-thunk_FUN_004dd500:
-004026DF  E9 1C AE 0D 00            JMP 0x004dd500

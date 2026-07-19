@@ -1,2 +1,0 @@
-thunk_FUN_004e43c0:
-00403814  E9 A7 0B 0E 00            JMP 0x004e43c0

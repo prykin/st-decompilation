@@ -1,2 +1,0 @@
-thunk_FUN_0064f5a0:
-0040164F  E9 4C DF 24 00            JMP 0x0064f5a0

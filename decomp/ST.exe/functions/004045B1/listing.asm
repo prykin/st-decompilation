@@ -1,2 +1,0 @@
-thunk_FUN_00680ee0:
-004045B1  E9 2A C9 27 00            JMP 0x00680ee0

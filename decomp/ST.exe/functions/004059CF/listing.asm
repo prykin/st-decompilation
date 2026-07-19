@@ -1,2 +1,0 @@
-thunk_FUN_00566bd0:
-004059CF  E9 FC 11 16 00            JMP 0x00566bd0

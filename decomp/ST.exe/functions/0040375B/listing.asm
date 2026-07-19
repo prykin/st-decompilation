@@ -1,2 +1,0 @@
-thunk_FUN_004ce640:
-0040375B  E9 E0 AE 0C 00            JMP 0x004ce640

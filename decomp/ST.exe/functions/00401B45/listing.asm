@@ -1,2 +1,0 @@
-thunk_FUN_005e9a40:
-00401B45  E9 F6 7E 1E 00            JMP 0x005e9a40

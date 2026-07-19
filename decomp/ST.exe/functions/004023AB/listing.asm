@@ -1,2 +1,0 @@
-thunk_FUN_004d7b90:
-004023AB  E9 E0 57 0D 00            JMP 0x004d7b90

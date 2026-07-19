@@ -1,2 +1,0 @@
-thunk_FUN_0065fd50:
-004055A6  E9 A5 A7 25 00            JMP 0x0065fd50

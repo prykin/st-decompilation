@@ -1,2 +1,0 @@
-cLoadingTy::SetProcess:
-00404D8B  E9 90 01 15 00            JMP 0x00554f20

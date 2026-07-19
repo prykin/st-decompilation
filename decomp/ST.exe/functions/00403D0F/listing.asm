@@ -1,2 +1,0 @@
-thunk_FUN_004ad430:
-00403D0F  E9 1C 97 0A 00            JMP 0x004ad430

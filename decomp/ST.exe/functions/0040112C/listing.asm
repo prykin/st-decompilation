@@ -1,2 +1,0 @@
-thunk_FUN_006a3c50:
-0040112C  E9 1F 2B 2A 00            JMP 0x006a3c50

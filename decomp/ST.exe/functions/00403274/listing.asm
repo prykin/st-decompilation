@@ -1,2 +1,0 @@
-STTmMineC::LoadImagSpr:
-00403274  E9 E7 AE 23 00            JMP 0x0063e160

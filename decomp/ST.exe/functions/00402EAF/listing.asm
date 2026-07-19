@@ -1,2 +1,0 @@
-thunk_FUN_004e6080:
-00402EAF  E9 CC 31 0E 00            JMP 0x004e6080

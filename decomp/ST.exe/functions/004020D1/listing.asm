@@ -1,2 +1,0 @@
-MMsgTy::InitMMsg:
-004020D1  E9 4A 4A 1B 00            JMP 0x005b6b20

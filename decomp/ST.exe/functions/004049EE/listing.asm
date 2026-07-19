@@ -1,2 +1,0 @@
-thunk_FUN_00635fd0:
-004049EE  E9 DD 15 23 00            JMP 0x00635fd0

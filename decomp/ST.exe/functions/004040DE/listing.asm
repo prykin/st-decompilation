@@ -1,2 +1,0 @@
-thunk_FUN_005b47e0:
-004040DE  E9 FD 06 1B 00            JMP 0x005b47e0

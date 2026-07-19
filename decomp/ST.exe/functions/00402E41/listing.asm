@@ -1,2 +1,0 @@
-thunk_FUN_005fb170:
-00402E41  E9 2A 83 1F 00            JMP 0x005fb170
